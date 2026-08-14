@@ -246,5 +246,941 @@
     "source_id": "maudsley_2021",
     "page_ref": "maudsley_2021 p366",
     "snippet": "Pregnancy’ in Chapter 7).\nHow to avoid14–16,18\nGenerally, antidepressant therapy should be discontinued gradually.6 Readers are\nreferred to the section on ‘Stopping antidepressants’ in this chapter for advice on specific antidepressants. The shorter the half-life of the drug, the more important that this\nrule is followed. The end of the taper may need to be slower, as symptoms may not\n\nCHAPTER 3\n\nDepression and anxiety disorders  345\n\n\f\n\n\n<<<PAGE 400>>>\n\nDepression and anxiety disorders  379\n\nTable 3.14 (Continued)\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nTCAs\nAmitriptyline\n\nCYP1A2, CYP2D6, CY"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "monitoring",
+    "value": "TCAs have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs\nTCAs produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering dothiepin",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "736",
+    "snippet": "TCAs have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs\nTCAs produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering dothiepin"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "736",
+    "snippet": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "contraindications",
+    "value": "If patient is taking drugs that inhibit TCA metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there is a proven allergy to dothiepin",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "736",
+    "snippet": "If patient is taking drugs that inhibit TCA metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there is a proven allergy to dothiepin"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "overdose",
+    "value": "TCAs can increase QTc interval, especially at toxic doses, which can be attained not only by overdose but also by combining with drugs that inhibit TCA metabolism via CYP450 2D6, potentially causing torsade de pointes-type arrhythmia or sudden death",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "734",
+    "snippet": "TCAs can increase QTc interval, especially at toxic doses, which can be attained not only by overdose but also by combining with drugs that inhibit TCA metabolism via CYP450 2D6, potentially causing torsade de pointes-type arrhythmia or sudden death"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "contraindications",
+    "value": "If patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf patient is taking drugs that inhibit TCA metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there is a proven allergy to lofepramine, desipramine, or imipramine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1240",
+    "snippet": "If patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf patient is taking drugs that inhibit TCA metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there is a proven allergy to lofepramine, desipramine, or imipramine"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "overdose",
+    "value": "TCAs can increase QTc interval, especially at toxic doses, which can be attained not only by overdose but also by combining with drugs that inhibit its metabolism via CYP450 2D6, potentially causing torsade de pointes-type arrhythmia or sudden death",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1238",
+    "snippet": "TCAs can increase QTc interval, especially at toxic doses, which can be attained not only by overdose but also by combining with drugs that inhibit its metabolism via CYP450 2D6, potentially causing torsade de pointes-type arrhythmia or sudden death"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "interactions",
+    "value": "Mainly pharmacodynamic: increased sedation with benzodiazepines, increased hypotension with diuretics, increased constipation with other anticholinergic drugs, etc.",
+    "source_id": "maudsley_2021",
+    "page_ref": "695",
+    "snippet": "Mainly pharmacodynamic: increased sedation with benzodiazepines, increased hypotension with diuretics, increased constipation with other anticholinergic drugs, etc."
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "monitoring",
+    "value": "In patients taking tricyclics, ECG monitoring is a more meaningful and useful measure of toxicity than plasma level monitoring.",
+    "source_id": "maudsley_2021",
+    "page_ref": "410",
+    "snippet": "In patients taking tricyclics, ECG monitoring is a more meaningful and useful measure of toxicity than plasma level monitoring."
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "monitoring",
+    "value": "TCAs/tetracyclics have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs/tetracyclics\nTCAs/tetracyclics produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering maprotiline\nUse with caution if treating concomitantly with a medication likely to produce prolonged bradycardia, hypokalemia, slowing of intracardiac conduction, or prolongation of the QTc interval\nAvoid TCAs/tetracyclics in patients with a known history of QTc prolongation, recent acute myocardial infarction, and uncompensated heart failure",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1368",
+    "snippet": "TCAs/tetracyclics have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs/tetracyclics\nTCAs/tetracyclics produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering maprotiline\nUse with caution if treating concomitantly with a medication likely to produce prolonged bradycardia, hypokalemia, slowing"
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1367",
+    "snippet": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended"
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "contraindications",
+    "value": "If patient is recovering from myocardial infarction\nIf patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf patient is taking drugs that inhibit TCA/tetracyclic metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there is a proven allergy to maprotiline",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1367",
+    "snippet": "If patient is recovering from myocardial infarction\nIf patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf patient is taking drugs that inhibit TCA/tetracyclic metabolism, including CYP450 2D6 inhibitors, except by an expert\nIf there is reduced CYP450 2D6 function, such as patients who are poor 2D6 metabolizers, except by an expert and at low doses\nIf there i"
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "overdose",
+    "value": "Death may occur; convulsions, cardiac dysrhythmias, severe hypotension, CNS depression, coma, changes in ECG",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1363",
+    "snippet": "Death may occur; convulsions, cardiac dysrhythmias, severe hypotension, CNS depression, coma, changes in ECG"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nDose adjustment not necessary\nHepatic Impairment\nDose adjustment not necessary\nCardiac Impairment\nBaseline ECG is recommended\nDrug should be used with caution\nElderly\nBaseline ECG is recommended for patients over age 50\nSome patients may tolerate lower doses better",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1450",
+    "snippet": "Renal Impairment\nDose adjustment not necessary\nHepatic Impairment\nDose adjustment not necessary\nCardiac Impairment\nBaseline ECG is recommended\nDrug should be used with caution\nElderly\nBaseline ECG is recommended for patients over age 50\nSome patients may tolerate lower doses better"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "contraindications",
+    "value": "Do Not Use\nIf patient is taking an MAOI\nIf there is a proven allergy to mianserin",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1450",
+    "snippet": "Do Not Use\nIf patient is taking an MAOI\nIf there is a proven allergy to mianserin"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "overdose",
+    "value": "Generally better tolerated than TCAs, including safer in overdose\nGeneral lack of cardiovascular toxicity",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1453",
+    "snippet": "Generally better tolerated than TCAs, including safer in overdose\nGeneral lack of cardiovascular toxicity"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "interactions",
+    "value": "May need to reduce reboxetine dose or avoid concomitant use with inhibitors of CYP450 3A4, such as azole and antifungals, macrolide antibiotics, fluvoxamine, nefazodone, fluoxetine, sertraline, etc.\nVia CYP450 2D6 inhibition, reboxetine could theoretically interfere with the analgesic actions of codeine, and increase the plasma levels of some beta blockers and of atomoxetine and TCAs\nVia CYP450 2D6 inhibition, reboxetine could theoretically increase concentrations of thioridazine and cause dangerous cardiac arrhythmias\nVia CYP450 3A4 inhibition, reboxetine may increase the levels of alprazolam, buspirone, and triazolam\nVia CYP450 3A4 inhibition, reboxetine could theoretically increase concentrations of certain cholesterol lowering HMG CoA reductase inhibitors, especially simvastatin, atorvastatin, and lovastatin, but not pravastatin or fluvastatin, which would increase the risk of rhabdomyolysis; thus, coadministration of reboxetine with certain HMG CoA reductase inhibitors should proceed with caution\nVia CYP450 3A4 inhibition, reboxetine could theoretically increase the concentrations of pimozide, and cause QTc prolongation and dangerous cardiac arrhythmias\nUse with ergotamine may increase blood pressure\nHypokalemia may occur if reboxetine is used with diuretics\nUse with caution with MAO inhibitors, including 14 days after MAOIs are stopped",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1969",
+    "snippet": "May need to reduce reboxetine dose or avoid concomitant use with inhibitors of CYP450 3A4, such as azole and antifungals, macrolide antibiotics, fluvoxamine, nefazodone, fluoxetine, sertraline, etc.\nVia CYP450 2D6 inhibition, reboxetine could theoretically interfere with the analgesic actions of codeine, and increase the plasma levels of some beta blockers and of atomoxetine and TCAs\nVia CYP450 2D6 inhibition, reboxetine could theoretically increase concentrations of thioridazine and cause dangerous cardiac arrhythmias\nVia CYP450 3A4 inhibition, reboxetine may increase the levels of alprazolam"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "contraindications",
+    "value": "If there is a proven allergy to reboxetine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1971",
+    "snippet": "If there is a proven allergy to reboxetine"
+  },
+  {
+    "drug": "Tianeptine",
+    "field_key": "contraindications",
+    "value": "Do Not Use\nIf patient is taking an MAOI\nIf patient is pregnant or nursing\nIf there is a proven allergy to tianeptine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2225",
+    "snippet": "Do Not Use\nIf patient is taking an MAOI\nIf patient is pregnant or nursing\nIf there is a proven allergy to tianeptine"
+  },
+  {
+    "drug": "Tianeptine",
+    "field_key": "overdose",
+    "value": "Effects are generally mild and nonfatal; unlikely to cause cardiovascular effects",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2223",
+    "snippet": "Effects are generally mild and nonfatal; unlikely to cause cardiovascular effects"
+  },
+  {
+    "drug": "Blonanserin",
+    "field_key": "interactions",
+    "value": "CYP450 3A4 inducers, such as carbamazepine, can lower the plasma levels of blonanserin\nCYP450 3A4 inhibitors, such as ketoconazole, nefazodone, fluvoxamine, and fluoxetine, can increase plasma levels of blonanserin\nMay increase effects of antihypertensive agents\nMay antagonize levodopa, dopamine agonists",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "283",
+    "snippet": "CYP450 3A4 inducers, such as carbamazepine, can lower the plasma levels of blonanserin\nCYP450 3A4 inhibitors, such as ketoconazole, nefazodone, fluvoxamine, and fluoxetine, can increase plasma levels of blonanserin\nMay increase effects of antihypertensive agents\nMay antagonize levodopa, dopamine agonists"
+  },
+  {
+    "drug": "Blonanserin",
+    "field_key": "contraindications",
+    "value": "In conjunction with adrenaline/epinephrine\nIf patient is taking ketoconazole\nIf there is a proven allergy to blonanserin",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "284",
+    "snippet": "In conjunction with adrenaline/epinephrine\nIf patient is taking ketoconazole\nIf there is a proven allergy to blonanserin"
+  },
+  {
+    "drug": "Cyamemazine",
+    "field_key": "interactions",
+    "value": "May decrease the effects of levodopa; contraindicated for use with dopamine agonists other than levodopa\nMay increase the effects of antihypertensive drugs except for guanethidine, whose antihypertensive actions phenothiazines may antagonize\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\nAdditive effects may occur if used with CNS depressants\nAnticholinergic effects may occur if used with atropine or related compounds\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome\nEpinephrine may lower blood pressure; diuretics and alcohol may increase risk of hypotension when administered with a phenothiazine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "600",
+    "snippet": "May decrease the effects of levodopa; contraindicated for use with dopamine agonists other than levodopa\nMay increase the effects of antihypertensive drugs except for guanethidine, whose antihypertensive actions phenothiazines may antagonize\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\nAdditive effects may occur if used with CNS depressants\nAnticholinergic effects may occur if used with atropine or related compounds\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome\nEpinephrine ma"
+  },
+  {
+    "drug": "Cyamemazine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nCardiovacular toxicity can occur, especially orthostatic hypotension\nElderly\nElderly patients may be more susceptible to adverse effects\nLower doses should be used and patient should be monitored closely\nGenerally, doses above 100 mg/day are not recommended\nElderly patients with dementia-related psychosis treated with antipsychotics are at an increased risk of death compared to placebo",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "603",
+    "snippet": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nCardiovacular toxicity can occur, especially orthostatic hypotension\nElderly\nElderly patients may be more susceptible to adverse effects\nLower doses should be used and patient should be monitored closely\nGenerally, doses above 100 mg/day are not recommended\nElderly patients with dementia-related psychosis treated with antipsychotics are at an increased risk of death compared to placebo"
+  },
+  {
+    "drug": "Cyamemazine",
+    "field_key": "overdose",
+    "value": "Do not use epinephrine in event of overdose as interaction with some pressor agents may lower blood pressure",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "601",
+    "snippet": "Do not use epinephrine in event of overdose as interaction with some pressor agents may lower blood pressure"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "overdose",
+    "value": "Agitation, confusion, sedation, drug-induced parkinsonism, respiratory collapse, circulatory collapse",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "914",
+    "snippet": "Agitation, confusion, sedation, drug-induced parkinsonism, respiratory collapse, circulatory collapse"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "interactions",
+    "value": "May decrease the effects of levodopa, dopamine agonists\nMay increase the effects of antihypertensive drugs except for guanethidine, whose antihypertensive actions flupenthixol may antagonize\nCNS effects may be increased if used with other CNS depressants\nCombined use with epinephrine may lower blood pressure\nRitonavir may increase plasma levels of flupenthixol\nMay increase carbamazepine plasma levels\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "915",
+    "snippet": "May decrease the effects of levodopa, dopamine agonists\nMay increase the effects of antihypertensive drugs except for guanethidine, whose antihypertensive actions flupenthixol may antagonize\nCNS effects may be increased if used with other CNS depressants\nCombined use with epinephrine may lower blood pressure\nRitonavir may increase plasma levels of flupenthixol\nMay increase carbamazepine plasma levels\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nOral: recommended to take half or less of usual adult dose\nIntramuscular: recommended dose schedule generally 10–20 mg every 15 days\nHepatic Impairment\nUse with caution\nOral: recommended to take half or less of usual adult dose\nCardiac Impairment\nUse with caution\nOral: recommended to take half or less of usual adult dose",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "917",
+    "snippet": "Renal Impairment\nOral: recommended to take half or less of usual adult dose\nIntramuscular: recommended dose schedule generally 10–20 mg every 15 days\nHepatic Impairment\nUse with caution\nOral: recommended to take half or less of usual adult dose\nCardiac Impairment\nUse with caution\nOral: recommended to take half or less of usual adult dose"
+  },
+  {
+    "drug": "Perospirone",
+    "field_key": "contraindications",
+    "value": "If there is a proven allergy to perospirone",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1742",
+    "snippet": "If there is a proven allergy to perospirone"
+  },
+  {
+    "drug": "Pipothiazine",
+    "field_key": "monitoring",
+    "value": "Patients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1827",
+    "snippet": "Patients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)"
+  },
+  {
+    "drug": "Pipothiazine",
+    "field_key": "interactions",
+    "value": "Use with TCAs may increase risk of cardiac symptoms\nCNS effects may be increased if used with other CNS depressants\nMay increase the effects of antihypertensive agents\nMay decrease the effects of amphetamines, levodopa, dopamine agonists, clonidine, guanethidine, adrenaline\nEffects may be reduced by anticholinergic agents\nAntacids, antiparkinson drugs, and lithium may reduce pipothiazine absorption\nCombined use with epinephrine may lower blood pressure\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1832",
+    "snippet": "Use with TCAs may increase risk of cardiac symptoms\nCNS effects may be increased if used with other CNS depressants\nMay increase the effects of antihypertensive agents\nMay decrease the effects of amphetamines, levodopa, dopamine agonists, clonidine, guanethidine, adrenaline\nEffects may be reduced by anticholinergic agents\nAntacids, antiparkinson drugs, and lithium may reduce pipothiazine absorption\nCombined use with epinephrine may lower blood pressure\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome"
+  },
+  {
+    "drug": "Pipothiazine",
+    "field_key": "contraindications",
+    "value": "If patient is comatose\nIf there is cerebral atherosclerosis\nIf patient has phaeochromocytoma\nIf patient has renal or liver failure, blood dyscrasias\nIf patient has severe cardiac impairment\nIf patient has subcortical brain damage\nIf there is a proven allergy to pipothiazine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1833",
+    "snippet": "If patient is comatose\nIf there is cerebral atherosclerosis\nIf patient has phaeochromocytoma\nIf patient has renal or liver failure, blood dyscrasias\nIf patient has severe cardiac impairment\nIf patient has subcortical brain damage\nIf there is a proven allergy to pipothiazine"
+  },
+  {
+    "drug": "Pipothiazine",
+    "field_key": "special_populations",
+    "value": "Children and Adolescents\nNot recommended for use in children\nPregnancy\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during the third trimester; symptoms may include agitation, abnormally increased or decreased muscle tone, tremor, sleepiness, severe difficulty breathing, and difficulty feeding\nReports of drug-induced parkinsonism, jaundice, hyperreflexia, hyporeflexia in infants whose mothers took a phenothiazine during pregnancy\nNot recommended unless absolutely necessary\nPsychotic symptoms may worsen during pregnancy and some form of treatment may be necessary\nAtypical antipsychotics may be preferable to conventional antipsychotics or anticonvulsant mood stabilizers if treatment is required during pregnancy",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1835",
+    "snippet": "Children and Adolescents\nNot recommended for use in children\nPregnancy\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during the third trimester; symptoms may include agitation, abnormally increased or decreased muscle tone, tremor, sleepiness, severe difficulty breathing, and difficulty feeding\nReports of drug-induced parkinsonism, jaundice, hyperreflexia, hyporeflexia in infants whose mothers took a phenothiazine during pregnancy\nNot recommended unless absolutely necessary\nPsychotic symptoms may worsen during pregnancy and"
+  },
+  {
+    "drug": "Pipothiazine",
+    "field_key": "overdose",
+    "value": "Do not use epinephrine in event of overdose as interaction with some pressor agents may lower blood pressure",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1833",
+    "snippet": "Do not use epinephrine in event of overdose as interaction with some pressor agents may lower blood pressure"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "overdose",
+    "value": "Fatalities have been reported; sedation, slurred speech, tachycardia, hypotension, transient QTc prolongation; torsade de pointes",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2057",
+    "snippet": "Fatalities have been reported; sedation, slurred speech, tachycardia, hypotension, transient QTc prolongation; torsade de pointes"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "interactions",
+    "value": "May increase effects of antihypertensive agents\n\nMay antagonize levodopa, dopamine agonists\n\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\n\nInhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine, quinidine) may significantly increase plasma levels of sertindole and require a dosage reduction of sertindole\n\nInhibitors of CYP450 3A (e.g., nefazodone, fluvoxamine, fluoxetine, ketoconazole) can increase plasma levels of sertindole and concomitant use of these agents with sertindole is contraindicated",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2058",
+    "snippet": "May increase effects of antihypertensive agents\n\nMay antagonize levodopa, dopamine agonists\n\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\n\nInhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine, quinidine) may significantly increase plasma levels of sertindole and require a dosage reduction of sertindole\n\nInhibitors of CYP450 3A (e.g., nefazodone, fluvoxamine, fluoxetine, ketoconazole) can increase plasma levels of sertindole and concomitant use of these agents with sertindole is contraindicated"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "contraindications",
+    "value": "If patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\n\nIf there is a personal or family history of QTc prolongation\n\nIf there is a history of significant cardiovascular illness, including congestive heart failure, cardiac hypertrophy, arrhythmia, bradycardia, or congential prolonged QT syndrome\n\nIf patient has hypokalemia, hypomagnesemia, or QTc greater than 450 msec (males) or 470 msec (females)\n\nIf patient is taking a CYP450 3A inhibitor\n\nIf patient has severe hepatic impairment\n\nIf patient has galactose intolerance, Lapp lactase deficiency, or glucose-galactose malabsorption\n\nIf there is a proven allergy to sertindole",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2060",
+    "snippet": "If patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide, thioridazine, selected antiarrhythmics, moxifloxacin, sparfloxacin)\n\nIf there is a personal or family history of QTc prolongation\n\nIf there is a history of significant cardiovascular illness, including congestive heart failure, cardiac hypertrophy, arrhythmia, bradycardia, or congential prolonged QT syndrome\n\nIf patient has hypokalemia, hypomagnesemia, or QTc greater than 450 msec (males) or 470 msec (females)\n\nIf patient is taking a CYP450 3A inhibitor\n\nIf patient has severe hepatic impairment\n\nIf pa"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "monitoring",
+    "value": "Haloperidol, pimozide, sertindole – ECG mandatory; ziprasidone – ECG mandatory in some situations",
+    "source_id": "maudsley_2021",
+    "page_ref": "60",
+    "snippet": "Haloperidol, pimozide, sertindole – ECG mandatory; ziprasidone – ECG mandatory in some situations"
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "overdose",
+    "value": "Can be fatal, especially in mixed overdoses; seizures, coma",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2541",
+    "snippet": "Can be fatal, especially in mixed overdoses; seizures, coma"
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "interactions",
+    "value": "Combined use with phenothiazines may increase risk of seizures\n\nCan decrease the effects of levodopa, dopamine agonists\n\nEpinephrine may lower blood pressure\n\nMay interact with hypotensive agents due to alpha 1 adrenergic blockade\n\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\n\nPlasma concentrations increased by diazepam, fluoxetine\n\nZotepine may increase plasma levels of phenytoin\n\nMay increase risk of bleeding if used with anticoagulants\n\nTheoretically, dose may need to be raised if given in conjunction with CYP450 1A2 inducers (e.g., cigarette smoke)\n\nTheoretically, dose may need to be lowered if given in conjunction with CYP450 1A2 inhibitors (e.g., fluvoxamine) in order to prevent dangers of dose-dependent QTc prolongation\n\nTheoretically, dose may need to be lowered if given in conjunction with CYP450 3A4 inhibitors (e.g., fluvoxamine, nefazodone, fluoxetine) in order to prevent dangers of dose-dependent QTc prolongation",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2542",
+    "snippet": "Combined use with phenothiazines may increase risk of seizures\n\nCan decrease the effects of levodopa, dopamine agonists\n\nEpinephrine may lower blood pressure\n\nMay interact with hypotensive agents due to alpha 1 adrenergic blockade\n\nMay enhance QTc prolongation of other drugs capable of prolonging QTc interval\n\nPlasma concentrations increased by diazepam, fluoxetine\n\nZotepine may increase plasma levels of phenytoin\n\nMay increase risk of bleeding if used with anticoagulants\n\nTheoretically, dose may need to be raised if given in conjunction with CYP450 1A2 inducers (e.g., cigarette smoke)\n\nTheore"
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "contraindications",
+    "value": "If patient has epilepsy or family history of epilepsy\n\nIf patient has gout or history of nephrolithiasis\n\nIf patient is taking other CNS depressants\n\nIf patient is taking high doses of other antipsychotics\n\nIf patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide; thioridazine; selected antiarrhythmics such as quinidine, disopyramide, amiodarone, and sotalol; selected antibiotics such as moxifloxacin and sparfloxacin)\n\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\n\nIf patient is pregnant or breast feeding\n\nIf there is a proven allergy to zotepine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2544",
+    "snippet": "If patient has epilepsy or family history of epilepsy\n\nIf patient has gout or history of nephrolithiasis\n\nIf patient is taking other CNS depressants\n\nIf patient is taking high doses of other antipsychotics\n\nIf patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide; thioridazine; selected antiarrhythmics such as quinidine, disopyramide, amiodarone, and sotalol; selected antibiotics such as moxifloxacin and sparfloxacin)\n\nIf there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\n\nIf patient "
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "special_populations",
+    "value": "Has established dose-related pro-convulsive effect",
+    "source_id": "maudsley_2021",
+    "page_ref": "811",
+    "snippet": "Has established dose-related pro-convulsive effect"
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "monitoring",
+    "value": "(CBC) monitored frequently during the first few months and zuclopenthixol should be discontinued at the first sign of decline of WBC in the absence of other causative factors\n\nPatients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2553",
+    "snippet": "(CBC) monitored frequently during the first few months and zuclopenthixol should be discontinued at the first sign of decline of WBC in the absence of other causative factors\n\nPatients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)"
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "overdose",
+    "value": "Sedation, convulsions, drug-induced parkinsonism, coma, hypotension, shock, hypo/hyperthermia",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2558",
+    "snippet": "Sedation, convulsions, drug-induced parkinsonism, coma, hypotension, shock, hypo/hyperthermia"
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "interactions",
+    "value": "Theoretically, concomitant use with CYP450 2D6 inhibitors (such as paroxetine and fluoxetine) or with CYP450 3A4 inhibitors (such as fluoxetine and ketoconazole) could raise zuclopenthixol plasma levels and require dosage reduction\n\nTheoretically, concomitant use with CYP450 3A4 inducers (such as carbamazepine) could lower zuclopenthixol plasma levels and require dosage increase\n\nCNS effects may be increased if used with other CNS depressants\n\nIf used with anticholinergic agents, may potentiate their effects\n\nCombined use with epinephrine may lower blood pressure\n\nZuclopenthixol may block the antihypertensive effects of drugs such as guanethidine, but may enhance the actions of other antihypertensive drugs\n\nUsing zuclopenthixol with metoclopramide or piperazine may increase the risk of drug-induced parkinsonism\n\nZuclopenthixol may antagonize the effects of levodopa and dopamine agonists\n\nSome patients taking a neuroleptic and lithium have developed an encephalopathic syndrome similar to neuroleptic malignant syndrome",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2560",
+    "snippet": "Theoretically, concomitant use with CYP450 2D6 inhibitors (such as paroxetine and fluoxetine) or with CYP450 3A4 inhibitors (such as fluoxetine and ketoconazole) could raise zuclopenthixol plasma levels and require dosage reduction\n\nTheoretically, concomitant use with CYP450 3A4 inducers (such as carbamazepine) could lower zuclopenthixol plasma levels and require dosage increase\n\nCNS effects may be increased if used with other CNS depressants\n\nIf used with anticholinergic agents, may potentiate their effects\n\nCombined use with epinephrine may lower blood pressure\n\nZuclopenthixol may block the "
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "contraindications",
+    "value": "If patient is taking a large concomitant dose of a sedative hypnotic\n\nIf patient is taking guanethidine or a similar acting compound\n\nIf patient has CNS depression, is comatose, or has subcortical brain damage\n\nIf patient has acute alcohol, barbiturate, or opiate intoxication\n\nIf patient has angle-closure glaucoma\n\nIf patient has pheochromocytoma, circulatory collapse, or blood dyscrasias\n\nIn case of pregnancy\n\nIf there is a proven allergy to zuclopenthixol",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2562",
+    "snippet": "If patient is taking a large concomitant dose of a sedative hypnotic\n\nIf patient is taking guanethidine or a similar acting compound\n\nIf patient has CNS depression, is comatose, or has subcortical brain damage\n\nIf patient has acute alcohol, barbiturate, or opiate intoxication\n\nIf patient has angle-closure glaucoma\n\nIf patient has pheochromocytoma, circulatory collapse, or blood dyscrasias\n\nIn case of pregnancy\n\nIf there is a proven allergy to zuclopenthixol"
+  },
+  {
+    "drug": "Flunitrazepam",
+    "field_key": "overdose",
+    "value": "Sedation, slurred speech, poor coordination, confusion, coma, respiratory depression",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "875",
+    "snippet": "Sedation, slurred speech, poor coordination, confusion, coma, respiratory depression"
+  },
+  {
+    "drug": "Flunitrazepam",
+    "field_key": "interactions",
+    "value": "Increased depressive effects when taken with other CNS depressants (see Warnings below)\n\nCisapride may hasten the absorption of flunitrazepam and thus cause a temporary increase in the sedative effects of flunitrazepam",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "877",
+    "snippet": "Increased depressive effects when taken with other CNS depressants (see Warnings below)\n\nCisapride may hasten the absorption of flunitrazepam and thus cause a temporary increase in the sedative effects of flunitrazepam"
+  },
+  {
+    "drug": "Flunitrazepam",
+    "field_key": "contraindications",
+    "value": "If patient is pregnant\n\nIf patient has severe chronic hypercapnia, myasthenia gravis, severe respiratory insufficiency, sleep apnea, or severe hepatic insufficiency\n\nIn children\n\nIf patient has angle-closure glaucoma\n\nIf there is a proven allergy to flunitrazepam or any benzodiazepine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "878",
+    "snippet": "If patient is pregnant\n\nIf patient has severe chronic hypercapnia, myasthenia gravis, severe respiratory insufficiency, sleep apnea, or severe hepatic insufficiency\n\nIn children\n\nIf patient has angle-closure glaucoma\n\nIf there is a proven allergy to flunitrazepam or any benzodiazepine"
+  },
+  {
+    "drug": "Loflazepate",
+    "field_key": "interactions",
+    "value": "Increased depressive effects when taken with other CNS depressants (see Warnings below)\n\nCimetidine raises loflazepate plasma levels\n\nRapid dose reduction or discontinuation of loflazepate during concomitant use with tetracyclic antidepressants such as maprotiline may result in convulsive seizures, possibly due to the loss of anticonvulsant actions that suppress the proconvulsant actions of tetracyclic antidepressants",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1266",
+    "snippet": "Increased depressive effects when taken with other CNS depressants (see Warnings below)\n\nCimetidine raises loflazepate plasma levels\n\nRapid dose reduction or discontinuation of loflazepate during concomitant use with tetracyclic antidepressants such as maprotiline may result in convulsive seizures, possibly due to the loss of anticonvulsant actions that suppress the proconvulsant actions of tetracyclic antidepressants"
+  },
+  {
+    "drug": "Loflazepate",
+    "field_key": "contraindications",
+    "value": "If patient has angle-closure glaucoma\n\nIf patient has myasthenia gravis\n\nIf there is a proven allergy to loflazepate or any benzodiazepine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1267",
+    "snippet": "If patient has angle-closure glaucoma\n\nIf patient has myasthenia gravis\n\nIf there is a proven allergy to loflazepate or any benzodiazepine"
+  },
+  {
+    "drug": "Brexanolone",
+    "field_key": "interactions",
+    "value": "Increased depressive effects when taken with other CNS depressants",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "306",
+    "snippet": "Increased depressive effects when taken with other CNS depressants"
+  },
+  {
+    "drug": "Brexanolone",
+    "field_key": "contraindications",
+    "value": "If there is a proven allergy to brexanolone",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "306",
+    "snippet": "If there is a proven allergy to brexanolone"
+  },
+  {
+    "drug": "Brexanolone",
+    "field_key": "special_populations",
+    "value": "In a study of 12 healthy adult lactating women treated with intravenous brexanolone according to the recommended 60-hour regimen, concentrations of brexanolone in breast milk were low (<10 ng/mL) in >95% of women; the calculated maximum relative infant dose during infusion was 1–2%",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "309",
+    "snippet": "In a study of 12 healthy adult lactating women treated with intravenous brexanolone according to the recommended 60-hour regimen, concentrations of brexanolone in breast milk were low (<10 ng/mL) in >95% of women; the calculated maximum relative infant dose during infusion was 1–2%"
+  },
+  {
+    "drug": "Brexanolone",
+    "field_key": "special_populations",
+    "value": "Less than 1% excreted unchanged in urine. Manufacturer states no dosage adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients with GFR <15mL/min because of the potential accumulation of the injection solubilising agent, betadex sulfobutyl ether sodium.",
+    "source_id": "maudsley_2021",
+    "page_ref": "761",
+    "snippet": "Less than 1% excreted unchanged in urine. Manufacturer states no dosage adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients with GFR <15mL/min because of the potential accumulation of the injection solubilising agent, betadex sulfobutyl ether sodium."
+  },
+  {
+    "drug": "Caprylidene",
+    "field_key": "monitoring",
+    "value": "None for healthy individuals\n\nTriglyceride levels should be monitored periodically for individuals who meet multiple criteria for metabolic syndrome (i.e., elevated waist circumference, elevated triglycerides, high blood pressure, reduced fasting HDL, and/or elevated fasting glucose)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "384",
+    "snippet": "None for healthy individuals\n\nTriglyceride levels should be monitored periodically for individuals who meet multiple criteria for metabolic syndrome (i.e., elevated waist circumference, elevated triglycerides, high blood pressure, reduced fasting HDL, and/or elevated fasting glucose)"
+  },
+  {
+    "drug": "Caprylidene",
+    "field_key": "contraindications",
+    "value": "If there is a proven allergy to caprylidene, milk, or soy",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "387",
+    "snippet": "If there is a proven allergy to caprylidene, milk, or soy"
+  },
+  {
+    "drug": "Caprylidene",
+    "field_key": "overdose",
+    "value": "No fatalities have been reported; diarrhea, sometimes severe",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "386",
+    "snippet": "No fatalities have been reported; diarrhea, sometimes severe"
+  },
+  {
+    "drug": "Diphenhydramine",
+    "field_key": "interactions",
+    "value": "May potentiate the effects of other CNS depressants\n\nIf anticholinergic agents are used with diphenhydramine, the anticholinergic effects may be enhanced",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "694",
+    "snippet": "May potentiate the effects of other CNS depressants\n\nIf anticholinergic agents are used with diphenhydramine, the anticholinergic effects may be enhanced"
+  },
+  {
+    "drug": "Diphenhydramine",
+    "field_key": "contraindications",
+    "value": "If patient is breast feeding\n\nIn neonates or premature infants\n\nIn patients with glaucoma, particularly angle-closure glaucoma\n\nIn patients with pyloric or duodenal obstruction, stenosing peptic ulcers, prostate hypertrophy, or bladder neck obstructions\n\nIf patient is taking an MAOI\n\nIf there is a proven allergy to diphenhydramine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "695",
+    "snippet": "If patient is breast feeding\n\nIn neonates or premature infants\n\nIn patients with glaucoma, particularly angle-closure glaucoma\n\nIn patients with pyloric or duodenal obstruction, stenosing peptic ulcers, prostate hypertrophy, or bladder neck obstructions\n\nIf patient is taking an MAOI\n\nIf there is a proven allergy to diphenhydramine"
+  },
+  {
+    "drug": "Diphenhydramine",
+    "field_key": "overdose",
+    "value": "CNS depression, CNS stimulation (more likely in pediatric patients), dry mouth, dilated pupils, flushing, gastrointestinal symptoms",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "693",
+    "snippet": "CNS depression, CNS stimulation (more likely in pediatric patients), dry mouth, dilated pupils, flushing, gastrointestinal symptoms"
+  },
+  {
+    "drug": "Methylphenidate (D,L)",
+    "field_key": "monitoring",
+    "value": "Discontinue if no benefits seen in 1 month\n\nMonitor for insomnia, mood and appetite change and the development of tics,38 although some evidence suggests tics are not associated with psychostimulants39\n\nFor methylphenidate, dexamfetamine and lisdexamfetamine:\n■■ Blood pressure37\n■■ Pulse\n■■ Height\n■■ Weight",
+    "source_id": "maudsley_2021",
+    "page_ref": "594",
+    "snippet": "Discontinue if no benefits seen in 1 month\n\nMonitor for insomnia, mood and appetite change and the development of tics,38 although some evidence suggests tics are not associated with psychostimulants39\n\nFor methylphenidate, dexamfetamine and lisdexamfetamine:\n■■ Blood pressure37\n■■ Pulse\n■■ Height\n■■ Weight"
+  },
+  {
+    "drug": "Naltrexone/Bupropion",
+    "field_key": "monitoring",
+    "value": "Measurement of blood glucose levels before and during treatment is recommended for patients with type 2 diabetes\n\nMeasurement of blood pressure and heart rate prior to starting naltrexone/bupropion and during treatment is recommended, particularly in patients with cardiac or cerebrovascular disease",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1567",
+    "snippet": "Measurement of blood glucose levels before and during treatment is recommended for patients with type 2 diabetes\n\nMeasurement of blood pressure and heart rate prior to starting naltrexone/bupropion and during treatment is recommended, particularly in patients with cardiac or cerebrovascular disease"
+  },
+  {
+    "drug": "Naltrexone/Bupropion",
+    "field_key": "overdose",
+    "value": "Naltrexone: nausea, abdominal pain, sedation, dizziness\n\nBupropion: rarely lethal; seizures, cardiac disturbances, hallucinations, loss of consciousness",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1570",
+    "snippet": "Naltrexone: nausea, abdominal pain, sedation, dizziness\n\nBupropion: rarely lethal; seizures, cardiac disturbances, hallucinations, loss of consciousness"
+  },
+  {
+    "drug": "Phentermine/topiramate",
+    "field_key": "monitoring",
+    "value": "Women of childbearing potential should have a negative pregnancy test before starting phentermine/topiramate and monthly during treatment\n\nRegular measurement of resting heart rate, especially for patients with cardiac or cerebrovascular disease or when initiating or increasing the dose of phentermine/topiramate\n\nObtain a blood chemistry profile that includes bicarbonate, creatinine, potassium, and glucose at baseline and periodically during treatment\n\nMeasurement of blood pressure prior to starting phentermine/topiramate and during phentermine/topiramate treatment is recommended in patients being treated for hypertension",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1785",
+    "snippet": "Women of childbearing potential should have a negative pregnancy test before starting phentermine/topiramate and monthly during treatment\n\nRegular measurement of resting heart rate, especially for patients with cardiac or cerebrovascular disease or when initiating or increasing the dose of phentermine/topiramate\n\nObtain a blood chemistry profile that includes bicarbonate, creatinine, potassium, and glucose at baseline and periodically during treatment\n\nMeasurement of blood pressure prior to starting phentermine/topiramate and during phentermine/topiramate treatment is recommended in patients b"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "monitoring",
+    "value": "Low effect\nAripiprazole\nAsenapine\nClozapine\nFlupentixol\nFluphenazine\nPerphenazine\nProchlorperazine\nOlanzapine\nPaliperidone\nRisperidone\nSulpiride",
+    "source_id": "maudsley_2021",
+    "page_ref": "164",
+    "snippet": "Low effect\nAripiprazole\nAsenapine\nClozapine\nFlupentixol\nFluphenazine\nPerphenazine\nProchlorperazine\nOlanzapine\nPaliperidone\nRisperidone\nSulpiride"
+  },
+  {
+    "drug": "Phentermine/topiramate",
+    "field_key": "contraindications",
+    "value": "If patient is pregnant",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1791",
+    "snippet": "If patient is pregnant"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "interactions",
+    "value": "Generally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing dothiepin, but see Pearls\n\nBecause TCAs can prolong QTc interval, use with caution in patients who have bradycardia or who are taking drugs that can induce bradycardia (e.g., beta blockers, calcium channel blockers, clonidine, digitalis)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "734",
+    "snippet": "Generally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing dothiepin, but see Pearls\n\nBecause TCAs can prolong QTc interval, use with caution in patients who have bradycardia or who are taking drugs that can induce bradycardia (e.g., beta blockers, calcium channel blockers, clonidine, digitalis)"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "interactions",
+    "value": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nDosulepin\n\nCYP2D6 and possibly other pathways",
+    "source_id": "maudsley_2021",
+    "page_ref": "400",
+    "snippet": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nDosulepin\n\nCYP2D6 and possibly other pathways"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "monitoring",
+    "value": "Table 11.2 Target ranges for other psychotropics\n\nAntidepressants\n\nTarget range (µg/L)\n\nDosulepin\n\n45–100",
+    "source_id": "maudsley_2021",
+    "page_ref": "862",
+    "snippet": "Table 11.2 Target ranges for other psychotropics\n\nAntidepressants\n\nTarget range (µg/L)\n\nDosulepin\n\n45–100"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "special_populations",
+    "value": "Table 8.2 (Continued)\n\nTricyclics\n\nAll are hepatically metabolised, highly protein bound and will accumulate. They vary in their propensity to cause sedation and constipation. All are associated with raised LFTs and rare cases of hepatitis. Sedative TCAs such as trimipramine, imipramine, dothiepin (dosulepin) and amitriptyline are best avoided.\n\nTable 8.9 (Continued)\n\nDosulepin\n(dothiepin)\n\n56% of mainly active metabolites renally excreted. They have a long half-life and may accumulate, resulting in excessive sedation. Dosing: GFR 20–50mL/min, dose as for normal renal function; GFR <20mL/min, start with a small dose and titrate to response. Monitor patient for urinary retention, confusion, sedation and postural hypotension.",
+    "source_id": "maudsley_2021",
+    "page_ref": "749",
+    "snippet": "Table 8.2 (Continued)\n\nTricyclics\n\nAll are hepatically metabolised, highly protein bound and will accumulate. They vary in their propensity to cause sedation and constipation. All are associated with raised LFTs and rare cases of hepatitis. Sedative TCAs such as trimipramine, imipramine, dothiepin (dosulepin) and amitriptyline are best avoided.\n\nTable 8.9 (Continued)\n\nDosulepin\n(dothiepin)\n\n56% of mainly active metabolites renally excreted. They have a long half-life and may accumulate, resulting in excessive sedation. Dosing: GFR 20–50mL/min, dose as for normal renal function; GFR <20mL/min, "
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "interactions",
+    "value": "May alter effects of antihypertensive drugs; may inhibit hypotensive effects of clonidine\nUse with sympathomimetic agents may increase sympathetic activity\nMethylphenidate may inhibit metabolism of TCAs\n\nGenerally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing lofepramine, but see Pearls",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1238",
+    "snippet": "May alter effects of antihypertensive drugs; may inhibit hypotensive effects of clonidine\nUse with sympathomimetic agents may increase sympathetic activity\nMethylphenidate may inhibit metabolism of TCAs\n\nGenerally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing lofepramine, but see Pearls"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended\n\nElderly\nBaseline ECG is recommended for patients over age 50",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1240",
+    "snippet": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nBaseline ECG is recommended\n\nElderly\nBaseline ECG is recommended for patients over age 50"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "special_populations",
+    "value": "Bupropion, citalopram, escitalopram, moclobemide, lofepramine and venlafaxine should be used with caution or avoided in those at risk of serious arrhythmia (those with heart failure, left ventricular hypertrophy; previous arrhythmia or MI). An ECG should be performed at baseline and 1 week after every increase in dose if any of these drugs are used in at-risk patients.\n\nTable 8.9 (Continued)\n\nLofepramine\n\nThere is little information about the use of lofepramine in renal impairment. Less than 5% is excreted unchanged in the urine. Dosing: GFR 10–50mL/min dose as in normal renal function; GFR <10mL/min start with a small dose and titrate slowly. Manufacturer contraindicates in severe renal impairment. As with imipramine, desipramine is the major metabolite.",
+    "source_id": "maudsley_2021",
+    "page_ref": "411",
+    "snippet": "Bupropion, citalopram, escitalopram, moclobemide, lofepramine and venlafaxine should be used with caution or avoided in those at risk of serious arrhythmia (those with heart failure, left ventricular hypertrophy; previous arrhythmia or MI). An ECG should be performed at baseline and 1 week after every increase in dose if any of these drugs are used in at-risk patients.\n\nTable 8.9 (Continued)\n\nLofepramine\n\nThere is little information about the use of lofepramine in renal impairment. Less than 5% is excreted unchanged in the urine. Dosing: GFR 10–50mL/min dose as in normal renal function; GFR <1"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "overdose",
+    "value": "Lofepramine, for reasons unknown, seems to lack the overdose arrhythmogenicity of other TCAs, despite its major metabolite, desipramine, being a potent potassium channel blocker.\n\nTable 13.1 (Continued)\n\nLofepramine\n\nLow\n\nUnclear. Fatality unlikely if lofepramine taken alone.\n\nSedation, coma, tachycardia, hypotension.",
+    "source_id": "maudsley_2021",
+    "page_ref": "410",
+    "snippet": "Lofepramine, for reasons unknown, seems to lack the overdose arrhythmogenicity of other TCAs, despite its major metabolite, desipramine, being a potent potassium channel blocker.\n\nTable 13.1 (Continued)\n\nLofepramine\n\nLow\n\nUnclear. Fatality unlikely if lofepramine taken alone.\n\nSedation, coma, tachycardia, hypotension."
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "interactions",
+    "value": "May alter effects of antihypertensive drugs; may inhibit hypotensive effects of clonidine\nUse with sympathomimetic agents may increase sympathetic activity\nMethylphenidate may inhibit metabolism of TCAs/tetracyclics\n\nGenerally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing maprotiline, but see Pearls",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1365",
+    "snippet": "May alter effects of antihypertensive drugs; may inhibit hypotensive effects of clonidine\nUse with sympathomimetic agents may increase sympathetic activity\nMethylphenidate may inhibit metabolism of TCAs/tetracyclics\n\nGenerally, do not use with MAOIs, including 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing maprotiline, but see Pearls"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "monitoring",
+    "value": "Baseline ECG is recommended for patients over age 50\nMay need to monitor blood count during treatment for those with blood dyscrasias, leukopenia, or granylocytopenia\n\nMonitor patients for activation of suicidal ideation, especially children and adolescents",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1444",
+    "snippet": "Baseline ECG is recommended for patients over age 50\nMay need to monitor blood count during treatment for those with blood dyscrasias, leukopenia, or granylocytopenia\n\nMonitor patients for activation of suicidal ideation, especially children and adolescents"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "interactions",
+    "value": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nMianserin\n\nCYP2D6",
+    "source_id": "maudsley_2021",
+    "page_ref": "400",
+    "snippet": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nMianserin\n\nCYP2D6"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "monitoring",
+    "value": "Risk of blood dyscrasia with mianserin\n\nTable 11.2 Target ranges for other psychotropics\n\nAntidepressants\n\nTarget range (µg/L)\n\nMianserin\n\n15–70",
+    "source_id": "maudsley_2021",
+    "page_ref": "340",
+    "snippet": "Risk of blood dyscrasia with mianserin\n\nTable 11.2 Target ranges for other psychotropics\n\nAntidepressants\n\nTarget range (µg/L)\n\nMianserin\n\n15–70"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "interactions",
+    "value": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nReboxetine\n\nCYP3A4\n\nCYP3A4\n\nINHIBITORS\n\nFluoxetine\nFluvoxamine\nParoxetine\nPerphenazine\nReboxetine*",
+    "source_id": "maudsley_2021",
+    "page_ref": "400",
+    "snippet": "Table 3.14 (Continued)\n\nAntidepressant\n\nSubstrate for\n\nInhibits\n\nReboxetine\n\nCYP3A4\n\nCYP3A4\n\nINHIBITORS\n\nFluoxetine\nFluvoxamine\nParoxetine\nPerphenazine\nReboxetine*"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "monitoring",
+    "value": "Table 11.2 (Continued)\n\nAntidepressants\n\nTarget range (µg/L)\n\nReboxetine\n\n60–350",
+    "source_id": "maudsley_2021",
+    "page_ref": "863",
+    "snippet": "Table 11.2 (Continued)\n\nAntidepressants\n\nTarget range (µg/L)\n\nReboxetine\n\n60–350"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "overdose",
+    "value": "Reboxetine\n\nLow\n\nNot known.\nFatality unlikely in overdose of reboxetine alone.\n\nSweating, tachycardia, changes in blood pressure.",
+    "source_id": "maudsley_2021",
+    "page_ref": "897",
+    "snippet": "Reboxetine\n\nLow\n\nNot known.\nFatality unlikely in overdose of reboxetine alone.\n\nSweating, tachycardia, changes in blood pressure."
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "special_populations",
+    "value": "Table 10.5 Psychotropics in epilepsy\n\nProbably low risk – use with caution (limited evidence)\n\nReboxetine\n\nSmall open label study suggests no problems in PWE",
+    "source_id": "maudsley_2021",
+    "page_ref": "810",
+    "snippet": "Table 10.5 Psychotropics in epilepsy\n\nProbably low risk – use with caution (limited evidence)\n\nReboxetine\n\nSmall open label study suggests no problems in PWE"
+  },
+  {
+    "drug": "Tianeptine",
+    "field_key": "interactions",
+    "value": "Activation and agitation, especially following switching or adding antidepressants, may represent the induction of a bipolar state, especially a mixed dysphoric bipolar II condition sometimes associated with suicidal ideation, and require the addition of lithium, a mood stabilizer or an atypical antipsychotic, and/or discontinuation of tianeptine\nOther drug interactions not well studied\n\nGenerally, use only with extreme caution with MAOIs; do not use until 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing tianeptine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2224",
+    "snippet": "Activation and agitation, especially following switching or adding antidepressants, may represent the induction of a bipolar state, especially a mixed dysphoric bipolar II condition sometimes associated with suicidal ideation, and require the addition of lithium, a mood stabilizer or an atypical antipsychotic, and/or discontinuation of tianeptine\nOther drug interactions not well studied\n\nGenerally, use only with extreme caution with MAOIs; do not use until 14 days after MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing tianeptine"
+  },
+  {
+    "drug": "Tianeptine",
+    "field_key": "monitoring",
+    "value": "Monitor patients for activation of suicidal ideation, especially children and adolescents\n\nMonitor patients face-to-face regularly, particularly during the first several weeks of treatment",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2225",
+    "snippet": "Monitor patients for activation of suicidal ideation, especially children and adolescents\n\nMonitor patients face-to-face regularly, particularly during the first several weeks of treatment"
+  },
+  {
+    "drug": "Blonanserin",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nNot studied\nHepatic Impairment\nUse with caution; may need to lower dose\nCardiac Impairment\nUse in patients with cardiac impairment has not been studied, so use with caution\nElderly\nSome patients may tolerate lower doses better\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with atypical antipsychotics are at an increased risk of death compared to placebo and also have an increased risk of cerebrovascular events\nChildren and Adolescents\nSafety and efficacy have not been established\nChildren and adolescents using blonanserin may need to be monitored more often than adults and may tolerate lower doses better\nPregnancy\nControlled studies have not been conducted in pregnant women\nPsychotic symptoms may worsen during pregnancy, and some form of treatment may be necessary\nBreast Feeding\nUnknown if blonanserin is secreted in human breast milk, but all psychotropics are assumed to be secreted in breast milk\nRecommended either to discontinue drug or bottle feed unless the potential benefit to the mother justifies the potential risk to the child",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "284",
+    "snippet": "Renal Impairment\nNot studied\nHepatic Impairment\nUse with caution; may need to lower dose\nCardiac Impairment\nUse in patients with cardiac impairment has not been studied, so use with caution\nElderly\nSome patients may tolerate lower doses better\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with atypical antipsychotics are at an increased risk of death compared to placebo and also"
+  },
+  {
+    "drug": "Cyamemazine",
+    "field_key": "monitoring",
+    "value": "Because cyamemazine may dose-dependently prolong QTc interval, use with caution in patients who have bradycardia or who are taking drugs that can induce bradycardia (e.g., beta blockers, calcium channel blockers, clonidine, digitalis)\nBecause cyamemazine may dose-dependently prolong QTc interval, use with caution in patients who have hyperkalemia and/or hypomagnesemia or who are taking drugs that can induce hypokalemia and/or magnesemia (e.g., diuretics, stimulant laxatives, intravenous amphotericin B, glucocorticoids, tetracosaclides)\nCyamemazine can increase the QTc interval, potentially causing torsade de pointes-type arrhythmia or sudden death",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "601",
+    "snippet": "Because cyamemazine may dose-dependently prolong QTc interval, use with caution in patients who have bradycardia or who are taking drugs that can induce bradycardia (e.g., beta blockers, calcium channel blockers, clonidine, digitalis)\nBecause cyamemazine may dose-dependently prolong QTc interval, use with caution in patients who have hyperkalemia and/or hypomagnesemia or who are taking drugs that can induce hypokalemia and/or magnesemia (e.g., diuretics, stimulant laxatives, intravenous amphotericin B, glucocorticoids, tetracosaclides)\nCyamemazine can increase the QTc interval, potentially cau"
+  },
+  {
+    "drug": "Cyamemazine",
+    "field_key": "contraindications",
+    "value": "If there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf QTc interval greater than 450 msec or if taking an agent capable of prolonging the QTc interval\nIf patient is taking sultopride\nIf patient is in a comatose state or has CNS depression\nIf there is the presence of blood dyscrasias, bone marrow depression, or liver disease\nIf there is subcortical brain damage\nIf patient has sensitivity to or intolerance of gluten (tablets contain gluten)\nIf patient has congenital galactosemy, does not adequately absorb glucose/galactose, or has lactase deficit (tablets contain lactose)\nIf patient is intolerant of fructose, does not adequately absorb glucose/galactose, or has sugar-isomaltase deficit (oral solution only; oral solution contains saccharose)\nIf there is a proven allergy to cyamemazine\nIf there is a known sensitivity to any phenothiazine",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "602",
+    "snippet": "If there is a history of QTc prolongation or cardiac arrhythmia, recent acute myocardial infarction, uncompensated heart failure\nIf QTc interval greater than 450 msec or if taking an agent capable of prolonging the QTc interval\nIf patient is taking sultopride\nIf patient is in a comatose state or has CNS depression\nIf there is the presence of blood dyscrasias, bone marrow depression, or liver disease\nIf there is subcortical brain damage\nIf patient has sensitivity to or intolerance of gluten (tablets contain gluten)\nIf patient has congenital galactosemy, does not adequately absorb glucose/galact"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "contraindications",
+    "value": "If patient is taking a large concomitant dose of a sedative hypnotic\nIf patient has CNS depression\nIf patient is comatose or if there is brain damage\nIf there is blood dyscrasia\nIf patient has pheochromocytoma\nIf patient has liver damage\nIf patient has a severe cardiovascular disorder\nIf patient has renal insufficiency\nIf patient has cerebrovascular insufficiency\nIf there is a proven allergy to flupenthixol",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "916",
+    "snippet": "If patient is taking a large concomitant dose of a sedative hypnotic\nIf patient has CNS depression\nIf patient is comatose or if there is brain damage\nIf there is blood dyscrasia\nIf patient has pheochromocytoma\nIf patient has liver damage\nIf patient has a severe cardiovascular disorder\nIf patient has renal insufficiency\nIf patient has cerebrovascular insufficiency\nIf there is a proven allergy to flupenthixol"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "special_populations",
+    "value": "Flupentixol\nNegligible renal excretion of unchanged flupentixol. Dosing: GFR 10–50mL/min dose as in normal renal function; GFR <10mL/min start with ¼ to ½ of normal dose and titrate slowly. May cause hypotension and sedation in renal impairment and can accumulate. Manufacturer recommends caution in renal failure. Avoid depot preparations in renal impairment.",
+    "source_id": "maudsley_2021",
+    "page_ref": "760",
+    "snippet": "Flupentixol\nNegligible renal excretion of unchanged flupentixol. Dosing: GFR 10–50mL/min dose as in normal renal function; GFR <10mL/min start with ¼ to ½ of normal dose and titrate slowly. May cause hypotension and sedation in renal impairment and can accumulate. Manufacturer recommends caution in renal failure. Avoid depot preparations in renal impairment."
+  },
+  {
+    "drug": "Perospirone",
+    "field_key": "interactions",
+    "value": "Ketaconazole and possibly other CYP450 3A4 inhibitors such as nefazodone, fluvoxamine, and fluoxetine may increase plasma levels of perospirone\nCarbamazepine and possibly other inducers of CYP450 3A4 may decrease plasma levels of perospirone",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1740",
+    "snippet": "Ketaconazole and possibly other CYP450 3A4 inhibitors such as nefazodone, fluvoxamine, and fluoxetine may increase plasma levels of perospirone\nCarbamazepine and possibly other inducers of CYP450 3A4 may decrease plasma levels of perospirone"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nDose adjustment not generally necessary\n\nHepatic Impairment\nFor mild to moderate impairment, use slower titration and lower maintenance dose\nContraindicated in patients with severe hepatic impairment\n\nCardiac Impairment\nDrug should be used with caution because of risk of orthostatic hypotension\nNot recommended for patients with significant cardiovascular illness, including congestive heart failure, cardiac hypertrophy, arrhythmia, bradycardia, or congential prolonged QT syndrome\n\nElderly\nUse cautiously and only after thorough cardiovascular examination\nSome patients may tolerate lower doses better\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with atypical antipsychotics are at an increased risk of death compared to placebo, and also have an increased risk of cerebrovascular events\n\nChildren and Adolescents\nSafety and efficacy have not been established\nChildren and adolescents using sertindole may need to be monitored more often than adults and may tolerate lower doses better\n\nPregnancy\nSome animal studies show adverse effects; no controlled studies in humans\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during the third trimester; symptoms may include agitation, abnormally increased or decreased muscle tone, tremor, sleepiness, severe difficulty breathing, and difficulty feeding\nPsychotic symptoms may worsen during pregnancy and some form of treatment may be necessary\n\nBreast Feeding\nUnknown if sertindole is secreted in human breast milk, but all psychotropics are assumed to be secreted in breast milk\n✽ Recommended either to discontinue drug or bottle feed\nInfants of women who choose to breast feed while on sertindole should be monitored for possible adverse effects",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2060",
+    "snippet": "Renal Impairment\nDose adjustment not generally necessary\n\nHepatic Impairment\nFor mild to moderate impairment, use slower titration and lower maintenance dose\nContraindicated in patients with severe hepatic impairment\n\nCardiac Impairment\nDrug should be used with caution because of risk of orthostatic hypotension\nNot recommended for patients with significant cardiovascular illness, including congestive heart failure, cardiac hypertrophy, arrhythmia, bradycardia, or congential prolonged QT syndrome\n\nElderly\nUse cautiously and only after thorough cardiovascular examination\nSome patients may tolera"
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nRecommended starting dose 25 mg twice a day; recommended maximum dose generally 75 mg twice a day\n\nHepatic Impairment\nRecommended starting dose 25 mg twice a day; recommended maximum dose generally 75 mg twice a day\nMay require weekly monitoring of liver function during the first few months of treatment\n\nCardiac Impairment\nDrug should be used with caution\nZotepine produces a dose-dependent prolongation of QTc interval, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering zotepine\nUse with caution if treating concomitantly with a medication likely to produce prolonged bradycardia, hypokalemia, slowing of intracardiac conduction, or prolongation of the QTc interval\nAvoid zotepine in patients with a known history of QTc prolongation, recent acute myocardial infraction, and uncompensated heart failure\n\nElderly\nRecommended starting dose 25 mg twice a day; recommended maximum dose generally 75 mg twice a day\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with atypical antipsychotics are at an increased risk of death compared to placebo, and also have an increased risk of cerebrovascular events\n\nChildren and Adolescents\nNot recommended for use in children under age 18\n\nPregnancy\nInsufficient data in humans to determine risk\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during the third trimester; symptoms may include agitation, abnormally increased or decreased muscle tone, tremor, sleepiness, severe difficulty breathing, and difficulty feeding\nZotepine is not recommended during pregnancy\n\nBreast Feeding\nZotepine is not recommended during breast feeding\nImmediate postpartum period is a high-risk time for relapse of psychosis, so may consider treatment with another antipsychotic",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2544",
+    "snippet": "Renal Impairment\nRecommended starting dose 25 mg twice a day; recommended maximum dose generally 75 mg twice a day\n\nHepatic Impairment\nRecommended starting dose 25 mg twice a day; recommended maximum dose generally 75 mg twice a day\nMay require weekly monitoring of liver function during the first few months of treatment\n\nCardiac Impairment\nDrug should be used with caution\nZotepine produces a dose-dependent prolongation of QTc interval, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering z"
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\n\nHepatic Impairment\nUse with caution\n\nCardiac Impairment\nUse with caution\n\nElderly\nSome patients may tolerate lower doses better\nMaximum acetate dose 100 mg\nAlthough conventional antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with antipsychotics are at an increased risk of death compared to placebo, and also have an increased risk of cerebrovascular events\n\nChildren and Adolescents\nSafety and efficacy have not been established in children under age 18\nPreliminary open-label data show that oral zuclopenthixol may be effective in reducing aggression in mentally impaired children\n\nPregnancy\nNot recommended for use during pregnancy\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2562",
+    "snippet": "Renal Impairment\nUse with caution\n\nHepatic Impairment\nUse with caution\n\nCardiac Impairment\nUse with caution\n\nElderly\nSome patients may tolerate lower doses better\nMaximum acetate dose 100 mg\nAlthough conventional antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with antipsychotics are at an increased risk of death compared to placebo, and also have an increased risk of cerebrovascular events\n\nChildr"
+  },
+  {
+    "drug": "Flunitrazepam",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nDrug should be used with caution\n\nHepatic Impairment\nDose should be lowered\nShould not be used in patients with severe hepatic insufficiency, as it may precipitate encephalopathy\n\nBreast Feeding\nUnknown if flunitrazepam is secreted in human breast milk, but all psychotropics are assumed to be secreted in breast milk\n✽ Recommended either to discontinue drug or bottle feed\nEffects on infant have been observed and include feeding difficulties, sedation, and weight loss",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "878",
+    "snippet": "Renal Impairment\nDrug should be used with caution\n\nHepatic Impairment\nDose should be lowered\nShould not be used in patients with severe hepatic insufficiency, as it may precipitate encephalopathy\n\nBreast Feeding\nUnknown if flunitrazepam is secreted in human breast milk, but all psychotropics are assumed to be secreted in breast milk\n✽ Recommended either to discontinue drug or bottle feed\nEffects on infant have been observed and include feeding difficulties, sedation, and weight loss"
+  },
+  {
+    "drug": "Loflazepate",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nDrug should be used with caution\n\nHepatic Impairment\nDrug should be used with caution\n\nCardiac Impairment\nBenzodiazepines have been used to treat anxiety associated with acute myocardial infarction\n\nElderly\nDrug should be used with caution\nShould begin with lower starting dose\n\nChildren and Adolescents\nSafety and efficacy have not been established\nBenzodiazepines are often used in children and adolescents, especially short-term and at the lower end of the dosing scale\nLong-term effects of loflazepate in children/adolescents are unknown\nShould generally receive lower doses and be more closely monitored\n\nPregnancy\nPossible increased risk of birth defects when benzodiazepines are taken during pregnancy\nBecause of the potential risks, loflazepate is not generally recommended as treatment for anxiety during pregnancy, especially during first trimester\nDrug should be tapered if discontinued\nInfants whose mothers received a benzodiazepine late in pregnancy may experience withdrawal effects\nNeonatal flaccidity has been reported in infants whose mothers took a benzodiazepine during pregnancy\nSeizures, even mild seizures, may cause harm to the embryo/fetus\n\nBreast Feeding\nSome drug is found in mother’s breast milk\n✽ Recommended either to discontinue drug or bottle feed\nEffects on infant have been observed and include feeding difficulties, sedation, and weight loss",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1267",
+    "snippet": "Renal Impairment\nDrug should be used with caution\n\nHepatic Impairment\nDrug should be used with caution\n\nCardiac Impairment\nBenzodiazepines have been used to treat anxiety associated with acute myocardial infarction\n\nElderly\nDrug should be used with caution\nShould begin with lower starting dose\n\nChildren and Adolescents\nSafety and efficacy have not been established\nBenzodiazepines are often used in children and adolescents, especially short-term and at the lower end of the dosing scale\nLong-term effects of loflazepate in children/adolescents are unknown\nShould generally receive lower doses and "
+  },
+  {
+    "drug": "Caprylidene",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\n\nNot studied\n\nHepatic Impairment\n\nNot studied\n\nCardiac Impairment\n\nNot studied\n\nElderly\n\nDose adjustment not necessary\n\nChildren and Adolescents\n\nSafety and efficacy have not been established\n\nPregnancy\n\nControlled studies have not been conducted in pregnant women\n\nAnimal studies have not shown teratogenic effects\n\nBreast Feeding\n\nUnknown if caprylidene is secreted in human breast milk",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "387",
+    "snippet": "Renal Impairment\n\nNot studied\n\nHepatic Impairment\n\nNot studied\n\nCardiac Impairment\n\nNot studied\n\nElderly\n\nDose adjustment not necessary\n\nChildren and Adolescents\n\nSafety and efficacy have not been established\n\nPregnancy\n\nControlled studies have not been conducted in pregnant women\n\nAnimal studies have not shown teratogenic effects\n\nBreast Feeding\n\nUnknown if caprylidene is secreted in human breast milk"
+  },
+  {
+    "drug": "Diphenhydramine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\n\nNo dose adjustment necessary\n\nHepatic Impairment\n\nNo dose adjustment necessary\n\nCardiac Impairment\n\nNot systematically evaluated in patients with cardiac impairment\n\nElderly\n\nSome patients may tolerate lower doses better\n\nDiphenhydramine injection is preferred for parkinsonism in the elderly who are unable to tolerate more potent agents\n\nChildren and Adolescents\n\nNot recommended for children under age 12\n\nInjection: 5 mg/kg/24 hours or 150 mg/m2 /24 hours; maximum daily dose 300 mg; divide into 4 doses; can be given intravenously at a rate not exceeding 25 mg/min, or deep intramuscularly\n\nContraindicated in neonates and premature infants\n\nPregnancy\n\nEffective June 30, 2015, the US FDA requires changes to the content and format of pregnancy and lactation information in prescription drug labels, including the elimination of the pregnancy letter categories; the Pregnancy and Lactation Labeling Rule (PLLR or final rule) applies only to prescription drugs and will be phased in gradually for drugs approved on or after June 30, 2001\n\nControlled studies have not been conducted in pregnant women\n\nAnimal studies have not shown adverse effects\n\nBreast Feeding\n\nContraindicated",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "695",
+    "snippet": "Renal Impairment\n\nNo dose adjustment necessary\n\nHepatic Impairment\n\nNo dose adjustment necessary\n\nCardiac Impairment\n\nNot systematically evaluated in patients with cardiac impairment\n\nElderly\n\nSome patients may tolerate lower doses better\n\nDiphenhydramine injection is preferred for parkinsonism in the elderly who are unable to tolerate more potent agents\n\nChildren and Adolescents\n\nNot recommended for children under age 12\n\nInjection: 5 mg/kg/24 hours or 150 mg/m2 /24 hours; maximum daily dose 300 mg; divide into 4 doses; can be given intravenously at a rate not exceeding 25 mg/min, or deep int"
+  },
+  {
+    "drug": "Phentermine/topiramate",
+    "field_key": "interactions",
+    "value": "May potentiate hypokalemia in patients taking non-potassiumsparing diuretic agents\n\nWeight loss associated with phentermine/topiramate may increase the risk of hypotension in patients taking antihypertensive medications\n\nCarbamazepine, phenytoin, and valproate may increase the clearance of topiramate, and thus decrease topiramate levels, possibly requiring a higher dose of topiramate\n\nTopiramate may increase the clearance of phenytoin and thus decrease phenytoin levels, possibly requiring a higher dose of phenytoin\n\nTopiramate may increase the clearance of valproate and thus decrease valproate levels, possibly requiring a higher dose of valproate\n\nTopiramate may increase plasma levels of metformin; also, metformin may reduce clearance of topiramate and increase topiramate levels\n\nTopiramate may interact with carbonic anhydrase inhibitors to increase the risk of kidney stones\n\nReports of hyperammonemia with or without encephalopthay in patients taking topiramate combined with valproate, though this is not due to a pharmacokinetic interaction; in patients who develop unexplained lethargy, vomiting, or change in mental status, an ammonia level should be measured\n\nPhentermine is contraindicated with MAOIs due to risk of hypertensive crisis",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1790",
+    "snippet": "May potentiate hypokalemia in patients taking non-potassiumsparing diuretic agents\n\nWeight loss associated with phentermine/topiramate may increase the risk of hypotension in patients taking antihypertensive medications\n\nCarbamazepine, phenytoin, and valproate may increase the clearance of topiramate, and thus decrease topiramate levels, possibly requiring a higher dose of topiramate\n\nTopiramate may increase the clearance of phenytoin and thus decrease phenytoin levels, possibly requiring a higher dose of phenytoin\n\nTopiramate may increase the clearance of valproate and thus decrease valproate"
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "contraindications",
+    "value": "Table 10.5 Psychotropics in epilepsy\n\nHigher risk – avoid (proconvulsive at therapeutic doses)\n\nMaprotiline\n\nSeveral reports of seizures at therapeutic doses",
+    "source_id": "maudsley_2021",
+    "page_ref": "810",
+    "snippet": "Table 10.5 Psychotropics in epilepsy\n\nHigher risk – avoid (proconvulsive at therapeutic doses)\n\nMaprotiline\n\nSeveral reports of seizures at therapeutic doses"
+  },
+  {
+    "drug": "Maprotiline",
+    "field_key": "monitoring",
+    "value": "Table 14.3 Summary of haematological changes associated with psychotropics\n\nEosinophils\n\nAgents reported to raise levels\n\nAmoxapine, beta-blockers, bupropion, buspirone, carbamazepine, chloral hydrate, chlorpromazine, clonazepam, clozapine, donepezil, fluphenazine, haloperidol, loxapine, meprobamate, maprotiline, methylphenidate (IV abuse only), modafinil, naltrexone (parenterally administered), olanzapine, promethazine, quetiapine, risperidone/paliperidone, SSRIs, TCAs, tetrazepam, tryptophan*, valproate, venlafaxine; may also be a feature of agents causing a hypersensitivity syndrome\n\nErythrocyte sedimentation rate\n\nAgents reported to raise levels\n\nClozapine, dexamfetamine, levomepromazine, maprotiline, SSRIs\n\nNeutrophils\n\nAgents reported to raise levels\n\nBupropion, carbamazepine†, citalopram, chlorpromazine, clozapine†, duloxetine, fluoxetine, fluphenazine, haloperidol, lamotrigine, lithium, maprotiline, olanzapine, quetiapine, risperidone/paliperidone, rivastigmine, tiotixene, trazodone, venlafaxine",
+    "source_id": "maudsley_2021",
+    "page_ref": "934",
+    "snippet": "Table 14.3 Summary of haematological changes associated with psychotropics\n\nEosinophils\n\nAgents reported to raise levels\n\nAmoxapine, beta-blockers, bupropion, buspirone, carbamazepine, chloral hydrate, chlorpromazine, clonazepam, clozapine, donepezil, fluphenazine, haloperidol, loxapine, meprobamate, maprotiline, methylphenidate (IV abuse only), modafinil, naltrexone (parenterally administered), olanzapine, promethazine, quetiapine, risperidone/paliperidone, SSRIs, TCAs, tetrazepam, tryptophan*, valproate, venlafaxine; may also be a feature of agents causing a hypersensitivity syndrome\n\nErythr"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "interactions",
+    "value": "Tramadol increases the risk of seizures in patients taking an antidepressant\nCarbamazepine and phenytoin may reduce mianserin levels\nTheoretically could cause a fatal \"serotonin syndrome\" when combined with MAOIs, so do not use with MAOIs or for at least 14 days after MAOIs are stopped unless you are an expert and only for treatment-resistant cases that may justify the risk\nDo not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing mianserin",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1449",
+    "snippet": "Tramadol increases the risk of seizures in patients taking an antidepressant\nCarbamazepine and phenytoin may reduce mianserin levels\nTheoretically could cause a fatal \"serotonin syndrome\" when combined with MAOIs, so do not use with MAOIs or for at least 14 days after MAOIs are stopped unless you are an expert and only for treatment-resistant cases that may justify the risk\nDo not start an MAOI for at least 5 half-lives (5 to 7 days for most drugs) after discontinuing mianserin"
+  },
+  {
+    "drug": "Reboxetine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nPlasma concentrations are increased\nMay need to lower dose\nHepatic Impairment\nPlasma concentrations are increased\nMay need to lower dose\nCardiac Impairment\nUse with caution\nElderly\nLower dose is recommended (4–6 mg/day)\nReduction in the risk of suicidality with antidepressants compared to placebo in adults age 65 and older\nChildren and Adolescents\nCarefully weigh the risks and benefits of pharmacological treatment against the risks and benefits of nontreatment with antidepressants and make sure to document this in the patient's chart",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1971",
+    "snippet": "Renal Impairment\nPlasma concentrations are increased\nMay need to lower dose\nHepatic Impairment\nPlasma concentrations are increased\nMay need to lower dose\nCardiac Impairment\nUse with caution\nElderly\nLower dose is recommended (4–6 mg/day)\nReduction in the risk of suicidality with antidepressants compared to placebo in adults age 65 and older\nChildren and Adolescents\nCarefully weigh the risks and benefits of pharmacological treatment against the risks and benefits of nontreatment with antidepressants and make sure to document this in the patient's chart"
+  },
+  {
+    "drug": "Tianeptine",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nDose should be reduced for severe impairment to 25 mg/day\nHepatic Impairment\nIn patients with severe cirrhosis (class C, Child Plugh's Scale), the dosage should be restricted to 25mg/day\nCardiac Impairment\nBaseline ECG is recommended\nElderly\nBaseline ECG is recommended for patients over age 50\nDose should be reduced to 25 mg/day\nReduction in the risk of suicidality with antidepressants compared to placebo in adults age 65 and older\nChildren and Adolescents\nTianeptine is not recommended for use in children or adolescents under 18\nCarefully weigh the risks and benefits of pharmacological treatment against the risks and benefits of nontreatment with antidepressants and make sure to document this in the patient's chart",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2225",
+    "snippet": "Renal Impairment\nDose should be reduced for severe impairment to 25 mg/day\nHepatic Impairment\nIn patients with severe cirrhosis (class C, Child Plugh's Scale), the dosage should be restricted to 25mg/day\nCardiac Impairment\nBaseline ECG is recommended\nElderly\nBaseline ECG is recommended for patients over age 50\nDose should be reduced to 25 mg/day\nReduction in the risk of suicidality with antidepressants compared to placebo in adults age 65 and older\nChildren and Adolescents\nTianeptine is not recommended for use in children or adolescents under 18\nCarefully weigh the risks and benefits of pharma"
+  },
+  {
+    "drug": "Amphetamine (D,L)",
+    "field_key": "special_populations",
+    "value": "Dexamphetamine/lisdexamphetamine\nLittle experience in liver disease, manufacturers recommend cautious dose titration. Very rarely associated with abnormal liver function, two case reports of hepatotoxicity.",
+    "source_id": "maudsley_2021",
+    "page_ref": "750",
+    "snippet": "Dexamphetamine/lisdexamphetamine\nLittle experience in liver disease, manufacturers recommend cautious dose titration. Very rarely associated with abnormal liver function, two case reports of hepatotoxicity."
+  },
+  {
+    "drug": "Blonanserin",
+    "field_key": "monitoring",
+    "value": "Blood pressure, fasting plasma glucose, fasting lipids within 3 months and then annually, but earlier and more frequently for patients with diabetes or who have gained >5% of initial weight\nTreat or refer for treatment and consider switching to another atypical antipsychotic for patients who become overweight, obese, pre-diabetic, diabetic, hypertensive, or dyslipidemic while receiving an atypical antipsychotic\nEven in patients without known diabetes, be vigilant for the rare but life-threatening onset of diabetic ketoacidosis, which always requires immediate treatment, by monitoring for the rapid onset of polyuria, polydipsia, weight loss, nausea, vomiting, dehydration, rapid respiration, weakness and clouding of sensorium, even coma\nPatients with low white blood cell count (WBC) or history of drug-induced leukopenia/neutropenia should have complete blood count (CBC) monitored frequently during the first few months, and blonanserin should be discontinued at the first sign of decline in WBC in the absence of other causative factors\nPatients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "277",
+    "snippet": "Blood pressure, fasting plasma glucose, fasting lipids within 3 months and then annually, but earlier and more frequently for patients with diabetes or who have gained >5% of initial weight\nTreat or refer for treatment and consider switching to another atypical antipsychotic for patients who become overweight, obese, pre-diabetic, diabetic, hypertensive, or dyslipidemic while receiving an atypical antipsychotic\nEven in patients without known diabetes, be vigilant for the rare but life-threatening onset of diabetic ketoacidosis, which always requires immediate treatment, by monitoring for the r"
+  },
+  {
+    "drug": "Flupenthixol",
+    "field_key": "monitoring",
+    "value": "Before giving a drug that can cause weight gain to an overweight or obese patient, consider determining whether the patient already has pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes (fasting plasma glucose >126 mg/dL), or dyslipidemia (increased total cholesterol, LDL cholesterol, and triglycerides; decreased HDL cholesterol), and treat or refer such patients for treatment, including nutrition and weight management, physical activity counseling, smoking cessation, and medical management\nMonitor weight and BMI during treatment\nConsider monitoring fasting triglycerides monthly for several months in patients at high risk for metabolic complications and when initiating or switching antipsychotics\nWhile giving a drug to a patient who has gained >5% of initial weight, consider evaluating for the presence of pre-diabetes, diabetes, or dyslipidemia, or consider switching to a different antipsychotic\nMonitoring elevated prolactin levels of dubious clinical benefit\nPatients with low white blood cell count (WBC) or history of drug-induced leukopenia/neutropenia should have complete blood count (CBC) monitored frequently during the first few months and flupenthixol should be discontinued at the first sign of decline of WBC in the absence of other causative factors",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "908",
+    "snippet": "Before giving a drug that can cause weight gain to an overweight or obese patient, consider determining whether the patient already has pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes (fasting plasma glucose >126 mg/dL), or dyslipidemia (increased total cholesterol, LDL cholesterol, and triglycerides; decreased HDL cholesterol), and treat or refer such patients for treatment, including nutrition and weight management, physical activity counseling, smoking cessation, and medical management\nMonitor weight and BMI during treatment\nConsider monitoring fasting triglycerides monthly fo"
+  },
+  {
+    "drug": "Perospirone",
+    "field_key": "monitoring",
+    "value": "Potential of weight gain, diabetes, and dyslipidemia associated with perospirone has not been systematically studied, but patients should be monitored the same as for other atypical antipsychotics\nBefore starting an atypical antipsychotic\nWeigh all patients and track BMI during treatment\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\nGet waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\nEven in patients without known diabetes, be vigilant for the rare but life-threatening onset of diabetic ketoacidosis, which always requires immediate treatment, by monitoring for the rapid onset of polyuria, polydipsia, weight loss, nausea, vomiting, dehydration, rapid respiration, weakness, and clouding of sensorium, even coma\nShould check blood pressure in the elderly before starting and for the first few weeks of treatment\nPatients with low white blood cell count (WBC) or history of drug-induced leukopenia/neutropenia should have complete blood count (CBC) monitored frequently during the first few months and perospirone should be discontinued at the first sign of decline of WBC in the absence of other causative factors\nPatients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1733",
+    "snippet": "Potential of weight gain, diabetes, and dyslipidemia associated with perospirone has not been systematically studied, but patients should be monitored the same as for other atypical antipsychotics\nBefore starting an atypical antipsychotic\nWeigh all patients and track BMI during treatment\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\nGet waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\nEven in patients without known diabetes, be vigilant for the rare but life-threatening "
+  },
+  {
+    "drug": "Zotepine",
+    "field_key": "monitoring",
+    "value": "✽ Although risk of diabetes and dyslipidemia with zotepine has not been systematically studied, monitoring as for all other atypical antipsychotics is suggested\n\nBefore starting an atypical antipsychotic\n\n✽ Weigh all patients and track BMI during treatment\n\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\n\n✽ Get waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\n\nDetermine if the patient is overweight (BMI 25.0–29.9) is obese (BMI >30) has pre-diabetes (fasting plasma glucose 100–125 mg/dL) has diabetes (fasting plasma glucose >126 mg/dL) has hypertension (BP >140/90 mmHg) has dyslipidemia (increased total cholesterol, LDL cholesterol, and triglycerides; decreased HDL cholesterol)\n\nTreat or refer such patients for treatment, including nutrition and weight management, physical activity counseling, smoking cessation, and medical management\n\nMonitoring after starting an atypical antipsychotic\n\nPatients with suspected hematologic abnormalities may require a white blood cell count before initiating treatment\n\nMonitor liver function tests in patients with established liver disease\n\nShould check blood pressure in the elderly before starting and for the first few weeks of treatment\n\nPatients with low white blood cell count (WBC) or history of drug-induced leukopenia/neutropenia should have complete blood count (CBC) monitored frequently during the first few months and zotepine should be discontinued at the first sign of decline of WBC in the absence of other causative factors\n\nPatients should be monitored periodically for the development of abnormal movements of tardive dyskinesia, using neurological exam and the AIMS (Abnormal Involuntary Movement Scale)",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2534",
+    "snippet": "✽ Although risk of diabetes and dyslipidemia with zotepine has not been systematically studied, monitoring as for all other atypical antipsychotics is suggested\n\nBefore starting an atypical antipsychotic\n\n✽ Weigh all patients and track BMI during treatment\n\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\n\n✽ Get waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\n\nDetermine if the patient is overweight (BMI 25.0–29.9) is obese (BMI >30) has pre-diabetes (fasting plasma glucose"
+  },
+  {
+    "drug": "Brexanolone",
+    "field_key": "monitoring",
+    "value": "Monitor patients for hypoxia using continuous pulse oximetry equipped with an alarm\n\nMonitor for excessive sedation every 2 hours during planned, non-sleep periods\n\nInitiate brexanolone early enough during the day to allow for recognition of excessive sedation\n\nPatients must be accompanied during interactions with their children\n\nBrexanolone is supplied as a concentrated solution that must be diluted prior to administration; after dilution the product can be stored in infusion bags under refrigerated conditions for up to 96 hours; however, because the diluted product can be used for only 12 hours at room temperature, each 60-hour infusion will require preparation of at least 5 infusion bags",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "305",
+    "snippet": "Monitor patients for hypoxia using continuous pulse oximetry equipped with an alarm\n\nMonitor for excessive sedation every 2 hours during planned, non-sleep periods\n\nInitiate brexanolone early enough during the day to allow for recognition of excessive sedation\n\nPatients must be accompanied during interactions with their children\n\nBrexanolone is supplied as a concentrated solution that must be diluted prior to administration; after dilution the product can be stored in infusion bags under refrigerated conditions for up to 96 hours; however, because the diluted product can be used for only 12 ho"
+  },
+  {
+    "drug": "Caprylidene",
+    "field_key": "interactions",
+    "value": "None reported",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "387",
+    "snippet": "None reported"
+  },
+  {
+    "drug": "Dothiepin",
+    "field_key": "overdose",
+    "value": "Dothiepin (dosulepin) 75mg/day has been shown to be effective in this regard. Note that NICE recommend that dosulepin should not be used as it is particularly cardiotoxic in overdose.\n\nDothiepin and amitriptyline are the most toxic (seizures and cardiac arrhythmia)",
+    "source_id": "maudsley_2021",
+    "page_ref": "694",
+    "snippet": "Dothiepin (dosulepin) 75mg/day has been shown to be effective in this regard. Note that NICE recommend that dosulepin should not be used as it is particularly cardiotoxic in overdose.\n\nDothiepin and amitriptyline are the most toxic (seizures and cardiac arrhythmia)"
+  },
+  {
+    "drug": "Lofepramine",
+    "field_key": "monitoring",
+    "value": "TCAs have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs\nTCAs produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering lofepramine\nUse with caution if treating concomitantly with a medication likely to produce prolonged bradycardia, hypokalemia, slowing of intracardiac conduction, or prolongation of the QTc interval\nAvoid TCAs in patients with a known history of QTc prolongation, recent acute myocardial infarction, and uncompensated heart failure",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1240",
+    "snippet": "TCAs have been reported to cause arrhythmias, prolongation of conduction time, orthostatic hypotension, sinus tachycardia, and heart failure, especially in the diseased heart\nMyocardial infarction and stroke have been reported with TCAs\nTCAs produce QTc prolongation, which may be enhanced by the existence of bradycardia, hypokalemia, congenital or acquired long QTc interval, which should be evaluated prior to administering lofepramine\nUse with caution if treating concomitantly with a medication likely to produce prolonged bradycardia, hypokalemia, slowing of intracardiac conduction, or prolong"
+  },
+  {
+    "drug": "Mianserin",
+    "field_key": "overdose",
+    "value": "Mianserin\n\nLow\n\nUnclear but probably more than 1000mg.\nFatality unlikely if mianserin taken alone.\n\nSedation, coma, hypotension, hypertension, tachycardia, possible QT prolongation.",
+    "source_id": "maudsley_2021",
+    "page_ref": "897",
+    "snippet": "Mianserin\n\nLow\n\nUnclear but probably more than 1000mg.\nFatality unlikely if mianserin taken alone.\n\nSedation, coma, hypotension, hypertension, tachycardia, possible QT prolongation."
+  },
+  {
+    "drug": "Perospirone",
+    "field_key": "special_populations",
+    "value": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nUse in patients with cardiac impairment has not been studied, so use with caution because of risk of orthostatic hypotension\nUse with caution if patient is taking concomitant antihypertensive or alpha 1 antagonist\nElderly\nSome patients may tolerate lower doses better\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-related psychosis treated with atypical antipsychotics are at an increased risk of death compared to placebo, and also have an increased risk of cerebrovascular events\nChildren and Adolescents\nUse with caution\nPregnancy\nThere is a risk of abnormal muscle movements and withdrawal symptoms in newborns whose mothers took an antipsychotic during the third trimester; symptoms may include agitation, abnormally increased or decreased muscle tone, tremor, sleepiness, severe difficulty breathing, and difficulty feeding\nPsychotic symptoms may worsen during pregnancy and some form of treatment may be necessary\nBreast Feeding\nUnknown if perospirone is secreted in human breast milk, but all psychotropics are assumed to be secreted in breast milk\nRecommended either to discontinue drug or bottle feed\nInfants of women who choose to breast feed should be monitored for possible adverse effects",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1742",
+    "snippet": "Renal Impairment\nUse with caution\nHepatic Impairment\nUse with caution\nCardiac Impairment\nUse in patients with cardiac impairment has not been studied, so use with caution because of risk of orthostatic hypotension\nUse with caution if patient is taking concomitant antihypertensive or alpha 1 antagonist\nElderly\nSome patients may tolerate lower doses better\nAlthough atypical antipsychotics are commonly used for behavioral disturbances in dementia, no agent has been approved for treatment of elderly patients with behavioral symptoms of dementia such as agitation\nElderly patients with dementia-rela"
+  },
+  {
+    "drug": "Sertindole",
+    "field_key": "monitoring",
+    "value": "ECG is recommended prior to and after any dose increase as well as after addition of any drug that can change sertindole concentration (e.g., CYP450 2D6 or 3A4 inhibitors), and then every 3 months for the duration of treatment\n\nBefore starting an atypical antipsychotic\n\n✽ Weigh all patients and track BMI during treatment\n\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\n\n✽ Get waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\n\nDetermine if the patient is overweight (BMI 25.0–29.9) is obese (BMI >30) has pre-diabetes (fasting plasma glucose 100–125 mg/dL) has diabetes (fasting plasma glucose >126 mg/dL) has hypertension (BP >140/90 mmHg) has dyslipidemia (increased total cholesterol, LDL cholesterol, and triglycerides; decreased HDL cholesterol)\n\nTreat or refer such patients for treatment, including nutrition and weight management, physical activity counseling, smoking cessation, and medical management",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "2052",
+    "snippet": "ECG is recommended prior to and after any dose increase as well as after addition of any drug that can change sertindole concentration (e.g., CYP450 2D6 or 3A4 inhibitors), and then every 3 months for the duration of treatment\n\nBefore starting an atypical antipsychotic\n\n✽ Weigh all patients and track BMI during treatment\n\nGet baseline personal and family history of diabetes, obesity, dyslipidemia, hypertension, and cardiovascular disease\n\n✽ Get waist circumference (at umbilicus), blood pressure, fasting plasma glucose, and fasting lipid profile\n\nDetermine if the patient is overweight (BMI 25.0"
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field_key": "special_populations",
+    "value": "Both are extensively hepatically metabolised. Abnormal liver function tests and (rarely) jaundice have been reported with flupentixol. Small, transient elevations in transaminases, cholestatic hepatitis and jaundice have been reported in some patients treated with zuclopenthixol. One report of flupentixol-induced hepatitis. No other literature reports of use or harm. Reduce doses by 50% in patients with compromised hepatic function. Depot preparations are best avoided, as altered pharmacokinetics will make dosage adjustment difficult and side effects from dosage accumulation more likely.",
+    "source_id": "maudsley_2021",
+    "page_ref": "746",
+    "snippet": "Both are extensively hepatically metabolised. Abnormal liver function tests and (rarely) jaundice have been reported with flupentixol. Small, transient elevations in transaminases, cholestatic hepatitis and jaundice have been reported in some patients treated with zuclopenthixol. One report of flupentixol-induced hepatitis. No other literature reports of use or harm. Reduce doses by 50% in patients with compromised hepatic function. Depot preparations are best avoided, as altered pharmacokinetics will make dosage adjustment difficult and side effects from dosage accumulation more likely."
+  },
+  {
+    "drug": "Naltrexone/Bupropion",
+    "field_key": "interactions",
+    "value": "Do not use with MAOIs, including 14 days after MAOIs are stopped\n\nVia CYP450 2D6 inhibition, naltrexone/bupropion could increase concentrations of drugs metabolized by CYP450 2D6 (e.g., TCAs, thioridazine); this may require lower doses of the concomitant medication\n\nVia CYP450 2D6 inhibition, bupropion could theoretically interfere with the analgesic actions of codeine, and increase the plasma levels of some beta blockers and of atomoxetine\n\nBupropion is metabolized by CYP450 2B6; the maximum dose of naltrexone-bupropion in patients receiving a concomitant CYP450 2B6 inhibitor (ticlopidine, clopidogrel) is 8 mg/90 mg twice per day; coadministration of naltrexone/bupropion with CYP450 2B6 inducers (e.g., ritonavir, lopinavir, efavirenz) is not recommended\n\nBupropion should be used with caution in patients taking levodopa or amantadine, as these agents can potentially enhance dopamine neurotransmission and be activating\n\nCan block the effects of opioid-containing medications (e.g., some cough and cold remedies, antidiarrheal preparations, opioid analgesics)\n\nFalse-positive urine immunoassay screening tests for amphetamines have been reported in patients taking bupropion due to a lack of specificity of the screening tests\n\nFalse-positive results may be expected even following discontinuation of bupropion\n\nNaltrexone is hepatically metabolized by dihydrodiol dehydrogenase and not by the CYP450 enzyme system, and thus is unlikely to be affected by drugs that induce or inhibit CYP450 enzymes",
+    "source_id": "stahl_pg_7th",
+    "page_ref": "1571",
+    "snippet": "Do not use with MAOIs, including 14 days after MAOIs are stopped\n\nVia CYP450 2D6 inhibition, naltrexone/bupropion could increase concentrations of drugs metabolized by CYP450 2D6 (e.g., TCAs, thioridazine); this may require lower doses of the concomitant medication\n\nVia CYP450 2D6 inhibition, bupropion could theoretically interfere with the analgesic actions of codeine, and increase the plasma levels of some beta blockers and of atomoxetine\n\nBupropion is metabolized by CYP450 2B6; the maximum dose of naltrexone-bupropion in patients receiving a concomitant CYP450 2B6 inhibitor (ticlopidine, cl"
   }
 ]
