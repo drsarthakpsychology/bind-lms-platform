@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,8 @@ export interface CardRow {
   source: "ai_generated" | "faculty" | "manual";
   status: "draft" | "in_review" | "published" | "archived";
   approved: boolean;
+  /** Manual queue order (T105 reorder). */
+  sortOrder: number;
   createdAt: string;
 }
 
@@ -78,6 +81,32 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
     }
   }
 
+  /** Move a card one step up/down the queue (T105). */
+  async function moveCard(id: string, dir: "up" | "down") {
+    if (busy) return;
+    setBusy(true);
+    try {
+      const res = await fetch("/api/admin/cards", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, direction: dir }),
+      });
+      if (!res.ok) return;
+      haptic("tap");
+      setRows((r) => {
+        const idx = r.findIndex((x) => x.id === id);
+        if (idx < 0) return r;
+        const swap = dir === "up" ? idx - 1 : idx + 1;
+        if (swap < 0 || swap >= r.length) return r;
+        const next = [...r];
+        [next[idx], next[swap]] = [next[swap], next[idx]];
+        return next;
+      });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   function startEdit(row: CardRow) {
     setEditing(row.id);
     setFront(row.front);
@@ -123,6 +152,7 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
           source: j.card.source,
           status: j.card.status,
           approved: Boolean(j.card.approved),
+          sortOrder: 0,
           createdAt: j.card.created_at,
         };
         setRows((r) => [row, ...r]);
@@ -201,6 +231,14 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
               <p className="mt-2 text-small font-medium">{row.front}</p>
               <p className="mt-1 text-small text-muted-foreground">{row.back}</p>
               <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-0.5 rounded-md border-2 border-border bg-background px-1" aria-label="Reorder">
+                  <button type="button" onClick={() => void moveCard(row.id, "up")} disabled={busy} aria-label="Move up" className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-40">
+                    <ChevronUp className="size-4" aria-hidden />
+                  </button>
+                  <button type="button" onClick={() => void moveCard(row.id, "down")} disabled={busy} aria-label="Move down" className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-40">
+                    <ChevronDown className="size-4" aria-hidden />
+                  </button>
+                </span>
                 {row.status !== "published" ? (
                   <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
                     Approve &amp; publish

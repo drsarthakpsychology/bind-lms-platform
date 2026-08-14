@@ -15,8 +15,8 @@ export default async function AdminCardsPage() {
   const admin = createAdminClient();
   const { data } = await admin
     .from("cards")
-    .select("id, front, back, source, status, approved, lesson_id, created_at")
-    .order("status", { ascending: true })
+    .select("id, front, back, source, status, approved, lesson_id, sort_order, created_at")
+    .order("sort_order", { ascending: true })
     .order("created_at", { ascending: false });
 
   const rows: CardRow[] = (data ?? []).map((c) => ({
@@ -26,6 +26,7 @@ export default async function AdminCardsPage() {
     source: c.source as CardRow["source"],
     status: c.status as CardRow["status"],
     approved: Boolean(c.approved),
+    sortOrder: Number(c.sort_order ?? 0),
     createdAt: c.created_at as string,
   }));
 

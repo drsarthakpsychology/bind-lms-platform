@@ -11,6 +11,8 @@ const patchSchema = z.object({
   back: z.string().min(1).optional(),
   status: z.enum(["draft", "in_review", "published", "archived"]).optional(),
   approved: z.boolean().optional(),
+  /** Reorder the card one step up or down in the review queue. */
+  direction: z.enum(["up", "down"]).optional(),
 });
 
 const createSchema = z.object({
@@ -74,6 +76,28 @@ export async function PATCH(req: Request) {
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
   const admin = createAdminClient();
+
+  // Reorder: move the card one step up/down in the queue, then re-sequence
+  // sort_order across the whole queue so it stays a clean 0..n.
+  if (parsed.data.direction) {
+    const { data: ordered } = await admin
+      .from("cards")
+      .select("id")
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: false });
+    const ids = (ordered ?? []).map((r) => r.id);
+    const idx = ids.indexOf(parsed.data.id);
+    if (idx < 0) return NextResponse.json({ error: "not found" }, { status: 404 });
+    const swapIdx = parsed.data.direction === "up" ? idx - 1 : idx + 1;
+    if (swapIdx < 0 || swapIdx >= ids.length) return NextResponse.json({ ok: true }); // at an edge
+    [ids[idx], ids[swapIdx]] = [ids[swapIdx], ids[idx]];
+    for (let i = 0; i < ids.length; i++) {
+      const { error } = await admin.from("cards").update({ sort_order: i }).eq("id", ids[i]);
+      if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ ok: true });
+  }
+
   const { data: profile } = await admin.auth.getUser();
   const approvedBy = profile.user?.id ?? null;
 
