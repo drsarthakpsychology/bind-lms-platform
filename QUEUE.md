@@ -2,6 +2,36 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## KNOWLEDGE LAYER — CORE BUILD COMPLETE (2026-08-14)
+
+- [x] **Register 10 books as corpus_sources** — idempotent, hash-keyed.
+  Live: 10 sources with full metadata (title/authors/edition/year/publisher).
+- [x] **Ingest corpus_documents** — per-book records; full text in R2
+  (`knowledge/books/<id>/…`), preview in Postgres (respects the 2M content cap).
+- [x] **10 reading agents produced verified outlines** — book→chapter→section→
+  PDF page, high confidence, no fabricated page numbers
+  (`scripts/knowledge/outlines/<id>.json`).
+- [x] **Hierarchical chunking** — 27,608 chunks, 0 duplicates (unique
+  `(document_id, chunk_hash)` index + in-run dedupe).
+- [x] **Self-hosted MiniLM embeddings** — 100% embedded, halfvec(384),
+  unit-norm, 0 malformed, **$0 cost** (embed.ts batched via pg unnest).
+- [x] **Hybrid retrieval** — vector (RPC) + pg_trgm keyword + RRF rerank;
+  degrades to keyword, never 500s. Verified live: relevant source-traceable
+  hits across SSRIs/SZ-vs-BD/EPS/alcohol/OCD (`npm run knowledge:verify`).
+- [x] **AI surfaces** — `GET /api/knowledge/search` (retrieval) +
+  `POST /api/knowledge/ask` (grounded tutor, retrieval-first, no-train only).
+- [x] **Gate green + committed** — lint 0, tsc clean, 420 tests, build 0.
+
+### Next phase (deferred — evaluation before building)
+- [ ] **Evaluation benchmark** (brief §24): build a book-grounded question set
+  (factual/conceptual/comparison/case/source-attribution) and measure
+  retrieval recall@k + answer grounding before wiring more surfaces.
+- [ ] **Wire /api/knowledge/ask into a live UI** (Psychology Tutor page or the
+  psychopharm editor's block-source panel) once an eval baseline exists.
+- [ ] **Concept enrichment with V4 Flash** (optional, after eval): extract
+  concepts/relationships per chapter for a knowledge-graph layer — only if the
+  benchmark shows it improves retrieval beyond raw chunks.
+
 ## KNOWLEDGE LAYER — OPEN (2026-08-14)
 
 - [x] **Back-matter attribution gap**: add a `backMatter` field to `BookOutline`
