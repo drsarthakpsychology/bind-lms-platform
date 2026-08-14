@@ -21,7 +21,58 @@ import { NextResponse, type NextRequest } from "next/server";
  * "logout loop" class of bug the Next.js 16.1 proxy model was designed to
  * avoid (stale cookies never getting the refreshed Set-Cookie header).
  */
+/**
+ * Markdown for agents: when a client requests a public page with
+ * `Accept: text/markdown`, serve a clean markdown representation instead of
+ * HTML. Content negotiation so agents get structured text; browsers keep the
+ * normal page. Narrowly scoped to the landing page (the public front door).
+ */
+const MARKDOWN_ACCEPTED = /text\/markdown|application\/markdown/;
+const LANDING_MARKDOWN = `# VIBHA School of Psychology
+
+A clinical psychology training programme.
+
+## The school
+
+VIBHA closes the gap between describing therapy and practising it: real
+cases, simulated patients, timed assessments, and a debrief after every
+session. Cohort One is by invitation.
+
+## Programme
+
+- Interviewing
+- Mental status exam
+- Formulation
+- Ethics & the law
+- Simulated patients
+- Timed assessments
+- Debrief after every session
+
+## How to interact
+
+- Read this page as HTML (default) or markdown (Accept: text/markdown header).
+- Service health: GET /api/health
+- API catalog: GET /.well-known/api-catalog (RFC 9727)
+- OpenAPI: GET /openapi.json
+- Waitlist (for human applicants): POST to /waitlist
+
+## Links
+
+- Waitlist: /waitlist
+- Login: /login
+- Auth.md (agent registration): /auth.md
+`;
+
 export async function proxy(request: NextRequest) {
+  const accept = request.headers.get("accept") ?? "";
+  const pathname = request.nextUrl.pathname;
+  // Content negotiation for agents — only on the public landing page.
+  if (pathname === "/" && MARKDOWN_ACCEPTED.test(accept)) {
+    return new NextResponse(LANDING_MARKDOWN, {
+      headers: { "Content-Type": "text/markdown; charset=utf-8" },
+    });
+  }
+
   let response = NextResponse.next({ request });
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

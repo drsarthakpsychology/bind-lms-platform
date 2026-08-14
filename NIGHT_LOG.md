@@ -3074,3 +3074,7 @@ bind-lms-platform-b96e5m9fk READY). Live checks: h1 2 lines, U flush (202 vs
 204), PRACTISE overlaps third card, dot grid behind cards, no Enquire, no
 overflow at 390/1440, reveals 7/16 on load (above-fold; rest fire on scroll).
 Full-page screenshot /tmp/live-pass3.png.
+2026-08-14T18:15:48 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:15:53 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:21:04 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:21:10 Queue exhausted — allowing normal Claude stop.

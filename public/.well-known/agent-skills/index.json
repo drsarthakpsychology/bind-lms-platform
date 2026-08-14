@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "markdown-negotiation",
+      "type": "skill-md",
+      "description": "Request clean, formatting-stripped markdown representations of the public pages instead of dense HTML.",
+      "url": "https://vibhapsychology.com/.well-known/agent-skills/markdown-negotiation/SKILL.md",
+      "digest": "sha256:ed7a63b878224dd8462bf00464dc23418cab00d7646812dc4633c046e644517b"
+    }
+  ]
+}

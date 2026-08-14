@@ -140,7 +140,7 @@ export function SimSessionView({
   async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
     if (!text || busy || pendingReply.current) return;
-    const studentTurnId = `s-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const studentTurnId = crypto.randomUUID();
     setInput("");
     setTurns((t) => [...t, { id: studentTurnId, role: "student", content: text }]);
     setBusy(true);
@@ -182,7 +182,7 @@ export function SimSessionView({
       // reveal for its `seconds` before the words after it appear.
       setTyping(true);
       const full = j.reply;
-      const patientTurnId = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const patientTurnId = crypto.randomUUID();
       setTurns((t) => [...t, { id: patientTurnId, role: "patient", content: "" }]);
       pendingReply.current = patientTurnId;
       const charsPerTick = 4;

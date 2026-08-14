@@ -1,9 +1,16 @@
 # VIBHA School of Psychology — public site only.
 # The LMS (student coursework, journals, simulated patients, tools, admin) must
-# never be indexed. The landing page and enquiry page are the only public URLs.
+# never be indexed. The landing page and waitlist page are the only public URLs.
+
+# Content-Signals (contentsignals.org): the school's AI stance.
+#   ai-train=no  — do not train models on this site's content (student privacy)
+#   search=yes   — AI search engines may index and cite the public pages
+#   ai-input=no  — do not submit to the site's forms (the waitlist is for humans)
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 User-agent: *
 Allow: /
-Allow: /enquire
+Allow: /waitlist
 Disallow: /dashboard
 Disallow: /admin
 Disallow: /practice

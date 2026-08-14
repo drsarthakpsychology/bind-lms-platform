@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    // Production drops 'unsafe-eval' (only dev's fast-refresh needs it) —
+    // hardening the CSP per the security scan. 'unsafe-inline' stays for
+    // script-src (Next.js RSC hydration payloads) and style-src (the design
+    // system's runtime CSS); removing those requires a full nonce setup.
+    const isProd = process.env.NODE_ENV === "production";
+    const scriptSrc = isProd ? "'self' 'unsafe-inline'" : "'self' 'unsafe-inline' 'unsafe-eval'";
     return [
       {
         // Hashed build assets (JS/CSS/font chunks) are immutable — a year-long
@@ -41,6 +47,14 @@ const nextConfig: NextConfig = {
         source: "/_next/static/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Agent discovery — Link headers per RFC 8288 point machines at the
+        // machine-readable resources (RFC 9727 API catalog).
+        source: "/",
+        headers: [
+          { key: "Link", value: '</.well-known/api-catalog>; rel="api-catalog"' },
         ],
       },
       {
@@ -55,7 +69,7 @@ const nextConfig: NextConfig = {
             // and the R2/Cloudflare stream hosts for future segmented delivery.
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+              `script-src ${scriptSrc}; ` +
               "style-src 'self' 'unsafe-inline'; " +
               "img-src 'self' data: blob: *.supabase.co *.r2.cloudflarestorage.com *.cloudflarestream.com; " +
               "media-src 'self' blob: *.supabase.co *.r2.cloudflarestorage.com *.cloudflarestream.com; " +
