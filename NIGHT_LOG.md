@@ -3276,3 +3276,20 @@ specialist density is defensible (psychopharm compare = intentional per-containe
 horizontal table; passport = evidence list). Concrete fix: case-picker completed
 chip raw-green → status-success tokens + emoji lock → lucide Lock icon. Gate green:
 lint 0, tsc clean, 473 tests, build. Commit hash below.
+
+2026-08-14T20:05 Mobile-audit workflow (wf_3c9d5eba-e83) applied findings, 4 commits:
+ 67d774a lesson "Check what stuck" → collapsed <details> (no longer blocks forward action)
+ a34662f decode 5-drill stack → one-task segmented flow (DecodeFlow, "Mode n of 5")
+ 5a623e2 MSE ladder SmallThings + quiz → opt-in <details>
+ c21cd4f session page edge-to-edge — removed padded wrapper + duplicate breadcrumb
+ (SimSessionView h-dvh owns full screen; shell already renders this path bare)
+
+⚠ CONFLICT DETECTED: a PARALLEL worker (bg claude process) is writing into THIS
+branch concurrently — added src/lib/hooks/use-draft.* (test imports `vi` w/o
+importing → broke tsc + 8 tests; I fixed the import, worker rewrote the file
+again mid-flight, 2 tests still red in THEIR untracked file) + new mobile
+primitives (async-error-card, mobile-completion-state, mobile-continue-action,
+mobile-error-line, mobile-input, mobile-mode-switcher, mobile-sticky-action) +
+globals.css edit. All UNTRACKED — left uncommitted for the worker to land.
+My commits include ONLY my own files; committed HEAD is green (lint 0, tsc clean,
+build). NOTE: two writers on one branch is risky — flag to Kavya.
