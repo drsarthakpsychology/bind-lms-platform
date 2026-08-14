@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { BandDetail } from "./band-detail";
 import { RegisterView } from "./register-view";
@@ -116,8 +117,9 @@ export function DrugBandView({
         </section>
       ) : null}
 
-      {/* FDA full-label sections (verbatim). Shown only when the label has
-          been fetched and parsed; otherwise the honest "not covered" line. */}
+      {/* FDA full-label sections (verbatim reference text). Collapsed so the
+          band's clinical summary dominates and the page isn't one long scroll
+          on a phone; each section is one tap to expand (T32). */}
       {[
         { label: "Contraindications", value: contraindications },
         { label: "Interactions", value: interactions },
@@ -127,10 +129,16 @@ export function DrugBandView({
         { label: "Patient counseling", value: patient_counseling },
       ].map(({ label, value }) =>
         value ? (
-          <section key={label} className="space-y-4 pb-4">
-            <h2 className="text-h2">{label}</h2>
-            <p className="text-small">{value}</p>
-          </section>
+          <details key={label} className="group rounded-md border-2 border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+              <h2 className="text-h2">{label}</h2>
+              <ChevronDown
+                className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                aria-hidden
+              />
+            </summary>
+            <p className="border-t border-border px-4 py-3 text-small">{value}</p>
+          </details>
         ) : null,
       )}
 
