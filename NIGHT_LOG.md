@@ -3250,3 +3250,8 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   items.
 - Loop note: the stop hook is still re-offering T19 (main's QUEUE.md is
   desynced); the worktree→main merge blocker stands in NEEDS_KAVYA.md.
+- T29 (completion states) slice: added `src/components/mobile/mobile-completion-state.tsx`
+  (the ONE "you finished this" language — check mark, title, useful feedback,
+  obvious next action, quiet secondary) and applied it to the judgment arena's
+  "Done for today" state with a "Back to practice tools" next action.
+  Committed `e33ad88`. Gate: lint 0, tsc clean, 453 tests, build green.
