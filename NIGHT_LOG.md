@@ -3440,3 +3440,12 @@ Branch: feat/mobile-design-system, NOT pushed.
          assessment-flow, debrief. Only decode-arena shows a bespoke score
          beat — worker-owned (inside decode-flow), noted for them.
 Gate green. Ticked T29.
+
+2026-08-14T21:05 T51 + T52 done.
+ T51 empty-state system verified across surfaces (modules, supervision-log,
+     wall, journal, dashboard, library, consulting-room, enquiries, courses,
+     lessons) + passport gap closed (d9f7914).
+ T52 confirmation patterns clean — no unnecessary confirmations in student
+     surfaces; the one confirm kept (finish-session, §3.6) protects against
+     ending a 12-min interview. Admin dialogs → sheets done by worker.
+Both ticked. Gate green.

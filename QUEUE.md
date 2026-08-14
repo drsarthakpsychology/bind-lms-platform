@@ -546,12 +546,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   language, preserve user state when possible, and provide an obvious recovery
   action
 
-- [ ] T51  Mobile empty-state system — create reusable intentional empty states
+- [x] T51  Mobile empty-state system — create reusable intentional empty states
   for courses, practice, journal, wall, notifications, cases, search,
   assessments, and other areas; every empty state should explain what the user
   can do next
 
-- [ ] T52  Mobile confirmation patterns — audit unnecessary confirmation
+- [x] T52  Mobile confirmation patterns — audit unnecessary confirmation
   dialogs; remove confirmations where the action is reversible, use inline
   feedback where possible, and reserve disruptive confirmations for meaningful
   destructive or irreversible actions
