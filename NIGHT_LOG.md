@@ -1,3 +1,38 @@
+## 2026-08-14 — LANDING ALIGNMENT/CONSISTENCY PASS (user request, measured)
+
+User reported two batches of alignment issues (hero card-stack + sections
+below the hero). Fixed all in one batch after measuring every issue (Playwright
+geometry, not assumption):
+
+**Hero card-stack:**
+- **Uniform deck offsets** — cards stepped right by the same amount each step
+  (card 2 ml-4/sm:ml-6, card 3 ml-8/sm:ml-12; was left-aligned-then-jump).
+  Rotation fan completed -1/+1/-1.
+- **Stray outline removed** — the behind-sheet div (`translate-x-2.5
+  translate-y-2.5`) peeked a duplicate 2px border 13px past the Formulation
+  card's right edge; removed the element.
+- **PRACTISE stamp repositioned** — now `-bottom-4 left-0 rotate-[4deg]`:
+  mirrors the tape's -4deg (matched magnitude, opposite direction), fully
+  within the hero section, clears the Formulation text (6px desktop / 2px
+  mobile, measured).
+- **Weight matched** — added `variant="accent"` to the Stamp primitive
+  (border + bg-primary/60 + smaller): the hero stamp now pairs with the tape
+  (same border + translucent peach) instead of the heavy default outline.
+
+**Sections below the hero:**
+- **Method cards equal height** — added `min-h-64` (they were 223 vs 251px on
+  the stacked mobile view; desktop was already equal via h-full).
+- **Team divider fixed** — the `divide-y-2` computed to 0px (unintentional
+  mismatch vs the 2px outer border); replaced with an explicit
+  `border-t-2 border-foreground` on the second row.
+- **CTA stamp/corner collision fixed** — INVITE-ONLY stamp moved right-6→
+  right-10/top-10; its bounding box no longer intersects the top-right corner
+  square (6px clearance, measured). The 4 corner squares are identical
+  (14px from the border).
+
+Verified by measurement + light/dark screenshots. Gate green: lint 0, tsc
+clean, 453 tests, build 82/82.
+
 ## 2026-08-14 — VIBHA DESIGN SKILL created (user request)
 
 User: "yess skill creator" → asked which kind; chose the VIBHA design skill.
@@ -2759,3 +2794,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:46:27 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:56:17 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:59:21 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:12:33 Queue exhausted — allowing normal Claude stop.

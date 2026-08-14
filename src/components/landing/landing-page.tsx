@@ -118,15 +118,12 @@ function Hero() {
           </div>
 
           {/* The intake file: the product's raw material, drawn with the LMS's
-              card and hard-shadow language. A pad sheet peeks out behind, a
-              tape strip seals the top, and a "PRACTISE" stamp marks the
-              school's thesis. Purely decorative; parallax is disabled under
-              prefers-reduced-motion. */}
+              card and hard-shadow language. Three fragments step right in a
+              uniform deck, a tape strip seals the top, and a light "PRACTISE"
+              stamp (paired with the tape — matched border + translucent peach,
+              rotation mirrored) anchors the bottom-left corner. Purely
+              decorative; parallax is disabled under prefers-reduced-motion. */}
           <Parallax from={10} to={-10} className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div
-              aria-hidden
-              className="absolute inset-0 translate-x-2.5 translate-y-2.5 rotate-1 rounded-lg border-2 border-foreground bg-secondary/30"
-            />
             <div className="relative space-y-3">
               <div
                 aria-hidden
@@ -138,19 +135,21 @@ function Hero() {
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.28}>
-                <CaseFragment label="Observation" className="mr-6 rotate-1 sm:mr-12">
+                <CaseFragment label="Observation" className="ml-4 rotate-1 sm:ml-6">
                   Sits very still, hands folded. Speaks in a flat, even voice. Looks at
                   her sister before every answer.
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.38}>
-                <CaseFragment label="Formulation" className="ml-4 sm:ml-10">
+                <CaseFragment label="Formulation" className="ml-8 -rotate-1 sm:ml-12">
                   The heaviness is the only language her belief system permits for
                   distress.
                 </CaseFragment>
               </Reveal>
             </div>
-            <Stamp className="absolute -bottom-4 -left-2 z-20 rotate-[-6deg]">Practise</Stamp>
+            <Stamp variant="accent" className="absolute -bottom-4 left-0 z-20 rotate-[4deg]">
+              Practise
+            </Stamp>
           </Parallax>
         </div>
       </div>
@@ -235,7 +234,10 @@ function ThreeIdeas() {
             <Reveal delay={i * 0.08} className="h-full">
               <div
                 className={cn(
-                  "h-full rounded-lg border-2 p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
+                  // h-full keeps the three cards equal within the desktop row;
+                  // min-h-64 keeps the stacked mobile view equal too (the Learn
+                  // card has one line less of body copy).
+                  "flex h-full min-h-64 flex-col rounded-lg border-2 p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
                   i === 1 ? "border-primary bg-accent" : "border-foreground bg-card",
                 )}
               >
@@ -273,7 +275,7 @@ function WhoBuilds() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-8 divide-y-2 divide-foreground border-2 border-foreground bg-card hard-shadow-sm">
+          <div className="mt-8 border-2 border-foreground bg-card hard-shadow-sm">
             <div className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="min-w-0">
                 <p className="text-lg font-bold text-foreground">{BRAND.lead}</p>
@@ -285,7 +287,7 @@ function WhoBuilds() {
                 Clinical lead
               </span>
             </div>
-            <div className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-1 border-t-2 border-foreground px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-lg font-bold text-foreground">{BRAND.builder}</p>
               <span className="mt-2 w-fit shrink-0 rounded-md border-2 border-foreground bg-secondary px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-secondary-foreground sm:mt-0">
                 Building the programme
@@ -312,7 +314,7 @@ function ClosingCta() {
           <span aria-hidden className="absolute right-3 top-3 size-2.5 bg-primary" />
           <span aria-hidden className="absolute bottom-3 left-3 size-2.5 bg-primary" />
           <span aria-hidden className="absolute bottom-3 right-3 size-2.5 bg-primary" />
-          <Stamp className="absolute right-6 top-6 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
+          <Stamp className="absolute right-10 top-10 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
           <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
           <h2 className="mt-4 text-balance text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
             {hasCohortStarted() ? (
