@@ -51,6 +51,12 @@ surprising thing earns a hard shadow.
 9. **WCAG AA or better, always.** Text-on-fill pairings are token-verified;
    when in doubt check the pairing (peach-on-ink 8.98:1, terracotta-on-cream
    5.4:1, muted-foreground #5c554a on cream 4.5:1).
+10. **Caveman UI — plain language, always.** Use the fewest words necessary;
+    prefer simple words, obvious labels, direct actions, and familiar language.
+    Remove jargon, academic phrasing, product terminology, and engineering
+    terms from student and admin surfaces. Explanations and helper text appear
+    only when a user genuinely needs context to make a decision — strip
+    decorative descriptions, redundant instructions, and unnecessary subtitles.
 
 ## Tokens — where they live
 

@@ -3768,3 +3768,8 @@ drsarthakpsychology/bind-lms-platform). All 125 commits (mobile rebuild +
 psychopharm merge) now backed up remotely; 0 ahead of the pushed remote.
 Does NOT touch main and does NOT change the Vercel deployment (CLI deploys the
 working tree, not git). Full commit `1d6d883` matches the pushed HEAD.
+2026-08-14T22:14:06 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:16:37 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:16:42 STOP_CLAUDE present — allowing stop.
+
+2026-08-14T22:37:49 T92+T93 done — established Caveman UI / plain-language rule (fewest words, simple labels, no jargon, explain-only-when-needed) as rule 10 in .claude/skills/vibha-design/SKILL.md.

@@ -736,3 +736,470 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   navigation, patient conversation, voice interaction, accessibility,
   performance, and visual polish are consistently implemented throughout the
   entire mobile web application
+
+  - [ ] T91  Product simplification reset — perform a full application-wide audit
+  with one question: "Would a student or admin immediately understand this?"
+  Remove, merge, rename, or hide anything that does not directly contribute to
+  learning, practice, administration, content management, or required system
+  operation; do not preserve features merely because they already exist
+
+- [x] T92  Caveman UI principle — establish a permanent product-writing and UX
+  rule: use the fewest words necessary; prefer simple words, obvious labels,
+  direct actions, and familiar language; remove unnecessary jargon, academic
+  phrasing, product terminology, internal engineering terminology, and
+  unnecessarily sophisticated explanations from student and admin interfaces
+
+- [x] T93  "Explain only when needed" rule — explanations should appear only
+  when a user genuinely needs context to make a decision; remove decorative
+  descriptions, repetitive helper text, unnecessary subtitles, redundant
+  instructions, and explanatory paragraphs that do not improve the user's
+  ability to complete the task
+
+- [ ] T94  Student versus admin separation — audit the entire application and
+  strictly separate student-facing functionality from administrative,
+  operational, calibration, infrastructure, rights, and internal tooling;
+  students should see learning and practice; admins should see only the tools
+  required to operate the programme
+
+- [ ] T95  Admin information architecture rebuild — redesign the admin
+  navigation around real jobs an administrator needs to perform rather than
+  around internal database concepts or engineering terminology
+
+- [ ] T96  Admin navigation simplification — remove unnecessary admin
+  navigation items, merge overlapping areas, and move technical/internal
+  functionality into appropriate backend or system-level locations where it
+  does not need to be exposed in the primary admin UI
+
+- [ ] T97  Admin "real work" audit — define the actual daily admin jobs:
+  manage courses, manage modules, manage cards, manage medication content,
+  manage students, manage programme content, review learning activity, manage
+  practice content, and perform necessary operational actions; design the
+  admin around these jobs
+
+- [ ] T98  Remove unnecessary Rights UI — remove Rights, Casebook Rights, and
+  similar internal permission concepts from the primary admin navigation if
+  they are infrastructure-level concerns; keep the underlying permission
+  system intact and move management to the appropriate backend/system area
+
+- [ ] T99  Remove unnecessary Passport UI — audit Passport and related internal
+  concepts; if it does not represent a real task the administrator needs to
+  perform, remove it from the visible admin experience without breaking the
+  underlying functionality
+
+- [ ] T100  Cohort Pulse simplification — completely rewrite the Cohort Pulse
+  interface using simple language; replace confusing terminology and fancy
+  product language with direct information such as students active, students
+  falling behind, recent activity, problems, and actions to take
+
+- [ ] T101  Admin dashboard rewrite — redesign the admin home around a small
+  number of useful things that require attention; show what needs action first,
+  then useful programme information; avoid decorative metrics and meaningless
+  statistics
+
+- [ ] T102  Admin action-first hierarchy — every major admin page should answer
+  three questions immediately: what am I looking at, what can I do here, and
+  what should I do next
+
+- [ ] T103  Admin content editor redesign — make content editing feel like a
+  normal editor rather than an engineering control panel; an administrator
+  should be able to open content, edit the title/body/options/media, save it,
+  preview it, and publish it without understanding the underlying data model
+
+- [ ] T104  Admin editor consistency — create one reusable editing philosophy
+  across courses, modules, lessons, cards, assessments, medication content,
+  practice scenarios, patient cases, and other editable programme content;
+  do not create a different complicated editor for every content type
+
+- [ ] T105  Card management rebuild — redesign Card Review so the admin can
+  immediately understand what cards exist and can add, edit, duplicate,
+  reorder, preview, archive, and delete cards; remove technical fields and
+  internal metrics that do not help the admin perform these actions
+
+- [ ] T106  Card creation flow — create a simple "Add card" experience with the
+  minimum fields necessary; show advanced configuration only when genuinely
+  required; support preview before saving
+
+- [ ] T107  Card review language — remove confusing concepts such as unexplained
+  seconds, internal scoring terminology, implementation terminology, or other
+  values that do not have an obvious administrative purpose; if a value is
+  required internally, hide it behind an appropriate advanced/system layer
+
+- [ ] T108  Psychopharmacology admin repair — fix the medication/psychopharma
+  review route so it actually opens, loads, edits, saves, previews, and
+  navigates correctly on both desktop and mobile; test the entire workflow
+  rather than only fixing the visible button
+
+- [ ] T109  Psychopharmacology content architecture — ensure medication content
+  can be managed cleanly without exposing unnecessary implementation details;
+  separate student-facing educational content from admin editing controls
+
+- [ ] T110  Student medication experience — audit the student-facing
+  psychopharmacology experience and ensure it presents information in a
+  focused, understandable learning sequence rather than exposing a large
+  database-like medication interface
+
+- [ ] T111  Data-driven calibration architecture — remove the requirement for
+  the administrator to manually operate a visible scorer-calibration workflow
+  as part of normal administration; calibration should be driven by collected
+  programme data, approved reference examples, scoring outcomes, and other
+  available evaluation data where appropriate
+
+- [ ] T112  Calibration automation — design the calibration system so that
+  scoring quality can be evaluated and recalibrated using accumulated
+  structured data rather than requiring the admin to manually open a
+  calibration page for routine operation
+
+- [ ] T113  Calibration transparency — if calibration information must be
+  visible to an administrator, expose only useful summaries such as status,
+  quality, sample size, recent changes, and whether attention is needed;
+  hide statistical/technical complexity unless explicitly requested
+
+- [ ] T114  Calibration safety boundary — do not silently modify production
+  scoring behaviour based on unvalidated data; establish a reviewable process
+  for evaluating calibration changes before they affect student scoring
+
+- [ ] T115  AI patient architecture rebuild — replace the current assumption
+  that the patient is fundamentally a scripted conversation; the existing
+  patient script/story should become the behavioural source material and
+  constraints that guide an AI patient rather than being presented as the
+  conversation engine itself
+
+- [ ] T116  AI patient behavioural layer — design a structured patient
+  behaviour/profile layer containing personality, presenting complaint,
+  emotional state, communication style, relevant history, knowledge limits,
+  disclosure patterns, sensitivities, contradictions, uncertainty, and other
+  case-specific behavioural characteristics supported by the case data
+
+- [ ] T117  AI patient response engine — connect the configured AI provider to
+  the patient simulation so the model generates responses dynamically while
+  respecting the case's facts, personality, behavioural rules, disclosure
+  depth, story, contradictions, and scenario boundaries
+
+- [ ] T118  Patient prompt architecture — create a strong system-level patient
+  instruction that tells the model how to behave as the patient, what it knows,
+  what it does not know, when it should disclose information, how it should
+  react emotionally, how it should respond to different interviewing styles,
+  and how it should maintain consistency throughout the session
+
+- [ ] T119  Patient state persistence — maintain structured session state across
+  turns so the AI patient remembers what the student has asked, what has
+  already been disclosed, what has not been disclosed, emotional changes,
+  contradictions, and important conversation context
+
+- [ ] T120  Patient realism layer — prevent robotic repetition, generic AI
+  responses, unnatural verbosity, immediate disclosure of every case detail,
+  and repetitive phrasing; responses should feel like a person responding in
+  a conversation while remaining grounded in the case
+
+- [ ] T121  Patient response constraints — ensure the AI does not invent major
+  clinical facts that contradict the configured case; distinguish between
+  deliberate patient uncertainty/ambiguity and accidental model fabrication
+
+- [ ] T122  Patient scenario difficulty — support configurable difficulty
+  through behaviour rather than merely changing a difficulty number; examples
+  include guarded patients, vague patients, emotional patients, inconsistent
+  histories, over-detailed patients, reluctant disclosure, and other useful
+  interviewing behaviours
+
+- [ ] T123  Patient conversational quality testing — create automated and manual
+  test scenarios that evaluate whether the AI patient remains in character,
+  maintains case consistency, answers naturally, does not dump the entire case
+  immediately, and responds appropriately to different student approaches
+
+- [ ] T124  Patient simulation fallback — retain a reliable fallback path if an
+  AI provider fails, times out, reaches a limit, or becomes unavailable; the
+  UI should clearly distinguish a real AI session from a scripted/offline
+  fallback without making the normal experience feel broken
+
+- [ ] T125  Voice experience separation — redesign voice interaction as a
+  dedicated focused experience rather than attaching a complicated voice
+  control system underneath the existing chat interface
+
+- [ ] T126  Voice full-screen route — tapping the Voice button should open a
+  dedicated voice conversation screen designed specifically for speaking;
+  provide an obvious microphone state, current conversation, end-session
+  control, and a simple way to return to typing
+
+- [ ] T127  Voice/type switching — allow the user to switch between voice and
+  text with one obvious action; preserve the exact conversation state when
+  switching modes
+
+- [ ] T128  Voice state clarity — clearly distinguish listening, processing,
+  speaking, muted, permission denied, disconnected, and idle states using
+  simple visual and textual feedback
+
+- [ ] T129  Voice conversation loop — implement a natural conversational loop
+  where the student can speak, the system transcribes/processes the input,
+  the AI responds, and the response can be spoken back without requiring the
+  user to repeatedly navigate through complicated controls
+
+- [ ] T130  Voice permission UX — if microphone permission is blocked, provide
+  one simple explanation and one clear recovery action; do not permanently
+  consume a large portion of the conversation screen with browser-specific
+  technical explanations
+
+- [ ] T131  Voice fallback to text — if voice cannot work, the student should
+  immediately be able to continue typing without losing the conversation
+
+- [ ] T132  Patient conversation composer rebuild — make the normal patient
+  conversation composer extremely simple: type, send, voice, and finish;
+  remove unnecessary controls from the primary interaction area
+
+- [ ] T133  Patient conversation navigation — remove the persistent bottom
+  navigation from the active patient conversation if it interferes with the
+  conversation; the simulation should feel like a focused full-screen task
+
+- [ ] T134  Contextual simulation header — keep only essential information in
+  the patient header: patient identity/context, session state, elapsed time if
+  genuinely useful, and a simple menu for secondary actions
+
+- [ ] T135  Patient simulation secondary actions — move notes, hints, case
+  information, settings, and other secondary functionality into contextual
+  sheets or menus instead of competing with the conversation
+
+- [ ] T136  Mobile bottom navigation audit — redesign the bottom navigation so
+  it never overlaps content, composers, buttons, sheets, or fixed controls;
+  account for safe areas and keyboard height
+
+- [ ] T137  Bottom navigation scope — determine whether every route actually
+  needs the bottom navigation; hide it automatically in immersive flows such
+  as patient simulation, video playback, assessments, and other focused
+  experiences where it creates interference
+
+- [ ] T138  Bottom navigation visual simplification — reduce visual weight,
+  unnecessary borders, oversized active states, and excessive spacing while
+  maintaining clear active/inactive states and comfortable touch targets
+
+- [ ] T139  Mobile resume architecture — identify every place where the same
+  course, lesson, case, assessment, or practice item is repeatedly presented;
+  replace repeated content blocks with one intelligent Resume/Continue entry
+  point where appropriate
+
+- [ ] T140  Resume engine — create a shared "Continue where you left off"
+  mechanism across courses, lessons, assessments, practice, patient cases,
+  and other sequential experiences; calculate the actual next meaningful
+  action rather than simply linking to the parent page
+
+- [ ] T141  Student home simplification — redesign the student dashboard around
+  immediate action: what should I do now, what am I currently learning, and
+  what can I practise; remove repeated promotional or informational blocks
+
+- [ ] T142  Student practice simplification — reduce the Practice area to a
+  small number of understandable categories and useful actions; merge
+  overlapping tools where appropriate and remove features that exist only
+  because the underlying system can technically support them
+
+- [ ] T143  Student course simplification — make course progress and continuation
+  immediately understandable; remove unnecessary nested cards, repeated
+  descriptions, decorative labels, and overly detailed hierarchy
+
+- [ ] T144  Student assessment simplification — each assessment interaction
+  should focus on the current question/task, available answers, progress, and
+  next action; progressively reveal explanations and deeper feedback after the
+  decision rather than displaying everything simultaneously
+
+- [ ] T145  Student explanation hierarchy — after an answer, show the useful
+  explanation first; allow deeper reasoning, sources, references, or detailed
+  discussion to expand only when useful
+
+- [ ] T146  Student learning feedback — redesign scores and feedback so a
+  student understands what happened and what to do next without needing to
+  interpret technical scoring terminology
+
+- [ ] T147  Mobile video player rebuild — create a genuinely phone-optimised
+  video experience; support browser/full-screen APIs correctly and ensure
+  full-screen video rotates to landscape when the device/browser allows it
+
+- [ ] T148  Video orientation handling — when a user enters video full-screen,
+  implement appropriate orientation locking/request behaviour where supported;
+  gracefully handle browsers that do not permit programmatic orientation
+  changes
+
+- [ ] T149  Video learning controls — keep essential controls accessible while
+  allowing immersive playback; avoid showing the normal dashboard navigation
+  or unrelated application UI during full-screen learning
+
+- [ ] T150  Video resume behaviour — remember playback position and provide a
+  simple Continue/Resume action when the student returns to a partially
+  watched lesson
+
+- [ ] T151  Video mobile QA — test playback, full-screen, rotation,
+  orientation changes, browser restrictions, audio, captions/transcripts,
+  playback position, network changes, and returning from full-screen on
+  multiple mobile browsers
+
+- [ ] T152  Desktop/mobile architecture separation — explicitly decide which
+  components should share business logic/data and which should have separate
+  desktop and mobile presentation/interaction layers; do not force identical
+  layouts across breakpoints
+
+- [ ] T153  Desktop admin optimisation — ensure the admin interface takes
+  advantage of desktop space for real management work without importing mobile
+  simplifications where they would hurt productivity
+
+- [ ] T154  Mobile admin optimisation — ensure the admin interface remains
+  usable on a phone for quick actions, content edits, student checks, and
+  operational tasks without attempting to reproduce the entire desktop admin
+  workspace
+
+- [ ] T155  Responsive architecture audit — inspect every major component for
+  whether it should reflow, transform, collapse, become a sheet, become a
+  focused page, or use a completely different mobile interaction model
+
+- [ ] T156  Dark mode reassessment — review the current dark mode from scratch;
+  if it does not look intentional, readable, and consistent with VIBHA's
+  identity, redesign it rather than preserving it for completeness
+
+- [ ] T157  Dark mode scope decision — determine whether dark mode genuinely
+  adds value to the product; if not, make the light theme the primary/default
+  experience and avoid spending disproportionate effort maintaining a poor
+  secondary theme
+
+- [ ] T158  Visual consistency audit — remove inconsistent icon styles,
+  unnecessary decorative elements, arbitrary spacing, conflicting border
+  treatments, excessive shadows, and components that visually look like they
+  came from different products
+
+- [ ] T159  Copy audit across application — inspect every visible word in
+  student and admin interfaces; replace technical, corporate, academic, vague,
+  or AI-sounding copy with short, direct human language
+
+- [ ] T160  Remove AI-sounding language — eliminate unnecessary phrases such as
+  "intelligent", "advanced", "adaptive", "calibration", "cohort pulse",
+  "simulation engine", "behavioural layer", or other internal/marketing
+  terminology from places where a normal user does not need those concepts
+
+- [ ] T161  Admin terminology dictionary — create a small approved vocabulary
+  for admin UI labels and use it consistently; labels should describe the
+  action or object in ordinary language
+
+- [ ] T162  Student terminology dictionary — create a small approved vocabulary
+  for student-facing UI and avoid changing terminology between screens for the
+  same concept
+
+- [ ] T163  Feature removal review — identify features that are technically
+  impressive but do not materially improve learning, practice, teaching, or
+  administration; recommend removing them rather than finding another place
+  to display them
+
+- [ ] T164  Feature merging review — identify overlapping functionality and
+  merge it into a single clearer workflow where possible; do not preserve
+  multiple interfaces simply because they were built independently
+
+- [ ] T165  Backend versus UI boundary audit — move technical controls,
+  infrastructure information, permissions internals, provider diagnostics,
+  system configuration, logs, and engineering-only controls out of normal
+  student/admin interfaces where they are not required for actual work
+
+- [ ] T166  Admin diagnostics boundary — retain technical diagnostics for
+  developers/operators where needed but prevent them from polluting the normal
+  administrator experience
+
+- [ ] T167  Student safety/quality UI boundary — keep necessary quality and
+  learning safeguards functional while avoiding unnecessary warnings,
+  technical implementation details, or internal system explanations in the
+  student interface
+
+- [ ] T168  AI provider abstraction audit — verify that the patient simulation,
+  voice system, and other AI features use a provider abstraction rather than
+  hard-coding the interface to one provider; changing providers should not
+  require rebuilding the student experience
+
+- [ ] T169  AI usage observability — provide internal operational visibility
+  into AI failures, latency, provider availability, and usage where required,
+  but keep these technical metrics out of the normal student/admin UI
+
+- [ ] T170  AI conversation quality monitoring — collect structured signals
+  needed to identify poor patient responses, broken conversations, excessive
+  repetition, hallucinated case facts, and provider failures so the system can
+  improve over time
+
+- [ ] T171  AI patient evaluation dataset — create a structured evaluation
+  process using representative patient conversations and expected behavioural
+  outcomes; use it to compare model/provider changes before deploying them
+
+- [ ] T172  AI model regression testing — whenever the AI provider, model,
+  prompt, patient behaviour configuration, or conversation architecture
+  changes, run representative patient simulations and compare conversational
+  quality before accepting the change
+
+- [ ] T173  Patient prompt/version management — version patient behavioural
+  instructions and scenario configurations so changes can be tracked,
+  compared, rolled back, and evaluated without losing previous behaviour
+
+- [ ] T174  Patient case source-of-truth — ensure every AI patient has one
+  authoritative structured case definition; the model should use that source
+  rather than independently reconstructing the case from scattered UI data
+
+- [ ] T175  AI hallucination containment — implement structured grounding and
+  validation around case facts; when the patient does not have a configured
+  answer, the system should behave according to the case's uncertainty rules
+  instead of inventing clinical history
+
+- [ ] T176  Conversation transcript quality — ensure transcripts are readable,
+  correctly separated between student and patient, timestamped where useful,
+  and preserved correctly for debriefing and learning analysis
+
+- [ ] T177  Debrief generated from actual session — ensure debriefs reference
+  what the student actually said and what happened in the actual session
+  rather than generating generic feedback unrelated to the conversation
+
+- [ ] T178  Student conversation debrief simplification — present the most
+  useful feedback first: what you did well, what you missed, and what to try
+  next; expose detailed analysis progressively
+
+- [ ] T179  Admin session review simplification — when an admin reviews a
+  student's practice, show the actual useful learning information first;
+  hide implementation metadata unless it is required for investigation
+
+- [ ] T180  End-to-end product cleanup — after implementing all preceding work,
+  conduct a fresh route-by-route review and remove anything that has become
+  redundant because of the new architecture
+
+- [ ] T181  "Would I use this?" audit — test the application from the
+  perspective of an actual student and an actual programme administrator;
+  document every moment where the interface causes confusion, unnecessary
+  effort, unnecessary reading, or uncertainty
+
+- [ ] T182  Three-second comprehension test — for every major screen verify
+  that the user can identify where they are, what the screen is for, and what
+  they should do next within a few seconds without reading a large block of
+  explanatory text
+
+- [ ] T183  One-primary-action rule — every major mobile screen should have
+  one obvious primary action; secondary actions must visually and
+  structurally remain secondary
+
+- [ ] T184  One-screen-one-job review — identify screens that attempt to do
+  multiple unrelated jobs; split them into focused flows or progressively
+  reveal secondary tasks rather than maintaining overloaded screens
+
+- [ ] T185  Final mobile navigation regression — test every route with the
+  bottom navigation present, absent, keyboard open, keyboard closed, sheet
+  open, full-screen mode, voice mode, video mode, and long content; verify no
+  overlapping or inaccessible controls remain
+
+- [ ] T186  Final admin usability regression — test the complete admin workflow:
+  login → dashboard → course → module → content editor → card creation →
+  psychopharma → students → review/quality → save/publish; remove every
+  unnecessary step discovered
+
+- [ ] T187  Final student usability regression — test:
+  login → Today → Resume → Course → Lesson → Assessment → Practice → Patient
+  Simulation → Voice → Debrief → Journal; verify every transition is obvious
+  and no screen requires unnecessary explanation
+
+- [ ] T188  Final visual QA — inspect every major route on both desktop and
+  mobile for spacing, hierarchy, typography, overflow, navigation,
+  interaction states, loading, errors, empty states, animation, accessibility,
+  and overall visual consistency
+
+- [ ] T189  Final performance QA — verify that the simplification work has not
+  introduced unnecessary JavaScript, excessive network calls, expensive
+  animations, large client bundles, slow route transitions, or unnecessary
+  rendering
+
+- [ ] T190  Final product acceptance gate — the application is not complete
+  merely because all features technically work; it must feel simple, calm,
+  obvious, fast, focused, and purpose-built for psychology learning and
+  practice; remove complexity rather than adding another explanation for it
