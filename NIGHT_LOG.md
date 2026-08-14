@@ -3468,3 +3468,10 @@ Both ticked. Gate green.
      spot-checked checkin-form (single card). No 3-level nesting remains in
      student surfaces.
 Both ticked. Gate green.
+
+2026-08-14T21:20 T67 done — scroll-behavior audit.
+The genuinely-broken nested-scroll cases are fixed (sim = single h-dvh scroll +
+pinned composer; course detail = flat rows no horizontal; quiz = one-question
+no inner scroll). Remaining capped scroll regions (role-play chat thread,
+MSE L5 transcript preview, forge session-preview) are defensible bounded
+previews of content, not navigation traps. Ticked.

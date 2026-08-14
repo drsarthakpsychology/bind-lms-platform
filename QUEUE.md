@@ -622,7 +622,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   bottom navigation, chat composer, sheets, voice UI, modals, and sticky
   actions
 
-- [ ] T67  Mobile scroll-behavior audit — remove accidental nested scrolling,
+- [x] T67  Mobile scroll-behavior audit — remove accidental nested scrolling,
   unexpected horizontal scrolling, scroll trapping, scroll jumps, and
   unnecessarily long pages; ensure each scroll container has a clear purpose
 
