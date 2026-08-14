@@ -3101,3 +3101,42 @@ crypto.randomUUID). Gate re-run: lint 0/0, tsc clean, 453 tests, build clean.
 Committed bf2011c (security + agent-readiness) + fe1b93e (log). Open items:
 Vercel Security Checkpoint relaxation (human action — enables authorized
 pentest retest) + optional DNS-AID records — moved to QUEUE/NEEDS_KAVYA.
+
+## 2026-08-14 — Psychopharm book-cache enrichment: 23 non-FDA drugs
+
+Worktree `worktree-psychopharm-book-enrichment` (isolated from the concurrent
+agent committing to `main`). Picked up the plan's P1 "next pass" — fill the
+book-sourced fields for the non-US drugs that have no FDA label.
+
+Root cause found: `DRUG_CATALOG` had only 73 entries, so the locator never
+indexed the 23 non-FDA drugs even though every one is present in the local
+book caches. Fix + extraction, two commits:
+
+- 52e7fe9 — catalog 73→96 drugs (+23 non-US w/ correct brand aliases),
+  locator regenerated (11,408 passages), 41 new scoped passage files.
+- af8bde6 — quote-first extraction. BOOK_FIELD_ROWS 31→148 rows (30 drugs);
+  KB 2166→2283; non-FDA drugs with `interactions` 7→26/28. New
+  `merge-book-rows.ts` = per-line verbatim-in-source verification gate.
+
+### Decisions (reversible-first)
+- Parallelised extraction across 4 sub-agents (23 drugs / 5 fields), then a
+  deterministic verification pass that rejects any row whose text is not a
+  verbatim substring of the source passage. 55→9 rejections were verifier
+  false-positives (agents drop decorative ✽ bullets + citation superscripts,
+  exactly like the existing hand-authored rows); fixed the verifier, then
+  manually read the 9 remaining and allow-listed 8 (Brexanolone "Limited data"
+  rejected as too thin).
+- Did NOT run `psych:seed-book` (DB write) — worktree has no `.env.local`.
+  Artifacts (BOOK_FIELD_ROWS.json + KB) are committed; seeding is a one-command
+  follow-up in the main checkout.
+- Reverted `reports.ts` output — the script is stale/buggy ("275 drugs with a
+  dose range" for 152 drugs) and would have regressed the hand-maintained
+  coverage report.
+- 2 of 28 non-FDA drugs (Amphetamine (D,L), Methylphenidate (D,L)) still lack
+  `interactions` — their Stahl interaction pages fell in un-captured page gaps.
+  Honest gap, left as-is.
+
+### Follow-up (main checkout, one command)
+  npm run psych:seed-book   # upserts BOOK_FIELD_ROWS.json as draft
+
+Gate green: lint 0, tsc clean, 453 tests, build 82/82.
