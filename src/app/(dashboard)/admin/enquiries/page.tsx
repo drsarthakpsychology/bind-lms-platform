@@ -1,4 +1,4 @@
-import { Inbox } from "lucide-react";
+import { ChevronDown, Inbox } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -69,9 +69,20 @@ export default async function AdminEnquiriesPage() {
                 {row.phone ? ` · ${row.phone}` : ""}
               </p>
               {row.message ? (
-                <p className="mt-2 whitespace-pre-wrap rounded-md border border-border bg-background p-2.5 text-small text-muted-foreground">
-                  {row.message}
-                </p>
+                <details className="group mt-2 rounded-md border border-border bg-background">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-2.5 py-2">
+                    <span className="text-caption font-medium text-muted-foreground">
+                      {row.message.length > 80 ? `${row.message.slice(0, 80)}…` : "Message"}
+                    </span>
+                    <ChevronDown
+                      className="size-4 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                      aria-hidden
+                    />
+                  </summary>
+                  <p className="border-t border-border px-2.5 py-2 whitespace-pre-wrap text-small text-muted-foreground">
+                    {row.message}
+                  </p>
+                </details>
               ) : null}
               <p className="mt-2 text-caption text-muted-foreground">
                 {new Date(row.created_at).toLocaleString()} · {row.source ?? "landing"}
