@@ -677,7 +677,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   never seen it before; verify that navigation, terminology, actions, progress,
   and next steps are understandable without prior knowledge
 
-- [ ] T79  Mobile returning-user audit — test as an existing student with
+- [x] T79  Mobile returning-user audit — test as an existing student with
   partially completed courses, unfinished assessments, previous journal
   entries, ongoing cases, and existing progress; ensure the interface
   intelligently surfaces continuation points
