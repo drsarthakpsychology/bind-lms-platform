@@ -354,22 +354,385 @@ Code-completable items are all done and committed, most recently:
   mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012 is the
   sole survivor — see the deferred list above. (commit acffb74)
 
-## PSYCHOPHARM BOOK-CACHE ENRICHMENT — follow-ups (2026-08-14, worktree branch)
+## MOBILE-FIRST REBUILD (2026-08-14 — dashboard + patient sim)
 
-- [ ] **Seed the 148 book-field rows to Supabase as draft** — run
-  `npm run psych:seed-book` in the MAIN checkout (has `.env.local`). Reads
-  `docs/psychopharm/BOOK_FIELD_ROWS.json` and upserts into `psych_drug_fields`
-  with `status='draft'` (case-insensitive drug match, no pseudo-drugs). The
-  branch is pushed; this is the one remaining data-write step.
-- [ ] **Fill `interactions` for 2 remaining non-FDA drugs** — Amphetamine (D,L)
-  and Methylphenidate (D,L): their Stahl "Drug Interactions" pages fell in
-  un-captured page ranges of the passage files. Re-capture the monograph pages
-  (Stahl PG 7th around the amphetamine/methylphenidate monograph) and re-run
-  `psych:passages` + the merge script. Honest gap today — not a bug.
-- [ ] **Fix stale `reports.ts`** — it emits "275 drugs with a dose range" (there
-  are 152 drugs; it counts rows, not distinct drugs) and would regress the
-  hand-maintained COVERAGE_REPORT.md. Not run this session; outputs reverted.
-- [ ] **Review the 8 manual-verify allowlisted rows** — `merge-book-rows.ts`
-  carries an explicit allowlist for rows whose only divergence from source is a
-  dropped citation superscript. A clinician should confirm each against its
-  page (they land `draft`, so nothing publishes without sign-off anyway).
+Priority order: patient sim → nav → today → courses → practice → voice →
+keyboard/safe-area → hierarchy → animation → polish. Backend/data/API contracts
+UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
+
+- [x] T1  Mobile design system (src/components/mobile/: page, section, card,
+  list-item, header, bottom-sheet, status-pill) on existing ui/ primitives
+- [x] T2  Patient simulation — full-screen chat rebuild (session-view →
+  SimulationHeader + ChatList + ChatComposer + NotesSheet + HintSheet; kill
+  giant fixture banner → subtle status pill; single-row composer)
+- [x] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
+  active motion; contextual back headers)
+- [x] T4  Today dashboard (mostly good — polish spacing + "one thing next")
+- [x] T5  Courses — clean vertical lesson rows (kill nested week cards)
+- [x] T6  Practice hub — category grouping, reduce boxes
+- [x] T7  Assessment UI — question prominent, tappable answers, compact progress
+- [x] T8  Journal + Wall — textarea/keyboard, compact posts/replies
+- [x] T9  Material/lesson viewer error states + mobile controls
+- [x] T10 Voice UX — tap-to-toggle conversational loop + explicit states
+- [x] T11 Keyboard + safe-area handling (composer, inputs, bottom nav)
+- [x] T12 Loading/empty/error states (skeletons, human copy)
+- [x] T13 Accessibility (44px targets, contrast, reduced-motion, labels)
+- [x] T14 Animation/motion (message arrival, sheet, active nav — reduced-motion safe)
+- [x] T15 Patient conversational quality — wire disclosure gate depth +
+  voice_profile + story/contradictions into turn route (smallest sensible change)
+- [x] T16 Mobile testing matrix (320/360/375/390/412/430) + desktop regression
+  (1280/1440) via Playwright
+- [x] T17 Final mobile UX audit + visual QA
+- [x] T18  Global progressive-disclosure audit — review every mobile route and
+  component across the application; identify desktop-density patterns and
+  redesign them around one meaningful cognitive task at a time; do not merely
+  stack or shrink desktop content
+
+- [ ] T19  Mobile interaction-flow audit — for every major mobile feature define
+  the primary goal, primary action, required information, next action, and
+  secondary actions; remove competing actions from the initial viewport and
+  reveal secondary functionality contextually
+
+- [ ] T20  Mobile-specific page compositions — wherever desktop composition is
+  fundamentally different from the ideal mobile experience, create a dedicated
+  mobile composition instead of forcing the desktop component through CSS;
+  share data/business logic but allow mobile-specific interaction architecture
+
+- [ ] T21  Progressive forms — audit every form, intake flow, registration flow,
+  profile flow, assessment flow, feedback flow, and administrative form on
+  mobile; group related fields into meaningful steps rather than presenting
+  long forms; preserve context, progress, validation, back navigation, and
+  entered state
+
+- [ ] T22  Progressive assessments — apply the one-cognitive-task pattern to
+  every assessment, quiz, MCQ, ordering task, matching task, scenario,
+  reflection, and knowledge check; never assume that the desktop number of
+  visible questions should be retained on mobile; implement focused sequential
+  flows where appropriate
+
+- [ ] T23  Assessment flow engine — create/reuse a shared mobile interaction
+  pattern for sequential assessment content so the same progressive behavior
+  can be used across different assessment types instead of implementing
+  separate one-off solutions for each screen
+
+- [ ] T24  Mobile lesson-flow redesign — audit lessons containing multiple
+  sections, activities, resources, videos, questions, reflections, and
+  exercises; progressively reveal content where appropriate and always make
+  the current learning task and next action obvious
+
+- [ ] T25  Mobile reading/content flow — redesign long educational content for
+  phone consumption using sections, chapters, progressive reading, contextual
+  navigation, completion state, and clear continuation actions; eliminate
+  unnecessary giant scrolling pages without hiding required content
+
+- [ ] T26  Mobile resource hierarchy — audit PDFs, documents, references,
+  attachments, supplementary resources, transcripts, notes, and downloads;
+  show the most relevant resource first and move secondary resources into
+  contextual sections or sheets where appropriate
+
+- [ ] T27  Mobile course navigation — redesign course → module → week → lesson →
+  activity hierarchy for focused navigation; preserve access to the complete
+  curriculum while making the current lesson/activity the dominant mobile
+  context
+
+- [ ] T28  Mobile "Continue" system — establish consistent contextual
+  continuation actions across courses, lessons, assessments, practice,
+  simulations, reflections, and other sequential experiences; "Continue"
+  should always represent the actual next meaningful action
+
+- [ ] T29  Mobile completion states — create consistent completion experiences
+  for lessons, sections, questions, assessments, practice sessions, cases, and
+  courses; provide useful feedback and an obvious next action without adding
+  unnecessary visual clutter
+
+- [ ] T30  Mobile practice flows — audit every practice tool and redesign dense
+  multi-tool screens into focused task flows; expose the available practice
+  categories without forcing every tool, description, and option onto one
+  viewport
+
+- [ ] T31  Mobile clinical workflows — audit all clinical/educational
+  workflows beyond patient chat, including case selection, case information,
+  clinical questions, assessments, notes, debriefs, formulation, MSE,
+  psychopharmacology, and other practice modules; apply focused progressive
+  interactions throughout
+
+- [ ] T32  Mobile psychopharmacology experience — redesign medication browsing,
+  medication details, comparisons, learning checks, and related educational
+  interactions for mobile; prioritize one medication/concept at a time where
+  appropriate and progressively expose secondary information
+
+- [ ] T33  Mobile case workflow — redesign Cases from discovery → case overview →
+  preparation → patient interaction → notes → completion → debrief; keep the
+  current task dominant and move secondary case metadata into contextual
+  surfaces
+
+- [ ] T34  Mobile debrief architecture — redesign all post-practice feedback,
+  reflection, scoring, missed opportunities, explanations, and recommendations
+  into progressive sections; avoid presenting one enormous debrief page
+
+- [ ] T35  Mobile notes architecture — standardize contextual notes across
+  lessons, cases, simulations, assessments, and resources using sheets or
+  focused editors where appropriate; users must be able to return to their
+  original context without losing state
+
+- [ ] T36  Mobile search experience — audit search wherever available; create a
+  phone-first search flow with focused results, useful filters, progressive
+  refinement, and contextual result details rather than dense desktop-style
+  result grids
+
+- [ ] T37  Mobile filters and sorting — convert dense desktop filter panels into
+  mobile bottom sheets or progressive filter flows; preserve all filtering
+  capabilities without permanently consuming screen space
+
+- [ ] T38  Mobile tables and dense data — audit every table, comparison,
+  statistics view, progress matrix, and dense information layout; replace
+  desktop tables with appropriate mobile patterns such as stacked records,
+  horizontal comparison only where genuinely necessary, progressive details,
+  or focused item views
+
+- [ ] T39  Mobile dashboards beyond Today — audit every dashboard and analytics
+  surface in the application; remove desktop dashboard density and redesign
+  around the most important metric/action first, with deeper information
+  progressively revealed
+
+- [ ] T40  Mobile progress architecture — standardize how course, lesson,
+  assessment, practice, and program progress is communicated; keep progress
+  visible enough to maintain orientation without allowing progress UI to
+  dominate the screen
+
+- [ ] T41  Mobile profile/account flows — redesign profile, account,
+  preferences, notifications, privacy, security, and settings into grouped
+  progressive sections; avoid giant settings pages
+
+- [ ] T42  Mobile notification experience — redesign notifications around
+  actionable information; prioritize what requires attention, group secondary
+  notifications, and prevent notification lists from becoming visually dense
+
+- [ ] T43  Mobile modals → contextual surfaces — audit every modal currently
+  used on mobile; convert suitable interactions into bottom sheets, inline
+  expansion, full-screen focused flows, or contextual menus depending on task
+  complexity
+
+- [ ] T44  Mobile navigation depth audit — identify unnecessary navigation
+  layers and reduce the number of screens required to complete common actions;
+  preserve clear back behavior and never sacrifice context for fewer screens
+
+- [ ] T45  Mobile contextual actions — move secondary actions such as notes,
+  hints, sharing, reporting, metadata, references, and additional options into
+  contextual controls instead of displaying them permanently
+
+- [ ] T46  Mobile multi-step state preservation — ensure partially completed
+  assessments, forms, lessons, cases, simulations, reflections, and other
+  workflows preserve state when navigating backward, opening a sheet, changing
+  orientation, or temporarily leaving the screen
+
+- [ ] T47  Mobile interruption recovery — design what happens when a user
+  receives a call, switches applications, locks the phone, loses network,
+  refreshes, or returns later; restore the correct task/context without forcing
+  the user to restart
+
+- [ ] T48  Mobile offline experience — audit all mobile functionality that can
+  operate offline or encounter connectivity loss; provide clear but subtle
+  offline states, preserve local progress where supported, and make recovery
+  understandable
+
+- [ ] T49  Mobile network/loading strategy — audit all asynchronous mobile
+  interactions; use skeletons or focused loading states where appropriate and
+  prevent layout jumping; never make the user stare at an unexplained blank
+  screen
+
+- [ ] T50  Mobile error recovery — standardize error handling across the entire
+  mobile application; every failure should explain what happened in human
+  language, preserve user state when possible, and provide an obvious recovery
+  action
+
+- [ ] T51  Mobile empty-state system — create reusable intentional empty states
+  for courses, practice, journal, wall, notifications, cases, search,
+  assessments, and other areas; every empty state should explain what the user
+  can do next
+
+- [ ] T52  Mobile confirmation patterns — audit unnecessary confirmation
+  dialogs; remove confirmations where the action is reversible, use inline
+  feedback where possible, and reserve disruptive confirmations for meaningful
+  destructive or irreversible actions
+
+- [ ] T53  Mobile input architecture — audit every text field, textarea,
+  selector, checkbox, radio, date input, upload control, and interactive form
+  element; make every input comfortable for touch and correctly handle the
+  mobile keyboard
+
+- [ ] T54  Mobile keyboard QA — test every input-heavy workflow with the
+  software keyboard open; ensure focused fields, submit actions, textareas,
+  bottom sheets, chat composers, and navigation remain usable and never become
+  hidden behind the keyboard
+
+- [ ] T55  Mobile gesture audit — identify places where gestures can genuinely
+  improve usability, such as dismissing sheets, navigating media, or moving
+  through sequential content; use gestures selectively and always preserve
+  obvious accessible controls
+
+- [ ] T56  Mobile swipe/step interactions — where sequential content benefits
+  from swiping, implement it carefully alongside explicit Next/Back controls;
+  never make a required action dependent solely on an undiscoverable gesture
+
+- [ ] T57  Mobile sticky-action audit — identify flows where the primary action
+  should remain accessible while scrolling; implement contextual sticky
+  actions without covering content or competing with the bottom navigation
+
+- [ ] T58  Mobile content truncation audit — remove ugly desktop truncation such
+  as "Interviewing 101 — the firs..." throughout the application; redesign
+  long titles/descriptions using appropriate wrapping, progressive disclosure,
+  or detail views
+
+- [ ] T59  Mobile card-density audit — systematically identify cards nested
+  inside cards, repeated borders, unnecessary shadows, and excessive containers
+  across the entire application; simplify the visual hierarchy while
+  preserving VIBHA's neo-brutalist character
+
+- [ ] T60  Mobile visual hierarchy pass — every screen must have a clear primary,
+  secondary, and tertiary hierarchy; reduce competing typography, borders,
+  labels, buttons, and accent colors so users immediately understand what
+  matters
+
+- [ ] T61  Mobile design-language consistency — apply the established VIBHA
+  mobile design system consistently across every route, including typography,
+  spacing, borders, buttons, status pills, cards, sheets, inputs, navigation,
+  chat, progress, and feedback
+
+- [ ] T62  Mobile animation system — standardize purposeful transitions for
+  progressive content, Next actions, sheets, navigation, completion states,
+  chat messages, voice states, loading, and feedback; keep animations subtle,
+  performant, and reduced-motion safe
+
+- [ ] T63  Mobile micro-interaction pass — add small meaningful feedback for
+  taps, selections, completion, saving, progress, navigation, and state
+  changes; do not add decorative animation that increases cognitive load
+
+- [ ] T64  Mobile accessibility sweep — run the entire application against
+  touch targets, semantic controls, labels, keyboard navigation, contrast,
+  dynamic text, reduced motion, focus behavior, and screen-reader semantics;
+  fix systemic issues rather than patching isolated screens
+
+- [ ] T65  Mobile typography sweep — audit every route for font size, line
+  height, weight, wrapping, hierarchy, readable line length, and long-content
+  behavior; eliminate tiny text and awkward wrapping
+
+- [ ] T66  Mobile safe-area sweep — audit every fixed, sticky, bottom, and
+  full-screen element for safe-area handling across modern phones; verify
+  bottom navigation, chat composer, sheets, voice UI, modals, and sticky
+  actions
+
+- [ ] T67  Mobile scroll-behavior audit — remove accidental nested scrolling,
+  unexpected horizontal scrolling, scroll trapping, scroll jumps, and
+  unnecessarily long pages; ensure each scroll container has a clear purpose
+
+- [ ] T68  Mobile long-content strategy — test every screen with unusually
+  long content, long names, long questions, long patient messages, long lesson
+  titles, and large descriptions; ensure the progressive interaction model
+  still works without overflow or broken layout
+
+- [ ] T69  Mobile media experience — audit video, audio, images, PDFs,
+  transcripts, and other media; create mobile-specific controls and layouts
+  where desktop media interfaces create unnecessary density
+
+- [ ] T70  Mobile upload/download flows — redesign file selection, upload
+  progress, download actions, document previews, and failures for mobile;
+  ensure users always understand the current state of a file operation
+
+- [ ] T71  Mobile authentication flow — audit login, signup, password reset,
+  verification, session expiry, and authentication errors for phone-first
+  interaction; minimize unnecessary fields and ensure keyboard behavior is
+  correct
+
+- [ ] T72  Mobile onboarding flow — if onboarding exists, redesign it around
+  focused steps and progressive disclosure; do not show a desktop-style
+  onboarding dashboard on mobile
+
+- [ ] T73  Mobile permission flows — audit microphone, notification, storage,
+  camera, and other browser permissions; explain permissions in context and
+  provide a useful fallback when access is denied
+
+- [ ] T74  Mobile performance audit — identify unnecessary renders, oversized
+  components, expensive animations, excessive network requests, heavy lists,
+  chat rendering issues, and media loading problems; optimize the highest
+  impact issues
+
+- [ ] T75  Mobile component consolidation — after the redesign, identify
+  duplicate mobile components and one-off implementations; consolidate shared
+  patterns into reusable primitives without forcing unrelated experiences into
+  the same component
+
+- [ ] T76  Mobile route-by-route UX review — manually inspect every mobile route
+  in the application and document whether it follows the core principles:
+  focused task, progressive disclosure, clear hierarchy, obvious next action,
+  contextual secondary actions, correct spacing, safe-area behavior, and
+  preserved state
+
+- [ ] T77  Mobile workflow completion audit — test complete end-to-end journeys,
+  not isolated pages: login → dashboard → course → lesson → assessment →
+  practice → patient simulation → debrief → journal → wall; identify and fix
+  friction between screens
+
+- [ ] T78  Mobile first-time-user audit — test the application as a user who has
+  never seen it before; verify that navigation, terminology, actions, progress,
+  and next steps are understandable without prior knowledge
+
+- [ ] T79  Mobile returning-user audit — test as an existing student with
+  partially completed courses, unfinished assessments, previous journal
+  entries, ongoing cases, and existing progress; ensure the interface
+  intelligently surfaces continuation points
+
+- [ ] T80  Mobile interruption/return audit — begin important workflows, leave
+  them midway, navigate elsewhere, return later, and verify that the
+  application returns the user to the correct context
+
+- [ ] T81  Mobile regression matrix — systematically test 320/360/375/390/412/430
+  widths across all major routes and interaction states; test portrait and
+  relevant landscape states where applicable
+
+- [ ] T82  Desktop regression matrix — after all mobile-specific architectural
+  changes, verify 1280/1440+ desktop layouts and all critical desktop
+  interactions; fix only genuine regressions without compromising the mobile
+  architecture
+
+- [ ] T83  Mobile visual comparison pass — compare the rebuilt experience
+  against the current implementation and verify that the redesign has
+  materially reduced clutter, unnecessary nesting, excessive scrolling, poor
+  hierarchy, and desktop-density patterns
+
+- [ ] T84  Mobile UX red-team pass — intentionally try to break the experience:
+  extremely long content, rapid taps, repeated Next actions, back/forward
+  navigation, network failure, keyboard open, permission denial, empty data,
+  incomplete data, slow loading, and interrupted sessions; fix everything
+  discovered
+
+- [ ] T85  Mobile cognitive-load pass — review every major flow specifically for
+  unnecessary decisions, simultaneous choices, visual noise, reading burden,
+  repeated navigation, and unclear next actions; simplify wherever possible
+
+- [ ] T86  Mobile progressive-disclosure consistency pass — verify that the
+  one-task-at-a-time philosophy is applied consistently across assessments,
+  lessons, forms, practice, clinical workflows, documents, settings,
+  dashboards, and other relevant experiences rather than being implemented as
+  isolated patterns
+
+- [ ] T87  Mobile "what next?" audit — open every major screen with fresh eyes
+  and verify that a user can identify the intended next action within seconds;
+  redesign screens where multiple actions compete equally
+
+- [ ] T88  Mobile product polish pass — final pass for spacing, typography,
+  icons, borders, button states, animations, transitions, loading, empty
+  states, error states, copy, touch behavior, and visual consistency
+
+- [ ] T89  Mobile end-to-end QA — run the complete student journey from
+  authentication through learning, assessment, practice, simulation, debrief,
+  reflection, and community features; verify functionality, state persistence,
+  responsiveness, and visual quality
+
+- [ ] T90  Final mobile-first acceptance audit — do not consider the work
+  complete until the application genuinely feels designed for a phone rather
+  than a desktop application resized for a phone; verify that progressive
+  disclosure, focused tasks, contextual actions, clear next steps, mobile
+  navigation, patient conversation, voice interaction, accessibility,
+  performance, and visual polish are consistently implemented throughout the
+  entire mobile web application
