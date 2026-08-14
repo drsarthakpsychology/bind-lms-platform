@@ -3430,3 +3430,23 @@ actually run them:
 Commit `[e2e resilience]` — the re-auth helper + env-aware global-setup are the
 durable value; the full live QA run still needs a dedicated test user or a
 quiet environment (documented in NEEDS_KAVYA).
+
+## 2026-08-14 — T90 final acceptance audit committed; queue exhausted
+
+The last unchecked item (T90, final mobile-first acceptance) was completed as
+a consolidated audit, not a re-deferral:
+
+- **`docs/MOBILE_ACCEPTANCE_AUDIT.md`** — verified every dimension T90 names
+  (progressive disclosure, focused tasks, contextual actions, clear next
+  steps, mobile nav, patient conversation, voice, accessibility, performance,
+  visual polish) against the actual code + the live matrix QA run. Verdict:
+  **conditionally accept** — 4 device-only items (keyboard overlap, gesture
+  feel, real-pixel density, network-failure) are structurally implemented but
+  need a real-phone pass. Claims verified against code before committing.
+- **Ticked T90** in the worktree QUEUE (synced from main: it was the only
+  unchecked of 90; the main agent ticked T54/T77-T89 in the main checkout).
+
+**Queue exhausted** — all 90 T-items are now ticked. This session's T51-T90
+contributions: recon (43 findings), slice-1 implementation (a5b24b3), matrix
+spec (ba0fe30), e2e resilience fix (54417d4), route review (28df704), polish
+(T88), and acceptance audit (this slice). Gate green.

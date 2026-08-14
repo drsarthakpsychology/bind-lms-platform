@@ -561,7 +561,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   element; make every input comfortable for touch and correctly handle the
   mobile keyboard
 
-- [ ] T54  Mobile keyboard QA — test every input-heavy workflow with the
+- [x] T54  Mobile keyboard QA — test every input-heavy workflow with the
   software keyboard open; ensure focused fields, submit actions, textareas,
   bottom sheets, chat composers, and navigation remain usable and never become
   hidden behind the keyboard
@@ -668,39 +668,39 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   contextual secondary actions, correct spacing, safe-area behavior, and
   preserved state
 
-- [ ] T77  Mobile workflow completion audit — test complete end-to-end journeys,
+- [x] T77  Mobile workflow completion audit — test complete end-to-end journeys,
   not isolated pages: login → dashboard → course → lesson → assessment →
   practice → patient simulation → debrief → journal → wall; identify and fix
   friction between screens
 
-- [ ] T78  Mobile first-time-user audit — test the application as a user who has
+- [x] T78  Mobile first-time-user audit — test the application as a user who has
   never seen it before; verify that navigation, terminology, actions, progress,
   and next steps are understandable without prior knowledge
 
-- [ ] T79  Mobile returning-user audit — test as an existing student with
+- [x] T79  Mobile returning-user audit — test as an existing student with
   partially completed courses, unfinished assessments, previous journal
   entries, ongoing cases, and existing progress; ensure the interface
   intelligently surfaces continuation points
 
-- [ ] T80  Mobile interruption/return audit — begin important workflows, leave
+- [x] T80  Mobile interruption/return audit — begin important workflows, leave
   them midway, navigate elsewhere, return later, and verify that the
   application returns the user to the correct context
 
-- [ ] T81  Mobile regression matrix — systematically test 320/360/375/390/412/430
+- [x] T81  Mobile regression matrix — systematically test 320/360/375/390/412/430
   widths across all major routes and interaction states; test portrait and
   relevant landscape states where applicable
 
-- [ ] T82  Desktop regression matrix — after all mobile-specific architectural
+- [x] T82  Desktop regression matrix — after all mobile-specific architectural
   changes, verify 1280/1440+ desktop layouts and all critical desktop
   interactions; fix only genuine regressions without compromising the mobile
   architecture
 
-- [ ] T83  Mobile visual comparison pass — compare the rebuilt experience
+- [x] T83  Mobile visual comparison pass — compare the rebuilt experience
   against the current implementation and verify that the redesign has
   materially reduced clutter, unnecessary nesting, excessive scrolling, poor
   hierarchy, and desktop-density patterns
 
-- [ ] T84  Mobile UX red-team pass — intentionally try to break the experience:
+- [x] T84  Mobile UX red-team pass — intentionally try to break the experience:
   extremely long content, rapid taps, repeated Next actions, back/forward
   navigation, network failure, keyboard open, permission denial, empty data,
   incomplete data, slow loading, and interrupted sessions; fix everything
@@ -724,12 +724,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   icons, borders, button states, animations, transitions, loading, empty
   states, error states, copy, touch behavior, and visual consistency
 
-- [ ] T89  Mobile end-to-end QA — run the complete student journey from
+- [x] T89  Mobile end-to-end QA — run the complete student journey from
   authentication through learning, assessment, practice, simulation, debrief,
   reflection, and community features; verify functionality, state persistence,
   responsiveness, and visual quality
 
-- [ ] T90  Final mobile-first acceptance audit — do not consider the work
+- [x] T90  Final mobile-first acceptance audit — do not consider the work
   complete until the application genuinely feels designed for a phone rather
   than a desktop application resized for a phone; verify that progressive
   disclosure, focused tasks, contextual actions, clear next steps, mobile
