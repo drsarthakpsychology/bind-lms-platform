@@ -652,12 +652,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   camera, and other browser permissions; explain permissions in context and
   provide a useful fallback when access is denied
 
-- [ ] T74  Mobile performance audit — identify unnecessary renders, oversized
+- [x] T74  Mobile performance audit — identify unnecessary renders, oversized
   components, expensive animations, excessive network requests, heavy lists,
   chat rendering issues, and media loading problems; optimize the highest
   impact issues
 
-- [ ] T75  Mobile component consolidation — after the redesign, identify
+- [x] T75  Mobile component consolidation — after the redesign, identify
   duplicate mobile components and one-off implementations; consolidate shared
   patterns into reusable primitives without forcing unrelated experiences into
   the same component

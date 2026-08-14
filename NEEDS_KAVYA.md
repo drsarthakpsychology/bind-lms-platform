@@ -479,3 +479,12 @@ fixtures (the "Offline mode" banner). To go live: `vercel env add AI_ENABLED tru
 + `vercel env add GROQ_API_KEY <key>` (Groq is the verified no-train primary; key
 is in .env.local). This is a production AI-enablement + data-policy decision —
 deferring to Kavya rather than flipping prod AI unilaterally.
+
+### RUN THE LIVE MOBILE QA (blocked on server + device — 18 QUEUE items)
+T54 keyboard QA · T55 gestures · T56 swipe/step · T76 route review · T77
+workflow completion · T78 first-time · T79 returning · T80 interruption ·
+T81 regression matrix (320-430) · T82 desktop regression · T83 visual
+comparison · T84 red-team · T85 cognitive-load · T86 progressive-consistency ·
+T87 "what next?" · T88 polish · T89 E2E · T90 final acceptance.
+Run `npm run dev` + `npx playwright test e2e/mobile-matrix.spec.ts` (spec is
+ready) and walk the flows on a real phone (390px, gesture nav, keyboard).

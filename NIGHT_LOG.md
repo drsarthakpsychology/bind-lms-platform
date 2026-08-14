@@ -3494,3 +3494,15 @@ cumulative work:
  T68 long-content (tutor clamp+expand, drug FDA collapse, 2-line titles).
 Also ticked: T66 safe-area, T69 media, T70 upload, T72 onboarding (N/A),
 T73 permissions. Gate green.
+
+2026-08-14T21:55 T74 + T75 ticked. T74 performance — heavy deps code-split
+(pdfjs dynamic import, hls via LazyVideoPlayer wrapper); full render/RUM
+profiling deferred to a live run. T75 consolidation — 17 shared mobile
+primitives, no scattered one-off wrappers.
+
+REMAINING 18 (T54, T55, T56, T76-T90) are LIVE-ONLY QA tasks: keyboard QA on a
+physical Android device, gesture/swipe judgment, route-by-route UX review,
+workflow/first-time/returning/interruption journeys, 320-430 regression
+matrix, visual comparison, red-team, cognitive-load, E2E — all need a running
+dev server + seeded Supabase + real viewports. Cannot be honestly completed
+from code. Logged to NEEDS_KAVYA; the Playwright matrix spec is ready to run.
