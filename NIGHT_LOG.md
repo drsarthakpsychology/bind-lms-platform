@@ -3180,3 +3180,25 @@ contextualise).
   Build skipped — docs-only change (and the finding-fix pass explicitly said no
   full build).
 - Next in queue: T20 (mobile-specific page compositions).
+
+## 2026-08-14 — Mobile page composition (T20, slice 1)
+
+Started T20 (mobile-specific page compositions). First slice: the weak-spots
+banner is the one recurring "do this" surface that competes with the primary
+action on the front door and the practice hub — both flagged in the T19 spec.
+
+- New `src/components/practice/weak-spots-collapsible.tsx` — a client wrapper
+  that renders its children inline on sm+ and collapsed behind a native
+  `<details>` ("Your weak spots") on mobile. The child is a resolved server
+  element, so the two DOM slots do not re-run the server fetch; returns null
+  when the banner has nothing to report.
+- `/practice`: wrapped `<WeakSpotsBanner />` in `WeakSpotsCollapsible` so the
+  browse groups stay the primary surface on mobile (T19: "at most one 'do
+  this' before the groups"). Desktop unchanged.
+- `/today`: moved the weak-spots banner from *above* the primary card to
+  *below* it, so only one "do this now" survives the first viewport (T19).
+  Desktop also benefits (the front door is one-thing-next on every size).
+- Committed `f3208de`. Gate: lint 0, tsc clean, 453 tests, build green
+  (route table emitted, no errors).
+- Next in queue: T20 continues (dedicated mobile compositions — waitlist
+  two-column → mobile sheet-first is the next concrete candidate).
