@@ -1100,16 +1100,16 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   technical implementation details, or internal system explanations in the
   student interface
 
-- [ ] T168  AI provider abstraction audit — verify that the patient simulation,
+- [x] T168  AI provider abstraction audit — verify that the patient simulation,
   voice system, and other AI features use a provider abstraction rather than
   hard-coding the interface to one provider; changing providers should not
   require rebuilding the student experience
 
-- [ ] T169  AI usage observability — provide internal operational visibility
+- [x] T169  AI usage observability — provide internal operational visibility
   into AI failures, latency, provider availability, and usage where required,
   but keep these technical metrics out of the normal student/admin UI
 
-- [ ] T170  AI conversation quality monitoring — collect structured signals
+- [x] T170  AI conversation quality monitoring — collect structured signals
   needed to identify poor patient responses, broken conversations, excessive
   repetition, hallucinated case facts, and provider failures so the system can
   improve over time
@@ -1127,28 +1127,28 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   instructions and scenario configurations so changes can be tracked,
   compared, rolled back, and evaluated without losing previous behaviour
 
-- [ ] T174  Patient case source-of-truth — ensure every AI patient has one
+- [x] T174  Patient case source-of-truth — ensure every AI patient has one
   authoritative structured case definition; the model should use that source
   rather than independently reconstructing the case from scattered UI data
 
-- [ ] T175  AI hallucination containment — implement structured grounding and
+- [x] T175  AI hallucination containment — implement structured grounding and
   validation around case facts; when the patient does not have a configured
   answer, the system should behave according to the case's uncertainty rules
   instead of inventing clinical history
 
-- [ ] T176  Conversation transcript quality — ensure transcripts are readable,
+- [x] T176  Conversation transcript quality — ensure transcripts are readable,
   correctly separated between student and patient, timestamped where useful,
   and preserved correctly for debriefing and learning analysis
 
-- [ ] T177  Debrief generated from actual session — ensure debriefs reference
+- [x] T177  Debrief generated from actual session — ensure debriefs reference
   what the student actually said and what happened in the actual session
   rather than generating generic feedback unrelated to the conversation
 
-- [ ] T178  Student conversation debrief simplification — present the most
+- [x] T178  Student conversation debrief simplification — present the most
   useful feedback first: what you did well, what you missed, and what to try
   next; expose detailed analysis progressively
 
-- [ ] T179  Admin session review simplification — when an admin reviews a
+- [x] T179  Admin session review simplification — when an admin reviews a
   student's practice, show the actual useful learning information first;
   hide implementation metadata unless it is required for investigation
 
