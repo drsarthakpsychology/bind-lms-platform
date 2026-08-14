@@ -2978,3 +2978,15 @@ Resolved the remaining open audit findings with real fixes, not whack-a-mole:
 
 Gate green: lint 0, tsc clean, 453 tests, build 82/82. Pushed main
 (250536a..2a2e4b9); redeploying.
+
+2026-08-14T17:40 — Hero revision DEPLOYED + LIVE-VERIFIED (vibhapsychology.com).
+Deployed production (bind-lms-platform-9jfkl5x9t..., READY, aliased). Before
+deploy, found Vercel lacked SESSION_SECRET — the media-secret hardening made
+it mandatory, so it was added to Vercel production (from the local value)
+to prevent video streaming breaking. Live checks (fresh browser, no cache):
+rings 0, lattice + heavy centre hexagon present, "Enquire" absent, h1 flush
+with eyebrow/body (166/168/168), cards top 157 vs h1 top 192, h1→body 28px,
+overflow 0 at 1440/390, /enquire→/waitlist redirect lands, /waitlist title +
+h1 "Join the waitlist". Full-page screenshot /tmp/live-hero-final.png.
+Commits: 2605ed4 (hero rename+lattice), 250536a (final alignment + media
+secret hardening), deployed.
