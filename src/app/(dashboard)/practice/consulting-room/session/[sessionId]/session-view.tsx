@@ -94,6 +94,7 @@ export function SimSessionView({
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [notesOpen, setNotesOpen] = React.useState(false);
   const [hintOpen, setHintOpen] = React.useState(false);
+  const [confirmFinish, setConfirmFinish] = React.useState(false);
   const hintUsedRef = React.useRef(false);
   const [typing, setTyping] = React.useState(false);
   const pendingReply = React.useRef<string | null>(null);
@@ -270,7 +271,10 @@ export function SimSessionView({
         difficulty={difficulty}
         fixtureMode={fixtureMode}
         seconds={seconds}
-        onMore={() => setMenuOpen(true)}
+        onMore={() => {
+          setMenuOpen(true);
+          setConfirmFinish(false);
+        }}
       />
 
       {/* Transcript — owns the viewport. */}
@@ -358,16 +362,47 @@ export function SimSessionView({
               <span className="flex-1">Notes</span>
             </button>
 
-            {/* Finish & debrief. */}
-            <button
-              type="button"
-              onClick={() => void finishAndDebrief()}
-              disabled={ending || turns.length < 2}
-              className="flex w-full items-center gap-3 rounded-lg border-2 border-border bg-primary px-4 py-3 text-left text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
-            >
-              <Flag className="size-5 shrink-0" aria-hidden />
-              <span className="flex-1">{ending ? "Scoring…" : "Finish & debrief"}</span>
-            </button>
+            {/* Finish & debrief — two-step confirm so the session-ending action
+                is never a slip-tap (§3.6). */}
+            {confirmFinish ? (
+              <div className="rounded-lg border-2 border-foreground bg-card p-4">
+                <p className="text-small font-semibold text-foreground">
+                  End the session with {patientName}?
+                </p>
+                <p className="mt-1 text-small text-muted-foreground">
+                  You&apos;ll go to the debrief and won&apos;t be able to continue this
+                  conversation.
+                </p>
+                <div className="mt-3 flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setConfirmFinish(false)}
+                    disabled={ending}
+                    className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-muted-foreground active:translate-y-px"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void finishAndDebrief()}
+                    disabled={ending}
+                    className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
+                  >
+                    {ending ? "Scoring…" : "Finish session"}
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setConfirmFinish(true)}
+                disabled={turns.length < 2}
+                className="flex w-full items-center gap-3 rounded-lg border-2 border-border bg-primary px-4 py-3 text-left text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
+              >
+                <Flag className="size-5 shrink-0" aria-hidden />
+                <span className="flex-1">Finish &amp; debrief</span>
+              </button>
+            )}
           </div>
         </SheetContent>
       </Sheet>
