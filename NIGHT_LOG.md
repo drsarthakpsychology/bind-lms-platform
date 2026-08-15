@@ -1,3 +1,35 @@
+## 2026-08-16 — AI-actor brief Phase 2: /api/sim/health + repair chain (code)
+
+Kavya's brief Phase 2: a diagnostic `/api/sim/health` + a repair chain for
+401/403/404/429/timeout. Landed:
+
+- `src/lib/ai/diagnostics.ts` — pure (no Next/server-only) `probeProvider()` +
+  `classify()`: one deterministic ping per provider, classified against the
+  repair chain **401 / 402 / 403 / 404 / 429 / 5xx / timeout** with a
+  human-readable fix. Read-only for the circuit-breaker.
+- `src/app/api/sim/health/route.ts` — admin-only (`requireAdmin`); probes every
+  configured provider + reports the router's live `simLane` (json, student
+  data, circuit-filtered candidates). HTTP 200 when `servable`, 503 otherwise.
+  401 for non-admins. Never returns keys/bodies.
+- `scripts/sim-health-check.ts` (`npm run sim:health-check`) — the headless
+  twin: loads `.env.local`, probes every configured provider, prints the table.
+- `src/lib/ai/client.test.ts` — **the 429 advance is now proven** (was
+  untested): groq 429 → aiChat calls cerebras and returns its content; all
+  429 → `[SIM] ALL PROVIDERS FAILED` warn + `AiUnavailableError`.
+
+**REAL CHAIN FINDING from the headless run** (`npm run sim:health-check`):
+- groq OK (307ms) · opencode OK · openrouter OK · deepseek OK
+- **sambanova 402 Payment Required** — free tier needs a card (matches the
+  router.ts note). Added a 402 case to `classify()` (was "Unexpected status").
+- simLane today = [groq, sambanova, openrouter, opencode] servable=true
+  (deepseek correctly excluded from the student-data lane).
+
+Gate green: lint ✓, tsc ✓, 507/507 ✓, build ✓. Dev-verified: `/api/sim/health`
+returns 401 for non-admins.
+
+Next: **push no-train keys to Vercel Production** (GROQ/SAMBANOVA/OPENROUTER/
+OPENCODE + AI_ENABLED=true) — the root-cause fix for the scripted prod patient.
+
 ## 2026-08-16 — AI-actor brief Phase 1: the fallback is now LOUD
 
 Kavya's brief (cohort Aug 20): make the scripted-patient failure impossible to
@@ -4247,3 +4279,4 @@ DECISION: Cartesia stays the live voice (free, natural). Chatterbox is wired
 min (~$0.25); stopped per the brief. Next option if pursued: a different ACA
 region or Modal/RunPod.
 2026-08-16T01:13:02 STOP_CLAUDE present — allowing stop.
+2026-08-16T01:17:27 STOP_CLAUDE present — allowing stop.

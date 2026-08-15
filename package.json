@@ -71,6 +71,7 @@
     "knowledge:eval": "tsx scripts/knowledge/eval.ts",
     "sim:quality-eval": "tsx scripts/sim-quality-eval.ts",
     "sim:live-proof": "tsx scripts/sim-live-proof.ts",
+    "sim:health-check": "tsx scripts/sim-health-check.ts",
     "livekit:worker": "tsx livekit-agent/agent.ts",
     "knowledge:concepts": "tsx scripts/knowledge/extract-concepts.ts",
     "knowledge:enrich": "tsx scripts/knowledge/enrich-concepts.ts",
