@@ -62,14 +62,37 @@ EnvironmentFile=/opt/chatterbox-server/env
 ExecStart=/opt/chatterbox-venv/bin/uvicorn main:app --host 0.0.0.0 --port ${CHATTERBOX_PORT}
 Restart=on-failure
 RestartSec=3
+StandardOutput=append:/var/log/chatterbox.log
+StandardError=append:/var/log/chatterbox.log
 
 [Install]
 WantedBy=multi-user.target
 UNIT
 
+  # Self-stop safety net (scale-to-zero): if no synthesis has hit this box for
+  # 15 min, stop the instance. The gateway normally does this (8 min idle);
+  # this belt-and-suspenders guarantees we never pay for an idle GPU even if
+  # the gateway is down.
+  cat > /etc/systemd/system/chatterbox-idle-stop.service <<IDLE
+[Unit]
+Description=Stop the GPU after 15 minutes idle
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'if [ -n "\$(find /var/log/chatterbox.log -mmin +15 2>/dev/null)" ]; then aws ec2 stop-instances --instance-ids "$(curl -s http://169.254.169.254/latest/meta-data/instance-id)" --region ${CHATTERBOX_REGION} 2>/dev/null || true; fi'
+IDLE
+  cat > /etc/systemd/system/chatterbox-idle-stop.timer <<IDLE_T
+[Unit]
+Description=Check GPU idle every 10 minutes
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=10min
+[Install]
+WantedBy=timers.target
+IDLE_T
   systemctl daemon-reload
-  systemctl enable chatterbox
+  systemctl enable chatterbox chatterbox-idle-stop.timer
   systemctl start chatterbox
+  systemctl start chatterbox-idle-stop.timer
 } >> /tmp/chatterbox-boot.log 2>&1
 
 log "=== chatterbox bootstrap done $(date -u) ==="

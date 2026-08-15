@@ -515,37 +515,35 @@ the session/state engine is already realtime-ready.
 - **Voice-audio e2e** (headless has no mic): tap TALK, speak, interrupt, speak again,
   switch to text and back — one continuous conversation. Playwright can't do the audio.
 - **iOS video fullscreen**: confirm fullscreen fills the screen + landscape lock.
-
 ## 🌐 Chatterbox voice on AWS — the ONE thing that makes the voice live (2026-08-15)
 
-Everything is built + verified locally (real Chatterbox audio, plugin↔server
-contract test, the production server code tested). The ONLY blocker is AWS
-credentials — I cannot provision anything without them.
+Everything is built + verified locally (real Chatterbox audio, the production
+server + scale-to-zero gateway tested, cost model in
+`docs/CHATTERBOX_AWS_DEPLOY.md`). The only blocker is **AWS authentication**.
 
-**What I need from you (one sitting):**
+### Step 1 — Authenticate (secure, browser-based — no secrets in chat)
 
-1. **Working AWS credentials.** The `~/.aws/credentials` `[hr]` profile is stale
-   (invalid token). Either:
-   - `aws configure --profile plms` and paste your Access Key ID + Secret Key
-     (I'll use `AWS_PROFILE=plms`), **or**
-   - paste the two keys here and I'll set them up.
-2. **Confirm the region** — default `ap-south-1` (Mumbai, nearest to the LiveKit
-   Cloud "India South" region). If your credits/account are locked to another
-   region, tell me which.
-3. Optional but recommended: check your credit balance (AWS Billing console)
-   so we know the exact ceiling.
+> Open a terminal → run: `aws configure sso` → pick region `ap-south-1` →
+> your browser opens → log in with your AWS account → approve → come back.
+> Then: `export AWS_PROFILE=<the profile name it prints>` and
+> `aws sts get-caller-identity` (should print your account, not an error).
 
-**Then it's ONE command** (scripts + cost model ready in
-`docs/CHATTERBOX_AWS_DEPLOY.md`):
+That's the whole authentication. Nothing gets pasted into chat; keys live only
+in the AWS CLI's own store.
+
+### Step 2 — I deploy (automatic, I do the rest)
+
 ```bash
-CHATTERBOX_AUTH_TOKEN=<secret> REGION=ap-south-1 ./scripts/chatterbox-server/deploy.sh
+CHATTERBOX_AUTH_TOKEN=<a-long-secret> REGION=ap-south-1 ./scripts/chatterbox-server/deploy.sh
 ```
-It launches ONE `g4dn.xlarge` SPOT instance (T4, cheapest practical GPU),
-auto-installs Chatterbox-Turbo + the OpenAI-compatible server, and prints the
-`CHATTERBOX_URL` to paste into `.env.local`. Then I run the real end-to-end +
-benchmark (1/2/3/5 users) and report GPU, hourly/monthly/3-month cost, credit
-consumption, and max concurrent.
 
-**Cost ceiling:** ~$83 of the ~$100 credits over 3 months (spot @ ~$0.30/hr,
-instance stopped when students aren't practising). FREE_ONLY — nothing beyond
-the single spot GPU.
+This launches ONE always-on `t3.nano` gateway (~$4/mo) + ONE `g4dn.xlarge`
+SPOT GPU that is **OFF until a student talks** and stops itself after 8 min
+idle (scale-to-zero). It prints the `CHATTERBOX_URL`; I wire it into
+`.env.local`, restart the worker, and run the real end-to-end test +
+benchmark (1/2/3/5 concurrent), then report: GPU, hourly/monthly/3-month cost,
+credit consumption, max concurrent, and the cold-start behaviour.
+
+**Cost ceiling:** ~$90 of the ~$100 credits over 3 months. If you'd like, also
+set a $10 + $30 AWS Budgets alarm so nothing surprises you — I'll include that
+in the deploy once you're authenticated.
