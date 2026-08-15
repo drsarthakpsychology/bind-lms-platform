@@ -38,6 +38,11 @@ Student → LiveKit WebRTC → AgentSession (realtime, barge-in)
   `tts.TTS` plugin that streams text to an OpenAI-compatible Chatterbox server
   and feeds PCM16 back into the realtime pipeline (which resamples to the
   room's 48 kHz). Streaming + barge-in work natively.
+- **The voice carries the patient's emotion.** After each engine turn the
+  Director's `affect` is set on the TTS (`setAffect`); Chatterbox's native
+  paralinguistic tags add natural colour — `[sigh]` for sombre affects,
+  `[chuckle]` for brittle cheerfulness — mapped conservatively in
+  `affectToParalinguistic` so the patient never sounds like a caricature.
 - **Fallback.** No `CHATTERBOX_URL` set → Cartesia `sonic-2` (natural,
   ~75 ms TTFB) via LiveKit Inference. The old robotic Inworld voice is gone.
 

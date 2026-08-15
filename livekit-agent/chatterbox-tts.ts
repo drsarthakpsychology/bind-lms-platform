@@ -36,13 +36,34 @@ const DEFAULT_OPTIONS = {
   sampleRate: 24000,
 };
 
+/**
+ * Conservative affect → paralinguistic prefix. Chatterbox speaks these
+ * natively. Only the clearest signals get a tag (a sigh for sombre, a light
+ * chuckle for brittle cheerfulness); everything else is left to the LLM's
+ * words + Chatterbox's own expressiveness so we never sound like a cartoon.
+ */
+export function affectToParalinguistic(affect: string | undefined): string {
+  switch (affect) {
+    case "sad":
+    case "resigned":
+    case "numb":
+      return "[sigh] ";
+    case "brittle_cheerful":
+      return "[chuckle] ";
+    default:
+      return "";
+  }
+}
+
 /** Post a segment to the server and yield PCM16 frames from the SSE stream. */
 async function* synthesizeSegment(
   opts: Required<ChatterboxTTSOptions>,
   input: string,
   signal: AbortSignal,
+  paralinguisticPrefix = "",
 ): AsyncGenerator<{ frame: AudioFrame; rate: number; final: boolean }> {
   const base = opts.baseUrl.replace(/\/+$/, "");
+  const text = `${paralinguisticPrefix}${input}`;
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     Accept: "text/event-stream",
@@ -55,7 +76,7 @@ async function* synthesizeSegment(
     body: JSON.stringify({
       model: opts.model,
       voice: opts.voice || undefined,
-      input,
+      input: text,
       response_format: "pcm",
       stream: true,
       sample_rate: opts.sampleRate,
@@ -113,8 +134,9 @@ class ChatterboxChunkedStream extends tts.ChunkedStream {
 
   protected async run(): Promise<void> {
     const signal = this.abortSignal;
+    const prefix = affectToParalinguistic(this.parentAffect);
     let finalFrame: { frame: AudioFrame; rate: number } | undefined;
-    for await (const chunk of synthesizeSegment(this.opts, this.inputText, signal)) {
+    for await (const chunk of synthesizeSegment(this.opts, this.inputText, signal, prefix)) {
       finalFrame = { frame: chunk.frame, rate: chunk.rate };
       this.queue.put({
         requestId: this.requestId,
@@ -141,6 +163,7 @@ class ChatterboxChunkedStream extends tts.ChunkedStream {
     connOptions?: ConnectOptions,
     abortSignal?: AbortSignal,
     private readonly requestId: string = `cb-${crypto.randomUUID()}`,
+    private readonly parentAffect?: string,
   ) {
     super(text, tts, connOptions, abortSignal);
   }
@@ -170,9 +193,10 @@ class ChatterboxSynthesizeStream extends tts.SynthesizeStream {
       const requestId = `cb-${crypto.randomUUID()}`;
       const segmentId = `seg-${segment}`;
       this.markStarted();
+      const prefix = affectToParalinguistic(this.parent.currentAffect);
       let last: { frame: AudioFrame; rate: number } | undefined;
       try {
-        for await (const chunk of synthesizeSegment(this.opts, text, this.abortController.signal)) {
+        for await (const chunk of synthesizeSegment(this.opts, text, this.abortController.signal, prefix)) {
           last = { frame: chunk.frame, rate: chunk.rate };
           this.queue.put({
             requestId,
@@ -227,8 +251,24 @@ class ChatterboxSynthesizeStream extends tts.SynthesizeStream {
 export class ChatterboxTTS extends tts.TTS {
   readonly label = "chatterbox";
 
+  /** The patient's current affect (engine-set per turn); read at synthesis. */
+  private affect: string | undefined;
+
   constructor(private readonly opts: ChatterboxTTSOptions) {
     super(opts.sampleRate ?? DEFAULT_OPTIONS.sampleRate, 1, { streaming: true });
+  }
+
+  get currentAffect(): string | undefined {
+    return this.affect;
+  }
+
+  /**
+   * The worker calls this after every engine turn so the patient's speech
+   * matches their emotional state. Affects map to conservative Chatterbox
+   * paralinguistic tags (see `affectToParalinguistic`).
+   */
+  setAffect(affect: string | undefined): void {
+    this.affect = affect;
   }
 
   get model() {
@@ -246,6 +286,8 @@ export class ChatterboxTTS extends tts.TTS {
       this,
       connOptions,
       abortSignal,
+      undefined,
+      this.affect,
     );
   }
 

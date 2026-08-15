@@ -29,6 +29,10 @@ export interface SessionTurnResult {
   disclosed: string[];
   trust: number;
   state: PatientState;
+  /** The Director's affect for this turn (→ the voice layer, v5 §6). */
+  affect?: string;
+  /** The patient's fatigue 0–10 (→ the voice layer). */
+  fatigue: number;
 }
 
 export async function runSessionTurn(input: SessionTurnInput): Promise<SessionTurnResult> {
@@ -118,5 +122,11 @@ export async function runSessionTurn(input: SessionTurnInput): Promise<SessionTu
     disclosed: result.state.disclosed,
     trust: result.state.trust,
     state: result.state,
+    // The Director's affect + fatigue ride along so the VOICE layer can make
+    // the patient's speech match their emotional state (v5 §6) — the realtime
+    // worker uses these to add natural colour (sighs, chuckles) rather than a
+    // flat narration voice.
+    affect: result.decision.affect,
+    fatigue: result.state.fatigue,
   };
 }

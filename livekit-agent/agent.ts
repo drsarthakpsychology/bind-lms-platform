@@ -60,20 +60,25 @@ const PATIENT_AGENT_NAME = "bind-patient";
  * Fallback: Cartesia Sonic-2 via LiveKit Inference — genuinely natural and
  * low-latency (~75ms TTFB), used only when no Chatterbox server is reachable.
  */
-function makeTTS(): tts.TTS {
+function makeTTS(): {
+  tts: tts.TTS;
+  /** The patient's affect after each turn → the primary voice gets a hint. */
+  setAffect: (affect: string | undefined, _fatigue: number) => void;
+} {
   const chatterboxUrl = env("CHATTERBOX_URL");
-  const primary = chatterboxUrl
+  const chatterbox = chatterboxUrl
     ? new ChatterboxTTS({
         baseUrl: chatterboxUrl,
         model: env("CHATTERBOX_TTS_MODEL"),
         voice: env("CHATTERBOX_TTS_VOICE"),
         apiKey: env("CHATTERBOX_API_KEY"),
       })
-    : new inference.TTS({
-        model: env("LIVEKIT_TTS_MODEL") ?? "cartesia/sonic-2",
-        voice: env("LIVEKIT_TTS_VOICE") ?? "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
-        language: "en",
-      });
+    : null;
+  const primary = chatterbox ?? new inference.TTS({
+    model: env("LIVEKIT_TTS_MODEL") ?? "cartesia/sonic-2",
+    voice: env("LIVEKIT_TTS_VOICE") ?? "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+    language: "en",
+  });
   console.log(
     "[patient-agent] TTS primary:",
     chatterboxUrl
@@ -88,13 +93,18 @@ function makeTTS(): tts.TTS {
     voice: "Guy",
     language: "en",
   });
-  return new tts.FallbackAdapter({ ttsInstances: [primary, knownGood], maxRetryPerTTS: 2 });
+  return {
+    tts: new tts.FallbackAdapter({ ttsInstances: [primary, knownGood], maxRetryPerTTS: 2 }),
+    setAffect: (affect) => chatterbox?.setAffect(affect),
+  };
 }
 
 interface WorkerDeps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   supabase: any;
   resolveSession: () => { sessionId: string; userId: string };
+  /** The patient's affect after each turn → the TTS adds natural colour. */
+  onAffect?: (affect: string | undefined, fatigue: number) => void;
 }
 
 /** A LiveKit `LLM` whose brain is the existing patient engine. */
@@ -144,6 +154,10 @@ class PatientEngineStream extends llm.LLMStream {
         userId,
         message: text,
       });
+      // Set the patient's affect on the voice BEFORE the reply is spoken, so
+      // the TTS adds natural colour (a sigh for sombre, a chuckle for brittle
+      // cheerfulness) instead of a flat narration read.
+      this.engine.deps.onAffect?.(result.affect, result.fatigue);
       this.output.put({
         id: crypto.randomUUID(),
         delta: { role: "assistant", content: result.reply },
@@ -173,7 +187,12 @@ export default defineAgent({
       return { sessionId: room.name ?? "", userId: humans[0]?.identity ?? "" };
     };
 
-    const engineLLM = new PatientEngineLLM({ supabase, resolveSession });
+    const voiceTts = makeTTS();
+    const engineLLM = new PatientEngineLLM({
+      supabase,
+      resolveSession,
+      onAffect: voiceTts.setAffect,
+    });
 
     const session = new voice.AgentSession({
       llm: engineLLM,
@@ -181,7 +200,7 @@ export default defineAgent({
         model: env("LIVEKIT_STT_MODEL") ?? "deepgram/nova-3",
         language: "en",
       }),
-      tts: makeTTS(),
+      tts: voiceTts.tts,
       turnHandling: {
         turnDetection: new inference.TurnDetector(),
       },
