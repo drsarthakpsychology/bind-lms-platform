@@ -547,3 +547,27 @@ credit consumption, max concurrent, and the cold-start behaviour.
 **Cost ceiling:** ~$90 of the ~$100 credits over 3 months. If you'd like, also
 set a $10 + $30 AWS Budgets alarm so nothing surprises you — I'll include that
 in the deploy once you're authenticated.
+
+## 🟡 2026-08-16 — AI-actor brief DONE (code); two decisions left before Aug 20
+
+Phase 1–4 of the AI-actor brief are committed and gate-green:
+
+- **Phase 1** loud scripted-fallback logging (`f6cd84b`)
+- **Phase 2** `/api/sim/health` diagnostic + repair chain + **Vercel Production
+  LLM keys verified** (`dc2b8ec`, `ba4d646`) — GROQ/SAMBANOVA/OPENROUTER/
+  OPENCODE + AI_ENABLED=true all fingerprint-match `.env.local`
+- **Phase 3** Actor full-context proof, 23/23 blocks (`5c3e589`)
+- **Phase 4** TTS default = Cartesia sonic-2, Chatterbox opt-in (`93a056f`)
+
+Two things need YOU:
+
+1. **Deploy the branch to prod** — the fix is only live after a deploy. The
+   branch (`feat/mobile-design-system`) is **202 commits ahead of main**
+   (mobile design system + voice + these AI fixes). That's a real ship
+   decision: `vercel --prod` from this branch, or rebase the AI fixes onto
+   main and ship those first. After the deploy, `GET /api/sim/health` (admin)
+   should return 200 with `servable: true`.
+2. **Device-QA the voice session** — a live mic + speaker check that the
+   Cartesia-primary worker speaks real audio in a session (browser-only; a
+   headless box can't play audio). Watch the worker banner:
+   `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary`.
