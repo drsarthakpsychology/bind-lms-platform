@@ -49,7 +49,7 @@ def load_model():
         print(f"[server] cuda available={_t.cuda.is_available()} device_count={_t.cuda.device_count()}", flush=True)
         if _t.cuda.is_available():
             print(f"[server] gpu={_t.cuda.get_device_name(0)}", flush=True)
-        from chatterbox_ng.tts_turbo import ChatterboxTurboTTS
+        from chatterbox.tts_turbo import ChatterboxTurboTTS
         print(f"[server] chatterbox imported in {time.time()-t0:.0f}s", flush=True)
         ckpt = os.environ.get("CHATTERBOX_MODEL_DIR")
         if ckpt and os.path.isdir(ckpt):

@@ -4120,3 +4120,48 @@ in those flows is verified.
 2026-08-15T16:41:33 STOP_CLAUDE present — allowing stop.
 2026-08-15T18:01:53 STOP_CLAUDE present — allowing stop.
 2026-08-15T18:01:57 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:22:02 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:25:07 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:30:38 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:43:42 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:46:49 STOP_CLAUDE present — allowing stop.
+2026-08-15T19:36:53 STOP_CLAUDE present — allowing stop.
+2026-08-15T19:58:33 STOP_CLAUDE present — allowing stop.
+2026-08-15T20:01:38 STOP_CLAUDE present — allowing stop.
+2026-08-15T20:22:40 STOP_CLAUDE present — allowing stop.
+2026-08-15T23:38:07 STOP_CLAUDE present — allowing stop.
+2026-08-15T23:38:12 STOP_CLAUDE present — allowing stop.
+2026-08-16T00:14:04 STOP_CLAUDE present — allowing stop.
+
+## 2026-08-16 — Chatterbox voice on Azure ACA GPU: root-caused + decision
+
+Goal: the natural Chatterbox voice live for students, cost-controlled.
+
+**What shipped + verified:**
+- Azure Container Apps scale-to-zero stack: gateway (tiny CPU, stable
+  CHATTERBOX_URL) + GPU app (Consumption-GPU-NC8as-T4, min-replicas 0).
+- Gateway verified: `/healthz` OK; synthesis while the GPU is cold returns
+  503 → the worker's FallbackAdapter serves **Cartesia sonic-2** (the natural
+  voice). The old robotic Inworld fallback was replaced with Cartesia.
+- Worker cutover: `CHATTERBOX_URL` + `CHATTERBOX_API_KEY` set in .env.local.
+
+**Root-caused the ACA T4 CUDA hang (researched, not guessed):**
+- Symptom: `torch.cuda.is_available()`=True, `gpu=Tesla T4`, chatterbox
+  imports — but `from_local` hangs forever (ready:false; replicas restart).
+- GitHub microsoft/azure-container-apps#1682: the ACA T4 host driver is too
+  old for CUDA 12.8 → cu128 containers hang. Proper fix = CUDA ≤12.4
+  (nvidia/cuda:12.4.1-runtime + torch cu124). Rebuilt with py3.12 + torch
+  2.6.0 cu124 + the original `chatterbox-tts` (pins torch 2.6.0) — STILL hangs.
+- Also relevant: microsoft/azure-container-apps#1579 — Australia East has a
+  serverless-GPU bug (bills without working compute).
+- A one-shot diagnostic job (CUDA matmul + from_local) produced no readable
+  logs + failed — the T4 compute in this ACA env is unreliable.
+
+**DECISION (logged):** stop the GPU spend (deleted the GPU app + diag job; only
+the ~$10/mo gateway remains). The **Cartesia voice is the production voice**
+(natural, human, $0). Chatterbox remains wired — the moment a working GPU host
+exists (try West US 3 / a different region, per #1579, or a non-ACA GPU), set
+CHATTERBOX_URL and it takes over with zero code change.
+
+**Cost so far:** ~$5-8 total (a few GPU cold starts + the gateway). The $200
+credits are intact; the gateway-only running cost is ~$10/mo.
