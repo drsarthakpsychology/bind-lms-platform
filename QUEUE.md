@@ -1454,11 +1454,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   consistent across text, voice, repeated questions, long sessions, and
   switching between text and voice
 
-- [ ] T246  AI model regression suite — create a repeatable test suite for
+- [x] T246  AI model regression suite — create a repeatable test suite for
   patient behaviour so changing the model, prompt, provider, voice system,
   or retrieval layer does not silently make the patient worse
 
-- [ ] T247  Model routing — separate the concept of "best model for text" from
+- [x] T247  Model routing — separate the concept of "best model for text" from
   "best model for realtime voice"; use appropriate models for each mode while
   maintaining one shared conversation state
 
@@ -1484,7 +1484,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   fallback, but never confuse the student-facing experience with technical
   implementation details
 
-- [ ] T253  Remove "Scripted" from normal student experience — do not display
+- [x] T253  Remove "Scripted" from normal student experience — do not display
   Scripted as the normal patient mode once the real AI architecture is live;
   only expose implementation mode internally when necessary
 
@@ -1500,7 +1500,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   validate that generated patient behaviour remains consistent with the
   structured clinical/case facts before making it available to students
 
-- [ ] T257  AI debrief grounding — generate the post-session debrief from the
+- [x] T257  AI debrief grounding — generate the post-session debrief from the
   actual conversation transcript, configured learning objectives, and actual
   student behaviour
 
