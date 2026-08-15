@@ -569,5 +569,7 @@ Two things need YOU:
    should return 200 with `servable: true`.
 2. **Device-QA the voice session** — a live mic + speaker check that the
    Cartesia-primary worker speaks real audio in a session (browser-only; a
-   headless box can't play audio). Watch the worker banner:
-   `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary`.
+   headless box can't play audio). The machine side is verified (worker
+   registered + a headless dispatch logged
+   `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary`); only
+   the human loop (say something → the patient's voice answers) remains.

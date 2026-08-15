@@ -1,3 +1,19 @@
+## 2026-08-16 — VOICE machine-side verified live (Kavya: "continue with both")
+
+Ran the real worker against LiveKit Cloud and dispatched a headless session:
+
+- Worker registered (start mode, `bind-patient`, region India South).
+- Agent dispatch → `entry()` ran → **`[patient-agent] TTS: livekit-inference
+  (cartesia/sonic-2) primary (set TTS_PROVIDER=chatterbox to enable
+  chatterbox)`** — Phase 4's Cartesia-default confirmed at runtime.
+- `joined room`, session started, closed cleanly (`AgentSession closed`,
+  `Session report uploaded to LiveKit Cloud`). No real failures.
+- Method: `AgentDispatchClient.createDispatch` (no participant/WebRTC needed —
+  `livekit-client` needs a browser). Room + dispatch torn down after.
+- Caveats: a benign `rotateSegment` WARN (no audio input); the actual
+  mic→STT→LLM→TTS→speaker audio loop still needs a human browser session
+  (device-QA, NEEDS_KAVYA).
+
 ## 2026-08-16 — PROD DEPLOYED + VERIFIED: real AI patient live (Kavya: "continue with both")
 
 Shipped the branch to Vercel Production (`vercel --prod`) and verified end-to-end:
@@ -4375,3 +4391,4 @@ region or Modal/RunPod.
 2026-08-16T01:13:02 STOP_CLAUDE present — allowing stop.
 2026-08-16T01:17:27 STOP_CLAUDE present — allowing stop.
 2026-08-16T01:31:08 STOP_CLAUDE present — allowing stop.
+2026-08-16T01:39:10 STOP_CLAUDE present — allowing stop.
