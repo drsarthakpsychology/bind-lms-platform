@@ -1419,12 +1419,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   the student to the exact same conversation position with no duplicated,
   missing, or reordered messages
 
-- [ ] T238  AI response quality layer — prevent generic, repetitive,
+- [x] T238  AI response quality layer — prevent generic, repetitive,
   over-explained, overly polished, or obviously AI-generated patient
   responses; patient responses should be concise, human, context-sensitive,
   and appropriate to the patient's configured personality
 
-- [ ] T239  Human conversation rules — the patient should sometimes pause,
+- [x] T239  Human conversation rules — the patient should sometimes pause,
   misunderstand, answer partially, redirect, express uncertainty, show
   emotion, use ordinary conversational language, and require appropriate
   follow-up questions instead of behaving like a clinical database
@@ -1441,7 +1441,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   technology, use appropriate emotional variation without turning the patient
   into an exaggerated character
 
-- [ ] T243  Voice response length — prevent unnecessarily long spoken responses;
+- [x] T243  Voice response length — prevent unnecessarily long spoken responses;
   the patient should answer naturally and leave room for the student to
   continue the interview
 
