@@ -72,6 +72,7 @@
     "sim:quality-eval": "tsx scripts/sim-quality-eval.ts",
     "sim:live-proof": "tsx scripts/sim-live-proof.ts",
     "sim:health-check": "tsx scripts/sim-health-check.ts",
+    "sim:actor-prompt-proof": "tsx scripts/actor-prompt-proof.ts",
     "livekit:worker": "tsx livekit-agent/agent.ts",
     "knowledge:concepts": "tsx scripts/knowledge/extract-concepts.ts",
     "knowledge:enrich": "tsx scripts/knowledge/enrich-concepts.ts",

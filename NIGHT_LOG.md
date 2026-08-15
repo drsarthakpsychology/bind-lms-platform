@@ -1,3 +1,24 @@
+## 2026-08-16 — AI-actor brief Phase 3: Actor context verified (all 23 blocks)
+
+The brief asked: verify the Actor receives FULL case context each turn and
+report the assembled prompt (redacted).
+
+- `scripts/actor-prompt-proof.ts` (`npm run sim:actor-prompt-proof`) renders a
+  REAL Actor prompt from the fixture case + drawn variant + a sample Director
+  decision and asserts each context block. **All 23 present**: identity
+  (name/age/occupation/city/family/language), HOW YOU ARE TODAY (mood, register,
+  chief complaint in own words, recent event, defended topic, somatic focus,
+  opening posture), WHAT SETS YOU OFF (affect rules, irritation triggers, core
+  belief, unknowns, contradictions), THIS TURN (move, permitted facts,
+  must-not-mention, affect, length hint), RECENT CONVERSATION, VOICE RULES,
+  STAGE DIRECTIONS, prompt version.
+- `src/lib/sim/actor.ts` `buildActorPrompt` receives the full `DepthCase`
+  (case_, decision, state, recentTurns) on every turn via `runPatientTurn` —
+  nothing is stripped. Exit code non-zero if any block is ever missing.
+
+The fixture prompt is synthetic (Ravi); real sessions are the same function
+with the session's case — no extra data-gathering needed. Phase 3 closed.
+
 ## 2026-08-16 — PROD FIX: LLM keys now on Vercel Production (root cause closed)
 
 The scripted production patient was caused by Vercel Production having NO LLM
