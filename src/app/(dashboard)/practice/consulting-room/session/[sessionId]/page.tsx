@@ -135,6 +135,7 @@ export default async function SimSessionPage({
       patientContext={patientContext}
       difficulty={session.difficulty}
       startedAt={session.started_at as string | undefined}
+      livekitEnabled={Boolean(process.env.LIVEKIT_URL)}
       voicePrefs={voicePrefs}
       initialTurns={(turns ?? []).map((t) => ({
         id: String(t.id ?? `t-${t.created_at ?? 0}-${t.role}-${String(t.content).slice(0, 12)}`),

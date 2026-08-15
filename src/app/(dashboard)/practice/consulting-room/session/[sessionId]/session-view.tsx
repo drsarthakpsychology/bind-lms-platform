@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { VoiceConversation } from "@/components/sim/voice-conversation";
+import { LiveKitVoiceScreen } from "@/components/sim/livekit-voice-screen";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -59,6 +60,7 @@ export function SimSessionView({
   patientAge,
   patientContext,
   difficulty,
+  livekitEnabled = false,
   initialTurns,
   voicePrefs,
   branchInfo,
@@ -70,6 +72,8 @@ export function SimSessionView({
   patientAge?: number;
   patientContext?: string;
   difficulty: string;
+  /** Realtime voice over LiveKit when configured (falls back to browser voice). */
+  livekitEnabled?: boolean;
   initialTurns: Turn[];
   startedAt?: string;
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
@@ -282,8 +286,18 @@ export function SimSessionView({
   return (
     <div className="flex h-dvh flex-col bg-background">
       {/* Focused voice mode — the whole screen becomes the conversation. Same
-          turns, same session, same patient as text (one brain). */}
+          turns, same session, same patient as text (one brain). Realtime
+          LiveKit when configured, the browser conversational loop otherwise. */}
       {voiceMode ? (
+        livekitEnabled ? (
+        <LiveKitVoiceScreen
+          sessionId={sessionId}
+          patientName={patientName}
+          onExitVoice={() => setVoiceMode(false)}
+          onEnd={() => setConfirmFinish(true)}
+          busy={busy}
+        />
+        ) : (
         <VoiceConversation
           patientName={patientName}
           onSend={(t) => {
@@ -305,6 +319,7 @@ export function SimSessionView({
           onEnd={() => setConfirmFinish(true)}
           busy={busy}
         />
+        )
       ) : (
         <>
       <SimulationHeader
