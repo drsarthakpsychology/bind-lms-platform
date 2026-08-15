@@ -42,3 +42,7 @@ screenshots/
 
 # local voice-sample artifacts (listen, don't commit)
 docs/samples/
+
+# Python build artifacts
+__pycache__/
+*.pyc
