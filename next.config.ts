@@ -4,6 +4,11 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig: NextConfig = {
   // Don't advertise the framework (audit finding #8 — minor fingerprint leak).
   poweredByHeader: false,
+  // Hide the dev-mode "Activity" floating indicator. In dev it sits at the
+  // bottom-left corner and intercepts pointer events over real UI (e.g. the
+  // session composer's "Use voice" button) — dev-only, and a genuine
+  // interaction hazard, not just a test issue.
+  devIndicators: false,
   // A handful of routes read repo JSON at request time via readFileSync
   // (not import) — the psychopharm knowledge base and the case-library
   // corpus. @vercel/nft's static trace usually resolves

@@ -1,5 +1,20 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
 import { go } from "./helpers";
+
+// When LIVEKIT_URL is configured the voice screen is the realtime LiveKit one:
+// its shared transcript + barge-in are populated only by an actual mic session,
+// which headless Chromium can't run. Detect it so the voice assertions degrade
+// gracefully (device-limited) instead of failing on an environment limitation.
+function livekitConfigured(): boolean {
+  if (process.env.LIVEKIT_URL) return true;
+  try {
+    return /^LIVEKIT_URL=.+/m.test(readFileSync(".env.local", "utf8"));
+  } catch {
+    return false;
+  }
+}
+const LIVEKIT = livekitConfigured();
 
 /**
  * The 17-step AI-patient proof (§26), on the real app with the real engine.
@@ -55,25 +70,30 @@ test("AI patient: real conversation, memory across turns, voice↔text shares on
   expect(grew).toBe(true);
 
   // 7-8. Enter voice mode → the focused voice screen renders.
-  await page.getByRole("button", { name: /voice/i }).first().click().catch(() => {});
+  await page.getByRole("button", { name: /voice/i }).first().click({ timeout: 10000 }).catch(() => {});
   await page.waitForTimeout(1500);
   const voiceScreen = await page.getByText(/Listening|speak naturally|switch to text/i).first().isVisible().catch(() => false);
   console.log("✓ step 7 — voice screen rendered:", voiceScreen);
 
   if (voiceScreen) {
     // 10. The voice transcript shows the SAME conversation (one session).
+    //     With LiveKit configured this needs a real mic session (the transcript
+    //     streams from the live session) — headless can't run it, so the check
+    //     degrades to a documented device-limited skip.
     const voiceTranscript = await page.locator("body").innerText();
     const shared = /You:|patient:|heaviness/i.test(voiceTranscript);
-    console.log("✓ step 10 — voice shares the text transcript:", shared);
+    console.log("✓ step 10 — voice shares the text transcript:", shared, LIVEKIT ? "(LiveKit: device-limited in headless)" : "");
+    if (!LIVEKIT) expect(shared).toBe(true);
 
-    // 13. Switch voice → text; the conversation must persist.
-    await page.getByRole("button", { name: /switch to text/i }).click().catch(() => {});
+    // 13. Switch voice → text; the conversation must persist. (The LiveKit
+    //     screen shows "Switch to text" as its top action.)
+    await page.getByRole("button", { name: /switch to text/i }).first().click({ timeout: 10000 }).catch(() => {});
     await page.waitForTimeout(1500);
     const backToText = await input.isVisible().catch(() => false);
     console.log("✓ step 13 — switched back to text:", backToText);
     expect(backToText).toBe(true);
   } else {
-    console.log("⚠ voice screen skipped — Web Speech unavailable in headless Chromium (device-limited step)");
+    console.log("⚠ voice screen skipped — Web Speech/LiveKit unavailable in headless Chromium (device-limited step)");
   }
 
   // 16-17. End the session → the debrief uses the actual conversation.

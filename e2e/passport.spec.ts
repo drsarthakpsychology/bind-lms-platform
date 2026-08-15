@@ -14,9 +14,10 @@ test("passport: PDF downloads and supervision sign-off can be requested", async 
   await expect(downloadLink).toBeVisible();
   console.log("✓ passport PDF link present");
 
-  // Request sign-off on the supervision entry logged earlier.
-  await page.goto("/practice/supervision", { waitUntil: "networkidle" });
-  await expect(page.locator("h1")).toContainText(/supervision log/i);
+  // Request sign-off on the supervision entry logged earlier. Supervision
+  // hours moved out of the /practice drill grid to /record (casebook Finding 4).
+  await page.goto("/record", { waitUntil: "networkidle" });
+  await expect(page.locator("h1")).toContainText(/paper trail/i);
   const requestBtn = page.getByRole("button", { name: /request sign-off/i }).first();
   const hasRequest = await requestBtn.isVisible().catch(() => false);
   if (hasRequest) {

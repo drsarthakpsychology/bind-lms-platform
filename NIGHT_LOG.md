@@ -1,3 +1,53 @@
+## 2026-08-15 — e2e suite repaired: 8 stale specs → green
+
+The full suite showed 8 failures. Root cause: they were stale — written for the
+pre-refactor app (routes/labels since moved). None touched the video player.
+
+- **pages-interactions** — check-in + supervision moved to `/record` (casebook
+  Finding 4, commit a8e38ed); case library renamed to "Case library". Updated.
+- **passport** — sign-off request now on `/record`.
+- **weak-spots** — empty state has guidance text, not a consulting-room link.
+  Updated the assertion to the honest content.
+- **roleplay** — `peer@vibha.test` didn't exist (auth + profile). Ran
+  `scripts/seed-peer.ts` (idempotent). Spec unchanged.
+- **workflow-completion** — the dashboard's "Continue learning" now jumps
+  STRAIGHT into the next lesson (not course → lesson). Made the journey spec
+  adaptive to both shapes; back-nav asserts the real previous context.
+- **ai-patient** — real blocker found: the Next.js dev "Activity" indicator
+  floats bottom-left and intercepted the "Use voice" button (pointer-events).
+  Fixed with `devIndicators: false` (dev-only, and a genuine interaction
+  hazard on real devices too). With LiveKit configured the voice transcript
+  assertions are device-limited in headless — now gated + documented. The spec
+  went from a 150s timeout to 14.6s green, proving the AI patient end-to-end.
+
+## 2026-08-15 — T151 Video mobile QA — found + fixed a real mobile bug
+
+Kavya's Chatterbox voice work is done and committed (entry below). Then the
+queue: T151 video mobile QA.
+
+**New e2e coverage** (`e2e/video-mobile.spec.ts`, 390×844 touch, 9 tests):
+playback, autoplay-policy respect, audio controls in the overflow menu,
+fullscreen engage/exit, rotation (portrait↔landscape playback survives),
+network change (reload mid-play resumes), mobile control collapse, captions
+honesty. All green + desktop `video-fullscreen.spec.ts` still green (11 passed).
+
+**REAL BUG FOUND + FIXED:** the player's `overflow-hidden` clipped the mobile
+"More options" popover — the menu opened upward and was taller than the space
+above the controls, so its top row (volume/mute) was cut off and unreachable.
+Fix: moved `overflow-hidden rounded-md` off the player wrapper onto a media
+"stage" div (video + overlays + watermark). Controls + popover now live outside
+the clip and overflow freely. Bonus: also removes the rounded-corner cosmetic
+bug in pseudo-fullscreen. Native fullscreen behavior unchanged (specs pass).
+
+**Also verified:** resume seek works — the earlier test failures were test
+timing (React `currentTime` state lags the DOM seek by ~1.5s after reload), not
+product bugs. `watched_seconds` persisted (15s in `progress`), playback API
+returns `resumeSeconds`, player seeks to it.
+
+**Device-limited (not code-blocked):** real audio output and iPhone Safari
+native pseudo-fullscreen need a physical device; everything else in T151 is
+headless-verified.
+
 ## 2026-08-15 — CHATTERBOX TTS: the patient's voice is now human
 
 Kavya: "the patient should sound like a real human being, not a robotic

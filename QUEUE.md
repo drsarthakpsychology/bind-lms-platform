@@ -1023,7 +1023,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   simple Continue/Resume action when the student returns to a partially
   watched lesson
 
-- [ ] T151  Video mobile QA — test playback, full-screen, rotation,
+- [x] T151  Video mobile QA — test playback, full-screen, rotation,
   orientation changes, browser restrictions, audio, captions/transcripts,
   playback position, network changes, and returning from full-screen on
   multiple mobile browsers

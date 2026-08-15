@@ -28,32 +28,43 @@ test.describe("T77 workflow completion (mobile journey)", () => {
     // 1. Dashboard is the authenticated landing — the shell's primary hub.
     await go(page, "/dashboard");
     await expect(page).not.toHaveURL(/\/login/, { timeout: 8000 });
-    // The dashboard leads with a primary action (Step 1 continue / start).
+    // The dashboard leads with a primary action (Continue learning / start).
     const primary = page.locator('a[href^="/courses/"]').first();
     await expect(primary).toBeVisible();
 
-    // 2. Enter the first course from the dashboard — this is the primary
-    //    "continue learning" hop and must land on a real course (not a stub).
-    const courseHref = (await primary.getAttribute("href"))!;
+    // 2. The primary "continue learning" hop jumps STRAIGHT into the next
+    //    lesson (the shell's design: one tap, back in the content). It must
+    //    land on a real lesson, never a stub or a login wall.
+    const primaryHref = (await primary.getAttribute("href"))!;
+    const primaryIsLesson = primaryHref.includes("/lessons/");
     await primary.click();
     await expect(page).toHaveURL(/\/courses\//);
-    // The course overview must present the curriculum + a clear next action.
     await expect(page.locator("h1, h2").first()).toBeVisible();
     await expect(page).not.toHaveURL(/\/login/);
 
-    // 3. Open the first available lesson the course offers.
-    const lessonLink = page.locator('a[href*="/lessons/"]').first();
-    if ((await lessonLink.count()) > 0) {
-      await lessonLink.click();
+    if (primaryIsLesson) {
+      // We're already inside the lesson — the forward affordance is present.
       await expect(page).toHaveURL(/\/lessons\//);
-      await expect(page).not.toHaveURL(/\/login/);
-      // The lesson keeps its learning context and a forward affordance.
-      await expect(page.locator("h1, h2").first()).toBeVisible();
 
-      // 4. Back navigation returns to the course (not a dead end / login).
+      // 4. Back navigation returns to the REAL previous context (the
+      //    dashboard), not a dead end or login wall.
       await page.goBack();
-      await expect(page).toHaveURL(new RegExp(courseHref.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
       await expect(page).not.toHaveURL(/\/login/);
+      await expect(page).not.toHaveURL(/\/lessons\//);
+    } else {
+      // The primary was a course page — open the first lesson it offers.
+      const lessonLink = page.locator('a[href*="/lessons/"]').first();
+      if ((await lessonLink.count()) > 0) {
+        await lessonLink.click();
+        await expect(page).toHaveURL(/\/lessons\//);
+        await expect(page).not.toHaveURL(/\/login/);
+        await expect(page.locator("h1, h2").first()).toBeVisible();
+
+        // Back returns to the course (the real previous context).
+        await page.goBack();
+        await expect(page).toHaveURL(new RegExp(primaryHref.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+        await expect(page).not.toHaveURL(/\/login/);
+      }
     }
 
     // 5. Practice hub — the full tool set grouped, no horizontal scroll.

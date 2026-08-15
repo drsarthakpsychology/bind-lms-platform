@@ -713,7 +713,7 @@ export function VideoPlayer({
       }}
       onTouchStart={() => setIsTouching(true)}
       className={
-        "plms-player relative aspect-video w-full overflow-hidden rounded-md bg-black outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" +
+        "plms-player relative aspect-video w-full bg-black outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" +
         (isPseudoFullscreen ? " is-pseudo-fullscreen" : "") +
         (isPaused ? " is-paused" : "") +
         (isTouching ? " is-touching" : "") +
@@ -721,86 +721,93 @@ export function VideoPlayer({
       }
       onContextMenu={(e) => e.preventDefault()}
     >
-      {/* The single video element. hls.js drives it via MediaSource for .m3u8;
-          direct files set src above. object-fit: contain keeps the whole frame
-          visible, never cropped; portrait sources letterbox with black bars. */}
-      <video
-        ref={videoRef}
-        playsInline
-        disablePictureInPicture
-        controlsList="nodownload noplaybackrate noremoteplayback"
-        x-webkit-airplay="deny"
-        className="h-full w-full"
-        onTouchEnd={handleTap}
-      >
-        {/* Caption track — only rendered when the caller provides a captions
-            URL (none do today, so the captions toggle stays hidden). */}
-        {captionsUrl && (
-          <track
-            kind="captions"
-            src={captionsUrl}
-            srcLang="en"
-            label="English"
-            default
-          />
+      {/* Media stage — the ONLY layer that clips to the rounded frame. The
+          video, overlays and watermark live here. The controls + popover menu
+          live OUTSIDE it so the "More options" menu can overflow the player
+          without being cut off by overflow-hidden (T151 mobile bug: the menu
+          opened upward and was clipped, leaving the top row unreachable). */}
+      <div className="absolute inset-0 overflow-hidden rounded-md">
+        {/* The single video element. hls.js drives it via MediaSource for .m3u8;
+            direct files set src above. object-fit: contain keeps the whole frame
+            visible, never cropped; portrait sources letterbox with black bars. */}
+        <video
+          ref={videoRef}
+          playsInline
+          disablePictureInPicture
+          controlsList="nodownload noplaybackrate noremoteplayback"
+          x-webkit-airplay="deny"
+          className="h-full w-full"
+          onTouchEnd={handleTap}
+        >
+          {/* Caption track — only rendered when the caller provides a captions
+              URL (none do today, so the captions toggle stays hidden). */}
+          {captionsUrl && (
+            <track
+              kind="captions"
+              src={captionsUrl}
+              srcLang="en"
+              label="English"
+              default
+            />
+          )}
+        </video>
+
+        {/* Loading / buffering state */}
+        {playerState.kind === "loading" && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+            <Loader2 className="size-8 animate-spin text-white" aria-hidden />
+            <span className="sr-only">Loading video…</span>
+          </div>
         )}
-      </video>
 
-      {/* Loading / buffering state */}
-      {playerState.kind === "loading" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <Loader2 className="size-8 animate-spin text-white" aria-hidden />
-          <span className="sr-only">Loading video…</span>
-        </div>
-      )}
-
-      {/* Error state — a clear message + retry, not a dead frame */}
-      {playerState.kind === "error" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
-          <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
-            <p className="font-semibold text-white">Video unavailable</p>
-            <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
-            <button
-              type="button"
-              onClick={() => setLoadKey((k) => k + 1)}
-              className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
-            >
-              <RotateCcw className="size-4" aria-hidden />
-              Retry
-            </button>
+        {/* Error state — a clear message + retry, not a dead frame */}
+        {playerState.kind === "error" && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
+            <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
+              <p className="font-semibold text-white">Video unavailable</p>
+              <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
+              <button
+                type="button"
+                onClick={() => setLoadKey((k) => k + 1)}
+                className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
+              >
+                <RotateCcw className="size-4" aria-hidden />
+                Retry
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Render the watermark ONCE in the DOM. Hide via opacity when the
-          player is in a non-content state (error / tampered). This prevents the
-          removalObserver from seeing the watermark element appear and disappear
-          on every React state transition (loading→ready, ready→error, retry),
-          which previously triggered a false tamper detection on first re-render. */}
-      <div
-        aria-hidden={tampered || playerState.kind === "error"}
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          opacity: tampered || playerState.kind === "error" ? 0 : 1,
-          transition: "opacity 0.2s ease",
-          display: playerState.kind === "loading" ? "none" : "block",
-        }}
-      >
-        <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
+        {/* Render the watermark ONCE in the DOM. Hide via opacity when the
+            player is in a non-content state (error / tampered). This prevents the
+            removalObserver from seeing the watermark element appear and disappear
+            on every React state transition (loading→ready, ready→error, retry),
+            which previously triggered a false tamper detection on first re-render. */}
+        <div
+          aria-hidden={tampered || playerState.kind === "error"}
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            opacity: tampered || playerState.kind === "error" ? 0 : 1,
+            transition: "opacity 0.2s ease",
+            display: playerState.kind === "loading" ? "none" : "block",
+          }}
+        >
+          <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
+        </div>
+
+        {tampered && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
+            <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
+              <p className="font-semibold text-white">Playback paused</p>
+              <p className="mt-2 text-sm text-gray-300">
+                This video&apos;s watermark was tampered with. Reload the page to continue watching.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
-
-      {tampered && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
-          <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
-            <p className="font-semibold text-white">Playback paused</p>
-            <p className="mt-2 text-sm text-gray-300">
-              This video&apos;s watermark was tampered with. Reload the page to continue watching.
-            </p>
-          </div>
-        </div>
-      )}
 
       {/* Custom controls — ours, not the browser's. Hidden while playing, shown
           on hover/touch/focus/pause. */}
