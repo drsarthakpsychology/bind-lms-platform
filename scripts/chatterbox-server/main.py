@@ -1,67 +1,157 @@
-"""Production Chatterbox-Turbo server - OpenAI-compatible /v1/audio/speech (SSE, PCM16).
+"""Chatterbox-Turbo OpenAI-compatible TTS server (Azure Container Apps GPU).
 
-This is the exact endpoint the LiveKit ChatterboxTTS plugin consumes
-(livekit-agent/chatterbox-tts.ts). Deployed on a single g4dn.xlarge (T4) via
-scripts/chatterbox-server/deploy.sh - see docs/CHATTERBOX_AWS_DEPLOY.md.
-
-Design:
-  - Loads ChatterboxTurboTTS once at startup (the built-in voice from conds.pt).
-  - A small semaphore caps concurrent generations so a burst of students can't
-    OOM the 16 GB T4 - each student's turn is ~2-3.5 s of GPU, and turns are
-    spaced seconds apart, so a single T4 comfortably serves 5-10 students.
-  - Streams base64 PCM16 in `response.output_audio.delta` SSE events, exactly
-    matching the plugin's parser, then `data: [DONE]`.
-
-Run:  uvicorn main:app --host 0.0.0.0 --port 4123
+DIAGNOSTIC INSTRUMENTATION (2026-08-16) — the hang is downstream of a
+successful CUDA init (cuda available=True, Tesla T4, container serves). We
+instrument EVERYTHING before touching versions: faulthandler thread dumps every
+45s (the hanging frame, no exec needed), a heartbeat, env/egress probes, and a
+step-timed loader with a pure CUDA matmul probe. No torch import happens before
+this instrumentation. HF_HUB_OFFLINE=1 (in the Dockerfile) makes any missing
+egress-dependent call fail FAST with the exact file it wanted instead of hanging.
 """
-import base64
-import json
+import faulthandler
 import os
+import socket
+import subprocess
+import sys
 import threading
 import time
-import torch
-from fastapi import FastAPI, Request
-from fastapi.responses import StreamingResponse
+import traceback
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-# Cap concurrent generations (the T4 has room; this prevents an OOM tail).
-CONCURRENCY = int(os.environ.get("CHATTERBOX_CONCURRENCY", "4"))
-MODEL = os.environ.get("CHATTERBOX_MODEL", "turbo")  # "turbo" or "nano"
-# If set, the client must send `Authorization: Bearer <token>`. The security
-# group is open to LiveKit Cloud's egress, so this is the actual gate.
+faulthandler.enable(file=sys.stderr, all_threads=True)
+# Every 45s, dump ALL thread stacks to stderr -> container logs. This alone
+# tells us the exact hanging frame without needing exec access.
+faulthandler.dump_traceback_later(45, repeat=True, exit=False)
+
+_T0 = time.time()
+
+
+def _heartbeat():
+    while True:
+        print(f"[hb] t+{time.time()-_T0:.0f}s", flush=True)
+        time.sleep(10)
+
+
+threading.Thread(target=_heartbeat, daemon=True).start()
+
+
+def _env_report():
+    print(f"[env] uid={os.getuid()} HOME={os.environ.get('HOME')}", flush=True)
+    for d in ("/tmp", os.environ.get("HOME", "/root"), "/opt/chatterbox-model"):
+        print(f"[env] {d} exists={os.path.isdir(d)} writable={os.access(d, os.W_OK)}", flush=True)
+    try:
+        print("[env] nvidia-smi:\n" + subprocess.run(
+            ["nvidia-smi"], capture_output=True, text=True, timeout=20).stdout, flush=True)
+    except Exception as e:
+        print(f"[env] nvidia-smi FAILED: {e!r}", flush=True)
+    # Egress probe: 5s timeout. If this hangs or fails, HF calls will hang forever.
+    for host in ("huggingface.co", "cdn-lfs.huggingface.co"):
+        t = time.time()
+        try:
+            socket.create_connection((host, 443), timeout=5).close()
+            print(f"[env] egress {host} OK in {time.time()-t:.1f}s", flush=True)
+        except Exception as e:
+            print(f"[env] egress {host} BLOCKED after {time.time()-t:.1f}s: {e!r}", flush=True)
+
+
+_env_report()
+
+# ---- Web server (uvicorn serves immediately; the model loads in the background) ----
+from fastapi import FastAPI, Request
+from fastapi.responses import PlainTextResponse, StreamingResponse
+
 AUTH_TOKEN = os.environ.get("CHATTERBOX_AUTH_TOKEN", "")
+CONCURRENCY = int(os.environ.get("CHATTERBOX_CONCURRENCY", "4"))
 
 app = FastAPI()
 _semaphore = threading.Semaphore(CONCURRENCY)
 _model = None
 _model_ready = False
+_device = "cpu"
 _gen_lock = threading.Lock()
 
 
-def load_model():
-    """Load Chatterbox in the background so the container is Ready immediately
-    (ACA restarts a replica whose readiness probe waits too long). The baked
-    model dir is tried first; if missing, download then load."""
-    global _model, _model_ready
-    t0 = time.time()
+# A debug route that does NOT depend on the model and bypasses auth — our live
+# probe while the loader thread is stuck.
+@app.get("/debug/stack", response_class=PlainTextResponse)
+def debug_stack():
+    buf = [f"uptime={time.time()-_T0:.0f}s", f"model_ready={_model_ready}", f"device={_device}"]
+    for tid, frame in sys._current_frames().items():
+        buf.append(f"\n--- thread {tid} ---")
+        buf.extend(traceback.format_stack(frame))
+    return "\n".join(buf)
+
+
+@app.get("/healthz")
+def health():
+    return {"ok": True, "model": "chatterbox-turbo", "device": _device, "ready": _model_ready, "sr": getattr(_model, "sr", None)}
+
+
+# ---- Step-timed loader: individually logged, decisive CUDA matmul probe FIRST ----
+def _step(label, fn):
+    t = time.time()
+    print(f"[step] BEGIN {label}", flush=True)
     try:
-        import torch as _t
-        print(f"[server] cuda available={_t.cuda.is_available()} device_count={_t.cuda.device_count()}", flush=True)
-        if _t.cuda.is_available():
-            print(f"[server] gpu={_t.cuda.get_device_name(0)}", flush=True)
-        from chatterbox.tts_turbo import ChatterboxTurboTTS
-        print(f"[server] chatterbox imported in {time.time()-t0:.0f}s", flush=True)
-        ckpt = os.environ.get("CHATTERBOX_MODEL_DIR")
-        if ckpt and os.path.isdir(ckpt):
-            _model = ChatterboxTurboTTS.from_local(ckpt, device)
-        else:
-            from huggingface_hub import snapshot_download
-            path = snapshot_download(repo_id="ResembleAI/chatterbox-turbo", token=False)
-            _model = ChatterboxTurboTTS.from_local(path, device)
-        print(f"[server] loaded Chatterbox-{MODEL} on {device}, sr={_model.sr} in {time.time()-t0:.0f}s", flush=True)
+        r = fn()
+        print(f"[step] OK    {label} ({time.time()-t:.1f}s)", flush=True)
+        return r
     except Exception as e:
-        print(f"[server] model load FAILED after {time.time()-t0:.0f}s: {e}", flush=True)
-        import traceback
+        print(f"[step] FAIL  {label} ({time.time()-t:.1f}s): {e!r}", flush=True)
+        raise
+
+
+def _load():
+    global _model, _model_ready, _device
+    try:
+        import torch
+        _device = "cuda" if _step("cuda.is_available", lambda: torch.cuda.is_available()) else "cpu"
+        if _device == "cuda":
+            _step("get_device_name", lambda: torch.cuda.get_device_name(0))
+
+            def _matmul():
+                x = torch.randn(2048, 2048, device="cuda")
+                v = (x @ x).sum().item()
+                torch.cuda.synchronize()
+                return v
+            _step("cuda_matmul_probe", _matmul)          # <-- the decisive test
+            _step("cudnn_version", lambda: torch.backends.cudnn.version())
+
+        _step("import_chatterbox", lambda: __import__("chatterbox.tts_turbo", fromlist=["x"]))
+        from chatterbox.tts_turbo import ChatterboxTurboTTS
+        ckpt = os.environ["CHATTERBOX_MODEL_DIR"]
+        _step("listdir_model", lambda: print(sorted(os.listdir(ckpt))[:40], flush=True))
+        # Trace the internal calls so the LAST [trace] BEGIN before the GIL
+        # freeze IS the hanging step. Patch the MODULE binding (from_local did
+        # `from safetensors.torch import load_file`, so the name lives on
+        # chatterbox.tts_turbo, not safetensors.torch).
+        import chatterbox.tts_turbo as _cbtt
+        _orig_load_file = _cbtt.load_file
+        def _traced_load_file(*a, **k):
+            f = a[0].name if hasattr(a[0], "name") else str(a[0])
+            print(f"[trace] BEGIN load_file {f}", flush=True)
+            t = time.time(); r = _orig_load_file(*a, **k)
+            print(f"[trace] OK    load_file {f} in {time.time()-t:.1f}s", flush=True)
+            return r
+        _cbtt.load_file = _traced_load_file
+        _orig_to = torch.Tensor.to
+        def _traced_to(self, *a, **k):
+            dev = a[0] if a else k.get("device")
+            print(f"[trace] BEGIN Tensor.to shape={tuple(self.shape)[:3]}.. -> {dev}", flush=True)
+            t = time.time(); r = _orig_to(self, *a, **k)
+            print(f"[trace] OK    Tensor.to in {time.time()-t:.1f}s", flush=True)
+            return r
+        torch.Tensor.to = _traced_to
+        from transformers import AutoTokenizer as _AT
+        _orig_atf = _AT.from_pretrained
+        def _traced_atf(*a, **k):
+            print(f"[trace] BEGIN AutoTokenizer.from_pretrained {a}", flush=True)
+            t = time.time(); r = _orig_atf(*a, **k)
+            print(f"[trace] OK    AutoTokenizer in {time.time()-t:.1f}s", flush=True)
+            return r
+        _AT.from_pretrained = _traced_atf
+        _model = _step("from_local", lambda: ChatterboxTurboTTS.from_local(ckpt, device=_device))
+        print(f"[server] LOADED sr={_model.sr} in {time.time()-_T0:.0f}s", flush=True)
+    except Exception as e:
+        print(f"[server] LOAD FAILED after {time.time()-_T0:.0f}s: {e!r}", flush=True)
         traceback.print_exc()
     finally:
         _model_ready = True
@@ -69,30 +159,21 @@ def load_model():
 
 @app.on_event("startup")
 def startup():
-    threading.Thread(target=load_model, daemon=True).start()
-
-
-@app.get("/healthz")
-def health():
-    return {"ok": True, "model": f"chatterbox-{MODEL}", "device": device, "ready": _model_ready, "sr": getattr(_model, "sr", None)}
-
-
-# Accept the OpenAI-compatible route at ANY path (Azure ML custom-container
-# endpoints forward through a `/score` prefix; the plugin posts to
-# `<base>/v1/audio/speech`). TTS-only, token-gated - one handler for all POSTs.
-@app.api_route("/{full_path:path}", methods=["POST"])
-async def catch_all(req: Request, full_path: str = ""):
-    return await speech(req)
+    threading.Thread(target=_load, daemon=True).start()
 
 
 def _wait_for_model(timeout_s: float = 300) -> bool:
-    """The model loads in the background; block (in a thread) until it is ready."""
     deadline = time.time() + timeout_s
     while time.time() < deadline:
         if _model is not None and _model_ready:
             return True
         time.sleep(2)
     return False
+
+
+@app.post("/{full_path:path}")
+async def catch_all(req: Request, full_path: str = ""):
+    return await speech(req)
 
 
 @app.post("/v1/audio/speech")
@@ -117,19 +198,17 @@ async def speech(req: Request):
                 wav = wav.detach().cpu()
             print(f"[server] {len(text)} chars -> {wav.shape[-1]/_model.sr:.1f}s audio in {time.time()-t0:.1f}s", flush=True)
             pcm = (wav.float() * 32767).clamp(-32768, 32767).short().numpy().tobytes()
-            # Stream in a few chunks so the plugin + pipeline stream to the
-            # student before synthesis finishes (realtime feel).
             step = max(1, len(pcm) // 4)
             for i in range(0, len(pcm), step):
                 chunk = pcm[i:i + step]
                 ev = {
                     "type": "response.output_audio.delta",
                     "index": 0,
-                    "audio": base64.b64encode(chunk).decode(),
+                    "audio": __import__("base64").b64encode(chunk).decode(),
                     "format": "pcm16",
                     "sample_rate": _model.sr,
                 }
-                yield f"data: {json.dumps(ev)}\n\n"
+                yield f"data: {__import__('json').dumps(ev)}\n\n"
             yield "data: [DONE]\n\n"
 
     return StreamingResponse(gen(), media_type="text/event-stream")

@@ -4165,3 +4165,55 @@ CHATTERBOX_URL and it takes over with zero code change.
 
 **Cost so far:** ~$5-8 total (a few GPU cold starts + the gateway). The $200
 credits are intact; the gateway-only running cost is ~$10/mo.
+2026-08-16T00:17:13 STOP_CLAUDE present — allowing stop.
+2026-08-16T00:20:38 STOP_CLAUDE present — allowing stop.
+
+## 2026-08-16 — ACA GPU hang: diagnostic-first (hypothesis logged before deploy)
+
+Brief: both GitHub issues (1682, 1579) don't match our symptom — CUDA init
+succeeded (`cuda available=True`, Tesla T4), container serves. The hang is
+downstream of CUDA init.
+
+HYPOTHESIS (Stage 0, before this deploy): the environment is a custom VNet with
+an NSG. `from_local` makes HuggingFace calls (tokenizer, aux configs) even with
+weights baked. An NSG that DROPs egress produces exactly our signature: clean
+start, CUDA info printed, silence forever — immune to every CUDA version change
+(which is what we observed across cu128 and cu124).
+
+CONFIRM: `[env] egress huggingface.co BLOCKED` in the logs, OR a fast-fail
+`OSError` / `LocalEntryNotFoundError` naming the exact file HF_HUB_OFFLINE
+wanted (the win case — bake was incomplete).
+
+REFUTE: `[step] OK cuda_matmul_probe` prints and the hang is inside torch/CUDA
+native frames (faulthandler dump) → genuine platform GPU fault → the region
+theory is live → redeploy to Australia Southeast / West US 3.
+
+FIX applied (one variable): Dockerfile env vars only — HOME=/tmp, writable cache
+dirs, HF_HUB_OFFLINE=1, HF_HUB_ETAG_TIMEOUT=5. No base/Python/torch/chatterbox
+changes. faulthandler dumps all thread stacks every 45s; /debug/stack route
+(live probe); step-timed loader with a pure CUDA matmul probe before the
+chatterbox import.
+
+GPU budget: 30 active minutes (~$0.50), tracked from this deploy.
+
+## 2026-08-16 — ACA GPU hang: FINAL diagnosis + cost reality (diagnostic-first)
+
+Instrumented one-variable run (env + faulthandler + step-timed loader with a
+pure CUDA matmul probe). Findings:
+- egress huggingface.co OK -> the NSG-drop hypothesis is REFUTED.
+- cuda_matmul_probe OK + small Tensor.to(cuda) OK -> CUDA compute works.
+- LAST trace: `Tensor.to shape=(1024,256) -> cuda` hangs; heartbeat + /debug/stack
+  freeze (GIL held). A one-shot CUDA job also failed without logs.
+- Verdict: the ACA T4 stalls on the model's .to(cuda) weight load - an
+  environment-level CUDA fault. Two fixes applied (cu128->cu124; offline env)
+  didn't change it. Per the brief's stop rule, ACA-GPU is set aside.
+
+Cost reality (the brief asked for honest math): 1 T4 per replica. 5 concurrent =
+5 x ~$0.98 = ~$4.90/hr. Real usage ~332 GPU-hrs/mo = ~$325/mo at ACA rates - NOT
+viable in the $200 credits. RunPod (~$0.25/hr) ~$83/mo or Modal (~$0.46/hr)
+~$153/mo are cheaper if the voice is used by a subset.
+
+DECISION: Cartesia stays the live voice (free, natural). Chatterbox is wired
+(CHATTERBOX_URL) and takes over on a working host. GPU budget used: ~15 active
+min (~$0.25); stopped per the brief. Next option if pursued: a different ACA
+region or Modal/RunPod.

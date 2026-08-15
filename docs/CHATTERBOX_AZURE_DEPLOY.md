@@ -38,21 +38,51 @@ Student → LiveKit → AI patient engine → Groq LLM → Chatterbox TTS → ba
   (the natural voice, never the old robotic Inworld).
 - GPU app deployed on the T4 profile; scaled to 0 when idle (no GPU billing).
 
-## BLOCKED: ACA T4 CUDA compute hangs
+## Diagnosis (2026-08-16, diagnostic-first — NOT guessed)
 
-The GPU container starts + `torch.cuda.is_available()` = True + reports
-`Tesla T4`, and chatterbox imports — but `ChatterboxTurboTTS.from_local` never
-completes (the model's `.to("cuda")` hangs; the container stays ready:false).
-This is an ACA host-driver vs container-CUDA mismatch. Likely fixes (in order):
+Symptom: the GPU container starts, `torch.cuda.is_available()`=True, reports
+`Tesla T4`, chatterbox imports — then `from_local` never completes; the heartbeat
+and `/debug/stack` freeze (GIL held), and no faulthandler dump fires.
 
-1. **Match the base image CUDA to the ACA T4 driver.** The image uses
-   `nvidia/cuda:12.8.1-runtime`; if the ACA T4 host driver is older (12.4/12.2),
-   cu128 kernels hang. Try `nvidia/cuda:12.4.1-runtime-ubuntu22.04` + torch
-   `cu124` (needs an older torch that still has py3.14 wheels — torch 2.7/2.8).
-2. **Use a Dockerfile with the ACA-recommended GPU base** (the ACA docs list a
-   supported CUDA toolkit for GPU containers).
-3. If neither works, raise an Azure support case for "T4 CUDA compute hangs in
-   a Consumption-GPU container" — a known-area issue.
+**Instrumented run (one variable: Dockerfile env + faulthandler + a step-timed
+loader with a pure CUDA matmul probe):**
+- `[env] egress huggingface.co OK (0.2s)` → **egress to the HF API is NOT blocked**
+  (the cdn-lfs subdomain fails DNS, but the bake is complete so no LFS fetch is
+  needed — this was the leading hypothesis and is REFUTED).
+- `[step] OK cuda_matmul_probe (0.5s)` + every small `Tensor.to(cuda)` OK →
+  **CUDA compute works** (refutes a platform compute fault).
+- `[trace] BEGIN Tensor.to shape=(1024,256).. -> cuda` → **the LAST frame is a
+  `Tensor.to(cuda)` during the model load** with no completion — the GIL is held
+  by a CUDA weight-transfer that never returns. A one-shot CUDA diagnostic job
+  also failed without readable logs.
+
+**Verdict:** neither GitHub issue #1682 (CUDA-init failure) nor #1579
+(AssigningReplica) matches. The ACA T4 environment can run a single matmul and
+small transfers, but the model's `.to(cuda)` weight load stalls forever. This is
+an environment-level CUDA fault specific to loading a model into the T4 — not a
+code, network, bake, or config issue. Two fixes were applied (cu128→cu124; the
+offline/env instrumentation) and neither changed the outcome, so per the
+diagnostic brief's stop rule the ACA-GPU path is set aside. Cartesia remains the
+live production voice; Chatterbox is wired and takes over on a working host.
+
+**Remaining options (in order of cost):**
+1. **Try a different ACA GPU region** (Australia Southeast / West US 3) — a one
+   variable change, one more build + ~$0.50, IF the region fixes the platform fault.
+2. **Non-ACA serverless GPU** (Modal / RunPod) — per-second billing + readable logs.
+3. **Azure support case** for the T4 CUDA weight-load hang.
+
+## Cost reality (honest, per the brief)
+
+- ACA Consumption GPU = **1 T4 per replica**. 5 concurrent students = **5 replicas
+  ≈ $4.90/hr** — not ~$0.98/hr.
+- Real usage (50 students × ~2.5 sessions/wk × ~40 min incl. the 5-min scale-in
+  cooldown) ≈ **332 GPU-hrs/mo ≈ $325/mo at $0.98/hr** — NOT viable in the $200
+  credits.
+- The scale-to-zero only saves idle time BETWEEN sessions; a session holds a
+  replica for its full duration.
+- **Cheaper hosts:** RunPod T4 ~$0.25/hr → ~$83/mo for the same usage; Modal T4
+  ~$0.46/hr → ~$153/mo. Both still meaningful, but viable if voice is used by a
+  subset of sessions.
 
 ## Cost model (per the target usage)
 
