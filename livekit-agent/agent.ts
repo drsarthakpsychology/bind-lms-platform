@@ -51,14 +51,17 @@ const PATIENT_AGENT_NAME = "bind-patient";
 /**
  * The patient's voice.
  *
- * Primary: Chatterbox (open-source, MIT) served by an OpenAI-compatible
- * Chatterbox server — the most human-sounding voice, with natural prosody and
- * paralinguistic expressiveness, at near-zero cost. Configure with
- * `CHATTERBOX_URL` (+ optional `CHATTERBOX_TTS_MODEL` / `CHATTERBOX_TTS_VOICE` /
- * `CHATTERBOX_API_KEY`).
+ * DEFAULT (AI-actor brief Phase 4): Cartesia Sonic-2 via LiveKit Inference —
+ * genuinely natural and low-latency (~75ms TTFB), the production voice.
  *
- * Fallback: Cartesia Sonic-2 via LiveKit Inference — genuinely natural and
- * low-latency (~75ms TTFB), used only when no Chatterbox server is reachable.
+ * OPT-IN Chatterbox (open-source, MIT): only when `TTS_PROVIDER=chatterbox`
+ * AND `CHATTERBOX_URL` is set — the most human-sounding open voice with
+ * natural prosody, but it needs a GPU host (`CHATTERBOX_URL`, plus optional
+ * `CHATTERBOX_TTS_MODEL` / `CHATTERBOX_TTS_VOICE` / `CHATTERBOX_API_KEY`).
+ * When enabled it is the PRIMARY and Cartesia is the failover, so a cold GPU
+ * start (gateway 503s) still speaks a human voice.
+ *
+ * The old robotic Inworld voice is never used.
  */
 function makeTTS(): {
   tts: tts.TTS;
@@ -66,7 +69,8 @@ function makeTTS(): {
   setAffect: (affect: string | undefined, _fatigue: number) => void;
 } {
   const chatterboxUrl = env("CHATTERBOX_URL");
-  const chatterbox = chatterboxUrl
+  const chatterboxOn = env("TTS_PROVIDER") === "chatterbox" && chatterboxUrl;
+  const chatterbox = chatterboxOn
     ? new ChatterboxTTS({
         baseUrl: chatterboxUrl,
         model: env("CHATTERBOX_TTS_MODEL"),
@@ -74,10 +78,6 @@ function makeTTS(): {
         apiKey: env("CHATTERBOX_API_KEY"),
       })
     : null;
-  // The NATURAL voice is always the fallback — Chatterbox (T4) when configured,
-  // otherwise Cartesia sonic-2 (~75ms TTFB). The old robotic Inworld voice is
-  // never used. During a GPU cold start the gateway 503s → this fallback speaks,
-  // so the student hears a human voice immediately and Chatterbox takes over.
   const natural = new inference.TTS({
     model: env("LIVEKIT_TTS_MODEL") ?? "cartesia/sonic-2",
     voice: env("LIVEKIT_TTS_VOICE") ?? "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
@@ -85,9 +85,11 @@ function makeTTS(): {
   });
   console.log(
     "[patient-agent] TTS:",
-    chatterboxUrl
-      ? `chatterbox (${env("CHATTERBOX_TTS_MODEL") ?? "chatterbox-turbo"}) + cartesia fallback`
-      : "livekit-inference (cartesia/sonic-2)",
+    chatterbox
+      ? `chatterbox (${env("CHATTERBOX_TTS_MODEL") ?? "chatterbox-turbo"}) primary + cartesia fallback`
+      : env("TTS_PROVIDER") === "chatterbox"
+        ? "chatterbox requested but CHATTERBOX_URL missing — using cartesia/sonic-2 primary"
+        : "livekit-inference (cartesia/sonic-2) primary (set TTS_PROVIDER=chatterbox to enable chatterbox)",
   );
   return {
     tts: chatterbox

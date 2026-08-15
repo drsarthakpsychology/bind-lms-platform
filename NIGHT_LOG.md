@@ -1,3 +1,25 @@
+## 2026-08-16 — AI-actor brief Phase 4: TTS primary = Cartesia sonic-2 (Chatterbox opt-in)
+
+The brief: TTS primary = Cartesia `sonic-2`; Chatterbox only behind
+`TTS_PROVIDER=chatterbox`; verify end-to-end audio.
+
+- `livekit-agent/agent.ts` `makeTTS()`: **Cartesia `sonic-2` is now the default
+  primary** (LiveKit Inference, ~75 ms TTFB, no GPU needed). Chatterbox becomes
+  primary ONLY when `TTS_PROVIDER=chatterbox` AND `CHATTERBOX_URL` is set, and
+  then Cartesia is the failover (cold GPU start still speaks). The robotic
+  Inworld voice stays gone.
+- Banner is now explicit: `livekit-inference (cartesia/sonic-2) primary`,
+  `chatterbox primary + cartesia fallback`, or a warning when chatterbox was
+  requested but `CHATTERBOX_URL` is missing.
+- `docs/CHATTERBOX_TTS.md` updated (defaults, env table, checklist).
+- Gate green: lint ✓, tsc ✓, 507/507 ✓, build ✓.
+
+**Honest status:** the switch is code-complete + typechecked. "Full session
+produces audio" needs a running worker with a live LiveKit + Cartesia session
+(mic + room) — deferred to device-QA / the real session, same as the voice
+work's existing dependency. On the next worker start the banner will confirm
+the path.
+
 ## 2026-08-16 — AI-actor brief Phase 3: Actor context verified (all 23 blocks)
 
 The brief asked: verify the Actor receives FULL case context each turn and

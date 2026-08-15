@@ -43,25 +43,31 @@ Student → LiveKit WebRTC → AgentSession (realtime, barge-in)
   paralinguistic tags add natural colour — `[sigh]` for sombre affects,
   `[chuckle]` for brittle cheerfulness — mapped conservatively in
   `affectToParalinguistic` so the patient never sounds like a caricature.
-- **Fallback.** No `CHATTERBOX_URL` set → Cartesia `sonic-2` (natural,
-  ~75 ms TTFB) via LiveKit Inference. The old robotic Inworld voice is gone.
+- **Default primary (Phase 4): Cartesia `sonic-2`** (~75 ms TTFB) via LiveKit
+  Inference — the production voice with no GPU needed.
+- **Chatterbox is OPT-IN.** Set `TTS_PROVIDER=chatterbox` AND `CHATTERBOX_URL`
+  to make Chatterbox the primary; Cartesia then becomes the failover, so a cold
+  GPU start still speaks a human voice. Unset → Cartesia only. The old robotic
+  Inworld voice is gone.
 
 ## Files changed
 
 - `livekit-agent/chatterbox-tts.ts` — the custom LiveKit `TTS` plugin (new).
-- `livekit-agent/agent.ts` — `makeTTS()`: Chatterbox when configured, Cartesia
-  sonic-2 otherwise (replaces `inworld/inworld-tts-2`).
+- `livekit-agent/agent.ts` — `makeTTS()`: Cartesia `sonic-2` primary by
+  default; Chatterbox primary only when `TTS_PROVIDER=chatterbox` +
+  `CHATTERBOX_URL` (replaces `inworld/inworld-tts-2`).
 - `.env.local` (gitignored) — Chatterbox config keys.
 
 ## Env vars
 
 | Key | Required | Meaning |
 |---|---|---|
-| `CHATTERBOX_URL` | to enable | Base URL of the OpenAI-compatible Chatterbox server, e.g. `http://10.0.0.5:4123` |
+| `TTS_PROVIDER` | to use Chatterbox | `chatterbox` to make Chatterbox primary; anything else/unset = Cartesia primary |
+| `CHATTERBOX_URL` | for Chatterbox | Base URL of the OpenAI-compatible Chatterbox server, e.g. `http://10.0.0.5:4123` |
 | `CHATTERBOX_TTS_MODEL` | optional | Model id the server understands (default `chatterbox-turbo`) |
 | `CHATTERBOX_TTS_VOICE` | optional | Registered voice id on the server (reference clip) |
 | `CHATTERBOX_API_KEY` | optional | Bearer token if the server requires auth |
-| `LIVEKIT_TTS_MODEL` / `LIVEKIT_TTS_VOICE` | optional | Fallback override (default `cartesia/sonic-2` + a natural Cartesia voice id) |
+| `LIVEKIT_TTS_MODEL` / `LIVEKIT_TTS_VOICE` | optional | Cartesia override (default `cartesia/sonic-2` + a natural Cartesia voice id) |
 
 `LIVEKIT_API_SECRET` never reaches the browser — only the worker reads it to
 sign short-lived room tokens.
@@ -104,7 +110,9 @@ data: [DONE]
   505/505, `npm run build` green. Plugin + worker are typechecked by the gate.
 - **Worker:** `npx tsx livekit-agent/agent.ts dev` registers on LiveKit Cloud
   (agent `bind-patient`); at session start it logs
-  `[patient-agent] TTS primary: chatterbox|livekit-inference (cartesia/sonic-2)`.
+  `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary` by
+  default, or `chatterbox primary + cartesia fallback` when
+  `TTS_PROVIDER=chatterbox` and `CHATTERBOX_URL` are set.
 - **Real Chatterbox audio:** Chatterbox-Turbo (350M) ran locally on Apple MPS,
   generated real patient lines to WAV (native 24 kHz, valid WAVE, afinfo-verified):
 
