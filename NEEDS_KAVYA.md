@@ -515,3 +515,37 @@ the session/state engine is already realtime-ready.
 - **Voice-audio e2e** (headless has no mic): tap TALK, speak, interrupt, speak again,
   switch to text and back — one continuous conversation. Playwright can't do the audio.
 - **iOS video fullscreen**: confirm fullscreen fills the screen + landscape lock.
+
+## 🌐 Chatterbox voice on AWS — the ONE thing that makes the voice live (2026-08-15)
+
+Everything is built + verified locally (real Chatterbox audio, plugin↔server
+contract test, the production server code tested). The ONLY blocker is AWS
+credentials — I cannot provision anything without them.
+
+**What I need from you (one sitting):**
+
+1. **Working AWS credentials.** The `~/.aws/credentials` `[hr]` profile is stale
+   (invalid token). Either:
+   - `aws configure --profile plms` and paste your Access Key ID + Secret Key
+     (I'll use `AWS_PROFILE=plms`), **or**
+   - paste the two keys here and I'll set them up.
+2. **Confirm the region** — default `ap-south-1` (Mumbai, nearest to the LiveKit
+   Cloud "India South" region). If your credits/account are locked to another
+   region, tell me which.
+3. Optional but recommended: check your credit balance (AWS Billing console)
+   so we know the exact ceiling.
+
+**Then it's ONE command** (scripts + cost model ready in
+`docs/CHATTERBOX_AWS_DEPLOY.md`):
+```bash
+CHATTERBOX_AUTH_TOKEN=<secret> REGION=ap-south-1 ./scripts/chatterbox-server/deploy.sh
+```
+It launches ONE `g4dn.xlarge` SPOT instance (T4, cheapest practical GPU),
+auto-installs Chatterbox-Turbo + the OpenAI-compatible server, and prints the
+`CHATTERBOX_URL` to paste into `.env.local`. Then I run the real end-to-end +
+benchmark (1/2/3/5 users) and report GPU, hourly/monthly/3-month cost, credit
+consumption, and max concurrent.
+
+**Cost ceiling:** ~$83 of the ~$100 credits over 3 months (spot @ ~$0.30/hr,
+instance stopped when students aren't practising). FREE_ONLY — nothing beyond
+the single spot GPU.
