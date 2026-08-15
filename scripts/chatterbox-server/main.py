@@ -34,35 +34,65 @@ AUTH_TOKEN = os.environ.get("CHATTERBOX_AUTH_TOKEN", "")
 app = FastAPI()
 _semaphore = threading.Semaphore(CONCURRENCY)
 _model = None
+_model_ready = False
 _gen_lock = threading.Lock()
 
 
 def load_model():
-    global _model
-    from chatterbox_ng.tts_turbo import ChatterboxTurboTTS
-    # If CHATTERBOX_MODEL_DIR is set, load from a pre-downloaded checkpoint;
-    # otherwise the first request triggers the HuggingFace download (slow).
-    ckpt = os.environ.get("CHATTERBOX_MODEL_DIR")
-    if ckpt and os.path.isdir(ckpt):
-        _model = ChatterboxTurboTTS.from_local(ckpt, device)
-    else:
-        # Resolve via the HF cache. token=False works for the public repo;
-        # from_pretrained's `or True` would demand a token, so download via
-        # snapshot_download(token=False) ourselves.
-        from huggingface_hub import snapshot_download
-        path = snapshot_download(repo_id="ResembleAI/chatterbox-turbo", token=False)
-        _model = ChatterboxTurboTTS.from_local(path, device)
-    print(f"[server] loaded Chatterbox-{MODEL} on {device}, sr={_model.sr}", flush=True)
+    """Load Chatterbox in the background so the container is Ready immediately
+    (ACA restarts a replica whose readiness probe waits too long). The baked
+    model dir is tried first; if missing, download then load."""
+    global _model, _model_ready
+    t0 = time.time()
+    try:
+        import torch as _t
+        print(f"[server] cuda available={_t.cuda.is_available()} device_count={_t.cuda.device_count()}", flush=True)
+        if _t.cuda.is_available():
+            print(f"[server] gpu={_t.cuda.get_device_name(0)}", flush=True)
+        from chatterbox_ng.tts_turbo import ChatterboxTurboTTS
+        print(f"[server] chatterbox imported in {time.time()-t0:.0f}s", flush=True)
+        ckpt = os.environ.get("CHATTERBOX_MODEL_DIR")
+        if ckpt and os.path.isdir(ckpt):
+            _model = ChatterboxTurboTTS.from_local(ckpt, device)
+        else:
+            from huggingface_hub import snapshot_download
+            path = snapshot_download(repo_id="ResembleAI/chatterbox-turbo", token=False)
+            _model = ChatterboxTurboTTS.from_local(path, device)
+        print(f"[server] loaded Chatterbox-{MODEL} on {device}, sr={_model.sr} in {time.time()-t0:.0f}s", flush=True)
+    except Exception as e:
+        print(f"[server] model load FAILED after {time.time()-t0:.0f}s: {e}", flush=True)
+        import traceback
+        traceback.print_exc()
+    finally:
+        _model_ready = True
 
 
 @app.on_event("startup")
 def startup():
-    load_model()
+    threading.Thread(target=load_model, daemon=True).start()
 
 
 @app.get("/healthz")
 def health():
-    return {"ok": True, "model": f"chatterbox-{MODEL}", "device": device, "sr": _model.sr}
+    return {"ok": True, "model": f"chatterbox-{MODEL}", "device": device, "ready": _model_ready, "sr": getattr(_model, "sr", None)}
+
+
+# Accept the OpenAI-compatible route at ANY path (Azure ML custom-container
+# endpoints forward through a `/score` prefix; the plugin posts to
+# `<base>/v1/audio/speech`). TTS-only, token-gated - one handler for all POSTs.
+@app.api_route("/{full_path:path}", methods=["POST"])
+async def catch_all(req: Request, full_path: str = ""):
+    return await speech(req)
+
+
+def _wait_for_model(timeout_s: float = 300) -> bool:
+    """The model loads in the background; block (in a thread) until it is ready."""
+    deadline = time.time() + timeout_s
+    while time.time() < deadline:
+        if _model is not None and _model_ready:
+            return True
+        time.sleep(2)
+    return False
 
 
 @app.post("/v1/audio/speech")
@@ -77,6 +107,9 @@ async def speech(req: Request):
         return StreamingResponse(iter(["data: [DONE]\n\n"]), media_type="text/event-stream")
 
     def gen():
+        if not _wait_for_model():
+            yield "data: [DONE]\n\n"
+            return
         with _semaphore:
             t0 = time.time()
             with _gen_lock:

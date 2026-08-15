@@ -1,80 +1,82 @@
-# Chatterbox TTS on Azure — scale-to-zero (port of the AWS design)
+# Chatterbox TTS on Azure — Container Apps (Consumption GPU T4, scale-to-zero)
 
-_2026-08-15 · Pivot from AWS. Same architecture: a stable gateway + a GPU that
-is DEALLOCATED until a voice request arrives, started on demand, deallocated
-after 8 min idle. All secrets via env + managed identities (none in git)._
+_2026-08-15 · Final architecture + status. The gateway + scale-to-zero stack is
+LIVE; the Chatterbox GPU container is deployed but blocked on an ACA T4 CUDA
+issue (detailed below). The natural Cartesia voice is live today via the
+worker's fallback._
 
-## Architecture (identical shape to the AWS plan, Azure-native)
+## Architecture (Azure Container Apps — the chosen "something else")
 
 ```
 Student → LiveKit → AI patient engine → Groq LLM → Chatterbox TTS → back
                                                   │
-   ┌───────────── ALWAYS-ON gateway (B1s, Caddy HTTPS, managed identity)
-   │   owns CHATTERBOX_URL · starts the GPU on request · deallocates after 8 min idle
+   ┌───────────── Gateway (chatterbox-gw, tiny CPU, always-on)
+   │   owns the stable CHATTERBOX_URL · proxies to the GPU app · 503 while cold
+   │   → the worker's FallbackAdapter serves Cartesia (natural) during warm-up
    ▼
-   ┌───────────── ONE NC4as_T4_v3 SPOT GPU (T4 16 GB) — DEALLOCATED when idle
-   │   boots ~5-10 min cold; first turn served by the worker's Cartesia fallback
-   └───────────── Chatterbox-Turbo + OpenAI-compatible server (private IP only)
+   ┌───────────── GPU app (chatterbox-gpu, Consumption-GPU-NC8as-T4)
+   │   min-replicas 0 = scale-to-zero (no GPU billing when idle)
+   │   cold start ~60-120s; the gateway 503s during it (Cartesia covers the turn)
+   └───────────── Chatterbox-Turbo (baked into the image, world-readable)
 ```
 
-- **No voice users → no GPU billing.** The gateway (B1s ~$0.011/hr) is the only
-  always-on cost (~$10/mo incl. disk + a Standard public IP ~$3.6/mo).
-- **GPU cold start is invisible:** the worker's `tts.FallbackAdapter` serves the
-  natural Cartesia voice for the first turn while the GPU warms; Chatterbox
-  takes over from the next turn.
-- **GPU never exposed** — it has a static private IP + no public IP; the gateway
-  proxies over the VNet. NSG allows only HTTPS (80/443) + SSH-from-your-IP to
-  the gateway; the GPU subnet is reachable only from the gateway.
-- **Self-deallocates** after 15 min idle via its own managed identity (safety
-  net) + the gateway's 8-min idle timer (primary).
+- **No VM quota needed** — Container Apps Consumption GPU is a separate
+  workload profile (`Consumption-GPU-NC8as-T4`, 8 vCPU / 56 GiB / 1× T4),
+  scale-to-zero with `min-replicas 0`.
+- **Region: australiaeast** — the closest region with ACA serverless T4 GPU
+  (Microsoft lists West US 3, Australia East, Sweden Central).
+- **Same-region ACR** (`chatterboxttsae` in australiaeast) for fast pulls.
+- **Image bake**: the 2.8 GB model is baked into the image at
+  `/opt/chatterbox-model` (world-readable — ACA containers run non-root, so the
+  default `/root/.cache` was invisible and caused a stuck re-download).
 
-## Region / SKU (discovered via CLI)
+## What is LIVE
 
-| Item | Choice | Why |
-|---|---|---|
-| Region | centralindia (Pune) | Nearest Azure region to LiveKit Cloud (India South); NC4as_T4_v3 listed with no restrictions |
-| GPU | NC4as_T4_v3 (4 vCPU, 1× T4 16 GB) | Smallest/cheapest T4; fits Chatterbox-Turbo (4-6 GB VRAM) |
-| GPU spot | ~$0.17/hr | ~22% of the $0.76/hr on-demand |
-| Gateway | B1s (or B1ls/B2s fallback) | Tiny always-on proxy |
+- Gateway app deployed + verified: `/healthz` OK; synthesis while the GPU is
+  cold returns **503** (the worker falls back to Cartesia).
+- Worker configured: `CHATTERBOX_URL` → gateway; fallback = **Cartesia sonic-2**
+  (the natural voice, never the old robotic Inworld).
+- GPU app deployed on the T4 profile; scaled to 0 when idle (no GPU billing).
 
-## Cost model (Free Trial → after upgrade)
+## BLOCKED: ACA T4 CUDA compute hangs
+
+The GPU container starts + `torch.cuda.is_available()` = True + reports
+`Tesla T4`, and chatterbox imports — but `ChatterboxTurboTTS.from_local` never
+completes (the model's `.to("cuda")` hangs; the container stays ready:false).
+This is an ACA host-driver vs container-CUDA mismatch. Likely fixes (in order):
+
+1. **Match the base image CUDA to the ACA T4 driver.** The image uses
+   `nvidia/cuda:12.8.1-runtime`; if the ACA T4 host driver is older (12.4/12.2),
+   cu128 kernels hang. Try `nvidia/cuda:12.4.1-runtime-ubuntu22.04` + torch
+   `cu124` (needs an older torch that still has py3.14 wheels — torch 2.7/2.8).
+2. **Use a Dockerfile with the ACA-recommended GPU base** (the ACA docs list a
+   supported CUDA toolkit for GPU containers).
+3. If neither works, raise an Azure support case for "T4 CUDA compute hangs in
+   a Consumption-GPU container" — a known-area issue.
+
+## Cost model (per the target usage)
 
 | Item | Cost |
 |---|---|
-| Gateway VM (B1s, always-on) | ~$0.011/hr ≈ $8/mo |
-| Gateway Standard public IP | ~$3.6/mo |
-| GPU (NC4as_T4_v3 spot) | ~$0.17/hr while running, **$0 while deallocated** (disk ~$4/mo persists) |
-| GPU usage estimate | ~85 GPU-hrs/mo (50 students, 1-5 concurrent, bursts) ≈ $14/mo spot |
-| **3-month total** | ~**$110** of the $200 credits (gateway ~$35 + GPU ~$45 + disk ~$12 + margin) |
+| Gateway (tiny CPU, always-on) | ~$10-15/mo (ACA CPU consumption + base) |
+| GPU (Consumption-GPU-NC8as-T4) | ~$0.98/hr **active only**; **$0 while scaled to 0** |
+| ACR storage (~10 GB image) | ~$0.50/mo |
+| **10 GPU-hrs** | ~$10 |
+| **50 GPU-hrs** | ~$49 |
+| **100 GPU-hrs** | ~$98 |
+| **500 GPU-hrs** | ~$490 |
 
-## Status: BLOCKED on the subscription offer
+Actual usage (50 students, 1-5 concurrent, bursts with scale-to-zero) ≈
+30-60 active GPU-hrs/mo ≈ $30-60/mo — inside the $200 credits.
 
-The Azure subscription is a **Free Trial** offer (`FreeTrial_2014-09-01`). Free
-Trial blocks GPU VMs — the T4 create fails with `ResourceNotAvailableForOffer`,
-and even basic B-series VMs fail with capacity restrictions. The quota is 4
-regional vCPUs / 3 spot vCPUs, and GPU-family quota increases also fail
-(`ResourceNotAvailableForOffer`).
-
-**The one action required: upgrade the subscription from Free Trial to
-Pay-As-You-Go** (portal → subscription → "Azure subscription 1" → Upgrade).
-This unlocks GPU VMs + larger quota; the $200 credits still apply to usage. The
-deploy scripts below re-run idempotently the moment the upgrade lands.
-
-## Deploy (ready to run)
+## Deploy / teardown
 
 ```bash
-# after the Free Trial → PAYG upgrade
-CHATTERBOX_AUTH_TOKEN=<secret> REGION=centralindia ./scripts/chatterbox-server/deploy-azure.sh
-# prints CHATTERBOX_URL → set in .env.local, restart the worker
-./scripts/chatterbox-server/destroy-azure.sh   # teardown
+CHATTERBOX_AUTH_TOKEN=<secret> bash scripts/chatterbox-server/deploy-aca.sh
+# teardown:
+az containerapp delete -g chatterbox-tts -n chatterbox-gw --yes
+az containerapp delete -g chatterbox-tts -n chatterbox-gpu --yes
 ```
 
-Files: `deploy-azure.sh`, `gateway-azure.sh`, `gpu-azure.sh`, `destroy-azure.sh`,
-`gateway/azure_main.py` (managed-identity scale-to-zero manager).
-
-## Cost protection
-
-- GPU is **spot + eviction-policy Deallocate**, max price $0.30/hr.
-- GPU **deallocates after 8 min idle** (gateway) + self-deallocate safety net.
-- Recommend an Azure budget alert ($20/$50) once the upgrade lands.
-- Nothing bills while the GPU is deallocated except its ~$4/mo disk.
+Files: `deploy-aca.sh`, `Dockerfile` (GPU), `gateway/Dockerfile` + `gateway/aca_main.py`,
+`main.py` (server, non-blocking model load + world-readable model dir).

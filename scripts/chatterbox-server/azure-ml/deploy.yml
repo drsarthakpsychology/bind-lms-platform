@@ -1,0 +1,26 @@
+# Azure ML managed online deployment - serverless T4 GPU, scale-to-zero.
+# Chatterbox-Turbo OpenAI-compatible TTS as a custom container.
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: chatterbox-tts-dep
+endpoint_name: chatterbox-tts-ep
+model: azureml:chatterbox-model:1
+environment:
+  image: chatterboxtts.azurecr.io/chatterbox:latest
+  inference_config:
+    liveness_route:
+      port: 4123
+      path: /healthz
+    readiness_route:
+      port: 4123
+      path: /healthz
+    scoring_route:
+      port: 4123
+      path: /
+instance_type: Standard_NC4as_T4_v3
+scale_settings:
+  type: default
+  min_instances: 0
+  max_instances: 3
+request_settings:
+  port: 4123
+  protocol: http
