@@ -39,3 +39,6 @@ supabase/.temp/
 strix_runs/
 # Playwright-captured mobile screenshots (regenerate via the visual-pass spec)
 screenshots/
+
+# local voice-sample artifacts (listen, don't commit)
+docs/samples/

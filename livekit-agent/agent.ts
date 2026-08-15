@@ -22,12 +22,14 @@ import {
   inference,
   llm,
   ServerOptions,
+  tts,
   voice,
   type ChatContext,
   type JobContext,
 } from "@livekit/agents";
 import { readFileSync } from "node:fs";
 import { runSessionTurn } from "../src/lib/sim/turn-service";
+import { ChatterboxTTS } from "./chatterbox-tts";
 
 dotenv.config({ path: ".env.local" });
 
@@ -45,6 +47,49 @@ function env(name: string): string | undefined {
 }
 
 const PATIENT_AGENT_NAME = "bind-patient";
+
+/**
+ * The patient's voice.
+ *
+ * Primary: Chatterbox (open-source, MIT) served by an OpenAI-compatible
+ * Chatterbox server — the most human-sounding voice, with natural prosody and
+ * paralinguistic expressiveness, at near-zero cost. Configure with
+ * `CHATTERBOX_URL` (+ optional `CHATTERBOX_TTS_MODEL` / `CHATTERBOX_TTS_VOICE` /
+ * `CHATTERBOX_API_KEY`).
+ *
+ * Fallback: Cartesia Sonic-2 via LiveKit Inference — genuinely natural and
+ * low-latency (~75ms TTFB), used only when no Chatterbox server is reachable.
+ */
+function makeTTS(): tts.TTS {
+  const chatterboxUrl = env("CHATTERBOX_URL");
+  const primary = chatterboxUrl
+    ? new ChatterboxTTS({
+        baseUrl: chatterboxUrl,
+        model: env("CHATTERBOX_TTS_MODEL"),
+        voice: env("CHATTERBOX_TTS_VOICE"),
+        apiKey: env("CHATTERBOX_API_KEY"),
+      })
+    : new inference.TTS({
+        model: env("LIVEKIT_TTS_MODEL") ?? "cartesia/sonic-2",
+        voice: env("LIVEKIT_TTS_VOICE") ?? "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+        language: "en",
+      });
+  console.log(
+    "[patient-agent] TTS primary:",
+    chatterboxUrl
+      ? `chatterbox (${env("CHATTERBOX_TTS_MODEL") ?? "chatterbox-turbo"})`
+      : "livekit-inference (cartesia/sonic-2)",
+  );
+  // The patient must ALWAYS be able to speak. If the primary TTS fails at
+  // runtime (server down, bad voice id), LiveKit falls back to the known-good
+  // Inworld voice — dead air is never acceptable in a clinical interview.
+  const knownGood = new inference.TTS({
+    model: "inworld/inworld-tts-2",
+    voice: "Guy",
+    language: "en",
+  });
+  return new tts.FallbackAdapter({ ttsInstances: [primary, knownGood], maxRetryPerTTS: 2 });
+}
 
 interface WorkerDeps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -136,10 +181,7 @@ export default defineAgent({
         model: env("LIVEKIT_STT_MODEL") ?? "deepgram/nova-3",
         language: "en",
       }),
-      tts: new inference.TTS({
-        model: env("LIVEKIT_TTS_MODEL") ?? "inworld/inworld-tts-2",
-        voice: env("LIVEKIT_TTS_VOICE") ?? "Guy",
-      }),
+      tts: makeTTS(),
       turnHandling: {
         turnDetection: new inference.TurnDetector(),
       },

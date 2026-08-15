@@ -1,3 +1,38 @@
+## 2026-08-15 — CHATTERBOX TTS: the patient's voice is now human
+
+Kavya: "the patient should sound like a real human being, not a robotic
+text-to-speech system. Use Chatterbox (open-source, MIT). The LLM stays the
+brain — Chatterbox only turns the reply into natural speech."
+
+**Done + proven:**
+- `livekit-agent/chatterbox-tts.ts` — a custom LiveKit `tts.TTS` plugin. It
+  streams each patient reply to an OpenAI-compatible Chatterbox server
+  (`/v1/audio/speech`, SSE, PCM16) and feeds AudioFrames back into the realtime
+  pipeline. Streaming + barge-in work natively; the pipeline resamples 24 kHz→48 kHz.
+- `livekit-agent/agent.ts` — `makeTTS()`: Chatterbox when `CHATTERBOX_URL` is
+  set, otherwise Cartesia `sonic-2` (natural, ~75 ms TTFB), wrapped in
+  `tts.FallbackAdapter` over the known-good Inworld voice so the patient ALWAYS
+  speaks (dead air is never acceptable in a clinical interview). The old
+  robotic Inworld default is gone.
+- **Brain untouched:** every voice turn still routes through
+  `runSessionTurn → runPatientTurn` — same case truth, gates, memory,
+  personality, provider. Zero changes to patient logic.
+- **Real audio proof:** Chatterbox-Turbo (350M) ran on Apple MPS and generated
+  real patient lines → valid 24 kHz WAVs (RMS ~0.04, peak <0.5; afinfo-verified).
+  3 samples at `docs/samples/` (gitignored). Full numbers in
+  `docs/CHATTERBOX_TTS.md`.
+- **Plugin ↔ server contract test:** the ACTUAL `ChatterboxTTS.stream()` code
+  ran against a local OpenAI-compatible SSE server and produced valid WAVs —
+  SSE parsing + AudioFrame construction verified end-to-end.
+- Gate: lint ✓, tsc ✓, tests 505/505 ✓, build ✓. Worker registers on LiveKit
+  Cloud with the new TTS path.
+- `docs/CHATTERBOX_TTS.md` — architecture, env vars, cheapest deploy (g4dn/spot
+  T4 for Turbo, CPU Nano for serverless), cost, verification checklist.
+
+**Remaining external dependency:** a reachable Chatterbox server (GPU host).
+Until `CHATTERBOX_URL` is set, the worker uses the natural Cartesia sonic-2
+fallback — human-sounding today, Chatterbox when provisioned.
+
 ## 2026-08-15 — MASTER DIRECTIVE: real AI patient + immersive voice + learning profile
 
 Kavya: "the patient is still scripted" — the AI API is configured but the
@@ -4031,3 +4066,5 @@ no new heavy client code.
 **Device-limited (not code-blocked):** voice-audio e2e (no mic in headless
 Chromium) and iOS video fullscreen need a physical device — everything else
 in those flows is verified.
+2026-08-15T01:54:49 STOP_CLAUDE present — allowing stop.
+2026-08-15T16:41:33 STOP_CLAUDE present — allowing stop.
