@@ -1,3 +1,32 @@
+## 2026-08-16 — AI-actor brief Phase 1: the fallback is now LOUD
+
+Kavya's brief (cohort Aug 20): make the scripted-patient failure impossible to
+miss. Phase 1 done + committed.
+
+- `src/lib/ai/client.ts` — `callOpenAI` captures provider/model/status + first
+  500 chars of the response body on EVERY non-2xx (was: a bare "response failed"
+  with no provider). The `aiChat` catch logs a loud per-provider line with
+  provider, model, status, latency, retryable; a `reasons[]` accumulator keeps
+  every failure; when the chain exhausts OR there are no candidates it prints
+  `[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: [...]` (keys
+  present listed from `availableProviders()`).
+- `src/app/api/practice/sim/turn/route.ts` — the turn response now carries
+  `aiFallback: degraded || Boolean(result.usedFallback)` (true when the fixture
+  patient fired, whether by outage or by `AI_ENABLED=false`).
+- `src/components/sim/simulation-header.tsx` — amber **AI fallback** StatusPill
+  shown ONLY when `NODE_ENV !== "production"` (dev-only; students never see the
+  engine, the existing Offline pill stays the only student-facing signal).
+- `src/app/(dashboard)/practice/consulting-room/session/[sessionId]/session-view.tsx` —
+  tracks `aiFallback` from the turn response and passes it to the header.
+
+Gate green before commit: lint ✓, tsc ✓, 505/505 tests ✓, build ✓.
+One tsc catch fixed en route: the no-candidates reason string referenced
+`PROVIDERS`/`getKey` (didn't exist) — now `availableProviders()`/`keyFor()`.
+
+Next: Phase 2 — `/api/sim/health` diagnostic route (per-provider, 401/403/404/
+429/timeout repair) + the real production fix (Vercel Production env has NO LLM
+keys — that's why prod is scripted).
+
 ## 2026-08-15 — e2e suite repaired: 8 stale specs → green
 
 The full suite showed 8 failures. Root cause: they were stale — written for the
@@ -4217,3 +4246,4 @@ DECISION: Cartesia stays the live voice (free, natural). Chatterbox is wired
 (CHATTERBOX_URL) and takes over on a working host. GPU budget used: ~15 active
 min (~$0.25); stopped per the brief. Next option if pursued: a different ACA
 region or Modal/RunPod.
+2026-08-16T01:13:02 STOP_CLAUDE present — allowing stop.

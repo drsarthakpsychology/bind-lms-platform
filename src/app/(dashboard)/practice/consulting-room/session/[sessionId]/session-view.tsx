@@ -110,6 +110,9 @@ export function SimSessionView({
   const [caseInfoOpen, setCaseInfoOpen] = React.useState(false);
   const [confirmFinish, setConfirmFinish] = React.useState(false);
   const hintUsedRef = React.useRef(false);
+  // Phase 1 observability: true when the last turn fell back to the scripted
+  // patient engine (dev-only amber pill; never surfaced in production).
+  const [aiFallback, setAiFallback] = React.useState(false);
   const [typing, setTyping] = React.useState(false);
   const pendingReply = React.useRef<string | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -174,11 +177,13 @@ export function SimSessionView({
         affect?: Affect;
         fatigue?: number;
         mood?: string;
+        aiFallback?: boolean;
       };
       if (j.affect) {
         setPatientAffect(j.affect);
         setPatientFatigue(Number(j.fatigue ?? 0));
       }
+      setAiFallback(Boolean(j.aiFallback));
       setTyping(true);
       const full = j.reply;
       const patientTurnId = crypto.randomUUID();
@@ -329,6 +334,7 @@ export function SimSessionView({
         seconds={seconds}
         onMore={() => setMenuOpen(true)}
         notesIndicator={hasNotes}
+        aiFallback={aiFallback}
       />
 
       {/* Transcript — owns the viewport. */}

@@ -212,5 +212,8 @@ export async function POST(req: Request) {
     affect: result.decision.affect,
     fatigue: result.state.fatigue,
     mood: result.state.mood_today,
+    // Phase 1 observability: the client shows an amber "AI fallback" pill in
+    // dev only (NODE_ENV !== 'production') when the scripted engine fired.
+    aiFallback: degraded || Boolean(result.usedFallback),
   });
 }

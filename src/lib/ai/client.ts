@@ -97,12 +97,15 @@ async function callOpenAI(
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   if (res.status === 429 || res.status >= 500) {
-    const e = new Error(`provider ${provider.id} responded ${res.status}`);
+    const bodyText = await res.text().catch(() => "");
+    const e = new Error(`provider ${provider.id} ${model} responded ${res.status}: ${bodyText.slice(0, 500)}`);
     (e as unknown as { status: number }).status = res.status;
+    (e as unknown as { model: string }).model = model;
     throw e;
   }
   if (!res.ok) {
-    throw new Error(`provider ${provider.id} responded ${res.status}`);
+    const bodyText = await res.text().catch(() => "");
+    throw new Error(`provider ${provider.id} ${model} responded ${res.status}: ${bodyText.slice(0, 500)}`);
   }
   const j = (await res.json()) as {
     choices?: Array<{ message?: { content?: string } }>;
@@ -176,6 +179,8 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   const capability: ProviderCapability = opts.schema ? "json" : "stream";
   const candidates = providersFor(capability, opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
   if (!candidates.length) {
+    const reason = `no configured/enabled providers (AI_ENABLED=${process.env.AI_ENABLED ?? "unset"}, keys present: ${availableProviders().filter((p) => keyFor(p)).map((p) => p.id).join(",") || "none"})`;
+    console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ["${reason}"]`);
     if (process.env.AI_FIXTURE_FALLBACK === "true") {
       log(null, opts.workload, "no provider, falling back to fixture");
       const turn = fixtureReply(opts.workload);
@@ -186,6 +191,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   }
 
   let attempt = 0;
+  const reasons: string[] = [];
   for (const provider of candidates) {
     attempt++;
     const startedAt = Date.now();
@@ -223,8 +229,12 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     } catch (e) {
       const latencyMs = Date.now() - startedAt;
       const status = (e as unknown as { status?: number }).status;
+      const model = (e as unknown as { model?: string }).model ?? "?";
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
-      log(provider.id, opts.workload, `failed: ${(e as Error).message} (retryable=${retryable})`);
+      const reason = `${provider.id} ${model} status=${status ?? "?"} latency=${latencyMs}ms: ${(e as Error).message.slice(0, 500)}`;
+      reasons.push(reason);
+      // Loud per-provider failure line (Phase 1 observability).
+      console.warn(`[ai] ${opts.workload} -> ${provider.id} ${model} FAILED status=${status ?? "?"} latency=${latencyMs}ms retryable=${retryable} ${(e as Error).message.slice(0, 500)}`);
       void recordProviderOutcome(provider.id, false);
       void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: retryable ? "failover" : "error" });
       if (!retryable && attempt >= candidates.length) throw e;
@@ -234,6 +244,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       }
     }
   }
+  console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ${JSON.stringify(reasons)}`);
   throw new AiUnavailableError(opts.workload);
 }
 

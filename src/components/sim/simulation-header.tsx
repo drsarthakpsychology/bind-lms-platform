@@ -20,6 +20,7 @@ export function SimulationHeader({
   seconds,
   onMore,
   notesIndicator = false,
+  aiFallback = false,
 }: {
   patientName: string;
   patientAge?: number;
@@ -28,6 +29,8 @@ export function SimulationHeader({
   onMore: () => void;
   /** Peach dot on the "more" button when notes are non-empty. */
   notesIndicator?: boolean;
+  /** Dev-only: the scripted fallback fired on the last turn (amber pill). */
+  aiFallback?: boolean;
 }) {
   const router = useRouter();
   const { offline } = useOffline();
@@ -60,6 +63,11 @@ export function SimulationHeader({
         <div className="flex items-center gap-1.5">
           <span className="truncate text-caption capitalize text-muted-foreground">{difficulty}</span>
           {offline ? <StatusPill tone="warning" label="Offline" /> : null}
+          {/* Dev-only observability: never show the AI-fallback reason to
+              students in production (Phase 1). */}
+          {process.env.NODE_ENV !== "production" && aiFallback ? (
+            <StatusPill tone="scripted" label="AI fallback" />
+          ) : null}
         </div>
       </div>
 
