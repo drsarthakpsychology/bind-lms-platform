@@ -1,3 +1,23 @@
+## 2026-08-16 — PROD DEPLOYED + VERIFIED: real AI patient live (Kavya: "continue with both")
+
+Shipped the branch to Vercel Production (`vercel --prod`) and verified end-to-end:
+
+- Deployment `dpl_vqMvUFbWuquimpEifbFYUQ7HuRb4` ready (deployment protection bypassed
+  via `vercel curl`).
+- `/api/health` → `{"status":"ok","checks":{"database":"ok","storage":"ok"}}`.
+- **`/api/sim/health` (admin) → HTTP 200, `servable:true`** — the actual prod
+  deployment probes the actual prod keys: **groq OK (91ms), opencode OK,
+  openrouter OK, sambanova 402 (payment required — router fails over)**.
+  `candidates=[groq, sambanova, openrouter, opencode]`. The production patient
+  is now the REAL LLM, not scripted.
+- Verification method: temp admin created via Supabase service role → logged in
+  through the REAL `@supabase/ssr` client (correct chunked cookie format) →
+  `vercel curl` with the session cookie → deleted the temp admin after
+  (auth 200 + profile 204). No secrets touched, nothing committed.
+
+**Remaining:** the only not-yet-proven item is the human device-QA of the voice
+loop (browser mic/speaker) — see NEEDS_KAVYA.
+
 ## 2026-08-16 — AI-actor brief Phase 4: TTS primary = Cartesia sonic-2 (Chatterbox opt-in)
 
 The brief: TTS primary = Cartesia `sonic-2`; Chatterbox only behind
@@ -4354,3 +4374,4 @@ min (~$0.25); stopped per the brief. Next option if pursued: a different ACA
 region or Modal/RunPod.
 2026-08-16T01:13:02 STOP_CLAUDE present — allowing stop.
 2026-08-16T01:17:27 STOP_CLAUDE present — allowing stop.
+2026-08-16T01:31:08 STOP_CLAUDE present — allowing stop.
