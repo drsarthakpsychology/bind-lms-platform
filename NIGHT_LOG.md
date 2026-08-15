@@ -1,3 +1,34 @@
+## 2026-08-16 — PROD FIX: LLM keys now on Vercel Production (root cause closed)
+
+The scripted production patient was caused by Vercel Production having NO LLM
+keys. Now fixed + fingerprint-verified:
+
+**Pushed (values from `.env.local`, never printed/committed):** `GROQ_API_KEY`,
+`SAMBANOVA_API_KEY`, `OPENROUTER_API_KEY`, `OPENCODE_API_KEY` (all no-train,
+student-safe) + `AI_ENABLED=true`. DeepSeek deliberately NOT pushed
+(trainsOnData → excluded from the sim lane by the guard).
+
+**Gotchas hit + solved (worth recording):**
+1. `vercel env add NAME production` with piped stdin does NOT consume the value
+   in this CLI version — it created the vars with EMPTY values (type
+   "sensitive"), and `vercel env pull` redacts ALL sensitive values as
+   `[SENSITIVE]`, so the failure was invisible.
+2. The REST list endpoint returns JWE blobs even with `decrypt=true`; the
+   **single-env GET** (`/env/{id}?decrypt=true`) returns plaintext. That's the
+   only way to verify a stored value.
+3. Empty vars were created as type "sensitive"; PATCH to "encrypted" is refused
+   ("cannot change the type of a Sensitive Environment Variable") → DELETE +
+   POST with `type:"encrypted"`.
+
+**Verification:** every pushed var now fingerprint-matches `.env.local`
+(sha1 of stored == sha1 of local), and the local keys are the ones that probe
+200 against the real providers. So Vercel Production will serve real LLM turns
+on next deploy.
+
+**Remaining:** deploy the branch to prod to make it live. The branch is 202
+commits ahead of main (mobile design system + voice + AI fixes) — shipping it
+is a Kavya decision (NEEDS_KAVYA noted).
+
 ## 2026-08-16 — AI-actor brief Phase 2: /api/sim/health + repair chain (code)
 
 Kavya's brief Phase 2: a diagnostic `/api/sim/health` + a repair chain for

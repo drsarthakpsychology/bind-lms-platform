@@ -4,10 +4,11 @@
  *
  *   npm run sim:health-check
  *
- * Loads `.env.local` into process.env, probes EVERY configured provider with
- * the same deterministic ping the API route uses, and prints the repair-chain
- * classification (provider / model / status / latency / suggestion / circuit).
- * No auth, no HTTP server, no secrets printed — only status + latency.
+ * Loads an env file (default `.env.local`; override with SIM_ENV_FILE) into
+ * process.env, probes EVERY configured provider with the same deterministic
+ * ping the API route uses, and prints the repair-chain classification
+ * (provider / model / status / latency / suggestion / circuit). No auth, no
+ * HTTP server, no secrets printed — only status + latency.
  *
  * This is the offline twin of `GET /api/sim/health` (admin-only in the app);
  * the same `probeProvider`/`classify` code drives both.
@@ -16,14 +17,22 @@ import { readFileSync } from "node:fs";
 import { PROVIDERS, getKey, isEnabled, providersFor } from "../src/lib/ai/router";
 import { probeProvider } from "../src/lib/ai/diagnostics";
 
-// Load .env.local into process.env (existing env wins).
+// Load the env file into process.env (existing env wins). Default .env.local;
+// SIM_ENV_FILE lets us probe a pulled Vercel prod env without deploying.
+// Both formats are handled: `KEY=value` (dotenv) and `KEY="value"` (the form
+// `vercel env pull` writes) — strip surrounding quotes.
+const envFile = process.env.SIM_ENV_FILE ?? ".env.local";
 try {
-  for (const line of readFileSync(".env.local", "utf8").split("\n")) {
+  for (const line of readFileSync(envFile, "utf8").split("\n")) {
     const m = line.match(/^([A-Z][A-Z0-9_]*)=(.*)$/);
-    if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].trim();
+    if (m && process.env[m[1]] === undefined) {
+      let v = m[2].trim();
+      if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/\\"/g, '"');
+      process.env[m[1]] = v;
+    }
   }
 } catch {
-  /* no .env.local — only real env vars are probed */
+  /* no env file — only real env vars are probed */
 }
 
 async function main() {
