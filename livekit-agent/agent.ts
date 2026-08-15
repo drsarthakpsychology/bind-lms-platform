@@ -74,27 +74,25 @@ function makeTTS(): {
         apiKey: env("CHATTERBOX_API_KEY"),
       })
     : null;
-  const primary = chatterbox ?? new inference.TTS({
+  // The NATURAL voice is always the fallback — Chatterbox (T4) when configured,
+  // otherwise Cartesia sonic-2 (~75ms TTFB). The old robotic Inworld voice is
+  // never used. During a GPU cold start the gateway 503s → this fallback speaks,
+  // so the student hears a human voice immediately and Chatterbox takes over.
+  const natural = new inference.TTS({
     model: env("LIVEKIT_TTS_MODEL") ?? "cartesia/sonic-2",
     voice: env("LIVEKIT_TTS_VOICE") ?? "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     language: "en",
   });
   console.log(
-    "[patient-agent] TTS primary:",
+    "[patient-agent] TTS:",
     chatterboxUrl
-      ? `chatterbox (${env("CHATTERBOX_TTS_MODEL") ?? "chatterbox-turbo"})`
+      ? `chatterbox (${env("CHATTERBOX_TTS_MODEL") ?? "chatterbox-turbo"}) + cartesia fallback`
       : "livekit-inference (cartesia/sonic-2)",
   );
-  // The patient must ALWAYS be able to speak. If the primary TTS fails at
-  // runtime (server down, bad voice id), LiveKit falls back to the known-good
-  // Inworld voice — dead air is never acceptable in a clinical interview.
-  const knownGood = new inference.TTS({
-    model: "inworld/inworld-tts-2",
-    voice: "Guy",
-    language: "en",
-  });
   return {
-    tts: new tts.FallbackAdapter({ ttsInstances: [primary, knownGood], maxRetryPerTTS: 2 }),
+    tts: chatterbox
+      ? new tts.FallbackAdapter({ ttsInstances: [chatterbox, natural], maxRetryPerTTS: 2 })
+      : natural,
     setAffect: (affect) => chatterbox?.setAffect(affect),
   };
 }
