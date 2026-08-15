@@ -1,13 +1,13 @@
-"""Production Chatterbox-Turbo server — OpenAI-compatible /v1/audio/speech (SSE, PCM16).
+"""Production Chatterbox-Turbo server - OpenAI-compatible /v1/audio/speech (SSE, PCM16).
 
 This is the exact endpoint the LiveKit ChatterboxTTS plugin consumes
 (livekit-agent/chatterbox-tts.ts). Deployed on a single g4dn.xlarge (T4) via
-scripts/chatterbox-server/deploy.sh — see docs/CHATTERBOX_AWS_DEPLOY.md.
+scripts/chatterbox-server/deploy.sh - see docs/CHATTERBOX_AWS_DEPLOY.md.
 
 Design:
   - Loads ChatterboxTurboTTS once at startup (the built-in voice from conds.pt).
   - A small semaphore caps concurrent generations so a burst of students can't
-    OOM the 16 GB T4 — each student's turn is ~2-3.5 s of GPU, and turns are
+    OOM the 16 GB T4 - each student's turn is ~2-3.5 s of GPU, and turns are
     spaced seconds apart, so a single T4 comfortably serves 5-10 students.
   - Streams base64 PCM16 in `response.output_audio.delta` SSE events, exactly
     matching the plugin's parser, then `data: [DONE]`.

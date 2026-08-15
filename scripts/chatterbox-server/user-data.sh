@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Chatterbox-Turbo server bootstrap — EC2 user-data for a g4dn.xlarge (T4)
+# Chatterbox-Turbo server bootstrap - EC2 user-data for a g4dn.xlarge (T4)
 # on the NVIDIA Deep Learning AMI (Ubuntu 22.04).
 #
 # Expected env provided by the launch script:
-#   SERVER_B64    — base64 of scripts/chatterbox-server/main.py
-#   CHATTERBOX_AUTH_TOKEN — the bearer token the LiveKit worker must send
-#   CHATTERBOX_PORT        — default 4123
+#   SERVER_B64    - base64 of scripts/chatterbox-server/main.py
+#   CHATTERBOX_AUTH_TOKEN - the bearer token the LiveKit worker must send
+#   CHATTERBOX_PORT        - default 4123
 set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 echo "=== chatterbox bootstrap start $(date -u) ===" > /tmp/chatterbox-boot.log
@@ -13,7 +13,7 @@ echo "=== chatterbox bootstrap start $(date -u) ===" > /tmp/chatterbox-boot.log
 log() { echo "$@" >> /tmp/chatterbox-boot.log; }
 {
   # 1. Verify the GPU (the DL AMI ships NVIDIA drivers + CUDA).
-  nvidia-smi > /dev/null 2>&1 || log "WARN: nvidia-smi missing — check the AMI"
+  nvidia-smi > /dev/null 2>&1 || log "WARN: nvidia-smi missing - check the AMI"
 
   # 2. Python 3.11 (chatterbox's tested version).
   if ! command -v python3.11 > /dev/null; then

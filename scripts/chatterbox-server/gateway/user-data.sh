@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Voice gateway bootstrap — a tiny always-on t3.nano running the scale-to-zero
+# Voice gateway bootstrap - a tiny always-on t3.nano running the scale-to-zero
 # manager + OpenAI-compatible TTS proxy. Uses an IAM instance role (no secrets).
 set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive

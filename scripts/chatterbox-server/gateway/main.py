@@ -1,10 +1,10 @@
-"""Voice gateway — scale-to-zero manager + OpenAI-compatible TTS proxy.
+"""Voice gateway - scale-to-zero manager + OpenAI-compatible TTS proxy.
 
 Runs on a tiny always-on t3.nano with an IAM role (no secrets on disk). It
 owns the stable CHATTERBOX_URL the LiveKit worker calls, and:
 
   - When a synthesis request arrives and the GPU is stopped, it STARTS the
-    g4dn.xlarge spot instance, then returns 503 "warming" for that request —
+    g4dn.xlarge spot instance, then returns 503 "warming" for that request -
     the worker's tts.FallbackAdapter serves a natural Cartesia voice for that
     one turn, so the student hears a human voice immediately. Subsequent turns
     (GPU now warm) use Chatterbox.
@@ -94,7 +94,7 @@ async def speech(req: Request):
         proxy = await _stream_from_gpu(GPU_HOST, body)
         if proxy is not None:
             return proxy
-        # Proxy failed — the GPU reported running but isn't accepting yet
+        # Proxy failed - the GPU reported running but isn't accepting yet
         # (boot race). Treat as warming; this request falls back.
         _state["gpu"] = "starting"
 

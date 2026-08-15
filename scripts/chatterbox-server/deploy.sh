@@ -27,7 +27,7 @@ trap 'rm -f "$GPU_USERDATA_TMP" "$GW_USERDATA_TMP"' EXIT
 
 echo "=== Chatterbox scale-to-zero deploy: ${GATEWAY_TYPE} gateway + ${GPU_TYPE} spot @ ${REGION} ==="
 
-# ---- 1. IAM roles (instance profiles — no secrets on disk) ----
+# ---- 1. IAM roles (instance profiles - no secrets on disk) ----
 ROLE_GW="chatterbox-gateway-role"
 ROLE_GPU="chatterbox-gpu-role"
 
@@ -103,9 +103,9 @@ GPU_ID=$(aws ec2 run-instances --region "$REGION" \
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=chatterbox-tts},{Key=Purpose,Value=ai-patient-voice}]" \
   --query 'Instances[0].InstanceId' --output text)
 GPU_INSTANCE_ID="$GPU_ID"
-echo "GPU: ${GPU_ID} (will be stopped — the gateway starts it on demand)"
+echo "GPU: ${GPU_ID} (will be stopped - the gateway starts it on demand)"
 
-# ---- 6. Launch the gateway (always-on) — now that GPU_INSTANCE_ID is known ----
+# ---- 6. Launch the gateway (always-on) - now that GPU_INSTANCE_ID is known ----
 echo "launching gateway (${GATEWAY_TYPE})…"
 render "${HERE}/gateway/user-data.sh" > "$GW_USERDATA_TMP"
 GW_ID=$(aws ec2 run-instances --region "$REGION" \
@@ -129,7 +129,7 @@ GW_IP=$(aws ec2 describe-addresses --region "$REGION" --allocation-ids "$EIP" --
 echo
 echo "=== DEPLOYED (scale-to-zero) ==="
 echo "gateway:  ${GW_ID}  @ ${GW_IP}   (t3.nano, always-on, ~\$4/mo)"
-echo "gpu:      ${GPU_ID}  (${GPU_TYPE} spot — started on demand by the gateway, self-stops idle)"
+echo "gpu:      ${GPU_ID}  (${GPU_TYPE} spot - started on demand by the gateway, self-stops idle)"
 echo "auth:     ${AUTH_TOKEN}"
 echo
 echo "Set in .env.local (then restart the worker):"
