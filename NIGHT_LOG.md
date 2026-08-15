@@ -4118,3 +4118,5 @@ Chromium) and iOS video fullscreen need a physical device — everything else
 in those flows is verified.
 2026-08-15T01:54:49 STOP_CLAUDE present — allowing stop.
 2026-08-15T16:41:33 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:01:53 STOP_CLAUDE present — allowing stop.
+2026-08-15T18:01:57 STOP_CLAUDE present — allowing stop.
