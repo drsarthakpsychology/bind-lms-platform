@@ -168,6 +168,55 @@ export function WaitlistForm() {
         </div>
       </fieldset>
 
+      {/* Terms acceptance — required and unticked. The browser's native
+          constraint validation blocks submit until it's checked, and the
+          server action re-validates (defense-in-depth) before persisting the
+          acceptance timestamp + policy version with the enquiry. */}
+      <fieldset className="space-y-3">
+        <legend className="sr-only">Terms acceptance</legend>
+        <GroupLabel>Before you join</GroupLabel>
+        <label className="flex items-start gap-3 text-small leading-relaxed text-foreground">
+          <input
+            type="checkbox"
+            name="policyAccepted"
+            value="true"
+            required
+            aria-required="true"
+            className="mt-0.5 size-5 shrink-0 cursor-pointer accent-primary"
+          />
+          <span>
+            I have read and accept the{" "}
+            <a
+              href="/policies/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link underline underline-offset-4 hover:text-foreground"
+            >
+              Terms and Conditions
+            </a>
+            ,{" "}
+            <a
+              href="/policies/refund"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link underline underline-offset-4 hover:text-foreground"
+            >
+              Refund and Cancellation Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="/policies/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link underline underline-offset-4 hover:text-foreground"
+            >
+              Privacy Policy
+            </a>
+            . I understand that fees are non-refundable.
+          </span>
+        </label>
+      </fieldset>
+
       {/* Honeypot — hidden from humans, bots fill it. */}
       <input
         type="text"

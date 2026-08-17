@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BRAND } from "@/lib/brand";
 import { Reveal } from "@/components/motion/reveal";
 import { LandingNav } from "@/components/landing/landing-nav";
+import { SiteFooter } from "@/components/site/site-footer";
 import { WaitlistForm } from "./waitlist-form";
 
 export const metadata: Metadata = {
@@ -80,6 +81,7 @@ export default function WaitlistPage() {
           </p>
         </Reveal>
       </main>
+      <SiteFooter />
     </div>
   );
 }

@@ -1,3 +1,46 @@
+## 2026-08-17 — POLICY SECTION built for vibhapsychology.com (all 15 routes)
+
+Kavya's brief: build the legal policy section from the verbatim suite. Scope
+decisions confirmed: (1) acceptance checkbox on waitlist + persisted on
+`enquiries` and `course_enrollments`, (2) document-only cookies (PostHog
+inactive), (3) shared SiteFooter on all public pages.
+
+**What shipped:**
+- `content/policies/*.md` — 14 verbatim policy files (frontmatter: title,
+  slug, lastUpdated, summary, order). `[REGISTERED_ADDRESS]` /
+  `[EFFECTIVE_DATE]` substituted from `src/lib/legal-constants.ts` (both are
+  **TODO constants** — visibly unresolved, never invented).
+- `src/lib/policies.ts` — getPolicies/getPolicy + heading extractor + the
+  anchor rule (`2.3 The only exception` → `#2-3-the-only-exception`, exactly
+  the brief's deep-link format). `src/lib/legal-constants.ts` (+ tests).
+- `/policies` index + `/policies/[slug]` (generateStaticParams → all 14 SSG;
+  per-policy metadata + canonical + WebPage JSON-LD).
+- Policy components: sticky sidebar nav (`aria-current="page"`), on-this-page
+  TOC, tablet scroll-strip, mobile `<select>` jumper, MDX table overflow
+  wrappers, `max-w-[68ch]` content, back-to-top, print stylesheet.
+- `SiteFooter` (extracted from landing) with the Legal column — on landing,
+  waitlist, login, expired, verify, and all policies pages.
+- Waitlist: required unticked acceptance checkbox; server re-validates
+  (`z.literal("true")`) and persists `policy_acceptance_at` + `policy_version`.
+  Admin `enrollStudent` writes the same to `course_enrollments` (first
+  acceptance wins).
+- Redirects (`/privacy`, `/terms`, `/privacy-policy`,
+  `/terms-and-conditions`, `/refund-policy` → `/policies/*`), sitemap (+15
+  URLs), Organization JSON-LD on the site root.
+- Migration `policy_acceptance` applied to prod (additive columns on both
+  tables; verified via information_schema).
+
+**Verified (Playwright + curl):** 15 routes render (14 SSG), 5 redirects work,
+404 on unknown, no horizontal scroll at 375/768/1024/1440 (found + fixed a
+`rail`-in-flex width bug with `w-full min-w-0`), tables scroll inside their
+container at 375, anchors/aria-current/JSON-LD present, waitlist blocks
+unticked submit AND persisted `policy_acceptance_at` + `policy_version:"draft"`
+(verified in prod DB, test row deleted), print hides chrome + black-on-white,
+a11y structure clean (1 h1, no skipped levels). Gate green: lint ✓, tsc ✓,
+519/519 ✓, build ✓.
+
+**Next:** deploy to prod (`vercel --prod`) + verify `/policies/*` live.
+
 ## 2026-08-16 — VOICE machine-side verified live (Kavya: "continue with both")
 
 Ran the real worker against LiveKit Cloud and dispatched a headless session:
@@ -4392,3 +4435,8 @@ region or Modal/RunPod.
 2026-08-16T01:17:27 STOP_CLAUDE present — allowing stop.
 2026-08-16T01:31:08 STOP_CLAUDE present — allowing stop.
 2026-08-16T01:39:10 STOP_CLAUDE present — allowing stop.
+2026-08-16T01:43:42 STOP_CLAUDE present — allowing stop.
+2026-08-16T01:46:51 STOP_CLAUDE present — allowing stop.
+2026-08-17T01:23:24 STOP_CLAUDE present — allowing stop.
+2026-08-17T01:23:37 STOP_CLAUDE present — allowing stop.
+2026-08-17T01:24:40 STOP_CLAUDE present — allowing stop.

@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 import { stripMarkup } from "@/lib/sanitize";
+import { policyVersion } from "@/lib/legal-constants";
 
 const schema = z.object({
   name: z.string().min(2).max(120),
@@ -12,6 +13,9 @@ const schema = z.object({
   phone: z.string().max(40).optional().or(z.literal("")),
   status: z.enum(["student", "early_career", "practitioner", "other"]),
   message: z.string().max(2000).optional().or(z.literal("")),
+  // Required, unticked acceptance — the checkbox in the form submits "true".
+  // The server refuses anything else (a forged/missing field fails the parse).
+  policyAccepted: z.literal("true"),
   // Hidden honeypot field — bots fill it, humans never see it.
   honeypot: z.string().max(200).optional(),
 });
@@ -53,6 +57,10 @@ export async function submitWaitlist(input: FormData): Promise<WaitlistResult> {
     status: parsed.data.status,
     message: parsed.data.message ? stripMarkup(parsed.data.message) : null,
     source: "landing",
+    // The acceptance record — what makes the no-refund term defensible if a
+    // waitlisted lead later challenges it.
+    policy_acceptance_at: new Date().toISOString(),
+    policy_version: policyVersion(),
   });
   if (error) {
     console.error("[waitlist] insert failed:", error.message);
