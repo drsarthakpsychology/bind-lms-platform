@@ -573,3 +573,21 @@ Two things need YOU:
    registered + a headless dispatch logged
    `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary`); only
    the human loop (say something → the patient's voice answers) remains.
+
+## 🟡 2026-08-17 — Policy section is LIVE; two placeholders need you
+
+The full policy section (14 policies + index) is deployed to vibhapsychology.com
+and verified. Two values are still TODO constants and render as their
+placeholder tokens on the live pages — supply both in
+`src/lib/legal-constants.ts` (one-file edit) and the pages follow:
+
+1. **`REGISTERED_ADDRESS`** — full business address with PIN code (the
+   Ahmedabad clinic address is fine). Legally mandatory under the Consumer
+   Protection (E-Commerce) Rules, 2020.
+2. **`EFFECTIVE_DATE`** — the date you publish. Binds which policy version
+   governs which enrolment (acceptance timestamps already record it as
+   `policy_version`).
+
+Nothing else is outstanding: routes, redirects, footer legal links, waitlist
+acceptance checkbox (persisting timestamp + version), sitemap, JSON-LD, print
+styles, and responsive tables are all verified live.
