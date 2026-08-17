@@ -1,3 +1,16 @@
+## 2026-08-17 — POLICY SECTION LIVE on vibhapsychology.com (deployed + verified)
+
+Deployed to production (`vercel --prod`). Verified on the real domain:
+`/policies`, `/policies/privacy|refund|cookies|terms|grievance` all 200;
+redirects (`/privacy`, `/terms`, `/refund-policy` → `/policies/*`) work;
+the waitlist acceptance checkbox renders; the Terms page serves the verbatim
+RCI clause with the correct `<title>Terms and Conditions · VIBHA`.
+
+**Still outstanding (from the brief, never invented):** `[REGISTERED_ADDRESS]`
+and `[EFFECTIVE_DATE]` remain TODO constants in `src/lib/legal-constants.ts`
+— they render as their placeholder tokens on the live pages. Kavya supplies
+both → one-file edit → the pages follow.
+
 ## 2026-08-17 — POLICY SECTION built for vibhapsychology.com (all 15 routes)
 
 Kavya's brief: build the legal policy section from the verbatim suite. Scope
