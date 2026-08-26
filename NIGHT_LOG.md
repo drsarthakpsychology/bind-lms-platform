@@ -1,3 +1,48 @@
+## 2026-08-26 — GO-LIVE fixes shipped (PR #6, deployed + verified live)
+
+**Invite flow → 8-char passwords (Kavya's decision).** The password-recovery
+link's `redirect_to` was stuck at `http://localhost:3000` (Supabase Auth's
+redirect allowlist rejected our target and fell back to its localhost Site URL;
+verified with fresh links, never took effect). Replaced links with a real
+8-char password per student (letters+digits, no look-alikes), set at account
+creation and stored on `credential_invites.password` (admin-only RLS).
+`/admin/roster` shows the shareable list (reveal/copy/reset + Download CSV);
+the credential email carries the password, no link. Verified E2E against prod:
+import → password → signInWithPassword → `lectures_only`. A real `[TEST]` email
+delivered from `noreply@bindcat.com`.
+
+**Video → R2 (canonical architecture).** The quality selector never rendered
+(the live lesson was a single MP4, zero media_assets). Published the live lesson
+as a 4-rung HLS ladder to **R2** via `publish-lecture.ts` (45 objects),
+`media_assets` → provider=r2, R2 env vars added to Vercel prod. Hit a real bug:
+`media_assets.bucket` defaulted to `'videos'` (Supabase), so R2 rows resolved
+with the wrong bucket → proxy 404. Fixed the live row + made `publish-lecture.ts`
+write `bucket=R2_BUCKET_NAME`. **Verified E2E against prod**: playback → `hls`,
+master/variant/segment all stream 200 through the encrypted proxy from R2. The
+player also gained a truthful MP4 resolution chip.
+
+**Admin lock/unlock.** Shared `LockToggle` (one-click Locked/Unlocked via
+`profiles.status` blocked override) on every Students + Roster row + bulk
+Lock all / Unlock all.
+
+**Course builder ("openbuilder").** Robustness: verify the upload landed before
+saving (video_status=ready), try/catch so failures surface, fixed the material
+'file won't load' root cause (storage path vs url) + the non-functional
+'Replace file'. Design polish: 'Course builder' header, plain copy, lessons
+first with count, 44px inputs, publish-as-primary.
+
+**Visibility.** New 'Launch' admin nav section (Courses → Students → Roster &
+emails → What's live); visible 'Open builder' button; Roster/emails + flags in
+⌘K.
+
+**System map** → `docs/SYSTEM_MAP.md` (routes, auth model, data/ER, HLS→R2
+pipeline, roster flow, flags, deploy, design system).
+
+Gate green (lint 0, tsc 0, 535 tests, build ok); merged via PR #6 (`d887a08`),
+deployed, live smoke 200 on /login + /paused.
+
+---
+
 ## 2026-08-17 — POLICY SECTION LIVE on vibhapsychology.com (deployed + verified)
 
 Deployed to production (`vercel --prod`). Verified on the real domain:
