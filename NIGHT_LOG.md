@@ -4593,3 +4593,24 @@ region or Modal/RunPod.
   "Auto: models agree X% · self-variance Y" per dimension; the manual
   scoring list stays as an optional tool, not a requirement.
 - Gate green: lint 0, tsc clean, 525 tests, build exit 0.
+
+## 2026-08-26 — session complete: all 8 parts done
+
+Order: Part 0 (verify) → 1 (rights) → 4 (roster) → 6 (video) → 5 (lecture-only)
+→ 3 (dictate) → 2 (calibration) → 7+8 (audit + report).
+
+Commits on worktree-night-rights-roster-video (off feat/mobile-design-system):
+- 1555e95 feat(admin): remove /admin/rights and the corpus rights gate
+- cd9572b feat(roster): name+email-only import with secure invite links
+- 499f733 feat(video): real ABR quality ladder + player quality selector
+- 58047ef feat(auth): lecture-only access scope, enforced server-side
+- 0a66e7f feat(dictate): strip /admin/corpus/dictate to record/transcript/save
+- ebbf694 feat(calibration): automatic multi-model + variance signals
+- (docs) ADMIN_AUDIT.md + PLATFORM_FIXES.md
+
+Gate green on every commit: lint 0, tsc clean, 525 tests, build exit 0.
+
+Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker for roster emails),
+apply the two pending migrations (profiles_access_scope, calibration_auto_signals),
+then `npm run roster:import -- scripts/roster/roster.csv --scope lectures_only`.
+Device-QA for video + voice remains the human loop.
