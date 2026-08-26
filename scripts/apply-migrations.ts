@@ -78,6 +78,7 @@ async function main() {
     "profiles_status_blocked.sql",
     "calibration_auto_signals.sql",
     "videos_bucket.sql",
+    "flags_lesson_status.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);

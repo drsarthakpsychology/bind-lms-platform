@@ -19,8 +19,8 @@ export const dynamic = "force-dynamic";
  */
 export default async function RecordPage() {
   const flags = await readFlags();
-  const supervisionEnabled = flags["supervision"] === true;
-  const checkinEnabled = flags["checkin"] === true;
+  const supervisionEnabled = flags["supervision"] === "unlocked";
+  const checkinEnabled = flags["checkin"] === "unlocked";
   if (!supervisionEnabled && !checkinEnabled) {
     redirect("/practice/not-available");
   }

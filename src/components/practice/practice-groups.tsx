@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
+import { ChevronDown, Lock, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 
@@ -37,6 +37,7 @@ export interface PracticeCardData {
   icon: string; // key into PRACTICE_ICONS
   state?: string; // "new" | "in_progress" | "done_today" | "due"
   progress?: string;
+  locked?: boolean; // flag is "live" — section visible but not yet unlocked
 }
 
 export interface PracticeGroup {
@@ -136,6 +137,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                   const Icon = PRACTICE_ICONS[tool.icon] ?? CircleCheck;
                   const chip = tool.state ? STATE_STYLE[tool.state] : null;
                   const dimmed = tool.state === "done_today";
+                  const locked = tool.locked === true;
                   const isCore = CORE_TOOLS.has(tool.href);
                   const meta = [tool.time, tool.description, tool.progress]
                     .filter(Boolean)
@@ -161,13 +163,18 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                       title={tool.title}
                       subtitle={meta}
                       trailing={
-                        chip ? (
+                        locked ? (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
+                            <Lock className="size-3" aria-hidden />
+                            Yet to be live
+                          </span>
+                        ) : chip ? (
                           <span className={cn("rounded-full px-2 py-0.5 text-caption font-medium", chip.className)}>
                             {chip.label}
                           </span>
                         ) : undefined
                       }
-                      className={cn(dimmed && "opacity-60")}
+                      className={cn(dimmed && "opacity-60", locked && "opacity-70")}
                     />
                   );
                 })}

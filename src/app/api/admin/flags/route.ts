@@ -7,11 +7,13 @@ export const runtime = "nodejs";
 
 const schema = z.object({
   key: z.string().min(1).max(64),
-  enabled: z.boolean(),
+  status: z.enum(["off", "live", "unlocked"]),
 });
 
 /**
- * POST /api/admin/flags — toggle a feature flag. Admin-only.
+ * POST /api/admin/flags — set a feature flag's three-state status
+ * (off | live | unlocked). `enabled` is kept in sync (status !== "off") so
+ * anything still reading the boolean keeps working. Admin-only.
  */
 export async function POST(req: Request) {
   if (!(await requireAdmin())) {
@@ -24,7 +26,11 @@ export async function POST(req: Request) {
   const admin = createAdminClient();
   const { error } = await admin
     .from("feature_flags")
-    .update({ enabled: parsed.data.enabled, updated_at: new Date().toISOString() })
+    .update({
+      status: parsed.data.status,
+      enabled: parsed.data.status !== "off",
+      updated_at: new Date().toISOString(),
+    })
     .eq("key", parsed.data.key);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ ok: true });
