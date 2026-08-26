@@ -1,3 +1,46 @@
+## 2026-08-27 — /today removed as front door + delete-reappears bug fixed
+
+Two asks from Kavya:
+
+**1. Remove /today (the "main light").** She wanted the daily-focus page gone and
+a small resume option in each specific part instead, less distracting.
+
+- Login now redirects to `/dashboard` (was `/today`).
+- "Today" removed from STUDENT_ITEMS, LECTURE_ONLY_ITEMS, and the mobile
+  STUDENT_TABS. `/today` removed from `lectureOnlyAllowed`.
+- `/today/page.tsx` replaced with a one-line redirect to `/dashboard` (old
+  bookmarks forward instead of 404); `loading.tsx` deleted.
+- The resume signal was already distributed per-part: `/practice` keeps its
+  small "Recommended for you" card (computeResumePrimary) and `/dashboard`
+  keeps its course "Continue/Start" next-action rows — so nothing was lost.
+  Comment-only `/today` mentions updated across resume.ts, the practice hub,
+  weak-spots banner, debrief-view, and clinic-complete route.
+- Test: `lectureOnlyAllowed("/today")` now expects false.
+
+**2. "When I did delete something, why does it keep coming back?" — REAL ROOT
+CAUSE (found by 4 subagents + verified live against production edge logs).**
+My initial cascade-RLS theory was REFUTED by an adversarial verifier (Postgres
+runs ON DELETE CASCADE with RLS BYPASSED on child tables). The real cause: the
+admin delete actions (`deleteLesson`, `deleteCourse`, `deleteAssignment`) used
+the **anon** `createClient()`, whose DELETE was RLS-filtered to 0 rows while
+PostgREST still returned **HTTP 204 with no error** → the code's `if (error)`
+check passed → the app reported success while the row persisted. Prod edge logs
+show `DELETE /rest/v1/lessons → 204` for the 4 lesson IDs, all still present.
+
+- Fix: those three deletes (plus `unenrollStudent`) now use `createAdminClient()`
+  (service-role, bypasses RLS — the same pattern `deleteMaterial`/`deleteStudent`
+  already use) and `.select("id")` so a silent 0-row delete surfaces as an error.
+- `deleteLesson` now also revalidates the student-facing `/courses/[courseId]`;
+  `deleteCourse` revalidates `/dashboard`.
+- Error-surfacing fixes: `DeleteLessonButton` + `AssignmentEditor` keep their
+  confirm sheet open on failure (the error was previously rendered inside a
+  just-closed sheet = invisible); `CardsAdmin`/`IdiomsAdmin` only remove a row
+  when `res.ok` (they optimistically removed on any response).
+
+Gate: lint 0, tsc clean, 535 tests, build exit 0 (108 routes).
+
+---
+
 ## 2026-08-27 — ONE canonical lecture view (flat "Lectures" list removed)
 
 Kavya flagged that two different "list of lectures" pages existed:
@@ -34,6 +77,24 @@ week-grouped `CourseOverview`.
   dashboard render.
 
 Gate: lint 0, tsc clean, 535 tests, build exit 0.
+
+VERIFIED LIVE on vibhapsychology.com (merged PR #21 → git-triggered production
+deploy; a redundant `vercel --prod` was stopped once the auto-deploy went
+Ready). Clicked through with a fresh lectures_only test student
+(`nightverify@bindcat.com`, is_test):
+
+- `/dashboard` → the structured `CourseOverview`: H1 "Pyschology Cohort 1",
+  week-1 `<details>` block, 4 lesson rows in order, one highlighted next action
+  ("Start"), no "No lectures yet", no flat-list markup. Course title appears
+  ONCE (H1) — not repeated under each row.
+- `/courses/[courseId]` direct URL → the SAME component/view (identical week
+  block + rows). Desktop + mobile.
+- Watched a lesson → back → lands on `/courses/[courseId]` (structured).
+- Practice strip proven live: temporarily unlocked `mse`, the strip rendered
+  ("Practice — MSE — 10 min") above the course, then reverted to `off` (prod
+  state restored exactly). With only `journal` unlocked (not in PRACTICE_TOOLS),
+  the strip correctly renders nothing.
+- Zero console/page errors across all pages.
 
 ---
 

@@ -19,11 +19,14 @@ export function DeleteLessonButton({ lessonId, courseId }: { lessonId: string; c
     startTransition(async () => {
       try {
         const result = await deleteLesson(lessonId, courseId);
+        if (result.error) {
+          // Keep the sheet open so the error (rendered inside it) is visible.
+          setError(result.error);
+          return;
+        }
         setConfirmOpen(false);
-        if (result.error) setError(result.error);
-        else router.refresh();
+        router.refresh();
       } catch (err) {
-        setConfirmOpen(false);
         setError(err instanceof Error ? err.message : "Could not delete the lesson.");
       }
     });

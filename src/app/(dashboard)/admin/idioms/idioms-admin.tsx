@@ -44,7 +44,8 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
   async function remove(id: string) {
     setBusy(true);
     try {
-      await fetch(`/api/admin/idioms?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/idioms?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+      if (!res.ok) return; // keep the row — a failed delete shouldn't pretend success
       haptic("warning");
       setRows((r) => r.filter((row) => row.id !== id));
     } finally {

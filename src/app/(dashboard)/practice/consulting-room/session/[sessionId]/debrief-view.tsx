@@ -105,7 +105,7 @@ export function DebriefView({
   const [retrying, setRetrying] = React.useState(false);
   const [retryError, setRetryError] = React.useState<string | null>(null);
   // Create/update the patient chain once the debrief shows — the session is
-  // complete, so /today (and this debrief) can offer the next surface.
+  // complete, so the practice hub (and this debrief) can offer the next surface.
   const [chainNext, setChainNext] = React.useState<{ surface: string; label: string; href: string; patient: string } | null>(null);
   const chainPostedRef = React.useRef(false);
   React.useEffect(() => {

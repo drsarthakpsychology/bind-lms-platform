@@ -96,8 +96,8 @@ export async function login(
     maxAge: 60 * 60 * 24 * 60, // 60 days — expires_at is the real gate, not this
   });
 
-  // /today is the front door (v5.1 Part B); /dashboard stays for courses.
-  redirect("/today");
+  // /dashboard is the front door — the single course view (or course grid).
+  redirect("/dashboard");
 }
 
 export async function logout(): Promise<void> {

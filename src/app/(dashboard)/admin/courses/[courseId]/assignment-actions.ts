@@ -187,9 +187,17 @@ export async function deleteAssignment(
   try {
     if (!(await requireAdmin())) return { error: "Not authorized." };
 
-    const supabase = await createClient();
-    const { error } = await supabase.from("assignments").delete().eq("id", assignmentId);
-    if (error) return { error: "Could not delete the assignment." };
+    // Admin delete through the service-role client: the anon client's DELETE
+    // is RLS-filtered to 0 rows while still returning 204 (no error), so the
+    // assignment silently "came back" on refresh. The admin client actually
+    // deletes (and cascades to submissions), matching deleteMaterial.
+    const admin = createAdminClient();
+    const { data, error } = await admin
+      .from("assignments")
+      .delete()
+      .eq("id", assignmentId)
+      .select("id");
+    if (error || !data?.length) return { error: "Could not delete the assignment." };
 
     revalidatePath(`/admin/courses/${courseId}`);
     revalidatePath(`/courses/${courseId}/lessons/${lessonId}`);

@@ -7,7 +7,6 @@ import type { NavItem } from "@/components/navigation/nav-items";
  * across that boundary.
  */
 export const STUDENT_ITEMS: NavItem[] = [
-  { href: "/today", label: "Today", icon: "layoutDashboard", exact: true },
   { href: "/dashboard", label: "My Courses", icon: "bookOpen", exact: true },
   { href: "/tools/psychopharm", label: "Tools", icon: "pill", exact: true },
   { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
@@ -27,7 +26,6 @@ export const STUDENT_ITEMS: NavItem[] = [
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Lectures", icon: "bookOpen", exact: true },
   { href: "/practice", label: "Practice", icon: "sparkles" },
-  { href: "/today", label: "Today", icon: "sun" },
 ];
 
 /**

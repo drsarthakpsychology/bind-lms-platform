@@ -3,8 +3,8 @@ import { computeLearningProfile } from "./learning-profile";
 
 /**
  * The shared "what should I do next" engine (T139/T140). One place decides
- * the single most useful practice action for a student, so /today, /practice
- * and any future surface show the same answer instead of each re-deriving it.
+ * the single most useful practice action for a student, so /practice and any
+ * future surface show the same answer instead of each re-deriving it.
  *
  * Priority (each only when the data supports it, and always with a reason):
  *   1. An in-progress patient session — the patient is waiting.
