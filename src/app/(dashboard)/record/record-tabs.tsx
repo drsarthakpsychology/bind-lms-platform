@@ -13,11 +13,22 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
 export function RecordTabs({
   supervision,
   checkin,
+  supervisionEnabled = true,
+  checkinEnabled = true,
 }: {
   supervision: React.ReactNode;
   checkin: React.ReactNode;
+  supervisionEnabled?: boolean;
+  checkinEnabled?: boolean;
 }) {
-  const [tab, setTab] = React.useState<"supervision" | "checkin">("supervision");
+  // Only show the tab(s) the admin has actually switched on — supervision and
+  // check-in are independently toggleable features that share this page.
+  const options = [
+    ...(supervisionEnabled ? [{ value: "supervision" as const, label: "Supervision log" }] : []),
+    ...(checkinEnabled ? [{ value: "checkin" as const, label: "Weekly check-in" }] : []),
+  ];
+  const defaultTab = supervisionEnabled ? "supervision" : "checkin";
+  const [tab, setTab] = React.useState<"supervision" | "checkin">(defaultTab);
 
   return (
     <div className="space-y-4">
@@ -25,13 +36,10 @@ export function RecordTabs({
         value={tab}
         onValueChange={setTab}
         label="What to record"
-        options={[
-          { value: "supervision", label: "Supervision log" },
-          { value: "checkin", label: "Weekly check-in" },
-        ]}
+        options={options}
       />
 
-      {tab === "supervision" ? (
+      {tab === "supervision" && supervisionEnabled ? (
         <section aria-label="Supervision log" className="space-y-3">
           <p className="text-small text-muted-foreground">
             Log real-world contact hours with your supervisor. Tag a competency and the hour
@@ -39,7 +47,7 @@ export function RecordTabs({
           </p>
           {supervision}
         </section>
-      ) : (
+      ) : checkinEnabled ? (
         <section aria-label="Weekly check-in" className="space-y-3">
           <p className="text-small text-muted-foreground">
             Thirty seconds. Not clinical, not graded — just a read on the cohort so faculty
@@ -47,7 +55,7 @@ export function RecordTabs({
           </p>
           {checkin}
         </section>
-      )}
+      ) : null}
     </div>
   );
 }

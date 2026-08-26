@@ -2,6 +2,7 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 import { CasePicker, SafetyFirstSheet } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -10,10 +11,11 @@ export const dynamic = "force-dynamic";
  * The flagship tool. Lists published sim cases (hand-built seed first).
  */
 export default async function ConsultingRoomPage() {
+  await requireFeature("consulting_room");
   const admin = createAdminClient();
   const { data: published } = await admin
     .from("sim_cases")
-    .select("id, title, difficulty, case_data")
+    .select("id, title, difficulty, case_data, source")
     .eq("status", "published")
     .eq("approved", true)
     .order("created_at", { ascending: true });
@@ -74,7 +76,7 @@ export default async function ConsultingRoomPage() {
   };
 
   const merged = dbCases.map((c) => {
-    const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; source?: string; identity?: { name?: string } };
+    const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; identity?: { name?: string } };
     const difficulty = data.difficulty ?? "cooperative";
     const st = stateByCase.get(c.id);
     return {
@@ -83,7 +85,10 @@ export default async function ConsultingRoomPage() {
       difficulty,
       summary: data.presentation ?? "",
       hook: data.chief_complaint_in_own_words ?? "",
-      source: (data.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
+      // `source` is the TOP-LEVEL sim_cases column, not a key inside case_data —
+      // reading it from case_data always fell back to "corpus", so every card
+      // footer wrongly said "Awaiting faculty review".
+      source: (c.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
       state: (st?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
       score: st?.score ?? null,
       stars: st?.state === "completed" || st?.score != null ? scoreToStars(st?.score) : 0,

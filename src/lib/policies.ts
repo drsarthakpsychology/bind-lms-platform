@@ -66,8 +66,14 @@ export function headingSlug(text: string): string {
 }
 
 function substitutePlaceholders(source: string): string {
+  // Never ship a raw bracket token to a live legal page. While the address is
+  // still awaiting Kavya it renders as a graceful placeholder ("Available on
+  // request") rather than the unresolved `[REGISTERED_ADDRESS]`.
+  const address = LEGAL.registeredAddress.startsWith("[")
+    ? "Available on request"
+    : LEGAL.registeredAddress;
   return source
-    .replaceAll("[REGISTERED_ADDRESS]", LEGAL.registeredAddress)
+    .replaceAll("[REGISTERED_ADDRESS]", address)
     .replaceAll("[EFFECTIVE_DATE]", LEGAL.effectiveDate);
 }
 

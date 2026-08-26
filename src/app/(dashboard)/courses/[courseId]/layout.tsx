@@ -34,20 +34,24 @@ export default async function CourseLayout({
 
   // A student must be enrolled AND the course published to see any of it.
   // Admins (and the admin previewing as student) bypass the enrollment gate.
-  const { data: enrollment } =
-    profile.role === "admin"
-      ? { data: true }
-      : await supabase
-          .from("course_enrollments")
-          .select("course_id")
-          .eq("user_id", profile.id)
-          .eq("course_id", courseId)
-          .maybeSingle();
+  // Lecture-only roster accounts are NOT enrolled (no course_enrollments row by
+  // design) — for them, every PUBLISHED course is the whole surface, mirroring
+  // the carve-out in canAccessLesson/canAccessCourse (src/lib/enrollment.ts).
+  const isAdmin = profile.role === "admin";
+  const bypassEnrollment = isAdmin || profile.scope === "lectures_only";
+  const { data: enrollment } = bypassEnrollment
+    ? { data: true }
+    : await supabase
+        .from("course_enrollments")
+        .select("course_id")
+        .eq("user_id", profile.id)
+        .eq("course_id", courseId)
+        .maybeSingle();
 
   if (
     !course ||
-    (!course.is_published && profile.role !== "admin") ||
-    (profile.role !== "admin" && !enrollment)
+    (!course.is_published && !isAdmin) ||
+    (!bypassEnrollment && !enrollment)
   ) {
     notFound();
   }

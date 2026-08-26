@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { Reveal } from "@/components/motion/reveal";
 import { JournalView } from "./journal-view";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -10,6 +11,7 @@ export const dynamic = "force-dynamic";
  * The weekly Check-in now lives at /record.
  */
 export default async function ReflectPage() {
+  await requireFeature("journal");
   const supabase = await createClient();
   const {
     data: { user },

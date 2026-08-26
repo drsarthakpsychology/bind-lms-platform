@@ -65,9 +65,11 @@ describe("policies content access", () => {
 
   it("resolves the address placeholder where the copy carries it", () => {
     // terms (1.1 + 1.17) and grievance (12.4) both name the registered address.
-    expect(getPolicy("terms")!.body).toContain(LEGAL.registeredAddress);
-    expect(getPolicy("grievance")!.body).toContain(LEGAL.registeredAddress);
-    // Still the TODO token — visibly unresolved, never a fabricated value.
+    // While the real address awaits Kavya, the pages render a graceful fallback
+    // ("Available on request"), never the raw bracket token.
+    expect(getPolicy("terms")!.body).toContain("Available on request");
+    expect(getPolicy("grievance")!.body).toContain("Available on request");
+    expect(getPolicy("terms")!.body).not.toContain("[REGISTERED_ADDRESS]");
     expect(LEGAL.registeredAddress).toBe("[REGISTERED_ADDRESS]");
   });
 

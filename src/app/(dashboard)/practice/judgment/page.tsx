@@ -1,5 +1,6 @@
 import { ALL_SEED_SCT_ITEMS } from "@/lib/practice/sct";
 import { JudgmentArena } from "./judgment-arena";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +9,8 @@ export const dynamic = "force-dynamic";
  * The daily habit anchor. After each answer, show the panel's distribution
  * as a bar chart plus a line of expert reasoning.
  */
-export default function JudgmentPage() {
+export default async function JudgmentPage() {
+  await requireFeature("judgment");
   // In this slice, use the seed items. The panel responses are simulated
   // deterministic (from the seed distribution) until the admin panel flow is
   // wired. sct_expert_responses is admin-only RLS regardless.

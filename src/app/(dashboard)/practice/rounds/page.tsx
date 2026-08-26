@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { CardState } from "@/lib/practice/rounds";
 import { RoundsDeck } from "./rounds-deck";
 import { SEED_CARDS } from "@/lib/practice/rounds-seeds";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +15,7 @@ export const dynamic = "force-dynamic";
  * "You're done" is shown and meant.
  */
 export default async function RoundsPage() {
+  await requireFeature("rounds");
   const supabase = await createClient();
   const {
     data: { user },

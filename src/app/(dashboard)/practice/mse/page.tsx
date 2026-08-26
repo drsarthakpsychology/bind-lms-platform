@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
 import type { FullMseStimulus } from "@/lib/mse/mse4-stimuli";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -59,6 +60,7 @@ function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
  * wiring); the static banks are the fallback when the DB is empty.
  */
 export default async function MsePage() {
+  await requireFeature("mse");
   const supabase = await createClient();
   const { data: dbRows } = await supabase
     .from("mse_stimuli")

@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
 import { SimSessionView } from "./session-view";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,7 @@ export default async function SimSessionPage({
 }: {
   params: Promise<{ sessionId: string }>;
 }) {
+  await requireFeature("consulting_room");
   const { sessionId } = await params;
   // Malformed id → PostgREST 400, not a clean 404 (same guard as the lesson page).
   if (!/^[0-9a-f-]{36}$/i.test(sessionId)) {
