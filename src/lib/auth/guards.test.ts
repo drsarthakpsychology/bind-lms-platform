@@ -17,23 +17,27 @@ describe("lecture-only scope guards", () => {
     expect(isLecturesOnly(null)).toBe(false);
   });
 
-  it("lectureOnlyAllowed permits only the lecture list + player", () => {
-    // Allowed — the lecture list and the player surface.
+  it("lectureOnlyAllowed permits the lecture list + every live/unlocked student surface", () => {
+    // Allowed — the lecture list, the player, and every student surface the
+    // programme may make live/unlocked (each is itself server-gated by its
+    // feature flag).
     expect(lectureOnlyAllowed("/dashboard")).toBe(true);
     expect(lectureOnlyAllowed("/courses/abc")).toBe(true);
     expect(lectureOnlyAllowed("/courses/abc/lessons/def")).toBe(true);
+    expect(lectureOnlyAllowed("/today")).toBe(true);
+    expect(lectureOnlyAllowed("/practice")).toBe(true);
+    expect(lectureOnlyAllowed("/practice/consulting-room")).toBe(true);
+    expect(lectureOnlyAllowed("/reflect")).toBe(true);
+    expect(lectureOnlyAllowed("/wall")).toBe(true);
+    expect(lectureOnlyAllowed("/tools/psychopharm")).toBe(true);
+    expect(lectureOnlyAllowed("/passport")).toBe(true);
+    expect(lectureOnlyAllowed("/record")).toBe(true);
+    expect(lectureOnlyAllowed("/notifications")).toBe(true);
 
-    // Blocked — every other student surface and admin.
-    expect(lectureOnlyAllowed("/today")).toBe(false);
-    expect(lectureOnlyAllowed("/practice")).toBe(false);
-    expect(lectureOnlyAllowed("/practice/consulting-room")).toBe(false);
-    expect(lectureOnlyAllowed("/reflect")).toBe(false);
-    expect(lectureOnlyAllowed("/wall")).toBe(false);
-    expect(lectureOnlyAllowed("/tools/psychopharm")).toBe(false);
-    expect(lectureOnlyAllowed("/passport")).toBe(false);
-    expect(lectureOnlyAllowed("/record")).toBe(false);
+    // Blocked — the admin + account surfaces, never for a student.
     expect(lectureOnlyAllowed("/settings")).toBe(false);
     expect(lectureOnlyAllowed("/admin")).toBe(false);
+    expect(lectureOnlyAllowed("/admin/flags")).toBe(false);
   });
 
   it("isBlocked is true only for status=blocked, independent of credentials", () => {
