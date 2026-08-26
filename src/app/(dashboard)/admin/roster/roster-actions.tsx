@@ -14,7 +14,10 @@ import { cn } from "@/lib/utils";
 
 function fmtDate(iso: string | null): string {
   if (!iso) return "—";
-  return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  // Fixed locale + timezone so the server render and client hydration agree
+  // (the default locale/timezone differ between Vercel=UTC and the admin's
+  // browser, which caused a React hydration mismatch on this page).
+  return new Date(iso).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 }
 
 /** Build a download-ready CSV of the password list and trigger the download. */
