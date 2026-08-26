@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
 import { VideoUpload } from "./video-upload";
 import { DeleteLessonButton } from "./delete-lesson-button";
+import { LessonStatusToggle, type LessonStatus } from "./lesson-status-toggle";
 import { CourseActions } from "../course-actions";
 import { EnrollStudents } from "./enroll-students";
 import { MaterialUploader } from "./material-uploader";
@@ -14,6 +15,18 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+
+const STATUS_BADGES: Record<LessonStatus, { label: string; variant: "published" | "pending" | "draft" }> = {
+  hidden: { label: "Hidden", variant: "draft" },
+  live: { label: "Yet to be live", variant: "pending" },
+  unlocked: { label: "Unlocked", variant: "published" },
+};
+
+/** Map a raw lesson.status to a plain-word badge (falls back to "live"). */
+function statusBadge(status: unknown) {
+  if (status === "unlocked" || status === "hidden") return STATUS_BADGES[status];
+  return STATUS_BADGES.live;
+}
 
 export default async function CourseDetailPage({
   params,
@@ -28,7 +41,7 @@ export default async function CourseDetailPage({
       supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, title, order_index, requires_assignment, video_storage_path")
+        .select("id, title, order_index, requires_assignment, video_storage_path, status")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase
@@ -119,44 +132,53 @@ export default async function CourseDetailPage({
             description="Add your first lesson above. It starts with a video."
           />
         ) : (
-          (lessons ?? []).map((lesson) => (
-            <div
-              key={lesson.id}
-              className="flex flex-col gap-3 rounded-lg border-2 border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div className="min-w-0">
-                <p className="font-medium text-foreground">
-                  <span className="text-numeric mr-2 text-muted-foreground">
-                    {lesson.order_index}.
-                  </span>
-                  {lesson.title}
-                </p>
-                <div className="mt-1 flex flex-wrap items-center gap-2">
-                  {lesson.requires_assignment && (
-                    <Badge variant="draft">Requires assignment</Badge>
+          (lessons ?? []).map((lesson) => {
+            const badge = statusBadge(lesson.status);
+            return (
+              <div
+                key={lesson.id}
+                className="flex flex-col gap-3 rounded-lg border-2 border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="min-w-0">
+                  <p className="font-medium text-foreground">
+                    <span className="text-numeric mr-2 text-muted-foreground">
+                      {lesson.order_index}.
+                    </span>
+                    {lesson.title}
+                  </p>
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    <Badge variant={badge.variant}>{badge.label}</Badge>
+                    {lesson.requires_assignment && (
+                      <Badge variant="draft">Requires assignment</Badge>
+                    )}
+                    {lesson.video_storage_path ? (
+                      <Badge variant="published">Video attached</Badge>
+                    ) : (
+                      <Badge variant="outline">No video</Badge>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <LessonStatusToggle
+                    lessonId={lesson.id}
+                    courseId={courseId}
+                    status={(lesson.status ?? "live") as LessonStatus}
+                  />
+                  {lesson.video_storage_path && (
+                    <Button asChild variant="secondary" size="sm">
+                      <Link href={`/courses/${courseId}/lessons/${lesson.id}`}>Watch</Link>
+                    </Button>
                   )}
-                  {lesson.video_storage_path ? (
-                    <Badge variant="published">Video attached</Badge>
-                  ) : (
-                    <Badge variant="outline">No video</Badge>
-                  )}
+                  <VideoUpload
+                    lessonId={lesson.id}
+                    courseId={courseId}
+                    hasVideo={Boolean(lesson.video_storage_path)}
+                  />
+                  <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
                 </div>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {lesson.video_storage_path && (
-                  <Button asChild variant="secondary" size="sm">
-                    <Link href={`/courses/${courseId}/lessons/${lesson.id}`}>Watch</Link>
-                  </Button>
-                )}
-                <VideoUpload
-                  lessonId={lesson.id}
-                  courseId={courseId}
-                  hasVideo={Boolean(lesson.video_storage_path)}
-                />
-                <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
-              </div>
-            </div>
-          ))
+            );
+          })
         )}
       </section>
 

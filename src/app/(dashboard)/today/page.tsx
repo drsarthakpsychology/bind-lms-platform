@@ -50,7 +50,7 @@ export default async function TodayPage() {
       supabase.from("courses").select("id, title").eq("is_published", true),
       supabase
         .from("lessons")
-        .select("id, course_id, order_index, video_storage_path, description, title"),
+        .select("id, course_id, order_index, video_storage_path, description, title, status"),
       supabase
         .from("progress")
         .select("lesson_id, is_completed, watched_seconds")
@@ -68,6 +68,7 @@ export default async function TodayPage() {
       video_storage_path: string | null;
       description: string | null;
       title: string | null;
+      status: string | null;
     }>
   >();
   for (const l of courseLessons ?? []) {
@@ -90,7 +91,9 @@ export default async function TodayPage() {
     const cl = (lessonsByCourse.get(c.id) ?? []).sort(
       (a, b) => a.order_index - b.order_index,
     );
-    const playable = cl.filter((l) => l.video_storage_path || l.description);
+    const playable = cl.filter(
+      (l) => l.status === "unlocked" && (l.video_storage_path || l.description),
+    );
     const completed = playable.filter((l) => progressByLesson.get(l.id)?.is_completed);
     const started = playable.filter((l) => {
       const p = progressByLesson.get(l.id);

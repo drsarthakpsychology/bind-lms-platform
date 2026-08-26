@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Play } from "lucide-react";
+import { BookOpen, Lock, Play } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -8,8 +8,8 @@ import { Badge } from "@/components/ui/badge";
 
 /**
  * The lecture-only roster surface: a flat list of every published lecture,
- * newest first. Each row links straight to the player. Nothing else — no
- * course grid, no assignments, no practice, no journal, no wall.
+ * newest first. Each unlocked row links straight to the player. Nothing else —
+ * no course grid, no assignments, no practice, no journal, no wall.
  *
  * Newly uploaded (published) lectures appear here with no redeploy: this reads
  * the live lessons table on every request.
@@ -28,20 +28,23 @@ export default async function LecturesOnlyView() {
   const { data: lessons } = courseIds.length
     ? await supabase
         .from("lessons")
-        .select("id, title, course_id, media_assets(duration_seconds)")
+        .select("id, title, course_id, status, media_assets(duration_seconds)")
         .in("course_id", courseIds)
         .order("created_at", { ascending: false })
-    : { data: [] as Array<{ id: string; title: string | null; course_id: string; media_assets: Array<{ duration_seconds: number | null }> | null }> };
+    : { data: [] as Array<{ id: string; title: string | null; course_id: string; status: "hidden" | "live" | "unlocked" | null; media_assets: Array<{ duration_seconds: number | null }> | null }> };
 
-  const rows = (lessons ?? []).map((l) => ({
-    id: l.id,
-    title: l.title ?? "Untitled lecture",
-    courseId: l.course_id,
-    courseTitle: courseTitleById.get(l.course_id) ?? "",
-    duration: Array.isArray(l.media_assets) && l.media_assets[0]?.duration_seconds
-      ? Number(l.media_assets[0].duration_seconds)
-      : null,
-  }));
+  const rows = (lessons ?? [])
+    .filter((l) => l.status !== "hidden")
+    .map((l) => ({
+      id: l.id,
+      title: l.title ?? "Untitled lecture",
+      courseId: l.course_id,
+      courseTitle: courseTitleById.get(l.course_id) ?? "",
+      status: l.status,
+      duration: Array.isArray(l.media_assets) && l.media_assets[0]?.duration_seconds
+        ? Number(l.media_assets[0].duration_seconds)
+        : null,
+    }));
 
   function formatDuration(s: number | null): string {
     if (s == null || !Number.isFinite(s)) return "";
@@ -65,32 +68,56 @@ export default async function LecturesOnlyView() {
         />
       ) : (
         <ul className="flex flex-col gap-2">
-          {rows.map((l) => (
-            <li key={l.id}>
-              <Link href={`/courses/${l.courseId}/lessons/${l.id}`}>
-                <Card variant="interactive" className="flex items-center gap-3 p-4">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
-                    <Play className="size-5" aria-hidden />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-body font-semibold text-foreground [overflow-wrap:anywhere]">
-                      {l.title}
+          {rows.map((l) => {
+            const locked = l.status === "live";
+            return (
+              <li key={l.id}>
+                {locked ? (
+                  <Card variant="flat" className="flex items-center gap-3 p-4">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
+                      <Lock className="size-5" aria-hidden />
                     </span>
-                    {l.courseTitle && (
-                      <span className="block truncate text-caption text-muted-foreground">
-                        {l.courseTitle}
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-body font-semibold text-foreground [overflow-wrap:anywhere]">
+                        {l.title}
                       </span>
-                    )}
-                  </span>
-                  {l.duration != null && (
-                    <Badge variant="secondary" className="shrink-0">
-                      {formatDuration(l.duration)}
+                      {l.courseTitle && (
+                        <span className="block truncate text-caption text-muted-foreground">
+                          {l.courseTitle}
+                        </span>
+                      )}
+                    </span>
+                    <Badge variant="draft" className="shrink-0">
+                      Yet to be live
                     </Badge>
-                  )}
-                </Card>
-              </Link>
-            </li>
-          ))}
+                  </Card>
+                ) : (
+                  <Link href={`/courses/${l.courseId}/lessons/${l.id}`}>
+                    <Card variant="interactive" className="flex items-center gap-3 p-4">
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                        <Play className="size-5" aria-hidden />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-body font-semibold text-foreground [overflow-wrap:anywhere]">
+                          {l.title}
+                        </span>
+                        {l.courseTitle && (
+                          <span className="block truncate text-caption text-muted-foreground">
+                            {l.courseTitle}
+                          </span>
+                        )}
+                      </span>
+                      {l.duration != null && (
+                        <Badge variant="secondary" className="shrink-0">
+                          {formatDuration(l.duration)}
+                        </Badge>
+                      )}
+                    </Card>
+                  </Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

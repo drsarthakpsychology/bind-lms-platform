@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ChevronDown, ChevronLeft, FileText, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
@@ -65,7 +65,7 @@ export default async function LessonPage({
     await Promise.all([
       supabase
         .from("lessons")
-        .select("id, title, description, requires_assignment, course_id, video_storage_path")
+        .select("id, title, description, requires_assignment, course_id, video_storage_path, status")
         .eq("id", lessonId)
         .single(),
       supabase.from("courses").select("id, title").eq("id", courseId).single(),
@@ -98,6 +98,19 @@ export default async function LessonPage({
   // crafted URL (the layout only gates on the URL's courseId).
   if (!lesson || lesson.course_id !== courseId) {
     notFound();
+  }
+
+  // Per-lesson go-live control: a student who knows the direct URL must not
+  // get content for a `hidden` (doesn't exist for them) or `live` (locked,
+  // "yet to be live") lesson. Admins can still preview either from the
+  // builder, whose Watch link resolves here.
+  if (profile.role !== "admin") {
+    if (lesson.status === "hidden") {
+      notFound();
+    }
+    if (lesson.status === "live") {
+      redirect(`/courses/${courseId}`);
+    }
   }
 
   // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
