@@ -1,25 +1,31 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 ROSTER IMPORT — 2026-08-26 (one key + one apply, then one command)
+## 🚨 ROSTER — 2026-08-26 (one key, then import → review → send)
 
-The lecture-only roster (64 people) is parsed and the importer is built +
-dry-run verified: 64 rows → 64 accounts, 0 duplicates, 0 invalid emails;
-**50 rows have no "Full Name"** (name falls back to the email local-part).
-To actually create the accounts and email login links:
+The roster is `scripts/roster/roster.csv` (64 rows, name+email, clean — the
+earlier "50 empty names" bug is fixed: the source sheet had names in a shifted
+column for part of the rows). The flow is now three separate steps:
 
-1. **Set `RESEND_API_KEY` + `RESEND_FROM_EMAIL`** (Resend). This is the ONLY
-   hard blocker — without it the importer creates accounts but can't deliver
-   the set-your-password link (it never emails a plaintext password).
-2. **Apply** `supabase/migrations_pending/profiles_access_scope.sql`
-   (`npm run apply-migrations`) so `profiles.scope` exists (additive).
+1. **Import** (`/admin/tools` → "Import students", or
+   `npm run roster:import -- scripts/roster/roster.csv`): creates the accounts
+   (scope=lectures_only, role student) and records them as **Pending**. No email.
+2. **Review** (`/admin/roster`): see the full batch — name, email, status,
+   date — before anything goes out.
+3. **Send** (`/admin/roster` → "Send all pending" / select rows / retry): each
+   row flips to Sent/Failed with the reason. There's also a **Send test email**
+   button (real template, `[TEST]` marked) to verify the key first.
 
-Then run:
-  npm run roster:import -- scripts/roster/roster.csv --scope lectures_only
+To actually email, the ONLY hard blocker is:
 
-`--dry-run` reports without touching anything. Each account is created with a
-random throwaway password, stamped `profiles.scope='lectures_only'`, and
-emailed a set-your-password link. Sheet: `~/Downloads/COPY SHEET (1).xlsx`
-(sheet "Form responses 1"; only "Full Name" + "Email Address" are read).
+1. **Set `RESEND_API_KEY`** (the key you've decided to use) in `.env.local`
+   (and Vercel for production). `RESEND_FROM_EMAIL` defaults to
+   `VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>`.
+
+Apply the pending migrations (all additive) via `npm run apply-migrations`:
+- `profiles_access_scope.sql` (lecture-only scope)
+- `credential_invites.sql` (the send queue)
+- `profiles_status_blocked.sql` (blocked override)
+- `calibration_auto_signals.sql` (automatic calibration columns)
 
 Every item: paste → something switches on → verify with one command. Free first.
 

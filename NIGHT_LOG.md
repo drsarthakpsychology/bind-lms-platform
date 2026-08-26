@@ -4682,3 +4682,23 @@ build exit 0.
   irrelevant). The full live-session rejection test needs a browser + real
   session — flagged in NEEDS_KAVYA.
 - Gate green: lint 0, tsc clean, 530 tests, build exit 0.
+
+## 2026-08-26 — session complete (roster/email/blocked pass)
+
+Parts 0–7 done. Commits on worktree-night-rights-roster-video (off
+feat/mobile-design-system):
+- 4ab49df fix(roster): header-driven parse (column-shift bug) + BOM tolerance
+- 2e8cc69 feat(roster): split import/review/send + test email
+- 5b446e8 feat(auth): blocked status as unconditional every-request override
+- (docs) NEEDS_KAVYA + PLATFORM_FIXES updated
+
+Root cause of the false "50 empty names": the xlsx had a column shift (names in
+column A for rows 16–65 as formatted cells); the parser is now header-driven
++ BOM-tolerant, pinned by 4 regression tests. Import/send split with a
+credential_invites send queue; test email uses the real Resend path. Blocked
+status is an every-request override (rejected before expiry/token, no sign-out).
+
+Gate green on every commit: lint 0, tsc clean, 530 tests, build exit 0.
+Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker), apply four
+additive migrations, then the human E2E (test email → import → login → block
+mid-session → confirm very-next-request rejection).
