@@ -15,34 +15,38 @@ export async function enrollStudent(
   courseId: string,
   userId: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const supabase = await createClient();
-  // The enrolment record carries the terms acceptance (timestamp + policy
-  // version) — the audit trail that makes the no-refund term defensible. On a
-  // re-enrol it is only written once (first acceptance wins).
-  const { data: existing } = await supabase
-    .from("course_enrollments")
-    .select("policy_acceptance_at")
-    .eq("course_id", courseId)
-    .eq("user_id", userId)
-    .maybeSingle();
-  const { error } = await supabase
-    .from("course_enrollments")
-    .upsert(
-      {
-        course_id: courseId,
-        user_id: userId,
-        ...(existing?.policy_acceptance_at
-          ? {}
-          : { policy_acceptance_at: new Date().toISOString(), policy_version: policyVersion() }),
-      },
-      { onConflict: "user_id,course_id" },
-    );
+    const supabase = await createClient();
+    // The enrolment record carries the terms acceptance (timestamp + policy
+    // version) — the audit trail that makes the no-refund term defensible. On a
+    // re-enrol it is only written once (first acceptance wins).
+    const { data: existing } = await supabase
+      .from("course_enrollments")
+      .select("policy_acceptance_at")
+      .eq("course_id", courseId)
+      .eq("user_id", userId)
+      .maybeSingle();
+    const { error } = await supabase
+      .from("course_enrollments")
+      .upsert(
+        {
+          course_id: courseId,
+          user_id: userId,
+          ...(existing?.policy_acceptance_at
+            ? {}
+            : { policy_acceptance_at: new Date().toISOString(), policy_version: policyVersion() }),
+        },
+        { onConflict: "user_id,course_id" },
+      );
 
-  if (error) return { error: "Could not enroll the student." };
-  revalidatePath(`/admin/courses/${courseId}`);
-  return { error: null };
+    if (error) return { error: "Could not enroll the student." };
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not enroll the student." };
+  }
 }
 
 /** Remove one student from a course. */
@@ -50,18 +54,22 @@ export async function unenrollStudent(
   courseId: string,
   userId: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const supabase = await createClient();
-  const { error } = await supabase
-    .from("course_enrollments")
-    .delete()
-    .eq("course_id", courseId)
-    .eq("user_id", userId);
+    const supabase = await createClient();
+    const { error } = await supabase
+      .from("course_enrollments")
+      .delete()
+      .eq("course_id", courseId)
+      .eq("user_id", userId);
 
-  if (error) return { error: "Could not unenroll the student." };
-  revalidatePath(`/admin/courses/${courseId}`);
-  return { error: null };
+    if (error) return { error: "Could not unenroll the student." };
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not unenroll the student." };
+  }
 }
 
 /**
@@ -199,13 +207,17 @@ export async function deleteLesson(
   lessonId: string,
   courseId: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const supabase = await createClient();
-  const { error } = await supabase.from("lessons").delete().eq("id", lessonId);
+    const supabase = await createClient();
+    const { error } = await supabase.from("lessons").delete().eq("id", lessonId);
 
-  if (error) return { error: "Could not delete the lesson." };
+    if (error) return { error: "Could not delete the lesson." };
 
-  revalidatePath(`/admin/courses/${courseId}`);
-  return { error: null };
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not delete the lesson." };
+  }
 }

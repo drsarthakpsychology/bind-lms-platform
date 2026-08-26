@@ -77,10 +77,15 @@ export function StudentActions({
   function handleDelete() {
     setError(null);
     startTransition(async () => {
-      const result = await deleteStudent(userId);
-      close();
-      if (result.error) setError(result.error);
-      else router.refresh();
+      try {
+        const result = await deleteStudent(userId);
+        close();
+        if (result.error) setError(result.error);
+        else router.refresh();
+      } catch (err) {
+        close();
+        setError(err instanceof Error ? err.message : "Could not delete the account.");
+      }
     });
   }
 

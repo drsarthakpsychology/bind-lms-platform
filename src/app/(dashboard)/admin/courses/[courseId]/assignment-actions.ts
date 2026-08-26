@@ -184,13 +184,17 @@ export async function deleteAssignment(
   lessonId: string,
   assignmentId: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const supabase = await createClient();
-  const { error } = await supabase.from("assignments").delete().eq("id", assignmentId);
-  if (error) return { error: "Could not delete the assignment." };
+    const supabase = await createClient();
+    const { error } = await supabase.from("assignments").delete().eq("id", assignmentId);
+    if (error) return { error: "Could not delete the assignment." };
 
-  revalidatePath(`/admin/courses/${courseId}`);
-  revalidatePath(`/courses/${courseId}/lessons/${lessonId}`);
-  return { error: null };
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}/lessons/${lessonId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not delete the assignment." };
+  }
 }

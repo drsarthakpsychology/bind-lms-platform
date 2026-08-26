@@ -52,15 +52,23 @@ export function CourseActions({
   function handleDelete() {
     setError(null);
     startTransition(async () => {
-      const result = await deleteCourse(courseId);
-      setMenuOpen(false);
-      setMenuView("menu");
-      if (result.error) {
-        setError(result.error);
-        toast.error(result.error);
-      } else {
-        toast.success("Course deleted");
-        router.refresh();
+      try {
+        const result = await deleteCourse(courseId);
+        setMenuOpen(false);
+        setMenuView("menu");
+        if (result.error) {
+          setError(result.error);
+          toast.error(result.error);
+        } else {
+          toast.success("Course deleted");
+          router.refresh();
+        }
+      } catch (err) {
+        setMenuOpen(false);
+        setMenuView("menu");
+        const message = err instanceof Error ? err.message : "Could not delete the course.";
+        setError(message);
+        toast.error(message);
       }
     });
   }
