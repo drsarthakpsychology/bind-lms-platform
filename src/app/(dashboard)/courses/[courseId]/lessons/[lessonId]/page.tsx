@@ -14,13 +14,13 @@ import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 // when the "Watch" tab mounts the player.
 import { LazyVideoPlayer } from "./lazy-video-player";
 import { CompleteButton } from "./complete-button";
-import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
+import { LazyAssignmentEditor as AssignmentEditor } from "@/components/course/admin-tools-lazy";
 import { SubmissionForm } from "./submission-form";
 import { LessonTabs } from "./lesson-tabs";
 import { LessonPicker } from "./lesson-picker";
 import { LessonNav } from "./lesson-nav";
 import { MaterialsList } from "./materials-list";
-import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
+import { LazyMaterialUploader as MaterialUploader } from "@/components/course/admin-tools-lazy";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";

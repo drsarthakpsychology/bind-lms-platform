@@ -2,10 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { VoiceConversation } from "@/components/sim/voice-conversation";
-import { LiveKitVoiceScreen } from "@/components/sim/livekit-voice-screen";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -17,6 +16,18 @@ import { ChatList } from "@/components/sim/chat-list";
 import { NotesSheet } from "@/components/sim/notes-sheet";
 import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
+
+// The voice screens pull in livekit-client (~557KB). Lazy-load them so that
+// chunk never enters the student's eager bundle — it only fetches when voice
+// mode is actually switched on (Part 5).
+const VoiceConversation = dynamic(
+  () => import("@/components/sim/voice-conversation").then((m) => m.VoiceConversation),
+  { ssr: false },
+);
+const LiveKitVoiceScreen = dynamic(
+  () => import("@/components/sim/livekit-voice-screen").then((m) => m.LiveKitVoiceScreen),
+  { ssr: false },
+);
 
 interface Turn {
   id: string;
