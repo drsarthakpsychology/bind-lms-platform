@@ -127,7 +127,7 @@ Once you've set a password, sign in and your lectures will be waiting.
 }
 
 /** Mint a set-your-password link for an existing auth user. */
-async function mintInviteLink(
+export async function mintInviteLink(
   admin: SupabaseClient,
   email: string,
   appUrl: string,
@@ -135,7 +135,7 @@ async function mintInviteLink(
   const { data, error } = await admin.auth.admin.generateLink({
     type: "recovery",
     email,
-    options: { redirectTo: `${appUrl}/today` },
+    options: { redirectTo: `${appUrl}/set-password` },
   });
   if (error || !data?.properties?.action_link) return null;
   return data.properties.action_link;

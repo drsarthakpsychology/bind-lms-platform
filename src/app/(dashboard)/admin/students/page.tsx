@@ -63,7 +63,7 @@ export default async function StudentsPage() {
             <Users className="size-4 text-muted-foreground" aria-hidden />
             All students
             <Badge variant="secondary" className="ml-1">
-              {students.length}
+              {students.filter((s) => !s.is_test).length}
             </Badge>
           </CardTitle>
         </CardHeader>

@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { randomBytes } from "node:crypto";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import {
@@ -9,6 +10,7 @@ import {
   sendCredentialEmails,
   sendResendEmail,
   inviteEmailBody,
+  mintInviteLink,
   type RosterFailure,
   type RosterReport,
 } from "@/lib/auth/roster";
@@ -114,16 +116,49 @@ export type TestEmailResult = { error: string | null; ok: boolean; detail: strin
 export async function sendTestEmailAction(email: string): Promise<TestEmailResult> {
   if (!(await requireAdmin())) return { error: "Not authorized.", ok: false, detail: "" };
 
-  const to = email.trim();
+  const to = email.trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
     return { error: "Enter a valid email address.", ok: false, detail: "" };
   }
 
-  const res = await sendResendEmail(
-    to,
-    "[TEST] Set your VIBHA password",
-    inviteEmailBody("Test Student", to, "https://vibhapsychology.com/set-password?test=1"),
-  );
+  const admin = createAdminClient();
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+
+  // 1. Create (or reuse) a dedicated test account for this address — same scope
+  //    as a real roster account, so the test genuinely mirrors reality. Reuse
+  //    the existing profile so repeated clicks don't pollute the accounts table.
+  const { data: existing } = await admin
+    .from("profiles")
+    .select("id")
+    .eq("email", to)
+    .maybeSingle();
+
+  let userId = existing?.id as string | null;
+  if (!userId) {
+    const password = randomBytes(24).toString("base64url");
+    const { data: created, error: createErr } = await admin.auth.admin.createUser({
+      email: to,
+      password,
+      email_confirm: true,
+      user_metadata: { name: "Test Student" },
+    });
+    if (createErr || !created?.user) {
+      return { error: createErr?.message ?? "Could not create the test account.", ok: false, detail: "" };
+    }
+    userId = created.user.id;
+  }
+
+  // 2. Mark it unmistakably as a test account, scoped like a real student.
+  await admin.from("profiles").update({ is_test: true, scope: "lectures_only" }).eq("id", userId);
+
+  // 3. A real, single-use, expiring token through the SAME path as the real send.
+  const url = await mintInviteLink(admin, to, appUrl);
+  if (!url) {
+    return { error: "Could not mint the set-password link.", ok: false, detail: "" };
+  }
+
+  // 4. Send the real link, clearly [TEST]-marked.
+  const res = await sendResendEmail(to, "[TEST] Set your VIBHA password", inviteEmailBody("Test Student", to, url));
 
   return {
     error: null,
