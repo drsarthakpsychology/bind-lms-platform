@@ -4781,3 +4781,29 @@ off / not released) — routes remain, students just aren't pointed at empty
 surfaces. Admin nav untouched.
 
 Gate: lint 0, tsc clean, 534 tests, build exit 0.
+
+## 2026-08-26 — verify real invite path (found + fixed the real bug)
+
+Traced the REAL invite path (not the test path). Findings:
+- **Real bug fixed**: `mintInviteLink` generated a recovery link with
+  `redirectTo: /today`, but the app had NO set-password screen and no
+  verifyOtp/setSession/updateUser anywhere. So a real student's link would land
+  on /today (unauthenticated → /login) with no way to set a password. Built
+  `/set-password` (client form: reads the `#access_token`/`type=recovery` hash,
+  `setSession`, then `updateUser({password})`) and repointed redirectTo at it.
+- **Sender domain**: only `bindcat.com` is verified in Resend (leftover from
+  before the VIBHA rename); no `vibhaschoolofpsychology.in` / `vibhapsychology.com`
+  domain is verified. A real send under the VIBHA brand is blocked — flagged in
+  NEEDS_KAVYA. Test emails can still go out from the verified domain.
+- **Test email made real** (per the new directive): `sendTestEmailAction` now
+  creates (or reuses, by email) a dedicated account marked `is_test=true` +
+  `scope=lectures_only`, mints a real token via the SAME `mintInviteLink`, and
+  sends the real link with a `[TEST]` subject. Re-issuing regenerates the token
+  (Supabase recovery tokens are replaced per generateLink), invalidating the old.
+- **Isolation**: test accounts are `is_test=true` (shown with a Test badge) and
+  excluded from the admin "All students" count.
+- **State**: `credential_invites` is still empty — no roster has been imported,
+  so there is no real row to trace yet. The full click-through (real inbox +
+  browser) is the human E2E step.
+
+Gate: lint 0, tsc clean, 534 tests, build exit 0.

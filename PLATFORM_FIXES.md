@@ -133,3 +133,37 @@ Not verified live (needs a real browser + a real session, and/or the Resend
 key — see NEEDS_KAVYA): the blocked-status live-session rejection E2E, the
 lecture-only direct-URL rejection E2E, and the email send (RESEND_API_KEY was
 never present in the environment).
+
+---
+
+## Simplify student course experience (this session)
+
+Shipped to `main` (PR #3, `bdb5cf7`), deployed, smoke-tested live
+(`/` 200; `/dashboard` and `/courses/*` serve behind auth).
+
+**Course page before → after:**
+- Before: four elements said the same thing — a big "Continue learning" card, a
+  "Not started · 5 lessons" box, a "Week 1 — In progress" header, and a lesson
+  row "← Start here". Two of them contradicted each other ("Not started" vs
+  "In progress"), and two said "go to lesson 1" in different visual languages.
+- After: one page header ("X of Y lessons complete", the only progress on the
+  page), one vertical list of week sections, and exactly ONE peach-highlighted
+  row labelled "Start"/"Continue". The "Continue learning" card and the "Not
+  started" box are gone. Draft assignments are filtered (no unexplained "Draft"
+  chip); published-unsubmitted reads "Not submitted yet".
+- Status is now computed from a single `started` flag
+  (`src/lib/course/status.ts`), with 4 tests asserting "not started" and "in
+  progress" can never appear together.
+
+**Lesson page:** one primary action directly below the video ("Mark complete" /
+"Next lesson" / "Finish course"), persistent Previous/Next that cross week
+boundaries, Previous disabled on the first lesson, left/right arrow-key
+navigation (ignored while the video is focused), mobile pinned above the nav.
+
+**Dashboard:** course resume still leads; practice condensed to 2 tools + "All
+practice". The "Previewing as a student" banner is gated to `role === "admin"`.
+
+**Sidebar:** removed Passport + Record from the student nav (skills_passport
+flag off / not released); routes untouched, admin nav untouched.
+
+Gate: lint 0, tsc clean, 534 tests, build exit 0.

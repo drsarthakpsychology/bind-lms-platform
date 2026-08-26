@@ -1,27 +1,42 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 ROSTER — 2026-08-26 (ONE action left: set RESEND_API_KEY)
+## 🚨 SENDER DOMAIN — blocks any real student invite (2026-08-26)
 
-Deployed + live on vibhapsychology.com (merged to main, production Ready,
-smoke-tested: homepage/login/paused all 200). The 4 migrations were applied
-and verified in the production schema. The flow is import → review → send
-(`/admin/tools` import, `/admin/roster` review + send + test email).
+The Resend account has exactly ONE verified sending domain: **`bindcat.com`** —
+a leftover from before the VIBHA rename. `vibhaschoolofpsychology.in` (the
+code's default from-address) is NOT verified, so any real send under the VIBHA
+brand returns 403 "domain not verified".
 
-The ONLY hard blocker left is:
+1. **Verify a VIBHA sending domain in Resend** (resend.com → Domains):
+   `vibhaschoolofpsychology.in` (preferred — it's the code default) or
+   `vibhapsychology.com`, including SPF/DKIM.
+2. Until then, **do not send real student invites** — they would go out under
+   `bindcat.com`, which a real student would reasonably mark as spam. The
+   `[TEST]` email can still be sent from the verified domain for internal checks.
 
-1. **Set `RESEND_API_KEY` in Vercel** (Production → Environment Variables) —
-   and in `.env.local` for local runs. The key value was never in the
-   environment, so the email SEND step cannot run until it's added. Everything
-   else (import, review, the `[TEST]` test-email control, blocked status,
-   lecture-only access) is live and waiting on this one value.
+## ✅ Human E2E for the invite (needs a real inbox + browser)
 
-Then the human E2E pass (needs a browser + real session — can't be done
-headless):
-- Send the test email, import the roster, log in as one account and confirm
-  only the lecture list is reachable by direct URL.
-- Block that account mid-session and confirm the SAME session is rejected on
-  its very next request (redirected to /paused), then unblock and confirm it
-  works again with no re-login.
+The set-password flow is now built (`/set-password`), but the full click-through
+can't be done headless:
+1. On `/admin/roster`, "Send test email" to your own address.
+2. Open the email, click the link → it should land on a real "Set your password"
+   page (not a 404).
+3. Set a password, then sign in → confirm it lands on the lecture-only view.
+4. Send a second test email → confirm the first link no longer works, the new
+   one does.
+
+## 🚨 ROSTER — 2026-08-26
+
+Deployed + live on vibhapsychology.com. The flow is import → review → send
+(`/admin/tools` import, `/admin/roster` review + send + test email). The four
+migrations are applied and verified. `RESEND_API_KEY` is set in Vercel.
+
+The remaining blocker is the **sender domain** (see the SENDER DOMAIN section
+at the top): `vibhaschoolofpsychology.in` must be verified in Resend before any
+real student invite goes out. After that, the human E2E pass (browser + inbox):
+import the roster, send one invite, click the link, set a password, log in,
+confirm lecture-only access, and block/unblock one account to see the immediate
+rejection/restore.
 
 Every item: paste → something switches on → verify with one command. Free first.
 
