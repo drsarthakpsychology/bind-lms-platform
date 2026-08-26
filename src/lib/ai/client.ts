@@ -25,7 +25,7 @@ import {
 } from "./router";
 import { assertProviderAllowed, type Workload } from "./guards";
 import { fixtureReply } from "./fixtures";
-import { logAiUsage, recordProviderOutcome } from "./health";
+import { logAiUsage, recordProviderOutcome, warmProviderCircuit } from "./health";
 
 const DEBUG = process.env.AI_DEBUG === "true";
 
@@ -195,6 +195,11 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     throw new AiUnavailableError(opts.workload);
   }
 
+  // Cold-start bootstrap: restore the last known failures/latency from the DB
+  // so a provider degraded before a serverless cold start isn't retried blind.
+  // Fire-and-forget — never blocks the request.
+  void warmProviderCircuit();
+
   let attempt = 0;
   const reasons: string[] = [];
   for (const provider of candidates) {
@@ -209,7 +214,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
         try {
           const parsed = opts.schema.parse(JSON.parse(extractJson(text)));
           log(provider.id, opts.workload, "ok");
-          void recordProviderOutcome(provider.id, true);
+          void recordProviderOutcome(provider.id, true, latencyMs);
           void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
           return { text, provider: provider.id, json: parsed };
         } catch {
@@ -220,15 +225,19 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
               { role: "user", content: `Return valid JSON matching the schema. Your previous output was not valid JSON. Output ONLY the JSON object.` },
             ], { ...opts, schema: undefined });
             const parsed = opts.schema.parse(JSON.parse(extractJson(repair.text)));
-            void recordProviderOutcome(provider.id, true);
+            void recordProviderOutcome(provider.id, true, latencyMs);
             void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: repair.usage.tokensIn, tokensOut: repair.usage.tokensOut, latencyMs, status: "ok" });
             return { text: repair.text, provider: provider.id, json: parsed };
           }
-          throw new Error(`schema validation failed on provider ${provider.id}`);
+          const schemaErr = new Error(`schema validation failed on provider ${provider.id}`);
+          // A provider returning valid HTTP but garbage content isn't "down" —
+          // mark it so the catch doesn't open the circuit for it.
+          (schemaErr as Error & { misbehavior?: boolean }).misbehavior = true;
+          throw schemaErr;
         }
       }
       log(provider.id, opts.workload, "ok");
-      void recordProviderOutcome(provider.id, true);
+      void recordProviderOutcome(provider.id, true, latencyMs);
       void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
       return { text, provider: provider.id };
     } catch (e) {
@@ -236,12 +245,17 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       const status = (e as unknown as { status?: number }).status;
       const model = (e as unknown as { model?: string }).model ?? "?";
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
+      // Schema-parse misbehavior (valid HTTP, bad content) and non-retryable
+      // client errors (4xx) are NOT provider outages — don't open the circuit
+      // for them. Only transport failures (429/5xx/timeout) trip the breaker.
+      const misbehavior = Boolean((e as { misbehavior?: boolean }).misbehavior);
+      const openCircuit = retryable && !misbehavior;
       const reason = `${provider.id} ${model} status=${status ?? "?"} latency=${latencyMs}ms: ${(e as Error).message.slice(0, 500)}`;
       reasons.push(reason);
       // Loud per-provider failure line (Phase 1 observability).
       console.warn(`[ai] ${opts.workload} -> ${provider.id} ${model} FAILED status=${status ?? "?"} latency=${latencyMs}ms retryable=${retryable} ${(e as Error).message.slice(0, 500)}`);
-      void recordProviderOutcome(provider.id, false);
-      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: retryable ? "failover" : "error" });
+      if (openCircuit) void recordProviderOutcome(provider.id, false, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: openCircuit ? "failover" : "error" });
       if (!retryable && attempt >= candidates.length) throw e;
       if (retryable) {
         // exponential backoff, but capped so we never block long

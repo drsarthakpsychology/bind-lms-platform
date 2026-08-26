@@ -101,37 +101,55 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
     setBusy(true);
     setError(null);
     haptic("tap");
+    const text = content.trim();
+    const moodTag = mood || undefined;
+    const tempId = crypto.randomUUID();
+
+    // Optimistic: show the entry immediately, reconcile with the server.
+    setEntries((prev) => [
+      { id: tempId, content: text, moodTag, createdAt: new Date().toISOString() },
+      ...prev,
+    ]);
+    setContent("");
+    setMood("");
+    setComposerOpen(false);
+
+    let ok = false;
     try {
       const res = await fetch("/api/practice/journal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: content.trim(), moodTag: mood || undefined }),
+        body: JSON.stringify({ content: text, moodTag }),
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
         setError(j?.error ?? "Could not save. Please try again.");
-        return;
+      } else {
+        const j = (await res.json()) as { id: string };
+        // Entry is already visible — just swap the temp id for the real one.
+        setEntries((prev) => prev.map((entry) => (entry.id === tempId ? { ...entry, id: j.id } : entry)));
+        haptic("success");
+        ok = true;
       }
-      const j = (await res.json()) as { id: string };
-      setEntries((prev) => [
-        { id: j.id, content: content.trim(), moodTag: mood || undefined, createdAt: new Date().toISOString() },
-        ...prev,
-      ]);
-      setContent("");
-      setMood("");
-      setComposerOpen(false);
+    } catch {
+      setError("Network error. Your entry is still here — try again.");
+    }
+
+    if (!ok) {
+      // Roll back the optimistic entry and restore the draft so nothing is lost.
+      setEntries((prev) => prev.filter((entry) => entry.id !== tempId));
+      setContent(text);
+      setMood(moodTag ?? "");
+      setComposerOpen(true);
+    } else {
       try {
         window.localStorage.removeItem(DRAFT_KEY);
       } catch {
         /* ignore */
       }
       setDraftSaved(false);
-      haptic("success");
-    } catch {
-      setError("Network error. Your entry is still here — try again.");
-    } finally {
-      setBusy(false);
     }
+    setBusy(false);
   }
 
   async function shareEntry(entry: JournalEntry, toFaculty = false) {

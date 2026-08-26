@@ -20,22 +20,67 @@
 export const FAILURE_THRESHOLD = 3;
 /** After this long failing, allow a retry (half-open → full recovery on success). */
 export const RECOVERY_WINDOW_MS = 60_000;
+/** A rolling EMA above this opens the circuit for latency (a slow-but-200
+ *  provider must not stall every request up to the 20s timeout). */
+export const LATENCY_THRESHOLD_MS = 8_000;
+/** Require this many samples before the latency signal counts (warmup). */
+export const LATENCY_WARMUP_SAMPLES = 5;
 
 /** In-memory circuit state. */
-const circuit = new Map<string, { failures: number; lastFailureAt: number }>();
+const circuit = new Map<
+  string,
+  { failures: number; lastFailureAt: number; latencyEma: number; latencySamples: number }
+>();
 
 /** Whether a provider is currently healthy enough to serve a request. */
 export function isProviderHealthy(providerId: string): boolean {
   const s = circuit.get(providerId);
   if (!s) return true; // unknown → assume healthy (first-use)
-  if (s.failures < FAILURE_THRESHOLD) return true;
-  // Circuit open — allow a probe after the recovery window (half-open).
-  return Date.now() - s.lastFailureAt > RECOVERY_WINDOW_MS;
+  if (s.failures >= FAILURE_THRESHOLD) {
+    // Circuit open — allow a probe after the recovery window (half-open).
+    return Date.now() - s.lastFailureAt > RECOVERY_WINDOW_MS;
+  }
+  // Latency trip: a provider that consistently returns 200-but-slow is
+  // treated as degraded once enough samples have built up.
+  if (s.latencySamples >= LATENCY_WARMUP_SAMPLES && s.latencyEma > LATENCY_THRESHOLD_MS) {
+    return false;
+  }
+  return true;
 }
 
 /** Reset a provider's circuit state (call after a success). */
 export function resetProviderHealth(providerId: string): void {
   circuit.delete(providerId);
+}
+
+/**
+ * Seed the in-memory circuit from provider_health (serverless cold starts get
+ * an empty Map; this restores the last known failures + latency so a provider
+ * that was degraded before the cold start doesn't get a free retry). Called
+ * fire-and-forget from aiChat before the routing loop; never blocks the request.
+ */
+export async function warmProviderCircuit(): Promise<void> {
+  try {
+    const { createAdminClient } = await import("@/lib/supabase/server");
+    const admin = createAdminClient();
+    const { data } = await admin
+      .from("provider_health")
+      .select("provider, consecutive_failures, avg_latency_ms, latency_samples");
+    for (const row of data ?? []) {
+      const providerId = String(row.provider);
+      if (circuit.has(providerId)) continue; // a live sample already exists
+      const failures = Number(row.consecutive_failures ?? 0);
+      const latencySamples = Number(row.latency_samples ?? 0);
+      circuit.set(providerId, {
+        failures,
+        lastFailureAt: failures > 0 ? Date.now() : 0,
+        latencyEma: Number(row.avg_latency_ms ?? 0),
+        latencySamples,
+      });
+    }
+  } catch {
+    // Best-effort bootstrap; the in-memory circuit still works on its own.
+  }
 }
 
 /**
@@ -71,11 +116,24 @@ export async function logAiUsage(p: {
 }
 
 /** Record a provider outcome (in-memory always; DB write fire-and-forget). */
-export async function recordProviderOutcome(providerId: string, ok: boolean): Promise<void> {
+export async function recordProviderOutcome(
+  providerId: string,
+  ok: boolean,
+  latencyMs?: number,
+): Promise<void> {
   if (ok) {
-    resetProviderHealth(providerId);
+    // A success resets failures but keeps the latency EMA — a consistently slow
+    // provider still trips the latency signal even though it never errors.
+    const s = circuit.get(providerId) ?? { failures: 0, lastFailureAt: 0, latencyEma: 0, latencySamples: 0 };
+    s.failures = 0;
+    s.lastFailureAt = 0;
+    if (latencyMs != null) {
+      s.latencyEma = s.latencySamples === 0 ? latencyMs : s.latencyEma * 0.7 + latencyMs * 0.3;
+      s.latencySamples += 1;
+    }
+    circuit.set(providerId, s);
   } else {
-    const s = circuit.get(providerId) ?? { failures: 0, lastFailureAt: 0 };
+    const s = circuit.get(providerId) ?? { failures: 0, lastFailureAt: 0, latencyEma: 0, latencySamples: 0 };
     s.failures += 1;
     s.lastFailureAt = Date.now();
     circuit.set(providerId, s);
@@ -85,9 +143,17 @@ export async function recordProviderOutcome(providerId: string, ok: boolean): Pr
   try {
     const { createAdminClient } = await import("@/lib/supabase/server");
     const admin = createAdminClient();
+    const s = circuit.get(providerId);
     if (ok) {
       await admin.from("provider_health").upsert(
-        { provider: providerId, consecutive_failures: 0, last_success_at: new Date().toISOString(), last_failure_at: null },
+        {
+          provider: providerId,
+          consecutive_failures: 0,
+          last_success_at: new Date().toISOString(),
+          last_failure_at: null,
+          avg_latency_ms: s?.latencySamples ? Math.round(s.latencyEma) : null,
+          latency_samples: s?.latencySamples ?? 0,
+        },
         { onConflict: "provider" },
       );
       return;
@@ -105,6 +171,8 @@ export async function recordProviderOutcome(providerId: string, ok: boolean): Pr
         consecutive_failures: prior + 1,
         last_failure_at: new Date().toISOString(),
         last_success_at: priorSuccess,
+        avg_latency_ms: s?.latencySamples ? Math.round(s.latencyEma) : null,
+        latency_samples: s?.latencySamples ?? 0,
       },
       { onConflict: "provider" },
     );
