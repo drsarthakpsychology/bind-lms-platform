@@ -33,7 +33,7 @@ export function PageHeader({
           <div className="text-eyebrow text-muted-foreground">{eyebrow}</div>
         ) : null}
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-h1">{title}</h1>
+          <h1 className="break-words text-h1">{title}</h1>
           {badge ? <div className="shrink-0">{badge}</div> : null}
         </div>
         {description ? (

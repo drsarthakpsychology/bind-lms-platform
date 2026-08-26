@@ -253,7 +253,7 @@ export default async function LessonPage({
             ) : (
               <div className="p-5">
                 <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
-                <p className="mt-2 whitespace-pre-line text-small text-muted-foreground">
+                <p className="mt-2 whitespace-pre-line break-words text-small text-muted-foreground">
                   {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
                 </p>
               </div>
@@ -406,7 +406,7 @@ export default async function LessonPage({
             <Card variant="raised">
               <CardContent className="pt-6">
                 {assignment.instructions ?? assignment.prompt_text ? (
-                  <div className="mb-4 whitespace-pre-wrap rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
+                  <div className="mb-4 whitespace-pre-wrap break-words rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
                     {assignment.instructions ?? assignment.prompt_text}
                   </div>
                 ) : null}

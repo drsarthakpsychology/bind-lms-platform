@@ -342,7 +342,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
                     <MoreHorizontal className="size-5" aria-hidden />
                   </button>
                 </div>
-                <p className="mt-2 whitespace-pre-wrap text-small">{e.content}</p>
+                <p className="mt-2 whitespace-pre-wrap break-words text-small">{e.content}</p>
               </li>
             ))}
           </ul>
@@ -393,7 +393,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       >
         {menuEntry ? (
           <div className="space-y-2">
-            <p className="whitespace-pre-wrap rounded-md border border-border bg-background p-3 text-small text-muted-foreground line-clamp-4">
+            <p className="whitespace-pre-wrap break-words rounded-md border border-border bg-background p-3 text-small text-muted-foreground line-clamp-4">
               {menuEntry.content}
             </p>
 

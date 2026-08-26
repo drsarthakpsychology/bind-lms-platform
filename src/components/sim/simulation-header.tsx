@@ -13,7 +13,7 @@ import { useOffline } from "@/lib/hooks/use-offline";
  * the screen. The student never sees which engine is driving the patient —
  * only the genuine Offline signal when the connection drops.
  */
-export function SimulationHeader({
+export const SimulationHeader = React.memo(function SimulationHeader({
   patientName,
   patientAge,
   difficulty,
@@ -95,4 +95,4 @@ export function SimulationHeader({
       </button>
     </header>
   );
-}
+});

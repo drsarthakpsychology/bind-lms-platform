@@ -79,7 +79,7 @@ export function VibhaWordmark({
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <VibhaMark size={size} shadow={shadow} />
-      <span className="min-w-0 text-sm font-black tracking-[0.12em] text-foreground">
+      <span className="min-w-0 text-sm font-bold tracking-[0.12em] text-foreground">
         {compact ? BRAND.shortName : BRAND.nameUppercase}
       </span>
     </span>

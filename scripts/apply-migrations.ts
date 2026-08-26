@@ -70,7 +70,7 @@ async function main() {
   const dir = "supabase/migrations_pending";
   // The migrations to apply. Kept explicit (not "apply everything in the dir")
   // so an unapproved file can't silently run against production. This run:
-  // the roster/email/blocked/calibration feature set.
+  // the roster/email/blocked/calibration feature set + perf-pass indexes.
   const APPROVED = [
     "profiles_access_scope.sql",
     "credential_invites.sql",
@@ -79,6 +79,7 @@ async function main() {
     "calibration_auto_signals.sql",
     "videos_bucket.sql",
     "flags_lesson_status.sql",
+    "perf_indexes.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);

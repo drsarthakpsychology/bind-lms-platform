@@ -43,7 +43,7 @@ export function Stamp({
     <motion.span
       aria-hidden
       className={cn(
-        "select-none rounded-md font-mono font-black uppercase tracking-[0.2em]",
+        "select-none rounded-md font-mono font-bold uppercase tracking-[0.2em]",
         variant === "accent"
           ? "border border-foreground bg-primary/60 px-2.5 py-0.5 text-[0.65rem] text-foreground"
           : "border-2 border-foreground bg-primary px-3 py-1 text-xs text-primary-foreground outline-2 outline-offset-2 outline-foreground",
@@ -63,7 +63,7 @@ export function Stamp({
 export function SectionEyebrow({ index, children }: { index: string; children: React.ReactNode }) {
   return (
     <p className="flex items-center gap-2.5 text-eyebrow text-muted-foreground">
-      <span aria-hidden className="font-mono text-sm font-black tracking-normal text-link">
+      <span aria-hidden className="font-mono text-sm font-bold tracking-normal text-link">
         {index}
       </span>
       <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-primary" />

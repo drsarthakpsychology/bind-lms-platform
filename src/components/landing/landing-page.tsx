@@ -57,7 +57,7 @@ function Hero() {
             <Reveal>
               <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
             </Reveal>
-            <h1 className="mt-5 ml-[-0.033em] text-[clamp(3rem,7.4vw,3.75rem)] font-black leading-[0.9] tracking-[-0.038em] text-foreground">
+            <h1 className="mt-5 ml-[-0.033em] text-[clamp(3rem,7.4vw,3.75rem)] font-bold leading-[0.9] tracking-[-0.038em] text-foreground">
               <KineticHeadline delay={0.1} stagger={0.045}>
                 Understand the case,
               </KineticHeadline>
@@ -113,7 +113,7 @@ function Hero() {
             <div className="relative space-y-3.5 pb-6">
               <div
                 aria-hidden
-                className="absolute -top-3.5 left-6 z-10 rotate-[-1.5deg] rounded-md border-2 border-foreground bg-primary px-2.5 py-1 font-mono text-[0.6rem] font-black uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
+                className="absolute -top-3.5 left-6 z-10 rotate-[-1.5deg] rounded-md border-2 border-foreground bg-primary px-2.5 py-1 font-mono text-[0.6rem] font-bold uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
               >
                 Case file
               </div>
@@ -135,7 +135,7 @@ function Hero() {
               </Reveal>
               <div
                 aria-hidden
-                className="absolute bottom-[0.15rem] right-[2.4rem] z-10 rotate-[1.5deg] rounded-md border-2 border-foreground bg-primary px-2.5 py-1 font-mono text-[0.6rem] font-black uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
+                className="absolute bottom-[0.15rem] right-[2.4rem] z-10 rotate-[1.5deg] rounded-md border-2 border-foreground bg-primary px-2.5 py-1 font-mono text-[0.6rem] font-bold uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
               >
                 Practise
               </div>
@@ -161,7 +161,7 @@ function Problem() {
       <div className="rail py-20">
         <Reveal>
           <SectionEyebrow index="01">Why this school exists</SectionEyebrow>
-          <h2 className="mt-3 max-w-[20ch] text-3xl font-black leading-tight tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mt-3 max-w-[20ch] text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
             Theory gives you the language.{" "}
             <span className="font-serif font-medium italic">Practice teaches you how to use it.</span>
           </h2>
@@ -207,7 +207,7 @@ function ThreeIdeas() {
     <section className="rail py-20">
       <Reveal>
         <SectionEyebrow index="02">The method</SectionEyebrow>
-        <h2 className="mt-3 max-w-[20ch] text-3xl font-black leading-tight tracking-tight text-foreground sm:text-4xl">
+        <h2 className="mt-3 max-w-[20ch] text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
           Learn, experience, apply. <span className="font-serif font-medium italic">In that order.</span>
         </h2>
       </Reveal>
@@ -233,7 +233,7 @@ function ThreeIdeas() {
                 )}
               >
                 <p className="flex items-baseline gap-3 text-eyebrow text-muted-foreground">
-                  <span aria-hidden className="font-mono text-2xl font-black tracking-normal text-link">
+                  <span aria-hidden className="font-mono text-2xl font-bold tracking-normal text-link">
                     {idea.num}
                   </span>
                   {idea.eyebrow}
@@ -255,7 +255,7 @@ function WhoBuilds() {
       <div className="rail py-20">
         <Reveal>
           <SectionEyebrow index="03">Who is building this</SectionEyebrow>
-          <h2 className="mt-3 max-w-[20ch] text-3xl font-black leading-tight tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mt-3 max-w-[20ch] text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
             A small team, and <span className="font-serif font-medium italic">you know their names.</span>
           </h2>
           <div className="mt-6 max-w-[62ch] space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -303,7 +303,7 @@ function ClosingCta() {
         <div className="relative">
           <Stamp className="absolute -top-4 right-0 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
           <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
-          <h2 className="mt-4 max-w-[20ch] text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
+          <h2 className="mt-4 max-w-[20ch] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
             {hasCohortStarted() ? (
               <>
                 Cohort One{" "}

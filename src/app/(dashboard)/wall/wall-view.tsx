@@ -320,7 +320,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {formatRelativeTime(p.createdAt)}</span>
                 </div>
-                <p className="mt-2 whitespace-pre-wrap text-small">{p.content}</p>
+                <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.content}</p>
 
                 {/* reactions — not upvotes */}
                 <div className="mt-3 flex flex-wrap items-center gap-1.5">
@@ -372,7 +372,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                           <span>{r.isAnonymous ? "Anonymous" : "Cohort member"}</span>
                           <span>· {formatRelativeTime(r.createdAt)}</span>
                         </div>
-                        <p className="mt-1 whitespace-pre-wrap text-small">{r.content}</p>
+                        <p className="mt-1 whitespace-pre-wrap break-words text-small">{r.content}</p>
                         <div className="mt-1.5 flex flex-wrap items-center gap-1">
                           {REACTIONS.map((rr) => {
                             const Icon = rr.icon;

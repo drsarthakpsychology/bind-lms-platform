@@ -1,3 +1,28 @@
+## 2026-08-27 — PERFORMANCE PASS (16 parts) — audit wave launched
+
+Kavya asked for a full performance pass (16 numbered parts) + completing
+QUEUE.md. Orchestrated: 9 parallel read-only audit subagents launched via
+Workflow (N+1/pagination, indexes, images/bundle, streaming, compression/
+batching, circuit-breaker/optimistic-UI, caching/mobile, re-renders/type/LCP/
+prefetch, QUEUE triage).
+
+Independent baselines taken while audits run:
+- **Part 7 (compression) — ALREADY GOOD.** Vercel edge compresses: `/api/health`
+  → `content-encoding: br` (79 bytes); landing HTML → `content-encoding: br`
+  (10,669 bytes). No double-compression of images (they're served raw). Nothing
+  to change.
+- **Part 2 (indexes) baseline.** Full pg_indexes inventory taken. Existing
+  coverage is good (FKs, unique keys, journal (user_id,created_at), wall
+  (is_pinned,created_at), submissions (assignment_id,user_id), lessons
+  (course_id,week)). Candidate gaps to verify against real queries:
+  `submissions(status[,submitted_at])` for review queues, `lessons(course_id,
+  order_index)` composite, `profiles(status)`/`credential_invites(status)` for
+  admin lists — only add if the code actually filters/sorts on those.
+
+Full gate green at audit launch (lint/tsc/535 tests/build).
+
+---
+
 ## 2026-08-27 — /today removed as front door + delete-reappears bug fixed
 
 Two asks from Kavya:

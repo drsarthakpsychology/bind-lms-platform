@@ -15,7 +15,7 @@ export interface ChatTurn {
  * Renders the quiet first-turn empty state, then the bubbles. The `scrollRef`
  * is passed in so the parent can pin to the latest turn as messages arrive.
  */
-export function ChatList({
+export const ChatList = React.memo(function ChatList({
   turns,
   patientName,
   typing,
@@ -42,4 +42,4 @@ export function ChatList({
       {typing ? <ChatMessage role="patient" typing /> : null}
     </div>
   );
-}
+});

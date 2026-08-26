@@ -42,7 +42,7 @@ export default function PoliciesIndexPage() {
               <div className="space-y-2">
                 <p
                   aria-hidden
-                  className="font-mono text-sm font-black tracking-normal text-link"
+                  className="font-mono text-sm font-bold tracking-normal text-link"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </p>

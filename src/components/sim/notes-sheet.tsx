@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
  * bottom sheet (built on MobileBottomSheet). Kept deliberately informal: this
  * is the student's own record, not something the debrief scores.
  */
-export function NotesSheet({
+export const NotesSheet = React.memo(function NotesSheet({
   open,
   onOpenChange,
   mseNotes,
@@ -75,4 +75,4 @@ export function NotesSheet({
       </div>
     </MobileBottomSheet>
   );
-}
+});

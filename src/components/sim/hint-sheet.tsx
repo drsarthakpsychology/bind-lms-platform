@@ -9,7 +9,7 @@ import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
  * MobileBottomSheet). Using the hint is flagged for the debrief — the parent
  * owns that bookkeeping; this surface just presents the hint quietly.
  */
-export function HintSheet({
+export const HintSheet = React.memo(function HintSheet({
   open,
   onOpenChange,
   hint,
@@ -26,4 +26,4 @@ export function HintSheet({
       </div>
     </MobileBottomSheet>
   );
-}
+});

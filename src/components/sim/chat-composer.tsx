@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
  * the header's "more" menu). Sits at the bottom, respects safe-area, expands
  * with the keyboard.
  */
-export function ChatComposer({
+export const ChatComposer = React.memo(function ChatComposer({
   value,
   onChange,
   onSend,
@@ -87,4 +87,4 @@ export function ChatComposer({
       </div>
     </div>
   );
-}
+});

@@ -43,7 +43,7 @@ export default function WaitlistPage() {
           <div className="lg:sticky lg:top-24">
             <Reveal delay={0.06}>
               <p className="text-eyebrow text-muted-foreground">Cohort One · Invite-only</p>
-              <h1 className="mt-3 text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+              <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Join the waitlist
               </h1>
             </Reveal>
@@ -57,7 +57,7 @@ export default function WaitlistPage() {
               <ol className="mt-8 divide-y-2 divide-foreground border-y-2 border-foreground">
                 {STEPS.map((s) => (
                   <li key={s.num} className="flex items-baseline gap-3 py-3">
-                    <span aria-hidden className="font-mono text-sm font-black tracking-normal text-link">
+                    <span aria-hidden className="font-mono text-sm font-bold tracking-normal text-link">
                       {s.num}
                     </span>
                     <span className="font-semibold text-foreground">{s.text}</span>
