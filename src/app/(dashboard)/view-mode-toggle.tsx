@@ -1,7 +1,6 @@
 "use client";
 
 import { useTransition } from "react";
-import { useRouter } from "next/navigation";
 import { GraduationCap, ShieldCheck } from "lucide-react";
 import { setViewMode } from "./view-mode-actions";
 import { Button } from "@/components/ui/button";
@@ -18,13 +17,14 @@ import { Button } from "@/components/ui/button";
  */
 export function ViewModeToggle({ currentMode }: { currentMode: "admin" | "student" }) {
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
 
   function switchTo(mode: "admin" | "student") {
     if (mode === currentMode || isPending) return;
+    // setViewMode is a server action that writes the view-mode cookie and then
+    // redirect()s server-side; the transition handles that redirect, so no
+    // client-side router.refresh() is needed. Firing one immediately after a
+    // redirecting server action is a known navigation/refresh race that loops.
     startTransition(() => setViewMode(mode));
-    // setViewMode redirects server-side; also refresh so client nav stays in sync.
-    router.refresh();
   }
 
   const isAdmin = currentMode === "admin";

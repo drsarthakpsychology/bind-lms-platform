@@ -43,19 +43,26 @@ export default async function DashboardPage() {
     redirect("/admin");
   }
 
+  // The go-live roster is lectures_only. An admin previewing the student side
+  // must see exactly what those students see — the flat published-lecture list,
+  // not the full course grid their own `full` scope would otherwise render.
+  const effectiveScope =
+    profile.role === "admin" && viewingAsStudent ? "lectures_only" : profile.scope;
+
   // Lecture-only roster: the whole dashboard is a flat lecture list — no
   // course grid, no practice, no journal. The route guard in the dashboard
   // layout keeps them off every other surface.
-  if (profile.scope === "lectures_only") {
+  if (effectiveScope === "lectures_only") {
     return <LecturesOnlyView />;
   }
 
   const supabase = await createClient();
 
-  // Truthful student view: when previewing as a student, show only published
-  // courses — the same visibility a real student has. A student additionally
-  // sees only courses they're enrolled in (admins previewing as a student see
-  // every published course; their real surface is /admin).
+  // Truthful student view: a student sees only published courses they're
+  // enrolled in. When an admin previews as a student the same enrollment filter
+  // applies (admins not enrolled see the truthful empty state rather than every
+  // published course). Only a real admin, in admin view, sees every published
+  // course — and that path redirects to /admin before reaching here.
   const [{ data: courses }, { data: enrollments }] = await Promise.all([
     supabase
       .from("courses")
@@ -67,7 +74,7 @@ export default async function DashboardPage() {
 
   const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
   const myCourses =
-    profile.role === "admin"
+    profile.role === "admin" && !viewingAsStudent
       ? (courses ?? [])
       : (courses ?? []).filter((c) => enrolledIds.has(c.id));
 
@@ -184,7 +191,7 @@ export default async function DashboardPage() {
             <Sparkles className="size-4" aria-hidden />
             <AlertTitle>Previewing as a student</AlertTitle>
             <AlertDescription>
-              This is the student experience — only published courses are shown.
+              This is the student experience — only courses you&apos;re enrolled in are shown.
             </AlertDescription>
           </Alert>
         )}

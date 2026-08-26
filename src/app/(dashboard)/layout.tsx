@@ -56,11 +56,17 @@ export default async function DashboardLayout({
   const mode = role === "admin" && !viewingAsStudent ? "admin" : "student";
   const shellRole = role === "alumni" ? "student" : role;
 
+  // The go-live roster is lectures_only, so an admin previewing the student
+  // side gets the same lectures-only nav the roster sees — not the full-student
+  // nav their own `full` scope would otherwise produce.
+  const effectiveScope =
+    role === "admin" && viewingAsStudent ? "lectures_only" : session.profile.scope;
+
   return (
     <AppShell
       role={shellRole}
       mode={mode}
-      scope={session.profile.scope}
+      scope={effectiveScope}
       viewModeSwitch={
         role === "admin" ? (
           <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
