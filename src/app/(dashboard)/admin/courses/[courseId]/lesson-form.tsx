@@ -2,7 +2,6 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { CheckCircle2, ChevronDown, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState, type SignedUploadResult } from "./actions";
 import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
 
@@ -77,16 +76,12 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
     }
 
     try {
-      const supabase = createClient();
-      const { error } = await supabase.storage.from("videos").uploadToSignedUrl(
-        signed.path,
-        signed.token,
-        file,
-      );
-
-      if (error) {
+      // Upload DIRECTLY to the R2 pre-signed PUT URL — no Supabase byte, so the
+      // 50MB Free-plan cap can't block large source videos.
+      const res = await fetch(signed.url, { method: "PUT", body: file });
+      if (!res.ok) {
         setUploadStatus("error");
-        setUploadError(error.message);
+        setUploadError(`Upload failed (${res.status}).`);
         return;
       }
     } catch {
@@ -95,7 +90,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
       return;
     }
 
-    setVideoPath(signed.path);
+    setVideoPath(signed.key);
     setUploadStatus("done");
   }
 

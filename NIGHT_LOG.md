@@ -1,3 +1,48 @@
+## 2026-08-27 — VIDEO UPLOAD CAP — root cause: Supabase Free-plan 50MB global limit
+
+Kavya hit "The object exceeded the maximum allowed size" uploading videos even
+after I removed the `videos` bucket's file_size_limit. Root cause: the org is
+on the **Supabase Free plan**, whose Storage **GLOBAL file-size limit is
+hard-capped at 50MB** and cannot be raised via SQL/dashboard on Free. It
+overrides any per-bucket limit. Verified: org plan = free; docs confirm
+Free=50MB, Pro=up to 500GB.
+
+Fix direction (Kavya confirmed "we are USING R2 for Upload and Play"): route the
+admin builder's source-video upload DIRECTLY to Cloudflare R2 via an S3
+pre-signed PUT URL, so no byte touches Supabase Storage. R2 has no 50MB cap.
+Subagents mapping the pipeline + designing the change set are in flight; then
+implement → deploy → verify a large upload.
+
+---
+
+## 2026-08-27 — ROSTER IMPORTED (64 students) + passwords visible + send UI
+
+Kavya asked whether the roster had been imported. It had NOT — only 6 test
+accounts + calibration existed; `credential_invites` was empty, so no passwords
+were ever generated (that's why the roster screen was empty). Fixed:
+
+1. **Imported the real roster** (`/Users/kavyabothra/Downloads/roster.csv`, 64
+   rows, all valid) via `roster:import` CLI → 64 auth accounts created,
+   scope=lectures_only, 8-char passwords generated + stored on
+   `credential_invites` (pending). Verified in DB: 71 students, 64 invites,
+   64 with passwords.
+2. **/admin/roster now shows all 64** with masked passwords (reveal/copy/reset
+   per row) + CSV download. Select / Send all pending / Send selected / Retry
+   failed / per-row Email already existed; added the missing **"Select all"
+   master checkbox** (PR #24).
+3. **Fixed a roster hydration error** (#418): `fmtDate` used the default
+   locale/timezone (server=UTC vs browser=IST) → now en-IN / Asia/Kolkata so
+   server+client agree (PR #25).
+4. **Unlimited admin video uploads** (Kavya's ask): `videos` Storage bucket
+   `file_size_limit` 500MB → NULL (unlimited) via
+   `videos_unlimited_size.sql` (PR #25).
+
+Verified live as a throwaway test admin (deleted after): 64 passwords render,
+Select all present, 0 console/hydration errors. Kavya can now send each
+password manually (bulk or per-row) from /admin/roster.
+
+---
+
 ## 2026-08-27 — PERFORMANCE PASS — all 16 parts shipped (PR #23)
 
 All 16 parts implemented + committed on worktree branch; see

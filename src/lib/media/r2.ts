@@ -1,6 +1,6 @@
 import "server-only";
 
-import { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import type { MediaProvider, SignedPlaybackResult, UploadResult } from "./provider";
 
@@ -115,4 +115,29 @@ function makeR2Client(): S3Client {
 }
 
 // Re-exported for the publish/upload scripts.
-export { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand };
+export { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand };
+
+/**
+ * Pre-signed PUT URL so the browser can upload a file DIRECTLY to R2 — this is
+ * how the admin builder uploads source videos without any byte touching Supabase
+ * Storage (whose Free-plan global file-size cap is 50MB and unraiseable).
+ * ContentType is deliberately NOT signed so the browser's File type rides along
+ * as an unsigned header.
+ */
+export async function signR2UploadUrl(bucket: string, key: string, expiresIn = 900): Promise<string> {
+  return getSignedUrl(
+    makeR2Client(),
+    new PutObjectCommand({ Bucket: bucket, Key: key }),
+    { expiresIn },
+  );
+}
+
+/** HEAD an R2 object; returns its ContentLength in bytes, or null if missing. */
+export async function headR2Object(bucket: string, key: string): Promise<number | null> {
+  try {
+    const head = await makeR2Client().send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
+    return typeof head.ContentLength === "number" ? head.ContentLength : null;
+  } catch {
+    return null;
+  }
+}

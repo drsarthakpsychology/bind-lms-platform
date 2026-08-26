@@ -3,11 +3,11 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { verifyObjectExists } from "@/lib/storage-verify";
+import { signR2UploadUrl, headR2Object } from "@/lib/media/r2";
 import { policyVersion } from "@/lib/legal-constants";
 
 export type SignedUploadResult =
-  | { ok: true; path: string; token: string }
+  | { ok: true; url: string; key: string }
   | { ok: false; error: string };
 
 /** Enroll one student (by user id) in a course. Idempotent. */
@@ -88,16 +88,21 @@ export async function prepareVideoUpload(
 ): Promise<SignedUploadResult> {
   if (!(await requireAdmin())) return { ok: false, error: "Not authorized." };
 
-  const supabase = await createClient();
+  // Upload target is Cloudflare R2 (a pre-signed PUT), NOT Supabase Storage —
+  // the Supabase Free-plan global 50MB file cap made large source uploads fail.
+  // R2 has no such per-file cap, and R2 is the canonical video store anyway.
+  const bucket = process.env.R2_BUCKET_NAME;
+  if (!bucket) return { ok: false, error: "R2 bucket isn't configured on this deployment." };
+
   const safeName = fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
-  const path = `${courseId}/${crypto.randomUUID()}-${safeName}`;
+  const key = `lessons/${courseId}/source/${crypto.randomUUID()}-${safeName}`;
 
-  const { data, error } = await supabase.storage.from("videos").createSignedUploadUrl(path);
-  if (error || !data) {
-    return { ok: false, error: error?.message ?? "Could not prepare the upload." };
+  try {
+    const url = await signR2UploadUrl(bucket, key);
+    return { ok: true, url, key };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Could not prepare the upload." };
   }
-
-  return { ok: true, path: data.path, token: data.token };
 }
 
 export type CreateLessonState = { error: string | null };
@@ -132,10 +137,12 @@ export async function createLessonWithVideo(
   // them. The client's upload success callback is never trusted — a dropped or
   // network-failed upload leaves a path with no object, and a lesson pointing
   // at it can never play. Mirrors attachVideoToLesson: only write a playable
-  // path, and never create a row that points at nothing.
-  const size = await verifyObjectExists("videos", videoPath);
+  // path, and never create a row that points at nothing. The source now lives
+  // in R2 (pre-signed PUT), so we HEAD the R2 object.
+  const bucket = process.env.R2_BUCKET_NAME ?? "";
+  const size = await headR2Object(bucket, videoPath);
   if (size === null) {
-    return { error: "Upload didn't reach storage. Re-upload the video." };
+    return { error: "Upload didn't reach R2. Re-upload the video." };
   }
 
   const supabase = await createClient();
@@ -149,14 +156,25 @@ export async function createLessonWithVideo(
       order_index: Number.isFinite(orderIndexRaw) ? orderIndexRaw : 0,
       requires_assignment: requiresAssignment,
       video_storage_path: videoPath,
-      video_provider: "supabase",
-      video_bucket: "videos",
+      video_provider: "r2",
+      video_bucket: bucket,
       video_status: "ready", // object verified above
     })
     .select("id")
     .single();
 
   if (lessonError || !lesson) return { error: "Could not create the lesson." };
+
+  // Record the source object on media_assets so the stream proxy resolves it
+  // as an R2 legacy single-file (provider=r2, master_playlist=null). publish-lecture
+  // later upserts over this same row to promote it to HLS.
+  const admin = createAdminClient();
+  await admin
+    .from("media_assets")
+    .upsert(
+      { lesson_id: lesson.id, provider: "r2", bucket, key_prefix: videoPath, master_playlist: null },
+      { onConflict: "lesson_id" },
+    );
 
   if (requiresAssignment) {
     const { error: assignmentError } = await supabase.from("assignments").insert({
@@ -184,8 +202,10 @@ export async function attachVideoToLesson(
 ): Promise<{ error: string | null }> {
   if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  // Verify the bytes actually landed before marking the lesson playable.
-  const size = await verifyObjectExists("videos", path);
+  // Verify the bytes actually landed (the source now lives in R2) before
+  // marking the lesson playable.
+  const bucket = process.env.R2_BUCKET_NAME ?? "";
+  const size = await headR2Object(bucket, path);
   const supabase = await createClient();
   if (size === null) {
     await supabase
@@ -193,15 +213,30 @@ export async function attachVideoToLesson(
       .update({ video_status: "failed" })
       .eq("id", lessonId);
     revalidatePath(`/admin/courses/${courseId}`);
-    return { error: "Upload didn't reach storage. Re-upload the video." };
+    return { error: "Upload didn't reach R2. Re-upload the video." };
   }
 
   const { error } = await supabase
     .from("lessons")
-    .update({ video_storage_path: path, video_status: "ready" })
+    .update({
+      video_storage_path: path,
+      video_provider: "r2",
+      video_bucket: bucket,
+      video_status: "ready",
+    })
     .eq("id", lessonId);
 
   if (error) return { error: "Upload succeeded, but saving the video path failed." };
+
+  // Record the source object on media_assets (R2 legacy single-file) so the
+  // stream proxy resolves it correctly; publish-lecture promotes it to HLS.
+  const admin = createAdminClient();
+  await admin
+    .from("media_assets")
+    .upsert(
+      { lesson_id: lessonId, provider: "r2", bucket, key_prefix: path, master_playlist: null },
+      { onConflict: "lesson_id" },
+    );
 
   revalidatePath(`/admin/courses/${courseId}`);
   return { error: null };

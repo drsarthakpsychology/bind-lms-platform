@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, attachVideoToLesson, type SignedUploadResult } from "./actions";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -46,18 +45,14 @@ export function VideoUpload({
       return;
     }
 
-    // 2. Upload directly from the browser to Supabase Storage.
+    // 2. Upload the bytes DIRECTLY to the R2 pre-signed URL (PUT). No byte
+    //    touches Supabase Storage, so the 50MB Free-plan cap can't block it.
     let uploadErrorMessage: string | null = null;
     try {
-      const supabase = createClient();
-      const { error: uploadError } = await supabase.storage
-        .from("videos")
-        .uploadToSignedUrl(signed.path, signed.token, file);
-      uploadErrorMessage = uploadError?.message ?? null;
+      const res = await fetch(signed.url, { method: "PUT", body: file });
+      if (!res.ok) uploadErrorMessage = `Upload failed (${res.status}).`;
     } catch {
-      setStatus("idle");
-      setErrorMsg("The upload failed. Check your connection and try again.");
-      return;
+      uploadErrorMessage = "The upload failed. Check your connection and try again.";
     }
 
     if (uploadErrorMessage) {
@@ -66,10 +61,10 @@ export function VideoUpload({
       return;
     }
 
-    // 3. Tell the server the upload finished, so it can record the path.
+    // 3. Tell the server the upload finished, so it can record the R2 key.
     let attachResult: { error: string | null };
     try {
-      attachResult = await attachVideoToLesson(lessonId, courseId, signed.path);
+      attachResult = await attachVideoToLesson(lessonId, courseId, signed.key);
     } catch {
       setStatus("idle");
       setErrorMsg("The video was uploaded, but saving it failed. Try again.");
