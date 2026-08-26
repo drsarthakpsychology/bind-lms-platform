@@ -8,20 +8,14 @@
  * Rules checked:
  *   1. style_patterns rows are dialogue texture only — none may contain
  *      clinical diagnostic markers.
- *   2. Every corpus row's rights_status is ingestible (public_domain |
- *      open_access | licensed).
- *   3. The pure functions in src/lib/corpus/layers.ts enforce both
+ *   2. The pure functions in src/lib/corpus/layers.ts enforce both
  *      directions (style→clinical BLOCKED, clinical→patient-voice BLOCKED).
  *
  * Prints PASS/FAIL per rule; exit 1 on any failure.
  */
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import {
-  canServeLayerForQuery,
-  assertLayerAllowsSource,
-  isIngestibleRights,
-} from "../../src/lib/corpus/layers";
+import { canServeLayerForQuery, assertLayerAllowsSource } from "../../src/lib/corpus/layers";
 
 // Clinical markers that must NEVER appear in a style-pattern row (content-
 // stripped dialogue texture uses none of these).
@@ -68,17 +62,11 @@ function main() {
   }
   check("clinical → patient voice BLOCKED", clinicalVoiceBlocked);
 
-  // 3) the licence gate.
-  check(
-    "unlicensed content is not ingestible",
-    !isIngestibleRights("unlicensed") && !isIngestibleRights("pending_licence"),
-  );
-
   if (failed > 0) {
     console.error(`\n${failed} firewall check(s) FAILED`);
     process.exit(1);
   }
-  console.log("\nAll firewall checks passed — the layers are separated, the gate holds.");
+  console.log("\nAll firewall checks passed — the layers are separated.");
 }
 
 main();

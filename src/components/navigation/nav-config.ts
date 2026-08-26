@@ -47,7 +47,6 @@ export const ADMIN_ITEMS: NavItem[] = [
 
   // System — people, access, and platform.
   { href: "/admin/students", label: "Students", icon: "users", section: "System" },
-  { href: "/admin/rights", label: "Book licences", icon: "copyright", section: "System" },
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "System" },
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },

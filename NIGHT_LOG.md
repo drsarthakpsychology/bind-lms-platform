@@ -4453,3 +4453,41 @@ region or Modal/RunPod.
 2026-08-17T01:23:24 STOP_CLAUDE present — allowing stop.
 2026-08-17T01:23:37 STOP_CLAUDE present — allowing stop.
 2026-08-17T01:24:40 STOP_CLAUDE present — allowing stop.
+
+## 2026-08-26 — Part 0 verify + Part 1 rights removal
+
+**PART 0 — verified against source AND live app, not QUEUE.md checkmarks.**
+
+- QUEUE.md T98 claims "Remove unnecessary Rights UI" done; T111–T114 claim
+  calibration automation done. Both are FALSE on the live site.
+- `/admin/rights` was fully present in source: `(dashboard)/admin/rights/{page,rights-list}.tsx`
+  + `api/admin/rights/route.ts` + nav entry (`nav-config.ts` "Book licences").
+  Live `https://vibhapsychology.com/admin/rights` redirects to /login (route
+  exists — not a 404). Kavya's report is correct.
+- `/admin/calibration` was a MANUAL blind-scoring flow (CalibrationList +
+  AgreementDashboard, kappa between AI + Dr. Sarthak's hand scores). No
+  multi-model consensus, no self-consistency variance, no passive capture.
+  The three "automatic" signals are NOT built. T111–T114 checkmarks are wrong.
+- Root cause of the gap: the QUEUE items were marked [x] when the *UI shell*
+  shipped (a scoring screen + an agreement dashboard), but that is still a
+  manual scoring screen — it never automated anything. The checkbox described
+  intent, not shipped behaviour.
+
+**PART 1 — /admin/rights removed for real.**
+
+- Deleted `(dashboard)/admin/rights/` (page + rights-list) and
+  `api/admin/rights/route.ts`. Nav entry removed from `nav-config.ts`.
+- Removed the rights gate from `src/lib/corpus/layers.ts` (INGESTIBLE_RIGHTS /
+  isIngestibleRights / assertIngestible) — the layer/use firewall (clinical
+  vs style) is untouched; only the licence gate came out.
+- Removed the gate from the two ingestion CLIs (`scripts/corpus/acquire.ts`,
+  `scripts/corpus/fetch-licensed.ts`) — they now scan ALL rights_registry rows
+  (Kavya holds rights to every book; nothing is excluded on rights_status).
+- `firewall-check.ts` dropped its licence-gate rule; `layers.test.ts` dropped
+  the licence-gate describe block. `rights_registry` table + seeder + RLS
+  migrations KEPT (harmless acquisition-tracking data; the ingest scripts still
+  write acquired_file/sha256 to it).
+- Grep confirms zero remaining refs to `admin/rights`, `isIngestibleRights`,
+  `assertIngestible`, `INGESTIBLE_RIGHTS` in src/scripts.
+- Gate green: lint 0, tsc clean, 516 tests, build exit 0. `/admin/rights`
+  absent from the build route list.

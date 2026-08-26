@@ -9,11 +9,6 @@
  *   - PHENOMENOLOGICAL feeds how symptoms are experienced and described.
  *   - CULTURAL feeds opening lines, attributions, family dynamics — never
  *     overrides clinical truth.
- *
- * The rights gate: only rows marked public_domain | open_access | licensed are
- * ingestible. Anything pending_licence / not_started / unlicensed /
- * acquisition_failed is invisible to the ingester and can never reach a
- * student surface. Both directions are unit-tested.
  */
 
 export type CorpusLayer = "clinical" | "phenomenological" | "style" | "cultural";
@@ -35,23 +30,6 @@ export function canServeLayerForQuery(layer: CorpusLayer, queryKind: QueryKind):
   if (queryKind === "dialogue_craft") return layer === "style" || layer === "phenomenological" || layer === "cultural";
   // phenomenological / cultural queries: any layer except style-as-authority.
   return layer !== "style";
-}
-
-/** Rights statuses the ingester may touch. Everything else is invisible. */
-export const INGESTIBLE_RIGHTS = new Set(["public_domain", "open_access", "licensed"]);
-
-export function isIngestibleRights(status: string): boolean {
-  return INGESTIBLE_RIGHTS.has(status);
-}
-
-/** Throws when a row's rights status is not ingestible. */
-export function assertIngestible(status: string): void {
-  if (!isIngestibleRights(status)) {
-    throw new Error(
-      `rights gate: status "${status}" is not ingestible (only public_domain | open_access | licensed)` +
-        ` — nothing unlicensed may ever reach a student surface`,
-    );
-  }
 }
 
 /**
