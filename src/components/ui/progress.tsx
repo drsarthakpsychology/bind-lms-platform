@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Progress as ProgressPrimitive } from "radix-ui"
-import { motion, useReducedMotion } from "@/lib/motion"
+import { motion } from "@/lib/motion"
 
 import { cn } from "@/lib/utils"
 
@@ -11,8 +11,6 @@ function Progress({
   value,
   ...props
 }: React.ComponentProps<typeof ProgressPrimitive.Root>) {
-  const reduce = useReducedMotion();
-
   return (
     <ProgressPrimitive.Root
       data-slot="progress"
@@ -25,10 +23,13 @@ function Progress({
       <motion.div
         data-slot="progress-indicator"
         className="h-full w-full flex-1 bg-primary"
-        // Fill from 0 to the value on mount. Reduced-motion renders at full.
-        initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+        // Render AT the target value (`initial={false}`) on server + first
+        // client render — previously `initial` branched on useReducedMotion()
+        // (null on the server), shipping `scaleX:0` in SSR and a hydration
+        // mismatch. Visible immediately, no fill-from-zero flash.
+        initial={false}
         animate={{ scaleX: (value || 0) / 100 }}
-        transition={reduce ? { duration: 0 } : { duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         style={{ transformOrigin: "left" }}
       />
     </ProgressPrimitive.Root>

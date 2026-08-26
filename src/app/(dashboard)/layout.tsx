@@ -39,7 +39,18 @@ export default async function DashboardLayout({
   // Enforced here, server-side, for every route under (dashboard) — a direct
   // URL hit to /practice, /reflect, /wall, /tools, etc. redirects to the
   // lecture list rather than rendering (or merely hiding a nav link).
-  if (session.status === "ok" && session.profile.scope === "lectures_only") {
+  //
+  // ADMINS BYPASS THIS ENTIRELY. `scope` is a STUDENT access axis; an admin
+  // whose profile accidentally carries scope=lectures_only (e.g. a test-email
+  // account) must still reach /admin. Without this carve-out such an account
+  // hits an infinite redirect loop: /dashboard bounces admins → /admin, and
+  // this guard bounces /admin → /dashboard — the "continuously refreshing
+  // dashboard" bug.
+  if (
+    session.status === "ok" &&
+    session.profile.role !== "admin" &&
+    session.profile.scope === "lectures_only"
+  ) {
     const pathname = (await headers()).get("x-pathname") ?? "";
     if (!lectureOnlyAllowed(pathname)) {
       redirect("/dashboard");
