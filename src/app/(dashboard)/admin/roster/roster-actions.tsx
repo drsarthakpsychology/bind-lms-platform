@@ -56,12 +56,24 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
 
   const pending = localRows.filter((r) => r.status === "pending");
   const failed = localRows.filter((r) => r.status === "failed");
+  // Everything not yet sent can be batch-selected ("Select all").
+  const selectableRows = localRows.filter((r) => r.status !== "sent");
+  const allSelected = selectableRows.length > 0 && selectableRows.every((r) => selected.has(r.email));
 
   function toggle(email: string) {
     setSelected((prev) => {
       const next = new Set(prev);
       if (next.has(email)) next.delete(email);
       else next.add(email);
+      return next;
+    });
+  }
+
+  function toggleAll() {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (allSelected) selectableRows.forEach((r) => next.delete(r.email));
+      else selectableRows.forEach((r) => next.add(r.email));
       return next;
     });
   }
@@ -165,6 +177,17 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
 
       {/* Send + download controls */}
       <div className="flex flex-wrap items-center gap-2">
+        <label className="flex items-center gap-1.5 rounded-md border border-border bg-muted/40 px-2 py-1.5 text-small text-foreground">
+          <input
+            type="checkbox"
+            checked={allSelected}
+            onChange={toggleAll}
+            disabled={selectableRows.length === 0}
+            aria-label="Select all pending"
+            className="size-4 accent-primary"
+          />
+          Select all
+        </label>
         <Button type="button" variant="secondary" onClick={() => runSend(pending.map((r) => r.email), "Send all pending")} disabled={busy || pending.length === 0}>
           <Send className="size-4" aria-hidden /> Send all pending ({pending.length})
         </Button>
