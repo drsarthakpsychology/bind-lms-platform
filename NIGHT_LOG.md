@@ -4721,3 +4721,27 @@ Verified against the REAL database (Supabase MCP), not file timestamps:
   await client.query(...)` — node-postgres returns `{ rows }`, not `{ data }`,
   so `already` is `undefined` and `already.length` throws. The crash is on the
   FIRST file's existence check, before any SQL runs.
+
+## 2026-08-26 — merge + deploy to production
+
+- Part 0 verified against the REAL DB: `_migrations_applied` had 7 entries (no
+  wrong migrations recorded); the 5 wrong migrations' tables already existed
+  (harmless, left); the 4 real migrations were NOT applied. Fixed
+  apply-migrations.ts (`{ data }`→`{ rows }`, named-migration guard, APPROVED
+  list → the 4 real migrations) and applied them; verified columns in schema
+  (profiles.scope/status/block_reason, credential_invites, rubric_dimensions
+  calibration columns; ledger 11).
+- Gate green: lint 0, tsc clean, 530 tests, build exit 0. Local boot smoke:
+  homepage/login/paused 200, admin routes 307-redirect. No hardcoded secrets.
+- Merged to main via PR #2 (merge commit 97dfdd9). Vercel auto-deployed on the
+  main push; production deployment Ready.
+- Production smoke test against vibhapsychology.com: homepage 200, login 200,
+  paused 200 — the new code (incl. /paused) is live.
+
+Blockers that genuinely need Kavya (not code):
+- RESEND_API_KEY is absent everywhere (.env.local, Vercel, disk) — the email
+  SEND feature cannot run until it's set. Import/review work; send is blocked.
+- Browser E2E (blocked-status live-session rejection, lecture-only direct-URL
+  rejection, video network-tab bitrate switch) needs a real browser + session;
+  the code paths + unit tests are green, the live click-through is the human
+  step.

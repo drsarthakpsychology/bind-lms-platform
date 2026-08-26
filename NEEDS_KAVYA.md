@@ -1,31 +1,27 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 ROSTER — 2026-08-26 (one key, then import → review → send)
+## 🚨 ROSTER — 2026-08-26 (ONE action left: set RESEND_API_KEY)
 
-The roster is `scripts/roster/roster.csv` (64 rows, name+email, clean — the
-earlier "50 empty names" bug is fixed: the source sheet had names in a shifted
-column for part of the rows). The flow is now three separate steps:
+Deployed + live on vibhapsychology.com (merged to main, production Ready,
+smoke-tested: homepage/login/paused all 200). The 4 migrations were applied
+and verified in the production schema. The flow is import → review → send
+(`/admin/tools` import, `/admin/roster` review + send + test email).
 
-1. **Import** (`/admin/tools` → "Import students", or
-   `npm run roster:import -- scripts/roster/roster.csv`): creates the accounts
-   (scope=lectures_only, role student) and records them as **Pending**. No email.
-2. **Review** (`/admin/roster`): see the full batch — name, email, status,
-   date — before anything goes out.
-3. **Send** (`/admin/roster` → "Send all pending" / select rows / retry): each
-   row flips to Sent/Failed with the reason. There's also a **Send test email**
-   button (real template, `[TEST]` marked) to verify the key first.
+The ONLY hard blocker left is:
 
-To actually email, the ONLY hard blocker is:
+1. **Set `RESEND_API_KEY` in Vercel** (Production → Environment Variables) —
+   and in `.env.local` for local runs. The key value was never in the
+   environment, so the email SEND step cannot run until it's added. Everything
+   else (import, review, the `[TEST]` test-email control, blocked status,
+   lecture-only access) is live and waiting on this one value.
 
-1. **Set `RESEND_API_KEY`** (the key you've decided to use) in `.env.local`
-   (and Vercel for production). `RESEND_FROM_EMAIL` defaults to
-   `VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>`.
-
-Apply the pending migrations (all additive) via `npm run apply-migrations`:
-- `profiles_access_scope.sql` (lecture-only scope)
-- `credential_invites.sql` (the send queue)
-- `profiles_status_blocked.sql` (blocked override)
-- `calibration_auto_signals.sql` (automatic calibration columns)
+Then the human E2E pass (needs a browser + real session — can't be done
+headless):
+- Send the test email, import the roster, log in as one account and confirm
+  only the lecture list is reachable by direct URL.
+- Block that account mid-session and confirm the SAME session is rejected on
+  its very next request (redirected to /paused), then unblock and confirm it
+  works again with no re-login.
 
 Every item: paste → something switches on → verify with one command. Free first.
 

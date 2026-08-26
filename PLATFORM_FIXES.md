@@ -104,3 +104,30 @@ in `.env.local` / Vercel — see NEEDS_KAVYA.
   `credential_invites`, `profiles_status_blocked`, `calibration_auto_signals`).
 - **Human E2E**: send a test email, import the roster, log in as a real
   account, block it mid-session and confirm the very-next-request rejection.
+
+---
+
+## Merge & deploy (this session)
+
+- **Migration mess resolved.** The real `_migrations_applied` ledger had 7
+  entries (none of the 5 "wrong" migrations). The 5 wrong migrations' tables
+  already existed in production (media_assets, certificates, materials,
+  submission_files, psych_* with data) — they were applied earlier and are
+  harmless/idempotent, so they were left untouched. The crash was in
+  `apply-migrations.ts`: `const { data: already } = await client.query(...)`
+  — node-postgres returns `rows`, not `data`, so `already` was `undefined` and
+  `already.length` threw with no context. Fixed to `rows` + a guard that names
+  the failing migration. Then applied + **verified in the production schema**:
+  `profiles.scope/status/block_reason`, `credential_invites`, and
+  `rubric_dimensions.inter_model_agreement/variance/last_auto_at` (ledger now 11).
+- **Merge.** Fast-forwarded into `main` via PR #2 (merge commit `97dfdd9`).
+- **Deploy.** Vercel auto-deployed on the main push; production deployment
+  `bind-lms-platform-9jva1ctim…` is `Ready`.
+- **Production smoke test** (against `https://vibhapsychology.com`, not
+  localhost): `/` 200, `/login` 200, `/paused` 200 — the new code, including
+  the blocked-status `/paused` screen, is live.
+
+Not verified live (needs a real browser + a real session, and/or the Resend
+key — see NEEDS_KAVYA): the blocked-status live-session rejection E2E, the
+lecture-only direct-URL rejection E2E, and the email send (RESEND_API_KEY was
+never present in the environment).
