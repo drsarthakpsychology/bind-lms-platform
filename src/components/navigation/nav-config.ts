@@ -60,8 +60,10 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/enquiries", label: "Enquiries", icon: "inbox", section: "Review" },
   { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse", section: "Review" },
 
-  // Content — the rest of the knowledge base and authoring.
-  { href: "/admin/modules", label: "Modules", icon: "layers", section: "Content" },
+  // Content — the rest of the knowledge base and authoring. "Modules" is
+  // intentionally absent: it's an unimplemented access/scheduling skeleton
+  // (no content editor, no rows) that confused admins with Courses. The route
+  // still exists but isn't surfaced; Courses + lessons are the real content.
   { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
   { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
