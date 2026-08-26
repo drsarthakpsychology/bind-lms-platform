@@ -4807,3 +4807,25 @@ Traced the REAL invite path (not the test path). Findings:
   browser) is the human E2E step.
 
 Gate: lint 0, tsc clean, 534 tests, build exit 0.
+
+## 2026-08-26 — real invite click-through + sender domain
+
+- Sender domain: RESEND_FROM_EMAIL is `VIBHA School of Psychology <noreply@bindcat.com>`
+  (the only verified Resend domain). Kavya confirmed bindcat.com is acceptable —
+  removed the vibhaschoolofpsychology.in blocker from NEEDS_KAVYA.
+- Traced the full invite flow at the API level (real token, real account
+  invite-e2e-test@bindcat.com):
+  - re-issue invalidates: stale link click → 303 `error_code=otp_exp` ✓
+  - fresh link click → 303 with session tokens ✓
+  - setSession + updateUser(password) ✓
+  - signInWithPassword → session established ✓
+  - profile scope=lectures_only, is_test=true ✓
+- FOUND A REAL PRODUCTION BLOCKER: the recovery link's `redirect_to` is
+  `http://localhost:3000`, NOT `https://vibhapsychology.com/set-password`.
+  `generateLink` passes redirectTo correctly, but Supabase Auth's Site URL /
+  Redirect URLs are still the localhost defaults, so it falls back. A real
+  student's link would land on their own machine. Fix = Supabase Dashboard →
+  Authentication → URL Configuration (Site URL + Redirect URLs → vibhapsychology.com).
+  Logged in NEEDS_KAVYA. This blocks a real roster send.
+- Decision: do NOT import/send the roster until the redirect URL is fixed —
+  otherwise the invite link would redirect to localhost and fail.

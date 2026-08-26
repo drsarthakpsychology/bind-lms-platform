@@ -53,10 +53,6 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     }
   }, [idx, items.length, answered]);
 
-  const item = items[idx];
-  const panel = simulatedPanel(item.id);
-  const dist = panelDistribution(panel);
-
   function answer(r: SctResponse) {
     if (showPanel) return;
     haptic("tap");
@@ -112,6 +108,10 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
       />
     );
   }
+
+  const item = items[idx];
+  const panel = simulatedPanel(item.id);
+  const dist = panelDistribution(panel);
 
   return (
     <div className="space-y-4">

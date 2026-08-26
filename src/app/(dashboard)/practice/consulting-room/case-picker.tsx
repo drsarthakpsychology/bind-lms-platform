@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Eye, Info, Lock } from "lucide-react";
+import { Info, Lock } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -52,10 +51,9 @@ const STATE_TONE: Record<NonNullable<CaseCard["state"]>, "neutral" | "ai"> = {
 /**
  * Case picker — grouped by difficulty, each card led by the patient's OWN words
  * (the hook) with the clinical line secondary. The diagnosis never appears on
- * the card; it lives behind Preview (faculty review). One dominant tap target
- * per card: the whole card starts/resumes the session; Preview is demoted to a
- * quiet footer link. "In progress" cases are surfaced first so the Resume task
- * is immediate (T33).
+ * the card; it stays with the faculty debrief. One dominant tap target per
+ * card: the whole card starts/resumes the session. "In progress" cases are
+ * surfaced first so the Resume task is immediate (T33).
  */
 export function CasePicker({ cases }: { cases: CaseCard[] }) {
   const router = useRouter();
@@ -154,9 +152,9 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
 }
 
 /**
- * A single case card: one dominant Start/Resume tap target (the whole card),
- * a trailing StatusPill for state, and Preview demoted to a quiet footer link.
- * Locked cases keep a single top banner instead of a competing chip row.
+ * A single case card: one dominant Start/Resume tap target (the whole card)
+ * and a trailing StatusPill for state. Locked cases keep a single top banner
+ * instead of a competing chip row.
  */
 function CaseCardItem({
   c,
@@ -231,16 +229,6 @@ function CaseCardItem({
             {c.source !== "hand_built" ? "Awaiting faculty review" : "Faculty-reviewed case"}
           </span>
         </span>
-        {c.id ? (
-          <Link
-            href={`/practice/consulting-room/session/${c.id}`}
-            aria-label={`Preview ${c.title} (faculty review)`}
-            className="inline-flex shrink-0 items-center gap-1 text-caption font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Eye className="size-3.5" aria-hidden />
-            Preview
-          </Link>
-        ) : null}
       </div>
     </li>
   );

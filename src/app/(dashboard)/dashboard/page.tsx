@@ -10,7 +10,7 @@ import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
-import { DashboardPracticeSection } from "@/components/practice/dashboard-practice-section";
+import CourseOverview from "@/components/course/course-overview";
 import LecturesOnlyView from "./lectures-only-view";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -53,16 +53,32 @@ export default async function DashboardPage() {
   const supabase = await createClient();
 
   // Truthful student view: when previewing as a student, show only published
-  // courses — the same visibility a real student has. Drafts stay visible in
-  // the admin area (course page lets you watch draft videos).
-  let coursesQuery = supabase
-    .from("courses")
-    .select("id, title, is_published")
-    .order("title", { ascending: true });
-  coursesQuery = coursesQuery.eq("is_published", true);
+  // courses — the same visibility a real student has. A student additionally
+  // sees only courses they're enrolled in (admins previewing as a student see
+  // every published course; their real surface is /admin).
+  const [{ data: courses }, { data: enrollments }] = await Promise.all([
+    supabase
+      .from("courses")
+      .select("id, title, is_published")
+      .eq("is_published", true)
+      .order("title", { ascending: true }),
+    supabase.from("course_enrollments").select("course_id").eq("user_id", profile.id),
+  ]);
 
-  const [{ data: courses }, { data: lessons }, { data: progress }] = await Promise.all([
-    coursesQuery,
+  const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
+  const myCourses =
+    profile.role === "admin"
+      ? (courses ?? [])
+      : (courses ?? []).filter((c) => enrolledIds.has(c.id));
+
+  // Exactly one course: the dashboard IS that course's week/lesson list — the
+  // same header, "0 of N lessons complete" line and highlighted Continue row as
+  // /courses/[courseId], with no "Your courses" card to click through.
+  if (myCourses.length === 1) {
+    return <CourseOverview courseId={myCourses[0].id} profile={profile} />;
+  }
+
+  const [{ data: lessons }, { data: progress }] = await Promise.all([
     supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description, title"),
     supabase.from("progress").select("lesson_id, is_completed, watched_seconds").eq("user_id", profile.id),
   ]);
@@ -76,7 +92,7 @@ export default async function DashboardPage() {
     lessonsByCourse.set(lesson.course_id, list);
   }
 
-  const courseSummaries = (courses ?? []).map((course) => {
+  const courseSummaries = myCourses.map((course) => {
     const courseLessons = (lessonsByCourse.get(course.id) ?? [])
       .slice()
       .sort((a, b) => a.order_index - b.order_index);
@@ -105,7 +121,6 @@ export default async function DashboardPage() {
     };
   });
 
-  // Order of operations for the page: (1) next step, (2) practice, (3) courses.
   // Sort the full list top-to-bottom: in-progress first, then not-started, then
   // completed — never a flat, unscannable grid.
   const statusRank = { "in-progress": 0, "not-started": 1, "completed": 2 } as const;
@@ -152,7 +167,7 @@ export default async function DashboardPage() {
     <div className="space-y-8">
       <PageHeader
         title="My Courses"
-        description="A clear path: resume where you left off, practise daily, then browse your courses."
+        description="A clear path: resume where you left off, then browse your courses."
         badge={
           completedCourses.length > 0 ? (
             <Badge variant="graded">
@@ -175,7 +190,7 @@ export default async function DashboardPage() {
         )}
       </Reveal>
 
-      {/* Step 1 — the single next step: resume, or start for the first time. */}
+      {/* The single next step: resume, or start for the first time. */}
       <Reveal delay={0.1}>
         {continueCourse ? (
           <Link
@@ -259,14 +274,6 @@ export default async function DashboardPage() {
             </div>
           </Link>
         ) : null}
-      </Reveal>
-
-      {/* The daily practice block. */}
-      <Reveal delay={0.15}>
-        <div className="space-y-3">
-          <p className="text-eyebrow text-muted-foreground">Daily practice</p>
-          <DashboardPracticeSection />
-        </div>
       </Reveal>
 
       {/* The full course list, in-progress first, completed last. */}

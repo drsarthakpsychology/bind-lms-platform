@@ -167,3 +167,31 @@ practice". The "Previewing as a student" banner is gated to `role === "admin"`.
 flag off / not released); routes untouched, admin nav untouched.
 
 Gate: lint 0, tsc clean, 534 tests, build exit 0.
+
+---
+
+## Roster invite — redirect URL verification (2026-08-26)
+
+Kavya reported updating Supabase Auth's Site URL to `https://vibhapsychology.com`
+and adding `https://vibhapsychology.com/**` to the Redirect URLs allowlist. I
+removed the redirect blocker from NEEDS_KAVYA.md, then verified for real
+(instead of trusting the dashboard claim):
+
+- **`redirect_to` BEFORE:** `http://localhost:3000`
+- **`redirect_to` AFTER (fresh link, ~8 min post-change):** `http://localhost:3000`
+  — **unchanged.** The change did NOT take effect (or landed on the wrong
+  project). Project is `plms` (ref `hojhzwvuccojqkvkkslw`, ap-south-1); a second
+  project `psych-outreach` is INACTIVE.
+
+The rest of the invite flow is verified working end-to-end at the API level:
+fresh `generateLink` → click (303 + session tokens) → `setSession` →
+`updateUser(password)` → `signInWithPassword` (session established), with the
+test account landing at `scope=lectures_only` + `is_test=true`. Only the
+redirect target is wrong — `generateLink`'s `redirectTo` is being rejected by
+the allowlist and falling back to the Site URL (still `localhost:3000`).
+
+- **Roster send count: 0 sent** — import/send is deliberately **BLOCKED** until
+  the redirect reads `https://vibhapsychology.com/set-password`. Sending now
+  would hand every real student a link that redirects to their own machine.
+
+Re-added the precise blocker to NEEDS_KAVYA.md (top ROSTER section).
