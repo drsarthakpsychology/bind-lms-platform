@@ -9,6 +9,10 @@ export type Profile = {
   id: string;
   email: string | null;
   role: "admin" | "student" | "alumni";
+  /** Access scope. "lectures_only" locks the account to the lecture list +
+   *  player; every other student surface is blocked server-side. Defaults to
+   *  "full" when the column is absent (pre-migration rows). */
+  scope: "full" | "lectures_only";
   active_session_token: string | null;
   expires_at: string | null;
 };
@@ -48,7 +52,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("id, email, role, active_session_token, expires_at")
+    .select("id, email, role, scope, active_session_token, expires_at")
     .eq("id", user.id)
     .single();
 
@@ -75,5 +79,13 @@ export const getSession = cache(async (): Promise<SessionResult> => {
     return { status: "session_replaced" };
   }
 
-  return { status: "ok", profile: profile as Profile };
+  return {
+    status: "ok",
+    profile: {
+      ...(profile as Omit<Profile, "scope">),
+      // Defensive default: rows written before the access_scope migration have
+      // no `scope` column, and an absent scope must mean full access.
+      scope: profile.scope === "lectures_only" ? "lectures_only" : "full",
+    } as Profile,
+  };
 });

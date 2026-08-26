@@ -32,6 +32,11 @@ const ADMIN_TABS: Tab[] = [
   { href: "/admin/students", label: "Students", icon: Users },
 ];
 
+/** Lecture-only roster: a single tab — the lecture list. */
+const LECTURE_ONLY_TABS: Tab[] = [
+  { href: "/dashboard", label: "Lectures", icon: BookOpen, exact: true },
+];
+
 /**
  * Mobile bottom tab bar (v5.1 Part B3) — thumb reach. Desktop keeps the
  * sidebar; this renders on small screens only. One tap per tab, active state.
@@ -46,10 +51,21 @@ const ADMIN_TABS: Tab[] = [
  * via a layout-animated indicator (reduced-motion renders it statically).
  * Ink-on-peach ≈ 9:1 in both themes.
  */
-export function BottomTabBar({ mode = "student" }: { mode?: "student" | "admin" }) {
+export function BottomTabBar({
+  mode = "student",
+  scope = "full",
+}: {
+  mode?: "student" | "admin";
+  scope?: "full" | "lectures_only";
+}) {
   const pathname = usePathname();
   const reduce = useReducedMotion();
-  const tabs = mode === "admin" ? ADMIN_TABS : STUDENT_TABS;
+  const tabs =
+    mode === "admin"
+      ? ADMIN_TABS
+      : scope === "lectures_only"
+        ? LECTURE_ONLY_TABS
+        : STUDENT_TABS;
 
   // Focused modes hide the tab bar — the patient session and lesson/material
   // drill-downs own the viewport (the page has its own contextual back header),

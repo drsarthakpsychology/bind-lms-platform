@@ -11,6 +11,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { DashboardPracticeSection } from "@/components/practice/dashboard-practice-section";
+import LecturesOnlyView from "./lectures-only-view";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -40,6 +41,13 @@ export default async function DashboardPage() {
 
   if (profile.role === "admin" && !viewingAsStudent) {
     redirect("/admin");
+  }
+
+  // Lecture-only roster: the whole dashboard is a flat lecture list — no
+  // course grid, no practice, no journal. The route guard in the dashboard
+  // layout keeps them off every other surface.
+  if (profile.scope === "lectures_only") {
+    return <LecturesOnlyView />;
   }
 
   const supabase = await createClient();

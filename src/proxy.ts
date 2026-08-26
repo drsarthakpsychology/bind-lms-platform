@@ -66,6 +66,10 @@ session. Cohort One is by invitation.
 export async function proxy(request: NextRequest) {
   const accept = request.headers.get("accept") ?? "";
   const pathname = request.nextUrl.pathname;
+  // Expose the pathname to Server Components (via headers()) so the dashboard
+  // layout can enforce the lecture-only scope server-side without a DB read in
+  // the proxy (which stays thin per its own contract).
+  request.headers.set("x-pathname", pathname);
   // Content negotiation for agents — only on the public landing page.
   if (pathname === "/" && MARKDOWN_ACCEPTED.test(accept)) {
     return new NextResponse(LANDING_MARKDOWN, {

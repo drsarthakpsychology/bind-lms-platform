@@ -69,6 +69,7 @@ export async function GET(
     const fresh = await authorizeAndResolveLesson({
       userId: profile.id,
       role: profile.role,
+      scope: profile.scope,
       lessonId,
     });
     verdict = { ...fresh, ok: fresh.authorized && Boolean(fresh.resolved) };

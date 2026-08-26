@@ -4,7 +4,7 @@ import { Bell, LogOut, Settings } from "lucide-react";
 
 import { NavItems } from "@/components/navigation/nav-items";
 import { PaletteTrigger } from "@/components/search/palette-trigger";
-import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
+import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS } from "@/components/navigation/nav-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
@@ -20,16 +20,23 @@ export type SidebarMode = "admin" | "student";
 export function AppSidebar({
   role,
   mode,
+  scope = "full",
   viewModeSwitch,
   className,
 }: {
   role: "admin" | "student";
   mode: SidebarMode;
+  scope?: "full" | "lectures_only";
   viewModeSwitch?: React.ReactNode;
   className?: string;
 }) {
   const isAdminView = role === "admin" && mode === "admin";
-  const items = role === "admin" && mode === "admin" ? ADMIN_ITEMS : STUDENT_ITEMS;
+  const items =
+    role === "admin" && mode === "admin"
+      ? ADMIN_ITEMS
+      : scope === "lectures_only"
+        ? LECTURE_ONLY_ITEMS
+        : STUDENT_ITEMS;
 
   return (
     <aside

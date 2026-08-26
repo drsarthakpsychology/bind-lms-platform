@@ -17,6 +17,11 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/record", label: "Record", icon: "clipboardList" },
 ];
 
+/** Lecture-only roster: a single nav destination — the lecture list. */
+export const LECTURE_ONLY_ITEMS: NavItem[] = [
+  { href: "/dashboard", label: "Lectures", icon: "bookOpen", exact: true },
+];
+
 /**
  * Admin nav is grouped into three labelled chunks (Review / Content / System)
  * rather than one flat 21-item column — 21 simultaneous options exceeds the

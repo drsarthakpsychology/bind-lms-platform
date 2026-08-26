@@ -7,7 +7,7 @@ import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibili
 import { BottomTabBar } from "@/components/navigation/bottom-tab-bar";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { ShellContent } from "@/components/navigation/shell-content";
-import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
+import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
 import { BRAND } from "@/lib/brand";
 import { VibhaMark } from "@/components/brand/vibha-logo";
@@ -24,15 +24,22 @@ import { VibhaMark } from "@/components/brand/vibha-logo";
 export function AppShell({
   role,
   mode,
+  scope = "full",
   viewModeSwitch,
   children,
 }: {
   role: "admin" | "student";
   mode: SidebarMode;
+  scope?: "full" | "lectures_only";
   viewModeSwitch?: React.ReactNode;
   children: React.ReactNode;
 }) {
-  const items = role === "admin" && mode === "admin" ? ADMIN_ITEMS : STUDENT_ITEMS;
+  const items =
+    role === "admin" && mode === "admin"
+      ? ADMIN_ITEMS
+      : scope === "lectures_only"
+        ? LECTURE_ONLY_ITEMS
+        : STUDENT_ITEMS;
   // The sidebar gate treats "admin previewing as student" like a student on
   // inner pages (they get the drill-down too).
   const gateRole = role === "admin" && mode === "student" ? "admin-preview" : role;
@@ -61,7 +68,7 @@ export function AppShell({
       >
         <div className="hidden lg:block">
           <div className="sticky top-0 h-screen">
-            <AppSidebar role={role} mode={mode} viewModeSwitch={viewModeSwitch} />
+            <AppSidebar role={role} mode={mode} scope={scope} viewModeSwitch={viewModeSwitch} />
           </div>
         </div>
       </SidebarGate>
@@ -96,7 +103,7 @@ export function AppShell({
           admin gets a compact 4-destination bar (Overview/Review/Submissions/
           Students) so the review workflow isn't drawer-only. Hidden on the
           immersive session (the chat owns the whole viewport). */}
-      <BottomTabBar mode={mode} />
+      <BottomTabBar mode={mode} scope={scope} />
     </div>
   );
 }

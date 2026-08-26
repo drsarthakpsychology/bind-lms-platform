@@ -4538,3 +4538,26 @@ region or Modal/RunPod.
 - Runtime verification (network-tab bitrate change, devtools throttling,
   real-device play) needs a live video + browser — flagged in NEEDS_KAVYA as the
   same human device-QA step as the existing T151 video QA.
+
+## 2026-08-26 — Part 5 lecture-only locked access (server-side)
+
+- Added `profiles.scope` ('full' | 'lectures_only') to the Profile/session
+  (defaulting to 'full' when the column is absent), plus a pure
+  `src/lib/auth/scope.ts` (isLecturesOnly + lectureOnlyAllowed) that stays
+  testable without the server-only session module.
+- Server-side enforcement (not a hidden nav link): the dashboard layout reads
+  the pathname (exposed via an `x-pathname` header set in proxy.ts) and
+  redirects any non-lecture route to /dashboard for lectures_only accounts.
+  Allowed: /dashboard (lecture list) + /courses/* (player). Blocked: /today,
+  /practice, /reflect, /wall, /tools, /passport, /record, /settings, /admin.
+- Access logic: enrollment.ts (canAccessLesson/canAccessCourse) and the stream
+  proxy (authorizeAndResolveLesson) now grant lectures_only accounts any
+  published lesson/course with no enrollment gate — a new published lecture is
+  playable and listed with no redeploy (reads the live lessons table).
+- New `LecturesOnlyView` renders a flat, newest-first lecture list (title +
+  duration + play link) when scope=lectures_only; the normal course grid stays
+  for everyone else.
+- Nav scoped: LECTURE_ONLY_ITEMS / LECTURE_ONLY_TABS show a single "Lectures"
+  destination across the desktop sidebar, mobile drawer, and bottom tab bar.
+- Tests: guards.test.ts asserts the allowlist (dashboard/courses allowed, all
+  others blocked). Gate green: lint 0, tsc clean, 525 tests, build exit 0.
