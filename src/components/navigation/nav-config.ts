@@ -19,9 +19,15 @@ export const STUDENT_ITEMS: NavItem[] = [
   // them from the shell.
 ];
 
-/** Lecture-only roster: a single nav destination — the lecture list. */
+/**
+ * Roster accounts: the lecture list plus the practice hub — everything the
+ * programme has made live or unlocked. The practice hub itself only shows
+ * live/unlocked tools, and each tool route is server-gated by its flag.
+ */
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Lectures", icon: "bookOpen", exact: true },
+  { href: "/practice", label: "Practice", icon: "sparkles" },
+  { href: "/today", label: "Today", icon: "sun" },
 ];
 
 /**
