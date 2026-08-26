@@ -246,6 +246,7 @@ async function upsertMediaAsset(opts: {
   supabaseKey: string;
   lessonId: string;
   provider: "r2";
+  bucket: string;
   keyPrefix: string;
   masterPlaylist: string;
   duration: number;
@@ -255,6 +256,7 @@ async function upsertMediaAsset(opts: {
     {
       lesson_id: opts.lessonId,
       provider: opts.provider,
+      bucket: opts.bucket,
       key_prefix: opts.keyPrefix,
       master_playlist: opts.masterPlaylist,
       duration_seconds: opts.duration,
@@ -333,6 +335,7 @@ async function main() {
     supabaseKey: requireEnv("SUPABASE_SERVICE_ROLE_KEY"),
     lessonId: lesson,
     provider: "r2",
+    bucket: requireEnv("R2_BUCKET_NAME"),
     keyPrefix,
     masterPlaylist,
     duration: probe.duration,

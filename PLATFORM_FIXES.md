@@ -217,3 +217,13 @@ rejected m3u8/ts uploads) via migration. Result: **45 objects uploaded (4 rungs
 master.m3u8 → 200 rewritten to 4 absolute variant URLs; hls_1080/index.m3u8 →
 200 with `EXT-X-KEY`; seg_0000.ts → 200 `video/mp2t` encrypted. The test account
 was enrolled in the published course for the check.
+
+**FINAL (Kavya's correction): videos belong in R2.** The ladder was re-published
+to **R2** via the canonical `publish-lecture.ts` (`plms-videos/lessons/…/hls/`,
+45 objects, 4 rungs); `media_assets` → `provider='r2'`; R2 env vars added to
+Vercel production. Hit + fixed a real bug: `media_assets.bucket` defaults to
+`'videos'` (Supabase), so R2 rows resolved with the wrong bucket → the stream
+proxy 404'd. Backfilled the live row and made `publish-lecture.ts` write
+`bucket = R2_BUCKET_NAME`. **Re-verified against prod after the fix**: playback →
+`hls`; master/variant/segment all 200 through the encrypted proxy, served from
+R2.
