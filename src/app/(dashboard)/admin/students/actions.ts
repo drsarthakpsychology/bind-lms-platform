@@ -131,5 +131,33 @@ export async function setAccountStatus(
   if (error) return { error: "Could not update the account status." };
 
   revalidatePath("/admin/students");
+  revalidatePath("/admin/roster");
   return { error: null };
+}
+
+/**
+ * Lock or unlock EVERY student account at once (a "lock everything" switch for
+ * a pause in the programme). Same unconditional every-request override as the
+ * per-student toggle; only `role = student` profiles are touched.
+ */
+export async function setAllStudentsStatus(
+  status: "active" | "blocked",
+): Promise<{ error: string | null; updated: number }> {
+  if (!(await requireAdmin())) return { error: "Not authorized.", updated: 0 };
+
+  const admin = createAdminClient();
+  const { data, error } = await admin
+    .from("profiles")
+    .update({
+      status,
+      block_reason: status === "blocked" ? "Admin lock — whole programme" : null,
+    })
+    .eq("role", "student")
+    .select("id");
+
+  if (error) return { error: "Could not update accounts.", updated: 0 };
+
+  revalidatePath("/admin/students");
+  revalidatePath("/admin/roster");
+  return { error: null, updated: data?.length ?? 0 };
 }

@@ -9,8 +9,9 @@ import {
   importRoster,
   sendCredentialEmails,
   sendResendEmail,
-  inviteEmailBody,
-  mintInviteLink,
+  credentialsEmailBody,
+  generateCredential,
+  resetCredential,
   type RosterFailure,
   type RosterReport,
 } from "@/lib/auth/roster";
@@ -107,8 +108,8 @@ export async function sendCredentialEmailsAction(emails: string[]): Promise<Send
 export type TestEmailResult = { error: string | null; ok: boolean; detail: string };
 
 /**
- * SEND TEST EMAIL. Sends the real credential template (populated with realistic
- * placeholder data) through the exact same Resend code path, with a "[TEST]"
+ * SEND TEST EMAIL. Sends the real credential template (populated with a real
+ * 8-char password) through the exact same Resend code path, with a "[TEST]"
  * subject prefix. Returns the actual Resend API result so a bad key or template
  * surfaces here first. Zero risk of reaching a real student (the recipient is
  * whatever the admin types, defaulting to their own address).
@@ -151,18 +152,40 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   // 2. Mark it unmistakably as a test account, scoped like a real student.
   await admin.from("profiles").update({ is_test: true, scope: "lectures_only" }).eq("id", userId);
 
-  // 3. A real, single-use, expiring token through the SAME path as the real send.
-  const url = await mintInviteLink(admin, to, appUrl);
-  if (!url) {
-    return { error: "Could not mint the set-password link.", ok: false, detail: "" };
+  // 3. A real 8-char password through the SAME generator as the real send —
+  //    set on the auth user + returned so the test email contains it verbatim.
+  const password = generateCredential();
+  const { error: pwErr } = await admin.auth.admin.updateUserById(userId, { password });
+  if (pwErr) {
+    return { error: pwErr.message ?? "Could not set the test password.", ok: false, detail: "" };
   }
 
-  // 4. Send the real link, clearly [TEST]-marked.
-  const res = await sendResendEmail(to, "[TEST] Set your VIBHA password", inviteEmailBody("Test Student", to, url));
+  // 4. Send the real credential email, clearly [TEST]-marked.
+  const res = await sendResendEmail(
+    to,
+    "[TEST] Your VIBHA School of Psychology password",
+    credentialsEmailBody("Test Student", to, password, appUrl),
+  );
 
   return {
     error: null,
     ok: res.ok,
-    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}` : res.error ?? "Send failed.",
+    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}. Password: ${password}` : res.error ?? "Send failed.",
   };
+}
+
+export type ResetCredentialResult = { error: string | null; ok: boolean; password: string | null; detail: string };
+
+/** RESET PASSWORD. Regenerates one student's 8-char password and returns it so
+ * Kavya can share the new value. The auth user's password is updated to match. */
+export async function resetCredentialAction(email: string): Promise<ResetCredentialResult> {
+  if (!(await requireAdmin())) return { error: "Not authorized.", ok: false, password: null, detail: "" };
+
+  const admin = createAdminClient();
+  const password = await resetCredential(admin, email.trim().toLowerCase());
+  revalidatePath("/admin/roster");
+  if (!password) {
+    return { error: "Could not reset the password.", ok: false, password: null, detail: "" };
+  }
+  return { error: null, ok: true, password, detail: "Password reset." };
 }

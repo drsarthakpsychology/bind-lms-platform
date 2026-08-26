@@ -2,6 +2,8 @@ import { UserPlus, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { CreateStudentForm } from "./create-student-form";
 import { StudentActions } from "./student-actions";
+import { BulkLockControls } from "./bulk-lock";
+import { LockToggle } from "@/components/admin/lock-toggle";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -59,12 +61,15 @@ export default async function StudentsPage() {
 
       <Card variant="flat" className="order-2 lg:order-3">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-h3">
+          <CardTitle className="flex flex-wrap items-center gap-2 text-h3">
             <Users className="size-4 text-muted-foreground" aria-hidden />
             All students
             <Badge variant="secondary" className="ml-1">
               {students.filter((s) => !s.is_test).length}
             </Badge>
+            <span className="ml-auto">
+              <BulkLockControls />
+            </span>
           </CardTitle>
         </CardHeader>
         <CardContent className="pt-0">
@@ -96,6 +101,7 @@ export default async function StudentsPage() {
                           {formatDate(student.expires_at)} · {student.active_session_token ? "Active session" : "Not signed in"}{student.is_test ? " · Test" : ""}
                         </span>
                       </span>
+                      <LockToggle userId={student.id} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
                       <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
                     </li>
                   ))}
@@ -131,7 +137,10 @@ export default async function StudentsPage() {
                         )}
                       </TableCell>
                       <TableCell>
-                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
+                        <div className="flex items-center gap-2">
+                          <LockToggle userId={student.id} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
+                          <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
+                        </div>
                       </TableCell>
                     </TableRow>
                   ))}

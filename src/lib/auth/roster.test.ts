@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveName, parseRosterCsv, EMAIL_RE, inviteEmailBody } from "./roster";
+import { deriveName, parseRosterCsv, EMAIL_RE, credentialsEmailBody, generateCredential } from "./roster";
 
 describe("roster deriveName", () => {
   it("turns a local-part into a display name", () => {
@@ -70,13 +70,25 @@ describe("roster parseRosterCsv — column-shift / header regression", () => {
   });
 });
 
-describe("roster inviteEmailBody", () => {
-  it("never contains a plaintext password and includes the link", () => {
-    const body = inviteEmailBody("Jane", "jane@x.com", "https://app/set-password?token=abc");
+describe("roster credentialsEmailBody", () => {
+  it("contains the plaintext password and no password-set link", () => {
+    const body = credentialsEmailBody("Jane", "jane@x.com", "Ab3cD5eF", "https://vibhapsychology.com");
     expect(body).toContain("jane@x.com");
-    expect(body).toContain("https://app/set-password?token=abc");
-    expect(body).not.toContain("password:");
-    expect(body).not.toMatch(/[a-zA-Z0-9]{8,}pass/);
+    expect(body).toContain("Ab3cD5eF");
+    expect(body).toContain("vibhapsychology.com/login");
+    expect(body).not.toContain("verify?token");
+    expect(body).not.toContain("set-password");
+  });
+});
+
+describe("roster generateCredential", () => {
+  it("returns 8 chars of letters + digits only, no ambiguous look-alikes", () => {
+    for (let i = 0; i < 50; i++) {
+      const p = generateCredential();
+      expect(p).toHaveLength(8);
+      expect(p).toMatch(/^[A-Za-z0-9]{8}$/);
+      expect(p).not.toMatch(/[0O1Il]/);
+    }
   });
 });
 
