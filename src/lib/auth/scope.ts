@@ -11,6 +11,11 @@ export function isLecturesOnly(profile: ScopedProfile | null): boolean {
   return profile?.scope === "lectures_only";
 }
 
+/** True when the account is blocked — the unconditional every-request override. */
+export function isBlocked(profile: { status?: "active" | "blocked" } | null): boolean {
+  return profile?.status === "blocked";
+}
+
 /**
  * The only routes a lecture-only account may reach: the lecture list
  * (`/dashboard`) and the player surface (`/courses/*`). Everything else

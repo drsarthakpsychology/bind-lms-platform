@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isLecturesOnly, lectureOnlyAllowed } from "./scope";
+import { isLecturesOnly, lectureOnlyAllowed, isBlocked } from "./scope";
 
 const profile = (scope: "full" | "lectures_only") => ({
   id: "u1",
@@ -34,5 +34,13 @@ describe("lecture-only scope guards", () => {
     expect(lectureOnlyAllowed("/record")).toBe(false);
     expect(lectureOnlyAllowed("/settings")).toBe(false);
     expect(lectureOnlyAllowed("/admin")).toBe(false);
+  });
+
+  it("isBlocked is true only for status=blocked, independent of credentials", () => {
+    expect(isBlocked({ status: "blocked" })).toBe(true);
+    expect(isBlocked({ status: "active" })).toBe(false);
+    expect(isBlocked(null)).toBe(false);
+    // The override is on status alone — a valid session/password is irrelevant.
+    expect(isBlocked({ status: "blocked" } as { status: "active" | "blocked" })).toBe(true);
   });
 });

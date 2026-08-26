@@ -30,7 +30,7 @@ export default async function StudentsPage() {
 
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token, is_test")
+    .select("id, email, role, expires_at, active_session_token, is_test, status")
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false });
 
@@ -96,7 +96,7 @@ export default async function StudentsPage() {
                           {formatDate(student.expires_at)} · {student.active_session_token ? "Active session" : "Not signed in"}{student.is_test ? " · Test" : ""}
                         </span>
                       </span>
-                      <StudentActions userId={student.id} isTest={Boolean(student.is_test)} />
+                      <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
                     </li>
                   ))}
                 </ul>
@@ -131,7 +131,7 @@ export default async function StudentsPage() {
                         )}
                       </TableCell>
                       <TableCell>
-                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} />
+                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
                       </TableCell>
                     </TableRow>
                   ))}

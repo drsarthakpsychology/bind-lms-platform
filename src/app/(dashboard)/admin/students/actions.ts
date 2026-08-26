@@ -105,3 +105,31 @@ export async function resetStudentPassword(userId: string): Promise<{ error: str
 
   return { error: null };
 }
+
+/**
+ * Block or unblock an account. `blocked` is the unconditional every-request
+ * override (checked in the session guard, not just at login) — it takes effect
+ * on the account's very next request. `reason` is the internal-only note
+ * ("fee not paid", "requested pause", …), never shown to the student.
+ */
+export async function setAccountStatus(
+  userId: string,
+  status: "active" | "blocked",
+  reason?: string,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from("profiles")
+    .update({
+      status,
+      block_reason: status === "blocked" ? (reason?.trim() || null) : null,
+    })
+    .eq("id", userId);
+
+  if (error) return { error: "Could not update the account status." };
+
+  revalidatePath("/admin/students");
+  return { error: null };
+}

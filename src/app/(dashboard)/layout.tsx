@@ -28,6 +28,13 @@ export default async function DashboardLayout({
     redirect("/login");
   }
 
+  // Blocked is an unconditional override — the account is cut off on every
+  // request regardless of credential/session validity. Redirect to a plain,
+  // non-alarming "paused" screen (no specific reason shown to the student).
+  if (session.status === "blocked") {
+    redirect("/paused");
+  }
+
   // Lecture-only scope: the account may reach only the lecture list + player.
   // Enforced here, server-side, for every route under (dashboard) — a direct
   // URL hit to /practice, /reflect, /wall, /tools, etc. redirects to the

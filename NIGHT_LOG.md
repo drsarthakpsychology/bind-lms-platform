@@ -4660,3 +4660,25 @@ build exit 0.
   `sendCredentialEmailsAction`, `sendTestEmailAction`. CLI split into import
   (default) and `--send` modes.
 - Gate green: lint 0, tsc clean, 529 tests, build exit 0.
+
+## 2026-08-26 — Part 3 BLOCKED status (unconditional every-request override)
+
+- No password-viewing built — correct, auth hashes at rest. What Kavya actually
+  needs is a hard cut-off. Added `profiles.status` ('active' | 'blocked') +
+  `profiles.block_reason` (migration, additive).
+- `getSession` now returns a `blocked` result when `status='blocked'`, checked
+  BEFORE expiry/token — so a blocked account is rejected even with a correct
+  password and a valid session token. It deliberately does NOT sign out, so
+  unblocking restores access on the very next request with no re-login.
+- The dashboard layout redirects `blocked` → `/paused` (a new plain,
+  non-alarming screen: "Your access is currently paused. Contact the programme
+  to resolve this."). `requireSession` returns null for blocked, so every
+  server action + API route also rejects it. No TTL cache: the profile is
+  re-read per request (React `cache()` is request-scoped only).
+- Admin: `setAccountStatus` action + a Block/Unblock control in the student
+  actions sheet, with an internal-only note. The student sees only the generic
+  paused message, never the reason.
+- Test: `isBlocked` unit test (override is on status alone, credentials
+  irrelevant). The full live-session rejection test needs a browser + real
+  session — flagged in NEEDS_KAVYA.
+- Gate green: lint 0, tsc clean, 530 tests, build exit 0.

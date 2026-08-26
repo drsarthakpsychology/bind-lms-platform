@@ -2,33 +2,42 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { KeyRound, Loader2, MoreHorizontal, Trash2 } from "lucide-react";
-import { deleteStudent, resetStudentPassword } from "./actions";
+import { KeyRound, Loader2, Lock, MoreHorizontal, Trash2, Unlock } from "lucide-react";
+import { deleteStudent, resetStudentPassword, setAccountStatus } from "./actions";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+
+type Mode = "menu" | "delete" | "block";
 
 /**
  * Per-student actions in the admin list. One ⋯ trigger reveals a contextual
- * action sheet (mobile bottom sheet) with Reset and Delete; delete then asks
- * for confirmation in the same sheet (no stacked modal transitions).
+ * action sheet (mobile bottom sheet) with Reset, Block/Unblock, and Delete.
+ * Block attaches a short internal note (never shown to the student) and is the
+ * unconditional every-request override — the account is cut off on its very
+ * next request, even mid-session.
  */
 export function StudentActions({
   userId,
   isTest,
+  status,
 }: {
   userId: string;
   isTest: boolean;
+  status: "active" | "blocked";
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [open, setOpen] = useState(false);
-  const [confirming, setConfirming] = useState(false);
+  const [mode, setMode] = useState<Mode>("menu");
+  const [blockReason, setBlockReason] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   function close() {
     setOpen(false);
-    setConfirming(false);
+    setMode("menu");
+    setBlockReason("");
     setError(null);
   }
 
@@ -38,6 +47,30 @@ export function StudentActions({
       const result = await resetStudentPassword(userId);
       if (result.error) setError(result.error);
       else close();
+    });
+  }
+
+  function handleBlock() {
+    setError(null);
+    startTransition(async () => {
+      const result = await setAccountStatus(userId, "blocked", blockReason);
+      if (result.error) setError(result.error);
+      else {
+        close();
+        router.refresh();
+      }
+    });
+  }
+
+  function handleUnblock() {
+    setError(null);
+    startTransition(async () => {
+      const result = await setAccountStatus(userId, "active");
+      if (result.error) setError(result.error);
+      else {
+        close();
+        router.refresh();
+      }
     });
   }
 
@@ -66,31 +99,34 @@ export function StudentActions({
       <MobileBottomSheet
         open={open}
         onOpenChange={(next) => !next && close()}
-        title={confirming ? "Delete this student?" : "Student actions"}
+        title={
+          mode === "delete" ? "Delete this student?" : mode === "block" ? "Block access" : "Student actions"
+        }
         description={
-          confirming
+          mode === "delete"
             ? "This permanently deletes the account and all of its progress, submissions, and files. This can't be undone."
-            : undefined
+            : mode === "block"
+              ? "The account is cut off immediately — even if they're logged in right now. The note is for you only; the student just sees \"your access is paused\"."
+              : undefined
         }
         footer={
-          confirming ? (
+          mode === "delete" ? (
             <div className="flex flex-col gap-2">
-              <Button
-                type="button"
-                variant="destructive"
-                onClick={handleDelete}
-                disabled={isPending}
-                className="w-full"
-              >
+              <Button type="button" variant="destructive" onClick={handleDelete} disabled={isPending} className="w-full">
                 {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
                 Delete student
               </Button>
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setConfirming(false)}
-                className="w-full"
-              >
+              <Button type="button" variant="outline" onClick={() => setMode("menu")} className="w-full">
+                Cancel
+              </Button>
+            </div>
+          ) : mode === "block" ? (
+            <div className="flex flex-col gap-2">
+              <Button type="button" onClick={handleBlock} disabled={isPending} className="w-full">
+                {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
+                Block access
+              </Button>
+              <Button type="button" variant="outline" onClick={() => setMode("menu")} className="w-full">
                 Cancel
               </Button>
             </div>
@@ -102,7 +138,20 @@ export function StudentActions({
             {error}
           </p>
         )}
-        {confirming ? null : (
+
+        {mode === "block" ? (
+          <div className="space-y-1.5">
+            <label htmlFor="block-reason" className="text-small font-medium">
+              Why? (internal only)
+            </label>
+            <Input
+              id="block-reason"
+              value={blockReason}
+              onChange={(e) => setBlockReason(e.target.value)}
+              placeholder="e.g. fee not paid"
+            />
+          </div>
+        ) : mode === "menu" ? (
           <div className="flex flex-col gap-1">
             <button
               type="button"
@@ -114,11 +163,31 @@ export function StudentActions({
               <KeyRound className="size-4 text-muted-foreground" aria-hidden />
               {isTest ? "Reset test password" : "Reset password"}
             </button>
+            {status === "blocked" ? (
+              <button
+                type="button"
+                onClick={handleUnblock}
+                disabled={isPending}
+                className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent disabled:opacity-50"
+              >
+                <Unlock className="size-4 text-muted-foreground" aria-hidden />
+                Unblock access
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setMode("block")}
+                className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
+              >
+                <Lock className="size-4" aria-hidden />
+                Block access
+              </button>
+            )}
             <button
               type="button"
               onClick={() => {
                 setError(null);
-                setConfirming(true);
+                setMode("delete");
               }}
               className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
             >
@@ -126,7 +195,7 @@ export function StudentActions({
               Delete student
             </button>
           </div>
-        )}
+        ) : null}
       </MobileBottomSheet>
     </>
   );
