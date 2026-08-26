@@ -4512,3 +4512,29 @@ region or Modal/RunPod.
 - Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker — emails can't
   send without it) + apply the scope migration, then `npm run roster:import`.
 - Gate green: lint 0, tsc clean, 523 tests (+7 roster), build exit 0.
+
+## 2026-08-26 — Part 6 video quality ladder (real ABR, not a cosmetic toggle)
+
+- Verified the actual repo state: the HLS *serving* stack already exists
+  (media_assets table, `/api/media/stream/[...lessonId]` proxy with per-session
+  AES-128 segment encryption, playback route returning mediaType hls|mp4,
+  resolveLessonStreamFromRow). What was missing was the ladder *config* matching
+  the spec and the *player* quality selector.
+- `scripts/publish-lecture.ts` already had the transcode pipeline
+  (encodeHls/encodeRung/writeMaster/probeVideo via ffmpeg + fluent-ffmpeg).
+  Fixed `LADDER` to the spec: 1080p 5000k / 720p 2800k / 480p 1400k / 240p 600k
+  (was 2800/1800/1000/600 with a 360p floor). ≥1.5× gap between rungs, 6s
+  segments, keyint=48 (~2s keyframes), H.264+AAC, seg_%04d.ts. 240p is now the
+  floor (saves bad connections from buffering entirely).
+- `video-player.tsx`: added a genuine quality selector (Auto/1080p/720p/480p/
+  240p). Auto = hls.currentLevel -1 (native ABR); manual pick locks the level;
+  last choice persists per-device in localStorage. Rendered unobtrusively in the
+  desktop secondary controls + the mobile overflow menu, only when HLS levels
+  exist (MP4 lessons show nothing). Added `preload="metadata"`.
+- Backward compat already existed: a lesson without a media_assets row streams
+  its original MP4 (mediaType "mp4"); `migrate-supabase-to-r2.ts --lesson <id>`
+  is the offline batch re-transcode script. Never breaks existing playback.
+- Gate green: lint 0, tsc clean, 523 tests, build exit 0.
+- Runtime verification (network-tab bitrate change, devtools throttling,
+  real-device play) needs a live video + browser — flagged in NEEDS_KAVYA as the
+  same human device-QA step as the existing T151 video QA.
