@@ -26,13 +26,47 @@ export interface TurnContext {
   quality: { leading: boolean; double_barrelled: boolean; jargon: boolean };
 }
 
+/** Clear self-harm / suicide phrasing — the only way a self-harm fact may open. */
+const SELF_HARM_PATTERNS = [
+  /self[- ]?harm/i,
+  /(hurt|harm|kill)(ing)? (yourself|your self)/i,
+  /suicid/i,
+  /end (your life|it all)/i,
+  /want to (die|end it)/i,
+  /think(ing)? about dying/i,
+  /not (want|wish) to be (here|alive)/i,
+];
+
+/**
+ * Translate an authored disclosure gate (a plain-English tag in the case
+ * data) into a deterministic `Gate`. The case files store gates as strings
+ * like "asked_about_self_harm_clearly"; the engines need Gate objects.
+ *
+ * Unknown/empty tags default to a conservative trust bar — better to hold
+ * disclosure a turn too long than to leak a fact the student didn't earn.
+ */
+export function parseGate(gate: string | undefined): Gate {
+  switch (gate) {
+    case "asked_about_self_harm_clearly":
+      return { kind: "explicit_phrase", patterns: SELF_HARM_PATTERNS };
+    case "validation_given":
+      return { kind: "move_used", move: "validation", times: 1 };
+    case "two_or_more_reflective_statements":
+      return { kind: "move_used", move: "reflection", times: 2 };
+    default:
+      return { kind: "trust_at_least", value: 4 };
+  }
+}
+
 /** Evaluate a gate against the current state + this turn. Pure. */
 function evaluateGate(gate: Gate, state: PatientState, ctx: TurnContext): boolean {
   switch (gate.kind) {
     case "move_used": {
       // Count how many times this move appears in the student's move history.
-      // The state tracks a rolling window of student moves.
-      const hits = (state.last_moves ?? []).filter((m) => m === gate.move).length;
+      // Student moves are tracked separately from patient moves (which occupy
+      // `last_moves` for anti-repetition). `student_moves` may be absent on
+      // old persisted sessions — default to [].
+      const hits = (state.student_moves ?? state.last_moves ?? []).filter((m) => m === gate.move).length;
       return hits >= gate.times;
     }
     case "topic_opened":

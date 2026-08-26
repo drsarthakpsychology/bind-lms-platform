@@ -1,0 +1,997 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 632>>>
+
+Some patients who have an initial response may relapse even though
+they continue treatment, sometimes called “poop-out”
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Mirtazapine (“California rocket fuel” ; a potentially powerful dual
+serotonin and norepinephrine combination, but observe for
+activation of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+action, but observe for activation of bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+
+
+
+
+<<<PAGE 772>>>
+
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Consider the presence of noncompliance and counsel the patient
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation experience is limited compared to other
+antidepressants and treatments for neuropathic pain
+Adding other agents to duloxetine for treating depression could
+follow the same practice for augmenting SSRIs or other SNRIs if
+done by experts while monitoring carefully in difficult cases
+Although no controlled studies and little clinical experience, adding
+other agents for treating diabetic peripheral neuropathic pain and
+fibromyalgia and neuropathic pain could theoretically include
+gabapentin, pregabalin, and tiagabine, if done by experts while
+monitoring carefully in difficult cases
+Mirtazapine (“California rocket fuel” for depression; a potentially
+powerful dual serotonin and norepinephrine combination, but
+observe for activation of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+
+
+
+
+<<<PAGE 786>>>
+
+Sleep disturbance
+Anxiety
+Physical symptoms
+Pain
+Pearls
+Duloxetine has well-documented efficacy for the painful
+physical symptoms of depression
+Duloxetine has only somewhat greater potency for serotonin
+reuptake blockade than for norepinephrine reuptake blockade, but
+this is of unclear clinical significance as a differentiator from other
+SNRIs
+No head-to-head studies, but may have less hypertension than
+venlafaxine XR
+Powerful pro-noradrenergic actions may occur at doses greater than
+60 mg/day
+Not well studied in ADHD, but may be effective
+Approved in many countries for stress urinary incontinence
+Patients may have higher remission rate for depression on SNRIs
+than on SSRIs
+Add or switch to or from pro-noradrenergic agents (e.g.,
+atomoxetine, reboxetine, other SNRIs, mirtazapine, maprotiline,
+nortriptyline, desipramine, bupropion) with caution
+
+
+
+
+<<<PAGE 787>>>
+
+Add or switch to or from CYP450 2D6 substrates with caution (e.g.,
+atomoxetine, maprotiline, nortriptyline, desipramine)
+Mechanism of action as SNRI suggests it may be effective in some
+patients who fail to respond to SSRIs
+
+Suggested Reading
+Arnold LM , Pritchett YL , D’Souza DN , et al. Duloxetine for the
+treatment of fibromyalgia in women: pooled results from two randomized,
+placebo-controlled trials . J Womens Health (Larchmt) 2007 ;16 (8 ):1145 –
+56.
+Bymaster FP , Dreshfield-Ahmad LJ , Threlkeld PG , et al. Comparative
+affinity of duloxetine and venlafaxine for serotonin and norepinephrine
+transporters in vitro and in vivo, human serotonin receptor subtypes, and
+other neuronal receptors . Neuropsychopharmacology 2001 ;25 (6 ):871–80
+.
+Hartford J , Kornstein S , Liebowitz M , et al. Duloxetine as an SNRI
+treatment for generalized anxiety disorder: results from placebo and activecontrolled trial . Int Clin Psychopharmacol 2007 ;22 (3 ):167–74 .
+Muller N , Schennach R , Riedel M , Moller HJ . Duloxetine in the
+treatment of major psychiatric and neuropathic disorders . Expert Rev
+Neurother 2008 ;8 (4 ):527–36 .
+
+
+
+
+<<<PAGE 1266>>>
+
+Pharmacokinetics
+Elimination half-life approximately 122 hours (ultra-long half-life)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Cimetidine raises loflazepate plasma levels
+Rapid dose reduction or discontinuation of loflazepate during
+concomitant use with tetracyclic antidepressants such as maprotiline
+may result in convulsive seizures, possibly due to the loss of
+anticonvulsant actions that suppress the proconvulsant actions of
+tetracyclic antidepressants
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+
+
+
+
+<<<PAGE 1355>>>
+
+Maprotiline
+
+Therapeutics
+Brands
+Ludiomil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: norepinephrine reuptake
+inhibitor (N-RI)
+Tricyclic antidepressant (TCA), sometimes classified as a tetracyclic
+antidepressant (tetra)
+Predominantly a norepinephrine/noradrenaline reuptake inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Anxiety
+Insomnia
+
+
+
+
+<<<PAGE 1356>>>
+
+Neuropathic pain/chronic pain
+Treatment-resistant depression
+How the Drug Works
+Boosts neurotransmitter norepinephrine/noradrenaline
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, maprotiline can
+thus increase dopamine neurotransmission in this part of the brain
+A more potent inhibitor of norepinephrine reuptake pump than
+serotonin reuptake pump (serotonin transporter)
+At high doses may also boost neurotransmitter serotonin and
+presumably increase serotonergic neurotransmission
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks for depression, it may require
+a dosage increase or it may not work at all
+May continue to work for many years to prevent relapse of
+symptoms
+If It Works
+
+
+
+
+<<<PAGE 1363>>>
+
+If given in split doses, largest dose should generally be given at
+bedtime because of its sedative properties
+If patients experience nightmares, split dose and do not give large
+dose at bedtime
+Patients treated for chronic pain may only require lower doses
+
+✽ Risk of seizures increases with dose, especially with maprotiline
+above 200 mg/day
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder, and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+Death may occur; convulsions, cardiac dysrhythmias, severe
+hypotension, CNS depression, coma, changes in ECG
+Long-Term Use
+Safe
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects
+
+
+
+
+<<<PAGE 1365>>>
+
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs/tetracyclics
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of maprotiline
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing maprotiline
+Generally, do not use with MAOIs, including 14 days after MAOIs
+are stopped; do not start an MAOI for at least 5 half-lives (5 to 7
+days for most drugs) after discontinuing maprotiline, but see Pearls
+Use with caution in patients with history of seizures, urinary
+retention, angle-closure glaucoma, hyperthyroidism
+TCAs/tetracyclics can increase QTc interval, especially at toxic
+doses, which can be attained not only by overdose but also by
+combining with drugs that inhibit TCA/tetracyclic metabolism via
+
+
+
+
+<<<PAGE 1367>>>
+
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA/tetracyclic metabolism,
+including CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to maprotiline
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+
+
+
+
+<<<PAGE 1368>>>
+
+TCAs/tetracyclics have been reported to cause arrhythmias,
+prolongation of conduction time, orthostatic hypotension, sinus
+tachycardia, and heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with
+TCAs/tetracyclics
+TCAs/tetracyclics produce QTc prolongation, which may be
+enhanced by the existence of bradycardia, hypokalemia, congenital
+or acquired long QTc interval, which should be evaluated prior to
+administering maprotiline
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid TCAs/tetracyclics in patients with a known history of QTc
+prolongation, recent acute myocardial infarction, and
+uncompensated heart failure
+TCAs/tetracyclics may cause a sustained increase in heart rate in
+patients with ischemic heart disease and may worsen (decrease)
+heart rate variability, an independent risk of mortality in cardiac
+populations
+Since SSRIs may improve (increase) heart rate variability in patients
+following a myocardial infarct and may improve survival as well as
+mood in patients with acute angina or following a myocardial
+infarction, these are more appropriate agents for cardiac population
+than tricyclic/tetracyclic antidepressants
+
+
+
+
+<<<PAGE 1374>>>
+
+not safely tolerate normal doses of tricyclic/tetracyclic
+antidepressants and may require dose reduction
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Kane JM , Lieberman J . The efficacy of amoxapine, maprotiline, and
+trazodone in comparison to imipramine and amitriptyline: a review of the
+literature . Psychopharmacol Bull 1984 ;20 :240–9 .
+
+
+
+
+<<<PAGE 1454>>>
+
+Suggested Reading
+Brogden RN , Heel RC , Speight TM , Avery GS . Mianserin: a review of
+its pharmacological properties and therapeutic efficacy in depressive illness
+. Drugs 1978 ;16 (4 ):273 –301 .
+De Ridder JJ . Mianserin: result of a decade of antidepressant research .
+Pharm Weekbl Sci 1982 ;4 (5 ):139–45 .
+Leinonen E , Koponen H , Lepola U . Serum mianserin and ageing . Prog
+Neuropsychopharmacol Biol Psychiatry 1994 ;18 (5 ):833–45 .
+Rotzinger S , Bourin M , Akimoto Y , Coutts RT , Baker GB . Metabolism
+of some “second-” and “fourth-” generation antidepressants: iprindole,
+viloxazine, bupropion, mianserin, maprotiline, trazodone, nefazodone, and
+venlafaxine . Cell Mol Neurobiol 1999 ;19 (4 ):427–42 .
+Wakeling A . Efficacy and side effects of mianserin, a tetracyclic
+antidepressant . Postgrad Med J 1983 ;59 (690 ):229–31 .
+
+
+
+
+<<<PAGE 2281>>>
+
+Rarely, patients may complain of visual “trails” or after-images on
+trazodone
+
+Suggested Reading
+DeVane CL . Differential pharmacology of newer antidepressants . J Clin
+Psychiatry 1998 ;59 (Suppl 20):S85 –93.
+Haria M , Fitton A , McTavish D . Trazodone. A review of its
+pharmacology, therapeutic use in depression and therapeutic potential in
+other disorders . Drugs Aging 1994 ;4 :331 –55 .
+Rotzinger S , Bourin M , Akimoto Y , Coutts RT , Baker GB . Metabolism
+of some “second” - and “fourth” -generation antidepressants: iprindole,
+viloxazine, bupropion, mianserin, maprotiline, trazodone, nefazodone, and
+venlafaxine . Cell Mol Neurobiol 1999 ;19 :427 –42 .
+Stahl SM. Mechanism of action of trazodone: a multifunctional drug . CNS
+Spectr 2009 ;14 (10):536 –46 .
+
+
+
+
+<<<PAGE 2402>>>
+
+problems concentrating)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Some patients who have an initial response may relapse even though
+they continue treatment, sometimes called “poop-out”
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Mirtazapine (“California rocket fuel” ; a potentially powerful dual
+serotonin and norepinephrine combination, but observe for activation
+of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+action, but observe for activation of bipolar disorder and suicidal
+ideation)
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2593>>>
+
+Jatrosom N (trifluoperazine), 803
+Jornay PM (d, l-methylphenidate), 487
+Julap (selegiline), 705
+Jumex (selegiline), 705
+Jumexal (selegiline), 705
+Kai (lofexidine), 427
+Kainever (estazolam), 281
+Kalma (alprazolam), 11
+Kanopan 75 (maprotiline), 465
+Kapvay (clonidine), 179
+Karbazin (carbamazepine), 131
+Kataved (esketamine), 275
+Keppra (levetiracetam), 399
+Ketalar (ketamine), 383
+ketamine, 383
+Ketanest (esketamine), 275
+Ketanest S (esketamine), 275
+Kinabide (selegiline), 705
+Klarium (diazepam), 229
+Klofelins (clonidine), 179
+Klonopin (clonazepam), 173
+Klopoxid (chlordiazepoxide), 147
+Kloproman (chlorpromazine), 153
+Klorproman (chlorpromazine), 153
+Klotriptyl (chlordiazepoxide), 147
+Klozapol (clozapine), 191
+Labileno (lamotrigine), 387
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2598>>>
+
+Majorpin (zotepine), 883
+Mallorol (thioridazine), 759
+Maludil (maprotiline), 465
+Mandro-Zep (diazepam), 229
+Manerix (moclobemide), 515
+Maniprex (lithium), 415
+Mapro Gry (maprotiline), 465
+Mapro Tablinen (maprotiline), 465
+Maprolu (maprotiline), 465
+Maprolu-50 (maprotiline), 465
+Maprostad (maprotiline), 465
+Maprotibene (maprotiline), 465
+Maprotilin (maprotiline), 465
+maprotiline, 465
+Marax (hyroxyzine), 355
+Mareen 50 (doxepin), 255
+Mariastel (sulpiride), 741
+Marplan (isocarboxazid), 375
+Martimil (nortriptyline), 551
+Masmoran (hydroxyzine), 355
+Maveral (fluvoxamine), 325
+Maximed (protriptyline), 657
+Maxivalet (amitriptyline), 25
+Mazepine (carbamazepine), 131
+Medipam (diazepam), 229
+Medopam (oxazepam), 569
+Mefurine (thioridazine), 759
+Megaphen (chlorpromazine), 153
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

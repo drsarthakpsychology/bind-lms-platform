@@ -4,6 +4,10 @@ import * as React from "react";
 import { Search, StickyNote } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { haptic } from "@/lib/haptics";
+import { MobileListItem } from "@/components/mobile/mobile-list-item";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { MobileTextarea } from "@/components/mobile/mobile-input";
+import { useDraft } from "@/lib/hooks/use-draft";
 
 interface NoteState {
   own: string;
@@ -17,7 +21,7 @@ interface Doc {
   title: string;
   sourceUrl: string;
   licence: string;
-  snippet: string;
+  abstract: string;
   fetchedAt: string;
 }
 
@@ -35,10 +39,18 @@ export function LibraryList({
   const router = useRouter();
   const sp = useSearchParams();
   const [q, setQ] = React.useState(query);
-  const [openId, setOpenId] = React.useState<string | null>(null);
+  const [readDoc, setReadDoc] = React.useState<Doc | null>(null);
+  const [noteDocId, setNoteDocId] = React.useState<string | null>(null);
   const [notes, setNotes] = React.useState<Record<string, NoteState>>({});
-  const [noteDraft, setNoteDraft] = React.useState<Record<string, string>>({});
   const [savingNote, setSavingNote] = React.useState<string | null>(null);
+  const [noteError, setNoteError] = React.useState<string | null>(null);
+
+  // Draft buffer keyed by documentId so closing the sheet never loses an
+  // unsaved note (T35).
+  const { value: noteDraftValue, setValue: setNoteDraftValue, clear: clearNoteDraft } = useDraft(
+    noteDocId ? `lib-note:${noteDocId}` : "lib-note:",
+  );
+  const displayNote = noteDocId ? noteDraftValue || notes[noteDocId]?.own || "" : "";
 
   async function loadNotes(docId: string) {
     if (notes[docId]?.loaded) return;
@@ -64,22 +76,27 @@ export function LibraryList({
     }
   }
 
-  async function saveNote(docId: string) {
-    if (savingNote) return;
+  async function saveNote(docId: string, text: string) {
+    if (savingNote || !text.trim()) return;
     setSavingNote(docId);
+    setNoteError(null);
     haptic("tap");
     try {
       const res = await fetch("/api/practice/library/note", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ documentId: docId, note: noteDraft[docId] ?? "" }),
+        body: JSON.stringify({ documentId: docId, note: text }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        setNoteError("Couldn't save your note. Check your connection and try again.");
+        return;
+      }
       haptic("success");
-      setNotes((n) => ({ ...n, [docId]: { ...(n[docId] ?? { peers: [], unlocked: false, loaded: true }), own: noteDraft[docId] ?? "", unlocked: true } }));
+      setNotes((n) => ({ ...n, [docId]: { ...(n[docId] ?? { peers: [], unlocked: false, loaded: true }), own: text, unlocked: true } }));
       // Reload so peers' notes unlock.
       setNotes((n) => { const next = { ...n }; delete next[docId]; return next; });
       void loadNotes(docId);
+      clearNoteDraft();
     } finally {
       setSavingNote(null);
     }
@@ -94,6 +111,8 @@ export function LibraryList({
     router.push(`/practice/library?${params.toString()}`);
   }
 
+  const currentDoc = noteDocId ? docs.find((d) => d.id === noteDocId) ?? null : null;
+
   return (
     <div className="space-y-4">
       <form onSubmit={submit} className="relative">
@@ -101,6 +120,7 @@ export function LibraryList({
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
+          enterKeyHint="search"
           placeholder={`Search ${totalCount} case reports…`}
           className="w-full rounded-md border-2 border-border bg-background py-2 pl-9 pr-3 text-small focus:outline-none focus:ring-2 focus:ring-ring"
         />
@@ -118,81 +138,124 @@ export function LibraryList({
           <p className="text-caption text-muted-foreground">
             Showing {shown} of {totalCount} reports
           </p>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {docs.map((d) => {
-              const open = openId === d.id;
+              const hasOwnNote = Boolean(notes[d.id]?.own);
               return (
-                <li key={d.id} className="overflow-hidden rounded-md border-2 border-border bg-card">
-                  <button
-                    type="button"
+                <li key={d.id}>
+                  <MobileListItem
                     onClick={() => {
-                      setOpenId(open ? null : d.id);
+                      setReadDoc(d);
                       haptic("tap");
-                      if (!open) void loadNotes(d.id);
                     }}
-                    className="w-full px-4 py-3 text-left transition-colors duration-fast ease-snappy hover:bg-accent/40"
-                  >
-                    <span className="block text-small font-medium">{d.title}</span>
-                    <span className="mt-0.5 block text-caption text-muted-foreground">
-                      {d.licence.toUpperCase()} · {d.fetchedAt}
-                    </span>
-                  </button>
-                  {open ? (
-                    <div className="space-y-2 border-t border-border px-4 py-3">
-                      <p className="text-small text-muted-foreground">{d.snippet}…</p>
-                      <a
-                        href={d.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-caption font-medium text-link hover:underline"
-                      >
-                        Open on PMC →
-                      </a>
-
-                      {/* annotation — your note unlocks peers' */}
-                      <div className="mt-3 rounded-md border border-border bg-background p-3">
-                        <p className="flex items-center gap-1.5 text-caption font-semibold text-muted-foreground">
-                          <StickyNote className="size-3.5" aria-hidden /> Your note
-                        </p>
-                        <textarea
-                          value={noteDraft[d.id] ?? notes[d.id]?.own ?? ""}
-                          onChange={(e) => setNoteDraft((m) => ({ ...m, [d.id]: e.target.value }))}
-                          rows={3}
-                          placeholder="Highlight the teaching point for yourself…"
-                          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-2 py-1.5 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => void saveNote(d.id)}
-                          disabled={savingNote === d.id || !(noteDraft[d.id] ?? "").trim()}
-                          className="mt-1 rounded-md border-2 border-border bg-primary px-3 py-1 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
-                        >
-                          {savingNote === d.id ? "Saving…" : notes[d.id]?.own ? "Update note" : "Save note"}
-                        </button>
-                        <p className="mt-1 text-caption text-muted-foreground">
-                          {notes[d.id]?.unlocked
-                            ? "Your note unlocked the cohort's notes on this case."
-                            : "Write your own note to unlock peers' notes on this case."}
-                        </p>
-                        {notes[d.id]?.peers.length ? (
-                          <ul className="mt-2 space-y-1.5 border-t border-border pt-2">
-                            {notes[d.id].peers.map((p) => (
-                              <li key={p.id} className="text-caption text-muted-foreground">
-                                <span className="font-semibold text-foreground">Peer: </span>
-                                {p.note}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-                      </div>
-                    </div>
-                  ) : null}
+                    title={d.title}
+                    subtitle={d.abstract.slice(0, 90) + (d.abstract.length > 90 ? "…" : "")}
+                    trailing={
+                      <StickyNote
+                        className={hasOwnNote ? "size-4 text-primary" : "size-4 text-muted-foreground"}
+                        aria-hidden
+                      />
+                    }
+                  />
                 </li>
               );
             })}
           </ul>
         </>
       )}
+
+      {/* Read sheet — full abstract + PMC link + the note affordance. */}
+      <MobileBottomSheet
+        open={readDoc !== null}
+        onOpenChange={(o) => !o && setReadDoc(null)}
+        title={readDoc?.title}
+        footer={
+          <div className="space-y-2">
+            {readDoc ? (
+              <a
+                href={readDoc.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center text-caption font-medium text-link hover:underline"
+              >
+                Open the original →
+              </a>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => {
+                const id = readDoc?.id ?? null;
+                setReadDoc(null);
+                setNoteDocId(id);
+                if (id) void loadNotes(id);
+                haptic("tap");
+              }}
+              className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+            >
+              Add your note
+            </button>
+          </div>
+        }
+      >
+        {readDoc ? (
+          <p className="text-small leading-relaxed text-muted-foreground">{readDoc.abstract}</p>
+        ) : null}
+      </MobileBottomSheet>
+
+      {/* Note sheet — your note first, save persists, then peers unlock. */}
+      <MobileBottomSheet
+        open={noteDocId !== null}
+        onOpenChange={(o) => !o && setNoteDocId(null)}
+        title="Your note"
+        description={currentDoc?.title}
+        footer={
+          <div className="space-y-2">
+            {noteError ? (
+              <p className="text-caption text-status-alert-fg" role="alert">
+                {noteError}
+              </p>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => noteDocId && void saveNote(noteDocId, displayNote)}
+              disabled={savingNote === noteDocId || !displayNote.trim()}
+              className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+            >
+              {savingNote === noteDocId ? "Saving…" : notes[noteDocId ?? ""]?.own ? "Update note" : "Save note"}
+            </button>
+          </div>
+        }
+      >
+        <div className="space-y-3">
+          <MobileTextarea
+            rows={4}
+            placeholder="Highlight the teaching point for yourself…"
+            value={displayNote}
+            onChange={(e) => setNoteDraftValue(e.target.value)}
+          />
+          {notes[noteDocId ?? ""]?.unlocked ? (
+            <>
+              <p className="text-caption text-muted-foreground">
+                Your note unlocked the cohort&apos;s notes on this case.
+              </p>
+              {notes[noteDocId ?? ""]?.peers.length ? (
+                <ul className="space-y-1.5 border-t border-border pt-2">
+                  {notes[noteDocId ?? ""].peers.map((p) => (
+                    <li key={p.id} className="text-caption text-muted-foreground">
+                      <span className="font-semibold text-foreground">Peer: </span>
+                      {p.note}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </>
+          ) : (
+            <p className="text-caption text-muted-foreground">
+              Write your own note to unlock peers&apos; notes on this case.
+            </p>
+          )}
+        </div>
+      </MobileBottomSheet>
     </div>
   );
 }

@@ -2,11 +2,20 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Mic } from "lucide-react";
+import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { VoiceInput } from "@/components/practice/voice-input";
+import { VoiceConversation } from "@/components/sim/voice-conversation";
+import { LiveKitVoiceScreen } from "@/components/sim/livekit-voice-screen";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { useDraft } from "@/lib/hooks/use-draft";
+import { useReducedMotion } from "@/lib/motion";
+import { SimulationHeader } from "@/components/sim/simulation-header";
+import { ChatComposer } from "@/components/sim/chat-composer";
+import { ChatList } from "@/components/sim/chat-list";
+import { NotesSheet } from "@/components/sim/notes-sheet";
+import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
@@ -39,9 +48,11 @@ const DIFFICULTY_HINT: Record<string, string> = {
 };
 
 /**
- * The live simulated-patient chat. Student types, patient responds via the
- * AI route (or fixture when AI_ENABLED=false). Includes the SIMULATION badge,
- * a timer, the difficulty hint, and a "finish & debrief" action.
+ * The live simulated-patient chat — rebuilt as a full-screen conversation
+ * (not a 70vh card). Header (back + name + status pill + timer + more) →
+ * transcript (bubbles, no name labels) → composer (voice toggle + input +
+ * send). Notes and hint live in bottom sheets; "finish & debrief" is in the
+ * "more" menu. The old giant amber fixture banner is a quiet status pill.
  */
 export function SimSessionView({
   sessionId,
@@ -49,81 +60,82 @@ export function SimSessionView({
   patientAge,
   patientContext,
   difficulty,
-  fixtureMode = false,
+  livekitEnabled = false,
   initialTurns,
   voicePrefs,
   branchInfo,
   provisionalDims,
+  startedAt,
 }: {
   sessionId: string;
   patientName: string;
   patientAge?: number;
   patientContext?: string;
   difficulty: string;
-  /** Bug 3: true when the engine is serving canned (fixture) responses —
-   *  the amber banner must make that unmistakable. */
-  fixtureMode?: boolean;
+  /** Realtime voice over LiveKit when configured (falls back to browser voice). */
+  livekitEnabled?: boolean;
   initialTurns: Turn[];
+  startedAt?: string;
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
-  /** A1 retry: this session is a branch — parent turns + score for the
-   *  attempt-1 vs attempt-2 comparison strip in the debrief. */
   branchInfo?: {
     parentSessionId: string;
     branchedFromTurn: number;
     parentTurns: Turn[];
     parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
   };
-  /** A3: rubric dimensions still provisional — their numeric scores are hidden
-   *  from students (qualitative feedback only). */
   provisionalDims?: string[];
 }) {
   const router = useRouter();
   const [turns, setTurns] = React.useState<Turn[]>(initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })));
-  const [input, setInput] = React.useState("");
+  // Composer draft + notes survive refresh/interruption via localStorage (T46/T35).
+  const { value: input, setValue: setInput } = useDraft(`sim:draft:${sessionId}`);
+  const mseNotesDraft = useDraft(`sim:mse:${sessionId}`);
+  const hypothesesDraft = useDraft(`sim:hyp:${sessionId}`);
+  const hasNotes = Boolean(mseNotesDraft.value.trim() || hypothesesDraft.value.trim());
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-  const [seconds, setSeconds] = React.useState(0);
+  // Elapsed time derives from the server `started_at` so the 12-min limit
+  // survives a resume/interruption instead of resetting to 0 (T47).
+  const [seconds, setSeconds] = React.useState(() =>
+    startedAt ? Math.max(0, Math.floor((Date.now() - new Date(startedAt).getTime()) / 1000)) : 0,
+  );
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
-  // v5 §6 — the Director's affect + fatigue drive delivery line by line.
   const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
   const [patientFatigue, setPatientFatigue] = React.useState(0);
-  // Side rail — blank MSE scratchpad + hypotheses (never autofilled: what the
-  // student wrote is half the assessment).
-  const [mseNotes, setMseNotes] = React.useState("");
-  const [hypotheses, setHypotheses] = React.useState("");
-  const [sideRailOpen, setSideRailOpen] = React.useState(false);
-  const [typing, setTyping] = React.useState(false);
-  // Bug 4: the hint is opt-in — collapsed by default; opening it is flagged
-  // so the debrief can show whether hints were used.
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [notesOpen, setNotesOpen] = React.useState(false);
   const [hintOpen, setHintOpen] = React.useState(false);
+  const [caseInfoOpen, setCaseInfoOpen] = React.useState(false);
+  const [confirmFinish, setConfirmFinish] = React.useState(false);
   const hintUsedRef = React.useRef(false);
-  // Bug 2: a stable id of the in-flight patient reply, so the reveal ticks
-  // update by id and a second student message can never duplicate it.
+  // Phase 1 observability: true when the last turn fell back to the scripted
+  // patient engine (dev-only amber pill; never surfaced in production).
+  const [aiFallback, setAiFallback] = React.useState(false);
+  const [typing, setTyping] = React.useState(false);
   const pendingReply = React.useRef<string | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const voiceMetrics = useVoiceMetrics();
 
-  const SESSION_LIMIT_S = 12 * 60; // 12-minute timer (v3 Part 6.1)
+  const SESSION_LIMIT_S = 12 * 60;
   const typingTimer = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Timer; auto-finish at 12 minutes.
   React.useEffect(() => {
     const id = setInterval(() => setSeconds((s) => s + 1), 1000);
     return () => clearInterval(id);
   }, []);
 
-  // Autoscroll to bottom on new turns.
-  React.useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [turns.length, debrief]);
+  const reduceMotion = useReducedMotion();
 
-  // Clear the typing interval on unmount.
+  React.useEffect(() => {
+    const el = scrollRef.current;
+    el?.scrollTo({ top: el.scrollHeight, behavior: reduceMotion ? "auto" : "smooth" });
+  }, [turns.length, debrief, typing, reduceMotion]);
+
   React.useEffect(() => () => { if (typingTimer.current) clearInterval(typingTimer.current); }, []);
 
-  // Auto-finish at the 12-minute mark.
   const didAutoFinish = React.useRef(false);
   React.useEffect(() => {
     if (seconds >= SESSION_LIMIT_S && !didAutoFinish.current && !debrief) {
@@ -132,10 +144,6 @@ export function SimSessionView({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds]);
-
-  const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
-  const ss = String(seconds % 60).padStart(2, "0");
-  const overTime = seconds >= SESSION_LIMIT_S;
 
   async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
@@ -159,7 +167,6 @@ export function SimSessionView({
         } else {
           setError(j?.error ?? "The patient didn't respond. Please try again.");
         }
-        // revert the student turn so it isn't double-sent
         setTurns((t) => t.filter((x) => x.id !== studentTurnId));
         setInput(text);
         return;
@@ -170,38 +177,28 @@ export function SimSessionView({
         affect?: Affect;
         fatigue?: number;
         mood?: string;
+        aiFallback?: boolean;
       };
-      // v5 §6 — the Director's affect drives this line's delivery.
       if (j.affect) {
         setPatientAffect(j.affect);
         setPatientFatigue(Number(j.fatigue ?? 0));
       }
-      // Human-realistic typing delay: reveal the reply progressively so it
-      // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
-      // Stage directions are BEHAVIOUR, not text: each delivery cue pauses the
-      // reveal for its `seconds` before the words after it appear.
+      setAiFallback(Boolean(j.aiFallback));
       setTyping(true);
       const full = j.reply;
       const patientTurnId = crypto.randomUUID();
       setTurns((t) => [...t, { id: patientTurnId, role: "patient", content: "" }]);
       pendingReply.current = patientTurnId;
       const charsPerTick = 4;
-      // Build a schedule of segments: each has a target reveal length and a
-      // hold time. Delivery cues (pauses/sighs/etc.) become segments that
-      // HOLD for their seconds — the words after them wait — so the student
-      // feels the pause instead of reading it.
       const schedule: Array<{ until: number; holdMs: number }> = [];
       let cursor = 0;
       const cues = (j.delivery ?? []).slice().sort((a, b) => a.position - b.position);
       for (const cue of cues) {
-        if (cue.position > cursor) {
-          schedule.push({ until: cue.position, holdMs: 40 });
-        }
+        if (cue.position > cursor) schedule.push({ until: cue.position, holdMs: 40 });
         schedule.push({ until: cue.position, holdMs: Math.round(cue.seconds * 1000) });
         cursor = cue.position;
       }
       if (cursor < full.length) schedule.push({ until: full.length, holdMs: 40 });
-      // The last segment's hold is just the typing cadence; done when reached.
       let seg = 0;
       let shown = 0;
       let holdUntil = 0;
@@ -215,7 +212,6 @@ export function SimSessionView({
         }
         const spec = schedule[seg];
         if (spec.holdMs > 40) {
-          // Pause segment: hold the current text for the cue's duration.
           if (holdUntil === 0) holdUntil = Date.now() + spec.holdMs;
           if (Date.now() < holdUntil) return;
           shown = spec.until;
@@ -223,9 +219,7 @@ export function SimSessionView({
           seg += 1;
         } else {
           shown = Math.min(spec.until, shown + charsPerTick);
-          if (shown >= spec.until) {
-            seg += 1;
-          }
+          if (shown >= spec.until) seg += 1;
         }
         setTurns((t) =>
           t.map((x) => (x.id === patientTurnId ? { ...x, content: full.slice(0, shown) } : x)),
@@ -233,7 +227,11 @@ export function SimSessionView({
       }, 40);
       haptic("tap");
     } catch {
+      // Same recovery contract as the !res.ok path: never lose the student's
+      // text, never leave a ghost message (T50).
       setError("Network error. Your message may not have reached the patient.");
+      setTurns((t) => t.filter((x) => x.id !== studentTurnId));
+      setInput(text);
     } finally {
       setBusy(false);
       textareaRef.current?.focus();
@@ -246,6 +244,7 @@ export function SimSessionView({
     if (ending) return;
     setEnding(true);
     setError(null);
+    setMenuOpen(false);
     haptic("warning");
     try {
       const res = await fetch("/api/practice/sim/debrief", {
@@ -256,7 +255,7 @@ export function SimSessionView({
       if (!res.ok) {
         const j = await res.json().catch(() => null);
         if (res.status === 503) {
-          setError("Debrief needs a no-train AI provider. Add a key in the morning, or ask faculty to run it.");
+          setError("The debrief couldn't be generated right now. Try again, or ask your faculty.");
         } else {
           setError(j?.error ?? "Could not run the debrief.");
         }
@@ -273,7 +272,6 @@ export function SimSessionView({
     }
   }
 
-  // If debrief is ready, show it.
   if (debrief) {
     return (
       <DebriefView
@@ -291,262 +289,210 @@ export function SimSessionView({
   }
 
   return (
-    <div className="flex h-[70vh] flex-col rounded-md border-2 border-border bg-card hard-shadow-sm">
-      {/* header — the patient, always in view. Timer is quiet and secondary. */}
-      <div className="flex items-center justify-between gap-3 border-b-2 border-border px-4 py-2.5">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-full border-2 border-border bg-secondary text-base font-bold text-foreground" aria-hidden>
-            {patientName.charAt(0)}
-          </span>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="truncate text-small font-semibold">
-                {patientName}{patientAge ? `, ${patientAge}` : ""}
-              </span>
-              <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-caption capitalize text-muted-foreground">
-                {difficulty}
-              </span>
-            </div>
-            {patientContext ? (
-              <p className="truncate text-caption text-muted-foreground">{patientContext}</p>
-            ) : null}
-          </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-2.5">
-          {/* turn counter */}
-          <span className="text-caption text-muted-foreground" aria-label={`Turn ${turns.length}`}>
-            Turn {Math.max(1, turns.length)}
-          </span>
-          {/* timer — quiet and secondary */}
-          <span
-            className={`text-caption tabular-nums ${overTime ? "font-semibold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : "text-muted-foreground"}`}
-            aria-live="polite"
-          >
-            {mm}:{ss}
-          </span>
-          {/* side-rail toggle */}
-          <button
-            type="button"
-            onClick={() => { setSideRailOpen((o) => !o); haptic("tap"); }}
-            aria-pressed={sideRailOpen}
-            className="rounded-md border-2 border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px"
-          >
-            {sideRailOpen ? "Hide notes" : "Notes"}
-          </button>
-        </div>
-      </div>
-
-      {/* fixture-mode banner (Bug 3) — canned responses must never be
-          mistaken for the real patient */}
-      {fixtureMode ? (
-        <div className="border-b-2 border-amber-400 bg-amber-50 px-4 py-2 text-caption font-semibold text-amber-800" role="status">
-          ⚠ Offline mode — canned responses. No live AI provider is connected;
-          the patient is scripted. Add a provider key to run a real session.
-        </div>
-      ) : null}
-
-      {/* hint — Bug 4: opt-in, collapsed by default */}
-      <div className="border-b border-border bg-secondary/50 px-4 py-2 text-caption text-muted-foreground">
-        {overTime ? (
-          <span className="font-semibold text-red-600">Time&apos;s up — finishing your debrief.</span>
-        ) : seconds >= SESSION_LIMIT_S - 60 ? (
-          <span className="text-amber-600">One minute left.</span>
-        ) : hintOpen ? (
-          <span>{DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}</span>
+    <div className="flex h-dvh flex-col bg-background">
+      {/* Focused voice mode — the whole screen becomes the conversation. Same
+          turns, same session, same patient as text (one brain). Realtime
+          LiveKit when configured, the browser conversational loop otherwise. */}
+      {voiceMode ? (
+        livekitEnabled ? (
+        <LiveKitVoiceScreen
+          sessionId={sessionId}
+          patientName={patientName}
+          onExitVoice={() => setVoiceMode(false)}
+          onEnd={() => setConfirmFinish(true)}
+          busy={busy}
+        />
         ) : (
-          <button
-            type="button"
-            onClick={() => { setHintOpen(true); hintUsedRef.current = true; haptic("tap"); }}
-            className="underline decoration-dotted underline-offset-2 hover:text-foreground"
-          >
-            Need a hint?
-          </button>
-        )}
-      </div>
-
-      <div className="flex min-h-0 flex-1">
-        {/* transcript column */}
-        <div className="flex min-w-0 flex-1 flex-col">
-          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
-        {turns.length === 0 ? (
-          <div className="py-8 text-center">
-            <p className="text-base font-medium">
-              {patientName} is waiting.
-            </p>
-            <p className="mt-1 text-small text-muted-foreground">
-              Introduce yourself and ask how they&apos;re doing. Silence is okay — they&apos;ll wait.
-            </p>
-          </div>
-        ) : null}
-        {turns.map((t) => (
-          <div
-            key={t.id}
-            className={`flex flex-col ${t.role === "student" ? "items-end" : "items-start"}`}
-          >
-            <span className={`mb-1 text-caption text-muted-foreground ${t.role === "student" ? "mr-1" : "ml-1"}`}>
-              {t.role === "student" ? "You" : patientName}
-            </span>
-            <div
-              className={`max-w-[80%] rounded-lg px-3 py-2 text-small leading-relaxed ${
-                t.role === "student"
-                  ? "rounded-br-none bg-primary text-primary-foreground"
-                  : "rounded-bl-none border border-border bg-card text-foreground"
-              }`}
-            >
-              {t.content}
-            </div>
-          </div>
-        ))}
-        {typing ? (
-          <div className="flex flex-col items-start">
-            <span className="mb-1 ml-1 text-caption text-muted-foreground">{patientName}</span>
-            <div className="flex items-center gap-1 rounded-lg rounded-bl-none border border-border bg-card px-3 py-2.5">
-              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "0ms" }} aria-hidden />
-              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "120ms" }} aria-hidden />
-              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "240ms" }} aria-hidden />
-              <span className="sr-only">{patientName} is answering</span>
-            </div>
-          </div>
-        ) : null}
-          </div>
-        </div>
-
-        {/* side rail — blank MSE scratchpad + hypotheses (never autofilled) */}
-        {sideRailOpen ? (
-          <aside className="w-72 shrink-0 space-y-3 overflow-y-auto border-l-2 border-border bg-background/60 p-3">
-            <div>
-              <p className="text-eyebrow text-muted-foreground">MSE scratchpad</p>
-              <textarea
-                value={mseNotes}
-                onChange={(e) => setMseNotes(e.target.value)}
-                rows={7}
-                placeholder="Appearance, speech, mood, affect, thought…"
-                aria-label="MSE scratchpad"
-                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <div>
-              <p className="text-eyebrow text-muted-foreground">Hypotheses</p>
-              <textarea
-                value={hypotheses}
-                onChange={(e) => setHypotheses(e.target.value)}
-                rows={5}
-                placeholder="What do you think is going on?"
-                aria-label="Hypotheses"
-                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <p className="text-caption text-muted-foreground">
-              This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
-            </p>
-          </aside>
-        ) : null}
-      </div>
-
-      {/* error */}
-      {error ? (
-        <div className="border-t border-border bg-red-50 px-4 py-2 text-small text-red-700" role="alert">
-          {error}
-        </div>
-      ) : null}
-
-      {/* input */}
-      <div className="border-t-2 border-border p-3">
-        {/* voice/text toggle */}
-        <div className="mb-2 flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setVoiceMode((v) => !v)}
-            aria-pressed={voiceMode}
-            className={`inline-flex items-center gap-1.5 rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-transform active:translate-y-px ${
-              voiceMode ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"
-            }`}
-          >
-            <Mic className="size-3.5" aria-hidden />
-            {voiceMode ? "Voice on" : "Voice"}
-          </button>
-          <span className="text-caption text-muted-foreground">
-            {voiceMode
-              ? "Hold the mic to talk, release to send. Edit the transcript before sending."
-              : "Type your question. Enter to send."}
-          </span>
-        </div>
-
-        {voiceMode && voicePrefs ? (
-          <VoiceInput
-            onSend={(t) => {
-              voiceMetrics.recordStudentSpeech(t);
-              void send(t);
-            }}
-            onPatientSpeak={() => {
-              // The last patient line, spoken via the case's affect-driven prefs.
-              // The actual TTS lives inside VoiceInput's hook; this callback
-              // lets the parent supply the text to speak.
-              const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
-              return lastPatient?.content ?? "";
-            }}
-            patientVoicePrefs={
-              patientAffect
-                ? {
-                    rate: affectToVoice(patientAffect, {
-                      fatigue: patientFatigue,
-                      baseRate: voicePrefs?.rate ?? 1,
-                      basePitch: voicePrefs?.pitch ?? 1,
-                    }).rate,
-                    pitch: affectToVoice(patientAffect, {
-                      fatigue: patientFatigue,
-                      baseRate: voicePrefs?.rate ?? 1,
-                      basePitch: voicePrefs?.pitch ?? 1,
-                    }).pitch,
-                    lang: voicePrefs?.lang ?? "en-IN",
-                    gender: voicePrefs?.gender,
-                  }
-                : voicePrefs
-            }
-            disabled={busy}
-          />
-        ) : (
-          <div className="flex items-end gap-2">
-            <textarea
-              ref={textareaRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  void send();
+        <VoiceConversation
+          patientName={patientName}
+          onSend={(t) => {
+            voiceMetrics.recordStudentSpeech(t);
+            void send(t);
+          }}
+          patientReply={[...turns].reverse().find((t) => t.role === "patient")?.content ?? ""}
+          patientVoicePrefs={
+            patientAffect
+              ? {
+                  rate: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).rate,
+                  pitch: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).pitch,
+                  lang: voicePrefs?.lang ?? "en-IN",
+                  gender: voicePrefs?.gender,
                 }
-              }}
-              placeholder={`Say something to ${patientName}…`}
-              rows={2}
-              className="flex-1 resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-              aria-label="Your message to the patient"
-            />
+              : (voicePrefs ?? { rate: 1, pitch: 1, lang: "en-IN" })
+          }
+          onExitVoice={() => setVoiceMode(false)}
+          onEnd={() => setConfirmFinish(true)}
+          busy={busy}
+        />
+        )
+      ) : (
+        <>
+      <SimulationHeader
+        patientName={patientName}
+        patientAge={patientAge}
+        difficulty={difficulty}
+        seconds={seconds}
+        onMore={() => setMenuOpen(true)}
+        notesIndicator={hasNotes}
+        aiFallback={aiFallback}
+      />
+
+      {/* Transcript — owns the viewport. */}
+      <ChatList turns={turns} patientName={patientName} typing={typing} scrollRef={scrollRef} />
+
+      {/* Error — a single quiet line, not a panel. */}
+      {error ? (
+        <p className="border-t border-border bg-card px-4 py-2 text-small text-status-alert-fg" role="alert">
+          {error}
+        </p>
+      ) : null}
+
+      {/* Finish & debrief — a visible affordance above the composer once an
+          exchange exists (T45). Secondary outline so send stays the dominant
+          primary; tapping opens a confirm sheet to prevent slip-taps. */}
+      {turns.length >= 2 ? (
+        <div className="border-t border-border bg-card px-3 pt-2">
+          <button
+            type="button"
+            onClick={() => setConfirmFinish(true)}
+            className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-semibold text-foreground transition-transform active:translate-y-px"
+          >
+            <Flag className="size-4" aria-hidden />
+            Finish &amp; debrief
+          </button>
+        </div>
+      ) : null}
+
+      <ChatComposer
+        value={input}
+        onChange={setInput}
+        onSend={() => void send()}
+        voiceMode={voiceMode}
+        onToggleVoice={() => setVoiceMode((v) => !v)}
+        busy={busy}
+        voiceAvailable
+        patientName={patientName}
+      />
+        </>
+      )}
+
+      {/* "More" menu — hint reveal, notes, finish. Secondary actions live here. */}
+      <MobileBottomSheet open={menuOpen} onOpenChange={setMenuOpen} title="Session">
+        <div className="space-y-2">
+            {/* Hint — opt-in, flagged for the debrief. */}
             <button
               type="button"
-              onClick={() => void send()}
-              disabled={busy || !input.trim()}
-              className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+              onClick={() => {
+                setMenuOpen(false);
+                setHintOpen(true);
+                hintUsedRef.current = true;
+                haptic("tap");
+              }}
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-left text-small font-medium text-foreground active:translate-y-px"
             >
-              Send
+              <Lightbulb className="size-5 shrink-0 text-link" aria-hidden />
+              <span className="flex-1">Need a hint?</span>
+            </button>
+
+            {/* Case info — who you're talking to, one tap away. */}
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                setCaseInfoOpen(true);
+                haptic("tap");
+              }}
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-left text-small font-medium text-foreground active:translate-y-px"
+            >
+              <User className="size-5 shrink-0 text-link" aria-hidden />
+              <span className="flex-1">About {patientName}</span>
+            </button>
+
+            {/* Notes — opens the MSE/hypotheses sheet. */}
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                setNotesOpen(true);
+                haptic("tap");
+              }}
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-left text-small font-medium text-foreground active:translate-y-px"
+            >
+              <NotebookPen className="size-5 shrink-0 text-link" aria-hidden />
+              <span className="flex-1">Notes</span>
             </button>
           </div>
-        )}
+        </MobileBottomSheet>
 
-        <div className="mt-2 flex items-center justify-between">
-          <p className="text-caption text-muted-foreground">
-            {voiceMode ? "Voice sends as text — the patient hears via your browser." : "Enter to send · Shift+Enter for a new line"}
+      {/* Finish confirm — a two-step sheet so the session-ending action is never
+          a slip-tap (§3.6). */}
+      <MobileBottomSheet
+        open={confirmFinish}
+        onOpenChange={setConfirmFinish}
+        title={`End the session with ${patientName}?`}
+        description="You'll go to the debrief and won't be able to continue this conversation."
+        footer={
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setConfirmFinish(false)}
+              disabled={ending}
+              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-medium text-muted-foreground active:translate-y-px"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={() => void finishAndDebrief()}
+              disabled={ending}
+              className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2.5 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
+            >
+              {ending ? "Scoring…" : "Finish session"}
+            </button>
+          </div>
+        }
+      />
+
+      {/* Notes sheet — MSE scratchpad + hypotheses (a bottom sheet, not a sidebar). */}
+      <NotesSheet
+        open={notesOpen}
+        onOpenChange={setNotesOpen}
+        mseNotes={mseNotesDraft.value}
+        onMseNotesChange={mseNotesDraft.setValue}
+        hypotheses={hypothesesDraft.value}
+        onHypothesesChange={hypothesesDraft.setValue}
+        hasContent={hasNotes}
+      />
+
+      {/* Hint — opt-in, flagged for the debrief. */}
+      <HintSheet
+        open={hintOpen}
+        onOpenChange={setHintOpen}
+        hint={DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
+      />
+
+      {/* Case info — the patient's context, as far as you know it walking in.
+          Not a dossier: just who they are. (T135 secondary actions in sheets.) */}
+      <MobileBottomSheet
+        open={caseInfoOpen}
+        onOpenChange={setCaseInfoOpen}
+        title={`About ${patientName}`}
+        description="What you know walking in — nothing more."
+      >
+        <dl className="space-y-2.5 text-small">
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="shrink-0 text-muted-foreground">Age</dt>
+            <dd className="text-right font-medium">{patientAge ? `${patientAge} years` : "—"}</dd>
+          </div>
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="shrink-0 text-muted-foreground">Background</dt>
+            <dd className="text-right font-medium">{patientContext ?? "—"}</dd>
+          </div>
+          <p className="pt-1 text-caption text-muted-foreground">
+            Everything else, you find out by asking.
           </p>
-          <button
-            type="button"
-            onClick={() => void finishAndDebrief()}
-            disabled={ending || turns.length < 2}
-            className="rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px disabled:opacity-40"
-          >
-            {ending ? "Scoring…" : "Finish & debrief"}
-          </button>
-        </div>
-      </div>
+        </dl>
+      </MobileBottomSheet>
     </div>
   );
 }

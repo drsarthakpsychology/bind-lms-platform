@@ -132,7 +132,7 @@ export function SupervisionLog({
             onChange={(e) => setActivity(e.target.value)}
             maxLength={1000}
             placeholder="e.g. Case review with Dr. Rao — formulation of the OCD case"
-            className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+            className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -146,7 +146,7 @@ export function SupervisionLog({
               step={0.5}
               value={hours}
               onChange={(e) => setHours(e.target.value)}
-              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-numeric text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-numeric text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <div>
@@ -156,7 +156,7 @@ export function SupervisionLog({
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <div>
@@ -165,7 +165,7 @@ export function SupervisionLog({
               id="sup-comp"
               value={competency}
               onChange={(e) => setCompetency(e.target.value)}
-              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             >
               <option value="">— none —</option>
               {competencies.map((c) => (
@@ -180,24 +180,24 @@ export function SupervisionLog({
               value={supervisor}
               onChange={(e) => setSupervisor(e.target.value)}
               placeholder="Name"
-              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
         </div>
         {/* A9 transfer loop — the outcome measure */}
         <div className="rounded-md border border-border bg-secondary/30 p-3">
-          <p className="text-caption font-semibold text-muted-foreground">The transfer loop — this is your outcome measure</p>
+          <p className="text-caption font-semibold text-muted-foreground">What you tried — and what happened</p>
           <label htmlFor="transfer-note" className="mt-2 block text-caption font-medium text-muted-foreground">
             What did you try that you practised here — and what happened?
           </label>
-          <textarea
+          <textarea enterKeyHint="enter"
             id="transfer-note"
             value={transferNote}
             onChange={(e) => setTransferNote(e.target.value)}
             rows={2}
             maxLength={2000}
             placeholder="e.g. I used the open-question funnel from the Decoder in a real intake. The client opened up about the debt within two questions."
-            className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+            className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
           />
           <label className="mt-2 flex items-start gap-2 text-caption text-muted-foreground">
             <input type="checkbox" checked={consentPromo} onChange={(e) => setConsentPromo(e.target.checked)} className="mt-0.5" />

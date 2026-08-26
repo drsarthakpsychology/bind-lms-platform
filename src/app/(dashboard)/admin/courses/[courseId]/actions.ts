@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import { verifyObjectExists } from "@/lib/storage-verify";
+import { policyVersion } from "@/lib/legal-constants";
 
 export type SignedUploadResult =
   | { ok: true; path: string; token: string }
@@ -17,9 +18,27 @@ export async function enrollStudent(
   if (!(await requireAdmin())) return { error: "Not authorized." };
 
   const supabase = await createClient();
+  // The enrolment record carries the terms acceptance (timestamp + policy
+  // version) — the audit trail that makes the no-refund term defensible. On a
+  // re-enrol it is only written once (first acceptance wins).
+  const { data: existing } = await supabase
+    .from("course_enrollments")
+    .select("policy_acceptance_at")
+    .eq("course_id", courseId)
+    .eq("user_id", userId)
+    .maybeSingle();
   const { error } = await supabase
     .from("course_enrollments")
-    .upsert({ course_id: courseId, user_id: userId }, { onConflict: "user_id,course_id" });
+    .upsert(
+      {
+        course_id: courseId,
+        user_id: userId,
+        ...(existing?.policy_acceptance_at
+          ? {}
+          : { policy_acceptance_at: new Date().toISOString(), policy_version: policyVersion() }),
+      },
+      { onConflict: "user_id,course_id" },
+    );
 
   if (error) return { error: "Could not enroll the student." };
   revalidatePath(`/admin/courses/${courseId}`);

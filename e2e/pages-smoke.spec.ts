@@ -11,10 +11,9 @@ test.describe("app page coverage", () => {
     const pages: Array<{ path: string; heading: RegExp }> = [
       { path: "/practice", heading: /Walk into your first real intake ready/ },
       { path: "/practice/ethics", heading: /consequence comes first/i },
-      { path: "/practice/check-in", heading: /How's the week, really|How.s the week/i },
-      { path: "/practice/supervision", heading: /supervision log/i },
-      { path: "/practice/library", heading: /browse the corpus/i },
-      { path: "/practice/passport", heading: /competencies, evidenced|passport/i },
+      { path: "/record", heading: /paper trail|supervision log|your record/i },
+      { path: "/practice/library", heading: /case library/i },
+      { path: "/passport", heading: /competencies, evidenced|passport/i },
       { path: "/practice/judgment", heading: /5 Judgment Calls/i },
       { path: "/practice/mse", heading: /MSE|Mental status/i },
       { path: "/practice/rounds", heading: /Rounds|cards/i },

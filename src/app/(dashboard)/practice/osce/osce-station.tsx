@@ -8,6 +8,10 @@ import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
 
+/** In-flight snapshot key — a mid-station refresh/lock restores the station
+ *  instead of dropping the transcript + checklist (T46/T47). */
+const OSCE_KEY = "osce:in-flight";
+
 export function OsceStationView() {
   const [stationIdx, setStationIdx] = React.useState(0);
   const [phase, setPhase] = React.useState<"choose" | "active" | "selfassess">("choose");
@@ -22,6 +26,59 @@ export function OsceStationView() {
   const [recording, setRecording] = React.useState(false);
   const [spoken, setSpoken] = React.useState("");
   const sttRef = React.useRef<ReturnType<typeof createWebStt>>(null);
+
+  // Restore the in-flight snapshot after first paint (deferred so it neither
+  // races hydration nor sets state synchronously inside the effect body).
+  React.useEffect(() => {
+    const id = window.setTimeout(() => {
+      try {
+        const raw = window.localStorage.getItem(OSCE_KEY);
+        if (!raw) return;
+        const s = JSON.parse(raw) as {
+          stationIdx?: number;
+          phase?: "choose" | "active" | "selfassess";
+          seconds?: number;
+          done?: boolean;
+          checked?: Record<string, boolean>;
+          selfGlobal?: number;
+          startedAt?: string;
+          spoken?: string;
+        };
+        if (typeof s.stationIdx === "number") setStationIdx(s.stationIdx);
+        if (s.phase) setPhase(s.phase);
+        if (typeof s.seconds === "number") setSeconds(s.seconds);
+        if (typeof s.done === "boolean") setDone(s.done);
+        if (s.checked) setChecked(s.checked);
+        if (typeof s.selfGlobal === "number") setSelfGlobal(s.selfGlobal);
+        if (s.startedAt) setStartedAt(new Date(s.startedAt));
+        if (s.spoken) setSpoken(s.spoken);
+      } catch {
+        /* ignore */
+      }
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  // Persist the snapshot on every change.
+  React.useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        OSCE_KEY,
+        JSON.stringify({
+          stationIdx,
+          phase,
+          seconds,
+          done,
+          checked,
+          selfGlobal,
+          startedAt: startedAt ? startedAt.toISOString() : null,
+          spoken,
+        }),
+      );
+    } catch {
+      /* ignore */
+    }
+  }, [stationIdx, phase, seconds, done, checked, selfGlobal, startedAt, spoken]);
 
   React.useEffect(() => {
     return () => sttRef.current?.abort();
@@ -252,15 +309,14 @@ export function OsceStationView() {
             {selfGlobal || "—"}{selfGlobal ? `/${station.global_rating.max}` : ""}
           </p>
           <p className="mt-1 text-caption text-muted-foreground">
-            {selfGlobal ? `norm ${Math.round((selfGlobal / station.global_rating.max) * 100)}%` : "pick above"}
+            {selfGlobal ? "your overall call" : "pick above"}
           </p>
         </div>
         <div className="rounded-md border-2 border-border bg-background p-3">
-          <p className="text-caption text-muted-foreground">Composite</p>
+          <p className="text-caption text-muted-foreground">Overall</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
             {selfGlobal ? `${Math.round(composite * 100)}%` : "—"}
           </p>
-          <p className="mt-1 text-caption text-muted-foreground">60/40 checklist·global</p>
         </div>
       </div>
 
@@ -285,6 +341,11 @@ export function OsceStationView() {
           }
           setDone(true);
           setPhase("choose");
+          try {
+            window.localStorage.removeItem(OSCE_KEY);
+          } catch {
+            /* ignore */
+          }
           haptic("success");
         }}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"

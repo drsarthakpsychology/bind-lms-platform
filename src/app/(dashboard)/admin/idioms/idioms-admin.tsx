@@ -3,6 +3,8 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
+import { MoreHorizontal } from "lucide-react";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export interface IdiomRow {
   id: string;
@@ -20,6 +22,8 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
   const [editing, setEditing] = React.useState<string | null>(null);
   const [phrase, setPhrase] = React.useState("");
   const [trap, setTrap] = React.useState("");
+  /** Row whose ⋯ overflow menu is open (Edit/Delete live behind it). */
+  const [menuId, setMenuId] = React.useState<string | null>(null);
 
   async function act(id: string, patch: Record<string, unknown>) {
     setBusy(true);
@@ -62,10 +66,12 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
   if (rows.length === 0) {
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-        No idioms in the bank. Re-run <code className="rounded bg-muted px-1.5 py-0.5">npm run seed-idioms</code>.
+        No phrases yet. They appear here once the programme adds them.
       </div>
     );
   }
+
+  const menuRow = rows.find((r) => r.id === menuId) ?? null;
 
   return (
     <div className="space-y-3">
@@ -102,27 +108,61 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
               <p className="mt-1 min-w-0 break-words text-small text-muted-foreground">
                 <span className="font-medium">Trap:</span> {row.trap}
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex items-center gap-2">
                 {!row.approved ? (
-                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
+                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="min-h-[44px] rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
                     Approve &amp; publish
                   </button>
                 ) : (
-                  <button type="button" onClick={() => void act(row.id, { approved: false })} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold text-muted-foreground">
+                  <button type="button" onClick={() => void act(row.id, { approved: false })} disabled={busy} className="min-h-[44px] rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold text-muted-foreground">
                     Unapprove
                   </button>
                 )}
-                <button type="button" onClick={() => startEdit(row)} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
-                  Edit
-                </button>
-                <button type="button" onClick={() => void remove(row.id)} disabled={busy} className="ml-auto rounded-md border-2 border-destructive/40 bg-status-alert-bg px-3 py-1 text-caption font-semibold text-destructive">
-                  Delete
+                <button
+                  type="button"
+                  onClick={() => setMenuId(row.id)}
+                  aria-label="More actions"
+                  className="ml-auto flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-background text-muted-foreground transition-colors hover:bg-accent"
+                >
+                  <MoreHorizontal className="size-4" aria-hidden />
                 </button>
               </div>
             </>
           )}
         </div>
       ))}
+      <MobileBottomSheet
+        open={menuRow != null}
+        onOpenChange={(o) => {
+          if (!o) setMenuId(null);
+        }}
+        title={menuRow?.phrase}
+      >
+        {menuRow ? (
+          <div className="space-y-1.5">
+            <button
+              type="button"
+              onClick={() => {
+                startEdit(menuRow);
+                setMenuId(null);
+              }}
+              className="flex min-h-[44px] w-full items-center rounded-md border-2 border-border bg-background px-3 text-small font-medium transition-colors hover:bg-accent"
+            >
+              Edit phrase &amp; trap
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                void remove(menuRow.id);
+                setMenuId(null);
+              }}
+              className="flex min-h-[44px] w-full items-center rounded-md border-2 border-destructive/40 bg-status-alert-bg px-3 text-small font-semibold text-destructive"
+            >
+              Delete
+            </button>
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

@@ -73,9 +73,11 @@ test("weak-spots drill flow: page loads → drill renders → complete → remed
     await expect(page.locator("h1")).toContainText(/choose your patient/i);
     console.log("✓ remedy CTA lands on the Consulting Room");
   } else if (hasEmpty) {
-    // Empty state: the remedy is a pointer to the Consulting Room on the page.
-    await expect(page.locator("a[href='/practice/consulting-room']").first()).toBeVisible();
-    console.log("✓ empty state points at the Consulting Room");
+    // Empty state: honest guidance to run the Consulting Room (no fabricated
+    // link — the empty card states the path in words).
+    await expect(page.getByText(/No sessions scored yet/i).first()).toBeVisible();
+    await expect(page.getByText(/Run the Consulting Room/i).first()).toBeVisible();
+    console.log("✓ empty state explains the path to the Consulting Room");
   } else {
     // No-consistent-spots: no drill is expected; spots (if any) carry remedies.
     console.log("✓ no-consistent-spots state renders (drill correctly absent)");

@@ -3,6 +3,7 @@ import { SupervisionLog, type SupervisionEntry } from "@/app/(dashboard)/practic
 import { CheckinForm } from "@/app/(dashboard)/practice/check-in/checkin-form";
 import { requireFeature } from "@/lib/flags";
 import { Reveal } from "@/components/motion/reveal";
+import { RecordTabs } from "./record-tabs";
 
 export const dynamic = "force-dynamic";
 
@@ -69,37 +70,29 @@ export default async function RecordPage() {
       </Reveal>
 
       <Reveal delay={0.15}>
-        <section aria-label="Supervision log" className="space-y-3">
-          <h2 className="text-h2 flex items-center gap-2">Supervision log</h2>
-          <p className="text-small text-muted-foreground">
-            Log real-world contact hours with your supervisor. Tag a competency and the hour
-            feeds your Skills Passport; ask for sign-off when ready.
-          </p>
-          <SupervisionLog entries={list} competencies={(competencies ?? []).map((c) => ({ key: c.key as string, name: c.name as string }))} />
-        </section>
-      </Reveal>
-
-      <Reveal delay={0.2}>
-        <section aria-label="Weekly check-in" className="space-y-3">
-          <h2 className="text-h2 flex items-center gap-2">Weekly check-in</h2>
-          <p className="text-small text-muted-foreground">
-            Thirty seconds. Not clinical, not graded — just a read on the cohort so faculty
-            can adjust. Faculty see trends only, never who said what.
-          </p>
-          <CheckinForm
-            weekLabel={weekLabel}
-            initial={
-              checkin
-                ? {
-                    workload: checkin.workload as number,
-                    energy: checkin.energy as number,
-                    preparedness: checkin.preparedness as number,
-                    freeLine: (checkin.free_line as string | null) ?? undefined,
-                  }
-                : undefined
-            }
-          />
-        </section>
+        <RecordTabs
+          supervision={
+            <SupervisionLog
+              entries={list}
+              competencies={(competencies ?? []).map((c) => ({ key: c.key as string, name: c.name as string }))}
+            />
+          }
+          checkin={
+            <CheckinForm
+              weekLabel={weekLabel}
+              initial={
+                checkin
+                  ? {
+                      workload: checkin.workload as number,
+                      energy: checkin.energy as number,
+                      preparedness: checkin.preparedness as number,
+                      freeLine: (checkin.free_line as string | null) ?? undefined,
+                    }
+                  : undefined
+              }
+            />
+          }
+        />
       </Reveal>
     </div>
   );

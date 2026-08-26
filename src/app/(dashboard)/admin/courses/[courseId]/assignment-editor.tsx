@@ -19,15 +19,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 // Accepted types come from the media registry — only types with a working
 // student path are offered. Adding a type without its path would show
@@ -242,42 +234,52 @@ export function AssignmentEditor({
             </Button>
           )}
           {!editing && (
-            <Dialog open={deleteOpen} onOpenChange={setDeleteOpen}>
-              <DialogTrigger asChild>
-                <Button type="button" variant="ghost" size="icon-sm" aria-label="Delete assignment">
-                  <Trash2 className="size-4" aria-hidden />
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Delete this assignment?</DialogTitle>
-                  <DialogDescription>
-                    This deletes the assignment and all its submissions. This can&apos;t be undone.
-                  </DialogDescription>
-                </DialogHeader>
-                <DialogFooter>
-                  <Button type="button" variant="outline" onClick={() => setDeleteOpen(false)}>
-                    Cancel
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="destructive"
-                    onClick={async () => {
-                      setDeletePending(true);
-                      const result = await deleteAssignment(courseId, lessonId, assignment.id);
-                      setDeletePending(false);
-                      setDeleteOpen(false);
-                      if (result.error) setError(result.error);
-                      else router.refresh();
-                    }}
-                    disabled={deletePending}
-                  >
-                    {deletePending && <Loader2 className="size-4 animate-spin" aria-hidden />}
-                    Delete assignment
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+            <>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                aria-label="Delete assignment"
+                onClick={() => setDeleteOpen(true)}
+              >
+                <Trash2 className="size-4" aria-hidden />
+              </Button>
+              <MobileBottomSheet
+                open={deleteOpen}
+                onOpenChange={setDeleteOpen}
+                title="Delete this assignment?"
+                description="This deletes the assignment and all its submissions. This can't be undone."
+                footer={
+                  <div className="flex flex-col gap-2">
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      onClick={async () => {
+                        setDeletePending(true);
+                        const result = await deleteAssignment(courseId, lessonId, assignment.id);
+                        setDeletePending(false);
+                        setDeleteOpen(false);
+                        if (result.error) setError(result.error);
+                        else router.refresh();
+                      }}
+                      disabled={deletePending}
+                      className="w-full"
+                    >
+                      {deletePending && <Loader2 className="size-4 animate-spin" aria-hidden />}
+                      Delete assignment
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setDeleteOpen(false)}
+                      className="w-full"
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                }
+              />
+            </>
           )}
         </div>
       </div>
@@ -316,69 +318,79 @@ export function AssignmentEditor({
             />
           </label>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <label className="block space-y-1.5">
-              <span className="text-small font-medium">Due date &amp; time</span>
-              <input
-                type="datetime-local"
-                value={dueAt}
-                onChange={(e) => setDueAt(e.target.value)}
-                className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
-              />
-            </label>
-            <label className="flex h-9 items-center gap-2.5 text-small font-medium">
-              <Switch checked={allowLate} onCheckedChange={setAllowLate} aria-label="Allow late submissions" />
-              Allow late submissions
-            </label>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <label className="block space-y-1.5">
-              <span className="text-small font-medium">Max files</span>
-              <input
-                type="number"
-                min={1}
-                value={maxFiles}
-                onChange={(e) => setMaxFiles(Number(e.target.value))}
-                className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
-              />
-            </label>
-            <label className="block space-y-1.5">
-              <span className="text-small font-medium">Max MB / file</span>
-              <input
-                type="number"
-                min={1}
-                value={maxFileMb}
-                onChange={(e) => setMaxFileMb(Number(e.target.value))}
-                className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
-              />
-            </label>
-          </div>
-
-          <fieldset>
-            <legend className="text-small font-medium">Accepted file types</legend>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {ACCEPTED_FORMAT_OPTIONS.map((opt) => (
-                <label
-                  key={opt.value}
-                  className={
-                    "inline-flex cursor-pointer items-center gap-1.5 rounded-md border-2 px-2.5 py-1 text-xs font-medium transition-colors " +
-                    (accepted.includes(opt.value)
-                      ? "border-foreground bg-primary text-primary-foreground"
-                      : "border-border bg-background text-muted-foreground hover:bg-accent")
-                  }
-                >
+          <details className="rounded-md border-2 border-border bg-muted/40">
+            <summary className="cursor-pointer select-none px-3 py-2 text-small font-semibold text-foreground">
+              Submission settings
+              <span className="ml-2 font-normal text-muted-foreground">
+                due date, late policy, file limits, formats
+              </span>
+            </summary>
+            <div className="space-y-4 border-t-2 border-border p-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label className="block space-y-1.5">
+                  <span className="text-small font-medium">Due date &amp; time</span>
                   <input
-                    type="checkbox"
-                    checked={accepted.includes(opt.value)}
-                    onChange={() => toggleAccepted(opt.value)}
-                    className="sr-only"
+                    type="datetime-local"
+                    value={dueAt}
+                    onChange={(e) => setDueAt(e.target.value)}
+                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
-                  {opt.label}
                 </label>
-              ))}
+                <label className="flex h-9 items-center gap-2.5 text-small font-medium">
+                  <Switch checked={allowLate} onCheckedChange={setAllowLate} aria-label="Allow late submissions" />
+                  Allow late submissions
+                </label>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <label className="block space-y-1.5">
+                  <span className="text-small font-medium">Max files</span>
+                  <input
+                    type="number"
+                    min={1}
+                    value={maxFiles}
+                    onChange={(e) => setMaxFiles(Number(e.target.value))}
+                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
+                  />
+                </label>
+                <label className="block space-y-1.5">
+                  <span className="text-small font-medium">Max MB / file</span>
+                  <input
+                    type="number"
+                    min={1}
+                    value={maxFileMb}
+                    onChange={(e) => setMaxFileMb(Number(e.target.value))}
+                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
+                  />
+                </label>
+              </div>
+
+              <fieldset>
+                <legend className="text-small font-medium">Accepted file types</legend>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {ACCEPTED_FORMAT_OPTIONS.map((opt) => (
+                    <label
+                      key={opt.value}
+                      className={
+                        "inline-flex cursor-pointer items-center gap-1.5 rounded-md border-2 px-2.5 py-1 text-xs font-medium transition-colors " +
+                        (accepted.includes(opt.value)
+                          ? "border-foreground bg-primary text-primary-foreground"
+                          : "border-border bg-background text-muted-foreground hover:bg-accent")
+                      }
+                    >
+                      <input
+                        type="checkbox"
+                        checked={accepted.includes(opt.value)}
+                        onChange={() => toggleAccepted(opt.value)}
+                        className="sr-only"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
+          </details>
 
           <label className="flex h-6 items-center gap-2.5 text-small font-medium">
             <Switch checked={isPublished} onCheckedChange={setIsPublished} aria-label="Published" />

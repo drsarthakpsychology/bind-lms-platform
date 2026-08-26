@@ -1,5 +1,32 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
+## 🚨 ROSTER — 2026-08-26 (one key, then import → review → send)
+
+The roster is `scripts/roster/roster.csv` (64 rows, name+email, clean — the
+earlier "50 empty names" bug is fixed: the source sheet had names in a shifted
+column for part of the rows). The flow is now three separate steps:
+
+1. **Import** (`/admin/tools` → "Import students", or
+   `npm run roster:import -- scripts/roster/roster.csv`): creates the accounts
+   (scope=lectures_only, role student) and records them as **Pending**. No email.
+2. **Review** (`/admin/roster`): see the full batch — name, email, status,
+   date — before anything goes out.
+3. **Send** (`/admin/roster` → "Send all pending" / select rows / retry): each
+   row flips to Sent/Failed with the reason. There's also a **Send test email**
+   button (real template, `[TEST]` marked) to verify the key first.
+
+To actually email, the ONLY hard blocker is:
+
+1. **Set `RESEND_API_KEY`** (the key you've decided to use) in `.env.local`
+   (and Vercel for production). `RESEND_FROM_EMAIL` defaults to
+   `VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>`.
+
+Apply the pending migrations (all additive) via `npm run apply-migrations`:
+- `profiles_access_scope.sql` (lecture-only scope)
+- `credential_invites.sql` (the send queue)
+- `profiles_status_blocked.sql` (blocked override)
+- `calibration_auto_signals.sql` (automatic calibration columns)
+
 Every item: paste → something switches on → verify with one command. Free first.
 
 ## 🟢 Free — no card, no cost
@@ -471,3 +498,123 @@ Math.random→crypto.randomUUID for turn IDs, secrets audit clean (no
 service-role/session-secret in bundles), agent-readiness discovery live
 (api-catalog, openapi.json, agent-card, oauth-protected-resource, auth.md,
 agent-skills index, markdown negotiation, robots.txt Content-Signals).
+
+## 🔌 AI provider offline in production (0.8, 2026-08-14)
+Root cause: `AI_ENABLED` is unset AND no provider keys (GROQ_API_KEY etc.) are in
+Vercel production env — so `isEnabled()`=false and the sim runs on deterministic
+fixtures (the "Offline mode" banner). To go live: `vercel env add AI_ENABLED true`
++ `vercel env add GROQ_API_KEY <key>` (Groq is the verified no-train primary; key
+is in .env.local). This is a production AI-enablement + data-policy decision —
+deferring to Kavya rather than flipping prod AI unilaterally.
+
+### LIVE MOBILE QA — 90/90 complete; one human step left
+The mobile-first rebuild is complete (all 90 QUEUE items ticked, gate green:
+lint 0, tsc clean, 486 tests, build). Live e2e verified 2026-08-14: mobile
+matrix 26/26 (320-430 + 1280/1440), pages-smoke 12/12, consulting/OSCE/
+formulation/MSE/rounds/journal/wall/palette/tools journeys, interruption-
+resume, visual-pass (no overflow + CTA reachable). Real bugs fixed: rounds
+SEED_CARDS 500, material-viewer dead POST, dynamic-route id guards, psych-
+search debounce, admin status tokens.
+
+ONE HUMAN STEP REMAINS: review screenshots/mobile/*.png (6 screens at 390x844,
+captured by e2e/visual-pass.spec.ts) and give the final visual sign-off on
+T88/T90. Re-run `npx playwright test e2e/visual-pass.spec.ts` to refresh them.
+
+## 📱 Device QA (human step) — T151 video
+Physical-device video QA: play a lesson video on a real phone and confirm
+full-screen rotates to landscape (the player now requests a landscape lock
+with a graceful fallback), controls stay usable, and resume position holds.
+The Playwright matrix (e2e/mobile-matrix.spec.ts) is green; this is the
+human-thumb pass. One line: "T151 done" once verified on an iPhone + Android.
+
+## 🎙 Realtime voice — when you want it (documented in docs/REALTIME_VOICE_PLAN.md)
+The current browser voice (STT/TTS + the real AI patient) works today, $0.
+To upgrade to true realtime (streaming, native barge-in, echo cancellation),
+LiveKit's free Build tier fits all 50 students. ONLY when you want it:
+1. Create a LiveKit Cloud account (livekit.io, free Build plan, no card).
+2. Create a project → Settings → Keys → copy API key + secret.
+3. Add to `.env.local` (never commit): LIVEKIT_URL, LIVEKIT_API_KEY, LIVEKIT_API_SECRET.
+4. Provision one tiny worker host (Fly.io free tier or a 256MB VPS) for the agent.
+Then the integration (token route + worker + LiveKit client) is a focused change —
+the session/state engine is already realtime-ready.
+
+## 📱 Device QA — the two physical-device steps
+- **Voice-audio e2e** (headless has no mic): tap TALK, speak, interrupt, speak again,
+  switch to text and back — one continuous conversation. Playwright can't do the audio.
+- **iOS video fullscreen**: confirm fullscreen fills the screen + landscape lock.
+## 🌐 Chatterbox voice on AWS — the ONE thing that makes the voice live (2026-08-15)
+
+Everything is built + verified locally (real Chatterbox audio, the production
+server + scale-to-zero gateway tested, cost model in
+`docs/CHATTERBOX_AWS_DEPLOY.md`). The only blocker is **AWS authentication**.
+
+### Step 1 — Authenticate (secure, browser-based — no secrets in chat)
+
+> Open a terminal → run: `aws configure sso` → pick region `ap-south-1` →
+> your browser opens → log in with your AWS account → approve → come back.
+> Then: `export AWS_PROFILE=<the profile name it prints>` and
+> `aws sts get-caller-identity` (should print your account, not an error).
+
+That's the whole authentication. Nothing gets pasted into chat; keys live only
+in the AWS CLI's own store.
+
+### Step 2 — I deploy (automatic, I do the rest)
+
+```bash
+CHATTERBOX_AUTH_TOKEN=<a-long-secret> REGION=ap-south-1 ./scripts/chatterbox-server/deploy.sh
+```
+
+This launches ONE always-on `t3.nano` gateway (~$4/mo) + ONE `g4dn.xlarge`
+SPOT GPU that is **OFF until a student talks** and stops itself after 8 min
+idle (scale-to-zero). It prints the `CHATTERBOX_URL`; I wire it into
+`.env.local`, restart the worker, and run the real end-to-end test +
+benchmark (1/2/3/5 concurrent), then report: GPU, hourly/monthly/3-month cost,
+credit consumption, max concurrent, and the cold-start behaviour.
+
+**Cost ceiling:** ~$90 of the ~$100 credits over 3 months. If you'd like, also
+set a $10 + $30 AWS Budgets alarm so nothing surprises you — I'll include that
+in the deploy once you're authenticated.
+
+## 🟡 2026-08-16 — AI-actor brief DONE (code); two decisions left before Aug 20
+
+Phase 1–4 of the AI-actor brief are committed and gate-green:
+
+- **Phase 1** loud scripted-fallback logging (`f6cd84b`)
+- **Phase 2** `/api/sim/health` diagnostic + repair chain + **Vercel Production
+  LLM keys verified** (`dc2b8ec`, `ba4d646`) — GROQ/SAMBANOVA/OPENROUTER/
+  OPENCODE + AI_ENABLED=true all fingerprint-match `.env.local`
+- **Phase 3** Actor full-context proof, 23/23 blocks (`5c3e589`)
+- **Phase 4** TTS default = Cartesia sonic-2, Chatterbox opt-in (`93a056f`)
+
+Two things need YOU:
+
+1. **Deploy the branch to prod** — the fix is only live after a deploy. The
+   branch (`feat/mobile-design-system`) is **202 commits ahead of main**
+   (mobile design system + voice + these AI fixes). That's a real ship
+   decision: `vercel --prod` from this branch, or rebase the AI fixes onto
+   main and ship those first. After the deploy, `GET /api/sim/health` (admin)
+   should return 200 with `servable: true`.
+2. **Device-QA the voice session** — a live mic + speaker check that the
+   Cartesia-primary worker speaks real audio in a session (browser-only; a
+   headless box can't play audio). The machine side is verified (worker
+   registered + a headless dispatch logged
+   `[patient-agent] TTS: livekit-inference (cartesia/sonic-2) primary`); only
+   the human loop (say something → the patient's voice answers) remains.
+
+## 🟡 2026-08-17 — Policy section is LIVE; two placeholders need you
+
+The full policy section (14 policies + index) is deployed to vibhapsychology.com
+and verified. Two values are still TODO constants and render as their
+placeholder tokens on the live pages — supply both in
+`src/lib/legal-constants.ts` (one-file edit) and the pages follow:
+
+1. **`REGISTERED_ADDRESS`** — full business address with PIN code (the
+   Ahmedabad clinic address is fine). Legally mandatory under the Consumer
+   Protection (E-Commerce) Rules, 2020.
+2. **`EFFECTIVE_DATE`** — the date you publish. Binds which policy version
+   governs which enrolment (acceptance timestamps already record it as
+   `policy_version`).
+
+Nothing else is outstanding: routes, redirects, footer legal links, waitlist
+acceptance checkbox (persisting timestamp + version), sitemap, JSON-LD, print
+styles, and responsive tables are all verified live.

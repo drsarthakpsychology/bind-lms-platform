@@ -17,12 +17,14 @@ test.describe("admin access boundary", () => {
       "/admin/submissions",
     ]) {
       await page.goto(path, { waitUntil: "domcontentloaded" });
-      // The server redirect (admin layout → /dashboard) settles after the
-      // initial shell; give it the full round-trip.
-      await page.waitForTimeout(1500);
-      const finalUrl = page.url();
-      expect(finalUrl, `${path} must redirect away for a student`).not.toMatch(/\/admin(\/|$)/);
-      console.log(`✓ student redirected ${path} → ${finalUrl}`);
+      // The admin layout redirects away (→ /dashboard) server-side. Under
+      // concurrent load the redirect can take a beat past the shell load, so
+      // WAIT for it to land rather than asserting after a fixed sleep — a real
+      // (genuine) access gap still fails the poll on timeout.
+      await expect
+        .poll(async () => page.url(), { timeout: 10000, intervals: [250, 500, 1000] })
+        .not.toMatch(/\/admin(\/|$)/);
+      console.log(`✓ student redirected ${path} → ${page.url()}`);
     }
   });
 });

@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { haptic } from "@/lib/haptics";
 import { panelDistribution, scoreSctResponse, type SctItem, type SctResponse } from "@/lib/practice/sct";
 import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 const RESPONSE_LABELS: Record<SctResponse, string> = {
   [-2]: "Much less likely",
@@ -89,17 +91,25 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     const total = answered.reduce((a, b) => a + b.score, 0);
     const avg = answered.length ? total / answered.length : 0;
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
-        <h2 className="text-base font-semibold">Done for today</h2>
-        <p className="mt-2 text-small text-muted-foreground">
-          {answered.length} judgment calls in {mm}:{ss}. Panel-aligned score:{" "}
-          <span className="font-semibold text-numeric">{(avg * 100).toFixed(0)}%</span>.
-        </p>
-        <p className="mt-2 text-small text-muted-foreground">
-          This is a trend over the cohort, not a grade. Experts disagree — the distribution
-          is the lesson.
-        </p>
-      </div>
+      <MobileCompletionState
+        title="Done for today"
+        description={
+          <>
+            {answered.length} judgment calls in {mm}:{ss}. Panel-aligned score:{" "}
+            <span className="font-semibold text-numeric">{(avg * 100).toFixed(0)}%</span>.
+            {" "}This is a trend over the cohort, not a grade — experts disagree, the
+            distribution is the lesson.
+          </>
+        }
+        action={
+          <Link
+            href="/practice"
+            className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-primary px-5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          >
+            Back to practice
+          </Link>
+        }
+      />
     );
   }
 
@@ -123,14 +133,14 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
         </p>
         <p className="mt-4 text-small font-medium">This becomes:</p>
 
-        <div className="mt-2 grid grid-cols-5 gap-2">
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-5">
           {([-2, -1, 0, 1, 2] as SctResponse[]).map((r) => (
             <button
               key={r}
               type="button"
               onClick={() => answer(r)}
               disabled={showPanel}
-              className="rounded-md border-2 border-border bg-background px-2 py-2 text-caption font-medium transition-transform active:translate-y-px disabled:opacity-60"
+              className="rounded-md border-2 border-border bg-background px-3 py-2 text-left text-caption font-medium transition-transform active:translate-y-px disabled:opacity-60 min-h-11"
             >
               {RESPONSE_LABELS[r]}
             </button>
@@ -156,7 +166,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
           </div>
           <p className="mt-3 text-small text-muted-foreground">
             Your call scored <span className="font-semibold text-numeric">{(answered[answered.length - 1]?.score * 100).toFixed(0)}%</span>{" "}
-            of the modal panel weight. Partial credit for reasonable disagreement is the whole point.
+            against the expert panel. Partial credit for reasonable disagreement is the whole point.
           </p>
           <button
             type="button"

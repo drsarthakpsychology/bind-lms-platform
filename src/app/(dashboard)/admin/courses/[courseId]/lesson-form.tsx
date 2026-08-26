@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
-import { CheckCircle2, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
+import { CheckCircle2, ChevronDown, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState } from "./actions";
 import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
@@ -36,6 +36,8 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
   const [videoPath, setVideoPath] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const [requiresAssignment, setRequiresAssignment] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     if (wasPending.current && !pending && !state.error) {
@@ -136,6 +138,8 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
             type="text"
             required
             placeholder="Psychiatric Interviewing Basics"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="w-24 space-y-1.5">
@@ -156,8 +160,24 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
           name="description"
           rows={3}
           placeholder="Shown to students under the video."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+
+      {/* Live preview — the lesson card as the student sees it (T103). */}
+      <details className="group rounded-md border-2 border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+          <span className="text-small font-medium">Preview</span>
+          <ChevronDown className="size-4 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
+        </summary>
+        <div className="border-t border-border px-4 py-3">
+          <p className="text-small font-semibold">{title.trim() || "Lesson title"}</p>
+          <p className="mt-1 text-small text-muted-foreground">
+            {description.trim() || "Notes shown to students under the video."}
+          </p>
+        </div>
+      </details>
 
       <label className="flex h-6 items-center gap-2.5 text-small font-medium text-foreground">
         {/* The Switch renders a button and doesn't submit a value, so keep a
@@ -205,8 +225,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
               ))}
             </div>
             <p className="mt-1.5 text-caption text-muted-foreground">
-              Students can submit using any of the selected formats. Text and audio upload are available
-              today; the other types are reserved and will be enforced as they ship.
+              Students can submit using any of the selected formats.
             </p>
           </fieldset>
         </div>

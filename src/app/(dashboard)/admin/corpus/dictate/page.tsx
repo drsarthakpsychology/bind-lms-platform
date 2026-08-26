@@ -1,16 +1,15 @@
 import { createClient } from "@/lib/supabase/server";
 import { DictateConversation } from "./dictate-conversation";
-import { DictateForm } from "./dictate-form";
 
 export const dynamic = "force-dynamic";
 
 /**
  * /admin/corpus/dictate — Dr. Sarthak records anonymised composite cases
  * from his own practice (Part 4.3: the highest-value corpus source).
- * A7: default view is the CONVERSATION — he talks (or types), an interviewer
- * state machine asks the next clinical question, and the finished dictation
- * saves as a sim_case draft (source='faculty_dictated', approved=false).
- * The classic form remains as a fallback tab.
+ * The ONLY surface is the conversation: record (or type), the interviewer
+ * asks the next clinical question conversationally, and the finished
+ * dictation saves as a sim_case draft. There is no schema-shaped form — the
+ * structured case spec is built from what he says, not from fields he fills.
  */
 export default async function DictatePage() {
   const supabase = await createClient();
@@ -25,7 +24,7 @@ export default async function DictatePage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Corpus · Dictate</p>
+      <p className="text-eyebrow text-muted-foreground">Practice cases · Record a case</p>
       <h1 className="mt-1 text-h1">Dictate a case from practice</h1>
       <p className="mt-2 text-small text-muted-foreground">
         Twenty real presentations from your practice beat ten thousand scraped pages.
@@ -35,15 +34,6 @@ export default async function DictatePage() {
       <div className="mt-6">
         <DictateConversation />
       </div>
-
-      <details className="mt-6">
-        <summary className="cursor-pointer text-small font-medium text-muted-foreground">
-          Prefer the classic form? Use it instead
-        </summary>
-        <div className="mt-3">
-          <DictateForm />
-        </div>
-      </details>
 
       <div className="mt-8">
         <h2 className="text-base font-semibold">Recently dictated</h2>

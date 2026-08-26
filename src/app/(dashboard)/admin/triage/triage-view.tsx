@@ -16,22 +16,22 @@ export function TriageView({
   needs: Array<{ id: string; sessionId: string; overall: number; priority: number; premature: number }>;
   autoReleased: number;
   /** quiz items answered correctly by < 50% of attempts (low-confidence areas). */
-  weakQuizItems?: Array<{ itemId: string; correctPct: number; attempts: number }>;
+  weakQuizItems?: Array<{ itemId: string; prompt?: string; correctPct: number; attempts: number }>;
 }) {
   return (
     <div className="space-y-4">
       {/* low-confidence quiz areas — the curriculum signal */}
       {weakQuizItems.length > 0 ? (
-        <div className="rounded-md border-2 border-amber-400 bg-amber-50 p-3">
-          <p className="flex items-center gap-1.5 text-small font-semibold text-amber-800">
+        <div className="rounded-md border-2 border-status-pending-fg/40 bg-status-pending-bg p-3">
+          <p className="flex items-center gap-1.5 text-small font-semibold text-status-pending-fg">
             <AlertTriangle className="size-4" aria-hidden />
             {weakQuizItems.length} quiz items answered correctly less than half the time
           </p>
           <ul className="mt-2 space-y-1">
             {weakQuizItems.map((q) => (
-              <li key={q.itemId} className="flex items-center gap-2 text-caption text-amber-800">
-                <span className="font-medium">{q.itemId}</span>
-                <span className="text-muted-foreground">· {q.correctPct}% correct across {q.attempts} attempts</span>
+              <li key={q.itemId} className="flex items-start justify-between gap-2 text-caption text-status-pending-fg">
+                <span className="font-medium line-clamp-2">{q.prompt ?? q.itemId}</span>
+                <span className="shrink-0 text-muted-foreground">{q.correctPct}% correct · {q.attempts} attempts</span>
               </li>
             ))}
           </ul>
@@ -40,7 +40,7 @@ export function TriageView({
 
       <div className="flex items-center gap-2 rounded-md border-2 border-border bg-card p-3 text-small">
         <span className="flex items-center gap-1 font-medium">
-          <AlertTriangle className="size-4 text-amber-600" aria-hidden />
+          <AlertTriangle className="size-4 text-status-pending-fg" aria-hidden />
           {needs.length} need your eyes
         </span>
         <span className="ml-auto flex items-center gap-1 text-caption text-muted-foreground">

@@ -104,6 +104,14 @@ export const MSE_DOMAIN_ORDER = [
   "thought_content", "perception", "cognition", "insight", "judgment",
 ] as const;
 
+/** Human-readable label for a domain key: "thought_process" → "Thought process". */
+export function formatDomainKey(key: string): string {
+  return key
+    .split("_")
+    .map((w, i) => (i === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : w))
+    .join(" ");
+}
+
 export const DOMAIN_UNITS: DomainUnit[] = [
   { domain: "appearance", order: 1, probe: "Describe the patient as they sit before you.", whatYoureLookingFor: "Grooming, dress, posture, eye contact — the observable surface." },
   { domain: "behavior", order: 2, probe: "What is the patient doing as you talk?", whatYoureLookingFor: "Cooperation, restlessness, agitation, withdrawal — behaviour you can see." },

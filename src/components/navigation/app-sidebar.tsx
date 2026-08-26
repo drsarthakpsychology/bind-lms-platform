@@ -1,10 +1,10 @@
 import * as React from "react";
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import { Bell, LogOut, Settings } from "lucide-react";
 
 import { NavItems } from "@/components/navigation/nav-items";
 import { PaletteTrigger } from "@/components/search/palette-trigger";
-import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
+import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS } from "@/components/navigation/nav-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
@@ -20,16 +20,23 @@ export type SidebarMode = "admin" | "student";
 export function AppSidebar({
   role,
   mode,
+  scope = "full",
   viewModeSwitch,
   className,
 }: {
   role: "admin" | "student";
   mode: SidebarMode;
+  scope?: "full" | "lectures_only";
   viewModeSwitch?: React.ReactNode;
   className?: string;
 }) {
   const isAdminView = role === "admin" && mode === "admin";
-  const items = role === "admin" && mode === "admin" ? ADMIN_ITEMS : STUDENT_ITEMS;
+  const items =
+    role === "admin" && mode === "admin"
+      ? ADMIN_ITEMS
+      : scope === "lectures_only"
+        ? LECTURE_ONLY_ITEMS
+        : STUDENT_ITEMS;
 
   return (
     <aside
@@ -65,11 +72,27 @@ export function AppSidebar({
             {viewModeSwitch}
             <ThemeToggle />
           </div>
-          <form action={logout}>
-            <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
-              <LogOut className="size-4" aria-hidden />
-            </Button>
-          </form>
+          <div className="flex items-center gap-1.5">
+            <Link
+              href="/notifications"
+              className="inline-flex size-8 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              aria-label="Notifications"
+            >
+              <Bell className="size-4" aria-hidden />
+            </Link>
+            <Link
+              href="/settings"
+              className="inline-flex size-8 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              aria-label="Settings"
+            >
+              <Settings className="size-4" aria-hidden />
+            </Link>
+            <form action={logout}>
+              <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
+                <LogOut className="size-4" aria-hidden />
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
     </aside>

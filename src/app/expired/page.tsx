@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Hourglass } from "lucide-react";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { Button } from "@/components/ui/button";
+import { SiteFooter } from "@/components/site/site-footer";
 
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function ExpiredPage() {
           </div>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }

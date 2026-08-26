@@ -19,6 +19,7 @@ import {
   Pause,
   Play,
   RotateCcw,
+  Settings2,
   Volume2,
   VolumeX,
 } from "lucide-react";
@@ -46,6 +47,32 @@ function getFullscreenElement(): Element | null {
     d.msFullscreenElement ??
     null
   );
+}
+
+/**
+ * Best-effort landscape lock on fullscreen. The Screen Orientation API is not
+ * available or throws NotSupportedError on several mobile browsers (notably
+ * iOS Safari, and any browser where a programmatic lock is disallowed) — this
+ * is intentionally graceful: the video still plays portrait, we just ask.
+ */
+async function lockLandscape() {
+  const o = screen.orientation as (ScreenOrientation & { lock?: (o: string) => Promise<void> }) | undefined;
+  if (!o?.lock) return;
+  try {
+    await o.lock("landscape");
+  } catch {
+    /* unsupported — ignore */
+  }
+}
+
+function unlockOrientation() {
+  const o = screen.orientation as (ScreenOrientation & { unlock?: () => void }) | undefined;
+  if (!o?.unlock) return;
+  try {
+    o.unlock();
+  } catch {
+    /* unsupported — ignore */
+  }
 }
 
 const PLAYBACK_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
@@ -160,6 +187,13 @@ export function VideoPlayer({
   const [rate, setRate] = useState(1);
   const [rateMenuOpen, setRateMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  // Quality ladder — populated from hls.js levels on manifest parse. `quality`
+  // is "auto" (native ABR, currentLevel=-1) or an hls.js level INDEX (manual
+  // lock). The last manual pick persists per-device in localStorage (mobile
+  // data and office Wi-Fi warrant different defaults).
+  const [levels, setLevels] = useState<Array<{ height: number; index: number }>>([]);
+  const [quality, setQuality] = useState<"auto" | number>("auto");
+  const [qualityMenuOpen, setQualityMenuOpen] = useState(false);
   const hasCaptions = Boolean(captionsUrl);
   const [captionsOn, setCaptionsOn] = useState(true);
   const [playerState, setPlayerState] = useState<PlayerState>({ kind: "loading" });
@@ -256,6 +290,31 @@ export function VideoPlayer({
             });
             hls.loadSource(url);
             hls.attachMedia(video);
+            // Quality ladder: read the parsed levels, then restore the last
+            // per-device manual pick (localStorage). Auto stays the default.
+            hls.on(Hls.Events.MANIFEST_PARSED, (_evt, data) => {
+              const parsed = (data.levels ?? [])
+                .map((l, i) => ({ height: l.height, index: i }))
+                .filter((l) => l.height > 0)
+                .sort((a, b) => b.height - a.height);
+              setLevels(parsed);
+              try {
+                const saved = localStorage.getItem("plms-quality");
+                if (saved === "auto") {
+                  if (hls) hls.currentLevel = -1;
+                  setQuality("auto");
+                } else if (saved) {
+                  const h = Number(saved);
+                  const match = parsed.find((l) => l.height === h);
+                  if (match && hls) {
+                    hls.currentLevel = match.index;
+                    setQuality(match.index);
+                  }
+                }
+              } catch {
+                // localStorage unavailable (private browsing) — stay on Auto.
+              }
+            });
             // Bounded HLS error recovery. A stream token lives 5 minutes; when
             // it expires mid-playback every segment fetch 401s → fatal
             // NETWORK_ERROR. An unbounded startLoad() would loop forever on a
@@ -528,6 +587,7 @@ export function VideoPlayer({
 
     try {
       if (getFullscreenElement()) {
+        unlockOrientation();
         const d = document as FullscreenDocument;
         if (document.exitFullscreen) await document.exitFullscreen();
         else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
@@ -537,8 +597,10 @@ export function VideoPlayer({
 
       if (el.requestFullscreen) {
         await el.requestFullscreen();
+        void lockLandscape();
       } else if (el.webkitRequestFullscreen) {
         el.webkitRequestFullscreen();
+        void lockLandscape();
       } else if (el.msRequestFullscreen) {
         el.msRequestFullscreen();
       } else {
@@ -618,6 +680,33 @@ export function VideoPlayer({
     video.muted = v === 0;
   }
 
+  /**
+   * Lock the player to a manual quality (hls.js level index) or back to Auto
+   * (native ABR). The choice persists per-device; Auto is the default.
+   */
+  function changeQuality(q: "auto" | number) {
+    const hls = hlsRef.current;
+    if (!hls) return;
+    if (q === "auto") {
+      hls.currentLevel = -1;
+      setQuality("auto");
+      try { localStorage.setItem("plms-quality", "auto"); } catch { /* ignore */ }
+    } else {
+      hls.currentLevel = q;
+      setQuality(q);
+      const level = hls.levels[q];
+      if (level?.height) {
+        try { localStorage.setItem("plms-quality", String(level.height)); } catch { /* ignore */ }
+      }
+    }
+    setQualityMenuOpen(false);
+  }
+
+  const qualityLabel =
+    quality === "auto"
+      ? "Auto"
+      : `${levels.find((l) => l.index === quality)?.height ?? ""}p`;
+
   function toggleCaptions() {
     setCaptionsOn((on) => !on);
     const video = videoRef.current;
@@ -684,7 +773,7 @@ export function VideoPlayer({
       }}
       onTouchStart={() => setIsTouching(true)}
       className={
-        "plms-player relative aspect-video w-full overflow-hidden rounded-md bg-black outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" +
+        "plms-player relative aspect-video w-full bg-black outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" +
         (isPseudoFullscreen ? " is-pseudo-fullscreen" : "") +
         (isPaused ? " is-paused" : "") +
         (isTouching ? " is-touching" : "") +
@@ -692,86 +781,94 @@ export function VideoPlayer({
       }
       onContextMenu={(e) => e.preventDefault()}
     >
-      {/* The single video element. hls.js drives it via MediaSource for .m3u8;
-          direct files set src above. object-fit: contain keeps the whole frame
-          visible, never cropped; portrait sources letterbox with black bars. */}
-      <video
-        ref={videoRef}
-        playsInline
-        disablePictureInPicture
-        controlsList="nodownload noplaybackrate noremoteplayback"
-        x-webkit-airplay="deny"
-        className="h-full w-full"
-        onTouchEnd={handleTap}
-      >
-        {/* Caption track — only rendered when the caller provides a captions
-            URL (none do today, so the captions toggle stays hidden). */}
-        {captionsUrl && (
-          <track
-            kind="captions"
-            src={captionsUrl}
-            srcLang="en"
-            label="English"
-            default
-          />
+      {/* Media stage — the ONLY layer that clips to the rounded frame. The
+          video, overlays and watermark live here. The controls + popover menu
+          live OUTSIDE it so the "More options" menu can overflow the player
+          without being cut off by overflow-hidden (T151 mobile bug: the menu
+          opened upward and was clipped, leaving the top row unreachable). */}
+      <div className="absolute inset-0 overflow-hidden rounded-md">
+        {/* The single video element. hls.js drives it via MediaSource for .m3u8;
+            direct files set src above. object-fit: contain keeps the whole frame
+            visible, never cropped; portrait sources letterbox with black bars. */}
+        <video
+          ref={videoRef}
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          controlsList="nodownload noplaybackrate noremoteplayback"
+          x-webkit-airplay="deny"
+          className="h-full w-full"
+          onTouchEnd={handleTap}
+        >
+          {/* Caption track — only rendered when the caller provides a captions
+              URL (none do today, so the captions toggle stays hidden). */}
+          {captionsUrl && (
+            <track
+              kind="captions"
+              src={captionsUrl}
+              srcLang="en"
+              label="English"
+              default
+            />
+          )}
+        </video>
+
+        {/* Loading / buffering state */}
+        {playerState.kind === "loading" && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+            <Loader2 className="size-8 animate-spin text-white" aria-hidden />
+            <span className="sr-only">Loading video…</span>
+          </div>
         )}
-      </video>
 
-      {/* Loading / buffering state */}
-      {playerState.kind === "loading" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <Loader2 className="size-8 animate-spin text-white" aria-hidden />
-          <span className="sr-only">Loading video…</span>
-        </div>
-      )}
-
-      {/* Error state — a clear message + retry, not a dead frame */}
-      {playerState.kind === "error" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
-          <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
-            <p className="font-semibold text-white">Video unavailable</p>
-            <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
-            <button
-              type="button"
-              onClick={() => setLoadKey((k) => k + 1)}
-              className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
-            >
-              <RotateCcw className="size-4" aria-hidden />
-              Retry
-            </button>
+        {/* Error state — a clear message + retry, not a dead frame */}
+        {playerState.kind === "error" && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
+            <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
+              <p className="font-semibold text-white">Video unavailable</p>
+              <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
+              <button
+                type="button"
+                onClick={() => setLoadKey((k) => k + 1)}
+                className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
+              >
+                <RotateCcw className="size-4" aria-hidden />
+                Retry
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Render the watermark ONCE in the DOM. Hide via opacity when the
-          player is in a non-content state (error / tampered). This prevents the
-          removalObserver from seeing the watermark element appear and disappear
-          on every React state transition (loading→ready, ready→error, retry),
-          which previously triggered a false tamper detection on first re-render. */}
-      <div
-        aria-hidden={tampered || playerState.kind === "error"}
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          opacity: tampered || playerState.kind === "error" ? 0 : 1,
-          transition: "opacity 0.2s ease",
-          display: playerState.kind === "loading" ? "none" : "block",
-        }}
-      >
-        <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
+        {/* Render the watermark ONCE in the DOM. Hide via opacity when the
+            player is in a non-content state (error / tampered). This prevents the
+            removalObserver from seeing the watermark element appear and disappear
+            on every React state transition (loading→ready, ready→error, retry),
+            which previously triggered a false tamper detection on first re-render. */}
+        <div
+          aria-hidden={tampered || playerState.kind === "error"}
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            opacity: tampered || playerState.kind === "error" ? 0 : 1,
+            transition: "opacity 0.2s ease",
+            display: playerState.kind === "loading" ? "none" : "block",
+          }}
+        >
+          <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
+        </div>
+
+        {tampered && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
+            <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
+              <p className="font-semibold text-white">Playback paused</p>
+              <p className="mt-2 text-sm text-gray-300">
+                This video&apos;s watermark was tampered with. Reload the page to continue watching.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
-
-      {tampered && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
-          <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
-            <p className="font-semibold text-white">Playback paused</p>
-            <p className="mt-2 text-sm text-gray-300">
-              This video&apos;s watermark was tampered with. Reload the page to continue watching.
-            </p>
-          </div>
-        </div>
-      )}
 
       {/* Custom controls — ours, not the browser's. Hidden while playing, shown
           on hover/touch/focus/pause. */}
@@ -785,7 +882,7 @@ export function VideoPlayer({
             type="button"
             onClick={togglePlay}
             aria-label={isPaused ? "Play" : "Pause"}
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {isPaused ? (
               <Play className="size-5 fill-current" aria-hidden />
@@ -846,6 +943,52 @@ export function VideoPlayer({
               sm+; collapse into an overflow menu below 400px so play/time/scrub/
               fullscreen always fit. */}
           <div className="flex shrink-0 items-center gap-1 max-sm:hidden">
+            {/* Quality — only for HLS ladders (levels populate on manifest parse). */}
+            {levels.length > 0 && (
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setQualityMenuOpen((open) => !open)}
+                  aria-label="Video quality"
+                  aria-expanded={qualityMenuOpen}
+                  className="inline-flex h-8 items-center gap-1 rounded-md px-2 text-xs font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <Settings2 className="size-4" aria-hidden />
+                  {qualityLabel}
+                </button>
+                {qualityMenuOpen && (
+                  <div
+                    role="menu"
+                    className="absolute right-0 bottom-full mb-1 min-w-24 rounded-md border-2 border-white/30 bg-black/90 p-1 shadow-lg"
+                  >
+                    <button
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={quality === "auto"}
+                      onClick={() => changeQuality("auto")}
+                      className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      Auto
+                      {quality === "auto" && <span className="text-link">●</span>}
+                    </button>
+                    {levels.map((l) => (
+                      <button
+                        key={l.index}
+                        type="button"
+                        role="menuitemradio"
+                        aria-checked={quality === l.index}
+                        onClick={() => changeQuality(l.index)}
+                        className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {l.height}p
+                        {quality === l.index && <span className="text-link">●</span>}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Speed */}
             <div className="relative">
               <button
@@ -890,7 +1033,7 @@ export function VideoPlayer({
                 type="button"
                 onClick={toggleMute}
                 aria-label={muted ? "Unmute" : "Mute"}
-                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {muted || volume === 0 ? (
                   <VolumeX className="size-5" aria-hidden />
@@ -917,7 +1060,7 @@ export function VideoPlayer({
                 onClick={toggleCaptions}
                 aria-label="Toggle captions"
                 aria-pressed={captionsOn}
-                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <Captions className="size-5" aria-hidden />
               </button>
@@ -931,7 +1074,7 @@ export function VideoPlayer({
               onClick={() => setMoreOpen((open) => !open)}
               aria-label="More options"
               aria-expanded={moreOpen}
-              className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <MoreHorizontal className="size-5" aria-hidden />
             </button>
@@ -945,7 +1088,7 @@ export function VideoPlayer({
                     type="button"
                     onClick={toggleMute}
                     aria-label={muted ? "Unmute" : "Mute"}
-                    className="inline-flex size-8 items-center justify-center rounded-md text-white hover:bg-white/15"
+                    className="inline-flex size-10 items-center justify-center rounded-md text-white hover:bg-white/15"
                   >
                     {muted || volume === 0 ? (
                       <VolumeX className="size-4" aria-hidden />
@@ -982,6 +1125,26 @@ export function VideoPlayer({
                     </button>
                   ))}
                 </div>
+                {levels.length > 0 && (
+                  <div className="border-t border-white/15 py-1">
+                    {[
+                      { key: "auto", label: "Auto", value: "auto" as const },
+                      ...levels.map((l) => ({ key: `q-${l.index}`, label: `${l.height}p`, value: l.index as number })),
+                    ].map((opt) => (
+                      <button
+                        key={opt.key}
+                        type="button"
+                        role="menuitemradio"
+                        aria-checked={quality === opt.value}
+                        onClick={() => changeQuality(opt.value)}
+                        className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15"
+                      >
+                        {opt.label}
+                        {quality === opt.value && <span className="text-link">●</span>}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -991,7 +1154,7 @@ export function VideoPlayer({
             type="button"
             onClick={toggleFullscreen}
             aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {isFullscreen ? (
               <Minimize className="size-5" aria-hidden />

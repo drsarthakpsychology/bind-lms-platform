@@ -81,7 +81,7 @@ export function PeerWall() {
           placeholder="Case title (optional)"
           className="w-full rounded-md border-2 border-border bg-background px-3 py-1.5 text-small focus:outline-none focus:ring-2 focus:ring-ring"
         />
-        <textarea
+        <textarea enterKeyHint="enter"
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           rows={4}

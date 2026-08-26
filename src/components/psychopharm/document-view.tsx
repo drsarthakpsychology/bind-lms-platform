@@ -306,7 +306,7 @@ function EditableBlock({
   return (
     <div className="group relative rounded-md border-2 border-border p-3 hover:border-primary/40">
       {children}
-      <div className="absolute right-2 top-2 hidden gap-1 group-hover:flex">
+      <div className="absolute right-2 top-2 hidden gap-1 group-hover:flex group-focus-within:flex pointer-coarse:flex">
         <button
           type="button"
           onClick={() => setEditing(true)}

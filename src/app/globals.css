@@ -203,6 +203,12 @@
   --radius-lg: var(--radius); /* 10px */
   --radius-xl: 0.875rem; /* 14px */
 
+  /* Bottom tab bar height (mobile). The bar is min-h-14 + safe-area; surfaces
+     that pin a sticky action above it offset by this token (MobileStickyAction).
+     The calc includes the safe-area inset so the offset clears the full bar on
+     notched phones (the raw 3.5rem left sticky actions 34px too low). */
+  --nav-h: calc(3.5rem + env(safe-area-inset-bottom));
+
   --shadow-hard-xs: var(--shadow-hard-xs);
   --shadow-hard-sm: var(--shadow-hard-sm);
   --shadow-hard-md: var(--shadow-hard-md);
@@ -621,4 +627,63 @@ video::-webkit-media-controls {
 }
 .animate-live {
   animation: live-pulse 2.4s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Print — the policies are documents people print. Drop all chrome,  */
+/* force black-on-white, and reveal link URLs after the link text.    */
+/* (Chrome hiding is done per-component with Tailwind's print:hidden; */
+/* this block handles colour, typography, and link-URL disclosure.)   */
+/* ------------------------------------------------------------------ */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  main,
+  .rail,
+  article {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: " (" attr(href) ") ";
+    color: #444;
+    font-size: 0.85em;
+    font-weight: 400;
+  }
+  /* Links inside headings are the permalink anchors — don't print their "#". */
+  h2 a::after,
+  h3 a::after {
+    content: none;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  blockquote,
+  th,
+  td {
+    color: #000 !important;
+    break-inside: avoid;
+  }
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    border: 1px solid #000 !important;
+  }
 }

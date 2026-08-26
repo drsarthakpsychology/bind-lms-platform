@@ -30,20 +30,22 @@ export default async function StudentsPage() {
 
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token, is_test")
+    .select("id, email, role, expires_at, active_session_token, is_test, status")
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false });
 
   const students = profiles ?? [];
 
   return (
-    <div className="space-y-8">
-      <PageHeader
-        title="Students"
-        description="There's no sign-up page — this is the only way accounts get created."
-      />
+    <div className="flex flex-col gap-8">
+      <div className="order-1">
+        <PageHeader
+          title="Students"
+          description="There's no sign-up page — this is the only way accounts get created."
+        />
+      </div>
 
-      <Card variant="raised">
+      <Card variant="raised" className="order-3 lg:order-2">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <UserPlus className="size-4 text-link" aria-hidden />
@@ -55,7 +57,7 @@ export default async function StudentsPage() {
         </CardContent>
       </Card>
 
-      <Card variant="flat">
+      <Card variant="flat" className="order-2 lg:order-3">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-h3">
             <Users className="size-4 text-muted-foreground" aria-hidden />
@@ -74,7 +76,33 @@ export default async function StudentsPage() {
               description="Create your first student above to get started."
             />
           ) : (
-            <div className="overflow-hidden rounded-md border-2 border-border">
+            <>
+              {/* Mobile roster — stacked records below lg; the 4-col table is lg+.
+                  Rendered as a div row (not MobileListItem) because the trailing
+                  StudentActions holds its own buttons — nesting a <button> inside
+                  MobileListItem's <button> would be invalid HTML. */}
+              <div className="lg:hidden">
+                <ul className="space-y-2">
+                  {students.map((student) => (
+                    <li
+                      key={student.id}
+                      className="flex min-h-[48px] items-center gap-3 rounded-lg border-2 border-border bg-card px-3 py-2"
+                    >
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-small font-semibold leading-snug text-foreground [overflow-wrap:anywhere]">
+                          {student.email ?? student.id}
+                        </span>
+                        <span className="mt-0.5 block truncate text-caption text-muted-foreground">
+                          {formatDate(student.expires_at)} · {student.active_session_token ? "Active session" : "Not signed in"}{student.is_test ? " · Test" : ""}
+                        </span>
+                      </span>
+                      <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="hidden overflow-hidden rounded-md border-2 border-border lg:block">
               <Table>
                 <TableHeader className="bg-muted">
                   <TableRow>
@@ -103,13 +131,14 @@ export default async function StudentsPage() {
                         )}
                       </TableCell>
                       <TableCell>
-                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} />
+                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
                       </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
-            </div>
+              </div>
+            </>
           )}
         </CardContent>
       </Card>

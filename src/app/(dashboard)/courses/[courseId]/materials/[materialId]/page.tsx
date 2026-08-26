@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ChevronLeft } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { cleanMaterialTitle } from "@/lib/media/title";
 import { MaterialViewer } from "./viewer";
 
 /**
@@ -20,6 +21,10 @@ export default async function MaterialViewerPage({
   params: Promise<{ courseId: string; materialId: string }>;
 }) {
   const { courseId, materialId } = await params;
+  // Malformed ids → PostgREST 400, not a clean 404 (see the lesson page guard).
+  if (!/^[0-9a-f-]{36}$/i.test(courseId) || !/^[0-9a-f-]{36}$/i.test(materialId)) {
+    notFound();
+  }
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;
@@ -66,26 +71,36 @@ export default async function MaterialViewerPage({
 
   return (
     <div className="flex h-full min-h-[calc(100vh-3.5rem)] flex-col">
-      {/* Minimal header */}
-      <header className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2 sm:px-4">
+      {/* Minimal header — the shell top bar is hidden on this drill-down, so
+          the header owns the notch inset (T66). */}
+      <header
+        className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 sm:px-4"
+      >
         <div className="flex min-w-0 items-center gap-2">
           <Link
             href={backHref}
             aria-label={`Back to ${backLabel}`}
-            className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px sm:px-2.5"
+            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ChevronLeft className="size-4 shrink-0" aria-hidden />
-            <span className="hidden sm:inline">{backLabel}</span>
+            <span className="max-w-28 truncate">{backLabel}</span>
           </Link>
-          <span className="min-w-0 flex-1 truncate text-small font-semibold text-foreground">
-            {material.title}
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-small font-semibold text-foreground">
+              {cleanMaterialTitle(material.title)}
+            </span>
+            {ordered.length > 1 ? (
+              <span className="block text-caption text-muted-foreground">
+                Material {idx + 1} of {ordered.length}
+              </span>
+            ) : null}
           </span>
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
           {prev && (
             <Link
               href={`/courses/${courseId}/materials/${prev.id}`}
-              className="inline-flex h-9 items-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
               aria-label={`Previous: ${prev.title}`}
               title={prev.title}
             >
@@ -95,7 +110,7 @@ export default async function MaterialViewerPage({
           {next && (
             <Link
               href={`/courses/${courseId}/materials/${next.id}`}
-              className="inline-flex h-9 items-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
               aria-label={`Next: ${next.title}`}
               title={next.title}
             >
@@ -112,7 +127,7 @@ export default async function MaterialViewerPage({
           courseId={courseId}
           kind={material.kind}
           url={material.url}
-          title={material.title}
+          title={cleanMaterialTitle(material.title)}
           watermarkLabel={watermarkLabel}
         />
       </div>

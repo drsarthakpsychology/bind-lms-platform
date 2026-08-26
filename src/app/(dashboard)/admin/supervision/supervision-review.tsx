@@ -57,7 +57,7 @@ export function SupervisionReview({ entries }: { entries: Entry[] }) {
 
   return (
     <div className="space-y-3">
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       {entries.map((e) => (
         <div key={e.id} className="rounded-md border-2 border-border bg-card p-4">
           <div className="flex items-start justify-between gap-3">
@@ -72,7 +72,7 @@ export function SupervisionReview({ entries }: { entries: Entry[] }) {
                 type="button"
                 disabled={busy === e.id}
                 onClick={() => void decide(e.id, "signed")}
-                className="flex items-center gap-1 rounded-md border-2 border-green-600 bg-green-50 px-3 py-1.5 text-caption font-semibold text-green-800 transition-transform active:translate-y-px disabled:opacity-50"
+                className="flex items-center gap-1 rounded-md border-2 border-status-success-fg bg-status-success-bg px-3 py-1.5 text-caption font-semibold text-status-success-fg transition-transform active:translate-y-px disabled:opacity-50"
               >
                 <Check className="size-3.5" aria-hidden />
                 Sign
@@ -81,7 +81,7 @@ export function SupervisionReview({ entries }: { entries: Entry[] }) {
                 type="button"
                 disabled={busy === e.id}
                 onClick={() => void decide(e.id, "rejected")}
-                className="flex items-center gap-1 rounded-md border-2 border-red-400 bg-red-50 px-3 py-1.5 text-caption font-semibold text-red-700 transition-transform active:translate-y-px disabled:opacity-50"
+                className="flex items-center gap-1 rounded-md border-2 border-status-alert-fg bg-status-alert-bg px-3 py-1.5 text-caption font-semibold text-status-alert-fg transition-transform active:translate-y-px disabled:opacity-50"
               >
                 <X className="size-3.5" aria-hidden />
                 Reject

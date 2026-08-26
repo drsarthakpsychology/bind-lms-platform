@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,8 @@ export interface CardRow {
   source: "ai_generated" | "faculty" | "manual";
   status: "draft" | "in_review" | "published" | "archived";
   approved: boolean;
+  /** Manual queue order (T105 reorder). */
+  sortOrder: number;
   createdAt: string;
 }
 
@@ -19,6 +22,19 @@ const STATUS_STYLE: Record<CardRow["status"], string> = {
   in_review: "bg-secondary text-muted-foreground",
   published: "bg-status-success-bg text-status-success-fg",
   archived: "bg-muted text-muted-foreground line-through",
+};
+
+const STATUS_LABELS: Record<CardRow["status"], string> = {
+  draft: "Draft",
+  in_review: "In review",
+  published: "Published",
+  archived: "Archived",
+};
+
+const SOURCE_LABELS: Record<CardRow["source"], string> = {
+  ai_generated: "AI-drafted",
+  faculty: "Faculty",
+  manual: "Manual",
 };
 
 /** Faculty review of the auto-drafted Rounds cards. */
@@ -65,6 +81,32 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
     }
   }
 
+  /** Move a card one step up/down the queue (T105). */
+  async function moveCard(id: string, dir: "up" | "down") {
+    if (busy) return;
+    setBusy(true);
+    try {
+      const res = await fetch("/api/admin/cards", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, direction: dir }),
+      });
+      if (!res.ok) return;
+      haptic("tap");
+      setRows((r) => {
+        const idx = r.findIndex((x) => x.id === id);
+        if (idx < 0) return r;
+        const swap = dir === "up" ? idx - 1 : idx + 1;
+        if (swap < 0 || swap >= r.length) return r;
+        const next = [...r];
+        [next[idx], next[swap]] = [next[swap], next[idx]];
+        return next;
+      });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   function startEdit(row: CardRow) {
     setEditing(row.id);
     setFront(row.front);
@@ -76,17 +118,85 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
     setEditing(null);
   }
 
+  const [addOpen, setAddOpen] = React.useState(false);
+  const [newFront, setNewFront] = React.useState("");
+  const [newBack, setNewBack] = React.useState("");
+
+  async function createCard(front: string, back: string) {
+    if (busy || !front.trim() || !back.trim()) return;
+    setBusy(true);
+    try {
+      const res = await fetch("/api/admin/cards", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ front: front.trim(), back: back.trim() }),
+      });
+      if (!res.ok) return;
+      const j = (await res.json()) as {
+        card?: {
+          id: string;
+          front: string;
+          back: string;
+          source: CardRow["source"];
+          status: CardRow["status"];
+          approved: boolean;
+          created_at: string;
+        } | null;
+      };
+      if (j.card) {
+        haptic("success");
+        const row: CardRow = {
+          id: j.card.id,
+          front: String(j.card.front),
+          back: String(j.card.back),
+          source: j.card.source,
+          status: j.card.status,
+          approved: Boolean(j.card.approved),
+          sortOrder: 0,
+          createdAt: j.card.created_at,
+        };
+        setRows((r) => [row, ...r]);
+      }
+    } finally {
+      setBusy(false);
+      setAddOpen(false);
+      setNewFront("");
+      setNewBack("");
+    }
+  }
+
   if (rows.length === 0) {
     return (
-      <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-        No cards yet. Run <code className="rounded bg-muted px-1.5 py-0.5">npm run draft-cards</code> to auto-draft
-        flashcards from published lesson transcripts.
+      <div className="space-y-3">
+        <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
+          No study cards yet. They appear here once the programme auto-drafts them from lesson transcripts.
+        </div>
+        <AddCardButton
+          open={addOpen}
+          onOpenChange={setAddOpen}
+          busy={busy}
+          front={newFront}
+          back={newBack}
+          onFront={setNewFront}
+          onBack={setNewBack}
+          onSave={() => void createCard(newFront, newBack)}
+        />
       </div>
     );
   }
 
   return (
     <div className="space-y-3">
+      <AddCardButton
+        open={addOpen}
+        onOpenChange={setAddOpen}
+        busy={busy}
+        front={newFront}
+        back={newBack}
+        onFront={setNewFront}
+        onBack={setNewBack}
+        onSave={() => void createCard(newFront, newBack)}
+      />
       {rows.map((row) => (
         <div key={row.id} className={cn("rounded-md border-2 border-border bg-card p-4 hard-shadow-sm", row.status === "archived" && "opacity-60")}>
           {editing === row.id ? (
@@ -112,15 +222,23 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
             <>
               <div className="flex items-center justify-between gap-2">
                 <span className={cn("rounded-full px-2 py-0.5 text-caption font-medium", STATUS_STYLE[row.status])}>
-                  {row.status}
+                  {STATUS_LABELS[row.status]}
                 </span>
                 <span className="text-caption text-muted-foreground">
-                  {row.source} · {new Date(row.createdAt).toLocaleDateString()}
+                  {SOURCE_LABELS[row.source]} · {new Date(row.createdAt).toLocaleDateString()}
                 </span>
               </div>
               <p className="mt-2 text-small font-medium">{row.front}</p>
               <p className="mt-1 text-small text-muted-foreground">{row.back}</p>
               <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-0.5 rounded-md border-2 border-border bg-background px-1" aria-label="Reorder">
+                  <button type="button" onClick={() => void moveCard(row.id, "up")} disabled={busy} aria-label="Move up" className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-40">
+                    <ChevronUp className="size-4" aria-hidden />
+                  </button>
+                  <button type="button" onClick={() => void moveCard(row.id, "down")} disabled={busy} aria-label="Move down" className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-40">
+                    <ChevronDown className="size-4" aria-hidden />
+                  </button>
+                </span>
                 {row.status !== "published" ? (
                   <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
                     Approve &amp; publish
@@ -131,6 +249,9 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
                     Reject
                   </button>
                 ) : null}
+                <button type="button" onClick={() => void createCard(row.front, row.back)} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
+                  Duplicate
+                </button>
                 <button type="button" onClick={() => startEdit(row)} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
                   Edit
                 </button>
@@ -142,6 +263,81 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+/**
+ * "Add card" toggle + the minimal creation form (front + back only — advanced
+ * config lives behind review, not authoring). The whole point of T106: adding
+ * a card takes two fields, not a data-model form.
+ */
+function AddCardButton({
+  open,
+  onOpenChange,
+  busy,
+  front,
+  back,
+  onFront,
+  onBack,
+  onSave,
+}: {
+  open: boolean;
+  onOpenChange: (o: boolean) => void;
+  busy: boolean;
+  front: string;
+  back: string;
+  onFront: (v: string) => void;
+  onBack: (v: string) => void;
+  onSave: () => void;
+}) {
+  if (!open) {
+    return (
+      <button
+        type="button"
+        onClick={() => onOpenChange(true)}
+        className="rounded-md border-2 border-border bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+      >
+        Add a card
+      </button>
+    );
+  }
+  return (
+    <div className="space-y-2 rounded-md border-2 border-border bg-card p-3">
+      <p className="text-caption font-semibold text-muted-foreground">New card</p>
+      <label className="block">
+        <span className="text-caption font-semibold text-muted-foreground">Front</span>
+        <input
+          value={front}
+          onChange={(e) => onFront(e.target.value)}
+          autoFocus
+          className="mt-0.5 w-full rounded-md border-2 border-border bg-background px-3 py-1.5 text-small"
+          placeholder="The question or prompt"
+        />
+      </label>
+      <label className="block">
+        <span className="text-caption font-semibold text-muted-foreground">Back</span>
+        <textarea
+          value={back}
+          onChange={(e) => onBack(e.target.value)}
+          rows={2}
+          className="mt-0.5 w-full rounded-md border-2 border-border bg-background px-3 py-1.5 text-small"
+          placeholder="The answer"
+        />
+      </label>
+      <div className="flex gap-2">
+        <button
+          type="button"
+          onClick={onSave}
+          disabled={busy || !front.trim() || !back.trim()}
+          className="rounded-md border-2 border-border bg-primary px-3 py-1 text-caption font-semibold text-primary-foreground disabled:opacity-50"
+        >
+          {busy ? "Adding…" : "Save card"}
+        </button>
+        <button type="button" onClick={() => onOpenChange(false)} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }

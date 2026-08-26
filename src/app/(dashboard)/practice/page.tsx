@@ -2,6 +2,7 @@ import Link from "next/link";
 import { readFlags, type FeatureKey } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
+import { computeResumePrimary } from "@/lib/practice/resume";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
@@ -33,7 +34,6 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
   { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: "repeat", time: "3 min", flag: "rounds", group: "quick" },
   { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
-  { href: "/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: "messageSquare", time: "3 min", flag: "journal", group: "quick" },
   { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: "layers", time: "1 min", flag: "modules", group: "quick" },
 
   // Mid — 5-10 minutes
@@ -77,77 +77,16 @@ export default async function PracticeHubPage() {
     ? await computePracticeStates(supabase, user.id)
     : {};
 
-  let recommendation: { href: string; title: string; reason: string; cta: string; time: string } | null = null;
-  if (user) {
-    // 1) In-progress sim session → resume it (the patient is waiting).
-    const { data: active } = await supabase
-      .from("sim_sessions")
-      .select("id, case_id")
-      .eq("user_id", user.id)
-      .eq("status", "active")
-      .limit(1)
-      .maybeSingle();
-    if (active) {
-      recommendation = {
-        href: `/practice/consulting-room/session/${active.id}`,
-        title: "Resume your consultation",
-        reason: "A patient is waiting mid-session — finishing it banks the debrief and your score.",
-        cta: "Resume",
-        time: "12 min",
-      };
-    } else {
-      // 2) Risk-timing missed in recent debriefs → the consulting room.
-      const { data: scores } = await supabase
-        .from("sim_scores")
-        .select("rubric")
-        .eq("user_id", user.id)
-        .order("created_at", { ascending: false })
-        .limit(4);
-      const riskLate = (scores ?? []).filter((s) => {
-        const r = (s.rubric as Record<string, unknown> | null) ?? {};
-        return r.risk_timing === "late" || r.risk_timing === "absent";
-      }).length;
-      if (riskLate >= 2) {
-        recommendation = {
-          href: "/practice/consulting-room",
-          title: "Consulting Room — risk assessment",
-          reason: `You've missed the risk-assessment moment in ${riskLate} of your last ${(scores ?? []).length || 4} sessions. Run a case and front-load it.`,
-          cta: "Run a case",
-          time: "12 min",
-        };
-      } else if ((scores ?? []).length >= 3) {
-        const unsMse = (scores ?? []).filter((s) => {
-          const r = (s.rubric as Record<string, unknown> | null) ?? {};
-          return r.idiom_decoding === false;
-        }).length;
-        if (unsMse > 0) {
-          recommendation = {
-            href: "/practice/decode",
-            title: "Presenting Complaint Decoder",
-            reason: `The opening idiom went undecoded in ${unsMse} of your recent sessions. Five minutes here fixes your ears.`,
-            cta: "Decode",
-            time: "4 min",
-          };
-        }
-      }
-    }
-    // 3) Fallback: the daily drill.
-    if (!recommendation) {
-      recommendation = {
-        href: "/practice/decode",
-        title: "Presenting Complaint Decoder",
-        reason: "The daily habit that changes how you hear patients — today's set is fresh.",
-        cta: "Decode",
-        time: "4 min",
-      };
-    }
-  }
+  // The recommended card — one shared engine for "what's next" (T140), so
+  // /today and /practice always recommend the same thing. ALWAYS states why
+  // (B2: reason beats recommendation).
+  const recommendation = user ? await computeResumePrimary(supabase, user.id) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <Reveal delay={0.05}>
         <header className="mb-6">
-          <p className="text-eyebrow text-muted-foreground">Practice layer</p>
+          <p className="text-eyebrow text-muted-foreground">Practice</p>
           <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
           <p className="mt-2 max-w-2xl text-small text-muted-foreground">
             Everything here is private to you and your faculty. Core tools are full workflows; drills are single-skill reps. Pick by how long you have.
@@ -202,7 +141,7 @@ export default async function PracticeHubPage() {
       />
 
       <p className="mt-8 text-caption text-muted-foreground">
-        Voice mode is available in the Consulting Room and OSCE stations. Everything stays on the server.
+        Voice mode is available in the Consulting Room and OSCE stations.
         <span className="ml-2 hidden sm:inline">Keyboard: j/k to move · Enter to open · / for help.</span>
       </p>
 

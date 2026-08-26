@@ -59,7 +59,7 @@ export function LessonTabs({
     <div
       role="group"
       aria-label="Lesson sections"
-      className="inline-flex items-stretch overflow-hidden rounded-md border-2 border-foreground bg-background hard-shadow-sm"
+      className="flex w-full items-stretch overflow-hidden rounded-md border-2 border-foreground bg-background hard-shadow-sm lg:inline-flex lg:w-auto"
     >
       {tabs.map((t) => {
         const isActive = tab === t.id;
@@ -69,7 +69,7 @@ export function LessonTabs({
             href={hrefFor(t.id)}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "relative inline-flex h-9 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+              "relative inline-flex h-11 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 lg:h-9",
               isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             )}
           >

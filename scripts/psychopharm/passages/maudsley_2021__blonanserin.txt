@@ -1,0 +1,590 @@
+<<<PAGE 30>>>
+
+Minimum effective doses
+Table 1.1 suggests the minimum dose of antipsychotic likely to be effective in first- or multiepisode schizophrenia. Most patients will respond to the dose suggested, although others
+may require higher doses. Given the variation in individual response, all doses should be
+considered approximate. Primary references are provided where available, but consensus
+opinion has also been used. Only oral treatment with commonly used drugs is covered.
+Table 1.1 Minimum effective dose/day – antipsychotics
+Drug
+
+First episode
+
+Multi-episode
+
+Chlorpromazine1
+
+200mg*
+
+300mg
+
+Haloperidol
+
+2mg
+
+4mg
+
+Sulpiride8
+
+400mg*
+
+800mg
+
+10mg*
+
+15mg
+
+Amisulpride11–16
+
+300mg*
+
+400mg*
+
+Aripiprazole7,17–22
+
+10mg
+
+10mg
+
+Asenapine
+
+10mg*
+
+10mg
+
+Blonanserin24
+
+Not known
+
+8mg
+
+Brexpiprazole25–27
+
+2mg*
+
+4mg
+
+Cariprazine
+
+1.5mg*
+
+1.5mg
+
+Iloperidone7,21,22,30
+
+4mg*
+
+8mg
+
+Lumateperone
+
+Not known
+
+42mg*
+
+Lurasidone
+
+40mg HCl/37mg base*
+
+40mg HCl/37mg base
+
+Olanzapine4,7,33–35
+
+5mg
+
+7.5mg
+
+Paliperidone
+
+3mg*
+
+3mg
+
+Pimavanserin
+
+Not known
+
+34mg**
+
+Quetiapine39–44
+
+150mg* (but higher doses often used45)
+
+300mg
+
+3,7,46–49
+
+Risperidone
+
+2mg
+
+4mg
+
+7,21,50–52
+
+Ziprasidone
+
+40mg*
+
+80mg
+
+FGAs
+
+2–7
+
+Trifluoperazine
+
+9,10
+
+SGAs
+
+7,22,23
+
+28,29
+
+31
+
+7,32
+
+22
+36–38
+
+*Estimate – too few data available
+**FDA-approved for Parkinson’s disease psychosis; dose in schizophrenia not known
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  9
+
+
+
+
+<<<PAGE 31>>>
+
+10  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+References
+1. Dudley K, et al. Chlorpromazine dose for people with schizophrenia. Cochrane Database Syst Rev 2017; 4:Cd007778.
+2. McGorry PD. Recommended haloperidol and risperidone doses in first-episode psychosis. J Clin Psychiatry 1999; 60:794–795.
+3. Schooler N, et al. Risperidone and haloperidol in first-episode psychosis: a long-term randomized trial. Am J Psychiatry 2005;
+162:947–953.
+4. Keefe RS, et al. Long-term neurocognitive effects of olanzapine or low-dose haloperidol in first-episode psychosis. Biol Psychiatry 2006;
+59:97–105.
+5. Donnelly L, et al. Haloperidol dose for the acute phase of schizophrenia. Cochrane Database Syst Rev 2013; Cd001951.
+6. Oosthuizen P, et al. A randomized, controlled comparison of the efficacy and tolerability of low and high doses of haloperidol in the treatment
+of first-episode psychosis. Int J Neuropsychopharmacol 2004; 7:125–131.
+7. Leucht S, et al. Dose equivalents for second-generation antipsychotics: the minimum effective dose method. SchizophrBull 2014;
+40:314–326.
+8. Soares BG, et al. Sulpiride for schizophrenia. Cochrane Database Syst Rev 2000; CD001162.
+9. Armenteros JL, et al. Antipsychotics in early onset schizophrenia: systematic review and meta-analysis. Eur Child Adolesc Psychiatry 2006;
+15:141–148.
+10. Koch K, et al. Trifluoperazine versus placebo for schizophrenia. Cochrane Database Syst Rev 2014; Cd010226.
+11. Mota NE, et al. Amisulpride for schizophrenia. Cochrane Database Syst Rev 2002; CD001357.
+12. Puech A, et al. Amisulpride, and atypical antipsychotic, in the treatment of acute episodes of schizophrenia: a dose-ranging study vs. haloperidol. The Amisulpride Study Group. Acta Psychiatr Scand 1998; 98:65–72.
+13. Moller HJ, et al. Improvement of acute exacerbations of schizophrenia with amisulpride: a comparison with haloperidol. PROD-ASLP Study
+Group. Psychopharmacology 1997; 132:396–401.
+14. Sparshatt A, et al. Amisulpride – dose, plasma concentration, occupancy and response: implications for therapeutic drug monitoring. Acta
+Psychiatr Scand 2009; 120:416–428.
+15. Buchanan RW, et al. The 2009 schizophrenia PORT psychopharmacological treatment recommendations and summary statements.
+SchizophrBull 2010; 36:71–93.
+16. Galletly C, et al. Royal Australian and New Zealand College of Psychiatrists clinical practice guidelines for the management of schizophrenia
+and related disorders. Aust N Z J Psychiatry 2016; 50:410–472.
+17. Taylor D. Aripiprazole: a review of its pharmacology and clinical utility. Int J Clin Pract 2003; 57:49–54.
+18. Cutler AJ, et al. The efficacy and safety of lower doses of aripiprazole for the treatment of patients with acute exacerbation of schizophrenia.
+CNS Spectr 2006; 11:691–702.
+19. Mace S, et al. Aripiprazole: dose-response relationship in schizophrenia and schizoaffective disorder. CNS Drugs 2008; 23:773–780.
+20. Sparshatt A, et al. A systematic review of aripiprazole – dose, plasma concentration, receptor occupancy and response: implications for therapeutic drug monitoring. J Clin Psychiatry 2010; 71:1447–1456.
+21. Liu CC, et al. Aripiprazole for drug-naive or antipsychotic-short-exposure subjects with ultra-high risk state and first-episode psychosis: an
+open-label study. J Clin Psychopharmacol 2013; 33:18–23.
+22. Leucht S, et al. Dose-response meta-analysis of antipsychotic drugs for acute schizophrenia. Am J Psychiatry 2020; 177:342–353.
+23. Citrome L. Role of sublingual asenapine in treatment of schizophrenia. Neuropsychiatr Dis Treat 2011; 7:325–339.
+24. Tenjin T, et al. Profile of blonanserin for the treatment of schizophrenia. Neuropsychiatr Dis Treat 2013; 9:587–594.
+25. Correll CU, et al. Efficacy of brexpiprazole in patients with acute schizophrenia: review of three randomized, double-blind, placebo-controlled studies. Schizophr Res 2016; 174:82–92.
+26. Malla A, et al. The effect of brexpiprazole in adult outpatients with early-episode schizophrenia: an exploratory study. Int Clin
+Psychopharmacol 2016; 31:307–314.
+27. Kane JM, et al. A multicenter, randomized, double-blind, controlled phase 3 trial of fixed-dose brexpiprazole for the treatment of adults with
+acute schizophrenia. Schizophr Res 2015; 164:127–135.
+28. Garnock-Jones KP. Cariprazine: a review in schizophrenia. CNS Drugs 2017; 31:513–525.
+29. Citrome L. Cariprazine for acute and maintenance treatment of adults with schizophrenia: an evidence-based review and place in therapy.
+Neuropsychiatr Dis Treat 2018; 14:2563–2577.
+30. Crabtree BL, et al. Iloperidone for the management of adults with schizophrenia. Clin Ther 2011; 33:330–345.
+31. Correll CU, et al. Efficacy and safety of lumateperone for treatment of schizophrenia: a randomized clinical trial. JAMA Psychiatry 2020;
+77:349–358.
+32. Meltzer HY, et al. Lurasidone in the treatment of schizophrenia: a randomized, double-blind, placebo- and olanzapine-controlled study. Am
+J Psychiatry 2011; 168:957–967.
+33. Sanger TM, et al. Olanzapine versus haloperidol treatment in first-episode psychosis. Am J Psychiatry 1999; 156:79–87.
+34. Kasper S. Risperidone and olanzapine: optimal dosing for efficacy and tolerability in patients with schizophrenia. Int Clin Psychopharmacol
+1998; 13:253–262.
+35. Bishara D, et al. Olanzapine: a systematic review and meta-regression of the relationships between dose, plasma concentration, receptor
+occupancy, and response. JClinPsychopharmacol 2013; 33:329–335.
+36. Mathis MV, et al. The US Food and Drug Administration’s Perspective on the New Antipsychotic Pimavanserin. J Clin Psychiatry 2017;
+78:e668–e673.
+
+
+
+
+<<<PAGE 34>>>
+
+Drug
+
+Maximum dose
+
+Paliperidone depot
+3-monthly
+
+525mg every 3 months
+
+Pipotiazine depot
+
+200mg every 4 weeks
+
+Risperidone (Janssen)
+
+50mg every 2 weeks
+
+Zuclopenthixol depot
+
+600mg/week
+
+The following table lists the licensed maximum doses of antipsychotics available outside the EU, according to FDA labelling (as of February 2021)
+Drug
+
+Maximum dose
+
+SGAs – oral
+Blonanserin*
+
+24mg/day oral1 (80mg/day patch2)
+
+Brexpiprazole
+
+4mg/day
+
+Iloperidone
+
+24mg/day
+
+Lumateperone
+
+42mg/day
+
+Molindone
+
+225mg/day
+
+Pimavanserin
+
+34mg/day
+
+RBP-7000 (risperidone 1-monthly)
+
+120mg/month
+
+Ziprasidone
+
+160mg/day
+
+*Available only in China, Japan and South Korea at the time of writing.
+
+References
+1. Inoue Y, et al. Safety and effectiveness of oral blonanserin for schizophrenia: a review of Japanese post-marketing surveillances. J Pharmacol
+Sci 2021; 145:42–51.
+2. Nishibe H, et al. Striatal dopamine D2 receptor occupancy induced by daily application of blonanserin transdermal patches: phase 2 study
+in Japanese patients with schizophrenia. Int J Neuropsychopharmacol 2020; 24:108–117.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  13
+
+
+
+
+<<<PAGE 36>>>
+
+Table 1.3 Second-generation antipsychotics – approximate equivalent doses3–10
+Drug
+
+Approximate equivalent dose
+
+Amisulpride
+
+400mg
+
+Aripiprazole
+
+15mg
+
+Asenapine
+
+10mg
+
+Blonanserin
+
+~
+
+Brexpiprazole
+
+2mg
+
+Cariprazine
+
+1.5mg
+
+Clotiapine
+
+100mg
+
+Iloperidone
+
+12mg
+
+Lumateperone
+
+~
+
+Lurasidone
+
+80mg (74mg base)
+
+Melperone
+
+300mg
+
+Molindone
+
+50mg
+
+Olanzapine
+
+10mg
+
+Paliperidone LAI
+
+100mg/month
+
+Pimavanserin
+
+~
+
+Quetiapine
+
+400mg
+
+Risperidone oral
+
+4mg
+
+Risperidone LAI
+
+50mg/2 weeks
+
+Risperidone RBP-7000
+
+120mg/month
+
+Ziprasidone
+
+80mg
+
+~Unknown equivalence at time of writing.
+
+References
+1. Foster P. Neuroleptic equivalence. Pharm J 1989; 243:431–432.
+2. Atkins M, et al. Chlorpromazine equivalents: a consensus of opinion for both clinical and research implications. Psychiatric Bull 1997;
+21:224–226.
+3. Patel MX, et al. How to compare doses of different antipsychotics: a systematic review of methods. Schizophr Res 2013; 149:141–148.
+4. Gardner DM, et al. International consensus study of antipsychotic dosing. Am J Psychiatry 2010; 167:686–693.
+5. Leucht S, et al. Dose equivalents for antipsychotic drugs: the ddd method. Schizophr Bull 2016; 42 Suppl 1:S90–S94.
+6. Rothe PH, et al. Dose equivalents for second generation long-acting injectable antipsychotics: the minimum effective dose method. Schizophr
+Res 2018; 193:23–28.
+7. Leucht S, et al. Dose equivalents for second-generation antipsychotics: the minimum effective dose method. Schizophr Bull 2014;
+40:314–326.
+8. Leucht S, et al. Dose equivalents for second-generation antipsychotic drugs: the classical mean dose method. Schizophr Bull 2015;
+41:1397–1402.
+9. Woods SW. Chlorpromazine equivalent doses for the newer atypical antipsychotics. J Clin Psychiatry 2003; 64:663–667.
+10. Leucht S, et al. Dose-response meta-analysis of antipsychotic drugs for acute schizophrenia. Am J Psychiatry 2020; 177:342–353.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  15
+
+
+
+
+<<<PAGE 220>>>
+
+Table 1.37 (Continued)
+Treatment
+
+Comments
+
+Bexarotene 75mg/day
+(+ antipsychotic)
+
+Retinoid receptor agonist. One RCT (n = 90) in non-refractory but suboptimally
+treated patients suggest worthwhile effect on positive symptoms
+
+Blonanserin (+ antipsychotic)19
+
+Atypical antipsychotic licensed in Japan and Korea. One case series found it to
+be effective and well tolerated
+
+CBT20
+
+Non-drug therapies should always be considered
+
+Celecoxib + risperidone21
+(400mg + 6mg/day)
+
+COX-2 inhibitors modulate immune response and may prevent glutamaterelated cell death. One RCT showed useful activity in all main symptom
+domains. Associated with increased CV mortality
+
+Deep Brain Stimulation (DBS)
+
+Effectiveness of nucleus accumbens (NAcc) and subgenual anterior cingulate
+cortex (subgenual ACC) targeted DBS demonstrated in 4 of 7 patients with TRS22
+
+Donepezil 5–10mg/day
+(+ antipsychotic)23–25
+
+Three RCTs, one negative,24 two positive,23,25 suggesting a small effect on
+cognitive and negative symptoms
+
+D-Alanine 100mg/kg/day
+(+ antipsychotic)26
+
+Glycine (NMDA) agonist. One positive RCT
+
+D-Serine 30mg/kg/day
+(+ olanzapine)27
+
+Glycine (NMDA) agonist. One positive RCT
+
+D-serine up to 3g as
+monotherapy28
+
+Improved negative symptoms in one RCT, but inferior to high dose olanzapine
+for treatment of positive symptoms
+
+ECT29
+
+Open studies suggest moderate effect, as does a retrospective study.30 Often
+reserved for last-line treatment in practice but can be successful in the short31
+and long32 term
+
+Estradiol 100 – 200mcg
+transdermal/day (+
+antipsychotic)33
+
+Oestrogens may be psychoprotective and/or antipsychotic. RCT (n = 183) in
+women of child-bearing age suggested benefits on positive symptoms, especially
+at higher doses. Note contra-indications include being post-menopausal, history
+of VTE, stroke, breast cancer, migraine with aura. Unopposed estradiol over long
+periods increases the risk of endometrial hyperplasia and malignancy – consider
+consulting an endocrinologist. Evidence in men is lacking
+
+Famotidine 100mg
+bd + antipsychotic34
+
+H2 antagonist. One short (4 weeks) RCT suggested some benefit in overall
+PANSS and CGI scores
+
+Ginkgo biloba
+(+ antipsychotic)6,7
+
+Possibly effective in combination with haloperidol. Unlikely to give rise to
+additional adverse effects but clinical experience limited
+
+Lurasidone up to 240mg/day35
+(+ vortioxetine)
+
+One RCT comparing standard with high dose lurasidone produced comparable
+improvements in TRS when given up to 24 weeks.36 Appears to be well
+tolerated, may be effective but no clozapine comparison arm included. The
+addition of vortioxetine to lurasidone was effective in a small case series37
+
+Memantine 20mg/day
+(+ antipsychotic)38–40
+
+Memantine is an NMDA antagonist. Two RCTs. The larger of the two (n = 138)
+was negative. In the smaller (n = 21), memantine improved positive and
+negative symptoms when added to clozapine. In another study in nonrefractory schizophrenia, memantine improved negative symptoms when added
+to risperidone
+
+18
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  199
+
+
+
+
+<<<PAGE 224>>>
+
+Schizophrenia and related psychoses  203
+
+1. Yoshimura B, et al. The critical treatment window of clozapine in treatment-resistant schizophrenia: secondary analysis of an observational
+study. Psychiatry Res 2017; 250:65–70.
+2. Howes OD, et al. Adherence to treatment guidelines in clinical practice: study of antipsychotic treatment prior to clozapine initiation.
+BrJPsychiatry 2012; 201:481–485.
+3. Molins C, et al. Response to antipsychotic drugs in treatment-resistant schizophrenia: conclusions based on systematic review. Schizophr Res
+2016; 178:64–67.
+4. Samara MT, et al. Efficacy, acceptability, and tolerability of antipsychotics in treatment-resistant schizophrenia: a network meta-analysis.
+JAMA Psychiatry 2016; 73:199–210.
+5. Galling B, et al. Antipsychotic augmentation vs. monotherapy in schizophrenia: systematic review, meta-analysis and meta-regression analysis. World Psychiatry 2017; 16:77–89.
+6. Luykx JJ, et al. In the aftermath of clozapine discontinuation: comparative effectiveness and safety of antipsychotics in patients with schizophrenia who discontinue clozapine. Br J Psychiatry 2020; 217:498–505.
+7. Bugarski-Kirola D, et al. Efficacy and safety of adjunctive bitopertin versus placebo in patients with suboptimally controlled symptoms of
+schizophrenia treated with antipsychotics: results from three phase 3, randomised, double-blind, parallel-group, placebo-controlled, multicentre studies in the SearchLyte clinical trial programme. Lancet Psychiatry 2016; 3:1115–1128.
+8. Garay RP, et al. Potential serotonergic agents for the treatment of schizophrenia. Exp Opin Invest Drugs 2016; 25:159–170.
+9. Akhondzadeh S, et al. Beneficial antipsychotic effects of allopurinol as add-on therapy for schizophrenia: a double blind, randomized and
+placebo controlled trial. Prog Neuropsychopharmacol Biol Psychiatry 2005; 29:253–259.
+10. Brunstein MG, et al. A clinical trial of adjuvant allopurinol therapy for moderately refractory schizophrenia. J Clin Psychiatry 2005;
+66:213–219.
+11. Buie LW, et al. Allopurinol as adjuvant therapy in poorly responsive or treatment refractory schizophrenia. Ann Pharmacother 2006;
+40:2200–2204.
+12. Dickerson FB, et al. A double-blind trial of adjunctive allopurinol for schizophrenia. Schizophr Res 2009; 109:66–69.
+13. Kontaxakis VP, et al. Switching to amisulpride monotherapy for treatment-resistant schizophrenia. Eur Psychiatry 2006; 21:214–217.
+14. Kane JM, et al. Aripiprazole for treatment-resistant schizophrenia: results of a multicenter, randomized, double-blind, comparison study
+versus perphenazine. J Clin Psychiatry 2007; 68:213–223.
+15. Hsu WY, et al. Aripiprazole in treatment-refractory schizophrenia. J Psychiatr Pract 2009; 15:221–226.
+16. Crossman AM, et al. Tolerability of high-dose aripiprazole in treatment-refractory schizophrenic patients. J Clin Psychiatry 2006;
+67:1158–1159.
+17. Smith EN, et al. Asenapine augmentation and treatment-resistant schizophrenia in the high-secure hospital setting. Ther Adv Psychopharmacol
+2014; 4:193–197.
+18. Lerner V, et al. The retinoid X receptor agonist bexarotene relieves positive symptoms of schizophrenia: a 6-week, randomized, double-blind,
+placebo-controlled multicenter trial. J Clin Psychiatry 2013; 74:1224–1232.
+19. Tachibana M, et al. Effectiveness of blonanserin for patients with drug treatment-resistant schizophrenia and dopamine supersensitivity: a
+retrospective analysis. Asian J Psychiatr 2016; 24:28–32.
+20. Valmaggia LR, et al. Cognitive-behavioural therapy for refractory psychotic symptoms of schizophrenia resistant to atypical antipsychotic
+medication. Randomised controlled trial. Br J Psychiatry 2005; 186:324–330.
+21. Akhondzadeh S, et al. Celecoxib as adjunctive therapy in schizophrenia: a double-blind, randomized and placebo-controlled trial. Schizophr
+Res 2007; 90:179–185.
+22. Corripio I, et al. Deep brain stimulation in treatment resistant schizophrenia: a pilot randomized cross-over clinical trial. EBioMedicine 2020;
+51:102568.
+23. Lee BJ, et al. A 12-week, double-blind, placebo-controlled trial of donepezil as an adjunct to haloperidol for treating cognitive impairments
+in patients with chronic schizophrenia. J Psychopharmacology 2007; 21:421–427.
+24. Keefe RSE, et al. Efficacy and safety of donepezil in patients with schizophrenia or schizoaffective disorder: significant placebo/practice effects
+in a 12-week, randomized, double-blind, placebo-controlled trial. Neuropsychopharmacology 2007; 33:1217–1228.
+25. Akhondzadeh S, et al. A 12-week, double-blind, placebo-controlled trial of donepezil adjunctive treatment to risperidone in chronic and
+stable schizophrenia. Prog Neuropsychopharmacol Biol Psychiatry 2008; 32:1810–1815.
+26. Tsai GE, et al. D-alanine added to antipsychotics for the treatment of schizophrenia. Biol Psychiatry 2006; 59:230–234.
+27. Heresco-Levy U, et al. D-serine efficacy as add-on pharmacotherapy to risperidone and olanzapine for treatment-refractory schizophrenia.
+Biol Psychiatry 2005; 57:577–585.
+28. Ermilov M, et al. A pilot double-blind comparison of d-serine and high-dose olanzapine in treatment-resistant patients with schizophrenia.
+Schizophr Res 2013; 150:604–605.
+29. Zheng W, et al. Electroconvulsive therapy added to non-clozapine antipsychotic medication for treatment resistant schizophrenia: metaanalysis of randomized controlled trials. PLoS One 2016; 11:e0156510.
+30. Grover S, et al. Effectiveness of electroconvulsive therapy in patients with treatment resistant schizophrenia: a retrospective study. Psychiatry
+Res 2017; 249:349–353.
+31. Chanpattana W, et al. Electroconvulsive therapy in treatment-resistant schizophrenia: prediction of response and the nature of symptomatic
+improvement. J Ect 2010; 26:289–298.
+
+CHAPTER 1
+
+References
+
+

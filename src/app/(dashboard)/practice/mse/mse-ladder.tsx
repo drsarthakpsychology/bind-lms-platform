@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MSE_LEVEL_META, MSE_LEVELS, type MseLevel } from "@/lib/mse/ladder";
@@ -59,6 +60,9 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
   }
 
   const ordered = MSE_LEVELS;
+  // Progressive disclosure: the reference + retention check only appear once a
+  // level has completed, so they never compete with the active level's task.
+  const anyDone = ordered.some((lvl) => done[lvl]);
 
   // Keyboard: arrow keys move between unlocked levels, Enter opens.
   React.useEffect(() => {
@@ -120,29 +124,49 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
         {active === "5" ? <LiveMseLevel onComplete={() => markDone("5")} /> : null}
       </div>
 
-      {/* Small-things reference + drill */}
-      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-sm font-semibold">The small things — the checklist novices never run</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          Eye contact when the topic changed · the leg that stopped moving · the
-          pause before &quot;no&quot; · the past tense used about oneself. Reference card
-          + drill, usable at any level.
-        </p>
-        <div className="mt-3">
-          <SmallThingsDrill />
-        </div>
-      </div>
+      {/* Small-things reference + drill — revealed only after a level completes. */}
+      {anyDone ? (
+        <details className="group rounded-md border-2 border-border bg-card">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
+            <span className="min-w-0">
+              <h2 className="text-sm font-semibold">The small things — the checklist novices never run</h2>
+              <p className="mt-1 text-small text-muted-foreground">
+                Eye contact when the topic changed · the leg that stopped moving · the
+                pause before &quot;no&quot; · the past tense used about oneself. Reference card
+                + drill, usable at any level.
+              </p>
+            </span>
+            <ChevronDown
+              className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+              aria-hidden
+            />
+          </summary>
+          <div className="px-4 pb-4">
+            <SmallThingsDrill />
+          </div>
+        </details>
+      ) : null}
 
-      {/* Check what stuck — sourced quiz items after the ladder */}
-      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-sm font-semibold">Check what stuck</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test — every item carries its source.
-        </p>
-        <div className="mt-3">
-          <QuizCheck items={QUIZ_BANK.slice(0, 6)} />
-        </div>
-      </div>
+      {/* Check what stuck — revealed only after a level completes. */}
+      {anyDone ? (
+        <details className="group rounded-md border-2 border-border bg-card">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
+            <span className="min-w-0">
+              <h2 className="text-sm font-semibold">Check what stuck</h2>
+              <p className="mt-1 text-small text-muted-foreground">
+                A quick check, not a test — every item carries its source.
+              </p>
+            </span>
+            <ChevronDown
+              className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+              aria-hidden
+            />
+          </summary>
+          <div className="px-4 pb-4">
+            <QuizCheck items={QUIZ_BANK.slice(0, 6)} />
+          </div>
+        </details>
+      ) : null}
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { Check, Eye, Lightbulb } from "lucide-react";
+import { Check, ChevronDown, Eye, Lightbulb } from "lucide-react";
 import { scoreDecode, type IdiomEntry } from "@/lib/decode/idioms";
 
 /**
@@ -59,7 +59,6 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
 
       {/* multi-select meanings */}
       <div className="rounded-md border-2 border-border bg-card p-5">
-        <p className="text-small font-medium">What could this mean? Select all that apply.</p>
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {meanings.map((m) => {
             const picked = selected.has(m);
@@ -113,18 +112,23 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
             ) : null}
           </div>
 
-          <div className="rounded-md border-2 border-border bg-card p-5">
-            <p className="flex items-center gap-1.5 text-base font-semibold">
-              <Eye className="size-4" aria-hidden /> The disambiguating questions
-            </p>
-            <p className="mt-1 text-caption text-muted-foreground">
-              {entry.disambiguating_questions.join("  ·  ")}
-            </p>
-            <p className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
-              <span className="font-semibold text-muted-foreground">The trap: </span>{entry.trap}
-            </p>
-            <p className="mt-2 text-caption text-muted-foreground">Sources: {entry.sources.join(", ")}</p>
-          </div>
+          <details className="group rounded-md border-2 border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
+              <p className="flex items-center gap-1.5 text-base font-semibold">
+                <Eye className="size-4" aria-hidden /> Why — the disambiguating questions
+              </p>
+              <ChevronDown className="size-5 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
+            </summary>
+            <div className="border-t border-border px-5 py-4">
+              <p className="text-caption text-muted-foreground">
+                {entry.disambiguating_questions.join("  ·  ")}
+              </p>
+              <p className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
+                <span className="font-semibold text-muted-foreground">The trap: </span>{entry.trap}
+              </p>
+              <p className="mt-2 text-caption text-muted-foreground">Sources: {entry.sources.join(", ")}</p>
+            </div>
+          </details>
 
           <button
             type="button"

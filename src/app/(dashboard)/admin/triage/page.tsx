@@ -1,7 +1,11 @@
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { priorityScore, needsReview } from "@/lib/review/triage";
+import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { TriageView } from "./triage-view";
+
+/** Resolve internal quiz-item ids to the question text the admin can act on. */
+const QUIZ_PROMPT_BY_ID = new Map(QUIZ_BANK.map((q) => [q.id, q.prompt]));
 
 export const dynamic = "force-dynamic";
 
@@ -34,7 +38,12 @@ export default async function AdminTriagePage() {
   }
   const weakQuizItems = [...quizByItem.entries()]
     .filter(([, v]) => v.total >= 3 && v.correct / v.total < 0.5)
-    .map(([itemId, v]) => ({ itemId, correctPct: Math.round((v.correct / v.total) * 100), attempts: v.total }))
+    .map(([itemId, v]) => ({
+      itemId,
+      prompt: QUIZ_PROMPT_BY_ID.get(itemId),
+      correctPct: Math.round((v.correct / v.total) * 100),
+      attempts: v.total,
+    }))
     .sort((a, b) => a.correctPct - b.correctPct)
     .slice(0, 10);
 

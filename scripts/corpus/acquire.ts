@@ -2,16 +2,14 @@
 /**
  * Casebook acquisition CLI.
  *
- * Reads rights_registry rows with status ∈ public_domain | open_access |
- * licensed (the ONLY ingestible statuses — the licence gate is enforced
- * here AND in the schema), attempts acquisition via the ladder
- * (scripts/corpus/lib/acquire.ts), stores the raw file to disk under
+ * Reads rights_registry rows (Kavya holds the rights to every book, so there
+ * is no licence gate — every row is eligible), attempts acquisition via the
+ * ladder (scripts/corpus/lib/acquire.ts), stores the raw file to disk under
  * scripts/corpus/raw/acquired/<slug>/, and records acquired_file + sha256 +
  * retrieved_at + rights_status on the row via the service-role client.
  *
  * A row that fails every ladder step is marked acquisition_failed with the
- * reason in notes. Rows in pending_licence / not_started / unlicensed are
- * never touched.
+ * reason in notes.
  *
  *   npm run corpus:acquire
  *
@@ -28,7 +26,6 @@ import {
 } from "./lib/acquire";
 import { extractBuffer } from "./lib/extract";
 
-const INGESTIBLE: Array<"public_domain" | "open_access" | "licensed"> = ["public_domain", "open_access", "licensed"];
 const DRY_RUN = process.argv.includes("--dry-run");
 const OCR = process.argv.includes("--ocr");
 
@@ -70,13 +67,12 @@ async function main() {
   console.log(
     DRY_RUN
       ? "dry-run: scanning registry, no downloads, no DB writes"
-      : `acquiring rows with rights_status ${INGESTIBLE.join(" | ")}`,
+      : "acquiring all registry rows (no licence gate — Kavya holds the rights)",
   );
 
   const { data: rows, error } = await admin
     .from("rights_registry")
     .select("id,title,authors,publisher,isbn,contact_url,rights_status,acquired_file,sha256,retrieved_at,notes")
-    .in("rights_status", INGESTIBLE)
     .order("priority", { ascending: true })
     .limit(200);
   if (error) {
@@ -84,7 +80,7 @@ async function main() {
     process.exit(1);
   }
   const registry = (rows ?? []) as RegistryRow[];
-  console.log(`registry: ${registry.length} ingestible rows`);
+  console.log(`registry: ${registry.length} rows`);
 
   let ok = 0;
   let failed = 0;
@@ -107,7 +103,7 @@ async function main() {
             acquired_file: result.file,
             sha256: result.sha256,
             retrieved_at: new Date().toISOString(),
-            rights_status: row.rights_status, // unchanged — stays in the ingestible set
+            rights_status: row.rights_status, // unchanged
             notes: `acquired via ${result.step} from ${result.source_url}`,
             updated_at: new Date().toISOString(),
           })

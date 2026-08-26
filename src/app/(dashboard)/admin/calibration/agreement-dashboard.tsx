@@ -11,14 +11,16 @@ interface Dim {
   status: "provisional" | "validated";
   agreement: number | null;
   nScored: number;
+  interModelAgreement?: number | null;
+  variance?: number | null;
 }
 
 /**
- * A3 — the agreement dashboard. Shows per-dimension calibration status:
- * which dimensions hide their number from students (provisional) and how many
- * paired scores / what kappa each has accumulated. The gate: >= 10 pairs with
- * kappa >= 0.6 flips a dimension to validated (its number then appears in
- * student debriefs).
+ * A3 — how closely the AI's marking matches your own, per dimension. A
+ * dimension you haven't confirmed on enough sessions stays "not final" and
+ * its number stays hidden from students (they get the written feedback only).
+ * Once it matches your marking on MIN_VALIDATION_SCORES+ sessions, it becomes
+ * final and students see the number.
  */
 export function AgreementDashboard({
   dimensions,
@@ -34,18 +36,18 @@ export function AgreementDashboard({
     <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold">Dimension agreement</h2>
+          <h2 className="text-base font-semibold">Agreement with your marking</h2>
           <p className="mt-1 text-small text-muted-foreground">
-            Provisional dimensions hide their <span className="font-semibold">number</span> from students —
-            they see qualitative feedback only until you validate them.
+            Scores you haven&apos;t confirmed yet stay hidden from students — they see the written
+            feedback only.
           </p>
         </div>
         <div className="shrink-0 rounded-md border-2 border-border bg-background px-3 py-2 text-center">
-          <p className="text-caption text-muted-foreground">Overall kappa</p>
+          <p className="text-caption text-muted-foreground">Overall agreement</p>
           <p className="text-numeric text-lg font-semibold">
             {overallKappa != null ? overallKappa.toFixed(2) : "—"}
           </p>
-          <p className="text-caption text-muted-foreground">{pairedCount} paired score(s)</p>
+          <p className="text-caption text-muted-foreground">{pairedCount} marked together with AI</p>
         </div>
       </div>
 
@@ -60,7 +62,7 @@ export function AgreementDashboard({
               <span
                 className={cn(
                   "flex size-8 shrink-0 items-center justify-center rounded-full",
-                  passing ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700",
+                  passing ? "bg-status-success-bg text-status-success-fg" : "bg-status-pending-bg text-status-pending-fg",
                 )}
               >
                 {passing ? <ShieldCheck className="size-4" aria-hidden /> : <ShieldAlert className="size-4" aria-hidden />}
@@ -69,18 +71,24 @@ export function AgreementDashboard({
                 <p className="text-small font-medium">{d.label}</p>
                 <p className="text-caption text-muted-foreground">
                   {provisional
-                    ? `Provisional — number hidden from students · ${d.nScored} scored`
-                    : `Validated — number visible · ${d.nScored} scored`}
-                  {d.agreement != null ? ` · kappa ${d.agreement.toFixed(2)}` : ""}
+                    ? `Not final — students don't see this score yet · ${d.nScored} marked`
+                    : `Final — students see this score · ${d.nScored} marked`}
+                  {d.agreement != null ? ` · agreement ${d.agreement.toFixed(2)}` : ""}
                 </p>
+                {(d.interModelAgreement != null || d.variance != null) && (
+                  <p className="text-caption text-muted-foreground">
+                    Auto: {d.interModelAgreement != null ? `models agree ${(d.interModelAgreement * 100).toFixed(0)}%` : ""}
+                    {d.variance != null ? ` · self-variance ${d.variance.toFixed(2)}` : ""}
+                  </p>
+                )}
               </div>
               <span
                 className={cn(
                   "shrink-0 rounded-full px-2 py-0.5 text-caption font-medium",
-                  pct ? "bg-green-100 text-green-800" : "bg-secondary text-muted-foreground",
+                  pct ? "bg-status-success-bg text-status-success-fg" : "bg-secondary text-muted-foreground",
                 )}
               >
-                {passing ? "Validated" : pct ? "Ready to validate" : "Provisional"}
+                {passing ? "Final" : pct ? "Nearly final" : "Not final yet"}
               </span>
             </li>
           );
@@ -88,11 +96,11 @@ export function AgreementDashboard({
       </ul>
 
       <p className="mt-3 text-caption text-muted-foreground">
-        Gate: {MIN_VALIDATION_SCORES}+ paired scores with weighted kappa ≥ {MIN_VALIDATION_KAPPA} flips a
-        dimension to validated — its number then appears in student debriefs.
+        A dimension becomes final once it matches your marking on {MIN_VALIDATION_SCORES}+ sessions —
+        its score then appears in student debriefs.
       </p>
       {provisionalKeys.length > 0 ? (
-        <p className="mt-1 text-caption text-amber-700">
+        <p className="mt-1 text-caption text-status-pending-fg">
           {provisionalKeys.length} dimension{provisionalKeys.length === 1 ? "" : "s"} currently hidden
           from students.
         </p>

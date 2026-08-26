@@ -103,14 +103,14 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 pt-[12vh]"
+      className="fixed inset-0 z-50 flex bg-black/40 lg:items-start lg:justify-center lg:p-4 lg:pt-[12vh]"
       role="dialog"
       aria-modal="true"
       aria-label="Ask the Syllabus"
       onClick={() => setOpen(false)}
     >
       <div
-        className="w-full max-w-xl overflow-hidden rounded-lg border-2 border-border bg-card shadow-xl"
+        className="flex w-full flex-1 flex-col overflow-hidden bg-card lg:max-w-xl lg:flex-none lg:rounded-lg lg:border-2 lg:border-border lg:shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* input */}
@@ -137,7 +137,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         </div>
 
         {/* results */}
-        <div className="max-h-[50vh] overflow-y-auto p-1">
+        <div className="flex-1 overflow-y-auto p-1 lg:max-h-[50vh]">
           {flat.length === 0 ? (
             <p className="px-3 py-6 text-center text-small text-muted-foreground">
               {query.trim()
@@ -159,7 +159,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
                       onClick={() => choose(item)}
                       onMouseEnter={() => setIdx(flat.indexOf(item))}
                       className={cn(
-                        "flex items-center gap-3 rounded-md px-3 py-2 text-left",
+                        "flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-left",
                         active && "bg-secondary",
                       )}
                     >

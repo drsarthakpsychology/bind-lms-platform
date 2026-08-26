@@ -1,153 +1,133 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { parse } from "csv-parse/sync";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import {
+  parseRosterCsv,
+  importRoster,
+  sendCredentialEmails,
+  sendResendEmail,
+  inviteEmailBody,
+  type RosterFailure,
+  type RosterReport,
+} from "@/lib/auth/roster";
 
-export type BulkImportResult = {
+export type BulkImportResult = RosterReport & {
   error: string | null;
   success: boolean;
-  created: number;
-  skipped: number;
-  emailsSent: number;
-  failures: { row: number; email: string; reason: string }[];
+  failures: RosterFailure[];
 };
 
-/** Default welcome email (plain text). Wording can be edited later. */
-function welcomeBody(name: string, password: string): string {
-  return `Welcome to the program!
-
-Your account is ready:
-  Email: ${name}
-  Password: ${password}
-
-Sign in at the link your program provides and set a new password when you log in.
-
-— The team`;
-}
-
-/**
- * Send a welcome email via Resend. Returns true if sent; false if no key is
- * configured (so bulk import still succeeds without email). Never throws.
- */
-async function sendWelcomeEmail(email: string, name: string, password: string): Promise<boolean> {
-  const key = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM_EMAIL ?? "Welcome <welcome@plms.local>";
-  if (!key) return false;
-  try {
-    await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from,
-        to: [email],
-        subject: "Welcome to the program",
-        text: welcomeBody(email, password),
-      }),
-    });
-    return true;
-  } catch {
-    return false;
-  }
-}
+const emptyImport = (error: string): BulkImportResult => ({
+  error,
+  success: false,
+  rowsRead: 0,
+  created: 0,
+  duplicatesSkipped: 0,
+  invalidSkipped: 0,
+  emailsSent: 0,
+  emailsFailed: 0,
+  failures: [],
+  createdAccounts: [],
+  emptyNames: [],
+});
 
 /**
- * Bulk-create students from a CSV: name,email[,phone]. Idempotent — an email
- * that already exists is skipped (not re-created, no welcome email re-sent).
- * Optionally enrolls each in a course and (future) sends a welcome email.
+ * IMPORT step (no email). Parses a name,email CSV and creates the accounts with
+ * the given scope, recording each as a `pending` credential email. Nothing is
+ * emailed here — the admin reviews the batch and sends explicitly.
  */
 export async function bulkImportStudents(
   _prevState: BulkImportResult,
   formData: FormData,
 ): Promise<BulkImportResult> {
-  if (!(await requireAdmin())) {
-    return { error: "Not authorized.", success: false, created: 0, skipped: 0, emailsSent: 0, failures: [] };
-  }
+  if (!(await requireAdmin())) return emptyImport("Not authorized.");
 
   const file = formData.get("file");
-  const defaultPassword = String(formData.get("password") ?? "").trim();
-  if (!(file instanceof File)) {
-    return { error: "Upload a CSV file.", success: false, created: 0, skipped: 0, emailsSent: 0, failures: [] };
-  }
-  if (defaultPassword.length < 8) {
-    return {
-      error: "Provide a default password of at least 8 characters.",
-      success: false,
-      created: 0,
-      skipped: 0,
-      emailsSent: 0,
-      failures: [],
-    };
-  }
+  if (!(file instanceof File)) return emptyImport("Upload a CSV file.");
 
   const text = await file.text();
-  let rows: Record<string, string>[];
-  try {
-    rows = parse(text, { columns: true, skip_empty_lines: true, trim: true }) as Record<string, string>[];
-  } catch {
-    return { error: "Could not parse the CSV. Use headers: name,email.", success: false, created: 0, skipped: 0, emailsSent: 0, failures: [] };
-  }
+  const scope = String(formData.get("scope") ?? "full").trim() || "full";
+  const parsed = parseRosterCsv(text);
 
   let admin;
   try {
     admin = createAdminClient();
   } catch {
     return {
-      error: "SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet.",
-      success: false,
-      created: 0,
-      skipped: 0,
-      emailsSent: 0,
-      failures: [],
+      ...emptyImport("SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet."),
+      rowsRead: parsed.rows.length,
+      failures: [...parsed.invalid, ...parsed.duplicates],
+      invalidSkipped: parsed.invalid.length,
+      duplicatesSkipped: parsed.duplicates.length,
+      emptyNames: parsed.emptyNames,
     };
   }
 
-  const created: string[] = [];
-  const skipped: string[] = [];
-  let emailsSent = 0;
-  const failures: BulkImportResult["failures"] = [];
-
-  for (const [i, row] of rows.entries()) {
-    const email = String(row.email ?? "").trim().toLowerCase();
-    const name = String(row.name ?? "").trim();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      failures.push({ row: i + 2, email: email || "(blank)", reason: "invalid email" });
-      continue;
-    }
-
-    // Idempotency: skip if the email already has an auth user.
-    const { data: existing } = await admin.auth.admin.listUsers();
-    const already = (existing?.users ?? []).some((u) => u.email?.toLowerCase() === email);
-    if (already) {
-      skipped.push(email);
-      continue;
-    }
-
-    const { data: createdUser, error } = await admin.auth.admin.createUser({
-      email,
-      password: defaultPassword,
-      email_confirm: true,
-      user_metadata: name ? { name } : undefined,
-    });
-    if (error || !createdUser?.user) {
-      failures.push({ row: i + 2, email, reason: error?.message ?? "create failed" });
-      continue;
-    }
-    created.push(email);
-
-    // Welcome email (only if Resend is configured).
-    const sent = await sendWelcomeEmail(email, name || email, defaultPassword);
-    if (sent) emailsSent++;
-  }
+  const report = await importRoster(parsed.rows, { admin, scope });
 
   revalidatePath("/admin/students");
+  revalidatePath("/admin/roster");
   return {
     error: null,
     success: true,
-    created: created.length,
-    skipped: skipped.length,
-    emailsSent,
-    failures,
+    ...report,
+    failures: [...parsed.invalid, ...parsed.duplicates, ...report.failures],
+    invalidSkipped: parsed.invalid.length,
+    duplicatesSkipped: parsed.duplicates.length + report.duplicatesSkipped,
+  };
+}
+
+export type SendEmailsResult = {
+  error: string | null;
+  sent: number;
+  failed: number;
+  results: Array<{ email: string; ok: boolean; reason?: string }>;
+};
+
+/**
+ * SEND step. Explicitly sends credential emails for the given addresses (a
+ * subset or all pending). Each row's status is updated to sent/failed with the
+ * reason, so retries are per-row. Uses the real Resend path.
+ */
+export async function sendCredentialEmailsAction(emails: string[]): Promise<SendEmailsResult> {
+  if (!(await requireAdmin())) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
+
+  const admin = createAdminClient();
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail });
+
+  revalidatePath("/admin/roster");
+  return { error: null, ...report };
+}
+
+export type TestEmailResult = { error: string | null; ok: boolean; detail: string };
+
+/**
+ * SEND TEST EMAIL. Sends the real credential template (populated with realistic
+ * placeholder data) through the exact same Resend code path, with a "[TEST]"
+ * subject prefix. Returns the actual Resend API result so a bad key or template
+ * surfaces here first. Zero risk of reaching a real student (the recipient is
+ * whatever the admin types, defaulting to their own address).
+ */
+export async function sendTestEmailAction(email: string): Promise<TestEmailResult> {
+  if (!(await requireAdmin())) return { error: "Not authorized.", ok: false, detail: "" };
+
+  const to = email.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+    return { error: "Enter a valid email address.", ok: false, detail: "" };
+  }
+
+  const res = await sendResendEmail(
+    to,
+    "[TEST] Set your VIBHA password",
+    inviteEmailBody("Test Student", to, "https://vibhapsychology.com/set-password?test=1"),
+  );
+
+  return {
+    error: null,
+    ok: res.ok,
+    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}` : res.error ?? "Send failed.",
   };
 }

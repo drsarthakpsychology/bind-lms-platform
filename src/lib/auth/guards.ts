@@ -25,3 +25,6 @@ export async function requireAdmin(): Promise<Profile | null> {
 export function isAlumni(profile: Profile | null): boolean {
   return profile?.role === "alumni";
 }
+
+// Scope checks live in a pure, server-only-free module so they stay testable.
+export { isLecturesOnly, lectureOnlyAllowed } from "./scope";

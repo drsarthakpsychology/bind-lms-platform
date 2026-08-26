@@ -45,7 +45,7 @@ export function DashboardPracticeSection() {
             <ListChecks className="size-5" aria-hidden />
           </span>
           <span className="min-w-0">
-            <span className="block text-eyebrow text-muted-foreground">Daily · 90 seconds</span>
+            <span className="block text-eyebrow text-muted-foreground">Daily · 2 min</span>
             <span className="block text-body-strong">5 Judgment Calls</span>
             <span className="block text-caption text-muted-foreground">
               New information, new probability. See how experts disagree.

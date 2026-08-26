@@ -44,7 +44,7 @@ export function FlagToggle({
       <div>
         <p className="text-small font-medium">{label}</p>
         <p className="text-caption text-muted-foreground">
-          {liveForCohortOne ? "Live for Cohort One" : "Built-but-off"}
+          {liveForCohortOne ? "Live for students" : "Not live yet"}
         </p>
       </div>
       <button

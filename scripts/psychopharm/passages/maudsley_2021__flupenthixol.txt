@@ -1,0 +1,1406 @@
+<<<PAGE 27>>>
+
+CHAPTER 1
+
+6  The Maudsley® Prescribing Guidelines in Psychiatry
+
+specific adverse effects), although comparative data are not robust26 (see largescale
+meta-analyses13,27 for rankings of some adverse effect risks).
+Adverse effects are a common reason for treatment discontinuation,28 particularly
+when efficacy is poor.13 Patients do not always spontaneously report side effects however,29 and psychiatrists’ views of the prevalence and importance of adverse effects differ markedly from patient experience.30 Systematic enquiry, along with a physical
+examination and appropriate biochemical tests, is the only way accurately to assess
+their presence and severity or perceived severity. Patient-completed checklists such as
+the Glasgow Antipsychotic Side-effect Scale (GASS)31 can be a useful first step in this
+process. The clinician-completed Antipsychotic Non-Neurological Side-Effects Rating
+Scale (ANNSERS) facilitates a more detailed and comprehensive assessment.32
+Non-adherence to antipsychotic treatment is common, and here the guaranteed medication delivery associated with depot/long-acting injectable antipsychotic preparations is
+unequivocally advantageous. In comparison with oral antipsychotics, there is strong evidence that depots are associated with a reduced risk of relapse and rehospitalisation.33–35
+The introduction of SGA long-acting injections has to some extent changed the image of
+depots, which were sometimes perceived as punishments for miscreant patients. Their
+tolerability advantage probably relates partly to the better definition of their therapeutic
+dose range, meaning that the optimal dose is more likely to be prescribed (compare aripiprazole, with a licensed dose 300mg or 400mg a month, with flupentixol, which has a
+licensed dose in the UK of 50mg every four weeks to 400mg a week). The optimal dose
+of flupentixol is around 40mg every 2 weeks:27 just 5% of the maximum allowed.
+As already mentioned, for patients whose symptoms have not responded sufficiently
+to adequate, sequential trials of two or more antipsychotic drugs, clozapine is the most
+effective treatment,36–38 and its use in these circumstances is recommended by NICE.3
+The biological basis for the superior efficacy of clozapine is uncertain.39 Olanzapine
+should probably be one of the two drugs used before clozapine.10,40 A case might also be
+made for a trial of amisulpride: it has a uniformly high ranking in meta-analyses, and
+one trial found continuation with amisulpride to be as effective as switching to olanzapine.41 This trial also suggested clozapine might be best placed as the second drug used,
+given that switching provided no benefit over continuing with the first prescribed drug.
+This chapter covers the treatment of schizophrenia with antipsychotic drugs, the relative adverse effect profile of these drugs and how adverse effects can be managed.
+
+References
+1. Zohar J, et al. A review of the current nomenclature for psychotropic agents and an introduction to the Neuroscience-based Nomenclature.
+Eur Neuropsychopharmacol 2015; 25:2318–2325.
+2. National Institute for Clinical Excellence. Medicines adherence: involving patients in decisions about prescribed medicines and supporting
+adherence. Clinical Guidance [CG76]. 2009 (last checked March 2019); https://www.nice.org.uk/Guidance/CG76.
+3. National Institute for Health and Care Excellence. Psychosis and schizophrenia in adults: prevention and management. Clinical Guidance
+[CG178]. 2014 (last checked March 2019); https://www.nice.org.uk/guidance/cg178.
+4. Lieberman JA, et al. Effectiveness of antipsychotic drugs in patients with chronic schizophrenia. N Engl J Med 2005; 353:1209–1223.
+5. Jones PB, et al. Randomized controlled trial of the effect on Quality of Life of second- vs first-generation antipsychotic drugs in schizophrenia:
+Cost Utility of the Latest Antipsychotic Drugs in Schizophrenia Study (CUtLASS 1). Arch Gen Psychiatry 2006; 63:1079–1087.
+6. Tandon R, et al. World Psychiatric Association Pharmacopsychiatry Section statement on comparative effectiveness of antipsychotics in the
+treatment of schizophrenia. Schizophr Res 2008; 100:20–38.
+7. Tarsy D, et al. Epidemiology of tardive dyskinesia before and during the era of modern antipsychotic drugs. Handb Clin Neurol 2011;
+100:601–616.
+
+
+
+
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 67>>>
+
+CHAPTER 1
+
+46  The Maudsley® Prescribing Guidelines in Psychiatry
+
+First-generation antipsychotics – place in therapy
+Nomenclature
+First-generation (‘typical’) and second-generation (‘atypical’) antipsychotic medications are not categorically differentiated, the medications in both groups being heterogeneous in terms of pharmacological and side-effect profiles. First-generation
+medications were introduced before 1990 and tend to be associated with acute EPS,
+hyperprolactinaemia and, in the longer term, tardive dyskinesia (TD). There are expectations that such adverse effects are less likely or absent with second-generation antipsychotic medications (introduced after 1990), although in practice most show
+dose-related EPS, some induce hyperprolactinaemia (often to a greater extent than with
+FGAs) and all will give rise to TD, albeit at a lower incidence than FGAs. Secondgeneration medications tend to be associated with metabolic and cardiac complications,1–3 although this is not true of all SGAs and it is true of some FGAs. To complicate
+matters further, it has been suggested that the therapeutic and adverse effects of FGAs
+can be separated by careful dosing4 – essentially turning FGAs into SGAs if used in
+small enough doses (although there is much evidence to the contrary5–7).
+Given these observations, it seems unwise and unhelpful to consider so-called FGAs
+and SGAs as distinct groups of drugs. Perhaps the essential difference between the two
+groups is the size of the therapeutic index in relation to acute EPS. For instance, haloperidol has an extremely narrow range of doses at which it is effective but does not cause
+extrapyramidal side effects (EPSE) (perhaps 4.0 to 4.5mg/day), whereas olanzapine has a
+wide range of therapeutic doses (5–40mg/day) at which it does not generally cause EPSE.
+The use of Neuroscience-based Nomenclature (NbN)1,2 (for which there is a free app
+for iPhone and other devices) obviates the need for classification into an FGA or SGA
+and describes individual drug by their pharmacological activity. The wider use of NbN
+will undoubtedly improve understanding of individual drug effects and perhaps forestall future redundant categorisation.
+
+Role of older antipsychotics
+FGAs still play an important role in schizophrenia. For example, chlorpromazine and
+haloperidol are frequent choices for PRN (‘when necessary’) medication and depot preparations of haloperidol, zuclopenthixol and flupentixol are commonly prescribed. FGAs
+can offer a valid alternative to SGAs where SGAs are poorly tolerated (usually because of
+metabolic changes) or where FGAs are preferred by patients themselves. Some FGAs may
+be less effective than some non-clozapine SGAs (amisulpride, olanzapine and risperidone
+may be slightly more efficacious3,4), but any differences in therapeutic efficacy seem to be
+modest. Two large pragmatic studies, CATIE8 and CUtLASS,5 found few important differences between SGAs and FGAs (mainly perphenazine and sulpiride, respectively).
+The main drawbacks of FGAs are, inevitably, acute EPS, hyperprolactinaemia and
+TD. Hyperprolactinaemia is probably unavoidable in practice (the dose that achieves
+efficacy is too close to the dose that causes hyperprolactinaemia) and, even when not
+symptomatic, hyperprolactinaemia may grossly affect hypothalamic function.6 It is also
+associated with sexual dysfunction,7 but be aware that the autonomic effects of some
+
+
+
+
+<<<PAGE 90>>>
+
+(Abilify Maintena)
+
+(Depixol)
+
+(Modecate)
+
+(Haldol)
+
+(ZypAdhera)
+
+(Xeplion)
+
+(Trevicta)
+
+(Piportil)
+
+Aripiprazole
+
+Flupentixol decanoate
+
+Fluphenazine decanoate
+
+Haloperidol decanoate
+
+Olanzapine pamoate
+
+Paliperidone palmitate
+(monthly)
+
+Paliperidone palmitate
+(3-monthly)
+
+Pipothiazine palmitate
+
+(Clopixol)
+
+Buttock or thigh
+
+Deltoid or gluteal
+
+Gluteal region
+
+Deltoid or gluteal
+
+Deltoid or gluteal
+
+Gluteal
+
+Gluteal region
+
+Gluteal region
+
+Buttock or thigh
+
+Buttock
+
+Licences
+injection site
+Dose range (mg/week)
+
+50–300mg every 4 weeks
+
+12.5mg every 2 weeks to 100mg every
+2 weeks
+
+50mg every 4 weeks to 400mg a week
+
+50–200mg every 4 weeks
+
+175–525mg every 3 months
+
+100
+
+2
+
+4
+
+3 months
+
+Monthly
+
+2–4
+
+4
+
+2–5
+
+2–4
+
+Monthly
+
+Dosing interval
+(weeks)
+
+200mg every 3 weeks to 600mg a week 2–4
+
+Not required** 25–50mg every 2 weeks
+
+25
+
+Not
+required***
+
+Not required** 50–150mg monthly
+
+Not required** 150mg every 4 weeks to 300mg every
+2 weeks
+
+25*
+
+12.5
+
+20
+
+Not required** 300–400mg monthly
+
+Test dose
+(mg)
+
+? Slightly better efficacy than LAI FGAs
+
+Drug release delayed for 2–3 weeks
+– oral therapy required
+
+? Lower incidence of EPS (relative to
+other FGAs)
+
+Loading dose required at treatment
+initiation
+
+Risk of post-injection syndrome
+
+High EPS
+
+High EPS
+
+Maximum licensed dose is high relative
+to other LAIs
+
+Does not increase prolactin; oral
+loading required
+
+Comments
+
+dose overrides longer intervals and lower volumes. For example, zuclopenthixol 500mg every week is licensed, whereas 1,000mg every two weeks is not (more than the licensed maximum
+of 600mg is administered). Always check official manufacturer’s information.
+*Test dose not stated by manufacturer.
+**Tolerability and response to the oral preparation should be established before administering the LAI. With respect to paliperidone LAI, oral risperidone can be used for this purpose.
+***May not be started until the completion of 4 months’ treatment with monthly LAI.
+
+■■ Avoid using shorter dose intervals than those recommended except in exceptional circumstances (e.g. long interval necessitates high volume (>3–4ml?) injection). Maximum licensed single
+
+■■ After a test dose, wait 4–10 days then titrate to maintenance dose according to response (see product information for individual drugs).
+
+■■ The doses mentioned above are for adults. Check formal labelling for appropriate doses in the elderly.
+
+Notes:
+
+Zuclopenthixol decanote
+
+Risperidone microspheres (Risperdal Consta)
+
+UK
+Trade Name
+
+Drug
+
+Table 1.4 Antipsychotic long-acting injections – doses and frequencies15
+
+
+
+
+<<<PAGE 93>>>
+
+CHAPTER 1
+
+72  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Depot/LAI antipsychotics – pharmacokinetics
+Drug
+Aripiprazole1
+
+UK Trade Name
+
+Time to peak (days)*
+
+Plasma half-life
+(days)
+
+Time to steady
+state (weeks)**
+
+(Abilify Maintena)
+
+7d
+
+30–46d
+
+~20W
+~16W
+
+Aripiprazole lauroxil
+
+(Aristada (in USA))
+
+44–50d
+
+~54–57d
+
+Aripiprazole lauroxil
+nanocrystal4–6****
+
+(Aristada Initio (in
+USA))
+
+4d
+
+~15–18d
+
+Flupentixol decanoate7,8
+
+(Depixol)
+
+2–4
+
+4–7d
+
+8–17d
+
+~8–12W
+
+Fluphenazine decanoate4,9–11 (Modecate)
+
+8–12d***
+
+7–10d
+
+~8W
+
+Haloperidol decanoate12,13
+
+(Haldol)
+
+7d
+
+21d
+
+~14W
+
+Olanzapine pamoate
+
+(ZypAdhera)
+
+2–3d
+
+30d
+
+~12W
+
+4,16
+
+Paliperidone palmitate
+(monthly)
+
+(Xeplion)
+
+13d
+
+25–49d
+
+~20W
+
+Paliperidone palmitate17,18
+(three monthly)
+
+(Trevicta)
+
+25d
+
+Deltoid: 84–95d
+Gluteal: 118–139d
+
+~52W
+
+Pipotiazine palmitate19,20
+
+(Piportil)
+
+7–14d
+
+15d
+
+~9W
+
+RBP-7000
+(risperidone sc monthly)
+
+(Perseris (in USA))
+
+1st peak ~1d
+2nd peak ~11d
+
+~8–9d
+
+~8W
+
+Risperidone
+microspheres22,23
+
+(Risperidal Consta)
+
+~30d
+
+4d
+
+~8W
+
+Zuclopenthixol
+decanoate7,19,24
+
+(Clopixol)
+
+4–7d
+
+19d
+
+~12W
+
+4,14,15
+
+4,21
+
+*Time to peak is not the same as time to reach therapeutic plasma concentration, but both are dependent on dose.
+For large (loading) doses, therapeutic activity is often seen before attaining peak levels. For low (test) doses, the
+initial peak level may be sub-therapeutic.
+**Attainment of steady state (SS) follows logarithmic, not linear characteristics: around 90% of SS levels are
+achieved in three half-lives. Time to attain steady state is independent of dose and dosing frequency (i.e. you can’t
+hurry it up by giving more, more often). Loading doses can be used to produce prompt therapeutic plasma levels
+but time to SS remains the same.
+***Some estimates suggest peak concentrations after only a few hours.24,25 It is likely that fluphenazine decanoate
+produces two peaks – one on the day of injection and a second slightly higher peak a week or so later.12
+****used to initiate treatment with Aristada, IM injection with one 30 mg oral dose of aripiprazole; not designed
+for repeat dosing.
+
+References
+1. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+2. Hard ML, et al. Aripiprazole lauroxil: pharmacokinetic profile of this long-acting injectable antipsychotic in persons with schizophrenia. J
+Clin Psychopharmacol 2017; 37:289–295.
+3. Turncliff R, et al. Relative bioavailability and safety of aripiprazole lauroxil, a novel once-monthly, long-acting injectable atypical antipsychotic, following deltoid and gluteal administration in adult subjects with schizophrenia. Schizophr Res 2014; 159:404–410.
+4. Correll CU, et al. Pharmacokinetic characteristics of long-acting injectable antipsychotics for schizophrenia: an overview. CNS Drugs 2021;
+35:39–59.
+5. Alkermes Inc. Highlights of Prescribing Information. ARISTADA INITIO® (aripiprazole lauroxil) extended-release injectable suspension, for
+intramuscular use. 2020; https://www.aristadahcp.com/downloadables/ARISTADA-INITIO-PI.pdf.
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 295>>>
+
+274  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 2
+
+Antipsychotic long-acting injections in bipolar disorder
+LAIs are widely used in BD although none is formally licensed in the UK for this indication (Abilify Maintena is approved by the FDA in the US1). Support for their use is
+rather limited: there have been dozens of open-label trials or case series published, but
+few included more than a handful of subjects.2–4 Retrospective cohort studies and population level studies do, nonetheless, offer some support for the use of LAIs (mainly
+SGAs) in bipolar maintenance.2 There have also been seven RCTs, only five of which
+were sufficiently powered to produce interpretable results (the remaining two trials
+included only 30 subjects in total5,6). These five RCTs represent the highest level of evidence for LAIs in BD. Their details are set out in Table 2.5.
+Few firm conclusions can be drawn from the controlled trials outlined in the table.
+Risperidone LAI is clearly effective either as the sole treatment or as an adjunct but
+provides protection only against manic, hypomanic and mixed-manic episodes and neither decreases nor increases the risk of depressive relapse. Risperidone LAI may be less
+effective than oral olanzapine. It might be tentatively assumed that paliperidone LAI
+has similar effects to risperidone LAI. Oral paliperidone prevents manic relapse in BD7
+and case reports describe good outcomes with the LAI form.8 Aripiprazole LAI also
+protects against manic relapse and does not appear to affect the risk of depression.
+
+Table 2.5 Randomised controlled trials of long-acting injections in bipolar disorder
+Study
+
+N
+
+LAI
+
+Comparator Duration
+
+Ahlfors et al. 33 (19/14)
+19819
+
+Flupentixol
+decanoate
+
+Lithium
+
+18 months Neither treatment improved main
+outcome (number of mood episodes)
+
+MacFadden
+et al.10*
+
+124 (65/59)
+
+Risperidone
+(adjunct)
+
+Placebo
+(adjunct)
+
+12 months Risperidone LAI reduced rate of relapse
+compared with placebo (relative risk 2.3)
+
+Quiroz
+et al.11*
+
+303 (154/149) Risperidone Placebo
+24 months Overall relapse rate was 30% with
+monotherapy monotherapy
+risperidone, 56% with placebo.
+Risperidone did not protect against
+depressive relapse
+
+Vieta
+et al.12*
+
+18 months
+398
+Risperidone Placebo or
+(132/135/131) monotherapy oral
+olanzapine
+monotherapy
+
+Calabrese
+et al.13*
+
+266 (133/133) Aripiprazole Placebo
+12 months Relapse to any mood episode 26.5% with
+monotherapy monotherapy
+aripiprazole; 51.1% with placebo. No
+clear effect on recurrence of depression.
+An open follow-on study of this RCT (that
+also included patients newly prescribed
+aripiprazole) showed somewhat better
+levels of protection: 87–98% of participants
+remained well over 12 months.14
+
+*Trial sponsored by the manufacturer.
+
+Outcome
+
+Recurrence of any mood episode: oral
+olanzapine 23.8%; risperidone LAI
+38.9%; placebo 56.4%. Olanzapine and
+risperidone reduced the risk of elevated
+mood episode but only olanzapine
+reduced the risk of depression
+
+
+
+
+<<<PAGE 296>>>
+
+Data for FGAs in BD are scarce and generally of low quality (open trials, case series
+and retrospective analyses). In these studies, FGA LAIs seem to reduce the risk of relapse
+compared with prior treatments. The largest (open) study9 (n = 85) (note: reference 9
+reports the results of two studies) suggested flupentixol decanoate (20mg every 2–3
+weeks) reduced the risk of elevated mood episodes. Other reports describe similar
+effects for other FGA LAIs. An RCT conducted with flupentixol LAI9 showed no effect
+and no superiority over lithium.
+Taking into account this single RCT and all of the small and uncontrolled observations, there is very little evidence to support the often-repeated lore that flupentixol
+LAI increases the risk of manic relapse, and haloperidol LAI and fluphenazine LAI
+increase the risk of depressive relapse (or at least that FGAs provoke depression). It is
+notable that authors of systematic reviews15,16 repeat this view, which seems to be based
+on the observed increase in depressive episodes in the open study conducted by Ahlfors
+et al.9 In fact, this increase occurred only in subjects whose lithium treatment had been
+stopped immediately before the study began. Nonetheless, oral haloperidol, when used
+for mania, is more likely than oral SGAs to cause a switch to depression,17 so some caution is clearly required.
+There are no controlled comparisons of FGA and SGA LAIs.2–4 A Taiwanese retrospective cohort study18 uncovered a higher risk of depressive episode recurrence and a
+higher likelihood of hospitalisation in those prescribed FGA LAIs (50% were prescribed
+flupentixol, 25% haloperidol and 25% others) compared with those prescribed risperidone LAI. The hazard ratio for readmission was 1.20 (95% CI: 1.04–1.38) – risperidone incident rate 0.42; FGAs 0.51. Of particular note was the substantial rate of
+treatment discontinuation. At 1 year, only 7.2% of those initially prescribed risperidone
+and 2.2% of those initiated on FGA LAIs remained on the original treatment.
+
+Conclusions
+Support for the use of FGA LAIs in bipolar is weak.
+Very limited evidence suggests that FGA LAIs may be effective in reducing recurrence
+of mania/hypomania but they do not prevent recurrence of depression and may
+increase the risk.
+■■ Risperidone LAI and aripiprazole LAI are robustly associated with a reduced risk of
+recurrence of episodes of mania/hypomania compared with placebo.
+■■ There is no evidence to suggest that SGAs increase the risk of depression.
+■■ Risperidone LAI and aripiprazole LAI have no effect on the risk of depressive
+recurrence.
+■■ There is no evidence to support the benefit of LAIs over oral antipsychotic treatment
+in bipolar maintenance.
+■■ As with other conditions, the use of LAIs offers the advantage of transparency with
+respect to compliance: the LAI injection is either given or it is not.
+■■
+■■
+
+CHAPTER 2
+
+Bipolar disorder  275
+
+
+
+
+<<<PAGE 391>>>
+
+370  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.13 (Continued)
+Drug name and
+route
+
+CHAPTER 3
+
+Intravenous
+clomipramine
+
+Dosing information
+
+Manufacturer
+
+Notes
+
+25mg/2mL injection
+Starting dose is 25mg
+diluted in 500mL NaCl
+0.9% by slow infusion
+over 90 minutes.
+Increased to 250–
+300mg in increments of
+25mg/day over 10–14
+days54,55
+
+Novartis
+Defiante
+
+The most common reported side
+effects are similar to the oral
+formulation, which included nausea,
+sweating, restlessness, flushing,
+drowsiness, fatigue, abdominal distress
+and nervousness. ECG monitoring
+recommended
+
+Another report used
+starting dose of 50mg
+IV per day and titrated
+up to a maximum dose
+of 225mg/day over 5–7
+days56
+
+Reduction of symptoms was detected
+after one week of the first IV dose
+
+Intravenous
+citalopram
+
+40mg/mL injection
+Doses from 20 to 40mg
+in 250mL NaCL 0.9%
+or Glucose 5%
+Doses up to 80mg have
+been used for OCD
+Rate of infusion is
+20mg per hour
+
+Lundbeck – available in
+some countries. Not
+licensed in the UK, can
+be imported from
+Germany but may take
+3–4 weeks to obtain
+
+The most commonly reported side
+effects are nausea, headache, tremor
+and somnolence similar to adverse
+effects of the oral preparation. A case
+of acute hyperkinetic delirium has also
+been reported. Used for depression
+and obsessive compulsive disorder.
+ECG monitoring recommended
+
+Intravenous
+escitalopram
+
+10mg slow infusion
+over 60 minutes
+
+Lundbeck – not
+marketed anywhere in
+the world
+
+Studies to date have only looked at
+pharmacokinetic profile. ECG
+monitoring recommended
+
+Intravenous
+mirtazapine
+
+6mg/2mL infusion
+solution
+15mg/5mL infusion
+solution
+Dose 15mg in Glucose
+5% over 60 minutes
+
+Contact local importer
+
+The most common reported side
+effects are nausea, sedation and
+dizziness similar to side effects of the
+oral preparation
+
+Intravenous
+trazodone57
+
+25–100mg in 250mL of
+saline daily for 1 week,
+lasting approximately
+1.5 hours. IV doses
+were decided according
+to the severity of
+depressive symptoms
+
+Available only in Italy
+
+Trazodone showed a significant
+improvement of symptoms only after
+one week of IV treatment and was
+better tolerated than clomipramine
+
+Intramuscular
+flupentixol
+decanoate
+depot58
+
+5–10mg/2 weeks
+
+Lundbeck
+Mylan
+
+IM flupentixol had a mood-elevating
+effect and is well tolerated at these
+doses. Extrapyramidal effects are rarely
+seen. Side-effects reported include dry
+mouth, dizziness and drowsiness
+
+
+
+
+<<<PAGE 667>>>
+
+646  The Maudsley® Prescribing Guidelines in Psychiatry
+
+agitation, overall BPSD), olanzapine (agitation) and aripiprazole (overall BPSD).
+Though commonly used, quetiapine has failed to show effectiveness for BPSD, except
+at higher doses (100–200mg/day) that may not be well tolerated. The CATIE-AD study
+comparing risperidone, olanzapine and quetiapine with placebo in persons with BPSD
+demonstrated efficacy for risperidone and olanzapine but a large percentage of participants discontinued medication due to adverse effects.26
+A 2006 Cochrane review27 of atypical antipsychotics for aggression and psychosis in
+AD concluded that risperidone and olanzapine are useful in diminishing aggression, and
+risperidone reduces psychotic symptoms. However, the authors concluded that because
+of modest efficacy and significant increase in adverse effects, neither risperidone nor
+olanzapine should be routinely used to treat dementia patients unless there is severe
+distress or a serious risk of physical harm to those living or working with the patient.
+
+CHAPTER 6
+
+Increased mortality with antipsychotics in dementia
+Following analysis of published and unpublished data in 2004, warnings were issued in
+the UK and USA regarding increased mortality in patients with dementia with certain
+SGAs (mainly risperidone and olanzapine).28–30 These warnings have been extended to
+include all SGAs as well as conventional antipsychotics,30,31 and a warning about a possible risk of cerebrovascular events (CVAEs) has now been added to product labelling
+for all FGAs and SGAs.
+Some studies suggested that the risk of CVAEs in elderly users of antipsychotics may
+not be cumulative.32,33 The risk was elevated during the first weeks of treatment but
+then decreased over time, returning to base level after 3 months. In contrast, a longterm study (24–54 months) deduced that mortality was progressively increased over
+time for antipsychotic-treated (risperidone and FGAs) patients compared with those
+receiving placebo.34 At present this is not a widely held view.
+Whether the risk of mortality differs from one antipsychotic to another has been investigated in several studies.35–38 In general, haloperidol users had an increased risk of mortality, whereas quetiapine users had a decreased risk. No clinically meaningful differences
+were observed for olanzapine, aripiprazole and ziprasidone35 (or valproic acid36). The
+effects were strongest shortly after the start of treatment and remained after adjustment
+for dose. There was a dose–response relation for all drugs except quetiapine.35 Another
+study37 investigated adjusted hazard ratios of death of 14 individual antipsychotics compared with risperidone in new users of antipsychotics. A higher mortality was found for
+haloperidol, levomepromazine and zuclopenthixol, and to a lesser extent for melperone
+compared with risperidone. Lower risks were observed for quetiapine, olanzapine, clozapine and flupentixol. No statistically significant difference was found for amisulpride.
+In a 2019 network meta-analysis of 17 studies (5,373 patients), no significant differences were found across measures of effectiveness and safety among aripiprazole, olanzapine, quetiapine and risperidone, although differences were found for some of these
+drugs and outcomes when compared with placebo.39
+Several mechanisms have been postulated for the causes of CVAEs with antipsychotics.40
+Orthostatic hypotension may impair cerebral perfusion in people with cerebrovascular
+insufficiency or atherosclerosis. Tachycardia may decrease cerebral perfusion or dislodge
+a thrombus in a patient with atrial fibrillation (see section on psychotropics in AF).
+
+
+
+
+<<<PAGE 746>>>
+
+Hepatic and renal impairment  725
+
+Drug
+
+Comments
+
+Asenapine5,6,8
+
+Hepatically metabolised. SPC recommends avoiding in severe hepatic disease (7-fold
+increase in asenapine exposure). No dose adjustment required in mild to moderate
+disease,12 but be aware of the possibility of increased plasma levels in patients with
+moderate impairment. Transient, asymptomatic rises in transaminases, AST and ALT are
+common, especially early in treatment. Single case report of mild cholestatic liver injury
+resolving on stopping treatment.13
+
+Brexpiprazole6,14
+
+Little information. Use no more than 3mg/day (schizophrenia) or 2mg/day (depression)
+in moderate or severe hepatic failure. Long half-life (~90 hours).
+
+Cariprazine6,15
+
+Occasional, non-clinically relevant increases in ALT and AST. No dosage adjustment is
+required in patients with mild or moderate hepatic failure; not recommended in severe
+hepatic disease (has not been evaluated). Long half-life (~2–4 days). Hepatitis has been
+reported.
+
+Clozapine1,5,6,16–18
+
+Very sedative and constipating. Contraindicated in active liver disease associated with
+nausea, anorexia or jaundice, progressive liver disease or hepatic failure. In less severe
+disease, start with 12.5mg and increase slowly, using plasma levels to gauge
+metabolising capacity and guide dosage adjustment. More frequently associated with
+changes in liver enzymes than other antipsychotics. Transient elevations in AST, ALT and
+GGT to over twice the normal range occur in over 10% of physically healthy people,
+resolving spontaneously in 6–12 weeks.19 Clozapine-induced hepatitis, jaundice,
+cholestasis and liver failure have been reported; clozapine should be discontinued if
+these develop. Successful rechallenge following hepatitis has been described.20,21 See
+section on clozapine side effects in Chapter 1.
+
+Flupentixol/
+zuclopenthixol5,6,22,23
+
+Both are extensively hepatically metabolised. Abnormal liver function tests and (rarely)
+jaundice have been reported with flupenthixol.5 Small, transient elevations in
+transaminases, cholestatic hepatitis and jaundice5 have been reported in some patients
+treated with zuclopenthixol. One report of flupentixol-induced hepatitis.24 No other
+literature reports of use or harm.25 Reduce doses by 50% in patients with
+compromised hepatic function. Depot preparations are best avoided, as altered
+pharmacokinetics will make dosage adjustment difficult and side effects from dosage
+accumulation more likely.
+
+Haloperidol5
+
+Extensively hepatically metabolised. Halve initial doses. Isolated reports of cholestasis,
+acute hepatic failure, hepatitis and abnormal liver function tests.5,6
+
+Iloperidone6,8,26
+
+Hepatically metabolised. Reduce dose in moderate impairment (2-fold increase in
+active metabolites) and avoid completely in severe hepatic impairment (no studies
+done). No dose reduction necessary in mild impairment. Infrequent reports of
+cholelithiasis.
+
+Lumateperone27,28
+
+Hepatically metabolised to active metabolites. No dose adjustment required in mild
+impairment. Increased exposure to lumateperone in moderate and severe
+impairment – manufacturer recommends avoiding. Increases in transaminases
+reported in licensing trials.
+
+Lurasidone5,6,8
+
+Hepatically metabolised. SPC recommends starting dose of 18.5mg (20mg) in hepatic
+impairment, maximum dose of 74mg (80mg)/day in moderate hepatic impairment
+(1.7-fold increase in exposure), and 37mg (40mg) in severe impairment (3-fold
+increase in exposure). No dose adjustment is required in mild hepatic impairment.
+Increases in ALT reported infrequently.
+(Continued)
+
+CHAPTER 8
+
+Table 8.1 (Continued)
+
+
+
+
+<<<PAGE 760>>>
+
+Hepatic and renal impairment  739
+
+Drug
+
+Comments
+
+Flupentixol22,23,25
+
+Negligible renal excretion of unchanged flupentixol. Dosing: GFR 10–50mL/min dose
+as in normal renal function; GFR <10mL/min start with ¼ to ½ of normal dose and
+titrate slowly. May cause hypotension and sedation in renal impairment and can
+accumulate. Manufacturer recommends caution in renal failure. Avoid depot
+preparations in renal impairment.
+
+Haloperidol10,22,23,25,39,40
+
+Less than 1% excreted unchanged in the urine. Manufacturer advises caution in renal
+failure. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR <10mL/min
+start with a lower dose as can accumulate with repeated dosing. A case report of
+haloperidol use in renal failure suggests starting at a low dose and increasing slowly.
+Has been used to treat uraemia associated nausea in renal failure. Avoid depot
+preparations in renal impairment.
+
+Lumateperone41,42
+
+<1% excreted unchanged in urine. Manufacturer advises no dose adjustment needed
+in renal impairment.
+
+Lurasidone43
+
+9% excreted unchanged in the urine. Manufacturer recommends dose adjustment if
+GFR <50mL/min patients (starting dose is 18.75 (20)mg per day, maximum 74 (80)
+mg/day) and avoiding if GFR <15mL/min. Renal failure has been reported rarely.
+
+Olanzapine9,22,23,25,40,44
+
+57% of olanzapine is excreted mainly as metabolites (7% excreted unchanged) in
+urine. Dosing: GFR <50mL/min initially 5mg daily and titrate as necessary. Avoid
+long-acting preparations in renal impairment unless the oral dose is well tolerated
+and effective. Manufacturer recommends a lower long-acting injection starting dose
+of 150mg, 4-weekly in patients with renal impairment. May cause and aggravate
+diabetes, a common cause of renal disease. Hypothermia has been reported when
+used in renal failure.
+
+Paliperidone22,23,25
+
+Paliperidone is also a metabolite of risperidone. 59% excreted unchanged in urine.
+Dosing: GFR 50–80mL/min, 3mg daily and increase according to response to max of
+6mg daily; GFR 10–50mL/min, 3mg alternate days increasing to 3mg daily according
+to response. Use with caution as clearance is reduced by 71% in severe kidney
+disease. Manufacturer contraindicates oral form if GFR <10mL/min due to lack of
+experience and both monthly and 3-monthly depot preparations if GFR <50mL/min
+(reduced loading and maintenance doses if GFR 50 to <80mL/min). There is a single
+case report of successful paliperidone monthly injection use in a patient with renal
+failure undergoing haemodialysis.45
+
+Pimavanserin41,46
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in GFR ≥30mL/min but advises to avoid if GFR <30mL/min due to lack of data.
+
+Pimozide22,23,25
+
+Less than 1% of pimozide is excreted unchanged in the urine; dose reductions not
+usually needed in renal impairment. Dosing: GFR 10–50mL/min, dose as in normal
+renal function; GFR <10mL/min start at a low dose and increase according to
+response. Manufacturer cautions in renal failure.
+
+Quetiapine22,23,25,47–49
+
+Less than 5% of quetiapine excreted unchanged in the urine. Plasma clearance reduced
+by an average of 25% in patients with a GFR <30mL/min. In patients with GFR of
+<10–50mL/min start at 25mg/day and increase in daily increments of 25–50mg to an
+effective dose. Case reports (thrombotic thrombocytopenic purpura, DRESS and non-NMS
+rhabdomyolysis) resulting in acute renal failure with quetiapine have been published.
+(Continued)
+
+CHAPTER 8
+
+Table 8.8 (Continued)
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+

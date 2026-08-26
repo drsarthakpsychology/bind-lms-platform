@@ -193,7 +193,11 @@ export const PROVIDERS: Provider[] = [
 ];
 
 export function isEnabled(): boolean {
-  return process.env.AI_ENABLED === "true";
+  // AI is on unless explicitly disabled with AI_ENABLED=false. With provider
+  // keys configured, the real models serve; with none, callers degrade
+  // gracefully (fixture / error) — a forgotten flag must never silently run
+  // the scripted engine when the user has configured an AI API.
+  return process.env.AI_ENABLED !== "false";
 }
 
 export function getKey(provider: Provider): string | undefined {

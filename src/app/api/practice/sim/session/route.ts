@@ -44,7 +44,10 @@ export async function POST(req: Request) {
       .maybeSingle();
     if (!row) return NextResponse.json({ error: "case not found" }, { status: 404 });
     caseId = row.id;
-    simCase = SEED_CASES.find((c) => c.title === row.title) ?? null;
+    // Prefer the authored SEED_CASES version (richest), but fall back to the
+    // DB row's own case_data — story/clinical cases live only in the DB and
+    // must be startable too (bug: they returned "case required").
+    simCase = (SEED_CASES.find((c) => c.title === row.title) ?? row.case_data) as typeof SEED_CASES[number] | null;
   } else if (parsed.data.caseTitle) {
     const seed = SEED_CASES.find((c) => c.title === parsed.data.caseTitle);
     if (!seed) return NextResponse.json({ error: "case not found" }, { status: 404 });

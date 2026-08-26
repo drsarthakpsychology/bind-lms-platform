@@ -79,7 +79,7 @@ export default async function SimReviewPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Simulated-patient review"
+        title="Practice sessions"
         description="AI-generated scores, always labelled. Faculty comment sits on top."
       />
       <div className="mt-6">

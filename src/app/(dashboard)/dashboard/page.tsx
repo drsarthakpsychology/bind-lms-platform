@@ -11,6 +11,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { DashboardPracticeSection } from "@/components/practice/dashboard-practice-section";
+import LecturesOnlyView from "./lectures-only-view";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +24,7 @@ type LessonRow = {
   order_index: number;
   video_storage_path: string | null;
   description: string | null;
+  title: string | null;
 };
 
 export default async function DashboardPage() {
@@ -41,6 +43,13 @@ export default async function DashboardPage() {
     redirect("/admin");
   }
 
+  // Lecture-only roster: the whole dashboard is a flat lecture list — no
+  // course grid, no practice, no journal. The route guard in the dashboard
+  // layout keeps them off every other surface.
+  if (profile.scope === "lectures_only") {
+    return <LecturesOnlyView />;
+  }
+
   const supabase = await createClient();
 
   // Truthful student view: when previewing as a student, show only published
@@ -54,7 +63,7 @@ export default async function DashboardPage() {
 
   const [{ data: courses }, { data: lessons }, { data: progress }] = await Promise.all([
     coursesQuery,
-    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description"),
+    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description, title"),
     supabase.from("progress").select("lesson_id, is_completed, watched_seconds").eq("user_id", profile.id),
   ]);
 
@@ -115,6 +124,25 @@ export default async function DashboardPage() {
   const continueCourse = courseSummaries.find((c) => c.status === "in-progress");
   const firstNotStartedCourse = orderedSummaries.find((c) => c.status === "not-started");
 
+  // The precise next lesson for the in-progress course — "Resume" should land on
+  // the actual next meaningful action (the first incomplete playable lesson),
+  // not drop the student on the course map to hunt for "Start here".
+  const resumeLesson = continueCourse
+    ? (lessonsByCourse.get(continueCourse.course.id) ?? [])
+        .slice()
+        .sort((a, b) => a.order_index - b.order_index)
+        .find(
+          (l) =>
+            (l.video_storage_path || l.description) &&
+            !progressByLessonId.get(l.id)?.is_completed,
+        )
+    : undefined;
+  const resumeHref = continueCourse
+    ? resumeLesson
+      ? `/courses/${continueCourse.course.id}/lessons/${resumeLesson.id}`
+      : `/courses/${continueCourse.course.id}`
+    : undefined;
+
   const completedCourses = courseSummaries.filter(
     (c) => c.totalLessons > 0 && c.completedCount === c.totalLessons
   );
@@ -151,7 +179,7 @@ export default async function DashboardPage() {
       <Reveal delay={0.1}>
         {continueCourse ? (
           <Link
-            href={`/courses/${continueCourse.course.id}`}
+            href={resumeHref ?? `/courses/${continueCourse.course.id}`}
             className={cn(cardVariants({ variant: "interactive" }), "p-6")}
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -163,11 +191,16 @@ export default async function DashboardPage() {
                   <Play className="size-5 fill-current" />
                 </span>
                 <div className="min-w-0 space-y-1">
-                  <p className="text-eyebrow text-muted-foreground">Step 1 · Continue learning</p>
+                  <p className="text-eyebrow text-muted-foreground">Continue learning</p>
                   <h2 className="text-h2">{continueCourse.course.title}</h2>
                   <p className="text-caption text-muted-foreground">
                     {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
                   </p>
+                  {resumeLesson?.title ? (
+                    <p className="truncate text-caption font-medium text-link">
+                      Next: {resumeLesson.title}
+                    </p>
+                  ) : null}
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -209,7 +242,7 @@ export default async function DashboardPage() {
                 </span>
                 <div className="min-w-0 space-y-1">
                   <p className="text-eyebrow">
-                    Step 1 · {startedSomething ? "Start your next course" : "Start your first course"}
+                    {startedSomething ? "Start your next course" : "Start your first course"}
                   </p>
                   <h2 className="text-h2">{firstNotStartedCourse.course.title}</h2>
                   <p className="text-caption opacity-80">
@@ -228,18 +261,17 @@ export default async function DashboardPage() {
         ) : null}
       </Reveal>
 
-      {/* Step 2 — the daily habit. */}
+      {/* The daily practice block. */}
       <Reveal delay={0.15}>
         <div className="space-y-3">
-          <p className="text-eyebrow text-muted-foreground">Step 2 · Daily habit</p>
+          <p className="text-eyebrow text-muted-foreground">Daily practice</p>
           <DashboardPracticeSection />
         </div>
       </Reveal>
 
-      {/* Step 3 — the full list, in-progress first, completed last. */}
+      {/* The full course list, in-progress first, completed last. */}
       <section aria-label="Your courses" className="space-y-4">
         <div className="space-y-1">
-          <p className="text-eyebrow text-muted-foreground">Step 3 · The full list</p>
           <h2 className="text-h2">Your courses</h2>
           <p className="text-caption text-muted-foreground">
             In-progress first, then not started, then completed.
@@ -251,14 +283,13 @@ export default async function DashboardPage() {
             <EmptyState
               icon={<GraduationCap className="size-6" aria-hidden />}
               title="No courses yet"
-              description="Courses published to your account will appear here. Check back soon."
+              description="Your courses will appear here when they're available. Check back soon."
             />
           </Reveal>
         )}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {orderedSummaries.map(({ course, totalLessons, completedCount, status }, i) => {
-            const percent = totalLessons ? Math.round((completedCount / totalLessons) * 100) : 0;
             const isComplete = status === "completed";
             return (
               <Reveal key={course.id} delay={0.15 + Math.min(i, 3) * 0.05} className="h-full">
@@ -304,16 +335,13 @@ export default async function DashboardPage() {
                     <h3 className="text-h3 leading-snug">{course.title}</h3>
                   </div>
 
-                  <div className="space-y-2">
-                    <Progress value={percent} aria-label={`${course.title} progress`} />
-                    <div className="flex items-center justify-between">
-                      <span className="text-numeric text-caption text-muted-foreground">
-                        {completedCount} of {totalLessons} lessons · {percent}%
-                      </span>
-                    </div>
+                  <div className="pt-3">
+                    <span className="text-numeric text-caption text-muted-foreground">
+                      {completedCount} of {totalLessons} lessons
+                    </span>
                   </div>
 
-                  <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-link">
+                  <span className="inline-flex items-center gap-1 pt-2 text-small font-medium text-link">
                     {status === "completed"
                       ? "Review course"
                       : status === "in-progress"

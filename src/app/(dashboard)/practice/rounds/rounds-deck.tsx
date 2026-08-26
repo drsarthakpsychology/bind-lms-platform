@@ -4,24 +4,10 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
 import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { SEED_CARDS, type SeedCard } from "@/lib/practice/rounds-seeds";
 
-/** A Rounds card. Faculty-approved cards from the `cards` table join the seeds. */
-export type SeedCard = { id?: string; front: string; back: string; type?: "flash" | "idiom" | "confusable" };
-
-/** Author-built starter cards; approved DB cards (lesson-transcript drafts)
- *  are appended by the page. */
-export const SEED_CARDS: SeedCard[] = [
-  { front: "What are the two components of the Mental Healthcare Act 2017 that most affect your duty as a counsellor?", back: "Advance directives + nominated representative. Both mean you must document consent and respect the client's expressed wishes." },
-  { front: "A client tells you they're 'fine' but can't sleep. What's the single best open question?", back: "'What does a bad night look like for you?' — it invites description, not a yes/no." },
-  { front: "When is confidentiality absolute, and when is it breached?", back: "Absolute unless: imminent risk to self/others, child abuse (POCSO), or court order. Say the limits up front." },
-  { front: "What does 'rolling with resistance' mean in motivational interviewing?", back: "Don't fight the client's resistance — reflect it, and let their own argument for change emerge." },
-  { front: "Why is premature reassurance the #1 novice error in a first session?", back: "It closes exploration. The client stops testing whether you can hold their distress, and the real problem stays hidden." },
-  { front: "What's the difference between mood and affect?", back: "Mood is the sustained inner feeling the client reports; affect is the observable expression. A client can report depressed mood with flat affect — or cheerfully deny low mood while showing labile affect.", type: "confusable" },
-  // --- v5 Part 1: Idiom-of-distress cards ---
-  { front: "What are the common medical differentials for a patient reporting 'kamzori' (weakness)?", back: "Anaemia, nutritional deficiency (B12), chronic disease (TB, diabetes, thyroid), or dhat-associated distress in young men.", type: "idiom" },
-  { front: "A patient says 'dil ghabrata hai' (heart flutters). Why shouldn't you assume it's anxiety?", back: "The heart is the Indian seat of emotion — it is as likely to be grief or arrhythmia as it is to be a panic attack. Check the physical first.", type: "idiom" },
-  { front: "What does 'not feeling fresh' usually mean in common Indian English?", back: "Often describes incomplete bowel evacuation (constipation). If you write 'low mood' and move on, you've missed the clinical picture.", type: "idiom" },
-];
+// Re-export so existing consumers (and the deck default) keep working.
+export { SEED_CARDS, type SeedCard };
 
 export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[]; states?: (CardState | undefined)[] }) {
   // The due queue, capped at 25. Each entry carries its card so the deck stays
@@ -125,13 +111,13 @@ export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[];
       </div>
 
       {showBack ? (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {([1, 2, 3, 4] as CardRating[]).map((r) => (
             <button
               key={r}
               type="button"
               onClick={() => rate(r)}
-              className="rounded-md border-2 border-border bg-primary px-3 py-2 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+              className="rounded-md border-2 border-border bg-primary px-3 py-2 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none min-h-11"
             >
               {r === 1 ? "Again" : r === 2 ? "Hard" : r === 3 ? "Good" : "Easy"}
             </button>

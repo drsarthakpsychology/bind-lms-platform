@@ -33,11 +33,11 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
   return (
     <div className="space-y-6">
       {over70 ? (
-        <div className="flex items-center gap-3 rounded-md border-2 border-red-500 bg-red-50 p-4" role="alert">
-          <CircleAlert className="size-5 shrink-0 text-red-600" aria-hidden />
+        <div className="flex items-center gap-3 rounded-md border-2 border-status-alert-fg/40 bg-status-alert-bg p-4" role="alert">
+          <CircleAlert className="size-5 shrink-0 text-status-alert-fg" aria-hidden />
           <div>
-            <p className="font-semibold text-red-800">At {dbPct}% of the free DB limit</p>
-            <p className="text-small text-red-700">
+            <p className="font-semibold text-status-alert-fg">At {dbPct}% of the free DB limit</p>
+            <p className="text-small text-status-alert-fg">
               Below 70% is green. You&apos;re past the line — free up space or plan an upgrade before the cohort starts.
             </p>
           </div>
@@ -48,8 +48,8 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
           <Database className="size-4 text-link" aria-hidden />
-          <h2 className="text-base font-semibold">Supabase database</h2>
-          <span className={cn("ml-auto rounded-full px-2 py-0.5 text-caption font-semibold", dbPct >= WARN_AT * 100 ? "bg-red-100 text-red-700" : dbPct >= 50 ? "bg-amber-100 text-amber-700" : "bg-green-100 text-green-700")}>
+          <h2 className="text-base font-semibold">Database storage</h2>
+          <span className={cn("ml-auto rounded-full px-2 py-0.5 text-caption font-semibold", dbPct >= WARN_AT * 100 ? "bg-status-alert-bg text-status-alert-fg" : dbPct >= 50 ? "bg-status-pending-bg text-status-pending-fg" : "bg-status-success-bg text-status-success-fg")}>
             {dbPct}% of 500 MB
           </span>
         </div>
@@ -59,7 +59,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
         </p>
         <div className="mt-3 h-3 overflow-hidden rounded-full border border-border bg-background">
           <div
-            className={cn("h-full rounded-full", dbPct >= WARN_AT * 100 ? "bg-red-500" : dbPct >= 50 ? "bg-amber-400" : "bg-primary")}
+            className={cn("h-full rounded-full", dbPct >= WARN_AT * 100 ? "bg-status-alert-fg" : dbPct >= 50 ? "bg-status-pending-fg" : "bg-status-success-fg")}
             style={{ width: `${Math.min(100, dbPct)}%` }}
           />
         </div>
@@ -69,15 +69,15 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
           <HardDrive className="size-4 text-link" aria-hidden />
-          <h2 className="text-base font-semibold">Largest tables</h2>
+          <h2 className="text-base font-semibold">Where the space goes</h2>
         </div>
         {(metrics.top_tables ?? []).length === 0 ? (
-          <p className="mt-2 text-small text-muted-foreground">No table data.</p>
+          <p className="mt-2 text-small text-muted-foreground">No data yet.</p>
         ) : (
           <ul className="mt-3 space-y-1.5">
             {(metrics.top_tables ?? []).map((t) => (
               <li key={t.name} className="flex items-center justify-between border-b border-border/60 pb-1.5 text-small">
-                <span className="font-mono text-caption">{t.name}</span>
+                <span className="text-caption">{t.name}</span>
                 <span className="text-numeric text-caption">{fmtBytes(t.size)}</span>
               </li>
             ))}

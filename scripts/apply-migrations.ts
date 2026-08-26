@@ -68,19 +68,14 @@ async function main() {
   console.log("Connected.\n");
 
   const dir = "supabase/migrations_pending";
-  // ONLY the additive migrations the user approved:
-  //  - media_assets.sql         (video storage table)
-  //  - certificates.sql        (certificate records)
-  //  - submissions_bucket.sql  (audio submission bucket)
-  //  - materials_assignments_submissions.sql (Phase 6: enrollment + materials
-  //    + assignment/submission extensions + submission_files + materials bucket)
-  //  - psychopharm_tools.sql   (psychopharmacology reference tables + RLS)
+  // The migrations to apply. Kept explicit (not "apply everything in the dir")
+  // so an unapproved file can't silently run against production. This run:
+  // the roster/email/blocked/calibration feature set.
   const APPROVED = [
-    "media_assets.sql",
-    "certificates.sql",
-    "submissions_bucket.sql",
-    "materials_assignments_submissions.sql",
-    "psychopharm_tools.sql",
+    "profiles_access_scope.sql",
+    "credential_invites.sql",
+    "profiles_status_blocked.sql",
+    "calibration_auto_signals.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);
@@ -94,11 +89,22 @@ async function main() {
   `);
 
   for (const file of files) {
-    const { data: already } = await client.query(
-      "select 1 from _migrations_applied where name = $1",
-      [file],
-    );
-    if (already.length) {
+    // node-postgres returns `{ rows }`, not `{ data }`. The prior `{ data }`
+    // destructure yielded `undefined`, and `already.length` threw the bare
+    // "Cannot read properties of undefined (reading 'length')" crash with no
+    // migration name. Guard every step and name the file on any failure.
+    let rows: Array<unknown>;
+    try {
+      const res = await client.query("select 1 from _migrations_applied where name = $1", [file]);
+      rows = res.rows ?? [];
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error(`  ❌ ${file} — could not check applied state: ${msg}`);
+      process.exitCode = 1;
+      continue;
+    }
+
+    if (rows.length) {
       console.log(`  ⏭  ${file} — already applied`);
       continue;
     }
@@ -110,9 +116,9 @@ async function main() {
       await client.query("insert into _migrations_applied (name) values ($1)", [file]);
       console.log(`     ✅ applied`);
     } catch (e) {
-      // Some migrations contain statements that may partially apply; report clearly.
       const msg = e instanceof Error ? e.message : String(e);
-      console.error(`     ❌ ${msg.slice(0, 200)}`);
+      console.error(`     ❌ ${file} failed: ${msg.slice(0, 400)}`);
+      process.exitCode = 1;
     }
   }
 

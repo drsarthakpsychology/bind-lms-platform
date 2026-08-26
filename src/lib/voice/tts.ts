@@ -27,6 +27,9 @@ export interface TtsEngine {
   cancel(): void;
   speaking(): boolean;
   onBoundary?: (charIndex: number) => void;
+  /** Fires when an utterance finishes — the conversational loop uses this to
+   *  hand the mic back to the student (auto-listen after the patient speaks). */
+  onEnd?: () => void;
 }
 
 function pickVoice(prefs: TtsVoicePrefs): SpeechSynthesisVoice | null {
@@ -68,6 +71,7 @@ export function createTts(): TtsEngine | null {
       u.rate = prefs.rate;
       u.pitch = prefs.pitch;
       u.onboundary = (e) => this.onBoundary?.(e.charIndex);
+      u.onend = () => this.onEnd?.();
       window.speechSynthesis.speak(u);
     },
     cancel() {

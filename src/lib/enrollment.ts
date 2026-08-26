@@ -47,6 +47,12 @@ export async function canAccessLesson(
   // Admin can do anything.
   if (profile.role === "admin") return { ok: true, profile, courseId };
 
+  // Lecture-only scope: every published lesson is the whole surface — no
+  // enrollment gate (these accounts aren't on a course roster).
+  if (profile.scope === "lectures_only") {
+    return { ok: Boolean(course?.is_published), profile, courseId };
+  }
+
   // Student: course must be published AND they must be enrolled.
   if (!course?.is_published) return { ok: false, profile, courseId };
 
@@ -80,6 +86,10 @@ export async function canAccessCourse(
     .select("is_published")
     .eq("id", courseId)
     .single();
+
+  if (profile.scope === "lectures_only") {
+    return { ok: Boolean(course?.is_published), profile };
+  }
 
   if (!course?.is_published) return { ok: false, profile };
 

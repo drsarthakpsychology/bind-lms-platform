@@ -4,7 +4,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { BRAND, cohortDeadlineText, hasCohortStarted } from "@/lib/brand";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { VibhaWordmark } from "@/components/brand/vibha-logo";
+import { SiteFooter } from "@/components/site/site-footer";
 import { LandingNav } from "./landing-nav";
 import { Reveal } from "./reveal";
 import { KineticHeadline } from "./kinetic-headline";
@@ -16,19 +16,6 @@ import { Marquee } from "./marquee";
  * visual language, made into a landing page. Every claim here is sourced
  * from the actual product, from the cases to the debriefs. Nothing fabricated.
  */
-
-function ObservationRings({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 640 640" fill="none" aria-hidden className={className}>
-      <circle cx="320" cy="320" r="120" stroke="currentColor" strokeWidth="3" />
-      <circle cx="320" cy="320" r="176" stroke="currentColor" strokeWidth="3" />
-      <circle cx="320" cy="320" r="232" stroke="currentColor" strokeWidth="3" />
-      <circle cx="320" cy="320" r="288" stroke="currentColor" strokeWidth="3" />
-      <circle cx="320" cy="320" r="52" stroke="currentColor" strokeWidth="3" />
-      <circle cx="320" cy="320" r="10" fill="currentColor" />
-    </svg>
-  );
-}
 
 function CaseFragment({
   label,
@@ -352,40 +339,6 @@ function ClosingCta() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="relative overflow-hidden border-t-2 border-foreground bg-surface-2">
-      <ObservationRings className="pointer-events-none absolute -bottom-16 -right-10 w-44 rotate-12 text-foreground/[0.05]" />
-      <div className="rail relative flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <VibhaWordmark size={32} />
-        <nav className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground" aria-label="Footer">
-          <Link
-            href="#about"
-            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
-          >
-            About
-          </Link>
-          <Link
-            href="/login"
-            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
-          >
-            Login
-          </Link>
-          <Link
-            href="/waitlist"
-            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
-          >
-            Join waitlist
-          </Link>
-        </nav>
-        <p className="text-caption text-muted-foreground">
-          © 2026 {BRAND.name}
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 export function LandingPage() {
   return (
     <div className="flex min-h-dvh flex-col bg-surface-1">
@@ -398,7 +351,7 @@ export function LandingPage() {
         <WhoBuilds />
         <ClosingCta />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }

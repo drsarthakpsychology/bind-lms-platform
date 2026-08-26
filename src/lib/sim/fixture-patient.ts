@@ -19,6 +19,7 @@
  */
 
 import type { DepthCase, PatientMoveId, PatientState } from "./types";
+import type { Gate } from "./gates";
 import type { DirectorDecision } from "./director";
 import { fallbackRendering } from "./moves";
 import type { FactRule } from "./engine";
@@ -146,18 +147,25 @@ export function runFixtureTurn(
   // --- permitted facts (code gate evaluation, same as live mode) ---
   const ctx = { move, text: studentTurn, topics: [], quality };
   void ctx;
+  const studentMoveHistory = s.student_moves ?? [];
+  const evalGate = (g: Gate): boolean => {
+    switch (g.kind) {
+      case "trust_at_least": return s.trust >= g.value;
+      case "turn_after": return s.turn_count >= g.n;
+      case "topic_opened": return g.topic === "any" || studentTurn.toLowerCase().includes(g.topic.toLowerCase());
+      case "explicit_phrase": return g.patterns.some((p) => p.test(studentTurn));
+      case "move_used": return studentMoveHistory.filter((m) => m === g.move).length >= g.times;
+      case "all_of": return g.gates.every(evalGate);
+      case "any_of": return g.gates.some(evalGate);
+    }
+  };
   const permitted = facts.filter((f) => {
-    const gateMet = (() => {
-      switch (f.gate.kind) {
-        case "trust_at_least": return s.trust >= f.gate.value;
-        case "turn_after": return s.turn_count >= f.gate.n;
-        case "topic_opened": return f.gate.topic === "any" || studentTurn.toLowerCase().includes(f.gate.topic.toLowerCase());
-        case "explicit_phrase": return f.gate.patterns.some((p) => p.test(studentTurn));
-        default: return false;
-      }
-    })();
+    const gateMet = evalGate(f.gate);
     return !s.disclosed.includes(f.fact_id) && !(f.sensitive && s.trust < 3) && gateMet;
   });
+  // Track the STUDENT's classified move for move_used gates (counted from the
+  // NEXT turn on, matching the live engine's ordering).
+  s.student_moves = [...studentMoveHistory.slice(-8), move];
 
   // --- effects only after the 3rd turn, so openings stay stable ---
   const effects: string[] = [];

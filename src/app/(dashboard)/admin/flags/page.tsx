@@ -30,8 +30,8 @@ const LABELS: Record<string, string> = {
 const LIVE_FOR_COHORT_ONE = ["consulting_room", "decoder", "mse", "judgment", "rounds", "journal"];
 
 /**
- * /admin/flags — the scope cut. Build everything, ship six. Flip any feature
- * on in one click for the staged reveal.
+ * /admin/flags — which practice tools are live for students. Flip any one on
+ * or off; new tools stay off until they're turned on here.
  */
 export default async function AdminFlagsPage() {
   const admin = createAdminClient();
@@ -40,8 +40,8 @@ export default async function AdminFlagsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Feature flags"
-        description="Build everything, ship six. Flip a feature on for the whole cohort in one click."
+        title="What's live"
+        description="Switch practice tools on or off for your students. New tools stay off until you turn them on."
       />
       <div className="mt-6 space-y-2">
         {(flags ?? []).map((f) => {

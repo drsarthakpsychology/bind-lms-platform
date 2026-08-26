@@ -9,7 +9,8 @@ import { parseDelivery } from "@/lib/sim/delivery";
 import { initialState, type PatientState } from "@/lib/sim/types";
 import { drawVariant, hashString } from "@/lib/sim/variation";
 import type { DepthCase } from "@/lib/sim/types";
-import type { Gate } from "@/lib/sim/gates";
+import { parseGate } from "@/lib/sim/gates";
+import { PATIENT_PROMPT_VERSION } from "@/lib/sim/prompt-version";
 import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
@@ -131,30 +132,47 @@ export async function POST(req: Request) {
     content_type: "text",
   });
 
-  // Build the fact rules from the case's disclosure data.
+  // Build the fact rules from the case's disclosure data. The authored gate
+  // strings ("asked_about_self_harm_clearly", "validation_given",
+  // "two_or_more_reflective_statements") become real deterministic gates —
+  // a self-harm fact only opens when the student clearly asks, empathy-gated
+  // facts only after the student earns them. Trust ≥ 3 still applies on top.
   const facts = (simCase.disclosure_rules ?? []).map((r) => ({
     fact_id: r.fact,
-    gate: { kind: "explicit_phrase", patterns: [/./] } as Gate,
+    gate: parseGate(r.gate),
     sensitive: true,
   }));
 
   // Run the patient engine (Director → hard rules → Actor → fallback).
   // Fixture mode: the deterministic case-aware patient (no network, still a
   // different person per case). Live mode: Director + Actor model calls.
+  // If the live provider fails entirely (outage, quota, timeout), degrade to
+  // the fixture patient rather than surfacing a 500 — never a dead turn.
   const engineEnabled = aiEnabled();
-  const result = engineEnabled
-    ? await runPatientTurn(simCase, state, message, recentTurns, facts)
-    : (() => {
-        const fx = runFixtureTurn(simCase, state, message, facts, recentTurns);
-        return {
-          reply: fx.reply,
-          state: fx.state,
-          decision: fx.decision,
-          usedFallback: false,
-          regenerated: false,
-          move: fx.decision.patient_move,
-        };
-      })();
+  const runFixture = () => {
+    const fx = runFixtureTurn(simCase, state, message, facts, recentTurns);
+    return {
+      reply: fx.reply,
+      state: fx.state,
+      decision: fx.decision,
+      usedFallback: false,
+      regenerated: false,
+      move: fx.decision.patient_move,
+    };
+  };
+  let result: Awaited<ReturnType<typeof runPatientTurn>>;
+  let degraded = false;
+  if (engineEnabled) {
+    try {
+      result = await runPatientTurn(simCase, state, message, recentTurns, facts);
+    } catch (e) {
+      console.error("live patient engine failed — degrading to fixture:", e);
+      result = runFixture();
+      degraded = true;
+    }
+  } else {
+    result = runFixture();
+  }
 
   // Persist the patient turn WITH the new state (the rewind point) and the
   // parsed delivery cues — stage directions are BEHAVIOUR, never text.
@@ -174,8 +192,11 @@ export async function POST(req: Request) {
   await admin.from("ai_usage_log").insert({
     user_id: user.id,
     workload: "sim_patient_turn",
-    provider: engineEnabled ? "unknown" : "fixture",
-    status: engineEnabled ? "ok" : "fixture_fallback",
+    provider: degraded ? "fixture" : engineEnabled ? "unknown" : "fixture",
+    status: degraded ? "fixture_fallback" : engineEnabled ? "ok" : "fixture_fallback",
+    used_fallback: Boolean(result.usedFallback),
+    regenerated: Number(result.regenerated ?? 0),
+    prompt_version: engineEnabled ? PATIENT_PROMPT_VERSION : null,
     tokens_in: Math.round((message.length + result.reply.length) / 4),
     tokens_out: Math.round(result.reply.length / 4),
   });
@@ -191,5 +212,8 @@ export async function POST(req: Request) {
     affect: result.decision.affect,
     fatigue: result.state.fatigue,
     mood: result.state.mood_today,
+    // Phase 1 observability: the client shows an amber "AI fallback" pill in
+    // dev only (NODE_ENV !== 'production') when the scripted engine fired.
+    aiFallback: degraded || Boolean(result.usedFallback),
   });
 }

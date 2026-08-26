@@ -9,8 +9,12 @@ import { go } from "./helpers";
 
 test.describe("interactive flows", () => {
   test("weekly check-in submits", async ({ page }) => {
-    await go(page, "/practice/check-in");
-    await expect(page.locator("h1")).toContainText("How's the week");
+    // The check-in moved out of the /practice drill grid to /record (casebook
+    // Finding 4): admin-you-file, tabbed next to the supervision log.
+    await go(page, "/record");
+    await expect(page.locator("h1")).toContainText("The paper trail of your training");
+    await page.getByRole("button", { name: /weekly check-in/i }).click();
+    await expect(page.getByText(/thirty seconds/i)).toBeVisible();
     const sliderRows = page.locator("form .grid.grid-cols-5");
     const rowCount = await sliderRows.count();
     expect(rowCount).toBeGreaterThanOrEqual(3);
@@ -23,8 +27,8 @@ test.describe("interactive flows", () => {
   });
 
   test("supervision log submits and shows the entry", async ({ page }) => {
-    await go(page, "/practice/supervision");
-    await expect(page.locator("h1")).toContainText("supervision log");
+    await go(page, "/record");
+    await expect(page.locator("h1")).toContainText("The paper trail of your training");
     await page.fill("#sup-activity", "Case review — OCD formulation with Dr. Rao");
     await page.fill("#sup-hours", "1.5");
     await page.getByRole("button", { name: /log hours/i }).click();
@@ -43,7 +47,7 @@ test.describe("interactive flows", () => {
 
   test("case library search works", async ({ page }) => {
     await go(page, "/practice/library");
-    await expect(page.locator("h1")).toContainText("Browse the corpus");
+    await expect(page.locator("h1")).toContainText("Case library");
     const input = page.locator("input[placeholder*='Search']");
     await input.fill("depression");
     await input.press("Enter");

@@ -11,10 +11,15 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 const initial: BulkImportResult = {
   error: null,
   success: false,
+  rowsRead: 0,
   created: 0,
-  skipped: 0,
+  duplicatesSkipped: 0,
+  invalidSkipped: 0,
   emailsSent: 0,
+  emailsFailed: 0,
   failures: [],
+  createdAccounts: [],
+  emptyNames: [],
 };
 
 export function BulkImportForm() {
@@ -23,7 +28,7 @@ export function BulkImportForm() {
   return (
     <form action={formAction} className="space-y-4">
       <div className="space-y-1.5">
-        <Label htmlFor="file">CSV file</Label>
+        <Label htmlFor="file">CSV file (name, email)</Label>
         <Input
           id="file"
           name="file"
@@ -31,16 +36,22 @@ export function BulkImportForm() {
           accept=".csv,text/csv"
           required
         />
+        <p className="text-caption text-muted-foreground">
+          One row per person: <code>name,email</code>. Nothing else is read.
+        </p>
       </div>
+
       <div className="space-y-1.5">
-        <Label htmlFor="password">Default password (min 8 chars)</Label>
-        <Input
-          id="password"
-          name="password"
-          type="text"
-          placeholder="Set a default for new students"
-          required
-        />
+        <Label htmlFor="scope">What can they see?</Label>
+        <select
+          id="scope"
+          name="scope"
+          className="w-full rounded-lg border-2 border-border bg-card px-3 py-2 text-small text-foreground"
+          defaultValue="full"
+        >
+          <option value="full">Full student access</option>
+          <option value="lectures_only">Lectures only (locked to the lecture list + player)</option>
+        </select>
       </div>
 
       {state.error && (
@@ -51,8 +62,9 @@ export function BulkImportForm() {
       {state.success && (
         <Alert variant="warning">
           <AlertDescription>
-            Created {state.created}, skipped {state.skipped} (existing),
-            welcome emails sent: {state.emailsSent}.
+            Created {state.created}, duplicates skipped {state.duplicatesSkipped},
+            invalid skipped {state.invalidSkipped}, emails sent {state.emailsSent}
+            {state.emailsFailed > 0 && `, emails failed ${state.emailsFailed}`}.
             {state.failures.length > 0 && ` ${state.failures.length} row(s) failed.`}
           </AlertDescription>
         </Alert>

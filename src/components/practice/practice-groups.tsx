@@ -1,11 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Reveal } from "@/components/motion/reveal";
-import { cardVariants } from "@/components/ui/card";
+import { MobileListItem } from "@/components/mobile/mobile-list-item";
 
 /** Icon name → component map (functions can't cross the Server→Client
  *  boundary, so the page passes plain string names — same pattern as the
@@ -66,10 +64,14 @@ const CORE_TOOLS = new Set([
 const OPEN_KEY = "practice:group-open";
 
 /**
- * The /practice grid, grouped by session length (casebook Axis 5) with
+ * The /practice list, grouped by session length (casebook Axis 5) with
  * collapsible sections whose open/closed state is remembered per user in
  * localStorage. Default: the "Under 5 minutes" group open (the most common
  * "how long have I got" answer), everything else collapsed.
+ *
+ * Mobile-first: each group is a quiet text header (a full-width toggle, not a
+ * bordered box) and each tool is a single tappable `MobileListItem` — icon
+ * tile + two-line title + one meta line + state chip. No card-inside-card.
  */
 export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
   const [open, setOpen] = React.useState<Set<string>>(() => {
@@ -98,98 +100,80 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {groups.map((group) => {
         const isOpen = open.has(group.id);
         return (
-          <details key={group.id} open={isOpen} className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
-            <summary
-              onClick={(e) => {
-                e.preventDefault();
-                toggle(group.id);
-              }}
+          <section key={group.id} aria-label={group.label}>
+            <button
+              type="button"
+              onClick={() => toggle(group.id)}
               aria-expanded={isOpen}
-              className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 transition-colors hover:bg-muted/40"
+              aria-controls={`practice-group-${group.id}`}
+              className="flex w-full min-h-12 items-center justify-between gap-3 rounded-md px-1 text-left transition-colors hover:bg-muted/40"
             >
               <span className="flex min-w-0 flex-col gap-0.5">
-                <span className="text-h3">{group.label}</span>
+                <span className="text-h3 text-foreground">{group.label}</span>
                 <span className="text-small text-muted-foreground">{group.hint}</span>
               </span>
               <span className="flex shrink-0 items-center gap-2.5">
                 <span className="rounded-full border border-border bg-muted px-2.5 py-1 text-caption font-medium text-muted-foreground">
                   {group.tools.length} {group.tools.length === 1 ? "tool" : "tools"}
                 </span>
-                <span className="hidden text-caption font-medium text-muted-foreground sm:inline">
-                  {isOpen ? "Hide" : "Show"}
-                </span>
-                <span className="flex size-6 items-center justify-center rounded-full border border-border bg-secondary text-foreground">
-                  <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} aria-hidden />
-                </span>
+                <ChevronDown
+                  className={cn(
+                    "size-5 text-muted-foreground transition-transform duration-fast ease-snappy",
+                    isOpen && "rotate-180",
+                  )}
+                  aria-hidden
+                />
               </span>
-            </summary>
-            <div className="grid grid-cols-1 gap-4 border-t-2 border-border p-4 sm:grid-cols-2 lg:grid-cols-3">
-              {group.tools.map((tool, i) => {
-                const Icon = PRACTICE_ICONS[tool.icon] ?? CircleCheck;
-                const chip = tool.state ? STATE_STYLE[tool.state] : null;
-                const dimmed = tool.state === "done_today";
-                const isCore = CORE_TOOLS.has(tool.href);
-                return (
-                  <Reveal key={tool.href} delay={0.15 + i * 0.05} className="h-full">
-                    <Link
+            </button>
+
+            {isOpen ? (
+              <div id={`practice-group-${group.id}`} className="mt-1 space-y-1">
+                {group.tools.map((tool) => {
+                  const Icon = PRACTICE_ICONS[tool.icon] ?? CircleCheck;
+                  const chip = tool.state ? STATE_STYLE[tool.state] : null;
+                  const dimmed = tool.state === "done_today";
+                  const isCore = CORE_TOOLS.has(tool.href);
+                  const meta = [tool.time, tool.description, tool.progress]
+                    .filter(Boolean)
+                    .join(" · ");
+
+                  return (
+                    <MobileListItem
+                      key={tool.href}
                       href={tool.href}
-                      className={cn(
-                        cardVariants({ variant: "interactive" }),
-                        "group h-full gap-4 bg-background p-4",
-                        dimmed && "opacity-60",
-                      )}
-                    >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <span
-                            className={cn(
-                              "flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border",
-                              isCore ? "bg-primary text-primary-foreground" : "bg-secondary text-link",
-                            )}
-                          >
-                            <Icon className="size-5" aria-hidden />
-                          </span>
-                          <span className="flex flex-col gap-1">
-                            <span className="text-eyebrow text-link">{tool.verb}</span>
-                            {isCore ? (
-                              <span className="w-fit rounded-full bg-primary px-1.5 py-px text-caption font-semibold text-primary-foreground">
-                                Core tool
-                              </span>
-                            ) : null}
-                          </span>
-                        </div>
-                        <span className="shrink-0 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                          {tool.time}
-                        </span>
-                      </div>
-
-                      <h3 className="text-body-strong">{tool.title}</h3>
-                      <p className="text-small text-muted-foreground">{tool.description}</p>
-
-                      {chip || tool.progress ? (
-                        <div className="mt-auto flex items-center justify-between gap-2 pt-1">
-                          {chip ? (
-                            <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${chip.className}`}>
-                              {chip.label}
-                            </span>
-                          ) : (
-                            <span />
+                      leading={
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "flex size-9 items-center justify-center rounded-md border-2",
+                            isCore
+                              ? "border-foreground bg-primary text-primary-foreground"
+                              : "border-border bg-secondary text-link",
                           )}
-                          {tool.progress ? (
-                            <span className="text-caption text-muted-foreground">{tool.progress}</span>
-                          ) : null}
-                        </div>
-                      ) : null}
-                    </Link>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </details>
+                        >
+                          <Icon className="size-5" />
+                        </span>
+                      }
+                      title={tool.title}
+                      subtitle={meta}
+                      trailing={
+                        chip ? (
+                          <span className={cn("rounded-full px-2 py-0.5 text-caption font-medium", chip.className)}>
+                            {chip.label}
+                          </span>
+                        ) : undefined
+                      }
+                      className={cn(dimmed && "opacity-60")}
+                    />
+                  );
+                })}
+              </div>
+            ) : null}
+          </section>
         );
       })}
     </div>

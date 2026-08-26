@@ -1,0 +1,696 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 2048>>>
+
+Sertindole
+
+Therapeutics
+Brands
+Serdolect
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: dopamine and serotonin
+receptor antagonist (DS-RAn)
+Atypical antipsychotic (serotonin-dopamine antagonist; secondgeneration antipsychotics; also a mood stabilizer)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia (for patients intolerant to at least one other
+antipsychotic)
+Acute mania/mixed mania
+Other psychotic disorders
+
+
+
+
+<<<PAGE 2052>>>
+
+and then every 3 months for the duration of treatment
+ECG is recommended prior to and after any dose increase as well as
+after addition of any drug that can change sertindole concentration
+(e.g., CYP450 2D6 or 3A4 inhibitors)
+Before starting an atypical antipsychotic
+
+✽ Weigh all patients and track BMI during treatment
+
+Get baseline personal and family history of diabetes, obesity,
+dyslipidemia, hypertension, and cardiovascular disease
+
+✽ Get waist circumference (at umbilicus), blood pressure, fasting
+plasma glucose, and fasting lipid profile
+Determine if the patient
+is overweight (BMI 25.0–29.9)
+is obese (BMI >30)
+has pre-diabetes (fasting plasma glucose 100–125 mg/dL)
+has diabetes (fasting plasma glucose >126 mg/dL)
+has hypertension (BP >140/90 mmHg)
+has dyslipidemia (increased total cholesterol, LDL cholesterol,
+and triglycerides; decreased HDL cholesterol)
+Treat or refer such patients for treatment, including nutrition and
+weight management, physical activity counseling, smoking
+cessation, and medical management
+
+
+
+
+<<<PAGE 2057>>>
+
+12–20 mg/day
+Dosage Forms
+Tablet 4 mg, 12 mg, 16 mg, 20 mg
+How to Dose
+Initial 4 mg/day; increase by 4 mg every 4–5 days; maximum dose
+generally 24 mg/day
+Dosing Tips
+A starting dose of 8 mg or a rapid increase in dose significantly
+increase risk of orthostatic hypotension
+Sertindole should be discontinued if QTc interval of more than 500
+msec is observed during treatment
+Overdose
+Fatalities have been reported; sedation, slurred speech, tachycardia,
+hypotension, transient QTc prolongation; torsade de pointes
+Long-Term Use
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+
+
+
+
+<<<PAGE 2058>>>
+
+No
+How to Stop
+Down-titration, especially when simultaneously beginning a new
+antipsychotic while switching (i.e., cross-titration)
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms
+Pharmacokinetics
+Terminal half-life approximately 3 days
+Extensively metabolized by CYP450 2D6 and 3A
+Drug Interactions
+May increase effects of antihypertensive agents
+May antagonize levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Inhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine,
+quinidine) may significantly increase plasma levels of sertindole and
+require a dosage reduction of sertindole
+Inhibitors of CYP450 3A (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) can increase plasma levels of sertindole
+and concomitant use of these agents with sertindole is
+contraindicated
+
+
+
+
+<<<PAGE 2059>>>
+
+Other Warnings/Precautions
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+Dysphagia has been associated with antipsychotic use, and
+sertindole should be used cautiously in patients at risk for aspiration
+pneumonia
+Sertindole prolongs QTc interval more than some other
+antipsychotics
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+
+
+
+
+<<<PAGE 2060>>>
+
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a personal or family history of QTc prolongation
+If there is a history of significant cardiovascular illness, including
+congestive heart failure, cardiac hypertrophy, arrhythmia,
+bradycardia, or congential prolonged QT syndrome
+If patient has hypokalemia, hypomagnesemia, or QTc greater than
+450 msec (males) or 470 msec (females)
+If patient is taking a CYP450 3A inhibitor
+If patient has severe hepatic impairment
+If patient has galactose intolerance, Lapp lactase deficiency, or
+glucose-galactose malabsorption
+If there is a proven allergy to sertindole
+
+Special Populations
+Renal Impairment
+Dose adjustment not generally necessary
+Hepatic Impairment
+For mild to moderate impairment, use slower titration and lower
+maintenance dose
+
+
+
+
+<<<PAGE 2061>>>
+
+Contraindicated in patients with severe hepatic impairment
+Cardiac Impairment
+Drug should be used with caution because of risk of orthostatic
+hypotension
+Not recommended for patients with significant cardiovascular
+illness, including congestive heart failure, cardiac hypertrophy,
+arrhythmia, bradycardia, or congential prolonged QT syndrome
+Elderly
+Use cautiously and only after thorough cardiovascular examination
+Some patients may tolerate lower doses better
+Although atypical antipsychotics are commonly used for behavioral
+disturbances in dementia, no agent has been approved for treatment
+of elderly patients with behavioral symptoms of dementia such as
+agitation
+Elderly patients with dementia-related psychosis treated with
+atypical antipsychotics are at an increased risk of death compared to
+placebo, and also have an increased risk of cerebrovascular events
+Children and Adolescents
+Safety and efficacy have not been established
+Children and adolescents using sertindole may need to be monitored
+more often than adults and may tolerate lower doses better
+
+
+
+
+<<<PAGE 2062>>>
+
+Pregnancy
+Some animal studies show adverse effects; no controlled studies in
+humans
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Breast Feeding
+Unknown if sertindole is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Infants of women who choose to breast feed while on sertindole
+should be monitored for possible adverse effects
+
+The Art of Psychopharmacology
+Potential Advantages
+Some cases of psychosis and bipolar disorder refractory to treatment
+with other antipsychotics
+
+
+
+
+<<<PAGE 2063>>>
+
+Potential Disadvantages
+Patients requiring rapid onset of antipsychotic action without dosage
+titration
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Cognitive symptoms
+Unstable mood (both depression and mania)
+Aggressive symptoms
+Pearls
+Aimed at patients intolerant to at least one other antipsychotic and
+when potential benefits outweigh potential risks
+Not approved for mania, but all atypical antipsychotics approved for
+acute schizophrenia are generally also useful for acute bipolar mania
+Not approved for depression, but binding properties suggest
+potential use in treatment-resistant and bipolar depression, though
+probably not as a first- or second-line agent given the need to
+accumulate more real-world clinical experience of any actual risks
+of sertindole
+
+Suggested Reading
+
+
+
+
+<<<PAGE 2064>>>
+
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+Komossa K , Rummel-Kluge C , Hunger H , et al. Sertindole versus other
+atypical antipsychotics for schizophrenia . Cochrane Database Syst Rev
+2009 ;(2) :CD006752 .
+Lindstrom E , Farde L , Eberhard L , Haverkamp W . QTc interval
+prolongation and antipsychotic drug treatments: focus on sertindole . Int J
+Neuropsychopharmacol 2005 ;8 :615–29 .
+Spina E , Zoccali R . Sertindole: pharmacological and clinical profile and
+role in the treatment of schizophrenia . Expert Opin Drug Metab Toxicol
+2008 ;4 :629–38 .
+
+
+
+
+<<<PAGE 2615>>>
+
+Selpar (selegiline), 705
+Sensaval (nortriptyline), 551
+Sensival (nortriptyline), 551
+Sepatrem (selegiline), 705
+Serad (sertraline), 721
+Seralgan (citalopram), 159
+Serax (oxazepam), 569
+Serdolect (sertindole), 715
+Serelan (mianserin), 495
+Seren (chlordiazepoxide), 147
+Serenace (haloperidol), 347
+Serenase (haloperidol), 347
+Serenase (lorazepam), 437
+Serenase Decanoat (haloperidol), 347
+Serenase Depot (haloperidol), 347
+Serenelfi (haloperidol), 347
+Serepax (oxazepam), 569
+Seresta (oxazepam), 569
+Sereupin (paroxetine), 593
+Serlain (sertraline), 721
+Serlect (sertindole), 715
+Serol (fluoxetine), 301
+Seronil (fluoxetine), 301
+Seropram (citalopram), 159
+Seroquel (quetiapine), 667
+Seroquel XR (quetiapine), 667
+Seroxal (paroxetine), 593
+Seroxat (paroxetine), 593
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2633>>>
+
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+fluoxetine, 301
+iloperidone, 359
+lamotrigine, 387
+lithium, 415
+lumateperone, 451
+lurasidone , 457
+modafinil, 521
+olanzapine/fluoxetine combination , 301 , 559
+quetiapine , 667
+risperidone, 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone, 863
+Bipolar disorder
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2635>>>
+
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+zotepine, 883
+zuclopenthixol, 889
+Bipolar maintenance
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine, 131
+cariprazine, 137
+iloperidone, 359
+lamotrigine , 387
+lithium, 415
+lumateperone, 451
+lurasidone, 457
+olanzapine , 559
+olanzapine/fluoxetine combination, 301 , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone , 863
+Bulimia nervosa/binge eating
+fluoxetine , 301
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2644>>>
+
+lorazepam (adjunct), 437
+lurasidone, 457
+olanzapine , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex) , 829
+ziprasidone , 863
+zotepine, 883
+Migraine
+propranolol , 653
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide, 875
+Muscle spasm
+diazepam , 229
+lorazepam, 437
+Narcolepsy
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil , 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l) , 487
+modafinil, 521
+
+
+
+
+<<<PAGE 2651>>>
+
+lamotrigine (adjunct), 387
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin , 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Restless leg syndrome
+gabapentin ER , 331
+Schizoaffective disorder
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+

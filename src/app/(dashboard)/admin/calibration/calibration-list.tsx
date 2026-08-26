@@ -4,6 +4,12 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
+import { SegmentedControl } from "@/components/ui/segmented-control";
+
+// Blind score is a 0–5 scale in 0.5 steps (matches the scorer's rubric).
+const SCORE_OPTIONS = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"].map(
+  (v) => ({ value: v, label: v }),
+);
 
 interface Row {
   id: string;
@@ -30,7 +36,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
       <div className="rounded-md border-2 border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No transcripts to calibrate yet</p>
         <p className="mt-1 text-small text-muted-foreground">
-          Once students run sessions, their debriefs land here for blind scoring.
+          Once students run sessions, their transcripts land here for you to mark.
         </p>
       </div>
     );
@@ -66,7 +72,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
 
   return (
     <div className="space-y-4">
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       {rows.map((r) => {
         const human = scores[r.id];
         const isRevealed = revealed[r.id];
@@ -83,50 +89,54 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
               ))}
             </div>
 
-            <div className="mt-3 flex flex-wrap items-center gap-3">
-              {/* blind score */}
-              <label className="flex items-center gap-2 text-small text-muted-foreground">
-                Your score (0-5):
-                <input
-                  type="number"
-                  min={0}
-                  max={5}
-                  step={0.5}
-                  value={scores[r.id] ?? ""}
-                  onChange={(e) => setScores((s) => ({ ...s, [r.id]: Number(e.target.value) }))}
-                  className="w-16 rounded-md border-2 border-border bg-background px-2 py-1 text-center text-numeric text-small focus:outline-none focus:ring-2 focus:ring-ring"
+            <div className="mt-3 flex flex-col gap-3">
+              {/* blind score — stepped 0–5 segmented control, then reveal, then save. */}
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-small text-muted-foreground">Your score (0-5):</span>
+                {human != null && (
+                  <span className="text-numeric text-small font-semibold">{human.toFixed(1)}</span>
+                )}
+              </div>
+              <div className="overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <SegmentedControl
+                  value={human != null ? String(human) : ""}
+                  onValueChange={(v) => setScores((s) => ({ ...s, [r.id]: Number(v) }))}
+                  options={SCORE_OPTIONS}
+                  label={`Your score for ${r.sessionId}`}
                 />
-              </label>
-              <button
-                type="button"
-                onClick={() => { setRevealed((x) => ({ ...x, [r.id]: true })); haptic("tap"); }}
-                disabled={human == null}
-                className="inline-flex items-center gap-1 rounded-md border-2 border-border px-2 py-1.5 text-caption font-medium transition-transform active:translate-y-px disabled:opacity-50"
-              >
-                {isRevealed ? <EyeOff className="size-3.5" aria-hidden /> : <Eye className="size-3.5" aria-hidden />}
-                Reveal AI score
-              </button>
-              <button
-                type="button"
-                onClick={() => void submit(r)}
-                disabled={human == null || saved[r.id]}
-                className="rounded-md border-2 border-border bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
-              >
-                {saved[r.id] ? "Saved (feeds scorer)" : "Save & correct"}
-              </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => { setRevealed((x) => ({ ...x, [r.id]: true })); haptic("tap"); }}
+                  disabled={human == null}
+                  className="inline-flex min-h-11 flex-1 items-center justify-center gap-1 rounded-md border-2 border-border px-3 text-caption font-medium transition-transform active:translate-y-px disabled:opacity-50"
+                >
+                  {isRevealed ? <EyeOff className="size-3.5" aria-hidden /> : <Eye className="size-3.5" aria-hidden />}
+                  Reveal AI score
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void submit(r)}
+                  disabled={human == null || saved[r.id]}
+                  className="inline-flex min-h-11 flex-1 items-center justify-center rounded-md border-2 border-border bg-primary px-3 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+                >
+                  {saved[r.id] ? "Saved" : "Save & correct"}
+                </button>
+              </div>
             </div>
 
             {/* reveal comparison */}
             {isRevealed && human != null ? (
               <div className="mt-3 rounded-md border border-border bg-secondary/40 p-3">
                 <p className="text-small">
-                  <span className="font-muted-foreground">You: </span>
+                  <span className="text-muted-foreground">You: </span>
                   <span className="font-semibold text-numeric">{human}</span>
                   <span className="mx-2 text-muted-foreground">vs</span>
-                  <span className="font-muted-foreground">AI: </span>
+                  <span className="text-muted-foreground">AI: </span>
                   <span className="font-semibold text-numeric">{r.overall.toFixed(1)}</span>
                   {diff != null ? (
-                    <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-amber-700" : "text-green-700")}>
+                    <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-status-pending-fg" : "text-status-success-fg")}>
                       {diff > 0.5 ? `disagreement ${diff.toFixed(1)} — saved as a correction` : "agree"}
                     </span>
                   ) : null}

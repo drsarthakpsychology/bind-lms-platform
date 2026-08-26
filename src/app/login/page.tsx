@@ -6,6 +6,7 @@ import { BRAND } from "@/lib/brand";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { Reveal } from "@/components/motion/reveal";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { SiteFooter } from "@/components/site/site-footer";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background px-5 py-8">
+    <div className="flex min-h-svh flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
         <VibhaWordmark size={30} />
         <ThemeToggle />
@@ -51,6 +52,7 @@ export default async function LoginPage() {
           </Reveal>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }

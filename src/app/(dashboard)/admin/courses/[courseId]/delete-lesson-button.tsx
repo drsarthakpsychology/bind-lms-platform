@@ -6,15 +6,7 @@ import { Loader2, Trash2 } from "lucide-react";
 import { deleteLesson } from "./actions";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export function DeleteLessonButton({ lessonId, courseId }: { lessonId: string; courseId: string }) {
   const router = useRouter();
@@ -33,36 +25,39 @@ export function DeleteLessonButton({ lessonId, courseId }: { lessonId: string; c
   }
 
   return (
-    <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-      <DialogTrigger asChild>
-        <Button type="button" variant="outline" size="sm">
-          <Trash2 className="size-3.5" aria-hidden />
-          Delete
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Delete this lesson?</DialogTitle>
-          <DialogDescription>
-            This also deletes the lesson&apos;s video, assignment, and student progress. This
-            can&apos;t be undone.
-          </DialogDescription>
-        </DialogHeader>
+    <>
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon-sm"
+        aria-label="Delete lesson"
+        onClick={() => setConfirmOpen(true)}
+      >
+        <Trash2 className="size-4 text-status-alert-fg" aria-hidden />
+      </Button>
+      <MobileBottomSheet
+        open={confirmOpen}
+        onOpenChange={setConfirmOpen}
+        title="Delete this lesson?"
+        description="This also deletes the lesson's video, assignment, and student progress. This can't be undone."
+        footer={
+          <div className="flex flex-col gap-2">
+            <Button type="button" variant="destructive" onClick={handleDelete} disabled={isPending} className="w-full">
+              {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
+              {isPending ? "Deleting…" : "Delete lesson"}
+            </Button>
+            <Button type="button" variant="outline" onClick={() => setConfirmOpen(false)} className="w-full">
+              Cancel
+            </Button>
+          </div>
+        }
+      >
         {error && (
           <p role="alert" className="text-sm text-status-alert-fg">
             {error}
           </p>
         )}
-        <DialogFooter>
-          <Button type="button" variant="outline" onClick={() => setConfirmOpen(false)}>
-            Cancel
-          </Button>
-          <Button type="button" variant="destructive" onClick={handleDelete} disabled={isPending}>
-            {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
-            {isPending ? "Deleting…" : "Delete lesson"}
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+      </MobileBottomSheet>
+    </>
   );
 }

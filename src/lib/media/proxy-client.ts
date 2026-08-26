@@ -105,6 +105,7 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
 export async function authorizeAndResolveLesson(opts: {
   userId: string;
   role: "admin" | "student" | "alumni";
+  scope?: "full" | "lectures_only";
   lessonId: string;
 }): Promise<{ authorized: boolean; resolved: ResolvedStream | null }> {
   const supabase = await createClient();
@@ -127,6 +128,12 @@ export async function authorizeAndResolveLesson(opts: {
 
   // Student: course must be published AND enrolled.
   const course = Array.isArray(lesson.courses) ? lesson.courses[0] : lesson.courses;
+
+  // Lecture-only scope: published lessons are the whole surface — no enrollment.
+  if (opts.scope === "lectures_only") {
+    return { authorized: Boolean(course?.is_published), resolved };
+  }
+
   if (!course?.is_published) {
     return { authorized: false, resolved };
   }

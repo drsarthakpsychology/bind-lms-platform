@@ -3,7 +3,8 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { Gavel, Scale } from "lucide-react";
+import { Gavel, Scale, CheckCircle2 } from "lucide-react";
+import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import type { EthicDilemma } from "@/lib/practice/ethics";
 
 /**
@@ -13,6 +14,7 @@ import type { EthicDilemma } from "@/lib/practice/ethics";
 export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
   const [idx, setIdx] = React.useState(0);
   const [chosen, setChosen] = React.useState<number | null>(null);
+  const [finished, setFinished] = React.useState(false);
 
   const d = dilemmas[idx];
   if (!d) return null;
@@ -25,12 +27,38 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
   }
 
   function next() {
-    setChosen(null);
-    setIdx((i) => Math.min(dilemmas.length - 1, i + 1));
+    if (idx + 1 >= dilemmas.length) {
+      setFinished(true);
+      haptic("success");
+    } else {
+      setChosen(null);
+      setIdx((i) => i + 1);
+    }
   }
 
   const done = chosen !== null;
   const correct = chosen !== null && d.options[chosen].correct;
+  const correctIndex = d.options.findIndex((o) => o.correct);
+
+  if (finished) {
+    return (
+      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+        <p className="flex items-center gap-2 text-base font-semibold">
+          <CheckCircle2 className="size-4" aria-hidden /> {dilemmas.length} dilemmas complete
+        </p>
+        <p className="mt-2 text-small text-muted-foreground">
+          The law has teeth — every choice here maps to MHA 2017, POCSO, or RCI scope.
+        </p>
+        <button
+          type="button"
+          onClick={() => { setIdx(0); setChosen(null); setFinished(false); haptic("tap"); }}
+          className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+        >
+          Run the dilemmas again
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">
@@ -46,31 +74,15 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
         <p className="text-eyebrow text-muted-foreground">{d.setting}</p>
         <h2 className="mt-1 text-base font-semibold">{d.vignette}</h2>
 
-        <div className="mt-4 space-y-2">
-          {d.options.map((o, i) => {
-            const picked = chosen === i;
-            const reveal = done && picked;
-            return (
-              <button
-                key={i}
-                type="button"
-                onClick={() => pick(i)}
-                disabled={done}
-                className={cn(
-                  "w-full rounded-md border-2 border-border bg-background px-3 py-2.5 text-left text-small transition-transform active:translate-y-px disabled:opacity-60",
-                  reveal && o.correct && "border-green-600 bg-green-50",
-                  reveal && !o.correct && "border-red-400 bg-red-50",
-                )}
-              >
-                <span className="font-semibold">{o.label}</span>
-                {reveal ? (
-                  <span className={cn("mt-1 block text-caption", o.correct ? "text-green-700" : "text-red-600")}>
-                    {o.correct ? "✓ The right call" : "✗ Not this one"}
-                  </span>
-                ) : null}
-              </button>
-            );
-          })}
+        <div className="mt-4">
+          <MobileChoiceList
+            options={d.options.map((o) => o.label)}
+            correct={[correctIndex]}
+            picked={chosen !== null ? [chosen] : []}
+            revealed={done}
+            onPick={pick}
+            label="Action options"
+          />
         </div>
       </div>
 
@@ -88,10 +100,9 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
           <button
             type="button"
             onClick={next}
-            disabled={idx + 1 >= dilemmas.length && correct}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
-            {idx + 1 < dilemmas.length ? "Next dilemma" : "Done"}
+            {idx + 1 < dilemmas.length ? "Next dilemma" : "Finish"}
           </button>
         </div>
       ) : null}

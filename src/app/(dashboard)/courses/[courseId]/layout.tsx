@@ -15,6 +15,11 @@ export default async function CourseLayout({
   children: React.ReactNode;
 }) {
   const { courseId } = await params;
+  // Malformed id → PostgREST 400 before the page's guard can run; validate at
+  // the layout (the entry point) so a crafted URL 404s cleanly.
+  if (!/^[0-9a-f-]{36}$/i.test(courseId)) {
+    notFound();
+  }
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;

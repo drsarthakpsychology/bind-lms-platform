@@ -1,0 +1,583 @@
+[
+  {
+    "workstream": "gestures-swipe",
+    "items": [
+      "T55",
+      "T56"
+    ],
+    "findings": [
+      {
+        "surface": "MobileBottomSheet (shared primitive, ~30 call sites)",
+        "issue": "The drag handle is a fake affordance. A 1.5x10 pill (`mx-auto mt-3 h-1.5 w-10 rounded-full bg-border`) is rendered `aria-hidden` with no pointer/touch handler, so it visually promises swipe-down-to-dismiss but does nothing. The underlying Radix Dialog (`Sheet`) has no drag-to-dismiss, so swiping the handle OR the body of the sheet is a dead gesture on every bottom sheet in the app.",
+        "fix": "(A) Implement drag-to-dismiss: track pointer/touch delta on the handle + sheet body, translate the SheetContent down, and call onOpenChange(false) past a ~120px/velocity threshold, snapping back below it; fire haptic(\"tap\") on dismiss and gate the snap-back animation behind useReducedMotion(). Scope the gesture to coarse pointers (pointer-coarse) so desktop is unaffected. Alternatively remove the handle if drag isn't shipped. This is the single highest-value, lowest-risk swipe in the app \u2014 dismissing a sheet is T55's canonical case and the affordance already exists.",
+        "file": "src/components/mobile/mobile-bottom-sheet.tsx:49-52"
+      },
+      {
+        "surface": "MobileAssessmentFlow \u2014 sequential step shell",
+        "issue": "The flow renders only a Next/Finish button (right-aligned) and has NO Back/Previous control, so a student cannot revisit a prior step after advancing. T56 requires any swipe-step gesture to live 'alongside explicit Next/Back' \u2014 the explicit Back companion is absent before any swipe can be layered on, and the step index is the one place swipe-back would genuinely help.",
+        "fix": "(A) Add an explicit secondary Back button (left side, calls onCurrentChange(current - 1), hidden/disabled at step 0) next to the Next/Finish action; then optionally add a horizontal swipe-back between steps. Code-changeable now; the Back button is the required explicit control regardless of whether swipe is added.",
+        "file": "src/components/mobile/mobile-assessment-flow.tsx:96-116"
+      },
+      {
+        "surface": "ImageViewer (material viewer) pinch-zoom",
+        "issue": "Pinch-zoom scales the <img> but there is no pan: the container is `overflow-hidden` and only `scale` is tracked, so at zoom>1 the off-screen edges are unreachable (zoom in on a detail you can't scroll to see). Separately, the img has `transition-transform`, so every raw onTouchMove setZoom is CSS-smoothed/lagged during an active pinch (rubbery feel), and there is no swipe-down-to-close.",
+        "fix": "(A) Add pan (translateX/translateY state alongside scale, reset on zoom back to 1) and drop/conditionally remove `transition-transform` while a pinch is active; (B) verify pinch+pan and an optional swipe-down-to-dismiss feel on a real device. Pan fix is codeable now; feel is device-only.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/viewer.tsx:492-518"
+      },
+      {
+        "surface": "PdfViewer (material viewer) page navigation",
+        "issue": "Multi-page PDFs render exactly one page (single canvas + `pageNum` state) and turn pages only via the ChevronLeft/ChevronRight toolbar buttons \u2014 no swipe-to-turn-page. The docstring also claims 'continuous scroll', which is not implemented (a stale/misleading comment). Explicit prev/next controls exist, so swipe is purely additive (satisfies T56), but it is missing where sequential content navigation would genuinely benefit.",
+        "fix": "(A) Add swipe-left/right-to-turn-page on the canvas container (touch delta threshold + haptic, disabled while zoomed so vertical scroll still works); (B) verify the scroll-vs-swipe conflict on device \u2014 when zoomed the vertical scroll must win, and only at zoom=1 should a horizontal swipe turn the page. Correct the docstring to drop 'continuous scroll'.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/viewer.tsx:31,321-341"
+      }
+    ],
+    "liveDeviceOnly": [
+      "PDF swipe-to-turn-page: scroll-vs-swipe conflict (vertical scroll must win when zoomed; horizontal swipe only at zoom=1) needs a real device.",
+      "ImageViewer pinch-zoom: pan reachability and pinch feel (drop transition during active pinch) need touch hardware to verify.",
+      "MobileBottomSheet drag-to-dismiss: threshold/velocity feel and reduced-motion snap-back need a device; code is changeable now but feel is device-only.",
+      "VideoPlayer double-tap-to-seek (video-player.tsx:569-591): already additive and has an explicit scrubber, so no change required \u2014 note only."
+    ],
+    "priorities": [
+      "(A) MobileBottomSheet drag-to-dismiss (or remove the fake handle) \u2014 highest value, one primitive fixes ~30 surfaces, affordance already present.",
+      "(A) Add explicit Back button to MobileAssessmentFlow \u2014 the missing explicit control T56 requires before any swipe-step.",
+      "(A) ImageViewer: add pan alongside pinch-zoom and drop transition-transform during active pinch; optionally swipe-down-to-close.",
+      "(B) PdfViewer: swipe-to-turn-page alongside existing prev/next; fix the stale 'continuous scroll' docstring; verify scroll-vs-swipe on device."
+    ]
+  },
+  {
+    "workstream": "hierarchy-language (T60 visual hierarchy + T61 design-language consistency) \u2014 admin/*, passport, dashboard surfaces not covered by the T18-T50 pass",
+    "items": [
+      "Read vibha-design SKILL.md + globals.css tokens (peach-fill/terracotta-accent, 2px ink border, hard-shadow scale, 10px-card/6px-input/999px-pill radii, status-token palette)",
+      "Read the shared mobile primitives (MobilePage/Header/Section/Card/ListItem/BottomSheet/StickyAction/StatusPill/Input) and ui/Button+cardVariants+Badge to know the in-system button/card language",
+      "Grepped all (dashboard) routes for raw Tailwind palette classes, hardcoded hex, non-hard shadows, and non-standard radii",
+      "Audited unconverted admin routes (calibration, supervision, wall-reports, cards, idioms, modules, rights, sim-review, submissions, students, triage, pulse, checkins, enquiries, flags, dictate, infra) + passport + dashboard",
+      "Confirmed the token-diff: --status-*-fg/bg exist but 4 admin files hand-roll red/green/amber; Button uses border-foreground+hard-shadow while cards-admin hand-rolls flat primary buttons"
+    ],
+    "findings": [
+      {
+        "surface": "Calibration agreement dashboard",
+        "issue": "Hand-rolled Tailwind palette status colors that bypass the semantic status tokens and break in dark mode: passing/provisional shield icon uses bg-green-100/text-green-700 vs bg-amber-100/text-amber-700 (line 63), the 'Ready to validate' pill uses bg-green-100 text-green-800 (line 80), and the hidden-dimensions note uses text-amber-700 (line 95). Tokens --status-success-fg/-bg, --status-pending-fg/-bg, --status-alert-fg/-bg already exist for exactly this.",
+        "fix": "Map to tokens: passing shield -> 'bg-status-success-bg text-status-success-fg'; provisional -> 'bg-status-pending-bg text-status-pending-fg'; 'Ready to validate' pill -> 'bg-status-success-bg text-status-success-fg'; hidden note -> 'text-status-pending-fg'. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/calibration/agreement-dashboard.tsx"
+      },
+      {
+        "surface": "Calibration list (blind-scoring rows)",
+        "issue": "Two distinct problems: (1) invalid utility 'font-muted-foreground' on the 'You:' (line 133) and 'AI:' (line 136) labels \u2014 that class does not exist, so the labels silently inherit full-foreground instead of muted; (2) raw colors text-red-600 error (line 75) and text-amber-700/text-green-700 disagreement pill (line 139).",
+        "fix": "Rename 'font-muted-foreground' -> 'text-muted-foreground' (real bug). Replace text-red-600 -> 'text-destructive', disagreement -> 'text-status-pending-fg', agree -> 'text-status-success-fg'. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/calibration/calibration-list.tsx"
+      },
+      {
+        "surface": "Supervision sign-off review",
+        "issue": "Sign/Reject buttons hand-roll raw colors: Sign uses border-green-600 bg-green-50 text-green-800 (line 75), Reject uses border-red-400 bg-red-50 text-red-700 (line 84), and the error line is text-red-600 (line 60). These bypass the status tokens and will not adapt to dark mode (raw green-50/red-50 fills stay light).",
+        "fix": "Sign -> 'border-status-success-fg/40 bg-status-success-bg text-status-success-fg'; Reject -> 'border-destructive/40 bg-status-alert-bg text-destructive'; error -> 'text-destructive'. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/supervision/supervision-review.tsx"
+      },
+      {
+        "surface": "Wall reports queue",
+        "issue": "Raw colors: CheckCircle2 uses text-green-600 (line 49), error line text-red-600 (line 60), and Flag icon text-amber-600 (line 65). Bypasses status tokens; breaks dark-mode contrast.",
+        "fix": "Use text-status-success-fg / text-destructive / text-status-pending-fg respectively. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/wall-reports/wall-reports-list.tsx"
+      },
+      {
+        "surface": "Dictate conversation (voice recorder)",
+        "issue": "Recording state on the mic button uses raw palette 'bg-red-500 text-white ring-2 ring-red-300' (line 191) instead of the destructive tokens \u2014 non-token hue and a non-token ring.",
+        "fix": "Use 'bg-destructive text-destructive-foreground' (and token ring 'ring-destructive/40' or drop the ring) \u2014 the token palette already has --destructive #d92d20 + white foreground. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/corpus/dictate/dictate-conversation.tsx"
+      },
+      {
+        "surface": "Cards admin (approve/edit/delete row)",
+        "issue": "Flat primary/secondary hierarchy (T60 violation). Every button \u2014 Save (line 103), Approve & publish (line 125), Reject (line 130), Edit (line 134), Delete (line 137) \u2014 shares the same 'rounded-md border-2 border-border bg-primary px-3 py-1 text-caption' language with no hard-shadow, no hover lift, and border-border instead of border-foreground on the primary. Primary and destructive actions read as visually identical to quiet secondary buttons.",
+        "fix": "Adopt the ui/Button primitive (<Button size=\"sm\"> / variant=\"destructive\" / variant=\"outline\") or, minimally, give primary 'border-foreground bg-primary ... hard-shadow-sm' + hover/active lift and keep secondary 'bg-background text-muted-foreground'. Also switch edit inputs (lines 96, 100) from py-1.5/text-small to the MobileInput min-h-11 height. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/cards/cards-admin.tsx"
+      },
+      {
+        "surface": "Card radius off-token (systemic T61)",
+        "issue": "The token rule is '10px cards / 6px inputs / 999px pills' (--radius-lg vs --radius-md), and the in-system MobileCard/MobileListItem use rounded-lg. But every unconverted admin + passport bg-card surface uses rounded-md (6px) for cards: agreement-dashboard:34, supervision-review:62, wall-reports-list:62, enquiries:60, admin/page:102 & 119, pulse-view:47, passport/passport:47, infra-metrics:48/69/89/114, checkins:39. Cards carry border-2 + hard-shadow yet get input-radius.",
+        "fix": "Mechanical sweep: change 'rounded-md ... bg-card' card surfaces to 'rounded-lg' (keep rounded-md on actual inputs/controls and rounded-full on pills). Low-risk, high-consistency. (A)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/page.tsx"
+      },
+      {
+        "surface": "Sub-44px hand-rolled inputs on mobile-rendered admin rows",
+        "issue": "Several admin inputs bypass MobileInput and sit at ~28-32px (below the 44px touch target): cards-admin inputs (lines 96,100), idioms-admin phrase/trap inputs (lines 84,88), modules-admin grant select (line 136), sim-review textarea/score input (lines 136,149). These render in the mobile stacked views (MobileCard/MobileListItem) so the touch gap is real on phones.",
+        "fix": "Swap these to MobileInput/MobileTextarea (min-h-11) or add min-h-11 when the field is reachable on a phone; desktop-only table controls can stay. (A, lower priority)",
+        "file": "/Users/kavyabothra/Downloads/plms (1)/src/app/(dashboard)/admin/cards/cards-admin.tsx"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Dark-mode contrast verification of the status-token remap on a real device (light + dark) \u2014 needs `next dev` running with next-themes toggled",
+      "T60 'reduce competing borders/labels' judgment on the calibration row (currently icon + label + caption + status pill + two buttons in one row) and passport competency rows \u2014 needs a rendered screenshot at 320-430px to decide what to demote",
+      "Passport 'logged hours' dominant-metric vs demoted-strip hierarchy at phone width \u2014 needs seeded competency_events rows (live DB) to confirm the h1 numeric reads as the one primary metric",
+      "Admin tables (checkins/rights) desktop\u2192mobile switch point at lg \u2014 needs a real browser resize to confirm no double-render of the mobile list + desktop table"
+    ],
+    "priorities": [
+      "(A) Replace raw red/green/amber Tailwind palette classes with semantic status tokens across the 4 admin files (agreement-dashboard, calibration-list, supervision-review, wall-reports-list) \u2014 fixes dark-mode breakage and restores token discipline; highest value",
+      "(A) Fix the invalid 'font-muted-foreground' utility in calibration-list.tsx:133,136 \u2192 'text-muted-foreground' (real rendering bug, one-line)",
+      "(A) Replace raw recording colors in dictate-conversation.tsx:191 with destructive tokens",
+      "(A) Restore primary vs secondary button hierarchy in cards-admin.tsx (adopt ui/Button or add border-foreground + hard-shadow-sm to primary; keep secondary muted)",
+      "(A) Card radius sweep: rounded-md \u2192 rounded-lg on bg-card card surfaces across admin/* + passport (mechanical T61 consistency fix)",
+      "(A) Migrate phone-reachable admin inputs from py-1/py-1.5 text-small to MobileInput/MobileTextarea (min-h-11) in cards-admin, idioms-admin, sim-review, modules-admin",
+      "(B) Live-device verification pass (dark-mode contrast, T60 competing-hierarchy on calibration/passport rows, passport dominant-metric, admin table breakpoint) after the code fixes land"
+    ]
+  },
+  {
+    "workstream": "motion-micro",
+    "items": [
+      "T62 Mobile animation system \u2014 purposeful transitions for progressive content, Next actions, sheets, navigation, completion states, chat messages, voice states, loading, feedback; subtle, performant, reduced-motion safe",
+      "T63 micro-interaction pass \u2014 small meaningful feedback for taps, selections, completion, saving, progress, navigation, state changes; no decorative animation that raises cognitive load"
+    ],
+    "findings": [
+      {
+        "surface": "Chat transcript (sim)",
+        "issue": "Message arrival has no entrance transition. Student and patient bubbles render at full opacity instantly (hard pop); the motion system's Reveal/revealVariants/popIn in src/lib/motion.ts is unused in the chat surface. Only the patient reply gets a typewriter fill; the student bubble and the empty patient bubble pop in with zero transition.",
+        "fix": "(A) Wrap the bubble in src/components/sim/chat-message.tsx in a keyed motion.div with a gated fade+rise entrance (e.g. revealVariants or a 200ms animate-enter keyed by turn id), gated behind useReducedMotion() (already imported in this file).",
+        "file": "src/components/sim/chat-message.tsx:48-61"
+      },
+      {
+        "surface": "Typing indicator (sim)",
+        "issue": "Typing dots use Tailwind's generic `animate-bounce` (a translateY hop), not the design system's `.animate-wave` (scaleY `wave-bounce`). globals.css:577-586 explicitly earmarks wave-bounce for \"Voice waveform + typing indicator\", but that token is only used by the voice waveform, so the typing indicator carries a competing, off-system bounce motion.",
+        "fix": "(A) Swap `animate-bounce` \u2192 `animate-wave` on the three dots (keep the inline animationDelay stagger). The existing `if (reduce)` static branch already covers reduced-motion.",
+        "file": "src/components/sim/chat-message.tsx:39-41"
+      },
+      {
+        "surface": "Assessment flow (mobile)",
+        "issue": "Step-to-step transition is a hard content swap: `<div>{renderStep(step, current)}</div>` re-renders with no entrance/exit, so advancing a step snaps the whole question surface. The shell has zero consumers today (grep finds only its own file), so the gap is about to propagate.",
+        "fix": "(A) Key the step body by `current` and wrap in a motion.div with a gated fade+rise entrance (or `animate-enter` keyed by current) so each step reveals; gate behind useReducedMotion().",
+        "file": "src/components/mobile/mobile-assessment-flow.tsx:93"
+      },
+      {
+        "surface": "Assessment flow progress bar (mobile)",
+        "issue": "Progress fill animates `width` with `transition-[width] duration-300 ease-out` \u2014 a layout property (against the transform/opacity-only rule) at a non-token duration (300ms) and non-token easing (ease-out). The design system already ships `animateFill()` (scaleX transform) in src/lib/motion.ts, unused.",
+        "fix": "(A) Replace the width transition with `animateFill(progressPercent)` (scaleX, transform) or at minimum use the token `duration-slow`/`duration-base` + `ease-snappy` instead of `duration-300 ease-out`.",
+        "file": "src/components/mobile/mobile-assessment-flow.tsx:86"
+      },
+      {
+        "surface": "Choice list reveal (mobile drills)",
+        "issue": "The correct/wrong reveal (border\u2192foreground, bg wash, dimming of unpicked rows, and the CheckCircle2/CircleX icons) snaps in with no color/border/opacity transition \u2014 the row only carries `transition-transform` for the press. This is the exact T63 \"selection confirm / state change\" beat and it reads as a hard pop across QuizCheck, DilemmaFlow, WeakSpotsDrill, OutOfDepthDrill, ConfusableDrill and LandmarkReader.",
+        "fix": "(A) Add `transition-colors duration-fast ease-snappy` (or transition-[border-color,background-color,opacity]) to the row so the reveal is legible, and optionally `animate-enter`/popIn the check/x. Haptic success is already fired by the drill parents, so this is purely the missing visual transition.",
+        "file": "src/components/mobile/mobile-choice-list.tsx:66,68-79"
+      },
+      {
+        "surface": "Chat auto-scroll reduced-motion (sim)",
+        "issue": "The transcript auto-scroll always calls `scrollTo({ behavior: \"smooth\" })` and is not gated by useReducedMotion(). The global CSS `scroll-behavior: auto !important` guard does NOT override the explicit JS `behavior:\"smooth\"`, so reduced-motion users still get animated chat scrolling.",
+        "fix": "(A) Read useReducedMotion() in session-view and use `behavior: reduce ? \"auto\" : \"smooth\"`.",
+        "file": "src/app/(dashboard)/practice/consulting-room/session/[sessionId]/session-view.tsx:124"
+      },
+      {
+        "surface": "Chat composer press states (sim)",
+        "issue": "Two adjacent circular buttons in the same composer row use different press languages: voice toggle `active:scale-95` vs send `active:translate-y-px` (no flattened shadow). The design system's tactile-control language is translate toward a flattened hard shadow; scale is off-language.",
+        "fix": "(A) Unify both to `active:translate-y-px` (and flatten the shadow on send), or make one consistent press token. Low priority.",
+        "file": "src/components/sim/chat-composer.tsx:56,83"
+      },
+      {
+        "surface": "Mode switcher (mobile)",
+        "issue": "Switching modes animates the segmented fill (good) but the revealed content swaps with no transition and there is no haptic on a meaningful state change, so the \"one task at a time\" swap feels abrupt.",
+        "fix": "(A) Fire `haptic(\"tap\")` in the onActiveChange wrapper and/or key the content with a gated `animate-enter`. Low priority.",
+        "file": "src/components/mobile/mobile-mode-switcher.tsx:47-54"
+      },
+      {
+        "surface": "Sticky action (mobile)",
+        "issue": "MobileStickyAction is always-mounted and appears with no entrance or show/hide-on-scroll transition; T62 lists sticky actions as a surface needing purposeful transitions. Instant/persistent is arguably correct for a pinned primary action, so this is a judgment call rather than a defect.",
+        "fix": "(B) Verify on device whether an entrance/slide-up adds value or is decorative noise; if added, gate behind useReducedMotion(). Defer \u2014 not a clear win for a persistent action bar.",
+        "file": "src/components/mobile/mobile-sticky-action.tsx:36-52"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Reduced-motion chat auto-scroll \u2014 code fix is static-doable (gate behavior on useReducedMotion), but the actual perceived effect must be confirmed with prefers-reduced-motion enabled on a real device",
+      "Typing indicator animate-wave swap + message-arrival entrance \u2014 perceived pacing (40ms typewriter ticks, bubble reveal) needs a dev server + device to judge subtlety/performance",
+      "MobileStickyAction entrance decision \u2014 whether an entrance is purposeful or decorative can only be judged on a live device",
+      "Assessment step transition and choice-reveal transition feel \u2014 duration/easing legibility needs visual verification at 320-430px on device"
+    ],
+    "priorities": [
+      "(A) Chat auto-scroll reduced-motion gate \u2014 src/app/(dashboard)/practice/consulting-room/session/[sessionId]/session-view.tsx:124 (real a11y miss; smallest, most concrete fix)",
+      "(A) MobileAssessmentFlow step transition + progress-bar token/animateFill \u2014 src/components/mobile/mobile-assessment-flow.tsx:86,93 (core T62 shell, zero consumers yet, so fix now before it spreads)",
+      "(A) MobileChoiceList reveal transition \u2014 src/components/mobile/mobile-choice-list.tsx:66 (T63 selection-confirm; highest leverage \u2014 shared by 6+ drills)",
+      "(A) Chat message arrival entrance \u2014 src/components/sim/chat-message.tsx:48-61 (T62 chat messages)",
+      "(A) Typing indicator animate-bounce \u2192 animate-wave token \u2014 src/components/sim/chat-message.tsx:39-41",
+      "(A) ChatComposer press-language unification \u2014 src/components/sim/chat-composer.tsx:56,83",
+      "(A) MobileModeSwitcher haptic + content transition \u2014 src/components/mobile/mobile-mode-switcher.tsx:47-54",
+      "(B) MobileStickyAction entrance decision \u2014 defer to live-device judgment"
+    ]
+  },
+  {
+    "workstream": "a11y-typography",
+    "items": [
+      "T64",
+      "T65"
+    ],
+    "findings": [
+      {
+        "surface": "Button size scale (systemic \u2014 the root cause of most sub-44px hits)",
+        "issue": "The shared Button has no 44px tier. `lg` = h-10 (40px), `default` = h-9 (36px), `sm` = h-8 (32px), `xs` = h-6 (24px), `icon-sm` = size-8 (32px), `icon` = size-9 (36px), `icon-xs` = size-6 (24px). Primary mobile CTAs (Log out, Continue, Submit \u2014 via MobileContinueAction default size=\"lg\", MobileAssessmentFlow next, Settings logout) render 40px, 4px under the 44px primary target the design system itself mandates (SKILL.md: \"\u226544px for primary\").",
+        "fix": "Add an `xl`/`h-11` (44px) size and map primary mobile actions onto it; bump `icon`/`icon-sm` to a 44px hit area (min 44px via padding on a smaller glyph, or size-11). At minimum raise `lg` to h-11 so every primary action clears 44px.",
+        "file": "src/components/ui/button.tsx:28-37"
+      },
+      {
+        "surface": "Mobile drawer footer (account actions reachable by touch)",
+        "issue": "Notifications link `size-9` (36px), Settings link `size-9` (36px), and Logout `size=\"icon-sm\"` (32px) \u2014 the three primary in-drawer account actions are 32-36px on a phone.",
+        "fix": "Bump all three to `size-11` (44px); keep the borderless hover style but give a 44px hit box.",
+        "file": "src/components/navigation/mobile-nav.tsx:68-85"
+      },
+      {
+        "surface": "ThemeToggle (appears in both drawer + sidebar footer)",
+        "issue": "Fixed `h-9 w-9` (36px) \u2014 the only theme control on mobile, rendered inside the drawer footer where the sibling actions are also sub-44px.",
+        "fix": "Raise to `size-11` (44px) on mobile (or accept a min-44px hit area via padding).",
+        "file": "src/components/theme-toggle.tsx:43"
+      },
+      {
+        "surface": "Sidebar footer icon controls (desktop-only, but same 32px pattern)",
+        "issue": "Notifications `size-8` (32px), Settings `size-8` (32px), Logout `icon-sm` (32px), and ViewModeToggle `icon-sm` (32px) all render 32px.",
+        "fix": "Raise to \u226544px hit area (size-10/11). Lower urgency than the mobile drawer since it is pointer-driven, but still below the 44px primary bar for the logout control.",
+        "file": "src/components/navigation/app-sidebar.tsx:69-88"
+      },
+      {
+        "surface": "ViewModeToggle (admin\u2192student switch)",
+        "issue": "Rendered at `size=\"icon-sm\"` (32px) in both the sidebar footer and the mobile drawer \u2014 a control that navigates an admin back to their real admin surface.",
+        "fix": "Bump to `size-11`/44px.",
+        "file": "src/app/(dashboard)/view-mode-toggle.tsx:36"
+      },
+      {
+        "surface": "MobileHeader back control",
+        "issue": "The single back affordance renders `size-10` (40px) \u2014 a primary navigation action 4px short of the 44px target, inconsistent with the drawer Menu trigger which is `size-11` (44px).",
+        "fix": "Change `size-10` to `size-11` for the back button.",
+        "file": "src/components/mobile/mobile-header.tsx:58"
+      },
+      {
+        "surface": "Psychopharm document-view block hover-edit controls (combined T64 + T65)",
+        "issue": "Edit / Sources / Remove buttons are `px-1.5 py-0.5 text-[10px]` with `h-3 w-3` icons \u2014 10px text (far below any readable floor) and roughly 18-20px tall touch targets, rendered with `pointer-coarse:flex` (i.e. they ARE shown to touch users). This is the clearest tiny-text violation in the dashboard surface.",
+        "fix": "Raise label text to text-caption (12px) minimum, and give the buttons a min-h-11 (44px) hit area for coarse pointers (stack them vertically on touch rather than the inline chip row).",
+        "file": "src/components/psychopharm/document-view.tsx:310-333"
+      },
+      {
+        "surface": "Admin row/table actions use sub-44px sizes throughout",
+        "issue": "`icon-sm` (32px) and `xs` (24px, with text-xs) are used for the primary admin touch actions: student-actions.tsx:59, course-actions.tsx:113, rename-course.tsx:63, delete-lesson-button.tsx:32, material-uploader.tsx:546, assignment-editor.tsx:226/241, and `size=\"xs\"` file-preview in submission-review-row.tsx:166. On a phone these are the only affordances for destructive/editing actions.",
+        "fix": "On mobile, promote these to \u226544px (icon-lg/size-11, or add a 44px tap padding). Desktop may keep the compact sizes.",
+        "file": "src/app/(dashboard)/admin/submissions/submission-review-row.tsx:166"
+      },
+      {
+        "surface": "Wall reaction + reply pills",
+        "issue": "Reaction pills and the Reply button render `min-h-8` (32px) with `size-3` icons \u2014 the cohort wall's primary in-feed interactions.",
+        "fix": "Raise to min-h-10/11 (40-44px); keep the count + icon layout but grow the hit box. Lower priority than shell/primary controls since these are secondary.",
+        "file": "src/app/(dashboard)/wall/wall-view.tsx:339"
+      },
+      {
+        "surface": "Command-palette trigger (desktop sidebar)",
+        "issue": "`px-1.5 py-1` with a `size-3` icon yields a ~26px-tall target.",
+        "fix": "Give it a min 44px hit box (min-h-11 min-w-11) even if the visual chip stays compact.",
+        "file": "src/components/search/palette-trigger.tsx:14"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Verify rendered AA contrast of text-on-fill pairs at real font sizes (muted-foreground #5c554a on secondary #ffe6d5, text-link terracotta on bg-primary/10, status-pill label on card) \u2014 token comments claim 4.5:1 but need a live AA checker in light+dark.",
+      "Verify dynamic-text survival: OS 'larger text' accessibility setting (200% font scaling) \u2014 confirm rem-based utilities (text-small/caption) reflow without overflow/clipping; confirm no px-fixed heights (h-9/h-10/h-8 buttons) truncate scaled labels.",
+      "Verify focus trap, Escape-close, and scroll-lock in MobileBottomSheet and the MobileNav drawer on a real 320px device (Radix behavior, not visible statically).",
+      "Verify screen-reader announcement of role='status' eyebrow (MobileModeSwitcher), aria-pressed toggle groups (SegmentedControl), and aria-current tab/nav state in VoiceOver/TalkBack.",
+      "Verify thumb reachability + real hit-testing of wall reaction pills, video-player controls (size-10 / h-8 speed button), and psychopharm edit chips on a real phone \u2014 40px vs 44px differences are only confirmable on-device.",
+      "Confirm the material watermark (text-[13px] white, pointer-events-none) stays non-interactive and legible in fullscreen without obscuring captions."
+    ],
+    "priorities": [
+      "(A) Add a 44px (h-11) Button size tier and re-map primary mobile actions off 40px \u2014 button.tsx size scale (unblocks every other touch-target finding at once).",
+      "(A) Bump mobile drawer footer account controls + ThemeToggle to 44px \u2014 mobile-nav.tsx:68-85, theme-toggle.tsx:43 (the only theme/logout/settings affordances on phones).",
+      "(A) Fix psychopharm document-view 10px text + tiny edit chips \u2014 document-view.tsx:310-333 (clearest T65 tiny-text violation, also T64).",
+      "(A) Bump MobileHeader back control 40px -> 44px \u2014 mobile-header.tsx:58.",
+      "(A) Promote admin row/table icon actions (icon-sm/xs 24-32px) to \u226544px on mobile \u2014 submission-review-row, student-actions, course-actions, rename-course, delete-lesson-button, assignment-editor, material-uploader.",
+      "(A) Bump sidebar footer controls + ViewModeToggle to 44px \u2014 app-sidebar.tsx:69-88, view-mode-toggle.tsx:36.",
+      "(A) Raise wall reaction/reply pills min-h-8 -> 40px+ \u2014 wall-view.tsx:339,389; enlarge palette-trigger hit area."
+    ]
+  },
+  {
+    "workstream": "keyboard-forms-auth",
+    "items": [
+      "T54 \u2014 Mobile keyboard QA (login, waitlist, journal composer, wall composer/reply, tutor chat, dictation, calibration, supervision log, check-in sliders, material search)",
+      "T71 \u2014 no spec provided in the queue; nothing to audit against"
+    ],
+    "findings": [
+      {
+        "surface": "Sim chat composer (consulting-room session)",
+        "issue": "The composer textarea uses `text-[15px]` \u2014 15px is below iOS Safari's 16px auto-zoom threshold, so tapping it triggers a page zoom that reflows the whole transcript and can push the docked composer off-screen. This is the flagship input-heavy surface and is docked `h-dvh`, so the zoom also misaligns the keyboard-anchored layout.",
+        "fix": "Bump the textarea to `text-base` (16px) \u2014 the 1px difference is invisible but stops the auto-zoom. (A) code-changeable now.",
+        "file": "src/components/sim/chat-composer.tsx:73"
+      },
+      {
+        "surface": "Supervision log form (/record)",
+        "issue": "Every input/select/textarea here uses `text-small` (0.875rem = 14px): activity, hours, date, competency select, supervisor, and the transfer-note textarea. On iOS Safari any focused control with a computed font-size <16px auto-zooms the page, so logging a contact hour on a phone zooms in on every field.",
+        "fix": "Switch these controls to `text-base` (16px) on mobile (keep `md:text-sm` for desktop if desired). Also note they are raw `py-2` inputs rather than `MobileInput`/`MobileTextarea` (44px min-height), so the tap target is also undersized. (A) code-changeable now.",
+        "file": "src/app/(dashboard)/practice/supervision/supervision-log.tsx:129-201"
+      },
+      {
+        "surface": "Weekly check-in free line (/record)",
+        "issue": "The free-text line uses `text-small` (14px) on a raw `py-2` input \u2014 same iOS auto-zoom trigger as the supervision log, and below the 44px touch target.",
+        "fix": "Change to `text-base` and `min-h-11` (or use `MobileInput`). (A) code-changeable now.",
+        "file": "src/app/(dashboard)/practice/check-in/checkin-form.tsx:88-96"
+      },
+      {
+        "surface": "Dictation conversation (admin corpus)",
+        "issue": "Both the 'Or type your response' input and the 'Draft case title' input use `text-small` (14px) raw `py-2` inputs \u2014 iOS auto-zoom on focus, and the primary chat-type field is not the 44px touch target the flow deserves.",
+        "fix": "Switch to `text-base` + `min-h-11` (or `MobileInput`). (A) code-changeable now.",
+        "file": "src/app/(dashboard)/admin/corpus/dictate/dictate-conversation.tsx:242-247,261-267"
+      },
+      {
+        "surface": "Psychopharm source-panel 'Search the books'",
+        "issue": "The corpus search input uses `text-sm` (14px) and `px-2 py-1` \u2014 iOS auto-zoom on focus plus a very small (~28px) tap target on a search field students are meant to use on mobile.",
+        "fix": "Change to `text-base` and `min-h-11`/`px-3 py-2.5`. (A) code-changeable now.",
+        "file": "src/components/psychopharm/source-panel.tsx:122"
+      },
+      {
+        "surface": "Login page",
+        "issue": "The page is `min-h-screen` (100vh = large viewport on iOS) with a vertically `flex-1 items-center justify-center` card. `interactive-widget=resizes-content` is Android-only; on iOS Safari 100vh does NOT shrink when the keyboard opens, so the Turnstile widget + 'Sign in' submit sit below the fold behind the keyboard with a centered layout that provides no scroll clearance.",
+        "fix": "Change the wrapper to `min-h-svh` (small viewport height, which excludes the iOS keyboard) so the form re-centers/reflows above the keyboard; verify the submit is reachable. (A) code-changeable; final behavior needs an iOS device to confirm (B).",
+        "file": "src/app/login/page.tsx:23"
+      },
+      {
+        "surface": "MobileStickyAction over the bottom tab bar (lesson / psychopharm drug pages)",
+        "issue": "`--nav-h` is defined as `3.5rem` (56px) but the bottom tab bar is `min-h-14` (56px) PLUS `paddingBottom: env(safe-area-inset-bottom)`. So on a notched device (~34px inset) the sticky action's `marginBottom: var(--nav-h)` lands it 34px too low \u2014 overlapping the tab bar's icon/label row and hiding the primary submit action behind the bar.",
+        "fix": "Redefine the token to `--nav-h: calc(3.5rem + env(safe-area-inset-bottom))` so the sticky action clears the full tab bar. (A) code-changeable now.",
+        "file": "src/app/globals.css:208 (consumed at src/components/mobile/mobile-sticky-action.tsx:43, bar at src/components/navigation/bottom-tab-bar.tsx:60-61)"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Login submit/Turnstile reachability with the iOS keyboard open \u2014 the `min-h-svh` fix is correct by spec but the exact reflow must be confirmed on a real iPhone.",
+      "Confirmation that `resizes-content` + `h-dvh` keeps the sim/tutor composer above the keyboard on Android Chrome and that the iOS `dvh` response covers the composer with no visual glitch.",
+      "Verifying that the journal/wall bottom-sheet footer (Save/Post) stays above the keyboard when the sheet's textarea is focused \u2014 `max-h-[85dvh]` + `dvh` should hold but needs a device to confirm."
+    ],
+    "priorities": [
+      "(A) Fix `--nav-h` in globals.css to `calc(3.5rem + env(safe-area-inset-bottom))` \u2014 sticky primary actions currently overlap the tab bar on notched phones.",
+      "(A) Fix iOS auto-zoom: bump sim chat composer `text-[15px]` \u2192 `text-base` (chat-composer.tsx:73).",
+      "(A) Fix iOS auto-zoom: supervision-log inputs/selects/textarea `text-small` \u2192 `text-base` (supervision-log.tsx:129-201).",
+      "(A) Fix iOS auto-zoom + tap target: check-in free line `text-small` \u2192 `text-base`/min-h-11 (checkin-form.tsx:88-96).",
+      "(A) Fix iOS auto-zoom + tap target: dictate-conversation inputs `text-small` \u2192 `text-base`/min-h-11 (dictate-conversation.tsx:242-247,261-267).",
+      "(A) Fix iOS auto-zoom + tap target: source-panel search `text-sm py-1` \u2192 `text-base`/min-h-11 (source-panel.tsx:122).",
+      "(A) Login `min-h-screen` \u2192 `min-h-svh` for iOS keyboard reflow (login/page.tsx:23); (B) verify on a real iPhone."
+    ]
+  },
+  {
+    "workstream": "safearea-media (T66 mobile safe-area sweep, T69 media experience)",
+    "items": [
+      "T66 Mobile safe-area sweep \u2014 every fixed/sticky/bottom/full-screen element (bottom nav, chat composer, sheets, voice UI, modals, sticky actions) must handle env(safe-area-inset-bottom)",
+      "T69 Media experience \u2014 video, audio, images, PDFs, transcripts; mobile-specific controls where desktop media interfaces add density"
+    ],
+    "findings": [
+      {
+        "surface": "MobileStickyAction pinned above the bottom tab bar (lesson page + psychopharm drug page)",
+        "issue": "`offsetForNav` offsets by `marginBottom: var(--nav-h)` = 3.5rem only. The bottom tab bar is `min-h-14` (3.5rem) PLUS `paddingBottom: env(safe-area-inset-bottom)`, so the sticky bar's bottom edge lands safe-area-inset pixels INTO the tab bar (the two bars overlap by ~34px on a notched iPhone). The sticky bar ALSO applies its own `paddingBottom: max(env(safe-area-inset-bottom), 0.75rem)`, double-counting the inset. globals.css:206-208 comment even says 'The bar is min-h-14 + safe-area' but the token only encodes min-h-14.",
+        "fix": "When `offsetForNav` is true, offset by `calc(var(--nav-h) + env(safe-area-inset-bottom))` and drop the safe-area term from the internal paddingBottom (the tab bar already owns the inset below it). Keep `paddingBottom: max(env(safe-area-inset-bottom), 0.75rem)` only for the non-nav (immersive) case.",
+        "file": "src/components/mobile/mobile-sticky-action.tsx:42-44"
+      },
+      {
+        "surface": "Notifications and Settings pages (shell routes where the top bar is present)",
+        "issue": "Both render `<MobilePage>` (default `inset=true`, adds `paddingTop: env(safe-area-inset-top)` + `paddingBottom`) AND `<MobileHeader>` (default `inset=true`, adds its own `paddingTop: env(safe-area-inset-top)`). The shell top bar already clears the notch (app-shell.tsx:74). Result: safe-area-top is applied THREE times (~47px x3 gap above the title on iPhone). psychopharm drug page already does this correctly with `inset={false}` + a comment; these two routes were not swept.",
+        "fix": "Pass `inset={false}` to both `MobilePage` and `MobileHeader` on these shell routes (or make MobilePage/MobileHeader default to `inset={false}` and opt-in on true inner pages). Mirror the psychopharm drug page.",
+        "file": "src/app/(dashboard)/notifications/page.tsx:86-87 and src/app/(dashboard)/settings/page.tsx:33-34"
+      },
+      {
+        "surface": "Material viewer header (full-screen PDF/audio/image viewer)",
+        "issue": "`/courses/:id/materials/:id` is an inner student path, so the shell top bar is hidden (MobileBarVisibility returns null) and NOTHING provides safe-area-top. The viewer's own header (back button + title + prev/next) has no `paddingTop: env(safe-area-inset-top)`, so it renders under the notch/status bar. The container also uses `min-h-[calc(100vh-3.5rem)]` which subtracts the tab bar's min-h but not its safe-area (and uses 100vh, not dvh).",
+        "fix": "Add `style={{ paddingTop: 'env(safe-area-inset-top)' }}` to the header (line 71), matching simulation-header.tsx:43, and change the height to `min-h-[calc(100dvh-var(--nav-h)-env(safe-area-inset-bottom))]`.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/page.tsx:69-71"
+      },
+      {
+        "surface": "Lesson page drill-down (back control + title at top of viewport)",
+        "issue": "`/courses/:id/lessons/:id` is also an inner student path (top bar hidden), but the page's first element \u2014 the back-control row (line 178) \u2014 is plain in-flow content with no safe-area-top; ShellContent's `py-6` (24px) does not clear a ~47px notch. The back affordance and lesson title sit under the status bar on iOS.",
+        "fix": "Add a top inset: wrap the back-control row (or the whole page) with `paddingTop: env(safe-area-inset-top)` (e.g. `pt-[env(safe-area-inset-top)]` on the page root or use `MobileHeader`).",
+        "file": "src/app/(dashboard)/courses/[courseId]/lessons/[lessonId]/page.tsx:174-193"
+      },
+      {
+        "surface": "MobileBottomSheet when no `footer` is supplied",
+        "issue": "The scrollable body uses fixed `pb-4` (1rem) and the sheet itself (`side=\"bottom\"`) has no safe-area-bottom. Sheets WITHOUT a footer \u2014 the session 'More' menu (session-view.tsx:356-387), HintSheet (hint-sheet.tsx:22), and the admin material action sheet in 'menu' mode (material-uploader.tsx:606-639) \u2014 let the last list item sit ~1rem from the screen bottom, under the home indicator on notched devices. Only the `footer` branch adds safe-area.",
+        "fix": "Make the body padding safe-area-aware when there is no footer: `pb-[max(1rem,env(safe-area-inset-bottom))]` (conditionally, so a footer doesn't double-apply), or move the safe-area onto the SheetContent container itself.",
+        "file": "src/components/mobile/mobile-bottom-sheet.tsx:61"
+      },
+      {
+        "surface": "Custom video-player control bar in fullscreen / pseudo-fullscreen",
+        "issue": "`.plms-player-controls` is `bottom: 0` with `padding: 0.5rem 0.75rem 0.6rem` \u2014 no safe-area. In pseudo-fullscreen on iPhone (`.plms-player.is-pseudo-fullscreen` = `position: fixed; inset: 0`, globals.css:416-423) and native fullscreen on Android, the play/scrub/volume/fullscreen buttons sit under the home indicator / system bar. This is both a T66 (safe-area) and T69 (media control reachability) defect.",
+        "fix": "Change the padding to `padding: 0.5rem 0.75rem max(0.6rem, env(safe-area-inset-bottom))` so the custom controls clear the inset in fullscreen/pseudo-fullscreen.",
+        "file": "src/app/globals.css:435 (rule at 427-440)"
+      },
+      {
+        "surface": "Image viewer pinch-to-zoom",
+        "issue": "Pinch zoom computes `setZoom(Math.min(4, Math.max(1, (dist / basePinch.current) * 2)))` (viewer.tsx:512) \u2014 it ignores the current `zoom` state, so a second pinch after zooming resets/jumps instead of scaling from the current level. There is no `touch-action` / overscroll handling, so a pinch can also scroll the page. This is the 'image zoom' surface T69 calls out.",
+        "fix": "Track the zoom at pinch-start and multiply: `setZoom(clamp(startZoom * dist / basePinch) )`, and set `touch-action: none` (or `touch-action: pinch-zoom`) on the image container to stop scroll interference.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/viewer.tsx:498-517"
+      },
+      {
+        "surface": "Audio + video mobile seek/volume sliders are hard to grab on touch",
+        "issue": "The audio seek (`<input type=\"range\">`, `h-1.5 flex-1`) and the video volume slider in the mobile 'More' menu are 6px-tall native ranges with no enlarged hit area \u2014 below the ~24px minimum touch target, so scrubbing a lecture's audio or adjusting volume on a 320px screen is finicky. The PDF zoom / page nav buttons are size-10 (40px, good), but the sliders are not.",
+        "fix": "Increase the effective touch target: give the range inputs a taller hit region (e.g. `p-2` / `h-8` with an inner track, or wrap in a taller flex row) while keeping the visual track thin.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/viewer.tsx:428-440 and src/app/(dashboard)/courses/[courseId]/lessons/[lessonId]/video-player.tsx:956-965"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Video-player pseudo-fullscreen safe-area: needs iPhone Safari + a seeded video lesson to confirm the home-indicator overlap and that the safe-area padding fix renders correctly in pseudo-fullscreen (env(safe-area-inset-bottom) is 0 in most desktop emulators).",
+      "Image viewer pinch-zoom + touch-action behavior: needs a real touchscreen (or Playwright touch emulation with a seeded image material) to confirm pinch does not scroll the page and that the second-pinch zoom jump reproduces.",
+      "MobileStickyAction vs bottom tab bar overlap magnitude: the code under-offset is evident statically, but the exact pixel overlap on a notched device should be confirmed on hardware / a device that reports a non-zero safe-area-inset-bottom.",
+      "Lesson page + material viewer safe-area-top: confirms the ~47px notch overlap; Playwright device emulation may report safe-area-inset-top as 0, so this needs a real device or a manually-injected env() value."
+    ],
+    "priorities": [
+      "(A) MobileStickyAction offsetForNav safe-area \u2014 fix marginBottom to calc(var(--nav-h) + env(safe-area-inset-bottom)) and drop the double safe-area padding (mobile-sticky-action.tsx:42-44). Affects the most-thumb-reachable element on lesson + psychopharm pages.",
+      "(A) Notifications + Settings triple safe-area-top \u2014 pass inset={false} to MobilePage and MobileHeader on shell routes (notifications/page.tsx:86-87, settings/page.tsx:33-34).",
+      "(A) Material viewer header safe-area-top + min-h calc (materials/[materialId]/page.tsx:69-71).",
+      "(A) Lesson page drill-down safe-area-top (lessons/[lessonId]/page.tsx:174-193).",
+      "(A) MobileBottomSheet no-footer safe-area-bottom (mobile-bottom-sheet.tsx:61).",
+      "(A) Video-player custom controls safe-area in fullscreen/pseudo-fullscreen (globals.css:427-440).",
+      "(B) Image viewer pinch-zoom relative-to-current-zoom + touch-action (viewer.tsx:498-517) \u2014 verify on device.",
+      "(B) Audio/video range-input touch targets (viewer.tsx:428-440, video-player.tsx:956-965) \u2014 verify on device."
+    ]
+  },
+  {
+    "workstream": "consolidation-onboarding-perms (T72, T73, T75)",
+    "items": [
+      "T72 onboarding",
+      "T73 permission flows",
+      "T75 component consolidation"
+    ],
+    "findings": [
+      {
+        "surface": "Onboarding (T72)",
+        "issue": "No onboarding exists anywhere. grep for 'onboard' returns zero hits. The only first-run surface is the dashboard's 'Step 1 \u00b7 Start your first course' card. An invite-only student lands straight on a course list with no orientation to the product loop (Consulting Room / daily practice / debrief). It would live as a post-login first-run flow: either a flag-guarded interstitial route (e.g. /welcome) redirected from login, or a first-run sheet gated on a profile/DB flag inside the dashboard.",
+        "fix": "Add a focused-steps first-run flow (one cognitive task per step: 'what is this' \u2192 'your first practice' \u2192 'your first case'), gated on a per-user first-login flag. Redirect target lives at login/page.tsx:18-20 (session ok \u2192 /dashboard); the first-run branch belongs there or as a dashboard-gated MobileBottomSheet.",
+        "file": "src/app/login/page.tsx:18-20; src/app/(dashboard)/dashboard/page.tsx:222-253"
+      },
+      {
+        "surface": "T73 scope (notification/storage/camera)",
+        "issue": "Notification, camera, and storage browser permissions do not exist in the app, so T73's 'explain all four in context' overstates the real surface. No Notification.requestPermission anywhere (grep empty); notifications/page.tsx is a derived feed (T42), not push. No camera getUserMedia({video}) anywhere. No client storage-permission prompt. The ONLY real permission is the microphone (Web Speech + MediaRecorder getUserMedia({audio})).",
+        "fix": "Reduce T73 to mic-only. Do not build notification/camera/storage permission UI that has no runtime surface. If push/camera are ever added, add in-context copy + denial fallback then.",
+        "file": "src/app/(dashboard)/notifications/page.tsx:1-148 (derived feed, no push); src/lib/voice/stt.ts:106-154"
+      },
+      {
+        "surface": "Mic permission fallback (T73)",
+        "issue": "Three voice surfaces ship three divergent permission-denial treatments. voice-input.tsx is correct (context + Safari 'Access Speech Recognition' warning + 'type instead' + denial copy). voice-ask-button.tsx (Psychology Tutor) has a weaker denial string and NO Safari warning; its startMic() catch silently falls back to startWebSpeech() without surfacing the denial. dictate-conversation.tsx has the weakest: catch sets 'Microphone access denied or unavailable.' with no 'type instead' hint and no Safari warning, even though a text input sits directly below.",
+        "fix": "Extract one shared permission-explanation + denial-fallback component (Safari pre-warning, denied state, 'type instead' affordance) and consume it from all three surfaces.",
+        "file": "src/components/practice/voice-input.tsx:77-98; src/components/knowledge/voice-ask-button.tsx:96-106,148-153; src/app/(dashboard)/admin/corpus/dictate/dictate-conversation.tsx:103-105"
+      },
+      {
+        "surface": "Voice availability gate (T73/T75)",
+        "issue": "session-view passes voiceAvailable as a bare prop (true), so the ChatComposer voice toggle is never disabled on browsers without STT (Firefox). A user toggles into voice mode, then VoiceInput reveals 'Voice not supported in this browser' after the fact. useVoiceSession already exposes sttAvailable/ttsAvailable.",
+        "fix": "Derive the toggle's availability from useVoiceSession().sttAvailable (or compute sttStatus().supported) instead of the hardcoded true.",
+        "file": "src/app/(dashboard)/practice/consulting-room/session/[sessionId]/session-view.tsx:350; src/components/sim/chat-composer.tsx:52-68"
+      },
+      {
+        "surface": "VoiceAskButton duplicate stack (T75)",
+        "issue": "voice-ask-button.tsx reimplements the entire Web Speech + MediaRecorder stack: webSpeechSupported() (44-46), inline SpeechRecognitionLike type (36-40), startWebSpeech() (49-106), and startMic() MediaRecorder\u2192server STT (109-154). All of this already exists in src/lib/voice/stt.ts (createWebStt, sttStatus, serverTranscribe) and use-voice.ts. This is the largest single consolidation target.",
+        "fix": "Rewrite VoiceAskButton on useVoiceSession/createWebStt + serverTranscribe; delete the local webSpeechSupported/startWebSpeech/startMic and inline type. Keeps the continuous-recognition behavior via the shared engine or a thin wrapper.",
+        "file": "src/components/knowledge/voice-ask-button.tsx:36-164"
+      },
+      {
+        "surface": "Dictation third recording copy (T75)",
+        "issue": "dictate-conversation.tsx hand-rolls MediaRecorder recording (getUserMedia, MediaRecorder, onstop\u2192serverTranscribe) a third time, duplicating voice-ask-button's startMic and diverging on the denial fallback.",
+        "fix": "Route dictation through the shared recording helper used by the other voice surfaces (or useVoiceSession), and reuse the shared permission fallback copy.",
+        "file": "src/app/(dashboard)/admin/corpus/dictate/dictate-conversation.tsx:71-113"
+      },
+      {
+        "surface": "QuizCheck reveal not on MobileChoiceList (T75)",
+        "issue": "quiz-check.tsx still hand-rolls the exact correct/wrong reveal that MobileChoiceList was extracted to own: CheckCircle2/CircleX, border-foreground bg-primary/15, border-border bg-muted, border-border/50 opacity-60. The MobileChoiceList docstring claims QuizCheck was migrated, but it wasn't. It's a single-correct radio flow, which MobileChoiceList supports via single mode.",
+        "fix": "Replace the inline option-row block with MobileChoiceList (single, correct=[q.correct], picked=[picked ?? ...]); keep QuizCheck's authored-index shuffle mapping outside the list.",
+        "file": "src/components/practice/quiz-check.tsx:124-153"
+      },
+      {
+        "surface": "WeakSpots + Confusable reveal off-token (T75)",
+        "issue": "WeakSpotsDrill and ConfusableDrill hand-roll reveal states using raw Tailwind green/red (bg-green-50, border-green-500 bg-green-100, border-red-400 bg-red-100, bg-green-100 text-green-800, bg-red-100 text-red-700) \u2014 colors absent from the Neo-Brutalist Pastel token scale and not token-verified. The design system provides --status-success-bg/fg and --status-alert-bg/fg for exactly this.",
+        "fix": "Migrate both to MobileChoiceList reveal (check/x + tokenized fill) or, where the two-row 'weak vs strong' semantics differ, at minimum swap raw green/red for status-success/status-alert tokens.",
+        "file": "src/app/(dashboard)/practice/weak-spots/weak-spots-drill.tsx:98-104; src/app/(dashboard)/practice/mse/confusable-drill.tsx:122-126,207-212"
+      },
+      {
+        "surface": "Off-token green/red spread (T75)",
+        "issue": "Raw green/red/amber Tailwind colors are used as reveal/status fills across the mobile-facing practice + admin surfaces, bypassing the token scale: level-domain.tsx:156, level-full-mse.tsx:168-170, mse-trainer.tsx:232, dilemmas.tsx:91, out-of-depth-drill.tsx:106, supervision-review.tsx:75-84, calibration agreement-dashboard.tsx:63,80, wall-reports-list.tsx:49,60, idioms-admin.tsx:113-117. These violate the 'text-on-fill pairings are token-verified' rule and fragment the reveal language.",
+        "fix": "Sweep the practice drills first (student-facing, mobile) to status-success/status-alert tokens; the admin surfaces (supervision-review, calibration, idioms) are a second pass.",
+        "file": "src/app/(dashboard)/practice/mse/level-domain.tsx:156; src/app/(dashboard)/practice/mse/level-full-mse.tsx:168-170; src/app/(dashboard)/practice/ethics/dilemmas.tsx:91"
+      },
+      {
+        "surface": "Repeated menu-action row pattern (T75)",
+        "issue": "The same 'flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small \u2026 hover:bg-accent' menu-item row (and its destructive text-status-alert-fg sibling) is copy-pasted ~8 times across admin/students/student-actions.tsx:112-123, course-actions.tsx:171-182, material-uploader.tsx:614-633, and psychopharm-review/page.tsx:80. No shared MenuItem/ActionRow primitive exists.",
+        "fix": "Extract a MobileListItem-like 'action row' primitive (leading icon + label + destructive variant) and reuse across the admin sheet menus.",
+        "file": "src/app/(dashboard)/admin/students/student-actions.tsx:112-123; src/app/(dashboard)/admin/courses/course-actions.tsx:171-182; src/app/(dashboard)/admin/courses/[courseId]/material-uploader.tsx:614-633"
+      },
+      {
+        "surface": "Sticky-action / sheet consolidation already done (T75 negative result)",
+        "issue": "No hand-rolled sticky bars or hand-rolled sheets remain: grep for 'fixed inset-x-0 bottom-0' / 'fixed bottom-0' outside mobile-sticky-action + bottom-tab-bar returns nothing, and all sheet surfaces go through MobileBottomSheet (wall, journal, passport, session, case-picker, notes-sheet, hint-sheet, admin actions). MobileListItem is the single list row for notifications/settings/courses/library/admin lists. Do not re-flag these.",
+        "fix": "None needed \u2014 confirm as complete; do not force unrelated list/menu surfaces into one primitive.",
+        "file": "src/components/mobile/mobile-sticky-action.tsx; src/components/mobile/mobile-bottom-sheet.tsx"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Mic permission-denial fallback verification (voice-input / voice-ask-button / dictate) \u2014 Web Speech 'not-allowed'/'service-not-allowed' and Safari 'Access Speech Recognition' modal only manifest on a real browser/dev server, so the unified fallback must be verified there after the code consolidation.",
+      "Voice availability gating on Firefox (STT unsupported) \u2014 confirm the toggle disables correctly once voiceAvailable is derived from sttStatus().",
+      "Onboarding first-run flow \u2014 requires a seeded DB/profile flag (first-login) and a real session to exercise the login\u2192first-run\u2192dashboard path."
+    ],
+    "priorities": [
+      "(A) Rewrite VoiceAskButton on src/lib/voice (stt.ts + use-voice.ts), deleting its duplicated Web Speech/MediaRecorder stack \u2014 kills the biggest duplicate and unifies the tutor voice surface. [voice-ask-button.tsx:36-164]",
+      "(A) Route dictation through the shared recording helper and shared permission-fallback copy. [dictate-conversation.tsx:71-113]",
+      "(A) Extract one shared mic-permission explanation + denial-fallback component and consume it from all three voice surfaces; add the missing Safari warning + 'type instead' hint to voice-ask-button and dictate. [voice-input.tsx:77-98 / voice-ask-button.tsx:96-106 / dictate-conversation.tsx:103-105]",
+      "(A) Migrate QuizCheck's option rows to MobileChoiceList (single). [quiz-check.tsx:124-153]",
+      "(A) Migrate WeakSpotsDrill + ConfusableDrill reveal to MobileChoiceList or tokenized status-success/status-alert fills, removing raw green/red. [weak-spots-drill.tsx:98-104; confusable-drill.tsx:122-126,207-212]",
+      "(A) Derive the voice toggle's availability from sttAvailable instead of the hardcoded true. [session-view.tsx:350]",
+      "(A) Sweep remaining raw green/red/amber reveal/status fills in the student-facing drills to status tokens. [level-domain.tsx:156; level-full-mse.tsx:168-170; dilemmas.tsx:91; out-of-depth-drill.tsx:106]",
+      "(A) Extract a shared menu/action-row primitive for the repeated min-h-11 menu-item rows in admin sheets. [student-actions.tsx:112-123; course-actions.tsx:171-182; material-uploader.tsx:614-633]",
+      "(B) Design + build the T72 first-run onboarding flow (focused steps) once a first-login flag/route is decided; verify against a seeded session.",
+      "(B) On-device verification pass for permission-denial fallbacks, Firefox voice gating, and the onboarding flow."
+    ]
+  },
+  {
+    "workstream": "upload-perf",
+    "items": [
+      "T70",
+      "T74"
+    ],
+    "findings": [
+      {
+        "surface": "Material viewer (PDF/audio/image preview + download path)",
+        "issue": "viewer.tsx POSTs to /api/media/materials (body {materialId}) expecting a signed {url}, but that POST route does not exist \u2014 the only materials route is GET/HEAD /api/media/materials/[materialId] (proxy-stream, no signed URL). Every document/audio/image material therefore 404s and shows 'Couldn't open this material'. The route was refactored to proxy-stream (commit ce9690f) but the viewer was never updated \u2014 a live regression in the T70 preview path.",
+        "fix": "Drop the signed-URL fetch entirely: set signedUrl = `/api/media/materials/${materialId}` and pass it directly to PdfViewer/AudioViewer/ImageViewer (the GET route already streams with Range/206 + session cookie auth). Remove the POST fetch, the correlation-id fail path tied to it, and the loading skeleton's dependency on that fetch.",
+        "file": "src/app/(dashboard)/courses/[courseId]/materials/[materialId]/viewer.tsx:83"
+      },
+      {
+        "surface": "Admin submissions list (mobile: heavy list + redundant fetch)",
+        "issue": "SubmissionsPage does 6 parallel unfiltered `.select()` calls (submissions, assignments, lessons, courses, all student profiles, ALL submission_files) then filters/enriches entirely client-side in JS. No pagination, no server-side filter, no `.limit()`. As the cohort grows this is a heavy list + excessive network on mobile, and most fetched rows are discarded by the in-memory filter.",
+        "fix": "Push course/assignment/status filters into the Supabase query (`.eq()/.in()` on status + course via a join or subquery) and add `.limit()` + pagination (or at minimum a cursor). Fetch `submission_files` only for the visible page's submission ids, and `profiles` only for the emails actually needed.",
+        "file": "src/app/(dashboard)/admin/submissions/page.tsx:28"
+      },
+      {
+        "surface": "PsychSearch medication autocomplete (mobile: excessive requests)",
+        "issue": "The `useEffect` keyed on `[q, searchRetry]` fires `fetch(/api/psychopharm/search?q=...)` on every keystroke with no debounce. Typing a name like 'risperidone' issues ~11 network round-trips to an auth-gated API, causing jank and wasted requests on mobile.",
+        "fix": "Add a ~200ms debounce (setTimeout, cleared on each change/cleanup) before firing the fetch, or use an AbortController + debounce. Keep the existing `cancelled` flag for out-of-order responses.",
+        "file": "src/components/psychopharm/psych-search.tsx:50"
+      },
+      {
+        "surface": "Material upload progress bar (mobile: state understanding)",
+        "issue": "The upload row renders a determinate progress bar whose width is `p.progress || (status === 'preparing' ? 8 : 25)%`, but `progress` is never updated after that \u2014 the SDK exposes no byte progress (acknowledged at line 40-42). The bar sits at 25% for the whole transfer then snaps to done, which reads as a stalled/broken upload rather than an honest 'in progress' state.",
+        "fix": "Render an indeterminate/indeterminate-style indicator during 'uploading' (e.g. a full-width pulsing fill or a striped animated bar) instead of a fixed 25% determinate width, and reserve the determinate bar only for the confirmed 100% 'done' state.",
+        "file": "src/app/(dashboard)/admin/courses/[courseId]/material-uploader.tsx:476"
+      },
+      {
+        "surface": "Video upload (lesson editor)",
+        "issue": "VideoUpload has no size validation (unlike materials' 100MB cap via validateMaterialFile), no cancel control, and no progress \u2014 status is only idle/uploading with a spinner, and failures surface the raw Supabase error message. A large/oversized video uploads blind with no recovery except a bare error string.",
+        "fix": "Add a size guard before prepare (reuse/echo the media registry max), keep the label disabled during upload but add a cancel affordance, and translate the upload error into human copy (the uploader pattern in material-uploader already shows how).",
+        "file": "src/app/(dashboard)/admin/courses/[courseId]/video-upload.tsx:24"
+      },
+      {
+        "surface": "Material reorder persistence (admin, perf)",
+        "issue": "reorderMaterials loops `await admin.from('materials').update(...)` once per material \u2014 N sequential round-trips for a lesson with many materials, each revalidating after the loop. Slow on the admin course page when reordering a long list.",
+        "fix": "Batch the reorder (e.g. a single upsert/update with sort_order values, or at least `Promise.all` the updates) and revalidate once at the end.",
+        "file": "src/app/(dashboard)/admin/courses/[courseId]/materials-actions.ts:158"
+      },
+      {
+        "surface": "Dictation + tutor chat transcript rendering (mobile: heavy list)",
+        "issue": "dictate-conversation.tsx maps turns with `key={i}` (index key) and no memoization; tutor-chat.tsx maps messages with `key={i}` too. Long conversations re-render the entire transcript on each keystroke/turn and index keys cause needless DOM churn as entries prepend/shift.",
+        "fix": "Give each turn/message a stable id key, and wrap the row renderer in `React.memo` so only the new/edited bubble re-renders. Low-cost, no virtualization needed at these sizes.",
+        "file": "src/app/(dashboard)/admin/corpus/dictate/dictate-conversation.tsx:167"
+      }
+    ],
+    "liveDeviceOnly": [
+      "Verify the viewer fix against a real seeded material with a live session (GET proxy-stream Range/206 for pdf.js, audio seek, image display) \u2014 code fix is static but playback needs Supabase storage + dev server.",
+      "Confirm submissions-page pagination/filter performance at cohort scale (seeded DB with many submissions/files) \u2014 the N+1 today is only observable with real row volume.",
+      "Confirm upload progress/cancel UX against live Supabase Storage (byte progress unavailable by SDK \u2014 the indeterminate-bar change needs a real slow upload to eyeball)."
+    ],
+    "priorities": [
+      "(A) Fix material viewer: point it at GET /api/media/materials/${materialId} and delete the dead signed-URL POST fetch (viewer.tsx:83) \u2014 currently breaks all document/audio/image previews.",
+      "(A) Add debounce to PsychSearch fetch (psych-search.tsx:50) \u2014 stops a fetch per keystroke on mobile.",
+      "(A) Push submissions filters server-side + paginate/limit (submissions/page.tsx:28) \u2014 removes the heaviest mobile list + redundant full-table fetches.",
+      "(A) Replace the fake determinate upload bar with an indeterminate one (material-uploader.tsx:476).",
+      "(A) Add size guard + cancel + human error copy to video upload (video-upload.tsx:24).",
+      "(A) Batch reorderMaterials writes (materials-actions.ts:158).",
+      "(A) Stable keys + memo for dictate/tutor chat transcript rows (dictate-conversation.tsx:167)."
+    ]
+  }
+]

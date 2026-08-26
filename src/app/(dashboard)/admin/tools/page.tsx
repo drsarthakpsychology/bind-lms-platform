@@ -1,8 +1,10 @@
-import Link from "next/link";
 import { CalendarDays, Upload } from "lucide-react";
 import { PageHeader } from "@/components/design-system/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BulkImportForm } from "./bulk-import-form";
+import { CohortCalendarForm } from "./cohort-calendar-form";
+
+// Note: no <Link> here — the calendar card is a form now (cohort-calendar-form.tsx).
 
 export default function AdminToolsPage() {
   return (
@@ -22,9 +24,9 @@ export default function AdminToolsPage() {
           </CardHeader>
           <CardContent>
             <p className="mb-3 text-small text-muted-foreground">
-              Upload a CSV with headers <code>name,email</code>. Creates accounts
-              (idempotent — re-uploading skips existing emails) and sends a welcome
-              email if Resend is configured.
+              Upload a CSV with headers <code>name,email</code>. Creates accounts —
+              re-uploading skips existing emails — and sends a welcome email when
+              email is set up.
             </p>
             <BulkImportForm />
           </CardContent>
@@ -37,23 +39,12 @@ export default function AdminToolsPage() {
               Cohort calendar
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-small text-muted-foreground">
-            <p>
-              Generate the whole session schedule from a start date + weekly
+          <CardContent className="space-y-3">
+            <p className="text-small text-muted-foreground">
+              Generate the whole session schedule from a start date and weekly
               pattern, instead of entering every date by hand.
             </p>
-            <p>
-              <Link
-                href="/api/cohort-calendar?startDate=2026-08-20&startTime=09:00&weekdays=6,0&weeks=12&title=Cohort+One"
-                className="inline-flex items-center gap-1 font-medium text-link hover:underline"
-              >
-                Download sample .ics →
-              </Link>
-            </p>
-            <p className="text-caption">
-              Adjust the URL params (startDate, startTime, weekdays 0-6, weeks,
-              title) to match your cohort, then add the .ics to your calendar.
-            </p>
+            <CohortCalendarForm />
           </CardContent>
         </Card>
       </div>

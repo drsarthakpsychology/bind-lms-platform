@@ -7,22 +7,7 @@ import { toast } from "sonner";
 import { setCoursePublished, deleteCourse } from "./actions";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export function CourseActions({
   courseId,
@@ -34,7 +19,8 @@ export function CourseActions({
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
-  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuView, setMenuView] = useState<"menu" | "delete">("menu");
   const [publishConfirmOpen, setPublishConfirmOpen] = useState(false);
 
   function handleTogglePublish() {
@@ -64,7 +50,8 @@ export function CourseActions({
     setError(null);
     startTransition(async () => {
       const result = await deleteCourse(courseId);
-      setConfirmOpen(false);
+      setMenuOpen(false);
+      setMenuView("menu");
       if (result.error) {
         setError(result.error);
         toast.error(result.error);
@@ -89,18 +76,13 @@ export function CourseActions({
       </Button>
 
       {/* Confirm before unpublishing — it hides the course from students. */}
-      <Dialog open={publishConfirmOpen} onOpenChange={setPublishConfirmOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Unpublish this course?</DialogTitle>
-            <DialogDescription>
-              Students will no longer see this course until you publish it again.
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setPublishConfirmOpen(false)}>
-              Cancel
-            </Button>
+      <MobileBottomSheet
+        open={publishConfirmOpen}
+        onOpenChange={setPublishConfirmOpen}
+        title="Unpublish this course?"
+        description="Students will no longer see this course until you publish it again."
+        footer={
+          <div className="flex flex-col gap-2">
             <Button
               type="button"
               variant="secondary"
@@ -109,65 +91,102 @@ export function CourseActions({
                 handleTogglePublish();
               }}
               disabled={isPending}
+              className="w-full"
             >
               Set to draft
             </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-
-      <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button type="button" variant="ghost" size="icon-sm" aria-label="Course actions">
-              <MoreHorizontal className="size-4" aria-hidden />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem
-              onSelect={() => router.push(`/admin/courses/${courseId}`)}
-            >
-              <Pencil className="size-4" aria-hidden />
-              Open builder
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DialogTrigger asChild>
-              <DropdownMenuItem variant="destructive" onSelect={(e) => e.preventDefault()}>
-                <Trash2 className="size-4" aria-hidden />
-                Delete course
-              </DropdownMenuItem>
-            </DialogTrigger>
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Delete this course?</DialogTitle>
-            <DialogDescription>
-              Deleting this course also deletes its lessons, progress, and submissions. This
-              can&apos;t be undone.
-            </DialogDescription>
-          </DialogHeader>
-          {error && (
-            <p role="alert" className="text-sm text-status-alert-fg">
-              {error}
-            </p>
-          )}
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setConfirmOpen(false)}>
-              Cancel
-            </Button>
             <Button
               type="button"
-              variant="destructive"
-              onClick={handleDelete}
-              disabled={isPending}
+              variant="outline"
+              onClick={() => setPublishConfirmOpen(false)}
+              className="w-full"
             >
-              {isPending ? "Deleting…" : "Delete course"}
+              Cancel
             </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+          </div>
+        }
+      />
+
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon-sm"
+        aria-label="Course actions"
+        onClick={() => {
+          setMenuView("menu");
+          setError(null);
+          setMenuOpen(true);
+        }}
+      >
+        <MoreHorizontal className="size-4" aria-hidden />
+      </Button>
+
+      <MobileBottomSheet
+        open={menuOpen}
+        onOpenChange={(next) => !next && setMenuOpen(false)}
+        title={menuView === "delete" ? "Delete this course?" : "Course actions"}
+        description={
+          menuView === "delete"
+            ? "Deleting this course also deletes its lessons, progress, and submissions. This can't be undone."
+            : undefined
+        }
+        footer={
+          menuView === "delete" ? (
+            <div className="flex flex-col gap-2">
+              <Button
+                type="button"
+                variant="destructive"
+                onClick={handleDelete}
+                disabled={isPending}
+                className="w-full"
+              >
+                {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
+                {isPending ? "Deleting…" : "Delete course"}
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setMenuView("menu")}
+                className="w-full"
+              >
+                Cancel
+              </Button>
+            </div>
+          ) : undefined
+        }
+      >
+        {error && (
+          <p role="alert" className="mb-2 text-sm text-status-alert-fg">
+            {error}
+          </p>
+        )}
+        {menuView === "menu" ? (
+          <div className="flex flex-col gap-1">
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                router.push(`/admin/courses/${courseId}`);
+              }}
+              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent"
+            >
+              <Pencil className="size-4 text-muted-foreground" aria-hidden />
+              Open builder
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setError(null);
+                setMenuView("delete");
+              }}
+              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
+            >
+              <Trash2 className="size-4" aria-hidden />
+              Delete course
+            </button>
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

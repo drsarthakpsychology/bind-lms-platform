@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { BandDetail } from "./band-detail";
 import { RegisterView } from "./register-view";
@@ -13,8 +14,8 @@ import type { BandView } from "@/lib/psychopharm/store";
  * actually switches the page to that band's specific content (D3). Wrapped in
  * Suspense by the server page because useSearchParams requires it.
  *
- * Register mode (student|clinician) is lifted here so the band detail, onset
- * timeline, and mechanism register share one toggle.
+ * Students always see the plain register — the reviewer/clinician register
+ * with source evidence lives in the admin editor, not here.
  */
 export function DrugBandView({
   class: drugClass,
@@ -62,12 +63,14 @@ export function DrugBandView({
   const searchParams = useSearchParams();
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
   const current = bands[activeBand - 1];
-  const [mode, setMode] = React.useState<"student" | "clinician">("student");
 
   return (
     <div className="space-y-6">
       {/* The selected band, first below the ladder. */}
-      <BandDetail band={current} register={mode} />
+      <BandDetail band={current} register="student" />
+
+      {/* The mechanism register — plain language, no mode switch for students. */}
+      <RegisterView plain={plain} mechanism={mechanism} />
 
       {/* Onset + half-life — second question anyone asks. */}
       <OnsetTimeline
@@ -77,17 +80,8 @@ export function DrugBandView({
         halfLife={halfLife}
         halfLifePage={halfLifePage}
         bandOnset={current?.onset}
-        register={mode}
+        register="student"
         sourceTitle={sourceTitle ?? ""}
-      />
-
-      <RegisterView
-        plain={plain}
-        mechanism={mechanism}
-        source_id=""
-        source_title={sourceTitle ?? ""}
-        mode={mode}
-        onModeChange={setMode}
       />
 
       <section className="space-y-4 pb-4">
@@ -116,8 +110,9 @@ export function DrugBandView({
         </section>
       ) : null}
 
-      {/* FDA full-label sections (verbatim). Shown only when the label has
-          been fetched and parsed; otherwise the honest "not covered" line. */}
+      {/* FDA full-label sections (verbatim reference text). Collapsed so the
+          band's clinical summary dominates and the page isn't one long scroll
+          on a phone; each section is one tap to expand (T32). */}
       {[
         { label: "Contraindications", value: contraindications },
         { label: "Interactions", value: interactions },
@@ -127,15 +122,33 @@ export function DrugBandView({
         { label: "Patient counseling", value: patient_counseling },
       ].map(({ label, value }) =>
         value ? (
-          <section key={label} className="space-y-4 pb-4">
-            <h2 className="text-h2">{label}</h2>
-            <p className="text-small">{value}</p>
-          </section>
+          <details key={label} className="group rounded-md border-2 border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+              <h2 className="text-h2">{label}</h2>
+              <ChevronDown
+                className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                aria-hidden
+              />
+            </summary>
+            <p className="border-t border-border px-4 py-3 text-small">{value}</p>
+          </details>
         ) : null,
       )}
 
-      {/* Phase 2 observer layer */}
-      <ObserverNotes drugClass={drugClass} />
+      {/* Phase 2 observer layer — collapsed so the band summary dominates;
+          one tap to reveal the session observations (T32). */}
+      <details className="group rounded-md border-2 border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+          <h2 className="text-h2">Session notes & red flags</h2>
+          <ChevronDown
+            className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="border-t border-border px-4 py-3">
+          <ObserverNotes drugClass={drugClass} />
+        </div>
+      </details>
     </div>
   );
 }

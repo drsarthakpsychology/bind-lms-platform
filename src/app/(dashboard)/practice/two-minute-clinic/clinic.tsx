@@ -53,7 +53,7 @@ export function TwoMinuteClinic() {
         <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
           <div>
             <label className="text-small font-medium" htmlFor="diff">Your differential (top 2-3)</label>
-            <textarea
+            <textarea enterKeyHint="enter"
               id="diff"
               value={differential}
               onChange={(e) => setDifferential(e.target.value)}
@@ -64,7 +64,7 @@ export function TwoMinuteClinic() {
           </div>
           <div>
             <label className="text-small font-medium" htmlFor="nextq">Your next question</label>
-            <textarea
+            <textarea enterKeyHint="enter"
               id="nextq"
               value={nextQuestion}
               onChange={(e) => setNextQuestion(e.target.value)}

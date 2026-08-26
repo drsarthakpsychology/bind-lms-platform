@@ -31,10 +31,15 @@ export function CheckinForm({ weekLabel, initial }: Props) {
   const [saved, setSaved] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
-  // Focus management for keyboard users
+  // Focus management for keyboard users: refocus the free-text line only after
+  // a save completes (busy true→false). Focusing on mount would pop the
+  // software keyboard the moment the page loads — the auto-focus bug.
   const freeLineRef = React.useRef<HTMLInputElement>(null);
+  const prevBusyRef = React.useRef(false);
   React.useEffect(() => {
-    if (!busy && freeLineRef.current) {
+    const wasBusy = prevBusyRef.current;
+    prevBusyRef.current = busy;
+    if (wasBusy && !busy && freeLineRef.current) {
       freeLineRef.current.focus();
     }
   }, [busy]);
@@ -87,7 +92,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
           onChange={(e) => setFreeLine(e.target.value)}
           maxLength={500}
           placeholder="One honest line about the week."
-          className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
         />
       </div>
 

@@ -53,36 +53,64 @@ export function MaterialViewer({
 }) {
   const [signedUrl, setSignedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [correlationId, setCorrelationId] = useState<string | null>(null);
   const [loadKey, setLoadKey] = useState(0);
+  const [slow, setSlow] = useState(false);
 
-  // Fetch a signed URL on mount (enrolment re-checked at request time).
+  // A short reference id per failure — the student quotes it to their
+  // instructor, who can find the matching server-side log line.
+  const fail = useCallback((raw: unknown) => {
+    const id = crypto.randomUUID().replace(/-/g, "").slice(0, 6).toUpperCase();
+    console.error(`[material:${id}] load failed:`, raw);
+    setCorrelationId(id);
+  }, []);
+
+  // Promote inner PDF failures into the same error card the signed-URL fetch
+  // uses, so the viewer has one error language (correlation id + retry).
+  const handlePdfFail = useCallback(
+    (message: string) => {
+      fail(message);
+      setError(message);
+    },
+    [fail],
+  );
+
+  // Probe access with HEAD, then load the proxied stream URL (the same
+  // delivery path as video). The old POST for a signed URL hit a route that
+  // doesn't exist and broke every preview; the stream route handles Range/206.
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/media/materials", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ materialId }),
-        });
+        const res = await fetch(`/api/media/materials/${materialId}`, { method: "HEAD" });
         if (!res.ok) {
-          const body = await res.json().catch(() => null);
           // Raw storage error goes to logs, not the student.
-          console.error("material load failed:", body?.error ?? `HTTP ${res.status}`);
-          if (!cancelled) setError(body?.error ?? "Couldn't open this material.");
+          if (!cancelled) {
+            fail(`HTTP ${res.status}`);
+            setError("Couldn't open this material.");
+          }
           return;
         }
-        const data = await res.json();
-        if (!cancelled) setSignedUrl(data.url);
+        if (!cancelled) setSignedUrl(`/api/media/materials/${materialId}`);
       } catch (e) {
-        console.error("material load failed:", e);
-        if (!cancelled) setError("Couldn't open this material.");
+        if (!cancelled) {
+          fail(e);
+          setError("Couldn't open this material.");
+        }
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, [materialId, loadKey]);
+  }, [materialId, loadKey, fail]);
+
+  // Slow-connection signal — after 8s still loading, tell the student it hasn't
+  // frozen. Resets on retry (the only path that re-enters loading after an error).
+  useEffect(() => {
+    if (signedUrl || error || kind === "link") return;
+    const t = setTimeout(() => setSlow(true), 8000);
+    return () => clearTimeout(t);
+  }, [signedUrl, error, kind]);
 
   if (error) {
     return (
@@ -93,6 +121,11 @@ export function MaterialViewer({
             <p className="mt-1 text-caption text-muted-foreground">
               Couldn&apos;t load this file. Retry, or tell your instructor if it keeps failing.
             </p>
+            {correlationId ? (
+              <p className="mt-2 select-all font-mono text-caption text-muted-foreground">
+                Reference: {correlationId}
+              </p>
+            ) : null}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2">
             <button
@@ -100,6 +133,7 @@ export function MaterialViewer({
               onClick={() => {
                 setError(null);
                 setSignedUrl(null);
+                setSlow(false);
                 setLoadKey((k) => k + 1);
               }}
               className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
@@ -122,14 +156,34 @@ export function MaterialViewer({
   if (!signedUrl && kind !== "link") {
     return (
       <div className="flex h-full items-center justify-center p-8">
-        <Loader2 className="size-6 animate-spin text-muted-foreground" aria-hidden />
+        <div className="w-full max-w-sm space-y-3">
+          {/* Skeleton shaped like the content, so the student can see where it
+              will land rather than staring at an empty screen. */}
+          <div className="h-40 animate-pulse rounded-md border-2 border-border bg-muted/40" aria-hidden />
+          <div className="flex items-center gap-2 text-caption text-muted-foreground">
+            <Loader2 className="size-4 animate-spin" aria-hidden />
+            Loading material…
+          </div>
+          {slow ? (
+            <p className="text-caption text-muted-foreground" role="status">
+              Still loading — this may take longer on a slow connection.
+            </p>
+          ) : null}
+        </div>
       </div>
     );
   }
 
   switch (kind) {
     case "document":
-      return <PdfViewer signedUrl={signedUrl!} materialId={materialId} watermarkLabel={watermarkLabel} />;
+      return (
+        <PdfViewer
+          signedUrl={signedUrl!}
+          materialId={materialId}
+          watermarkLabel={watermarkLabel}
+          onFail={handlePdfFail}
+        />
+      );
     case "audio":
       return <AudioViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
     case "image":
@@ -168,14 +222,13 @@ export function MaterialViewer({
 /* ------------------------------------------------------------------ */
 /* PDF — canvas rendering, page-by-page, no iframe                    */
 /* ------------------------------------------------------------------ */
-function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: string; materialId: string; watermarkLabel: string }) {
+function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUrl: string; materialId: string; watermarkLabel: string; onFail: (message: string) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [pageNum, setPageNum] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [zoom, setZoom] = useState(1);
   const [rendering, setRendering] = useState(false);
-  const [loadError, setLoadError] = useState<string | null>(null);
 
   // Load the PDF once. pdfjs-dist is imported lazily here so it only loads
   // (and its ~1MB chunk downloads) when this component actually mounts — i.e.
@@ -202,12 +255,12 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
         }
       })
       .catch(() => {
-        if (!cancelled) setLoadError("This PDF couldn't be read.");
+        if (!cancelled) onFail("This PDF couldn't be read.");
       });
     return () => {
       cancelled = true;
     };
-  }, [signedUrl, materialId]);
+  }, [signedUrl, materialId, onFail]);
 
   // Render the current page to canvas whenever pageNum/zoom changes.
   useEffect(() => {
@@ -233,14 +286,14 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
         .catch(() => {
           if (!cancelled) {
             setRendering(false);
-            setLoadError("Couldn't render this page.");
+            onFail("Couldn't render this page.");
           }
         });
     });
     return () => {
       cancelled = true;
     };
-  }, [doc, pageNum, zoom]);
+  }, [doc, pageNum, zoom, onFail]);
 
   // Save scroll position on unload / page change.
   const saveScroll = useCallback(() => {
@@ -253,27 +306,20 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
     return () => saveScroll();
   }, [saveScroll]);
 
-  if (loadError) {
-    return (
-      <div className="flex h-full items-center justify-center p-8">
-        <p className="text-small text-status-alert-fg">{loadError}</p>
-      </div>
-    );
-  }
-
   return (
     <div className="relative flex h-full flex-col">
       <MaterialWatermark label={watermarkLabel} />
 
-      {/* Toolbar */}
-      <div className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2">
+      {/* Toolbar — wraps on narrow screens so the zoom group drops to a second
+          row instead of colliding with the page counter (T68). */}
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b-2 border-border bg-card px-3 py-2">
         <div className="flex items-center gap-1">
           <button
             type="button"
             onClick={() => setPageNum((p) => Math.max(1, p - 1))}
             disabled={pageNum <= 1 || !doc}
             aria-label="Previous page"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronLeft className="size-4" aria-hidden />
           </button>
@@ -285,7 +331,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             onClick={() => setPageNum((p) => Math.min(pageCount || 1, p + 1))}
             disabled={!doc || pageNum >= (pageCount || 1)}
             aria-label="Next page"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronRight className="size-4" aria-hidden />
           </button>
@@ -295,7 +341,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.max(0.5, z - 0.25))}
             aria-label="Zoom out"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomOut className="size-4" aria-hidden />
           </button>
@@ -306,7 +352,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
             aria-label="Zoom in"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomIn className="size-4" aria-hidden />
           </button>
@@ -472,7 +518,7 @@ function ImageViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
           type="button"
           onClick={() => setZoom((z) => Math.max(1, z - 0.5))}
           aria-label="Zoom out"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
+          className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
         >
           <Minus className="size-3.5" aria-hidden />
         </button>
@@ -481,7 +527,7 @@ function ImageViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
           type="button"
           onClick={() => setZoom((z) => Math.min(4, z + 0.5))}
           aria-label="Zoom in"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
+          className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
         >
           <Plus className="size-3.5" aria-hidden />
         </button>

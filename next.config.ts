@@ -4,6 +4,11 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig: NextConfig = {
   // Don't advertise the framework (audit finding #8 — minor fingerprint leak).
   poweredByHeader: false,
+  // Hide the dev-mode "Activity" floating indicator. In dev it sits at the
+  // bottom-left corner and intercepts pointer events over real UI (e.g. the
+  // session composer's "Use voice" button) — dev-only, and a genuine
+  // interaction hazard, not just a test issue.
+  devIndicators: false,
   // A handful of routes read repo JSON at request time via readFileSync
   // (not import) — the psychopharm knowledge base and the case-library
   // corpus. @vercel/nft's static trace usually resolves
@@ -15,6 +20,9 @@ const nextConfig: NextConfig = {
     "/tools/psychopharm/*": ["docs/psychopharm/**/*"],
     "/admin/psychopharm/editor/*": ["docs/psychopharm/**/*"],
     "/api/psychopharm/*": ["docs/psychopharm/**/*"],
+    // The policy pages read content/policies/*.md at build/revalidate time via
+    // readFileSync — trace the files so the serverless output keeps them.
+    "/policies/*": ["content/policies/**/*"],
   },
   // Tree-shake these to their used exports (lucide icons, motion, radix all
   // export far more than any page imports). Shrinks the shared client chunk.
@@ -30,6 +38,14 @@ const nextConfig: NextConfig = {
         destination: "/waitlist",
         permanent: false,
       },
+      // Policy deep-links: the likely-guessed URLs must never 404 — they all
+      // land on the canonical /policies/* route (permanent so links keep
+      // working as consumers and email templates migrate).
+      { source: "/privacy", destination: "/policies/privacy", permanent: true },
+      { source: "/privacy-policy", destination: "/policies/privacy", permanent: true },
+      { source: "/terms", destination: "/policies/terms", permanent: true },
+      { source: "/terms-and-conditions", destination: "/policies/terms", permanent: true },
+      { source: "/refund-policy", destination: "/policies/refund", permanent: true },
     ];
   },
   async headers() {

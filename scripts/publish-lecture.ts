@@ -6,7 +6,7 @@
  *
  * Does, in order, with progress output:
  *   1. ffprobe the source; refuse if not a video or already tiny.
- *   2. Encode a multi-bitrate HLS ladder (1080p/720p/480p/360p) + master.m3u8,
+ *   2. Encode a multi-bitrate HLS ladder (1080p/720p/480p/240p) + master.m3u8,
  *      6-second segments, tuned for talking-head + slides (not film).
  *   3. Upload segments + playlists to R2 under lessons/<lessonId>/hls/.
  *   4. Upsert the media_assets row (provider='r2', ladder, duration).
@@ -45,13 +45,16 @@ function requireEnv(name: string): string {
   return v;
 }
 
-// HLS ladder for lecture content (talking head + slides): moderate bitrates,
-// 6s segments. 360p is the floor; anything below isn't useful for slides.
+// HLS ladder for lecture content (talking head + slides): four rungs with a
+// ≥1.5× bitrate gap between adjacent rungs (so the player never oscillates
+// between two near-identical qualities on a marginal connection). 240p is the
+// floor — it's what saves a viewer on a bad connection from buffering entirely
+// rather than just playing at a lower quality. 6s segments, ~2s keyframes.
 export const LADDER = [
-  { height: 1080, width: 1920, bitrate: "2800k", audio: "128k" },
-  { height: 720, width: 1280, bitrate: "1800k", audio: "128k" },
-  { height: 480, width: 854, bitrate: "1000k", audio: "96k" },
-  { height: 360, width: 640, bitrate: "600k", audio: "96k" },
+  { height: 1080, width: 1920, bitrate: "5000k", audio: "128k" },
+  { height: 720, width: 1280, bitrate: "2800k", audio: "128k" },
+  { height: 480, width: 854, bitrate: "1400k", audio: "96k" },
+  { height: 240, width: 426, bitrate: "600k", audio: "96k" },
 ];
 const SEGMENT_SECONDS = 6;
 

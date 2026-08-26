@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Menu, LogOut } from "lucide-react";
+import Link from "next/link";
+import { Bell, Menu, LogOut, Settings } from "lucide-react";
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NavItems, type NavItem } from "@/components/navigation/nav-items";
@@ -35,13 +36,13 @@ export function MobileNav({
         <button
           type="button"
           aria-label="Open navigation"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform hover:bg-accent active:translate-y-0.5"
+          className="inline-flex size-11 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform hover:bg-accent active:translate-y-0.5"
         >
           <Menu className="size-4" aria-hidden />
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="w-72 p-0">
-        <SheetHeader className="border-b-2 border-border px-4 py-3">
+        <SheetHeader className="border-b-2 border-border px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
           <SheetTitle className="flex items-center gap-2">
             <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
               {BRAND.shortName.charAt(0)}
@@ -56,13 +57,33 @@ export function MobileNav({
           />
           {viewModeSwitch ? <div className="mt-4">{viewModeSwitch}</div> : null}
         </div>
-        <div className="flex items-center justify-between border-t-2 border-border p-3">
+        <div
+          className="flex items-center justify-between border-t-2 border-border px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+        >
           <ThemeToggle />
-          <form action={logout}>
-            <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
-              <LogOut className="size-4" aria-hidden />
-            </Button>
-          </form>
+          <div className="flex items-center gap-1.5">
+            <Link
+              href="/notifications"
+              onClick={() => setOpen(false)}
+              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              aria-label="Notifications"
+            >
+              <Bell className="size-4" aria-hidden />
+            </Link>
+            <Link
+              href="/settings"
+              onClick={() => setOpen(false)}
+              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              aria-label="Settings"
+            >
+              <Settings className="size-4" aria-hidden />
+            </Link>
+            <form action={logout}>
+              <Button type="submit" variant="secondary" size="icon-sm" className="size-11" aria-label="Log out">
+                <LogOut className="size-4" aria-hidden />
+              </Button>
+            </form>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

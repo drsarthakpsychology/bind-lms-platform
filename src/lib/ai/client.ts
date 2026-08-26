@@ -47,6 +47,8 @@ export interface AiRequestOptions {
   /** schema to validate a JSON output; when set, forces json capability */
   schema?: z.ZodType;
   temperature?: number;
+  /** Force a specific provider id (multi-model consensus). Default: routed. */
+  providerId?: string;
 }
 
 export interface AiResponse {
@@ -97,12 +99,15 @@ async function callOpenAI(
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   if (res.status === 429 || res.status >= 500) {
-    const e = new Error(`provider ${provider.id} responded ${res.status}`);
+    const bodyText = await res.text().catch(() => "");
+    const e = new Error(`provider ${provider.id} ${model} responded ${res.status}: ${bodyText.slice(0, 500)}`);
     (e as unknown as { status: number }).status = res.status;
+    (e as unknown as { model: string }).model = model;
     throw e;
   }
   if (!res.ok) {
-    throw new Error(`provider ${provider.id} responded ${res.status}`);
+    const bodyText = await res.text().catch(() => "");
+    throw new Error(`provider ${provider.id} ${model} responded ${res.status}: ${bodyText.slice(0, 500)}`);
   }
   const j = (await res.json()) as {
     choices?: Array<{ message?: { content?: string } }>;
@@ -144,6 +149,25 @@ async function callProvider(
 const RETRYABLE = new Set([429, 500, 502, 503, 504]);
 const TIMEOUT_MS = 20_000;
 
+/**
+ * Models sometimes wrap JSON in ```json fences or preface it with prose.
+ * Strip that before parsing so the schema parse succeeds on the first try
+ * (no repair round-trip, no spurious failover).
+ */
+function extractJson(text: string): string {
+  let s = text;
+  const fenced = s.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fenced) s = fenced[1];
+  else {
+    const start = s.indexOf("{");
+    const end = s.lastIndexOf("}");
+    if (start >= 0 && end > start) s = s.slice(start, end + 1);
+  }
+  // Models occasionally emit `+1` (a leading plus) for positive numbers, which
+  // is not valid JSON. Strip it so the schema parse succeeds first try.
+  return s.replace(/([:,\s[])\+(\d)/g, "$1$2").trim();
+}
+
 /** One call with provider failover. Never throws for a student-visible failure
  *  when another provider can serve the request. */
 export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions): Promise<AiResponse> {
@@ -155,8 +179,13 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     return { text: turn.patient, provider: "fixture" };
   }
   const capability: ProviderCapability = opts.schema ? "json" : "stream";
-  const candidates = providersFor(capability, opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  const allCandidates = providersFor(capability, opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  // A forced provider (multi-model consensus) narrows to exactly that lane; the
+  // normal path routes across all candidates in priority order.
+  const candidates = opts.providerId ? allCandidates.filter((p) => p.id === opts.providerId) : allCandidates;
   if (!candidates.length) {
+    const reason = `no configured/enabled providers (AI_ENABLED=${process.env.AI_ENABLED ?? "unset"}, keys present: ${availableProviders().filter((p) => keyFor(p)).map((p) => p.id).join(",") || "none"})`;
+    console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ["${reason}"]`);
     if (process.env.AI_FIXTURE_FALLBACK === "true") {
       log(null, opts.workload, "no provider, falling back to fixture");
       const turn = fixtureReply(opts.workload);
@@ -167,6 +196,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   }
 
   let attempt = 0;
+  const reasons: string[] = [];
   for (const provider of candidates) {
     attempt++;
     const startedAt = Date.now();
@@ -177,7 +207,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       const latencyMs = Date.now() - startedAt;
       if (opts.schema) {
         try {
-          const parsed = opts.schema.parse(JSON.parse(text));
+          const parsed = opts.schema.parse(JSON.parse(extractJson(text)));
           log(provider.id, opts.workload, "ok");
           void recordProviderOutcome(provider.id, true);
           void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
@@ -189,7 +219,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
               ...messages,
               { role: "user", content: `Return valid JSON matching the schema. Your previous output was not valid JSON. Output ONLY the JSON object.` },
             ], { ...opts, schema: undefined });
-            const parsed = opts.schema.parse(JSON.parse(repair.text));
+            const parsed = opts.schema.parse(JSON.parse(extractJson(repair.text)));
             void recordProviderOutcome(provider.id, true);
             void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: repair.usage.tokensIn, tokensOut: repair.usage.tokensOut, latencyMs, status: "ok" });
             return { text: repair.text, provider: provider.id, json: parsed };
@@ -204,8 +234,12 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     } catch (e) {
       const latencyMs = Date.now() - startedAt;
       const status = (e as unknown as { status?: number }).status;
+      const model = (e as unknown as { model?: string }).model ?? "?";
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
-      log(provider.id, opts.workload, `failed: ${(e as Error).message} (retryable=${retryable})`);
+      const reason = `${provider.id} ${model} status=${status ?? "?"} latency=${latencyMs}ms: ${(e as Error).message.slice(0, 500)}`;
+      reasons.push(reason);
+      // Loud per-provider failure line (Phase 1 observability).
+      console.warn(`[ai] ${opts.workload} -> ${provider.id} ${model} FAILED status=${status ?? "?"} latency=${latencyMs}ms retryable=${retryable} ${(e as Error).message.slice(0, 500)}`);
       void recordProviderOutcome(provider.id, false);
       void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: retryable ? "failover" : "error" });
       if (!retryable && attempt >= candidates.length) throw e;
@@ -215,6 +249,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       }
     }
   }
+  console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ${JSON.stringify(reasons)}`);
   throw new AiUnavailableError(opts.workload);
 }
 

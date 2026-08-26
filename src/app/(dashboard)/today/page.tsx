@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { computeResumePrimary } from "@/lib/practice/resume";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { Reveal } from "@/components/motion/reveal";
-import { ArrowRight, Zap, Mic2, Flame } from "lucide-react";
+import { ArrowRight, Zap, Mic2, Flame, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -41,6 +42,73 @@ export default async function TodayPage() {
       .limit(3),
   ]);
 
+  // Course "Continue learning" — mirror the dashboard's continue logic so a
+  // student mid-course sees their course next-step here too (T28), always
+  // subservient to the practice primary card above.
+  const [{ data: courses }, { data: courseLessons }, { data: courseProgress }] =
+    await Promise.all([
+      supabase.from("courses").select("id, title").eq("is_published", true),
+      supabase
+        .from("lessons")
+        .select("id, course_id, order_index, video_storage_path, description, title"),
+      supabase
+        .from("progress")
+        .select("lesson_id, is_completed, watched_seconds")
+        .eq("user_id", user.id),
+    ]);
+
+  const progressByLesson = new Map(
+    (courseProgress ?? []).map((p) => [p.lesson_id, p]),
+  );
+  const lessonsByCourse = new Map<
+    string,
+    Array<{
+      id: string;
+      order_index: number;
+      video_storage_path: string | null;
+      description: string | null;
+      title: string | null;
+    }>
+  >();
+  for (const l of courseLessons ?? []) {
+    const list = lessonsByCourse.get(l.course_id) ?? [];
+    list.push(l);
+    lessonsByCourse.set(l.course_id, list);
+  }
+
+  let courseContinue: {
+    href: string;
+    courseTitle: string;
+    nextTitle: string | null;
+    done: number;
+    total: number;
+  } | null = null;
+  const sortedCourses = (courses ?? [])
+    .slice()
+    .sort((a, b) => a.title.localeCompare(b.title));
+  for (const c of sortedCourses) {
+    const cl = (lessonsByCourse.get(c.id) ?? []).sort(
+      (a, b) => a.order_index - b.order_index,
+    );
+    const playable = cl.filter((l) => l.video_storage_path || l.description);
+    const completed = playable.filter((l) => progressByLesson.get(l.id)?.is_completed);
+    const started = playable.filter((l) => {
+      const p = progressByLesson.get(l.id);
+      return p && (p.is_completed || (p.watched_seconds ?? 0) > 0);
+    });
+    if (started.length > 0 && completed.length < playable.length) {
+      const next = playable.find((l) => !progressByLesson.get(l.id)?.is_completed);
+      courseContinue = {
+        href: next ? `/courses/${c.id}/lessons/${next.id}` : `/courses/${c.id}`,
+        courseTitle: c.title,
+        nextTitle: next?.title ?? null,
+        done: completed.length,
+        total: playable.length,
+      };
+      break;
+    }
+  }
+
   // The most recent chain with a pending next step (casebook "the chain").
   const SURFACE_LABEL: Record<string, string> = {
     consulting_room: "Consulting Room",
@@ -75,25 +143,13 @@ export default async function TodayPage() {
 
   const currentStreak = Number(streak?.current_streak ?? 0);
 
-  const primary = activeSession
-    ? {
-        href: `/practice/consulting-room/session/${activeSession.id}`,
-        title: "Resume your session",
-        reason: "You have an unfinished consultation with a patient who's waiting.",
-        badge: "In progress",
-        time: "12 min",
-        cta: "Resume",
-      }
-    : {
-        href: "/practice/decode",
-        title: "Presenting Complaint Decoder",
-        reason: currentStreak >= 2
-          ? "You're on a streak — keep the daily habit sharp."
-          : "Start the day with the drill that changes how you hear patients.",
-        badge: "Daily",
-        time: "4 min",
-        cta: "Decode",
-      };
+  // The single next action — one shared engine with /practice (T140), so the
+  // two surfaces never disagree about what's next.
+  const resumePrimary = await computeResumePrimary(supabase, user.id);
+  const primary = {
+    ...resumePrimary,
+    badge: resumePrimary.href.includes("/session/") ? "In progress" : "Daily",
+  };
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -114,12 +170,54 @@ export default async function TodayPage() {
         </p>
       </Reveal>
 
-      {/* weak-spots banner — real gaps above the primary card */}
+      {/* The primary action is the first attention surface. Weak-spots + the
+          chain come AFTER it so a returning student answers "what do I do
+          now?" before seeing the gaps (T87 / "one thing next"). */}
       <Reveal delay={0.15}>
-        <div className="mt-6">
-          <WeakSpotsBanner />
+      <Link
+        href={primary.href}
+        className="mt-6 block rounded-lg border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
+      >
+        <div className="flex items-center justify-between">
+          <span className="rounded-full bg-primary px-2 py-0.5 text-caption font-semibold text-primary-foreground">
+            {primary.badge}
+          </span>
+          <span className="text-caption text-muted-foreground">{primary.time}</span>
         </div>
+        <p className="mt-3 text-h3 font-semibold">{primary.title}</p>
+        <p className="mt-1 text-small text-muted-foreground">{primary.reason}</p>
+        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-link">
+          {primary.cta} <ArrowRight className="size-4" aria-hidden />
+        </span>
+      </Link>
       </Reveal>
+
+      {/* Course continue — subservient to the practice primary card, so a
+          student mid-course still sees their course next-step (T28). */}
+      {courseContinue ? (
+        <Reveal delay={0.18}>
+          <Link
+            href={courseContinue.href}
+            className="mt-4 flex items-center justify-between gap-3 rounded-lg border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          >
+            <span className="flex min-w-0 items-center gap-3">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
+                <BookOpen className="size-4" aria-hidden />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-small font-semibold text-foreground">
+                  Continue learning
+                </span>
+                <span className="block truncate text-caption text-muted-foreground">
+                  {courseContinue.courseTitle} · {courseContinue.done} of {courseContinue.total} done
+                  {courseContinue.nextTitle ? ` · next: ${courseContinue.nextTitle}` : ""}
+                </span>
+              </span>
+            </span>
+            <ArrowRight className="size-4 shrink-0 text-link" aria-hidden />
+          </Link>
+        </Reveal>
+      ) : null}
 
       {/* in-progress chain — a patient's arc continues (casebook "the chain") */}
       <Reveal delay={0.2}>
@@ -160,24 +258,11 @@ export default async function TodayPage() {
       ) : null}
       </Reveal>
 
-      {/* primary card */}
+      {/* weak-spots banner — real gaps, AFTER the one action so it doesn't compete. */}
       <Reveal delay={0.2}>
-      <Link
-        href={primary.href}
-        className="mt-6 block rounded-lg border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
-      >
-        <div className="flex items-center justify-between">
-          <span className="rounded-full bg-primary px-2 py-0.5 text-caption font-semibold text-primary-foreground">
-            {primary.badge}
-          </span>
-          <span className="text-caption text-muted-foreground">{primary.time}</span>
+        <div className="mt-4">
+          <WeakSpotsBanner />
         </div>
-        <p className="mt-3 text-h3 font-semibold">{primary.title}</p>
-        <p className="mt-1 text-small text-muted-foreground">{primary.reason}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-link">
-          {primary.cta} <ArrowRight className="size-4" aria-hidden />
-        </span>
-      </Link>
       </Reveal>
 
       {/* quick / deep chips */}
@@ -190,9 +275,9 @@ export default async function TodayPage() {
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Zap className="size-4" aria-hidden />
           </span>
-          <span>
-            <span className="block text-small font-semibold">Something quick</span>
-            <span className="block text-caption text-muted-foreground">Two-Minute Clinic · 2 min</span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-small font-semibold">Something quick</span>
+            <span className="block truncate text-caption text-muted-foreground">Two-Minute Clinic · 2 min</span>
           </span>
         </Link>
         </Reveal>
@@ -204,9 +289,9 @@ export default async function TodayPage() {
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Mic2 className="size-4" aria-hidden />
           </span>
-          <span>
-            <span className="block text-small font-semibold">Something deep</span>
-            <span className="block text-caption text-muted-foreground">Consulting Room · 12 min</span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-small font-semibold">Something deep</span>
+            <span className="block truncate text-caption text-muted-foreground">Consulting Room · 12 min</span>
           </span>
         </Link>
         </Reveal>

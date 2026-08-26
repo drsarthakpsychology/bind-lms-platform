@@ -12,7 +12,6 @@ import { RenameCourse } from "./rename-course";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -87,48 +86,46 @@ export default async function CourseDetailPage({
         actions={<CourseActions courseId={course.id} isPublished={course.is_published} />}
       />
 
-      <Card variant="raised">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <ListPlus className="size-4 text-link" aria-hidden />
-            Add a lesson
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+      {/* De-densified admin surface (T44): each management task is an accordion
+          section, open-by-default for the primary create action and collapsed
+          for the secondary sections, so mobile isn't one long scroll of
+          competing forms. */}
+      <details open className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
+        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
+          <ListPlus className="size-4 text-link" aria-hidden />
+          Add a lesson
+        </summary>
+        <div className="border-t-2 border-border px-4 py-4">
           <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} />
-        </CardContent>
-      </Card>
+        </div>
+      </details>
 
-      <Card variant="raised">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <UserRoundPlus className="size-4 text-link" aria-hidden />
-            Enrolled students
-            <Badge variant="secondary" className="ml-1">
-              {enrolledIds.length}
-            </Badge>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+      <details className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
+        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
+          <UserRoundPlus className="size-4 text-link" aria-hidden />
+          Enrolled students
+          <Badge variant="secondary" className="ml-1">
+            {enrolledIds.length}
+          </Badge>
+        </summary>
+        <div className="border-t-2 border-border px-4 py-4">
           <EnrollStudents
             courseId={courseId}
             students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
             enrolledIds={enrolledIds}
           />
-        </CardContent>
-      </Card>
+        </div>
+      </details>
 
-      <Card variant="raised">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Paperclip className="size-4 text-link" aria-hidden />
-            Course materials
-            <Badge variant="secondary" className="ml-1">
-              {(courseMaterials ?? []).length}
-            </Badge>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+      <details className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
+        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
+          <Paperclip className="size-4 text-link" aria-hidden />
+          Course materials
+          <Badge variant="secondary" className="ml-1">
+            {(courseMaterials ?? []).length}
+          </Badge>
+        </summary>
+        <div className="border-t-2 border-border px-4 py-4">
           <MaterialUploader
             courseId={courseId}
             lessonId={null}
@@ -141,8 +138,8 @@ export default async function CourseDetailPage({
               url: m.url,
             }))}
           />
-        </CardContent>
-      </Card>
+        </div>
+      </details>
 
       <section aria-label="Lessons" className="space-y-3">
         {(lessons ?? []).length === 0 ? (

@@ -31,6 +31,14 @@ export function LoginForm() {
     if (state.error) trackEvent("login_failed");
   }, [state.error]);
 
+  // The server returns a single combined string for credential failures. On
+  // mobile we attribute it to the fields (aria-invalid + inline text) instead
+  // of a detached banner; other failures (rate limit, human check, expired)
+  // stay a top-level Alert.
+  const credentialError =
+    state.error === "Incorrect email or password." ||
+    state.error === "Enter your email and password.";
+
   return (
     <form
       action={formAction}
@@ -43,10 +51,18 @@ export function LoginForm() {
           id="email"
           name="email"
           type="email"
+          inputMode="email"
           autoComplete="email"
           required
           placeholder="you@example.com"
+          aria-invalid={credentialError || undefined}
+          aria-describedby={credentialError ? "email-error" : undefined}
         />
+        {credentialError && (
+          <p id="email-error" className="text-caption font-medium text-status-alert-fg">
+            Check your email address.
+          </p>
+        )}
       </div>
 
       <div className="space-y-1.5">
@@ -58,10 +74,17 @@ export function LoginForm() {
           autoComplete="current-password"
           required
           placeholder="••••••••"
+          aria-invalid={credentialError || undefined}
+          aria-describedby={credentialError ? "password-error" : undefined}
         />
+        {credentialError && (
+          <p id="password-error" className="text-caption font-medium text-status-alert-fg">
+            Check your password.
+          </p>
+        )}
       </div>
 
-      {state.error && (
+      {state.error && !credentialError && (
         <Alert variant="destructive" role="alert">
           <AlertTitle>Could not sign in</AlertTitle>
           <AlertDescription>{state.error}</AlertDescription>

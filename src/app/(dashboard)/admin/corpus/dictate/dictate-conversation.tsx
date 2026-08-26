@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Mic, Volume2, Square } from "lucide-react";
+import { Mic, Pencil, Check, Square, X } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { serverTranscribe } from "@/lib/voice/stt";
 
@@ -34,6 +34,10 @@ export function DictateConversation() {
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [title, setTitle] = React.useState("");
+  // Inline editing of the transcript — the doctor can correct a mis-
+  // transcription before saving, without touching the state machine.
+  const [editingIndex, setEditingIndex] = React.useState<number | null>(null);
+  const [editText, setEditText] = React.useState("");
 
   // Voice recording state
   const [recording, setRecording] = React.useState(false);
@@ -149,6 +153,23 @@ export function DictateConversation() {
     }
   }
 
+  function startEdit(i: number, text: string) {
+    setEditingIndex(i);
+    setEditText(text);
+  }
+
+  function saveEdit() {
+    if (editingIndex == null) return;
+    setTranscript((t) =>
+      t.map((turn, i) => (i === editingIndex ? { ...turn, text: editText } : turn)),
+    );
+    setEditingIndex(null);
+  }
+
+  function cancelEdit() {
+    setEditingIndex(null);
+  }
+
   return (
     <div className="space-y-4">
       {/* Progress bar */}
@@ -166,10 +187,50 @@ export function DictateConversation() {
         ) : (
           transcript.map((t, i) => (
             <div key={i} className={t.by === "interviewer" ? "rounded-md border border-border bg-secondary/40 p-3" : "rounded-md border border-border bg-background p-3"}>
-              <p className="text-caption font-semibold text-muted-foreground">
-                {t.by === "interviewer" ? "Interviewer" : "You"}
-              </p>
-              <p className="mt-1 text-small">{t.text}</p>
+              <div className="flex items-center justify-between">
+                <p className="text-caption font-semibold text-muted-foreground">
+                  {t.by === "interviewer" ? "Interviewer" : "You"}
+                </p>
+                {t.by === "sarthak" && editingIndex !== i && (
+                  <button
+                    type="button"
+                    onClick={() => startEdit(i, t.text)}
+                    aria-label="Edit this line"
+                    className="inline-flex size-6 items-center justify-center rounded text-muted-foreground hover:bg-accent hover:text-foreground"
+                  >
+                    <Pencil className="size-3.5" aria-hidden />
+                  </button>
+                )}
+              </div>
+              {editingIndex === i ? (
+                <div className="mt-1 space-y-2">
+                  <textarea
+                    value={editText}
+                    onChange={(e) => setEditText(e.target.value)}
+                    rows={3}
+                    autoFocus
+                    className="w-full rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+                  />
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={saveEdit}
+                      className="inline-flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground"
+                    >
+                      <Check className="size-3.5" aria-hidden /> Save
+                    </button>
+                    <button
+                      type="button"
+                      onClick={cancelEdit}
+                      className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-caption text-muted-foreground hover:bg-accent"
+                    >
+                      <X className="size-3.5" aria-hidden /> Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-1 text-small">{t.text}</p>
+              )}
             </div>
           ))
         )}
@@ -216,15 +277,6 @@ export function DictateConversation() {
               {recording ? "Recording… release to transcribe" : "Tap to record, or type below"}
             </span>
 
-            <button
-              type="button"
-              onClick={() => {}}
-              disabled={true}
-              aria-label="Patient TTS (not needed for dictation)"
-              className="flex size-12 items-center justify-center rounded-full border-2 border-border bg-secondary/40 text-muted-foreground/50 cursor-not-allowed"
-            >
-              <Volume2 className="size-5" aria-hidden />
-            </button>
           </div>
 
           {/* Text input fallback */}
@@ -243,7 +295,7 @@ export function DictateConversation() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Or type your response…"
-              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
             <button
               type="submit"
@@ -263,7 +315,7 @@ export function DictateConversation() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Young man, shopkeeper, chest heaviness and debt"
-              className="mt-1 w-full rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-card px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <button
