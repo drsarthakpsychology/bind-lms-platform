@@ -50,6 +50,24 @@ export function deriveName(email: string): string {
 }
 
 /**
+ * Resolve a header field by name, case-insensitively, from a set of aliases.
+ * This is the fix for the roster mis-read: the source sheet put the name in a
+ * shifted column (and later exports use "Full Name" vs "name" vs "Name"), so
+ * positional column reads misread it. Header-based lookup (not index) means
+ * the name + email are found wherever they actually live, and extra columns
+ * (phone, city, payment, timestamp …) are ignored.
+ */
+function headerField(row: Record<string, string>, aliases: string[]): string {
+  const lower = aliases.map((a) => a.toLowerCase());
+  for (const key of Object.keys(row)) {
+    if (lower.includes(key.toLowerCase())) {
+      return row[key] ?? "";
+    }
+  }
+  return "";
+}
+
+/**
  * Parse a name,email CSV into rows, deduplicating by email (keep the first
  * occurrence; later dupes are logged). Empty/malformed emails are skipped with
  * a row number and reason. `rowOffset` is the 1-based row number of the first
@@ -62,12 +80,19 @@ export function parseRosterCsv(text: string, rowOffset = 2): RosterParse {
   const emptyNames: string[] = [];
   const seen = new Set<string>();
 
-  const parsed = parse(text, { columns: true, skip_empty_lines: true, trim: true }) as Record<string, string>[];
+  // `bom: true` strips a UTF-8 BOM — a leading BOM on the first header
+  // otherwise turns `name` into `﻿name`, silently dropping every name.
+  const parsed = parse(text, {
+    columns: true,
+    skip_empty_lines: true,
+    trim: true,
+    bom: true,
+  }) as Record<string, string>[];
 
   for (const [i, row] of parsed.entries()) {
     const rowNo = i + rowOffset;
-    const email = String(row.email ?? row["Email"] ?? row["Email Address"] ?? "").trim().toLowerCase();
-    const name = String(row.name ?? row["Name"] ?? row["Full Name"] ?? "").trim();
+    const email = headerField(row, ["email", "email address"]).trim().toLowerCase();
+    const name = headerField(row, ["name", "full name"]).trim();
 
     if (!email || !EMAIL_RE.test(email)) {
       invalid.push({ row: rowNo, email: email || "(blank)", reason: "invalid email" });

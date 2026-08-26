@@ -32,6 +32,44 @@ describe("roster parseRosterCsv", () => {
   });
 });
 
+describe("roster parseRosterCsv — column-shift / header regression", () => {
+  // The bug this guards: the source sheet had the name in a shifted column for
+  // part of the rows (and extra columns). A positional reader misread 50 of 64
+  // names as empty. Header-based lookup must find name+email wherever they are
+  // and ignore every other column.
+  it("ignores extra columns and finds name+email by header, not position", () => {
+    const csv =
+      "Timestamp,Full Name,Email Address,WhatsApp / Phone Number,City of Residence,Mode of Attendance\n" +
+      "123,Rinku Ravi Chauhan,rinku@x.com,9999,Mumbai,Online\n" +
+      "124,Khushi Jain,khushi@x.com,8888,Nadiad,Online\n";
+    const { rows, emptyNames } = parseRosterCsv(csv);
+    expect(rows).toEqual([
+      { name: "Rinku Ravi Chauhan", email: "rinku@x.com" },
+      { name: "Khushi Jain", email: "khushi@x.com" },
+    ]);
+    expect(emptyNames).toEqual([]);
+  });
+
+  it("finds name + email when the header is capitalised differently", () => {
+    const csv = "Full name,Email address\nJane Doe,jane@x.com\n";
+    const { rows } = parseRosterCsv(csv);
+    expect(rows[0]).toEqual({ name: "Jane Doe", email: "jane@x.com" });
+  });
+
+  it("strips a UTF-8 BOM so the first header maps correctly", () => {
+    const csv = "﻿name,email\nJane Doe,jane@x.com\n";
+    const { rows, emptyNames } = parseRosterCsv(csv);
+    expect(rows[0]).toEqual({ name: "Jane Doe", email: "jane@x.com" });
+    expect(emptyNames).toEqual([]);
+  });
+
+  it("finds name + email when they are not the first two columns", () => {
+    const csv = "Phone,City,name,email,Paid\n9999,Mumbai,Jane Doe,jane@x.com,15000\n";
+    const { rows } = parseRosterCsv(csv);
+    expect(rows[0]).toEqual({ name: "Jane Doe", email: "jane@x.com" });
+  });
+});
+
 describe("roster inviteEmailBody", () => {
   it("never contains a plaintext password and includes the link", () => {
     const body = inviteEmailBody("Jane", "jane@x.com", "https://app/set-password?token=abc");

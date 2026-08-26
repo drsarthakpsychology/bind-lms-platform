@@ -4614,3 +4614,28 @@ Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker for roster emails),
 apply the two pending migrations (profiles_access_scope, calibration_auto_signals),
 then `npm run roster:import -- scripts/roster/roster.csv --scope lectures_only`.
 Device-QA for video + voice remains the human loop.
+
+## 2026-08-26 — Part 0 (re-verify): roster parsing bug — root cause + fix
+
+Re-verified from disk, not from the prior summary.
+
+**Root cause found.** The source sheet `COPY SHEET (1).xlsx` has a column
+shift: for rows 2–15 the name is in column B ("Full Name"); for rows 16–65 the
+name is in column A (the "Timestamp" position) as a *formatted cell* — the
+shared-string index in `<v>` with no `t="s"` type marker (e.g. shared[102]
+'Khushi Nirav Master' sits in `r=A32`). The previous one-off extractor read a
+fixed column (B) for name, so it correctly read 14 and reported the other 50 as
+empty-name. That report was false: the names were always there, one column over.
+
+**Fix.** `parseRosterCsv` is now header-driven, not positional: a
+case-insensitive `headerField(row, aliases)` finds name ("name"/"full name")
+and email ("email"/"email address") wherever they live, and every other column
+is ignored. Added `bom: true` (a leading UTF-8 BOM would otherwise turn `name`
+into `﻿name` and drop every name — the same empty-name symptom).
+
+**Evidence.** `scripts/roster/roster.csv` (copied from the clean
+`~/Downloads/roster.csv`, 64 rows, gitignored PII) dry-runs as: rows 64,
+created 64, duplicates 0, invalid 0, **empty names 0**. Four new regression
+tests (extra columns ignored, case-insensitive header, BOM strip, name in a
+non-first column) pin the fix. Gate green: lint 0, tsc clean, 529 tests,
+build exit 0.
