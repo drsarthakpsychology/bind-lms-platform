@@ -1,35 +1,34 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 SUPABASE AUTH REDIRECT URL — blocks a real invite (2026-08-26, verified live)
-
-The invite link is built correctly (`generateLink` with
-`redirectTo=https://vibhapsychology.com/set-password`), but Supabase **ignores**
-it and emits `redirect_to=http://localhost:3000` in the actual link. Root cause:
-the Supabase project's Auth **Site URL / Redirect URLs** are still the localhost
-defaults, so `vibhapsychology.com` is not in the allowlist and Supabase falls
-back to localhost. A real student clicking their link would land on their own
-machine, not the set-password page.
-
-Fix (Supabase Dashboard → Authentication → URL Configuration):
-1. **Site URL** → `https://vibhapsychology.com`
-2. **Redirect URLs** → add `https://vibhapsychology.com/**` (and the exact
-   `https://vibhapsychology.com/set-password`).
-
-One line, in the dashboard — no code change. Until this is done, **do not send
-real student invites** (the link would redirect to localhost and fail).
-
 ## 🚨 ROSTER — 2026-08-26
 
 Deployed + live on vibhapsychology.com. The flow is import → review → send
 (`/admin/tools` import, `/admin/roster` review + send + test email). The four
-migrations are applied and verified. `RESEND_API_KEY` is set in Vercel.
+migrations are applied and verified. `RESEND_API_KEY` is set in Vercel. Sender
+domain **resolved** — sending from `noreply@bindcat.com` (Kavya confirmed).
 
-The remaining blocker is the **sender domain** (see the SENDER DOMAIN section
-at the top): `vibhaschoolofpsychology.in` must be verified in Resend before any
-real student invite goes out. After that, the human E2E pass (browser + inbox):
-import the roster, send one invite, click the link, set a password, log in,
-confirm lecture-only access, and block/unblock one account to see the immediate
-rejection/restore.
+**THE BLOCKER — Supabase Auth redirect URL is STILL `localhost`.** A real
+invite link's `redirect_to` is `http://localhost:3000`, NOT
+`https://vibhapsychology.com/set-password`. Verified twice with fresh
+`generateLink` calls (~8 min after the Dashboard change was supposedly made) —
+the value did not change. The rest of the flow works (link click → session,
+set password, login, `scope=lectures_only` + `is_test`), but the redirect
+target means a real student's link would land on their own machine. Root cause:
+`generateLink`'s `redirectTo` is being rejected by the Auth allowlist and
+falling back to the Site URL, which is still the `localhost:3000` default —
+i.e. the Dashboard change did NOT save / landed on the wrong project.
+
+**What to re-do** (it did NOT take effect): Supabase Dashboard → project
+**`plms` (ref `hojhzwvuccojqkvkkslw`, ap-south-1)** → Authentication → URL
+Configuration → set **Site URL = `https://vibhapsychology.com`** AND add
+**`https://vibhapsychology.com/**`** to **Redirect URLs**. A second project
+`psych-outreach` (`whuoivgzscpvococrbxx`) is INACTIVE — make sure the change
+landed on `plms`, not there. After saving, verify with a fresh test email and
+confirm the link's `redirect_to` reads `https://vibhapsychology.com/set-password`
+(not `http://localhost:3000`) before importing the roster.
+
+Until that reads correct, the roster import/send stays **BLOCKED** — a wrong
+redirect would fail every real invite.
 
 Every item: paste → something switches on → verify with one command. Free first.
 
