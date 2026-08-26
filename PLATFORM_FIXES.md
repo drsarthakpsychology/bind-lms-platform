@@ -99,11 +99,13 @@ in `.env.local` / Vercel — see NEEDS_KAVYA.
 
 ## Still open — NEEDS_KAVYA.md
 
-- **`RESEND_API_KEY`** — the one hard blocker for actually emailing.
-- **Apply four additive migrations** (`profiles_access_scope`,
-  `credential_invites`, `profiles_status_blocked`, `calibration_auto_signals`).
-- **Human E2E**: send a test email, import the roster, log in as a real
-  account, block it mid-session and confirm the very-next-request rejection.
+- **`RESEND_API_KEY`** — the one hard blocker for actually emailing. Import and
+  review work; the send step is gated on this one value (never present in the
+  environment).
+- **Human E2E** (needs a browser + real session): send a test email, import the
+  roster, log in as a real account and confirm only the lecture list is
+  reachable, then block it mid-session and confirm the very-next-request
+  rejection. The code paths + unit tests are green; this is the click-through.
 
 ---
 
