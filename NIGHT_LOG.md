@@ -1,3 +1,33 @@
+## 2026-08-27 — PERFORMANCE PASS — all 16 parts shipped (PR #23)
+
+All 16 parts implemented + committed on worktree branch; see
+PERFORMANCE_FIXES.md for the full before/after. Summary:
+
+1. N+1 — none in the student path; list-derive counts handled in Part 3.
+2. Indexes — 15 added (perf_indexes.sql), EXPLAIN-verified (seq→index).
+3. Pagination — safety .limit() caps on 9 unbounded admin queries (cursor
+   deferred, cohort small).
+4. Images — nothing to fix (zero raster images).
+5. Lazy-load — livekit (557KB) + admin editors out of student bundles.
+6. Streaming — aiChatStream + Psychology Tutor SSE (patient turn deferred).
+7. Compression — already active (Vercel Brotli), verified.
+8. Roster batching — importRoster + card reorder now batch; write errors surfaced.
+9. Circuit breaker — latency EMA trip + cold-start DB seed + transport-only counts.
+10. Optimistic UI — wall/journal/roster; lesson-complete + BLOCKED stay server-checked.
+11. Caching — library + psychopharm unstable_cache (1h, tag-revalidated).
+12. Mobile overflow — break-words on all user-content surfaces.
+13. Re-renders — React.memo on sim chat + stable callbacks.
+14. Type weights — font-black→bold; font-medium sweep documented (262 sites, design-led).
+15. LCP — hero animates y only (opaque first paint).
+16. Prefetch — next-lesson/Continue/course prefetch.
+
+QUEUE.md: 12 items ticked (verified DONE by audit: T240/262/263/270/271/276/
+280/281/282/284/285/288). 46 remain: 21 TRACTABLE, 12 LARGE, 10 BLOCKED, 3
+PERF-OVERLAP (T248/249/250 — partly covered by the perf work; need explicit
+cost-controls/observability follow-ups).
+
+---
+
 ## 2026-08-27 — PERFORMANCE PASS (16 parts) — audit wave launched
 
 Kavya asked for a full performance pass (16 numbered parts) + completing

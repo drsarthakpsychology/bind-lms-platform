@@ -1429,7 +1429,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   emotion, use ordinary conversational language, and require appropriate
   follow-up questions instead of behaving like a clinical database
 
-- [ ] T240  Patient voice personality — voice output must match the patient's
+- [x] T240  Patient voice personality — voice output must match the patient's
   configured age/context/personality and should not sound like a generic
   assistant reading text aloud
 
@@ -1521,11 +1521,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   focused learning state where the content is primary and navigation is
   secondary
 
-- [ ] T262  Lesson assessment progression — do not show all assessment
+- [x] T262  Lesson assessment progression — do not show all assessment
   questions at once on mobile when sequential interaction is more appropriate;
   show one meaningful task, collect the answer, then move to the next
 
-- [ ] T263  Progressive learning UI — use progressive disclosure throughout the
+- [x] T263  Progressive learning UI — use progressive disclosure throughout the
   application: show the current task first, reveal the result next, then
   provide explanation/details only when useful
 
@@ -1555,12 +1555,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   voice controls pushing the conversation upward, lesson footer overlap,
   bottom navigation collision, and safe-area failures
 
-- [ ] T270  Safe-area architecture — create one reusable safe-area strategy
+- [x] T270  Safe-area architecture — create one reusable safe-area strategy
   for mobile bottom controls, sheets, navigation, composers, voice controls,
   and fullscreen transitions rather than fixing individual pages with random
   padding values
 
-- [ ] T271  Keyboard architecture — ensure opening the mobile keyboard does not
+- [x] T271  Keyboard architecture — ensure opening the mobile keyboard does not
   push fixed navigation over content, hide the send button, create double
   scrolling, or resize the conversation incorrectly
 
@@ -1579,7 +1579,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   feel intentional on desktop, with a centered realtime interaction rather
   than a stretched mobile microphone UI
 
-- [ ] T276  Mobile voice experience — the mobile voice screen should use the
+- [x] T276  Mobile voice experience — the mobile voice screen should use the
   entire available viewport and must not retain dashboard navigation or
   unrelated controls underneath the conversation
 
@@ -1595,16 +1595,16 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   animations must respect prefers-reduced-motion and remain understandable
   without animation
 
-- [ ] T280  Realtime connection security — keep provider secrets server-side,
+- [x] T280  Realtime connection security — keep provider secrets server-side,
   issue short-lived/session-scoped realtime credentials where required,
   validate user/session permissions, and prevent clients from directly
   accessing privileged provider keys
 
-- [ ] T281  Session authorisation — verify that a student can only access
+- [x] T281  Session authorisation — verify that a student can only access
   simulations, transcripts, learning profiles, and session data they are
   authorised to access
 
-- [ ] T282  Conversation persistence — safely persist the minimum information
+- [x] T282  Conversation persistence — safely persist the minimum information
   required for continuity, learning analytics, and debriefing; prevent
   accidental exposure of other students' conversations
 
@@ -1612,12 +1612,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   audio, learning signals, and generated patient interactions; avoid retaining
   raw audio indefinitely unless there is a clear product requirement
 
-- [ ] T284  Open-source dependency review — before building custom realtime
+- [x] T284  Open-source dependency review — before building custom realtime
   infrastructure, evaluate mature open-source components such as LiveKit
   Agents and related WebRTC/voice tooling; reuse proven infrastructure rather
   than writing a custom realtime transport
 
-- [ ] T285  Open-source licensing audit — verify licenses, attribution
+- [x] T285  Open-source licensing audit — verify licenses, attribution
   requirements, production restrictions, and compatibility before adding any
   open-source AI/voice component
 
@@ -1628,7 +1628,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 - [ ] T287  Realtime development environment — make local development possible
   without requiring production credentials or production data
 
-- [ ] T288  AI development fixtures — create safe development patient cases
+- [x] T288  AI development fixtures — create safe development patient cases
   that can be used to test text, voice, interruptions, failures, and long
   sessions without relying on production student data
 
