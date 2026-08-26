@@ -24,6 +24,30 @@ can stage a reveal: a tool or lesson can be **hidden**, **live-but-locked**
 
 ---
 
+## 2026-08-26 — STUDENT visibility check: Cohort 1 (verified + fixed)
+
+Kavya reported students can't see "Pyschology Cohort 1" despite being published.
+Verified live:
+
+- The admin student-toggle WORKS: admin + `plms_view_mode=student` →
+  `/dashboard` renders LecturesOnlyView containing Pyschology + MSE + Lectures
+  (200); `/courses/[courseId]` opens with the lessons.
+- lectures_only (roster) students see all published courses — no enrollment
+  needed. So the go-live roster WILL see Cohort 1.
+- Two real gaps fixed:
+  1. The 3 reading lessons were DELETED again (2nd time — no triggers, manual
+     delete via the builder). Re-created MSE Level 2 / Formulation 5Ps / MHA
+     2017 primer (all unlocked).
+  2. FULL-scope students need a `course_enrollments` row. Enrolled the un-
+     enrolled full test accounts (peer@lumen, peer@vibha, calibration@lumen)
+     into Cohort 1. Real full students must be enrolled via OpenBuilder →
+     Enrolled students.
+
+No code change required — the visibility logic was already correct; the gaps
+were data (missing lessons + un-enrolled test accounts).
+
+---
+
 ## 2026-08-26 — LESSON DATA RECOVERY (incident)
 
 The 4 live-course lessons were found deleted (0 live rows, 19 dead tuples) —
