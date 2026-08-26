@@ -5,43 +5,44 @@ import { FlagToggle } from "./flag-toggle";
 export const dynamic = "force-dynamic";
 
 const LABELS: Record<string, string> = {
-  consulting_room: "Consulting Room",
-  decoder: "Presenting Complaint Decoder",
-  mse: "MSE Trainer",
-  judgment: "5 Judgment Calls",
-  rounds: "Rounds",
-  journal: "Journal",
-  formulation: "Formulation Forge",
-  osce: "OSCE Stations",
-  ethics: "Ethics & Law",
   case_library: "Case Library",
-  landmark: "Landmark Cases",
-  peer_roleplay: "Peer Role-Play",
-  two_minute_clinic: "Two-Minute Clinic",
-  supervision: "Supervision Log",
-  skills_passport: "Skills Passport",
-  weak_spots: "Weak Spots",
-  modules: "Modules",
   checkin: "Weekly Check-in",
+  consulting_room: "Consulting Room",
+  decoder: "Decoder",
+  ethics: "Ethics",
+  formulation: "Formulation",
+  journal: "Journal",
+  judgment: "Judgment",
   knowledge_tutor: "Psychology Tutor",
+  landmark: "Landmark Cases",
+  modules: "Modules",
+  mse: "MSE",
+  osce: "OSCE",
+  peer_roleplay: "Role-Play",
+  rounds: "Rounds",
+  skills_passport: "Skills Passport",
+  supervision: "Supervision",
+  two_minute_clinic: "Two-Minute Clinic",
+  weak_spots: "Weak Spots",
 };
 
-/** The six live for Cohort One (v5.1 A2); the rest built-but-off. */
-const LIVE_FOR_COHORT_ONE = ["consulting_room", "decoder", "mse", "judgment", "rounds", "journal"];
-
 /**
- * /admin/flags — which practice tools are live for students. Flip any one on
- * or off; new tools stay off until they're turned on here.
+ * /admin/flags — which practice tools are visible to students. Each tool has a
+ * three-state status: off (hidden), live (shown but locked), or unlocked
+ * (full access).
  */
 export default async function AdminFlagsPage() {
   const admin = createAdminClient();
-  const { data: flags } = await admin.from("feature_flags").select("key, enabled").order("key");
+  const { data: flags } = await admin
+    .from("feature_flags")
+    .select("key, status, enabled")
+    .order("key");
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <PageHeader
         title="What's live"
-        description="Switch practice tools on or off for your students. New tools stay off until you turn them on."
+        description="Choose how much students see: Hidden (not shown), Live (shown but locked — 'yet to be live'), or Unlock (full access)."
       />
       <div className="mt-6 space-y-2">
         {(flags ?? []).map((f) => {
@@ -51,8 +52,8 @@ export default async function AdminFlagsPage() {
               key={key}
               flagKey={key}
               label={LABELS[key] ?? key}
+              status={f.status ?? (f.enabled ? "unlocked" : "off")}
               enabled={f.enabled as boolean}
-              liveForCohortOne={LIVE_FOR_COHORT_ONE.includes(key)}
             />
           );
         })}

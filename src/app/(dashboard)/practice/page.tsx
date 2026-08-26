@@ -30,16 +30,16 @@ type PracticeTool = {
 
 const PRACTICE_TOOLS: PracticeTool[] = [
   // Quick — under 5 minutes
-  { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: "gauge", time: "2 min", flag: "judgment", group: "quick" },
-  { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
+  { href: "/practice/judgment", title: "Judgment", verb: "SLIDE", description: "New information changes the probability.", icon: "gauge", time: "2 min", flag: "judgment", group: "quick" },
+  { href: "/practice/two-minute-clinic", title: "Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
   { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: "repeat", time: "3 min", flag: "rounds", group: "quick" },
-  { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
+  { href: "/practice/decode", title: "Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
   { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: "layers", time: "1 min", flag: "modules", group: "quick" },
 
   // Mid — 5-10 minutes
-  { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: "brain", time: "10 min", flag: "mse", group: "mid" },
+  { href: "/practice/mse", title: "MSE", verb: "TAG", description: "Describe before you label. 11 domains.", icon: "brain", time: "10 min", flag: "mse", group: "mid" },
   { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: "timer", time: "7 min", flag: "osce", group: "mid" },
-  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: "wand2", time: "8 min", flag: "formulation", group: "mid" },
+  { href: "/practice/formulation", title: "Formulation", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: "wand2", time: "8 min", flag: "formulation", group: "mid" },
   { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: "scale", time: "5 min", flag: "ethics", group: "mid" },
   { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: "graduationCap", time: "5 min", flag: "landmark", group: "mid" },
   { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: "siren", time: "5 min", flag: "ethics", group: "mid" },
@@ -63,7 +63,24 @@ const GROUP_META: Record<PracticeTool["group"], { label: string; hint: string }>
 
 export default async function PracticeHubPage() {
   const flags = await readFlags();
-  const visible = PRACTICE_TOOLS.filter((t) => flags[t.flag] === true);
+
+  // Three-state flags (A2): "off" tools are hidden entirely; "live" tools show
+  // a locked "yet to be live" card so students know the section exists;
+  // "unlocked" tools are fully live. Grouping + ordering are preserved.
+  const visible = PRACTICE_TOOLS.flatMap((t) => {
+    const status = flags[t.flag];
+    if (status !== "live" && status !== "unlocked") return [];
+    const locked = status === "live";
+    return [
+      {
+        ...t,
+        locked,
+        href: locked
+          ? `/practice/not-available?feature=${encodeURIComponent(t.flag)}&state=live`
+          : t.href,
+      },
+    ];
+  });
 
   // The recommended card — ALWAYS states why (B2: reason beats recommendation).
   const supabase = await createClient();
@@ -134,6 +151,7 @@ export default async function PracticeHubPage() {
               description: t.description,
               time: t.time,
               icon: t.icon,
+              locked: t.locked,
               state: states[t.href]?.state,
               progress: states[t.href]?.progress,
             })) as PracticeCardData[],

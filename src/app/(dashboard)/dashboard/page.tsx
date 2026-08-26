@@ -25,6 +25,7 @@ type LessonRow = {
   video_storage_path: string | null;
   description: string | null;
   title: string | null;
+  status: string | null;
 };
 
 export default async function DashboardPage() {
@@ -86,7 +87,7 @@ export default async function DashboardPage() {
   }
 
   const [{ data: lessons }, { data: progress }] = await Promise.all([
-    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description, title"),
+    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description, title, status"),
     supabase.from("progress").select("lesson_id, is_completed, watched_seconds").eq("user_id", profile.id),
   ]);
 
@@ -103,8 +104,11 @@ export default async function DashboardPage() {
     const courseLessons = (lessonsByCourse.get(course.id) ?? [])
       .slice()
       .sort((a, b) => a.order_index - b.order_index);
-    // A lesson is playable with a video OR a reading (authored text lessons).
-    const playable = courseLessons.filter((l) => l.video_storage_path || l.description);
+    // A lesson is playable with a video OR a reading (authored text lessons),
+    // but only once it's been unlocked for the student.
+    const playable = courseLessons.filter(
+      (l) => l.status === "unlocked" && (l.video_storage_path || l.description),
+    );
     const completedCount = playable.filter((l) => progressByLessonId.get(l.id)?.is_completed).length;
     const startedCount = playable.filter((l) => {
       const p = progressByLessonId.get(l.id);
@@ -155,6 +159,7 @@ export default async function DashboardPage() {
         .sort((a, b) => a.order_index - b.order_index)
         .find(
           (l) =>
+            l.status === "unlocked" &&
             (l.video_storage_path || l.description) &&
             !progressByLessonId.get(l.id)?.is_completed,
         )

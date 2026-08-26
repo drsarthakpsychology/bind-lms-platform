@@ -108,7 +108,7 @@ All wrapped by `src/app/(dashboard)/layout.tsx` (auth + scope + blocked + mode s
 
 ### 3.3 Practice tools — `/practice/*`
 
-The practice hub (`src/app/(dashboard)/practice/page.tsx`) lists 19 tools; each is gated by a feature flag (see §8) via `requireFeature()` which redirects to `/practice/not-available` when off.
+The practice hub (`src/app/(dashboard)/practice/page.tsx`) lists the practice tools; each is gated by a three-state feature flag (see §8): `off` tools are hidden from the hub, `live` tools render as a locked "yet to be live" card, and `unlocked` tools are fully open. Direct URLs are enforced server-side via `requireFeature()`, which redirects `off` → `/practice/not-available` and `live` → `/practice/not-available?...&state=live` (a locked "coming soon" screen).
 
 ```
 /practice                                      → hub grid
@@ -147,7 +147,7 @@ Gated by `src/app/(dashboard)/admin/layout.tsx` (server-side `role === "admin"`)
 /admin/students                           → student list + bulk import
 /admin/submissions                        → grade submissions
 /admin/tools                              → bulk import form + cohort calendar
-/admin/flags                              → feature-flag toggles
+/admin/flags                              → "What's live" — per-tool three-state go-live control (Hidden / Live / Unlock)
 /admin/enquiries                          → waitlist leads
 /admin/pulse                              → cohort-pulse nudge (quiet-student emails)
 /admin/triage                             → flagged sim-session review
@@ -256,7 +256,7 @@ erDiagram
 | `profiles` | `id` (pk, fk `auth.users`), `role`, `scope`, `status`, `block_reason`, `active_session_token`, `expires_at`, `is_test` | One row per user; the two access axes live here |
 | `courses` | `id`, `title`, `is_published` | Published = visible to enrolled students |
 | `course_enrollments` | `user_id`, `course_id`, `enrolled_at`, `policy_acceptance_at`, `policy_version` | Manual per-student enrollment (admin-managed) |
-| `lessons` | `id`, `course_id`, `title`, `order_index`, `requires_assignment`, `video_storage_path`, `video_provider`, `video_bucket`, `video_status` | Lesson + where its video lives |
+| `lessons` | `id`, `course_id`, `title`, `order_index`, `requires_assignment`, `video_storage_path`, `video_provider`, `video_bucket`, `video_status`, `status` | Lesson + where its video lives; `status` (`hidden`/`live`/`unlocked`) is the per-lesson go-live state (see §8) |
 | `media_assets` | `lesson_id` (unique), `provider` (`supabase`/`r2`), `bucket`, `key_prefix`, `master_playlist`, `ladder` (jsonb), `duration_seconds`, `mime_type` | The indirection: where a video lives + in what form (HLS) |
 | `progress` | `user_id`, `lesson_id`, `watched_seconds`, `is_completed` | Resume position per viewer |
 | `materials` | `course_id`, `lesson_id`, `title`, `kind` (`document`/`slides`/`audio`/`image`/`link`), `storage_path`, `format`, `url`, `provider`, `bucket`, `status` | Course/lesson files + links |
@@ -266,7 +266,7 @@ erDiagram
 | `credential_invites` | `email` (unique), `name`, `status` (`pending`/`sent`/`failed`), `password`, `error_reason`, `sent_at` | Roster credential queue (password stored plaintext, admin-only) |
 | `certificates` | `user_id`, `course_id`, `student_name`, `course_title`, `issued_at`, `issued_by`, `pdf_storage_path` | Manual sign-off only; powers `/verify/[id]` |
 | `enquiries` | `name`, `email`, `phone`, `status`, `message`, `source`, `policy_acceptance_at`, `policy_version` | Public waitlist leads |
-| `feature_flags` | `key` (unique), `enabled`, `enabled_for_cohort`, `organization_id` | Practice-tool toggles (see §8) |
+| `feature_flags` | `key` (unique), `status` (`off`/`live`/`unlocked`), `enabled` (kept in sync), `enabled_for_cohort`, `organization_id` | Practice-tool go-live state (see §8) |
 | `rate_limits` | `key` (pk), `count`, `reset_at` | Postgres-backed fixed-window rate limiter (global across serverless) |
 
 ### Practice / psychopharm / AI tables (grouped, from `src/migrations_pending/*.sql`)
@@ -351,12 +351,34 @@ Imported via `/admin/tools` (BulkImportForm → server action `admin/students/bu
 
 ---
 
-## 8. Feature flags
+## 8. Feature flags + lesson go-live
 
-- Table: `feature_flags` (`key` unique, `enabled`, `enabled_for_cohort`) — reproduced in `src/migrations_pending/practice_layer_flags.sql`.
-- Admin UI: `/admin/flags` (`src/app/(dashboard)/admin/flags/page.tsx`, `flag-toggle.tsx`).
-- Read path: `src/lib/flags.ts` — `readFlags()` (30s cache), `isFeatureEnabled()`, and `requireFeature()` which server-side **redirects** to `/practice/not-available` when off (not just hidden UI).
-- 19 flags map 1:1 to practice tools; **`knowledge_tutor` is the only one seeded disabled** (all others `true`). The `LIVE_FOR_COHORT_ONE` constant in the flags page still lists the original six-ship cut (`consulting_room`, `decoder`, `mse`, `judgment`, `rounds`, `journal`), but the seed enables the full set.
+**Three-state go-live control** (2026-08-26). `feature_flags.status` ∈ `off | live | unlocked` (`FlagStatus` in `src/lib/flags.ts`):
+
+| Status | What students see |
+|---|---|
+| `off` | Hidden entirely — no hub card; a direct URL lands on the "not available" screen. |
+| `live` | Section exists — the hub card shows a locked "yet to be live" state; a direct URL lands on the locked "coming soon" screen. |
+| `unlocked` | Full content access. |
+
+`enabled` (boolean) is kept in sync (`status !== "off"`) so anything still reading the boolean keeps working (`src/app/api/admin/flags/route.ts`).
+
+- Migration: `supabase/migrations_pending/flags_lesson_status.sql` — adds `feature_flags.status` (default `unlocked`) and backfills existing flags: `enabled=true` → `unlocked`, `enabled=false` → `off`.
+- Read path: `src/lib/flags.ts` — `readFlags()` (30s cache), `getFeatureStatus()`, `isFeatureLive()` (live or unlocked), `isFeatureEnabled()` (unlocked only), and `requireFeature()` which enforces content routes server-side: `unlocked` → render; `live` → redirect to `/practice/not-available?feature=…&state=live`; `off` → redirect to `/practice/not-available?feature=…`. `/practice/not-available` renders a locked "coming soon" screen for `state=live`.
+- Admin surface: `/admin/flags` ("What's live", `src/app/(dashboard)/admin/flags/page.tsx` + `flag-toggle.tsx`) renders a three-state segmented control (**Hidden / Live / Unlock**) per tool with plain names. Writes go through `POST /api/admin/flags` (`src/app/api/admin/flags/route.ts`, admin-only), which accepts the three-state `status` and syncs `enabled`.
+- Hub: `src/app/(dashboard)/practice/page.tsx` filters by `readFlags()` — `off` hidden, `live` rendered as a locked card, `unlocked` fully open.
+
+**Per-lesson go-live.** `lessons.status` ∈ `hidden | live | unlocked` (same migration):
+
+| Status | What students see |
+|---|---|
+| `hidden` | Only in the builder; the lesson row is not shown. |
+| `live` | The row is shown but locked ("yet to be live"). |
+| `unlocked` | Students see and play it. |
+
+- New lessons default to `live`; existing lessons were backfilled to `unlocked` so the current live course is unaffected.
+- Builder: `/admin/courses/[courseId]` shows a per-lesson status toggle (`lesson-status-toggle.tsx`, options **Hidden / Yet to be live / Unlocked**) → server action `setLessonStatus()` in `src/app/(dashboard)/admin/courses/[courseId]/actions.ts`.
+- Enforcement: the student lesson player (`src/app/(dashboard)/courses/[courseId]/lessons/[lessonId]/page.tsx`) returns `notFound()` for `hidden` and redirects `live` (admins can still preview both); `/dashboard` counts only `unlocked` lessons as playable; `src/components/course/course-overview.tsx` falls back to `unlocked` for pre-status rows.
 
 ---
 

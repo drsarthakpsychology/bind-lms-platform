@@ -1,3 +1,54 @@
+## 2026-08-26 — Three-state go-live control (features + lessons)
+
+The go-live model moved from a binary on/off switch to three states so Kavya
+can stage a reveal: a tool or lesson can be **hidden**, **live-but-locked**
+("yet to be live"), or **unlocked**.
+
+- **Feature flags** (`feature_flags.status` = `off | live | unlocked`;
+  `enabled` kept in sync): `/admin/flags` ("What's live") now shows a
+  three-state segmented control per tool (Hidden / Live / Unlock) with plain
+  names; `POST /api/admin/flags` writes `status`. The read path
+  (`src/lib/flags.ts`) gains `getFeatureStatus()`, `isFeatureLive()`, and
+  `requireFeature()` redirects `live` → a locked "coming soon" screen
+  (`/practice/not-available?…&state=live`) and `off` → "not available". The
+  practice hub hides `off` cards and shows a locked card for `live`.
+- **Lessons** (`lessons.status` = `hidden | live | unlocked`): the builder
+  (`/admin/courses/[courseId]`) shows a per-lesson status toggle (Hidden /
+  Yet to be live / Unlocked) via `setLessonStatus()`. The student lesson
+  player 404s `hidden` and redirects `live`; `/dashboard` counts only
+  `unlocked` lessons as playable. Existing lessons backfill to `unlocked`;
+  new lessons default to `live`.
+- Migration: `supabase/migrations_pending/flags_lesson_status.sql` (additive,
+  idempotent). Shared locked-state chip: `LockedState`
+  (`src/components/design-system/locked-state.tsx`).
+
+---
+
+## 2026-08-26 — DASHBOARD refresh/flicker — core cause found + fixed (PR #11 + #12)
+
+Six parallel investigation agents converged on the root cause, and the DB
+confirmed it: **Kavya's admin account was `role=admin` AND `scope=lectures_only`**
+(the test-email flow stamped `lectures_only` onto her reused admin profile).
+That state drives an **infinite redirect loop** — `/dashboard` bounces admins →
+`/admin`, but the layout's lectures-only guard bounces `/admin` → `/dashboard`.
+Every hop is a full page load = the "continuously refreshing / flickering /
+loading" dashboard.
+
+Fixes:
+1. `(dashboard)/layout.tsx` — admins bypass the lectures-only route guard
+   entirely (scope is a student access axis).
+2. Data fix — the admin account's scope reset to `full`.
+3. `sendTestEmailAction` (`bulk-import.ts`) — role-aware now: never downgrades
+   an admin's scope (recurrence prevention).
+4. `reveal.tsx` + `progress.tsx` — motion gated on `useReducedMotion()` (null on
+   the server) shipped `opacity:0`/`scaleX:0` SSR content → blank-then-animate
+   flash + reduced-motion hydration mismatch. Now render at the visible target
+   (`initial={false}`) on server + first client render.
+
+Gate green; PR #11 (`82c02f4`) + PR #12 (`a32922a`) merged + deployed live.
+
+---
+
 ## 2026-08-26 — NEXT-STEP batch (PR #8, deployed + verified live)
 
 - **Showstopper**: the course layout 404'd every lecture-only student (no

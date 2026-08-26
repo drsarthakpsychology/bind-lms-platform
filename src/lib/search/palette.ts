@@ -20,10 +20,10 @@ export interface PaletteEntry {
 
 const TOOLS: PaletteEntry[] = [
   { id: "cr", label: "Consulting Room", hint: "Interview a simulated patient", href: "/practice/consulting-room", group: "Tools", keywords: ["sim", "patient", "voice"] },
-  { id: "judgment", label: "5 Judgment Calls", hint: "90 seconds, one screen", href: "/practice/judgment", group: "Tools", keywords: ["sct", "script concordance"] },
-  { id: "clinic", label: "Two-Minute Clinic", hint: "120s micro-drill", href: "/practice/two-minute-clinic", group: "Tools", keywords: ["drill", "micro"] },
-  { id: "formulation", label: "Formulation Forge", hint: "5P formulation", href: "/practice/formulation", group: "Tools", keywords: ["5p", "narrative"] },
-  { id: "mse", label: "MSE Trainer", hint: "Mental status exam", href: "/practice/mse", group: "Tools", keywords: ["mental status"] },
+  { id: "judgment", label: "Judgment", hint: "90 seconds, one screen", href: "/practice/judgment", group: "Tools", keywords: ["sct", "script concordance"] },
+  { id: "clinic", label: "Clinic", hint: "120s micro-drill", href: "/practice/two-minute-clinic", group: "Tools", keywords: ["drill", "micro"] },
+  { id: "formulation", label: "Formulation", hint: "5P formulation", href: "/practice/formulation", group: "Tools", keywords: ["5p", "narrative"] },
+  { id: "mse", label: "MSE", hint: "Mental status exam", href: "/practice/mse", group: "Tools", keywords: ["mental status"] },
   { id: "osce", label: "OSCE Stations", hint: "Timed stations", href: "/practice/osce", group: "Tools", keywords: ["exam", "station"] },
   { id: "rounds", label: "Rounds", hint: "Spaced-repetition cards", href: "/practice/rounds", group: "Tools", keywords: ["cards", "review", "fsrs"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },

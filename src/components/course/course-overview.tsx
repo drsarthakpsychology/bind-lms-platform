@@ -11,6 +11,16 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { cn } from "@/lib/utils";
 
+type LessonStatus = "hidden" | "live" | "unlocked";
+
+/**
+ * A lesson's go-live status. Missing/unexpected values fall back to
+ * `unlocked` so pre-status rows keep their old playable behavior.
+ */
+function lessonStatus(l: { status?: string | null } | null | undefined): LessonStatus {
+  return l?.status === "hidden" || l?.status === "live" ? l.status : "unlocked";
+}
+
 /**
  * The course path — one shared server component for the course page
  * (`/courses/[courseId]`) and the single-course dashboard. It owns the data
@@ -42,7 +52,7 @@ export default async function CourseOverview({
       supabase.from("courses").select("id, title, is_published, weeks").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, title, order_index, video_storage_path, description, week")
+        .select("id, title, order_index, video_storage_path, description, week, status")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase
@@ -67,7 +77,19 @@ export default async function CourseOverview({
 
   if (!course) return null;
 
-  const playable = (lessons ?? []).filter((l) => l.video_storage_path || l.description);
+  // `playable` is the unlocked set students can actually complete — `live`
+  // lessons are visible but locked (not counted), `hidden` lessons never show.
+  const playable = (lessons ?? []).filter(
+    (l) => lessonStatus(l) === "unlocked" && (l.video_storage_path || l.description),
+  );
+  // Everything the student can see at all: playable (unlocked) lessons plus
+  // `live` lessons rendered as locked rows, in source (order_index) order.
+  const visibleLessons = (lessons ?? []).filter((l) => {
+    const s = lessonStatus(l);
+    if (s === "hidden") return false;
+    if (s === "live") return true;
+    return Boolean(l.video_storage_path || l.description);
+  });
   const completedIds = new Set(
     (progress ?? []).filter((p) => p.is_completed).map((p) => p.lesson_id),
   );
@@ -96,6 +118,7 @@ export default async function CourseOverview({
       ...a,
       lessonTitle: lesson?.title ?? "Lesson",
       lessonId: a.lesson_id,
+      lessonStatus: lessonStatus(lesson),
       week: lessonData?.week ?? lesson?.week ?? 1,
       status: sub?.status === "returned" ? ("graded" as const) : sub ? ("submitted" as const) : ("not_started" as const),
       submittedAt: sub?.submitted_at ?? null,
@@ -118,7 +141,7 @@ export default async function CourseOverview({
     assignmentsByWeek.set(a.week, list);
   }
 
-  const lessonWeeks = playable.map((l) => (l as { week?: number }).week ?? 1);
+  const lessonWeeks = visibleLessons.map((l) => (l as { week?: number }).week ?? 1);
   const materialWeeks = Array.from(courseMaterialsByWeek.keys());
   const assignmentWeeks = Array.from(assignmentsByWeek.keys());
   const allWeeks = [...lessonWeeks, ...materialWeeks, ...assignmentWeeks];
@@ -143,7 +166,7 @@ export default async function CourseOverview({
 
     const weekAssignments = assignmentsByWeek.get(w) ?? [];
     for (const a of weekAssignments) {
-      if (a.status === "not_started") {
+      if (a.status === "not_started" && a.lessonStatus === "unlocked") {
         nextAction = { type: "assignment", id: a.id, week: w, title: a.title ?? "Assignment", href: `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment` };
         break;
       }
@@ -178,7 +201,8 @@ export default async function CourseOverview({
 
       <section aria-label="Course path" className="space-y-6">
         {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((weekNum) => {
-          const weekLessons = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
+          const weekLessons = visibleLessons.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
+          const weekPlayable = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
           const weekMaterials = courseMaterialsByWeek.get(weekNum) ?? [];
           const weekAssignments = assignmentsByWeek.get(weekNum) ?? [];
           const hasContent = weekLessons.length > 0 || weekMaterials.length > 0 || weekAssignments.length > 0;
@@ -187,7 +211,9 @@ export default async function CourseOverview({
           const isCurrentWeek = weekNum === currentWeek;
           const isPastWeek = weekNum < currentWeek;
           const isFutureWeek = weekNum > currentWeek;
-          const weekComplete = weekLessons.length > 0 && weekLessons.every((l) => completedIds.has(l.id));
+          // Only unlocked lessons count toward a week being complete — `live`
+          // rows are locked and can never be completed by a student.
+          const weekComplete = weekPlayable.length > 0 && weekPlayable.every((l) => completedIds.has(l.id));
 
           // Week status derives from the SAME `started` flag as the header, so
           // the page can never say "not started" up top and "in progress" here.
@@ -239,13 +265,17 @@ export default async function CourseOverview({
               <div className="space-y-1">
                 {weekLessons.map((lesson, i) => {
                   const done = completedIds.has(lesson.id);
-                  const isNextAction = nextAction?.type === "lesson" && nextAction.id === lesson.id;
+                  const isLive = lessonStatus(lesson) === "live";
+                  // A `live` lesson is locked on its own ("yet to be live"), the
+                  // same way a future week is locked as a whole.
+                  const locked = isFutureWeek || isLive;
+                  const isNextAction = !locked && nextAction?.type === "lesson" && nextAction.id === lesson.id;
 
                   return (
                     <MobileListItem
                       key={lesson.id}
-                      href={isFutureWeek ? undefined : `/courses/${courseId}/lessons/${lesson.id}`}
-                      disabled={isFutureWeek}
+                      href={locked ? undefined : `/courses/${courseId}/lessons/${lesson.id}`}
+                      disabled={locked}
                       highlight={isNextAction}
                       leading={
                         isNextAction ? (
@@ -260,16 +290,18 @@ export default async function CourseOverview({
                       }
                       title={lesson.title}
                       subtitle={
-                        isFutureWeek
-                          ? undefined
-                          : isNextAction
-                            ? started ? "Continue" : "Start"
-                            : done
-                              ? "Completed"
-                              : undefined
+                        isLive
+                          ? "Yet to be live"
+                          : isFutureWeek
+                            ? undefined
+                            : isNextAction
+                              ? started ? "Continue" : "Start"
+                              : done
+                                ? "Completed"
+                                : undefined
                       }
                       trailing={
-                        isFutureWeek ? (
+                        isLive || isFutureWeek ? (
                           <Lock className="size-4 text-muted-foreground" aria-hidden />
                         ) : done ? (
                           <span className="text-caption text-muted-foreground">Done</span>
@@ -337,7 +369,7 @@ export default async function CourseOverview({
         })}
       </section>
 
-      {playable.length === 0 && (
+      {visibleLessons.length === 0 && (
         <EmptyState
           icon={<BookOpen className="size-8" aria-hidden />}
           title="No lessons published yet"

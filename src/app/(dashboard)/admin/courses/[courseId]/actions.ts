@@ -221,3 +221,30 @@ export async function deleteLesson(
     return { error: "Could not delete the lesson." };
   }
 }
+
+/**
+ * Set a lesson's go-live status (hidden | live | unlocked):
+ *   - hidden   → students don't see the lesson row.
+ *   - live     → students see the row but it's "yet to be live" (locked).
+ *   - unlocked → students see + play it.
+ */
+export async function setLessonStatus(
+  lessonId: string,
+  courseId: string,
+  status: "hidden" | "live" | "unlocked",
+): Promise<{ error: string | null }> {
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
+
+    const supabase = await createClient();
+    const { error } = await supabase.from("lessons").update({ status }).eq("id", lessonId);
+
+    if (error) return { error: "Could not update the lesson." };
+
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not update the lesson." };
+  }
+}
