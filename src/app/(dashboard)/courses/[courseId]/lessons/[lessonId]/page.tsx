@@ -84,7 +84,7 @@ export default async function LessonPage({
         .maybeSingle(),
       supabase
         .from("materials")
-        .select("id, title, kind, format, size_bytes, url, sort_order")
+        .select("id, title, kind, format, size_bytes, url, storage_path, sort_order")
         .or(`lesson_id.eq.${lessonId},course_id.eq.${courseId}`)
         .order("sort_order", { ascending: true }),
       supabase
@@ -307,6 +307,7 @@ export default async function LessonPage({
                 format: m.format,
                 sizeBytes: m.size_bytes,
                 url: m.url,
+                storagePath: m.storage_path,
               }))}
             />
           )}

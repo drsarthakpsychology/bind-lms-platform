@@ -12,9 +12,12 @@ import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 export function CourseActions({
   courseId,
   isPublished,
+  showOpenBuilder = true,
 }: {
   courseId: string;
   isPublished: boolean;
+  /** Hide the "Open builder" nav when already inside the builder. */
+  showOpenBuilder?: boolean;
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -63,10 +66,22 @@ export function CourseActions({
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center justify-end gap-2">
+      {showOpenBuilder && (
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => router.push(`/admin/courses/${courseId}`)}
+        >
+          <Pencil className="size-3.5" aria-hidden />
+          Open builder
+        </Button>
+      )}
+
       <Button
         type="button"
-        variant={isPublished ? "secondary" : "outline"}
+        variant={isPublished ? "secondary" : "default"}
         size="sm"
         onClick={handleTogglePublishConfirmed}
         disabled={isPending}
@@ -162,17 +177,6 @@ export function CourseActions({
         )}
         {menuView === "menu" ? (
           <div className="flex flex-col gap-1">
-            <button
-              type="button"
-              onClick={() => {
-                setMenuOpen(false);
-                router.push(`/admin/courses/${courseId}`);
-              }}
-              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent"
-            >
-              <Pencil className="size-4 text-muted-foreground" aria-hidden />
-              Open builder
-            </button>
             <button
               type="button"
               onClick={() => {
