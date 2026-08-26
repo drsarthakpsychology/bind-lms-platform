@@ -3,9 +3,21 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { generateCredential, deriveName } from "@/lib/auth/roster";
 
-export type CreateStudentState = { error: string | null; success: boolean };
+export type CreateStudentState = {
+  error: string | null;
+  success: boolean;
+  /** The auto-generated 8-char password, shown once on success. */
+  password?: string;
+};
 
+/**
+ * Add a student by email. The 8-char password is AUTO-GENERATED (the same
+ * generator the roster import uses) and the account is added to
+ * `credential_invites` (status pending) so the student appears in the roster /
+ * send-email screen immediately — bulk or manually.
+ */
 export async function createStudent(
   _prevState: CreateStudentState,
   formData: FormData,
@@ -14,16 +26,14 @@ export async function createStudent(
     return { error: "Not authorized.", success: false };
   }
 
-  const email = String(formData.get("email") ?? "").trim();
-  const password = String(formData.get("password") ?? "");
+  const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const expiresAtRaw = String(formData.get("expiresAt") ?? "");
 
-  if (!email || !password) {
-    return { error: "Email and password are required.", success: false };
+  if (!email) {
+    return { error: "Email is required.", success: false };
   }
-  if (password.length < 8) {
-    return { error: "Password must be at least 8 characters.", success: false };
-  }
+
+  const password = generateCredential();
 
   let expiresAt: string | null = null;
   if (expiresAtRaw) {
@@ -73,8 +83,22 @@ export async function createStudent(
     }
   }
 
+  // Land in the roster so the send-email screen picks it up (bulk or manual).
+  await admin.from("credential_invites").upsert(
+    {
+      email,
+      name: deriveName(email),
+      status: "pending",
+      password,
+      error_reason: null,
+      sent_at: null,
+    },
+    { onConflict: "email" },
+  );
+
   revalidatePath("/admin/students");
-  return { error: null, success: true };
+  revalidatePath("/admin/roster");
+  return { error: null, success: true, password };
 }
 
 /**
