@@ -91,10 +91,11 @@ export async function PATCH(req: Request) {
     const swapIdx = parsed.data.direction === "up" ? idx - 1 : idx + 1;
     if (swapIdx < 0 || swapIdx >= ids.length) return NextResponse.json({ ok: true }); // at an edge
     [ids[idx], ids[swapIdx]] = [ids[swapIdx], ids[idx]];
-    for (let i = 0; i < ids.length; i++) {
-      const { error } = await admin.from("cards").update({ sort_order: i }).eq("id", ids[i]);
-      if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    // One multi-row upsert instead of N single UPDATE round-trips (Perf Pass Part 8).
+    const { error } = await admin
+      .from("cards")
+      .upsert(ids.map((id, i) => ({ id, sort_order: i })));
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   }
 
