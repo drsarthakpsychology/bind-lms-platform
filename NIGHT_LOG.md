@@ -1,3 +1,42 @@
+## 2026-08-27 — ONE canonical lecture view (flat "Lectures" list removed)
+
+Kavya flagged that two different "list of lectures" pages existed:
+
+- **GOOD (canonical):** `/courses/[courseId]` renders `CourseOverview` — course
+  title, real progress line, week-grouped headers, lesson rows in order, exactly
+  one highlighted "Continue" row.
+- **BAD (duplicate):** `/dashboard` for roster (`lectures_only`) students
+  rendered a separately-built flat `LecturesOnlyView` — a plain list of every
+  lecture across courses (course name repeated per row), no week grouping, no
+  highlighted next action.
+
+Decision: the flat view was the one to remove. There must be exactly one
+canonical "here are the lectures, pick one" surface, and it is the structured
+week-grouped `CourseOverview`.
+
+- **Removed:** `src/app/(dashboard)/dashboard/lectures-only-view.tsx` (deleted).
+  Its one remaining consumer was the `effectiveScope === "lectures_only"` branch
+  in `dashboard/page.tsx`, which is gone.
+- **`/dashboard` now renders the same `CourseOverview`** `/courses/[courseId]`
+  renders. A lectures_only student has no enrollment rows, so "their course" is
+  every published course (prod currently has exactly one: Pyschology Cohort 1) →
+  the dashboard IS that course's structured week/lesson list. Multi-course
+  falls back to the existing course grid; zero → empty state.
+- **Practice kept:** the flat view's practice-tools strip (everything live /
+  unlocked) was extracted to `src/app/(dashboard)/dashboard/practice-tools-section.tsx`
+  and still renders above the course for roster students — so Kavya's earlier
+  "show me everything I've unlocked, not just lectures" still holds.
+- **Nav:** "Lectures" (`LECTURE_ONLY_ITEMS`) already points at `/dashboard`,
+  which now lands on the structured view — no nav change needed.
+- **Back nav:** the lesson player's back link goes to `/courses/[courseId]`
+  (structured) and its "continue" target falls back to `/dashboard` (now
+  structured). Both were already correct once the flat list stopped being the
+  dashboard render.
+
+Gate: lint 0, tsc clean, 535 tests, build exit 0.
+
+---
+
 ## 2026-08-26 — Three-state go-live control (features + lessons)
 
 The go-live model moved from a binary on/off switch to three states so Kavya

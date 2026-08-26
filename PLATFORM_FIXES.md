@@ -227,3 +227,39 @@ proxy 404'd. Backfilled the live row and made `publish-lecture.ts` write
 `bucket = R2_BUCKET_NAME`. **Re-verified against prod after the fix**: playback →
 `hls`; master/variant/segment all 200 through the encrypted proxy, served from
 R2.
+
+---
+
+## One canonical lecture view — flat "Lectures" list removed (2026-08-27)
+
+**The problem:** two different "list of lectures" pages existed.
+
+- `/courses/[courseId]` → `CourseOverview` (canonical): course title, real
+  progress line, week-grouped headers, lesson rows in order, exactly one
+  highlighted "Continue" row.
+- `/dashboard` → `LecturesOnlyView` (duplicate): a separately-built flat list
+  of every lecture across courses (course name repeated under each row), no
+  week grouping, no highlighted next action.
+
+**Removed:** `src/app/(dashboard)/dashboard/lectures-only-view.tsx` (deleted;
+its `effectiveScope === "lectures_only"` branch in `dashboard/page.tsx` is
+gone). Zero references remain.
+
+**Canonical kept:** `/courses/[courseId]` and the single-course `/dashboard`
+now render the SAME `CourseOverview` component. A roster (`lectures_only`)
+student has no enrollment rows, so "their course" = every published course
+(prod has exactly one, Pyschology Cohort 1) → the dashboard IS that course's
+structured week/lesson list. Multi-course → the existing course grid; zero →
+empty state. The flat view's practice-tools strip (everything live/unlocked)
+was extracted to `practice-tools-section.tsx` and still renders above the
+course for roster students.
+
+**Navigation before/after:**
+- Before: `/dashboard` (roster) → flat "Lectures" list → tap a row →
+  `/courses/[courseId]/lessons/[lessonId]` → back → flat list again.
+- After: `/dashboard` (roster) → practice strip + structured week-grouped
+  course → tap a lesson → player → back to `/courses/[courseId]` (or Continue →
+  `/dashboard`) → the same structured view. One canonical view, no parallel
+  implementation.
+
+**Gate:** lint 0, tsc clean, 535 tests, build exit 0.
