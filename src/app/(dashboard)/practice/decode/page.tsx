@@ -2,6 +2,7 @@ import { IDIOMS, type IdiomEntry, type IdiomMeaning } from "@/lib/decode/idioms"
 import { createClient } from "@/lib/supabase/server";
 import { DecodeFlow } from "./decode-flow";
 import type { QuizItem } from "@/lib/quiz/quiz";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -85,6 +86,7 @@ const DECODE_QUIZ: QuizItem[] = [
  * Modes: 1 Decode, 2 Funnel (5 questions), 3 Seven Readings, 4 CFI Practice.
  */
 export default async function DecodePage() {
+  await requireFeature("decoder");
   const day = new Date().getDate();
   // Content wiring: merge faculty-approved idioms from the DB with the static
   // baseline. New approvals appear; content is never reduced. Fallback to the

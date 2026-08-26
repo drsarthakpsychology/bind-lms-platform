@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { Lock, Clock3, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,7 @@ export const dynamic = "force-dynamic";
  * progression gate itself stays server-enforced in the pages it covers.
  */
 export default async function ModulesPage() {
+  await requireFeature("modules");
   const supabase = await createClient();
   const {
     data: { user },

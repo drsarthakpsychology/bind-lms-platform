@@ -48,15 +48,19 @@ export async function setCoursePublished(
 }
 
 export async function deleteCourse(courseId: string): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const supabase = await createClient();
-  const { error } = await supabase.from("courses").delete().eq("id", courseId);
+    const supabase = await createClient();
+    const { error } = await supabase.from("courses").delete().eq("id", courseId);
 
-  if (error) return { error: "Could not delete the course." };
+    if (error) return { error: "Could not delete the course." };
 
-  revalidatePath("/admin/courses");
-  return { error: null };
+    revalidatePath("/admin/courses");
+    return { error: null };
+  } catch {
+    return { error: "Could not delete the course." };
+  }
 }
 
 /** Rename a course. Admin only. */

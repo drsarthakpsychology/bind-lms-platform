@@ -3,12 +3,11 @@
  * render. A move, a new phone number, or a new grievance officer is a one-file
  * edit. Mirrors the `src/lib/brand.ts` pattern (frozen const + helpers).
  *
- * Two values are STILL OUTSTANDING (never invented — see the brief):
+ * One value is STILL OUTSTANDING (never invented — see the brief):
  *   - REGISTERED_ADDRESS  (legally mandatory; the Ahmedabad clinic address)
- *   - EFFECTIVE_DATE      (the publish date)
- * Until Kavya supplies them, they hold their literal placeholder token so the
- * rendered pages visibly show the unresolved gap. Fix the TODO, the pages
- * follow.
+ * EFFECTIVE_DATE was resolved to the go-live date (2026-08-26) — it binds the
+ * policy version recorded at enrolment. Change it here if the publish date
+ * differs.
  */
 export const LEGAL = {
   /** Operating name on all policies. */
@@ -33,10 +32,11 @@ export const LEGAL = {
    */
   registeredAddress: "[REGISTERED_ADDRESS]",
   /**
-   * TODO (Kavya): the date the policies are published. Binds the policy
-   * version shown in enrolment records. Do not invent.
+   * The date the policies took effect — set to the go-live date (2026-08-26).
+   * Binds the policy version shown in enrolment records. ISO form so it is
+   * valid in JSON-LD (dateModified) and as a version string.
    */
-  effectiveDate: "[EFFECTIVE_DATE]",
+  effectiveDate: "2026-08-26",
 } as const;
 
 /** True while any policy placeholder is still unresolved (drives flags/tests). */
@@ -54,5 +54,5 @@ export function hasUnresolvedPlaceholders(): boolean {
 export function policyVersion(): string {
   return LEGAL.effectiveDate.startsWith("[")
     ? "draft"
-    : `2026-${LEGAL.effectiveDate}`;
+    : LEGAL.effectiveDate;
 }

@@ -1,7 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 import { SupervisionLog, type SupervisionEntry } from "@/app/(dashboard)/practice/supervision/supervision-log";
 import { CheckinForm } from "@/app/(dashboard)/practice/check-in/checkin-form";
-import { requireFeature } from "@/lib/flags";
+import { readFlags } from "@/lib/flags";
+import { redirect } from "next/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { RecordTabs } from "./record-tabs";
 
@@ -12,10 +13,17 @@ export const dynamic = "force-dynamic";
  * Supervision contact hours + the weekly check-in live together here, out of
  * the /practice drill grid: both are records about your training, not things
  * you do. Tagged supervision hours feed the Skills Passport.
+ *
+ * Supervision and check-in are INDEPENDENTLY toggleable features — only
+ * redirect when BOTH are off; otherwise show just the enabled tab(s).
  */
 export default async function RecordPage() {
-  await requireFeature("supervision");
-  await requireFeature("checkin");
+  const flags = await readFlags();
+  const supervisionEnabled = flags["supervision"] === true;
+  const checkinEnabled = flags["checkin"] === true;
+  if (!supervisionEnabled && !checkinEnabled) {
+    redirect("/practice/not-available");
+  }
   const supabase = await createClient();
   const {
     data: { user },
@@ -71,6 +79,8 @@ export default async function RecordPage() {
 
       <Reveal delay={0.15}>
         <RecordTabs
+          supervisionEnabled={supervisionEnabled}
+          checkinEnabled={checkinEnabled}
           supervision={
             <SupervisionLog
               entries={list}

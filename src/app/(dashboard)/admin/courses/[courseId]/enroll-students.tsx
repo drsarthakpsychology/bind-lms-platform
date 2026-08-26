@@ -28,11 +28,15 @@ export function EnrollStudents({
   function handleToggle(studentId: string, isEnrolled: boolean) {
     setError(null);
     startTransition(async () => {
-      const result = isEnrolled
-        ? await unenrollStudent(courseId, studentId)
-        : await enrollStudent(courseId, studentId);
-      if (result.error) setError(result.error);
-      else router.refresh();
+      try {
+        const result = isEnrolled
+          ? await unenrollStudent(courseId, studentId)
+          : await enrollStudent(courseId, studentId);
+        if (result.error) setError(result.error);
+        else router.refresh();
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not update enrollment.");
+      }
     });
   }
 

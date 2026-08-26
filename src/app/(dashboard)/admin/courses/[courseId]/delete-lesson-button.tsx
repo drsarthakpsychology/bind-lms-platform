@@ -17,10 +17,15 @@ export function DeleteLessonButton({ lessonId, courseId }: { lessonId: string; c
   function handleDelete() {
     setError(null);
     startTransition(async () => {
-      const result = await deleteLesson(lessonId, courseId);
-      setConfirmOpen(false);
-      if (result.error) setError(result.error);
-      else router.refresh();
+      try {
+        const result = await deleteLesson(lessonId, courseId);
+        setConfirmOpen(false);
+        if (result.error) setError(result.error);
+        else router.refresh();
+      } catch (err) {
+        setConfirmOpen(false);
+        setError(err instanceof Error ? err.message : "Could not delete the lesson.");
+      }
     });
   }
 
@@ -28,12 +33,12 @@ export function DeleteLessonButton({ lessonId, courseId }: { lessonId: string; c
     <>
       <Button
         type="button"
-        variant="ghost"
-        size="icon-sm"
-        aria-label="Delete lesson"
+        variant="outline"
+        size="sm"
         onClick={() => setConfirmOpen(true)}
       >
-        <Trash2 className="size-4 text-status-alert-fg" aria-hidden />
+        <Trash2 className="size-3.5 text-status-alert-fg" aria-hidden />
+        Delete
       </Button>
       <MobileBottomSheet
         open={confirmOpen}

@@ -255,11 +255,18 @@ export function AssignmentEditor({
                       variant="destructive"
                       onClick={async () => {
                         setDeletePending(true);
-                        const result = await deleteAssignment(courseId, lessonId, assignment.id);
-                        setDeletePending(false);
-                        setDeleteOpen(false);
-                        if (result.error) setError(result.error);
-                        else router.refresh();
+                        try {
+                          const result = await deleteAssignment(courseId, lessonId, assignment.id);
+                          if (result.error) setError(result.error);
+                          else router.refresh();
+                        } catch (err) {
+                          setError(
+                            err instanceof Error ? err.message : "Could not delete the assignment.",
+                          );
+                        } finally {
+                          setDeletePending(false);
+                          setDeleteOpen(false);
+                        }
                       }}
                       disabled={deletePending}
                       className="w-full"

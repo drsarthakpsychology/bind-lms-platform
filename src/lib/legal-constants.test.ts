@@ -13,13 +13,14 @@ describe("legal constants — the single source of truth for policy pages", () =
     expect(LEGAL.liveAttendanceRequirement).toBe("50%");
   });
 
-  it("keeps the outstanding values as literal TODO tokens (never invented)", () => {
+  it("resolves the effective date to the go-live date; the address stays a TODO token (never invented)", () => {
     expect(LEGAL.registeredAddress).toBe("[REGISTERED_ADDRESS]");
-    expect(LEGAL.effectiveDate).toBe("[EFFECTIVE_DATE]");
+    expect(LEGAL.effectiveDate).toBe("2026-08-26");
+    // Still unresolved overall — the legally-mandatory address is pending Kavya.
     expect(hasUnresolvedPlaceholders()).toBe(true);
   });
 
-  it("reports a draft policy version while the effective date is unresolved", () => {
-    expect(policyVersion()).toBe("draft");
+  it("reports the real policy version once the effective date is set", () => {
+    expect(policyVersion()).toBe("2026-08-26");
   });
 });

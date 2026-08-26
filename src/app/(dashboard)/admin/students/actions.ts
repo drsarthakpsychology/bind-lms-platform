@@ -82,15 +82,19 @@ export async function createStudent(
  * cleanup for test accounts. Admin only.
  */
 export async function deleteStudent(userId: string): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const admin = createAdminClient();
-  const { error } = await admin.auth.admin.deleteUser(userId);
-  if (error) return { error: "Could not delete the account." };
+    const admin = createAdminClient();
+    const { error } = await admin.auth.admin.deleteUser(userId);
+    if (error) return { error: "Could not delete the account." };
 
-  // Deleting the auth user cascades to profiles and their data (FK cascade).
-  revalidatePath("/admin/students");
-  return { error: null };
+    // Deleting the auth user cascades to profiles and their data (FK cascade).
+    revalidatePath("/admin/students");
+    return { error: null };
+  } catch {
+    return { error: "Could not delete the account." };
+  }
 }
 
 /**

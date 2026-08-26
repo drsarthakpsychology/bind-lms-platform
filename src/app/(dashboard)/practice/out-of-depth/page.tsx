@@ -1,4 +1,5 @@
 import { OutOfDepthDrill } from "./out-of-depth-drill";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +8,8 @@ export const dynamic = "force-dynamic";
  * Recognising when to refer, escalate, or stop — the most important skill
  * for a counselling trainee. Scored both directions.
  */
-export default function OutOfDepthPage() {
+export default async function OutOfDepthPage() {
+  await requireFeature("ethics");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">Out of depth</p>

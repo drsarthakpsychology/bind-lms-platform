@@ -108,25 +108,29 @@ export async function deleteMaterial(
   materialId: string,
   storagePath: string | null,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
 
-  const admin = createAdminClient();
+    const admin = createAdminClient();
 
-  if (storagePath) {
-    const { error: fileError } = await admin.storage
-      .from("materials")
-      .remove([storagePath]);
-    if (fileError) {
-      return { error: "The file couldn't be removed." };
+    if (storagePath) {
+      const { error: fileError } = await admin.storage
+        .from("materials")
+        .remove([storagePath]);
+      if (fileError) {
+        return { error: "The file couldn't be removed." };
+      }
     }
+
+    const { error } = await admin.from("materials").delete().eq("id", materialId);
+    if (error) return { error: "Could not delete the material." };
+
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/admin/courses/${courseId}/lessons/[lessonId]`);
+    return { error: null };
+  } catch {
+    return { error: "Could not delete the material." };
   }
-
-  const { error } = await admin.from("materials").delete().eq("id", materialId);
-  if (error) return { error: "Could not delete the material." };
-
-  revalidatePath(`/admin/courses/${courseId}`);
-  revalidatePath(`/admin/courses/${courseId}/lessons/[lessonId]`);
-  return { error: null };
 }
 
 /** Rename a material. */

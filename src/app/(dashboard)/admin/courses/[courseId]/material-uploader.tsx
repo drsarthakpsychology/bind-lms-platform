@@ -324,12 +324,17 @@ export function MaterialUploader({
   // ---- Delete ----
   async function handleDelete(target: UploadRow) {
     setDeletePending(true);
-    const result = await deleteMaterial(courseId, target.id, target.storagePath ?? null);
-    setDeletePending(false);
-    setMenuTarget(null);
-    setMenuMode("menu");
-    if (result.error) setBanner(result.error);
-    else router.refresh();
+    try {
+      const result = await deleteMaterial(courseId, target.id, target.storagePath ?? null);
+      if (result.error) setBanner(result.error);
+      else router.refresh();
+    } catch (err) {
+      setBanner(err instanceof Error ? err.message : "Could not delete the material.");
+    } finally {
+      setDeletePending(false);
+      setMenuTarget(null);
+      setMenuMode("menu");
+    }
   }
 
   // ---- Link ----
