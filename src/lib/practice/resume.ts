@@ -61,7 +61,7 @@ export async function computeResumePrimary(
   // 3) The daily habit.
   return {
     href: "/practice/decode",
-    title: "Presenting Complaint Decoder",
+    title: "Decoder",
     reason: "The daily habit that changes how you hear patients — today's set is fresh.",
     cta: "Decode",
     time: "4 min",

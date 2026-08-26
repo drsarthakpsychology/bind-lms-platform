@@ -1,3 +1,29 @@
+## 2026-08-26 — Three-state go-live control (features + lessons)
+
+The go-live model moved from a binary on/off switch to three states so Kavya
+can stage a reveal: a tool or lesson can be **hidden**, **live-but-locked**
+("yet to be live"), or **unlocked**.
+
+- **Feature flags** (`feature_flags.status` = `off | live | unlocked`;
+  `enabled` kept in sync): `/admin/flags` ("What's live") now shows a
+  three-state segmented control per tool (Hidden / Live / Unlock) with plain
+  names; `POST /api/admin/flags` writes `status`. The read path
+  (`src/lib/flags.ts`) gains `getFeatureStatus()`, `isFeatureLive()`, and
+  `requireFeature()` redirects `live` → a locked "coming soon" screen
+  (`/practice/not-available?…&state=live`) and `off` → "not available". The
+  practice hub hides `off` cards and shows a locked card for `live`.
+- **Lessons** (`lessons.status` = `hidden | live | unlocked`): the builder
+  (`/admin/courses/[courseId]`) shows a per-lesson status toggle (Hidden /
+  Yet to be live / Unlocked) via `setLessonStatus()`. The student lesson
+  player 404s `hidden` and redirects `live`; `/dashboard` counts only
+  `unlocked` lessons as playable. Existing lessons backfill to `unlocked`;
+  new lessons default to `live`.
+- Migration: `supabase/migrations_pending/flags_lesson_status.sql` (additive,
+  idempotent). Shared locked-state chip: `LockedState`
+  (`src/components/design-system/locked-state.tsx`).
+
+---
+
 ## 2026-08-26 — DASHBOARD refresh/flicker — core cause found + fixed (PR #11 + #12)
 
 Six parallel investigation agents converged on the root cause, and the DB
