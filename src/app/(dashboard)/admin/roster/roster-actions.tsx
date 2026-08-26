@@ -235,6 +235,17 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
                         {resetBusy === r.email ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : <RefreshCw className="size-3.5" aria-hidden />}
                         Reset
                       </Button>
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        size="xs"
+                        onClick={() => runSend([r.email], "Email")}
+                        disabled={busy}
+                        title="Email this student their password (manual send)"
+                      >
+                        <Mail className="size-3.5" aria-hidden />
+                        Email
+                      </Button>
                     </>
                   )}
                 </div>
