@@ -49,7 +49,10 @@ export default async function LecturesOnlyView() {
         .from("lessons")
         .select("id, title, course_id, status, media_assets(duration_seconds)")
         .in("course_id", courseIds)
-        .order("created_at", { ascending: false })
+        // `lessons` has NO created_at column — ordering by it made the query
+        // error and the whole view render "No lectures yet". Order by the
+        // curriculum sequence instead.
+        .order("order_index", { ascending: true })
     : { data: [] as Array<{ id: string; title: string | null; course_id: string; status: "hidden" | "live" | "unlocked" | null; media_assets: Array<{ duration_seconds: number | null }> | null }> };
 
   const rows = (lessons ?? [])
