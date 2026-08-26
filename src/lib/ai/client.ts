@@ -47,6 +47,8 @@ export interface AiRequestOptions {
   /** schema to validate a JSON output; when set, forces json capability */
   schema?: z.ZodType;
   temperature?: number;
+  /** Force a specific provider id (multi-model consensus). Default: routed. */
+  providerId?: string;
 }
 
 export interface AiResponse {
@@ -177,7 +179,10 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     return { text: turn.patient, provider: "fixture" };
   }
   const capability: ProviderCapability = opts.schema ? "json" : "stream";
-  const candidates = providersFor(capability, opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  const allCandidates = providersFor(capability, opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  // A forced provider (multi-model consensus) narrows to exactly that lane; the
+  // normal path routes across all candidates in priority order.
+  const candidates = opts.providerId ? allCandidates.filter((p) => p.id === opts.providerId) : allCandidates;
   if (!candidates.length) {
     const reason = `no configured/enabled providers (AI_ENABLED=${process.env.AI_ENABLED ?? "unset"}, keys present: ${availableProviders().filter((p) => keyFor(p)).map((p) => p.id).join(",") || "none"})`;
     console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ["${reason}"]`);

@@ -29,6 +29,7 @@
     "seed-calibration": "tsx scripts/seed-calibration.ts",
     "seed-rights": "tsx scripts/seed-rights-registry.ts",
     "roster:import": "tsx scripts/roster-import.ts",
+    "calibration:auto": "tsx scripts/calibration-auto.ts",
     "pregen-voice": "tsx scripts/pregen-voice.ts",
     "prune-voice-cache": "tsx scripts/prune-voice-cache.ts",
     "draft-cards": "tsx scripts/draft-cards-from-lessons.ts",

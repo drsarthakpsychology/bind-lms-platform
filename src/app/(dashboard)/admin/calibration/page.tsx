@@ -24,7 +24,7 @@ export default async function AdminCalibrationPage() {
       .select("id, session_id, user_id, overall, rubric, created_at")
       .order("created_at", { ascending: false })
       .limit(30),
-    admin.from("rubric_dimensions").select("key, label, status, agreement, n_scored"),
+    admin.from("rubric_dimensions").select("key, label, status, agreement, n_scored, inter_model_agreement, variance, last_auto_at"),
   ]);
 
   const { data: turns } = await admin
@@ -76,6 +76,9 @@ export default async function AdminCalibrationPage() {
     status: String(d.status) as "provisional" | "validated",
     agreement: d.agreement != null ? Number(d.agreement) : null,
     nScored: Number(d.n_scored ?? 0),
+    interModelAgreement: d.inter_model_agreement != null ? Number(d.inter_model_agreement) : null,
+    variance: d.variance != null ? Number(d.variance) : null,
+    lastAutoAt: d.last_auto_at ? String(d.last_auto_at) : null,
   }));
 
   // The canonical shape for the rubric gate helpers.
@@ -91,7 +94,7 @@ export default async function AdminCalibrationPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Marking check"
-        description="Mark a transcript, then reveal how the AI marked it. When you disagree, your score is what counts going forward."
+        description="Calibration is automatic — the system scores each transcript with two models and tracks how much its own scores vary. You can still mark a transcript below when you want to, but nothing requires it."
       />
       <div className="mt-6">
         <AgreementDashboard

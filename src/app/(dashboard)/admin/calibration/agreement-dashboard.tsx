@@ -11,6 +11,8 @@ interface Dim {
   status: "provisional" | "validated";
   agreement: number | null;
   nScored: number;
+  interModelAgreement?: number | null;
+  variance?: number | null;
 }
 
 /**
@@ -73,6 +75,12 @@ export function AgreementDashboard({
                     : `Final — students see this score · ${d.nScored} marked`}
                   {d.agreement != null ? ` · agreement ${d.agreement.toFixed(2)}` : ""}
                 </p>
+                {(d.interModelAgreement != null || d.variance != null) && (
+                  <p className="text-caption text-muted-foreground">
+                    Auto: {d.interModelAgreement != null ? `models agree ${(d.interModelAgreement * 100).toFixed(0)}%` : ""}
+                    {d.variance != null ? ` · self-variance ${d.variance.toFixed(2)}` : ""}
+                  </p>
+                )}
               </div>
               <span
                 className={cn(

@@ -4572,3 +4572,24 @@ region or Modal/RunPod.
   Dr. Sarthak can correct a mis-transcription before saving — the "live editable
   transcript" the brief asks for.
 - Gate green: lint 0, tsc clean, 525 tests, build exit 0.
+
+## 2026-08-26 — Part 2 calibration automation (three signals)
+
+- Verified: passive capture (signal 3) and the provisional-number gate were
+  already live (scoring_corrections + rubric.ts + the debrief renderer hides
+  provisional dimensions' numbers). The gap was signals 1+2.
+- Added `scoreTranscriptWith` (temperature + providerId overrides) and a
+  `providerId` option to aiChat, so the scorer can be forced onto a specific
+  model (multi-model consensus) or re-run at temperature (self-consistency).
+- New `scripts/calibration-auto.ts` (`npm run calibration:auto`, --dry-run):
+  scores a sample of recent transcripts twice with two independent no-train
+  models (inter-model agreement per dimension) and 3x at temperature 0.7
+  (self-consistency variance per dimension), then writes
+  rubric_dimensions.inter_model_agreement / variance / last_auto_at.
+- Migration `supabase/migrations_pending/calibration_auto_signals.sql` adds
+  those columns (additive). Dry-run verified (honest "—" until scored
+  transcripts exist).
+- `/admin/calibration` page now says calibration is automatic and shows
+  "Auto: models agree X% · self-variance Y" per dimension; the manual
+  scoring list stays as an optional tool, not a requirement.
+- Gate green: lint 0, tsc clean, 525 tests, build exit 0.
