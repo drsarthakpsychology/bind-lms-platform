@@ -4639,3 +4639,24 @@ created 64, duplicates 0, invalid 0, **empty names 0**. Four new regression
 tests (extra columns ignored, case-insensitive header, BOM strip, name in a
 non-first column) pin the fix. Gate green: lint 0, tsc clean, 529 tests,
 build exit 0.
+
+## 2026-08-26 — Part 1+2 import/review/send split + test email
+
+- Import and send are now two explicit steps. `importRoster` creates the auth
+  account, stamps `profiles.scope`, and records a `credential_invites` row in
+  `pending` — it never emails. `sendCredentialEmails(emails)` mints a FRESH
+  set-your-password link at send time (never stored, so it can't expire) and
+  updates each row to `sent`/`failed` with the reason.
+- New `credential_invites` table (migration, additive, admin-only RLS): email
+  unique, name, status (pending/sent/failed), error_reason, sent_at.
+- New `/admin/roster` screen (nav "Roster & emails"): lists the batch
+  (name/email/status/date), "Send all pending", "Retry failed", "Send selected"
+  (checkbox), per-row Retry. Import revalidates it.
+- Test email: a "Send test email" control sends the REAL credential template
+  (same `sendResendEmail` path, `[TEST]` subject) and shows the actual Resend
+  API result (id or error). One shared `sendResendEmail` reads RESEND_API_KEY
+  from env — no fallback key, so the real send and the test can't drift.
+- `bulk-import.ts` now has `bulkImportStudents` (import only),
+  `sendCredentialEmailsAction`, `sendTestEmailAction`. CLI split into import
+  (default) and `--send` modes.
+- Gate green: lint 0, tsc clean, 529 tests, build exit 0.

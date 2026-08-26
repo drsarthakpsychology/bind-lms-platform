@@ -141,25 +141,22 @@ async function mintInviteLink(
   return data.properties.action_link;
 }
 
-export type ProvisionDeps = {
+export type ImportDeps = {
   admin: SupabaseClient;
   /** Profile scope to stamp on each created account (e.g. "lectures_only"). */
   scope: string;
-  appUrl: string;
-  /** Send the invite email. Return true on success. Omit to skip sending. */
-  sendEmail?: (to: string, subject: string, body: string) => Promise<boolean>;
-  /** Report only — no account creation, no email send. */
+  /** Report only — no account creation, no DB writes. */
   dryRun?: boolean;
 };
 
 /**
- * Create accounts for every row. Idempotent: an email that already has an auth
- * user is skipped (duplicate), not re-created or re-emailed. One bad row never
- * stops the batch. In dry-run mode nothing is written or sent — the report is
- * what the real run would do.
+ * IMPORT step (no email). Creates the auth account, stamps the scope, and
+ * records a `credential_invites` row in `pending` state. No email is sent here
+ * — sending is a separate, explicit step so Kavya sees the full batch first.
+ * Idempotent: an email that already has an auth user is skipped (duplicate).
  */
-export async function provisionRoster(rows: RosterRow[], deps: ProvisionDeps): Promise<RosterReport> {
-  const { admin, scope, appUrl, sendEmail, dryRun } = deps;
+export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise<RosterReport> {
+  const { admin, scope, dryRun } = deps;
   const report: RosterReport = {
     rowsRead: rows.length,
     created: 0,
@@ -173,13 +170,12 @@ export async function provisionRoster(rows: RosterRow[], deps: ProvisionDeps): P
   };
 
   for (const row of rows) {
-    // Throwaway password — never emailed, replaced by the recovery link.
+    // Throwaway password — never emailed, replaced by the recovery link at send.
     const password = randomBytes(24).toString("base64url");
 
     if (dryRun) {
       report.created++;
       report.createdAccounts.push({ name: row.name, email: row.email, inviteUrl: null });
-      if (sendEmail) report.emailsSent++;
       continue;
     }
 
@@ -209,20 +205,105 @@ export async function provisionRoster(rows: RosterRow[], deps: ProvisionDeps): P
     // Stamp the access scope on the profile (created by on_auth_user_created).
     await admin.from("profiles").update({ scope }).eq("id", userId);
 
-    const inviteUrl = await mintInviteLink(admin, row.email, appUrl);
-
-    let sent = false;
-    if (sendEmail && inviteUrl) {
-      sent = await sendEmail(row.email, "Set your VIBHA password", inviteEmailBody(row.name, row.email, inviteUrl));
-      if (sent) report.emailsSent++;
-      else report.emailsFailed++;
-    } else if (sendEmail && !inviteUrl) {
-      report.emailsFailed++;
-    }
+    // Record the pending credential email — NOT sent yet.
+    await admin.from("credential_invites").upsert(
+      { email: row.email, name: row.name, status: "pending", error_reason: null, sent_at: null },
+      { onConflict: "email" },
+    );
 
     report.created++;
-    report.createdAccounts.push({ name: row.name, email: row.email, inviteUrl });
+    report.createdAccounts.push({ name: row.name, email: row.email, inviteUrl: null });
   }
 
   return report;
+}
+
+export type SendResult = { ok: boolean; error?: string; id?: string };
+export type SendEmailFn = (to: string, subject: string, body: string) => Promise<SendResult>;
+
+export type SendDeps = {
+  admin: SupabaseClient;
+  appUrl: string;
+  /** Send the invite email via the real provider; returns success + any error/id. */
+  sendEmail: SendEmailFn;
+};
+
+/**
+ * SEND step. For each email, mint a FRESH set-your-password link (never stored,
+ * so it can't expire between import and send), send it, and update that row's
+ * status to `sent` (with sent_at) or `failed` (with error_reason). Retries are
+ * per-row: only the emails passed in are touched.
+ */
+export async function sendCredentialEmails(
+  emails: string[],
+  deps: SendDeps,
+): Promise<{ sent: number; failed: number; results: Array<{ email: string; ok: boolean; reason?: string }> }> {
+  const { admin, appUrl, sendEmail } = deps;
+  const results: Array<{ email: string; ok: boolean; reason?: string }> = [];
+  let sent = 0;
+  let failed = 0;
+
+  for (const email of emails) {
+    const { data: invite } = await admin
+      .from("credential_invites")
+      .select("name")
+      .eq("email", email)
+      .maybeSingle();
+    const name = (invite?.name as string | undefined) ?? email;
+
+    const url = await mintInviteLink(admin, email, appUrl);
+    if (!url) {
+      failed++;
+      await admin
+        .from("credential_invites")
+        .update({ status: "failed", error_reason: "Could not mint the set-password link." })
+        .eq("email", email);
+      results.push({ email, ok: false, reason: "Could not mint the set-password link." });
+      continue;
+    }
+
+    const res = await sendEmail(email, "Set your VIBHA password", inviteEmailBody(name, email, url));
+    if (res.ok) {
+      sent++;
+      await admin
+        .from("credential_invites")
+        .update({ status: "sent", sent_at: new Date().toISOString(), error_reason: null })
+        .eq("email", email);
+      results.push({ email, ok: true });
+    } else {
+      failed++;
+      const reason = res.error ?? "Resend send failed.";
+      await admin
+        .from("credential_invites")
+        .update({ status: "failed", error_reason: reason })
+        .eq("email", email);
+      results.push({ email, ok: false, reason });
+    }
+  }
+
+  return { sent, failed, results };
+}
+
+/**
+ * The single Resend sender — the ONLY code path that talks to Resend, so the
+ * real send and the test-email control can never drift apart. Reads the key
+ * from the environment (never a fallback default key). Returns the real Resend
+ * API result (id on success, message on failure).
+ */
+export async function sendResendEmail(to: string, subject: string, body: string): Promise<SendResult> {
+  const key = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
+  if (!key) return { ok: false, error: "RESEND_API_KEY is not configured." };
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from, to: [to], subject, text: body }),
+    });
+    const j = (await res.json().catch(() => null)) as { id?: string; message?: string } | null;
+    if (!res.ok) return { ok: false, error: j?.message ?? `Resend returned HTTP ${res.status}` };
+    return { ok: true, id: j?.id };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Network error reaching Resend." };
+  }
 }

@@ -1,28 +1,36 @@
 #!/usr/bin/env tsx
 /**
- * Roster import CLI — provision student accounts from a name,email CSV.
+ * Roster import CLI — IMPORT and SEND are separate steps.
  *
- *   npm run roster:import -- scripts/roster/roster.csv          (real run)
- *   npm run roster:import -- scripts/roster/roster.csv --dry-run  (report only)
+ *   npm run roster:import -- scripts/roster/roster.csv            (import only)
+ *   npm run roster:import -- scripts/roster/roster.csv --dry-run   (report only)
  *   npm run roster:import -- scripts/roster/roster.csv --scope lectures_only
+ *   npm run roster:import -- --send                              (send all pending)
+ *   npm run roster:import -- --send a@x.com b@y.com              (send specific)
  *
- * Uses the same shared logic as the admin server action (src/lib/auth/roster.ts).
- * Defaults to scope "lectures_only" (the lecture-only cohort). Emails send only
- * if RESEND_API_KEY / RESEND_FROM_EMAIL are configured; otherwise the run
- * creates accounts and logs invite links for manual distribution.
+ * Import creates accounts (scope=lectures_only by default) and records them as
+ * PENDING credential emails — it never emails. Sending is a separate explicit
+ * step. Emails go through the real Resend path (RESEND_API_KEY / RESEND_FROM_EMAIL).
  *
  * Env: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, (optional)
  *      RESEND_API_KEY, RESEND_FROM_EMAIL, NEXT_PUBLIC_APP_URL.
  */
 import { readFileSync, existsSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
-import { parseRosterCsv, provisionRoster } from "../src/lib/auth/roster";
+import {
+  parseRosterCsv,
+  importRoster,
+  sendCredentialEmails,
+  sendResendEmail,
+} from "../src/lib/auth/roster";
 
 const argv = process.argv.slice(2);
-const path = argv.find((a) => !a.startsWith("--")) ?? "scripts/roster/roster.csv";
 const dryRun = argv.includes("--dry-run");
+const sendMode = argv.includes("--send");
 const scopeFlag = argv.find((a) => a.startsWith("--scope="));
 const scope = scopeFlag ? scopeFlag.split("=")[1] : "lectures_only";
+const positional = argv.filter((a) => !a.startsWith("--"));
+const path = sendMode ? "" : positional[0] ?? "scripts/roster/roster.csv";
 
 function loadEnv(): Record<string, string> {
   const out: Record<string, string> = {};
@@ -35,23 +43,6 @@ function loadEnv(): Record<string, string> {
   return { ...process.env, ...out } as Record<string, string>;
 }
 
-async function sendResend(to: string, subject: string, body: string): Promise<boolean> {
-  const env = loadEnv();
-  const key = env.RESEND_API_KEY;
-  const from = env.RESEND_FROM_EMAIL ?? "Welcome <welcome@plms.local>";
-  if (!key) return false;
-  try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], subject, text: body }),
-    });
-    return res.ok;
-  } catch {
-    return false;
-  }
-}
-
 async function main() {
   const env = loadEnv();
   const url = env.NEXT_PUBLIC_SUPABASE_URL;
@@ -60,47 +51,54 @@ async function main() {
     console.error("Missing NEXT_PUBLIC_SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY in .env.local");
     process.exit(1);
   }
+  const admin = createClient(url, key, { auth: { persistSession: false } });
+  const appUrl = env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+
+  if (sendMode) {
+    // SEND mode — explicit, separate from import.
+    const emails = positional.length ? positional : [];
+    if (!emails.length) {
+      const { data: pending } = await admin
+        .from("credential_invites")
+        .select("email")
+        .eq("status", "pending");
+      emails.push(...(pending ?? []).map((p) => p.email));
+    }
+    if (!emails.length) {
+      console.log("No pending credential emails to send.");
+      process.exit(0);
+    }
+    console.log(`Sending credential emails to ${emails.length} address(es)…`);
+    if (env.RESEND_API_KEY) {
+      const r = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail });
+      console.log(`sent ${r.sent}, failed ${r.failed}`);
+      for (const x of r.results) console.log(`  ${x.ok ? "✓" : "✗"} ${x.email}${x.reason ? ` — ${x.reason}` : ""}`);
+    } else {
+      console.log("RESEND_API_KEY not set — emails will NOT send.");
+    }
+    process.exit(0);
+  }
+
+  // IMPORT mode.
   if (!existsSync(path)) {
     console.error(`Roster CSV not found: ${path}`);
     process.exit(1);
   }
-
   const text = readFileSync(path, "utf8");
   const parsed = parseRosterCsv(text);
-  const appUrl = env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
-  const hasResend = Boolean(env.RESEND_API_KEY);
 
-  console.log(dryRun ? "DRY RUN — no accounts created, no emails sent" : "REAL RUN");
+  console.log(dryRun ? "DRY RUN — no accounts created" : "IMPORT (no email)");
   console.log(`roster: ${path} · scope: ${scope} · rows: ${parsed.rows.length}`);
-  if (!hasResend) console.log("note: RESEND_API_KEY not set — emails will NOT send (invite links logged instead)");
 
-  const admin = createClient(url, key, { auth: { persistSession: false } });
-  const report = await provisionRoster(parsed.rows, {
-    admin,
-    scope,
-    appUrl,
-    sendEmail: hasResend ? sendResend : undefined,
-    dryRun,
-  });
+  const report = await importRoster(parsed.rows, { admin, scope, dryRun });
 
   console.log("\n--- REPORT ---");
   console.log(`rows read:        ${parsed.rows.length}`);
-  console.log(`created:          ${report.created}`);
+  console.log(`created (pending): ${report.created}`);
   console.log(`duplicates:       ${parsed.duplicates.length + report.duplicatesSkipped}`);
   console.log(`invalid emails:   ${parsed.invalid.length}`);
-  console.log(`emails sent:      ${report.emailsSent}`);
-  console.log(`emails failed:    ${report.emailsFailed}`);
   console.log(`empty names:      ${parsed.emptyNames.length}`);
-
-  for (const f of [...parsed.invalid, ...parsed.duplicates, ...report.failures]) {
-    console.log(`  SKIP row ${f.row || "?"}: ${f.email} — ${f.reason}`);
-  }
-  if (!dryRun && !hasResend) {
-    console.log("\nInvite links (send these manually until Resend is configured):");
-    for (const c of report.createdAccounts) {
-      console.log(`  ${c.email}  ${c.inviteUrl ?? "(no link minted)"}`);
-    }
-  }
+  console.log("\nNext: review the batch, then run `npm run roster:import -- --send`.");
 }
 
 main().catch((e) => {
