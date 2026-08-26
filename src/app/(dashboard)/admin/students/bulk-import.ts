@@ -179,7 +179,7 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   //    the existing profile so repeated clicks don't pollute the accounts table.
   const { data: existing } = await admin
     .from("profiles")
-    .select("id")
+    .select("id, role")
     .eq("email", to)
     .maybeSingle();
 
@@ -199,7 +199,14 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   }
 
   // 2. Mark it unmistakably as a test account, scoped like a real student.
-  await admin.from("profiles").update({ is_test: true, scope: "lectures_only" }).eq("id", userId);
+  //    NEVER downgrade an ADMIN's scope: stamping scope=lectures_only onto a
+  //    role=admin profile (which happens when the admin tests with their own
+  //    email) recreates the /dashboard <-> /admin infinite redirect loop.
+  const isExistingAdmin = existing?.role === "admin";
+  await admin
+    .from("profiles")
+    .update(isExistingAdmin ? { is_test: true } : { is_test: true, scope: "lectures_only" })
+    .eq("id", userId);
 
   // 3. A real 8-char password through the SAME generator as the real send —
   //    set on the auth user + returned so the test email contains it verbatim.
