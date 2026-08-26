@@ -1,29 +1,22 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 SENDER DOMAIN — blocks any real student invite (2026-08-26)
+## 🚨 SUPABASE AUTH REDIRECT URL — blocks a real invite (2026-08-26, verified live)
 
-The Resend account has exactly ONE verified sending domain: **`bindcat.com`** —
-a leftover from before the VIBHA rename. `vibhaschoolofpsychology.in` (the
-code's default from-address) is NOT verified, so any real send under the VIBHA
-brand returns 403 "domain not verified".
+The invite link is built correctly (`generateLink` with
+`redirectTo=https://vibhapsychology.com/set-password`), but Supabase **ignores**
+it and emits `redirect_to=http://localhost:3000` in the actual link. Root cause:
+the Supabase project's Auth **Site URL / Redirect URLs** are still the localhost
+defaults, so `vibhapsychology.com` is not in the allowlist and Supabase falls
+back to localhost. A real student clicking their link would land on their own
+machine, not the set-password page.
 
-1. **Verify a VIBHA sending domain in Resend** (resend.com → Domains):
-   `vibhaschoolofpsychology.in` (preferred — it's the code default) or
-   `vibhapsychology.com`, including SPF/DKIM.
-2. Until then, **do not send real student invites** — they would go out under
-   `bindcat.com`, which a real student would reasonably mark as spam. The
-   `[TEST]` email can still be sent from the verified domain for internal checks.
+Fix (Supabase Dashboard → Authentication → URL Configuration):
+1. **Site URL** → `https://vibhapsychology.com`
+2. **Redirect URLs** → add `https://vibhapsychology.com/**` (and the exact
+   `https://vibhapsychology.com/set-password`).
 
-## ✅ Human E2E for the invite (needs a real inbox + browser)
-
-The set-password flow is now built (`/set-password`), but the full click-through
-can't be done headless:
-1. On `/admin/roster`, "Send test email" to your own address.
-2. Open the email, click the link → it should land on a real "Set your password"
-   page (not a 404).
-3. Set a password, then sign in → confirm it lands on the lecture-only view.
-4. Send a second test email → confirm the first link no longer works, the new
-   one does.
+One line, in the dashboard — no code change. Until this is done, **do not send
+real student invites** (the link would redirect to localhost and fail).
 
 ## 🚨 ROSTER — 2026-08-26
 
