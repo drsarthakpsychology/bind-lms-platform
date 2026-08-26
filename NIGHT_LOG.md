@@ -4721,3 +4721,63 @@ Verified against the REAL database (Supabase MCP), not file timestamps:
   await client.query(...)` — node-postgres returns `{ rows }`, not `{ data }`,
   so `already` is `undefined` and `already.length` throws. The crash is on the
   FIRST file's existence check, before any SQL runs.
+
+## 2026-08-26 — merge + deploy to production
+
+- Part 0 verified against the REAL DB: `_migrations_applied` had 7 entries (no
+  wrong migrations recorded); the 5 wrong migrations' tables already existed
+  (harmless, left); the 4 real migrations were NOT applied. Fixed
+  apply-migrations.ts (`{ data }`→`{ rows }`, named-migration guard, APPROVED
+  list → the 4 real migrations) and applied them; verified columns in schema
+  (profiles.scope/status/block_reason, credential_invites, rubric_dimensions
+  calibration columns; ledger 11).
+- Gate green: lint 0, tsc clean, 530 tests, build exit 0. Local boot smoke:
+  homepage/login/paused 200, admin routes 307-redirect. No hardcoded secrets.
+- Merged to main via PR #2 (merge commit 97dfdd9). Vercel auto-deployed on the
+  main push; production deployment Ready.
+- Production smoke test against vibhapsychology.com: homepage 200, login 200,
+  paused 200 — the new code (incl. /paused) is live.
+
+Blockers that genuinely need Kavya (not code):
+- RESEND_API_KEY is absent everywhere (.env.local, Vercel, disk) — the email
+  SEND feature cannot run until it's set. Import/review work; send is blocked.
+- Browser E2E (blocked-status live-session rejection, lecture-only direct-URL
+  rejection, video network-tab bitrate switch) needs a real browser + session;
+  the code paths + unit tests are green, the live click-through is the human
+  step.
+
+## 2026-08-26 — simplify student course experience
+
+Course page (/courses/[courseId]):
+- DELETED the large "Continue learning" card and the "Not started · N lessons"
+  box — the two elements that contradicted each other and duplicated the
+  highlighted row. Progress now lives in ONE place: the page header
+  ("X of Y lessons complete").
+- One highlighted row (peach fill via a new `highlight` variant on
+  MobileListItem) with a plain "Start"/"Continue" label — no decorative arrow.
+- Status consistency: course + week status now derive from a single `started`
+  flag via src/lib/course/status.ts (deriveCourseStatus/deriveWeekStatus), so
+  "Not started" and "In progress" can no longer appear together. 4 tests pin it.
+- Assignments: drafts (unpublished) are filtered from the student view; the
+  confusing "Draft" chip is gone; published-unsubmitted now reads "Not
+  submitted yet".
+
+Lesson page (/courses/.../lessons/...):
+- ONE primary action moved directly below the video ("Mark complete" / "Next
+  lesson" / "Finish course"). Footer is now persistent Previous/Next.
+- Previous/Next follow (week, order_index) so the last lesson of Week 1 flows
+  into Week 2 (was order_index-only — a dead end at week boundaries).
+- Previous is disabled (not hidden) on the first lesson. New LessonNav adds
+  left/right arrow-key navigation (ignored while the video is focused). Mobile
+  keeps it pinned above the bottom nav.
+
+Dashboard:
+- Practice section condensed to 2 tools (Judgment Calls + Consulting Room) +
+  "All practice" link (was 3). Course resume still leads.
+- "Previewing as a student" banner now explicitly requires role admin.
+
+Sidebar: removed Passport + Record from STUDENT_ITEMS (skills_passport flag
+off / not released) — routes remain, students just aren't pointed at empty
+surfaces. Admin nav untouched.
+
+Gate: lint 0, tsc clean, 534 tests, build exit 0.

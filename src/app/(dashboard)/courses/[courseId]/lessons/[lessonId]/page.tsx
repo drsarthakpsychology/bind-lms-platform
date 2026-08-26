@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronDown, ChevronLeft, FileText, Paperclip } from "lucide-react";
+import { ChevronDown, ChevronLeft, FileText, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -18,10 +18,10 @@ import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/ass
 import { SubmissionForm } from "./submission-form";
 import { LessonTabs } from "./lesson-tabs";
 import { LessonPicker } from "./lesson-picker";
+import { LessonNav } from "./lesson-nav";
 import { MaterialsList } from "./materials-list";
 import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { QuizCheck } from "@/components/practice/quiz-check";
@@ -71,7 +71,7 @@ export default async function LessonPage({
       supabase.from("courses").select("id, title").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, title, order_index, video_storage_path")
+        .select("id, title, order_index, video_storage_path, week")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase.auth.getUser(),
@@ -126,7 +126,16 @@ export default async function LessonPage({
   // separate, asynchronous admin workflow that shouldn't stall a student
   // mid-course — they can always move on to the next lesson.
 
-  const playable = (courseLessons ?? []).filter((l) => l.video_storage_path);
+  // Course order = (week, order_index), so Previous/Next cross week boundaries:
+  // the last lesson of Week 1 flows into the first lesson of Week 2.
+  const playable = (courseLessons ?? [])
+    .filter((l) => l.video_storage_path)
+    .sort((a, b) => {
+      const wa = (a as { week?: number }).week ?? 1;
+      const wb = (b as { week?: number }).week ?? 1;
+      if (wa !== wb) return wa - wb;
+      return a.order_index - b.order_index;
+    });
   const hasVideo = Boolean((lesson as { video_storage_path?: string | null } | null)?.video_storage_path);
   const currentIndex = playable.findIndex((l) => l.id === lessonId);
   const prevLesson = currentIndex > 0 ? playable[currentIndex - 1] : null;
@@ -160,15 +169,15 @@ export default async function LessonPage({
   }));
 
   // One forward action, labelled by where the student is:
-  //   mid-course            → Next lesson →
-  //   last, not complete    → Finish course →
-  //   last, already complete → Back to my courses → (secondary variant)
+  //   not complete          → Mark complete
+  //   complete, mid-course  → Next lesson
+  //   complete, last        → Finish course
   const lastLessonCompleted = !nextLesson && lessonComplete;
-  const forwardLabel = lastLessonCompleted
-    ? "Back to my courses"
-    : nextLesson
+  const forwardLabel = lessonComplete
+    ? nextLesson
       ? "Next lesson"
-      : "Finish course";
+      : "Finish course"
+    : "Mark complete";
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-8 pb-32 lg:pb-0">
@@ -236,6 +245,19 @@ export default async function LessonPage({
                 </p>
               </div>
             )}
+          </div>
+
+          {/* ONE primary action, directly below the video — the thing to do
+              next. Everything else collapses below it. */}
+          <div className="mt-4">
+            <ContinueControl
+              lessonId={lessonId}
+              courseId={courseId}
+              continueTarget={continueTarget}
+              label={forwardLabel}
+              isFinalLesson={!nextLesson}
+              alreadyComplete={lastLessonCompleted}
+            />
           </div>
         </>
       )}
@@ -313,55 +335,22 @@ export default async function LessonPage({
         </section>
       )}
 
-      {/* Footer: prev + a single forward action. Exactly one forward button.
-          Desktop keeps this in-flow; mobile pins the forward control in a
-          sticky bar (below) so it stays thumb-reachable past the video + quiz. */}
-      <div className="hidden flex-wrap items-center justify-between gap-3 lg:flex">
-        {prevLesson ? (
-          <Button asChild variant="outline" size="sm">
-            <Link href={`/courses/${courseId}/lessons/${prevLesson.id}`}>
-              <ArrowLeft className="size-4" aria-hidden />
-              Previous lesson
-            </Link>
-          </Button>
-        ) : null}
-
-        <ContinueControl
-          lessonId={lessonId}
-          courseId={courseId}
-          continueTarget={continueTarget}
-          label={forwardLabel}
-          isFinalLesson={!nextLesson}
-          alreadyComplete={lastLessonCompleted}
+      {/* Persistent Previous / Next, with arrow-key navigation. Desktop
+          in-flow; mobile pinned above the bottom nav, thumb-reachable. */}
+      <div className="hidden lg:block">
+        <LessonNav
+          prevHref={prevLesson ? `/courses/${courseId}/lessons/${prevLesson.id}` : null}
+          nextHref={continueTarget}
+          nextLabel={nextLesson ? "Next" : "Finish course"}
         />
       </div>
 
-      {/* Mobile — the single forward control, pinned above the bottom nav. */}
-      <MobileStickyAction
-        offsetForNav
-        className="lg:hidden"
-        meta={lessonPosition ?? undefined}
-      >
-        {prevLesson ? (
-          <Button asChild variant="outline" size="lg" className="shrink-0 px-4">
-            <Link
-              href={`/courses/${courseId}/lessons/${prevLesson.id}`}
-              aria-label="Previous lesson"
-            >
-              <ArrowLeft className="size-5" aria-hidden />
-            </Link>
-          </Button>
-        ) : null}
-        <div className="min-w-0 flex-1 [&>button]:h-11 [&>button]:w-full">
-          <ContinueControl
-            lessonId={lessonId}
-            courseId={courseId}
-            continueTarget={continueTarget}
-            label={forwardLabel}
-            isFinalLesson={!nextLesson}
-            alreadyComplete={lastLessonCompleted}
-          />
-        </div>
+      <MobileStickyAction offsetForNav className="lg:hidden" meta={lessonPosition ?? undefined}>
+        <LessonNav
+          prevHref={prevLesson ? `/courses/${courseId}/lessons/${prevLesson.id}` : null}
+          nextHref={continueTarget}
+          nextLabel={nextLesson ? "Next" : "Finish course"}
+        />
       </MobileStickyAction>
 
       {/* Assignment tab */}
