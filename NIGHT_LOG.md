@@ -24,6 +24,27 @@ can stage a reveal: a tool or lesson can be **hidden**, **live-but-locked**
 
 ---
 
+## 2026-08-26 — LESSON DATA RECOVERY (incident)
+
+The 4 live-course lessons were found deleted (0 live rows, 19 dead tuples) —
+likely deleted via the builder's Delete button during testing. No DB backup
+existed (the R2 backup bucket `plms-backups` is empty), and `pg_dirtyread` is
+not available. Recovered by reconstructing the rows:
+
+- Re-created all 4 lessons (original ids/titles/order/weeks, `status='unlocked'`).
+- The MSE lesson's source MP4 + R2 HLS were intact; re-created the
+  `media_assets` row (provider r2, bucket plms-videos) and verified
+  end-to-end: playback → hls, master/variant/segment 200.
+- The 3 readings' text was DB-only (never in git/files) → **re-drafted**
+  plain, accurate readings (MSE describing-not-labelling; the 5Ps
+  formulation; MHA 2017 ethics primer). Kavya may edit in the builder.
+
+**Safeguard needed:** the backup system exists (scripts/restore.ts +
+verify-backup.ts) but no dumps are in the bucket — the backup cron has never
+run. Set it up so a future accident is recoverable.
+
+---
+
 ## 2026-08-26 — DASHBOARD refresh/flicker — core cause found + fixed (PR #11 + #12)
 
 Six parallel investigation agents converged on the root cause, and the DB
