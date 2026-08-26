@@ -1,5 +1,26 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
+## 🧭 COURSES vs MODULES (the naming, made clear)
+
+You asked which to keep live. Here's the plain answer:
+
+- **Courses (keep)** — the real curriculum. `Courses` → each has `Lessons`
+  (video/reading), materials, assignments, and enrolled students. You build
+  them in **OpenBuilder** (`/admin/courses`), and students see them as their
+  lectures. Gated by Publish + per-lesson status (Hidden / Yet to be live /
+  Unlocked). **This is the content — keep it.**
+- **Modules (hidden — safe to delete later)** — an *unimplemented* skeleton.
+  It's an access/scheduling layer (publish/schedule/grant access) with **no
+  content editor, no rows, and no code that writes its content**. Students saw
+  an empty "No modules published yet" page. I turned its flag **off** and
+  removed it from the admin nav, so it's out of the way. The tables still
+  exist — if you never use it, we can drop them (`modules`, `module_items`,
+  `module_access`) with one SQL call.
+
+**Rule of thumb:** anything under **Courses → OpenBuilder** is your real
+content. **Practice tools** on `/admin/flags` are the drills you switch on.
+**Modules** is the one thing to ignore/delete.
+
 ## 🚨 ROSTER — 2026-08-26 (PASSWORD FLOW — no more links)
 
 **The link-based invite is DEAD — replaced by per-student 8-char passwords.** The
