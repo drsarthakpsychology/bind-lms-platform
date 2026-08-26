@@ -73,6 +73,11 @@ export function TutorChat() {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listRef = React.useRef<HTMLDivElement>(null);
   const voiceAskedRef = React.useRef(false);
+  // Streaming accumulators (refs so the React immutability rule is happy while
+  // the SSE reader loop mutates them across setMessages closures).
+  const streamSourcesRef = React.useRef<TutorSource[]>([]);
+  const streamAiUsedRef = React.useRef(false);
+  const streamContentRef = React.useRef("");
 
   // Keep the newest message in view as the conversation grows (and while the
   // assistant is "typing") so the latest answer isn't scrolled out of frame.
@@ -120,26 +125,92 @@ export function TutorChat() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ q, limit: 6 }),
       });
-      const body = await res.json();
-      if (!res.ok) throw new Error(body.error ?? "request failed");
-
-      let content: string;
-      if (body.answer) {
-        content = body.answer;
-      } else if (body.sources?.length) {
-        content =
-          "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again.";
-      } else {
-        content = "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.";
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(j?.error ?? "request failed");
       }
-      setMessages((m) => [
-        ...m,
-        { role: "assistant", content, sources: body.sources ?? [], aiUsed: body.aiUsed ?? false },
-      ]);
-      // In voice mode, read the answer back — a natural back-and-forth.
-      if (voiceAskedRef.current) {
-        voiceAskedRef.current = false;
-        speakAnswer(content);
+      const contentType = res.headers.get("content-type") ?? "";
+
+      if (contentType.includes("text/event-stream")) {
+        // Streaming (Part 6): sources arrive in a meta event, then answer
+        // tokens stream into the last assistant message as they arrive.
+        const reader = res.body!.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+        streamSourcesRef.current = [];
+        streamAiUsedRef.current = false;
+        streamContentRef.current = "";
+        setMessages((m) => [...m, { role: "assistant", content: "", sources: [], aiUsed: false }]);
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const events = buffer.split("\n\n");
+          buffer = events.pop() ?? "";
+          for (const ev of events) {
+            const line = ev.trim();
+            if (!line.startsWith("data:")) continue;
+            let j: { type?: string; sources?: TutorSource[]; aiUsed?: boolean; text?: string; answer?: string | null; provider?: string | null };
+            try {
+              j = JSON.parse(line.slice(5).trim());
+            } catch {
+              continue;
+            }
+            if (j.type === "meta") {
+              streamSourcesRef.current = j.sources ?? [];
+              streamAiUsedRef.current = j.aiUsed ?? false;
+            } else if (j.type === "delta") {
+              const text = j.text ?? "";
+              streamContentRef.current += text;
+              setMessages((m) => {
+                const last = m[m.length - 1];
+                if (last?.role !== "assistant") return m;
+                return [...m.slice(0, -1), { ...last, content: last.content + text }];
+              });
+            } else if (j.type === "done") {
+              // Finalize sources/aiUsed (answer may be null on provider failure).
+              setMessages((m) => {
+                const last = m[m.length - 1];
+                if (last?.role !== "assistant") return m;
+                const content =
+                  j.answer ||
+                  streamContentRef.current ||
+                  (streamSourcesRef.current.length
+                    ? "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again."
+                    : "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.");
+                return [...m.slice(0, -1), { ...last, content, sources: streamSourcesRef.current, aiUsed: streamAiUsedRef.current && j.provider != null }];
+              });
+            }
+          }
+        }
+        if (voiceAskedRef.current) {
+          voiceAskedRef.current = false;
+          speakAnswer(streamContentRef.current);
+        }
+      } else {
+        // Fast path (cached / retrieval-only) — plain JSON.
+        const body = (await res.json()) as {
+          answer?: string | null;
+          sources?: TutorSource[];
+          aiUsed?: boolean;
+        };
+        let content: string;
+        if (body.answer) {
+          content = body.answer;
+        } else if (body.sources?.length) {
+          content =
+            "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again.";
+        } else {
+          content = "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.";
+        }
+        setMessages((m) => [
+          ...m,
+          { role: "assistant", content, sources: body.sources ?? [], aiUsed: body.aiUsed ?? false },
+        ]);
+        if (voiceAskedRef.current) {
+          voiceAskedRef.current = false;
+          speakAnswer(content);
+        }
       }
     } catch {
       setMessages((m) => [

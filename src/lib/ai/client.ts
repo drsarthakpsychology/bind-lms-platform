@@ -267,6 +267,100 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   throw new AiUnavailableError(opts.workload);
 }
 
+/**
+ * Token-streaming chat (Performance Pass Part 6). Yields text deltas as they
+ * arrive for the conversational surfaces (Psychology Tutor), so the client
+ * renders incrementally instead of waiting for the full payload.
+ *
+ * OpenAI-compatible SSE only. First-byte-wins failover: once a provider sends
+ * its first token we commit to it (a mid-stream provider death surfaces to the
+ * caller as the stream ending early — the client can show a truncated state).
+ */
+export async function* aiChatStream(
+  messages: AiChatMessage[],
+  opts: AiRequestOptions,
+): AsyncGenerator<string, void, unknown> {
+  if (!isEnabled()) {
+    yield fixtureReply(opts.workload).patient;
+    return;
+  }
+  const allCandidates = providersFor("stream", opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  const candidates = (opts.providerId ? allCandidates.filter((p) => p.id === opts.providerId) : allCandidates).filter(
+    (p) => p.protocol !== "gemini", // native Gemini has a different stream format; stay on OpenAI-compatible lanes
+  );
+  if (!candidates.length) throw new AiUnavailableError(opts.workload);
+
+  let lastErr: Error | null = null;
+  for (const provider of candidates) {
+    const startedAt = Date.now();
+    try {
+      const model = modelForTier(provider, opts.taskTier ?? "normal");
+      const url = `${provider.baseUrl.replace(/\/$/, "")}/chat/completions`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${keyFor(provider)}` },
+        body: JSON.stringify({
+          model,
+          messages,
+          max_tokens: opts.maxTokens ?? 1024,
+          temperature: opts.temperature ?? 0.7,
+          stream: true,
+        }),
+        cache: "no-store",
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (res.status === 429 || res.status >= 500) {
+        const e = new Error(`provider ${provider.id} ${model} stream responded ${res.status}`);
+        (e as unknown as { status: number }).status = res.status;
+        throw e;
+      }
+      if (!res.ok) throw new Error(`provider ${provider.id} stream responded ${res.status}`);
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error(`provider ${provider.id} returned no body`);
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let finished = false;
+      let total = "";
+      while (!finished) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed.startsWith("data:")) continue;
+          const payload = trimmed.slice(5).trim();
+          if (payload === "[DONE]") {
+            finished = true;
+            break;
+          }
+          try {
+            const j = JSON.parse(payload) as { choices?: Array<{ delta?: { content?: string } }> };
+            const delta = j.choices?.[0]?.delta?.content;
+            if (typeof delta === "string" && delta.length) {
+              total += delta;
+              yield delta;
+            }
+          } catch {
+            // skip malformed / keep-alive events
+          }
+        }
+      }
+      const latencyMs = Date.now() - startedAt;
+      void recordProviderOutcome(provider.id, true, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: total.length, latencyMs, status: "ok" });
+      return;
+    } catch (e) {
+      lastErr = e as Error;
+      const latencyMs = Date.now() - startedAt;
+      void recordProviderOutcome(provider.id, false, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: "error" });
+    }
+  }
+  throw lastErr ?? new AiUnavailableError(opts.workload);
+}
+
 /** Convenience: fetch the list of currently-available providers (for admin UI). */
 export function providerStatus(): Array<{ id: string; configured: boolean; available: boolean }> {
   return availableProviders().map((p) => ({
