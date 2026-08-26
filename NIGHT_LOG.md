@@ -4702,3 +4702,22 @@ Gate green on every commit: lint 0, tsc clean, 530 tests, build exit 0.
 Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker), apply four
 additive migrations, then the human E2E (test email → import → login → block
 mid-session → confirm very-next-request rejection).
+
+## 2026-08-26 — Part 0 DB + migration-mess investigation
+
+Verified against the REAL database (Supabase MCP), not file timestamps:
+- `_migrations_applied` ledger: 7 entries (all 2026-08-13, from apply-pending):
+  mse_attempts_slug, formulation_attempts_slug, sct_items_slug,
+  mse_stimuli_expert_coding, mse_stimuli_title, enquiries, rls_migrations_applied.
+  NONE of the 5 "wrong" migrations are recorded.
+- The 5 wrong migrations' TABLES already exist with data (media_assets,
+  certificates, materials+submission_files, psych_* 152 drugs / 1756 fields).
+  They were applied by an earlier mechanism (psych:seed scripts), not this
+  crashed run. Harmless + idempotent → leave them.
+- The 4 REAL migrations are NOT applied: profiles has no scope/status/
+  block_reason; credential_invites table missing; rubric_dimensions has no
+  inter_model_agreement/variance/last_auto_at.
+- apply-migrations.ts crash root cause: line 97 `const { data: already } =
+  await client.query(...)` — node-postgres returns `{ rows }`, not `{ data }`,
+  so `already` is `undefined` and `already.length` throws. The crash is on the
+  FIRST file's existence check, before any SQL runs.
