@@ -1,3 +1,58 @@
+## 2026-08-27 — PERFORMANCE PASS — all 16 parts shipped (PR #23)
+
+All 16 parts implemented + committed on worktree branch; see
+PERFORMANCE_FIXES.md for the full before/after. Summary:
+
+1. N+1 — none in the student path; list-derive counts handled in Part 3.
+2. Indexes — 15 added (perf_indexes.sql), EXPLAIN-verified (seq→index).
+3. Pagination — safety .limit() caps on 9 unbounded admin queries (cursor
+   deferred, cohort small).
+4. Images — nothing to fix (zero raster images).
+5. Lazy-load — livekit (557KB) + admin editors out of student bundles.
+6. Streaming — aiChatStream + Psychology Tutor SSE (patient turn deferred).
+7. Compression — already active (Vercel Brotli), verified.
+8. Roster batching — importRoster + card reorder now batch; write errors surfaced.
+9. Circuit breaker — latency EMA trip + cold-start DB seed + transport-only counts.
+10. Optimistic UI — wall/journal/roster; lesson-complete + BLOCKED stay server-checked.
+11. Caching — library + psychopharm unstable_cache (1h, tag-revalidated).
+12. Mobile overflow — break-words on all user-content surfaces.
+13. Re-renders — React.memo on sim chat + stable callbacks.
+14. Type weights — font-black→bold; font-medium sweep documented (262 sites, design-led).
+15. LCP — hero animates y only (opaque first paint).
+16. Prefetch — next-lesson/Continue/course prefetch.
+
+QUEUE.md: 12 items ticked (verified DONE by audit: T240/262/263/270/271/276/
+280/281/282/284/285/288). 46 remain: 21 TRACTABLE, 12 LARGE, 10 BLOCKED, 3
+PERF-OVERLAP (T248/249/250 — partly covered by the perf work; need explicit
+cost-controls/observability follow-ups).
+
+---
+
+## 2026-08-27 — PERFORMANCE PASS (16 parts) — audit wave launched
+
+Kavya asked for a full performance pass (16 numbered parts) + completing
+QUEUE.md. Orchestrated: 9 parallel read-only audit subagents launched via
+Workflow (N+1/pagination, indexes, images/bundle, streaming, compression/
+batching, circuit-breaker/optimistic-UI, caching/mobile, re-renders/type/LCP/
+prefetch, QUEUE triage).
+
+Independent baselines taken while audits run:
+- **Part 7 (compression) — ALREADY GOOD.** Vercel edge compresses: `/api/health`
+  → `content-encoding: br` (79 bytes); landing HTML → `content-encoding: br`
+  (10,669 bytes). No double-compression of images (they're served raw). Nothing
+  to change.
+- **Part 2 (indexes) baseline.** Full pg_indexes inventory taken. Existing
+  coverage is good (FKs, unique keys, journal (user_id,created_at), wall
+  (is_pinned,created_at), submissions (assignment_id,user_id), lessons
+  (course_id,week)). Candidate gaps to verify against real queries:
+  `submissions(status[,submitted_at])` for review queues, `lessons(course_id,
+  order_index)` composite, `profiles(status)`/`credential_invites(status)` for
+  admin lists — only add if the code actually filters/sorts on those.
+
+Full gate green at audit launch (lint/tsc/535 tests/build).
+
+---
+
 ## 2026-08-27 — /today removed as front door + delete-reappears bug fixed
 
 Two asks from Kavya:
@@ -38,6 +93,19 @@ show `DELETE /rest/v1/lessons → 204` for the 4 lesson IDs, all still present.
   when `res.ok` (they optimistically removed on any response).
 
 Gate: lint 0, tsc clean, 535 tests, build exit 0 (108 routes).
+
+VERIFIED LIVE on vibhapsychology.com (merged PR #22 → git-triggered production
+deploy `qit3uqbqy`, Ready + aliased). Clicked through with real sessions:
+
+- `/today` → redirects to `/dashboard` ✓; no "Today" nav link anywhere (desktop
+  sidebar + mobile tab bar: Lectures / Practice) ✓; `/practice` still shows its
+  "Recommended for you" resume card ✓; zero console errors.
+- **Delete fix proven end-to-end:** created a throwaway hidden lesson
+  (`DELETE-CHECK`, id 44cf8599…) + a dedicated test ADMIN (`deletecheck@bindcat.com`,
+  is_test — Kavya's live admin session untouched). Logged into the real builder
+  as that admin, clicked Delete → confirm, and the lesson disappeared AND stayed
+  gone after a full reload. DB confirms `leftover = 0`. The test admin account
+  was then deleted via the service-role API (nothing left behind).
 
 ---
 

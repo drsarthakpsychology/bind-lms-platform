@@ -217,6 +217,7 @@ export default async function DashboardPage() {
         {continueCourse ? (
           <Link
             href={resumeHref ?? `/courses/${continueCourse.course.id}`}
+            prefetch
             className={cn(cardVariants({ variant: "interactive" }), "p-6")}
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -324,6 +325,7 @@ export default async function DashboardPage() {
               <Reveal key={course.id} delay={0.15 + Math.min(i, 3) * 0.05} className="h-full">
                 <Link
                   href={`/courses/${course.id}`}
+                  prefetch
                   className={cn(
                     cardVariants({ variant: "interactive" }),
                     "h-full p-5",

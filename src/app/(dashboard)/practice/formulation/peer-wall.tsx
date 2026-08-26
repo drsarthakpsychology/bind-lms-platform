@@ -106,11 +106,11 @@ export function PeerWall() {
         <ul className="space-y-3">
           {posts.map((p) => (
             <li key={p.id} className="rounded-md border-2 border-border bg-card p-4">
-              <div className="flex items-center justify-between text-caption text-muted-foreground">
-                <span className="font-medium text-foreground">{p.caseTitle}</span>
-                <span>Anonymous · {new Date(p.createdAt).toLocaleDateString()}</span>
+              <div className="flex items-center justify-between gap-2 text-caption text-muted-foreground">
+                <span className="min-w-0 break-words font-medium text-foreground">{p.caseTitle}</span>
+                <span className="shrink-0">Anonymous · {new Date(p.createdAt).toLocaleDateString()}</span>
               </div>
-              <p className="mt-2 whitespace-pre-wrap text-small">{p.narrative}</p>
+              <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.narrative}</p>
             </li>
           ))}
         </ul>

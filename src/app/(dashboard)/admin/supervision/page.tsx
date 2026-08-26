@@ -16,8 +16,9 @@ export default async function AdminSupervisionPage() {
       .from("supervision_entries")
       .select("id, user_id, activity, hours, date, supervisor_name, competency_id, signoff_status")
       .eq("signoff_status", "requested")
-      .order("date", { ascending: false }),
-    admin.from("profiles").select("id, email"),
+      .order("date", { ascending: false })
+      .limit(100),
+    admin.from("profiles").select("id, email").limit(500),
   ]);
   const emailBy = new Map((profiles ?? []).map((p) => [p.id, p.email]));
 

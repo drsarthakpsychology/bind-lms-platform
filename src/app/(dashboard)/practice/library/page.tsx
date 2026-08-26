@@ -17,7 +17,7 @@ export default async function LibraryPage(props: {
   const sp = await props.searchParams;
   const query = sp.q ?? "";
   const tag = sp.tag ?? "";
-  const all = getLibraryDocs();
+  const all = await getLibraryDocs();
   const searched = filterLibrary(all, query);
   const filtered = tag ? filterLibraryByTag(searched, tag) : searched;
 

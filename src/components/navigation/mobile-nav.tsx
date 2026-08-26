@@ -44,7 +44,7 @@ export function MobileNav({
       <SheetContent side="left" className="w-72 p-0">
         <SheetHeader className="border-b-2 border-border px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
           <SheetTitle className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
+            <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-bold text-primary-foreground">
               {BRAND.shortName.charAt(0)}
             </span>
             <span>{BRAND.shortName}</span>

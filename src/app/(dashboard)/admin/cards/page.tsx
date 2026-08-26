@@ -17,7 +17,8 @@ export default async function AdminCardsPage() {
     .from("cards")
     .select("id, front, back, source, status, approved, lesson_id, sort_order, created_at")
     .order("sort_order", { ascending: true })
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(500);
 
   const rows: CardRow[] = (data ?? []).map((c) => ({
     id: c.id,

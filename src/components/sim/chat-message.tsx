@@ -11,7 +11,7 @@ import { useReducedMotion } from "@/lib/motion";
  * The patient's typing indicator (three bouncing dots) is the same quiet
  * bubble with an sr-only label for screen readers.
  */
-export function ChatMessage({
+export const ChatMessage = React.memo(function ChatMessage({
   role,
   content,
   typing,
@@ -59,4 +59,4 @@ export function ChatMessage({
       </div>
     </div>
   );
-}
+});

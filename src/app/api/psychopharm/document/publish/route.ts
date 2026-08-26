@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import type { MedicationDocument } from "@/lib/psychopharm/document";
@@ -46,6 +47,10 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 403 });
   }
+
+  // The published doc is served from a shared cache (Part 11) — drop it so
+  // students see the freshly published version immediately.
+  revalidateTag("psych-doc", "hours");
 
   return NextResponse.json({ ok: true, result: published });
 }

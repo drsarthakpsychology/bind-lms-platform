@@ -48,8 +48,14 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
   const [testBusy, setTestBusy] = React.useState(false);
   const [testResult, setTestResult] = React.useState<{ ok: boolean; detail: string } | null>(null);
 
-  const pending = rows.filter((r) => r.status === "pending");
-  const failed = rows.filter((r) => r.status === "failed");
+  // Local copy so send/reset reconcile rows in place (no full page reload after
+  // a slow Resend loop). The server action also revalidates /admin/roster, so
+  // the next full navigation shows server-authoritative rows.
+  const [localRows, setLocalRows] = React.useState<InviteRow[]>(rows);
+  const [sendingEmails, setSendingEmails] = React.useState<Set<string>>(new Set());
+
+  const pending = localRows.filter((r) => r.status === "pending");
+  const failed = localRows.filter((r) => r.status === "failed");
 
   function toggle(email: string) {
     setSelected((prev) => {
@@ -63,16 +69,30 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
   async function runSend(emails: string[], label: string) {
     setBusy(true);
     setFeedback(null);
+    setSendingEmails(new Set(emails));
     const res = await sendCredentialEmailsAction(emails);
+    setSendingEmails(new Set());
     setBusy(false);
     if (res.error) {
       setFeedback(res.error);
-    } else {
-      setFeedback(`${label}: sent ${res.sent}, failed ${res.failed}.`);
-      setSelected(new Set());
+      return;
     }
-    // Re-fetch to reflect the new statuses.
-    window.location.reload();
+    setFeedback(`${label}: sent ${res.sent}, failed ${res.failed}.`);
+    setSelected(new Set());
+    // Reconcile each row from the server's per-email result — no full reload.
+    // "failed" always comes from the server result, never assumed.
+    if (res.results?.length) {
+      setLocalRows((prev) => prev.map((r) => {
+        const hit = res.results.find((x) => x.email === r.email);
+        if (!hit) return r;
+        return {
+          ...r,
+          status: hit.ok ? "sent" : "failed",
+          error_reason: hit.ok ? null : (hit.reason ?? null),
+          sent_at: hit.ok ? new Date().toISOString() : null,
+        };
+      }));
+    }
   }
 
   async function runTest() {
@@ -90,11 +110,13 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
     setResetBusy(null);
     if (res.error || !res.password) {
       setFeedback(res.error ?? "Could not reset the password.");
-    } else {
-      setFeedback(`New password for ${email}: ${res.password}`);
-      setRevealed((prev) => new Set(prev).add(email));
+      return;
     }
-    window.location.reload();
+    setFeedback(`New password for ${email}: ${res.password}`);
+    setRevealed((prev) => new Set(prev).add(email));
+    setLocalRows((prev) =>
+      prev.map((r) => (r.email === email ? { ...r, password: res.password ?? "", status: "pending", sent_at: null } : r)),
+    );
   }
 
   async function copyPassword(email: string, password: string) {
@@ -152,7 +174,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
         <Button type="button" onClick={() => runSend(Array.from(selected), "Send selected")} disabled={busy || selected.size === 0}>
           Send selected ({selected.size})
         </Button>
-        <Button type="button" variant="outline" onClick={() => downloadCsv(rows)} disabled={rows.length === 0}>
+        <Button type="button" variant="outline" onClick={() => downloadCsv(localRows)} disabled={localRows.length === 0}>
           <Download className="size-4" aria-hidden /> Download password list (CSV)
         </Button>
       </div>
@@ -163,15 +185,16 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
       )}
 
       {/* The batch */}
-      {rows.length === 0 ? (
+      {localRows.length === 0 ? (
         <p className="text-small text-muted-foreground">
           No imported accounts yet. Upload the roster CSV from /admin/tools → Import students first.
         </p>
       ) : (
         <ul className="space-y-2">
-          {rows.map((r) => {
+          {localRows.map((r) => {
             const isRevealed = revealed.has(r.email);
             const password = r.password ?? "";
+            const sending = sendingEmails.has(r.email);
             return (
               <li
                 key={r.id}
@@ -184,7 +207,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
                   type="checkbox"
                   checked={selected.has(r.email)}
                   onChange={() => toggle(r.email)}
-                  disabled={r.status === "sent"}
+                  disabled={r.status === "sent" || sending}
                   aria-label={`Select ${r.email}`}
                   className="size-4 accent-primary"
                 />
@@ -240,11 +263,11 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
                         variant="secondary"
                         size="xs"
                         onClick={() => runSend([r.email], "Email")}
-                        disabled={busy}
+                        disabled={busy || sending}
                         title="Email this student their password (manual send)"
                       >
-                        <Mail className="size-3.5" aria-hidden />
-                        Email
+                        {sending ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : <Mail className="size-3.5" aria-hidden />}
+                        {sending ? "Sending…" : "Email"}
                       </Button>
                     </>
                   )}

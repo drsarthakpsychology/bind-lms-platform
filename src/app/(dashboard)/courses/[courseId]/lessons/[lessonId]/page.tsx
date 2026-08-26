@@ -14,13 +14,13 @@ import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 // when the "Watch" tab mounts the player.
 import { LazyVideoPlayer } from "./lazy-video-player";
 import { CompleteButton } from "./complete-button";
-import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
+import { LazyAssignmentEditor as AssignmentEditor } from "@/components/course/admin-tools-lazy";
 import { SubmissionForm } from "./submission-form";
 import { LessonTabs } from "./lesson-tabs";
 import { LessonPicker } from "./lesson-picker";
 import { LessonNav } from "./lesson-nav";
 import { MaterialsList } from "./materials-list";
-import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
+import { LazyMaterialUploader as MaterialUploader } from "@/components/course/admin-tools-lazy";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -253,7 +253,7 @@ export default async function LessonPage({
             ) : (
               <div className="p-5">
                 <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
-                <p className="mt-2 whitespace-pre-line text-small text-muted-foreground">
+                <p className="mt-2 whitespace-pre-line break-words text-small text-muted-foreground">
                   {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
                 </p>
               </div>
@@ -406,7 +406,7 @@ export default async function LessonPage({
             <Card variant="raised">
               <CardContent className="pt-6">
                 {assignment.instructions ?? assignment.prompt_text ? (
-                  <div className="mb-4 whitespace-pre-wrap rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
+                  <div className="mb-4 whitespace-pre-wrap break-words rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
                     {assignment.instructions ?? assignment.prompt_text}
                   </div>
                 ) : null}

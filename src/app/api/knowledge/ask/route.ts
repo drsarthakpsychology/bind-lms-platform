@@ -4,7 +4,7 @@ import { requireSession } from "@/lib/auth/guards";
 import { rateLimit } from "@/lib/rate-limit";
 import { searchKnowledge, cite } from "@/lib/knowledge/retrieve";
 import { isEnabled } from "@/lib/ai/router";
-import { aiChat, type AiChatMessage } from "@/lib/ai/client";
+import { aiChatStream, type AiChatMessage } from "@/lib/ai/client";
 import { cacheKeyFor, readCached, writeCached } from "@/lib/ai/cache";
 
 export const runtime = "nodejs";
@@ -67,46 +67,64 @@ export async function POST(req: Request) {
   // If AI is enabled, generate a grounded answer from only the retrieved passages.
   // The grounded answer is deterministic for a question (same sources, same
   // answer for every student) and contains no per-user data → safe to cache.
-  let answer: string | null = null;
-  let provider: string | null = null;
-  if (isEnabled() && hits.length > 0) {
-    const cacheKey = cacheKeyFor("knowledge_tutor", q, "grounded", "difficult");
-    const cached = await readCached(cacheKey);
-    if (cached.hit !== "none") {
-      answer = cached.text;
-      provider = cached.model ? `cache:${cached.model}` : "cache";
-    } else {
-      try {
-        const context = hits.map((h) => `[${cite(h)}]\n${h.text}`).join("\n\n---\n\n");
-        const messages: AiChatMessage[] = [
-          {
-            role: "system",
-            content:
-              "You are a psychology tutor for a school of psychology. Answer the student's question using ONLY the supplied source passages. " +
-              "Ground every claim in the passages; where the passages do not cover something, say so plainly. " +
-              "Cite sources inline like (Book, Chapter, page). Do not invent facts, page numbers, or references.",
-          },
-          { role: "user", content: `QUESTION:\n${q}\n\nSOURCE PASSAGES:\n${context}` },
-        ];
-        // Grounded synthesis over source material is a "difficult" task — it
-        // needs faithful reasoning + citation, so route to the strong tier.
-        const res = await aiChat(messages, { workload: "knowledge_tutor", taskTier: "difficult", maxTokens: 600, temperature: 0.3 });
-        answer = res.text;
-        provider = res.provider;
-        await writeCached(cacheKey, "knowledge_tutor", provider, answer, provider);
-      } catch {
-        // AI unavailable — fall through to retrieval-only (still useful).
-        answer = null;
-      }
-    }
+  const cacheKey = isEnabled() && hits.length > 0 ? cacheKeyFor("knowledge_tutor", q, "grounded", "difficult") : null;
+  const cached = cacheKey ? await readCached(cacheKey) : { hit: "none" as const };
+
+  // Fast path: no AI available, no hits, or already cached → plain JSON.
+  if (!isEnabled() || !hits.length || cached.hit !== "none") {
+    const answer = cached.hit !== "none" ? cached.text : null;
+    const provider = cached.hit !== "none" ? (cached.model ? `cache:${cached.model}` : "cache") : null;
+    return NextResponse.json({
+      question: q,
+      count: hits.length,
+      answer,
+      provider,
+      aiUsed: provider !== null,
+      sources,
+    });
   }
 
-  return NextResponse.json({
-    question: q,
-    count: hits.length,
-    answer,
-    provider,
-    aiUsed: provider !== null,
-    sources,
+  // Streaming path: grounded synthesis generated token-by-token (Part 6) so the
+  // tutor feels conversational instead of showing a spinner for the whole call.
+  const context = hits.map((h) => `[${cite(h)}]\n${h.text}`).join("\n\n---\n\n");
+  const messages: AiChatMessage[] = [
+    {
+      role: "system",
+      content:
+        "You are a psychology tutor for a school of psychology. Answer the student's question using ONLY the supplied source passages. " +
+        "Ground every claim in the passages; where the passages do not cover something, say so plainly. " +
+        "Cite sources inline like (Book, Chapter, page). Do not invent facts, page numbers, or references.",
+    },
+    { role: "user", content: `QUESTION:\n${q}\n\nSOURCE PASSAGES:\n${context}` },
+  ];
+  const encoder = new TextEncoder();
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const send = (obj: unknown) => controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`));
+      // Sources first so citations render while the answer streams.
+      send({ type: "meta", question: q, count: hits.length, aiUsed: true, sources });
+      let full = "";
+      try {
+        const gen = aiChatStream(messages, { workload: "knowledge_tutor", taskTier: "difficult", maxTokens: 600, temperature: 0.3 });
+        for await (const delta of gen) {
+          full += delta;
+          send({ type: "delta", text: delta });
+        }
+        const provider = "stream";
+        await writeCached(cacheKey!, "knowledge_tutor", provider, full, provider);
+        send({ type: "done", answer: full, provider });
+      } catch {
+        // All providers failed — retrieval-only fallback (sources already sent).
+        send({ type: "done", answer: null, provider: null });
+      }
+      controller.close();
+    },
+  });
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+    },
   });
 }

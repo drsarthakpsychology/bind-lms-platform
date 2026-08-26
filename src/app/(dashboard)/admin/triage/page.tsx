@@ -48,7 +48,7 @@ export default async function AdminTriagePage() {
     .slice(0, 10);
 
   // Count sessions per student (first-session detection) + count per student.
-  const { data: allSessions } = await admin.from("sim_sessions").select("user_id, status");
+  const { data: allSessions } = await admin.from("sim_sessions").select("user_id, status").limit(1000);
 
   const sessionsByStudent = new Map<string, number>();
   for (const s of allSessions ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);

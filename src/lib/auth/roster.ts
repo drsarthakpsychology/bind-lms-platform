@@ -205,6 +205,19 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
     emptyNames: [],
   };
 
+  // Batch the two DB writes (Perf Pass Part 8): the GoTrue createUser loop is
+  // unavoidable (no batch endpoint), but the profiles-scope + credential rows
+  // are written as ONE upsert each instead of two round-trips per student.
+  const pendingScopeIds: string[] = [];
+  const pendingCredentials: Array<{
+    email: string;
+    name: string;
+    status: "pending";
+    password: string;
+    error_reason: null;
+    sent_at: null;
+  }> = [];
+
   for (const row of rows) {
     // The student's real 8-char password — set on the account here so it's
     // immediately valid, and stored so the admin roster list can show Kavya the
@@ -240,17 +253,29 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
       continue;
     }
 
-    // Stamp the access scope on the profile (created by on_auth_user_created).
-    await admin.from("profiles").update({ scope }).eq("id", userId);
+    pendingScopeIds.push(userId);
+    pendingCredentials.push({ email: row.email, name: row.name, status: "pending", password, error_reason: null, sent_at: null });
+  }
 
-    // Record the pending credential — password visible to admin, NOT sent yet.
-    await admin.from("credential_invites").upsert(
-      { email: row.email, name: row.name, status: "pending", password, error_reason: null, sent_at: null },
-      { onConflict: "email" },
-    );
+  // Stamp the access scope on every created profile in one call.
+  if (pendingScopeIds.length) {
+    const { error: scopeErr } = await admin.from("profiles").update({ scope }).in("id", pendingScopeIds);
+    if (scopeErr) {
+      report.failures.push({ row: 0, email: pendingCredentials.map((c) => c.email).join(","), reason: `profile scope update failed: ${scopeErr.message}` });
+    }
+  }
 
+  // Record all pending credentials — password visible to admin, NOT sent yet.
+  if (pendingCredentials.length) {
+    const { error: credErr } = await admin.from("credential_invites").upsert(pendingCredentials, { onConflict: "email" });
+    if (credErr) {
+      report.failures.push({ row: 0, email: pendingCredentials.map((c) => c.email).join(","), reason: `credential record failed: ${credErr.message}` });
+    }
+  }
+
+  for (const c of pendingCredentials) {
     report.created++;
-    report.createdAccounts.push({ name: row.name, email: row.email, password });
+    report.createdAccounts.push({ name: c.name, email: c.email, password: c.password });
   }
 
   return report;

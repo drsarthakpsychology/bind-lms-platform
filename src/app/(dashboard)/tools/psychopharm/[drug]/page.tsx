@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
-import { createClient } from "@/lib/supabase/server";
-import type { MedicationDocument } from "@/lib/psychopharm/document";
+import { getPublishedMedicationDocument } from "@/lib/psychopharm/published-doc";
 import { DocumentView } from "@/components/psychopharm/document-view";
 import { DoseLadder } from "@/components/psychopharm/dose-ladder";
 import { DrugBandView } from "@/components/psychopharm/drug-band-view";
@@ -29,19 +28,10 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
   const detail = drugDetail(generic);
   if (!detail) notFound();
 
-  // Prefer a published KMS document when one exists (RLS: students see published only).
-  const supabase = await createClient();
-  const { data: drugRow } = await supabase.from("psych_drugs").select("id").eq("generic_name", generic).maybeSingle();
-  let publishedDoc: MedicationDocument | null = null;
-  if (drugRow) {
-    const { data } = await supabase
-      .from("medication_documents")
-      .select("document")
-      .eq("drug_id", drugRow.id)
-      .eq("status", "published")
-      .maybeSingle();
-    publishedDoc = (data as { document: (typeof publishedDoc) } | null)?.document ?? null;
-  }
+  // Prefer a published KMS document when one exists. Content is identical for
+  // every student, so it's served from a shared cache (Part 11); an admin
+  // publish revalidates the tag.
+  const publishedDoc = await getPublishedMedicationDocument(generic);
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6 pb-24 lg:pb-6">

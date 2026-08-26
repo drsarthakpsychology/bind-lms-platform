@@ -15,8 +15,8 @@ export default async function AdminModulesPage() {
 
   const [{ data: modules }, { data: students }, { data: grants }] = await Promise.all([
     admin.from("modules").select("id, title, order_index, state, release_at, created_at").order("order_index"),
-    admin.from("profiles").select("id, email").eq("role", "student").order("email"),
-    admin.from("module_access").select("module_id, student_id, scope"),
+    admin.from("profiles").select("id, email").eq("role", "student").order("email").limit(200),
+    admin.from("module_access").select("module_id, student_id, scope").limit(1000),
   ]);
 
   const emailById = new Map((students ?? []).map((s) => [s.id, s.email]));

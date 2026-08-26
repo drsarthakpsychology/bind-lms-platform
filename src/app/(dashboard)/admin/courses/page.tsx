@@ -14,7 +14,7 @@ export default async function CoursesPage() {
 
   const [{ data: courses }, { data: allLessons }] = await Promise.all([
     supabase.from("courses").select("id, title, is_published").order("title", { ascending: true }),
-    supabase.from("lessons").select("course_id"),
+    supabase.from("lessons").select("course_id").limit(5000),
   ]);
 
   const lessonCounts = new Map<string, number>();

@@ -34,7 +34,8 @@ export default async function StudentsPage() {
     .from("profiles")
     .select("id, email, role, expires_at, active_session_token, is_test, status")
     .eq("role", "student")
-    .order("expires_at", { ascending: true, nullsFirst: false });
+    .order("expires_at", { ascending: true, nullsFirst: false })
+    .limit(200);
 
   const students = profiles ?? [];
 

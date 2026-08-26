@@ -25,7 +25,7 @@ import {
 } from "./router";
 import { assertProviderAllowed, type Workload } from "./guards";
 import { fixtureReply } from "./fixtures";
-import { logAiUsage, recordProviderOutcome } from "./health";
+import { logAiUsage, recordProviderOutcome, warmProviderCircuit } from "./health";
 
 const DEBUG = process.env.AI_DEBUG === "true";
 
@@ -195,6 +195,11 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     throw new AiUnavailableError(opts.workload);
   }
 
+  // Cold-start bootstrap: restore the last known failures/latency from the DB
+  // so a provider degraded before a serverless cold start isn't retried blind.
+  // Fire-and-forget — never blocks the request.
+  void warmProviderCircuit();
+
   let attempt = 0;
   const reasons: string[] = [];
   for (const provider of candidates) {
@@ -209,7 +214,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
         try {
           const parsed = opts.schema.parse(JSON.parse(extractJson(text)));
           log(provider.id, opts.workload, "ok");
-          void recordProviderOutcome(provider.id, true);
+          void recordProviderOutcome(provider.id, true, latencyMs);
           void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
           return { text, provider: provider.id, json: parsed };
         } catch {
@@ -220,15 +225,19 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
               { role: "user", content: `Return valid JSON matching the schema. Your previous output was not valid JSON. Output ONLY the JSON object.` },
             ], { ...opts, schema: undefined });
             const parsed = opts.schema.parse(JSON.parse(extractJson(repair.text)));
-            void recordProviderOutcome(provider.id, true);
+            void recordProviderOutcome(provider.id, true, latencyMs);
             void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: repair.usage.tokensIn, tokensOut: repair.usage.tokensOut, latencyMs, status: "ok" });
             return { text: repair.text, provider: provider.id, json: parsed };
           }
-          throw new Error(`schema validation failed on provider ${provider.id}`);
+          const schemaErr = new Error(`schema validation failed on provider ${provider.id}`);
+          // A provider returning valid HTTP but garbage content isn't "down" —
+          // mark it so the catch doesn't open the circuit for it.
+          (schemaErr as Error & { misbehavior?: boolean }).misbehavior = true;
+          throw schemaErr;
         }
       }
       log(provider.id, opts.workload, "ok");
-      void recordProviderOutcome(provider.id, true);
+      void recordProviderOutcome(provider.id, true, latencyMs);
       void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
       return { text, provider: provider.id };
     } catch (e) {
@@ -236,12 +245,17 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       const status = (e as unknown as { status?: number }).status;
       const model = (e as unknown as { model?: string }).model ?? "?";
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
+      // Schema-parse misbehavior (valid HTTP, bad content) and non-retryable
+      // client errors (4xx) are NOT provider outages — don't open the circuit
+      // for them. Only transport failures (429/5xx/timeout) trip the breaker.
+      const misbehavior = Boolean((e as { misbehavior?: boolean }).misbehavior);
+      const openCircuit = retryable && !misbehavior;
       const reason = `${provider.id} ${model} status=${status ?? "?"} latency=${latencyMs}ms: ${(e as Error).message.slice(0, 500)}`;
       reasons.push(reason);
       // Loud per-provider failure line (Phase 1 observability).
       console.warn(`[ai] ${opts.workload} -> ${provider.id} ${model} FAILED status=${status ?? "?"} latency=${latencyMs}ms retryable=${retryable} ${(e as Error).message.slice(0, 500)}`);
-      void recordProviderOutcome(provider.id, false);
-      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: retryable ? "failover" : "error" });
+      if (openCircuit) void recordProviderOutcome(provider.id, false, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: openCircuit ? "failover" : "error" });
       if (!retryable && attempt >= candidates.length) throw e;
       if (retryable) {
         // exponential backoff, but capped so we never block long
@@ -251,6 +265,100 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   }
   console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ${JSON.stringify(reasons)}`);
   throw new AiUnavailableError(opts.workload);
+}
+
+/**
+ * Token-streaming chat (Performance Pass Part 6). Yields text deltas as they
+ * arrive for the conversational surfaces (Psychology Tutor), so the client
+ * renders incrementally instead of waiting for the full payload.
+ *
+ * OpenAI-compatible SSE only. First-byte-wins failover: once a provider sends
+ * its first token we commit to it (a mid-stream provider death surfaces to the
+ * caller as the stream ending early — the client can show a truncated state).
+ */
+export async function* aiChatStream(
+  messages: AiChatMessage[],
+  opts: AiRequestOptions,
+): AsyncGenerator<string, void, unknown> {
+  if (!isEnabled()) {
+    yield fixtureReply(opts.workload).patient;
+    return;
+  }
+  const allCandidates = providersFor("stream", opts.workload === "content_generation" || opts.workload === "corpus_processing" || opts.workload === "embeddings" ? false : true);
+  const candidates = (opts.providerId ? allCandidates.filter((p) => p.id === opts.providerId) : allCandidates).filter(
+    (p) => p.protocol !== "gemini", // native Gemini has a different stream format; stay on OpenAI-compatible lanes
+  );
+  if (!candidates.length) throw new AiUnavailableError(opts.workload);
+
+  let lastErr: Error | null = null;
+  for (const provider of candidates) {
+    const startedAt = Date.now();
+    try {
+      const model = modelForTier(provider, opts.taskTier ?? "normal");
+      const url = `${provider.baseUrl.replace(/\/$/, "")}/chat/completions`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${keyFor(provider)}` },
+        body: JSON.stringify({
+          model,
+          messages,
+          max_tokens: opts.maxTokens ?? 1024,
+          temperature: opts.temperature ?? 0.7,
+          stream: true,
+        }),
+        cache: "no-store",
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (res.status === 429 || res.status >= 500) {
+        const e = new Error(`provider ${provider.id} ${model} stream responded ${res.status}`);
+        (e as unknown as { status: number }).status = res.status;
+        throw e;
+      }
+      if (!res.ok) throw new Error(`provider ${provider.id} stream responded ${res.status}`);
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error(`provider ${provider.id} returned no body`);
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let finished = false;
+      let total = "";
+      while (!finished) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed.startsWith("data:")) continue;
+          const payload = trimmed.slice(5).trim();
+          if (payload === "[DONE]") {
+            finished = true;
+            break;
+          }
+          try {
+            const j = JSON.parse(payload) as { choices?: Array<{ delta?: { content?: string } }> };
+            const delta = j.choices?.[0]?.delta?.content;
+            if (typeof delta === "string" && delta.length) {
+              total += delta;
+              yield delta;
+            }
+          } catch {
+            // skip malformed / keep-alive events
+          }
+        }
+      }
+      const latencyMs = Date.now() - startedAt;
+      void recordProviderOutcome(provider.id, true, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: total.length, latencyMs, status: "ok" });
+      return;
+    } catch (e) {
+      lastErr = e as Error;
+      const latencyMs = Date.now() - startedAt;
+      void recordProviderOutcome(provider.id, false, latencyMs);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: "error" });
+    }
+  }
+  throw lastErr ?? new AiUnavailableError(opts.workload);
 }
 
 /** Convenience: fetch the list of currently-available providers (for admin UI). */

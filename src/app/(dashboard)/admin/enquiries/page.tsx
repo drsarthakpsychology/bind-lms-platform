@@ -33,7 +33,8 @@ export default async function AdminEnquiriesPage() {
   const { data } = await admin
     .from("enquiries")
     .select("id, name, email, phone, status, message, source, created_at")
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(200);
 
   const rows = (data ?? []) as unknown as EnquiryRow[];
   const today = new Date().toISOString().slice(0, 10);

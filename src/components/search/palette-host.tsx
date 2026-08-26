@@ -8,7 +8,7 @@ import { CommandPalette } from "./command-palette";
  * blobs), then renders the ⌘K palette.
  */
 export async function PaletteHost() {
-  const docs = getLibraryDocs();
+  const docs = await getLibraryDocs();
   const caseEntries: PaletteEntry[] = docs.slice(0, 40).map((d) => ({
     id: `case-${d.hash}`,
     label: d.title.slice(0, 80),

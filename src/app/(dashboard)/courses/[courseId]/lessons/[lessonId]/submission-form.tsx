@@ -268,7 +268,7 @@ export function SubmissionForm({
         </div>
 
         {submission?.note && (
-          <p className="whitespace-pre-wrap rounded-md border-2 border-border bg-muted/50 p-3 text-small">
+          <p className="whitespace-pre-wrap break-words rounded-md border-2 border-border bg-muted/50 p-3 text-small">
             {submission.note}
           </p>
         )}

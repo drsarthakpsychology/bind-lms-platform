@@ -29,12 +29,14 @@ export default async function SubmissionsPage({
     await Promise.all([
       supabase
         .from("submissions")
-        .select("id, assignment_id, user_id, text_content, audio_storage_path, status, note, submitted_at, is_late, score, feedback"),
+        .select("id, assignment_id, user_id, text_content, audio_storage_path, status, note, submitted_at, is_late, score, feedback")
+        .order("submitted_at", { ascending: false })
+        .limit(200),
       supabase.from("assignments").select("id, lesson_id, title, prompt_text"),
       supabase.from("lessons").select("id, title, course_id"),
       supabase.from("courses").select("id, title"),
       supabase.from("profiles").select("id, email").eq("role", "student"),
-      supabase.from("submission_files").select("id, submission_id, original_name, storage_path, format"),
+      supabase.from("submission_files").select("id, submission_id, original_name, storage_path, format").limit(1000),
     ]);
 
   const assignmentsById = new Map((assignments ?? []).map((a) => [a.id, a]));

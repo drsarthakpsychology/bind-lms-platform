@@ -15,9 +15,9 @@ export default async function AdminPulsePage() {
 
   // Students + their last activity (from sim_sessions, checkins, journal).
   const [{ data: students }, { data: sessions }, { data: checkins }] = await Promise.all([
-    admin.from("profiles").select("id, email").eq("role", "student"),
-    admin.from("sim_sessions").select("user_id, created_at, status"),
-    admin.from("checkins").select("user_id, created_at"),
+    admin.from("profiles").select("id, email").eq("role", "student").limit(200),
+    admin.from("sim_sessions").select("user_id, created_at, status").limit(500),
+    admin.from("checkins").select("user_id, created_at").limit(500),
   ]);
 
   const lastActivity = new Map<string, string>();

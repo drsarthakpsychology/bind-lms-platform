@@ -2,10 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { VoiceConversation } from "@/components/sim/voice-conversation";
-import { LiveKitVoiceScreen } from "@/components/sim/livekit-voice-screen";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -17,6 +16,18 @@ import { ChatList } from "@/components/sim/chat-list";
 import { NotesSheet } from "@/components/sim/notes-sheet";
 import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
+
+// The voice screens pull in livekit-client (~557KB). Lazy-load them so that
+// chunk never enters the student's eager bundle — it only fetches when voice
+// mode is actually switched on (Part 5).
+const VoiceConversation = dynamic(
+  () => import("@/components/sim/voice-conversation").then((m) => m.VoiceConversation),
+  { ssr: false },
+);
+const LiveKitVoiceScreen = dynamic(
+  () => import("@/components/sim/livekit-voice-screen").then((m) => m.LiveKitVoiceScreen),
+  { ssr: false },
+);
 
 interface Turn {
   id: string;
@@ -86,7 +97,9 @@ export function SimSessionView({
   provisionalDims?: string[];
 }) {
   const router = useRouter();
-  const [turns, setTurns] = React.useState<Turn[]>(initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })));
+  const [turns, setTurns] = React.useState<Turn[]>(() =>
+    initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })),
+  );
   // Composer draft + notes survive refresh/interruption via localStorage (T46/T35).
   const { value: input, setValue: setInput } = useDraft(`sim:draft:${sessionId}`);
   const mseNotesDraft = useDraft(`sim:mse:${sessionId}`);
@@ -145,7 +158,7 @@ export function SimSessionView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds]);
 
-  async function send(textParam?: string) {
+  const send = React.useCallback(async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
     if (!text || busy || pendingReply.current) return;
     const studentTurnId = crypto.randomUUID();
@@ -236,7 +249,7 @@ export function SimSessionView({
       setBusy(false);
       textareaRef.current?.focus();
     }
-  }
+  }, [sessionId, input, busy, setInput]);
 
   const [voiceReport, setVoiceReport] = React.useState<ReturnType<typeof voiceMetrics.report> | null>(null);
 
@@ -271,6 +284,24 @@ export function SimSessionView({
       setEnding(false);
     }
   }
+
+  // Stable callbacks so the memoized header/composer/sheets skip re-renders
+  // when the 40ms typewriter ticks rebuild `turns` (Part 13).
+  const openMenu = React.useCallback(() => setMenuOpen(true), []);
+  const toggleVoice = React.useCallback(() => setVoiceMode((v) => !v), []);
+  const patientReply = React.useMemo(
+    () => [...turns].reverse().find((t) => t.role === "patient")?.content ?? "",
+    [turns],
+  );
+  const patientVoicePrefs = React.useMemo(() => {
+    if (!patientAffect) return (voicePrefs ?? { rate: 1, pitch: 1, lang: "en-IN" });
+    const v = affectToVoice(patientAffect, {
+      fatigue: patientFatigue,
+      baseRate: voicePrefs?.rate ?? 1,
+      basePitch: voicePrefs?.pitch ?? 1,
+    });
+    return { rate: v.rate, pitch: v.pitch, lang: voicePrefs?.lang ?? "en-IN", gender: voicePrefs?.gender };
+  }, [patientAffect, patientFatigue, voicePrefs]);
 
   if (debrief) {
     return (
@@ -309,17 +340,8 @@ export function SimSessionView({
             voiceMetrics.recordStudentSpeech(t);
             void send(t);
           }}
-          patientReply={[...turns].reverse().find((t) => t.role === "patient")?.content ?? ""}
-          patientVoicePrefs={
-            patientAffect
-              ? {
-                  rate: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).rate,
-                  pitch: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).pitch,
-                  lang: voicePrefs?.lang ?? "en-IN",
-                  gender: voicePrefs?.gender,
-                }
-              : (voicePrefs ?? { rate: 1, pitch: 1, lang: "en-IN" })
-          }
+          patientReply={patientReply}
+          patientVoicePrefs={patientVoicePrefs}
           onExitVoice={() => setVoiceMode(false)}
           onEnd={() => setConfirmFinish(true)}
           busy={busy}
@@ -332,7 +354,7 @@ export function SimSessionView({
         patientAge={patientAge}
         difficulty={difficulty}
         seconds={seconds}
-        onMore={() => setMenuOpen(true)}
+        onMore={openMenu}
         notesIndicator={hasNotes}
         aiFallback={aiFallback}
       />
@@ -366,9 +388,9 @@ export function SimSessionView({
       <ChatComposer
         value={input}
         onChange={setInput}
-        onSend={() => void send()}
+        onSend={send}
         voiceMode={voiceMode}
-        onToggleVoice={() => setVoiceMode((v) => !v)}
+        onToggleVoice={toggleVoice}
         busy={busy}
         voiceAvailable
         patientName={patientName}

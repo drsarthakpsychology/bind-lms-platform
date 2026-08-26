@@ -87,30 +87,66 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
     setBusy(true);
     setError(null);
     haptic("tap");
+    const text = contentDraft.value.trim();
+    const tempId = crypto.randomUUID();
+
+    // Optimistic: show the post immediately, reconcile with the server.
+    setPosts((prev) => [
+      { id: tempId, content: text, isAnonymous: anonymous, isFaculty: false, isPinned: false, createdAt: new Date().toISOString(), replies: [], reactions: {} },
+      ...prev,
+    ]);
+    contentDraft.clear();
+    setComposerOpen(false);
+
+    let ok = false;
     try {
       const res = await fetch("/api/practice/wall", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: contentDraft.value.trim(), isAnonymous: anonymous }),
+        body: JSON.stringify({ content: text, isAnonymous: anonymous }),
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
         setError(j?.error ?? "Could not post. Please try again.");
-        return;
+      } else {
+        const j = (await res.json()) as { id: string };
+        setPosts((prev) => prev.map((p) => (p.id === tempId ? { ...p, id: j.id } : p)));
+        haptic("success");
+        ok = true;
       }
-      const j = (await res.json()) as { id: string };
-      setPosts((prev) => [
-        { id: j.id, content: contentDraft.value.trim(), isAnonymous: anonymous, isFaculty: false, isPinned: false, createdAt: new Date().toISOString(), replies: [], reactions: {} },
-        ...prev,
-      ]);
-      contentDraft.clear();
-      setComposerOpen(false);
-      haptic("success");
     } catch {
       setError("Network error. Your post is still here — try again.");
-    } finally {
-      setBusy(false);
     }
+    if (!ok) {
+      // Roll back the optimistic post and restore the draft.
+      setPosts((prev) => prev.filter((p) => p.id !== tempId));
+      contentDraft.setValue(text);
+      setComposerOpen(true);
+    }
+    setBusy(false);
+  }
+
+  /** Flip a post/reply's reaction count by ±1 in the local feed. */
+  function applyReactionDelta(delta: 1 | -1, target: { postId?: string; replyId?: string }, reaction: string) {
+    setPosts((prev) => prev.map((p) => {
+      if (target.postId && p.id !== target.postId) return p;
+      if (target.replyId) {
+        return {
+          ...p,
+          replies: (p.replies ?? []).map((r) => {
+            if (r.id !== target.replyId) return r;
+            const counts = { ...(r.reactions ?? {}) };
+            counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + delta);
+            if (counts[reaction] === 0) delete counts[reaction];
+            return { ...r, reactions: counts };
+          }),
+        };
+      }
+      const counts = { ...(p.reactions ?? {}) };
+      counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + delta);
+      if (counts[reaction] === 0) delete counts[reaction];
+      return { ...p, reactions: counts };
+    }));
   }
 
   async function toggleReaction(target: { postId?: string; replyId?: string }, reaction: string) {
@@ -118,6 +154,15 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
     const key = target.replyId ?? target.postId ?? "";
     const mine = myReactions[key] ?? new Set();
     const had = mine.has(reaction);
+    const delta: 1 | -1 = had ? -1 : 1;
+
+    // Optimistic: flip the UI immediately, then reconcile with the server.
+    const next = new Set(mine);
+    if (had) next.delete(reaction);
+    else next.add(reaction);
+    setMyReactions((m) => ({ ...m, [key]: next }));
+    applyReactionDelta(delta, target, reaction);
+
     try {
       const res = await fetch("/api/practice/wall/reaction", {
         method: "POST",
@@ -125,34 +170,14 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         body: JSON.stringify({ postId: target.postId, replyId: target.replyId, reaction }),
       });
       if (!res.ok) {
+        // Roll back to the pre-toggle state (reactions are reversible).
+        setMyReactions((m) => ({ ...m, [key]: mine }));
+        applyReactionDelta(delta === 1 ? -1 : 1, target, reaction);
         setFeedError("Couldn't update your reaction.");
-        return;
       }
-      // Optimistic update.
-      setPosts((prev) => prev.map((p) => {
-        if (target.postId && p.id !== target.postId) return p;
-        if (target.replyId) {
-          return {
-            ...p,
-            replies: (p.replies ?? []).map((r) => {
-              if (r.id !== target.replyId) return r;
-              const counts = { ...(r.reactions ?? {}) };
-              counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + (had ? -1 : 1));
-              if (counts[reaction] === 0) delete counts[reaction];
-              return { ...r, reactions: counts };
-            }),
-          };
-        }
-        const counts = { ...(p.reactions ?? {}) };
-        counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + (had ? -1 : 1));
-        if (counts[reaction] === 0) delete counts[reaction];
-        return { ...p, reactions: counts };
-      }));
-      const next = new Set(mine);
-      if (had) next.delete(reaction);
-      else next.add(reaction);
-      setMyReactions((m) => ({ ...m, [key]: next }));
     } catch {
+      setMyReactions((m) => ({ ...m, [key]: mine }));
+      applyReactionDelta(delta === 1 ? -1 : 1, target, reaction);
       setFeedError("Couldn't update your reaction.");
     }
   }
@@ -202,36 +227,58 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
     setReplying(true);
     setReplyError(null);
     haptic("tap");
+    const text = replyDraft.value.trim();
+    const tempId = crypto.randomUUID();
+
+    // Optimistic: append the reply immediately, reconcile with the server.
+    setPosts((prev) => prev.map((p) => {
+      if (p.id !== postId) return p;
+      return {
+        ...p,
+        replies: [
+          ...(p.replies ?? []),
+          { id: tempId, content: text, isAnonymous: replyAnon, isFaculty: false, createdAt: new Date().toISOString() },
+        ],
+      };
+    }));
+    replyDraft.clear();
+    setReplyOpen(null);
+
+    let ok = false;
     try {
       const res = await fetch("/api/practice/wall/reply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postId, content: replyDraft.value.trim(), isAnonymous: replyAnon }),
+        body: JSON.stringify({ postId, content: text, isAnonymous: replyAnon }),
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
         setReplyError(j?.error ?? "Couldn't post your reply. Please try again.");
-        return; // reply draft is preserved — nothing cleared on failure
+      } else {
+        const j = (await res.json()) as { id: string };
+        setPosts((prev) => prev.map((p) => {
+          if (p.id !== postId) return p;
+          return {
+            ...p,
+            replies: (p.replies ?? []).map((r) => (r.id === tempId ? { ...r, id: j.id } : r)),
+          };
+        }));
+        haptic("success");
+        ok = true;
       }
-      const j = (await res.json()) as { id: string };
-      setPosts((prev) => prev.map((p) => {
-        if (p.id !== postId) return p;
-        return {
-          ...p,
-          replies: [
-            ...(p.replies ?? []),
-            { id: j.id, content: replyDraft.value.trim(), isAnonymous: replyAnon, isFaculty: false, createdAt: new Date().toISOString() },
-          ],
-        };
-      }));
-      replyDraft.clear();
-      setReplyOpen(null);
-      haptic("success");
     } catch {
       setReplyError("Network error — your reply is still here. Try again.");
-    } finally {
-      setReplying(false);
     }
+    if (!ok) {
+      // Roll back the optimistic reply and restore the draft.
+      setPosts((prev) => prev.map((p) => {
+        if (p.id !== postId) return p;
+        return { ...p, replies: (p.replies ?? []).filter((r) => r.id !== tempId) };
+      }));
+      replyDraft.setValue(text);
+      setReplyOpen(postId);
+    }
+    setReplying(false);
   }
 
   const composerFields = (
@@ -320,7 +367,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {formatRelativeTime(p.createdAt)}</span>
                 </div>
-                <p className="mt-2 whitespace-pre-wrap text-small">{p.content}</p>
+                <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.content}</p>
 
                 {/* reactions — not upvotes */}
                 <div className="mt-3 flex flex-wrap items-center gap-1.5">
@@ -372,7 +419,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                           <span>{r.isAnonymous ? "Anonymous" : "Cohort member"}</span>
                           <span>· {formatRelativeTime(r.createdAt)}</span>
                         </div>
-                        <p className="mt-1 whitespace-pre-wrap text-small">{r.content}</p>
+                        <p className="mt-1 whitespace-pre-wrap break-words text-small">{r.content}</p>
                         <div className="mt-1.5 flex flex-wrap items-center gap-1">
                           {REACTIONS.map((rr) => {
                             const Icon = rr.icon;

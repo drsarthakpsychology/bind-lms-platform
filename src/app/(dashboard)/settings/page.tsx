@@ -36,7 +36,7 @@ export default async function SettingsPage() {
         <div className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <div
             aria-hidden
-            className="flex size-11 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary font-mono text-lg font-black text-primary-foreground"
+            className="flex size-11 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary font-mono text-lg font-bold text-primary-foreground"
           >
             {(email?.[0] ?? "S").toUpperCase()}
           </div>
@@ -69,7 +69,7 @@ export default async function SettingsPage() {
         <MobileSection title="Shortcuts" description="Quick jumps around the programme.">
           <MobileListItem
             href="/practice/modules"
-            leading={<span className="font-mono text-xs font-black text-link">01</span>}
+            leading={<span className="font-mono text-xs font-bold text-link">01</span>}
             title="Course modules"
             subtitle="Browse the curriculum — locked ones say why."
           />

@@ -41,8 +41,8 @@ export function KineticHeadline({
           <span className="-mb-[0.24em] inline-block overflow-hidden pb-[0.24em]">
             <motion.span
               className="inline-block will-change-transform"
-              initial={reduce === false ? { opacity: 0, y: "0.9em" } : false}
-              animate={{ opacity: 1, y: 0 }}
+              initial={reduce === false ? { y: "0.9em" } : false}
+              animate={{ y: 0 }}
               transition={{
                 duration: 0.6,
                 delay: delay + i * stagger,

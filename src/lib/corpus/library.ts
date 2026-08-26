@@ -3,6 +3,7 @@
  * Server-side only (reads the local normalised JSON); pure read, no AI.
  */
 
+import { unstable_cache } from "next/cache";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -16,21 +17,24 @@ export interface LibraryDoc {
   fetched_at: string;
 }
 
-let CACHE: { at: number; docs: LibraryDoc[] } | null = null;
-
-/** Read the normalised PMC docs (cached for the process lifetime). */
-export function getLibraryDocs(): LibraryDoc[] {
-  if (CACHE && Date.now() - CACHE.at < 60_000) return CACHE.docs;
-  const path = join(process.cwd(), "scripts/corpus/normalised/pmc.json");
-  try {
-    const raw = readFileSync(path, "utf8");
-    const docs = JSON.parse(raw) as LibraryDoc[];
-    CACHE = { at: Date.now(), docs };
-    return docs;
-  } catch {
-    return [];
-  }
-}
+/**
+ * Read the normalised PMC docs. Content is identical for every student, so it
+ * is cached across requests + instances (unstable_cache, 1h) instead of being
+ * re-read from disk per request on every serverless instance (Part 11).
+ */
+export const getLibraryDocs = unstable_cache(
+  async (): Promise<LibraryDoc[]> => {
+    const path = join(process.cwd(), "scripts/corpus/normalised/pmc.json");
+    try {
+      const raw = readFileSync(path, "utf8");
+      return JSON.parse(raw) as LibraryDoc[];
+    } catch {
+      return [];
+    }
+  },
+  ["library-docs"],
+  { revalidate: 3600 },
+);
 
 /** Cheap text search: case-insensitive substring across title + first 600 chars. */
 export function filterLibrary(docs: LibraryDoc[], query: string): LibraryDoc[] {

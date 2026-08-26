@@ -61,7 +61,7 @@ export function LessonNav({
       )}
 
       <Button asChild variant="secondary" size="lg">
-        <Link href={nextHref}>
+        <Link href={nextHref} prefetch>
           {nextLabel}
           <ArrowRight className="size-4" aria-hidden />
         </Link>
