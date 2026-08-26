@@ -39,6 +39,19 @@ show `DELETE /rest/v1/lessons → 204` for the 4 lesson IDs, all still present.
 
 Gate: lint 0, tsc clean, 535 tests, build exit 0 (108 routes).
 
+VERIFIED LIVE on vibhapsychology.com (merged PR #22 → git-triggered production
+deploy `qit3uqbqy`, Ready + aliased). Clicked through with real sessions:
+
+- `/today` → redirects to `/dashboard` ✓; no "Today" nav link anywhere (desktop
+  sidebar + mobile tab bar: Lectures / Practice) ✓; `/practice` still shows its
+  "Recommended for you" resume card ✓; zero console errors.
+- **Delete fix proven end-to-end:** created a throwaway hidden lesson
+  (`DELETE-CHECK`, id 44cf8599…) + a dedicated test ADMIN (`deletecheck@bindcat.com`,
+  is_test — Kavya's live admin session untouched). Logged into the real builder
+  as that admin, clicked Delete → confirm, and the lesson disappeared AND stayed
+  gone after a full reload. DB confirms `leftover = 0`. The test admin account
+  was then deleted via the service-role API (nothing left behind).
+
 ---
 
 ## 2026-08-27 — ONE canonical lecture view (flat "Lectures" list removed)
