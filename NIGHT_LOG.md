@@ -24,6 +24,23 @@ can stage a reveal: a tool or lesson can be **hidden**, **live-but-locked**
 
 ---
 
+## 2026-08-26 — REAL root cause: student view showed "No lectures yet" (fixed)
+
+Kavya still couldn't see Cohort 1 in student view after a hard refresh. Root
+cause found by rendering /dashboard as the admin+student-toggle and inspecting
+the HTML: `lectures-only-view.tsx` ordered lessons by `created_at`, but the
+`lessons` table has NO `created_at` column → the query ERRORED → `data: []` →
+the view rendered "No lectures yet" for every roster student AND the admin
+toggle, even though the course + 4 lessons existed. (Earlier string-grep checks
+were fooled: the course title was in the RSC data blob, not rendered.)
+
+Fix: order lessons by `order_index` (the curriculum sequence) instead. Deployed
++ verified live: the toggle now renders Pyschology + MSE Level 2 + Formulation
+intro + Ethics & Law with working `/courses/...` links, and "No lectures yet"
+is absent.
+
+---
+
 ## 2026-08-26 — STUDENT visibility check: Cohort 1 (verified + fixed)
 
 Kavya reported students can't see "Pyschology Cohort 1" despite being published.
