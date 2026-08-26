@@ -11,7 +11,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import CourseOverview from "@/components/course/course-overview";
-import LecturesOnlyView from "./lectures-only-view";
+import { PracticeToolsSection } from "./practice-tools-section";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -45,25 +45,18 @@ export default async function DashboardPage() {
   }
 
   // The go-live roster is lectures_only. An admin previewing the student side
-  // must see exactly what those students see — the flat published-lecture list,
-  // not the full course grid their own `full` scope would otherwise render.
+  // must see exactly what those students see. A roster student has no
+  // enrollment rows, so "their course" is every published course — the single
+  // canonical structured view below, never a separate flat lecture list.
   const effectiveScope =
     profile.role === "admin" && viewingAsStudent ? "lectures_only" : profile.scope;
-
-  // Lecture-only roster: the whole dashboard is a flat lecture list — no
-  // course grid, no practice, no journal. The route guard in the dashboard
-  // layout keeps them off every other surface.
-  if (effectiveScope === "lectures_only") {
-    return <LecturesOnlyView />;
-  }
 
   const supabase = await createClient();
 
   // Truthful student view: a student sees only published courses they're
-  // enrolled in. When an admin previews as a student the same enrollment filter
-  // applies (admins not enrolled see the truthful empty state rather than every
-  // published course). Only a real admin, in admin view, sees every published
-  // course — and that path redirects to /admin before reaching here.
+  // enrolled in. A lectures_only roster student sees every published course
+  // (no enrollment rows, by design). When an admin previews as a student the
+  // same rule applies.
   const [{ data: courses }, { data: enrollments }] = await Promise.all([
     supabase
       .from("courses")
@@ -75,15 +68,32 @@ export default async function DashboardPage() {
 
   const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
   const myCourses =
-    profile.role === "admin" && !viewingAsStudent
+    effectiveScope === "lectures_only"
       ? (courses ?? [])
       : (courses ?? []).filter((c) => enrolledIds.has(c.id));
 
   // Exactly one course: the dashboard IS that course's week/lesson list — the
   // same header, "0 of N lessons complete" line and highlighted Continue row as
-  // /courses/[courseId], with no "Your courses" card to click through.
+  // /courses/[courseId], with no "Your courses" card to click through. Roster
+  // students also get the practice strip up top so their home isn't lecture-only.
   if (myCourses.length === 1) {
-    return <CourseOverview courseId={myCourses[0].id} profile={profile} />;
+    return (
+      <div className="space-y-8">
+        {viewingAsStudent && profile.role === "admin" && (
+          <Reveal>
+            <Alert variant="warning" className="border-foreground hard-shadow-sm">
+              <Sparkles className="size-4" aria-hidden />
+              <AlertTitle>Previewing as a student</AlertTitle>
+              <AlertDescription>
+                This is the student experience — only published courses are shown.
+              </AlertDescription>
+            </Alert>
+          </Reveal>
+        )}
+        {effectiveScope === "lectures_only" && <PracticeToolsSection />}
+        <CourseOverview courseId={myCourses[0].id} profile={profile} />
+      </div>
+    );
   }
 
   const [{ data: lessons }, { data: progress }] = await Promise.all([
