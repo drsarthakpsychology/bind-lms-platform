@@ -4561,3 +4561,14 @@ region or Modal/RunPod.
   destination across the desktop sidebar, mobile drawer, and bottom tab bar.
 - Tests: guards.test.ts asserts the allowlist (dashboard/courses allowed, all
   others blocked). Gate green: lint 0, tsc clean, 525 tests, build exit 0.
+
+## 2026-08-26 — Part 3 /admin/corpus/dictate stripped to essentials
+
+- Removed the schema-shaped `dictate-form.tsx` fallback and its "classic form"
+  toggle from the page — the ONLY surface is now the conversation: record (mic)
+  or type, the interviewer asks the next clinical question, save as draft. No
+  empty structured form anywhere.
+- Added inline editing to the transcript (pencil → textarea → save/cancel) so
+  Dr. Sarthak can correct a mis-transcription before saving — the "live editable
+  transcript" the brief asks for.
+- Gate green: lint 0, tsc clean, 525 tests, build exit 0.
