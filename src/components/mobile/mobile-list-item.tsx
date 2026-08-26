@@ -25,6 +25,7 @@ export function MobileListItem({
   trailing,
   active,
   emphasis,
+  highlight,
   disabled,
   className,
 }: {
@@ -36,6 +37,7 @@ export function MobileListItem({
   trailing?: React.ReactNode;
   active?: boolean;
   emphasis?: boolean;
+  highlight?: boolean;
   disabled?: boolean;
   className?: string;
 }) {
@@ -47,18 +49,24 @@ export function MobileListItem({
           {title}
         </span>
         {subtitle ? (
-          <span className="mt-0.5 block truncate text-caption text-muted-foreground">{subtitle}</span>
+          <span className={cn("mt-0.5 block truncate text-caption", highlight ? "text-primary-foreground" : "text-muted-foreground")}>
+            {subtitle}
+          </span>
         ) : null}
       </span>
       {trailing ? (
         <span className="flex shrink-0 items-center gap-1">{trailing}</span>
       ) : (
-        <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+        <ChevronRight className={cn("size-4 shrink-0", highlight ? "text-primary-foreground" : "text-muted-foreground")} aria-hidden />
       )}
     </>
   );
 
-  const surface = active || emphasis ? "bg-accent" : "bg-card hover:bg-accent";
+  const surface = highlight
+    ? "border-2 border-foreground bg-primary"
+    : active || emphasis
+      ? "bg-accent"
+      : "bg-card hover:bg-accent";
   const base =
     "flex w-full min-h-[48px] items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors duration-fast ease-snappy active:translate-y-px";
 

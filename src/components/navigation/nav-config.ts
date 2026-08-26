@@ -13,8 +13,10 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
   { href: "/reflect", label: "Journal", icon: "notebook", exact: true },
   { href: "/wall", label: "Wall", icon: "wall", exact: true },
-  { href: "/passport", label: "Passport", icon: "radar" },
-  { href: "/record", label: "Record", icon: "clipboardList" },
+  // Passport (skills_passport) and Record are not released for this cohort —
+  // a nav link to an empty/placeholder surface is worse than no link. The
+  // routes remain (no admin access is removed); students just aren't pointed at
+  // them from the shell.
 ];
 
 /** Lecture-only roster: a single nav destination — the lecture list. */

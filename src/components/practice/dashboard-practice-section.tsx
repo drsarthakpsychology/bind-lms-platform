@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Stethoscope, ListChecks, Timer, ArrowRight, Zap } from "lucide-react";
+import { Stethoscope, ListChecks, ArrowRight, Zap } from "lucide-react";
 import { cardVariants } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { haptic } from "@/lib/haptics";
@@ -34,44 +34,24 @@ export function DashboardPracticeSection() {
         The more you practise, the more ready you are. Two minutes a day beats two hours on Sunday.
       </p>
 
-      {/* Daily habit strip — the retention loop */}
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Link
-          href="/practice/judgment"
-          onClick={() => haptic("tap")}
-          className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-3 p-4")}
-        >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
-            <ListChecks className="size-5" aria-hidden />
+      {/* Daily habit — one card, not a row of tools (the full set lives on /practice). */}
+      <Link
+        href="/practice/judgment"
+        onClick={() => haptic("tap")}
+        className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-3 p-4")}
+      >
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
+          <ListChecks className="size-5" aria-hidden />
+        </span>
+        <span className="min-w-0">
+          <span className="block text-eyebrow text-muted-foreground">Daily · 2 min</span>
+          <span className="block text-body-strong">5 Judgment Calls</span>
+          <span className="block text-caption text-muted-foreground">
+            New information, new probability. See how experts disagree.
           </span>
-          <span className="min-w-0">
-            <span className="block text-eyebrow text-muted-foreground">Daily · 2 min</span>
-            <span className="block text-body-strong">5 Judgment Calls</span>
-            <span className="block text-caption text-muted-foreground">
-              New information, new probability. See how experts disagree.
-            </span>
-          </span>
-          <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
-        </Link>
-
-        <Link
-          href="/practice/two-minute-clinic"
-          onClick={() => haptic("tap")}
-          className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-3 p-4")}
-        >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
-            <Timer className="size-5" aria-hidden />
-          </span>
-          <span className="min-w-0">
-            <span className="block text-eyebrow text-muted-foreground">Daily · 2 minutes</span>
-            <span className="block text-body-strong">Two-Minute Clinic</span>
-            <span className="block text-caption text-muted-foreground">
-              One line, your differential, instant expert comparison.
-            </span>
-          </span>
-          <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
-        </Link>
-      </div>
+        </span>
+        <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
+      </Link>
 
       {/* Flagship — the main event */}
       <Link

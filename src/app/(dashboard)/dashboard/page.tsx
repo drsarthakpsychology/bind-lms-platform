@@ -164,7 +164,7 @@ export default async function DashboardPage() {
       />
 
       <Reveal delay={0.05}>
-        {viewingAsStudent && (
+        {viewingAsStudent && profile.role === "admin" && (
           <Alert variant="warning" className="border-foreground hard-shadow-sm">
             <Sparkles className="size-4" aria-hidden />
             <AlertTitle>Previewing as a student</AlertTitle>
