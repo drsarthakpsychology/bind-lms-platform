@@ -170,12 +170,11 @@ Gate: lint 0, tsc clean, 534 tests, build exit 0.
 
 ---
 
-## Roster invite — redirect URL verification (2026-08-26)
+## Roster invite — redirect URL verification + PASSWORD PIVOT (2026-08-26)
 
 Kavya reported updating Supabase Auth's Site URL to `https://vibhapsychology.com`
 and adding `https://vibhapsychology.com/**` to the Redirect URLs allowlist. I
-removed the redirect blocker from NEEDS_KAVYA.md, then verified for real
-(instead of trusting the dashboard claim):
+verified for real (instead of trusting the dashboard claim):
 
 - **`redirect_to` BEFORE:** `http://localhost:3000`
 - **`redirect_to` AFTER (fresh link, ~8 min post-change):** `http://localhost:3000`
@@ -183,15 +182,38 @@ removed the redirect blocker from NEEDS_KAVYA.md, then verified for real
   project). Project is `plms` (ref `hojhzwvuccojqkvkkslw`, ap-south-1); a second
   project `psych-outreach` is INACTIVE.
 
-The rest of the invite flow is verified working end-to-end at the API level:
-fresh `generateLink` → click (303 + session tokens) → `setSession` →
-`updateUser(password)` → `signInWithPassword` (session established), with the
-test account landing at `scope=lectures_only` + `is_test=true`. Only the
-redirect target is wrong — `generateLink`'s `redirectTo` is being rejected by
-the allowlist and falling back to the Site URL (still `localhost:3000`).
+**Kavya's decision: drop links entirely.** Instead of fighting the redirect, each
+student now gets a simple **8-character password** (letters + digits only, no
+look-alikes). Set at account creation on the auth user, stored plaintext on
+`credential_invites.password` (admin-only RLS table) so `/admin/roster` shows
+the whole list. `/admin/roster` gained: a password column with reveal + copy, a
+per-row **Reset password**, and a **"Download password list (CSV)"** button
+(`name,email,password,status`) so Kavya can share each password individually.
+The send step emails the password (plain text, no link) when used; the test
+email returns the generated password.
 
-- **Roster send count: 0 sent** — import/send is deliberately **BLOCKED** until
-  the redirect reads `https://vibhapsychology.com/set-password`. Sending now
-  would hand every real student a link that redirects to their own machine.
+**Verified end-to-end against production:** import one student → 8-char password
+generated (`ZuKyJrtT`) → stored on the invite row → `signInWithPassword(email,
+password)` → session → `scope=lectures_only`. Email body contains the password
+and no `verify?token` link. Migration `credential_invites_password.sql` applied
+to prod (column verified via information_schema).
 
-Re-added the precise blocker to NEEDS_KAVYA.md (top ROSTER section).
+## Video quality — live lesson published as multi-rendition HLS (2026-08-26)
+
+Root cause: the quality selector only renders when `levels.length > 0`, populated
+from an HLS master via hls.js. The one live lesson video (MSE, `SAY_2_3.mp4`,
+59s portrait 704×1280) was a single MP4 in Supabase Storage with **zero**
+`media_assets` rows, so the control never appeared.
+
+Fix: `scripts/publish-hls-supabase.ts` (mirrors the proven R2 ladder/naming the
+stream proxy's per-session AES-128 IV derivation expects) transcodes the source
+and uploads to Supabase Storage. Also widened the `videos` bucket
+`allowed_mime_types` (it only allowed mp4/quicktime/webm/matroska, which
+rejected m3u8/ts uploads) via migration. Result: **45 objects uploaded (4 rungs
+1080/720/480/240 × 10 segments), `media_assets` row written** →
+`mediaType: "hls"` → the selector renders.
+
+**Verified end-to-end against production:** playback → `mediaType:"hls"`;
+master.m3u8 → 200 rewritten to 4 absolute variant URLs; hls_1080/index.m3u8 →
+200 with `EXT-X-KEY`; seg_0000.ts → 200 `video/mp2t` encrypted. The test account
+was enrolled in the published course for the check.

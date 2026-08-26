@@ -43,6 +43,8 @@ const ADMIN: PaletteEntry[] = [
   { id: "ad-overview", label: "Admin overview", href: "/admin", group: "Admin" },
   { id: "ad-students", label: "Students", href: "/admin/students", group: "Admin" },
   { id: "ad-courses", label: "Courses", href: "/admin/courses", group: "Admin" },
+  { id: "ad-roster", label: "Roster & emails", href: "/admin/roster", group: "Admin", keywords: ["email", "password", "credentials", "invite"] },
+  { id: "ad-flags", label: "What's live", href: "/admin/flags", group: "Admin", keywords: ["flags", "features", "tools"] },
   { id: "ad-sim", label: "Sim session review", href: "/admin/sim-review", group: "Admin" },
   { id: "ad-checkins", label: "Cohort check-ins", href: "/admin/checkins", group: "Admin", keywords: ["aggregate"] },
   { id: "ad-infra", label: "Infrastructure", href: "/admin/infra", group: "Admin" },

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, FileVideo2, ListPlus, Paperclip, UserRoundPlus } from "lucide-react";
+import { ChevronDown, ChevronLeft, FileVideo2, ListPlus, Paperclip, UserRoundPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
 import { VideoUpload } from "./video-upload";
@@ -42,7 +42,7 @@ export default async function CourseDetailPage({
         .eq("course_id", courseId),
       supabase
         .from("materials")
-        .select("id, title, kind, format, size_bytes, url")
+        .select("id, title, kind, format, size_bytes, url, storage_path")
         .eq("course_id", courseId)
         .is("lesson_id", null)
         .order("sort_order", { ascending: true }),
@@ -69,7 +69,7 @@ export default async function CourseDetailPage({
       </Link>
 
       <PageHeader
-        eyebrow={course.is_published ? "Published course" : "Draft course"}
+        eyebrow="Course builder"
         title={<RenameCourse courseId={course.id} title={course.title} />}
         badge={
           course.is_published ? (
@@ -80,73 +80,43 @@ export default async function CourseDetailPage({
         }
         description={
           course.is_published
-            ? "This course is live to students."
-            : "Draft — you can watch any uploaded videos below before publishing."
+            ? "Students can see this course. Changes show up right away."
+            : "Students can't see this course until you publish it."
         }
-        actions={<CourseActions courseId={course.id} isPublished={course.is_published} />}
+        actions={<CourseActions courseId={course.id} isPublished={course.is_published} showOpenBuilder={false} />}
       />
 
       {/* De-densified admin surface (T44): each management task is an accordion
           section, open-by-default for the primary create action and collapsed
           for the secondary sections, so mobile isn't one long scroll of
           competing forms. */}
-      <details open className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
+      <details open className="group rounded-lg border-2 border-border bg-card hard-shadow-sm">
         <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
           <ListPlus className="size-4 text-link" aria-hidden />
           Add a lesson
+          <ChevronDown
+            className="ml-auto size-4 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
         </summary>
         <div className="border-t-2 border-border px-4 py-4">
           <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} />
         </div>
       </details>
 
-      <details className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
-        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
-          <UserRoundPlus className="size-4 text-link" aria-hidden />
-          Enrolled students
-          <Badge variant="secondary" className="ml-1">
-            {enrolledIds.length}
-          </Badge>
-        </summary>
-        <div className="border-t-2 border-border px-4 py-4">
-          <EnrollStudents
-            courseId={courseId}
-            students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
-            enrolledIds={enrolledIds}
-          />
+      <section aria-labelledby="lessons-heading" className="space-y-3">
+        <div className="flex items-center gap-2">
+          <h2 id="lessons-heading" className="text-h2">
+            Lessons
+          </h2>
+          <Badge variant="secondary">{(lessons ?? []).length}</Badge>
         </div>
-      </details>
 
-      <details className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
-        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
-          <Paperclip className="size-4 text-link" aria-hidden />
-          Course materials
-          <Badge variant="secondary" className="ml-1">
-            {(courseMaterials ?? []).length}
-          </Badge>
-        </summary>
-        <div className="border-t-2 border-border px-4 py-4">
-          <MaterialUploader
-            courseId={courseId}
-            lessonId={null}
-            materials={(courseMaterials ?? []).map((m) => ({
-              id: m.id,
-              title: m.title,
-              kind: m.kind,
-              format: m.format,
-              sizeBytes: m.size_bytes,
-              url: m.url,
-            }))}
-          />
-        </div>
-      </details>
-
-      <section aria-label="Lessons" className="space-y-3">
         {(lessons ?? []).length === 0 ? (
           <EmptyState
             icon={<FileVideo2 className="size-6" aria-hidden />}
             title="No lessons yet"
-            description="Add your first lesson above — it starts with a video upload."
+            description="Add your first lesson above. It starts with a video."
           />
         ) : (
           (lessons ?? []).map((lesson) => (
@@ -189,6 +159,56 @@ export default async function CourseDetailPage({
           ))
         )}
       </section>
+
+      <details className="group rounded-lg border-2 border-border bg-card hard-shadow-sm">
+        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
+          <Paperclip className="size-4 text-link" aria-hidden />
+          Course materials
+          <Badge variant="secondary" className="ml-1">
+            {(courseMaterials ?? []).length}
+          </Badge>
+          <ChevronDown
+            className="ml-auto size-4 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="border-t-2 border-border px-4 py-4">
+          <MaterialUploader
+            courseId={courseId}
+            lessonId={null}
+            materials={(courseMaterials ?? []).map((m) => ({
+              id: m.id,
+              title: m.title,
+              kind: m.kind,
+              format: m.format,
+              sizeBytes: m.size_bytes,
+              url: m.url,
+              storagePath: m.storage_path,
+            }))}
+          />
+        </div>
+      </details>
+
+      <details className="group rounded-lg border-2 border-border bg-card hard-shadow-sm">
+        <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
+          <UserRoundPlus className="size-4 text-link" aria-hidden />
+          Enrolled students
+          <Badge variant="secondary" className="ml-1">
+            {enrolledIds.length}
+          </Badge>
+          <ChevronDown
+            className="ml-auto size-4 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="border-t-2 border-border px-4 py-4">
+          <EnrollStudents
+            courseId={courseId}
+            students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
+            enrolledIds={enrolledIds}
+          />
+        </div>
+      </details>
     </div>
   );
 }

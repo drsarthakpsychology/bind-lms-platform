@@ -172,6 +172,10 @@ export function VideoPlayer({
   // timer swaps this before the 5-min token dies; the custom hls.js loaders
   // read it at every fetch, so rotation happens without restarting playback.
   const tokenRef = useRef<{ token: string; expiresAt: number } | null>(null);
+  // Whether the current source is a single MP4 (vs HLS). Read by the
+  // loadedmetadata handler so the MP4-only resolution chip renders only for
+  // single-file sources; HLS shows the quality menu instead.
+  const mediaTypeRef = useRef<"hls" | "mp4" | null>(null);
 
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -194,6 +198,10 @@ export function VideoPlayer({
   const [levels, setLevels] = useState<Array<{ height: number; index: number }>>([]);
   const [quality, setQuality] = useState<"auto" | number>("auto");
   const [qualityMenuOpen, setQualityMenuOpen] = useState(false);
+  // MP4 fallback: the single-file source's native resolution ("720p"), read
+  // from loadedmetadata. HLS populates `levels` and renders the quality menu;
+  // this stays null there so the chip never appears for HLS sources.
+  const [mp4Resolution, setMp4Resolution] = useState<string | null>(null);
   const hasCaptions = Boolean(captionsUrl);
   const [captionsOn, setCaptionsOn] = useState(true);
   const [playerState, setPlayerState] = useState<PlayerState>({ kind: "loading" });
@@ -217,6 +225,8 @@ export function VideoPlayer({
 
     setPlayerState({ kind: "loading" });
     resumeRef.current = 0;
+    mediaTypeRef.current = null;
+    setMp4Resolution(null);
 
     (async () => {
       let url: string;
@@ -249,6 +259,7 @@ export function VideoPlayer({
         url = `${data.streamUrl}?st=${encodeURIComponent(data.token)}`;
         resume = data.resumeSeconds ?? 0;
         mediaType = data.mediaType ?? "hls";
+        mediaTypeRef.current = mediaType;
         // Record the current token + its expiry so the custom loaders and the
         // refresh timer can rotate it before it dies.
         tokenRef.current = {
@@ -442,6 +453,11 @@ export function VideoPlayer({
         video.currentTime = resume;
       }
       setPlayerState({ kind: "ready" });
+      // MP4 fallback: expose the single-file source resolution as a static chip
+      // (HLS renders the quality menu instead, so this stays null there).
+      if (mediaTypeRef.current === "mp4" && video.videoHeight > 0) {
+        setMp4Resolution(`${video.videoHeight}p`);
+      }
     };
     const onPlaying = () => setIsPaused(false);
     const onPause = () => setIsPaused(true);
@@ -943,7 +959,8 @@ export function VideoPlayer({
               sm+; collapse into an overflow menu below 400px so play/time/scrub/
               fullscreen always fit. */}
           <div className="flex shrink-0 items-center gap-1 max-sm:hidden">
-            {/* Quality — only for HLS ladders (levels populate on manifest parse). */}
+            {/* Quality — HLS ladders render the menu; a single MP4 renders a
+                static resolution chip instead of an empty control. */}
             {levels.length > 0 && (
               <div className="relative">
                 <button
@@ -987,6 +1004,19 @@ export function VideoPlayer({
                   </div>
                 )}
               </div>
+            )}
+
+            {/* MP4 fallback — no HLS ladder, so show the source resolution as a
+                static chip (only once loadedmetadata has reported a height). */}
+            {levels.length === 0 && mp4Resolution && (
+              <button
+                type="button"
+                disabled
+                aria-label={`Video quality: ${mp4Resolution}`}
+                className="inline-flex h-8 items-center rounded-md border-2 border-white/15 px-2 text-xs font-semibold text-white/60"
+              >
+                {mp4Resolution}
+              </button>
             )}
 
             {/* Speed */}

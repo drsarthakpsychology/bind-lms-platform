@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useRef, useState } from "react";
 import { CheckCircle2, ChevronDown, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState } from "./actions";
+import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState, type SignedUploadResult } from "./actions";
 import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
 
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -46,6 +46,8 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
       setVideoPath(null);
       setFileName(null);
       setRequiresAssignment(false);
+      setTitle("");
+      setDescription("");
     }
     wasPending.current = pending;
   }, [pending, state.error]);
@@ -59,23 +61,37 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
     setUploadError(null);
     setVideoPath(null);
 
-    const signed = await prepareVideoUpload(courseId, file.name);
+    let signed: SignedUploadResult;
+    try {
+      signed = await prepareVideoUpload(courseId, file.name);
+    } catch {
+      setUploadStatus("error");
+      setUploadError("Could not prepare the upload. Check your connection and try again.");
+      return;
+    }
+
     if (!signed.ok) {
       setUploadStatus("error");
       setUploadError(signed.error);
       return;
     }
 
-    const supabase = createClient();
-    const { error } = await supabase.storage.from("videos").uploadToSignedUrl(
-      signed.path,
-      signed.token,
-      file,
-    );
+    try {
+      const supabase = createClient();
+      const { error } = await supabase.storage.from("videos").uploadToSignedUrl(
+        signed.path,
+        signed.token,
+        file,
+      );
 
-    if (error) {
+      if (error) {
+        setUploadStatus("error");
+        setUploadError(error.message);
+        return;
+      }
+    } catch {
       setUploadStatus("error");
-      setUploadError(error.message);
+      setUploadError("The upload failed. Check your connection and try again.");
       return;
     }
 
@@ -93,7 +109,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
         <Label>Video</Label>
         <div className="flex flex-wrap items-center gap-3">
           <label
-            className={buttonVariants({ variant: "secondary", size: "sm" }) + " cursor-pointer"}
+            className={buttonVariants({ variant: "secondary", size: "default" }) + " cursor-pointer"}
           >
             {uploadStatus === "uploading" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden />
@@ -116,7 +132,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
           <p className="text-caption text-status-pending-fg">Uploading in the background…</p>
         )}
         {uploadStatus === "done" && (
-          <p className="flex items-center gap-1.5 text-caption text-status-alert-fg">
+          <p className="flex items-center gap-1.5 text-caption text-status-success-fg">
             <CheckCircle2 className="size-3.5" aria-hidden />
             Upload complete.
           </p>
@@ -171,7 +187,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
           <span className="text-small font-medium">Preview</span>
           <ChevronDown className="size-4 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
         </summary>
-        <div className="border-t border-border px-4 py-3">
+        <div className="border-t-2 border-border px-4 py-3">
           <p className="text-small font-semibold">{title.trim() || "Lesson title"}</p>
           <p className="mt-1 text-small text-muted-foreground">
             {description.trim() || "Notes shown to students under the video."}
@@ -193,7 +209,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
       </label>
 
       {requiresAssignment && (
-        <div className="space-y-4 rounded-md border-2 border-border bg-secondary/60 p-4">
+        <div className="space-y-4 rounded-md border-2 border-border bg-secondary p-4">
           <div className="space-y-1.5">
             <Label htmlFor="assignmentPrompt">Assignment instructions</Label>
             <Textarea
@@ -205,7 +221,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
           </div>
           <fieldset>
             <legend className="text-small font-medium text-foreground">
-              Allowed submission types <span className="font-normal text-muted-foreground">(select all that apply)</span>
+              Submission types
             </legend>
             <div className="mt-2 grid grid-cols-1 gap-x-4 gap-y-1.5 sm:grid-cols-2">
               {SUBMISSION_TYPES.map((type) => (
@@ -225,7 +241,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
               ))}
             </div>
             <p className="mt-1.5 text-caption text-muted-foreground">
-              Students can submit using any of the selected formats.
+              Students can submit in any of the selected formats.
             </p>
           </fieldset>
         </div>
@@ -238,7 +254,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
         </Alert>
       )}
 
-      <Button type="submit" disabled={!canSubmit} title={uploadStatus !== "done" ? "Upload a video first" : undefined}>
+      <Button type="submit" size="lg" disabled={!canSubmit} title={uploadStatus !== "done" ? "Upload a video first" : undefined}>
         <VideoIcon className="size-4" aria-hidden />
         {pending ? "Creating…" : "Add lesson"}
       </Button>

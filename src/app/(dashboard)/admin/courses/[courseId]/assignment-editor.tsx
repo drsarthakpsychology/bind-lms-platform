@@ -18,6 +18,8 @@ import {
 } from "./assignment-actions";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
@@ -152,27 +154,24 @@ export function AssignmentEditor({
         >
           <label className="block space-y-1.5">
             <span className="text-small font-medium">Title</span>
-            <input
+            <Input
               name="title"
               required
-              defaultValue={title}
-              className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
               placeholder="Essay: apply the framework"
             />
           </label>
           <label className="block space-y-1.5">
             <span className="text-small font-medium">Instructions</span>
-            <textarea
+            <Textarea
               name="instructions"
               rows={4}
-              className="w-full rounded-md border-2 border-input bg-background px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
               placeholder="Write the brief students will read…"
             />
           </label>
           <label className="flex h-6 items-center gap-2.5 text-small font-medium">
             <Switch checked={isPublished} onCheckedChange={setIsPublished} aria-label="Published" />
             <input type="hidden" name="isPublished" value={isPublished ? "on" : ""} />
-            Publish immediately
+            Published
           </label>
           <input type="hidden" name="dueAt" value={dueAt} />
           <input type="hidden" name="allowLate" value={allowLate ? "on" : ""} />
@@ -180,7 +179,7 @@ export function AssignmentEditor({
           <input type="hidden" name="maxFileMb" value={maxFileMb} />
           <input type="hidden" name="acceptedFormat" value={accepted.join(",")} />
           {error && <p role="alert" className="text-caption text-status-alert-fg">{error}</p>}
-          <Button type="submit" disabled={saving}>
+          <Button type="submit" size="lg" disabled={saving}>
             {saving && <Loader2 className="size-4 animate-spin" aria-hidden />}
             Add assignment
           </Button>
@@ -200,11 +199,11 @@ export function AssignmentEditor({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           {editing ? (
-            <input
+            <Input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               aria-label="Assignment title"
-              className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-base font-semibold outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              className="font-semibold md:text-base"
             />
           ) : (
             <h3 className="text-h3 leading-snug">{assignment.title}</h3>
@@ -310,11 +309,10 @@ export function AssignmentEditor({
           {/* In-place editor fields */}
           <label className="block space-y-1.5">
             <span className="text-small font-medium">Instructions</span>
-            <textarea
+            <Textarea
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
               rows={4}
-              className="w-full rounded-md border-2 border-input bg-background px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
             />
           </label>
 
@@ -329,11 +327,10 @@ export function AssignmentEditor({
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <label className="block space-y-1.5">
                   <span className="text-small font-medium">Due date &amp; time</span>
-                  <input
+                  <Input
                     type="datetime-local"
                     value={dueAt}
                     onChange={(e) => setDueAt(e.target.value)}
-                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </label>
                 <label className="flex h-9 items-center gap-2.5 text-small font-medium">
@@ -345,22 +342,20 @@ export function AssignmentEditor({
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 <label className="block space-y-1.5">
                   <span className="text-small font-medium">Max files</span>
-                  <input
+                  <Input
                     type="number"
                     min={1}
                     value={maxFiles}
                     onChange={(e) => setMaxFiles(Number(e.target.value))}
-                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </label>
                 <label className="block space-y-1.5">
                   <span className="text-small font-medium">Max MB / file</span>
-                  <input
+                  <Input
                     type="number"
                     min={1}
                     value={maxFileMb}
                     onChange={(e) => setMaxFileMb(Number(e.target.value))}
-                    className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </label>
               </div>
@@ -399,7 +394,7 @@ export function AssignmentEditor({
 
           {error && <p role="alert" className="text-caption text-status-alert-fg">{error}</p>}
 
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="flex items-center gap-1.5 text-caption text-muted-foreground">
               {savedAt ? (
                 <>
@@ -414,7 +409,7 @@ export function AssignmentEditor({
               <Button
                 type="button"
                 variant="outline"
-                size="sm"
+                size="default"
                 onClick={() => {
                   setEditing(false);
                   setError(null);
@@ -423,7 +418,7 @@ export function AssignmentEditor({
                 <X className="size-3.5" aria-hidden />
                 Cancel
               </Button>
-              <Button type="button" size="sm" onClick={handleSave} disabled={saving}>
+              <Button type="button" size="default" onClick={handleSave} disabled={saving}>
                 {saving ? (
                   <Loader2 className="size-3.5 animate-spin" aria-hidden />
                 ) : (

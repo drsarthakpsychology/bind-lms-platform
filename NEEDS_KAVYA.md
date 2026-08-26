@@ -1,34 +1,33 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
-## 🚨 ROSTER — 2026-08-26
+## 🚨 ROSTER — 2026-08-26 (PASSWORD FLOW — no more links)
 
-Deployed + live on vibhapsychology.com. The flow is import → review → send
-(`/admin/tools` import, `/admin/roster` review + send + test email). The four
-migrations are applied and verified. `RESEND_API_KEY` is set in Vercel. Sender
-domain **resolved** — sending from `noreply@bindcat.com` (Kavya confirmed).
+**The link-based invite is DEAD — replaced by per-student 8-char passwords.** The
+recovery link's `redirect_to` was stuck at `http://localhost:3000` (Supabase
+Auth's redirect allowlist rejected our target and fell back to its localhost
+Site URL — verified with fresh links, never took effect). Per Kavya's decision:
+**each student gets a simple 8-character password (letters + digits only)**, set
+server-side at account creation. No link, no redirect dependency — the student
+just signs in at vibhapsychology.com/login with email + password.
 
-**THE BLOCKER — Supabase Auth redirect URL is STILL `localhost`.** A real
-invite link's `redirect_to` is `http://localhost:3000`, NOT
-`https://vibhapsychology.com/set-password`. Verified twice with fresh
-`generateLink` calls (~8 min after the Dashboard change was supposedly made) —
-the value did not change. The rest of the flow works (link click → session,
-set password, login, `scope=lectures_only` + `is_test`), but the redirect
-target means a real student's link would land on their own machine. Root cause:
-`generateLink`'s `redirectTo` is being rejected by the Auth allowlist and
-falling back to the Site URL, which is still the `localhost:3000` default —
-i.e. the Dashboard change did NOT save / landed on the wrong project.
+**What to do to go live (all in `/admin/roster`):**
+1. Import the roster (`/admin/tools` → Import students). Each account is created
+   with its own 8-char password, shown in the roster list.
+2. **Download password list (CSV)** — the `name,email,password,status` file.
+   Share each password with the student individually (WhatsApp/text), so only
+   you and they know it.
+3. Optional: "Send all pending" emails each student their password (plain text,
+   no link) from `noreply@bindcat.com` (verified sender, already set).
 
-**What to re-do** (it did NOT take effect): Supabase Dashboard → project
-**`plms` (ref `hojhzwvuccojqkvkkslw`, ap-south-1)** → Authentication → URL
-Configuration → set **Site URL = `https://vibhapsychology.com`** AND add
-**`https://vibhapsychology.com/**`** to **Redirect URLs**. A second project
-`psych-outreach` (`whuoivgzscpvococrbxx`) is INACTIVE — make sure the change
-landed on `plms`, not there. After saving, verify with a fresh test email and
-confirm the link's `redirect_to` reads `https://vibhapsychology.com/set-password`
-(not `http://localhost:3000`) before importing the roster.
+Verified end-to-end against production: import → 8-char password generated →
+student signs in with email + password → session → `lectures_only` scope. The
+`credential_invites.password` migration is applied. The test-email control sends
+a real 8-char password (`[TEST]` subject).
 
-Until that reads correct, the roster import/send stays **BLOCKED** — a wrong
-redirect would fail every real invite.
+Optional (no longer blocks invites): Supabase Dashboard → project **`plms`**
+(ref `hojhzwvuccojqkvkkslw`) → Authentication → URL Configuration → Site URL =
+`https://vibhapsychology.com` + add `https://vibhapsychology.com/**` to Redirect
+URLs. Only relevant for other redirect-based flows now.
 
 Every item: paste → something switches on → verify with one command. Free first.
 

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import {
   Check,
+  CircleAlert,
   GripVertical,
   Loader2,
   MoreHorizontal,
@@ -69,6 +70,8 @@ export type UploadRow = {
   format?: string | null;
   sizeBytes?: number | null;
   url?: string | null;
+  /** Supabase object key for file materials — distinct from `url` (links). */
+  storagePath?: string | null;
 };
 
 type PendingUpload = {
@@ -100,6 +103,7 @@ export function MaterialUploader({
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const replaceInputRef = useRef<HTMLInputElement>(null);
   // Stable across renders (lazy init) — the browser supabase client is a plain
   // object, safe to reuse.
   const [supabase] = useState(() => createClient());
@@ -129,40 +133,59 @@ export function MaterialUploader({
       onUpdate: (status: PendingUpload["status"], error?: string, progress?: number) => void,
     ) => {
       if (item.error) return;
-      onUpdate("preparing");
+      try {
+        onUpdate("preparing");
 
-      const signed = await prepareMaterialUpload(courseId, lessonId, item.file.name, item.file.size);
-      if (!signed.ok) {
-        onUpdate("error", signed.error);
-        return;
-      }
-      item.materialId = signed.materialId;
-      item.path = signed.path;
-      item.token = signed.token;
-      onUpdate("uploading");
+        const signed = await prepareMaterialUpload(courseId, lessonId, item.file.name, item.file.size);
+        if (!signed.ok) {
+          onUpdate("error", signed.error);
+          return;
+        }
+        item.materialId = signed.materialId;
+        item.path = signed.path;
+        item.token = signed.token;
+        onUpdate("uploading");
 
-      // Upload through supabase-js (the only protocol the endpoint accepts).
-      const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, item.file);
+        // Upload through supabase-js (the only protocol the endpoint accepts).
+        const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, item.file);
 
-      if (uploadResult.error) {
-        // Roll back the materials row we created in prepareMaterialUpload —
-        // otherwise a failed upload leaves an orphaned "success" row pointing
-        // at a file that was never written.
+        if (uploadResult.error) {
+          // Roll back the materials row we created in prepareMaterialUpload —
+          // otherwise a failed upload leaves an orphaned "success" row pointing
+          // at a file that was never written.
+          if (item.materialId) {
+            try {
+              await deleteMaterial(courseId, item.materialId, signed.path);
+            } catch {
+              // best-effort rollback — the row stays pending and never confirms.
+            }
+            item.materialId = null;
+          }
+          onUpdate("error", uploadResult.error);
+          return;
+        }
+
+        const confirm = await confirmMaterialUpload(courseId, item.materialId!, item.path);
+        if (confirm.error) {
+          onUpdate("error", confirm.error);
+          return;
+        }
+        haptic("success");
+        onUpdate("done", undefined, 100);
+      } catch {
+        // A rejected (network) failure — roll back the prepared row so a failed
+        // upload never survives as an orphaned row, then surface the error
+        // instead of leaving the row stuck on "uploading".
         if (item.materialId) {
-          await deleteMaterial(courseId, item.materialId, signed.path);
+          try {
+            await deleteMaterial(courseId, item.materialId, item.path);
+          } catch {
+            // best-effort
+          }
           item.materialId = null;
         }
-        onUpdate("error", uploadResult.error);
-        return;
+        onUpdate("error", "Upload failed. Check your connection and try again.");
       }
-
-      const confirm = await confirmMaterialUpload(courseId, item.materialId!, item.path);
-      if (confirm.error) {
-        onUpdate("error", confirm.error);
-        return;
-      }
-      haptic("success");
-      onUpdate("done", undefined, 100);
     },
     [courseId, lessonId, supabase],
   );
@@ -273,6 +296,7 @@ export function MaterialUploader({
   async function handleReplace(e: React.ChangeEvent<HTMLInputElement>, target: UploadRow) {
     const file = e.target.files?.[0];
     e.target.value = "";
+    setReplaceTarget(null);
     if (!file) return;
     const signed = await replaceMaterialFile(courseId, target.id, file.name, file.size);
     if (!signed.ok) {
@@ -282,9 +306,11 @@ export function MaterialUploader({
     const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, file);
     if (uploadResult.error) {
       // The row now points at the new (empty) path. Roll it back to the old
-      // object so the material isn't left permanently broken.
+      // object so the material isn't left permanently broken. Use the old
+      // storage key returned by the action — `target.url` is the link URL and
+      // is null for file materials.
       const { restoreMaterialPath } = await import("./materials-actions");
-      await restoreMaterialPath(target.id, target.url ?? null);
+      await restoreMaterialPath(target.id, signed.oldPath ?? null);
       setBanner(uploadResult.error);
       return;
     }
@@ -298,7 +324,7 @@ export function MaterialUploader({
   // ---- Delete ----
   async function handleDelete(target: UploadRow) {
     setDeletePending(true);
-    const result = await deleteMaterial(courseId, target.id, target.url ?? null);
+    const result = await deleteMaterial(courseId, target.id, target.storagePath ?? null);
     setDeletePending(false);
     setMenuTarget(null);
     setMenuMode("menu");
@@ -322,7 +348,8 @@ export function MaterialUploader({
   return (
     <div className="space-y-4">
       {banner && (
-        <p role="alert" className="text-caption text-status-alert-fg">
+        <p role="alert" className="flex items-center gap-1.5 text-caption text-status-alert-fg">
+          <CircleAlert className="size-3.5 shrink-0" aria-hidden />
           {banner}
         </p>
       )}
@@ -347,13 +374,13 @@ export function MaterialUploader({
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={
-          "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-border bg-muted/40 px-6 py-10 text-center transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 " +
+          "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-border bg-secondary/40 px-6 py-10 text-center transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 " +
           (dragOver ? "border-primary bg-accent" : "")
         }
       >
         <UploadCloud className="size-8 text-muted-foreground" aria-hidden />
         <p className="text-small font-medium text-foreground">
-          Drag files here or <span className="text-link">browse</span>
+          <span className="text-link">Choose files</span> or drag them here
         </p>
         <p className="text-caption text-muted-foreground">
           PDF, audio (MP3/M4A/WAV), and images. Up to 100 MB each.
@@ -371,6 +398,17 @@ export function MaterialUploader({
         />
       </div>
 
+      {/* Single hidden picker for the ⋯ → Replace file action. */}
+      <input
+        ref={replaceInputRef}
+        type="file"
+        accept=".pdf,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
+        className="hidden"
+        onChange={(e) => {
+          if (replaceTarget) handleReplace(e, replaceTarget);
+        }}
+      />
+
       {/* Add a link */}
       <div className="flex justify-end">
         <Button type="button" variant="secondary" size="sm" onClick={() => setLinkOpen(true)}>
@@ -381,7 +419,7 @@ export function MaterialUploader({
           open={linkOpen}
           onOpenChange={setLinkOpen}
           title="Add a link"
-          description="A URL students open in a new tab, labelled with its title."
+          description="A link students open in a new tab."
           footer={
             <div className="flex flex-col gap-2">
               <Button type="button" onClick={submitLink} className="w-full">
@@ -439,17 +477,17 @@ export function MaterialUploader({
                     <Button
                       type="button"
                       variant="outline"
-                      size="xs"
+                      size="sm"
                       onClick={() => retryUpload(p)}
                     >
-                      <RotateCcw className="size-3" aria-hidden />
+                      <RotateCcw className="size-3.5" aria-hidden />
                       Retry
                     </Button>
                     <button
                       type="button"
                       onClick={() => dismissFailed(p.clientId)}
                       aria-label={`Dismiss ${p.fileName}`}
-                      className="text-caption text-muted-foreground hover:text-foreground"
+                      className="min-h-8 rounded-md px-1 text-caption text-muted-foreground hover:text-foreground"
                     >
                       Dismiss
                     </button>
@@ -462,7 +500,7 @@ export function MaterialUploader({
                     type="button"
                     onClick={() => cancelUpload(p.clientId)}
                     aria-label={`Cancel ${p.fileName}`}
-                    className="text-caption text-muted-foreground hover:text-foreground"
+                    className="min-h-8 rounded-md px-1 text-caption text-muted-foreground hover:text-foreground"
                   >
                     Cancel
                   </button>
@@ -552,17 +590,6 @@ export function MaterialUploader({
               >
                 <MoreHorizontal className="size-4" aria-hidden />
               </Button>
-
-              {/* Replace file picker */}
-              {replaceTarget?.id === m.id && (
-                <input
-                  key={replaceTarget.id}
-                  type="file"
-                  accept=".pdf,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
-                  className="hidden"
-                  onChange={(e) => handleReplace(e, m)}
-                />
-              )}
             </li>
           ))}
         </ul>
@@ -621,6 +648,7 @@ export function MaterialUploader({
               onClick={() => {
                 setReplaceTarget(menuTarget);
                 setMenuTarget(null);
+                replaceInputRef.current?.click();
               }}
               className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent"
             >

@@ -25,14 +25,25 @@ export const LECTURE_ONLY_ITEMS: NavItem[] = [
 ];
 
 /**
- * Admin nav is grouped into three labelled chunks (Review / Content / System)
- * rather than one flat 21-item column — 21 simultaneous options exceeds the
- * ~3–5 chunk working-memory ceiling, and grouping collapses the scan into
- * ~4 chunks. Each destination also carries a unique icon: no glyph is reused
- * for two different places, so the icon→destination mapping stays 1:1.
+ * Admin nav is grouped into labelled chunks (Launch / Review / Content /
+ * System) rather than one flat column — 20+ simultaneous options exceeds the
+ * ~3–5 chunk working-memory ceiling, and grouping collapses the scan into a
+ * few chunks. The launch-critical surfaces (build/upload courses, people,
+ * emails, what's live) sit at the top so they're always one glance away —
+ * not buried at the bottom of a long list. Each destination carries a unique
+ * icon: no glyph is reused for two different places, so the icon→destination
+ * mapping stays 1:1.
  */
 export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin", label: "Overview", icon: "layoutDashboard", exact: true },
+
+  // Launch — the go-live surfaces: upload content, manage people, send
+  // credentials, switch what's live. Highest value when the programme is
+  // first going out to students.
+  { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
+  { href: "/admin/students", label: "Students", icon: "users", section: "Launch" },
+  { href: "/admin/roster", label: "Roster & emails", icon: "mail", section: "Launch" },
+  { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
 
   // Review — the daily review workflow, highest-frequency first.
   { href: "/admin/triage", label: "Review triage", icon: "listFilter", section: "Review" },
@@ -43,8 +54,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/enquiries", label: "Enquiries", icon: "inbox", section: "Review" },
   { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse", section: "Review" },
 
-  // Content — authoring and the knowledge base.
-  { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Content" },
+  // Content — the rest of the knowledge base and authoring.
   { href: "/admin/modules", label: "Modules", icon: "layers", section: "Content" },
   { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
   { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
@@ -52,10 +62,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/corpus/dictate", label: "Record a case", icon: "mic", section: "Content" },
   { href: "/admin/calibration", label: "Marking check", icon: "target", section: "Content" },
 
-  // System — people, access, and platform.
-  { href: "/admin/students", label: "Students", icon: "users", section: "System" },
-  { href: "/admin/roster", label: "Roster & emails", icon: "mail", section: "System" },
-  { href: "/admin/flags", label: "What's live", icon: "toggle", section: "System" },
+  // System — platform health.
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
   { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },

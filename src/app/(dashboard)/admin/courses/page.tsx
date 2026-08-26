@@ -28,7 +28,7 @@ export default async function CoursesPage() {
     <div className="space-y-8">
       <PageHeader
         title="Courses"
-        description="Unpublished courses are invisible to students. Preview a draft's videos from its detail page before publishing."
+        description="Drafts are hidden from students. Open a course to add lessons and publish."
         badge={
           <Badge variant="secondary">
             {published} published / {(courses ?? []).length} total

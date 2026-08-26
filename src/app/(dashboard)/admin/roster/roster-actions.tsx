@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Loader2, Mail, Send, RefreshCw } from "lucide-react";
-import { sendCredentialEmailsAction, sendTestEmailAction } from "../students/bulk-import";
+import { Check, Copy, Download, Eye, EyeOff, KeyRound, Loader2, Mail, RefreshCw, Send } from "lucide-react";
+import { sendCredentialEmailsAction, sendTestEmailAction, resetCredentialAction } from "../students/bulk-import";
 import type { InviteRow } from "./page";
+import { LockToggle } from "@/components/admin/lock-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,10 +17,31 @@ function fmtDate(iso: string | null): string {
   return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 }
 
+/** Build a download-ready CSV of the password list and trigger the download. */
+function downloadCsv(rows: InviteRow[]) {
+  const esc = (v: string) => (v.includes(",") || v.includes('"') ? `"${v.replace(/"/g, '""')}"` : v);
+  const header = "Name,Email,Password,Status";
+  const body = rows
+    .map((r) => `${esc(r.name)},${esc(r.email)},${esc(r.password ?? "")},${r.status}`)
+    .join("\n");
+  const blob = new Blob([`${header}\n${body}\n`], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "vibha-roster-passwords.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export function RosterActions({ rows }: { rows: InviteRow[] }) {
   const [selected, setSelected] = React.useState<Set<string>>(new Set());
   const [busy, setBusy] = React.useState(false);
   const [feedback, setFeedback] = React.useState<string | null>(null);
+
+  // Password reveal + copy.
+  const [revealed, setRevealed] = React.useState<Set<string>>(new Set());
+  const [copied, setCopied] = React.useState<string | null>(null);
+  const [resetBusy, setResetBusy] = React.useState<string | null>(null);
 
   // Test email.
   const [testEmail, setTestEmail] = React.useState("");
@@ -61,6 +83,30 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
     setTestResult({ ok: res.ok, detail: res.error ?? res.detail });
   }
 
+  async function runReset(email: string) {
+    setResetBusy(email);
+    setFeedback(null);
+    const res = await resetCredentialAction(email);
+    setResetBusy(null);
+    if (res.error || !res.password) {
+      setFeedback(res.error ?? "Could not reset the password.");
+    } else {
+      setFeedback(`New password for ${email}: ${res.password}`);
+      setRevealed((prev) => new Set(prev).add(email));
+    }
+    window.location.reload();
+  }
+
+  async function copyPassword(email: string, password: string) {
+    try {
+      await navigator.clipboard.writeText(password);
+    } catch {
+      /* clipboard may be blocked; the reveal still works */
+    }
+    setCopied(email);
+    window.setTimeout(() => setCopied(null), 1500);
+  }
+
   return (
     <div className="space-y-6">
       {/* Test email */}
@@ -69,8 +115,8 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
           <Mail className="size-4 text-link" aria-hidden /> Send a test email
         </h2>
         <p className="mt-1 text-small text-muted-foreground">
-          Sends the real credential email (marked <span className="font-semibold">[TEST]</span>) to any address,
-          through the same Resend path the real send uses. Test as often as you like — it never reaches a student.
+          Sends the real credential email (marked <span className="font-semibold">[TEST]</span>) with a real 8-char password to any
+          address, through the same Resend path the real send uses. Test as often as you like — it never reaches a student.
         </p>
         <div className="mt-3 flex flex-wrap items-end gap-2">
           <div className="min-w-64 flex-1 space-y-1.5">
@@ -95,7 +141,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
         )}
       </div>
 
-      {/* Send controls */}
+      {/* Send + download controls */}
       <div className="flex flex-wrap items-center gap-2">
         <Button type="button" variant="secondary" onClick={() => runSend(pending.map((r) => r.email), "Send all pending")} disabled={busy || pending.length === 0}>
           <Send className="size-4" aria-hidden /> Send all pending ({pending.length})
@@ -105,6 +151,9 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
         </Button>
         <Button type="button" onClick={() => runSend(Array.from(selected), "Send selected")} disabled={busy || selected.size === 0}>
           Send selected ({selected.size})
+        </Button>
+        <Button type="button" variant="outline" onClick={() => downloadCsv(rows)} disabled={rows.length === 0}>
+          <Download className="size-4" aria-hidden /> Download password list (CSV)
         </Button>
       </div>
       {feedback && (
@@ -120,44 +169,92 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
         </p>
       ) : (
         <ul className="space-y-2">
-          {rows.map((r) => (
-            <li
-              key={r.id}
-              className={cn(
-                "flex items-center gap-3 rounded-md border-2 border-border bg-card px-3 py-2",
-                r.status === "sent" && "opacity-70",
-              )}
-            >
-              <input
-                type="checkbox"
-                checked={selected.has(r.email)}
-                onChange={() => toggle(r.email)}
-                disabled={r.status === "sent"}
-                aria-label={`Select ${r.email}`}
-                className="size-4 accent-primary"
-              />
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-small font-medium [overflow-wrap:anywhere]">{r.name}</p>
-                <p className="truncate text-caption text-muted-foreground">{r.email}</p>
-              </div>
-              <Badge
-                variant={r.status === "sent" ? "published" : r.status === "failed" ? "destructive" : "pending"}
+          {rows.map((r) => {
+            const isRevealed = revealed.has(r.email);
+            const password = r.password ?? "";
+            return (
+              <li
+                key={r.id}
+                className={cn(
+                  "flex flex-wrap items-center gap-3 rounded-md border-2 border-border bg-card px-3 py-2",
+                  r.status === "sent" && "opacity-80",
+                )}
               >
-                {r.status}
-              </Badge>
-              <span className="hidden text-caption text-muted-foreground sm:block">{fmtDate(r.sent_at ?? r.created_at)}</span>
-              {r.status === "failed" && (
-                <>
+                <input
+                  type="checkbox"
+                  checked={selected.has(r.email)}
+                  onChange={() => toggle(r.email)}
+                  disabled={r.status === "sent"}
+                  aria-label={`Select ${r.email}`}
+                  className="size-4 accent-primary"
+                />
+                <div className="min-w-0 flex-1 basis-40">
+                  <p className="truncate text-small font-medium [overflow-wrap:anywhere]">{r.name}</p>
+                  <p className="truncate text-caption text-muted-foreground">{r.email}</p>
+                </div>
+
+                {/* The password — the whole point of this screen. */}
+                <div className="flex items-center gap-1.5">
+                  <span className="inline-flex min-w-24 items-center rounded border border-border bg-muted px-2 py-1 font-mono text-small">
+                    <KeyRound className="mr-1.5 size-3.5 shrink-0 text-muted-foreground" aria-hidden />
+                    {password ? (isRevealed ? password : "•".repeat(password.length)) : "—"}
+                  </span>
+                  {password && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setRevealed((prev) => {
+                            const next = new Set(prev);
+                            if (next.has(r.email)) next.delete(r.email);
+                            else next.add(r.email);
+                            return next;
+                          })
+                        }
+                        aria-label={isRevealed ? "Hide password" : "Show password"}
+                        className="inline-flex size-8 items-center justify-center rounded border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      >
+                        {isRevealed ? <EyeOff className="size-4" aria-hidden /> : <Eye className="size-4" aria-hidden />}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => copyPassword(r.email, password)}
+                        aria-label="Copy password"
+                        className="inline-flex size-8 items-center justify-center rounded border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      >
+                        {copied === r.email ? <Check className="size-4 text-status-success-fg" aria-hidden /> : <Copy className="size-4" aria-hidden />}
+                      </button>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="xs"
+                        onClick={() => runReset(r.email)}
+                        disabled={resetBusy === r.email}
+                        title="Generate a new password"
+                      >
+                        {resetBusy === r.email ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : <RefreshCw className="size-3.5" aria-hidden />}
+                        Reset
+                      </Button>
+                    </>
+                  )}
+                </div>
+
+                {r.lockUserId && <LockToggle userId={r.lockUserId} status={r.lockStatus} />}
+
+                <Badge
+                  variant={r.status === "sent" ? "published" : r.status === "failed" ? "destructive" : "pending"}
+                >
+                  {r.status}
+                </Badge>
+                <span className="hidden text-caption text-muted-foreground sm:block">{fmtDate(r.sent_at ?? r.created_at)}</span>
+                {r.status === "failed" && (
                   <span className="hidden max-w-40 truncate text-caption text-status-alert-fg md:block" title={r.error_reason ?? ""}>
                     {r.error_reason}
                   </span>
-                  <Button type="button" variant="ghost" size="xs" onClick={() => runSend([r.email], "Retry")} disabled={busy}>
-                    Retry
-                  </Button>
-                </>
-              )}
-            </li>
-          ))}
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

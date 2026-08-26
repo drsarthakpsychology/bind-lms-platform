@@ -7,16 +7,19 @@ import type { SupabaseClient } from "@supabase/supabase-js";
  * (name, email) into student accounts — used by both the admin server action
  * (`admin/students/bulk-import.ts`) and the CLI (`scripts/roster-import.ts`).
  *
- * Invite flow: create the auth user with a random throwaway password (never
- * emailed), set the profile's scope, mint a password-recovery link (the user
- * sets their own password by clicking it), and send THAT link — never a
- * plaintext password. If auth later moves to native invite tokens, only
- * `mintInviteLink` changes.
+ * Credential flow (2026-08-26, per Kavya): each student gets a simple 8-char
+ * password (letters + digits only) generated at account creation. The password
+ * is set on the auth user AND stored in plaintext on the `credential_invites`
+ * row so the admin roster screen can show Kavya the whole list — she shares
+ * each password with the student individually. Email (when used) carries the
+ * password, never a link — the old password-recovery-link flow died because
+ * Supabase Auth's redirect allowlist rejected our redirect target and every
+ * invite landed on `redirect_to=localhost`.
  */
 
 export type RosterRow = { name: string; email: string };
 export type RosterFailure = { row: number; email: string; reason: string };
-export type RosterCreated = { name: string; email: string; inviteUrl: string | null };
+export type RosterCreated = { name: string; email: string; password: string | null };
 
 export type RosterReport = {
   rowsRead: number;
@@ -110,35 +113,68 @@ export function parseRosterCsv(text: string, rowOffset = 2): RosterParse {
   return { rows, duplicates, invalid, emptyNames };
 }
 
-/** The plain-text invite email. `url` is the set-your-password link. */
-export function inviteEmailBody(name: string, email: string, url: string): string {
+/**
+ * Letters + digits only (no symbols — Kavya has to read these over the phone /
+ * WhatsApp), excluding look-alike characters (0/O, 1/I/l) so nobody mistypes.
+ */
+const CREDENTIAL_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
+
+/** Generate an 8-char student password (text + digits only). */
+export function generateCredential(length = 8): string {
+  const bytes = randomBytes(length);
+  let out = "";
+  for (let i = 0; i < length; i++) {
+    out += CREDENTIAL_ALPHABET[bytes[i] % CREDENTIAL_ALPHABET.length];
+  }
+  return out;
+}
+
+/** The plain-text credential email. `password` is the student's real password. */
+export function credentialsEmailBody(name: string, email: string, password: string, appUrl: string): string {
   return `Hi ${name},
 
 Your VIBHA School of Psychology account is ready.
 
   Email: ${email}
+  Password: ${password}
 
-Set your password (this link is just for you, and it expires):
-${url}
+Sign in at ${appUrl}/login
 
-Once you've set a password, sign in and your lectures will be waiting.
+This password is yours alone — please don't share it. If you ever need it again, contact the programme.
 
 — The VIBHA team`;
 }
 
-/** Mint a set-your-password link for an existing auth user. */
-export async function mintInviteLink(
+/**
+ * Make sure the student has a stored credential: return the existing one, or
+ * generate a fresh 8-char password, set it on the auth user, and persist it on
+ * the `credential_invites` row. `forceNew` regenerates (used by Reset password).
+ */
+export async function ensureCredential(
   admin: SupabaseClient,
   email: string,
-  appUrl: string,
+  forceNew = false,
 ): Promise<string | null> {
-  const { data, error } = await admin.auth.admin.generateLink({
-    type: "recovery",
-    email,
-    options: { redirectTo: `${appUrl}/set-password` },
-  });
-  if (error || !data?.properties?.action_link) return null;
-  return data.properties.action_link;
+  const { data: invite } = await admin
+    .from("credential_invites")
+    .select("password")
+    .eq("email", email)
+    .maybeSingle();
+
+  if (!forceNew && invite?.password) return invite.password as string;
+
+  const password = generateCredential();
+  const { data: profile } = await admin
+    .from("profiles")
+    .select("id")
+    .eq("email", email)
+    .maybeSingle();
+  if (profile?.id) {
+    const { error } = await admin.auth.admin.updateUserById(profile.id as string, { password });
+    if (error) return null;
+  }
+  await admin.from("credential_invites").update({ password }).eq("email", email);
+  return password;
 }
 
 export type ImportDeps = {
@@ -170,12 +206,14 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
   };
 
   for (const row of rows) {
-    // Throwaway password — never emailed, replaced by the recovery link at send.
-    const password = randomBytes(24).toString("base64url");
+    // The student's real 8-char password — set on the account here so it's
+    // immediately valid, and stored so the admin roster list can show Kavya the
+    // whole batch. The password is shared by Kavya, not emailed.
+    const password = generateCredential();
 
     if (dryRun) {
       report.created++;
-      report.createdAccounts.push({ name: row.name, email: row.email, inviteUrl: null });
+      report.createdAccounts.push({ name: row.name, email: row.email, password: null });
       continue;
     }
 
@@ -205,14 +243,14 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
     // Stamp the access scope on the profile (created by on_auth_user_created).
     await admin.from("profiles").update({ scope }).eq("id", userId);
 
-    // Record the pending credential email — NOT sent yet.
+    // Record the pending credential — password visible to admin, NOT sent yet.
     await admin.from("credential_invites").upsert(
-      { email: row.email, name: row.name, status: "pending", error_reason: null, sent_at: null },
+      { email: row.email, name: row.name, status: "pending", password, error_reason: null, sent_at: null },
       { onConflict: "email" },
     );
 
     report.created++;
-    report.createdAccounts.push({ name: row.name, email: row.email, inviteUrl: null });
+    report.createdAccounts.push({ name: row.name, email: row.email, password });
   }
 
   return report;
@@ -229,10 +267,11 @@ export type SendDeps = {
 };
 
 /**
- * SEND step. For each email, mint a FRESH set-your-password link (never stored,
- * so it can't expire between import and send), send it, and update that row's
- * status to `sent` (with sent_at) or `failed` (with error_reason). Retries are
- * per-row: only the emails passed in are touched.
+ * SEND step. For each email, ensure a stored 8-char password exists (generate
+ * + set on the auth user if a legacy row has none), email it to the student,
+ * and update that row's status to `sent` (with sent_at) or `failed` (with
+ * error_reason). Retries are per-row: only the emails passed in are touched.
+ * The email carries the password, never a link.
  */
 export async function sendCredentialEmails(
   emails: string[],
@@ -246,23 +285,26 @@ export async function sendCredentialEmails(
   for (const email of emails) {
     const { data: invite } = await admin
       .from("credential_invites")
-      .select("name")
+      .select("name, password")
       .eq("email", email)
       .maybeSingle();
     const name = (invite?.name as string | undefined) ?? email;
+    let password = (invite?.password as string | undefined) ?? null;
 
-    const url = await mintInviteLink(admin, email, appUrl);
-    if (!url) {
-      failed++;
-      await admin
-        .from("credential_invites")
-        .update({ status: "failed", error_reason: "Could not mint the set-password link." })
-        .eq("email", email);
-      results.push({ email, ok: false, reason: "Could not mint the set-password link." });
-      continue;
+    if (!password) {
+      password = await ensureCredential(admin, email);
+      if (!password) {
+        failed++;
+        await admin
+          .from("credential_invites")
+          .update({ status: "failed", error_reason: "Could not set the student password." })
+          .eq("email", email);
+        results.push({ email, ok: false, reason: "Could not set the student password." });
+        continue;
+      }
     }
 
-    const res = await sendEmail(email, "Set your VIBHA password", inviteEmailBody(name, email, url));
+    const res = await sendEmail(email, "Your VIBHA School of Psychology password", credentialsEmailBody(name, email, password, appUrl));
     if (res.ok) {
       sent++;
       await admin
@@ -282,6 +324,14 @@ export async function sendCredentialEmails(
   }
 
   return { sent, failed, results };
+}
+
+/**
+ * Reset one student's password: generate a fresh 8-char credential, set it on
+ * the auth user, persist it, and return it (so the admin can share it again).
+ */
+export async function resetCredential(admin: SupabaseClient, email: string): Promise<string | null> {
+  return ensureCredential(admin, email, true);
 }
 
 /**

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Loader2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
-import { prepareVideoUpload, attachVideoToLesson } from "./actions";
+import { prepareVideoUpload, attachVideoToLesson, type SignedUploadResult } from "./actions";
 import { buttonVariants } from "@/components/ui/button";
 
 export function VideoUpload({
@@ -32,7 +32,14 @@ export function VideoUpload({
     // 1. Ask the server for a signed upload slot (this is the only part
     //    that touches our own server — the file bytes never pass through
     //    it, so Next.js's Server Action body-size limit never applies).
-    const signed = await prepareVideoUpload(courseId, file.name);
+    let signed: SignedUploadResult;
+    try {
+      signed = await prepareVideoUpload(courseId, file.name);
+    } catch {
+      setStatus("idle");
+      setErrorMsg("Could not prepare the upload. Check your connection and try again.");
+      return;
+    }
     if (!signed.ok) {
       setStatus("idle");
       setErrorMsg(signed.error);
@@ -40,19 +47,35 @@ export function VideoUpload({
     }
 
     // 2. Upload directly from the browser to Supabase Storage.
-    const supabase = createClient();
-    const { error: uploadError } = await supabase.storage
-      .from("videos")
-      .uploadToSignedUrl(signed.path, signed.token, file);
-
-    if (uploadError) {
+    let uploadErrorMessage: string | null = null;
+    try {
+      const supabase = createClient();
+      const { error: uploadError } = await supabase.storage
+        .from("videos")
+        .uploadToSignedUrl(signed.path, signed.token, file);
+      uploadErrorMessage = uploadError?.message ?? null;
+    } catch {
       setStatus("idle");
-      setErrorMsg(uploadError.message);
+      setErrorMsg("The upload failed. Check your connection and try again.");
+      return;
+    }
+
+    if (uploadErrorMessage) {
+      setStatus("idle");
+      setErrorMsg(uploadErrorMessage);
       return;
     }
 
     // 3. Tell the server the upload finished, so it can record the path.
-    const attachResult = await attachVideoToLesson(lessonId, courseId, signed.path);
+    let attachResult: { error: string | null };
+    try {
+      attachResult = await attachVideoToLesson(lessonId, courseId, signed.path);
+    } catch {
+      setStatus("idle");
+      setErrorMsg("The video was uploaded, but saving it failed. Try again.");
+      return;
+    }
+
     setStatus("idle");
     if (attachResult.error) {
       setErrorMsg(attachResult.error);
@@ -66,7 +89,7 @@ export function VideoUpload({
     <div className="flex flex-wrap items-center gap-2">
       <label
         className={cn(
-          buttonVariants({ variant: "secondary", size: "xs" }),
+          buttonVariants({ variant: "secondary", size: "sm" }),
           status === "uploading" && "pointer-events-none opacity-50",
           "cursor-pointer"
         )}
@@ -85,7 +108,7 @@ export function VideoUpload({
           disabled={status === "uploading"}
         />
       </label>
-      {errorMsg && <span role="alert" className="text-xs text-status-alert-fg">{errorMsg}</span>}
+      {errorMsg && <span role="alert" className="text-caption text-status-alert-fg">{errorMsg}</span>}
     </div>
   );
 }

@@ -116,6 +116,16 @@ export async function createLessonWithVideo(
     return { error: "Add assignment instructions, or uncheck \u201cRequires assignment.\u201d" };
   }
 
+  // Verify the bytes actually landed before saving a lesson that points at
+  // them. The client's upload success callback is never trusted — a dropped or
+  // network-failed upload leaves a path with no object, and a lesson pointing
+  // at it can never play. Mirrors attachVideoToLesson: only write a playable
+  // path, and never create a row that points at nothing.
+  const size = await verifyObjectExists("videos", videoPath);
+  if (size === null) {
+    return { error: "Upload didn't reach storage. Re-upload the video." };
+  }
+
   const supabase = await createClient();
 
   const { data: lesson, error: lessonError } = await supabase
@@ -129,7 +139,7 @@ export async function createLessonWithVideo(
       video_storage_path: videoPath,
       video_provider: "supabase",
       video_bucket: "videos",
-      video_status: "pending", // promoted to ready only after the object verifies
+      video_status: "ready", // object verified above
     })
     .select("id")
     .single();
