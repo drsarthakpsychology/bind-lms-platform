@@ -250,22 +250,32 @@ export function AssignmentEditor({
                 description="This deletes the assignment and all its submissions. This can't be undone."
                 footer={
                   <div className="flex flex-col gap-2">
+                    {error && (
+                      <p role="alert" className="text-caption font-medium text-status-alert-fg">
+                        {error}
+                      </p>
+                    )}
                     <Button
                       type="button"
                       variant="destructive"
                       onClick={async () => {
                         setDeletePending(true);
+                        setError(null);
                         try {
                           const result = await deleteAssignment(courseId, lessonId, assignment.id);
-                          if (result.error) setError(result.error);
-                          else router.refresh();
+                          if (result.error) {
+                            // Keep the sheet open so the error is visible.
+                            setError(result.error);
+                            setDeletePending(false);
+                            return;
+                          }
+                          setDeleteOpen(false);
+                          router.refresh();
                         } catch (err) {
                           setError(
                             err instanceof Error ? err.message : "Could not delete the assignment.",
                           );
-                        } finally {
                           setDeletePending(false);
-                          setDeleteOpen(false);
                         }
                       }}
                       disabled={deletePending}

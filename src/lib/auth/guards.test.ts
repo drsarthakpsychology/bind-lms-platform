@@ -24,7 +24,8 @@ describe("lecture-only scope guards", () => {
     expect(lectureOnlyAllowed("/dashboard")).toBe(true);
     expect(lectureOnlyAllowed("/courses/abc")).toBe(true);
     expect(lectureOnlyAllowed("/courses/abc/lessons/def")).toBe(true);
-    expect(lectureOnlyAllowed("/today")).toBe(true);
+    // /today was retired as the front door — no longer a permitted surface.
+    expect(lectureOnlyAllowed("/today")).toBe(false);
     expect(lectureOnlyAllowed("/practice")).toBe(true);
     expect(lectureOnlyAllowed("/practice/consulting-room")).toBe(true);
     expect(lectureOnlyAllowed("/reflect")).toBe(true);

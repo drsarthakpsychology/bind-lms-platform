@@ -73,7 +73,8 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
   async function remove(id: string) {
     setBusy(true);
     try {
-      await fetch(`/api/admin/cards?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/cards?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+      if (!res.ok) return; // keep the row — a failed delete shouldn't pretend success
       haptic("warning");
       setRows((r) => r.filter((row) => row.id !== id));
     } finally {

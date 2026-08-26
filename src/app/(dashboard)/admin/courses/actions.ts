@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 export type CreateCourseState = { error: string | null };
 
@@ -51,12 +51,20 @@ export async function deleteCourse(courseId: string): Promise<{ error: string | 
   try {
     if (!(await requireAdmin())) return { error: "Not authorized." };
 
-    const supabase = await createClient();
-    const { error } = await supabase.from("courses").delete().eq("id", courseId);
+    // Admin delete through the service-role client: the anon client's DELETE
+    // is RLS-filtered to 0 rows while still returning 204 (no error), so the
+    // course silently "came back" on refresh. The admin client actually deletes.
+    const admin = createAdminClient();
+    const { data, error } = await admin
+      .from("courses")
+      .delete()
+      .eq("id", courseId)
+      .select("id");
 
-    if (error) return { error: "Could not delete the course." };
+    if (error || !data?.length) return { error: "Could not delete the course." };
 
     revalidatePath("/admin/courses");
+    revalidatePath("/dashboard");
     return { error: null };
   } catch {
     return { error: "Could not delete the course." };

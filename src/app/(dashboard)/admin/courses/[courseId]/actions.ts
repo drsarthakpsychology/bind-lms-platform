@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { verifyObjectExists } from "@/lib/storage-verify";
 import { policyVersion } from "@/lib/legal-constants";
 
@@ -57,14 +57,18 @@ export async function unenrollStudent(
   try {
     if (!(await requireAdmin())) return { error: "Not authorized." };
 
-    const supabase = await createClient();
-    const { error } = await supabase
+    // Admin deletes use the service-role client — the anon client's DELETE is
+    // RLS-filtered to 0 rows while still returning 204 (no error), so the
+    // change silently doesn't happen.
+    const admin = createAdminClient();
+    const { data, error } = await admin
       .from("course_enrollments")
       .delete()
       .eq("course_id", courseId)
-      .eq("user_id", userId);
+      .eq("user_id", userId)
+      .select("id");
 
-    if (error) return { error: "Could not unenroll the student." };
+    if (error || !data?.length) return { error: "Could not unenroll the student." };
     revalidatePath(`/admin/courses/${courseId}`);
     return { error: null };
   } catch {
@@ -210,12 +214,21 @@ export async function deleteLesson(
   try {
     if (!(await requireAdmin())) return { error: "Not authorized." };
 
-    const supabase = await createClient();
-    const { error } = await supabase.from("lessons").delete().eq("id", lessonId);
+    // Admin deletes go through the service-role client. The anon client's
+    // DELETE was RLS-filtered to 0 rows while still returning 204 (no error),
+    // so the lesson silently "came back" on refresh. The admin client bypasses
+    // RLS and actually deletes — the same pattern deleteMaterial uses.
+    const admin = createAdminClient();
+    const { data, error } = await admin
+      .from("lessons")
+      .delete()
+      .eq("id", lessonId)
+      .select("id");
 
-    if (error) return { error: "Could not delete the lesson." };
+    if (error || !data?.length) return { error: "Could not delete the lesson." };
 
     revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}`);
     return { error: null };
   } catch {
     return { error: "Could not delete the lesson." };

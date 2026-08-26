@@ -6,7 +6,7 @@ import { analyzeWeakSpots } from "@/lib/practice/weak-spots";
 /**
  * The dismissible weak-spots banner (B2: Weak Spots leaves the grid).
  * Server-computed from the student's real debriefs: the top 3 gaps, with a
- * "Generate drill" link. Rendered on /today and /practice.
+ * "Generate drill" link. Rendered on /practice.
  */
 export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
   const supabase = await createClient();

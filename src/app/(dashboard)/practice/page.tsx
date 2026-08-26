@@ -51,8 +51,8 @@ export default async function PracticeHubPage() {
     ? await computePracticeStates(supabase, user.id)
     : {};
 
-  // The recommended card — one shared engine for "what's next" (T140), so
-  // /today and /practice always recommend the same thing. ALWAYS states why
+  // The recommended card — one shared engine for "what's next" (T140), so any
+  // surface always recommends the same thing. ALWAYS states why
   // (B2: reason beats recommendation).
   const recommendation = user ? await computeResumePrimary(supabase, user.id) : null;
 

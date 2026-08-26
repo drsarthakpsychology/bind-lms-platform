@@ -17,7 +17,6 @@ interface Tab {
 }
 
 const STUDENT_TABS: Tab[] = [
-  { href: "/today", label: "Today", icon: LayoutDashboard, exact: true },
   { href: "/dashboard", label: "My Courses", icon: BookOpen },
   { href: "/practice", label: "Practice", icon: Stethoscope },
   { href: "/reflect", label: "Journal", icon: NotebookPen },

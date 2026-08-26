@@ -8,8 +8,8 @@ export const runtime = "nodejs";
 
 /**
  * POST /api/practice/clinic/complete — record a Two-Minute Clinic daily
- * completion. Marks the day in the streaks table (the same table /today
- * reads), so the daily habit keeps the streak alive.
+ * completion. Marks the day in the streaks table (the same table the practice
+ * hub reads), so the daily habit keeps the streak alive.
  */
 export async function POST() {
   const supabase = await createClient();
