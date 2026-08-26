@@ -76,7 +76,10 @@ export async function POST(request: Request) {
   const media = Array.isArray(lesson.media_assets)
     ? lesson.media_assets[0]
     : lesson.media_assets;
-  const masterKey = media?.master_playlist ?? media?.key_prefix;
+  // Only a real master playlist means HLS. A freshly-uploaded SOURCE row has
+  // key_prefix set but master_playlist null — it must resolve as a plain MP4,
+  // not run hls.js against a raw file.
+  const masterKey = media?.master_playlist ?? null;
   const key = masterKey ?? lesson.video_storage_path;
 
   if (!key) {

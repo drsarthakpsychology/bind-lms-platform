@@ -1,3 +1,20 @@
+## 2026-08-27 — VIDEO UPLOAD CAP — root cause: Supabase Free-plan 50MB global limit
+
+Kavya hit "The object exceeded the maximum allowed size" uploading videos even
+after I removed the `videos` bucket's file_size_limit. Root cause: the org is
+on the **Supabase Free plan**, whose Storage **GLOBAL file-size limit is
+hard-capped at 50MB** and cannot be raised via SQL/dashboard on Free. It
+overrides any per-bucket limit. Verified: org plan = free; docs confirm
+Free=50MB, Pro=up to 500GB.
+
+Fix direction (Kavya confirmed "we are USING R2 for Upload and Play"): route the
+admin builder's source-video upload DIRECTLY to Cloudflare R2 via an S3
+pre-signed PUT URL, so no byte touches Supabase Storage. R2 has no 50MB cap.
+Subagents mapping the pipeline + designing the change set are in flight; then
+implement → deploy → verify a large upload.
+
+---
+
 ## 2026-08-27 — ROSTER IMPORTED (64 students) + passwords visible + send UI
 
 Kavya asked whether the roster had been imported. It had NOT — only 6 test

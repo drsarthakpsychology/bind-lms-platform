@@ -7,6 +7,15 @@
  * Idempotent. Uses the project's AWS SDK. Requires R2 creds in env.
  */
 import { S3Client, PutBucketCorsCommand } from "@aws-sdk/client-s3";
+import { readFileSync, existsSync } from "node:fs";
+
+// Load .env.local like the other scripts (this file is run via tsx, not Next).
+if (existsSync(".env.local")) {
+  for (const line of readFileSync(".env.local", "utf8").split("\n")) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/);
+    if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].trim();
+  }
+}
 
 const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
@@ -25,6 +34,7 @@ const s3 = new S3Client({
 });
 
 const origins = [
+  "https://vibhapsychology.com",
   "https://bind-lms-platform.vercel.app",
   "http://localhost:3000",
 ];
@@ -37,7 +47,9 @@ async function main() {
         CORSRules: [
           {
             AllowedOrigins: origins,
-            AllowedMethods: ["GET", "HEAD"],
+            // PUT lets the browser upload directly to the pre-signed R2 URL
+            // (the admin video upload path — see prepareVideoUpload).
+            AllowedMethods: ["GET", "HEAD", "PUT"],
             AllowedHeaders: ["*"],
             ExposeHeaders: ["ETag"],
             MaxAgeSeconds: 3600,
