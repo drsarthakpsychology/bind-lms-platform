@@ -35,6 +35,24 @@ week-grouped `CourseOverview`.
 
 Gate: lint 0, tsc clean, 535 tests, build exit 0.
 
+VERIFIED LIVE on vibhapsychology.com (merged PR #21 → git-triggered production
+deploy; a redundant `vercel --prod` was stopped once the auto-deploy went
+Ready). Clicked through with a fresh lectures_only test student
+(`nightverify@bindcat.com`, is_test):
+
+- `/dashboard` → the structured `CourseOverview`: H1 "Pyschology Cohort 1",
+  week-1 `<details>` block, 4 lesson rows in order, one highlighted next action
+  ("Start"), no "No lectures yet", no flat-list markup. Course title appears
+  ONCE (H1) — not repeated under each row.
+- `/courses/[courseId]` direct URL → the SAME component/view (identical week
+  block + rows). Desktop + mobile.
+- Watched a lesson → back → lands on `/courses/[courseId]` (structured).
+- Practice strip proven live: temporarily unlocked `mse`, the strip rendered
+  ("Practice — MSE — 10 min") above the course, then reverted to `off` (prod
+  state restored exactly). With only `journal` unlocked (not in PRACTICE_TOOLS),
+  the strip correctly renders nothing.
+- Zero console/page errors across all pages.
+
 ---
 
 ## 2026-08-26 — Three-state go-live control (features + lessons)
