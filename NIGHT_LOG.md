@@ -1,3 +1,32 @@
+## 2026-08-26 — NEXT-STEP batch (PR #8, deployed + verified live)
+
+- **Showstopper**: the course layout 404'd every lecture-only student (no
+  course_enrollments row by design). Now mirrors the enrollment.ts carve-out —
+  a published course is open to lectures_only accounts. The whole roster can
+  open their lectures.
+- **Import students** is a two-step Mailchimp-style wizard: pick the CSV →
+  we validate every row (ready / duplicate / invalid / no-name counts, row
+  numbers, exact rows in a table) → only then "Import N students". Nothing is
+  created until confirmed.
+- **Delete** no longer sticks the page: root cause was server-action deletes
+  that could throw, with the client's "close sheet / clear pending" AFTER the
+  await → "Deleting…" forever. Every delete handler (lesson, material, student,
+  course, assignment, enroll/unenroll) is now try/catch/finally. Lesson delete
+  is a visible labeled "Delete" button.
+- **Feature gates are real**: 9 practice/reflect routes now call
+  requireFeature() server-side (admin toggles previously only hid hub cards).
+  /record's supervision+check-in AND-gate bug fixed (redirects only when BOTH
+  off; shows just the enabled tab).
+- **Consulting-room footer**: reads sim_cases.source (was reading a nonexistent
+  case_data key) → hand-built cases finally show "Faculty-reviewed case".
+- **Policies**: effective date = go-live date (2026-08-26); the pending
+  registered address renders "Available on request" instead of a raw token.
+
+Gate green (lint 0, tsc 0, 535 tests, build ok); merged PR #8 (a7e669aa),
+deployed, live (sitemap lastmod fresh).
+
+---
+
 ## 2026-08-26 — GO-LIVE fixes shipped (PR #6, deployed + verified live)
 
 **Invite flow → 8-char passwords (Kavya's decision).** The password-recovery
