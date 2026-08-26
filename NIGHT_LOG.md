@@ -4491,3 +4491,24 @@ region or Modal/RunPod.
   `assertIngestible`, `INGESTIBLE_RIGHTS` in src/scripts.
 - Gate green: lint 0, tsc clean, 516 tests, build exit 0. `/admin/rights`
   absent from the build route list.
+
+## 2026-08-26 — Part 4 roster import (name + email only)
+
+- Sheet `~/Downloads/COPY SHEET (1).xlsx` (sheet "Form responses 1") parsed:
+  **64 data rows** (65 total incl. header). Extracted only "Full Name" +
+  "Email Address"; ignored phone/city/payment/EMI/timestamp/MODE columns.
+- Dry-run report: rows read **64**, would-create **64**, duplicates **0**,
+  invalid emails **0**, empty-name **50** (name falls back to email local-part).
+- Built a shared `src/lib/auth/roster.ts` (parse + validate + dedupe + provision)
+  used by both the admin server action (`bulk-import.ts`) and a new CLI
+  (`scripts/roster-import.ts`, `npm run roster:import`, `--dry-run`).
+- Invite flow: createUser with a random throwaway password (never emailed) →
+  stamp `profiles.scope` → `generateLink({type:'recovery'})` set-your-password
+  link → email THAT link via Resend. No plaintext password in any email.
+- `bulk-import.ts` rewritten (was plaintext-password CSV); `bulk-import-form.tsx`
+  dropped the "default password" field, added a scope selector (Full / Lectures-only).
+- Added `supabase/migrations_pending/profiles_access_scope.sql` (additive
+  `profiles.scope text default 'full'`). Roster CSV gitignored (PII).
+- Deferred to NEEDS_KAVYA: RESEND_API_KEY (only hard blocker — emails can't
+  send without it) + apply the scope migration, then `npm run roster:import`.
+- Gate green: lint 0, tsc clean, 523 tests (+7 roster), build exit 0.

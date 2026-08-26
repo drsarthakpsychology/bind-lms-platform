@@ -1,5 +1,26 @@
 # NEEDS KAVYA — do this in one sitting (free ones first)
 
+## 🚨 ROSTER IMPORT — 2026-08-26 (one key + one apply, then one command)
+
+The lecture-only roster (64 people) is parsed and the importer is built +
+dry-run verified: 64 rows → 64 accounts, 0 duplicates, 0 invalid emails;
+**50 rows have no "Full Name"** (name falls back to the email local-part).
+To actually create the accounts and email login links:
+
+1. **Set `RESEND_API_KEY` + `RESEND_FROM_EMAIL`** (Resend). This is the ONLY
+   hard blocker — without it the importer creates accounts but can't deliver
+   the set-your-password link (it never emails a plaintext password).
+2. **Apply** `supabase/migrations_pending/profiles_access_scope.sql`
+   (`npm run apply-migrations`) so `profiles.scope` exists (additive).
+
+Then run:
+  npm run roster:import -- scripts/roster/roster.csv --scope lectures_only
+
+`--dry-run` reports without touching anything. Each account is created with a
+random throwaway password, stamped `profiles.scope='lectures_only'`, and
+emailed a set-your-password link. Sheet: `~/Downloads/COPY SHEET (1).xlsx`
+(sheet "Form responses 1"; only "Full Name" + "Email Address" are read).
+
 Every item: paste → something switches on → verify with one command. Free first.
 
 ## 🟢 Free — no card, no cost

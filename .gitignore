@@ -12,6 +12,9 @@ next-env.d.ts
 scripts/corpus/raw/
 scripts/corpus/drafted-cases.json
 
+# Roster CSV (student PII — name/email only; regenerated from the sign-up sheet)
+scripts/roster/*.csv
+
 # FDA label raw fetch data (regenerable via npm run psych:fda-*)
 scripts/psychopharm/fda/*.html
 scripts/psychopharm/fda/*.json
