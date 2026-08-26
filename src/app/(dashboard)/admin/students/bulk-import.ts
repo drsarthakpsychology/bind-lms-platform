@@ -13,6 +13,7 @@ import {
   generateCredential,
   resetCredential,
   type RosterFailure,
+  type RosterRow,
   type RosterReport,
 } from "@/lib/auth/roster";
 
@@ -79,6 +80,54 @@ export async function bulkImportStudents(
     failures: [...parsed.invalid, ...parsed.duplicates, ...report.failures],
     invalidSkipped: parsed.invalid.length,
     duplicatesSkipped: parsed.duplicates.length + report.duplicatesSkipped,
+  };
+}
+
+/**
+ * PREVIEW step — parse the CSV and report what WOULD happen, without creating
+ * anything. The Mailchimp/Resend-style "verify before you import": the admin
+ * sees valid / duplicate / invalid / empty-name counts (with row numbers) and
+ * the exact rows, then decides. No auth users or rows are written here.
+ */
+export async function previewRosterCsv(text: string): Promise<{
+  error: string | null;
+  rows: RosterRow[];
+  duplicates: RosterFailure[];
+  invalid: RosterFailure[];
+  emptyNames: string[];
+}> {
+  if (!(await requireAdmin())) {
+    return { error: "Not authorized.", rows: [], duplicates: [], invalid: [], emptyNames: [] };
+  }
+  const parsed = parseRosterCsv(text);
+  return { error: null, ...parsed };
+}
+
+/**
+ * CONFIRM step — run the actual import on the rows the admin already previewed
+ * and approved. `scope` is restricted to the two real options server-side.
+ */
+export async function confirmBulkImport(rows: RosterRow[], scope: string): Promise<BulkImportResult> {
+  if (!(await requireAdmin())) return emptyImport("Not authorized.");
+
+  const scoped = scope === "lectures_only" ? "lectures_only" : "full";
+  let admin;
+  try {
+    admin = createAdminClient();
+  } catch {
+    return emptyImport("SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet.");
+  }
+
+  const report = await importRoster(rows, { admin, scope: scoped });
+  revalidatePath("/admin/students");
+  revalidatePath("/admin/roster");
+  return {
+    error: null,
+    success: true,
+    ...report,
+    failures: [...report.failures],
+    invalidSkipped: report.invalidSkipped,
+    duplicatesSkipped: report.duplicatesSkipped,
   };
 }
 
