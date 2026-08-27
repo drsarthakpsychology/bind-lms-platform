@@ -1,3 +1,15 @@
+## 2026-08-27 — LESSON PUBLISHED TO HLS + playback verified ✅
+
+The "Orientation and Trial Session" lesson (d8736299) is now published as HLS:
+2633 segments encoded + uploaded to R2, master playlist recorded on
+media_assets. Verified live as a student: playback → mediaType "hls",
+master.m3u8 → 200, video src is a blob (hls.js MSE), readyState 4, currentTime
+advancing, no console errors. This is the durable fix for the playback block —
+adaptive bitrate, quality selector, per-session encryption + 5-min token
+rotation all work on the HLS path (mobile-ready, no 135MB monolithic MP4).
+
+---
+
 ## 2026-08-27 — PLAYBACK BLOCK ROOT-CAUSED + WhatsApp capture LIVE
 
 Kavya reported "Video playback keeps getting blocked." 10 parallel subagents +
