@@ -1,3 +1,12 @@
+## 2026-08-27 — R2 VIDEO-UPLOAD FIX IS LIVE ✅
+
+Deployment `idj0l0xjp` (production) is **Ready + aliased to vibhapsychology.com**
+after fixing the git author email. Live health: landing 200, /api/health 200
+(db + storage OK). Large video uploads now go DIRECTLY to Cloudflare R2 via
+pre-signed PUT — the Supabase Free-plan 50MB cap no longer applies.
+
+---
+
 ## 2026-08-27 — Deploy block root cause: invalid git author email (kavya@plms.local)
 
 The R2 video-upload fix kept getting BLOCKED at deploy. Root cause (per the
