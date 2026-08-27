@@ -16,8 +16,8 @@ export default async function AdminOverviewPage() {
     { data: courses },
     { data: pendingSubmissions },
     { data: simScores },
-    { data: allSessions },
-    { data: allCheckins },
+    { data: activity },
+    { data: allSessionUsers },
   ] = await Promise.all([
     supabase.from("profiles").select("id, email").eq("role", "student"),
     supabase.from("courses").select("id").eq("is_published", true),
@@ -30,15 +30,23 @@ export default async function AdminOverviewPage() {
       .select("session_id, user_id, rubric")
       .order("created_at", { ascending: false })
       .limit(50),
-    supabase.from("sim_sessions").select("user_id, created_at"),
-    supabase.from("checkins").select("user_id, created_at"),
+    // Last activity + started flag from the view (one bounded row per student).
+    // The old reads of sim_sessions/checkins were unbounded AND sim_sessions
+    // has no created_at column, so the query errored and "active/quiet" were
+    // wrong. student_last_activity aggregates in the DB (sim ended/started +
+    // checkins + journal, plus a started flag from progress).
+    adminClient.from("student_last_activity").select("user_id, last_active_at, started"),
+    // Session count per student for the triage "first session?" heuristic —
+    // user_id only (created_at doesn't exist on sim_sessions).
+    supabase.from("sim_sessions").select("user_id"),
   ]);
 
   const studentIds = new Set((students ?? []).map((s) => s.id));
+  const activityByUser = new Map((activity ?? []).map((a) => [a.user_id, a]));
 
   // How many sim sessions are flagged for a human eye (mirrors /admin/triage).
   const sessionsByStudent = new Map<string, number>();
-  for (const s of allSessions ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
+  for (const s of allSessionUsers ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
   let flaggedSessions = 0;
   for (const s of simScores ?? []) {
     const isFirst = (sessionsByStudent.get(s.user_id) ?? 1) <= 1;
@@ -49,33 +57,25 @@ export default async function AdminOverviewPage() {
     }
   }
 
-  // Last activity per student from sessions + check-ins → active this week / quiet.
-  const lastActivity = new Map<string, number>();
-  for (const s of allSessions ?? []) {
-    const t = new Date(s.created_at).getTime();
-    if (Number.isFinite(t) && (!lastActivity.has(s.user_id) || t > lastActivity.get(s.user_id)!)) lastActivity.set(s.user_id, t);
-  }
-  for (const c of allCheckins ?? []) {
-    const t = new Date(c.created_at).getTime();
-    if (Number.isFinite(t) && (!lastActivity.has(c.user_id) || t > lastActivity.get(c.user_id)!)) lastActivity.set(c.user_id, t);
-  }
+  // Last activity per student from the aggregate view → active this week / quiet.
   const now = new Date().getTime();
   const DAY = 86400000;
   const activeThisWeek = [...studentIds].filter((id) => {
-    const last = lastActivity.get(id);
-    return last !== undefined && (now - last) / DAY < 7;
+    const last = activityByUser.get(id)?.last_active_at;
+    if (!last) return false;
+    const t = new Date(String(last)).getTime();
+    return Number.isFinite(t) && (now - t) / DAY < 7;
   }).length;
   const quietCount = [...studentIds].filter((id) => {
-    const last = lastActivity.get(id);
-    return last !== undefined && (now - last) / DAY >= 7;
+    const last = activityByUser.get(id)?.last_active_at;
+    if (!last) return false;
+    const t = new Date(String(last)).getTime();
+    return Number.isFinite(t) && (now - t) / DAY >= 7;
   }).length;
 
-  // Students with no progress at all (never started a lesson).
-  const [{ data: startedIds }] = await Promise.all([
-    supabase.from("progress").select("user_id").not("watched_seconds", "is", null),
-  ]);
-  const startedSet = new Set((startedIds ?? []).map((p) => p.user_id));
-  const notStarted = (students ?? []).filter((s) => !startedSet.has(s.id)).length;
+  // Students with no progress at all (never started a lesson) — from the view's
+  // started flag (no separate unbounded progress scan).
+  const notStarted = (students ?? []).filter((s) => !activityByUser.get(s.id)?.started).length;
 
   // Infra warning strip — the one silent failure that takes the cohort down.
   const { data: infraData } = await adminClient.rpc("infra_metrics");

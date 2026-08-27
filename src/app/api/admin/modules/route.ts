@@ -59,7 +59,9 @@ export async function POST(req: Request) {
       student_id: studentId ?? undefined,
       granted_by: admin.id,
     }));
-    const { error } = await supabase.from("module_access").insert(rows);
+    // Upsert — repeated clicks on Grant must not mint duplicate access rows
+    // (module_access_grant_unique backs this).
+    const { error } = await supabase.from("module_access").upsert(rows, { onConflict: "module_id,scope,student_id" });
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   }

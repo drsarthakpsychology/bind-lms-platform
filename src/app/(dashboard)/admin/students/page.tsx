@@ -30,14 +30,18 @@ function formatDate(iso: string | null): string {
 export default async function StudentsPage() {
   const supabase = await createClient();
 
-  const { data: profiles } = await supabase
+  // Bounded read with the exact total so a cap never silently hides students.
+  // (The old .limit(200) truncated the list with no notice — past 200 students
+  // the table just quietly ended.)
+  const { data: profiles, count } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token, is_test, status, mobile_number")
+    .select("id, email, role, expires_at, active_session_token, is_test, status, mobile_number", { count: "exact", head: false })
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false })
-    .limit(200);
+    .limit(1000);
 
   const students = profiles ?? [];
+  const totalStudents = count ?? students.length;
 
   return (
     <div className="flex flex-col gap-8">
@@ -72,6 +76,11 @@ export default async function StudentsPage() {
               <BulkLockControls />
             </span>
           </CardTitle>
+          {students.length < totalStudents ? (
+            <p className="text-caption text-status-pending-fg">
+              Showing the first {students.length} of {totalStudents} students — this list is capped.
+            </p>
+          ) : null}
         </CardHeader>
         <CardContent className="pt-0">
           {students.length === 0 ? (
