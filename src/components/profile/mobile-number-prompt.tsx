@@ -2,7 +2,8 @@
 
 import { useState, useTransition } from "react";
 import { Loader2, MessageCircle } from "lucide-react";
-import { saveMobileNumber, skipMobileNumber, normalizeIndianMobile } from "@/app/(dashboard)/dashboard/actions";
+import { saveMobileNumber, skipMobileNumber } from "@/app/(dashboard)/dashboard/actions";
+import { normalizeIndianMobile } from "@/lib/phone";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
