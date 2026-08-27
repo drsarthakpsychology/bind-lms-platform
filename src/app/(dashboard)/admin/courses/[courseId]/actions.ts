@@ -49,6 +49,49 @@ export async function enrollStudent(
   }
 }
 
+/**
+ * Enroll MANY students in one course (bulk). Idempotent; one upsert call.
+ * The terms acceptance (timestamp + policy version) is only written for
+ * students who don't already have it (first acceptance wins).
+ */
+export async function enrollStudents(
+  courseId: string,
+  userIds: string[],
+): Promise<{ error: string | null; enrolled: number }> {
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized.", enrolled: 0 };
+
+    const ids = Array.from(new Set(userIds)).filter(Boolean);
+    if (!ids.length) return { error: null, enrolled: 0 };
+
+    const supabase = await createClient();
+    const { data: existing } = await supabase
+      .from("course_enrollments")
+      .select("user_id")
+      .eq("course_id", courseId)
+      .in("user_id", ids);
+    const alreadyAccepted = new Set((existing ?? []).map((e) => e.user_id));
+    const now = new Date().toISOString();
+    const version = policyVersion();
+    const rows = ids.map((userId) => ({
+      course_id: courseId,
+      user_id: userId,
+      ...(alreadyAccepted.has(userId) ? {} : { policy_acceptance_at: now, policy_version: version }),
+    }));
+
+    const { error } = await supabase
+      .from("course_enrollments")
+      .upsert(rows, { onConflict: "user_id,course_id" });
+
+    if (error) return { error: "Could not enroll the students.", enrolled: 0 };
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}`);
+    return { error: null, enrolled: ids.length };
+  } catch {
+    return { error: "Could not enroll the students.", enrolled: 0 };
+  }
+}
+
 /** Remove one student from a course. */
 export async function unenrollStudent(
   courseId: string,

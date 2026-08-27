@@ -48,6 +48,7 @@ export default async function CourseDetailPage({
         .from("profiles")
         .select("id, email")
         .eq("role", "student")
+        .eq("is_test", false)
         .order("email", { ascending: true }),
       supabase
         .from("course_enrollments")
