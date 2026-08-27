@@ -12,6 +12,7 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import CourseOverview from "@/components/course/course-overview";
 import { PracticeToolsSection } from "./practice-tools-section";
+import { MobileNumberPrompt } from "@/components/profile/mobile-number-prompt";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -79,6 +80,9 @@ export default async function DashboardPage() {
   if (myCourses.length === 1) {
     return (
       <div className="space-y-8">
+        {profile.role === "student" && (
+          <MobileNumberPrompt mobileNumber={profile.mobile_number} promptSkippedAt={profile.mobile_prompt_skipped_at} />
+        )}
         {viewingAsStudent && profile.role === "admin" && (
           <Reveal>
             <Alert variant="warning" className="border-foreground hard-shadow-sm">
@@ -187,6 +191,9 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8">
+      {profile.role === "student" && (
+        <MobileNumberPrompt mobileNumber={profile.mobile_number} promptSkippedAt={profile.mobile_prompt_skipped_at} />
+      )}
       <PageHeader
         title="My Courses"
         description="A clear path: resume where you left off, then browse your courses."
