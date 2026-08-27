@@ -97,7 +97,7 @@ export async function createStudent(
   );
 
   revalidatePath("/admin/students");
-  revalidatePath("/admin/roster");
+  revalidatePath("/admin/emails");
   return { error: null, success: true, password };
 }
 
@@ -159,7 +159,7 @@ export async function setAccountStatus(
   if (error) return { error: "Could not update the account status." };
 
   revalidatePath("/admin/students");
-  revalidatePath("/admin/roster");
+  revalidatePath("/admin/emails");
   return { error: null };
 }
 
@@ -186,6 +186,6 @@ export async function setAllStudentsStatus(
   if (error) return { error: "Could not update accounts.", updated: 0 };
 
   revalidatePath("/admin/students");
-  revalidatePath("/admin/roster");
+  revalidatePath("/admin/emails");
   return { error: null, updated: data?.length ?? 0 };
 }
