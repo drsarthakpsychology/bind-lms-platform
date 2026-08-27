@@ -99,7 +99,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
       {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       <button
         type="submit"
-        disabled={busy || !complete}
+        disabled={busy || !complete || saved}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
       >
         {saved ? "Saved — see you next week" : busy ? "Saving…" : "Save check-in"}
