@@ -17,18 +17,13 @@ export class R2MediaProvider implements MediaProvider {
   private bucket: string;
 
   constructor() {
-    const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
-    const accessKeyId = process.env.R2_ACCESS_KEY_ID;
-    const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
     const bucket = process.env.R2_BUCKET_NAME;
-    if (!accountId || !accessKeyId || !secretAccessKey || !bucket) {
-      throw new Error("R2 env vars are not set (see .env.example).");
+    if (!bucket) {
+      throw new Error("R2_BUCKET_NAME is not set (see .env.example).");
     }
-    this.client = new S3Client({
-      region: "auto",
-      endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
-      credentials: { accessKeyId, secretAccessKey },
-    });
+    // Shared module-level singleton — one S3 client for the whole process,
+    // so the stream hot path never allocates a new client per request.
+    this.client = makeR2Client();
     this.bucket = bucket;
   }
 
@@ -59,14 +54,19 @@ export class R2MediaProvider implements MediaProvider {
 
   async health(): Promise<boolean> {
     try {
-      // A HEAD-style check: list at most one object.
       await this.client.send(
-        new GetObjectCommand({ Bucket: this.bucket, Key: "_health_check" }),
+        new HeadObjectCommand({ Bucket: this.bucket, Key: "_health_check" }),
       );
       return true;
-    } catch {
-      // _health_check won't exist; a 404 still proves connectivity.
-      return true;
+    } catch (e) {
+      // R2 returns 404 (NotFound) for a missing key — that still proves the
+      // endpoint + credentials work, so connectivity is healthy. Anything else
+      // (timeout, DNS, 403, missing env) is a REAL failure — the old code
+      // swallowed every error and reported healthy even when R2 was down.
+      const status = (e as { $metadata?: { httpStatusCode?: number } })?.$metadata?.httpStatusCode;
+      if (status === 404) return true;
+      console.error("R2 health check failed:", e);
+      return false;
     }
   }
 }
@@ -114,8 +114,9 @@ function makeR2Client(): S3Client {
   return r2Client;
 }
 
-// Re-exported for the publish/upload scripts.
+// Re-exported for the publish/upload scripts and the stream proxy.
 export { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand };
+export { makeR2Client };
 
 /**
  * Pre-signed PUT URL so the browser can upload a file DIRECTLY to R2 — this is
