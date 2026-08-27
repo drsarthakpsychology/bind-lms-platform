@@ -21,6 +21,10 @@ export type Profile = {
   block_reason: string | null;
   active_session_token: string | null;
   expires_at: string | null;
+  /** The student's WhatsApp mobile (10-digit Indian), captured on first login. */
+  mobile_number: string | null;
+  /** When the student chose "Later" so the prompt doesn't nag every login. */
+  mobile_prompt_skipped_at: string | null;
 };
 
 export type SessionResult =
@@ -59,7 +63,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("id, email, role, scope, status, block_reason, active_session_token, expires_at")
+    .select("id, email, role, scope, status, block_reason, active_session_token, expires_at, mobile_number, mobile_prompt_skipped_at")
     .eq("id", user.id)
     .single();
 

@@ -82,6 +82,7 @@ async function main() {
     "perf_indexes.sql",
     "ai_circuit_latency.sql",
     "videos_unlimited_size.sql",
+    "profiles_mobile_number.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);

@@ -32,7 +32,7 @@ export default async function StudentsPage() {
 
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token, is_test, status")
+    .select("id, email, role, expires_at, active_session_token, is_test, status, mobile_number")
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false })
     .limit(200);
@@ -99,7 +99,9 @@ export default async function StudentsPage() {
                           {student.email ?? student.id}
                         </span>
                         <span className="mt-0.5 block truncate text-caption text-muted-foreground">
-                          {formatDate(student.expires_at)} · {student.active_session_token ? "Active session" : "Not signed in"}{student.is_test ? " · Test" : ""}
+                          {formatDate(student.expires_at)} · {student.active_session_token ? "Active session" : "Not signed in"}
+                          {student.is_test ? " · Test" : ""}
+                          {student.mobile_number ? ` · WhatsApp +91 ${student.mobile_number}` : " · No number"}
                         </span>
                       </span>
                       <LockToggle userId={student.id} status={(student.status === "blocked" ? "blocked" : "active") as "active" | "blocked"} />
@@ -114,6 +116,7 @@ export default async function StudentsPage() {
                 <TableHeader className="bg-muted">
                   <TableRow>
                     <TableHead>Email</TableHead>
+                    <TableHead>Mobile / WhatsApp</TableHead>
                     <TableHead>Expires</TableHead>
                     <TableHead>Signed in</TableHead>
                   </TableRow>
@@ -126,6 +129,20 @@ export default async function StudentsPage() {
                           {student.email ?? student.id}
                           {student.is_test && <Badge variant="pending">Test</Badge>}
                         </span>
+                      </TableCell>
+                      <TableCell className="text-muted-foreground">
+                        {student.mobile_number ? (
+                          <a
+                            href={`https://wa.me/91${student.mobile_number}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 font-medium text-link underline-offset-2 hover:underline"
+                          >
+                            +91 {student.mobile_number.slice(0, 5)} {student.mobile_number.slice(5)}
+                          </a>
+                        ) : (
+                          <Badge variant="outline">No number</Badge>
+                        )}
                       </TableCell>
                       <TableCell className="text-muted-foreground">
                         {formatDate(student.expires_at)}
