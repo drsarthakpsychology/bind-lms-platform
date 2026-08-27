@@ -1,10 +1,11 @@
 "use server";
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SESSION_COOKIE } from "@/lib/auth/session";
 import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitFast } from "@/lib/rate-limit-fast";
 
 export type LoginState = { error: string | null };
 
@@ -19,9 +20,20 @@ export async function login(
     return { error: "Enter your email and password." };
   }
 
-  // Rate limit login attempts per email (brute-force protection).
-  if (!(await rateLimit(`login:${email}`, 10))) {
+  // Rate limit login attempts per email (brute-force protection). The key is
+  // LOWERCASED — Supabase matches email case-insensitively, so a case-sprayed
+  // variant (`Admin@x.com`, `ADMIN@x.com`) used to mint its own fresh bucket
+  // against the same account, defeating the cap.
+  if (!(await rateLimit(`login:${email.toLowerCase()}`, 10))) {
     return { error: "Too many attempts. Try again in a minute." };
+  }
+
+  // Per-IP limiter in parallel — the per-email cap alone is bypassable from a
+  // botnet of addresses against many accounts. In-process and generous; it's a
+  // coarse abuse throttle, not a hard boundary.
+  const ip = ((await headers()).get("x-forwarded-for") ?? "").split(",")[0]?.trim() || "unknown";
+  if (!rateLimitFast(`login:ip:${ip}`, 60)) {
+    return { error: "Too many attempts from this network. Try again in a minute." };
   }
 
   // Cloudflare Turnstile verification (only when a secret key is configured).

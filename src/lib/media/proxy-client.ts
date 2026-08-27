@@ -221,18 +221,12 @@ async function r2Stream(
   key: string,
   range?: string | null,
 ): Promise<StreamResult> {
-  const { S3Client, GetObjectCommand } = await import("@aws-sdk/client-s3");
-  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
-  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
-  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
-  if (!accountId || !accessKeyId || !secretAccessKey) {
-    throw new Error("R2 env vars not set.");
-  }
-  const client = new S3Client({
-    region: "auto",
-    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
-    credentials: { accessKeyId, secretAccessKey },
-  });
+  // Reuse the process-wide R2 client (makeR2Client singleton in ./r2) — the
+  // stream hot path (one segment fetch per 6s) previously allocated a fresh
+  // S3Client on every request.
+  const { makeR2Client } = await import("./r2");
+  const client = makeR2Client();
+  const { GetObjectCommand } = await import("@aws-sdk/client-s3");
   const cmd = new GetObjectCommand({
     Bucket: bucket,
     Key: key,

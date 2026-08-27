@@ -32,16 +32,22 @@ export async function POST(req: Request) {
   const parsed = checkinSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
+  // Upsert so a re-submit within the same week (or a double-click) updates the
+  // same row instead of inserting a duplicate that skews the cohort aggregate
+  // (unique index checkins_user_week_unique backs this).
   const { data, error } = await supabase
     .from("checkins")
-    .insert({
-      user_id: user.id,
-      workload: parsed.data.workload,
-      energy: parsed.data.energy,
-      preparedness: parsed.data.preparedness,
-      free_line: parsed.data.freeLine,
-      week_label: parsed.data.weekLabel,
-    })
+    .upsert(
+      {
+        user_id: user.id,
+        workload: parsed.data.workload,
+        energy: parsed.data.energy,
+        preparedness: parsed.data.preparedness,
+        free_line: parsed.data.freeLine,
+        week_label: parsed.data.weekLabel,
+      },
+      { onConflict: "user_id,week_label" },
+    )
     .select("id")
     .single();
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });

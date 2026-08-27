@@ -67,7 +67,10 @@ export async function POST(req: Request) {
   // If AI is enabled, generate a grounded answer from only the retrieved passages.
   // The grounded answer is deterministic for a question (same sources, same
   // answer for every student) and contains no per-user data → safe to cache.
-  const cacheKey = isEnabled() && hits.length > 0 ? cacheKeyFor("knowledge_tutor", q, "grounded", "difficult") : null;
+  // The key includes the grounding scope (source + limit): a question asked
+  // against one book must not serve a cached answer grounded on all books.
+  const grounding = `${source ?? "*"}|${limit}`;
+  const cacheKey = isEnabled() && hits.length > 0 ? cacheKeyFor("knowledge_tutor", `${grounding}|${q}`, "grounded", "difficult") : null;
   const cached = cacheKey ? await readCached(cacheKey) : { hit: "none" as const };
 
   // Fast path: no AI available, no hits, or already cached → plain JSON.

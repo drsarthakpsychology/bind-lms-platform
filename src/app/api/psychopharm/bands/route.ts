@@ -8,7 +8,10 @@ import { getSession } from "@/lib/auth/session";
  */
 export async function GET(req: Request) {
   const session = await getSession();
-  if (session.status === "unauthenticated" || session.status === "expired" || session.status === "session_replaced") {
+  // Reject EVERY non-ok session — including "blocked" — so an overridden
+  // account can't fetch dose data. (The previous check only excluded
+  // unauthenticated/expired/session_replaced and silently admitted blocked.)
+  if (session.status !== "ok") {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
   const { searchParams } = new URL(req.url);

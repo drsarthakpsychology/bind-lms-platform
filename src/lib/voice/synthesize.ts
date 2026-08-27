@@ -45,6 +45,12 @@ function r2Env(): { accountId?: string; accessKeyId?: string; secretAccessKey?: 
   };
 }
 
+/** Absolute public R2 URL for a key, or null when no public base is set. */
+function r2PublicUrl(key: string, publicUrl?: string, bucket?: string): string | null {
+  const base = publicUrl ?? (bucket ? `https://${bucket}.r2.dev` : null);
+  return base ? `${base.replace(/\/$/, "")}/${key}` : null;
+}
+
 /**
  * Check R2 for the cached synthesis. Returns the public URL when present.
  * (Object existence via HEAD on the public URL — cheap and works with the
@@ -52,13 +58,10 @@ function r2Env(): { accountId?: string; accessKeyId?: string; secretAccessKey?: 
  */
 async function r2Has(key: string): Promise<boolean> {
   const { publicUrl, bucket } = r2Env();
-  const base = publicUrl ?? (bucket ? `https://${bucket}.r2.dev` : null);
-  if (!base) return false;
+  const url = r2PublicUrl(`voice/${key}.mp3`, publicUrl, bucket);
+  if (!url) return false;
   try {
-    const res = await fetch(`${base.replace(/\/$/, "")}/voice/${key}.mp3`, {
-      method: "HEAD",
-      cache: "no-store",
-    });
+    const res = await fetch(url, { method: "HEAD", cache: "no-store" });
     return res.ok;
   } catch {
     return false;
@@ -203,9 +206,10 @@ async function synthesizeKokoro(req: SynthesisRequest): Promise<{ ok: true; obje
   }
 }
 
-/** R2 put via the SDK (the project's existing S3 client — R2's SigV4 is
- *  handled by the SDK, not hand-rolled). On any error the synthesis is still
- *  returned (the caller is not blocked by storage). */
+/** R2 put via the SDK (R2's SigV4 is handled by the SDK, not hand-rolled). On
+ *  any error the synthesis is still returned (the caller is not blocked by
+ *  storage). Reuses the process-wide R2 client instead of allocating a new
+ *  S3Client per synthesis. */
 async function putR2(
   key: string,
   body: Buffer,
@@ -213,20 +217,15 @@ async function putR2(
   const { accountId, accessKeyId, secretAccessKey, bucket, publicUrl } = r2Env();
   if (!accountId || !accessKeyId || !secretAccessKey || !bucket) return null;
   try {
-    const { S3Client, PutObjectCommand } = await import("@aws-sdk/client-s3");
-    const s3 = new S3Client({
-      region: "auto",
-      endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
-      credentials: { accessKeyId, secretAccessKey },
-    });
-    await s3.send(new PutObjectCommand({
+    const { makeR2Client } = await import("../media/r2");
+    const { PutObjectCommand } = await import("@aws-sdk/client-s3");
+    await makeR2Client().send(new PutObjectCommand({
       Bucket: bucket,
       Key: key,
       Body: body,
       ContentType: "audio/mpeg",
     }));
-    const publicBase = publicUrl ?? (bucket ? `https://${bucket}.r2.dev` : null);
-    return { url: publicBase ? `${publicBase.replace(/\/$/, "")}/${key}` : null };
+    return { url: r2PublicUrl(key, publicUrl, bucket) };
   } catch {
     return null;
   }
@@ -311,7 +310,16 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
   if (process.env.AI_ENABLED === "true") {
     // Cache-first (the cache is content-keyed, provider-agnostic).
     if (await r2Has(key)) {
-      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "kokoro" };
+      // The object already exists — hand the client its real public URL so
+      // cached audio is actually playable (it used to return url:null, so a
+      // second request for the same line could never be played).
+      const { publicUrl, bucket } = r2Env();
+      return {
+        objectKey: `voice/${key}.mp3`,
+        url: r2PublicUrl(`voice/${key}.mp3`, publicUrl, bucket),
+        cacheKey: key,
+        provider: "kokoro",
+      };
     }
     // FREE-FIRST: open/zero-cost tiers before any paid option.
     // 1 MiMo (MIT) → 2 Kokoro (Apache, CPU) → 3 Qwen3 (hosted) →
