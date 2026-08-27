@@ -179,9 +179,28 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   //    the existing profile so repeated clicks don't pollute the accounts table.
   const { data: existing } = await admin
     .from("profiles")
-    .select("id, role")
+    .select("id, role, is_test")
     .eq("email", to)
     .maybeSingle();
+
+  // NEVER run the test against a REAL account. Testing with an admin's own
+  // email reset their password and flagged their account as test; testing with
+  // a real student's email clobbers that student's login. Only a brand-new
+  // address or an already-test account is safe to mutate.
+  if (existing?.role === "admin") {
+    return {
+      error: "That's an admin account — testing would reset its password and flag it as test. Use a student email.",
+      ok: false,
+      detail: "",
+    };
+  }
+  if (existing && !existing.is_test) {
+    return {
+      error: "That's a real student's account — testing would reset their password. Use a new or already-test address.",
+      ok: false,
+      detail: "",
+    };
+  }
 
   let userId = existing?.id as string | null;
   if (!userId) {

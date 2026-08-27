@@ -69,9 +69,13 @@ export class AiGuardError extends Error {
  */
 export function guardStudentCall(workload: Workload, opts: AiGuardOptions = {}): void {
   if (opts.enabled === false) throw new AiGuardError("AI features are disabled");
-  if (opts.dailyCap === undefined || opts.sessionCap === undefined) return;
-  if (opts.dailyCap <= 0) throw new AiGuardError("daily AI budget exceeded");
-  if (opts.sessionCap <= 0) throw new AiGuardError("session AI budget exceeded");
+  // Only skip the whole guard when NO cap was configured at all. (With `||`,
+  // passing just ONE cap made the guard return early — silently skipping the
+  // no-train-provider check below, so journal/debrief surfaced a 500 instead
+  // of the honest "needs a paid key" message.)
+  if (opts.dailyCap === undefined && opts.sessionCap === undefined) return;
+  if (opts.dailyCap !== undefined && opts.dailyCap <= 0) throw new AiGuardError("daily AI budget exceeded");
+  if (opts.sessionCap !== undefined && opts.sessionCap <= 0) throw new AiGuardError("session AI budget exceeded");
   const studentData = workloadHasStudentData(workload);
   // AI_STUDENT_TIER: "no_train_only" (default) = student-data workloads demand
   // a trainsOnData===false provider. "any" is a DEV-ONLY override that lets a
