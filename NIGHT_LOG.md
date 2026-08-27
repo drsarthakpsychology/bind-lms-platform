@@ -92,6 +92,40 @@ Second pass after the 10-agent sweep. Gate green (lint/tsc/535 tests/build).
 
 ---
 
+## 2026-08-27 — EMAIL CONTROL CENTER built (PR #33 merged) — deploy quota-blocked
+
+Kavya: a single email control center — credential emails + compose-with-preview +
+send, all from one place. Decisions: recipients = students + course groups;
+rework /admin/roster into /admin/emails.
+
+**Built + merged to main (PR #33), gate green (lint 0, tsc clean, 540 tests incl
+5 new, build ok):**
+- **Credentials tab** — the roster (select-all / bulk send / per-row email /
+  reset / CSV / test email), now in the hub. The credential email is a ready-made
+  HTML email (password in a bordered box, text fallback). /admin/roster redirects
+  here; nav item = "Emails".
+- **Compose tab** — welcome/announcement templates or fully custom HTML, written
+  in an editor with a LIVE sandboxed preview (exactly how it renders, before
+  sending). "Send test to me" lands the real render in the admin's inbox.
+  Recipients: searchable student list + select-all + one-tap course shortcuts
+  (course_enrollments). Send-to-N confirms count + list, daily-limit guarded.
+- **Sent tab** — unified history from the new email_sends table (credentials +
+  campaigns), status badges, retry of failed credential sends.
+- Sender upgraded to text+HTML (sendResendEmail). email_sends migration applied
+  to prod (verified: table exists, 0 rows). /api/emails/seed composes templates.
+
+**DEPLOY BLOCKED — Vercel free-plan daily deployment cap (100) exhausted.**
+The merge commit's Vercel status is failure: `build-rate-limit` /
+`api-deployments-free-per-day` ("more than 100, try again in 24 hours"). NOT a
+code failure — local build is green and the preview error is the pre-existing
+/set-password missing-env issue (Supabase envs are production-only, so preview
+builds always failed even before today). Current prod (batch-2 deploy) is healthy
+and live; the emails feature is merged to main and will deploy once the quota
+resets (~24h). Next action: `npx vercel --prod` after the window resets, or Kavya
+upgrades off the free tier. Retry cron scheduled.
+
+---
+
 ## 2026-08-27 — LESSON PUBLISHED TO HLS + playback verified ✅
 
 The "Orientation and Trial Session" lesson (d8736299) is now published as HLS:
