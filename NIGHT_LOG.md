@@ -1,3 +1,28 @@
+## 2026-08-27 — PLAYBACK BLOCK ROOT-CAUSED + WhatsApp capture LIVE
+
+Kavya reported "Video playback keeps getting blocked." 10 parallel subagents +
+live testing found the root cause: **r2Stream() cast `obj.Body as ReadableStream`**
+but AWS SDK v3's GetObjectCommand Body is an SdkStream (Node Readable) — passing
+it to NextResponse returned 200/206 + headers but no playable bytes ("looks fine
+but blocked"). Fixed with `transformToWebStream()` (also affects R2 materials).
+Second contributor: the lesson is a raw source MP4 (no HLS) whose 5-min stream
+token is never rotated on the MP4 branch (mobile-amplified on a 135MB file) +
+a non-faststart moov. Durable fix: publishing the lesson to HLS (transcode in
+progress). Verified live after the fix: video readyState 4, currentTime
+advancing, no errors.
+
+ALSO (Kavya): first-login WhatsApp mobile capture — profiles.mobile_number +
+mobile_prompt_skipped_at (migration), a security trigger closing a
+privilege-escalation hole (profiles_update_own_or_admin had no WITH CHECK so a
+student could self-promote to admin), a MobileNumberPrompt on /dashboard (two
+fields, Save + Later, 7-day re-ask grace), and an admin Mobile/WhatsApp column
+in /admin/students. Verified live: the prompt renders for a student without a
+number. Build fix: normalizeIndianMobile must not be a "use server" export.
+Deploys: r2Stream+mobile (n22f188sw, Ready + aliased) after a failed build
+(l5ak879sz) was fixed by PR #29.
+
+---
+
 ## 2026-08-27 — R2 VIDEO-UPLOAD FIX IS LIVE ✅
 
 Deployment `idj0l0xjp` (production) is **Ready + aliased to vibhapsychology.com**
