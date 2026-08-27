@@ -9,42 +9,40 @@ export const dynamic = "force-dynamic";
  * Drifting (7+ days silent), Stuck (failing a dimension repeatedly), Flying
  * (finished everything), cohort curve, one-tap nudge. Activity drop + load
  * spike = curriculum problem, not motivation.
+ *
+ * Last-activity is read from the student_last_activity VIEW — a per-student
+ * max(timestamp) aggregate across sim sessions / check-ins / journal entries,
+ * computed in the DB. The old page folded unordered .limit(500) samples in JS
+ * (and its sim_sessions query referenced a column that doesn't exist), so the
+ * drifting/flying/active counts were wrong. Now: one bounded row per student.
  */
 export default async function AdminPulsePage() {
   const admin = createAdminClient();
 
-  // Students + their last activity (from sim_sessions, checkins, journal).
-  const [{ data: students }, { data: sessions }, { data: checkins }] = await Promise.all([
-    admin.from("profiles").select("id, email").eq("role", "student").limit(200),
-    admin.from("sim_sessions").select("user_id, created_at, status").limit(500),
-    admin.from("checkins").select("user_id, created_at").limit(500),
+  const [{ data: activity }, { data: checkinsAgg }] = await Promise.all([
+    admin.from("student_last_activity").select("user_id, email, last_active_at"),
+    admin.from("checkins_aggregate").select("*").order("week_label", { ascending: false }).limit(4),
   ]);
-
-  const lastActivity = new Map<string, string>();
-  for (const s of sessions ?? []) {
-    const prev = lastActivity.get(s.user_id);
-    if (!prev || String(s.created_at) > prev) lastActivity.set(s.user_id, String(s.created_at));
-  }
-  for (const c of checkins ?? []) {
-    const prev = lastActivity.get(c.user_id);
-    if (!prev || String(c.created_at) > prev) lastActivity.set(c.user_id, String(c.created_at));
-  }
 
   const now = new Date().getTime();
   const DAY = 86400000;
-  const rows = (students ?? []).map((s) => {
-    const last = lastActivity.get(s.id);
-    const daysSilent = last ? Math.floor((now - new Date(last).getTime()) / DAY) : Infinity;
-    return { id: s.id, email: s.email, last, daysSilent };
+
+  // Null last_active_at = never started (no sim, no check-in, no journal).
+  const rows = (activity ?? []).map((a) => {
+    const ts = a.last_active_at ? new Date(String(a.last_active_at)).getTime() : null;
+    const daysSilent = ts === null ? null : Math.floor((now - ts) / DAY);
+    return {
+      user_id: a.user_id,
+      email: a.email,
+      daysSilent,
+    };
   });
 
-  const drifting = rows.filter((r) => r.daysSilent >= 7).sort((a, b) => b.daysSilent - a.daysSilent);
-  const flying = rows.filter((r) => r.daysSilent < 2);
+  const drifted = rows
+    .filter((r): r is { user_id: string; email: string; daysSilent: number } => r.daysSilent !== null && r.daysSilent >= 7)
+    .sort((a, b) => b.daysSilent - a.daysSilent);
+  const flying = rows.filter((r) => r.daysSilent !== null && r.daysSilent < 2).map((r) => r.email);
 
-  // Check-in × activity cross-reference (A6): activity dropping WHILE load
-  // scores spike = a curriculum problem, not a motivation problem. Read via
-  // the aggregate view only — no user identifiers, ever.
-  const { data: checkinsAgg } = await admin.from("checkins_aggregate").select("*").order("week_label", { ascending: false }).limit(4);
   const weeks = (checkinsAgg ?? []).map((w) => ({
     week: String(w.week_label),
     n: Number(w.n_responses ?? 0),
@@ -66,10 +64,10 @@ export default async function AdminPulsePage() {
       />
       <div className="mt-6">
         <PulseView
-          drifting={drifting.map((d) => ({ email: d.email, daysSilent: d.daysSilent }))}
-          flying={flying.map((f) => f.email)}
+          drifting={drifted.map((d) => ({ email: d.email, daysSilent: d.daysSilent }))}
+          flying={flying}
           total={rows.length}
-          active={rows.filter((r) => r.daysSilent < 7).length}
+          active={rows.filter((r) => r.daysSilent !== null && r.daysSilent < 7).length}
           weeks={weeks}
           curriculumFlag={curriculumFlag}
         />
