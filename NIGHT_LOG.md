@@ -70,6 +70,28 @@ tsc clean, 535 tests, build ok) and committed in 4 logical commits on
 
 ---
 
+## 2026-08-27 — SWEEP BATCH 2: admin bounded reads + advisor hardening (PR #31)
+
+Second pass after the 10-agent sweep. Gate green (lint/tsc/535 tests/build).
+- /admin overview had the SAME last-activity bug as pulse (read non-existent
+  sim_sessions.created_at) + unbounded sim_sessions/checkins/progress scans.
+  Now reads the student_last_activity view (with a `started` flag from
+  progress). The view gained the started column (drop+recreate).
+- /admin/students silently truncated at .limit(200); now fetches exact count +
+  capped window and shows "Showing first X of Y" when truncated.
+- grant_cohort idempotent: unique index module_access(module_id, scope,
+  student_id) NULLS NOT DISTINCT + route upserts.
+- infra_metrics() RPC was executable by PUBLIC; now revoked from PUBLIC.
+- Advisor sweep: rate_limit_incr() (SECURITY DEFINER, server-only) was anon-
+  callable — an abuse vector for bucket-flooding our own limiter. Revoked from
+  anon. protect_profile_columns() (the privilege-escalation trigger) got a
+  fixed search_path. Both applied + recorded in migrations_pending.
+- Deferred unchanged from batch 1 (see prior entry). PR #30 (batch 1) verified
+  live on vibhapsychology.com: home 200, login 200, admin/* + /courses 307 to
+  login (correct), no 500s.
+
+---
+
 ## 2026-08-27 — LESSON PUBLISHED TO HLS + playback verified ✅
 
 The "Orientation and Trial Session" lesson (d8736299) is now published as HLS:
