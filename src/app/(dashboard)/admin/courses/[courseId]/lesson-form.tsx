@@ -24,7 +24,15 @@ const SUBMISSION_TYPES = SUBMISSION_TYPE_OPTIONS as unknown as ReadonlyArray<{
   label: string;
 }>;
 
-export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nextOrderIndex: number }) {
+export function LessonForm({
+  courseId,
+  nextOrderIndex,
+  defaultWeek = 1,
+}: {
+  courseId: string;
+  nextOrderIndex: number;
+  defaultWeek?: number;
+}) {
   const boundAction = createLessonWithVideo.bind(null, courseId);
   const [state, formAction, pending] = useActionState(boundAction, initialState);
   const formRef = useRef<HTMLFormElement>(null);
@@ -37,6 +45,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
   const [requiresAssignment, setRequiresAssignment] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [week, setWeek] = useState<number>(defaultWeek);
 
   useEffect(() => {
     if (wasPending.current && !pending && !state.error) {
@@ -47,9 +56,10 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
       setRequiresAssignment(false);
       setTitle("");
       setDescription("");
+      setWeek(defaultWeek);
     }
     wasPending.current = pending;
-  }, [pending, state.error]);
+  }, [pending, state.error, defaultWeek]);
 
   async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -153,13 +163,25 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="w-24 space-y-1.5">
+        <div className="w-20 space-y-1.5">
           <Label htmlFor="orderIndex">Order</Label>
           <Input
             id="orderIndex"
             name="orderIndex"
             type="number"
+            min={1}
             defaultValue={nextOrderIndex}
+          />
+        </div>
+        <div className="w-20 space-y-1.5">
+          <Label htmlFor="week">Week</Label>
+          <Input
+            id="week"
+            name="week"
+            type="number"
+            min={1}
+            value={week}
+            onChange={(e) => setWeek(Number(e.target.value) || 1)}
           />
         </div>
       </div>

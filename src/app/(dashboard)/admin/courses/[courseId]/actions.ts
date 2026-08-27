@@ -160,6 +160,7 @@ export async function createLessonWithVideo(
   const title = String(formData.get("title") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
   const orderIndexRaw = Number(formData.get("orderIndex") ?? 0);
+  const weekRaw = Number(formData.get("week") ?? 1);
   const requiresAssignment = formData.get("requiresAssignment") === "on";
   const videoPath = String(formData.get("videoPath") ?? "").trim();
   const assignmentPrompt = String(formData.get("assignmentPrompt") ?? "").trim();
@@ -197,6 +198,7 @@ export async function createLessonWithVideo(
       title,
       description: description || null,
       order_index: Number.isFinite(orderIndexRaw) ? orderIndexRaw : 0,
+      week: Number.isFinite(weekRaw) && weekRaw >= 1 ? Math.round(weekRaw) : 1,
       requires_assignment: requiresAssignment,
       video_storage_path: videoPath,
       video_provider: "r2",
@@ -222,7 +224,14 @@ export async function createLessonWithVideo(
   if (requiresAssignment) {
     const { error: assignmentError } = await supabase.from("assignments").insert({
       lesson_id: lesson.id,
+      title,
       prompt_text: assignmentPrompt,
+      instructions: assignmentPrompt,
+      // The admin just wrote instructions and toggled the switch on — they
+      // obviously want students to see it. Default PUBLISHED so the assignment
+      // isn't silently invisible (the old lifecycle created drafts that never
+      // surfaced, with no way to publish them from the builder).
+      is_published: true,
       submission_type: assignmentTypes,
     });
 
@@ -338,4 +347,178 @@ export async function setLessonStatus(
   } catch {
     return { error: "Could not update the lesson." };
   }
+}
+
+/**
+ * Edit a lesson's metadata (title / notes / week / assignment requirement)
+ * without touching its video. The assignment lifecycle follows the switch:
+ *   - switched ON  → an existing assignment is updated + re-published; if none
+ *     exists it is created PUBLISHED (the admin just wrote the prompt — it
+ *     must not silently vanish).
+ *   - switched OFF → the existing assignment is UNpublished, never deleted
+ *     (submissions + grading history survive; flipping back is one tap).
+ */
+export async function updateLesson(
+  lessonId: string,
+  courseId: string,
+  fields: {
+    title: string;
+    description: string;
+    week: number;
+    requiresAssignment: boolean;
+    assignmentPrompt: string;
+  },
+): Promise<{ error: string | null }> {
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
+
+    const title = fields.title.trim();
+    if (!title) return { error: "Title is required." };
+    const week = Number.isFinite(fields.week) && fields.week >= 1 ? Math.round(fields.week) : 1;
+    const prompt = fields.assignmentPrompt.trim();
+
+    const supabase = await createClient();
+
+    const { error: lessonError } = await supabase
+      .from("lessons")
+      .update({
+        title,
+        description: fields.description.trim() || null,
+        week,
+        requires_assignment: fields.requiresAssignment,
+      })
+      .eq("id", lessonId);
+    if (lessonError) return { error: "Could not update the lesson." };
+
+    const { data: assignment } = await supabase
+      .from("assignments")
+      .select("id")
+      .eq("lesson_id", lessonId)
+      .maybeSingle();
+
+    if (fields.requiresAssignment) {
+      if (!prompt) return { error: "Add assignment instructions, or switch off Requires assignment." };
+      const payload = {
+        title,
+        prompt_text: prompt,
+        instructions: prompt,
+        is_published: true,
+      };
+      const { error: assignmentError } = assignment
+        ? await supabase.from("assignments").update(payload).eq("id", assignment.id)
+        : await supabase.from("assignments").insert({ lesson_id: lessonId, ...payload, submission_type: "text" });
+      if (assignmentError) return { error: "Lesson saved, but the assignment couldn't be updated." };
+    } else if (assignment) {
+      // Switching the requirement OFF keeps the row + submissions, just stops
+      // showing it to students.
+      const { error: unpublishError } = await supabase
+        .from("assignments")
+        .update({ is_published: false })
+        .eq("id", assignment.id);
+      if (unpublishError) return { error: "Lesson saved, but the assignment couldn't be unpublished." };
+    }
+
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not update the lesson." };
+  }
+}
+
+/** Publish/unpublish the assignment attached to a lesson (the builder's toggle). */
+export async function setAssignmentPublished(
+  lessonId: string,
+  courseId: string,
+  published: boolean,
+): Promise<{ error: string | null }> {
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
+
+    const supabase = await createClient();
+    const { data: assignment, error: findError } = await supabase
+      .from("assignments")
+      .select("id")
+      .eq("lesson_id", lessonId)
+      .maybeSingle();
+    if (findError || !assignment) return { error: "No assignment on this lesson." };
+
+    const { error } = await supabase
+      .from("assignments")
+      .update({ is_published: published })
+      .eq("id", assignment.id);
+    if (error) return { error: "Could not update the assignment." };
+
+    revalidatePath(`/admin/courses/${courseId}`);
+    revalidatePath(`/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not update the assignment." };
+  }
+}
+
+/** Move a lesson one slot up/down within its course (swaps order_index). */
+export async function moveLesson(
+  lessonId: string,
+  courseId: string,
+  direction: "up" | "down",
+): Promise<{ error: string | null }> {
+  try {
+    if (!(await requireAdmin())) return { error: "Not authorized." };
+
+    const supabase = await createClient();
+    const { data: ordered } = await supabase
+      .from("lessons")
+      .select("id, order_index")
+      .eq("course_id", courseId)
+      .order("order_index", { ascending: true })
+      .order("id", { ascending: true });
+
+    const rows = ordered ?? [];
+    const idx = rows.findIndex((r) => r.id === lessonId);
+    if (idx === -1) return { error: "Lesson not found." };
+    const swapIdx = direction === "up" ? idx - 1 : idx + 1;
+    if (swapIdx < 0 || swapIdx >= rows.length) return { error: null }; // already at edge
+
+    const a = rows[idx];
+    const b = rows[swapIdx];
+    const { error } = await supabase.from("lessons").update({ order_index: b.order_index }).eq("id", a.id);
+    if (!error) await supabase.from("lessons").update({ order_index: a.order_index }).eq("id", b.id);
+    if (error) return { error: "Could not reorder the lesson." };
+
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: null };
+  } catch {
+    return { error: "Could not reorder the lesson." };
+  }
+}
+
+export type RosterForCourse = {
+  students: Array<{ id: string; email: string | null }>;
+  enrolledIds: string[];
+};
+
+/**
+ * Load the full student roster + this course's enrollments on demand. The
+ * builder page no longer drags the entire roster into every page load — the
+ * enrolled-students section fetches only when it's first opened.
+ */
+export async function loadRoster(courseId: string): Promise<RosterForCourse> {
+  if (!(await requireAdmin())) return { students: [], enrolledIds: [] };
+
+  const supabase = await createClient();
+  const [{ data: students }, { data: enrollments }] = await Promise.all([
+    supabase
+      .from("profiles")
+      .select("id, email")
+      .eq("role", "student")
+      .eq("is_test", false)
+      .order("email", { ascending: true }),
+    supabase.from("course_enrollments").select("user_id").eq("course_id", courseId),
+  ]);
+
+  return {
+    students: (students ?? []).map((s) => ({ id: s.id, email: s.email })),
+    enrolledIds: (enrollments ?? []).map((e) => e.user_id),
+  };
 }
