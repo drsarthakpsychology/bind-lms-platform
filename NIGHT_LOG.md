@@ -1,3 +1,75 @@
+## 2026-08-27 — ARCHITECTURE SWEEP: 10-agent audit + builder/checkins/pulse rebuilt ✅
+
+Kavya: "Video is way smoother — do similar with the whole web architecture, and
+improve /admin/courses/[courseId] + /admin/checkins. Do the best things, build
+it properly." Ran a 3-agent audit then a 10-agent architecture sweep (914k
+subagent tokens, 468 tool calls, 0 failures). Everything gated green (lint 0,
+tsc clean, 535 tests, build ok) and committed in 4 logical commits on
+`worktree-night-rights-roster-video`.
+
+**Committed + applied to prod:**
+- **Checkins (committed first):** idempotent weekly submissions (unique index
+  user_id+week_label + insert→upsert + submit button disables after save), the
+  aggregate recreated security_invoker with explicit revoke/grant, and
+  /admin/checkins is now a trend surface — hand-rolled Neo-Brutalist SVG chart
+  of workload/energy/preparedness, ▲/▼ deltas vs last week, "Watch these weeks"
+  flags, friendly "Week of 24 Aug" labels.
+- **Course builder:** week-aware (lessons group under Week N like the student
+  path; Add Lesson gains a Week field), invisible-assignment lifecycle fixed
+  (assignments default PUBLISHED + live/draft badge with one-tap toggle),
+  inline lesson edit (title/notes/week/assignment switch — switching off
+  unpublishes, never deletes submissions), up/down reorder, video_status
+  surfaced (Upload failed / Processing / Attached), null lesson.status now reads
+  "Unlocked" to match what students actually see, and the enrolled-students
+  accordion lazy-loads the roster instead of dragging it into every page load.
+- **Materials streaming parity:** /api/media/materials now uses the video
+  proxy's verdict-cache + in-memory fast rate limiter + single combined
+  authz/read (was 4 DB reads per chunk + a DB write per request). This is the
+  "whole web architecture" smoothness lift for every PDF/slides/audio stream.
+- **R2:** health() previously returned true on EVERY error (dead R2 reported
+  healthy); now true only on 404-class. S3 clients unified on one process-wide
+  makeR2Client() singleton (r2Stream + putR2 were allocating a fresh client per
+  request).
+- **Security (all verified live):** psychopharm routes let 'blocked' accounts
+  through — now reject any non-ok session. Login rate limit lowercased + per-IP
+  limiter. sendTestEmailAction can no longer reset the admin's own password /
+  flag their account (refuses admin + non-test accounts). RLS hardened:
+  media_assets anon-read closed, wall SELECT policies scoped to authenticated
+  (author_id no longer leaks to anon), profiles UPDATE gained a WITH CHECK so
+  a student can't write role='admin' at the RLS layer (was trigger-only).
+- **Pulse fixed:** last-activity was computed from unordered .limit(500) samples
+  AND its sim_sessions query referenced a column that doesn't exist (created_at
+  → it's started_at/ended_at), so drifting/flying/active were wrong. New
+  student_last_activity VIEW computes the true per-student max in the DB
+  (sim ended_at/started_at + checkins + journal); service-role only.
+- **Cache/bundle:** knowledge/ask cache key now includes source+limit (single-book
+  answers no longer serve wrong-book cached replies); synthesis cache-hit now
+  returns a playable URL (was url:null); posthog-js (~240KB) is now a lazy
+  dynamic import (zero PostHog bytes until the first event); dead cmdk dep +
+  unused ui/command.tsx removed.
+
+**Deferred (logged, NOT done — deliberate):**
+- signOut() no-op in Server Components → revocation must move to proxy.ts (the
+  only place that can write cookies). Architecturally significant; needs a
+  careful proxy refactor. NEXT: after this deploy stabilizes.
+- Login token race (two devices logging in concurrently can kick the just-logged-in
+  user) — needs a compare-and-set. Low frequency, medium risk.
+- module grant_cohort duplicate access rows — needs unique constraint; checked
+  module_access has no unique index. Low traffic, medium risk.
+- /practice ~15 sequential count queries (query fan-out) — bigger refactor.
+- Wall reaction optimistic-toggle inversion (hydration) — client state work.
+- Voice mode TTS re-speaks on typewriter tick + LiveKit→text sync — voice work.
+- Plaintext student passwords in credential_invites — KAVYA'S DELIBERATE
+  PRODUCT DECISION (she shares 8-char passwords manually). NOT changing.
+- certificates anon SELECT — the public QR verify page reads it by design
+  (UUIDs unguessable, no write policy). Left as-is.
+- RLS-on-view not supported for student_last_activity → used explicit
+  service_role grant instead (the pulse page reads via the admin client).
+- profiles.cohort_ended_at/is_test/expires_at DO exist in prod (the audit's
+  "orphaned column" finding was stale) — verified via information_schema.
+
+---
+
 ## 2026-08-27 — LESSON PUBLISHED TO HLS + playback verified ✅
 
 The "Orientation and Trial Session" lesson (d8736299) is now published as HLS:
