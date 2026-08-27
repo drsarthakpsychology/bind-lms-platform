@@ -240,7 +240,11 @@ async function r2Stream(
   });
   const obj = await client.send(cmd);
   if (!obj.Body) return null;
-  const body = obj.Body as ReadableStream;
+  // AWS SDK v3's GetObjectCommand Body is an SdkStream (Node Readable), NOT a
+  // Web ReadableStream. Passing it straight into NextResponse (a Web Response)
+  // silently fails to deliver bytes to the browser — the proxy returned
+  // 200/206 + headers but the <video> never played ("blocked"). Convert it.
+  const body = obj.Body.transformToWebStream();
   return {
     stream: body,
     // Ranged S3 reads return 206; a full read returns 200. Report whatever
