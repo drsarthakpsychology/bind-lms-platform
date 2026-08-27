@@ -24,7 +24,16 @@
  */
 
 import { spawnSync, spawn } from "node:child_process";
-import { existsSync, statSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, statSync, mkdirSync, readdirSync, writeFileSync, readFileSync } from "node:fs";
+
+// Load .env.local (this script runs via tsx, not Next) so the R2/Supabase env
+// vars resolve — matching roster-import.ts / set-r2-cors.ts.
+if (existsSync(".env.local")) {
+  for (const line of readFileSync(".env.local", "utf8").split("\n")) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/);
+    if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].trim();
+  }
+}
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import {

@@ -3,12 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
-
-/** Normalize an Indian mobile: strip +91/0/spaces/dashes, keep 10 digits. */
-export function normalizeIndianMobile(raw: string): string | null {
-  const digits = raw.replace(/\D/g, "").replace(/^91/, "").replace(/^0/, "");
-  return /^[6-9][0-9]{9}$/.test(digits) ? digits : null;
-}
+import { normalizeIndianMobile } from "@/lib/phone";
 
 /**
  * Save the student's WhatsApp mobile number (first-login capture). Only ever
