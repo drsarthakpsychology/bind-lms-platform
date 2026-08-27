@@ -64,7 +64,7 @@ export function CreateStudentForm() {
               </span>
               <span className="block">
                 They&apos;re in the roster now —{" "}
-                <Link href="/admin/roster" className="font-semibold text-link underline">
+                <Link href="/admin/emails?tab=credentials" className="font-semibold text-link underline">
                   send the password email
                 </Link>
                 .

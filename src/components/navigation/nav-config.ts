@@ -46,7 +46,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   // first going out to students.
   { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
   { href: "/admin/students", label: "Students", icon: "users", section: "Launch" },
-  { href: "/admin/roster", label: "Roster & emails", icon: "mail", section: "Launch" },
+  { href: "/admin/emails", label: "Emails", icon: "mail", section: "Launch" },
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
 
   // Review — the daily review workflow, highest-frequency first.

@@ -10,6 +10,7 @@ import {
   sendCredentialEmails,
   sendResendEmail,
   credentialsEmailBody,
+  credentialsEmailHtml,
   generateCredential,
   resetCredential,
   type RosterFailure,
@@ -72,6 +73,7 @@ export async function bulkImportStudents(
   const report = await importRoster(parsed.rows, { admin, scope });
 
   revalidatePath("/admin/students");
+  revalidatePath("/admin/emails");
   revalidatePath("/admin/roster");
   return {
     error: null,
@@ -120,6 +122,7 @@ export async function confirmBulkImport(rows: RosterRow[], scope: string): Promi
 
   const report = await importRoster(rows, { admin, scope: scoped });
   revalidatePath("/admin/students");
+  revalidatePath("/admin/emails");
   revalidatePath("/admin/roster");
   return {
     error: null,
@@ -144,12 +147,14 @@ export type SendEmailsResult = {
  * reason, so retries are per-row. Uses the real Resend path.
  */
 export async function sendCredentialEmailsAction(emails: string[]): Promise<SendEmailsResult> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
+  const profile = await requireAdmin();
+  if (!profile) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
 
   const admin = createAdminClient();
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
-  const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail });
+  const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail, sentBy: profile.id });
 
+  revalidatePath("/admin/emails");
   revalidatePath("/admin/roster");
   return { error: null, ...report };
 }
@@ -235,11 +240,12 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
     return { error: pwErr.message ?? "Could not set the test password.", ok: false, detail: "" };
   }
 
-  // 4. Send the real credential email, clearly [TEST]-marked.
+  // 4. Send the real credential email (text + HTML), clearly [TEST]-marked.
   const res = await sendResendEmail(
     to,
     "[TEST] Your VIBHA School of Psychology password",
     credentialsEmailBody("Test Student", to, password, appUrl),
+    credentialsEmailHtml("Test Student", to, password, appUrl),
   );
 
   return {
@@ -258,6 +264,7 @@ export async function resetCredentialAction(email: string): Promise<ResetCredent
 
   const admin = createAdminClient();
   const password = await resetCredential(admin, email.trim().toLowerCase());
+  revalidatePath("/admin/emails");
   revalidatePath("/admin/roster");
   if (!password) {
     return { error: "Could not reset the password.", ok: false, password: null, detail: "" };

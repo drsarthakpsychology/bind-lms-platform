@@ -273,7 +273,7 @@ export function BulkImportForm() {
             </AlertDescription>
           </Alert>
           <div className="flex flex-wrap gap-2">
-            <Button type="button" size="lg" onClick={() => router.push("/admin/roster")}>
+            <Button type="button" size="lg" onClick={() => router.push("/admin/emails?tab=credentials")}>
               <Upload className="size-4" aria-hidden />
               Open the roster &amp; share passwords
             </Button>

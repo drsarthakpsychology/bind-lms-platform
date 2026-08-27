@@ -52,7 +52,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
   const [testResult, setTestResult] = React.useState<{ ok: boolean; detail: string } | null>(null);
 
   // Local copy so send/reset reconcile rows in place (no full page reload after
-  // a slow Resend loop). The server action also revalidates /admin/roster, so
+  // a slow Resend loop). The server action also revalidates /admin/emails, so
   // the next full navigation shows server-authoritative rows.
   const [localRows, setLocalRows] = React.useState<InviteRow[]>(rows);
   const [sendingEmails, setSendingEmails] = React.useState<Set<string>>(new Set());

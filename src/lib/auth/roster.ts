@@ -146,6 +146,42 @@ This password is yours alone — please don't share it. If you ever need it agai
 }
 
 /**
+ * The credential email as a ready-made HTML email (the "clean email format"
+ * Kavya asked for in the email control center). Inline styles only — email
+ * clients strip <style> blocks. Same facts as the text body; carries the
+ * password, never a link.
+ */
+export function credentialsEmailHtml(name: string, email: string, password: string, appUrl: string): string {
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const n = esc(name);
+  const e = esc(email);
+  const p = esc(password);
+  const u = esc(appUrl);
+  return `<!DOCTYPE html>
+<html>
+<body style="margin:0;padding:0;background:#FFF9F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFF9F0;"><tr><td align="center" style="padding:32px 16px;">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+    <tr><td style="background:#ffffff;border:2px solid #1a1a1a;border-radius:10px;padding:32px;">
+      <h1 style="margin:0 0 8px;font-size:20px;line-height:1.3;color:#1a1a1a;">Hi ${n},</h1>
+      <p style="margin:0 0 20px;font-size:15px;line-height:1.5;color:#1a1a1a;">Your VIBHA School of Psychology account is ready. Sign in with the details below.</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:2px solid #1a1a1a;border-radius:6px;margin:0 0 20px;">
+        <tr><td style="padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#5c554a;text-transform:uppercase;">Email</td></tr>
+        <tr><td style="padding:0 16px 14px;font-size:15px;color:#1a1a1a;">${e}</td></tr>
+        <tr><td style="padding:12px 16px;border-top:2px solid #1a1a1a;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#5c554a;text-transform:uppercase;">Password</td></tr>
+        <tr><td style="padding:0 16px 14px;font-size:15px;font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;color:#b83a00;">${p}</td></tr>
+      </table>
+      <p style="margin:0 0 16px;font-size:15px;line-height:1.5;color:#1a1a1a;"><a href="${u}/login" style="color:#b83a00;font-weight:700;text-decoration:underline;">Sign in here</a></p>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#5c554a;">This password is yours alone — please don't share it. If you ever need it again, contact the programme.</p>
+      <p style="margin:16px 0 0;font-size:13px;color:#5c554a;">— The VIBHA team</p>
+    </td></tr>
+  </table>
+</td></tr></table>
+</body>
+</html>`;
+}
+
+/**
  * Make sure the student has a stored credential: return the existing one, or
  * generate a fresh 8-char password, set it on the auth user, and persist it on
  * the `credential_invites` row. `forceNew` regenerates (used by Reset password).
@@ -282,13 +318,15 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
 }
 
 export type SendResult = { ok: boolean; error?: string; id?: string };
-export type SendEmailFn = (to: string, subject: string, body: string) => Promise<SendResult>;
+export type SendEmailFn = (to: string, subject: string, body: string, html?: string) => Promise<SendResult>;
 
 export type SendDeps = {
   admin: SupabaseClient;
   appUrl: string;
   /** Send the invite email via the real provider; returns success + any error/id. */
   sendEmail: SendEmailFn;
+  /** Who is sending (for the email_sends history log). Defaults to null. */
+  sentBy?: string | null;
 };
 
 /**
@@ -302,7 +340,7 @@ export async function sendCredentialEmails(
   emails: string[],
   deps: SendDeps,
 ): Promise<{ sent: number; failed: number; results: Array<{ email: string; ok: boolean; reason?: string }> }> {
-  const { admin, appUrl, sendEmail } = deps;
+  const { admin, appUrl, sendEmail, sentBy = null } = deps;
   const results: Array<{ email: string; ok: boolean; reason?: string }> = [];
   let sent = 0;
   let failed = 0;
@@ -329,7 +367,29 @@ export async function sendCredentialEmails(
       }
     }
 
-    const res = await sendEmail(email, "Your VIBHA School of Psychology password", credentialsEmailBody(name, email, password, appUrl));
+    // The ready-made HTML credential email — the text body is the fallback for
+    // clients that can't render HTML.
+    const subject = "Your VIBHA School of Psychology password";
+    const res = await sendEmail(
+      email,
+      subject,
+      credentialsEmailBody(name, email, password, appUrl),
+      credentialsEmailHtml(name, email, password, appUrl),
+    );
+
+    // Every credential send also logs to email_sends so the control center's
+    // "Sent" history is one unified feed (credentials + campaigns).
+    await logEmailSend(admin, {
+      recipient: email,
+      name,
+      subject,
+      templateId: "credential",
+      status: res.ok ? "sent" : "failed",
+      errorReason: res.ok ? null : (res.error ?? "Resend send failed."),
+      sentAt: res.ok ? new Date().toISOString() : null,
+      sentBy,
+    });
+
     if (res.ok) {
       sent++;
       await admin
@@ -351,6 +411,31 @@ export async function sendCredentialEmails(
   return { sent, failed, results };
 }
 
+type EmailSendLog = {
+  recipient: string;
+  name: string | null;
+  subject: string;
+  templateId: string;
+  status: "sent" | "failed";
+  errorReason: string | null;
+  sentAt: string | null;
+  sentBy: string | null;
+};
+
+/** Insert one email_sends row (the control center's unified history feed). */
+export async function logEmailSend(admin: SupabaseClient, log: EmailSendLog): Promise<void> {
+  await admin.from("email_sends").insert({
+    recipient: log.recipient,
+    name: log.name,
+    subject: log.subject,
+    template_id: log.templateId,
+    status: log.status,
+    error_reason: log.errorReason,
+    sent_at: log.sentAt,
+    sent_by: log.sentBy,
+  });
+}
+
 /**
  * Reset one student's password: generate a fresh 8-char credential, set it on
  * the auth user, persist it, and return it (so the admin can share it again).
@@ -364,8 +449,11 @@ export async function resetCredential(admin: SupabaseClient, email: string): Pro
  * real send and the test-email control can never drift apart. Reads the key
  * from the environment (never a fallback default key). Returns the real Resend
  * API result (id on success, message on failure).
+ *
+ * `body` is the plain-text fallback; `html` (optional) is the ready-made HTML
+ * version — Resend gets both, so every client renders the right one.
  */
-export async function sendResendEmail(to: string, subject: string, body: string): Promise<SendResult> {
+export async function sendResendEmail(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
   if (!key) return { ok: false, error: "RESEND_API_KEY is not configured." };
@@ -373,7 +461,7 @@ export async function sendResendEmail(to: string, subject: string, body: string)
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], subject, text: body }),
+      body: JSON.stringify({ from, to: [to], subject, text: body, ...(html ? { html } : {}) }),
     });
     const j = (await res.json().catch(() => null)) as { id?: string; message?: string } | null;
     if (!res.ok) return { ok: false, error: j?.message ?? `Resend returned HTTP ${res.status}` };
