@@ -17,7 +17,7 @@ export function ChaiLoader({ label = "Loading", tip = 0 }: { label?: string; tip
       <span className={s.loader}>
         <Chai mood="think" size={110} />
       </span>
-      <p className="text-lg font-black">
+      <p className="text-lg font-bold">
         {label}
         <span className={s.dots} aria-hidden>
           <span>.</span>

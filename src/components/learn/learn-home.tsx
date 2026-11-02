@@ -41,6 +41,7 @@ const TONE: Record<string, string> = {
   ink: "bg-foreground text-background",
   blue: "bg-brand text-brand-foreground",
   lime: "bg-primary text-primary-foreground",
+  plain: "bg-background text-foreground",
   white: "bg-card text-foreground",
 };
 
@@ -103,7 +104,7 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Play now</span>
-          <span className="block text-xl font-black leading-tight">{now.title}</span>
+          <span className="block text-xl font-bold leading-tight">{now.title}</span>
           <span className="block text-sm opacity-85">{now.why}</span>
         </span>
         <ArrowRight className="size-6 shrink-0" aria-hidden />
@@ -118,11 +119,14 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
             const Icon = g.icon;
             return (
               <li key={g.href}>
-                <Link href={g.href} className={cn("flex h-full items-start gap-3 rounded-2xl border-2 border-foreground p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5", TONE[g.tone])}>
-                  <Icon className="mt-0.5 size-5 shrink-0" aria-hidden />
+                {/* Calm white cards; the colour lives in the icon chip, so the one lime "Play now" card stays the clear first action. */}
+                <Link href={g.href} className="group flex h-full items-start gap-3 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
+                  <span className={cn("grid size-10 shrink-0 place-items-center rounded-xl border-2 border-foreground", TONE[g.tone === "white" ? "plain" : g.tone])}>
+                    <Icon className="size-5" aria-hidden />
+                  </span>
                   <span className="min-w-0">
                     <span className="block font-bold leading-tight">{g.title}</span>
-                    <span className="mt-0.5 block text-sm leading-snug opacity-85">{g.text}</span>
+                    <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">{g.text}</span>
                   </span>
                 </Link>
               </li>

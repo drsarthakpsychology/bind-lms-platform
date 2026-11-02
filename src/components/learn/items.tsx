@@ -32,7 +32,7 @@ export function CheckButton({ disabled, onClick, label = "Check" }: { disabled?:
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md transition-transform active:translate-y-1 disabled:opacity-40 disabled:shadow-none"
+      className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md transition-transform active:translate-y-1 disabled:opacity-40 disabled:shadow-none"
     >
       {label}
     </button>
@@ -46,7 +46,7 @@ function Mcq({ item, locked, onDone }: { item: McqItem; locked: boolean; onDone:
   return (
     <div className="space-y-4">
       {item.vignette ? <p className="rounded-2xl border-2 border-dashed border-foreground/40 bg-muted px-4 py-3 text-sm">{item.vignette}</p> : null}
-      <h2 className="text-xl font-black leading-tight sm:text-2xl">{item.prompt}</h2>
+      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
       <div role="radiogroup" className="grid gap-2.5">
         {order.map(({ o, i }, k) => {
           const isAnswer = i === item.answer;
@@ -86,7 +86,7 @@ function TrueFalse({ item, locked, onDone }: { item: TfItem; locked: boolean; on
   return (
     <div className="space-y-5">
       <p className="text-eyebrow text-link">True or false?</p>
-      <h2 className="text-xl font-black leading-tight sm:text-2xl">{item.statement}</h2>
+      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.statement}</h2>
       <div className="grid grid-cols-2 gap-3">
         {[true, false].map((v) => {
           const state = locked ? (v === item.answer ? "right" : pick === v ? "wrong" : "idle") : "idle";
@@ -100,7 +100,7 @@ function TrueFalse({ item, locked, onDone }: { item: TfItem; locked: boolean; on
                 onDone(v === item.answer, item.answer ? "True" : "False");
               }}
               className={cn(
-                "h-24 rounded-2xl border-2 border-foreground text-2xl font-black hard-shadow-sm transition-transform active:translate-y-1",
+                "h-24 rounded-2xl border-2 border-foreground text-2xl font-bold hard-shadow-sm transition-transform active:translate-y-1",
                 state === "right" ? "bg-primary text-primary-foreground" : state === "wrong" ? cn("bg-foreground text-background", s.shake) : "bg-card",
               )}
             >
@@ -140,7 +140,7 @@ function Match({ item, locked, onDone }: { item: MatchItem; locked: boolean; onD
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-black leading-tight sm:text-2xl">{item.prompt}</h2>
+      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
       <p className="text-caption text-muted-foreground">Tap a term on the left, then its match. {mistakes ? `Mistakes: ${mistakes}` : ""}</p>
       <div lang="en" className="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-2 sm:gap-2.5">
         <div className="grid gap-2.5">
@@ -152,7 +152,7 @@ function Match({ item, locked, onDone }: { item: MatchItem; locked: boolean; onD
               aria-pressed={pick === i}
               onClick={() => setPick(pick === i ? null : i)}
               className={cn(
-                "min-h-14 min-w-0 rounded-xl border-2 border-foreground px-2.5 py-2 text-left text-[0.8rem] leading-tight font-black [overflow-wrap:anywhere] hyphens-auto hard-shadow-sm transition-transform active:translate-y-0.5 sm:px-3 sm:text-sm",
+                "min-h-14 min-w-0 rounded-xl border-2 border-foreground px-2.5 py-2 text-left text-[0.8rem] leading-tight font-semibold [overflow-wrap:anywhere] hyphens-auto hard-shadow-sm transition-transform active:translate-y-0.5 sm:px-3 sm:text-sm",
                 done.includes(i) ? "border-dashed bg-muted opacity-70 shadow-none" : pick === i ? "bg-brand text-brand-foreground" : "bg-primary text-primary-foreground",
               )}
             >
@@ -190,7 +190,7 @@ function Order({ item, locked, onDone }: { item: OrderItem; locked: boolean; onD
   const full = chosen.length === item.steps.length;
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-black leading-tight sm:text-2xl">{item.prompt}</h2>
+      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
       <ol className="grid gap-2">
         {chosen.map((i, k) => {
           const ok = locked ? i === k : null;
@@ -253,7 +253,7 @@ function Sort({ item, locked, onDone }: { item: SortItem; locked: boolean; onDon
   const full = Object.keys(placed).length === item.items.length;
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-black leading-tight sm:text-2xl">{item.prompt}</h2>
+      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
       <ul className="grid gap-2">
         {chips.map(({ t, b, i }) => {
           const p = placed[i];

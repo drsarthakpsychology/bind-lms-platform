@@ -43,7 +43,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{l.eyebrow}</span>
-        <span className="block text-xl font-black leading-tight sm:text-2xl">{l.title}</span>
+        <span className="block text-xl font-bold leading-tight sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
       <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">

@@ -91,13 +91,13 @@ export function NoteView({
 
       {note.sections.map((sec, si) => (
         <section key={sec.title} className={cn("overflow-hidden rounded-3xl border-2 border-foreground", sec.style === "alert" ? "bg-status-alert-bg text-status-alert-fg" : TONE[sec.tone ?? "white"], n.reveal)}>
-          <h2 className="flex items-center gap-2 border-b-2 border-current/20 px-4 py-3 text-lg font-black">
+          <h2 className="flex items-center gap-2 border-b-2 border-current/20 px-4 py-3 text-lg font-bold">
             {sec.style === "alert" ? "⚠️" : <Sparkles className="size-4" aria-hidden />} {sec.title}
           </h2>
           {sec.style === "chips" ? (
             <ul className="flex flex-wrap gap-2 p-4">
               {sec.points.map((p, k) => (
-                <li key={k} className={cn(n.sticker, "rounded-xl border-2 border-current bg-background/10 px-3 py-1.5 text-sm font-black")} style={{ ["--tilt" as string]: TILTS[(k + si) % TILTS.length] }}>
+                <li key={k} className={cn(n.sticker, "rounded-xl border-2 border-current bg-background/10 px-3 py-1.5 text-sm font-semibold")} style={{ ["--tilt" as string]: TILTS[(k + si) % TILTS.length] }}>
                   {pick(p, view)}
                 </li>
               ))}
@@ -131,7 +131,7 @@ export function NoteView({
                       </span>
                       <span className={cn(n.back, "flex min-h-24 flex-col justify-between rounded-2xl border-2 border-foreground bg-primary p-3 text-primary-foreground hard-shadow-sm")}>
                         <span className="text-caption">You write</span>
-                        <span className="font-black leading-tight">{term}</span>
+                        <span className="font-bold leading-tight">{term}</span>
                       </span>
                     </span>
                   </button>
@@ -143,19 +143,19 @@ export function NoteView({
       ) : null}
 
       <section className="rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5" aria-labelledby="next-steps">
-        <h2 id="next-steps" className="text-lg font-black">
+        <h2 id="next-steps" className="text-lg font-bold">
           What to do now
         </h2>
         <ol className="mt-3 space-y-2.5">
           <li className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-background p-3">
-            <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary font-black text-primary-foreground">✓</span>
+            <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary font-bold text-primary-foreground">✓</span>
             <span className="font-bold">Read this note</span>
             <span className="ml-auto text-caption text-muted-foreground">{readCount} read so far</span>
           </li>
           <li>
             <Link href={quizHref} className="btn-sweep flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-3 text-primary-foreground hard-shadow-md">
-              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">2</span>
-              <span className="text-lg font-black">Quiz me on this</span>
+              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-bold">2</span>
+              <span className="text-lg font-bold">Quiz me on this</span>
               <Zap className="ml-auto size-5" aria-hidden />
             </Link>
           </li>
@@ -164,8 +164,8 @@ export function NoteView({
               href={scenarioCount ? `/games/scenarios?note=${note.id}` : "/games/terms"}
               className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"
             >
-              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">3</span>
-              <span className="font-black">{scenarioCount ? `Practise with a patient (${scenarioCount})` : "Practise clinical words"}</span>
+              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-bold">3</span>
+              <span className="font-bold">{scenarioCount ? `Practise with a patient (${scenarioCount})` : "Practise clinical words"}</span>
               <ArrowRight className="ml-auto size-5" aria-hidden />
             </Link>
           </li>

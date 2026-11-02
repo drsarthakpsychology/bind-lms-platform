@@ -52,7 +52,7 @@ export function ProgressView({
           { icon: <Trophy className="size-5" />, v: myRank ? `#${myRank}` : "—", l: `this week, of ${total}` },
         ].map((x) => (
           <div key={x.l} className="rounded-2xl border-2 border-foreground bg-card p-3">
-            <p className="flex items-center gap-1.5 text-2xl font-black">
+            <p className="flex items-center gap-1.5 text-2xl font-bold">
               {x.icon} {x.v}
             </p>
             <p className="text-caption text-muted-foreground">{x.l}</p>
@@ -68,7 +68,7 @@ export function ProgressView({
 
       {/* XP, last 14 days */}
       <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-        <h2 className="font-black">XP, last 14 days</h2>
+        <h2 className="font-bold">XP, last 14 days</h2>
         <div className="mt-3 flex h-32 items-end gap-1.5" role="img" aria-label="XP per day for the last 14 days">
           {days.map((d) => {
             const v = st.history[d] ?? 0;
@@ -90,7 +90,7 @@ export function ProgressView({
             <li key={d.id}>
               <Link href={`/games/coach?domain=${d.id}`} className="block rounded-2xl border-2 border-foreground bg-card p-3 transition-transform hover:-translate-y-0.5">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-black">
+                  <span className="font-bold">
                     <span aria-hidden>{d.icon}</span> {d.title}
                   </span>
                   <span className="font-pix text-xs">{d.m.pct}%</span>
@@ -109,7 +109,7 @@ export function ProgressView({
 
       {conf.length ? (
         <section className="rounded-2xl border-2 border-foreground bg-foreground p-4 text-background">
-          <h2 className="font-black text-primary">Things you mix up</h2>
+          <h2 className="font-bold text-primary">Things you mix up</h2>
           <ul className="mt-2 space-y-1 text-sm">
             {conf.map((x) => (
               <li key={x.a.id + x.b.id}>

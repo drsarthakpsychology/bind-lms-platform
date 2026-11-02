@@ -56,7 +56,7 @@ function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; mod
         const part = i === 0 || items[i - 1].part !== t.part ? t.part : undefined;
         return (
           <li key={t.id}>
-            {part ? <p className="mt-3 mb-1 px-2 text-[0.65rem] font-black tracking-wide text-muted-foreground uppercase">{part}</p> : null}
+            {part ? <p className="mt-3 mb-1 px-2 text-[0.65rem] font-semibold tracking-wide text-muted-foreground uppercase">{part}</p> : null}
             <Link
               href={t.href}
               onClick={onPick}

@@ -80,7 +80,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
               ["disorder", "Disorders"],
             ] as const
           ).map(([f, label]) => (
-            <button key={f} type="button" onClick={() => start(f)} className="btn-sweep h-14 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+            <button key={f} type="button" onClick={() => start(f)} className="btn-sweep h-14 rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
               {label}
             </button>
           ))}
@@ -131,7 +131,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-5")}>
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2 font-black">
+        <span className="flex items-center gap-2 font-bold">
           <Search className="size-5" aria-hidden /> Case {r + 1}/{rounds.length}
         </span>
         <span className="rounded-full border-2 border-foreground bg-foreground px-3 py-1 font-pix text-sm text-primary">{score} pts</span>
@@ -166,7 +166,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
                   disabled={isWrong}
                   onClick={() => guess(id)}
                   className={cn(
-                    "min-h-16 min-w-0 rounded-2xl border-2 border-foreground px-3 py-2 text-left text-sm font-black leading-tight [overflow-wrap:anywhere] hard-shadow-sm transition-transform active:translate-y-0.5 sm:text-base",
+                    "min-h-16 min-w-0 rounded-2xl border-2 border-foreground px-3 py-2 text-left text-sm font-semibold leading-tight [overflow-wrap:anywhere] hard-shadow-sm transition-transform active:translate-y-0.5 sm:text-base",
                     isWrong ? cn("bg-foreground text-background line-through opacity-60", s.shake) : "bg-card",
                   )}
                 >
@@ -186,12 +186,12 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
           <div className="flex items-start gap-3">
             <Chai mood={solved.correct ? (clues === 1 ? "cheer" : "happy") : "sad"} size={64} className="shrink-0" />
             <div>
-              <p className="text-lg font-black">{solved.correct ? (clues === 1 ? `First clue! +${solved.gained}` : `Solved! +${solved.gained}`) : "Case closed without you."}</p>
-              <p className="font-black">{answer.term}</p>
+              <p className="text-lg font-bold">{solved.correct ? (clues === 1 ? `First clue! +${solved.gained}` : `Solved! +${solved.gained}`) : "Case closed without you."}</p>
+              <p className="font-bold">{answer.term}</p>
               <p className="text-sm">{view === "clinician" ? answer.clinician : answer.student}</p>
             </div>
           </div>
-          <button type="button" autoFocus onClick={nextRound} className={cn("mt-3 h-12 w-full rounded-2xl border-2 border-foreground font-black", solved.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground")}>
+          <button type="button" autoFocus onClick={nextRound} className={cn("mt-3 h-12 w-full rounded-2xl border-2 border-foreground font-bold", solved.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground")}>
             {r + 1 < rounds.length ? "Next case" : "See results"}
           </button>
         </div>

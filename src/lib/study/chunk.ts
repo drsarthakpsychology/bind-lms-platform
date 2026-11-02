@@ -33,6 +33,12 @@ export function splitSection(s: Section): { chunks: Chunk[]; recall: Card[]; viv
   };
   for (const b of reading) {
     if (b.t === "h3") {
+      // A short lead-in (a sentence or two) stays with the first sub-heading,
+      // so a phone screen is never just one line.
+      if (cur.length && countWords(cur) < 60) {
+        cur.push(b);
+        continue;
+      }
       push();
       title = b.text.replace(/\s*\[(core|extra)\]\s*$/, "");
       cur.push(b);

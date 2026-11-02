@@ -158,7 +158,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
               >
                 <Rich text={text} />
                 {tag === "extra" ? (
-                  <span className="rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-black uppercase">
+                  <span className="rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-semibold uppercase">
                     Extra
                   </span>
                 ) : null}

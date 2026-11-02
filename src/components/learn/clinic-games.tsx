@@ -55,7 +55,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
         <Chai mood="think" size={130} />
         <h1 className="text-h1">What would you do?</h1>
         <p className="text-muted-foreground">Real clinic moments. The patient says something tricky; you choose your response and see what happens next. Some wrong answers sound kind.</p>
-        <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+        <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start
         </button>
         <Link href="/study/notes" className="block text-sm font-bold underline-offset-4 hover:underline">
@@ -91,7 +91,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   return (
     <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col gap-4 px-4 py-5">
       <div className="flex items-center gap-3">
-        <p className="flex-1 font-black">
+        <p className="flex-1 font-bold">
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
         </p>
         <span className="font-pix text-xs">
@@ -104,12 +104,12 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
           <div className="flex items-start gap-3">
             <Chai mood={BADGE[picked.outcome].mood} size={60} className="shrink-0" />
             <div>
-              <p className="text-lg font-black">{BADGE[picked.outcome].label}</p>
+              <p className="text-lg font-bold">{BADGE[picked.outcome].label}</p>
               <p className="text-sm font-semibold">What happens: {picked.consequence}</p>
               {picked.outcome !== "best" ? <p className="mt-2 text-sm">Best: {beat.choices.find((c) => c.outcome === "best")!.text}</p> : null}
             </div>
           </div>
-          <button type="button" autoFocus onClick={next} className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-background font-black text-foreground">
+          <button type="button" autoFocus onClick={next} className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-background font-bold text-foreground">
             {bi + 1 < sc.beats.length ? "What happens next →" : si + 1 < deck.length ? "Next patient" : "Finish"}
           </button>
         </div>
@@ -171,7 +171,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
         <p className="text-muted-foreground">Turn everyday words into the clinical term you&apos;d write in a case sheet, and pick the respectful way to say sensitive things.</p>
-        <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+        <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start (12 questions)
         </button>
       </div>
@@ -184,7 +184,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
       </div>
       <p className="text-eyebrow text-link">{q.kind === "words" ? "Words matter" : "Case-sheet language"}</p>
-      <h2 className="text-xl font-black leading-tight">{q.prompt}</h2>
+      <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
       <div className="grid gap-2.5">
         {q.options.map((o) => (
           <button
@@ -220,7 +220,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
               setLearnState(done);
               setResult(payout);
             }}
-            className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-primary font-black text-primary-foreground"
+            className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-primary font-bold text-primary-foreground"
           >
             {i + 1 < round.length ? "Next" : "Finish"}
           </button>

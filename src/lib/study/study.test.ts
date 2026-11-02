@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { emptyState, finishSection, markActivity, markWritten, recordTest, normalise } from "@/lib/learn/engine";
 import { MODULES } from "./index";
 import { parseBlocks, parseModule } from "./parse";
+import { splitSection } from "./chunk";
 import { courseNext, moduleNext, moduleStatus, readingSections, retestDue, testSection } from "./plan";
 
 describe("course content", () => {
@@ -71,5 +72,16 @@ describe("the guided flow", () => {
     expect(b.xp).toBe(a.xp);
     expect(b.study.tests[m.id].best).toBe(10);
     expect(b.study.tests[m.id].tries).toBe(2);
+  });
+});
+
+describe("chunking", () => {
+  it("keeps self-tests out of the reading and never leaves a one-line first part", () => {
+    const [sec] = parseModule("# Part A\n## 1.1 One [core]\nShort intro.\n### Sub\nBody text here.\n:::recall\n1. Q? || A\n:::");
+    const out = splitSection(sec);
+    expect(out.recall.length).toBe(1);
+    expect(out.chunks.length).toBe(1);
+    expect(out.chunks[0].blocks.some((b) => b.t === "h3")).toBe(true);
+    for (const m of MODULES) for (const s of m.sections) for (const c of splitSection(s).chunks) expect(c.blocks.some((b) => b.t === "recall" || b.t === "mcq" || b.t === "viva")).toBe(false);
   });
 });

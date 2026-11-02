@@ -70,7 +70,7 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
         <p className="text-muted-foreground">
           {mode.kind === "review" ? "Questions you miss come back here on the right day. Do a lesson and check back tomorrow." : ""}
         </p>
-        <BackLink className="inline-flex h-12 items-center rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground hard-shadow-sm">
+        <BackLink className="inline-flex h-12 items-center rounded-2xl border-2 border-foreground bg-primary px-6 font-bold text-primary-foreground hard-shadow-sm">
           Back
         </BackLink>
       </div>
@@ -145,7 +145,7 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-black", combo >= 3 ? "bg-foreground text-primary" : "bg-card")} aria-label={`Combo ${combo}`}>
+        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-semibold", combo >= 3 ? "bg-foreground text-primary" : "bg-card")} aria-label={`Combo ${combo}`}>
           <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
         </span>
       </div>
@@ -172,7 +172,7 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
           <div className="flex items-start gap-3">
             <Chai mood={mood} size={60} className="shrink-0" />
             <div className="min-w-0 flex-1">
-              <p className="flex items-center gap-2 text-lg font-black">
+              <p className="flex items-center gap-2 text-lg font-bold">
                 {last.line}
                 {last.gain ? <span className={cn("rounded-full bg-foreground px-2 py-0.5 text-xs text-primary", s.pulse)}>+{last.gain} XP</span> : null}
               </p>
@@ -189,7 +189,7 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
             autoFocus
             onClick={next}
             className={cn(
-              "mt-3 h-12 w-full rounded-2xl border-2 border-foreground text-base font-black hard-shadow-sm active:translate-y-0.5",
+              "mt-3 h-12 w-full rounded-2xl border-2 border-foreground text-base font-bold hard-shadow-sm active:translate-y-0.5",
               last.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground",
             )}
           >
@@ -252,7 +252,7 @@ export function Summary({
           <span className={cn("text-5xl", s.chest)} aria-hidden>
             🎁
           </span>
-          <span className="font-black">Tap to open your chest</span>
+          <span className="font-bold">Tap to open your chest</span>
         </button>
       ) : null}
 
@@ -263,7 +263,7 @@ export function Summary({
             <span className={cn("font-pix", l.label.includes("Jackpot") && "rounded-full bg-primary px-2 text-primary-foreground")}>+{l.xp}</span>
           </li>
         ))}
-        <li className="flex items-center justify-between rounded-2xl border-2 border-foreground bg-foreground px-4 py-3 text-lg font-black text-primary">
+        <li className="flex items-center justify-between rounded-2xl border-2 border-foreground bg-foreground px-4 py-3 text-lg font-bold text-primary">
           <span className="flex items-center gap-2">
             <Zap className="size-5" aria-hidden /> Total
           </span>
@@ -311,10 +311,10 @@ export function Summary({
       {result.goalHit ? <ChaiSays mood="cheer">Daily goal done! Come back tomorrow to keep your streak.</ChaiSays> : null}
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+        <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Continue
         </BackLink>
-        <button type="button" onClick={onAgain} className="h-14 rounded-2xl border-2 border-foreground bg-card text-lg font-black hard-shadow-sm">
+        <button type="button" onClick={onAgain} className="h-14 rounded-2xl border-2 border-foreground bg-card text-lg font-bold hard-shadow-sm">
           Practise again
         </button>
       </div>
@@ -398,7 +398,7 @@ function Blitz({ state }: { state: LearnState }) {
         <h1 className="text-h1">60-second blitz</h1>
         <p className="text-muted-foreground">As many right answers as you can in a minute. True/false and quick picks from everything you&apos;ve studied.</p>
         {state.blitzBest ? <p className="font-pix text-sm">Your best: {state.blitzBest}</p> : null}
-        <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+        <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start
         </button>
         <BackLink className="block text-sm font-bold underline-offset-4 hover:underline">
@@ -415,7 +415,7 @@ function Blitz({ state }: { state: LearnState }) {
       <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
         <Chai mood={right >= 10 ? "cheer" : "happy"} size={130} />
         <p className="font-pix text-6xl">{right}</p>
-        <p className="text-lg font-black">correct in 60 seconds{right > bestBefore ? " · New best!" : ""}</p>
+        <p className="text-lg font-bold">correct in 60 seconds{right > bestBefore ? " · New best!" : ""}</p>
         {payout ? <p className="font-pix">+{payout.xp} XP</p> : null}
         {missed.length ? (
           <div className="space-y-2 text-left">
@@ -430,10 +430,10 @@ function Blitz({ state }: { state: LearnState }) {
           </div>
         ) : null}
         <div className="grid gap-3 sm:grid-cols-2">
-          <button type="button" onClick={start} className="h-14 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+          <button type="button" onClick={start} className="h-14 rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
             Go again
           </button>
-          <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-card text-lg font-black hard-shadow-sm">
+          <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-card text-lg font-bold hard-shadow-sm">
             Done
           </BackLink>
         </div>
@@ -446,7 +446,7 @@ function Blitz({ state }: { state: LearnState }) {
     <div className={cn("mx-auto flex min-h-[calc(100dvh-4rem)] max-w-xl flex-col px-4 py-6 transition-colors", flash === "right" && "bg-primary/30", flash === "wrong" && "bg-foreground/15")}>
       <div className="flex items-center justify-between">
         <span className="font-pix text-3xl">{left}s</span>
-        <span className="flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1 font-black">
+        <span className="flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1 font-bold">
           <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
         </span>
         <span className="font-pix text-xl">{answers.filter((a) => a.correct).length} ✓</span>
@@ -457,10 +457,10 @@ function Blitz({ state }: { state: LearnState }) {
       <div key={`${item.id}-${answers.length}`} className={cn("mt-8 flex-1", s.rise)}>
         {item.kind === "tf" ? (
           <>
-            <h2 className="text-2xl font-black leading-tight">{item.statement}</h2>
+            <h2 className="text-2xl font-bold leading-tight">{item.statement}</h2>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {[true, false].map((v) => (
-                <button key={String(v)} type="button" onClick={() => answer(v === item.answer)} className="h-24 rounded-2xl border-2 border-foreground bg-card text-2xl font-black hard-shadow-sm active:translate-y-1">
+                <button key={String(v)} type="button" onClick={() => answer(v === item.answer)} className="h-24 rounded-2xl border-2 border-foreground bg-card text-2xl font-bold hard-shadow-sm active:translate-y-1">
                   {v ? "True" : "False"}
                 </button>
               ))}
@@ -468,7 +468,7 @@ function Blitz({ state }: { state: LearnState }) {
           </>
         ) : item.kind === "mcq" ? (
           <>
-            <h2 className="text-xl font-black leading-tight">{item.prompt}</h2>
+            <h2 className="text-xl font-bold leading-tight">{item.prompt}</h2>
             <div className="mt-5 grid gap-2.5">
               {seeded(item.options.map((o, k) => ({ o, k })), item.id).map(({ o, k }) => (
                 <button key={o} type="button" onClick={() => answer(k === item.answer)} className="rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-left font-semibold hard-shadow-sm active:translate-y-0.5">

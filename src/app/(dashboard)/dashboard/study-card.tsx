@@ -18,7 +18,7 @@ export async function StudyCard() {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Notes</span>
-        <span className="block text-xl font-black leading-tight">Continue your notes</span>
+        <span className="block text-xl font-bold leading-tight">Continue your notes</span>
         <span className="text-sm font-semibold opacity-80">
           {MODULES.length} modules · {studyTime(minutes)} · we keep your place
         </span>

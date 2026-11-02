@@ -144,7 +144,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted">
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-black", combo >= 3 ? "bg-foreground text-primary" : "bg-card")}>
+        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-semibold", combo >= 3 ? "bg-foreground text-primary" : "bg-card")}>
           <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
         </span>
       </div>
@@ -161,7 +161,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
             {step.format === "pick-term" ? (
               <>
                 <p className="text-eyebrow text-link">Which term is this?</p>
-                <h2 className="text-xl font-black leading-tight sm:text-2xl">“{c.student}”</h2>
+                <h2 className="text-xl font-bold leading-tight sm:text-2xl">“{c.student}”</h2>
               </>
             ) : step.format === "pick-meaning" ? (
               <>
@@ -171,14 +171,14 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
             ) : step.format === "tf" ? (
               <>
                 <p className="text-eyebrow text-link">True or false?</p>
-                <h2 className="text-xl font-black leading-tight sm:text-2xl">
+                <h2 className="text-xl font-bold leading-tight sm:text-2xl">
                   {c.term} means: “{conceptById(step.tfShown!)!.student}”
                 </h2>
               </>
             ) : (
               <>
                 <p className="text-eyebrow text-link">Type the term</p>
-                <h2 className="text-xl font-black leading-tight sm:text-2xl">“{c.student}”</h2>
+                <h2 className="text-xl font-bold leading-tight sm:text-2xl">“{c.student}”</h2>
               </>
             )}
 
@@ -204,7 +204,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
                       )}
                     >
                       <span className="grid size-7 shrink-0 place-items-center rounded-lg border-2 border-current font-pix text-[0.7rem]">{k + 1}</span>
-                      <span className={step.format === "pick-term" ? "text-base font-black" : "text-sm"}>{step.format === "pick-term" ? o.term : o.student}</span>
+                      <span className={step.format === "pick-term" ? "text-base font-bold" : "text-sm"}>{step.format === "pick-term" ? o.term : o.student}</span>
                     </button>
                   );
                 })}
@@ -225,7 +225,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
                         answer(v === truth, v === truth ? undefined : truth ? undefined : step.tfShown);
                       }}
                       className={cn(
-                        "h-24 rounded-2xl border-2 border-foreground text-2xl font-black hard-shadow-sm active:translate-y-1",
+                        "h-24 rounded-2xl border-2 border-foreground text-2xl font-bold hard-shadow-sm active:translate-y-1",
                         st === "right" ? "bg-primary text-primary-foreground" : st === "wrong" ? cn("bg-foreground text-background", s.shake) : "bg-card",
                       )}
                     >
@@ -275,7 +275,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
           <div className="flex items-start gap-3">
             <Chai mood={fb.correct ? (combo >= 3 ? "cheer" : "happy") : "sad"} size={64} className="shrink-0" />
             <div className="min-w-0 flex-1">
-              <p className="text-lg font-black">{fb.correct ? (combo >= 3 ? `${combo} in a row!` : "Got it!") : "Not quite. Here it is:"}</p>
+              <p className="text-lg font-bold">{fb.correct ? (combo >= 3 ? `${combo} in a row!` : "Got it!") : "Not quite. Here it is:"}</p>
               <p className="mt-1 text-sm font-bold">{c.term}</p>
               <p className="text-sm">{shownDef(c)}</p>
               {fb.correct ? (
@@ -290,7 +290,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
               {[c, conceptById(fb.picked)!].map((x, k) => (
                 <div key={x.id} className={cn("rounded-2xl border-2 p-3", k === 0 ? "border-primary bg-primary text-primary-foreground" : "border-background/40")}>
                   <p className="text-eyebrow">{k === 0 ? "Right answer" : "You picked"}</p>
-                  <p className="font-black">{x.term}</p>
+                  <p className="font-bold">{x.term}</p>
                   <p className="text-sm">{x.student}</p>
                 </div>
               ))}
@@ -301,7 +301,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
             type="button"
             autoFocus
             onClick={next}
-            className={cn("mt-3 h-12 w-full rounded-2xl border-2 border-foreground text-base font-black hard-shadow-sm", fb.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground")}
+            className={cn("mt-3 h-12 w-full rounded-2xl border-2 border-foreground text-base font-bold hard-shadow-sm", fb.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground")}
           >
             Continue
           </button>
@@ -359,7 +359,7 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
       </div>
       <div className="rounded-2xl border-2 border-foreground bg-card p-4">
         <div className="flex items-baseline justify-between">
-          <p className="font-black">Mastery</p>
+          <p className="font-bold">Mastery</p>
           <p className="font-pix text-sm">{m.pct}%</p>
         </div>
         <div className="mt-2 h-3 overflow-hidden rounded-full border-2 border-foreground">
@@ -382,7 +382,7 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
           <p className="mt-2 text-caption opacity-80">These will come up today, side by side.</p>
         </div>
       ) : null}
-      <button type="button" onClick={onStart} className="btn-sweep flex h-14 w-full items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+      <button type="button" onClick={onStart} className="btn-sweep flex h-14 w-full items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
         <GraduationCap className="size-5" aria-hidden /> Start a 10-concept session
       </button>
       <BackLink className="block text-center text-sm font-bold underline-offset-4 hover:underline">
@@ -424,7 +424,7 @@ function CoachReport({ levels }: { levels: Record<string, number> }) {
           <p className="mt-2 text-caption">They&apos;ll appear in your next session automatically.</p>
         </div>
       ) : null}
-      <BackLink className="flex h-12 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-card font-black hard-shadow-sm">
+      <BackLink className="flex h-12 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-card font-bold hard-shadow-sm">
         Back <ArrowRight className="size-4" aria-hidden />
       </BackLink>
     </div>
