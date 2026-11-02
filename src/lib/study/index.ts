@@ -1,12 +1,23 @@
 import { parseModule, sectionMinutes } from "./parse";
 import type { ModuleMeta, Section, StudyModule } from "./types";
-import * as interviewMse from "@/content/study/interview-mse";
+import * as m_antidepressants from "@/content/study/antidepressants";
+import * as m_antipsychotics from "@/content/study/antipsychotics";
+import * as m_anxiety from "@/content/study/anxiety";
+import * as m_bipolar from "@/content/study/bipolar";
+import * as m_depression from "@/content/study/depression";
+import * as m_interviewMse from "@/content/study/interview-mse";
+import * as m_ocd from "@/content/study/ocd";
+import * as m_personality from "@/content/study/personality";
+import * as m_psychosis from "@/content/study/psychosis";
+import * as m_stabilisers from "@/content/study/stabilisers";
+import * as m_substance from "@/content/study/substance";
+import * as m_suicide from "@/content/study/suicide";
 
 /**
  * The course, in curriculum order. Add a module by creating its file in
  * src/content/study (meta + text) and listing it here.
  */
-const SOURCES: { meta: ModuleMeta; text: string }[] = [interviewMse];
+const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_bipolar, m_depression, m_interviewMse, m_ocd, m_personality, m_psychosis, m_stabilisers, m_substance, m_suicide];
 
 function build(src: { meta: ModuleMeta; text: string }): StudyModule {
   const sections = parseModule(src.text);
