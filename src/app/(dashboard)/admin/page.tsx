@@ -1,4 +1,4 @@
-import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, Plus, ToggleLeft, UserPlus, Users } from "lucide-react";
+import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ToggleLeft, UserPlus, Users } from "lucide-react";
 import Link from "next/link";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
@@ -84,7 +84,39 @@ export default async function AdminOverviewPage() {
   const DB_LIMIT = 500 * 1024 * 1024;
   const dbPct = dbSize ? Math.round((dbSize / DB_LIMIT) * 100) : 0;
 
+  // CRM + mail: follow-ups due today or earlier, unread replies, failed sends.
+  const nowIso = new Date().toISOString();
+  const [{ count: followUpsDue }, { count: unreadReplies }, { count: failedSends }] = await Promise.all([
+    adminClient.from("crm_contacts").select("email", { count: "exact", head: true }).lte("next_follow_up_at", nowIso),
+    adminClient.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
+    adminClient.from("email_sends").select("id", { count: "exact", head: true }).eq("status", "failed"),
+  ]);
+
   const actions = [
+    {
+      label: "Reply to emails",
+      count: unreadReplies ?? 0,
+      detail: "Replies waiting in your inbox.",
+      href: "/admin/emails?folder=inbox",
+      icon: <Mail className="size-4" />,
+      urgent: (unreadReplies ?? 0) > 0,
+    },
+    {
+      label: "Follow up with people",
+      count: followUpsDue ?? 0,
+      detail: "People you planned to call or message by today.",
+      href: "/admin/people?view=follow-up",
+      icon: <PhoneCall className="size-4" />,
+      urgent: (followUpsDue ?? 0) > 0,
+    },
+    {
+      label: "Retry failed emails",
+      count: failedSends ?? 0,
+      detail: "Emails that didn't go out.",
+      href: "/admin/emails?folder=failed",
+      icon: <MailWarning className="size-4" />,
+      urgent: (failedSends ?? 0) > 0,
+    },
     {
       label: "Grade submissions",
       count: (pendingSubmissions ?? []).length,
@@ -121,9 +153,10 @@ export default async function AdminOverviewPage() {
 
   const totalToDo = actions.reduce((n, a) => n + a.count, 0);
   const shortcuts = [
+    { label: "People pipeline", detail: "Who you've contacted, who you haven't", href: "/admin/people", icon: <Users className="size-5" /> },
     { label: "What's live", detail: "Switch tools and lessons on or off", href: "/admin/flags", icon: <ToggleLeft className="size-5" /> },
     { label: "Cohort progress", detail: "Who is moving, who is stuck", href: "/admin/pulse", icon: <Activity className="size-5" /> },
-    { label: "Emails", detail: "Logins and announcements", href: "/admin/emails", icon: <Mail className="size-5" /> },
+    { label: "Mail", detail: "Inbox, sent, and login links", href: "/admin/emails", icon: <Mail className="size-5" /> },
     { label: "Usage & limits", detail: `Storage at ${dbPct}%`, href: "/admin/infra", icon: <Gauge className="size-5" /> },
   ];
 
@@ -177,7 +210,7 @@ export default async function AdminOverviewPage() {
         </section>
       </Reveal>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         {/* The to-do queue — count first, one tap away (an inbox, not a wall). */}
         <Reveal delay={0.15}>
           <section aria-label="Needs attention" className="overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
@@ -224,7 +257,7 @@ export default async function AdminOverviewPage() {
         <Reveal delay={0.2}>
           <section aria-label="Shortcuts" className="space-y-3">
             <h2 className="text-h2">Shortcuts</h2>
-            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {shortcuts.map((s) => (
                 <li key={s.href}>
                   <Link

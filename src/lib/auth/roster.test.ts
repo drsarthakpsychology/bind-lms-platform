@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveName, parseRosterCsv, EMAIL_RE, credentialsEmailBody, generateCredential } from "./roster";
+import { deriveName, parseRosterCsv, EMAIL_RE, credentialsEmailBody, generateCredential, hashSetupToken } from "./roster";
 
 describe("roster deriveName", () => {
   it("turns a local-part into a display name", () => {
@@ -71,24 +71,34 @@ describe("roster parseRosterCsv — column-shift / header regression", () => {
 });
 
 describe("roster credentialsEmailBody", () => {
-  it("contains the plaintext password and no password-set link", () => {
-    const body = credentialsEmailBody("Jane", "jane@x.com", "Ab3cD5eF", "https://vibhapsychology.com");
+  it("carries the one-time setup link and never a password", () => {
+    const link = "https://vibhapsychology.com/setup?t=abc123";
+    const body = credentialsEmailBody("Jane", "jane@x.com", link, "https://vibhapsychology.com");
     expect(body).toContain("jane@x.com");
-    expect(body).toContain("Ab3cD5eF");
+    expect(body).toContain(link);
     expect(body).toContain("vibhapsychology.com/login");
-    expect(body).not.toContain("verify?token");
-    expect(body).not.toContain("set-password");
+    expect(body.toLowerCase()).not.toContain("password:");
   });
 });
 
 describe("roster generateCredential", () => {
-  it("returns 8 chars of letters + digits only, no ambiguous look-alikes", () => {
+  it("returns a long, unguessable throwaway secret (never shown to anyone)", () => {
+    const seen = new Set<string>();
     for (let i = 0; i < 50; i++) {
       const p = generateCredential();
-      expect(p).toHaveLength(8);
-      expect(p).toMatch(/^[A-Za-z0-9]{8}$/);
-      expect(p).not.toMatch(/[0O1Il]/);
+      expect(p.length).toBeGreaterThanOrEqual(40);
+      seen.add(p);
     }
+    expect(seen.size).toBe(50);
+  });
+});
+
+describe("roster hashSetupToken", () => {
+  it("is a stable sha256 hex digest, never the token itself", () => {
+    const h = hashSetupToken("token-1");
+    expect(h).toMatch(/^[0-9a-f]{64}$/);
+    expect(h).toBe(hashSetupToken("token-1"));
+    expect(h).not.toBe(hashSetupToken("token-2"));
   });
 });
 

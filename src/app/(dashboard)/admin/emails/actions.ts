@@ -118,6 +118,8 @@ export async function sendCampaignEmail(input: {
       errorReason: res.ok ? null : (res.error ?? "Resend send failed."),
       sentAt: res.ok ? new Date().toISOString() : null,
       sentBy: profile.id,
+      providerId: res.id ?? null,
+      bodyText: text,
     });
     if (res.ok) {
       sent++;

@@ -37,10 +37,10 @@ describe("compose templates", () => {
 });
 
 describe("credentialsEmailHtml", () => {
-  it("carries the password + sign-in link and escapes unsafe characters", () => {
-    const html = credentialsEmailHtml("A&B <Name>", "jane@x.com", 'p@ss"<x>', "https://vibhapsychology.com");
+  it("carries the setup link + sign-in link and escapes unsafe characters", () => {
+    const html = credentialsEmailHtml("A&B <Name>", "jane@x.com", 'https://x.com/setup?t=a"<x>', "https://vibhapsychology.com");
     expect(html).toContain("jane@x.com");
-    expect(html).toContain("p@ss&quot;&lt;x&gt;");
+    expect(html).toContain("setup?t=a&quot;&lt;x&gt;");
     expect(html).toContain("A&amp;B &lt;Name&gt;");
     expect(html).toContain("vibhapsychology.com/login");
     expect(html).toContain("<html>");

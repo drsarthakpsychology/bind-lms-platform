@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, BookOpen, Home, Inbox, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
+import { Bell, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { isImmersiveSessionPath } from "./sidebar-gate";
@@ -29,8 +29,8 @@ const STUDENT_TABS: Tab[] = [
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
   { href: "/admin", label: "Home", icon: Home, exact: true },
-  { href: "/admin/courses", label: "Content", icon: BookOpen, match: ["/admin/flags", "/admin/cards", "/admin/idioms", "/admin/psychopharm", "/admin/corpus", "/admin/calibration", "/admin/modules"] },
-  { href: "/admin/students", label: "People", icon: Users, match: ["/admin/emails", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
+  { href: "/admin/emails", label: "Mail", icon: Mail },
+  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
   { href: "/admin/triage", label: "Review", icon: Inbox, match: ["/admin/submissions", "/admin/sim-review", "/admin/supervision", "/admin/wall-reports"] },
 ];
 

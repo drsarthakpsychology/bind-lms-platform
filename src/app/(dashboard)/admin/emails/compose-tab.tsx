@@ -43,14 +43,17 @@ const BLANK_HTML = `<!DOCTYPE html>
 export function ComposeTab({
   adminEmail,
   templates,
+  initialTo = [],
 }: {
   adminEmail: string;
   templates: ComposeTemplate[];
+  /** Pre-filled recipients (e.g. "Email" from a person's CRM page). */
+  initialTo?: string[];
 }) {
   const [templateId, setTemplateId] = React.useState("");
   const [subject, setSubject] = React.useState("");
   const [html, setHtml] = React.useState(BLANK_HTML);
-  const [selected, setSelected] = React.useState<Set<string>>(new Set());
+  const [selected, setSelected] = React.useState<Set<string>>(() => new Set(initialTo));
 
   const [testBusy, setTestBusy] = React.useState(false);
   const [testResult, setTestResult] = React.useState<{ ok: boolean; detail: string } | null>(null);

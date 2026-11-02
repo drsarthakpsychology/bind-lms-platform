@@ -47,8 +47,9 @@ export const ADMIN_ITEMS: NavItem[] = [
   // credentials, switch what's live. Highest value when the programme is
   // first going out to students.
   { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
-  { href: "/admin/students", label: "Students", icon: "users", section: "Launch" },
-  { href: "/admin/emails", label: "Emails", icon: "mail", section: "Launch" },
+  { href: "/admin/emails", label: "Mail", icon: "mail", section: "Launch" },
+  { href: "/admin/people", label: "People pipeline", icon: "users", section: "Launch" },
+  { href: "/admin/students", label: "Students", icon: "clipboardList", section: "Launch" },
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
 
   // Review — the daily review workflow, highest-frequency first.
@@ -92,6 +93,9 @@ export type AdminSection = {
 
 export const ADMIN_SECTIONS: AdminSection[] = [
   { key: "home", label: "Home", icon: "home", href: "/admin", tabs: [] },
+  // Mail has its own folder rail (Inbox / Sent / Logins / Failed), like Gmail,
+  // so it needs no tab row.
+  { key: "mail", label: "Mail", icon: "mail", href: "/admin/emails", tabs: [{ href: "/admin/emails", label: "Mail", hidden: true }] },
   {
     key: "content",
     label: "Content",
@@ -113,11 +117,11 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     key: "people",
     label: "People",
     icon: "users",
-    href: "/admin/students",
+    href: "/admin/people",
     tabs: [
+      { href: "/admin/people", label: "Pipeline" },
       { href: "/admin/students", label: "Students" },
       { href: "/admin/roster", label: "Roster", hidden: true },
-      { href: "/admin/emails", label: "Login emails" },
       { href: "/admin/enquiries", label: "Enquiries" },
       { href: "/admin/pulse", label: "Progress" },
       { href: "/admin/checkins", label: "Check-ins" },
