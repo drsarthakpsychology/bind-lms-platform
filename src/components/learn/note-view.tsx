@@ -51,12 +51,12 @@ export function NoteView({
     if (cur && !cur.notesRead[note.id]) setLearnState(markNoteRead(cur, note.id, istToday()));
   }, [note.id]);
   const [flipped, setFlipped] = React.useState<number[]>([]);
-  const quizHref = note.quiz.lessonId ? `/practice/learn/play?lesson=${note.quiz.lessonId}` : `/practice/learn/coach?domain=${note.quiz.domain}`;
+  const quizHref = note.quiz.lessonId ? `/study/play?lesson=${note.quiz.lessonId}` : `/study/coach?domain=${note.quiz.domain}`;
 
   return (
     <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link href="/practice/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+        <Link href="/study/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
           <ArrowLeft className="size-4" aria-hidden /> All notes
         </Link>
         <ViewToggle />
@@ -161,7 +161,7 @@ export function NoteView({
           </li>
           <li>
             <Link
-              href={scenarioCount ? `/practice/learn/scenarios?note=${note.id}` : "/practice/learn/terms"}
+              href={scenarioCount ? `/study/scenarios?note=${note.id}` : "/study/terms"}
               className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"
             >
               <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">3</span>
@@ -175,21 +175,21 @@ export function NoteView({
             Quizzing right after reading is how it sticks.
           </ChaiSays>
         </div>
-        <Link href="/practice/learn/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
+        <Link href="/study/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
           <Trophy className="size-4" aria-hidden /> See the leaderboard
         </Link>
       </section>
 
       <nav className="flex items-center justify-between gap-3 pt-2" aria-label="Other notes">
         {prev ? (
-          <Link href={`/practice/notes/${prev.id}`} className="inline-flex min-w-0 items-center gap-1 text-sm font-bold">
+          <Link href={`/study/notes/${prev.id}`} className="inline-flex min-w-0 items-center gap-1 text-sm font-bold">
             <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="truncate">{prev.title}</span>
           </Link>
         ) : (
           <span />
         )}
         {next ? (
-          <Link href={`/practice/notes/${next.id}`} className="inline-flex min-w-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-3 py-1.5 text-sm font-bold text-background">
+          <Link href={`/study/notes/${next.id}`} className="inline-flex min-w-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-3 py-1.5 text-sm font-bold text-background">
             <span className="truncate">Next: {next.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
           </Link>
         ) : null}

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
+
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
 import { ALL_TERMS } from "@/lib/learn/notes";
@@ -58,7 +58,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
         <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
           Start
         </button>
-        <Link href="/practice/notes" className="block text-sm font-bold underline-offset-4 hover:underline">
+        <Link href="/study/notes" className="block text-sm font-bold underline-offset-4 hover:underline">
           Back to notes
         </Link>
       </div>
@@ -91,9 +91,6 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   return (
     <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col gap-4 px-4 py-5">
       <div className="flex items-center gap-3">
-        <Link href="/practice/notes" aria-label="Quit" className="grid size-10 place-items-center rounded-full border-2 border-foreground bg-card">
-          <X className="size-5" />
-        </Link>
         <p className="flex-1 font-black">
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
         </p>

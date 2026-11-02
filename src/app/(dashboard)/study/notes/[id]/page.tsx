@@ -4,7 +4,7 @@ import { requireFeature } from "@/lib/flags";
 import { NOTES, noteById } from "@/lib/learn/notes";
 import { SCENARIOS } from "@/lib/learn/scenarios";
 import { NoteView } from "@/components/learn/note-view";
-import { loadLearnState, saveLearnState } from "../../learn/actions";
+import { loadLearnState, saveLearnState } from "../../actions";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;

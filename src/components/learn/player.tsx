@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { BackLink } from "@/components/study/back";
 import { useRouter } from "next/navigation";
-import { Flame, X, Zap } from "lucide-react";
+import { Flame, Zap } from "lucide-react";
 import { BADGES, answerXp, dueItems, emptyState, finishLesson, istToday, levelFor, type LearnState, type Payout } from "@/lib/learn/engine";
 import { BLITZ_ITEMS, findItem, findLesson } from "@/lib/learn/content";
 import type { Item } from "@/lib/learn/types";
@@ -70,9 +70,9 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
         <p className="text-muted-foreground">
           {mode.kind === "review" ? "Questions you miss come back here on the right day. Do a lesson and check back tomorrow." : ""}
         </p>
-        <Link href="/practice/learn" className="inline-flex h-12 items-center rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground hard-shadow-sm">
-          Back to Learn
-        </Link>
+        <BackLink className="inline-flex h-12 items-center rounded-2xl border-2 border-foreground bg-primary px-6 font-black text-primary-foreground hard-shadow-sm">
+          Back
+        </BackLink>
       </div>
     );
   }
@@ -142,9 +142,6 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
     <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col px-4 pt-4 pb-6">
       {/* Top: close, progress, combo */}
       <div className="flex items-center gap-3">
-        <Link href="/practice/learn" aria-label="Quit lesson" className="grid size-10 place-items-center rounded-full border-2 border-foreground bg-card">
-          <X className="size-5" />
-        </Link>
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
@@ -314,9 +311,9 @@ export function Summary({
       {result.goalHit ? <ChaiSays mood="cheer">Daily goal done! Come back tomorrow to keep your streak.</ChaiSays> : null}
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Link href="/practice/learn" className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
+        <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
           Continue
-        </Link>
+        </BackLink>
         <button type="button" onClick={onAgain} className="h-14 rounded-2xl border-2 border-foreground bg-card text-lg font-black hard-shadow-sm">
           Practise again
         </button>
@@ -404,9 +401,9 @@ function Blitz({ state }: { state: LearnState }) {
         <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
           Start
         </button>
-        <Link href="/practice/learn" className="block text-sm font-bold underline-offset-4 hover:underline">
-          Back to Learn
-        </Link>
+        <BackLink className="block text-sm font-bold underline-offset-4 hover:underline">
+          Back
+        </BackLink>
       </div>
     );
   }
@@ -436,9 +433,9 @@ function Blitz({ state }: { state: LearnState }) {
           <button type="button" onClick={start} className="h-14 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
             Go again
           </button>
-          <Link href="/practice/learn" className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-card text-lg font-black hard-shadow-sm">
+          <BackLink className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-card text-lg font-black hard-shadow-sm">
             Done
-          </Link>
+          </BackLink>
         </div>
       </div>
     );

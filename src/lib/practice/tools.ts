@@ -22,9 +22,7 @@ export type PracticeTool = {
 
 export const PRACTICE_TOOLS: PracticeTool[] = [
   // Learn — the gamified path with Chai: short lessons, XP, streaks, review.
-  { href: "/practice/learn", title: "Learn with Chai", verb: "PLAY", description: "Bite-size lessons, XP, streaks and badges. Psychopathology to psychopharmacology.", icon: "sparkles", time: "3 min", flag: "learn", group: "quick" },
 
-  { href: "/practice/notes", title: "Notes", verb: "READ", description: "Visual, point-by-point notes for every topic, each with a quiz.", icon: "bookMarked", time: "5 min", flag: "learn", group: "quick" },
 
   // Quick — under 5 minutes
   { href: "/practice/judgment", title: "Judgment", verb: "SLIDE", description: "New information changes the probability.", icon: "gauge", time: "2 min", flag: "judgment", group: "quick" },

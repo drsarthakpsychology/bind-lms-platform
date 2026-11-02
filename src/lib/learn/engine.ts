@@ -45,7 +45,28 @@ export type LearnState = {
   detectiveBest: number;
   /** Notes opened: note id → day first read (YYYY-MM-DD, IST). */
   notesRead: Record<string, string>;
+  /** The course (Study). */
+  study: StudyProgress;
 };
+
+export type StudyProgress = {
+  /** "module/section" → day the section was finished. */
+  done: Record<string, string>;
+  /** module → seconds of focused study time. */
+  secs: Record<string, number>;
+  /** module → best test score. */
+  tests: Record<string, { best: number; total: number; day: string; tries: number }>;
+  /** module → day the written practice (pass 3) was ticked. */
+  written: Record<string, string>;
+  /** module → activity id → day first done. */
+  acts: Record<string, Record<string, string>>;
+  /** Where the student last was, for "Continue". */
+  last: { module: string; section: string } | null;
+};
+
+export function emptyStudy(): StudyProgress {
+  return { done: {}, secs: {}, tests: {}, written: {}, acts: {}, last: null };
+}
 
 export const DAILY_GOALS = [20, 40, 60] as const;
 export const INTERVALS = [0, 1, 3, 7, 14, 30]; // days, indexed by Leitner box (1–5)
@@ -70,6 +91,7 @@ export function emptyState(): LearnState {
     history: {},
     detectiveBest: 0,
     notesRead: {},
+    study: emptyStudy(),
   };
 }
 
@@ -92,8 +114,97 @@ export function normalise(raw: unknown): LearnState {
       confusions: { ...(r.coach?.confusions ?? {}) },
     },
     history: { ...(r.history ?? {}) },
+    study: normaliseStudy(r.study),
     notesRead: Object.fromEntries(Object.entries(r.notesRead && typeof r.notesRead === "object" ? r.notesRead : {}).filter(([k, v]) => typeof k === "string" && typeof v === "string")),
   };
+}
+
+function strMap(x: unknown): Record<string, string> {
+  if (!x || typeof x !== "object") return {};
+  return Object.fromEntries(Object.entries(x).filter(([, v]) => typeof v === "string")) as Record<string, string>;
+}
+
+function normaliseStudy(raw: unknown): StudyProgress {
+  const base = emptyStudy();
+  if (!raw || typeof raw !== "object") return base;
+  const r = raw as Partial<StudyProgress>;
+  const secs = Object.fromEntries(Object.entries(r.secs ?? {}).filter(([, v]) => typeof v === "number" && v >= 0)) as Record<string, number>;
+  const tests = Object.fromEntries(
+    Object.entries(r.tests ?? {}).filter(([, v]) => v && typeof v === "object" && typeof v.best === "number" && typeof v.total === "number"),
+  ) as StudyProgress["tests"];
+  const acts = Object.fromEntries(Object.entries(r.acts ?? {}).map(([k, v]) => [k, strMap(v)]));
+  const last = r.last && typeof r.last.module === "string" && typeof r.last.section === "string" ? { module: r.last.module, section: r.last.section } : null;
+  return { done: strMap(r.done), secs, tests, written: strMap(r.written), acts, last };
+}
+
+/** Award XP outside a quiz (finishing a section, a test, a written task): daily goal, streak, history. */
+export function gainXp(s: LearnState, amount: number, today: string): LearnState {
+  if (amount <= 0) return s;
+  const daily = s.daily.day === today ? { ...s.daily } : { day: today, xp: 0, goalHit: false };
+  daily.xp += amount;
+  let bonus = 0;
+  if (!daily.goalHit && daily.xp >= s.dailyGoal) {
+    daily.goalHit = true;
+    bonus = XP.goal;
+  }
+  const total = amount + bonus;
+  return {
+    ...s,
+    xp: s.xp + total,
+    daily,
+    streak: touchStreak(s.streak, today).streak,
+    history: trimHistory({ ...s.history, [today]: (s.history[today] ?? 0) + total }, today),
+  };
+}
+
+export const STUDY_XP = { section: 10, written: 20, testPerRight: 5, activity: 5 } as const;
+
+export function studyKey(module: string, section: string): string {
+  return `${module}/${section}`;
+}
+
+/** Finish a section (first time only earns XP). */
+export function finishSection(s: LearnState, module: string, section: string, today: string): LearnState {
+  const k = studyKey(module, section);
+  const study = { ...s.study, last: { module, section } };
+  if (s.study.done[k]) return { ...s, study };
+  const next = { ...s, study: { ...study, done: { ...s.study.done, [k]: today } } };
+  return gainXp(next, STUDY_XP.section, today);
+}
+
+/** Remember where the student is (for "Continue"). */
+export function visitSection(s: LearnState, module: string, section: string): LearnState {
+  const l = s.study.last;
+  if (l && l.module === module && l.section === section) return s;
+  return { ...s, study: { ...s.study, last: { module, section } } };
+}
+
+/** Add focused study seconds to a module (capped per call so a forgotten tab can't inflate it). */
+export function addStudySeconds(s: LearnState, module: string, seconds: number): LearnState {
+  const add = Math.max(0, Math.min(seconds, 120));
+  if (!add) return s;
+  return { ...s, study: { ...s.study, secs: { ...s.study.secs, [module]: (s.study.secs[module] ?? 0) + add } } };
+}
+
+/** Record a module test. XP is paid only for improvement on the best score. */
+export function recordTest(s: LearnState, module: string, right: number, total: number, today: string): LearnState {
+  const prev = s.study.tests[module];
+  const best = Math.max(right, prev?.best ?? 0);
+  const gained = Math.max(0, right - (prev?.best ?? 0)) * STUDY_XP.testPerRight;
+  const next = { ...s, study: { ...s.study, tests: { ...s.study.tests, [module]: { best, total, day: today, tries: (prev?.tries ?? 0) + 1 } } } };
+  return gainXp(next, gained, today);
+}
+
+/** Tick the on-paper practice for a module. */
+export function markWritten(s: LearnState, module: string, today: string): LearnState {
+  if (s.study.written[module]) return s;
+  return gainXp({ ...s, study: { ...s.study, written: { ...s.study.written, [module]: today } } }, STUDY_XP.written, today);
+}
+
+/** Tick an activity inside a module (opening it counts; the activity pays its own XP). */
+export function markActivity(s: LearnState, module: string, activity: string, today: string): LearnState {
+  if (s.study.acts[module]?.[activity]) return s;
+  return { ...s, study: { ...s.study, acts: { ...s.study.acts, [module]: { ...(s.study.acts[module] ?? {}), [activity]: today } } } };
 }
 
 /** Mark a note as read (keeps the first day it was read). Returns the same object if nothing changed. */

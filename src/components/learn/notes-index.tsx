@@ -25,7 +25,7 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
     <div className="space-y-8">
       <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         {nextUp ? (
-          <Link href={`/practice/notes/${nextUp.id}`} className="btn-sweep flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-md">
+          <Link href={`/study/notes/${nextUp.id}`} className="btn-sweep flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-md">
             <span className="text-4xl" aria-hidden>
               {nextUp.emoji}
             </span>
@@ -59,7 +59,7 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
               return (
                 <li key={n.id}>
                   <Link
-                    href={`/practice/notes/${n.id}`}
+                    href={`/study/notes/${n.id}`}
                     className={cn(
                       "group relative flex h-full flex-col gap-2 rounded-3xl border-2 border-foreground p-4 hard-shadow-sm transition-transform hover:-translate-y-1 hover:rotate-[-0.6deg] active:translate-y-0.5",
                       TONES[(b + k) % TONES.length],

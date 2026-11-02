@@ -23,12 +23,12 @@ function TodaysPlan({ st, notes, today, due, dayXp }: { st: LearnState; notes: P
   const nextNote = notes.find((n) => !st.notesRead[n.id]);
   const note = readToday ?? nextNote ?? notes[0];
   const steps = [
-    { done: Boolean(readToday), label: readToday ? `Read: ${readToday.title}` : `Read a note: ${note.title}`, href: `/practice/notes/${note.id}`, hint: "2 to 4 minutes" },
+    { done: Boolean(readToday), label: readToday ? `Read: ${readToday.title}` : `Read a note: ${note.title}`, href: `/study/notes/${note.id}`, hint: "2 to 4 minutes" },
     { done: dayXp > 0, label: "Take its quiz", href: note.quizHref, hint: "Earn XP and keep your streak" },
     {
       done: due === 0 && st.answered > 0,
       label: due ? `Review ${due} due question${due === 1 ? "" : "s"}` : st.answered ? "Review: nothing due" : "Review (opens after your first quiz)",
-      href: "/practice/learn/play?mode=review",
+      href: "/study/play?mode=review",
       hint: due ? "Fixes what you're forgetting" : st.answered ? "You're all caught up" : "Questions come back here when they're due",
     },
   ];
@@ -149,7 +149,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
       <div className="grid gap-3 sm:grid-cols-3">
         {up ? (
           <Link
-            href={`/practice/learn/play?lesson=${up.lesson.id}`}
+            href={`/study/play?lesson=${up.lesson.id}`}
             className="btn-sweep flex flex-col justify-center rounded-2xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-md sm:col-span-1"
           >
             <span className="text-eyebrow">Up next</span>
@@ -160,7 +160,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
           <div className="rounded-2xl border-2 border-foreground bg-primary p-4 font-black text-primary-foreground">Every lesson cleared! Go for 3 stars.</div>
         )}
         <Link
-          href="/practice/learn/play?mode=review"
+          href="/study/play?mode=review"
           className={cn("flex items-center gap-3 rounded-2xl border-2 border-foreground p-4 hard-shadow-sm", due ? "bg-brand text-brand-foreground" : "bg-card")}
         >
           <RotateCcw className="size-6 shrink-0" aria-hidden />
@@ -169,7 +169,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
             <span className="text-caption">{due ? `${due} due today` : "Nothing due"}</span>
           </span>
         </Link>
-        <Link href="/practice/learn/play?mode=blitz" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+        <Link href="/study/play?mode=blitz" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <Timer className="size-6 shrink-0" aria-hidden />
           <span>
             <span className="block font-black">60-second blitz</span>
@@ -187,7 +187,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
             </p>
             <p className="text-caption opacity-85">Chai teaches, spots what you mix up, and repeats it until it sticks.</p>
           </div>
-          <Link href="/practice/learn/coach" className="shrink-0 rounded-full border-2 border-primary bg-primary px-3 py-1.5 text-sm font-black text-primary-foreground">
+          <Link href="/study/coach" className="shrink-0 rounded-full border-2 border-primary bg-primary px-3 py-1.5 text-sm font-black text-primary-foreground">
             Mixed →
           </Link>
         </div>
@@ -196,7 +196,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
             const m = domainMastery(st.coach, d.id);
             return (
               <li key={d.id}>
-                <Link href={`/practice/learn/coach?domain=${d.id}`} className="block h-full rounded-2xl border-2 border-foreground bg-background p-3 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
+                <Link href={`/study/coach?domain=${d.id}`} className="block h-full rounded-2xl border-2 border-foreground bg-background p-3 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
                   <span className="text-lg" aria-hidden>
                     {d.icon}
                   </span>
@@ -215,7 +215,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
       </section>
 
       <div className="grid gap-3 sm:grid-cols-3">
-        <Link href="/practice/notes" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-sm">
+        <Link href="/study/notes" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-sm">
           <span className="text-2xl" aria-hidden>
             📒
           </span>
@@ -224,7 +224,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
             <span className="text-caption">Every topic in points, with a quiz</span>
           </span>
         </Link>
-        <Link href="/practice/learn/scenarios" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background hard-shadow-sm">
+        <Link href="/study/scenarios" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background hard-shadow-sm">
           <span className="text-2xl" aria-hidden>
             🎬
           </span>
@@ -233,7 +233,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
             <span className="text-caption opacity-85">Tricky patient moments</span>
           </span>
         </Link>
-        <Link href="/practice/learn/terms" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+        <Link href="/study/terms" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <span className="text-2xl" aria-hidden>
             🗣️
           </span>
@@ -245,14 +245,14 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <Link href="/practice/learn/detective" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-4 text-brand-foreground hard-shadow-sm">
+        <Link href="/study/detective" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-4 text-brand-foreground hard-shadow-sm">
           <Search className="size-6 shrink-0" aria-hidden />
           <span>
             <span className="block font-black">Clinic detective</span>
             <span className="text-caption">Guess the medicine or disorder from clues{st.detectiveBest ? ` · best ${st.detectiveBest}` : ""}</span>
           </span>
         </Link>
-        <Link href="/practice/learn/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+        <Link href="/study/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <BarChart3 className="size-6 shrink-0" aria-hidden />
           <span>
             <span className="block font-black">My progress & leaderboard</span>
@@ -297,7 +297,7 @@ export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; 
                     <li key={l.id} className="w-44 shrink-0">
                       {prevDone ? (
                         <Link
-                          href={`/practice/learn/play?lesson=${l.id}`}
+                          href={`/study/play?lesson=${l.id}`}
                           className={cn(
                             "flex h-full flex-col gap-1 rounded-2xl border-2 border-foreground p-3 transition-transform hover:-translate-y-0.5 active:translate-y-0.5",
                             isNext ? cn("bg-primary text-primary-foreground hard-shadow-sm", s.pulse) : done ? "bg-background" : "bg-card",

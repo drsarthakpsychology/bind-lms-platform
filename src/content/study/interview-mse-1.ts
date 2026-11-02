@@ -1,0 +1,666 @@
+/* Module 1 · Part I — The psychiatric interview. Source: VIBHA School of Psychology study notes (2026 edition). */
+export const part1 = String.raw`
+# Part I · The psychiatric interview
+
+## 0.1 How to study this module [core]
+These notes are built on the two strongest findings in learning science: **you remember what you retrieve**, and **you remember what you meet again after a gap**. Everything else here serves those two things.
+
+### The colour code: one job each
+| Box | What it is | How to use it |
+|---|---|---|
+| Definition (blue edge) | The formal definition, word for word as an examiner expects it | Learn these verbatim. Definitions are free marks |
+| How to word it (lime) | The sentence a clinician actually writes in the notes | Copy the pattern, not the content. This makes a write-up look trained |
+| Exam trap (red) | A distinction students routinely get wrong | Read twice. It is the difference between a pass and a distinction |
+| Mnemonic (black) | A memory hook | Write your own version too. Self-made mnemonics stick harder |
+| Recall check (dashed) | Questions ending each section | Cover the page and answer aloud. The single highest-value thing here |
+
+### Core versus extra
+- **Core**: high-yield. Expected in every exam, every viva, every clinical posting. Non-negotiable.
+- **Extra**: depth for interest, distinction answers and clinical practice. Read it once; do not memorise it first.
+
+### The four-pass study protocol
+1. **Pass 1, Survey (20 minutes).** Read only the headings, the definitions and the tables. Build the shape of the topic first.
+2. **Pass 2, Read (2 to 3 hours).** Read properly. Do not highlight. After each section, close the page and answer the recall check aloud before moving on.
+3. **Pass 3, Write (1 hour).** Reproduce the MSE proforma and the insight scale from memory on blank paper. Compare. Correct in red.
+4. **Pass 4, Test (45 minutes).** Do the exam zone cold. Mark yourself honestly, then return only to the sections you failed.
+
+:::note Space it out
+Re-reading feels productive and does almost nothing. Retrieving after a gap feels uncomfortable and works. This course schedules your re-tests for you: 3 days, 7 days and 21 days after your first test.
+:::
+
+:::safety A note on scope
+This is an educational module. It teaches what a clinician assesses and how findings are recorded. It does not replace clinical training or supervision, and nothing here should be used to assess or manage a real patient without appropriate qualification, particularly the parts on suicide and violence risk, which are taught at the level of what is assessed rather than as protocols.
+:::
+
+### What you should be able to do by the end
+1. Conduct a psychiatric interview that gathers accurate data and builds a therapeutic alliance, using open questions, facilitation, clarification and good transitions.
+2. Take and record a complete psychiatric history in the standard order, including collateral history, premorbid personality and a life chart.
+3. Perform and write up a full mental status examination across all eight headings, using correct terms and the patient's own words.
+4. Define, distinguish and give clinical examples for every major sign of psychopathology.
+5. Grade insight, assess judgement, and know where MMSE and MoCA fit.
+6. Write a five-sentence formulation on the biopsychosocial grid.
+
+## 1.1 Why the interview is the examination [core]
+In most of medicine, the history points you towards a diagnosis and an investigation confirms it. In psychiatry there is usually no scan and no blood test that does that job. The interview has to do all of it, and something else at the same time.
+
+:::define The dual task
+A psychiatric interview must simultaneously (i) gather the information needed for a criteria-based diagnosis, formulation and treatment plan, and (ii) build the patient–clinician relationship on which all treatment will depend. Neither task can be sacrificed for the other.
+:::
+
+The interview is not merely an evaluation that precedes treatment. **The interview itself is often an essential part of treatment.** From the first moments it shapes the relationship, which can have a profound influence on outcome. A skilful interview gives better information, a more accurate diagnosis, better rapport and better adherence to the management plan.
+
+### How a psychiatric interview differs from a medical interview
+This table is the single most commonly asked short note in this topic. Learn all seven points.
+
+| # | Difference | Why it matters in practice |
+|---|---|---|
+| 1 | Disturbances in thinking, behaviour and emotion can interfere with communication | The patient may be thought-disordered, mute, elated or terrified. You may get the history in fragments across several sittings |
+| 2 | Collateral information from significant others is often essential | A patient with mania or psychosis may be the least reliable narrator of their own illness. The family may be the only source of a timeline |
+| 3 | Detailed personal history and premorbid personality must be obtained | You cannot judge how far someone has changed without knowing who they were before |
+| 4 | More astute observation of behaviour is required | How the patient speaks is a sign, not merely a manner. Observation is data collection |
+| 5 | Difficulty establishing rapport is more common | Suspiciousness, hostility, apathy, shame and stigma all obstruct the alliance |
+| 6 | Patients may lack insight and have poor judgement | “I have no problem, they brought me here” is itself a finding, not a failed interview |
+| 7 | Stressors and the social situation matter more | Housing, marriage, income, caste, migration and family attitude often shape both onset and outcome |
+
+:::define Structure without rigidity
+A consistent scheme should be used each time for **recording** the interview, but the **interview itself** should not follow a fixed and rigid method. The record is standardised; the conversation is flexible. Students who confuse the two produce interrogations that yield nothing.
+:::
+
+### Four rules that separate a trained interviewer from a beginner
+1. **See the patient first**, wherever possible. When the patient's and the informant's accounts differ, record them separately. The discrepancy is often diagnostic.
+2. **Record verbatim, not as a label.** Write the sign and the patient's own words, in their own spoken language where possible.
+3. **Open before you close.** Ask “How are you feeling today?” rather than “Are you feeling sad?” The second puts your word in the patient's mouth.
+4. **Listening is an active process.** Listening, and visibly showing you are listening, is arguably the most important interviewing skill there is.
+
+:::word Verbatim recording
+- Weak: *Patient has delusion of persecution.*
+- Trained: *Delusion of persecution present. Patient states, “Mere padosi mujhe zeher de rahe hain” (“My neighbours are poisoning me”), held with full conviction and not amenable to reasoning.*
+:::
+
+:::recall
+1. State the dual task of the psychiatric interview in one sentence. || Gather information for diagnosis, formulation and treatment, while building the relationship all treatment depends on; neither can be sacrificed.
+2. List all seven ways a psychiatric interview differs from a medical interview. || Communication disturbed; collateral essential; personal history and premorbid personality; sharper observation; rapport harder; insight and judgement may be poor; stressors and social situation matter more.
+3. What should be standardised: the interview, or the record? Why does it matter? || The record. The conversation stays flexible; a rigid interview becomes an interrogation.
+4. Rewrite properly: “Pt has grandiose delusion.” || Name the sign plus the patient's verbatim words, conviction, and whether it yields to reasoning.
+:::
+
+## 1.2 Setting up: consent, privacy, safety, time [core]
+Most of what goes wrong in a student interview goes wrong before a single clinical question is asked. This section is short, dull and disproportionately important.
+
+### Agreement as to process
+Before the history starts:
+- Introduce yourself and, unless it is obvious, say why you are the one speaking to them.
+- Obtain consent to proceed where it is not implicit.
+- State the nature and approximate length of the interaction.
+- Invite the patient to change or add to the process. A small act with a large effect on the alliance.
+- Establish whether the patient came **voluntarily or was brought involuntarily**. A guarded patient who was brought against their will is behaving understandably, not pathologically.
+
+### Privacy and confidentiality, and its limits
+:::define The rule
+Confidentiality must always be observed. The interviewer should make every attempt to ensure that others cannot overhear the interview.
+:::
+Where privacy is not achievable (a shared ward bay, a crowded OPD) you have two honest options: move the interview, or explicitly defer the sensitive topics and tell the patient you will return to them in private. Do not pretend the setting is private when it is not.
+
+### The exceptions: know these precisely
+Confidentiality is the default, not an absolute. It may be breached for:
+- **Risk of harm to others.** Where the patient intends to harm an identifiable person, the clinician may carry a legal duty to warn. Part of this duty may be met by clinical measures: adjusting treatment or admitting the patient. The law varies by jurisdiction.
+- **Risk of harm to self.** Suicidal risk may require involving others to keep the patient safe.
+- **Child abuse.** Disclosure duties apply (in India, POCSO).
+- **Non-confidential evaluations.** Forensic and disability assessments. Say so at the outset, name who will receive the report, and document that you did.
+
+:::trap How to frame it
+“Confidentiality in psychiatry is a strong default with defined, disclosed exceptions.” Not “confidentiality is absolute”, and not “confidentiality doesn't apply in psychiatry”.
+:::
+
+### Involving the family [extra]
+- Meet the family together with the patient, **after** the individual session, and after the patient has consented.
+- Do not bring up what the patient shared with you. Listen to the family; discuss only what the patient introduces in the joint session.
+- If a relative telephones, get the patient's consent before speaking (except in an emergency), and tell the patient the relative made contact, even if consent was given.
+
+### Safety, comfort and the room
+| Element | Standard |
+|---|---|
+| Distance | Seated roughly 4 to 6 feet apart |
+| Chair height | About equal, so neither party towers over the other |
+| Barriers | Do not sit behind a desk. Offer a choice of chair; how the patient chooses can itself be informative |
+| Escape route | In emergency settings the interviewer has a clear exit path; door may be left ajar; staff present if needed |
+| Interruptions | No phone interruptions. The time is set aside for the patient alone |
+| Comfort | Ask directly: “Are you warm enough?” Offer water and tissues |
+| Reassurance | Psychotic or confused patients may feel threatened. Reassure them they are safe; sometimes say there is enough staff to keep things under control |
+
+:::trap Correcting a common myth
+Patients with psychiatric disorders are usually **no more violent than the general population**. Safety precautions are taken because of the specific risk in front of you, not because of a diagnosis. Never write or say the opposite in an exam.
+:::
+
+### Time and number of sessions
+- **45 to 90 minutes** is usually allotted for an initial interview.
+- **20 to 30 minutes or less** may be all an inpatient on a medical ward, or a confused, distressed or psychotic patient, can tolerate. Use several brief sessions.
+- A comprehensive interview often needs more than one session. The history is never complete or entirely accurate.
+- The interview is dynamic: assessment continues as new material emerges.
+
+:::recall
+1. Name five things to establish before the history begins. || Who you are and why; consent; nature and length; invite them to shape the process; voluntary or brought.
+2. List four circumstances in which confidentiality may be breached. || Harm to others; harm to self; child abuse; non-confidential (forensic or disability) evaluations.
+3. Give the recommended seating distance and two rules about chairs. || 4 to 6 feet; equal height; no desk between you (offer a choice).
+4. How long is an initial interview, and what shortens it? || 45 to 90 minutes; confusion, distress, psychosis or a medical ward shorten it to 20 to 30 minutes, in several sessions.
+5. True or false: psychiatric patients are more violent than the general population. Justify. || False. They are usually no more violent; precautions follow the specific risk, not the diagnosis.
+:::
+
+## 1.3 Rapport, empathy and the therapeutic alliance [core]
+:::define Rapport and empathy
+**Rapport** is the harmonious responsiveness of the clinician to the patient and of the patient to the clinician. **Empathy** is understanding what the patient is thinking and feeling, putting yourself in their place while at the same time **maintaining objectivity**.
+:::
+
+### Empathy versus identification
+A classic viva question and a real clinical hazard.
+| Feature | Empathy | Identification |
+|---|---|---|
+| Understanding the emotion | Yes | Yes |
+| Experiencing the emotion | Not to the point of losing perspective | Yes, fully |
+| Objectivity | Retained: the essential ingredient | Lost |
+| Effect on the patient | Strengthens the alliance | Blurred boundaries; confusing and distressing, especially for patients with boundary difficulties (for example borderline personality disorder) |
+| Effect on the clinician | Sustainable | Draining, then disengagement, then burnout |
+
+:::note Most empathy is non-verbal
+Raised eyebrows, leaning towards the patient, putting your pen down, a nod, a brief “I see.” Verbal empathy is short and specific: “That must have been very difficult for you.” If you are not sure what the patient experienced, do not guess. Encourage them to continue; a wrong guess costs more than silence.
+:::
+
+### What actually builds the alliance
+- **Respect and consideration.** The patient is often in pain, vulnerable and, because of stigma, frightened of seeing you. Much of a first interview's success depends on reducing excessive anxiety.
+- **A non-judgemental attitude.** Many patients have met criticism, belittlement or anger in response to their symptoms. Being heard without judgement is itself therapeutic.
+- **Demonstrated understanding.** It is not enough to understand; the understanding must be conveyed.
+- **Evident caring.** When the patient sees you understand and care, trust grows.
+- **Genuineness.** Laughing at something funny, admitting a mistake, apologising for being late: these strengthen the alliance.
+- **Flexibility.** If a patient brings a photograph, look at it and ask about it. There are no irrelevant moments in the interview room.
+
+### Personal questions from the patient [extra]
+- About your qualifications and position: answer directly.
+- Sarcastic (“Did you really go to medical school?”): address the feeling behind it, not the content.
+- Personal (“Are you married?”): no single right answer. In insight-oriented work, explore why it is asked; in supportive work or medication review, answering a mild question is fine.
+- **The principle:** any self-disclosure must serve the patient and the alliance, never the clinician's needs.
+
+### Unconscious processes in the room [extra]
+| Term | Meaning | What it looks like |
+|---|---|---|
+| Transference | The patient unconsciously displaces onto the clinician patterns of feeling and behaviour that began with significant figures earlier in life | Anger, hostility, demandingness or obsequiousness out of proportion to the actual relationship |
+| Countertransference | The clinician unconsciously displaces onto the patient reactions belonging to figures from the clinician's own past | Clinician missing appointments, boredom, sleepiness in session. Address through supervision or personal therapy |
+| Resistance | Conscious or unconscious processes that interfere with therapeutic goals | Exaggerated emotion, intellectualisation, generalisation, missed appointments, acting out |
+| Repression | An unconscious process keeping feelings out of awareness; may fuel resistance | The patient is genuinely unaware of conflicts central to the illness |
+
+In the first session, note slips of the tongue and revealing mannerisms but **do not interpret them**. Interpretations are avoided at first contact; record areas for later.
+
+### Person-centred, not just symptom-centred
+The patient's goals (for example, safe housing) are often not the clinician's (for example, fewer hallucinations). That gap usually traces back to a symptom-based interview. Two questions change an interview:
+- “Tell me about some of the things you do best.”
+- “What do you consider your greatest asset?”
+
+Record strengths alongside deficits, and ask the patient to state their own goals in their own words.
+
+:::recall
+1. Define rapport and empathy. What single ingredient distinguishes empathy from identification? || Objectivity: retained in empathy, lost in identification.
+2. Give three non-verbal empathic responses. || Leaning forward, putting the pen down, nodding (also raised eyebrows, “I see”).
+3. Define transference and countertransference, with one sign of each. || Patient displaces past patterns onto clinician (disproportionate anger); clinician displaces own past onto patient (boredom, missed appointments).
+4. Why avoid interpretations in the first session? || They are premature, can feel intrusive and damage the alliance; note and explore later.
+5. Name two questions that make an assessment person-centred. || “Tell me about the things you do best.” “What is your greatest asset?”
+:::
+
+## 1.4 Technique: how to actually ask [core]
+### Open and closed questions
+| Type | Definition | Example |
+|---|---|---|
+| Open-ended | Identifies an area but gives minimal structure for the answer. Elicits narrative | “Tell me about your pain.” “What has led to your being here?” |
+| Closed-ended | Gives much structure and narrows the possible answers. The most closed form yields only yes or no | “Is your pain sharp?” “Do you drink alcohol every day?” |
+
+:::analogy A series of funnels
+A beginner's interview is one funnel: open questions at the start, closed at the end. A trained interview is a **series of funnels**. For each topic: open wide, narrow to specifics, close, transition, open the next topic wide again.
+- Open: “Tell me what brought you here.” Then narrow on the presenting problem. Transition.
+- Open: “How has your sleep been?” Then narrow on biological functions. Transition.
+- Open: “Tell me about your family growing up.” Then narrow on personal history.
+:::
+
+:::trap The error to avoid
+One long funnel: all the open questions first, then a yes/no checklist. It feels efficient and yields almost nothing. Closed questions are not the enemy; closed questions **too early** are.
+:::
+
+### The core techniques
+| Technique | Example | What it does |
+|---|---|---|
+| Facilitation | Nodding; “Go on.” “I see.” | Keeps the story flowing without steering its content |
+| Reflection | “So it sounds like you felt completely alone in it.” | Mirrors the feeling back; shows the emotion was received, not just the facts |
+| Clarification | “When you say ‘tension’, do you mean worry in your mind, or a feeling in your body?” | Essential in India, where idioms like tension, gas and ghabrahat carry several meanings |
+| Confrontation | “You're telling me things are fine, but you've been in tears since you sat down.” | Gently names a mismatch between report and observation. Use sparingly, without accusation |
+| Silence | (Pause. Wait.) | Gives space for difficult material. Beginners fill silence; experienced interviewers use it |
+| Summarising | “Let me check I've understood the last six months…” | Confirms accuracy, shows listening, lets the patient correct you |
+| Transition | “I'd now like to ask about your childhood.” | Signposts a change of topic so it doesn't feel abrupt |
+| Reassurance | “What you're describing is something we see and can treat.” | Legitimate after assessment. Premature reassurance shuts down disclosure |
+
+:::trap “Open-ended” is not the same as “vague”
+“Tell me about your sleep” is open and focused. “So… anything else?” is vague and unfocused. Open-endedness is about how much structure the answer may take, not how much direction the question gives.
+:::
+
+:::sounds How it sounds in an Indian OPD
+- “Bas tension rehti hai.” Clarify: worry, low mood, irritability, or body symptoms?
+- “Gas chadh jaati hai, dil ghabrata hai.” Often anxiety or panic described through the body.
+- “Mann nahi lagta.” Ask what they no longer enjoy: this may be anhedonia.
+- “Dimaag kharab ho gaya hai.” Ask what they mean; it may be distress, not psychosis.
+:::
+
+:::recall
+1. Define open and closed questions with one example each. || Open: minimal structure for the answer (“Tell me about your pain”). Closed: narrow, often yes or no (“Is it sharp?”).
+2. Explain the series-of-funnels model. What beginner's error does it correct? || Open, narrow, close per topic; corrects one long funnel with a closed checklist at the end.
+3. Name six interviewing techniques with an example phrase for each. || Facilitation, reflection, clarification, confrontation, silence, summarising (also transition, reassurance).
+4. When is reassurance appropriate, and when is it a mistake? || After assessment; before it, it closes disclosure.
+:::
+
+## 1.5 The history, part 1: identification to present illness [core]
+### Two traditions, one structure
+The Western scheme sets out fifteen parts of the initial interview; the Indian teaching proforma uses slightly different headings in a slightly different order. Learn the Indian order for your exam and recognise the Western one when you read.
+
+| # | Western scheme | Indian teaching proforma |
+|---|---|---|
+| I | Identifying data | Identification data |
+| II | Source and reliability | Informants and reliability |
+| III | Chief complaint | Presenting (chief) complaints |
+| IV | Present illness | History of present illness |
+| V | Past psychiatric history | Past psychiatric and medical history |
+| VI | Substance use | Treatment history |
+| VII | Past medical history | Family history |
+| VIII | Family history | Personal and social history |
+| IX | Developmental and social history | Premorbid personality |
+| X | Review of systems | Alcohol and substance history |
+| XI | Mental status examination | Physical examination |
+| XII | Physical examination | Mental status examination |
+| XIII | Formulation | Investigations |
+| XIV | Diagnosis | Diagnostic formulation |
+| XV | Treatment plan | Management plan |
+
+:::define The two pillars
+Strip everything else away and assessment has two pillars: (1) **the history**: subjective, the patient's report plus collateral accounts; (2) **the mental status examination**: objective, the interviewer's own tool, equivalent to the physical examination in the rest of medicine.
+:::
+
+### 1 · Identification data
+Name (including aliases and pet names), age and sex, residential and office address, religion, marital status, socioeconomic background, education, occupation and income, source of referral. In medicolegal cases, two identification marks.
+
+### 2 · Informants and reliability
+The patient's own history may be incomplete because insight is absent or cooperation poor, so **collateral history is routine, not exceptional**.
+
+:::trap Consent first
+Take the patient's consent before taking collateral history, unless the patient lacks capacity. A frequently forgotten and frequently examined step.
+:::
+
+Record for each informant: identification data, relationship to the patient, whether they live together and for how long. Then comment explicitly on reliability.
+
+:::mnemonic Reliability of an informant: four parameters
+1. Relationship with the patient
+2. Intellectual and observational ability
+3. Familiarity with the patient and length of stay together
+4. Degree of concern about the patient
+:::
+
+### 3 · Presenting (chief) complaints
+:::define Rule
+Record the chief complaints in the patient's own words, with the duration of each, in chronological order. Record both patient's and informant's versions where they differ. If the patient has no complaints because insight is absent, record that: it is a positive finding, not a blank.
+:::
+
+| Point | What you are asking |
+|---|---|
+| Onset | Acute, subacute or insidious? When was the patient last completely well? |
+| Duration | How long has this episode lasted? |
+| Course | Continuous, episodic, fluctuating, deteriorating, improving? |
+| Predisposing factors | What made this person vulnerable in the first place? |
+| Precipitating factors | What set this episode off? Include life stressors |
+| Perpetuating and relieving factors | What keeps it going, and what makes it better? |
+
+:::word Chief complaints
+1. “Neend nahi aati” (sleeplessness), 3 months
+2. “Mann nahi lagta kisi kaam mein” (loss of interest in all activities), 3 months
+3. “Lagta hai jeene ka koi fayda nahi” (feels there is no point in living), 3 weeks
+
+Informant (wife) additionally reports reduced self-care and refusal to eat for the last 10 days.
+:::
+
+### 4 · History of present illness
+:::define History of present illness
+A chronological description of how the symptoms of the current episode evolved, narrated coherently from the point a change was first noticed until now.
+:::
+What must be established:
+- **When the patient was last well.** This anchors onset and duration; state it explicitly.
+- **Each chief complaint expanded**: what, how severe, how long, associated features.
+- **Biological functions**: sleep, appetite and sexual functioning, always.
+- **Suicidal ideation, self-harm, and harm to others**, always, with details of any intent and plan.
+- **Changes in other areas** over the same period: interests, relationships, behaviour, habits, physical health.
+- **Stressors**: home, work, school, legal, medical, interpersonal.
+- **Aggravating and relieving factors**: medication, support, coping, time of day.
+- **Why now?** What made them come at this moment? (“I'm here because my wife said she'd leave if I didn't get help.”)
+- **Treatment already received** in this episode: who, how often, what, is it continuing, and if not, why not.
+
+:::trap Important negatives are part of the history
+Record important negative findings, for example the absence of alcohol or drug use in a new-onset psychosis. A blank is ambiguous; a recorded negative is data. Examiners reward this.
+:::
+
+### The life chart
+:::define Life chart
+A graphical display of the course of illness over time. In one picture it shows the sequence of episodes, polarity, severity, frequency, relation to stressors and response to treatment.
+:::
+For recurrent and bipolar disorders it conveys in one glance what three paragraphs cannot. Draw time along the bottom, mania above the line and depression below; bar height shows severity, bar width shows duration, and a triangle marks each stressor (for example bereavement, job loss, stopping medicines). Add a treatment row underneath (for example “lithium, adherent” then “stopped”). Draw one for every patient with a recurrent disorder.
+
+### The psychiatric review of systems
+Run it alongside the present illness, to rule diagnoses in or out with pertinent positives and negatives.
+| Category | Screen for |
+|---|---|
+| Mood | Depression: sadness, tearfulness, sleep, appetite, energy, concentration, sexual function, guilt, psychomotor change, interest. Mania: impulsivity, grandiosity, recklessness, excess energy, less need for sleep, overspending, talkativeness, racing thoughts, hypersexuality. Mixed: irritability, lability |
+| Anxiety | Generalised worry; panic (time to peak, body symptoms, fear of recurrence, agoraphobia); obsessive–compulsive symptoms (checking, cleaning, ordering, counting); PTSD (nightmares, flashbacks, startle, avoidance); social anxiety; phobias |
+| Psychosis | Hallucinations by modality; paranoia; delusions (TV or radio messages, broadcasting, control, reference); the patient's own spiritual or cultural framing; reality testing |
+| Other | ADHD symptoms; eating disorder symptoms (bingeing, purging, excessive exercise) |
+
+:::mnemonic SIG E CAPS: the symptoms of major depression
+- **S**leep: insomnia or hypersomnia
+- **I**nterest: loss of interest (anhedonia)
+- **G**uilt: worthlessness, excessive guilt
+- **E**nergy: fatigue
+- **C**oncentration: impaired thinking
+- **A**ppetite: change in appetite or weight
+- **P**sychomotor: agitation or retardation
+- **S**uicidality: recurrent thoughts of death or suicide
+:::
+
+:::recall
+1. Name the two pillars of psychiatric assessment. || The history (subjective, longitudinal) and the MSE (objective, cross-sectional).
+2. What are the four parameters of informant reliability? || Relationship; intellectual and observational ability; familiarity and time together; degree of concern.
+3. Give the six points to record about a presenting complaint. || Onset, duration, course, predisposing, precipitating, perpetuating and relieving factors.
+4. What does a life chart display? Name five things. || Sequence, polarity, severity, frequency, stressors, treatment response.
+5. Expand SIG E CAPS. || Sleep, Interest, Guilt, Energy, Concentration, Appetite, Psychomotor, Suicidality.
+6. Why record important negatives? || A blank is ambiguous; a recorded negative (for example no substance use in new psychosis) is data.
+:::
+
+## 1.5b The history, part 2: past, substances, medical, family, personal [core]
+### 5 · Past psychiatric history
+Comorbidity is the rule, so screen for other disorders too, not just earlier episodes of the same illness.
+- All past psychiatric illness across the lifetime: when, how long, how often, how severe.
+- Past treatment in detail: outpatient therapy (individual, group, couple, family), day care, inpatient care (voluntary or involuntary, and what led to it), support groups, vocational training.
+- Medicines and physical treatments: what, dose, how long (to judge if the trial was adequate), response, side effects, why stopped. Include ECT and light therapy.
+- **Adherence**: was it actually taken as advised?
+- **Previous diagnosis**: what, and who made it. Never accept it automatically, but it is essential information.
+
+:::safety The lethality history: assessed and documented in every patient
+Past behaviour informs present risk. Taught at the level of what is assessed and recorded:
+- **Suicidality**: past ideation, intent, plans and attempts; the nature and perceived lethality of each attempt; the chance of being found; notes; giving away possessions or other preparations.
+- **Violence and homicidality**: violent acts or intent; specific enquiry about domestic violence; legal consequences; outcome for the other person.
+- **Non-suicidal self-injury**: history, the feelings before and after (including relief), and how far they went to hide it.
+:::
+
+### 6 · Substance use history
+Recorded separately because substances both cause psychiatric symptoms and co-occur with most diagnoses. For each substance: age at first use, pattern and route (oral, snorting, injecting), frequency and amount, dependence features, tolerance, withdrawal, last use.
+- **Be non-judgemental**: a judgemental style gets inaccurate answers.
+- **Be specific** with reluctant patients: “Have you ever used cannabis?” rather than a vague enquiry.
+- **Beware definitional confusion**: “No, I don't use alcohol”… later… “I drink a fair amount of beer.” Volume is also confused with amount of alcohol.
+- **Consequences**: relationships, work, school, legal, driving.
+- **Periods of sobriety**: length and setting (was it in jail, or court-mandated?).
+- **Treatment**: detox, rehab, outpatient, self-help groups (AA, NA).
+- **Readiness for change**: precontemplation, contemplation or action.
+- **Do not omit** tobacco, caffeine, gambling, eating and internet use. Tobacco above all: people who misuse substances are more likely to die from tobacco than from the main substance.
+
+:::mnemonic CAGE and RAPS4: two four-item screens
+**CAGE**
+- **C**ut down: ever felt you should cut down on drinking?
+- **A**nnoyed: have people annoyed you by criticising your drinking?
+- **G**uilty: ever felt bad or guilty about drinking?
+- **E**ye-opener: ever had a morning drink to steady your nerves or a hangover?
+
+**RAPS4**
+- **R**emorse: felt guilty after drinking?
+- **A**mnesia: couldn't remember things said or done after drinking?
+- **P**erform: failed to do what was expected because of drinking?
+- **S**tarter: had a morning drink?
+:::
+
+### 7 · Past medical history and treatment history
+Medical history matters for four distinct reasons. A favourite short note.
+| Relationship | Example |
+|---|---|
+| Medical illness mimics psychiatric disorder | Hyperthyroidism resembling an anxiety disorder |
+| Medical illness precipitates psychiatric disorder | Anxiety disorder in a person newly diagnosed with cancer |
+| Medical illness constrains psychiatric treatment | Renal impairment limiting lithium |
+| Psychiatric disorder or its treatment causes medical illness | Metabolic syndrome on a second-generation antipsychotic |
+
+Explore these specifically: head injury, fits, unconsciousness, diabetes, hypertension, coronary artery disease, acute intermittent porphyria, syphilis and HIV. Also surgeries, admissions, accidents and allergies.
+
+**Medicines**: all current psychiatric medicines (duration, adherence, effect, side effects) and all other, over-the-counter, sleep, herbal and alternative preparations. Ideally the patient brings the actual strips. Ask adherence specifically (“How many days a week are you actually able to take this?”) and ask about side effects patients rarely volunteer, such as sexual dysfunction.
+
+In the Indian proforma, **treatment history** is its own heading: treatment in present and past episodes, adherence, response, adverse effects and **drug allergies, which should be prominently flagged**.
+
+### 8 · Family history
+:::define Convention
+“Family history” covers the **family of origin**: parents, siblings, grandparents, uncles. The **family of procreation** (spouse, children) is recorded under personal history.
+:::
+1. **Family structure.** Draw a family tree (pedigree): squares for males, circles for females, filled for affected, a line through for deceased, a double line for consanguinity, and an arrow for the index patient. Note beside each: age, diagnosis, and for the deceased, age and cause of death. Note nuclear, extended or joint family.
+2. **Family history of illness.** Psychiatric illness, major medical illness, alcohol or drug dependence, suicide or attempts.
+3. **Current social situation.** Home circumstances, per capita income, socioeconomic status, the leader of the family (nominal and functional are often different people), and the family's attitude to the illness. Also communication patterns, cultural and religious values, and social support.
+
+### 9 · Personal and social history
+The longest section of the proforma and the one students most often under-prepare. It reviews life stage by stage and often reveals current stressors as a by-product.
+- **Individualise**: not every question for every patient. Younger patients give far more early-life detail; parents or older siblings fill gaps.
+- **Go chronologically**: the most reliable way to miss nothing.
+
+| Sub-heading | What to elicit |
+|---|---|
+| Perinatal history | Problems in pregnancy, especially the first trimester (fever, medicines, alcohol, trauma, illness); wanted or unwanted child; normal or instrumental delivery; home or hospital; birth cry; complications (cyanosis, fits, jaundice); prematurity; birth defects |
+| Childhood history | Who brought them up; feeding and weaning; any maternal deprivation; age at each milestone; toilet training; neurotic traits (below) |
+| Educational history | Age at starting and finishing; achievement; relations with peers and teachers; school refusal or truancy; learning difficulties; why studies stopped |
+| Play history | Games, with whom, where; peer relationships. More important in younger patients |
+| Puberty | Age at menarche and reaction to it; secondary sexual characteristics; anxieties about puberty |
+| Menstrual and obstetric | Cycle regularity and length; last menstrual period; children; terminations |
+| Occupational history | Jobs in order; reasons for change; satisfaction; relations with authority, peers and juniors; income; whether the job fits education and background |
+| Sexual and marital history | Source of sexual knowledge; relationships; sexual practice and satisfaction; gender identity concerns. Marriage: duration; how long known before; arranged or self-chosen, with or without consent; separations; roles; relationship quality; sexual dysfunction. Family of procreation recorded here |
+
+:::mnemonic Neurotic traits of childhood
+Stuttering, stammering, tics, enuresis, encopresis, night terrors, thumb sucking, nail biting, head banging, body rocking, morbid fears, sleepwalking, temper tantrums, food fads.
+:::
+
+Also cover (the Western scheme names these explicitly): childhood physical and sexual abuse, asked carefully; legal history, especially pending cases; finances; hobbies and how they have changed; cultural and religious beliefs and practice; a structured sexual history.
+
+:::recall
+1. List the fifteen parts of the Indian proforma in order. || Identification; informants; chief complaints; present illness; past history; treatment; family; personal; premorbid personality; substance; physical exam; MSE; investigations; formulation; management.
+2. Expand CAGE and RAPS4. || Cut down, Annoyed, Guilty, Eye-opener. Remorse, Amnesia, Perform, Starter.
+3. Give the four ways medical illness relates to a psychiatric presentation, with an example each. || Mimics (hyperthyroid anxiety); precipitates (anxiety after cancer diagnosis); constrains treatment (renal impairment and lithium); caused by psychiatric treatment (metabolic syndrome on antipsychotics).
+4. Which family goes under family history, and which under personal history? || Family of origin under family history; family of procreation under personal history.
+5. Why must tobacco never be left out of a substance history? || People who misuse substances are more likely to die from tobacco than from their main substance.
+6. Name eight neurotic traits of childhood. || Stammering, tics, enuresis, encopresis, night terrors, thumb sucking, nail biting, temper tantrums (and others).
+:::
+
+## 1.6 Premorbid personality [core]
+:::define Premorbid personality
+A description of the kind of person the patient was **before the illness began**. In patients under 16 the equivalent term is temperament.
+:::
+
+:::trap The mistake almost everyone makes
+Do not write a label (“schizoid”, “histrionic”, “anxious type”). Describe the personality in detail. A label tells the reader nothing and cannot be checked; a description can be checked against the informant and against how the patient behaves now. **Write anecdotes, not adjectives.**
+:::
+
+| # | Sub-heading | Ask about |
+|---|---|---|
+| 1 | Interpersonal relationships | Family, friends, colleagues; introverted or extroverted; how easily relationships are made and kept |
+| 2 | Use of leisure time | Hobbies, interests, intellectual activities; energetic or sedentary |
+| 3 | Predominant mood | Optimistic or pessimistic; stable or anxious; cheerful or despondent; usual reaction to stress |
+| 4 | Attitude to self and others | Self-confidence, self-criticism, self-centred or thoughtful of others; self-appraisal |
+| 5 | Attitude to work and responsibility | Decision making, responsibility, flexibility, perseverance, foresight |
+| 6 | Religious beliefs and moral attitudes | Beliefs; tolerance of others' standards; conscience; altruism |
+| 7 | Fantasy life | Daydreams (frequency, content, favourites); dreams |
+| 8 | Habits | Food fads, alcohol, tobacco, drugs, sleep |
+
+:::note The most reliable method
+Interview an informant who knew the patient before the illness. A depressed patient describes a premorbid self coloured by present mood; a manic patient, one coloured by grandiosity.
+:::
+
+:::word Premorbid personality
+Described by his elder brother as sociable and easy-going before the illness: had a settled circle of six or seven college friends whom he met weekly, organised the family's festival arrangements each year, and was the person relatives approached for practical help. Generally even-tempered; brother recalls no long periods of low mood or excessive worry. Conscientious at work: same job for nine years with no disciplinary issues. Occasional social alcohol, no tobacco. Regular temple attendance, tolerant of others' beliefs.
+:::
+
+:::recall
+1. Give the eight sub-headings of premorbid personality. || Relationships; leisure; predominant mood; attitude to self and others; work and responsibility; religion and morals; fantasy life; habits.
+2. Why describe rather than label? || A label can't be verified and says nothing; a description can be checked against informants and current behaviour.
+3. Who is the most reliable source, and why? || An informant who knew the patient before onset; the patient's own account is coloured by the current mood state.
+:::
+
+## 1.7 Special situations [core]
+The standard interview assumes a cooperative adult who gives a coherent account. Much of clinical practice does not. These are the situations you will meet, and how to adapt.
+
+### The agitated or potentially violent patient
+- **Safety before completeness.** Clear exit path; door ajar; staff present or available.
+- **Short and focused.** Shorten or stop if agitation rises.
+- **Reassure explicitly.** Psychotic or frightened patients may be calmed by being told there is enough staff to stop things spiralling.
+- **Non-provocative stance.** Don't stand over them, corner them or argue.
+- **Clinical measures are part of risk management**: adjusting medicines or admission may itself discharge a duty of care.
+
+### The mute or uncooperative patient
+- **Observation becomes the examination.** Give more weight to appearance and behaviour: consciousness, posture, motor activity, eye contact, response to surroundings, catatonic signs.
+- **Collateral history becomes primary**, not supplementary.
+- **Record what could not be assessed and why.** Never leave a section silently blank.
+- Consider organic causes and catatonia. A drug-assisted interview is one recognised investigation in catatonia, unexplained mutism and dissociative stupor.
+
+:::word What could not be assessed
+“Thought content could not be assessed as the patient remained mute throughout.”
+:::
+
+### The patient with psychosis
+- **Non-confrontational**: “Do you ever feel someone is following you or out to get you?” rather than “Are you paranoid?”
+- **Neither collude nor argue.** Explore content, conviction, onset and effect on behaviour.
+- **Suggest the content** to patients who have learned not to volunteer it: “Do you feel the TV or radio has a special message for you?” A yes indicates an idea of reference.
+- **Ask about their own framing**: spiritual or cultural understanding is part of judging whether a belief is delusional at all.
+
+### The patient at risk of suicide
+:::safety Taught at the level of what a clinician assesses
+Suicidality is asked about in **every** initial interview, not only when volunteered. Asking “Are you suicidal?” is not enough. Establish:
+- **Ideation**: passive thoughts of death versus active thoughts of ending life
+- **Intent**: how strongly they mean to act
+- **Plan**: whether one exists and how specific it is
+- **Preparation**: steps already taken
+
+Set this against past lethality and known risk and protective factors. Suicide is very hard to predict; risk assessment informs the **level of care** (outpatient versus admission), not a prediction. A stated plan is a particularly dangerous sign.
+:::
+
+:::sounds How suicidal thinking is often voiced
+- “Bas sab khatam karna hai.” (I just want to end it all.)
+- “Mere bina sab theek rahenge.” (Everyone will be fine without me.)
+- “Neend mein hi chala jaun toh accha.” (Better if I just don't wake up.) Passive death wish: still ask about active thoughts and plans.
+:::
+
+### Children and adolescents [extra]
+- Developmentally appropriate language; play and observation add to questioning.
+- Several informants: parents (sometimes separately), school.
+- Adolescents may refuse to answer, but ask anyway. **Falling school performance** is a sensitive sign of emotional disorder.
+- Memories reported from before about age three are usually reconstructed.
+
+### The older adult [extra]
+- Allow more time; check hearing aids and glasses before concluding comprehension is impaired.
+- Screen cognition routinely and interpret against education.
+- Actively consider **delirium** (acute, fluctuating) and **depression**, which can look like cognitive impairment (depressive pseudodementia).
+- Rely more on collateral sources for early history.
+
+### The culturally different patient: cultural formulation
+| Tool | What it is |
+|---|---|
+| Outline for Cultural Formulation | A framework for the cultural features of a person's problem and how it relates to their social context |
+| Cultural Formulation Interview (CFI) | A brief semi-structured interview that puts the Outline into practice: the core CFI (16 questions), an informant version, and supplementary modules (children, older adults, carers, migrants and refugees) |
+
+:::mnemonic The four domains of the core CFI
+1. Cultural definition of the problem (questions 1 to 3)
+2. Cultural perceptions of cause, context and support (4 to 10)
+3. Cultural factors in self-coping and past help-seeking (11 to 13)
+4. Cultural factors in current help-seeking (14 to 16)
+:::
+The Outline has five parts: cultural identity; cultural concepts of distress; stressors and cultural features of vulnerability and resilience; cultural features of the clinician–patient relationship; overall cultural assessment.
+
+:::note Two points examiners like
+- The CFI is person-centred: it asks this person's views rather than assuming what a group believes. That is how it avoids stereotyping. There are no right or wrong answers.
+- It can be used with anyone, including when clinician and patient seem to share a background, because they may still differ in ways that matter.
+:::
+
+### Telepsychiatry [extra]
+- Confirm the patient's physical location at the start of every session, in case of emergency.
+- Confirm privacy at the patient's end, not just yours.
+- Adapt the MSE: gait, psychomotor activity, tremor and much of appearance may be unobservable. Record what could not be assessed.
+- Recording for teaching: fully inform the patient how it will be used, kept and accessed; their care must not depend on agreeing.
+
+:::recall
+1. How does the MSE change in a mute patient? || Observation becomes the examination; collateral becomes primary; record what could not be assessed and why.
+2. What four things must be established about suicidality? || Ideation, intent, plan, preparation.
+3. How do you ask about delusions without confrontation? || Neutral, suggestive questions (“Do you feel the TV has a special message for you?”); neither collude nor argue.
+4. Name the three components of the CFI and its four core domains. || Core, informant, supplementary modules. Definition; cause, context and support; self-coping and past help; current help-seeking.
+5. What two conditions must you consider in an older adult with poor memory? || Delirium and depression (pseudodementia).
+:::
+
+## 1.8 Common interviewing errors [core]
+| Error | What it sounds like | Correction |
+|---|---|---|
+| Interrupting the opening statement | Cutting in at 20 seconds to ask about sleep | Let the patient finish. The richest material comes in the first uninterrupted minutes |
+| Compound questions | “How are your sleep, appetite and mood?” | One idea per question; otherwise you can't tell which part was answered |
+| Leading questions | “You've been feeling sad, haven't you?” | “How has your mood been?” Otherwise you supply the symptom |
+| Closed questions too early | A yes/no checklist in the first five minutes | Open each topic wide first: the series of funnels |
+| Premature reassurance | “Don't worry, everything will be fine.” | It shuts down disclosure. Reassure after assessing |
+| Premature interpretation | Explaining unconscious motives in session one | Note it; explore later |
+| Jargon | “Any perceptual abnormalities?” | “Do you ever hear voices when there's nobody there?” |
+| Ignoring affect and non-verbal cues | Writing while the patient starts crying | Put the pen down. Name what you see, gently |
+| Recording labels instead of words | “Delusion of reference +” | Record the sign and the patient's verbatim account |
+| Omitting risk assessment | Finishing a depression history without asking about suicide | Suicidal and homicidal ideas are asked in every initial interview |
+| No collateral history | Accepting “everything is fine” from a patient without insight | Seek an informant, with consent, and judge their reliability |
+| Blending accounts | One merged narrative | Record patient and informant separately when they differ |
+| Treating a mute patient as unexaminable | “MSE could not be done.” | Observation is the MSE here. Document what was observed and what couldn't be assessed |
+| Judging a belief without knowing the culture | Recording a widely held religious belief as a delusion | Judge against the patient's own social, cultural and educational background |
+
+:::recall
+1. List six common interviewing errors and their corrections. || Any six from the table, each with its fix.
+2. Why is a compound question a problem? || You can't tell which part was answered.
+3. What is wrong with “MSE could not be done” in a mute patient? || Observation is the MSE; document what was seen and what couldn't be assessed.
+:::
+
+## 1.9 Investigations and formulation [core]
+### Physical examination
+:::define The rule
+A detailed general physical and systemic examination is a must in every patient. Physical disease may cause the condition, coexist by chance, or result from it or its treatment.
+:::
+In practice the extent varies with setting. Vital signs, weight, waist, BMI and height matter especially because of the metabolic effects of psychiatric medicines. A focused neurological examination is part of assessment. The **AIMS** (Abnormal Involuntary Movement Scale) monitors for tardive dyskinesia on antipsychotics. If you don't examine, ask when the last examination was done and what it showed.
+
+### Investigations: an orientation, not a memory list [extra]
+Chosen from the possibilities raised by history and examination, never ordered by reflex.
+| Group | Examples and typical indications |
+|---|---|
+| Medical screen | Blood counts (routine; clozapine, lithium, carbamazepine monitoring); MCV (raised in alcohol dependence); urine; kidney function (lithium); liver function (carbamazepine, valproate, alcohol); electrolytes (SIADH, carbamazepine); glucose (over 35, antipsychotics); thyroid (refractory depression, rapid cycling, lithium); ECG (over 35, lithium, antidepressants, ECT, antipsychotics); HIV and VDRL where indicated; CK, markedly raised in neuroleptic malignant syndrome |
+| Toxicology and drug levels | Urine drug screen when substance use is suspected (some medicines give false positives). Levels: lithium 0.6 to 1.0 mEq/L; carbamazepine 4 to 12 µg/mL; valproate 50 to 100 µg/mL |
+| Electrophysiology | EEG (fits, dementia, episodic odd behaviour); video EEG (epileptic versus non-epileptic seizures); polysomnography (sleep disorders) |
+| Neuroimaging | CT (dementia, delirium, fits, first-episode psychosis); MRI (higher resolution). PET, SPECT and MRS remain mostly research tools |
+| Psychological tests | Objective: MMPI, 16-PF (personality); WAIS, Stanford–Binet, Bhatia's battery (intelligence). Projective: Rorschach, TAT, Draw-a-Person, Sentence Completion. Neuropsychological: Wisconsin Card Sorting, Wechsler Memory Scale, PGI Memory Scale, Bender Gestalt, Benton Visual Retention, PGI Battery of Brain Dysfunction |
+
+### The formulation
+:::define Diagnostic formulation
+A summary of the significant positive and important negative findings, followed by the differential diagnosis, prognostic factors and management plan, built on the **biopsychosocial model**. Although it appears near the end of the record, it is developed throughout the interview as hypotheses are formed and tested.
+:::
+
+### The biopsychosocial grid
+| | Predisposing | Precipitating | Perpetuating, and protective |
+|---|---|---|---|
+| Biological (body, brain, genes, drugs) | Family history; head injury; birth complications; chronic medical disease | Substance use; stopping medicines; post-partum state | Ongoing substance use; side effects; untreated physical illness. Protective: good physical health |
+| Psychological (personality, cognition, coping) | Premorbid personality; early loss; maternal deprivation; childhood abuse | Bereavement; humiliation; exam failure; break-up | Hopelessness; avoidance; poor insight. Protective: intelligence, motivation, past recovery |
+| Social (family, work, money, culture) | Poverty; migration; low education; discrimination; unstable housing | Job loss; marital conflict; legal trouble; moving to a new city | High expressed emotion; stigma; isolation. Protective: supportive family, stable income |
+
+Fill every cell you can, then state the differential, prognostic factors and a management plan organised on the same three rows. The safety assessment belongs in the formulation, because it decides the level of care.
+
+:::mnemonic A formulation in five sentences
+1. **Who**: a one-line sketch of the person and how they function, including premorbid personality.
+2. **What**: the presenting picture, duration, course, and the key positives and negatives from history and MSE.
+3. **Why now**: precipitants, set against predisposing and perpetuating factors.
+4. **Differential and provisional diagnosis**, with evidence for and against each.
+5. **Risk and level of care**, then a biopsychosocial management plan and prognostic factors.
+:::
+
+:::note Treatment planning is part of the interview
+The formulation is written for the record; the plan must be discussed with the patient in words they can use, and built on **their** goals. Patients' goals (safe housing, getting back to work) and clinicians' goals (fewer symptoms) often differ.
+:::
+
+:::recall
+1. Why is a physical examination a must in every psychiatric patient? || Physical disease may cause, coexist with, or result from the psychiatric condition or its treatment.
+2. Give therapeutic ranges for lithium, carbamazepine and valproate. || Lithium 0.6 to 1.0 mEq/L; carbamazepine 4 to 12 µg/mL; valproate 50 to 100 µg/mL.
+3. Draw the biopsychosocial grid and fill one cell in each of the nine boxes. || Rows biological, psychological, social; columns predisposing, precipitating, perpetuating/protective.
+4. Give the five sentences of a formulation. || Who; what; why now; differential; risk, plan and prognosis.
+:::
+`;

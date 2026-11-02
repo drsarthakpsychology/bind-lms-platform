@@ -43,7 +43,7 @@ Evidence summary: a meta-analysis of gamified learning found positive effects on
 
 Add questions to a unit file in `src/lib/learn/content/`, using the `mcq`, `tf`, `match`, `order` and `sort` helpers. Every question needs a `student` explanation and a `clinician` explanation. `npm run test` checks that IDs are unique, answers are valid and no book is cited.
 
-## Coach: adaptive teaching (`/practice/learn/coach`)
+## Coach: adaptive teaching (`/study/coach`)
 
 - **Concept bank:** 235 concepts across 9 topics: signs and symptoms, clinical disorders, neuroscience, psychopharmacology, therapies, counselling skills, assessment, ethics and Indian law. Each concept has a plain meaning, a clinical meaning, tags and sometimes a memory hook. They live in `src/lib/learn/concepts/`.
 - **Mastery:** every concept has a mastery level from 0 to 5 for each student. New concepts are taught first with a teach card, then asked.
@@ -60,10 +60,10 @@ Add questions to a unit file in `src/lib/learn/content/`, using the `mcq`, `tf`,
 - **What goes into a session:** concepts to relearn, then reviews that are due, then *new concepts similar to recent mistakes*, then fresh concepts.
 - **After a session:** the summary shows each concept's level change and suggests similar concepts to study next.
 
-## Clinic detective (`/practice/learn/detective`)
+## Clinic detective (`/study/detective`)
 Clues appear one at a time. Guessing on clue 1 scores 40 points, clue 2 scores 30, clue 3 scores 20 and clue 4 scores 10. Each wrong guess costs 5 points. There are 32 cases (20 medicines, 12 disorders), and the score earns XP.
 
-## My progress (`/practice/learn/progress`)
+## My progress (`/study/progress`)
 Shows mastery by topic, XP for the last 14 days, the student's most common mix-ups, and a weekly leaderboard. The leaderboard resets every week so everyone gets a fresh chance. It shows only first name and last initial, and lists the top 10 plus the student and their neighbours.
 
 ## Admin: Activity (`/admin/activity`)
@@ -77,18 +77,18 @@ For each student it shows:
 
 The page also has a heatmap of when the cohort studies and a breakdown of where the time goes. Each student has a deep-dive page with minutes per day, every lecture, recent activity, Learn mastery and their mix-ups.
 
-## Notes (`/practice/notes`)
+## Notes (`/study/notes`)
 - **What's there:** 21 visual notes, grouped by curriculum week. Each note has a TL;DR line, sections of short points, sticker chips and step lists, red-flag boxes, and "Say it clinically" flip cards. Sections animate in, key lines get a highlighter sweep, and there are no paragraphs.
 - **Two views:** every bullet has a Student version and a Clinician version. The Student / Clinician switch changes the same page in place.
 - **Quiz and next steps:** each note ends with "Quiz me", which opens the matching lesson or Coach topic. It also links to its "What would you do?" cases and to the leaderboard.
 - **Sources:** checked against DSM-5-TR for criteria, Kaplan & Sadock for disorders and terminology, and Stahl for medicines. Students never see a book name or page.
 
-## What would you do? (`/practice/learn/scenarios`)
+## What would you do? (`/study/scenarios`)
 - There are 10 branching clinic cases, each with one or two beats.
 - In each beat the patient says something tricky and the student picks a response. Each choice is rated **Best**, **Okay, but…** or **Risky**, and the student sees what happens next.
 - Some of the wrong answers sound kind on purpose. For example: promising secrecy, reassuring in OCD, or arguing with a delusion.
 
-## Say it clinically (`/practice/learn/terms`)
+## Say it clinically (`/study/terms`)
 Rounds of 12 questions that mix two drills:
 - **Case-sheet words:** turning an everyday phrase into the clinical term ("keeps checking the lock" → checking compulsion).
 - **Words matter:** picking the respectful phrasing ("died by suicide", "person with schizophrenia", "reports" rather than "claims").

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { BackLink } from "@/components/study/back";
 import { Search } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { CASES, POINTS, WRONG_PENALTY, type Case } from "@/lib/learn/detective";
@@ -85,9 +85,9 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
             </button>
           ))}
         </div>
-        <Link href="/practice/learn" className="block text-sm font-bold underline-offset-4 hover:underline">
-          Back to Learn
-        </Link>
+        <BackLink className="block text-sm font-bold underline-offset-4 hover:underline">
+          Back
+        </BackLink>
       </div>
     );
   }

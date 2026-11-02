@@ -4,7 +4,7 @@ import * as React from "react";
 import { Eye } from "lucide-react";
 
 import { NavItems } from "@/components/navigation/nav-items";
-import { STUDENT_ITEMS, ADMIN_SIDEBAR, LECTURE_ONLY_ITEMS } from "@/components/navigation/nav-config";
+import { STUDENT_ITEMS, ADMIN_SIDEBAR, LECTURE_ONLY_ITEMS, withStudy } from "@/components/navigation/nav-config";
 import { useSidebarPref } from "@/components/navigation/sidebar-state";
 import { cn } from "@/lib/utils";
 
@@ -20,20 +20,20 @@ export function AppSidebar({
   role,
   mode,
   scope = "full",
+  showStudy = false,
   className,
 }: {
   role: "admin" | "student";
   mode: SidebarMode;
   scope?: "full" | "lectures_only";
+  showStudy?: boolean;
   className?: string;
 }) {
   const pref = useSidebarPref();
   const items =
     role === "admin" && mode === "admin"
       ? ADMIN_SIDEBAR
-      : scope === "lectures_only"
-        ? LECTURE_ONLY_ITEMS
-        : STUDENT_ITEMS;
+      : withStudy(scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS, showStudy);
 
   return (
     <aside

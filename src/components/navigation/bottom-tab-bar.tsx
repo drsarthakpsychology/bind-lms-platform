@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
+import { Bell, BookOpen, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { isImmersiveSessionPath } from "./sidebar-gate";
@@ -25,6 +25,8 @@ const STUDENT_TABS: Tab[] = [
   { href: "/practice", label: "Practice", icon: Stethoscope },
   { href: "/wall", label: "Wall", icon: MessageSquare },
 ];
+
+const STUDY_TAB: Tab = { href: "/study", label: "Study", icon: BookOpen };
 
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
@@ -51,21 +53,20 @@ const LECTURE_ONLY_TABS: Tab[] = [
 export function BottomTabBar({
   mode = "student",
   scope = "full",
+  showStudy = false,
 }: {
   mode?: "student" | "admin";
   scope?: "full" | "lectures_only";
+  showStudy?: boolean;
 }) {
   const pathname = usePathname() ?? "";
   const reduce = useReducedMotion();
-  const tabs =
-    mode === "admin"
-      ? ADMIN_TABS
-      : scope === "lectures_only"
-        ? LECTURE_ONLY_TABS
-        : STUDENT_TABS;
+  const base = mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : STUDENT_TABS;
+  // Study takes the third slot when it's unlocked (Wall / Alerts stay in More and the top bar).
+  const tabs = mode !== "admin" && showStudy ? [base[0], base[1], STUDY_TAB, base[2]] : base;
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/practice\/learn\/(?:play|coach|detective|scenarios|terms)/.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/study\/(?:play|coach|detective|scenarios|terms)/.test(pathname);
   if (focusedPath) return null;
 
   const cell =

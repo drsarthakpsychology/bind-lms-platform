@@ -3,6 +3,30 @@
 import * as React from "react";
 import { emptyState, normalise, type LearnState } from "./engine";
 
+function maxMap(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
+  const out = { ...a };
+  for (const [k, v] of Object.entries(b)) out[k] = Math.max(out[k] ?? 0, v);
+  return out;
+}
+
+/** Keep the winner, but never lose reading ticks or study time recorded on the other copy. */
+export function mergeCopies(win: LearnState, other: LearnState): LearnState {
+  const acts = { ...other.study.acts };
+  for (const [m, v] of Object.entries(win.study.acts)) acts[m] = { ...(acts[m] ?? {}), ...v };
+  return {
+    ...win,
+    notesRead: { ...other.notesRead, ...win.notesRead },
+    study: {
+      ...win.study,
+      done: { ...other.study.done, ...win.study.done },
+      written: { ...other.study.written, ...win.study.written },
+      secs: maxMap(win.study.secs, other.study.secs),
+      acts,
+      last: win.study.last ?? other.study.last,
+    },
+  };
+}
+
 /**
  * One Learn state per browser tab, shared by every Learn screen.
  * - Hydration-safe: React renders the server copy first, then this store.
@@ -32,8 +56,8 @@ export function initLearnStore(server: LearnState | null, save: (s: LearnState) 
   const a = server ? normalise(server) : null;
   const win = !a ? (local ?? emptyState()) : !local ? a : local.xp > a.xp ? local : a;
   const other = win === a ? local : a;
-  // Notes read don't earn XP, so merge them from both copies.
-  state = other ? { ...win, notesRead: { ...other.notesRead, ...win.notesRead } } : win;
+  // Things that don't earn XP (notes read, study time) are merged from both copies.
+  state = other ? mergeCopies(win, other) : win;
 }
 
 export function setLearnState(next: LearnState) {

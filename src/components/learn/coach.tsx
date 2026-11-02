@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { ArrowRight, Flame, GraduationCap, X } from "lucide-react";
+import { BackLink } from "@/components/study/back";
+import { ArrowRight, Flame, GraduationCap } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { buildSession, distractors, domainMastery, formatFor, reasonFor, recordAnswer, similarConcepts, topConfusions, typedMatches, type Format } from "@/lib/learn/adaptive";
 import { ALL_CONCEPTS, conceptById, DOMAINS, type Concept, type Domain } from "@/lib/learn/concepts";
@@ -141,9 +141,6 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
   return (
     <div className={cn("mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col px-4 pt-4 pb-6")}>
       <div className="flex items-center gap-3">
-        <Link href="/practice/learn" aria-label="Quit" className="grid size-10 place-items-center rounded-full border-2 border-foreground bg-card">
-          <X className="size-5" />
-        </Link>
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted">
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
@@ -388,9 +385,9 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
       <button type="button" onClick={onStart} className="btn-sweep flex h-14 w-full items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
         <GraduationCap className="size-5" aria-hidden /> Start a 10-concept session
       </button>
-      <Link href="/practice/learn" className="block text-center text-sm font-bold underline-offset-4 hover:underline">
-        Back to Learn
-      </Link>
+      <BackLink className="block text-center text-sm font-bold underline-offset-4 hover:underline">
+        Back
+      </BackLink>
     </div>
   );
 }
@@ -427,9 +424,9 @@ function CoachReport({ levels }: { levels: Record<string, number> }) {
           <p className="mt-2 text-caption">They&apos;ll appear in your next session automatically.</p>
         </div>
       ) : null}
-      <Link href="/practice/learn" className="flex h-12 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-card font-black hard-shadow-sm">
-        Back to Learn <ArrowRight className="size-4" aria-hidden />
-      </Link>
+      <BackLink className="flex h-12 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-card font-black hard-shadow-sm">
+        Back <ArrowRight className="size-4" aria-hidden />
+      </BackLink>
     </div>
   );
 }

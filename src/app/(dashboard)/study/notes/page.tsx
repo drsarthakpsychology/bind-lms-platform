@@ -5,11 +5,11 @@ import { NOTES, WEEK_BLOCKS } from "@/lib/learn/notes";
 import { SCENARIOS } from "@/lib/learn/scenarios";
 import { Chai } from "@/components/learn/chai";
 import { NotesIndex, type NoteBlock } from "@/components/learn/notes-index";
-import { loadLearnState, saveLearnState } from "../learn/actions";
+import { loadLearnState, saveLearnState } from "../actions";
 
 export const metadata: Metadata = { title: "Notes" };
 
-/** /practice/notes — visual study notes for everything taught, by week. */
+/** /study/notes — visual study notes for everything taught, by week. */
 export default async function NotesPage() {
   await requireFeature("learn");
   const serverState = await loadLearnState();
@@ -37,13 +37,13 @@ export default async function NotesPage() {
         </div>
       </header>
       <div className="flex flex-wrap gap-2">
-        <Link href="/practice/learn/scenarios" className="rounded-full border-2 border-foreground bg-brand px-4 py-2 text-sm font-black text-brand-foreground">
+        <Link href="/study/scenarios" className="rounded-full border-2 border-foreground bg-brand px-4 py-2 text-sm font-black text-brand-foreground">
           🎬 What would you do? ({SCENARIOS.length} cases)
         </Link>
-        <Link href="/practice/learn/terms" className="rounded-full border-2 border-foreground bg-primary px-4 py-2 text-sm font-black text-primary-foreground">
+        <Link href="/study/terms" className="rounded-full border-2 border-foreground bg-primary px-4 py-2 text-sm font-black text-primary-foreground">
           🗣️ Say it clinically
         </Link>
-        <Link href="/practice/learn/progress" className="rounded-full border-2 border-foreground bg-card px-4 py-2 text-sm font-black">
+        <Link href="/study/progress" className="rounded-full border-2 border-foreground bg-card px-4 py-2 text-sm font-black">
           🏆 Leaderboard
         </Link>
       </div>
