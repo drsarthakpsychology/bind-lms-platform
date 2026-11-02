@@ -89,6 +89,38 @@ Delirium is often **superimposed on dementia**: any sudden worsening in someone 
 6. Give five differences between delirium and dementia. || Onset, course, attention, consciousness, reversibility.
 :::
 
+## 1.4 Delirium in special situations [core]
+### Delirium tremens (alcohol withdrawal delirium)
+| Time after last drink | What appears |
+|---|---|
+| 6 to 24 hours | Tremor, sweating, anxiety, nausea, fast pulse, insomnia (simple withdrawal) |
+| 12 to 48 hours | **Withdrawal seizures** (generalised, usually one or a few) |
+| 12 to 48 hours | **Alcoholic hallucinosis**: hallucinations (often voices) **with a clear sensorium** |
+| **48 to 72 hours** | **Delirium tremens**: confusion, disorientation, vivid visual (often small animals or insects) and tactile hallucinations, marked tremor, fever, autonomic instability |
+
+- Delirium tremens can kill (arrhythmia, dehydration, infection, seizures). Treat in hospital: **benzodiazepines** (chlordiazepoxide, or lorazepam if liver disease or the elderly), fluids, electrolytes, look for infection and head injury.
+- Give **parenteral thiamine before glucose** to prevent precipitating Wernicke's encephalopathy.
+
+### Delirium in the intensive care unit and after surgery
+- Very common (up to most ventilated patients). Linked to sedatives (benzodiazepines especially), pain, sleep loss, immobility, catheters.
+- Prevention bundles: light sedation, daily sedation breaks, early mobilisation, sleep protection, family presence, glasses and hearing aids.
+
+### Preventing delirium on any ward
+:::define Multicomponent prevention (for example the Hospital Elder Life Program)
+Simple non-drug measures that cut delirium by about a third in older inpatients: **orientation** (clock, calendar, names), **glasses and hearing aids**, **hydration and nutrition**, **early mobilisation**, **sleep without sedatives** (quiet nights, lights off), **avoid unnecessary catheters and lines**, **pain control**, **review medicines** (stop anticholinergics, sedatives).
+:::
+
+:::trap Antipsychotics do not prevent or cure delirium
+They may be used briefly at a low dose for severe agitation that is dangerous or distressing, after non-drug measures. They do not treat the cause and are **avoided in Lewy body and Parkinson's disease**. Benzodiazepines usually **worsen** delirium, except in alcohol or sedative withdrawal.
+:::
+
+:::recall
+1. When does delirium tremens usually begin after the last drink? || About 48 to 72 hours.
+2. How does alcoholic hallucinosis differ from delirium tremens? || Hallucinations with a clear sensorium versus confusion with autonomic signs.
+3. Why give thiamine before glucose? || To avoid precipitating Wernicke's encephalopathy.
+4. List five non-drug measures to prevent delirium. || Orientation, glasses and hearing aids, hydration, mobilisation, sleep protection, medicine review.
+:::
+
 # Part II · Dementia (major neurocognitive disorder)
 
 ## 2.1 Definitions [core]
@@ -155,6 +187,91 @@ Agitation, aggression, wandering, sleep problems, psychosis, depression, apathy.
 6. Why avoid antipsychotics in Lewy body dementia? || Severe sensitivity reactions.
 :::
 
+## 2.5 Alzheimer's disease in depth [core]
+### Biology
+- **Amyloid plaques** (outside neurons, beta-amyloid) and **neurofibrillary tangles** (inside neurons, hyperphosphorylated **tau**), with neuron loss starting in the **entorhinal cortex and hippocampus**, then spreading to temporal and parietal cortex.
+- **Cholinergic deficit**: loss of neurons in the **nucleus basalis of Meynert**: the rationale for cholinesterase inhibitors.
+- Genetics: **APOE e4** raises risk (one copy about 3 times, two copies much more); **early-onset familial** forms (before 65) from mutations in **APP, presenilin 1, presenilin 2**. **Down syndrome** (extra chromosome 21, which carries APP) brings Alzheimer's changes by the 40s.
+
+### Risk and protection
+- Risk: age (the strongest), family history, APOE e4, hypertension, diabetes, smoking, obesity, physical inactivity, **hearing loss**, depression, low education, social isolation, head injury, air pollution, excess alcohol.
+- About **40% of dementia risk** is linked to modifiable factors. Treating hearing loss, blood pressure and staying physically, mentally and socially active help.
+
+### The course
+| Stage | Typical picture |
+|---|---|
+| **Mild cognitive impairment** | Memory complaints with test evidence, **independent in daily life**; about 10 to 15% per year progress to dementia |
+| Mild dementia | Forgets recent events, repeats questions, misplaces things, trouble with money and complex tasks, word-finding pauses |
+| Moderate | Needs help with dressing and bathing, gets lost, wandering, behaviour changes, may not recognise people |
+| Severe | Little speech, incontinence, cannot walk, swallowing problems; death often from pneumonia |
+
+- The **4 As**: **amnesia, aphasia, apraxia, agnosia**.
+- Average survival after diagnosis is about **8 to 10 years**, varying widely.
+
+:::recall
+1. Name the two hallmark pathologies of Alzheimer's disease. || Amyloid plaques and tau neurofibrillary tangles.
+2. Which gene variant raises the risk of late-onset Alzheimer's? || APOE e4.
+3. Why does Down syndrome increase the risk? || Chromosome 21 carries the APP gene.
+4. Define mild cognitive impairment. || Measurable cognitive decline with daily independence preserved.
+5. List the 4 As. || Amnesia, aphasia, apraxia, agnosia.
+:::
+
+## 2.6 Alcohol, infection and other causes [core]
+### Wernicke–Korsakoff syndrome
+:::define Wernicke's encephalopathy
+An acute, life-threatening brain disorder from **thiamine (vitamin B1) deficiency**, usually in heavy drinkers, but also in severe vomiting (hyperemesis), starvation, bariatric surgery and cancer.
+:::
+- Classic triad: **confusion, ophthalmoplegia (nystagmus, eye movement palsy), ataxia**. Only about **one in ten** shows all three, so **treat on suspicion**.
+- Treatment: **high-dose intravenous thiamine** before glucose, for several days, then oral.
+- **Korsakoff syndrome** follows if untreated: severe **anterograde amnesia** and patchy retrograde loss, **confabulation**, with other abilities relatively preserved. Damage in the **mammillary bodies** and medial thalamus.
+
+### Other important causes
+| Cause | What to look for |
+|---|---|
+| **HIV-associated neurocognitive disorder** | Slowed thinking, apathy, motor slowing (subcortical pattern); improves with antiretrovirals |
+| **Neurosyphilis** (general paresis) | Personality change, grandiosity, dementia, Argyll Robertson pupils; VDRL and CSF |
+| **Huntington's disease** | Autosomal dominant (CAG repeats, chromosome 4); chorea, depression, irritability, subcortical dementia; age 30 to 50 |
+| **Creutzfeldt–Jakob disease** | Very rapid decline over months, myoclonus, periodic EEG complexes, MRI changes |
+| **Traumatic brain injury** | Memory, attention, executive problems, personality change, irritability, depression |
+| **Normal pressure hydrocephalus** | Gait, urinary incontinence, cognitive decline; may improve with shunting |
+
+### Cortical versus subcortical dementia
+| | Cortical (Alzheimer's) | Subcortical (vascular small vessel, Parkinson's, Huntington's, HIV) |
+|---|---|---|
+| Memory | Cannot learn new information; cues do not help | Slow retrieval; **cues help** |
+| Language | Aphasia | Normal, slow speech |
+| Speed | Normal early | **Slowed thinking (bradyphrenia)** |
+| Mood | Less prominent early | Apathy, depression common |
+| Movement | Normal early | Abnormal early |
+
+:::recall
+1. State the classic triad of Wernicke's encephalopathy. || Confusion, ophthalmoplegia, ataxia.
+2. What are the features of Korsakoff syndrome? || Anterograde amnesia, confabulation, other abilities relatively preserved.
+3. What is the inheritance and repeat in Huntington's disease? || Autosomal dominant, CAG repeats on chromosome 4.
+4. Give two differences between cortical and subcortical dementia. || Cortical: aphasia, cues do not help recall. Subcortical: slow thinking, cues help, early motor signs.
+:::
+
+## 2.7 Depression or dementia? [core]
+| Feature | Depression with cognitive problems | Dementia |
+|---|---|---|
+| Onset | Relatively quick, often datable | Insidious |
+| Mood | Low mood comes **first** | Mood changes come later, often shallow |
+| Complaint | Complains a lot of memory loss | Often **unaware**, family brings them |
+| Answers | "**I don't know**" | Near misses, confabulation |
+| Effort on tests | Poor | Good effort, poor performance |
+| Pattern | Variable, patchy | Consistent decline |
+| History | Past depression often | Usually none |
+| After treatment | Improves | Does not improve |
+
+:::note They often go together
+Depression can be an **early sign** of dementia, and late-life depression with cognitive problems raises the later risk of dementia. Treat the depression, then **re-test cognition** after recovery.
+:::
+
+:::recall
+1. Give four features that suggest depression rather than dementia. || Quick onset, mood first, complains of memory loss, "I don't know" answers, improves with treatment.
+2. Why re-test cognition after treating depression? || Depression may be an early sign of dementia.
+:::
+
 # Part III · Exam zone
 
 ## 3.1 Long answer and short notes [core]
@@ -191,6 +308,17 @@ Mechanism of donepezil? :: Cholinesterase inhibitor.
 Mechanism of memantine? :: NMDA receptor antagonist.
 Cardiac caution with cholinesterase inhibitors? :: Slow heart rate.
 Antipsychotic risk in dementia? :: Stroke and death.
+When does delirium tremens usually start? :: About 48 to 72 hours after the last drink.
+Hallucinations with a clear sensorium after stopping alcohol? :: Alcoholic hallucinosis.
+Give thiamine before or after glucose? :: Before.
+Two hallmark pathologies of Alzheimer's? :: Amyloid plaques and tau tangles.
+Gene variant raising late-onset Alzheimer's risk? :: APOE e4.
+Where are the cholinergic neurons lost in Alzheimer's? :: Nucleus basalis of Meynert.
+Wernicke's triad? :: Confusion, ophthalmoplegia, ataxia.
+Korsakoff lesion site? :: Mammillary bodies and medial thalamus.
+Huntington's inheritance? :: Autosomal dominant, CAG repeat, chromosome 4.
+Dementia where cues help recall? :: Subcortical.
+4 As of Alzheimer's? :: Amnesia, aphasia, apraxia, agnosia.
 :::
 
 ## 3.3 Module test [core]
@@ -264,5 +392,40 @@ Q: Which side effect of donepezil needs caution in heart block?
 - High blood pressure
 - QT shortening
 > Cholinergic slowing of the heart.
+
+Q: Three days after admission, a heavy drinker becomes confused, tremulous, febrile and sees insects on the wall. The diagnosis is:
+- Alcoholic hallucinosis
+- *Delirium tremens
+- Wernicke's encephalopathy
+- Korsakoff syndrome
+> Confusion with autonomic instability at 48 to 72 hours.
+
+Q: An older woman complains loudly of poor memory, answers "I don't know" and became low after her husband died 2 months ago. Most likely:
+- Alzheimer's disease
+- *Depression with cognitive impairment
+- Lewy body dementia
+- Delirium
+> Mood first, complaint and poor effort.
+
+Q: Which is NOT a feature of Korsakoff syndrome?
+- Confabulation
+- Anterograde amnesia
+- *Severe loss of general intelligence
+- Mammillary body damage
+> Other abilities are relatively preserved.
+
+Q: The strongest risk factor for Alzheimer's disease is:
+- APOE e4
+- Hypertension
+- *Age
+- Low education
+> APOE e4 is the main genetic risk factor.
+
+Q: A man with dementia shows slowed thinking, apathy and good recall with cues. The pattern is:
+- *Subcortical
+- Cortical
+- Frontotemporal language variant
+- Normal ageing
+> Typical of small vessel, Parkinson's, Huntington's or HIV-related dementia.
 :::
 `;

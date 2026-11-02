@@ -64,6 +64,80 @@ Many specific claims aren't supported by evidence, but key ideas remain useful: 
 3. What do defence mechanisms do? || Unconsciously reduce anxiety from inner conflict.
 :::
 
+## 1.2 After Freud: the other schools [core]
+Freud's ideas were extended, argued with and rebuilt by those who followed. Exams ask for the **key idea of each name**, and practice uses many of them every day.
+
+| Thinker | School | Key ideas you should be able to explain |
+|---|---|---|
+| **Carl Jung** | Analytical psychology | **Collective unconscious** and **archetypes** (persona, shadow, anima/animus); **introversion and extraversion**; individuation |
+| **Alfred Adler** | Individual psychology | **Inferiority complex** and striving for superiority; birth order; social interest |
+| **Anna Freud** | Ego psychology | Systematised the **defence mechanisms**; child analysis |
+| **Heinz Hartmann** | Ego psychology | The **conflict-free sphere** of the ego (perception, memory, thinking work without conflict) |
+| **Melanie Klein** | Object relations | **Paranoid-schizoid** and **depressive** positions; splitting; projective identification |
+| **Donald Winnicott** | Object relations | **Good-enough mother**, **holding environment**, **transitional object**, true and false self |
+| **Margaret Mahler** | Separation-individuation | The child's psychological birth as a separate self (see Part III) |
+| **Heinz Kohut** | Self psychology | Needs for **mirroring** and idealising; narcissism as a deficit in self-cohesion |
+| **Otto Kernberg** | Object relations | **Borderline personality organisation**: identity diffusion, primitive defences, intact reality testing |
+| **Erik Erikson** | Psychosocial | Eight stages across the whole life (Part III) |
+| **Karen Horney** | Neo-Freudian | Basic anxiety; moving toward, against, away from people; challenged "penis envy" |
+| **Harry Stack Sullivan** | Interpersonal | Personality is shaped in relationships; root of interpersonal therapy |
+
+:::analogy A family tree of ideas
+Freud is the trunk. **Ego psychology** grew the branch about how the self copes (defences). **Object relations** grew the branch about relationships inside the mind (the mother we carry inside). **Self psychology** grew the branch about feeling whole and valued. Interpersonal schools moved from inside the mind to between people.
+:::
+
+### Transference and countertransference
+:::define Transference
+The patient unconsciously **redirects feelings and expectations from important past relationships onto the therapist** (or doctor). **Countertransference** is the therapist's emotional reaction to the patient, which can be a useful clue to what the patient evokes in others.
+:::
+- A patient who was harshly criticised by a father may expect criticism from a male doctor and become defensive at neutral questions.
+- Feeling unusually protective, irritated or bored with a patient is countertransference: notice it, use it, do not act it out.
+
+:::recall
+1. Give one key idea each for Jung, Adler and Klein. || Collective unconscious and archetypes; inferiority complex; paranoid-schizoid and depressive positions.
+2. What did Winnicott mean by the good-enough mother? || A caregiver who meets needs well enough, with small manageable failures that help the child grow.
+3. Define transference and countertransference. || Patient's past feelings redirected onto the therapist; therapist's emotional reaction to the patient.
+4. Whose concept is borderline personality organisation? || Otto Kernberg.
+:::
+
+## 1.3 Learning theories [core]
+Psychodynamic theory explains behaviour from inside; learning theory explains it from **what happened before and after**. Both are needed to understand symptoms.
+
+### Classical conditioning (Pavlov)
+:::define Classical conditioning
+A **neutral stimulus** paired repeatedly with an **unconditioned stimulus** (which naturally causes a response) comes to produce a similar **conditioned response** on its own.
+:::
+- Pavlov's dogs: bell (neutral) + food (unconditioned) → salivation; later the bell alone → salivation.
+- **Watson's Little Albert**: a white rat paired with a loud noise → fear of the rat, generalising to furry objects. The origin story of phobias.
+- **Generalisation**: similar stimuli trigger the response. **Discrimination**: learning to tell them apart. **Extinction**: the bell without food, repeatedly, weakens the response. **Spontaneous recovery**: an extinguished response returns briefly.
+
+### Operant conditioning (Skinner, Thorndike)
+| | Adds something | Removes something |
+|---|---|---|
+| **Behaviour increases** | **Positive reinforcement** (praise after homework) | **Negative reinforcement** (avoiding a feared lift relieves anxiety) |
+| **Behaviour decreases** | **Positive punishment** (a scolding) | **Negative punishment** (losing phone time) |
+
+- **Schedules of reinforcement**: continuous (quick learning, quick extinction); **variable ratio** (gambling, slot machines: most resistant to extinction).
+- **Shaping**: rewarding steps closer and closer to the target behaviour.
+- **Thorndike's law of effect**: behaviours followed by satisfying results are repeated.
+
+:::trap Negative reinforcement is not punishment
+Negative reinforcement **increases** a behaviour by **removing** something unpleasant. This is why avoidance, checking and drinking to calm nerves keep going.
+:::
+
+### Social and cognitive learning
+- **Bandura**: **observational learning** (modelling); the Bobo doll experiment; **self-efficacy** (belief that one can succeed).
+- **Seligman**: **learned helplessness**: dogs exposed to inescapable shocks stopped trying to escape later; a model of depression.
+- **Tolman**: cognitive maps; latent learning.
+- **Kohler**: insight learning (apes suddenly solving problems).
+
+:::recall
+1. Explain classical conditioning using Little Albert. || A rat paired with a loud noise produced a conditioned fear of the rat.
+2. Define negative reinforcement with a clinical example. || Removing something unpleasant increases a behaviour; avoidance relieves anxiety so avoidance grows.
+3. Which reinforcement schedule is hardest to extinguish? || Variable ratio.
+4. What is learned helplessness and who described it? || Giving up after uncontrollable stress; Seligman.
+:::
+
 # Part II · Defence mechanisms
 
 ## 2.1 Defences by level of maturity [core]
@@ -131,6 +205,38 @@ Defences are **unconscious** (except suppression), **automatic**, and **everyone
 5. Expand SHASA. || Sublimation, humour, altruism, suppression, anticipation.
 :::
 
+## 2.2 Defences in the clinic [core]
+Defences are rarely named by patients. You **hear** them in how a story is told. Spotting them helps you understand a patient, predict difficulties, and write a formulation.
+
+| What you notice | Likely defence | Where it is common |
+|---|---|---|
+| "Everyone is against me; the staff are plotting" | **Projection** | Paranoid states, paranoid personality |
+| One doctor is perfect, another useless, and this flips | **Splitting** | Borderline personality |
+| A heavy drinker insists there is no problem despite liver damage | **Denial** | Substance use, early in serious illness |
+| Talks about a frightening diagnosis only in medical jargon | **Intellectualisation** | Educated patients, health professionals |
+| Angry with the boss, shouts at the children at home | **Displacement** | Everyday; phobias (Little Hans) |
+| Excessively sweet to a person they resent | **Reaction formation** | OCD (cleanliness against wish to mess) |
+| Paralysis or blindness without neurological cause after stress | **Conversion** (somatisation of conflict) | Dissociative (conversion) disorders |
+| Bed-wetting in a 6-year-old after a sibling is born | **Regression** | Children under stress; illness in adults |
+| Turns the pain of loss into helping others | **Altruism, sublimation** | Healthy coping |
+| Jokes about a hard situation without hiding it | **Humour** | Healthy coping |
+
+:::example Spotting defences in a ward round
+Mr R, 45, admitted with alcohol withdrawal, says: "I only drink socially, doctor. My wife exaggerates. Actually, the real problem is the stress the hospital staff are putting on me." In two sentences: **denial** (social drinking), **minimisation**, and **projection and displacement** of blame onto his wife and the staff. These are not lies to be argued with; they protect him from shame. Motivational interviewing works with them better than confrontation.
+:::
+
+### Using defences well
+- **Do not strip defences away abruptly**, especially in fragile or psychotic patients. A defence is protecting something.
+- Healthy development means moving from immature to **mature defences** (Vaillant found mature defences predicted better health and life outcomes in adult life).
+- In formulation, name the defence and the feeling it protects against: "He uses denial to keep away shame about his drinking."
+
+:::recall
+1. Which defence is typical of borderline personality? || Splitting.
+2. Name the defence in "angry with the boss, shouts at the children". || Displacement.
+3. Why should you not abruptly challenge defences? || They protect against overwhelming feelings; removing them can cause distress or decompensation.
+4. Name three mature defences. || Sublimation, altruism, humour, suppression, anticipation.
+:::
+
 # Part III · Development
 
 ## 3.1 Erikson's psychosocial stages [core]
@@ -178,6 +284,83 @@ Infants are born with a drive to stay close to a caregiver for safety. Repeated 
 4. Which attachment style is most linked to abuse and later problems? || Disorganised.
 :::
 
+## 3.4 More stages: Mahler, Kohlberg, Bowlby and temperament [core]
+### Mahler's separation-individuation
+| Phase | Age | What happens |
+|---|---|---|
+| Normal autism (later dropped by Mahler) | 0 to 1 month | Mostly asleep, self-absorbed |
+| Symbiosis | 1 to 5 months | Infant and mother experienced as one |
+| **Differentiation** | 5 to 10 months | Begins to see mother as separate; stranger anxiety |
+| **Practising** | 10 to 16 months | Walks away to explore, returns to "refuel" |
+| **Rapprochement** | 16 to 24 months | Wants independence and closeness at once; clingy and pushing away |
+| **Object constancy** | 24 to 36 months | Holds a stable inner picture of the mother even when she is absent |
+
+:::note Why rapprochement matters
+Mahler's followers linked difficulties at rapprochement to the borderline pattern of fear of abandonment alternating with fear of engulfment.
+:::
+
+### Kohlberg's moral development
+| Level | Stage | Reasoning |
+|---|---|---|
+| **Pre-conventional** (children) | 1. Obedience and punishment | Avoid punishment |
+| | 2. Self-interest | What is in it for me |
+| **Conventional** (adolescents, most adults) | 3. Good boy, good girl | Approval from others |
+| | 4. Law and order | Rules and duty |
+| **Post-conventional** (some adults) | 5. Social contract | Rules can change for the common good |
+| | 6. Universal principles | Conscience and justice |
+
+- **Carol Gilligan** criticised Kohlberg for neglecting an **ethic of care** that is often seen in women's moral reasoning.
+
+### Bowlby on separation and grief
+- A young child separated from the caregiver goes through **protest** (crying, searching), **despair** (withdrawn, sad), then **detachment** (seems uninterested on reunion).
+- Bowlby's **maternal deprivation** hypothesis: prolonged early separation harms later development. **Rutter** refined it: **privation** (never forming a bond) is more harmful than **deprivation** (losing one), and quality of care matters.
+
+### Temperament (Thomas and Chess)
+| Type | Proportion | Description |
+|---|---|---|
+| **Easy** | About 40% | Regular routines, adapts quickly, positive mood |
+| **Difficult** | About 10% | Irregular, intense, slow to adapt, negative mood |
+| **Slow to warm up** | About 15% | Withdraws at first, adapts slowly, low intensity |
+
+- The rest are mixed. **Goodness of fit** between the child's temperament and the parents' style predicts outcome better than temperament alone.
+
+:::recall
+1. Name Mahler's sub-phases from differentiation onwards. || Differentiation, practising, rapprochement, object constancy.
+2. Give Kohlberg's three levels. || Pre-conventional, conventional, post-conventional.
+3. What are Bowlby's three stages of separation response? || Protest, despair, detachment.
+4. Name Thomas and Chess's three temperaments and the key concept for outcome. || Easy, difficult, slow to warm up; goodness of fit.
+:::
+
+## 3.5 Grief and development across adult life [core]
+### Normal grief
+- Common features: **shock and numbness**, yearning and searching, sadness, guilt, anger, poor sleep, seeing or hearing the dead person briefly (a **normal** experience, not psychosis), gradual acceptance.
+- **Kübler-Ross** described stages in the dying: **denial, anger, bargaining, depression, acceptance**. They are not fixed or in strict order.
+- **Bowlby and Parkes**: numbness, yearning, disorganisation, reorganisation.
+- **Worden's tasks**: accept the reality of the loss, work through the pain, adjust to a world without the person, find an enduring connection while moving on.
+
+### When grief becomes a disorder
+| Normal grief | Prolonged grief disorder | Depression after loss |
+|---|---|---|
+| Waves of sadness around reminders | Intense yearning or preoccupation **beyond 12 months** (6 in ICD-11 for adults, judged against cultural norms) | Pervasive low mood, not just around the loss |
+| Self-esteem intact | Identity disruption, feeling part of oneself died | Worthlessness, guilt beyond the loss |
+| Brief sensing of the dead person | Avoidance of reminders, numbness | Suicidal thoughts not linked to joining the dead |
+
+:::note Grief in India
+Rituals such as the **terahvin** (13th-day ceremony), shraddh and annual rites give grief a shared structure and are protective. Ask about them: a family unable to perform rites (for example after a death during the pandemic) may grieve harder.
+:::
+
+### Adult development
+- **Levinson**: life structure and transitions (early adult, mid-life transition around 40 to 45).
+- **Vaillant**: maturing defences across adult life.
+- **Old age**: Erikson's integrity versus despair; **life review** (Butler) helps older people make sense of their lives.
+
+:::recall
+1. List Kübler-Ross's five stages. || Denial, anger, bargaining, depression, acceptance.
+2. Is seeing the dead person briefly after a bereavement a sign of psychosis? || No, it can be a normal part of grief.
+3. What is Worden's model? || Four tasks of mourning.
+4. Name two features that separate depression from normal grief. || Pervasive low mood, worthlessness, guilt beyond the loss.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -211,6 +394,19 @@ Piaget: when does object permanence develop? :: Sensorimotor stage.
 Piaget: conservation appears in? :: Concrete operational stage.
 Four attachment styles? :: Secure, avoidant, ambivalent, disorganised.
 Winnicott's term for a comforting teddy? :: Transitional object.
+Who described the collective unconscious? :: Carl Jung.
+Inferiority complex? :: Alfred Adler.
+Good-enough mother and transitional object? :: Donald Winnicott.
+Borderline personality organisation? :: Otto Kernberg.
+Patient redirects feelings about a parent onto the doctor? :: Transference.
+Little Albert experiment? :: Watson; classically conditioned fear.
+Learned helplessness? :: Seligman.
+Observational learning and self-efficacy? :: Albert Bandura.
+Schedule most resistant to extinction? :: Variable ratio.
+Rapprochement is part of whose theory? :: Margaret Mahler.
+Bowlby's three stages after separation? :: Protest, despair, detachment.
+Goodness of fit? :: Thomas and Chess, temperament.
+Kübler-Ross stages? :: Denial, anger, bargaining, depression, acceptance.
 :::
 
 ## 4.3 Module test [core]
@@ -277,5 +473,40 @@ Q: Conservation is first achieved in Piaget's:
 - *Concrete operational stage
 - Formal operational stage
 > Around 7 to 11 years.
+
+Q: A gambler keeps playing despite losses because wins come unpredictably. This is:
+- Continuous reinforcement
+- Fixed interval schedule
+- *Variable ratio schedule
+- Negative punishment
+> Unpredictable rewards make behaviour the hardest to extinguish.
+
+Q: A patient idealises one nurse and hates another, and switches these views suddenly. The defence is:
+- Projection
+- *Splitting
+- Sublimation
+- Reaction formation
+> Typical of borderline personality.
+
+Q: The transitional object was described by:
+- Klein
+- Kohut
+- *Winnicott
+- Adler
+> A teddy or blanket that soothes the child during separation.
+
+Q: A toddler runs off to explore and returns to the mother to "refuel". Mahler's sub-phase:
+- Symbiosis
+- Differentiation
+- *Practising
+- Object constancy
+> Rapprochement comes next.
+
+Q: Rutter argued that, compared with losing an existing bond, never forming one is:
+- Less harmful
+- *More harmful
+- Equally harmful
+- Not harmful if physical care is good
+> Privation is worse than deprivation.
 :::
 `;

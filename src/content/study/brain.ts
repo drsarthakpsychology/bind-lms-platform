@@ -74,6 +74,52 @@ The neurotransmitter is a key; the receptor is a lock. Medicines can be copies o
 3. Which transmitter falls first in Alzheimer's disease? || Acetylcholine.
 :::
 
+## 1.3 Dopamine pathways and receptor side effects [core]
+Most of what psychiatric medicines do, wanted and unwanted, follows from **which receptor they block, in which pathway**. Learn this once and side-effect tables stop being lists to memorise.
+
+### The four dopamine pathways
+| Pathway | From → to | Normal role | In schizophrenia | When D2 is blocked |
+|---|---|---|---|---|
+| **Mesolimbic** | VTA → nucleus accumbens, limbic areas | Reward, salience | **Overactive** → positive symptoms | Antipsychotic effect; can blunt pleasure |
+| **Mesocortical** | VTA → prefrontal cortex | Motivation, cognition, emotion | **Underactive** → negative and cognitive symptoms | Can worsen apathy and slowness |
+| **Nigrostriatal** | Substantia nigra → striatum | Movement | Normal | **EPS**: dystonia, parkinsonism, akathisia, tardive dyskinesia |
+| **Tuberoinfundibular** | Hypothalamus → pituitary | Dopamine **inhibits prolactin** | Normal | **Raised prolactin**: galactorrhoea, amenorrhoea, sexual dysfunction, low bone density |
+
+:::mnemonic Mesolimbic = "more", mesocortical = "missing"
+Too **m**uch dopamine in the mesolimbic path gives positive symptoms; too little in the mesocortical path leaves motivation and thinking **m**issing.
+:::
+
+:::analogy One tap, four rooms
+A typical antipsychotic is like turning down the main water tap to stop one flooded room (mesolimbic). The other three rooms (movement, prolactin, motivation) also lose water. Newer medicines try to turn down the flooded room more than the others, through 5-HT2A blockade, partial agonism or looser binding.
+:::
+
+### Receptors and the side effects they explain
+| Receptor blocked | Effects you will see | Medicines that do it most |
+|---|---|---|
+| **D2** | EPS, raised prolactin | Haloperidol, risperidone, amisulpride |
+| **H1** (histamine) | Sedation, **weight gain**, appetite | Clozapine, olanzapine, quetiapine, mirtazapine, TCAs |
+| **M1** (muscarinic) | Dry mouth, constipation, blurred vision, urinary retention, confusion, memory problems | TCAs, clozapine, trihexyphenidyl |
+| **Alpha-1** (adrenergic) | **Postural hypotension**, dizziness, falls, reflex tachycardia | Clozapine, quetiapine, TCAs, risperidone (early) |
+| **5-HT2A** | Fewer EPS, may help negative symptoms and sleep | Most atypicals, mirtazapine, trazodone |
+| **5-HT2C** | Weight gain, appetite | Olanzapine, clozapine, mirtazapine |
+
+| Receptor stimulated | Effects |
+|---|---|
+| **5-HT2** (by excess serotonin early in SSRI treatment) | Agitation, insomnia, sexual dysfunction |
+| **5-HT3** | Nausea, loose stools (why SSRIs upset the stomach first) |
+| **5-HT1A** | Anxiety relief (buspirone is a partial agonist) |
+
+:::trap Anticholinergic load adds up
+In an older person, an antidepressant (amitriptyline) plus an antipsychotic plus trihexyphenidyl plus an antihistamine can produce **delirium**. Always total the anticholinergic burden before adding a medicine.
+:::
+
+:::recall
+1. Name the four dopamine pathways and the effect of blocking D2 in each. || Mesolimbic: antipsychotic; mesocortical: worse negative symptoms; nigrostriatal: EPS; tuberoinfundibular: raised prolactin.
+2. Which receptor blockade causes weight gain and sedation? || H1 (with 5-HT2C for weight).
+3. List four anticholinergic side effects. || Dry mouth, constipation, blurred vision, urinary retention, confusion.
+4. Which receptor blockade causes postural hypotension? || Alpha-1.
+:::
+
 # Part II · Regions and systems
 
 ## 2.1 Brain regions and what goes wrong [core]
@@ -127,6 +173,107 @@ Stress → **hypothalamus** releases CRH → **pituitary** releases ACTH → **a
 4. What does damage to the mammillary bodies cause? || Korsakoff-type memory loss.
 :::
 
+## 2.3 The lobes in the clinic: frontal syndromes and language [core]
+### Three frontal syndromes
+| Syndrome | Area | What you see | Typical causes |
+|---|---|---|---|
+| **Dysexecutive** | Dorsolateral prefrontal | Poor planning, rigid thinking, perseveration, poor working memory, cannot shift set | Head injury, frontotemporal dementia, schizophrenia (cognitive), vascular |
+| **Disinhibited** | Orbitofrontal | Impulsive, tactless, jocular (**witzelsucht**), sexually disinhibited, poor social judgement | Trauma, frontotemporal dementia (behavioural variant), tumours |
+| **Apathetic** | Medial frontal and anterior cingulate | Apathy, slowness, little speech (**abulia**, akinetic mutism in the extreme) | Anterior cerebral artery stroke, hydrocephalus |
+
+:::example How it looks
+A 52-year-old bank manager starts making crude jokes in meetings, spends savings on lottery tickets and eats sweets constantly. He has no worry about any of it. Mood is not low or high. This is the **disinhibited frontal** picture: think of **behavioural variant frontotemporal dementia** before calling it mania or a personality change.
+:::
+
+### Bedside frontal tests
+- **Verbal fluency**: words beginning with F in one minute (fewer than about 10 is poor).
+- **Luria three-step** (fist, edge, palm): cannot sequence.
+- **Go/no-go**: tap once when I tap once, do not tap when I tap twice.
+- **Similarities and proverbs**: concrete answers.
+- **Primitive reflexes**: grasp, pout, palmomental (frontal release signs).
+
+### Language and the two hemispheres
+| Aphasia | Lesion | Speech | Comprehension | Repetition |
+|---|---|---|---|---|
+| **Broca's** (expressive) | Left inferior frontal | Non-fluent, effortful, telegraphic | Good | Poor |
+| **Wernicke's** (receptive) | Left superior temporal | Fluent but empty, paraphasias, word salad-like | Poor | Poor |
+| **Conduction** | Arcuate fasciculus | Fluent | Good | **Very poor** |
+| **Global** | Large left hemisphere | Little speech | Poor | Poor |
+
+:::trap Wernicke's aphasia is not psychosis
+Fluent nonsense with poor understanding can be mistaken for formal thought disorder. Clues to aphasia: sudden onset, older age, vascular risk factors, word-finding errors (paraphasias), frustration at not being understood, other neurological signs. Thought disorder usually comes with other psychotic features and intact naming.
+:::
+
+- **Left hemisphere** (in most people): language, sequential logic, calculation.
+- **Right hemisphere**: spatial ability, faces, tone of voice (**prosody**), attention to both sides. Right parietal damage gives **left neglect** and often **anosognosia** (unaware of the deficit).
+- **Gerstmann syndrome** (left angular gyrus): finger agnosia, left-right confusion, acalculia, agraphia.
+
+:::recall
+1. Name the three frontal lobe syndromes and their areas. || Dysexecutive (dorsolateral), disinhibited (orbitofrontal), apathetic (medial frontal).
+2. Give three bedside frontal tests. || Verbal fluency, Luria three-step, go/no-go, proverbs, frontal release signs.
+3. How does Broca's aphasia differ from Wernicke's? || Broca's: non-fluent, comprehension good. Wernicke's: fluent, comprehension poor.
+4. What are the four parts of Gerstmann syndrome? || Finger agnosia, left-right confusion, acalculia, agraphia.
+:::
+
+## 2.4 Memory systems [core]
+:::define Memory
+The ability to **encode**, **store** and **retrieve** information. Different kinds of memory use different brain systems, so diseases damage them selectively.
+:::
+
+| Type | What it holds | Brain system | Lost in |
+|---|---|---|---|
+| **Working memory** | A few items held for seconds (a phone number) | Dorsolateral prefrontal | Schizophrenia, ADHD, frontal damage |
+| **Episodic** (declarative) | Personal events, with time and place | Hippocampus, Papez circuit | Alzheimer's (early), Korsakoff, ECT (temporary) |
+| **Semantic** (declarative) | Facts and word meanings | Anterior temporal lobes | Semantic dementia |
+| **Procedural** (non-declarative) | Skills and habits (cycling) | Basal ganglia, cerebellum | Parkinson's, Huntington's |
+| **Priming and conditioning** | Unconscious learning | Cortex, amygdala | Usually spared |
+
+- **Anterograde amnesia**: cannot form new memories after the injury. **Retrograde amnesia**: loses memories from before it. **Ribot's law**: in retrograde loss, **recent memories go first** and old ones last.
+- **Confabulation** (filling gaps with false memories, without intent to deceive) suggests **Korsakoff** or frontal damage.
+- In **functional (dissociative) amnesia**, loss of personal identity and autobiographical memory occurs with new learning intact: the opposite of organic patterns.
+
+:::trap Organic or dissociative?
+Organic amnesia: new learning poor, identity kept, recent memories lost before old. Dissociative amnesia: identity or a stressful period lost, new learning fine, often a clear trigger.
+:::
+
+:::recall
+1. Name four memory types and their brain systems. || Working: prefrontal. Episodic: hippocampus. Semantic: anterior temporal. Procedural: basal ganglia and cerebellum.
+2. State Ribot's law. || In retrograde amnesia, recent memories are lost first and old ones last.
+3. What is confabulation and when is it seen? || Unintended false memories filling gaps; Korsakoff, frontal damage.
+:::
+
+## 2.5 Looking at the brain: EEG and imaging [core]
+### EEG rhythms
+| Rhythm | Frequency (per second) | When seen |
+|---|---|---|
+| **Beta** | Above 13 | Alert, anxious; **benzodiazepines increase beta** |
+| **Alpha** | 8 to 13 | Relaxed with eyes closed, over the back of the head |
+| **Theta** | 4 to 7 | Drowsiness, children; excess in some disorders |
+| **Delta** | Below 4 | Deep sleep, infants; **delirium** and encephalopathy when awake |
+
+- **Delirium**: generalised **slowing** (more theta and delta), except alcohol and sedative withdrawal, where fast activity is common.
+- **Triphasic waves**: hepatic encephalopathy. **Periodic sharp wave complexes**: Creutzfeldt–Jakob disease.
+- **Spikes and sharp waves**: epilepsy (a normal EEG does not rule it out).
+- **Sleep EEG (polysomnography)**: **shortened REM latency** in depression and narcolepsy.
+
+### Imaging
+| Method | What it shows | Use in psychiatry |
+|---|---|---|
+| **CT** | Structure; quick; good for bleeding and bone | Acute confusion, head injury, first psychosis in an emergency |
+| **MRI** | Structure in fine detail, white matter | First-episode psychosis, dementia (hippocampal atrophy), atypical presentations |
+| **PET and SPECT** | Blood flow, metabolism, receptor binding | Dementia subtypes (reduced temporoparietal uptake in Alzheimer's) |
+| **fMRI** | Activity changes during tasks | Mainly research |
+
+- Schizophrenia on imaging (groups, not individuals): **enlarged lateral ventricles**, reduced grey matter in temporal and frontal regions.
+- Imaging in psychiatry is mainly used to **rule out organic causes**, not to diagnose primary mental illness.
+
+:::recall
+1. Name the four EEG rhythms with frequencies. || Beta above 13, alpha 8 to 13, theta 4 to 7, delta below 4 per second.
+2. What does the EEG show in delirium? || Generalised slowing (fast activity in alcohol or sedative withdrawal).
+3. Which EEG pattern suggests CJD? || Periodic sharp wave complexes.
+4. Main purpose of brain imaging in psychiatry? || To exclude organic causes.
+:::
+
 # Part III · Basic pharmacology
 
 ## 3.1 How medicines act and move [core]
@@ -156,6 +303,36 @@ Stress → **hypothalamus** releases CRH → **pituitary** releases ACTH → **a
 1. Define agonist, antagonist and partial agonist, with an example each. || Morphine; haloperidol or naloxone; aripiprazole or buprenorphine.
 2. After how many half-lives is steady state reached? || About 4 to 5.
 3. Name three enzyme inducers and three inhibitors. || Carbamazepine, smoking, rifampicin; fluoxetine, fluvoxamine, valproate.
+:::
+
+## 3.2 Medicines in special groups and over time [core]
+### Tolerance, dependence and withdrawal at the synapse
+- **Tolerance**: the same dose gives less effect, because receptors **down-regulate** or become less sensitive, or the liver breaks the drug down faster.
+- **Physical dependence**: the body has adapted, so **stopping causes withdrawal**, usually the **opposite** of the drug's effect (benzodiazepines calm; their withdrawal causes anxiety, insomnia, seizures).
+- **Discontinuation syndrome** (not addiction): SSRIs with short half-lives (paroxetine, venlafaxine) cause dizziness, "electric shock" sensations, irritability and flu-like feelings if stopped suddenly. Taper.
+
+### Special groups
+| Group | What changes | What to do |
+|---|---|---|
+| **Older adults** | Less liver and kidney clearance, more fat (longer half-lives), more sensitive brains | **Start low, go slow**; avoid anticholinergics and long-acting benzodiazepines; watch falls, low sodium |
+| **Children and adolescents** | Faster metabolism; different side-effect risks | Use evidence-based options; monitor suicidal thinking on antidepressants |
+| **Pregnancy** | Larger body volume, faster clearance later in pregnancy | Weigh risk of illness against medicine; avoid **valproate**; specialist advice |
+| **Liver disease** | Less metabolism | Lower doses; prefer **lorazepam or oxazepam** among benzodiazepines |
+| **Kidney disease** | Less excretion | Reduce **lithium**, gabapentin, pregabalin, amisulpride |
+
+### Therapeutic drug monitoring
+- Measure levels when the therapeutic index is narrow or effect is hard to judge: **lithium**, **valproate**, **carbamazepine**, **clozapine**.
+- Take the sample at **trough** (lithium 12 hours after the last dose) and at **steady state** (5 days for lithium after a change).
+
+:::mnemonic Start low, go slow, but go
+In older people, start at a low dose and increase slowly, but keep going to an effective dose. Under-treatment is a common error too.
+:::
+
+:::recall
+1. Why does benzodiazepine withdrawal cause anxiety and seizures? || Withdrawal is the opposite of the drug's effect after adaptation.
+2. Which benzodiazepines are safer in liver disease? || Lorazepam and oxazepam.
+3. Name four medicines whose blood levels are monitored. || Lithium, valproate, carbamazepine, clozapine.
+4. When is a lithium level taken? || 12 hours after the last dose, at steady state (about 5 days after a change).
 :::
 
 # Part IV · Exam zone
@@ -191,6 +368,16 @@ Hormone at the end of the HPA axis? :: Cortisol.
 Define partial agonist with an example. :: Partly activates a receptor; aripiprazole, buprenorphine.
 Steady state after how many half-lives? :: About 4 to 5.
 Effect of smoking on clozapine? :: Lowers levels (CYP1A2 induction).
+Blocking D2 in the tuberoinfundibular pathway causes? :: Raised prolactin.
+Blocking D2 in the nigrostriatal pathway causes? :: Extrapyramidal side effects.
+Receptor behind antipsychotic weight gain? :: H1 and 5-HT2C.
+Receptor behind postural hypotension? :: Alpha-1.
+Witzelsucht points to which lobe? :: Orbitofrontal (frontal).
+Fluent speech, poor comprehension? :: Wernicke's aphasia.
+Ribot's law? :: Recent memories are lost before old ones.
+EEG in delirium? :: Generalised slowing.
+EEG rhythm increased by benzodiazepines? :: Beta.
+Benzodiazepine for liver disease? :: Lorazepam or oxazepam.
 :::
 
 ## 4.3 Module test [core]
@@ -250,5 +437,40 @@ Q: The brain's main body clock is the:
 - Amygdala
 - Thalamus
 > It drives melatonin release.
+
+Q: Galactorrhoea on risperidone is explained by D2 blockade in the:
+- Mesolimbic pathway
+- Nigrostriatal pathway
+- *Tuberoinfundibular pathway
+- Mesocortical pathway
+> Dopamine normally inhibits prolactin release from the pituitary.
+
+Q: Constipation, dry mouth and confusion in an older man on amitriptyline reflect blockade of:
+- H1 receptors
+- *Muscarinic receptors
+- Alpha-1 receptors
+- 5-HT2A receptors
+> Anticholinergic effects.
+
+Q: A man makes crude jokes, is sexually disinhibited and shows no concern. The lesion is most likely:
+- Dorsolateral prefrontal
+- *Orbitofrontal
+- Occipital
+- Cerebellar
+> The disinhibited frontal syndrome.
+
+Q: Poor repetition with fluent speech and good comprehension is:
+- Broca's aphasia
+- Wernicke's aphasia
+- *Conduction aphasia
+- Global aphasia
+> Damage to the arcuate fasciculus.
+
+Q: Periodic sharp wave complexes on EEG suggest:
+- Absence epilepsy
+- Hepatic encephalopathy
+- *Creutzfeldt–Jakob disease
+- Benzodiazepine use
+> Triphasic waves suggest hepatic encephalopathy.
 :::
 `;

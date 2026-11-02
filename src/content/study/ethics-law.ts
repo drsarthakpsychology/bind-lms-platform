@@ -72,6 +72,39 @@ For a **specific decision at a specific time**, the person can: (1) **understand
 5. Who must be registered with RCI? || Clinical psychologists (and other rehabilitation professionals) to practise.
 :::
 
+## 1.5 Working through ethical dilemmas [core]
+Real dilemmas set two good principles against each other. A simple method keeps your reasoning clear and defensible.
+
+### A five-step method
+1. **Facts**: what exactly is happening, and what is still unknown?
+2. **Principles in conflict**: for example autonomy versus beneficence, confidentiality versus protection.
+3. **Options**: list at least three, including the least restrictive one.
+4. **Consult**: senior, supervisor, ethics committee, legal advice; check the law (MHCA, POCSO).
+5. **Decide, act, document**: write down the reasoning, not just the decision.
+
+### Four classic dilemmas
+| Situation | Principles in tension | Reasonable approach |
+|---|---|---|
+| A patient tells you he plans to kill a named neighbour | Confidentiality versus protecting a third party | Assess risk; if serious and specific, **break confidentiality** to the extent needed (warn, inform police, admit); document. This is the **duty to protect** (from the American Tarasoff case, now accepted widely) |
+| A capable adult with depression refuses medicines | Autonomy versus beneficence | Respect refusal; explore reasons; offer alternatives (therapy); keep the door open; reassess capacity if the picture changes |
+| Family asks you not to tell the patient his diagnosis | Truth-telling versus family wishes | Explore their fear; the patient has a **right to information** (MHCA); share sensitively, with the family's support |
+| A 16-year-old asks you not to tell parents she self-harms | Confidentiality versus safety of a minor | Explain limits at the start; involve parents when there is significant risk, ideally with her agreement and in her presence |
+
+:::analogy The least restrictive path
+Think of options as doors from narrow to wide: do nothing, talk, involve family, outpatient plan, voluntary admission, supported admission. Choose the **widest door that keeps the person safe**. The MHCA builds this principle in.
+:::
+
+### Research ethics
+- **Declaration of Helsinki** and the **ICMR National Ethical Guidelines** (2017) govern research on people in India.
+- Essentials: **ethics committee approval**, informed consent (audio-video recording of consent in some regulated clinical trials), **voluntariness**, right to withdraw, confidentiality, extra protection for vulnerable groups (children, people lacking capacity, prisoners), and fair compensation for research-related injury.
+
+:::recall
+1. List the five steps of the ethical method. || Facts, principles in conflict, options, consult, decide and document.
+2. What is the duty to protect? || Breaking confidentiality to protect an identifiable person from serious harm.
+3. Which guidelines govern research ethics in India? || ICMR National Ethical Guidelines (with the Declaration of Helsinki).
+4. What does the least restrictive principle mean? || Choose the least restrictive option that keeps the person safe.
+:::
+
 # Part II · The Mental Healthcare Act 2017
 
 ## 2.1 Rights [core]
@@ -111,6 +144,50 @@ A person who attempts suicide is **presumed, unless proved otherwise, to have se
 5. What does Section 115 say? || Attempted suicide is presumed due to severe stress and not punished; the state must provide care.
 :::
 
+## 2.6 The MHCA in more detail [core]
+### From asylum law to a rights law
+| Law | Year | Approach |
+|---|---|---|
+| Indian Lunacy Act | 1912 | Custody; "lunatics" and asylums; magistrate orders |
+| Mental Health Act | 1987 | Licensing of hospitals; reception orders; still custodial |
+| **Mental Healthcare Act** | **2017** | **Rights-based**, capacity-based, aligned with the UN Convention on the Rights of Persons with Disabilities |
+
+### The bodies
+| Body | Role |
+|---|---|
+| **Central Mental Health Authority** | National policy, registration of central mental health establishments and professionals |
+| **State Mental Health Authority** | Registers mental health establishments in the state, sets standards, handles complaints |
+| **Mental Health Review Boards** | Quasi-judicial district-level boards: review admissions beyond 30 days, advance directives and nominated representatives, complaints about rights |
+
+- Every **mental health establishment** (private and government, including psychiatric wards) must register.
+- Mental illness is **determined** by nationally or internationally accepted medical standards (ICD); not by political, economic or social status, moral or religious beliefs, or non-conformity (Section 3).
+
+### Other sections worth knowing
+| Section | What it says |
+|---|---|
+| **5** | Advance directive |
+| **14** | Nominated representative |
+| **18 to 28** | Rights of persons with mental illness |
+| **87** | **Admission of minors**: on request of the nominated representative, after assessment, kept apart from adults with an attendant; the Board is informed |
+| **89 and 90** | Supported admission up to 30 days, and beyond 30 days with Board approval |
+| **94** | Emergency treatment up to 72 hours |
+| **95** | Prohibited procedures (ECT without anaesthesia, ECT for minors without safeguards, sterilisation, chaining) |
+| **97** | Restraint and seclusion: last resort, recorded, reported, reviewed |
+| **100** | **Police duties**: a person found wandering and thought to have mental illness is taken to a public health establishment for assessment within 24 hours; not kept in a lock-up or prison |
+| **103** | Prisoners with mental illness: care in prison mental health facilities or transfer |
+| **115** | Attempted suicide presumed due to severe stress; state duty to care |
+
+:::trap Restraint is not a treatment
+Restraint is used only to prevent **imminent and immediate harm** when nothing less restrictive will work, for the shortest time, by authorised staff, with physical observation, recorded in the medical notes and reported. Never as punishment, never for staff convenience, never in public view or with chains.
+:::
+
+:::recall
+1. Name the three laws in India's mental health history. || Indian Lunacy Act 1912, Mental Health Act 1987, Mental Healthcare Act 2017.
+2. What does a Mental Health Review Board do? || Reviews long admissions, advance directives, nominated representatives and rights complaints.
+3. What must police do for a person found wandering with possible mental illness? || Take them to a public health establishment for assessment within 24 hours, not a lock-up.
+4. What conditions apply to restraint? || Last resort for imminent harm, shortest time, recorded, reported, reviewed.
+:::
+
 # Part III · Other laws
 
 ## 3.1 Children and disability [core]
@@ -143,6 +220,37 @@ A person who attempts suicide is **presumed, unless proved otherwise, to have se
 3. What does NDPS Section 64A do? || Immunity for users of small quantities who volunteer for treatment.
 4. State the insanity defence and its new section number. || Unsoundness of mind making the person incapable of knowing the nature of the act or that it is wrong; IPC 84, now BNS 22.
 5. What matters is the mental state at what time? || The time of the act.
+:::
+
+## 3.5 Negligence and the courtroom [core]
+### Medical negligence in India
+:::define Negligence
+A breach of a **duty of care** that causes **harm**. All three must be proved: **duty**, **breach** (care below the standard of a reasonable practitioner), and **damage caused by the breach**.
+:::
+- **Indian Medical Association versus V. P. Shantha (1995)**: the Supreme Court held that paid medical services fall under the **Consumer Protection Act**, so patients can seek compensation in consumer forums.
+- **Jacob Mathew versus State of Punjab (2005)**: for **criminal** liability, negligence must be **gross** (reckless), not a mere error of judgement.
+- In psychiatry, common claims involve **suicide** (failure to assess or act on risk), **medication** (lithium toxicity without monitoring, missed clozapine blood tests), **wrongful detention**, and **breach of confidentiality**.
+
+### Protecting yourself and your patients
+- Assess and **document risk** at every key point (admission, leave, discharge, change of medicine).
+- Record **informed consent** for ECT, clozapine, depots, and research.
+- Follow monitoring protocols and **write down the reasoning** for unusual decisions.
+- Communicate with families within the limits of consent.
+
+### Writing a report and giving evidence
+- An **expert witness** helps the court; their duty is to the court, not to the side that pays.
+- A good report states: who asked and why; sources (interviews, records, collateral); the history and mental state; the opinion **answering the legal question asked** (for example fitness to stand trial, or mental state at the time of the act); the reasoning and its limits.
+- In the witness box: stay within your expertise, use plain language, say "I don't know" when that is the truth, and do not argue.
+
+:::sounds How it sounds in court
+"In my opinion, at the time of the incident, Mr K was experiencing persecutory delusions that his neighbour was poisoning his family. These beliefs could have prevented him from knowing that his act was wrong. I base this on his treatment records from the week before, two witness statements, and my examination. I cannot be certain about his exact thoughts at that moment."
+:::
+
+:::recall
+1. What are the three elements of negligence? || Duty, breach, damage caused by the breach.
+2. What did V. P. Shantha decide? || Paid medical services come under the Consumer Protection Act.
+3. What did Jacob Mathew decide? || Criminal liability requires gross negligence.
+4. To whom does an expert witness owe their duty? || The court.
 :::
 
 # Part IV · Exam zone
@@ -182,6 +290,17 @@ POCSO reporting section? :: Section 19.
 RPwD number of disabilities? :: 21.
 Benchmark disability? :: 40% or more.
 NDPS immunity for treatment-seekers? :: Section 64A.
+Tarasoff principle? :: Duty to protect an identifiable third party at serious risk.
+Research ethics guidelines in India? :: ICMR National Ethical Guidelines.
+Law before the MHA 1987? :: Indian Lunacy Act 1912.
+International convention the MHCA aligns with? :: UN Convention on the Rights of Persons with Disabilities.
+MHCA section on admission of minors? :: Section 87.
+MHCA section on restraint and seclusion? :: Section 97.
+Police must take a wandering person for assessment within? :: 24 hours.
+Who reviews admissions beyond 30 days? :: Mental Health Review Board.
+Case bringing medical services under consumer law? :: IMA versus V. P. Shantha, 1995.
+Gross negligence for criminal liability? :: Jacob Mathew versus State of Punjab, 2005.
+Expert witness owes duty to? :: The court.
 :::
 
 ## 4.3 Module test [core]
@@ -255,5 +374,33 @@ Q: Treating your close friend's sister as a therapy client is:
 - Required in small towns
 - Only a problem if she pays
 > Impairs objectivity.
+
+Q: A patient credibly says he will kill his former employer tonight. The clinician should:
+- Keep it confidential at all costs
+- *Assess risk and break confidentiality as needed to protect the employer
+- Wait until the next appointment
+- Inform only the patient's family
+> The duty to protect.
+
+Q: Under the MHCA, a man found wandering and thought to be mentally ill should be taken by police to:
+- The police lock-up
+- A private hospital of the police's choice
+- *A public health establishment for assessment within 24 hours
+- A magistrate for a reception order
+> Section 100.
+
+Q: For a doctor to be criminally liable for negligence in India, the negligence must be:
+- Any error of judgement
+- *Gross or reckless
+- Proved by the patient's family only
+- Linked to a fee
+> Jacob Mathew (2005).
+
+Q: Which statement about restraint under the MHCA is correct?
+- It can be used to manage staff shortage
+- Chains may be used briefly
+- *It is a last resort for imminent harm, recorded and reported
+- It needs no documentation if under one hour
+> Section 97.
 :::
 `;

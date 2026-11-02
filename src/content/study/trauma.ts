@@ -72,6 +72,65 @@ Exposure to **actual or threatened death, serious injury, or sexual violence**, 
 5. Why does avoidance maintain PTSD? || It prevents fear extinction.
 :::
 
+## 1.4 Assessing trauma: the trauma-informed interview [core]
+:::define Trauma-informed care
+An approach that assumes any patient may carry trauma, and organises care to avoid re-traumatising them. Its principles: **safety, trustworthiness and transparency, peer support, collaboration, empowerment and choice**, and sensitivity to **culture, gender and history**.
+:::
+
+### How to ask
+1. **Prepare**: privacy, enough time, no family member present if violence at home is possible.
+2. **Normalise and give control**: "You decide how much to tell me. We can stop whenever you want."
+3. **Ask about events first, then effects**: you need to know that it happened and what it does to them now, not every detail.
+4. **Watch for distress and dissociation** (staring, going blank, losing track). **Ground** the person: name five things you can see, feet on the floor, cold water, slow breathing.
+5. **Close safely**: summarise, check how they feel, plan the next step. Never leave someone in the middle of a flashback.
+
+### Screening and rating
+| Tool | Use |
+|---|---|
+| **PC-PTSD-5** | Five-item primary care screen |
+| **PCL-5** | 20-item self-report of PTSD symptoms (0 to 80); tracks progress |
+| **CAPS-5** | Clinician-administered structured interview; gold standard |
+| **International Trauma Questionnaire** | ICD-11 PTSD and complex PTSD |
+| Adverse Childhood Experiences (ACE) questionnaire | Counts types of childhood adversity |
+
+:::trap Do not make the patient re-live it for your notes
+Asking for every detail in the first meeting can trigger severe distress and drop-out. The detailed telling belongs in a planned, trauma-focused therapy, not in the history.
+:::
+
+:::sounds Grounding in the room
+"Rekha, you're here in the clinic with me. It's Tuesday, it's morning. Can you press your feet into the floor? Tell me three things you can see in this room. Take a slow breath with me. You're safe here."
+:::
+
+:::recall
+1. Name four principles of trauma-informed care. || Safety, trustworthiness, collaboration, empowerment and choice (also peer support, cultural sensitivity).
+2. Which tool is the gold-standard structured interview for PTSD? || CAPS-5.
+3. Name two grounding techniques. || Naming things you can see, feet on the floor, cold water, slow breathing.
+4. Why avoid detailed trauma accounts in a first assessment? || They can re-traumatise and cause drop-out.
+:::
+
+## 1.5 Trauma in children and after disasters [core]
+### Children
+- Young children show trauma through **behaviour**: re-enacting it in play, regression (bed-wetting, thumb-sucking, baby talk), clinginess, sleep problems, tantrums, new fears.
+- School-age children: guilt ("it was my fault"), poor concentration, somatic complaints, school refusal.
+- Adolescents: risk-taking, self-harm, substance use, withdrawal, anger.
+- **The parent's response** is one of the strongest predictors of the child's recovery. Support the caregiver.
+- Treatment: **trauma-focused CBT for children (TF-CBT)**, with a parent component (**PRACTICE**: Psychoeducation and parenting, Relaxation, Affect regulation, Cognitive coping, Trauma narrative, In vivo exposure, Conjoint sessions, Enhancing safety).
+
+### Disasters and mass trauma
+- In the first days most distress is **normal**, and most people recover with **practical help, social support and information**.
+- The **IASC pyramid** for humanitarian settings: basic services and security (base) → community and family supports → focused non-specialised support → specialised services (top, for the few).
+- In India, the **National Disaster Management Authority** has psychosocial guidelines; NIMHANS and state teams provide psychosocial support after floods, earthquakes and pandemics.
+
+:::note What to watch for after a disaster
+Bereavement, displacement and loss of livelihood drive depression and alcohol use as much as PTSD. Watch carers and first responders (police, health workers) too.
+:::
+
+:::recall
+1. Name three ways trauma shows in young children. || Re-enactment in play, regression, clinginess, sleep problems.
+2. What is the strongest predictor of a child's recovery? || The caregiver's response and support.
+3. Describe the IASC pyramid. || Basic services, community supports, focused support, specialised services.
+:::
+
 # Part II · The other trauma disorders
 
 ## 2.1 Timing tells them apart [core]
@@ -144,6 +203,49 @@ Routinely making everyone recount the trauma in detail soon after (single-sessio
 4. Which medicines help, and which should be avoided? || SSRIs or venlafaxine; avoid benzodiazepines.
 :::
 
+## 3.3 The trauma therapies in detail [core]
+### Prolonged exposure (Foa)
+- **Imaginal exposure**: retelling the trauma memory in present tense, eyes closed, recorded and listened to daily, until it loses its power.
+- **In vivo exposure**: approaching safe but avoided reminders (the road, the hospital).
+- Usually 8 to 15 weekly sessions.
+
+### Cognitive processing therapy (Resick)
+- Focuses on **stuck points**: beliefs about the trauma, especially **self-blame** ("I should have fought back") and over-generalised beliefs about **safety, trust, power, esteem and intimacy**.
+- Writing an **impact statement** and challenging stuck points with worksheets.
+
+### EMDR (Shapiro): eight phases
+1. History and planning. 2. Preparation (safe place, coping). 3. Assessment (image, negative belief, positive belief, SUDS). 4. **Desensitisation** with bilateral stimulation. 5. Installation of the positive belief. 6. Body scan. 7. Closure. 8. Re-evaluation.
+
+### Narrative exposure therapy
+- The person tells their **whole life story** with a "lifeline" of flowers (good events) and stones (trauma), so traumatic memories are placed in context. Designed for refugees and survivors of repeated violence; used by lay counsellors.
+
+| Choose | When |
+|---|---|
+| Prolonged exposure | Strong avoidance, clear single or few traumas |
+| Cognitive processing therapy | Prominent guilt, shame, self-blame |
+| EMDR | Patient prefers not to describe the trauma at length |
+| Narrative exposure | Many traumas, low-resource or community settings |
+| Phased approach (stabilise first) | Complex PTSD, ongoing danger, severe dissociation |
+
+:::analogy The overstuffed cupboard
+A trauma memory is like things shoved into a cupboard in a hurry. Every time the door opens, everything falls out (flashbacks). Therapy takes things out one by one, looks at them, and puts them back in order, so the door can open without an avalanche.
+:::
+
+## 3.4 Looking after the helper [core]
+:::define Secondary traumatic stress
+Trauma-like symptoms (intrusive images, avoidance, arousal) in people who hear repeatedly about others' trauma: therapists, doctors, police, social workers. Related ideas: **burnout** (exhaustion, cynicism, low accomplishment) and **compassion fatigue**.
+:::
+- Warning signs: dreading work, numbness, irritability, intrusive images of patients' stories, drinking more, cynicism.
+- Protection: **supervision**, peer support, manageable caseloads, mixing trauma work with other work, rest and exercise, life outside work, permission to seek help.
+- **Vicarious resilience** also happens: helpers can grow from seeing patients recover.
+
+:::recall
+1. What are stuck points and which therapy targets them? || Unhelpful trauma beliefs such as self-blame; cognitive processing therapy.
+2. Name four EMDR phases. || History, preparation, assessment, desensitisation, installation, body scan, closure, re-evaluation.
+3. When would you choose a phased approach? || Complex PTSD, ongoing danger, severe dissociation.
+4. Define secondary traumatic stress and two protective measures. || Trauma symptoms from hearing others' trauma; supervision, peer support, manageable caseloads.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -176,6 +278,15 @@ Medicine group used? :: SSRIs (or venlafaxine).
 Avoid which medicines? :: Benzodiazepines.
 Psychological first aid? :: Look, listen, link.
 Is single-session debriefing recommended? :: No.
+Gold-standard interview for PTSD? :: CAPS-5.
+Self-report PTSD scale out of 80? :: PCL-5.
+Grounding technique example? :: Name five things you can see; feet on the floor.
+Strongest predictor of a child's recovery after trauma? :: Caregiver's response.
+Therapy using stuck points? :: Cognitive processing therapy.
+Imaginal plus in vivo exposure for PTSD? :: Prolonged exposure (Foa).
+Lifeline with flowers and stones? :: Narrative exposure therapy.
+IASC pyramid base? :: Basic services and security.
+Trauma-like symptoms in helpers? :: Secondary traumatic stress.
 :::
 
 ## 4.3 Module test [core]
@@ -242,5 +353,33 @@ Q: Intense yearning for a parent 18 months after death, with inability to move o
 - Adjustment disorder
 - Psychotic depression
 > At least 12 months after the loss in adults.
+
+Q: During history-taking, a woman describing an assault begins staring blankly and stops responding. The best next step is:
+- Ask for more detail to complete the history
+- *Ground her in the present and pause the account
+- Give an intramuscular benzodiazepine
+- End the session without comment
+> Grounding, then close safely.
+
+Q: A survivor blames herself: "I should have screamed." The therapy that most directly targets this is:
+- Prolonged exposure
+- *Cognitive processing therapy
+- Narrative exposure therapy
+- Supportive therapy
+> Stuck points of self-blame.
+
+Q: After a flood, most survivors in the first week need:
+- Formal PTSD treatment
+- Single-session debriefing
+- *Practical help, information and social support
+- Benzodiazepines for sleep
+> Specialised care is for the few at the top of the pyramid.
+
+Q: A 5-year-old repeatedly crashes toy cars after a road accident. This is:
+- Conduct disorder
+- *Post-traumatic re-enactment in play
+- Normal play needing no attention
+- Psychosis
+> Young children re-live trauma through play.
 :::
 `;

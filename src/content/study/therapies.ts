@@ -54,6 +54,71 @@ Across therapies, outcomes depend heavily on shared ingredients: the **therapeut
 2. Rogers' three core conditions? || Empathy, unconditional positive regard, congruence.
 :::
 
+## 1.2 Formulation: the 5 Ps [core]
+:::define Case formulation
+A short, shared explanation of **why this person has this problem now, and what keeps it going**. It links assessment to treatment. Without a formulation, therapy becomes a list of techniques.
+:::
+
+| P | Question | Example (a 24-year-old with panic attacks) |
+|---|---|---|
+| **Presenting problem** | What is the difficulty? | Panic attacks for 6 months, now avoids the metro |
+| **Predisposing** | What made the person vulnerable? | Anxious mother, childhood asthma with frightening breathlessness |
+| **Precipitating** | What triggered it now? | First attack after a night of no sleep before exams, with lots of coffee |
+| **Perpetuating** | What keeps it going? | Catastrophic thought "I'm having a heart attack"; avoidance; checking pulse; always carrying water |
+| **Protective** | What strengths help? | Supportive sister, motivated, good insight, studies well |
+
+:::analogy A formulation is a map, not a verdict
+It is written in pencil. You share it with the patient ("does this fit?"), change it when new facts come in, and use it to choose where to intervene. The **perpetuating** factors are where therapy usually starts, because they are what can change now.
+:::
+
+### The shape of a course of therapy
+1. **Assessment and engagement**: history, risk, goals, building the alliance.
+2. **Formulation and contract**: shared understanding; number and length of sessions, confidentiality and its limits, cancellations.
+3. **Active phase**: techniques chosen from the formulation; regular review with measures (PHQ-9, GAD-7).
+4. **Ending**: planned from the start; review gains, relapse prevention plan, booster sessions.
+
+:::trap Endings matter
+An abrupt ending can repeat earlier losses for the patient. Mention the number of sessions at the start and count down ("we have four more sessions").
+:::
+
+:::recall
+1. Expand the 5 Ps. || Presenting, predisposing, precipitating, perpetuating, protective.
+2. Which P do most therapies target first and why? || Perpetuating factors, because they can change now.
+3. Name the four phases of a course of therapy. || Assessment and engagement, formulation and contract, active phase, ending.
+:::
+
+## 1.3 Motivational interviewing [core]
+:::define Motivational interviewing (Miller and Rollnick)
+A collaborative conversation style that **strengthens a person's own motivation for change** by exploring and resolving **ambivalence**. It is widely used in substance use, but helps any time someone is unsure about change.
+:::
+
+### Stages of change (Prochaska and DiClemente)
+| Stage | Person says | Your task |
+|---|---|---|
+| **Precontemplation** | "I don't have a problem" | Raise doubt, give information without pressure |
+| **Contemplation** | "Maybe I drink too much, but..." | Explore ambivalence, pros and cons |
+| **Preparation** | "I want to cut down next month" | Help plan, set a date |
+| **Action** | "I've stopped for two weeks" | Support, problem-solve, reinforce |
+| **Maintenance** | "Six months sober" | Prevent relapse |
+| **Relapse** | "I slipped at a wedding" | Normalise, learn, re-enter the cycle |
+
+### The spirit and the skills
+- Spirit: **partnership, acceptance, compassion, evocation** (drawing out the person's own reasons).
+- **OARS**: **O**pen questions, **A**ffirmations, **R**eflective listening, **S**ummaries.
+- Listen for and strengthen **change talk** (desire, ability, reasons, need, commitment). Avoid the **righting reflex** (the urge to argue for change, which makes the person argue against it).
+
+:::sounds How it sounds in the room
+Patient: "Everyone keeps nagging me about my drinking. It's not that bad."
+Poor: "You must stop; your liver test is abnormal."
+Better: "It sounds frustrating to be told what to do. At the same time you came today, so something is on your mind. What concerns you, if anything, about your drinking?"
+:::
+
+:::recall
+1. Name the six stages of change. || Precontemplation, contemplation, preparation, action, maintenance, relapse.
+2. Expand OARS. || Open questions, affirmations, reflective listening, summaries.
+3. What is the righting reflex and why avoid it? || The urge to argue for change; it provokes resistance.
+:::
+
 # Part II · Behavioural and cognitive therapies
 
 ## 2.1 Behaviour therapy [core]
@@ -133,6 +198,78 @@ It is not events themselves but **how we interpret them** that shapes feelings a
 6. When is MBCT used? || To prevent relapse after 3 or more depressive episodes.
 :::
 
+## 2.4 Exposure and behavioural activation in detail [core]
+### Exposure therapy, step by step
+1. **Psychoeducation**: avoidance keeps fear alive; facing fear safely lets it fall.
+2. **Build a hierarchy** with the patient: situations rated 0 to 100 in **SUDS** (subjective units of distress).
+3. **Start around 30 to 40 SUDS**, stay in the situation until fear falls noticeably or the expectation is disproved, repeat until easy, then climb.
+4. **Drop safety behaviours** (carrying water, holding a rail, checking pulse), which stop the brain learning that the situation is safe.
+5. **Daily homework**; review progress each session.
+
+| Type | How |
+|---|---|
+| **In vivo** | Real-life situations (riding the metro) |
+| **Imaginal** | Vividly imagining the feared scene (trauma memories, catastrophes) |
+| **Interoceptive** | Bringing on the feared body sensations (spinning in a chair, running on the spot, breathing through a straw) for panic disorder |
+| **Exposure and response prevention (ERP)** | Exposure to obsessional triggers while **not** doing the compulsion (OCD) |
+| **Flooding** | Starting at the top of the hierarchy; effective but harder to tolerate |
+
+:::note Why exposure works
+The older idea was **habituation** (fear fades with time). The newer **inhibitory learning** model says exposure builds a **new safety memory** that competes with the old fear memory. So: vary the situations, drop safety behaviours, and test the feared prediction ("I will faint") directly.
+:::
+
+### Behavioural activation for depression
+- Depression shrinks life: less activity leads to less reward, which deepens low mood.
+- Steps: **activity monitoring** (a diary with mood and sense of mastery and pleasure), find patterns, **schedule** valued and enjoyable activities, start small (**graded task assignment**), tackle **avoidance** (TRAP: Trigger, Response, Avoidance Pattern; replace with TRAC: Trigger, Response, Alternative Coping).
+- As effective as full CBT for many people, and easier to teach to lay counsellors (the basis of the **Healthy Activity Programme** tested in Goa).
+
+:::recall
+1. What does SUDS stand for and where should exposure start? || Subjective units of distress; around 30 to 40.
+2. Why should safety behaviours be dropped during exposure? || They prevent learning that the situation is safe.
+3. What is interoceptive exposure and for which disorder? || Bringing on feared body sensations; panic disorder.
+4. Expand TRAP and TRAC. || Trigger, Response, Avoidance Pattern; Trigger, Response, Alternative Coping.
+:::
+
+## 2.5 Cognitive distortions and DBT skills [core]
+### Thinking errors (cognitive distortions)
+| Distortion | What it sounds like |
+|---|---|
+| **All-or-nothing** | "If I don't top, I've failed" |
+| **Overgeneralisation** | "I always mess up" |
+| **Mental filter** | Remembers the one criticism, forgets the ten compliments |
+| **Disqualifying the positive** | "They only praised me to be polite" |
+| **Mind reading** | "He thinks I'm stupid" |
+| **Fortune telling** | "I'll definitely fail the interview" |
+| **Catastrophising** | "If I fail, my life is ruined" |
+| **Emotional reasoning** | "I feel guilty, so I must have done wrong" |
+| **Should statements** | "I should never feel sad" |
+| **Labelling** | "I'm a loser" |
+| **Personalisation** | "My son failed because I'm a bad mother" |
+
+### Beck's levels of cognition
+- **Automatic thoughts** (surface, situation-specific) → **intermediate beliefs** (rules and assumptions: "If people see my weakness, they'll reject me") → **core beliefs** (deep: "I am unlovable").
+- **Downward arrow technique**: "And if that were true, what would it mean about you?" reveals the core belief.
+
+### DBT skills worth knowing by name
+| Module | Skill | What it is |
+|---|---|---|
+| Distress tolerance | **TIPP** | Temperature (cold water on the face), Intense exercise, Paced breathing, Paired muscle relaxation |
+| Distress tolerance | **Radical acceptance** | Fully accepting what cannot be changed right now |
+| Emotion regulation | **Opposite action** | Acting opposite to the emotion's urge when it doesn't fit the facts |
+| Emotion regulation | **PLEASE** | Treat PhysicaL illness, balanced Eating, avoid mood-Altering drugs, balanced Sleep, Exercise |
+| Interpersonal effectiveness | **DEAR MAN** | Describe, Express, Assert, Reinforce; stay Mindful, Appear confident, Negotiate |
+| Mindfulness | **Wise mind** | Balancing emotion mind and reasonable mind |
+
+- **Chain analysis**: after self-harm, trace the chain of vulnerability, trigger, thoughts, feelings, urges, behaviour and consequences to find points to change.
+- DBT has four parts: individual therapy, **group skills training**, **phone coaching**, and a **therapist consultation team**.
+
+:::recall
+1. Give five cognitive distortions with an example each. || All-or-nothing, overgeneralisation, mind reading, catastrophising, personalisation, and others.
+2. Name Beck's three levels of cognition. || Automatic thoughts, intermediate beliefs, core beliefs.
+3. Expand DEAR MAN. || Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate.
+4. Name the four parts of DBT. || Individual therapy, group skills, phone coaching, consultation team.
+:::
+
 # Part III · Other approaches
 
 ## 3.1 Psychodynamic therapy [core]
@@ -177,6 +314,44 @@ It is not events themselves but **how we interpret them** that shapes feelings a
 5. Give three ways to adapt therapy for Indian clients. || Family involvement, local idioms, directive start, spiritual coping, brief focused work.
 :::
 
+## 3.5 Other therapies and the therapist's ethics [core]
+### More approaches you should be able to define
+| Therapy | Key idea |
+|---|---|
+| **Supportive psychotherapy** | Strengthens coping and adaptive defences; reassurance, advice, encouragement; for crises, chronic illness, fragile patients |
+| **Problem-solving therapy** | Structured steps: define the problem, brainstorm, weigh options, act, review. Good in primary care and for older adults |
+| **Solution-focused brief therapy** | Focus on exceptions and solutions, not problems; the **miracle question** ("If a miracle happened overnight, what would be different?") |
+| **Narrative therapy** | Separating the person from the problem ("externalising": "the anger" not "your anger") |
+| **Gestalt therapy** (Perls) | Awareness in the here and now; **empty chair** technique |
+| **Transactional analysis** (Berne) | Parent, Adult and Child ego states; games people play |
+| **Logotherapy** (Frankl) | Finding meaning, even in suffering |
+| **Existential therapy** (Yalom) | Death, freedom, isolation, meaninglessness |
+| **Hypnotherapy** | Focused attention and suggestion; habit and pain work; not for psychosis |
+| **Biofeedback** | Seeing body signals (muscle tension, heart rate variability) to learn control |
+| **Eye movement desensitisation and reprocessing (EMDR)** | Recalling trauma memories with bilateral stimulation; effective for PTSD |
+
+### Indian contributions
+- **Yoga and meditation**: evidence as an add-on for depression and anxiety; yoga studies at NIMHANS in schizophrenia show benefit for negative symptoms and function.
+- **The guru-chela model** (described by J. S. Neki): Indian patients may expect a more directive, warm, teacher-like therapist rather than a neutral one.
+- **Family involvement** is the norm; therapy plans often work better with families included from the start.
+
+### Ethics and boundaries
+- **Confidentiality** with clear limits: risk to self or others, child protection, court orders. Tell the patient these limits at the start.
+- **Boundaries**: no dual relationships (treating a friend, business dealings), no sexual contact ever, care with gifts and touch, no self-disclosure for the therapist's own benefit.
+- **Competence and supervision**: work within training; use supervision for difficult cases and for countertransference.
+- **Documentation**: brief, factual, risk-focused notes.
+
+:::trap Boundary crossings versus violations
+A **crossing** (accepting a small box of sweets at Diwali, a brief supportive touch on the shoulder at a funeral) may be harmless and culturally fitting if thought through. A **violation** exploits the patient and harms them (romantic contact, borrowing money, using the patient's information). Crossings that increase in frequency can slide into violations.
+:::
+
+:::recall
+1. What is the miracle question and which therapy uses it? || "If a miracle happened, what would be different?"; solution-focused brief therapy.
+2. Who developed the empty chair technique? || Fritz Perls (Gestalt therapy).
+3. Name Berne's three ego states. || Parent, Adult, Child.
+4. List three limits of confidentiality. || Serious risk to self or others, child protection, court orders.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -211,6 +386,19 @@ Four DBT modules? :: Mindfulness, distress tolerance, emotion regulation, interp
 Therapy for relapse prevention after 3 depressive episodes? :: MBCT.
 Yalom's factor “I'm not alone”? :: Universality.
 Jacobson's technique? :: Progressive muscle relaxation.
+Expand the 5 Ps of formulation? :: Presenting, predisposing, precipitating, perpetuating, protective.
+Founders of motivational interviewing? :: Miller and Rollnick.
+Stages of change model? :: Prochaska and DiClemente.
+Expand OARS? :: Open questions, affirmations, reflections, summaries.
+SUDS? :: Subjective units of distress.
+Exposure to feared body sensations? :: Interoceptive exposure.
+Newer model of how exposure works? :: Inhibitory learning.
+Technique to find a core belief? :: Downward arrow.
+DBT skill for asking for something? :: DEAR MAN.
+Miracle question? :: Solution-focused brief therapy.
+Empty chair? :: Gestalt therapy, Fritz Perls.
+Logotherapy? :: Viktor Frankl; finding meaning.
+Guru-chela model of Indian psychotherapy? :: J. S. Neki.
 :::
 
 ## 4.3 Module test [core]
@@ -277,5 +465,40 @@ Q: Which therapy has the strongest evidence for borderline personality disorder 
 - Psychoanalysis
 - Systematic desensitisation
 > Developed for chronically suicidal clients.
+
+Q: A patient says, "I've decided to quit next month and told my wife." The stage of change is:
+- Precontemplation
+- Contemplation
+- *Preparation
+- Maintenance
+> Planning with a date.
+
+Q: In a panic disorder formulation, "checking pulse and carrying water" are:
+- Predisposing factors
+- Precipitating factors
+- *Perpetuating factors (safety behaviours)
+- Protective factors
+> They keep the fear going.
+
+Q: "My son failed because I'm a bad mother" is an example of:
+- Mind reading
+- *Personalisation
+- Emotional reasoning
+- Labelling
+> Taking responsibility for an outcome not under one's control.
+
+Q: Spinning in a chair to bring on dizziness is used in:
+- ERP for OCD
+- *Interoceptive exposure for panic disorder
+- Behavioural activation
+- Flooding for PTSD
+> It teaches that the sensations are not dangerous.
+
+Q: Which is a boundary violation rather than a crossing?
+- Accepting a small festival sweet box
+- *Borrowing money from a patient
+- Attending a patient's funeral service for a relative, with thought
+- Offering a tissue
+> Violations exploit the patient.
 :::
 `;

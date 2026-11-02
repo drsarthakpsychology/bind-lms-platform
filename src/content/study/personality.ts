@@ -58,6 +58,69 @@ Can be diagnosed under 18 if features have been present for at least a year, **e
 3. What are the age rules for antisocial personality disorder? || 18 or older with conduct disorder before 15.
 :::
 
+## 1.2 Theories of personality and causes [core]
+### Trait models
+| Model | Dimensions |
+|---|---|
+| **Big Five (Costa and McCrae)** | **O**penness, **C**onscientiousness, **E**xtraversion, **A**greeableness, **N**euroticism (OCEAN) |
+| **Eysenck** | Extraversion, neuroticism, psychoticism (PEN) |
+| **Cloninger** | **Temperament** (inherited): novelty seeking (dopamine), harm avoidance (serotonin), reward dependence (noradrenaline), persistence. **Character** (learned): self-directedness, cooperativeness, self-transcendence |
+| **Allport** | Cardinal, central and secondary traits |
+
+### Other approaches
+- **Psychodynamic**: personality as habitual defences and ways of relating (Kernberg's personality organisation: neurotic, borderline, psychotic levels).
+- **Humanistic**: Rogers' self-concept; Maslow's **hierarchy of needs** (physiological, safety, love and belonging, esteem, self-actualisation).
+- **Social-cognitive**: Bandura's reciprocal determinism (person, behaviour and environment shape each other).
+
+### Why personality disorders develop
+- **Genes**: personality traits are about 40 to 50% heritable; schizotypal links with schizophrenia, antisocial with substance use in relatives.
+- **Childhood adversity**: abuse, neglect, bullying, parental loss, chaotic homes; strongly linked with borderline and antisocial patterns.
+- **Attachment**: disorganised or insecure attachment shapes later relationships.
+- **Temperament** meets environment: a highly sensitive child in an invalidating home (Linehan's biosocial model).
+
+:::analogy Soil and seed
+Temperament is the seed; the family and wider world are the soil and weather. The same seed grows differently in different soil. That is also why the shape can change later, in better soil (therapy, stable relationships).
+:::
+
+:::recall
+1. Expand OCEAN. || Openness, conscientiousness, extraversion, agreeableness, neuroticism.
+2. Name Cloninger's four temperament dimensions. || Novelty seeking, harm avoidance, reward dependence, persistence.
+3. Give Maslow's hierarchy from the base. || Physiological, safety, love and belonging, esteem, self-actualisation.
+4. What are Kernberg's three levels of personality organisation? || Neurotic, borderline, psychotic.
+:::
+
+## 1.3 Assessing personality well [core]
+### Principles
+- **Longitudinal**: you need a pattern since adolescence, across years and situations, not one crisis.
+- **Not during acute illness**: depression, mania, psychosis and intoxication all distort personality. Re-assess when well.
+- **Collateral history** from someone who has known the person for years is essential; people often lack insight into their own traits.
+- **Culture**: behaviour that is expected in one setting (deference to elders, joint family decisions) is not dependence.
+
+### Questions that open up personality
+- "How would your close friends describe you? And people who don't like you?"
+- "How do you usually react when things go wrong?"
+- "What are your relationships usually like? How do they end?"
+- "Have you been in trouble with the police, at school or work?"
+- "How do you feel about yourself most of the time?"
+
+### Tools
+| Tool | Use |
+|---|---|
+| **SCID-5-PD** | Structured interview for DSM-5 personality disorders |
+| **IPDE** (International Personality Disorder Examination) | Semi-structured interview for ICD and DSM |
+| MMPI-2, NEO-PI | Personality traits and profiles |
+| **PCL-R** (Hare Psychopathy Checklist) | Psychopathy, in forensic settings |
+
+:::trap Do not diagnose a personality disorder in one meeting during a crisis
+A woman brought after an overdose, angry and tearful, may look "borderline". She may have depression, an abusive partner, or both. Gather history over time and from others before labelling. The label sticks and changes how others treat her.
+:::
+
+:::recall
+1. Why should personality not be diagnosed during acute illness? || Acute illness distorts behaviour and self-report.
+2. Why is collateral history essential? || People often lack insight into their own traits.
+3. Name two structured interviews for personality disorders. || SCID-5-PD and IPDE.
+:::
+
 # Part II · The ten disorders
 
 ## 2.1 Cluster A: odd and eccentric [core]
@@ -155,6 +218,54 @@ DSM-5-TR keeps the ten categories but offers an alternative dimensional model in
 1. Name the five ICD-11 trait domains. || Negative affectivity, detachment, dissociality, disinhibition, anankastia.
 :::
 
+## 2.6 Antisocial personality and psychopathy [core]
+:::define Psychopathy
+A constellation of **interpersonal and emotional** traits (glibness, superficial charm, grandiosity, pathological lying, manipulation, **lack of remorse and empathy**, shallow emotion) with an **antisocial lifestyle** (impulsivity, irresponsibility, early behaviour problems, criminal versatility). Measured with Hare's **PCL-R** (20 items, 0 to 40).
+:::
+
+| | Antisocial personality disorder | Psychopathy |
+|---|---|---|
+| Based on | Behaviour (law-breaking, deceit, aggression) | Emotional and interpersonal traits plus behaviour |
+| Prevalence in prisons | High (often half or more) | Much smaller group |
+| Predicts | Offending | **Violent re-offending**, poor treatment response |
+
+- **Conduct disorder before 15** is required for antisocial personality disorder; **callous-unemotional traits** in childhood ("limited prosocial emotions" specifier) predict the most persistent course.
+- Biology: low resting heart rate, reduced fear conditioning, reduced amygdala response to others' distress.
+- Course: antisocial behaviour often **lessens after the 40s**; substance use, injury and early death are common.
+- Treatment: limited; focus on **comorbid substance use**, structured programmes, and managing risk. Treat the child: **parent training** for conduct problems is the best prevention.
+
+:::trap Charm is not a sign of good rapport
+A patient who is unusually charming, flattering and quickly "close" to staff, while stories don't add up, may be manipulating. Check facts, keep boundaries, and work as a consistent team.
+:::
+
+:::recall
+1. What does the PCL-R measure and how is it scored? || Psychopathy; 20 items, 0 to 40.
+2. Give two differences between ASPD and psychopathy. || ASPD is behaviour-based and common in prisons; psychopathy adds emotional traits and predicts violent re-offending.
+3. What childhood feature predicts the most persistent antisocial course? || Callous-unemotional traits.
+4. What is the best prevention of adult antisocial behaviour? || Parent training for childhood conduct problems.
+:::
+
+## 2.7 Telling personality disorders from other illnesses [core]
+| Personality disorder | Can be confused with | How to tell |
+|---|---|---|
+| Schizotypal, schizoid, paranoid | **Schizophrenia, delusional disorder** | No sustained delusions or hallucinations; lifelong stable pattern, not a change from previous level |
+| Borderline | **Bipolar disorder**, complex PTSD, depression | Mood shifts last hours, reactive; chronic emptiness; trauma history may suggest complex PTSD |
+| Avoidant | **Social anxiety disorder** | Large overlap; avoidant is more pervasive, lifelong, with a core sense of inadequacy |
+| Obsessive-compulsive (OCPD) | **OCD** | Ego-syntonic perfectionism, no true obsessions or rituals |
+| Antisocial | Substance use, mania | Pattern since childhood; persists when sober and euthymic |
+| Narcissistic | Hypomania | Stable lifelong grandiosity, not episodic, with normal sleep and energy |
+| Any | **Personality change due to a medical condition** | New change in adulthood after head injury, epilepsy, frontal tumour, dementia |
+
+:::note Comorbidity is the rule
+Personality disorders commonly co-exist with depression, anxiety, eating disorders and substance use, and **worsen the outcome** of each. Ask about personality in every patient who "does not respond".
+:::
+
+:::recall
+1. How do you tell schizotypal personality from schizophrenia? || No sustained psychotic symptoms; stable lifelong pattern.
+2. How do you tell avoidant personality from social anxiety disorder? || Overlap; avoidant is more pervasive with core inadequacy.
+3. What suggests personality change due to a medical condition? || New change in adulthood with a neurological cause.
+:::
+
 # Part III · Treatment
 
 ## 3.1 What works [core]
@@ -192,6 +303,35 @@ DSM-5-TR keeps the ten categories but offers an alternative dimensional model in
 4. What goes into a crisis plan? || Triggers, warning signs, coping steps, contacts.
 :::
 
+## 3.2 Managing crises and the team [core]
+### The borderline crisis: what helps
+- **Validation first**: "It makes sense you're this upset after the fight; anyone would be hurt." Validation is not agreement with the behaviour.
+- **Assess risk** properly every time; chronic risk does not mean no acute risk.
+- **Problem-solve** the trigger; agree a short, concrete plan.
+- **Brief admission** only with clear goals, a set length, and an agreed plan; long admissions often make things worse (regression, more self-harm).
+- **Crisis plan written with the patient**: triggers, early signs, things that help, who to call, what the team will do.
+
+:::sounds How it sounds in the room
+"I can see how much pain you're in right now. You cut because the feeling was unbearable and it gave some relief. I'm not going to lecture you. Let's look at what happened today, step by step, and work out what we can do tonight to keep you safe."
+:::
+
+### The team and the clinician
+- **Consistency**: one care coordinator, a shared plan, the same boundaries from all staff. Splitting ("you're the only one who understands me") divides teams; discuss it openly in team meetings.
+- **Notice countertransference**: anger, rescuing, rejection. Use supervision.
+- **Prescribe cautiously**: no long-term benzodiazepines, small quantities of medicines that are dangerous in overdose; medicines for comorbid conditions or short-term symptoms only.
+
+### Indian context
+- Families are often highly involved; **family psychoeducation** reduces conflict and invalidation.
+- Stigma: "personality disorder" can sound like "bad character". Explain it as patterns learned to survive that can change.
+- Structured therapies (DBT) are spreading in Indian centres; **group skills** formats suit resource-limited settings.
+
+:::recall
+1. What is the first step in responding to a borderline crisis? || Validation, then risk assessment.
+2. What are the conditions for a helpful brief admission? || Clear goals, fixed length, agreed plan.
+3. How do teams manage splitting? || Consistency, one coordinator, shared plan, open discussion.
+4. Which medicines should be avoided long-term in personality disorder? || Benzodiazepines; limit overdose-dangerous medicines.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -227,6 +367,15 @@ Four DBT modules? :: Mindfulness, distress tolerance, emotion regulation, interp
 Who developed DBT? :: Marsha Linehan.
 Five ICD-11 trait domains? :: Negative affectivity, detachment, dissociality, disinhibition, anankastia.
 Course of borderline PD with age? :: Usually improves.
+Big Five dimensions? :: Openness, conscientiousness, extraversion, agreeableness, neuroticism.
+Cloninger temperament linked to dopamine? :: Novelty seeking.
+Maslow's top level? :: Self-actualisation.
+Structured interview for ICD and DSM personality disorders? :: IPDE.
+Psychopathy checklist? :: Hare PCL-R, 20 items.
+Required in childhood for ASPD? :: Conduct disorder before 15.
+Childhood traits predicting persistent antisocial course? :: Callous-unemotional traits.
+Diagnose personality during acute mania? :: No; reassess when well.
+First response to a borderline crisis? :: Validation, then risk assessment.
 :::
 
 ## 4.3 Module test [core]
@@ -300,5 +449,33 @@ Q: Which personality disorder is defined by an excessive need to be taken care o
 - Histrionic
 - OCPD
 > Submissive, clinging, fear of separation.
+
+Q: A 30-year-old seen during a severe depressive episode is clingy and indecisive. The best approach to personality diagnosis is to:
+- Diagnose dependent personality disorder now
+- *Treat the depression and reassess personality with collateral history when well
+- Use a projective test immediately
+- Diagnose borderline personality disorder
+> Acute illness distorts personality.
+
+Q: In Cloninger's model, harm avoidance is linked mainly to:
+- Dopamine
+- *Serotonin
+- Noradrenaline
+- GABA
+> Novelty seeking with dopamine, reward dependence with noradrenaline.
+
+Q: Which best predicts violent re-offending?
+- Avoidant personality
+- *High psychopathy score on the PCL-R
+- OCPD
+- Dependent personality
+> Psychopathy predicts violent recidivism.
+
+Q: A man develops new disinhibition and irritability at 50 after a road accident. The most likely diagnosis is:
+- Antisocial personality disorder
+- Histrionic personality disorder
+- *Personality change due to a medical condition (head injury)
+- Borderline personality disorder
+> New change in adulthood with a neurological cause.
 :::
 `;

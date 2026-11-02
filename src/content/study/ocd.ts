@@ -139,6 +139,102 @@ Answering “Are you sure my hands are clean?” again and again works like anot
 4. Why should families stop giving reassurance? || It acts as a ritual and keeps OCD going.
 :::
 
+## 1.5 ERP in practice: a worked case [core]
+:::example Priya, 22, contamination OCD
+Priya washes her hands 40 times a day and bathes for 90 minutes after coming home. She will not sit on the sofa in "outside clothes" and asks her mother many times a day, "Are my hands clean?" Y-BOCS is 28 (severe).
+:::
+
+### Step 1: understand the OCD map together
+- **Triggers**: door handles, money, public toilets, her brother's college bag.
+- **Feared outcome**: "I'll get a disease and pass it to my family."
+- **Rituals**: washing, bathing, changing clothes, asking for reassurance, avoiding touch.
+- **Family accommodation**: mother washes the bag, answers reassurance questions, keeps a "clean chair".
+
+### Step 2: build the hierarchy (SUDS 0 to 100)
+| Step | Exposure | SUDS |
+|---|---|---|
+| 1 | Touch the outer door handle, no washing for 30 minutes | 35 |
+| 2 | Handle coins and notes, then touch own face | 45 |
+| 3 | Sit on the sofa in outside clothes | 55 |
+| 4 | Touch brother's college bag, then eat a biscuit | 65 |
+| 5 | Touch a public toilet door handle, then own clothes and hair | 80 |
+| 6 | Hug family members after touching the toilet handle | 90 |
+
+### Step 3: do the exposures, block the rituals
+- In session first, then **daily homework**. Stay with the anxiety until it falls or the feared prediction is tested; **no washing, no reassurance**.
+- Agreed **response prevention rules**: one 10-minute shower a day, handwashing only before food and after the toilet, no questions about cleanliness.
+- Track SUDS before, at peak, and after; review in each session.
+
+### Step 4: the family plan
+- Mother learns a kind, agreed reply: "I know it's the OCD asking. I'm not going to answer, because answering feeds it. I love you."
+- Remove the "clean chair"; stop washing the bag.
+
+### Step 5: relapse prevention
+- Expect lapses; "**lapse is not relapse**". Practise exposures in daily life ("lifestyle exposure"), spot early signs, return to ERP quickly.
+
+:::trap Mental rituals undo exposure
+Silently praying, counting or saying "it's fine, it's fine" during exposure is still a ritual. Ask about them directly and include them in response prevention.
+:::
+
+:::recall
+1. List four things to map before ERP. || Triggers, feared outcome, rituals including mental ones, family accommodation.
+2. Where should a hierarchy start? || Around 30 to 40 SUDS.
+3. What does the family say instead of reassuring? || A kind, agreed reply naming the OCD and declining to answer.
+4. What does "lapse is not relapse" mean? || A slip is expected and can be recovered from quickly.
+:::
+
+## 1.6 OCD in special groups [core]
+### Perinatal OCD
+- Onset or worsening in pregnancy and after childbirth is common. Typical obsessions: **intrusive thoughts of harming the baby** (dropping, drowning, stabbing), contamination of the baby.
+- Mothers **avoid** bathing the baby or being alone with it, out of horror at the thoughts. Risk of harm is **not** increased; the thoughts are ego-dystonic.
+- Treatment: ERP and, if needed, sertraline (often preferred in breastfeeding).
+- Distinguish from **postpartum psychosis**, where thoughts of harm may be ego-syntonic and linked to delusions: an emergency.
+
+### Children and adolescents
+- Onset often 8 to 12 years; boys earlier. Children may not see rituals as excessive and often **involve parents** heavily.
+- First-line: **CBT with ERP**, with parents; add sertraline or fluoxetine for moderate to severe cases.
+- Sudden dramatic onset after a streptococcal or other infection: consider **PANS/PANDAS** and paediatric assessment.
+
+### Religious obsessions (scrupulosity)
+- Obsessions about sin, impurity, blasphemy or doing rituals wrongly; compulsions such as repeated prayer, confession, bathing for purity, redoing rituals.
+- Common in India (**ashuddh**, purity and pollution themes). The question is not whether the person is religious, but whether the practice is **driven by anxiety, unwanted and excessive** compared with others of the same faith.
+- Involving a respected religious teacher can help ("God does not require you to repeat this 50 times").
+
+### Tic-related OCD
+- Earlier onset, more males, symmetry and "**just right**" feelings, touching and tapping rituals, more family history. Antipsychotic augmentation helps more often.
+
+:::recall
+1. How do you tell perinatal OCD from postpartum psychosis? || OCD: ego-dystonic thoughts with avoidance and no psychosis. Psychosis: delusions, confusion, ego-syntonic thoughts; an emergency.
+2. What is the first-line treatment for OCD in children? || CBT with ERP, involving parents.
+3. Define scrupulosity. || Religious or moral obsessions with rituals such as repeated prayer or confession.
+4. Give three features of tic-related OCD. || Early onset, male, just-right symmetry rituals, family history; antipsychotic augmentation helps.
+:::
+
+## 1.7 When OCD does not get better [core]
+### First, check the basics
+- Was the **SSRI dose high enough for long enough** (12 weeks at good dose)? Was it taken?
+- Was ERP done properly, with real response prevention and homework, or was it just talk?
+- Comorbidity: depression, tics, autism, substance use, OCPD, hoarding.
+- Ongoing **family accommodation**.
+
+### Then step up
+| Step | Option |
+|---|---|
+| 1 | Optimise SSRI dose and duration; add or intensify ERP |
+| 2 | Switch to another SSRI |
+| 3 | **Clomipramine** (alone or carefully with an SSRI, watching levels and ECG) |
+| 4 | **Augment** with low-dose risperidone or aripiprazole |
+| 5 | Intensive or residential ERP |
+| 6 | Specialist neuromodulation: **deep TMS** (approved for OCD), **deep brain stimulation**, or ablative neurosurgery for the most severe, chronic cases |
+
+- **Treatment-resistant OCD** is usually defined as failure of at least two adequate SSRI trials and adequate CBT with ERP.
+
+:::recall
+1. Name four reasons OCD may seem resistant. || Low dose or short trial, poor adherence, ERP not done properly, comorbidity, family accommodation.
+2. Which antipsychotics are used to augment? || Low-dose risperidone or aripiprazole.
+3. Define treatment-resistant OCD. || No response after two adequate SSRI trials and adequate ERP.
+:::
+
 # Part II · Related disorders
 
 ## 2.1 Body dysmorphic disorder [core]
@@ -169,6 +265,37 @@ Answering “Are you sure my hands are clean?” again and again works like anot
 2. What is muscle dysmorphia? || The belief one's body is too small or not muscular enough.
 3. Define hoarding disorder. || Persistent difficulty discarding, with clutter compromising living spaces.
 4. What is the main treatment for trichotillomania? || Habit reversal training.
+:::
+
+## 2.4 Telling the spectrum apart [core]
+| Disorder | Core preoccupation | Repetitive behaviour | Key clue |
+|---|---|---|---|
+| **OCD** | Intrusive thoughts (contamination, harm, symmetry) | Washing, checking, ordering, mental rituals | Ego-dystonic, anxiety-driven |
+| **Body dysmorphic disorder** | A perceived defect in appearance, unnoticeable or slight to others | Mirror checking, grooming, comparing, camouflage, skin picking | Shame about looks; may seek surgery |
+| **Hoarding disorder** | Need to save items; distress at discarding | Acquiring, saving | Cluttered living spaces |
+| **Trichotillomania** | Urge or tension, sometimes none | Hair pulling | Hair loss; often in automatic or focused episodes |
+| **Excoriation** | Urge or tension | Skin picking | Skin lesions |
+| **Illness anxiety disorder** (classified elsewhere) | Fear of having a serious illness | Checking body, seeking reassurance or avoiding doctors | Few or no symptoms |
+
+### BDD in more depth
+- Onset in adolescence; often hidden for years. Common areas: skin (acne, scars), hair, nose, teeth, body shape.
+- **Muscle dysmorphia**: mostly men who believe they are too small or not muscular enough; excessive gym, diet, and **anabolic steroid use**.
+- **High suicide risk**: ask every person with BDD about suicidal thoughts.
+- Insight is often poor or absent (delusional conviction does not change the diagnosis; it is BDD with absent insight).
+- **Cosmetic procedures rarely help** and often lead to dissatisfaction, more procedures, or anger at the surgeon.
+- Treatment: CBT with ERP (stop mirror checking and camouflage, exposure to being seen) and **SSRIs at high doses**.
+
+### Habit reversal training (for hair pulling and skin picking)
+1. **Awareness training**: notice when, where and how pulling happens; early warning signs.
+2. **Competing response**: a physically incompatible action for about one minute (clenching fists, holding a stress ball).
+3. **Social support**: a family member gently prompts and praises.
+- Plus **stimulus control**: gloves, short nails, covering mirrors, keeping hands busy.
+
+:::recall
+1. What is muscle dysmorphia? || A BDD form, mostly in men, believing they are not muscular enough.
+2. Why should cosmetic surgery usually be avoided in BDD? || It rarely helps and leads to more dissatisfaction.
+3. Name the three parts of habit reversal training. || Awareness training, competing response, social support.
+4. What is unusual about suicide risk in BDD? || It is high; always ask.
 :::
 
 # Part III · Exam zone
@@ -206,6 +333,16 @@ What is thought–action fusion? :: Believing thinking something makes it more l
 Core feature of BDD? :: Preoccupation with slight or unseen appearance flaws.
 Define hoarding disorder. :: Persistent difficulty discarding with congested living spaces.
 Treatment of trichotillomania? :: Habit reversal training.
+Y-BOCS range? :: 0 to 40.
+First step in ERP? :: Build a hierarchy with SUDS ratings.
+Does silent counting during exposure count as a ritual? :: Yes, a mental ritual.
+Perinatal OCD typical obsession? :: Intrusive thoughts of harming the baby.
+Religious obsessions are called? :: Scrupulosity.
+SSRI trial length in OCD? :: About 12 weeks at a good dose.
+Tricyclic used in OCD? :: Clomipramine.
+Neuromodulation approved for OCD? :: Deep TMS.
+Muscle dysmorphia linked substance? :: Anabolic steroids.
+Habit reversal key step? :: Competing response.
 :::
 
 ## 3.3 Module test [core]
@@ -279,5 +416,33 @@ Q: For partial response with comorbid tics, the usual augmentation is:
 - A benzodiazepine
 - Stimulants
 > Risperidone or aripiprazole.
+
+Q: During ERP, a patient touches the floor without washing but silently repeats "I'm safe" over and over. The therapist should:
+- Praise the success
+- *Treat the repeated phrase as a mental ritual and block it too
+- Stop exposure as it is too difficult
+- Add a benzodiazepine
+> Mental rituals undo exposure.
+
+Q: A new mother has horrifying thoughts of drowning her baby and avoids bathing it. She is not psychotic. The best description is:
+- High risk of infanticide
+- *Perinatal OCD with ego-dystonic harm obsessions
+- Postpartum psychosis
+- Baby blues
+> Ego-dystonic thoughts with avoidance; risk not increased.
+
+Q: A man spends 4 hours a day in the gym, uses steroids, and believes he looks puny despite being muscular. The diagnosis is:
+- OCPD
+- *Body dysmorphic disorder (muscle dysmorphia)
+- Anorexia nervosa
+- Delusional disorder, somatic type only
+> A BDD form.
+
+Q: Which is NOT part of habit reversal training?
+- Awareness training
+- Competing response
+- Social support
+- *Flooding
+> Flooding is an exposure method.
 :::
 `;

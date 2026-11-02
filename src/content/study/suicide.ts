@@ -84,6 +84,55 @@ Scores such as SAD PERSONS are poor at predicting who will die. Suicide is rare 
 3. What is the purpose of risk assessment, if not prediction? || To understand the person and decide the level of care.
 :::
 
+## 1.3 Why people become suicidal: the models [core]
+No single cause explains suicide. Models help you see **what to ask about and where to help**.
+
+| Model | Key idea | What it tells you to look for |
+|---|---|---|
+| **Durkheim** (sociology, 1897) | Suicide rates reflect social integration and regulation. Types: **egoistic** (too little belonging), **altruistic** (too much: dying for the group), **anomic** (sudden social change, loss of norms), **fatalistic** (excessive control) | Isolation, sudden economic or social upheaval |
+| **Stress-diathesis** | A vulnerability (genes, early adversity, impulsivity, neurobiology) meets a stressor (loss, shame, illness) | Both the long-term vulnerability and the current trigger |
+| **Interpersonal theory (Joiner)** | Desire for death comes from **thwarted belongingness** and **perceived burdensomeness**; acting on it needs **acquired capability** (reduced fear of death, from past self-harm or exposure to pain) | "Do you feel you belong? Do you feel a burden? Have you hurt yourself before?" |
+| **Three-step theory (Klonsky)** | Pain plus hopelessness creates ideation; ideation grows when pain exceeds connection; capability turns ideation into action | Pain, hope, connection, capability |
+| **Cognitive** | **Hopelessness** (Beck) predicts suicide better than depression severity; poor problem-solving; feeling trapped (**entrapment**) | Hopelessness and a sense of no way out |
+
+### Biology
+- Low **serotonin** function: low **5-HIAA** (a serotonin breakdown product) in the spinal fluid of people who made violent attempts.
+- Impulsivity and aggression traits, **HPA axis** changes, and family history (partly genetic, partly learned).
+
+:::analogy Pain, a trap, and a ladder
+Think of three things together: unbearable **pain**, the feeling of being **trapped** with no way out, and the **ladder** of capability (past self-harm, access to means, intoxication). Treatment reduces the pain, opens exits (hope, problem-solving, connection), and takes away the ladder (means safety, sobriety).
+:::
+
+:::recall
+1. Name Durkheim's four types of suicide. || Egoistic, altruistic, anomic, fatalistic.
+2. What are the three parts of Joiner's interpersonal theory? || Thwarted belongingness, perceived burdensomeness, acquired capability.
+3. Which cognitive factor predicts suicide better than depression severity? || Hopelessness.
+4. What is low in the spinal fluid after violent suicide attempts? || 5-HIAA.
+:::
+
+## 1.4 Groups who need special attention [core]
+| Group | What drives risk | What helps |
+|---|---|---|
+| **Students and young people** | Exam pressure, academic failure, competitive coaching hubs, bullying, relationship breakups, family conflict, online harassment | School and college counselling, gatekeeper training for teachers, reducing exam stigma, parents' support |
+| **Farmers and rural workers** | Debt, crop failure, price shocks, easy access to **pesticides** | Debt relief, crop insurance, safe pesticide storage, primary care screening |
+| **Homemakers and young married women** | Domestic violence, dowry harassment, isolation, early marriage | Ask about violence, link to protection services, family work |
+| **Older adults** | Physical illness, pain, loneliness, bereavement, depression often missed; **higher lethality** of attempts | Treat depression and pain, social connection, review medicines |
+| **People after psychiatric discharge** | The weeks after discharge are a **very high-risk period** | Follow-up within days, a clear safety plan, contact with family |
+| **LGBTQ+ people** | Rejection, discrimination, violence, hiding identity | Affirming care, family support, peer groups |
+| **People in custody or prison** | Shame, isolation, withdrawal from substances | Screening on entry, observation, removing means |
+| **Health workers and doctors** | Long hours, burnout, access to medicines, stigma about seeking help | Confidential support, peer support, supervision |
+
+:::note Pesticide access and Indian data
+In India, family problems and illness are among the most commonly recorded causes in national crime records, and **daily wage earners, homemakers, students and farmers** carry a large share of deaths. Restricting highly hazardous pesticides is one of the most effective population-level measures in South Asia.
+:::
+
+:::recall
+1. Which period after hospital discharge carries high risk? || The first weeks.
+2. Name three risk drivers in students. || Exam pressure, academic failure, bullying, breakups, family conflict.
+3. What is the most effective population-level measure in rural South Asia? || Restricting access to highly hazardous pesticides.
+4. Why are attempts by older adults especially serious? || Higher lethality.
+:::
+
 # Part II · Assessment
 
 ## 2.1 How to ask [core]
@@ -128,6 +177,37 @@ Was it planned or impulsive? Was it done alone, timed to avoid discovery? Did th
 1. List the eight domains of a suicide assessment. || Ideation, intent, plan, preparation, history, current state, protective factors, access to means.
 2. Give five questions that reveal intent after an attempt. || Planned or impulsive, alone and timed, prevented rescue, note, expected outcome, feelings about surviving.
 3. Distinguish passive from active ideation. || Wishing to be dead vs thoughts of killing oneself.
+:::
+
+## 2.3 Self-harm in the emergency department [core]
+### Medical first, then everyone gets a psychosocial assessment
+1. **Medical safety**: treat the injury or overdose; check for paracetamol and other co-ingestions; involve the poisons service.
+2. **Do not wait** until the person is "fully well" to be kind. A respectful first contact predicts whether they return for help.
+3. **Psychosocial assessment** for every person who self-harms, once medically fit and not intoxicated: the events, intent, mental state, risks, needs, supports, and what the person wants.
+4. **Plan**: level of care, safety plan, follow-up within days, letter to the general practitioner or local clinic, family involvement with consent.
+
+### Special situations
+| Situation | Approach |
+|---|---|
+| **Intoxicated** | Keep safe and observed; full assessment when sober; never discharge only because they "say they're fine" while drunk |
+| **Psychotic** (command voices, delusions of guilt) | High risk; usually admission |
+| **Child or adolescent** | Involve parents or guardians; screen for abuse (POCSO duties); school liaison |
+| **Repeated self-harm** | Each episode assessed afresh; avoid "attention seeking" labels; look at function (relief, communication, punishment) |
+| **Wants to leave before assessment** | Assess capacity; if lacking capacity and at serious risk, use MHCA emergency provisions; document |
+
+### Formulating risk, not scoring it
+- Write a short **risk formulation**: who is at risk, of what, why now, what makes it worse or better, and what will be done.
+- State **static** factors (past attempts, sex, history) and **dynamic** factors (hopelessness, intoxication, access to means, current stressors). Dynamic factors are where you act.
+
+:::trap Scores do not decide discharge
+Avoid "low, medium, high" labels based on checklists. Two people with the same score can have opposite needs. Base decisions on the conversation, the formulation and the person's needs.
+:::
+
+:::recall
+1. Who should get a psychosocial assessment after self-harm? || Everyone, once medically fit and not intoxicated.
+2. Distinguish static from dynamic risk factors. || Static cannot change (history, sex); dynamic can (hopelessness, intoxication, means).
+3. What does a risk formulation include? || Who, of what, why now, what worsens or helps, and the plan.
+4. What should you do if a patient lacking capacity tries to leave at serious risk? || Use MHCA emergency provisions and document.
 :::
 
 # Part III · Helping
@@ -190,6 +270,41 @@ When talking, posting or teaching about suicide: don't describe methods or locat
 1. What is the strongest predictor of violence? || Past violence.
 :::
 
+## 3.4 Treatments that lower suicide [core]
+| Treatment | Evidence |
+|---|---|
+| **Lithium** | Reduces suicide and self-harm in mood disorders |
+| **Clozapine** | Reduces suicidal behaviour in schizophrenia |
+| **ECT** | Rapid relief in severe depression with high suicide risk |
+| **Ketamine and esketamine** | Rapid but short-lived reduction in suicidal thoughts; specialist use |
+| Antidepressants | Treat depression; monitor closely early on, especially under 25 |
+| **DBT** | Reduces self-harm in borderline personality disorder |
+| **CBT for suicide prevention** | Reduces repeat attempts |
+| **Brief contact interventions** | Caring letters, texts or calls after an attempt reduce repeats |
+| **Safety planning plus follow-up calls** | Reduces suicidal behaviour after emergency visits |
+
+:::note Follow-up is treatment
+Contact within the first days after discharge or an emergency visit is one of the simplest and most effective measures. A missed appointment after self-harm deserves a call, not a closed file.
+:::
+
+## 3.5 After a suicide: postvention [core]
+:::define Postvention
+Support given after a suicide to the people affected: family, friends, classmates, colleagues and clinicians. It is also prevention, because those bereaved by suicide have a **higher risk** of suicide themselves.
+:::
+- **Families**: practical help, honest information, space for grief, guilt and anger; screen for depression; link to support groups.
+- **Schools and colleges**: share accurate, non-sensational information; identify close friends and vulnerable students; avoid memorials that glamorise; offer counselling.
+- **Clinicians**: losing a patient to suicide is a recognised trauma. Expect grief, guilt and fear of blame. Use a supportive (not blaming) case review, supervision, and peer support.
+
+:::sounds Words for a bereaved family
+"I'm so sorry about Rahul. Many families feel guilt and keep asking 'why' or 'what if'. Those feelings are common after a suicide. You don't have to find all the answers now. Can we talk about how each of you is coping, and who is around to support you?"
+:::
+
+:::recall
+1. Name four treatments with evidence for reducing suicide or self-harm. || Lithium, clozapine, DBT, CBT, brief contact interventions, safety planning with follow-up.
+2. What is postvention and why is it also prevention? || Support after a suicide; the bereaved have higher risk.
+3. How should a school respond after a student's suicide? || Accurate information, identify vulnerable students, avoid glamorising, offer counselling.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -222,6 +337,17 @@ What does MHCA 2017 Section 115 say? :: Attempted suicide is presumed due to sev
 National tele-mental health helpline? :: Tele-MANAS 14416.
 Does self-harm raise suicide risk? :: Yes, in the long term.
 Strongest predictor of violence? :: Past violence.
+Durkheim's type linked to sudden social upheaval? :: Anomic.
+Joiner's three factors? :: Thwarted belongingness, perceived burdensomeness, acquired capability.
+Best cognitive predictor of suicide? :: Hopelessness.
+Serotonin metabolite low after violent attempts? :: 5-HIAA.
+Highest-risk time after psychiatric discharge? :: The first weeks.
+Most effective population measure in rural India? :: Restricting hazardous pesticides.
+Who gets a psychosocial assessment after self-harm? :: Everyone.
+Medicine reducing suicide in schizophrenia? :: Clozapine.
+Medicine reducing suicide in mood disorders? :: Lithium.
+Caring letters after an attempt? :: Brief contact intervention.
+Support after a suicide? :: Postvention.
 :::
 
 ## 4.3 Module test [core]
@@ -295,5 +421,33 @@ Q: Safe messaging about suicide means:
 - Calling suicide a solution
 - Sensational headlines
 > Reduces imitation.
+
+Q: A man says, "My family would be better off without me; I don't fit anywhere." In Joiner's theory these reflect:
+- Acquired capability only
+- *Perceived burdensomeness and thwarted belongingness
+- Anomic suicide
+- Altruistic suicide
+> Desire for death; capability is the third factor.
+
+Q: Which is a dynamic risk factor?
+- Male sex
+- Previous attempt
+- *Current intoxication with alcohol
+- Family history of suicide
+> Dynamic factors can change and are where you act.
+
+Q: An intoxicated man after self-harm says he is fine and wants to go home. The best action is:
+- Discharge as he denies suicidal thoughts
+- *Keep him safe and observed, and assess fully when sober
+- Give a large dose of sedative and discharge
+- Call it attention seeking
+> Assessment while intoxicated is unreliable.
+
+Q: Which intervention has evidence for reducing repeat attempts after an emergency visit?
+- A single risk score
+- *Safety planning with follow-up contact
+- Benzodiazepines on discharge
+- Avoiding talking about suicide
+> Plus brief contact interventions.
 :::
 `;

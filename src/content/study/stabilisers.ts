@@ -113,6 +113,86 @@ Valproate is highly teratogenic: **neural tube defects** (spina bifida) and othe
 7. What does valproate do to lamotrigine levels? || Doubles them.
 :::
 
+## 1.5 Lithium in depth [core]
+### How it works (what we think)
+- Inhibits **inositol monophosphatase** (the "inositol depletion" hypothesis) and **GSK-3 beta**, an enzyme involved in cell survival and circadian rhythm.
+- Increases **BDNF** and protects neurons (people on lithium show larger grey matter volumes on scans).
+- Dampens excess signalling through second messenger systems, which may explain stabilisation in both directions.
+
+### Who responds best
+| Better response | Poorer response |
+|---|---|
+| Classic **euphoric mania** | Mixed features, rapid cycling |
+| **Mania, then depression, then a well interval** (M-D-I pattern) | Depression-mania-interval pattern |
+| Full recovery between episodes | Residual symptoms between episodes |
+| **Family history of bipolar disorder**, especially lithium responders | Comorbid substance use |
+| Few previous episodes | Many episodes before starting |
+
+### Starting and stopping
+- Usual start 300 to 400 mg at night, adjusting by level. Older people and those with kidney problems need lower doses.
+- Once-daily dosing at night is common and may be kinder to the kidneys.
+- **Do not stop suddenly**: abrupt stopping raises the risk of **rebound mania** and suicide. Taper over **at least 4 weeks**, ideally longer.
+- **Lithium and suicide**: lithium lowers suicide and self-harm in mood disorders more than other mood stabilisers; this is one reason it remains first choice for maintenance.
+
+### Kidney and thyroid in practice
+- **Polyuria and polydipsia** (nephrogenic diabetes insipidus) are common and usually not dangerous; check fluid intake and sodium.
+- A **steady fall in eGFR** needs discussion with the patient and a physician: options include a lower target level, once-daily dosing, or switching. Do not stop lithium in a panic over one result.
+- **Hypothyroidism**: add thyroxine, continue lithium.
+
+:::analogy A narrow mountain path
+Lithium works on a narrow path: a little too low and it does nothing, a little too high and it is toxic. Anything that pushes the patient sideways (fever, vomiting, a painkiller, a new blood pressure tablet) can tip them off. That is why levels and patient education matter so much.
+:::
+
+:::recall
+1. Name two molecular targets of lithium. || Inositol monophosphatase and GSK-3 beta.
+2. Give three predictors of good lithium response. || Euphoric mania, M-D-I pattern, full inter-episode recovery, family history of response.
+3. What is the risk of stopping lithium abruptly? || Rebound mania and suicide.
+4. What do you do if lithium causes hypothyroidism? || Add thyroxine and usually continue lithium.
+:::
+
+## 1.6 Choosing a mood stabiliser [core]
+### Antipsychotics as mood stabilisers
+| Medicine | Mania | Bipolar depression | Maintenance |
+|---|---|---|---|
+| Quetiapine | Yes | **Yes** | Yes |
+| Olanzapine | Yes | With fluoxetine | Yes (metabolic cost) |
+| Aripiprazole | Yes | No | Prevents mania |
+| Risperidone | Yes | No | Long-acting injection prevents mania |
+| **Lurasidone** | No | **Yes** | Limited |
+| Cariprazine | Yes | Yes | Some evidence |
+| Haloperidol | Yes (short term) | No | No |
+
+### Matching the medicine to the person
+| Situation | Reasonable first choice | Avoid |
+|---|---|---|
+| Classic euphoric mania, family history of lithium response | **Lithium** | |
+| Mixed features or rapid cycling | Valproate or an atypical (quetiapine, olanzapine, aripiprazole) | Antidepressants |
+| Recurrent bipolar depression | Lamotrigine, quetiapine, lurasidone, or lithium | Antidepressant alone |
+| Woman who could become pregnant | Lithium, lamotrigine or an atypical, with contraception advice | **Valproate**, carbamazepine |
+| Kidney disease | Valproate, lamotrigine or an atypical | Lithium |
+| Obesity, diabetes | Lithium, lamotrigine, aripiprazole, lurasidone | Olanzapine, clozapine, valproate |
+| Poor adherence | Long-acting injectable antipsychotic | |
+| Severe mania with danger | Antipsychotic plus lithium or valproate; ECT if needed | |
+
+### Mood stabilisers in pregnancy and breastfeeding
+| Medicine | Pregnancy | Breastfeeding |
+|---|---|---|
+| Lithium | Small risk of **Ebstein's anomaly**; levels fall in pregnancy and **rise sharply after delivery**; detailed fetal heart scan; monitor levels often | Generally avoided or used with close infant monitoring |
+| Valproate | **Avoid**: neural tube defects, lower IQ, autism risk | Compatible but not if pregnancy is possible later without contraception |
+| Carbamazepine | Neural tube defects, facial anomalies | Usually compatible |
+| Lamotrigine | **Relatively safer**; levels fall in pregnancy | Usually compatible; watch infant rash |
+| Atypicals (quetiapine, olanzapine) | Relatively safer; watch gestational diabetes | Usually compatible |
+
+- Give **folic acid** (high dose, 5 mg) to women on anticonvulsants planning pregnancy.
+- **Postpartum period** carries a very high relapse risk in bipolar disorder, including **postpartum psychosis**: plan ahead.
+
+:::recall
+1. Which antipsychotics treat bipolar depression? || Quetiapine, lurasidone, cariprazine (and olanzapine with fluoxetine).
+2. Which mood stabiliser is avoided in women who could become pregnant? || Valproate.
+3. What happens to lithium levels after delivery? || They rise sharply.
+4. What dose of folic acid is used with anticonvulsants before pregnancy? || 5 mg.
+:::
+
 # Part II · Anxiolytics and hypnotics
 
 ## 2.1 Benzodiazepines [core]
@@ -184,6 +264,39 @@ Look for causes: depression, anxiety, pain, sleep apnoea (snoring, daytime sleep
 6. Define insomnia disorder and name the first-line treatment. || 3 nights a week for 3 months with daytime impairment; CBT-I.
 :::
 
+## 2.4 Stopping benzodiazepines safely [core]
+### Diazepam equivalents (approximate)
+| Medicine | Dose roughly equal to 10 mg diazepam |
+|---|---|
+| Alprazolam | 0.5 mg |
+| Clonazepam | 0.5 mg |
+| Lorazepam | 1 mg |
+| Chlordiazepoxide | 25 mg |
+| Zolpidem | 20 mg |
+
+### A taper plan
+1. **Engage**: explain why, agree a pace the person can manage, and that symptoms during taper are expected and pass.
+2. **Switch** a short-acting benzodiazepine (alprazolam) to an equivalent dose of a **long-acting** one (diazepam or clonazepam), in steps.
+3. **Reduce slowly**: about **5 to 10% every 1 to 2 weeks**, slower towards the end. Total taper often takes **months**.
+4. **Support**: CBT for anxiety and insomnia, sleep hygiene, relaxation.
+5. **Do not rush the last steps**; pause rather than go back up if withdrawal is hard.
+
+### Benzodiazepine misuse in India
+- Benzodiazepines (alprazolam, clonazepam, nitrazepam) are widely available and commonly misused, sometimes with opioids or cough syrups.
+- Long-term prescriptions often start in general practice for "tension" or sleep and are never reviewed.
+- Good prescribing: clear diagnosis, short course, written plan, avoid alprazolam, review and document.
+
+:::trap Do not stop high doses suddenly
+A person taking large doses (for example many alprazolam tablets a day) who stops suddenly can have **seizures, delirium and psychosis**. Admit for supervised detoxification if doses are high, there is a seizure history, or alcohol is also used.
+:::
+
+:::recall
+1. How much clonazepam roughly equals 10 mg diazepam? || 0.5 mg.
+2. Why switch alprazolam to diazepam before tapering? || A long half-life gives smoother withdrawal.
+3. How fast should a long-term benzodiazepine be reduced? || About 5 to 10% every 1 to 2 weeks, slower at the end.
+4. When is inpatient detoxification needed? || High doses, seizure history, alcohol or other drug use.
+:::
+
 # Part III · Exam zone
 
 ## 3.1 Long answer and short notes [core]
@@ -220,6 +333,16 @@ Benzodiazepine used for catatonia? :: Lorazepam.
 Antidote for benzodiazepines? :: Flumazenil.
 First-line treatment for insomnia? :: CBT for insomnia.
 Insomnia disorder rule? :: 3 nights a week for 3 months.
+Lithium inhibits which enzyme in the inositol pathway? :: Inositol monophosphatase.
+Pattern of episodes that predicts good lithium response? :: Mania, then depression, then interval (M-D-I).
+How long should lithium be tapered? :: At least 4 weeks.
+Lithium-induced hypothyroidism management? :: Add thyroxine; continue lithium.
+Antipsychotic licensed for bipolar depression but not mania? :: Lurasidone.
+Mood stabiliser relatively safer in pregnancy? :: Lamotrigine.
+Heart defect linked to lithium in pregnancy? :: Ebstein's anomaly.
+Folic acid dose with anticonvulsants before pregnancy? :: 5 mg.
+Alprazolam equivalent of 10 mg diazepam? :: 0.5 mg.
+Benzodiazepine taper rate? :: About 5 to 10% every 1 to 2 weeks.
 :::
 
 ## 3.3 Module test [core]
@@ -307,5 +430,33 @@ Q: Which benzodiazepine is preferred in significant liver disease?
 - *Lorazepam
 - Clonazepam
 > No active metabolites; glucuronidation preserved.
+
+Q: A woman on lithium becomes hypothyroid. The best plan is:
+- Stop lithium immediately
+- *Start thyroxine and continue lithium
+- Switch to valproate
+- Double the lithium dose
+> Hypothyroidism is common and treatable.
+
+Q: Which feature predicts a POOR response to lithium?
+- Euphoric mania
+- Full recovery between episodes
+- *Rapid cycling
+- Family history of lithium response
+> Rapid cycling and mixed features respond less well.
+
+Q: The safest first choice for bipolar maintenance in a 25-year-old woman planning pregnancy in two years is generally:
+- Valproate
+- Carbamazepine
+- *Lamotrigine or lithium with careful planning
+- Long-term alprazolam
+> Avoid valproate in women who could become pregnant.
+
+Q: A patient taking alprazolam 4 mg daily for 5 years wants to stop. The best first step is:
+- Stop today and give propranolol
+- *Switch gradually to an equivalent dose of diazepam, then taper slowly
+- Reduce by half every week
+- Replace with zolpidem
+> Long-acting switch and slow taper.
 :::
 `;
