@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getPolicies } from "@/lib/policies";
+import { CALM_TOOLS } from "@/lib/free/calm";
+import { INSTRUMENTS } from "@/lib/free/tests";
 
 // The production custom domain. NEXT_PUBLIC_APP_URL must be set to this in
 // Vercel (not the internal bind-lms-platform.vercel.app hostname), so search
@@ -15,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: siteUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${siteUrl}/waitlist`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/free`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${siteUrl}/free/help`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 },
+    ...INSTRUMENTS.map((i) => ({ url: `${siteUrl}/free/tests/${i.id}`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.7 })),
+    ...CALM_TOOLS.map((c) => ({ url: `${siteUrl}/free/calm/${c.id}`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.6 })),
     { url: `${siteUrl}/policies`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     ...getPolicies().map((p) => ({
       url: `${siteUrl}/policies/${p.meta.slug}`,
