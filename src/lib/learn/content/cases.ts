@@ -1,0 +1,58 @@
+import { mcq, type Unit } from "../types";
+
+/** Case files: read a short story, name the most likely diagnosis. */
+export const CASES: Unit = {
+  id: "cases",
+  title: "Case files",
+  tagline: "Read the story, make the call",
+  icon: "clipboard",
+  tone: "lime",
+  lessons: [
+    {
+      id: "cs-1",
+      title: "Clinic morning",
+      goal: "Diagnose from a short vignette",
+      items: [
+        mcq("cs1", "Most likely diagnosis?", ["Major depressive episode", "Adjustment disorder", "Hypothyroidism only", "Normal grief"], 0,
+          "Five or more symptoms, most days, for over 2 weeks, with functioning affected.",
+          "Meets MDE criteria (≥5 symptoms, ≥2 weeks, functional impairment). Still check TSH and substance use as part of workup.",
+          "Riya, 26, has felt low and empty for 5 weeks. She has stopped painting, wakes at 4 am, has lost 4 kg, can't concentrate at work and says she feels worthless."),
+        mcq("cs2", "Most likely diagnosis?", ["Generalised anxiety disorder", "Panic disorder", "Hypomania", "Specific phobia"], 1,
+          "Repeated sudden attacks plus constant fear of the next one.",
+          "Recurrent unexpected panic attacks with ≥1 month of anticipatory anxiety and avoidance; cardiac causes reasonably excluded.",
+          "Arjun, 30, has had four sudden episodes of pounding heart, choking and fear of dying, each peaking within 10 minutes. ECG was normal. For two months he has avoided the metro in case it happens again."),
+        mcq("cs3", "Most likely diagnosis?", ["Schizophrenia", "Brief psychotic disorder", "Schizophreniform disorder", "Delusional disorder"], 2,
+          "Psychosis lasting 1 to 6 months.",
+          "Duration ≥1 month and <6 months points to schizophreniform disorder; reassess at 6 months.",
+          "Kabir, 21, has heard voices commenting on him and believed neighbours are spying for 3 months. His speech has become hard to follow. He had no symptoms before this."),
+        mcq("cs4", "What is the most urgent next step?", ["Increase the antidepressant", "Same-day medical review: possible serotonin syndrome", "Reassure; it's anxiety", "Book therapy next week"], 1,
+          "New painkiller plus SSRI, then fever, sweating and jerky muscles: get medical help now.",
+          "Tramadol + SSRI with hyperthermia, diaphoresis, clonus and agitation = serotonin toxicity until proven otherwise; urgent medical assessment.",
+          "Meera, 45, on escitalopram, started tramadol for back pain yesterday. Today she is agitated, sweating, has a temperature of 38.6 °C and her legs are jerking."),
+      ],
+    },
+    {
+      id: "cs-2",
+      title: "Ward round",
+      goal: "Spot the emergency and the mimic",
+      items: [
+        mcq("cs5", "What is happening?", ["Worsening dementia", "Delirium", "Late-onset schizophrenia", "Depression"], 1,
+          "Sudden, fluctuating confusion in an older person: delirium.",
+          "Acute onset, fluctuating attention and visual hallucinations in an elderly patient with a likely UTI: delirium. Treat the cause.",
+          "Mr Shah, 78, was sharp last week. Since yesterday he is confused, worse at night, picking at the sheets and seeing insects. He has a fever and is passing urine often."),
+        mcq("cs6", "Which is most likely?", ["Lithium toxicity", "Mania relapse", "Food poisoning only", "Normal side effects"], 0,
+          "Vomiting, coarse tremor, unsteady walking on lithium, after starting a painkiller.",
+          "NSAID added to lithium → reduced renal clearance → toxicity (GI symptoms, coarse tremor, ataxia, confusion). Urgent level and U&E.",
+          "Sunil, 50, on lithium for years, started ibuprofen for a knee injury 5 days ago. Now he has diarrhoea, vomiting, a coarse tremor and is unsteady."),
+        mcq("cs7", "Most likely diagnosis?", ["Bipolar I, current episode manic", "Bipolar II", "ADHD", "Cyclothymia"], 0,
+          "A week of little sleep, big plans and spending, with hospital needed: mania.",
+          "≥1 week of elevated mood, decreased need for sleep, grandiosity, pressured speech and risky spending with marked impairment = manic episode → bipolar I.",
+          "Neha, 24, has slept 2 hours a night for 9 days, says she will open five companies, spent ₹3 lakh in a day and talks non-stop. Her family brought her to hospital."),
+        mcq("cs8", "What should you check first?", ["Acute dystonia from the antipsychotic", "A seizure", "Conversion disorder", "Malingering"], 0,
+          "New antipsychotic, then sudden muscle spasm of the neck and eyes.",
+          "High-potency antipsychotic started yesterday; oculogyric crisis and torticollis = acute dystonia. Treat promptly with an anticholinergic.",
+          "Rahul, 19, started haloperidol yesterday. Today his neck is twisted to one side and his eyes keep rolling upwards. He is frightened but fully aware."),
+      ],
+    },
+  ],
+};

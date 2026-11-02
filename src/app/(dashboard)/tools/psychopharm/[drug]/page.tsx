@@ -8,6 +8,7 @@ import { getPublishedMedicationDocument } from "@/lib/psychopharm/published-doc"
 import { DocumentView } from "@/components/psychopharm/document-view";
 import { DoseLadder } from "@/components/psychopharm/dose-ladder";
 import { DrugBandView } from "@/components/psychopharm/drug-band-view";
+import { Points } from "@/components/psychopharm/points";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -72,23 +73,17 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
           <h1 className="hidden text-h1 lg:block">{detail.generic}</h1>
           {detail.class ? <Badge variant="secondary">{detail.class}</Badge> : null}
           {!detail.verified ? (
-            <Badge variant="outline">in our sources, awaiting review</Badge>
+            <Badge variant="outline">being reviewed</Badge>
           ) : null}
         </div>
         {detail.plain ? (
-          <p className="max-w-2xl text-small text-foreground">{detail.plain}</p>
+          <Points text={detail.plain} className="max-w-2xl" max={4} />
         ) : null}
       </header>
 
       {publishedDoc ? (
         <>
           <DocumentView document={publishedDoc} />
-          <section className="space-y-4 pb-4">
-            <h2 className="text-h2">Source</h2>
-            <p className="text-small text-muted-foreground">
-              <cite className="not-italic">{detail.source_title}</cite>
-            </p>
-          </section>
           <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
         </>
       ) : (
@@ -144,12 +139,6 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
 
       {!publishedDoc ? (
         <>
-          <section className="space-y-4 pb-4">
-            <h2 className="text-h2">Source</h2>
-            <p className="text-small text-muted-foreground">
-              <cite className="not-italic">{detail.source_title}</cite>
-            </p>
-          </section>
           <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
         </>
       ) : null}

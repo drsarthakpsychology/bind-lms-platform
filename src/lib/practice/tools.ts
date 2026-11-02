@@ -21,20 +21,20 @@ export type PracticeTool = {
 };
 
 export const PRACTICE_TOOLS: PracticeTool[] = [
+  // Learn — the gamified path with Chai: short lessons, XP, streaks, review.
+  { href: "/practice/learn", title: "Learn with Chai", verb: "PLAY", description: "Bite-size lessons, XP, streaks and badges. Psychopathology to psychopharmacology.", icon: "sparkles", time: "3 min", flag: "learn", group: "quick" },
+
   // Quick — under 5 minutes
   { href: "/practice/judgment", title: "Judgment", verb: "SLIDE", description: "New information changes the probability.", icon: "gauge", time: "2 min", flag: "judgment", group: "quick" },
   { href: "/practice/two-minute-clinic", title: "Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
-  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: "repeat", time: "3 min", flag: "rounds", group: "quick" },
   { href: "/practice/decode", title: "Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
-  { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: "layers", time: "1 min", flag: "modules", group: "quick" },
 
   // Mid — 5-10 minutes
   { href: "/practice/mse", title: "MSE", verb: "TAG", description: "Describe before you label. 11 domains.", icon: "brain", time: "10 min", flag: "mse", group: "mid" },
   { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: "timer", time: "7 min", flag: "osce", group: "mid" },
   { href: "/practice/formulation", title: "Formulation", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: "wand2", time: "8 min", flag: "formulation", group: "mid" },
-  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: "scale", time: "5 min", flag: "ethics", group: "mid" },
+  { href: "/practice/ethics", title: "Ethics, law & referral", verb: "CHOOSE", description: "Consequence first, then the statute. Plus: when to refer or stop.", icon: "scale", time: "5 min", flag: "ethics", group: "mid" },
   { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: "graduationCap", time: "5 min", flag: "landmark", group: "mid" },
-  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: "siren", time: "5 min", flag: "ethics", group: "mid" },
 
   // Deep — a proper sitting
   { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: "stethoscope", time: "12 min", flag: "consulting_room", group: "deep" },

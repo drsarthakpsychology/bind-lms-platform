@@ -30,7 +30,7 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
   if (!bands.length) {
     return (
       <p className="text-small text-muted-foreground">
-        Our sources don&apos;t describe dose ranges for {drug} yet.
+        Dose ranges for {drug} aren&apos;t listed yet.
       </p>
     );
   }

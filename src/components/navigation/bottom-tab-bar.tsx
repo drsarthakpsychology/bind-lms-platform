@@ -65,7 +65,7 @@ export function BottomTabBar({
         : STUDENT_TABS;
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || pathname.startsWith("/practice/learn/play");
   if (focusedPath) return null;
 
   const cell =

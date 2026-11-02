@@ -161,9 +161,9 @@ function BlockEditor({
   onRemove?: (blockId: string) => void;
   onSource?: (block: MedBlock) => void;
 }) {
-  // Sources are clinical provenance — surfaced in the clinician register only.
+  // Sources are shown to admins in the editor only, never to students.
   const source =
-    block.sources?.length && register === "clinician" ? (
+    block.sources?.length && editable ? (
       <SourceLine source={block.sources[0]} register={register} />
     ) : null;
 

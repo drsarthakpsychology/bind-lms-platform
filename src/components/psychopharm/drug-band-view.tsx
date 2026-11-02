@@ -8,14 +8,17 @@ import { RegisterView } from "./register-view";
 import { ObserverNotes } from "./observer-notes";
 import { OnsetTimeline } from "./onset-timeline";
 import type { BandView } from "@/lib/psychopharm/store";
+import { Points } from "./points";
+import { useExplainView, ViewToggle } from "@/components/learn/view-toggle";
 
 /**
  * The drug page's dynamic body. Reads ?band= so tapping a dose-ladder rung
  * actually switches the page to that band's specific content (D3). Wrapped in
  * Suspense by the server page because useSearchParams requires it.
  *
- * Students always see the plain register — the reviewer/clinician register
- * with source evidence lives in the admin editor, not here.
+ * Student view = plain words and what to notice; Clinician view = mechanism,
+ * dosing logic, monitoring, interactions. Content is shown as short bullet
+ * points, never with book or page references.
  */
 export function DrugBandView({
   class: drugClass,
@@ -61,91 +64,94 @@ export function DrugBandView({
   patient_counseling?: string;
 }) {
   const searchParams = useSearchParams();
+  const view = useExplainView();
+  const clinician = view === "clinician";
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
   const current = bands[activeBand - 1];
+  void sourceTitle;
+  void onsetKbPage;
+  void halfLifePage;
 
-  return (
-    <div className="space-y-6">
-      {/* The selected band, first below the ladder. */}
-      <BandDetail band={current} register="student" />
-
-      {/* The mechanism register — plain language, no mode switch for students. */}
-      <RegisterView plain={plain} mechanism={mechanism} />
-
-      {/* Onset + half-life — second question anyone asks. */}
-      <OnsetTimeline
-        onsetTime={onsetTime}
-        onsetKb={onsetKb}
-        onsetKbPage={onsetKbPage}
-        halfLife={halfLife}
-        halfLifePage={halfLifePage}
-        bandOnset={current?.onset}
-        register="student"
-        sourceTitle={sourceTitle ?? ""}
-      />
-
-      <section className="space-y-4 pb-4">
-        <h2 className="text-h2">Commonly used in</h2>
-        {common_uses ? <p className="text-small">{common_uses}</p> : (
-          <p className="text-small text-muted-foreground">Not covered in our sources.</p>
-        )}
-      </section>
-
-      {dose_range ? (
-        <p className="text-caption text-muted-foreground">
-          This is what the books describe. Your client&apos;s prescriber chose their dose for reasons specific to them, and that is the number that matters.
-        </p>
-      ) : null}
-
-      {side_effects_common ? (
-        <section className="space-y-4 pb-4">
-          <h2 className="text-h2">What to watch for</h2>
-          <p className="text-small">{side_effects_common}</p>
-          {side_effects_serious ? (
-            <p className="text-small">
-              <span className="font-semibold">More serious (rare): </span>
-              {side_effects_serious}
-            </p>
-          ) : null}
-        </section>
-      ) : null}
-
-      {/* FDA full-label sections (verbatim reference text). Collapsed so the
-          band's clinical summary dominates and the page isn't one long scroll
-          on a phone; each section is one tap to expand (T32). */}
-      {[
+  const labelSections = clinician
+    ? [
         { label: "Contraindications", value: contraindications },
         { label: "Interactions", value: interactions },
         { label: "Monitoring", value: monitoring },
         { label: "Overdose", value: overdose },
         { label: "Special populations", value: special_populations },
-        { label: "Patient counseling", value: patient_counseling },
-      ].map(({ label, value }) =>
+        { label: "Counselling the patient", value: patient_counseling },
+      ]
+    : [
+        { label: "What to tell the client", value: patient_counseling },
+        { label: "Who needs extra care", value: special_populations },
+      ];
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3">
+        <p className="text-small font-semibold">
+          {clinician ? "Clinician view: mechanism, dosing logic, monitoring and interactions." : "Student view: plain words, what to notice and what to ask."}
+        </p>
+        <ViewToggle />
+      </div>
+
+      {/* The selected band, first below the ladder. */}
+      <BandDetail band={current} register={view} />
+
+      <RegisterView plain={plain} mechanism={mechanism} clinician={clinician} />
+
+      <OnsetTimeline
+        onsetTime={onsetTime}
+        onsetKb={onsetKb}
+        halfLife={halfLife}
+        bandOnset={current?.onset}
+        register={view}
+      />
+
+      <section className="space-y-3">
+        <h2 className="text-h2">Commonly used for</h2>
+        {common_uses ? <Points text={common_uses} /> : <p className="text-small text-muted-foreground">Not listed yet.</p>}
+      </section>
+
+      {dose_range ? (
+        <p className="rounded-xl border-2 border-dashed border-foreground/30 px-3 py-2 text-caption text-muted-foreground">
+          Doses vary from person to person. The prescriber chooses the dose for each patient, and that is the number that matters.
+        </p>
+      ) : null}
+
+      {side_effects_common ? (
+        <section className="space-y-3">
+          <h2 className="text-h2">{clinician ? "Adverse effects" : "What to watch for"}</h2>
+          <Points text={side_effects_common} />
+          {side_effects_serious ? (
+            <div className="rounded-2xl border-2 border-destructive bg-status-alert-bg p-3 text-status-alert-fg">
+              <p className="text-caption font-bold uppercase">{clinician ? "Serious / rare" : "Rare but serious: tell the psychiatrist the same day"}</p>
+              <Points text={side_effects_serious} className="mt-1" />
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {labelSections.map(({ label, value }) =>
         value ? (
-          <details key={label} className="group rounded-md border-2 border-border bg-card">
+          <details key={label} className="group rounded-2xl border-2 border-foreground bg-card">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
-              <h2 className="text-h2">{label}</h2>
-              <ChevronDown
-                className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
-                aria-hidden
-              />
+              <h2 className="text-h3">{label}</h2>
+              <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
             </summary>
-            <p className="border-t border-border px-4 py-3 text-small">{value}</p>
+            <div className="border-t-2 border-foreground/10 px-4 py-3">
+              <Points text={value} max={14} />
+            </div>
           </details>
         ) : null,
       )}
 
-      {/* Phase 2 observer layer — collapsed so the band summary dominates;
-          one tap to reveal the session observations (T32). */}
-      <details className="group rounded-md border-2 border-border bg-card">
+      <details className="group rounded-2xl border-2 border-foreground bg-card">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
-          <h2 className="text-h2">Session notes & red flags</h2>
-          <ChevronDown
-            className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
-            aria-hidden
-          />
+          <h2 className="text-h3">In session: what to notice, red flags</h2>
+          <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
         </summary>
-        <div className="border-t border-border px-4 py-3">
+        <div className="border-t-2 border-foreground/10 px-4 py-3">
           <ObserverNotes drugClass={drugClass} />
         </div>
       </details>

@@ -1,23 +1,22 @@
 "use client";
 
+import { cleanClinicalText } from "@/lib/psychopharm/points";
+import { Points } from "./points";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
  * Onset + half-life panel. Student view shows a compact phase timeline with
- * only the phases the source supports; clinician view shows the verbatim
- * source text with citation. Band-specific onset overrides the drug-level one.
+ * only the phases the data supports; clinician view adds the detailed
+ * onset note. No book or page references are shown to students.
  * No data → one honest line.
  */
 export function OnsetTimeline({
   onsetTime,
   onsetKb,
-  onsetKbPage,
   halfLife,
-  halfLifePage,
   bandOnset,
   register,
-  sourceTitle,
 }: {
   onsetTime?: { value: string; source_id: string; page_ref: string };
   onsetKb?: string;
@@ -26,10 +25,9 @@ export function OnsetTimeline({
   halfLifePage?: string;
   bandOnset?: { value: string; page_ref?: string };
   register: "student" | "clinician";
-  sourceTitle: string;
+  sourceTitle?: string;
 }) {
   const studentText = bandOnset?.value ?? onsetTime?.value;
-  const studentPage = bandOnset?.page_ref ?? onsetTime?.page_ref;
 
   // Phases the sources actually name, in order; only those whose text the
   // source supports are drawn filled.
@@ -51,13 +49,13 @@ export function OnsetTimeline({
 
       {!studentText && !onsetKb && !bandOnset ? (
         <p className="text-small text-muted-foreground">
-          Our sources don&apos;t describe an onset timeline for this medication.
+          Onset timeline not listed yet.
         </p>
       ) : null}
 
       {studentText ? (
         <div className="space-y-2">
-          <p className="text-small">{studentText}</p>
+          <p className="text-small">{cleanClinicalText(studentText)}</p>
 
           {/* Compact phase timeline — only phases the source names. */}
           {reached.length ? (
@@ -79,26 +77,19 @@ export function OnsetTimeline({
             </div>
           ) : null}
 
-          {studentPage ? (
-            <p className="text-caption text-muted-foreground">Source: {sourceTitle} · {studentPage}</p>
-          ) : null}
         </div>
       ) : null}
 
       {register === "clinician" && onsetKb ? (
         <div className="rounded-md border-2 border-dashed border-border p-3 text-caption text-muted-foreground">
-          <p className="italic">{onsetKb.slice(0, 300)}…</p>
-          <p>{sourceTitle} · p{onsetKbPage}</p>
+          <p>{cleanClinicalText(onsetKb).slice(0, 300)}…</p>
         </div>
       ) : null}
 
       {halfLife ? (
         <div>
           <p className="text-caption font-semibold uppercase text-muted-foreground">How long it stays</p>
-          <p className="text-small">{halfLife.slice(0, 240)}</p>
-          {halfLifePage ? (
-            <p className="text-caption text-muted-foreground">{sourceTitle} · p{halfLifePage}</p>
-          ) : null}
+          <Points text={halfLife} max={2} />
         </div>
       ) : null}
     </section>

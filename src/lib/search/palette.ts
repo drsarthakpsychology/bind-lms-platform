@@ -25,7 +25,7 @@ const TOOLS: PaletteEntry[] = [
   { id: "formulation", label: "Formulation", hint: "5P formulation", href: "/practice/formulation", group: "Tools", keywords: ["5p", "narrative"] },
   { id: "mse", label: "MSE", hint: "Mental status exam", href: "/practice/mse", group: "Tools", keywords: ["mental status"] },
   { id: "osce", label: "OSCE Stations", hint: "Timed stations", href: "/practice/osce", group: "Tools", keywords: ["exam", "station"] },
-  { id: "rounds", label: "Rounds", hint: "Spaced-repetition cards", href: "/practice/rounds", group: "Tools", keywords: ["cards", "review", "fsrs"] },
+  { id: "learn", label: "Learn with Chai", hint: "Lessons, XP, streaks, review", href: "/practice/learn", group: "Tools", keywords: ["cards", "review", "quiz", "game", "streak", "xp"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
   { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
   { id: "tutor", label: "Psychology Tutor", hint: "Grounded answers from the authorised books", href: "/practice/tutor", group: "Tools", keywords: ["ask", "books", "knowledge", "question"] },

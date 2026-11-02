@@ -39,7 +39,7 @@ export function BandDetail({
 
       {!hasContent ? (
         <p className="text-small text-muted-foreground">
-          Our sources describe this range but not what changes across it.
+          No extra detail for this dose range yet.
         </p>
       ) : null}
 
@@ -50,21 +50,21 @@ export function BandDetail({
         </div>
       ) : null}
 
-      {band.why_this_dose ? (
+      {register === "clinician" && band.why_this_dose ? (
         <div>
           <p className="text-caption font-semibold uppercase text-muted-foreground">Why this range</p>
           <p className="text-small">{band.why_this_dose}</p>
         </div>
       ) : null}
 
-      {band.what_changes_going_up ? (
+      {register === "clinician" && band.what_changes_going_up ? (
         <div>
           <p className="text-caption font-semibold uppercase text-muted-foreground">Going up from here</p>
           <p className="text-small">{band.what_changes_going_up}</p>
         </div>
       ) : null}
 
-      {band.what_changes_going_down ? (
+      {register === "clinician" && band.what_changes_going_down ? (
         <div>
           <p className="text-caption font-semibold uppercase text-muted-foreground">Going down from here</p>
           <p className="text-small">{band.what_changes_going_down}</p>
@@ -122,17 +122,6 @@ export function BandDetail({
         </div>
       ) : null}
 
-      {register === "clinician" && band.evidence ? (
-        <div className="rounded-md border-2 border-dashed border-border p-3 text-caption text-muted-foreground">
-          <p className="italic">“{band.evidence.quote?.slice(0, 140)}…”</p>
-          <p>
-            {band.evidence.strength && `Strength ${band.evidence.strength} · `}
-            {band.evidence.confidence && `Confidence ${band.evidence.confidence}`}
-            {band.evidence.guideline && ` · ${band.evidence.guideline}`}
-            {band.evidence.source_id && ` · ${band.evidence.source_id} p${band.evidence.page_ref}`}
-          </p>
-        </div>
-      ) : null}
     </section>
   );
 }
