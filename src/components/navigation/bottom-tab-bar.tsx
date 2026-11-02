@@ -30,7 +30,7 @@ const STUDENT_TABS: Tab[] = [
 const ADMIN_TABS: Tab[] = [
   { href: "/admin", label: "Home", icon: Home, exact: true },
   { href: "/admin/emails", label: "Mail", icon: Mail },
-  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
+  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/activity", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
   { href: "/admin/triage", label: "Review", icon: Inbox, match: ["/admin/submissions", "/admin/sim-review", "/admin/supervision", "/admin/wall-reports"] },
 ];
 
@@ -65,7 +65,7 @@ export function BottomTabBar({
         : STUDENT_TABS;
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || pathname.startsWith("/practice/learn/play");
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/practice\/learn\/(?:play|coach|detective)/.test(pathname);
   if (focusedPath) return null;
 
   const cell =

@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Flame, Lock, RotateCcw, Snowflake, Star, Timer, Zap } from "lucide-react";
+import { BarChart3, Flame, GraduationCap, Lock, RotateCcw, Search, Snowflake, Star, Timer, Zap } from "lucide-react";
 import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
+import { domainMastery } from "@/lib/learn/adaptive";
+import { DOMAINS } from "@/lib/learn/concepts";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
 import { cn } from "@/lib/utils";
@@ -44,7 +46,7 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
   const shownBadges = Object.entries(BADGES);
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6">
+    <div className={cn("mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6", s.texture)}>
       {/* Stats row */}
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         <div className="rounded-2xl border-2 border-foreground bg-card p-3">
@@ -117,6 +119,59 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
           <span>
             <span className="block font-black">60-second blitz</span>
             <span className="text-caption">{st.blitzBest ? `Best: ${st.blitzBest}` : "Beat the clock"}</span>
+          </span>
+        </Link>
+      </div>
+
+      {/* Coach: adaptive teaching by topic */}
+      <section className="overflow-hidden rounded-3xl border-2 border-foreground bg-card hard-shadow-sm">
+        <div className="flex items-center justify-between gap-3 border-b-2 border-foreground bg-foreground px-4 py-3 text-background">
+          <div>
+            <p className="flex items-center gap-2 text-lg font-black">
+              <GraduationCap className="size-5 text-primary" aria-hidden /> Coach
+            </p>
+            <p className="text-caption opacity-85">Chai teaches, spots what you mix up, and repeats it until it sticks.</p>
+          </div>
+          <Link href="/practice/learn/coach" className="shrink-0 rounded-full border-2 border-primary bg-primary px-3 py-1.5 text-sm font-black text-primary-foreground">
+            Mixed →
+          </Link>
+        </div>
+        <ul className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-3">
+          {DOMAINS.map((d) => {
+            const m = domainMastery(st.coach, d.id);
+            return (
+              <li key={d.id}>
+                <Link href={`/practice/learn/coach?domain=${d.id}`} className="block h-full rounded-2xl border-2 border-foreground bg-background p-3 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
+                  <span className="text-lg" aria-hidden>
+                    {d.icon}
+                  </span>
+                  <span className="block text-sm font-black leading-tight">{d.title}</span>
+                  <span className="mt-1.5 block h-2 overflow-hidden rounded-full border border-foreground">
+                    <span className="block h-full bg-primary" style={{ width: `${m.pct}%` }} />
+                  </span>
+                  <span className="mt-1 block text-[0.7rem] text-muted-foreground">
+                    {m.pct}% · {m.total} concepts
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Link href="/practice/learn/detective" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-4 text-brand-foreground hard-shadow-sm">
+          <Search className="size-6 shrink-0" aria-hidden />
+          <span>
+            <span className="block font-black">Clinic detective</span>
+            <span className="text-caption">Guess the medicine or disorder from clues{st.detectiveBest ? ` · best ${st.detectiveBest}` : ""}</span>
+          </span>
+        </Link>
+        <Link href="/practice/learn/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+          <BarChart3 className="size-6 shrink-0" aria-hidden />
+          <span>
+            <span className="block font-black">My progress & leaderboard</span>
+            <span className="text-caption">Mastery by topic, your mix-ups, this week&apos;s ranking</span>
           </span>
         </Link>
       </div>

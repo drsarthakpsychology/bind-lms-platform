@@ -42,3 +42,37 @@ Evidence summary: a meta-analysis of gamified learning found positive effects on
 ## Adding content
 
 Add questions to a unit file in `src/lib/learn/content/`, using the `mcq`, `tf`, `match`, `order` and `sort` helpers. Every question needs a `student` explanation and a `clinician` explanation. `npm run test` checks that IDs are unique, answers are valid and no book is cited.
+
+## Coach: adaptive teaching (`/practice/learn/coach`)
+
+- **Concept bank:** 235 concepts across 9 topics: signs and symptoms, clinical disorders, neuroscience, psychopharmacology, therapies, counselling skills, assessment, ethics and Indian law. Each concept has a plain meaning, a clinical meaning, tags and sometimes a memory hook. They live in `src/lib/learn/concepts/`.
+- **Mastery:** every concept has a mastery level from 0 to 5 for each student. New concepts are taught first with a teach card, then asked.
+- **The question gets harder as mastery grows:**
+  1. pick the term from its meaning;
+  2. pick the meaning from the term;
+  3. true/false with a look-alike;
+  4. type the term from memory (small typos are accepted).
+- **When a student gets one wrong:**
+  - the level drops;
+  - the concept is taught again, with a side-by-side of the two things they confused;
+  - it comes back a few questions later, up to twice per session, then again the next day, until they get it right.
+- **Remembered confusions:** each mix-up is stored, and the confused concept is then used on purpose as a wrong option, so the student practises exactly the distinction they struggle with.
+- **What goes into a session:** concepts to relearn, then reviews that are due, then *new concepts similar to recent mistakes*, then fresh concepts.
+- **After a session:** the summary shows each concept's level change and suggests similar concepts to study next.
+
+## Clinic detective (`/practice/learn/detective`)
+Clues appear one at a time. Guessing on clue 1 scores 40 points, clue 2 scores 30, clue 3 scores 20 and clue 4 scores 10. Each wrong guess costs 5 points. There are 32 cases (20 medicines, 12 disorders), and the score earns XP.
+
+## My progress (`/practice/learn/progress`)
+Shows mastery by topic, XP for the last 14 days, the student's most common mix-ups, and a weekly leaderboard. The leaderboard resets every week so everyone gets a fresh chance. It shows only first name and last initial, and lists the top 10 plus the student and their neighbours.
+
+## Admin: Activity (`/admin/activity`)
+For each student it shows:
+- time on the platform over 7 and 30 days, and days active;
+- when they were last seen;
+- lectures completed and started, and minutes watched;
+- Learn XP, streak and accuracy;
+- practice sessions;
+- an overall rank, with the top 3 and bottom 3 highlighted.
+
+The page also has a heatmap of when the cohort studies and a breakdown of where the time goes. Each student has a deep-dive page with minutes per day, every lecture, recent activity, Learn mastery and their mix-ups.

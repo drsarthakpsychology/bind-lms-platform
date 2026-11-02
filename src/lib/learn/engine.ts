@@ -18,6 +18,7 @@
  */
 
 import { istToday } from "@/lib/practice/streaks";
+import type { CoachData } from "./adaptive";
 
 export type LessonStats = { stars: 0 | 1 | 2 | 3; best: number; plays: number };
 export type SrsCard = { box: number; due: string };
@@ -36,6 +37,12 @@ export type LearnState = {
   correct: number;
   chests: number;
   blitzBest: number;
+  /** Coach: per-concept mastery and remembered confusions. */
+  coach: CoachData;
+  /** XP earned per day (last 90 days), for the progress chart. */
+  history: Record<string, number>;
+  /** Detective game best score. */
+  detectiveBest: number;
 };
 
 export const DAILY_GOALS = [20, 40, 60] as const;
@@ -57,6 +64,9 @@ export function emptyState(): LearnState {
     correct: 0,
     chests: 0,
     blitzBest: 0,
+    coach: { concepts: {}, confusions: {} },
+    history: {},
+    detectiveBest: 0,
   };
 }
 
@@ -74,6 +84,11 @@ export function normalise(raw: unknown): LearnState {
     lessons: { ...(r.lessons ?? {}) },
     srs: { ...(r.srs ?? {}) },
     badges: Array.isArray(r.badges) ? r.badges.filter((b) => typeof b === "string") : [],
+    coach: {
+      concepts: { ...(r.coach?.concepts ?? {}) },
+      confusions: { ...(r.coach?.confusions ?? {}) },
+    },
+    history: { ...(r.history ?? {}) },
   };
 }
 
@@ -207,10 +222,17 @@ function addBadge(list: string[], id: string, fresh: string[]) {
   }
 }
 
+function trimHistory(h: Record<string, number>, today: string): Record<string, number> {
+  const cutoff = addDays(today, -90);
+  return Object.fromEntries(Object.entries(h).filter(([d]) => d >= cutoff));
+}
+
 /* ---------------------------------------------------------- finish lesson */
 export type LessonResult = {
   lessonId: string;
-  kind: "lesson" | "review" | "blitz";
+  kind: "lesson" | "review" | "blitz" | "coach" | "detective";
+  /** Bonus XP already earned inside the game (detective clue points). */
+  bonusXp?: number;
   answers: { id: string; correct: boolean }[];
   maxCombo: number;
   /** Lesson ids of the unit this lesson belongs to (for unit_master). */
@@ -245,13 +267,14 @@ export function finishLesson(prev: LearnState, r: LessonResult, today: string, r
     if (a.correct) answerSum += answerXp(combo);
   }
   if (answerSum) lines.push({ label: `${right} correct`, xp: answerSum });
+  if (r.bonusXp) lines.push({ label: "Detective points", xp: r.bonusXp });
 
   const stars = r.kind === "lesson" ? starsFor(right, total) : 0;
   const prevStats = s.lessons[r.lessonId];
   if (r.kind === "lesson" && total > 0 && right === total) lines.push({ label: "Perfect lesson", xp: XP.perfect });
   if (r.kind === "lesson" && !prevStats && stars > 0) lines.push({ label: "First clear", xp: XP.firstClear });
 
-  const chest = r.kind === "lesson" && stars > 0 ? chestBonus(roll) : null;
+  const chest = (r.kind === "lesson" && stars > 0) || (r.kind === "coach" && right > 0) ? chestBonus(roll) : null;
   if (chest) lines.push({ label: chest.jackpot ? "Jackpot chest!" : "Chest", xp: chest.xp });
 
   // Daily goal (paid once per day).
@@ -301,7 +324,9 @@ export function finishLesson(prev: LearnState, r: LessonResult, today: string, r
     correct: s.correct + right,
     chests: s.chests + (chest ? 1 : 0),
     blitzBest: r.kind === "blitz" ? Math.max(s.blitzBest, right) : s.blitzBest,
+    detectiveBest: r.kind === "detective" ? Math.max(s.detectiveBest, r.bonusXp ?? 0) : s.detectiveBest,
     badges,
+    history: trimHistory({ ...s.history, [today]: (s.history[today] ?? 0) + gained }, today),
   };
 
   // Badges.

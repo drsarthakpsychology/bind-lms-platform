@@ -205,7 +205,7 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
 }
 
 /* =============================================================== summary */
-function Summary({
+export function Summary({
   result,
   state,
   confetti,
