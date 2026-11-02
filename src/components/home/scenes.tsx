@@ -393,6 +393,7 @@ export function ScenarioStack() {
           </div>
         </StackCard>
       ))}
+      <li aria-hidden className={s.stackRunway} />
     </ol>
   );
 }

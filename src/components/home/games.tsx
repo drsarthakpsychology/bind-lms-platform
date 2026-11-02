@@ -541,9 +541,13 @@ export function Carousel({ children, label }: { children: React.ReactNode; label
 }
 
 /* ------------------------------------------------ Mini game 3: memory */
-type MemCard = { id: string; pair: number; kind: "term" | "meaning"; text: string };
-const MEM_PAIRS_PER_GAME = 6;
-const BEST_KEY = "vibha-memory-best";
+const MATCH_PER_GAME = 6;
+const BEST_KEY = "vibha-match-best";
+/** First board's order is fixed (so server and browser render the same thing)
+ *  but never lines a sign up with its own meaning. Later boards are random. */
+const FIRST_ORDER = [3, 0, 4, 1, 5, 2];
+
+type Pair = { id: number; term: string; meaning: string };
 
 function shuffled<T>(list: readonly T[]): T[] {
   const a = [...list];
@@ -554,21 +558,13 @@ function shuffled<T>(list: readonly T[]): T[] {
   return a;
 }
 
-/** Deterministic deal for the first (server) render; a random deal happens on
- *  the first tap, while every card is still face down, so nothing visible
- *  changes and hydration always matches. */
-function dealCards(random: boolean): MemCard[] {
-  const pool = random ? shuffled(MEMORY_PAIRS).slice(0, MEM_PAIRS_PER_GAME) : MEMORY_PAIRS.slice(0, MEM_PAIRS_PER_GAME);
-  const cards = pool.flatMap((p, i): MemCard[] => [
-    { id: `t${i}`, pair: i, kind: "term", text: p.term },
-    { id: `m${i}`, pair: i, kind: "meaning", text: p.meaning },
-  ]);
-  return random ? shuffled(cards) : cards;
-}
-
-/** Wall-clock read kept outside the component (only ever called from taps). */
-function nowMs(): number {
-  return Date.now();
+function dealBoard(random: boolean): { pairs: Pair[]; right: number[] } {
+  const pool = (random ? shuffled(MEMORY_PAIRS) : MEMORY_PAIRS.slice()).slice(0, MATCH_PER_GAME);
+  const pairs = pool.map((p, i) => ({ id: i, term: p.term, meaning: p.meaning }));
+  let right = random ? shuffled(pairs.map((p) => p.id)) : FIRST_ORDER.slice();
+  // Never leave a meaning directly beside its own sign.
+  if (random && right.some((id, row) => id === row)) right = right.map((_, row) => right[(row + 1) % right.length]);
+  return { pairs, right };
 }
 
 function readBest(): number | null {
@@ -579,145 +575,147 @@ function readBest(): number | null {
     return null;
   }
 }
-function writeBest(moves: number) {
+function writeBest(mistakes: number) {
   try {
-    window.localStorage.setItem(BEST_KEY, String(moves));
+    window.localStorage.setItem(BEST_KEY, String(mistakes));
   } catch {
     /* private mode: best score just isn't kept */
   }
 }
 
+/**
+ * Game 3 — Match the sign. Everything is face up: signs on the left, what
+ * they look like in the room on the right. Tap a sign, then its meaning
+ * (or the other way round). Fewest mistakes wins.
+ */
 export function MemoryGame() {
   const calm = useCalm();
-  const [deck, setDeck] = React.useState<MemCard[]>(() => dealCards(false));
-  const [dealt, setDealt] = React.useState(false);
-  const [up, setUp] = React.useState<number[]>([]);
-  const [miss, setMiss] = React.useState<number[]>([]);
+  const [board, setBoard] = React.useState(() => dealBoard(false));
+  const [pick, setPick] = React.useState<{ side: "term" | "meaning"; id: number } | null>(null);
+  const [miss, setMiss] = React.useState<{ term: number; meaning: number } | null>(null);
   const [matched, setMatched] = React.useState<number[]>([]);
-  const [moves, setMoves] = React.useState(0);
-  const [startedAt, setStartedAt] = React.useState<number | null>(null);
-  const [seconds, setSeconds] = React.useState(0);
+  const [mistakes, setMistakes] = React.useState(0);
   const [best, setBest] = React.useState<number | null>(null);
   const [newBest, setNewBest] = React.useState(false);
   const [say, setSay] = React.useState("");
   const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const done = matched.length === MEM_PAIRS_PER_GAME;
+  const done = matched.length === MATCH_PER_GAME;
 
-  React.useEffect(() => {
-    if (startedAt === null || done) return;
-    const id = setInterval(() => setSeconds(Math.floor((nowMs() - startedAt) / 1000)), 250);
-    return () => clearInterval(id);
-  }, [startedAt, done]);
   React.useEffect(() => () => {
     if (timer.current) clearTimeout(timer.current);
   }, []);
 
-  function flip(i: number) {
-    if (done || miss.length > 0 || up.includes(i)) return;
-    let d = deck;
-    if (!dealt) {
-      d = dealCards(true);
-      setDeck(d);
-      setDealt(true);
-      setStartedAt(nowMs());
-      setBest(readBest());
-    }
-    if (matched.includes(d[i].pair)) return;
-    const next = [...up, i];
-    if (next.length < 2) {
-      setUp(next);
+  function choose(side: "term" | "meaning", id: number) {
+    if (done || miss || matched.includes(id)) return;
+    if (!pick || pick.side === side) {
+      setPick(pick && pick.side === side && pick.id === id ? null : { side, id });
       return;
     }
-    const [a, b] = next;
-    const nextMoves = moves + 1;
-    setMoves(nextMoves);
-    if (d[a].pair === d[b].pair) {
-      const m = [...matched, d[a].pair];
+    const term = side === "term" ? id : pick.id;
+    const meaning = side === "meaning" ? id : pick.id;
+    setPick(null);
+    if (term === meaning) {
+      const m = [...matched, term];
       setMatched(m);
-      setUp([]);
-      const term = d[a].kind === "term" ? d[a].text : d[b].text;
-      if (m.length === MEM_PAIRS_PER_GAME) {
+      if (m.length === MATCH_PER_GAME) {
         const prev = readBest();
-        const isBest = prev === null || nextMoves < prev;
-        if (isBest) writeBest(nextMoves);
-        setBest(isBest ? nextMoves : prev);
+        const isBest = prev === null || mistakes < prev;
+        if (isBest) writeBest(mistakes);
+        setBest(isBest ? mistakes : prev);
         setNewBest(isBest);
-        setSay(`Board cleared in ${nextMoves} moves.`);
+        setSay(`All matched with ${mistakes} mistake${mistakes === 1 ? "" : "s"}.`);
       } else {
-        setSay(`Match: ${term}.`);
+        setSay(`Right: ${board.pairs[term].term}.`);
       }
     } else {
-      setUp(next);
-      setMiss(next);
-      setSay("Not a pair.");
-      timer.current = setTimeout(() => {
-        setUp([]);
-        setMiss([]);
-      }, calm ? 1200 : 950);
+      setMistakes((n) => n + 1);
+      setMiss({ term, meaning });
+      setSay("Not a match. Try again.");
+      timer.current = setTimeout(() => setMiss(null), calm ? 900 : 700);
     }
   }
 
   function again() {
     if (timer.current) clearTimeout(timer.current);
-    setDeck(dealCards(true));
-    setDealt(true);
-    setUp([]);
-    setMiss([]);
+    setBoard(dealBoard(true));
+    setPick(null);
+    setMiss(null);
     setMatched([]);
-    setMoves(0);
-    setSeconds(0);
-    setStartedAt(nowMs());
+    setMistakes(0);
     setNewBest(false);
-    setSay("New board dealt.");
+    setSay("New board.");
   }
 
-  const stars = moves <= 9 ? 3 : moves <= 13 ? 2 : 1;
-  const time = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+  const stars = mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1;
+  const state = (side: "term" | "meaning", id: number) =>
+    matched.includes(id)
+      ? "matched"
+      : miss && miss[side] === id
+        ? "miss"
+        : pick && pick.side === side && pick.id === id
+          ? "picked"
+          : "idle";
 
   return (
     <div className={`${s.console} ${s.consoleWide}`}>
       <div className={s.gameTop}>
         <span>Match the sign</span>
         <span className={s.memHud}>
-          <span>Pairs {matched.length}/{MEM_PAIRS_PER_GAME}</span>
-          <span>Moves {moves}</span>
-          <span>{time}</span>
+          <span>
+            Matched {matched.length}/{MATCH_PER_GAME}
+          </span>
+          <span>Mistakes {mistakes}</span>
           {best !== null ? <span>Best {best}</span> : null}
         </span>
       </div>
       <div className={`${s.screen} ${s.memScreen}`}>
-        <p className={s.memHow}>
-          Tap two cards. Match each sign to what it looks like in the room.
-        </p>
-        <div className={s.memBoard} role="group" aria-label="Memory cards">
-          {deck.map((c, i) => {
-            const isMatched = matched.includes(c.pair);
-            const faceUp = isMatched || up.includes(i);
-            const state = isMatched ? "matched" : miss.includes(i) ? "miss" : faceUp ? "up" : "down";
-            return (
-              <button
-                key={`slot-${i}`}
-                type="button"
-                className={s.memCard}
-                data-state={state}
-                data-kind={c.kind}
-                onClick={() => flip(i)}
-                aria-label={faceUp ? `${c.kind === "term" ? "Sign" : "Looks like"}: ${c.text}` : `Card ${i + 1}, face down`}
-                aria-pressed={faceUp}
-              >
-                <span className={s.memInner} aria-hidden>
-                  <span className={s.memBack}>
-                    <span>✶</span>
-                  </span>
-                  <span className={s.memFace}>
-                    <small>{c.kind === "term" ? "Sign" : "Looks like"}</small>
-                    <b>{c.text}</b>
-                    {isMatched ? <i className={s.memTick}>✓</i> : null}
-                  </span>
-                </span>
-              </button>
-            );
-          })}
+        <p className={s.memHow}>Tap a sign, then what it looks like in the room.</p>
+        <div className={s.matchCols}>
+          <div role="group" aria-label="Signs" className={s.matchCol}>
+            <p className={s.matchColHead}>Sign</p>
+            {board.pairs.map((p) => {
+              const st = state("term", p.id);
+              return (
+                <button
+                  key={`t${p.id}`}
+                  type="button"
+                  className={`${s.matchItem} ${s.matchTerm}`}
+                  data-state={st}
+                  aria-pressed={st === "picked"}
+                  disabled={st === "matched"}
+                  onClick={() => choose("term", p.id)}
+                >
+                  {st === "matched" ? <i className={s.matchTick} aria-hidden>✓</i> : null}
+                  {p.term}
+                </button>
+              );
+            })}
+          </div>
+          <div role="group" aria-label="What it looks like" className={s.matchCol}>
+            <p className={s.matchColHead}>Looks like</p>
+            {board.right.map((id) => {
+              const p = board.pairs[id];
+              const st = state("meaning", id);
+              return (
+                <button
+                  key={`m${id}`}
+                  type="button"
+                  className={s.matchItem}
+                  data-state={st}
+                  aria-pressed={st === "picked"}
+                  disabled={st === "matched"}
+                  onClick={() => choose("meaning", id)}
+                >
+                  {st === "matched" ? (
+                    <i className={s.matchTick} aria-hidden>
+                      ✓
+                    </i>
+                  ) : null}
+                  {p.meaning}
+                </button>
+              );
+            })}
+          </div>
         </div>
         <p className={s.srOnly} aria-live="polite">
           {say}
@@ -734,7 +732,7 @@ export function MemoryGame() {
               <span>{"★".repeat(3 - stars)}</span>
             </p>
             <p className={s.gameVerdict}>
-              Cleared in {moves} moves, {time}.{newBest ? " New best!" : ""}
+              All 6 matched with {mistakes} mistake{mistakes === 1 ? "" : "s"}.{newBest ? " New best!" : ""}
             </p>
             <div className={s.gameEndBtns}>
               <button type="button" className={`${s.btn} ${s.btnLime}`} onClick={again}>

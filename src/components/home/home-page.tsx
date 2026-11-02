@@ -38,6 +38,8 @@ import {
   WHO_FOR,
 } from "./content";
 import { archivo, pixel, pixelDigits } from "./fonts";
+import { INSTRUMENTS } from "@/lib/free/tests";
+import { CALM_TOOLS } from "@/lib/free/calm";
 import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, MemoryGame, TherapyMixer } from "./games";
 import { HomeNav } from "./home-nav";
 import { CountUp, Cursor, Magnetic, Marquee, Parallax, Reveal, ScrollProgress, SectionHead, Tilt } from "./motion-kit";
@@ -219,6 +221,47 @@ function WhatYouGet() {
             </a>
           </Reveal>
         </div>
+        <div className={s.subHead}>
+          <span className={`${s.tag} ${s.tagBlue}`}>Also yours</span>
+          <h3 className={s.h3}>What you keep after the 16 weeks.</h3>
+        </div>
+        <ul className={`${s.beyond} ${s.beyondTight}`}>
+          {BEYOND.map((b, i) => (
+            <Reveal as="li" key={b.title} className={s.beyondCard} delay={(i % 3) * 0.06}>
+              <Art className={s.iconMd} html={iconSvg(b.icon, i % 2 ? "#ffffff" : "#cdf24b")} />
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+            </Reveal>
+          ))}
+        </ul>
+
+        <div className={s.subHead}>
+          <span className={`${s.tag} ${s.tagBlue}`}>Assessed, then certified</span>
+        </div>
+        <ul className={s.grid4}>
+          {ASSESSMENT.map((a, i) => (
+            <Reveal as="li" key={a.title} className={s.card} delay={i * 0.05}>
+              <h4>{a.title}</h4>
+              <p>{a.text}</p>
+            </Reveal>
+          ))}
+        </ul>
+        <Reveal className={s.certificate}>
+          <div>
+            <span className={s.pixLabel}>Your certificate</span>
+            <p>{CERTIFICATE}</p>
+          </div>
+          <Parallax className={s.seal} speed={0} rotate={60}>
+            <Art className={s.fill} html={starSvg(16, 66, 98, "#1d44d8", "#111111")} />
+            <span>
+              Signed
+              <br />
+              by a
+              <br />
+              psychiatrist
+            </span>
+          </Parallax>
+        </Reveal>
       </div>
     </section>
   );
@@ -294,14 +337,53 @@ function EveryDisorder() {
 }
 
 /* ============================================================ WEEKENDS */
-function Weekends() {
+function YourWeek() {
   return (
-    <section id="weekends" className={`${s.section} ${s.blue} ${s.dots}`}>
+    <section id="week" className={`${s.section} ${s.blue} ${s.dots}`}>
       <div className={s.wrap}>
+        <div className={s.headWithArt}>
+          <SectionHead
+            tag="Your week"
+            tone="lime"
+            title="A weekday, a weekend,"
+            accent="and the whole week."
+            sub="Patient batches on weekdays, live discussions with psychiatrists every weekend. Switch between them."
+          />
+          <Person who="curly" className={s.headArt} />
+        </div>
+        <Reveal>
+          <DaySwitch />
+        </Reveal>
+        <ul className={s.weekGrid}>
+          {WEEK.map((w, i) => (
+            <Reveal as="li" key={w.d} className={s.weekDay} delay={i * 0.05} y={16}>
+              <span className={s.weekName}>{w.d}</span>
+              {w.kind === "patient" ? (
+                <span className={`${s.slot} ${s.slotPatient}`}>
+                  Patient batch<small>morning or evening</small>
+                </span>
+              ) : (
+                <span className={`${s.slot} ${s.slotLive}`}>
+                  Live discussion<small>{"time" in w ? w.time : ""}</small>
+                </span>
+              )}
+            </Reveal>
+          ))}
+        </ul>
+        <p className={s.legend}>
+          <span>
+            <i className={s.swLime} /> Everyone, online or in person
+          </span>
+          <span>
+            <i className={s.swInk} /> In-person students
+          </span>
+        </p>
+
+        <div className={s.weekendsSpacer} />
         <div className={s.weekendsGrid}>
           <div className={s.weekendsIntro}>
             <SectionHead
-              tag="Every Saturday and Sunday"
+              tag="Every weekend"
               tone="lime"
               title="What do you do"
               accent="when…?"
@@ -343,6 +425,70 @@ function Play() {
           <Reveal className={s.gamesWide}>
             <MemoryGame />
           </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ===================================================== FREE FOR EVERYONE */
+const FREE_TESTS = INSTRUMENTS.map((i) => ({ href: `/free/tests/${i.id}`, title: i.short, meta: `${i.name} · ${i.minutes} min` }));
+const FREE_CALM = CALM_TOOLS.map((c) => ({ href: `/free/calm/${c.id}`, title: c.title, meta: c.minutes }));
+
+function FreeStrip() {
+  return (
+    <section id="free" className={`${s.section} ${s.white} ${s.grid}`}>
+      <div className={s.wrap}>
+        <div className={s.headWithArt}>
+          <SectionHead
+            tag="Free for everyone"
+            title="Check in with yourself."
+            accent="Then breathe."
+            sub="The questionnaires clinicians use, scored instantly, and calm exercises therapists teach. Free, no sign-up, and your answers never leave your phone."
+          />
+          <Person who="psych" className={s.headArt} />
+        </div>
+        <div className={s.freeCols}>
+          <div>
+            <p className={s.pixLabel}>Self-checks</p>
+            <ul className={s.freeList}>
+              {FREE_TESTS.map((f) => (
+                <li key={f.href}>
+                  <Link href={f.href} className={s.freeItem}>
+                    <span>
+                      <b>{f.title}</b>
+                      <small>{f.meta}</small>
+                    </span>
+                    <span aria-hidden>→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className={s.pixLabel}>Calm</p>
+            <ul className={s.freeList}>
+              {FREE_CALM.map((f) => (
+                <li key={f.href}>
+                  <Link href={f.href} className={`${s.freeItem} ${s.freeItemInk}`}>
+                    <span>
+                      <b>{f.title}</b>
+                      <small>{f.meta}</small>
+                    </span>
+                    <span aria-hidden>→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className={`${s.ctaRow} ${s.freeCta}`}>
+          <Link href="/free" className={`${s.btn} ${s.btnLime}`}>
+            Open all free tools <span aria-hidden>→</span>
+          </Link>
+          <Link href="/free/help" className={`${s.btn} ${s.btnWhite}`}>
+            Who should I see?
+          </Link>
         </div>
       </div>
     </section>
@@ -546,12 +692,15 @@ function Curriculum() {
           <p className={s.ledeSmall}>One module a week, in order. Topics may shift slightly as the cohort runs.</p>
         </div>
         <WeeksTimeline />
-        <details className={s.allModules}>
-          <summary>
-            <span>See all 18 modules</span>
-            <span className={s.chev} aria-hidden />
-          </summary>
-          <ol className={s.modules}>
+        <div className={s.depthPanel} id="in-depth">
+          <span className={`${s.tag} ${s.tagBlue}`}>In depth</span>
+          <h3 className={`${s.h3} ${s.h3Ink}`}>Open any module or skill. See exactly what you learn.</h3>
+          <DepthTabs
+            labels={["All 18 modules", "Psychiatric interview", "MSE", "Case sheet", "Medicines", "Rule it out", "Therapies", "Psychometric tests"]}
+          >
+            {[
+              <div key="all">
+                <ol className={s.modules}>
             {MODULES.map((m) => (
               <li key={m.n} className={s.module}>
                 <span className={s.moduleNum}>{m.n}</span>
@@ -561,15 +710,19 @@ function Curriculum() {
                 </div>
               </li>
             ))}
-          </ol>
-        </details>
+                </ol>
+              </div>,
+              ...depthPanels(),
+            ]}
+          </DepthTabs>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ============================================================ IN DEPTH */
-function Depth() {
+/* ============== IN DEPTH panels (shown as tabs inside the Curriculum section) */
+function depthPanels() {
   const panels = [
     <ul key="i" className={s.grid3}>
       {INTERVIEW.map((g) => (
@@ -715,108 +868,7 @@ function Depth() {
       </p>
     </div>,
   ];
-  return (
-    <section id="in-depth" className={`${s.section} ${s.white} ${s.grid}`}>
-      <div className={s.wrap}>
-        <SectionHead
-          tag="In depth"
-          title="Open any skill."
-          accent="See exactly what you learn."
-          sub="The core skills, one tab each."
-        />
-        <DepthTabs
-          labels={["Psychiatric interview", "MSE", "Case sheet", "Medicines", "Rule it out", "Therapies", "Psychometric tests"]}
-        >
-          {panels}
-        </DepthTabs>
-      </div>
-    </section>
-  );
-}
-
-/* ======================================================== HOW IT RUNS */
-function HowItRuns() {
-  return (
-    <section id="week" className={`${s.section} ${s.blue} ${s.dots}`}>
-      <div className={s.wrap}>
-        <div className={s.headWithArt}>
-          <SectionHead
-            tag="How it runs"
-            tone="lime"
-            title="A day, a week,"
-            accent="and what you keep."
-            sub="Switch between a weekday and a weekend."
-          />
-          <Person who="curly" className={s.headArt} />
-        </div>
-        <Reveal>
-          <DaySwitch />
-        </Reveal>
-        <ul className={s.weekGrid}>
-          {WEEK.map((w, i) => (
-            <Reveal as="li" key={w.d} className={s.weekDay} delay={i * 0.05} y={16}>
-              <span className={s.weekName}>{w.d}</span>
-              {w.kind === "patient" ? (
-                <span className={`${s.slot} ${s.slotPatient}`}>
-                  Patient batch<small>morning or evening</small>
-                </span>
-              ) : (
-                <span className={`${s.slot} ${s.slotLive}`}>
-                  Live discussion<small>{"time" in w ? w.time : ""}</small>
-                </span>
-              )}
-            </Reveal>
-          ))}
-        </ul>
-        <p className={s.legend}>
-          <span>
-            <i className={s.swLime} /> Everyone, online or in person
-          </span>
-          <span>
-            <i className={s.swInk} /> In-person students
-          </span>
-        </p>
-
-        <ul className={s.beyond}>
-          {BEYOND.map((b, i) => (
-            <Reveal as="li" key={b.title} className={s.beyondCard} delay={(i % 3) * 0.06}>
-              <Art className={s.iconMd} html={iconSvg(b.icon, i % 2 ? "#ffffff" : "#cdf24b")} />
-              <h3>{b.title}</h3>
-              <p>{b.text}</p>
-            </Reveal>
-          ))}
-        </ul>
-
-        <div className={s.subHead}>
-          <span className={`${s.tag} ${s.tagLime}`}>Assessed, then certified</span>
-        </div>
-        <ul className={s.grid4}>
-          {ASSESSMENT.map((a, i) => (
-            <Reveal as="li" key={a.title} className={s.card} delay={i * 0.05}>
-              <h4>{a.title}</h4>
-              <p>{a.text}</p>
-            </Reveal>
-          ))}
-        </ul>
-        <Reveal className={s.certificate}>
-          <div>
-            <span className={s.pixLabel}>Your certificate</span>
-            <p>{CERTIFICATE}</p>
-          </div>
-          <Parallax className={s.seal} speed={0} rotate={60}>
-            <Art className={s.fill} html={starSvg(16, 66, 98, "#1d44d8", "#111111")} />
-            <span>
-              Signed
-              <br />
-              by a
-              <br />
-              psychiatrist
-            </span>
-          </Parallax>
-        </Reveal>
-      </div>
-    </section>
-  );
+  return panels;
 }
 
 /* ================================================================= FAQ */
@@ -943,6 +995,9 @@ function Footer() {
             <li>
               <a href="#play">Play the games</a>
             </li>
+            <li>
+              <Link href="/free">Free self-checks &amp; calm</Link>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Legal">
@@ -1012,13 +1067,12 @@ export function HomePage() {
           </div>
         </JourneyScene>
         <EveryDisorder />
-        <Weekends />
+        <YourWeek />
         <Play />
+        <FreeStrip />
         <Faculty />
         <FeesJoin />
         <Curriculum />
-        <Depth />
-        <HowItRuns />
         <Faq />
         <Closing />
       </main>
