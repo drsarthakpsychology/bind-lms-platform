@@ -1,32 +1,6 @@
-import { PageHeader } from "@/components/design-system/page-header";
-import { requireFeature } from "@/lib/flags";
-import { TutorChat } from "@/components/knowledge/tutor-chat";
+import { redirect } from "next/navigation";
 
-/**
- * /practice/tutor — the Psychology Tutor. Grounded Q&A over the authorised
- * book corpus: every answer is retrieval-first (real passages + source
- * citations), with an AI synthesis added only when a no-train provider is on.
- * Gated behind the `knowledge_tutor` feature flag.
- *
- * On mobile the shell provides the gutter and the chat's own header carries
- * the title, so this page only adds the desktop PageHeader (lg+) and lets the
- * conversation fill the viewport (the composer is docked at the bottom of the
- * card, thumb-reachable).
- */
-export default async function TutorPage() {
-  await requireFeature("knowledge_tutor");
-
-  return (
-    <div className="mx-auto max-w-3xl">
-      <div className="hidden lg:block">
-        <PageHeader
-          title="Psychology Tutor"
-          description="Ask anything about psychology and psychiatry. Answers come from the authorised books — Kaplan & Sadock, DSM-5-TR, Stahl, Maudsley, Fish, Ahuja, ICD-11 — with sources."
-        />
-      </div>
-      <div className="lg:mt-6">
-        <TutorChat />
-      </div>
-    </div>
-  );
+/** Retired: the AI Psychology Tutor was removed. Notes and Learn replace it. */
+export default function Retired() {
+  redirect("/practice");
 }

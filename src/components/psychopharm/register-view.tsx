@@ -1,25 +1,15 @@
 "use client";
 
 import * as React from "react";
+import { Points } from "./points";
 
-/**
- * The mechanism register, in plain language for students. The reviewer
- * (clinician) register with source evidence lives in the admin editor only —
- * students don't need the internal dual-register concept.
- */
-export function RegisterView({ plain, mechanism }: { plain?: string; mechanism?: string }) {
+/** How the medicine works: plain words for students, mechanism for clinicians. */
+export function RegisterView({ plain, mechanism, clinician = false }: { plain?: string; mechanism?: string; clinician?: boolean }) {
+  const text = clinician ? (mechanism ?? plain) : (plain ?? mechanism);
   return (
-    <div className="space-y-4">
-      <section>
-        <h2 className="text-h2">What it does in the brain</h2>
-        {plain ? (
-          <p className="text-small">{plain}</p>
-        ) : mechanism ? (
-          <p className="text-small text-muted-foreground">{mechanism}</p>
-        ) : (
-          <p className="text-small text-muted-foreground">Not covered in our sources.</p>
-        )}
-      </section>
-    </div>
+    <section className="space-y-3">
+      <h2 className="text-h2">{clinician ? "Mechanism of action" : "What it does in the brain"}</h2>
+      {text ? <Points text={text} /> : <p className="text-small text-muted-foreground">Not listed yet.</p>}
+    </section>
   );
 }

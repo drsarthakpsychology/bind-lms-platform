@@ -9,6 +9,8 @@ import type { NavItem } from "@/components/navigation/nav-items";
 export const STUDENT_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
   { href: "/courses", label: "Lectures", icon: "play" },
+  { href: "/study", label: "Notes", icon: "bookOpen" },
+  { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
@@ -27,6 +29,8 @@ export const STUDENT_ITEMS: NavItem[] = [
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
   { href: "/courses", label: "Lectures", icon: "play" },
+  { href: "/study", label: "Notes", icon: "bookOpen" },
+  { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
 ];
 
@@ -66,10 +70,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   // (no content editor, no rows) that confused admins with Courses. The route
   // still exists but isn't surfaced; Courses + lessons are the real content.
   { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
-  { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
-  { href: "/admin/corpus/dictate", label: "Record a case", icon: "mic", section: "Content" },
-  { href: "/admin/calibration", label: "Marking check", icon: "target", section: "Content" },
 
   // System — platform health.
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
@@ -105,11 +106,8 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/cards", label: "Study cards" },
-      { href: "/admin/idioms", label: "Idiom bank" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
-      { href: "/admin/corpus/dictate", label: "Record a case" },
-      { href: "/admin/calibration", label: "Marking check" },
       { href: "/admin/modules", label: "Modules", hidden: true },
     ],
   },
@@ -121,6 +119,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/people", label: "Pipeline" },
       { href: "/admin/students", label: "Students" },
+      { href: "/admin/activity", label: "Activity" },
       { href: "/admin/roster", label: "Roster", hidden: true },
       { href: "/admin/enquiries", label: "Enquiries" },
       { href: "/admin/pulse", label: "Progress" },
@@ -174,3 +173,8 @@ export const ADMIN_SIDEBAR: NavItem[] = ADMIN_SECTIONS.map((s) => ({
   exact: s.key === "home",
   match: s.tabs.map((t) => t.href),
 }));
+
+/** Notes and Games only appear in the nav once Learn is unlocked (no links to locked screens). */
+export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {
+  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games");
+}

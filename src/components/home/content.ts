@@ -273,10 +273,7 @@ export const COLLEGES = {
 
 export const FAQ = [
   { q: "How big is the cohort?", a: "Small. We run one cohort at a time, by invitation." },
-  { q: "What if I miss a live discussion?", a: "Every live discussion is recorded and stays available for 3 months on the VIBHA student platform." },
-  { q: "Do the weekend discussions count as internship hours?", a: "Yes. Weekend live discussions count toward your internship hours." },
   { q: "Can I take leave from patient batches?", a: "Up to 2 mental health leaves a month, asked for on WhatsApp the same day. Medical leave by email, with a recent medical certificate." },
-  { q: "Will I get an internship letter?", a: "Yes. Internship and recommendation letters are based on your conduct through the programme." },
   { q: "Can college students do only the internship?", a: "Yes. Clinical internships run with the cohort or on their own." },
   { q: "Why learn medicines if I won't prescribe?", a: "A prescription tells you the likely diagnosis and what to watch for, and lets you work with psychiatrists as part of the team." },
   { q: "Is there a refund policy?", a: "Yes. Read it on the Refund policy page." },
@@ -643,8 +640,6 @@ export const INCLUDED = [
   "Case sheets corrected by a psychiatrist",
   "Treatment and therapy planning for every disorder",
   "Common medicines and their side effects",
-  "Recordings for 3 months · Discord community",
-  "Certificate and internship letter",
 ] as const;
 
 export const FEES = {

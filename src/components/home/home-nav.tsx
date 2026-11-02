@@ -17,6 +17,11 @@ export function HomeNav() {
 
   // Close the menu first (unlocks page scroll), then jump to the section.
   const go = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Links to other pages (like /free) navigate normally.
+    if (!href.startsWith("#")) {
+      setOpen(false);
+      return;
+    }
     e.preventDefault();
     setOpen(false);
     requestAnimationFrame(() => {
@@ -60,7 +65,7 @@ export function HomeNav() {
   return (
     <header className={s.navBar}>
       <div className={`${s.wrap} ${s.navInner}`}>
-        <a href="#top" className={s.brand} aria-label="VIBHA School of Psychology, back to top">
+        <a href="/go/home" className={s.brand} aria-label="VIBHA School of Psychology, home">
           <span className={s.brandMark}>VIBHA</span>
           <span className={s.brandSub}>School of Psychology</span>
         </a>
@@ -113,6 +118,9 @@ export function HomeNav() {
               {n.label}
             </a>
           ))}
+          <Link href="/free" className={s.menuLink} onClick={() => setOpen(false)}>
+            Free self-checks &amp; calm
+          </Link>
         </nav>
         <div className={s.menuActions}>
           <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime}`} onClick={() => setOpen(false)}>

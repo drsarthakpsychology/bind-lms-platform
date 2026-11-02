@@ -46,6 +46,14 @@ const nextConfig: NextConfig = {
       { source: "/terms", destination: "/policies/terms", permanent: true },
       { source: "/terms-and-conditions", destination: "/policies/terms", permanent: true },
       { source: "/refund-policy", destination: "/policies/refund", permanent: true },
+      // Learning moved out of Practice: Notes live at /study, games at /games.
+      // Old links keep working (query strings such as ?domain= are kept).
+      { source: "/study/activities", destination: "/games", permanent: false },
+      { source: "/study/:game(coach|play|detective|scenarios|terms|progress)", destination: "/games/:game", permanent: false },
+      { source: "/practice/learn", destination: "/games", permanent: false },
+      { source: "/practice/learn/:game(coach|play|detective|scenarios|terms|progress)", destination: "/games/:game", permanent: false },
+      { source: "/practice/notes", destination: "/study/notes", permanent: false },
+      { source: "/practice/notes/:id", destination: "/study/notes/:id", permanent: false },
     ];
   },
   async headers() {

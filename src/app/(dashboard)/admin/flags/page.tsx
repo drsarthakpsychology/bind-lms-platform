@@ -4,14 +4,18 @@ import { FlagToggle } from "./flag-toggle";
 
 export const dynamic = "force-dynamic";
 
+/** Retired tools: merged elsewhere, so they are not shown here any more. */
+const RETIRED = new Set(["modules", "rounds", "learning_profile", "personalised_patients", "decoder", "knowledge_tutor"]);
+
 const LABELS: Record<string, string> = {
   case_library: "Case Library",
   checkin: "Weekly Check-in",
   consulting_room: "Consulting Room",
   decoder: "Decoder",
-  ethics: "Ethics",
+  ethics: "Ethics, law & referral (includes Out of Depth)",
   formulation: "Formulation",
   journal: "Journal",
+  learn: "Learn with Chai + Notes (lessons, Coach, games, notes, leaderboard)",
   judgment: "Judgment",
   knowledge_tutor: "Psychology Tutor",
   landmark: "Landmark Cases",
@@ -45,7 +49,7 @@ export default async function AdminFlagsPage() {
         description="Choose how much students see: Hidden (not shown), Live (shown but locked — 'yet to be live'), or Unlock (full access)."
       />
       <div className="mt-6 space-y-2">
-        {(flags ?? []).map((f) => {
+        {(flags ?? []).filter((f) => !RETIRED.has(String(f.key))).map((f) => {
           const key = String(f.key);
           return (
             <FlagToggle

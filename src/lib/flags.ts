@@ -31,7 +31,8 @@ export type FeatureKey =
   | "weak_spots"
   | "checkin"
   | "modules"
-  | "knowledge_tutor";
+  | "knowledge_tutor"
+  | "learn";
 
 export type FlagStatus = "off" | "live" | "unlocked";
 

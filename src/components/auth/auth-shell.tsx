@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
-import { VibhaMark } from "@/components/brand/vibha-logo";
+import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 /**
@@ -12,11 +12,8 @@ export function AuthShell({ title, subtitle, children }: { title: string; subtit
     <div className="grid min-h-svh bg-background lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       <aside className="relative hidden overflow-hidden border-r-2 border-foreground bg-brand p-10 text-brand-foreground lg:flex lg:flex-col lg:justify-between">
         <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.12)_1.3px,transparent_1.4px)] [background-size:22px_22px]" aria-hidden />
-        <Link href="/" className="relative flex items-center gap-2.5">
-          <span className="flex size-10 items-center justify-center rounded-xl border-2 border-foreground bg-primary text-primary-foreground">
-            <VibhaMark size={24} />
-          </span>
-          <span className="text-2xl font-black [font-stretch:125%]">VIBHA</span>
+        <Link href="/go/home" className="relative flex items-center">
+          <VibhaWordmark size={40} tone="lime" />
         </Link>
         <div className="relative space-y-6">
           <p className="text-display text-white">
@@ -36,11 +33,8 @@ export function AuthShell({ title, subtitle, children }: { title: string; subtit
 
       <main className="flex flex-col px-5 py-6 sm:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 lg:invisible" aria-label="VIBHA home">
-            <span className="flex size-9 items-center justify-center rounded-xl border-2 border-foreground bg-primary text-primary-foreground">
-              <VibhaMark size={22} />
-            </span>
-            <span className="text-lg font-black [font-stretch:125%]">VIBHA</span>
+          <Link href="/go/home" className="flex items-center lg:invisible" aria-label="VIBHA home">
+            <VibhaWordmark size={34} />
           </Link>
           <ThemeToggle />
         </div>

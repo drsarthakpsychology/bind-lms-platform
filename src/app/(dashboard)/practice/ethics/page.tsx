@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ETHICS_DILEMMAS, todaysDilemmas } from "@/lib/practice/ethics";
 import { DilemmaFlow } from "./dilemmas";
 import { QuizCheck } from "@/components/practice/quiz-check";
@@ -70,6 +71,17 @@ export default async function EthicsPage() {
         {ETHICS_DILEMMAS.length} dilemmas grounded in MHA 2017, POCSO, and RCI scope.
         Decide before you see the outcome — that&apos;s the skill the clinic never gives you time for.
       </p>
+
+      <Link
+        href="/practice/out-of-depth"
+        className="mt-4 flex items-center justify-between gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-sm font-bold hard-shadow-sm transition-transform hover:-translate-y-0.5"
+      >
+        <span>
+          <span className="block text-eyebrow text-link">Also here</span>
+          Out of depth: when to refer, escalate or stop
+        </span>
+        <span aria-hidden>→</span>
+      </Link>
 
       <div className="mt-6">
         <DilemmaFlow dilemmas={dilemmas} />

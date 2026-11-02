@@ -11,6 +11,7 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { loadCourseOverview } from "@/components/course/course-overview";
 import { StudentHome } from "@/components/course/student-home";
 import { PracticeToolsSection } from "./practice-tools-section";
+import { StudyCard } from "./study-card";
 import { MobileNumberPrompt } from "@/components/profile/mobile-number-prompt";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -98,7 +99,12 @@ export default async function DashboardPage() {
         <StudentHome
           model={main}
           otherCourses={models.filter((m) => m !== main).map((m) => ({ id: m.courseId, title: m.title }))}
-          practice={<PracticeToolsSection />}
+          practice={
+            <div className="space-y-6">
+              <StudyCard />
+              <PracticeToolsSection />
+            </div>
+          }
         />
       ) : null}
     </div>

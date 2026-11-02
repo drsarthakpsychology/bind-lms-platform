@@ -104,7 +104,7 @@ const STEP_HREF: Record<string, string> = {
   consulting_room: "/practice/consulting-room",
   formulation: "/practice/formulation",
   mse: "/practice/mse",
-  rounds: "/practice/rounds",
+  rounds: "/games",
   follow_up: "/practice/consulting-room",
 };
 const STEP_LABEL: Record<string, string> = {

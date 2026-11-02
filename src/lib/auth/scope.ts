@@ -32,6 +32,8 @@ export function lectureOnlyAllowed(pathname: string): boolean {
   if (pathname === "/dashboard") return true;
   if (pathname.startsWith("/courses")) return true;
   if (pathname.startsWith("/practice")) return true;
+  if (pathname.startsWith("/study")) return true;
+  if (pathname.startsWith("/games")) return true;
   if (pathname === "/reflect") return true;
   if (pathname === "/record") return true;
   if (pathname === "/passport") return true;

@@ -8,7 +8,6 @@ import { Bell, Menu, Search } from "lucide-react";
 import { AccountMenu } from "@/components/navigation/account-menu";
 import { toggleSidebar } from "@/components/navigation/sidebar-state";
 import { isImmersiveSessionPath, isInnerStudentPath } from "@/components/navigation/sidebar-gate";
-import { VibhaMark } from "@/components/brand/vibha-logo";
 import { cn } from "@/lib/utils";
 
 function openSearch() {
@@ -69,12 +68,9 @@ export function TopBar({
           className="group/logo flex shrink-0 items-center gap-2 rounded-full pr-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           aria-label="VIBHA home"
         >
-          <span className="flex size-9 items-center justify-center rounded-xl border-2 border-foreground bg-primary text-primary-foreground transition-transform duration-base ease-springy group-hover/logo:-rotate-12">
-            <VibhaMark size={22} className="shrink-0" />
-          </span>
           <span className="leading-none">
-            <span className="block text-lg font-black tracking-tight [font-stretch:125%]">VIBHA</span>
-            <span className="hidden text-[0.55rem] font-pix uppercase text-muted-foreground sm:block">
+            <span className="block text-[1.35rem] font-black tracking-tight [font-stretch:125%]">VIBHA</span>
+            <span className="mt-[3px] block text-[0.56rem] font-pix uppercase tracking-[0.06em] text-muted-foreground">
               {isAdminView ? "Admin" : "School of Psychology"}
             </span>
           </span>

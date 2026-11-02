@@ -54,7 +54,7 @@ export default async function PracticeHubPage() {
   // The recommended card — one shared engine for "what's next" (T140), so any
   // surface always recommends the same thing. ALWAYS states why
   // (B2: reason beats recommendation).
-  const recommendation = user ? await computeResumePrimary(supabase, user.id) : null;
+  const recommendation = user ? await computeResumePrimary(supabase, user.id, flags) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">

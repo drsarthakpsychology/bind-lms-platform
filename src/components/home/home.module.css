@@ -2175,13 +2175,18 @@
 .stack {
   display: flex;
   flex-direction: column;
+  /* Spacing is a flex gap, not item margins: sticky items count their own
+     margins, so uneven margins made the cards unstick at different moments
+     (the earlier cards vanished while the last one was still pinned). */
+  gap: 16svh;
 }
 .stackItem {
   position: sticky;
-  margin-bottom: 16svh;
 }
-.stackItem:last-child {
-  margin-bottom: 0;
+/* Empty runway after the last card: the finished stack stays pinned for a
+   moment, then all six cards leave together. */
+.stackRunway {
+  height: 22svh;
 }
 .stackCard {
   background: var(--white);
@@ -2523,170 +2528,117 @@
   font-weight: 700;
   margin-bottom: 14px;
 }
-.memBoard {
+.matchCols {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: minmax(150px, 1fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 10px;
 }
-@media (max-width: 379px) {
-  .memBoard {
-    grid-auto-rows: minmax(184px, 1fr);
-    gap: 8px;
-  }
-  .memFace {
-    padding: 8px 9px;
-  }
-}
-@media (min-width: 560px) {
-  .memBoard {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: minmax(150px, 1fr);
-  }
-}
 @media (min-width: 820px) {
-  .memBoard {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: minmax(150px, 1fr);
-    gap: 14px;
+  .matchCols {
+    gap: 18px;
   }
 }
-@media (min-width: 1100px) {
-  .memBoard {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-auto-rows: minmax(168px, 1fr);
-  }
-}
-.memCard {
-  position: relative;
-  display: block;
-  width: 100%;
-  min-height: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  perspective: 900px;
-  -webkit-tap-highlight-color: transparent;
-}
-.memInner {
-  position: absolute;
-  inset: 0;
-  display: block;
-  transform-style: preserve-3d;
-  transition: transform 420ms cubic-bezier(0.34, 1.3, 0.64, 1);
-}
-.memCard[data-state="up"] .memInner,
-.memCard[data-state="miss"] .memInner,
-.memCard[data-state="matched"] .memInner {
-  transform: rotateY(180deg);
-}
-.memBack,
-.memFace {
-  position: absolute;
-  inset: 0;
+.matchCol {
   display: flex;
   flex-direction: column;
-  border: var(--line) solid var(--ink);
-  border-radius: 14px;
-  box-shadow: 4px 4px 0 var(--ink);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
+  gap: 8px;
 }
-.memBack {
-  align-items: center;
-  justify-content: center;
-  background-color: var(--ink);
-  background-image: radial-gradient(rgba(205, 242, 75, 0.28) 1.4px, transparent 1.5px);
-  background-size: 12px 12px;
+.matchColHead {
+  font-family: var(--pix);
+  font-size: 0.62rem;
+  text-transform: uppercase;
   color: var(--lime);
-  font-size: 2rem;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease;
 }
-.memBack span {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: var(--ink);
-  border: 2px solid var(--lime);
-}
-@media (hover: hover) {
-  .memCard[data-state="down"]:hover .memBack {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--lime);
-  }
-}
-.memCard[data-state="down"]:active .memBack {
-  transform: translate(2px, 2px);
-  box-shadow: 0 0 0 var(--ink);
-}
-.memFace {
-  transform: rotateY(180deg);
-  justify-content: center;
-  gap: 6px;
+.matchItem {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 12px;
   text-align: left;
-  background: var(--white);
-  color: var(--ink);
-}
-.memCard[data-kind="term"] .memFace {
-  background: var(--lime);
-}
-.memFace small {
-  font-family: var(--pix);
-  font-size: 0.6rem;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: var(--blue);
-}
-.memFace b {
+  font: inherit;
   font-weight: 700;
   font-size: 0.88rem;
   line-height: 1.3;
+  color: var(--ink);
+  background: var(--white);
+  border: var(--line) solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
   overflow-wrap: break-word;
   hyphens: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease;
 }
-.memCard[data-kind="term"] .memFace b {
+.matchTerm {
+  background: var(--lime);
   font-weight: 900;
-  font-size: 1.05rem;
-  line-height: 1.15;
+  font-size: 0.95rem;
+  font-stretch: 82%;
+  overflow-wrap: anywhere;
+  hyphens: manual;
 }
-.memCard[data-state="matched"] .memFace {
+@media (max-width: 480px) {
+  .matchCols {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 8px;
+  }
+  .matchItem {
+    padding: 8px 9px;
+    font-size: 0.8rem;
+  }
+  .matchTerm {
+    font-size: 0.86rem;
+  }
+}
+@media (hover: hover) {
+  .matchItem[data-state="idle"]:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+}
+.matchItem:active {
+  transform: translate(2px, 2px);
   box-shadow: 0 0 0 var(--ink);
+}
+.matchItem:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 2px;
+}
+.matchItem[data-state="picked"] {
+  background: var(--blue);
+  color: var(--white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--lime);
+}
+.matchItem[data-state="miss"] {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--white);
+  animation: shake 320ms ease;
+}
+.matchItem[data-state="matched"] {
+  cursor: default;
+  opacity: 0.72;
+  box-shadow: none;
   border-style: dashed;
 }
-.memTick {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  font-style: normal;
-  font-weight: 900;
-  width: 24px;
-  height: 24px;
+.matchTick {
+  flex: 0 0 22px;
+  height: 22px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--ink);
   color: var(--lime);
-  font-size: 0.8rem;
-}
-.memCard[data-state="miss"] {
-  animation: shake 360ms ease 380ms;
-}
-.memCard[data-state="miss"] .memFace {
-  background: var(--ink);
-  color: var(--white);
-  border-color: var(--ink);
-}
-.memCard[data-state="miss"] .memFace small {
-  color: var(--lime);
+  font-style: normal;
+  font-size: 0.75rem;
 }
 .memEnd {
   margin-top: 18px;
@@ -2709,8 +2661,9 @@
   color: var(--w20);
 }
 @media (prefers-reduced-motion: reduce) {
-  .memInner {
+  .matchItem {
     transition: none;
+    animation: none !important;
   }
 }
 
@@ -4220,4 +4173,100 @@ details[open] > summary .chev {
   .progress {
     display: none;
   }
+}
+
+/* ===================================== gathered sections (no repeats) */
+.tagBlue {
+  background: var(--blue);
+  color: var(--white);
+}
+.beyondTight {
+  margin-top: 0;
+}
+.weekendsSpacer {
+  height: clamp(56px, 8vw, 104px);
+}
+.depthPanel {
+  margin-top: clamp(40px, 6vw, 72px);
+  background: var(--white);
+  color: var(--ink);
+  border: var(--line) solid var(--ink);
+  border-radius: var(--r);
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: clamp(18px, 3.5vw, 40px);
+}
+.h3Ink {
+  color: var(--ink);
+}
+.depthPanel .dtList {
+  margin-top: clamp(20px, 3vw, 32px);
+}
+.depthPanel .modules {
+  margin-top: 0;
+}
+
+/* ===================================================== FREE FOR EVERYONE */
+.freeCols {
+  margin-top: clamp(24px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+}
+@media (min-width: 860px) {
+  .freeCols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.freeList {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+.freeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 62px;
+  padding: 12px 18px;
+  background: var(--white);
+  color: var(--ink);
+  border: var(--line) solid var(--ink);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease;
+}
+.freeItem:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.freeItem:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--ink);
+}
+.freeItem b {
+  display: block;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.freeItem small {
+  display: block;
+  font-family: var(--pix);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-top: 2px;
+}
+.freeItemInk {
+  background: var(--ink);
+  color: var(--white);
+}
+.freeItemInk small {
+  color: var(--lime);
+}
+.freeCta {
+  margin-top: 28px;
 }

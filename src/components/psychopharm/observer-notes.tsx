@@ -42,12 +42,12 @@ export function ObserverNotes({
       {classObs.length ? (
         <ul className="list-disc space-y-1 pl-5 text-small">
           {classObs.flatMap((c) =>
-            c.observations.map((o, i) => <li key={i}>{o.observation}</li>),
+            c.observations.map((o, i) => <li key={`${c.class}-${i}`}>{o.observation}</li>),
           )}
         </ul>
       ) : (
         <p className="text-small text-muted-foreground">
-          Not yet written for this class in our sources.
+          Not written for this class yet.
         </p>
       )}
 
@@ -96,7 +96,7 @@ export function ObserverNotes({
             Things experienced psychologists often remember
           </h3>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-small">
-            {allPearls.flatMap((c) => c.pearls.map((p, i) => <li key={i}>{p}</li>))}
+            {allPearls.flatMap((c, ci) => c.pearls.map((p, i) => <li key={`${ci}-${i}`}>{p}</li>))}
           </ul>
         </div>
       ) : null}
@@ -132,7 +132,7 @@ export function ObserverNotes({
               </div>
             ))}
           </div>
-          <p className="mt-1 text-caption text-muted-foreground">Illustrative scenario — not a sourced clinical claim.</p>
+          <p className="mt-1 text-caption text-muted-foreground">Example scenario, for practice.</p>
         </div>
       ) : null}
     </section>

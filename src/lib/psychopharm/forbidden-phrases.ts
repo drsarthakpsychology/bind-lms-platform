@@ -137,7 +137,7 @@ export const DOSE_CAVEAT =
  * The standing notice shown on every screen of the tool.
  */
 export const STANDING_NOTICE =
-  "Educational reference from named textbooks, reviewed by a psychiatrist. For people who do not prescribe. Not advice about any individual — the prescriber and the label always take precedence.";
+  "Educational summary, reviewed by a psychiatrist. For people who do not prescribe. Not advice about any individual: the prescriber and the medicine label always come first.";
 
 /**
  * The one-time acknowledgement text, recorded per user.

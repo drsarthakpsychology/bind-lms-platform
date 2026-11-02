@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
+import { Bell, BookOpen, Gamepad2, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { isImmersiveSessionPath } from "./sidebar-gate";
@@ -26,11 +26,14 @@ const STUDENT_TABS: Tab[] = [
   { href: "/wall", label: "Wall", icon: MessageSquare },
 ];
 
+const STUDY_TAB: Tab = { href: "/study", label: "Notes", icon: BookOpen };
+const GAMES_TAB: Tab = { href: "/games", label: "Games", icon: Gamepad2 };
+
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
   { href: "/admin", label: "Home", icon: Home, exact: true },
   { href: "/admin/emails", label: "Mail", icon: Mail },
-  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
+  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/activity", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
   { href: "/admin/triage", label: "Review", icon: Inbox, match: ["/admin/submissions", "/admin/sim-review", "/admin/supervision", "/admin/wall-reports"] },
 ];
 
@@ -51,21 +54,21 @@ const LECTURE_ONLY_TABS: Tab[] = [
 export function BottomTabBar({
   mode = "student",
   scope = "full",
+  showStudy = false,
 }: {
   mode?: "student" | "admin";
   scope?: "full" | "lectures_only";
+  showStudy?: boolean;
 }) {
   const pathname = usePathname() ?? "";
   const reduce = useReducedMotion();
-  const tabs =
-    mode === "admin"
-      ? ADMIN_TABS
-      : scope === "lectures_only"
-        ? LECTURE_ONLY_TABS
-        : STUDENT_TABS;
+  const base = mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : STUDENT_TABS;
+  // When learning is unlocked the phone tabs are Home, Lectures, Notes, Games
+  // (four destinations plus More): Practice, Wall and Alerts move into More.
+  const tabs = mode !== "admin" && showStudy ? [base[0], base[1], STUDY_TAB, GAMES_TAB] : base;
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
   if (focusedPath) return null;
 
   const cell =

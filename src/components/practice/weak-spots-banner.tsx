@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Radar, ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots } from "@/lib/practice/weak-spots";
+import { readFlags } from "@/lib/flags";
 
 /**
  * The dismissible weak-spots banner (B2: Weak Spots leaves the grid).
@@ -9,6 +10,8 @@ import { analyzeWeakSpots } from "@/lib/practice/weak-spots";
  * "Generate drill" link. Rendered on /practice.
  */
 export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
+  // Never advertise a drill the student can't open.
+  if ((await readFlags()).weak_spots !== "unlocked") return null;
   const supabase = await createClient();
   const {
     data: { user },

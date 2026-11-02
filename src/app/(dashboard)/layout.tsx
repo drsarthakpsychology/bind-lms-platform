@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 import { AppShell } from "@/components/app-shell";
+import { readFlags } from "@/lib/flags";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
@@ -79,6 +80,7 @@ export default async function DashboardLayout({
       mode={mode}
       scope={effectiveScope}
       email={session.profile.email}
+      showStudy={(await readFlags()).learn === "unlocked"}
       viewModeSwitch={
         role === "admin" ? (
           <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />

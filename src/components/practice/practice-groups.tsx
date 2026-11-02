@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown, Lock, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
+import { ChevronDown, Lock, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 
@@ -25,6 +25,7 @@ export const PRACTICE_ICONS: Record<string, LucideIcon> = {
   graduationCap: GraduationCap,
   wand2: Wand2,
   repeat: Repeat,
+  sparkles: Sparkles,
 };
 
 /** A practice card's data (serializable — passed over the Server→Client boundary). */

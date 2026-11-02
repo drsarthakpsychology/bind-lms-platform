@@ -68,7 +68,7 @@ export default async function SettingsPage() {
         {/* Shortcuts — quick jumps, kept honest (they don't change settings). */}
         <MobileSection title="Shortcuts" description="Quick jumps around the programme.">
           <MobileListItem
-            href="/practice/modules"
+            href="/courses"
             leading={<span className="font-mono text-xs font-bold text-link">01</span>}
             title="Course modules"
             subtitle="Browse the curriculum — locked ones say why."
