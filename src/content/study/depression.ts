@@ -349,6 +349,37 @@ Blood count, thyroid function, glucose, kidney and liver function, B12 and folat
 3. Name five differential diagnoses of depression. || Bipolar depression, adjustment disorder, grief, dysthymia, negative schizophrenia, dementia, medical causes.
 :::
 
+## 3.3 Depression with physical illness [core]
+Depression is two to three times more common in people with chronic physical illness, and it **worsens the physical outcome**: more pain, poorer self-care, worse adherence and higher death rates.
+
+| Physical condition | What to know |
+|---|---|
+| **Heart disease** (after a heart attack) | Depression raises the risk of further cardiac events and death; **sertraline** is well studied and safe; avoid TCAs |
+| **Diabetes** | Depression worsens glucose control; some antipsychotics and mirtazapine raise weight; SSRIs and CBT help |
+| **Stroke** | Post-stroke depression is common, especially in the first year; it slows rehabilitation; SSRIs help |
+| **Parkinson's disease** | Depression and anxiety are common and may come before the movement symptoms |
+| **Hypothyroidism** | Can mimic depression (slowness, weight gain, tiredness); always check TSH |
+| **Cancer** | Distinguish depression from normal sadness and from the body effects of cancer and its treatment |
+| **HIV, tuberculosis** | Depression lowers adherence to treatment; **efavirenz** and some TB medicines can affect mood |
+| **Chronic pain** | Two-way link; duloxetine or low-dose amitriptyline help both |
+
+:::trap Don't count only body symptoms
+In physical illness, fatigue, poor appetite and poor sleep may come from the illness itself. Lean on **psychological symptoms**: hopelessness, worthlessness, guilt, loss of interest, suicidal thoughts. The **Hospital Anxiety and Depression Scale (HADS)** avoids body symptoms for this reason.
+:::
+
+### Questions that help in the medical ward
+- "How has your mood been since the illness began?"
+- "Are you still able to enjoy anything, even small things?"
+- "Do you feel hopeless about the future?"
+- "Have you felt life is not worth living?"
+
+:::recall
+1. Which antidepressant is well studied after a heart attack? || Sertraline.
+2. Why are body symptoms less useful for diagnosing depression in physical illness? || The illness itself causes them.
+3. Which scale avoids body symptoms? || Hospital Anxiety and Depression Scale.
+4. Which HIV medicine can affect mood? || Efavirenz.
+:::
+
 # Part IV · Treating it
 
 ## 4.1 Stepped care [core]
@@ -429,6 +460,50 @@ Depression carries a high lifetime risk of suicide. Risk is highest early in an 
 4. When is suicide risk especially high in depression? || Early in the episode, after discharge, high hopelessness, early recovery.
 :::
 
+## 4.3 ECT and brain stimulation in depth [core]
+### How ECT is given
+1. **Assessment**: indication, physical health (heart, lungs, teeth), anaesthetic review, medicines (stop or reduce lithium, benzodiazepines and anticonvulsants if possible; they raise the seizure threshold or cause confusion).
+2. **Consent**: written informed consent; under the MHCA, the person's own consent if they have capacity, or as per supported decision-making provisions; never without anaesthesia and muscle relaxant.
+3. **The session**: fasting, short-acting anaesthetic (thiopentone, propofol, ketamine), muscle relaxant (**succinylcholine**), oxygen, then a brief electrical stimulus to produce a seizure of about **25 seconds or more** (monitored by EEG).
+4. **Course**: usually **2 to 3 times a week**, 6 to 12 sessions; response often seen after a few sessions.
+5. **Continuation or maintenance**: ECT or medicines after the course to prevent relapse (relapse is high without it).
+
+### Electrode placement
+| Placement | Speed and efficacy | Memory effects |
+|---|---|---|
+| **Bilateral** (bitemporal) | Fastest, most effective | More memory effects |
+| **Right unilateral** | Effective at higher doses | Fewer memory effects |
+| Bifrontal | Intermediate | Intermediate |
+
+### Safety
+- **No absolute contraindications**; the main relative ones are **raised intracranial pressure** (space-occupying lesion), recent heart attack or stroke, and high anaesthetic risk.
+- Death rate is very low, similar to minor anaesthesia.
+- Side effects: headache, muscle aches, short-term confusion, **memory loss** around the treatment period (usually recovers within weeks; some gaps for events around the course can remain).
+- **Safe in pregnancy** with obstetric support; often used in severe or psychotic depression in pregnancy.
+
+### How does it work?
+- Not fully known. ECT increases **BDNF** and neuroplasticity, raises GABA (the seizure threshold rises over a course), normalises the **HPA axis**, and changes connectivity in mood circuits.
+
+### Other brain stimulation
+| Method | What it is | Use |
+|---|---|---|
+| **rTMS** (repetitive transcranial magnetic stimulation) | A magnetic coil over the **left dorsolateral prefrontal cortex**; awake, no anaesthesia; daily sessions for weeks | Depression not responding to medicines; few side effects (scalp discomfort, headache; rare seizures) |
+| **tDCS** (transcranial direct current) | Weak current through scalp electrodes | Research and some clinical use |
+| Vagus nerve stimulation | Implanted device | Chronic resistant depression (specialist) |
+| Deep brain stimulation | Implanted electrodes | Research for very resistant depression |
+
+:::sounds Explaining ECT to a family
+"ECT today is not like the old films. Your mother will be fully asleep under anaesthesia, and a medicine relaxes her muscles so her body hardly moves. A small current causes a brief controlled seizure in the brain for less than a minute. Most people wake up within minutes, a little confused for a while. It is one of the most effective treatments we have for severe depression like hers."
+:::
+
+:::recall
+1. Which muscle relaxant is used in ECT? || Succinylcholine.
+2. What is the minimum seizure length usually aimed for? || About 25 seconds.
+3. Compare bilateral and right unilateral ECT. || Bilateral: faster and stronger but more memory effects; right unilateral: fewer memory effects.
+4. Name the main relative contraindication to ECT. || Raised intracranial pressure.
+5. Where is the rTMS coil placed for depression? || Over the left dorsolateral prefrontal cortex.
+:::
+
 # Part V · Exam zone
 
 ## 5.1 Long answer and short notes [core]
@@ -478,6 +553,14 @@ Three augmentation options? :: Lithium, an atypical antipsychotic, thyroid hormo
 Fastest, most effective treatment for psychotic depression? :: ECT.
 What does PHQ-9 item 9 ask about? :: Thoughts of being better off dead or of self-harm.
 Grief vs depression in one line? :: Grief comes in waves with self-esteem kept; depression is pervasive with worthlessness.
+Antidepressant studied after a heart attack? :: Sertraline.
+Scale avoiding body symptoms for depression in illness? :: HADS.
+Muscle relaxant in ECT? :: Succinylcholine.
+Usual ECT frequency? :: 2 to 3 times a week.
+Placement with fewest memory effects? :: Right unilateral.
+Main relative contraindication to ECT? :: Raised intracranial pressure.
+Is ECT safe in pregnancy? :: Yes, with obstetric support.
+rTMS target for depression? :: Left dorsolateral prefrontal cortex.
 :::
 
 ## 5.3 Module test [core]
@@ -588,5 +671,26 @@ Q: In grief, compared with depression:
 - Psychotic features are common
 - Anhedonia is pervasive
 > Classic distinction.
+
+Q: A man is low after a heart attack. The safest antidepressant choice is usually:
+- Amitriptyline
+- *Sertraline
+- Dothiepin
+- Lithium alone
+> TCAs are avoided in heart disease.
+
+Q: Which is a relative contraindication to ECT?
+- Pregnancy
+- Old age
+- *Raised intracranial pressure
+- Psychotic depression
+> Pregnancy and old age are not contraindications.
+
+Q: Compared with bilateral ECT, right unilateral ECT:
+- Works faster
+- *Has fewer memory side effects
+- Needs no anaesthesia
+- Is contraindicated in older adults
+> Bilateral is faster but affects memory more.
 :::
 `;

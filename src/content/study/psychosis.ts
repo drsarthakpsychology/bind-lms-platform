@@ -136,6 +136,45 @@ Acute, brief psychoses, often with a stressor, confusion-like features or posses
 5. Name six medical causes of psychosis. || Epilepsy, anti-NMDA encephalitis, thyroid, SLE, HIV, neurosyphilis, tumour, B12, Wilson's.
 :::
 
+## 1.4 Red flags for an organic cause [core]
+Most psychosis seen in clinics is primary, but missing a medical cause can be fatal. These features should make you **look harder**.
+
+| Red flag | Think of |
+|---|---|
+| **Confusion, fluctuating consciousness, disorientation** | Delirium (infection, metabolic, drugs, withdrawal) |
+| **Visual, tactile or olfactory hallucinations** predominating | Delirium, epilepsy, substances, Lewy body dementia |
+| **First episode after 40 to 45** | Brain tumour, stroke, dementia, endocrine |
+| **Seizures, abnormal movements, catatonia, autonomic instability** | **Anti-NMDA receptor encephalitis**, other encephalitis |
+| Headache, vomiting, focal signs | Space-occupying lesion, raised pressure |
+| Recent infection, fever, rash, joint pains | Encephalitis, SLE |
+| Rapid cognitive decline, myoclonus | Prion disease |
+| Tremor, liver disease, Kayser–Fleischer rings, young age | **Wilson's disease** |
+| Weight loss, palpitations or slowness, goitre | Thyroid disease |
+| Risk behaviours | HIV, neurosyphilis |
+| Substance use, timing linked to use | Substance-induced psychosis |
+
+:::define Anti-NMDA receptor encephalitis
+An autoimmune encephalitis, most often in **young women** (sometimes with an **ovarian teratoma**), that starts with **psychiatric symptoms** (anxiety, agitation, psychosis, catatonia) then progresses to **seizures, abnormal movements (especially mouth and face), falling consciousness and autonomic instability**. Diagnosis: antibodies in CSF, EEG, MRI. Treatment: immunotherapy and tumour removal. **Very sensitive to antipsychotics** (can mimic NMS).
+:::
+
+### Postpartum psychosis
+- Onset usually within **the first 2 weeks** after delivery, often suddenly; about **1 to 2 per 1000** births.
+- Confusion, rapidly changing mood (often manic or mixed), delusions about the baby, insomnia, odd behaviour.
+- Strongly linked to **bipolar disorder** (personal or family history).
+- A **psychiatric emergency**: risk of suicide and infanticide. Admit (ideally to a mother-and-baby unit), treat (antipsychotic, mood stabiliser, ECT is very effective), keep mother and baby together safely when possible.
+
+### Psychosis across the lifespan
+- **Childhood-onset schizophrenia** (before 13): rare, severe, more insidious, more neurodevelopmental problems.
+- **Late-onset** (after 40) and **very late-onset** (after 60) psychosis: more women, more persecutory delusions and hallucinations, fewer negative symptoms; sensory impairment (hearing loss) and social isolation are risk factors. Lower antipsychotic doses.
+- **Psychosis of epilepsy**: ictal, post-ictal (after a cluster of seizures, after a lucid interval) and interictal forms.
+
+:::recall
+1. Name five red flags for an organic psychosis. || Confusion, visual or tactile hallucinations, onset after 40, seizures or abnormal movements, focal signs, fever.
+2. Describe anti-NMDA receptor encephalitis. || Autoimmune encephalitis in young women, psychosis then seizures, dyskinesias, autonomic instability; ovarian teratoma.
+3. When does postpartum psychosis start and what is it linked to? || Within 2 weeks of delivery; bipolar disorder.
+4. Name two risk factors for very late-onset psychosis. || Hearing loss, social isolation (female sex).
+:::
+
 # Part II · Why it happens and how it runs
 
 ## 2.1 Causes [core]
@@ -251,6 +290,66 @@ The longer psychosis goes untreated, the worse the outcome. Early intervention m
 4. Name four psychosocial interventions with evidence. || Family intervention, CBTp, psychoeducation, supported employment, social skills, cognitive remediation.
 :::
 
+## 2.4 Early intervention and the at-risk mental state [core]
+:::define At-risk mental state (clinical high risk)
+A young person seeking help with **attenuated psychotic symptoms** (unusual beliefs or perceptions below the threshold of psychosis), **brief limited psychotic episodes** (lasting less than a week and resolving on their own), or **genetic risk with a recent fall in functioning**.
+:::
+- About **a fifth to a third** go on to psychosis within 2 to 3 years; many others have depression or anxiety.
+- Treatment: monitoring, CBT, treating depression and anxiety, stopping cannabis, family support. **Antipsychotics are not routinely given** before psychosis develops.
+
+### Early intervention services
+- Aim to cut the **duration of untreated psychosis** and give intensive, youth-friendly care for the first 3 to 5 years: medicine at low doses, CBT, family work, education and employment support, physical health care.
+- The "**critical period**" idea: much of the disability develops in the first few years, so this is where help counts most.
+
+### Expressed emotion and family work in depth
+| Component of high expressed emotion | Example |
+|---|---|
+| **Critical comments** | "He's lazy, he just lies around all day." |
+| **Hostility** | Rejection: "I'm sick of him; he should go." |
+| **Emotional over-involvement** | Excessive worry, self-sacrifice, intrusiveness: "I can't leave him alone for a minute; I've given up my job." |
+| (Protective) Warmth and positive remarks | "He tried hard to help with dinner today." |
+
+- High expressed emotion **doubles or triples relapse** risk; more face-to-face contact with high-EE relatives raises it further.
+- Family intervention (at least 10 sessions over months): psychoeducation, communication training, problem-solving, reducing criticism, support for carers. **Reduces relapse and admissions**.
+
+:::sounds Reframing for a family
+Mother: "He's just lazy. He won't even bathe."
+Clinician: "It can look like laziness. Lack of drive is actually one of the symptoms, called negative symptoms. It's not something he chooses. Small, regular routines with praise work better than pushing; let's plan one or two together."
+:::
+
+:::recall
+1. What are the three types of at-risk mental state? || Attenuated psychotic symptoms, brief limited psychotic episodes, genetic risk with functional decline.
+2. Are antipsychotics routinely given in at-risk states? || No.
+3. Name the three components of high expressed emotion. || Critical comments, hostility, emotional over-involvement.
+4. What does family intervention reduce? || Relapse and admissions.
+:::
+
+## 2.5 Talking therapy for voices and beliefs [core]
+### CBT for psychosis (CBTp)
+- **Engage** around the person's goals ("being able to go to the market without fear"), not around convincing them they are ill.
+- **Normalise**: many people hear voices at some point (bereavement, sleep loss, stress); voices are an experience, not a verdict.
+- **Map the experience**: when do voices come? What do they say? What do you believe about them? How do you respond?
+- **Beliefs about voices** drive distress more than the voices themselves: belief that the voice is **all-powerful (omnipotence)**, **malevolent**, and must be obeyed. Testing these beliefs reduces distress and compliance with commands.
+- **Coping strategies**: humming, music, talking to someone, earplug in one ear, focusing attention elsewhere, answering back calmly at set times.
+- For delusions: gently explore evidence and alternative explanations; **behavioural experiments**; never argue head-on.
+
+:::trap Arguing makes delusions stronger
+Telling a patient "that's impossible, the neighbours aren't poisoning you" usually makes them defend the belief and distrust you. Instead, explore with curiosity: "What makes you think that? What would help you feel safer? Is there any other way to explain it?"
+:::
+
+### Rehabilitation and recovery
+- **Recovery** means living a meaningful life with or without symptoms: work, relationships, hope, identity beyond illness.
+- In India: **day care centres**, half-way homes, vocational training, **supported employment**, self-help groups.
+- **Disability certification** under the RPwD Act (mental illness is a benchmark disability at 40% or more, assessed with the **IDEAS** scale) opens access to benefits, pensions and concessions.
+- **District Mental Health Programme** and **Tele-MANAS** support community care.
+
+:::recall
+1. What drives distress from voices more than the voices themselves? || Beliefs about their power, malevolence and need to obey.
+2. Name three coping strategies for voices. || Humming, music, talking to someone, attention focus, earplug.
+3. Which scale is used for mental illness disability certification in India? || IDEAS.
+4. Define recovery in one line. || A meaningful life, with or without symptoms.
+:::
+
 # Part III · Catatonia
 
 ## 3.1 Recognising and treating catatonia [core]
@@ -344,6 +443,15 @@ How many catatonic signs are needed? :: Three of twelve.
 Commonest cause of catatonia? :: Mood disorders.
 First-line treatment of catatonia? :: Lorazepam; ECT if no response.
 A medical cause that mimics first-episode psychosis? :: Anti-NMDA receptor encephalitis.
+Autoimmune encephalitis mimicking psychosis in young women? :: Anti-NMDA receptor encephalitis.
+Tumour associated with it? :: Ovarian teratoma.
+Postpartum psychosis onset? :: Usually within 2 weeks of delivery.
+Postpartum psychosis is linked to? :: Bipolar disorder.
+Risk factor for very late-onset psychosis? :: Hearing loss.
+Proportion of at-risk youth developing psychosis in 2 to 3 years? :: About a fifth to a third.
+Three components of high expressed emotion? :: Critical comments, hostility, emotional over-involvement.
+What drives distress from voices? :: Beliefs about the voices.
+Indian disability scale for mental illness? :: IDEAS.
 :::
 
 ## 4.3 Module test [core]
@@ -445,5 +553,33 @@ Q: Duration of untreated psychosis is important because:
 - It predicts better recovery
 - It only matters in older patients
 > Early intervention improves outcomes.
+
+Q: A 24-year-old woman develops anxiety and psychosis, then seizures, mouth dyskinesias and fluctuating BP. The most likely diagnosis is:
+- Schizophrenia
+- NMS
+- *Anti-NMDA receptor encephalitis
+- Conversion disorder
+> Look for an ovarian teratoma.
+
+Q: Ten days after delivery, a woman with a family history of bipolar disorder is confused, elated and says her baby is the devil. The best action is:
+- Reassure: baby blues
+- Outpatient review in a month
+- *Urgent admission as a psychiatric emergency
+- Start an SSRI alone
+> Risk to mother and baby.
+
+Q: A mother says, "I can't leave him alone even for a minute; I've given up everything." This is:
+- Critical comments
+- Hostility
+- *Emotional over-involvement
+- Warmth
+> A component of high expressed emotion.
+
+Q: In CBT for psychosis, distress from command voices is most reduced by:
+- Arguing that voices don't exist
+- *Testing beliefs about the voices' power and need to obey
+- Avoiding all discussion of voices
+- Increasing benzodiazepines
+> Beliefs drive distress and compliance.
 :::
 `;

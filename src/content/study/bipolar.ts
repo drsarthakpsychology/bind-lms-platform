@@ -106,6 +106,41 @@ If psychotic features are present, it is mania, whatever the duration or impairm
 4. Why are mixed states dangerous? || High suicide risk: despair with energy and impulsivity.
 :::
 
+## 1.3 Finding hypomania: the history that is often missed [core]
+People with bipolar disorder spend far more time depressed than high, and they seek help when depressed. **Hypomania feels good** and is rarely reported. So bipolar II is often missed for **years**, and treated as recurrent depression.
+
+### Questions to ask every depressed patient
+- "Has there been a time, lasting a few days, when you felt the opposite of depressed: unusually happy, energetic or irritable?"
+- "Did you need much less sleep but not feel tired?"
+- "Did others say you were talking more, faster, or were different from your usual self?"
+- "Did you start many projects, spend more, or do things that were out of character?"
+- Ask a **family member**: they notice hypomania more than the patient does.
+
+### Clues in a depressed patient that point to bipolar disorder
+| Clue | Why it matters |
+|---|---|
+| Onset before 25 | Earlier onset is more common in bipolar depression |
+| Many episodes, abrupt onset and offset | Bipolar pattern |
+| **Atypical features** (oversleeping, overeating, leaden heaviness) | More common in bipolar depression |
+| **Psychotic features** in young people | |
+| **Postpartum** onset | |
+| **Family history of bipolar disorder** | Strongest clue |
+| Antidepressant-induced high, agitation or "poop-out" (losing effect) | Possible bipolarity |
+| Mixed features, irritability, racing thoughts during depression | |
+
+### Scales
+| Scale | Use |
+|---|---|
+| **Mood Disorder Questionnaire (MDQ)** | Screening for lifetime manic or hypomanic symptoms |
+| **Hypomania Checklist (HCL-32)** | Screening for hypomania |
+| **YMRS** (Young Mania Rating Scale) | Severity of current mania (11 items, clinician-rated) |
+
+:::recall
+1. Why is bipolar II often missed? || Hypomania feels good, is rarely reported, and patients present when depressed.
+2. Name five clues in a depressed patient that suggest bipolar disorder. || Early onset, many episodes, atypical features, psychotic features, postpartum onset, family history, antidepressant-induced high.
+3. Which scales screen for hypomania? || MDQ and HCL-32.
+:::
+
 # Part II · The disorders
 
 ## 2.1 Bipolar I, bipolar II and cyclothymia [core]
@@ -186,6 +221,38 @@ Elated and labile affect, irritable when contradicted; pressure of speech with f
 1. List five features that should make you suspect bipolarity in a depressed patient. || Early onset, many abrupt episodes, atypical or psychotic features, postpartum onset, family history, antidepressant switch.
 2. How do you tell borderline mood instability from bipolar disorder? || Borderline shifts last hours and react to relationships; bipolar episodes last days to weeks with sleep and energy change.
 3. How do you tell ADHD from mania? || ADHD is lifelong, not episodic, without decreased need for sleep.
+:::
+
+## 2.4 Bipolar disorder in special groups [core]
+### Women: pregnancy and after birth
+- Stopping mood stabilisers in pregnancy carries a **high relapse risk**.
+- The **postpartum period** is the highest-risk time of a woman's life for a bipolar episode, including **postpartum psychosis**.
+- Plan before conception: choose safer medicines (avoid valproate), folic acid, discuss risks honestly, plan for delivery and sleep protection after birth.
+
+### Children and adolescents
+- Mania in young people can look like **irritability, explosive anger and sleep loss**. Overdiagnosis is a risk.
+| | Bipolar disorder | ADHD |
+|---|---|---|
+| Course | **Episodic**: clear change from usual self | **Continuous** since early childhood |
+| Grandiosity, decreased need for sleep | Present in episodes | Absent |
+| Euphoria | Present | Absent |
+| Distractibility, hyperactivity | During episodes | All the time |
+- Chronic, non-episodic irritability with frequent temper outbursts suggests **disruptive mood dysregulation disorder**, not bipolar.
+
+### Older adults
+- **New mania after 50** suggests a **secondary cause**: stroke (especially right-sided), tumour, dementia, thyroid disease, steroids and other medicines. Investigate with imaging.
+- Lower lithium levels may be enough; toxicity occurs at lower levels.
+
+### Substances and comorbidity
+- Alcohol and cannabis use are very common and worsen the course (more episodes, mixed states, suicide).
+- **Anxiety disorders, ADHD, migraine and metabolic syndrome** often co-exist.
+- Steroids, stimulants, antidepressants, levodopa and thyroxine can trigger mania.
+
+:::recall
+1. What is the highest-risk time for a bipolar episode in women? || After childbirth.
+2. How do you tell bipolar disorder from ADHD in a child? || Bipolar is episodic with euphoria and less need for sleep; ADHD is continuous since early childhood.
+3. What should new mania after 50 prompt? || A search for a secondary cause, with imaging.
+4. Name three medicines that can trigger mania. || Steroids, antidepressants, stimulants, levodopa, thyroxine.
 :::
 
 # Part III · Treatment
@@ -274,6 +341,42 @@ Drink enough fluids, especially in summer and with fever or diarrhoea; avoid ove
 2. Name four poor prognostic factors. || Poor adherence, rapid cycling, mixed states, substance use, psychotic features.
 :::
 
+## 3.5 Managing mania on the ward and the relapse signature [core]
+### The environment and the approach
+- **Low stimulation**: a quiet room, few visitors, limited phone use; restore sleep.
+- **Clear, calm limits** given consistently by all staff, without arguing or rising to provocation.
+- **Protect** finances (cards, phones), reputation (social media), relationships, and sexual safety.
+- Avoid confrontation over grandiose ideas; redirect to practical goals ("Let's get your sleep back first").
+
+### De-escalation before medication
+1. Keep a safe distance, open posture, calm low voice.
+2. Listen and acknowledge the feeling ("You're frustrated that you can't leave").
+3. Offer choices ("Would you like to sit here or walk in the corridor?").
+4. Offer **oral medicine** before injection.
+5. Rapid tranquillisation only if de-escalation fails and there is danger, then monitor.
+
+### Legal frame
+- Many manic patients lack insight and capacity to decide on admission. Use the **least restrictive** option and MHCA provisions (supported admission), with family as nominated representatives where appropriate.
+
+### A relapse signature: worked example
+| Stage | Ravi's signs | Agreed action |
+|---|---|---|
+| **Early** | Sleeping 5 hours and feeling fine; making many plans; calling friends late | Keep routine; cut caffeine; tell wife; contact clinic within a week |
+| **Middle** | Spending on online shopping; irritable when questioned; talking fast | Wife holds credit cards; same-week appointment; extra night-time medicine as agreed |
+| **Late** | Not sleeping at all; believes he will become a minister | Wife calls the team the same day; consider admission |
+
+- Ravi and his wife wrote this together when well. It is reviewed every 6 months.
+
+:::sounds Talking to a manic patient
+"I can see you've got lots of ideas and energy right now. I also notice you haven't slept for three nights. When people with your illness lose sleep like this, things can get out of control. What I want is to help you get some sleep tonight, and then we'll talk through your plans tomorrow."
+:::
+
+:::recall
+1. Name four parts of ward management of mania. || Low stimulation, consistent limits, protecting finances and reputation, restoring sleep.
+2. List the steps of de-escalation. || Safe distance and calm voice, listen and acknowledge, offer choices, offer oral medicine, rapid tranquillisation only if needed.
+3. What is a relapse signature and who writes it? || Personal early warning signs with agreed actions, written by patient and family when well.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -319,6 +422,14 @@ Sign that separates lithium toxicity from side effect tremor? :: Coarse tremor w
 What happens if lithium is stopped abruptly? :: Rebound mania.
 Which mood disorder is most heritable? :: Bipolar disorder.
 First-onset mania at 60: what must you exclude? :: A medical or neurological cause.
+Why is bipolar II often missed? :: Hypomania feels good and is rarely reported.
+Strongest clue to bipolarity in a depressed patient? :: Family history of bipolar disorder.
+Screening questionnaire for lifetime mania? :: Mood Disorder Questionnaire.
+Scale for severity of current mania? :: YMRS.
+Highest-risk time for bipolar relapse in women? :: After childbirth.
+Bipolar or ADHD: which is episodic? :: Bipolar disorder.
+New mania after 50 suggests? :: A secondary (organic) cause.
+Personal early warning signs with actions? :: Relapse signature.
 :::
 
 ## 4.3 Module test [core]
@@ -420,5 +531,26 @@ Q: Which is a recognised trigger of mania?
 - Lithium adherence
 - Regular routine
 > Sleep loss is a classic trigger.
+
+Q: A 22-year-old with three depressive episodes, oversleeping, and a father with bipolar disorder asks for an antidepressant. Before prescribing you should:
+- Start high-dose venlafaxine
+- *Ask carefully (and ask family) about past hypomania
+- Diagnose dysthymia
+- Order an EEG
+> Several clues suggest bipolar depression.
+
+Q: A 9-year-old has been restless, distractible and impulsive since age 3, without euphoria or episodes. Most likely:
+- Bipolar I disorder
+- *ADHD
+- Cyclothymia
+- Schizoaffective disorder
+> ADHD is continuous, not episodic.
+
+Q: A 68-year-old with no psychiatric history develops mania two weeks after starting high-dose prednisolone. The best first step is:
+- Start lithium long term
+- *Recognise medicine-induced mania; review the steroid with the physician and treat
+- Diagnose bipolar I and stop all medicines
+- Reassure and discharge
+> Steroids can trigger mania; also screen for other secondary causes.
 :::
 `;

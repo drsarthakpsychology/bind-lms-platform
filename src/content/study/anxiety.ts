@@ -94,6 +94,39 @@ An anxiety disorder is a smoke alarm that rings when someone makes toast. The al
 4. What keeps social anxiety going? || Self-focus and safety behaviours.
 :::
 
+## 1.3 Assessing anxiety [core]
+### Questions that open it up
+- "Do you worry a lot? What about? Can you stop once you start?" (GAD)
+- "Have you ever had a sudden rush of fear, with your heart racing, when there was no danger?" (panic)
+- "Are there places you avoid because it would be hard to escape or get help?" (agoraphobia)
+- "Do you feel very nervous when people watch you or when you have to speak or eat in front of others?" (social anxiety)
+- "Is there anything specific you are very afraid of: heights, animals, injections, blood?" (phobia)
+- Always: alcohol and drugs, caffeine, medicines, physical illness, depression, suicidal thoughts.
+
+### Scales
+| Scale | Use |
+|---|---|
+| **GAD-7** | Screen and severity for generalised anxiety (0 to 21; 10 or more suggests a disorder) |
+| **HAM-A** | Clinician-rated anxiety severity (14 items) |
+| **Panic Disorder Severity Scale** | Panic frequency, distress, avoidance |
+| **Liebowitz Social Anxiety Scale**, SPIN | Social anxiety |
+| **Fear Questionnaire** | Phobias |
+
+### The physical work-up (targeted, not everything)
+- Pulse, BP, weight, thyroid signs, tremor.
+- **Thyroid function**, blood glucose, blood count; **ECG** if palpitations or chest pain; others as the history suggests.
+- Ask about **caffeine** (tea, coffee, energy drinks, colas), alcohol withdrawal, decongestants, salbutamol, steroids, thyroxine overdose.
+
+:::note Anxiety in Indian clinics
+Many people describe anxiety through the body: "ghabrahat" (a mix of uneasiness and fear), "dil ki dhadkan badhna" (pounding heart), "haath-pair thande" (cold hands and feet), "gas" or "BP badh jaata hai". They often first see physicians and cardiologists. Normalise, explain the body's alarm system, and treat.
+:::
+
+:::recall
+1. What GAD-7 score suggests a probable disorder? || 10 or more.
+2. Name a clinician-rated anxiety scale. || HAM-A.
+3. Name three substances or medicines that cause anxiety. || Caffeine, decongestants, salbutamol, steroids, thyroxine, alcohol withdrawal.
+:::
+
 # Part II · The disorders
 
 ## 2.1 Generalised anxiety disorder [core]
@@ -206,6 +239,32 @@ A first “panic attack” with chest pain in someone with cardiac risk factors 
 7. Name six medical or substance causes of anxiety. || Hyperthyroidism, hypoglycaemia, phaeochromocytoma, arrhythmia, asthma, caffeine, alcohol withdrawal, salbutamol.
 :::
 
+## 2.8 The models that guide treatment [core]
+### Clark's cognitive model of panic
+Trigger (a body sensation: a skipped beat) → perceived threat → anxiety → more body sensations → **catastrophic misinterpretation** ("I'm having a heart attack") → more anxiety → panic. Safety behaviours (sitting down, holding on, carrying water) prevent learning that the catastrophe would not happen.
+
+:::analogy The smoke alarm that goes off for toast
+In panic disorder the body's alarm is oversensitive: it rings at full volume for a bit of toast (a harmless sensation). Treatment does not remove the alarm; it teaches the brain that toast is not fire.
+:::
+
+### Clark and Wells' model of social anxiety
+- In social situations the person shifts attention **inward** (self-focused attention) and builds a distorted image of how they look ("I'm red and shaking, everyone can see").
+- **Safety behaviours** (avoiding eye contact, rehearsing sentences, holding a glass tightly) increase self-focus and can make them seem odd, confirming the fear.
+- After the event they **ruminate** ("post-mortem"), remembering only failures.
+- Treatment: **video feedback** (seeing how they really look), dropping safety behaviours, attention training outwards, behavioural experiments.
+
+### Models of GAD
+- **Intolerance of uncertainty** (Dugas): uncertainty feels unbearable, so worry tries to prepare for every possibility.
+- **Metacognitive model** (Wells): **positive beliefs about worry** ("worrying keeps me prepared") start it; **negative beliefs** ("worry is uncontrollable and dangerous") make worry about worry (meta-worry) the core problem.
+- **Avoidance model** (Borkovec): verbal worry dampens vivid images and body arousal, so it is reinforced; but it blocks emotional processing.
+
+:::recall
+1. What is the central step in Clark's panic model? || Catastrophic misinterpretation of body sensations.
+2. What maintains social anxiety in Clark and Wells' model? || Self-focused attention, safety behaviours and post-event rumination.
+3. Name the two kinds of beliefs about worry in the metacognitive model. || Positive (worry helps) and negative (worry is uncontrollable and dangerous).
+4. What is intolerance of uncertainty? || Finding uncertainty unbearable, which drives worry.
+:::
+
 # Part III · Treatment
 
 ## 3.1 Psychological treatment: exposure is the engine [core]
@@ -256,6 +315,40 @@ Benzodiazepines work fast, so patients love them, but long-term use brings depen
 5. When is propranolol useful? || Performance anxiety with tremor and palpitations.
 :::
 
+## 3.3 CBT step by step and special groups [core]
+### Panic disorder (about 8 to 12 sessions)
+1. **Psychoeducation**: fight-or-flight, the panic cycle, why it is not dangerous.
+2. **Monitor** attacks: trigger, sensations, thoughts, behaviours.
+3. **Cognitive work**: test catastrophic beliefs ("What is the evidence that palpitations mean a heart attack? How many attacks have you had? Did you die?").
+4. **Interoceptive exposure**: deliberately bring on the sensations.
+5. **In vivo exposure** to avoided places (metro, market, crowded buses), dropping safety behaviours.
+6. **Relapse prevention**.
+
+### GAD
+- Worry diary and **worry time** (postpone worry to a set 20-minute slot each day).
+- Distinguish **real problems** (problem-solve them) from **hypothetical worries** (practise letting them go).
+- Tolerance of uncertainty exercises, applied relaxation, challenging beliefs about worry.
+
+### Special groups
+| Group | What to know |
+|---|---|
+| **Children** | Common: separation anxiety, phobias, social anxiety; first-line CBT with parents; sertraline or fluoxetine if moderate to severe |
+| **Pregnancy and after birth** | Anxiety and panic common; CBT first; sertraline if needed; avoid benzodiazepines late in pregnancy (floppy baby, withdrawal) |
+| **Older adults** | Often with physical illness and depression; avoid benzodiazepines (falls, confusion); SSRIs at lower doses; check sodium |
+| **Medical illness** | Anxiety worsens heart disease, asthma, COPD; treat it; avoid propranolol in asthma |
+
+### Course and prognosis
+- Anxiety disorders tend to be **chronic and fluctuating** without treatment, with stress-related flare-ups.
+- With CBT and medicines, most improve substantially. Continue medicines for **about 12 months** after response before a slow taper.
+- Untreated anxiety raises the risk of **depression and alcohol misuse**.
+
+:::recall
+1. List the six steps of CBT for panic disorder. || Psychoeducation, monitoring, cognitive work, interoceptive exposure, in vivo exposure, relapse prevention.
+2. What is worry time? || Postponing worry to a set daily slot.
+3. Why avoid benzodiazepines late in pregnancy? || Floppy baby syndrome and neonatal withdrawal.
+4. How long to continue medicines after response in anxiety disorders? || About 12 months.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -293,6 +386,14 @@ First-line medicine for anxiety disorders? :: SSRIs.
 Why start SSRIs low in panic? :: Early jitteriness can worsen anxiety.
 Limit for benzodiazepine use? :: About two to four weeks.
 Endocrine mimic of panic? :: Hyperthyroidism (also phaeochromocytoma, hypoglycaemia).
+GAD-7 cut-off for probable disorder? :: 10 or more.
+Clinician-rated anxiety scale? :: HAM-A.
+Core step in Clark's panic model? :: Catastrophic misinterpretation.
+Video feedback is used in? :: Social anxiety disorder.
+Worry about worry? :: Meta-worry (metacognitive model).
+Postponing worry to a daily slot? :: Worry time.
+Benzodiazepine risk to the newborn? :: Floppy baby syndrome and withdrawal.
+Medicine duration after response in anxiety? :: About 12 months.
 :::
 
 ## 4.3 Module test [core]
@@ -380,5 +481,26 @@ Q: Why do long-term benzodiazepines hinder recovery?
 - They raise blood pressure
 - They are too slow
 > Short relief, long-term trap.
+
+Q: A man fears that his racing heart means a heart attack, so he sits down and checks his pulse whenever it happens. In CBT these are:
+- Core beliefs
+- *Catastrophic misinterpretations and safety behaviours
+- Intrusive images
+- Negative automatic thoughts about the future only
+> Clark's model of panic.
+
+Q: A student in social situations focuses on how red her face looks and rehearses every sentence. The most specific CBT technique is:
+- Interoceptive exposure
+- *Video feedback and dropping safety behaviours
+- Worry time
+- Systematic desensitisation for spiders
+> Clark and Wells' model.
+
+Q: A woman believes "worrying keeps my family safe" but also "my worry will make me go mad". This fits:
+- Clark's panic model
+- *The metacognitive model of GAD
+- Two-factor theory
+- Learned helplessness
+> Positive and negative beliefs about worry.
 :::
 `;

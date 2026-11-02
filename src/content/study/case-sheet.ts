@@ -80,6 +80,55 @@ A case sheet is a **clinical record and a legal document**. It should let anothe
 
 Module 1 covers each heading in depth; this module is about **writing** them.
 
+## 1.3 Writing the MSE for common presentations [core]
+The MSE is a **snapshot of now**, written so another clinician could picture the patient. Below are short model MSEs. Notice: observations, the patient's own words in quotes, and no diagnosis inside the MSE.
+
+:::example Depression
+**Appearance and behaviour**: 34-year-old woman, looks older than her age, unkempt hair, crumpled clothes. Sits slumped, little eye contact, few spontaneous movements. Rapport established with difficulty.
+**Speech**: low volume, slow, long pauses before answers, monosyllabic.
+**Mood**: "Kuch achha nahi lagta, sab bekaar hai" (nothing feels good, everything is useless). **Affect**: depressed, restricted range, non-reactive, congruent.
+**Thought**: hopelessness, worthlessness, guilt about being a burden; passive death wishes, no active plans (see risk). No delusions.
+**Perception**: no abnormalities.
+**Cognition**: oriented; attention reduced (serial 7s slow with errors); memory grossly intact.
+**Insight**: grade 4 (aware of illness, attributes it partly to "weakness").
+**Judgement**: personal judgement impaired (stopped eating regularly); test judgement intact.
+:::
+
+:::example Mania
+**Appearance and behaviour**: 26-year-old man in a bright shirt with several necklaces, heavy perfume. Overfamiliar, stands up and walks about, distractible by noises outside. Rapport easy but difficult to direct.
+**Speech**: loud, rapid, pressured, difficult to interrupt; puns and rhymes.
+**Mood**: "Main duniya ka sabse khush insaan hoon" (I'm the happiest person in the world). **Affect**: elated, irritable when interrupted, labile.
+**Thought**: flight of ideas with clang associations; grandiose delusions that he has been chosen to become Chief Minister.
+**Perception**: no hallucinations elicited.
+**Cognition**: oriented; attention poor (distractible).
+**Insight**: grade 1 (complete denial of illness).
+**Judgement**: impaired (spent savings on gifts for strangers).
+:::
+
+:::example Schizophrenia
+**Appearance and behaviour**: 22-year-old man, poorly groomed, smiles to himself without obvious reason, occasionally looks at the corner of the room as if listening. Guarded.
+**Speech**: normal rate, answers relevant at times but drifts; occasional new words ("thought-wires").
+**Mood**: "Theek hai" (fine). **Affect**: blunted, incongruent at times (smiles while describing being harmed).
+**Thought**: loosening of associations; persecutory delusion that neighbours have placed a chip in his head; **thought broadcasting**.
+**Perception**: **third-person auditory hallucinations** discussing him ("woh pagal hai"); running commentary.
+**Cognition**: oriented; attention fair.
+**Insight**: grade 1. **Judgement**: impaired.
+:::
+
+:::trap Common errors in the MSE
+- Writing interpretations instead of observations ("patient was manipulative").
+- Putting history (two weeks of poor sleep) in the MSE.
+- Missing the patient's own words for mood and abnormal beliefs.
+- Writing "no abnormality" for headings you did not examine.
+- Forgetting **risk** and **insight** grading.
+:::
+
+:::recall
+1. Is the MSE about the past or the present? || The present, at the time of the interview.
+2. Give three common errors in writing the MSE. || Interpretations instead of observations, history inside the MSE, missing the patient's words, not examining a heading.
+3. Which MSE findings would you expect in mania? || Pressured speech, elated or irritable affect, flight of ideas, grandiose delusions, distractibility, poor insight.
+:::
+
 # Part II · Formulation, diagnosis and plan
 
 ## 2.1 The 5P formulation [core]
@@ -127,6 +176,71 @@ Module 1 covers each heading in depth; this module is about **writing** them.
 1. Name the 5Ps. || Presenting, predisposing, precipitating, perpetuating, protective.
 2. Expand SOAP. || Subjective, objective, assessment, plan.
 3. What must a discharge summary include? || Dates, diagnosis, findings, treatment and response, condition, medicines, risk and safety plan, follow-up, contacts.
+:::
+
+## 2.5 Risk, discharge and referral writing [core]
+### The risk section
+| Heading | Write |
+|---|---|
+| **Risk to self** | Suicidal thoughts, intent, plans, past attempts, self-neglect, vulnerability (exploitation) |
+| **Risk to others** | Thoughts, threats, past violence, command hallucinations, access to weapons, victims |
+| **Risk from others** | Abuse, exploitation, domestic violence |
+| **Other** | Absconding, driving, children at home, medicines in overdose |
+| **Formulation and plan** | Why now, what increases or reduces risk, what will be done and by whom |
+
+### Discharge summary: the essentials
+1. Identifying details, dates of admission and discharge, legal status (independent or supported admission).
+2. Reason for admission (brief history and presenting problems).
+3. Mental state at admission and at discharge.
+4. Investigations and important results.
+5. **Diagnosis** (ICD-11 or DSM-5-TR, with code).
+6. Treatment given, response, side effects.
+7. **Medicines at discharge**, with changes and why.
+8. **Risk at discharge** and the crisis plan.
+9. Follow-up: date, place, person; what the general practitioner or family should watch for.
+
+### A referral letter
+- **Who and why**: "I am referring Mr S, 45, for assessment of possible early-onset dementia."
+- **The question you want answered.**
+- Brief relevant history, mental state, investigations, current medicines, allergies.
+- Urgency and how to contact you.
+
+:::word One-line referral opening
+"Thank you for seeing Ms P, a 29-year-old teacher with recurrent depression, who has not responded to two adequate antidepressant trials; I would value your opinion on further treatment, including suitability for ECT or rTMS."
+:::
+
+:::recall
+1. Name the four areas of risk in the risk section. || Risk to self, to others, from others, and other risks.
+2. List five essentials of a discharge summary. || Reason for admission, mental state at admission and discharge, diagnosis, medicines with changes, risk and crisis plan, follow-up.
+3. What should the first lines of a referral letter state? || Who, why, and the question to be answered.
+:::
+
+## 2.6 Presenting a case in an exam [core]
+### The structure (about 10 minutes)
+1. **One-line summary**: "Mr A, a 32-year-old married farmer from Haryana, was brought by his wife with complaints of reduced sleep, increased talk and spending for 2 weeks."
+2. **Chief complaints** with duration (in the informant's or patient's words).
+3. **History of present illness**: onset, course, progression, key positives and **important negatives**, treatment so far.
+4. Past, family, personal (with premorbid personality), and substance history: only what matters.
+5. **MSE**: highlight abnormal findings.
+6. **Physical examination**: relevant findings.
+7. **Summary and formulation** (5 Ps).
+8. **Diagnosis and differentials**, with reasons for and against.
+9. **Investigations** and **management**: biopsychosocial, short and long term.
+
+### Questions examiners often ask
+- "Why not schizophrenia?" (Defend your differential with features for and against.)
+- "What would you do if he refuses medicines?" (Capacity, MHCA, supported admission.)
+- "How would you counsel the family?" (Psychoeducation, early signs, adherence, stigma.)
+- "What is the prognosis and why?" (Good and poor prognostic factors in this patient.)
+
+:::trap Don't hide what you don't know
+If you didn't ask about something, say "I did not elicit that; I would like to ask about it." Examiners forgive gaps; they don't forgive made-up findings.
+:::
+
+:::recall
+1. What does a one-line summary contain? || Age, sex, background, who brought them, main complaints and duration.
+2. Why include important negatives? || They support your diagnosis and rule out differentials.
+3. How should you respond to a question about something you didn't ask? || Admit it and say you would ask.
 :::
 
 # Part III · A complete worked example
@@ -184,6 +298,12 @@ Where are drug allergies recorded? :: Treatment history, prominently flagged.
 Write “pagal ho gaya hai” clinically. :: Don't; describe the behaviour actually observed.
 Three levels of a management plan? :: Biological, psychological, social (plus risk).
 What does the summary paragraph include? :: Who, what, why now, key positives and negatives, MSE highlights, insight.
+Is the MSE a record of the past? :: No, the present.
+Where do the patient's own words go in the MSE? :: Mood and abnormal beliefs, in quotes.
+Four headings of a risk section? :: Risk to self, to others, from others, other.
+Legal status on a discharge summary? :: Independent or supported admission under the MHCA.
+First line of a case presentation? :: A one-line summary.
+What to say if you didn't elicit something? :: "I did not elicit that; I would ask."
 :::
 
 ## 4.3 Module test [core]
@@ -243,5 +363,26 @@ Q: Drug allergies should be:
 - Only told verbally
 - Recorded in the family history
 > Patient safety.
+
+Q: Which belongs in the MSE rather than the history?
+- Poor sleep for two weeks
+- Past episode at age 20
+- *Pressured speech during the interview
+- Father had depression
+> The MSE is what you observe now.
+
+Q: "Patient was attention-seeking" in an MSE is a problem because:
+- It is too short
+- *It is an interpretation, not an observation
+- It belongs in the family history
+- It should be in capital letters
+> Describe what was seen and heard.
+
+Q: In an exam, asked "why not schizophrenia?" for your mania case, the best answer:
+- Says the examiner is wrong
+- *Lists features for and against each diagnosis from this patient
+- Changes the diagnosis to schizophrenia
+- Says investigations will decide
+> Defend the differential with evidence.
 :::
 `;
