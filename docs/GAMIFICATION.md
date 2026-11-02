@@ -76,3 +76,19 @@ For each student it shows:
 - an overall rank, with the top 3 and bottom 3 highlighted.
 
 The page also has a heatmap of when the cohort studies and a breakdown of where the time goes. Each student has a deep-dive page with minutes per day, every lecture, recent activity, Learn mastery and their mix-ups.
+
+## Notes (`/practice/notes`)
+- **What's there:** 21 visual notes, grouped by curriculum week. Each note has a TL;DR line, sections of short points, sticker chips and step lists, red-flag boxes, and "Say it clinically" flip cards. Sections animate in, key lines get a highlighter sweep, and there are no paragraphs.
+- **Two views:** every bullet has a Student version and a Clinician version. The Student / Clinician switch changes the same page in place.
+- **Quiz and next steps:** each note ends with "Quiz me", which opens the matching lesson or Coach topic. It also links to its "What would you do?" cases and to the leaderboard.
+- **Sources:** checked against DSM-5-TR for criteria, Kaplan & Sadock for disorders and terminology, and Stahl for medicines. Students never see a book name or page.
+
+## What would you do? (`/practice/learn/scenarios`)
+- There are 10 branching clinic cases, each with one or two beats.
+- In each beat the patient says something tricky and the student picks a response. Each choice is rated **Best**, **Okay, but…** or **Risky**, and the student sees what happens next.
+- Some of the wrong answers sound kind on purpose. For example: promising secrecy, reassuring in OCD, or arguing with a delusion.
+
+## Say it clinically (`/practice/learn/terms`)
+Rounds of 12 questions that mix two drills:
+- **Case-sheet words:** turning an everyday phrase into the clinical term ("keeps checking the lock" → checking compulsion).
+- **Words matter:** picking the respectful phrasing ("died by suicide", "person with schizophrenia", "reports" rather than "claims").

@@ -5,7 +5,7 @@ import { FlagToggle } from "./flag-toggle";
 export const dynamic = "force-dynamic";
 
 /** Retired tools: merged elsewhere, so they are not shown here any more. */
-const RETIRED = new Set(["modules", "rounds", "learning_profile", "personalised_patients"]);
+const RETIRED = new Set(["modules", "rounds", "learning_profile", "personalised_patients", "decoder", "knowledge_tutor"]);
 
 const LABELS: Record<string, string> = {
   case_library: "Case Library",
@@ -15,7 +15,7 @@ const LABELS: Record<string, string> = {
   ethics: "Ethics, law & referral (includes Out of Depth)",
   formulation: "Formulation",
   journal: "Journal",
-  learn: "Learn with Chai (gamified lessons)",
+  learn: "Learn with Chai + Notes (lessons, Coach, games, notes, leaderboard)",
   judgment: "Judgment",
   knowledge_tutor: "Psychology Tutor",
   landmark: "Landmark Cases",

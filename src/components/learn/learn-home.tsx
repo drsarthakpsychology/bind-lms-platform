@@ -159,6 +159,36 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
         </ul>
       </section>
 
+      <div className="grid gap-3 sm:grid-cols-3">
+        <Link href="/practice/notes" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-sm">
+          <span className="text-2xl" aria-hidden>
+            📒
+          </span>
+          <span>
+            <span className="block font-black">Notes</span>
+            <span className="text-caption">Every topic in points, with a quiz</span>
+          </span>
+        </Link>
+        <Link href="/practice/learn/scenarios" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background hard-shadow-sm">
+          <span className="text-2xl" aria-hidden>
+            🎬
+          </span>
+          <span>
+            <span className="block font-black">What would you do?</span>
+            <span className="text-caption opacity-85">Tricky patient moments</span>
+          </span>
+        </Link>
+        <Link href="/practice/learn/terms" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+          <span className="text-2xl" aria-hidden>
+            🗣️
+          </span>
+          <span>
+            <span className="block font-black">Say it clinically</span>
+            <span className="text-caption">Case-sheet words & respectful language</span>
+          </span>
+        </Link>
+      </div>
+
       <div className="grid gap-3 sm:grid-cols-2">
         <Link href="/practice/learn/detective" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-4 text-brand-foreground hard-shadow-sm">
           <Search className="size-6 shrink-0" aria-hidden />

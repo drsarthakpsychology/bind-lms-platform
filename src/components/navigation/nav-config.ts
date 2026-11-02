@@ -66,10 +66,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   // (no content editor, no rows) that confused admins with Courses. The route
   // still exists but isn't surfaced; Courses + lessons are the real content.
   { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
-  { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
-  { href: "/admin/corpus/dictate", label: "Record a case", icon: "mic", section: "Content" },
-  { href: "/admin/calibration", label: "Marking check", icon: "target", section: "Content" },
 
   // System — platform health.
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
@@ -105,11 +102,8 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/cards", label: "Study cards" },
-      { href: "/admin/idioms", label: "Idiom bank" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
-      { href: "/admin/corpus/dictate", label: "Record a case" },
-      { href: "/admin/calibration", label: "Marking check" },
       { href: "/admin/modules", label: "Modules", hidden: true },
     ],
   },

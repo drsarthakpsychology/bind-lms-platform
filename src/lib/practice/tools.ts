@@ -24,10 +24,11 @@ export const PRACTICE_TOOLS: PracticeTool[] = [
   // Learn — the gamified path with Chai: short lessons, XP, streaks, review.
   { href: "/practice/learn", title: "Learn with Chai", verb: "PLAY", description: "Bite-size lessons, XP, streaks and badges. Psychopathology to psychopharmacology.", icon: "sparkles", time: "3 min", flag: "learn", group: "quick" },
 
+  { href: "/practice/notes", title: "Notes", verb: "READ", description: "Visual, point-by-point notes for every topic, each with a quiz.", icon: "bookMarked", time: "5 min", flag: "learn", group: "quick" },
+
   // Quick — under 5 minutes
   { href: "/practice/judgment", title: "Judgment", verb: "SLIDE", description: "New information changes the probability.", icon: "gauge", time: "2 min", flag: "judgment", group: "quick" },
   { href: "/practice/two-minute-clinic", title: "Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
-  { href: "/practice/decode", title: "Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
 
   // Mid — 5-10 minutes
   { href: "/practice/mse", title: "MSE", verb: "TAG", description: "Describe before you label. 11 domains.", icon: "brain", time: "10 min", flag: "mse", group: "mid" },
@@ -42,7 +43,6 @@ export const PRACTICE_TOOLS: PracticeTool[] = [
 
   // Browse — whenever
   { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: "bookOpen", time: "varies", flag: "case_library", group: "browse" },
-  { href: "/practice/tutor", title: "Psychology Tutor", verb: "ASK", description: "Grounded answers from the authorised books, with sources.", icon: "bookMarked", time: "varies", flag: "knowledge_tutor", group: "browse" },
 ];
 
 export const GROUP_META: Record<PracticeTool["group"], { label: string; hint: string }> = {

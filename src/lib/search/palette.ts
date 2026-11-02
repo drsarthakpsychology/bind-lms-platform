@@ -28,7 +28,7 @@ const TOOLS: PaletteEntry[] = [
   { id: "learn", label: "Learn with Chai", hint: "Lessons, XP, streaks, review", href: "/practice/learn", group: "Tools", keywords: ["cards", "review", "quiz", "game", "streak", "xp"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
   { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
-  { id: "tutor", label: "Psychology Tutor", hint: "Grounded answers from the authorised books", href: "/practice/tutor", group: "Tools", keywords: ["ask", "books", "knowledge", "question"] },
+  { id: "notes", label: "Notes", hint: "Visual study notes by week", href: "/practice/notes", group: "Tools", keywords: ["notes", "study", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"] },
   { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"] },
   { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },
   { id: "reflect", label: "Journal", href: "/reflect", group: "Nav", keywords: ["reflection", "diary"] },
