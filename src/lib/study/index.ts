@@ -6,7 +6,9 @@ import * as m_anxiety from "@/content/study/anxiety";
 import * as m_bipolar from "@/content/study/bipolar";
 import * as m_child from "@/content/study/child";
 import * as m_depression from "@/content/study/depression";
+import * as m_ethicsLaw from "@/content/study/ethics-law";
 import * as m_interviewMse from "@/content/study/interview-mse";
+import * as m_moreDisorders from "@/content/study/more-disorders";
 import * as m_neurocognitive from "@/content/study/neurocognitive";
 import * as m_ocd from "@/content/study/ocd";
 import * as m_personality from "@/content/study/personality";
@@ -20,7 +22,7 @@ import * as m_trauma from "@/content/study/trauma";
  * The course, in curriculum order. Add a module by creating its file in
  * src/content/study (meta + text) and listing it here.
  */
-const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_bipolar, m_child, m_depression, m_interviewMse, m_neurocognitive, m_ocd, m_personality, m_psychosis, m_stabilisers, m_substance, m_suicide, m_trauma];
+const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_bipolar, m_child, m_depression, m_ethicsLaw, m_interviewMse, m_moreDisorders, m_neurocognitive, m_ocd, m_personality, m_psychosis, m_stabilisers, m_substance, m_suicide, m_trauma];
 
 function build(src: { meta: ModuleMeta; text: string }): StudyModule {
   const sections = parseModule(src.text);
