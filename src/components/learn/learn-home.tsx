@@ -19,12 +19,14 @@ export type PlanNote = { id: string; title: string; emoji: string; quizHref: str
 
 /** Three steps for today, each ticked as it's done, so it's always clear what to do next. */
 function TodaysPlan({ st, notes, today, due, dayXp }: { st: LearnState; notes: PlanNote[]; today: string; due: number; dayXp: number }) {
-  const readToday = notes.find((n) => st.notesRead[n.id] === today);
-  const nextNote = notes.find((n) => !st.notesRead[n.id]);
-  const note = readToday ?? nextNote ?? notes[0];
+  void notes;
+  const sectionsToday = Object.values(st.study.done).filter((d) => d === today).length;
+  const studiedToday = sectionsToday > 0;
+  // XP beyond what finished sections paid means a quiz or game was played today.
+  const practisedToday = dayXp > sectionsToday * 10;
   const steps = [
-    { done: Boolean(readToday), label: readToday ? `Read: ${readToday.title}` : `Read a note: ${note.title}`, href: `/study/notes/${note.id}`, hint: "2 to 4 minutes" },
-    { done: dayXp > 0, label: "Take its quiz", href: note.quizHref, hint: "Earn XP and keep your streak" },
+    { done: studiedToday, label: studiedToday ? "Studied a section today" : "Study: the next step of your course", href: "/study", hint: "The main work: your course, one section at a time" },
+    { done: practisedToday, label: "One practice round (Coach)", href: "/study/coach", hint: "Chai repeats what you mix up" },
     {
       done: due === 0 && st.answered > 0,
       label: due ? `Review ${due} due question${due === 1 ? "" : "s"}` : st.answered ? "Review: nothing due" : "Review (opens after your first quiz)",
