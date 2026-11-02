@@ -92,3 +92,10 @@ The page also has a heatmap of when the cohort studies and a breakdown of where 
 Rounds of 12 questions that mix two drills:
 - **Case-sheet words:** turning an everyday phrase into the clinical term ("keeps checking the lock" → checking compulsion).
 - **Words matter:** picking the respectful phrasing ("died by suicide", "person with schizophrenia", "reports" rather than "claims").
+
+## DSM-5-TR chapters, brain basics, patient language, Today's plan
+- `src/lib/learn/notes/dsm.ts`: one note per DSM-5-TR chapter (19), plus "Brain & behaviour basics" and "How patients talk" in week 1. Every chapter note has a "How it sounds" section with real-sounding patient words.
+- Plain words only: no maths signs (at least / less than / more than). A test enforces this.
+- Read tracking: `LearnState.notesRead` (note id → day). Opening a note marks it read. Notes list shows ticks, a "Continue with" card and X of N read.
+- Learn home "Today's plan": 1 read a note → 2 take its quiz → 3 review what's due. Each step ticks off; the current one is lime with "Start →".
+- Every note ends with "What to do now" (read ✓, quiz, practise) and a "Next:" button.

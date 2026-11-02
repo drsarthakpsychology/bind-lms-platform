@@ -43,6 +43,8 @@ export type LearnState = {
   history: Record<string, number>;
   /** Detective game best score. */
   detectiveBest: number;
+  /** Notes opened: note id → day first read (YYYY-MM-DD, IST). */
+  notesRead: Record<string, string>;
 };
 
 export const DAILY_GOALS = [20, 40, 60] as const;
@@ -67,6 +69,7 @@ export function emptyState(): LearnState {
     coach: { concepts: {}, confusions: {} },
     history: {},
     detectiveBest: 0,
+    notesRead: {},
   };
 }
 
@@ -89,7 +92,14 @@ export function normalise(raw: unknown): LearnState {
       confusions: { ...(r.coach?.confusions ?? {}) },
     },
     history: { ...(r.history ?? {}) },
+    notesRead: Object.fromEntries(Object.entries(r.notesRead && typeof r.notesRead === "object" ? r.notesRead : {}).filter(([k, v]) => typeof k === "string" && typeof v === "string")),
   };
+}
+
+/** Mark a note as read (keeps the first day it was read). Returns the same object if nothing changed. */
+export function markNoteRead(s: LearnState, id: string, today: string): LearnState {
+  if (s.notesRead[id]) return s;
+  return { ...s, notesRead: { ...s.notesRead, [id]: today } };
 }
 
 /* ------------------------------------------------------------------ dates */

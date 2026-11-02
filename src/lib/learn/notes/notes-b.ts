@@ -1,6 +1,6 @@
 import type { Note } from "./types";
 
-/** Weeks 7–16. Medicines follow Stahl; disorders follow DSM-5-TR and Kaplan & Sadock. */
+/** Weeks 7 to 16. Medicines follow Stahl; disorders follow DSM-5-TR and Kaplan & Sadock. */
 export const NOTES_B: Note[] = [
   {
     id: "antidepressants",
@@ -8,12 +8,12 @@ export const NOTES_B: Note[] = [
     title: "Antidepressants",
     emoji: "💊",
     tagline: "Classes, timing and what to watch for",
-    tldr: ["Side effects come first, benefit builds over 2–6 weeks. Never stop suddenly.", "Early adverse effects precede response; assess response at 4–8 weeks; taper to avoid discontinuation."],
+    tldr: ["Side effects come first, benefit builds over 2 to 6 weeks. Never stop suddenly.", "Early adverse effects precede response; assess response at 4 to 8 weeks; taper to avoid discontinuation."],
     sections: [
-      { title: "Classes", tone: "lime", points: [["SSRIs: escitalopram, sertraline, fluoxetine", "SSRIs: first line; serotonin reuptake inhibition"], ["SNRIs: venlafaxine, duloxetine", "SNRIs: 5-HT + NA reuptake inhibition; BP rise"], ["Mirtazapine: sleep + appetite", "NaSSA: α2 antagonism, H1 (sedation, weight)"], ["Bupropion: fewer sexual effects", "NDRI; lowers seizure threshold"], ["Tricyclics: older, risky in overdose", "TCAs: anticholinergic, cardiotoxic in overdose"]] },
-      { title: "Timeline", style: "steps", tone: "blue", points: ["Week 1: side effects (nausea, jittery, sleep)", "Week 2: early signs of improvement", "Weeks 4–8: full effect", "Keep going 6–12 months after recovery"] },
-      { title: "Watch for", points: [["Sexual side effects (ask, people don't volunteer)", "Sexual dysfunction (common, under-reported)"], ["Low sodium in older adults", "SIADH/hyponatraemia"], ["Agitation or new suicidal thoughts in under-25s", "Treatment-emergent suicidality (<25)"], ["Switching into mania in bipolar", "Antidepressant-induced switching"]] },
-      { title: "Emergencies", style: "alert", points: [["Serotonin syndrome: fever, sweating, jerky muscles (e.g., + tramadol)", "Serotonin toxicity: clonus, hyperthermia, autonomic instability"], ["Stopping suddenly: 'brain zaps', dizziness (worst with paroxetine)", "Discontinuation syndrome (FINISH)"]] },
+      { title: "Classes", tone: "lime", points: [["SSRIs: escitalopram, sertraline, fluoxetine", "SSRIs: first line; serotonin reuptake inhibition"], ["SNRIs: venlafaxine, duloxetine", "SNRIs: 5-HT and NA reuptake inhibition; BP rise"], ["Mirtazapine: sleep and appetite", "NaSSA: α2 antagonism, H1 (sedation, weight)"], ["Bupropion: fewer sexual effects", "NDRI; lowers seizure threshold"], ["Tricyclics: older, risky in overdose", "TCAs: anticholinergic, cardiotoxic in overdose"]] },
+      { title: "Timeline", style: "steps", tone: "blue", points: ["Week 1: side effects (nausea, jittery, sleep)", "Week 2: early signs of improvement", "Weeks 4 to 8: full effect", "Keep going 6 to 12 months after recovery"] },
+      { title: "Watch for", points: [["Sexual side effects (ask, people don't volunteer)", "Sexual dysfunction (common, under-reported)"], ["Low sodium in older adults", "SIADH/hyponatraemia"], ["Agitation or new suicidal thoughts in under-25s", "Treatment-emergent suicidality (less than 25)"], ["Switching into mania in bipolar", "Antidepressant-induced switching"]] },
+      { title: "Emergencies", style: "alert", points: [["Serotonin syndrome: fever, sweating, jerky muscles (e.g., when combined with tramadol)", "Serotonin toxicity: clonus, hyperthermia, autonomic instability"], ["Stopping suddenly: 'brain zaps', dizziness (worst with paroxetine)", "Discontinuation syndrome (FINISH)"]] },
     ],
     terms: [["Brain zaps after stopping", "Discontinuation symptoms"], ["Feels jittery after starting", "Activation / akathisia"]],
     quiz: { lessonId: "ad-1" },
@@ -28,9 +28,9 @@ export const NOTES_B: Note[] = [
     sections: [
       { title: "Two families", tone: "lime", points: [["Older (typical): haloperidol, chlorpromazine", "FGAs: high EPS"], ["Newer (atypical): olanzapine, risperidone, quetiapine, aripiprazole", "SGAs: lower EPS, variable metabolic risk"]] },
       { title: "Dopamine pathways", tone: "blue", points: [["Reward pathway → psychosis improves", "Mesolimbic D2 blockade → antipsychotic effect"], ["Movement pathway → stiffness/tremor", "Nigrostriatal → EPS"], ["Hormone pathway → prolactin rises", "Tuberoinfundibular → hyperprolactinaemia"], ["Frontal pathway → negative symptoms may worsen", "Mesocortical → cognitive/negative effects"]] },
-      { title: "Movement side effects (in order)", style: "steps", points: ["Acute dystonia: hours–days (neck/eye spasm)", "Akathisia: days–weeks (can't sit still)", "Parkinsonism: weeks (stiff, tremor)", "Tardive dyskinesia: months–years (mouth movements)"] },
+      { title: "Movement side effects (in order)", style: "steps", points: ["Acute dystonia: hours to days (neck/eye spasm)", "Akathisia: days to weeks (can't sit still)", "Parkinsonism: weeks (stiff, tremor)", "Tardive dyskinesia: months to years (mouth movements)"] },
       { title: "Clozapine", tone: "ink", points: [["For illness not helped by two others", "Treatment-resistant schizophrenia"], ["Regular blood tests (white cells)", "Mandatory ANC monitoring (agranulocytosis)"], "Also: constipation, drooling, seizures, heart inflammation early", ["Smoking changes the level", "CYP1A2 induction by smoking"]] },
-      { title: "Emergency", style: "alert", points: [["NMS: very high fever, rigid muscles, confusion", "Neuroleptic malignant syndrome: hyperthermia, lead-pipe rigidity, autonomic instability, ↑CK"]] },
+      { title: "Emergency", style: "alert", points: [["NMS: very high fever, rigid muscles, confusion", "Neuroleptic malignant syndrome: hyperthermia, lead-pipe rigidity, autonomic instability,upCK"]] },
     ],
     terms: [["Can't sit still", "Akathisia"], ["Neck suddenly twisted", "Acute dystonia"], ["Lip-smacking movements", "Tardive dyskinesia"], ["Periods stopped on medicine", "Hyperprolactinaemia"]],
     quiz: { lessonId: "ap-1" },
@@ -43,9 +43,9 @@ export const NOTES_B: Note[] = [
     tagline: "Lithium, valproate, lamotrigine, benzodiazepines",
     tldr: ["Lithium works but has a narrow safe level; valproate is risky in pregnancy; benzos are short-term only.", "Narrow therapeutic index (lithium), teratogenicity (valproate), SJS (lamotrigine), dependence (benzodiazepines)."],
     sections: [
-      { title: "Lithium", tone: "lime", points: [["Safe level ~0.6–1.0 (maintenance)", "Maintenance 0.6–1.0 mmol/L; acute up to ~1.2; 12 h post-dose"], ["Toxic: vomiting, coarse tremor, unsteady, confused", "Toxicity typically >1.5 mmol/L"], ["Raised by: ibuprofen, BP pills, dehydration", "NSAIDs, ACEi/ARBs, thiazides, dehydration"], ["Check kidneys, thyroid, calcium", "Renal, thyroid, calcium monitoring"], "Reduces suicide risk"] },
+      { title: "Lithium", tone: "lime", points: [["Safe level about 0.6 to 1.0 (maintenance)", "Maintenance 0.6 to 1.0 mmol/L; acute up to about 1.2; 12 h post-dose"], ["Toxic: vomiting, coarse tremor, unsteady, confused", "Toxicity typically more than 1.5 mmol/L"], ["Raised by: ibuprofen, BP pills, dehydration", "NSAIDs, ACEi/ARBs, thiazides, dehydration"], ["Check kidneys, thyroid, calcium", "Renal, thyroid, calcium monitoring"], "Reduces suicide risk"] },
       { title: "Others", tone: "blue", points: [["Valproate: avoid in women who could become pregnant", "Major teratogen; hepatotoxicity, pancreatitis"], ["Lamotrigine: start slowly to avoid a serious rash", "Slow titration (SJS); halve with valproate"], ["Carbamazepine: speeds up other drugs' breakdown", "CYP3A4 inducer; hyponatraemia; HLA-B*1502"]] },
-      { title: "Benzodiazepines", tone: "ink", points: ["Fast relief, short-term only (2–4 weeks)", "Dependence and withdrawal seizures", "Dangerous with alcohol or opioids", "Used in alcohol withdrawal and catatonia"] },
+      { title: "Benzodiazepines", tone: "ink", points: ["Fast relief, short-term only (2 to 4 weeks)", "Dependence and withdrawal seizures", "Dangerous with alcohol or opioids", "Used in alcohol withdrawal and catatonia"] },
     ],
     quiz: { lessonId: "ms-1" },
   },
@@ -69,10 +69,10 @@ export const NOTES_B: Note[] = [
     title: "Personality disorders",
     emoji: "🎭",
     tagline: "Lifelong patterns that cause problems",
-    tldr: ["Patterns of thinking, feeling and relating that are rigid, start early and cause distress.", "Enduring, pervasive, inflexible patterns from adolescence/early adulthood; ICD-11 uses severity + trait domains."],
+    tldr: ["Patterns of thinking, feeling and relating that are rigid, start early and cause distress.", "Enduring, pervasive, inflexible patterns from adolescence/early adulthood; ICD-11 uses severity and trait domains."],
     sections: [
       { title: "Cluster A · odd", tone: "blue", points: ["Paranoid: suspicious", "Schizoid: detached, prefers being alone", "Schizotypal: odd beliefs and speech"] },
-      { title: "Cluster B · dramatic", tone: "lime", points: [["Borderline: unstable moods, relationships, fear of abandonment, self-harm", "BPD: ≥5/9 criteria; DBT/MBT"], ["Antisocial: disregard for others (18+, conduct problems before 15)", "ASPD"], "Histrionic: attention-seeking", "Narcissistic: grandiose, needs admiration"] },
+      { title: "Cluster B · dramatic", tone: "lime", points: [["Borderline: unstable moods, relationships, fear of abandonment, self-harm", "BPD: at least 5 of 9 criteria; DBT/MBT"], ["Antisocial: disregard for others (age 18 or older, conduct problems before 15)", "ASPD"], "Histrionic: attention-seeking", "Narcissistic: grandiose, needs admiration"] },
       { title: "Cluster C · anxious", tone: "ink", points: ["Avoidant: fear of rejection", "Dependent: needs to be cared for", ["OCPD: perfectionism that feels right to them", "OCPD is ego-syntonic, unlike OCD"]] },
       { title: "Language", style: "alert", points: ["Avoid 'manipulative' or 'attention-seeking' in notes; describe the behaviour", "Diagnose only after a full picture over time"] },
     ],
@@ -86,7 +86,7 @@ export const NOTES_B: Note[] = [
     tagline: "Withdrawal, emergencies and talking about change",
     tldr: ["Ask without judging, know the withdrawal timeline, and give thiamine.", "Non-judgemental screening (AUDIT/CAGE), withdrawal management, Wernicke prophylaxis, MI-based engagement."],
     sections: [
-      { title: "Alcohol withdrawal timeline", style: "steps", tone: "lime", points: ["6–24 h: shakes, sweating, anxiety", "12–48 h: seizures possible", "48–96 h: delirium tremens (emergency)"] },
+      { title: "Alcohol withdrawal timeline", style: "steps", tone: "lime", points: ["6 to 24 h: shakes, sweating, anxiety", "12 to 48 h: seizures possible", "48 to 96 h: delirium tremens (emergency)"] },
       { title: "Must-know", tone: "blue", points: [["Wernicke's: confusion, unsteady, eye problems → thiamine", "Wernicke's triad; parenteral thiamine before glucose"], ["Opioid overdose: pinpoint pupils, slow breathing → naloxone", "Opioid toxidrome → naloxone"], ["Withdrawal is treated with benzodiazepines", "Symptom-triggered benzodiazepines (CIWA-Ar)"]] },
       { title: "Help them change", tone: "ink", points: ["Motivational interviewing (OARS)", "Naltrexone/acamprosate/disulfiram for alcohol", "Buprenorphine/methadone for opioids"] },
     ],
@@ -101,7 +101,7 @@ export const NOTES_B: Note[] = [
     tagline: "Sudden vs slow, and why it matters",
     tldr: ["Delirium is sudden and fluctuating (medical emergency); dementia is slow and steady.", "Delirium: acute, fluctuating inattention with a physiological cause. Major NCD: progressive decline with functional impairment."],
     sections: [
-      { title: "Tell them apart", tone: "lime", points: ["Onset: delirium hours–days · dementia months–years", "Course: delirium fluctuates · dementia steady", "Attention: delirium poor · dementia OK early", "Cause: delirium usually medical · dementia degenerative"] },
+      { title: "Tell them apart", tone: "lime", points: ["Onset: delirium hours to days · dementia months to years", "Course: delirium fluctuates · dementia steady", "Attention: delirium poor · dementia OK early", "Cause: delirium usually medical · dementia degenerative"] },
       { title: "Dementia types", tone: "blue", points: ["Alzheimer's: memory first", "Vascular: step-wise after strokes", ["Lewy body: hallucinations, fluctuations, parkinsonism", "DLB: severe antipsychotic sensitivity"], "Frontotemporal: personality/behaviour change"] },
       { title: "Delirium: what to do", tone: "ink", points: ["Find the cause: infection, medicines, sodium, retention, pain", "Reorient, glasses/hearing aids, family, sleep", "Antipsychotics only for severe distress/risk"] },
     ],
@@ -115,8 +115,8 @@ export const NOTES_B: Note[] = [
     tagline: "Neurodevelopment, explained simply",
     tldr: ["Both start in childhood; diagnose with history from several settings.", "Neurodevelopmental onset; multi-informant, multi-setting assessment."],
     sections: [
-      { title: "ADHD", tone: "lime", points: [["Inattention and/or hyperactivity-impulsivity", "Two dimensions; 3 presentations"], ["Several symptoms before 12, in 2+ settings", "≥6 symptoms (≥5 if 17+), ≥6 months"], ["Treatment: parent training, school support, medicine", "Behavioural interventions; stimulants/atomoxetine"]] },
-      { title: "Autism", tone: "blue", points: [["Social communication differences", "Deficits in social reciprocity, nonverbal communication, relationships"], ["Repetitive behaviours, routines, sensory sensitivities", "RRBs incl. sensory hyper/hypo-reactivity"], "Early screening: M-CHAT", "Support > 'cure': speech, OT, parent coaching"] },
+      { title: "ADHD", tone: "lime", points: [["Inattention and/or hyperactivity-impulsivity", "Two dimensions; 3 presentations"], ["Several symptoms before 12, in 2 or more settings", "at least 6 symptoms (at least 5 if 17 or older), at least 6 months"], ["Treatment: parent training, school support, medicine", "Behavioural interventions; stimulants/atomoxetine"]] },
+      { title: "Autism", tone: "blue", points: [["Social communication differences", "Deficits in social reciprocity, nonverbal communication, relationships"], ["Repetitive behaviours, routines, sensory sensitivities", "RRBs incl. sensory hyper/hypo-reactivity"], "Early screening: M-CHAT", "Support matters more than 'cure': speech, OT, parent coaching"] },
       { title: "Before diagnosing ADHD", style: "alert", points: ["Check hearing, vision, sleep", "Think anxiety, trauma, learning disorder", "Is it only in one place?"] },
     ],
     quiz: { lessonId: "ls-1" },
@@ -127,10 +127,10 @@ export const NOTES_B: Note[] = [
     title: "Trauma & PTSD",
     emoji: "🌊",
     tagline: "When the past keeps happening now",
-    tldr: ["After trauma: re-living, avoiding, darker thoughts and being on edge for over a month.", "PTSD: intrusion, avoidance, negative cognition/mood and arousal clusters for >1 month."],
+    tldr: ["After trauma: re-living, avoiding, darker thoughts and being on edge for over a month.", "PTSD: intrusion, avoidance, negative cognition/mood and arousal clusters for more than 1 month."],
     sections: [
       { title: "4 clusters", tone: "lime", points: ["Re-living: flashbacks, nightmares", "Avoiding reminders", ["Darker thinking: 'it's my fault', numb", "Negative alterations in cognition and mood"], ["On edge: jumpy, poor sleep", "Hyperarousal, hypervigilance"]] },
-      { title: "Timeline", style: "steps", tone: "blue", points: ["3 days – 1 month: acute stress disorder", "> 1 month: PTSD", "Within 3 months of stressor, no PTSD: adjustment disorder"] },
+      { title: "Timeline", style: "steps", tone: "blue", points: ["3 days – 1 month: acute stress disorder", "more than 1 month: PTSD", "Within 3 months of stressor, no PTSD: adjustment disorder"] },
       { title: "Treatment", tone: "ink", points: ["Trauma-focused CBT, EMDR", "Stabilise first, then process", "SSRIs can help"] },
       { title: "Trauma-informed care", style: "alert", points: ["Safety and choice first", "Don't force details in the first session", "Watch your own reactions"] },
     ],
@@ -145,7 +145,7 @@ export const NOTES_B: Note[] = [
     tagline: "High risk, often hidden",
     tldr: ["Anorexia has the highest risk; look at the body as well as the mind.", "AN carries high mortality; medical monitoring is part of psychological care."],
     sections: [
-      { title: "Types", tone: "lime", points: [["Anorexia: restriction, very low weight, fear of gain", "AN: restriction, significantly low weight, body-image disturbance"], ["Bulimia: binges + purging, normal weight", "BN: binge + compensatory behaviour ≥1/week × 3 months"], ["Binge-eating: binges without purging", "BED"]] },
+      { title: "Types", tone: "lime", points: [["Anorexia: restriction, very low weight, fear of gain", "AN: restriction, significantly low weight, body-image disturbance"], ["Bulimia: binges and purging, normal weight", "BN: binge and compensatory behaviour at least 1/week × 3 months"], ["Binge-eating: binges without purging", "BED"]] },
       { title: "Medical red flags", style: "alert", points: ["Fainting, slow pulse", "Very low weight", "Low potassium (vomiting)", "Refusing fluids"] },
       { title: "Treatment", tone: "ink", points: ["Family-based treatment for teens", "CBT-E for adults", "Refeeding under medical care"] },
     ],
@@ -159,8 +159,8 @@ export const NOTES_B: Note[] = [
     tagline: "Every finding in its right place",
     tldr: ["Facts in order, in clinical words, ending in a diagnosis and a plan.", "Structured documentation: history, MSE, formulation, provisional diagnosis, differentials, management plan."],
     sections: [
-      { title: "Sections", style: "steps", tone: "lime", points: ["Identifying data + informant", "Chief complaints (with duration)", "History of present illness", "Past, medical, family, personal history", "Premorbid personality", "MSE", "Provisional diagnosis (ICD-11/DSM-5-TR)", "Differential diagnoses", "Management plan"] },
-      { title: "Write like a clinician", tone: "blue", points: [["'Low mood × 3 months' not 'he is sad'", "Symptom + duration format"], ["Quote the patient for mood", "Verbatim subjective mood"], ["Use exact terms: 'anhedonia', 'early morning awakening'", "Standard psychopathological terminology"], "Write what you observed, not what you assumed"] },
+      { title: "Sections", style: "steps", tone: "lime", points: ["Identifying data and informant", "Chief complaints (with duration)", "History of present illness", "Past, medical, family, personal history", "Premorbid personality", "MSE", "Provisional diagnosis (ICD-11/DSM-5-TR)", "Differential diagnoses", "Management plan"] },
+      { title: "Write like a clinician", tone: "blue", points: [["'Low mood × 3 months' not 'he is sad'", "Symptom and duration format"], ["Quote the patient for mood", "Verbatim subjective mood"], ["Use exact terms: 'anhedonia', 'early morning awakening'", "Standard psychopathological terminology"], "Write what you observed, not what you assumed"] },
       { title: "Words with weight", style: "alert", points: ["'Reports' = the patient told you", "'Denies' = they said no when asked", "'Observed' = you saw it", "'Collateral' = from family/others", "Never 'patient is lying'; write 'inconsistent account'"] },
     ],
     quiz: { lessonId: "cs-1" },

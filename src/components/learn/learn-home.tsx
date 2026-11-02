@@ -15,10 +15,62 @@ import s from "./learn.module.css";
 
 const EMPTY = emptyState();
 
+export type PlanNote = { id: string; title: string; emoji: string; quizHref: string };
+
+/** Three steps for today, each ticked as it's done, so it's always clear what to do next. */
+function TodaysPlan({ st, notes, today, due, dayXp }: { st: LearnState; notes: PlanNote[]; today: string; due: number; dayXp: number }) {
+  const readToday = notes.find((n) => st.notesRead[n.id] === today);
+  const nextNote = notes.find((n) => !st.notesRead[n.id]);
+  const note = readToday ?? nextNote ?? notes[0];
+  const steps = [
+    { done: Boolean(readToday), label: readToday ? `Read: ${readToday.title}` : `Read a note: ${note.title}`, href: `/practice/notes/${note.id}`, hint: "2 to 4 minutes" },
+    { done: dayXp > 0, label: "Take its quiz", href: note.quizHref, hint: "Earn XP and keep your streak" },
+    {
+      done: due === 0 && st.answered > 0,
+      label: due ? `Review ${due} due question${due === 1 ? "" : "s"}` : st.answered ? "Review: nothing due" : "Review (opens after your first quiz)",
+      href: "/practice/learn/play?mode=review",
+      hint: due ? "Fixes what you're forgetting" : st.answered ? "You're all caught up" : "Questions come back here when they're due",
+    },
+  ];
+  const doneCount = steps.filter((x) => x.done).length;
+  const current = steps.findIndex((x) => !x.done);
+  return (
+    <section className="overflow-hidden rounded-3xl border-2 border-foreground bg-card hard-shadow-sm" aria-labelledby="todays-plan">
+      <div className="flex items-center justify-between gap-3 border-b-2 border-foreground bg-brand px-4 py-3 text-brand-foreground">
+        <h2 id="todays-plan" className="text-lg font-black">
+          Today&apos;s plan
+        </h2>
+        <span className="rounded-full border-2 border-current px-2.5 py-0.5 text-sm font-black">{doneCount}/3 done</span>
+      </div>
+      <ol className="space-y-2 p-3">
+        {steps.map((x, k) => (
+          <li key={x.label}>
+            <Link
+              href={x.href}
+              className={cn(
+                "flex items-center gap-3 rounded-2xl border-2 border-foreground p-3 transition-transform active:translate-y-0.5",
+                k === current ? "bg-primary text-primary-foreground hard-shadow-sm" : "bg-background",
+              )}
+            >
+              <span className={cn("grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground font-black", x.done && "bg-foreground text-background")}>{x.done ? "✓" : k + 1}</span>
+              <span className="min-w-0">
+                <span className={cn("block font-black leading-tight", x.done && "line-through opacity-70")}>{x.label}</span>
+                <span className="text-caption opacity-80">{x.hint}</span>
+              </span>
+              {k === current ? <span className="ml-auto shrink-0 text-sm font-black">Start →</span> : null}
+            </Link>
+          </li>
+        ))}
+      </ol>
+      {current === -1 ? <p className="px-4 pb-4 text-sm font-bold">All done for today. Anything more is bonus XP.</p> : null}
+    </section>
+  );
+}
+
 function greeting(st: LearnState, today: string, due: number): { mood: ChaiMood; text: string } {
   const streak = liveStreak(st.streak, today);
   const doneToday = st.daily.day === today && st.daily.xp > 0;
-  if (!st.answered) return { mood: "happy", text: "Hi, I'm Chai! Five minutes a day turns into real clinical knowledge. Start with the first lesson." };
+  if (!st.answered) return { mood: "happy", text: "Hi, I'm Chai! Five minutes a day turns into real clinical knowledge. Follow Today's plan below, one step at a time." };
   if (st.daily.day === today && st.daily.goalHit) return { mood: "cheer", text: "Daily goal done. Anything more today is bonus XP!" };
   if (due >= 5) return { mood: "think", text: `${due} questions are due for review. Reviewing at the right time is how they stick.` };
   if (streak > 0 && !doneToday) return { mood: "think", text: `Your ${streak}-day streak is waiting. One lesson keeps it alive.` };
@@ -32,7 +84,7 @@ function nextLesson(units: Unit[], st: LearnState) {
   return null;
 }
 
-export function LearnHome({ units, serverState, save }: { units: Unit[]; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
+export function LearnHome({ units, notes, serverState, save }: { units: Unit[]; notes: PlanNote[]; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
@@ -90,7 +142,10 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
         {g.text}
       </ChaiSays>
 
-      {/* Primary actions */}
+      <TodaysPlan st={st} notes={notes} today={today} due={due} dayXp={dayXp} />
+
+      {/* More ways to practise */}
+      <h2 className="text-eyebrow text-link">More ways to practise</h2>
       <div className="grid gap-3 sm:grid-cols-3">
         {up ? (
           <Link

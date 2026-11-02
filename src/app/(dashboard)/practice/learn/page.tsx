@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { requireFeature } from "@/lib/flags";
 import { UNITS } from "@/lib/learn/content";
-import { LearnHome } from "@/components/learn/learn-home";
+import { NOTES } from "@/lib/learn/notes";
+import { LearnHome, type PlanNote } from "@/components/learn/learn-home";
 import { loadLearnState, saveLearnState } from "./actions";
 
 export const metadata: Metadata = { title: "Learn" };
@@ -10,5 +11,11 @@ export const metadata: Metadata = { title: "Learn" };
 export default async function LearnPage() {
   await requireFeature("learn");
   const serverState = await loadLearnState();
-  return <LearnHome units={UNITS} serverState={serverState} save={saveLearnState} />;
+  const notes: PlanNote[] = NOTES.map((n) => ({
+    id: n.id,
+    title: n.title,
+    emoji: n.emoji,
+    quizHref: n.quiz.lessonId ? `/practice/learn/play?lesson=${n.quiz.lessonId}` : `/practice/learn/coach?domain=${n.quiz.domain}`,
+  }));
+  return <LearnHome units={UNITS} notes={notes} serverState={serverState} save={saveLearnState} />;
 }

@@ -19,14 +19,15 @@ export type Note = {
 };
 
 export const WEEK_BLOCKS = [
-  "Weeks 1–2 · Foundations, interview & MSE",
-  "Weeks 3–4 · Defences & assessment",
-  "Weeks 5–6 · Mood, anxiety, psychosis & OCD",
-  "Weeks 7–8 · Medicines & side effects",
-  "Weeks 9–10 · Therapies",
-  "Weeks 11–12 · Personality, addiction & crisis",
-  "Weeks 13–14 · Memory, dementia & children",
-  "Weeks 15–16 · Trauma, eating disorders & notes",
+  "Weeks 1 to 2 · Brain basics, how patients talk, interview & MSE",
+  "Weeks 3 to 4 · Defences & assessment",
+  "Weeks 5 to 6 · Mood, anxiety, psychosis & OCD",
+  "Weeks 7 to 8 · Medicines & side effects",
+  "Weeks 9 to 10 · Therapies",
+  "Weeks 11 to 12 · Personality, addiction & crisis",
+  "Weeks 13 to 14 · Memory, dementia & children",
+  "Weeks 15 to 16 · Trauma, eating disorders & notes",
+  "DSM-5-TR · every chapter, A to Z",
 ] as const;
 
 export function pick(b: Bullet, view: "student" | "clinician"): string {

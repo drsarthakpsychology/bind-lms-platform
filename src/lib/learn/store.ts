@@ -30,7 +30,10 @@ export function initLearnStore(server: LearnState | null, save: (s: LearnState) 
   if (state || typeof window === "undefined") return;
   const local = readLocal();
   const a = server ? normalise(server) : null;
-  state = !a ? (local ?? emptyState()) : !local ? a : local.xp > a.xp ? local : a;
+  const win = !a ? (local ?? emptyState()) : !local ? a : local.xp > a.xp ? local : a;
+  const other = win === a ? local : a;
+  // Notes read don't earn XP, so merge them from both copies.
+  state = other ? { ...win, notesRead: { ...other.notesRead, ...win.notesRead } } : win;
 }
 
 export function setLearnState(next: LearnState) {
@@ -58,4 +61,9 @@ export function useLearnState(serverCopy: LearnState): LearnState {
     () => state ?? serverCopy,
     () => serverCopy,
   );
+}
+
+/** Current store value outside render (effects and handlers). */
+export function getLearnState(): LearnState | null {
+  return state;
 }

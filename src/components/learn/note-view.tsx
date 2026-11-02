@@ -4,6 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Sparkles, Trophy, Zap } from "lucide-react";
 import { pick, WEEK_BLOCKS, type Note } from "@/lib/learn/notes/types";
+import { emptyState, istToday, markNoteRead, type LearnState } from "@/lib/learn/engine";
+import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
+import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
 import { ChaiSays } from "./chai";
 import { useExplainView, ViewToggle } from "./view-toggle";
@@ -17,10 +20,36 @@ const TONE: Record<string, string> = {
   white: "bg-card",
 };
 const TILTS = ["-2deg", "1.5deg", "-1deg", "2deg", "-1.5deg", "1deg"];
+const EMPTY = emptyState();
 
 /** One aesthetic, point-by-point study note, with a Student / Clinician switch. */
-export function NoteView({ note, prev, next, scenarioCount }: { note: Note; prev?: Note; next?: Note; scenarioCount: number }) {
+export function NoteView({
+  note,
+  prev,
+  next,
+  scenarioCount,
+  serverState,
+  save,
+  position,
+}: {
+  note: Note;
+  prev?: Note;
+  next?: Note;
+  scenarioCount: number;
+  serverState: LearnState | null;
+  save: (s: LearnState) => Promise<unknown>;
+  position: { index: number; total: number };
+}) {
+  initLearnStore(serverState, save);
+  const st = useLearnState(serverState ?? EMPTY);
   const view = useExplainView();
+  const readCount = Object.keys(st.notesRead).length;
+
+  // Opening a note counts as reading it (shown as a tick on the notes list).
+  React.useEffect(() => {
+    const cur = getLearnState();
+    if (cur && !cur.notesRead[note.id]) setLearnState(markNoteRead(cur, note.id, istToday()));
+  }, [note.id]);
   const [flipped, setFlipped] = React.useState<number[]>([]);
   const quizHref = note.quiz.lessonId ? `/practice/learn/play?lesson=${note.quiz.lessonId}` : `/practice/learn/coach?domain=${note.quiz.domain}`;
 
@@ -34,7 +63,9 @@ export function NoteView({ note, prev, next, scenarioCount }: { note: Note; prev
       </div>
 
       <header className={cn("relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7", n.glow)}>
-        <p className="font-pix text-[0.65rem] uppercase opacity-90">{WEEK_BLOCKS[note.block]}</p>
+        <p className="font-pix text-[0.65rem] uppercase opacity-90">
+          {WEEK_BLOCKS[note.block]} · note {position.index + 1} of {position.total}
+        </p>
         <h1 className="mt-2 text-3xl font-black leading-[1.05] sm:text-5xl">
           <span className="mr-2" aria-hidden>
             {note.emoji}
@@ -49,9 +80,13 @@ export function NoteView({ note, prev, next, scenarioCount }: { note: Note; prev
 
       <div className={cn("rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm", n.reveal)}>
         <p className="text-eyebrow text-link">{view === "clinician" ? "Clinical summary" : "TL;DR"}</p>
-        <p className="mt-1 text-lg font-bold leading-snug">
-          <span className={n.hl}>{pick(note.tldr, view)}</span>
-        </p>
+        <ul className="mt-2 space-y-1.5 text-lg font-bold leading-snug">
+          {toPoints(pick(note.tldr, view), 4).map((pt) => (
+            <li key={pt}>
+              <span className={n.hl}>{pt}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {note.sections.map((sec, si) => (
@@ -107,27 +142,43 @@ export function NoteView({ note, prev, next, scenarioCount }: { note: Note; prev
         </section>
       ) : null}
 
-      <ChaiSays mood="happy" size={70}>
-        Read it once, then test yourself. Quizzing right after reading is how it sticks.
-      </ChaiSays>
-
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Link href={quizHref} className="btn-sweep flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-lg font-black text-primary-foreground hard-shadow-md">
-          <Zap className="size-5" aria-hidden /> Quiz me
+      <section className="rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5" aria-labelledby="next-steps">
+        <h2 id="next-steps" className="text-lg font-black">
+          What to do now
+        </h2>
+        <ol className="mt-3 space-y-2.5">
+          <li className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-background p-3">
+            <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary font-black text-primary-foreground">✓</span>
+            <span className="font-bold">Read this note</span>
+            <span className="ml-auto text-caption text-muted-foreground">{readCount} read so far</span>
+          </li>
+          <li>
+            <Link href={quizHref} className="btn-sweep flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-3 text-primary-foreground hard-shadow-md">
+              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">2</span>
+              <span className="text-lg font-black">Quiz me on this</span>
+              <Zap className="ml-auto size-5" aria-hidden />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={scenarioCount ? `/practice/learn/scenarios?note=${note.id}` : "/practice/learn/terms"}
+              className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"
+            >
+              <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">3</span>
+              <span className="font-black">{scenarioCount ? `Practise with a patient (${scenarioCount})` : "Practise clinical words"}</span>
+              <ArrowRight className="ml-auto size-5" aria-hidden />
+            </Link>
+          </li>
+        </ol>
+        <div className="mt-4">
+          <ChaiSays mood="happy" size={56}>
+            Quizzing right after reading is how it sticks.
+          </ChaiSays>
+        </div>
+        <Link href="/practice/learn/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
+          <Trophy className="size-4" aria-hidden /> See the leaderboard
         </Link>
-        {scenarioCount ? (
-          <Link href={`/practice/learn/scenarios?note=${note.id}`} className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-brand font-black text-brand-foreground hard-shadow-sm">
-            What would you do? ({scenarioCount})
-          </Link>
-        ) : (
-          <Link href="/practice/learn/terms" className="flex h-14 items-center justify-center rounded-2xl border-2 border-foreground bg-brand font-black text-brand-foreground hard-shadow-sm">
-            Say it clinically
-          </Link>
-        )}
-        <Link href="/practice/learn/progress" className="flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-card font-black hard-shadow-sm">
-          <Trophy className="size-5" aria-hidden /> Leaderboard
-        </Link>
-      </div>
+      </section>
 
       <nav className="flex items-center justify-between gap-3 pt-2" aria-label="Other notes">
         {prev ? (
@@ -138,8 +189,8 @@ export function NoteView({ note, prev, next, scenarioCount }: { note: Note; prev
           <span />
         )}
         {next ? (
-          <Link href={`/practice/notes/${next.id}`} className="inline-flex min-w-0 items-center gap-1 text-sm font-bold">
-            <span className="truncate">{next.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
+          <Link href={`/practice/notes/${next.id}`} className="inline-flex min-w-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-3 py-1.5 text-sm font-bold text-background">
+            <span className="truncate">Next: {next.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
           </Link>
         ) : null}
       </nav>

@@ -24,3 +24,22 @@ describe("notes, scenarios and terms", () => {
     expect(WORDS.length).toBeGreaterThanOrEqual(8);
   });
 });
+
+describe("notes read tracking and DSM coverage", () => {
+  it("marks a note read once and keeps the first day", async () => {
+    const { emptyState, markNoteRead, normalise } = await import("../engine");
+    const a = markNoteRead(emptyState(), "dsm-anxiety", "2026-11-01");
+    expect(a.notesRead["dsm-anxiety"]).toBe("2026-11-01");
+    expect(markNoteRead(a, "dsm-anxiety", "2026-11-02")).toBe(a);
+    expect(normalise({ notesRead: { x: "2026-11-01", y: 5 } }).notesRead).toEqual({ x: "2026-11-01" });
+    expect(normalise({}).notesRead).toEqual({});
+  });
+  it("covers every DSM-5-TR chapter, plus neuroscience and patient language", () => {
+    const ids = new Set(NOTES.map((n) => n.id));
+    for (const id of ["neuroscience", "how-patients-talk", "dsm-neurodev", "dsm-psychosis", "dsm-bipolar", "dsm-depressive", "dsm-anxiety", "dsm-ocd", "dsm-trauma", "dsm-dissociative", "dsm-somatic", "dsm-feeding", "dsm-elimination-sleep", "dsm-sex-gender", "dsm-disruptive", "dsm-substance", "dsm-ncd", "dsm-personality", "dsm-paraphilic", "dsm-medication"])
+      expect(ids.has(id), id).toBe(true);
+  });
+  it("uses words, not maths symbols, in student-facing text", () => {
+    for (const n of NOTES) expect(/[≥≤≠↑↓]|<\d|>\d|~\d/.test(JSON.stringify(n)), n.id).toBe(false);
+  });
+});

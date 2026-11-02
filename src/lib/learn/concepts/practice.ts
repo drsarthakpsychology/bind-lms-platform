@@ -54,9 +54,9 @@ export const COUNSELLING: Concept[] = [
 export const ASSESSMENT: Concept[] = [
   c("mmse", "assessment", "MMSE", "30-point bedside test of thinking and memory", "Mini-Mental State Examination; cognitive screen, education-sensitive", ["cognition", "screening"]),
   c("moca", "assessment", "MoCA", "30-point thinking test more sensitive to mild problems", "Montreal Cognitive Assessment; better for MCI and executive deficits", ["cognition", "screening"]),
-  c("phq9", "assessment", "PHQ-9", "9-question depression questionnaire", "Self-report depression severity (0–27); item 9 screens suicidal thoughts", ["mood", "screening"]),
-  c("gad7", "assessment", "GAD-7", "7-question anxiety questionnaire", "Self-report anxiety severity (0–21); ≥10 suggests further assessment", ["anxiety", "screening"]),
-  c("ybocs", "assessment", "Y-BOCS", "Clinician-rated scale for OCD severity", "Yale-Brown Obsessive Compulsive Scale (0–40)", ["ocd", "rating"]),
+  c("phq9", "assessment", "PHQ-9", "9-question depression questionnaire", "Self-report depression severity (0 to 27); item 9 screens suicidal thoughts", ["mood", "screening"]),
+  c("gad7", "assessment", "GAD-7", "7-question anxiety questionnaire", "Self-report anxiety severity (0 to 21); at least 10 suggests further assessment", ["anxiety", "screening"]),
+  c("ybocs", "assessment", "Y-BOCS", "Clinician-rated scale for OCD severity", "Yale-Brown Obsessive Compulsive Scale (0 to 40)", ["ocd", "rating"]),
   c("hamd", "assessment", "HAM-D", "Clinician-rated depression scale", "Hamilton Depression Rating Scale; common in trials", ["mood", "rating"]),
   c("ymrs", "assessment", "YMRS", "Clinician-rated scale for mania", "Young Mania Rating Scale", ["mania", "rating"]),
   c("panss", "assessment", "PANSS", "Scale for positive, negative and general symptoms of psychosis", "Positive and Negative Syndrome Scale (30 items)", ["psychosis", "rating"]),
@@ -67,7 +67,7 @@ export const ASSESSMENT: Concept[] = [
   c("rorschach", "assessment", "Rorschach test", "Inkblot test of perception and personality", "Projective test; scored with systems such as Exner/R-PAS", ["projective", "personality"]),
   c("tat", "assessment", "TAT", "Telling stories about ambiguous pictures to reveal themes", "Thematic Apperception Test; projective", ["projective", "personality"]),
   c("mmpi", "assessment", "MMPI", "Long true/false personality and psychopathology inventory with validity scales", "Minnesota Multiphasic Personality Inventory (MMPI-2/-3)", ["personality", "inventory"]),
-  c("mchat", "assessment", "M-CHAT", "Parent questionnaire screening toddlers for autism", "Modified Checklist for Autism in Toddlers (16–30 months)", ["neurodevelopmental", "screening"]),
+  c("mchat", "assessment", "M-CHAT", "Parent questionnaire screening toddlers for autism", "Modified Checklist for Autism in Toddlers (16 to 30 months)", ["neurodevelopmental", "screening"]),
   c("vineland", "assessment", "Vineland scales", "Measures everyday adaptive skills", "Vineland Adaptive Behavior Scales; used in intellectual disability assessment", ["neurodevelopmental", "adaptive"]),
 ];
 
