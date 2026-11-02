@@ -143,11 +143,11 @@ export function MseTrainer() {
           {revealed ? (
             <div className="mt-4 space-y-2 rounded-md border border-border bg-background p-3">
               <p className="text-small">
-                <span className="font-semibold text-green-700">Expert: </span>
+                <span className="font-semibold text-status-success-fg">Expert: </span>
                 {stimulus.expertTags.join(", ")}
               </p>
               {stimulus.amberTags?.length ? (
-                <p className="text-small text-amber-700">
+                <p className="text-small text-status-pending-fg">
                   <span className="font-semibold">Defensible alternative: </span>
                   {stimulus.amberTags.join(", ")}
                 </p>
@@ -224,12 +224,12 @@ export function MseTrainer() {
             className="mt-3 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
           />
           {flagged.length ? (
-            <div className="mt-3 rounded-md border-2 border-amber-400 bg-amber-50 p-3 text-small text-amber-800" role="alert">
+            <div className="mt-3 rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-small text-status-pending-fg" role="alert">
               <span className="font-semibold">Diagnostic terms flagged:</span> {flagged.join(", ")}
               <p className="mt-1">Try describing the behaviour instead of naming the diagnosis.</p>
             </div>
           ) : describeText.trim().length > 10 ? (
-            <div className="mt-3 rounded-md border-2 border-green-500 bg-green-50 p-3 text-small text-green-800" role="status">
+            <div className="mt-3 rounded-md border-2 border-foreground bg-status-success-bg p-3 text-small text-status-success-fg" role="status">
               Clean — no diagnostic terms. That&apos;s the skill.
             </div>
           ) : null}

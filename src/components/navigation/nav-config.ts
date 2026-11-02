@@ -7,11 +7,12 @@ import type { NavItem } from "@/components/navigation/nav-items";
  * across that boundary.
  */
 export const STUDENT_ITEMS: NavItem[] = [
-  { href: "/dashboard", label: "My Courses", icon: "bookOpen", exact: true },
-  { href: "/tools/psychopharm", label: "Tools", icon: "pill", exact: true },
-  { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
-  { href: "/reflect", label: "Journal", icon: "notebook", exact: true },
-  { href: "/wall", label: "Wall", icon: "wall", exact: true },
+  { href: "/dashboard", label: "Home", icon: "home", exact: true },
+  { href: "/courses", label: "Lectures", icon: "play" },
+  { href: "/practice", label: "Practice", icon: "stethoscope" },
+  { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
+  { href: "/wall", label: "Wall", icon: "wall", section: "More" },
+  { href: "/tools/psychopharm", label: "Medicines", icon: "pill", section: "More" },
   // Passport (skills_passport) and Record are not released for this cohort —
   // a nav link to an empty/placeholder surface is worse than no link. The
   // routes remain (no admin access is removed); students just aren't pointed at
@@ -24,8 +25,9 @@ export const STUDENT_ITEMS: NavItem[] = [
  * live/unlocked tools, and each tool route is server-gated by its flag.
  */
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
-  { href: "/dashboard", label: "Lectures", icon: "bookOpen", exact: true },
-  { href: "/practice", label: "Practice", icon: "sparkles" },
+  { href: "/dashboard", label: "Home", icon: "home", exact: true },
+  { href: "/courses", label: "Lectures", icon: "play" },
+  { href: "/practice", label: "Practice", icon: "stethoscope" },
 ];
 
 /**
@@ -39,14 +41,15 @@ export const LECTURE_ONLY_ITEMS: NavItem[] = [
  * mapping stays 1:1.
  */
 export const ADMIN_ITEMS: NavItem[] = [
-  { href: "/admin", label: "Overview", icon: "layoutDashboard", exact: true },
+  { href: "/admin", label: "Home", icon: "home", exact: true },
 
   // Launch — the go-live surfaces: upload content, manage people, send
   // credentials, switch what's live. Highest value when the programme is
   // first going out to students.
   { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
-  { href: "/admin/students", label: "Students", icon: "users", section: "Launch" },
-  { href: "/admin/emails", label: "Emails", icon: "mail", section: "Launch" },
+  { href: "/admin/emails", label: "Mail", icon: "mail", section: "Launch" },
+  { href: "/admin/people", label: "People pipeline", icon: "users", section: "Launch" },
+  { href: "/admin/students", label: "Students", icon: "clipboardList", section: "Launch" },
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
 
   // Review — the daily review workflow, highest-frequency first.
@@ -73,3 +76,101 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
   { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },
 ];
+
+/**
+ * Admin sidebar: five places, grouped by job (the Shopify / Google Classroom
+ * pattern) instead of 20 loose links. Each place opens on its most-used page
+ * and shows its other pages as tabs along the top (see ADMIN_SECTIONS).
+ */
+export type AdminSection = {
+  key: string;
+  label: string;
+  icon: string;
+  href: string;
+  /** `hidden` tabs only mark a page as belonging here (not shown as a tab). */
+  tabs: { href: string; label: string; hidden?: boolean }[];
+};
+
+export const ADMIN_SECTIONS: AdminSection[] = [
+  { key: "home", label: "Home", icon: "home", href: "/admin", tabs: [] },
+  // Mail has its own folder rail (Inbox / Sent / Logins / Failed), like Gmail,
+  // so it needs no tab row.
+  { key: "mail", label: "Mail", icon: "mail", href: "/admin/emails", tabs: [{ href: "/admin/emails", label: "Mail", hidden: true }] },
+  {
+    key: "content",
+    label: "Content",
+    icon: "bookOpen",
+    href: "/admin/courses",
+    tabs: [
+      { href: "/admin/courses", label: "Courses & lectures" },
+      { href: "/admin/flags", label: "What's live" },
+      { href: "/admin/cards", label: "Study cards" },
+      { href: "/admin/idioms", label: "Idiom bank" },
+      { href: "/admin/psychopharm-review", label: "Medicines" },
+      { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
+      { href: "/admin/corpus/dictate", label: "Record a case" },
+      { href: "/admin/calibration", label: "Marking check" },
+      { href: "/admin/modules", label: "Modules", hidden: true },
+    ],
+  },
+  {
+    key: "people",
+    label: "People",
+    icon: "users",
+    href: "/admin/people",
+    tabs: [
+      { href: "/admin/people", label: "Pipeline" },
+      { href: "/admin/students", label: "Students" },
+      { href: "/admin/roster", label: "Roster", hidden: true },
+      { href: "/admin/enquiries", label: "Enquiries" },
+      { href: "/admin/pulse", label: "Progress" },
+      { href: "/admin/checkins", label: "Check-ins" },
+    ],
+  },
+  {
+    key: "review",
+    label: "Review",
+    icon: "inbox",
+    href: "/admin/triage",
+    tabs: [
+      { href: "/admin/triage", label: "Needs a look" },
+      { href: "/admin/submissions", label: "Submissions" },
+      { href: "/admin/sim-review", label: "Practice sessions" },
+      { href: "/admin/supervision", label: "Sign-offs" },
+      { href: "/admin/wall-reports", label: "Wall reports" },
+    ],
+  },
+  {
+    key: "system",
+    label: "System",
+    icon: "gauge",
+    href: "/admin/infra",
+    tabs: [
+      { href: "/admin/infra", label: "Usage & limits" },
+      { href: "/admin/tools", label: "Admin tools" },
+    ],
+  },
+];
+
+/** Which admin section a path belongs to (longest matching tab wins). */
+export function adminSectionFor(pathname: string): AdminSection | null {
+  if (pathname === "/admin") return ADMIN_SECTIONS[0];
+  let best: { s: AdminSection; len: number } | null = null;
+  for (const s of ADMIN_SECTIONS) {
+    for (const tab of s.tabs) {
+      if (pathname === tab.href || pathname.startsWith(tab.href + "/")) {
+        if (!best || tab.href.length > best.len) best = { s, len: tab.href.length };
+      }
+    }
+  }
+  return best?.s ?? null;
+}
+
+/** Sidebar items for admin: one per section; active across all its tabs. */
+export const ADMIN_SIDEBAR: NavItem[] = ADMIN_SECTIONS.map((s) => ({
+  href: s.href,
+  label: s.label,
+  icon: s.icon,
+  exact: s.key === "home",
+  match: s.tabs.map((t) => t.href),
+}));

@@ -107,7 +107,7 @@ export function RolePlayLobby({
             </button>
           ))}
         </div>
-        {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+        {error ? <p className="text-small text-destructive" role="alert">{error}</p> : null}
         <button
           type="submit"
           disabled={busy || !peerEmail.trim()}
@@ -133,7 +133,7 @@ export function RolePlayLobby({
                       You play {s.role} · {new Date(s.createdAt).toLocaleDateString()}
                     </p>
                   </div>
-                  <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${s.status === "active" ? "bg-green-100 text-green-800" : "bg-secondary text-muted-foreground"}`}>
+                  <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${s.status === "active" ? "bg-status-success-bg text-status-success-fg" : "bg-secondary text-muted-foreground"}`}>
                     {s.status}
                   </span>
                 </Link>

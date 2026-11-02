@@ -52,6 +52,16 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         setQuery("");
         setIdx(0);
       }
+      // "/" opens search like YouTube/GitHub — but never while typing.
+      if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        const el = e.target as HTMLElement | null;
+        const typing =
+          !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+        if (!typing) {
+          e.preventDefault();
+          openPalette();
+        }
+      }
       if (e.key === "Escape") setOpen(false);
     }
     window.addEventListener("keydown", onKey);

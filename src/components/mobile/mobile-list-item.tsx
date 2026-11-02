@@ -63,12 +63,12 @@ export function MobileListItem({
   );
 
   const surface = highlight
-    ? "border-2 border-foreground bg-primary"
+    ? "border-foreground bg-primary hard-shadow-xs"
     : active || emphasis
-      ? "bg-accent"
-      : "bg-card hover:bg-accent";
+      ? "border-foreground bg-accent"
+      : "border-foreground/15 bg-card hover:border-foreground hover:hard-shadow-xs";
   const base =
-    "flex w-full min-h-[48px] items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors duration-fast ease-snappy active:translate-y-px";
+    "flex w-full min-h-[52px] items-center gap-3 rounded-xl border-2 px-3 py-2 text-left transition-[background-color,border-color,box-shadow,transform] duration-fast ease-snappy active:translate-y-px active:shadow-none";
 
   if (href) {
     return (

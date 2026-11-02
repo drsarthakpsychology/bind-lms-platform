@@ -139,7 +139,7 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
           Send
         </button>
       </form>
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-destructive" role="alert">{error}</p> : null}
     </div>
   );
 }

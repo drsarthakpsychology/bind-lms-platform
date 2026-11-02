@@ -121,8 +121,8 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
                   className={cn(
                     "rounded-md border-2 border-border px-3 py-2.5 text-small font-medium transition-transform active:translate-y-px disabled:opacity-70",
                     picked && !revealed && "bg-primary text-primary-foreground",
-                    revealed && correct && "bg-green-100 text-green-800",
-                    revealed && picked && !correct && "bg-red-100 text-red-700",
+                    revealed && correct && "bg-status-success-bg text-status-success-fg",
+                    revealed && picked && !correct && "bg-status-alert-bg text-destructive",
                   )}
                 >
                   {label}
@@ -207,8 +207,8 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
                 className={cn(
                   "rounded-md border-2 border-border px-3 py-2.5 text-small font-medium transition-transform active:translate-y-px disabled:opacity-70",
                   picked && !revealed && "bg-primary text-primary-foreground",
-                  revealed && correct && "bg-green-100 text-green-800",
-                  revealed && picked && !correct && "bg-red-100 text-red-700",
+                  revealed && correct && "bg-status-success-bg text-status-success-fg",
+                  revealed && picked && !correct && "bg-status-alert-bg text-destructive",
                 )}
               >
                 {label}

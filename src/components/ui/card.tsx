@@ -15,8 +15,9 @@ const cardVariants = cva(
         flat: "",
         raised: "hard-shadow-sm",
         accent: "border-foreground bg-primary text-primary-foreground hard-shadow-sm",
+        brand: "border-foreground bg-brand text-brand-foreground hard-shadow-sm",
         interactive:
-          "cursor-pointer outline-none duration-fast ease-snappy hover:hard-shadow-md hover:-translate-y-0.5 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+          "cursor-pointer border-foreground outline-none duration-fast ease-snappy hover:hard-shadow-md hover:-translate-x-0.5 hover:-translate-y-0.5 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
       },
     },
     defaultVariants: {

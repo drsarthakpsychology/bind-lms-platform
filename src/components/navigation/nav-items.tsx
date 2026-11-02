@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, type LucideIcon } from "lucide-react";
+import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -13,6 +13,8 @@ import { cn } from "@/lib/utils";
  * the client module graph — where functions are allowed.
  */
 export const NAV_ICONS: Record<string, LucideIcon> = {
+  home: Home,
+  play: Play,
   layoutDashboard: LayoutDashboard,
   users: Users,
   bookOpen: BookOpen,
@@ -52,6 +54,8 @@ export type NavItem = {
   exact?: boolean;
   /** Optional section label — rendered as a group header the first time it appears. */
   section?: string;
+  /** Extra path prefixes that also make this item active (admin sections). */
+  match?: string[];
 };
 
 /**
@@ -71,9 +75,8 @@ export function NavItems({
 }) {
   const pathname = usePathname();
 
-  // Precompute section headers without mutating any value during render: an
-  // item opens a section when it carries a `section` different from the item
-  // before it. Pure, so the render stays deterministic.
+  // An item opens a section when it carries a `section` different from the
+  // item before it. Pure, so the render stays deterministic.
   const rows = items.map((item, i) => ({
     item,
     showHeader: item.section !== undefined && item.section !== items[i - 1]?.section,
@@ -82,14 +85,15 @@ export function NavItems({
   return (
     <nav aria-label="Primary" className={cn("flex flex-col gap-1", className)}>
       {rows.map(({ item, showHeader }) => {
+        const under = (h: string) => pathname === h || pathname.startsWith(`${h}/`);
         const active = item.exact
           ? pathname === item.href
-          : pathname === item.href || pathname.startsWith(`${item.href}/`);
+          : under(item.href) || (item.match ?? []).some(under);
         const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <React.Fragment key={item.href}>
             {showHeader ? (
-              <p className="mt-3 mb-0.5 px-3 text-eyebrow text-muted-foreground">
+              <p className="nav-section mt-4 mb-1 px-3 text-eyebrow text-muted-foreground">
                 {item.section}
               </p>
             ) : null}
@@ -97,15 +101,19 @@ export function NavItems({
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
+              title={item.label}
               className={cn(
-                "flex cursor-pointer items-center gap-3 rounded-md border-2 border-transparent px-3 py-2 text-small font-medium transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
+                "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
                 active
-                  ? "border-foreground bg-primary text-primary-foreground hard-shadow-flat"
-                  : "text-muted-foreground hover:bg-accent hover:text-foreground active:translate-y-px"
+                  ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs"
+                  : "border-transparent text-foreground/80 hover:border-foreground hover:bg-card hover:text-foreground hover:hard-shadow-xs active:translate-y-px active:shadow-none"
               )}
             >
-              <Icon className="size-4 shrink-0" aria-hidden />
-              {item.label}
+              <Icon
+                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/nav:-rotate-6 group-hover/nav:scale-110"
+                aria-hidden
+              />
+              <span className="nav-label min-w-0 truncate">{item.label}</span>
             </Link>
           </React.Fragment>
         );

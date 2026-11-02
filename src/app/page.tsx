@@ -1,4 +1,4 @@
-import { LandingPage } from "@/components/landing/landing-page";
+import { HomePage } from "@/components/home/home-page";
 import { ReturningStudentRedirect } from "@/components/landing/returning-student-redirect";
 import { LEGAL } from "@/lib/legal-constants";
 import { BRAND } from "@/lib/brand";
@@ -36,7 +36,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <ReturningStudentRedirect />
-      <LandingPage />
+      <HomePage />
     </>
   );
 }

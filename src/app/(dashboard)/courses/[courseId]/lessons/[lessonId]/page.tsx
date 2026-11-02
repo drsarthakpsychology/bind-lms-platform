@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ChevronDown, ChevronLeft, FileText, Paperclip } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronLeft, FileText, Paperclip, Play } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -27,7 +27,6 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
-import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 // "Check what stuck" — the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
@@ -192,41 +191,77 @@ export default async function LessonPage({
       : "Finish course"
     : "Mark complete";
 
+  const nextUp = pickerLessons;
+
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-8 pb-32 lg:pb-0">
-      {/* Back control — labelled with where it goes + compact lesson picker.
-          One navigation surface at a time (no course column). */}
+    <div className="pb-32 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 lg:pb-0 xl:grid-cols-[minmax(0,1fr)_24rem]">
+      <div className="min-w-0 space-y-5">
+      {/* Back + (phones) the lesson list. The sidebar steps aside on this page
+          so the video gets the width — like a video app's watch page. */}
       <div className="flex items-center justify-between gap-3">
         <Link
           href={`/courses/${courseId}`}
-          className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-small font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
+          className="inline-flex min-h-10 min-w-0 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
         >
-          <ChevronLeft className="size-4" aria-hidden />
-          {course?.title ?? "Course"}
+          <ChevronLeft className="size-4 shrink-0" aria-hidden />
+          <span className="truncate">{course?.title ?? "Course"}</span>
         </Link>
         {pickerLessons.length > 1 && (
-          <LessonPicker
-            courseId={courseId}
-            courseTitle={course?.title ?? "Course"}
-            lessons={pickerLessons}
-            currentId={lessonId}
-          />
+          <div className="lg:hidden">
+            <LessonPicker
+              courseId={courseId}
+              courseTitle={course?.title ?? "Course"}
+              lessons={pickerLessons}
+              currentId={lessonId}
+            />
+          </div>
         )}
       </div>
 
-      {/* Lesson header */}
-      <div className="space-y-2">
-        {lessonPosition ? (
-          <p className="text-eyebrow text-muted-foreground">{lessonPosition}</p>
-        ) : null}
-        <h1 className="text-h1">{lesson?.title ?? "Lesson"}</h1>
-        {lesson?.description ? (
-          <p className="text-small text-muted-foreground">{lesson.description}</p>
-        ) : null}
+      {/* Watch tab — the video first (where every video app puts it); a
+          reading lesson shows its text in the same frame. */}
+      {tab === "watch" && (
+        <div className="overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-md">
+          {hasVideo ? (
+            <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+          ) : (
+            <div className="p-5 sm:p-7">
+              <p className="text-eyebrow text-link">Reading</p>
+              <h2 className="mt-1 text-h2">{lesson?.title ?? "Lesson"}</h2>
+              <p className="mt-3 whitespace-pre-line break-words text-body text-foreground/85">
+                {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Title + the one primary action */}
+      <div className="space-y-4">
+        <div className="space-y-1.5">
+          {lessonPosition ? <p className="text-eyebrow text-link">{lessonPosition}</p> : null}
+          <h1 className="text-h1 break-words">{lesson?.title ?? "Lesson"}</h1>
+        </div>
+        {tab === "watch" && (
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <ContinueControl
+              lessonId={lessonId}
+              courseId={courseId}
+              continueTarget={continueTarget}
+              label={forwardLabel}
+              isFinalLesson={!nextLesson}
+              alreadyComplete={lastLessonCompleted}
+            />
+            {lessonComplete ? (
+              <span className="inline-flex h-9 w-fit items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">
+                <CheckCircle2 className="size-4" aria-hidden /> Watched
+              </span>
+            ) : null}
+          </div>
+        )}
       </div>
 
-      {/* Tab bar — Watch / Materials / Assignment. Hidden entirely on a plain
-          video lesson (no materials, no assignment). */}
+      {/* Watch / Materials / Assignment. Hidden on a plain video lesson. */}
       <Suspense fallback={null}>
         <LessonTabs
           courseId={courseId}
@@ -237,64 +272,32 @@ export default async function LessonPage({
         />
       </Suspense>
 
-      {/* Watch tab — the video when one exists; otherwise the lesson's
-          reading (an honest text-lesson surface for authored content). */}
-      {tab === "watch" && (
-        <>
-          {lessonComplete ? (
-            <MobileCompletionState
-              title="Lesson complete"
-              description="You've finished this lesson — move on when you're ready."
-            />
-          ) : null}
-          <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
-            {hasVideo ? (
-              <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
-            ) : (
-              <div className="p-5">
-                <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
-                <p className="mt-2 whitespace-pre-line break-words text-small text-muted-foreground">
-                  {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
-                </p>
-              </div>
-            )}
-          </div>
+      {/* About this lecture — the description box under the video. */}
+      {tab === "watch" && hasVideo && lesson?.description ? (
+        <section aria-label="About this lecture" className="rounded-2xl border-2 border-foreground/15 bg-card p-4 sm:p-5">
+          <h2 className="text-eyebrow text-muted-foreground">About this lecture</h2>
+          <p className="mt-2 whitespace-pre-line break-words text-small text-foreground/85">{lesson.description}</p>
+        </section>
+      ) : null}
 
-          {/* ONE primary action, directly below the video — the thing to do
-              next. Everything else collapses below it. */}
-          <div className="mt-4">
-            <ContinueControl
-              lessonId={lessonId}
-              courseId={courseId}
-              continueTarget={continueTarget}
-              label={forwardLabel}
-              isFinalLesson={!nextLesson}
-              alreadyComplete={lastLessonCompleted}
-            />
-          </div>
-        </>
-      )}
-
-      {/* Check what stuck — a quick retention check after the lesson, not a
-          test. Every item carries its source (the same pattern as MSE/OSCE).
-          Collapsed by default so it never sits between the video and the
-          forward action — tap to reveal (progressive disclosure, T87). */}
+      {/* Check what stuck — a quick retention check, folded so it never sits
+          between the video and the next step. */}
       {tab === "watch" && (
         <section aria-label="Check what stuck">
-          <details className="group">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-md px-1 py-2">
+          <details className="group rounded-2xl border-2 border-foreground bg-card">
+            <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-4 py-3 transition-colors hover:bg-accent [&::-webkit-details-marker]:hidden">
               <span className="min-w-0">
-                <h2 className="text-h2">Check what stuck</h2>
-                <p className="mt-0.5 text-small text-muted-foreground">
-                  A quick check, not a test — every item carries its source.
-                </p>
+                <span className="block text-h3">Check what stuck</span>
+                <span className="mt-0.5 block text-small text-muted-foreground">
+                  Four quick questions. Not a test.
+                </span>
               </span>
               <ChevronDown
-                className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                className="size-5 shrink-0 transition-transform duration-fast ease-snappy group-open:rotate-180"
                 aria-hidden
               />
             </summary>
-            <div className="mt-2">
+            <div className="border-t-2 border-foreground/10 p-4">
               <QuizCheck items={LESSON_QUIZ_ITEMS} />
             </div>
           </details>
@@ -470,6 +473,60 @@ export default async function LessonPage({
           />
         )
       )}
+      </div>
+
+      {/* Up next — the course playlist beside the video (laptops and up). */}
+      {nextUp.length > 0 ? (
+        <aside aria-label="Lectures in this course" className="hidden lg:block">
+          <div className="sticky top-20 flex max-h-[calc(100dvh-6rem)] flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
+            <div className="border-b-2 border-foreground bg-brand px-4 py-3 text-brand-foreground">
+              <p className="truncate text-sm font-bold">{course?.title ?? "Course"}</p>
+              <p className="text-caption opacity-90">
+                {completedIds.size > 0 ? `${pickerLessons.filter((l) => l.isCompleted).length} of ${pickerLessons.length} watched` : `${pickerLessons.length} lectures`}
+              </p>
+            </div>
+            <ol className="flex-1 space-y-1 overflow-y-auto overscroll-contain p-2">
+              {nextUp.map((l, i) => {
+                const current = l.id === lessonId;
+                return (
+                  <li key={l.id}>
+                    <Link
+                      href={`/courses/${courseId}/lessons/${l.id}`}
+                      aria-current={current ? "page" : undefined}
+                      className={
+                        "group/up flex items-center gap-3 rounded-xl border-2 p-2 transition-[background-color,border-color] duration-fast ease-snappy " +
+                        (current
+                          ? "border-foreground bg-primary text-primary-foreground"
+                          : "border-transparent hover:border-foreground hover:bg-accent")
+                      }
+                    >
+                      <span
+                        aria-hidden
+                        className={
+                          "flex aspect-video w-20 shrink-0 items-center justify-center rounded-lg border-2 border-foreground font-pix text-sm " +
+                          (current ? "bg-[#111111] text-primary" : "bg-[#111111] text-primary")
+                        }
+                      >
+                        {current ? <Play className="size-4 fill-current" /> : String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="line-clamp-2 text-sm font-bold leading-snug">{l.title}</span>
+                        <span className="mt-0.5 flex items-center gap-1 text-caption font-semibold opacity-80">
+                          {current ? "Playing now" : l.isCompleted ? (
+                            <>
+                              <CheckCircle2 className="size-3.5" aria-hidden /> Watched
+                            </>
+                          ) : `Lecture ${i + 1}`}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </aside>
+      ) : null}
     </div>
   );
 }

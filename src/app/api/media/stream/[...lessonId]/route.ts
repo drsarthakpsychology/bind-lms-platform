@@ -30,6 +30,10 @@ import { rateLimitFast } from "@/lib/rate-limit-fast";
  *   - enrolment + publish
  *   - rate-limited
  */
+/** Long MP4 lessons stream through this route; give them the full window so
+ *  playback isn't cut off when a function hits the default time limit. */
+export const maxDuration = 300;
+
 export async function GET(
   request: NextRequest,
   ctx: { params: Promise<{ lessonId: string[] }> },
@@ -49,7 +53,19 @@ export async function GET(
     return NextResponse.json({ error: "Invalid or expired stream token." }, { status: 401 });
   }
 
-  const profile = await requireSession();
+  // Video chunks are the hot path (one request every few seconds per
+  // viewer). The stream token is HMAC-signed, bound to this user + lesson and
+  // lives 5 minutes, so for a chunk whose user already passed the full check
+  // on this instance we skip the database session lookup — it was adding a
+  // round-trip to every chunk and caused buffering on slow connections.
+  // Playlists, the key and first requests still do the full check.
+  const restPath = segments.slice(1).join("/");
+  const isChunk = restPath !== "" && restPath !== "__key__" && !restPath.endsWith(".m3u8");
+  const { getStreamVerdict: peekVerdict } = await import("@/lib/media/stream-cache");
+  const warm = isChunk ? peekVerdict(payload.uid, lessonId) : null;
+  const profile = warm?.ok
+    ? { id: payload.uid, role: "student" as const, scope: "full" as const }
+    : await requireSession();
   if (!profile || profile.id !== payload.uid) {
     return NextResponse.json({ error: "Not signed in." }, { status: 401 });
   }
@@ -161,7 +177,10 @@ export async function GET(
     status: 200,
     headers: {
       "Content-Type": "video/mp2t",
-      "Cache-Control": "private, no-store",
+      // The chunk is encrypted with this viewing session's key and its URL
+      // carries the session token, so a private browser cache is safe and
+      // makes seeking back instant.
+      "Cache-Control": "private, max-age=3600, immutable",
       "Content-Length": String(ciphertext.length),
     },
   });

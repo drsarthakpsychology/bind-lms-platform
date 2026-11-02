@@ -152,7 +152,7 @@ export function LibraryList({
                     subtitle={d.abstract.slice(0, 90) + (d.abstract.length > 90 ? "…" : "")}
                     trailing={
                       <StickyNote
-                        className={hasOwnNote ? "size-4 text-primary" : "size-4 text-muted-foreground"}
+                        className={hasOwnNote ? "size-4 text-link" : "size-4 text-muted-foreground"}
                         aria-hidden
                       />
                     }

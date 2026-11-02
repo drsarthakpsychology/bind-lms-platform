@@ -75,7 +75,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
           <Target className="size-3.5" aria-hidden />
           Your weak-spots drill · {idx + 1}/{items.length}
         </p>
-        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-caption font-medium text-amber-800">
+        <span className="rounded-full bg-status-pending-bg px-2 py-0.5 text-caption font-medium text-status-pending-fg">
           {item.skill}
         </span>
       </div>
@@ -97,10 +97,10 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
                 disabled={revealed}
                 className={cn(
                   "block w-full rounded-md border-2 border-border px-3 py-2.5 text-left text-small transition-transform active:translate-y-px disabled:opacity-80",
-                  which === "strong" && "bg-green-50",
+                  which === "strong" && "bg-status-success-bg",
                   isPicked && !revealed && "ring-2 ring-ring",
-                  revealed && correct && "border-green-500 bg-green-100",
-                  revealed && isPicked && !correct && "border-red-400 bg-red-100",
+                  revealed && correct && "border-foreground bg-status-success-bg",
+                  revealed && isPicked && !correct && "border-destructive bg-status-alert-bg",
                 )}
               >
                 <span className="text-caption font-semibold text-muted-foreground">

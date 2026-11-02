@@ -114,13 +114,13 @@ export function ObserveLevel({
       ) : (
         <div className="space-y-3 rounded-md border border-border bg-background p-4">
           {result.labels.length ? (
-            <p className="text-small text-red-700" role="alert">
+            <p className="text-small text-destructive" role="alert">
               <span className="font-semibold">Smuggled conclusions:</span>&nbsp;
               {result.labels.join(", ")}. Each one is an explanation, not an observation — it
               costs you 2 points.
             </p>
           ) : (
-            <p className="text-small text-green-700" role="status">
+            <p className="text-small text-status-success-fg" role="status">
               <span className="font-semibold">Zero labels.</span> That&apos;s the scarcer skill.
             </p>
           )}
@@ -129,7 +129,7 @@ export function ObserveLevel({
             <span className="font-semibold">{result.score}</span> score (observations − 2×labels).
           </p>
           {wordCount < 80 ? (
-            <p className="text-small text-amber-700">
+            <p className="text-small text-status-pending-fg">
               {wordCount} words — you can see more than that. Write what the clothes, the hands,
               the silences are doing.
             </p>

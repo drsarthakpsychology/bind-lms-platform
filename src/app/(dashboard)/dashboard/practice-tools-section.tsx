@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { GraduationCap, Lock } from "lucide-react";
 import { readFlags } from "@/lib/flags";
-import { PageHeader } from "@/components/design-system/page-header";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PRACTICE_TOOLS } from "@/lib/practice/tools";
@@ -33,16 +32,21 @@ export async function PracticeToolsSection() {
 
   return (
     <section aria-label="Practice" className="space-y-3">
-      <PageHeader
-        title="Practice"
-        description="The tools your programme has switched on for you."
-      />
-      <ul className="grid gap-2 sm:grid-cols-2">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <p className="text-eyebrow text-link">Practice</p>
+          <h2 className="text-h1">Try it yourself</h2>
+        </div>
+        <Link href="/practice" className="shrink-0 text-sm font-bold text-link underline-offset-4 hover:underline">
+          See all
+        </Link>
+      </div>
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {tools.map((t) =>
           t.locked ? (
-            <li key={t.title}>
-              <Card variant="flat" className="flex h-full items-center gap-3 p-4 opacity-70">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
+            <li key={t.title} className="min-w-0">
+              <Card variant="flat" className="flex h-full flex-row items-center gap-3 p-4 opacity-70">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-dashed border-foreground/40 bg-muted text-muted-foreground">
                   <Lock className="size-5" aria-hidden />
                 </span>
                 <span className="min-w-0 flex-1">
@@ -59,10 +63,10 @@ export async function PracticeToolsSection() {
               </Card>
             </li>
           ) : (
-            <li key={t.title}>
+            <li key={t.title} className="min-w-0">
               <Link href={t.href} className="block h-full">
-                <Card variant="interactive" className="flex h-full items-center gap-3 p-4">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                <Card variant="interactive" className="flex h-full flex-row items-center gap-3 p-4">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-foreground bg-primary text-primary-foreground">
                     <GraduationCap className="size-5" aria-hidden />
                   </span>
                   <span className="min-w-0 flex-1">

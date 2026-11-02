@@ -452,6 +452,16 @@ export function VideoPlayer({
       if (resume > 0 && resume < video.duration) {
         video.currentTime = resume;
       }
+      // Remember the student's speed across lectures (YouTube does this).
+      try {
+        const savedRate = Number(localStorage.getItem("plms-rate"));
+        if ((PLAYBACK_RATES as readonly number[]).includes(savedRate) && savedRate !== 1) {
+          video.playbackRate = savedRate;
+          setRate(savedRate);
+        }
+      } catch {
+        /* storage unavailable: stay at 1× */
+      }
       setPlayerState({ kind: "ready" });
       // MP4 fallback: expose the single-file source resolution as a static chip
       // (HLS renders the quality menu instead, so this stays null there).
@@ -878,7 +888,7 @@ export function VideoPlayer({
           <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
             <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
               <p className="font-semibold text-white">Playback paused</p>
-              <p className="mt-2 text-sm text-gray-300">
+              <p className="mt-2 text-sm text-muted-foreground">
                 This video&apos;s watermark was tampered with. Reload the page to continue watching.
               </p>
             </div>
@@ -1045,6 +1055,7 @@ export function VideoPlayer({
                       onClick={() => {
                         setRate(r);
                         if (videoRef.current) videoRef.current.playbackRate = r;
+                        try { localStorage.setItem("plms-rate", String(r)); } catch { /* ignore */ }
                         setRateMenuOpen(false);
                       }}
                       className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

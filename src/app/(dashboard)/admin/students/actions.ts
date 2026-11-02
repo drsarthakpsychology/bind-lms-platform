@@ -3,13 +3,13 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
-import { generateCredential, deriveName } from "@/lib/auth/roster";
+import { generateCredential, deriveName, issueSetupLink } from "@/lib/auth/roster";
 
 export type CreateStudentState = {
   error: string | null;
   success: boolean;
-  /** The auto-generated 8-char password, shown once on success. */
-  password?: string;
+  /** One-time "set your password" link, shown once so it can be shared. */
+  setupUrl?: string;
 };
 
 /**
@@ -89,16 +89,18 @@ export async function createStudent(
       email,
       name: deriveName(email),
       status: "pending",
-      password,
       error_reason: null,
       sent_at: null,
     },
     { onConflict: "email" },
   );
 
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const setupUrl = (await issueSetupLink(admin, email, appUrl)) ?? undefined;
+
   revalidatePath("/admin/students");
   revalidatePath("/admin/emails");
-  return { error: null, success: true, password };
+  return { error: null, success: true, setupUrl };
 }
 
 /**

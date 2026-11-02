@@ -18,7 +18,7 @@ const initialState: LoginState = { error: null };
 // the login action using the secret key (NEXT_PUBLIC vs private).
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-export function LoginForm() {
+export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
   const [state, formAction, pending] = useActionState(login, initialState);
   const turnstileRef = useRef<HTMLInputElement>(null);
   const prevError = useRef(state.error);
@@ -55,6 +55,7 @@ export function LoginForm() {
           autoComplete="email"
           required
           placeholder="you@example.com"
+          defaultValue={defaultEmail}
           aria-invalid={credentialError || undefined}
           aria-describedby={credentialError ? "email-error" : undefined}
         />
@@ -108,11 +109,6 @@ export function LoginForm() {
         {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {pending ? "Signing in…" : "Sign in"}
       </Button>
-
-      {/* Help copy — reduce dead-ends for invite-only accounts. */}
-      <p className="text-center text-caption text-muted-foreground">
-        Forgotten your password? Ask your administrator to reset it.
-      </p>
 
       {/* Turnstile script (loaded only when a site key is configured). */}
       {TURNSTILE_SITE_KEY ? (

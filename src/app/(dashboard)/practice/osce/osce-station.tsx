@@ -212,7 +212,7 @@ export function OsceStationView() {
                 <span className="text-small font-medium text-foreground">
                   {recording ? (
                     <span className="inline-flex items-center gap-2">
-                      <span className="size-2.5 animate-pulse rounded-full bg-red-600" aria-hidden />
+                      <span className="size-2.5 animate-pulse rounded-full bg-status-alert-bg" aria-hidden />
                       Recording…
                     </span>
                   ) : spoken ? (
@@ -226,7 +226,7 @@ export function OsceStationView() {
                   onClick={toggleVoice}
                   aria-pressed={recording}
                   className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-3 py-1.5 text-caption font-semibold transition-transform active:translate-y-px ${
-                    recording ? "bg-red-50 text-red-700" : "bg-secondary text-foreground"
+                    recording ? "bg-status-alert-bg text-destructive" : "bg-secondary text-foreground"
                   }`}
                 >
                   {recording ? <Square className="size-4" aria-hidden /> : <Mic className="size-4" aria-hidden />}

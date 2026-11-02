@@ -45,8 +45,8 @@ export function MobileHeader({
   return (
     <header
       className={cn(
-        "z-30 flex min-h-14 items-center gap-2 border-b border-border bg-card",
-        sticky && "sticky top-0",
+        "z-30 flex min-h-14 items-center gap-2 border-b-2 border-foreground bg-card",
+        sticky && "sticky top-0 lg:top-16",
         className,
       )}
       style={inset ? { paddingTop: "env(safe-area-inset-top)" } : undefined}
@@ -55,7 +55,7 @@ export function MobileHeader({
         type="button"
         onClick={handleBack}
         aria-label="Go back"
-        className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-md border border-border bg-background text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
+        className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-card text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
       >
         <ArrowLeft className="size-5" aria-hidden />
       </button>

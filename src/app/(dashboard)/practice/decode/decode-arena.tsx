@@ -104,7 +104,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
               </p>
             </div>
             {result.missedPhysical.length > 0 ? (
-              <p className="mt-2 flex items-center gap-1.5 rounded-md border border-amber-400 bg-amber-50 p-2 text-small text-amber-800">
+              <p className="mt-2 flex items-center gap-1.5 rounded-md border border-foreground bg-status-pending-bg p-2 text-small text-status-pending-fg">
                 <Lightbulb className="size-4 shrink-0" aria-hidden />
                 You missed the physical readings: {result.missedPhysical.join(", ")}. Over-psychologising
                 is the habit this drill exists to break.

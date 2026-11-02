@@ -32,17 +32,19 @@ export function ViewModeToggle({ currentMode }: { currentMode: "admin" | "studen
   return (
     <Button
       type="button"
-      variant={isAdmin ? "secondary" : "outline"}
-      size="icon-sm"
+      variant={isAdmin ? "outline" : "brand"}
+      size="sm"
       onClick={() => switchTo(isAdmin ? "student" : "admin")}
-      title={isAdmin ? "View the student side" : "Back to admin"}
-      aria-label={isAdmin ? "View the student side" : "Back to admin"}
+      disabled={isPending}
+      title={isAdmin ? "See what students see" : "Back to admin"}
+      aria-label={isAdmin ? "See what students see" : "Back to admin"}
     >
       {isAdmin ? (
         <GraduationCap className="size-4" aria-hidden />
       ) : (
         <ShieldCheck className="size-4" aria-hidden />
       )}
+      <span>{isAdmin ? "Student view" : "Back to admin"}</span>
     </Button>
   );
 }

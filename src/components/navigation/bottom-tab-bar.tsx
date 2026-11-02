@@ -3,10 +3,11 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, BookOpen, Stethoscope, NotebookPen, MessageSquare, ListFilter, FileCheck, Users, type LucideIcon } from "lucide-react";
+import { Bell, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { isImmersiveSessionPath } from "./sidebar-gate";
+import { openNavDrawer } from "./sidebar-state";
 
 interface Tab {
   href: string;
@@ -14,41 +15,38 @@ interface Tab {
   icon: LucideIcon;
   /** Match exactly (a hub route like /admin) rather than prefix-matching children. */
   exact?: boolean;
+  /** Other path prefixes that belong to this tab. */
+  match?: string[];
 }
 
 const STUDENT_TABS: Tab[] = [
-  { href: "/dashboard", label: "My Courses", icon: BookOpen },
+  { href: "/dashboard", label: "Home", icon: Home, exact: true },
+  { href: "/courses", label: "Lectures", icon: Play },
   { href: "/practice", label: "Practice", icon: Stethoscope },
-  { href: "/reflect", label: "Journal", icon: NotebookPen },
   { href: "/wall", label: "Wall", icon: MessageSquare },
 ];
 
-/** Admin mobile nav — the 4 highest-frequency destinations; the rest live in the drawer. */
+/** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
-  { href: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
-  { href: "/admin/triage", label: "Review", icon: ListFilter },
-  { href: "/admin/submissions", label: "Submissions", icon: FileCheck },
-  { href: "/admin/students", label: "Students", icon: Users },
+  { href: "/admin", label: "Home", icon: Home, exact: true },
+  { href: "/admin/emails", label: "Mail", icon: Mail },
+  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
+  { href: "/admin/triage", label: "Review", icon: Inbox, match: ["/admin/submissions", "/admin/sim-review", "/admin/supervision", "/admin/wall-reports"] },
 ];
 
-/** Lecture-only roster: a single tab — the lecture list. */
+/** Lecture roster: lectures, practice and alerts. */
 const LECTURE_ONLY_TABS: Tab[] = [
-  { href: "/dashboard", label: "Lectures", icon: BookOpen, exact: true },
+  { href: "/dashboard", label: "Home", icon: Home, exact: true },
+  { href: "/courses", label: "Lectures", icon: Play },
+  { href: "/practice", label: "Practice", icon: Stethoscope },
+  { href: "/notifications", label: "Alerts", icon: Bell },
 ];
 
 /**
- * Mobile bottom tab bar (v5.1 Part B3) — thumb reach. Desktop keeps the
- * sidebar; this renders on small screens only. One tap per tab, active state.
- *
- * Student gets the 5 core tabs; admin gets a compact 4-destination bar so the
- * high-frequency review workflow isn't reduced to a drawer-only path.
- *
- * The active tab gets the system's standard "active" language — peach fill,
- * ink border, hard offset shadow (same as the sidebar active row and the
- * SegmentedControl active segment) — inside a constant-geometry chip, so the
- * active/inactive swap never shifts layout. The peach fill slides between tabs
- * via a layout-animated indicator (reduced-motion renders it statically).
- * Ink-on-peach ≈ 9:1 in both themes.
+ * Phone bottom navigation (Android/Instagram/YouTube pattern): icon over a
+ * short label, the active tab gets a lime pill behind its icon, and the last
+ * slot is always "More" — the drawer with everything else and your account.
+ * Hidden on lesson/material pages and in the patient session.
  */
 export function BottomTabBar({
   mode = "student",
@@ -57,7 +55,7 @@ export function BottomTabBar({
   mode?: "student" | "admin";
   scope?: "full" | "lectures_only";
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const reduce = useReducedMotion();
   const tabs =
     mode === "admin"
@@ -66,61 +64,54 @@ export function BottomTabBar({
         ? LECTURE_ONLY_TABS
         : STUDENT_TABS;
 
-  // Focused modes hide the tab bar — the patient session and lesson/material
-  // drill-downs own the viewport (the page has its own contextual back header),
-  // so the global nav never competes with the task (§20).
   const focusedPath =
-    isImmersiveSessionPath(pathname ?? "") ||
-    /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname ?? "");
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname);
   if (focusedPath) return null;
+
+  const cell =
+    "group/tab flex min-h-16 flex-1 flex-col items-center justify-center gap-1 px-1 pt-2 pb-1.5 text-[0.7rem] font-bold leading-none outline-none focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-ring/60";
+  const pill =
+    "relative flex h-8 w-14 items-center justify-center rounded-full border-2 transition-transform duration-fast ease-snappy group-active/tab:scale-90";
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-border bg-card lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="Primary tabs"
     >
-      <div className="flex items-stretch justify-around">
+      <div className="mx-auto flex max-w-xl items-stretch">
         {tabs.map((t) => {
           const Icon = t.icon;
-          const active = t.exact
-            ? pathname === t.href
-            : pathname === t.href || pathname.startsWith(t.href + "/");
+          const under = (h: string) => pathname === h || pathname.startsWith(h + "/");
+          const active = t.exact ? pathname === t.href : under(t.href) || (t.match ?? []).some(under);
           return (
             <Link
               key={t.href}
               href={t.href}
               aria-current={active ? "page" : undefined}
-              className="flex min-h-14 flex-1 flex-col items-center justify-center py-1.5 text-caption"
+              className={cn(cell, active ? "text-foreground" : "text-muted-foreground")}
             >
-              <span
-                className={cn(
-                  "relative flex flex-col items-center gap-0.5 rounded-md border-2 px-3 py-1 font-medium transition-colors duration-fast ease-snappy active:translate-y-px",
-                  active
-                    ? "border-foreground text-primary-foreground hard-shadow-flat"
-                    : "border-transparent text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {/* Sliding active fill — same layoutId across the bar, so it
-                    animates to whichever tab is active. */}
+              <span className={cn(pill, active ? "border-foreground" : "border-transparent")}>
                 {active && (
                   <motion.span
                     layoutId="bottom-tab-active"
                     aria-hidden
-                    className="absolute inset-0 rounded-md bg-primary"
-                    transition={
-                      reduce
-                        ? { duration: 0 }
-                        : { type: "spring", stiffness: 420, damping: 34 }
-                    }
+                    className="absolute inset-0 rounded-full bg-primary"
+                    transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
-                <Icon className="relative z-10 size-5" aria-hidden />
-                <span className="relative z-10">{t.label}</span>
+                <Icon className={cn("relative z-10 size-5", active && "text-primary-foreground")} aria-hidden />
               </span>
+              <span>{t.label}</span>
             </Link>
           );
         })}
+        <button type="button" onClick={openNavDrawer} className={cn(cell, "text-muted-foreground")}>
+          <span className={cn(pill, "border-transparent")}>
+            <Menu className="relative z-10 size-5" aria-hidden />
+          </span>
+          <span>More</span>
+        </button>
       </div>
     </nav>
   );

@@ -160,7 +160,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
       {loading ? (
         <p className="text-small text-muted-foreground">Loading your Consulting Room sessions…</p>
       ) : error ? (
-        <p className="text-small text-red-700" role="alert">{error}</p>
+        <p className="text-small text-destructive" role="alert">{error}</p>
       ) : !data || data.count === 0 ? (
         <div className="rounded-md border border-border bg-background p-4 text-small text-muted-foreground">
           You don&apos;t have a completed Consulting Room session yet. Run one
@@ -252,9 +252,9 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                         key={d}
                         className={cn(
                           "flex items-start gap-2 rounded-md border px-2 py-1.5 text-small",
-                          v === "green" && "border-green-400 bg-green-50 text-green-800",
-                          v === "amber" && "border-amber-400 bg-amber-50 text-amber-800",
-                          v === "red" && "border-red-400 bg-red-50 text-red-800",
+                          v === "green" && "border-foreground bg-status-success-bg text-status-success-fg",
+                          v === "amber" && "border-foreground bg-status-pending-bg text-status-pending-fg",
+                          v === "red" && "border-destructive bg-status-alert-bg text-destructive",
                         )}
                       >
                         <span className="w-28 shrink-0 font-semibold">{formatDomainKey(d)}</span>

@@ -21,5 +21,5 @@ export default async function CourseOverviewPage({
   // Enrollment / published / existence gating lives in the course layout, which
   // 404s before this page renders. The shared component owns fetch + render so
   // the dashboard's single-course view and this direct URL stay identical.
-  return <CourseOverview courseId={courseId} profile={session.profile} backHref="/dashboard" />;
+  return <CourseOverview courseId={courseId} profile={session.profile} />;
 }

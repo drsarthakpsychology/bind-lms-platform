@@ -88,7 +88,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
 
       {done ? (
         <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-          <h3 className={cn("flex items-center gap-2 text-base font-semibold", correct ? "text-green-700" : "text-red-600")}>
+          <h3 className={cn("flex items-center gap-2 text-base font-semibold", correct ? "text-status-success-fg" : "text-destructive")}>
             <Scale className="size-4" aria-hidden />
             {correct ? "Right call" : "Consequence"}
           </h3>

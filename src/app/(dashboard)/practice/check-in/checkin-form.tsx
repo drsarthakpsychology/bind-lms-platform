@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 
 const LEVELS = [1, 2, 3, 4, 5];
 const LABELS: Record<number, { label: string; color: string }> = {
-  1: { label: "Running on empty", color: "bg-red-200" },
-  2: { label: "Low", color: "bg-amber-200" },
+  1: { label: "Running on empty", color: "bg-status-alert-bg" },
+  2: { label: "Low", color: "bg-status-pending-bg" },
   3: { label: "Steady", color: "bg-yellow-100" },
-  4: { label: "Good", color: "bg-green-200" },
-  5: { label: "Excellent", color: "bg-emerald-300" },
+  4: { label: "Good", color: "bg-status-success-bg" },
+  5: { label: "Excellent", color: "bg-status-success-bg" },
 };
 
 interface Props {

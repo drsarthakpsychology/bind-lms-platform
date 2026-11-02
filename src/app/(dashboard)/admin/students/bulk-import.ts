@@ -11,7 +11,7 @@ import {
   sendResendEmail,
   credentialsEmailBody,
   credentialsEmailHtml,
-  generateCredential,
+  issueSetupLink,
   resetCredential,
   type RosterFailure,
   type RosterRow,
@@ -232,42 +232,41 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
     .update(isExistingAdmin ? { is_test: true } : { is_test: true, scope: "lectures_only" })
     .eq("id", userId);
 
-  // 3. A real 8-char password through the SAME generator as the real send —
-  //    set on the auth user + returned so the test email contains it verbatim.
-  const password = generateCredential();
-  const { error: pwErr } = await admin.auth.admin.updateUserById(userId, { password });
-  if (pwErr) {
-    return { error: pwErr.message ?? "Could not set the test password.", ok: false, detail: "" };
+  // 3. A real one-time setup link through the SAME issuer as the real send.
+  const setupUrl = await issueSetupLink(admin, to, appUrl);
+  if (!setupUrl) {
+    return { error: "Could not make a setup link for the test account.", ok: false, detail: "" };
   }
 
-  // 4. Send the real credential email (text + HTML), clearly [TEST]-marked.
+  // 4. Send the real setup email (text + HTML), clearly [TEST]-marked.
   const res = await sendResendEmail(
     to,
-    "[TEST] Your VIBHA School of Psychology password",
-    credentialsEmailBody("Test Student", to, password, appUrl),
-    credentialsEmailHtml("Test Student", to, password, appUrl),
+    "[TEST] Set up your VIBHA account",
+    credentialsEmailBody("Test Student", to, setupUrl, appUrl),
+    credentialsEmailHtml("Test Student", to, setupUrl, appUrl),
   );
 
   return {
     error: null,
     ok: res.ok,
-    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}. Password: ${password}` : res.error ?? "Send failed.",
+    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}. Open the link in the email to finish setup.` : res.error ?? "Send failed.",
   };
 }
 
-export type ResetCredentialResult = { error: string | null; ok: boolean; password: string | null; detail: string };
+export type ResetCredentialResult = { error: string | null; ok: boolean; setupUrl: string | null; detail: string };
 
-/** RESET PASSWORD. Regenerates one student's 8-char password and returns it so
- * Kavya can share the new value. The auth user's password is updated to match. */
+/** NEW SETUP LINK. Issues a fresh one-time "set your password" link (earlier
+ * unused links stop working) and returns it so Kavya can share it. */
 export async function resetCredentialAction(email: string): Promise<ResetCredentialResult> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", ok: false, password: null, detail: "" };
+  const profile = await requireAdmin();
+  if (!profile) return { error: "Not authorized.", ok: false, setupUrl: null, detail: "" };
 
   const admin = createAdminClient();
-  const password = await resetCredential(admin, email.trim().toLowerCase());
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const setupUrl = await resetCredential(admin, email.trim().toLowerCase(), appUrl, profile.id);
   revalidatePath("/admin/emails");
-  revalidatePath("/admin/roster");
-  if (!password) {
-    return { error: "Could not reset the password.", ok: false, password: null, detail: "" };
+  if (!setupUrl) {
+    return { error: "Could not make a setup link.", ok: false, setupUrl: null, detail: "" };
   }
-  return { error: null, ok: true, password, detail: "Password reset." };
+  return { error: null, ok: true, setupUrl, detail: "New setup link made. The old one no longer works." };
 }

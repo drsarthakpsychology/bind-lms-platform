@@ -1,15 +1,9 @@
-import Link from "next/link";
-import { BookOpen, CheckCircle2, ChevronDown, ChevronLeft, Clock, FileText, Lock, Play } from "lucide-react";
-
 import type { Profile } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { deriveWeekStatus } from "@/lib/course/status";
 
-import { PageHeader } from "@/components/design-system/page-header";
-import { Badge } from "@/components/ui/badge";
-import { EmptyState } from "@/components/design-system/empty-state";
-import { MobileListItem } from "@/components/mobile/mobile-list-item";
-import { cn } from "@/lib/utils";
+import { type OverviewModel, type OverviewWeek } from "@/components/course/course-overview-view";
+import { CourseLibrary } from "@/components/course/course-library";
 
 type LessonStatus = "hidden" | "live" | "unlocked";
 
@@ -45,6 +39,18 @@ export default async function CourseOverview({
   profile: Profile;
   backHref?: string;
 }) {
+  const model = await loadCourseOverview(courseId, profile, backHref);
+  if (!model) return null;
+  return <CourseLibrary model={model} />;
+}
+
+/** All the data for one course, shaped for the student screens (Home and
+ *  Lectures). Returns null when the course row is missing. */
+export async function loadCourseOverview(
+  courseId: string,
+  profile: Profile,
+  backHref?: string,
+): Promise<OverviewModel | null> {
   const supabase = await createClient();
 
   const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
@@ -174,208 +180,98 @@ export default async function CourseOverview({
     if (nextAction) break;
   }
 
-  return (
-    <div className="mx-auto w-full max-w-3xl space-y-8">
-      {backHref ? (
-        <Link
-          href={backHref}
-          className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-small font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
-        >
-          <ChevronLeft className="size-4" aria-hidden />
-          My Courses
-        </Link>
-      ) : null}
+  // Build a plain view model (the page layout lives in CourseOverviewView, so
+  // the same screen renders from real data here and from sample data in tests).
+  const lectureNumber = new Map(visibleLessons.map((l, i) => [l.id, i + 1]));
+  const weeks: OverviewWeek[] = [];
+  for (let weekNum = 1; weekNum <= totalWeeks; weekNum++) {
+    const weekLessons = visibleLessons.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
+    const weekPlayable = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
+    const weekMaterials = courseMaterialsByWeek.get(weekNum) ?? [];
+    const weekAssignments = assignmentsByWeek.get(weekNum) ?? [];
+    if (weekLessons.length === 0 && weekMaterials.length === 0 && weekAssignments.length === 0) continue;
 
-      {/* One header, one honest progress line. Nowhere else on the page repeats
-          a count. */}
-      <PageHeader
-        title={course.title}
-        description={
-          course.is_published
-            ? totalLessons > 0
-              ? `${completedCount} of ${totalLessons} lessons complete`
-              : "No lessons yet"
-            : "Draft — only you can see this."
+    const isCurrentWeek = weekNum === currentWeek;
+    const isFutureWeek = weekNum > currentWeek;
+    // Only unlocked lessons count toward a week being complete — `live` rows
+    // are locked and can never be completed by a student.
+    const weekComplete = weekPlayable.length > 0 && weekPlayable.every((l) => completedIds.has(l.id));
+    // Week status derives from the SAME `started` flag as the header.
+    const weekStatus = deriveWeekStatus({
+      weekComplete,
+      isNextWeek: isCurrentWeek,
+      courseStarted: started,
+      isFutureWeek,
+    });
+
+    weeks.push({
+      num: weekNum,
+      status: weekStatus,
+      isCurrent: isCurrentWeek,
+      isFuture: isFutureWeek,
+      done: weekPlayable.filter((l) => completedIds.has(l.id)).length,
+      total: weekPlayable.length,
+      lessons: weekLessons.map((lesson) => {
+        const isLive = lessonStatus(lesson) === "live";
+        const locked = isFutureWeek || isLive;
+        const done = completedIds.has(lesson.id);
+        const isNext = !locked && nextAction?.type === "lesson" && nextAction.id === lesson.id;
+        return {
+          id: lesson.id,
+          title: lesson.title,
+          number: lectureNumber.get(lesson.id) ?? 0,
+          href: locked ? null : `/courses/${courseId}/lessons/${lesson.id}`,
+          state: isLive
+            ? "live"
+            : isFutureWeek
+              ? "later"
+              : isNext
+                ? "next"
+                : done
+                  ? "done"
+                  : watchedIds.has(lesson.id)
+                    ? "started"
+                    : "open",
+          hasVideo: Boolean(lesson.video_storage_path),
+        };
+      }),
+      materials: weekMaterials.map((m) => ({
+        id: m.id,
+        title: m.title,
+        meta: m.format ? `${m.format.toUpperCase()} · ${m.kind}` : String(m.kind ?? ""),
+        href: isFutureWeek ? null : `/courses/${courseId}/materials/${m.id}`,
+      })),
+      assignments: weekAssignments.map((a) => ({
+        id: a.id,
+        title: a.title ?? "Assignment",
+        lessonTitle: a.lessonTitle,
+        status: a.status,
+        isNext: nextAction?.type === "assignment" && nextAction.id === a.id,
+        href: isFutureWeek ? null : `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`,
+      })),
+    });
+  }
+
+  const model: OverviewModel = {
+    courseId,
+    title: course.title,
+    published: Boolean(course.is_published),
+    completedCount,
+    totalLessons,
+    started,
+    backHref: backHref ?? null,
+    next: nextAction
+      ? {
+          title: nextAction.title,
+          href: nextAction.href,
+          week: nextAction.week,
+          kind: nextAction.type,
+          number: nextAction.type === "lesson" ? (lectureNumber.get(nextAction.id) ?? null) : null,
         }
-      />
+      : null,
+    weeks,
+    empty: visibleLessons.length === 0,
+  };
 
-      <section aria-label="Course path" className="space-y-6">
-        {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((weekNum) => {
-          const weekLessons = visibleLessons.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
-          const weekPlayable = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
-          const weekMaterials = courseMaterialsByWeek.get(weekNum) ?? [];
-          const weekAssignments = assignmentsByWeek.get(weekNum) ?? [];
-          const hasContent = weekLessons.length > 0 || weekMaterials.length > 0 || weekAssignments.length > 0;
-          if (!hasContent) return null;
-
-          const isCurrentWeek = weekNum === currentWeek;
-          const isPastWeek = weekNum < currentWeek;
-          const isFutureWeek = weekNum > currentWeek;
-          // Only unlocked lessons count toward a week being complete — `live`
-          // rows are locked and can never be completed by a student.
-          const weekComplete = weekPlayable.length > 0 && weekPlayable.every((l) => completedIds.has(l.id));
-
-          // Week status derives from the SAME `started` flag as the header, so
-          // the page can never say "not started" up top and "in progress" here.
-          const weekStatus = deriveWeekStatus({
-            weekComplete,
-            isNextWeek: isCurrentWeek,
-            courseStarted: started,
-            isFutureWeek,
-          });
-          const statusLabel =
-            weekStatus === "complete"
-              ? "Complete"
-              : weekStatus === "in-progress"
-                ? "In progress"
-                : weekStatus === "upcoming"
-                  ? "Opens later"
-                  : "Not started";
-
-          return (
-            <details key={weekNum} open={isCurrentWeek} className="group space-y-2">
-              <summary className="flex cursor-pointer list-none items-center gap-2.5 px-1 [&::-webkit-details-marker]:hidden">
-                <span
-                  aria-hidden
-                  className={cn(
-                    "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-numeric text-small font-bold",
-                    isFutureWeek
-                      ? "border-border bg-muted text-muted-foreground"
-                      : isCurrentWeek || (isPastWeek && weekComplete)
-                        ? "border-foreground bg-primary text-primary-foreground"
-                        : "border-border bg-accent text-foreground",
-                  )}
-                >
-                  {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : weekNum}
-                </span>
-                <h2 className="text-h3 text-foreground">Week {weekNum}</h2>
-                <span className="text-caption text-muted-foreground">{statusLabel}</span>
-                {isFutureWeek && (
-                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                    <Lock className="size-3" aria-hidden />
-                    Locked
-                  </span>
-                )}
-                <ChevronDown
-                  className="ml-auto size-4 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
-                  aria-hidden
-                />
-              </summary>
-
-              <div className="space-y-1">
-                {weekLessons.map((lesson, i) => {
-                  const done = completedIds.has(lesson.id);
-                  const isLive = lessonStatus(lesson) === "live";
-                  // A `live` lesson is locked on its own ("yet to be live"), the
-                  // same way a future week is locked as a whole.
-                  const locked = isFutureWeek || isLive;
-                  const isNextAction = !locked && nextAction?.type === "lesson" && nextAction.id === lesson.id;
-
-                  return (
-                    <MobileListItem
-                      key={lesson.id}
-                      href={locked ? undefined : `/courses/${courseId}/lessons/${lesson.id}`}
-                      disabled={locked}
-                      highlight={isNextAction}
-                      leading={
-                        isNextAction ? (
-                          <Play className="size-5 text-primary-foreground" aria-hidden />
-                        ) : done ? (
-                          <CheckCircle2 className="size-5 text-primary" aria-hidden />
-                        ) : (
-                          <span className="text-numeric text-small font-semibold text-muted-foreground">
-                            {i + 1}
-                          </span>
-                        )
-                      }
-                      title={lesson.title}
-                      subtitle={
-                        isLive
-                          ? "Yet to be live"
-                          : isFutureWeek
-                            ? undefined
-                            : isNextAction
-                              ? started ? "Continue" : "Start"
-                              : done
-                                ? "Completed"
-                                : undefined
-                      }
-                      trailing={
-                        isLive || isFutureWeek ? (
-                          <Lock className="size-4 text-muted-foreground" aria-hidden />
-                        ) : done ? (
-                          <span className="text-caption text-muted-foreground">Done</span>
-                        ) : undefined
-                      }
-                    />
-                  );
-                })}
-
-                {weekMaterials.map((m) => (
-                  <MobileListItem
-                    key={m.id}
-                    href={isFutureWeek ? undefined : `/courses/${courseId}/materials/${m.id}`}
-                    disabled={isFutureWeek}
-                    leading={<BookOpen className="size-5 text-muted-foreground" aria-hidden />}
-                    title={m.title}
-                    subtitle={m.format ? `${m.format.toUpperCase()} · ${m.kind}` : m.kind}
-                    trailing={
-                      isFutureWeek ? <Lock className="size-4 text-muted-foreground" aria-hidden /> : undefined
-                    }
-                  />
-                ))}
-
-                {weekAssignments.map((a) => {
-                  const isNextAction = nextAction?.type === "assignment" && nextAction.id === a.id;
-
-                  return (
-                    <MobileListItem
-                      key={a.id}
-                      href={isFutureWeek ? undefined : `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
-                      disabled={isFutureWeek}
-                      highlight={isNextAction}
-                      leading={<FileText className="size-5 text-muted-foreground" aria-hidden />}
-                      title={a.title ?? "Assignment"}
-                      subtitle={
-                        isFutureWeek
-                          ? undefined
-                          : isNextAction
-                            ? started ? "Continue" : "Start"
-                            : a.lessonTitle
-                      }
-                      trailing={
-                        isFutureWeek ? (
-                          <Lock className="size-4 text-muted-foreground" aria-hidden />
-                        ) : a.status === "not_started" ? (
-                          <Badge variant="outline">Not submitted yet</Badge>
-                        ) : a.status === "submitted" ? (
-                          <Badge variant="pending">
-                            <Clock className="size-3" aria-hidden />
-                            Submitted
-                          </Badge>
-                        ) : a.status === "graded" ? (
-                          <Badge variant="graded">
-                            <CheckCircle2 className="size-3" aria-hidden />
-                            Graded
-                          </Badge>
-                        ) : undefined
-                      }
-                    />
-                  );
-                })}
-              </div>
-            </details>
-          );
-        })}
-      </section>
-
-      {visibleLessons.length === 0 && (
-        <EmptyState
-          icon={<BookOpen className="size-8" aria-hidden />}
-          title="No lessons published yet"
-          description="Ask your faculty to add lessons to this course."
-        />
-      )}
-    </div>
-  );
+  return model;
 }

@@ -1,109 +1,89 @@
 import * as React from "react";
-import Link from "next/link";
 
 import { AppSidebar, type SidebarMode } from "@/components/navigation/app-sidebar";
 import { MobileNav } from "@/components/navigation/mobile-nav";
-import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibility";
 import { BottomTabBar } from "@/components/navigation/bottom-tab-bar";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { ShellContent } from "@/components/navigation/shell-content";
+import { TopBar } from "@/components/navigation/top-bar";
 import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
-import { BRAND } from "@/lib/brand";
-import { VibhaMark } from "@/components/brand/vibha-logo";
 
 /**
- * Application shell: persistent desktop sidebar + compact mobile top bar with a
- * drawer. Server Component; interactive islands are composed in.
- *
- * Round 5 (student drill-down): on inner student pages (course/lesson/material)
- * the app sidebar is hidden so there's never two navigation columns — the page
- * owns a single back header. Top-level (dashboard) keeps the sidebar. Admin is
- * unchanged.
+ * Application shell — the layout people already know from YouTube:
+ *   - top bar: ☰ + logo, a big search box, bell, avatar menu
+ *   - left: a sidebar that folds into a slim icon rail (☰ toggles it)
+ *   - phones: a bottom tab bar with a "More" drawer
+ * Server Component; interactive islands are composed in. On lesson/material
+ * pages the sidebar steps aside so the video gets the width (YouTube's watch
+ * page does the same).
  */
 export function AppShell({
   role,
   mode,
   scope = "full",
+  email = null,
   viewModeSwitch,
   children,
 }: {
   role: "admin" | "student";
   mode: SidebarMode;
   scope?: "full" | "lectures_only";
+  email?: string | null;
   viewModeSwitch?: React.ReactNode;
   children: React.ReactNode;
 }) {
-  const items =
-    role === "admin" && mode === "admin"
-      ? ADMIN_ITEMS
-      : scope === "lectures_only"
-        ? LECTURE_ONLY_ITEMS
-        : STUDENT_ITEMS;
+  const isAdminView = role === "admin" && mode === "admin";
+  const items = isAdminView ? ADMIN_ITEMS : scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS;
   // The sidebar gate treats "admin previewing as student" like a student on
   // inner pages (they get the drill-down too).
   const gateRole = role === "admin" && mode === "student" ? "admin-preview" : role;
+  // Lecture-only accounts can't open /settings (server-guarded), so don't link it.
+  const showSettings = role === "admin" || scope === "full";
 
   return (
-    <div className="min-h-dvh bg-background lg:flex">
-      {/* Ask the Syllabus — ⌘K command palette, available across the shell. */}
+    <div className="min-h-dvh bg-background">
+      <a
+        href="#main"
+        className="sr-only z-50 rounded-full border-2 border-foreground bg-primary px-4 py-2 font-bold text-primary-foreground focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        Skip to content
+      </a>
+      {/* Search palette — opens from the top bar, ⌘K or "/". */}
       <PaletteHost />
 
-      {/* Desktop sidebar. On inner student pages (lesson/material) the ENTIRE
-          column is removed — the page owns the only navigation surface, which
-          is the point of the drill-down. Previously a slim top-bar fallback was
-          rendered into this column, which produced a 56px stub with a border
-          ending in mid-air. The admin's return-to-admin control persists as a
-          small fixed control in the bottom-left, matching where it sits in the
-          sidebar footer. */}
-      <SidebarGate
-        role={gateRole}
-        fallback={
-          viewModeSwitch ? (
-            <div className="fixed bottom-4 left-4 z-40 hidden lg:block">
-              {viewModeSwitch}
+      <TopBar
+        homeHref={isAdminView ? "/admin" : "/dashboard"}
+        role={role}
+        gateRole={gateRole}
+        email={email}
+        showSettings={showSettings}
+        viewModeSwitch={viewModeSwitch}
+        isAdminView={isAdminView}
+      />
+
+      <div className="lg:flex">
+        <SidebarGate role={gateRole} fallback={null}>
+          <div className="hidden shrink-0 lg:block">
+            <div className="sticky top-16 h-[calc(100dvh-4rem)]">
+              <AppSidebar role={role} mode={mode} scope={scope} />
             </div>
-          ) : null
-        }
-      >
-        <div className="hidden lg:block">
-          <div className="sticky top-0 h-screen">
-            <AppSidebar role={role} mode={mode} scope={scope} viewModeSwitch={viewModeSwitch} />
           </div>
-        </div>
-      </SidebarGate>
+        </SidebarGate>
 
-      {/* Mobile top bar — hidden on inner student pages so there's one header
-          row (the page's back control). Round 9 drill-down on mobile. */}
-      <MobileBarVisibility role={role} mode={mode}>
-        <div
-          className="flex min-h-14 items-center justify-between border-b-2 border-border bg-card px-4 lg:hidden"
-          style={{ paddingTop: "env(safe-area-inset-top)" }}
-        >
-          <Link
-            href={mode === "admin" && role === "admin" ? "/admin" : "/dashboard"}
-            className="flex items-center gap-2 font-bold tracking-tight"
-          >
-            <VibhaMark size={24} className="shrink-0 text-foreground" />
-            <span className="text-base">{BRAND.shortName}</span>
-          </Link>
-          <MobileNav items={items} viewModeSwitch={viewModeSwitch} />
-        </div>
-      </MobileBarVisibility>
+        <main id="main" className="min-w-0 flex-1">
+          <ShellContent>{children}</ShellContent>
+        </main>
+      </div>
 
-      <main className="min-w-0 flex-1">
-        {/* Safe-area bottom clearance for the fixed tab bar is scoped to
-            mobile (the bar is lg:hidden) so desktop keeps lg:px-10 / lg:py-8
-            instead of being clamped by an inline style. The immersive patient
-            session renders full-bleed (ShellContent). */}
-        <ShellContent>{children}</ShellContent>
-      </main>
-
-      {/* Mobile bottom tab bar — thumb reach. Student gets the 5 core tabs;
-          admin gets a compact 4-destination bar (Overview/Review/Submissions/
-          Students) so the review workflow isn't drawer-only. Hidden on the
-          immersive session (the chat owns the whole viewport). */}
       <BottomTabBar mode={mode} scope={scope} />
+      <MobileNav
+        items={items}
+        viewModeSwitch={viewModeSwitch}
+        email={email}
+        role={role}
+        showSettings={showSettings}
+      />
     </div>
   );
 }

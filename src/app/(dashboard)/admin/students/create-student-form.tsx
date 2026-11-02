@@ -41,9 +41,8 @@ export function CreateStudentForm() {
         </div>
       </div>
       <p className="text-caption text-muted-foreground">
-        A password is generated for you — it&apos;s shown below after you add them, and
-        they appear in <span className="font-medium">Roster &amp; emails</span> so you can
-        send it by email (bulk or one at a time).
+        They get a one-time link to set their own password. Copy it to WhatsApp, or send it
+        from <span className="font-medium">Login emails</span>.
       </p>
 
       {state.error && (
@@ -58,14 +57,23 @@ export function CreateStudentForm() {
           <div>
             <AlertTitle>Student added</AlertTitle>
             <AlertDescription className="space-y-2">
-              <span className="flex items-center gap-2">
-                <KeyRound className="size-4" aria-hidden />
-                Password: <span className="font-mono font-semibold">{state.password}</span>
-              </span>
+              {state.setupUrl ? (
+                <span className="flex flex-wrap items-center gap-2">
+                  <KeyRound className="size-4" aria-hidden />
+                  Setup link (works once, 3 days):
+                  <button
+                    type="button"
+                    className="font-semibold text-link underline"
+                    onClick={() => navigator.clipboard?.writeText(state.setupUrl ?? "")}
+                  >
+                    Copy link
+                  </button>
+                </span>
+              ) : null}
               <span className="block">
-                They&apos;re in the roster now —{" "}
+                Or{" "}
                 <Link href="/admin/emails?tab=credentials" className="font-semibold text-link underline">
-                  send the password email
+                  email them the setup link
                 </Link>
                 .
               </span>
