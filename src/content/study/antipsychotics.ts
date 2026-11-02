@@ -88,6 +88,67 @@ Second-generation drugs swap EPS for **metabolic harm**. Olanzapine and clozapin
 4. What is aripiprazole's typical side effect? || Akathisia.
 :::
 
+## 1.3 Choosing, dosing and how long to treat [core]
+### First episode
+- **Start low**, increase slowly: first-episode patients respond to **lower doses** and are more sensitive to side effects.
+- Choose with the patient, by **side-effect profile**: weight (avoid olanzapine in someone already overweight), prolactin (avoid risperidone and amisulpride in a young woman worried about periods), sedation, EPS, heart.
+- Give an adequate trial: **2 to 6 weeks at a therapeutic dose**. Early improvement in the first 2 weeks predicts later response; no improvement at all by then suggests a change may be needed.
+
+### Dose equivalents (approximate, to chlorpromazine 100 mg)
+| Medicine | Equivalent dose |
+|---|---|
+| Haloperidol | 2 mg |
+| Risperidone | 1 to 2 mg |
+| Olanzapine | 5 mg |
+| Quetiapine | 100 to 150 mg |
+| Aripiprazole | 7.5 mg |
+| Trifluoperazine | 5 mg |
+
+- Equivalents help when switching or judging if a dose is high. **Combining two antipsychotics** is usually avoided (except clozapine augmentation in specialist hands); it raises side effects without clear benefit.
+
+### Switching
+- **Cross-taper**: slowly reduce the old medicine while increasing the new one over 1 to 4 weeks, to avoid rebound (cholinergic rebound with clozapine or olanzapine; rebound insomnia; relapse).
+
+### How long to continue
+| Situation | Typical duration |
+|---|---|
+| First episode, full recovery | At least **1 to 2 years** after remission, then a slow, monitored taper if the patient wishes |
+| Second episode or more | **Long term** (often years), as relapse risk on stopping is high |
+| Dangerous relapses (violence, suicide) | Long term, often depot |
+
+:::note Relapse after stopping
+About **4 in 5** people with a first episode relapse within 5 years if medicines are stopped. Each relapse can bring more lasting disability. Share this honestly, and respect informed choice.
+:::
+
+### Adherence
+- Up to half of patients do not take medicines as prescribed. Ask non-judgementally: "Many people miss doses. How often does that happen for you?"
+- Reasons: side effects, poor insight, stigma, cost, complicated regimens, substance use. Solutions: simplify (once daily), address side effects, involve family, **depots**, motivational approaches.
+
+:::recall
+1. How long is an adequate antipsychotic trial? || 2 to 6 weeks at a therapeutic dose.
+2. What is 100 mg chlorpromazine equal to in haloperidol and olanzapine? || About 2 mg and 5 mg.
+3. How long to continue after a first episode with full recovery? || At least 1 to 2 years after remission.
+4. What is a cross-taper? || Slowly reducing the old drug while increasing the new one.
+:::
+
+## 1.4 Antipsychotics in special groups [core]
+| Group | Key points |
+|---|---|
+| **Older people with dementia** | **Increased risk of stroke and death**. Use only for severe distress or danger after non-drug approaches, lowest dose, shortest time, review often. Avoid in Lewy body dementia |
+| **Pregnancy** | Untreated psychosis is dangerous; most antipsychotics are not major teratogens. Monitor glucose (gestational diabetes), weight; avoid stopping suddenly; plan around delivery |
+| **Breastfeeding** | Many are compatible with monitoring of the baby (sedation, feeding) |
+| **Children and adolescents** | More sensitive to weight gain, prolactin and EPS; use the evidence-based options; monitor growth |
+| **Heart disease** | Avoid QT-prolonging drugs; ECG at baseline; aripiprazole or lurasidone often preferred |
+| **Epilepsy** | Clozapine and chlorpromazine lower seizure threshold most; haloperidol, aripiprazole lower risk |
+| **Parkinson's disease** | Avoid typical antipsychotics and risperidone; use **quetiapine or clozapine** at low doses |
+| **Diabetes, obesity** | Aripiprazole, lurasidone, ziprasidone; avoid olanzapine and clozapine where possible |
+
+:::recall
+1. What risk do antipsychotics carry in older people with dementia? || Increased stroke and death.
+2. Which antipsychotics are used in Parkinson's disease psychosis? || Low-dose quetiapine or clozapine.
+3. Which antipsychotics lower the seizure threshold most? || Clozapine and chlorpromazine.
+:::
+
 # Part II · Side effects
 
 ## 2.1 Extrapyramidal side effects [core]
@@ -158,6 +219,33 @@ Management:
 5. Why use antipsychotics cautiously in dementia? || Increased stroke and death.
 :::
 
+## 2.4 Managing side effects in practice [core]
+| Problem | Options |
+|---|---|
+| **Weight gain** | Lifestyle advice from the start, switch to a weight-friendly drug, **metformin** (evidence in antipsychotic-induced weight gain), add aripiprazole |
+| **Raised prolactin** | Reduce dose, switch (aripiprazole, quetiapine), or **add low-dose aripiprazole**; check bone health with long-term high levels |
+| **Sexual dysfunction** | Ask (patients rarely volunteer it); reduce dose, switch to a prolactin-sparing drug |
+| **Hypersalivation** (clozapine) | Towel on the pillow, chewing gum; hyoscine or glycopyrrolate; sometimes atropine eye drops under the tongue |
+| **Sedation** | Night dosing, lower dose, switch |
+| **Postural hypotension** | Slow titration, stand up slowly, fluids |
+| **Akathisia** | Reduce dose, **propranolol**, benzodiazepine, mirtazapine (low dose); anticholinergics help little |
+| **Tardive dyskinesia** | Review need for antipsychotic; switch to clozapine or quetiapine; **VMAT2 inhibitors** (tetrabenazine, valbenazine, deutetrabenazine); **stop anticholinergics** (they can worsen TD) |
+
+:::trap Don't give anticholinergics routinely
+Trihexyphenidyl and benztropine help dystonia and parkinsonism, but given "just in case" they cause memory problems, constipation, misuse (they can give a "high") and may worsen tardive dyskinesia. Use them when needed, and review.
+:::
+
+### The physical health check (annually at least, more often early)
+Weight and waist, BP, pulse, fasting glucose or HbA1c, lipids, prolactin if symptoms, ECG if risk, smoking status, alcohol, diet, exercise, dental health. People with severe mental illness die **10 to 20 years earlier** than others, mostly from heart disease, diabetes and smoking-related illness.
+
+:::recall
+1. Which medicine helps antipsychotic-induced weight gain? || Metformin.
+2. How can you lower prolactin without stopping risperidone? || Add low-dose aripiprazole.
+3. Which medicine helps akathisia most? || Propranolol.
+4. Which drugs treat tardive dyskinesia? || VMAT2 inhibitors: tetrabenazine, valbenazine, deutetrabenazine.
+5. How much earlier do people with severe mental illness die on average? || About 10 to 20 years.
+:::
+
 # Part III · Special uses
 
 ## 3.1 Clozapine [core]
@@ -195,6 +283,38 @@ For severe agitation when calming talk and oral medicine have failed:
 3. Which clozapine side effect can kill quietly and must be asked about every visit? || Constipation leading to bowel obstruction.
 4. What happens to clozapine levels when a patient stops smoking? || They rise, sometimes sharply.
 5. Name two IM options for rapid tranquillisation. || Lorazepam; haloperidol with promethazine; olanzapine.
+:::
+
+## 3.4 Starting clozapine step by step [core]
+### Before
+1. Confirm **treatment resistance**: two antipsychotics, adequate dose, at least 6 weeks each, with good adherence (consider levels or a depot trial).
+2. Consent: explain benefits (often dramatic), blood tests, side effects.
+3. Baseline: **blood count** (neutrophils), weight, BP, pulse, temperature, ECG, glucose, lipids, **troponin and CRP** (for myocarditis monitoring), bowel habit, smoking status.
+
+### Titration
+- Start **12.5 mg** once or twice on day 1, increasing by about **25 mg a day** as tolerated, to around **200 to 300 mg** by 2 to 3 weeks, then slowly upward as needed (usual range 200 to 450 mg; maximum 900 mg).
+- Check pulse, BP and temperature regularly during titration (tachycardia, hypotension, fever are common early).
+- **Restart from 12.5 mg** if more than **48 hours** of doses are missed.
+
+### Blood levels and response
+- A **clozapine level of at least 350 ng/mL** is usually needed for a good response. Smokers need higher doses.
+- Response can take **months**; judge after at least 8 to 12 weeks at an adequate level.
+
+### Red flags to teach the patient and family
+- **Fever, sore throat, mouth ulcers**: check blood count urgently (neutropenia).
+- **Chest pain, breathlessness, fast pulse** in the first 2 months: myocarditis.
+- **No bowel movement for 2 to 3 days, abdominal pain, vomiting**: bowel obstruction, an emergency.
+- **Fits**.
+
+:::analogy The most powerful tool needs the most careful hands
+Clozapine helps a third or more of people for whom nothing else worked. It is like a powerful machine with clear safety rules: follow the checklist and it is very safe; skip it and it can cause harm.
+:::
+
+:::recall
+1. Define treatment resistance before clozapine. || Two adequate trials of different antipsychotics with good adherence.
+2. What is the starting dose, and when must titration restart? || 12.5 mg; after missing 48 hours.
+3. What plasma level is usually needed? || At least 350 ng/mL.
+4. Name three red flags for patients to report. || Fever or sore throat, chest pain or breathlessness, constipation or abdominal pain, fits.
 :::
 
 # Part IV · Exam zone
@@ -235,6 +355,18 @@ Effect of stopping smoking on clozapine levels? :: They rise.
 Antipsychotic warning in dementia? :: Increased stroke and death.
 Scale for monitoring abnormal movements? :: AIMS.
 Common Indian IM combination for agitation? :: Haloperidol with promethazine.
+Chlorpromazine 100 mg equals how much haloperidol? :: About 2 mg.
+Adequate antipsychotic trial length? :: 2 to 6 weeks at a therapeutic dose.
+Minimum duration after first-episode remission? :: 1 to 2 years.
+Antipsychotic risk in dementia? :: Stroke and death.
+Antipsychotic for Parkinson's psychosis? :: Low-dose quetiapine or clozapine.
+Medicine for antipsychotic weight gain? :: Metformin.
+Add-on to lower prolactin? :: Low-dose aripiprazole.
+Best medicine for akathisia? :: Propranolol.
+Medicine class for tardive dyskinesia? :: VMAT2 inhibitors.
+Clozapine starting dose? :: 12.5 mg.
+Restart clozapine titration after missing how long? :: 48 hours.
+Target clozapine level? :: At least 350 ng/mL.
 :::
 
 ## 4.3 Module test [core]
@@ -322,5 +454,33 @@ Q: Antipsychotics in older adults with dementia:
 - Improve memory
 - Have no side effects
 > Use only for severe risk, briefly, at the lowest dose.
+
+Q: A first-episode patient on risperidone develops amenorrhoea and galactorrhoea but is otherwise well. A reasonable step is:
+- Add haloperidol
+- *Reduce the dose or add low-dose aripiprazole
+- Stop all medicines suddenly
+- Add trihexyphenidyl
+> Partial agonism lowers prolactin.
+
+Q: A patient on clozapine missed 4 days of doses. The correct plan is:
+- Restart at the previous full dose
+- *Restart titration from 12.5 mg
+- Double the dose for 2 days
+- Switch to haloperidol
+> Missing more than 48 hours requires re-titration.
+
+Q: An 80-year-old with Alzheimer's is restless at night. The first approach is:
+- Haloperidol at night
+- Risperidone long term
+- *Look for causes and use non-drug measures first
+- Clozapine
+> Antipsychotics raise stroke and death risk in dementia.
+
+Q: Which is the best treatment option for tardive dyskinesia?
+- Increase trihexyphenidyl
+- *A VMAT2 inhibitor such as tetrabenazine or valbenazine
+- Increase haloperidol
+- Add a benzodiazepine long-term only
+> Also review the antipsychotic and consider switching to clozapine.
 :::
 `;

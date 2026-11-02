@@ -73,6 +73,48 @@ When feeding restarts after starvation, insulin drives phosphate, potassium and 
 5. What is Russell's sign? || Calluses on the knuckles from induced vomiting.
 :::
 
+## 1.3 Eating disorders: causes, assessment and treatment [core]
+### Why they develop
+- **Biology**: genetic risk (anorexia is substantially heritable), perfectionistic and anxious temperament, changes in appetite and reward systems.
+- **Psychology**: low self-esteem, perfectionism, need for control, self-worth judged by weight and shape.
+- **Social**: thin ideals in media and social media, weight-focused sports and professions (dance, modelling, athletics), teasing about weight, family emphasis on appearance, comments about "becoming fat" before marriage.
+- **Triggers**: dieting, puberty, exams, bullying, loss.
+
+### The assessment
+| Area | What to check |
+|---|---|
+| Eating | A typical day's food, restriction, bingeing, rules about food |
+| Compensation | Vomiting, laxatives, diuretics, diet pills, fasting, excessive exercise |
+| Body image | Checking, avoidance, fear of weight gain |
+| Weight history | Highest and lowest weight, rate of loss |
+| Physical | BMI (or percentile in children), pulse, BP lying and standing, temperature, muscle strength (sit-up and squat test) |
+| Bloods and ECG | Electrolytes (potassium, phosphate, magnesium), glucose, blood count, liver and kidney function, **ECG** (slow pulse, QT) |
+| Mental health | Depression, OCD, self-harm, suicide, substance use |
+
+:::safety When to admit to hospital
+Very low BMI (for example below about 13 to 14), rapid weight loss, **pulse below about 40**, low BP or fainting, **low potassium or phosphate**, QT prolongation, temperature below 35.5, inability to stand from squatting, **suicide risk**, or failure of outpatient care. Medical stabilisation comes first.
+:::
+
+### Treatment in more detail
+- **Refeeding**: start carefully (about 1200 to 1600 kcal a day in many protocols, then increase), **check phosphate, potassium and magnesium daily** for the first week, give **thiamine** and supplements.
+- **Family-based treatment (Maudsley)** for adolescents: three phases: parents take charge of eating, gradual return of control to the young person, then normal adolescent development.
+- **CBT-E** (enhanced CBT): regular eating, addressing over-evaluation of shape and weight, body checking, and the dieting-bingeing cycle. First-line for bulimia and binge-eating disorder, and used for adult anorexia.
+- **MANTRA** and **SSCM** (specialist supportive clinical management) for adult anorexia.
+- **Medicines**: no medicine treats anorexia itself (olanzapine at low dose may help agitation and weight gain); **fluoxetine** for bulimia.
+
+:::sounds How it sounds in the room
+- "Main moti hoon, sab yahi kehte hain." (I'm fat, everyone says so.) Body image disturbance.
+- "Khaana khaaya toh guilt hota hai, phir ulti kar deti hoon." (If I eat I feel guilty, then I vomit.)
+- Mother: "Bas ek roti khaati hai, aur ghanton exercise." (She eats just one roti and exercises for hours.)
+:::
+
+:::recall
+1. Name four physical findings that call for admission in anorexia. || Very low BMI, pulse below 40, low potassium or phosphate, fainting or low BP, low temperature, QT prolongation.
+2. What is monitored daily in early refeeding? || Phosphate, potassium and magnesium.
+3. Describe family-based treatment. || Parents take charge of eating, then gradually return control, then normal development.
+4. What is first-line for bulimia? || CBT-E (plus fluoxetine).
+:::
+
 # Part II · Sleep–wake disorders
 
 ## 2.1 The main sleep disorders [core]
@@ -100,6 +142,38 @@ When feeding restarts after starvation, insulin drives phosphate, potassium and 
 3. What blood test matters in restless legs? || Ferritin (iron).
 4. Contrast night terrors and nightmares. || Deep NREM, first third, no recall vs REM, later, vivid recall.
 5. Why does REM sleep behaviour disorder matter? || It can precede Parkinson's and Lewy body dementia.
+:::
+
+## 2.3 More on sleep: assessment and the less common disorders [core]
+### Taking a sleep history
+- **Sleep diary** for two weeks: bedtime, time to fall asleep, wakings, wake time, naps, caffeine, alcohol.
+- Ask a **bed partner**: snoring, pauses, kicking, acting out dreams.
+- Daytime: sleepiness (**Epworth Sleepiness Scale**, score above 10 suggests excessive sleepiness), driving safety.
+- Medicines, shift work, screens, mood and anxiety.
+
+### Tests
+| Test | Use |
+|---|---|
+| **Polysomnography** | Overnight recording of EEG, breathing, oxygen, leg movements: sleep apnoea, parasomnias, REM sleep behaviour disorder |
+| **Multiple Sleep Latency Test** | Naps through the day: **short sleep latency and REM in two or more naps** suggests narcolepsy |
+| Actigraphy | Wrist movement over weeks: circadian rhythm disorders |
+| CSF hypocretin (orexin) | **Low in narcolepsy type 1** |
+
+### Narcolepsy in more detail
+- Caused by loss of **hypocretin (orexin)** neurons in the hypothalamus (type 1, with cataplexy).
+- The tetrad: **excessive daytime sleepiness**, **cataplexy**, **sleep paralysis**, **hypnagogic hallucinations** (on falling asleep). Plus disturbed night sleep.
+- Often misdiagnosed as depression, epilepsy or psychosis (because of hallucinations).
+- Treatment: scheduled naps, **modafinil**, stimulants, sodium oxybate; antidepressants (which suppress REM) for cataplexy.
+
+### Obstructive sleep apnoea in psychiatry
+- Common in people on weight-gaining medicines, with obesity, alcohol use; causes **tiredness, poor concentration and low mood** that look like depression.
+- **Benzodiazepines and alcohol worsen** it. Screen with **STOP-BANG** (Snoring, Tired, Observed pauses, Pressure high, BMI, Age over 50, Neck size, Gender male).
+
+:::recall
+1. What Epworth score suggests excessive sleepiness? || Above 10.
+2. What does the Multiple Sleep Latency Test show in narcolepsy? || Short sleep latency with REM in two or more naps.
+3. Name the narcolepsy tetrad. || Daytime sleepiness, cataplexy, sleep paralysis, hypnagogic hallucinations.
+4. Why does sleep apnoea matter in psychiatry? || It mimics depression and is worsened by sedatives and weight gain.
 :::
 
 # Part III · Somatic symptom and related disorders
@@ -142,6 +216,36 @@ Diagnosis is made by **positive features**, not just by normal tests:
 4. What should you never say to a patient with functional symptoms? || That it's all in their head or nothing is wrong.
 :::
 
+## 3.2 Illness anxiety, factitious disorder and malingering in depth [core]
+### Illness anxiety (health anxiety)
+- Preoccupation with having a serious illness with **few or no symptoms**; anxiety is high; the person either **checks and seeks care** (care-seeking type) or **avoids** doctors (care-avoidant type).
+- Reassurance helps briefly, then doubt returns: reassurance works like a compulsion.
+- **CBT** (reducing checking, internet searching and reassurance seeking; behavioural experiments) and SSRIs help.
+
+### Factitious disorder and malingering
+| | Factitious disorder | Malingering |
+|---|---|---|
+| Symptoms produced | Deliberately | Deliberately |
+| Motive | Internal: to take the **sick role** | External: money, avoiding work, duty, prison, getting drugs |
+| Is it a mental disorder? | Yes | **No** (a behaviour, not a diagnosis) |
+| Typical clues | Medical knowledge (often health workers), many hospitals, dramatic stories, eagerness for tests and surgery, symptoms worse when observed less | Clear gain, vague symptoms, poor cooperation, symptoms disappear when the gain is achieved |
+| Extreme form | **Munchausen syndrome** (wandering between hospitals with dramatic false histories) | |
+
+:::safety Factitious disorder imposed on another
+A caregiver (usually a parent) **induces or fakes illness in a child** to gain attention. It is **child abuse**. Clues: symptoms only when the parent is present, unusual test results, a parent who welcomes invasive tests. Involve paediatrics and child protection; under POCSO and child protection procedures, report.
+:::
+
+### Telling functional symptoms from feigning
+- **Functional (conversion) symptoms are not deliberate**. The person is not choosing them. Most functional patients are not faking.
+- Use **positive signs** (Hoover's, entrainment) to diagnose functional disorder, not "tests are normal so it must be fake".
+
+:::recall
+1. Name the two types of illness anxiety disorder. || Care-seeking and care-avoidant.
+2. What is the key difference between factitious disorder and malingering? || Internal motive (sick role) versus external gain.
+3. What is Munchausen syndrome? || An extreme factitious disorder with wandering between hospitals and dramatic histories.
+4. What is factitious disorder imposed on another and how is it managed? || A carer induces illness in a dependant; child protection and reporting.
+:::
+
 # Part IV · Dissociation and culture
 
 ## 4.1 Dissociative disorders [core]
@@ -173,6 +277,33 @@ A disruption of the normal integration of consciousness, memory, identity, emoti
 3. When is a possession state a disorder? || When involuntary, distressing and outside accepted cultural practice.
 :::
 
+## 4.3 Dissociation in practice [core]
+### Dissociative (conversion) presentations in Indian clinics
+- **Dissociative seizures**, fainting spells, trance-like states and "fits" in young women after family conflict, exam pressure or relationship stress are common in Indian emergency rooms.
+- Look for the **stressor**, the **secondary gain** (attention, escape from a conflict) without accusing, and **what the symptom communicates**.
+- Avoid rewarding the episodes with excessive attention; give attention to the person between episodes.
+
+### Depersonalisation and derealisation
+- Depersonalisation: "I feel like a robot, as if I'm watching myself from outside."
+- Derealisation: "Everything looks like a film, flat and unreal."
+- **Insight is preserved** (the person knows it is a feeling, unlike psychosis).
+- Common transiently in anxiety, panic, sleep loss and cannabis use. As a disorder: persistent. Treat anxiety and depression, grounding, CBT.
+
+### Dissociative identity disorder: approach
+- Rare and controversial in some quarters, but real. Strongly linked with severe, repeated childhood trauma.
+- Distinguish from **possession trance** that is culturally accepted, from psychosis (voices in DID are often experienced as inside the head and linked to "parts"), and from feigning.
+- Phased treatment: safety, stabilisation, then trauma work; avoid encouraging the creation of more "parts".
+
+:::analogy Dissociation as a circuit breaker
+When the load is too much, the brain trips a switch to protect itself: feeling numb, unreal, losing time or function. It helped once. Treatment teaches safer ways to carry the load, so the switch trips less often.
+:::
+
+:::recall
+1. What is preserved in depersonalisation that separates it from psychosis? || Insight.
+2. How should staff respond to dissociative seizures? || Calm, not rewarding episodes, attention to the person between episodes, explore stressors.
+3. What history is strongly linked with DID? || Severe, repeated childhood trauma.
+:::
+
 # Part V · Sexual health and gender
 
 ## 5.1 Sexual dysfunctions [core]
@@ -191,6 +322,36 @@ A disruption of the normal integration of consciousness, memory, identity, emoti
 1. Name four causes of erectile disorder. || Diabetes, vascular disease, medicines, alcohol and smoking, anxiety, relationship problems.
 2. What is sensate focus? || Graded touching exercises without pressure to perform.
 3. Is being transgender a mental disorder? || No; gender dysphoria concerns distress.
+:::
+
+## 5.3 Sexual function and paraphilic disorders [core]
+### The human sexual response
+| Phase (Masters and Johnson, with a desire phase added later) | What happens | Linked dysfunction |
+|---|---|---|
+| **Desire** | Interest, fantasies | Low desire |
+| **Excitement or arousal** | Erection, vaginal lubrication | Erectile disorder, arousal disorder |
+| **Plateau** | Arousal builds | |
+| **Orgasm** | Ejaculation, orgasm | Premature or delayed ejaculation, orgasmic disorder |
+| **Resolution** | Return to baseline; refractory period in men | |
+
+### Assessment and treatment in more detail
+- Ask with **comfort and privacy**: "Many people have problems with sexual life, especially with stress or medicines. Has that been a concern for you?"
+- Morning erections suggest a **psychological** rather than physical cause of erectile problems.
+- **PDE5 inhibitors** (sildenafil, tadalafil) for erectile disorder (not with nitrates).
+- **Premature ejaculation**: **stop-start** and **squeeze** techniques, SSRIs (dapoxetine on demand).
+- **Vaginismus** (genito-pelvic pain/penetration disorder): education, graded dilators, relaxation, couple therapy; common cause of unconsummated marriages.
+- **Dhat** concerns and performance anxiety in young men are common: education about normal sexual physiology helps greatly.
+
+### Paraphilic disorders
+- A **paraphilia** is an intense, persistent atypical sexual interest. It is a **disorder** only when it causes distress or impairment, or involves **non-consenting people** or harm.
+- Examples: voyeuristic, exhibitionistic, frotteuristic (touching or rubbing against non-consenting people, for example in crowded buses), sexual masochism and sadism, **paedophilic disorder**, fetishistic, transvestic.
+- **Paedophilic disorder**: sexual attraction to prepubescent children; any offence involves **mandatory reporting** under POCSO. Treatment: specialist CBT, relapse prevention, sometimes anti-androgen medicines, and close risk management.
+
+:::recall
+1. Name the phases of the sexual response cycle. || Desire, excitement, plateau, orgasm, resolution.
+2. What do preserved morning erections suggest? || A psychological cause.
+3. Name two behavioural techniques for premature ejaculation. || Stop-start and squeeze.
+4. When is a paraphilia a disorder? || When it causes distress or impairment, or involves non-consenting people or harm.
 :::
 
 # Part VI · Exam zone
@@ -228,6 +389,18 @@ Factitious vs malingering? :: Internal motive vs external reward.
 Dhat syndrome? :: Anxiety attributed to semen loss.
 Treatment phases for dissociation? :: Stabilisation, processing, integration.
 Sensate focus is used for? :: Sexual dysfunction.
+Hospital admission pulse threshold in anorexia? :: Below about 40.
+Minerals checked daily during refeeding? :: Phosphate, potassium, magnesium.
+First-line therapy for bulimia? :: CBT-E.
+Epworth score suggesting excess sleepiness? :: Above 10.
+Neuropeptide lost in narcolepsy type 1? :: Hypocretin (orexin).
+Sleep apnoea screening tool? :: STOP-BANG.
+Two types of illness anxiety disorder? :: Care-seeking and care-avoidant.
+Malingering motive? :: External gain.
+Factitious disorder in a child caused by a parent? :: Factitious disorder imposed on another; child abuse.
+Is insight preserved in depersonalisation? :: Yes.
+Treatment for erectile disorder? :: PDE5 inhibitors with psychological work.
+Common cause of unconsummated marriage? :: Vaginismus.
 :::
 
 ## 6.3 Module test [core]
@@ -301,5 +474,33 @@ Q: Feeling unreal and detached from one's body with intact reality testing:
 - DID
 - Delirium
 > Insight preserved.
+
+Q: A 16-year-old with anorexia has a pulse of 38 and potassium of 2.8. The best plan is:
+- Outpatient CBT-E
+- *Hospital admission for medical stabilisation
+- Fluoxetine and review in a month
+- Advise her to eat more
+> Medical risk comes first.
+
+Q: Short sleep latency with REM in several daytime naps suggests:
+- Obstructive sleep apnoea
+- *Narcolepsy
+- Insomnia disorder
+- Depression
+> Multiple Sleep Latency Test finding.
+
+Q: A nurse repeatedly presents to different hospitals with unexplained infections and is found injecting herself. No external gain is found. This is:
+- Malingering
+- *Factitious disorder
+- Somatic symptom disorder
+- Conversion disorder
+> Internal motive: the sick role.
+
+Q: A man who has erectile problems with his wife but normal morning erections most likely has:
+- Vascular disease
+- Diabetes-related nerve damage
+- *A psychological cause such as performance anxiety
+- Low testosterone only
+> Physical causes usually affect morning erections too.
 :::
 `;

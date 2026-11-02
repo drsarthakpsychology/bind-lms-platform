@@ -54,6 +54,43 @@ Side effects come in the first days; benefit builds over 2 to 6 weeks; full effe
 3. Name the class and two examples for: SSRI, SNRI, NDRI, NaSSA. || Sertraline, escitalopram; venlafaxine, duloxetine; bupropion; mirtazapine.
 :::
 
+## 1.2 Why they take weeks, and how well they work [core]
+### The delay explained
+- An SSRI blocks reuptake **within hours**, yet mood lifts over weeks. So the immediate rise in serotonin is not the whole story.
+- **Autoreceptor desensitisation**: at first, extra serotonin activates **5-HT1A autoreceptors** on the raphe neurons, which act as a brake and reduce firing. Over 2 to 3 weeks these autoreceptors **down-regulate**, the brake comes off, and serotonin release rises properly.
+- **Neuroplasticity**: over weeks, antidepressants increase **BDNF**, new synapses and hippocampal neurogenesis, reversing stress-related changes.
+- **Cognitive bias shift**: within days, people on antidepressants start noticing positive faces and words more; mood follows as life feels different.
+
+:::analogy The thermostat
+A thermostat (the autoreceptor) senses the room warming and switches the heater down. The medicine first fights the thermostat. After a few weeks the thermostat is reset, and the heater can finally warm the room.
+:::
+
+### The honest evidence
+- Antidepressants work better than placebo, with the clearest benefit in **moderate to severe** depression. In mild depression the advantage over placebo is small, so **psychological approaches and active monitoring** come first.
+- About **half** respond to the first antidepressant; about a **third** reach remission. Many more respond with the next steps.
+- Differences between antidepressants are **small**; choice is guided by **side effects, interactions, safety and preference**.
+- Medicines plus therapy together are better than either alone for moderate to severe or chronic depression.
+
+### Uses beyond depression
+| Condition | Notes |
+|---|---|
+| Panic disorder, GAD, social anxiety, PTSD | Start at **half the usual dose** (early jitteriness), then increase |
+| OCD | **Higher doses, longer trials** (8 to 12 weeks); clomipramine also |
+| Bulimia nervosa | Fluoxetine at higher dose |
+| Neuropathic pain, migraine prevention | Amitriptyline (low dose), duloxetine |
+| Premature ejaculation | Dapoxetine and other SSRIs (delaying ejaculation is a "side effect" used deliberately) |
+| Premenstrual dysphoric disorder | SSRIs, even in the luteal phase only |
+| Smoking cessation | Bupropion |
+| Insomnia with depression | Mirtazapine, trazodone (low dose) |
+| Enuresis (older practice) | Imipramine |
+
+:::recall
+1. Why does the antidepressant effect take weeks? || 5-HT1A autoreceptor desensitisation and neuroplastic changes take time.
+2. In which severity of depression is the benefit over placebo clearest? || Moderate to severe.
+3. Roughly what proportion respond to the first antidepressant? || About half.
+4. How is dosing different in panic disorder and OCD? || Panic: start at half dose. OCD: higher doses, longer trials.
+:::
+
 # Part II · The classes
 
 ## 2.1 SSRIs [core]
@@ -142,6 +179,30 @@ Stop an SSRI or other antidepressant and wait **about 2 weeks** before starting 
 8. What is the tyramine reaction? || Hypertensive crisis from tyramine-rich foods on an MAOI.
 :::
 
+## 2.6 Side effects that matter in practice [core]
+| Side effect | Who is at risk | What to do |
+|---|---|---|
+| **Hyponatraemia** (SIADH) | **Older adults**, women, diuretics, low body weight; mostly in the first weeks | Check sodium in at-risk people at baseline and 2 to 4 weeks; confusion, falls, headache are warning signs; mirtazapine and bupropion lower risk |
+| **Bleeding** | With **NSAIDs, aspirin, anticoagulants**, older age | Add a stomach-protecting medicine (PPI) or avoid the combination; SSRIs reduce platelet serotonin |
+| **Sexual dysfunction** | Common with SSRIs and SNRIs; often unreported | Ask directly; wait, reduce dose, switch to bupropion, mirtazapine, vortioxetine or agomelatine |
+| **Switch to mania** | Bipolar disorder, family history of bipolar, young age at onset | Screen for bipolar before starting; avoid antidepressant without a mood stabiliser |
+| **Suicidal thinking early on** | **Under 25 years** | Warn, review at 1 week and often in the first month; dispense small amounts |
+| **QT prolongation** | Citalopram and escitalopram at high doses, TCAs | Respect dose limits; ECG in heart disease |
+| **Emotional blunting** | Long-term SSRIs | "I don't feel sad, but I don't feel happy either": lower dose or switch |
+| **Weight gain** | Mirtazapine, TCAs, long-term paroxetine | Lifestyle advice; choose another |
+| **Liver** | Agomelatine | Liver tests at baseline and during treatment |
+
+:::trap The older woman who became confused
+Mrs D, 78, on a diuretic, started sertraline 3 weeks ago. Now she is drowsy and confused. Before calling it worsening depression or dementia, **check sodium**: SSRI-related hyponatraemia is common and dangerous at this age.
+:::
+
+:::recall
+1. Who is at highest risk of SSRI-induced hyponatraemia? || Older adults, women, people on diuretics, low body weight.
+2. Which combination increases bleeding risk with SSRIs? || NSAIDs, aspirin or anticoagulants.
+3. Which antidepressants cause least sexual dysfunction? || Bupropion, mirtazapine, vortioxetine, agomelatine.
+4. In which age group is early suicidal thinking a particular concern? || Under 25.
+:::
+
 # Part III · Safety
 
 ## 3.1 Serotonin syndrome [core]
@@ -211,6 +272,38 @@ Stopping suddenly (especially paroxetine and venlafaxine) causes symptoms within
 5. Which antidepressant suits an underweight older adult with insomnia? || Mirtazapine.
 :::
 
+## 3.4 When depression does not respond [core]
+:::define Treatment-resistant depression
+Commonly defined as **failure to respond to two adequate antidepressant trials** (adequate dose for an adequate time, with good adherence) in the current episode.
+:::
+
+### First check
+- **Diagnosis**: bipolar depression? Psychotic features? Personality disorder, substance use, thyroid, anaemia, sleep apnoea, ongoing stress or abuse?
+- **Adequacy**: dose, duration, adherence (ask, count tablets, involve family).
+- **Psychological treatment** offered and done properly?
+
+### Then the options
+| Strategy | Examples | Notes |
+|---|---|---|
+| **Optimise** | Raise the dose within the licensed range | Especially if partial response |
+| **Switch** | Another SSRI, or another class (SNRI, mirtazapine, bupropion, TCA) | Direct switch or cross-taper |
+| **Augment** | **Lithium**, **aripiprazole**, **quetiapine**, thyroid hormone (T3) | Lithium and aripiprazole have strong evidence |
+| **Combine** | Mirtazapine added to an SSRI or SNRI | Common in practice |
+| **Physical treatments** | **ECT** (most effective for severe or psychotic depression), **rTMS** | rTMS: outpatient, few side effects |
+| **Rapid-acting** | **Esketamine** nasal spray, IV ketamine | Specialist settings; monitor dissociation and BP |
+| **Psychological** | CBT, behavioural activation, CBASP for chronic depression | Add if not done |
+
+:::note Psychotic depression needs a different plan
+Depression with delusions or hallucinations responds poorly to an antidepressant alone. Use **an antidepressant plus an antipsychotic**, or **ECT**.
+:::
+
+:::recall
+1. Define treatment-resistant depression. || Failure of two adequate antidepressant trials in the current episode.
+2. Name three things to check before calling depression resistant. || Diagnosis, adequacy of dose and duration, adherence, psychological treatment.
+3. Name two augmenting agents with strong evidence. || Lithium and aripiprazole.
+4. What is the treatment for psychotic depression? || Antidepressant plus antipsychotic, or ECT.
+:::
+
 # Part IV · Exam zone
 
 ## 4.1 Long answer and short notes [core]
@@ -250,6 +343,17 @@ Test to monitor with agomelatine? :: Liver function.
 Key sign of serotonin syndrome? :: Clonus and hyperreflexia.
 Antidote used in serotonin syndrome? :: Cyproheptadine.
 Expand FINISH. :: Flu-like, insomnia, nausea, imbalance, sensory, hyperarousal.
+Autoreceptor behind the antidepressant delay? :: 5-HT1A.
+Proportion responding to the first antidepressant? :: About half.
+Dose rule for panic disorder? :: Start at half the usual dose.
+Antidepressant for smoking cessation? :: Bupropion.
+SSRI electrolyte problem in the elderly? :: Hyponatraemia (SIADH).
+SSRI plus NSAID risk? :: Bleeding.
+Age group with early suicidal thinking warning? :: Under 25.
+Antidepressant needing liver tests? :: Agomelatine.
+Definition of treatment-resistant depression? :: Two failed adequate trials.
+Augmenting agents with strong evidence? :: Lithium and aripiprazole.
+Rapid-acting nasal antidepressant? :: Esketamine.
 :::
 
 ## 4.3 Module test [core]
@@ -337,5 +441,33 @@ Q: A patient on an MAOI eats aged cheese and develops a pounding headache with v
 - Migraine
 - NMS
 > The classic “cheese reaction”.
+
+Q: Three weeks after starting escitalopram, a 75-year-old woman on a diuretic is confused and drowsy. The first test is:
+- Brain MRI
+- *Serum sodium
+- Lithium level
+- EEG
+> SSRI-induced hyponatraemia.
+
+Q: The delay in antidepressant effect is best explained by:
+- Slow absorption
+- *Gradual desensitisation of 5-HT1A autoreceptors and plastic changes
+- Liver enzyme induction
+- Placebo response
+> Reuptake blockade itself is immediate.
+
+Q: A man with depression and delusions of guilt has not improved on sertraline. The best next step is:
+- Increase sertraline only
+- Add a benzodiazepine
+- *Add an antipsychotic or consider ECT
+- Start psychotherapy alone
+> Psychotic depression needs combination treatment or ECT.
+
+Q: Which augmentation strategy has strong evidence in treatment-resistant depression?
+- Adding alprazolam
+- *Adding lithium
+- Adding haloperidol at high dose
+- Adding vitamin C
+> Lithium and aripiprazole.
 :::
 `;

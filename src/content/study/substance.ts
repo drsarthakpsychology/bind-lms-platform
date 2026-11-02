@@ -82,6 +82,66 @@ Tolerance and withdrawal **don't count** towards the diagnosis when they occur w
 2. Which forms of tobacco are often missed in India? || Chewed tobacco: gutkha, khaini, and bidis.
 :::
 
+## 1.3 Screening and brief intervention [core]
+### Standard drinks
+- A **standard drink** in India is usually taken as about **10 g of pure alcohol**: roughly a small peg (30 mL) of whisky or rum, a small glass (100 mL) of wine, or about 285 to 330 mL of regular beer. A large bottle of strong beer can hold 2 to 3 standard drinks.
+- Grams of alcohol = volume in mL multiplied by the alcohol percentage multiplied by 0.79 (for example, 750 mL of 42.8% whisky contains about 250 g of alcohol).
+
+### AUDIT in practice
+| AUDIT score (out of 40) | Zone | Action |
+|---|---|---|
+| 0 to 7 | Low risk | Education |
+| 8 to 15 | Hazardous | **Brief advice** |
+| 16 to 19 | Harmful | Brief counselling and monitoring |
+| 20 to 40 | Possible dependence | **Referral** for assessment and treatment |
+
+- **AUDIT-C** (first three questions) is a quick screen.
+- **CAGE**: Cut down? Annoyed by criticism? Guilty? Eye-opener in the morning? Two or more "yes" answers suggest a problem.
+
+### Brief intervention: the FRAMES model
+| Letter | Meaning |
+|---|---|
+| **F**eedback | Personal results ("Your AUDIT score and liver test suggest your drinking is affecting your health") |
+| **R**esponsibility | The choice is theirs |
+| **A**dvice | Clear advice to cut down or stop |
+| **M**enu | Options: cut down, alcohol-free days, stop, get help |
+| **E**mpathy | Warm, non-judgemental |
+| **S**elf-efficacy | Build confidence they can change |
+
+- A **5 to 15 minute** brief intervention in primary care reduces drinking in hazardous drinkers.
+
+:::recall
+1. How much alcohol is a standard drink in India? || About 10 g.
+2. What AUDIT score suggests possible dependence? || 20 or more.
+3. Expand CAGE. || Cut down, annoyed, guilty, eye-opener.
+4. Expand FRAMES. || Feedback, responsibility, advice, menu, empathy, self-efficacy.
+:::
+
+## 1.4 Dual diagnosis [core]
+:::define Dual diagnosis
+A substance use disorder together with another mental disorder. It is the **rule, not the exception**: depression, anxiety, PTSD, ADHD, bipolar disorder, psychosis and personality disorders all raise substance use risk, and substances worsen all of them.
+:::
+
+### Which came first?
+| Pattern | Clue |
+|---|---|
+| **Substance-induced** disorder | Symptoms begin during intoxication or withdrawal and **settle within about a month of abstinence** |
+| **Independent** disorder | Symptoms began before the substance use, or persist well beyond a month of abstinence, or are out of proportion to the amount used |
+
+- Common examples: alcohol-induced depression (often lifts within 2 to 4 weeks of stopping), stimulant-induced psychosis, cannabis-induced psychosis (which often predicts later schizophrenia).
+
+### Principles
+- **Integrated treatment**: the same team treats both problems; do not send patients back and forth ("come back when you're sober").
+- Treat the mental disorder even while substance use continues, when it is clearly independent and severe.
+- Choose medicines with low misuse potential; avoid benzodiazepines long term.
+- Higher risk of suicide, violence, homelessness, HIV and hepatitis.
+
+:::recall
+1. How do you tell a substance-induced disorder from an independent one? || Induced: begins with use and settles within about a month of abstinence.
+2. What is integrated treatment? || One team treating both disorders together.
+3. Which psychosis often predicts later schizophrenia? || Cannabis-induced psychosis.
+:::
+
 # Part II · Alcohol
 
 ## 2.1 Alcohol use and its complications [core]
@@ -143,6 +203,37 @@ Families sometimes ask for disulfiram to be mixed in food without the patient kn
 6. Name three relapse-prevention medicines with one caution each. || Disulfiram (consent, heart disease), naltrexone (opioids, liver failure), acamprosate (kidney failure).
 :::
 
+## 2.5 Alcohol in special groups and the body [core]
+### Women and pregnancy
+- Women reach higher blood alcohol from the same amount and develop liver damage and dependence faster (**telescoping**).
+- There is **no known safe amount in pregnancy**. **Fetal alcohol spectrum disorder** causes facial features, growth problems, and lifelong learning and behaviour problems.
+
+### Older adults
+- Lower tolerance, more falls, interactions with medicines, confusion. Drinking often hidden; ask directly.
+
+### The body: what to look for
+| System | Effects |
+|---|---|
+| Liver | Fatty liver, alcoholic hepatitis, cirrhosis; raised **GGT**, **AST more than ALT** (ratio about 2:1 suggests alcohol) |
+| Blood | Raised **MCV** (large red cells), low platelets |
+| Gut | Gastritis, pancreatitis, oesophageal varices |
+| Heart | High BP, cardiomyopathy, atrial fibrillation |
+| Nerves and brain | Peripheral neuropathy, Wernicke–Korsakoff, cerebellar degeneration, dementia, seizures |
+| Other | Cancers (mouth, throat, oesophagus, liver, breast), injuries, accidents, violence |
+
+- **Carbohydrate-deficient transferrin (CDT)** is a specific marker of heavy drinking over recent weeks.
+
+### Alcohol and family
+- Domestic violence, financial ruin and children's emotional problems are common. Involve family: **community reinforcement and family training (CRAFT)** helps families encourage a reluctant drinker into treatment.
+- **Al-Anon** supports families; **Alcoholics Anonymous** (12 steps) supports people in recovery.
+
+:::recall
+1. What liver enzyme pattern suggests alcohol? || Raised GGT with AST about twice ALT.
+2. What blood count change suggests heavy drinking? || Raised MCV.
+3. What is telescoping? || Faster progression to dependence and liver damage in women.
+4. What is CRAFT? || Community reinforcement and family training for families of reluctant drinkers.
+:::
+
 # Part III · Other substances
 
 ## 3.1 Opioids [core]
@@ -194,6 +285,59 @@ Pinpoint pupils, slow or stopped breathing, unconsciousness. Give **naloxone** (
 4. Why must buprenorphine start only in moderate withdrawal? || To avoid precipitated withdrawal.
 5. What is formication, and which drugs cause it? || Feeling insects under the skin; stimulants (cocaine, amphetamine).
 6. What is the gambling disorder threshold? || 4 of 9 in 12 months.
+:::
+
+## 3.4 Opioid treatment and harm reduction in India [core]
+### Opioid substitution therapy (OST) in more detail
+| | Buprenorphine | Methadone |
+|---|---|---|
+| Action | Partial agonist with a **ceiling effect** on breathing | Full agonist |
+| Safety | Safer in overdose | Risk of overdose, especially early; **QT prolongation** |
+| Starting | In moderate withdrawal (to avoid precipitated withdrawal) | Low dose, increase slowly |
+| Forms | Sublingual tablet; with **naloxone** to discourage injecting | Oral liquid |
+| In India | Widely used in OST centres | Available in some programmes |
+
+- OST **reduces injecting, HIV and hepatitis C transmission, crime and deaths**, and keeps people in treatment. Usually long term; tapering too early raises relapse and overdose risk.
+- **Naltrexone** (antagonist) for opioid use helps only very motivated people (for example with legal or professional pressure); after detoxification tolerance is lost, so **overdose risk is high if they relapse**.
+
+### Harm reduction
+- **Needle and syringe programmes**, **OST**, **naloxone** to families and peers, testing and treatment for HIV and hepatitis C, safe injecting education, condoms.
+- In India, harm reduction services for people who inject drugs run through national AIDS control and drug dependence treatment programmes.
+
+### Regional patterns in India
+- **Punjab and the north-west**: heroin ("chitta"), injecting, and **poppy husk ("doda post")**.
+- **North-east**: injecting heroin and pharmaceutical opioids; high HIV among injectors.
+- Across India: **alcohol** is the most common substance treated, then cannabis and opioids; **inhalant use** in children and adolescents; tobacco (smoked and smokeless) widespread.
+
+:::trap Overdose risk after a break
+After detox, prison or a hospital stay, opioid tolerance falls quickly. A person who returns to their old dose can overdose. Give **naloxone** and overdose education at discharge.
+:::
+
+:::recall
+1. Why is buprenorphine safer in overdose than methadone? || As a partial agonist it has a ceiling effect on breathing.
+2. What does OST reduce? || Injecting, HIV and hepatitis C, crime and deaths.
+3. Why is naltrexone risky in opioid users who relapse? || Tolerance is lost, so overdose risk is high.
+4. Name four harm reduction measures. || Needle programmes, OST, naloxone, HIV and hepatitis testing.
+:::
+
+## 3.5 Newer and hidden problems [core]
+| Problem | What to know |
+|---|---|
+| **Prescription and over-the-counter misuse** | Codeine cough syrups, tramadol, alprazolam, pregabalin, painkillers; often hidden; ask about every medicine |
+| **Synthetic cannabinoids** ("spice") | More potent than cannabis; agitation, psychosis, seizures; not detected on routine drug tests |
+| **Methamphetamine** | Long-lasting stimulant; psychosis, violence, dental damage ("meth mouth"), weight loss |
+| **MDMA (ecstasy)** | Party drug; overheating, low sodium from drinking too much water, serotonin syndrome |
+| **Ketamine** | Dissociation; **bladder damage** with heavy use |
+| **Behavioural addictions** | Gambling (including online betting and fantasy sports), gaming, possibly compulsive buying and pornography use |
+
+### Drug testing
+- **Urine drug screens** detect recent use (cannabis can stay positive for weeks in heavy users; most others for 1 to 3 days).
+- Many newer drugs are not detected. A negative screen does not rule out use. Use testing to **support** treatment, not to punish.
+
+:::recall
+1. Which over-the-counter products are commonly misused in India? || Codeine cough syrups, tramadol, alprazolam, pregabalin.
+2. Name a danger specific to ketamine misuse. || Bladder damage.
+3. How long can cannabis stay positive in urine for heavy users? || Several weeks.
 :::
 
 # Part IV · Helping people change
@@ -268,6 +412,17 @@ Cannabis hyperemesis relief? :: Hot showers.
 Sudden death risk with inhalants? :: Arrhythmia (sudden sniffing death).
 Stages of change? :: Precontemplation, contemplation, preparation, action, maintenance, relapse.
 OARS? :: Open questions, affirmations, reflections, summaries.
+Standard drink in India? :: About 10 g of alcohol.
+AUDIT score suggesting dependence? :: 20 or more.
+FRAMES first letter? :: Feedback.
+Substance-induced depression usually settles within? :: About a month of abstinence.
+AST to ALT ratio suggesting alcohol? :: About 2 to 1.
+Specific marker of heavy drinking? :: Carbohydrate-deficient transferrin.
+Partial agonist with a ceiling effect? :: Buprenorphine.
+Methadone heart risk? :: QT prolongation.
+Poppy husk in Punjab? :: Doda post.
+Danger after detox or prison? :: Overdose from lost tolerance.
+Ketamine organ damage? :: Bladder.
 :::
 
 ## 5.3 Module test [core]
@@ -355,5 +510,33 @@ Q: Which blood test combination best suggests heavy drinking?
 - Raised TSH
 - Low potassium only
 > Classic markers, with AST more than ALT.
+
+Q: A man's AUDIT score is 11. The best action is:
+- Immediate admission for detoxification
+- *Brief advice using FRAMES
+- Start disulfiram
+- No action
+> Hazardous drinking zone.
+
+Q: A man has low mood after 10 years of heavy drinking. Two weeks after stopping, his mood is improving. This most suggests:
+- Independent major depression needing ECT
+- *Alcohol-induced depressive disorder
+- Bipolar disorder
+- Dysthymia
+> Induced disorders settle with abstinence.
+
+Q: A heroin user is released from prison after a year. The most important harm reduction step is:
+- Advise him to restart at his previous dose
+- *Provide naloxone and overdose education
+- Prescribe a benzodiazepine
+- Arrange a urine test only
+> Tolerance has fallen.
+
+Q: Which is TRUE of buprenorphine?
+- It is a full opioid agonist
+- *It has a ceiling effect on breathing depression
+- It should be started during intoxication
+- It is not used in India
+> Start in moderate withdrawal.
 :::
 `;

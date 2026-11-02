@@ -52,6 +52,49 @@ export const text = String.raw`
 3. What red flag applies at any age? || Loss of skills.
 :::
 
+## 1.2 Development and screening tools [core]
+### Social and emotional milestones
+| Age | What to expect |
+|---|---|
+| 2 to 3 months | Social smile, follows faces |
+| 6 to 8 months | **Stranger anxiety** begins; recognises familiar people |
+| 9 to 12 months | **Separation anxiety** peaks; **joint attention** (follows a point, shows objects); waves bye-bye |
+| 18 months | Pretend play begins (feeding a doll); points to show interest |
+| 2 years | Parallel play beside other children; "no" phase; tantrums common |
+| 3 to 4 years | Cooperative play, takes turns, imaginary friends are normal, knows own gender |
+| 4 to 5 years | **Theory of mind**: understands others can hold false beliefs (passes the false belief test) |
+| 6 to 12 years | Rule-based games, friendships, competence at school (Erikson's industry) |
+| Adolescence | Identity, peer influence, abstract thinking, risk taking |
+
+:::trap Joint attention is a key autism marker
+A child of 12 to 18 months who does not point to show things, does not follow your point, and does not look back to share interest needs an autism screen, even if words are present.
+:::
+
+### Screening and diagnostic tools used in India
+| Tool | Use |
+|---|---|
+| **Trivandrum Developmental Screening Chart (TDSC)** | Quick developmental screening, 0 to 6 years |
+| Developmental Screening Test, Denver II | Developmental milestones |
+| **M-CHAT-R/F** | Autism screening at 16 to 30 months |
+| **INCLEN Diagnostic Tool for ASD (INDT-ASD)** | Indian diagnostic tool for autism |
+| **Indian Scale for Assessment of Autism (ISAA)** | Used for **autism disability certification** in India |
+| **Vineland Social Maturity Scale** | Social quotient for intellectual disability |
+| Conners, Vanderbilt | ADHD symptoms from parents and teachers |
+| **NIMHANS SLD battery** | Specific learning disorder |
+| Strengths and Difficulties Questionnaire (SDQ) | Broad emotional and behavioural screen |
+
+### The family and the child together
+- See the family together first, then the child alone (from about 10 to 12 years especially), then parents alone.
+- Notice how the family sits, who answers for the child, and how parents respond to the child's behaviour in the room.
+- Ask about **screen time**, sleep, diet, school, friendships, bullying, family conflict, parental mental health and substance use.
+
+:::recall
+1. At what age does stranger anxiety begin and separation anxiety peak? || About 6 to 8 months; about 9 to 12 months.
+2. What is joint attention and why does it matter? || Sharing attention through pointing and following a point; its absence suggests autism.
+3. Which Indian tool is used for autism disability certification? || ISAA.
+4. At what age is theory of mind usually present? || About 4 to 5 years.
+:::
+
 # Part II · Neurodevelopmental disorders
 
 ## 2.1 Intellectual disability [core]
@@ -133,6 +176,58 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 6. State the Tourette's rules. || Multiple motor and at least one vocal tic, over a year, onset before 18.
 :::
 
+## 2.5 Genetic syndromes and behavioural phenotypes [core]
+| Syndrome | Genetics | Physical features | Behaviour and mental health |
+|---|---|---|---|
+| **Down syndrome** | **Trisomy 21** (mostly non-disjunction; risk rises with maternal age) | Upward-slanting eyes, flat face, single palmar crease, heart defects, hypothyroidism | Sociable; early **Alzheimer's** (by the 40s and 50s); depression |
+| **Fragile X** | **CGG repeat in FMR1, X chromosome** (commonest inherited cause) | Long face, large ears, large testes after puberty | **Social anxiety, gaze avoidance, autism features, ADHD** |
+| **Prader-Willi** | Loss of paternal chromosome 15q11-13 | Hypotonia in infancy, short stature, small hands | **Hyperphagia** (constant hunger), obesity, skin picking, temper outbursts, OCD-like features |
+| **Angelman** | Loss of maternal 15q11-13 | Seizures, ataxic gait | **Happy demeanour, frequent laughter**, little speech |
+| **Williams** | Deletion 7q11.23 | "Elfin" face, heart defect (supravalvular aortic stenosis), high calcium | **Very sociable, over-friendly**, good verbal skills, poor visuospatial skills, anxiety |
+| **Rett syndrome** | **MECP2**, X-linked, mostly girls | Normal early development, then loss of skills and slowing head growth | **Hand-wringing**, loss of purposeful hand use, breathing irregularities |
+| **Phenylketonuria** | Recessive enzyme deficiency | Fair skin, musty smell | Preventable intellectual disability with a low-phenylalanine diet |
+| **Fetal alcohol spectrum disorder** | Alcohol exposure in pregnancy (not genetic) | Smooth philtrum, thin upper lip, small eyes, small head | ADHD-like problems, learning difficulties; **the commonest preventable cause** |
+| Lesch-Nyhan | X-linked, HGPRT deficiency | Gout, high uric acid | **Severe self-injury** (biting lips and fingers) |
+
+:::mnemonic Prader-Willi versus Angelman
+**P**rader-Willi: **P**aternal deletion, **P**lenty of appetite. **A**ngelman: m**A**ternal deletion, **A**lways laughing.
+:::
+
+:::recall
+1. What is the commonest inherited cause of intellectual disability and its genetic change? || Fragile X; CGG repeat in FMR1.
+2. Which syndrome has hyperphagia, and which has frequent laughter? || Prader-Willi; Angelman.
+3. Which syndrome shows hand-wringing after early normal development? || Rett syndrome.
+4. What is the commonest preventable cause of intellectual disability? || Fetal alcohol exposure (and in India, iodine deficiency is also preventable).
+5. Which syndrome is associated with early Alzheimer's? || Down syndrome.
+:::
+
+## 2.6 ADHD medicines and adult ADHD [core]
+| Medicine | Type | Notes |
+|---|---|---|
+| **Methylphenidate** (short and long-acting) | Stimulant: blocks dopamine and noradrenaline reuptake | First-line in most children over 6; works within an hour |
+| **Atomoxetine** | Non-stimulant: noradrenaline reuptake inhibitor | Takes weeks; useful with tics, anxiety or misuse risk; watch liver and suicidal thinking |
+| Clonidine, guanfacine | Alpha-2 agonists | With tics, sleep problems, aggression; watch BP and do not stop suddenly |
+| Amphetamines | Stimulant | Limited availability in India |
+
+### Practical points
+- **Before**: height, weight, pulse, BP, heart history (sudden collapse, family history of sudden death; ECG if concerns).
+- **During**: growth chart, appetite, sleep, BP and pulse, mood, tics; give medicine after breakfast to protect appetite.
+- **Drug holidays** (weekends or holidays) may help growth, but are not needed for everyone.
+- Methylphenidate is a **controlled medicine**: keep records, watch for diversion in adolescents.
+
+### Adult ADHD
+- Many children continue to have symptoms; hyperactivity becomes **inner restlessness**, with disorganisation, lateness, job changes, impulsive spending, accidents and relationship problems.
+- Diagnosis needs evidence of **childhood onset** (several symptoms before 12), from school reports or a parent.
+- High comorbidity: depression, anxiety, substance use, personality difficulties.
+- Treatment: stimulants or atomoxetine, plus coaching, CBT and organisational skills.
+
+:::recall
+1. How does methylphenidate work? || Blocks dopamine and noradrenaline reuptake.
+2. When is atomoxetine preferred? || Tics, anxiety, risk of misuse.
+3. What do you check before starting a stimulant? || Height, weight, pulse, BP, heart history.
+4. What is essential for diagnosing ADHD in an adult? || Evidence of childhood onset before 12.
+:::
+
 # Part III · Behaviour, mood and elimination
 
 ## 3.1 Disruptive behaviour [core]
@@ -165,6 +260,39 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 2. School refusal vs truancy? || Anxiety with parent's knowledge vs hidden absence with conduct problems.
 3. Enuresis rules and the most effective long-term treatment? || Age 5, twice a week for 3 months; bed-wetting alarm.
 4. Commonest cause of encopresis? || Constipation with overflow.
+:::
+
+## 3.4 Adolescents [core]
+### What is normal and what is not
+| Usually normal | Needs attention |
+|---|---|
+| Moodiness, wanting privacy, arguments over rules | Persistent low mood or irritability for weeks, withdrawal from friends |
+| Interest in peers over family | Falling marks, school refusal, dropping all interests |
+| Some risk taking | Self-harm, substance use, unsafe sex, running away |
+| Late sleeping | Severe sleep disruption, night-long gaming or phone use |
+| Concern about appearance | Restrictive eating, weight loss, bingeing, vomiting |
+
+### HEADSSS: the adolescent psychosocial interview
+**H**ome · **E**ducation and employment · **A**ctivities · **D**rugs · **S**exuality · **S**uicide and depression · **S**afety (including online). Interview the young person **alone**, explain confidentiality and its limits first.
+
+### Problems that often start in adolescence
+- **Depression and self-harm**: ask directly; fluoxetine with CBT for moderate to severe depression.
+- **Eating disorders**: see the module on other disorders.
+- **Substance use**: tobacco, alcohol, cannabis, inhalants (whitener and glue sniffing in street children).
+- **Early psychosis**: decline in functioning, social withdrawal, odd beliefs; early intervention improves outcome.
+- **Problematic internet and gaming use**: **gaming disorder** (ICD-11): impaired control, priority over other activities, continuing despite harm, for about 12 months.
+- **Exam stress**: common around board and entrance exams; watch for hopelessness.
+
+### Working with parents and schools
+- **Parent management training**: praise and attention for good behaviour, clear instructions, consistent consequences, time-out, special time with the child.
+- **School**: individualised education plans, exam accommodations, anti-bullying policies, a link teacher.
+- Look after the **parents' mental health**: maternal depression strongly affects children.
+
+:::recall
+1. Expand HEADSSS. || Home, education, activities, drugs, sexuality, suicide and depression, safety.
+2. Name four warning signs in an adolescent that need attention. || Persistent low mood, falling marks, self-harm, substance use, restrictive eating, severe sleep disruption.
+3. What are the features of gaming disorder? || Impaired control, priority over other activities, continuing despite harm, about 12 months.
+4. Name four parts of parent management training. || Praise, clear instructions, consistent consequences, time-out, special time.
 :::
 
 # Part IV · Child protection
@@ -221,6 +349,17 @@ Enuresis age rule? :: Five years.
 Best long-term enuresis treatment? :: Bed-wetting alarm.
 POCSO reporting section? :: Section 19.
 Childline number? :: 1098.
+Stranger anxiety starts at? :: About 6 to 8 months.
+Theory of mind appears at? :: About 4 to 5 years.
+Indian autism certification tool? :: ISAA.
+Commonest inherited cause of intellectual disability? :: Fragile X.
+Genetics of fragile X? :: CGG repeat in FMR1 on the X chromosome.
+Hyperphagia and skin picking? :: Prader-Willi syndrome.
+Over-friendly with poor visuospatial skills? :: Williams syndrome.
+Hand-wringing in a girl after normal early development? :: Rett syndrome.
+Severe self-biting? :: Lesch-Nyhan syndrome.
+Non-stimulant for ADHD? :: Atomoxetine.
+Adolescent psychosocial interview mnemonic? :: HEADSSS.
 :::
 
 ## 5.3 Module test [core]
@@ -294,5 +433,33 @@ Q: A child stays home from school with his mother's knowledge because of stomach
 - Conduct disorder
 - Malingering
 > Anxiety-driven, with parental knowledge.
+
+Q: A boy with intellectual disability, long face, large ears, gaze avoidance and social anxiety most likely has:
+- Down syndrome
+- *Fragile X syndrome
+- Williams syndrome
+- Angelman syndrome
+> Commonest inherited cause.
+
+Q: A child with a heart murmur is extremely friendly with strangers, chatty, but cannot copy simple shapes. Most likely:
+- Prader-Willi syndrome
+- *Williams syndrome
+- Rett syndrome
+- Fetal alcohol spectrum disorder
+> Supravalvular aortic stenosis and visuospatial weakness.
+
+Q: An ADHD child with tics and a sibling who misuses drugs. The most suitable first medicine may be:
+- High-dose methylphenidate
+- *Atomoxetine
+- Haloperidol
+- Alprazolam
+> No misuse potential; does not worsen tics.
+
+Q: Which is the best approach to interviewing a 15-year-old?
+- Only with parents present
+- *See them alone after explaining confidentiality and its limits
+- Promise complete secrecy
+- Rely on teachers only
+> Using HEADSSS.
 :::
 `;
