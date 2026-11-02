@@ -174,7 +174,7 @@ export function EditorPane({
         <div className="rounded-md border-2 border-border p-3">
           <div className="flex items-center justify-between">
             <span className="text-caption font-semibold uppercase text-muted-foreground">Status</span>
-            <span className={`text-caption font-semibold ${published ? "text-emerald-700" : "text-amber-700"}`}>
+            <span className={`text-caption font-semibold ${published ? "text-status-success-fg" : "text-status-pending-fg"}`}>
               {published ? "Published" : "Draft"}
             </span>
           </div>

@@ -38,7 +38,7 @@ import {
   WHO_FOR,
 } from "./content";
 import { archivo, pixel, pixelDigits } from "./fonts";
-import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, TherapyMixer } from "./games";
+import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, MemoryGame, TherapyMixer } from "./games";
 import { HomeNav } from "./home-nav";
 import { CountUp, Cursor, Magnetic, Marquee, Parallax, Reveal, ScrollProgress, SectionHead, Tilt } from "./motion-kit";
 import { CollegeVs, GroupScene, JourneyScene, ScenarioStack, ScrubText, Stickers, WeeksTimeline } from "./scenes";
@@ -331,7 +331,7 @@ function Play() {
           tone="lime"
           title="Think like a clinician."
           accent="Press start."
-          sub="Two quick games built from situations we teach. No sign-up. Works on your phone."
+          sub="Three quick games built from what we teach. No sign-up. Works on your phone."
         />
         <div className={s.games}>
           <Reveal>
@@ -339,6 +339,9 @@ function Play() {
           </Reveal>
           <Reveal delay={0.1}>
             <DefenceGame />
+          </Reveal>
+          <Reveal className={s.gamesWide}>
+            <MemoryGame />
           </Reveal>
         </div>
       </div>
@@ -455,7 +458,7 @@ function FeesJoin() {
             <div className={s.joinBtns}>
               <Magnetic>
                 <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime}`}>
-                  Request an invitation →
+                  Request an invitation <span aria-hidden>→</span>
                 </Link>
               </Magnetic>
               <a href={CONTACT.phoneHref} className={`${s.btn} ${s.btnWhite}`}>
@@ -1001,7 +1004,7 @@ export function HomePage() {
         <JourneyScene>
           <div className={s.jEndBtns}>
             <a href="#disorders" className={`${s.btn} ${s.btnWhite} ${s.btnSm}`}>
-              Pick a disorder ↓
+              Pick a disorder <span aria-hidden data-dir="down">↓</span>
             </a>
             <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime} ${s.btnSm}`}>
               Request an invitation

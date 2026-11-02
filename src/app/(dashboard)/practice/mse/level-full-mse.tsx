@@ -104,7 +104,7 @@ export function FullMseLevel({
           Level 4 · Full MSE · case {idx + 1}/{stimuli.length}
         </span>
         {running && !submitted ? (
-          <span className={cn("font-mono font-semibold", urgent && "text-red-700")}>
+          <span className={cn("font-mono font-semibold", urgent && "text-destructive")}>
             {mins}:{String(secs).padStart(2, "0")}
           </span>
         ) : null}
@@ -165,9 +165,9 @@ export function FullMseLevel({
                 return (
                   <div key={d} className={cn(
                     "flex items-start gap-2 rounded-md border px-2 py-1.5 text-small",
-                    v === "green" && "border-green-400 bg-green-50 text-green-800",
-                    v === "amber" && "border-amber-400 bg-amber-50 text-amber-800",
-                    v === "red" && "border-red-400 bg-red-50 text-red-800",
+                    v === "green" && "border-foreground bg-status-success-bg text-status-success-fg",
+                    v === "amber" && "border-foreground bg-status-pending-bg text-status-pending-fg",
+                    v === "red" && "border-destructive bg-status-alert-bg text-destructive",
                   )}>
                     <span className="font-semibold w-28 shrink-0">{formatDomainKey(d)}</span>
                     <span className="flex-1">
@@ -210,7 +210,7 @@ export function FullMseLevel({
             </button>
           ) : (
             <div className="space-y-2">
-              <p className="text-small text-green-700" role="status">
+              <p className="text-small text-status-success-fg" role="status">
                 All Level 4 cases written. Ten minutes, full MSE, scored per domain.
               </p>
               {onComplete ? (

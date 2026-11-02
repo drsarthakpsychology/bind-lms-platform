@@ -2,88 +2,80 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Bell, Menu, LogOut, Settings } from "lucide-react";
+import { Bell, LogOut, Settings } from "lucide-react";
 
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { NavItems, type NavItem } from "@/components/navigation/nav-items";
+import { Avatar } from "@/components/navigation/account-menu";
+import { OPEN_NAV_EVENT } from "@/components/navigation/sidebar-state";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
-import { BRAND } from "@/lib/brand";
 
 /**
- * Mobile navigation drawer. Radix handles focus management, Escape, and
- * scroll-locking. Closes on navigation.
- *
- * The logout <form action={logout}> is rendered here (a Client Component)
- * rather than passed in as a Server Component prop — a server action
- * reference isn't serializable across the server→client boundary, and
- * passing it as a ReactNode would throw "Functions cannot be passed directly
- * to Client Components".
+ * Phone "More" drawer — opened by the More tab in the bottom bar (the
+ * Instagram/YouTube pattern). Holds every destination, your account, the
+ * light/dark switch and log out. Focus is trapped and Escape closes it
+ * (Radix Sheet).
  */
 export function MobileNav({
   items,
   viewModeSwitch,
+  email,
+  role,
+  showSettings,
 }: {
   items: NavItem[];
   viewModeSwitch?: React.ReactNode;
+  email: string | null;
+  role: string;
+  showSettings: boolean;
 }) {
   const [open, setOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    const onOpen = () => setOpen(true);
+    window.addEventListener(OPEN_NAV_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_NAV_EVENT, onOpen);
+  }, []);
+
+  const close = () => setOpen(false);
+  const row =
+    "flex min-h-12 items-center gap-3 rounded-xl border-2 border-transparent px-3 text-sm font-bold transition-colors hover:border-foreground hover:bg-card";
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <button
-          type="button"
-          aria-label="Open navigation"
-          className="inline-flex size-11 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform hover:bg-accent active:translate-y-0.5"
-        >
-          <Menu className="size-4" aria-hidden />
-        </button>
-      </SheetTrigger>
-      <SheetContent side="left" className="w-72 p-0">
-        <SheetHeader className="border-b-2 border-border px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
-          <SheetTitle className="flex items-center gap-2">
-            <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-bold text-primary-foreground">
-              {BRAND.shortName.charAt(0)}
+      <SheetContent side="left" className="w-[min(20rem,88vw)] gap-0 border-r-2 border-foreground p-0">
+        <SheetHeader className="border-b-2 border-foreground bg-brand px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))] text-brand-foreground">
+          <SheetTitle className="flex items-center gap-3 text-brand-foreground">
+            <Avatar email={email} />
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-bold">{email ?? "Signed in"}</span>
+              <span className="block text-caption font-medium capitalize opacity-85">{role}</span>
             </span>
-            <span>{BRAND.shortName}</span>
           </SheetTitle>
+          <SheetDescription className="sr-only">Menu and account</SheetDescription>
         </SheetHeader>
         <div className="flex flex-1 flex-col overflow-y-auto px-3 py-4">
-          <NavItems
-            items={items}
-            onNavigate={() => setOpen(false)}
-          />
-          {viewModeSwitch ? <div className="mt-4">{viewModeSwitch}</div> : null}
+          <NavItems items={items} onNavigate={close} />
+          <div className="my-4 h-0.5 bg-line" aria-hidden />
+          <Link href="/notifications" onClick={close} className={row}>
+            <Bell className="size-5" aria-hidden /> Notifications
+          </Link>
+          {showSettings ? (
+            <Link href="/settings" onClick={close} className={row}>
+              <Settings className="size-5" aria-hidden /> Settings
+            </Link>
+          ) : null}
+          {viewModeSwitch ? <div className="mt-3 px-1">{viewModeSwitch}</div> : null}
         </div>
-        <div
-          className="flex items-center justify-between border-t-2 border-border px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
-        >
+        <div className="flex items-center justify-between gap-2 border-t-2 border-foreground px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <ThemeToggle />
-          <div className="flex items-center gap-1.5">
-            <Link
-              href="/notifications"
-              onClick={() => setOpen(false)}
-              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
-              aria-label="Notifications"
-            >
-              <Bell className="size-4" aria-hidden />
-            </Link>
-            <Link
-              href="/settings"
-              onClick={() => setOpen(false)}
-              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
-              aria-label="Settings"
-            >
-              <Settings className="size-4" aria-hidden />
-            </Link>
-            <form action={logout}>
-              <Button type="submit" variant="secondary" size="icon-sm" className="size-11" aria-label="Log out">
-                <LogOut className="size-4" aria-hidden />
-              </Button>
-            </form>
-          </div>
+          <form action={logout}>
+            <Button type="submit" variant="danger" size="sm" className="h-11">
+              <LogOut className="size-4" aria-hidden /> Log out
+            </Button>
+          </form>
         </div>
       </SheetContent>
     </Sheet>

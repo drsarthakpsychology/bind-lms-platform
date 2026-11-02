@@ -226,10 +226,10 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
             <span className="italic">{seed.modelNarrative}</span>
           </div>
           <p className="text-small text-muted-foreground">
-            Words the model used that you missed: <span className="text-amber-700">{diff.missing.join(", ") || "(none — excellent)"}</span>
+            Words the model used that you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none — excellent)"}</span>
           </p>
           <p className="text-small text-muted-foreground">
-            Model words you captured: <span className="text-green-700">{diff.present.join(", ") || "(none yet)"}</span>
+            Model words you captured: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>
           </p>
           <p className="text-small text-muted-foreground">
             This is a diff, not a grade. The structure is the skill.
@@ -293,7 +293,7 @@ function OwnTranscriptForge() {
   }, []);
 
   if (loading) return <p className="text-small text-muted-foreground">Loading your sessions…</p>;
-  if (error) return <p className="text-small text-red-600">{error}</p>;
+  if (error) return <p className="text-small text-destructive">{error}</p>;
   if (!data || data.count === 0) {
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center">
@@ -388,10 +388,10 @@ function OwnTranscriptForge() {
             </p>
           ) : null}
           <p className="mt-2 text-muted-foreground">
-            Presentation words you missed: <span className="text-amber-700">{diff.missing.join(", ") || "(none — you caught it all)"}</span>
+            Presentation words you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none — you caught it all)"}</span>
           </p>
           <p className="text-muted-foreground">
-            Presentation words you captured: <span className="text-green-700">{diff.present.join(", ") || "(none yet)"}</span>
+            Presentation words you captured: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>
           </p>
           <p className="mt-1 text-caption text-muted-foreground">
             Same patient, your ears. This is the loop the programme exists for.

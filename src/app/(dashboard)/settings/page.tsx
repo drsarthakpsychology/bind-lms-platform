@@ -36,7 +36,7 @@ export default async function SettingsPage() {
         <div className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <div
             aria-hidden
-            className="flex size-11 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary font-mono text-lg font-bold text-primary-foreground"
+            className="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-primary font-pix text-lg text-primary-foreground"
           >
             {(email?.[0] ?? "S").toUpperCase()}
           </div>

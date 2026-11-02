@@ -5,35 +5,40 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  // Brutalist control: 2px border, 6px radius. Primary variants carry a hard
-  // offset shadow and translate down toward it on press (interactive shadow).
-  // Motion system §13: duration-fast + ease-snappy = one tactile language.
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-border text-sm font-medium whitespace-nowrap outline-none transition-[transform,background-color,color,box-shadow] duration-fast ease-snappy focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/30 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  // Pill control with a 2px ink border. Hover: a colour panel sweeps up
+  // (btn-sweep), the button lifts off a hard shadow. Press: it sinks into the
+  // shadow. Same language as the public homepage.
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-border text-sm font-bold whitespace-nowrap outline-none transition-[transform,background-color,color,box-shadow] duration-fast ease-snappy focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/30 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
+        // Lime action. Sweep: ink panel, lime label (dark theme: white panel, ink label).
         default:
-          "border-foreground bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+          "btn-sweep border-foreground bg-primary text-primary-foreground hard-shadow-xs [--sweep:#111111] [--sweep-text:#cdf24b] dark:[--sweep:#ffffff] dark:[--sweep-text:#111111] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+        // Blue brand fill (selected / confirm). Sweep: ink panel, white label.
+        brand:
+          "btn-sweep border-foreground bg-brand text-brand-foreground hard-shadow-xs [--sweep:#111111] [--sweep-text:#ffffff] dark:[--sweep:#cdf24b] dark:[--sweep-text:#111111] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
         destructive:
-          "border-foreground bg-destructive text-destructive-foreground hover:-translate-y-0.5 hover:bg-destructive/90 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+          "border-foreground bg-destructive text-destructive-foreground hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
         danger:
-          "border-foreground bg-destructive/15 text-destructive hover:-translate-y-0.5 hover:bg-destructive/25 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+          "border-destructive bg-card text-destructive hover:-translate-y-0.5 hover:bg-status-alert-bg hover:hard-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+        // White button. Sweep: ink panel, white label (dark: lime panel, ink label).
         outline:
-          "bg-background text-foreground hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground hover:hard-shadow-sm active:translate-x-px active:translate-y-px active:hard-shadow-none",
+          "btn-sweep bg-card text-foreground [--sweep:#111111] [--sweep-text:#ffffff] dark:[--sweep:#cdf24b] dark:[--sweep-text:#111111] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-x-px active:translate-y-px active:shadow-none",
         secondary:
-          "border-foreground bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:bg-secondary/80 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
-        ghost: "border-transparent hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground active:translate-y-0.5",
-        link: "border-transparent text-foreground underline-offset-4 hover:underline active:translate-y-0.5",
+          "btn-sweep border-foreground bg-secondary text-secondary-foreground [--sweep:#111111] [--sweep-text:#ffffff] dark:[--sweep:#cdf24b] dark:[--sweep-text:#111111] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+        ghost: "border-transparent hover:bg-accent hover:text-accent-foreground active:translate-y-px",
+        link: "border-transparent text-link underline-offset-4 hover:underline active:translate-y-px",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        xs: "h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
-        "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-8",
-        "icon-lg": "size-10",
+        default: "h-10 px-5 py-2 has-[>svg]:px-4",
+        xs: "h-7 gap-1 px-2.5 text-xs has-[>svg]:px-2 [&_svg:not([class*='size-'])]:size-3",
+        sm: "h-9 gap-1.5 px-4 has-[>svg]:px-3",
+        lg: "h-12 px-7 text-base has-[>svg]:px-5",
+        icon: "size-10",
+        "icon-xs": "size-7 [&_svg:not([class*='size-'])]:size-3",
+        "icon-sm": "size-9",
+        "icon-lg": "size-12",
       },
     },
     defaultVariants: {

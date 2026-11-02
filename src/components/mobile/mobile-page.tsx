@@ -22,7 +22,7 @@ export function MobilePage({
 }) {
   return (
     <div
-      className={cn("flex min-h-dvh w-full flex-col bg-background", className)}
+      className={cn("mx-auto flex min-h-dvh w-full flex-col bg-background lg:max-w-3xl", className)}
       style={
         inset
           ? {

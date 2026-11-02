@@ -249,7 +249,7 @@ export function DictateConversation() {
               aria-label={recording ? "Release to stop recording" : "Hold to talk"}
               className={`flex size-14 items-center justify-center rounded-full border-2 border-border transition-transform active:scale-95 ${
                 recording
-                  ? "bg-red-500 text-white ring-2 ring-red-300"
+                  ? "bg-status-alert-bg text-white ring-2 ring-red-300"
                   : "bg-secondary text-link"
               } disabled:opacity-40`}
             >

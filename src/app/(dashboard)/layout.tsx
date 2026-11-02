@@ -78,6 +78,7 @@ export default async function DashboardLayout({
       role={shellRole}
       mode={mode}
       scope={effectiveScope}
+      email={session.profile.email}
       viewModeSwitch={
         role === "admin" ? (
           <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />

@@ -878,7 +878,7 @@ export function VideoPlayer({
           <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
             <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
               <p className="font-semibold text-white">Playback paused</p>
-              <p className="mt-2 text-sm text-gray-300">
+              <p className="mt-2 text-sm text-muted-foreground">
                 This video&apos;s watermark was tampered with. Reload the page to continue watching.
               </p>
             </div>

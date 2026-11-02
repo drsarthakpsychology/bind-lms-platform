@@ -106,7 +106,7 @@ export function DomainLevel({
 
       {done ? (
         <div className="space-y-3">
-          <p className="text-small text-green-700" role="status">
+          <p className="text-small text-status-success-fg" role="status">
             All 11 domains tagged. You now hold the discipline: one domain at a
             time, controlled vocabulary, in order.
           </p>
@@ -153,7 +153,7 @@ export function DomainLevel({
                   className={cn(
                     "rounded-md border-2 border-border px-3 py-1.5 text-caption transition-transform active:translate-y-px",
                     picked.includes(tag) && !revealed && "bg-primary text-primary-foreground",
-                    revealed && (stimulus.expertTags.includes(tag) || (stimulus.amberTags ?? []).includes(tag)) && "bg-green-100 text-green-800",
+                    revealed && (stimulus.expertTags.includes(tag) || (stimulus.amberTags ?? []).includes(tag)) && "bg-status-success-bg text-status-success-fg",
                   )}
                 >
                   {tag}
@@ -174,11 +174,11 @@ export function DomainLevel({
           ) : (
             <div className="space-y-2 rounded-md border border-border bg-background p-3">
               <p className="text-small">
-                <span className="font-semibold text-green-700">Expert: </span>
+                <span className="font-semibold text-status-success-fg">Expert: </span>
                 {stimulus.expertTags.join(", ")}
               </p>
               {stimulus.amberTags?.length ? (
-                <p className="text-small text-amber-700">
+                <p className="text-small text-status-pending-fg">
                   <span className="font-semibold">Defensible: </span>
                   {stimulus.amberTags.join(", ")}
                 </p>

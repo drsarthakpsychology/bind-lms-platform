@@ -44,8 +44,8 @@ export function StatCard({
       </div>
       <span
         className={cn(
-          "text-numeric text-3xl font-bold tracking-tight",
-          accent ? "text-primary-foreground" : "text-foreground"
+          "font-pix text-3xl leading-none tabular-nums",
+          accent ? "text-primary-foreground" : "text-link"
         )}
       >
         {value}
@@ -65,11 +65,11 @@ export function StatCard({
     "group relative flex min-h-[6.5rem] flex-col gap-2 rounded-lg border-2 border-border p-4 transition-[transform,box-shadow] duration-fast ease-snappy",
     accent
       ? "border-foreground bg-primary text-primary-foreground hard-shadow-sm"
-      : "bg-card hard-shadow-flat",
+      : "border-foreground bg-card hard-shadow-sm",
     href &&
       cn(
-        "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 hover:-translate-y-0.5",
-        accent ? "hover:hard-shadow-md" : "hover:hard-shadow-sm",
+        "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+        "hover:hard-shadow-md",
       ),
     className
   );

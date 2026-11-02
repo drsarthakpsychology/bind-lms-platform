@@ -5,7 +5,7 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border-2 px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[background-color,color,box-shadow] duration-fast ease-snappy focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 [&>svg]:shrink-0",
+  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border-2 px-2.5 py-0.5 text-xs font-bold whitespace-nowrap transition-[background-color,color,box-shadow] duration-fast ease-snappy focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -20,18 +20,19 @@ const badgeVariants = cva(
         link: "border-transparent text-foreground underline-offset-4 [a&]:hover:underline",
         // Statuses — derived from the existing palette, never a new hue, always
         // paired with a text label (never colour alone).
-        // published  → terracotta/peach fill, ink border, dark text
+        // published  → lime fill, ink border, ink text
         published:
           "border-foreground bg-primary text-primary-foreground",
-        // draft → cream/neutral fill, ink border, muted text
+        // draft → neutral fill, ink border, muted text
         draft:
           "border-border bg-background text-muted-foreground",
-        // pending → the exact amber of the "Video unavailable" notice
+        // pending → grey wash
         pending:
           "border-status-pending-fg/40 bg-status-pending-bg text-status-pending-fg",
-        // graded → deeper terracotta (alert tone family) + check icon
+        // graded → blue brand fill + check icon
         graded:
-          "border-foreground bg-status-alert-bg text-status-alert-fg",
+          "border-foreground bg-brand text-brand-foreground",
+        brand: "border-foreground bg-brand text-brand-foreground",
       },
     },
     defaultVariants: {

@@ -30,7 +30,7 @@ export function PageHeader({
     >
       <div className="min-w-0 space-y-1.5">
         {eyebrow ? (
-          <div className="text-eyebrow text-muted-foreground">{eyebrow}</div>
+          <div className="text-eyebrow text-link">{eyebrow}</div>
         ) : null}
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="break-words text-h1">{title}</h1>

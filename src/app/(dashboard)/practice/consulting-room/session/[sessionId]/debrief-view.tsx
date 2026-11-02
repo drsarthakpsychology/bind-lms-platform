@@ -383,7 +383,7 @@ function InsightStep({
     >
       {premature > 0 ? (
         <div className="rounded-md border-2 border-border bg-card p-4">
-          <p className="flex items-center gap-2 text-small text-amber-700">
+          <p className="flex items-center gap-2 text-small text-status-pending-fg">
             <AlertTriangle className="size-4" aria-hidden />
             You reassured the patient {premature} time{premature > 1 ? "s" : ""} before fully exploring
             the problem. That&apos;s the most common novice move — sitting with their distress is
@@ -393,7 +393,7 @@ function InsightStep({
       ) : null}
 
       <div className="rounded-md border-2 border-border bg-card p-4">
-        <p className={`flex items-center gap-2 text-small ${askedWhyToday ? "text-green-700" : "text-amber-700"}`}>
+        <p className={`flex items-center gap-2 text-small ${askedWhyToday ? "text-status-success-fg" : "text-status-pending-fg"}`}>
           {askedWhyToday ? (
             <><CircleCheck className="size-4" aria-hidden /> You asked why the patient came in TODAY — that question opens the whole frame.</>
           ) : (
@@ -575,7 +575,7 @@ function DeliveryStep({ voice }: { voice?: VoiceMetrics }) {
 
 function Stat({ label, value, warn, hint }: { label: string; value: string; warn?: boolean; hint?: string }) {
   return (
-    <div className={`rounded-md border-2 border-border p-3 ${warn ? "bg-amber-50" : "bg-background"}`}>
+    <div className={`rounded-md border-2 border-border p-3 ${warn ? "bg-status-pending-bg" : "bg-background"}`}>
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="mt-0.5 text-base font-semibold text-numeric">{value}</p>
       {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
@@ -656,7 +656,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
               &quot;{attempt1Patient.content}&quot;
             </p>
           ) : null}
-          <p className="mt-3 text-caption text-amber-700">
+          <p className="mt-3 text-caption text-status-pending-fg">
             {parentScore ? `Debrief score: ${parentScore.overall.toFixed(1)} / 5` : "The flagged moment"}
           </p>
         </div>
@@ -668,10 +668,10 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
             interviewed is the same person, in the same state — the difference in how
             they responded is entirely down to how you asked.
           </p>
-          <p className="mt-3 text-caption font-medium text-green-700">
+          <p className="mt-3 text-caption font-medium text-status-success-fg">
             {currentOverall != null ? `This attempt: ${currentOverall.toFixed(1)} / 5` : null}
             {delta != null ? (
-              <span className={delta >= 0 ? "ml-2 text-green-700" : "ml-2 text-red-600"}>
+              <span className={delta >= 0 ? "ml-2 text-status-success-fg" : "ml-2 text-destructive"}>
                 {delta >= 0 ? "▲" : "▼"} {Math.abs(delta).toFixed(1)} vs attempt 1
               </span>
             ) : null}

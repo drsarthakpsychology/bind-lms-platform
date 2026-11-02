@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { LessonThumb } from "@/components/course/lesson-thumb";
 import { ChevronDown, ChevronLeft, FileVideo2, ListPlus, Paperclip } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
@@ -139,7 +140,7 @@ export default async function CourseDetailPage({
           section, open-by-default for the primary create action and collapsed
           for the secondary sections, so mobile isn't one long scroll of
           competing forms. */}
-      <details open className="group rounded-lg border-2 border-border bg-card hard-shadow-sm">
+      <details open={rows.length === 0} className="group rounded-2xl border-2 border-foreground bg-primary/30 hard-shadow-sm open:bg-card">
         <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
           <ListPlus className="size-4 text-link" aria-hidden />
           Add a lesson
@@ -170,9 +171,12 @@ export default async function CourseDetailPage({
         ) : (
           orderedWeeks.map(([weekNum, weekLessons]) => (
             <div key={weekNum} className="space-y-2">
-              <h3 className="flex items-center gap-2 px-1 text-h3">
+              <h3 className="flex items-center gap-2 px-1 text-h2">
+                <span className="flex size-9 items-center justify-center rounded-lg border-2 border-foreground bg-brand font-pix text-xs text-brand-foreground">
+                  {String(weekNum).padStart(2, "0")}
+                </span>
                 Week {weekNum}
-                <Badge variant="secondary">{weekLessons.length}</Badge>
+                <span className="text-caption font-semibold text-muted-foreground">{weekLessons.length} lectures</span>
               </h3>
               <div className="space-y-3">
                 {weekLessons.map((lesson) => (
@@ -191,7 +195,7 @@ export default async function CourseDetailPage({
         )}
       </section>
 
-      <details className="group rounded-lg border-2 border-border bg-card hard-shadow-sm">
+      <details className="group rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
         <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
           <Paperclip className="size-4 text-link" aria-hidden />
           Course materials
@@ -259,64 +263,43 @@ function LessonCard({
   };
 
   return (
-    <div className="flex flex-col gap-3 rounded-lg border-2 border-border bg-card p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="min-w-0">
-          <p className="font-medium text-foreground">
-            <span className="text-numeric mr-2 text-muted-foreground">
-              {lesson.order_index}.
-            </span>
-            {lesson.title}
-          </p>
-          <div className="mt-1 flex flex-wrap items-center gap-2">
-            <Badge variant={badge.variant}>{badge.label}</Badge>
-            <Badge variant={videoBadge.variant}>{videoBadge.label}</Badge>
-            {assignment ? (
-              <AssignmentToggle
-                lessonId={lesson.id}
-                courseId={courseId}
-                published={assignment.is_published}
-              />
-            ) : lesson.requires_assignment ? (
-              <Badge variant="draft">Assignment needs setup</Badge>
-            ) : null}
-          </div>
+    <div className="grid gap-4 rounded-2xl border-2 border-foreground bg-card p-3 transition-shadow duration-fast hover:hard-shadow-sm sm:grid-cols-[9rem_minmax(0,1fr)] sm:p-4 xl:grid-cols-[10rem_minmax(0,1fr)_auto]">
+      {/* Studio-style row: thumbnail · title + status · actions */}
+      <div className="hidden sm:block">
+        <LessonThumb
+          number={lesson.order_index}
+          state={lesson.status === "hidden" ? "later" : lesson.status === "live" ? "live" : "open"}
+        />
+      </div>
+      <div className="min-w-0 self-center">
+        <p className="text-h3 break-words">
+          <span className="mr-2 font-pix text-sm text-link sm:hidden">{String(lesson.order_index).padStart(2, "0")}</span>
+          {lesson.title}
+        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <Badge variant={badge.variant}>{badge.label}</Badge>
+          <Badge variant={videoBadge.variant}>{videoBadge.label}</Badge>
+          {assignment ? (
+            <AssignmentToggle lessonId={lesson.id} courseId={courseId} published={assignment.is_published} />
+          ) : lesson.requires_assignment ? (
+            <Badge variant="draft">Assignment needs setup</Badge>
+          ) : null}
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1">
-            <MoveLessonButton
-              lessonId={lesson.id}
-              courseId={courseId}
-              direction="up"
-              disabled={isFirstInCourse}
-              label="Move lesson up"
-            />
-            <MoveLessonButton
-              lessonId={lesson.id}
-              courseId={courseId}
-              direction="down"
-              disabled={isLastInCourse}
-              label="Move lesson down"
-            />
-          </div>
-          <EditLesson lessonId={lesson.id} courseId={courseId} initial={editInitial} />
-          <LessonStatusToggle
-            lessonId={lesson.id}
-            courseId={courseId}
-            status={(lesson.status ?? "unlocked") as LessonStatus}
-          />
-          {lesson.video_storage_path && (
-            <Button asChild variant="secondary" size="sm">
-              <Link href={`/courses/${courseId}/lessons/${lesson.id}`}>Watch</Link>
-            </Button>
-          )}
-          <VideoUpload
-            lessonId={lesson.id}
-            courseId={courseId}
-            hasVideo={Boolean(lesson.video_storage_path)}
-          />
-          <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
-        </div>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 border-t-2 border-foreground/10 pt-3 sm:col-span-2 xl:col-span-1 xl:border-t-0 xl:pt-0 xl:justify-end">
+        <VideoUpload lessonId={lesson.id} courseId={courseId} hasVideo={Boolean(lesson.video_storage_path)} />
+        {lesson.video_storage_path && (
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/courses/${courseId}/lessons/${lesson.id}`}>Watch</Link>
+          </Button>
+        )}
+        <LessonStatusToggle lessonId={lesson.id} courseId={courseId} status={(lesson.status ?? "unlocked") as LessonStatus} />
+        <EditLesson lessonId={lesson.id} courseId={courseId} initial={editInitial} />
+        <span className="flex items-center gap-1">
+          <MoveLessonButton lessonId={lesson.id} courseId={courseId} direction="up" disabled={isFirstInCourse} label="Move lesson up" />
+          <MoveLessonButton lessonId={lesson.id} courseId={courseId} direction="down" disabled={isLastInCourse} label="Move lesson down" />
+        </span>
+        <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
       </div>
     </div>
   );

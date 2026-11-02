@@ -59,7 +59,7 @@ export function LessonTabs({
     <div
       role="group"
       aria-label="Lesson sections"
-      className="flex w-full items-stretch overflow-hidden rounded-md border-2 border-foreground bg-background hard-shadow-sm lg:inline-flex lg:w-auto"
+      className="flex w-full items-stretch overflow-hidden rounded-full border-2 border-foreground bg-card p-1 hard-shadow-xs sm:inline-flex sm:w-auto"
     >
       {tabs.map((t) => {
         const isActive = tab === t.id;
@@ -77,7 +77,7 @@ export function LessonTabs({
               <motion.span
                 layoutId="lesson-tabs-active"
                 aria-hidden
-                className="absolute inset-0 bg-primary"
+                className="absolute inset-0 rounded-full bg-primary"
                 transition={
                   reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }
                 }

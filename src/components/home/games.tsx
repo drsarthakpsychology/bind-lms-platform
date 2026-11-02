@@ -10,7 +10,7 @@ import * as React from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { CAST, characterSvg, type CastName } from "./art";
-import { CLINIC_CALL, DAY, DEFENCE_GAME, DISORDER_TABS, EVERY_DISORDER, LINKS, MIXER, MIXER_NOTE, MODULES } from "./content";
+import { CLINIC_CALL, DAY, DEFENCE_GAME, DISORDER_FIELDS, DISORDER_FOOT, DISORDERS, LINKS, MEMORY_PAIRS, MIXER, MIXER_NOTE, MODULES } from "./content";
 import { useCalm } from "./motion-kit";
 import s from "./home.module.css";
 
@@ -324,16 +324,18 @@ export function TherapyMixer() {
 }
 
 /* ------------------------------------------------- Disorder picker */
+/** Each disorder gets its own card: the patient's words, what is specific to
+ *  it, and the red flag. Chips are a single-select group (aria-pressed). */
 export function DisorderPicker() {
   const [active, setActive] = React.useState(0);
   const calm = useCalm();
-  const d = DISORDER_TABS[active];
+  const d = DISORDERS[active];
   const mod = MODULES.find((m) => m.n === d.module);
   return (
     <div className={s.picker}>
       <p className={s.pickerAsk}>Pick a disorder:</p>
       <div className={s.pickerChips}>
-        {DISORDER_TABS.map((x, i) => (
+        {DISORDERS.map((x, i) => (
           <button
             key={x.name}
             type="button"
@@ -354,16 +356,33 @@ export function DisorderPicker() {
             exit={calm ? undefined : { opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
           >
-            <p className={s.pickerTitle}>
-              {d.name}
-              {mod ? <span className={s.srOnly}>, </span> : null}
-              {mod ? <span className={s.pickerMod}>Module {mod.n}: {mod.title}</span> : null}
-            </p>
-            <ul className={s.ticks}>
-              {EVERY_DISORDER.map((e) => (
-                <li key={e}>{e}</li>
+            <div className={s.pickerTop}>
+              <p className={s.pickerTitle}>
+                {d.name}
+                {mod ? <span className={s.srOnly}>, </span> : null}
+                {mod ? <span className={s.pickerMod}>Module {mod.n}: {mod.title}</span> : null}
+              </p>
+              <div className={s.pickerSays}>
+                <Person who="patient" className={s.pickerSaysArt} />
+                <p className={s.pickerQuote}>
+                  <span className={s.srOnly}>The patient says: </span>
+                  {d.says}
+                </p>
+              </div>
+            </div>
+            <dl className={s.pickerGrid}>
+              {DISORDER_FIELDS.map((f) => (
+                <div key={f.key} className={s.pickerRow}>
+                  <dt>{f.label}</dt>
+                  <dd>{d[f.key]}</dd>
+                </div>
               ))}
-            </ul>
+              <div className={`${s.pickerRow} ${s.pickerFlag}`}>
+                <dt>Red flag: call the psychiatrist</dt>
+                <dd>{d.redFlag}</dd>
+              </div>
+            </dl>
+            <p className={s.pickerFoot}>{DISORDER_FOOT}</p>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -516,6 +535,217 @@ export function Carousel({ children, label }: { children: React.ReactNode; label
         <button type="button" className={s.carBtn} onClick={() => by(1)} disabled={edge === "end"} aria-label="Next">
           →
         </button>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------ Mini game 3: memory */
+type MemCard = { id: string; pair: number; kind: "term" | "meaning"; text: string };
+const MEM_PAIRS_PER_GAME = 6;
+const BEST_KEY = "vibha-memory-best";
+
+function shuffled<T>(list: readonly T[]): T[] {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/** Deterministic deal for the first (server) render; a random deal happens on
+ *  the first tap, while every card is still face down, so nothing visible
+ *  changes and hydration always matches. */
+function dealCards(random: boolean): MemCard[] {
+  const pool = random ? shuffled(MEMORY_PAIRS).slice(0, MEM_PAIRS_PER_GAME) : MEMORY_PAIRS.slice(0, MEM_PAIRS_PER_GAME);
+  const cards = pool.flatMap((p, i): MemCard[] => [
+    { id: `t${i}`, pair: i, kind: "term", text: p.term },
+    { id: `m${i}`, pair: i, kind: "meaning", text: p.meaning },
+  ]);
+  return random ? shuffled(cards) : cards;
+}
+
+/** Wall-clock read kept outside the component (only ever called from taps). */
+function nowMs(): number {
+  return Date.now();
+}
+
+function readBest(): number | null {
+  try {
+    const v = window.localStorage.getItem(BEST_KEY);
+    return v ? Number(v) : null;
+  } catch {
+    return null;
+  }
+}
+function writeBest(moves: number) {
+  try {
+    window.localStorage.setItem(BEST_KEY, String(moves));
+  } catch {
+    /* private mode: best score just isn't kept */
+  }
+}
+
+export function MemoryGame() {
+  const calm = useCalm();
+  const [deck, setDeck] = React.useState<MemCard[]>(() => dealCards(false));
+  const [dealt, setDealt] = React.useState(false);
+  const [up, setUp] = React.useState<number[]>([]);
+  const [miss, setMiss] = React.useState<number[]>([]);
+  const [matched, setMatched] = React.useState<number[]>([]);
+  const [moves, setMoves] = React.useState(0);
+  const [startedAt, setStartedAt] = React.useState<number | null>(null);
+  const [seconds, setSeconds] = React.useState(0);
+  const [best, setBest] = React.useState<number | null>(null);
+  const [newBest, setNewBest] = React.useState(false);
+  const [say, setSay] = React.useState("");
+  const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const done = matched.length === MEM_PAIRS_PER_GAME;
+
+  React.useEffect(() => {
+    if (startedAt === null || done) return;
+    const id = setInterval(() => setSeconds(Math.floor((nowMs() - startedAt) / 1000)), 250);
+    return () => clearInterval(id);
+  }, [startedAt, done]);
+  React.useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
+
+  function flip(i: number) {
+    if (done || miss.length > 0 || up.includes(i)) return;
+    let d = deck;
+    if (!dealt) {
+      d = dealCards(true);
+      setDeck(d);
+      setDealt(true);
+      setStartedAt(nowMs());
+      setBest(readBest());
+    }
+    if (matched.includes(d[i].pair)) return;
+    const next = [...up, i];
+    if (next.length < 2) {
+      setUp(next);
+      return;
+    }
+    const [a, b] = next;
+    const nextMoves = moves + 1;
+    setMoves(nextMoves);
+    if (d[a].pair === d[b].pair) {
+      const m = [...matched, d[a].pair];
+      setMatched(m);
+      setUp([]);
+      const term = d[a].kind === "term" ? d[a].text : d[b].text;
+      if (m.length === MEM_PAIRS_PER_GAME) {
+        const prev = readBest();
+        const isBest = prev === null || nextMoves < prev;
+        if (isBest) writeBest(nextMoves);
+        setBest(isBest ? nextMoves : prev);
+        setNewBest(isBest);
+        setSay(`Board cleared in ${nextMoves} moves.`);
+      } else {
+        setSay(`Match: ${term}.`);
+      }
+    } else {
+      setUp(next);
+      setMiss(next);
+      setSay("Not a pair.");
+      timer.current = setTimeout(() => {
+        setUp([]);
+        setMiss([]);
+      }, calm ? 1200 : 950);
+    }
+  }
+
+  function again() {
+    if (timer.current) clearTimeout(timer.current);
+    setDeck(dealCards(true));
+    setDealt(true);
+    setUp([]);
+    setMiss([]);
+    setMatched([]);
+    setMoves(0);
+    setSeconds(0);
+    setStartedAt(nowMs());
+    setNewBest(false);
+    setSay("New board dealt.");
+  }
+
+  const stars = moves <= 9 ? 3 : moves <= 13 ? 2 : 1;
+  const time = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+
+  return (
+    <div className={`${s.console} ${s.consoleWide}`}>
+      <div className={s.gameTop}>
+        <span>Match the sign</span>
+        <span className={s.memHud}>
+          <span>Pairs {matched.length}/{MEM_PAIRS_PER_GAME}</span>
+          <span>Moves {moves}</span>
+          <span>{time}</span>
+          {best !== null ? <span>Best {best}</span> : null}
+        </span>
+      </div>
+      <div className={`${s.screen} ${s.memScreen}`}>
+        <p className={s.memHow}>
+          Tap two cards. Match each sign to what it looks like in the room.
+        </p>
+        <div className={s.memBoard} role="group" aria-label="Memory cards">
+          {deck.map((c, i) => {
+            const isMatched = matched.includes(c.pair);
+            const faceUp = isMatched || up.includes(i);
+            const state = isMatched ? "matched" : miss.includes(i) ? "miss" : faceUp ? "up" : "down";
+            return (
+              <button
+                key={`slot-${i}`}
+                type="button"
+                className={s.memCard}
+                data-state={state}
+                data-kind={c.kind}
+                onClick={() => flip(i)}
+                aria-label={faceUp ? `${c.kind === "term" ? "Sign" : "Looks like"}: ${c.text}` : `Card ${i + 1}, face down`}
+                aria-pressed={faceUp}
+              >
+                <span className={s.memInner} aria-hidden>
+                  <span className={s.memBack}>
+                    <span>✶</span>
+                  </span>
+                  <span className={s.memFace}>
+                    <small>{c.kind === "term" ? "Sign" : "Looks like"}</small>
+                    <b>{c.text}</b>
+                    {isMatched ? <i className={s.memTick}>✓</i> : null}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <p className={s.srOnly} aria-live="polite">
+          {say}
+        </p>
+        {done ? (
+          <motion.div
+            className={s.memEnd}
+            initial={calm ? false : { opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <p className={s.memStars} aria-label={`${stars} out of 3 stars`}>
+              {"★".repeat(stars)}
+              <span>{"★".repeat(3 - stars)}</span>
+            </p>
+            <p className={s.gameVerdict}>
+              Cleared in {moves} moves, {time}.{newBest ? " New best!" : ""}
+            </p>
+            <div className={s.gameEndBtns}>
+              <button type="button" className={`${s.btn} ${s.btnLime}`} onClick={again}>
+                Play again
+              </button>
+              <Link href={LINKS.apply} className={`${s.btn} ${s.btnWhite}`}>
+                Learn this for real <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </motion.div>
+        ) : null}
       </div>
     </div>
   );

@@ -82,7 +82,7 @@ export default async function ModulesPage() {
                   ) : isScheduled ? (
                     <Clock3 className="size-4" aria-hidden />
                   ) : (
-                    <CheckCircle2 className="size-4 text-green-600" aria-hidden />
+                    <CheckCircle2 className="size-4 text-status-success-fg" aria-hidden />
                   )}
                 </span>
                 <div className="min-w-0">

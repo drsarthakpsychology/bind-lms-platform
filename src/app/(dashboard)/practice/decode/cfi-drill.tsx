@@ -69,7 +69,7 @@ export function CfiDrill() {
               <div key={i} className="rounded-md border-2 border-border bg-card p-3">
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-small">{i + 1}. {q}</p>
-                  <span className={cn("shrink-0 text-caption font-medium", s.dismissive ? "text-red-600" : s.eliciting ? "text-green-700" : "text-muted-foreground")}>
+                  <span className={cn("shrink-0 text-caption font-medium", s.dismissive ? "text-destructive" : s.eliciting ? "text-status-success-fg" : "text-muted-foreground")}>
                     {s.dismissive ? "dismissive — correcting, not understanding" : s.eliciting ? "eliciting" : "neutral"}
                   </span>
                 </div>

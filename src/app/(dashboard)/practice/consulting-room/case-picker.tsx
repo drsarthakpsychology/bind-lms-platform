@@ -220,7 +220,7 @@ function CaseCardItem({
       <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2">
         <span className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
           {st === "completed" && typeof c.stars === "number" ? (
-            <span className="shrink-0 text-amber-500" aria-label={`${c.stars} of 3 stars earned`}>
+            <span className="shrink-0 text-status-pending-fg" aria-label={`${c.stars} of 3 stars earned`}>
               {"★".repeat(c.stars)}
               <span className="opacity-25">{"★".repeat(Math.max(0, 3 - c.stars))}</span>
             </span>

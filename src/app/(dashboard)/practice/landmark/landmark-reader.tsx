@@ -41,7 +41,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         </div>
 
         {c.ethicsFailure ? (
-          <p className="mt-3 flex items-start gap-2 rounded-md border border-red-300 bg-red-50 p-3 text-small text-red-800">
+          <p className="mt-3 flex items-start gap-2 rounded-md border border-destructive bg-status-alert-bg p-3 text-small text-destructive">
             <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden />
             <span>
               <span className="font-semibold">The ethics failure: </span>
@@ -51,7 +51,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         ) : null}
 
         {c.contested ? (
-          <p className="mt-2 flex items-start gap-2 rounded-md border border-amber-300 bg-amber-50 p-3 text-small text-amber-800">
+          <p className="mt-2 flex items-start gap-2 rounded-md border border-foreground bg-status-pending-bg p-3 text-small text-status-pending-fg">
             <GitCompare className="mt-0.5 size-4 shrink-0" aria-hidden />
             <span>
               <span className="font-semibold">What&apos;s contested: </span>

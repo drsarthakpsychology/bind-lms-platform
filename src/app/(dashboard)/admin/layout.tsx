@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
+import { AdminSectionTabs } from "@/components/navigation/admin-section-tabs";
 
 export default async function AdminLayout({
   children,
@@ -22,5 +23,10 @@ export default async function AdminLayout({
 
   // Navigation lives in the app sidebar (admin nav items); this layout only
   // owns the server-side role guard and a consistent content container.
-  return <div className="w-full">{children}</div>;
+  return (
+    <div className="w-full">
+      <AdminSectionTabs />
+      {children}
+    </div>
+  );
 }

@@ -46,7 +46,7 @@ export function LessonPicker({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={`Lesson ${index + 1} of ${lessons.length} — open lesson list`}
-        className="inline-flex h-11 items-center gap-1.5 rounded-md border-2 border-border bg-card px-3 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+        className="inline-flex h-11 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
       >
         <span className="max-w-40 truncate">{courseTitle}</span>
         <span className="text-caption text-muted-foreground">

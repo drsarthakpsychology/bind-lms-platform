@@ -24,7 +24,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
   if (spots.length === 0) {
     return (
       <div className="rounded-md border-2 border-border bg-card p-6 text-center">
-        <CheckCircle2 className="mx-auto size-8 text-green-600" aria-hidden />
+        <CheckCircle2 className="mx-auto size-8 text-status-success-fg" aria-hidden />
         <p className="mt-2 text-base font-medium">No consistent weak spots</p>
         <p className="mt-1 text-small text-muted-foreground">
           Across {sessions} scored session{sessions === 1 ? "" : "s"}, no skill stands out as missed.
@@ -47,7 +47,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
             <p className="text-small font-semibold">{s.label}</p>
             <span className="flex items-center gap-2 text-caption text-muted-foreground">
               <span
-                className={s.trend === 1 ? "text-green-700" : s.trend === -1 ? "text-red-600" : ""}
+                className={s.trend === 1 ? "text-status-success-fg" : s.trend === -1 ? "text-destructive" : ""}
                 title={s.trend === 1 ? "Improving" : s.trend === -1 ? "Worsening" : "Flat"}
               >
                 {s.trend === 1 ? "▲ improving" : s.trend === -1 ? "▼ worsening" : "— flat"}

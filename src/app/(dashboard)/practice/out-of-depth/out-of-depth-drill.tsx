@@ -103,13 +103,13 @@ export function OutOfDepthDrill() {
 
       {result ? (
         <div className="rounded-md border-2 border-border bg-card p-5">
-          <p className={cn("flex items-center gap-2 text-base font-semibold", result.correct ? "text-green-700" : "text-red-600")}>
+          <p className={cn("flex items-center gap-2 text-base font-semibold", result.correct ? "text-status-success-fg" : "text-destructive")}>
             {result.correct ? <CheckCircle2 className="size-4" aria-hidden /> : <AlertTriangle className="size-4" aria-hidden />}
             {result.correct ? "Right call" : result.overReferral ? "Over-referral — a real harm too" : "Missing the call"}
           </p>
           <p className="mt-2 text-small">{s.reasoning}</p>
           {s.over_referral_trap ? (
-            <p className="mt-2 flex items-center gap-1.5 text-caption text-amber-700">
+            <p className="mt-2 flex items-center gap-1.5 text-caption text-status-pending-fg">
               <Siren className="size-3.5" aria-hidden />
               Anxious novices refer everything. Abandoning a client you can serve is also a failure.
             </p>
