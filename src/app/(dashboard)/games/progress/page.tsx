@@ -3,7 +3,7 @@ import { requireFeature } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { loadBoard } from "@/lib/learn/leaderboard";
 import { ProgressView, type PublicRow } from "@/components/learn/progress-view";
-import { loadLearnState, saveLearnState } from "../actions";
+import { loadLearnState, saveLearnState } from "../../study/actions";
 
 export const metadata: Metadata = { title: "My progress" };
 

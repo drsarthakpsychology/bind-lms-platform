@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -18,7 +19,7 @@ export default function SetPasswordPage() {
   return (
     <div className="flex min-h-svh flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
-        <VibhaWordmark size={30} />
+        <Link href="/go/home" aria-label="VIBHA home"><VibhaWordmark size={30} /></Link>
         <ThemeToggle />
       </div>
 

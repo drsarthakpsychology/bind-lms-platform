@@ -70,7 +70,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
             <ArrowRight className="size-3.5" aria-hidden />
           </Link>
           <Link
-            href="/study/play?mode=review"
+            href="/games/play?mode=review"
             className="mt-1 block text-caption text-muted-foreground hover:underline"
           >
             The card that teaches this: {s.teachCard} →

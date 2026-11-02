@@ -30,7 +30,7 @@ export function PolicyLayout({
       {/* Slim top bar — policy pages are hit directly from links/emails, so a
           visitor always has a way back to the site. */}
       <div className="mb-8 flex min-w-0 items-center justify-between border-b-2 border-border pb-4 print:hidden">
-        <Link href="/" aria-label="VIBHA School of Psychology — home">
+        <Link href="/go/home" aria-label="VIBHA School of Psychology — home">
           <VibhaWordmark size={28} />
         </Link>
         <nav

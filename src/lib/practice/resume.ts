@@ -61,8 +61,8 @@ export async function computeResumePrimary(
   if (open("learn")) {
     return {
       href: "/study",
-      title: "Continue your course",
-      reason: "Pick up the next step in Study, exactly where you left off.",
+      title: "Continue your notes",
+      reason: "Pick up the next step in Notes, exactly where you left off.",
       cta: "Continue",
       time: "next step",
     };

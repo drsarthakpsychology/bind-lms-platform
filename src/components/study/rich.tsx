@@ -8,7 +8,7 @@ export function Rich({ text }: { text: string }) {
   let k = 0;
   for (let m = re.exec(text); m; m = re.exec(text)) {
     if (m.index > last) out.push(text.slice(last, m.index));
-    if (m[1] !== undefined) out.push(<strong key={k++} className="font-black">{m[1]}</strong>);
+    if (m[1] !== undefined) out.push(<strong key={k++} className="font-semibold">{m[1]}</strong>);
     else out.push(<em key={k++}>{m[2]}</em>);
     last = m.index + m[0].length;
   }

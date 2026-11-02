@@ -13,7 +13,7 @@ export default function PausedPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
-        <VibhaWordmark size={30} />
+        <Link href="/go/home" aria-label="VIBHA home"><VibhaWordmark size={30} /></Link>
       </div>
 
       <div className="flex flex-1 items-center justify-center">

@@ -65,7 +65,7 @@ export function HomeNav() {
   return (
     <header className={s.navBar}>
       <div className={`${s.wrap} ${s.navInner}`}>
-        <a href="#top" className={s.brand} aria-label="VIBHA School of Psychology, back to top">
+        <a href="/go/home" className={s.brand} aria-label="VIBHA School of Psychology, home">
           <span className={s.brandMark}>VIBHA</span>
           <span className={s.brandSub}>School of Psychology</span>
         </a>

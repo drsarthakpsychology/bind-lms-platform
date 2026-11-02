@@ -28,7 +28,7 @@ export function SiteFooter() {
     <footer className="relative border-t-2 border-foreground bg-surface-2 print:hidden">
       <div className="rail flex flex-col gap-6 py-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <VibhaWordmark size={32} />
+          <Link href="/go/home" aria-label="VIBHA home"><VibhaWordmark size={32} /></Link>
           <nav
             className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground"
             aria-label="Footer"

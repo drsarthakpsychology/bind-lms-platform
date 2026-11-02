@@ -108,7 +108,7 @@ export function LandingNav() {
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6"
         aria-hidden={open ? true : undefined}
       >
-        <Link href="/" aria-label={`${BRAND.name} home`} className="flex items-center">
+        <Link href="/go/home" aria-label={`${BRAND.name} home`} className="flex items-center">
           <span className="sm:hidden">
             <VibhaWordmark compact size={28} />
           </span>

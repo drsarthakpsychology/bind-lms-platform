@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ActivityFrame } from "@/components/study/activity-frame";
 import { requireFeature } from "@/lib/flags";
 import { Detective } from "@/components/learn/detective";
-import { loadLearnState, saveLearnState } from "../actions";
+import { loadLearnState, saveLearnState } from "../../study/actions";
 
 export const metadata: Metadata = { title: "Clinic detective" };
 

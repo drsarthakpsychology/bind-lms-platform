@@ -8,12 +8,13 @@ import { cn } from "@/lib/utils";
 
 /**
  * Where "Back" goes from an activity. Opened from a module (…?from=/study/<module>)
- * it returns to that module; otherwise to the fallback (Daily practice).
+ * it returns to that module; otherwise to the fallback (Games).
  */
-export function useBack(fallback = "/study/activities"): { href: string; label: string } {
+export function useBack(fallback = "/games"): { href: string; label: string } {
   const from = useSearchParams()?.get("from");
-  if (from && /^\/study(?:\/[a-z0-9-]+){0,2}$/.test(from)) return { href: from, label: from === "/study" ? "Back to Study" : "Back to the module" };
-  return { href: fallback, label: fallback === "/study/notes" ? "Back to notes" : "Back to Daily practice" };
+  if (from && /^\/study(?:\/[a-z0-9-]+){0,2}$/.test(from)) return { href: from, label: from === "/study" ? "Back to Notes" : "Back to the module" };
+  if (from === "/games/quizzes") return { href: from, label: "Back to the quiz path" };
+  return { href: fallback, label: fallback === "/study/notes" ? "Back to notes" : "Back to Games" };
 }
 
 /** A Link whose destination is the Back target. */

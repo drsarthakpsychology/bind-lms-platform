@@ -62,26 +62,38 @@ export function VibhaMark({
 }
 
 /**
- * The full identity: mark + "VIBHA SCHOOL OF PSYCHOLOGY" in the display case.
- * `compact` collapses the wordmark to the short name for small screens.
+ * The VIBHA wordmark, the same one the public website uses: "VIBHA" in the
+ * heavy, wide display cut with "SCHOOL OF PSYCHOLOGY" in the pixel face under
+ * it. No symbol. `tone` picks colours that keep contrast on each surface:
+ * ink on white, lime on blue or ink, white on blue.
  */
 export function VibhaWordmark({
   size = 32,
-  shadow = false,
   compact = false,
+  tone = "ink",
   className,
 }: {
+  /** Height of the wordmark block in px (the word scales with it). */
   size?: number;
+  /** @deprecated kept for old callers; the wordmark has no sticker shadow. */
   shadow?: boolean;
+  /** Hide the "School of Psychology" line. */
   compact?: boolean;
+  tone?: "ink" | "lime" | "white";
   className?: string;
 }) {
+  const word = tone === "lime" ? "text-primary" : tone === "white" ? "text-white" : "text-foreground";
+  const sub = tone === "ink" ? "text-muted-foreground" : "text-white/85";
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <VibhaMark size={size} shadow={shadow} />
-      <span className="min-w-0 text-sm font-bold tracking-[0.12em] text-foreground">
-        {compact ? BRAND.shortName : BRAND.nameUppercase}
+    <span className={cn("inline-flex flex-col leading-none", className)} aria-label={BRAND.name}>
+      <span className={cn("font-black tracking-tight [font-stretch:125%]", word)} style={{ fontSize: Math.round(size * 0.66) }}>
+        VIBHA
       </span>
+      {compact ? null : (
+        <span className={cn("mt-[3px] font-pix uppercase tracking-[0.06em]", sub)} style={{ fontSize: Math.max(8, Math.round(size * 0.28)) }}>
+          School of Psychology
+        </span>
+      )}
     </span>
   );
 }

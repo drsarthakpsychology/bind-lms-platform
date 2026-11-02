@@ -51,13 +51,13 @@ export function NoteView({
     if (cur && !cur.notesRead[note.id]) setLearnState(markNoteRead(cur, note.id, istToday()));
   }, [note.id]);
   const [flipped, setFlipped] = React.useState<number[]>([]);
-  const quizHref = note.quiz.lessonId ? `/study/play?lesson=${note.quiz.lessonId}` : `/study/coach?domain=${note.quiz.domain}`;
+  const quizHref = note.quiz.lessonId ? `/games/play?lesson=${note.quiz.lessonId}` : `/games/coach?domain=${note.quiz.domain}`;
 
   return (
     <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link href="/study/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-          <ArrowLeft className="size-4" aria-hidden /> All notes
+          <ArrowLeft className="size-4" aria-hidden /> All summaries
         </Link>
         <ViewToggle />
       </div>
@@ -161,7 +161,7 @@ export function NoteView({
           </li>
           <li>
             <Link
-              href={scenarioCount ? `/study/scenarios?note=${note.id}` : "/study/terms"}
+              href={scenarioCount ? `/games/scenarios?note=${note.id}` : "/games/terms"}
               className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"
             >
               <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-black">3</span>
@@ -175,7 +175,7 @@ export function NoteView({
             Quizzing right after reading is how it sticks.
           </ChaiSays>
         </div>
-        <Link href="/study/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
+        <Link href="/games/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
           <Trophy className="size-4" aria-hidden /> See the leaderboard
         </Link>
       </section>

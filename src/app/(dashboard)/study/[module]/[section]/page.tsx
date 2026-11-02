@@ -6,6 +6,7 @@ import { readingSections, sectionHref } from "@/lib/study/plan";
 import { sectionMinutes } from "@/lib/study/parse";
 import { Blocks } from "@/components/study/blocks";
 import { SectionReader, type TocItem } from "@/components/study/reader";
+import { splitSection } from "@/lib/study/chunk";
 import { loadLearnState, saveLearnState } from "../../actions";
 
 export async function generateMetadata({ params }: { params: Promise<{ module: string; section: string }> }): Promise<Metadata> {
@@ -33,6 +34,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
     : { href: `/study/${m.id}#steps`, label: "Back to the module: write it out, practise, then the test" };
 
   const serverState = await loadLearnState();
+  const parts = splitSection(s);
   return (
     <SectionReader
       moduleId={m.id}
@@ -44,8 +46,10 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       next={next}
       serverState={serverState}
       save={saveLearnState}
-    >
-      <Blocks blocks={s.blocks} test={s.isTest ? { moduleId: m.id } : undefined} />
-    </SectionReader>
+      chunks={parts.chunks.map((c) => ({ title: c.title, node: <Blocks blocks={c.blocks} /> }))}
+      recall={parts.recall}
+      viva={parts.viva}
+      mcq={parts.mcq}
+    />
   );
 }

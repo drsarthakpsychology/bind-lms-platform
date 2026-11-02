@@ -5,11 +5,11 @@ import { redirect } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
 import { findLesson } from "@/lib/learn/content";
 import { Player } from "@/components/learn/player";
-import { loadLearnState, saveLearnState } from "../actions";
+import { loadLearnState, saveLearnState } from "../../study/actions";
 
 export const metadata: Metadata = { title: "Learn" };
 
-/** /study/play?lesson=… | ?mode=review | ?mode=blitz */
+/** /games/play?lesson=… | ?mode=review | ?mode=blitz */
 export default async function PlayPage({ searchParams }: { searchParams: Promise<{ lesson?: string; mode?: string }> }) {
   await requireFeature("learn");
   const { lesson, mode } = await searchParams;
@@ -24,6 +24,6 @@ export default async function PlayPage({ searchParams }: { searchParams: Promise
   if (mode === "review")
     return frame("Review", "The questions you're about to forget, brought back at the right time (1, 3, 7, 14, then 30 days).", ["Answer each question.", "Right moves it to a longer gap; wrong brings it back sooner.", "Do this daily: it's the fastest way to keep what you learned."], <Player key="review" mode={{ kind: "review" }} serverState={serverState} save={saveLearnState} />);
   const l = lesson ? findLesson(lesson) : undefined;
-  if (!lesson || !l) redirect("/study/activities");
+  if (!lesson || !l) redirect("/games");
   return frame(`Quiz: ${l.lesson.title}`, "A short quiz on this topic. Explanations appear after each answer.", ["Answer each question.", "Read the explanation, even when you're right.", "Missed ones repeat at the end."], <Player key={lesson} mode={{ kind: "lesson", lessonId: lesson }} serverState={serverState} save={saveLearnState} />);
 }

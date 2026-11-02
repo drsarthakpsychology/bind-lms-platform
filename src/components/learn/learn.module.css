@@ -16,17 +16,42 @@
   animation: breathe 4s ease-in-out infinite;
 }
 .tail {
-  transform-origin: 92px 112px;
-  animation: wag 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: wag 1.6s steps(2, jump-none) infinite;
 }
 .chai[data-mood="cheer"] .tail,
 .chai[data-mood="happy"] .tail {
   animation-duration: 0.45s;
 }
+/* Goggle-lens glint: a pixel that twinkles now and then. */
 .lids {
-  transform-origin: center;
-  transform-box: fill-box;
-  animation: blink 5s infinite;
+  animation: glint 4s steps(1, end) infinite;
+}
+.sparkle {
+  animation: glint 0.6s steps(1, end) infinite;
+}
+.zzz {
+  animation: zzz 2.4s steps(4, end) infinite;
+}
+@keyframes glint {
+  0%,
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+@keyframes zzz {
+  0% {
+    transform: translateY(1px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
 }
 @keyframes bob {
   50% {
@@ -53,7 +78,7 @@
 }
 @keyframes wag {
   50% {
-    transform: rotate(14deg);
+    transform: rotate(10deg);
   }
 }
 @keyframes blink {
@@ -174,6 +199,8 @@
   .chai,
   .tail,
   .lids,
+  .sparkle,
+  .zzz,
   .bubble,
   .shake,
   .pulse,

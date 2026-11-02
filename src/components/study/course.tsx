@@ -42,11 +42,11 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
         {next.kind === "read" ? <BookOpen className="size-7" aria-hidden /> : next.kind === "write" ? <PenLine className="size-7" aria-hidden /> : next.kind === "practise" ? <Zap className="size-7" aria-hidden /> : <RotateCcw className="size-7" aria-hidden />}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-xs font-black uppercase opacity-80">{l.eyebrow}</span>
+        <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{l.eyebrow}</span>
         <span className="block text-xl font-black leading-tight sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
-      <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-black text-background">
+      <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
         {next.kind === "done" ? "Review" : "Continue"} <ArrowRight className="size-4" aria-hidden />
       </span>
     </Link>
@@ -80,10 +80,10 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">Study</p>
-        <h1 className="text-h1">Your course</h1>
+        <p className="text-eyebrow text-link">Notes</p>
+        <h1 className="text-h1">Your notes, module by module</h1>
         <p className="max-w-2xl text-muted-foreground">
-          {modules.length} {modules.length === 1 ? "module" : "modules"}, {studyTime(totalMinutes)} of focused study. Work through them in order: read each section, answer its recall check, write it out, practise, then take the test. We keep your place.
+          {modules.length} {modules.length === 1 ? "module" : "modules"}, {studyTime(totalMinutes)} of focused study. Work through them in order: read, check yourself, write it out, practise, then take the test. We keep your place.
         </p>
       </header>
 
@@ -97,7 +97,7 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
           { icon: Flame, value: String(streak), label: "day streak" },
         ].map(({ icon: Icon, value, label }) => (
           <div key={label} className="rounded-2xl border-2 border-foreground bg-card p-3">
-            <p className="flex items-center gap-1.5 text-2xl font-black">
+            <p className="flex items-center gap-1.5 text-2xl font-bold">
               <Icon className="size-5" aria-hidden /> {value}
             </p>
             <p className="text-caption text-muted-foreground">{label}</p>
@@ -127,10 +127,10 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
                     {s.complete ? <Check className="size-6 text-primary-foreground" aria-hidden /> : <span aria-hidden>{m.emoji}</span>}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-black uppercase opacity-80">
+                    <span className="block text-xs font-bold uppercase opacity-80">
                       Module {m.num} · {m.when}
                     </span>
-                    <span className="block text-lg font-black leading-tight">{m.title}</span>
+                    <span className="block text-lg font-bold leading-tight">{m.title}</span>
                     <span className="mt-2 flex items-center gap-3">
                       <span className="w-full max-w-60">
                         <Bar pct={s.pct} tone={here ? "primary" : "brand"} />
@@ -147,24 +147,24 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
       </section>
 
       <section aria-label="More ways to practise" className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-3">
-        <Link href="/study/activities" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background">
+        <Link href="/games" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background">
           <Sparkles className="size-6 shrink-0 text-primary" aria-hidden />
           <span>
-            <span className="block font-black">Daily practice</span>
-            <span className="text-caption opacity-85">Review, Coach, games</span>
+            <span className="block font-bold">Games</span>
+            <span className="text-caption opacity-85">Review, Coach, quizzes</span>
           </span>
         </Link>
         <Link href="/study/notes" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
           <NotebookPen className="size-6 shrink-0" aria-hidden />
           <span>
-            <span className="block font-black">Revision notes</span>
+            <span className="block font-bold">One-page summaries</span>
             <span className="text-caption text-muted-foreground">One page per topic, before exams</span>
           </span>
         </Link>
-        <Link href="/study/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
+        <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
           <Trophy className="size-6 shrink-0" aria-hidden />
           <span>
-            <span className="block font-black">Progress & leaderboard</span>
+            <span className="block font-bold">Progress & leaderboard</span>
             <span className="text-caption text-muted-foreground">Your week and the cohort</span>
           </span>
         </Link>
@@ -178,11 +178,11 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
 function StepHead({ n, title, done, current, sub }: { n: number; title: string; done: boolean; current: boolean; sub: string }) {
   return (
     <div className="flex items-start gap-3">
-      <span className={cn("grid size-9 shrink-0 place-items-center rounded-full border-2 border-foreground text-base font-black", done ? "bg-foreground text-background" : current ? "bg-primary text-primary-foreground" : "bg-card")}>
+      <span className={cn("grid size-9 shrink-0 place-items-center rounded-full border-2 border-foreground text-base font-bold", done ? "bg-foreground text-background" : current ? "bg-primary text-primary-foreground" : "bg-card")}>
         {done ? <Check className="size-4" aria-hidden /> : n}
       </span>
       <div>
-        <h3 className="text-xl font-black leading-tight">{title}</h3>
+        <h3 className="text-xl font-bold leading-tight">{title}</h3>
         <p className="text-sm text-muted-foreground">{sub}</p>
       </div>
     </div>
@@ -203,15 +203,15 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
 
   return (
     <div className="mx-auto max-w-4xl space-y-7 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/study" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-black">
+      <Link href="/study" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> All modules
       </Link>
 
       <header className="relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7">
-        <p className="text-xs font-black uppercase opacity-90">
+        <p className="text-xs font-bold uppercase opacity-90">
           Module {m.num} · {m.when}
         </p>
-        <h1 className="mt-2 text-3xl font-black leading-[1.05] sm:text-5xl">{m.title}</h1>
+        <h1 className="mt-2 text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
         <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
           <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{studyTime(m.minutes)}</span>
@@ -238,12 +238,12 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
         />
       ) : (
         <div className="rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground">
-          <p className="text-xl font-black">Module complete ✓</p>
+          <p className="text-xl font-bold">Module complete ✓</p>
           <p className="text-sm font-semibold">
             {due ? `Your next re-test is due on ${due}. It takes 20 minutes and doubles how much you keep.` : "All re-tests done. This module is in long-term memory."}
           </p>
           {nextModule ? (
-            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-black text-background">
+            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
               Start Module {nextModule.num}: {nextModule.title} <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : null}
@@ -252,7 +252,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
 
       <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-2">
         <section className="rounded-3xl border-2 border-foreground bg-card p-5">
-          <h2 className="text-lg font-black">By the end, you can</h2>
+          <h2 className="text-lg font-bold">By the end, you can</h2>
           <ul className="mt-2 space-y-1.5 text-sm">
             {m.outcomes.map((o) => (
               <li key={o} className="flex gap-2">
@@ -262,7 +262,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
           </ul>
         </section>
         <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background">
-          <h2 className="text-lg font-black text-primary">How to study this</h2>
+          <h2 className="text-lg font-bold text-primary">How to study this</h2>
           <ol className="mt-2 space-y-1.5 text-sm">
             <li><b>1 Read</b> each section; answer its recall check aloud before moving on.</li>
             <li><b>2 Write</b> the key frameworks on paper from memory.</li>
@@ -275,7 +275,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
       <section id="steps" aria-label="Steps" className="scroll-mt-24 space-y-6">
         {/* Step 1: Read */}
         <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
-          <StepHead n={1} title="Read" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections · ${studyTime(m.minutes)} in all`} />
+          <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections · ${studyTime(m.minutes)} in all`} />
           <ol className="mt-4 space-y-1">
             {reading.map((sec, k) => {
               const isDone = Boolean(st.study.done[studyKey(m.id, sec.id)]);
@@ -283,7 +283,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
               const part = k === 0 || reading[k - 1].part !== sec.part ? sec.part : undefined;
               return (
                 <li key={sec.id}>
-                  {part ? <p className="mt-4 mb-1 text-xs font-black tracking-wide text-muted-foreground uppercase">{part}</p> : null}
+                  {part ? <p className="mt-4 mb-1 text-xs font-bold tracking-wide text-muted-foreground uppercase">{part}</p> : null}
                   <Link
                     href={sectionHref(m, sec)}
                     className={cn("flex items-center gap-3 rounded-2xl border-2 px-3 py-2.5 transition-colors", here ? "border-foreground bg-primary text-primary-foreground" : "border-transparent hover:border-foreground")}
@@ -292,10 +292,10 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
                       {isDone ? <Check className="size-3.5" aria-hidden /> : null}
                     </span>
                     <span className="min-w-0 flex-1 font-semibold leading-snug">
-                      <span className="font-black">{sec.num}</span> {sec.title}
-                      {sec.tag === "extra" ? <span className="ml-2 rounded-full border border-current px-1.5 text-[0.6rem] font-black uppercase">Extra</span> : null}
+                      <span className="font-bold">{sec.num}</span> {sec.title}
+                      {sec.tag === "extra" ? <span className="ml-2 rounded-full border border-current px-1.5 text-[0.6rem] font-bold uppercase">Extra</span> : null}
                     </span>
-                    {here ? <span className="shrink-0 text-sm font-black">Start →</span> : null}
+                    {here ? <span className="shrink-0 text-sm font-bold">Start →</span> : null}
                   </Link>
                 </li>
               );
@@ -308,7 +308,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
           <StepHead n={2} title="Write it out" done={s.written} current={step === 2} sub="On paper, from memory. About an hour." />
           <p className="mt-3 leading-relaxed">{m.writeTask}</p>
           {s.written ? (
-            <p className="mt-3 inline-flex items-center gap-1 font-black">
+            <p className="mt-3 inline-flex items-center gap-1 font-bold">
               <Check className="size-4" aria-hidden /> Done on {st.study.written[m.id]}
             </p>
           ) : (
@@ -319,7 +319,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
                 if (cur) setLearnState(markWritten(cur, m.id, today));
               }}
               disabled={step < 2}
-              className="mt-4 h-12 rounded-2xl border-2 border-foreground bg-primary px-5 font-black text-primary-foreground hard-shadow-sm disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-4 h-12 rounded-2xl border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground hard-shadow-sm disabled:cursor-not-allowed disabled:opacity-50"
             >
               {step < 2 ? "Unlocks after you finish reading" : "I've done this on paper (+20 XP)"}
             </button>
@@ -346,7 +346,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
                       {isDone ? <Check className="size-3.5" aria-hidden /> : <Zap className="size-3.5" aria-hidden />}
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-black leading-tight">{a.title}</span>
+                      <span className="block font-bold leading-tight">{a.title}</span>
                       <span className="text-sm text-muted-foreground">{a.why}</span>
                     </span>
                   </Link>
@@ -367,7 +367,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
               sub={t ? `Best score ${t.best} of ${t.total} · ${t.tries} attempt${t.tries === 1 ? "" : "s"}` : "Answer every question before checking"}
             />
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <Link href={sectionHref(m, test)} className={cn("inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground px-5 font-black hard-shadow-sm", step >= 4 ? "bg-primary text-primary-foreground" : "bg-card")}>
+              <Link href={sectionHref(m, test)} className={cn("inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground px-5 font-bold hard-shadow-sm", step >= 4 ? "bg-primary text-primary-foreground" : "bg-card")}>
                 {t ? <RotateCcw className="size-4" aria-hidden /> : <Lock className={cn("size-4", step >= 4 && "hidden")} aria-hidden />} {t ? "Re-test" : "Take the test"}
               </Link>
               {due ? <span className="text-sm font-bold">Next re-test due {due <= today ? "today" : `on ${due}`}</span> : null}
@@ -380,7 +380,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
         <Link href={`/study/notes/${m.noteId}`} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
           <NotebookPen className="size-6 shrink-0" aria-hidden />
           <span>
-            <span className="block font-black">One-page revision note</span>
+            <span className="block font-bold">One-page summary</span>
             <span className="text-sm text-muted-foreground">For the night before the exam, after you&apos;ve done the module.</span>
           </span>
         </Link>

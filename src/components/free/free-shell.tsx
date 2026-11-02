@@ -46,7 +46,7 @@ export function FreeShell({ children }: { children: React.ReactNode }) {
       </a>
       <header className={s.nav}>
         <div className={`${s.wrap} ${s.navIn}`}>
-          <Link href="/" className={s.brand} aria-label="VIBHA School of Psychology, home">
+          <Link href="/go/home" className={s.brand} aria-label="VIBHA School of Psychology, home">
             <b>VIBHA</b>
             <small>School of Psychology</small>
           </Link>

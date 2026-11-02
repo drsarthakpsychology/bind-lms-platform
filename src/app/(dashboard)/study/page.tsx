@@ -4,7 +4,7 @@ import { MODULES, liteModule } from "@/lib/study";
 import { StudyHome } from "@/components/study/course";
 import { loadLearnState, saveLearnState } from "./actions";
 
-export const metadata: Metadata = { title: "Study" };
+export const metadata: Metadata = { title: "Notes" };
 
 /** /study: the course. One "Continue" button and the modules in order. */
 export default async function StudyPage() {

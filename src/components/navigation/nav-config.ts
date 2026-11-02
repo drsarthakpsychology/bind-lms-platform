@@ -9,7 +9,8 @@ import type { NavItem } from "@/components/navigation/nav-items";
 export const STUDENT_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
   { href: "/courses", label: "Lectures", icon: "play" },
-  { href: "/study", label: "Study", icon: "bookOpen" },
+  { href: "/study", label: "Notes", icon: "bookOpen" },
+  { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
@@ -28,7 +29,8 @@ export const STUDENT_ITEMS: NavItem[] = [
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
   { href: "/courses", label: "Lectures", icon: "play" },
-  { href: "/study", label: "Study", icon: "bookOpen" },
+  { href: "/study", label: "Notes", icon: "bookOpen" },
+  { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
 ];
 
@@ -172,7 +174,7 @@ export const ADMIN_SIDEBAR: NavItem[] = ADMIN_SECTIONS.map((s) => ({
   match: s.tabs.map((t) => t.href),
 }));
 
-/** Study only appears in the nav once it's unlocked (no links to locked screens). */
+/** Notes and Games only appear in the nav once Learn is unlocked (no links to locked screens). */
 export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {
-  return showStudy ? items : items.filter((i) => i.href !== "/study");
+  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games");
 }
