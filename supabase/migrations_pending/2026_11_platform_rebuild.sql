@@ -25,9 +25,6 @@ create policy "account_setup_tokens_admin_all" on public.account_setup_tokens
   for all using (public.is_admin()) with check (public.is_admin());
 
 alter table public.credential_invites add column if not exists setup_completed_at timestamptz;
--- SECURITY: destroy every stored plain-text password. Students keep signing in
--- with the password they already have; it simply isn't readable anywhere now.
-alter table public.credential_invites drop column if exists password;
 
 -- 2. Email tracking (Resend webhooks) + a body copy for the reading pane ------
 alter table public.email_sends add column if not exists provider_id text;
