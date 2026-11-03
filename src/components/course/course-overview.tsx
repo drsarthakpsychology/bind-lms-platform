@@ -1,5 +1,7 @@
 import type { Profile } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { loadStudentAccess } from "@/lib/cohorts/access";
+import { filterLessons } from "@/lib/cohorts/rules";
 import { deriveWeekStatus } from "@/lib/course/status";
 
 import { type OverviewModel, type OverviewWeek } from "@/components/course/course-overview-view";
@@ -53,7 +55,7 @@ export async function loadCourseOverview(
 ): Promise<OverviewModel | null> {
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
+  const [{ data: course }, { data: lessonsAll }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
     await Promise.all([
       supabase.from("courses").select("id, title, is_published, weeks").eq("id", courseId).single(),
       supabase
@@ -82,6 +84,11 @@ export async function loadCourseOverview(
     ]);
 
   if (!course) return null;
+
+  // Cohorts: keep only the lectures this person may watch. (The course
+  // layout already applied the old enrolment rule, so "legacy" is true here.)
+  const access = await loadStudentAccess(profile.id);
+  const lessons = filterLessons(access, lessonsAll ?? [], true, profile.role === "admin");
 
   // `playable` is the unlocked set students can actually complete — `live`
   // lessons are visible but locked (not counted), `hidden` lessons never show.

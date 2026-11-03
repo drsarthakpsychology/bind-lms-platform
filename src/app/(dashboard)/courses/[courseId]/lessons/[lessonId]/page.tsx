@@ -6,6 +6,8 @@ import { CheckCircle2, ChevronDown, ChevronLeft, FileText, Paperclip, Play } fro
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { loadStudentAccess } from "@/lib/cohorts/access";
+import { canWatch, filterLessons } from "@/lib/cohorts/rules";
 import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 // Lazy wrapper — the player pulls in hls.js (~500KB min / ~150KB gzip). The
@@ -60,7 +62,7 @@ export default async function LessonPage({
 
   const supabase = await createClient();
 
-  const [{ data: lesson }, { data: course }, { data: courseLessons }, { data: userData }, { data: assignment }, { data: materials }, { data: progress }] =
+  const [{ data: lesson }, { data: course }, { data: courseLessonsAll }, { data: userData }, { data: assignment }, { data: materials }, { data: progress }] =
     await Promise.all([
       supabase
         .from("lessons")
@@ -107,10 +109,19 @@ export default async function LessonPage({
     if (lesson.status === "hidden") {
       notFound();
     }
+    // Cohorts: a lecture not shared with this person's cohort (or given to
+    // them) does not exist for them.
+    const access = await loadStudentAccess(profile.id);
+    if (!canWatch(access, lessonId, true)) {
+      notFound();
+    }
     if (lesson.status === "live") {
       redirect(`/courses/${courseId}`);
     }
   }
+
+  // The picker and Next/Previous only list lectures this person can watch.
+  const courseLessons = filterLessons(await loadStudentAccess(profile.id), courseLessonsAll ?? [], true, profile.role === "admin");
 
   // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
   // tab is requested but there's no content for it, fall back to watch too.

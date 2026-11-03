@@ -153,6 +153,7 @@ export default async function AdminOverviewPage() {
 
   const totalToDo = actions.reduce((n, a) => n + a.count, 0);
   const shortcuts = [
+    { label: "Cohorts", detail: "Add people by email, choose who sees which lectures", href: "/admin/cohorts", icon: <Users className="size-5" /> },
     { label: "People pipeline", detail: "Who you've contacted, who you haven't", href: "/admin/people", icon: <Users className="size-5" /> },
     { label: "What's live", detail: "Switch tools and lessons on or off", href: "/admin/flags", icon: <ToggleLeft className="size-5" /> },
     { label: "Cohort progress", detail: "Who is moving, who is stuck", href: "/admin/pulse", icon: <Activity className="size-5" /> },
@@ -174,7 +175,7 @@ export default async function AdminOverviewPage() {
           actions={
             <>
               <Button asChild variant="outline" size="sm">
-                <Link href="/admin/students">
+                <Link href="/admin/cohorts">
                   <UserPlus aria-hidden /> Add students
                 </Link>
               </Button>

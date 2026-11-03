@@ -5,6 +5,7 @@ import { PlayCircle } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { visibleCourseIds } from "@/lib/cohorts/access";
 import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -30,7 +31,11 @@ export default async function LecturesIndexPage() {
     supabase.from("course_enrollments").select("course_id").eq("user_id", profile.id),
   ]);
   const enrolled = new Set((enrollments ?? []).map((e) => e.course_id));
-  const mine = scope === "lectures_only" ? (courses ?? []) : (courses ?? []).filter((c) => enrolled.has(c.id));
+  const legacy = scope === "lectures_only" ? (courses ?? []) : (courses ?? []).filter((c) => enrolled.has(c.id));
+  const visible = new Set(
+    await visibleCourseIds(profile.id, profile.role === "admin", (courses ?? []).map((c) => c.id), legacy.map((c) => c.id)),
+  );
+  const mine = (courses ?? []).filter((c) => visible.has(c.id));
 
   if (mine.length === 1) redirect(`/courses/${mine[0].id}`);
 
