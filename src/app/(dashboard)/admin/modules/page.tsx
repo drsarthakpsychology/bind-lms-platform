@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { ModulesAdmin } from "./modules-admin";
@@ -11,6 +13,9 @@ export const dynamic = "force-dynamic";
  * access list (who has access, with per-row revoke).
  */
 export default async function AdminModulesPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
 
   const [{ data: modules }, { data: students }, { data: grants }] = await Promise.all([

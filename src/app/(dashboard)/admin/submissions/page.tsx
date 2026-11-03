@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { Inbox } from "lucide-react";
@@ -22,6 +24,9 @@ export default async function SubmissionsPage({
 }: {
   searchParams: Promise<{ course?: string; assignment?: string; status?: string }>;
 }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { course: courseFilter, assignment: assignmentFilter, status: statusFilter } = await searchParams;
 
   const supabase = await createClient();

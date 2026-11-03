@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { MobileCard } from "@/components/mobile/mobile-card";
@@ -32,6 +34,9 @@ function isConcerningWeek(r: AggregateRow): boolean {
  * the privacy test). Faculty see trends, never who said what.
  */
 export default async function AdminCheckinsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { data: rows } = await admin
     .from("checkins_aggregate")

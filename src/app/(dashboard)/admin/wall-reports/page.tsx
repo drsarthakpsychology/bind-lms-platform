@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { WallReportsList } from "./wall-reports-list";
@@ -10,6 +12,9 @@ export const dynamic = "force-dynamic";
  * shows the reported content + reason; resolving sets status → resolved.
  */
 export default async function AdminWallReportsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
 
   const { data: reports } = await admin

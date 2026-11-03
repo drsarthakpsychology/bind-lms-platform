@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { ChevronDown, Inbox } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
@@ -29,6 +31,9 @@ const STATUS_LABEL: Record<string, string> = {
  * only, which this is).
  */
 export default async function AdminEnquiriesPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { data } = await admin
     .from("enquiries")

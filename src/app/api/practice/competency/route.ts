@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { denyUnlessGate, requireStudentApi, type ApiGate } from "@/lib/auth/api-guard";
 import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -17,6 +17,15 @@ const schema = z.object({
   detail: z.string().max(300).default(""),
 });
 
+/** The page + feature flag behind each crediting tool. */
+const TOOL_GATE: Record<z.infer<typeof schema>["tool"], ApiGate> = {
+  mse: { path: "/practice/mse", flag: "mse" },
+  osce: { path: "/practice/osce", flag: "osce" },
+  judgment: { path: "/practice/judgment", flag: "judgment" },
+  rounds: { path: "/practice/rounds", flag: "rounds" },
+  formulation: { path: "/practice/formulation", flag: "formulation" },
+};
+
 /**
  * POST /api/practice/competency — a practice tool (MSE/OSCE/Judgment/Rounds/
  * Formulation) credits competencies on completion, feeding the Skills
@@ -24,8 +33,9 @@ const schema = z.object({
  * Owner-scoped server-side; RLS on competency_events also enforces it.
  */
 export async function POST(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/practice" });
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`competency:${user.id}`, 60);
@@ -34,6 +44,8 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
+  const denied = await denyUnlessGate(profile, TOOL_GATE[parsed.data.tool]);
+  if (denied) return denied;
 
   const admin = createAdminClient();
   const { data: comps } = await admin

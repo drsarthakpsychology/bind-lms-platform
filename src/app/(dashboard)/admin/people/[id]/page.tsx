@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PersonLinks } from "@/components/admin/person-links";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { ChevronLeft, Mail, MessageCircle, Phone } from "lucide-react";
 
 import { createAdminClient } from "@/lib/supabase/server";
@@ -19,6 +20,9 @@ const when = (iso: string) =>
  * calls, WhatsApps, notes, account setup — on the right, newest first.
  */
 export default async function PersonPage({ params }: { params: Promise<{ id: string }> }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { id } = await params;
   const email = emailFromKey(id);
   if (!email) notFound();

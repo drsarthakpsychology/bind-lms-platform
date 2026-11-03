@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { UserPlus, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
@@ -24,6 +26,9 @@ function formatDate(iso: string | null): string {
 }
 
 export default async function StudentsPage({ searchParams }: { searchParams: Promise<{ test?: string }> }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const showTest = (await searchParams).test === "1";
   const supabase = await createClient();
 

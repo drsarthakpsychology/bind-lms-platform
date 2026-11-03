@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { rateLimit } from "@/lib/rate-limit";
 import { searchKnowledge, cite, type KnowledgeHit } from "@/lib/knowledge/retrieve";
 
@@ -30,8 +30,9 @@ const schema = z.object({
  * admin-only by RLS); the result is a bounded, vetted surface.
  */
 export async function GET(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/practice/tutor", flag: "knowledge_tutor" });
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`knowledge:${user.id}`, 60);

@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
@@ -26,6 +27,9 @@ export default async function ReviewTablePage({
   params: Promise<{ table: string }>;
   searchParams: Promise<{ drug?: string }>;
 }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { table: tableParam } = await params;
   const { drug: drugFilter } = await searchParams;
   const table = TABLE_ALIASES[tableParam];
