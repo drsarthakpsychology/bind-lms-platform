@@ -49,3 +49,6 @@ docs/samples/
 # Python build artifacts
 __pycache__/
 *.pyc
+
+# Transformation release package output
+/release/
