@@ -15,3 +15,7 @@ Branch: `feature/vibha-lms-transformation` (from `main` @ 2b42099). `main` untou
 | 10:30 | 6 Admin | /admin/learning: cohort learning insights + admin-only CSV (formula-injection safe). | 56caea2 |
 | 10:30 | 3 Retention | /games/revise: personalised daily revision list (reviews, re-tests, confusions, Lab re-checks, weak scores, stale modules; interleaved; ≤6 items / ~20 min). | 6727af1 |
 | 10:32 | 7 Engineering | DISCOVERY_AUDIT.md. **Owner action: all nightly DB backups have failed since 2026-08-02 (empty GitHub secrets; alert email also failing).** Two security-fix agents launched (admin/API guards; XP integrity, per-user local storage, lecture progress, master-login hardening, submission paths, doubts, Sentry). | a8c13e5 |
+| 11:30 | 2-4 | Book analysis done (4 per-book maps). Casebook: 36 activities converted from the specs (scripts/casebook/convert-activities.py), validated and auto-played on phone + desktop. Lab experiments 8-12. Casebook library page with search/filters. | e3b6587, 726e560, + |
+| 11:30 | 7 | Security fixes from the audit (admin/API guards; XP integrity, local key, lecture progress, master login, submissions, doubts, Sentry). | 817a397, 334d37e |
+| 11:45 | 8 | Gate: tsc 0, eslint 0, vitest 127 files / 770 tests, next build passes. TESTING_REPORT.md written. | — |
+| 11:45 | — | Owner sent follow-up requirements (unlimited content, multi-cohort). Per instruction: finish and release this first, then inspect and propose; no cohort implementation or DB change before approval. | — |
