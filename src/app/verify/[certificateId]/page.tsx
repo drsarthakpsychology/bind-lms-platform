@@ -1,72 +1,81 @@
 import type { Metadata } from "next";
-import { createClient } from "@/lib/supabase/server";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { createAdminClient } from "@/lib/supabase/server";
+import { Card, CardContent } from "@/components/ui/card";
 import { SiteFooter } from "@/components/site/site-footer";
+import { ShieldCheck, ShieldX, HelpCircle } from "lucide-react";
 
-// Reveals a student + course identity — not for search engines.
-export const metadata: Metadata = {
-  robots: { index: false, follow: false },
-};
+// Public verification — never indexed, no auth required.
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
- * Public certificate verification page — the QR code on a certificate points
- * here. No auth required (it's a public proof page). Shows the student + course
- * from the certificate record if it exists.
+ * Public credential verification. Reads the authoritative record server-side
+ * (service role) by opaque credential_id and returns ONLY approved public
+ * fields: display name, credential title, institution, issue date, credential
+ * id and status. Revoked credentials keep their URL and show "Revoked".
  */
-export default async function VerifyCertificatePage({
-  params,
-}: {
-  params: Promise<{ certificateId: string }>;
-}) {
+export default async function VerifyCertificatePage({ params }: { params: Promise<{ certificateId: string }> }) {
   const { certificateId } = await params;
-  const supabase = await createClient();
+  const admin = createAdminClient();
 
-  const { data: cert } = await supabase
-    .from("certificates")
-    .select("id, student_name, course_title, issued_at")
-    .eq("id", certificateId)
+  const { data: cred } = await admin
+    .from("credentials")
+    .select("credential_id, student_name, status, issued_at, revoked_at, achievements(title)")
+    .eq("credential_id", certificateId)
     .maybeSingle();
 
-  if (!cert) {
+  if (!cred) {
     return (
       <div className="flex min-h-screen flex-col bg-background px-5">
-        <div className="flex flex-1 items-center justify-center">
-          <Card className="w-full max-w-md">
+        <main className="flex flex-1 items-center justify-center">
+          <Card className="w-full max-w-md hard-shadow-md">
             <CardContent className="p-6 text-center">
-              <p className="text-h1">Certificate not found</p>
-              <p className="mt-2 text-small text-muted-foreground">
-                This certificate could not be verified. Check the link or contact the administrator.
-              </p>
+              <HelpCircle className="mx-auto size-10 text-muted-foreground" aria-hidden />
+              <p className="mt-3 text-h2">Invalid credential</p>
+              <p className="mt-2 text-small text-muted-foreground">This credential could not be verified. Check the link or contact the issuing institution.</p>
             </CardContent>
           </Card>
-        </div>
+        </main>
         <SiteFooter />
       </div>
     );
   }
 
+  const a = Array.isArray(cred.achievements) ? cred.achievements[0] : cred.achievements;
+  const title = (a?.title as string) ?? "VIBHA School of Psychology";
+  const verified = cred.status === "issued";
+  const revoked = cred.status === "revoked";
+
   return (
     <div className="flex min-h-screen flex-col bg-background px-5">
-      <div className="flex flex-1 items-center justify-center">
+      <main className="flex flex-1 items-center justify-center py-10">
         <Card className="w-full max-w-md hard-shadow-md">
-          <CardHeader>
-            <CardTitle className="text-center">Certificate of Completion</CardTitle>
-            <div className="flex justify-center">
-              <Badge variant="published">Verified ✓</Badge>
+          <CardContent className="space-y-4 p-6 text-center">
+            <p className="text-eyebrow text-link">VIBHA School of Psychology</p>
+            <div className="flex flex-col items-center gap-2">
+              {verified ? (
+                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-3 py-1 text-sm font-bold text-primary-foreground">
+                  <ShieldCheck className="size-4" aria-hidden /> Verified
+                </span>
+              ) : revoked ? (
+                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold text-red-600">
+                  <ShieldX className="size-4" aria-hidden /> Revoked
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold">
+                  <HelpCircle className="size-4" aria-hidden /> Not issued
+                </span>
+              )}
             </div>
-          </CardHeader>
-          <CardContent className="space-y-2 text-center">
             <p className="text-sm text-muted-foreground">This certifies that</p>
-            <p className="text-h2">{cert.student_name}</p>
-            <p className="text-sm text-muted-foreground">successfully completed</p>
-            <p className="text-h3">{cert.course_title}</p>
-            <p className="text-caption text-muted-foreground">
-              Issued {new Date(cert.issued_at).toLocaleDateString()}
-            </p>
+            <p className="text-h2">{cred.student_name}</p>
+            <p className="text-sm text-muted-foreground">earned</p>
+            <p className="text-h3">{title}</p>
+            {verified && cred.issued_at ? <p className="text-caption text-muted-foreground">Issued {new Date(cred.issued_at).toLocaleDateString()}</p> : null}
+            {revoked && cred.revoked_at ? <p className="text-caption text-red-600">Revoked {new Date(cred.revoked_at).toLocaleDateString()}</p> : null}
+            <p className="break-all font-mono text-[0.65rem] text-muted-foreground">Credential ID {cred.credential_id}</p>
           </CardContent>
         </Card>
-      </div>
+      </main>
       <SiteFooter />
     </div>
   );

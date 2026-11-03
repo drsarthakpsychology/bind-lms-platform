@@ -15,6 +15,7 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/practice", label: "Practice", icon: "stethoscope" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
+  { href: "/achievements", label: "Achievements", icon: "award", section: "More" },
   { href: "/journey", label: "My journey", icon: "route", section: "More" },
   { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
@@ -80,6 +81,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
   { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },
+  { href: "/admin/achievements", label: "Achievements", icon: "award", section: "System" },
   { href: "/admin/management", label: "Admin Management", icon: "key", section: "System" },
 ];
 
@@ -156,6 +158,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/infra", label: "Usage & limits" },
       { href: "/admin/tools", label: "Admin tools" },
+      { href: "/admin/achievements", label: "Achievements" },
       { href: "/admin/management", label: "Admin Management" },
     ],
   },
