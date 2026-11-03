@@ -24,6 +24,9 @@ import { BIAS_CASES, BIASES, EXPERIMENTS, experimentById } from "./experiments";
 import { emptyState, labRechecksDue, normalise, recordLabCheck, recordLabReflection, recordLabRun, LAB_XP } from "@/lib/learn/engine";
 import { mergeCopies } from "@/lib/learn/store";
 import { moduleById } from "@/lib/study";
+import { STUDENT_SOURCING } from "@/lib/casebook/validate";
+import { ATTRIBUTION_CASES, CONS_ITEMS, CONS_TASK_TEXT, CORR_SCENARIOS } from "./experiments2";
+import { THREATS } from "./scoring2";
 
 describe("seeded random", () => {
   it("repeats for the same seed", () => {
@@ -270,5 +273,29 @@ describe("lab progress in the learn state", () => {
     const a = recordLabRun(emptyState(), "stroop", {}, day);
     const b = recordLabRun(emptyState(), "schedules", {}, day);
     expect(Object.keys(mergeCopies(a, b).lab).sort()).toEqual(["schedules", "stroop"]);
+  });
+});
+
+describe("lab: students see the teaching, not the sourcing", () => {
+  /**
+   * Student-visible Lab fields: title, hook, question, steps, finding, theory,
+   * clinic, evidence.status, checks (q, options, why), reflect; plus the
+   * runner data (bias cases, conservation tasks, attribution cases,
+   * correlation scenarios, design threats). Admin-only: refs, bookRefs,
+   * review, evidence.note.
+   */
+  const AUTHOR_YEAR = /\b[A-Z][a-z]+(?:,| and| &| et al\.?)[^()]{0,40}\b(1[89]\d\d|20[0-2]\d)\b|\((?:[A-Z][a-z]+[^()]*,\s*)(1[89]\d\d|20[0-2]\d)\)|\b[A-Z][a-z]+ (?:and|&) [A-Z][a-z]+ (?:showed|found|demonstrated)\b|\bIn (1[89]\d\d|20[0-2]\d)\b|\b[A-Z][a-z]+, [A-Z]\.(?: [A-Z]\.)* \((1[89]\d\d|20[0-2]\d)\)/;
+  const visible = (e: (typeof EXPERIMENTS)[number]) => [e.title, e.hook, e.question, ...e.steps, e.finding, ...e.theory, ...e.clinic, e.evidence.status, ...e.checks.flatMap((c) => [c.q, ...c.options, c.why]), e.reflect];
+  const runnerText = JSON.stringify([BIAS_CASES, CONS_ITEMS, CONS_TASK_TEXT, ATTRIBUTION_CASES, CORR_SCENARIOS, THREATS]);
+  it("no student-visible string names a book, a page, the review or an author-year citation", () => {
+    const hits = EXPERIMENTS.flatMap((e) => visible(e).filter((t) => STUDENT_SOURCING.test(t) || AUTHOR_YEAR.test(t)).map((t) => `${e.id}: ${t}`));
+    expect(hits).toEqual([]);
+    expect(STUDENT_SOURCING.test(runnerText) || AUTHOR_YEAR.test(runnerText)).toBe(false);
+  });
+  it("the check would catch a citation", () => {
+    for (const t of ["(Miller, 1956)", "Jones & Harris showed", "In 1920 Watson and Rayner", "Cowan, N. (2001)"]) expect(AUTHOR_YEAR.test(t), t).toBe(true);
+  });
+  it("refs stay as data for admins", () => {
+    for (const e of EXPERIMENTS) expect(e.refs.length, e.id).toBeGreaterThan(0);
   });
 });

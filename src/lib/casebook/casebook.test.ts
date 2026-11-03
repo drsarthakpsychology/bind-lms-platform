@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CASEBOOK } from "@/content/casebook";
 import { MODULES } from "@/lib/study";
-import { orderScore, validateActivity } from "./validate";
+import { orderScore, STUDENT_SOURCING, studentStrings, validateActivity } from "./validate";
 import type { CaseActivity } from "./types";
 
 const MODS = new Set(MODULES.map((m) => m.id));
@@ -20,6 +20,20 @@ describe("casebook content", () => {
         a.format === "spotter" ? a.items.map((i) => i.quote) : a.format === "differential" || a.format === "triage" ? a.items.map((i) => i.vignette) : [];
       for (const t of texts) expect(t.split(/\s+/).length, `${a.id}: ${t.slice(0, 40)}`).toBeLessThanOrEqual(160);
     }
+  });
+});
+
+describe("casebook: students see the teaching, not the sourcing", () => {
+  it("no student-visible string names a book, a page or the review", () => {
+    const hits = CASEBOOK.flatMap((a) => studentStrings(a).filter((t) => STUDENT_SOURCING.test(t)).map((t) => `${a.id}: ${t}`));
+    expect(hits).toEqual([]);
+  });
+  it("the sourcing is still kept for admins", () => {
+    for (const a of CASEBOOK) expect(a.bookRef.book, a.id).toBeTruthy();
+  });
+  it("the check would catch a citation", () => {
+    for (const t of ["(Maudsley p. 337)", "(p.891)", "book p.1457", "The book warns that", "Fish's definition", "per Ahuja", "For educator review"]) expect(STUDENT_SOURCING.test(t), t).toBe(true);
+    expect(STUDENT_SOURCING.test("Ask her to book a holiday.")).toBe(false);
   });
 });
 

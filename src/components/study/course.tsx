@@ -9,6 +9,7 @@ import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "
 import { activityHref, courseNext, hoursOf, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, studyTime, testSection, type Next } from "@/lib/study/plan";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
+import { BOARDS } from "@/lib/standing/boards";
 import { ChaiSays } from "@/components/learn/chai";
 import { MarksList, RelatedLab, useSectionMarks, type LabLink } from "./marks";
 
@@ -167,11 +168,11 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
             <span className="text-caption text-muted-foreground">One page per topic, before exams</span>
           </span>
         </Link>
-        <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
+        <Link href={BOARDS.quiz.href} className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
           <Trophy className="size-6 shrink-0" aria-hidden />
           <span>
-            <span className="block font-bold">Progress & leaderboard</span>
-            <span className="text-caption text-muted-foreground">Your week and the cohort</span>
+            <span className="block font-bold">{BOARDS.quiz.label}</span>
+            <span className="text-caption text-muted-foreground">{BOARDS.quiz.explainer} This week.</span>
           </span>
         </Link>
       </section>

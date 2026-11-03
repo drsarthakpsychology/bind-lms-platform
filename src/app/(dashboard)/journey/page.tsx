@@ -7,6 +7,7 @@ import { loadMyBoard } from "@/lib/standing/board";
 import { normalise, levelFor, liveStreak } from "@/lib/learn/engine";
 import { istToday } from "@/lib/practice/streaks";
 import { hoursOf } from "@/lib/standing/score";
+import { BOARDS } from "@/lib/standing/boards";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -56,7 +57,7 @@ export default async function JourneyPage() {
     { icon: <PlayCircle className="size-5" aria-hidden />, label: "In lectures", value: `${lectureHours} h`, sub: `${lecturesStarted} started` },
     { icon: <GraduationCap className="size-5" aria-hidden />, label: "Lectures finished", value: String(lecturesDone) },
     { icon: <Flame className="size-5" aria-hidden />, label: "Day streak", value: streak ? `${streak} 🔥` : "—", sub: "days in a row" },
-    { icon: <BookOpen className="size-5" aria-hidden />, label: "Notes XP", value: st ? String(st.xp) : "0", sub: accuracy !== null ? `${accuracy}% right` : undefined },
+    { icon: <BookOpen className="size-5" aria-hidden />, label: "Quiz points", value: st ? String(st.xp) : "0", sub: accuracy !== null ? `${accuracy}% right` : undefined },
     { icon: <Target className="size-5" aria-hidden />, label: "Practice done", value: String(practiceCount), sub: "sessions and drills" },
   ];
 
@@ -81,14 +82,14 @@ export default async function JourneyPage() {
             <p className="flex items-center gap-1.5 text-sm font-semibold opacity-90">
               <Sparkles className="size-4" aria-hidden /> {title}
             </p>
-            {me ? <p className="text-sm opacity-90">{me.points} points{me.rank ? ` · rank #${me.rank} in your group` : ""}</p> : null}
+            {me ? <p className="text-sm opacity-90">{me.points} points{me.rank ? ` · #${me.rank} on the overall leaderboard` : ""}</p> : null}
             <div className="mt-2 h-2.5 overflow-hidden rounded-full border-2 border-foreground bg-card/40">
               <div className="h-full rounded-full bg-primary" style={{ width: `${Math.round(pct * 100)}%` }} aria-hidden />
             </div>
           </div>
         </div>
-        <Link href="/practice/leaderboard" className="mt-4 inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 py-1.5 text-sm font-bold text-foreground">
-          <Trophy className="size-4" aria-hidden /> See the rankings
+        <Link href={BOARDS.overall.href} className="mt-4 inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 py-1.5 text-sm font-bold text-foreground">
+          <Trophy className="size-4" aria-hidden /> {BOARDS.overall.label}
         </Link>
       </section>
 

@@ -48,13 +48,17 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
         )}
       </header>
 
-      {isAdmin && a.reviewFlags.length > 0 && (
+      {/* Sourcing and review notes are for admins only; students see the teaching. */}
+      {isAdmin && (
         <aside className="rounded-2xl border-2 border-dashed border-foreground p-4 text-sm">
-          <p className="font-bold">For educator review (admins only)</p>
+          <p className="font-bold">Admins only</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             {a.reviewFlags.map((r) => (
               <li key={r}>{r}</li>
             ))}
+            <li>
+              Built from: {a.bookRef.book}, {a.bookRef.chapter}, pp. {a.bookRef.pages}. Cases are fictional; wording is original.
+            </li>
           </ul>
         </aside>
       )}
@@ -66,7 +70,7 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
           </h2>
           <Bars ariaLabel="Your score" items={[{ label: "Right", value: score.right, highlight: true }, { label: "Total", value: score.total }]} />
           {a.debrief && <p className="rounded-xl border-2 border-foreground bg-background p-3">{a.debrief}</p>}
-          <p>{score.right * 3 >= score.total * 2 ? "Solid. This comes back in a few days to keep it fresh." : "Worth another go. It comes back sooner so you can try again."}</p>
+          <p>{score.right * 3 >= score.total * 2 ? "Solid. It comes back in a few days." : "Worth another go. It comes back sooner."}</p>
           <div className="flex flex-wrap gap-2">
             <LabButton
               tone="plain"
@@ -86,9 +90,7 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
         <CasePlayer key={round} activity={a} onDone={done} />
       )}
 
-      <p className="text-xs text-muted-foreground">
-        Built from: {a.bookRef.book}, {a.bookRef.chapter}, pp. {a.bookRef.pages}. Cases are fictional; wording is original.
-      </p>
+      <p className="text-xs text-muted-foreground">Cases are fictional.</p>
     </div>
   );
 }

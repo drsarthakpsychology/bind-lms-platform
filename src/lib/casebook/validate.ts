@@ -96,3 +96,56 @@ export function orderScore(correct: readonly string[], given: readonly string[])
   for (let i = 1; i < given.length; i++) if ((pos.get(given[i - 1]) ?? -1) < (pos.get(given[i]) ?? -1)) right++;
   return right;
 }
+
+/**
+ * Students see the teaching, never the sourcing: no book names, page
+ * references, "the book says" phrasing or review notes. Sourcing lives in
+ * `bookRef`, `reviewFlags` and item `ref`, which only admins see.
+ */
+export const STUDENT_SOURCING = /Kaplan|Sadock|Fish's|Ahuja|Maudsley|Stahl|\bpp?\.\s?\d|the book|educator review/i;
+
+/**
+ * Every string a student can see for one activity. Student-visible fields:
+ * all formats: title, hook, objective, debrief;
+ * spotter: categories[].label, items[].quote, items[].explain;
+ * differential: items[].vignette, .question, .options[], .explain;
+ * triage: items[].vignette, .explain;
+ * sort: categories[].label, items[].text, .explain;
+ * matching: pairs[].left, .right;
+ * skill: items[].prompt, responses[].text, .why;
+ * branching: nodes[].text, choices[].text, .feedback;
+ * timeline: events[].when, .text.
+ * Not student-visible (admin or internal): id, module, level, format,
+ * bookRef, reviewFlags, items[].ref, answer/category ids, distractors,
+ * start, next.
+ */
+export function studentStrings(a: CaseActivity): string[] {
+  const out: (string | undefined)[] = [a.title, a.hook, a.objective, a.debrief];
+  switch (a.format) {
+    case "spotter":
+      out.push(...a.categories.map((c) => c.label), ...a.items.flatMap((i) => [i.quote, i.explain]));
+      break;
+    case "differential":
+      out.push(...a.items.flatMap((i) => [i.vignette, i.question, ...i.options, i.explain]));
+      break;
+    case "triage":
+      out.push(...a.items.flatMap((i) => [i.vignette, i.explain]));
+      break;
+    case "sort":
+      out.push(...a.categories.map((c) => c.label), ...a.items.flatMap((i) => [i.text, i.explain]));
+      break;
+    case "matching":
+      out.push(...a.pairs.flatMap((x) => [x.left, x.right]));
+      break;
+    case "skill":
+      out.push(...a.items.flatMap((i) => [i.prompt, ...i.responses.flatMap((r) => [r.text, r.why])]));
+      break;
+    case "branching":
+      out.push(...a.nodes.flatMap((n) => [n.text, ...n.choices.flatMap((c) => [c.text, c.feedback])]));
+      break;
+    case "timeline":
+      out.push(...a.events.flatMap((e) => [e.when, e.text]));
+      break;
+  }
+  return out.filter((x): x is string => typeof x === "string" && x.length > 0);
+}
