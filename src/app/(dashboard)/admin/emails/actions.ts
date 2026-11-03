@@ -9,18 +9,22 @@ import { sendResendEmail, sendCredentialEmails, logEmailSend } from "@/lib/auth/
 
 export type RecipientData = {
   courses: Array<{ id: string; title: string }>;
+  /** Cohorts, newest first, so "message just Cohort 2" is one tap. */
+  cohorts: Array<{ id: string; name: string; status: string }>;
   students: Array<{ id: string; email: string }>;
   /** courseId → enrolled student user ids (for the by-course shortcuts). */
   enrolledByCourse: Record<string, string[]>;
+  /** cohortId → that cohort's student user ids (for the by-cohort shortcuts). */
+  membersByCohort: Record<string, string[]>;
 };
 
-/** Load the recipient universe for the compose tab (courses + students + enrollments). */
+/** Load the recipient universe for the compose tab (courses, cohorts, students). */
 export async function loadRecipientData(): Promise<RecipientData> {
   const profile = await requireAdmin();
-  if (!profile) return { courses: [], students: [], enrolledByCourse: {} };
+  if (!profile) return { courses: [], cohorts: [], students: [], enrolledByCourse: {}, membersByCohort: {} };
 
   const supabase = await createAdminClient();
-  const [{ data: courses }, { data: students }, { data: enrollments }] = await Promise.all([
+  const [{ data: courses }, { data: students }, { data: enrollments }, cohortsRes, membersRes] = await Promise.all([
     supabase.from("courses").select("id, title").eq("is_published", true).order("title", { ascending: true }),
     supabase
       .from("profiles")
@@ -29,17 +33,26 @@ export async function loadRecipientData(): Promise<RecipientData> {
       .eq("is_test", false)
       .order("email", { ascending: true }),
     supabase.from("course_enrollments").select("course_id, user_id"),
+    // Cohorts may not exist on older databases — tolerate the error.
+    supabase.from("cohorts").select("id, name, status, created_at").order("created_at", { ascending: true }),
+    supabase.from("cohort_members").select("cohort_id, user_id").limit(50000),
   ]);
 
   const enrolledByCourse: Record<string, string[]> = {};
   for (const e of enrollments ?? []) {
     (enrolledByCourse[e.course_id] ??= []).push(e.user_id);
   }
+  const membersByCohort: Record<string, string[]> = {};
+  for (const m of cohortsRes.error ? [] : (membersRes.data ?? [])) {
+    (membersByCohort[m.cohort_id as string] ??= []).push(m.user_id as string);
+  }
 
   return {
     courses: (courses ?? []).map((c) => ({ id: c.id, title: c.title })),
+    cohorts: cohortsRes.error ? [] : (cohortsRes.data ?? []).map((c) => ({ id: c.id as string, name: c.name as string, status: String(c.status ?? "active") })),
     students: (students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => ({ id: s.id, email: s.email })),
     enrolledByCourse,
+    membersByCohort,
   };
 }
 
