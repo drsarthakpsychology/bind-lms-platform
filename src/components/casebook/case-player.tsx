@@ -10,6 +10,9 @@ import { LabButton, Panel, RoundBar } from "@/components/lab/lab-ui";
 
 type Done = (right: number, total: number, missed: string[]) => void;
 
+/** Short rounds: big banks are sampled, so each play is a few minutes and replays differ. */
+const ROUND = 12;
+
 /** Shared answer button: neutral → right (peach) / wrong (ink, struck) / faded. */
 function Choice({ state, onClick, children, disabled }: { state: "idle" | "right" | "wrong" | "fade"; onClick: () => void; children: React.ReactNode; disabled?: boolean }) {
   return (
@@ -65,8 +68,8 @@ function ItemRound<T extends { id: string }>({
 
   if (!order)
     return (
-      <LabButton onClick={() => setOrder(shuffle(items))}>
-        Start · {items.length} questions
+      <LabButton onClick={() => setOrder(shuffle(items).slice(0, ROUND))}>
+        Start · {Math.min(ROUND, items.length)} questions{items.length > ROUND ? ` from ${items.length}` : ""}
       </LabButton>
     );
   const item = order[i];

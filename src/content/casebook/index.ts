@@ -1,4 +1,8 @@
 import type { CaseActivity } from "@/lib/casebook/types";
+import { KAPLAN_1 } from "./kaplan-1";
+import { KAPLAN_2 } from "./kaplan-2";
+import { FISH_AHUJA } from "./fish-ahuja";
+import { MAUDSLEY_STAHL } from "./maudsley-stahl";
 
 /**
  * Casebook activities, built from the course textbooks (original wording;
@@ -6,7 +10,7 @@ import type { CaseActivity } from "@/lib/casebook/types";
  * folder and listing it here. src/lib/casebook/casebook.test.ts validates
  * every entry.
  */
-export const CASEBOOK: CaseActivity[] = [];
+export const CASEBOOK: CaseActivity[] = [...FISH_AHUJA, ...MAUDSLEY_STAHL, ...KAPLAN_1, ...KAPLAN_2];
 
 export function caseById(id: string): CaseActivity | undefined {
   return CASEBOOK.find((c) => c.id === id);
