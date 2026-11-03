@@ -9,6 +9,7 @@ import { CardDeck, TestRunner } from "./interactive";
 import { addStudySeconds, emptyState, finishSection, istToday, studyKey, visitSection, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { cn } from "@/lib/utils";
+import { SectionMarks } from "./marks";
 import s from "./study.module.css";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string; minutes: number };
@@ -118,6 +119,7 @@ export function SectionReader({
   viva,
   mcq,
   checks = [],
+  owner = "",
 }: {
   moduleId: string;
   moduleNum: number;
@@ -134,6 +136,8 @@ export function SectionReader({
   mcq: Mcq[];
   /** This module's checkpoints, to open the one that becomes ready after this section. */
   checks?: { key: string; href: string; sectionIds: string[]; later: string[] }[];
+  /** Student id: bookmarks and notes are kept per student on this device. */
+  owner?: string;
 }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
@@ -212,10 +216,10 @@ export function SectionReader({
       <article className="min-w-0 pb-28 lg:pb-0">
         <div ref={topRef} className="scroll-mt-24" />
         <div className="mb-4 flex items-center justify-between gap-2 lg:hidden">
-          <Link href={`/study/${moduleId}`} className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+          <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
           </Link>
-          <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+          <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ListOrdered className="size-4" aria-hidden /> Section {index + 1} of {toc.length}
             <ChevronDown className={cn("size-4 transition-transform", tocOpen && "rotate-180")} aria-hidden />
           </button>
@@ -257,6 +261,7 @@ export function SectionReader({
               <span className="shrink-0 text-xs font-semibold tabular-nums text-muted-foreground">{atEnd ? "All parts read" : `Part ${step + 1} of ${chunks.length}`}</span>
             </div>
           ) : null}
+          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} /> : null}
         </header>
 
         <div className="max-w-[68ch] space-y-8">
