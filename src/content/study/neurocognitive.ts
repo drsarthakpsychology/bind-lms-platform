@@ -48,6 +48,15 @@ A disturbance in **attention** and **awareness** that develops over a **short pe
 - Nurse: “Subah theek lagte hain, shaam ko confuse ho jaate hain.” Fluctuation and sundowning.
 :::
 
+:::mcq
+Q: An 80-year-old becomes muddled over two days after a urine infection, drowsy in the day and agitated at night, and cannot hold attention. Most likely:
+- Alzheimer's disease
+- *Delirium
+- Depression
+- Late-onset schizophrenia
+> Acute onset, fluctuating course, inattention.
+:::
+
 ## 1.2 Finding the cause [core]
 :::mnemonic PINCH ME
 **P**ain · **I**nfection (urine, chest) · **N**utrition (and thiamine) · **C**onstipation (and urinary retention) · **H**ydration (dehydration, electrolytes, sodium) · **M**edication (anticholinergics, opioids, benzodiazepines, steroids, new drugs; alcohol or benzodiazepine **withdrawal**) · **E**nvironment (new ward, no glasses or hearing aid, sleep loss).
@@ -59,6 +68,15 @@ Also: low oxygen, low or high glucose, stroke, head injury, seizures, liver or k
 - Test attention: months of the year backwards, digit span.
 - History from family and notes: baseline function, timing, new medicines, alcohol.
 - Examination and tests: vital signs, oxygen, glucose, blood count, electrolytes (sodium, calcium), kidney and liver, urine, chest X-ray, ECG; CT if focal signs, fall or anticoagulants; EEG if seizures are possible.
+
+:::mcq
+Q: In a confused older man, which cause should you check first among these?
+- Childhood trauma
+- *Medicines with anticholinergic effects, infection, and low sodium or glucose
+- Personality style
+- Family history of dementia
+> Delirium has physical causes; look for them systematically.
+:::
 
 ## 1.3 Management [core]
 1. **Treat the cause(s)**: often more than one.
@@ -87,6 +105,15 @@ Delirium is often **superimposed on dementia**: any sudden worsening in someone 
 4. State the CAM criteria. || Acute onset and fluctuation, inattention, plus disorganised thinking or altered consciousness.
 5. When are benzodiazepines appropriate in delirium? || Only for alcohol or benzodiazepine withdrawal.
 6. Give five differences between delirium and dementia. || Onset, course, attention, consciousness, reversibility.
+:::
+
+:::mcq
+Q: A delirious woman pulls at her drip at night. The best first measures are:
+- Physical restraint all night
+- *A calm room, a familiar person, glasses and hearing aid, clock and light, treating the cause
+- High-dose benzodiazepine
+- Lock the door
+> Non-drug measures first; brief low-dose medicine only for danger or severe distress.
 :::
 
 ## 1.4 Delirium in special situations [core]
@@ -121,6 +148,15 @@ They may be used briefly at a low dose for severe agitation that is dangerous or
 4. List five non-drug measures to prevent delirium. || Orientation, glasses and hearing aids, hydration, mobilisation, sleep protection, medicine review.
 :::
 
+:::mcq
+Q: Seventy-two hours after his last drink, a man is confused, sees insects on the wall and has a fever and fast pulse. Diagnosis:
+- Alcoholic hallucinosis
+- *Delirium tremens
+- Wernicke's encephalopathy alone
+- Panic attack
+> A medical emergency: benzodiazepines, fluids, thiamine, look for infection.
+:::
+
 # Part II · Dementia (major neurocognitive disorder)
 
 ## 2.1 Definitions [core]
@@ -128,6 +164,15 @@ They may be used briefly at a low dose for severe agitation that is dangerous or
 **Major**: significant decline from a previous level in one or more cognitive domains, enough to **interfere with independence** in everyday activities (paying bills, managing medicines). **Mild**: modest decline, **independence preserved** (perhaps with greater effort or strategies). Neither occurs only during delirium.
 :::
 The six domains: **complex attention, executive function, learning and memory, language, perceptual-motor, social cognition**.
+
+:::mcq
+Q: A 68-year-old has measurable memory decline on testing but manages money, cooking and travel alone. This is:
+- Major neurocognitive disorder
+- *Mild neurocognitive disorder (mild cognitive impairment)
+- Normal ageing with no follow-up
+- Delirium
+> Independence in daily life separates mild from major.
+:::
 
 ## 2.2 The main types [core]
 | Type | Key features | Brain changes |
@@ -141,6 +186,22 @@ The six domains: **complex attention, executive function, learning and memory, l
 
 :::mnemonic Lewy body in three lines
 Fluctuating, visual hallucinations, parkinsonism: and never give them haloperidol.
+:::
+
+:::mcq
+Q: A man's memory has dropped in steps over two years, each after a "small stroke", and he has weakness in one arm. Most likely:
+- Alzheimer's disease
+- *Vascular dementia
+- Frontotemporal dementia
+- Lewy body dementia
+> Stepwise decline with focal signs and vascular risk.
+
+Q: A 58-year-old becomes tactless, eats sweets constantly and lost empathy, while memory is fairly intact. Most likely:
+- Alzheimer's disease
+- *Behavioural variant frontotemporal dementia
+- Depression
+- Normal pressure hydrocephalus
+> Early behaviour and personality change, younger onset.
 :::
 
 ## 2.3 Reversible causes and the work-up [core]
@@ -157,6 +218,15 @@ Fluctuating, visual hallucinations, parkinsonism: and never give them haloperido
 
 - Cognitive screening: MMSE (education-sensitive; Hindi version available), **MoCA**, clock drawing; interpret against education.
 - Bloods: count, glucose, kidney, liver, calcium, thyroid, B12, folate; VDRL and HIV by risk; brain imaging (CT or MRI).
+
+:::mcq
+Q: An older man has a wide-based shuffling gait, urinary incontinence and confusion. Which test is most useful?
+- EEG
+- *Brain CT or MRI (enlarged ventricles)
+- Lithium level
+- MMPI
+> Normal pressure hydrocephalus can improve with shunting.
+:::
 
 ## 2.4 Management [core]
 ### Medicines for Alzheimer's (and Lewy body, Parkinson's dementia)
@@ -187,6 +257,15 @@ Agitation, aggression, wandering, sleep problems, psychosis, depression, apathy.
 6. Why avoid antipsychotics in Lewy body dementia? || Severe sensitivity reactions.
 :::
 
+:::mcq
+Q: Which medicine is used for moderate to severe Alzheimer's disease and acts on NMDA receptors?
+- Donepezil
+- *Memantine
+- Rivastigmine
+- Galantamine
+> Cholinesterase inhibitors for mild to moderate; memantine for moderate to severe.
+:::
+
 ## 2.5 Alzheimer's disease in depth [core]
 ### Biology
 - **Amyloid plaques** (outside neurons, beta-amyloid) and **neurofibrillary tangles** (inside neurons, hyperphosphorylated **tau**), with neuron loss starting in the **entorhinal cortex and hippocampus**, then spreading to temporal and parietal cortex.
@@ -214,6 +293,15 @@ Agitation, aggression, wandering, sleep problems, psychosis, depression, apathy.
 3. Why does Down syndrome increase the risk? || Chromosome 21 carries the APP gene.
 4. Define mild cognitive impairment. || Measurable cognitive decline with daily independence preserved.
 5. List the 4 As. || Amnesia, aphasia, apraxia, agnosia.
+:::
+
+:::mcq
+Q: A 45-year-old with Down syndrome has new forgetfulness and losing skills. The most likely reason is:
+- Normal ageing
+- *Early Alzheimer's disease (chromosome 21 carries the APP gene)
+- Depression only
+- Learning problems getting worse with age normally
+> Alzheimer's changes appear early in Down syndrome.
 :::
 
 ## 2.6 Alcohol, infection and other causes [core]
@@ -251,6 +339,15 @@ An acute, life-threatening brain disorder from **thiamine (vitamin B1) deficienc
 4. Give two differences between cortical and subcortical dementia. || Cortical: aphasia, cues do not help recall. Subcortical: slow thinking, cues help, early motor signs.
 :::
 
+:::mcq
+Q: A man with alcohol use cannot remember what he did this morning but tells a detailed story of a trip he never took. Other abilities are fair. Most likely:
+- Delirium tremens
+- *Korsakoff syndrome
+- Alzheimer's disease
+- Malingering
+> Anterograde amnesia with confabulation after thiamine deficiency.
+:::
+
 ## 2.7 Depression or dementia? [core]
 | Feature | Depression with cognitive problems | Dementia |
 |---|---|---|
@@ -270,6 +367,15 @@ Depression can be an **early sign** of dementia, and late-life depression with c
 :::recall
 1. Give four features that suggest depression rather than dementia. || Quick onset, mood first, complains of memory loss, "I don't know" answers, improves with treatment.
 2. Why re-test cognition after treating depression? || Depression may be an early sign of dementia.
+:::
+
+:::mcq
+Q: An older woman answers many memory questions with "I don't know", complains loudly of forgetfulness, and became low 2 months ago. Most likely:
+- Alzheimer's disease
+- *Depression with cognitive problems
+- Lewy body dementia
+- Delirium
+> Treat the depression, then re-test cognition.
 :::
 
 # Part III · Exam zone

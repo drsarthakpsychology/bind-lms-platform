@@ -35,6 +35,15 @@ Exposure to **actual or threatened death, serious injury, or sexual violence**, 
 - Many people experience trauma; most recover. PTSD develops in a minority, more after interpersonal violence (rape, torture) than accidents or disasters.
 - Common in India: road accidents, domestic and sexual violence, communal and political violence, floods and earthquakes, child abuse.
 
+:::mcq
+Q: Which event meets criterion A for PTSD?
+- Failing an exam
+- A painful divorce
+- *Witnessing a fatal road accident
+- Losing a job
+> Actual or threatened death, serious injury or sexual violence.
+:::
+
 ## 1.2 The four symptom clusters [core]
 | Cluster | Need | Symptoms |
 |---|---|---|
@@ -58,6 +67,15 @@ Exposure to **actual or threatened death, serious injury, or sexual violence**, 
 - “Koi bhi awaaz ho, uchhal padta hoon.” (I jump at any sound.) Startle.
 :::
 
+:::mcq
+Q: Since an assault 3 months ago, a woman has nightmares, avoids the street, blames herself and jumps at every sound. Which cluster does "blames herself" belong to?
+- Intrusion
+- Avoidance
+- *Negative changes in thinking and mood
+- Arousal
+> Distorted self-blame is in cluster D.
+:::
+
 ## 1.3 Why it happens and who is at risk [core]
 - **Fear conditioning**: the trauma links neutral cues (a sound, smell, place) to terror. Normally fear **extinguishes** with safe exposure; in PTSD, **avoidance prevents extinction**.
 - Memory: trauma memories are stored in fragments, with strong sensory detail and poor context, so they intrude as if happening now.
@@ -70,6 +88,15 @@ Exposure to **actual or threatened death, serious injury, or sexual violence**, 
 3. How long must symptoms last for PTSD? || More than 1 month.
 4. What does “with delayed expression” mean? || Full criteria met 6 months or more after the event.
 5. Why does avoidance maintain PTSD? || It prevents fear extinction.
+:::
+
+:::mcq
+Q: Which factor most protects against PTSD after a trauma?
+- Talking through every detail the next day in a group
+- *Good social support afterwards
+- Starting benzodiazepines
+- Avoiding all reminders forever
+> Support after the event is one of the strongest protective factors.
 :::
 
 ## 1.4 Assessing trauma: the trauma-informed interview [core]
@@ -108,6 +135,15 @@ Asking for every detail in the first meeting can trigger severe distress and dro
 4. Why avoid detailed trauma accounts in a first assessment? || They can re-traumatise and cause drop-out.
 :::
 
+:::mcq
+Q: While describing an assault, a woman goes blank and stops responding. The best next step is:
+- Push for more detail
+- *Ground her in the present and pause
+- Give an injection
+- End the interview without explanation
+> Grounding first; detailed accounts belong in planned therapy.
+:::
+
 ## 1.5 Trauma in children and after disasters [core]
 ### Children
 - Young children show trauma through **behaviour**: re-enacting it in play, regression (bed-wetting, thumb-sucking, baby talk), clinginess, sleep problems, tantrums, new fears.
@@ -131,6 +167,15 @@ Bereavement, displacement and loss of livelihood drive depression and alcohol us
 3. Describe the IASC pyramid. || Basic services, community supports, focused support, specialised services.
 :::
 
+:::mcq
+Q: A 5-year-old keeps crashing toy cars after a road accident and has started bed-wetting again. Which is the best first step?
+- Punish the bed-wetting
+- *Recognise trauma signs and support the parents, considering TF-CBT
+- Start an antipsychotic
+- Ignore it
+> Re-enactment in play and regression are common; the parent's response matters most.
+:::
+
 # Part II · The other trauma disorders
 
 ## 2.1 Timing tells them apart [core]
@@ -147,11 +192,29 @@ Bereavement, displacement and loss of livelihood drive depression and alcohol us
 3 days to 1 month: acute stress. More than a month: PTSD. Starts within 3 months of any stressor: adjustment. A year after a death: prolonged grief.
 :::
 
+:::mcq
+Q: Ten days after a fire, a man has intrusive memories, numbness and poor sleep. Diagnosis:
+- PTSD
+- *Acute stress disorder
+- Adjustment disorder
+- Prolonged grief disorder
+> From 3 days to a month after the trauma; PTSD only after a month.
+:::
+
 ## 2.2 Complex PTSD [core]
 :::define Complex PTSD (ICD-11)
 After **prolonged or repeated** trauma that is hard to escape (childhood abuse, domestic violence, torture, trafficking): **PTSD symptoms plus “disturbances in self-organisation”**: (1) **affect dysregulation**, (2) a persistently **negative self-concept** (worthless, ashamed, defeated), (3) **difficulties in relationships**.
 :::
 - Overlaps with borderline personality disorder; treatment is phased: safety and stabilisation, then trauma processing, then reconnection.
+
+:::mcq
+Q: After years of domestic violence, a woman has PTSD symptoms plus feeling worthless, intense emotional swings and difficulty trusting anyone. ICD-11 diagnosis:
+- PTSD only
+- *Complex PTSD
+- Borderline personality disorder only
+- Adjustment disorder
+> PTSD plus disturbances in self-organisation.
+:::
 
 ## 2.3 Childhood attachment disorders [extra]
 | | Reactive attachment disorder | Disinhibited social engagement disorder |
@@ -167,6 +230,15 @@ After **prolonged or repeated** trauma that is hard to escape (childhood abuse, 
 3. Contrast RAD with DSED. || Withdrawn and not seeking comfort vs over-familiar with strangers.
 :::
 
+:::mcq
+Q: A 4-year-old from an institution goes off with any stranger without checking back with carers. Most likely:
+- Reactive attachment disorder
+- *Disinhibited social engagement disorder
+- Autism
+- ADHD
+> Over-familiar with strangers after severe neglect.
+:::
+
 # Part III · Helping
 
 ## 3.1 In the first days: psychological first aid [core]
@@ -176,6 +248,15 @@ After **prolonged or repeated** trauma that is hard to escape (childhood abuse, 
 
 :::trap Single-session debriefing
 Routinely making everyone recount the trauma in detail soon after (single-session “debriefing”) **does not prevent PTSD and may worsen it**. Offer practical support, watchful waiting, and screening at about a month.
+:::
+
+:::mcq
+Q: Two days after a flood, a volunteer asks what to offer survivors. The best answer is:
+- Single-session debriefing for everyone
+- *Psychological first aid: look, listen, link, with practical help
+- Benzodiazepines for sleep
+- Formal PTSD therapy for all
+> Most recover with support; specialised care is for the few.
 :::
 
 ## 3.2 Treatment of PTSD [core]
@@ -201,6 +282,15 @@ Routinely making everyone recount the trauma in detail soon after (single-sessio
 2. Why is single-session debriefing not recommended? || It doesn't prevent PTSD and may worsen it.
 3. Name two first-line therapies for PTSD. || Trauma-focused CBT and EMDR.
 4. Which medicines help, and which should be avoided? || SSRIs or venlafaxine; avoid benzodiazepines.
+:::
+
+:::mcq
+Q: A man with PTSD asks for "sleeping tablets" every night. Which is the best advice?
+- Long-term benzodiazepines help PTSD
+- *Trauma-focused therapy (or an SSRI) helps PTSD; benzodiazepines don't and may worsen outcome
+- Alcohol at night is fine
+- No treatment works
+> Trauma-focused CBT or EMDR first.
 :::
 
 ## 3.3 The trauma therapies in detail [core]
@@ -231,6 +321,15 @@ Routinely making everyone recount the trauma in detail soon after (single-sessio
 A trauma memory is like things shoved into a cupboard in a hurry. Every time the door opens, everything falls out (flashbacks). Therapy takes things out one by one, looks at them, and puts them back in order, so the door can open without an avalanche.
 :::
 
+:::mcq
+Q: A survivor feels intense shame: "I should have fought back." The therapy that most directly targets this is:
+- Prolonged exposure only
+- *Cognitive processing therapy
+- Narrative exposure therapy
+- Hypnosis
+> CPT works on stuck points such as self-blame.
+:::
+
 ## 3.4 Looking after the helper [core]
 :::define Secondary traumatic stress
 Trauma-like symptoms (intrusive images, avoidance, arousal) in people who hear repeatedly about others' trauma: therapists, doctors, police, social workers. Related ideas: **burnout** (exhaustion, cynicism, low accomplishment) and **compassion fatigue**.
@@ -244,6 +343,15 @@ Trauma-like symptoms (intrusive images, avoidance, arousal) in people who hear r
 2. Name four EMDR phases. || History, preparation, assessment, desensitisation, installation, body scan, closure, re-evaluation.
 3. When would you choose a phased approach? || Complex PTSD, ongoing danger, severe dissociation.
 4. Define secondary traumatic stress and two protective measures. || Trauma symptoms from hearing others' trauma; supervision, peer support, manageable caseloads.
+:::
+
+:::mcq
+Q: A counsellor working with trauma survivors has intrusive images of clients' stories and dreads work. Most helpful:
+- Working longer hours
+- *Supervision, peer support and a manageable caseload
+- Avoiding all trauma cases forever
+- Keeping it to herself
+> Secondary traumatic stress is common; support the helper.
 :::
 
 # Part IV · Exam zone

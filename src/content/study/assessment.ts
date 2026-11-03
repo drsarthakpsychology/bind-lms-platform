@@ -72,6 +72,15 @@ A clock that is always 10 minutes fast is **reliable** (consistent) but **not va
 5. Define sensitivity and specificity. || True positives detected; true negatives correctly excluded.
 :::
 
+:::mcq
+Q: A depression scale gives the same score when two raters use it on the same patient. This shows good:
+- Content validity
+- *Inter-rater reliability
+- Predictive validity
+- Standardisation
+> Consistency between raters.
+:::
+
 ## 1.2 Scores and the normal curve [core]
 Every standardised test turns a raw score into a position on a distribution. If you can read that position, you can read any report.
 
@@ -108,6 +117,15 @@ A percentile tells you how many classmates are shorter than you. A z score tells
 4. What is the Flynn effect? || Rising population IQ scores, so old norms overestimate IQ.
 :::
 
+:::mcq
+Q: A child's IQ is reported as 72. What is the best way to report it?
+- "IQ 72, intellectual disability"
+- *"IQ 72, likely range about 67 to 77, with adaptive functioning to decide"
+- "Normal intelligence"
+- "IQ not useful"
+> Every score has error; report a confidence interval near cut-offs.
+:::
+
 # Part II · The tests
 
 ## 2.1 Intelligence [core]
@@ -133,6 +151,15 @@ A percentile tells you how many classmates are shorter than you. A z score tells
 Intellectual disability needs **adaptive deficits** too, and severity is set by adaptive functioning. Interpret IQ against education, language and culture, and remember the measurement error (a confidence interval of several points).
 :::
 
+:::mcq
+Q: To certify intellectual disability in an Indian child, which pair is essential?
+- MMPI and Rorschach
+- *An IQ test (Binet–Kamat or MISIC) and the Vineland Social Maturity Scale
+- PHQ-9 and GAD-7
+- EEG and MRI
+> Intelligence plus adaptive functioning.
+:::
+
 ## 2.2 Personality and projective tests [core]
 ### Objective (self-report) personality tests
 | Test | Measures |
@@ -156,6 +183,15 @@ Ambiguous stimuli onto which a person “projects” inner needs and conflicts.
 Projective tests can open up themes for discussion, but scoring reliability and validity are weaker than objective tests. Never base a diagnosis on a projective test alone.
 :::
 
+:::mcq
+Q: A person shows high F scale on the MMPI-2 with very many symptoms endorsed. A possible meaning is:
+- Defensiveness
+- *Severe distress, exaggeration or random answering
+- Social introversion
+- Good mental health
+> F suggests faking bad or random responding; check validity first.
+:::
+
 ## 2.3 Neuropsychological tests [core]
 | Test | Assesses |
 |---|---|
@@ -168,6 +204,15 @@ Projective tests can open up themes for discussion, but scoring reliability and 
 | **PGI Battery of Brain Dysfunction** | Indian battery for organic impairment |
 | **NIMHANS Neuropsychology Battery** | Indian battery for adults and children |
 | Luria–Nebraska, Halstead–Reitan | Comprehensive batteries |
+
+:::mcq
+Q: A head-injured man cannot switch sorting rules when the tester changes them. Which test shows this?
+- Bender Gestalt
+- *Wisconsin Card Sorting Test
+- TAT
+- Raven's matrices
+> Set-shifting and the frontal lobes.
+:::
 
 ## 2.4 Rating scales and interviews [core]
 | Scale | Measures | Notes |
@@ -192,6 +237,15 @@ Projective tests can open up themes for discussion, but scoring reliability and 
 4. Name three projective tests. || Rorschach, TAT, sentence completion (also Draw-a-Person).
 5. Which test assesses set-shifting and the frontal lobes? || Wisconsin Card Sorting Test.
 6. Which scales measure mania and OCD severity? || YMRS; Y-BOCS.
+:::
+
+:::mcq
+Q: To track how severe a man's OCD is over treatment, the best scale is:
+- YMRS
+- *Y-BOCS
+- PANSS
+- AUDIT
+> Yale–Brown Obsessive Compulsive Scale, 0 to 40.
 :::
 
 ## 2.5 Theories of intelligence [core]
@@ -222,6 +276,15 @@ In normal ageing, **fluid** intelligence (speed, new problem-solving) declines w
 2. Contrast fluid and crystallised intelligence. || Fluid: new problem-solving, declines with age. Crystallised: knowledge, preserved.
 3. Name four of Gardner's intelligences. || Linguistic, logical-mathematical, spatial, musical, bodily-kinaesthetic, interpersonal, intrapersonal, naturalistic.
 4. How was ratio IQ calculated? || Mental age divided by chronological age, times 100.
+:::
+
+:::mcq
+Q: A 75-year-old has a large vocabulary and general knowledge but is slow on new puzzles. This pattern fits:
+- Early Alzheimer's
+- *Normal ageing: crystallised kept, fluid slower
+- Intellectual disability
+- Depression only
+> Fluid intelligence declines more with age.
 :::
 
 ## 2.6 Reading the MMPI and the Rorschach [core]
@@ -256,6 +319,15 @@ In normal ageing, **fluid** intelligence (speed, new problem-solving) declines w
 2. Name the MMPI scale for anxiety and obsessions. || Scale 7, psychasthenia.
 3. What is the conversion V? || High scales 1 and 3 with a lower scale 2.
 4. Name the four main Rorschach scoring categories. || Location, determinants, content, form quality (and popular responses).
+:::
+
+:::mcq
+Q: A man's MMPI-2 shows raised scales 1 and 3 with a lower scale 2. This "conversion V" suggests:
+- Mania
+- *Physical complaints with denial of emotional distress
+- Psychosis
+- Antisocial traits
+> A classic code type.
 :::
 
 ## 2.7 Bedside cognitive screening [core]
@@ -293,6 +365,15 @@ In normal ageing, **fluid** intelligence (speed, new problem-solving) declines w
 4. Normal forward digit span? || About 7, plus or minus 2.
 :::
 
+:::mcq
+Q: A retired engineer scores 27 on the MMSE but has trouble planning and switching tasks. The better screen is:
+- Repeat the MMSE
+- *MoCA
+- Rorschach
+- Vineland
+> MoCA includes executive tasks and suits mild impairment.
+:::
+
 # Part III · Using tests well
 
 ## 3.1 The process and the report [core]
@@ -324,6 +405,15 @@ Instead of “FSIQ 68, below 2nd percentile”, write: “On the intelligence te
 3. Who may administer clinical psychological tests in India? || Qualified, RCI-registered professionals.
 :::
 
+:::mcq
+Q: A psychological report states only "IQ 85". The main missing piece is:
+- The test colour
+- *Interpretation in context: referral question, conditions of testing, strengths and recommendations
+- The patient's address
+- The tester's age
+> A report answers a question, not just a number.
+:::
+
 ## 3.2 Choosing tests and testing ethically [core]
 ### From referral question to test battery
 | Referral question | Useful tests |
@@ -351,6 +441,15 @@ Instead of “FSIQ 68, below 2nd percentile”, write: “On the intelligence te
 1. Which two tests are essential for diagnosing intellectual disability? || An IQ test and an adaptive functioning scale (VSMS).
 2. Name four ethical principles of psychological testing. || Informed consent, competence, test security, cultural fairness, confidentiality and feedback.
 3. What tests help separate dementia from depression? || Cognitive screens plus a depression scale, and retesting after treatment.
+:::
+
+:::mcq
+Q: A student from a rural Hindi-medium school is given an English IQ test. The ethical problem is:
+- Test security
+- *Cultural and language fairness: scores may underestimate ability
+- Confidentiality
+- Informed consent
+> Use suitable language and norms; note limits.
 :::
 
 # Part IV · Exam zone

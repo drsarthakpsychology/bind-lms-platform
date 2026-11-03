@@ -63,6 +63,15 @@ Tolerance and withdrawal **don't count** towards the diagnosis when they occur w
 4. Which brain pathway do all drugs of abuse act on? || Mesolimbic dopamine reward pathway.
 :::
 
+:::mcq
+Q: A man drinks more than he means to, has tried to cut down twice and failed, gave up cricket for drinking, and drinks despite a liver warning. He has no withdrawal or tolerance. Severity of alcohol use disorder:
+- Mild (2 to 3 criteria)
+- *Moderate (4 to 5 criteria)
+- Severe (6 or more)
+- Not a disorder without withdrawal
+> Count criteria: larger amounts, failed attempts, activities given up, use despite harm = 4.
+:::
+
 ## 1.2 Taking a substance history [core]
 - Be **non-judgemental** and matter-of-fact; normalise (“Many people drink to cope with stress; how about you?”).
 - For each substance: age at first use, pattern, route, amount, frequency, **last use**, dependence features, withdrawal, complications, treatment, periods of abstinence, **readiness to change**.
@@ -80,6 +89,15 @@ Tolerance and withdrawal **don't count** towards the diagnosis when they occur w
 :::recall
 1. List the eight things to ask about each substance. || Age at first use, pattern, route, amount, last use, dependence, withdrawal, complications (also treatment, abstinence, readiness).
 2. Which forms of tobacco are often missed in India? || Chewed tobacco: gutkha, khaini, and bidis.
+:::
+
+:::mcq
+Q: A patient says he drinks "a bottle on Saturdays". The most useful next question is:
+- "Why do you drink?"
+- *"What size bottle and what drink, and over how many hours?"
+- "Do you drink socially?"
+- "Are you an alcoholic?"
+> Turn it into standard drinks and a pattern.
 :::
 
 ## 1.3 Screening and brief intervention [core]
@@ -117,6 +135,15 @@ Tolerance and withdrawal **don't count** towards the diagnosis when they occur w
 4. Expand FRAMES. || Feedback, responsibility, advice, menu, empathy, self-efficacy.
 :::
 
+:::mcq
+Q: A man's AUDIT score is 12 and his liver tests are normal. The best step in primary care is:
+- Admit for detox
+- *A brief intervention: feedback, advice and a menu of options
+- Start naltrexone and disulfiram together
+- No action
+> Hazardous drinking zone: brief advice works.
+:::
+
 ## 1.4 Dual diagnosis [core]
 :::define Dual diagnosis
 A substance use disorder together with another mental disorder. It is the **rule, not the exception**: depression, anxiety, PTSD, ADHD, bipolar disorder, psychosis and personality disorders all raise substance use risk, and substances worsen all of them.
@@ -142,6 +169,15 @@ A substance use disorder together with another mental disorder. It is the **rule
 3. Which psychosis often predicts later schizophrenia? || Cannabis-induced psychosis.
 :::
 
+:::mcq
+Q: A woman drinking heavily for years has low mood. Two weeks after stopping alcohol, her mood is lifting. This most suggests:
+- Independent major depression needing urgent ECT
+- *An alcohol-induced depressive disorder
+- Bipolar disorder
+- Dysthymia
+> Induced disorders settle with abstinence, usually within a month.
+:::
+
 # Part II · Alcohol
 
 ## 2.1 Alcohol use and its complications [core]
@@ -156,6 +192,15 @@ A substance use disorder together with another mental disorder. It is the **rule
 | Mental | Depression, anxiety, suicide, alcoholic hallucinosis, delusions of jealousy, sexual dysfunction |
 | Social | Domestic violence, road accidents, job loss, debt, legal problems |
 | Pregnancy | Fetal alcohol spectrum disorder |
+
+:::mcq
+Q: Which blood finding best supports recent heavy drinking?
+- Low MCV
+- *Raised GGT and MCV, with AST higher than ALT
+- High platelets
+- Low bilirubin only
+> Classic alcohol pattern; carbohydrate-deficient transferrin is more specific.
+:::
 
 ## 2.2 Alcohol withdrawal [core]
 | Time after last drink | What happens |
@@ -172,12 +217,30 @@ A substance use disorder together with another mental disorder. It is the **rule
 - Delirium tremens: inpatient or ICU care, large benzodiazepine doses, monitor closely.
 :::
 
+:::mcq
+Q: On his second day in hospital a heavy drinker is shaking, sweating and anxious with a fast pulse but is fully oriented. The best treatment is:
+- Haloperidol
+- *A benzodiazepine on a symptom-guided schedule, with thiamine
+- Nothing; it will pass
+- Alcohol in small amounts
+> Treat withdrawal early to prevent seizures and delirium tremens.
+:::
+
 ## 2.3 Wernicke and Korsakoff [core]
 :::safety Wernicke's encephalopathy
 Acute thiamine deficiency. The classic triad: **confusion, ataxia, eye signs** (nystagmus, ophthalmoplegia); all three appear together in only a minority, so **treat on suspicion**. Give **IV thiamine** in high doses for several days **before glucose**. Untreated, it can kill or progress to Korsakoff syndrome.
 :::
 :::define Korsakoff syndrome
 Chronic memory disorder after Wernicke's: severe **anterograde amnesia** (can't form new memories), some retrograde amnesia, and **confabulation**, with relatively preserved other cognition and consciousness.
+:::
+
+:::mcq
+Q: A malnourished drinker is confused, unsteady and has nystagmus. Glucose is needed. The correct order is:
+- Glucose first, then thiamine
+- *IV thiamine first (high dose), then glucose
+- Oral thiamine next week
+- No thiamine unless all three signs persist
+> Thiamine before glucose prevents worsening Wernicke's encephalopathy.
 :::
 
 ## 2.4 Relapse prevention [core]
@@ -201,6 +264,15 @@ Families sometimes ask for disulfiram to be mixed in food without the patient kn
 4. Describe Korsakoff syndrome. || Anterograde amnesia with confabulation and preserved consciousness.
 5. Which benzodiazepine in liver disease? || Lorazepam.
 6. Name three relapse-prevention medicines with one caution each. || Disulfiram (consent, heart disease), naltrexone (opioids, liver failure), acamprosate (kidney failure).
+:::
+
+:::mcq
+Q: A man wants help to stay sober but has kidney failure. Which relapse-prevention medicine should be avoided?
+- Naltrexone
+- *Acamprosate
+- Disulfiram
+- Baclofen
+> Acamprosate is cleared by the kidneys.
 :::
 
 ## 2.5 Alcohol in special groups and the body [core]
@@ -234,6 +306,15 @@ Families sometimes ask for disulfiram to be mixed in food without the patient kn
 4. What is CRAFT? || Community reinforcement and family training for families of reluctant drinkers.
 :::
 
+:::mcq
+Q: A pregnant woman asks how much alcohol is safe. The correct answer is:
+- One drink a day
+- Only wine is safe
+- *No known amount is safe in pregnancy
+- Safe after the first trimester
+> Fetal alcohol spectrum disorder is preventable.
+:::
+
 # Part III · Other substances
 
 ## 3.1 Opioids [core]
@@ -258,6 +339,15 @@ Pinpoint pupils, slow or stopped breathing, unconsciousness. Give **naloxone** (
 - Symptomatic withdrawal relief: clonidine, painkillers, antiemetics, loperamide.
 - Harm reduction: needle and syringe programmes, naloxone for families, HIV and hepatitis testing.
 
+:::mcq
+Q: A young man is brought in drowsy, breathing slowly, with pinpoint pupils. The first drug is:
+- Flumazenil
+- *Naloxone, and watch: it may wear off before the opioid does
+- Haloperidol
+- Activated charcoal only
+> Opioid overdose: support breathing and give naloxone.
+:::
+
 ## 3.2 Cannabis, stimulants and others [core]
 | Substance | Intoxication | Problems |
 |---|---|---|
@@ -266,6 +356,15 @@ Pinpoint pupils, slow or stopped breathing, unconsciousness. Give **naloxone** (
 | **Hallucinogens** (LSD, mushrooms) | Perceptual changes, synaesthesia, mood swings | “Bad trips”, accidents, flashbacks (hallucinogen persisting perception disorder) |
 | **Inhalants** (whitener, petrol, glue) | Euphoria, slurred speech, unsteadiness | Common in street children and adolescents; brain, liver and kidney damage; **sudden sniffing death** (arrhythmia) |
 | **Sedatives** (benzodiazepines) | Drowsiness, slurring, unsteadiness | Dependence; withdrawal seizures; dangerous with alcohol and opioids |
+
+:::mcq
+Q: A student smokes cannabis daily and over a month becomes suspicious and hears voices. The most important advice is:
+- Cannabis is harmless
+- *Stop cannabis: it can trigger psychosis and raise the risk of schizophrenia
+- Switch to synthetic cannabinoids
+- Only smoke at weekends
+> Cannabis-induced psychosis often predicts later schizophrenia.
+:::
 
 ## 3.3 Tobacco and gambling [core]
 ### Tobacco
@@ -285,6 +384,15 @@ Pinpoint pupils, slow or stopped breathing, unconsciousness. Give **naloxone** (
 4. Why must buprenorphine start only in moderate withdrawal? || To avoid precipitated withdrawal.
 5. What is formication, and which drugs cause it? || Feeling insects under the skin; stimulants (cocaine, amphetamine).
 6. What is the gambling disorder threshold? || 4 of 9 in 12 months.
+:::
+
+:::mcq
+Q: A smoker with depression wants to quit. Which medicine helps with both?
+- Varenicline only
+- *Bupropion
+- Nicotine patches only
+- Alprazolam
+> Bupropion is an antidepressant licensed for smoking cessation.
 :::
 
 ## 3.4 Opioid treatment and harm reduction in India [core]
@@ -320,6 +428,15 @@ After detox, prison or a hospital stay, opioid tolerance falls quickly. A person
 4. Name four harm reduction measures. || Needle programmes, OST, naloxone, HIV and hepatitis testing.
 :::
 
+:::mcq
+Q: A heroin user is in severe craving but has only mild withdrawal now. When should buprenorphine be started?
+- Immediately
+- *Once withdrawal is at least moderate, to avoid precipitated withdrawal
+- Only after a week of abstinence
+- Never with heroin users
+> Buprenorphine displaces heroin; too early causes sudden withdrawal.
+:::
+
 ## 3.5 Newer and hidden problems [core]
 | Problem | What to know |
 |---|---|
@@ -338,6 +455,15 @@ After detox, prison or a hospital stay, opioid tolerance falls quickly. A person
 1. Which over-the-counter products are commonly misused in India? || Codeine cough syrups, tramadol, alprazolam, pregabalin.
 2. Name a danger specific to ketamine misuse. || Bladder damage.
 3. How long can cannabis stay positive in urine for heavy users? || Several weeks.
+:::
+
+:::mcq
+Q: A college student uses codeine cough syrup daily "for sleep" and tramadol from a chemist. The best first step is:
+- Ignore; they are legal
+- *Ask about every medicine, explain dependence, and plan a supervised taper with support
+- Prescribe alprazolam instead
+- Report to police
+> Over-the-counter opioids cause dependence; treat as substance use.
 :::
 
 # Part IV · Helping people change
@@ -370,6 +496,15 @@ A collaborative conversation style that strengthens a person's **own** motivatio
 1. Name the stages of change in order. || Precontemplation, contemplation, preparation, action, maintenance, relapse.
 2. What does OARS stand for? || Open questions, affirmations, reflections, summaries.
 3. What is the main task in contemplation? || Exploring and resolving ambivalence.
+:::
+
+:::mcq
+Q: A man says, "I know drinking hurts my family, but it's the only way I relax." His stage of change is:
+- Precontemplation
+- *Contemplation
+- Action
+- Maintenance
+> Ambivalence: he sees both sides. Explore it with MI.
 :::
 
 # Part V · Exam zone
