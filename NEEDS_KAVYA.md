@@ -641,3 +641,5 @@ placeholder tokens on the live pages — supply both in
 Nothing else is outstanding: routes, redirects, footer legal links, waitlist
 acceptance checkbox (persisting timestamp + version), sitemap, JSON-LD, print
 styles, and responsive tables are all verified live.
+
+- 2026-11-03 Cohorts: waiting on owner decisions (programmes, certificates, cohort-scoped roles, in-browser content editor, which reports/attendance) — see docs/transformation/COHORT_PROPOSAL.md §8-9. QUEUE.md T208+ paused at owner request during the transformation brief.
