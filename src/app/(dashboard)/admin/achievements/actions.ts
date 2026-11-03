@@ -8,6 +8,7 @@ import { awardEligibleBadges, loadEvalCtx } from "@/lib/achievements/server";
 import { evaluate } from "@/lib/achievements/engine";
 import { generateCredentialPdf } from "@/lib/achievements/pdf";
 import { putCredentialAsset, credentialDownloadUrl, newCredentialId } from "@/lib/achievements/storage";
+import { notifyCredential } from "@/lib/achievements/notify";
 import { getObjectBufferR2 } from "@/lib/media/r2";
 import { displayName } from "@/lib/learn/leaderboard";
 import { REQUIREMENT_KINDS, type AchievementRequirement } from "@/lib/achievements/rules";
@@ -276,8 +277,21 @@ export async function issueCertificate(credentialId: string): Promise<{ error: s
 
   if (error) return { error: error.message };
   await audit(admin, { action: "certificate.issued", targetType: "credential", targetId: credentialId, details: { signature: ach.signature_asset_path as string }, actor: me });
+
+  // Notify only on real issuance (never on a draft).
+  const { data: profile } = await admin.from("profiles").select("email").eq("id", cred.user_id as string).maybeSingle();
+  await notifyCredential({
+    userId: cred.user_id as string,
+    email: profile?.email ? String(profile.email) : null,
+    name: cred.student_name as string,
+    type: "certificate",
+    title: ach.title as string,
+    credentialId,
+  }).catch(() => {});
+
   revalidatePath("/admin/achievements");
   revalidatePath("/achievements");
+  revalidatePath("/notifications");
   return { error: null };
 }
 

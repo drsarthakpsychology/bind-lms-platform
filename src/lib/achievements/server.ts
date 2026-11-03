@@ -2,8 +2,9 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { normalise } from "@/lib/learn/engine";
 import { evaluate, type EvalCtx } from "./engine";
-import { moduleFacets } from "./rules";
+import { moduleFacets, type AchievementRequirement } from "./rules";
 import { newCredentialId } from "./storage";
+import { notifyCredential } from "./notify";
 import { displayName } from "@/lib/learn/leaderboard";
 
 /**
@@ -67,8 +68,9 @@ export async function awardEligibleBadges(admin: SupabaseClient, userId: string,
       skipped++;
       continue;
     }
+    const credentialId = newCredentialId();
     const { error } = await admin.from("credentials").insert({
-      credential_id: newCredentialId(),
+      credential_id: credentialId,
       user_id: userId,
       achievement_id: a.id,
       type: "badge",
@@ -79,8 +81,26 @@ export async function awardEligibleBadges(admin: SupabaseClient, userId: string,
       reason: result.reason,
     });
     if (error && (error as { code?: string }).code === "23505") skipped++;
-    else if (!error) awarded++;
+    else if (!error) {
+      awarded++;
+      // Notify only on a genuinely NEW award (never on recalculation).
+      const moduleName = moduleTitle(a.requirements as AchievementRequirement, ctx);
+      await notifyCredential({
+        userId,
+        email: profile?.email ? String(profile.email) : null,
+        name,
+        type: "badge",
+        title: String(a.title),
+        credentialId,
+        moduleName,
+      }).catch(() => {});
+    }
   }
 
   return { awarded, skipped };
+}
+
+function moduleTitle(req: AchievementRequirement, ctx: EvalCtx): string | undefined {
+  const mod = (req as { module?: string }).module;
+  return mod ? ctx.modules.find((m) => m.id === mod)?.title : undefined;
 }

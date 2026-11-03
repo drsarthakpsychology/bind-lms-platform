@@ -25,9 +25,13 @@ function verifyUrl(id: string) {
   return `${window.location.origin}/verify/${id}`;
 }
 
-function ShareRow({ credentialId }: { credentialId: string }) {
+function linkedInPost(title: string, url: string) {
+  return `I'm happy to share that I've earned the "${title}" credential as part of my learning journey with VIBHA School of Psychology.\n\nAnother step forward in developing my understanding of psychology and mental health.\n\n${url}\n\n#Psychology #LearningAndDevelopment #VIBHA`;
+}
+
+function ShareRow({ credentialId, title }: { credentialId: string; title: string }) {
   const url = verifyUrl(credentialId);
-  const text = `I earned a credential from VIBHA School of Psychology. Verify it here: ${url}`;
+  const text = linkedInPost(title, url);
   const [copied, setCopied] = React.useState(false);
   return (
     <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -99,7 +103,7 @@ export function AchievementsClient({ earned, progress }: { earned: MyCredential[
                     <p className="break-all font-mono text-[0.65rem] text-muted-foreground">{b.credential_id}</p>
                   </div>
                 </div>
-                <ShareRow credentialId={b.credential_id} />
+                <ShareRow credentialId={b.credential_id} title={b.title} />
               </li>
             ))}
           </ul>
@@ -149,7 +153,7 @@ export function AchievementsClient({ earned, progress }: { earned: MyCredential[
                     <Download className="size-3.5" aria-hidden /> PDF
                   </button>
                 )}
-                <ShareRow credentialId={c.credential_id} />
+                <ShareRow credentialId={c.credential_id} title={c.title} />
               </li>
             ))}
           </ul>
