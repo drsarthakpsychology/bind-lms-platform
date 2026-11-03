@@ -34,12 +34,20 @@ export const loadStudentAccess = cache(async (userId: string): Promise<StudentAc
   ]);
   if (mErr || gErr) return NO_ACCESS_DATA;
   const cohortIds = (members ?? []).map((m) => m.cohort_id as string);
-  let cohortLessonIds = new Set<string>();
+  const cohortsByLesson = new Map<string, string[]>();
   if (cohortIds.length) {
-    const { data: links } = await admin.from("lesson_cohorts").select("lesson_id").in("cohort_id", cohortIds);
-    cohortLessonIds = new Set((links ?? []).map((l) => l.lesson_id as string));
+    const { data: links } = await admin.from("lesson_cohorts").select("lesson_id, cohort_id").in("cohort_id", cohortIds).limit(20000);
+    for (const l of links ?? []) {
+      const k = l.lesson_id as string;
+      cohortsByLesson.set(k, [...(cohortsByLesson.get(k) ?? []), l.cohort_id as string]);
+    }
   }
-  return { cohortIds, cohortLessonIds, grantedLessonIds: new Set((grants ?? []).map((g) => g.lesson_id as string)) };
+  return {
+    cohortIds,
+    cohortLessonIds: new Set(cohortsByLesson.keys()),
+    grantedLessonIds: new Set((grants ?? []).map((g) => g.lesson_id as string)),
+    cohortsByLesson,
+  };
 });
 
 /** The names of a person's cohorts, for "You're in Cohort 2" on their screens. */
@@ -76,3 +84,20 @@ export async function visibleCourseIds(userId: string, isAdmin: boolean, publish
   const base = a.cohortIds.length ? [] : legacyIds;
   return publishedIds.filter((id) => fromLessons.has(id) || base.includes(id));
 }
+
+/**
+ * Everyone who shares a cohort with this person (them included), for boards
+ * that must only show a student their own cohort. Null = they are in no
+ * cohort (or the tables are missing): the caller keeps its old "everyone" list.
+ */
+export const loadCohortPeerIds = cache(async (userId: string): Promise<Set<string> | null> => {
+  const a = await loadStudentAccess(userId);
+  if (!a.cohortIds.length) return null;
+  try {
+    const { data, error } = await createAdminClient().from("cohort_members").select("user_id").in("cohort_id", a.cohortIds).limit(20000);
+    if (error) return null;
+    return new Set([userId, ...(data ?? []).map((m) => m.user_id as string)]);
+  } catch {
+    return null;
+  }
+});

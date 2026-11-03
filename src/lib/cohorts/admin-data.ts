@@ -1,7 +1,9 @@
 import "server-only";
+import { cache } from "react";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import type { CohortRow } from "./access";
+import type { CourseCohortLite } from "./rules";
 
 export type CohortSummary = CohortRow & { members: number; lectures: number; detailsDone: number };
 
@@ -132,3 +134,44 @@ export async function loadPersonAccess(userId: string) {
     details: details as Record<string, string | null> | null,
   };
 }
+
+export type CourseCohorts = {
+  /** False when the cohort tables aren't in the database yet. */
+  ready: boolean;
+  /** This course's cohorts, oldest first (made for it, or sharing any of its lectures). */
+  cohorts: CourseCohortLite[];
+  /** Lecture id -> ids of this course's cohorts it is shared with. */
+  links: Map<string, string[]>;
+};
+
+/**
+ * One course's cohorts and which of its lectures each can watch. Admin
+ * screens only (read with the server key). Cached for the request.
+ */
+export const loadCourseCohorts = cache(async (courseId: string): Promise<CourseCohorts> => {
+  const admin = createAdminClient();
+  const [cohortsRes, { data: lessons }] = await Promise.all([
+    admin.from("cohorts").select("id, name, status, course_id, created_at").order("created_at", { ascending: true }),
+    admin.from("lessons").select("id").eq("course_id", courseId).limit(2000),
+  ]);
+  if (cohortsRes.error) return { ready: false, cohorts: [], links: new Map() };
+  const lessonIds = (lessons ?? []).map((l) => l.id as string);
+  const { data: shared } = lessonIds.length
+    ? await admin.from("lesson_cohorts").select("lesson_id, cohort_id").in("lesson_id", lessonIds.slice(0, 1000)).limit(20000)
+    : { data: [] as { lesson_id: string; cohort_id: string }[] };
+  const sharing = new Set((shared ?? []).map((s) => s.cohort_id as string));
+  const rows = (cohortsRes.data ?? []).filter((c) => c.course_id === courseId || sharing.has(c.id as string));
+  const ids = new Set(rows.map((c) => c.id as string));
+  const links = new Map<string, string[]>();
+  for (const l of shared ?? []) {
+    const cid = l.cohort_id as string;
+    if (!ids.has(cid)) continue;
+    const k = l.lesson_id as string;
+    links.set(k, [...(links.get(k) ?? []), cid]);
+  }
+  return {
+    ready: true,
+    cohorts: rows.map((c) => ({ id: c.id as string, name: c.name as string, status: String(c.status ?? "upcoming") })),
+    links,
+  };
+});
