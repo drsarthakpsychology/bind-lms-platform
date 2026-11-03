@@ -16,6 +16,7 @@ export function mergeCopies(win: LearnState, other: LearnState): LearnState {
   return {
     ...win,
     notesRead: { ...other.notesRead, ...win.notesRead },
+    lab: { ...other.lab, ...win.lab },
     study: {
       ...win.study,
       done: { ...other.study.done, ...win.study.done },

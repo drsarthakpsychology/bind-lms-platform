@@ -32,7 +32,8 @@ export type FeatureKey =
   | "checkin"
   | "modules"
   | "knowledge_tutor"
-  | "learn";
+  | "learn"
+  | "lab";
 
 export type FlagStatus = "off" | "live" | "unlocked";
 
