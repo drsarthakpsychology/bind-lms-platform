@@ -60,6 +60,15 @@ A case sheet is a **clinical record and a legal document**. It should let anothe
 2. Rewrite “non-compliant” respectfully. || Has not been taking the medicine because of side effects (or the actual reason).
 :::
 
+:::mcq
+Q: A patient says, "Bahut ghabrahat hoti hai, neend nahi aati." In the case sheet you should write:
+- "Patient is anxious."
+- *The patient's words in quotes, then the clinical description (anxiety, insomnia)
+- Only "anxiety disorder"
+- Nothing until diagnosis
+> Keep the patient's voice and translate it into clinical terms.
+:::
+
 ## 1.2 Structure at a glance [core]
 1. Identification data
 2. Informants and reliability
@@ -79,6 +88,15 @@ A case sheet is a **clinical record and a legal document**. It should let anothe
 16. Risk assessment and safety plan
 
 Module 1 covers each heading in depth; this module is about **writing** them.
+
+:::mcq
+Q: Where in the case sheet does "sleeps 4 hours for 3 weeks" belong?
+- Mental state examination
+- *History of present illness
+- Family history
+- Formulation
+> The MSE is only what you observe now.
+:::
 
 ## 1.3 Writing the MSE for common presentations [core]
 The MSE is a **snapshot of now**, written so another clinician could picture the patient. Below are short model MSEs. Notice: observations, the patient's own words in quotes, and no diagnosis inside the MSE.
@@ -129,6 +147,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 3. Which MSE findings would you expect in mania? || Pressured speech, elated or irritable affect, flight of ideas, grandiose delusions, distractibility, poor insight.
 :::
 
+:::mcq
+Q: In a mania MSE, which line belongs under Thought rather than Speech?
+- "Loud and pressured"
+- "Hard to interrupt"
+- *"Flight of ideas with clang associations; grandiose delusion"
+- "Rapid rate"
+> Stream, form and content go under Thought.
+:::
+
 # Part II · Formulation, diagnosis and plan
 
 ## 2.1 The 5P formulation [core]
@@ -144,6 +171,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 “Mr A, a 29-year-old unmarried software engineer from a middle-class nuclear family in Ahmedabad, with a perfectionistic premorbid personality and a family history of depression in his mother, presents with three months of low mood, anhedonia, early morning waking, reduced appetite with 5 kg weight loss, poor concentration, guilt and passive death wishes, following failure in a promotion exam and a break-up, maintained by social withdrawal and nightly alcohol use. No past episodes of elevated mood, psychosis or substance dependence. MSE shows depressed, non-reactive affect, slowed speech and thought, ideas of worthlessness, and passive death wishes without plan; insight grade 4.”
 :::
 
+:::mcq
+Q: Which factor is "predisposing" in a 5P formulation of depression?
+- Job loss last month
+- *A childhood of harsh criticism and a family history of depression
+- Withdrawal from friends now
+- A supportive sister
+> Long-standing vulnerabilities.
+:::
+
 ## 2.2 Diagnosis and differential [core]
 - Write the **provisional diagnosis** in standard terms with specifiers, and the classification used (ICD-11 or DSM-5-TR).
 - List **differentials** with evidence for and against each:
@@ -156,6 +192,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 5. Hypothyroidism: to exclude with TSH.
 :::
 
+:::mcq
+Q: You diagnose bipolar I, current episode manic. Which line best supports the differential?
+- "Not schizophrenia because I think so"
+- *"Against schizophrenia: episodic course, full recovery between episodes, mood-congruent grandiosity"
+- "Investigations will decide"
+- "Family history is irrelevant"
+> Give features for and against each differential.
+:::
+
 ## 2.3 The biopsychosocial plan [core]
 | | Short term | Longer term |
 |---|---|---|
@@ -163,6 +208,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 | **Psychological** | Psychoeducation; safety plan; behavioural activation | CBT for depression; relapse prevention |
 | **Social** | Involve sister (with consent); leave from work if needed | Return-to-work plan; rebuild social contact; financial counselling |
 | **Risk** | Means safety; crisis numbers (Tele-MANAS 14416); review in 1 week | Review risk at every visit |
+
+:::mcq
+Q: Which item belongs in the social part of a biopsychosocial plan?
+- Lithium with level checks
+- CBT for relapse prevention
+- *Meeting the family, arranging leave from work, linking to a support group
+- Thyroid tests
+> Bio, psycho and social each have their own actions.
+:::
 
 ## 2.4 Progress notes and other records [core]
 :::mnemonic SOAP notes
@@ -176,6 +230,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 1. Name the 5Ps. || Presenting, predisposing, precipitating, perpetuating, protective.
 2. Expand SOAP. || Subjective, objective, assessment, plan.
 3. What must a discharge summary include? || Dates, diagnosis, findings, treatment and response, condition, medicines, risk and safety plan, follow-up, contacts.
+:::
+
+:::mcq
+Q: A progress note says only "Patient better." What is the main problem?
+- It is too long
+- *It gives no observable detail, risk or plan
+- It uses the wrong pen
+- It should be in the MSE section
+> Notes should record change, risk and what will be done.
 :::
 
 ## 2.5 Risk, discharge and referral writing [core]
@@ -215,6 +278,15 @@ The MSE is a **snapshot of now**, written so another clinician could picture the
 3. What should the first lines of a referral letter state? || Who, why, and the question to be answered.
 :::
 
+:::mcq
+Q: In the risk section, which is a "risk from others"?
+- Suicidal thoughts
+- Threats to a neighbour
+- *Being financially exploited by a relative
+- Absconding
+> Vulnerability and exploitation are often missed.
+:::
+
 ## 2.6 Presenting a case in an exam [core]
 ### The structure (about 10 minutes)
 1. **One-line summary**: "Mr A, a 32-year-old married farmer from Haryana, was brought by his wife with complaints of reduced sleep, increased talk and spending for 2 weeks."
@@ -241,6 +313,15 @@ If you didn't ask about something, say "I did not elicit that; I would like to a
 1. What does a one-line summary contain? || Age, sex, background, who brought them, main complaints and duration.
 2. Why include important negatives? || They support your diagnosis and rule out differentials.
 3. How should you respond to a question about something you didn't ask? || Admit it and say you would ask.
+:::
+
+:::mcq
+Q: An examiner asks about a symptom you didn't ask the patient about. Best answer:
+- Make up a finding
+- *Say you didn't elicit it and how you would ask
+- Change the diagnosis
+- Say it's irrelevant
+> Honesty about gaps is expected.
 :::
 
 # Part III · A complete worked example

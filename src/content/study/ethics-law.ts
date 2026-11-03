@@ -37,6 +37,15 @@ export const text = String.raw`
 
 Also: **fidelity** (keeping promises, honesty), **respect for dignity**, and **veracity** (truth-telling). Dilemmas arise when principles conflict, for example autonomy versus beneficence in a person refusing treatment while at risk.
 
+:::mcq
+Q: A capable adult refuses ECT that the team believes would help. Respecting her refusal follows which principle above the others?
+- Beneficence
+- *Autonomy
+- Justice
+- Non-maleficence
+> A capable person may refuse even helpful treatment.
+:::
+
 ## 1.2 Consent and capacity [core]
 :::define Valid informed consent
 Consent is valid when it is **informed** (nature, purpose, benefits, risks, alternatives, including no treatment), **voluntary** (no coercion), and given by a person **with capacity** for that decision. It can be withdrawn at any time.
@@ -50,11 +59,29 @@ For a **specific decision at a specific time**, the person can: (1) **understand
 - An unwise decision is not proof of incapacity.
 - The Mental Healthcare Act 2017 uses this capacity-based approach.
 
+:::mcq
+Q: A man with mild intellectual disability can understand, remember and weigh the choice to have a blood test and can tell you his decision. He:
+- Lacks capacity because of his diagnosis
+- *Has capacity for this decision
+- Needs a court order
+- Must have his mother decide
+> Capacity is decision-specific; a diagnosis alone doesn't remove it.
+:::
+
 ## 1.3 Confidentiality [core]
 - Confidentiality is a strong default: information is shared only with consent or when the law requires.
 - **Exceptions**: serious risk of harm to the patient (suicide); serious risk to an identifiable other; **child sexual abuse (POCSO mandatory reporting)**; court orders; notifiable conditions; non-confidential assessments (forensic, disability) explained at the outset.
 - Share the minimum necessary, with the right people, and document why.
 - Records must be stored securely; never discuss patients in public spaces, social media or WhatsApp groups.
+
+:::mcq
+Q: A patient tells his therapist he plans to kill a named neighbour tonight and has a knife. The therapist should:
+- Keep it confidential
+- *Break confidentiality as needed to protect the neighbour (warn, inform police, consider admission) and document
+- Wait for the next session
+- Tell only the patient's family
+> The duty to protect overrides confidentiality when risk is serious and specific.
+:::
 
 ## 1.4 Boundaries and professional conduct [core]
 - **Dual relationships** (treating friends, relatives, colleagues, business partners) impair objectivity: avoid them.
@@ -70,6 +97,15 @@ For a **specific decision at a specific time**, the person can: (1) **understand
 3. List the four abilities of capacity. || Understand, retain, use and weigh, communicate.
 4. Give five exceptions to confidentiality. || Risk to self, risk to others, child sexual abuse, court order, non-confidential assessments.
 5. Who must be registered with RCI? || Clinical psychologists (and other rehabilitation professionals) to practise.
+:::
+
+:::mcq
+Q: A client gives his psychologist a costly watch after therapy ends. The best response is:
+- Accept, therapy is over
+- *Decline kindly and document; large gifts are not appropriate
+- Sell it
+- Start a friendship
+> Small tokens may be fine in context; costly gifts are not.
 :::
 
 ## 1.5 Working through ethical dilemmas [core]
@@ -105,6 +141,15 @@ Think of options as doors from narrow to wide: do nothing, talk, involve family,
 4. What does the least restrictive principle mean? || Choose the least restrictive option that keeps the person safe.
 :::
 
+:::mcq
+Q: Parents ask you not to tell their adult son his diagnosis of schizophrenia. The best approach:
+- Agree and hide it
+- *Explore their fears, then share the diagnosis sensitively with him, as he has a right to information
+- Tell only the parents
+- Refuse to treat
+> Truth-telling and the right to information under the MHCA.
+:::
+
 # Part II · The Mental Healthcare Act 2017
 
 ## 2.1 Rights [core]
@@ -112,9 +157,27 @@ Think of options as doors from narrow to wide: do nothing, talk, involve family,
 - Right to **community living**, protection from **cruel, inhuman or degrading treatment**, **equality and non-discrimination**, information, **confidentiality** (Section 23), access to records, **legal aid**, and to make complaints.
 - Insurance must cover mental illness on the same basis as physical illness.
 
+:::mcq
+Q: Under the MHCA, a person with mental illness has a right to:
+- Free private hospital care anywhere
+- *Mental health care from government-funded services, close to home, of good quality
+- Refuse all assessment by police
+- Choose their judge
+> Section 18: the right to access care.
+:::
+
 ## 2.2 Advance directive and nominated representative [core]
 - **Advance directive**: an adult with capacity can state how they wish (or don't wish) to be treated, and who should be their nominated representative, if they later lose capacity.
 - **Nominated representative**: a person chosen by the patient to support them in decisions when they lack capacity (otherwise a relative or carer by order of priority).
+
+:::mcq
+Q: Before becoming unwell, a woman wrote that she does not want ECT and named her sister to support her. This is:
+- A will
+- *An advance directive with a nominated representative
+- Informed consent
+- A court order
+> Sections 5 and 14 of the MHCA.
+:::
 
 ## 2.3 Admissions [core]
 | Type | Who | Time and safeguards |
@@ -124,12 +187,30 @@ Think of options as doors from narrow to wide: do nothing, talk, involve family,
 | **Supported admission beyond 30 days** | Continuing need | Two psychiatrists' assessments and approval by the **Mental Health Review Board**; reviewed periodically |
 | **Emergency treatment** | Any registered medical practitioner, to prevent death, serious harm or violence | **Up to 72 hours** |
 
+:::mcq
+Q: A man with mania lacks capacity, has threatened his family and needs admission. The correct route is:
+- Independent admission
+- *Supported admission (up to 30 days), with the safeguards
+- Emergency treatment for 3 months
+- Police custody
+> Supported admission needs incapacity plus recent risk; beyond 30 days needs Board approval.
+:::
+
 ## 2.4 Prohibited and regulated treatments [core]
 - **ECT without anaesthesia and muscle relaxant is prohibited.**
 - **ECT for minors** is not allowed except with consent of the guardian and prior permission of the Board.
 - **Sterilisation** as a treatment for mental illness is prohibited.
 - **Chaining** in any manner is prohibited; restraint and seclusion only as a last resort, to prevent imminent harm, recorded and reviewed.
 - Psychosurgery only with informed consent and Board approval.
+
+:::mcq
+Q: A hospital proposes ECT without anaesthesia because the anaesthetist is unavailable. Under the MHCA:
+- Allowed in emergencies
+- *Prohibited
+- Allowed with the family's consent
+- Allowed for adults only
+> Section 95: ECT without anaesthesia and muscle relaxant is prohibited.
+:::
 
 ## 2.5 Suicide [core]
 :::define Section 115
@@ -142,6 +223,15 @@ A person who attempts suicide is **presumed, unless proved otherwise, to have se
 3. What is the time limit for supported admission before Board approval is needed, and for emergency treatment? || 30 days; 72 hours.
 4. List four prohibited or restricted treatments. || ECT without anaesthesia and relaxant, ECT for minors without guardian consent and Board permission, sterilisation, chaining.
 5. What does Section 115 say? || Attempted suicide is presumed due to severe stress and not punished; the state must provide care.
+:::
+
+:::mcq
+Q: A college student survives an overdose. Under Section 115 of the MHCA:
+- She is charged under the penal code
+- *She is presumed to have severe stress, is not punished, and the state must provide care
+- The police must keep her in custody
+- Her college must expel her
+> Attempted suicide is treated as a health issue.
 :::
 
 ## 2.6 The MHCA in more detail [core]
@@ -188,6 +278,15 @@ Restraint is used only to prevent **imminent and immediate harm** when nothing l
 4. What conditions apply to restraint? || Last resort for imminent harm, shortest time, recorded, reported, reviewed.
 :::
 
+:::mcq
+Q: Police find a confused man wandering on the highway. Under the MHCA they should:
+- Keep him in the lock-up overnight
+- *Take him to a public health establishment for assessment within 24 hours
+- Release him
+- Take him to a temple
+> Section 100: police duties.
+:::
+
 # Part III · Other laws
 
 ## 3.1 Children and disability [core]
@@ -197,9 +296,27 @@ Restraint is used only to prevent **imminent and immediate harm** when nothing l
 | **Juvenile Justice Act 2015** | Care and protection of children in need; children in conflict with the law; 16 to 18 year-olds accused of heinous crimes may be assessed by the Juvenile Justice Board, including their mental capacity to commit the offence |
 | **Rights of Persons with Disabilities Act 2016** | Recognises **21 disabilities**, including **mental illness, intellectual disability, specific learning disabilities and autism**. **Benchmark disability (40% or more)** brings reservations in education and jobs and other benefits. Disability is certified using standard tools, such as IDEAS (Indian Disability Evaluation and Assessment Scale) for mental illness and IQ and social-maturity testing for intellectual disability |
 
+:::mcq
+Q: A 15-year-old discloses sexual abuse by a tutor. What does POCSO require of the clinician?
+- Nothing until the parents agree
+- *Mandatory reporting to the police or Special Juvenile Police Unit
+- A written confession
+- Waiting a week
+> Section 19; failure to report is punishable.
+:::
+
 ## 3.2 Substances [core]
 - **NDPS Act 1985** (Narcotic Drugs and Psychotropic Substances): controls drugs. **Section 64A** gives immunity from prosecution to a person accused of consuming small quantities who **volunteers for treatment** for de-addiction.
 - Prescribing controlled medicines (buprenorphine, benzodiazepines) needs proper records.
+
+:::mcq
+Q: A person who uses small amounts of a drug volunteers for treatment. Which law offers protection from prosecution?
+- POCSO
+- *NDPS Act, Section 64A
+- RPwD Act
+- MHCA Section 115
+> Immunity for users of small quantities who seek treatment.
+:::
 
 ## 3.3 Criminal responsibility and civil matters [core]
 :::define The insanity defence
@@ -209,6 +326,15 @@ Restraint is used only to prevent **imminent and immediate harm** when nothing l
 - **Testamentary capacity**: making a valid will needs understanding of the act, the property, the claims of those who might expect to benefit, and no disorder of mind distorting these.
 - **Marriage**: under the Hindu Marriage Act, mental disorder of a kind or extent that makes the person unfit for marriage can be grounds for annulment or divorce; the courts look at severity and functioning, not a diagnosis alone.
 - Persons with mental illness may need a guardian for property under specific procedures.
+
+:::mcq
+Q: At trial, a man's lawyer argues that during the crime he believed God ordered him to save the victim's soul. The legal question is whether, at the time, he:
+- Has a mental illness now
+- *Was incapable of knowing the nature of the act or that it was wrong or against the law, because of unsoundness of mind
+- Needs treatment now
+- Has a criminal record
+> BNS Section 22 (earlier IPC 84): mental state at the time of the act.
+:::
 
 ## 3.4 Telepsychiatry and records [extra]
 - Telemedicine practice guidelines (2020) and telepsychiatry guidelines allow consultations by video, audio or text; confirm identity, location and consent; some medicines can't be prescribed remotely.
@@ -251,6 +377,15 @@ A breach of a **duty of care** that causes **harm**. All three must be proved: *
 2. What did V. P. Shantha decide? || Paid medical services come under the Consumer Protection Act.
 3. What did Jacob Mathew decide? || Criminal liability requires gross negligence.
 4. To whom does an expert witness owe their duty? || The court.
+:::
+
+:::mcq
+Q: A patient on lithium is never given a blood test for a year and develops toxicity. In a negligence case, which element is clearest?
+- No duty of care existed
+- *Breach of the standard of care, causing harm
+- The patient caused it
+- Only criminal law applies
+> Duty, breach, damage caused by the breach.
 :::
 
 # Part IV · Exam zone

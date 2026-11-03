@@ -104,6 +104,18 @@ describe("checkpoints", () => {
       }
     }
   });
+  it("every checkpoint has questions, and every module has case questions", async () => {
+    const { checkpoints, checkpointQuestions } = await import("./checkpoints");
+    for (const m of MODULES) {
+      let cases = 0;
+      for (const cp of checkpoints(m)) {
+        const q = checkpointQuestions(m, cp);
+        expect(q.mcq.length + q.recall.length, `${m.id} cp${cp.n}`).toBeGreaterThan(0);
+        cases += q.mcq.length;
+      }
+      expect(cases, m.id).toBeGreaterThanOrEqual(8);
+    }
+  });
   it("open only after the student has moved on, and come before more reading", async () => {
     const { checkpoints, checkpointStatus } = await import("./checkpoints");
     const m = MODULES.find((x) => checkpoints(x).length > 1)!;

@@ -58,6 +58,15 @@ Can be diagnosed under 18 if features have been present for at least a year, **e
 3. What are the age rules for antisocial personality disorder? || 18 or older with conduct disorder before 15.
 :::
 
+:::mcq
+Q: A 25-year-old has been impulsive and unstable in relationships only since a head injury 6 months ago. A personality disorder diagnosis is:
+- Correct
+- *Wrong: the pattern must be long-standing from adolescence or early adulthood; think personality change due to a medical condition
+- Correct if MMPI is abnormal
+- Correct after a month
+> Personality disorders are enduring patterns, not new changes.
+:::
+
 ## 1.2 Theories of personality and causes [core]
 ### Trait models
 | Model | Dimensions |
@@ -87,6 +96,15 @@ Temperament is the seed; the family and wider world are the soil and weather. Th
 2. Name Cloninger's four temperament dimensions. || Novelty seeking, harm avoidance, reward dependence, persistence.
 3. Give Maslow's hierarchy from the base. || Physiological, safety, love and belonging, esteem, self-actualisation.
 4. What are Kernberg's three levels of personality organisation? || Neurotic, borderline, psychotic.
+:::
+
+:::mcq
+Q: In Cloninger's model, a person who seeks thrills and gets bored easily scores high on:
+- Harm avoidance
+- *Novelty seeking
+- Reward dependence
+- Persistence
+> Novelty seeking is linked to dopamine.
 :::
 
 ## 1.3 Assessing personality well [core]
@@ -121,6 +139,15 @@ A woman brought after an overdose, angry and tearful, may look "borderline". She
 3. Name two structured interviews for personality disorders. || SCID-5-PD and IPDE.
 :::
 
+:::mcq
+Q: A tearful woman, angry and impulsive, is seen once after an overdose. The best approach to personality diagnosis is:
+- Diagnose borderline personality disorder today
+- *Treat the crisis, gather history over time and from others, then decide
+- Run a projective test now
+- Avoid any assessment
+> One crisis is not a lifelong pattern.
+:::
+
 # Part II · The ten disorders
 
 ## 2.1 Cluster A: odd and eccentric [core]
@@ -130,6 +157,15 @@ A woman brought after an overdose, angry and tearful, may look "borderline". She
 | **Schizoid** | **Detachment** from relationships; restricted emotional range | Neither desires nor enjoys close relationships; chooses solitary activities; little interest in sex; few pleasures; no close friends; indifferent to praise or criticism; emotionally cold (at least 4 of 7) |
 | **Schizotypal** | Social and interpersonal deficits with **cognitive or perceptual distortions and eccentricity** | Ideas of reference (not delusional); odd beliefs or magical thinking; unusual perceptions; odd speech; suspiciousness; inappropriate or constricted affect; odd behaviour or appearance; no close friends; social anxiety that doesn't settle with familiarity (at least 5 of 9). Genetically linked to schizophrenia |
 
+:::mcq
+Q: A man lives alone, has no wish for friends, shows little emotion and is content with solitary hobbies. Most likely:
+- Avoidant
+- *Schizoid
+- Schizotypal
+- Paranoid
+> Schizoid: no desire for relationships. Avoidant: wants them, fears rejection.
+:::
+
 ## 2.2 Cluster B: dramatic, emotional, erratic [core]
 | Disorder | Core picture | Key features |
 |---|---|---|
@@ -137,6 +173,15 @@ A woman brought after an overdose, angry and tearful, may look "borderline". She
 | **Borderline** | **Instability** of relationships, self-image and emotions, with marked **impulsivity** | See 2.4 (at least 5 of 9) |
 | **Histrionic** | Excessive **emotionality and attention seeking** | Uncomfortable when not the centre of attention; seductive or provocative; shallow, rapidly shifting emotions; uses appearance for attention; impressionistic speech; theatrical; suggestible; sees relationships as more intimate than they are (at least 5 of 8) |
 | **Narcissistic** | **Grandiosity**, need for **admiration**, lack of **empathy** | Grandiose self-importance; fantasies of success or power; believes they are special; needs excessive admiration; entitlement; exploits others; lacks empathy; envious; arrogant (at least 5 of 9) |
+
+:::mcq
+Q: A woman needs to be the centre of attention, dresses provocatively, and her emotions shift quickly and seem shallow. Most likely:
+- Borderline
+- *Histrionic
+- Narcissistic
+- Antisocial
+> Attention-seeking and shallow, theatrical emotion.
+:::
 
 ## 2.3 Cluster C: anxious and fearful [core]
 | Disorder | Core picture | Key features |
@@ -163,6 +208,15 @@ A woman brought after an overdose, angry and tearful, may look "borderline". She
 3. Name the three Cluster C disorders with one line each. || Avoidant: inhibition and fear of criticism; dependent: need to be cared for; OCPD: perfectionism and control.
 4. Which Cluster A disorder is genetically linked to schizophrenia? || Schizotypal.
 5. How does avoidant differ from schizoid? || Avoidant wants relationships but fears rejection; schizoid doesn't want them.
+:::
+
+:::mcq
+Q: A 34-year-old cannot choose clothes or meals without asking his mother and fears being left alone. Most likely:
+- Avoidant
+- *Dependent
+- OCPD
+- Schizoid
+> Excessive need to be cared for, beyond what is culturally expected.
 :::
 
 ## 2.4 Borderline personality disorder in depth [core]
@@ -206,6 +260,15 @@ Borderline mood shifts last **hours**, are **reactive** to interpersonal events,
 4. What happens to borderline features with age? || They usually improve.
 :::
 
+:::mcq
+Q: A patient's moods swing within hours after arguments, she feels empty, fears abandonment and cuts herself. These mood shifts point more to:
+- Bipolar disorder
+- *Borderline personality disorder
+- Schizophrenia
+- Major depression only
+> Reactive shifts lasting hours, chronic emptiness, abandonment fears.
+:::
+
 ## 2.5 The dimensional view [extra]
 ICD-11 replaced named types with:
 - **Severity**: personality difficulty, mild, moderate or severe personality disorder.
@@ -245,6 +308,15 @@ A patient who is unusually charming, flattering and quickly "close" to staff, wh
 4. What is the best prevention of adult antisocial behaviour? || Parent training for childhood conduct problems.
 :::
 
+:::mcq
+Q: A charming man lies easily, shows no remorse after hurting others, and has a long history of fighting since age 12. Which tool measures psychopathy?
+- MMPI-2 only
+- *Hare PCL-R
+- Y-BOCS
+- PANSS
+> 20 items, 0 to 40; high scores predict violent re-offending.
+:::
+
 ## 2.7 Telling personality disorders from other illnesses [core]
 | Personality disorder | Can be confused with | How to tell |
 |---|---|---|
@@ -264,6 +336,15 @@ Personality disorders commonly co-exist with depression, anxiety, eating disorde
 1. How do you tell schizotypal personality from schizophrenia? || No sustained psychotic symptoms; stable lifelong pattern.
 2. How do you tell avoidant personality from social anxiety disorder? || Overlap; avoidant is more pervasive with core inadequacy.
 3. What suggests personality change due to a medical condition? || New change in adulthood with a neurological cause.
+:::
+
+:::mcq
+Q: A man has been odd, isolated and believes in telepathy for years, but has never had sustained hallucinations or delusions. Most likely:
+- Schizophrenia
+- *Schizotypal personality disorder
+- Delusional disorder
+- Bipolar disorder
+> Odd beliefs and perceptions without sustained psychosis; genetically linked to schizophrenia.
 :::
 
 # Part III · Treatment
@@ -303,6 +384,15 @@ Personality disorders commonly co-exist with depression, anxiety, eating disorde
 4. What goes into a crisis plan? || Triggers, warning signs, coping steps, contacts.
 :::
 
+:::mcq
+Q: Which treatment has the best evidence for reducing self-harm in borderline personality disorder?
+- Long-term benzodiazepines
+- *Dialectical behaviour therapy
+- High-dose antipsychotics
+- Long hospital admissions
+> DBT; also mentalisation-based therapy.
+:::
+
 ## 3.2 Managing crises and the team [core]
 ### The borderline crisis: what helps
 - **Validation first**: "It makes sense you're this upset after the fight; anyone would be hurt." Validation is not agreement with the behaviour.
@@ -330,6 +420,15 @@ Personality disorders commonly co-exist with depression, anxiety, eating disorde
 2. What are the conditions for a helpful brief admission? || Clear goals, fixed length, agreed plan.
 3. How do teams manage splitting? || Consistency, one coordinator, shared plan, open discussion.
 4. Which medicines should be avoided long-term in personality disorder? || Benzodiazepines; limit overdose-dangerous medicines.
+:::
+
+:::mcq
+Q: A borderline patient tells you, "You're the only doctor who understands me; the others are useless." The best response is:
+- Agree and take over all her care
+- *Thank her, stay with the shared team plan, and discuss the splitting in the team
+- Tell her she is manipulative
+- Discharge her
+> Consistency across the team manages splitting.
 :::
 
 # Part IV · Exam zone

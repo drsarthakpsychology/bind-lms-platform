@@ -55,6 +55,15 @@ This module teaches how to recognise and assess risk and how to help. It is not 
 3. Why can risk rise in early recovery from depression? || Energy returns before hope.
 :::
 
+:::mcq
+Q: A man who was severely depressed and slow for weeks is suddenly calm and giving away his belongings after starting treatment. The right reading is:
+- He is recovering; reduce follow-up
+- *Risk may have risen; ask directly about suicidal plans
+- He is manic
+- He is malingering
+> Sudden calm and putting affairs in order are warning signs.
+:::
+
 ## 1.2 Risk factors and protective factors [core]
 | Area | Risk factors |
 |---|---|
@@ -84,6 +93,15 @@ Scores such as SAD PERSONS are poor at predicting who will die. Suicide is rare 
 3. What is the purpose of risk assessment, if not prediction? || To understand the person and decide the level of care.
 :::
 
+:::mcq
+Q: Which of these is the strongest single predictor of future suicide?
+- Female sex
+- Being a student
+- *A previous suicide attempt
+- Living with family
+> Past attempts, especially recent and high-lethality, carry the highest risk.
+:::
+
 ## 1.3 Why people become suicidal: the models [core]
 No single cause explains suicide. Models help you see **what to ask about and where to help**.
 
@@ -110,6 +128,15 @@ Think of three things together: unbearable **pain**, the feeling of being **trap
 4. What is low in the spinal fluid after violent suicide attempts? || 5-HIAA.
 :::
 
+:::mcq
+Q: A widowed farmer says, "I'm only a burden to my sons now, and nobody needs me." In Joiner's theory, these reflect:
+- Acquired capability
+- *Perceived burdensomeness and thwarted belongingness
+- Fatalistic suicide
+- Learned helplessness only
+> The two parts of the desire for death; capability turns it into action.
+:::
+
 ## 1.4 Groups who need special attention [core]
 | Group | What drives risk | What helps |
 |---|---|---|
@@ -133,6 +160,15 @@ In India, family problems and illness are among the most commonly recorded cause
 4. Why are attempts by older adults especially serious? || Higher lethality.
 :::
 
+:::mcq
+Q: A man is discharged from a psychiatric ward after a suicide attempt. The single most useful measure is:
+- No follow-up for a month
+- *A follow-up contact within the first few days, with a safety plan
+- A risk score only
+- Prescribing a month of tricyclics
+> The weeks after discharge are very high risk.
+:::
+
 # Part II · Assessment
 
 ## 2.1 How to ask [core]
@@ -151,6 +187,15 @@ Ask in steps, from general to specific, calmly and without hurry.
 - “Thak gaya hoon, ab aur nahi hota.” (I'm exhausted; I can't do this anymore.)
 - “Neend mein hi chala jaaun toh accha.” (It would be better to not wake up.) Passive: still ask about active thoughts.
 - Giving away belongings, sudden calm after weeks of distress, saying goodbyes.
+:::
+
+:::mcq
+Q: Which way of asking about suicide is best?
+- "You're not thinking of doing anything silly, are you?"
+- *"With everything you've told me, have you had thoughts of ending your life?"
+- Avoid asking, it plants the idea
+- Ask the family instead of the patient
+> Ask directly and neutrally; asking does not increase risk.
 :::
 
 ## 2.2 What to establish [core]
@@ -177,6 +222,15 @@ Was it planned or impulsive? Was it done alone, timed to avoid discovery? Did th
 1. List the eight domains of a suicide assessment. || Ideation, intent, plan, preparation, history, current state, protective factors, access to means.
 2. Give five questions that reveal intent after an attempt. || Planned or impulsive, alone and timed, prevented rescue, note, expected outcome, feelings about surviving.
 3. Distinguish passive from active ideation. || Wishing to be dead vs thoughts of killing oneself.
+:::
+
+:::mcq
+Q: After an overdose, which detail most suggests high intent?
+- Took the tablets in front of her husband
+- *Took them alone, timed when no one would be home, and left a note
+- Called a friend straight after
+- Took 3 paracetamol
+> Planning, isolation, avoiding rescue and a note show intent.
 :::
 
 ## 2.3 Self-harm in the emergency department [core]
@@ -210,6 +264,15 @@ Avoid "low, medium, high" labels based on checklists. Two people with the same s
 4. What should you do if a patient lacking capacity tries to leave at serious risk? || Use MHCA emergency provisions and document.
 :::
 
+:::mcq
+Q: A man after self-harm is drunk and says he is fine and wants to go. The best action is:
+- Discharge, he has denied suicidal thoughts
+- *Keep him safe and observed and assess fully once sober
+- Give a large sedative and discharge
+- Call it attention seeking
+> Assessment while intoxicated is unreliable.
+:::
+
 # Part III · Helping
 
 ## 3.1 Safety planning and level of care [core]
@@ -241,6 +304,15 @@ Limiting access to lethal means saves lives because many crises are brief.
 - Non-suicidal self-injury (cutting, burning) is usually a way to cope with overwhelming emotion, but it **raises long-term suicide risk**. Respond with respect, not anger or dismissal.
 - Assess each episode; treat wounds; explore function; teach alternative coping (DBT skills); involve family where appropriate.
 
+:::mcq
+Q: In a safety plan, which step comes first?
+- Calling the police
+- *Recognising personal warning signs that a crisis is starting
+- Going to the emergency department
+- Taking a sedative
+> Warning signs, coping alone, people and places, people to ask, professionals, means safety.
+:::
+
 ## 3.2 India: law, helplines and messaging [core]
 :::define Mental Healthcare Act 2017, Section 115
 A person who attempts suicide **shall be presumed, unless proved otherwise, to have severe stress** and **shall not be tried and punished** under the Indian Penal Code (Section 309). The government has a duty to provide **care, treatment and rehabilitation** to such a person.
@@ -258,6 +330,15 @@ When talking, posting or teaching about suicide: don't describe methods or locat
 2. Why does means restriction work? || Many crises are brief; removing means buys time.
 3. What does Section 115 of the MHCA 2017 say? || Attempted suicide is presumed to be due to severe stress, not punished, and the state must provide care.
 4. What is the national tele-mental health number? || Tele-MANAS 14416.
+:::
+
+:::mcq
+Q: A news site wants to report a celebrity's suicide with photos of the method. The safe-messaging advice is to:
+- Describe the method in detail to warn others
+- *Avoid method details and sensational headlines, and include where to get help
+- Call it a brave choice
+- Publish the note
+> Responsible reporting lowers copycat suicides.
 :::
 
 ## 3.3 Risk to others [extra]
@@ -287,6 +368,15 @@ When talking, posting or teaching about suicide: don't describe methods or locat
 Contact within the first days after discharge or an emergency visit is one of the simplest and most effective measures. A missed appointment after self-harm deserves a call, not a closed file.
 :::
 
+:::mcq
+Q: Which medicine reduces suicidal behaviour in schizophrenia?
+- Haloperidol
+- *Clozapine
+- Alprazolam
+- Amitriptyline
+> Clozapine (and lithium in mood disorders) has anti-suicidal effects.
+:::
+
 ## 3.5 After a suicide: postvention [core]
 :::define Postvention
 Support given after a suicide to the people affected: family, friends, classmates, colleagues and clinicians. It is also prevention, because those bereaved by suicide have a **higher risk** of suicide themselves.
@@ -303,6 +393,15 @@ Support given after a suicide to the people affected: family, friends, classmate
 1. Name four treatments with evidence for reducing suicide or self-harm. || Lithium, clozapine, DBT, CBT, brief contact interventions, safety planning with follow-up.
 2. What is postvention and why is it also prevention? || Support after a suicide; the bereaved have higher risk.
 3. How should a school respond after a student's suicide? || Accurate information, identify vulnerable students, avoid glamorising, offer counselling.
+:::
+
+:::mcq
+Q: A week after a student's suicide, the college asks what to do. The best advice is:
+- Hold a large memorial with the method described
+- *Give accurate, calm information, identify close friends and vulnerable students, and offer counselling
+- Say nothing at all
+- Expel students who talk about it
+> Postvention protects others at higher risk.
 :::
 
 # Part IV · Exam zone

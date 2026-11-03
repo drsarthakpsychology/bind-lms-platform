@@ -52,6 +52,15 @@ When feeding restarts after starvation, insulin drives phosphate, potassium and 
 
 - Treatment: weight restoration and medical safety; **family-based treatment** (Maudsley approach) for adolescents; **CBT-E** and other specialist therapies for adults; admission for very low BMI, fast weight loss, unstable vital signs, electrolyte problems or high suicide risk. Medicines have little role in weight restoration.
 
+:::mcq
+Q: A 17-year-old girl with a BMI of 15.5 eats very little, fears gaining weight and believes she is fat. Her severity is:
+- Mild
+- Moderate
+- *Severe (15 to under 16)
+- Not anorexia because she still menstruates
+> Adult BMI bands; menstruation is no longer required for the diagnosis.
+:::
+
 ## 1.2 Bulimia and binge-eating disorder [core]
 | | Bulimia nervosa | Binge-eating disorder |
 |---|---|---|
@@ -71,6 +80,15 @@ When feeding restarts after starvation, insulin drives phosphate, potassium and 
 3. What is refeeding syndrome, and which mineral falls? || Electrolyte shifts on restarting nutrition; phosphate.
 4. How does bulimia differ from binge-eating disorder? || Bulimia has compensatory behaviours.
 5. What is Russell's sign? || Calluses on the knuckles from induced vomiting.
+:::
+
+:::mcq
+Q: A woman of normal weight binges weekly and then makes herself vomit. Her potassium is low. Most likely:
+- Binge-eating disorder
+- *Bulimia nervosa
+- Anorexia nervosa, restricting type
+- ARFID
+> Binges with compensation at normal weight; vomiting lowers potassium.
 :::
 
 ## 1.3 Eating disorders: causes, assessment and treatment [core]
@@ -115,6 +133,15 @@ Very low BMI (for example below about 13 to 14), rapid weight loss, **pulse belo
 4. What is first-line for bulimia? || CBT-E (plus fluoxetine).
 :::
 
+:::mcq
+Q: Three days into refeeding a severely underweight patient, which blood test is most important to watch?
+- Cholesterol
+- *Phosphate (with potassium and magnesium)
+- Amylase
+- Vitamin D
+> Refeeding syndrome: phosphate falls dangerously.
+:::
+
 # Part II · Sleep–wake disorders
 
 ## 2.1 The main sleep disorders [core]
@@ -126,6 +153,15 @@ Very low BMI (for example below about 13 to 14), rapid weight loss, **pulse belo
 | Hypersomnolence | Excessive sleepiness despite long sleep | Exclude other causes |
 | Circadian rhythm disorders | Delayed sleep phase (teenagers), shift work, jet lag | Light timing, melatonin, schedules |
 | **Restless legs syndrome** | Urge to move legs at rest in the evening, relieved by moving | **Check iron (ferritin)**; dopamine agonists, gabapentinoids |
+
+:::mcq
+Q: A heavy man on olanzapine snores loudly, stops breathing at night and falls asleep in class. The best next test is:
+- EEG
+- *Overnight sleep study (polysomnography)
+- MRI brain
+- Thyroid only
+> Obstructive sleep apnoea, worsened by weight gain and sedatives.
+:::
 
 ## 2.2 Parasomnias [core]
 | | NREM arousal disorders (sleepwalking, night terrors) | Nightmare disorder | REM sleep behaviour disorder |
@@ -142,6 +178,15 @@ Very low BMI (for example below about 13 to 14), rapid weight loss, **pulse belo
 3. What blood test matters in restless legs? || Ferritin (iron).
 4. Contrast night terrors and nightmares. || Deep NREM, first third, no recall vs REM, later, vivid recall.
 5. Why does REM sleep behaviour disorder matter? || It can precede Parkinson's and Lewy body dementia.
+:::
+
+:::mcq
+Q: A 6-year-old screams and seems terrified an hour after falling asleep, can't be comforted and remembers nothing next day. Most likely:
+- Nightmare disorder
+- *Night terrors (NREM arousal disorder)
+- REM sleep behaviour disorder
+- Epilepsy only
+> First third of the night, deep sleep, no recall.
 :::
 
 ## 2.3 More on sleep: assessment and the less common disorders [core]
@@ -174,6 +219,15 @@ Very low BMI (for example below about 13 to 14), rapid weight loss, **pulse belo
 2. What does the Multiple Sleep Latency Test show in narcolepsy? || Short sleep latency with REM in two or more naps.
 3. Name the narcolepsy tetrad. || Daytime sleepiness, cataplexy, sleep paralysis, hypnagogic hallucinations.
 4. Why does sleep apnoea matter in psychiatry? || It mimics depression and is worsened by sedatives and weight gain.
+:::
+
+:::mcq
+Q: A young man falls asleep suddenly in the day and his knees buckle when he laughs. Most likely:
+- Epilepsy
+- *Narcolepsy with cataplexy
+- Depression
+- Conversion disorder
+> Cataplexy is emotion-triggered loss of muscle tone.
 :::
 
 # Part III · Somatic symptom and related disorders
@@ -216,6 +270,15 @@ Diagnosis is made by **positive features**, not just by normal tests:
 4. What should you never say to a patient with functional symptoms? || That it's all in their head or nothing is wrong.
 :::
 
+:::mcq
+Q: A woman suddenly cannot move her legs after a family quarrel. Hoover's sign is positive and scans are normal. The best explanation to her is:
+- "It's all in your head."
+- *"Your nervous system's software isn't working properly, though the hardware is fine; this is common and treatable."
+- "You are faking."
+- "We found nothing, so go home."
+> Functional neurological disorder: positive signs, a real condition, clear explanation.
+:::
+
 ## 3.2 Illness anxiety, factitious disorder and malingering in depth [core]
 ### Illness anxiety (health anxiety)
 - Preoccupation with having a serious illness with **few or no symptoms**; anxiety is high; the person either **checks and seeks care** (care-seeking type) or **avoids** doctors (care-avoidant type).
@@ -246,6 +309,15 @@ A caregiver (usually a parent) **induces or fakes illness in a child** to gain a
 4. What is factitious disorder imposed on another and how is it managed? || A carer induces illness in a dependant; child protection and reporting.
 :::
 
+:::mcq
+Q: A man complains of back pain only when a compensation case is pending, and his symptoms vanish when the case is settled. Most likely:
+- Factitious disorder
+- *Malingering
+- Somatic symptom disorder
+- Conversion disorder
+> Deliberate symptoms for an external gain.
+:::
+
 # Part IV · Dissociation and culture
 
 ## 4.1 Dissociative disorders [core]
@@ -261,6 +333,15 @@ A disruption of the normal integration of consciousness, memory, identity, emoti
 - Rule out epilepsy, head injury, substances, and malingering.
 - Treatment is phased: **safety and stabilisation** (grounding, emotion regulation), **trauma processing**, then **integration** and rebuilding life.
 
+:::mcq
+Q: A woman is found in another city with no memory of who she is, after her husband's death. Medical tests are normal. Most likely:
+- Delirium
+- *Dissociative amnesia with dissociative fugue
+- Korsakoff syndrome
+- Schizophrenia
+> Loss of identity with travel, after a stressor; new learning intact.
+:::
+
 ## 4.2 Culture-related presentations in India [core]
 | Presentation | What it is | How to approach |
 |---|---|---|
@@ -275,6 +356,15 @@ A disruption of the normal integration of consciousness, memory, identity, emoti
 1. Name the three dissociative disorders. || DID, dissociative amnesia (with or without fugue), depersonalisation/derealisation disorder.
 2. What is Dhat syndrome? || Anxiety and weakness attributed to semen loss.
 3. When is a possession state a disorder? || When involuntary, distressing and outside accepted cultural practice.
+:::
+
+:::mcq
+Q: A young man complains of weakness and fatigue that he blames on losing semen in urine. Tests are normal and he is anxious and low. The best approach is:
+- Tell him the belief is foolish
+- *Explore his explanation, educate gently about normal physiology, and treat the anxiety and depression
+- Prescribe tonics
+- Refer to a surgeon
+> Dhat syndrome: respect the cultural model, treat the distress.
 :::
 
 ## 4.3 Dissociation in practice [core]
@@ -304,6 +394,15 @@ When the load is too much, the brain trips a switch to protect itself: feeling n
 3. What history is strongly linked with DID? || Severe, repeated childhood trauma.
 :::
 
+:::mcq
+Q: A patient says everything around her looks unreal, like a film, but she knows it isn't really so. This is:
+- A delusion
+- *Derealisation (with insight kept)
+- A hallucination
+- Thought broadcasting
+> Insight separates it from psychosis.
+:::
+
 # Part V · Sexual health and gender
 
 ## 5.1 Sexual dysfunctions [core]
@@ -311,6 +410,15 @@ When the load is too much, the brain trips a switch to protect itself: feeling n
 - Causes: physical (diabetes, vascular disease, hormones, alcohol, smoking), **medicines** (SSRIs, antipsychotics, beta-blockers), psychological (performance anxiety, relationship conflict, depression), lack of knowledge.
 - Treatment: education, couple work, **sensate focus** (graded touching without pressure to perform), the stop–start or squeeze technique for early ejaculation, PDE-5 inhibitors (sildenafil) for erectile disorder; adjust causative medicines.
 - **Ask routinely** about sexual side effects of medicines: patients rarely volunteer them.
+
+:::mcq
+Q: A 30-year-old man has erectile problems with his partner but normal morning erections. The most likely cause is:
+- Diabetes
+- Vascular disease
+- *Performance anxiety or a relationship problem
+- Low testosterone
+> Physical causes usually affect morning erections too.
+:::
 
 ## 5.2 Gender dysphoria [core]
 - **Distress** due to marked incongruence between one's experienced or expressed gender and assigned gender, for at least **6 months**.
@@ -322,6 +430,15 @@ When the load is too much, the brain trips a switch to protect itself: feeling n
 1. Name four causes of erectile disorder. || Diabetes, vascular disease, medicines, alcohol and smoking, anxiety, relationship problems.
 2. What is sensate focus? || Graded touching exercises without pressure to perform.
 3. Is being transgender a mental disorder? || No; gender dysphoria concerns distress.
+:::
+
+:::mcq
+Q: A transgender woman seeks help for low mood after family rejection. The right approach is:
+- Try to change her gender identity
+- *Affirming care: use her chosen name and pronouns, treat the depression, support the family
+- Refuse treatment
+- Diagnose a psychotic disorder
+> Being transgender is not a disorder; conversion therapy is unethical and harmful.
 :::
 
 ## 5.3 Sexual function and paraphilic disorders [core]
@@ -352,6 +469,15 @@ When the load is too much, the brain trips a switch to protect itself: feeling n
 2. What do preserved morning erections suggest? || A psychological cause.
 3. Name two behavioural techniques for premature ejaculation. || Stop-start and squeeze.
 4. When is a paraphilia a disorder? || When it causes distress or impairment, or involves non-consenting people or harm.
+:::
+
+:::mcq
+Q: A man repeatedly rubs against women in crowded buses and is caught. This is:
+- Exhibitionistic disorder
+- *Frotteuristic disorder
+- Voyeuristic disorder
+- Fetishistic disorder
+> Touching or rubbing against non-consenting people.
 :::
 
 # Part VI · Exam zone
