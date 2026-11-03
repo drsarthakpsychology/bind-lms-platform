@@ -10,6 +10,8 @@ export type CredentialPdfData = {
   credentialId: string;
   /** Optional authorised signature PNG bytes. */
   signaturePng?: Buffer | null;
+  /** Permanent institutional roll number (optional). */
+  rollNumber?: string | null;
 };
 
 /**
@@ -34,6 +36,7 @@ export async function generateCredentialPdf(data: CredentialPdfData): Promise<Bu
 
   page.drawText(`Issued ${data.issuedAt}`, { x: 365, y: 180, size: 11, font, color: rgb(0.45, 0.45, 0.45) });
   page.drawText(`Credential ID ${data.credentialId}`, { x: 320, y: 150, size: 9, font, color: rgb(0.45, 0.45, 0.45) });
+  if (data.rollNumber) page.drawText(`Roll Number ${data.rollNumber}`, { x: 350, y: 130, size: 9, font, color: rgb(0.45, 0.45, 0.45) });
 
   // Signature block (bottom-left) — only when an authorised asset is present.
   if (data.signaturePng) {

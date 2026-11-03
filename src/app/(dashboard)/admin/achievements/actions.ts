@@ -249,12 +249,15 @@ export async function issueCertificate(credentialId: string): Promise<{ error: s
     signaturePng = await getObjectBufferR2(process.env.R2_BUCKET_NAME ?? "", ach.signature_asset_path as string);
   }
 
+  const { data: rollProfile } = await admin.from("profiles").select("roll_number").eq("id", cred.user_id as string).maybeSingle();
+
   const pdf = await generateCredentialPdf({
     studentName: cred.student_name as string,
     title: ach.title as string,
     issuedAt: new Date().toISOString().slice(0, 10),
     credentialId: credentialId,
     signaturePng,
+    rollNumber: (rollProfile?.roll_number as string | null) ?? null,
   });
 
   const key = `certificates/${credentialId}.pdf`;

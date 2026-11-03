@@ -11,5 +11,5 @@ export default async function AchievementsPage() {
   const me = await requireSession();
   if (!me) redirect("/login");
   const { earned, progress } = await loadMyAchievements();
-  return <AchievementsClient earned={earned} progress={progress} />;
+  return <AchievementsClient earned={earned} progress={progress} rollNumber={me.roll_number} />;
 }

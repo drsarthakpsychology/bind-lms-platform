@@ -25,6 +25,8 @@ export type Profile = {
   mobile_number: string | null;
   /** When the student chose "Later" so the prompt doesn't nag every login. */
   mobile_prompt_skipped_at: string | null;
+  /** Permanent institutional roll number (e.g. VIBHA-000001), assigned server-side. */
+  roll_number: string | null;
 };
 
 export type SessionResult =
@@ -63,7 +65,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("id, email, role, scope, status, block_reason, active_session_token, expires_at, mobile_number, mobile_prompt_skipped_at")
+    .select("id, email, role, scope, status, block_reason, active_session_token, expires_at, mobile_number, mobile_prompt_skipped_at, roll_number")
     .eq("id", user.id)
     .single();
 

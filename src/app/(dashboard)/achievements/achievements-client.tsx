@@ -65,7 +65,7 @@ function ShareRow({ credentialId, title }: { credentialId: string; title: string
   );
 }
 
-export function AchievementsClient({ earned, progress }: { earned: MyCredential[]; progress: MyProgress[] }) {
+export function AchievementsClient({ earned, progress, rollNumber }: { earned: MyCredential[]; progress: MyProgress[]; rollNumber: string | null }) {
   const [msg, setMsg] = React.useState<string | null>(null);
   const badges = earned.filter((e) => e.type === "badge");
   const certificates = earned.filter((e) => e.type === "certificate");
@@ -76,6 +76,9 @@ export function AchievementsClient({ earned, progress }: { earned: MyCredential[
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Your credentials</p>
         <h1 className="text-h1">My Achievements</h1>
+        {rollNumber ? (
+          <p className="text-sm font-semibold">Roll number <span className="font-mono">{rollNumber}</span></p>
+        ) : null}
         <p className="text-sm text-muted-foreground">
           {issued} issued · {progress.filter((p) => !p.earned).length} in progress
         </p>

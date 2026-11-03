@@ -37,7 +37,7 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
   // the table just quietly ended.)
   const { data: profiles, count } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token, is_test, status, mobile_number", { count: "exact", head: false })
+    .select("id, email, role, expires_at, active_session_token, is_test, status, mobile_number, roll_number", { count: "exact", head: false })
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false })
     .limit(1000);
@@ -67,7 +67,7 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
     );
     return {
       id: student.id,
-      search: `${student.email ?? ""} ${student.mobile_number ?? ""}`.toLowerCase(),
+      search: `${student.email ?? ""} ${student.mobile_number ?? ""} ${student.roll_number ?? ""}`.toLowerCase(),
       tags,
       card: (
         <li className="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border-2 border-foreground/15 bg-card px-3 py-2.5">
@@ -82,6 +82,7 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
               {student.email ?? student.id}
             </span>
             <span className="mt-0.5 block truncate text-caption text-muted-foreground">
+              {student.roll_number ? <span className="font-mono">{student.roll_number}</span> : null}
               {student.active_session_token ? "Signed in" : "Not signed in"}
               {student.mobile_number ? ` · +91 ${student.mobile_number}` : " · No number"}
               {student.is_test ? " · Test" : ""}
@@ -99,6 +100,9 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
               {student.is_test && <Badge variant="pending">Test</Badge>}
               {status === "blocked" && <Badge variant="destructive">Locked</Badge>}
             </span>
+            {student.roll_number ? (
+              <span className="mt-0.5 block font-mono text-caption text-muted-foreground">{student.roll_number}</span>
+            ) : null}
           </TableCell>
           <TableCell className="text-muted-foreground">
             {student.mobile_number ? (
