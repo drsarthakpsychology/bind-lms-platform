@@ -16,6 +16,7 @@ const LABELS: Record<string, string> = {
   formulation: "Formulation",
   journal: "Journal",
   learn: "Learn with Chai + Notes (lessons, Coach, games, notes, leaderboard)",
+  lab: "Psychology Lab (experiments in Games; check the educator review notes before unlocking)",
   judgment: "Judgment",
   knowledge_tutor: "Psychology Tutor",
   landmark: "Landmark Cases",

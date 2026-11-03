@@ -47,6 +47,25 @@ export type LearnState = {
   notesRead: Record<string, string>;
   /** The course (Study). */
   study: StudyProgress;
+  /** Psychology Lab: experiment id → record. */
+  lab: Record<string, LabRecord>;
+};
+
+/** One Psychology Lab experiment, for one student. */
+export type LabRecord = {
+  /** Times the experiment was completed. */
+  runs: number;
+  /** Day first completed and last completed (IST, YYYY-MM-DD). */
+  first: string;
+  last: string;
+  /** Headline numbers from the latest run (e.g. { forward: 7, backward: 5 }). */
+  result: Record<string, number>;
+  /** Check-question score from the latest attempt and its size. */
+  check: { right: number; total: number } | null;
+  /** Spaced re-check: step (0 = not yet re-checked) and the day it is due. */
+  recheck: { step: number; due: string };
+  /** The student wrote a reflection at least once. */
+  reflected: boolean;
 };
 
 export type StudyProgress = {
@@ -92,6 +111,7 @@ export function emptyState(): LearnState {
     detectiveBest: 0,
     notesRead: {},
     study: emptyStudy(),
+    lab: {},
   };
 }
 
@@ -115,8 +135,26 @@ export function normalise(raw: unknown): LearnState {
     },
     history: { ...(r.history ?? {}) },
     study: normaliseStudy(r.study),
+    lab: normaliseLab(r.lab),
     notesRead: Object.fromEntries(Object.entries(r.notesRead && typeof r.notesRead === "object" ? r.notesRead : {}).filter(([k, v]) => typeof k === "string" && typeof v === "string")),
   };
+}
+
+const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+function normaliseLab(raw: unknown): Record<string, LabRecord> {
+  if (!raw || typeof raw !== "object") return {};
+  const out: Record<string, LabRecord> = {};
+  for (const [id, v] of Object.entries(raw as Record<string, unknown>)) {
+    if (!v || typeof v !== "object" || !/^[a-z0-9-]{1,40}$/.test(id)) continue;
+    const r = v as Partial<LabRecord>;
+    if (typeof r.first !== "string" || !DAY_RE.test(r.first) || typeof r.last !== "string" || !DAY_RE.test(r.last)) continue;
+    const result = Object.fromEntries(Object.entries(r.result ?? {}).filter(([k, n]) => k.length <= 40 && typeof n === "number" && Number.isFinite(n)).slice(0, 20));
+    const check = r.check && typeof r.check.right === "number" && typeof r.check.total === "number" ? { right: r.check.right, total: r.check.total } : null;
+    const recheck = r.recheck && typeof r.recheck.step === "number" && typeof r.recheck.due === "string" && DAY_RE.test(r.recheck.due) ? { step: r.recheck.step, due: r.recheck.due } : { step: 0, due: addDays(r.last, LAB_RECHECK_DAYS[0]) };
+    out[id] = { runs: typeof r.runs === "number" && r.runs > 0 ? Math.floor(r.runs) : 1, first: r.first, last: r.last, result, check, recheck, reflected: r.reflected === true };
+  }
+  return out;
 }
 
 function strMap(x: unknown): Record<string, string> {
@@ -479,4 +517,59 @@ export function finishLesson(prev: LearnState, r: LessonResult, today: string, r
       goalHit,
     },
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Psychology Lab                                                      */
+/* ------------------------------------------------------------------ */
+
+/** Days after a run (then after each re-check) that the check questions come back. */
+export const LAB_RECHECK_DAYS = [3, 10, 30] as const;
+export const LAB_XP = { firstRun: 20, rerun: 5, checkPerRight: 3, reflect: 5 } as const;
+
+/**
+ * Record a finished experiment run. The first run earns the most; a re-run
+ * earns a little, at most once a day, so the Lab rewards doing, not farming.
+ */
+export function recordLabRun(s: LearnState, id: string, result: Record<string, number>, today: string): LearnState {
+  const prev = s.lab[id];
+  const rec: LabRecord = prev
+    ? { ...prev, runs: prev.runs + 1, last: today, result }
+    : { runs: 1, first: today, last: today, result, check: null, recheck: { step: 0, due: addDays(today, LAB_RECHECK_DAYS[0]) }, reflected: false };
+  const next = { ...s, lab: { ...s.lab, [id]: rec } };
+  if (!prev) return gainXp(next, LAB_XP.firstRun, today);
+  return prev.last === today ? next : gainXp(next, LAB_XP.rerun, today);
+}
+
+/**
+ * Record a check attempt. If a re-check was due, a good score (2 of 3 or
+ * better) moves the next one further out; a weak score brings it back soon.
+ */
+export function recordLabCheck(s: LearnState, id: string, right: number, total: number, today: string): LearnState {
+  const prev = s.lab[id];
+  if (!prev) return s;
+  const wasDue = prev.check !== null && prev.recheck.due <= today;
+  const firstCheck = prev.check === null;
+  let recheck = prev.recheck;
+  if (wasDue) {
+    const good = right * 3 >= total * 2;
+    const step = good ? Math.min(prev.recheck.step + 1, LAB_RECHECK_DAYS.length) : 0;
+    recheck = { step, due: step >= LAB_RECHECK_DAYS.length ? addDays(today, 90) : addDays(today, LAB_RECHECK_DAYS[step]) };
+  }
+  const next = { ...s, lab: { ...s.lab, [id]: { ...prev, check: { right, total }, recheck } } };
+  return firstCheck || wasDue ? gainXp(next, right * LAB_XP.checkPerRight, today) : next;
+}
+
+export function recordLabReflection(s: LearnState, id: string, today: string): LearnState {
+  const prev = s.lab[id];
+  if (!prev || prev.reflected) return s;
+  return gainXp({ ...s, lab: { ...s.lab, [id]: { ...prev, reflected: true } } }, LAB_XP.reflect, today);
+}
+
+/** Experiments whose check questions are due again (oldest due first). */
+export function labRechecksDue(s: LearnState, today: string): string[] {
+  return Object.entries(s.lab)
+    .filter(([, r]) => r.check !== null && r.recheck.due <= today)
+    .sort((a, b) => a[1].recheck.due.localeCompare(b[1].recheck.due))
+    .map(([id]) => id);
 }
