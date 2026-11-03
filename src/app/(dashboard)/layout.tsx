@@ -81,11 +81,11 @@ export default async function DashboardLayout({
   const mode = role === "admin" && !viewingAsStudent ? "admin" : "student";
   const shellRole = role === "alumni" ? "student" : role;
 
-  // The go-live roster is lectures_only, so an admin previewing the student
-  // side gets the same lectures-only nav the roster sees — not the full-student
-  // nav their own `full` scope would otherwise produce.
+  // The roster is now `full` (2026_11_all_full_access set every student to
+  // full), so an admin previewing the student side sees the full-student nav
+  // — matching what the students actually see — not a lectures-only nav.
   const effectiveScope =
-    role === "admin" && viewingAsStudent ? "lectures_only" : session.profile.scope;
+    role === "admin" && viewingAsStudent ? "full" : session.profile.scope;
 
   // First-login details: a student who hasn't filled, checked and submitted
   // their details sees the form over every page until they do (once only).
