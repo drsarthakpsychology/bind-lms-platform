@@ -1,5 +1,6 @@
 import { addDays, studyKey, type StudyProgress } from "@/lib/learn/engine";
 import type { Section, StudyModule } from "./types";
+import { checkpointHref, dueCheckpoint } from "./checkpoints";
 
 /**
  * The guided flow. Each module runs in the same four steps, taken from how
@@ -11,10 +12,11 @@ import type { Section, StudyModule } from "./types";
  * Only one thing is ever "next".
  */
 
-export type StepKind = "read" | "write" | "practise" | "test" | "retest";
+export type StepKind = "read" | "checkpoint" | "write" | "practise" | "test" | "retest";
 
 export type Next =
   | { kind: "read"; module: StudyModule; section: Section; label: string; href: string }
+  | { kind: "checkpoint"; module: StudyModule; label: string; href: string }
   | { kind: "write"; module: StudyModule; label: string; href: string }
   | { kind: "practise"; module: StudyModule; activityId: string; label: string; href: string }
   | { kind: "test"; module: StudyModule; section: Section; label: string; href: string }
@@ -89,6 +91,9 @@ export function moduleStatus(m: StudyModule, p: StudyProgress): ModuleStatus {
 
 /** The single next step inside one module. */
 export function moduleNext(m: StudyModule, p: StudyProgress): Next | null {
+  // A checkpoint that has opened comes before more reading.
+  const cp = dueCheckpoint(m, p);
+  if (cp) return { kind: "checkpoint", module: m, label: `Checkpoint ${cp.n}: ${cp.title}`, href: checkpointHref(m, cp) };
   const firstUnread = readingSections(m).find((s) => !p.done[studyKey(m.id, s.id)]);
   if (firstUnread) return { kind: "read", module: m, section: firstUnread, label: `Read ${firstUnread.num} ${firstUnread.title}`, href: sectionHref(m, firstUnread) };
   if (!p.written[m.id]) return { kind: "write", module: m, label: "Write it out on paper", href: `/study/${m.id}#write` };

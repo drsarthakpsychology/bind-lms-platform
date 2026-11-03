@@ -59,6 +59,15 @@ Every area is covered, but emphasis follows the history: mood and affect in depr
 4. List the eight headings in order. || Appearance and behaviour, speech, mood and affect, thought, perception, cognition, insight, judgement.
 :::
 
+:::mcq
+Q: A patient says she felt very low last week but today talks cheerfully and jokes. In the MSE you record:
+- Her low mood last week
+- *What you see now: her current mood in her words and the affect you observe
+- A diagnosis of bipolar disorder
+- Nothing about mood
+> The MSE is a snapshot of now. Last week belongs in the history.
+:::
+
 ## 2.1 General appearance and behaviour [core]
 Entirely observational, it begins before the first question, and it is the one section that can **always** be completed, even in a mute, sedated or hostile patient. It needs more emphasis in the uncooperative patient, not less.
 
@@ -119,6 +128,22 @@ Recorded **here**, in behaviour, because it is observed rather than reported:
 4. Where is hallucinatory behaviour recorded, and why? || Under behaviour, because it is observed, not reported. The hallucination itself goes under perception.
 :::
 
+:::mcq
+Q: A man in a well-pressed suit with one shoe untied, who has not shaved half his face, most suggests:
+- Mania
+- *Neglect of one side, as in a right parietal lesion, or severe disorganisation
+- Normal behaviour
+- Anxiety
+> Unilateral neglect of grooming is a classic sign worth noting exactly as seen.
+
+Q: A patient keeps a fixed, awkward posture for minutes when you raise her arm and leave it there. You record:
+- Stupor
+- *Waxy flexibility (catalepsy), a catatonic sign
+- Echopraxia
+- Akathisia
+> Write the exact behaviour and name it. Catatonia needs urgent assessment.
+:::
+
 ## 2.2 Speech [core]
 | Heading | What to note | Abnormal terms |
 |---|---|---|
@@ -151,6 +176,15 @@ Circumstantiality, tangentiality, flight of ideas and clang associations appear 
 2. Define pressure of speech, poverty of speech, poverty of content of speech, and verbigeration. || Rapid output with racing thoughts; reduced amount; adequate amount, little information; senseless repetition of the same words.
 3. Why do thought terms appear under speech as well? || Speech is the only window onto thought.
 4. Write a two-line speech finding for mania. || Increased, rapid, loud, hard to interrupt (pressure), with flight of ideas and clang associations.
+:::
+
+:::mcq
+Q: A patient's speech is fast and hard to interrupt, jumping between topics that are loosely linked by rhymes. Under Speech you write pressure of speech; under Thought you would most likely write:
+- Thought block
+- *Flight of ideas with clang associations
+- Poverty of thought
+- Perseveration
+> Stream and form go under Thought; rate and quantity go under Speech.
 :::
 
 ## 2.3 Mood and affect [core]
@@ -228,6 +262,22 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 2. Order euphoria, ecstasy, exaltation and elation by severity, with stages. || Euphoria (hypomania), elation (stage II), exaltation (stage III), ecstasy (delirious mania).
 3. Distinguish blunted from flat; labile from emotional incontinence; inappropriate from incongruent. || Intensity vs range; changeable vs total loss of control; situation vs own mood and thought.
 4. Which affect term occurs in both schizophrenia and depression? || Anhedonia.
+:::
+
+:::mcq
+Q: A woman describes her daughter's death in a flat voice and smiles throughout. Her affect is best described as:
+- Euthymic and congruent
+- *Incongruent
+- Labile
+- Restricted but congruent
+> Affect that does not fit the content of what is said is incongruent.
+
+Q: A man says, "I'm fine," while sitting slumped, tearful and slow. You record:
+- Mood: euthymic
+- *Mood (subjective): "I'm fine"; affect (objective): depressed
+- Mood: elated
+- Mood: not assessed
+> Record the patient's own words for mood and your observation of affect separately.
 :::
 
 ## 2.4 Thought: stream and form [core]
@@ -323,6 +373,22 @@ A thought process characterised by a series of ideas **without apparent logical 
 4. Distinguish perseveration from verbal stereotypy. What does perseveration support? || Related to the previous task and the patient tries to correct it, vs a fixed phrase regardless of context. Organic brain disorder.
 5. What does clearly present thought blocking suggest? || Schizophrenia.
 6. Distinguish circumstantiality from tangentiality. || Goal delayed but reached vs goal abandoned.
+:::
+
+:::mcq
+Q: A patient stops mid-sentence, stares, and then says, "My thoughts were taken out of my head." The stop is called:
+- Derailment
+- *Thought block, here explained by the patient as thought withdrawal
+- Circumstantiality
+- Perseveration
+> The observed stop is thought block; the patient's explanation is a passivity experience.
+
+Q: Asked where he lives, a man describes his whole journey from childhood homes, but finally names his street. This is:
+- Tangentiality
+- *Circumstantiality
+- Flight of ideas
+- Loosening of associations
+> Circumstantial speech reaches the goal after detours; tangential speech never gets there.
 :::
 
 ## 2.4b Thought: content and possession [core]
@@ -429,6 +495,22 @@ Normally we experience our thinking as our own and under our control. In some il
 4. List ten delusions by content, with one condition each. || Persecutory, reference, grandiose (mania), erotomanic, infidelity (alcohol), nihilistic (psychotic depression), somatic, guilt, poverty, control (schizophrenia).
 5. Define overvalued idea and obsession. Why can't there be an obsessional hallucination? || Feeling-tone-driven dominant idea; ego-dystonic resisted thought. An obsession must be normally under control and resistible.
 6. Name the four possession phenomena. || Insertion, withdrawal, broadcasting, echo.
+:::
+
+:::mcq
+Q: A woman is sure her neighbour's TV news reader is sending her personal messages. This is best called:
+- Delusion of grandeur
+- *Delusion of reference
+- Obsession
+- Overvalued idea
+> Ordinary events taken as having special personal meaning.
+
+Q: A student keeps thinking she might shout something rude in class, finds it horrible, and tries to push the thought away. This is:
+- Thought insertion
+- *An obsession
+- A delusion
+- Thought broadcasting
+> She recognises the thought as her own and resists it. Inserted thoughts are felt as not one's own.
 :::
 
 ## 2.5 Perception [core]
@@ -548,6 +630,22 @@ Also recorded here: autoscopy (seeing oneself), abnormal vestibular sensations, 
 7. Define depersonalisation, derealisation and somatic passivity. || Self unreal; world unreal; body sensations imposed from outside.
 :::
 
+:::mcq
+Q: In the evening, a man sees his coat on the door as a person standing there, but realises the truth when he switches on the light. This is:
+- A hallucination
+- *An illusion
+- A pseudohallucination
+- Derealisation
+> A real object misperceived is an illusion; a perception without any object is a hallucination.
+
+Q: Which hallucination most strongly suggests an organic cause rather than schizophrenia?
+- Third-person voices discussing the patient
+- Running commentary
+- *Vivid visual hallucinations of small animals in a confused patient
+- Thought echo
+> Visual hallucinations with confusion point to delirium, substances or neurological disease.
+:::
+
 ## 2.6 Cognition (higher mental functions) [core]
 :::safety Why this matters more than students think
 Significant disturbance of cognition commonly points to an **organic psychiatric disorder**. This section catches delirium masquerading as a psychiatric presentation. Never skip it; emphasise it whenever delirium or dementia is possible.
@@ -627,6 +725,15 @@ Concrete answers may occur in schizophrenia, but **always interpret against educ
 6. What must you exclude before calling a proverb answer concrete thinking? || Low education, unfamiliar proverb, language.
 :::
 
+:::mcq
+Q: A man scores poorly on serial sevens but gets every orientation question right. The most likely problem is:
+- Disorientation
+- *Impaired attention and concentration
+- Long-term memory loss
+- Low intelligence only
+> Serial sevens and digit span test attention; orientation tests a different function.
+:::
+
 ## 2.7 Insight and judgement [core]
 :::define Insight
 The degree of awareness and understanding that the patient has regarding his or her illness. More broadly, the ability to understand one's own behaviour and emotions.
@@ -689,6 +796,22 @@ A patient with no insight may keep good judgement. Assess and record them separa
 5. Why record insight and judgement separately? || They are independent.
 :::
 
+:::mcq
+Q: A patient says, "I know I have an illness, but it's because someone did black magic on me, so I need a faith healer, not medicine." His insight is best graded as:
+- Complete denial (grade 1)
+- *Awareness of illness but attributed to an external cause (grade 3)
+- Intellectual insight (grade 5)
+- True emotional insight (grade 6)
+> He accepts being ill but blames an outside cause.
+
+Q: Asked what he would do if he found a stamped addressed envelope on the road, a man gives the right answer, but last week he gave his savings to a stranger. You record:
+- Judgement intact
+- *Test judgement intact; personal and social judgement impaired
+- Insight absent
+- Abstract thinking impaired
+> Test answers can be fine while real-life judgement is poor. Record both.
+:::
+
 ## 2.9 MMSE and MoCA alongside the MSE [extra]
 The MMSE is often used for a systematic check of higher mental functions inside the cognition section. It is not the MSE.
 
@@ -710,6 +833,15 @@ The MMSE is often used for a systematic check of higher mental functions inside 
 :::recall
 1. Compare MMSE and MoCA on score, domains and sensitivity to mild impairment. || Both out of 30; MoCA adds executive and abstraction; MoCA more sensitive.
 2. What does an abnormal screen mean? || The need for fuller assessment, not a diagnosis.
+:::
+
+:::mcq
+Q: A retired teacher with 16 years of schooling scores 26 on the MMSE but cannot plan or switch tasks. The better next test is:
+- Repeat the MMSE
+- *The MoCA, which tests executive function
+- No more tests; 26 is normal
+- A projective test
+> The MMSE misses executive problems, especially in educated people.
 :::
 
 ## 2.10 The confusable pairs: master table [core]
@@ -743,6 +875,22 @@ Almost every mark lost in this topic is lost on one of these pairs. Each row giv
 :::recall
 1. Give the deciding rule for five pairs of your choice. || From the table.
 2. Delusion vs obsession: one-word rule? || Resistance (ego-dystonic and resisted = obsession).
+:::
+
+:::mcq
+Q: A woman feels as if she is a robot, watching herself from outside, but knows it is a feeling. This is:
+- Delusion of control
+- *Depersonalisation
+- Derealisation
+- Thought insertion
+> Insight is kept in depersonalisation; control delusions are held as true.
+
+Q: Which pair is correctly matched?
+- Echolalia: repeating the examiner's movements
+- *Perseveration: repeating a previous answer to a new question
+- Neologism: speaking very fast
+- Verbigeration: copying the examiner's words
+> Echolalia copies words, echopraxia copies movements, verbigeration repeats meaningless words.
 :::
 
 ## 2.11 Four worked MSE write-ups [core]
@@ -817,6 +965,15 @@ Read for the pattern, not the content. Every one moves through the eight heading
 2. In write-up 3, why is the memory finding called pseudodementia? || Poor effort and “I don't know” answers in depression, not a primary memory disorder.
 :::
 
+:::mcq
+Q: In a write-up, which line is an interpretation that does not belong in the MSE?
+- "Speech slow, low in volume, with long pauses"
+- "Mood: 'kuch achha nahi lagta'"
+- *"Patient was manipulative"
+- "Denies hallucinations; not observed responding to voices"
+> Describe what was seen and heard; leave labels like "manipulative" out.
+:::
+
 ## 2.12 Culture, language and literacy in the Indian setting [core]
 Every definition in this module has a culture clause, and most students skip it. Read this as clinical safety, not an add-on.
 
@@ -872,6 +1029,15 @@ Tension, ghabrahat, gas, garmi, dil ghabrana, weakness and dhat-related concerns
 4. Why prefer a trained interpreter to a family member? || Family filter, summarise and protect.
 :::
 
+:::mcq
+Q: A rural woman says "ghabrahat hoti hai" and "dil baith jaata hai". The best next step is:
+- Diagnose a heart condition
+- Diagnose panic disorder immediately
+- *Ask what she means and explore the experience, then screen for anxiety and depression
+- Ignore it as a cultural expression
+> Clarify idioms of distress in the patient's own terms before labelling.
+:::
+
 ## 2.13 Blank MSE proforma [core]
 Fill it from memory on paper, then check it against this module. Repeat until you can produce every sub-heading without prompting.
 
@@ -888,5 +1054,14 @@ Fill it from memory on paper, then check it against this module. Repeat until yo
 
 :::note This is your written practice
 After this section you'll be asked to do Pass 3: write the whole proforma and the insight scale on blank paper, from memory, then correct yourself in red.
+:::
+
+:::mcq
+Q: You have no time to complete every MSE heading in an emergency. The headings you must never skip are:
+- Appearance and speech only
+- *Risk-relevant findings: suicidal or homicidal thoughts, psychosis, orientation and capacity
+- Abstract thinking and proverbs
+- General knowledge
+> In a crisis, record what affects safety and decisions first.
 :::
 `;

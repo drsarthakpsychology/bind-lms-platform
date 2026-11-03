@@ -22,11 +22,23 @@ function ProgressBar({ value, max }: { value: number; max: number }) {
 }
 
 /** Recall check or viva cards: start, then one card at a time (say it, reveal, next). */
-export function CardDeck({ items, kind, onDone }: { items: Card[]; kind: "recall" | "viva"; onDone?: () => void }) {
-  const [i, setI] = React.useState(-1);
+export function CardDeck({
+  items,
+  kind,
+  onDone,
+  title,
+  autoStart = false,
+}: {
+  items: Card[];
+  kind: "recall" | "viva";
+  onDone?: (knew: number, total: number) => void;
+  title?: string;
+  autoStart?: boolean;
+}) {
+  const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [shown, setShown] = React.useState(false);
   const [missed, setMissed] = React.useState<number[]>([]);
-  const label = kind === "recall" ? "Check yourself" : "Viva rapid-fire";
+  const label = title ?? (kind === "recall" ? "Check yourself" : "Viva rapid-fire");
 
   if (i < 0) {
     return (
@@ -54,7 +66,7 @@ export function CardDeck({ items, kind, onDone }: { items: Card[]; kind: "recall
             <RotateCcw className="size-4" aria-hidden /> Again
           </button>
           {onDone ? (
-            <button type="button" onClick={onDone} className="inline-flex h-11 items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-4 font-semibold text-primary-foreground">
+            <button type="button" onClick={() => onDone(items.length - missed.length, items.length)} className="inline-flex h-11 items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-4 font-semibold text-primary-foreground">
               Continue <ArrowRight className="size-4" aria-hidden />
             </button>
           ) : null}
@@ -111,8 +123,23 @@ export function CardDeck({ items, kind, onDone }: { items: Card[]; kind: "recall
 }
 
 /** The module test: a start screen, one question at a time, then the score and a review. */
-export function TestRunner({ items, moduleId }: { items: Mcq[]; moduleId: string }) {
-  const [i, setI] = React.useState(-1);
+export function TestRunner({
+  items,
+  moduleId,
+  label = "Module test",
+  intro,
+  onDone,
+  autoStart = false,
+}: {
+  items: Mcq[];
+  /** Where the score is saved (a module id, or a checkpoint key). */
+  moduleId: string;
+  label?: string;
+  intro?: string[];
+  onDone?: (right: number, total: number) => void;
+  autoStart?: boolean;
+}) {
+  const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [picks, setPicks] = React.useState<Record<number, number>>({});
   const [done, setDone] = React.useState(false);
   const right = items.filter((m, k) => picks[k] === m.answer).length;
@@ -123,21 +150,22 @@ export function TestRunner({ items, moduleId }: { items: Mcq[]; moduleId: string
     setDone(true);
     const s = getLearnState();
     if (s) setLearnState(recordTest(s, moduleId, right, items.length, istToday()));
+    onDone?.(right, items.length);
     toTop();
   }
 
   if (i < 0 && !done) {
     return (
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
-        <p className="text-sm font-semibold text-link">Module test</p>
+        <p className="text-sm font-semibold text-link">{label}</p>
         <p className="mt-1 text-2xl font-bold">{items.length} questions · about {Math.max(10, Math.round(items.length * 1.1))} minutes</p>
         <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground">
-          <li>One question at a time. You can go back before you submit.</li>
-          <li>Answers and explanations appear at the end.</li>
-          <li>Your best score is saved. We&apos;ll ask you to re-test after 3, 7 and 21 days.</li>
+          {(intro ?? ["One question at a time. You can go back before you submit.", "Answers and explanations appear at the end.", "Your best score is saved. We'll ask you to re-test after 3, 7 and 21 days."]).map((t) => (
+            <li key={t}>{t}</li>
+          ))}
         </ul>
         <button type="button" onClick={() => setI(0)} className="btn-sweep mt-5 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-bold text-primary-foreground hard-shadow-sm">
-          Start the test <ArrowRight className="size-5" aria-hidden />
+          Start <ArrowRight className="size-5" aria-hidden />
         </button>
       </div>
     );
@@ -195,7 +223,7 @@ export function TestRunner({ items, moduleId }: { items: Mcq[]; moduleId: string
   return (
     <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-4 sm:p-6" aria-live="polite">
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span className="font-semibold text-link">Module test</span>
+        <span className="font-semibold text-link">{label}</span>
         <span className="tabular-nums">
           {i + 1} of {items.length}
         </span>

@@ -117,6 +117,7 @@ export function SectionReader({
   recall,
   viva,
   mcq,
+  checks = [],
 }: {
   moduleId: string;
   moduleNum: number;
@@ -131,6 +132,8 @@ export function SectionReader({
   recall: Card[];
   viva: Card[];
   mcq: Mcq[];
+  /** This module's checkpoints, to open the one that becomes ready after this section. */
+  checks?: { key: string; href: string; sectionIds: string[]; later: string[] }[];
 }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
@@ -153,7 +156,10 @@ export function SectionReader({
   const readCount = toc.filter((t) => !t.isTest && st.study.done[studyKey(moduleId, t.id)]).length;
   const readTotal = toc.filter((t) => !t.isTest).length;
   const atEnd = step >= chunks.length;
-  const hasCheck = recall.length > 0 || viva.length > 0;
+  // Recall questions are not asked straight after reading: they wait for the
+  // checkpoint, once the student has moved on (see lib/study/checkpoints.ts).
+  void recall;
+  const hasCheck = viva.length > 0;
 
   function go(to: number) {
     setStep(to);
@@ -165,8 +171,14 @@ export function SectionReader({
 
   function finish() {
     const s = getLearnState();
-    if (s) setLearnState(finishSection(s, moduleId, section.id, istToday()));
-    router.push(next.href);
+    const after = s ? finishSection(s, moduleId, section.id, istToday()) : null;
+    if (after) setLearnState(after);
+    // A checkpoint that this section has just opened comes first.
+    const done = (id: string) => Boolean(after?.study.done[studyKey(moduleId, id)]);
+    const ready = after
+      ? checks.find((c) => !after.study.tests[c.key] && c.sectionIds.every(done) && (!c.later.length || c.later.some(done)))
+      : undefined;
+    router.push(ready ? `${ready.href}?then=${encodeURIComponent(next.href)}` : next.href);
   }
 
   const shownParts = section.isTest ? chunks.map((_, k) => k) : wide ? chunks.map((_, k) => k).filter((k) => k <= Math.min(step, chunks.length - 1) || atEnd) : atEnd ? [] : [step];
@@ -270,7 +282,6 @@ export function SectionReader({
           {/* End of the section: self-check, then finish */}
           {!section.isTest && atEnd ? (
             <div className={cn("space-y-5", s.reveal)}>
-              {recall.length ? <CardDeck items={recall} kind="recall" /> : null}
               {viva.length ? <CardDeck items={viva} kind="viva" /> : null}
               {!wide ? (
                 <button type="button" onClick={() => go(0)} className="text-sm font-semibold underline underline-offset-4">
