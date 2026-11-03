@@ -1,4 +1,5 @@
 import "server-only";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import type { CohortRow } from "./access";
 
@@ -21,19 +22,21 @@ export type MemberRow = {
 /** Every cohort with its member, lecture and details-filled counts. */
 export async function loadCohortSummaries(): Promise<{ cohorts: CohortSummary[]; unassigned: number; tablesMissing: boolean }> {
   const admin = createAdminClient();
-  const [{ data: cohorts, error }, { data: members }, { data: links }, { data: details }, { data: students }] = await Promise.all([
+  const [{ data: cohorts, error }, { data: allMembers }, { data: links }, { data: details }, { data: students }] = await Promise.all([
     admin.from("cohorts").select("id, name, course_id, starts_on, ends_on, status, created_at").order("created_at", { ascending: true }),
     admin.from("cohort_members").select("cohort_id, user_id").limit(20000),
     admin.from("lesson_cohorts").select("cohort_id").limit(20000),
     admin.from("student_details").select("user_id, confirmed_at").limit(20000),
-    admin.from("profiles").select("id").eq("role", "student").limit(20000),
+    admin.from("profiles").select("id, email, is_test").eq("role", "student").limit(20000),
   ]);
   if (error) return { cohorts: [], unassigned: 0, tablesMissing: true };
   const done = new Set((details ?? []).filter((d) => d.confirmed_at).map((d) => d.user_id as string));
+  const real = new Set((students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => s.id as string));
+  const members = (allMembers ?? []).filter((m) => real.has(m.user_id as string));
   const assigned = new Set((members ?? []).map((m) => m.user_id as string));
   return {
     tablesMissing: false,
-    unassigned: (students ?? []).filter((s) => !assigned.has(s.id as string)).length,
+    unassigned: [...real].filter((id) => !assigned.has(id)).length,
     cohorts: (cohorts ?? []).map((c) => {
       const mine = (members ?? []).filter((m) => m.cohort_id === c.id);
       return {
@@ -81,7 +84,7 @@ export async function loadCohort(id: string) {
   const emptyRes = { data: [] as Record<string, unknown>[] };
   const [{ data: profiles }, { data: details }] = ids.length
     ? await Promise.all([
-        admin.from("profiles").select("id, email, name, scope, status, active_session_token").in("id", ids),
+        admin.from("profiles").select("id, email, name, scope, status, active_session_token, is_test").in("id", ids),
         admin.from("student_details").select("user_id, confirmed_at").in("user_id", ids),
       ])
     : [emptyRes, emptyRes];
@@ -90,7 +93,9 @@ export async function loadCohort(id: string) {
   const setUp = new Set((invites ?? []).filter((i) => i.setup_completed_at).map((i) => String(i.email)));
   const done = new Set((details ?? []).filter((d) => d.confirmed_at).map((d) => String(d.user_id)));
   const byId = new Map((profiles ?? []).map((p) => [String(p.id), p]));
+  const hiddenIds = new Set((profiles ?? []).filter((p) => isHiddenAccount(p as { email?: string; is_test?: boolean })).map((p) => String(p.id)));
   const rows: MemberRow[] = (members ?? [])
+    .filter((m) => !hiddenIds.has(m.user_id as string))
     .map((m) => {
       const p = byId.get(m.user_id as string);
       const email = String(p?.email ?? "");

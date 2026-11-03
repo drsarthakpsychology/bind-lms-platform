@@ -3,7 +3,8 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
-import { normalise } from "@/lib/learn/engine";
+import { normalise, addDays } from "@/lib/learn/engine";
+import { istToday } from "@/lib/practice/streaks";
 import { hoursOf, rankRows, standingFor } from "./score";
 
 export type StandingRow = {
@@ -19,6 +20,7 @@ export type StandingRow = {
   hours: number;
   lectureHours: number;
   lessonsDone: number;
+  weekXp: number;
   rank: number;
 };
 
@@ -39,7 +41,14 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
   for (const t of totalRows) {
     totals.set(t.user_id, t);
   }
-  const xp = new Map((learn ?? []).map((l) => [l.user_id as string, normalise(l.state).xp || Number(l.xp) || 0]));
+  const weekStart = addDays(istToday(), -6);
+  const xp = new Map<string, number>();
+  const weekXp = new Map<string, number>();
+  for (const l of learn ?? []) {
+    const st = normalise(l.state);
+    xp.set(l.user_id as string, st.xp || Number(l.xp) || 0);
+    weekXp.set(l.user_id as string, Object.entries(st.history).reduce((a, [d, x]) => (d >= weekStart ? a + Number(x) : a), 0));
+  }
   const cohorts = new Map<string, string[]>();
   for (const m of membersRes.error ? [] : (membersRes.data ?? [])) {
     const k = m.user_id as string;
@@ -65,6 +74,7 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
         hours: hoursOf(tot.platformSeconds),
         lectureHours: hoursOf(tot.watchedSeconds),
         lessonsDone: tot.lessonsDone,
+        weekXp: weekXp.get(id) ?? 0,
       };
     });
   return { rows: rankRows(rows) };

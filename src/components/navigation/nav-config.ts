@@ -1,3 +1,4 @@
+import { blockedBy } from "@/lib/access/features";
 import type { NavItem } from "@/components/navigation/nav-items";
 
 /**
@@ -12,28 +13,29 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/study", label: "Notes", icon: "bookOpen" },
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
+  { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
+  { href: "/practice/leaderboard", label: "Rankings", icon: "trophy", section: "More" },
+  { href: "/journey", label: "My journey", icon: "route", section: "More" },
+  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
-  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
-  // Passport (skills_passport) and Record are not released for this cohort —
-  // a nav link to an empty/placeholder surface is worse than no link. The
-  // routes remain (no admin access is removed); students just aren't pointed at
-  // them from the shell.
 ];
 
 /**
- * Roster accounts: the lecture list plus the practice hub — everything the
- * programme has made live or unlocked. The practice hub itself only shows
- * live/unlocked tools, and each tool route is server-gated by its flag.
+ * Lectures-only accounts: lectures, their doubts board and their journey.
+ * (Full accounts get everything above.)
  */
 export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
   { href: "/courses", label: "Lectures", icon: "play" },
-  { href: "/study", label: "Notes", icon: "bookOpen" },
-  { href: "/games", label: "Games", icon: "gamepad" },
-  { href: "/practice", label: "Practice", icon: "stethoscope" },
-  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
+  { href: "/doubts", label: "Doubts", icon: "doubt" },
+  { href: "/journey", label: "My journey", icon: "route" },
 ];
+
+/** Drop menu items for sections switched off for this student. */
+export function withoutBlocked(items: NavItem[], blocked: string[] = []): NavItem[] {
+  return blocked.length ? items.filter((i) => !blockedBy(i.href, blocked)) : items;
+}
 
 /**
  * Admin nav is grouped into labelled chunks (Launch / Review / Content /
@@ -122,6 +124,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/people", label: "Pipeline" },
       { href: "/admin/cohorts", label: "Cohorts" },
       { href: "/admin/students", label: "Students" },
+      { href: "/admin/access", label: "Access" },
       { href: "/admin/activity", label: "Activity" },
       { href: "/admin/roster", label: "Roster", hidden: true },
       { href: "/admin/enquiries", label: "Enquiries" },
@@ -138,6 +141,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/triage", label: "Needs a look" },
       { href: "/admin/submissions", label: "Submissions" },
       { href: "/admin/sim-review", label: "Practice sessions" },
+      { href: "/doubts", label: "Doubts & concerns" },
       { href: "/admin/supervision", label: "Sign-offs" },
       { href: "/admin/wall-reports", label: "Wall reports" },
     ],

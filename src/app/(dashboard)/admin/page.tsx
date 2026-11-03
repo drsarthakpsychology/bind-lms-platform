@@ -1,8 +1,9 @@
-import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ToggleLeft, UserPlus, Users } from "lucide-react";
+import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ShieldAlert, ToggleLeft, UserPlus, Users } from "lucide-react";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { loadActivity } from "@/lib/analytics/activity";
 import { latest } from "@/lib/people/presence";
 import { loadOpenFailures } from "@/lib/email/failed";
+import { openComplaintCount } from "@/lib/doubts/data";
 import Link from "next/link";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
@@ -102,8 +103,17 @@ export default async function AdminOverviewPage() {
     adminClient.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
     loadOpenFailures(adminClient).then((rows) => ({ count: rows.length })),
   ]);
+  const complaints = await openComplaintCount();
 
   const actions = [
+    {
+      label: "Student concerns",
+      count: complaints,
+      detail: "Complaints students raised (kept off the public board).",
+      href: "/doubts",
+      icon: <ShieldAlert className="size-4" />,
+      urgent: complaints > 0,
+    },
     {
       label: "Reply to emails",
       count: unreadReplies ?? 0,

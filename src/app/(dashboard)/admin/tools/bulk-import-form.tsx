@@ -31,7 +31,7 @@ const emptyResult: BulkImportResult = {
 export function BulkImportForm() {
   const router = useRouter();
   const [phase, setPhase] = React.useState<Phase>("upload");
-  const [scope, setScope] = React.useState("lectures_only");
+  const [scope, setScope] = React.useState("full");
   const [fileName, setFileName] = React.useState("");
   const [rows, setRows] = React.useState<RosterRow[]>([]);
   const [invalid, setInvalid] = React.useState<RosterFailure[]>([]);

@@ -20,6 +20,10 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
   if (!data) notFound();
   const { cohort, members, lessonIds } = data;
   const view = tab === "lectures" ? "lectures" : "people";
+  // The course(s) this cohort belongs to: the one it was made for, plus any
+  // whose lectures it can watch. Links go both ways (Content ↔ People).
+  const courseIds = new Set<string>([...(cohort.course_id ? [cohort.course_id] : []), ...lessons.filter((l) => lessonIds.has(l.id)).map((l) => l.course_id)]);
+  const courses = [...courseIds].map((cid) => ({ id: cid, title: lessons.find((l) => l.course_id === cid)?.course_title ?? "Course" }));
 
   return (
     <div className="space-y-6">
@@ -33,6 +37,19 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
           <p className="mt-1 text-sm text-muted-foreground">
             {members.length} {members.length === 1 ? "person" : "people"} · {lessonIds.size} lectures shared
           </p>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+            {courses.map((c) => (
+              <Link key={c.id} href={`/admin/courses/${c.id}`} className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-brand px-3.5 font-bold text-brand-foreground">
+                Course: {c.title} →
+              </Link>
+            ))}
+            <Link href={`/admin/access?cohort=${id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground bg-card px-3.5 font-bold">
+              Access for this cohort →
+            </Link>
+            <Link href={`/doubts?cohort=${id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground bg-card px-3.5 font-bold">
+              Their doubts →
+            </Link>
+          </div>
         </div>
         <details className="group rounded-2xl border-2 border-foreground bg-card">
           <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden">

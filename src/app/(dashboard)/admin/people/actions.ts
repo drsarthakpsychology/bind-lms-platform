@@ -1,5 +1,6 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -67,14 +68,14 @@ export async function convertToStudent(email: string, name: string): Promise<{ e
   if (!existing) {
     const { data: created, error } = await admin.auth.admin.createUser({ email: e, password: generateCredential(), email_confirm: true });
     if (error || !created.user) return { error: error?.message ?? "Couldn't create the account.", setupUrl: null };
-    await admin.from("profiles").update({ scope: "lectures_only" }).eq("id", created.user.id);
+    await admin.from("profiles").update({ scope: "full" }).eq("id", created.user.id);
   }
   await admin
     .from("credential_invites")
     .upsert({ email: e, name: name.trim() || deriveName(e), status: "pending", error_reason: null, sent_at: null }, { onConflict: "email" });
   await admin.from("crm_contacts").upsert({ email: e, stage: "joined", updated_at: new Date().toISOString() }, { onConflict: "email" });
   await admin.from("crm_activities").insert({ email: e, kind: "stage", body: "Became a student", created_by: me.id });
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const setupUrl = await issueSetupLink(admin, e, appUrl, me.id);
   revalidatePath("/admin/students");
   revalidatePath("/admin/emails");

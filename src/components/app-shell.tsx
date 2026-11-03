@@ -6,7 +6,7 @@ import { BottomTabBar } from "@/components/navigation/bottom-tab-bar";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { ShellContent } from "@/components/navigation/shell-content";
 import { TopBar } from "@/components/navigation/top-bar";
-import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS, withStudy } from "@/components/navigation/nav-config";
+import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS, withStudy, withoutBlocked } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
 
 /**
@@ -24,6 +24,7 @@ export function AppShell({
   scope = "full",
   email = null,
   showStudy = false,
+  blocked = [],
   viewModeSwitch,
   children,
 }: {
@@ -33,11 +34,13 @@ export function AppShell({
   email?: string | null;
   /** True when Study (the course) is unlocked for students. */
   showStudy?: boolean;
+  /** Sections switched off for this student (People → Access). */
+  blocked?: string[];
   viewModeSwitch?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const isAdminView = role === "admin" && mode === "admin";
-  const items = isAdminView ? ADMIN_ITEMS : withStudy(scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS, showStudy);
+  const items = isAdminView ? ADMIN_ITEMS : withoutBlocked(withStudy(scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS, showStudy), blocked);
   // The sidebar gate treats "admin previewing as student" like a student on
   // inner pages (they get the drill-down too).
   const gateRole = role === "admin" && mode === "student" ? "admin-preview" : role;
@@ -69,7 +72,7 @@ export function AppShell({
         <SidebarGate role={gateRole} fallback={null}>
           <div className="hidden shrink-0 lg:block">
             <div className="sticky top-16 h-[calc(100dvh-4rem)]">
-              <AppSidebar role={role} mode={mode} scope={scope} showStudy={showStudy} />
+              <AppSidebar role={role} mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} />
             </div>
           </div>
         </SidebarGate>
@@ -79,7 +82,7 @@ export function AppShell({
         </main>
       </div>
 
-      <BottomTabBar mode={mode} scope={scope} showStudy={showStudy} />
+      <BottomTabBar mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} />
       <MobileNav
         items={items}
         viewModeSwitch={viewModeSwitch}

@@ -1,5 +1,6 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { requireAdmin } from "@/lib/auth/guards";
@@ -180,7 +181,7 @@ export async function retryFailedCredentialSends(): Promise<{
   const emails = Array.from(new Set((data ?? []).map((d) => d.recipient)));
   if (emails.length === 0) return { error: null, retried: 0, sent: 0, failed: 0 };
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail, sentBy: profile.id });
 
   revalidatePath("/admin/emails");
