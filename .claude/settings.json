@@ -86,5 +86,9 @@
     "42crunch-api-security-testing@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "data-engineering@claude-plugins-official": true
+  },
+  "env": {
+    "CLAUDE_CODE_STOP_HOOK_BLOCK_CAP": "500",
+    "CLAUDE_MAX_CONTINUES": "500"
   }
 }
