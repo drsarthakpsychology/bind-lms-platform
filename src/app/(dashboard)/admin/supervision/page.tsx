@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/server";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { PageHeader } from "@/components/design-system/page-header";
 import { SupervisionReview } from "./supervision-review";
 
@@ -21,6 +22,7 @@ export default async function AdminSupervisionPage() {
     admin.from("profiles").select("id, email").limit(500),
   ]);
   const emailBy = new Map((profiles ?? []).map((p) => [p.id, p.email]));
+  const hidden = await loadHiddenIds();
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -31,7 +33,7 @@ export default async function AdminSupervisionPage() {
 
       <div className="mt-6">
         <SupervisionReview
-          entries={(requested ?? []).map((e) => ({
+          entries={(requested ?? []).filter((e) => !hidden.has(e.user_id as string)).map((e) => ({
             id: e.id,
             studentEmail: emailBy.get(e.user_id) ?? "student",
             activity: String(e.activity),

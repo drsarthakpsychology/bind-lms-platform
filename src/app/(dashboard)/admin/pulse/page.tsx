@@ -1,6 +1,8 @@
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { PulseView } from "./pulse-view";
+import { loadActivity } from "@/lib/analytics/activity";
+import { latest, presenceOf } from "@/lib/people/presence";
 
 export const dynamic = "force-dynamic";
 
@@ -19,29 +21,36 @@ export const dynamic = "force-dynamic";
 export default async function AdminPulsePage() {
   const admin = createAdminClient();
 
-  const [{ data: activity }, { data: checkinsAgg }] = await Promise.all([
+  const [{ data: activity }, { data: checkinsAgg }, { rows: seen }] = await Promise.all([
     admin.from("student_last_activity").select("user_id, email, last_active_at"),
     admin.from("checkins_aggregate").select("*").order("week_label", { ascending: false }).limit(4),
+    loadActivity(),
   ]);
 
   const now = new Date().getTime();
   const DAY = 86400000;
 
-  // Null last_active_at = never started (no sim, no check-in, no journal).
-  const rows = (activity ?? []).map((a) => {
-    const ts = a.last_active_at ? new Date(String(a.last_active_at)).getTime() : null;
-    const daysSilent = ts === null ? null : Math.floor((now - ts) / DAY);
+  // Last moment on VIBHA = the latest of page time, lectures, practice
+  // (from Activity) and check-ins / journal (from the view). Test and robot
+  // accounts are already left out of Activity, so only real students count.
+  const viewLast = new Map((activity ?? []).map((a) => [a.user_id as string, (a.last_active_at as string | null) ?? null]));
+  const rows = seen.map((r) => {
+    const last = latest(r.lastSeen, viewLast.get(r.id));
+    const ts = last ? new Date(last).getTime() : null;
     return {
-      user_id: a.user_id,
-      email: a.email,
-      daysSilent,
+      user_id: r.id,
+      email: r.email,
+      name: r.name,
+      last,
+      daysSilent: ts === null ? null : Math.floor((now - ts) / DAY),
     };
   });
 
   const drifted = rows
-    .filter((r): r is { user_id: string; email: string; daysSilent: number } => r.daysSilent !== null && r.daysSilent >= 7)
+    .filter((r): r is typeof r & { daysSilent: number } => r.daysSilent !== null && r.daysSilent >= 7)
     .sort((a, b) => b.daysSilent - a.daysSilent);
   const flying = rows.filter((r) => r.daysSilent !== null && r.daysSilent < 2).map((r) => r.email);
+  const activeNow = rows.filter((r) => presenceOf(r.last, now) === "now").map((r) => r.name);
 
   const weeks = (checkinsAgg ?? []).map((w) => ({
     week: String(w.week_label),
@@ -68,6 +77,7 @@ export default async function AdminPulsePage() {
           flying={flying}
           total={rows.length}
           active={rows.filter((r) => r.daysSilent !== null && r.daysSilent < 7).length}
+          activeNow={activeNow}
           weeks={weeks}
           curriculumFlag={curriculumFlag}
         />

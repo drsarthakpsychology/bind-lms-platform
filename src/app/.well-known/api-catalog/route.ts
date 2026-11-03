@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
@@ -6,7 +7,7 @@ import { NextResponse } from "next/server";
  * here. Each entry anchors a real API and links its OpenAPI description
  * (service-desc), documentation (service-doc), and health check (status).
  */
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const baseUrl = liveAppUrl();
 
 const catalog = {
   linkset: [

@@ -13,6 +13,9 @@ import { AppShell } from "@/components/app-shell";
 import { readFlags } from "@/lib/flags";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
+import { VisitTracker } from "@/components/analytics/visit-tracker";
+import { loadMyBlocks } from "@/lib/access/blocks";
+import { blockedBy } from "@/lib/access/features";
 import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
@@ -58,6 +61,14 @@ export default async function DashboardLayout({
     if (!lectureOnlyAllowed(pathname)) {
       redirect("/dashboard");
     }
+  }
+
+  // Sections the admin switched off for this student (People → Access):
+  // hidden from the menu, and their pages send the student home.
+  const blocked = session.status === "ok" && session.profile.role === "student" ? await loadMyBlocks(session.profile.id) : [];
+  if (blocked.length) {
+    const pathname = (await headers()).get("x-pathname") ?? "";
+    if (blockedBy(pathname, blocked)) redirect("/dashboard?off=1");
   }
 
   const cookieStore = await cookies();
@@ -115,6 +126,7 @@ export default async function DashboardLayout({
       scope={effectiveScope}
       email={session.profile.email}
       showStudy={(await readFlags()).learn === "unlocked"}
+      blocked={blocked}
       viewModeSwitch={
         role === "admin" ? (
           <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
@@ -122,6 +134,7 @@ export default async function DashboardLayout({
       }
     >
       {gate}
+      {role === "student" ? <VisitTracker /> : null}
       {children}
     </AppShell>
   );

@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { loadAllLessons, loadCohortSummaries, loadPersonAccess } from "@/lib/cohorts/admin-data";
 import { loadStanding } from "@/lib/standing/board";
 import { PersonAccess } from "@/components/admin/cohorts-ui";
+import { PersonLinks } from "@/components/admin/person-links";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +40,9 @@ export default async function PersonAccessPage({ params }: { params: Promise<{ u
         <p className="text-eyebrow text-link">Access</p>
         <h1 className="text-h1 break-words">{(details?.full_name as string) || (profile.name as string) || (profile.email as string)}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{profile.email as string}</p>
+        <div className="mt-3">
+          <PersonLinks userId={userId} email={String(profile.email ?? "")} here="access" />
+        </div>
       </header>
 
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">

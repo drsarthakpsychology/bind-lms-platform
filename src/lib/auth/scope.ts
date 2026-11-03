@@ -17,28 +17,16 @@ export function isBlocked(profile: { status?: "active" | "blocked" } | null): bo
 }
 
 /**
- * The routes a lecture-only account may reach. These accounts see everything
- * the programme has made LIVE or UNLOCKED — so beyond the lecture list
- * (`/dashboard`) + player (`/courses/*`), they may reach the practice tools
- * and the other student surfaces (reflect, record, passport, wall,
- * psychopharm tools). Every one of those is itself gated server-side by
- * `requireFeature` (off tools redirect away, live tools show a locked screen),
- * so letting the route through is safe — the feature flag is the real gate.
- * Only /admin and /settings stay blocked for them.
+ * The routes a lecture-only account may reach: the lecture list and player,
+ * their cohort's Doubts board, their own journey and alerts. Everything else
+ * (Notes, Games, Practice, Medicines, Wall, Journal) needs Full access, which
+ * the admin sets per student on People → Access.
  */
 export function lectureOnlyAllowed(pathname: string): boolean {
-  if (pathname.startsWith("/admin")) return false;
-  if (pathname.startsWith("/settings")) return false;
   if (pathname === "/dashboard") return true;
-  if (pathname.startsWith("/courses")) return true;
-  if (pathname.startsWith("/practice")) return true;
-  if (pathname.startsWith("/study")) return true;
-  if (pathname.startsWith("/games")) return true;
-  if (pathname === "/reflect") return true;
-  if (pathname === "/record") return true;
-  if (pathname === "/passport") return true;
-  if (pathname === "/wall") return true;
+  if (pathname === "/courses" || pathname.startsWith("/courses/")) return true;
+  if (pathname === "/doubts" || pathname.startsWith("/doubts/")) return true;
+  if (pathname === "/journey") return true;
   if (pathname === "/notifications") return true;
-  if (pathname.startsWith("/tools")) return true;
   return false;
 }

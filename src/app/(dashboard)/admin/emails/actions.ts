@@ -1,6 +1,8 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendResendEmail, sendCredentialEmails, logEmailSend } from "@/lib/auth/roster";
@@ -22,7 +24,7 @@ export async function loadRecipientData(): Promise<RecipientData> {
     supabase.from("courses").select("id, title").eq("is_published", true).order("title", { ascending: true }),
     supabase
       .from("profiles")
-      .select("id, email")
+      .select("id, email, is_test")
       .eq("role", "student")
       .eq("is_test", false)
       .order("email", { ascending: true }),
@@ -36,7 +38,7 @@ export async function loadRecipientData(): Promise<RecipientData> {
 
   return {
     courses: (courses ?? []).map((c) => ({ id: c.id, title: c.title })),
-    students: (students ?? []).map((s) => ({ id: s.id, email: s.email })),
+    students: (students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => ({ id: s.id, email: s.email })),
     enrolledByCourse,
   };
 }
@@ -179,7 +181,7 @@ export async function retryFailedCredentialSends(): Promise<{
   const emails = Array.from(new Set((data ?? []).map((d) => d.recipient)));
   if (emails.length === 0) return { error: null, retried: 0, sent: 0, failed: 0 };
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail, sentBy: profile.id });
 
   revalidatePath("/admin/emails");

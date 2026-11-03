@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, type LucideIcon } from "lucide-react";
+import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -45,6 +45,10 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   sun: Sun,
   listFilter: ListFilter,
   activity: Activity,
+  trophy: Trophy,
+  route: Route,
+  doubt: MessageCircleQuestion,
+  key: KeyRound,
 };
 
 export type NavItem = {
@@ -87,9 +91,11 @@ export function NavItems({
     <nav aria-label="Primary" className={cn("flex flex-col gap-1", className)}>
       {rows.map(({ item, showHeader }) => {
         const under = (h: string) => pathname === h || pathname.startsWith(`${h}/`);
+        // A deeper item (e.g. /practice/medicines) wins over its parent (/practice).
+        const deeper = items.some((o) => o.href !== item.href && o.href.startsWith(`${item.href}/`) && under(o.href));
         const active = item.exact
           ? pathname === item.href
-          : under(item.href) || (item.match ?? []).some(under);
+          : (under(item.href) && !deeper) || (item.match ?? []).some(under);
         const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <React.Fragment key={item.href}>

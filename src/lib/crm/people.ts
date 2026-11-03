@@ -1,4 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { latest, visitEnd } from "@/lib/people/presence";
+import { isHiddenAccount, isRobotEmail } from "@/lib/people/hidden";
 
 /** Pipeline stages, in order. Students are "joined" and beyond. */
 export const STAGES = [
@@ -39,6 +41,8 @@ export type Person = {
   replied: boolean;
   lastContactAt: string | null;
   contacted: boolean;
+  /** Last moment on VIBHA (students): page time, lectures. */
+  lastSeen: string | null;
 };
 
 export const personKey = (email: string) => Buffer.from(email.toLowerCase()).toString("base64url");
@@ -55,7 +59,8 @@ const max = (a: string | null, b: string | null) => (!a ? b : !b ? a : a > b ? a
 
 /** Everyone the programme has touched — enquiries and students — merged by email. */
 export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
-  const [{ data: enquiries }, { data: students }, { data: contacts }, { data: invites }, { data: sends }, { data: inbound }, { data: acts }] =
+  const since = new Date(Date.now() - 14 * 86400000).toISOString();
+  const [{ data: enquiries }, { data: students }, { data: contacts }, { data: invites }, { data: sends }, { data: inbound }, { data: acts }, { data: visits }, { data: prog }] =
     await Promise.all([
       admin.from("enquiries").select("name, email, phone, source, created_at").order("created_at", { ascending: false }).limit(2000),
       admin.from("profiles").select("id, email, mobile_number, active_session_token, status, is_test").eq("role", "student").limit(2000),
@@ -64,7 +69,16 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
       admin.from("email_sends").select("recipient, sent_at, opened_at, status").eq("status", "sent").limit(20000),
       admin.from("email_inbound").select("from_email, received_at").limit(10000),
       admin.from("crm_activities").select("email, kind, created_at").limit(20000),
+      admin.from("page_visits").select("user_id, entered_at, left_at, duration_seconds").gte("entered_at", since).order("entered_at", { ascending: false }).limit(50000),
+      admin.from("progress").select("user_id, updated_at").gte("updated_at", since).limit(50000),
     ]);
+  const seen = new Map<string, string>();
+  const bump = (id: string, at: string | null) => {
+    const best = latest(seen.get(id), at);
+    if (best) seen.set(id, best);
+  };
+  for (const v of visits ?? []) bump(v.user_id as string, visitEnd(v as { entered_at: string; left_at: string | null; duration_seconds: number | null }));
+  for (const x of prog ?? []) bump(x.user_id as string, x.updated_at as string);
 
   const map = new Map<string, Person>();
   const get = (raw: string | null | undefined): Person | null => {
@@ -75,7 +89,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
       p = {
         key: personKey(email), email, name: email.split("@")[0], phone: null, isStudent: false, isEnquiry: false,
         stage: "new", followUpAt: null, enquiredAt: null, source: null, studentId: null, signedIn: false, locked: false,
-        setupDone: false, inviteSentAt: null, emailsSent: 0, opened: false, replied: false, lastContactAt: null, contacted: false,
+        setupDone: false, inviteSentAt: null, emailsSent: 0, opened: false, replied: false, lastContactAt: null, contacted: false, lastSeen: null,
       };
       map.set(email, p);
     }
@@ -92,7 +106,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.enquiredAt = p.enquiredAt ?? (e.created_at as string);
   }
   for (const s of students ?? []) {
-    if (s.is_test) continue;
+    if (isHiddenAccount(s)) continue;
     const p = get(s.email as string);
     if (!p) continue;
     p.isStudent = true;
@@ -101,6 +115,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.signedIn = Boolean(s.active_session_token);
     p.locked = s.status === "blocked";
     p.stage = "joined";
+    p.lastSeen = seen.get(s.id as string) ?? null;
   }
   for (const i of invites ?? []) {
     const p = map.get(String(i.email).toLowerCase());
@@ -134,6 +149,9 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.lastContactAt = max(p.lastContactAt, a.created_at as string);
   }
   for (const p of map.values()) p.contacted = p.emailsSent > 0 || p.lastContactAt !== null;
+  // Test and robot accounts never appear, even if they were once sent mail.
+  const hiddenEmails = new Set((students ?? []).filter(isHiddenAccount).map((s) => String(s.email).toLowerCase()));
+  for (const [email] of map) if (hiddenEmails.has(email) || isRobotEmail(email)) map.delete(email);
 
   return [...map.values()].sort((a, b) => (b.lastContactAt ?? b.enquiredAt ?? "").localeCompare(a.lastContactAt ?? a.enquiredAt ?? ""));
 }

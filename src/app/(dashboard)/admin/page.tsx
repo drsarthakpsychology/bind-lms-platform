@@ -1,4 +1,9 @@
-import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ToggleLeft, UserPlus, Users } from "lucide-react";
+import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ShieldAlert, ToggleLeft, UserPlus, Users } from "lucide-react";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { loadActivity } from "@/lib/analytics/activity";
+import { latest } from "@/lib/people/presence";
+import { loadOpenFailures } from "@/lib/email/failed";
+import { openComplaintCount } from "@/lib/doubts/data";
 import Link from "next/link";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
@@ -42,14 +47,21 @@ export default async function AdminOverviewPage() {
     supabase.from("sim_sessions").select("user_id"),
   ]);
 
-  const studentIds = new Set((students ?? []).map((s) => s.id));
+  // Real students only: test and robot accounts (AI calibration) never count.
+  const hidden = await loadHiddenIds();
+  const realStudents = (students ?? []).filter((s) => !hidden.has(s.id as string));
+  const studentIds = new Set(realStudents.map((s) => s.id));
+  // Last moment on VIBHA: page time and lectures (Activity) plus the view.
+  const { rows: seenRows } = await loadActivity();
+  const seenBy = new Map(seenRows.map((r) => [r.id, r.lastSeen]));
   const activityByUser = new Map((activity ?? []).map((a) => [a.user_id, a]));
+  const lastOf = (id: string) => latest(seenBy.get(id), (activityByUser.get(id)?.last_active_at as string | null) ?? null);
 
   // How many sim sessions are flagged for a human eye (mirrors /admin/triage).
   const sessionsByStudent = new Map<string, number>();
-  for (const s of allSessionUsers ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
+  for (const s of (allSessionUsers ?? []).filter((x) => !hidden.has(x.user_id as string))) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
   let flaggedSessions = 0;
-  for (const s of simScores ?? []) {
+  for (const s of (simScores ?? []).filter((x) => !hidden.has(x.user_id as string))) {
     const isFirst = (sessionsByStudent.get(s.user_id) ?? 1) <= 1;
     const rubric = (s.rubric as Record<string, unknown>) ?? {};
     const premature = Number(rubric.premature_reassurance ?? 0);
@@ -62,13 +74,13 @@ export default async function AdminOverviewPage() {
   const now = new Date().getTime();
   const DAY = 86400000;
   const activeThisWeek = [...studentIds].filter((id) => {
-    const last = activityByUser.get(id)?.last_active_at;
+    const last = lastOf(id);
     if (!last) return false;
     const t = new Date(String(last)).getTime();
     return Number.isFinite(t) && (now - t) / DAY < 7;
   }).length;
   const quietCount = [...studentIds].filter((id) => {
-    const last = activityByUser.get(id)?.last_active_at;
+    const last = lastOf(id);
     if (!last) return false;
     const t = new Date(String(last)).getTime();
     return Number.isFinite(t) && (now - t) / DAY >= 7;
@@ -76,7 +88,7 @@ export default async function AdminOverviewPage() {
 
   // Students with no progress at all (never started a lesson) — from the view's
   // started flag (no separate unbounded progress scan).
-  const notStarted = (students ?? []).filter((s) => !activityByUser.get(s.id)?.started).length;
+  const notStarted = realStudents.filter((s) => !activityByUser.get(s.id)?.started && !lastOf(s.id)).length;
 
   // Infra warning strip — the one silent failure that takes the cohort down.
   const { data: infraData } = await adminClient.rpc("infra_metrics");
@@ -89,10 +101,19 @@ export default async function AdminOverviewPage() {
   const [{ count: followUpsDue }, { count: unreadReplies }, { count: failedSends }] = await Promise.all([
     adminClient.from("crm_contacts").select("email", { count: "exact", head: true }).lte("next_follow_up_at", nowIso),
     adminClient.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
-    adminClient.from("email_sends").select("id", { count: "exact", head: true }).eq("status", "failed"),
+    loadOpenFailures(adminClient).then((rows) => ({ count: rows.length })),
   ]);
+  const complaints = await openComplaintCount();
 
   const actions = [
+    {
+      label: "Student concerns",
+      count: complaints,
+      detail: "Complaints students raised (kept off the public board).",
+      href: "/doubts",
+      icon: <ShieldAlert className="size-4" />,
+      urgent: complaints > 0,
+    },
     {
       label: "Reply to emails",
       count: unreadReplies ?? 0,
@@ -204,7 +225,7 @@ export default async function AdminOverviewPage() {
       {/* Numbers first — the four people ask about. */}
       <Reveal delay={0.1}>
         <section aria-label="Programme snapshot" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          <StatCard label="Students" value={students?.length ?? 0} href="/admin/students" icon={<Users className="size-5" />} accent />
+          <StatCard label="Students" value={realStudents.length} href="/admin/students" icon={<Users className="size-5" />} accent />
           <StatCard label="Active this week" value={activeThisWeek} href="/admin/pulse" icon={<GraduationCap className="size-5" />} />
           <StatCard label="Not started" value={notStarted} href="/admin/students" icon={<UserPlus className="size-5" />} />
           <StatCard label="Live courses" value={courses?.length ?? 0} href="/admin/courses" icon={<BookOpen className="size-5" />} />

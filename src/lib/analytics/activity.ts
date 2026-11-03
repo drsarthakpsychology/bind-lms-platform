@@ -1,4 +1,6 @@
 import "server-only";
+import { latest, presenceOf, visitEnd } from "@/lib/people/presence";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { domainMastery, topConfusions } from "@/lib/learn/adaptive";
 import { levelFor, liveStreak, normalise, type LearnState } from "@/lib/learn/engine";
@@ -10,7 +12,7 @@ const MAX_VISIT_S = 30 * 60;
 const DAY_MS = 86400000;
 const IST_MS = 5.5 * 3600000;
 
-export type Visit = { user_id: string; path: string; entered_at: string; duration_seconds: number | null };
+export type Visit = { user_id: string; path: string; entered_at: string; left_at?: string | null; duration_seconds: number | null };
 export type StudentActivity = {
   id: string;
   name: string;
@@ -49,6 +51,7 @@ export function describePath(path: string, lessonTitles: Map<string, string>): s
     [/^\/practice\/learn/, "Learn"],
     [/^\/practice\/consulting-room/, "Consulting Room"],
     [/^\/practice\/mse/, "MSE practice"],
+    [/^\/practice\/medicines/, "Medicines"],
     [/^\/practice/, "Practice"],
     [/^\/tools\/psychopharm/, "Medicines library"],
     [/^\/notifications/, "Notifications"],
@@ -64,7 +67,7 @@ export async function loadActivity() {
   const since30 = new Date(Date.now() - 30 * DAY_MS).toISOString();
   const [{ data: profiles }, { data: visits }, { data: progress }, { data: lessons }, learnRes, { data: sims }] = await Promise.all([
     admin.from("profiles").select("id, name, email, status, is_test, role").eq("role", "student").limit(5000),
-    admin.from("page_visits").select("user_id, path, entered_at, duration_seconds").gte("entered_at", since30).limit(200000),
+    admin.from("page_visits").select("user_id, path, entered_at, left_at, duration_seconds").gte("entered_at", since30).limit(200000),
     admin.from("progress").select("user_id, lesson_id, watched_seconds, is_completed, updated_at").limit(100000),
     admin.from("lessons").select("id, title"),
     admin.from("learn_progress").select("user_id, state"),
@@ -72,7 +75,7 @@ export async function loadActivity() {
   ]);
   const learn = new Map<string, LearnState>((learnRes.error ? [] : (learnRes.data ?? [])).map((r) => [r.user_id as string, normalise(r.state)]));
   const lessonTitles = new Map((lessons ?? []).map((l) => [l.id as string, l.title as string]));
-  const students = (profiles ?? []).filter((p) => !p.is_test);
+  const students = (profiles ?? []).filter((p) => !isHiddenAccount(p));
   const today = istToday();
   const now = Date.now();
 
@@ -99,10 +102,11 @@ export async function loadActivity() {
     const min7 = vs.filter((v) => now - new Date(v.entered_at).getTime() < 7 * DAY_MS).reduce((a, v) => a + secs(v), 0) / 60;
     const days = new Set(vs.map((v) => istDay(v.entered_at)));
     const pr = (progress ?? []).filter((x) => x.user_id === p.id);
-    const lastVisit = vs.reduce<string | null>((a, v) => (!a || v.entered_at > a ? v.entered_at : a), null);
+    const lastVisit = latest(...vs.map(visitEnd));
     const lastProg = pr.reduce<string | null>((a, x) => (!a || (x.updated_at as string) > a ? (x.updated_at as string) : a), null);
     const st = learn.get(p.id as string);
-    const practice = (sims ?? []).filter((x) => x.user_id === p.id).length;
+    const mySims = (sims ?? []).filter((x) => x.user_id === p.id);
+    const practice = mySims.length;
     const lecturesDone = pr.filter((x) => x.is_completed).length;
     const row: StudentActivity = {
       id: p.id as string,
@@ -112,7 +116,7 @@ export async function loadActivity() {
       min7: Math.round(min7),
       min30: Math.round(min30),
       activeDays30: days.size,
-      lastSeen: [lastVisit, lastProg].filter(Boolean).sort().pop() ?? null,
+      lastSeen: latest(lastVisit, lastProg, ...mySims.map((x) => x.started_at as string)),
       lecturesDone,
       lecturesStarted: pr.filter((x) => (x.watched_seconds ?? 0) > 0).length,
       watchMin: Math.round(pr.reduce((a, x) => a + (x.watched_seconds ?? 0), 0) / 60),
@@ -135,7 +139,8 @@ export async function loadActivity() {
     pages: [...pages.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10).map(([label, min]) => ({ label, min: Math.round(min) })),
     totals: {
       students: rows.length,
-      active7: rows.filter((r) => r.min7 > 0).length,
+      active7: rows.filter((r) => r.min7 > 0 || presenceOf(r.lastSeen, now) === "now" || presenceOf(r.lastSeen, now) === "today").length,
+      activeNow: rows.filter((r) => presenceOf(r.lastSeen, now) === "now").length,
       hours30: Math.round(rows.reduce((a, r) => a + r.min30, 0) / 60),
       lecturesDone: rows.reduce((a, r) => a + r.lecturesDone, 0),
     },

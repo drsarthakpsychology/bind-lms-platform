@@ -1,5 +1,6 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -7,7 +8,7 @@ import { deriveName, generateCredential, sendCredentialEmails, sendResendEmail }
 import { parseEmails } from "@/lib/cohorts/rules";
 
 type Result = { error: string | null };
-const APP_URL = () => process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const APP_URL = () => liveAppUrl();
 
 function refresh(cohortId?: string) {
   revalidatePath("/admin/cohorts");

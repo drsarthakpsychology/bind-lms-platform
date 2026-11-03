@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/server";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { PageHeader } from "@/components/design-system/page-header";
 import { SimReviewList } from "./sim-review-list";
 
@@ -13,11 +14,14 @@ export const dynamic = "force-dynamic";
 export default async function SimReviewPage() {
   const admin = createAdminClient();
 
-  const { data: scores } = await admin
+  // Sessions by test and robot accounts (AI calibration runs) never show.
+  const hidden = await loadHiddenIds();
+  const { data: rawScores } = await admin
     .from("sim_scores")
     .select("id, session_id, user_id, overall, rubric, quotes, missed_disclosures, created_at")
     .order("created_at", { ascending: false })
-    .limit(50);
+    .limit(200);
+  const scores = (rawScores ?? []).filter((s) => !hidden.has(s.user_id as string)).slice(0, 50);
 
   // Load student emails for display.
   const studentIds = [...new Set((scores ?? []).map((s) => s.user_id))];

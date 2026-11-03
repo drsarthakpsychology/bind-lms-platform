@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { Inbox } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { SubmissionReviewRow } from "./submission-review-row";
@@ -50,7 +51,9 @@ export default async function SubmissionsPage({
     filesBySubmission.set(f.submission_id, list);
   }
 
+  const hidden = await loadHiddenIds();
   const enriched = (submissions ?? [])
+    .filter((s) => !hidden.has(s.user_id as string))
     .map((s) => {
       const assignment = assignmentsById.get(s.assignment_id);
       const lesson = assignment ? lessonsById.get(assignment.lesson_id) : undefined;

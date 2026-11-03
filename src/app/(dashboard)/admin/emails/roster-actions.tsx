@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Copy, Link2, Loader2, RefreshCw, Send } from "lucide-react";
+import { Check, Copy, Link2, Loader2, RefreshCw, Search, Send, X } from "lucide-react";
 import { sendCredentialEmailsAction, sendTestEmailAction, resetCredentialAction } from "../students/bulk-import";
 import type { InviteRow } from "./page";
 import { LockToggle } from "@/components/admin/lock-toggle";
@@ -49,6 +49,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
   const [linkBusy, setLinkBusy] = React.useState<string | null>(null);
   const [copied, setCopied] = React.useState<string | null>(null);
   const [filter, setFilter] = React.useState<"all" | Stage>("all");
+  const [q, setQ] = React.useState("");
 
   const [testEmail, setTestEmail] = React.useState("");
   const [testBusy, setTestBusy] = React.useState(false);
@@ -64,7 +65,10 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
     failed: localRows.filter((r) => stageOf(r) === "failed").length,
     "set-up": localRows.filter((r) => stageOf(r) === "set-up").length,
   };
-  const shown = filter === "all" ? localRows : localRows.filter((r) => stageOf(r) === filter);
+  const needle = q.trim().toLowerCase();
+  const shown = (filter === "all" ? localRows : localRows.filter((r) => stageOf(r) === filter)).filter(
+    (r) => !needle || `${r.name ?? ""} ${r.email}`.toLowerCase().includes(needle),
+  );
   const selectable = shown.filter((r) => stageOf(r) !== "set-up");
   const allSelected = selectable.length > 0 && selectable.every((r) => selected.has(r.email));
 
@@ -159,6 +163,25 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
         </Button>
       </div>
 
+      {/* Find someone fast, by name or email */}
+      <div className="relative">
+        <Search className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-muted-foreground" aria-hidden />
+        <input
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Search by name or email"
+          aria-label="Search logins by name or email"
+          autoComplete="off"
+          className="h-12 w-full rounded-2xl border-2 border-foreground bg-card pr-11 pl-12 text-base font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+        />
+        {q ? (
+          <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 grid size-9 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+            <X className="size-4" aria-hidden />
+          </button>
+        ) : null}
+      </div>
+
       <div role="group" aria-label="Show" className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
         {(["all", "not-sent", "sent", "set-up", "failed"] as const).map((f) => (
           <button
@@ -206,6 +229,9 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
             />
             <span className="text-caption font-semibold text-muted-foreground">{shown.length} shown</span>
           </div>
+          {shown.length === 0 && needle ? (
+            <p className="p-5 text-sm font-semibold text-muted-foreground">Nobody matches &quot;{q}&quot;. Add them on People → Cohorts.</p>
+          ) : null}
           <ul className="divide-y-2 divide-foreground/10">
             {shown.map((r) => {
               const stage = stageOf(r);

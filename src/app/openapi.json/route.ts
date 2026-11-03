@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
@@ -8,7 +9,7 @@ import { NextResponse } from "next/server";
  * per-endpoint schemas for the LMS are intentionally not exported (student
  * data stays behind auth).
  */
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const baseUrl = liveAppUrl();
 
 const spec = {
   openapi: "3.0.3",

@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Archive, Inbox, Loader2, Send } from "lucide-react";
-import { markRead, replyToInbound, setArchived } from "./mail-actions";
+import { Archive, CheckCheck, Inbox, Loader2, Send } from "lucide-react";
+import { clearFailed, markRead, replyToInbound, setArchived } from "./mail-actions";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -82,5 +82,42 @@ export function InboundControls({ id, archived, unread }: { id: string; archived
         {msg ? <span className="text-caption font-semibold" role="status">{msg}</span> : null}
       </div>
     </div>
+  );
+}
+
+/** Mail → Failed: clear every failed send at once (two taps, nothing deleted). */
+export function ClearFailedButton({ count }: { count: number }) {
+  const router = useRouter();
+  const [sure, setSure] = React.useState(false);
+  const [busy, setBusy] = React.useState(false);
+  const [msg, setMsg] = React.useState<string | null>(null);
+  const go = async () => {
+    if (!sure) {
+      setSure(true);
+      return;
+    }
+    setBusy(true);
+    const res = await clearFailed();
+    setBusy(false);
+    setSure(false);
+    if (res.error) setMsg(res.error);
+    else {
+      setMsg(`Cleared ${res.cleared}.`);
+      router.refresh();
+    }
+  };
+  return (
+    <span className="flex shrink-0 flex-col items-end gap-1">
+      <button
+        type="button"
+        onClick={go}
+        disabled={busy}
+        className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-60"
+      >
+        {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <CheckCheck className="size-4" aria-hidden />}
+        {sure ? `Yes, clear ${count}` : "Clear failed"}
+      </button>
+      {msg ? <span role="status" className="text-caption font-semibold">{msg}</span> : null}
+    </span>
   );
 }

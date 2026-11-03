@@ -65,6 +65,9 @@ export default async function CohortsPage() {
                       <span className="text-lg font-bold leading-tight">{c.name}</span>
                       <span className={cn("rounded-full border-2 border-foreground px-2.5 py-0.5 text-xs font-semibold", s.cls)}>{s.label}</span>
                     </span>
+                    {c.course_id ? (
+                      <span className="text-xs font-semibold text-link">Course: {(courses ?? []).find((x) => x.id === c.course_id)?.title ?? "a course"}</span>
+                    ) : null}
                     <span className="grid grid-cols-3 gap-2 text-center">
                       {[
                         [c.members, "people"],

@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import type { MetadataRoute } from "next";
 import { getPolicies } from "@/lib/policies";
 import { CALM_TOOLS } from "@/lib/free/calm";
@@ -6,7 +7,7 @@ import { INSTRUMENTS } from "@/lib/free/tests";
 // The production custom domain. NEXT_PUBLIC_APP_URL must be set to this in
 // Vercel (not the internal bind-lms-platform.vercel.app hostname), so search
 // engines index the real URLs. The fallback is correct for local/dev.
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const siteUrl = liveAppUrl();
 
 /**
  * The public URLs. The LMS routes are noindexed and disallowed; the policy

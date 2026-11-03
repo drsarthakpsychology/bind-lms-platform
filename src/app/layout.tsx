@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
@@ -26,7 +27,7 @@ const sourceSerif = Source_Serif_4({
   weight: ["500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhaschoolofpsychology.in";
+const siteUrl = liveAppUrl();
 
 // Safe-area + keyboard viewport:
 // - `viewportFit: "cover"` makes env(safe-area-inset-*) non-zero on iOS

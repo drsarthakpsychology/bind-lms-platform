@@ -91,7 +91,7 @@ export function AddPeopleForm({ cohorts, defaultCohortId }: { cohorts: CohortOpt
   const [pending, start] = React.useTransition();
   const [text, setText] = React.useState("");
   const [cohortId, setCohortId] = React.useState(defaultCohortId ?? cohorts[cohorts.length - 1]?.id ?? "");
-  const [scope, setScope] = React.useState<"full" | "lectures_only">("lectures_only");
+  const [scope, setScope] = React.useState<"full" | "lectures_only">("full");
   const [mail, setMail] = React.useState(true);
   const [rows, setRows] = React.useState<AddRow[] | null>(null);
   const [invalid, setInvalid] = React.useState<string[]>([]);

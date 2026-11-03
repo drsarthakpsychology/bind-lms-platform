@@ -1,5 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
+import Link from "next/link";
 import { FormulationForge } from "./forge";
+import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
 import type { FormulationFactor } from "@/lib/practice/formulation";
@@ -24,26 +26,29 @@ interface FormulationCaseRow {
  * The scaffolded case is read from the live formulation_cases table (content
  * wiring); SEED_FORMULATION is the fallback when the DB is empty.
  */
-export default async function FormulationPage() {
+export default async function FormulationPage({ searchParams }: { searchParams: Promise<{ case?: string }> }) {
   await requireFeature("formulation");
+  const { case: pick } = await searchParams;
   const supabase = await createClient();
   const { data: cases } = await supabase
     .from("formulation_cases")
     .select("slug, title, prompt, factors, model_answer")
     .eq("status", "published")
-    .limit(1);
+    .limit(50);
 
-  const row = (cases?.[0] ?? null) as FormulationCaseRow | null;
-  const seed = row
-    ? {
-        id: row.slug,
-        title: row.title,
-        prompt: row.prompt,
-        factors: (Array.isArray(row.factors) ? row.factors : []) as FormulationFactor[],
-        modelNarrative:
-          (row.model_answer as { narrative?: string } | null)?.narrative ?? "",
-      }
-    : undefined;
+  // Cases written in the database (with real factor cards) join the built-in set.
+  const fromDb = ((cases ?? []) as FormulationCaseRow[])
+    .filter((r) => Array.isArray(r.factors) && r.factors.length >= 6 && !FORMULATION_CASES.some((c) => c.id === r.slug))
+    .map((r) => ({
+      id: r.slug,
+      title: r.title,
+      prompt: r.prompt,
+      hint: "",
+      factors: r.factors as FormulationFactor[],
+      modelNarrative: (r.model_answer as { narrative?: string } | null)?.narrative ?? "",
+    }));
+  const all = [...FORMULATION_CASES, ...fromDb];
+  const seed = all.find((c) => c.id === pick) ?? all[0];
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -54,8 +59,23 @@ export default async function FormulationPage() {
         not a grade — you&apos;re learning the structure.
       </p>
 
-      <div className="mt-6">
-        <FormulationForge seed={seed} />
+      <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
+        {all.map((c, i) => (
+          <Link
+            key={c.id}
+            href={`/practice/formulation?case=${c.id}`}
+            aria-current={c.id === seed.id ? "page" : undefined}
+            title={c.hint || c.title}
+            className={`shrink-0 rounded-full border-2 border-foreground px-3.5 py-1.5 text-sm font-semibold ${c.id === seed.id ? "bg-foreground text-background" : "bg-card"}`}
+          >
+            Case {i + 1}: {c.title.split(":")[0]}
+          </Link>
+        ))}
+      </nav>
+      <p className="mt-2 text-sm font-semibold">{seed.title}</p>
+
+      <div className="mt-4">
+        <FormulationForge key={seed.id} seed={seed} />
       </div>
 
       <div className="mt-10">

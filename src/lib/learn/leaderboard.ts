@@ -1,4 +1,5 @@
 import "server-only";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { addDays, istToday, levelFor, liveStreak, normalise } from "./engine";
 import { domainMastery } from "./adaptive";
@@ -38,7 +39,7 @@ export async function loadBoard(): Promise<BoardRow[]> {
   ]);
   const today = istToday();
   const weekStart = addDays(today, -6);
-  const prof = new Map((profiles ?? []).filter((p) => !p.is_test).map((p) => [p.id as string, p]));
+  const prof = new Map((profiles ?? []).filter((p) => !isHiddenAccount(p)).map((p) => [p.id as string, p]));
   return (rows ?? [])
     .filter((r) => prof.has(r.user_id as string))
     .map((r) => {
