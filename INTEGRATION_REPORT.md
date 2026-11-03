@@ -95,4 +95,8 @@ path ownership, and doubts visibility checks are applied and unit-tested.
 
 ## Preview
 
-(PR preview URL goes here once the pull request is opened.)
+- PR: https://github.com/drsarthakpsychology/bind-lms-platform/pull/43
+- Preview: https://bind-lms-platform-ikyv36c9x-drsarthakpsychologys-projects.vercel.app
+- Note: the preview uses the production Vercel env vars (Supabase project `plms`).
+  Test **read-only** only — do not exercise student writes against the preview
+  until a non-production Supabase project is configured for it.
