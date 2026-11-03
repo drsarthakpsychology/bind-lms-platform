@@ -63,9 +63,24 @@ against the current code before it is applied.
   `supabase/migrations_pending/2026_11_lab_flag.sql` only inserts the flag row
   (status `off`). It changes no table. Confirm the `feature_flags` table has
   `status` and `enabled` columns in the target database.
-- **Routes**: `/games/lab`, `/games/lab/[id]`, `/games/revise`,
-  `/admin/learning`, `/api/admin/learning/csv` (check the manifest for the
-  final list). Confirm none collide with routes on `main`.
+- **Routes**: `/games/lab`, `/games/lab/[id]`, `/games/lab/cases`,
+  `/games/lab/cases/[id]`, `/games/revise`, `/admin/learning`,
+  `/api/admin/learning/csv`. Confirm none collide with routes on `main`.
+- **Security changes touch many existing files** (28 admin pages, 37 API
+  routes, learn save action, lecture progress, master login, submissions,
+  doubts, instrumentation). These are the most likely merge conflicts with
+  `main`; resolve hunk by hunk and keep both the new guard and any new
+  behaviour from `main`.
+- **Optional migrations**: `2026_11_learn_progress_server_writes.sql` must
+  only be applied AFTER the new code is deployed and
+  `SUPABASE_SERVICE_ROLE_KEY` is confirmed set (otherwise student saves
+  fail). `2026_11_progress_updated_at.sql` is safe any time.
+- **Behaviour changes to confirm with the owner**: blocked accounts now get
+  403 (was 401) from practice APIs; the retired flags `knowledge_tutor`,
+  `rounds`, `decoder` now gate their APIs.
+- **Casebook content is generated** from `docs/transformation/books/*-activities.json`
+  by `scripts/casebook/convert-activities.py`; edit the JSON and re-run
+  rather than editing `src/content/casebook/*.ts` by hand.
 - **No new npm dependencies** are expected; confirm `package.json` and
   `package-lock.json` are unchanged (the manifest says so if true).
 
@@ -112,8 +127,14 @@ small commit and explain why.
   `supabase/migrations_pending/2026_11_learn.sql` (if not already present)
   and `2026_11_lab_flag.sql`.
 - Student journey: login → dashboard → Notes → a module → a section →
-  checkpoint → Games → Lab → run an experiment → result → check → reflect →
-  Lab home shows it done → Revise shows the re-check when due.
+  bookmark + note → checkpoint → Games → Lab → run an experiment → result →
+  check → reflect → Lab home shows it done → Casebook library → play a game
+  → Revise shows re-checks when due (set the clock or seed state to test).
+- Manually play the three branching cases with "try again" loops:
+  `k1-15-asking-about-suicide`, `k2-ed-five-questions`, `k2-elder-branching`.
+- Security: as a lectures-only student, a blocked student, and a student with
+  a switched-off tool, call a practice API and confirm 403; as a student,
+  open an admin URL and confirm redirect.
 - Admin journey: login → admin → What's live → set **Psychology Lab** to
   Unlock → preview it as a student → Learning insights → download CSV.
 - Check phone (390×844), tablet (820×1180) and desktop (1440×900), light and
