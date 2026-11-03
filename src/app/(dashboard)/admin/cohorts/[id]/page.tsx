@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { ChevronLeft } from "lucide-react";
 import { loadAllLessons, loadCohort, loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { AddPeopleForm, CohortSettings, LessonSharing, MemberActions } from "@/components/admin/cohorts-ui";
@@ -13,6 +14,9 @@ const Pill = ({ on, yes, no }: { on: boolean; yes: string; no: string }) => (
 
 /** One cohort: settings, its people, and which lectures it can watch. */
 export default async function CohortPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ tab?: string }> }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { id } = await params;
   const { tab } = await searchParams;
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();

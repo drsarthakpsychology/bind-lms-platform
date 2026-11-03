@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
 import { aiChat } from "@/lib/ai/client";
 import { guardStudentCall } from "@/lib/ai/guards";
@@ -21,8 +21,9 @@ const helpSchema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/reflect", flag: "journal" });
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`journal-help:${user.id}`, 10);

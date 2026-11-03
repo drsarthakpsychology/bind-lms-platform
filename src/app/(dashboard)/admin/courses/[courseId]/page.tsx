@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { LessonThumb } from "@/components/course/lesson-thumb";
 import { ChevronDown, ChevronLeft, FileVideo2, ListPlus, Paperclip } from "lucide-react";
@@ -55,6 +56,9 @@ export default async function CourseDetailPage({
 }: {
   params: Promise<{ courseId: string }>;
 }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { courseId } = await params;
   const supabase = await createClient();
 

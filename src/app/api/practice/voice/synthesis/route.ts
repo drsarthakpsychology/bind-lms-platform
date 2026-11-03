@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { synthesize } from "@/lib/voice/synthesize";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -21,8 +21,9 @@ const schema = z.object({
  * the app is fully demoable with zero keys.
  */
 export async function POST(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi([{ path: "/practice/consulting-room", flag: "consulting_room" }, { path: "/practice/osce", flag: "osce" }, { path: "/practice/tutor", flag: "knowledge_tutor" }]);
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`voice:synth:${user.id}`, 30);

@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/auth/guards";
 import { EMAIL_TEMPLATES } from "@/lib/email/templates";
@@ -91,6 +92,10 @@ export default async function MailPage({
 }: {
   searchParams: Promise<{ folder?: string; tab?: string; id?: string; to?: string; q?: string }>;
 }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  const adminProfile = await requireAdmin();
+  if (!adminProfile) redirect("/dashboard");
   const sp = await searchParams;
   const legacy = sp.tab === "credentials" ? "logins" : sp.tab === "compose" ? "compose" : sp.tab === "sent" ? "sent" : undefined;
   const raw = sp.folder ?? legacy ?? "inbox";
@@ -99,8 +104,6 @@ export default async function MailPage({
 
   const supabase = await createClient();
   const admin = createAdminClient();
-  const adminProfile = await requireAdmin();
-
   const [{ count: unread }, failures] = await Promise.all([
     admin.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
     loadOpenFailures<SentRow>(admin),

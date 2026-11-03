@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { CardsAdmin, type CardRow } from "./cards-admin";
@@ -12,6 +14,9 @@ export const dynamic = "force-dynamic";
  * Students only ever see published + approved cards.
  */
 export default async function AdminCardsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { data } = await admin
     .from("cards")

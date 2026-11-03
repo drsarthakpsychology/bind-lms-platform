@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { ArrowRight, UserPlus, Users } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -20,6 +22,9 @@ const STATUS: Record<string, { label: string; cls: string }> = {
  * Add people here by pasting emails; they get an account and a login link.
  */
 export default async function CohortsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const [{ cohorts, unassigned, tablesMissing }, { data: courses }] = await Promise.all([
     loadCohortSummaries(),

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { guardStudentCall } from "@/lib/ai/guards";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -19,8 +19,9 @@ const schema = z.object({
  * before sending — that fixes Indian-accent accuracy for free.
  */
 export async function POST(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi([{ path: "/practice/consulting-room", flag: "consulting_room" }, { path: "/practice/osce", flag: "osce" }, { path: "/practice/tutor", flag: "knowledge_tutor" }]);
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`voice:stt:${user.id}`, 30);

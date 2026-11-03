@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 import { getExpertMseForCase } from "@/lib/mse/mse-stories";
@@ -13,8 +13,9 @@ export const runtime = "nodejs";
  * can only ever see their OWN sessions (scoped to user_id server-side).
  */
 export async function GET(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi([{ path: "/practice/mse", flag: "mse" }, { path: "/practice/formulation", flag: "formulation" }]);
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`mse:transcripts:${user.id}`, 30);

@@ -13,11 +13,11 @@ vi.mock("@/lib/supabase/server", () => ({
   createAdminClient: () => adminClient,
 }));
 
-vi.mock("@/lib/auth/guards", () => ({
-  requireSession: vi.fn(async () => {
+vi.mock("@/lib/auth/api-guard", () => ({
+  requireStudentApi: vi.fn(async () => {
     const { data } = await supabase.auth.getUser();
-    if (!data.user) return null;
-    return { id: data.user.id, email: null, role: "student", active_session_token: null, expires_at: null };
+    if (!data.user) return { ok: false, response: Response.json({ error: "unauthorized" }, { status: 401 }) };
+    return { ok: true, profile: { id: data.user.id, email: null, role: "student", scope: "full", status: "active", active_session_token: null, expires_at: null } };
   }),
 }));
 
