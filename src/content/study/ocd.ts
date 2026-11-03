@@ -43,6 +43,15 @@ Obsession (“my hands are contaminated”) → anxiety → compulsion (washing)
 A compulsion is like scratching a bite: it relieves the itch for a moment and makes it itch more later. Treatment is learning to leave the itch alone until it fades.
 :::
 
+:::mcq
+Q: A man checks the gas knob 30 times before leaving home. Each check calms him for a moment, but the doubt returns. What keeps the ritual going?
+- The doubt is true
+- *The short relief after checking rewards the ritual
+- He enjoys checking
+- He forgets he checked
+> Negative reinforcement: relief strengthens the compulsion.
+:::
+
 ## 1.2 OCD: criteria and presentation [core]
 :::define Criteria
 Obsessions, compulsions, or both, that are **time-consuming** (for example **more than 1 hour a day**) or cause clinically significant distress or impairment; not due to a substance or medical condition; not better explained by another disorder.
@@ -80,6 +89,15 @@ A mother with OCD who has intrusive images of harming her baby is horrified by t
 5. What scale rates OCD severity, and its range? || Y-BOCS, 0 to 40.
 :::
 
+:::mcq
+Q: A woman says, "I know it's silly that my hands are still dirty, but I have to wash again." Her insight is:
+- Absent
+- *Good or fair
+- Poor
+- Delusional
+> She recognises the belief is not true.
+:::
+
 ## 1.3 Causes and differential diagnosis [core]
 ### Causes
 - **Brain circuit**: the cortico-striato-thalamo-cortical loop (**orbitofrontal cortex, caudate, thalamus**) is overactive: an “error signal” that won't switch off.
@@ -114,6 +132,15 @@ A mother with OCD who has intrusive images of harming her baby is horrified by t
 4. Distinguish OCD from OCPD in one line. || OCD is ego-dystonic obsessions and rituals; OCPD is ego-syntonic perfectionism.
 :::
 
+:::mcq
+Q: A man keeps his files in perfect order, insists colleagues follow his methods, and thinks they are careless. He has no unwanted thoughts and is not distressed by his ways. Most likely:
+- OCD
+- *Obsessive-compulsive personality disorder
+- GAD
+- Autism
+> OCPD is ego-syntonic perfectionism; OCD is ego-dystonic obsessions and rituals.
+:::
+
 ## 1.4 Treatment [core]
 :::define Exposure and response prevention (ERP)
 The first-line psychological treatment. The person is **exposed** to the obsessional trigger (touching a “dirty” surface) and **prevented from performing the ritual** (no washing), staying with the anxiety until it falls. Repeated across a graded hierarchy.
@@ -137,6 +164,15 @@ Answering “Are you sure my hands are clean?” again and again works like anot
 2. How does SSRI use differ in OCD versus depression? || Higher doses and longer trials (8 to 12 weeks).
 3. What do you add for partial response, especially with tics? || A low-dose antipsychotic.
 4. Why should families stop giving reassurance? || It acts as a ritual and keeps OCD going.
+:::
+
+:::mcq
+Q: A student with OCD is on fluoxetine 20 mg for 4 weeks with no change. The best next step is:
+- Switch to a benzodiazepine
+- *Increase the dose and give it 8 to 12 weeks, alongside ERP
+- Stop medicines
+- Add haloperidol at high dose
+> OCD needs higher SSRI doses and longer trials.
 :::
 
 ## 1.5 ERP in practice: a worked case [core]
@@ -183,6 +219,15 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 4. What does "lapse is not relapse" mean? || A slip is expected and can be recovered from quickly.
 :::
 
+:::mcq
+Q: In ERP, a patient touches a public door handle and then wants to "just wipe" with a tissue. The therapist should:
+- Allow wiping as a compromise
+- *Encourage him to wait without wiping until the anxiety falls
+- Stop the session
+- Give reassurance that the handle is clean
+> Response prevention includes small rituals and reassurance.
+:::
+
 ## 1.6 OCD in special groups [core]
 ### Perinatal OCD
 - Onset or worsening in pregnancy and after childbirth is common. Typical obsessions: **intrusive thoughts of harming the baby** (dropping, drowning, stabbing), contamination of the baby.
@@ -210,6 +255,15 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 4. Give three features of tic-related OCD. || Early onset, male, just-right symmetry rituals, family history; antipsychotic augmentation helps.
 :::
 
+:::mcq
+Q: A new mother has terrifying thoughts of dropping her baby and avoids carrying him. She is not psychotic. The most accurate statement is:
+- She is at high risk of harming the baby
+- *These are ego-dystonic obsessions; risk is not raised, and ERP helps
+- She has postpartum psychosis
+- She should be separated from the baby
+> Perinatal OCD: distress and avoidance, not intent.
+:::
+
 ## 1.7 When OCD does not get better [core]
 ### First, check the basics
 - Was the **SSRI dose high enough for long enough** (12 weeks at good dose)? Was it taken?
@@ -235,6 +289,15 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 3. Define treatment-resistant OCD. || No response after two adequate SSRI trials and adequate ERP.
 :::
 
+:::mcq
+Q: Which is NOT a common reason for OCD seeming treatment-resistant?
+- SSRI dose too low
+- Family members still giving reassurance
+- ERP done without real response prevention
+- *Taking the SSRI with food
+> Check dose, duration, ERP quality and family accommodation first.
+:::
+
 # Part II · Related disorders
 
 ## 2.1 Body dysmorphic disorder [core]
@@ -244,11 +307,29 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 - High rates of depression and **suicide**. Cosmetic procedures rarely help and often worsen distress.
 - Treatment: CBT with ERP and SSRIs (often higher doses).
 
+:::mcq
+Q: A man has had three nose surgeries, still believes his nose is deformed, and spends hours at the mirror. The most important step is:
+- Refer for another surgery
+- *Ask about suicidal thoughts and treat BDD with CBT and an SSRI
+- Reassure him he looks fine
+- Prescribe a benzodiazepine
+> Body dysmorphic disorder carries a high suicide risk; surgery rarely helps.
+:::
+
 ## 2.2 Hoarding disorder [core]
 - Persistent difficulty **discarding** possessions regardless of value, because of a perceived need to save them and distress at discarding.
 - Results in clutter that congests living areas and compromises their use.
 - Specifier: with excessive acquisition. Insight often poor.
 - Risks: fire, falls, hygiene, family conflict. Treatment: specialised CBT, home visits, harm reduction.
+
+:::mcq
+Q: An older woman's flat is so full of newspapers that she cannot use the kitchen. She feels distress at the idea of throwing any away. Most likely:
+- OCD with contamination fears
+- *Hoarding disorder
+- Depression only
+- Normal collecting
+> Persistent difficulty discarding, clutter that blocks living spaces, distress at discarding.
+:::
 
 ## 2.3 Trichotillomania and excoriation [core]
 | | Trichotillomania (hair-pulling) | Excoriation (skin-picking) |
@@ -265,6 +346,15 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 2. What is muscle dysmorphia? || The belief one's body is too small or not muscular enough.
 3. Define hoarding disorder. || Persistent difficulty discarding, with clutter compromising living spaces.
 4. What is the main treatment for trichotillomania? || Habit reversal training.
+:::
+
+:::mcq
+Q: A girl pulls hair from her scalp while studying, often without noticing, leaving bald patches. The first-line treatment is:
+- Antipsychotics
+- *Habit reversal training
+- ECT
+- Punishment
+> Awareness, a competing response and support.
 :::
 
 ## 2.4 Telling the spectrum apart [core]
@@ -296,6 +386,15 @@ Silently praying, counting or saying "it's fine, it's fine" during exposure is s
 2. Why should cosmetic surgery usually be avoided in BDD? || It rarely helps and leads to more dissatisfaction.
 3. Name the three parts of habit reversal training. || Awareness training, competing response, social support.
 4. What is unusual about suicide risk in BDD? || It is high; always ask.
+:::
+
+:::mcq
+Q: A man fears he has cancer despite normal tests, checks his body daily and searches the internet for hours. This is best classified as:
+- OCD
+- *Illness anxiety disorder
+- Body dysmorphic disorder
+- Delusional disorder, somatic type
+> Preoccupation with having a serious illness with few or no symptoms.
 :::
 
 # Part III · Exam zone

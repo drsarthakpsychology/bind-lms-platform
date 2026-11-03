@@ -48,6 +48,15 @@ A state in which a person's contact with shared reality is impaired, shown by **
 2. Name the five domains of the schizophrenia spectrum. || Delusions, hallucinations, disorganised speech, disorganised or catatonic behaviour, negative symptoms.
 :::
 
+:::mcq
+Q: A woman with severe depression believes she has committed a terrible sin and deserves to die. This belief is best described as:
+- An obsession
+- *A mood-congruent delusion
+- An overvalued idea
+- A hallucination
+> Psychosis can occur in mood disorders; the content fits the mood.
+:::
+
 ## 1.2 Schizophrenia: criteria and symptoms [core]
 :::define Criteria
 **A.** Two or more of: (1) delusions, (2) hallucinations, (3) disorganised speech, (4) grossly disorganised or catatonic behaviour, (5) negative symptoms. Each present for a significant part of **1 month** (less if treated), and **at least one must be 1, 2 or 3**.
@@ -90,6 +99,22 @@ DSM-5 and ICD-11 dropped the subtypes (paranoid, hebephrenic, catatonic, undiffe
 3. What are Bleuler's 4 A's? || Associations, affect, autism, ambivalence.
 4. Name six first-rank symptoms. || Thought echo, voices arguing, running commentary, somatic passivity, thought withdrawal/insertion/broadcasting, made actions, delusional perception.
 5. Which symptom group best predicts long-term function? || Cognitive (and negative) symptoms.
+:::
+
+:::mcq
+Q: For 8 months a man has heard voices commenting on his actions, believes his thoughts are broadcast, and has stopped bathing and working. There is no substance use or mood episode. Diagnosis:
+- Brief psychotic disorder
+- Schizophreniform disorder
+- *Schizophrenia
+- Delusional disorder
+> Two or more symptoms, at least 6 months, with decline in functioning.
+
+Q: Which is a NEGATIVE symptom?
+- Persecutory delusion
+- Thought insertion
+- *Avolition: no drive to start or keep up activities
+- Running commentary
+> Negative symptoms: blunted affect, alogia, avolition, anhedonia, asociality.
 :::
 
 ## 1.3 The duration ladder and other psychotic disorders [core]
@@ -136,6 +161,22 @@ Acute, brief psychoses, often with a stressor, confusion-like features or posses
 5. Name six medical causes of psychosis. || Epilepsy, anti-NMDA encephalitis, thyroid, SLE, HIV, neurosyphilis, tumour, B12, Wilson's.
 :::
 
+:::mcq
+Q: Three weeks after his father's sudden death, a man develops delusions and hallucinations that fully clear in 10 days. Diagnosis:
+- Schizophrenia
+- *Brief psychotic disorder, with a marked stressor
+- Schizophreniform disorder
+- Schizoaffective disorder
+> At least one day, less than one month, with full recovery.
+
+Q: A 50-year-old woman has believed for a year that her husband is unfaithful, checks his phone and follows him. She works normally and has no hallucinations. Most likely:
+- Schizophrenia
+- *Delusional disorder, jealous type
+- OCD
+- Paranoid personality disorder
+> A single fixed delusion, functioning otherwise intact; watch the risk of violence.
+:::
+
 ## 1.4 Red flags for an organic cause [core]
 Most psychosis seen in clinics is primary, but missing a medical cause can be fatal. These features should make you **look harder**.
 
@@ -173,6 +214,15 @@ An autoimmune encephalitis, most often in **young women** (sometimes with an **o
 2. Describe anti-NMDA receptor encephalitis. || Autoimmune encephalitis in young women, psychosis then seizures, dyskinesias, autonomic instability; ovarian teratoma.
 3. When does postpartum psychosis start and what is it linked to? || Within 2 weeks of delivery; bipolar disorder.
 4. Name two risk factors for very late-onset psychosis. || Hearing loss, social isolation (female sex).
+:::
+
+:::mcq
+Q: A 22-year-old woman develops anxiety and odd behaviour, then seizures and repetitive mouth movements. The test that is most likely to find the cause is:
+- Lithium level
+- *Antibodies in the spinal fluid (anti-NMDA receptor) with EEG and MRI
+- MMPI
+- Thyroid only
+> Autoimmune encephalitis often starts with psychiatric symptoms.
 :::
 
 # Part II · Why it happens and how it runs
@@ -220,6 +270,15 @@ The emotional climate in the family, measured as **critical comments, hostility 
 5. Define expressed emotion and its three components. || Family emotional climate: critical comments, hostility, emotional over-involvement.
 :::
 
+:::mcq
+Q: Which finding supports the dopamine hypothesis of positive symptoms?
+- Ketamine causes negative symptoms
+- *Amphetamines can produce paranoid psychosis, and D2 blockers reduce positive symptoms
+- Low serotonin in the brain
+- Enlarged ventricles
+> Increased mesolimbic dopamine is linked to positive symptoms.
+:::
+
 ## 2.2 Course and prognosis [core]
 ### Phases
 1. **Premorbid**: subtle social, motor or cognitive differences.
@@ -253,6 +312,15 @@ The longer psychosis goes untreated, the worse the outcome. Early intervention m
 1. List the four phases of schizophrenia. || Premorbid, prodrome, active, residual.
 2. Give eight good prognostic factors. || Late and acute onset, precipitant, good premorbid, mood symptoms, married, female, positive symptoms, short untreated duration.
 3. Why do people with schizophrenia die early? || Heart disease, diabetes, smoking, suicide.
+:::
+
+:::mcq
+Q: Which patient has the BEST prognosis?
+- Insidious onset at 17, poor premorbid functioning, negative symptoms
+- *Acute onset at 32 after a clear stressor, good premorbid functioning, prominent mood symptoms
+- Long untreated psychosis with cannabis use
+- Family history and neurological soft signs
+> Late, acute onset with a precipitant and mood symptoms predict a better course.
 :::
 
 ## 2.3 Assessment and treatment [core]
@@ -290,6 +358,15 @@ The longer psychosis goes untreated, the worse the outcome. Early intervention m
 4. Name four psychosocial interventions with evidence. || Family intervention, CBTp, psychoeducation, supported employment, social skills, cognitive remediation.
 :::
 
+:::mcq
+Q: After 6 weeks of risperidone at an adequate dose, then 6 weeks of olanzapine, a man taking both regularly still has severe voices. The next step is:
+- Add a third antipsychotic
+- *Offer clozapine
+- Stop all medicines
+- Haloperidol depot only
+> Failure of two adequate trials defines treatment resistance; clozapine is the treatment.
+:::
+
 ## 2.4 Early intervention and the at-risk mental state [core]
 :::define At-risk mental state (clinical high risk)
 A young person seeking help with **attenuated psychotic symptoms** (unusual beliefs or perceptions below the threshold of psychosis), **brief limited psychotic episodes** (lasting less than a week and resolving on their own), or **genetic risk with a recent fall in functioning**.
@@ -324,6 +401,15 @@ Clinician: "It can look like laziness. Lack of drive is actually one of the symp
 4. What does family intervention reduce? || Relapse and admissions.
 :::
 
+:::mcq
+Q: A 19-year-old has had odd beliefs he half-doubts, falling college marks and a cousin with schizophrenia. He is not psychotic. The best plan is:
+- Start an antipsychotic now
+- *Monitor closely, CBT, stop cannabis, support studies and family
+- Reassure and discharge
+- ECT
+> At-risk mental state: no routine antipsychotics; reduce risk factors and watch.
+:::
+
 ## 2.5 Talking therapy for voices and beliefs [core]
 ### CBT for psychosis (CBTp)
 - **Engage** around the person's goals ("being able to go to the market without fear"), not around convincing them they are ill.
@@ -348,6 +434,15 @@ Telling a patient "that's impossible, the neighbours aren't poisoning you" usual
 2. Name three coping strategies for voices. || Humming, music, talking to someone, attention focus, earplug.
 3. Which scale is used for mental illness disability certification in India? || IDEAS.
 4. Define recovery in one line. || A meaningful life, with or without symptoms.
+:::
+
+:::mcq
+Q: In CBT for psychosis, which belief most predicts acting on a command voice?
+- That the voice is a woman's
+- *That the voice is all-powerful and will punish disobedience
+- That it speaks in Hindi
+- That it comes in the evening
+> Beliefs about the voice's power and malevolence drive distress and compliance.
 :::
 
 # Part III · Catatonia
@@ -397,6 +492,15 @@ Catatonia with **fever, autonomic instability** (fluctuating BP, fast heart rate
 3. Describe the lorazepam challenge. || 1 to 2 mg IV or IM; improvement within hours supports the diagnosis.
 4. Why avoid antipsychotics in acute catatonia? || They may worsen it or trigger NMS.
 5. What is malignant catatonia? || Catatonia with fever and autonomic instability: an emergency.
+:::
+
+:::mcq
+Q: A mute, motionless patient holds odd postures and resists being moved. Before anything else, the first-line treatment trial is:
+- Haloperidol injection
+- *Lorazepam, with a check for medical causes and NMS
+- An antidepressant
+- Psychotherapy
+> Lorazepam usually helps quickly; antipsychotics can worsen catatonia or trigger NMS.
 :::
 
 # Part IV · Exam zone

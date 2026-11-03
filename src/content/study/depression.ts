@@ -57,6 +57,15 @@ A single past manic or hypomanic episode changes the diagnosis to a bipolar diso
 3. Give the duration rule for MDD and for persistent depressive disorder. || At least 2 weeks; at least 2 years (1 year in youth).
 :::
 
+:::mcq
+Q: A woman has had low mood most days for 3 years, with poor sleep and low self-esteem, but never a full depressive episode. Most likely:
+- Major depressive disorder, single episode
+- *Persistent depressive disorder (dysthymia)
+- Adjustment disorder
+- Cyclothymia
+> Two years or more of low mood more days than not, below the threshold of a major episode for much of it.
+:::
+
 ## 1.2 Major depressive disorder: the criteria [core]
 :::define Major depressive episode (criterion A)
 **Five or more** of the following during the **same 2-week period**, representing a change from previous functioning; **at least one** is (1) depressed mood or (2) loss of interest or pleasure.
@@ -112,6 +121,22 @@ Bereavement can cause sadness, poor sleep and poor appetite. In grief, the pain 
 5. Give three differences between grief and depression. || Waves vs pervasive; self-esteem preserved vs lost; guilt about the deceased vs worthlessness.
 :::
 
+:::mcq
+Q: A man has had low mood, poor sleep, guilt and tiredness for 10 days after losing his job. Concentration is poor. Does he meet criteria for a major depressive episode?
+- Yes, he has five symptoms
+- *Not yet: the episode must last at least 2 weeks
+- Yes, any stressor counts
+- No, because there is a trigger
+> Duration of at least 2 weeks is required; a trigger does not rule out depression.
+
+Q: A woman reports low mood, no pleasure in anything, early waking, weight loss and fatigue for 3 weeks, and feels worthless. Which additional symptom would most change your immediate plan?
+- Poor concentration
+- Psychomotor slowing
+- *Thoughts that her family would be better off without her
+- Reduced appetite
+> Suicidal thinking changes the urgency of everything you do next.
+:::
+
 ## 1.3 Melancholic and atypical features [core]
 These two specifiers are opposites in many ways, and exam questions love the contrast.
 
@@ -136,6 +161,22 @@ Melancholic depression is **worst in the morning** and lifts slightly by evening
 1. What is the core feature of melancholia? || Loss of pleasure in almost everything, or no mood reactivity.
 2. Give the four associated features of atypical depression. || Weight or appetite gain, hypersomnia, leaden paralysis, rejection sensitivity.
 3. When is melancholic depression usually worst? || In the morning.
+:::
+
+:::mcq
+Q: A depressed patient wakes at 4 am, feels worst in the morning, has lost weight and nothing cheers him even briefly. This pattern is:
+- Atypical features
+- *Melancholic features
+- Seasonal pattern
+- Mixed features
+> Early waking, morning worsening, weight loss and non-reactive mood. Melancholic depression responds well to physical treatments.
+
+Q: A 24-year-old with depression sleeps 12 hours, eats more, feels her limbs are heavy and brightens when friends visit. Which is TRUE?
+- These are melancholic features
+- *These are atypical features, and bipolarity should be asked about
+- She cannot be depressed if her mood lifts
+- Tricyclics are first choice
+> Atypical features (reactive mood, oversleeping, overeating, leaden paralysis) are commoner in bipolar depression.
 :::
 
 ## 1.4 The other depressive disorders [core]
@@ -176,6 +217,15 @@ Check thyroid function, blood count, glucose, and B12 in new depression, especia
 2. How is PMDD confirmed? || Prospective daily ratings over at least 2 cycles.
 3. State the age rules for DMDD. || Diagnosed 6 to 18; onset before 10.
 4. Name five medical causes of depression. || Hypothyroidism, Cushing's, stroke, Parkinson's, cancer, B12 deficiency, anaemia, HIV, MS.
+:::
+
+:::mcq
+Q: A 9-year-old has severe temper outbursts four times a week, and is irritable and angry between them, for over a year. Most likely:
+- Bipolar disorder
+- *Disruptive mood dysregulation disorder
+- Oppositional defiant disorder only
+- Normal childhood
+> Chronic irritability with frequent severe outbursts, from age 6 to 18; introduced partly to reduce bipolar overdiagnosis in children.
 :::
 
 # Part II · Why it happens
@@ -221,6 +271,15 @@ Monoamines are the traffic signals; neuroplasticity is the road. Antidepressants
 4. Name two sleep changes in depression. || Shortened REM latency; increased REM; reduced deep sleep.
 :::
 
+:::mcq
+Q: Which finding argues AGAINST the simple idea that depression is just "low serotonin"?
+- SSRIs help many people
+- *Reuptake blocking is immediate, but mood takes weeks to improve
+- Tryptophan depletion can trigger relapse
+- Low 5-HIAA is found in violent suicide
+> The delay points to downstream changes (receptor adaptation, plasticity), not just transmitter levels.
+:::
+
 ## 2.2 Psychological and social causes [core]
 ### Cognitive model (Beck)
 :::define The cognitive triad
@@ -259,6 +318,15 @@ Negative views of the **self** (“I am a failure”), the **world** (“nothing
 2. Name four cognitive distortions with an example each. || All-or-nothing, overgeneralisation, catastrophising, personalisation, mind reading.
 3. Describe learned helplessness and its reformulation. || Uncontrollable events teach that action is useless; internal, stable, global attributions.
 4. List four social risk factors. || Loss and humiliation events, childhood adversity, poverty, no confidant, isolation.
+:::
+
+:::mcq
+Q: A student fails one test and concludes, "I'm useless, I'll fail everything, my future is ruined." In Beck's triad these thoughts are about:
+- Self only
+- *Self, the future, and implicitly the world
+- Others only
+- The past
+> The negative triad: self, world and future, maintained by distortions such as overgeneralisation.
 :::
 
 # Part III · Recognising it
@@ -308,6 +376,15 @@ Negative views of the **self** (“I am a failure”), the **world** (“nothing
 4. How do baby blues differ from peripartum depression? || Blues are common, mild and settle within two weeks.
 :::
 
+:::mcq
+Q: A 60-year-old man in an Indian clinic complains only of "gas", body aches and weakness. Tests are normal. He has stopped going to the temple and no longer plays with his grandson. The likely missed diagnosis is:
+- Somatic symptom disorder only
+- *Depression presenting with physical complaints
+- Hypochondriasis
+- Malingering
+> Somatic presentation is common; ask about interest, mood, sleep and hopelessness.
+:::
+
 ## 3.2 Assessment and differential diagnosis [core]
 ### What to ask
 - Mood, interest, the nine symptoms, duration, impairment.
@@ -349,6 +426,22 @@ Blood count, thyroid function, glucose, kidney and liver function, B12 and folat
 3. Name five differential diagnoses of depression. || Bipolar depression, adjustment disorder, grief, dysthymia, negative schizophrenia, dementia, medical causes.
 :::
 
+:::mcq
+Q: A 45-year-old woman with low mood, tiredness, weight gain, constipation and dry skin. Before starting an antidepressant you should check:
+- Lithium level
+- *Thyroid function (TSH)
+- EEG
+- Urine drug screen only
+> Hypothyroidism mimics depression and is easily treated.
+
+Q: A man with first-episode depression has a history of a week of little sleep, overspending and talking fast 2 years ago. The best initial plan is:
+- SSRI alone at full dose
+- *Treat as possible bipolar depression: avoid an antidepressant alone and consider a mood stabiliser
+- Benzodiazepine only
+- No treatment
+> A past hypomanic or manic episode changes the diagnosis and the treatment.
+:::
+
 ## 3.3 Depression with physical illness [core]
 Depression is two to three times more common in people with chronic physical illness, and it **worsens the physical outcome**: more pain, poorer self-care, worse adherence and higher death rates.
 
@@ -378,6 +471,15 @@ In physical illness, fatigue, poor appetite and poor sleep may come from the ill
 2. Why are body symptoms less useful for diagnosing depression in physical illness? || The illness itself causes them.
 3. Which scale avoids body symptoms? || Hospital Anxiety and Depression Scale.
 4. Which HIV medicine can affect mood? || Efavirenz.
+:::
+
+:::mcq
+Q: A man has been low since his heart attack 2 months ago. The best antidepressant choice is usually:
+- Amitriptyline
+- *Sertraline
+- Lithium
+- Dothiepin
+> Sertraline is well studied after a heart attack; tricyclics are avoided in heart disease.
 :::
 
 # Part IV · Treating it
@@ -435,6 +537,22 @@ After **remission**, continue the antidepressant at the same dose for **at least
 5. Give five indications for ECT. || Psychotic depression, high suicide risk, refusing food and fluids, catatonia, resistance (also pregnancy, previous response).
 :::
 
+:::mcq
+Q: A woman with mild depression of 3 weeks, no risk, asks for "the strongest tablet". In stepped care the best first step is:
+- High-dose antidepressant plus benzodiazepine
+- *Guided self-help or behavioural activation, with review
+- ECT
+- Admission
+> Medicines show the clearest benefit in moderate to severe depression.
+
+Q: Four weeks into an adequate dose of sertraline, a man shows little change and takes it regularly. The diagnosis is clear. The next step is:
+- Stop all treatment
+- *Increase the dose or switch, and add psychological therapy if not started
+- Wait 6 more months
+- Add alprazolam long term
+> Review at 4 to 6 weeks: adjust when little response.
+:::
+
 ## 4.2 Course and prognosis [core]
 - An untreated episode lasts about **6 to 13 months**; treated episodes average about **3 months**.
 - Depression tends to **recur**: about half recover within the first year after a first hospital admission, and about **50 to 75%** have a recurrence within 5 years.
@@ -458,6 +576,15 @@ Depression carries a high lifetime risk of suicide. Risk is highest early in an 
 2. What proportion of patients have a recurrence within 5 years? || About half to three quarters.
 3. Name four good and four poor prognostic factors. || From the table.
 4. When is suicide risk especially high in depression? || Early in the episode, after discharge, high hopelessness, early recovery.
+:::
+
+:::mcq
+Q: Which feature predicts a WORSE course of depression?
+- Acute onset with a clear stressor
+- Good social support
+- *Residual symptoms after the episode improves
+- First episode in middle age with full recovery
+> Incomplete recovery strongly predicts relapse; treat to full remission.
 :::
 
 ## 4.3 ECT and brain stimulation in depth [core]
@@ -502,6 +629,15 @@ Depression carries a high lifetime risk of suicide. Risk is highest early in an 
 3. Compare bilateral and right unilateral ECT. || Bilateral: faster and stronger but more memory effects; right unilateral: fewer memory effects.
 4. Name the main relative contraindication to ECT. || Raised intracranial pressure.
 5. Where is the rTMS coil placed for depression? || Over the left dorsolateral prefrontal cortex.
+:::
+
+:::mcq
+Q: A 70-year-old has stopped eating and drinking, believes her intestines have rotted, and is losing weight fast. The most appropriate treatment is:
+- Wait for an SSRI to work over 6 weeks
+- *ECT, given the life-threatening refusal and psychotic features
+- Benzodiazepine only
+- Psychotherapy only
+> Psychotic depression with refusal of food and fluids is a classic indication for ECT.
 :::
 
 # Part V · Exam zone

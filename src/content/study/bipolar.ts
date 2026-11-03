@@ -74,6 +74,15 @@ During this period, **at least 3** of the following (**4** if the mood is only i
 4. How does decreased need for sleep differ from insomnia? || The person doesn't feel tired and doesn't want more sleep.
 :::
 
+:::mcq
+Q: A man has slept 2 hours a night for 5 days, feels energetic, talks fast and has spent his savings. He was admitted after fighting police. The episode counts as mania because:
+- It lasted at least 4 days
+- *It led to hospital admission (or lasted a week) and caused marked impairment
+- He has insomnia
+- He is irritable
+> Mania needs a week, or any duration if hospitalised, with marked impairment or psychosis.
+:::
+
 ## 1.2 Hypomania and mixed features [core]
 :::define Hypomanic episode
 The same mood and energy change and the same B symptoms, lasting **at least 4 consecutive days**, an unequivocal change that **others can observe**, but **not** severe enough to cause marked impairment or need hospitalisation, and **no psychotic features**.
@@ -104,6 +113,22 @@ If psychotic features are present, it is mania, whatever the duration or impairm
 2. What happens to the diagnosis if a hypomanic patient becomes psychotic? || It becomes mania.
 3. Define rapid cycling and name two associations. || 4 or more episodes in 12 months; women, bipolar II, hypothyroidism, antidepressants.
 4. Why are mixed states dangerous? || High suicide risk: despair with energy and impulsivity.
+:::
+
+:::mcq
+Q: A woman has four days of elevated mood, less need for sleep and more ideas. Colleagues notice; she works well and has no psychosis. Most likely:
+- Mania
+- *Hypomania
+- Normal happiness
+- Cyclothymia
+> At least 4 days, observable change, no marked impairment, no psychosis.
+
+Q: During a depressive episode, a man also has racing thoughts, less sleep and irritability for most days. This should be recorded as:
+- Pure unipolar depression
+- *Depression with mixed features
+- Agitated depression only
+- Generalised anxiety disorder
+> Mixed features raise the risk of suicide and argue against an antidepressant alone.
 :::
 
 ## 1.3 Finding hypomania: the history that is often missed [core]
@@ -141,6 +166,15 @@ People with bipolar disorder spend far more time depressed than high, and they s
 3. Which scales screen for hypomania? || MDQ and HCL-32.
 :::
 
+:::mcq
+Q: The most reliable way to find past hypomania in a depressed patient is to:
+- Ask only "Have you ever been manic?"
+- *Ask about specific periods of less sleep and more energy, and ask a family member
+- Rely on a rating scale alone
+- Wait for a manic episode
+> Hypomania feels good and is rarely reported; collateral history finds it.
+:::
+
 # Part II · The disorders
 
 ## 2.1 Bipolar I, bipolar II and cyclothymia [core]
@@ -168,6 +202,15 @@ Anxious distress; mixed features; rapid cycling; melancholic or atypical feature
 4. In whom must you hunt hard for a medical cause of mania? || First-onset mania in later life (after about 50).
 :::
 
+:::mcq
+Q: A woman has had recurrent depressions and one clear episode of hypomania, never mania. Diagnosis:
+- Bipolar I disorder
+- *Bipolar II disorder
+- Cyclothymia
+- Recurrent depressive disorder
+> Bipolar II: at least one hypomanic and one major depressive episode, never mania.
+:::
+
 ## 2.2 Why it happens [core]
 ### Genetics: the strongest of the common psychiatric disorders
 - Heritability is high (roughly 60 to 85% in twin studies).
@@ -191,6 +234,15 @@ Anxious distress; mixed features; rapid cycling; melancholic or atypical feature
 1. Which common mood disorder is most heritable? || Bipolar disorder.
 2. Name five triggers of a manic episode. || Sleep loss, stress, stopping lithium, antidepressants, steroids, stimulants, childbirth.
 3. What is the kindling hypothesis? || Early episodes are triggered by stress; later ones arise spontaneously.
+:::
+
+:::mcq
+Q: Which statement about the genetics of bipolar disorder is TRUE?
+- It is caused by one gene
+- *It is among the most heritable common psychiatric disorders, with many genes involved
+- Twins show no difference in risk
+- Family history is irrelevant to treatment
+> Heritability is high; a family history of bipolar disorder (or lithium response) matters clinically.
 :::
 
 ## 2.3 Recognising bipolar disorder [core]
@@ -221,6 +273,15 @@ Elated and labile affect, irritable when contradicted; pressure of speech with f
 1. List five features that should make you suspect bipolarity in a depressed patient. || Early onset, many abrupt episodes, atypical or psychotic features, postpartum onset, family history, antidepressant switch.
 2. How do you tell borderline mood instability from bipolar disorder? || Borderline shifts last hours and react to relationships; bipolar episodes last days to weeks with sleep and energy change.
 3. How do you tell ADHD from mania? || ADHD is lifelong, not episodic, without decreased need for sleep.
+:::
+
+:::mcq
+Q: A 55-year-old with no psychiatric history becomes grandiose and disinhibited over a month, with new headaches. The priority is:
+- Start lithium
+- *Look for a secondary cause with neurological examination and brain imaging
+- Diagnose bipolar I
+- Start an antidepressant
+> New mania late in life suggests an organic cause.
 :::
 
 ## 2.4 Bipolar disorder in special groups [core]
@@ -255,6 +316,15 @@ Elated and labile affect, irritable when contradicted; pressure of speech with f
 4. Name three medicines that can trigger mania. || Steroids, antidepressants, stimulants, levodopa, thyroxine.
 :::
 
+:::mcq
+Q: Three days after delivery, a woman with a family history of bipolar disorder is confused, cannot sleep and believes her baby is evil. The best action is:
+- Reassure her it's baby blues
+- *Urgent psychiatric admission: possible postpartum psychosis
+- SSRI and outpatient review
+- Ask her to stop breastfeeding and review in a week
+> Postpartum psychosis is an emergency linked to bipolar disorder.
+:::
+
 # Part III · Treatment
 
 ## 3.1 Acute mania [core]
@@ -272,6 +342,15 @@ Elated and labile affect, irritable when contradicted; pressure of speech with f
 An untreated manic episode lasts about **3 months**, so don't stop treatment early when the patient seems calmer.
 :::
 
+:::mcq
+Q: A manic patient on an SSRI for depression is brought in. The first medicine change is to:
+- Increase the SSRI
+- *Stop the antidepressant and start an antimanic medicine
+- Add a stimulant
+- Add a second antidepressant
+> Antidepressants can drive mania; stop them.
+:::
+
 ## 3.2 Bipolar depression [core]
 :::trap Antidepressants alone are risky
 An antidepressant **without** a mood stabiliser can trigger mania, mixed states or rapid cycling, and often works less well in bipolar depression. Avoid antidepressant monotherapy in bipolar I. If used, combine with a mood stabiliser and stop once the depression resolves.
@@ -281,6 +360,15 @@ Evidence-based options:
 - **Lamotrigine**: better for preventing depressive episodes than treating acute depression (slow titration because of rash risk).
 - **Lithium**: modest acute benefit; strongly anti-suicidal.
 - ECT for severe or psychotic bipolar depression.
+
+:::mcq
+Q: For bipolar depression, which option has the BEST evidence?
+- Fluoxetine alone
+- *Quetiapine
+- Haloperidol
+- Alprazolam
+> Quetiapine, lurasidone and the olanzapine-fluoxetine combination have evidence; antidepressants alone are risky.
+:::
 
 ## 3.3 Maintenance: keeping people well [core]
 After a manic episode, most patients have further episodes (about 90% after a single manic episode). Long-term treatment is the rule.
@@ -322,6 +410,15 @@ Drink enough fluids, especially in summer and with fever or diarrhoea; avoid ove
 6. List five signs of lithium toxicity. || Coarse tremor, vomiting, diarrhoea, ataxia, slurred speech, confusion, fits.
 :::
 
+:::mcq
+Q: A woman on lithium for 3 years well controlled develops a fever and diarrhoea for 3 days and now has coarse tremor and unsteadiness. The most likely cause is:
+- Relapse of mania
+- *Lithium toxicity from dehydration
+- Normal side effect
+- Tardive dyskinesia
+> Dehydration raises lithium levels; check a level urgently and stop lithium.
+:::
+
 ## 3.4 Course and prognosis [core]
 - Onset usually in the late teens to 20s; equal in men and women for bipolar I.
 - Recurrent: about 90% of people with one manic episode have more.
@@ -339,6 +436,15 @@ Drink enough fluids, especially in summer and with fever or diarrhoea; avoid ove
 :::recall
 1. What proportion of people with one manic episode have more? || About 90%.
 2. Name four poor prognostic factors. || Poor adherence, rapid cycling, mixed states, substance use, psychotic features.
+:::
+
+:::mcq
+Q: Which patient has the BEST outlook in bipolar disorder?
+- Early onset with rapid cycling and cannabis use
+- *Classic mania with full recovery between episodes and good adherence
+- Mixed episodes with poor support
+- Many episodes before treatment
+> Full inter-episode recovery and adherence predict a good course.
 :::
 
 ## 3.5 Managing mania on the ward and the relapse signature [core]
@@ -375,6 +481,15 @@ Drink enough fluids, especially in summer and with fever or diarrhoea; avoid ove
 1. Name four parts of ward management of mania. || Low stimulation, consistent limits, protecting finances and reputation, restoring sleep.
 2. List the steps of de-escalation. || Safe distance and calm voice, listen and acknowledge, offer choices, offer oral medicine, rapid tranquillisation only if needed.
 3. What is a relapse signature and who writes it? || Personal early warning signs with agreed actions, written by patient and family when well.
+:::
+
+:::mcq
+Q: Ravi's agreed early warning sign is sleeping 5 hours and feeling fine. When it happens, the plan should first be:
+- Wait until he believes he is a minister
+- *Keep his routine, cut caffeine, tell his wife, and contact the clinic within days
+- Stop all medicines
+- Start an antidepressant
+> Acting on early signs prevents a full relapse.
 :::
 
 # Part IV · Exam zone
