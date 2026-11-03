@@ -47,6 +47,13 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
 
   // Email — best-effort, logged, never blocks the credential.
   if (!input.email) return;
+  // In staging/preview, restrict all email to the single approved test recipient
+  // so a misconfiguration can never email a real student.
+  const allowed = process.env.ALLOWED_TEST_RECIPIENT;
+  if (allowed && input.email !== allowed) {
+    console.warn(`notifyCredential: skipping email to ${input.email} (allowed test recipient: ${allowed})`);
+    return;
+  }
   const share = linkedInUrl(verifyUrl, `I'm happy to share that I completed "${input.title}" with VIBHA School of Psychology.`);
   const text = `${input.name},\n\n${title}.\n\n${body}\n\nView it here: ${base}/achievements\nVerify it here: ${verifyUrl}\n\nShare your accomplishment: ${share}\n\nWarmly,\nVIBHA School of Psychology`;
   const res = await sendResendEmail(input.email, title, text);
