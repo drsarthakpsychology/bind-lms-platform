@@ -22,6 +22,8 @@ type Base = {
   objective: string;
   bookRef: BookRef;
   reviewFlags: string[];
+  /** Shown after the score: the teaching point that ties the items together. */
+  debrief?: string;
 };
 
 /** Read a patient's words, name the phenomenon. */

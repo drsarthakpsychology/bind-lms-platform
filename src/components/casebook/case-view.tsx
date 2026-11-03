@@ -31,7 +31,7 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> Lab
       </Link>
@@ -65,6 +65,7 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
             {score.right} of {score.total}
           </h2>
           <Bars ariaLabel="Your score" items={[{ label: "Right", value: score.right, highlight: true }, { label: "Total", value: score.total }]} />
+          {a.debrief && <p className="rounded-xl border-2 border-foreground bg-background p-3">{a.debrief}</p>}
           <p>{score.right * 3 >= score.total * 2 ? "Solid. This comes back in a few days to keep it fresh." : "Worth another go. It comes back sooner so you can try again."}</p>
           <div className="flex flex-wrap gap-2">
             <LabButton

@@ -1,0 +1,323 @@
+[
+  {
+    "id": "k1-01-delirium-or-dementia",
+    "title": "Night-time confusion after surgery",
+    "format": "differential",
+    "module": "neurocognitive",
+    "level": "F",
+    "objective": "Distinguish delirium from dementia and from depression using onset, attention, fluctuation and level of consciousness.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "3.1 Delirium; 3.2 Dementia", "pages": "PDF pp.737-739 (Table 3-5), 747 (Table 3-8), 752-753 (Tables 3-11, 3-12)" },
+    "content": {
+      "vignette": "Mr. Raghunathan, 74, a retired railway clerk from Madurai, had a hip replacement three days ago. His daughter says he was managing his own pension paperwork last month. Since yesterday evening he has been pulling at his drip, calling the nurse by his late wife's name and insisting the ward is a railway platform. In the morning he is drowsy and drifts off mid-sentence. By noon he is chatting sensibly about cricket, and at night he is agitated again. He cannot keep his attention on counting backwards from 20. He is on tramadol for pain and has not passed urine for 10 hours.",
+      "options": ["Delirium", "Alzheimer-type dementia", "Depression with cognitive complaints", "Late-onset schizophrenia", "Normal post-operative tiredness"],
+      "answer": "Delirium",
+      "explanation": "The key features are an abrupt onset over hours to days, a level of alertness that swings through the day and worsens at night, and attention that cannot be held. Dementia usually starts slowly over months with clear consciousness, and his recent independent functioning argues against it. Age, surgery, an opioid and possible urinary retention are typical vulnerability and trigger factors. Look for the cause rather than labelling him 'old and confused'.",
+      "followUp": "List two predisposing and two precipitating factors in this case."
+    },
+    "reviewFlags": ["clinician review of medication example", "avoid implying opioids should be withheld for pain"]
+  },
+  {
+    "id": "k1-02-depression-vs-dementia-sort",
+    "title": "Who is losing memory, and why?",
+    "format": "sort",
+    "module": "neurocognitive",
+    "level": "I",
+    "objective": "Sort clinical observations into those that point to depression-related cognitive difficulty and those that point to a neurodegenerative dementia.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "3.2 Dementia; 7 Depressive Disorders (differential diagnosis)", "pages": "PDF pp.770-771 (Table 3-25), 1235" },
+    "content": {
+      "categories": ["Points to depression-related cognitive difficulty", "Points to neurodegenerative dementia"],
+      "items": [
+        { "text": "The family can name the week the forgetfulness began.", "category": "Points to depression-related cognitive difficulty" },
+        { "text": "She lists her memory failures in detail and seems distressed by them.", "category": "Points to depression-related cognitive difficulty" },
+        { "text": "He answers many test questions with 'I don't know' without really trying.", "category": "Points to depression-related cognitive difficulty" },
+        { "text": "With gentle encouragement she recalls more of the word list.", "category": "Points to depression-related cognitive difficulty" },
+        { "text": "He has had two earlier episodes of low mood that needed treatment.", "category": "Points to depression-related cognitive difficulty" },
+        { "text": "The family noticed problems only when he got lost driving to a familiar temple.", "category": "Points to neurodegenerative dementia" },
+        { "text": "She plays down her difficulties and is proud of small successes.", "category": "Points to neurodegenerative dementia" },
+        { "text": "He fills gaps in memory with plausible but invented details.", "category": "Points to neurodegenerative dementia" },
+        { "text": "She keeps sticky notes and a calendar everywhere to cope.", "category": "Points to neurodegenerative dementia" },
+        { "text": "Difficulties have crept up slowly over two years.", "category": "Points to neurodegenerative dementia" }
+      ],
+      "debrief": "No single item decides the diagnosis, and the two can coexist. The book prefers the term 'depression-related cognitive dysfunction' to 'pseudodementia' because the cognitive problems are real."
+    },
+    "reviewFlags": ["make clear the conditions can coexist", "check items against Table 3-25 for accuracy without copying wording"]
+  },
+  {
+    "id": "k1-03-thought-form-ear",
+    "title": "Train your ear: how is this person thinking?",
+    "format": "mse-observation",
+    "module": "interview-mse",
+    "level": "F",
+    "objective": "Label samples of speech with the correct formal thought disorder term.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "1.1 The Adult Patient (Mental Status Examination)", "pages": "PDF pp.51-53 (Table 1-4)" },
+    "content": {
+      "prompt": "Student asks: 'What brought you to the clinic today?' Read each reply and choose the best term.",
+      "observations": [
+        { "sample": "Well, I took the 7:40 bus, no, the 7:45, because my neighbour's son borrowed my umbrella and it was drizzling, and my sister says drizzle is worse than rain for the chest... anyway, the reason I came is my sleep has been bad.", "answer": "Circumstantiality", "why": "Many unnecessary details, but the speaker reaches the point in the end." },
+        { "sample": "The clinic? Clinics are everywhere now. My cousin opened a dental clinic in Pune, very modern, glass doors.", "answer": "Tangentiality", "why": "The reply stays near the topic but never answers the question." },
+        { "sample": "I came by train, train your mind, mind your step, step up, up to the sky, sky is blue, blue is my party colour!", "answer": "Flight of ideas (with clang and punning links)", "why": "Rapid jumps, each linked to the one before by sound or word play. Usually comes with pressured speech." },
+        { "sample": "The doctor... because the curtains drink the electricity on Tuesdays, and my file is a mango.", "answer": "Loosening of associations / derailment", "why": "The listener cannot see any link between the ideas." },
+        { "sample": "I came because I wanted to tell you that the... [stops for 10 seconds] ...sorry, I don't know what I was saying.", "answer": "Thought block", "why": "Sudden stop in the middle of a thought, with no memory of where it was going." },
+        { "sample": "I needed a check for my brainwirement, the brainwirement has gone loose.", "answer": "Neologism", "why": "An invented word with a private meaning." },
+        { "sample": "My sleep is bad. [Asked about appetite] My sleep is bad. [Asked about family] My sleep, it is bad.", "answer": "Perseveration", "why": "Keeps coming back to the same answer whatever the question." }
+      ],
+      "mediaNote": "Best delivered as short audio clips voiced by actors in English and Hindi or Tamil; the transcripts above are the scripts."
+    },
+    "reviewFlags": ["actor recordings should avoid caricature of psychosis", "check Indian-language versions with native speakers"]
+  },
+  {
+    "id": "k1-04-affect-insight-judgement",
+    "title": "Affect, insight and judgement are separate observations",
+    "format": "mse-observation",
+    "module": "interview-mse",
+    "level": "I",
+    "objective": "Describe affect along its dimensions, and rate insight and judgement independently of each other and of how severe the illness is.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "1.1 The Adult Patient (Mental Status Examination)", "pages": "PDF pp.49-50, 55-56" },
+    "content": {
+      "observations": [
+        { "sample": "Ms. Farida, 31, says her mood is 'fine'. She talks about her brother's death with a fixed smile and occasional giggles.", "question": "Describe her affect.", "answer": "Incongruent with the content and inappropriate to it; the range should be noted too.", "why": "Affect is what the examiner sees, mood is what the patient reports. Here they do not match, and the expression does not fit the topic." },
+        { "sample": "Mr. Joseph, 45, hears voices daily. He says: 'I know these voices come from my illness. They feel real, but nobody is really talking.' He takes his medicines and comes to every review.", "question": "Rate insight and judgement.", "answer": "Good insight (reality testing intact); good judgement.", "why": "The illness can be severe while insight is good. Insight does not measure severity." },
+        { "sample": "Ms. Kavya, 22, with mild social anxiety, says 'nothing is wrong with me, people are just rude', but she never misses work and manages her money well.", "question": "Rate insight and judgement.", "answer": "Poor insight; good judgement.", "why": "Mild illness can come with little insight, and judgement can be preserved even when insight is poor." },
+        { "sample": "Mr. Arvind, 38, during a manic episode agrees that he is 'a bit high' but has just booked a non-refundable international trip on a credit card.", "question": "Rate insight and judgement.", "answer": "Partial insight; impaired judgement.", "why": "Judge his actual recent decisions, not a hypothetical question." }
+      ]
+    },
+    "reviewFlags": ["names chosen to reflect Indian diversity; check cultural sensitivity"]
+  },
+  {
+    "id": "k1-05-pnes-vs-epilepsy",
+    "title": "Seizure or not? Sort the features",
+    "format": "sort",
+    "module": "more-disorders",
+    "level": "I",
+    "objective": "Sort clinical and EEG features into those more typical of epileptic seizures and those more typical of functional (psychogenic non-epileptic) seizures.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "3.4 Neurocognitive disorders due to a general medical condition (epilepsy); 12 Somatic Symptom and Related Disorders", "pages": "PDF pp.817 (Table 3-33), 1457" },
+    "content": {
+      "categories": ["More typical of epileptic seizure", "More typical of functional (non-epileptic) seizure"],
+      "items": [
+        { "text": "Episode wakes the person from sleep", "category": "More typical of epileptic seizure" },
+        { "text": "Same warning sensation before every episode", "category": "More typical of epileptic seizure" },
+        { "text": "Lips turn blue during the episode", "category": "More typical of epileptic seizure" },
+        { "text": "Confused and drowsy for some time afterwards", "category": "More typical of epileptic seizure" },
+        { "text": "Spike-and-wave discharges on EEG during the event", "category": "More typical of epileptic seizure" },
+        { "text": "Thrashing that waxes and wanes, with side-to-side head movement and out-of-sync limbs", "category": "More typical of functional (non-epileptic) seizure" },
+        { "text": "Episode starts or stops when the examiner suggests it might", "category": "More typical of functional (non-epileptic) seizure" },
+        { "text": "Normal EEG during a recorded event, with no slowing afterwards", "category": "More typical of functional (non-epileptic) seizure" },
+        { "text": "Gag and pupil reflexes preserved during the episode", "category": "More typical of functional (non-epileptic) seizure" }
+      ],
+      "debrief": "These are tendencies, not rules. Tongue-biting, incontinence and injury can happen in functional seizures, and some people have both kinds (book p.1457). Video-EEG is the deciding test. Functional seizures are real and involuntary, not 'faking'."
+    },
+    "reviewFlags": ["stigma: emphasise involuntary nature", "neurology review"]
+  },
+  {
+    "id": "k1-06-feigned-or-felt",
+    "title": "Felt, produced, or feigned?",
+    "format": "differential",
+    "module": "more-disorders",
+    "level": "I",
+    "objective": "Separate somatic symptom disorder, functional neurological (conversion) disorder, factitious disorder and malingering by asking whether symptoms are experienced or produced, and what the motive is.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "12 Somatic Symptom and Related Disorders", "pages": "PDF pp.1454 (Table 12-5), 1457, 1461 (Table 12-7), 1478-1481" },
+    "content": {
+      "vignette": "Ms. Lata, 27, a nursing assistant in Nagpur, has been admitted four times in a year at three hospitals with 'sugar crashes'. Her blood glucose is very low each time, but her insulin and C-peptide pattern suggests injected insulin. She has no diabetes. She eagerly agrees to every test and asked for an abdominal scan herself. She has no pending insurance claim or court case, and she does not want leave from work; she seems to want the care and attention of being a patient. When asked about her past, her account changes from one interview to the next and she resists contact with her family.",
+      "options": ["Factitious disorder imposed on self", "Malingering", "Somatic symptom disorder", "Functional neurological symptom (conversion) disorder", "Undiagnosed insulinoma"],
+      "answer": "Factitious disorder imposed on self",
+      "explanation": "The symptoms are produced deliberately, but there is no obvious external reward such as money, leave or escape from the law. The motive appears to be taking on the sick role, which fits factitious disorder. In malingering the production is also deliberate, but it is driven by an external incentive. In somatic symptom and conversion disorders the person genuinely experiences the symptoms and does not produce them. An insulinoma should still be properly excluded before the label is applied.",
+      "teachingPoint": "The two questions to ask are: 1) Is the symptom produced on purpose? 2) If so, is there an external reward?"
+    },
+    "reviewFlags": ["forensic and employment sensitivity: health worker patient", "confrontation should be supportive; add management note", "endocrinology review"]
+  },
+  {
+    "id": "k1-07-alcohol-withdrawal-clock",
+    "title": "The alcohol withdrawal clock",
+    "format": "timeline",
+    "module": "substance",
+    "level": "F",
+    "objective": "Place alcohol withdrawal features on a timeline from the last drink so that dangerous stages are anticipated.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "4.2 Alcohol-Related Disorders", "pages": "PDF p.891 (Table 4-5)" },
+    "content": {
+      "anchor": "Hours after the last drink",
+      "events": [
+        { "when": "About 6-8 hours", "label": "Tremulousness (shaky hands), with irritability, sweating and nausea", "severity": "mild", "source": "PDF p.891" },
+        { "when": "About 8-12 hours", "label": "Perceptual disturbances (for example fleeting visual or tactile misperceptions)", "severity": "moderate", "source": "PDF p.891" },
+        { "when": "About 12-24 hours", "label": "Withdrawal seizures", "severity": "severe", "source": "PDF p.891" },
+        { "when": "Within 72 hours", "label": "Delirium tremens: confusion, hallucinations, autonomic instability", "severity": "life-threatening", "source": "PDF p.891" }
+      ],
+      "scenario": "Mr. Sukhwinder, 46, a truck driver, is admitted for a leg fracture at 10 pm. His wife says his last drink was at 6 pm. Students drag a ward-round time onto each stage and decide when to step up monitoring.",
+      "debrief": "Timings are typical, not fixed. Use a structured withdrawal scale and give thiamine before glucose."
+    },
+    "reviewFlags": ["timings from book p.891 only; do not add percentages", "clinician review of management note"]
+  },
+  {
+    "id": "k1-08-gambling-phases",
+    "title": "How a gambling problem unfolds",
+    "format": "timeline",
+    "module": "substance",
+    "level": "I",
+    "objective": "Order the classic four-phase description of gambling disorder and recognise each phase in a story.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "4.12 Gambling Disorder", "pages": "PDF p.1066 (Table 4-49)" },
+    "content": {
+      "anchor": "Phase order (not calendar dates)",
+      "events": [
+        { "order": 1, "phase": "Winning phase", "storyClue": "Vikram, 24, wins a large sum on a fantasy-cricket app in his first month and tells friends he has 'a system'." },
+        { "order": 2, "phase": "Progressive-loss phase", "storyClue": "He starts planning his day around matches, borrows from his cousin and takes bigger risks to win back losses." },
+        { "order": 3, "phase": "Desperate phase", "storyClue": "He takes loans from several instant-loan apps, misses repayments and secretly pawns his mother's gold bangle." },
+        { "order": 4, "phase": "Hopeless phase", "storyClue": "He accepts the money is gone for good but keeps betting for the thrill, and says he feels nothing else is worth doing." }
+      ],
+      "debrief": "This four-phase description is a classic clinical model, not a law. The book notes the full course can take many years (p.1066). Ask about suicidal thoughts in the desperate and hopeless phases."
+    },
+    "reviewFlags": ["suicide risk prompt needed", "debt and family shame sensitivity", "model is descriptive; present as such"]
+  },
+  {
+    "id": "k1-09-grief-or-depression",
+    "title": "Grieving, or something more?",
+    "format": "differential",
+    "module": "depression",
+    "level": "I",
+    "objective": "Use guilt type, emotional reactivity, psychomotor change, self-view and psychotic features to separate normal grief from a depressive episode after a loss.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "7 Depressive Disorders (differential diagnosis)", "pages": "PDF pp.1238-1239 (Table 7-8)" },
+    "content": {
+      "vignette": "Mrs. Shobha, 58, from Kochi, lost her husband to a heart attack four months ago. She cries every day and wishes she had pushed him to see the doctor sooner. Since last month, though, she barely speaks, sits for hours without moving, and does not brighten even when her grandson visits. She tells her daughter she is 'a sinful woman who brought ruin on the family' and that she deserves to suffer. She has stopped eating properly and has lost weight.",
+      "options": ["Normal grief", "Major depressive episode following bereavement", "Prolonged grief disorder", "Adjustment disorder", "Dementia"],
+      "answer": "Major depressive episode following bereavement",
+      "explanation": "Regret about not pushing him to see a doctor (guilt about what she did not do) is common in grief. What has changed is the general sense of being sinful and deserving punishment, marked slowing of movement, and mood that no longer lifts in response to pleasant events. Together these point to a depressive episode. Mourning rituals and the year of mourning are normal and should be respected. Grief alone does not rule out a depression diagnosis.",
+      "followUp": "Ask about suicidal thoughts and any wish to 'join' her husband."
+    },
+    "reviewFlags": ["bereavement sensitivity", "suicide inquiry prompt", "culturally adapt for mourning customs"]
+  },
+  {
+    "id": "k1-10-hidden-bipolar",
+    "title": "Is this depression part of a bipolar illness?",
+    "format": "differential",
+    "module": "bipolar",
+    "level": "I",
+    "objective": "Recognise features of a depressive episode that raise the likelihood of an underlying bipolar disorder, and know which question settles it.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "6 Bipolar Disorders; 7 Depressive Disorders", "pages": "PDF pp.1177 (Table 6-1), 1235 (Table 7-5)" },
+    "content": {
+      "vignette": "Arjun, 21, an engineering student in Hyderabad, is brought in with his second depression. He sleeps 13 hours a day, feels as though his limbs are lead, and moves and speaks slowly. Last week he said his classmates were plotting to fail him. His maternal uncle was 'admitted for months after he stopped sleeping and spent all his money'. Two years ago, after starting a medicine from a GP, he spent a week barely sleeping and writing a 'business plan for a flying-car start-up'.",
+      "options": ["Bipolar disorder, current depressive episode", "Recurrent major depressive disorder with psychotic features", "Schizophrenia", "Cannabis-induced psychotic disorder", "Hypersomnolence disorder"],
+      "answer": "Bipolar disorder, current depressive episode",
+      "explanation": "Several features raise suspicion: early onset, oversleeping with slowed movement, psychotic features in a young person, a family history suggestive of bipolar disorder and a probable hypomanic episode triggered by an antidepressant. The deciding question is a past manic or hypomanic episode, so take a careful history from family members. The book notes these depressive features are inconsistent predictors (p.1177); only a history of mania or hypomania is definitional.",
+      "teachingPoint": "Ask every depressed patient about past high periods, and ask someone who knows them too."
+    },
+    "reviewFlags": ["check medication example is non-specific", "avoid implying a single feature is diagnostic"]
+  },
+  {
+    "id": "k1-11-mania-or-not",
+    "title": "Excited, loud and not sleeping: mania or something else?",
+    "format": "differential",
+    "module": "bipolar",
+    "level": "A",
+    "objective": "Work through the differential of a manic-looking presentation, including medical causes, substances, psychosis and personality, and recognise the risk of diagnostic bias.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "6 Bipolar Disorders (differential diagnosis)", "pages": "PDF p.1192 (Table 6-5)" },
+    "content": {
+      "vignette": "Ms. Rukmini, 29, a daily-wage worker from a rural district who speaks only Kannada, is brought by police after singing loudly at a bus stop at 2 am. She laughs and jokes with the staff, her mood is contagious, and she talks fast, jumping between topics. She says she has been chosen to lead the village temple festival. Her husband says she was 'completely herself' three weeks ago, and her mother had a similar spell years ago. The admitting note, written through a hurried interpreter, says only: 'Disorganised, delusional - ?schizophrenia'. Her thyroid tests are pending.",
+      "options": ["Manic episode (bipolar I), pending exclusion of medical causes", "Schizophrenia", "Borderline personality disorder", "Hyperthyroidism alone", "Stimulant intoxication"],
+      "answer": "Manic episode (bipolar I), pending exclusion of medical causes",
+      "explanation": "A recent sharp change from her usual self, an elated and infectious mood, pressured speech and a family history together point to mania rather than schizophrenia. The book warns that manic symptoms in minority groups are too often misdiagnosed as schizophrenia (p.1192). In India, language barriers, class and caste can lead to the same mistake. The thyroid result and a urine drug screen still matter, because hyperthyroidism and substances are on the medical differential.",
+      "discussion": "What in the admission process made the wrong label more likely? How would a better interpreter or a family history change it?"
+    },
+    "reviewFlags": ["caste and class bias discussion must be facilitated carefully", "police involvement sensitivity"]
+  },
+  {
+    "id": "k1-12-reliability-validity-sort",
+    "title": "Is it reliability or validity?",
+    "format": "sort",
+    "module": "assessment",
+    "level": "F",
+    "objective": "Classify research descriptions as internal consistency, inter-rater reliability, test-retest reliability or validity.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "1.1 The Adult Patient (Psychiatric Rating Scales)", "pages": "PDF pp.119-123" },
+    "content": {
+      "categories": ["Internal consistency", "Inter-rater reliability", "Test-retest reliability", "Validity"],
+      "items": [
+        { "text": "Two psychologists watch the same recorded interview and score a mania scale independently; their totals are compared.", "category": "Inter-rater reliability" },
+        { "text": "A new 12-item anxiety questionnaire is checked to see whether people who score high on one item tend to score high on the others.", "category": "Internal consistency" },
+        { "text": "Students take a memory test in June and again in July, with no change in their condition, and the two scores are correlated.", "category": "Test-retest reliability" },
+        { "text": "Scores on a short Hindi depression screener are compared against a full diagnostic interview by a psychiatrist.", "category": "Validity" },
+        { "text": "A ward team checks whether nurses on day and night shifts give the same agitation rating to the same patients.", "category": "Inter-rater reliability" },
+        { "text": "Researchers check whether a 'stress' scale actually predicts later visits to the doctor for stress-related complaints.", "category": "Validity" },
+        { "text": "Split the 20 items of an attention test into odd and even halves and correlate the two halves.", "category": "Internal consistency" },
+        { "text": "A personality inventory is given twice, three weeks apart, to stable volunteers.", "category": "Test-retest reliability" }
+      ],
+      "debrief": "Reliability means the scores are consistent. Validity means they measure what they claim to. A scale can be very reliable and still not valid."
+    },
+    "reviewFlags": []
+  },
+  {
+    "id": "k1-13-which-test",
+    "title": "Which test answers the question?",
+    "format": "matching",
+    "module": "assessment",
+    "level": "I",
+    "objective": "Match commonly used psychological and neuropsychological tests to what they mainly assess.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "1.1 The Adult Patient (Neuropsychology; Personality Assessment); 1.2 Children and Adolescents", "pages": "PDF pp.170 (Table 1-20), 186 (Table 1-21), 190 (Table 1-22), 265" },
+    "content": {
+      "pairs": [
+        { "left": "Wechsler intelligence scales", "right": "Overall intellectual functioning, reported as a range rather than one exact number" },
+        { "left": "Digit span (forwards and backwards)", "right": "Simple attention span, and mentally manipulating information" },
+        { "left": "Trail Making Test", "right": "Attention, speed and switching between two sequences" },
+        { "left": "Wisconsin Card Sorting Test", "right": "Working out a rule and shifting when it changes (perseverative errors)" },
+        { "left": "Bender Visual-Motor Gestalt Test", "right": "Copying designs: visual-motor integration" },
+        { "left": "MMPI", "right": "Objective, self-report personality and psychopathology profile with validity scales" },
+        { "left": "Rorschach", "right": "Projective test: responses to ambiguous inkblots" },
+        { "left": "Thematic Apperception Test", "right": "Projective test: stories told about ambiguous picture cards" }
+      ],
+      "labLink": "Try the Lab's Digit span and Stroop experiments to experience attention measures first-hand."
+    },
+    "reviewFlags": ["test materials are copyrighted; do not reproduce stimuli"]
+  },
+  {
+    "id": "k1-14-fear-conditioning-match",
+    "title": "How a fear is learned, and unlearned",
+    "format": "matching",
+    "module": "anxiety",
+    "level": "F",
+    "objective": "Apply classical conditioning terms to a clinical phobia, and understand extinction as new learning that can be reversed.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "8 Anxiety Disorders (psychological studies)", "pages": "PDF pp.1313-1314" },
+    "content": {
+      "story": "Meera, 16, was trapped in a lift in her apartment block during a power cut and was terrified in the dark for 40 minutes. Afterwards, the sound of the lift doors closing made her heart race, so she took the stairs to the 9th floor every day. With her therapist she rode the lift again and again, starting with one floor. After weeks of this the fear faded. A year later she got stuck briefly in a mall lift during a power failure, and her old fear came back.",
+      "pairs": [
+        { "left": "Unconditioned stimulus", "right": "Being trapped in the dark (frightening in itself)" },
+        { "left": "Conditioned stimulus", "right": "The sound of lift doors closing" },
+        { "left": "Conditioned response", "right": "Racing heart when the doors close" },
+        { "left": "Avoidance that keeps the fear going", "right": "Taking the stairs every day" },
+        { "left": "Extinction", "right": "Repeated lift rides with nothing bad happening" },
+        { "left": "Reinstatement / return of fear", "right": "Fear returning after getting stuck in the mall lift" }
+      ],
+      "debrief": "The book stresses that extinction does not erase the original learning. It adds a competing memory, and context or a new frightening event can bring the fear back (p.1314). This is why relapse prevention plans exposure in different settings.",
+      "labLink": "Pairs with the Lab's Reward schedules experiment (operant learning) as a contrast."
+    },
+    "reviewFlags": ["avoidance is described as maintaining, not causing; check accuracy"]
+  },
+  {
+    "id": "k1-15-asking-about-suicide",
+    "title": "Asking about suicide in a first interview",
+    "format": "branching-case",
+    "module": "suicide",
+    "level": "F",
+    "objective": "Practise moving from ideation to intent, plan and preparation, using direct, non-judgemental questions.",
+    "bookRef": { "book": "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed.", "chapter": "1.1 The Adult Patient (Mental Status Examination: suicidality)", "pages": "PDF p.51" },
+    "content": {
+      "setup": "Deepak, 34, a bank employee in Lucknow, has come to a counselling centre after losing his job. Twenty minutes in, he says quietly: 'Sometimes I think everyone would be better off without me.'",
+      "nodes": [
+        { "id": "n1", "text": "What do you say next?", "choices": [
+          { "label": "'Don't think like that, you have so much to live for.'", "next": "n1x", "quality": "poor" },
+          { "label": "'It sounds like things feel very heavy. When you say they'd be better off without you, are you having thoughts of ending your life?'", "next": "n2", "quality": "good" },
+          { "label": "Change the subject to his job search to lift his mood.", "next": "n1x", "quality": "poor" }
+        ]},
+        { "id": "n1x", "text": "Deepak goes quiet and says 'Yes, I know, sorry.' The chance to understand his risk has been lost. Go back and try again.", "choices": [ { "label": "Try again", "next": "n1", "quality": "neutral" } ] },
+        { "id": "n2", "text": "He says: 'Yes, most nights for two weeks.' What do you ask next?", "choices": [
+          { "label": "'Have you thought about how you might do it?'", "next": "n3", "quality": "good" },
+          { "label": "'OK, I'll note that.' Move on to sleep.", "next": "n2x", "quality": "poor" }
+        ]},
+        { "id": "n2x", "text": "Only noting that he has thoughts of suicide is not enough. You also need to know about intent, plan and preparation. Go back.", "choices": [ { "label": "Go back", "next": "n2", "quality": "neutral" } ] },
+        { "id": "n3", "text": "He says he has thought of the pesticide in his father's shed. What else do you need to find out?", "choices": [
+          { "label": "'Have you done anything to get ready, like getting it or writing a note? How strongly do you intend to act on these thoughts?'", "next": "n4", "quality": "good" },
+          { "label": "End the session and give a helpline number only.", "next": "n3x", "quality": "poor" }
+        ]},
+        { "id": "n3x", "text": "A helpline number is useful, but not on its own when there is a specific plan and a way of carrying it out. Go back.", "choices": [ { "label": "Go back", "next": "n3", "quality": "neutral" } ] },
+        { "id": "n4", "text": "End of case. You established ideation, a specific method and access to it. Next steps: assess intent and protective factors, involve family with his consent, make the pesticide inaccessible, agree a safety plan, and consult your supervisor today about the level of care.", "choices": [] }
+      ],
+      "debrief": "Asking directly about suicide does not plant the idea. The book's sequence is ideation, then intent, plan and preparation (p.51). Restricting access to the means, such as pesticide in rural and semi-urban India, is a key part of the plan."
+    },
+    "reviewFlags": ["self-harm content: show content warning and helpline (Tele-MANAS 14416) on screen", "supervisor escalation wording to be checked by VIBHA clinical lead", "do not state predictive statistics"]
+  }
+]
