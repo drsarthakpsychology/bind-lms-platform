@@ -139,7 +139,7 @@ export function SectionReader({
   /** Student id: bookmarks and notes are kept per student on this device. */
   owner?: string;
 }) {
-  initLearnStore(serverState, save);
+  initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const router = useRouter();
   const wide = useWide();

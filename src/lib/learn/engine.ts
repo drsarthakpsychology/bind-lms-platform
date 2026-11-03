@@ -115,28 +115,69 @@ export function emptyState(): LearnState {
   };
 }
 
-/** Accept anything (old/partial JSON from storage) and return a valid state. */
+/** A finite, non-negative integer (anything else becomes `fallback`). */
+function nat(x: unknown, fallback = 0): number {
+  return typeof x === "number" && Number.isFinite(x) && x >= 0 ? Math.min(Math.floor(x), Number.MAX_SAFE_INTEGER) : fallback;
+}
+function obj(x: unknown): Record<string, unknown> {
+  return x && typeof x === "object" && !Array.isArray(x) ? (x as Record<string, unknown>) : {};
+}
+function dayOrNull(x: unknown): string | null {
+  return typeof x === "string" && DAY_RE.test(x) ? x : null;
+}
+
+/**
+ * Accept anything (old/partial JSON from storage, or a client payload) and
+ * return a valid state. Only known keys are kept, and every counter is coerced
+ * to a finite non-negative integer, so junk can never reach the leaderboard
+ * maths (NaN, negative, fractional or string XP).
+ */
 export function normalise(raw: unknown): LearnState {
   const base = emptyState();
   if (!raw || typeof raw !== "object") return base;
-  const r = raw as Partial<LearnState>;
+  const r = raw as Record<string, unknown>;
+  const streak = obj(r.streak);
+  const daily = obj(r.daily);
+  const coach = obj(r.coach);
+  const lessons: Record<string, LessonStats> = {};
+  for (const [id, v] of Object.entries(obj(r.lessons))) {
+    const l = obj(v);
+    if (!Object.keys(l).length) continue;
+    lessons[id] = { stars: Math.min(3, nat(l.stars)) as LessonStats["stars"], best: nat(l.best), plays: nat(l.plays) };
+  }
+  const srs: Record<string, SrsCard> = {};
+  for (const [id, v] of Object.entries(obj(r.srs))) {
+    const c = obj(v);
+    if (typeof c.due === "string") srs[id] = { box: nat(c.box), due: c.due };
+  }
+  const history: Record<string, number> = {};
+  for (const [d, v] of Object.entries(obj(r.history))) if (DAY_RE.test(d)) history[d] = nat(v);
+  const confusions: Record<string, number> = {};
+  for (const [k, v] of Object.entries(obj(coach.confusions))) confusions[k] = nat(v);
+  const goal = nat(r.dailyGoal);
   return {
-    ...base,
-    ...r,
     v: 1,
-    streak: { ...base.streak, ...(r.streak ?? {}) },
-    daily: { ...base.daily, ...(r.daily ?? {}) },
-    lessons: { ...(r.lessons ?? {}) },
-    srs: { ...(r.srs ?? {}) },
-    badges: Array.isArray(r.badges) ? r.badges.filter((b) => typeof b === "string") : [],
+    xp: nat(r.xp),
+    streak: { count: nat(streak.count), best: nat(streak.best), lastDay: dayOrNull(streak.lastDay), freezes: Math.min(MAX_FREEZES, nat(streak.freezes)) },
+    daily: { day: dayOrNull(daily.day), xp: nat(daily.xp), goalHit: daily.goalHit === true },
+    dailyGoal: goal > 0 && goal <= 1000 ? goal : base.dailyGoal,
+    lessons,
+    srs,
+    badges: Array.isArray(r.badges) ? r.badges.filter((b): b is string => typeof b === "string") : [],
+    bestCombo: nat(r.bestCombo),
+    answered: nat(r.answered),
+    correct: nat(r.correct),
+    chests: nat(r.chests),
+    blitzBest: nat(r.blitzBest),
     coach: {
-      concepts: { ...(r.coach?.concepts ?? {}) },
-      confusions: { ...(r.coach?.confusions ?? {}) },
+      concepts: { ...(obj(coach.concepts) as CoachData["concepts"]) },
+      confusions,
     },
-    history: { ...(r.history ?? {}) },
+    history,
+    detectiveBest: nat(r.detectiveBest),
     study: normaliseStudy(r.study),
     lab: normaliseLab(r.lab),
-    notesRead: Object.fromEntries(Object.entries(r.notesRead && typeof r.notesRead === "object" ? r.notesRead : {}).filter(([k, v]) => typeof k === "string" && typeof v === "string")),
+    notesRead: Object.fromEntries(Object.entries(obj(r.notesRead)).filter(([, v]) => typeof v === "string")) as Record<string, string>,
   };
 }
 
