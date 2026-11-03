@@ -15,6 +15,9 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
   const uniq = (ids: string[], what: string) => {
     if (new Set(ids).size !== ids.length) at(`duplicate ${what} ids`);
   };
+  const checkDiff = (items: { id: string; difficulty?: number }[]) => {
+    for (const i of items) if (i.difficulty !== undefined && i.difficulty !== 1 && i.difficulty !== 2 && i.difficulty !== 3) at(`${i.id}: difficulty must be 1, 2 or 3`);
+  };
 
   switch (a.format) {
     case "spotter": {
@@ -22,6 +25,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       uniq(a.categories.map((c) => c.id), "category");
       uniq(a.items.map((i) => i.id), "item");
       if (a.items.length < 4) at("needs at least 4 items");
+      checkDiff(a.items);
       for (const i of a.items) {
         if (!cats.has(i.answer)) at(`${i.id}: answer "${i.answer}" is not a category`);
         if (i.distractors.length < 1) at(`${i.id}: needs at least one distractor`);
@@ -35,6 +39,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
     }
     case "differential":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) {
         if (i.options.length < 2) at(`${i.id}: needs 2+ options`);
         if (!Number.isInteger(i.answer) || i.answer < 0 || i.answer >= i.options.length) at(`${i.id}: answer out of range`);
@@ -43,12 +48,14 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       break;
     case "triage":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) if (!["routine", "soon", "urgent"].includes(i.answer)) at(`${i.id}: bad urgency`);
       break;
     case "sort": {
       const cats = new Set(a.categories.map((c) => c.id));
       uniq(a.items.map((i) => i.id), "item");
       if (cats.size < 2) at("needs 2+ categories");
+      checkDiff(a.items);
       for (const i of a.items) if (!cats.has(i.category)) at(`${i.id}: unknown category "${i.category}"`);
       break;
     }
@@ -59,6 +66,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       break;
     case "skill":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) if (i.responses.filter((r) => r.grade === "best").length !== 1) at(`${i.id}: needs exactly one best response`);
       break;
     case "branching": {

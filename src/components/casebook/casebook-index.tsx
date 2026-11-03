@@ -6,7 +6,7 @@ import { ArrowLeft, Search } from "lucide-react";
 import { emptyState, istToday, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { CASEBOOK, caseKey } from "@/content/casebook";
-import { FORMAT_LABEL, type CaseFormat } from "@/lib/casebook/types";
+import { FORMAT_LABEL, LEVEL_ORDER, type CaseFormat } from "@/lib/casebook/types";
 import { cn } from "@/lib/utils";
 import { CaseCard } from "./casebook-shelf";
 
@@ -49,7 +49,8 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
     if (show === "done" && !r) return false;
     if (show === "due" && !due) return false;
     return !needle || `${c.title} ${c.hook} ${c.objective} ${moduleTitles[c.module] ?? ""}`.toLowerCase().includes(needle);
-  });
+  }).sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level] || a.title.localeCompare(b.title));
+  const startHereId = CASEBOOK.filter((c) => c.level === "Foundation" && !st.lab[caseKey(c.id)]).sort((a, b) => a.title.localeCompare(b.title))[0]?.id;
   const reset = () => setN(PAGE);
 
   return (
@@ -119,7 +120,7 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
         <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
           {list.slice(0, n).map((c) => (
             <li key={c.id}>
-              <CaseCard c={c} st={st} today={today} />
+              <CaseCard c={c} st={st} today={today} startHere={c.id === startHereId} />
             </li>
           ))}
         </ul>

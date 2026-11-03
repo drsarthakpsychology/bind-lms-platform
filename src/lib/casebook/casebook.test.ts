@@ -55,6 +55,11 @@ describe("validator", () => {
     const ok: CaseActivity = { ...base, format: "spotter", categories: [{ id: "a", label: "A" }, { id: "b", label: "B" }], items: ["1", "2", "3", "4"].map((id) => ({ id, quote: "q", answer: "a", distractors: ["b"], explain: "e" })) };
     expect(validateActivity(ok, MODS)).toEqual([]);
   });
+  it("rejects a difficulty outside 1–3", () => {
+    const ok = { ...base, format: "spotter" as const, categories: [{ id: "a", label: "A" }, { id: "b", label: "B" }], items: ["1", "2", "3", "4"].map((id) => ({ id, quote: "q", answer: "a", distractors: ["b"], explain: "e", difficulty: 2 as const })) };
+    const bad = { ...ok, items: ok.items.map((i, k) => (k === 0 ? { ...i, difficulty: 5 } : i)) } as unknown as CaseActivity;
+    expect(validateActivity(bad, MODS).join("\n")).toMatch(/difficulty must be 1, 2 or 3/);
+  });
   it("orderScore counts neighbours in order", () => {
     expect(orderScore(["a", "b", "c", "d"], ["a", "b", "c", "d"])).toBe(3);
     expect(orderScore(["a", "b", "c", "d"], ["d", "c", "b", "a"])).toBe(0);
