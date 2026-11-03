@@ -14,15 +14,17 @@ const btn =
  */
 export function BackForward({ className }: { className?: string }) {
   const router = useRouter();
-  const [canBack, setCanBack] = React.useState(false);
-
-  React.useEffect(() => {
-    try {
-      setCanBack(window.history.length > 1);
-    } catch {
-      setCanBack(false);
-    }
-  }, []);
+  const canBack = React.useSyncExternalStore(
+    () => () => {},
+    () => {
+      try {
+        return window.history.length > 1;
+      } catch {
+        return false;
+      }
+    },
+    () => false,
+  );
 
   if (!canBack) return null;
   return (
