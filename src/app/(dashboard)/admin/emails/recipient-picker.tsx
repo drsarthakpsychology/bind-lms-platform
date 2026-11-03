@@ -32,15 +32,20 @@ export function RecipientPicker({
     };
   }, []);
 
+  const emailOf = React.useCallback(
+    (ids: string[]) => ids.map((id) => data?.students.find((s) => s.id === id)?.email).filter((e): e is string => Boolean(e)),
+    [data],
+  );
   const courseEmails = React.useMemo(() => {
     const out: Record<string, string[]> = {};
-    for (const c of data?.courses ?? []) {
-      const ids = data?.enrolledByCourse[c.id] ?? [];
-      const emails = ids.map((id) => data?.students.find((s) => s.id === id)?.email).filter((e): e is string => Boolean(e));
-      out[c.id] = emails;
-    }
+    for (const c of data?.courses ?? []) out[c.id] = emailOf(data?.enrolledByCourse[c.id] ?? []);
     return out;
-  }, [data]);
+  }, [data, emailOf]);
+  const cohortEmails = React.useMemo(() => {
+    const out: Record<string, string[]> = {};
+    for (const c of data?.cohorts ?? []) out[c.id] = emailOf(data?.membersByCohort[c.id] ?? []);
+    return out;
+  }, [data, emailOf]);
 
   const q = query.trim().toLowerCase();
   const filtered = q ? (data?.students ?? []).filter((s) => s.email.toLowerCase().includes(q)) : (data?.students ?? []);
@@ -62,8 +67,7 @@ export function RecipientPicker({
     else filtered.forEach((s) => next.add(s.email));
     onChange(next);
   }
-  function toggleCourse(courseId: string) {
-    const emails = courseEmails[courseId] ?? [];
+  function toggleGroup(emails: string[]) {
     if (emails.length === 0) return;
     const allIn = emails.every((e) => selected.has(e));
     const next = new Set(selected);
@@ -82,35 +86,48 @@ export function RecipientPicker({
     );
   }
 
+  const chip = (key: string, label: string, emails: string[], onToggle: () => void) => {
+    const on = emails.length > 0 && emails.every((e) => selected.has(e));
+    const partial = emails.length > 0 && !on && emails.some((e) => selected.has(e));
+    return (
+      <button
+        key={key}
+        type="button"
+        onClick={onToggle}
+        disabled={emails.length === 0}
+        className={cn(
+          "rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-colors",
+          on ? "bg-primary text-primary-foreground" : partial ? "bg-accent text-foreground" : "bg-card text-muted-foreground hover:bg-accent hover:text-accent-foreground",
+          emails.length === 0 && "pointer-events-none opacity-50",
+        )}
+      >
+        {label} · {emails.length}
+      </button>
+    );
+  };
+
   return (
     <div className="space-y-3">
-      {/* Course shortcuts */}
+      {/* By cohort — message just one batch; the other cohort gets nothing. */}
+      {data.cohorts.length > 0 ? (
+        <div className="space-y-1.5">
+          <p className="text-caption font-semibold text-foreground">Message one cohort</p>
+          <div className="flex flex-wrap gap-2">
+            {data.cohorts.map((c) =>
+              chip(c.id, c.status === "ended" ? `${c.name} (ended)` : c.name, cohortEmails[c.id] ?? [], () => toggleGroup(cohortEmails[c.id] ?? [])),
+            )}
+          </div>
+          <p className="text-caption text-muted-foreground">Only the people in the cohort you pick are emailed. Nobody in another cohort is notified.</p>
+        </div>
+      ) : null}
+
+      {/* By course / everyone */}
       {data.courses.length > 0 ? (
-        <div className="flex flex-wrap gap-2">
-          {data.courses.map((c) => {
-            const emails = courseEmails[c.id] ?? [];
-            const on = emails.length > 0 && emails.every((e) => selected.has(e));
-            const partial = emails.length > 0 && !on && emails.some((e) => selected.has(e));
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => toggleCourse(c.id)}
-                disabled={emails.length === 0}
-                className={cn(
-                  "rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-colors",
-                  on
-                    ? "bg-primary text-primary-foreground"
-                    : partial
-                      ? "bg-accent text-foreground"
-                      : "bg-card text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-                  emails.length === 0 && "pointer-events-none opacity-50",
-                )}
-              >
-                {c.title} · {emails.length}
-              </button>
-            );
-          })}
+        <div className="space-y-1.5">
+          <p className="text-caption font-semibold text-foreground">Or by course</p>
+          <div className="flex flex-wrap gap-2">
+            {data.courses.map((c) => chip(c.id, c.title, courseEmails[c.id] ?? [], () => toggleGroup(courseEmails[c.id] ?? [])))}
+          </div>
         </div>
       ) : null}
 
