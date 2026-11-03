@@ -84,6 +84,15 @@ A consistent scheme should be used each time for **recording** the interview, bu
 4. Rewrite properly: “Pt has grandiose delusion.” || Name the sign plus the patient's verbatim words, conviction, and whether it yields to reasoning.
 :::
 
+:::mcq
+Q: A 30-year-old man answers every question in one word and keeps looking at the door. The most useful thing to write down first is:
+- A diagnosis of depression
+- *What you observe: his brief answers and his watchfulness
+- That he is uncooperative
+- Nothing until he talks more
+> The interview itself is data. Record behaviour before interpreting it.
+:::
+
 ## 1.2 Setting up: consent, privacy, safety, time [core]
 Most of what goes wrong in a student interview goes wrong before a single clinical question is asked. This section is short, dull and disproportionately important.
 
@@ -146,6 +155,22 @@ Patients with psychiatric disorders are usually **no more violent than the gener
 5. True or false: psychiatric patients are more violent than the general population. Justify. || False. They are usually no more violent; precautions follow the specific risk, not the diagnosis.
 :::
 
+:::mcq
+Q: A young woman's mother insists on staying for the whole interview. The patient keeps glancing at her before answering. Best next step:
+- Continue; the mother is helpful
+- *Thank the mother, then see the patient alone for part of the interview
+- Ask the mother to answer instead
+- End the interview
+> Collateral is valuable, but sensitive topics (abuse, sex, self-harm, substances) need private time.
+
+Q: On a ward you are about to interview an agitated man. Which seating is safest?
+- He sits between you and the door
+- *Both of you have a clear route to the door, with you nearer it
+- Door closed and locked for privacy
+- Sit very close to calm him
+> Safety first: an unobstructed exit for both, and an alarm or colleague nearby.
+:::
+
 ## 1.3 Rapport, empathy and the therapeutic alliance [core]
 :::define Rapport and empathy
 **Rapport** is the harmonious responsiveness of the clinician to the patient and of the patient to the clinician. **Empathy** is understanding what the patient is thinking and feeling, putting yourself in their place while at the same time **maintaining objectivity**.
@@ -204,6 +229,15 @@ Record strengths alongside deficits, and ask the patient to state their own goal
 5. Name two questions that make an assessment person-centred. || “Tell me about the things you do best.” “What is your greatest asset?”
 :::
 
+:::mcq
+Q: A patient says, "Nobody understands what I am going through." The most empathic reply is:
+- "I understand exactly how you feel."
+- "Everyone feels that sometimes."
+- *"It sounds like you've been carrying this on your own. Tell me what it has been like."
+- "Let's stick to the questions."
+> Empathy reflects the feeling and invites more, without claiming to know it all.
+:::
+
 ## 1.4 Technique: how to actually ask [core]
 ### Open and closed questions
 | Type | Definition | Example |
@@ -250,6 +284,22 @@ One long funnel: all the open questions first, then a yes/no checklist. It feels
 2. Explain the series-of-funnels model. What beginner's error does it correct? || Open, narrow, close per topic; corrects one long funnel with a closed checklist at the end.
 3. Name six interviewing techniques with an example phrase for each. || Facilitation, reflection, clarification, confrontation, silence, summarising (also transition, reassurance).
 4. When is reassurance appropriate, and when is it a mistake? || After assessment; before it, it closes disclosure.
+:::
+
+:::mcq
+Q: You want to know whether a patient hears voices without putting the idea in their head. Which question fits best early in the interview?
+- "Do you hear voices telling you to kill yourself?"
+- *"Sometimes when people are under stress, they hear or see things others don't. Has anything like that happened to you?"
+- "You hear voices, don't you?"
+- "Are you schizophrenic?"
+> Normalise, ask open first, then narrow down. Leading questions distort answers.
+
+Q: A talkative patient keeps drifting to old stories. The best technique to keep the history on track is:
+- Interrupting harshly
+- *A brief summary, then a focused question that brings them back
+- Letting them talk for the full hour
+- Switching to a questionnaire
+> Summarising shows you heard them and gives you control of the direction.
 :::
 
 ## 1.5 The history, part 1: identification to present illness [core]
@@ -373,6 +423,15 @@ Run it alongside the present illness, to rule diagnoses in or out with pertinent
 6. Why record important negatives? || A blank is ambiguous; a recorded negative (for example no substance use in new psychosis) is data.
 :::
 
+:::mcq
+Q: A man says his "tension" started "after the business loss", but his wife says he stopped sleeping two months before the loss. In the history you should:
+- Record only the patient's version
+- Record only the wife's version
+- *Record both, with their sources, and note the onset as uncertain
+- Ignore the dates
+> Note who said what. Conflicting accounts are themselves useful information.
+:::
+
 ## 1.5b The history, part 2: past, substances, medical, family, personal [core]
 ### 5 · Past psychiatric history
 Comorbidity is the rule, so screen for other disorders too, not just earlier episodes of the same illness.
@@ -468,6 +527,22 @@ Also cover (the Western scheme names these explicitly): childhood physical and s
 6. Name eight neurotic traits of childhood. || Stammering, tics, enuresis, encopresis, night terrors, thumb sucking, nail biting, temper tantrums (and others).
 :::
 
+:::mcq
+Q: In the family history, a patient mentions an uncle who "was mad and was taken to a temple for years". This most matters because:
+- It proves the patient has the same illness
+- *It may point to a familial psychiatric illness, which you should clarify (symptoms, treatment, course)
+- It is irrelevant to the present illness
+- It is a cultural belief and should be left out
+> Clarify what "mad" meant. A family history of psychosis or bipolar disorder changes risk and treatment.
+
+Q: A woman describes drinking "only on weekends". Which follow-up gives the most useful information?
+- "Is that a problem?"
+- *"On a usual weekend, what do you drink, how much, and over how long?"
+- "Do you drink socially?"
+- "Why do you drink?"
+> Quantity, type, pattern and time give you units and a picture of risk.
+:::
+
 ## 1.6 Premorbid personality [core]
 :::define Premorbid personality
 A description of the kind of person the patient was **before the illness began**. In patients under 16 the equivalent term is temperament.
@@ -500,6 +575,15 @@ Described by his elder brother as sociable and easy-going before the illness: ha
 1. Give the eight sub-headings of premorbid personality. || Relationships; leisure; predominant mood; attitude to self and others; work and responsibility; religion and morals; fantasy life; habits.
 2. Why describe rather than label? || A label can't be verified and says nothing; a description can be checked against informants and current behaviour.
 3. Who is the most reliable source, and why? || An informant who knew the patient before onset; the patient's own account is coloured by the current mood state.
+:::
+
+:::mcq
+Q: A 22-year-old is described by his parents as always shy, with few friends and an interest in reading alone. Now he is suspicious and hears voices. In the history, this description of him belongs under:
+- Present illness
+- *Premorbid personality
+- Mental state examination
+- Family history
+> Premorbid personality is how the person was before the illness; it helps judge change and prognosis.
 :::
 
 ## 1.7 Special situations [core]
@@ -590,6 +674,22 @@ The Outline has five parts: cultural identity; cultural concepts of distress; st
 5. What two conditions must you consider in an older adult with poor memory? || Delirium and depression (pseudodementia).
 :::
 
+:::mcq
+Q: An elderly woman is brought confused, with poor attention that varies through the day. Before a long psychiatric history, the priority is:
+- A detailed childhood history
+- *A medical assessment for delirium and its causes
+- Projective testing
+- Insight grading
+> Fluctuating attention suggests delirium: a medical emergency that needs finding the cause.
+
+Q: Interviewing a 14-year-old about self-harm, the best approach is:
+- Only talk to the parents
+- *See the young person alone, explain the limits of confidentiality, then involve parents as needed
+- Promise to keep everything secret
+- Use only a questionnaire
+> Adolescents need privacy and honesty about what must be shared to keep them safe.
+:::
+
 ## 1.8 Common interviewing errors [core]
 | Error | What it sounds like | Correction |
 |---|---|---|
@@ -612,6 +712,15 @@ The Outline has five parts: cultural identity; cultural concepts of distress; st
 1. List six common interviewing errors and their corrections. || Any six from the table, each with its fix.
 2. Why is a compound question a problem? || You can't tell which part was answered.
 3. What is wrong with “MSE could not be done” in a mute patient? || Observation is the MSE; document what was seen and what couldn't be assessed.
+:::
+
+:::mcq
+Q: A trainee asks, "You're not suicidal, are you?" The main error is:
+- It is too open
+- *It is a leading question that invites "no"
+- It is too long
+- It should be asked first
+> Ask directly and neutrally: "Have you had thoughts of ending your life?"
 :::
 
 ## 1.9 Investigations and formulation [core]
@@ -662,5 +771,14 @@ The formulation is written for the record; the plan must be discussed with the p
 2. Give therapeutic ranges for lithium, carbamazepine and valproate. || Lithium 0.6 to 1.0 mEq/L; carbamazepine 4 to 12 µg/mL; valproate 50 to 100 µg/mL.
 3. Draw the biopsychosocial grid and fill one cell in each of the nine boxes. || Rows biological, psychological, social; columns predisposing, precipitating, perpetuating/protective.
 4. Give the five sentences of a formulation. || Who; what; why now; differential; risk, plan and prognosis.
+:::
+
+:::mcq
+Q: Which statement belongs in a formulation rather than the history?
+- "Onset 3 months ago after job loss"
+- "Father has depression"
+- *"A vulnerable perfectionist whose low mood was triggered by job loss and is kept going by withdrawal and rumination"
+- "Sleeps 4 hours a night"
+> A formulation explains why this person, why now, and what keeps it going.
 :::
 `;

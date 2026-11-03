@@ -46,11 +46,15 @@ describe("parser", () => {
 });
 
 describe("the guided flow", () => {
-  it("goes read → write → practise → test → re-test", () => {
+  it("goes read → checkpoints → write → practise → test → re-test", async () => {
     const m = MODULES[0];
     let s = emptyState();
     expect(courseNext(MODULES, s.study, "2026-11-01").kind).toBe("read");
     for (const sec of readingSections(m)) s = finishSection(s, m.id, sec.id, "2026-11-01");
+    // Checkpoints come next, then writing it out.
+    expect(moduleNext(m, s.study)?.kind).toBe("checkpoint");
+    const { checkpoints } = await import("./checkpoints");
+    for (const cp of checkpoints(m)) s = recordTest(s, cp.key, 3, 4, "2026-11-01");
     expect(moduleNext(m, s.study)?.kind).toBe("write");
     s = markWritten(s, m.id, "2026-11-01");
     expect(moduleNext(m, s.study)?.kind).toBe("practise");
@@ -83,5 +87,37 @@ describe("chunking", () => {
     expect(out.chunks.length).toBe(1);
     expect(out.chunks[0].blocks.some((b) => b.t === "h3")).toBe(true);
     for (const m of MODULES) for (const s of m.sections) for (const c of splitSection(s).chunks) expect(c.blocks.some((b) => b.t === "recall" || b.t === "mcq" || b.t === "viva")).toBe(false);
+  });
+});
+
+describe("checkpoints", () => {
+  it("cover every teaching section once, in blocks inside one Part", async () => {
+    const { checkpoints, teachingSections } = await import("./checkpoints");
+    for (const m of MODULES) {
+      const cps = checkpoints(m);
+      const ids = cps.flatMap((c) => c.sectionIds);
+      expect(ids, m.id).toEqual(teachingSections(m).map((s) => s.id));
+      for (const c of cps) {
+        const parts = new Set(c.sectionIds.map((id) => m.sections.find((s) => s.id === id)?.part));
+        expect(parts.size, `${m.id} cp${c.n}`).toBe(1);
+        expect(c.sectionIds.length).toBeLessThanOrEqual(4);
+      }
+    }
+  });
+  it("open only after the student has moved on, and come before more reading", async () => {
+    const { checkpoints, checkpointStatus } = await import("./checkpoints");
+    const m = MODULES.find((x) => checkpoints(x).length > 1)!;
+    const [cp, cp2] = checkpoints(m);
+    let s = emptyState();
+    expect(checkpointStatus(m, cp, s.study)).toBe("locked");
+    for (const id of cp.sectionIds) s = finishSection(s, m.id, id, "2026-11-01");
+    expect(checkpointStatus(m, cp, s.study)).toBe("waiting");
+    expect(moduleNext(m, s.study)?.kind).toBe("read");
+    s = finishSection(s, m.id, cp2.sectionIds[0], "2026-11-01");
+    expect(checkpointStatus(m, cp, s.study)).toBe("ready");
+    expect(moduleNext(m, s.study)?.kind).toBe("checkpoint");
+    s = recordTest(s, cp.key, 3, 4, "2026-11-01");
+    expect(checkpointStatus(m, cp, s.study)).toBe("done");
+    expect(moduleNext(m, s.study)?.kind).toBe("read");
   });
 });
