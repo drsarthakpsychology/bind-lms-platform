@@ -221,6 +221,15 @@ export async function createLessonWithVideo(
       { onConflict: "lesson_id" },
     );
 
+  // Cohorts: a new lecture is shared with this course's running and upcoming
+  // cohorts straight away. Change it any time in People → Cohorts → Lectures.
+  const { data: courseCohorts } = await admin.from("cohorts").select("id").eq("course_id", courseId).neq("status", "ended");
+  if (courseCohorts?.length) {
+    await admin
+      .from("lesson_cohorts")
+      .upsert(courseCohorts.map((c) => ({ lesson_id: lesson.id, cohort_id: c.id })), { onConflict: "lesson_id,cohort_id", ignoreDuplicates: true });
+  }
+
   if (requiresAssignment) {
     const { error: assignmentError } = await supabase.from("assignments").insert({
       lesson_id: lesson.id,

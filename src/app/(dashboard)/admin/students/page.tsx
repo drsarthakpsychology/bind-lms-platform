@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { UserPlus, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { CreateStudentForm } from "./create-student-form";
@@ -47,6 +48,9 @@ export default async function StudentsPage() {
     ];
     const actions = (
       <>
+        <Link href={`/admin/cohorts/student/${student.id}`} className="inline-flex h-8 items-center rounded-full border-2 border-foreground px-2.5 text-xs font-semibold">
+          Access
+        </Link>
         <LockToggle userId={student.id} status={status} />
         <StudentActions userId={student.id} isTest={Boolean(student.is_test)} status={status} />
       </>
@@ -159,6 +163,9 @@ export default async function StudentsPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
+            <p className="mb-4 rounded-xl border-2 border-foreground bg-primary px-3 py-2 text-sm text-primary-foreground">
+              Faster: <Link href="/admin/cohorts" className="font-bold underline">paste many emails into a cohort</Link> and they get their login link straight away.
+            </p>
             <CreateStudentForm />
           </CardContent>
         </Card>

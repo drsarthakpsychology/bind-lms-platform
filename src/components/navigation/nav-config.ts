@@ -53,6 +53,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
   { href: "/admin/emails", label: "Mail", icon: "mail", section: "Launch" },
   { href: "/admin/people", label: "People pipeline", icon: "users", section: "Launch" },
+  { href: "/admin/cohorts", label: "Cohorts", icon: "users", section: "Launch" },
   { href: "/admin/students", label: "Students", icon: "clipboardList", section: "Launch" },
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
 
@@ -118,6 +119,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     href: "/admin/people",
     tabs: [
       { href: "/admin/people", label: "Pipeline" },
+      { href: "/admin/cohorts", label: "Cohorts" },
       { href: "/admin/students", label: "Students" },
       { href: "/admin/activity", label: "Activity" },
       { href: "/admin/roster", label: "Roster", hidden: true },

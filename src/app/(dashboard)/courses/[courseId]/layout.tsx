@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { visibleCourseIds } from "@/lib/cohorts/access";
 
 /**
  * Course layout — full width, no persistent course column (Round 5 drill-down).
@@ -50,11 +51,15 @@ export default async function CourseLayout({
 
   if (
     !course ||
-    (!course.is_published && !isAdmin) ||
-    (!bypassEnrollment && !enrollment)
+    (!course.is_published && !isAdmin)
   ) {
     notFound();
   }
+  // Cohort members may open a course only if it holds a lecture shared with
+  // their cohort (or given to them); everyone else keeps the enrolment rule.
+  const legacyOk = bypassEnrollment || Boolean(enrollment);
+  const allowed = await visibleCourseIds(profile.id, isAdmin, [courseId], legacyOk ? [courseId] : []);
+  if (!allowed.includes(courseId)) notFound();
 
   return (
     <div className="min-h-[calc(100vh-3.5rem)]">
