@@ -13,8 +13,9 @@ export const metadata: Metadata = { title: BOARDS.quiz.label };
 export const dynamic = "force-dynamic";
 
 /**
- * Quiz leaderboard: this week's quiz and game XP, your cohort only. Top 10
- * plus you and your neighbours. The overall board is one tap away.
+ * Quiz leaderboard: this week's quiz and game XP, your cohort only. Shows
+ * everyone in the cohort, so no one can hide at the bottom. The overall board
+ * is one tap away.
  */
 export default async function QuizLeaderboardPage() {
   await requireFeature("learn");
