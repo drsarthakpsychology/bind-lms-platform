@@ -1,5 +1,7 @@
 import "server-only";
 
+import { loadStudentAccess } from "@/lib/cohorts/access";
+import { canWatch, usesCohorts } from "@/lib/cohorts/rules";
 import { createClient } from "@/lib/supabase/server";
 
 /**
@@ -128,6 +130,14 @@ export async function authorizeAndResolveLesson(opts: {
 
   // Student: course must be published AND enrolled.
   const course = Array.isArray(lesson.courses) ? lesson.courses[0] : lesson.courses;
+
+  // Cohorts: members stream only lectures shared with their cohort (or given
+  // to them); people in no cohort keep the old rules below.
+  const access = await loadStudentAccess(opts.userId);
+  if (course?.is_published && access.grantedLessonIds.has(opts.lessonId)) return { authorized: true, resolved };
+  if (usesCohorts(access)) {
+    return { authorized: Boolean(course?.is_published) && canWatch(access, opts.lessonId, false), resolved };
+  }
 
   // Lecture-only scope: published lessons are the whole surface — no enrollment.
   if (opts.scope === "lectures_only") {

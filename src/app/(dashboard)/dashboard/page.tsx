@@ -9,10 +9,11 @@ import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { loadCourseOverview } from "@/components/course/course-overview";
+import { visibleCourseIds } from "@/lib/cohorts/access";
 import { StudentHome } from "@/components/course/student-home";
 import { PracticeToolsSection } from "./practice-tools-section";
 import { StudyCard } from "./study-card";
-import { MobileNumberPrompt } from "@/components/profile/mobile-number-prompt";
+import { StandingCard } from "@/components/standing/standing-card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default async function DashboardPage() {
@@ -54,10 +55,15 @@ export default async function DashboardPage() {
   ]);
 
   const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
-  const myCourses =
+  const legacy =
     effectiveScope === "lectures_only"
       ? (courses ?? [])
       : (courses ?? []).filter((c) => enrolledIds.has(c.id));
+  // Cohort members see the courses that hold lectures shared with their cohort.
+  const visible = new Set(
+    await visibleCourseIds(profile.id, profile.role === "admin", (courses ?? []).map((c) => c.id), legacy.map((c) => c.id)),
+  );
+  const myCourses = (courses ?? []).filter((c) => visible.has(c.id));
 
   // Home: the student's "what do I do today?" screen, built around their main
   // course (the one in progress, else the first). Other courses are listed
@@ -85,9 +91,6 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8">
-      {profile.role === "student" && (
-        <MobileNumberPrompt mobileNumber={profile.mobile_number} promptSkippedAt={profile.mobile_prompt_skipped_at} />
-      )}
       {viewingAsStudent && profile.role === "admin" && (
         <Alert variant="warning" className="border-foreground hard-shadow-sm">
           <Sparkles className="size-4" aria-hidden />
@@ -101,6 +104,7 @@ export default async function DashboardPage() {
           otherCourses={models.filter((m) => m !== main).map((m) => ({ id: m.courseId, title: m.title }))}
           practice={
             <div className="space-y-6">
+              <StandingCard userId={profile.id} />
               <StudyCard />
               <PracticeToolsSection />
             </div>

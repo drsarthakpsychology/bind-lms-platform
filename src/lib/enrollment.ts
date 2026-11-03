@@ -2,6 +2,8 @@ import "server-only";
 
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
+import { loadStudentAccess } from "@/lib/cohorts/access";
+import { canWatch, usesCohorts } from "@/lib/cohorts/rules";
 
 /**
  * Enrollment + access checks for the Phase 4/5 surfaces.
@@ -46,6 +48,14 @@ export async function canAccessLesson(
 
   // Admin can do anything.
   if (profile.role === "admin") return { ok: true, profile, courseId };
+
+  // Cohorts: a member may watch only lectures shared with their cohort (or
+  // given to them). People in no cohort keep the old rules below.
+  const access = await loadStudentAccess(profile.id);
+  if (access.grantedLessonIds.has(lessonId) && course?.is_published) return { ok: true, profile, courseId };
+  if (usesCohorts(access)) {
+    return { ok: Boolean(course?.is_published) && canWatch(access, lessonId, false), profile, courseId };
+  }
 
   // Lecture-only scope: every published lesson is the whole surface — no
   // enrollment gate (these accounts aren't on a course roster).

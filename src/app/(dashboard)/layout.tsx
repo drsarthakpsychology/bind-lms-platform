@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 import { AppShell } from "@/components/app-shell";
 import { readFlags } from "@/lib/flags";
 import { ViewModeToggle } from "./view-mode-toggle";
+import { DetailsGate } from "@/components/profile/details-gate";
+import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
 export default async function DashboardLayout({
@@ -74,6 +76,38 @@ export default async function DashboardLayout({
   const effectiveScope =
     role === "admin" && viewingAsStudent ? "lectures_only" : session.profile.scope;
 
+  // First-login details: a student who hasn't filled, checked and submitted
+  // their details sees the form over every page until they do (once only).
+  // If the table isn't there yet (database file not run), nobody is asked.
+  let gate: React.ReactNode = null;
+  if (role === "student") {
+    const supabase = await createClient();
+    const { data: details, error } = await supabase
+      .from("student_details")
+      .select("full_name, phone, city, state, country, qualification, institution, occupation, confirmed_at")
+      .eq("user_id", session.profile.id)
+      .maybeSingle();
+    // "No row yet" is not an error; a missing table is (then nobody is asked).
+    const tableMissing = Boolean(error) && error?.code !== "PGRST116";
+    if (!tableMissing && !details?.confirmed_at) {
+      const { data: me } = await supabase.from("profiles").select("name").eq("id", session.profile.id).maybeSingle();
+      gate = (
+        <DetailsGate
+          initial={{
+            full_name: details?.full_name ?? (me?.name as string | null) ?? "",
+            phone: details?.phone ?? session.profile.mobile_number ?? "",
+            city: details?.city ?? "",
+            state: details?.state ?? "",
+            country: details?.country ?? "India",
+            qualification: details?.qualification ?? "",
+            institution: details?.institution ?? "",
+            occupation: details?.occupation ?? "",
+          }}
+        />
+      );
+    }
+  }
+
   return (
     <AppShell
       role={shellRole}
@@ -87,6 +121,7 @@ export default async function DashboardLayout({
         ) : undefined
       }
     >
+      {gate}
       {children}
     </AppShell>
   );

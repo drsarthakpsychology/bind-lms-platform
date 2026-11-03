@@ -54,6 +54,15 @@ Across therapies, outcomes depend heavily on shared ingredients: the **therapeut
 2. Rogers' three core conditions? || Empathy, unconditional positive regard, congruence.
 :::
 
+:::mcq
+Q: Across many therapies, which ingredient most consistently predicts good outcome?
+- The therapist's years of training
+- *The therapeutic alliance
+- Session length
+- The therapy's brand name
+> Agreement on goals and tasks, and a bond.
+:::
+
 ## 1.2 Formulation: the 5 Ps [core]
 :::define Case formulation
 A short, shared explanation of **why this person has this problem now, and what keeps it going**. It links assessment to treatment. Without a formulation, therapy becomes a list of techniques.
@@ -85,6 +94,15 @@ An abrupt ending can repeat earlier losses for the patient. Mention the number o
 1. Expand the 5 Ps. || Presenting, predisposing, precipitating, perpetuating, protective.
 2. Which P do most therapies target first and why? || Perpetuating factors, because they can change now.
 3. Name the four phases of a course of therapy. || Assessment and engagement, formulation and contract, active phase, ending.
+:::
+
+:::mcq
+Q: In a woman's panic disorder formulation, "always carries water and sits near exits" belongs under:
+- Predisposing
+- Precipitating
+- *Perpetuating
+- Protective
+> Safety behaviours keep the fear going.
 :::
 
 ## 1.3 Motivational interviewing [core]
@@ -119,6 +137,15 @@ Better: "It sounds frustrating to be told what to do. At the same time you came 
 3. What is the righting reflex and why avoid it? || The urge to argue for change; it provokes resistance.
 :::
 
+:::mcq
+Q: A man says, "Everyone nags me about drinking, it's not that bad." The best MI response is:
+- "Your liver test says you must stop."
+- *"It's frustrating to be told what to do. What, if anything, concerns you about your drinking?"
+- "Then you're in denial."
+- "Come back when you're ready."
+> Avoid the righting reflex; evoke his own reasons.
+:::
+
 # Part II · Behavioural and cognitive therapies
 
 ## 2.1 Behaviour therapy [core]
@@ -143,6 +170,15 @@ Based on learning theory: **classical conditioning** (Pavlov, Watson), **operant
 
 :::trap Negative reinforcement is not punishment
 Negative reinforcement **increases** a behaviour by removing something unpleasant: avoidance relieves anxiety, so avoidance grows. That's exactly why OCD rituals and phobic avoidance persist.
+:::
+
+:::mcq
+Q: A child's fear of dogs is treated by first looking at pictures, then watching a dog from far, then closer, with relaxation. This is:
+- Flooding
+- *Systematic desensitisation
+- Aversion therapy
+- Token economy
+> Graded exposure paired with relaxation (Wolpe).
 :::
 
 ## 2.2 Cognitive behavioural therapy [core]
@@ -180,6 +216,15 @@ It is not events themselves but **how we interpret them** that shapes feelings a
 - Re-rated: anxious, 30%.
 :::
 
+:::mcq
+Q: In a thought record, the step after writing the automatic thought is:
+- Writing the core belief
+- *Weighing evidence for and against it
+- Scheduling activities
+- Rating the therapist
+> Then a balanced thought and re-rating the emotion.
+:::
+
 ## 2.3 Third-wave therapies [core]
 | Therapy | Key ideas |
 |---|---|
@@ -196,6 +241,15 @@ It is not events themselves but **how we interpret them** that shapes feelings a
 4. Expand ABCDE. || Activating event, belief, consequence, disputing, effective new belief.
 5. Name the six ACT processes. || Acceptance, defusion, present moment, self-as-context, values, committed action.
 6. When is MBCT used? || To prevent relapse after 3 or more depressive episodes.
+:::
+
+:::mcq
+Q: A woman with recurrent depression, now well, wants to stay well. Which therapy has evidence after 3 or more episodes?
+- Flooding
+- *Mindfulness-based cognitive therapy
+- Hypnotherapy
+- Psychoanalysis
+> MBCT reduces relapse in recurrent depression.
 :::
 
 ## 2.4 Exposure and behavioural activation in detail [core]
@@ -228,6 +282,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
 2. Why should safety behaviours be dropped during exposure? || They prevent learning that the situation is safe.
 3. What is interoceptive exposure and for which disorder? || Bringing on feared body sensations; panic disorder.
 4. Expand TRAP and TRAC. || Trigger, Response, Avoidance Pattern; Trigger, Response, Alternative Coping.
+:::
+
+:::mcq
+Q: A depressed man stays in bed because he "doesn't feel like" going out. Behavioural activation would ask him to:
+- Wait until he feels motivated
+- *Plan small valued activities and do them first; mood follows action
+- Analyse his childhood first
+- Avoid all activity
+> Act first, mood follows.
 :::
 
 ## 2.5 Cognitive distortions and DBT skills [core]
@@ -270,6 +333,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
 4. Name the four parts of DBT. || Individual therapy, group skills, phone coaching, consultation team.
 :::
 
+:::mcq
+Q: A young woman after self-harm is asked to trace the trigger, thoughts, feelings, urges and consequences step by step. This DBT technique is:
+- TIPP
+- *Chain analysis
+- DEAR MAN
+- Radical acceptance
+> Finds points to change next time.
+:::
+
 # Part III · Other approaches
 
 ## 3.1 Psychodynamic therapy [core]
@@ -278,6 +350,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
 - Forms: classical psychoanalysis (several sessions a week, years), psychodynamic psychotherapy (weekly), brief dynamic therapy (focused, time-limited).
 - Evidence supports it for depression and personality difficulties; less structured than CBT.
 
+:::mcq
+Q: In psychodynamic therapy, the therapist notices she feels unusually protective of a client. This is:
+- Transference
+- *Countertransference, to be noticed and used, not acted on
+- Resistance
+- Sublimation
+> The therapist's emotional reaction to the client.
+:::
+
 ## 3.2 Interpersonal therapy (IPT) [core]
 - Time-limited therapy linking mood to relationships. Pick one or two of **four problem areas**:
   1. **Grief** (complicated bereavement)
@@ -285,6 +366,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
   3. **Role transitions** (marriage, job loss, migration, becoming a parent)
   4. **Interpersonal deficits** (isolation)
 - Effective for depression, including perinatal and adolescent depression.
+
+:::mcq
+Q: A widow's depression started after her husband's death and she struggles in her new role as head of the family. Which IPT problem areas fit?
+- Interpersonal deficits only
+- *Grief and role transition
+- Role dispute only
+- None; IPT doesn't treat grief
+> IPT focuses on grief, disputes, transitions and deficits.
+:::
 
 ## 3.3 Family, couple and group therapy [core]
 | Approach | Key ideas |
@@ -297,6 +387,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
 
 ### Group therapy: Yalom's therapeutic factors
 **Instillation of hope**, **universality** (“I'm not alone”), imparting information, **altruism**, corrective recapitulation of the family group, development of socialising techniques, imitative behaviour, **interpersonal learning**, **group cohesiveness**, **catharsis**, existential factors.
+
+:::mcq
+Q: In a group, a member says, "Hearing others with the same problem, I feel less alone." Yalom's factor:
+- Altruism
+- *Universality
+- Catharsis
+- Instillation of hope
+> Realising others share the problem.
+:::
 
 ## 3.4 Adapting therapy for Indian clients [core]
 - **Family involvement** is often expected; agree with the client what is shared.
@@ -312,6 +411,15 @@ The older idea was **habituation** (fear fades with time). The newer **inhibitor
 3. Who developed structural family therapy, and what does it focus on? || Minuchin; boundaries, hierarchy, subsystems.
 4. Name five of Yalom's factors. || Hope, universality, altruism, interpersonal learning, cohesiveness, catharsis.
 5. Give three ways to adapt therapy for Indian clients. || Family involvement, local idioms, directive start, spiritual coping, brief focused work.
+:::
+
+:::mcq
+Q: An Indian client keeps asking the therapist to "just tell me what to do". A culturally sensitive approach is:
+- Refuse to give any direction
+- *Offer more structure and guidance early, involve family as agreed, while building the client's own choices
+- End therapy
+- Tell the family everything
+> Neki's guru-chela model: Indian clients may expect a warmer, more directive therapist.
 :::
 
 ## 3.5 Other therapies and the therapist's ethics [core]
@@ -350,6 +458,15 @@ A **crossing** (accepting a small box of sweets at Diwali, a brief supportive to
 2. Who developed the empty chair technique? || Fritz Perls (Gestalt therapy).
 3. Name Berne's three ego states. || Parent, Adult, Child.
 4. List three limits of confidentiality. || Serious risk to self or others, child protection, court orders.
+:::
+
+:::mcq
+Q: A therapist accepts a small box of sweets at Diwali after thinking it through, but declines a loan offered by the client. Which is TRUE?
+- Both are violations
+- *The sweets can be a harmless crossing; the loan would be a violation
+- Both are fine
+- The sweets are a violation, the loan is fine
+> Violations exploit the client.
 :::
 
 # Part IV · Exam zone

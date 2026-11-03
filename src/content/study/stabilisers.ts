@@ -72,6 +72,22 @@ Often above 1.5 mmol/L, but can occur in range in older adults.
 “Take it at the same time daily. Drink enough water, more in summer or if you have fever, vomiting or loose motions. Don't take painkillers like ibuprofen without asking. If you get shaky hands, vomiting, diarrhoea or feel unsteady, stop and come in that day. Never stop suddenly: it can bring back mania.”
 :::
 
+:::mcq
+Q: A woman on lithium has a level of 0.8 mmol/L taken 4 hours after her morning dose. What do you conclude?
+- Her level is right in range
+- *The sample was taken at the wrong time; repeat it 12 hours after the last dose
+- She is toxic
+- She is not taking it
+> Lithium levels are valid only at trough, about 12 hours after the dose.
+
+Q: A man stable on lithium is started on ibuprofen for back pain by his GP. The main risk is:
+- Lithium level falls
+- *Lithium level rises toward toxicity
+- No interaction
+- Kidney stones only
+> NSAIDs, ACE inhibitors and thiazides raise lithium levels.
+:::
+
 ## 1.2 Valproate [core]
 - Effective for mania, mixed states and rapid cycling; also epilepsy.
 - Level about 50 to 100 µg/mL.
@@ -83,12 +99,30 @@ Often above 1.5 mmol/L, but can occur in range in older adults.
 Valproate is highly teratogenic: **neural tube defects** (spina bifida) and other malformations, and **lower IQ and autism risk** in children exposed in the womb. Avoid in girls and women who could become pregnant unless there is no alternative and a pregnancy prevention plan is in place.
 :::
 
+:::mcq
+Q: A 22-year-old woman with bipolar disorder who may want children asks for valproate because a friend takes it. The key advice is:
+- It is the safest in pregnancy
+- *Valproate carries a high risk of birth defects and lower IQ and autism in the child; choose another medicine
+- It is fine with any contraception
+- Only the dose matters
+> Avoid valproate in women and girls who could become pregnant.
+:::
+
 ## 1.3 Carbamazepine and oxcarbazepine [core]
 - Used for mania (second-line), epilepsy and trigeminal neuralgia. Level about 4 to 12 µg/mL.
 - **Enzyme inducer** (CYP3A4): lowers levels of many drugs, including the contraceptive pill, antipsychotics, and itself (auto-induction in the first weeks).
 - Side effects: dizziness, double vision, unsteadiness, rash, **hyponatraemia**.
 - Serious: **Stevens–Johnson syndrome / toxic epidermal necrolysis**, especially with the **HLA-B*1502** gene variant common in South and East Asian populations (test before starting where available); **aplastic anaemia and agranulocytosis** (rare); liver toxicity; teratogenic.
 - Oxcarbazepine: similar, fewer interactions, more hyponatraemia.
+
+:::mcq
+Q: Before starting carbamazepine in a patient of Indian origin, which test lowers the risk of a life-threatening rash?
+- HLA-B*5801
+- *HLA-B*1502
+- TPMT
+- G6PD
+> HLA-B*1502 is linked to Stevens–Johnson syndrome with carbamazepine.
+:::
 
 ## 1.4 Lamotrigine [core]
 - Mainly **prevents bipolar depression**; little effect on mania.
@@ -111,6 +145,15 @@ Valproate is highly teratogenic: **neural tube defects** (spina bifida) and othe
 5. Why avoid valproate in women who could become pregnant? || Neural tube defects, lower IQ and autism risk in the child.
 6. Which gene test matters before carbamazepine in Indian patients? || HLA-B*1502 (risk of SJS).
 7. What does valproate do to lamotrigine levels? || Doubles them.
+:::
+
+:::mcq
+Q: A patient on valproate is started on lamotrigine. The correct approach is:
+- Usual lamotrigine dose
+- *Halve the lamotrigine dose and titrate more slowly
+- Double the lamotrigine dose
+- Stop valproate first always
+> Valproate roughly doubles lamotrigine levels, raising rash risk.
 :::
 
 ## 1.5 Lithium in depth [core]
@@ -148,6 +191,15 @@ Lithium works on a narrow path: a little too low and it does nothing, a little t
 2. Give three predictors of good lithium response. || Euphoric mania, M-D-I pattern, full inter-episode recovery, family history of response.
 3. What is the risk of stopping lithium abruptly? || Rebound mania and suicide.
 4. What do you do if lithium causes hypothyroidism? || Add thyroxine and usually continue lithium.
+:::
+
+:::mcq
+Q: Which patient is most likely to respond well to lithium?
+- Rapid cycling with cannabis use
+- *Classic euphoric mania, full recovery between episodes, a parent who did well on lithium
+- Mixed episodes with residual symptoms
+- First episode at 60 after a stroke
+> Classic course and family history of lithium response predict benefit.
 :::
 
 ## 1.6 Choosing a mood stabiliser [core]
@@ -193,6 +245,15 @@ Lithium works on a narrow path: a little too low and it does nothing, a little t
 4. What dose of folic acid is used with anticonvulsants before pregnancy? || 5 mg.
 :::
 
+:::mcq
+Q: A man with bipolar disorder has obesity and diabetes. For maintenance, which is the least suitable?
+- Lithium
+- Lamotrigine
+- Aripiprazole
+- *Olanzapine
+> Olanzapine worsens weight and glucose.
+:::
+
 # Part II · Anxiolytics and hypnotics
 
 ## 2.1 Benzodiazepines [core]
@@ -231,6 +292,15 @@ Use the lowest dose for the **shortest time: about 2 to 4 weeks**. Explain depen
 Benzodiazepines alone are rarely fatal, but with alcohol or opioids they can stop breathing. **Flumazenil** reverses them but can provoke seizures in dependent patients or mixed overdoses (especially with tricyclics); support breathing first.
 :::
 
+:::mcq
+Q: A 70-year-old on clonazepam for years has had two falls and is confused at night. Most likely contribution:
+- None, benzodiazepines are safe
+- *Benzodiazepine sedation and poor balance
+- Clonazepam improves memory
+- Dementia only
+> Benzodiazepines raise falls and confusion in older people.
+:::
+
 ## 2.2 Other anxiolytics and hypnotics [core]
 | Medicine | Notes |
 |---|---|
@@ -241,6 +311,15 @@ Benzodiazepines alone are rarely fatal, but with alcohol or opioids they can sto
 | Buspirone | GAD; 5-HT1A partial agonist; slow onset; no dependence |
 | Pregabalin | GAD; misuse potential |
 | Propranolol | Performance anxiety |
+
+:::mcq
+Q: A man with GAD wants something without dependence risk that he can take long-term. A reasonable option is:
+- Alprazolam
+- Zolpidem
+- *Buspirone or an SSRI
+- Diazepam
+> Buspirone and SSRIs carry no dependence risk.
+:::
 
 ## 2.3 Treating insomnia properly [core]
 :::define Insomnia disorder
@@ -262,6 +341,15 @@ Look for causes: depression, anxiety, pain, sleep apnoea (snoring, daytime sleep
 4. What is the danger of stopping long-term benzodiazepines suddenly? || Withdrawal seizures.
 5. What is the antidote, and its risk? || Flumazenil; can trigger seizures in dependence or mixed overdose.
 6. Define insomnia disorder and name the first-line treatment. || 3 nights a week for 3 months with daytime impairment; CBT-I.
+:::
+
+:::mcq
+Q: A woman sleeps badly for 6 months, lies in bed for 10 hours awake, and naps in the afternoon. The first-line treatment is:
+- Zolpidem nightly
+- *CBT for insomnia: fixed wake time, sleep restriction, stimulus control
+- A sedating antihistamine
+- Alcohol at bedtime
+> CBT-I works better long-term than tablets.
 :::
 
 ## 2.4 Stopping benzodiazepines safely [core]
@@ -295,6 +383,15 @@ A person taking large doses (for example many alprazolam tablets a day) who stop
 2. Why switch alprazolam to diazepam before tapering? || A long half-life gives smoother withdrawal.
 3. How fast should a long-term benzodiazepine be reduced? || About 5 to 10% every 1 to 2 weeks, slower at the end.
 4. When is inpatient detoxification needed? || High doses, seizure history, alcohol or other drug use.
+:::
+
+:::mcq
+Q: A man on alprazolam 3 mg a day for 4 years wants to stop. Which plan is safest?
+- Stop today
+- *Switch gradually to an equal dose of diazepam, then reduce by about a tenth every 1 to 2 weeks
+- Halve every week
+- Swap to zolpidem
+> Long-acting switch, slow taper, support; stopping suddenly can cause seizures.
 :::
 
 # Part III · Exam zone

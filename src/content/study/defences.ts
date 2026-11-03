@@ -64,6 +64,15 @@ Many specific claims aren't supported by evidence, but key ideas remain useful: 
 3. What do defence mechanisms do? || Unconsciously reduce anxiety from inner conflict.
 :::
 
+:::mcq
+Q: A man feels guilty for days after a small lie. In Freud's structural model, this harsh guilt comes from the:
+- Id
+- Ego
+- *Superego
+- Preconscious
+> The superego is the internal moral judge.
+:::
+
 ## 1.2 After Freud: the other schools [core]
 Freud's ideas were extended, argued with and rebuilt by those who followed. Exams ask for the **key idea of each name**, and practice uses many of them every day.
 
@@ -98,6 +107,15 @@ The patient unconsciously **redirects feelings and expectations from important p
 2. What did Winnicott mean by the good-enough mother? || A caregiver who meets needs well enough, with small manageable failures that help the child grow.
 3. Define transference and countertransference. || Patient's past feelings redirected onto the therapist; therapist's emotional reaction to the patient.
 4. Whose concept is borderline personality organisation? || Otto Kernberg.
+:::
+
+:::mcq
+Q: A patient becomes angry with her doctor, who is an older man, the way she used to with her strict father. This is:
+- Countertransference
+- *Transference
+- Projection
+- Sublimation
+> Feelings from past relationships redirected to the clinician.
 :::
 
 ## 1.3 Learning theories [core]
@@ -136,6 +154,15 @@ Negative reinforcement **increases** a behaviour by **removing** something unple
 2. Define negative reinforcement with a clinical example. || Removing something unpleasant increases a behaviour; avoidance relieves anxiety so avoidance grows.
 3. Which reinforcement schedule is hardest to extinguish? || Variable ratio.
 4. What is learned helplessness and who described it? || Giving up after uncontrollable stress; Seligman.
+:::
+
+:::mcq
+Q: A child gets a sweet each time he does homework, and homework increases. This is:
+- Negative reinforcement
+- *Positive reinforcement
+- Punishment
+- Classical conditioning
+> Adding something pleasant to increase a behaviour.
 :::
 
 # Part II · Defence mechanisms
@@ -205,6 +232,15 @@ Defences are **unconscious** (except suppression), **automatic**, and **everyone
 5. Expand SHASA. || Sublimation, humour, altruism, suppression, anticipation.
 :::
 
+:::mcq
+Q: A woman who resents her mother-in-law is excessively sweet and attentive to her. The defence is:
+- Displacement
+- *Reaction formation
+- Projection
+- Sublimation
+> Behaving in the opposite way to an unacceptable feeling.
+:::
+
 ## 2.2 Defences in the clinic [core]
 Defences are rarely named by patients. You **hear** them in how a story is told. Spotting them helps you understand a patient, predict difficulties, and write a formulation.
 
@@ -237,6 +273,15 @@ Mr R, 45, admitted with alcohol withdrawal, says: "I only drink socially, doctor
 4. Name three mature defences. || Sublimation, altruism, humour, suppression, anticipation.
 :::
 
+:::mcq
+Q: A heavy drinker says his wife "exaggerates" and blames hospital staff for his stress. The best clinical response is:
+- Argue until he admits the truth
+- *Recognise denial and projection, and use motivational interviewing rather than confrontation
+- Discharge him
+- Diagnose antisocial personality
+> Defences protect against shame; work with them.
+:::
+
 # Part III · Development
 
 ## 3.1 Erikson's psychosocial stages [core]
@@ -251,6 +296,15 @@ Mr R, 45, admitted with alcohol withdrawal, says: "I only drink socially, doctor
 | Middle adulthood | **Generativity vs stagnation** | Care |
 | Old age | **Integrity vs despair** | Wisdom |
 
+:::mcq
+Q: A 45-year-old feels stagnant and starts mentoring young colleagues to feel useful. Erikson would call this stage:
+- Identity versus role confusion
+- *Generativity versus stagnation
+- Integrity versus despair
+- Intimacy versus isolation
+> Middle adulthood: contributing to the next generation.
+:::
+
 ## 3.2 Piaget's cognitive stages [core]
 | Stage | Age | Key achievements |
 |---|---|---|
@@ -258,6 +312,15 @@ Mr R, 45, admitted with alcohol withdrawal, says: "I only drink socially, doctor
 | Preoperational | 2 to 7 | Language, pretend play; **egocentrism**; no conservation; magical thinking |
 | Concrete operational | 7 to 11 | **Conservation**, logical thinking about concrete things |
 | Formal operational | 11 on | **Abstract** and hypothetical thinking |
+
+:::mcq
+Q: A 5-year-old says a tall thin glass has "more juice" than a short wide one with the same amount. She is in Piaget's:
+- Sensorimotor stage
+- *Preoperational stage
+- Concrete operational stage
+- Formal operational stage
+> She has not yet mastered conservation.
+:::
 
 ## 3.3 Attachment [core]
 :::define Attachment theory (Bowlby)
@@ -282,6 +345,15 @@ Infants are born with a drive to stay close to a caregiver for safety. Repeated 
 2. Give Piaget's four stages with one achievement each. || Sensorimotor (object permanence), preoperational (language, egocentrism), concrete (conservation), formal (abstract thinking).
 3. Name the four attachment styles. || Secure, avoidant, ambivalent, disorganised.
 4. Which attachment style is most linked to abuse and later problems? || Disorganised.
+:::
+
+:::mcq
+Q: In the Strange Situation, an infant is very distressed when the mother leaves, clings but stays angry when she returns, and is hard to soothe. This is:
+- Secure
+- Avoidant
+- *Ambivalent (resistant)
+- Disorganised
+> Linked to inconsistent caregiving.
 :::
 
 ## 3.4 More stages: Mahler, Kohlberg, Bowlby and temperament [core]
@@ -331,6 +403,15 @@ Mahler's followers linked difficulties at rapprochement to the borderline patter
 4. Name Thomas and Chess's three temperaments and the key concept for outcome. || Easy, difficult, slow to warm up; goodness of fit.
 :::
 
+:::mcq
+Q: A toddler runs off to explore the park, then comes back to touch his mother before going again. Mahler would call this:
+- Symbiosis
+- Differentiation
+- *Practising
+- Object constancy
+> Exploring and returning to "refuel".
+:::
+
 ## 3.5 Grief and development across adult life [core]
 ### Normal grief
 - Common features: **shock and numbness**, yearning and searching, sadness, guilt, anger, poor sleep, seeing or hearing the dead person briefly (a **normal** experience, not psychosis), gradual acceptance.
@@ -359,6 +440,15 @@ Rituals such as the **terahvin** (13th-day ceremony), shraddh and annual rites g
 2. Is seeing the dead person briefly after a bereavement a sign of psychosis? || No, it can be a normal part of grief.
 3. What is Worden's model? || Four tasks of mourning.
 4. Name two features that separate depression from normal grief. || Pervasive low mood, worthlessness, guilt beyond the loss.
+:::
+
+:::mcq
+Q: Three weeks after her husband's death, a woman briefly hears his voice calling her and feels comforted. The best response is:
+- Start an antipsychotic
+- *Recognise this as a common part of normal grief and support her
+- Diagnose schizophrenia
+- Diagnose prolonged grief disorder
+> Brief sensing of the dead person is common in grief.
 :::
 
 # Part IV · Exam zone

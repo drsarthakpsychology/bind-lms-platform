@@ -7,6 +7,7 @@ import { sectionMinutes } from "@/lib/study/parse";
 import { Blocks } from "@/components/study/blocks";
 import { SectionReader, type TocItem } from "@/components/study/reader";
 import { splitSection } from "@/lib/study/chunk";
+import { checkpointHref, checkpoints, laterSectionIds } from "@/lib/study/checkpoints";
 import { loadLearnState, saveLearnState } from "../../actions";
 
 export async function generateMetadata({ params }: { params: Promise<{ module: string; section: string }> }): Promise<Metadata> {
@@ -50,6 +51,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       recall={parts.recall}
       viva={parts.viva}
       mcq={parts.mcq}
+      checks={checkpoints(m).map((cp) => ({ key: cp.key, href: checkpointHref(m, cp), sectionIds: cp.sectionIds, later: laterSectionIds(m, cp) }))}
     />
   );
 }

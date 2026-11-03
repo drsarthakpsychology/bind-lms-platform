@@ -52,6 +52,15 @@ export const text = String.raw`
 3. What red flag applies at any age? || Loss of skills.
 :::
 
+:::mcq
+Q: A teacher reports that a 9-year-old is restless and inattentive in class, but his parents see no problem at home. The best step is:
+- Diagnose ADHD
+- *Gather more information from both settings and look for other causes (learning, hearing, stress)
+- Start methylphenidate
+- Ignore the teacher
+> ADHD needs symptoms in two or more settings; check other causes.
+:::
+
 ## 1.2 Development and screening tools [core]
 ### Social and emotional milestones
 | Age | What to expect |
@@ -95,6 +104,15 @@ A child of 12 to 18 months who does not point to show things, does not follow yo
 4. At what age is theory of mind usually present? || About 4 to 5 years.
 :::
 
+:::mcq
+Q: An 18-month-old says a few words but does not point to show things and doesn't look when you point. Next step:
+- Reassure; he talks
+- *Screen for autism (M-CHAT) and refer if positive
+- Hearing aid
+- Wait until age 5
+> Absent joint attention is an early autism sign.
+:::
+
 # Part II · Neurodevelopmental disorders
 
 ## 2.1 Intellectual disability [core]
@@ -115,6 +133,15 @@ Deficits in **intellectual functions** (reasoning, problem-solving, planning, ab
 - Assessment in India: intelligence tests (Binet–Kamat, Malin's WISC, WAIS) and the **Vineland Social Maturity Scale** for social and adaptive functioning.
 - Management: early intervention, special education, skills training, family support, treatment of comorbid epilepsy and behaviour problems, disability certification (RPwD Act).
 
+:::mcq
+Q: A child's IQ is 65 but she manages school, self-care and friendships like her peers. The best conclusion is:
+- She has intellectual disability
+- *Intellectual disability needs adaptive deficits too; re-check the test and context
+- She has autism
+- She has ADHD
+> Severity and diagnosis depend on adaptive functioning.
+:::
+
 ## 2.2 Autism spectrum disorder [core]
 :::define Two domains
 **A. Persistent deficits in social communication and interaction** (all 3): social-emotional reciprocity; non-verbal communication (eye contact, gestures); developing and maintaining relationships.
@@ -132,6 +159,15 @@ Present in early development; cause impairment; specify with or without intellec
 - “Pehle kuch shabd bolta tha, ab chup ho gaya.” (He used to say a few words; now he's stopped.) Regression: urgent.
 :::
 
+:::mcq
+Q: A 3-year-old who used to say 20 words has stopped talking and avoids eye contact over 2 months. The priority is:
+- Wait and see
+- *Urgent assessment: loss of skills is a red flag
+- Speech therapy only
+- Blame screens
+> Regression needs prompt specialist assessment (also think of Rett, seizures, hearing).
+:::
+
 ## 2.3 ADHD [core]
 :::define Criteria
 A persistent pattern of **inattention** and/or **hyperactivity-impulsivity**: **6 or more symptoms** in either group (**5 or more at age 17 and over**) for **at least 6 months**; **several symptoms before age 12**; present in **2 or more settings** (home, school, work); clear impairment.
@@ -146,6 +182,15 @@ A persistent pattern of **inattention** and/or **hyperactivity-impulsivity**: **
 - Rating scales: Vanderbilt, Conners (parents and teachers).
 - Management: **parent training** and classroom strategies (first for young children), behavioural therapy; **stimulants** (**methylphenidate**) or atomoxetine for school-age children with significant impairment.
 - Stimulant side effects: **reduced appetite and weight**, poor sleep, headache, stomach ache, raised pulse and BP; monitor height, weight, BP. Misuse potential.
+
+:::mcq
+Q: A 7-year-old girl daydreams, loses things and misses instructions, but is not hyperactive. Which is likely?
+- Not ADHD, because she is quiet
+- *ADHD, predominantly inattentive presentation (often missed in girls)
+- Conduct disorder
+- Autism
+> Inattentive ADHD is underdiagnosed, especially in girls.
+:::
 
 ## 2.4 Learning disorders, tics and communication [core]
 ### Specific learning disorder
@@ -176,6 +221,15 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 6. State the Tourette's rules. || Multiple motor and at least one vocal tic, over a year, onset before 18.
 :::
 
+:::mcq
+Q: A bright 10-year-old reads slowly, reverses letters and avoids reading aloud, while maths is good. Most likely:
+- Intellectual disability
+- *Specific learning disorder with impairment in reading
+- ADHD
+- Laziness
+> Specific difficulty against normal intelligence and teaching.
+:::
+
 ## 2.5 Genetic syndromes and behavioural phenotypes [core]
 | Syndrome | Genetics | Physical features | Behaviour and mental health |
 |---|---|---|---|
@@ -199,6 +253,15 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 3. Which syndrome shows hand-wringing after early normal development? || Rett syndrome.
 4. What is the commonest preventable cause of intellectual disability? || Fetal alcohol exposure (and in India, iodine deficiency is also preventable).
 5. Which syndrome is associated with early Alzheimer's? || Down syndrome.
+:::
+
+:::mcq
+Q: A boy with intellectual disability has a long face, large ears and avoids eye contact. The test to confirm is:
+- Karyotype for trisomy 21
+- *DNA test for CGG repeats in FMR1 (fragile X)
+- EEG
+- Thyroid function
+> Fragile X is the commonest inherited cause.
 :::
 
 ## 2.6 ADHD medicines and adult ADHD [core]
@@ -228,6 +291,15 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 4. What is essential for diagnosing ADHD in an adult? || Evidence of childhood onset before 12.
 :::
 
+:::mcq
+Q: Before starting methylphenidate, which is essential?
+- MRI brain
+- *Height, weight, pulse, BP and heart history
+- EEG for all
+- IQ test
+> Baseline growth and cardiovascular checks; monitor regularly.
+:::
+
 # Part III · Behaviour, mood and elimination
 
 ## 3.1 Disruptive behaviour [core]
@@ -241,10 +313,28 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 - **Disruptive mood dysregulation disorder**: severe outbursts at least 3 times a week with persistent irritability between them, for 12 months, diagnosed between 6 and 18, onset before 10 (see the depression module).
 - Management: **parent management training** (praise, consistent limits, time-out), school support, family therapy, multisystemic therapy for adolescents; treat ADHD and learning problems.
 
+:::mcq
+Q: A 13-year-old steals, breaks into cars and is cruel to animals for over a year. Which treatment has the best evidence?
+- Antipsychotics alone
+- *Parent training and family-based programmes (multisystemic therapy for older children)
+- Punishment only
+- Boarding school
+> Family and community interventions work best for conduct disorder.
+:::
+
 ## 3.2 Anxiety and depression in young people [core]
 - Separation anxiety, selective mutism, specific phobias and social anxiety often start in childhood (see the anxiety module).
 - **School refusal** (anxiety, child stays home with parent's knowledge) differs from **truancy** (conduct problem, child hides absence).
 - Depression in children: irritability, boredom, physical complaints, falling marks. Treatment: CBT, family work; **fluoxetine** if moderate to severe, with close monitoring.
+
+:::mcq
+Q: A 12-year-old refuses school because of stomach aches on school mornings and stays home with his mother. Most likely:
+- Truancy
+- *Anxiety-based school refusal
+- Conduct disorder
+- Malingering
+> School refusal: anxiety, at home with parents' knowledge. Truancy: hidden, conduct.
+:::
 
 ## 3.3 Elimination disorders [core]
 | | Enuresis | Encopresis |
@@ -260,6 +350,15 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 2. School refusal vs truancy? || Anxiety with parent's knowledge vs hidden absence with conduct problems.
 3. Enuresis rules and the most effective long-term treatment? || Age 5, twice a week for 3 months; bed-wetting alarm.
 4. Commonest cause of encopresis? || Constipation with overflow.
+:::
+
+:::mcq
+Q: A 7-year-old wets the bed most nights; daytime is fine and tests are normal. The first-line treatment is:
+- Punishment
+- *A bed alarm with star chart and reassurance
+- Antidepressant
+- Fluid restriction all day
+> Enuresis alarms have the best long-term results.
 :::
 
 ## 3.4 Adolescents [core]
@@ -295,6 +394,15 @@ Language disorder, speech sound disorder, childhood-onset fluency disorder (**st
 4. Name four parts of parent management training. || Praise, clear instructions, consistent consequences, time-out, special time.
 :::
 
+:::mcq
+Q: A 16-year-old is quiet with her parents present. The best way to assess her mental health is:
+- Ask only the parents
+- *See her alone after explaining confidentiality and its limits, using HEADSSS
+- Promise to keep everything secret
+- Give her a questionnaire and leave
+> Private time and clear limits help adolescents speak.
+:::
+
 # Part IV · Child protection
 
 ## 4.1 Abuse and POCSO [core]
@@ -311,6 +419,15 @@ The Protection of Children from Sexual Offences Act covers anyone under **18**. 
 1. Who does POCSO protect? || Everyone under 18.
 2. What does Section 19 require? || Mandatory reporting to the police or Special Juvenile Police Unit.
 3. What is the child helpline number? || 1098.
+:::
+
+:::mcq
+Q: An 11-year-old tells you her uncle touches her. Under POCSO, you must:
+- Keep it confidential as she asked
+- *Report to the police or Special Juvenile Police Unit, and make her safe
+- Confront the uncle first
+- Wait for proof
+> Reporting is mandatory; failure to report is an offence.
 :::
 
 # Part V · Exam zone

@@ -2,7 +2,9 @@ import Link from "next/link";
 import { readFlags } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
-import { computeResumePrimary } from "@/lib/practice/resume";
+import { lastPracticePlace } from "@/lib/practice/resume";
+import { StandingCard } from "@/components/standing/standing-card";
+import { ArrowRight, RotateCcw } from "lucide-react";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
@@ -39,7 +41,6 @@ export default async function PracticeHubPage() {
     ];
   });
 
-  // The recommended card — ALWAYS states why (B2: reason beats recommendation).
   const supabase = await createClient();
   const {
     data: { user },
@@ -51,10 +52,8 @@ export default async function PracticeHubPage() {
     ? await computePracticeStates(supabase, user.id)
     : {};
 
-  // The recommended card — one shared engine for "what's next" (T140), so any
-  // surface always recommends the same thing. ALWAYS states why
-  // (B2: reason beats recommendation).
-  const recommendation = user ? await computeResumePrimary(supabase, user.id, flags) : null;
+  // "Resume where you left off": the last open practice tool they used.
+  const resume = user ? await lastPracticePlace(user.id, visible.filter((t) => !t.locked).map((t) => ({ href: t.href, title: t.title }))) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -68,25 +67,26 @@ export default async function PracticeHubPage() {
         </header>
       </Reveal>
 
-      {/* recommended card — one tap, always with a reason */}
+      {/* One button back to where they were, and their level. */}
       <Reveal delay={0.1}>
-      {recommendation ? (
-        <Link
-          href={recommendation.href}
-          className="mb-6 block rounded-md border-2 border-primary bg-primary/5 p-4 hard-shadow-sm transition-transform hover:-translate-y-0.5 active:translate-y-px"
-        >
-          <p className="text-caption font-semibold text-link">Recommended for you</p>
-          <div className="mt-1 flex items-center justify-between gap-3">
-            <div>
-              <p className="text-base font-semibold">{recommendation.title}</p>
-              <p className="mt-1 text-small text-muted-foreground">{recommendation.reason}</p>
-            </div>
-            <span className="shrink-0 rounded-md border-2 border-primary bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground">
-              {recommendation.cta} · {recommendation.time}
-            </span>
-          </div>
-        </Link>
-      ) : null}
+        <div className="mb-6 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          {resume ? (
+            <Link
+              href={resume.href}
+              className="btn-sweep flex items-center gap-4 self-start rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5"
+            >
+              <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground">
+                <RotateCcw className="size-6" aria-hidden />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Resume where you left off</span>
+                <span className="block text-xl font-bold leading-tight">{resume.title}</span>
+              </span>
+              <ArrowRight className="size-6 shrink-0" aria-hidden />
+            </Link>
+          ) : null}
+          {user ? <StandingCard userId={user.id} /> : null}
+        </div>
       </Reveal>
 
       {/* weak-spots banner — real gaps, server-computed */}

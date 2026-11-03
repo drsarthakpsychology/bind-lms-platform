@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpen, Check, Clock, Flame, Lock, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Check, Clock, Flame, Lock, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
+import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
 import { activityHref, courseNext, hoursOf, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, studyTime, testSection, type Next } from "@/lib/study/plan";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,8 @@ function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
   switch (n.kind) {
     case "read":
       return { eyebrow: `Module ${n.module.num} · Read`, title: `${n.section.num} ${n.section.title}`, sub: n.module.title };
+    case "checkpoint":
+      return { eyebrow: `Module ${n.module.num} · Checkpoint`, title: n.label.replace(/^Checkpoint \d+: /, "Quiz on "), sub: "Now that you've moved on, see what stuck" };
     case "write":
       return { eyebrow: `Module ${n.module.num} · Write it out`, title: "Reproduce the key frameworks on paper", sub: n.module.title };
     case "practise":
@@ -39,7 +42,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
       className="btn-sweep group flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5 sm:p-6"
     >
       <span className="hidden size-14 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground sm:grid">
-        {next.kind === "read" ? <BookOpen className="size-7" aria-hidden /> : next.kind === "write" ? <PenLine className="size-7" aria-hidden /> : next.kind === "practise" ? <Zap className="size-7" aria-hidden /> : <RotateCcw className="size-7" aria-hidden />}
+        {next.kind === "read" ? <BookOpen className="size-7" aria-hidden /> : next.kind === "checkpoint" ? <ListChecks className="size-7" aria-hidden /> : next.kind === "write" ? <PenLine className="size-7" aria-hidden /> : next.kind === "practise" ? <Zap className="size-7" aria-hidden /> : <RotateCcw className="size-7" aria-hidden />}
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{l.eyebrow}</span>
@@ -189,6 +192,28 @@ function StepHead({ n, title, done, current, sub }: { n: number; title: string; 
   );
 }
 
+function CheckpointRow({ m, cp, st }: { m: StudyModule; cp: Checkpoint; st: LearnState["study"] }) {
+  const status = checkpointStatus(m, cp, st);
+  const t = st.tests[cp.key];
+  const label =
+    status === "done" ? `Done · ${t?.best ?? 0} of ${t?.total ?? 0}` : status === "ready" ? "Ready now" : status === "waiting" ? "Opens after the next section" : "After these sections";
+  const open = status === "ready" || status === "done";
+  const body = (
+    <>
+      <ListChecks className="size-4 shrink-0" aria-hidden />
+      <span className="min-w-0 flex-1 whitespace-nowrap text-sm font-semibold">Checkpoint {cp.n}</span>
+      <span className="min-w-0 text-right text-xs font-semibold">{label}</span>
+    </>
+  );
+  return open ? (
+    <Link href={checkpointHref(m, cp)} className={cn("mt-1 ml-9 flex items-center gap-2 rounded-xl border-2 border-dashed px-3 py-2", status === "ready" ? "border-foreground bg-brand text-brand-foreground" : "border-foreground/40")}>
+      {body}
+    </Link>
+  ) : (
+    <div className="mt-1 ml-9 flex items-center gap-2 rounded-xl border-2 border-dashed border-foreground/25 px-3 py-2 text-muted-foreground">{body}</div>
+  );
+}
+
 export function ModuleView({ module: m, nextModule, serverState, save }: { module: StudyModule; nextModule?: { id: string; title: string; num: number }; serverState: LearnState | null; save: Save }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
@@ -199,7 +224,8 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
   const test = testSection(m);
   const t = st.study.tests[m.id];
   const due = retestDue(m, st.study);
-  const step = !next ? 5 : next.kind === "read" ? 1 : next.kind === "write" ? 2 : next.kind === "practise" ? 3 : 4;
+  const step = !next ? 5 : next.kind === "read" || next.kind === "checkpoint" ? 1 : next.kind === "write" ? 2 : next.kind === "practise" ? 3 : 4;
+  const cpAfter = new Map(checkpoints(m).map((cp) => [cp.sectionIds[cp.sectionIds.length - 1], cp]));
 
   return (
     <div className="mx-auto max-w-4xl space-y-7 px-4 py-6 sm:px-6 lg:py-10">
@@ -264,7 +290,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
         <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background">
           <h2 className="text-lg font-bold text-primary">How to study this</h2>
           <ol className="mt-2 space-y-1.5 text-sm">
-            <li><b>1 Read</b> each section; answer its recall check aloud before moving on.</li>
+            <li><b>1 Read</b> each section. After every few sections, once you&apos;ve moved on, a checkpoint quiz asks what stuck.</li>
             <li><b>2 Write</b> the key frameworks on paper from memory.</li>
             <li><b>3 Practise</b> with the activities for this topic.</li>
             <li><b>4 Test</b> yourself, then re-test after 3, 7 and 21 days.</li>
@@ -297,6 +323,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
                     </span>
                     {here ? <span className="shrink-0 text-sm font-bold">Start →</span> : null}
                   </Link>
+                  {cpAfter.get(sec.id) ? <CheckpointRow m={m} cp={cpAfter.get(sec.id)!} st={st.study} /> : null}
                 </li>
               );
             })}

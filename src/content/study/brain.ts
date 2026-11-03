@@ -55,6 +55,15 @@ The neurotransmitter is a key; the receptor is a lock. Medicines can be copies o
 3. Contrast ionotropic and metabotropic receptors. || Direct ion channel, fast vs G-protein cascade, slower.
 :::
 
+:::mcq
+Q: An SSRI keeps serotonin in the synapse longer. Which step of transmission does it act on?
+- Synthesis
+- Storage
+- *Termination by reuptake
+- Release
+> It blocks the serotonin transporter that pumps the transmitter back.
+:::
+
 ## 1.2 The main neurotransmitters [core]
 | Transmitter | Main source | Roles | Linked disorders | Medicines acting on it |
 |---|---|---|---|---|
@@ -72,6 +81,15 @@ The neurotransmitter is a key; the receptor is a lock. Medicines can be copies o
 1. Which transmitter is the main excitatory one, and which the main inhibitory? || Glutamate; GABA.
 2. Where do serotonin, noradrenaline and dopamine come from? || Raphe nuclei; locus coeruleus; substantia nigra and VTA.
 3. Which transmitter falls first in Alzheimer's disease? || Acetylcholine.
+:::
+
+:::mcq
+Q: A man on donepezil improves slightly in memory. Which transmitter does this medicine boost?
+- Dopamine
+- *Acetylcholine
+- GABA
+- Glutamate
+> Cholinesterase inhibitors slow the breakdown of acetylcholine.
 :::
 
 ## 1.3 Dopamine pathways and receptor side effects [core]
@@ -120,6 +138,15 @@ In an older person, an antidepressant (amitriptyline) plus an antipsychotic plus
 4. Which receptor blockade causes postural hypotension? || Alpha-1.
 :::
 
+:::mcq
+Q: An older woman on amitriptyline becomes constipated, can't pass urine and is confused. These effects come from blocking:
+- D2 receptors
+- H1 receptors
+- *Muscarinic (M1) receptors
+- 5-HT2A receptors
+> Anticholinergic effects; worse in older people.
+:::
+
 # Part II · Regions and systems
 
 ## 2.1 Brain regions and what goes wrong [core]
@@ -148,6 +175,15 @@ A railway worker who survived an iron rod through his frontal lobe in 1848 and b
 - **Cortico-striato-thalamo-cortical loops**: OCD, tics, habits.
 - **Default mode network**: active during mind-wandering and self-reflection; linked to rumination in depression.
 
+:::mcq
+Q: After a head injury, a man becomes impulsive, rude and careless about others' feelings, but his memory is fine. The region most likely damaged is:
+- Occipital lobe
+- *Frontal (orbitofrontal) lobe
+- Cerebellum
+- Hippocampus
+> Disinhibition and personality change point to the frontal lobe.
+:::
+
 ## 2.2 Stress, sleep and change [core]
 ### The stress system (HPA axis)
 Stress → **hypothalamus** releases CRH → **pituitary** releases ACTH → **adrenal cortex** releases **cortisol** → cortisol prepares the body (glucose, alertness) and then **switches the system off** by negative feedback. Chronic stress leaves it stuck on: linked to depression, poor memory (hippocampal damage), weight gain, low immunity. The fast arm (sympathetic nervous system and adrenaline) gives the racing heart.
@@ -171,6 +207,15 @@ Stress → **hypothalamus** releases CRH → **pituitary** releases ACTH → **a
 2. What are Process S and Process C? || Sleep pressure (adenosine) and the circadian clock (suprachiasmatic nucleus, melatonin).
 3. Define neuroplasticity and name three things that promote it. || The brain's ability to rewire; learning and therapy, exercise, antidepressants, ECT.
 4. What does damage to the mammillary bodies cause? || Korsakoff-type memory loss.
+:::
+
+:::mcq
+Q: A student pulls all-nighters, then sleeps until noon on weekends and drinks lots of coffee. Which system is caffeine blocking to keep him awake?
+- The suprachiasmatic nucleus
+- *Adenosine receptors (sleep pressure)
+- Melatonin release
+- Cortisol
+> Adenosine builds up with time awake (Process S); caffeine blocks it.
 :::
 
 ## 2.3 The lobes in the clinic: frontal syndromes and language [core]
@@ -215,6 +260,15 @@ Fluent nonsense with poor understanding can be mistaken for formal thought disor
 4. What are the four parts of Gerstmann syndrome? || Finger agnosia, left-right confusion, acalculia, agraphia.
 :::
 
+:::mcq
+Q: An older man suddenly speaks fluently but makes no sense and cannot follow instructions; he seems unaware. The likely problem is:
+- Schizophrenia
+- *Wernicke's (receptive) aphasia from a left temporal stroke
+- Broca's aphasia
+- Mania
+> Sudden onset, fluent nonsense and poor comprehension: think stroke.
+:::
+
 ## 2.4 Memory systems [core]
 :::define Memory
 The ability to **encode**, **store** and **retrieve** information. Different kinds of memory use different brain systems, so diseases damage them selectively.
@@ -240,6 +294,15 @@ Organic amnesia: new learning poor, identity kept, recent memories lost before o
 1. Name four memory types and their brain systems. || Working: prefrontal. Episodic: hippocampus. Semantic: anterior temporal. Procedural: basal ganglia and cerebellum.
 2. State Ribot's law. || In retrograde amnesia, recent memories are lost first and old ones last.
 3. What is confabulation and when is it seen? || Unintended false memories filling gaps; Korsakoff, frontal damage.
+:::
+
+:::mcq
+Q: After ECT a patient cannot remember the week of treatment but remembers childhood well. Which principle explains this pattern?
+- Confabulation
+- *Ribot's law: recent memories are lost before old ones
+- Procedural memory loss
+- Semantic dementia
+> Retrograde gaps affect the most recent memories first.
 :::
 
 ## 2.5 Looking at the brain: EEG and imaging [core]
@@ -274,6 +337,15 @@ Organic amnesia: new learning poor, identity kept, recent memories lost before o
 4. Main purpose of brain imaging in psychiatry? || To exclude organic causes.
 :::
 
+:::mcq
+Q: An awake patient's EEG shows generalised slowing. This most supports:
+- Anxiety
+- *Delirium or encephalopathy
+- Normal alertness
+- Benzodiazepine use
+> Slowing is typical of delirium (except alcohol or sedative withdrawal).
+:::
+
 # Part III · Basic pharmacology
 
 ## 3.1 How medicines act and move [core]
@@ -305,6 +377,15 @@ Organic amnesia: new learning poor, identity kept, recent memories lost before o
 3. Name three enzyme inducers and three inhibitors. || Carbamazepine, smoking, rifampicin; fluoxetine, fluvoxamine, valproate.
 :::
 
+:::mcq
+Q: Aripiprazole lowers dopamine signalling when dopamine is high and raises it when low. It is a:
+- Full agonist
+- Antagonist
+- *Partial agonist
+- Inverse agonist
+> Like buprenorphine at opioid receptors.
+:::
+
 ## 3.2 Medicines in special groups and over time [core]
 ### Tolerance, dependence and withdrawal at the synapse
 - **Tolerance**: the same dose gives less effect, because receptors **down-regulate** or become less sensitive, or the liver breaks the drug down faster.
@@ -333,6 +414,15 @@ In older people, start at a low dose and increase slowly, but keep going to an e
 2. Which benzodiazepines are safer in liver disease? || Lorazepam and oxazepam.
 3. Name four medicines whose blood levels are monitored. || Lithium, valproate, carbamazepine, clozapine.
 4. When is a lithium level taken? || 12 hours after the last dose, at steady state (about 5 days after a change).
+:::
+
+:::mcq
+Q: An 80-year-old is started on a standard adult dose of a sedating medicine and becomes confused. The best general principle is:
+- Older people need higher doses
+- *Start low, go slow, but reach an effective dose
+- Never treat older people with medicines
+- Double the dose if no effect in a day
+> Slower clearance and more sensitive brains.
 :::
 
 # Part IV · Exam zone
