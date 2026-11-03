@@ -6,6 +6,8 @@ import { requireAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { signR2UploadUrl, headR2Object } from "@/lib/media/r2";
 import { policyVersion } from "@/lib/legal-constants";
+import { loadCourseCohorts } from "@/lib/cohorts/admin-data";
+import { resolveRecordingShare, type RecordingShare } from "@/lib/cohorts/rules";
 
 export type SignedUploadResult =
   | { ok: true; url: string; key: string }
@@ -149,7 +151,8 @@ export async function prepareVideoUpload(
   }
 }
 
-export type CreateLessonState = { error: string | null };
+/** `notice` says who can see the new lecture ("Uploaded for Cohort 2 only."). */
+export type CreateLessonState = { error: string | null; notice?: string | null };
 
 export async function createLessonWithVideo(
   courseId: string,
@@ -177,6 +180,15 @@ export async function createLessonWithVideo(
   if (requiresAssignment && !assignmentPrompt) {
     return { error: "Add assignment instructions, or uncheck \u201cRequires assignment.\u201d" };
   }
+
+  // Cohorts: the admin says which cohort this recording is for (or all of
+  // them). Checked here against this course's running cohorts, before any
+  // row is written. Without the cohort tables, nothing is shared (old rules).
+  const courseCohorts = await loadCourseCohorts(courseId);
+  const share: RecordingShare = courseCohorts.ready
+    ? resolveRecordingShare(String(formData.get("shareWith") ?? ""), courseCohorts.cohorts)
+    : { ok: true, cohortIds: [], notice: "Lesson added." };
+  if (!share.ok) return { error: share.error };
 
   // Verify the bytes actually landed before saving a lesson that points at
   // them. The client's upload success callback is never trusted — a dropped or
@@ -222,13 +234,15 @@ export async function createLessonWithVideo(
       { onConflict: "lesson_id" },
     );
 
-  // Cohorts: a new lecture is shared with this course's running and upcoming
-  // cohorts straight away. Change it any time in People → Cohorts → Lectures.
-  const { data: courseCohorts } = await admin.from("cohorts").select("id").eq("course_id", courseId).neq("status", "ended");
-  if (courseCohorts?.length) {
-    await admin
+  // Share only with the cohort(s) picked above. Never with the others.
+  if (share.cohortIds.length) {
+    const { error: shareError } = await admin
       .from("lesson_cohorts")
-      .upsert(courseCohorts.map((c) => ({ lesson_id: lesson.id, cohort_id: c.id })), { onConflict: "lesson_id,cohort_id", ignoreDuplicates: true });
+      .upsert(share.cohortIds.map((cohort_id) => ({ lesson_id: lesson.id, cohort_id })), { onConflict: "lesson_id,cohort_id", ignoreDuplicates: true });
+    if (shareError) {
+      revalidatePath(`/admin/courses/${courseId}`);
+      return { error: "The lesson was saved, but it isn't shared with the cohort yet. Use Change on the lesson to share it." };
+    }
   }
 
   if (requiresAssignment) {
@@ -249,12 +263,14 @@ export async function createLessonWithVideo(
       return {
         error:
           "Lesson and video were saved, but the assignment couldn't be created. Add it separately.",
+        notice: share.notice,
       };
     }
   }
 
   revalidatePath(`/admin/courses/${courseId}`);
-  return { error: null };
+  for (const id of share.cohortIds) revalidatePath(`/admin/cohorts/${id}`);
+  return { error: null, notice: share.notice };
 }
 
 export async function attachVideoToLesson(

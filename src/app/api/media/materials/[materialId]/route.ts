@@ -116,7 +116,7 @@ async function resolveMaterial(
 
   const { data: material } = await supabase
     .from("materials")
-    .select("id, kind, format, storage_path, provider, bucket, course_id, courses!inner(is_published)")
+    .select("id, kind, format, storage_path, provider, bucket, course_id, lesson_id, courses!inner(is_published)")
     .eq("id", materialId)
     .single();
 
@@ -133,6 +133,16 @@ async function resolveMaterial(
       .eq("course_id", material.course_id)
       .maybeSingle();
     if (!enrollment) return { ok: false, reason: "You aren't enrolled in this course." };
+
+    // Cohorts: a material on a lecture shared with other cohorts only is not
+    // for this person (people in no cohort keep the enrolment rule above).
+    if (material.lesson_id) {
+      const { loadStudentAccess } = await import("@/lib/cohorts/access");
+      const { canWatch } = await import("@/lib/cohorts/rules");
+      if (!canWatch(await loadStudentAccess(profile.id), material.lesson_id as string, true)) {
+        return { ok: false, reason: "This material isn't part of your lectures." };
+      }
+    }
   }
 
   if (material.kind === "link" || !material.storage_path) {

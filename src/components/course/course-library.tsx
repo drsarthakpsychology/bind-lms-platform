@@ -29,6 +29,9 @@ type Filter = "all" | "todo" | "watched";
 export function CourseLibrary({ model }: { model: OverviewModel }) {
   const [tab, setTab] = React.useState<Tab>("lectures");
   const [filter, setFilter] = React.useState<Filter>("all");
+  // A student in 2+ cohorts can narrow the list to one of their own cohorts.
+  const mine = model.myCohorts ?? [];
+  const [cohort, setCohort] = React.useState<string | null>(null);
 
   const materials = model.weeks.flatMap((w) => w.materials.map((m) => ({ ...m, week: w.num })));
   const assignments = model.weeks.flatMap((w) => w.assignments.map((a) => ({ ...a, week: w.num })));
@@ -36,8 +39,10 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
   const weeks: OverviewWeek[] = model.weeks
     .map((w) => ({
       ...w,
-      lessons: w.lessons.filter((l) =>
-        filter === "all" ? true : filter === "watched" ? l.state === "done" : l.state !== "done" && l.href !== null,
+      lessons: w.lessons.filter(
+        (l) =>
+          (filter === "all" ? true : filter === "watched" ? l.state === "done" : l.state !== "done" && l.href !== null) &&
+          (!cohort || Boolean(l.cohorts?.some((c) => c.id === cohort))),
       ),
     }))
     .filter((w) => w.lessons.length > 0);
@@ -63,6 +68,11 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
       <header className="space-y-2">
         <p className="text-eyebrow text-link">{model.published ? "Lectures" : "Draft — only you can see this"}</p>
         <h1 className="text-display break-words">{model.title}</h1>
+        {mine.length === 1 ? (
+          <p className="text-sm text-muted-foreground">
+            Your cohort: <span className="font-semibold text-foreground">{mine[0].name}</span>
+          </p>
+        ) : null}
       </header>
 
       <section aria-label="Where you are" className="grid gap-5 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
@@ -115,7 +125,26 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
               </button>
             ))}
           </div>
-          {filter === "all" ? (
+          {mine.length > 1 ? (
+            <div role="group" aria-label="Your cohorts" className="flex flex-wrap items-center gap-2">
+              <span className="text-caption font-semibold text-muted-foreground">Cohort</span>
+              {[{ id: null as string | null, name: "Both" }, ...mine].map((c, i) => (
+                <button
+                  key={c.id ?? "all"}
+                  type="button"
+                  aria-pressed={cohort === c.id}
+                  onClick={() => setCohort(c.id)}
+                  className={cn(
+                    "inline-flex h-9 cursor-pointer items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+                    cohort === c.id ? "bg-[#111111] text-primary dark:bg-white dark:text-[#111111]" : "bg-card",
+                  )}
+                >
+                  {i === 0 && mine.length > 2 ? "All" : c.name}
+                </button>
+              ))}
+            </div>
+          ) : null}
+          {filter === "all" && !cohort ? (
             <WeekChips
               weeks={model.weeks.map((w) => ({
                 num: w.num,
@@ -127,17 +156,19 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
           ) : null}
           <section aria-label="Weeks" className="space-y-4">
             {weeks.map((w) => (
-              <WeekBlock key={w.num} week={w} lessonsOnly openAll={filter !== "all"} />
+              <WeekBlock key={w.num} week={w} lessonsOnly openAll={filter !== "all" || Boolean(cohort)} />
             ))}
           </section>
           {weeks.length === 0 ? (
             <EmptyState
               icon={<CheckCircle2 className="size-8" aria-hidden />}
-              title={model.empty ? "No lectures yet" : filter === "watched" ? "Nothing watched yet" : "All caught up"}
+              title={model.empty ? "No lectures yet" : cohort && filter === "all" ? "No lectures here yet" : filter === "watched" ? "Nothing watched yet" : "All caught up"}
               description={
                 model.empty
                   ? "Lectures appear here as soon as they're added."
-                  : filter === "watched"
+                  : cohort && filter === "all"
+                    ? "Lectures for this cohort appear here as they're added."
+                    : filter === "watched"
                     ? "Lectures you finish show up here."
                     : "You've watched everything that's open."
               }

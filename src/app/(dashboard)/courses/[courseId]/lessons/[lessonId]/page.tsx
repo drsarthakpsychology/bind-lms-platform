@@ -6,8 +6,8 @@ import { CheckCircle2, ChevronDown, ChevronLeft, FileText, Paperclip, Play } fro
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import { loadStudentAccess } from "@/lib/cohorts/access";
-import { canWatch, filterLessons } from "@/lib/cohorts/rules";
+import { loadMyCohorts, loadStudentAccess } from "@/lib/cohorts/access";
+import { canWatch, filterLessons, myCohortsFor } from "@/lib/cohorts/rules";
 import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 // Lazy wrapper — the player pulls in hls.js (~500KB min / ~150KB gzip). The
@@ -62,7 +62,7 @@ export default async function LessonPage({
 
   const supabase = await createClient();
 
-  const [{ data: lesson }, { data: course }, { data: courseLessonsAll }, { data: userData }, { data: assignment }, { data: materials }, { data: progress }] =
+  const [{ data: lesson }, { data: course }, { data: courseLessonsAll }, { data: userData }, { data: assignment }, { data: materialsAll }, { data: progress }] =
     await Promise.all([
       supabase
         .from("lessons")
@@ -85,7 +85,7 @@ export default async function LessonPage({
         .maybeSingle(),
       supabase
         .from("materials")
-        .select("id, title, kind, format, size_bytes, url, storage_path, sort_order")
+        .select("id, title, kind, format, size_bytes, url, storage_path, sort_order, lesson_id")
         .or(`lesson_id.eq.${lessonId},course_id.eq.${courseId}`)
         .order("sort_order", { ascending: true }),
       supabase
@@ -121,7 +121,14 @@ export default async function LessonPage({
   }
 
   // The picker and Next/Previous only list lectures this person can watch.
-  const courseLessons = filterLessons(await loadStudentAccess(profile.id), courseLessonsAll ?? [], true, profile.role === "admin");
+  const access = await loadStudentAccess(profile.id);
+  const courseLessons = filterLessons(access, courseLessonsAll ?? [], true, profile.role === "admin");
+  // Materials on a lecture this person can't watch don't show here either.
+  const visibleLessonIds = new Set(courseLessons.map((l) => l.id));
+  const materials = (materialsAll ?? []).filter((m) => !m.lesson_id || m.lesson_id === lessonId || visibleLessonIds.has(m.lesson_id));
+  // A student in 2+ cohorts sees which of their own cohorts this lecture is for.
+  const myCohorts = profile.role === "admin" ? [] : (await loadMyCohorts(profile.id)).filter((c) => access.cohortIds.includes(c.id));
+  const lessonCohorts = myCohorts.length > 1 ? myCohortsFor(lessonId, access.cohortsByLesson, myCohorts) : [];
 
   // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
   // tab is requested but there's no content for it, fall back to watch too.
@@ -257,6 +264,15 @@ export default async function LessonPage({
         <div className="space-y-1.5">
           {lessonPosition ? <p className="text-eyebrow text-link">{lessonPosition}</p> : null}
           <h1 className="text-h1 break-words">{lesson?.title ?? "Lesson"}</h1>
+          {lessonCohorts.length ? (
+            <p className="flex flex-wrap gap-1">
+              {lessonCohorts.map((c) => (
+                <span key={c.id} className="inline-flex items-center rounded-full border-2 border-foreground/30 bg-card px-2 text-[0.7rem] leading-5 font-bold">
+                  {c.name}
+                </span>
+              ))}
+            </p>
+          ) : null}
         </div>
         {tab === "watch" && (
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">

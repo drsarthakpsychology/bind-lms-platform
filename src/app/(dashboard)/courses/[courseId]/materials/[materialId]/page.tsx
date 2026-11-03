@@ -6,6 +6,8 @@ import { ArrowLeft, ArrowRight, ChevronLeft } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { cleanMaterialTitle } from "@/lib/media/title";
+import { loadStudentAccess } from "@/lib/cohorts/access";
+import { canWatch } from "@/lib/cohorts/rules";
 import { MaterialViewer } from "./viewer";
 
 /**
@@ -55,7 +57,14 @@ export default async function MaterialViewerPage({
   // Guard: the material must belong to this course.
   if (material.course_id !== courseId) notFound();
 
-  const ordered = allCourseMaterials ?? [];
+  // Cohorts: a material on a lecture this person can't watch doesn't exist for
+  // them, and prev/next skips those too. Lectures with no cohort rules apply
+  // the old rule (the course layout already checked it).
+  const access = profile.role === "admin" ? null : await loadStudentAccess(profile.id);
+  const canSee = (lessonId: string | null) => !access || !lessonId || canWatch(access, lessonId, true);
+  if (!canSee(material.lesson_id)) notFound();
+
+  const ordered = (allCourseMaterials ?? []).filter((m) => canSee(m.lesson_id));
   const idx = ordered.findIndex((m) => m.id === materialId);
   const prev = idx > 0 ? ordered[idx - 1] : null;
   const next = idx >= 0 && idx < ordered.length - 1 ? ordered[idx + 1] : null;
