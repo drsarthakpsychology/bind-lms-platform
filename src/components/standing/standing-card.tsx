@@ -56,8 +56,8 @@ export async function StandingCard({ userId }: { userId: string }) {
           <div key={l} className="rounded-xl bg-background px-2 py-2">
             <dt className="sr-only">{l}</dt>
             <dd>
-              <span className="flex items-center justify-center gap-1 text-base font-bold tabular-nums">
-                <Icon className="size-4" aria-hidden /> {v}
+              <span className="flex items-center justify-center gap-1 whitespace-nowrap text-[0.95rem] font-bold tabular-nums">
+                <Icon className="size-3.5 shrink-0" aria-hidden /> {v}
               </span>
               <span className="text-caption text-muted-foreground">{l}</span>
             </dd>

@@ -34,9 +34,14 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
             {members.length} {members.length === 1 ? "person" : "people"} · {lessonIds.size} lectures shared
           </p>
         </div>
-        <div className="rounded-2xl border-2 border-foreground bg-card p-4">
-          <CohortSettings cohort={cohort} />
-        </div>
+        <details className="group rounded-2xl border-2 border-foreground bg-card">
+          <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+            Edit name, status and dates <span className="text-muted-foreground group-open:hidden">▾</span>
+          </summary>
+          <div className="border-t-2 border-foreground/10 p-4">
+            <CohortSettings cohort={cohort} />
+          </div>
+        </details>
       </header>
 
       <nav className="flex gap-2" aria-label="Cohort sections">
