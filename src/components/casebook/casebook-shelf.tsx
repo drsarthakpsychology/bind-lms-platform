@@ -4,10 +4,10 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Check, RotateCcw } from "lucide-react";
 import type { LearnState } from "@/lib/learn/engine";
 import { CASEBOOK, caseKey } from "@/content/casebook";
-import { FORMAT_LABEL, type CaseActivity } from "@/lib/casebook/types";
+import { FORMAT_LABEL, LEVEL_ORDER, type CaseActivity } from "@/lib/casebook/types";
 import { cn } from "@/lib/utils";
 
-export function CaseCard({ c, st, today }: { c: CaseActivity; st: LearnState; today: string }) {
+export function CaseCard({ c, st, today, startHere = false }: { c: CaseActivity; st: LearnState; today: string; startHere?: boolean }) {
   const r = st.lab[caseKey(c.id)];
   const due = !!r && r.check !== null && r.recheck.due <= today;
   return (
@@ -17,6 +17,9 @@ export function CaseCard({ c, st, today }: { c: CaseActivity; st: LearnState; to
     >
       <span className="flex items-start gap-2">
         <span className="min-w-0 flex-1">
+          {startHere && (
+            <span className="mb-1 block w-fit rounded-full bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">Start here</span>
+          )}
           <span className="block font-mono text-xs font-bold text-link">
             {FORMAT_LABEL[c.format]} · {c.level}
           </span>
@@ -52,7 +55,8 @@ export function CasebookShelf({ st, today, show = 4 }: { st: LearnState; today: 
     const r = st.lab[caseKey(c.id)];
     return !!r && r.check !== null && r.recheck.due <= today;
   });
-  const fresh = CASEBOOK.filter((c) => !st.lab[caseKey(c.id)]);
+  const fresh = CASEBOOK.filter((c) => !st.lab[caseKey(c.id)]).sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level] || a.title.localeCompare(b.title));
+  const startHereId = fresh.find((c) => c.level === "Foundation")?.id;
   const picks = [...due, ...fresh].slice(0, show);
   const list = picks.length ? picks : CASEBOOK.slice(0, show);
   return (
@@ -62,13 +66,13 @@ export function CasebookShelf({ st, today, show = 4 }: { st: LearnState; today: 
           <h2 id="casebook" className="flex items-center gap-2 text-lg font-bold">
             <BookOpen className="size-5" aria-hidden /> Casebook
           </h2>
-          <p className="text-sm text-muted-foreground">Clinical games built from the course textbooks. Every case is fictional.</p>
+          <p className="text-sm text-muted-foreground">Short clinical games. Every case is fictional.</p>
         </div>
       </div>
       <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
         {list.map((c) => (
           <li key={c.id}>
-            <CaseCard c={c} st={st} today={today} />
+            <CaseCard c={c} st={st} today={today} startHere={c.id === startHereId} />
           </li>
         ))}
       </ul>

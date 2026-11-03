@@ -43,8 +43,8 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
             {courses.map((c) => (
-              <Link key={c.id} href={`/admin/courses/${c.id}`} className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-brand px-3.5 font-bold text-brand-foreground">
-                Course: {c.title} →
+              <Link key={c.id} href={`/admin/courses/${c.id}?cohort=${id}`} className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-brand px-3.5 font-bold text-brand-foreground">
+                {cohort.status === "ended" ? `Course: ${c.title} →` : `Upload for ${cohort.name} in ${c.title} →`}
               </Link>
             ))}
             <Link href={`/admin/access?cohort=${id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground bg-card px-3.5 font-bold">

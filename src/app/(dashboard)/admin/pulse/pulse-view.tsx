@@ -28,20 +28,24 @@ export function PulseView({
   /** activity dropping + load spiking = curriculum problem, not motivation. */
   curriculumFlag?: boolean;
 }) {
-  const [nudged, setNudged] = React.useState<Record<string, boolean>>({});
+  const [nudged, setNudged] = React.useState<Record<string, "sending" | "sent" | "not-set-up" | "failed">>({});
 
   async function nudge(email: string) {
     haptic("tap");
-    // Pre-drafted, personal, sent via Resend when configured (/api/admin/nudge
-    // honestly reports email-not-configured when no key exists — it never
-    // claims a message went out).
-    setNudged((n) => ({ ...n, [email]: true }));
-    await fetch("/api/admin/nudge", {
+    // Personal, sent via the shared Resend path (/api/admin/nudge honestly
+    // reports email-not-configured when no key exists — the button then says
+    // so instead of claiming a message went out).
+    setNudged((n) => ({ ...n, [email]: "sending" }));
+    const res = await fetch("/api/admin/nudge", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
-    }).catch(() => {});
+    }).catch(() => null);
+    const j = res?.ok ? ((await res.json().catch(() => null)) as { status?: string } | null) : null;
+    const state = j?.status === "sent" ? "sent" : j?.status === "email-not-configured" ? "not-set-up" : "failed";
+    setNudged((n) => ({ ...n, [email]: state }));
   }
+  const NUDGE_LABEL = { sending: "Sending…", sent: "Sent", "not-set-up": "Email not set up", failed: "Failed. Try again" } as const;
 
   return (
     <div className="space-y-6">
@@ -128,10 +132,10 @@ export function PulseView({
                 <button
                   type="button"
                   onClick={() => void nudge(d.email)}
-                  disabled={nudged[d.email]}
+                  disabled={nudged[d.email] === "sending" || nudged[d.email] === "sent"}
                   className="flex min-h-[44px] shrink-0 items-center rounded-md border-2 border-border bg-primary px-3 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
                 >
-                  {nudged[d.email] ? "Nudge drafted" : "Send nudge"}
+                  {nudged[d.email] ? NUDGE_LABEL[nudged[d.email]] : "Send nudge"}
                 </button>
               </li>
             ))}

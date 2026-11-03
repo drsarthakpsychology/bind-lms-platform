@@ -11,6 +11,15 @@ book are grouped into a single "Which diagnosis?" game so a round has
 several cases. Anything that cannot be mapped is listed on stderr and left
 out. Run `npx vitest run src/lib/casebook` afterwards: the validator checks
 every converted activity.
+
+A file that is already in Casebook shape (an array of activities whose
+`format` is one of CASE_FORMATS) is passed through as is: only sanitised and
+key-checked.
+
+Every student-visible string is sanitised (see `sanitise`): book names, page
+references and "the book says" phrasing are stripped, because students should
+see the teaching, not the sourcing. `bookRef`, `reviewFlags` and item `ref`
+keep the sourcing for admins.
 """
 import json
 import re
@@ -78,6 +87,145 @@ def urgency(v):
         if k in v:
             return u
     return None
+
+
+# ---------------------------------------------------------------- sanitising
+
+# Keys whose values are metadata or ids, never shown to students as prose.
+# Everything else that is a string is student-visible and gets sanitised.
+META_KEYS = {"id", "module", "level", "format", "bookRef", "reviewFlags", "ref", "answer", "category", "distractors", "start", "next"}
+
+_SRC = r"(?:Kaplan(?:\s*(?:&|and)\s*Sadock)?|Sadock|Maudsley|Stahl|Fish|Ahuja|(?:[Tt]he\s+)?book)(?:'s)?"
+_PAGES = r"(?:Table\s+[\d.\-]+,?\s*)?\bpp?\.\s?\d[\d\-\u2013]*(?:,\s*\d[\d\-\u2013]*)*"
+# A citation fragment: "Maudsley p. 337", "book p.1457", "Maudsley section at p. 227", "Table 1.19, p. 132", "p. 250-251".
+_CITE = re.compile(rf"(?:{_SRC}\s+(?:section\s+at\s+)?)?{_PAGES}|\bTable\s+[\d.\-]+\b|^\s*{_SRC}\s*$", re.I)
+
+# Sentence-level rewrites, applied in order. Each keeps the idea, drops the source.
+PHRASES = [
+    (r"\bFish calls this\b", "this is called"),
+    (r"\bFish calls it\b", "also called"),
+    (r"\bFish calls compulsions\b", "Compulsions are also called"),
+    (r"\bthe original Fish definition\b", "the original definition"),
+    (r"\bNote that Fish does not use the word ('[^']+'); the modern term comes from\b", r"The term \1 comes from"),
+    (r"\bMaudsley notes NICE guidance that\b", "NICE guidance says"),
+    (r"\bMaudsley notes the postulated link with suicidal ideation\b", "A link with suicidal ideation has been suggested"),
+    (r"\bMaudsley notes a small increased risk\b", "There is a small increased risk"),
+    (r",? and stresses that untreated\b", ", but untreated"),
+    (r"\bMaudsley lists ('[^']+') and\b", r"Talk through \1 and"),
+    (r"\bamong the topics a pregnant woman should discuss, alongside drug risks\b", "as well as drug risks"),
+    (r"\bIt also advises considering a specialist perinatal referral\b", "Consider a specialist perinatal referral"),
+    (r"\bMaudsley gives a weighted average incidence of (\S+) across studies\b", r"Across studies, about \1 of people get them"),
+    (r"\bMaudsley gives incidence estimates of\b", "estimated incidence"),
+    (r"\bMaudsley reports agranulocytosis in\b", "Agranulocytosis affects about"),
+    (r"\bMaudsley advises\b", "Guidance advises"),
+    (r";\s*Maudsley cites\s+", ", "),
+    (r"\bMaudsley cites\s+", ""),
+    (r"\bMaudsley discusses clozapine for\b", "clozapine is an option for"),
+    (r"\bMaudsley's severity table\b", "the usual severity scale"),
+    (r"\bStahl estimates about\b", "The risk is about"),
+    (r"\bStahl notes rare but life-threatening diabetic emergencies\b", "Rare but life-threatening diabetic emergencies can occur"),
+    (r"\bThe book prefers the term\b", "A better term is"),
+    (r"\bThe book's sequence is\b", "The usual sequence is"),
+    (r"\bthe book warns is\b", "that is"),
+    (r"\s+the book describes\b", ""),
+    (r"\bin an older textbook\b", "in older teaching notes"),
+    (r"\b(?:[Aa]s )?both books (?:say|agree)\b,?\s*", "\x00"),
+    (r"\b(?:Kaplan|Sadock|Maudsley|Stahl|Fish|Ahuja)'s\s+", "the "),
+    (r"\b(?:[Aa]ccording to|[Pp]er) (?:Kaplan|Sadock|Maudsley|Stahl|Fish|Ahuja)\b,?\s*", "\x00"),
+    # "The book notes that X", "Fish warns that X", "and Maudsley notes X": keep X.
+    # (\x00 marks the cut so the next word can be re-capitalised at a sentence start.)
+    (rf"\b{_SRC}\s+(?:notes|warns|stresses|says|explains|points out|reminds us|adds|recommends|advises|suggests)(?:\s+that)?\s+", "\x00"),
+]
+_PHRASES = [(re.compile(a), b) for a, b in PHRASES]
+
+
+def _clean_paren(m):
+    inner = m.group(1)
+    if not _CITE.search(inner):
+        return m.group(0)
+    parts = []
+    for seg in inner.split(";"):
+        seg = _CITE.sub("", seg)
+        seg = re.sub(r"\s*,\s*(,|$)", r"\1", seg).strip(" ,;")
+        if seg:
+            parts.append(seg)
+    return f" ({'; '.join(parts)})" if parts else ""
+
+
+def sanitise(s):
+    """Strip book names and page references from one student-visible string."""
+    if not isinstance(s, str) or not s:
+        return s
+    t = s
+    for rx, rep in _PHRASES:
+        t = rx.sub(rep, t)
+    t = re.sub(r"\s*\(([^()]*)\)", _clean_paren, t)
+    # Bare citations left outside brackets ("..., p. 337").
+    t = re.sub(rf",?\s*(?:{_SRC}\s+)?{_PAGES}", "", t)
+    # Re-capitalise a sentence whose opening words were removed.
+    t = re.sub(r"(^|[.!?]\s+)\x00([a-z])", lambda m: m.group(1) + m.group(2).upper(), t).replace("\x00", "")
+    if t == s:
+        return s
+    # Tidy only what a cut can leave behind: double spaces, " ." / " ,", ",," and ";.".
+    t = re.sub(r"[ \t]{2,}", " ", t)
+    t = re.sub(r"[ \t]+([,;)]|\.(?!\.))", r"\1", t)
+    t = re.sub(r"\(\s+", "(", t)
+    t = re.sub(r"([,;])\1+", r"\1", t)
+    t = re.sub(r"[,;]\s*\.(?!\.)", ".", t)
+    return t.strip()
+
+
+def sanitise_activity(o, key=None):
+    if key in META_KEYS:
+        return o
+    if isinstance(o, dict):
+        return {k: sanitise_activity(v, k) for k, v in o.items()}
+    if isinstance(o, list):
+        return [sanitise_activity(v) for v in o]
+    if isinstance(o, str):
+        return sanitise(o)
+    return o
+
+
+# ------------------------------------------------- already in Casebook shape
+
+CASE_FORMATS = {"spotter", "differential", "triage", "sort", "matching", "skill", "branching", "timeline"}
+BASE_KEYS = {"id", "title", "hook", "module", "level", "objective", "bookRef", "reviewFlags", "format"}
+FORMAT_KEYS = {
+    "spotter": {"categories", "items"},
+    "differential": {"items"},
+    "triage": {"items"},
+    "sort": {"categories", "items"},
+    "matching": {"pairs"},
+    "skill": {"items"},
+    "branching": {"start", "nodes"},
+    "timeline": {"events"},
+}
+
+
+def is_casebook_shape(acts):
+    return isinstance(acts, list) and bool(acts) and all(isinstance(a, dict) and a.get("format") in CASE_FORMATS for a in acts)
+
+
+def passthrough(acts):
+    """Keep activities that are already CaseActivity objects; key-check each."""
+    out, skipped = [], []
+    for a in acts:
+        need = BASE_KEYS | FORMAT_KEYS[a["format"]]
+        missing = sorted(need - a.keys())
+        extra = sorted(a.keys() - need - {"debrief"})
+        if missing:
+            skipped.append(f"{a.get('id')} ({a['format']}): missing keys {missing}")
+            continue
+        if extra:
+            print(f"warning: {a['id']}: dropping unknown keys {extra}", file=sys.stderr)
+        b = {k: a[k] for k in a if k not in extra}
+        b["level"] = LEVEL.get(b["level"], b["level"])
+        ref = b.get("bookRef") or {}
+        b["bookRef"] = {"book": str(ref.get("book", "")), "chapter": str(ref.get("chapter", "")), "pages": str(ref.get("pages", ""))}
+        b["reviewFlags"] = [str(x) for x in b.get("reviewFlags", [])]
+        out.append(b)
+    return out, skipped
 
 
 def convert(acts, prefix):
@@ -355,14 +503,15 @@ def main():
     src, name, dst = sys.argv[1], sys.argv[2], sys.argv[3]
     prefix = sys.argv[sys.argv.index("--prefix") + 1] if "--prefix" in sys.argv else ""
     acts = json.load(open(src))
-    out, skipped = convert(acts, prefix)
+    out, skipped = passthrough(acts) if is_casebook_shape(acts) else convert(acts, prefix)
+    out = [sanitise_activity(a) for a in out]
     for s in skipped:
         print("skipped:", s, file=sys.stderr)
     body = json.dumps(out, indent=2, ensure_ascii=False)
     with open(dst, "w") as f:
         f.write(
             "// Generated by scripts/casebook/convert-activities.py from\n"
-            f"// {src}. Original wording; see each bookRef. Edit the source JSON and re-run.\n"
+            f"// {src}. Original wording; sourcing lives in bookRef/ref (admins only).\n// Student-visible strings are sanitised of book and page references. Edit the source JSON and re-run.\n"
             'import type { CaseActivity } from "@/lib/casebook/types";\n\n'
             f"export const {name}: CaseActivity[] = {body};\n"
         )

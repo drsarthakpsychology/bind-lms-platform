@@ -6,6 +6,7 @@ import { ArrowLeft, BookOpen, RotateCcw } from "lucide-react";
 import { emptyState, istToday, recordLabCheck, recordLabRun, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { FORMAT_LABEL, type CaseActivity } from "@/lib/casebook/types";
+import { nextTier, TIER_LABEL, type Tier } from "@/lib/casebook/rounds";
 import { caseKey } from "@/content/casebook";
 import { Bars, LabButton, Panel } from "@/components/lab/lab-ui";
 import { CasePlayer } from "./case-player";
@@ -19,15 +20,16 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
   const rec = st.lab[caseKey(a.id)];
+  const tier = nextTier(rec ? (rec.result as { right: number; total: number; tier?: number }) : null);
   const [round, setRound] = React.useState(0);
-  const [score, setScore] = React.useState<{ right: number; total: number } | null>(null);
+  const [score, setScore] = React.useState<{ right: number; total: number; next: Tier } | null>(null);
 
   function done(right: number, total: number) {
     const cur = getLearnState() ?? st;
     const key = caseKey(a.id);
-    const ran = recordLabRun(cur, key, { right, total }, istToday());
+    const ran = recordLabRun(cur, key, { right, total, tier }, istToday());
     setLearnState(recordLabCheck(ran, key, right, total, istToday()));
-    setScore({ right, total });
+    setScore({ right, total, next: nextTier({ right, total, tier }) });
   }
 
   return (
@@ -48,13 +50,17 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
         )}
       </header>
 
-      {isAdmin && a.reviewFlags.length > 0 && (
+      {/* Sourcing and review notes are for admins only; students see the teaching. */}
+      {isAdmin && (
         <aside className="rounded-2xl border-2 border-dashed border-foreground p-4 text-sm">
-          <p className="font-bold">For educator review (admins only)</p>
+          <p className="font-bold">Admins only</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             {a.reviewFlags.map((r) => (
               <li key={r}>{r}</li>
             ))}
+            <li>
+              Built from: {a.bookRef.book}, {a.bookRef.chapter}, pp. {a.bookRef.pages}. Cases are fictional; wording is original.
+            </li>
           </ul>
         </aside>
       )}
@@ -66,7 +72,8 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
           </h2>
           <Bars ariaLabel="Your score" items={[{ label: "Right", value: score.right, highlight: true }, { label: "Total", value: score.total }]} />
           {a.debrief && <p className="rounded-xl border-2 border-foreground bg-background p-3">{a.debrief}</p>}
-          <p>{score.right * 3 >= score.total * 2 ? "Solid. This comes back in a few days to keep it fresh." : "Worth another go. It comes back sooner so you can try again."}</p>
+          <p>{score.right * 3 >= score.total * 2 ? "Solid. It comes back in a few days." : "Worth another go. It comes back sooner."}</p>
+          <p className="text-sm font-semibold">Next round: {TIER_LABEL[score.next]}</p>
           <div className="flex flex-wrap gap-2">
             <LabButton
               tone="plain"
@@ -83,12 +90,10 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
           </div>
         </Panel>
       ) : (
-        <CasePlayer key={round} activity={a} onDone={done} />
+        <CasePlayer key={round} activity={a} tier={tier} onDone={done} />
       )}
 
-      <p className="text-xs text-muted-foreground">
-        Built from: {a.bookRef.book}, {a.bookRef.chapter}, pp. {a.bookRef.pages}. Cases are fictional; wording is original.
-      </p>
+      <p className="text-xs text-muted-foreground">Cases are fictional.</p>
     </div>
   );
 }

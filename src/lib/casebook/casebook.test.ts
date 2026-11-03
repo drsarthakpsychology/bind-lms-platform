@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CASEBOOK } from "@/content/casebook";
 import { MODULES } from "@/lib/study";
-import { orderScore, validateActivity } from "./validate";
+import { orderScore, STUDENT_SOURCING, studentStrings, validateActivity } from "./validate";
 import type { CaseActivity } from "./types";
 
 const MODS = new Set(MODULES.map((m) => m.id));
@@ -23,6 +23,20 @@ describe("casebook content", () => {
   });
 });
 
+describe("casebook: students see the teaching, not the sourcing", () => {
+  it("no student-visible string names a book, a page or the review", () => {
+    const hits = CASEBOOK.flatMap((a) => studentStrings(a).filter((t) => STUDENT_SOURCING.test(t)).map((t) => `${a.id}: ${t}`));
+    expect(hits).toEqual([]);
+  });
+  it("the sourcing is still kept for admins", () => {
+    for (const a of CASEBOOK) expect(a.bookRef.book, a.id).toBeTruthy();
+  });
+  it("the check would catch a citation", () => {
+    for (const t of ["(Maudsley p. 337)", "(p.891)", "book p.1457", "The book warns that", "Fish's definition", "per Ahuja", "For educator review"]) expect(STUDENT_SOURCING.test(t), t).toBe(true);
+    expect(STUDENT_SOURCING.test("Ask her to book a holiday.")).toBe(false);
+  });
+});
+
 describe("validator", () => {
   const base = { id: "demo", title: "T", hook: "H", module: "depression", level: "Foundation" as const, objective: "O", bookRef: { book: "B", chapter: "C", pages: "1" }, reviewFlags: [] };
   it("catches a bad answer, unknown module and broken branches", () => {
@@ -40,6 +54,11 @@ describe("validator", () => {
   it("accepts a valid spotter", () => {
     const ok: CaseActivity = { ...base, format: "spotter", categories: [{ id: "a", label: "A" }, { id: "b", label: "B" }], items: ["1", "2", "3", "4"].map((id) => ({ id, quote: "q", answer: "a", distractors: ["b"], explain: "e" })) };
     expect(validateActivity(ok, MODS)).toEqual([]);
+  });
+  it("rejects a difficulty outside 1–3", () => {
+    const ok = { ...base, format: "spotter" as const, categories: [{ id: "a", label: "A" }, { id: "b", label: "B" }], items: ["1", "2", "3", "4"].map((id) => ({ id, quote: "q", answer: "a", distractors: ["b"], explain: "e", difficulty: 2 as const })) };
+    const bad = { ...ok, items: ok.items.map((i, k) => (k === 0 ? { ...i, difficulty: 5 } : i)) } as unknown as CaseActivity;
+    expect(validateActivity(bad, MODS).join("\n")).toMatch(/difficulty must be 1, 2 or 3/);
   });
   it("orderScore counts neighbours in order", () => {
     expect(orderScore(["a", "b", "c", "d"], ["a", "b", "c", "d"])).toBe(3);

@@ -5433,3 +5433,4 @@ Gate: lint 0, tsc clean, 534 tests, build exit 0.
   Logged in NEEDS_KAVYA. This blocks a real roster send.
 - Decision: do NOT import/send the roster until the redirect URL is fixed —
   otherwise the invite link would redirect to localhost and fail.
+2026-11-03T11:03:18 Continue ceiling reached (50) — allowing stop for safety.

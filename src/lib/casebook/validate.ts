@@ -15,6 +15,9 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
   const uniq = (ids: string[], what: string) => {
     if (new Set(ids).size !== ids.length) at(`duplicate ${what} ids`);
   };
+  const checkDiff = (items: { id: string; difficulty?: number }[]) => {
+    for (const i of items) if (i.difficulty !== undefined && i.difficulty !== 1 && i.difficulty !== 2 && i.difficulty !== 3) at(`${i.id}: difficulty must be 1, 2 or 3`);
+  };
 
   switch (a.format) {
     case "spotter": {
@@ -22,6 +25,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       uniq(a.categories.map((c) => c.id), "category");
       uniq(a.items.map((i) => i.id), "item");
       if (a.items.length < 4) at("needs at least 4 items");
+      checkDiff(a.items);
       for (const i of a.items) {
         if (!cats.has(i.answer)) at(`${i.id}: answer "${i.answer}" is not a category`);
         if (i.distractors.length < 1) at(`${i.id}: needs at least one distractor`);
@@ -35,6 +39,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
     }
     case "differential":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) {
         if (i.options.length < 2) at(`${i.id}: needs 2+ options`);
         if (!Number.isInteger(i.answer) || i.answer < 0 || i.answer >= i.options.length) at(`${i.id}: answer out of range`);
@@ -43,12 +48,14 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       break;
     case "triage":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) if (!["routine", "soon", "urgent"].includes(i.answer)) at(`${i.id}: bad urgency`);
       break;
     case "sort": {
       const cats = new Set(a.categories.map((c) => c.id));
       uniq(a.items.map((i) => i.id), "item");
       if (cats.size < 2) at("needs 2+ categories");
+      checkDiff(a.items);
       for (const i of a.items) if (!cats.has(i.category)) at(`${i.id}: unknown category "${i.category}"`);
       break;
     }
@@ -59,6 +66,7 @@ export function validateActivity(a: CaseActivity, moduleIds: Set<string>): strin
       break;
     case "skill":
       uniq(a.items.map((i) => i.id), "item");
+      checkDiff(a.items);
       for (const i of a.items) if (i.responses.filter((r) => r.grade === "best").length !== 1) at(`${i.id}: needs exactly one best response`);
       break;
     case "branching": {
@@ -95,4 +103,57 @@ export function orderScore(correct: readonly string[], given: readonly string[])
   let right = 0;
   for (let i = 1; i < given.length; i++) if ((pos.get(given[i - 1]) ?? -1) < (pos.get(given[i]) ?? -1)) right++;
   return right;
+}
+
+/**
+ * Students see the teaching, never the sourcing: no book names, page
+ * references, "the book says" phrasing or review notes. Sourcing lives in
+ * `bookRef`, `reviewFlags` and item `ref`, which only admins see.
+ */
+export const STUDENT_SOURCING = /Kaplan|Sadock|Fish's|Ahuja|Maudsley|Stahl|\bpp?\.\s?\d|the book|educator review/i;
+
+/**
+ * Every string a student can see for one activity. Student-visible fields:
+ * all formats: title, hook, objective, debrief;
+ * spotter: categories[].label, items[].quote, items[].explain;
+ * differential: items[].vignette, .question, .options[], .explain;
+ * triage: items[].vignette, .explain;
+ * sort: categories[].label, items[].text, .explain;
+ * matching: pairs[].left, .right;
+ * skill: items[].prompt, responses[].text, .why;
+ * branching: nodes[].text, choices[].text, .feedback;
+ * timeline: events[].when, .text.
+ * Not student-visible (admin or internal): id, module, level, format,
+ * bookRef, reviewFlags, items[].ref, answer/category ids, distractors,
+ * start, next.
+ */
+export function studentStrings(a: CaseActivity): string[] {
+  const out: (string | undefined)[] = [a.title, a.hook, a.objective, a.debrief];
+  switch (a.format) {
+    case "spotter":
+      out.push(...a.categories.map((c) => c.label), ...a.items.flatMap((i) => [i.quote, i.explain]));
+      break;
+    case "differential":
+      out.push(...a.items.flatMap((i) => [i.vignette, i.question, ...i.options, i.explain]));
+      break;
+    case "triage":
+      out.push(...a.items.flatMap((i) => [i.vignette, i.explain]));
+      break;
+    case "sort":
+      out.push(...a.categories.map((c) => c.label), ...a.items.flatMap((i) => [i.text, i.explain]));
+      break;
+    case "matching":
+      out.push(...a.pairs.flatMap((x) => [x.left, x.right]));
+      break;
+    case "skill":
+      out.push(...a.items.flatMap((i) => [i.prompt, ...i.responses.flatMap((r) => [r.text, r.why])]));
+      break;
+    case "branching":
+      out.push(...a.nodes.flatMap((n) => [n.text, ...n.choices.flatMap((c) => [c.text, c.feedback])]));
+      break;
+    case "timeline":
+      out.push(...a.events.flatMap((e) => [e.when, e.text]));
+      break;
+  }
+  return out.filter((x): x is string => typeof x === "string" && x.length > 0);
 }

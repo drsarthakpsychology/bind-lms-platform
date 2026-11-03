@@ -13,6 +13,8 @@ export type OverviewLesson = {
   href: string | null;
   state: LessonState;
   hasVideo: boolean;
+  /** For a student in 2+ cohorts: which of their own cohorts this lecture is for. */
+  cohorts?: { id: string; name: string }[];
 };
 
 export type OverviewWeek = {
@@ -45,6 +47,8 @@ export type OverviewModel = {
   next: { title: string; href: string; week: number; kind: "lesson" | "assignment"; number: number | null } | null;
   weeks: OverviewWeek[];
   empty: boolean;
+  /** The student's own cohorts (never anyone else's). */
+  myCohorts?: { id: string; name: string }[];
 };
 
 export const STATE_LABEL: Record<LessonState, string> = {
@@ -272,6 +276,15 @@ export function LectureCard({ lesson, tile = false }: { lesson: OverviewLesson; 
           {STATE_LABEL[lesson.state]}
           {!lesson.hasVideo && lesson.href ? " · Reading" : ""}
         </span>
+        {lesson.cohorts?.length ? (
+          <span className="mt-1.5 flex flex-wrap gap-1">
+            {lesson.cohorts.map((c) => (
+              <span key={c.id} className="inline-flex max-w-full items-center truncate rounded-full border-2 border-foreground/30 bg-card px-2 text-[0.7rem] leading-5 font-bold">
+                {c.name}
+              </span>
+            ))}
+          </span>
+        ) : null}
       </span>
     </>
   );

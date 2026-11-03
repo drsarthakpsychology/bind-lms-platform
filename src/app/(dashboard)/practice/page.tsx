@@ -3,7 +3,6 @@ import { readFlags } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
 import { lastPracticePlace } from "@/lib/practice/resume";
-import { StandingCard } from "@/components/standing/standing-card";
 import { ArrowRight, Pill, RotateCcw } from "lucide-react";
 import { MEDS } from "@/lib/meds";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
@@ -69,27 +68,25 @@ export default async function PracticeHubPage() {
         </header>
       </Reveal>
 
-      {/* One button back to where they were, and their level. */}
-      <Reveal delay={0.1}>
-        <div className="mb-6 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          {resume ? (
-            <Link
-              href={resume.href}
-              className="btn-sweep flex items-center gap-4 self-start rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5"
-            >
-              <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground">
-                <RotateCcw className="size-6" aria-hidden />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Resume where you left off</span>
-                <span className="block text-xl font-bold leading-tight">{resume.title}</span>
-              </span>
-              <ArrowRight className="size-6 shrink-0" aria-hidden />
-            </Link>
-          ) : null}
-          {user ? <StandingCard userId={user.id} /> : null}
-        </div>
-      </Reveal>
+      {/* One button back to where they were. (Your level lives on Home and
+          the overall leaderboard: practice tools don't earn level points.) */}
+      {resume ? (
+        <Reveal delay={0.1}>
+          <Link
+            href={resume.href}
+            className="btn-sweep mb-6 flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5 md:w-1/2"
+          >
+            <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground">
+              <RotateCcw className="size-6" aria-hidden />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Resume where you left off</span>
+              <span className="block text-xl font-bold leading-tight">{resume.title}</span>
+            </span>
+            <ArrowRight className="size-6 shrink-0" aria-hidden />
+          </Link>
+        </Reveal>
+      ) : null}
 
       {/* Medicines: its own section, always open */}
       <Reveal delay={0.12}>

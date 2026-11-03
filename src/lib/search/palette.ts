@@ -5,6 +5,8 @@
  * what it covers, and works fully offline.
  */
 
+import { BOARDS } from "@/lib/standing/boards";
+
 export interface PaletteEntry {
   id: string;
   label: string;
@@ -34,6 +36,8 @@ const TOOLS: PaletteEntry[] = [
   { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },
   { id: "reflect", label: "Journal", href: "/reflect", group: "Nav", keywords: ["reflection", "diary"] },
   { id: "wall", label: "Cohort Wall", href: "/wall", group: "Nav", keywords: ["discussion", "posts"] },
+  { id: "board-quiz", label: BOARDS.quiz.label, hint: `${BOARDS.quiz.explainer} This week.`, href: BOARDS.quiz.href, group: "Nav", keywords: ["leaderboard", "ranking", "rank", "quiz", "games", "xp", "weekly"] },
+  { id: "board-overall", label: BOARDS.overall.label, hint: `${BOARDS.overall.explainer} All time.`, href: BOARDS.overall.href, group: "Nav", keywords: ["leaderboard", "rankings", "rank", "level", "points", "overall"] },
 ];
 
 const COURSES: PaletteEntry[] = [
@@ -47,7 +51,7 @@ const ADMIN: PaletteEntry[] = [
   { id: "ad-emails", label: "Mail", href: "/admin/emails", group: "Admin", keywords: ["email", "inbox", "sent", "replies", "campaign", "send"] },
   { id: "ad-compose", label: "Compose email", href: "/admin/emails?folder=compose", group: "Admin", keywords: ["new email", "write", "send"] },
   { id: "ad-logins", label: "Logins (setup links)", href: "/admin/emails?folder=logins", group: "Admin", keywords: ["password", "credentials", "setup", "invite", "login"] },
-  { id: "ad-activity", label: "Student activity", href: "/admin/activity", group: "Admin", keywords: ["hours", "time", "watched", "leaderboard", "ranking", "analytics", "tracker"] },
+  { id: "ad-activity", label: "Student activity", href: "/admin/activity", group: "Admin", keywords: ["hours", "time", "watched", "engagement", "ranking", "analytics", "tracker"] },
   { id: "ad-people", label: "People pipeline", href: "/admin/people", group: "Admin", keywords: ["crm", "leads", "follow up", "enquiry", "contacted", "pipeline"] },
   { id: "ad-flags", label: "What's live", href: "/admin/flags", group: "Admin", keywords: ["flags", "features", "tools"] },
   { id: "ad-sim", label: "Sim session review", href: "/admin/sim-review", group: "Admin" },

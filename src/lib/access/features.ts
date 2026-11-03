@@ -12,7 +12,7 @@ const SECTIONS: Feature[] = [
   { key: "games", label: "Games", paths: ["/games"], group: "Sections" },
   { key: "practice", label: "Practice (every tool)", paths: ["/practice"], except: ["/practice/medicines", "/practice/leaderboard"], group: "Sections" },
   { key: "medicines", label: "Medicines", paths: ["/practice/medicines", "/tools/psychopharm"], group: "Sections" },
-  { key: "rankings", label: "Rankings", paths: ["/practice/leaderboard"], group: "Sections" },
+  { key: "rankings", label: "Overall leaderboard", paths: ["/leaderboard", "/practice/leaderboard"], group: "Sections" },
   { key: "doubts", label: "Doubts", paths: ["/doubts"], group: "Sections" },
   { key: "journey", label: "My journey", paths: ["/journey"], group: "Sections" },
   { key: "wall", label: "Wall", paths: ["/wall"], group: "Sections" },

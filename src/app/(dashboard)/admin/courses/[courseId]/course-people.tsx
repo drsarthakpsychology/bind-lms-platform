@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, Plus, Search, UserMinus, UserPlus, Users, X } from "lucide-react";
-import { addToCourse, moveCohort, newCohortForCourse, removeFromCourse, type CoursePeople } from "./people-actions";
+import { addToCourse, changeCohortMembership, newCohortForCourse, removeFromCourse, type CoursePeople, type CoursePerson } from "./people-actions";
 import { cn } from "@/lib/utils";
 
 /**
@@ -173,20 +173,15 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
                 {tab === "in" ? (
                   <>
                     {data.cohortsReady ? (
-                      <select
-                        aria-label={`Cohort for ${p.email}`}
-                        value={p.cohortIds[0] ?? ""}
-                        disabled={busy !== null}
-                        onChange={(e) => run(p.id, () => moveCohort(courseId, p.id, p.cohortIds, e.target.value || null), `Moved to ${nameOf.get(e.target.value) ?? "no cohort"}.`)}
-                        className="h-8 max-w-40 rounded-full border-2 border-foreground bg-card px-2 text-xs font-bold"
-                      >
-                        {data.cohorts.map((c) => (
-                          <option key={c.id} value={c.id}>
-                            {c.name}
-                          </option>
-                        ))}
-                        <option value="">No cohort</option>
-                      </select>
+                      <Memberships
+                        person={p}
+                        data={data}
+                        busy={busy}
+                        onChange={(cohortId, op) => {
+                          const name = nameOf.get(cohortId) ?? "the cohort";
+                          return run(`${p.id}:${cohortId}`, () => changeCohortMembership(courseId, p.id, cohortId, op), op === "add" ? `Added ${p.email} to ${name}.` : `Took ${p.email} out of ${name}.`);
+                        }}
+                      />
                     ) : null}
                     <button
                       type="button"
@@ -220,6 +215,97 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
         </p>
       </div>
     </section>
+  );
+}
+
+type Pending = { cohortId: string; op: "add" | "remove" };
+
+/**
+ * One student's cohorts in this course, as chips. Add them to one more
+ * cohort, or take them out of one; each change names the cohort and asks
+ * first. Their other cohorts are never touched.
+ */
+function Memberships({
+  person,
+  data,
+  busy,
+  onChange,
+}: {
+  person: CoursePerson;
+  data: CoursePeople;
+  busy: string | null;
+  onChange: (cohortId: string, op: "add" | "remove") => Promise<void>;
+}) {
+  const [pending, setPending] = React.useState<Pending | null>(null);
+  const mine = data.cohorts.filter((c) => person.cohortIds.includes(c.id));
+  const canAdd = data.cohorts.filter((c) => c.status !== "ended" && !person.cohortIds.includes(c.id));
+  const who = person.name || person.email.split("@")[0];
+  const pendingName = pending ? (data.cohorts.find((c) => c.id === pending.cohortId)?.name ?? "the cohort") : "";
+  const working = pending ? busy === `${person.id}:${pending.cohortId}` : false;
+
+  return (
+    <>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {mine.length === 0 ? <span className="text-caption font-semibold text-muted-foreground">No cohort</span> : null}
+        {mine.map((c) => (
+          <span key={c.id} className="inline-flex h-8 items-center gap-1 rounded-full border-2 border-foreground bg-brand pr-1 pl-3 text-xs font-bold text-brand-foreground">
+            {c.name}
+            <button
+              type="button"
+              disabled={busy !== null}
+              onClick={() => setPending({ cohortId: c.id, op: "remove" })}
+              aria-label={`Take ${person.email} out of ${c.name}`}
+              className="grid size-6 place-items-center rounded-full hover:bg-background/25 disabled:opacity-50"
+            >
+              <X className="size-3.5" aria-hidden />
+            </button>
+          </span>
+        ))}
+        {canAdd.length ? (
+          <select
+            aria-label={`Add ${person.email} to a cohort`}
+            value=""
+            disabled={busy !== null}
+            onChange={(e) => e.target.value && setPending({ cohortId: e.target.value, op: "add" })}
+            className="h-8 max-w-40 rounded-full border-2 border-dashed border-foreground bg-card px-2 text-xs font-bold"
+          >
+            <option value="">+ Add to cohort</option>
+            {canAdd.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
+        ) : null}
+      </div>
+      {pending ? (
+        <div role="group" aria-label="Confirm cohort change" className="order-last flex basis-full flex-wrap items-center gap-2 rounded-xl border-2 border-foreground bg-muted px-3 py-2">
+          <p className="min-w-0 flex-1 basis-56 text-sm font-semibold">
+            {pending.op === "add"
+              ? `Add ${who} to ${pendingName}? Their other cohorts stay.`
+              : `Take ${who} out of ${pendingName}? They stop seeing ${pendingName}'s lectures. Their other cohorts stay.`}
+          </p>
+          <button
+            type="button"
+            disabled={busy !== null}
+            onClick={async () => {
+              await onChange(pending.cohortId, pending.op);
+              setPending(null);
+            }}
+            className={cn(
+              "inline-flex h-8 items-center gap-1 rounded-full border-2 px-3 text-xs font-bold disabled:opacity-60",
+              pending.op === "remove" ? "border-destructive bg-destructive text-white" : "border-foreground bg-foreground text-background",
+            )}
+          >
+            {working ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : null}
+            {pending.op === "add" ? `Yes, add to ${pendingName}` : `Yes, take out of ${pendingName}`}
+          </button>
+          <button type="button" disabled={working} onClick={() => setPending(null)} className="h-8 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold">
+            Cancel
+          </button>
+        </div>
+      ) : null}
+    </>
   );
 }
 

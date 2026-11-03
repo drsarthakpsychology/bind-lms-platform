@@ -16,6 +16,10 @@ import { CoursePeoplePanel } from "./course-people";
 import { loadCoursePeople } from "./people-actions";
 import { MaterialUploader } from "./material-uploader";
 import { RenameCourse } from "./rename-course";
+import { LessonCohortChips, LessonCohortEditor } from "./lesson-cohorts";
+import { loadCourseCohorts } from "@/lib/cohorts/admin-data";
+import { defaultRecordingChoice, filterByCohort, liveCohorts, type CourseCohortLite } from "@/lib/cohorts/rules";
+import { cn } from "@/lib/utils";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -53,13 +57,17 @@ type LessonRow = {
 
 export default async function CourseDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ courseId: string }>;
+  searchParams: Promise<{ cohort?: string | string[] }>;
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
   if (!(await requireAdmin())) redirect("/dashboard");
   const { courseId } = await params;
+  const sp = await searchParams;
+  const cohortParam = typeof sp.cohort === "string" ? sp.cohort : null;
   const supabase = await createClient();
 
   const [{ data: course }, { data: lessons }, { data: courseMaterials }, { data: assignments }] =
@@ -90,13 +98,19 @@ export default async function CourseDetailPage({
   const rows = (lessons ?? []) as LessonRow[];
   const nextOrderIndex = rows.length ? Math.max(...rows.map((l) => l.order_index)) + 1 : 1;
   const defaultWeek = rows.length ? Math.max(1, ...rows.map((l) => l.week ?? 1)) : 1;
-  const people = await loadCoursePeople(courseId);
+  const [people, courseCohorts] = await Promise.all([loadCoursePeople(courseId), loadCourseCohorts(courseId)]);
+  const cohorts = courseCohorts.ready ? courseCohorts.cohorts : [];
+  // ?cohort=<id> (or "none") filters the list and pre-picks the upload form.
+  const cohortFilter = cohortParam && (cohortParam === "none" || cohorts.some((c) => c.id === cohortParam)) ? cohortParam : null;
+  const shown = courseCohorts.ready ? filterByCohort(rows, courseCohorts.links, cohortFilter) : rows;
+  const unshared = courseCohorts.ready ? filterByCohort(rows, courseCohorts.links, "none").length : 0;
+  const filterName = cohortFilter === "none" ? "not shared" : cohorts.find((c) => c.id === cohortFilter)?.name;
 
   // Week-aware listing — mirror the student's Week N groups so the admin
   // reasons in the same units the cohort does. Lessons with a null week
   // (pre-week model) land in week 1, matching the student page.
   const weeks = new Map<number, LessonRow[]>();
-  for (const l of rows) {
+  for (const l of shown) {
     const w = l.week ?? 1;
     const list = weeks.get(w) ?? [];
     list.push(l);
@@ -144,7 +158,7 @@ export default async function CourseDetailPage({
           section, open-by-default for the primary create action and collapsed
           for the secondary sections, so mobile isn't one long scroll of
           competing forms. */}
-      <details open={rows.length === 0} className="group rounded-2xl border-2 border-foreground bg-primary/30 hard-shadow-sm open:bg-card">
+      <details open={rows.length === 0 || Boolean(cohortFilter && cohortFilter !== "none")} className="group rounded-2xl border-2 border-foreground bg-primary/30 hard-shadow-sm open:bg-card">
         <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-body-strong [&::-webkit-details-marker]:hidden">
           <ListPlus className="size-4 text-link" aria-hidden />
           Add a lesson
@@ -154,7 +168,13 @@ export default async function CourseDetailPage({
           />
         </summary>
         <div className="border-t-2 border-border px-4 py-4">
-          <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} defaultWeek={defaultWeek} />
+          <LessonForm
+            courseId={courseId}
+            nextOrderIndex={nextOrderIndex}
+            defaultWeek={defaultWeek}
+            cohorts={liveCohorts(cohorts).map((c) => ({ id: c.id, name: c.name }))}
+            initialCohort={defaultRecordingChoice(cohorts, cohortFilter)}
+          />
         </div>
       </details>
 
@@ -163,14 +183,22 @@ export default async function CourseDetailPage({
           <h2 id="lessons-heading" className="text-h2">
             Lessons
           </h2>
-          <Badge variant="secondary">{rows.length}</Badge>
+          <Badge variant="secondary">{cohortFilter ? `${shown.length} of ${rows.length}` : rows.length}</Badge>
         </div>
+
+        {cohorts.length ? <CohortFilter courseId={courseId} cohorts={cohorts} active={cohortFilter} unshared={unshared} /> : null}
 
         {rows.length === 0 ? (
           <EmptyState
             icon={<FileVideo2 className="size-6" aria-hidden />}
             title="No lessons yet"
             description="Add your first lesson above. It starts with a video."
+          />
+        ) : shown.length === 0 ? (
+          <EmptyState
+            icon={<FileVideo2 className="size-6" aria-hidden />}
+            title={cohortFilter === "none" ? "Every lesson is shared" : `No lessons for ${filterName ?? "this cohort"} yet`}
+            description={cohortFilter === "none" ? "Each lesson is shared with at least one cohort." : "Add one above, or use Change on a lesson to share it."}
           />
         ) : (
           orderedWeeks.map(([weekNum, weekLessons]) => (
@@ -189,6 +217,8 @@ export default async function CourseDetailPage({
                     lesson={lesson}
                     courseId={courseId}
                     assignment={assignmentByLesson.get(lesson.id)}
+                    cohorts={courseCohorts.ready ? cohorts : null}
+                    sharedWith={courseCohorts.links.get(lesson.id) ?? []}
                     isFirstInCourse={lesson.order_index === rows[0]?.order_index}
                     isLastInCourse={lesson.order_index === rows[rows.length - 1]?.order_index}
                   />
@@ -236,12 +266,17 @@ function LessonCard({
   lesson,
   courseId,
   assignment,
+  cohorts,
+  sharedWith,
   isFirstInCourse,
   isLastInCourse,
 }: {
   lesson: LessonRow;
   courseId: string;
   assignment: { id: string; is_published: boolean; instructions: string | null; prompt_text: string | null } | undefined;
+  /** This course's cohorts; null when the cohort tables aren't there. */
+  cohorts: CourseCohortLite[] | null;
+  sharedWith: string[];
   isFirstInCourse: boolean;
   isLastInCourse: boolean;
 }) {
@@ -279,6 +314,12 @@ function LessonCard({
           <span className="mr-2 font-pix text-sm text-link sm:hidden">{String(lesson.order_index).padStart(2, "0")}</span>
           {lesson.title}
         </p>
+        {cohorts && cohorts.length ? (
+          <div className="mt-2 flex flex-wrap items-center gap-2" aria-label="Who can watch it">
+            <LessonCohortChips sharedWith={sharedWith} cohorts={cohorts} />
+            <LessonCohortEditor lessonId={lesson.id} lessonTitle={lesson.title} sharedWith={sharedWith} cohorts={cohorts} />
+          </div>
+        ) : null}
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <Badge variant={badge.variant}>{badge.label}</Badge>
           <Badge variant={videoBadge.variant}>{videoBadge.label}</Badge>
@@ -305,5 +346,33 @@ function LessonCard({
         <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
       </div>
     </div>
+  );
+}
+
+/** All / one cohort / not shared — a link per choice, kept in ?cohort=. */
+function CohortFilter({ courseId, cohorts, active, unshared }: { courseId: string; cohorts: CourseCohortLite[]; active: string | null; unshared: number }) {
+  const base = `/admin/courses/${courseId}`;
+  const items: { key: string; label: string; href: string; on: boolean }[] = [
+    { key: "all", label: "All", href: base, on: !active },
+    ...cohorts.map((c) => ({ key: c.id, label: c.status === "ended" ? `${c.name} · ended` : c.name, href: `${base}?cohort=${c.id}`, on: active === c.id })),
+    ...(unshared || active === "none" ? [{ key: "none", label: `Not shared (${unshared})`, href: `${base}?cohort=none`, on: active === "none" }] : []),
+  ];
+  return (
+    <nav aria-label="Show lessons for" className="flex flex-wrap gap-2">
+      {items.map((i) => (
+        <Link
+          key={i.key}
+          href={i.href}
+          scroll={false}
+          aria-current={i.on ? "page" : undefined}
+          className={cn(
+            "inline-flex h-9 items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+            i.on ? "bg-foreground text-background" : "bg-card",
+          )}
+        >
+          {i.label}
+        </Link>
+      ))}
+    </nav>
   );
 }

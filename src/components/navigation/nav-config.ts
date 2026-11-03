@@ -14,7 +14,7 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
-  { href: "/practice/leaderboard", label: "Rankings", icon: "trophy", section: "More" },
+  { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
   { href: "/journey", label: "My journey", icon: "route", section: "More" },
   { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },

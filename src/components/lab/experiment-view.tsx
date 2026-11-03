@@ -101,15 +101,18 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
         </p>
       </header>
 
-      {isAdmin && exp.review.length > 0 && (
+      {/* Sourcing and review notes are for admins only; students see the teaching. */}
+      {isAdmin && (
         <aside className="rounded-2xl border-2 border-dashed border-foreground p-4 text-sm">
           <p className="flex items-center gap-2 font-bold">
-            <ShieldAlert className="size-4" aria-hidden /> For educator review (admins only)
+            <ShieldAlert className="size-4" aria-hidden /> Admins only
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             {exp.review.map((r) => (
               <li key={r}>{r}</li>
             ))}
+            <li>Evidence: {exp.evidence.note}</li>
+            <li>Original studies: {exp.refs.join("; ")}</li>
             <li>Textbook references: {exp.bookRefs.length ? exp.bookRefs.join("; ") : "not yet added."}</li>
           </ul>
         </aside>
@@ -229,7 +232,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
                 <Check className="size-7" aria-hidden />
               </span>
               <h2 className="text-h2">Experiment done</h2>
-              <p className="text-muted-foreground">The check questions come back in a few days, so this stays with you.</p>
+              <p className="text-muted-foreground">The questions come back in a few days.</p>
               <div className="flex flex-wrap justify-center gap-2">
                 <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 py-2 text-sm font-bold text-primary-foreground hard-shadow-sm">
                   <FlaskConical className="size-4" aria-hidden /> Back to the Lab
@@ -271,21 +274,10 @@ function WhyStage({ exp, moduleTitles, onNext }: { exp: LabExperiment; moduleTit
           ))}
         </ul>
       </Panel>
-      <Panel className="space-y-2">
-        <p className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-bold">How sure are we?</span>
-          <span className={cn("rounded-full border-2 border-foreground px-3 py-0.5 text-xs font-bold", tone)}>{exp.evidence.status}</span>
-        </p>
-        <p className="text-sm">{exp.evidence.note}</p>
-        <details className="text-sm">
-          <summary className="cursor-pointer font-semibold text-link">Original studies</summary>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-muted-foreground">
-            {exp.refs.map((r) => (
-              <li key={r}>{r}</li>
-            ))}
-          </ul>
-        </details>
-      </Panel>
+      <p className="flex flex-wrap items-center gap-2">
+        <span className="text-sm font-bold">How sure are we?</span>
+        <span className={cn("rounded-full border-2 border-foreground px-3 py-0.5 text-xs font-bold", tone)}>{exp.evidence.status}</span>
+      </p>
       {exp.related.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 text-sm">
           <span className="font-semibold">Connects to:</span>

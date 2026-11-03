@@ -1,7 +1,7 @@
 import type { Profile } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import { loadStudentAccess } from "@/lib/cohorts/access";
-import { filterLessons } from "@/lib/cohorts/rules";
+import { loadMyCohorts, loadStudentAccess } from "@/lib/cohorts/access";
+import { filterLessons, myCohortsFor } from "@/lib/cohorts/rules";
 import { deriveWeekStatus } from "@/lib/course/status";
 
 import { type OverviewModel, type OverviewWeek } from "@/components/course/course-overview-view";
@@ -87,8 +87,12 @@ export async function loadCourseOverview(
 
   // Cohorts: keep only the lectures this person may watch. (The course
   // layout already applied the old enrolment rule, so "legacy" is true here.)
-  const access = await loadStudentAccess(profile.id);
-  const lessons = filterLessons(access, lessonsAll ?? [], true, profile.role === "admin");
+  const isAdmin = profile.role === "admin";
+  const [access, myCohortsAll] = await Promise.all([loadStudentAccess(profile.id), isAdmin ? Promise.resolve([]) : loadMyCohorts(profile.id)]);
+  const lessons = filterLessons(access, lessonsAll ?? [], true, isAdmin);
+  // Only the student's own cohorts are ever named on their screens.
+  const myCohorts = myCohortsAll.filter((c) => access.cohortIds.includes(c.id));
+  const visibleLessonIds = new Set(lessons.map((l) => l.id));
 
   // `playable` is the unlocked set students can actually complete — `live`
   // lessons are visible but locked (not counted), `hidden` lessons never show.
@@ -122,7 +126,8 @@ export async function loadCourseOverview(
   // Students only ever see PUBLISHED assignments — a draft (unpublished) row is
   // the "Draft chip with no explanation" the audit called out, so it's dropped
   // here rather than shown with a confusing label.
-  const visibleAssignments = (assignments ?? []).filter((a) => a.is_published);
+  // A lecture this person can't watch takes its assignment with it.
+  const visibleAssignments = (assignments ?? []).filter((a) => a.is_published && visibleLessonIds.has(a.lesson_id));
   const courseAssignments = visibleAssignments.map((a) => {
     const lesson = lessonsById.get(a.lesson_id);
     const sub = submissionByAssignment.get(a.id);
@@ -141,6 +146,8 @@ export async function loadCourseOverview(
 
   const courseMaterialsByWeek = new Map<number, typeof courseMaterials>();
   for (const m of courseMaterials ?? []) {
+    // Materials on a lecture this person can't watch stay hidden too.
+    if (m.lesson_id && !visibleLessonIds.has(m.lesson_id)) continue;
     const mWeek = (m as { week?: number }).week ?? 1;
     const list = courseMaterialsByWeek.get(mWeek) ?? [];
     list.push(m);
@@ -240,6 +247,7 @@ export async function loadCourseOverview(
                     ? "started"
                     : "open",
           hasVideo: Boolean(lesson.video_storage_path),
+          cohorts: myCohorts.length > 1 ? myCohortsFor(lesson.id, access.cohortsByLesson, myCohorts) : undefined,
         };
       }),
       materials: weekMaterials.map((m) => ({
@@ -278,6 +286,7 @@ export async function loadCourseOverview(
       : null,
     weeks,
     empty: visibleLessons.length === 0,
+    myCohorts,
   };
 
   return model;

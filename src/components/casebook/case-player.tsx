@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ArrowDown, ArrowUp, Check, X } from "lucide-react";
 import { shuffle } from "@/lib/lab/scoring";
+import { buildRound, TIER_LABEL, type Tier } from "@/lib/casebook/rounds";
 import { orderScore } from "@/lib/casebook/validate";
 import { URGENCY_LABEL, type CaseActivity, type Urgency } from "@/lib/casebook/types";
 import { cn } from "@/lib/utils";
@@ -51,12 +52,14 @@ function Feedback({ ok, children, onNext, last }: { ok: boolean; children: React
  * One-question-at-a-time player for the item formats (spotter, differential,
  * triage, skill). The order is shuffled once when the student presses Start.
  */
-function ItemRound<T extends { id: string }>({
+function ItemRound<T extends { id: string; difficulty?: number }>({
   items,
+  tier,
   render,
   onDone,
 }: {
   items: T[];
+  tier: Tier;
   render: (item: T, answer: (ok: boolean) => void, answered: boolean) => React.ReactNode;
   onDone: Done;
 }) {
@@ -68,9 +71,12 @@ function ItemRound<T extends { id: string }>({
 
   if (!order)
     return (
-      <LabButton onClick={() => setOrder(shuffle(items).slice(0, ROUND))}>
-        Start · {Math.min(ROUND, items.length)} questions{items.length > ROUND ? ` from ${items.length}` : ""}
-      </LabButton>
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Round: {TIER_LABEL[tier]}</p>
+        <LabButton onClick={() => setOrder(buildRound(items, tier, ROUND, Math.random))}>
+          Start · {Math.min(ROUND, items.length)} questions{items.length > ROUND ? ` from ${items.length}` : ""}
+        </LabButton>
+      </div>
     );
   const item = order[i];
   const last = i + 1 >= order.length;
@@ -130,13 +136,14 @@ function Mcq({ options, answer, explain, onAnswer }: { options: string[]; answer
   );
 }
 
-export function CasePlayer({ activity: a, onDone }: { activity: CaseActivity; onDone: Done }) {
+export function CasePlayer({ activity: a, tier, onDone }: { activity: CaseActivity; tier: Tier; onDone: Done }) {
   switch (a.format) {
     case "spotter": {
       const label = (id: string) => a.categories.find((c) => c.id === id)?.label ?? id;
       return (
         <ItemRound
           items={a.items}
+          tier={tier}
           onDone={onDone}
           render={(item, answer) => {
             // Options = the answer + its classic confusions, in a stable per-item order.
@@ -156,6 +163,7 @@ export function CasePlayer({ activity: a, onDone }: { activity: CaseActivity; on
       return (
         <ItemRound
           items={a.items}
+          tier={tier}
           onDone={onDone}
           render={(item, answer) => (
             <div className="space-y-4" key={item.id}>
@@ -171,6 +179,7 @@ export function CasePlayer({ activity: a, onDone }: { activity: CaseActivity; on
       return (
         <ItemRound
           items={a.items}
+          tier={tier}
           onDone={onDone}
           render={(item, answer) => (
             <div className="space-y-4" key={item.id}>
@@ -186,6 +195,7 @@ export function CasePlayer({ activity: a, onDone }: { activity: CaseActivity; on
       return (
         <ItemRound
           items={a.items}
+          tier={tier}
           onDone={onDone}
           render={(item, answer) => <SkillQuestion key={item.id} item={item} onAnswer={answer} />}
         />
