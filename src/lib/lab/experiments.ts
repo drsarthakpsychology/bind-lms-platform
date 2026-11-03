@@ -226,7 +226,7 @@ const EXPERIMENTS_1: LabExperiment[] = [
     question: "How many objects can you hold in visual memory at once?",
     steps: ["Coloured squares flash for half a second.", "After a short blank they come back. Same, or did one change colour?", "Displays have 2 to 8 squares, in mixed order."],
     finding:
-      "Accuracy is near perfect for small displays and falls once there are more than about three or four squares. A simple formula (Cowan's K) turns your answers into an estimate of how many squares you held, usually about 3 to 4.",
+      "Accuracy is near perfect for small displays and falls once there are more than about three or four squares. A simple formula (K) turns your answers into an estimate of how many squares you held, usually about 3 to 4.",
     theory: [
       "Visual working memory seems to hold a small number of objects. Past that, you are partly guessing.",
       "K corrects for guessing: it uses both hits (saying \"changed\" when it did) and false alarms (saying \"changed\" when it did not). That is why saying \"changed\" every time does not give a high score.",
@@ -283,7 +283,7 @@ const EXPERIMENTS_1: LabExperiment[] = [
     theory: [
       "Perception is not a camera. The brain uses cues (like corners and depth) to guess what is out there, and those guesses can mislead.",
       "One explanation: the fins look like the corners of a room or building, so the brain reads one line as further away and scales it up. This explanation is popular but not settled.",
-      "Cross-cultural studies in the 1960s found smaller illusions in people from less \"carpentered\" (fewer straight-walled buildings) environments. These findings are debated; later work points to other factors too.",
+      "Cross-cultural studies found smaller illusions in people from less \"carpentered\" (fewer straight-walled buildings) environments. These findings are debated; later work points to other factors too.",
     ],
     clinic: [
       "The illusion persists even when you know it is an illusion. That is a useful picture for explaining to a patient why knowing a fear is irrational does not switch it off.",

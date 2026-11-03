@@ -59,8 +59,8 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
       </Link>
       <header>
         <p className="text-eyebrow text-link">Casebook</p>
-        <h1 className="text-h1">Clinical games from the textbooks</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Pick a topic, or search. Every case is fictional.</p>
+        <h1 className="text-h1">Clinical games</h1>
+        <p className="mt-1 text-sm text-muted-foreground">Every case is fictional.</p>
       </header>
 
       <div className="space-y-3">

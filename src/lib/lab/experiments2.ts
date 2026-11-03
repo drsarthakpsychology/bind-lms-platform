@@ -28,7 +28,7 @@ export const EXPERIMENTS_2: LabExperiment[] = [
       "This simulation is a teaching model with fixed settings. It is not data from a real animal.",
     ],
     clinic: [
-      "Phobias can be learned this way: something neutral is paired with fear. In 1920 Watson and Rayner conditioned fear of a white rat in an infant, \"Little Albert\". The study is now a lesson in ethics: there was no proper consent, the fear was never removed, and it would not be allowed today.",
+      "Phobias can be learned this way: something neutral is paired with fear. In the classic \"Little Albert\" study, a baby was taught to fear a white rat. The study is now a lesson in ethics: there was no proper consent, the fear was never removed, and it would not be allowed today.",
       "Exposure therapy is planned extinction: meeting the feared cue, safely and repeatedly, without the bad outcome. Because extinction is new learning, fear can return after a gap or in a new place. Varying the settings and planning for relapse helps.",
       "Some people on chemotherapy develop a dislike of foods eaten before treatment, or feel sick on arriving at the hospital. This is learned taste aversion and conditioned nausea. Giving an unusual \"scapegoat\" food before treatment has been used to protect usual foods.",
     ],

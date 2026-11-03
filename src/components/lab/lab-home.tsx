@@ -78,7 +78,7 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
           <h1 className="text-h1">
             Do the experiment. <span className="font-serif italic font-normal">Then</span> read why.
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">Classic studies you run on yourself, with your own data, linked to the clinic.</p>
+          <p className="mt-1 text-sm text-muted-foreground">Classic experiments you run on yourself.</p>
         </div>
       </header>
 
@@ -108,7 +108,7 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
       ) : (
         <div className="rounded-3xl border-2 border-foreground bg-card p-5">
           <p className="font-bold">All experiments done, and nothing due.</p>
-          <p className="text-sm text-muted-foreground">Re-checks will appear here when they come due. Running one again with a friend and comparing results is a good next step.</p>
+          <p className="text-sm text-muted-foreground">Re-checks show up here when due.</p>
         </div>
       )}
 
@@ -163,7 +163,7 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
       <CasebookShelf st={st} today={istToday()} />
 
       <p className="rounded-2xl border-2 border-dashed border-foreground/50 p-4 text-sm text-muted-foreground">
-        These are teaching demonstrations, not assessments. One run on a phone is a rough measure, so treat your numbers as interesting, not as a diagnosis.
+        For learning, not diagnosis. One run is a rough measure.
       </p>
     </div>
   );

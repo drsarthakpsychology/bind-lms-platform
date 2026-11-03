@@ -62,7 +62,7 @@ export function CasebookShelf({ st, today, show = 4 }: { st: LearnState; today: 
           <h2 id="casebook" className="flex items-center gap-2 text-lg font-bold">
             <BookOpen className="size-5" aria-hidden /> Casebook
           </h2>
-          <p className="text-sm text-muted-foreground">Clinical games built from the course textbooks. Every case is fictional.</p>
+          <p className="text-sm text-muted-foreground">Short clinical games. Every case is fictional.</p>
         </div>
       </div>
       <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
