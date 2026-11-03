@@ -66,6 +66,15 @@ An anxiety disorder is a smoke alarm that rings when someone makes toast. The al
 3. Why does avoidance keep anxiety going? || It brings short relief, so the brain never learns the situation is safe.
 :::
 
+:::mcq
+Q: Before her board exam a student feels nervous, sleeps a little less, but studies well and the worry ends after the exam. This is:
+- Generalised anxiety disorder
+- *Normal, helpful anxiety
+- Panic disorder
+- Social anxiety disorder
+> Anxiety becomes a disorder when it is excessive, persistent, and impairs life.
+:::
+
 ## 1.2 Why anxiety happens [core]
 ### The fear circuit
 - The **amygdala** detects threat and triggers the alarm through the hypothalamus (HPA axis, cortisol) and brainstem (**locus coeruleus**, noradrenaline: racing heart, sweating).
@@ -92,6 +101,15 @@ An anxiety disorder is a smoke alarm that rings when someone makes toast. The al
 2. Explain the two-factor theory. || Classical conditioning acquires fear; avoidance (operant) maintains it.
 3. Draw Clark's circle in words. || Trigger, threat, anxiety, body sensations, catastrophic misinterpretation, more anxiety.
 4. What keeps social anxiety going? || Self-focus and safety behaviours.
+:::
+
+:::mcq
+Q: A man avoids lifts after one panic attack in a lift. Every time he takes the stairs his anxiety drops. In learning terms the avoidance is kept going by:
+- Positive reinforcement
+- *Negative reinforcement
+- Punishment
+- Extinction
+> Removing anxiety rewards avoidance (Mowrer's two-factor theory, second factor).
 :::
 
 ## 1.3 Assessing anxiety [core]
@@ -127,6 +145,15 @@ Many people describe anxiety through the body: "ghabrahat" (a mix of uneasiness 
 3. Name three substances or medicines that cause anxiety. || Caffeine, decongestants, salbutamol, steroids, thyroxine, alcohol withdrawal.
 :::
 
+:::mcq
+Q: A 35-year-old woman has new anxiety, tremor, weight loss despite eating more, and a fast pulse at rest. The first test is:
+- EEG
+- *Thyroid function
+- Brain MRI
+- Lithium level
+> Hyperthyroidism mimics anxiety; rule it out.
+:::
+
 # Part II · The disorders
 
 ## 2.1 Generalised anxiety disorder [core]
@@ -147,6 +174,15 @@ Restless, tired, blank, irritable, tense, sleepless.
 - Worries are about everyday things: health, family, money, work, small matters. Often long-standing (“I've always been a worrier”).
 - Commonly presents with body symptoms: headaches, muscle aches, stomach upset, tiredness.
 - Frequently with depression.
+
+:::mcq
+Q: A woman has worried most days for a year about her children, money and her health, cannot stop the worry, and has muscle tension and poor sleep. She has no panic attacks. Most likely:
+- Panic disorder
+- *Generalised anxiety disorder
+- OCD
+- Illness anxiety disorder
+> Many topics, hard to control, 6 months or more, with physical symptoms.
+:::
 
 ## 2.2 Panic attacks and panic disorder [core]
 :::define Panic attack
@@ -173,6 +209,15 @@ An abrupt surge of intense fear or discomfort that **peaks within minutes**, wit
 Panic attacks can occur in any anxiety disorder, depression, PTSD, substance use or medical illness. They become **panic disorder** only when they are recurrent, unexpected and followed by a month of worry or avoidance. Elsewhere, add the specifier “with panic attacks”.
 :::
 
+:::mcq
+Q: A man has had four sudden attacks of pounding heart, breathlessness and fear of dying, each peaking within 10 minutes, with no trigger. For a month he has worried about having another. ECG and thyroid are normal. Diagnosis:
+- Generalised anxiety disorder
+- *Panic disorder
+- Agoraphobia
+- Specific phobia
+> Recurrent unexpected attacks plus a month of worry or behaviour change.
+:::
+
 ## 2.3 Agoraphobia [core]
 - Marked fear about **at least 2 of 5** situations:
   1. Public transport
@@ -184,6 +229,15 @@ Panic attacks can occur in any anxiety disorder, depression, PTSD, substance use
 - Situations are avoided, need a companion, or are endured with intense fear; lasting **6 months or more**.
 - Diagnosed independently of panic disorder (both may be given).
 
+:::mcq
+Q: A woman will not travel by bus, go to the market or stand in queues alone because she fears she could not escape if she felt faint. Most likely:
+- Social anxiety disorder
+- *Agoraphobia
+- Specific phobia, situational type, only for buses
+- Separation anxiety disorder
+> Fear in two or more such situations, because escape or help might be hard.
+:::
+
 ## 2.4 Social anxiety disorder [core]
 - Marked fear of social situations where the person may be **scrutinised** by others: conversations, meeting new people, eating or drinking in front of others, performing or speaking.
 - Fears acting in a way, or showing symptoms (blushing, trembling), that will be **negatively evaluated**.
@@ -191,6 +245,15 @@ Panic attacks can occur in any anxiety disorder, depression, PTSD, substance use
 - Specifier: **performance only** (for example only public speaking).
 - In children, the fear must occur with peers, not just with adults.
 - Differ from shyness by severity and impairment; from avoidant personality by being more situation-specific.
+
+:::mcq
+Q: A student avoids presenting in class, eating in the canteen and speaking to teachers because he fears people will think he is stupid. Which treatment component is most specific?
+- Interoceptive exposure
+- *Exposure to social situations without safety behaviours, with video feedback
+- Worry time
+- Bright light therapy
+> Clark and Wells' model targets self-focused attention and safety behaviours.
+:::
 
 ## 2.5 Specific phobia [core]
 - Marked fear of a **specific object or situation**, almost always provoking immediate fear; actively avoided; **6 months or more**.
@@ -206,6 +269,15 @@ Panic attacks can occur in any anxiety disorder, depression, PTSD, substance use
 Blood–injection–injury phobia is unusual: heart rate rises then **drops** (a vasovagal response), so people can **faint**. Treatment includes **applied tension** (tensing muscles to raise blood pressure) along with exposure.
 :::
 
+:::mcq
+Q: A man faints every time he sees blood. The response that is unusual about blood-injection-injury phobia is:
+- Heart rate rises steadily
+- *An initial rise then a sudden fall in heart rate and blood pressure
+- No physical response
+- Hyperventilation only
+> The vasovagal response; applied tension (tensing muscles) helps prevent fainting.
+:::
+
 ## 2.6 Separation anxiety and selective mutism [core]
 ### Separation anxiety disorder
 - Developmentally inappropriate, excessive fear of separation from attachment figures, with **at least 3 of 8** features: distress at separation, worry about harm to them, worry about an event causing separation (getting lost, kidnapped), refusal to go out or to school, fear of being alone, refusal to sleep away, nightmares about separation, physical complaints when separation is expected.
@@ -215,6 +287,15 @@ Blood–injection–injury phobia is unusual: heart rate rises then **drops** (a
 - Consistent failure to speak in specific situations where speech is expected (school), **despite speaking normally** in others (home).
 - Lasts **at least 1 month**, not limited to the first month of school.
 - Not due to lack of language knowledge or a communication disorder. Closely linked with social anxiety.
+
+:::mcq
+Q: A 6-year-old speaks normally at home but has not said a word at school for 4 months. Hearing and language are normal. Most likely:
+- Autism
+- *Selective mutism
+- Intellectual disability
+- Conduct disorder
+> Consistent failure to speak in specific social settings for at least a month (not the first month of school).
+:::
 
 ## 2.7 Medical and substance causes [core]
 | Category | Examples |
@@ -237,6 +318,15 @@ A first “panic attack” with chest pain in someone with cardiac risk factors 
 5. Which phobia causes fainting, and what treats it? || Blood–injection–injury; applied tension plus exposure.
 6. Give the durations for separation anxiety and selective mutism. || 4 weeks in children (6 months adults); 1 month, not the first month of school.
 7. Name six medical or substance causes of anxiety. || Hyperthyroidism, hypoglycaemia, phaeochromocytoma, arrhythmia, asthma, caffeine, alcohol withdrawal, salbutamol.
+:::
+
+:::mcq
+Q: A man has anxiety attacks every morning that settle by mid-morning. He drinks heavily each night. The most likely cause is:
+- Panic disorder
+- *Alcohol withdrawal
+- GAD
+- Hypoglycaemia only
+> Early morning anxiety and tremor relieved by drinking point to withdrawal.
 :::
 
 ## 2.8 The models that guide treatment [core]
@@ -265,6 +355,15 @@ In panic disorder the body's alarm is oversensitive: it rings at full volume for
 4. What is intolerance of uncertainty? || Finding uncertainty unbearable, which drives worry.
 :::
 
+:::mcq
+Q: In CBT for panic, the therapist asks a patient to spin in a chair until dizzy and notice what happens. This directly tests:
+- His core beliefs about worth
+- *His catastrophic belief that dizziness means he will collapse
+- His intolerance of uncertainty
+- His social fears
+> Interoceptive exposure is a behavioural experiment on misinterpretation of sensations.
+:::
+
 # Part III · Treatment
 
 ## 3.1 Psychological treatment: exposure is the engine [core]
@@ -288,6 +387,15 @@ Repeated, prolonged contact with feared situations, sensations or thoughts **wit
 - **Social anxiety**: cognitive therapy with video feedback, attention retraining, exposure without safety behaviours.
 - **Specific phobia**: exposure is highly effective, sometimes in a single long session.
 - **Children**: CBT with parental involvement.
+
+:::mcq
+Q: During exposure to a feared lift, a patient holds the rail tightly and counts floors. The therapist's best response is:
+- Praise this as coping
+- *Gently ask him to drop these safety behaviours so he learns the lift is safe
+- End the session
+- Give a benzodiazepine
+> Safety behaviours block new learning.
+:::
 
 ## 3.2 Medicines [core]
 | Medicine | Use | Notes |
@@ -313,6 +421,15 @@ Benzodiazepines work fast, so patients love them, but long-term use brings depen
 3. What is first-line medicine for most anxiety disorders, and what's special about starting it in panic? || SSRIs; start low because of early jitteriness.
 4. How long should benzodiazepines be used? || Short term, about 2 to 4 weeks.
 5. When is propranolol useful? || Performance anxiety with tremor and palpitations.
+:::
+
+:::mcq
+Q: A woman starts escitalopram for panic disorder and feels more jittery in the first week. The best advice is:
+- Stop it at once
+- *This is common early; it settles. Start low and increase slowly
+- Double the dose
+- Add alprazolam long term
+> Early activation is common in panic; start at a low dose.
 :::
 
 ## 3.3 CBT step by step and special groups [core]
@@ -347,6 +464,15 @@ Benzodiazepines work fast, so patients love them, but long-term use brings depen
 2. What is worry time? || Postponing worry to a set daily slot.
 3. Why avoid benzodiazepines late in pregnancy? || Floppy baby syndrome and neonatal withdrawal.
 4. How long to continue medicines after response in anxiety disorders? || About 12 months.
+:::
+
+:::mcq
+Q: An older man with GAD is taking diazepam for 10 years and has had two falls. The best plan is:
+- Increase diazepam
+- *Plan a slow taper, offer CBT, and an SSRI if needed
+- Stop diazepam today
+- Add a second benzodiazepine
+> Benzodiazepines raise falls and confusion in older adults; taper slowly.
 :::
 
 # Part IV · Exam zone

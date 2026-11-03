@@ -214,7 +214,9 @@ export function parseModule(src: string): Section[] {
       part: cur.part,
       blocks,
       words: countWords(blocks),
-      isTest: blocks.some((b) => b.t === "mcq"),
+      // The module test is the section titled "Module test". Other sections
+      // may hold case questions too; those feed the checkpoints instead.
+      isTest: /^module test$/i.test(cur.title.trim()) && blocks.some((b) => b.t === "mcq"),
     });
   };
   for (const line of lines) {

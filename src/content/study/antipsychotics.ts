@@ -53,6 +53,15 @@ About **60 to 80% D2 occupancy** gives antipsychotic effect; above about **80%**
 3. Why do most second-generation drugs cause fewer EPS? || 5-HT2A blockade releases striatal dopamine.
 :::
 
+:::mcq
+Q: A young woman on risperidone stops having periods and notices milk from her breasts. The pathway responsible is:
+- Mesolimbic
+- Mesocortical
+- Nigrostriatal
+- *Tuberoinfundibular
+> Dopamine normally holds prolactin down; blocking it raises prolactin.
+:::
+
 ## 1.2 The drugs [core]
 ### First-generation (typical)
 | Drug | Potency | Notes |
@@ -86,6 +95,15 @@ Second-generation drugs swap EPS for **metabolic harm**. Olanzapine and clozapin
 2. Which atypicals raise prolactin most? || Risperidone, paliperidone, amisulpride.
 3. Which atypicals carry the highest metabolic risk? || Olanzapine and clozapine.
 4. What is aripiprazole's typical side effect? || Akathisia.
+:::
+
+:::mcq
+Q: Which antipsychotic is most likely to cause marked weight gain and diabetes?
+- Aripiprazole
+- Haloperidol
+- *Olanzapine
+- Amisulpride
+> Olanzapine and clozapine carry the highest metabolic risk.
 :::
 
 ## 1.3 Choosing, dosing and how long to treat [core]
@@ -131,6 +149,15 @@ About **4 in 5** people with a first episode relapse within 5 years if medicines
 4. What is a cross-taper? || Slowly reducing the old drug while increasing the new one.
 :::
 
+:::mcq
+Q: A man recovered fully from a first psychotic episode 4 months ago and wants to stop his medicine now. The best advice is:
+- Stop today
+- *Continue for at least 1 to 2 years after remission, then a slow, watched taper if he wishes
+- Continue lifelong without discussion
+- Switch to a benzodiazepine
+> Relapse is very common after stopping early; share the facts and respect his choice.
+:::
+
 ## 1.4 Antipsychotics in special groups [core]
 | Group | Key points |
 |---|---|
@@ -147,6 +174,15 @@ About **4 in 5** people with a first episode relapse within 5 years if medicines
 1. What risk do antipsychotics carry in older people with dementia? || Increased stroke and death.
 2. Which antipsychotics are used in Parkinson's disease psychosis? || Low-dose quetiapine or clozapine.
 3. Which antipsychotics lower the seizure threshold most? || Clozapine and chlorpromazine.
+:::
+
+:::mcq
+Q: An 82-year-old with Lewy body dementia is distressed by visual hallucinations. Which is the most dangerous choice?
+- Explaining and reassuring
+- A cholinesterase inhibitor
+- *Haloperidol
+- Low-dose quetiapine with care
+> Severe sensitivity to antipsychotics, especially typicals, can be fatal.
 :::
 
 # Part II · Side effects
@@ -169,6 +205,22 @@ About **4 in 5** people with a first episode relapse within 5 years if medicines
 
 - Monitor movement with the **AIMS** (Abnormal Involuntary Movement Scale) at baseline and regularly.
 
+:::mcq
+Q: Two days after starting haloperidol, a 19-year-old has painful neck twisting and his eyes roll upward. Treatment:
+- Increase haloperidol
+- *An anticholinergic such as procyclidine or benztropine injection
+- Propranolol
+- Stop all fluids
+> Acute dystonia responds quickly to anticholinergics.
+
+Q: A patient on aripiprazole paces, cannot sit still and feels restless inside. This is most likely:
+- Anxiety
+- *Akathisia
+- Tardive dyskinesia
+- Mania
+> Akathisia can be mistaken for agitation; it raises suicide risk. Propranolol helps.
+:::
+
 ## 2.2 Neuroleptic malignant syndrome [core]
 :::safety NMS: a medical emergency
 A rare, potentially fatal reaction to dopamine blockade, usually in the **first days to weeks** or after a dose increase. Risk higher with high-potency drugs, rapid escalation, injections, dehydration, exhaustion and catatonia.
@@ -190,6 +242,15 @@ Management:
 2. Transfer to medical care; IV fluids, cooling, monitor kidneys and electrolytes.
 3. Benzodiazepines; **dantrolene** (muscle relaxant) and **bromocriptine** (dopamine agonist) in severe cases; ECT if persisting or with catatonia.
 4. After recovery, wait at least 2 weeks before cautiously restarting a low-potency or different antipsychotic.
+
+:::mcq
+Q: Five days after a haloperidol increase, a man has high fever, rigid limbs, confusion, fluctuating BP and a very high CK. First step:
+- Increase the dose
+- *Stop the antipsychotic and transfer for urgent medical care
+- Give an anticholinergic and continue
+- Start lithium
+> Neuroleptic malignant syndrome is an emergency.
+:::
 
 ## 2.3 Metabolic, cardiac and other effects [core]
 | Effect | High-risk drugs | What to do |
@@ -219,6 +280,15 @@ Management:
 5. Why use antipsychotics cautiously in dementia? || Increased stroke and death.
 :::
 
+:::mcq
+Q: Which check is essential at baseline and regularly for someone starting olanzapine?
+- EEG
+- *Weight, waist, blood pressure, fasting glucose or HbA1c and lipids
+- Lithium level
+- Thyroid scan
+> Physical health monitoring is part of every antipsychotic plan.
+:::
+
 ## 2.4 Managing side effects in practice [core]
 | Problem | Options |
 |---|---|
@@ -246,6 +316,15 @@ Weight and waist, BP, pulse, fasting glucose or HbA1c, lipids, prolactin if symp
 5. How much earlier do people with severe mental illness die on average? || About 10 to 20 years.
 :::
 
+:::mcq
+Q: A man on risperidone has put on 10 kg in 6 months. He is well and wants to stay on it. A reasonable addition is:
+- A second antipsychotic
+- *Lifestyle support and metformin, or adding low-dose aripiprazole
+- A benzodiazepine
+- Stopping all medicines
+> Metformin has evidence for antipsychotic weight gain.
+:::
+
 # Part III · Special uses
 
 ## 3.1 Clozapine [core]
@@ -266,10 +345,35 @@ Weight and waist, BP, pulse, fasting glucose or HbA1c, lipids, prolactin if symp
 Tobacco smoke induces the liver enzyme CYP1A2, lowering clozapine levels. **When a patient stops smoking (for example on admission), clozapine levels can rise sharply**: watch for toxicity and reduce the dose. Fluvoxamine and ciprofloxacin also raise levels.
 :::
 
+:::mcq
+Q: A man on clozapine for 6 weeks has fever, a sore throat and mouth ulcers. The first test is:
+- Clozapine level
+- *Full blood count (neutrophils), urgently
+- Chest X-ray only
+- Liver tests
+> Possible neutropenia or agranulocytosis.
+
+Q: A clozapine patient admitted to a non-smoking ward becomes very drowsy and has a seizure a week later. The likely reason is:
+- Infection
+- *Clozapine levels rose because he stopped smoking
+- Lower adherence
+- NMS
+> Smoking induces CYP1A2; stopping can sharply raise levels.
+:::
+
 ## 3.2 Long-acting injections (depots) [core]
 - For poor adherence, patient preference, or relapse after stopping oral medicine.
 - Examples: fluphenazine decanoate, haloperidol decanoate, flupentixol decanoate, zuclopenthixol decanoate, **paliperidone palmitate**, aripiprazole long-acting, risperidone long-acting. Olanzapine pamoate needs observation for 3 hours after injection (post-injection delirium sedation syndrome).
 - Give a test dose for older depots; establish tolerability on the oral form first.
+
+:::mcq
+Q: Which patient is the best candidate for a long-acting injection?
+- A woman with first-episode psychosis who takes tablets reliably and prefers them
+- *A man with repeated relapses after stopping tablets, who agrees to a monthly injection
+- A man allergic to all antipsychotics
+- A patient with NMS last week
+> Depots help when adherence is the problem and the person agrees.
+:::
 
 ## 3.3 Rapid tranquillisation [core]
 For severe agitation when calming talk and oral medicine have failed:
@@ -283,6 +387,15 @@ For severe agitation when calming talk and oral medicine have failed:
 3. Which clozapine side effect can kill quietly and must be asked about every visit? || Constipation leading to bowel obstruction.
 4. What happens to clozapine levels when a patient stops smoking? || They rise, sometimes sharply.
 5. Name two IM options for rapid tranquillisation. || Lorazepam; haloperidol with promethazine; olanzapine.
+:::
+
+:::mcq
+Q: After calm talk and oral medicine fail, a man is about to hit staff. Which IM option is commonly used in India?
+- Haloperidol alone at high dose
+- *Haloperidol with promethazine, or lorazepam, then monitoring
+- Diazepam by IM injection
+- Chlorpromazine IV push
+> Promethazine lowers dystonia risk and sedates; monitor vital signs afterwards.
 :::
 
 ## 3.4 Starting clozapine step by step [core]
@@ -315,6 +428,15 @@ Clozapine helps a third or more of people for whom nothing else worked. It is li
 2. What is the starting dose, and when must titration restart? || 12.5 mg; after missing 48 hours.
 3. What plasma level is usually needed? || At least 350 ng/mL.
 4. Name three red flags for patients to report. || Fever or sore throat, chest pain or breathlessness, constipation or abdominal pain, fits.
+:::
+
+:::mcq
+Q: A man missed 3 days of clozapine. The safe way to restart is:
+- His usual full dose
+- *Restart titration from 12.5 mg
+- Half his usual dose
+- Double dose to catch up
+> After missing more than 48 hours, re-titrate to avoid collapse and seizures.
 :::
 
 # Part IV · Exam zone

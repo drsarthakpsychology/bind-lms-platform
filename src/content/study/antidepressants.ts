@@ -54,6 +54,15 @@ Side effects come in the first days; benefit builds over 2 to 6 weeks; full effe
 3. Name the class and two examples for: SSRI, SNRI, NDRI, NaSSA. || Sertraline, escitalopram; venlafaxine, duloxetine; bupropion; mirtazapine.
 :::
 
+:::mcq
+Q: A patient asks why he must take sertraline for weeks before feeling better when "the tablet works in hours". The best explanation is:
+- It is absorbed slowly
+- *The brain takes weeks to adapt (receptors and new connections), so mood follows later
+- The dose is too low
+- It only works with therapy
+> Reuptake block is quick; the adaptation that lifts mood is slow.
+:::
+
 ## 1.2 Why they take weeks, and how well they work [core]
 ### The delay explained
 - An SSRI blocks reuptake **within hours**, yet mood lifts over weeks. So the immediate rise in serotonin is not the whole story.
@@ -91,6 +100,15 @@ A thermostat (the autoreceptor) senses the room warming and switches the heater 
 4. How is dosing different in panic disorder and OCD? || Panic: start at half dose. OCD: higher doses, longer trials.
 :::
 
+:::mcq
+Q: A man with mild depression of 3 weeks has no risk and wants "a quick tablet". Evidence suggests:
+- Antidepressants work best in mild depression
+- *The gain over placebo is small in mild depression; start with psychological help and review
+- All patients need medicine
+- Benzodiazepines are better
+> Medicines show the clearest benefit in moderate to severe depression.
+:::
+
 # Part II · The classes
 
 ## 2.1 SSRIs [core]
@@ -123,6 +141,15 @@ First-line for depression and most anxiety disorders: effective, safer in overdo
 | Fluvoxamine | Used in OCD; strong CYP1A2 inhibitor (raises clozapine, theophylline, caffeine) |
 | Citalopram | QT prolongation limits dose |
 
+:::mcq
+Q: A woman on fluoxetine is started on a medicine for migraine and develops tremor, sweating, agitation and twitching legs within a day. Which medicine was most likely added?
+- Paracetamol
+- *Sumatriptan (a triptan)
+- Propranolol
+- Domperidone
+> Serotonergic combinations can cause serotonin syndrome.
+:::
+
 ## 2.2 SNRIs, bupropion and mirtazapine [core]
 | Medicine | Useful when | Watch for |
 |---|---|---|
@@ -130,6 +157,15 @@ First-line for depression and most anxiety disorders: effective, safer in overdo
 | Duloxetine | Depression with **pain** (neuropathy, fibromyalgia), GAD | Nausea; liver caution |
 | Bupropion | Fatigue, low energy; avoiding sexual side effects; **smoking cessation** | **Seizures** (avoid in epilepsy, eating disorders, alcohol withdrawal); insomnia, anxiety; no help for anxiety disorders |
 | Mirtazapine | Insomnia, poor appetite, older adults; few sexual side effects | **Sedation and weight gain**; rare low white cell count |
+
+:::mcq
+Q: A thin, older woman with depression sleeps poorly and has lost weight. Which antidepressant suits her best?
+- Fluoxetine
+- Bupropion
+- *Mirtazapine
+- Venlafaxine at high dose
+> Sedating and appetite-raising, with few sexual or stomach side effects.
+:::
 
 ## 2.3 Tricyclics [core]
 Effective but toxic in overdose; now second-line. Low doses (amitriptyline 10 to 25 mg) are widely used for pain and headache.
@@ -150,6 +186,15 @@ Even a week's supply can kill. Features: anticholinergic signs (dry skin, dilate
 - Avoid in recent heart attack, heart block, glaucoma (narrow angle), prostate enlargement, and in older adults where possible.
 - Clomipramine is especially serotonergic: used in OCD.
 
+:::mcq
+Q: A young man on amitriptyline for back pain takes his whole month's supply. The most dangerous effect to watch for is:
+- Weight gain
+- *Heart rhythm problems (wide QRS) and seizures
+- Sexual dysfunction
+- Hair loss
+> Tricyclics are dangerous in overdose; ECG monitoring and sodium bicarbonate for wide QRS.
+:::
+
 ## 2.4 MAOIs [extra]
 - Rarely used now; reserved for resistant or atypical depression.
 - **Tyramine (“cheese”) reaction**: with MAO in the gut blocked, tyramine from aged cheese, cured meats, soy sauce, fermented foods, draught beer and some wines enters the blood and causes a **hypertensive crisis** (pounding headache, stiff neck, palpitations, stroke risk).
@@ -158,6 +203,15 @@ Even a week's supply can kill. Features: anticholinergic signs (dry skin, dilate
 
 :::define Washout rules
 Stop an SSRI or other antidepressant and wait **about 2 weeks** before starting an MAOI; wait **at least 5 weeks after fluoxetine** because of its long half-life. After stopping an irreversible MAOI, wait 2 weeks before starting another antidepressant.
+:::
+
+:::mcq
+Q: A patient on phenelzine eats aged cheese and develops a sudden severe headache and very high blood pressure. This is:
+- Serotonin syndrome
+- *A tyramine (hypertensive) reaction
+- NMS
+- Migraine
+> MAOIs block tyramine breakdown; dietary rules prevent this.
 :::
 
 ## 2.5 The others [extra]
@@ -177,6 +231,15 @@ Stop an SSRI or other antidepressant and wait **about 2 weeks** before starting 
 6. List the four receptor blocks of TCAs and an effect of each. || Muscarinic (dry mouth), H1 (sedation), alpha-1 (postural drop), sodium channel (arrhythmia).
 7. How is a wide QRS in TCA overdose treated? || Sodium bicarbonate.
 8. What is the tyramine reaction? || Hypertensive crisis from tyramine-rich foods on an MAOI.
+:::
+
+:::mcq
+Q: Which antidepressant requires regular liver tests?
+- Sertraline
+- *Agomelatine
+- Mirtazapine
+- Escitalopram
+> Agomelatine can raise liver enzymes.
 :::
 
 ## 2.6 Side effects that matter in practice [core]
@@ -201,6 +264,15 @@ Mrs D, 78, on a diuretic, started sertraline 3 weeks ago. Now she is drowsy and 
 2. Which combination increases bleeding risk with SSRIs? || NSAIDs, aspirin or anticoagulants.
 3. Which antidepressants cause least sexual dysfunction? || Bupropion, mirtazapine, vortioxetine, agomelatine.
 4. In which age group is early suicidal thinking a particular concern? || Under 25.
+:::
+
+:::mcq
+Q: Three weeks after starting citalopram, a 78-year-old woman on a water tablet becomes drowsy and confused. The first test is:
+- Brain MRI
+- *Serum sodium
+- Lithium level
+- Lumbar puncture
+> SSRI-induced hyponatraemia is common in older people on diuretics.
 :::
 
 # Part III · Safety
@@ -229,6 +301,15 @@ Toxicity from too much serotonin, usually after combining serotonergic drugs or 
 | Course | Resolves within about a day once stopped | Lasts days |
 :::
 
+:::mcq
+Q: Which finding best separates serotonin syndrome from NMS?
+- Fever
+- Raised CK
+- *Clonus and hyperreflexia starting within hours
+- Confusion
+> Serotonin syndrome: fast onset, clonus. NMS: slower, lead-pipe rigidity.
+:::
+
 ## 3.2 Discontinuation symptoms [core]
 Stopping suddenly (especially paroxetine and venlafaxine) causes symptoms within days, lasting up to a few weeks.
 
@@ -237,6 +318,15 @@ Stopping suddenly (especially paroxetine and venlafaxine) causes symptoms within
 :::
 - Prevent by **tapering** over weeks (longer for short half-life drugs). Fluoxetine rarely causes them.
 - Distinguish from relapse: discontinuation starts within days and has body symptoms like brain zaps; relapse comes later and looks like the original illness.
+
+:::mcq
+Q: A man stopped paroxetine suddenly 2 days ago and now has dizziness, "electric shocks" in his head and irritability. The best plan is:
+- Start a different class
+- *Restart paroxetine and taper slowly
+- Benzodiazepines long term
+- Reassure only; it is relapse
+> Discontinuation symptoms: restart and taper, especially with short half-life drugs.
+:::
 
 ## 3.3 Choosing an antidepressant [core]
 | Situation | Reasonable choice | Avoid or take care |
@@ -272,6 +362,15 @@ Stopping suddenly (especially paroxetine and venlafaxine) causes symptoms within
 5. Which antidepressant suits an underweight older adult with insomnia? || Mirtazapine.
 :::
 
+:::mcq
+Q: A 16-year-old with moderate depression needs medicine alongside CBT. The usual first choice is:
+- Paroxetine
+- *Fluoxetine, with close review in the first weeks
+- Amitriptyline
+- Venlafaxine
+> Fluoxetine has the best evidence in young people; watch for suicidal thinking.
+:::
+
 ## 3.4 When depression does not respond [core]
 :::define Treatment-resistant depression
 Commonly defined as **failure to respond to two adequate antidepressant trials** (adequate dose for an adequate time, with good adherence) in the current episode.
@@ -302,6 +401,15 @@ Depression with delusions or hallucinations responds poorly to an antidepressant
 2. Name three things to check before calling depression resistant. || Diagnosis, adequacy of dose and duration, adherence, psychological treatment.
 3. Name two augmenting agents with strong evidence. || Lithium and aripiprazole.
 4. What is the treatment for psychotic depression? || Antidepressant plus antipsychotic, or ECT.
+:::
+
+:::mcq
+Q: A woman has not improved on two adequate antidepressant trials. Before calling it resistant, which is MOST important to check?
+- Her blood group
+- *That she took the medicine, the diagnosis is right (bipolar? thyroid?), and the doses were adequate
+- Her IQ
+- Her EEG
+> Pseudo-resistance is common: adherence, diagnosis and dose first.
 :::
 
 # Part IV · Exam zone
