@@ -28,9 +28,13 @@ const Player = dynamic(
 export function LazyVideoPlayer({
   lessonId,
   watermarkLabel,
+  nextHref,
+  nextTitle,
 }: {
   lessonId: string;
   watermarkLabel: string;
+  nextHref?: string | null;
+  nextTitle?: string | null;
 }) {
-  return <Player lessonId={lessonId} watermarkLabel={watermarkLabel} />;
+  return <Player lessonId={lessonId} watermarkLabel={watermarkLabel} nextHref={nextHref} nextTitle={nextTitle} />;
 }

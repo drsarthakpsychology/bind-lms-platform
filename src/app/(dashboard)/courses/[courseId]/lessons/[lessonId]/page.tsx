@@ -234,7 +234,12 @@ export default async function LessonPage({
       {tab === "watch" && (
         <div className="overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-md">
           {hasVideo ? (
-            <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+            <LazyVideoPlayer
+              lessonId={lessonId}
+              watermarkLabel={watermarkLabel}
+              nextHref={nextLesson ? `/courses/${courseId}/lessons/${nextLesson.id}` : null}
+              nextTitle={nextLesson?.title ?? null}
+            />
           ) : (
             <div className="p-5 sm:p-7">
               <p className="text-eyebrow text-link">Reading</p>

@@ -19,7 +19,9 @@ import {
   Pause,
   Play,
   RotateCcw,
+  RotateCw,
   Settings2,
+  SkipForward,
   Volume2,
   VolumeX,
 } from "lucide-react";
@@ -75,7 +77,7 @@ function unlockOrientation() {
   }
 }
 
-const PLAYBACK_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
+const PLAYBACK_RATES = [0.75, 1, 1.25, 1.5, 1.75, 2] as const;
 
 /**
  * A hls.js loader that swaps the CURRENT stream token into every request URL.
@@ -157,11 +159,16 @@ export function VideoPlayer({
   lessonId,
   watermarkLabel,
   captionsUrl,
+  nextHref,
+  nextTitle,
 }: {
   lessonId: string;
   watermarkLabel: string;
   /** Optional WebVTT caption track. Omit to hide the captions toggle. */
   captionsUrl?: string;
+  /** The next lecture, offered when this one ends. */
+  nextHref?: string | null;
+  nextTitle?: string | null;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -212,6 +219,14 @@ export function VideoPlayer({
   // effect no longer depends on the resume value, so it can't run with the old
   // lesson's value before the new token resolves.
   const resumeRef = useRef(0);
+  // "Resumed at 12:30 · Start over" chip, shown for a few seconds.
+  const [resumedAt, setResumedAt] = useState<number | null>(null);
+  // "−10 s" / "+10 s" bubble after a skip.
+  const [skipFlash, setSkipFlash] = useState<{ dir: -1 | 1; key: number } | null>(null);
+  // Scrubber drag + hover preview time.
+  const [dragging, setDragging] = useState(false);
+  const [hoverTime, setHoverTime] = useState<{ t: number; pct: number } | null>(null);
+  const [ended, setEnded] = useState(false);
 
   // ---- Token mint + source load. Fetches a short-lived signed URL from the
   // rate-limited, enrollment-re-checked API — never a pre-signed URL in the
@@ -449,8 +464,9 @@ export function VideoPlayer({
     const onLoadedMetadata = () => {
       setDuration(video.duration || 0);
       const resume = resumeRef.current;
-      if (resume > 0 && resume < video.duration) {
+      if (resume > 5 && resume < video.duration - 5) {
         video.currentTime = resume;
+        setResumedAt(resume);
       }
       // Remember the student's speed across lectures (YouTube does this).
       try {
@@ -469,7 +485,10 @@ export function VideoPlayer({
         setMp4Resolution(`${video.videoHeight}p`);
       }
     };
-    const onPlaying = () => setIsPaused(false);
+    const onPlaying = () => {
+      setIsPaused(false);
+      setEnded(false);
+    };
     const onPause = () => setIsPaused(true);
     const onTimeUpdate = () => setCurrentTime(video.currentTime);
     const onProgress = () => {
@@ -487,6 +506,7 @@ export function VideoPlayer({
     };
     const onEnded = () => {
       setIsPaused(true);
+      setEnded(true);
       // Auto-mark complete happens via pingProgress (90% threshold); reaching
       // the end also pings so the row records completion.
       pingProgress(lessonId, video.duration || 0, video.duration || 0);
@@ -668,7 +688,7 @@ export function VideoPlayer({
     // Double tap within 300ms → seek.
     if (prev && now - prev.time < 300) {
       const isLeft = x < rect.left + rect.width / 2;
-      seekTo((videoRef.current?.currentTime ?? 0) + (isLeft ? -10 : 10));
+      skip(isLeft ? -10 : 10);
       setControlsVisible(true);
       return;
     }
@@ -676,6 +696,11 @@ export function VideoPlayer({
     // Single tap → toggle controls.
     setControlsVisible((v) => !v);
     if (controlsTimeout.current) clearTimeout(controlsTimeout.current);
+  }
+
+  function skip(by: number) {
+    seekTo((videoRef.current?.currentTime ?? 0) + by);
+    setSkipFlash({ dir: by < 0 ? -1 : 1, key: Date.now() });
   }
 
   function seekTo(seconds: number) {
@@ -774,14 +799,66 @@ export function VideoPlayer({
         e.preventDefault();
         toggleMute();
         break;
+      case "j":
+      case "J":
+        e.preventDefault();
+        skip(-10);
+        break;
+      case "l":
+      case "L":
+        e.preventDefault();
+        skip(10);
+        break;
+      case ">":
+      case "<": {
+        e.preventDefault();
+        const rates = [...PLAYBACK_RATES].sort((a, b) => a - b);
+        const i = rates.indexOf(rate as (typeof rates)[number]);
+        const next = rates[Math.max(0, Math.min(rates.length - 1, i + (e.key === ">" ? 1 : -1)))];
+        pickRate(next);
+        break;
+      }
       case "f":
       case "F":
         e.preventDefault();
         toggleFullscreen();
         break;
       default:
+        // 0 to 9 jump to 0% to 90% of the lecture.
+        if (/^[0-9]$/.test(e.key) && duration) {
+          e.preventDefault();
+          seekTo((Number(e.key) / 10) * duration);
+        }
         break;
     }
+  }
+
+  function pickRate(r: number) {
+    setRate(r);
+    if (videoRef.current) videoRef.current.playbackRate = r;
+    try {
+      localStorage.setItem("plms-rate", String(r));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  // Hide the "Resumed at" chip after a few seconds.
+  useEffect(() => {
+    if (resumedAt === null) return;
+    const t = setTimeout(() => setResumedAt(null), 6000);
+    return () => clearTimeout(t);
+  }, [resumedAt]);
+  useEffect(() => {
+    if (!skipFlash) return;
+    const t = setTimeout(() => setSkipFlash(null), 650);
+    return () => clearTimeout(t);
+  }, [skipFlash]);
+
+  function timeAt(clientX: number, el: HTMLElement) {
+    const rect = el.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    return { t: pct * duration, pct: pct * 100 };
   }
 
   const progressPct = duration ? (currentTime / duration) * 100 : 0;
@@ -825,6 +902,12 @@ export function VideoPlayer({
           x-webkit-airplay="deny"
           className="h-full w-full"
           onTouchEnd={handleTap}
+          onClick={(e) => {
+            // Mouse click plays/pauses (touch taps are handled by handleTap).
+            if ((e.nativeEvent as PointerEvent).pointerType === "touch" || isTouching) return;
+            togglePlay();
+          }}
+          onDoubleClick={() => toggleFullscreen()}
         >
           {/* Caption track — only rendered when the caller provides a captions
               URL (none do today, so the captions toggle stays hidden). */}
@@ -846,6 +929,87 @@ export function VideoPlayer({
             <span className="sr-only">Loading video…</span>
           </div>
         )}
+
+        {/* Big centre controls: play when paused; on touch screens also skip
+            back and forward 10 seconds (like every phone video app). */}
+        {playerState.kind === "ready" && !tampered && !ended && (isPaused || (isTouching && controlsVisible)) ? (
+          <div className="pointer-events-none absolute inset-0 z-[5] flex items-center justify-center gap-8 sm:gap-10">
+            {isTouching ? (
+              <button type="button" onClick={() => skip(-10)} aria-label="Back 10 seconds" className="pointer-events-auto grid size-12 place-items-center rounded-full bg-black/55 text-white">
+                <RotateCcw className="size-6" aria-hidden />
+                <span className="sr-only">10</span>
+              </button>
+            ) : null}
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={isPaused ? "Play" : "Pause"}
+              className="pointer-events-auto grid size-16 place-items-center rounded-full border-2 border-foreground bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 sm:size-20"
+            >
+              {isPaused ? <Play className="ml-1 size-7 fill-current sm:size-9" aria-hidden /> : <Pause className="size-7 fill-current" aria-hidden />}
+            </button>
+            {isTouching ? (
+              <button type="button" onClick={() => skip(10)} aria-label="Forward 10 seconds" className="pointer-events-auto grid size-12 place-items-center rounded-full bg-black/55 text-white">
+                <RotateCw className="size-6" aria-hidden />
+              </button>
+            ) : null}
+          </div>
+        ) : null}
+
+        {/* Skip bubble */}
+        {skipFlash ? (
+          <div
+            key={skipFlash.key}
+            aria-hidden
+            className={
+              "pointer-events-none absolute top-1/2 z-[6] -translate-y-1/2 rounded-full bg-black/65 px-4 py-2 text-sm font-bold text-white " +
+              (skipFlash.dir < 0 ? "left-[12%]" : "right-[12%]")
+            }
+          >
+            {skipFlash.dir < 0 ? "−10 s" : "+10 s"}
+          </div>
+        ) : null}
+
+        {/* Resumed chip */}
+        {resumedAt !== null && playerState.kind === "ready" ? (
+          <div className="absolute top-3 left-3 z-[7] flex items-center gap-2 rounded-full bg-black/75 py-1.5 pr-1.5 pl-3 text-xs font-semibold text-white">
+            Resumed at {formatTime(resumedAt)}
+            <button
+              type="button"
+              onClick={() => {
+                seekTo(0);
+                setResumedAt(null);
+              }}
+              className="rounded-full bg-white px-2.5 py-1 text-[#111111]"
+            >
+              Start over
+            </button>
+          </div>
+        ) : null}
+
+        {/* End of lecture: next lecture or watch again */}
+        {ended && playerState.kind === "ready" ? (
+          <div className="absolute inset-0 z-[8] flex flex-col items-center justify-center gap-3 bg-black/75 p-4 text-center text-white">
+            <p className="text-sm font-semibold opacity-90">Lecture finished</p>
+            {nextHref ? (
+              <a href={nextHref} className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 py-3 font-bold text-primary-foreground">
+                <SkipForward className="size-5 shrink-0" aria-hidden />
+                <span className="truncate">Next: {nextTitle ?? "next lecture"}</span>
+              </a>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => {
+                setEnded(false);
+                seekTo(0);
+                videoRef.current?.play().catch(() => undefined);
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full border-2 border-white/60 px-4 py-2 text-sm font-semibold"
+            >
+              <RotateCcw className="size-4" aria-hidden /> Watch again
+            </button>
+          </div>
+        ) : null}
 
         {/* Error state — a clear message + retry, not a dead frame */}
         {playerState.kind === "error" && (
@@ -917,14 +1081,57 @@ export function VideoPlayer({
             )}
           </button>
 
+          <button
+            type="button"
+            onClick={() => skip(-10)}
+            aria-label="Back 10 seconds"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring max-sm:hidden"
+          >
+            <RotateCcw className="size-5" aria-hidden />
+          </button>
+          <button
+            type="button"
+            onClick={() => skip(10)}
+            aria-label="Forward 10 seconds"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring max-sm:hidden"
+          >
+            <RotateCw className="size-5" aria-hidden />
+          </button>
+
           <span className="text-numeric min-w-[4.5rem] shrink-0 text-xs whitespace-nowrap text-white/90 sm:min-w-0">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
 
           {/* Scrubber: shows buffered range, click to seek, drag to scrub. */}
-          <div className="group relative h-5 min-w-0 flex-1 cursor-pointer">
+          <div
+            className="group relative h-8 min-w-0 flex-1 cursor-pointer touch-none"
+            onPointerDown={(e) => {
+              if (!duration) return;
+              (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+              setDragging(true);
+              scrubTo(timeAt(e.clientX, e.currentTarget).t);
+            }}
+            onPointerMove={(e) => {
+              if (!duration) return;
+              const at = timeAt(e.clientX, e.currentTarget);
+              if (e.pointerType === "mouse") setHoverTime(at);
+              if (dragging) scrubTo(at.t);
+            }}
+            onPointerUp={() => setDragging(false)}
+            onPointerCancel={() => setDragging(false)}
+            onPointerLeave={() => setHoverTime(null)}
+          >
+            {hoverTime ? (
+              <span
+                aria-hidden
+                className="text-numeric pointer-events-none absolute bottom-full mb-1 -translate-x-1/2 rounded bg-black/85 px-1.5 py-0.5 text-[0.7rem] text-white"
+                style={{ left: `${hoverTime.pct}%` }}
+              >
+                {formatTime(hoverTime.t)}
+              </span>
+            ) : null}
             <div
-              className="absolute inset-x-0 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-sm bg-white/25"
+              className={"absolute inset-x-0 top-1/2 -translate-y-1/2 overflow-hidden rounded-sm bg-white/25 transition-[height] " + (dragging || hoverTime ? "h-2.5" : "h-1.5")}
               role="slider"
               aria-label="Seek"
               aria-valuemin={0}
@@ -939,11 +1146,6 @@ export function VideoPlayer({
                   e.preventDefault();
                   scrubTo((videoRef.current?.currentTime ?? 0) - 5);
                 }
-              }}
-              onClick={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const pct = (e.clientX - rect.left) / rect.width;
-                scrubTo(pct * duration);
               }}
             >
               {/* Buffered */}
@@ -1053,9 +1255,7 @@ export function VideoPlayer({
                       role="menuitemradio"
                       aria-checked={rate === r}
                       onClick={() => {
-                        setRate(r);
-                        if (videoRef.current) videoRef.current.playbackRate = r;
-                        try { localStorage.setItem("plms-rate", String(r)); } catch { /* ignore */ }
+                        pickRate(r);
                         setRateMenuOpen(false);
                       }}
                       className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -1155,10 +1355,7 @@ export function VideoPlayer({
                       type="button"
                       role="menuitemradio"
                       aria-checked={rate === r}
-                      onClick={() => {
-                        setRate(r);
-                        if (videoRef.current) videoRef.current.playbackRate = r;
-                      }}
+                      onClick={() => pickRate(r)}
                       className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15"
                     >
                       {r}×

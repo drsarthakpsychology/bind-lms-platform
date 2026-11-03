@@ -47,13 +47,13 @@ export default async function LeaderboardPage() {
                       {r.name}
                       {me ? " (you)" : ""}
                     </span>
-                    <span className={cn("block text-caption", me ? "opacity-80" : "text-muted-foreground")}>
+                    <span className={`block text-caption ${me ? "opacity-80" : "text-muted-foreground"}`}>
                       Level {r.level} · {r.title}
                     </span>
                   </span>
                   <span className="text-right text-sm tabular-nums">
                     <span className="block font-bold">{r.points} pts</span>
-                    <span className={cn("block text-caption", me ? "opacity-80" : "text-muted-foreground")}>{r.hours} h on VIBHA</span>
+                    <span className={`block text-caption ${me ? "opacity-80" : "text-muted-foreground"}`}>{r.hours} h on VIBHA</span>
                   </span>
                 </li>
               );
