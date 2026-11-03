@@ -87,9 +87,11 @@ export function NavItems({
     <nav aria-label="Primary" className={cn("flex flex-col gap-1", className)}>
       {rows.map(({ item, showHeader }) => {
         const under = (h: string) => pathname === h || pathname.startsWith(`${h}/`);
+        // A deeper item (e.g. /practice/medicines) wins over its parent (/practice).
+        const deeper = items.some((o) => o.href !== item.href && o.href.startsWith(`${item.href}/`) && under(o.href));
         const active = item.exact
           ? pathname === item.href
-          : under(item.href) || (item.match ?? []).some(under);
+          : (under(item.href) && !deeper) || (item.match ?? []).some(under);
         const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <React.Fragment key={item.href}>

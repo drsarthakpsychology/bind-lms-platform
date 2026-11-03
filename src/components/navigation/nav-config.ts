@@ -14,7 +14,7 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/practice", label: "Practice", icon: "stethoscope" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
-  { href: "/tools/psychopharm", label: "Medicines", icon: "pill", section: "More" },
+  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
   // Passport (skills_passport) and Record are not released for this cohort —
   // a nav link to an empty/placeholder surface is worse than no link. The
   // routes remain (no admin access is removed); students just aren't pointed at
@@ -32,6 +32,7 @@ export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/study", label: "Notes", icon: "bookOpen" },
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
+  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
 ];
 
 /**

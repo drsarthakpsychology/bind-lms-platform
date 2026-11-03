@@ -4,7 +4,8 @@ import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
 import { lastPracticePlace } from "@/lib/practice/resume";
 import { StandingCard } from "@/components/standing/standing-card";
-import { ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowRight, Pill, RotateCcw } from "lucide-react";
+import { MEDS } from "@/lib/meds";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
@@ -87,6 +88,24 @@ export default async function PracticeHubPage() {
           ) : null}
           {user ? <StandingCard userId={user.id} /> : null}
         </div>
+      </Reveal>
+
+      {/* Medicines: its own section, always open */}
+      <Reveal delay={0.12}>
+        <Link
+          href="/practice/medicines"
+          className="mb-6 flex items-center gap-4 rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground hard-shadow-md transition-transform active:translate-y-0.5"
+        >
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-primary text-primary-foreground">
+            <Pill className="size-6" aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-semibold uppercase tracking-wide opacity-90">Medicines · {MEDS.length} profiles</span>
+            <span className="block text-xl font-bold leading-tight">Look up any medicine, dose by dose</span>
+            <span className="mt-0.5 block text-sm opacity-90">Instant search. Student or clinician words.</span>
+          </span>
+          <ArrowRight className="size-6 shrink-0" aria-hidden />
+        </Link>
       </Reveal>
 
       {/* weak-spots banner — real gaps, server-computed */}
