@@ -8,6 +8,7 @@ import { emptyState, istToday, markNoteRead, type LearnState } from "@/lib/learn
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
+import { BOARDS } from "@/lib/standing/boards";
 import { ChaiSays } from "./chai";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
@@ -175,8 +176,8 @@ export function NoteView({
             Quizzing right after reading is how it sticks.
           </ChaiSays>
         </div>
-        <Link href="/games/progress" className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
-          <Trophy className="size-4" aria-hidden /> See the leaderboard
+        <Link href={BOARDS.quiz.href} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
+          <Trophy className="size-4" aria-hidden /> {BOARDS.quiz.label}
         </Link>
       </section>
 

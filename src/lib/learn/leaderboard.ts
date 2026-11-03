@@ -3,6 +3,8 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { addDays, istToday, levelFor, liveStreak, normalise } from "./engine";
 import { domainMastery } from "./adaptive";
+import { loadCohortMap } from "@/lib/standing/cohort-map";
+import { boardWindow, sameGroup } from "@/lib/standing/boards";
 
 export type BoardRow = {
   userId: string;
@@ -63,4 +65,28 @@ export async function loadBoard(): Promise<BoardRow[]> {
       };
     })
     .sort((a, b) => b.weekXp - a.weekXp || b.xp - a.xp);
+}
+
+/** What leaves the server for the quiz leaderboard: no emails, no ids. */
+export type PublicRow = { rank: number; name: string; weekXp: number; xp: number; streak: number; me: boolean };
+
+/**
+ * The quiz leaderboard one student sees: their own cohort only (see
+ * sameGroup), ranked by this week's quiz and game XP, then total XP. Returns
+ * the top 10 plus the student and their neighbours.
+ */
+export async function loadQuizBoard(userId: string | null): Promise<{ rows: PublicRow[]; myRank: number | null; total: number }> {
+  const [everyone, cohorts] = await Promise.all([loadBoard().catch(() => [] as BoardRow[]), loadCohortMap().catch(() => new Map<string, string[]>())]);
+  const mine = (userId && cohorts.get(userId)) || [];
+  const board = everyone.filter((r) => r.userId === userId || sameGroup(mine, cohorts.get(r.userId) ?? []));
+  const idx = board.findIndex((r) => r.userId === userId);
+  const rows = boardWindow(board.length, idx).map((k) => ({
+    rank: k + 1,
+    name: board[k].name,
+    weekXp: board[k].weekXp,
+    xp: board[k].xp,
+    streak: board[k].streak,
+    me: k === idx,
+  }));
+  return { rows, myRank: idx >= 0 ? idx + 1 : null, total: board.length };
 }

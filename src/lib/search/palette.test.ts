@@ -12,6 +12,14 @@ describe("command palette search", () => {
     expect(hits.map((h) => h.id)).toContain("cr");
   });
 
+  it("finds both leaderboards, each by its own name", () => {
+    const hits = searchPalette(STATIC_ENTRIES, "leaderboard").map((h) => h.id);
+    expect(hits).toEqual(expect.arrayContaining(["board-quiz", "board-overall"]));
+    expect(searchPalette(STATIC_ENTRIES, "quiz leaderboard")[0].id).toBe("board-quiz");
+    expect(searchPalette(STATIC_ENTRIES, "overall leaderboard")[0].id).toBe("board-overall");
+    expect(searchPalette(STATIC_ENTRIES, "rankings")[0].id).toBe("board-overall");
+  });
+
   it("empty query returns nothing", () => {
     expect(searchPalette(STATIC_ENTRIES, "")).toEqual([]);
   });

@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BarChart3, Flame, FlaskConical, GraduationCap, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Timer, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Flame, FlaskConical, GraduationCap, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Timer, Trophy, Zap } from "lucide-react";
 import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
 import { buildRevisionPlan, type ReviseModule } from "@/lib/revise/plan";
 import { cn } from "@/lib/utils";
+import { BOARDS } from "@/lib/standing/boards";
 import { Chai } from "./chai";
 import { ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
@@ -164,14 +165,24 @@ export function LearnHome({ units, serverState, save, showLab = false, reviseMod
         </Link>
       )}
 
-      <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
-        <BarChart3 className="size-5 shrink-0" aria-hidden />
-        <span className="min-w-0 flex-1">
-          <span className="block font-bold">Progress, badges and leaderboard</span>
-          <span className="text-sm text-muted-foreground">Mastery by topic, what you mix up, this week&apos;s ranking</span>
-        </span>
-        <ArrowRight className="size-5 shrink-0" aria-hidden />
-      </Link>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
+          <BarChart3 className="size-5 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold">My progress</span>
+            <span className="text-sm text-muted-foreground">Mastery by topic, mix-ups, badges</span>
+          </span>
+          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        </Link>
+        <Link href={BOARDS.quiz.href} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
+          <Trophy className="size-5 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold">{BOARDS.quiz.label}</span>
+            <span className="text-sm text-muted-foreground">{BOARDS.quiz.explainer} This week.</span>
+          </span>
+          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        </Link>
+      </div>
     </div>
   );
 }

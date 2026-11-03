@@ -2,30 +2,27 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Crown, Flame, Target, Trophy, Zap } from "lucide-react";
+import { ArrowRight, Flame, Target, Trophy, Zap } from "lucide-react";
 import { addDays, BADGES, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
 import { domainMastery, topConfusions } from "@/lib/learn/adaptive";
 import { DOMAINS } from "@/lib/learn/concepts";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
+import { BOARDS } from "@/lib/standing/boards";
 import { cn } from "@/lib/utils";
 import { ChaiSays } from "./chai";
 import s from "./learn.module.css";
 
 const EMPTY = emptyState();
 
-export type PublicRow = { rank: number; name: string; weekXp: number; xp: number; streak: number; level: number; me: boolean };
-
-/** My progress: mastery by topic, XP history, mix-ups, and the cohort board. */
+/** My progress: mastery by topic, XP history, mix-ups, badges, and my quiz rank. */
 export function ProgressView({
   serverState,
   save,
-  board,
   myRank,
   total,
 }: {
   serverState: LearnState | null;
   save: (s: LearnState) => Promise<unknown>;
-  board: PublicRow[];
   myRank: number | null;
   total: number;
 }) {
@@ -49,7 +46,7 @@ export function ProgressView({
           { icon: <Zap className="size-5" />, v: st.xp, l: `XP · Level ${lvl.level}` },
           { icon: <Flame className={cn("size-5", s.flame)} />, v: liveStreak(st.streak, today), l: `day streak (best ${st.streak.best})` },
           { icon: <Target className="size-5" />, v: accuracy === null ? "—" : `${accuracy}%`, l: `accuracy · ${st.answered} answered` },
-          { icon: <Trophy className="size-5" />, v: myRank ? `#${myRank}` : "—", l: `this week, of ${total}` },
+          { icon: <Trophy className="size-5" />, v: myRank ? `#${myRank}` : "—", l: `quiz rank this week, of ${total}` },
         ].map((x) => (
           <div key={x.l} className="rounded-2xl border-2 border-foreground bg-card p-3">
             <p className="flex items-center gap-1.5 text-2xl font-bold">
@@ -121,33 +118,17 @@ export function ProgressView({
         </section>
       ) : null}
 
-      {/* Leaderboard */}
-      <section>
-        <h2 className="text-h2">This week&apos;s leaderboard</h2>
-        <p className="text-caption text-muted-foreground">Ranked by XP earned in the last 7 days. Resets every week, so everyone has a fresh shot.</p>
-        <ol className="mt-3 overflow-hidden rounded-2xl border-2 border-foreground bg-card">
-          {board.length ? (
-            board.map((r) => (
-              <li key={`${r.rank}-${r.name}`} className={cn("flex items-center gap-3 border-b-2 border-foreground/10 px-4 py-2.5 last:border-b-0", r.me && "bg-primary text-primary-foreground")}>
-                <span className={cn("grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground font-pix text-xs", r.rank === 1 ? "bg-brand text-brand-foreground" : "bg-background")}>
-                  {r.rank === 1 ? <Crown className="size-4" aria-label="First" /> : r.rank}
-                </span>
-                <span className="min-w-0 flex-1 truncate font-bold">
-                  {r.name}
-                  {r.me ? " (you)" : ""}
-                </span>
-                <span className="hidden text-caption sm:inline">L{r.level}</span>
-                <span className="flex items-center gap-1 text-caption">
-                  <Flame className="size-3.5" aria-hidden /> {r.streak}
-                </span>
-                <span className="w-20 text-right font-pix text-xs">{r.weekXp} XP</span>
-              </li>
-            ))
-          ) : (
-            <li className="px-4 py-6 text-center text-sm text-muted-foreground">No one has played yet this week. First place is yours to take.</li>
-          )}
-        </ol>
-      </section>
+      {/* Quiz leaderboard: its own page, one tap away */}
+      <Link href={BOARDS.quiz.href} className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
+        <Trophy className="size-6 shrink-0" aria-hidden />
+        <span className="min-w-0 flex-1">
+          <span className="block font-bold">{BOARDS.quiz.label}</span>
+          <span className="text-sm text-muted-foreground">
+            {BOARDS.quiz.explainer} {myRank ? `You are #${myRank} this week.` : "This week."}
+          </span>
+        </span>
+        <ArrowRight className="size-5 shrink-0" aria-hidden />
+      </Link>
 
       <section>
         <h2 className="text-h2">Badges</h2>
