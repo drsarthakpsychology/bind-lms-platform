@@ -102,7 +102,9 @@ Excluded on purpose: .env files, keys, credentials, node_modules, build caches, 
 EOF
 
 # Final secret scan of the staged package (fails the build on a hit).
-if grep -rEn --exclude=checksums.sha256 '(sk_live_|sk-ant-|SUPABASE_SERVICE_ROLE_KEY=ey|-----BEGIN (RSA |EC )?PRIVATE KEY|AKIA[0-9A-Z]{16})' "$STAGE" ; then
+# Patterns require an actual key value after the prefix, so this script's own
+# text (which appears in the patch series) does not trip it.
+if grep -rEn --exclude=checksums.sha256 '(sk_live_[A-Za-z0-9]{16,}|sk-ant-[A-Za-z0-9_-]{20,}|SUPABASE_SERVICE_ROLE_KEY=eyJ[A-Za-z0-9_.-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|AKIA[0-9A-Z]{16}|re_[A-Za-z0-9]{8}_[A-Za-z0-9]{20,})' "$STAGE" ; then
   echo "Possible secret found in package; aborting." >&2
   exit 1
 fi
