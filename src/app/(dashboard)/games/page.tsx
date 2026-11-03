@@ -3,6 +3,8 @@ import { getFeatureStatus, requireFeature } from "@/lib/flags";
 import { getSession } from "@/lib/auth/session";
 import { UNITS } from "@/lib/learn/content";
 import { LearnHome } from "@/components/learn/learn-home";
+import { MODULES } from "@/lib/study";
+import { toReviseModule } from "@/lib/revise/plan";
 import { loadLearnState, saveLearnState } from "../study/actions";
 
 export const metadata: Metadata = { title: "Games" };
@@ -14,5 +16,5 @@ export default async function GamesPage() {
   const isAdmin = session.status === "ok" && session.profile.role === "admin";
   // The Lab card shows only once the Lab is unlocked (admins always see it, to preview).
   const showLab = isAdmin || labStatus === "unlocked";
-  return <LearnHome units={UNITS} serverState={serverState} save={saveLearnState} showLab={showLab} />;
+  return <LearnHome units={UNITS} serverState={serverState} save={saveLearnState} showLab={showLab} reviseModules={MODULES.map(toReviseModule)} />;
 }
