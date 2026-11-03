@@ -2,7 +2,7 @@
 
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { generateCredential, deriveName, issueSetupLink } from "@/lib/auth/roster";
 
@@ -23,7 +23,7 @@ export async function createStudent(
   _prevState: CreateStudentState,
   formData: FormData,
 ): Promise<CreateStudentState> {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return { error: "Not authorized.", success: false };
   }
 
@@ -110,7 +110,7 @@ export async function createStudent(
  */
 export async function deleteStudent(userId: string): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const admin = createAdminClient();
     const { error } = await admin.auth.admin.deleteUser(userId);
@@ -128,7 +128,7 @@ export async function deleteStudent(userId: string): Promise<{ error: string | n
  * Reset a test account's password to the default. Admin only.
  */
 export async function resetStudentPassword(userId: string): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
   const { error } = await admin.auth.admin.updateUserById(userId, { password: "K#test" });
@@ -148,7 +148,7 @@ export async function setAccountStatus(
   status: "active" | "blocked",
   reason?: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
   const { error } = await admin
@@ -174,7 +174,7 @@ export async function setAccountStatus(
 export async function setAllStudentsStatus(
   status: "active" | "blocked",
 ): Promise<{ error: string | null; updated: number }> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", updated: 0 };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", updated: 0 };
 
   const admin = createAdminClient();
   const { data, error } = await admin

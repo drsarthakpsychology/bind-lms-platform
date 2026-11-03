@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { emailConfigured, sendNudges } from "@/lib/nudge/send";
 import { isNudgeable } from "@/lib/nudge/select";
@@ -23,7 +23,7 @@ const DEFAULT_TEXT =
  * reports "email-not-configured" — it never claims an email went out.
  */
 export async function POST(req: Request) {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
   const parsed = schema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });

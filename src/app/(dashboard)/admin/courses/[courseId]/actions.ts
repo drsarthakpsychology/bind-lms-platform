@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { isHiddenAccount } from "@/lib/people/hidden";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { signR2UploadUrl, headR2Object } from "@/lib/media/r2";
 import { policyVersion } from "@/lib/legal-constants";
@@ -19,7 +19,7 @@ export async function enrollStudent(
   userId: string,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const supabase = await createClient();
     // The enrolment record carries the terms acceptance (timestamp + policy
@@ -62,7 +62,7 @@ export async function enrollStudents(
   userIds: string[],
 ): Promise<{ error: string | null; enrolled: number }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized.", enrolled: 0 };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized.", enrolled: 0 };
 
     const ids = Array.from(new Set(userIds)).filter(Boolean);
     if (!ids.length) return { error: null, enrolled: 0 };
@@ -101,7 +101,7 @@ export async function unenrollStudent(
   userId: string,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     // Admin deletes use the service-role client — the anon client's DELETE is
     // RLS-filtered to 0 rows while still returning 204 (no error), so the
@@ -132,7 +132,7 @@ export async function prepareVideoUpload(
   courseId: string,
   fileName: string,
 ): Promise<SignedUploadResult> {
-  if (!(await requireAdmin())) return { ok: false, error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { ok: false, error: "Not authorized." };
 
   // Upload target is Cloudflare R2 (a pre-signed PUT), NOT Supabase Storage —
   // the Supabase Free-plan global 50MB file cap made large source uploads fail.
@@ -159,7 +159,7 @@ export async function createLessonWithVideo(
   _prevState: CreateLessonState,
   formData: FormData,
 ): Promise<CreateLessonState> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const title = String(formData.get("title") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
@@ -278,7 +278,7 @@ export async function attachVideoToLesson(
   courseId: string,
   path: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   // Verify the bytes actually landed (the source now lives in R2) before
   // marking the lesson playable.
@@ -325,7 +325,7 @@ export async function deleteLesson(
   courseId: string,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     // Admin deletes go through the service-role client. The anon client's
     // DELETE was RLS-filtered to 0 rows while still returning 204 (no error),
@@ -360,7 +360,7 @@ export async function setLessonStatus(
   status: "hidden" | "live" | "unlocked",
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const supabase = await createClient();
     const { error } = await supabase.from("lessons").update({ status }).eq("id", lessonId);
@@ -396,7 +396,7 @@ export async function updateLesson(
   },
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const title = fields.title.trim();
     if (!title) return { error: "Title is required." };
@@ -459,7 +459,7 @@ export async function setAssignmentPublished(
   published: boolean,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const supabase = await createClient();
     const { data: assignment, error: findError } = await supabase
@@ -490,7 +490,7 @@ export async function moveLesson(
   direction: "up" | "down",
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const supabase = await createClient();
     const { data: ordered } = await supabase

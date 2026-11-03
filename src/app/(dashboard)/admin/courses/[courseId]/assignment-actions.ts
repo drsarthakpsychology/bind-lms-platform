@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { DEFAULT_ACCEPTED_FORMATS, SUBMISSION_TYPE_CSV } from "@/lib/media/registry";
 
@@ -16,7 +16,7 @@ export async function createAssignment(
   _prev: AssignmentEditorState,
   formData: FormData,
 ): Promise<AssignmentEditorState> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const title = String(formData.get("title") ?? "").trim();
   const instructions = String(formData.get("instructions") ?? "").trim();
@@ -68,7 +68,7 @@ export async function saveAssignment(
   _prev: AssignmentEditorState,
   formData: FormData,
 ): Promise<AssignmentEditorState> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const title = String(formData.get("title") ?? "").trim();
   const instructions = String(formData.get("instructions") ?? "").trim();
@@ -125,7 +125,7 @@ export async function autosaveAssignment(
     acceptedFormats?: string[];
   },
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const supabase = await createClient();
   const patch: Record<string, unknown> = {};
@@ -163,7 +163,7 @@ export async function setAssignmentPublished(
   assignmentId: string,
   isPublished: boolean,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -185,7 +185,7 @@ export async function deleteAssignment(
   assignmentId: string,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     // Admin delete through the service-role client: the anon client's DELETE
     // is RLS-filtered to 0 rows while still returning 204 (no error), so the

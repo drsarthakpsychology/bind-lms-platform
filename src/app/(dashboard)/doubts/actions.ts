@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireSession, requireAdmin } from "@/lib/auth/guards";
+import { requireSession, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
@@ -130,13 +130,13 @@ export async function reclassifyMine(doubtId: string, kind: "doubt" | "complaint
 
 /** Admin: hide a post, or an answer, from the board. */
 export async function adminHideDoubt(doubtId: string, hidden: boolean): Promise<R> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   await createAdminClient().from("doubts").update({ status: hidden ? "hidden" : "open" }).eq("id", doubtId);
   refresh(doubtId);
   return { error: null };
 }
 export async function adminHideReply(doubtId: string, replyId: string, hidden: boolean): Promise<R> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   await createAdminClient().from("doubt_replies").update({ hidden }).eq("id", replyId);
   refresh(doubtId);
   return { error: null };

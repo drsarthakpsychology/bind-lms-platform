@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { isFeatureKey, RESETS, type ResetKey } from "@/lib/access/features";
 
@@ -15,7 +15,7 @@ function refresh() {
 
 /** Full or Lectures only, for one or many students. Never touches admins. */
 export async function setScopeFor(userIds: string[], scope: "full" | "lectures_only"): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", done: 0 };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", done: 0 };
   if (scope !== "full" && scope !== "lectures_only") return { error: "Unknown access level.", done: 0 };
   const ids = clean(userIds);
   if (!ids.length) return { error: "Tick at least one student.", done: 0 };
@@ -27,7 +27,7 @@ export async function setScopeFor(userIds: string[], scope: "full" | "lectures_o
 
 /** Switch a section off (or back on) for one or many students. */
 export async function setFeatureFor(userIds: string[], feature: string, off: boolean): Promise<Result> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized.", done: 0 };
   if (!isFeatureKey(feature)) return { error: "Unknown section.", done: 0 };
   const ids = clean(userIds);
@@ -43,7 +43,7 @@ export async function setFeatureFor(userIds: string[], feature: string, off: boo
 
 /** Start a student's progress again in one area (cannot be undone). */
 export async function resetFor(userIds: string[], key: ResetKey): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", done: 0 };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", done: 0 };
   const r = RESETS.find((x) => x.key === key);
   if (!r) return { error: "Unknown reset.", done: 0 };
   const ids = clean(userIds);

@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 export type CreateCourseState = { error: string | null };
@@ -10,7 +10,7 @@ export async function createCourse(
   _prevState: CreateCourseState,
   formData: FormData,
 ): Promise<CreateCourseState> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const title = String(formData.get("title") ?? "").trim();
   const isPublished = formData.get("isPublished") === "on";
@@ -32,7 +32,7 @@ export async function setCoursePublished(
   courseId: string,
   isPublished: boolean,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -49,7 +49,7 @@ export async function setCoursePublished(
 
 export async function deleteCourse(courseId: string): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     // Admin delete through the service-role client: the anon client's DELETE
     // is RLS-filtered to 0 rows while still returning 204 (no error), so the
@@ -76,7 +76,7 @@ export async function renameCourse(
   courseId: string,
   title: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const clean = title.trim();
   if (!clean) return { error: "Course title can't be empty." };
 

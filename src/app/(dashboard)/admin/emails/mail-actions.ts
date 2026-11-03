@@ -1,13 +1,13 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { logEmailSend, sendResendEmail } from "@/lib/auth/roster";
 
 /** Reply to an inbound email (plain text), log it, and mark the thread read. */
 export async function replyToInbound(id: string, text: string): Promise<{ error: string | null }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   const body = text.trim();
   if (!body) return { error: "Write a reply first." };
@@ -36,7 +36,7 @@ export async function replyToInbound(id: string, text: string): Promise<{ error:
 
 /** Archive (E) or move back to the inbox. */
 export async function setArchived(id: string, archived: boolean): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const admin = createAdminClient();
   await admin.from("email_inbound").update({ archived_at: archived ? new Date().toISOString() : null }).eq("id", id);
   revalidatePath("/admin/emails");
@@ -45,14 +45,14 @@ export async function setArchived(id: string, archived: boolean): Promise<{ erro
 
 /** Mark an inbound email read (when it's opened in the reading pane). */
 export async function markRead(id: string): Promise<void> {
-  if (!(await requireAdmin())) return;
+  if (!(await requireSuperAdmin())) return;
   const admin = createAdminClient();
   await admin.from("email_inbound").update({ read_at: new Date().toISOString() }).eq("id", id).is("read_at", null);
 }
 
 /** Mail → Failed: hide every failed send so the count clears (nothing is deleted). */
 export async function clearFailed(): Promise<{ error: string | null; cleared: number }> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", cleared: 0 };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", cleared: 0 };
   const { dismissFailures } = await import("@/lib/email/failed");
   const res = await dismissFailures(createAdminClient());
   revalidatePath("/admin/emails");

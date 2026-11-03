@@ -106,7 +106,7 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
  */
 export async function authorizeAndResolveLesson(opts: {
   userId: string;
-  role: "admin" | "student" | "alumni";
+  role: "admin" | "view_admin" | "student" | "alumni";
   scope?: "full" | "lectures_only";
   lessonId: string;
 }): Promise<{ authorized: boolean; resolved: ResolvedStream | null }> {
@@ -124,7 +124,7 @@ export async function authorizeAndResolveLesson(opts: {
   }
 
   const resolved = resolveLessonStreamFromRow(lesson);
-  if (opts.role === "admin") {
+  if (opts.role === "admin" || opts.role === "view_admin") {
     return { authorized: true, resolved };
   }
 

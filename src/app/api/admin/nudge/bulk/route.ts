@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { rateLimit } from "@/lib/rate-limit";
 import { MAX_BULK_RECIPIENTS } from "@/lib/nudge/select";
 import { emailConfigured, recipientsFor, sendNudges } from "@/lib/nudge/send";
@@ -19,7 +19,7 @@ const schema = z.object({
  * student. 5 bulk sends per admin per 10 minutes.
  */
 export async function POST(req: Request) {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
 
   const parsed = schema.safeParse(await req.json().catch(() => null));

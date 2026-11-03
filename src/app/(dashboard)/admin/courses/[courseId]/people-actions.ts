@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { enrollStudents } from "./actions";
@@ -51,7 +51,7 @@ function refresh(courseId: string) {
 
 /** Enrol students in the course and, if picked, put them in one of its cohorts. */
 export async function addToCourse(courseId: string, userIds: string[], cohortId: string | null): Promise<{ error: string | null; added: number }> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", added: 0 };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", added: 0 };
   const ids = [...new Set(userIds)].filter(Boolean).slice(0, 1000);
   if (!ids.length) return { error: "Tick at least one student.", added: 0 };
   const res = await enrollStudents(courseId, ids);
@@ -68,7 +68,7 @@ export async function addToCourse(courseId: string, userIds: string[], cohortId:
 
 /** Take a student out of the course and out of this course's cohorts. */
 export async function removeFromCourse(courseId: string, userId: string, cohortIds: string[]): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const admin = createAdminClient();
   const { error } = await admin.from("course_enrollments").delete().eq("course_id", courseId).eq("user_id", userId);
   if (error) return { error: "Could not remove them." };
@@ -82,7 +82,7 @@ export async function removeFromCourse(courseId: string, userId: string, cohortI
  * Only that one membership changes; their other cohorts stay as they are.
  */
 export async function changeCohortMembership(courseId: string, userId: string, cohortId: string, op: "add" | "remove"): Promise<{ error: string | null }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   if (op !== "add" && op !== "remove") return { error: "Unknown change." };
   const course = await loadCourseCohorts(courseId);
@@ -108,7 +108,7 @@ export async function changeCohortMembership(courseId: string, userId: string, c
 
 /** New cohort for this course. Lectures already in the course are shared only if asked. */
 export async function newCohortForCourse(courseId: string, name: string, shareExisting: boolean): Promise<{ error: string | null; id?: string }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const n = name.trim();
   if (!n) return { error: "Give the cohort a name." };
   const admin = createAdminClient();

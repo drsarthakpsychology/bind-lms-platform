@@ -2,7 +2,7 @@
 
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { deriveName, generateCredential, issueSetupLink } from "@/lib/auth/roster";
 import { STAGE_LABEL, isStage } from "@/lib/crm/people";
@@ -18,7 +18,7 @@ const ok = (email: string): Result => {
 
 /** Move someone to a pipeline stage (and log it on their timeline). */
 export async function setStage(email: string, stage: string): Promise<Result> {
-  const admin0 = await requireAdmin();
+  const admin0 = await requireSuperAdmin();
   if (!admin0) return { error: "Not authorized." };
   if (!isStage(stage)) return { error: "Unknown stage." };
   const admin = createAdminClient();
@@ -31,7 +31,7 @@ export async function setStage(email: string, stage: string): Promise<Result> {
 
 /** Set (or clear, with an empty date) the next follow-up. */
 export async function setFollowUp(email: string, date: string): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const admin = createAdminClient();
   const at = date ? new Date(`${date}T09:00:00+05:30`).toISOString() : null;
   const { error } = await admin.from("crm_contacts").upsert({ email: clean(email), next_follow_up_at: at, updated_at: new Date().toISOString() }, { onConflict: "email" });
@@ -41,7 +41,7 @@ export async function setFollowUp(email: string, date: string): Promise<Result> 
 
 /** Log a call, WhatsApp, meeting or note. Contacting someone new moves them to "Contacted". */
 export async function logActivity(email: string, kind: string, body: string): Promise<Result> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   if (!["note", "call", "whatsapp", "email", "meeting"].includes(kind)) return { error: "Unknown activity." };
   const text = body.trim().slice(0, 4000);
@@ -60,7 +60,7 @@ export async function logActivity(email: string, kind: string, body: string): Pr
 
 /** Turn an enquiry into a student account and return a one-time setup link. */
 export async function convertToStudent(email: string, name: string): Promise<{ error: string | null; setupUrl: string | null }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized.", setupUrl: null };
   const e = clean(email);
   const admin = createAdminClient();

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -16,7 +16,7 @@ const schema = z.object({
  * anything still reading the boolean keeps working. Admin-only.
  */
 export async function POST(req: Request) {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return NextResponse.json({ error: "Not authorized." }, { status: 401 });
   }
   const body = await req.json().catch(() => null);

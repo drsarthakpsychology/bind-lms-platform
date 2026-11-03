@@ -1,14 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { hashMaster, masterProblem } from "@/lib/auth/master-hash";
 import { loadMaster, saveMaster } from "@/lib/auth/master";
 
 /** Set or change the support key (typed twice). */
 export async function setMasterPassword(pw: string, again: string): Promise<{ error: string | null }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   if (pw !== again) return { error: "The two entries don't match." };
   const problem = masterProblem(pw);
@@ -21,7 +21,7 @@ export async function setMasterPassword(pw: string, again: string): Promise<{ er
 
 /** Switch the support key off (or back on) without changing it. */
 export async function setMasterEnabled(on: boolean): Promise<{ error: string | null }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   const admin = createAdminClient();
   const { setting } = await loadMaster(admin);

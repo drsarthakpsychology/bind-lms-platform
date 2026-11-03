@@ -3,7 +3,7 @@
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { isHiddenAccount } from "@/lib/people/hidden";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendResendEmail, sendCredentialEmails, logEmailSend } from "@/lib/auth/roster";
 
@@ -88,7 +88,7 @@ export async function sendCampaignEmail(input: {
   recipientEmails: string[];
   templateId: string | null;
 }): Promise<CampaignSendResult> {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
 
   const subject = input.subject.trim();
@@ -155,7 +155,7 @@ export async function sendTestCampaignEmail(input: {
   subject: string;
   html: string;
 }): Promise<{ error: string | null; ok: boolean; detail: string }> {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", ok: false, detail: "" };
   if (!profile.email) return { error: "Your account has no email on file.", ok: false, detail: "" };
 
@@ -181,7 +181,7 @@ export async function retryFailedCredentialSends(): Promise<{
   sent: number;
   failed: number;
 }> {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", retried: 0, sent: 0, failed: 0 };
 
   const admin = createAdminClient();

@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { validateMaterialFile } from "@/lib/materials";
 import { verifyObjectExists } from "@/lib/storage-verify";
@@ -23,7 +23,7 @@ export async function prepareMaterialUpload(
   fileName: string,
   sizeBytes: number,
 ): Promise<PrepareMaterialUploadResult> {
-  if (!(await requireAdmin())) return { ok: false, error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { ok: false, error: "Not authorized." };
 
   const validation = validateMaterialFile(fileName, sizeBytes);
   if (!validation.ok || !validation.kind || !validation.format) {
@@ -87,7 +87,7 @@ export async function confirmMaterialUpload(
   materialId: string,
   path: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const size = await verifyObjectExists("materials", path);
   const admin = createAdminClient();
@@ -109,7 +109,7 @@ export async function deleteMaterial(
   storagePath: string | null,
 ): Promise<{ error: string | null }> {
   try {
-    if (!(await requireAdmin())) return { error: "Not authorized." };
+    if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const admin = createAdminClient();
 
@@ -139,7 +139,7 @@ export async function renameMaterial(
   materialId: string,
   title: string,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const clean = title.trim();
   if (!clean) return { error: "Title can't be empty." };
 
@@ -156,7 +156,7 @@ export async function reorderMaterials(
   courseId: string,
   orderedIds: string[],
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
   for (let i = 0; i < orderedIds.length; i++) {
@@ -191,7 +191,7 @@ export async function replaceMaterialFile(
   fileName: string,
   sizeBytes: number,
 ): Promise<ReplaceMaterialResult> {
-  if (!(await requireAdmin())) return { ok: false, error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { ok: false, error: "Not authorized." };
 
   const validation = validateMaterialFile(fileName, sizeBytes);
   if (!validation.ok || !validation.kind || !validation.format) {
@@ -239,7 +239,7 @@ export async function restoreMaterialPath(
   materialId: string,
   oldPath: string | null,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   if (!oldPath) return { error: null };
 
   const admin = createAdminClient();
@@ -261,7 +261,7 @@ export async function confirmMaterialReplace(
   materialId: string,
   oldPath: string | null,
 ): Promise<{ error: string | null }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
 
@@ -292,7 +292,7 @@ export async function createLinkMaterial(
   title: string,
   url: string,
 ): Promise<{ error: string | null; id?: string }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const cleanUrl = url.trim();
   if (!/^https?:\/\//i.test(cleanUrl)) {

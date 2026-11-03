@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -31,7 +31,7 @@ const createSchema = z.object({
  */
 
 export async function POST(req: Request) {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return NextResponse.json({ error: "Not authorized." }, { status: 401 });
   }
   const body = await req.json().catch(() => null);
@@ -68,7 +68,7 @@ export async function GET() {
 }
 
 export async function PATCH(req: Request) {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return NextResponse.json({ error: "Not authorized." }, { status: 401 });
   }
   const body = await req.json().catch(() => null);
@@ -118,7 +118,7 @@ export async function PATCH(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return NextResponse.json({ error: "Not authorized." }, { status: 401 });
   }
   const id = new URL(req.url).searchParams.get("id");

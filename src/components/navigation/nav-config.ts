@@ -80,6 +80,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
   { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },
+  { href: "/admin/management", label: "Admin Management", icon: "key", section: "System" },
 ];
 
 /**
@@ -155,6 +156,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/infra", label: "Usage & limits" },
       { href: "/admin/tools", label: "Admin tools" },
+      { href: "/admin/management", label: "Admin Management" },
     ],
   },
 ];

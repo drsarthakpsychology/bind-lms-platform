@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { generateCertificatePdf } from "@/lib/certificate";
 
@@ -16,7 +16,7 @@ export async function issueCertificate(
   _prevState: CertificateResult,
   formData: FormData,
 ): Promise<CertificateResult> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", success: false };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", success: false };
 
   const userId = String(formData.get("userId") ?? "").trim();
   const courseId = String(formData.get("courseId") ?? "").trim();
@@ -26,7 +26,7 @@ export async function issueCertificate(
   const [{ data: student }, { data: course }, { data: profile }] = await Promise.all([
     supabase.from("profiles").select("id, email").eq("id", userId).maybeSingle(),
     supabase.from("courses").select("id, title").eq("id", courseId).maybeSingle(),
-    supabase.from("profiles").select("id").eq("id", (await requireAdmin())?.id).maybeSingle(),
+    supabase.from("profiles").select("id").eq("id", (await requireSuperAdmin())?.id).maybeSingle(),
   ]);
   if (!student || !course) return { error: "Student or course not found.", success: false };
 

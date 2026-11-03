@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -12,11 +12,11 @@ const schema = z.object({
 
 /**
  * POST /api/practice/wall/pin — pin/unpin a post (the Case of the Week).
- * Faculty/admin only (requireAdmin + RLS). Pinned posts render first with a
+ * Faculty/admin only (requireSuperAdmin + RLS). Pinned posts render first with a
  * 📌 badge on the wall.
  */
 export async function POST(req: Request) {
-  const admin = await requireAdmin();
+  const admin = await requireSuperAdmin();
   if (!admin) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
 
   const body = await req.json().catch(() => null);

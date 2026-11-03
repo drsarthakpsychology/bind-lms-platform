@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const requireAdmin = vi.fn();
-vi.mock("@/lib/auth/guards", () => ({ requireAdmin: () => requireAdmin() }));
+const requireSuperAdmin = vi.fn();
+vi.mock("@/lib/auth/guards", () => ({ requireSuperAdmin: () => requireSuperAdmin() }));
 const rateLimit = vi.fn();
 vi.mock("@/lib/rate-limit", () => ({ rateLimit: (...a: unknown[]) => rateLimit(...a) }));
 const configured = vi.fn();
@@ -22,7 +22,7 @@ const good = { userIds: [ID], subject: "Hi", message: "Hello {name}" };
 describe("POST /api/admin/nudge/bulk", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    requireAdmin.mockResolvedValue({ id: "admin1", role: "admin" });
+    requireSuperAdmin.mockResolvedValue({ id: "admin1", role: "admin" });
     rateLimit.mockResolvedValue(true);
     configured.mockReturnValue(true);
     recipientsFor.mockResolvedValue({ recipients: [{ id: ID, name: "Asha", email: "asha@gmail.com" }], skipped: 0 });
@@ -31,7 +31,7 @@ describe("POST /api/admin/nudge/bulk", () => {
   });
 
   it("rejects non-admins", async () => {
-    requireAdmin.mockResolvedValue(null);
+    requireSuperAdmin.mockResolvedValue(null);
     expect((await POST(req(good))).status).toBe(401);
     expect(sendNudges).not.toHaveBeenCalled();
   });

@@ -2,7 +2,7 @@
 
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { deriveName, generateCredential, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
 import { parseEmails } from "@/lib/cohorts/rules";
@@ -26,7 +26,7 @@ async function inBatches<T, R>(items: T[], size: number, fn: (t: T) => Promise<R
 /* ---------------------------------------------------------------- cohorts */
 
 export async function createCohort(form: { name: string; startsOn?: string; status?: string; courseId?: string | null }): Promise<Result & { id?: string }> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const name = form.name.trim();
   if (!name) return { error: "Give the cohort a name." };
   const admin = createAdminClient();
@@ -46,7 +46,7 @@ export async function createCohort(form: { name: string; startsOn?: string; stat
 }
 
 export async function updateCohort(id: string, patch: { name?: string; status?: string; startsOn?: string | null; endsOn?: string | null }): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const row: Record<string, unknown> = {};
   if (patch.name !== undefined) {
     if (!patch.name.trim()) return { error: "The name can't be empty." };
@@ -79,7 +79,7 @@ export async function addPeopleToCohort(
   emailsText: string,
   opts: { sendEmail: boolean; scope: "full" | "lectures_only" },
 ): Promise<{ error: string | null; rows: AddRow[]; invalid: string[] }> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized.", rows: [], invalid: [] };
   const { valid, invalid } = parseEmails(emailsText);
   if (!valid.length) return { error: invalid.length ? "None of those look like email addresses." : "Paste at least one email.", rows: [], invalid };
@@ -168,7 +168,7 @@ export async function addPeopleToCohort(
 
 /** Email a fresh login link to one person. */
 export async function sendLoginLink(email: string): Promise<Result> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   const admin = createAdminClient();
   await admin.from("credential_invites").upsert({ email, name: deriveName(email), status: "pending" }, { onConflict: "email", ignoreDuplicates: true });
@@ -179,7 +179,7 @@ export async function sendLoginLink(email: string): Promise<Result> {
 /* ------------------------------------------------------------- membership */
 
 export async function removeFromCohort(cohortId: string, userId: string): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const { error } = await createAdminClient().from("cohort_members").delete().eq("cohort_id", cohortId).eq("user_id", userId);
   if (error) return { error: error.message };
   refresh(cohortId);
@@ -189,7 +189,7 @@ export async function removeFromCohort(cohortId: string, userId: string): Promis
 
 /** Set exactly which cohorts a person is in. */
 export async function setPersonCohorts(userId: string, cohortIds: string[]): Promise<Result> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   const admin = createAdminClient();
   const { data: cur } = await admin.from("cohort_members").select("cohort_id").eq("user_id", userId);
@@ -214,7 +214,7 @@ export async function setPersonCohorts(userId: string, cohortIds: string[]): Pro
 
 /** Full platform, or lectures only. */
 export async function setPersonScope(userId: string, scope: "full" | "lectures_only"): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const { error } = await createAdminClient().from("profiles").update({ scope }).eq("id", userId);
   if (error) return { error: error.message };
   revalidatePath(`/admin/cohorts/student/${userId}`);
@@ -225,7 +225,7 @@ export async function setPersonScope(userId: string, scope: "full" | "lectures_o
 
 /** Share (or stop sharing) lectures with a cohort. */
 export async function setCohortLessons(cohortId: string, lessonIds: string[], shared: boolean): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   if (!lessonIds.length) return { error: null };
   const admin = createAdminClient();
   const { error } = shared
@@ -238,7 +238,7 @@ export async function setCohortLessons(cohortId: string, lessonIds: string[], sh
 
 /** Give (or take back) one lecture for one person, outside their cohort. */
 export async function setPersonLesson(userId: string, lessonId: string, granted: boolean): Promise<Result> {
-  const me = await requireAdmin();
+  const me = await requireSuperAdmin();
   if (!me) return { error: "Not authorized." };
   const admin = createAdminClient();
   const { error } = granted
@@ -251,7 +251,7 @@ export async function setPersonLesson(userId: string, lessonId: string, granted:
 
 /** Let a student fill the details form again (for example after a typo). */
 export async function reopenDetails(userId: string): Promise<Result> {
-  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const { error } = await createAdminClient().from("student_details").update({ confirmed_at: null }).eq("user_id", userId);
   if (error) return { error: error.message };
   revalidatePath(`/admin/cohorts/student/${userId}`);

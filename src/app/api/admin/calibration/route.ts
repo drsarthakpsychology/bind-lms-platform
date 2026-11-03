@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { weightedKappa } from "@/lib/practice/rubric";
 
@@ -20,10 +20,10 @@ const schema = z.object({
  * n_scored. When the gate passes (>= 10 pairs, kappa >= 0.6) the dimension
  * flips to validated and its number becomes visible to students.
  *
- * Admin-only (RLS + requireAdmin). Idempotent-ish: each call adds one pair.
+ * Admin-only (RLS + requireSuperAdmin). Idempotent-ish: each call adds one pair.
  */
 export async function POST(req: Request) {
-  const admin = await requireAdmin();
+  const admin = await requireSuperAdmin();
   if (!admin) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
 
   const body = await req.json().catch(() => null);

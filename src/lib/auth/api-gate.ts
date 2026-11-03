@@ -22,7 +22,7 @@ export type ApiGate = { path: string; flag?: FeatureKey };
 export type SessionStatus = "ok" | "blocked" | "unauthenticated" | "expired" | "session_replaced";
 
 export type GateProfile = {
-  role: "admin" | "student" | "alumni";
+  role: "admin" | "view_admin" | "student" | "alumni";
   scope: "full" | "lectures_only";
   status: "active" | "blocked";
 };

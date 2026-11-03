@@ -8,7 +8,7 @@ export const SESSION_COOKIE = "plms_session";
 export type Profile = {
   id: string;
   email: string | null;
-  role: "admin" | "student" | "alumni";
+  role: "admin" | "view_admin" | "student" | "alumni";
   /** Access scope. "lectures_only" locks the account to the lecture list +
    *  player; every other student surface is blocked server-side. Defaults to
    *  "full" when the column is absent (pre-migration rows). */

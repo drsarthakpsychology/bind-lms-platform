@@ -1,6 +1,6 @@
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { getEmailTemplate } from "@/lib/email/templates";
 
 /**
@@ -10,7 +10,7 @@ import { getEmailTemplate } from "@/lib/email/templates";
  * Admin-only.
  */
 export async function POST(req: Request) {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
 
   const body = (await req.json().catch(() => null)) as { templateId?: string } | null;

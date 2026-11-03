@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { correctionSchema, buildCorrectionRow } from "@/lib/practice/sim-review";
 
@@ -14,7 +14,7 @@ export const runtime = "nodejs";
  * Admin-only — RLS also blocks non-admins on the table itself.
  */
 export async function POST(req: Request) {
-  const admin = await requireAdmin();
+  const admin = await requireSuperAdmin();
   if (!admin) return NextResponse.json({ error: "Not authorized." }, { status: 401 });
 
   const body = await req.json().catch(() => null);

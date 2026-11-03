@@ -55,6 +55,7 @@ export default async function DashboardLayout({
   if (
     session.status === "ok" &&
     session.profile.role !== "admin" &&
+    session.profile.role !== "view_admin" &&
     session.profile.scope === "lectures_only"
   ) {
     const pathname = (await headers()).get("x-pathname") ?? "";
@@ -78,8 +79,8 @@ export default async function DashboardLayout({
   // Admin viewing the student side is in "student" mode; everyone else is in
   // their natural mode. `mode` only controls navigation layout, not access.
   // Alumni (A10) render the student shell with read-only access to their record.
-  const mode = role === "admin" && !viewingAsStudent ? "admin" : "student";
-  const shellRole = role === "alumni" ? "student" : role;
+  const mode = (role === "admin" || role === "view_admin") && !viewingAsStudent ? "admin" : "student";
+  const shellRole = role === "alumni" ? "student" : role === "view_admin" ? "admin" : role;
 
   // The roster is now `full` (2026_11_all_full_access set every student to
   // full), so an admin previewing the student side sees the full-student nav
@@ -128,7 +129,7 @@ export default async function DashboardLayout({
       showStudy={(await readFlags()).learn === "unlocked"}
       blocked={blocked}
       viewModeSwitch={
-        role === "admin" ? (
+        role === "admin" || role === "view_admin" ? (
           <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
         ) : undefined
       }

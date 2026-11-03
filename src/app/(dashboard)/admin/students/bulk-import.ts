@@ -3,7 +3,7 @@
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { randomBytes } from "node:crypto";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import {
   parseRosterCsv,
@@ -49,7 +49,7 @@ export async function bulkImportStudents(
   _prevState: BulkImportResult,
   formData: FormData,
 ): Promise<BulkImportResult> {
-  if (!(await requireAdmin())) return emptyImport("Not authorized.");
+  if (!(await requireSuperAdmin())) return emptyImport("Not authorized.");
 
   const file = formData.get("file");
   if (!(file instanceof File)) return emptyImport("Upload a CSV file.");
@@ -100,7 +100,7 @@ export async function previewRosterCsv(text: string): Promise<{
   invalid: RosterFailure[];
   emptyNames: string[];
 }> {
-  if (!(await requireAdmin())) {
+  if (!(await requireSuperAdmin())) {
     return { error: "Not authorized.", rows: [], duplicates: [], invalid: [], emptyNames: [] };
   }
   const parsed = parseRosterCsv(text);
@@ -112,7 +112,7 @@ export async function previewRosterCsv(text: string): Promise<{
  * and approved. `scope` is restricted to the two real options server-side.
  */
 export async function confirmBulkImport(rows: RosterRow[], scope: string): Promise<BulkImportResult> {
-  if (!(await requireAdmin())) return emptyImport("Not authorized.");
+  if (!(await requireSuperAdmin())) return emptyImport("Not authorized.");
 
   const scoped = scope === "lectures_only" ? "lectures_only" : "full";
   let admin;
@@ -149,7 +149,7 @@ export type SendEmailsResult = {
  * reason, so retries are per-row. Uses the real Resend path.
  */
 export async function sendCredentialEmailsAction(emails: string[]): Promise<SendEmailsResult> {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
 
   const admin = createAdminClient();
@@ -178,7 +178,7 @@ export type TestEmailResult = { error: string | null; ok: boolean; detail: strin
  * whatever the admin types, defaulting to their own address).
  */
 export async function sendTestEmailAction(email: string): Promise<TestEmailResult> {
-  if (!(await requireAdmin())) return { error: "Not authorized.", ok: false, detail: "" };
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", ok: false, detail: "" };
 
   const to = email.trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
@@ -267,7 +267,7 @@ export type ResetCredentialResult = { error: string | null; ok: boolean; setupUr
 /** NEW SETUP LINK. Issues a fresh one-time "set your password" link (earlier
  * unused links stop working) and returns it so Kavya can share it. */
 export async function resetCredentialAction(email: string): Promise<ResetCredentialResult> {
-  const profile = await requireAdmin();
+  const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", ok: false, setupUrl: null, detail: "" };
 
   const admin = createAdminClient();
