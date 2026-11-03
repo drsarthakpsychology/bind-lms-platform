@@ -189,3 +189,17 @@ Recommendations are marked; nothing is assumed until you answer.
 9. **Reporting:** which cohort reports matter most (completion, test
    scores, attendance, Lab/Casebook use, inactivity)? Is attendance tracked
    anywhere today (live sessions), or should it be added?
+
+---
+
+## 9. Answers received (2026-11-03)
+
+| Question | Answer | Effect on the design |
+|---|---|---|
+| 1. Several cohorts at once? | **Several at once** | No "one open enrolment" rule. The duplicate guard only stops the *same* cohort twice. During an overlap, a student's activity counts in **each** cohort they are actively enrolled in; cohort reports say so ("also in Cohort 2"). |
+| 3/4. Curriculum | **Same content, own dates** | One curriculum; per-cohort schedule, lecture release (exists) and assessment due dates (new). |
+| 5. Transfers | **Keeps progress; history split** | Date-based attribution: old cohort keeps what happened before the transfer date, new cohort counts from it. |
+| 6. Completion | **Read-only alumni** | Completing a cohort marks its enrolments `completed`. Students with no other active enrolment are moved to read-only access, reusing the existing alumni behaviour. Records stay. |
+
+Still open: programmes (2), certificates on completion (6b), roles (7),
+content editor (8), reports/attendance (9).
