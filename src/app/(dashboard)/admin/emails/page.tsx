@@ -3,7 +3,9 @@ import { requireAdmin } from "@/lib/auth/guards";
 import { EMAIL_TEMPLATES } from "@/lib/email/templates";
 import { RosterActions } from "./roster-actions";
 import { ComposeTab } from "./compose-tab";
-import { MailKeys, InboundControls } from "./mail-client";
+import { MailKeys, InboundControls, ClearFailedButton } from "./mail-client";
+import { loadOpenFailures } from "@/lib/email/failed";
+import { isHiddenAccount, isRobotEmail } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { personKey } from "@/lib/crm/people";
 import { AlertTriangle, ArrowLeft, Inbox, KeyRound, PenSquare, Send } from "lucide-react";
@@ -99,10 +101,11 @@ export default async function MailPage({
   const admin = createAdminClient();
   const adminProfile = await requireAdmin();
 
-  const [{ count: unread }, { count: failedCount }] = await Promise.all([
+  const [{ count: unread }, failures] = await Promise.all([
     admin.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
-    admin.from("email_sends").select("id", { count: "exact", head: true }).eq("status", "failed"),
+    loadOpenFailures<SentRow>(admin),
   ]);
+  const failedCount = failures.length;
 
   let credentialsRows: InviteRow[] = [];
   if (folder === "logins") {
@@ -110,7 +113,7 @@ export default async function MailPage({
       .from("credential_invites")
       .select("id, email, name, status, setup_completed_at, error_reason, sent_at, created_at")
       .order("created_at", { ascending: false });
-    const rows = (data ?? []) as Omit<InviteRow, "lockStatus" | "lockUserId">[];
+    const rows = ((data ?? []) as Omit<InviteRow, "lockStatus" | "lockUserId">[]).filter((r) => !isRobotEmail(r.email));
     const emails = rows.map((r) => r.email);
     const { data: profs } = emails.length > 0 ? await supabase.from("profiles").select("id, email, status").in("email", emails) : { data: [] };
     const lockByEmail = new Map((profs ?? []).map((p) => [p.email as string, { status: p.status as string, id: p.id as string }]));
@@ -118,18 +121,41 @@ export default async function MailPage({
       const prof = lockByEmail.get(r.email);
       return { ...r, lockStatus: (prof?.status === "blocked" ? "blocked" : "active") as "active" | "blocked", lockUserId: prof?.id ?? null };
     });
+    // Every real student appears, even one added without a login invite yet.
+    const have = new Set(rows.map((r) => r.email.toLowerCase()));
+    const { data: others } = await admin.from("profiles").select("id, email, name, status, is_test, created_at, active_session_token").eq("role", "student").limit(5000);
+    for (const p of others ?? []) {
+      const email = String(p.email ?? "");
+      if (!email || have.has(email.toLowerCase()) || isHiddenAccount(p)) continue;
+      credentialsRows.push({
+        id: `p-${p.id}`,
+        email,
+        name: (p.name as string | null) || email.split("@")[0],
+        status: "pending",
+        // Already signing in = their account works, so it counts as set up.
+        setup_completed_at: p.active_session_token ? ((p.created_at as string) ?? null) : null,
+        error_reason: null,
+        sent_at: null,
+        created_at: (p.created_at as string) ?? new Date(0).toISOString(),
+        lockStatus: p.status === "blocked" ? "blocked" : "active",
+        lockUserId: p.id as string,
+      });
+    }
   }
 
   let sent: SentRow[] = [];
   if (folder === "sent" || folder === "failed") {
-    let query = admin
-      .from("email_sends")
-      .select("id, recipient, name, subject, template_id, status, error_reason, sent_at, created_at, body_text, delivered_at, opened_at, clicked_at, bounced_at")
-      .order("created_at", { ascending: false })
-      .limit(300);
-    query = folder === "failed" ? query.eq("status", "failed") : query.eq("status", "sent");
-    const { data } = await query;
-    sent = ((data ?? []) as SentRow[]).filter((r) => !q || `${r.recipient} ${r.name ?? ""} ${r.subject}`.toLowerCase().includes(q));
+    let rows: SentRow[] = failures;
+    if (folder === "sent") {
+      const { data } = await admin
+        .from("email_sends")
+        .select("id, recipient, name, subject, template_id, status, error_reason, sent_at, created_at, body_text, delivered_at, opened_at, clicked_at, bounced_at")
+        .eq("status", "sent")
+        .order("created_at", { ascending: false })
+        .limit(300);
+      rows = (data ?? []) as SentRow[];
+    }
+    sent = rows.filter((r) => !q || `${r.recipient} ${r.name ?? ""} ${r.subject}`.toLowerCase().includes(q));
   }
 
   let inbox: InRow[] = [];
@@ -155,7 +181,7 @@ export default async function MailPage({
   const reading = Boolean(openSent || openIn);
   const listFolder = folder === "inbox" || folder === "sent" || folder === "failed";
 
-  const counts: Record<string, number | null> = { inbox: unread ?? 0, failed: failedCount ?? 0 };
+  const counts: Record<string, number | null> = { inbox: unread ?? 0, failed: failedCount };
 
   return (
     <div className="-mx-4 -my-6 pb-24 sm:-mx-6 lg:-mx-10 lg:-my-8 lg:pb-0">
@@ -228,6 +254,12 @@ export default async function MailPage({
                     className="h-10 w-full rounded-full border-2 border-foreground bg-background px-4 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </form>
+                {folder === "failed" && failedCount > 0 ? (
+                  <div className="flex items-center justify-between gap-3 border-b-2 border-foreground/10 px-4 py-2.5">
+                    <p className="text-caption text-muted-foreground">Dealt with these? Clear them so the count goes away. Nothing is deleted.</p>
+                    <ClearFailedButton count={failedCount} />
+                  </div>
+                ) : null}
                 {folder === "inbox" ? (
                   inbox.length === 0 ? (
                     <p className="p-6 text-sm font-semibold text-muted-foreground">

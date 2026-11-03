@@ -13,6 +13,7 @@ export function PulseView({
   flying,
   total,
   active,
+  activeNow = [],
   weeks = [],
   curriculumFlag = false,
 }: {
@@ -20,6 +21,8 @@ export function PulseView({
   flying: string[];
   total: number;
   active: number;
+  /** Names of students on VIBHA in the last 5 minutes. */
+  activeNow?: string[];
   /** checkins_aggregate weeks (no identifiers) — the load/energy curve. */
   weeks?: Array<{ week: string; n: number; workload: number; energy: number; preparedness: number }>;
   /** activity dropping + load spiking = curriculum problem, not motivation. */
@@ -44,6 +47,13 @@ export function PulseView({
     <div className="space-y-6">
       {/* cohort curve summary — one dominant metric (active), drifting/flying demoted */}
       <div className="space-y-3">
+        <div className="rounded-md border-2 border-foreground bg-primary p-4 text-primary-foreground">
+          <p className="flex items-center gap-2 text-caption font-semibold">
+            <span className="size-2.5 animate-pulse rounded-full bg-foreground" aria-hidden /> Active now
+          </p>
+          <p className="mt-1 text-numeric text-h2 font-bold">{activeNow.length}</p>
+          {activeNow.length ? <p className="mt-1 text-small">{activeNow.join(", ")}</p> : <p className="mt-1 text-small">Nobody is on VIBHA this minute.</p>}
+        </div>
         <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
           <p className="text-caption text-muted-foreground">Active this week</p>
           <p className="mt-1 text-numeric text-h1 font-bold tracking-tight">
@@ -56,7 +66,7 @@ export function PulseView({
             <p className="text-numeric text-h3 font-semibold text-status-pending-fg">{drifting.length}</p>
           </div>
           <div className="rounded-md border-2 border-border bg-card p-3">
-            <p className="text-caption text-muted-foreground">Finished everything</p>
+            <p className="text-caption text-muted-foreground">Active in the last 2 days</p>
             <p className="text-numeric text-h3 font-semibold text-status-success-fg">{flying.length}</p>
           </div>
         </div>

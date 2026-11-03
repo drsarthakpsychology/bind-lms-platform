@@ -1,4 +1,5 @@
 import "server-only";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
@@ -45,7 +46,7 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
     cohorts.set(k, [...(cohorts.get(k) ?? []), m.cohort_id as string]);
   }
   const rows = (profiles ?? [])
-    .filter((p) => !p.is_test)
+    .filter((p) => !isHiddenAccount(p))
     .map((p) => {
       const id = p.id as string;
       const t = totals.get(id);

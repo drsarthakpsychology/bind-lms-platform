@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { signR2UploadUrl, headR2Object } from "@/lib/media/r2";
@@ -519,7 +520,7 @@ export async function loadRoster(courseId: string): Promise<RosterForCourse> {
   const [{ data: students }, { data: enrollments }] = await Promise.all([
     supabase
       .from("profiles")
-      .select("id, email")
+      .select("id, email, is_test")
       .eq("role", "student")
       .eq("is_test", false)
       .order("email", { ascending: true }),
@@ -527,7 +528,7 @@ export async function loadRoster(courseId: string): Promise<RosterForCourse> {
   ]);
 
   return {
-    students: (students ?? []).map((s) => ({ id: s.id, email: s.email })),
+    students: (students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => ({ id: s.id, email: s.email })),
     enrolledIds: (enrollments ?? []).map((e) => e.user_id),
   };
 }

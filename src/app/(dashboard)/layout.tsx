@@ -13,6 +13,7 @@ import { AppShell } from "@/components/app-shell";
 import { readFlags } from "@/lib/flags";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
+import { VisitTracker } from "@/components/analytics/visit-tracker";
 import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
@@ -122,6 +123,7 @@ export default async function DashboardLayout({
       }
     >
       {gate}
+      {role === "student" ? <VisitTracker /> : null}
       {children}
     </AppShell>
   );

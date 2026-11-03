@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { presenceOf } from "@/lib/people/presence";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CalendarClock, KanbanSquare, MailOpen, MessageCircle, Reply, Rows3, Search, X } from "lucide-react";
@@ -16,6 +17,7 @@ const VIEWS = [
   { id: "no-reply", label: "No reply" },
   { id: "enquiries", label: "Enquiries" },
   { id: "students", label: "Students" },
+  { id: "active-now", label: "Active now" },
   { id: "not-set-up", label: "Login not set up" },
 ] as const;
 type ViewId = (typeof VIEWS)[number]["id"];
@@ -28,6 +30,7 @@ function matches(p: Person, v: ViewId): boolean {
     case "no-reply": return p.contacted && !p.replied && !p.isStudent && p.stage !== "not_interested";
     case "enquiries": return p.isEnquiry && !p.isStudent;
     case "students": return p.isStudent;
+    case "active-now": return p.isStudent && presenceOf(p.lastSeen, Date.now()) === "now";
     case "not-set-up": return p.isStudent && !p.setupDone;
     default: return true;
   }
@@ -140,9 +143,23 @@ export function PeopleView({ people, initialView = "all" }: { people: Person[]; 
   );
 }
 
+function SeenChip({ at }: { at: string | null }) {
+  const pr = presenceOf(at, nowMs());
+  if (pr === "now")
+    return (
+      <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full border-2 border-foreground bg-primary px-1.5 text-[0.7rem] font-bold text-primary-foreground">
+        <span className="size-1.5 animate-pulse rounded-full bg-foreground" aria-hidden /> Active now
+      </span>
+    );
+  if (pr === "today") return <span className="whitespace-nowrap text-[0.7rem] font-bold text-foreground">Seen today</span>;
+  if (pr === "week") return <span className="whitespace-nowrap text-[0.7rem] font-semibold">Seen this week</span>;
+  return null;
+}
+
 function Signals({ p }: { p: Person }) {
   return (
     <span className="flex items-center gap-1.5 text-muted-foreground">
+      {p.isStudent ? <SeenChip at={p.lastSeen} /> : null}
       {p.emailsSent > 0 ? (
         <span title={`${p.emailsSent} email${p.emailsSent === 1 ? "" : "s"} sent${p.opened ? ", opened" : ""}`} className={cn("inline-flex items-center gap-0.5", p.opened && "text-link")}>
           <MailOpen className="size-3.5" aria-hidden />

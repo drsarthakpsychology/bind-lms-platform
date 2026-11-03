@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/server";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { PageHeader } from "@/components/design-system/page-header";
 import { priorityScore, needsReview } from "@/lib/review/triage";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
@@ -17,20 +18,24 @@ export const dynamic = "force-dynamic";
 export default async function AdminTriagePage() {
   const admin = createAdminClient();
 
-  const { data: scores } = await admin
+  // Sessions by test and robot accounts (AI calibration runs) never show.
+  const hidden = await loadHiddenIds();
+  const { data: rawScores } = await admin
     .from("sim_scores")
     .select("id, session_id, user_id, overall, rubric, created_at")
     .order("created_at", { ascending: false })
-    .limit(50);
+    .limit(200);
+  const scores = (rawScores ?? []).filter((s) => !hidden.has(s.user_id as string)).slice(0, 50);
 
   // Quiz-attempt signal: items answered correctly by < 50% of attempts.
   // Low-confidence quiz areas surface alongside sim scores for review.
   const { data: quizAttempts } = await admin
     .from("quiz_attempts")
-    .select("item_id, correct")
+    .select("item_id, correct, user_id")
     .limit(500);
   const quizByItem = new Map<string, { total: number; correct: number }>();
   for (const a of quizAttempts ?? []) {
+    if (hidden.has(a.user_id as string)) continue;
     const row = quizByItem.get(a.item_id) ?? { total: 0, correct: 0 };
     row.total++;
     if (a.correct) row.correct++;
@@ -51,9 +56,9 @@ export default async function AdminTriagePage() {
   const { data: allSessions } = await admin.from("sim_sessions").select("user_id, status").limit(1000);
 
   const sessionsByStudent = new Map<string, number>();
-  for (const s of allSessions ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
+  for (const s of (allSessions ?? []).filter((x) => !hidden.has(x.user_id as string))) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
 
-  const rows = (scores ?? []).map((s) => {
+  const rows = scores.map((s) => {
     const isFirst = (sessionsByStudent.get(s.user_id) ?? 1) <= 1;
     const rubric = (s.rubric as Record<string, unknown>) ?? {};
     const premature = Number(rubric.premature_reassurance ?? 0);

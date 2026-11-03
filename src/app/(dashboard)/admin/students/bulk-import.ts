@@ -8,6 +8,7 @@ import {
   parseRosterCsv,
   importRoster,
   sendCredentialEmails,
+  deriveName,
   sendResendEmail,
   credentialsEmailBody,
   credentialsEmailHtml,
@@ -152,6 +153,13 @@ export async function sendCredentialEmailsAction(emails: string[]): Promise<Send
 
   const admin = createAdminClient();
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  // Students added some other way may have no invite row yet: make one so the
+  // Logins list remembers that their link went out.
+  if (emails.length) {
+    await admin
+      .from("credential_invites")
+      .upsert(emails.map((email) => ({ email, name: deriveName(email), status: "pending" })), { onConflict: "email", ignoreDuplicates: true });
+  }
   const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail, sentBy: profile.id });
 
   revalidatePath("/admin/emails");

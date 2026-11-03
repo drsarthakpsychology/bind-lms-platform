@@ -11,7 +11,8 @@ import { EditLesson, type EditLessonInitial } from "./edit-lesson";
 import { MoveLessonButton } from "./move-lesson-button";
 import { AssignmentToggle } from "./assignment-toggle";
 import { CourseActions } from "../course-actions";
-import { LazyEnrolledStudents } from "./enrolled-students-lazy";
+import { CoursePeoplePanel } from "./course-people";
+import { loadCoursePeople } from "./people-actions";
 import { MaterialUploader } from "./material-uploader";
 import { RenameCourse } from "./rename-course";
 
@@ -57,7 +58,7 @@ export default async function CourseDetailPage({
   const { courseId } = await params;
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: enrollments }, { data: courseMaterials }, { data: assignments }] =
+  const [{ data: course }, { data: lessons }, { data: courseMaterials }, { data: assignments }] =
     await Promise.all([
       supabase.from("courses").select("id, title, is_published, weeks").eq("id", courseId).single(),
       supabase
@@ -66,10 +67,6 @@ export default async function CourseDetailPage({
         .eq("course_id", courseId)
         .order("order_index", { ascending: true })
         .order("id", { ascending: true }),
-      supabase
-        .from("course_enrollments")
-        .select("user_id")
-        .eq("course_id", courseId),
       supabase
         .from("materials")
         .select("id, title, kind, format, size_bytes, url, storage_path")
@@ -89,7 +86,7 @@ export default async function CourseDetailPage({
   const rows = (lessons ?? []) as LessonRow[];
   const nextOrderIndex = rows.length ? Math.max(...rows.map((l) => l.order_index)) + 1 : 1;
   const defaultWeek = rows.length ? Math.max(1, ...rows.map((l) => l.week ?? 1)) : 1;
-  const enrolledIds = (enrollments ?? []).map((e) => e.user_id);
+  const people = await loadCoursePeople(courseId);
 
   // Week-aware listing — mirror the student's Week N groups so the admin
   // reasons in the same units the cohort does. Lessons with a null week
@@ -135,6 +132,9 @@ export default async function CourseDetailPage({
         }
         actions={<CourseActions courseId={course.id} isPublished={course.is_published} showOpenBuilder={false} />}
       />
+
+      {/* Who is in this course, its cohorts, and the next cohort. */}
+      <CoursePeoplePanel courseId={courseId} lectureCount={rows.length} data={people} />
 
       {/* De-densified admin surface (T44): each management task is an accordion
           section, open-by-default for the primary create action and collapsed
@@ -224,7 +224,6 @@ export default async function CourseDetailPage({
         </div>
       </details>
 
-      <LazyEnrolledStudents courseId={courseId} enrolledCount={enrolledIds.length} />
     </div>
   );
 }

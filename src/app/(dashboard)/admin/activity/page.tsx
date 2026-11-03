@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { presenceOf } from "@/lib/people/presence";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, Crown, TriangleAlert } from "lucide-react";
@@ -23,8 +24,11 @@ const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 function ago(iso: string | null) {
   if (!iso) return "Never";
-  const d = Math.floor((nowMs() - new Date(iso).getTime()) / 86400000);
-  return d <= 0 ? "Today" : d === 1 ? "Yesterday" : `${d} days ago`;
+  const ms = nowMs() - new Date(iso).getTime();
+  if (presenceOf(iso, nowMs()) === "now") return "Active now";
+  if (ms < 3600000) return `${Math.max(1, Math.round(ms / 60000))} min ago`;
+  const d = Math.floor(ms / 86400000);
+  return d <= 0 ? `${Math.round(ms / 3600000)} h ago` : d === 1 ? "Yesterday" : `${d} days ago`;
 }
 const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m` : `${min}m`);
 
@@ -53,8 +57,8 @@ export default async function ActivityPage({ searchParams }: { searchParams: Pro
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[
-          [totals.students, "students"],
-          [totals.active7, "active this week"],
+          [totals.activeNow, "active now"],
+          [totals.active7, `of ${totals.students} active this week`],
           [`${totals.hours30}h`, "total study time (30 days)"],
           [totals.lecturesDone, "lectures completed"],
         ].map(([v, l]) => (
@@ -170,7 +174,15 @@ export default async function ActivityPage({ searchParams }: { searchParams: Pro
                       </Link>
                       <span className="block text-caption text-muted-foreground">{r.email}</span>
                     </td>
-                    <td className="px-3 py-2">{ago(r.lastSeen)}</td>
+                    <td className="px-3 py-2">
+                      {presenceOf(r.lastSeen, now) === "now" ? (
+                        <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-foreground bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">
+                          <span className="size-2 animate-pulse rounded-full bg-foreground" aria-hidden /> Active now
+                        </span>
+                      ) : (
+                        ago(r.lastSeen)
+                      )}
+                    </td>
                     <td className="px-3 py-2">{hm(r.min7)}</td>
                     <td className="px-3 py-2">{hm(r.min30)}</td>
                     <td className="px-3 py-2">{r.activeDays30}</td>
