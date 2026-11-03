@@ -7,6 +7,8 @@ import { emptyState, istToday, labRechecksDue, type LearnState } from "@/lib/lea
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { EXPERIMENTS, type LabExperiment } from "@/lib/lab/experiments";
 import { cn } from "@/lib/utils";
+import { labEntry } from "@/lib/lab/entries";
+import { CasebookShelf } from "@/components/casebook/casebook-shelf";
 
 const EMPTY = emptyState();
 const AREA_ICON = { Memory: Brain, Attention: Eye, Perception: Eye, Learning: Sparkles, Thinking: Lightbulb, Methods: Microscope, Development: Baby, Social: Users } as const;
@@ -15,8 +17,8 @@ const AREA_ICON = { Memory: Brain, Attention: Eye, Perception: Eye, Learning: Sp
 function nextStep(st: LearnState): { href: string; title: string; why: string; recheck: boolean } | null {
   const due = labRechecksDue(st, istToday());
   if (due.length) {
-    const e = EXPERIMENTS.find((x) => x.id === due[0]);
-    if (e) return { href: `/games/lab/${e.id}?recheck=1`, title: `Re-check: ${e.title}`, why: `Three quick questions. ${due.length > 1 ? `${due.length} re-checks are due.` : "Recalling it now makes it last."}`, recheck: true };
+    const e = due.map(labEntry).find((x) => x !== null);
+    if (e) return { href: e.recheckHref, title: `${e.kind === "case" ? "Play again" : "Re-check"}: ${e.title}`, why: `${e.kind === "case" ? "A quick round" : "Three quick questions"}. ${due.length > 1 ? `${due.length} re-checks are due.` : "Recalling it now makes it last."}`, recheck: true };
   }
   const todo = EXPERIMENTS.find((e) => !st.lab[e.id]);
   if (todo) return { href: `/games/lab/${todo.id}`, title: todo.title, why: todo.hook, recheck: false };
@@ -157,6 +159,8 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
           </section>
         );
       })}
+
+      <CasebookShelf st={st} today={istToday()} />
 
       <p className="rounded-2xl border-2 border-dashed border-foreground/50 p-4 text-sm text-muted-foreground">
         These are teaching demonstrations, not assessments. One run on a phone is a rough measure, so treat your numbers as interesting, not as a diagnosis.

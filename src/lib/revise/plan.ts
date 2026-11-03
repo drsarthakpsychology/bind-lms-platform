@@ -45,7 +45,7 @@
 import { addDays, daysBetween, dueItems, labRechecksDue, studyKey, type LearnState } from "@/lib/learn/engine";
 import { topConfusions } from "@/lib/learn/adaptive";
 import { DOMAINS, conceptById, type Domain } from "@/lib/learn/concepts";
-import { experimentById } from "@/lib/lab/experiments";
+import { labEntry } from "@/lib/lab/entries";
 import { RETEST_GAPS } from "@/lib/study/plan";
 import type { StudyModule } from "@/lib/study/types";
 
@@ -288,14 +288,15 @@ function coachItems(state: LearnState, today: string): ReviseItem[] {
 function labItems(state: LearnState, today: string): { now: ReviseItem[]; soon: LaterItem[] } {
   const now: ReviseItem[] = labRechecksDue(state, today).map((id) => {
     const r = state.lab[id];
-    const title = experimentById(id)?.title ?? id;
+    const entry = labEntry(id);
+    const title = entry?.title ?? id;
     return {
       id: `lab:${id}`,
       kind: "lab" as const,
       topic: "lab",
       title: `Re-check: ${title}`,
       why: r.check ? `Last time you got ${r.check.right}/${r.check.total}. See what stuck.` : "See what stuck.",
-      href: `/games/lab/${id}?recheck=1`,
+      href: entry?.recheckHref ?? `/games/lab`,
       minutes: 3,
       priority: 70 + Math.min(7, Math.max(0, daysBetween(r.recheck.due, today))),
     };
@@ -307,9 +308,9 @@ function labItems(state: LearnState, today: string): { now: ReviseItem[]; soon: 
       id: `lab:${id}`,
       kind: "lab" as const,
       topic: "lab",
-      title: `Re-check: ${experimentById(id)?.title ?? id}`,
+      title: `Re-check: ${labEntry(id)?.title ?? id}`,
       why: "Lab check questions come back.",
-      href: `/games/lab/${id}`,
+      href: labEntry(id)?.href ?? `/games/lab`,
       minutes: 3,
       priority: 70,
       due: r.recheck.due,
