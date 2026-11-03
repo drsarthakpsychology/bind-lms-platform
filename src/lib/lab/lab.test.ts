@@ -105,7 +105,50 @@ describe("stroop", () => {
   });
 });
 
+describe("digit span stop rule, run like the runner", () => {
+  // Two trials per length; move up after two; stop after two failures at one length.
+  function simulate(start: number, passUpTo: number) {
+    const trials: { length: number; correct: boolean }[] = [];
+    let length = start;
+    for (let guard = 0; guard < 40; guard++) {
+      trials.push({ length, correct: length <= passUpTo });
+      const atLen = trials.filter((t) => t.length === length);
+      if (spanShouldStop(trials, length) || (length >= 10 && atLen.length >= 2)) break;
+      if (atLen.length >= 2) length++;
+    }
+    return trials;
+  }
+  it("stops after two misses and reports the longest length passed", () => {
+    const t = simulate(3, 6);
+    expect(spanFromTrials(t)).toBe(6);
+    expect(t.at(-1)).toEqual({ length: 7, correct: false });
+    expect(t).toHaveLength(10); // 3,3,4,4,5,5,6,6,7,7
+  });
+  it("one miss at a length is not enough to stop", () => {
+    const t = [
+      { length: 4, correct: false },
+      { length: 4, correct: true },
+    ];
+    expect(spanShouldStop(t, 4)).toBe(false);
+    expect(spanFromTrials(t)).toBe(4);
+  });
+});
+
+describe("serial position shape", () => {
+  it("recalling only the first and last three words gives a U", () => {
+    const list = WORD_POOL.slice(0, 12);
+    const typed = [...list.slice(0, 3), ...list.slice(-3)].join(", ");
+    const r = curveRegions(serialCurve([recalledPositions(list, parseRecall(typed))]));
+    expect(r).toEqual({ primacy: 1, middle: 0, recency: 1 });
+  });
+});
+
 describe("change detection", () => {
+  it("a 4-item observer gives K = 2 at size 2 and K = 4 at size 4", () => {
+    const t: { setSize: number; changed: boolean; saidChanged: boolean }[] = [];
+    for (const n of [2, 4]) for (const changed of [true, false, true, false]) t.push({ setSize: n, changed, saidChanged: changed });
+    expect(cowanK(t).map((k) => k.k)).toEqual([2, 4]);
+  });
   it("K is zero for someone who always says changed", () => {
     const t = [true, false, true, false].map((changed) => ({ setSize: 4, changed, saidChanged: true }));
     expect(cowanK(t)[0].k).toBe(0);
@@ -185,6 +228,31 @@ describe("lab progress in the learn state", () => {
     expect(good.lab["digit-span"].recheck).toEqual({ step: 1, due: "2026-11-16" });
     const weak = recordLabCheck(s, "digit-span", 1, 3, "2026-11-06");
     expect(weak.lab["digit-span"].recheck).toEqual({ step: 0, due: "2026-11-09" });
+  });
+  it("only checked records come due, oldest first; a check that was not due pays nothing", () => {
+    let s = recordLabRun(emptyState(), "stroop", { effect: 90 }, "2026-10-01");
+    s = recordLabRun(s, "digit-span", { forward: 6 }, "2026-10-01"); // never checked: never due
+    s = recordLabRun(s, "schedules", { tried: 2 }, "2026-10-05");
+    s = recordLabCheck(s, "stroop", 2, 3, "2026-10-01");
+    s = recordLabCheck(s, "schedules", 3, 3, "2026-10-05");
+    expect(labRechecksDue(s, day)).toEqual(["stroop", "schedules"]);
+    const early = recordLabCheck(s, "stroop", 3, 3, "2026-10-02");
+    expect(labRechecksDue(s, "2026-10-03")).toEqual([]);
+    expect(early.xp).toBe(s.xp);
+    expect(early.lab.stroop.recheck).toEqual(s.lab.stroop.recheck);
+    const done = recordLabCheck(s, "stroop", 2, 3, day);
+    expect(done.xp).toBe(s.xp + 2 * LAB_XP.checkPerRight);
+    expect(labRechecksDue(done, day)).toEqual(["schedules"]);
+  });
+  it("after the last interval the re-check settles at 90 days", () => {
+    let s = recordLabRun(emptyState(), "stroop", {}, day);
+    s = recordLabCheck(s, "stroop", 3, 3, day);
+    for (let k = 0; k < 3; k++) s = recordLabCheck(s, "stroop", 3, 3, s.lab.stroop.recheck.due);
+    expect(s.lab.stroop.recheck.step).toBe(3);
+    const last = s.lab.stroop.recheck.due;
+    s = recordLabCheck(s, "stroop", 3, 3, last);
+    expect(s.lab.stroop.recheck.step).toBe(3);
+    expect(Date.parse(s.lab.stroop.recheck.due) - Date.parse(last)).toBe(90 * 86400000);
   });
   it("a check without a run is ignored; reflection pays once", () => {
     expect(recordLabCheck(emptyState(), "x", 3, 3, day).lab).toEqual({});

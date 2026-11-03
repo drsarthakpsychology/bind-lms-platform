@@ -28,9 +28,11 @@ export function SchedulesRunner({ onDone }: RunnerProps) {
   const reduce = useReducedMotion();
   const [pick, setPick] = React.useState(OPTIONS[2].id);
   const [shown, setShown] = React.useState(0);
-  const [data, setData] = React.useState<{ cumulative: number[]; rewards: number[]; ext?: number[] } | null>(null);
+  // The run on screen, tagged with its rule: the student may pick another rule before pressing "Stop the rewards".
+  const [data, setData] = React.useState<{ id: string; cumulative: number[]; rewards: number[]; ext?: number[] } | null>(null);
   const [runs, setRuns] = React.useState<Run[]>([]);
   const opt = OPTIONS.find((o) => o.id === pick)!;
+  const ran = data ? OPTIONS.find((o) => o.id === data.id)! : opt;
   const frame = React.useRef<number | null>(null);
 
   React.useEffect(() => () => (frame.current ? cancelAnimationFrame(frame.current) : undefined), []);
@@ -50,7 +52,7 @@ export function SchedulesRunner({ onDone }: RunnerProps) {
 
   function run() {
     const sim = simulateSchedule({ schedule: opt.schedule, value: opt.value, seconds: SECONDS, seed: runs.length + 3 });
-    setData({ cumulative: sim.cumulative, rewards: sim.rewards });
+    setData({ id: opt.id, cumulative: sim.cumulative, rewards: sim.rewards });
     setRuns((r) => [...r.filter((x) => x.id !== opt.id), { id: opt.id, total: sim.total, rewards: sim.rewards.length, ext: null }]);
     setShown(0);
     animate(0, SECONDS);
@@ -58,11 +60,11 @@ export function SchedulesRunner({ onDone }: RunnerProps) {
 
   function extinguish() {
     if (!data) return;
-    const history = opt.id === "crf" ? "continuous" : "intermittent";
+    const history = data.id === "crf" ? "continuous" : "intermittent";
     const ext = simulateSchedule({ schedule: "EXT", value: 1, seconds: EXT_SECONDS, history, seed: 11 });
     const base = data.cumulative[data.cumulative.length - 1];
     setData({ ...data, ext: ext.cumulative.map((c) => c + base) });
-    setRuns((r) => r.map((x) => (x.id === opt.id ? { ...x, ext: ext.total } : x)));
+    setRuns((r) => r.map((x) => (x.id === data.id ? { ...x, ext: ext.total } : x)));
     setShown(SECONDS);
     animate(SECONDS, SECONDS + EXT_SECONDS);
   }
@@ -123,14 +125,16 @@ export function SchedulesRunner({ onDone }: RunnerProps) {
       {data && (
         <div className="rounded-xl border-2 border-foreground bg-background p-3">
           <LineChart
-            ariaLabel={`Cumulative presses under ${opt.label}${data.ext ? ", then with rewards stopped" : ""}`}
+            ariaLabel={`Cumulative presses under ${ran.label}${data.ext ? ", then with rewards stopped" : ""}`}
             series={series}
+            xCount={data.ext ? SECONDS + EXT_SECONDS : SECONDS}
+            max={Math.max(1, ...data.cumulative, ...(data.ext ?? []))}
             marks={data.rewards.map((t) => t - 1).filter((t) => t < shown)}
             yLabel="total presses so far"
             xLabel={`seconds${data.ext ? " (rewards stop at 90)" : ""}; ticks = rewards`}
           />
           <p className="mt-2 text-sm">
-            A steep line means fast pressing. A flat line means a pause. {opt.schedule === "FI" && "Look for the pause after each reward and the speed-up before the next."}
+            A steep line means fast pressing. A flat line means a pause. {ran.schedule === "FI" && "Look for the pause after each reward and the speed-up before the next."}
           </p>
         </div>
       )}

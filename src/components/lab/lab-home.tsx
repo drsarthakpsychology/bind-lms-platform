@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Brain, Check, Eye, FlaskConical, Lightbulb, RotateCcw, Sparkles, Timer } from "lucide-react";
+import { ArrowLeft, ArrowRight, Baby, Brain, Check, Eye, FlaskConical, Lightbulb, Microscope, RotateCcw, Sparkles, Timer, Users } from "lucide-react";
 import { emptyState, istToday, labRechecksDue, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { EXPERIMENTS, type LabExperiment } from "@/lib/lab/experiments";
 import { cn } from "@/lib/utils";
 
 const EMPTY = emptyState();
-const AREA_ICON = { Memory: Brain, Attention: Eye, Perception: Eye, Learning: Sparkles, Thinking: Lightbulb } as const;
+const AREA_ICON = { Memory: Brain, Attention: Eye, Perception: Eye, Learning: Sparkles, Thinking: Lightbulb, Methods: Microscope, Development: Baby, Social: Users } as const;
 
 /** The single next step: a due re-check first, then the next experiment not yet done. */
 function nextStep(st: LearnState): { href: string; title: string; why: string; recheck: boolean } | null {
@@ -26,7 +26,7 @@ function nextStep(st: LearnState): { href: string; title: string; why: string; r
 function headline(e: LabExperiment, r: Record<string, number>): string | null {
   switch (e.id) {
     case "digit-span":
-      return r.forward ? `Forwards ${r.forward} · backwards ${r.backward}` : null;
+      return r.forward !== undefined ? `Forwards ${r.forward} · backwards ${r.backward}` : null;
     case "serial-position":
       return r.primacy !== undefined ? `Start ${r.primacy}% · middle ${r.middle}% · end ${r.recency}%` : null;
     case "stroop":
@@ -39,6 +39,16 @@ function headline(e: LabExperiment, r: Record<string, number>): string | null {
       return r.biasRight !== undefined ? `${r.biasRight} of ${r.of} traps named` : null;
     case "schedules":
       return r.tried ? `${r.tried} reward rules tried` : null;
+    case "pavlov":
+      return r.peak !== undefined ? `Peak ${r.peak} · back to ${r.recovery} after rest` : null;
+    case "design-study":
+      return r.final !== undefined ? `${r.final} of ${r.of} threats closed` : null;
+    case "correlation-cause":
+      return r.right !== undefined ? `${r.right} of ${r.of} headlines judged` : null;
+    case "conservation":
+      return r.stage !== undefined ? `${r.stage} of ${r.of} stages · ${r.reason} reasons` : null;
+    case "attribution":
+      return r.before !== undefined ? `${r.before}% person → ${r.after}% after facts` : null;
     default:
       return null;
   }
@@ -52,7 +62,7 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
   const levels = ["Foundation", "Intermediate", "Advanced"] as const;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/games" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> Games
       </Link>

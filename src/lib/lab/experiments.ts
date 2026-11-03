@@ -13,6 +13,8 @@
  *   not available when this was written. Fill `bookRefs` during review.
  */
 
+import { EXPERIMENTS_2 } from "./experiments2";
+
 export type LabLevel = "Foundation" | "Intermediate" | "Advanced";
 
 export type LabCheck = { q: string; options: string[]; answer: number; why: string };
@@ -22,7 +24,7 @@ export type LabExperiment = {
   num: number;
   title: string;
   /** Area of psychology, used for grouping. */
-  area: "Memory" | "Attention" | "Perception" | "Learning" | "Thinking";
+  area: "Memory" | "Attention" | "Perception" | "Learning" | "Thinking" | "Methods" | "Development" | "Social";
   level: LabLevel;
   minutes: number;
   /** One line on the card. */
@@ -51,7 +53,7 @@ export type LabExperiment = {
   review: string[];
 };
 
-export const EXPERIMENTS: LabExperiment[] = [
+const EXPERIMENTS_1: LabExperiment[] = [
   {
     id: "digit-span",
     num: 1,
@@ -222,7 +224,7 @@ export const EXPERIMENTS: LabExperiment[] = [
     minutes: 7,
     hook: "A flash of coloured squares. Did one change? Measure your visual memory.",
     question: "How many objects can you hold in visual memory at once?",
-    steps: ["Coloured squares flash for half a second.", "After a short blank they come back. Same, or did one change colour?", "Set sizes grow from 2 to 8."],
+    steps: ["Coloured squares flash for half a second.", "After a short blank they come back. Same, or did one change colour?", "Displays have 2 to 8 squares, in mixed order."],
     finding:
       "Accuracy is near perfect for small displays and falls once there are more than about three or four squares. A simple formula (Cowan's K) turns your answers into an estimate of how many squares you held, usually about 3 to 4.",
     theory: [
@@ -275,7 +277,7 @@ export const EXPERIMENTS: LabExperiment[] = [
     minutes: 5,
     hook: "Two equal lines. Make them look equal. Measure how far your eyes are fooled.",
     question: "Does what we see match what is there, and does experience shape it?",
-    steps: ["One line has fins. The other is plain.", "Drag the slider until the plain line looks the same length.", "Five rounds, fins in and fins out."],
+    steps: ["One line has fins. The other is plain.", "Drag the slider until the plain line looks the same length.", "Six rounds, fins in and fins out."],
     finding:
       "With fins pointing out, the line looks longer, so people stretch the plain line too far. With fins pointing in, it looks shorter. The error is often 10 to 20 percent, and knowing about the illusion does not make it go away.",
     theory: [
@@ -433,6 +435,9 @@ export const EXPERIMENTS: LabExperiment[] = [
     review: ["Vignettes are fictional. Check they are culturally appropriate and do not stigmatise."],
   },
 ];
+
+/** Experiments 8 to 12 live in ./experiments2. */
+export const EXPERIMENTS: LabExperiment[] = [...EXPERIMENTS_1, ...EXPERIMENTS_2];
 
 export function experimentById(id: string): LabExperiment | undefined {
   return EXPERIMENTS.find((e) => e.id === id);

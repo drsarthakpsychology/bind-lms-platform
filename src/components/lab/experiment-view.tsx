@@ -12,6 +12,10 @@ import { LabButton, Panel, type LabResult } from "./lab-ui";
 import { DigitSpanRunner, SerialPositionRunner } from "./runners/memory";
 import { ChangeDetectionRunner, MullerLyerRunner, StroopRunner } from "./runners/attention";
 import { BiasSpotterRunner, SchedulesRunner } from "./runners/thinking";
+import { PavlovRunner } from "./runners/conditioning";
+import { CorrelationRunner, DesignStudyRunner } from "./runners/methods";
+import { ConservationRunner } from "./runners/development";
+import { AttributionRunner } from "./runners/social";
 
 const RUNNERS: Record<string, React.ComponentType<{ onDone: (r: LabResult) => void }>> = {
   "digit-span": DigitSpanRunner,
@@ -21,6 +25,11 @@ const RUNNERS: Record<string, React.ComponentType<{ onDone: (r: LabResult) => vo
   "muller-lyer": MullerLyerRunner,
   schedules: SchedulesRunner,
   "bias-spotter": BiasSpotterRunner,
+  pavlov: PavlovRunner,
+  "design-study": DesignStudyRunner,
+  "correlation-cause": CorrelationRunner,
+  conservation: ConservationRunner,
+  attribution: AttributionRunner,
 };
 
 const STAGES = [
@@ -77,7 +86,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
   const stageIndex = STAGES.findIndex((s) => s.id === stage);
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> Lab
       </Link>
@@ -119,7 +128,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
                   onClick={() => go(s.id)}
                   aria-current={stage === s.id ? "step" : undefined}
                   className={cn(
-                    "flex min-h-9 items-center gap-1.5 rounded-full border-2 px-3 py-1 text-xs font-bold",
+                    "flex min-h-11 items-center gap-1.5 rounded-full border-2 px-3 py-1 text-xs font-bold",
                     stage === s.id ? "border-foreground bg-foreground text-background" : reached ? "border-foreground bg-card" : "border-foreground/30 text-muted-foreground",
                   )}
                 >
