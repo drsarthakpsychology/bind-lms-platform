@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
 import { initialState, type DepthCase } from "@/lib/sim/types";
@@ -20,8 +20,9 @@ const startSchema = z.object({
  * sim_sessions row (active), and returns the session + opening patient line.
  */
 export async function POST(req: Request) {
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/practice/consulting-room", flag: "consulting_room" });
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`sim:start:${user.id}`, 10);

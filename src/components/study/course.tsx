@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpen, Check, Clock, Flame, Lock, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Flame, Lock, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -10,6 +10,7 @@ import { activityHref, courseNext, hoursOf, moduleNext, moduleStatus, readingSec
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { ChaiSays } from "@/components/learn/chai";
+import { MarksList, RelatedLab, useSectionMarks, type LabLink } from "./marks";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -66,8 +67,8 @@ function Bar({ pct, tone = "brand" }: { pct: number; tone?: "brand" | "primary" 
 
 /* ------------------------------------------------------------ course home */
 
-export function StudyHome({ modules, serverState, save }: { modules: StudyModule[]; serverState: LearnState | null; save: Save }) {
-  initLearnStore(serverState, save);
+export function StudyHome({ modules, serverState, save, owner = "" }: { modules: StudyModule[]; serverState: LearnState | null; save: Save; owner?: string }) {
+  initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
   const next = courseNext(modules, st.study, today);
@@ -107,6 +108,8 @@ export function StudyHome({ modules, serverState, save }: { modules: StudyModule
           </div>
         ))}
       </div>
+
+      <MarksList owner={owner} modules={modules} />
 
       <section aria-labelledby="modules">
         <h2 id="modules" className="text-h2">
@@ -214,8 +217,25 @@ function CheckpointRow({ m, cp, st }: { m: StudyModule; cp: Checkpoint; st: Lear
   );
 }
 
-export function ModuleView({ module: m, nextModule, serverState, save }: { module: StudyModule; nextModule?: { id: string; title: string; num: number }; serverState: LearnState | null; save: Save }) {
-  initLearnStore(serverState, save);
+export function ModuleView({
+  module: m,
+  nextModule,
+  serverState,
+  save,
+  owner = "",
+  labOpen = false,
+  labLinks = [],
+}: {
+  module: StudyModule;
+  nextModule?: { id: string; title: string; num: number };
+  serverState: LearnState | null;
+  save: Save;
+  owner?: string;
+  /** Lab is unlocked for students, or this is an admin. Computed on the server. */
+  labOpen?: boolean;
+  labLinks?: LabLink[];
+}) {
+  initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
   const s = moduleStatus(m, st.study);
@@ -225,6 +245,7 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
   const t = st.study.tests[m.id];
   const due = retestDue(m, st.study);
   const step = !next ? 5 : next.kind === "read" || next.kind === "checkpoint" ? 1 : next.kind === "write" ? 2 : next.kind === "practise" ? 3 : 4;
+  const marksOf = useSectionMarks(owner, m.id);
   const cpAfter = new Map(checkpoints(m).map((cp) => [cp.sectionIds[cp.sectionIds.length - 1], cp]));
 
   return (
@@ -321,6 +342,8 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
                       <span className="font-bold">{sec.num}</span> {sec.title}
                       {sec.tag === "extra" ? <span className="ml-2 rounded-full border border-current px-1.5 text-[0.6rem] font-bold uppercase">Extra</span> : null}
                     </span>
+                    {marksOf(sec.id).bookmarked ? <BookmarkCheck className="size-4 shrink-0" aria-label="Bookmarked" /> : null}
+                    {marksOf(sec.id).note ? <NotebookPen className="size-4 shrink-0" aria-label="Has my note" /> : null}
                     {here ? <span className="shrink-0 text-sm font-bold">Start →</span> : null}
                   </Link>
                   {cpAfter.get(sec.id) ? <CheckpointRow m={m} cp={cpAfter.get(sec.id)!} st={st.study} /> : null}
@@ -402,6 +425,8 @@ export function ModuleView({ module: m, nextModule, serverState, save }: { modul
           </div>
         ) : null}
       </section>
+
+      <RelatedLab open={labOpen} items={labLinks} />
 
       {m.noteId ? (
         <Link href={`/study/notes/${m.noteId}`} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">

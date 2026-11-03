@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { PulseView } from "./pulse-view";
@@ -19,6 +21,9 @@ export const dynamic = "force-dynamic";
  * drifting/flying/active counts were wrong. Now: one bounded row per student.
  */
 export default async function AdminPulsePage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
 
   const [{ data: activity }, { data: checkinsAgg }, { rows: seen }] = await Promise.all([

@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { PageHeader } from "@/components/design-system/page-header";
@@ -16,6 +18,9 @@ export const dynamic = "force-dynamic";
  * "AI-generated — not yet faculty reviewed" label.
  */
 export default async function AdminTriagePage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
 
   // Sessions by test and robot accounts (AI calibration runs) never show.

@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BarChart3, Flame, GraduationCap, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Timer, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Flame, FlaskConical, GraduationCap, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Timer, Zap } from "lucide-react";
 import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
+import { buildRevisionPlan, type ReviseModule } from "@/lib/revise/plan";
 import { cn } from "@/lib/utils";
 import { Chai } from "./chai";
 import { ViewToggle } from "./view-toggle";
@@ -78,11 +79,12 @@ function Stats({ st }: { st: LearnState }) {
 }
 
 /** /games: one thing to play now, then the full set of games. */
-export function LearnHome({ units, serverState, save }: { units: Unit[]; serverState: LearnState | null; save: Save }) {
+export function LearnHome({ units, serverState, save, showLab = false, reviseModules = [] }: { units: Unit[]; serverState: LearnState | null; save: Save; showLab?: boolean; reviseModules?: ReviseModule[] }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
   const due = dueItems(st, istToday()).length;
   const now = playNow(units, st, due);
+  const revise = buildRevisionPlan(st, istToday(), reviseModules, { lab: showLab });
   const NowIcon = now.icon;
 
   return (
@@ -110,6 +112,19 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
         <ArrowRight className="size-6 shrink-0" aria-hidden />
       </Link>
 
+      {revise.today.length > 0 && (
+        <Link href="/games/revise" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
+          <ListChecks className="size-5 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold">Revise today</span>
+            <span className="text-sm text-muted-foreground">
+              {revise.today.length} {revise.today.length === 1 ? "thing" : "things"}, about {revise.minutes} min
+            </span>
+          </span>
+          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        </Link>
+      )}
+
       <section aria-labelledby="all-games">
         <h2 id="all-games" className="text-lg font-bold">
           All games
@@ -134,6 +149,20 @@ export function LearnHome({ units, serverState, save }: { units: Unit[]; serverS
           })}
         </ul>
       </section>
+
+      {showLab && (
+        <Link href="/games/lab" className="group flex items-center gap-4 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-0.5">
+          <span className="grid size-12 shrink-0 place-items-center rounded-xl border-2 border-foreground bg-foreground text-background">
+            <FlaskConical className="size-6" aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-semibold uppercase tracking-wide text-link">New · Psychology Lab</span>
+            <span className="block font-bold leading-tight">Run classic experiments on yourself</span>
+            <span className="block text-sm text-muted-foreground">Memory, attention, perception, learning and clinical thinking traps.</span>
+          </span>
+          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        </Link>
+      )}
 
       <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
         <BarChart3 className="size-5 shrink-0" aria-hidden />

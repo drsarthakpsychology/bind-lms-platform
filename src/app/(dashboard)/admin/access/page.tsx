@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -12,7 +13,7 @@ export const dynamic = "force-dynamic";
 
 /** People → Access: Full or Lectures only, sections on or off, and resets, for one student or many. */
 export default async function AccessPage({ searchParams }: { searchParams: Promise<{ q?: string; cohort?: string }> }) {
-  await requireAdmin();
+  if (!(await requireAdmin())) redirect("/dashboard");
   const sp = await searchParams;
   const admin = createAdminClient();
   const [{ data: profiles }, cohortsRes, membersRes, blocks] = await Promise.all([

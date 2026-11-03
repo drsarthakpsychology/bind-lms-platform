@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { InfraMetrics } from "./infra-metrics";
@@ -13,6 +15,9 @@ export const dynamic = "force-dynamic";
  * Admin-only via the admin layout role guard + the RPC is service_role only.
  */
 export default async function InfraPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { data } = await admin.rpc("infra_metrics");
 

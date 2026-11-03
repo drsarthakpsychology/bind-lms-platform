@@ -1,0 +1,1293 @@
+[
+  {
+    "id": "symptom-spotter",
+    "title": "Symptom Spotter: name the phenomenon",
+    "format": "phenomenon-spotter",
+    "module": "interview-mse",
+    "level": "intermediate (items tagged 1 = foundation, 2 = core, 3 = advanced)",
+    "objective": "Read what a patient says, in their own words, and name the descriptive phenomenon, telling it apart from the classic look-alikes (delusion vs overvalued idea vs obsession; hallucination vs pseudohallucination vs illusion; insertion vs obsessional intrusion; derailment vs tangentiality vs circumstantiality; depersonalisation vs derealisation).",
+    "bookRef": {
+      "book": "Fish's Clinical Psychopathology, 3rd ed.",
+      "chapter": "Chs 2-6, 8 (perception, thought and speech, memory, emotion, self, motor)",
+      "pages": "pp.14-105 (PDF 18-109)"
+    },
+    "notes": [
+      "All quotes are original, written for VIBHA; none are taken from the book. Page references are book pages, with PDF page numbers in brackets (book page = PDF page minus 4).",
+      "'core: true' marks a 16-category starter set; play the full set by group.",
+      "Optional item fields: 'prompt' (the interviewer's question or context, shown above the quote), 'level' (1 to 3), 'sensitivity' (a note for the tutor or the feedback screen).",
+      "Quotes are short excerpts. In the clinic, a single sentence is never enough to diagnose; the game trains recognition, not diagnosis.",
+      "Do not put the book's name into module text: study.test.ts rejects book names in modules. Keep bookRef as metadata only."
+    ],
+    "content": {
+      "categories": [
+        {
+          "id": "hallucination",
+          "label": "Hallucination (true)",
+          "group": "perception",
+          "core": true
+        },
+        {
+          "id": "pseudohallucination",
+          "label": "Pseudohallucination",
+          "group": "perception",
+          "core": true
+        },
+        {
+          "id": "illusion",
+          "label": "Illusion",
+          "group": "perception",
+          "core": true
+        },
+        {
+          "id": "functional-hallucination",
+          "label": "Functional hallucination",
+          "group": "perception",
+          "core": false
+        },
+        {
+          "id": "flight-of-ideas",
+          "label": "Flight of ideas",
+          "group": "thought-form",
+          "core": true
+        },
+        {
+          "id": "circumstantiality",
+          "label": "Circumstantiality",
+          "group": "thought-form",
+          "core": true
+        },
+        {
+          "id": "tangentiality",
+          "label": "Tangentiality",
+          "group": "thought-form",
+          "core": true
+        },
+        {
+          "id": "derailment",
+          "label": "Derailment (loosening of association)",
+          "group": "thought-form",
+          "core": true
+        },
+        {
+          "id": "thought-block",
+          "label": "Thought block",
+          "group": "thought-form",
+          "core": false
+        },
+        {
+          "id": "neologism",
+          "label": "Neologism",
+          "group": "thought-form",
+          "core": false
+        },
+        {
+          "id": "approximate-answers",
+          "label": "Approximate answers (Vorbeireden)",
+          "group": "thought-form",
+          "core": false
+        },
+        {
+          "id": "delusion",
+          "label": "Delusion (secondary or other)",
+          "group": "thought-content",
+          "core": true
+        },
+        {
+          "id": "delusional-perception",
+          "label": "Delusional perception",
+          "group": "thought-content",
+          "core": false
+        },
+        {
+          "id": "overvalued-idea",
+          "label": "Overvalued idea",
+          "group": "thought-content",
+          "core": true
+        },
+        {
+          "id": "obsession",
+          "label": "Obsession",
+          "group": "thought-content",
+          "core": true
+        },
+        {
+          "id": "thought-insertion",
+          "label": "Thought insertion",
+          "group": "thought-possession",
+          "core": true
+        },
+        {
+          "id": "thought-withdrawal",
+          "label": "Thought withdrawal",
+          "group": "thought-possession",
+          "core": false
+        },
+        {
+          "id": "thought-broadcasting",
+          "label": "Thought broadcasting",
+          "group": "thought-possession",
+          "core": true
+        },
+        {
+          "id": "thought-echo",
+          "label": "Thought echo (audible thoughts)",
+          "group": "thought-possession",
+          "core": false
+        },
+        {
+          "id": "passivity",
+          "label": "Passivity / made experience (act, feeling, impulse, somatic)",
+          "group": "thought-possession",
+          "core": true
+        },
+        {
+          "id": "depersonalisation",
+          "label": "Depersonalisation",
+          "group": "self",
+          "core": true
+        },
+        {
+          "id": "derealisation",
+          "label": "Derealisation",
+          "group": "self",
+          "core": true
+        },
+        {
+          "id": "confabulation",
+          "label": "Confabulation",
+          "group": "memory",
+          "core": true
+        },
+        {
+          "id": "retrospective-falsification",
+          "label": "Retrospective falsification",
+          "group": "memory",
+          "core": false
+        },
+        {
+          "id": "misidentification",
+          "label": "Delusional misidentification (Capgras / Fregoli)",
+          "group": "memory",
+          "core": false
+        },
+        {
+          "id": "loss-of-feeling",
+          "label": "Anhedonia / loss of emotional resonance",
+          "group": "mood-affect",
+          "core": false
+        },
+        {
+          "id": "lability",
+          "label": "Lability of affect",
+          "group": "mood-affect",
+          "core": false
+        },
+        {
+          "id": "compulsion",
+          "label": "Compulsion",
+          "group": "motor",
+          "core": false
+        },
+        {
+          "id": "akathisia",
+          "label": "Akathisia (subjective)",
+          "group": "motor",
+          "core": false
+        }
+      ],
+      "items": [
+        {
+          "id": "hal-01",
+          "quote": "Every night two men stand outside my window and talk about me: 'he's useless, he'll fail again.' I hear them as clearly as I hear you, but my wife says the lane is empty.",
+          "answer": "hallucination",
+          "distractors": [
+            "illusion",
+            "pseudohallucination",
+            "delusion"
+          ],
+          "explain": "No real sound is being misheard (so not an illusion), and the voices are out in the world and taken as real, not inside the head with insight (so not a pseudohallucination). Voices discussing the patient in the third person are also a first-rank form.",
+          "ref": "Ch 2, pp.18, 22 (PDF 22, 26)",
+          "level": 1
+        },
+        {
+          "id": "hal-02",
+          "quote": "A man's voice from near the ceiling fan tells me to go up to the terrace and stand on the edge to prove I'm not a coward. The fan is switched off when he speaks.",
+          "answer": "hallucination",
+          "distractors": [
+            "obsession",
+            "pseudohallucination"
+          ],
+          "explain": "A command (imperative) hallucination: a voice heard from outside, with no stimulus. An obsessional harm thought would be recognised as the patient's own thought and resisted, not heard as someone else's voice.",
+          "ref": "Ch 2, p.22 (PDF 26)",
+          "level": 1,
+          "sensitivity": "Command to self-harm: always ask whether the person feels they must obey, and do a risk assessment."
+        },
+        {
+          "id": "hal-03",
+          "quote": "There is a smell of burning rubber in my room all the time. I can smell it right now, even though my mother sniffs the air and says there is nothing.",
+          "answer": "hallucination",
+          "distractors": [
+            "delusion",
+            "illusion"
+          ],
+          "explain": "The patient actually smells the odour, with no source. If they only believed they smelled bad because people wrinkle their noses, without smelling anything, that would be a delusion. A persistent olfactory hallucination should make you think of an organic cause.",
+          "ref": "Ch 2, p.24 (PDF 28)",
+          "level": 2
+        },
+        {
+          "id": "hal-04",
+          "quote": "I can feel tiny insects crawling under the skin of my arms. I feel their legs moving. I've scratched until it bled.",
+          "answer": "hallucination",
+          "distractors": [
+            "delusion",
+            "illusion"
+          ],
+          "explain": "Tactile hallucination of small creatures crawling (formication), typical of acute organic states and stimulant (cocaine) psychosis. There is a definite sensation with no stimulus; it is not a belief without a sensation.",
+          "ref": "Ch 2, p.24 (PDF 28)",
+          "level": 2
+        },
+        {
+          "id": "psh-01",
+          "quote": "Since my father died I hear his voice inside my head saying 'eat properly, beta.' It isn't in the room. It's in my mind and I know it's my own memory talking, but I can't switch it off.",
+          "answer": "pseudohallucination",
+          "distractors": [
+            "hallucination",
+            "obsession"
+          ],
+          "explain": "The voice is in inner, subjective space, it comes on its own, and insight is kept, so on Jaspers' criteria it is a pseudohallucination. It is not an obsession because it is not a senseless thought that the person fights. In grief this can be within normal experience.",
+          "ref": "Ch 2, pp.18-19 (PDF 22-23)",
+          "level": 2,
+          "sensitivity": "Grief: do not treat this as a sign of illness on its own."
+        },
+        {
+          "id": "psh-02",
+          "quote": "At night a soft voice inside my head, not in my ears, comments on what I'm doing. I know nobody is really speaking, yet it isn't me choosing to think it.",
+          "answer": "pseudohallucination",
+          "distractors": [
+            "hallucination",
+            "thought-insertion",
+            "thought-echo"
+          ],
+          "explain": "It is involuntary and located inside the head, with insight, so it is a pseudohallucination. It is not thought echo, because the voice is not repeating the person's own thoughts, and not insertion, because no alien thoughts are being placed in the mind. The concept is contested: Hare defined it by insight, which fluctuates.",
+          "ref": "Ch 2, pp.18-19 (PDF 22-23)",
+          "level": 3
+        },
+        {
+          "id": "ill-01",
+          "quote": "In the dim ward at night, the drip stand next to my bed became a man standing over me with a lathi. When the sister switched the light on, it was only the stand.",
+          "answer": "illusion",
+          "distractors": [
+            "hallucination",
+            "functional-hallucination"
+          ],
+          "explain": "A real object (the stand) was misperceived and merged into a new perception, which is an illusion. It is common when attention is poor and the person is frightened, as in delirium. A hallucination would need no stimulus at all.",
+          "ref": "Ch 2, pp.16-17 (PDF 20-21)",
+          "level": 1
+        },
+        {
+          "id": "ill-02",
+          "quote": "Two weeks after my brother's accident I saw his face in the crowd at Dadar station for a second. Then it was a stranger's face.",
+          "answer": "illusion",
+          "distractors": [
+            "hallucination",
+            "pseudohallucination"
+          ],
+          "explain": "An affect illusion: a real face, distorted for a moment by grief and expectation, then corrected. It is common in bereavement and is not in itself a sign of illness.",
+          "ref": "Ch 2, p.17 (PDF 21)",
+          "level": 2,
+          "sensitivity": "Bereavement: reassure the person that this is normal."
+        },
+        {
+          "id": "fun-01",
+          "quote": "Whenever the fan is running I hear its hum, and with it, separately, a woman's voice calling me a sinner. When the fan stops, she stops too.",
+          "answer": "functional-hallucination",
+          "distractors": [
+            "illusion",
+            "hallucination"
+          ],
+          "explain": "The stimulus (the hum) and the voice are heard at the same time and as separate things, which is a functional hallucination. In an illusion the hum itself would turn into the words.",
+          "ref": "Ch 2, pp.17-18, 26 (PDF 21-22, 30)",
+          "level": 2
+        },
+        {
+          "id": "fun-02",
+          "quote": "Each time the pressure cooker whistles I hear a man saying my name over it. I hear both together, the whistle and his voice, very clearly.",
+          "answer": "functional-hallucination",
+          "distractors": [
+            "illusion",
+            "hallucination"
+          ],
+          "explain": "The voice needs the whistle to appear, but the whistle is still heard as a whistle. Both exist side by side, so this is functional, not an illusion (which transforms the stimulus).",
+          "ref": "Ch 2, p.26 (PDF 30)",
+          "level": 2
+        },
+        {
+          "id": "foi-01",
+          "quote": "Where do I live? Malad. Mall, I love malls, shopping, shopping for shoes, shoes for cricket, cricket, wicket, ticket, I'll buy you a ticket doctor, let's fly!",
+          "answer": "flight-of-ideas",
+          "distractors": [
+            "derailment",
+            "tangentiality"
+          ],
+          "explain": "The thoughts come fast and each jump can be followed (rhyme, sound, chance association), so this is flight of ideas, typical of mania. In derailment you cannot work out the link between one idea and the next.",
+          "ref": "Ch 3, p.34 (PDF 38)",
+          "level": 1
+        },
+        {
+          "id": "foi-02",
+          "quote": "I've got a hundred plans: the app, the dhaba franchise. Franchise, France, I'll learn French. Paris, the Eiffel Tower is iron, iron tablets, my mother needs iron tablets, I'll start a pharmacy!",
+          "answer": "flight-of-ideas",
+          "distractors": [
+            "tangentiality",
+            "circumstantiality"
+          ],
+          "explain": "There is pressure, and each link is understandable (verbal and chance associations), but the speaker never gets back to a goal. Tangentiality has no pressure or clanging, and circumstantiality does reach its point.",
+          "ref": "Ch 3, pp.34-35 (PDF 38-39)",
+          "level": 1
+        },
+        {
+          "id": "cir-01",
+          "prompt": "When did the headaches start?",
+          "quote": "When did the headaches start? It was the Tuesday of my cousin's engagement. We took the 7:40 train, not the 8:10, because my aunt hates crowds, and the caterer served too much rava kesari, and I had skipped lunch. So, doctor, the headache began that Tuesday evening.",
+          "answer": "circumstantiality",
+          "distractors": [
+            "tangentiality",
+            "flight-of-ideas"
+          ],
+          "explain": "The answer takes a slow, detailed detour but does reach the goal (\"that Tuesday evening\"). That is circumstantiality. In tangentiality the question would be left behind for good.",
+          "ref": "Ch 3, p.35 (PDF 39)",
+          "level": 1
+        },
+        {
+          "id": "cir-02",
+          "prompt": "Which medicines are you taking?",
+          "quote": "My medicines? First let me tell you how I keep them: in the blue steel dabba, sorted by colour, like the pharmacist at the corner told me. He's a careful man, his father had the shop before him. Anyway, yes, I take the white one at night.",
+          "answer": "circumstantiality",
+          "distractors": [
+            "tangentiality",
+            "derailment"
+          ],
+          "explain": "Lots of unnecessary detail, but the goal is never completely lost and the answer comes in the end. The links make sense, so it is not derailment.",
+          "ref": "Ch 3, p.35 (PDF 39)",
+          "level": 1
+        },
+        {
+          "id": "tan-01",
+          "prompt": "What brought you to hospital?",
+          "quote": "Hospitals in this city are so crowded. My cousin works in a hospital in Pune. Pune has lovely weather in the monsoon. I like the monsoon because of the bhutta stalls.",
+          "answer": "tangentiality",
+          "distractors": [
+            "circumstantiality",
+            "flight-of-ideas",
+            "derailment"
+          ],
+          "explain": "Each step follows logically from the one before, but the answer goes off obliquely and never returns to the question. It is not circumstantiality, because the goal is never reached, and not flight, because there is no pressure or clanging. Note that Fish does not use the word 'tangentiality'; the modern term comes from later rating scales.",
+          "ref": "Ch 3, p.35 (PDF 39), by contrast with circumstantiality",
+          "level": 2
+        },
+        {
+          "id": "tan-02",
+          "prompt": "How has your sleep been?",
+          "quote": "Sleep... my grandmother used to sleep on a charpai on the terrace in summer. Those terraces had such tall water tanks. Now everyone has an RO purifier instead.",
+          "answer": "tangentiality",
+          "distractors": [
+            "circumstantiality",
+            "derailment"
+          ],
+          "explain": "The answer drifts off-topic through understandable links and never comes back to sleep. Because each link can be followed, it is not derailment.",
+          "ref": "Ch 3, p.35 (PDF 39), by contrast with circumstantiality",
+          "level": 2
+        },
+        {
+          "id": "der-01",
+          "quote": "My job was in accounts. Accounts in the sky are counted by the moon's daughters, so I turned the kitchen key backwards and the government knows my blood group.",
+          "answer": "derailment",
+          "distractors": [
+            "flight-of-ideas",
+            "tangentiality",
+            "neologism"
+          ],
+          "explain": "The thought slides onto unrelated tracks with no link you can follow. That is derailment, a feature of formal thought disorder in schizophrenia. In flight of ideas the links can be traced, through rhyme or association.",
+          "ref": "Ch 3, p.47 (PDF 51)",
+          "level": 2
+        },
+        {
+          "id": "der-02",
+          "quote": "I went to the temple to pray for my sister. The bell is a kind of copper decision. Decisions are planted in Nagpur. Therefore the tea is responsible.",
+          "answer": "derailment",
+          "distractors": [
+            "flight-of-ideas",
+            "tangentiality"
+          ],
+          "explain": "Each sentence is grammatical, but the meaning jumps between unconnected ideas (\"therefore\" connects nothing). There is no pressure and no clang link, so it is not flight of ideas.",
+          "ref": "Ch 3, pp.46-47 (PDF 50-51)",
+          "level": 2
+        },
+        {
+          "id": "blk-01",
+          "quote": "I was telling you about my brother's wedding and then nothing. It was as if the thought was cut with scissors. Gone. What were we talking about?",
+          "answer": "thought-block",
+          "distractors": [
+            "thought-withdrawal",
+            "derailment"
+          ],
+          "explain": "A sudden stop with a blank, and the patient does not blame any outside force. If they said someone pulled the thought out, it would be thought withdrawal. Ordinary losing the thread when tired or anxious has to be ruled out.",
+          "ref": "Ch 3, p.36 (PDF 40)",
+          "level": 2
+        },
+        {
+          "id": "neo-01",
+          "quote": "Every evening I get the 'glasswind' in my chest. That's the only word for it; the doctors' words don't fit what I feel.",
+          "answer": "neologism",
+          "distractors": [
+            "derailment",
+            "hallucination"
+          ],
+          "explain": "A new word made up to name a private experience: Fish calls this a technical neologism. The sentence itself is well organised, so this is not derailment.",
+          "ref": "Ch 3, pp.49-50 (PDF 53-54)",
+          "level": 2
+        },
+        {
+          "id": "neo-02",
+          "quote": "Since the operation my mind has gone shattermuddled. That's the correct word, and everyone should start using it.",
+          "answer": "neologism",
+          "distractors": [
+            "derailment",
+            "approximate-answers"
+          ],
+          "explain": "An invented word, used as if it had an agreed meaning. Check language, dialect and malapropisms before calling something a neologism.",
+          "ref": "Ch 3, pp.49-50 (PDF 53-54)",
+          "level": 2
+        },
+        {
+          "id": "apx-01",
+          "prompt": "How many legs does a cow have? What colour is the sky?",
+          "quote": "Four. No, wait, a cow has five legs. And the sky is green, isn't it?",
+          "answer": "approximate-answers",
+          "distractors": [
+            "confabulation",
+            "derailment"
+          ],
+          "explain": "The answers are wrong, but just next to the right answer, which shows the question was understood. That is Vorbeireden (talking past the point), classically part of Ganser syndrome. Confabulation fills a memory gap; it does not miss a simple fact.",
+          "ref": "Ch 3, p.49 (PDF 53); Ch 4, p.61 (PDF 65)",
+          "level": 3,
+          "sensitivity": "Ganser syndrome is rare and its cause is disputed (dissociative vs organic). Do not label it malingering."
+        },
+        {
+          "id": "apx-02",
+          "prompt": "What is two plus two? Which month is it?",
+          "quote": "Two plus two? Five. And today is... the month after the one we are in.",
+          "answer": "approximate-answers",
+          "distractors": [
+            "confabulation",
+            "thought-block"
+          ],
+          "explain": "The near-miss answers show the question was understood. This is talking past the point, not a memory gap being filled.",
+          "ref": "Ch 3, p.49 (PDF 53)",
+          "level": 3
+        },
+        {
+          "id": "del-01",
+          "quote": "My neighbours have put a chip in our water tank to make me impotent. I haven't seen the chip but I know it's there. Nothing you say will change that.",
+          "answer": "delusion",
+          "distractors": [
+            "overvalued-idea",
+            "obsession"
+          ],
+          "explain": "A false, unshakeable belief that does not fit the person's background, and is not resisted. An obsession would be called senseless by the patient themselves. An overvalued idea would be less fixed and closer to reality.",
+          "ref": "Ch 3, p.39 (PDF 43)",
+          "level": 1
+        },
+        {
+          "id": "del-02",
+          "quote": "My intestines have rotted away. Food just falls into an empty space. I am already dead, doctor. There's nothing left to treat.",
+          "answer": "delusion",
+          "distractors": [
+            "depersonalisation",
+            "loss-of-feeling"
+          ],
+          "explain": "A nihilistic delusion, held as literal truth, usually in severe depression. Depersonalisation is an 'as if' feeling with insight; this patient has no 'as if'.",
+          "ref": "Ch 3, p.45 (PDF 49); Ch 6, pp.76-77 (PDF 80-81)",
+          "level": 2,
+          "sensitivity": "Severe depression with nihilism: high risk of suicide and of refusing food and fluids."
+        },
+        {
+          "id": "del-03",
+          "quote": "I am the reason the floods came to our district. My sins caused it, and I deserve to be hanged.",
+          "answer": "delusion",
+          "distractors": [
+            "obsession",
+            "overvalued-idea"
+          ],
+          "explain": "A mood-congruent delusion of guilt in severe depression. The patient fully believes it and does not experience it as an intrusive thought that they resist.",
+          "ref": "Ch 3, pp.44-45 (PDF 48-49)",
+          "level": 1,
+          "sensitivity": "Delusions of guilt: assess suicide risk."
+        },
+        {
+          "id": "del-04",
+          "quote": "My wife is seeing someone else. I know because today she hung the towel on the left side of the line, and that's their signal. I check her phone every night.",
+          "answer": "delusion",
+          "distractors": [
+            "delusional-perception",
+            "overvalued-idea"
+          ],
+          "explain": "The towel is read through a suspicion he already held, so this is a delusional misinterpretation that grows out of morbid jealousy. In a true delusional perception the new meaning cannot be traced to earlier attitudes or mood.",
+          "ref": "Ch 3, pp.40, 42-43 (PDF 44, 46-47)",
+          "level": 3,
+          "sensitivity": "Morbid jealousy: assess the risk to the partner and ask about checking, following and violence."
+        },
+        {
+          "id": "del-05",
+          "quote": "A film actress is in love with me. We have never met, but I know she loves me, and her family is stopping my letters from reaching her.",
+          "answer": "delusion",
+          "distractors": [
+            "overvalued-idea",
+            "delusional-perception"
+          ],
+          "explain": "A delusion of love (erotomania): a fixed conviction, with excuses for why there is no reply. It is not an overvalued idea, because it has no basis in reality and cannot be shaken.",
+          "ref": "Ch 3, p.43 (PDF 47)",
+          "level": 2,
+          "sensitivity": "Can lead to stalking of the person named. Assess risk."
+        },
+        {
+          "id": "dlp-01",
+          "quote": "I was drinking tea and saw three crows on the electric wire. At that moment I knew my father is not my real father.",
+          "answer": "delusional-perception",
+          "distractors": [
+            "delusion",
+            "illusion",
+            "hallucination"
+          ],
+          "explain": "The crows were real and seen correctly (so it is not an illusion or a hallucination). Then a new, unrelated meaning about the self arrives suddenly and cannot be understood from mood or earlier beliefs. This 'two-membered' structure makes it a delusional perception, a Schneiderian first-rank symptom.",
+          "ref": "Ch 3, pp.39-40 (PDF 43-44)",
+          "level": 2
+        },
+        {
+          "id": "dlp-02",
+          "quote": "The milkman put the packet down with the blue side up, and right then I understood that I have been sent to end corruption in this country.",
+          "answer": "delusional-perception",
+          "distractors": [
+            "delusion",
+            "overvalued-idea"
+          ],
+          "explain": "An ordinary perception, correctly seen, suddenly carries a grandiose meaning with no link to it. A secondary misinterpretation would come out of something already there, such as a manic mood or an existing persecutory belief.",
+          "ref": "Ch 3, p.40 (PDF 44)",
+          "level": 2
+        },
+        {
+          "id": "ovi-01",
+          "quote": "My nose is too broad and it is ruining my life. People say it's normal, and maybe they're right, but I can't stop thinking it decides everything: my marriage proposals, my job.",
+          "answer": "overvalued-idea",
+          "distractors": [
+            "delusion",
+            "obsession"
+          ],
+          "explain": "A belief loaded with feeling that dominates the person's life, has some basis in reality, and is not completely fixed ('maybe they're right'): an overvalued idea. It is not an obsession, because the patient agrees with the idea rather than fighting it as senseless.",
+          "ref": "Ch 3, p.39 (PDF 43)",
+          "level": 2,
+          "sensitivity": "Body image: avoid commenting on the patient's appearance."
+        },
+        {
+          "id": "ovi-02",
+          "quote": "I'm 41 kilos and still fat around the waist. I know my parents are worried, but being thin is the one thing that matters to me.",
+          "answer": "overvalued-idea",
+          "distractors": [
+            "delusion",
+            "obsession"
+          ],
+          "explain": "The classic overvalued idea in anorexia nervosa: a value that dominates everything else and is held with intense feeling. The patient does not resist it, and it is less bizarre and less fixed than a delusion.",
+          "ref": "Ch 3, p.39 (PDF 43)",
+          "level": 2,
+          "sensitivity": "Eating disorder: check medical risk (weight, electrolytes). Use neutral language about body and food."
+        },
+        {
+          "id": "ovi-03",
+          "quote": "I'm weak because semen is leaking out in my urine; that's why I'm tired all the time. The doctor's tests were normal, so maybe I'm wrong, but I feel my strength is draining away.",
+          "answer": "overvalued-idea",
+          "distractors": [
+            "delusion",
+            "obsession"
+          ],
+          "explain": "The belief (dhat) is shared in the patient's culture and is held with some doubt, so by definition it is not a delusion, which has to be out of keeping with cultural background. It is a culturally shaped, feeling-loaded preoccupation.",
+          "ref": "Fish Ch 3, p.39 (PDF 43); Ahuja Ch 8, p.110 (PDF 122)",
+          "level": 2,
+          "sensitivity": "Sexual health and cultural belief: explain without mocking. Screen for depression and anxiety."
+        },
+        {
+          "id": "obs-01",
+          "quote": "When I hold my baby a thought jumps in: what if I drop her from the balcony? It horrifies me. I know it's my own mind and I would never do it, but now I avoid the balcony.",
+          "answer": "obsession",
+          "distractors": [
+            "thought-insertion",
+            "hallucination"
+          ],
+          "explain": "The thought is recognised as the patient's own, it is unwanted, and she resists it by avoiding the balcony: an obsession. Fish notes that fears of harming a baby are now among the most common obsessions, and they are very rarely acted on. In thought insertion the thought would feel like someone else's.",
+          "ref": "Ch 3, pp.36-37 (PDF 40-41)",
+          "level": 1,
+          "sensitivity": "Perinatal: reassure and assess carefully. Do not treat intrusive harm thoughts as intent without assessment."
+        },
+        {
+          "id": "obs-02",
+          "quote": "During puja, abusive words about God come into my head. They're my thoughts, and I hate them. I repeat the mantra eleven times to cancel them.",
+          "answer": "obsession",
+          "distractors": [
+            "thought-insertion",
+            "delusion"
+          ],
+          "explain": "Blasphemous intrusions that the patient owns, finds repugnant and neutralises with a mantra: an obsession, with a mental compulsion. Fish notes that obsessions often attack what the person values most.",
+          "ref": "Ch 3, p.37 (PDF 41)",
+          "level": 1,
+          "sensitivity": "Religious content: respond with respect and do not question the person's faith."
+        },
+        {
+          "id": "obs-03",
+          "quote": "A picture of my own name on a funeral notice keeps forcing itself into my mind. I know my own mind is making it up, it's stupid, I push it away and it comes back.",
+          "answer": "obsession",
+          "distractors": [
+            "pseudohallucination",
+            "hallucination"
+          ],
+          "explain": "An obsessional image. Fish warns that such images can be vivid enough to be mistaken for pseudohallucinations, but here it is resisted and judged senseless, which marks it as obsessional.",
+          "ref": "Ch 3, p.37 (PDF 41)",
+          "level": 3
+        },
+        {
+          "id": "ins-01",
+          "quote": "These aren't my thoughts. Thoughts about killing are being put into my head by the tantrik from our village. I can feel them arrive. They're his, not mine.",
+          "answer": "thought-insertion",
+          "distractors": [
+            "obsession",
+            "pseudohallucination"
+          ],
+          "explain": "The thought itself feels alien and placed from outside: thought insertion. Someone with obsessions, however distressed, says 'my own thought, against my will'.",
+          "ref": "Ch 3, p.38 (PDF 42)",
+          "level": 1,
+          "sensitivity": "Content about killing: assess risk to others. Do not dismiss beliefs about sorcery in this setting; assess them."
+        },
+        {
+          "id": "ins-02",
+          "quote": "Someone is using my head like a notice board and pinning their ideas in there. I can tell which thoughts are theirs; they feel cold and foreign.",
+          "answer": "thought-insertion",
+          "distractors": [
+            "obsession",
+            "thought-broadcasting"
+          ],
+          "explain": "Some thoughts are felt as not belonging to the self: insertion. Broadcasting is about the person's own thoughts getting out, not other people's thoughts getting in.",
+          "ref": "Ch 3, p.38 (PDF 42)",
+          "level": 1
+        },
+        {
+          "id": "wdr-01",
+          "quote": "I'm in the middle of a sentence and the thought is pulled out of my head, like a SIM card taken out of a phone. The people next door do it with their machine.",
+          "answer": "thought-withdrawal",
+          "distractors": [
+            "thought-block",
+            "thought-broadcasting"
+          ],
+          "explain": "The thought stops and the patient says an outside force removed it: thought withdrawal (Fish calls it 'thought deprivation'). Thought block is the same stop without that explanation.",
+          "ref": "Ch 3, p.38 (PDF 42)",
+          "level": 2
+        },
+        {
+          "id": "wdr-02",
+          "quote": "My thoughts get sucked out through the top of my head by the satellite, and my mind is left empty.",
+          "answer": "thought-withdrawal",
+          "distractors": [
+            "thought-block",
+            "thought-insertion"
+          ],
+          "explain": "Thoughts are taken away by an outside agency, leaving the mind empty: withdrawal. Insertion is the reverse direction.",
+          "ref": "Ch 3, p.38 (PDF 42)",
+          "level": 1
+        },
+        {
+          "id": "brd-01",
+          "quote": "Everyone on the bus knows what I'm thinking. My thoughts leak out of my head and they all catch them. That's why they're smiling.",
+          "answer": "thought-broadcasting",
+          "distractors": [
+            "thought-echo",
+            "delusion"
+          ],
+          "explain": "The patient's own thoughts are no longer private: broadcasting. In thought echo the person hears their thoughts spoken aloud. Definitions of broadcasting vary, so write down the patient's exact words.",
+          "ref": "Ch 2, p.22 (PDF 26); Ch 3, p.38 (PDF 42)",
+          "level": 2
+        },
+        {
+          "id": "brd-02",
+          "quote": "As I think, the whole city is thinking the same thing with me, at the same moment.",
+          "answer": "thought-broadcasting",
+          "distractors": [
+            "thought-insertion",
+            "thought-echo"
+          ],
+          "explain": "Others think in unison with the patient, which is the original Fish definition of broadcasting. It is not insertion, because the thoughts are the patient's own.",
+          "ref": "Ch 3, p.38 (PDF 42); Ch 6, p.79 (PDF 83)",
+          "level": 3
+        },
+        {
+          "id": "ech-01",
+          "quote": "I hear my thoughts said out loud a second after I think them, in my own words, as if someone is reading them over my shoulder.",
+          "answer": "thought-echo",
+          "distractors": [
+            "thought-broadcasting",
+            "pseudohallucination"
+          ],
+          "explain": "Audible thoughts heard after the thought (écho de la pensée) are a first-rank symptom. Broadcasting is the belief that others can access your thoughts, and it does not need the thoughts to be heard.",
+          "ref": "Ch 2, p.22 (PDF 26)",
+          "level": 2
+        },
+        {
+          "id": "ech-02",
+          "quote": "Before I even finish thinking a sentence, I hear it spoken aloud in the room.",
+          "answer": "thought-echo",
+          "distractors": [
+            "thought-broadcasting",
+            "thought-insertion"
+          ],
+          "explain": "Thoughts heard as or before they are thought (Gedankenlautwerden). SCAN classifies thought echo under thought rather than hallucination, so you will see it filed in different places.",
+          "ref": "Ch 2, p.22 (PDF 26)",
+          "level": 3
+        },
+        {
+          "id": "pas-01",
+          "quote": "My hand picked up the glass and threw it, but I didn't do it. The force moved my arm, and I just watched it happen.",
+          "answer": "passivity",
+          "distractors": [
+            "depersonalisation",
+            "compulsion"
+          ],
+          "explain": "The act is felt as done by an outside agency: a made act (passivity). Depersonalised patients feel 'as if' they are automatic but know the act is theirs. Someone performing a compulsion knows they are doing it.",
+          "ref": "Ch 6, p.79 (PDF 83); Ch 8, pp.87-88 (PDF 91-92)",
+          "level": 2,
+          "sensitivity": "Made acts can involve harm. Ask what the force makes them do."
+        },
+        {
+          "id": "pas-02",
+          "quote": "This anger isn't mine. They send it into me through the mobile tower, and then I'm furious even though nothing has upset me.",
+          "answer": "passivity",
+          "distractors": [
+            "lability",
+            "thought-insertion"
+          ],
+          "explain": "An emotion felt as imposed from outside: a made feeling. Lability is a sudden shift of the patient's own emotion, with no outside agent.",
+          "ref": "Ch 6, p.79 (PDF 83)",
+          "level": 2
+        },
+        {
+          "id": "pas-03",
+          "quote": "Someone is heating my kidneys from far away with rays. I feel the burning exactly where they aim.",
+          "answer": "passivity",
+          "distractors": [
+            "hallucination",
+            "delusion"
+          ],
+          "explain": "A real bodily sensation that the patient experiences as imposed by an outside agency: somatic passivity. It has both a sensation and an outside agent. A bodily sensation without the agent would be a somatic hallucination; an agent with no sensation would be a delusion of control.",
+          "ref": "Ch 2, p.25 (PDF 29); Ch 6, p.79 (PDF 83)",
+          "level": 3
+        },
+        {
+          "id": "dep-01",
+          "quote": "I feel like a robot. My voice sounds like someone else's, and I'm watching myself from a little way behind. I know I'm me; it just doesn't feel like it, and that's terrifying.",
+          "answer": "depersonalisation",
+          "distractors": [
+            "passivity",
+            "delusion"
+          ],
+          "explain": "An unpleasant 'as if' change in the feeling of being oneself, with insight kept: depersonalisation. A patient with passivity says the control really is external. A nihilistic delusion says, 'I really don't exist.'",
+          "ref": "Ch 6, pp.75-76 (PDF 79-80)",
+          "level": 1
+        },
+        {
+          "id": "dep-02",
+          "quote": "My hands feel as if they don't belong to me, as if they're made of wood. I know they're my hands.",
+          "answer": "depersonalisation",
+          "distractors": [
+            "derealisation",
+            "delusion"
+          ],
+          "explain": "Unreality about the self and the body, with the 'as if' and with insight: depersonalisation. Derealisation is unreality about the surroundings.",
+          "ref": "Ch 6, pp.75-76 (PDF 79-80)",
+          "level": 1
+        },
+        {
+          "id": "drl-01",
+          "quote": "The college looks like a film set, flat and colourless, like cardboard. People seem to be acting. I know it's real, but it doesn't feel real.",
+          "answer": "derealisation",
+          "distractors": [
+            "depersonalisation",
+            "misidentification"
+          ],
+          "explain": "The outside world feels unreal, and the patient knows it isn't: derealisation. Capgras would be a conviction that one particular person has been replaced by an impostor.",
+          "ref": "Ch 6, pp.75-76 (PDF 79-80)",
+          "level": 1
+        },
+        {
+          "id": "drl-02",
+          "quote": "Everything around me looks far away, as if I'm seeing it through glass, as if the world has been put on mute.",
+          "answer": "derealisation",
+          "distractors": [
+            "depersonalisation",
+            "illusion"
+          ],
+          "explain": "A change in how real the world feels, not a misperception of any particular object (so not an illusion).",
+          "ref": "Ch 6, p.76 (PDF 80)",
+          "level": 1
+        },
+        {
+          "id": "cnf-01",
+          "prompt": "(Admitted 10 days ago with severe memory loss after years of heavy drinking.) What did you do yesterday?",
+          "quote": "Yesterday? I went to the bank, met the manager, we had cutting chai, and he sanctioned my loan.",
+          "answer": "confabulation",
+          "distractors": [
+            "delusion",
+            "retrospective-falsification"
+          ],
+          "explain": "Plausible but false events that fill a real memory gap, in clear consciousness, with organic amnesia: confabulation. It is not held with delusional conviction and can change when you question it.",
+          "ref": "Ch 4, p.60 (PDF 64)",
+          "level": 2
+        },
+        {
+          "id": "cnf-02",
+          "prompt": "(Amnestic patient meeting a new doctor.) Have we met before?",
+          "quote": "Of course we've met, doctor. You came to my shop last week and bought two kilos of sugar.",
+          "answer": "confabulation",
+          "distractors": [
+            "misidentification",
+            "delusion"
+          ],
+          "explain": "False recall that fills a gap in memory. It is not delusional misidentification, because there is no belief about doubles or disguises.",
+          "ref": "Ch 4, p.60 (PDF 64)",
+          "level": 2
+        },
+        {
+          "id": "rtf-01",
+          "prompt": "(A woman with depression who topped her class and has been promoted twice.) Tell me about your life so far.",
+          "quote": "I've always been a failure, right from school. I've never achieved anything.",
+          "answer": "retrospective-falsification",
+          "distractors": [
+            "delusion",
+            "confabulation"
+          ],
+          "explain": "The past is remembered through the present depressed mood: retrospective falsification. There is no organic gap being filled (so not confabulation), and the view usually changes as the mood improves.",
+          "ref": "Ch 4, p.59 (PDF 63)",
+          "level": 2
+        },
+        {
+          "id": "rtf-02",
+          "prompt": "(Depressed man whose family describes many good years.) How was your marriage before this illness?",
+          "quote": "My marriage was miserable from the very first day. There was never one happy moment.",
+          "answer": "retrospective-falsification",
+          "distractors": [
+            "delusion",
+            "confabulation"
+          ],
+          "explain": "The current low mood has rewritten the past (the family remembers years of contentment). Record it, but do not take it as an accurate personal history.",
+          "ref": "Ch 4, p.59 (PDF 63)",
+          "level": 2
+        },
+        {
+          "id": "mis-01",
+          "quote": "This woman says she's my wife. She looks exactly like her, the same mole, the same voice, but she's an impostor who has taken her place.",
+          "answer": "misidentification",
+          "distractors": [
+            "derealisation",
+            "illusion"
+          ],
+          "explain": "The patient recognises a familiar person's appearance but holds a fixed belief that she is a double: Capgras syndrome. It is not an illusion, because the perception itself is correct.",
+          "ref": "Ch 4, p.63 (PDF 67); Appendix I, p.121 (PDF 125)",
+          "level": 2,
+          "sensitivity": "The person believed to be an impostor may be at risk. Assess this, and rule out organic causes such as dementia."
+        },
+        {
+          "id": "mis-02",
+          "quote": "That ward boy is really my brother-in-law in disguise. He changes his face, but I can tell it's him following me.",
+          "answer": "misidentification",
+          "distractors": [
+            "illusion",
+            "delusion"
+          ],
+          "explain": "Strangers are 'really' a known persecutor in disguise: the Fregoli type of delusional misidentification. The perception is correct; the identity given to it is delusional.",
+          "ref": "Appendix I, p.121 (PDF 125); Ch 4, p.63 (PDF 67)",
+          "level": 3
+        },
+        {
+          "id": "lof-01",
+          "quote": "I look at my children and I know I love them, but I feel nothing, as if there's a glass wall. That makes me feel like the worst mother alive.",
+          "answer": "loss-of-feeling",
+          "distractors": [
+            "depersonalisation",
+            "delusion"
+          ],
+          "explain": "The 'feeling of not feeling' in depression (loss of emotional resonance), which here feeds guilt. It is a loss of feeling, not a sense that the self is unreal, though the two often overlap.",
+          "ref": "Ch 6, p.77 (PDF 81)",
+          "level": 2,
+          "sensitivity": "Depression with guilt: assess suicide risk and her safety with the children."
+        },
+        {
+          "id": "lof-02",
+          "quote": "Nothing gives me any pleasure now: not cricket, not my grandson's hug, not even mango season.",
+          "answer": "loss-of-feeling",
+          "distractors": [
+            "derealisation",
+            "depersonalisation"
+          ],
+          "explain": "Anhedonia, the inability to enjoy things that used to give pleasure. It is a core symptom of depressive illness.",
+          "ref": "Ch 5, p.71 (PDF 75)",
+          "level": 1
+        },
+        {
+          "id": "lab-01",
+          "quote": "One minute I'm laughing at a joke, the next I'm sobbing. It comes out of nowhere, nothing has happened, and then it switches back.",
+          "answer": "lability",
+          "distractors": [
+            "loss-of-feeling",
+            "passivity"
+          ],
+          "explain": "Fast, sudden changes in emotion that are mostly unrelated to what is happening: lability, seen in mixed states, mania and organic brain disease. If the patient said an outside force was sending the emotion, it would be a made feeling.",
+          "ref": "Ch 5, p.70 (PDF 74)",
+          "level": 2
+        },
+        {
+          "id": "aka-01",
+          "quote": "Since the new injection I can't sit still. My legs make me get up and walk, and inside I feel driven. I'm not worried about anything.",
+          "answer": "akathisia",
+          "distractors": [
+            "passivity",
+            "compulsion"
+          ],
+          "explain": "Inner restlessness with an urge to move after starting an antipsychotic: akathisia. The legs are the patient's own (not passivity), and there is no obsession being neutralised (not a compulsion).",
+          "ref": "Ch 8, p.104 (PDF 108)",
+          "level": 2,
+          "sensitivity": "Akathisia is very distressing and is linked to agitation. Tell the prescriber; do not label it anxiety without checking."
+        },
+        {
+          "id": "aka-02",
+          "quote": "Since the tablets were increased, my body won't let me sit for even two minutes. I'm marching on the spot even while I talk to you.",
+          "answer": "akathisia",
+          "distractors": [
+            "compulsion",
+            "lability"
+          ],
+          "explain": "Subjective restlessness that you can also see (marching on the spot), linked in time to a dose increase: akathisia.",
+          "ref": "Ch 8, p.104 (PDF 108)",
+          "level": 1
+        },
+        {
+          "id": "cmp-01",
+          "quote": "I have to check the gas knob twenty times before I leave. I know it's off, but if I don't check, the anxiety is unbearable.",
+          "answer": "compulsion",
+          "distractors": [
+            "obsession",
+            "akathisia"
+          ],
+          "explain": "A repeated act that the person recognises as excessive and does to relieve obsessional anxiety: a compulsion. Fish calls compulsions 'obsessional motor acts'. The obsession is the doubt; the compulsion is the checking.",
+          "ref": "Ch 3, p.37 (PDF 41)",
+          "level": 1
+        },
+        {
+          "id": "cmp-02",
+          "quote": "After touching the newspaper I must wash my hands in sets of seven. They're already raw, I hate doing it, but I can't stop.",
+          "answer": "compulsion",
+          "distractors": [
+            "obsession",
+            "passivity"
+          ],
+          "explain": "A ritual the person resists and owns, driven by fear of contamination: a compulsion. The patient does not say that anyone else is controlling the hands.",
+          "ref": "Ch 3, p.37 (PDF 41)",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "law-then-now",
+    "title": "Then and now: is this still the law?",
+    "format": "era-sorter",
+    "module": "ethics-law",
+    "level": "core",
+    "objective": "Spot outdated legal content in an older textbook. Decide whether each statement is still current, updated (same principle, new statute or section), or replaced, and give the current position.",
+    "bookRef": {
+      "book": "Niraj Ahuja, A Short Textbook of Psychiatry (Jaypee; 7th ed., (c) 2011, preface July 2010)",
+      "chapter": "Ch 20 Legal and Ethical Issues (plus Ch 1, 16, 19)",
+      "pages": "pp.229-234 (PDF 241-246)"
+    },
+    "notes": [
+      "Ahuja's legal chapter dates from 2010 and describes the MHA 1987, IPC and Evidence Act. All of these have since been replaced or renumbered. The game teaches that a textbook is dated.",
+      "Items marked verify:true should be checked against the gazetted text by the ethics-law owner before release. The module ethics-law.ts already uses BNS s.22, MHCA s.89/90/95/115 and ICMR 2017."
+    ],
+    "content": {
+      "choices": [
+        {
+          "id": "current",
+          "label": "Still current"
+        },
+        {
+          "id": "updated",
+          "label": "Updated (same rule, new statute or section)"
+        },
+        {
+          "id": "replaced",
+          "label": "Replaced (rule changed)"
+        }
+      ],
+      "items": [
+        {
+          "id": "law-01",
+          "claim": "Involuntary 'admission under special circumstances' at a relative's request, for up to 90 days, under the Mental Health Act 1987.",
+          "answer": "replaced",
+          "currentPosition": "The MHA 1987 was repealed by the Mental Healthcare Act 2017 (in force 29 May 2018). Supported admission now lasts up to 30 days (s.89), and longer stays need Mental Health Review Board oversight (s.90).",
+          "ref": "Ahuja Ch 20, p.232 (PDF 244)",
+          "verify": false
+        },
+        {
+          "id": "law-02",
+          "claim": "Admission categories: voluntary, special circumstances, reception order on application, reception order without application before a Magistrate, judicial inquisition, mentally ill prisoner.",
+          "answer": "replaced",
+          "currentPosition": "Under the MHCA 2017 the categories are independent admission, supported admission (up to 30 days and beyond 30 days), minors' admission and emergency treatment (72 hours). There is a separate route for prisoners (s.103).",
+          "ref": "Ahuja Ch 20, p.232 (PDF 244)",
+          "verify": true
+        },
+        {
+          "id": "law-03",
+          "claim": "The 'mentally ill person' is someone needing treatment for any mental disorder other than mental retardation.",
+          "answer": "replaced",
+          "currentPosition": "MHCA 2017 s.2(1)(s) defines mental illness functionally: a substantial disorder of thinking, mood, perception, orientation or memory that grossly impairs judgement, behaviour, the capacity to recognise reality or the ability to meet ordinary demands of life. 'Mental retardation' is now intellectual disability (RPwD Act 2016).",
+          "ref": "Ahuja Ch 20, p.232 (PDF 244)",
+          "verify": true
+        },
+        {
+          "id": "law-04",
+          "claim": "Criminal responsibility: IPC Section 84 (a McNaughten-type test of unsoundness of mind).",
+          "answer": "updated",
+          "currentPosition": "The same test continues as Section 22 of the Bharatiya Nyaya Sanhita, 2023 (in force 1 July 2024). The wording is the same; only the section number has changed.",
+          "ref": "Ahuja Ch 20, p.229 (PDF 241)",
+          "verify": false
+        },
+        {
+          "id": "law-05",
+          "claim": "Attempted suicide is punishable under IPC Section 309.",
+          "answer": "replaced",
+          "currentPosition": "MHCA 2017 s.115 presumes severe stress and says the person shall not be tried or punished, and the government must provide care. The BNS 2023 has no general offence of attempting suicide (a narrower provision about attempts to compel a public servant is a separate issue).",
+          "ref": "Ahuja Ch 19, p.224 (PDF 236)",
+          "verify": true
+        },
+        {
+          "id": "law-06",
+          "claim": "A 'lunatic' may be incompetent as a witness under the Indian Evidence Act 1872, Section 118.",
+          "answer": "updated",
+          "currentPosition": "The Indian Evidence Act has been replaced by the Bharatiya Sakshya Adhiniyam, 2023 (in force 1 July 2024). The competency principle is kept, under a new section number.",
+          "ref": "Ahuja Ch 20, p.230 (PDF 242)",
+          "verify": true
+        },
+        {
+          "id": "law-07",
+          "claim": "Testamentary capacity: a will requires a 'sound and disposing mind' (Indian Succession Act 1925, s.59).",
+          "answer": "current",
+          "currentPosition": "Still the governing law. The capacity tests (nature of the act, extent of the property, who has claims) remain standard practice.",
+          "ref": "Ahuja Ch 20, pp.230-231 (PDF 242-243)",
+          "verify": false
+        },
+        {
+          "id": "law-08",
+          "claim": "Contract: a person must be of sound mind to contract (Indian Contract Act 1872, s.11).",
+          "answer": "current",
+          "currentPosition": "Still in force.",
+          "ref": "Ahuja Ch 20, p.231 (PDF 243)",
+          "verify": false
+        },
+        {
+          "id": "law-09",
+          "claim": "Hindu Marriage Act: unsoundness of mind, mental disorder or 'recurrent attacks of insanity or epilepsy' make a marriage voidable; incurable unsoundness is a divorce ground.",
+          "answer": "updated",
+          "currentPosition": "Mental disorder grounds remain, but 'epilepsy' was removed from s.5(ii)(c) by amendment (1999). Courts now read 'unsound mind' narrowly and look at function. Never treat a diagnosis alone as grounds.",
+          "ref": "Ahuja Ch 20, pp.229-230 (PDF 241-242)",
+          "verify": true
+        },
+        {
+          "id": "law-10",
+          "claim": "Rights of patients (MHA 1987, Chapter VIII): no indignity or cruelty, research only with consent, no interception of letters.",
+          "answer": "replaced",
+          "currentPosition": "MHCA 2017 Chapter V sets out a much wider list of rights: access to mental healthcare, community living, protection from cruel treatment, equality, information, confidentiality, access to records, legal aid and complaints. It also adds advance directives and nominated representatives.",
+          "ref": "Ahuja Ch 20, p.233 (PDF 245)",
+          "verify": false
+        },
+        {
+          "id": "law-11",
+          "claim": "Direct (unmodified) ECT is described as a technique in use.",
+          "answer": "replaced",
+          "currentPosition": "MHCA 2017 s.95 prohibits ECT without muscle relaxants and anaesthesia, and restricts ECT in minors.",
+          "ref": "Ahuja Ch 16, p.202 (PDF 214)",
+          "verify": false
+        },
+        {
+          "id": "law-12",
+          "claim": "Research ethics: ICMR Ethical Guidelines for Biomedical Research on Human Subjects, 2000.",
+          "answer": "replaced",
+          "currentPosition": "Replaced by the ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants, 2017.",
+          "ref": "Ahuja Ch 20, p.234 (PDF 246)",
+          "verify": false
+        },
+        {
+          "id": "law-13",
+          "claim": "Professional conduct: MCI Code of Medical Ethics Regulations, 2002.",
+          "answer": "replaced",
+          "currentPosition": "The Medical Council of India was dissolved and replaced by the National Medical Commission (NMC Act 2019). Check which NMC professional-conduct regulations are currently in force before teaching section numbers.",
+          "ref": "Ahuja Ch 20, p.234 (PDF 246)",
+          "verify": true
+        },
+        {
+          "id": "law-14",
+          "claim": "Classification: ICD-10 and DSM-IV-TR, with ICD-11 and 'DSM-V' 'likely in 2012-14'.",
+          "answer": "replaced",
+          "currentPosition": "DSM-5 (2013) and DSM-5-TR (2022) are in use. ICD-11 was adopted in 2019 and came into effect on 1 January 2022.",
+          "ref": "Ahuja Ch 1, p.2 (PDF 14)",
+          "verify": false
+        },
+        {
+          "id": "law-15",
+          "claim": "NDPS Act 1985: punishments for possession and use, with lighter penalties for 'small quantities'.",
+          "answer": "updated",
+          "currentPosition": "The Act is still in force but has been amended several times since 1985 (including 2001 and 2014). Check current quantity grading and penalties before teaching them.",
+          "ref": "Ahuja Ch 20, p.233 (PDF 245)",
+          "verify": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "culture-or-symptom",
+    "title": "Culture or symptom?",
+    "format": "phenomenon-spotter",
+    "module": "interview-mse",
+    "level": "core",
+    "objective": "Tell culturally shared beliefs and idioms apart from cultural distress syndromes, dissociative possession, and psychotic phenomena in the Indian setting.",
+    "bookRef": {
+      "book": "Niraj Ahuja, A Short Textbook of Psychiatry (Jaypee; 7th ed., (c) 2011, preface July 2010)",
+      "chapter": "Ch 8 Neurotic, Stress-related and Somatoform Disorders (culture-bound syndromes; trance and possession)",
+      "pages": "pp.102, 110-111 (PDF 114, 122-123)"
+    },
+    "notes": [
+      "Ahuja's term 'culture-bound syndrome' (ICD-10) is dated. DSM-5 uses 'cultural concepts of distress' (with dhat listed as an example), and ICD-11 deals with culture in its notes rather than in a separate category. Teach the modern framing.",
+      "This extends interview-mse 2.12 (culture, language and literacy) and more-disorders (dhat, koro). It is not a new topic."
+    ],
+    "content": {
+      "categories": [
+        {
+          "id": "shared-belief",
+          "label": "Culturally shared belief (not a symptom)",
+          "group": "culture"
+        },
+        {
+          "id": "culture-syndrome",
+          "label": "Cultural concept of distress (dhat, koro)",
+          "group": "culture"
+        },
+        {
+          "id": "dissociative-possession",
+          "label": "Dissociative trance or possession",
+          "group": "dissociation"
+        },
+        {
+          "id": "psychotic-symptom",
+          "label": "Psychotic phenomenon (delusion, passivity, hallucination)",
+          "group": "psychosis"
+        }
+      ],
+      "items": [
+        {
+          "id": "cul-01",
+          "quote": "For three months I've felt weak and dizzy because dhat is passing in my urine. My body's strength is going.",
+          "answer": "culture-syndrome",
+          "distractors": [
+            "psychotic-symptom",
+            "shared-belief"
+          ],
+          "explain": "Dhat: a culturally shaped distress syndrome (weakness and fatigue blamed on semen loss), often with depression or anxiety underneath. It is not a delusion.",
+          "ref": "Ahuja Ch 8, p.110 (PDF 122)",
+          "sensitivity": "Approach sexual health without judgement."
+        },
+        {
+          "id": "cul-02",
+          "quote": "My penis is shrinking into my belly and when it disappears I'll die. Please help, hold it!",
+          "answer": "culture-syndrome",
+          "distractors": [
+            "psychotic-symptom",
+            "dissociative-possession"
+          ],
+          "explain": "Koro: acute fear of the genitals retracting, which can spread in epidemics. It is usually an acute anxiety state, not a fixed delusion, but rule out psychosis if it persists.",
+          "ref": "Ahuja Ch 8, p.111 (PDF 123)"
+        },
+        {
+          "id": "cul-03",
+          "quote": "(Family report) At the temple fair she began swaying, spoke in a deep voice as the Devi, and gave orders. An hour later she was herself again and remembered nothing.",
+          "answer": "dissociative-possession",
+          "distractors": [
+            "psychotic-symptom",
+            "shared-belief"
+          ],
+          "explain": "Episodic trance or possession, with a change of identity and amnesia afterwards, and a return to normal. Decide whether it is a culturally sanctioned ritual (normal) or causes distress and dysfunction (a disorder).",
+          "ref": "Ahuja Ch 8, p.102 (PDF 114)",
+          "sensitivity": "Do not dismiss the family's religious explanation; work alongside it."
+        },
+        {
+          "id": "cul-04",
+          "quote": "We tie a black thread on the baby's wrist so no one's evil eye harms her. My whole family does this.",
+          "answer": "shared-belief",
+          "distractors": [
+            "psychotic-symptom",
+            "culture-syndrome"
+          ],
+          "explain": "A belief shared by the patient's culture and family is not a delusion by definition, because a delusion must be out of keeping with the person's background.",
+          "ref": "Fish Ch 3, p.39 (PDF 43)"
+        },
+        {
+          "id": "cul-05",
+          "quote": "My neighbour has done black magic on me. She puts the spells into my head through the wall at night, and I hear her laughing from inside the cupboard.",
+          "answer": "psychotic-symptom",
+          "distractors": [
+            "shared-belief",
+            "dissociative-possession"
+          ],
+          "explain": "Belief in black magic can be cultural, but here it comes with thought insertion and hallucinations, it is personal and fixed, and the family does not share it. Look at the form (insertion, voices), not just the cultural content.",
+          "ref": "Fish Ch 3, p.38 (PDF 42); Ahuja Ch 2, p.13 (PDF 25)"
+        },
+        {
+          "id": "cul-06",
+          "quote": "Since the exam results, a spirit comes over me in the evenings. I shake and fall. My parents say it's the ancestor; I'm scared it'll happen in front of my in-laws.",
+          "answer": "dissociative-possession",
+          "distractors": [
+            "psychotic-symptom",
+            "culture-syndrome"
+          ],
+          "explain": "Possession-type dissociative episodes linked to stress. Check for epilepsy and look at the psychosocial stressors.",
+          "ref": "Ahuja Ch 8, p.102 (PDF 114)",
+          "sensitivity": "Rule out seizures. Explore family pressures without blaming anyone."
+        },
+        {
+          "id": "cul-07",
+          "quote": "I am the Devi herself. I was born to destroy this world's sinners, and I've stopped eating because gods don't need food.",
+          "answer": "psychotic-symptom",
+          "distractors": [
+            "dissociative-possession",
+            "shared-belief"
+          ],
+          "explain": "Here the person continuously and fully believes they are the deity (a grandiose delusion), with no episodic trance and no return to their usual self. That is psychotic, not possession trance. Ahuja notes that in possession the person is usually aware of the 'possessor' as someone else.",
+          "ref": "Ahuja Ch 8, p.102 (PDF 114); Fish Ch 3, p.43 (PDF 47)",
+          "sensitivity": "Not eating is a medical risk."
+        },
+        {
+          "id": "cul-08",
+          "quote": "My son's weakness is from too much 'heat' in his body. We've stopped giving him mangoes and eggs.",
+          "answer": "shared-belief",
+          "distractors": [
+            "culture-syndrome",
+            "psychotic-symptom"
+          ],
+          "explain": "Hot/cold humoral explanations are a shared explanatory model. Record them, respect them, and negotiate treatment within them.",
+          "ref": "Fish Ch 3, p.39 (PDF 43)"
+        }
+      ]
+    }
+  }
+]

@@ -9,6 +9,7 @@ import { SectionReader, type TocItem } from "@/components/study/reader";
 import { splitSection } from "@/lib/study/chunk";
 import { checkpointHref, checkpoints, laterSectionIds } from "@/lib/study/checkpoints";
 import { loadLearnState, saveLearnState } from "../../actions";
+import { studyOwner } from "../../owner";
 
 export async function generateMetadata({ params }: { params: Promise<{ module: string; section: string }> }): Promise<Metadata> {
   const { module, section } = await params;
@@ -34,7 +35,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
     ? { href: sectionHref(m, nextReading), label: `${nextReading.num} ${nextReading.title}` }
     : { href: `/study/${m.id}#steps`, label: "Back to the module: write it out, practise, then the test" };
 
-  const serverState = await loadLearnState();
+  const [serverState, { owner }] = await Promise.all([loadLearnState(), studyOwner()]);
   const parts = splitSection(s);
   return (
     <SectionReader
@@ -47,6 +48,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       next={next}
       serverState={serverState}
       save={saveLearnState}
+      owner={owner}
       chunks={parts.chunks.map((c) => ({ title: c.title, node: <Blocks blocks={c.blocks} /> }))}
       recall={parts.recall}
       viva={parts.viva}

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { ChevronLeft } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadAllLessons, loadCohortSummaries, loadPersonAccess } from "@/lib/cohorts/admin-data";
@@ -22,6 +23,9 @@ const DETAIL_LABELS: [string, string][] = [
 
 /** One person's access: cohorts, platform access, extra lectures, details. */
 export default async function PersonAccessPage({ params }: { params: Promise<{ userId: string }> }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { userId } = await params;
   if (!/^[0-9a-f-]{36}$/i.test(userId)) notFound();
   const [data, lessons, { cohorts }, board] = await Promise.all([loadPersonAccess(userId), loadAllLessons(), loadCohortSummaries(), loadStanding()]);

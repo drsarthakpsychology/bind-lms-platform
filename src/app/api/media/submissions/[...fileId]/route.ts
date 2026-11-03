@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
 import { isSameOrigin } from "@/lib/media/same-origin";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { isOwnSubmissionPath } from "@/lib/media/submission-paths";
 
 /**
  * GET /api/media/submissions/:fileId
@@ -53,11 +54,20 @@ export async function GET(
   // the caller is an admin). Fetch the submission's user_id.
   const { data: submission } = await supabase
     .from("submissions")
-    .select("user_id")
+    .select("user_id, assignment_id")
     .eq("id", file.submission_id)
     .maybeSingle();
 
   if (!submission || (submission.user_id !== profile.id && profile.role !== "admin")) {
+    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
+  }
+
+  // The row is theirs, but the PATH must be too: it has to sit under the
+  // submission owner's own upload prefix (`<assignmentId>/<userId>/`). Rows
+  // recorded before the server checked paths could point at another
+  // student's file; those are never signed.
+  if (!isOwnSubmissionPath(file.storage_path, String(submission.assignment_id), String(submission.user_id))) {
+    console.warn(`submission file ${file.id} has a storage path outside its owner's prefix; refusing to sign`);
     return NextResponse.json({ error: "Not authorized." }, { status: 403 });
   }
 

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 import { generatePassportPdf } from "@/lib/passport-pdf";
@@ -13,8 +13,9 @@ export const runtime = "nodejs";
  */
 export async function GET() {
   const supabase = await createClient();
-  const sessionProfile = await requireSession();
-  if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/passport", flag: "skills_passport" });
+  if (!access.ok) return access.response;
+  const sessionProfile = access.profile;
   const user = sessionProfile;
 
   const allowed = await rateLimit(`passport:pdf:${user.id}`, 5);

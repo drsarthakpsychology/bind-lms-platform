@@ -129,6 +129,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/roster", label: "Roster", hidden: true },
       { href: "/admin/enquiries", label: "Enquiries" },
       { href: "/admin/pulse", label: "Progress" },
+      { href: "/admin/learning", label: "Learning" },
       { href: "/admin/checkins", label: "Check-ins" },
     ],
   },

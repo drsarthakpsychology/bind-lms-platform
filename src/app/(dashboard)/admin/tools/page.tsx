@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { CalendarDays, Upload } from "lucide-react";
 import { PageHeader } from "@/components/design-system/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +14,9 @@ export const dynamic = "force-dynamic";
 // Note: no <Link> here — the calendar card is a form now (cohort-calendar-form.tsx).
 
 export default async function AdminToolsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { setting, ready } = await loadMaster(admin);
   const { data: events } = ready

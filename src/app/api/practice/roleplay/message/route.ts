@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireSession } from "@/lib/auth/guards";
+import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -17,8 +17,9 @@ const sendSchema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const profile = await requireSession();
-  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const access = await requireStudentApi({ path: "/practice/role-play", flag: "peer_roleplay" });
+  if (!access.ok) return access.response;
+  const profile = access.profile;
   const user = profile;
 
   const allowed = await rateLimit(`roleplay:msg:${user.id}`, 30);

@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { Fragment } from "react";
 import { presenceOf } from "@/lib/people/presence";
 import type { Metadata } from "next";
@@ -38,7 +39,7 @@ const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m`
  * a ranking, and a cohort heatmap of when people study.
  */
 export default async function ActivityPage({ searchParams }: { searchParams: Promise<{ sort?: string }> }) {
-  await requireAdmin();
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { sort } = await searchParams;
   const key = (SORTS.find((s) => s.id === sort)?.id ?? "score") as keyof StudentActivity;
   const { rows, heat, pages, totals } = await loadActivity();

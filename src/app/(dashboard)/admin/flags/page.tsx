@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { FlagToggle } from "./flag-toggle";
@@ -16,6 +18,7 @@ const LABELS: Record<string, string> = {
   formulation: "Formulation",
   journal: "Journal",
   learn: "Learn with Chai + Notes (lessons, Coach, games, notes, leaderboard)",
+  lab: "Psychology Lab (experiments in Games; check the educator review notes before unlocking)",
   judgment: "Judgment",
   knowledge_tutor: "Psychology Tutor",
   landmark: "Landmark Cases",
@@ -36,6 +39,9 @@ const LABELS: Record<string, string> = {
  * (full access).
  */
 export default async function AdminFlagsPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
   const { data: flags } = await admin
     .from("feature_flags")

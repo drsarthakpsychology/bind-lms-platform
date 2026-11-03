@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
@@ -19,6 +20,9 @@ const STATUS_LABELS: Record<string, string> = {
  * preview is literally the student render.
  */
 export default async function DrugEditorPage({ params }: { params: Promise<{ drug: string }> }) {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { drug } = await params;
   const generic = drugFromSlug(drug);
   if (!generic) notFound();

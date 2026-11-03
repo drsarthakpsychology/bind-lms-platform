@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { PageHeader } from "@/components/design-system/page-header";
@@ -10,6 +12,9 @@ export const dynamic = "force-dynamic";
  * Admin signs or rejects entries that a student marked as "requested".
  */
 export default async function AdminSupervisionPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const admin = createAdminClient();
 
   const [{ data: requested }, { data: profiles }] = await Promise.all([

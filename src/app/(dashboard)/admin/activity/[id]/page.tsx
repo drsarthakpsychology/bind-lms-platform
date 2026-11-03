@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PersonLinks } from "@/components/admin/person-links";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { CheckCircle2, ChevronLeft, Circle } from "lucide-react";
 import { requireAdmin } from "@/lib/auth/guards";
 import { loadStudentDetail } from "@/lib/analytics/activity";
@@ -16,7 +16,7 @@ const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m`
 
 /** One student's full picture: daily time, every lecture, recent activity, Learn. */
 export default async function StudentActivityPage({ params }: { params: Promise<{ id: string }> }) {
-  await requireAdmin();
+  if (!(await requireAdmin())) redirect("/dashboard");
   const { id } = await params;
   const d = await loadStudentDetail(id);
   if (!d) notFound();

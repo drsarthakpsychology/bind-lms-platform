@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth/guards";
 import { Activity, ArrowRight, BookOpen, Database, Gauge, GraduationCap, Inbox, Mail, MailWarning, PhoneCall, Plus, ShieldAlert, ToggleLeft, UserPlus, Users } from "lucide-react";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { loadActivity } from "@/lib/analytics/activity";
@@ -14,6 +16,9 @@ import { needsReview } from "@/lib/review/triage";
 import { Button } from "@/components/ui/button";
 
 export default async function AdminOverviewPage() {
+  // Defence in depth: layouts don't re-render on every navigation, so the page
+  // re-checks admin itself before reading data.
+  if (!(await requireAdmin())) redirect("/dashboard");
   const supabase = await createClient();
   const adminClient = createAdminClient();
 
