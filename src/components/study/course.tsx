@@ -68,7 +68,7 @@ function Bar({ pct, tone = "brand" }: { pct: number; tone?: "brand" | "primary" 
 /* ------------------------------------------------------------ course home */
 
 export function StudyHome({ modules, serverState, save, owner = "" }: { modules: StudyModule[]; serverState: LearnState | null; save: Save; owner?: string }) {
-  initLearnStore(serverState, save);
+  initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
   const next = courseNext(modules, st.study, today);
@@ -235,7 +235,7 @@ export function ModuleView({
   labOpen?: boolean;
   labLinks?: LabLink[];
 }) {
-  initLearnStore(serverState, save);
+  initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
   const s = moduleStatus(m, st.study);

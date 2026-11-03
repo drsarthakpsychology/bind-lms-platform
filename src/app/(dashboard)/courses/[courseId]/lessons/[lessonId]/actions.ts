@@ -5,18 +5,23 @@ import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { getExtension, SUBMISSION_ATTACH_EXTENSIONS } from "@/lib/media/registry";
 import { verifyObjectExists } from "@/lib/storage-verify";
+import { clampProgress } from "./progress-clamp";
+import { isOwnSubmissionPath } from "@/lib/media/submission-paths";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
   | { ok: false; error: string };
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 /**
- * Called every 10 seconds during playback, so this stays as light as
- * possible: one auth+profile check (which also enforces expiry and the
- * concurrent-session rule) and one upsert. It intentionally does not
- * re-verify the lesson/course on every tick — RLS still restricts the
- * upsert to the caller's own row, and this is a progress log, not a
- * playback-authorization decision (that's getPlaybackUrl's job, above).
+ * Called every 10 seconds during playback. The client's numbers are not
+ * trusted (progress-clamp.ts): the position is bounded by the lecture length
+ * from media_assets (when known) and, when the optional `progress.updated_at`
+ * column exists, by the wall time since the last ping; completion is decided
+ * here and never undone by a later ping. The lesson must be visible to the
+ * caller (lessons RLS), so progress cannot be written for lessons they cannot
+ * open. Every lookup degrades gracefully when a table or column is missing.
  */
 export async function pingProgress(
   lessonId: string,
@@ -25,19 +30,68 @@ export async function pingProgress(
 ): Promise<{ ok: boolean }> {
   const profile = await requireSession();
   if (!profile) return { ok: false };
+  if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) return { ok: false };
 
   const supabase = await createClient();
-  const isCompleted = durationSeconds > 0 && watchedSeconds / durationSeconds >= 0.9;
+
+  const readPrev = async () => {
+    const withTime = await supabase
+      .from("progress")
+      .select("watched_seconds, is_completed, updated_at")
+      .eq("user_id", profile.id)
+      .eq("lesson_id", lessonId)
+      .maybeSingle();
+    if (!withTime.error) {
+      const r = withTime.data as { watched_seconds: number; is_completed: boolean; updated_at: string | null } | null;
+      return { hasUpdatedAt: true, prev: r ? { watchedSeconds: Number(r.watched_seconds) || 0, isCompleted: Boolean(r.is_completed), updatedAt: r.updated_at } : null };
+    }
+    // progress.updated_at not migrated yet: read without it.
+    const plain = await supabase
+      .from("progress")
+      .select("watched_seconds, is_completed")
+      .eq("user_id", profile.id)
+      .eq("lesson_id", lessonId)
+      .maybeSingle();
+    const r = plain.data as { watched_seconds: number; is_completed: boolean } | null;
+    return { hasUpdatedAt: false, prev: r ? { watchedSeconds: Number(r.watched_seconds) || 0, isCompleted: Boolean(r.is_completed), updatedAt: null } : null };
+  };
+
+  const readDuration = async (): Promise<number | null> => {
+    try {
+      const { data } = await createAdminClient().from("media_assets").select("duration_seconds").eq("lesson_id", lessonId).maybeSingle();
+      const d = Number(data?.duration_seconds);
+      return Number.isFinite(d) && d > 0 ? d : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const [{ data: lesson }, { hasUpdatedAt, prev }, serverDuration] = await Promise.all([
+    supabase.from("lessons").select("id").eq("id", lessonId).maybeSingle(),
+    readPrev(),
+    readDuration(),
+  ]);
+  if (!lesson) return { ok: false };
+
+  const next = clampProgress({
+    watchedSeconds: Number(watchedSeconds),
+    clientDuration: Number(durationSeconds),
+    serverDuration,
+    prev,
+    now: Date.now(),
+  });
 
   const { error } = await supabase.from("progress").upsert(
     {
       user_id: profile.id,
       lesson_id: lessonId,
-      watched_seconds: Math.floor(watchedSeconds),
-      is_completed: isCompleted,
+      watched_seconds: next.watchedSeconds,
+      is_completed: next.isCompleted,
+      ...(hasUpdatedAt ? { updated_at: new Date().toISOString() } : {}),
     },
     { onConflict: "user_id,lesson_id" },
   );
+  if (error) console.warn("pingProgress: progress write failed:", error.message);
 
   return { ok: !error };
 }
@@ -229,6 +283,17 @@ export async function submitWithFiles(
   const { profile, assignment } = await assertCanSubmit(assignmentId);
   if (!profile || !assignment) return { error: "Not authorized." };
 
+  // Only files this student uploaded for this assignment (prepareSubmissionUpload
+  // builds `<assignmentId>/<userId>/...`). Checked before anything is written.
+  if (!Array.isArray(filePaths) || filePaths.length > 50) return { error: "Too many files." };
+  const files: { path: string; name: string }[] = [];
+  for (const f of filePaths) {
+    if (!f || !isOwnSubmissionPath(f.path, assignmentId, profile.id)) {
+      return { error: "One of the files isn't part of your upload. Remove it and try again." };
+    }
+    files.push({ path: f.path, name: String(f.name ?? "").slice(0, 255) || "file" });
+  }
+
   const supabase = await createClient();
 
   const { data: existing } = await supabase
@@ -279,7 +344,7 @@ export async function submitWithFiles(
   // server verifies each object actually landed (size > 0). A file whose bytes
   // never reached storage is marked failed, never shown as a real attachment.
   const admin = createAdminClient();
-  for (const f of filePaths) {
+  for (const f of files) {
     const size = await verifyObjectExists("submissions", f.path);
     const status = size === null ? "failed" : "ready";
     await admin.from("submission_files").insert({
@@ -326,10 +391,11 @@ export async function unsubmitAssignment(
     .from("submission_files")
     .select("storage_path")
     .eq("submission_id", existing.id);
-  if (files?.length) {
-    await admin.storage
-      .from("submissions")
-      .remove(files.map((f) => f.storage_path));
+  // Only delete objects under this student's own prefix: an older row could
+  // point at someone else's file.
+  const ownPaths = (files ?? []).map((f) => f.storage_path as string).filter((p) => isOwnSubmissionPath(p, assignmentId, profile.id));
+  if (ownPaths.length) {
+    await admin.storage.from("submissions").remove(ownPaths);
   }
   await admin.from("submission_files").delete().eq("submission_id", existing.id);
   await admin.from("submissions").delete().eq("id", existing.id);
@@ -343,6 +409,7 @@ export async function submitAudioAssignment(
 ): Promise<SubmissionResult> {
   const { profile, assignment } = await assertCanSubmit(assignmentId);
   if (!profile || !assignment) return { error: "Not authorized." };
+  if (!isOwnSubmissionPath(audioPath, assignmentId, profile.id)) return { error: "That recording isn't part of your upload." };
 
   const supabase = await createClient();
 
@@ -396,6 +463,11 @@ export async function getSubmissionAudioUrl(
     .single();
 
   if (!submission || (submission.user_id !== profile.id && profile.role !== "admin")) {
+    return { ok: false, error: "Not authorized." };
+  }
+  // The path must sit under the submission owner's own prefix (rows written
+  // before the prefix check could point anywhere in the bucket).
+  if (!isOwnSubmissionPath(path, assignmentId, submission.user_id as string)) {
     return { ok: false, error: "Not authorized." };
   }
 

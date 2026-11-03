@@ -6,9 +6,30 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
 import { rateLimit } from "@/lib/rate-limit";
+import { canParticipate, isUuid, type DoubtRow } from "./visibility";
 
 type R = { error: string | null; id?: string };
 const clean = (s: string, max: number) => s.replace(/\s+/g, " ").trim().slice(0, max);
+
+type Me = NonNullable<Awaited<ReturnType<typeof requireSession>>>;
+
+/** Load a doubt and check the caller may see it (same rule as the thread page). */
+async function loadVisibleDoubt(doubtId: string, me: Me): Promise<DoubtRow | null> {
+  if (!isUuid(doubtId)) return null;
+  const { data } = await createAdminClient().from("doubts").select("user_id, kind, status, cohort_id").eq("id", doubtId).maybeSingle();
+  if (!data) return null;
+  const d = data as DoubtRow;
+  const isAdmin = me.role === "admin";
+  const cohortIds = isAdmin ? [] : (await loadMyCohorts(me.id)).map((c) => c.id);
+  return canParticipate(d, { id: me.id, isAdmin, cohortIds }) ? d : null;
+}
+
+/** A reply that belongs to this doubt and is not hidden. */
+async function replyOnDoubt(replyId: string, doubtId: string): Promise<boolean> {
+  if (!isUuid(replyId)) return false;
+  const { data } = await createAdminClient().from("doubt_replies").select("doubt_id, hidden").eq("id", replyId).maybeSingle();
+  return Boolean(data && data.doubt_id === doubtId && !data.hidden);
+}
 
 function refresh(id?: string) {
   revalidatePath("/doubts");
@@ -49,6 +70,7 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
   if (!(await rateLimit(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
   const text = clean(body, 5000);
   if (text.length < 1) return { error: "Write your answer first." };
+  if (!(await loadVisibleDoubt(doubtId, me))) return { error: "That doubt isn't open to you." };
   const { error } = await createAdminClient().from("doubt_replies").insert({ doubt_id: doubtId, user_id: me.id, body: text });
   if (error) return { error: "Couldn't post your answer. Try again." };
   refresh(doubtId);
@@ -59,6 +81,8 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
 export async function voteReply(doubtId: string, replyId: string, on: boolean): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
+  if (!(await rateLimit(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
+  if (!(await loadVisibleDoubt(doubtId, me)) || !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't open to you." };
   const admin = createAdminClient();
   if (on) await admin.from("doubt_votes").upsert({ reply_id: replyId, user_id: me.id }, { onConflict: "reply_id,user_id", ignoreDuplicates: true });
   else await admin.from("doubt_votes").delete().eq("reply_id", replyId).eq("user_id", me.id);
@@ -70,10 +94,12 @@ export async function voteReply(doubtId: string, replyId: string, on: boolean): 
 export async function markSolved(doubtId: string, replyId: string | null): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
+  if (!isUuid(doubtId)) return { error: "That doubt is gone." };
   const admin = createAdminClient();
   const { data: d } = await admin.from("doubts").select("user_id").eq("id", doubtId).maybeSingle();
   if (!d) return { error: "That doubt is gone." };
   if (d.user_id !== me.id && me.role !== "admin") return { error: "Only the person who asked can mark it solved." };
+  if (replyId !== null && !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't on this doubt." };
   await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
   refresh(doubtId);
   return { error: null };
@@ -83,10 +109,21 @@ export async function markSolved(doubtId: string, replyId: string | null): Promi
 export async function reclassifyMine(doubtId: string, kind: "doubt" | "complaint", cohortId: string | null): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
+  if (!isUuid(doubtId) || (kind !== "doubt" && kind !== "complaint")) return { error: "You can only change your own post." };
   const admin = createAdminClient();
   const { data: d } = await admin.from("doubts").select("user_id").eq("id", doubtId).maybeSingle();
   if (!d || (d.user_id !== me.id && me.role !== "admin")) return { error: "You can only change your own post." };
-  await admin.from("doubts").update({ kind, cohort_id: kind === "complaint" ? null : cohortId }).eq("id", doubtId);
+  // Only a cohort the caller belongs to (admins: any); otherwise their first
+  // cohort, like askDoubt.
+  let cohort: string | null = null;
+  if (kind === "doubt") {
+    if (me.role === "admin") cohort = cohortId && isUuid(cohortId) ? cohortId : null;
+    else {
+      const mine = await loadMyCohorts(me.id);
+      cohort = cohortId && mine.some((c) => c.id === cohortId) ? cohortId : (mine[0]?.id ?? null);
+    }
+  }
+  await admin.from("doubts").update({ kind, cohort_id: cohort }).eq("id", doubtId);
   refresh(doubtId);
   return { error: null };
 }
