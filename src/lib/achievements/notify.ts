@@ -47,12 +47,16 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
 
   // Email — best-effort, logged, never blocks the credential.
   if (!input.email) return;
-  // In staging/preview, restrict all email to the single approved test recipient
-  // so a misconfiguration can never email a real student.
-  const allowed = process.env.ALLOWED_TEST_RECIPIENT;
-  if (allowed && input.email !== allowed) {
-    console.warn(`notifyCredential: skipping email to ${input.email} (allowed test recipient: ${allowed})`);
-    return;
+  // In preview/staging, gate email to the single approved test recipient and
+  // FAIL CLOSED if it's unset — a misconfigured preview must never email a
+  // real student. Production (VERCEL_ENV=production) sends normally.
+  const isPreview = process.env.VERCEL_ENV === "preview" || process.env.VERCEL_ENV === "development";
+  if (isPreview) {
+    const allowed = process.env.ALLOWED_TEST_RECIPIENT;
+    if (!allowed || input.email !== allowed) {
+      console.warn(`notifyCredential: preview email gated (allowed=${allowed ?? "unset"}, to=${input.email})`);
+      return;
+    }
   }
   const share = linkedInUrl(verifyUrl, `I'm happy to share that I completed "${input.title}" with VIBHA School of Psychology.`);
   const text = `${input.name},\n\n${title}.\n\n${body}\n\nView it here: ${base}/achievements\nVerify it here: ${verifyUrl}\n\nShare your accomplishment: ${share}\n\nWarmly,\nVIBHA School of Psychology`;
