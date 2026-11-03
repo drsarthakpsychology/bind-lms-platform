@@ -196,13 +196,13 @@ function CheckpointRow({ m, cp, st }: { m: StudyModule; cp: Checkpoint; st: Lear
   const status = checkpointStatus(m, cp, st);
   const t = st.tests[cp.key];
   const label =
-    status === "done" ? `Done · ${t?.best ?? 0} of ${t?.total ?? 0}` : status === "ready" ? "Ready now" : status === "waiting" ? "Opens after you read the next section" : "Opens after these sections";
+    status === "done" ? `Done · ${t?.best ?? 0} of ${t?.total ?? 0}` : status === "ready" ? "Ready now" : status === "waiting" ? "Opens after the next section" : "After these sections";
   const open = status === "ready" || status === "done";
   const body = (
     <>
       <ListChecks className="size-4 shrink-0" aria-hidden />
-      <span className="min-w-0 flex-1 text-sm font-semibold">Checkpoint {cp.n}</span>
-      <span className="shrink-0 text-xs font-semibold">{label}</span>
+      <span className="min-w-0 flex-1 whitespace-nowrap text-sm font-semibold">Checkpoint {cp.n}</span>
+      <span className="min-w-0 text-right text-xs font-semibold">{label}</span>
     </>
   );
   return open ? (
