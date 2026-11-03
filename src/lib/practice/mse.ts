@@ -49,6 +49,18 @@ export const MOOD_AFFECT_ITEMS: MoodAffectItem[] = [
   { text: "Client's voice and face switch rapidly from anger to tears.", answer: "affect", why: "Observable labile affect." },
   { text: "\"I've been irritable all month.\"", answer: "mood", why: "Sustained reported state." },
   { text: "Client says they feel fine, but their voice is flat and they avoid eye contact.", answer: "affect", why: "Observable mismatch with reported mood." },
+  { text: "\"For two weeks I have woken up dreading the day.\"", answer: "mood", why: "A sustained state, in the client's own words." },
+  { text: "Client smiles and jokes while describing hearing voices that threaten to kill her.", answer: "affect", why: "What you see does not fit the content: incongruent affect." },
+  { text: "Her face barely changes, whether she talks about her son's wedding or her mother's death.", answer: "affect", why: "Observed narrow range of expression: restricted or blunted affect." },
+  { text: "\"I feel on edge all the time, like something bad is about to happen.\"", answer: "mood", why: "A pervasive reported feeling: anxious mood." },
+  { text: "He bursts into tears at a mild question, then laughs a moment later, then is calm.", answer: "affect", why: "Rapid changes you can see, unrelated to the topic: labile affect." },
+  { text: "\"Since Diwali I have been angry with everyone at home.\"", answer: "mood", why: "A sustained feeling over weeks, reported by the client." },
+  { text: "She cries quietly when she speaks about her divorce, and is composed when talking about work.", answer: "affect", why: "Observable expression that fits the content: congruent affect with a normal range." },
+  { text: "\"Honestly, I have never felt better. Everything is going brilliantly.\" (said by a man who has not slept for 3 nights)", answer: "mood", why: "His report of his inner state: elevated mood, whatever the evidence suggests." },
+  { text: "Throughout the interview he looks perplexed, glancing around as if lost.", answer: "affect", why: "What you observe on his face and in his behaviour right now." },
+  { text: "\"Nothing excites me any more, not even cricket.\"", answer: "mood", why: "Reported loss of pleasure over time (anhedonia) belongs with mood." },
+  { text: "Her voice rises and her fists clench whenever her husband is mentioned.", answer: "affect", why: "Observable, moment-to-moment emotional expression: irritable affect." },
+  { text: "\"I am fine.\" (from a patient who looks tearful and sits slumped with her head down)", answer: "mood", why: "\"I am fine\" is her reported mood. Record it in her words, then record the tearful affect you see separately." },
 ];
 
 export function isDiagnosticTerm(text: string): string[] {

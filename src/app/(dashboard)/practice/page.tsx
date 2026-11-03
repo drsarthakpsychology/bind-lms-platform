@@ -4,12 +4,14 @@ import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
 import { lastPracticePlace } from "@/lib/practice/resume";
 import { StandingCard } from "@/components/standing/standing-card";
-import { ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowRight, Pill, RotateCcw } from "lucide-react";
+import { MEDS } from "@/lib/meds";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
-import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
+import { type PracticeCardData } from "@/components/practice/practice-groups";
+import { PracticeList } from "@/components/practice/practice-list";
 import { Reveal } from "@/components/motion/reveal";
-import { PRACTICE_TOOLS, GROUP_META, type PracticeTool } from "@/lib/practice/tools";
+import { PRACTICE_TOOLS } from "@/lib/practice/tools";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
@@ -62,7 +64,7 @@ export default async function PracticeHubPage() {
           <p className="text-eyebrow text-muted-foreground">Practice</p>
           <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
           <p className="mt-2 max-w-2xl text-small text-muted-foreground">
-            Everything here is private to you and your faculty. Core tools are full workflows; drills are single-skill reps. Pick by how long you have.
+            Everything here is private to you and your faculty. Pick whatever you want to practise.
           </p>
         </header>
       </Reveal>
@@ -89,30 +91,43 @@ export default async function PracticeHubPage() {
         </div>
       </Reveal>
 
+      {/* Medicines: its own section, always open */}
+      <Reveal delay={0.12}>
+        <Link
+          href="/practice/medicines"
+          className="mb-6 flex items-center gap-4 rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground hard-shadow-md transition-transform active:translate-y-0.5"
+        >
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-primary text-primary-foreground">
+            <Pill className="size-6" aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-semibold uppercase tracking-wide opacity-90">Medicines · {MEDS.length} profiles</span>
+            <span className="block text-xl font-bold leading-tight">Look up any medicine, dose by dose</span>
+            <span className="mt-0.5 block text-sm opacity-90">Instant search. Student or clinician words.</span>
+          </span>
+          <ArrowRight className="size-6 shrink-0" aria-hidden />
+        </Link>
+      </Reveal>
+
       {/* weak-spots banner — real gaps, server-computed */}
       <Reveal delay={0.15}>
         <WeakSpotsBanner />
       </Reveal>
 
-      <PracticeGroups
-        groups={(Object.keys(GROUP_META) as PracticeTool["group"][]).map((g) => ({
-          id: g,
-          label: GROUP_META[g].label,
-          hint: GROUP_META[g].hint,
-          tools: visible
-            .filter((t) => t.group === g)
-            .map((t) => ({
-              href: t.href,
-              title: t.title,
-              verb: t.verb,
-              description: t.description,
-              time: t.time,
-              icon: t.icon,
-              locked: t.locked,
-              state: states[t.href]?.state,
-              progress: states[t.href]?.progress,
-            })) as PracticeCardData[],
-        })).filter((g) => g.tools.length > 0)}
+      <PracticeList
+        tools={
+          visible.map((t) => ({
+            href: t.href,
+            title: t.title,
+            verb: t.verb,
+            description: t.description,
+            time: t.time,
+            icon: t.icon,
+            locked: t.locked,
+            state: states[t.href]?.state,
+            progress: states[t.href]?.progress,
+          })) as PracticeCardData[]
+        }
       />
 
       <p className="mt-8 text-caption text-muted-foreground">

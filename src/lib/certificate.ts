@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl, cleanAppUrl } from "@/lib/app-url";
 import "server-only";
 
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
@@ -30,7 +31,7 @@ export async function generateCertificatePdf(data: CertificateData): Promise<Buf
   page.drawText(`Issued ${data.issuedAt}`, { x: 360, y: 180, size: 12, font, color: rgb(0.4, 0.4, 0.4) });
 
   // QR code → verification URL.
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bind-lms-platform.vercel.app";
+  const base = cleanAppUrl(process.env.NEXT_PUBLIC_SITE_URL, liveAppUrl());
   const verifyUrl = `${base}/verify/${data.certificateId}`;
   const qrPng = await QRCode.toBuffer(verifyUrl, { width: 160, margin: 1 });
   const qrImg = await doc.embedPng(qrPng);

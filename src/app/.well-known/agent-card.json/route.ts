@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
@@ -6,7 +7,7 @@ import { NextResponse } from "next/server";
  * the card describes its informational surface so a coordinating agent can
  * decide how to interact with it (visit the public pages, query the tutor).
  */
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const baseUrl = liveAppUrl();
 
 const card = {
   name: "VIBHA School of Psychology",

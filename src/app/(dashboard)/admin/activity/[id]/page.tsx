@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PersonLinks } from "@/components/admin/person-links";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CheckCircle2, ChevronLeft, Circle } from "lucide-react";
@@ -32,6 +33,9 @@ export default async function StudentActivityPage({ params }: { params: Promise<
         <p className="text-sm text-muted-foreground">
           {String(d.profile.email)} {d.profile.mobile_number ? `· ${d.profile.mobile_number}` : ""} · status {String(d.profile.status ?? "active")}
         </p>
+        <div className="mt-3">
+          <PersonLinks userId={String(d.profile.id)} email={String(d.profile.email ?? "")} here="activity" />
+        </div>
       </header>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">

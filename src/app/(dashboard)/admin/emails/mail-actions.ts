@@ -49,3 +49,13 @@ export async function markRead(id: string): Promise<void> {
   const admin = createAdminClient();
   await admin.from("email_inbound").update({ read_at: new Date().toISOString() }).eq("id", id).is("read_at", null);
 }
+
+/** Mail → Failed: hide every failed send so the count clears (nothing is deleted). */
+export async function clearFailed(): Promise<{ error: string | null; cleared: number }> {
+  if (!(await requireAdmin())) return { error: "Not authorized.", cleared: 0 };
+  const { dismissFailures } = await import("@/lib/email/failed");
+  const res = await dismissFailures(createAdminClient());
+  revalidatePath("/admin/emails");
+  revalidatePath("/admin");
+  return res;
+}

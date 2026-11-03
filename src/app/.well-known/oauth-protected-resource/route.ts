@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
@@ -7,7 +8,7 @@ import { NextResponse } from "next/server";
  * own OIDC discovery at the auth base. The resource itself (the site) is
  * declared here.
  */
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+const baseUrl = liveAppUrl();
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
 const metadata = {

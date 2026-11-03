@@ -1,3 +1,4 @@
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth/guards";
 import { getEmailTemplate } from "@/lib/email/templates";
@@ -16,7 +17,7 @@ export async function POST(req: Request) {
   const template = getEmailTemplate(body?.templateId ?? "");
   if (!template) return NextResponse.json({ error: "Unknown template." }, { status: 400 });
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const built = template.build({ appUrl });
   return NextResponse.json({ subject: built.subject, html: built.html });
 }

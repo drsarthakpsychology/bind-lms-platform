@@ -140,6 +140,123 @@ How far apart should clinician and patient sit? :: About 4 to 6 feet, equal chai
 How long is an initial interview? :: 45 to 90 minutes; 20 to 30 or less if confused, distressed or psychotic.
 :::
 
+## 3.3b One-page glossary [core]
+Cover the right column, work down the list, and say each definition aloud before you look. Every term here is taught in full in Part II; this page is for the last week before the exam.
+
+### Appearance, behaviour and movement
+| Term | Definition |
+|---|---|
+| Agitation | Anxiety with severe motor restlessness |
+| Akinesia | Absence of movement |
+| Ambitendency | Because of ambivalence, actions are started but no goal-directed action follows |
+| Catalepsy | The person keeps the posture they have been placed in (the end result of waxy flexibility) |
+| Cataplexy | Sudden loss of muscle tone with full consciousness; a sign of narcolepsy |
+| Echolalia / echopraxia | Repeating words heard / copying actions seen |
+| Mannerism | Odd, repetitive, **goal-directed** movement |
+| Negativism | Motiveless resistance to every command or attempt to move them, or doing the opposite |
+| Posturing | Voluntarily holding an inappropriate, often bizarre posture for long periods |
+| Rigidity (catatonic) | Holding a rigid posture against attempts to move them |
+| Stereotypy | Odd, repetitive, **non-goal-directed** movement (can be verbal) |
+| Stupor | Akinesia and mutism with relative preservation of awareness |
+| Tic | Sudden, rapid, recurrent, non-rhythmic, stereotyped movement or sound, felt as involuntary |
+| Waxy flexibility | Limbs can be moulded into positions that are then held, like wax (the process) |
+
+### Speech
+| Term | Definition |
+|---|---|
+| Mutism | Complete absence of speech |
+| Neologism | A new word the patient has made up, whose origin cannot easily be understood |
+| Poverty of speech | Too little speech |
+| Poverty of content of speech | Enough speech, but it conveys very little information |
+| Pressure of speech | Rapid, hard-to-interrupt speech, with a feeling of racing thoughts |
+| Verbigeration | Senseless repetition of the same words or phrases |
+
+### Mood and affect
+| Term | Definition |
+|---|---|
+| Mood | The sustained, pervasive feeling tone that colours the person's whole experience (what they report) |
+| Affect | The outward expression of emotion at this moment (what you observe) |
+| Euthymia | Mood in the normal range, neither low nor elevated |
+| Euphoria | Mild elevation: a sense of well-being out of keeping with events (hypomania) |
+| Elation | Moderate elevation: confidence and enjoyment with more activity (mania, stage II) |
+| Exaltation | Severe elevation with grandiose delusions (mania, stage III) |
+| Ecstasy | The most severe elevation: intense rapture (delirious or stuporous mania) |
+| Blunted affect | Marked reduction in the intensity of emotional expression |
+| Labile affect | Rapid, abrupt changes in affect unrelated to what is happening |
+| Emotional incontinence | Complete loss of control over affect; the extreme of lability |
+| Anhedonia | Inability to feel pleasure in things that used to be enjoyable |
+| Anergia | Lack of energy for ordinary daily activities |
+| Alexithymia | Inability to put one's feelings into words |
+| Ambivalence | Two opposite feelings or impulses about the same thing at the same time |
+| Panic | A sudden, intense attack of anxiety, often with a sense of impending doom |
+
+### Thought
+| Term | Definition |
+|---|---|
+| Thinking (normal) | A goal-directed flow of ideas, with rational links between them, leading to a reality-based conclusion |
+| Circumstantiality | Too much unnecessary detail, but the patient **does** get back to the point |
+| Tangentiality | Sudden, oblique digression; the patient **never** gets back to the point |
+| Flight of ideas | Fast speech with rapid jumps between ideas that still have understandable links |
+| Prolixity | “Ordered flight of ideas” in hypomania: digressions, but the goal is reached |
+| Loosening of associations | Ideas follow each other with no apparent logical link |
+| Incoherence | Thought so disconnected that it cannot be understood |
+| Perseveration | Repeating a word or theme beyond the point where it was relevant |
+| Thought blocking | A sudden stop in the train of thought, often mid-sentence |
+| Delusion | A false, unshakeable belief, not open to reason, and not shared by the person's culture and education |
+| Delusional perception | A normal perception that suddenly acquires a private, illogical meaning |
+| Overvalued idea | An idea that, because of its emotional weight, dominates all others for a long time; less fixed than a delusion |
+| Obsession | A recurrent, intrusive thought, image or urge, recognised as one's own and resisted |
+| Phobia | An irrational fear of an object, situation or activity, leading to avoidance |
+| Folie à deux | A delusion shared by two people who live closely together |
+| Thought insertion | Thoughts experienced as put into the mind by an outside force |
+| Thought withdrawal | Thoughts experienced as taken out of the mind by an outside force |
+| Thought broadcasting | Thoughts experienced as escaping the mind and known to others |
+| Thought echo | Hearing one's own thoughts spoken aloud |
+
+### Perception
+| Term | Definition |
+|---|---|
+| Hallucination | A perception without an external stimulus |
+| Illusion | A misperception of a real external stimulus |
+| Pseudohallucination | An involuntary image experienced in inner space, lacking the vividness of a real perception and known not to be real |
+| Pareidolia | Vivid illusions that arise effortlessly from imagination (faces in clouds) |
+| Formication | A tactile hallucination of insects crawling on or under the skin |
+| Somatic passivity | Bodily sensations experienced as imposed by an outside force |
+| Depersonalisation | A change in the experience of the self: one feels unreal or detached, while knowing one is real |
+| Derealisation | A change in the experience of the world: it feels unreal or distant |
+| Déjà vu / déjà entendu | False familiarity with something new seen / heard |
+| Jamais vu / jamais entendu | False unfamiliarity with something familiar seen / heard |
+
+### Cognition, insight and judgement
+| Term | Definition |
+|---|---|
+| Somnolence | Cannot stay alert without constant stimulation |
+| Trance | A sleep-like state of reduced awareness and heightened suggestibility |
+| Fugue | Wandering away from one's usual place with loss of memory for personal identity |
+| Perplexity | Puzzled bewilderment |
+| Distractibility | Attention pulled away by irrelevant stimuli; cannot hold focus |
+| Confabulation | Filling a memory gap with a false memory the patient believes is true |
+| Abstract thinking | Shifting between aspects of a situation, holding several in mind, and grasping the essentials of a whole |
+| Intelligence | The ability to think logically, act rationally and deal effectively with the environment |
+| Insight | How aware the patient is of being ill and of what the illness means for them |
+| Judgement | The ability to assess a situation correctly and act appropriately in it |
+
+:::note Contested points, and what to write in an exam
+- **Pseudohallucination**: some define it by where it is experienced (inner space), others by insight; a third view says there is a continuum. Write the classical inner-space definition, then one line on the debate.
+- **Flight of ideas versus derailment**: keep them apart by whether the links are understandable. That is the expected answer.
+- **How to divide thought**: classically four headings (stream, form, content, possession); some schemes use two. Use four and mention the disagreement in one line.
+- **Grading insight**: give the six-point scale, then add the simpler none, partial or full grading.
+:::
+
+:::recall
+1. Mannerism or stereotypy: which one is goal-directed? || Mannerism.
+2. Catalepsy or cataplexy: which is a sign of narcolepsy? || Cataplexy.
+3. Order the four grades of elevated mood. || Euphoria, elation, exaltation, ecstasy.
+4. Define delusional perception. || A normal perception that suddenly acquires a private, illogical meaning.
+5. Circumstantiality or tangentiality: which one gets back to the point? || Circumstantiality.
+6. What is formication, and when do you think of it? || Insects crawling on the skin; cocaine use and alcohol withdrawal.
+:::
+
 ## 3.4 Module test [core]
 Answer every question before looking back. Your best score is saved, and you'll be asked to re-test after 3, 7 and 21 days.
 

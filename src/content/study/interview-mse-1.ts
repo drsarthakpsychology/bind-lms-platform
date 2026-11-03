@@ -40,6 +40,85 @@ This is an educational module. It teaches what a clinician assesses and how find
 5. Grade insight, assess judgement, and know where MMSE and MoCA fit.
 6. Write a five-sentence formulation on the biopsychosocial grid.
 
+## 0.2 Start here: your first interview, on one page [core]
+If you have a patient tomorrow and have not read anything else yet, read this page. Everything below is expanded in Parts I and II; this is the order you will actually follow in the room.
+
+### Before you sit down (2 minutes)
+- **Room**: private, quiet, two chairs of equal height at an angle, 4 to 6 feet apart, nothing between you, the door reachable for both of you.
+- **Safety**: know who is nearby, keep sharp or heavy objects out of reach, leave the door unlocked. If the patient is agitated, interview with a colleague.
+- **Read first**: the referral note and any old records, so you do not make the patient repeat what is already known.
+- **Time**: decide how long you have and say it.
+
+### The opening (first 3 minutes)
+:::word Words you can use
+“Hello, I am ___, a trainee psychologist working with Dr ___. I would like to understand what has been troubling you, so we can work out how to help. It will take about 45 minutes. What you tell me stays within the treating team, except if someone's safety is at risk. Is that all right? You can stop me at any point.”
+:::
+Then one open question, and **silence**: “What brings you here today?” Let them talk for two to three minutes without interrupting. Write the answer in their own words: that is the chief complaint.
+
+### The order of the history
+| Step | What you ask about | One line to start it |
+|---|---|---|
+| 1 | Identification and informants | “Who has come with you today, and how long have they known you?” |
+| 2 | Chief complaints, with duration | “What is troubling you most?” |
+| 3 | Present illness: onset, course, triggers, sleep, appetite, functioning | “Take me back to when you were last completely well.” |
+| 4 | **Risk**: self-harm, suicide, harm to others | “Sometimes when people feel this low they think life is not worth living. Has that happened to you?” |
+| 5 | Past psychiatric and medical history | “Has anything like this happened before?” |
+| 6 | Treatment so far, with doses and adherence | “What has been tried, and did you take it as advised?” |
+| 7 | Family history | “Has anyone in the family had similar problems, or any mental illness?” |
+| 8 | Personal history: birth to now, education, work, marriage | “Tell me a bit about growing up.” |
+| 9 | Substances | “How much do you drink or smoke, and anything else?” |
+| 10 | Premorbid personality | “Before all this began, what kind of person were you?” |
+
+:::trap The one step you must never skip
+Ask about suicide directly, in every interview. Asking does not put the idea in someone's head; not asking can miss the most important fact of the day.
+:::
+
+### Moving between topics
+Signal every change so it never feels like an interrogation: “Thank you, that helps. Now I would like to ask about your family.” If they drift, steer kindly: “That is important, and we will come back to it. First, tell me more about the sleep.”
+
+### The MSE runs the whole time
+You are examining the mind from the first second, not only at the end. Keep this checklist on your pad and tick as you go:
+1. **Appearance and behaviour**: grooming, eye contact, rapport, movements.
+2. **Speech**: rate, volume, tone, amount, flow.
+3. **Mood and affect**: their words for their mood; what you see on their face.
+4. **Thought**: stream, form, content (delusions, obsessions, suicidal ideas), possession.
+5. **Perception**: voices, visions, illusions; ask directly.
+6. **Cognition**: consciousness, orientation, attention, memory, abstraction (test formally at the end).
+7. **Insight**: do they think they are ill, and that treatment could help?
+8. **Judgement**: personal, social and test judgement.
+
+### Closing (last 5 minutes)
+:::word Words you can use
+“Is there anything important I have not asked you? … Thank you for telling me all of this. Here is what happens next: …”
+:::
+Summarise what you heard in two or three sentences, check you got it right, and say clearly what happens next.
+
+### Straight after (10 minutes)
+Write it up the same day, in the standard order, using the patient's own words in quotation marks for complaints, delusions and hallucinations. Finish with a one-line summary: age, sex, main problem, duration, key MSE finding, risk.
+
+:::recall
+1. Give the distance and arrangement of chairs. || 4 to 6 feet, equal height, at an angle, nothing between you, door reachable.
+2. What four things go in the opening statement? || Who you are, why you are meeting, how long it will take, and the limits of confidentiality, then ask permission.
+3. Name the history steps in order. || Identification and informants, chief complaints, present illness, risk, past history, treatment, family, personal, substances, premorbid personality.
+4. When does the MSE happen? || Throughout the interview; formal cognitive tests come at the end.
+5. What must never be skipped? || A direct question about suicide and self-harm.
+:::
+
+:::mcq
+Q: A first-year trainee asks a quiet, tearful 30-year-old woman a long list of yes/no questions in a row and learns very little. What would most likely have helped?
+- Asking the closed questions faster to save time
+- *Opening with one open question and then staying silent while she talks
+- Starting with the cognitive tests to build confidence
+- Asking the informant to answer instead of the patient
+> An open question followed by silence lets the patient tell the story in her own words; closed questions come later to fill gaps.
+Q: Halfway through, the patient says "Sometimes I wish I would not wake up." The trainee is about to move on to family history. What is the right next step?
+- Note it and return to it at the end if there is time
+- Reassure her that everyone feels like this sometimes
+- *Stay with it: ask about plans, preparation, past attempts and what stops her
+- Change the subject gently so she does not get upset
+> Passive death wishes must be explored on the spot: plans, intent, means, past attempts and protective factors. Moving on risks missing a dangerous situation.
+:::
+
 ## 1.1 Why the interview is the examination [core]
 In most of medicine, the history points you towards a diagnosis and an investigation confirms it. In psychiatry there is usually no scan and no blood test that does that job. The interview has to do all of it, and something else at the same time.
 

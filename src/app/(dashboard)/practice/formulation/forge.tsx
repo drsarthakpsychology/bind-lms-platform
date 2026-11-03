@@ -2,19 +2,22 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP } from "@/lib/practice/formulation";
+import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /** In-flight snapshot — a refresh mid-sort or mid-narrative restores the work
  *  instead of dropping it (T46/T47). */
-const FORGE_KEY = "formulation:in-flight";
+const FORGE_BASE = "formulation:in-flight";
 
 /**
  * Stage 1: sort factor cards. Mobile: tap a card to select, tap a bucket to
  * place (drag-and-drop has a tap fallback). Stage 2: narrative. Stage 3: diff.
  */
-export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SEED_FORMULATION }) {
+export type ForgeSeed = { id: string; title: string; prompt: string; factors: FormulationFactor[]; modelNarrative: string };
+
+export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed }) {
+  const FORGE_KEY = `${FORGE_BASE}:${seed.id}`;
   const [attempt, setAttempt] = React.useState<Array<{ factorId: string; bucket: FiveP | null }>>(
     seed.factors.map((f) => ({ factorId: f.id, bucket: null })),
   );
@@ -60,7 +63,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
     } catch {
       /* ignore */
     }
-  }, [attempt, stage, narrative]);
+  }, [attempt, stage, narrative, FORGE_KEY]);
 
   /** Persist the completed scaffolded pass (a check, not a test — silent on failure). */
   async function persistSeedAttempt() {

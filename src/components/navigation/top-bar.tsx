@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Bell, Menu, Search } from "lucide-react";
 
 import { AccountMenu } from "@/components/navigation/account-menu";
+import { BackForward } from "@/components/navigation/back-forward";
 import { toggleSidebar } from "@/components/navigation/sidebar-state";
 import { isImmersiveSessionPath, isInnerStudentPath } from "@/components/navigation/sidebar-gate";
 import { cn } from "@/lib/utils";
@@ -62,6 +63,8 @@ export function TopBar({
         >
           <Menu className="size-5" aria-hidden />
         </button>
+
+        <BackForward className="shrink-0" />
 
         <Link
           href={homeHref}

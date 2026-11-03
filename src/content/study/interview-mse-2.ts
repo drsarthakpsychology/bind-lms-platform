@@ -104,6 +104,8 @@ Interpret appearance against the patient's sociocultural background and personal
 | Posturing | Voluntary assumption of an inappropriate, often bizarre posture for long periods |
 | Echopraxia | Mimicking actions observed (echolalia is repeating words heard) |
 | Stupor | Akinesis and mutism with relative preservation of conscious awareness |
+| Akinesia | Absence of movement. Stupor adds mutism to it |
+| Cataplexy | Sudden loss of muscle tone with full consciousness, often set off by laughter or surprise. A sign of narcolepsy, **not** catatonia: do not confuse it with catalepsy |
 
 :::mnemonic One line that answers most catatonia vivas
 Mannerism versus stereotypy = goal-directed versus not. Waxy flexibility versus catalepsy = process versus end result.
@@ -230,6 +232,7 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 | Inappropriate | Does not fit the **setting** (laughing at a funeral) |
 | Incongruent | Does not match the patient's **own stated mood or thought content** (describing despair while smiling) |
 | Anhedonia | Inability to feel pleasure in previously pleasurable activities. Occurs in both schizophrenia and depression |
+| Anergia | Lack of energy for ordinary daily activities; the patient says everything feels like an effort |
 | Alexithymia | Inability to describe one's own feelings in words |
 | Ambivalence | Two opposing impulses about the same thing at the same time |
 | Agitation | Anxiety with severe motor restlessness |
@@ -443,6 +446,7 @@ A worked pair:
 - **Bizarre**: clearly implausible, not understandable to same-culture peers, not from ordinary life (for example, organs removed and replaced without a scar). **Non-bizarre**: under police surveillance with no evidence. Loss-of-control delusions (withdrawal, insertion, control) are generally considered bizarre.
 - **“Paranoid” does not mean “persecutory”.** Strictly, paranoid means delusional.
 - **Systematisation**: delusions built into a system around one basic error (“delusional work”). More common in older patients and persistent delusions.
+- **Shared delusion (folie à deux)**: a delusion passed from one person to another who lives closely with them, usually the more dependent partner. Separating them often makes the second person's belief fade.
 :::
 
 ### Overvalued ideas
@@ -533,7 +537,7 @@ What distinguishes a hallucination from true perception is that it comes from wi
 
 | Axis | Types |
 |---|---|
-| Modality | Auditory (commonest in non-organic disorders), visual, olfactory, gustatory, tactile |
+| Modality | Auditory (commonest in non-organic disorders), visual, olfactory, gustatory, tactile. **Formication** is a tactile hallucination of insects crawling on or under the skin: think cocaine use and alcohol withdrawal |
 | Complexity (auditory) | Elementary (sounds) or complex (voices) |
 | Person (auditory) | Second person: addresses the patient (“you are worthless”). Third person: discusses the patient (“he is worthless”), including running commentary |
 | Command | Voices giving orders |

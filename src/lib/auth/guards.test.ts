@@ -26,14 +26,15 @@ describe("lecture-only scope guards", () => {
     expect(lectureOnlyAllowed("/courses/abc/lessons/def")).toBe(true);
     // /today was retired as the front door — no longer a permitted surface.
     expect(lectureOnlyAllowed("/today")).toBe(false);
-    expect(lectureOnlyAllowed("/practice")).toBe(true);
-    expect(lectureOnlyAllowed("/practice/consulting-room")).toBe(true);
-    expect(lectureOnlyAllowed("/reflect")).toBe(true);
-    expect(lectureOnlyAllowed("/wall")).toBe(true);
-    expect(lectureOnlyAllowed("/tools/psychopharm")).toBe(true);
-    expect(lectureOnlyAllowed("/passport")).toBe(true);
-    expect(lectureOnlyAllowed("/record")).toBe(true);
+    expect(lectureOnlyAllowed("/doubts")).toBe(true);
+    expect(lectureOnlyAllowed("/journey")).toBe(true);
     expect(lectureOnlyAllowed("/notifications")).toBe(true);
+    // Full-access sections stay closed to lecture-only accounts.
+    expect(lectureOnlyAllowed("/practice")).toBe(false);
+    expect(lectureOnlyAllowed("/study")).toBe(false);
+    expect(lectureOnlyAllowed("/games")).toBe(false);
+    expect(lectureOnlyAllowed("/wall")).toBe(false);
+    expect(lectureOnlyAllowed("/tools/psychopharm")).toBe(false);
 
     // Blocked — the admin + account surfaces, never for a student.
     expect(lectureOnlyAllowed("/settings")).toBe(false);

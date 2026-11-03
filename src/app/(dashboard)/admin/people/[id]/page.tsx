@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PersonLinks } from "@/components/admin/person-links";
 import { notFound } from "next/navigation";
 import { ChevronLeft, Mail, MessageCircle, Phone } from "lucide-react";
 
@@ -33,6 +34,7 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
       <Link href="/admin/people" className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">
         <ChevronLeft className="size-4" aria-hidden /> Pipeline
       </Link>
+      <PersonLinks userId={p.studentId} email={p.email} here="people" />
 
       <div className="grid gap-6 lg:grid-cols-[20rem_minmax(0,1fr)]">
         <aside className="space-y-4">

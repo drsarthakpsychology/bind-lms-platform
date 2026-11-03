@@ -1,5 +1,6 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -95,7 +96,7 @@ export async function createStudent(
     { onConflict: "email" },
   );
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const setupUrl = (await issueSetupLink(admin, email, appUrl)) ?? undefined;
 
   revalidatePath("/admin/students");

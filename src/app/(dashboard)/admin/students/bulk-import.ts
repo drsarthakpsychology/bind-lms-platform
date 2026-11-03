@@ -1,5 +1,6 @@
 "use server";
 
+import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { randomBytes } from "node:crypto";
 import { requireAdmin } from "@/lib/auth/guards";
@@ -8,6 +9,7 @@ import {
   parseRosterCsv,
   importRoster,
   sendCredentialEmails,
+  deriveName,
   sendResendEmail,
   credentialsEmailBody,
   credentialsEmailHtml,
@@ -151,7 +153,14 @@ export async function sendCredentialEmailsAction(emails: string[]): Promise<Send
   if (!profile) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
 
   const admin = createAdminClient();
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
+  // Students added some other way may have no invite row yet: make one so the
+  // Logins list remembers that their link went out.
+  if (emails.length) {
+    await admin
+      .from("credential_invites")
+      .upsert(emails.map((email) => ({ email, name: deriveName(email), status: "pending" })), { onConflict: "email", ignoreDuplicates: true });
+  }
   const report = await sendCredentialEmails(emails, { admin, appUrl, sendEmail: sendResendEmail, sentBy: profile.id });
 
   revalidatePath("/admin/emails");
@@ -177,7 +186,7 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   }
 
   const admin = createAdminClient();
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
 
   // 1. Create (or reuse) a dedicated test account for this address — same scope
   //    as a real roster account, so the test genuinely mirrors reality. Reuse
@@ -262,7 +271,7 @@ export async function resetCredentialAction(email: string): Promise<ResetCredent
   if (!profile) return { error: "Not authorized.", ok: false, setupUrl: null, detail: "" };
 
   const admin = createAdminClient();
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhapsychology.com";
+  const appUrl = liveAppUrl();
   const setupUrl = await resetCredential(admin, email.trim().toLowerCase(), appUrl, profile.id);
   revalidatePath("/admin/emails");
   if (!setupUrl) {

@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { StudentDirectory, type DirectoryRow } from "./student-directory";
+import { isHiddenAccount } from "@/lib/people/hidden";
 
 function formatDate(iso: string | null): string {
   if (!iso) return "No expiry set";
@@ -22,7 +23,8 @@ function formatDate(iso: string | null): string {
   });
 }
 
-export default async function StudentsPage() {
+export default async function StudentsPage({ searchParams }: { searchParams: Promise<{ test?: string }> }) {
+  const showTest = (await searchParams).test === "1";
   const supabase = await createClient();
 
   // Bounded read with the exact total so a cap never silently hides students.
@@ -35,7 +37,10 @@ export default async function StudentsPage() {
     .order("expires_at", { ascending: true, nullsFirst: false })
     .limit(1000);
 
-  const students = profiles ?? [];
+  // Test and robot accounts stay out of the list unless asked for.
+  const all = profiles ?? [];
+  const hiddenCount = all.filter(isHiddenAccount).length;
+  const students = showTest ? all : all.filter((s) => !isHiddenAccount(s));
   const totalStudents = count ?? students.length;
 
   const rows: DirectoryRow[] = students.map((student) => {
@@ -126,7 +131,7 @@ export default async function StudentsPage() {
         eyebrow="People"
         title="Students"
         description="Accounts are only made here. There's no public sign-up."
-        badge={<Badge variant="brand">{students.filter((s) => !s.is_test).length} enrolled</Badge>}
+        badge={<Badge variant="brand">{all.filter((s) => !isHiddenAccount(s)).length} enrolled</Badge>}
       />
 
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_20rem] xl:grid-cols-[minmax(0,1fr)_22rem]">
@@ -138,9 +143,18 @@ export default async function StudentsPage() {
             </h2>
             <BulkLockControls />
           </div>
-          {students.length < totalStudents ? (
+          {hiddenCount ? (
+            <p className="text-caption text-muted-foreground">
+              {showTest ? (
+                <Link href="/admin/students" className="font-semibold text-link underline">Hide {hiddenCount} test accounts</Link>
+              ) : (
+                <>{hiddenCount} test accounts hidden. <Link href="/admin/students?test=1" className="font-semibold text-link underline">Show</Link></>
+              )}
+            </p>
+          ) : null}
+          {all.length < totalStudents ? (
             <p className="text-caption font-semibold text-status-pending-fg">
-              Showing the first {students.length} of {totalStudents} students. This list is capped.
+              Showing the first {all.length} of {totalStudents} students. This list is capped.
             </p>
           ) : null}
           {students.length === 0 ? (

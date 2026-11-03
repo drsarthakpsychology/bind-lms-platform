@@ -3,9 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, BookOpen, Gamepad2, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, type LucideIcon } from "lucide-react";
+import { Bell, BookOpen, Gamepad2, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { blockedBy } from "@/lib/access/features";
 import { isImmersiveSessionPath } from "./sidebar-gate";
 import { openNavDrawer } from "./sidebar-state";
 
@@ -41,7 +42,7 @@ const ADMIN_TABS: Tab[] = [
 const LECTURE_ONLY_TABS: Tab[] = [
   { href: "/dashboard", label: "Home", icon: Home, exact: true },
   { href: "/courses", label: "Lectures", icon: Play },
-  { href: "/practice", label: "Practice", icon: Stethoscope },
+  { href: "/doubts", label: "Doubts", icon: MessageCircleQuestion },
   { href: "/notifications", label: "Alerts", icon: Bell },
 ];
 
@@ -55,17 +56,20 @@ export function BottomTabBar({
   mode = "student",
   scope = "full",
   showStudy = false,
+  blocked = [],
 }: {
   mode?: "student" | "admin";
   scope?: "full" | "lectures_only";
   showStudy?: boolean;
+  blocked?: string[];
 }) {
   const pathname = usePathname() ?? "";
   const reduce = useReducedMotion();
   const base = mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : STUDENT_TABS;
   // When learning is unlocked the phone tabs are Home, Lectures, Notes, Games
   // (four destinations plus More): Practice, Wall and Alerts move into More.
-  const tabs = mode !== "admin" && showStudy ? [base[0], base[1], STUDY_TAB, GAMES_TAB] : base;
+  const wanted = mode !== "admin" && showStudy && scope !== "lectures_only" ? [base[0], base[1], STUDY_TAB, GAMES_TAB] : base;
+  const tabs = mode === "admin" ? wanted : wanted.filter((t) => !blockedBy(t.href, blocked));
 
   const focusedPath =
     isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
