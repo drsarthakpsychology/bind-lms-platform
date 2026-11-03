@@ -69,6 +69,7 @@ export function StroopRunner({ onDone }: RunnerProps) {
 
   React.useEffect(() => {
     function onKey(ev: KeyboardEvent) {
+      if (ev.repeat || ev.ctrlKey || ev.metaKey || ev.altKey) return;
       const c = STROOP_COLOURS.find((c) => c.key === ev.key.toLowerCase());
       if (c) answer(c.name);
     }
@@ -183,7 +184,7 @@ export function ChangeDetectionRunner({ onDone }: RunnerProps) {
           numbers: { k: best, ...Object.fromEntries(ks.map((k) => [`k${k.setSize}`, k.k])) },
           verdict:
             best >= 2.5 && best <= 4.5
-              ? `Your best estimate is about ${best} squares, right in the classic 3 to 4 range.`
+              ? `Your best estimate is about ${best} squares, ${best >= 3 && best <= 4 ? "right in" : "close to"} the classic 3 to 4 range.`
               : best < 2.5
                 ? `Your estimate is ${best}. With only ${PER_SIZE} trials per size the number is rough; guessing or a lapse of focus pulls it down.`
                 : `Your estimate is ${best}, above the usual 3 to 4. Some people use clever strategies, like naming colours by location.`,
@@ -203,6 +204,7 @@ export function ChangeDetectionRunner({ onDone }: RunnerProps) {
 
   React.useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
       if (e.key.toLowerCase() === "s") respond(false);
       if (e.key.toLowerCase() === "d") respond(true);
     }
@@ -264,6 +266,11 @@ function Fins({ x, y, dir }: { x: number; y: number; dir: 1 | -1 }) {
 
 type MlRound = { out: boolean; len: number; start: number };
 
+/** 12.5 -> "12.5% too long", -8 -> "8% too short". */
+function off(pct: number): string {
+  return pct === 0 ? "exactly right" : `${Math.abs(pct)}% too ${pct > 0 ? "long" : "short"}`;
+}
+
 function makeRounds(seed: number): MlRound[] {
   const r = seeded(seed);
   return Array.from({ length: ML_ROUNDS }, (_, k) => ({ out: k % 2 === 0, len: 150 + Math.round(r() * 60), start: 90 + Math.round(r() * 160) }));
@@ -304,8 +311,8 @@ export function MullerLyerRunner({ onDone }: RunnerProps) {
         numbers: { finsOut: outB, finsIn: inB },
         verdict:
           outB > inB
-            ? `Fins out, you set the line ${outB}% off; fins in, ${inB}%. The fins-out line looked longer to you, which is the classic illusion.`
-            : `Your settings did not show the usual direction (fins out ${outB}%, fins in ${inB}%). Measuring carefully, or using the screen edge as a ruler, can cancel it. Did you?`,
+            ? `With fins out, you made the line ${off(outB)}; with fins in, ${off(inB)}. The fins-out line looked longer to you, which is the classic illusion.`
+            : `Your settings did not show the usual direction (fins out: ${off(outB)}; fins in: ${off(inB)}). Measuring carefully, or using the screen edge as a ruler, can cancel it. Did you?`,
         view: (
           <Bars
             ariaLabel="How far off you were"
@@ -338,7 +345,7 @@ export function MullerLyerRunner({ onDone }: RunnerProps) {
       </svg>
       <label className="block space-y-2">
         <span className="text-sm font-semibold">Length of the bottom line (arrow keys for fine steps)</span>
-        <input type="range" min={60} max={320} value={val} onChange={(e) => setVal(Number(e.target.value))} className="w-full accent-[var(--link)]" />
+        <input type="range" min={60} max={320} value={val} onChange={(e) => setVal(Number(e.target.value))} className="h-11 w-full cursor-pointer accent-[var(--link)]" />
       </label>
       <LabButton onClick={lock}>They look the same</LabButton>
     </Panel>

@@ -64,6 +64,7 @@ export function LineChart({
   xLabel,
   ariaLabel,
   marks,
+  xCount,
 }: {
   series: { name: string; values: number[]; dashed?: boolean }[];
   labels?: string[];
@@ -74,11 +75,13 @@ export function LineChart({
   ariaLabel: string;
   /** x positions (index) to tick, e.g. reward times. */
   marks?: number[];
+  /** Fix the x axis to this many points, so a series that grows draws left to right. */
+  xCount?: number;
 }) {
   const W = 600;
   const H = height;
   const pad = { l: 36, r: 12, t: 12, b: 28 };
-  const n = Math.max(...series.map((s) => s.values.length), 2);
+  const n = Math.max(xCount ?? 0, ...series.map((s) => s.values.length), 2);
   const top = max ?? Math.max(1, ...series.flatMap((s) => s.values));
   const x = (i: number) => pad.l + (i / (n - 1)) * (W - pad.l - pad.r);
   const y = (v: number) => H - pad.b - (v / top) * (H - pad.t - pad.b);
