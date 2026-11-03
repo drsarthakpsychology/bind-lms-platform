@@ -338,7 +338,7 @@ def convert(acts, prefix):
         else:
             out.insert(0, {
                 "id": slug(f"{prefix}-which-diagnosis"),
-                "title": "Which diagnosis?",
+                "title": "Which diagnosis? " + (sys.argv[sys.argv.index("--set-name") + 1] if "--set-name" in sys.argv else f"({prefix})"),
                 "hook": f"{len(diff_items)} tricky presentations. Pick the most likely answer.",
                 "module": "case-sheet" if len(set(mods)) > 2 else common,
                 "level": "Intermediate",

@@ -5,7 +5,7 @@ import type { CaseActivity } from "@/lib/casebook/types";
 export const KAPLAN_2: CaseActivity[] = [
   {
     "id": "k2-which-diagnosis",
-    "title": "Which diagnosis?",
+    "title": "Which diagnosis? Habits, loss and personality",
     "hook": "2 tricky presentations. Pick the most likely answer.",
     "module": "more-disorders",
     "level": "Intermediate",
