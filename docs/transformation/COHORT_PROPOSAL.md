@@ -203,3 +203,62 @@ Recommendations are marked; nothing is assumed until you answer.
 
 Still open: programmes (2), certificates on completion (6b), roles (7),
 content editor (8), reports/attendance (9).
+
+---
+
+## 10. Cohort-specific recordings, live sessions and attendance (added after the second follow-up)
+
+### What exists today
+- A **lesson** (lecture) belongs to a **course**; its video lives in
+  `media_assets` (R2, encrypted HLS). Which cohorts can watch it is a
+  many-to-many share (`lesson_cohorts`).
+- **New lessons are automatically shared with every running and upcoming
+  cohort of the course** (`admin/courses/[courseId]/actions.ts:226-231`).
+  Once Cohort 2 exists, a Cohort 1 recording would appear for Cohort 2
+  unless someone un-ticks it. This is the main mixing risk.
+- **Live sessions are not stored.** Scheduling is only an `.ics` generator
+  (`/api/cohort-calendar`); nothing records "Cohort 2, Saturday 9:00,
+  Module 3".
+- **Attendance does not exist** anywhere in code or migrations.
+- `src/migrations_pending/course_weeks.sql` has a syntax error
+  (`alter table if not exists public.materials`), so that statement fails.
+
+### Proposed model (additive)
+Separate **what is taught** (shared curriculum) from **how a cohort was
+taught** (its own sessions and recordings):
+
+```
+modules / course weeks (shared curriculum)
+cohort_sessions   NEW  one live class: cohort_id, title, module/week (optional link to curriculum),
+                       starts_at, ends_at, meeting link, status (scheduled|held|cancelled), created_by
+recordings        =    existing lessons + media_assets, plus:
+                       lessons.cohort_id (NEW, nullable) — set = belongs to that cohort only;
+                       null = shared curriculum video (e.g. a pre-recorded explainer for everyone)
+                       lessons.session_id (NEW, nullable) — the live class it came from
+attendance        NEW  (session_id, user_id, status present|late|absent|excused, marked_by, marked_at)
+announcements     NEW  cohort_id, title, body, published_at, sent_by (+ optional email)
+```
+
+- **Uploading a recording requires choosing its cohort** (pre-filled from
+  the session it came from). Cohort recordings are visible only to members
+  of that cohort; access is enforced in the same four places lecture
+  access is enforced today (list, page, playback token, stream), plus a
+  database check.
+- The **auto-share-to-all-cohorts** behaviour is replaced: a cohort
+  recording is shared with its own cohort only; a shared curriculum video
+  is shared with all.
+- Existing lessons are backfilled as **Cohort 1 recordings** (or shared, if
+  you say some are curriculum videos). Nothing is deleted or moved in R2.
+- **Students in several cohorts** see each recording labelled with its
+  cohort ("Cohort 2 · Sat 14 Nov · Module 3") and can filter by cohort.
+- **Completed cohorts keep everything:** sessions, recordings, attendance
+  and announcements stay readable by the cohort's alumni and by admins.
+
+### Questions specific to this
+10. Are any existing lecture videos meant for **every** cohort (pre-recorded
+    curriculum videos), or are all of them Cohort 1 class recordings?
+11. Where do live classes happen (Zoom, Google Meet, in person, LiveKit in
+    the app)? This decides whether attendance is marked by hand, imported,
+    or captured automatically.
+12. What counts as attendance: present/absent per session marked by an
+    admin, or watch-time of the recording for those who missed it?
