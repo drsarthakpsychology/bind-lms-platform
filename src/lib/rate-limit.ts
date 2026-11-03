@@ -21,14 +21,15 @@ const WINDOW_MS = 60 * 1000; // 1 minute
 /**
  * Returns true if the key is allowed, false if it exceeded `limit` in the
  * window (or on any error — fail closed). Callers should 429 on false.
+ * `windowMs` defaults to one minute.
  */
-export async function rateLimit(key: string, limit: number): Promise<boolean> {
+export async function rateLimit(key: string, limit: number, windowMs: number = WINDOW_MS): Promise<boolean> {
   try {
     const admin = createAdminClient();
     const { data, error } = await admin.rpc("rate_limit_incr", {
       p_key: key,
       p_limit: limit,
-      p_window_ms: WINDOW_MS,
+      p_window_ms: windowMs,
     });
     if (error) {
       console.error(`rateLimit(${key}) failed:`, error.message);
