@@ -19,3 +19,4 @@ Branch: `feature/vibha-lms-transformation` (from `main` @ 2b42099). `main` untou
 | 11:30 | 7 | Security fixes from the audit (admin/API guards; XP integrity, local key, lecture progress, master login, submissions, doubts, Sentry). | 817a397, 334d37e |
 | 11:45 | 8 | Gate: tsc 0, eslint 0, vitest 127 files / 770 tests, next build passes. TESTING_REPORT.md written. | — |
 | 11:45 | — | Owner sent follow-up requirements (unlimited content, multi-cohort). Per instruction: finish and release this first, then inspect and propose; no cohort implementation or DB change before approval. | — |
+| final | 9 | Credits running low: agents stopped; their work verified (tsc 0, eslint 0, vitest 132 files / 829 tests, next build passes) and committed: cohort-only recordings, quiz vs overall leaderboards, references admin-only. Adaptive rounds logic committed but not wired in. Remaining work written as CONTINUATION_PROMPT.md. | 9840172, 6f5c4d0, c2c3263 |
