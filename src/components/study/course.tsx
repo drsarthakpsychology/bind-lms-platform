@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -104,6 +104,18 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
           <Compass className="size-4" aria-hidden /> Placement quiz
         </Link>
       </nav>
+
+      <Link
+        href="/prep"
+        className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground/70 bg-card px-4 py-3 transition-transform hover:-translate-y-0.5 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+      >
+        <Target className="size-5 shrink-0" aria-hidden />
+        <span className="min-w-0 flex-1">
+          <span className="block font-semibold">Preparing for an entrance or semester exam?</span>
+          <span className="block text-sm text-muted-foreground">CUET PG, UGC NET, clinical psychology entrances: one plan in Prep.</span>
+        </span>
+        <ArrowRight className="size-4 shrink-0" aria-hidden />
+      </Link>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[
