@@ -5,7 +5,7 @@ import { kit } from "./qb5-kit";
 const { mcq, ar, st, mt, ps } = kit("ethics-law", ["mcp-entrance", "ma-semester"], "ethics-law");
 const NET: { exams: PrepExam[] } = { exams: ["ugc-net", "mcp-entrance", "ma-semester"] };
 const ALL4: { exams: PrepExam[] } = { exams: ["ugc-net", "cuet-pg", "mcp-entrance", "ma-semester"] };
-const POCSO = "POCSO Act 2012, ss.19–23 (vidhijudicial bare text)";
+const POCSO = "POCSO Act 2012, ss.19 to 23 (vidhijudicial bare text)";
 const APA = "APA Ethical Principles and Code of Conduct (2002, amended 2010, 2016)";
 
 export const QUESTIONS_2: PrepQuestion[] = [
@@ -122,7 +122,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
 
   // ── JJ Act ───────────────────────────────────────────────────────────────
   mcq("el-114", "jj-act", 2,
-    "Under Section 15 of the Juvenile Justice Act 2015, when a child aged 16–18 is alleged to have committed a heinous offence, the Juvenile Justice Board conducts a preliminary assessment of:",
+    "Under Section 15 of the Juvenile Justice Act 2015, when a child aged 16 to 18 is alleged to have committed a heinous offence, the Juvenile Justice Board conducts a preliminary assessment of:",
     [
       "The child's IQ only",
       "The child's mental and physical capacity to commit the offence, ability to understand its consequences, and the circumstances, with the help of experienced psychologists or psycho-social workers",
@@ -147,7 +147,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "Under Section 27 of the NDPS Act, consuming cocaine, morphine or heroin is punishable with:",
     [
       "No punishment, since consumption was decriminalised in 2014",
-      "Rigorous imprisonment of 10–20 years",
+      "Rigorous imprisonment of 10 to 20 years",
       "Imprisonment up to six months, or a fine up to ₹10,000, or both",
       "Rigorous imprisonment up to one year, or a fine up to ₹20,000, or both",
     ], 3,
@@ -189,7 +189,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Award the death penalty to repeat offenders",
       "Establish centres to identify, treat, educate, provide after-care for, rehabilitate and socially reintegrate addicts",
     ], 3,
-    "Section 71 is the treatment provision: centres for identification, treatment, after-care, rehabilitation and social reintegration, and supply of drugs to registered addicts where medically necessary. The death penalty is s.31A (made discretionary in 2014). Searches are governed by ss.41–43.",
+    "Section 71 is the treatment provision: centres for identification, treatment, after-care, rehabilitation and social reintegration, and supply of drugs to registered addicts where medically necessary. The death penalty is s.31A (made discretionary in 2014). Searches are governed by ss.41 to 43.",
     { ref: "NDPS s.71" }),
 
   // ── BNS / BNSS / BSA ─────────────────────────────────────────────────────
@@ -225,7 +225,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ["I. BNS 107", "II. BNS 22", "III. BNS 85", "IV. BNS 108"],
     ["A-II, B-IV, C-III, D-I", "A-II, B-I, C-IV, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-I, D-III"], 3,
     "IPC 84 → BNS 22; IPC 306 → BNS 108; IPC 305 → BNS 107; IPC 498A → BNS 85 (punishment in s.86). The common slip is swapping 107 and 108, which keep the IPC order (305 before 306).",
-    { ref: "BNS–IPC correspondence tables" }),
+    { ref: "BNS-IPC correspondence tables" }),
   mcq("el-127", "bns", 2,
     "BNS Section 107 (abetment of suicide of a child or person of unsound mind) differs in wording from IPC 305 mainly because it:",
     [
@@ -256,7 +256,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     ["B, C and D only", "A and C only", "A, B and C only", "A, B, C and D"], 2,
     "A, B and C reflect the text of s.367. D is false: the clinical psychologist's role came into CrPC s.328 by the 2009 amendment, and BNSS s.367 keeps it. 'A and C only' leaves out the true B.",
-    { ref: "BNSS ss.367–369" }),
+    { ref: "BNSS ss.367 to 369" }),
   mcq("el-130", "insanity", 1,
     "The legal test of insanity in BNS Section 22 (formerly IPC 84) is based on:",
     ["The Durham 'product' rule", "The irresistible impulse test", "The ALI Model Penal Code 'substantial capacity' test", "The M'Naghten rules"], 3,
@@ -293,8 +293,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "IV. Act of a person incapable of judgment because of intoxication caused against their will",
     ],
     ["A-II, B-I, C-III, D-IV", "A-I, B-II, C-IV, D-III", "A-II, B-I, C-IV, D-III", "A-II, B-IV, C-I, D-III"], 2,
-    "BNS keeps the IPC order: s.20 (IPC 82) child under 7; s.21 (IPC 83) child 7–12 of immature understanding; s.22 unsound mind; s.23 (IPC 85) involuntary intoxication; s.28 (IPC 90) consent given under fear or misconception, or by a person of unsound mind or a child under 12. These matter for consent and capacity in forensic work.",
-    { ref: "BNS ss.20–28" }),
+    "BNS keeps the IPC order: s.20 (IPC 82) child under 7; s.21 (IPC 83) child 7 to 12 of immature understanding; s.22 unsound mind; s.23 (IPC 85) involuntary intoxication; s.28 (IPC 90) consent given under fear or misconception, or by a person of unsound mind or a child under 12. These matter for consent and capacity in forensic work.",
+    { ref: "BNS ss.20 to 28" }),
 
   // ── APA ethics code ──────────────────────────────────────────────────────
   mt("el-135", "apa-ethics", 2,
@@ -372,7 +372,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "Standard 8.05 allows dispensing with consent only when the research would not reasonably be expected to cause distress or harm and involves, for example, normal educational practices, anonymous questionnaires, naturalistic observation or archival research with protected confidentiality, or where permitted by law or regulation. Trials with possible refusal, single-person approval and absent parents do not qualify.",
     { ...NET, ref: `${APA} 8.05` }),
   mcq("el-144", "apa-ethics", 3,
-    "Under APA Standard 8.12(b)–(c), a multi-authored article based substantially on a student's doctoral dissertation should ordinarily list:",
+    "Under APA Standard 8.12(b) to (c), a multi-authored article based substantially on a student's doctoral dissertation should ordinarily list:",
     ["The supervisor as first author", "Only the department as author", "Authors in alphabetical order", "The student as principal author"], 3,
     "Standard 8.12(c): except in exceptional circumstances, the student is listed as principal author on a multiple-authored article substantially based on their dissertation. Credit must reflect contribution, not status. Alphabetical or institutional authorship ignores the contribution rule.",
     { ...NET, ref: `${APA} 8.12` }),
@@ -431,7 +431,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Report directly to the police",
     ], 0,
     "Standard 1.04 encourages informal resolution when feasible and confidentiality is not violated. Standard 1.05 requires further action (state boards, ethics committees) if the violation has substantially harmed or is likely to harm, or if informal resolution is inappropriate. Public shaming and ignoring the problem are both unethical. Police are not the usual route for professional impairment.",
-    { ...NET, ref: `${APA} 1.04–1.05` }),
+    { ...NET, ref: `${APA} 1.04 to 1.05` }),
   mcq("el-151", "apa-ethics", 3,
     "A psychologist wants to present a client's case at a conference. Under APA Standard 4.07, they may do so only if:",
     [
@@ -527,7 +527,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     [
       "I. Criminal liability for medical negligence needs gross negligence or recklessness",
       "II. A doctor is not negligent if acting in line with a practice accepted by a responsible body of medical opinion",
-      "III. US federal courts recognise a psychotherapist–patient privilege, including for licensed clinical social workers",
+      "III. US federal courts recognise a psychotherapist-patient privilege, including for licensed clinical social workers",
       "IV. A minor with sufficient understanding and intelligence can consent to treatment",
     ],
     ["A-II, B-I, C-III, D-IV", "A-I, B-II, C-IV, D-III", "A-II, B-I, C-IV, D-III", "A-II, B-IV, C-I, D-III"], 2,
@@ -541,13 +541,13 @@ export const QUESTIONS_2: PrepQuestion[] = [
   st("el-163", "privacy-law", 3,
     "Which statements about the Digital Personal Data Protection Act 2023 and its Rules are correct as of November 2026?",
     [
-      "A. The DPDP Rules were notified in November 2025, with phased implementation over about 12–18 months",
+      "A. The DPDP Rules were notified in November 2025, with phased implementation over about 12 to 18 months",
       "B. Penalties for a data fiduciary can reach ₹250 crore per breach",
       "C. Processing a child's personal data needs verifiable consent of the parent or lawful guardian",
       "D. The Act creates a separate, stricter category of 'sensitive personal data' for health records",
     ],
     ["A, B and C only", "A and B only", "B, C and D only", "A, B, C and D"], 0,
-    "A, B and C are correct (Rules notified 14 Nov 2025; maximum penalty ₹250 crore; s.9 on children's data, with 'child' meaning under 18). D is false: unlike the 2018–19 drafts, the DPDP Act treats all digital personal data alike, without a separate sensitive category. Health data are protected as personal data, and MHCA s.23 confidentiality applies on top.",
+    "A, B and C are correct (Rules notified 14 Nov 2025; maximum penalty ₹250 crore; s.9 on children's data, with 'child' meaning under 18). D is false: unlike the 2018 to 19 drafts, the DPDP Act treats all digital personal data alike, without a separate sensitive category. Health data are protected as personal data, and MHCA s.23 confidentiality applies on top.",
     { ref: "DPDP Act 2023; DPDP Rules, Nov 2025 (as of Nov 2026)" }),
   mcq("el-164", "boundaries", 2,
     "Gutheil and Gabbard's distinction between 'boundary crossings' and 'boundary violations' states that:",
@@ -557,7 +557,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Violations are minor and crossings are serious",
       "The distinction applies only to sexual contact",
     ], 1,
-    "Gutheil and Gabbard (1993) described crossings (for example, accepting a small gift, or a longer session in a crisis) as possibly benign or helpful when thoughtful and documented, and violations as harmful departures that exploit the client. Both kinds cover non-sexual boundaries, and the 'slippery slope' from crossing to violation is the main risk.",
+    "Gutheil and Gabbard described crossings (for example, accepting a small gift, or a longer session in a crisis) as possibly benign or helpful when thoughtful and documented, and violations as harmful departures that exploit the client. Both kinds cover non-sexual boundaries, and the 'slippery slope' from crossing to violation is the main risk.",
     { ...NET, ref: "Gutheil & Gabbard, Am J Psychiatry 1993" }),
   ps("el-165", "boundaries", 2,
     "A clinical psychologist in a small town is the only RCI-registered therapist within 50 km. A new client turns out to be the parent of her child's classmate, and they will meet at school events.",
@@ -578,10 +578,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Competence, integrity, responsibility and respect",
       "Autonomy, beneficence, non-maleficence and justice",
     ], 3,
-    "Beauchamp and Childress, Principles of Biomedical Ethics (1979), give autonomy, beneficence, non-maleficence and justice. The Belmont Report has three principles (respect for persons, beneficence, justice). Kitchener (1984) added fidelity for psychology. Confidentiality and veracity are derived rules, not one of the four principles.",
+    "Beauchamp and Childress, writing in 1979, give autonomy, beneficence, non-maleficence and justice. The Belmont Report has three principles (respect for persons, beneficence, justice). Kitchener later added fidelity for psychology. Confidentiality and veracity are derived rules, not one of the four principles.",
     { ...NET, ref: "Beauchamp & Childress, 1979" }),
   mcq("el-167", "ethics-principles", 3,
-    "Karen Kitchener's (1984) model of ethical decision-making in counselling psychology added which principle to autonomy, beneficence, non-maleficence and justice?",
+    "Karen Kitchener's 1984 model of ethical decision-making in counselling psychology added which principle to autonomy, beneficence, non-maleficence and justice?",
     ["Fidelity", "Integrity", "Veracity", "Competence"], 0,
     "Kitchener listed five principles: autonomy, beneficence, non-maleficence, justice and fidelity (keeping promises, loyalty, honesty in the relationship). Veracity and competence appear in other models and codes, and Integrity is APA General Principle C.",
     { ...NET, ref: "Kitchener, Counseling Psychologist 1984" }),
@@ -590,7 +590,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "Under the MHCA, a diagnosis of mental illness by itself means the person lacks capacity.",
     2,
     "A is true: capacity is decision-specific and time-specific, and many people with schizophrenia can understand, appreciate and communicate decisions. R is false: MHCA s.4 tests functional abilities, and s.3(5) says a diagnosis does not by itself imply unsoundness of mind. So A is true and R is false.",
-    { ref: "MHCA ss.3–4" }),
+    { ref: "MHCA ss.3 to 4" }),
   st("el-169", "informed-consent", 2,
     "Which are generally accepted elements of valid informed consent to treatment?",
     [
@@ -659,7 +659,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Integrity, fidelity and competence",
       "Respect for persons, beneficence and justice",
     ], 3,
-    "Belmont (1979) has respect for persons (applied as informed consent), beneficence (applied as risk–benefit assessment) and justice (applied as fair selection of subjects). Voluntariness, essentiality and transparency are among the ICMR 2017 general principles. The others mix items from various codes.",
+    "Belmont (1979) has respect for persons (applied as informed consent), beneficence (applied as risk-benefit assessment) and justice (applied as fair selection of subjects). Voluntariness, essentiality and transparency are among the ICMR 2017 general principles. The others mix items from various codes.",
     { ...ALL4, ref: "Belmont Report, 1979" }),
   mcq("el-176", "research-ethics", 1,
     "The first principle of the Nuremberg Code is that:",
@@ -683,7 +683,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     { ...NET, ref: "ICMR 2017, ch. 4" }),
   mt("el-179", "research-ethics", 3,
     "Match the controversial study (List I) with its main ethical problem (List II).",
-    ["A. Tuskegee syphilis study (1932–72)", "B. Milgram obedience studies (1963)", "C. Humphreys' 'Tearoom Trade' (1970)", "D. Watson and Rayner's 'Little Albert' (1920)"],
+    ["A. Tuskegee syphilis study (1932 to 72)", "B. Milgram obedience studies (1963)", "C. Humphreys' 'Tearoom Trade' (1970)", "D. Watson and Rayner's 'Little Albert' (1920)"],
     [
       "I. Covert observation and later tracing of participants' identities without consent",
       "II. Withholding effective treatment (penicillin) from Black men",
@@ -698,7 +698,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "APA Standard 8.08 requires psychologists to give participants a prompt opportunity to obtain appropriate information about the nature, results and conclusions of the research, and to correct misconceptions.",
     0,
     "Both are true and R explains A. Debriefing (8.08), combined with the explanation of deception (8.07(c)), is how misconceptions created by deception are corrected and harm is minimised. That is why it matters most after deceptive studies.",
-    { ...NET, ref: `${APA} 8.07–8.08` }),
+    { ...NET, ref: `${APA} 8.07 to 8.08` }),
   mcq("el-181", "research-ethics", 2,
     "A researcher reuses large parts of her own published paper in a new submission without citing it. This is:",
     ["Self-plagiarism or duplicate publication", "Fair use", "Data sharing", "Secondary analysis"], 0,
@@ -808,7 +808,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Records belong to the referring doctor",
     ], 2,
     "APA 6.01 and 6.02 require documentation that allows continuity of care and meets legal requirements, kept with confidentiality. MHCA s.25 gives patients a right of access. Altering records after a complaint is falsification. Records are not optional and are not the referrer's property.",
-    { ...NET, ref: `${APA} 6.01–6.02; MHCA s.25` }),
+    { ...NET, ref: `${APA} 6.01 to 6.02; MHCA s.25` }),
   mcq("el-193", "telepsychology", 2,
     "Before starting online therapy, which step is MOST important ethically?",
     [
@@ -817,7 +817,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Recording every session without telling the client",
       "Informed consent covering the specific risks of the technology (privacy, data storage, what happens if the connection fails), emergency procedures at the client's location, and identity verification",
     ], 3,
-    "The APA Guidelines for the Practice of Telepsychology (2013) and Indian telemedicine practice guidelines stress consent to technology-specific risks, secure platforms, local emergency plans and identity checks. Recording without consent breaches APA 4.03. Free unsecured apps may compromise privacy.",
+    "The APA's 2013 telepsychology guidelines and India's telemedicine practice guidelines stress consent to technology-specific risks, secure platforms, local emergency plans and identity checks. Recording without consent breaches APA 4.03. Free unsecured apps may compromise privacy.",
     { ...NET, ref: "APA Telepsychology Guidelines 2013" }),
   mcq("el-194", "ethics-decision", 2,
     "In a structured ethical decision-making model, which step usually comes FIRST?",
@@ -869,13 +869,13 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "It is fine if the grades are fair",
     ], 1,
     "Standard 7.07 prohibits sexual relationships with students or supervisees in one's department or over whom one has or is likely to have evaluative authority, whatever the stated consent, because the power differential compromises voluntariness and objectivity. Fair grades do not cure the conflict. The duty lies with the supervisor. 1.04 and 1.05 guide the colleague's response.",
-    { ...NET, ref: `${APA} 7.07, 1.04–1.05` }),
+    { ...NET, ref: `${APA} 7.07, 1.04 to 1.05` }),
   ar("el-200", "dual-relationships", 4,
     "Under APA Standard 10.07, a psychologist should not accept a former sexual partner as a therapy client.",
     "APA Standard 10.07 allows this after two years have passed since the sexual relationship ended.",
     2,
     "A is true: 10.07 bars accepting as therapy clients people with whom one has had sexual intimacies, with no time limit. R is false: the two-year rule is in 10.08 and concerns former clients, not former sexual partners. Mixing up 10.07 and 10.08 is a common trap.",
-    { ...NET, ref: `${APA} 10.07–10.08` }),
+    { ...NET, ref: `${APA} 10.07 to 10.08` }),
   ar("el-201", "pocso", 4,
     "Under POCSO, a hospital head who knows that a staff member sexually abused a child patient and does not report it faces a higher maximum punishment than an ordinary bystander who fails to report.",
     "POCSO Section 21(2) prescribes imprisonment up to one year and a fine for a person in charge of a company or institution who fails to report an offence committed by a subordinate under their control.",
@@ -898,7 +898,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "IDEAS gives a separate score for the duration of illness.",
     "Under IDEAS, a person with a global score of 14 has mild disability.",
     2,
-    "A is true: the duration score (1–4) is added to the four item scores. R is false: 14–19 is severe (71–99%); mild is 1–6 (under 40%). So A true, R false.",
+    "A is true: the duration score (1 to 4) is added to the four item scores. R is false: 14 to 19 is severe (71 to 99%); mild is 1 to 6 (under 40%). So A true, R false.",
     { ref: "IDEAS guidelines" }),
   ar("el-205", "mhca-admission", 4,
     "Under the MHCA, a person admitted under Section 90 can be kept in hospital indefinitely, with no outside review, once two psychiatrists agree.",
