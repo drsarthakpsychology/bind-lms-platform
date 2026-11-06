@@ -14,7 +14,7 @@ function playAll(id: string, pick: (opts: { id: string; q: string }[]) => string
 }
 
 describe("Ward Week content", () => {
-  it("has three campaigns of 4–5 chapters with every decision kind", () => {
+  it("has three campaigns of 4 to 5 chapters with every decision kind", () => {
     expect(CAMPAIGNS.map((c) => c.id)).toEqual(["pune", "chennai", "london"]);
     const kinds = new Set<string>();
     const topics = new Set(TOPICS.map((t) => t.id));
@@ -72,5 +72,24 @@ describe("Ward Week engine", () => {
     expect(holds({ flag: "x" }, st)).toBe(false);
     const after = playAll("london", (os) => os.find((o) => o.q === "harm")?.id ?? os[os.length - 1].id);
     expect(after.vars.risk).toBeLessThanOrEqual(100);
+  });
+});
+
+describe("Ward Week helpers", () => {
+  it("pays more XP for a better outcome and reads risk as lower-is-better", async () => {
+    const { wardXp, deltaSign, replay, findDecision, bestOption } = await import("./engine");
+    expect(wardXp(100)).toBe(30);
+    expect(wardXp(0)).toBe(10);
+    expect(deltaSign("risk", -10)).toBe(1);
+    expect(deltaSign("trust", -10)).toBe(-1);
+    expect(deltaSign("trust", 0)).toBe(0);
+    const c = campaignById("chennai")!;
+    const st = replay(c, ["a", "a"]);
+    expect(st.log.map((l) => l.decision)).toEqual(["c1a", "c1b"]);
+    expect(findDecision(c, "c4x")!.chapter).toBe(3);
+    expect(bestOption(findDecision(c, "c1a")!.decision).q).toBe("best");
+  });
+  it("has no em or en dashes in the stories", () => {
+    expect(/[–—]/.test(JSON.stringify(CAMPAIGNS))).toBe(false);
   });
 });

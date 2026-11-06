@@ -13,6 +13,7 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { addDays, istToday } from "@/lib/learn/engine";
 import { recordAttempts } from "@/lib/learn/model/server";
 import type { Attempt } from "@/lib/learn/model/student";
+import { awardXp } from "@/lib/leagues/xp";
 import { accuracyBoard, type AccuracyRow, type ResultRow } from "../boards";
 
 export type Admin = ReturnType<typeof createAdminClient>;
@@ -43,6 +44,22 @@ export async function gradeAnswers(user: { id: string; role: string }, attempts:
     await recordAttempts(user.id, attempts);
   } catch {
     /* model tables missing */
+  }
+}
+
+/**
+ * XP for a finished, server-graded game, into the XP ledger (so it counts for
+ * leagues and the shop). `ref` makes it idempotent: one payout per run.
+ * These games do not also add browser XP, so nothing is counted twice.
+ */
+export async function payXp(userId: string, game: string, amount: number, ref: string): Promise<number> {
+  const xp = Math.max(0, Math.min(200, Math.round(amount)));
+  if (!xp) return 0;
+  try {
+    const r = await awardXp(userId, `games2:${game}`, xp, `${game}:${ref}`);
+    return r.ok && !r.duplicate ? xp : 0;
+  } catch {
+    return 0;
   }
 }
 

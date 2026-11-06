@@ -60,9 +60,22 @@ export function holds(c: Cond | undefined, st: Pick<WardState, "vars" | "flags">
   return true;
 }
 
+/**
+ * The decisions still to come in a chapter. Conditions are checked when a
+ * decision comes up, not when the chapter opens, so a choice made earlier in
+ * the same session can open (or close) the next decision.
+ */
+function dropBlocked(c: Campaign, chapter: number, ids: string[], st: Pick<WardState, "vars" | "flags">): string[] {
+  const ch = c.chapters[chapter];
+  if (!ch) return [];
+  let i = 0;
+  while (i < ids.length && !holds(ch.decisions.find((d) => d.id === ids[i])?.when, st)) i++;
+  return ids.slice(i);
+}
+
 function queueFor(c: Campaign, chapter: number, st: Pick<WardState, "vars" | "flags">): string[] {
   const ch = c.chapters[chapter];
-  return ch ? ch.decisions.filter((d) => holds(d.when, st)).map((d) => d.id) : [];
+  return ch ? dropBlocked(c, chapter, ch.decisions.map((d) => d.id), st) : [];
 }
 
 export function startState(c: Campaign): WardState {
@@ -90,7 +103,7 @@ export function choose(c: Campaign, st: WardState, optionId: string, voters?: nu
   const flags = [...new Set([...st.flags, ...(o.set ?? [])])];
   const log = [...st.log, { chapter: st.chapter, decision: d.id, option: o.id, q: o.q, ...(voters ? { voters } : {}) }];
   let chapter = st.chapter;
-  let queue = st.queue.slice(1);
+  let queue = dropBlocked(c, chapter, st.queue.slice(1), { vars, flags });
   let done = false;
   while (!queue.length && !done) {
     chapter += 1;
@@ -104,7 +117,7 @@ export function choose(c: Campaign, st: WardState, optionId: string, voters?: nu
   return { ...st, chapter, queue, vars, flags, log, done };
 }
 
-/** 0–100. 60 % from the final dials (risk counts inverted), 40 % from decision quality. */
+/** 0 to 100. 60 % from the final dials (risk counts inverted), 40 % from decision quality. */
 export function outcomeScore(st: WardState): number {
   const v = st.vars;
   const dials = (100 - v.risk) * 0.3 + v.trust * 0.2 + v.insight * 0.15 + v.family * 0.15 + v.adherence * 0.2;
@@ -124,4 +137,36 @@ export function totalDecisions(c: Campaign, st: WardState): number {
   // Decisions already made + the ones queued + (unknown) later ones: estimate with the chapter maximum.
   const later = c.chapters.slice(st.chapter + 1).reduce((a, ch) => a + ch.decisions.filter((d) => !d.when).length, 0);
   return st.log.length + st.queue.length + later;
+}
+
+/** XP for a finished campaign: 10 for finishing, up to 20 more for the outcome. */
+export const wardXp = (score: number) => 10 + Math.round(clamp(score) / 5);
+
+/** Dials where a lower number is the better one. */
+export const LOWER_IS_BETTER: ReadonlySet<VarKey> = new Set<VarKey>(["risk"]);
+
+/** Did this change help? (+1 better, -1 worse, 0 no change.) */
+export function deltaSign(k: VarKey, delta: number): -1 | 0 | 1 {
+  if (!delta) return 0;
+  const up = delta > 0 ? 1 : -1;
+  return (LOWER_IS_BETTER.has(k) ? -up : up) as -1 | 1;
+}
+
+export function findDecision(c: Campaign, id: string): { chapter: number; decision: Decision } | null {
+  for (let i = 0; i < c.chapters.length; i++) {
+    const d = c.chapters[i].decisions.find((x) => x.id === id);
+    if (d) return { chapter: i, decision: d };
+  }
+  return null;
+}
+
+export function bestOption(d: Decision): WardOption {
+  return d.options.find((o) => o.q === "best") ?? d.options[0];
+}
+
+/** Replay a list of choices from the start (used to rebuild a log entry's "before" dials). */
+export function replay(c: Campaign, choices: string[]): WardState {
+  let st = startState(c);
+  for (const ch of choices) st = choose(c, st, ch);
+  return st;
 }

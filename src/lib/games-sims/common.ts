@@ -5,7 +5,7 @@ export { makeRng };
 
 export type Rng = () => number;
 
-/** A shuffled copy (Fisher–Yates) using the given random source. */
+/** A shuffled copy (Fisher-Yates) using the given random source. */
 export function shuffle<T>(list: readonly T[], rng: Rng): T[] {
   const a = [...list];
   for (let i = a.length - 1; i > 0; i--) {

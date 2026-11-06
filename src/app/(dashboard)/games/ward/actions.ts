@@ -3,8 +3,8 @@
 import { z } from "zod";
 import { majority } from "@/lib/games-sims/common";
 import { campaignById } from "@/lib/games-sims/ward/campaigns";
-import { choose, currentDecision, outcomeScore, QUALITY_OUTCOME, startState, stepOf, type WardState } from "@/lib/games-sims/ward/engine";
-import { adminDb, currentUser, gradeAnswers, saveResult } from "@/lib/games-sims/server/results";
+import { choose, currentDecision, outcomeScore, QUALITY_OUTCOME, startState, stepOf, wardXp, type WardState } from "@/lib/games-sims/ward/engine";
+import { adminDb, currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { createTeam, joinTeam, loadMyTeam, updateTeam } from "@/lib/games-sims/server/teams";
 import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
 
@@ -15,11 +15,11 @@ const id = z.string().min(1).max(40);
  * (so the score can't be invented), grades every decision for the student
  * model and stores the outcome.
  */
-export async function finishWardSolo(input: { campaign: string; choices: string[] }): Promise<{ ok: boolean; score: number }> {
-  const parsed = z.object({ campaign: id, choices: z.array(z.string().max(4)).max(40) }).safeParse(input);
+export async function finishWardSolo(input: { campaign: string; choices: string[]; run: string }): Promise<{ ok: boolean; score: number; xp: number }> {
+  const parsed = z.object({ campaign: id, choices: z.array(z.string().max(4)).max(40), run: z.string().min(4).max(40) }).safeParse(input);
   const user = await currentUser();
   const c = parsed.success ? campaignById(parsed.data.campaign) : undefined;
-  if (!parsed.success || !user || !c) return { ok: false, score: 0 };
+  if (!parsed.success || !user || !c) return { ok: false, score: 0, xp: 0 };
   let st = startState(c);
   const attempts = [];
   for (const choice of parsed.data.choices) {
@@ -29,11 +29,14 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
     attempts.push({ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: QUALITY_OUTCOME[opt.q] });
     st = choose(c, st, choice);
   }
-  if (!st.done) return { ok: false, score: 0 };
+  if (!st.done) return { ok: false, score: 0, xp: 0 };
   await gradeAnswers(user, attempts);
   const score = outcomeScore(st);
-  await saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } });
-  return { ok: true, score };
+  const [, xp] = await Promise.all([
+    saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } }),
+    payXp(user.id, "ward", wardXp(score), `${c.id}:${parsed.data.run}`),
+  ]);
+  return { ok: true, score, xp };
 }
 
 export type WardTeamView = {
@@ -46,6 +49,8 @@ export type WardTeamView = {
   myVote: string | null;
   votes: number;
   version: number;
+  /** XP each member was paid when the team finished. */
+  xp: number;
 };
 
 async function votesFor(teamId: string, step: number) {
@@ -59,11 +64,46 @@ async function votesFor(teamId: string, step: number) {
   }
 }
 
+type LoadedTeam = NonNullable<Awaited<ReturnType<typeof loadMyTeam>>>;
+
+/**
+ * Move the story on if this step's votes have a winner. Called after every
+ * vote and on every poll, so two votes landing at the same moment can't leave
+ * the team stuck. The compare-and-set write means only one caller wins.
+ */
+async function settle(t: LoadedTeam): Promise<LoadedTeam["team"] | null> {
+  const c = campaignById(t.team.scenario);
+  const st = t.team.state as unknown as WardState;
+  if (!c || st.done) return null;
+  const votes = await votesFor(t.team.id, stepOf(st));
+  const size = Math.max(TEAM_LIMITS.ward.min, t.members.length);
+  const win = majority(
+    votes.map((v) => ({ choice: v.choice, at: v.created_at })),
+    size,
+  );
+  if (!win) return null;
+  const next = choose(c, st, win, votes.length);
+  if (next === st) return null;
+  const saved = await updateTeam(t.team.id, t.team.version, { state: next as unknown as Record<string, unknown>, ...(next.done ? { status: "done" as const, finished_at: new Date().toISOString() } : {}) });
+  if (saved && next.done) {
+    const score = outcomeScore(next);
+    await Promise.all(
+      t.members.flatMap((m) => [
+        saveResult(m.user_id, { game: "ward", item: c.id, score: score / 100, right: next.log.filter((l) => l.q === "best").length, total: next.log.length, meta: { mode: "team", team: t.team.id } }),
+        payXp(m.user_id, "ward", wardXp(score), `team:${t.team.id}`),
+      ]),
+    );
+  }
+  return saved;
+}
+
 export async function wardTeamView(teamId: string): Promise<WardTeamView | null> {
   const user = await currentUser();
   if (!user || !id.safeParse(teamId).success) return null;
   const t = await loadMyTeam(teamId, user.id);
   if (!t) return null;
+  const moved = await settle(t);
+  if (moved) t.team = moved;
   const st = t.team.state as unknown as WardState;
   const votes = await votesFor(teamId, stepOf(st));
   return {
@@ -76,6 +116,7 @@ export async function wardTeamView(teamId: string): Promise<WardTeamView | null>
     myVote: votes.find((v) => v.user_id === user.id)?.choice ?? null,
     votes: votes.length,
     version: t.team.version,
+    xp: st.done ? wardXp(outcomeScore(st)) : 0,
   };
 }
 
@@ -114,27 +155,15 @@ export async function castWardVote(input: { teamId: string; step: number; choice
 
   const already = (await votesFor(t.team.id, parsed.data.step)).some((v) => v.user_id === user.id);
   if (!already) {
+    let saved = false;
     try {
-      await db.from("games2_votes").insert({ team_id: t.team.id, step: parsed.data.step, user_id: user.id, choice: opt.id });
+      const { error } = await db.from("games2_votes").insert({ team_id: t.team.id, step: parsed.data.step, user_id: user.id, choice: opt.id });
+      saved = !error;
     } catch {
-      /* duplicate */
+      /* duplicate or table missing */
     }
-    await gradeAnswers(user, [{ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: QUALITY_OUTCOME[opt.q] }]);
+    if (saved) await gradeAnswers(user, [{ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: QUALITY_OUTCOME[opt.q] }]);
   }
 
-  const votes = await votesFor(t.team.id, parsed.data.step);
-  const size = Math.max(TEAM_LIMITS.ward.min, t.members.length);
-  const win = majority(
-    votes.map((v) => ({ choice: v.choice, at: v.created_at })),
-    size,
-  );
-  if (win) {
-    const next = choose(c, st, win, votes.length);
-    const saved = await updateTeam(t.team.id, t.team.version, { state: next as unknown as Record<string, unknown>, ...(next.done ? { status: "done" as const, finished_at: new Date().toISOString() } : {}) });
-    if (saved && next.done) {
-      const score = outcomeScore(next);
-      await Promise.all(t.members.map((m) => saveResult(m.user_id, { game: "ward", item: c.id, score: score / 100, right: next.log.filter((l) => l.q === "best").length, total: next.log.length, meta: { mode: "team", team: t.team.id } })));
-    }
-  }
   return wardTeamView(parsed.data.teamId);
 }

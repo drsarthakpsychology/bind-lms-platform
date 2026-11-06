@@ -318,14 +318,14 @@ export const EXCERPTS: Excerpt[] = [
     skill: DIFF,
     lines: [
       ["D", "And what happened after you left work?"],
-      ["P", "I went to the bus stop and then I —"],
+      ["P", "I went to the bus stop and then I..."],
       ["R", "(silence for 15 seconds)"],
       ["P", "It's gone. Something took it. I don't know what I was saying."],
     ],
     note: "Not drowsy; he was answering normally a moment before.",
     findings: [
       { q: "It's gone. Something took it.", a: "withdrawal", o: ["block", "insertion", "broadcast"], close: ["block"], why: "He says something took the thought out: that belief is thought withdrawal, a first-rank symptom. The observed sudden stop is thought block." },
-      { q: "I went to the bus stop and then I —", a: "block", o: ["latency", "perseveration", "poverty"], close: ["latency"], why: "A sudden dead stop mid-sentence, in clear consciousness, unable to pick it up again, is thought block. Slow speech still gets there." },
+      { q: "I went to the bus stop and then I...", a: "block", o: ["latency", "perseveration", "poverty"], close: ["latency"], why: "A sudden dead stop mid-sentence, in clear consciousness, unable to pick it up again, is thought block. Slow speech still gets there." },
     ],
   },
   {
