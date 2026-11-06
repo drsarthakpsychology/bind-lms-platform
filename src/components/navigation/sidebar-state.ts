@@ -37,6 +37,11 @@ export function useSidebarPref(): SidebarPref {
 
 /** Flip between full and mini, starting from what is on screen right now. */
 export function toggleSidebar() {
+  // Tablets always show the slim rail; ☰ opens the full menu drawer there.
+  if (window.innerWidth < 1024) {
+    openNavDrawer();
+    return;
+  }
   const cur = read();
   const showingMini = cur === "mini" || (cur === "auto" && window.innerWidth < 1280);
   try {

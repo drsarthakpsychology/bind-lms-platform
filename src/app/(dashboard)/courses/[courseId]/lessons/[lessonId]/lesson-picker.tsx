@@ -45,11 +45,12 @@ export function LessonPicker({
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        aria-label={`Lesson ${index + 1} of ${lessons.length} — open lesson list`}
-        className="inline-flex h-11 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+        aria-label={index >= 0 ? `Lectures, ${index + 1} of ${lessons.length}: open the list` : "Lectures: open the list"}
+        className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
       >
-        <span className="max-w-40 truncate">{courseTitle}</span>
-        <span className="text-caption text-muted-foreground">
+        {/* The course name is already on the Back link beside this. */}
+        <span>Lectures</span>
+        <span className="text-caption tabular-nums text-muted-foreground">
           {index >= 0 ? `${index + 1} of ${lessons.length}` : ""}
         </span>
         <ChevronDown className="size-3.5 text-muted-foreground" aria-hidden />
@@ -81,7 +82,7 @@ export function LessonPicker({
                 <span className="text-numeric w-5 shrink-0 text-caption">
                   {lesson.orderIndex}.
                 </span>
-                <span className="min-w-0 flex-1 truncate">{lesson.title}</span>
+                <span className="line-clamp-2 min-w-0 flex-1 break-words">{lesson.title}</span>
                 {lesson.isCompleted && <Check className="size-3.5 shrink-0" aria-hidden />}
               </Link>
             );
