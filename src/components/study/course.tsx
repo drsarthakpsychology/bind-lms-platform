@@ -135,7 +135,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-xs font-bold uppercase opacity-80">
-                      Module {m.num} · {m.when}
+                      Module {m.num}
                     </span>
                     <span className="block text-lg font-bold leading-tight">{m.title}</span>
                     <span className="mt-2 flex items-center gap-3">
@@ -257,7 +257,7 @@ export function ModuleView({
 
       <header className="relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7">
         <p className="text-xs font-bold uppercase opacity-90">
-          Module {m.num} · {m.when}
+          Module {m.num}
         </p>
         <h1 className="mt-2 text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>

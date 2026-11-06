@@ -1,4 +1,5 @@
 import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
+import { ColourBlindToggle } from "@/components/settings/colour-blind-toggle";
 import { getSession } from "@/lib/auth/session";
 import { logout } from "@/lib/auth/actions";
 import { MobilePage } from "@/components/mobile/mobile-page";
@@ -86,6 +87,17 @@ export default async function SettingsPage() {
             subtitle="Posts, replies and reactions from your cohort."
           />
         </MobileSection>
+
+        {/* Accessibility — kept closed and quiet at the bottom on purpose. */}
+        <details className="group rounded-lg border-2 border-line px-4">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-small text-muted-foreground [&::-webkit-details-marker]:hidden">
+            Accessibility
+            <span aria-hidden className="transition-transform duration-fast group-open:rotate-90">›</span>
+          </summary>
+          <div className="border-t border-line pb-2">
+            <ColourBlindToggle />
+          </div>
+        </details>
 
         <div className="border-t-2 border-border pt-4">
           <form action={logout}>

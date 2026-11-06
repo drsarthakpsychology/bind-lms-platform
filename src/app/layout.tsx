@@ -1,4 +1,5 @@
 import { appUrl as liveAppUrl } from "@/lib/app-url";
+import { CVD_BOOT_SCRIPT } from "@/lib/a11y/colour-blind";
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
@@ -78,6 +79,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} ${appSans.variable} ${appPixel.variable} ${appPixelDigits.variable} h-full antialiased`}
     >
+      <head>
+        {/* Colour-blind mode before first paint (per-device preference). */}
+        <script dangerouslySetInnerHTML={{ __html: CVD_BOOT_SCRIPT }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           {children}

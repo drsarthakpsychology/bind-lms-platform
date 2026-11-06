@@ -605,6 +605,39 @@ video::-webkit-media-controls {
    BASE
    ============================================================================= */
 
+/* --- Colour-blind mode (Settings → "Colour-blind friendly") ---
+   Same world, same layout. Only the meaning colours change: right/success
+   turns blue, wrong/alert turns orange (the Okabe–Ito pair that red-green
+   and most blue-yellow colour-blind people can tell apart), and alert fills
+   gain a stripe so the difference never rides on colour alone. Set by an
+   inline script from localStorage before first paint (see layout.tsx). */
+html[data-cvd="on"] {
+  --status-success-bg: #e3edff;
+  --status-success-fg: #0b3a9e;
+  --status-alert-bg: #fff0e0;
+  --status-alert-fg: #9a3d00;
+  --destructive: #b54a00; /* white on it 4.9:1 */
+  --destructive-foreground: #ffffff;
+  --chart-5: #e69f00;
+}
+html[data-cvd="on"].dark {
+  --status-success-bg: #10234f;
+  --status-success-fg: #9dbcff;
+  --status-alert-bg: #3a2208;
+  --status-alert-fg: #ffb366;
+  --destructive: #ff9a3d;
+  --destructive-foreground: #111111;
+  --chart-5: #e69f00;
+}
+html[data-cvd="on"] .bg-status-alert-bg,
+html[data-cvd="on"] .bg-destructive {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 7px,
+    color-mix(in oklab, currentColor 12%, transparent) 7px 9px
+  );
+}
+
 @layer base {
   * {
     border-color: var(--border);
