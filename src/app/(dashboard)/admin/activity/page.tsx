@@ -166,8 +166,8 @@ function CohortsView({ rows, cohorts }: { rows: RosterRow[]; cohorts: { id: stri
               <div className="rounded-xl bg-background p-2"><dt className="text-caption text-muted-foreground">Never came in</dt><dd className="text-lg font-black">{never}</dd></div>
             </dl>
             <div className="flex flex-wrap gap-2">
-              {g.id !== "none" ? <Link href={`/admin/cohorts/${g.id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Open cohort</Link> : null}
-              <Link href={`/admin/activity?view=behind${g.id !== "none" ? `&cohort=${g.id}` : ""}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Who&apos;s behind</Link>
+              {g.id !== "none" ? <Link href={`/admin/cohorts/${g.id}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Open cohort</Link> : null}
+              <Link href={`/admin/activity?view=behind${g.id !== "none" ? `&cohort=${g.id}` : ""}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Who&apos;s behind</Link>
             </div>
           </section>
         );
@@ -192,7 +192,7 @@ function BehindView({ rows, cohorts, cohort }: { rows: RosterRow[]; cohorts: { i
           ))}
         </nav>
         {list.length ? (
-          <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(emails)}`} className="ml-auto inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">
+          <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(emails)}`} className="ml-auto inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">
             <Bell className="size-4" aria-hidden /> Nudge all {list.length}
           </Link>
         ) : null}
@@ -213,7 +213,7 @@ function BehindView({ rows, cohorts, cohort }: { rows: RosterRow[]; cohorts: { i
                   <span className="flex justify-between text-caption"><span>{r.lecturesDone}/{r.lecturesAvailable}</span><span>{pct}%</span></span>
                   <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden><span className="block h-full bg-status-pending-fg" style={{ width: `${pct}%` }} /></span>
                 </span>
-                <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(r.email)}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Nudge</Link>
+                <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(r.email)}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Nudge</Link>
               </li>
             );
           })}

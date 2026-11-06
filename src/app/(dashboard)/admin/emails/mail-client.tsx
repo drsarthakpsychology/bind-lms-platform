@@ -112,7 +112,7 @@ export function ClearFailedButton({ count }: { count: number }) {
         type="button"
         onClick={go}
         disabled={busy}
-        className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-60"
+        className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-60"
       >
         {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <CheckCheck className="size-4" aria-hidden />}
         {sure ? `Yes, clear ${count}` : "Clear failed"}

@@ -56,11 +56,11 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
   const avail = people.reduce((a, { r }) => a + (r?.lecturesAvailable ?? 0), 0);
   const pct = avail ? Math.round((done / avail) * 100) : 0;
 
-  const pill = "inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-bold";
+  const pill = "inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-bold";
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/cohorts" className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">
+      <Link href="/admin/cohorts" className="inline-flex min-h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">
         <ChevronLeft className="size-4" aria-hidden /> All cohorts
       </Link>
       <header className="flex flex-wrap items-end justify-between gap-4">

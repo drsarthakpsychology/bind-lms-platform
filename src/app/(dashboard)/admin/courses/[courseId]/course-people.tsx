@@ -93,7 +93,7 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
             className="h-11 w-full rounded-2xl border-2 border-foreground bg-background pr-10 pl-10 text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           />
           {q ? (
-            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-1.5 grid size-8 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-1.5 grid size-8 -translate-y-1/2 place-items-center rounded-md hover:bg-muted">
               <X className="size-4" aria-hidden />
             </button>
           ) : null}
@@ -114,7 +114,7 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
             {data.cohortsReady ? (
               <label className="flex items-center gap-1.5 text-sm font-semibold">
                 into
-                <select value={target} onChange={(e) => setTarget(e.target.value)} className="h-9 rounded-full border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground">
+                <select value={target} onChange={(e) => setTarget(e.target.value)} className="h-9 rounded-md border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground">
                   {live.map((c) => (
                     <option key={c.id} value={c.id}>
                       {c.name}
@@ -128,7 +128,7 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
               type="button"
               disabled={!picked.size || busy !== null}
               onClick={() => run("add", () => addToCourse(courseId, [...picked], target || null), `Added ${picked.size}.`)}
-              className="ml-auto inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-foreground px-4 text-sm font-bold text-background disabled:opacity-50"
+              className="ml-auto inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-foreground px-4 text-sm font-bold text-background disabled:opacity-50"
             >
               {busy === "add" ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <UserPlus className="size-4" aria-hidden />}
               Add {picked.size || ""}
@@ -188,7 +188,7 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
                       disabled={busy !== null}
                       onClick={() => (confirm === p.id ? run(p.id, () => removeFromCourse(courseId, p.id, p.cohortIds), `Removed ${p.email}.`) : setConfirm(p.id))}
                       className={cn(
-                        "inline-flex h-8 items-center gap-1 rounded-full border-2 px-3 text-xs font-bold",
+                        "inline-flex h-8 items-center gap-1 rounded-md border-2 px-3 text-xs font-bold",
                         confirm === p.id ? "border-destructive bg-destructive text-white" : "border-foreground bg-card",
                       )}
                     >
@@ -201,7 +201,7 @@ export function CoursePeoplePanel({ courseId, lectureCount, data }: { courseId: 
                     type="button"
                     disabled={busy !== null}
                     onClick={() => run(p.id, () => addToCourse(courseId, [p.id], target || null), `Added ${p.email}.`)}
-                    className="inline-flex h-8 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 text-xs font-bold"
+                    className="inline-flex h-8 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-xs font-bold"
                   >
                     {busy === p.id ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : <UserPlus className="size-3.5" aria-hidden />} Add
                   </button>
@@ -267,7 +267,7 @@ function Memberships({
             value=""
             disabled={busy !== null}
             onChange={(e) => e.target.value && setPending({ cohortId: e.target.value, op: "add" })}
-            className="h-8 max-w-40 rounded-full border-2 border-dashed border-foreground bg-card px-2 text-xs font-bold"
+            className="h-8 max-w-40 rounded-md border-2 border-dashed border-foreground bg-card px-2 text-xs font-bold"
           >
             <option value="">+ Add to cohort</option>
             {canAdd.map((c) => (
@@ -293,14 +293,14 @@ function Memberships({
               setPending(null);
             }}
             className={cn(
-              "inline-flex h-8 items-center gap-1 rounded-full border-2 px-3 text-xs font-bold disabled:opacity-60",
+              "inline-flex h-8 items-center gap-1 rounded-md border-2 px-3 text-xs font-bold disabled:opacity-60",
               pending.op === "remove" ? "border-destructive bg-destructive text-white" : "border-foreground bg-foreground text-background",
             )}
           >
             {working ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : null}
             {pending.op === "add" ? `Yes, add to ${pendingName}` : `Yes, take out of ${pendingName}`}
           </button>
-          <button type="button" disabled={working} onClick={() => setPending(null)} className="h-8 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold">
+          <button type="button" disabled={working} onClick={() => setPending(null)} className="h-8 rounded-md border-2 border-foreground bg-card px-3 text-xs font-semibold">
             Cancel
           </button>
         </div>
@@ -353,7 +353,7 @@ function Cohorts({ courseId, data, lectureCount }: { courseId: string; data: Cou
             setOpen((o) => !o);
           }}
           aria-expanded={open}
-          className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-dashed border-foreground bg-card px-4 text-sm font-bold"
+          className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-dashed border-foreground bg-card px-4 text-sm font-bold"
         >
           <Plus className="size-4" aria-hidden /> New cohort
         </button>
@@ -373,10 +373,10 @@ function Cohorts({ courseId, data, lectureCount }: { courseId: string; data: Cou
           </label>
           {err ? <p className="text-sm font-semibold text-status-alert-fg">{err}</p> : null}
           <div className="flex gap-2">
-            <button type="button" onClick={make} disabled={busy} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-60">
+            <button type="button" onClick={make} disabled={busy} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-60">
               {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Plus className="size-4" aria-hidden />} Make {name || "cohort"}
             </button>
-            <button type="button" onClick={() => setOpen(false)} className="h-10 rounded-full border-2 border-foreground px-4 text-sm font-semibold">
+            <button type="button" onClick={() => setOpen(false)} className="h-10 rounded-md border-2 border-foreground px-4 text-sm font-semibold">
               Cancel
             </button>
           </div>

@@ -235,7 +235,7 @@ export default async function MailPage({
                     defaultValue={q}
                     type="search"
                     placeholder={`Search ${folder}`}
-                    className="h-10 w-full rounded-full border-2 border-foreground bg-background px-4 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+                    className="h-10 w-full rounded-md border-2 border-foreground bg-background px-4 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </form>
                 {folder === "inbox" ? (

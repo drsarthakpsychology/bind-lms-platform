@@ -83,7 +83,7 @@ export default async function StudentProfilePage({ params, searchParams }: { par
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">
+      <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">
         <ChevronLeft className="size-4" aria-hidden /> Students
       </Link>
 
@@ -110,8 +110,8 @@ export default async function StudentProfilePage({ params, searchParams }: { par
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Bell className="size-4" aria-hidden /> Notify</Link>
-          <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Mail className="size-4" aria-hidden /> Email</Link>
+          <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Bell className="size-4" aria-hidden /> Notify</Link>
+          <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Mail className="size-4" aria-hidden /> Email</Link>
         </div>
       </header>
 
@@ -352,7 +352,7 @@ async function CredentialsTab({ id, roll }: { id: string; roll: string | null })
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <Link href={`/admin/credentials?q=${encodeURIComponent(roll ?? id)}`} className="inline-flex h-10 items-center rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Manage or issue a certificate</Link>
+        <Link href={`/admin/credentials?q=${encodeURIComponent(roll ?? id)}`} className="inline-flex h-10 items-center rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Manage or issue a certificate</Link>
       </div>
       {error ? (
         <p className="text-sm text-muted-foreground">Credentials aren&apos;t set up in the database yet.</p>

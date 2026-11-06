@@ -134,7 +134,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
     URL.revokeObjectURL(a.href);
   }
 
-  const select = "h-10 rounded-full border-2 border-foreground bg-background px-3 text-sm font-semibold outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60";
+  const select = "h-10 rounded-md border-2 border-foreground bg-background px-3 text-sm font-semibold outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60";
 
   return (
     <div className="space-y-4">
@@ -148,7 +148,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
             onChange={(e) => setQ(e.target.value)}
             type="search"
             placeholder={`Search ${rows.length} students by name, email, roll number or mobile`}
-            className="h-11 w-full rounded-full border-2 border-foreground bg-background pr-4 pl-10 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+            className="h-11 w-full rounded-md border-2 border-foreground bg-background pr-4 pl-10 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           />
         </label>
         <div className="flex flex-wrap items-center gap-2">
@@ -289,7 +289,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
                       onClick={() => setOpen(isOpen ? null : r.id)}
                       aria-expanded={isOpen}
                       aria-label={isOpen ? `Hide details for ${r.name}` : `Show details for ${r.name}`}
-                      className="grid size-10 place-items-center rounded-full border-2 border-foreground/20 hover:bg-accent"
+                      className="grid size-10 place-items-center rounded-md border-2 border-foreground/20 hover:bg-accent"
                     >
                       <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} aria-hidden />
                     </button>
@@ -306,10 +306,10 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
                       <div><dt className="text-eyebrow text-muted-foreground">Last 7 days</dt><dd className="font-semibold">{r.min7} min on VIBHA</dd></div>
                       <div><dt className="text-eyebrow text-muted-foreground">Access ends</dt><dd className="font-semibold">{r.expiresAt ? new Date(r.expiresAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "No end date"}</dd></div>
                       <div className="col-span-2 flex flex-wrap gap-2 sm:col-span-4">
-                        <Link href={`/admin/students/${r.id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">Open profile</Link>
-                        <Link href={`/admin/students/${r.id}?tab=access`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Access & login</Link>
-                        <Link href={`/admin/students/${r.id}?tab=activity`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Activity</Link>
-                        <Link href={`/admin/students/${r.id}?tab=credentials`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Credentials</Link>
+                        <Link href={`/admin/students/${r.id}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">Open profile</Link>
+                        <Link href={`/admin/students/${r.id}?tab=access`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Access & login</Link>
+                        <Link href={`/admin/students/${r.id}?tab=activity`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Activity</Link>
+                        <Link href={`/admin/students/${r.id}?tab=credentials`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Credentials</Link>
                       </div>
                     </dl>
                   ) : null}

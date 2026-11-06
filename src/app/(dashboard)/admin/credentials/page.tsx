@@ -46,8 +46,8 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
       <form action="/admin/credentials" className="relative">
         <Search className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
         <label className="sr-only" htmlFor="cred-q">Roll number, name or email</label>
-        <input id="cred-q" name="q" defaultValue={sp.q ?? ""} placeholder="e.g. VIBHA-000042, Aanya, or aanya@gmail.com" className="h-12 w-full rounded-full border-2 border-foreground bg-background pr-28 pl-11 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" autoFocus={!student} />
-        <button type="submit" className="absolute top-1.5 right-1.5 h-9 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Find</button>
+        <input id="cred-q" name="q" defaultValue={sp.q ?? ""} placeholder="e.g. VIBHA-000042, Aanya, or aanya@gmail.com" className="h-12 w-full rounded-md border-2 border-foreground bg-background pr-28 pl-11 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" autoFocus={!student} />
+        <button type="submit" className="absolute top-1.5 right-1.5 h-9 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Find</button>
       </form>
 
       {matches.length ? (
@@ -72,7 +72,7 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
                 <h2 className="text-h3 font-bold">{student.name}</h2>
                 <p className="text-sm text-muted-foreground"><span className="font-mono font-bold text-foreground">{student.roll ?? "No roll no."}</span> · {student.email}</p>
               </div>
-              <Link href={`/admin/students/${student.id}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Open profile</Link>
+              <Link href={`/admin/students/${student.id}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Open profile</Link>
             </header>
             {creds.error ? (
               <p className="text-sm text-muted-foreground">Credentials aren&apos;t set up in the database yet.</p>

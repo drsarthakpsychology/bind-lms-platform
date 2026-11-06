@@ -326,7 +326,7 @@ export function MemberActions({ cohortId, userId, email, setUp }: { cohortId: st
   const [pending, start] = React.useTransition();
   return (
     <span className="flex items-center gap-1.5">
-      <Link href={`/admin/students/${userId}?tab=access`} className="inline-flex h-8 items-center gap-1 rounded-full border-2 border-foreground px-2.5 text-xs font-semibold" aria-label={`Access for ${email}`}>
+      <Link href={`/admin/students/${userId}?tab=access`} className="inline-flex h-8 items-center gap-1 rounded-md border-2 border-foreground px-2.5 text-xs font-semibold" aria-label={`Access for ${email}`}>
         <Settings2 className="size-3.5" aria-hidden /> Access
       </Link>
       {!setUp ? (
@@ -340,7 +340,7 @@ export function MemberActions({ cohortId, userId, email, setUp }: { cohortId: st
               else toast.success(`Login link sent to ${email}`);
             })
           }
-          className="inline-flex h-8 items-center gap-1 rounded-full border-2 border-foreground px-2.5 text-xs font-semibold"
+          className="inline-flex h-8 items-center gap-1 rounded-md border-2 border-foreground px-2.5 text-xs font-semibold"
         >
           <Mail className="size-3.5" aria-hidden /> Send link
         </button>
@@ -357,7 +357,7 @@ export function MemberActions({ cohortId, userId, email, setUp }: { cohortId: st
             else router.refresh();
           });
         }}
-        className="inline-grid size-8 place-items-center rounded-full border-2 border-destructive text-destructive"
+        className="inline-grid size-8 place-items-center rounded-md border-2 border-destructive text-destructive"
       >
         <UserMinus className="size-3.5" aria-hidden />
       </button>
