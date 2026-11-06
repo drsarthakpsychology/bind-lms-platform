@@ -48,6 +48,74 @@ Many suicidal crises are short. If a highly lethal method is not easily availabl
 - **National**: regulating highly hazardous pesticides has been followed by large falls in suicide deaths in several countries.
 :::
 
+:::qa Does talking about suicide put the idea in someone's head? [starting]
+### Short answer
+No. Asking directly and kindly does not increase suicidal thoughts. For many people it is a relief to be asked, and it opens the way to help.
+
+### How to ask
+"Sometimes when people feel this bad, they think about ending their life. Have you had thoughts like that?"
+### Then
+Listen calmly, thank them for telling you, and help them connect with support.
+:::
+
+:::qa Why is it wrong to call a suicide attempt 'attention-seeking'? [starting]
+### Short answer
+Because an attempt signals serious distress and raises future risk. Even when someone is trying to show others how much they are hurting, the pain is real and deserves care. Dismissal makes people hide distress next time.
+
+### A better frame
+"This person needed help and did not know how else to get it."
+### What helps
+Respectful care, assessment, a plan and follow-up.
+:::
+
+:::qa What does 'ambivalence' mean in suicide prevention? [starting]
+### Short answer
+Most people who feel suicidal are torn: part of them wants to die to escape pain, and part wants to live. Helpers connect with the part that wants to live.
+
+### In practice
+- Ask what has kept them going so far.
+- Explore reasons for living: children, faith, pets, plans.
+- Write these at the top of a safety plan.
+:::
+
+:::qa Why do exams and results days matter for suicide prevention in students? [starting]
+### Short answer
+Results can bring shame, fear of family disappointment and a sense of a closed future, especially when a single exam feels like everything. Families and colleges can reduce risk by preparing, checking in and showing that there are other paths.
+
+### What helps
+- Talking before results about all possible outcomes.
+- Checking in on friends after results.
+- Avoiding public comparison and shaming.
+- Knowing the college counsellor's contact.
+:::
+
+:::qa What should you never promise someone who tells you they feel suicidal? [starting]
+### Short answer
+Never promise to keep it secret. You may need to involve others to keep them safe. Be honest: "I care about you, so I can't keep this to myself, but we'll decide together who to tell."
+
+### Why honesty helps
+It keeps trust intact even when you need to get help, and it shows that their safety matters more than avoiding an awkward moment.
+:::
+
+:::qa How can communities help prevent suicide? [starting]
+### Short answer
+By reducing stigma, training people who are well placed to notice distress (teachers, wardens, religious leaders), making lethal means harder to reach, supporting people in crisis with practical help, and reporting suicide safely in the media.
+
+### Examples
+- Gatekeeper training in colleges.
+- Safe storage of medicines and farm chemicals.
+- Debt and legal support services.
+- Responsible media reporting.
+:::
+
+:::qa What should you do after you have helped a friend in a suicidal crisis? [starting]
+### Short answer
+Look after yourself. Supporting someone in crisis is stressful. Talk to someone you trust, rest, and remember that you are not responsible for everything; professional help shares the load.
+
+### Signs you need support
+Trouble sleeping, constant worry, guilt, feeling overwhelmed. Reach out to a counsellor or trusted adult.
+:::
+
 ## 5.4 Q&A bank · Beginner [core][beginner]
 Think each question through, then open the answer.
 
@@ -119,6 +187,126 @@ Look after the family and colleagues, seek supervision and support for yourself,
 - **Long-term**: many clinicians experience this in their careers; it is a professional hazard, not proof of failure.
 :::
 
+:::qa Walk through a full suicide assessment for a man who has lost his job. [beginner]
+### Short answer
+Build rapport, ask directly, explore ideation, plan, access to means, preparation, intent, past attempts and reasons for living, assess mental state and context, gather collateral, and write a formulation and plan.
+
+### Case
+Vijay, 45, a factory supervisor in Ludhiana, lost his job two months ago, has large debts, drinks heavily and says, "I am a burden."
+### Step by step
+1. **Engage** privately; acknowledge his losses.
+2. **Ask** directly about thoughts of ending life.
+3. **Characterise** ideation: frequency, intensity, control.
+4. **Plan and means**: is there a plan; does he have access to means (asked so it can be made safer)?
+5. **Preparation and intent**.
+6. **Past attempts**.
+7. **Mental state**: depression, hopelessness, alcohol, agitation, insomnia.
+8. **Context**: debt, family, shame.
+9. **Protective factors**: children, faith, brother.
+10. **Formulation and plan**: safety plan, means safety with family, treat depression and alcohol, debt advice, follow-up within days.
+:::
+
+:::qa How do risk factors differ from warning signs? [beginner]
+### Short answer
+Risk factors are characteristics that raise long-term risk across groups (previous attempt, depression, isolation); warning signs are near-term changes in a person that suggest risk may be rising now (talking of death, saying goodbye, sudden calm).
+
+| | Risk factors | Warning signs |
+|---|---|---|
+| Timeframe | Long-term | Hours to days |
+| Level | Group statistics | This person now |
+| Examples | Previous attempt, male sex, alcohol use | Giving things away, searching for means, withdrawal |
+| Use | Guide enquiry | Trigger immediate action |
+:::
+
+:::qa What is means safety counselling, and how do you do it? [beginner]
+### Short answer
+It is a collaborative conversation with the person and family about reducing access to lethal means during a crisis, explained as a way to buy time and keep the person safe. It does not require discussing method details beyond what is needed to make the home safer.
+
+### Steps
+1. Explain why: crises are often brief; distance from means saves lives.
+2. Ask in general terms what means are accessible at home.
+3. Agree practical steps: a trusted person holds medicines and dispenses them in small amounts; remove or lock away dangerous items.
+4. Involve family with consent.
+5. Write the steps into the safety plan.
+6. Follow up to check they were done.
+:::
+
+:::qa How should the risk of suicide be managed in a patient being discharged from a psychiatric ward? [beginner]
+### Short answer
+Plan before discharge: review the formulation, update the safety plan, address means safety, involve family, arrange follow-up within days, and communicate with community services. The first weeks after discharge carry a high risk.
+
+### Discharge checklist
+- Safety plan reviewed and copied.
+- Medicines: limited quantities, safe storage.
+- Follow-up appointment within a few days.
+- Named contact for crisis.
+- Family briefed with consent.
+- Practical problems addressed (housing, finances).
+- Information sent to the community team.
+:::
+
+:::qa How does depression raise suicide risk, and which features of depression matter most? [beginner]
+### Short answer
+Depression brings pain, hopelessness and a closed future. Risk is higher with severe depression, hopelessness, psychotic features (especially guilt or nihilistic delusions), agitation, insomnia, anxiety, alcohol use and mixed features.
+
+### Features to ask about
+- Hopelessness and worthlessness.
+- Psychotic symptoms.
+- Agitation and severe insomnia (acute risk factors).
+- Early treatment period and early recovery.
+- Bipolar depression and mixed states.
+:::
+
+:::qa What is the place of no-suicide contracts versus safety plans? [beginner]
+### Short answer
+No-suicide contracts are not recommended: they lack evidence, can silence people and give false reassurance. Safety plans are collaborative tools that tell the person what to do when a crisis comes, and are supported by evidence when combined with follow-up.
+
+| | No-suicide contract | Safety plan |
+|---|---|---|
+| Purpose | Promise not to act | Steps to take in a crisis |
+| Evidence | None | Reduced suicidal behaviour with follow-up |
+| Effect | Can make people hide thoughts | Builds skills and connection |
+:::
+
+:::qa How do you assess and support an adolescent who self-harms? [beginner]
+### Short answer
+See the young person alone, ask about intent, function and frequency, assess suicidal thoughts, bullying, abuse, substance use and mood, involve parents appropriately, explain confidentiality limits, and offer family-informed psychological help.
+
+### Steps
+1. Private interview with clear limits of confidentiality.
+2. Function: "What does self-harm do for you?"
+3. Suicidal intent and plans.
+4. Context: school, online life, relationships, abuse.
+5. Mood, eating, substances.
+6. Parents: education, monitoring, reducing access to means, non-punitive responses.
+7. Treatment: DBT-informed therapy for adolescents, CBT, family work.
+:::
+
+:::qa What is the evidence for brief contact interventions? [beginner]
+### Short answer
+Sending caring letters, postcards or messages, or making calls, after an emergency visit or discharge has reduced repeat attempts or suicide in some trials, though results vary. They are cheap, low-burden and can maintain connection during a high-risk period.
+
+### Examples
+- Caring letters sent regularly for months after discharge.
+- Postcards after self-poisoning presentations.
+- Structured follow-up calls with safety planning.
+### Why they may work
+They reduce isolation and keep a door open to care.
+:::
+
+:::qa How should a clinician document a suicide assessment? [beginner]
+### Short answer
+Record what was asked and answered in the person's words, the collateral, the formulation (not a risk label), the plan with responsibilities, safety-plan details, means safety steps, and when review will occur.
+
+### Good documentation includes
+- Direct questions asked and answers given.
+- Protective factors and reasons for living.
+- Mental state findings.
+- Formulation: why now, what helps, what would worsen.
+- Plan, who is involved, follow-up date.
+- Discussions with family and seniors.
+:::
+
 ## 5.5 Q&A bank · Advanced [core][advanced]
 Think each question through, then open the answer.
 
@@ -179,6 +367,128 @@ A layered programme: leadership and policy, universal well-being measures, gatek
 6. **Crisis protocol**: clear steps, phone numbers, transport, follow-up.
 7. **Postvention**: plan for responding to a death, with safe messaging.
 8. **Data**: anonymous monitoring and annual review.
+:::
+
+:::qa Explain the fluid vulnerability theory and its clinical implications. [advanced]
+### Short answer
+Rudd's theory says suicide risk has a relatively stable baseline (history, temperament, prior attempts) and acute fluctuations triggered by stressors and states (insomnia, agitation, intoxication). People with past attempts have a higher baseline and can escalate quickly.
+
+### Implications
+- Reassess at each contact; risk is a moving state.
+- Treat acute drivers fast (sleep, agitation, alcohol).
+- People with multiple attempts need standing crisis plans.
+- Safety plans should anticipate rapid escalation.
+:::
+
+:::qa Discuss the gender paradox in suicide, with Indian data. [advanced]
+### Short answer
+Worldwide women report more suicidal ideation and attempts while men more often die by suicide; contributing factors include lethality of methods used, help-seeking, alcohol and social roles. In India the male-to-female ratio is narrower, and young married women carry particular risk linked to domestic violence and limited autonomy.
+
+### Explanations
+- Help-seeking differences.
+- Alcohol use and impulsivity.
+- Access to and lethality of means.
+- Social expectations and shame.
+### Indian context
+- Gender-based violence and dowry harassment.
+- Early marriage and isolation from natal families.
+- Implications: routine safety enquiry about violence, and women-centred services.
+:::
+
+:::qa What did large studies show about the accuracy of suicide risk scales? [advanced]
+### Short answer
+Meta-analyses found that risk scales and global risk categories have low positive predictive value: most people classed as high risk do not die by suicide, and many deaths occur among those classed as low risk. This underpins guidance against using them for prediction or allocation.
+
+### Key points
+- Pooled positive predictive values are low (a few per cent over follow-up periods).
+- Sensitivity is modest; negative predictive value is high mainly because suicide is rare.
+- No scale outperforms careful clinical assessment.
+### Practice
+Use tools to structure enquiry; base care on needs and formulation.
+:::
+
+:::qa Explain how lithium and clozapine may reduce suicide. [advanced]
+### Short answer
+Lithium probably works through relapse prevention and reduced impulsivity and aggression; clozapine through improved psychosis, reduced depressive symptoms and, possibly, effects on impulsivity and the close monitoring that comes with it.
+
+| | Lithium | Clozapine |
+|---|---|---|
+| Population | Mood disorders | Schizophrenia and schizoaffective disorder |
+| Evidence | Meta-analyses of trials; observational data; one negative large trial | Randomised trial showing fewer suicidal behaviours than olanzapine |
+| Possible mechanisms | Mood stability; serotonergic effects on aggression; neuroprotection | Better symptom control; regular contact; effects on impulsivity |
+| Cautions | Toxicity, overdose risk, kidney and thyroid monitoring | Blood monitoring, myocarditis, constipation |
+:::
+
+:::qa How would you design a district-level suicide prevention programme in India? [advanced]
+### Short answer
+Base it on local data, combine universal, selective and indicated measures, integrate mental health into primary care, restrict means, train gatekeepers, ensure follow-up after self-harm, and partner with media, schools, police and community leaders.
+
+### Components
+1. **Surveillance**: hospital and police data on self-harm and suicide.
+2. **Means restriction**: hazardous pesticide storage and regulation; safer medicine dispensing.
+3. **Primary care**: depression and alcohol screening and treatment.
+4. **Self-harm pathway**: emergency department assessment and follow-up within days.
+5. **Gatekeepers**: teachers, ASHA workers, police, religious leaders.
+6. **Schools and colleges**: well-being curricula, counsellors, crisis protocols.
+7. **Media**: safe reporting agreements.
+8. **Postvention** services.
+9. **Evaluation** against the national target.
+:::
+
+:::qa Why does alcohol play such a large role in suicide? [advanced]
+### Short answer
+Alcohol worsens depression, disinhibits, increases impulsivity, impairs problem-solving, disrupts sleep, damages relationships and finances, and is present in many suicides and attempts.
+
+### Acute and chronic effects
+| Acute | Chronic |
+|---|---|
+| Disinhibition, impulsivity | Depression, isolation |
+| Narrowed thinking | Job and relationship loss |
+| Lowered fear | Debt, legal problems |
+### Practice
+Ask about alcohol in every suicide assessment; treat alcohol use disorder; involve family in limiting access during crises.
+:::
+
+:::qa What is the evidence for school-based suicide prevention? [advanced]
+### Short answer
+Universal programmes that teach mental health awareness and help-seeking, such as a large European trial of a youth awareness programme, have reduced suicidal ideation and attempts; screening and gatekeeper training add benefits when linked to services.
+
+### Elements that work
+- Interactive mental health literacy for students.
+- Gatekeeper training for staff.
+- Screening with clear referral pathways.
+- Reducing access to means.
+- Postvention plans.
+### Indian context
+Supreme Court guidelines (2025) require institutions to have counsellors, trained staff and crisis protocols.
+:::
+
+:::qa Critically discuss the use of machine learning to predict suicide. [advanced]
+### Short answer
+Models using health-record data can identify groups at raised risk better than chance, but positive predictive values remain low, models may not transfer to new settings, and they raise issues of privacy, consent and bias. They may support outreach but not individual decisions.
+
+### Strengths
+- Use large data; detect patterns humans miss.
+- Can prompt proactive outreach.
+### Limits
+- Low base rate limits PPV.
+- Poor generalisability across populations.
+- Bias against groups under-represented in data.
+- Ethical concerns about surveillance.
+### Use
+As a system-level aid, never as a substitute for assessment.
+:::
+
+:::qa How does section 115 of the Mental Healthcare Act interact with medicolegal practice in Indian hospitals? [advanced]
+### Short answer
+Self-harm presentations are often registered as medicolegal cases for police intimation. Section 115 presumes severe stress and bars trial and punishment, so the purpose of registration should be documentation and protection, not prosecution, and care must never be delayed by legal procedures.
+
+### Practical points
+- Treat medically first; never delay care for paperwork.
+- Explain to families that the law protects the person.
+- Document the clinical assessment carefully.
+- Advocate for the person's right to care, treatment and rehabilitation under the Act.
+- Be aware of the Bharatiya Nyaya Sanhita's offence of attempting suicide to compel a public servant, which is rare and specific.
 :::
 
 `;
