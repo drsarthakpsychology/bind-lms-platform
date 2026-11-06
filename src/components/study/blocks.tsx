@@ -202,6 +202,22 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             );
           case "widget":
             return <Widget key={i} kind={b.kind} data={b.data} />;
+          case "qa":
+            return (
+              <details key={i} className="group rounded-2xl border-2 border-foreground bg-card open:shadow-[var(--shadow-hard-sm)]">
+                <summary className="flex min-h-12 cursor-pointer list-none items-start gap-3 p-4 [&::-webkit-details-marker]:hidden">
+                  <span aria-hidden className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-primary text-sm font-black text-primary-foreground">Q</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-semibold leading-snug"><Rich text={b.q} /></span>
+                    <span className="mt-1 block text-xs font-semibold text-muted-foreground group-open:hidden">Think it through, then open the answer</span>
+                  </span>
+                  {b.level ? <span className="shrink-0 rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-semibold uppercase">{b.level}</span> : null}
+                </summary>
+                <div className="space-y-4 border-t-2 border-foreground/15 p-4 [&_ol]:pl-5 [&_ul]:pl-5">
+                  <Blocks blocks={b.blocks} />
+                </div>
+              </details>
+            );
           // Self-tests are taken out of the reading (see lib/study/chunk.ts).
           case "recall":
           case "viva":
