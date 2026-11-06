@@ -3,6 +3,7 @@
   "regions": ["bom1"],
   "crons": [
     { "path": "/api/cron/standing", "schedule": "30 13 * * 1,4" },
-    { "path": "/api/cron/monthly", "schedule": "30 0 1 * *" }
+    { "path": "/api/cron/monthly", "schedule": "30 0 1 * *" },
+    { "path": "/api/cron/doubt-followup", "schedule": "30 3 * * *" }
   ]
 }

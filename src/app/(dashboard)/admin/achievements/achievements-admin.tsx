@@ -178,7 +178,7 @@ export function AchievementsAdmin({
                 setBusy(false);
                 setMsg(`Awarded ${r.awarded}, skipped ${r.skipped}.`);
               }}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50"
             >
               <Sparkles className="size-4" aria-hidden /> Award eligible badges
             </button>
@@ -197,14 +197,14 @@ export function AchievementsAdmin({
                   </p>
                 </div>
                 {a.type === "certificate" && (
-                  <button type="button" onClick={() => setEligibleFor(a.id)} className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold">
+                  <button type="button" onClick={() => setEligibleFor(a.id)} className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-xs font-semibold">
                     Eligible
                   </button>
                 )}
-                <button type="button" onClick={() => startEdit(a)} className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold">
+                <button type="button" onClick={() => startEdit(a)} className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-xs font-semibold">
                   Edit
                 </button>
-                <button type="button" onClick={async () => { await setAchievementEnabled(a.id, !a.enabled); window.location.reload(); }} className={cn("min-h-9 rounded-full border-2 px-3 text-xs font-semibold", a.enabled ? "border-foreground bg-card" : "border-foreground bg-foreground text-background")}>
+                <button type="button" onClick={async () => { await setAchievementEnabled(a.id, !a.enabled); window.location.reload(); }} className={cn("min-h-9 rounded-md border-2 px-3 text-xs font-semibold", a.enabled ? "border-foreground bg-card" : "border-foreground bg-foreground text-background")}>
                   {a.enabled ? "Disable" : "Enable"}
                 </button>
               </li>
@@ -298,11 +298,11 @@ export function AchievementsAdmin({
                 <SignatureUpload achievementId={editing.id} />
               )}
               <div className="flex gap-2 sm:col-span-2">
-                <button type="submit" disabled={busy} className="min-h-11 rounded-full border-2 border-foreground bg-foreground px-5 py-2 text-sm font-bold text-background disabled:opacity-50">
+                <button type="submit" disabled={busy} className="min-h-11 rounded-md border-2 border-foreground bg-foreground px-5 py-2 text-sm font-bold text-background disabled:opacity-50">
                   {busy ? "Saving…" : editing ? "Save changes" : "Create"}
                 </button>
                 {editing && (
-                  <button type="button" onClick={resetForm} className="min-h-11 rounded-full border-2 border-foreground bg-card px-5 py-2 text-sm font-bold">
+                  <button type="button" onClick={resetForm} className="min-h-11 rounded-md border-2 border-foreground bg-card px-5 py-2 text-sm font-bold">
                     Cancel
                   </button>
                 )}
@@ -352,7 +352,7 @@ function EligiblePanel({ achievementId, onClose }: { achievementId: string; onCl
                   const res = await createCertificateDraft(r.id, achievementId);
                   setMsg(res.error ?? `Draft created${res.credentialId ? ` (${res.credentialId.slice(0, 8)}…)` : ""}.`);
                 }}
-                className="min-h-9 rounded-full border-2 border-foreground bg-primary px-3 text-xs font-bold text-primary-foreground"
+                className="min-h-9 rounded-md border-2 border-foreground bg-primary px-3 text-xs font-bold text-primary-foreground"
               >
                 Create draft
               </button>
@@ -418,7 +418,7 @@ function CredentialsTab({
           <option value="certificate">Certificates</option>
         </select>
         <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search name…" className="min-h-10 min-w-0 flex-1 rounded-md border-2 border-foreground bg-background px-2 text-sm" />
-        <button type="button" onClick={onRefresh} className="min-h-10 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">Filter</button>
+        <button type="button" onClick={onRefresh} className="min-h-10 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">Filter</button>
       </div>
       <p className="text-sm font-semibold">{ctotal} credentials</p>
       <ul className="space-y-2">
@@ -430,17 +430,17 @@ function CredentialsTab({
               <span className="block break-all font-mono text-[0.65rem] text-muted-foreground">{c.credential_id}</span>
             </span>
             {c.type === "certificate" && (c.status === "draft" || c.status === "approved") && (
-              <button type="button" onClick={async () => { const r = await issueCertificate(c.credential_id); setMsg(r.error ?? "Issued."); onRefresh(); }} className="min-h-9 rounded-full border-2 border-foreground bg-primary px-3 text-xs font-bold text-primary-foreground">
+              <button type="button" onClick={async () => { const r = await issueCertificate(c.credential_id); setMsg(r.error ?? "Issued."); onRefresh(); }} className="min-h-9 rounded-md border-2 border-foreground bg-primary px-3 text-xs font-bold text-primary-foreground">
                 Issue
               </button>
             )}
             {c.type === "certificate" && c.status === "issued" && (
-              <button type="button" onClick={async () => { const r = await getCredentialDownload(c.credential_id); if (r.url) window.open(r.url, "_blank"); else setMsg(r.error ?? "No file."); }} className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold">
+              <button type="button" onClick={async () => { const r = await getCredentialDownload(c.credential_id); if (r.url) window.open(r.url, "_blank"); else setMsg(r.error ?? "No file."); }} className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-xs font-semibold">
                 <Download className="size-3.5" aria-hidden /> PDF
               </button>
             )}
             {c.status !== "revoked" && (
-              <button type="button" onClick={async () => { const reason = prompt("Reason for revocation:"); if (reason) { const r = await revokeCredential(c.credential_id, reason); setMsg(r.error ?? "Revoked."); onRefresh(); } }} className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold text-red-600">
+              <button type="button" onClick={async () => { const reason = prompt("Reason for revocation:"); if (reason) { const r = await revokeCredential(c.credential_id, reason); setMsg(r.error ?? "Revoked."); onRefresh(); } }} className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-xs font-semibold text-red-600">
                 <ShieldX className="size-3.5" aria-hidden /> Revoke
               </button>
             )}

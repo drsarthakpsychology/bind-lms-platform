@@ -89,7 +89,7 @@ export function AccessManager({
             className="h-11 w-full rounded-2xl border-2 border-foreground bg-card pr-10 pl-10 text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           />
           {q ? (
-            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-1.5 grid size-8 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-1.5 grid size-8 -translate-y-1/2 place-items-center rounded-md hover:bg-muted">
               <X className="size-4" aria-hidden />
             </button>
           ) : null}
@@ -133,7 +133,7 @@ export function AccessManager({
             type="button"
             disabled={!picked.size || busy !== null}
             onClick={() => run("full", () => setScopeFor(ids, "full"), (n) => `${n} now have Full access.`)}
-            className="h-9 rounded-full border-2 border-foreground bg-primary px-3.5 text-sm font-bold text-primary-foreground disabled:opacity-50"
+            className="h-9 rounded-md border-2 border-foreground bg-primary px-3.5 text-sm font-bold text-primary-foreground disabled:opacity-50"
           >
             {busy === "full" ? <Loader2 className="inline size-4 animate-spin" aria-hidden /> : null} Full access
           </button>
@@ -141,13 +141,13 @@ export function AccessManager({
             type="button"
             disabled={!picked.size || busy !== null}
             onClick={() => run("lec", () => setScopeFor(ids, "lectures_only"), (n) => `${n} now have Lectures only.`)}
-            className="h-9 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold text-foreground disabled:opacity-50"
+            className="h-9 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold text-foreground disabled:opacity-50"
           >
             {busy === "lec" ? <Loader2 className="inline size-4 animate-spin" aria-hidden /> : null} Lectures only
           </button>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <select value={feature} onChange={(e) => setFeature(e.target.value)} aria-label="Section" className="h-9 max-w-56 rounded-full border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground">
+          <select value={feature} onChange={(e) => setFeature(e.target.value)} aria-label="Section" className="h-9 max-w-56 rounded-md border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground">
             {["Sections", "Practice tools"].map((g) => (
               <optgroup key={g} label={g}>
                 {features
@@ -164,7 +164,7 @@ export function AccessManager({
             type="button"
             disabled={!picked.size || busy !== null}
             onClick={() => run("off", () => setFeatureFor(ids, feature, true), (n) => `${featureName.get(feature)} switched off for ${n}.`)}
-            className="inline-flex h-9 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-50"
+            className="inline-flex h-9 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-50"
           >
             <ToggleLeft className="size-4" aria-hidden /> Switch off
           </button>
@@ -172,7 +172,7 @@ export function AccessManager({
             type="button"
             disabled={!picked.size || busy !== null}
             onClick={() => run("on", () => setFeatureFor(ids, feature, false), (n) => `${featureName.get(feature)} back on for ${n}.`)}
-            className="inline-flex h-9 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold text-foreground disabled:opacity-50"
+            className="inline-flex h-9 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold text-foreground disabled:opacity-50"
           >
             <ToggleRight className="size-4" aria-hidden /> Switch on
           </button>
@@ -184,7 +184,7 @@ export function AccessManager({
               setSure(false);
             }}
             aria-label="What to start again"
-            className="h-9 max-w-60 rounded-full border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground"
+            className="h-9 max-w-60 rounded-md border-2 border-foreground bg-card px-2.5 text-sm font-bold text-foreground"
           >
             {resets.map((r) => (
               <option key={r.key} value={r.key}>
@@ -197,7 +197,7 @@ export function AccessManager({
             disabled={!picked.size || busy !== null}
             onClick={() => (sure ? run("reset", () => resetFor(ids, reset as ResetKey), (n) => `Started again for ${n}.`) : setSure(true))}
             className={cn(
-              "inline-flex h-9 items-center gap-1 rounded-full border-2 px-3.5 text-sm font-bold disabled:opacity-50",
+              "inline-flex h-9 items-center gap-1 rounded-md border-2 px-3.5 text-sm font-bold disabled:opacity-50",
               sure ? "border-destructive bg-destructive text-white" : "border-foreground bg-card text-foreground",
             )}
           >

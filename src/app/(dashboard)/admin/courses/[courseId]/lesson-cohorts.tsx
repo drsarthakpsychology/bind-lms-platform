@@ -53,7 +53,7 @@ export function LessonCohortEditor({ lessonId, lessonTitle, sharedWith, cohorts 
   return (
     <details className="group/share relative">
       <summary
-        className="inline-flex h-8 cursor-pointer list-none items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 text-xs font-bold [&::-webkit-details-marker]:hidden"
+        className="inline-flex h-8 cursor-pointer list-none items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-xs font-bold [&::-webkit-details-marker]:hidden"
         aria-label={`Change who can watch ${lessonTitle}`}
       >
         Change

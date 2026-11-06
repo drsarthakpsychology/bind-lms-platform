@@ -10,17 +10,17 @@ import { BackForward } from "@/components/navigation/back-forward";
 import { toggleSidebar } from "@/components/navigation/sidebar-state";
 import { isImmersiveSessionPath, isInnerStudentPath } from "@/components/navigation/sidebar-gate";
 import { cn } from "@/lib/utils";
+import { TOP_BAR_COUNT, TOP_BAR_ICON_BTN } from "./icon-button";
 
 function openSearch() {
   window.dispatchEvent(new CustomEvent("plms:open-search"));
 }
 
-const iconBtn =
-  "inline-flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60";
+const iconBtn = TOP_BAR_ICON_BTN;
 
 /**
  * The masthead — the layout people already know from YouTube, Gmail and
- * Drive: ☰ + logo on the left, a big search box in the middle, the bell and
+ * Drive: ☰ + logo on the left, a big search box in the middle, the inbox (admins), the bell and
  * your avatar on the right. Sticky on laptops; on phones it scrolls away so
  * the page gets the room (and on lesson pages the page's own back bar takes
  * over).
@@ -34,8 +34,11 @@ export function TopBar({
   viewModeSwitch,
   isAdminView,
   unread = 0,
+  inboxSlot,
 }: {
   unread?: number;
+  /** Admin view: the Inbox icon + count (a server island), shown next to the bell. */
+  inboxSlot?: React.ReactNode;
   homeHref: string;
   role: string;
   gateRole: string;
@@ -56,7 +59,7 @@ export function TopBar({
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-4 lg:h-16">
+      <div className="flex h-14 items-center gap-2 px-2 sm:gap-3 sm:px-4 lg:h-16">
         <button
           type="button"
           onClick={toggleSidebar}
@@ -94,15 +97,16 @@ export function TopBar({
           </kbd>
         </button>
 
-        <div className="ml-auto flex items-center gap-1 sm:gap-2 md:ml-0">
+        <div className="ml-auto flex items-center gap-0.5 sm:gap-2 md:ml-0">
           <button type="button" onClick={openSearch} aria-label="Search" className={cn(iconBtn, "md:hidden")}>
             <Search className="size-5" aria-hidden />
           </button>
           {viewModeSwitch ? <div className="hidden sm:block">{viewModeSwitch}</div> : null}
+          {inboxSlot}
           <Link href="/notifications" aria-label={unread ? `Notifications, ${unread} unread` : "Notifications"} className={cn(iconBtn, "relative")}>
             <Bell className="size-5" aria-hidden />
             {unread ? (
-              <span aria-hidden className="absolute -top-0.5 -right-0.5 grid h-5 min-w-5 place-items-center rounded-full border-2 border-background bg-destructive px-1 text-[0.65rem] font-bold leading-none text-white">
+              <span aria-hidden className={TOP_BAR_COUNT}>
                 {unread > 9 ? "9+" : unread}
               </span>
             ) : null}

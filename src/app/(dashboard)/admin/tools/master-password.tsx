@@ -88,7 +88,7 @@ export function MasterPasswordCard({
               placeholder="At least 12 characters, with a number"
               className="h-11 w-full rounded-xl border-2 border-foreground bg-card pr-11 pl-3 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
             />
-            <button type="button" onClick={() => setShow((v) => !v)} aria-label={show ? "Hide" : "Show"} className="absolute top-1/2 right-2 grid size-8 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+            <button type="button" onClick={() => setShow((v) => !v)} aria-label={show ? "Hide" : "Show"} className="absolute top-1/2 right-2 grid size-8 -translate-y-1/2 place-items-center rounded-md hover:bg-muted">
               {show ? <EyeOff className="size-4" aria-hidden /> : <Eye className="size-4" aria-hidden />}
             </button>
           </div>
@@ -116,13 +116,13 @@ export function MasterPasswordCard({
           type="button"
           onClick={save}
           disabled={busy || !pw || !again || !state.ready}
-          className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50"
+          className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50"
         >
           {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <KeyRound className="size-4" aria-hidden />}
           {state.set ? "Change key" : "Set key"}
         </button>
         {state.set ? (
-          <button type="button" onClick={() => toggle(!state.enabled)} disabled={busy} className="inline-flex h-10 items-center rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold disabled:opacity-50">
+          <button type="button" onClick={() => toggle(!state.enabled)} disabled={busy} className="inline-flex h-10 items-center rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold disabled:opacity-50">
             {state.enabled ? "Switch off" : "Switch on"}
           </button>
         ) : null}

@@ -104,6 +104,16 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     ],
   },
   {
+    // Top-bar Inbox (DI §C-6): everything waiting on a reply. On phones it is
+    // in More (the bottom bar keeps 4 tabs + More so labels stay readable at 360px).
+    key: "inbox",
+    label: "Inbox",
+    icon: "inbox",
+    href: "/admin/inbox",
+    group: "Communicate",
+    tabs: [{ href: "/admin/inbox", label: "Inbox", hidden: true }],
+  },
+  {
     key: "mail",
     label: "Messages",
     icon: "mail",

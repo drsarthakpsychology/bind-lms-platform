@@ -219,8 +219,8 @@
   --font-serif: var(--font-serif);
 
   --radius-sm: 0.25rem;
-  --radius-md: var(--radius-input); /* 6px */
-  --radius-lg: var(--radius); /* 10px */
+  --radius-md: var(--radius-input); /* 10px — controls (buttons, inputs) */
+  --radius-lg: var(--radius); /* 14px — cards, dialogs */
   --radius-xl: 0.875rem; /* 14px */
 
   /* Bottom tab bar height (mobile). The bar is min-h-14 + safe-area; surfaces
