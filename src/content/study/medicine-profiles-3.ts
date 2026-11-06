@@ -17,6 +17,10 @@ The relationship between dose and occupancy is **hyperbolic**: early dose increm
 {"kind": "dose-response", "title": "Potency, efficacy and the partial agonist ceiling", "caption": "Move the sliders. A more potent drug shifts the curve to the left (less drug needed for the same effect); a more efficacious drug raises the top of the curve. A partial agonist has a lower ceiling: in a high-dopamine state it lowers net signalling, in a low-dopamine state it raises it. Antagonists shift the agonist curve rightwards without a ceiling of their own."}
 :::
 
+:::widget receptor
+{"receptor": "D2", "title": "Why a partial agonist can occupy most receptors without parkinsonism", "caption": "Set the receptor to partial agonist and imagine 90% of receptors filled this way. Each still passes some signal, so movement circuits keep working, while the excess dopamine signal of psychosis is reduced. Compare with an antagonist at the same occupancy."}
+:::
+
 ### Exceptions that prove the rule
 - **Clozapine and quetiapine** are effective at **low D2 occupancy** (often below 60%) and with **fast dissociation** ("hit and run"), which spares movement and prolactin. Their efficacy must come partly from other targets and from the timing of binding.
 - **Partial agonists** (aripiprazole, brexpiprazole, cariprazine) occupy **90% or more** of D2 receptors at therapeutic doses without the usual parkinsonism, because each occupied receptor still transmits some signal. Their side effect is **akathisia**, not rigidity.
@@ -287,6 +291,11 @@ Psychopharmacology is moving beyond the monoamine model. At the Advanced level y
 :::
 
 ### Esketamine and ketamine
+
+:::widget journey
+{"drug": "esketamine", "target": "NMDA glutamate receptors on inhibitory interneurons in the prefrontal cortex", "routes": ["nasal", "iv"], "notes": {"nose": "The spray is absorbed through the nasal lining within minutes, skipping the gut and much of the liver's first pass. Peak levels come quickly, which is why dissociation and blood pressure rise during the session.", "target": "Blocking NMDA receptors on interneurons releases a burst of glutamate, activates AMPA receptors and triggers growth of new synaptic connections within hours."}, "caption": "Compare the nasal route of esketamine with intravenous ketamine. Both reach the brain fast; both need monitoring."}
+:::
+
 **Esketamine** (the S-enantiomer of ketamine), given as a **nasal spray** in a clinic, produces antidepressant effects within hours to days in some people with treatment-resistant depression. It blocks NMDA receptors on inhibitory interneurons, leading to a burst of glutamate, activation of AMPA receptors, release of brain-derived neurotrophic factor and rapid growth of synaptic connections. Side effects during the session: **dissociation**, dizziness, nausea, raised blood pressure. It has abuse potential and needs observation for about two hours after each dose. **Intravenous ketamine** is used off-label in some centres, including in India.
 
 ### Neurosteroids

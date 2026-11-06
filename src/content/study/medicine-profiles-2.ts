@@ -155,7 +155,16 @@ Antipsychotics all block, or partly stimulate, **dopamine D2 receptors**. The br
 {"title": "Four dopamine pathways and what D2 blockade does in each", "focus": ["basal-ganglia", "prefrontal", "hypothalamus", "amygdala"], "notes": {"amygdala": "Mesolimbic pathway (from the midbrain to the nucleus accumbens and limbic areas): overactivity is linked with hallucinations and delusions. Blocking D2 here treats positive symptoms, and can flatten reward and motivation.", "prefrontal": "Mesocortical pathway: dopamine here is thought to be low in schizophrenia, linked with negative and cognitive symptoms. Blocking D2 here may worsen them; 5-HT2A blockade may release some dopamine.", "basal-ganglia": "Nigrostriatal pathway (substantia nigra to striatum): controls movement. Blocking D2 here causes stiffness, tremor, akathisia, dystonia and, long term, tardive dyskinesia.", "hypothalamus": "Tuberoinfundibular pathway (hypothalamus to pituitary): dopamine normally stops prolactin release. Blocking D2 raises prolactin: breast changes, stopped periods, sexual problems, bone loss."}, "caption": "Tap each highlighted area. One action, D2 blockade, gives very different effects depending on where it happens."}
 :::
 
+:::widget pathways
+{"system": "dopamine", "title": "What D2 blockade does in each pathway, and what 5-HT2A blockade adds", "caption": "Turn on the D2 blocker and see the effect in each of the four pathways. Then add serotonin 2A blockade, as most second-generation drugs do, and watch which unwanted effects ease."}
+:::
+
 ### First-generation and second-generation
+
+:::widget journey
+{"drug": "paliperidone palmitate", "target": "dopamine D2 and serotonin 2A receptors in the striatum, limbic system and cortex", "routes": ["depot", "oral"], "notes": {"slow": "The palmitate ester dissolves slowly from the muscle over weeks, so one injection lasts a month (longer forms last three or six months).", "out": "Paliperidone is cleared mostly by the kidneys, so doses are reduced in kidney disease."}, "caption": "Compare the depot route with the tablet route. The depot gives steady levels without daily tablets, but side effects also fade slowly."}
+:::
+
 - **First-generation** (typical): haloperidol, chlorpromazine, fluphenazine, trifluoperazine, zuclopenthixol, flupentixol. Strong D2 blockade, more movement side effects and prolactin rise.
 - **Second-generation** (atypical): risperidone, paliperidone, olanzapine, quetiapine, aripiprazole, ziprasidone, lurasidone, amisulpride, asenapine, cariprazine, brexpiprazole, and clozapine. Most add **5-HT2A blockade** or are **partial agonists**, giving fewer movement side effects at usual doses, but some cause more **weight gain and metabolic problems**.
 
@@ -291,6 +300,11 @@ Q: Clozapine levels are typically lower in:
 "Mood stabiliser" covers medicines that treat or prevent mania and depression in bipolar disorder. They work in very different ways.
 
 ### Lithium
+
+:::widget journey
+{"drug": "lithium carbonate", "target": "enzymes inside neurons such as inositol monophosphatase and GSK-3, changing second messenger signalling", "routes": ["oral"], "notes": {"liver": "Lithium is not broken down by the liver at all. Liver enzyme interactions do not matter; kidney interactions matter a great deal.", "blood": "Lithium is not bound to proteins and spreads through body water, so dehydration concentrates it.", "out": "Removed almost entirely by the kidneys, handled like sodium. Anything that makes the kidneys hold on to salt raises the level."}, "caption": "Follow lithium's route and notice where the danger points are: the kidney, not the liver."}
+:::
+
 - **Uses**: preventing manic and depressive relapse in bipolar disorder; acute mania; augmenting antidepressants in resistant depression. **Reduces suicide** more than any other mood stabiliser.
 - **Narrow therapeutic index**: regular blood levels are essential.
 - **Long-term effects**: **kidney** (reduced concentrating ability with thirst and passing much urine; slow decline in function in some), **thyroid** (underactivity), **parathyroid** (raised calcium), weight gain, tremor, acne and psoriasis flare.
@@ -360,6 +374,11 @@ Q: Lamotrigine must be titrated slowly mainly to reduce the risk of:
 
 ## 2.6 Calming, sleep and side-effect medicines [core][beginner]
 ### Benzodiazepines
+
+:::widget receptor
+{"receptor": "GABA-A", "title": "Benzodiazepines are not agonists", "caption": "Benzodiazepines bind beside the GABA site and make GABA work better (positive allosteric modulation); on their own they open the channel very little. Use the receptor model to compare a full agonist with this kind of booster, and see why flumazenil, an antagonist at the benzodiazepine site, reverses them."}
+:::
+
 They enhance **GABA**, the brain's main calming messenger, by making the GABA-A receptor respond more strongly. They work fast for anxiety, agitation, insomnia, alcohol withdrawal, seizures and catatonia. The price: **sedation, unsteadiness, memory problems, falls**, **dependence** with regular use over more than a few weeks, **withdrawal** (including seizures) if stopped suddenly, and **dangerous breathing suppression** when combined with alcohol or opioids.
 
 :::widget flow
