@@ -48,7 +48,8 @@ const LECTURE_ONLY_TABS: Tab[] = [
 ];
 
 /**
- * Phone bottom navigation (Android/Instagram/YouTube pattern): icon over a
+ * Phone bottom navigation (<768px; tablets get the icon rail instead)
+ * (Android/Instagram/YouTube pattern): icon over a
  * short label, the active tab gets a lime pill behind its icon, and the last
  * slot is always "More" — the drawer with everything else and your account.
  * Hidden on lesson/material pages and in the patient session.
@@ -83,7 +84,7 @@ export function BottomTabBar({
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card lg:hidden"
+      className="bottom-tabs fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="Primary tabs"
     >

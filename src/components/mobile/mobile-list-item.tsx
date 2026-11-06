@@ -49,7 +49,7 @@ export function MobileListItem({
           {title}
         </span>
         {subtitle ? (
-          <span className={cn("mt-0.5 block truncate text-caption", highlight ? "text-primary-foreground" : "text-muted-foreground")}>
+          <span className={cn("mt-0.5 line-clamp-2 text-caption [overflow-wrap:anywhere]", highlight ? "text-primary-foreground" : "text-muted-foreground")}>
             {subtitle}
           </span>
         ) : null}
