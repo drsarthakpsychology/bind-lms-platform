@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
     "/tools/psychopharm/*": ["docs/psychopharm/**/*"],
     "/admin/psychopharm/editor/*": ["docs/psychopharm/**/*"],
     "/api/psychopharm/*": ["docs/psychopharm/**/*"],
+    "/study/reference": ["docs/psychopharm/**/*"],
+    "/study/reference/*": ["docs/psychopharm/**/*"],
     // The policy pages read content/policies/*.md at build/revalidate time via
     // readFileSync — trace the files so the serverless output keeps them.
     "/policies/*": ["content/policies/**/*"],

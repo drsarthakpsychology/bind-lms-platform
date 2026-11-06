@@ -10,6 +10,7 @@ import { searchPalette, type PaletteEntry } from "@/lib/search/palette";
 
 const GROUP_LABEL: Record<PaletteEntry["group"], string> = {
   Tools: "Practice tools",
+  Reference: "Quick Reference",
   Courses: "Courses",
   Cases: "Case library",
   Competencies: "Competencies",
