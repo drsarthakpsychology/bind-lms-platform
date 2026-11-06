@@ -1,10 +1,10 @@
 /**
- * Coach — the adaptive teaching engine.
+ * Coach: the adaptive teaching engine.
  *
  * Each concept has a mastery level per student (0 = new … 5 = mastered).
  * - New concepts are TAUGHT first (a teach card), then asked.
  * - The question format gets harder as mastery grows:
- *   L0–1 pick the term from its meaning → L2 pick the meaning →
+ *   L0 to 1 pick the term from its meaning → L2 pick the meaning →
  *   L3 true/false with a look-alike → L4 type the term from memory.
  * - A wrong answer drops the level, re-teaches the concept (and shows a
  *   side-by-side with whatever the student confused it with), and asks it

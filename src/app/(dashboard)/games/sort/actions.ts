@@ -8,6 +8,7 @@ import { BOARDS, boardById, type SortBoard } from "@/lib/games/sort/boards";
 import { check, cleanPicks, cleanPlacement, groupOf, MAX_TRIES, sortScore, sortXp, TILES, type Tier } from "@/lib/games/sort/engine";
 import { admin, cohortPeers, currentPlayer, isMissing } from "@/lib/games/server";
 import { secretSeed } from "@/lib/games/token";
+import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
 
 export type SortReveal = {
   solved: boolean;
@@ -36,7 +37,18 @@ export type SortView = {
 };
 
 export type CheckResult =
-  | { ok: true; groupsDone: boolean[]; oneAway: number[]; thresholdWrong: number[]; triesUsed: number; done: SortReveal | null; xp: number; cohort: SortView["cohort"] }
+  | {
+      ok: true;
+      groupsDone: boolean[];
+      oneAway: number[];
+      thresholdWrong: number[];
+      triesUsed: number;
+      done: SortReveal | null;
+      xp: number;
+      /** True when the XP went into the server ledger (a solved board), so the browser must not add it again. */
+      xpSaved: boolean;
+      cohort: SortView["cohort"];
+    }
   | { ok: false; error: string };
 
 const TABLE = "sort_results";
@@ -172,5 +184,7 @@ export async function checkSort(input: { mode: "daily" | "practice"; tier: Tier;
   });
   const thresholdWrong = tier === "advanced" ? [0, 1, 2, 3].filter((g) => right[g] === 4 && answers[g] !== null && c.thresholds[g] !== true) : [];
   const cohort = over && mode === "daily" && stored ? await cohortFor(me.id, day, b, tier) : null;
-  return { ok: true, groupsDone: c.groupsDone, oneAway: c.oneAway, thresholdWrong, triesUsed: tries, done: over ? reveal(b, perm, c.solved, score) : null, xp, cohort };
+  // A solved board pays into the ledger, once per board, tier and day.
+  const xpSaved = c.solved && xp > 0 ? (await awardXp(me.id, XP_SOURCES.sortSolved, xp, `${mode}:${day}:${b.id}:${tier}`)).ok : false;
+  return { ok: true, groupsDone: c.groupsDone, oneAway: c.oneAway, thresholdWrong, triesUsed: tries, done: over ? reveal(b, perm, c.solved, score) : null, xp, xpSaved, cohort };
 }

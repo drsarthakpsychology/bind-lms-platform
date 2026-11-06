@@ -136,7 +136,7 @@ export const ANXIETY: Unit = {
           ["Negative mood/cognition", "\"It was my fault\", feeling cut off"],
           ["Arousal", "Jumpy, poor sleep, irritable"],
         ], "Four groups: re-living, avoiding, darker thinking, on edge.",
-          "DSM-5-TR PTSD criteria B–E; trauma-focused CBT and EMDR are first-line psychological treatments."),
+          "DSM-5-TR PTSD criteria B to E; trauma-focused CBT and EMDR are first-line psychological treatments."),
         tf("ax13", "Symptoms beginning within 3 months of a stressor, out of proportion and impairing, but not meeting another disorder, suggest adjustment disorder.", true,
           "A big reaction to a life event, starting within 3 months.",
           "Adjustment disorder: onset within 3 months of an identifiable stressor; resolves within 6 months once the stressor or its consequences end."),

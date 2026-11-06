@@ -200,7 +200,7 @@ export type PracticeRecord = { id: string; score: number; difficulty: number };
 
 /**
  * Adaptive practice: aim for the level where the player solves most cases but
- * not all (about 70–85 %). Up a level after strong recent scores, down after
+ * not all (about 70 to 85 %). Up a level after strong recent scores, down after
  * weak ones. Never today's daily case; unseen cases first.
  */
 export function targetDifficulty(history: PracticeRecord[]): 1 | 2 | 3 {
