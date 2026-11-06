@@ -55,6 +55,42 @@ Five operations × four contents × six products = **120 abilities**. Later he s
 ### Vernon's hierarchical model (1950)
 Philip Vernon arranged abilities in levels: **g** at the top; two **major group factors**, **v:ed** (verbal-educational) and **k:m** (practical-mechanical-spatial); then **minor group factors**; then **specific factors**. This reconciled Spearman and Thurstone.
 
+:::widget flow
+{
+ "title": "Vernon's hierarchy",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "g",
+   "label": "g (general ability)"
+  },
+  {
+   "id": "v",
+   "label": "v:ed (verbal-educational)",
+   "parent": "g",
+   "detail": "Verbal, numerical and educational abilities."
+  },
+  {
+   "id": "k",
+   "label": "k:m (practical-mechanical-spatial)",
+   "parent": "g",
+   "detail": "Spatial, mechanical and practical abilities."
+  },
+  {
+   "id": "v1",
+   "label": "Minor groups: verbal, number",
+   "parent": "v"
+  },
+  {
+   "id": "k1",
+   "label": "Minor groups: spatial, mechanical, psychomotor",
+   "parent": "k"
+  }
+ ],
+ "caption": "Specific factors sit below the minor groups. Vernon showed that Spearman and Thurstone were describing different levels of one structure."
+}
+:::
+
 ### Cattell and Horn: fluid and crystallised intelligence
 Raymond Cattell (1941, 1963) split g into two:
 - **Fluid intelligence (Gf)**: reasoning about novel problems, independent of learned knowledge (matrices, series, analogies with unfamiliar material). It rises through childhood, **peaks in early adulthood** and declines gradually after.
@@ -81,6 +117,28 @@ John Carroll reanalysed more than 460 data sets collected over 60 years and foun
 - **Stratum III**: g.
 - **Stratum II**: about eight **broad abilities** (fluid intelligence, crystallised intelligence, general memory and learning, broad visual perception, broad auditory perception, broad retrieval ability, broad cognitive speediness, and decision or reaction speed).
 - **Stratum I**: about 70 **narrow abilities**.
+:::widget layers
+{
+ "title": "Carroll's three strata",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Stratum III: g",
+   "detail": "One general ability shared by all tests."
+  },
+  {
+   "label": "Stratum II: about eight broad abilities",
+   "detail": "Fluid and crystallised intelligence, memory and learning, visual and auditory perception, retrieval, cognitive speed and decision speed."
+  },
+  {
+   "label": "Stratum I: about 70 narrow abilities",
+   "detail": "For example induction, vocabulary, memory span, spatial relations and perceptual speed."
+  }
+ ],
+ "caption": "Tap each level. Modern tests report scores at all three."
+}
+:::
+
 Kevin McGrew merged Cattell-Horn and Carroll into the **Cattell-Horn-Carroll (CHC) theory**, now the most widely used framework for building and interpreting tests (Woodcock-Johnson, Stanford-Binet 5, Kaufman tests, and the index structure of the Wechsler scales).
 
 :::recall
@@ -111,7 +169,7 @@ Q: In Guilford's model, generating many different solutions to an open problem i
 From the 1980s, new theories drew on neuropsychology, development and culture, not only on factor analysis.
 
 ### Gardner's multiple intelligences (1983)
-Howard Gardner (*Frames of Mind*) proposed separate **intelligences**, each meeting criteria such as: it can be **isolated by brain damage**; it shows in **savants and prodigies**; it has a distinct **developmental history** and **core operations**; it has an **evolutionary history**; and it can be encoded in a **symbol system**.
+Howard Gardner (1983) proposed separate **intelligences**, each meeting criteria such as: it can be **isolated by brain damage**; it shows in **savants and prodigies**; it has a distinct **developmental history** and **core operations**; it has an **evolutionary history**; and it can be encoded in a **symbol system**.
 | Intelligence | Example |
 |---|---|
 | **Linguistic** | A poet, a lawyer arguing in court |
@@ -124,7 +182,7 @@ Howard Gardner (*Frames of Mind*) proposed separate **intelligences**, each meet
 | **Naturalistic** (added 1999) | A farmer who reads soil and weather, a botanist |
 He has discussed **existential** intelligence (big questions of life and death) as a possible "half" intelligence.
 
-**Evaluation**: hugely popular in schools, and it widens what counts as talent. But most "intelligences" correlate with g when measured (Visser and colleagues, 2006), Gardner offered no standard tests, and some are arguably **talents** rather than intelligences. Its spin-off, teaching to "learning styles", has no supporting evidence.
+**Evaluation**: hugely popular in schools, and it widens what counts as talent. But most "intelligences" correlate with g when measured, Gardner offered no standard tests, and some are arguably **talents** rather than intelligences. Its spin-off, teaching to "learning styles", has no supporting evidence.
 
 ### Sternberg's triarchic theory (1985) and successful intelligence
 Robert Sternberg proposed three aspects:
@@ -132,6 +190,38 @@ Robert Sternberg proposed three aspects:
 2. **Creative (experiential)**: dealing with **novelty** and **automatising** familiar tasks.
 3. **Practical (contextual)**: **adapting** to the environment, **shaping** it, or **selecting** a new one. It includes **tacit knowledge**, the know-how that is rarely taught.
 He later framed **successful intelligence** as the ability to achieve your goals in life, within your sociocultural context, by balancing the three.
+
+:::widget flow
+{
+ "title": "Sternberg's triarchic theory",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Successful intelligence"
+  },
+  {
+   "id": "a",
+   "label": "Analytical (componential)",
+   "parent": "s",
+   "detail": "Metacomponents plan and monitor; performance components carry out steps; knowledge-acquisition components learn."
+  },
+  {
+   "id": "c",
+   "label": "Creative (experiential)",
+   "parent": "s",
+   "detail": "Handling novelty and automatising the familiar."
+  },
+  {
+   "id": "p",
+   "label": "Practical (contextual)",
+   "parent": "s",
+   "detail": "Adapting to, shaping or selecting environments, using tacit knowledge."
+  }
+ ],
+ "caption": "Tap each branch, then predict the Kenyan study below."
+}
+:::
 
 :::widget reveal
 {
@@ -148,6 +238,27 @@ He later framed **successful intelligence** as the ability to achieve your goals
 | **Attention-arousal** | Staying alert and focusing selectively, resisting distraction | First unit: **brainstem and reticular system** (with frontal links) |
 | **Simultaneous processing** | Integrating separate pieces into a **whole** at once: seeing patterns, understanding relationships ("Who is taller: Ram or Shyam?") | Second unit: **occipital-parietal** regions |
 | **Successive processing** | Handling information in a **serial order**: sequences, remembering digits, following sounds in a word | Second unit: **fronto-temporal** regions |
+
+:::widget brainmap
+{
+ "title": "PASS processes and Luria's three units",
+ "focus": [
+  "brainstem",
+  "occipital",
+  "parietal",
+  "temporal",
+  "prefrontal"
+ ],
+ "notes": {
+  "brainstem": "First unit, with the reticular system: attention-arousal.",
+  "occipital": "Second unit: simultaneous processing, together with the parietal lobe.",
+  "parietal": "Second unit: simultaneous processing, integrating parts into wholes.",
+  "temporal": "Second unit: successive processing, keeping information in serial order (with frontal regions).",
+  "prefrontal": "Third unit: planning, strategy and self-monitoring."
+ },
+ "caption": "Tap each region to link it to a PASS process."
+}
+:::
 
 The **Cognitive Assessment System** (CAS, Naglieri and Das, 1997; CAS2, 2014) measures the four processes. PASS profiles help explain learning difficulties: many children with reading disability show weak **successive** processing (sounding out words in order), and the **PASS Reading Enhancement Programme (PREP)** trains these processes. PASS claims smaller differences between ethnic groups than traditional IQ tests, because it relies less on acquired knowledge.
 
@@ -169,7 +280,7 @@ The **Cognitive Assessment System** (CAS, Naglieri and Das, 1997; CAS2, 2014) me
 ### Emotional intelligence
 - E. L. Thorndike's **social intelligence** (1920) was the forerunner.
 - **Peter Salovey and John Mayer** (1990) defined emotional intelligence (EI) as an ability. Their **four-branch model** (1997): **perceiving** emotions, **using** emotions to help thinking, **understanding** emotions, and **managing** emotions. Measured as an ability by the **MSCEIT**, with right and wrong answers.
-- **Daniel Goleman's** best-seller *Emotional Intelligence* (1995) popularised a **mixed model** including self-awareness, self-regulation, motivation, empathy and social skills.
+- **Daniel Goleman's** best-selling 1995 book popularised a **mixed model** including self-awareness, self-regulation, motivation, empathy and social skills.
 - **Trait EI** (K. V. Petrides) treats EI as self-perceived emotional dispositions, measured by questionnaire.
 **Evaluation**: ability EI predicts some social and work outcomes beyond IQ and personality, but modestly; mixed and trait models overlap heavily with personality traits (especially emotional stability and agreeableness). Popular claims that "EQ matters more than IQ" are not supported by the evidence.
 
@@ -201,7 +312,7 @@ Q: Sternberg's componential subtheory includes which three kinds of component?
 ### The main tests
 | Test | Key features |
 |---|---|
-| **Stanford-Binet** (5th edition, 2003) | Ages 2 to 85-plus; five factors (fluid reasoning, knowledge, quantitative reasoning, visual-spatial processing, working memory), each verbal and non-verbal; mean 100, SD 15 |
+| **Stanford-Binet** (current version, 2003) | Ages 2 to 85-plus; five factors (fluid reasoning, knowledge, quantitative reasoning, visual-spatial processing, working memory), each verbal and non-verbal; mean 100, SD 15 |
 | **Wechsler scales** (WAIS-IV for adults, WISC-V for children, WPPSI-IV for young children) | Full-scale IQ plus index scores (verbal comprehension, visual-spatial, fluid reasoning, working memory, processing speed in WISC-V); mean 100, SD 15; subtest scaled scores mean 10, SD 3 |
 | **Raven's Progressive Matrices** (Standard, Coloured, Advanced) | Non-verbal, highly g-loaded; less dependent on language; used widely in India |
 | **Kaufman Assessment Battery for Children (KABC-II)** | Built on Luria and CHC models; sequential and simultaneous processing |
@@ -231,6 +342,41 @@ Older systems, still used in many Indian certificates and exam questions (ICD-10
 | **Severe** | 20 to 34 | Needs extensive support; limited speech |
 | **Profound** | below 20 | Needs constant care; often with physical disabilities |
 
+:::widget flow
+{
+ "title": "Deciding on intellectual disability",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "sc",
+   "label": "Rule out other causes",
+   "detail": "Hearing, vision, language of testing, missed schooling, emotional problems."
+  },
+  {
+   "id": "iq",
+   "label": "Intellectual functioning",
+   "detail": "Clinical assessment plus an individual standardised test with appropriate norms; about two standard deviations below the mean."
+  },
+  {
+   "id": "ad",
+   "label": "Adaptive functioning",
+   "detail": "Conceptual, social and practical skills, measured with a scale such as the Vineland and information from family and school."
+  },
+  {
+   "id": "on",
+   "label": "Onset in childhood",
+   "detail": "Delays present during the developmental period."
+  },
+  {
+   "id": "sv",
+   "label": "Severity",
+   "detail": "Set by adaptive functioning: mild, moderate, severe or profound."
+  }
+ ],
+ "caption": "Every step is needed. An IQ score alone never makes the diagnosis."
+}
+:::
+
 :::widget build
 {
   "vignette": "Arjun, 9, from a village near Nashik, is in Class 3 and cannot yet read simple words or add two-digit numbers. On an individually given test with Indian norms his IQ is 62. He dresses and bathes himself, but cannot buy things at the shop or travel alone to school as his younger cousin does. His mother says he was late to walk and talk. He has attended school regularly, speaks Marathi at home and was tested in Marathi.",
@@ -249,7 +395,7 @@ Older systems, still used in many Indian certificates and exam questions (ICD-10
 :::
 
 ### Giftedness
-- **Lewis Terman's** *Genetic Studies of Genius* (from 1921) followed over 1,500 California children with IQs of about 135 and above (later nicknamed "Termites"). As adults they were, on average, healthier, better adjusted and more successful than the general population, which countered the myth of the fragile genius. Yet none won a Nobel Prize, while two children who **narrowly missed** the cut-off did (William Shockley and Luis Alvarez).
+- **Lewis Terman's** long-term study of gifted children (from 1921) followed over 1,500 California children with IQs of about 135 and above (later nicknamed "Termites"). As adults they were, on average, healthier, better adjusted and more successful than the general population, which countered the myth of the fragile genius. Yet none won a Nobel Prize, while two children who **narrowly missed** the cut-off did (William Shockley and Luis Alvarez).
 - **Joseph Renzulli's three-ring model** (1978): giftedness lies where **above-average ability**, **creativity** and **task commitment** overlap.
 - **Françoys Gagné** separates **gifts** (natural abilities) from **talents** (developed skills), with environment, motivation and chance turning one into the other.
 - **Twice-exceptional** children are gifted and also have a disability (for example, autism or a specific learning disorder); one can mask the other.
@@ -273,11 +419,41 @@ Q: Which Indian test is an adaptation of the Wechsler Intelligence Scale for Chi
 
 ## 3.4 Creativity: process, person and product [core][beginner]
 ### The creative process: Wallas's four stages (1926)
-Graham Wallas (*The Art of Thought*), drawing on the mathematician Henri Poincaré's account of discovering a solution as he stepped onto a bus, described:
+Graham Wallas, drawing on the mathematician Henri Poincaré's account of discovering a solution as he stepped onto a bus, described:
 1. **Preparation**: defining the problem and working hard on it, gathering knowledge.
 2. **Incubation**: setting the problem aside; processing continues outside awareness.
 3. **Illumination**: the sudden "aha" (Wallas noted a brief **intimation** that it is coming).
 4. **Verification**: checking, testing and refining the idea.
+
+:::widget flow
+{
+ "title": "Wallas's four stages of creative thought",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "p",
+   "label": "Preparation",
+   "detail": "Hard, conscious work: defining the problem and gathering knowledge."
+  },
+  {
+   "id": "i",
+   "label": "Incubation",
+   "detail": "Setting it aside; misleading approaches fade and processing continues."
+  },
+  {
+   "id": "il",
+   "label": "Illumination",
+   "detail": "The sudden insight, often preceded by a feeling it is coming."
+  },
+  {
+   "id": "v",
+   "label": "Verification",
+   "detail": "Testing, checking and refining the idea."
+  }
+ ],
+ "caption": "Real creative work loops back through these stages many times."
+}
+:::
 
 :::example Ramanujan and illumination
 Srinivasa Ramanujan said that formulae came to him in dreams, given by the goddess Namagiri of Namakkal. Psychologists read such accounts as illumination after years of intense **preparation**: he had filled notebooks with calculations since his teens. The stages describe an experience; they do not mean ideas arrive without work.
@@ -289,7 +465,7 @@ Srinivasa Ramanujan said that formulae came to him in dreams, given by the godde
   - **Flexibility**: the number of different categories of idea.
   - **Originality**: how statistically rare the ideas are.
   - **Elaboration**: the amount of detail.
-- **The Torrance Tests of Creative Thinking** (TTCT, E. Paul Torrance, 1966): verbal and figural forms (for example, completing incomplete figures and making pictures from circles), scored for fluency, flexibility, originality and elaboration, and in later editions **abstractness of titles** and **resistance to premature closure**. Torrance's long follow-ups found that childhood TTCT scores predicted adult creative achievement.
+- **The Torrance Tests of Creative Thinking** (TTCT, E. Paul Torrance, 1966): verbal and figural forms (for example, completing incomplete figures and making pictures from circles), scored for fluency, flexibility, originality and elaboration, and in later versions **abstractness of titles** and **resistance to premature closure**. Torrance's long follow-ups found that childhood TTCT scores predicted adult creative achievement.
 - **Mednick's Remote Associates Test** (1962): find the word linking three others (cottage, Swiss, cake: **cheese**).
 - **The consensual assessment technique** (Teresa Amabile): experts independently rate the creativity of real products (poems, collages); their agreement is high.
 - **Indian tests**: **Baqer Mehdi's** Verbal and Non-verbal Tests of Creative Thinking (1973) and **B. K. Passi's** Tests of Creativity are widely used in Indian educational research.
@@ -316,6 +492,32 @@ Srinivasa Ramanujan said that formulae came to him in dreams, given by the godde
 | **Investment theory** (Robert Sternberg and Todd Lubart, 1991) | Creative people **"buy low and sell high"**: they pursue unpopular ideas with potential, then move on once the ideas are accepted. Six resources: intellectual abilities, knowledge, thinking styles, personality, motivation, environment |
 | **Systems model** (Mihaly Csikszentmihalyi, 1988) | Creativity arises from the interaction of the **individual**, the **domain** (the body of knowledge and rules) and the **field** (the gatekeepers who decide what counts as creative) |
 | **Four C model** (James Kaufman and Ronald Beghetto, 2009) | **Mini-c** (personal insight while learning), **little-c** (everyday creativity), **Pro-c** (professional creativity) and **Big-C** (eminent, field-changing creativity) |
+
+:::widget layers
+{
+ "title": "The four Cs of creativity",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Big-C",
+   "detail": "Eminent, field-changing creativity: Ramanujan's mathematics, Tagore's poetry."
+  },
+  {
+   "label": "Pro-c",
+   "detail": "Professional creativity from years of expertise: an architect, a researcher, a composer."
+  },
+  {
+   "label": "Little-c",
+   "detail": "Everyday creativity: a new recipe, a clever way to arrange a small flat."
+  },
+  {
+   "label": "Mini-c",
+   "detail": "Personal insights while learning: suddenly understanding why d′ and the criterion are separate."
+  }
+ ],
+ "caption": "Most creativity lives at the base, and all of it counts."
+}
+:::
 
 :::widget reveal
 {

@@ -26,6 +26,36 @@ Robert Rescorla and Allan Wagner turned "surprise drives learning" into an equat
 - **ΣV**: the **total** strength of **all** CSs present on the trial: what the animal already expects.
 - **(λ − ΣV)** is the **prediction error**: the difference between what happened and what was expected.
 
+:::widget flow
+{
+ "title": "Learning driven by surprise",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "ex",
+   "label": "Expectation",
+   "detail": "The total associative strength of the cues present (sum of V): what the animal predicts."
+  },
+  {
+   "id": "ou",
+   "label": "Outcome",
+   "detail": "What actually happens (lambda): food, shock, or nothing."
+  },
+  {
+   "id": "er",
+   "label": "Prediction error",
+   "detail": "Outcome minus expectation. Positive: better or bigger than expected. Negative: worse than expected. Zero: nothing to learn."
+  },
+  {
+   "id": "up",
+   "label": "Update",
+   "detail": "Each cue's strength changes in proportion to the error and to its salience. Then the next trial begins."
+  }
+ ],
+ "caption": "The same loop describes dopamine neurons, as you will see in 4.2."
+}
+:::
+
 :::widget worked
 {
   "title": "Running the Rescorla-Wagner model",
@@ -41,7 +71,7 @@ Robert Rescorla and Allan Wagner turned "surprise drives learning" into an equat
 }
 :::
 
-**What it explains**: acquisition curves, extinction, blocking, overshadowing, contingency effects and conditioned inhibition. **What it fails to explain**: latent inhibition (a stimulus with V = 0 and no UCS should learn nothing, so pre-exposure should not matter), spontaneous recovery and renewal (it treats extinction as unlearning), and some effects of compound stimuli. Attention-based models (Mackintosh, 1975; Pearce and Hall, 1980) let the salience of a CS change with experience to fill these gaps.
+**What it explains**: acquisition curves, extinction, blocking, overshadowing, contingency effects and conditioned inhibition. **What it fails to explain**: latent inhibition (a stimulus with V = 0 and no UCS should learn nothing, so pre-exposure should not matter), spontaneous recovery and renewal (it treats extinction as unlearning), and some effects of compound stimuli. Attention-based models from Nicholas Mackintosh and from John Pearce and Geoffrey Hall let the salience of a CS change with experience to fill these gaps.
 
 ### Biological preparedness and taste aversion
 John Garcia and Robert Koelling (1966) let rats drink "bright, noisy, tasty" water: water flavoured with saccharin, delivered with a click and a flash of light when the rat licked. Some rats were then made ill by X-rays or a drug; others received foot shock.
@@ -128,6 +158,46 @@ Add **Thorndike** (connectionism, trial and error), **Skinner** (radical behavio
 ### Long-term potentiation
 Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampus with a brief high-frequency burst and found that the synapses then responded more strongly for hours to days: **long-term potentiation (LTP)**. The key is the **NMDA glutamate receptor**, which opens only when two things happen together: glutamate binds **and** the receiving cell is already depolarised (removing a magnesium block). It is a molecular **coincidence detector**, exactly the Hebbian rule. Richard Morris showed that rats given a drug blocking NMDA receptors (AP5) could not learn the hidden platform's location in a **water maze**.
 
+:::widget flow
+{
+ "title": "How long-term potentiation strengthens a synapse",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "g",
+   "label": "Glutamate released",
+   "detail": "A burst of activity in the sending neuron releases glutamate."
+  },
+  {
+   "id": "am",
+   "label": "AMPA receptors open",
+   "detail": "Sodium enters and the receiving cell depolarises."
+  },
+  {
+   "id": "mg",
+   "label": "Magnesium block lifts",
+   "detail": "Only when the cell is already depolarised does magnesium leave the NMDA channel."
+  },
+  {
+   "id": "nm",
+   "label": "NMDA receptors open",
+   "detail": "With glutamate bound and the block removed, calcium flows in. Two conditions at once: a coincidence detector."
+  },
+  {
+   "id": "ca",
+   "label": "Calcium signals",
+   "detail": "Enzymes are activated and more AMPA receptors are inserted into the membrane."
+  },
+  {
+   "id": "st",
+   "label": "Stronger synapse",
+   "detail": "The same input now produces a bigger response. Late LTP needs new protein synthesis and can last for weeks."
+  }
+ ],
+ "caption": "Hebb's rule in molecules: cells that fire together wire together."
+}
+:::
+
 ### Different circuits for different learning
 | Learning | Key structure |
 |---|---|
@@ -136,6 +206,27 @@ Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampu
 | Habits and stimulus-response learning | **Basal ganglia** (striatum) |
 | Spatial and episodic memory; trace conditioning | **Hippocampus** |
 | Reward learning and prediction error | **Dopamine** neurons of the ventral tegmental area and substantia nigra |
+
+:::widget brainmap
+{
+ "title": "Different circuits for different learning",
+ "focus": [
+  "cerebellum",
+  "amygdala",
+  "basal-ganglia",
+  "hippocampus",
+  "brainstem"
+ ],
+ "notes": {
+  "cerebellum": "Delay eyeblink conditioning and the timing of learned movements.",
+  "amygdala": "Conditioned fear.",
+  "basal-ganglia": "Habits and stimulus-response learning.",
+  "hippocampus": "Spatial learning, episodic memory and trace conditioning.",
+  "brainstem": "The midbrain dopamine neurons (ventral tegmental area and substantia nigra) that signal reward prediction error."
+ },
+ "caption": "Tap each region."
+}
+:::
 
 ### Dopamine and prediction error
 Wolfram Schultz recorded dopamine neurons in monkeys (Schultz, Dayan and Montague, 1997). Before learning, they fired when juice arrived **unexpectedly**. After a light reliably predicted juice, they fired to the **light** and **not** to the juice. If the predicted juice was then **withheld**, their firing **dipped** below baseline at the moment it should have come. Dopamine signals **reward prediction error**, the λ − ΣV of the Rescorla-Wagner model, written in neurons.
@@ -153,7 +244,7 @@ Wolfram Schultz recorded dopamine neurons in monkeys (Schultz, Dayan and Montagu
 :::
 
 :::clinician
-Prediction-error accounts now organise several clinical ideas. Addictive drugs increase dopamine directly, producing a non-diminishing error signal that drives cue learning (Redish, 2004). Aberrant salience in psychosis is modelled as dysregulated, context-inappropriate dopamine prediction errors. Anhedonia in depression has been linked to blunted reward prediction error signals in the ventral striatum, though findings are mixed. In Parkinson's disease, dopamine depletion impairs learning from positive feedback, while dopaminergic medication can impair learning from negative feedback (Frank and colleagues, 2004), offering one explanation for medication-related impulse-control disorders.
+Prediction-error accounts now organise several clinical ideas. Addictive drugs increase dopamine directly, producing a non-diminishing error signal that drives cue learning. Aberrant salience in psychosis is modelled as dysregulated, context-inappropriate dopamine prediction errors. Anhedonia in depression has been linked to blunted reward prediction error signals in the ventral striatum, though findings are mixed. In Parkinson's disease, dopamine depletion impairs learning from positive feedback, while dopaminergic medication can impair learning from negative feedback, offering one explanation for medication-related impulse-control disorders.
 :::
 
 :::recall
@@ -182,7 +273,7 @@ Q: Dopamine neurons fire to a cue but not to a fully predicted reward. This matc
 
 ## 4.3 Memory as reconstruction: schemas, eyewitnesses and false memory [core][advanced]
 ### Bartlett: remembering is rebuilding
-Frederic Bartlett (*Remembering*, 1932) asked Cambridge students to read a Native American folk tale, **"The War of the Ghosts"**, and retell it repeatedly over months (**repeated reproduction**) or pass it from person to person (**serial reproduction**). The stories became:
+Frederic Bartlett, in work published in 1932, asked Cambridge students to read a Native American folk tale, **"The War of the Ghosts"**, and retell it repeatedly over months (**repeated reproduction**) or pass it from person to person (**serial reproduction**). The stories became:
 - **Shorter**, with odd details dropped.
 - **Rationalised**: puzzling supernatural parts explained or omitted.
 - **Familiarised**: canoes became boats; seal hunting became fishing.
@@ -207,7 +298,7 @@ Elizabeth Loftus and John Palmer (1974) showed students films of car accidents a
 The **misinformation effect**: information given after an event becomes part of the memory of it. Factors that affect eyewitness accuracy:
 - **Weapon focus**: a visible weapon draws attention from the face (Loftus, Loftus and Messo, 1987).
 - **Stress**: very high stress generally impairs face identification, though some central details can be well remembered.
-- **Own-race (cross-race) bias**: people identify faces of their own group more accurately (a robust meta-analytic finding, Meissner and Brigham, 2001).
+- **Own-race (cross-race) bias**: people identify faces of their own group more accurately (a robust finding across many studies).
 - **Confidence**: confidence at the **initial**, fair identification is fairly informative; confidence that grows later, after feedback ("Good, you picked our suspect"), is not.
 - **Line-up procedures**: double-blind administration, fair fillers, a warning that the culprit may not be present, and recording confidence immediately all reduce errors.
 
@@ -272,6 +363,25 @@ In 1953, William Scoville removed most of the medial temporal lobes on both side
 - **Intact short-term memory** (normal digit span), intelligence and personality.
 - **Intact procedural learning**: in **mirror drawing** (Milner, 1962), he improved over days while having no memory of having practised. Priming was also preserved.
 H. M. showed that the hippocampus and nearby cortex are needed to **form** lasting declarative memories, but not to store old ones or to learn skills.
+
+:::widget brainmap
+{
+ "title": "Where damage causes amnesia",
+ "focus": [
+  "hippocampus",
+  "thalamus",
+  "hypothalamus",
+  "prefrontal"
+ ],
+ "notes": {
+  "hippocampus": "Medial temporal lobe: H. M. after surgery, Clive Wearing after encephalitis, early Alzheimer's disease.",
+  "thalamus": "Medial thalamus: damaged in Korsakoff syndrome and some strokes.",
+  "hypothalamus": "The mammillary bodies on its underside: shrunken in Korsakoff syndrome.",
+  "prefrontal": "Frontal damage adds confabulation, poor source memory and disorganised retrieval."
+ },
+ "caption": "Tap each region to link it to the amnesias in the table below."
+}
+:::
 
 ### Consolidation and reconsolidation
 - **Systems consolidation**: over months to years, memories become less dependent on the hippocampus and more on the neocortex (the standard model), which explains temporally graded retrograde amnesia. **Multiple trace theory** (Nadel and Moscovitch) argues that vivid episodic detail always needs the hippocampus.
@@ -397,6 +507,41 @@ Michelle Craske and colleagues reframed exposure therapy using extinction resear
 }
 :::
 
+:::widget flow
+{
+ "title": "How memory keeps depression going",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "lm",
+   "label": "Low mood",
+   "detail": "Sadness, tiredness, hopelessness."
+  },
+  {
+   "id": "mc",
+   "label": "Mood-congruent recall",
+   "detail": "Sad memories come to mind more easily; happy ones feel distant."
+  },
+  {
+   "id": "og",
+   "label": "Overgeneral memories",
+   "detail": "Memories are general summaries ('I always fail') rather than specific events, which makes problem solving harder."
+  },
+  {
+   "id": "ru",
+   "label": "Rumination",
+   "detail": "Abstract 'why me?' thinking keeps rehearsing the negative material."
+  },
+  {
+   "id": "dm",
+   "label": "Deeper low mood",
+   "detail": "The cycle tightens."
+  }
+ ],
+ "caption": "Behavioural activation, memory specificity training and work on rumination each break the loop at a different point."
+}
+:::
+
 ### Memory effects of treatments
 - **ECT**: temporary confusion after each session; **anterograde** difficulties that usually recover within weeks of the course ending; some **retrograde** loss for events around the treatment period, which can be lasting. Right unilateral, brief or ultrabrief pulse ECT reduces these effects.
 - **Benzodiazepines and alcohol**: anterograde amnesia ("blackouts"); benzodiazepines impair new learning, which may interfere with exposure therapy.
@@ -437,7 +582,302 @@ Q: A patient scores poorly on free recall of a word list, but recognises almost 
 
 # Part V · Exam zone
 
-## 5.1 Long answers and short notes [core]
+## 5.1 Q&A bank · Starting [starting]
+Think each question through, then open the answer and compare.
+
+:::qa What is the difference between classical and operant conditioning? [starting]
+### Short answer
+In classical conditioning, a learner links two **stimuli**, so a signal comes to trigger a response. In operant conditioning, a learner links a **behaviour** with its **consequence**, so the behaviour becomes more or less likely.
+
+| | Classical | Operant |
+|---|---|---|
+| What is linked | Stimulus and stimulus (bell and food) | Behaviour and consequence (lever press and food) |
+| Learner's role | Passive: the events happen whatever it does | Active: what happens depends on what it does |
+| Responses involved | Mostly reflexive and emotional (salivation, fear, nausea) | Mostly voluntary (pressing, studying, asking) |
+| Key names | Pavlov, Watson | Thorndike, Skinner |
+| Everyday example | Feeling anxious at the smell of a hospital | Studying harder after praise for good marks |
+
+### They often work together
+A child bitten by a dog learns to fear dogs (classical) and then avoids them because avoiding brings relief (operant). This combination is Mowrer's two-factor theory.
+:::
+
+:::qa Explain positive reinforcement, negative reinforcement, positive punishment and negative punishment with one example each. [starting]
+### Short answer
+Reinforcement always **increases** a behaviour; punishment always **decreases** it. "Positive" means something is **added**; "negative" means something is **removed**.
+
+| | Something added | Something removed |
+|---|---|---|
+| Behaviour increases | **Positive reinforcement**: a child gets a sticker for reading, and reads more | **Negative reinforcement**: you take an antacid, the burning stops, and you take it sooner next time |
+| Behaviour decreases | **Positive punishment**: a driver is fined for speeding and slows down | **Negative punishment**: a teenager loses phone time for lying and lies less |
+
+### The common mistake
+Negative reinforcement is not punishment. If the behaviour goes **up**, it is reinforcement, whatever was added or taken away.
+:::
+
+:::qa Why is extinction not the same as forgetting? [starting]
+### Short answer
+Extinction is **new learning** that the signal no longer predicts the outcome. The original learning is still there, suppressed, and can return.
+
+### Evidence
+1. **Spontaneous recovery**: after a rest, the extinguished response comes back.
+2. Faster relearning when the pairing is restored.
+3. At the Beginner level you will meet renewal and reinstatement, which show the same thing.
+
+### Why it matters
+A fear that seems "cured" by exposure can come back in a new place or after a scare. Relapse prevention plans for this rather than treating it as failure.
+:::
+
+:::qa Describe the three stages of memory processing and how failure at each looks in daily life. [starting]
+### Short answer
+Memory involves **encoding** (getting information in), **storage** (keeping it) and **retrieval** (getting it out). Forgetting can happen at any stage.
+
+| Stage | What it means | Everyday failure |
+|---|---|---|
+| Encoding | Turning information into a usable form | You never really heard the name of the person introduced at a wedding, because you were looking at the food |
+| Storage | Keeping it over time | Details of last year's lecture have faded or been overwritten by newer material |
+| Retrieval | Bringing it back when needed | A name is "on the tip of your tongue"; it comes back later when a cue appears |
+
+### Study tip
+Better encoding (meaning, examples, self-testing) and better retrieval cues (practising in exam-like conditions) prevent most exam-day forgetting.
+:::
+
+:::qa Why does self-testing work better than rereading? [starting]
+### Short answer
+Retrieving information strengthens the memory and shows you what you really know. Rereading only makes material feel familiar.
+
+### What happens
+- **Retrieval strengthens traces**: each successful recall makes the next one easier (the testing effect).
+- **Rereading builds fluency**, a feeling of ease that is mistaken for learning.
+- **Testing reveals gaps**, so you know what to study next.
+
+### The evidence
+Students who reread a passage did slightly better five minutes later, but students who tested themselves recalled about half as much again a week later, even though they felt less confident.
+
+### How to use it
+Close the book and write what you remember, answer questions a day later, use flashcards, and spread these sessions over days.
+:::
+
+## 5.2 Q&A bank · Beginner [beginner]
+Answers here assume the Beginner sections. Write your own outline first.
+
+:::qa Explain the four basic schedules of reinforcement with their response patterns and examples. Why is the variable-ratio schedule so powerful? [beginner]
+### Short answer
+Ratio schedules reward after a number of responses; interval schedules reward the first response after a time. Each can be fixed or variable, giving four schedules with distinct patterns.
+
+| Schedule | Rule | Pattern | Example |
+|---|---|---|---|
+| Fixed ratio | Every nth response | High rate, pause after each reward | Piece-rate stitching paid per 50 shirts |
+| Variable ratio | After an unpredictable number | Highest, steady, no pauses | Lottery, betting apps, refreshing a feed |
+| Fixed interval | First response after a fixed time | Scallop: slow, then faster near the time | Studying just before fixed exams |
+| Variable interval | First response after an unpredictable time | Moderate, steady | Checking for a reply message |
+
+### Why variable ratio is powerful
+1. Faster responding brings rewards sooner, so rates are high.
+2. The next reward might always be one response away, so there is no reason to pause.
+3. Long runs without reward are normal, so extinction is hard to detect: the strongest partial reinforcement extinction effect.
+4. This is why gambling and some app designs are so persistent.
+:::
+
+:::qa Explain Mowrer's two-factor theory and its importance for understanding phobias and OCD. [beginner]
+### Short answer
+Fear is first learned by **classical conditioning**; then avoiding the feared cue is maintained by **negative reinforcement** (relief). Because avoidance prevents exposure, the fear never extinguishes.
+
+### The two factors
+1. **Classical**: a cue (a dog, a lift, contamination) is paired with fear or harm.
+2. **Operant**: avoidance or rituals remove the anxiety, so they are reinforced.
+
+### Applied to disorders
+| Disorder | Feared cue | Avoidance or ritual |
+|---|---|---|
+| Specific phobia | Dogs, heights, injections | Avoiding the situation |
+| Panic disorder | Body sensations, crowded places | Avoiding exertion, carrying safety items |
+| OCD | Contamination, intrusive thoughts | Washing, checking, seeking reassurance |
+
+### Treatment that follows
+Exposure (and in OCD, exposure with response prevention) blocks the avoidance so the person can learn the feared outcome does not occur.
+
+### Critique
+Many people with phobias recall no conditioning event; preparedness and observational and informational learning (seeing or being told about danger) also create fears.
+:::
+
+:::qa Evaluate Bandura's Bobo doll studies. What did they show, and what are their limitations? [beginner]
+### Short answer
+They showed that children learn new aggressive acts simply by watching a model, and that seeing consequences affects whether they perform, rather than whether they learn.
+
+### Findings
+1. Children who watched an adult attack a Bobo doll copied specific, novel acts; those who saw a calm model rarely did.
+2. Filmed and cartoon models also produced imitation.
+3. When the model was punished, children copied less, but when offered rewards, all groups copied equally: the **learning-performance distinction**.
+
+### Strengths
+- Controlled experiments with clear behavioural measures.
+- Challenged the idea that all learning needs direct reinforcement.
+- Led to social cognitive theory and self-efficacy.
+
+### Limitations
+- Hitting a doll designed to be hit may not be real aggression.
+- Short-term effects only; artificial setting; possible demand characteristics.
+- Ethical concerns about teaching young children aggression.
+
+### Applications
+Media influence, parenting, modelling in therapy (participant modelling), and Indian entertainment-education serials that model healthy behaviour.
+:::
+
+:::qa Compare the multi-store model and the working memory model of memory. [beginner]
+### Short answer
+The multi-store model describes a sequence of three stores. The working memory model replaces the single short-term store with several interacting parts that hold and manipulate information while we think.
+
+| | Multi-store (Atkinson and Shiffrin) | Working memory (Baddeley and Hitch) |
+|---|---|---|
+| Short-term memory | One store, about seven items | Several parts: central executive, phonological loop, visuospatial sketchpad, episodic buffer |
+| Main function | A waiting room on the way to long-term memory | A mental workspace for reasoning, reading and calculating |
+| Key evidence | Serial position curve; H. M. and K. F.; coding differences | Dual-task studies; word length effect; articulatory suppression |
+| Weakness | Too simple; overstates the role of rehearsal | The central executive is vaguely defined |
+
+### Why working memory is preferred today
+- K. F. had poor verbal short-term memory but normal visual memory, which one store cannot explain.
+- Two tasks interfere only if they use the same component (two verbal tasks interfere; a verbal and a spatial task interfere less).
+:::
+
+:::qa What are proactive and retroactive interference? Describe the evidence and practical implications. [beginner]
+### Short answer
+Proactive interference is old learning disrupting new learning; retroactive interference is new learning disrupting old learning. Both are greatest when the materials are similar.
+
+### Evidence
+- **Underwood**: the more lists people had learned before, the more they forgot a new list.
+- **Keppel and Underwood**: in short-term memory tasks, little forgetting on the first trial, more on later trials, pointing to proactive interference rather than decay.
+- **Jenkins and Dallenbach**: recall was better after sleep than after the same time awake, so what happens in the interval matters.
+
+### Practical implications
+| Situation | Advice |
+|---|---|
+| Revising similar topics (two theories of attention) | Study them apart in time, but test them together to learn the differences |
+| Learning look-alike drug names | Use distinctive cues and contrast tables |
+| After learning, before an exam | Sleep, and avoid cramming similar new material |
+:::
+
+## 5.3 Q&A bank · Advanced [advanced]
+These are the long, analytical questions asked in NET Paper 2, clinical entrances and MA examinations.
+
+:::qa Explain the Rescorla-Wagner model. What does it explain, and where does it fail? [advanced]
+### Short answer
+The model says learning on each trial is proportional to the **prediction error**, the difference between what happens and what was expected: change in V equals alpha times beta times (lambda minus the sum of V).
+
+### The terms
+- **V**: associative strength of a cue.
+- **Alpha, beta**: salience of the cue and of the outcome.
+- **Lambda**: the most strength the outcome can support (zero when no outcome).
+- **Sum of V**: the total expectation from all cues present.
+
+### What it explains
+| Finding | Explanation |
+|---|---|
+| Negatively accelerated learning curve | Errors shrink as V approaches lambda |
+| Extinction | Lambda is zero, so the error is negative |
+| Blocking | A pretrained cue already predicts the outcome, so the error for the new cue is zero |
+| Overshadowing | Salient cues take more of the shared error |
+| Contingency effects | Unsignalled outcomes condition the context, reducing the cue's error |
+
+### Where it fails
+1. **Latent inhibition**: pre-exposure should do nothing (V stays zero), yet it slows learning.
+2. **Spontaneous recovery and renewal**: extinction is treated as unlearning, but the original learning survives.
+3. Some compound-cue effects.
+Attention-based models (Mackintosh; Pearce and Hall) let salience change with experience to address these.
+
+### Why it still matters
+Its prediction error is the same signal carried by midbrain dopamine neurons, and it underlies reinforcement-learning models in computational psychiatry.
+:::
+
+:::qa "Memory is reconstructive." Discuss with reference to schemas, eyewitness testimony and false memories. [advanced]
+### Short answer
+Memory stores a gist and rebuilds details at retrieval, using schemas and post-event information. This makes memory efficient but open to systematic distortion.
+
+### Schemas
+Bartlett's participants retelling "The War of the Ghosts" shortened, rationalised and familiarised it to fit their own cultural schemas.
+
+### Eyewitness testimony
+- Loftus and Palmer: the verb "smashed" raised speed estimates and led to false reports of broken glass a week later (the misinformation effect).
+- Weapon focus, high stress, own-race bias and suggestive line-ups reduce accuracy.
+- The cognitive interview (report everything, reinstate context, change order, change perspective) increases correct recall.
+- In Indian practice, courts give less weight to identification parades if the witness saw the accused beforehand.
+
+### False memories
+- Lost-in-the-mall: about a quarter came to remember a false childhood event.
+- Doctored photographs: about half "remembered" a balloon ride.
+- DRM lists: confident recall of an unheard lure word.
+
+### Evaluation
+Real-life witnesses can be accurate and resist misleading questions; the key risk is suggestion, delay and repeated questioning. Confidence is a poor guide to accuracy except at a first, fair identification.
+
+### Clinical implication
+Therapists must avoid suggestive techniques (hypnosis, guided imagery) for "recovering" memories.
+:::
+
+:::qa Describe H. M.'s case and its contribution to our understanding of memory. [advanced]
+### Short answer
+After removal of both medial temporal lobes in 1953, H. M. could not form new declarative memories, yet kept his short-term memory, older memories, intelligence and skill learning. His case showed that memory is not one thing and that the hippocampal region is essential for forming new lasting memories.
+
+### His profile
+| Function | Status |
+|---|---|
+| New episodic and semantic memories | Severely impaired (anterograde amnesia) |
+| Memories from years before surgery | Partly lost (temporally graded retrograde amnesia) |
+| Older memories | Largely preserved |
+| Short-term memory (digit span) | Normal |
+| Skill learning (mirror drawing) | Improved over days without memory of practice |
+| Priming | Preserved |
+
+### Contributions
+1. Memory can be separated from intelligence and perception.
+2. Short-term and long-term memory are separable systems (with K. F., a double dissociation).
+3. Declarative and procedural memory depend on different brain systems.
+4. Old memories become less dependent on the hippocampus over time (systems consolidation).
+:::
+
+:::qa How does learning theory explain addiction, and what treatments follow from it? [advanced]
+### Short answer
+Drugs are powerful reinforcers; drug cues become conditioned triggers for craving and for tolerance; and dopamine prediction-error signals that drugs cannot "predict away" strengthen cue learning. Treatments target each mechanism.
+
+### Mechanisms
+1. **Positive reinforcement**: the high.
+2. **Negative reinforcement**: relief from withdrawal and from distress.
+3. **Classical conditioning**: places, people and paraphernalia trigger craving.
+4. **Conditioned tolerance**: cues trigger compensatory responses; in Siegel's rats, a high dose in an unfamiliar setting was about twice as likely to be fatal.
+5. **Matching and choice**: drug use rises when other rewards are scarce or delayed; steep delay discounting.
+6. **Dopamine**: drug-induced surges act as persistent positive prediction errors.
+
+### Treatments
+| Mechanism | Treatment |
+|---|---|
+| Reinforcement | Contingency management: vouchers for verified abstinence |
+| Lack of alternative rewards | Community reinforcement approach; work and family involvement |
+| Cue-triggered craving | Cue exposure, coping skills, avoiding high-risk situations early |
+| Context-specific tolerance | Harm-reduction advice about new settings and after breaks |
+| Relapse | Marlatt's relapse prevention, building self-efficacy |
+:::
+
+:::qa How can memory be assessed in a clinical setting? How would you interpret a pattern of poor recall but good recognition? [advanced]
+### Short answer
+Memory is assessed with bedside screens, structured scales and neuropsychological tests that separate learning, retention and retrieval. Poor recall with good recognition suggests information is stored but hard to retrieve.
+
+### Tools
+- **Bedside**: orientation; registration and delayed recall of words (MMSE, MoCA, ACE-III); remote memory questions.
+- **Scales**: Wechsler Memory Scale; PGI Memory Scale (ten subtests, widely used in India).
+- **Tests**: Rey Auditory Verbal Learning Test (learning curve over trials, delayed recall, recognition); Rey Complex Figure (visual memory); both in Indian batteries.
+
+### Interpreting patterns
+| Pattern | Likely problem | Typical conditions |
+|---|---|---|
+| Flat learning curve across trials | Encoding or attention | Depression, ADHD, frontal problems |
+| Good learning, rapid loss on delay | Storage (consolidation) | Hippocampal damage, Alzheimer's disease |
+| Poor recall, good recognition | Retrieval | Subcortical conditions (Parkinson's, vascular), depression |
+| Inconsistent, implausible scores | Effort or validity issue | Needs performance-validity testing |
+
+### Indian considerations
+Use familiar words, the person's language and appropriate education-adjusted norms; low literacy can be mistaken for impairment.
+:::
+
+## 5.4 Long answers and short notes [core]
 :::example Q1. Describe classical conditioning and its major phenomena. Discuss contemporary views with reference to Rescorla-Wagner and biological preparedness. (15 marks)
 1. Definition; Pavlov's method; the five terms (draw the before, during and after diagram).
 2. Phenomena: acquisition, temporal arrangements, extinction, spontaneous recovery, renewal, generalisation, discrimination, higher-order conditioning, sensory preconditioning.
@@ -481,7 +921,7 @@ LTP is a long-lasting increase in synaptic strength after brief high-frequency s
 Tulving and Thomson (1973) proposed that a retrieval cue is effective to the extent that it matches information encoded with the item. Evidence: cued recall far exceeds free recall (Tulving and Pearlstone); context-dependent memory in divers (Godden and Baddeley, about 40 percent better in matching settings); state-dependent memory with alcohol; mood-congruent recall. Applications: the cognitive interview's context reinstatement; revising in exam-like conditions or varying study settings.
 :::
 
-## 5.2 Viva rapid-fire [core]
+## 5.5 Viva rapid-fire [core]
 :::viva
 Define learning. :: A relatively permanent change in behaviour or its potential due to experience.
 Who discovered classical conditioning? :: Ivan Pavlov.
@@ -536,7 +976,7 @@ Ribot's law? :: Recent memories are more vulnerable than older ones.
 Indian memory scale with ten subtests? :: PGI Memory Scale.
 :::
 
-## 5.3 Module test [core]
+## 5.6 Module test [core]
 Answer every question before checking. Your best score is saved.
 
 :::mcq

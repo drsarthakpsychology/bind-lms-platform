@@ -10,6 +10,50 @@ Light, sound waves, molecules in the air and pressure on the skin are just **phy
 
 Each sense has its own **receptors**, its own nerve route and its own patch of cortex. This is why a blow to the eye makes you "see stars": the visual system reports every signal as light, however it was triggered. Johannes Müller called this the **law of specific nerve energies** (1830s).
 
+:::widget flow
+{
+ "title": "From a mango on the table to 'a ripe mango'",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "e",
+   "label": "Physical energy",
+   "detail": "Light of particular wavelengths bounces off the mango and enters the eye."
+  },
+  {
+   "id": "r",
+   "label": "Receptors",
+   "detail": "Cones in the retina absorb the light. Each kind of receptor is tuned to one kind of energy."
+  },
+  {
+   "id": "t",
+   "label": "Transduction",
+   "detail": "The receptor turns light into a change in electrical charge, then into nerve impulses."
+  },
+  {
+   "id": "n",
+   "label": "Nerve pathway",
+   "detail": "Impulses travel along the optic nerve. Every sense except smell relays through the thalamus."
+  },
+  {
+   "id": "c",
+   "label": "Sensory cortex",
+   "detail": "The visual cortex in the occipital lobe analyses edges, colour, shape and movement."
+  },
+  {
+   "id": "p",
+   "label": "Perception",
+   "detail": "Knowledge joins in: you recognise a ripe Alphonso mango, and perhaps feel like eating it. Everything up to the cortex is sensation; this last step is perception."
+  }
+ ],
+ "edgeLabels": {
+  "t>n": "nerve impulses",
+  "n>c": "via the thalamus"
+ },
+ "caption": "Tap each step. Sensation covers the first five; perception is the meaning the brain adds."
+}
+:::
+
 ### Bottom-up and top-down
 - **Bottom-up processing** starts with the raw input and builds upwards: edges, then shapes, then objects.
 - **Top-down processing** starts with what you already know and expect, and uses it to read the input.
@@ -41,6 +85,25 @@ Receptors respond less to a stimulus that does not change. Walk into a fish mark
 }
 :::
 
+:::widget brainmap
+{
+ "title": "Where each sense arrives in the cortex",
+ "focus": [
+  "occipital",
+  "temporal",
+  "sensory",
+  "thalamus"
+ ],
+ "notes": {
+  "occipital": "Vision: the primary visual cortex at the back of the brain.",
+  "temporal": "Hearing: the auditory cortex on the upper surface of the temporal lobe. Smell and taste areas sit nearby, deeper in.",
+  "sensory": "Touch, temperature, pain and body position: the somatosensory strip just behind the central groove.",
+  "thalamus": "The relay station: every sense except smell passes through it on the way to the cortex."
+ },
+ "caption": "Tap a highlighted region to see which sense it receives."
+}
+:::
+
 :::trap Adaptation is not habituation
 **Sensory adaptation** happens in the receptors and early pathways: the signal itself weakens. **Habituation** is learning: the brain decides a stimulus is unimportant and stops responding, even though the signal still arrives. A sudden change (the fan stops) breaks habituation at once.
 :::
@@ -66,12 +129,12 @@ Q: A pharmacist correctly reads an almost illegible prescription because she kno
 :::
 
 ## 1.2 Thresholds: how little can you notice? [core][starting]
-Psychophysics is the study of how physical stimulus strength relates to what we experience. It began with Gustav Fechner, who published *Elements of Psychophysics* in 1860, and it is the oldest experimental part of psychology.
+Psychophysics is the study of how physical stimulus strength relates to what we experience. It began with Gustav Fechner, whose book on psychophysics appeared in 1860, and it is the oldest experimental part of psychology.
 
 ### The absolute threshold
 The **absolute threshold** is the smallest amount of a stimulus that a person can detect. Because detection is never all-or-none, it is defined statistically: the intensity detected on **50 percent** of trials.
 
-Classic estimates for a healthy adult in ideal conditions (Galanter, 1962):
+Classic textbook estimates for a healthy adult in ideal conditions:
 | Sense | Approximate absolute threshold |
 |---|---|
 | Vision | A candle flame seen at a great distance on a dark, clear night |
@@ -88,7 +151,7 @@ Classic estimates for a healthy adult in ideal conditions (Galanter, 1962):
   "unit": "km",
   "answer": [40, 55],
   "reveal": "About 48 km (30 miles). The eye, fully dark-adapted, can respond to a handful of photons. Real life, with haze, city lights and an eye that is not dark-adapted, is far less generous.",
-  "clinician": "Galanter's (1962) figure of about 30 miles is a textbook illustration rather than a field measurement. Hecht, Shlaer and Pirenne (1942) showed that a dark-adapted observer can detect a flash when roughly 5 to 14 photons are absorbed by rods, with a single rod able to respond to a single photon."
+  "clinician": "The figure of about 30 miles is a teaching illustration rather than a field measurement. Classic photon-counting experiments in the 1940s showed that a dark-adapted observer can detect a flash when roughly 5 to 14 photons are absorbed by rods, with a single rod able to respond to a single photon."
 }
 :::
 
@@ -120,7 +183,7 @@ A stimulus is **subliminal** when it is below the absolute threshold for conscio
 1. How is the absolute threshold defined? || The minimum intensity detected on 50 percent of trials.
 2. What is a just noticeable difference? || The smallest change in a stimulus detected on 50 percent of trials.
 3. State Weber's law in plain words. || The just noticeable difference is a constant fraction of the starting stimulus.
-4. Who founded psychophysics, and in what book? || Gustav Fechner, Elements of Psychophysics, 1860.
+4. Who founded psychophysics, and when? || Gustav Fechner, in 1860.
 :::
 
 :::mcq
@@ -160,13 +223,13 @@ Attention is not a camera. What falls outside it can go completely unseen.
 
 :::widget guess
 {
-  "prompt": "In a famous study (Simons and Chabris, 1999), viewers counted basketball passes in a short video. Halfway through, a person in a gorilla suit walked through the game, faced the camera and thumped its chest. What percentage of viewers failed to notice the gorilla?",
+  "prompt": "In a famous study (Daniel Simons and Christopher Chabris's 1999 study), viewers counted basketball passes in a short video. Halfway through, a person in a gorilla suit walked through the game, faced the camera and thumped its chest. What percentage of viewers failed to notice the gorilla?",
   "min": 0,
   "max": 100,
   "unit": "%",
   "answer": [40, 60],
   "reveal": "About half. Attention to the counting task left nothing for the unexpected gorilla, even though it was on screen for several seconds. The harder the counting task, the more people missed it.",
-  "clinician": "Across conditions, roughly 46 percent failed to notice; failure was higher when the task was harder and when the gorilla's colour differed from the attended team. The finding generalises to expert observers: in Drew, Võ and Wolfe (2013), 20 of 24 radiologists missed a gorilla image inserted into a lung CT while searching for nodules."
+  "clinician": "Across conditions, roughly 46 percent failed to notice; failure was higher when the task was harder and when the gorilla's colour differed from the attended team. The finding generalises to expert observers: in a 2013 study, 20 of 24 radiologists missed a gorilla image inserted into a lung CT while searching for nodules."
 }
 :::
 
@@ -176,7 +239,7 @@ Attention is not a camera. What falls outside it can go completely unseen.
   "ask": "What does attention research say?",
   "choices": [
     { "label": "He is right: the danger comes only from holding the phone", "verdict": "harm", "outcome": "He keeps taking long calls in traffic and misses a red light at a junction.", "why": "Studies with driving simulators found hands-free and handheld conversations impaired driving about equally. The problem is attention, not hands." },
-    { "label": "A conversation takes attention away from the road, even hands-free; short, essential calls only, ideally when stopped", "verdict": "best", "outcome": "He starts letting calls go to voicemail while moving.", "why": "Phone conversation draws on limited central attention. Drivers on calls miss more signals and react more slowly, with or without hands-free (Strayer and Johnston, 2001)." },
+    { "label": "A conversation takes attention away from the road, even hands-free; short, essential calls only, ideally when stopped", "verdict": "best", "outcome": "He starts letting calls go to voicemail while moving.", "why": "Phone conversation draws on limited central attention. Drivers on calls miss more signals and react more slowly, with or without hands-free (David Strayer's simulator studies)." },
     { "label": "Talking to a passenger is just as dangerous, so it makes no difference", "verdict": "ok", "outcome": "Partly true, but it misses a key point.", "why": "Passengers see the road and tend to stop talking when traffic gets difficult. A caller cannot, so phone talk is usually more disruptive." }
   ]
 }
@@ -240,7 +303,7 @@ An **illusion** is a perception that does not match the physical stimulus. Illus
 
 :::widget reveal
 {
-  "prompt": "Two lines of equal length: one ends in arrowheads pointing in (>—<), the other in arrowheads pointing out (<—>). Which looks longer, and why might that be?",
+  "prompt": "Two lines are exactly the same length. One has short fins at each end that point back over the line, like arrowheads. The other has fins that point away from the line, like a forked tail. Which looks longer, and why might that be?",
   "answer": "The line with the fins pointing outwards looks longer. This is the Müller-Lyer illusion (1889). One explanation is that we read the fins as the corners of a room (far away) or of a building (near), and apply size constancy, so the 'far' line is scaled up. You will test this idea against cross-cultural evidence at the Advanced level."
 }
 :::

@@ -5,6 +5,40 @@ export const part3 = String.raw`
 ## 3.1 The multi-store model and its evidence [core][beginner]
 Richard Atkinson and Richard Shiffrin (1968) described memory as a flow through three stores, steered by **control processes** such as attention, rehearsal and coding. Each store has its own **duration**, **capacity** and **coding**.
 
+:::widget flow
+{
+ "title": "The multi-store model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "in",
+   "label": "Environmental input",
+   "detail": "Sights, sounds, touches arriving at the senses."
+  },
+  {
+   "id": "sm",
+   "label": "Sensory memory",
+   "detail": "Large capacity; iconic memory lasts under a second, echoic memory a few seconds. Unattended information fades."
+  },
+  {
+   "id": "stm",
+   "label": "Short-term memory",
+   "detail": "About seven items, or about four chunks; 15 to 30 seconds without rehearsal; mostly acoustic coding."
+  },
+  {
+   "id": "ltm",
+   "label": "Long-term memory",
+   "detail": "Effectively unlimited; minutes to a lifetime; mostly semantic coding. Information is retrieved back into short-term memory when used."
+  }
+ ],
+ "edgeLabels": {
+  "sm>stm": "attention",
+  "stm>ltm": "rehearsal"
+ },
+ "caption": "Tap each store for its duration, capacity and coding. The evidence and the critiques follow."
+}
+:::
+
 ### Sensory memory
 George Sperling (1960) flashed a grid of 12 letters (three rows of four) for 50 milliseconds.
 - In **whole report** ("say all you saw"), people reported only about 4 or 5 letters, yet insisted they had seen more that faded as they spoke.
@@ -100,6 +134,28 @@ Instead of stores, Fergus Craik and Robert Lockhart proposed that memory depends
 - **Intermediate (phonemic)**: what it sounds like ("Does it rhyme with *weight*?").
 - **Deep (semantic)**: what it means ("Does it fit the sentence 'He met a ___ in the street'?").
 
+:::widget layers
+{
+ "title": "Levels of processing",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Semantic (deep)",
+   "detail": "What does it mean? Does it fit the sentence? Best remembered, especially when elaborated or linked to yourself."
+  },
+  {
+   "label": "Phonemic (intermediate)",
+   "detail": "What does it sound like? Does it rhyme with 'weight'? Remembered moderately."
+  },
+  {
+   "label": "Structural (shallow)",
+   "detail": "What does it look like? Is it in capital letters? Remembered least."
+  }
+ ],
+ "caption": "Deeper processing at encoding gives a more durable trace, unless the test itself asks about sound or appearance."
+}
+:::
+
 Craik and Tulving (1975) asked such questions about words, then gave a surprise recognition test.
 
 :::widget reveal
@@ -122,6 +178,39 @@ Alan Baddeley and Graham Hitch replaced the single short-term store with a **wor
 | **Visuospatial sketchpad** | Holds visual and spatial information: a **visual cache** and an **inner scribe** (Logie) | Spatial tasks interfere with each other, but not with verbal tasks |
 | **Episodic buffer** (added 2000) | A limited store that binds information from the other parts and from long-term memory into integrated episodes | Explains recall of prose far beyond the loop's capacity, and links to conscious awareness |
 
+:::widget flow
+{
+ "title": "Baddeley's working memory",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "ce",
+   "label": "Central executive",
+   "detail": "Directs attention, switches tasks and coordinates the other parts. It stores nothing itself."
+  },
+  {
+   "id": "pl",
+   "label": "Phonological loop",
+   "parent": "ce",
+   "detail": "A sound store (inner ear) plus an articulatory rehearsal process (inner voice), holding about two seconds of speech."
+  },
+  {
+   "id": "vs",
+   "label": "Visuospatial sketchpad",
+   "parent": "ce",
+   "detail": "A visual cache for what things look like and an inner scribe for where they are and how they move."
+  },
+  {
+   "id": "eb",
+   "label": "Episodic buffer",
+   "parent": "ce",
+   "detail": "Added in 2000. Binds information from the other parts and from long-term memory into single episodes."
+  }
+ ],
+ "caption": "Tap each part, then try the guess below."
+}
+:::
+
 :::widget guess
 {
   "prompt": "Baddeley and colleagues (1975) found that people can hold about as many words as they can say aloud in a certain amount of time. Roughly how many seconds of speech does the phonological loop hold?",
@@ -141,7 +230,7 @@ Alan Baddeley and Graham Hitch replaced the single short-term store with a **wor
   "choices": [
     { "label": "She may have low verbal working memory capacity: instructions overflow her phonological loop and central executive before she can act on them", "verdict": "best", "outcome": "An assessment confirms a weak verbal span. Teachers give one step at a time, write instructions on the board, and use visual checklists. Her 'carelessness' drops.", "why": "Difficulty holding and using information over seconds, with normal reading, is a typical working-memory profile. Reducing the load is the evidence-based support; 'brain training' games do not reliably transfer to school tasks." },
     { "label": "She is lazy and needs to be punished for not listening", "verdict": "harm", "outcome": "She becomes anxious in class, which further reduces her working memory.", "why": "Anxiety uses up working-memory resources. Punishing a capacity problem makes it worse." },
-    { "label": "Enrol her in a commercial computerised 'working memory training' programme", "verdict": "ok", "outcome": "Her scores on the training games improve, but classroom performance does not change.", "why": "Meta-analyses show near-transfer to similar tasks but little far-transfer to reading, arithmetic or attention in class (Melby-Lervåg and Hulme, 2013)." }
+    { "label": "Enrol her in a commercial computerised 'working memory training' programme", "verdict": "ok", "outcome": "Her scores on the training games improve, but classroom performance does not change.", "why": "Meta-analyses show near-transfer to similar tasks but little far-transfer to reading, arithmetic or attention in class (a 2013 meta-analysis)." }
   ]
 }
 :::
@@ -181,6 +270,62 @@ Q: Which finding most directly challenges a strict levels-of-processing account?
 | **Implicit**: classical conditioning | Learned emotional and reflex responses | Anxiety at the dentist's drill | Amygdala (emotion), cerebellum (reflexes) |
 | **Implicit**: non-associative | Habituation and sensitisation | Ignoring the ceiling fan | Reflex pathways |
 
+:::widget flow
+{
+ "title": "Kinds of long-term memory",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "ltm",
+   "label": "Long-term memory"
+  },
+  {
+   "id": "ex",
+   "label": "Explicit (declarative)",
+   "parent": "ltm",
+   "detail": "Consciously recalled. Depends on the medial temporal lobe."
+  },
+  {
+   "id": "im",
+   "label": "Implicit (non-declarative)",
+   "parent": "ltm",
+   "detail": "Shown in performance, without awareness of remembering."
+  },
+  {
+   "id": "ep",
+   "label": "Episodic",
+   "parent": "ex",
+   "detail": "Events in time and place."
+  },
+  {
+   "id": "se",
+   "label": "Semantic",
+   "parent": "ex",
+   "detail": "Facts and general knowledge."
+  },
+  {
+   "id": "pr",
+   "label": "Procedural",
+   "parent": "im",
+   "detail": "Skills and habits: basal ganglia and cerebellum."
+  },
+  {
+   "id": "pm",
+   "label": "Priming",
+   "parent": "im",
+   "detail": "Easier processing of something met before: neocortex."
+  },
+  {
+   "id": "cc",
+   "label": "Conditioning",
+   "parent": "im",
+   "detail": "Emotional responses (amygdala) and reflexes (cerebellum)."
+  }
+ ],
+ "caption": "Squire's map of memory systems. H. M. lost the left branch for new learning but kept the right."
+}
+:::
+
 Endel Tulving (1972) drew the **episodic-semantic** distinction; Larry Squire's taxonomy (declarative versus non-declarative) is the standard map. **Explicit memory** involves conscious recollection; **implicit memory** shows itself in performance without awareness of remembering.
 
 :::widget sort
@@ -196,6 +341,29 @@ Endel Tulving (1972) drew the **episodic-semantic** distinction; Larry Squire's 
     { "text": "Knowing that a sitar has sympathetic strings", "bucket": 1 },
     { "text": "Touch-typing a message on your phone", "bucket": 2 }
   ]
+}
+:::
+
+:::widget brainmap
+{
+ "title": "Memory systems in the brain",
+ "focus": [
+  "hippocampus",
+  "prefrontal",
+  "basal-ganglia",
+  "cerebellum",
+  "amygdala",
+  "temporal"
+ ],
+ "notes": {
+  "hippocampus": "Forms new episodic and semantic memories and binds their parts together.",
+  "prefrontal": "Working memory, strategic encoding and searching memory at retrieval.",
+  "basal-ganglia": "Habits and procedural skills.",
+  "cerebellum": "Timing of skilled movements and conditioned reflexes such as the eyeblink.",
+  "amygdala": "Emotional learning and the boost that emotion gives to memory.",
+  "temporal": "Long-term storage of facts and meanings in the lateral and front parts of the lobe."
+ },
+ "caption": "Tap each region to see its role."
 }
 :::
 
@@ -253,6 +421,50 @@ Q: Students who learn in a classroom recall more when tested in the same classro
 
 ## 3.4 Why we forget [core][beginner]
 Forgetting is not one process. Psychologists have proposed five main explanations.
+
+:::widget flow
+{
+ "title": "Five explanations of forgetting",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "f",
+   "label": "Why do we forget?"
+  },
+  {
+   "id": "d",
+   "label": "Trace decay",
+   "parent": "f",
+   "detail": "Traces fade with disuse. Hard to test because time is never empty."
+  },
+  {
+   "id": "i",
+   "label": "Interference",
+   "parent": "f",
+   "detail": "Proactive (old disrupts new) and retroactive (new disrupts old); worst for similar material."
+  },
+  {
+   "id": "r",
+   "label": "Retrieval failure",
+   "parent": "f",
+   "detail": "The memory is stored but the right cue is missing."
+  },
+  {
+   "id": "m",
+   "label": "Motivated forgetting",
+   "parent": "f",
+   "detail": "Repression, suppression, directed forgetting."
+  },
+  {
+   "id": "c",
+   "label": "Consolidation failure",
+   "parent": "f",
+   "detail": "New traces disrupted before they stabilise: head injury, seizures, ECT, alcohol."
+  }
+ ],
+ "caption": "Tap each branch, then read the evidence for each below."
+}
+:::
 
 ### 1. Trace decay
 Memory traces fade with time if not used. It is hard to test, because time is always filled with other events. **Jenkins and Dallenbach (1924)** found that two students who slept after learning nonsense syllables remembered more than when they stayed awake for the same interval: what happens during the time matters, not just time itself. Sleep also helps **consolidation**, as we now know.

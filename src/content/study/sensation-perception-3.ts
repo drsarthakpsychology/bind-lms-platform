@@ -56,18 +56,70 @@ Many writers reconcile them with Milner and Goodale's distinction: the **dorsal 
 ### Neisser's perceptual cycle (1976)
 Ulric Neisser combined both: **schemata** (expectations) direct exploration; exploration samples the world; the sample modifies the schemata, and the cycle continues. Perception is neither purely bottom-up nor purely top-down, but an ongoing loop.
 
+:::widget flow
+{
+ "title": "Neisser's perceptual cycle",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "sch",
+   "label": "Schema",
+   "detail": "Your expectation about what is there (for example, 'a friend is waiting at the bus stand')."
+  },
+  {
+   "id": "exp",
+   "label": "Exploration",
+   "detail": "The schema directs where you look and listen."
+  },
+  {
+   "id": "obj",
+   "label": "The world sampled",
+   "detail": "You pick up real information from the scene."
+  },
+  {
+   "id": "mod",
+   "label": "Schema modified",
+   "detail": "What you found confirms or changes the expectation, and the cycle continues."
+  }
+ ],
+ "caption": "Top-down and bottom-up are not rivals here: they take turns in a loop."
+}
+:::
+
 ### Marr's computational approach (1982)
 David Marr asked what the visual system computes, step by step:
 1. **Primal sketch**: edges, bars, blobs and their arrangement (a 2D description).
 2. **Two-and-a-half-D sketch**: depth and orientation of visible surfaces relative to the viewer.
 3. **3D model representation**: an object-centred description that is the same from any viewpoint.
+:::widget layers
+{
+ "title": "Marr's stages of visual representation",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "3D model representation",
+   "detail": "Object-centred: the shape described in its own terms, the same from any viewpoint. Needed for recognition."
+  },
+  {
+   "label": "Two-and-a-half-D sketch",
+   "detail": "Viewer-centred: the depth and orientation of the visible surfaces, from your point of view."
+  },
+  {
+   "label": "Primal sketch",
+   "detail": "A 2D description of edges, bars, blobs and their grouping, computed from changes in light intensity."
+  }
+ ],
+ "caption": "Read from the bottom up: each level is built from the one beneath it."
+}
+:::
+
 He also separated three **levels of explanation** for any information-processing system: computational (what problem is solved and why), algorithmic (what steps), and implementational (what hardware). This framework is still used across cognitive science.
 
 ### The modern synthesis: the predictive brain
 Current theories (**predictive processing**, the "Bayesian brain") treat the brain as constantly **predicting** its sensory input from a model of the world, and passing forward only the **prediction error**, the part that was not expected. Perception is the brain's best explanation of the input, weighing prior beliefs against how reliable the evidence is. This is Helmholtz and Gregory made mathematical, but it also takes Gibson's point that the moving observer constantly samples the world.
 
 :::clinician
-Predictive processing offers testable accounts of psychopathology. In psychosis, one account proposes aberrant precision-weighting: prediction errors are given too much weight, so trivial events feel significant (aberrant salience, Kapur 2003) and new beliefs (delusions) form to explain them; hallucinations may reflect overly strong priors in some people. Consistent with weaker top-down influence, people with schizophrenia are less susceptible to the hollow-face illusion and to some context-driven illusions (for example Ebbinghaus), yet their performance can be "better" than controls on such tasks. In autism, "weak priors" or inflexible precision accounts aim to explain sensory overload and reduced susceptibility to some illusions. These are frameworks under active test, not established mechanisms.
+Predictive processing offers testable accounts of psychopathology. In psychosis, one account proposes aberrant precision-weighting: prediction errors are given too much weight, so trivial events feel significant (Shitij Kapur's idea of aberrant salience) and new beliefs (delusions) form to explain them; hallucinations may reflect overly strong priors in some people. Consistent with weaker top-down influence, people with schizophrenia are less susceptible to the hollow-face illusion and to some context-driven illusions (for example Ebbinghaus), yet their performance can be "better" than controls on such tasks. In autism, "weak priors" or inflexible precision accounts aim to explain sensory overload and reduced susceptibility to some illusions. These are frameworks under active test, not established mechanisms.
 :::
 
 :::recall
@@ -152,7 +204,7 @@ In the late 1940s, Jerome Bruner and colleagues argued that needs and values sha
 The modern descendants of the New Look are well supported, but more modest: **attentional bias** to threat in anxiety, **emotion-induced blindness** (an emotional image can make the next target briefly invisible), and evidence that fear can change basic contrast sensitivity. Big claims, such as "wanting something makes it look bigger", are contested; some effects reflect changes in judgment or response rather than in perception itself.
 
 :::clinician
-Firestone and Scholl (2016, Behavioral and Brain Sciences) argued that almost no "top-down effects on perception" survive scrutiny once six pitfalls are excluded: an overly confirmatory design, effects on judgment rather than perception, demand characteristics, low-level stimulus differences, peripheral attention effects and memory rather than perception. The paper is a model for critical evaluation in long answers. Contrast this with robust cognitive penetration by attention and with predictive-processing accounts, which predict pervasive top-down influence, and you have a viva-ready debate.
+A much-debated 2016 critique by Chaz Firestone and Brian Scholl argued that almost no "top-down effects on perception" survive scrutiny once six pitfalls are excluded: an overly confirmatory design, effects on judgment rather than perception, demand characteristics, low-level stimulus differences, peripheral attention effects and memory rather than perception. The paper is a model for critical evaluation in long answers. Contrast this with robust cognitive penetration by attention and with predictive-processing accounts, which predict pervasive top-down influence, and you have a viva-ready debate.
 :::
 
 :::recall
@@ -188,7 +240,24 @@ Michael Posner and Steven Petersen (1990) proposed that attention is not one thi
 | **Orienting** | Selecting a location or object | Superior parietal lobe, temporoparietal junction, frontal eye fields, superior colliculus | Acetylcholine |
 | **Executive control** | Resolving conflict between responses | Anterior cingulate, lateral prefrontal cortex | Dopamine |
 
-The **Attention Network Test** (Fan and colleagues, 2002) measures all three in one task by combining cues (for alerting and orienting) with a flanker task (for conflict: respond to the middle arrow in ← ← → ← ←).
+:::widget brainmap
+{
+ "title": "Posner's three attention networks",
+ "focus": [
+  "brainstem",
+  "parietal",
+  "prefrontal"
+ ],
+ "notes": {
+  "brainstem": "Alerting: the locus coeruleus releases noradrenaline to get and keep you ready.",
+  "parietal": "Orienting: superior parietal cortex and the temporoparietal junction move the spotlight, using acetylcholine.",
+  "prefrontal": "Executive control: anterior cingulate and lateral prefrontal cortex resolve conflict, using dopamine."
+ },
+ "caption": "Tap each network. The right temporoparietal junction, part of orienting, is the region most linked to neglect."
+}
+:::
+
+The **Attention Network Test**, developed in Posner's group in 2002, measures all three in one task by combining cues (for alerting and orienting) with a flanker task (for conflict: respond to the middle arrow in ← ← → ← ←).
 
 Maurizio Corbetta and Gordon Shulman (2002) split orienting into a **dorsal attention network** (voluntary, goal-driven, both hemispheres) and a **ventral attention network** (stimulus-driven "circuit breaker", right-lateralised, centred on the temporoparietal junction). Damage to the right ventral network contributes to **hemispatial neglect**.
 
@@ -226,7 +295,7 @@ Spelke, Hirst and Neisser (1976) trained two students for weeks to read short st
 :::
 
 :::clinician
-Task-switching paradigms (Rogers and Monsell, 1995; Jersild, 1927) show a residual switch cost even with full preparation, implicating reconfiguration of task set. In neuropsychology, executive attention is tested with the Stroop, Trail Making Part B (or the Colour Trails Test, which avoids reliance on the English alphabet and is used in Indian batteries), the Wisconsin Card Sorting Test and the flanker task. The "mere presence" smartphone effect (Ward and colleagues, 2017) failed to replicate in larger preregistered studies, making it a useful teaching example of a viral finding that shrank under scrutiny.
+Task-switching paradigms show a residual switch cost even with full preparation, implicating reconfiguration of task set. In neuropsychology, executive attention is tested with the Stroop, Trail Making Part B (or the Colour Trails Test, which avoids reliance on the English alphabet and is used in Indian batteries), the Wisconsin Card Sorting Test and the flanker task. The "mere presence" smartphone effect reported in 2017 failed to replicate in larger preregistered studies, making it a useful teaching example of a viral finding that shrank under scrutiny.
 :::
 
 :::recall
@@ -274,6 +343,23 @@ Disorders of perception and attention are where this module meets the ward. Some
 }
 :::
 
+:::widget brainmap
+{
+ "title": "Where perception breaks down",
+ "focus": [
+  "parietal",
+  "temporal",
+  "occipital"
+ ],
+ "notes": {
+  "parietal": "Right parietal lobe: hemispatial neglect. Both parieto-occipital regions: Balint's syndrome.",
+  "temporal": "Fusiform region on the underside: prosopagnosia and associative agnosia. Area MT near the junction with the occipital lobe: akinetopsia.",
+  "occipital": "Primary visual cortex: a blind half-field, sometimes with blindsight."
+ },
+ "caption": "Tap a lobe, then sort the problems below."
+}
+:::
+
 :::widget sort
 {
   "prompt": "Match each problem to the usual site of damage.",
@@ -304,7 +390,7 @@ In the mental status examination, an **illusion** is a misperception of a real s
 | **Delirium** | Inattention is the core feature, fluctuating through the day |
 
 :::clinician
-Attention bias modification (training attention away from threat in dot-probe variants) generated early excitement, but later meta-analyses (Cristea and colleagues, 2015) found small effects that shrink once publication bias and low-quality trials are accounted for; it is not a stand-alone treatment. For neglect, prism adaptation and visual scanning training have the best, if modest, evidence. In delirium screening, attention tests (months of the year backwards, the "SAVEAHAART" letter task in the CAM-ICU) carry most of the diagnostic weight. For an Indian bedside, avoid tests that rely on English alphabet sequences in patients not schooled in English; number or culturally neutral versions, such as the Colour Trails Test, are fairer.
+Attention bias modification (training attention away from threat in dot-probe variants) generated early excitement, but later meta-analyses found small effects that shrink once publication bias and low-quality trials are accounted for; it is not a stand-alone treatment. For neglect, prism adaptation and visual scanning training have the best, if modest, evidence. In delirium screening, attention tests (months of the year backwards, the "SAVEAHAART" letter task in the CAM-ICU) carry most of the diagnostic weight. For an Indian bedside, avoid tests that rely on English alphabet sequences in patients not schooled in English; number or culturally neutral versions, such as the Colour Trails Test, are fairer.
 :::
 
 :::recall
@@ -393,7 +479,307 @@ Q: In a Müller-Lyer practical, balancing trials that start with the variable li
 
 # Part IV · Exam zone
 
-## 4.1 Long answers and short notes [core]
+## 4.1 Q&A bank · Starting [starting]
+Think each question through, then open the answer and compare.
+
+:::qa What is the difference between sensation and perception? Give an everyday example. [starting]
+### Short answer
+Sensation is detecting physical energy and turning it into nerve signals. Perception is organising and interpreting those signals so that they mean something.
+
+### Step by step
+1. **Energy arrives**: light, sound waves, molecules, pressure.
+2. **Receptors transduce it**: rods and cones, hair cells, taste and smell receptors, skin receptors.
+3. **Signals travel** to the thalamus (except smell) and the sensory cortex.
+4. **Perception adds meaning**, using both the input (bottom-up) and what you already know and expect (top-down).
+
+| | Sensation | Perception |
+|---|---|---|
+| Question it answers | "Is something there?" | "What is it, and what does it mean?" |
+| Main machinery | Receptors and sensory nerves | Cortex, memory, attention |
+| Shaped by expectation? | Very little | A great deal |
+
+### Example
+At a busy railway station, sound waves from hundreds of voices reach your ears: that is sensation. Picking out the announcement of your train, and knowing it means "platform 4, hurry", is perception.
+:::
+
+:::qa Why is the absolute threshold defined as the level detected on 50 percent of trials, rather than the level at which a person first detects something? [starting]
+### Short answer
+Because detection does not switch on at one exact point. As intensity rises, the chance of detection rises gradually, so a fixed percentage is the only fair way to define a threshold.
+
+### Why detection is gradual
+- The nervous system always has some random background activity (noise), so the same weak stimulus sometimes stands out and sometimes does not.
+- Attention, fatigue and expectation vary from trial to trial.
+- Plotting "percent detected" against intensity gives an S-shaped curve, not a step.
+
+### Why 50 percent
+- It sits at the steepest part of the curve, where small changes in intensity make the biggest difference, so it is measured most precisely.
+- It allows fair comparison between people, senses and conditions.
+
+:::note Link forward
+At the Beginner level, signal detection theory goes further: it shows that the "threshold" also depends on how willing a person is to say "yes".
+:::
+:::
+
+:::qa Explain Weber's law with a worked example. Why is it useful? [starting]
+### Short answer
+Weber's law says the smallest change you can notice (the just noticeable difference) is a constant fraction of the starting amount, not a constant amount.
+
+### Worked example
+- The Weber fraction for lifted weight is about 2 percent.
+- Holding 500 grams, you need about 10 grams more to notice a change (2 percent of 500).
+- Holding 5 kilograms, you need about 100 grams more (2 percent of 5,000).
+
+### Why it matters
+- It was one of the first **laws** in psychology, linking a physical quantity to experience with a simple rule.
+- It explains everyday design: dimmer switches, volume controls and price changes are noticed in proportional, not absolute, steps.
+- It lets us compare senses: a smaller fraction means a sharper sense (pitch is far sharper than brightness).
+:::
+
+:::qa What is inattentional blindness, and what does it teach us about attention? [starting]
+### Short answer
+It is failing to notice an unexpected object in plain view because attention is busy with something else. It shows that we see clearly only what we attend to.
+
+### Key evidence
+- In the "invisible gorilla" study, about half of viewers counting basketball passes missed a person in a gorilla suit walking through the scene.
+- Expert radiologists searching CT scans for lung nodules missed a gorilla image inserted into the scan.
+
+### Lessons
+1. Attention is **selective** and **limited**.
+2. Looking is not seeing: eyes can point at something that the mind never registers.
+3. Harder tasks leave less attention for the unexpected.
+4. Practical uses: road safety (drivers on phone calls), eyewitness accounts, clinical checklists that force a deliberate look for the unexpected.
+:::
+
+:::qa Name and explain four Gestalt principles of perceptual organisation, with Indian examples. [starting]
+### Short answer
+Gestalt principles describe how the brain groups parts into wholes. Four common ones are proximity, similarity, closure and common fate, all guided by the master principle of Prägnanz (simplest organisation).
+
+| Principle | What it says | Indian example |
+|---|---|---|
+| **Proximity** | Close items are grouped | Dots in a kolam spaced in rows are read as lines |
+| **Similarity** | Similar items are grouped | A stadium section in the same team colour looks like one block |
+| **Closure** | Gaps are filled to see complete shapes | A rangoli of separate dots is seen as one flower |
+| **Common fate** | Items moving together are grouped | A flock of birds over the Chilika lake turning as one |
+
+### Why it matters
+These rules explain why logos, signs and teaching slides are read quickly when they follow them, and confusingly when they do not.
+:::
+
+## 4.2 Q&A bank · Beginner [beginner]
+Answers here assume the Beginner sections. Write your own outline first.
+
+:::qa How does signal detection theory improve on classical threshold theory? Use the four outcomes and d′ in your answer. [beginner]
+### Short answer
+Classical theory assumes one fixed threshold. Signal detection theory shows that every detection decision mixes two separate things: **sensitivity** (how well signal can be told from noise) and **response bias** (how willing the person is to say "yes"). It measures each separately.
+
+### The four outcomes
+| | Says "yes" | Says "no" |
+|---|---|---|
+| Signal present | Hit | Miss |
+| Signal absent | False alarm | Correct rejection |
+
+### The two measures
+- **d′ (sensitivity)**: the distance between the noise and signal-plus-noise distributions; z(hit rate) minus z(false-alarm rate).
+- **Criterion (bias)**: where the observer sets the cut-off for saying "yes". Liberal means more hits and more false alarms; conservative means fewer of both.
+
+### Why it is better
+1. Explains why thresholds shift with rewards, costs and expectations.
+2. Separates what training or better equipment can change (d′) from what instructions and payoffs change (criterion).
+3. Provides the ROC curve and the area under it, now standard for judging diagnostic tests.
+
+### Example
+Two radiologists may be equally sensitive, but the one told "never miss a cancer" reports more positives. Only SDT can show that her eyes did not change; her criterion did.
+:::
+
+:::qa Compare the trichromatic and opponent-process theories of colour vision. How are they reconciled? [beginner]
+### Short answer
+Trichromatic theory explains colour at the level of the cones; opponent-process theory explains it at the level of later neurons. Both are correct at different stages, which is the dual-process view.
+
+| | Trichromatic (Young, Helmholtz) | Opponent-process (Hering) |
+|---|---|---|
+| Claim | Three cone types, peaking near 420, 530 and 560 nm | Three opposing channels: red-green, blue-yellow, black-white |
+| Explains | Colour matching with three primaries; most colour deficiency | Negative afterimages; why no "reddish green" exists; some patterns of deficiency |
+| Cannot explain | Afterimages; the four "unique" hues | Why there are three cone types |
+
+### The reconciliation
+- At the **retina**, three cone types code wavelength (trichromatic).
+- In **ganglion cells and the thalamus**, cone signals are combined into opponent pairs.
+- Hurvich and Jameson called this the **dual-process** theory.
+
+### Clinical and design note
+Red-green deficiency is common in men, so teaching materials and charts should never rely on colour alone.
+:::
+
+:::qa Trace the debate between early and late selection theories of attention. Which experiments moved the debate forward? [beginner]
+### Short answer
+Broadbent placed the filter early, before meaning. Evidence that some unattended meaning gets through led Treisman to an attenuation model, and Deutsch and Deutsch to late selection. Modern views say selection is flexible and depends on load.
+
+### The sequence
+1. **Cherry (1953)**: shadowing one ear; almost nothing of the other ear's content is remembered, but physical changes are noticed.
+2. **Broadbent (1958)**: a filter on physical features; split-span data fit.
+3. **Challenges**: Moray (own name noticed by about a third), Gray and Wedderburn ("Dear Aunt Jane"), Treisman (following a story across ears), Corteen and Wood (skin responses to shock-linked words).
+4. **Treisman (1964)**: unattended input is weakened; a dictionary of thresholds lets important words through.
+5. **Deutsch and Deutsch (1963); Norman (1968)**: everything is analysed for meaning; selection is by importance near response.
+6. **Johnston and Heinz; Lavie**: selection can be early or late. High perceptual load forces early selection; low load allows late selection.
+
+### Evaluation
+Brain recordings show attention changing sensory responses within about a tenth of a second (early effects) and some meaning extracted from ignored words (late effects). The question "early or late?" is now "when, and under what load?".
+:::
+
+:::qa A student says "the visual cliff proves depth perception is innate". Evaluate this claim. [beginner]
+### Short answer
+The visual cliff shows depth is perceived early, not that it is innate in humans, because the crawling infants tested already had months of visual experience.
+
+### What the study found
+- Of 36 infants aged 6 to 14 months, nearly all who moved crawled to their mothers over the shallow side; only 3 crossed the deep side.
+- Newborn animals that walk at birth (chicks, kids, lambs) avoided the deep side at once.
+
+### Why it does not prove innateness
+1. Human infants cannot be tested until they crawl, by which time they have learned a great deal.
+2. Later studies found that pre-crawling infants placed over the deep side showed **heart-rate slowing** (interest, so they perceive a difference), while **fear** (heart-rate rise) appeared only after crawling experience.
+
+### Balanced conclusion
+Perceiving depth develops very early, possibly with an inborn basis; fearing heights depends on experience of moving around by oneself.
+:::
+
+:::qa Explain the gate control theory of pain. What everyday and clinical observations does it explain? [beginner]
+### Short answer
+Melzack and Wall proposed a "gate" in the spinal cord that controls how much pain signal reaches the brain. Small pain fibres open it; large touch fibres and messages from the brain can close it.
+
+### The mechanism
+- **Location**: the dorsal horn of the spinal cord.
+- **Opening**: activity in thin A-delta and C fibres.
+- **Closing**: activity in thick A-beta touch fibres (rubbing a knock).
+- **Descending control**: attention, mood, expectation and meaning, sent down from the brain.
+
+### What it explains
+| Observation | Explanation |
+|---|---|
+| Rubbing a bumped elbow helps | Touch fibres close the gate |
+| Distraction, hypnosis and calm reduce pain | Descending signals close the gate |
+| Anxiety and catastrophising worsen pain | Descending signals open the gate |
+| TENS machines relieve pain | Electrical stimulation of large fibres |
+| Severe wounds in battle sometimes hurt little at first | Meaning and arousal close the gate |
+
+### Limitation
+Phantom limb pain shows pain can arise with no input at all, which led to Melzack's later idea of a brain-wide pain network (the neuromatrix).
+:::
+
+## 4.3 Q&A bank · Advanced [advanced]
+These are the long, analytical questions asked in NET Paper 2, clinical entrance interviews and MA examinations.
+
+:::qa Critically compare Gibson's direct theory and Gregory's constructivist theory of perception, and show how modern accounts reconcile them. [advanced]
+### Short answer
+Gibson argued that the light reaching a moving observer contains all the information needed, picked up directly. Gregory argued that input is ambiguous, so the brain builds hypotheses from knowledge. Each explains different evidence, and modern two-stream and predictive accounts give each a role.
+
+### Gibson
+- Optic array, optic flow, invariants (texture gradients), affordances, resonance.
+- Best evidence: pilots and drivers steering by optic flow; real, moving observers in rich environments.
+- Weakness: cannot explain illusions or how knowledge changes what we see.
+
+### Gregory
+- Unconscious inference (Helmholtz); perception as hypothesis testing; illusions as misapplied hypotheses.
+- Best evidence: hollow-face illusion, ambiguous figures, perceptual set, Müller-Lyer.
+- Weakness: relies on brief, impoverished displays; if perception is guesswork, why is it usually so accurate?
+
+### Reconciliations
+| Account | How it combines them |
+|---|---|
+| Neisser's perceptual cycle | Schemata guide exploration; exploration samples the world; samples update schemata |
+| Milner and Goodale's two streams | Dorsal "vision for action" is fast and direct; ventral "vision for recognition" uses knowledge |
+| Predictive processing | The brain predicts input and processes the prediction error, weighting priors against the reliability of the evidence |
+
+### Conclusion
+The theories answer different questions: Gibson asks what information is available to an active observer; Gregory asks how the brain interprets incomplete input. Both are needed.
+:::
+
+:::qa Does culture shape perception? Evaluate the evidence. [advanced]
+### Short answer
+Yes, for some aspects of perception, especially the interpretation of pictures, susceptibility to certain illusions, and perceptual style. Basic sensory processes are largely universal.
+
+### Evidence for cultural influence
+1. **Carpentered-world hypothesis**: Segall, Campbell and Herskovits found people in urban, rectangular environments more susceptible to the Müller-Lyer illusion than people in rural communities with round houses.
+2. **Pictorial depth**: Hudson found many unschooled South African participants read drawings as flat; schooling and exposure to pictures increased 3D readings.
+3. **Size constancy over distance**: Turnbull's account of a forest dweller taking distant buffalo for insects.
+4. **Holistic versus analytic attention**: Japanese students described backgrounds and relationships more than Americans did.
+5. **Ecology and cognitive style**: Berry's eco-cultural studies and Mishra, Sinha and Berry's work with Adivasi communities in Bihar linked disembedding skills to ecology, schooling and contact with towns.
+
+### Cautions
+- Differences in schooling, test familiarity and even eye pigmentation can explain part of the findings.
+- Some cultural differences reflect judgment and description rather than perception itself.
+- Colour perception and basic depth cues are broadly universal.
+
+### Conclusion
+Culture shapes how people use and interpret perceptual information, and what they attend to, through experience and learning. It is a strong argument for a constructive, learned element in perception.
+:::
+
+:::qa How can signal detection theory be applied to hallucinations and to clinical diagnosis? [advanced]
+### Short answer
+SDT treats a hallucination as a "false alarm": reporting a signal when none is present. Research shows that hallucination-prone people differ mainly in **criterion** (a more liberal bias), not in sensitivity. The same logic underlies how diagnostic tests are judged.
+
+### Hallucinations
+- In a classic study, students prone to hallucinations listened to noise that sometimes contained a voice. They said "yes, a voice" more often, but their d′ was no different: a **liberal response bias**.
+- This fits models in which expectations (priors) are too strong, or monitoring of the source of inner speech is weak.
+- Clinical implication: therapy can work on beliefs and expectations about voices (CBT for psychosis), not only on "faulty hearing".
+
+### Diagnosis and screening
+| SDT idea | Clinical equivalent |
+|---|---|
+| Hit rate | Sensitivity of a test |
+| Correct-rejection rate | Specificity |
+| Criterion | Cut-off score |
+| ROC curve and its area | How well a test separates cases from non-cases across all cut-offs |
+
+### Example
+A suicide-risk scale with a low cut-off catches more people at risk (more hits) but flags many who are not (false alarms). Where to set the cut-off depends on the cost of each error and on what follows a positive screen.
+:::
+
+:::qa Describe hemispatial neglect: its features, cause, assessment and theories. [advanced]
+### Short answer
+Neglect is a failure to attend to one side of space, usually the left after right parietal damage, with intact basic vision. It is a disorder of attention, not of sight.
+
+### Features
+- Eats from one half of the plate, shaves or dresses one side, ignores people on the left.
+- Line bisection marked to the right; cancellation tests with left omissions; drawings missing the left side.
+- Often denial of the problem (anosognosia).
+- Can affect imagined space too: patients asked to describe a familiar square from memory omit the left side of the image.
+
+### Cause
+Right inferior parietal lobe and temporoparietal junction, part of the right-lateralised ventral attention network. Left-sided damage rarely causes lasting neglect because the right hemisphere attends to both sides.
+
+### Assessment
+Line bisection, star and letter cancellation, copying and drawing tasks, observation of daily activities.
+
+### Theories
+1. **Attentional bias**: the intact hemisphere pulls attention to the right.
+2. **Disengagement deficit**: difficulty moving attention away from the right to the left (shown in cueing tasks).
+3. **Representational**: the internal map of space is damaged, explaining neglect of imagined scenes.
+
+### Management
+Cueing to the left, visual scanning training, prism adaptation, safety planning for walking and road crossing.
+:::
+
+:::qa "Perception is a constructive process." Discuss with reference to illusions, perceptual set and the New Look. [advanced]
+### Short answer
+Much evidence shows that perception goes beyond the input, using knowledge, expectation and motivation, but critics warn that some "top-down" effects are effects on judgment rather than on seeing.
+
+### Evidence for construction
+- **Illusions**: Müller-Lyer, Ponzo and the moon illusion follow from depth and constancy rules applied where they do not fit.
+- **Ambiguous figures and the hollow face**: one stimulus, different perceptions driven by expectation.
+- **Perceptual set**: primed with animals, people see a rat in the rat-man figure.
+- **New Look**: poor children overestimating coin sizes; incongruous playing cards misperceived; hungry people judging food pictures brighter.
+- **Perceptual defence**: higher recognition thresholds and early skin responses for taboo words.
+
+### Critique
+1. Taboo words are rarer in print and may be withheld from report, explaining much of perceptual defence.
+2. Many New Look effects may be changes in **judgment**, memory or response bias, not perception.
+3. A 2016 critique listed pitfalls (demand effects, low-level stimulus differences, attention effects) that explain most claimed top-down effects.
+
+### Conclusion
+Perception is constructive in its use of context, expectation and attention, as predictive accounts suggest, but claims that wishes and moods directly change what we see need careful, well-controlled evidence.
+:::
+
+## 4.4 Long answers and short notes [core]
 :::example Q1. Explain signal detection theory. How does it improve on classical threshold theory? Give applications. (15 marks)
 1. Define the classical threshold and its assumption of a fixed cut-off; note the 50 percent rule.
 2. The problem: detection depends on expectations and payoffs as well as the senses.
@@ -438,9 +824,9 @@ Treisman and Gelade (1980) proposed two stages. In a pre-attentive stage, simple
 Melzack and Wall (1965) proposed a gate in the substantia gelatinosa of the dorsal horn. Small-diameter fibres (A-delta, C) carry pain and open the gate; large-diameter touch fibres (A-beta) close it; descending signals from the brain (attention, mood, expectation, meaning) can open or close it. It explains why rubbing helps, why distraction and hypnosis reduce pain, why anxiety worsens it, and why TENS works. Later, Melzack's neuromatrix theory explained phantom limb pain as generated by the brain's body map.
 :::
 
-## 4.2 Viva rapid-fire [core]
+## 4.5 Viva rapid-fire [core]
 :::viva
-Who founded psychophysics? :: Gustav Fechner, Elements of Psychophysics, 1860.
+Who founded psychophysics? :: Gustav Fechner, in 1860.
 Define the absolute threshold. :: The intensity detected on 50 percent of trials.
 Weber fraction for lifted weight? :: About 0.02.
 Which law uses magnitude estimation? :: Stevens' power law.
@@ -487,7 +873,7 @@ Hallucinations with insight in visual loss? :: Charles Bonnet syndrome.
 Core attentional feature of delirium? :: Inattention, fluctuating.
 :::
 
-## 4.3 Module test [core]
+## 4.6 Module test [core]
 Answer every question before checking. Your best score is saved.
 
 :::mcq

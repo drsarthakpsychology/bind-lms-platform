@@ -38,6 +38,38 @@ Identical twins reared apart, as in the Minnesota study led by Thomas Bouchard, 
 - **Gene-environment interaction**: in some American studies, heritability was much lower in poor families than in affluent ones, as if poverty kept genetic potential from showing. Large later reviews found this pattern mainly in the United States and not in Western Europe or Australia, perhaps because of stronger social safety nets.
 - **Molecular genetics**: intelligence is highly **polygenic**: thousands of variants each with tiny effects. Current polygenic scores predict only a modest share of the variation in educational attainment and less for intelligence, and they predict much less well in populations unlike the (mostly European-ancestry) samples they were built from, including South Asian populations.
 
+:::widget flow
+{
+ "title": "How genes and environments correlate",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "Gene-environment correlation"
+  },
+  {
+   "id": "pa",
+   "label": "Passive",
+   "parent": "r",
+   "detail": "Parents give both genes and a home: musical parents pass on genes and fill the house with music."
+  },
+  {
+   "id": "ev",
+   "label": "Evocative",
+   "parent": "r",
+   "detail": "A child's traits draw responses: a curious child gets more explanations from adults."
+  },
+  {
+   "id": "ac",
+   "label": "Active",
+   "parent": "r",
+   "detail": "Niche-picking: an older child seeks out friends, books and activities that suit her."
+  }
+ ],
+ "caption": "Active correlation grows with age, one reason heritability rises from childhood to adulthood."
+}
+:::
+
 ### Environments that change intelligence
 - **Early deprivation and rescue**: children raised in very depriving orphanages who were placed into foster families before about age two gained far more in IQ than those placed later, in the Bucharest Early Intervention Project, a randomised study in Romania.
 - **Schooling**: each extra year of education raises IQ by roughly 1 to 5 points, according to studies that use natural experiments such as school-entry cut-off dates and changes in the school-leaving age.
@@ -167,6 +199,36 @@ Q: Expert racetrack handicappers used complex reasoning unrelated to their IQ. T
 - **Theory of mind** difficulties and an **externalising attributional style** (blaming others for bad events) contribute to persecutory delusions.
 These findings led to **metacognitive training** and to CBT for psychosis, which help patients slow down, consider alternatives and test beliefs.
 
+:::widget flow
+{
+ "title": "How a delusion can be maintained",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "ex",
+   "label": "Unusual experience",
+   "detail": "A strange sensation, a coincidence or a feeling that something is significant."
+  },
+  {
+   "id": "jc",
+   "label": "Jumping to conclusions",
+   "detail": "A firm explanation is chosen on very little evidence ('they are watching me')."
+  },
+  {
+   "id": "cb",
+   "label": "Confirmation",
+   "detail": "Ambiguous events are read as support; contrary evidence is discounted."
+  },
+  {
+   "id": "st",
+   "label": "Stronger belief",
+   "detail": "Conviction grows, and attention is drawn to more 'evidence'."
+  }
+ ],
+ "caption": "Metacognitive training and CBT for psychosis slow down the second step and open up the third."
+}
+:::
+
 :::widget guess
 {
   "prompt": "In the beads task, healthy volunteers typically ask to see several beads before deciding which jar they come from. On average, how many beads do many people with delusions request?",
@@ -274,6 +336,23 @@ Across studies, creative people tend to be high in **openness to experience**, *
 ### Creativity and the brain
 There is no "creativity centre". Creative thinking involves cooperation between the **default mode network** (generating ideas, mind-wandering, imagination), the **executive control network** (evaluating and refining ideas) and the **salience network** (switching between them). The popular idea of a "right-brained" creative person is a myth.
 
+:::widget brainmap
+{
+ "title": "Creativity is a network, not a spot",
+ "focus": [
+  "prefrontal",
+  "parietal",
+  "temporal"
+ ],
+ "notes": {
+  "prefrontal": "Executive control network: selecting, evaluating and refining ideas.",
+  "parietal": "Default mode network hubs: imagination, mind-wandering and idea generation.",
+  "temporal": "Memory and meaning stores that supply the material for new combinations."
+ },
+ "caption": "Creative thinking depends on these networks working together, switched by the salience network."
+}
+:::
+
 ### The "mad genius" question
 - Historical studies of famous writers and artists (Kay Redfield Jamison's work on poets, for example) found high rates of **mood disorders**, especially bipolar disorder.
 - **Nancy Andreasen's** study of writers at the Iowa Writers' Workshop found about 80 percent had a lifetime mood disorder, against 30 percent of comparison participants, though the sample was small and the diagnoses were not blind.
@@ -315,7 +394,316 @@ Q: Wallach and Kogan found creativity and intelligence nearly independent mainly
 
 # Part V · Exam zone
 
-## 5.1 Long answers and short notes [core]
+## 5.1 Q&A bank · Starting [starting]
+Think each question through, then open the answer and compare.
+
+:::qa What is the difference between an algorithm and a heuristic? When would you use each? [starting]
+### Short answer
+An algorithm is a step-by-step method that guarantees a correct answer if followed. A heuristic is a quick rule of thumb that usually works but can fail.
+
+| | Algorithm | Heuristic |
+|---|---|---|
+| Guarantee | Always reaches the solution | No guarantee |
+| Speed | Often slow | Fast |
+| Effort | High | Low |
+| Example | Trying every combination on a three-digit lock | Trying birthdays and 1-2-3 first |
+| Best when | Accuracy matters and time allows (drug dose calculations) | Time is short and a good-enough answer will do (choosing a queue at the bank) |
+
+### A clinical note
+Diagnostic checklists work like algorithms; a clinician's quick pattern recognition works like a heuristic. Good practice uses the heuristic to generate ideas and the checklist to check them.
+:::
+
+:::qa What are mental set and functional fixedness? Give examples and suggest ways to overcome them. [starting]
+### Short answer
+Both are ways that past experience blocks a new solution. Mental set is sticking to a method that worked before; functional fixedness is seeing an object only in its usual use.
+
+### Examples
+- **Mental set**: after solving several water-jar problems with a long formula, people keep using it when a two-step method works.
+- **Functional fixedness**: in Duncker's candle problem, people do not see that the box holding the pins can become a shelf.
+
+### Ways to overcome them
+1. Take a break (incubation) so the old approach fades.
+2. Restate the problem in different words.
+3. List an object's parts and properties, not its name ("a cardboard tray", not "a box of pins").
+4. Ask someone from a different background; they do not share your set.
+5. Warn yourself: simply being told "don't be blind" helped many people in the water-jar task.
+:::
+
+:::qa Describe the main milestones of language development in the first five years. [starting]
+### Short answer
+Children move from crying and cooing to babbling, single words, two-word phrases and then rapidly expanding grammar, at broadly similar ages across languages.
+
+| Age (approximate) | Milestone | Example |
+|---|---|---|
+| Birth to 2 months | Crying; preference for human voices | Calms to the mother's voice |
+| 2 to 4 months | Cooing | "Ooo", "aah" |
+| 6 to 10 months | Babbling | "ba-ba", "da-da" |
+| Around 12 months | First words | "Amma", "pani" |
+| 18 to 24 months | Vocabulary spurt; two-word speech | "Papa go", "more milk" |
+| 2 to 5 years | Grammar grows; overregularisation | "I goed", "two mouses" |
+
+### When to be concerned
+No babbling by 12 months, no words by 16 months, no two-word phrases by 24 months, or any loss of language at any age needs assessment, including a hearing test.
+:::
+
+:::qa What does an IQ score mean, and what are its limitations? [starting]
+### Short answer
+An IQ score compares a person's performance on a standardised test with others of the same age, on a scale with mean 100 and standard deviation 15. It predicts school and job performance well, but it is a sample of certain abilities on one day, not a measure of worth.
+
+### What a score tells you
+- 100 is average; about 68 percent of people score 85 to 115.
+- 130 is about the 98th percentile; 70 is about the 2nd.
+
+### Limitations
+1. **Measurement error**: a score is best read as a range (roughly plus or minus 5 points).
+2. **Culture and language**: tests assume particular knowledge and test-taking habits.
+3. **Narrow scope**: little about creativity, wisdom, social skill or motivation.
+4. **Outdated norms** inflate scores (the Flynn effect).
+5. **Context**: anxiety, illness, poor sleep and unfamiliarity with testing lower scores.
+:::
+
+:::qa What is the difference between convergent and divergent thinking? How are they related to intelligence and creativity? [starting]
+### Short answer
+Convergent thinking narrows to one correct answer; divergent thinking generates many possible answers. IQ tests mostly measure convergent thinking, while creativity tests mostly measure divergent thinking.
+
+| | Convergent | Divergent |
+|---|---|---|
+| Aim | The single best answer | Many varied answers |
+| Typical task | "What comes next: 2, 4, 8, 16?" | "List all the uses of a brick" |
+| Linked with | Intelligence tests, MCQs | Creativity tests |
+| Scored for | Correctness | Fluency, flexibility, originality, elaboration |
+
+### Both matter
+Creative work needs divergent thinking to generate ideas and convergent thinking to choose and refine the best one.
+:::
+
+## 5.2 Q&A bank · Beginner [beginner]
+Answers here assume the Beginner sections. Write your own outline first.
+
+:::qa Explain the representativeness, availability and anchoring heuristics, with examples of the errors each produces. [beginner]
+### Short answer
+Tversky and Kahneman showed that people judge probability with three shortcuts. Each saves effort but produces predictable errors.
+
+| Heuristic | How it works | Typical error | Example |
+|---|---|---|---|
+| Representativeness | Judging by resemblance to a typical case | Conjunction fallacy, base-rate neglect, gambler's fallacy | Judging Linda more likely a "feminist bank teller" than a "bank teller" |
+| Availability | Judging frequency by ease of recall | Overestimating vivid, recent or reported events | Fearing flying more than driving after news of a crash |
+| Anchoring | Starting from a number and adjusting too little | Estimates pulled towards irrelevant numbers | After a random wheel showed 65, estimates of African countries in the UN were higher |
+
+### In the clinic
+- Representativeness: diagnosing by how "typical" a patient looks, ignoring how common the condition is.
+- Availability: overestimating a rare diagnosis seen last week.
+- Anchoring: sticking to the referral diagnosis.
+
+### Reducing errors
+Consider base rates, ask what else could explain the picture, and seek disconfirming evidence.
+:::
+
+:::qa Explain prospect theory and the framing effect, using the Asian disease problem. [beginner]
+### Short answer
+Prospect theory says people judge outcomes as gains or losses from a reference point, feel losses about twice as strongly as gains, are risk-averse for gains and risk-seeking for losses, and overweight small probabilities. Framing the same choice as gains or losses therefore changes decisions.
+
+### The Asian disease problem
+- **Gain frame**: save 200 of 600 for sure, or a one-third chance of saving all. Most chose the sure option.
+- **Loss frame**: 400 of 600 die for sure, or a one-third chance that nobody dies. Most chose the gamble.
+The options are identical; only the description changed.
+
+### Principles
+| Principle | Meaning | Everyday example |
+|---|---|---|
+| Reference dependence | Outcomes judged relative to a starting point | A salary rise feels like a loss if a colleague got more |
+| Loss aversion | Losses hurt about twice as much | Refusing a fair 50:50 bet to win or lose ₹1,000 |
+| Diminishing sensitivity | Risk-averse in gains, risk-seeking in losses | Gamblers chasing losses |
+| Probability weighting | Small chances overweighted | Buying lottery tickets and insurance |
+
+### Application
+Health messages framed as losses ("you lose years of life by smoking") or gains ("you gain years by quitting") work differently for prevention and for detection behaviours.
+:::
+
+:::qa Compare Piaget, Vygotsky and Chomsky on the relationship between language and thought. [beginner]
+### Short answer
+Piaget saw thought as coming first, Vygotsky saw thought and language merging and shaping each other through social life, and Chomsky saw language as a separate, innate system.
+
+| | Piaget | Vygotsky | Chomsky |
+|---|---|---|---|
+| Direction | Thought leads; language reflects it | Separate roots, merging around age 2 | Language is a separate module |
+| Children's self-talk | Egocentric speech that fades | Private speech that becomes inner speech and guides action | Not central |
+| Role of others | Peers and experience challenge thinking | Adults and culture provide language tools | Input only sets parameters |
+| Educational implication | Readiness; discovery learning | Scaffolding in the zone of proximal development | Language develops given exposure |
+
+### Evaluation
+Research on private speech supports Vygotsky: children use more self-talk on harder tasks and those who do so tend to perform better. The weak version of linguistic relativity shows language influences some thinking, while colour and number research shows much thought does not depend on words.
+:::
+
+:::qa Critically evaluate Gardner's theory of multiple intelligences. [beginner]
+### Short answer
+Gardner proposed eight relatively independent intelligences, based on neuropsychological, developmental and cultural criteria. The theory broadened ideas of talent and changed education, but its scientific support is weak.
+
+### The eight
+Linguistic, logical-mathematical, spatial, musical, bodily-kinaesthetic, interpersonal, intrapersonal, naturalistic.
+
+### Strengths
+- Draws on brain damage, savants, prodigies and development, not only test correlations.
+- Values abilities that schools and IQ tests often ignore (dance, music, social skill).
+- Encourages varied teaching and assessment.
+
+### Weaknesses
+1. When measured, most of the intelligences correlate with each other and with g.
+2. No standard tests were provided, so the theory is hard to test.
+3. Some "intelligences" may be talents or personality traits.
+4. Its popular spin-off, matching teaching to "learning styles", has no evidence of benefit.
+
+### Conclusion
+A valuable educational idea and a reminder that intelligence is broader than IQ, but not a replacement for hierarchical models supported by data.
+:::
+
+:::qa Explain the PASS theory of intelligence and its applications. [beginner]
+### Short answer
+PASS, developed by J. P. Das with Naglieri and Kirby, and with Kar and Parrila, describes intelligence as four cognitive processes based on Luria's three functional units of the brain: Planning, Attention, Simultaneous and Successive processing.
+
+| Process | Function | Luria's unit |
+|---|---|---|
+| Planning | Strategy selection, monitoring, self-correction | Third unit (frontal lobes) |
+| Attention | Arousal and selective focus | First unit (brainstem, reticular system) |
+| Simultaneous | Integrating parts into wholes | Second unit (occipital-parietal) |
+| Successive | Processing information in serial order | Second unit (fronto-temporal) |
+
+### Measurement
+The Cognitive Assessment System measures each process with specific tasks.
+
+### Applications
+- **Learning disability**: many poor readers show weak successive processing; the PASS Reading Enhancement Programme trains it.
+- **ADHD**: often weak planning and attention scores.
+- **Fairer assessment**: less reliance on vocabulary and general knowledge, with smaller differences between social groups.
+
+### Evaluation
+Strong theoretical basis in neuropsychology and clear educational use; fewer independent replications than CHC-based tests, and some overlap with working memory and executive function measures.
+:::
+
+## 5.3 Q&A bank · Advanced [advanced]
+These are the long, analytical questions asked in NET Paper 2, clinical entrances and MA examinations.
+
+:::qa Trace the development of intelligence theories from Spearman to the Cattell-Horn-Carroll model. Is there a consensus? [advanced]
+### Short answer
+Factor-analytic theories moved from a single g, through multiple independent abilities, to hierarchical models in which g sits at the top of broad and narrow abilities. CHC is the closest thing to a consensus.
+
+### The sequence
+1. **Spearman (1904)**: the positive manifold explained by g plus specific factors.
+2. **Thurstone (1938)**: seven primary mental abilities; later a second-order g.
+3. **Guilford (1955 onwards)**: operations × contents × products, up to 180 abilities; no g.
+4. **Vernon (1950)**: g, then v:ed and k:m, then minor and specific factors.
+5. **Cattell and Horn**: fluid versus crystallised intelligence, then about nine broad abilities.
+6. **Carroll (1993)**: three strata from reanalysis of more than 460 data sets.
+7. **CHC**: Cattell-Horn and Carroll merged; basis of most modern tests.
+
+### The consensus
+| Point of agreement | Remaining debate |
+|---|---|
+| Abilities are hierarchical | Whether g is a real cause or a statistical summary |
+| A general factor exists statistically | How many broad abilities, and which |
+| Broad abilities add useful information | Whether CHC explains why these abilities exist |
+
+### Beyond factor analysis
+Gardner, Sternberg, PASS, Anderson and Ceci add neuropsychology, development and context, and explain abilities factor analysis misses.
+:::
+
+:::qa "Intelligence is largely inherited." Critically evaluate this statement. [advanced]
+### Short answer
+Genetic differences account for a substantial share of IQ differences within studied populations, especially in adulthood, but "largely inherited" is misleading: heritability is population-specific, environments change IQ substantially, and heritability says nothing about group differences.
+
+### Evidence for genetic influence
+- Identical twins reared apart correlate about 0.75.
+- Heritability rises from about 0.2 to 0.4 in childhood to 0.6 to 0.8 in adulthood.
+- Intelligence is highly polygenic.
+
+### Evidence for environmental influence
+- The **Flynn effect**: about 3 points per decade, too fast to be genetic.
+- **Schooling** raises IQ by roughly 1 to 5 points per year.
+- **Early adoption** from deprived orphanages raises IQ.
+- **Iodine, lead and nutrition** affect IQ at population level.
+- In some US samples, heritability was lower in poor families.
+
+### Conceptual points
+1. Heritability describes variation, not individuals.
+2. It depends on the range of environments in the sample.
+3. Lewontin's seeds: within-group heritability cannot explain between-group differences.
+4. Genes and environments correlate and interact.
+
+### Conclusion
+Both genes and environments matter, and they work together. Policies on nutrition, schooling and early childhood remain powerful levers.
+:::
+
+:::qa How does the psychology of reasoning and decision making apply to clinical practice? [advanced]
+### Short answer
+Clinicians use the same heuristics as everyone else, and patients' disorders often involve reasoning biases. Understanding both improves diagnosis, therapy and judgments of capacity.
+
+### Clinician reasoning
+| Bias | Clinical form | Countermeasure |
+|---|---|---|
+| Anchoring | Sticking to the referral diagnosis | Re-derive the diagnosis from the evidence |
+| Availability | Overdiagnosing a condition seen recently | Consider base rates |
+| Premature closure | Stopping once one explanation fits | Ask "what else could this be?" |
+| Diagnostic overshadowing | Blaming physical symptoms on known mental illness | Examine and investigate physical causes |
+| Confirmation bias | Asking only questions that fit | Seek disconfirming evidence |
+
+### Patients' reasoning
+- **Psychosis**: jumping to conclusions (beads task), bias against disconfirmatory evidence, externalising attributions.
+- **Depression**: overgeneralisation, all-or-nothing thinking, rumination.
+- **Anxiety**: catastrophising, intolerance of uncertainty, worry as abstract "what if" chains.
+
+### Capacity under the MHCA 2017
+The person must be able to understand relevant information, appreciate consequences and communicate a decision. A choice others think wrong does not by itself show incapacity.
+
+### Treatments that target reasoning
+CBT, metacognitive therapy, metacognitive training for psychosis and problem-solving therapy.
+:::
+
+:::qa Discuss the relationship between creativity, intelligence and mental illness. [advanced]
+### Short answer
+Creativity relates modestly to intelligence (about 0.2), with intelligence perhaps necessary up to a threshold. Creativity is associated at the population level with mood disorders and with being a relative of people with bipolar disorder or schizophrenia, probably through shared traits, but most creative people are not ill and illness impairs creative work.
+
+### Creativity and intelligence
+- Getzels and Jackson: high-IQ and high-creative adolescents did equally well; teachers preferred the high-IQ group.
+- Wallach and Kogan: under relaxed, untimed conditions, creativity and intelligence were nearly independent.
+- Threshold hypothesis: intelligence matters up to about IQ 120 for creative potential; creative achievement keeps rising with intelligence.
+
+### Creativity and mental illness
+| Evidence | Finding | Caution |
+|---|---|---|
+| Studies of eminent writers and artists | High rates of mood disorder | Biased samples |
+| Iowa Writers' Workshop | About 80 percent lifetime mood disorder | Small sample, not blind |
+| Swedish population registers | Bipolar disorder and unaffected siblings over-represented in creative jobs | Association, not cause |
+| Genetic risk scores | Small prediction of creative professions | Very small effects |
+
+### Explanations
+Shared traits such as openness, reduced latent inhibition and unusual associations, helpful with good cognitive control and harmful with poor control.
+
+### Clinical implication
+Treat illness while protecting creativity: optimise doses, avoid blunting, and use the person's own records of mood and output.
+:::
+
+:::qa Evaluate the Sapir-Whorf hypothesis in the light of research on colour, space and kinship. [advanced]
+### Short answer
+The strong version (language determines thought) is not supported. The weak version (language influences perception, memory and habits of thought) has good support in specific areas.
+
+### Against the strong version
+- Basic colour terms appear in a fairly fixed order across languages (Berlin and Kay).
+- Dani speakers, with two colour terms, still remembered focal colours best.
+- Whorf's claims about Hopi time were not borne out.
+- Hindi "kal" means yesterday and tomorrow, yet speakers do not confuse past and future.
+
+### For the weak version
+| Domain | Finding |
+|---|---|
+| Colour | Berinmo speakers discriminate better across their own naming boundary; Russian speakers discriminate blues faster across "goluboy" and "siniy", an effect removed by verbal interference |
+| Space | Speakers of languages using compass directions stay oriented to north, south, east and west |
+| Kinship | Hindi and Tamil kinship terms make maternal and paternal relationships habitual to think about |
+
+### Conclusion
+Language works as a tool that makes some distinctions quicker and more habitual, especially when words are used during the task. It does not limit what can be thought.
+:::
+
+## 5.4 Long answers and short notes [core]
 :::example Q1. Critically discuss the major theories of intelligence from Spearman to the PASS model. (15 marks)
 1. Define intelligence; the role of factor analysis.
 2. Spearman's g and s; the positive manifold.
@@ -359,7 +747,7 @@ Kahneman and Tversky's descriptive theory of decision under risk. Outcomes are e
 The rise in average IQ test scores of about 3 points per decade across the twentieth century in many countries, largest on fluid tests such as Raven's matrices. It is too fast to be genetic. Proposed causes are better nutrition and health, more schooling, smaller families, a more cognitively demanding environment and familiarity with abstract classification. Since the 1990s some countries, such as Norway, show stagnation or reversal, found within families and so environmental. Implications: tests need re-norming, outdated norms inflate scores (important in disability and legal decisions), and intelligence is strongly shaped by environment.
 :::
 
-## 5.2 Viva rapid-fire [core]
+## 5.5 Viva rapid-fire [core]
 :::viva
 Two systems of thinking, popularised by whom? :: Daniel Kahneman.
 Who proposed prototype theory? :: Eleanor Rosch.
@@ -419,7 +807,7 @@ Rate of the Flynn effect? :: About 3 IQ points per decade.
 Three MHCA 2017 capacity abilities? :: Understand, appreciate, communicate.
 :::
 
-## 5.3 Module test [core]
+## 5.6 Module test [core]
 Answer every question before checking. Your best score is saved.
 
 :::mcq

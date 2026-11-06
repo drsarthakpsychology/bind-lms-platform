@@ -21,7 +21,7 @@ How the CS and UCS are arranged in time decides how well conditioning works.
   "unit": "seconds",
   "answer": [0.2, 0.8],
   "reveal": "About half a second. For quick reflexes, the best interval is short. For taste aversion, as you will see, learning happens even when illness comes hours after the taste. The 'best' interval depends on what is being learned.",
-  "clinician": "Optimal interstimulus intervals differ by preparation: roughly 250 to 500 ms for human and rabbit eyelid conditioning, seconds for conditioned fear (freezing, suppression), and up to hours for conditioned taste aversion. Trace conditioning, unlike delay conditioning, depends on the hippocampus and on awareness of the contingency in humans (Clark and Squire, 1998)."
+  "clinician": "Optimal interstimulus intervals differ by preparation: roughly 250 to 500 ms for human and rabbit eyelid conditioning, seconds for conditioned fear (freezing, suppression), and up to hours for conditioned taste aversion. Trace conditioning, unlike delay conditioning, depends on the hippocampus and, in humans, on awareness of the contingency."
 }
 :::
 
@@ -101,6 +101,41 @@ Thorndike called his approach **connectionism**: learning as stamping in **stimu
 
 **Mowrer's two-factor theory** (1947) explains why avoidance is so stubborn: first, fear of a cue is learned through **classical conditioning**; then avoiding the cue is **negatively reinforced** by fear reduction (**operant**). Because the person always avoids, they never discover that the feared outcome would not have happened, so the fear never extinguishes. This is the backbone of the learning model of phobias and OCD.
 
+:::widget flow
+{
+ "title": "Why avoidance keeps fear alive",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "cue",
+   "label": "Feared cue",
+   "detail": "A lift, a dog, a crowded bus: a stimulus that was once paired with fear (classical conditioning)."
+  },
+  {
+   "id": "fear",
+   "label": "Anxiety rises",
+   "detail": "The conditioned fear response appears."
+  },
+  {
+   "id": "av",
+   "label": "Avoid or escape",
+   "detail": "Taking the stairs, crossing the road, getting off the bus."
+  },
+  {
+   "id": "rel",
+   "label": "Relief",
+   "detail": "Anxiety falls at once. This relief negatively reinforces the avoidance (operant conditioning)."
+  },
+  {
+   "id": "no",
+   "label": "No new learning",
+   "detail": "Because the person never stays, they never learn that the feared outcome would not have happened. The cue stays frightening."
+  }
+ ],
+ "caption": "Mowrer's two-factor theory as a loop. Exposure therapy breaks it at the 'avoid' step."
+}
+:::
+
 :::widget sort
 {
   "prompt": "Escape or avoidance?",
@@ -135,7 +170,7 @@ Martin Seligman and Steven Maier (1967) used a **triadic design** with dogs: one
   "unit": "%",
   "answer": [60, 80],
   "reveal": "About two-thirds. A third did learn to escape, a clue that individual differences matter. In humans, the reformulated theory (Abramson, Seligman and Teasdale, 1978) said that helplessness leads to depression mainly when people explain bad events as internal ('it's me'), stable ('it'll always be this way') and global ('it ruins everything').",
-  "clinician": "Maier and Seligman's 2016 Psychological Review reappraisal reversed the original logic at the neural level: passivity is the default mammalian response to prolonged aversive stimulation (driven by dorsal raphe serotonergic activity), and what is learned in the escapable condition is control, detected by the ventromedial prefrontal cortex, which then inhibits the raphe. Helplessness is the failure to learn control, not the learning of helplessness."
+  "clinician": "In 2016, Maier and Seligman themselves reappraised the work and reversed the original logic at the neural level: passivity is the default mammalian response to prolonged aversive stimulation (driven by dorsal raphe serotonergic activity), and what is learned in the escapable condition is control, detected by the ventromedial prefrontal cortex, which then inhibits the raphe. Helplessness is the failure to learn control, not the learning of helplessness."
 }
 :::
 
@@ -181,6 +216,66 @@ Charles Ferster and B. F. Skinner (1957) spent years recording how the **pattern
 | **Variable ratio (VR)** | Reward after an unpredictable number of responses, averaging some value | **Highest, steadiest rate**, no pauses; most resistant to extinction | Lottery tickets, slot machines, a fisherman casting a line, pulling down to refresh a social media feed |
 | **Fixed interval (FI)** | First response after a fixed time is rewarded | **Scalloped**: little responding after a reward, speeding up as the time nears | Studying hard only in the days before a fixed exam; checking the oven as baking time ends |
 | **Variable interval (VI)** | First response after an unpredictable time is rewarded | Moderate, **steady** rate | Checking for a WhatsApp reply; a fisherman waiting for a bite; surprise quizzes |
+
+:::widget flow
+{
+ "title": "The family tree of reinforcement schedules",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "Reinforcement"
+  },
+  {
+   "id": "c",
+   "label": "Continuous",
+   "parent": "r",
+   "detail": "Every response is reinforced. Fastest learning, fastest extinction."
+  },
+  {
+   "id": "p",
+   "label": "Partial (intermittent)",
+   "parent": "r",
+   "detail": "Only some responses are reinforced. Slower learning, much more resistant to extinction."
+  },
+  {
+   "id": "ra",
+   "label": "Ratio (count responses)",
+   "parent": "p"
+  },
+  {
+   "id": "in",
+   "label": "Interval (watch the clock)",
+   "parent": "p"
+  },
+  {
+   "id": "fr",
+   "label": "Fixed ratio",
+   "parent": "ra",
+   "detail": "High rate with a pause after each reward."
+  },
+  {
+   "id": "vr",
+   "label": "Variable ratio",
+   "parent": "ra",
+   "detail": "Highest, steadiest rate; most resistant to extinction."
+  },
+  {
+   "id": "fi",
+   "label": "Fixed interval",
+   "parent": "in",
+   "detail": "Scalloped: slow after a reward, faster as the time nears."
+  },
+  {
+   "id": "vi",
+   "label": "Variable interval",
+   "parent": "in",
+   "detail": "Moderate, steady rate."
+  }
+ ],
+ "caption": "Tap each leaf for its response pattern."
+}
+:::
 
 :::mnemonic Ratio is about responses, interval is about time
 **Ratio** = count the responses (faster responding = more rewards, so rates are high). **Interval** = watch the clock (responding faster does not bring the reward sooner). **Variable** = no pause (you never know when the next one is coming).
@@ -273,7 +368,7 @@ Edward Tolman called himself a **purposive behaviourist**: behaviour is goal-dir
 :::
 
 ### Köhler: insight
-Wolfgang Köhler, a Gestalt psychologist stranded on Tenerife during the First World War, studied chimpanzees. Sultan, his cleverest, faced bananas out of reach. After failing, he sat, apparently thinking, then suddenly **joined two sticks** to reach the fruit; others stacked **boxes**. Köhler's **insight learning** (*The Mentality of Apes*, 1925) has four marks: a **sudden** solution after a pause, smooth and complete performance once found, **retention** on later trials, and **transfer** to similar problems. This contrasts with Thorndike's gradual trial and error.
+Wolfgang Köhler, a Gestalt psychologist stranded on Tenerife during the First World War, studied chimpanzees. Sultan, his cleverest, faced bananas out of reach. After failing, he sat, apparently thinking, then suddenly **joined two sticks** to reach the fruit; others stacked **boxes**. Köhler's **insight learning** (described in his 1925 book on the minds of apes) has four marks: a **sudden** solution after a pause, smooth and complete performance once found, **retention** on later trials, and **transfer** to similar problems. This contrasts with Thorndike's gradual trial and error.
 
 Harry Harlow (1949) found that monkeys given hundreds of different two-choice discrimination problems got faster and faster at new ones, until they solved them in a single trial: they had formed a **learning set**, "learning to learn". Some of what looks like insight may build on earlier learning.
 
@@ -294,6 +389,39 @@ Albert Bandura argued that most human learning happens by **watching others** (*
 2. **Retention**: storing what was seen, in images or words.
 3. **Reproduction**: having the physical and mental ability to perform it.
 4. **Motivation**: a reason to perform it, from direct, vicarious or self-reinforcement.
+
+:::widget flow
+{
+ "title": "Bandura's four steps of observational learning",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "at",
+   "label": "Attention",
+   "detail": "The learner must notice the model. Similar, admired or rewarded models are watched more."
+  },
+  {
+   "id": "re",
+   "label": "Retention",
+   "detail": "What was seen is stored as images or words, and rehearsed."
+  },
+  {
+   "id": "rp",
+   "label": "Reproduction",
+   "detail": "The learner must be physically and mentally able to do it."
+  },
+  {
+   "id": "mo",
+   "label": "Motivation",
+   "detail": "Direct, vicarious or self-reinforcement decides whether the learned act is performed."
+  }
+ ],
+ "edgeLabels": {
+  "rp>mo": "learning becomes performance only here"
+ },
+ "caption": "A break at any step stops the behaviour from appearing."
+}
+:::
 
 Bandura later built **social cognitive theory**: **reciprocal determinism** (person, behaviour and environment influence each other) and **self-efficacy**, a person's belief that they can carry out a task. Self-efficacy grows from four sources: mastery experiences (the strongest), vicarious experience, verbal persuasion, and the person's physiological and emotional state.
 
@@ -348,6 +476,41 @@ Q: In Bandura's 1965 study, offering incentives made children in all three group
 - **Systematic desensitisation** (Joseph Wolpe, 1958): based on **reciprocal inhibition**, the idea that relaxation and anxiety cannot occur together. Steps: train deep muscle relaxation (Jacobson's progressive relaxation); build a **hierarchy** of feared situations rated in **SUDS** (subjective units of distress, 0 to 100); then pair each step, from the lowest, with relaxation, in imagination or in real life, moving up only when a step causes little anxiety.
 - **Exposure and flooding**: prolonged contact with the feared stimulus, without escape, until fear falls. Flooding starts near the top of the hierarchy. **Exposure and response prevention** is the core of OCD treatment.
 - **Aversion therapy**: pairing an unwanted behaviour with an unpleasant stimulus (historically, emetics with alcohol). It has weak long-term effects and serious ethical problems, and its past use to "treat" homosexuality is now recognised as harmful and unethical. **Covert sensitisation** (Cautela) uses imagined aversive consequences instead.
+
+:::widget flow
+{
+ "title": "Systematic desensitisation, step by step",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "as",
+   "label": "Assessment",
+   "detail": "Define the fear and what maintains it; agree goals."
+  },
+  {
+   "id": "rx",
+   "label": "Relaxation training",
+   "detail": "Progressive muscle relaxation is practised until the client can relax quickly."
+  },
+  {
+   "id": "hi",
+   "label": "Build a hierarchy",
+   "detail": "Ten to fifteen situations rated in SUDS from 0 to 100, from mild to most feared."
+  },
+  {
+   "id": "pa",
+   "label": "Pair, step by step",
+   "detail": "While relaxed, the client imagines or meets the lowest step until it causes little anxiety, then moves up."
+  },
+  {
+   "id": "ge",
+   "label": "Generalise",
+   "detail": "Practise in real life and in varied settings, so the new calm response transfers."
+  }
+ ],
+ "caption": "Reciprocal inhibition: relaxation and anxiety cannot occur together."
+}
+:::
 
 ### Techniques built on operant conditioning
 - **Token economy** (Ayllon and Azrin, 1968, on a ward for long-stay psychiatric patients): tokens earned for target behaviours (self-care, ward tasks) are exchanged for privileges. Widely used in special schools in India and elsewhere for children with intellectual disability and autism, and in residential settings.

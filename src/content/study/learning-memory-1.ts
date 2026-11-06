@@ -87,6 +87,36 @@ The CR is usually similar to the UCR but not identical: it is often weaker, and 
 }
 :::
 
+:::widget flow
+{
+ "title": "Classical conditioning in three stages",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "b1",
+   "label": "Before: food → salivation",
+   "detail": "The unconditioned stimulus (food) produces the unconditioned response (salivation) with no learning."
+  },
+  {
+   "id": "b2",
+   "label": "Before: bell → nothing",
+   "detail": "The bell is a neutral stimulus. The dog may turn its head, but does not salivate."
+  },
+  {
+   "id": "d",
+   "label": "During: bell, then food",
+   "detail": "The bell is sounded just before food arrives, many times. The bell comes to predict food."
+  },
+  {
+   "id": "a",
+   "label": "After: bell → salivation",
+   "detail": "The bell is now a conditioned stimulus, and salivation to it is a conditioned response."
+  }
+ ],
+ "caption": "Play it through, then try it with the pressure-cooker example below."
+}
+:::
+
 ### The basic phenomena
 - **Acquisition**: the CR grows over repeated CS-UCS pairings. Learning is fastest when the CS comes **just before** the UCS and reliably predicts it.
 - **Extinction**: if the CS is repeatedly presented **without** the UCS, the CR fades.
@@ -232,7 +262,15 @@ Hermann Ebbinghaus (1885) learned lists of **nonsense syllables** (like DAX, BUP
   "step": 5,
   "unit": "%",
   "answer": [25, 40],
-  "reveal": "About a third. He lost over 40 percent within the first 20 minutes and over half within an hour, then forgetting slowed sharply: about a quarter was still there after six days and about a fifth after a month. Forgetting is fast at first, then levels off. A 2015 replication (Murre and Dros) found almost the same curve."
+  "reveal": "About a third. He lost over 40 percent within the first 20 minutes and over half within an hour, then forgetting slowed sharply: about a quarter was still there after six days and about a fifth after a month. Forgetting is fast at first, then levels off. A careful replication in 2015 found almost the same curve."
+}
+:::
+
+:::widget curve
+{
+ "kind": "forgetting",
+ "title": "The forgetting curve, and what spaced reviews do",
+ "caption": "Watch how fast memory falls after one study session. Then add reviews: each one lifts retention, and the curve after it falls more slowly. Spacing reviews further apart, as memory starts to fade, gives the flattest curve."
 }
 :::
 

@@ -108,7 +108,7 @@ Q: In the method of limits, a participant keeps saying "yes, I hear it" for seve
 :::
 
 ## 2.2 Signal detection theory [core][beginner]
-Classical thresholds assume a fixed line between "detected" and "not detected". But the same person reports more detections when a miss is costly and fewer when a false alarm is costly. **Signal detection theory** (Tanner and Swets, 1954; Green and Swets, 1966) separates two things the threshold mixed together:
+Classical thresholds assume a fixed line between "detected" and "not detected". But the same person reports more detections when a miss is costly and fewer when a false alarm is costly. **Signal detection theory**, brought into psychology from radar engineering in the 1950s and 1960s by Wilson Tanner, John Swets and David Green, separates two things the threshold mixed together:
 1. **Sensitivity**: how well the person can tell signal from noise. It depends on the senses and the stimulus.
 2. **Response bias**, or **criterion**: how willing the person is to say "yes". It depends on expectations and on rewards and costs.
 
@@ -150,6 +150,14 @@ Payoffs and expectations move the criterion. Tell a radiologist that this hospit
     { "label": "A conservative criterion: flag only people with clear, severe symptoms", "verdict": "harm", "outcome": "Many early cases are sent home and keep spreading the infection.", "why": "A conservative criterion trades misses for fewer false alarms, the wrong trade when a cheap confirmatory test exists." },
     { "label": "It makes no difference; only sensitivity matters", "verdict": "ok", "outcome": "The team does not think about the trade-off and the criterion drifts.", "why": "Sensitivity matters, but where you set the criterion decides which errors you get. Both must be chosen deliberately." }
   ]
+}
+:::
+
+:::widget curve
+{
+ "kind": "sdt",
+ "title": "Move the criterion, then change d′",
+ "caption": "Slide the criterion left (liberal) and right (conservative): hits and false alarms rise and fall together. Then increase d′: the curves separate, and you can have more hits with fewer false alarms. Only sensitivity changes the trade-off itself."
 }
 :::
 
@@ -233,6 +241,46 @@ David Hubel and Torsten Wiesel (Nobel Prize 1981) recorded single cells in cat a
 - **Ventral stream** ("what"), to the temporal lobe: recognising objects and faces.
 - **Dorsal stream** ("where" or "how"), to the parietal lobe: location, motion and guiding action.
 
+:::widget flow
+{
+ "title": "The visual pathway",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "ret",
+   "label": "Retina",
+   "detail": "Rods and cones transduce light; bipolar and ganglion cells begin processing contrast and colour."
+  },
+  {
+   "id": "on",
+   "label": "Optic nerve",
+   "detail": "The axons of ganglion cells leave the eye at the blind spot."
+  },
+  {
+   "id": "ch",
+   "label": "Optic chiasm",
+   "detail": "Fibres from the nasal half of each retina cross, so each hemisphere receives the opposite half of the visual field."
+  },
+  {
+   "id": "lgn",
+   "label": "Lateral geniculate nucleus",
+   "detail": "The thalamic relay for vision, organised in layers that keep the two eyes separate."
+  },
+  {
+   "id": "v1",
+   "label": "Primary visual cortex (V1)",
+   "detail": "Simple and complex cells detect orientation, edges and movement."
+  },
+  {
+   "id": "str",
+   "label": "Two streams",
+   "detail": "Ventral stream to the temporal lobe: what an object is. Dorsal stream to the parietal lobe: where it is and how to act on it."
+  }
+ ],
+ "caption": "Play it through. A lesion at each step gives a different pattern of visual loss."
+}
+:::
+
 ### Colour vision: two theories, both right
 - **Trichromatic theory** (Young, 1802; Helmholtz, 1850s): three kinds of cone, most sensitive to short (about 420 nm, "blue"), medium (about 530 nm, "green") and long (about 560 nm, "red") wavelengths. Every colour is a pattern across the three. This explains colour matching with three primaries and most colour deficiency.
 - **Opponent-process theory** (Hering, 1878): colour is coded in opposing pairs, **red versus green**, **blue versus yellow** and **black versus white**. This explains **negative afterimages** (stare at red, then a white wall looks green), why nobody sees a "reddish green", and some patterns of colour deficiency.
@@ -281,6 +329,46 @@ Q: A patient recovering from a stroke can see objects but cannot reach accuratel
 Sound is a pressure wave. Its **frequency** (cycles per second, hertz) is heard as **pitch**; its **amplitude** (measured in decibels, a logarithmic scale) as **loudness**; its mix of frequencies as **timbre**, which is why a sitar and a guitar playing the same note sound different. Young humans hear about **20 to 20,000 Hz**; the upper limit falls with age (presbycusis).
 
 The outer ear funnels sound to the **eardrum**; three tiny bones of the middle ear (**malleus, incus, stapes**) amplify it into the **cochlea**. Inside, the **basilar membrane** vibrates and **hair cells** on it transduce the motion into signals in the auditory nerve.
+
+:::widget flow
+{
+ "title": "How sound becomes hearing",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "pin",
+   "label": "Outer ear",
+   "detail": "The pinna funnels sound waves down the ear canal; its folds also help tell front from back."
+  },
+  {
+   "id": "drum",
+   "label": "Eardrum",
+   "detail": "Vibrates in step with the pressure wave."
+  },
+  {
+   "id": "oss",
+   "label": "Middle-ear bones",
+   "detail": "Malleus, incus and stapes amplify the vibration onto the small oval window of the cochlea."
+  },
+  {
+   "id": "coch",
+   "label": "Cochlea",
+   "detail": "Fluid waves travel along the basilar membrane; high frequencies peak near the base, low near the apex."
+  },
+  {
+   "id": "hair",
+   "label": "Hair cells",
+   "detail": "Bending of their tips opens channels: this is transduction. Loud noise damages them for good."
+  },
+  {
+   "id": "ac",
+   "label": "Auditory cortex",
+   "detail": "Via the brainstem and thalamus to the temporal lobe, where pitch maps are laid out in order."
+  }
+ ],
+ "caption": "Tap each part to see its job."
+}
+:::
 
 ### How pitch is coded
 | Theory | Claim | Best for |
@@ -374,7 +462,46 @@ Donald Broadbent proposed that all input enters a brief **sensory buffer**, then
   "unit": "%",
   "answer": [25, 40],
   "reveal": "About a third. That is too many for a filter that blocks all meaning, yet far from everyone. It suggested that some unattended input is processed for meaning, at least for highly important words.",
-  "clinician": "Wood and Cowan (1995) replicated a rate of about a third; Conway, Cowan and Bunting (2001) found that people with low working-memory span noticed their name far more often (about 65 percent) than high-span people (about 20 percent), suggesting the cocktail-party effect partly reflects lapses of attentional control rather than deep unattended processing."
+  "clinician": "Later replications found the same rate of about a third, and a 2001 study found that people with low working-memory span noticed their name far more often (about 65 percent) than high-span people (about 20 percent), suggesting the cocktail-party effect partly reflects lapses of attentional control rather than deep unattended processing."
+}
+:::
+
+:::widget flow
+{
+ "title": "Broadbent's filter model (early selection)",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "in",
+   "label": "Both ears' input",
+   "detail": "Two messages arrive at once, one in each ear."
+  },
+  {
+   "id": "buf",
+   "label": "Sensory buffer",
+   "detail": "Holds everything briefly, before meaning is extracted."
+  },
+  {
+   "id": "fil",
+   "label": "Selective filter",
+   "detail": "Lets through one channel, chosen by physical features such as ear, pitch or location. The rest is blocked."
+  },
+  {
+   "id": "cap",
+   "label": "Limited-capacity channel",
+   "detail": "Only the selected message is analysed for meaning here."
+  },
+  {
+   "id": "out",
+   "label": "Memory and response",
+   "detail": "What you can report afterwards: almost nothing of the unattended ear."
+  }
+ ],
+ "edgeLabels": {
+  "buf>fil": "everything",
+  "fil>cap": "one channel only"
+ },
+ "caption": "Compare this with Treisman's model below: the filter becomes a volume knob."
 }
 :::
 
@@ -386,6 +513,39 @@ Donald Broadbent proposed that all input enters a brief **sensory buffer**, then
 
 ### Treisman's attenuation model (1964)
 Anne Treisman kept the filter early but made it a volume knob rather than a switch. Unattended messages are **attenuated** (turned down), not blocked. In a **mental dictionary**, each word has a threshold for recognition. Important words (your name, "fire", "help") have permanently low thresholds, so even a weakened signal can trigger them. Context can lower thresholds temporarily, which explains Treisman's ear-switching result.
+
+:::widget flow
+{
+ "title": "Treisman's attenuation model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "in",
+   "label": "Both ears' input",
+   "detail": "Two messages arrive at once."
+  },
+  {
+   "id": "att",
+   "label": "Attenuator",
+   "detail": "The unattended message is turned down, not switched off."
+  },
+  {
+   "id": "dic",
+   "label": "Mental dictionary",
+   "detail": "Each word has a recognition threshold. Your name, 'help' and 'fire' have permanently low thresholds; context lowers others for a moment."
+  },
+  {
+   "id": "aw",
+   "label": "Awareness",
+   "detail": "Attended words, plus any weakened words strong enough to cross their threshold, reach awareness."
+  }
+ ],
+ "edgeLabels": {
+  "att>dic": "attended at full strength, unattended weakened"
+ },
+ "caption": "This is why about a third of people hear their own name in the ignored ear."
+}
+:::
 
 ### Late selection: Deutsch and Deutsch (1963); Norman (1968)
 J. A. Deutsch and Diana Deutsch argued that **all** inputs are analysed for meaning, and selection happens late, just before response and memory, based on **importance**. Donald Norman added that both the input's strength and its relevance (pertinence) decide what is selected.
@@ -472,6 +632,36 @@ Anne Treisman and Garry Gelade (1980) asked people to find a target among distra
 - In **feature search** (a red letter among green ones), the target **pops out**; time barely changes with the number of distractors. Features are registered in parallel, pre-attentively.
 - In **conjunction search** (a red T among red Xs and green Ts), each item must be checked; time rises steeply with the number of distractors. **Focused attention is the glue** that binds features into objects.
 
+:::widget flow
+{
+ "title": "Feature integration theory in two stages",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "sc",
+   "label": "The scene",
+   "detail": "A red T among red Xs and green Ts."
+  },
+  {
+   "id": "fm",
+   "label": "Feature maps (parallel)",
+   "detail": "Colour, orientation, size and movement are registered everywhere at once, without attention. A single odd feature pops out here."
+  },
+  {
+   "id": "fa",
+   "label": "Focused attention (serial)",
+   "detail": "The spotlight visits one location at a time and glues that location's features together."
+  },
+  {
+   "id": "obj",
+   "label": "Bound object",
+   "detail": "Only now do you see 'a red T'. Without attention, features can recombine wrongly: illusory conjunctions."
+  }
+ ],
+ "caption": "Pop-out happens at the second step; conjunction search needs the third."
+}
+:::
+
 When attention is overloaded, features can bind wrongly, producing **illusory conjunctions**: briefly shown a red X and a blue O, people sometimes report a blue X.
 
 :::widget guess
@@ -483,7 +673,7 @@ When attention is overloaded, features can bind wrongly, producing **illusory co
   "unit": "minutes",
   "answer": [20, 35],
   "reveal": "Within the first half hour. Detection then stayed low. This vigilance decrement is why air traffic controllers, CCTV monitors and ICU staff work in shifts with breaks, and why long, uneventful watches are risky.",
-  "clinician": "The vigilance decrement is driven by both sensitivity loss (especially at high event rates and with memory load) and a conservative criterion shift as signals prove rare. The Continuous Performance Test (Rosvold, 1956) and the Digit Vigilance Test in the NIMHANS neuropsychological battery are clinical descendants of this paradigm."
+  "clinician": "The vigilance decrement is driven by both sensitivity loss (especially at high event rates and with memory load) and a conservative criterion shift as signals prove rare. The Continuous Performance Test (first devised in the 1950s) and the Digit Vigilance Test in the NIMHANS neuropsychological battery are clinical descendants of this paradigm."
 }
 :::
 
@@ -522,6 +712,44 @@ You recognise the letter A in hundreds of fonts and handwriting styles, and your
 | **Prototype** | Input is matched to an average, best example of a category | Posner and Keele (1968): after learning distorted dot patterns, people "recognised" the never-seen prototype |
 | **Recognition by components** (Biederman, 1987) | Objects are built from about 36 simple 3D shapes called **geons** (cylinders, cones, blocks) | Objects remain recognisable when many lines are deleted, as long as the joints between geons survive |
 
+:::widget flow
+{
+ "title": "Four theories of pattern recognition",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "root",
+   "label": "How do we recognise a pattern?"
+  },
+  {
+   "id": "tm",
+   "label": "Template matching",
+   "parent": "root",
+   "detail": "Compare with exact stored copies. Fails with variation; fine for machine-read cheque numbers."
+  },
+  {
+   "id": "fa",
+   "label": "Feature analysis",
+   "parent": "root",
+   "detail": "Detect lines and angles, then combine them (Selfridge's Pandemonium)."
+  },
+  {
+   "id": "pr",
+   "label": "Prototype matching",
+   "parent": "root",
+   "detail": "Compare with a stored average or best example."
+  },
+  {
+   "id": "rbc",
+   "label": "Recognition by components",
+   "parent": "root",
+   "detail": "Break objects into about 36 simple 3D parts called geons."
+  }
+ ],
+ "caption": "Tap a branch for the claim and its main problem."
+}
+:::
+
 ### Context helps: the word superiority effect
 A letter is identified more accurately inside a real word (the K in WORK) than alone or in a non-word (Reicher, 1969). Knowledge of words feeds back to help letter detection, a clear case of top-down processing.
 
@@ -534,7 +762,7 @@ A letter is identified more accurately inside a real word (the K in WORK) than a
 
 ### Faces are special
 - Faces are recognised **holistically**, as a whole configuration, more than objects are. Turning a face upside down harms recognition much more than turning a house upside down (the **face inversion effect**, Yin, 1969). In the **Thatcher illusion**, grotesquely inverted eyes and mouth go almost unnoticed until the face is turned upright.
-- The **fusiform face area** in the temporal lobe responds strongly to faces (Kanwisher, 1997).
+- The **fusiform face area** in the temporal lobe responds strongly to faces (identified with brain imaging by Nancy Kanwisher in 1997).
 - **Prosopagnosia** is an inability to recognise faces, despite normal vision and intellect. It can follow damage to the fusiform region or be developmental (present from birth in about 2 percent of people). People recognise others by voice, gait or clothing.
 
 :::widget decide

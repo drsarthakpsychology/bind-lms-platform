@@ -9,8 +9,46 @@ export const part1 = String.raw`
 - **Propositions**: statements that link concepts and can be true or false ("Mangoes are fruit").
 - **Schemas and scripts**: organised knowledge about situations and sequences (what happens at a bank, at a doctor's visit, at a mehendi ceremony).
 
+:::widget flow
+{
+ "title": "The building blocks of thought",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "t",
+   "label": "Thinking works with"
+  },
+  {
+   "id": "im",
+   "label": "Mental images",
+   "parent": "t",
+   "detail": "Picture-like representations you can inspect and rotate, such as walking through your home in your mind."
+  },
+  {
+   "id": "co",
+   "label": "Concepts",
+   "parent": "t",
+   "detail": "Categories that group things by shared properties: fruit, festival, depression."
+  },
+  {
+   "id": "pr",
+   "label": "Propositions",
+   "parent": "t",
+   "detail": "Statements linking concepts that can be true or false: 'Mangoes are fruit'."
+  },
+  {
+   "id": "sc",
+   "label": "Schemas and scripts",
+   "parent": "t",
+   "detail": "Organised knowledge of situations and sequences: what happens at a bank, a clinic visit or a mehendi."
+  }
+ ],
+ "caption": "Tap each block."
+}
+:::
+
 ### Fast and slow thinking
-Many psychologists (Keith Stanovich and Richard West; Daniel Kahneman, *Thinking, Fast and Slow*, 2011) describe two modes:
+Many psychologists, including Keith Stanovich, Richard West and Daniel Kahneman, describe two modes:
 | | **System 1** (intuitive) | **System 2** (deliberate) |
 |---|---|---|
 | Speed | Fast, automatic | Slow, effortful |
@@ -155,6 +193,46 @@ Q: A student uses a long formula to solve every statistics question, even when t
 | 18 to 24 months | Vocabulary spurt; **two-word** (telegraphic) speech: "Papa go", "more milk" |
 | 2 to 5 years | Grammar grows fast; **overregularisation** ("mouses", "goed") |
 
+:::widget flow
+{
+ "title": "The road to language",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "c",
+   "label": "Crying",
+   "detail": "From birth. Newborns already prefer human voices and the sound of their mother's language."
+  },
+  {
+   "id": "co",
+   "label": "Cooing",
+   "detail": "About 2 to 4 months: soft vowel sounds."
+  },
+  {
+   "id": "ba",
+   "label": "Babbling",
+   "detail": "About 6 to 10 months: repeated syllables that slowly take on the sounds of the home language."
+  },
+  {
+   "id": "fw",
+   "label": "First words",
+   "detail": "Around the first birthday."
+  },
+  {
+   "id": "tw",
+   "label": "Two-word speech",
+   "detail": "About 18 to 24 months, after a vocabulary spurt: 'Papa go', 'more milk'."
+  },
+  {
+   "id": "gr",
+   "label": "Grammar bursts",
+   "detail": "2 to 5 years: sentences grow, with rule errors like 'goed' and 'mouses'."
+  }
+ ],
+ "caption": "Play it through. Ages vary a lot between children, and bilingual children reach these milestones on time."
+}
+:::
+
 :::widget guess
 {
   "prompt": "Roughly how many words does a typical six-year-old understand?",
@@ -201,6 +279,14 @@ Definitions vary, but most experts agree that **intelligence** is the general me
   "unit": "%",
   "answer": [66, 70],
   "reveal": "About 68 percent: one standard deviation either side of the mean on the normal curve. About 95 percent score between 70 and 130, and about 2 percent score below 70 (one of the criteria, together with problems in daily adaptive functioning, for intellectual disability)."
+}
+:::
+
+:::widget curve
+{
+ "kind": "normal",
+ "title": "Where an IQ score sits",
+ "caption": "Drag along the curve. With a mean of 100 and a standard deviation of 15, about 68 percent score between 85 and 115 and about 95 percent between 70 and 130. A score of 130 is at roughly the 98th percentile."
 }
 :::
 

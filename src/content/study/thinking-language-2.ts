@@ -12,6 +12,44 @@ Concepts let us treat new things as instances of the familiar: once you know "fr
 | **Exemplar** | Stored memories of many actual members; a new item is compared with all of them | Captures variability and unusual members (you know some dogs are tiny) | Heavy on memory; how are exemplars chosen? |
 | **Theory (knowledge)-based** | Concepts are embedded in our explanations of the world | Explains why we classify a raccoon surgically altered to look like a skunk as still a raccoon (Keil): its "inside" matters | Harder to test precisely |
 
+:::widget flow
+{
+ "title": "Four views of how concepts are stored",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "c",
+   "label": "A concept is"
+  },
+  {
+   "id": "cl",
+   "label": "A definition",
+   "parent": "c",
+   "detail": "Classical view: necessary and sufficient features. Fits triangles, not birds."
+  },
+  {
+   "id": "pr",
+   "label": "A best example",
+   "parent": "c",
+   "detail": "Prototype view: an average; explains why a sparrow feels more 'bird' than a penguin."
+  },
+  {
+   "id": "ex",
+   "label": "Many remembered cases",
+   "parent": "c",
+   "detail": "Exemplar view: every member you have met; captures variety."
+  },
+  {
+   "id": "th",
+   "label": "Part of a theory",
+   "parent": "c",
+   "detail": "Knowledge view: what makes something what it is 'inside'."
+  }
+ ],
+ "caption": "Tap each view for its strength."
+}
+:::
+
 ### Levels of categories
 Rosch found that categories form a hierarchy, and one level is privileged:
 - **Superordinate**: furniture, vehicle, fruit.
@@ -35,7 +73,7 @@ Rosch found that categories form a hierarchy, and one level is privileged:
 
 ### How people form concepts in the laboratory
 - **Clark Hull (1920)** taught people to give nonsense names to Chinese characters that shared a common radical. They learned to name new characters correctly without being able to say what the common feature was: concept learning can be **implicit**.
-- **Jerome Bruner, Jacqueline Goodnow and George Austin** (*A Study of Thinking*, 1956) gave people cards varying in shape, colour, number of figures and borders, and asked them to discover a concept (for example "two red figures") by choosing cards and getting feedback. They identified strategies:
+- **Jerome Bruner, Jacqueline Goodnow and George Austin** (1956) gave people cards varying in shape, colour, number of figures and borders, and asked them to discover a concept (for example "two red figures") by choosing cards and getting feedback. They identified strategies:
   - **Simultaneous scanning**: holding every possible hypothesis in mind and eliminating them; logically ideal but overloads memory.
   - **Successive scanning**: testing one hypothesis at a time.
   - **Conservative focusing**: taking a positive card as a focus and changing **one** feature at a time; efficient and safe.
@@ -87,6 +125,54 @@ Q: People verify "A robin is a bird" faster than "An ostrich is a bird." This is
 | **Modus tollens** | If P then Q; not Q; so not P | Valid, but people find it hard |
 | **Affirming the consequent** | If P then Q; Q; so P | **Invalid** (a common error) |
 | **Denying the antecedent** | If P then Q; not P; so not Q | **Invalid** |
+
+:::widget flow
+{
+ "title": "If P, then Q: four ways to argue",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "Rule: if P then Q"
+  },
+  {
+   "id": "v",
+   "label": "Valid",
+   "parent": "r"
+  },
+  {
+   "id": "i",
+   "label": "Invalid",
+   "parent": "r"
+  },
+  {
+   "id": "mp",
+   "label": "Modus ponens",
+   "parent": "v",
+   "detail": "P is true, so Q is true."
+  },
+  {
+   "id": "mt",
+   "label": "Modus tollens",
+   "parent": "v",
+   "detail": "Q is false, so P is false. Valid, but people often miss it (think of the 7 card)."
+  },
+  {
+   "id": "ac",
+   "label": "Affirming the consequent",
+   "parent": "i",
+   "detail": "Q is true, so P is true. Wrong: Q may have other causes."
+  },
+  {
+   "id": "da",
+   "label": "Denying the antecedent",
+   "parent": "i",
+   "detail": "P is false, so Q is false. Wrong: Q may happen anyway."
+  }
+ ],
+ "caption": "Tap each form, then test yourself below."
+}
+:::
 
 :::widget worked
 {
@@ -156,7 +242,7 @@ Q: The mental models theory explains reasoning errors mainly by:
 ## 2.3 Problem solving: from insight to search [core][beginner]
 ### The Gestalt view: restructuring
 Gestalt psychologists saw problem solving as **restructuring** the problem until the solution "falls into place".
-- **Max Wertheimer** (*Productive Thinking*, 1945) contrasted **productive thinking** (understanding the structure of a problem, so you can solve new versions) with **reproductive thinking** (reusing past solutions).
+- **Max Wertheimer** (1945) contrasted **productive thinking** (understanding the structure of a problem, so you can solve new versions) with **reproductive thinking** (reusing past solutions).
 - **Karl Duncker** (1945) studied functional fixedness (the candle problem) and the **radiation problem**: how can a doctor destroy a tumour with rays without destroying healthy tissue the rays pass through?
 - **Norman Maier** (1931): the **two-string problem**. Two strings hang from the ceiling, too far apart to hold both. Solution: tie a pair of pliers to one string and swing it like a pendulum. When the experimenter casually brushed a string to set it swinging, many people then solved it, often without noticing the hint.
 
@@ -171,11 +257,41 @@ Abraham Luchins (1942) gave people problems such as: "Jar A holds 21, B holds 12
 :::
 
 ### The information-processing view: search through a problem space
-Allen Newell and Herbert Simon (*Human Problem Solving*, 1972) modelled problem solving as **search** through a **problem space**: an **initial state**, a **goal state**, **operators** (allowed moves) and the **intermediate states** they create. Their computer program, the **General Problem Solver**, used heuristics that people also use:
+Allen Newell and Herbert Simon (1972) modelled problem solving as **search** through a **problem space**: an **initial state**, a **goal state**, **operators** (allowed moves) and the **intermediate states** they create. Their computer program, the **General Problem Solver**, used heuristics that people also use:
 - **Means-ends analysis**: find the biggest difference between where you are and the goal, and pick an operator that reduces it, setting up **sub-goals** when an operator cannot yet be used.
 - **Hill climbing**: always take the step that seems to move closest to the goal. Simple, but it can trap you on a "foothill" where any move looks worse.
 - **Working backwards**: start from the goal (useful in mazes and proofs).
 - **Analogy**: use the solution of a similar problem.
+
+:::widget flow
+{
+ "title": "Means-ends analysis",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "c",
+   "label": "Compare",
+   "detail": "Find the biggest difference between where you are now and the goal."
+  },
+  {
+   "id": "o",
+   "label": "Choose an operator",
+   "detail": "Pick a move that reduces that difference."
+  },
+  {
+   "id": "s",
+   "label": "Set a sub-goal",
+   "detail": "If the move cannot be made yet, the new goal is to make it possible."
+  },
+  {
+   "id": "a",
+   "label": "Apply and check",
+   "detail": "Make the move and compare again, until no difference remains."
+  }
+ ],
+ "caption": "Newell and Simon's General Problem Solver ran this loop. Try it on the Tower of Hanoi below."
+}
+:::
 
 :::widget guess
 {
@@ -206,10 +322,10 @@ Mary Gick and Keith Holyoak (1980) told people a story about a general who captu
 ### Experts and novices
 - **Adriaan de Groot** and later **William Chase and Herbert Simon** (1973) showed that chess masters, after a five-second look, recalled real game positions far better than novices, but no better for **randomly** placed pieces. Expertise is a huge store of meaningful **chunks**, not a better memory in general.
 - Experts classify problems by **deep structure** (physics problems by principle, such as conservation of energy); novices by **surface features** (problems "about inclined planes") (Chi, Feltovich and Glaser, 1981).
-- K. Anders Ericsson's **deliberate practice**: focused, effortful practice with feedback, aimed at weaknesses. A 2014 meta-analysis (Macnamara and colleagues) found it explained only about 12 percent of the differences in performance overall: practice matters, but so do starting abilities, age of starting and other factors.
+- K. Anders Ericsson's **deliberate practice**: focused, effortful practice with feedback, aimed at weaknesses. A large 2014 meta-analysis found it explained only about 12 percent of the differences in performance overall: practice matters, but so do starting abilities, age of starting and other factors.
 
 ### Incubation
-Taking a break from an unsolved problem sometimes helps. Explanations include rest, forgetting a misleading approach (breaking mental set), and continued unconscious processing. A meta-analysis (Sio and Ormerod, 2009) found a reliable, modest incubation effect, strongest for creative problems with many possible answers.
+Taking a break from an unsolved problem sometimes helps. Explanations include rest, forgetting a misleading approach (breaking mental set), and continued unconscious processing. A 2009 meta-analysis found a reliable, modest incubation effect, strongest for creative problems with many possible answers.
 
 :::recall
 1. Contrast productive and reproductive thinking. || Productive: grasping the problem's structure. Reproductive: reusing old solutions.
@@ -277,6 +393,53 @@ Amos Tversky and Daniel Kahneman (Nobel Prize 2002, after Tversky's death) showe
 }
 :::
 
+:::widget flow
+{
+ "title": "From heuristic to bias",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "h",
+   "label": "Judgment heuristics"
+  },
+  {
+   "id": "re",
+   "label": "Representativeness",
+   "parent": "h",
+   "detail": "Judge by resemblance to a typical case."
+  },
+  {
+   "id": "av",
+   "label": "Availability",
+   "parent": "h",
+   "detail": "Judge by how easily examples come to mind."
+  },
+  {
+   "id": "an",
+   "label": "Anchoring",
+   "parent": "h",
+   "detail": "Start from a number and adjust too little."
+  },
+  {
+   "id": "b1",
+   "label": "Conjunction fallacy, base-rate neglect, gambler's fallacy",
+   "parent": "re"
+  },
+  {
+   "id": "b2",
+   "label": "Overestimating vivid risks",
+   "parent": "av"
+  },
+  {
+   "id": "b3",
+   "label": "Price and salary anchors; first diagnosis sticks",
+   "parent": "an"
+  }
+ ],
+ "caption": "Each shortcut saves effort and produces its own predictable errors."
+}
+:::
+
 ### Framing and prospect theory
 The same choice described differently can flip decisions. In Tversky and Kahneman's **Asian disease problem** (1981), 600 people are threatened by a disease:
 - **Gain frame**: Programme A saves 200 people; Programme B has a one-third chance of saving all 600 and a two-thirds chance of saving none. **72 percent chose A** (the sure thing).
@@ -341,6 +504,36 @@ Q: People prefer a sure gain of ₹5,000 to a 50 percent chance of ₹10,000, bu
 John Flavell (1979) coined **metacognition**: knowledge about, and control of, one's own thinking. It has two sides.
 - **Metacognitive knowledge**: what you know about cognition. Flavell divided it into knowledge of **persons** ("I learn better in the morning"), **tasks** ("recall is harder than recognition") and **strategies** ("self-testing works better than rereading").
 - **Metacognitive regulation**: **planning** (how will I tackle this?), **monitoring** (am I understanding? am I on track?) and **evaluating** (did it work?).
+
+:::widget flow
+{
+ "title": "Regulating your own learning",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "p",
+   "label": "Plan",
+   "detail": "Set a goal and choose a strategy: 'I will test myself on attention models after reading'."
+  },
+  {
+   "id": "m",
+   "label": "Monitor",
+   "detail": "Check understanding as you go: can I explain this without the book?"
+  },
+  {
+   "id": "e",
+   "label": "Evaluate",
+   "detail": "Compare your results with your confidence. Where was I wrong?"
+  },
+  {
+   "id": "a",
+   "label": "Adjust",
+   "detail": "Change the strategy or the time given to weak topics, then plan again."
+  }
+ ],
+ "caption": "The cycle of metacognitive regulation."
+}
+:::
 
 Thomas Nelson and Louis Narens (1990) described a **meta level** that **monitors** an object level (thinking itself) and **controls** it, for example deciding to restudy an item judged poorly learned.
 
@@ -425,8 +618,33 @@ English has one word, "uncle". Hindi distinguishes **chacha** (father's younger 
 | Theorist | Relation of language and thought | Key ideas |
 |---|---|---|
 | **Jean Piaget** | **Thought comes first**; language reflects the level of cognitive development | **Egocentric speech** in young children (talking aloud without regard to a listener) reflects egocentric thought and fades as thinking becomes social, around 7 |
-| **Lev Vygotsky** (*Thought and Language*, 1934) | Thought and language have **separate roots** and **merge** around age 2: thought becomes verbal and speech becomes rational | **Private speech** (talking to oneself) is a tool for self-guidance that goes "underground" as **inner speech**; children use more private speech on harder tasks |
+| **Lev Vygotsky** (1934) | Thought and language have **separate roots** and **merge** around age 2: thought becomes verbal and speech becomes rational | **Private speech** (talking to oneself) is a tool for self-guidance that goes "underground" as **inner speech**; children use more private speech on harder tasks |
 | **Noam Chomsky** | Language is a **separate, specialised module**, largely independent of general thought | Universal grammar; language acquisition device |
+
+:::widget flow
+{
+ "title": "Vygotsky: from talking with others to thinking in words",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "so",
+   "label": "Social speech",
+   "detail": "Adults talk the child through tasks: 'Put the big block at the bottom.'"
+  },
+  {
+   "id": "pr",
+   "label": "Private speech",
+   "detail": "The child talks aloud to guide herself, especially on hard tasks, at about 3 to 7 years."
+  },
+  {
+   "id": "in",
+   "label": "Inner speech",
+   "detail": "The talk goes silent and abbreviated: verbal thought used to plan and regulate."
+  }
+ ],
+ "caption": "Self-talk is a step towards self-control, not a sign of immaturity."
+}
+:::
 
 :::widget decide
 {
@@ -458,10 +676,10 @@ Q: Which finding gives the clearest support for the weak version of linguistic r
 
 ## 2.7 How children acquire language [core][beginner]
 ### The learning view: Skinner
-In *Verbal Behavior* (1957), B. F. Skinner argued that language is learned like other behaviour, by **imitation, reinforcement and shaping**. He described verbal operants: **mands** (requests, reinforced by getting what is asked for), **tacts** (naming things), **echoics** (repeating) and others.
+In 1957, B. F. Skinner argued that language is learned like other behaviour, by **imitation, reinforcement and shaping**. He described verbal operants: **mands** (requests, reinforced by getting what is asked for), **tacts** (naming things), **echoics** (repeating) and others.
 
 ### The nativist view: Chomsky
-Noam Chomsky's review of *Verbal Behavior* (1959) became one of the most influential papers in psychology. His arguments:
+Noam Chomsky's 1959 review of Skinner's account became one of the most influential papers in psychology. His arguments:
 - **Productivity**: children produce sentences they have never heard, which imitation cannot explain.
 - **Poverty of the stimulus**: the speech children hear is incomplete and full of errors, yet all normal children master complex grammar, quickly, at similar ages.
 - **Errors that are never modelled**: "goed" and "mouses" show a child applying rules, not copying.
@@ -493,8 +711,27 @@ Eric Lenneberg (1967) proposed a **critical period** for language, ending around
 - **Nicaraguan Sign Language**: deaf children brought together in schools in the 1980s created a new sign language, and younger children made its grammar more systematic than older ones did.
 Most researchers now speak of a **sensitive period**, strongest for phonology and grammar, rather than a sharp cut-off.
 
+:::widget brainmap
+{
+ "title": "Language areas of the brain",
+ "focus": [
+  "broca",
+  "wernicke",
+  "temporal",
+  "motor"
+ ],
+ "notes": {
+  "broca": "Speech production and grammar. Damage gives slow, effortful, telegraphic speech.",
+  "wernicke": "Understanding speech. Damage gives fluent but meaningless speech with poor comprehension.",
+  "temporal": "Word meanings and the auditory processing of speech sounds.",
+  "motor": "Moves the lips, tongue and larynx to articulate words."
+ },
+ "caption": "In most people these areas are in the left hemisphere."
+}
+:::
+
 ### Bilingualism
-Most Indian children grow up with two or more languages. Bilingual children may mix languages and may have a slightly smaller vocabulary **in each** language, but their **total** vocabulary is similar to monolinguals', and milestones are on time. Claims of a broad "bilingual advantage" in executive control have not held up well in large studies. An intriguing Indian finding: in a study of 648 patients with dementia in Hyderabad (Alladi and colleagues, 2013), bilinguals developed dementia about four and a half years later than monolinguals, even among people who could not read, though such observational findings are debated.
+Most Indian children grow up with two or more languages. Bilingual children may mix languages and may have a slightly smaller vocabulary **in each** language, but their **total** vocabulary is similar to monolinguals', and milestones are on time. Claims of a broad "bilingual advantage" in executive control have not held up well in large studies. An intriguing Indian finding: in a study of 648 patients with dementia in Hyderabad, published in 2013, bilinguals developed dementia about four and a half years later than monolinguals, even among people who could not read, though such observational findings are debated.
 
 :::widget sort
 {
