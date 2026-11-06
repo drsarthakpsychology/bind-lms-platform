@@ -58,6 +58,15 @@ surprising thing earns a hard shadow.
     only when a user genuinely needs context to make a decision — strip
     decorative descriptions, redundant instructions, and unnecessary subtitles.
 
+## Evidence and the mandatory check
+
+Before any UI change, run it through `docs/design/DECISION_FRAMEWORK.md` (25
+questions, mandatory) and follow the principles in
+`docs/design/DESIGN_INTELLIGENCE.md`. Owner decision 2026-11-06: **every
+button is a rounded rectangle (10px); pills only for status tags and filter
+chips**, the shape grammar "rectangle = do, pill = is, card = holds". Until
+that migration ships, the `Button` primitive is still a pill (see DI §C-1).
+
 ## Tokens — where they live
 
 - `src/app/globals.css` — the single source of truth: `:root` + `.dark`,

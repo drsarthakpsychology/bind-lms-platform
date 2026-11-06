@@ -1,7 +1,9 @@
 # UI RULES — VIBHA School of Psychology
 
 Every new screen is checked against this before it ships. This is the authority
-for the UI engineering standard. (Full engineering standard with scenario
+for the UI engineering standard. **The reasons behind these rules, and the mandatory
+25-question check for every UI change, live in [`docs/design/`](design/DESIGN_INTELLIGENCE.md)
+([Decision framework](design/DECISION_FRAMEWORK.md)).** (Full engineering standard with scenario
 library: see `docs/UI_UX_GUIDELINES.md` and the §22 checklist below.)
 
 ## The six bug classes and their systemic fixes
