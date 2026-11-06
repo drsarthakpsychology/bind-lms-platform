@@ -128,6 +128,10 @@ Q: Which finding suggests that suicidal behaviour is not simply a consequence of
 {"title": "A DBT chain analysis", "layout": "chain", "nodes": [{"id": "vuln", "label": "Vulnerabilities", "detail": "Little sleep, skipped meals, argument, alcohol."}, {"id": "prompt", "label": "Prompting event", "detail": "No reply to messages for two hours."}, {"id": "thought", "label": "Thoughts", "detail": "'He's leaving me; I'm unlovable.'"}, {"id": "emotion", "label": "Emotions and body", "detail": "Panic, shame, chest tightness."}, {"id": "urge", "label": "Urge", "detail": "'I need this feeling to stop.'"}, {"id": "behaviour", "label": "Target behaviour", "detail": "Self-harm."}, {"id": "conseq", "label": "Consequences", "detail": "Short-term relief; later guilt."}], "caption": "Each link is a place where a skill could be used instead."}
 :::
 
+:::widget receptor
+{"receptor": "NMDA", "title": "Ketamine at the NMDA receptor", "caption": "Ketamine is an NMDA receptor antagonist. Blocking these receptors on inhibitory interneurons triggers a glutamate burst and rapid synaptic growth, which may underlie its short-lived reduction in suicidal thoughts."}
+:::
+
 :::recall
 1. Name the four skill modules of DBT. || Mindfulness, distress tolerance, emotion regulation, interpersonal effectiveness.
 2. What is a chain analysis? || A step-by-step analysis of the vulnerabilities, prompts, thoughts, emotions, urges, actions and consequences around a target behaviour.

@@ -251,6 +251,10 @@ Guidelines (NICE, WHO, APA, ISTSS) recommend trauma-focused therapies as first-l
 {"scene": "Mr Singh, 45, a bus driver in Amritsar, developed PTSD after a crash in which a passenger died. His GP has prescribed clonazepam 1 mg twice daily for six months. He still has nightmares and avoids driving, and now needs the tablets to 'feel normal'.", "ask": "What is the best plan?", "choices": [{"label": "Increase clonazepam", "verdict": "harm", "outcome": "He becomes drowsier and more dependent; the PTSD persists.", "why": "Benzodiazepines do not treat PTSD and can impair recovery."}, {"label": "Offer trauma-focused therapy (for example CPT, PE or EMDR), start an SSRI if he wishes, and plan a slow clonazepam taper; address sleep with CBT for insomnia", "verdict": "best", "outcome": "Over months his nightmares lessen, he drives again, and the clonazepam is stopped.", "why": "First-line trauma-focused therapy plus evidence-based medicine, with safe benzodiazepine withdrawal."}, {"label": "Stop clonazepam immediately", "verdict": "harm", "outcome": "He has severe withdrawal, insomnia and agitation.", "why": "Abrupt withdrawal after long use is unsafe."}]}
 :::
 
+:::widget journey
+{"drug": "sertraline", "target": "serotonin transporters in fear and memory circuits", "routes": ["oral"], "notes": {"target": "Over 8 to 12 weeks, serotonin changes help damp hyperarousal and intrusive memories."}, "caption": "Why patients must keep taking the medicine for weeks before judging it."}
+:::
+
 :::recall
 1. Name four first-line trauma-focused therapies for adults. || CPT, prolonged exposure, cognitive therapy for PTSD, EMDR (also NET and WET).
 2. Which SSRIs have US approval for PTSD? || Sertraline and paroxetine.
@@ -486,6 +490,10 @@ Twin heritability is roughly 30 to 40%. A genome-wide study published in 2024 (o
 {"title": "The stress hormone chain", "layout": "chain", "nodes": [{"id": "hyp", "label": "Hypothalamus", "detail": "Releases CRH, often raised in PTSD."}, {"id": "pit", "label": "Pituitary", "detail": "Releases ACTH."}, {"id": "adr", "label": "Adrenal glands", "detail": "Release cortisol (and adrenaline)."}, {"id": "fb", "label": "Feedback", "detail": "Cortisol switches the system off; in PTSD this feedback is unusually strong, so cortisol can be low."}, {"id": "na", "label": "Noradrenaline unopposed", "detail": "Strong emotional memory encoding and hyperarousal."}]}
 :::
 
+:::widget neuron
+{"title": "How a fear memory is written", "myelinated": true, "caption": "Neurons fire only when input crosses threshold, all or none. Noradrenaline during trauma lowers the effective threshold in amygdala circuits, so cues present at the time are strongly linked to fear."}
+:::
+
 :::recall
 1. Describe the cortisol pattern typical of PTSD. || Normal or low baseline cortisol with enhanced negative feedback; raised CSF CRH.
 2. What did the Vietnam twin study suggest about the hippocampus? || Smaller hippocampi may be a pre-existing vulnerability.
@@ -527,6 +535,10 @@ Medicines produce smaller average effects than trauma-focused therapy. SSRIs and
 
 :::widget reveal
 {"prompt": "Why might a benzodiazepine taken just after exposure therapy sessions slow recovery from PTSD?", "answer": "Recovery depends on new learning: that the memory can be held without danger and that reminders are safe now. Benzodiazepines can impair memory consolidation and extinction learning, and act as a safety signal, so the person may credit the tablet rather than their own experience for coping."}
+:::
+
+:::widget receptor
+{"receptor": "alpha-1", "title": "Prazosin at the alpha-1 receptor", "caption": "Prazosin is an antagonist at alpha-1 adrenergic receptors, blocking noradrenaline's effect on arousal during sleep; this is the rationale for its use in trauma nightmares, though trial results are mixed."}
 :::
 
 :::recall

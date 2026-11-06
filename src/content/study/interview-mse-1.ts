@@ -673,6 +673,10 @@ One long funnel: all the open questions first, then a yes/no checklist. It feels
 {"scene": "Sunita, 41, a nurse from Kochi, tells you smoothly that 'everything at home is perfectly fine'. She has been twisting her dupatta and blinking back tears since she sat down.", "ask": "How do you respond?", "choices": [{"label": "'You're lying to me. Something is obviously wrong.'", "verdict": "harm", "outcome": "She stiffens, apologises for wasting your time and asks to leave.", "why": "Confrontation used as accusation feels like an attack and closes the interview."}, {"label": "Gently: 'You say things are fine, and I also notice you look close to tears. I wonder what's going on for you right now.'", "verdict": "best", "outcome": "After a pause she tells you her husband has been hitting her for a year.", "why": "Gentle confrontation names the mismatch between what is said and what is seen, without blame, and invites the truth."}, {"label": "Accept it and move to the next section", "verdict": "ok", "outcome": "The interview finishes on time. The most important fact stays hidden.", "why": "Not harmful in itself, but you ignored a clear non-verbal cue."}]}
 :::
 
+:::widget flow
+{"title": "A series of funnels", "layout": "chain", "nodes": [{"id": "open1", "label": "Open wide", "detail": "'Tell me what brought you here.'"}, {"id": "narrow1", "label": "Narrow", "detail": "Onset, course, severity."}, {"id": "close1", "label": "Close", "detail": "Specific yes or no checks."}, {"id": "trans", "label": "Transition", "detail": "'Now I'd like to ask about your sleep.'"}, {"id": "open2", "label": "Open the next topic", "detail": "'How has your sleep been?'"}]}
+:::
+
 :::recall
 1. Define open and closed questions with one example each. || Open: minimal structure for the answer (“Tell me about your pain”). Closed: narrow, often yes or no (“Is it sharp?”).
 2. Explain the series-of-funnels model. What beginner's error does it correct? || Open, narrow, close per topic; corrects one long funnel with a closed checklist at the end.
@@ -1208,6 +1212,10 @@ The formulation is written for the record; the plan must be discussed with the p
 :::clinician
 ### A first-episode work-up in practice
 For a first episode of psychosis, a reasonable baseline is: full blood count, kidney, liver and thyroid function, fasting glucose or HbA1c and lipids, calcium, vitamin B12, urine drug screen, HIV and syphilis serology where risk exists, pregnancy test where relevant, weight, BMI, waist and blood pressure, and an ECG before antipsychotics with QT risk. Neuroimaging (MRI preferred) when there are neurological signs, atypical features (late onset, rapid cognitive decline, seizures, delirium) or as local policy dictates. EEG for suspected seizures or encephalopathy. Consider autoimmune encephalitis (anti-NMDA receptor antibodies) when psychosis comes with seizures, dyskinesias, autonomic instability or reduced consciousness, especially in young women.
+:::
+
+:::widget layers
+{"title": "The biopsychosocial formulation", "shape": "rings", "layers": [{"label": "Biological", "detail": "Genes, brain, body, medicines, substances."}, {"label": "Psychological", "detail": "Personality, coping, beliefs, early experiences."}, {"label": "Social", "detail": "Family, work, money, culture, discrimination."}], "caption": "Each ring holds predisposing, precipitating, perpetuating and protective factors."}
 :::
 
 :::recall

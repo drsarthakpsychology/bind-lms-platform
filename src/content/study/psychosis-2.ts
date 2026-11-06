@@ -175,6 +175,14 @@ After a first episode, continuing medicine for at least **1 to 2 years** after r
 {"kind": "half-life", "title": "Why long-acting injections steady the level", "caption": "A long-acting injection releases drug slowly, so levels rise to a steady state over several doses and fall slowly if a dose is late. Daily tablets missed for several days drop quickly, which is one reason injections reduce relapse."}
 :::
 
+:::widget pathways
+{"system": "dopamine", "caption": "Turn on a D2 blocker: positive symptoms ease (mesolimbic), but EPS (nigrostriatal), raised prolactin (tuberoinfundibular) and worse negative and cognitive symptoms (mesocortical) can follow. Add serotonin 2A blockade to see why second-generation drugs cause fewer EPS."}
+:::
+
+:::widget journey
+{"drug": "paliperidone palmitate", "target": "dopamine D2 receptors in the striatum", "routes": ["depot", "oral"], "notes": {"muscle": "Injected into muscle, the drug dissolves slowly over weeks.", "slow": "Slow, steady release keeps levels stable and protects against missed tablets."}, "caption": "Compare a daily tablet with a long-acting injection."}
+:::
+
 :::recall
 1. Name the six principles of treatment. || Engage; antipsychotic; psychological and family work; rehabilitation; physical health; relapse prevention.
 2. What predicts non-response early in treatment? || No improvement by about 2 to 4 weeks at an adequate dose.
@@ -304,6 +312,10 @@ Persistent significant symptoms despite **at least two** antipsychotics, each gi
 
 :::widget flow
 {"title": "Starting clozapine safely", "layout": "chain", "nodes": [{"id": "confirm", "label": "Confirm resistance", "detail": "Two adequate antipsychotic trials, adherence confirmed."}, {"id": "base", "label": "Baseline", "detail": "Blood count, ECG, weight, glucose, lipids, smoking status."}, {"id": "titrate", "label": "Slow titration", "detail": "12.5 mg, rising gradually towards about 300 mg."}, {"id": "monitor", "label": "Monitor", "detail": "Blood counts; myocarditis signs in the first two months; constipation; seizures."}, {"id": "levels", "label": "Check levels", "detail": "Aim around 350 ng/mL or more; adjust for smoking changes."}, {"id": "review", "label": "Review response", "detail": "Give an adequate trial before judging."}]}
+:::
+
+:::widget journey
+{"drug": "clozapine", "target": "multiple receptors: D4, 5-HT2A, muscarinic, alpha-adrenergic and histamine, with low D2 occupancy", "routes": ["oral"], "notes": {"liver": "Broken down mainly by CYP1A2: smoking speeds this up and lowers levels; stopping smoking or adding fluvoxamine or ciprofloxacin raises them."}, "caption": "Why smoking status changes the clozapine dose."}
 :::
 
 :::recall

@@ -519,6 +519,14 @@ These ranges are for learning. They are not advice for anyone to take or change 
 {"kind": "half-life", "title": "Why fluoxetine forgives missed doses", "caption": "Fluoxetine and its active metabolite have very long half-lives, so levels stay near steady state if a dose is missed; short half-life drugs such as paroxetine fall quickly and can cause discontinuation symptoms."}
 :::
 
+:::widget synapse
+{"drug": "ssri", "caption": "SSRIs block serotonin reuptake. In OCD the benefit comes later and at higher doses than in depression, perhaps because orbitofrontal serotonin autoreceptors adapt more slowly."}
+:::
+
+:::widget journey
+{"drug": "fluvoxamine", "target": "serotonin transporters in orbitofrontal and striatal circuits", "routes": ["oral"], "notes": {"liver": "Fluvoxamine strongly inhibits the liver enzyme CYP1A2, raising levels of clozapine, caffeine and theophylline taken alongside it."}, "caption": "Follow the dose from tablet to target, and see why interactions happen in the liver."}
+:::
+
 :::recall
 1. What are the first-line treatments for OCD? || ERP (CBT) and SSRIs or clomipramine; often combined.
 2. How do SSRI doses and response times in OCD differ from depression? || Higher doses; slower response (often 10 to 12 weeks).

@@ -129,6 +129,14 @@ Clonazepam, alprazolam, lorazepam and diazepam calm anxiety within an hour. But:
 {"scene": "Mrs Desai, 68, from Vadodara, has taken alprazolam 0.5 mg three times a day for eight years 'for nerves'. She has had two falls this year and her daughter says she is 'forgetful'. She asks for a stronger dose because 'it isn't working like before'.", "ask": "What is the best plan?", "choices": [{"label": "Increase the dose as requested", "verdict": "harm", "outcome": "She falls again and fractures her hip.", "why": "Tolerance has developed. A higher dose raises the risk of falls and confusion in an older adult."}, {"label": "Stop alprazolam today", "verdict": "harm", "outcome": "Within days she is shaky, sleepless and agitated, and has a seizure.", "why": "Abrupt withdrawal after long use can be dangerous."}, {"label": "Explain tolerance and risks, agree a very gradual taper (possibly after switching to a longer-acting drug), treat underlying anxiety with an SSRI and CBT, and review falls and memory", "verdict": "best", "outcome": "Over months the dose comes down. Her memory improves, she has no further falls, and she sleeps with CBT for insomnia.", "why": "A slow, agreed taper with treatment of the underlying disorder is safe and effective."}]}
 :::
 
+:::widget journey
+{"drug": "sertraline", "target": "serotonin transporters in the raphe and forebrain", "routes": ["oral"], "notes": {"liver": "Partly broken down on the first pass through the liver; dose is adjusted in liver disease.", "target": "Blocks the serotonin transporter; anxiety benefit builds over weeks as receptors adapt."}, "caption": "Why benefit takes weeks: the drug reaches its target within hours, but the brain's adaptation is slow."}
+:::
+
+:::widget curve
+{"kind": "half-life", "title": "Short and long half-life benzodiazepines", "caption": "Alprazolam's short half-life makes levels rise and fall between doses, which brings rebound anxiety and harder withdrawal; clonazepam or diazepam stay steadier. This is why tapering often switches to a long-acting drug."}
+:::
+
 :::recall
 1. What are first-line medicines for GAD, panic and social anxiety? || SSRIs and SNRIs.
 2. Why start SSRIs at a low dose in anxiety? || Early jitteriness or worsening of anxiety.
@@ -170,6 +178,10 @@ Not everyone needs the most intensive treatment first.
 
 :::widget decide
 {"scene": "Riya, 10, from Bengaluru, has refused school for three weeks with stomach aches every morning. Her mother has started sitting outside the classroom all day and answers every question for her. The school counsellor asks your view.", "ask": "What is the most helpful advice?", "choices": [{"label": "Keep Riya home until she feels ready", "verdict": "harm", "outcome": "A month later she cannot leave the house without crying.", "why": "Prolonged absence deepens avoidance and makes return harder."}, {"label": "Assess for separation anxiety, bullying, learning problems and medical causes; plan a graded return with the school; coach the mother to gradually reduce accommodation and praise brave steps", "verdict": "best", "outcome": "With a clear plan and a kind teacher, Riya is back in class full-time within weeks, and her mother returns to work.", "why": "Graded exposure plus reducing parental accommodation is the core of treatment for childhood anxiety."}, {"label": "Start a benzodiazepine before school each day", "verdict": "harm", "outcome": "She is drowsy in class and the anxiety remains.", "why": "Benzodiazepines are not appropriate for children's school refusal; CBT and family work come first."}]}
+:::
+
+:::widget layers
+{"title": "Stepped care for anxiety", "shape": "stack", "layers": [{"label": "Step 4: specialist care", "detail": "Severe, complex or resistant cases; significant risk."}, {"label": "Step 3: high intensity", "detail": "Individual CBT, medicine, or both."}, {"label": "Step 2: low intensity", "detail": "Guided self-help, internet CBT, groups."}, {"label": "Step 1: recognise and inform", "detail": "Assessment, explanation, monitoring."}], "caption": "Start at the lowest effective step and move up if needed."}
 :::
 
 :::recall
@@ -344,6 +356,14 @@ Breathing air rich in carbon dioxide provokes panic attacks far more often in pe
 - **Neuropeptides**: neuropeptide Y and oxytocin are linked to resilience; orexin to arousal and panic in animal models.
 :::
 
+:::widget brainmap
+{"title": "The fear circuit", "focus": ["thalamus", "sensory", "amygdala", "hypothalamus", "brainstem", "prefrontal", "hippocampus"], "notes": {"thalamus": "Low road: a fast, crude signal straight to the amygdala.", "sensory": "High road: detailed processing that confirms or cancels the alarm.", "amygdala": "Lateral nucleus learns cue-danger links; central nucleus sends the output.", "hypothalamus": "Sympathetic surge and the HPA axis.", "brainstem": "Periaqueductal grey (freezing), locus coeruleus (arousal), breathing centres.", "prefrontal": "Ventromedial prefrontal cortex recalls extinction and brakes the amygdala.", "hippocampus": "Context: safe here, dangerous there."}}
+:::
+
+:::widget curve
+{"kind": "sdt", "title": "Anxiety as a liberal threat detector", "caption": "Signal detection theory separates sensitivity from bias. Anxious people tend to set a liberal criterion: they detect more real threats but also raise many false alarms. Move the criterion to see the trade-off between hits and false alarms."}
+:::
+
 :::recall
 1. Describe LeDoux's two roads to the amygdala. || A fast thalamic low road and a slow cortical high road.
 2. Name four outputs of the central amygdala and their effects. || Hypothalamus (sympathetic, HPA), periaqueductal grey (freezing), locus coeruleus (arousal), parabrachial nucleus (breathing).
@@ -393,6 +413,14 @@ Blocking the serotonin transporter raises serotonin first around the cell bodies
 - CYP interactions: fluvoxamine strongly inhibits CYP1A2 and CYP3A4 (raising alprazolam levels); fluoxetine and paroxetine inhibit CYP2D6 (raising propranolol and some antipsychotics).
 :::
 
+:::widget synapse
+{"drug": "ssri", "caption": "An SSRI blocks the serotonin transporter. At first serotonin rises mainly near the cell bodies, where 5-HT1A autoreceptors slow firing; over weeks these autoreceptors desensitise and forebrain release increases."}
+:::
+
+:::widget receptor
+{"receptor": "5-HT1A", "title": "Buspirone as a partial agonist", "caption": "Buspirone is a partial agonist at 5-HT1A receptors: it produces a moderate signal whatever the serotonin level, unlike a full agonist (maximal signal) or an antagonist (no signal). Compare the four ligand types."}
+:::
+
 :::recall
 1. Explain the delay in SSRI benefit. || 5-HT1A autoreceptors must desensitise before forebrain serotonin release rises.
 2. Where do benzodiazepines bind, and what do they change? || Between the alpha and gamma-2 subunits of GABA-A; they increase the frequency of channel opening.
@@ -439,6 +467,10 @@ Fear reduction within a session predicts later outcome less than expected; toler
 {"scene": "You are planning exposure for Neha, whose agoraphobia began in the Kolkata metro. Her hierarchy is fixed: the same station, same time, always with her mother, ending when her anxiety drops below 20.", "ask": "Using inhibitory learning principles, how would you change the plan?", "choices": [{"label": "Keep it exactly the same; consistency is key", "verdict": "ok", "outcome": "She does well at that station but panics on a different line.", "why": "A fixed context and a companion limit generalisation; renewal is likely."}, {"label": "Ask her specific prediction before each trip and test it; vary stations, times and lines; phase out her mother; stop when the prediction is disconfirmed rather than when anxiety is low", "verdict": "best", "outcome": "Her fear of fainting fades across many stations, and she travels alone to work.", "why": "Expectancy violation, variability and removing safety signals make learning stronger and more portable."}, {"label": "Add alprazolam before each trip to keep anxiety low", "verdict": "harm", "outcome": "Trips feel easier, but her fear returns as soon as the tablets stop.", "why": "Benzodiazepines can impair extinction learning and become a safety signal."}]}
 :::
 
+:::widget curve
+{"kind": "forgetting", "title": "Spacing exposure practice", "caption": "New safety learning fades without practice, like any memory. Spaced, repeated practice in varied settings keeps it retrievable and reduces the return of fear. Add review points to see the curve flatten."}
+:::
+
 :::recall
 1. Name the four forms of return of fear. || Spontaneous recovery, renewal, reinstatement, rapid reacquisition.
 2. What is expectancy violation? || Designing exposure to disconfirm a specific feared prediction as strongly as possible.
@@ -479,6 +511,10 @@ If anxiety disorders share mechanisms, one treatment might fit many. The **Unifi
 
 :::widget sort
 {"prompt": "In HiTOP, does each disorder belong to the fear or the distress subfactor?", "buckets": ["Fear", "Distress"], "items": [{"text": "Panic disorder", "bucket": 0}, {"text": "Generalised anxiety disorder", "bucket": 1}, {"text": "Specific phobia", "bucket": 0}, {"text": "Major depressive disorder", "bucket": 1}, {"text": "Social anxiety disorder", "bucket": 0}, {"text": "PTSD", "bucket": 1}]}
+:::
+
+:::widget layers
+{"title": "Where anxiety sits in HiTOP", "shape": "stack", "layers": [{"label": "Internalising spectrum", "detail": "Shared liability to anxiety and depression."}, {"label": "Fear subfactor", "detail": "Panic, agoraphobia, social anxiety, specific phobia."}, {"label": "Distress subfactor", "detail": "GAD, major depression, persistent depressive disorder, PTSD."}, {"label": "Syndromes and symptoms", "detail": "The individual disorders and their symptoms."}]}
 :::
 
 :::recall

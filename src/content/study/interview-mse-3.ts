@@ -160,6 +160,10 @@ Structured interviews mainly reduce information variance. They do not remove jud
 {"scene": "A district mental health programme in Odisha wants to find out how many villagers have depression. The team has lay health workers with two days of training and no clinicians.", "ask": "Which approach fits best?", "choices": [{"label": "Train them to use the SCID-5-CV", "verdict": "harm", "outcome": "Workers struggle with clinical judgements; results vary wildly between villages.", "why": "Semi-structured interviews need clinical training to judge whether a symptom is present."}, {"label": "Use a validated, fully structured interview or a validated screen in the local language, with a clinician confirming a sample of positives", "verdict": "best", "outcome": "The survey is consistent across workers, and clinician checks show how accurate the screen is locally.", "why": "Fully structured tools suit lay interviewers; local validation and clinical confirmation guard accuracy."}, {"label": "Ask the workers to judge 'who looks depressed'", "verdict": "harm", "outcome": "Women who cry openly are over-counted; quiet men are missed.", "why": "Unstructured lay judgement brings large observation and criterion variance."}]}
 :::
 
+:::widget flow
+{"title": "Where diagnostic disagreement comes from", "layout": "chain", "nodes": [{"id": "info", "label": "Information variance", "detail": "Clinicians obtain different information."}, {"id": "obs", "label": "Observation variance", "detail": "Same information, judged differently."}, {"id": "crit", "label": "Criterion variance", "detail": "Different rules applied."}, {"id": "pat", "label": "Patient variance", "detail": "The patient really changed."}, {"id": "fix", "label": "What structured interviews fix", "detail": "Mainly information variance."}]}
+:::
+
 :::recall
 1. Distinguish semi-structured from fully structured interviews, with an example of each. || Semi-structured: set questions, clinician judges (SCID-5, SCAN). Fully structured: read verbatim, no judgement, lay use (CIDI, MINI).
 2. What does kappa correct for, and what do 0 and 1 mean? || Chance agreement; 0 = chance, 1 = perfect.

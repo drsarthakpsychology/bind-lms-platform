@@ -283,6 +283,10 @@ Q: Which factor most increases violence risk in a person with psychosis?
 {"title": "Levels of prevention", "shape": "stack", "layers": [{"label": "Indicated", "detail": "People who have attempted or are suicidal now: assessment, safety planning, CT-SP, DBT, follow-up, lithium or clozapine where indicated."}, {"label": "Selective", "detail": "Groups at higher risk: gatekeeper training in colleges, support after bereavement, screening in primary care."}, {"label": "Universal", "detail": "Everyone: means restriction, alcohol policy, safe media reporting, school well-being programmes, reducing stigma."}], "caption": "Population measures at the base often prevent the most deaths."}
 :::
 
+:::widget journey
+{"drug": "lithium", "target": "intracellular signalling in mood and impulse-control circuits", "routes": ["oral"], "notes": {"liver": "Lithium is not broken down by the liver at all.", "out": "It leaves through the kidneys, so dehydration, kidney disease and some medicines (NSAIDs, ACE inhibitors, thiazides) raise levels; levels are monitored."}, "caption": "Why lithium needs blood levels, and why supply is managed carefully for people at risk."}
+:::
+
 :::recall
 1. Which two medicines have the strongest evidence for reducing suicide in specific disorders? || Lithium (mood disorders) and clozapine (schizophrenia).
 2. Name three psychological interventions that reduce suicidal behaviour. || DBT, CT-SP, CAMS (also ASSIP, safety planning with follow-up).

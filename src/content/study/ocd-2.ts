@@ -388,6 +388,10 @@ Animal work suggests that in the **orbitofrontal cortex**, serotonin terminal au
 {"scene": "Ms Banerjee, 38, from Kolkata, has contamination OCD. Fluoxetine 80 mg for 14 weeks and sertraline 200 mg for 12 weeks each gave partial benefit (Y-BOCS 32 to 26). She completed 20 sessions of ERP with homework. She has no tics.", "ask": "What is the most reasonable next step?", "choices": [{"label": "Add clonazepam for her anxiety", "verdict": "harm", "outcome": "She feels calmer for a while; the OCD is unchanged and she now struggles to taper the clonazepam.", "why": "Benzodiazepines do not treat core OCD symptoms."}, {"label": "Augment sertraline with low-dose aripiprazole or risperidone for 6 to 8 weeks with metabolic monitoring, or switch to clomipramine; continue ERP", "verdict": "best", "outcome": "With aripiprazole 5 mg her Y-BOCS falls to 17; she resumes cooking for her family.", "why": "After two adequate SSRI trials and ERP, augmentation or clomipramine are the evidence-based next steps."}, {"label": "Refer immediately for neurosurgery", "verdict": "harm", "outcome": "She is not eligible; augmentation and clomipramine have not been tried.", "why": "Surgery is reserved for refractory, long-standing, severe OCD."}]}
 :::
 
+:::widget receptor
+{"receptor": "D2", "title": "Why low-dose aripiprazole can augment an SSRI", "caption": "Aripiprazole is a partial agonist at D2 receptors: it lowers dopamine signalling where it is high and supports it where it is low. Compare it with a full antagonist such as risperidone at higher doses."}
+:::
+
 :::recall
 1. Why may OCD need higher SSRI doses for longer? || OFC serotonin autoreceptors seem to desensitise only with higher, longer exposure.
 2. Define treatment-resistant OCD. || Failure of at least two adequate SSRI trials (and ideally adequate ERP).

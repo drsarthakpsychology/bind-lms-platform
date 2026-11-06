@@ -33,6 +33,10 @@ Some anxiety improves performance: it sharpens attention before an exam or a mat
 {"prompt": "Why does your heart race before an exam, when there is no physical danger to run from?", "answer": "The alarm system cannot tell the difference between a bus and a threat to your future. It treats any important threat as physical danger and prepares the body to fight or run. The body response is the same; only the situation is different."}
 :::
 
+:::widget curve
+{"kind": "inverted-u", "title": "Arousal and performance", "caption": "Performance rises with arousal up to a point, then falls. The peak comes earlier for hard, complex tasks (a viva) than for simple ones (running). Slide arousal and task difficulty to see the Yerkes-Dodson pattern."}
+:::
+
 :::recall
 1. What is the difference between fear and anxiety? || Fear is the alarm for danger happening now; anxiety is the same alarm for something that might happen.
 2. Name four body changes during anxiety. || Fast heart, fast breathing, tense muscles, sweating, churning stomach, shaking.
@@ -68,6 +72,10 @@ When something makes us anxious, staying away from it brings instant relief. Tha
 
 :::widget decide
 {"scene": "Your cousin Rahul, 17, has been anxious about giving his class presentation. He asks you to help him get a medical note so he can skip it. He says, 'If I don't go, I'll feel so much better.'", "ask": "What advice is most helpful?", "choices": [{"label": "Help him get the note; his anxiety is real", "verdict": "harm", "outcome": "He feels relieved that day. Next term he skips two more presentations and stops answering questions in class.", "why": "Avoidance relieves anxiety at once but strengthens it over time. The next situation feels even harder."}, {"label": "Tell him to stop being silly and just do it", "verdict": "ok", "outcome": "He goes, shaking, and feels ashamed rather than proud.", "why": "Facing it is right, but dismissing his feelings adds shame. Support makes facing fear possible."}, {"label": "Acknowledge the fear, help him practise in front of family first, and encourage him to go, expecting anxiety but staying until it settles", "verdict": "best", "outcome": "He is nervous at the start, but his anxiety drops halfway through. The next presentation is easier.", "why": "Gradual, supported facing of fear lets him learn that he can cope and that the feared outcome rarely happens."}]}
+:::
+
+:::widget flow
+{"title": "The avoidance trap", "layout": "cycle", "nodes": [{"id": "fear", "label": "Feared situation", "detail": "The metro, a presentation, a dog."}, {"id": "anx", "label": "Anxiety rises", "detail": "Racing heart, dread."}, {"id": "avoid", "label": "Avoid or escape", "detail": "Take a cab; skip the class."}, {"id": "relief", "label": "Instant relief", "detail": "Anxiety drops."}, {"id": "learn", "label": "Nothing new is learned", "detail": "The fear is never tested, so it stays or grows, and more situations are avoided."}]}
 :::
 
 :::recall
@@ -379,6 +387,10 @@ Childhood adversity, overprotective or highly critical parenting, bullying, pove
 {"prompt": "From twin studies, roughly what share of the differences between people in risk of an anxiety disorder is explained by genes?", "min": 0, "max": 100, "unit": "%", "answer": [30, 50], "reveal": "About 30 to 50%. Genes raise vulnerability; they do not decide fate. The genes involved overlap heavily with those for depression, which is one reason the two so often occur together."}
 :::
 
+:::widget brainmap
+{"title": "Where the alarm lives", "focus": ["amygdala", "prefrontal", "hippocampus", "hypothalamus"], "notes": {"amygdala": "Detects threat and fires the alarm.", "prefrontal": "Calms the amygdala when danger has passed or was never real.", "hippocampus": "Judges context: is this place safe or dangerous?", "hypothalamus": "Triggers the body's stress response and hormones."}, "caption": "In anxiety disorders the alarm tends to over-respond and the brakes to under-act."}
+:::
+
 :::recall
 1. Name three biological vulnerabilities to anxiety. || Genes, behavioural inhibition, an over-reactive threat circuit (and CO2 sensitivity in panic).
 2. Name three ways fear is learned. || Direct conditioning, watching others, being told.
@@ -422,6 +434,10 @@ Q: In Mowrer's two-factor theory, what maintains a phobia over time?
 - **HAM-A** (clinician-rated, 14 items) is the standard outcome in GAD trials. **PDSS** for panic, **LSAS** for social anxiety, **SCARED** in children.
 - **Work-up guided by history**: thyroid function, blood glucose, full blood count, ECG (palpitations, chest pain, before some medicines), calcium, and urine drug screen where relevant. Consider asthma or COPD, arrhythmia, pulmonary embolism, phaeochromocytoma (episodic hypertension, headache, sweating) and hypoglycaemia. Ask about caffeine (tea, coffee, energy drinks), salbutamol, steroids, thyroxine, decongestants and stopping alcohol, benzodiazepines or pregabalin.
 - Screen for depression and suicidal ideation in every anxious patient; comorbidity raises risk.
+:::
+
+:::widget flow
+{"title": "Which anxiety disorder? Ask what is feared", "layout": "tree", "nodes": [{"id": "root", "label": "Anxiety that is excessive and impairing", "detail": "First exclude medical and substance causes."}, {"id": "panic", "label": "The attacks themselves, out of the blue", "detail": "Panic disorder.", "parent": "root"}, {"id": "escape", "label": "Places where escape or help is hard", "detail": "Agoraphobia.", "parent": "root"}, {"id": "judged", "label": "Being judged by others", "detail": "Social anxiety disorder.", "parent": "root"}, {"id": "object", "label": "One object or situation", "detail": "Specific phobia.", "parent": "root"}, {"id": "many", "label": "Many everyday matters", "detail": "Generalised anxiety disorder.", "parent": "root"}, {"id": "sep", "label": "Separation from attachment figures", "detail": "Separation anxiety disorder.", "parent": "root"}, {"id": "speak", "label": "Speaking in certain places", "detail": "Selective mutism.", "parent": "root"}]}
 :::
 
 :::recall
@@ -477,6 +493,10 @@ Onset is gradual, often in early adulthood but at any age; the course is chronic
 ### ICD-11 and the differential
 - **ICD-11** describes GAD as marked symptoms for at least several months, more days than not, with either general apprehension ("free-floating anxiety") or excessive worry about multiple everyday events, plus additional symptoms such as muscle tension, motor restlessness, sympathetic overactivity, nervousness, poor concentration, irritability or sleep disturbance. There is no fixed count.
 - **Differentials**: depression (GAD worry is forward-looking; depressive rumination dwells on past failures and worthlessness); OCD (obsessions are intrusive, often odd and ego-dystonic, and neutralised by rituals; GAD worry is about real-life concerns); illness anxiety (one theme: health); hyperthyroidism; caffeine; alcohol or sedative withdrawal. **Check for mixed anxiety and depression**, which ICD-11 recognises as a separate category when neither meets full criteria.
+:::
+
+:::widget flow
+{"title": "The GAD worry chain", "layout": "chain", "nodes": [{"id": "trigger", "label": "Trigger", "detail": "Son is late home."}, {"id": "whatif", "label": "What if...", "detail": "'What if he crashed?'"}, {"id": "chain", "label": "Chain of catastrophes", "detail": "Hospital, money, family ruin."}, {"id": "tension", "label": "Tension and arousal", "detail": "Restless, tense, cannot sleep."}, {"id": "belief", "label": "Beliefs about worry", "detail": "'Worrying keeps me prepared' (and later 'this worry will harm me')."}, {"id": "repeat", "label": "Worry repeats", "detail": "Uncertainty is never tolerated, so the next trigger starts it again."}]}
 :::
 
 :::recall
@@ -775,6 +795,10 @@ In social situations, attention turns **inward** to a distorted image of how one
 | Safety behaviours | Person credits the behaviour for survival | Drop them during exposure |
 | Self-focused attention | Feeds the sense of being visibly anxious | Attention training, video feedback |
 | Worry and reassurance-seeking | Short relief, long-term maintenance | Reduce, test beliefs about worry |
+
+:::widget flow
+{"title": "Clark's vicious circle of panic", "layout": "cycle", "nodes": [{"id": "trig", "label": "Trigger", "detail": "Stairs, coffee, a stuffy room, a worrying thought."}, {"id": "threat", "label": "Perceived threat", "detail": "Something feels wrong."}, {"id": "anx", "label": "Anxiety", "detail": "Apprehension rises."}, {"id": "sens", "label": "Body sensations", "detail": "Pounding heart, breathlessness, dizziness."}, {"id": "cat", "label": "Catastrophic misinterpretation", "detail": "'I'm having a heart attack.'"}], "caption": "Each turn of the circle raises the sensations that seem to confirm the catastrophe."}
+:::
 
 :::recall
 1. What is the key step in Clark's model of panic? || Catastrophic misinterpretation of normal body sensations.

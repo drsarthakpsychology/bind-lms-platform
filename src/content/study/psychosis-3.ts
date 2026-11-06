@@ -34,6 +34,10 @@ export const part3 = String.raw`
 {"title": "The glutamate-dopamine chain", "layout": "chain", "nodes": [{"id": "nmda", "label": "NMDA receptor hypofunction", "detail": "On parvalbumin GABA interneurons."}, {"id": "disinhib", "label": "Less inhibition", "detail": "Pyramidal neurons are disinhibited."}, {"id": "gamma", "label": "Disrupted gamma rhythms", "detail": "Working memory and cognition suffer."}, {"id": "glu", "label": "Excess glutamate output", "detail": "Downstream circuits are over-driven."}, {"id": "da", "label": "Dopamine dysregulation", "detail": "Midbrain dopamine neurons fire abnormally."}, {"id": "sal", "label": "Aberrant salience", "detail": "Irrelevant events feel significant; delusions explain them."}]}
 :::
 
+:::widget pathways
+{"system": "dopamine", "caption": "The four pathways with dopamine flowing. Toggle D2 blockade and then 5-HT2A blockade, and match each change to a symptom or side effect."}
+:::
+
 :::recall
 1. Which dopamine finding in schizophrenia is most replicated? || Increased presynaptic dopamine synthesis and release capacity in the associative striatum.
 2. What is aberrant salience? || Dysregulated dopamine assigning importance to irrelevant stimuli; delusions explain the resulting sense of significance.
@@ -96,6 +100,10 @@ PET studies show that antipsychotic response becomes likely at around **65%** st
 
 :::widget curve
 {"kind": "dose-response", "title": "Full antagonist, partial agonist and the D2 window", "caption": "Compare a full antagonist with a partial agonist such as aripiprazole: the partial agonist cannot drive the receptor to zero activity, which lowers EPS and prolactin. Response becomes likely around 65% D2 occupancy; EPS above about 78%."}
+:::
+
+:::widget receptor
+{"receptor": "D2", "title": "Antagonist, partial agonist and inverse agonist at D2", "caption": "Haloperidol is a full antagonist; aripiprazole, brexpiprazole and cariprazine are partial agonists; pimavanserin acts as an inverse agonist at 5-HT2A instead. Compare the signal each produces."}
 :::
 
 :::recall

@@ -541,6 +541,10 @@ Normally we experience our thinking as our own and under our control. In some il
 {"prompt": "A patient's delusion of infidelity turns out to be true: his wife was having an affair. Is it still a delusion?", "answer": "It can be. Truth is not what defines a delusion. What matters is how the belief is reached and held: unshakeable certainty, from evidence that does not support it (towels, a look), not open to reasoning, and not shared by his culture. A belief that is true by coincidence can still be delusional."}
 :::
 
+:::widget flow
+{"title": "Delusion, overvalued idea, obsession or shared belief?", "layout": "tree", "nodes": [{"id": "root", "label": "A strongly held idea", "detail": "Ask in this order."}, {"id": "own", "label": "Recognised as own, unwanted, resisted?", "detail": "If yes: obsession.", "parent": "root"}, {"id": "shared", "label": "Shared by the person's group?", "detail": "If yes: cultural or religious belief, not a delusion.", "parent": "root"}, {"id": "fixed", "label": "Total conviction against clear evidence?", "detail": "If yes: delusion.", "parent": "root"}, {"id": "prim", "label": "Arose out of nowhere?", "detail": "Primary delusion.", "parent": "fixed"}, {"id": "sec", "label": "Understandable from mood or other symptom?", "detail": "Secondary, delusion-like idea.", "parent": "fixed"}, {"id": "over", "label": "Intense, feeling-driven, understandable, less fixed?", "detail": "Overvalued idea.", "parent": "root"}]}
+:::
+
 :::recall
 1. Give the full definition of a delusion. Why is falsity not essential? || False, unshakeable, not amenable to reason, not in keeping with background. It can be true by coincidence.
 2. Name Schneider's three primary delusional experiences. || Delusional mood, delusional perception, sudden delusional idea.
@@ -789,6 +793,18 @@ Concrete answers may occur in schizophrenia, but **always interpret against educ
 - **Interpret against education.** In low-literacy Indian populations, use instruments validated for that setting (for example the Hindi Mental State Examination) rather than the standard cut-offs.
 :::
 
+:::widget layers
+{"title": "Test cognition from the bottom up", "shape": "stack", "layers": [{"label": "Intelligence and abstraction", "detail": "General knowledge, proverbs, similarities."}, {"label": "Memory", "detail": "Immediate, recent, remote."}, {"label": "Concentration", "detail": "Serial sevens, months backwards."}, {"label": "Attention", "detail": "Digit span."}, {"label": "Orientation", "detail": "Time, place, person."}, {"label": "Consciousness", "detail": "Alert, drowsy, clouded, stuporous."}], "caption": "A deficit low down makes every level above it uninterpretable."}
+:::
+
+:::widget brainmap
+{"title": "Which brain areas bedside tests probe", "focus": ["prefrontal", "temporal", "hippocampus", "parietal", "broca", "wernicke"], "notes": {"prefrontal": "Verbal fluency, Luria sequence, go/no-go, abstraction: executive functions.", "hippocampus": "Recall of an address after a delay: new learning.", "temporal": "Naming and semantic memory.", "parietal": "Copying figures, clock drawing, calculation.", "broca": "Fluent speech production.", "wernicke": "Understanding speech."}}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Reading a test score against the population", "caption": "IQ and many cognitive tests are scaled to a mean of 100 and a standard deviation of 15. Move the score to see its percentile; a low score must still be read against education and language."}
+:::
+
 :::recall
 1. Name the seven cognitive functions in testing order, and why the order is fixed. || Consciousness, orientation, attention, concentration, memory, intelligence, abstraction. Each depends on the one before.
 2. Grade consciousness. Which scale rates it, with what three categories? || Conscious, confusion, somnolence, clouding, delirium, stupor, coma. GCS: eye, verbal, motor.
@@ -865,6 +881,10 @@ A patient with no insight may keep good judgement. Assess and record them separa
 {"prompt": "Grade the insight (1 to 6).", "buckets": ["Grade 1", "Grade 3", "Grade 4", "Grade 5", "Grade 6"], "items": [{"text": "\"Nothing is wrong with me. My family brought me here by force.\"", "bucket": 0}, {"text": "\"Yes, I'm ill, but it's because my neighbour did black magic.\"", "bucket": 1, "why": "Illness accepted, cause placed outside."}, {"text": "\"Something is wrong inside me, but I don't know what.\"", "bucket": 2}, {"text": "\"I know my anxiety makes me drink and it's ruining my marriage.\" (Drinks again that night.)", "bucket": 3, "why": "Knows, but does not change: intellectual insight."}, {"text": "\"I understood my anger came from feeling worthless, so I joined a group and haven't hit anyone in a year.\"", "bucket": 4, "why": "Understanding that produces lasting change."}]}
 :::
 
+:::widget layers
+{"title": "The six grades of insight", "shape": "stack", "layers": [{"label": "6. True emotional insight", "detail": "Understanding that changes behaviour."}, {"label": "5. Intellectual insight", "detail": "Knows the cause lies within, but does not change."}, {"label": "4. Unknown internal cause", "detail": "Something is wrong inside, not sure what."}, {"label": "3. External attribution", "detail": "Ill, but blames black magic, others or the body."}, {"label": "2. Slight awareness, with denial", "detail": "Half accepts, half denies."}, {"label": "1. Complete denial", "detail": "Nothing is wrong."}]}
+:::
+
 :::recall
 1. Define insight and give the five questions to elicit it. || Awareness and understanding of illness; illness?, what kind?, treatment needed?, hope?, cause?
 2. Reproduce all six grades. || Denial; slight awareness with denial; external cause; unknown in self; intellectual; true emotional.
@@ -919,6 +939,10 @@ The MMSE is often used for a systematic check of higher mental functions inside 
 - Translated MoCA versions exist in several Indian languages; check which version and norms you are using.
 - **ACE-III** (Addenbrooke's) gives domain sub-scores (attention, memory, fluency, language, visuospatial) and has Indian adaptations; useful for telling dementia subtypes apart.
 - A screen never replaces a history from an informant about change over time, which remains the single most useful piece of information for dementia.
+:::
+
+:::widget curve
+{"kind": "sdt", "title": "Choosing a screening cut-off", "caption": "A higher cut-off catches more true impairment (hits) but flags more healthy, less educated people (false alarms). Move the criterion to see why cut-offs need local norms."}
 :::
 
 :::recall
