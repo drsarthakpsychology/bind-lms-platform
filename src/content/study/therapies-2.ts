@@ -542,7 +542,7 @@ Work through each question before reading the answer. Answers are written at a p
 ### Q1. Why do common factors matter, and when do specific techniques matter more?
 **Common factors**
 - The alliance, empathy, positive regard, genuineness, hope and a credible rationale predict outcome across therapies.
-- The alliance–outcome link is consistent across hundreds of studies, of small-to-moderate size.
+- The alliance-outcome link is consistent across hundreds of studies, of small-to-moderate size.
 - Therapist differences also matter: some therapists consistently get better outcomes.
 
 **Where specific techniques clearly matter**
@@ -792,7 +792,7 @@ Q: Which school uses circular questioning?
 
 Q: Holland's congruence predicts:
 - IQ
-- *Job satisfaction from person–environment fit
+- *Job satisfaction from person-environment fit
 - Personality disorder
 - Exam marks only
 > Fit between type and environment.

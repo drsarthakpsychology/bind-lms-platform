@@ -31,14 +31,14 @@ The relationship is the vehicle; the techniques are the engine. A great engine i
 :::
 
 ### Is one therapy better than another?
-In 1936, Saul Rosenzweig suggested that all therapies might work about equally, quoting the dodo bird in Alice in Wonderland: "Everybody has won, and all must have prizes." For many common problems (such as mild to moderate depression), well-delivered therapies often do give similar results. But for some conditions, **specific methods clearly matter**: exposure for phobias and OCD, family-based treatment for adolescent anorexia, CBT for insomnia, DBT for recurrent self-harm in borderline personality disorder.
+In 1936, Saul Rosenzweig suggested that all therapies might work about equally, quoting the dodo bird from Lewis Carroll's story: "Everybody has won, and all must have prizes." For many common problems (such as mild to moderate depression), well-delivered therapies often do give similar results. But for some conditions, **specific methods clearly matter**: exposure for phobias and OCD, family-based treatment for adolescent anorexia, CBT for insomnia, DBT for recurrent self-harm in borderline personality disorder.
 
 :::student
 This module teaches the main therapies one by one, with real session examples. The deep psychodynamic approach (transference, defences, formulation, brief dynamic therapy and its evidence) has its own module, **Psychodynamics in depth**, and the learning theories behind behaviour therapy are in **Mind, development and defence mechanisms** (Section 2.6). Here we focus on how each therapy is done and what the evidence says.
 :::
 
 :::clinician
-Meta-analytic estimates from the APA Task Force on evidence-based relationships (Norcross and Lambert, 2019) put the alliance–outcome correlation at about r of 0.28 across nearly 300 studies (Flückiger and colleagues, 2018), empathy at about 0.28 (Elliott and colleagues), positive regard about 0.28 and congruence about 0.24. Lambert's often-cited "pie" (40 per cent extratherapeutic factors, 30 per cent relationship, 15 per cent expectancy, 15 per cent technique, 1992) was an informed estimate, not a meta-analytic result; do not quote it as data. Wampold and Imel's contextual model ("The Great Psychotherapy Debate", 2015) argues for the primacy of common factors; critics respond that specific factors matter for specific disorders and that "bona fide" comparisons hide differences. Therapist effects are real: perhaps 5 per cent of outcome variance is attributable to which therapist a client sees, more in naturalistic settings. In India, Neki's description of the guru–chela (teacher–disciple) relationship (1973) argued that a more directive, hierarchical alliance often fits client expectations; contemporary Indian therapists blend directiveness with collaboration.
+Meta-analytic estimates from the APA Task Force on evidence-based relationships put the alliance-outcome correlation at about r of 0.28 across nearly 300 studies, empathy at about 0.28, positive regard about 0.28 and congruence about 0.24. Lambert's often-cited "pie" (40 per cent extratherapeutic factors, 30 per cent relationship, 15 per cent expectancy, 15 per cent technique, 1992) was an informed estimate, not a meta-analytic result; do not quote it as data. Wampold and Imel's contextual model argues for the primacy of common factors; critics respond that specific factors matter for specific disorders and that "bona fide" comparisons hide differences. Therapist effects are real: perhaps 5 per cent of outcome variance is attributable to which therapist a client sees, more in naturalistic settings. In India, Neki's description of the guru-chela (teacher-disciple) relationship (1973) argued that a more directive, hierarchical alliance often fits client expectations; contemporary Indian therapists blend directiveness with collaboration.
 :::
 
 :::recall
@@ -126,7 +126,7 @@ Egan's **SOLER**: **S**it squarely facing the client (or at a slight angle), **O
 3. **The way forward**: strategies and a plan to get there, and support to act.
 
 :::clinician
-Rogers (1957) proposed six "necessary and sufficient conditions" (psychological contact; client incongruence; therapist congruence; unconditional positive regard; empathic understanding; and the client perceiving the therapist's empathy and regard); research supports the facilitative conditions as important but not sufficient for all clients and problems. Ivey's microskills hierarchy runs from culturally appropriate attending through basic listening, influencing skills, and skill integration, and has been taught with good evidence of skill acquisition in trainees. Microskills training (with role-play, feedback and recordings) is the strongest predictor of early trainee competence; the ENACT and FIDELITY-type rating tools developed by Kohrt and colleagues (WHO EQUIP platform) are used to assess common factor competencies in lay and professional helpers in low-resource settings, including India. In crisis or risk situations, microskills combine with direct, closed questions about suicide; reflection does not replace a risk assessment.
+Rogers (1957) proposed six "necessary and sufficient conditions" (psychological contact; client incongruence; therapist congruence; unconditional positive regard; empathic understanding; and the client perceiving the therapist's empathy and regard); research supports the facilitative conditions as important but not sufficient for all clients and problems. Ivey's microskills hierarchy runs from culturally appropriate attending through basic listening, influencing skills, and skill integration, and has been taught with good evidence of skill acquisition in trainees. Microskills training (with role-play, feedback and recordings) is the strongest predictor of early trainee competence; the ENACT and FIDELITY-type rating tools developed by Kohrt's group (WHO EQUIP platform) are used to assess common factor competencies in lay and professional helpers in low-resource settings, including India. In crisis or risk situations, microskills combine with direct, closed questions about suicide; reflection does not replace a risk assessment.
 :::
 
 :::recall
@@ -259,7 +259,7 @@ In Harare, trained lay "grandmothers" sitting on wooden benches outside clinics 
 :::
 
 :::clinician
-Supportive therapy is often the comparison arm in trials and has been underestimated: Cuijpers and colleagues (Clinical Psychology Review, 2012) found non-directive supportive therapy effective for depression against control conditions, with a small disadvantage compared with other psychotherapies that largely disappeared after controlling for researcher allegiance. In schizophrenia, supportive therapy performs similarly to CBT for psychosis on several outcomes in head-to-head trials (Buckley and colleagues, Cochrane updates). Problem-solving therapy (Nezu, D'Zurilla) has good evidence for depression in primary care and older adults (PEARLS, PST-PC), and the Friendship Bench trial (Chibanda and colleagues, JAMA 2016) remains a landmark of task-shared problem-solving. Supportive psychotherapy is not "just chatting": it has defined techniques, goals and a stance (Pinsker; Winston, Rosenthal and Pinsker's manual), and it should be planned and reviewed like any therapy.
+Supportive therapy is often the comparison arm in trials and has been underestimated: Cuijpers' group found non-directive supportive therapy effective for depression against control conditions, with a small disadvantage compared with other psychotherapies that largely disappeared after controlling for researcher allegiance. In schizophrenia, supportive therapy performs similarly to CBT for psychosis on several outcomes in head-to-head trials. Problem-solving therapy (Nezu, D'Zurilla) has good evidence for depression in primary care and older adults (PEARLS, PST-PC), and the Friendship Bench trial remains a landmark of task-shared problem-solving. Supportive psychotherapy is not "just chatting": it has defined techniques, goals and a stance (Pinsker; Winston, Rosenthal and Pinsker's manual), and it should be planned and reviewed like any therapy.
 :::
 
 :::recall
@@ -430,7 +430,7 @@ Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this:
   "unit": "hours",
   "answer": [2, 3],
   "reveal": "Up to about three hours in one sitting. Öst's one-session treatment for specific phobias gives large and lasting improvement for many people, which shows how powerful well-done exposure is.",
-  "clinician": "Öst's one-session treatment (maximum three hours, after a functional analysis) produces response rates around 80 to 90 per cent in adults with animal and injection phobias, with good maintenance; meta-analyses (Zlomke and Davis, 2008; Ollendick and colleagues for children) support it. Blood-injury-injection phobia needs applied tension to counter the vasovagal faint. Modern inhibitory learning models (Craske and colleagues, 2014) recommend maximising expectancy violation, variability, removing safety signals and combining fear cues, rather than waiting only for habituation within a session."
+  "clinician": "Öst's one-session treatment (maximum three hours, after a functional analysis) produces response rates around 80 to 90 per cent in adults with animal and injection phobias, with good maintenance; meta-analyses support it. Blood-injury-injection phobia needs applied tension to counter the vasovagal faint. Modern inhibitory learning models recommend maximising expectancy violation, variability, removing safety signals and combining fear cues, rather than waiting only for habituation within a session."
 }
 :::
 
@@ -449,7 +449,7 @@ If a person "faces" a crowded market while holding a water bottle, gripping a fr
 :::
 
 :::clinician
-Exposure-based CBT has some of the largest effects in psychotherapy: for OCD, ERP gives large effects versus control (Olatunji and colleagues, 2013, Hedges g about 1.3 in several meta-analyses); for panic disorder and social anxiety, CBT with exposure gives moderate to large effects. Therapist reluctance (concerns about distress) is a major barrier, yet dropout rates are similar to other therapies. Family accommodation in OCD predicts poorer outcome and should be targeted. In India, ERP is delivered in OPD and inpatient settings at NIMHANS and other centres; intensive inpatient ERP has good naturalistic outcomes in severe OCD. Contingency management has strong evidence for stimulant use disorder (it is among the few effective treatments), but cost and acceptability limit uptake.
+Exposure-based CBT has some of the largest effects in psychotherapy: for OCD, ERP gives large effects versus control (Hedges g about 1.3 in several meta-analyses); for panic disorder and social anxiety, CBT with exposure gives moderate to large effects. Therapist reluctance (concerns about distress) is a major barrier, yet dropout rates are similar to other therapies. Family accommodation in OCD predicts poorer outcome and should be targeted. In India, ERP is delivered in OPD and inpatient settings at NIMHANS and other centres; intensive inpatient ERP has good naturalistic outcomes in severe OCD. Contingency management has strong evidence for stimulant use disorder (it is among the few effective treatments), but cost and acceptability limit uptake.
 :::
 
 :::recall
@@ -542,7 +542,7 @@ Albert Ellis's **rational emotive behaviour therapy** uses the **ABC(DE)** model
 :::
 
 :::clinician
-CBT for depression typically involves 12 to 20 sessions; meta-analyses (Cuijpers and colleagues, World Psychiatry 2023 and earlier) show moderate effects versus control (g about 0.7 against waiting list, smaller against care as usual), similar to other bona fide therapies and to antidepressants in the short term, with an enduring effect after termination that antidepressants lack once stopped (Hollon and colleagues, 2005). Combination of CBT and medication is superior to either alone for moderate to severe and chronic depression. Disorder-specific CBT protocols with strong evidence include Clark's cognitive therapy for social anxiety, Clark's and Barlow's panic protocols, cognitive processing therapy and trauma-focused CBT for PTSD, CBT-I for insomnia, CBT-E (Fairburn) for eating disorders, and CBT for psychosis (smaller effects, about d of 0.3 on positive symptoms). In India, CBT is widely taught; cultural adaptations emphasise family involvement, somatic idioms, religious coping, and more directive therapist style (for example adaptations described by Indian authors and in the Healthy Activity Program, which is behavioural activation based).
+CBT for depression typically involves 12 to 20 sessions; meta-analyses show moderate effects versus control (g about 0.7 against waiting list, smaller against care as usual), similar to other bona fide therapies and to antidepressants in the short term, with an enduring effect after termination that antidepressants lack once stopped. Combination of CBT and medication is superior to either alone for moderate to severe and chronic depression. Disorder-specific CBT protocols with strong evidence include Clark's cognitive therapy for social anxiety, Clark's and Barlow's panic protocols, cognitive processing therapy and trauma-focused CBT for PTSD, CBT-I for insomnia, CBT-E (Fairburn) for eating disorders, and CBT for psychosis (smaller effects, about d of 0.3 on positive symptoms). In India, CBT is widely taught; cultural adaptations emphasise family involvement, somatic idioms, religious coping, and more directive therapist style (for example adaptations described by Indian authors and in the Healthy Activity Program, which is behavioural activation based).
 :::
 
 :::recall
@@ -579,7 +579,7 @@ Most people who need to change are **ambivalent**: part of them wants to change,
 - **Partnership**: working with, not on, the person.
 - **Acceptance**: respect for autonomy, accurate empathy, affirmation of strengths.
 - **Compassion**: actively promoting the person's welfare.
-- **Evocation** (in later editions, **empowerment**): drawing out the person's own wisdom and reasons.
+- **Evocation** (in the latest version of the model, **empowerment**): drawing out the person's own wisdom and reasons.
 
 ### The core skills: OARS
 - **O**pen questions.
@@ -620,7 +620,7 @@ MI is not a way to manipulate people into doing what the clinician wants. If the
 :::
 
 :::clinician
-MI's evidence: meta-analyses (Lundahl and colleagues, 2010; Smedslund and colleagues, Cochrane 2011 for substance use) show small to moderate effects, strongest for alcohol and when added to other treatment; brief MI in emergency and primary care settings reduces drinking modestly. Mechanism research supports the "technical hypothesis": therapist MI-consistent skills increase client change talk, which predicts outcome, while confrontation increases resistance (Miller's earlier "drinker's check-up" studies; Magill and colleagues' meta-analyses). Fidelity is measured with the MITI (Motivational Interviewing Treatment Integrity) code, which counts reflections to questions (target at least one to one) and complex reflections. The fourth edition of Miller and Rollnick's text (2023) refined the spirit (with empowerment) and recast processes as overlapping tasks. In India, MI has been adapted for alcohol use in primary care (Counselling for Alcohol Problems in the PREMIUM trial, Nadkarni and colleagues, Lancet 2017) and for tobacco cessation.
+MI's evidence: meta-analyses show small to moderate effects, strongest for alcohol and when added to other treatment; brief MI in emergency and primary care settings reduces drinking modestly. Mechanism research supports the "technical hypothesis": therapist MI-consistent skills increase client change talk, which predicts outcome, while confrontation increases resistance. Fidelity is measured with the MITI (Motivational Interviewing Treatment Integrity) code, which counts reflections to questions (target at least one to one) and complex reflections. Miller and Rollnick's 2023 revision of MI refined the spirit (with empowerment) and recast processes as overlapping tasks. In India, MI has been adapted for alcohol use in primary care (Counselling for Alcohol Problems, tested in the PREMIUM trial) and for tobacco cessation.
 :::
 
 :::recall
@@ -693,7 +693,7 @@ Q: In MI, when a client argues against change, the clinician should:
 :::
 
 :::clinician
-IPT for adult depression has efficacy comparable to CBT and antidepressants in the acute phase (Cuijpers and colleagues, American Journal of Psychiatry 2011 meta-analysis), and maintenance IPT reduces recurrence (Frank's Pittsburgh studies). Adaptations: IPT-A for adolescents (Mufson), interpersonal and social rhythm therapy for bipolar disorder (Frank), IPT for perinatal depression, and group IPT. The landmark task-shared trial was group IPT delivered by local lay facilitators in rural Uganda (Bolton and colleagues, JAMA 2003), which led to the WHO's Group Interpersonal Therapy for Depression manual (2016). IPT is a recommended first-line psychological treatment in NICE and APA guidance. Its focus on role disputes and transitions maps well onto Indian family life (in-law relationships, marriage, migration, joint-family roles), and it is relatively easy to train.
+IPT for adult depression has efficacy comparable to CBT and antidepressants in the acute phase, and maintenance IPT reduces recurrence (Frank's Pittsburgh studies). Adaptations: IPT-A for adolescents (Mufson), interpersonal and social rhythm therapy for bipolar disorder (Frank), IPT for perinatal depression, and group IPT. The landmark task-shared trial was group IPT delivered by local lay facilitators in rural Uganda, which led to the WHO's Group Interpersonal Therapy for Depression manual (2016). IPT is a recommended first-line psychological treatment in NICE and APA guidance. Its focus on role disputes and transitions maps well onto Indian family life (in-law relationships, marriage, migration, joint-family roles), and it is relatively easy to train.
 :::
 
 :::recall
@@ -716,7 +716,7 @@ Q: Group IPT delivered by lay facilitators was shown effective for depression in
 - *Rural Uganda
 - Japan
 - Canada
-> Bolton and colleagues, 2003.
+> Bolton's group IPT trial, 2003.
 :::
 
 ## 2.5 Family and systemic therapy [core][beginner]
@@ -734,7 +734,7 @@ Systemic therapists see a problem not just "inside" one person but in the **patt
 |---|---|---|
 | **Structural** | Salvador Minuchin | Family structure, hierarchy, boundaries; joining, enactment, restructuring |
 | **Strategic** | Jay Haley, Cloé Madanes | Changing problem-maintaining sequences; directives, paradoxical tasks |
-| **Milan systemic** | Selvini Palazzoli and colleagues | Hypothesising, circularity, neutrality; circular questions |
+| **Milan systemic** | Selvini Palazzoli's group | Hypothesising, circularity, neutrality; circular questions |
 | **Bowen family systems** | Murray Bowen | Differentiation of self, triangles, multigenerational patterns; genograms |
 | **Narrative** | Michael White, David Epston | Externalising the problem ("the anger" rather than "angry boy"), re-authoring stories |
 | **Solution-focused** | Steve de Shazer, Insoo Kim Berg | Exceptions, the miracle question, scaling questions |
@@ -760,7 +760,7 @@ Ten-year-old Ria has outbursts of anger. In a narrative session, the therapist a
 :::
 
 :::clinician
-Evidence: family interventions for schizophrenia reduce relapse by roughly half at one year compared with usual care (Pharoah and colleagues, Cochrane 2010 and updates), and are recommended in NICE guidance; Indian trials of family psychoeducation have shown benefits for relapse and burden. Family-based treatment (the Maudsley approach) is the first-line treatment for adolescent anorexia nervosa, with good evidence for weight restoration and remission. Multisystemic therapy and functional family therapy have evidence for adolescent conduct problems and substance use, though effects shrink in independent replications. Systemic family therapy is supported for childhood and adolescent problems broadly (Carr's reviews, Journal of Family Therapy 2019). Cultural fit in India: joint and extended families mean the "family" may include grandparents, uncles and in-laws; boundaries and hierarchy are culturally shaped, so the structural ideal of a strong parental subsystem may need adapting where grandparents hold authority.
+Evidence: family interventions for schizophrenia reduce relapse by roughly half at one year compared with usual care, and are recommended in NICE guidance; Indian trials of family psychoeducation have shown benefits for relapse and burden. Family-based treatment is the first-line treatment for adolescent anorexia nervosa, with good evidence for weight restoration and remission. Multisystemic therapy and functional family therapy have evidence for adolescent conduct problems and substance use, though effects shrink in independent replications. Systemic family therapy is supported for childhood and adolescent problems broadly. Cultural fit in India: joint and extended families mean the "family" may include grandparents, uncles and in-laws; boundaries and hierarchy are culturally shaped, so the structural ideal of a strong parental subsystem may need adapting where grandparents hold authority.
 :::
 
 :::recall
@@ -788,7 +788,7 @@ Q: A family in which everyone is over-involved in each other's lives, with no pr
 
 Q: The first-line treatment for adolescent anorexia nervosa is:
 - Individual psychoanalysis
-- *Family-based treatment (Maudsley approach)
+- *Family-based treatment
 - Antipsychotics alone
 - Hypnotherapy
 > Strong evidence base.
@@ -852,7 +852,7 @@ A school counsellor works at three levels:
 Common issues in Indian schools: exam pressure, comparison and parental expectations, bullying and cyberbullying, learning difficulties not identified, screen use, relationship and sexuality questions, family conflict, and child protection. **Child protection duties under POCSO** apply to school counsellors (see the Ethics and law module).
 
 :::clinician
-Holland's congruence–satisfaction link is consistent but modest in meta-analyses (r about 0.2); interest inventories (Strong Interest Inventory, Self-Directed Search) have better predictive validity for career choice than for success. Super's theory has strong influence on developmental career education in schools. In India, NCERT's guidance and counselling diploma has trained school counsellors for decades; the Ministry of Education's Manodarpan initiative (2020) and CBSE affiliation norms that require counsellors or wellness teachers have expanded school mental health roles, though the ratio of counsellors to students remains low. The suicides of students in coaching hubs led the Ministry of Education to issue guidelines for coaching centres in 2024 (including age limits and counselling requirements), and courts and state governments have taken further steps; check current regulations. The American School Counselor Association national model (foundation, management, delivery, accountability) is a useful framework. School-based universal mental health programmes have small effects; targeted CBT-based groups for anxiety and depression have somewhat larger effects.
+Holland's congruence-satisfaction link is consistent but modest in meta-analyses (r about 0.2); interest inventories (Strong Interest Inventory, Self-Directed Search) have better predictive validity for career choice than for success. Super's theory has strong influence on developmental career education in schools. In India, NCERT's guidance and counselling diploma has trained school counsellors for decades; the Ministry of Education's Manodarpan initiative (2020) and CBSE affiliation norms that require counsellors or wellness teachers have expanded school mental health roles, though the ratio of counsellors to students remains low. The suicides of students in coaching hubs led the Ministry of Education to issue guidelines for coaching centres in 2024 (including age limits and counselling requirements), and courts and state governments have taken further steps; check current regulations. The American School Counselor Association national model (foundation, management, delivery, accountability) is a useful framework. School-based universal mental health programmes have small effects; targeted CBT-based groups for anxiety and depression have somewhat larger effects.
 :::
 
 :::recall
@@ -868,7 +868,7 @@ Q: Congruence in Holland's theory means:
 - *A good match between a person's type and the work environment
 - Agreement between parents
 - High IQ
-> Person–environment fit.
+> Person-environment fit.
 
 Q: A school counsellor learns that a Class 8 student is being sexually abused by a relative. The counsellor must:
 - Keep it confidential

@@ -13,7 +13,7 @@ Every test you use was once a draft written by someone. Knowing how tests are bu
 5. **Pilot (try-out)** on a small sample like the target group; check instructions, time, confusing words.
 6. **Item analysis**: keep items that are of suitable difficulty and discriminate well (Section 3.2).
 7. **Check structure**: factor analysis to see whether items group as the theory predicts.
-8. **Reliability**: internal consistency, test–retest and, where relevant, inter-rater.
+8. **Reliability**: internal consistency, test-retest and, where relevant, inter-rater.
 9. **Validity**: content, criterion and construct evidence.
 10. **Norms and manual**: standardise on a large representative sample; publish administration, scoring and interpretation rules.
 
@@ -59,7 +59,7 @@ Every test you use was once a draft written by someone. Knowing how tests are bu
 :::
 
 :::clinician
-Construct definition is the step most often skipped and the one most responsible for poor tests (Clark and Watson, "Constructing validity", Psychological Assessment 1995 and 2019 update): start from a clear theoretical model, write items broader than the construct to define its boundaries, and use exploratory then confirmatory factor analysis on separate samples. Prefer McDonald's omega over alpha when items have unequal loadings. Measurement invariance testing (configural, metric, scalar) across sex, language and region is now expected before comparing group means. For clinical scales, the COSMIN checklist sets standards for content validity (including patient involvement in item generation), structural validity, reliability, measurement error, responsiveness and interpretability. Ethically, a new scale used for decisions about individuals needs far more evidence than one used in a group-level research project.
+Construct definition is the step most often skipped and the one most responsible for poor tests: start from a clear theoretical model, write items broader than the construct to define its boundaries, and use exploratory then confirmatory factor analysis on separate samples. Prefer McDonald's omega over alpha when items have unequal loadings. Measurement invariance testing (configural, metric, scalar) across sex, language and region is now expected before comparing group means. For clinical scales, the COSMIN checklist sets standards for content validity (including patient involvement in item generation), structural validity, reliability, measurement error, responsiveness and interpretability. Ethically, a new scale used for decisions about individuals needs far more evidence than one used in a group-level research project.
 :::
 
 :::recall
@@ -71,7 +71,7 @@ Construct definition is the step most often skipped and the one most responsible
 
 :::mcq
 Q: Experts rating whether items represent the full construct provide evidence of:
-- Test–retest reliability
+- Test-retest reliability
 - *Content validity
 - Predictive validity
 - Norms
@@ -99,7 +99,7 @@ For each item, two numbers matter most.
 - D = (proportion correct in the upper group) minus (proportion correct in the lower group).
 - D of 0.40 or more: very good. 0.30 to 0.39: good. 0.20 to 0.29: acceptable, may need revision. Below 0.20: poor, revise or drop. A **negative** D means low scorers do better than high scorers, a sign of a faulty item (ambiguous wording or a wrong key).
 
-**Item–total correlation**: the correlation between the item and the total score of the remaining items. Higher is better.
+**Item-total correlation**: the correlation between the item and the total score of the remaining items. Higher is better.
 
 **Distractor analysis**: in multiple choice, each wrong option should attract some low scorers and few high scorers. An option nobody chooses is not working.
 
@@ -193,11 +193,11 @@ Entrance exams and viva boards expect a few quick calculations. Practise these u
 Example: a raw score of 65 on a test with mean 50 and SD 10 gives z = 1.5, T = 65, IQ-equivalent 122.5, about the 93rd percentile.
 
 ### Reliability calculations
-- **Spearman–Brown (lengthening a test)**: new reliability = (k times r) divided by (1 + (k minus 1) times r), where k is how many times longer the test becomes.
+- **Spearman-Brown (lengthening a test)**: new reliability = (k times r) divided by (1 + (k minus 1) times r), where k is how many times longer the test becomes.
   - Split-half correlation of 0.60 corrected to full length (k = 2): (2 times 0.60) divided by (1 + 0.60) = 1.20 divided by 1.60 = **0.75**.
 - **Standard error of measurement** = SD times the square root of (1 minus reliability).
   - SD 15, reliability 0.91: SEM = 15 times 0.3 = **4.5**. A 95 per cent confidence interval is about the score plus or minus 2 SEM (strictly 1.96), so plus or minus 9.
-- **Kuder–Richardson formula 20 (KR-20)**: the internal consistency formula for items scored right or wrong; Cronbach's alpha is its generalisation for multi-point items.
+- **Kuder-Richardson formula 20 (KR-20)**: the internal consistency formula for items scored right or wrong; Cronbach's alpha is its generalisation for multi-point items.
 
 ### Validity calculations
 - **Coefficient of determination**: square a validity coefficient to get the share of criterion variance explained. A validity of 0.50 explains 0.25, that is **25 per cent** of the variation in the criterion.
@@ -225,16 +225,16 @@ Example: a raw score of 65 on a test with mean 50 and SD 10 gives z = 1.5, T = 6
 :::
 
 :::widget reveal
-{"prompt": "A test has a split-half reliability of 0.90 before correction. Will the Spearman–Brown corrected value be higher or lower, and why?", "answer": "Higher, about 0.95. The halves are each only half as long as the full test, and longer tests (with similar items) are more reliable, so the correction estimates the full-length reliability upward."}
+{"prompt": "A test has a split-half reliability of 0.90 before correction. Will the Spearman-Brown corrected value be higher or lower, and why?", "answer": "Higher, about 0.95. The halves are each only half as long as the full test, and longer tests (with similar items) are more reliable, so the correction estimates the full-length reliability upward."}
 :::
 
 :::clinician
-Additional formulas examiners like: the correction for attenuation (estimated true correlation equals observed correlation divided by the square root of the product of the two reliabilities); the standard error of estimate in prediction (SD of the criterion multiplied by the square root of 1 minus validity squared); the standard error of the difference between two scores (square root of the sum of the two squared SEMs), which tells you whether two index scores differ beyond chance; and the reliable change index (difference between pre and post scores divided by the standard error of the difference, with 1.96 as the threshold). Taylor–Russell tables show how the practical usefulness of a selection test depends on validity, base rate and selection ratio together, not validity alone.
+Additional formulas examiners like: the correction for attenuation (estimated true correlation equals observed correlation divided by the square root of the product of the two reliabilities); the standard error of estimate in prediction (SD of the criterion multiplied by the square root of 1 minus validity squared); the standard error of the difference between two scores (square root of the sum of the two squared SEMs), which tells you whether two index scores differ beyond chance; and the reliable change index (difference between pre and post scores divided by the standard error of the difference, with 1.96 as the threshold). Taylor-Russell tables show how the practical usefulness of a selection test depends on validity, base rate and selection ratio together, not validity alone.
 :::
 
 :::recall
 1. Write the formulas for z, T and deviation IQ. || z = (X minus mean) divided by SD; T = 50 + 10z; IQ = 100 + 15z.
-2. Write the Spearman–Brown formula. || New r = kr divided by (1 + (k minus 1)r).
+2. Write the Spearman-Brown formula. || New r = kr divided by (1 + (k minus 1)r).
 3. Write the formula for the SEM. || SD times the square root of (1 minus reliability).
 4. What is the ceiling on a test's validity? || The square root of its reliability.
 5. What does squaring a validity coefficient give? || The proportion of criterion variance explained.
@@ -248,7 +248,7 @@ Q: A test has SD 10 and reliability 0.96. Its SEM is:
 - 9.6
 > 10 times the square root of 0.04, which is 10 times 0.2.
 
-Q: A split-half correlation of 0.50 corrected by Spearman–Brown becomes about:
+Q: A split-half correlation of 0.50 corrected by Spearman-Brown becomes about:
 - 0.25
 - 0.50
 - *0.67
@@ -316,12 +316,12 @@ Most tests in the world were built in North America or Europe, in English, for u
   "unit": "IQ points per decade",
   "answer": [3, 3],
   "reveal": "About 3 points per decade. This means a test normed 30 years ago will overestimate a child's IQ today by around 9 points, which matters a great deal near the intellectual disability boundary. Many Indian tests in common use have old norms.",
-  "clinician": "Meta-analysis (Pietschnig and Voracek, Perspectives on Psychological Science 2015) estimated gains of about 2.8 full-scale points per decade worldwide from 1909 to 2013, larger for fluid than crystallised measures, with slowing and some reversals in Scandinavian and other high-income countries since the 1990s. Data from India are sparse, but rising schooling and nutrition make norm obsolescence a real concern. Some US courts have accepted Flynn adjustments in capital cases; in Indian disability certification, report the norm date and interpret scores near the cut-off cautiously."
+  "clinician": "Meta-analysis estimated gains of about 2.8 full-scale points per decade worldwide from 1909 to 2013, larger for fluid than crystallised measures, with slowing and some reversals in Scandinavian and other high-income countries since the 1990s. Data from India are sparse, but rising schooling and nutrition make norm obsolescence a real concern. Some US courts have accepted Flynn adjustments in capital cases; in Indian disability certification, report the norm date and interpret scores near the cut-off cautiously."
 }
 :::
 
 :::clinician
-The International Test Commission Guidelines for Translating and Adapting Tests (second edition, 2017) set 18 guidelines across pre-condition, test development, confirmation, administration, scoring and interpretation, and documentation; cite them in any Indian adaptation thesis. Equivalence is hierarchical: construct (functional) equivalence, measurement unit equivalence and full scale (scalar) equivalence, tested statistically via multi-group confirmatory factor analysis or IRT-based DIF. Van de Vijver's bias framework (construct, method, item) is the standard reference. ISAA (developed by the National Institute for the Mentally Handicapped, now NIEPID, around 2009) has 40 items across six domains and is the notified tool for autism certification; IDEAS was developed by an Indian Psychiatric Society task force and adopted for psychiatric disability certification, with the 2018 guidelines (amended 2020) under the RPwD Act specifying the procedures. Many Indian adaptations exist only in theses or institute manuals with small, local, dated norms; always state the norm group, its size and its date in your report.
+The International Test Commission Guidelines for Translating and Adapting Tests (2017 revision) set 18 guidelines across pre-condition, test development, confirmation, administration, scoring and interpretation, and documentation; cite them in any Indian adaptation thesis. Equivalence is hierarchical: construct (functional) equivalence, measurement unit equivalence and full scale (scalar) equivalence, tested statistically via multi-group confirmatory factor analysis or IRT-based DIF. Van de Vijver's bias framework (construct, method, item) is the standard reference. ISAA (developed by the National Institute for the Mentally Handicapped, now NIEPID, around 2009) has 40 items across six domains and is the notified tool for autism certification; IDEAS was developed by an Indian Psychiatric Society task force and adopted for psychiatric disability certification, with the 2018 guidelines (amended 2020) under the RPwD Act specifying the procedures. Many Indian adaptations exist only in theses or institute manuals with small, local, dated norms; always state the norm group, its size and its date in your report.
 :::
 
 :::recall
@@ -393,7 +393,7 @@ In compensation claims, criminal cases, disability certification and sometimes i
 :::
 
 :::clinician
-Slick, Sherman and Iverson's (1999) criteria for malingered neurocognitive dysfunction, revised by Slick and Sherman (2013), grade definite, probable and possible malingering, with below-chance performance on a forced-choice test as the strongest single indicator. The American Academy of Clinical Neuropsychology consensus (2009, updated 2021) recommends performance validity testing in all neuropsychological evaluations, not only medicolegal ones. Multivariate base rates of low scores (Brooks, Iverson and colleagues) show that 40 to 80 per cent of healthy adults obtain at least one score at or below the 5th percentile across a typical battery, depending on battery size and intelligence. On the MMPI-2-RF and MMPI-3, the overreporting scales (F-r, Fp-r, Fs, FBS-r, RBS) separate exaggerated psychopathology, somatic and cognitive complaints. Use cautious language: "invalid", "non-credible" or "inconsistent with genuine impairment" rather than "faking" or "lying", unless the evidence is overwhelming and the context requires it.
+Slick, Sherman and Iverson's (1999) criteria for malingered neurocognitive dysfunction, revised by Slick and Sherman (2013), grade definite, probable and possible malingering, with below-chance performance on a forced-choice test as the strongest single indicator. The American Academy of Clinical Neuropsychology consensus (2009, updated 2021) recommends performance validity testing in all neuropsychological evaluations, not only medicolegal ones. Multivariate base rates of low scores show that 40 to 80 per cent of healthy adults obtain at least one score at or below the 5th percentile across a typical battery, depending on battery size and intelligence. On the MMPI-2-RF and MMPI-3, the overreporting scales (F-r, Fp-r, Fs, FBS-r, RBS) separate exaggerated psychopathology, somatic and cognitive complaints. Use cautious language: "invalid", "non-credible" or "inconsistent with genuine impairment" rather than "faking" or "lying", unless the evidence is overwhelming and the context requires it.
 :::
 
 :::recall
@@ -482,7 +482,7 @@ Q: A report says "Mr X is a sensitive person who sometimes worries about what ot
 :::
 
 :::clinician
-Report quality research (Pelco and colleagues; Harvey's reviews of readability, Professional Psychology 2006) shows that most psychological reports are written at a postgraduate reading level that parents and teachers cannot use; aim for clear, short sentences and define every technical term. Lichtenberger and colleagues recommend a question-driven, domain-organised integration rather than test-by-test reporting. Therapeutic assessment (Finn's collaborative model) frames assessment around the client's own questions and uses feedback sessions to produce change, with meta-analytic support for modest therapeutic effects. Retain raw data securely; in India, follow institutional record-keeping rules and the confidentiality provisions of the Mental Healthcare Act 2017 (section 23) for persons with mental illness. Sign with your RCI registration number for any clinical or certification report.
+Report quality research shows that most psychological reports are written at a postgraduate reading level that parents and teachers cannot use; aim for clear, short sentences and define every technical term. Lichtenberger recommends a question-driven, domain-organised integration rather than test-by-test reporting. Therapeutic assessment (Finn's collaborative model) frames assessment around the client's own questions and uses feedback sessions to produce change, with meta-analytic support for modest therapeutic effects. Retain raw data securely; in India, follow institutional record-keeping rules and the confidentiality provisions of the Mental Healthcare Act 2017 (section 23) for persons with mental illness. Sign with your RCI registration number for any clinical or certification report.
 :::
 
 :::recall
@@ -574,16 +574,16 @@ Q: Under the Mental Healthcare Act 2017, a person with mental illness has the ri
 ## 4.1 Long answers and short notes [core]
 ### Long answer skeletons
 **1. Define reliability and validity. Describe their types and methods of estimation (15 marks).**
-Definitions → classical test theory (true score plus error) → reliability types with method and coefficient (test–retest, alternate forms, split-half with Spearman–Brown, internal consistency with KR-20 and alpha, inter-rater with kappa and ICC) → factors affecting reliability (length, heterogeneity, time interval, conditions) → SEM and confidence intervals → validity types (content, criterion: concurrent and predictive, construct: convergent, discriminant, factorial) → modern unified view (Messick) → relation between them (reliability limits validity) → conclusion.
+Definitions → classical test theory (true score plus error) → reliability types with method and coefficient (test-retest, alternate forms, split-half with Spearman-Brown, internal consistency with KR-20 and alpha, inter-rater with kappa and ICC) → factors affecting reliability (length, heterogeneity, time interval, conditions) → SEM and confidence intervals → validity types (content, criterion: concurrent and predictive, construct: convergent, discriminant, factorial) → modern unified view (Messick) → relation between them (reliability limits validity) → conclusion.
 
 **2. Describe the steps of test construction with special reference to item analysis (15 marks).**
-Construct definition → blueprint → item writing and formats → expert review → try-out → item analysis (difficulty, discrimination with the 27 per cent method, item–total correlation, distractor analysis) → IRT approach (ICC, a, b, c, information, DIF) → factor analysis → reliability, validity → standardisation and norms → manual.
+Construct definition → blueprint → item writing and formats → expert review → try-out → item analysis (difficulty, discrimination with the 27 per cent method, item-total correlation, distractor analysis) → IRT approach (ICC, a, b, c, information, DIF) → factor analysis → reliability, validity → standardisation and norms → manual.
 
 **3. Critically evaluate projective techniques with reference to the Rorschach and TAT (15 marks).**
 Projective hypothesis → Rorschach (cards, administration, scoring dimensions, Exner, R-PAS) → TAT (cards, needs and press, Indian TAT) → others → evidence (supported and unsupported indices) → criticisms (reliability, norms, incremental validity) → appropriate uses → conclusion.
 
 **4. Neuropsychological assessment: approaches and Indian batteries (10 to 15 marks).**
-Aims → bedside screening (MMSE, MoCA, HMSE, ACE-III) → fixed versus flexible batteries (Halstead–Reitan, Luria–Nebraska) → domains and common tests → Indian batteries (PGI-BBD, PGI Memory Scale, NIMHANS, AIIMS, ICMR-NCTB) → effort testing → education and culture → report.
+Aims → bedside screening (MMSE, MoCA, HMSE, ACE-III) → fixed versus flexible batteries (Halstead-Reitan, Luria-Nebraska) → domains and common tests → Indian batteries (PGI-BBD, PGI Memory Scale, NIMHANS, AIIMS, ICMR-NCTB) → effort testing → education and culture → report.
 
 **5. Write a psychological assessment report for a given case (10 marks).**
 Use the headings in Section 3.6; answer the referral question; give scores with ranges; integrate; specific recommendations.
@@ -611,7 +611,7 @@ In calculation-based questions, show every step and write the formula first. Exa
 :::
 
 :::clinician
-For NET, MPhil and PsyD entrance-style questions, expect: identification of reliability or validity types from scenarios; Spearman–Brown, SEM and z-to-T conversions; IRT parameter meanings; MMPI code types and validity configurations; Indian test authors (Kamat, Malin, Bhatia, Pershad, Verma, Wig, Chowdhury); and ethics of test use. Postgraduate long answers gain from naming the 2014 Standards, Messick's unified validity, the ITC adaptation guidelines and one meta-analytic finding (for example Mihura 2013 on Rorschach validity).
+For NET, MPhil and PsyD entrance-style questions, expect: identification of reliability or validity types from scenarios; Spearman-Brown, SEM and z-to-T conversions; IRT parameter meanings; MMPI code types and validity configurations; Indian test authors (Kamat, Malin, Bhatia, Pershad, Verma, Wig, Chowdhury); and ethics of test use. Postgraduate long answers gain from naming the 2014 Standards, Messick's unified validity, the ITC adaptation guidelines and one meta-analytic finding (for example Mihura 2013 on Rorschach validity).
 :::
 
 :::recall
@@ -624,7 +624,7 @@ For NET, MPhil and PsyD entrance-style questions, expect: identification of reli
 Define a psychological test. :: An objective, standardised sample of behaviour compared with norms.
 Reliability versus validity? :: Reliability is consistency; validity is whether score interpretations are justified for a purpose.
 Which reliability uses Cronbach's alpha? :: Internal consistency.
-What corrects split-half reliability? :: The Spearman–Brown formula.
+What corrects split-half reliability? :: The Spearman-Brown formula.
 Formula for SEM? :: SD times the square root of (1 minus reliability).
 What is construct validity? :: Evidence that the test behaves as theory predicts, including convergent and discriminant evidence.
 Mean and SD of a T-score? :: 50 and 10.
@@ -670,7 +670,7 @@ Q: Kappa is used to measure:
 Q: A test correlates strongly with other measures of depression and weakly with measures of intelligence. This supports its:
 - Face validity
 - *Construct validity (convergent and discriminant)
-- Test–retest reliability
+- Test-retest reliability
 - Content validity only
 > Convergent plus discriminant evidence.
 
@@ -693,7 +693,7 @@ Q: The best measure of reliability for a test of items scored right or wrong is:
 - *KR-20
 - Validity coefficient
 - PPV
-> Kuder–Richardson 20.
+> Kuder-Richardson 20.
 
 Q: The positive predictive value of a screening test is the probability that:
 - A person with the disorder tests positive
@@ -798,7 +798,7 @@ Q: A clinician wants to track a patient's OCD over exposure therapy. The best sc
 - PANSS
 - *Y-BOCS
 - YMRS
-> Yale–Brown Obsessive Compulsive Scale.
+> Yale-Brown Obsessive Compulsive Scale.
 
 Q: The NIMHANS Neuropsychological Battery provides norms stratified by:
 - Religion

@@ -147,7 +147,7 @@ A habit circuit is like a path through a field. Walk it every day for years and 
 :::
 
 :::clinician
-Treat circuit models as heuristics with uneven evidence. Strongest: fear conditioning and extinction (translational from rodents, with human vmPFC and amygdala imaging), and dopamine prediction-error signalling (Schultz; human PET shows dopamine release to drugs and cues). CSTC hyperactivity in OCD rests on PET and fMRI with symptom provocation and on the efficacy of neurosurgical and DBS interventions targeting the loop (ventral capsule and ventral striatum), but newer models emphasise an imbalance between goal-directed and habitual control (Gillan and colleagues). Default mode hyperconnectivity in depression is inconsistent across large samples; the REST-meta-MDD consortium (Yan and colleagues, PNAS 2019) actually found reduced DMN functional connectivity in recurrent depression. Aberrant salience (Kapur, American Journal of Psychiatry 2003) remains the most coherent bridge between presynaptic dopamine excess and delusion formation, and connects to predictive processing accounts where delusions are attempts to explain persistent prediction errors. Research Domain Criteria (RDoC) organises research around such systems (negative valence, positive valence, cognitive systems, social processes, arousal and regulatory, sensorimotor) rather than diagnoses; see the Frontiers module.
+Treat circuit models as heuristics with uneven evidence. Strongest: fear conditioning and extinction (translational from rodents, with human vmPFC and amygdala imaging), and dopamine prediction-error signalling (Schultz; human PET shows dopamine release to drugs and cues). CSTC hyperactivity in OCD rests on PET and fMRI with symptom provocation and on the efficacy of neurosurgical and DBS interventions targeting the loop (ventral capsule and ventral striatum), but newer models emphasise an imbalance between goal-directed and habitual control. Default mode hyperconnectivity in depression is inconsistent across large samples; the REST-meta-MDD consortium actually found reduced DMN functional connectivity in recurrent depression. Aberrant salience remains the most coherent bridge between presynaptic dopamine excess and delusion formation, and connects to predictive processing accounts where delusions are attempts to explain persistent prediction errors. Research Domain Criteria (RDoC) organises research around such systems (negative valence, positive valence, cognitive systems, social processes, arousal and regulatory, sensorimotor) rather than diagnoses; see the Frontiers module.
 :::
 
 :::recall
@@ -199,7 +199,7 @@ How it works at the synapse:
   "unit": "per cent",
   "answer": [70, 85],
   "reveal": "About 80 per cent, among the highest in psychiatry. Bipolar disorder is similar (around 60 to 85 per cent), depression much lower (around 35 to 40 per cent). But 'heritable' does not mean 'inevitable': an identical twin of a person with schizophrenia has roughly a 40 to 50 per cent chance, not 100 per cent.",
-  "clinician": "Heritability is a population statistic for variance explained in a particular environment, not a statement about an individual, and it says nothing about modifiability (phenylketonuria is highly heritable and fully treatable by diet). Twin heritability for schizophrenia is about 0.79 (Hilker and colleagues, Biological Psychiatry 2018, Danish registry); SNP-based heritability is far lower (about 0.24), the 'missing heritability' gap."
+  "clinician": "Heritability is a population statistic for variance explained in a particular environment, not a statement about an individual, and it says nothing about modifiability (phenylketonuria is highly heritable and fully treatable by diet). Twin heritability for schizophrenia is about 0.79; SNP-based heritability is far lower (about 0.24), the 'missing heritability' gap."
 }
 :::
 
@@ -231,7 +231,7 @@ Be suspicious of any headline about "the gene for depression" or a single "warri
 :::
 
 :::clinician
-Adult hippocampal neurogenesis in humans is contested: Sorrells and colleagues (Nature, 2018) found it drops to undetectable levels in adults, while Boldrini (Cell Stem Cell, 2018) and Moreno-Jiménez (Nature Medicine, 2019) reported persistence into old age, with differences partly explained by tissue fixation methods; later single-cell studies remain mixed. So "antidepressants work by neurogenesis" is a rodent-derived hypothesis, not established human fact. The complement component C4 finding (Sekar and colleagues, Nature 2016) links the strongest schizophrenia GWAS signal (the MHC region) to synaptic pruning, a mechanism coherent with the adolescent onset and reduced dendritic spine density seen post-mortem. The Psychiatric Genomics Consortium schizophrenia GWAS (Trubetskoy and colleagues, Nature 2022) reported 287 loci with enrichment in synaptic genes expressed in neurons, not glia. The trans-ancestry depression GWAS (Adams and colleagues, Cell 2025) reported about 700 independent variants and highlighted the need for non-European samples; South Asian representation in psychiatric genetics remains small, so polygenic scores built in European samples predict even less well in Indian patients. Pharmacogenomic panels are a separate matter (Section 3.5).
+Adult hippocampal neurogenesis in humans is contested: Sorrells' group found it drops to undetectable levels in adults, while Boldrini and Moreno-Jiménez reported persistence into old age, with differences partly explained by tissue fixation methods; later single-cell studies remain mixed. So "antidepressants work by neurogenesis" is a rodent-derived hypothesis, not established human fact. The complement component C4 finding links the strongest schizophrenia GWAS signal (the MHC region) to synaptic pruning, a mechanism coherent with the adolescent onset and reduced dendritic spine density seen post-mortem. The Psychiatric Genomics Consortium schizophrenia GWAS reported 287 loci with enrichment in synaptic genes expressed in neurons, not glia. The trans-ancestry depression GWAS reported about 700 independent variants and highlighted the need for non-European samples; South Asian representation in psychiatric genetics remains small, so polygenic scores built in European samples predict even less well in Indian patients. Pharmacogenomic panels are a separate matter (Section 3.5).
 :::
 
 :::recall
@@ -314,12 +314,12 @@ Most people with a typical presentation do not need one. Red flags that justify 
   "unit": "sessions",
   "answer": [20, 36],
   "reveal": "Usually about 20 to 30 daily sessions on weekdays, each lasting from a few minutes (with newer 'theta burst' patterns) to around 40 minutes. Accelerated protocols compress this into several sessions per day.",
-  "clinician": "The original FDA-cleared protocol (2008) used 10 Hz stimulation for about 37 minutes per session, five days a week for four to six weeks. Intermittent theta burst stimulation (iTBS) was non-inferior in the THREE-D trial (Blumberger and colleagues, Lancet 2018) at about 3 minutes per session. The SAINT/Stanford neuromodulation therapy protocol (ten iTBS sessions daily for five days, targeting the DLPFC subregion most anticorrelated with subgenual cingulate on fMRI) reported high remission rates in small trials; larger replication is ongoing as of Nov 2026, and cost and access limit its use in India."
+  "clinician": "The original FDA-cleared protocol (2008) used 10 Hz stimulation for about 37 minutes per session, five days a week for four to six weeks. Intermittent theta burst stimulation (iTBS) was non-inferior in the THREE-D trial at about 3 minutes per session. The SAINT/Stanford neuromodulation therapy protocol (ten iTBS sessions daily for five days, targeting the DLPFC subregion most anticorrelated with subgenual cingulate on fMRI) reported high remission rates in small trials; larger replication is ongoing as of Nov 2026, and cost and access limit its use in India."
 }
 :::
 
 :::clinician
-The strongest caution in psychiatric neuroimaging is about effect sizes and sample sizes. Marek and colleagues (Nature, 2022) showed that brain-wide associations between imaging measures and behavioural or mental health phenotypes are small and need thousands of participants to replicate; many earlier small-sample findings were inflated. Reverse inference (concluding a mental state from activation of a region, for example "amygdala lit up, so fear") is logically weak because regions serve many functions. As of Nov 2026, no imaging, EEG or blood test is approved for diagnosing a primary psychiatric disorder; quantitative EEG and "brain mapping" offered commercially for diagnosing ADHD or depression lack validation. Clinically meaningful uses are excluding organic causes, dementia subtyping (FDG-PET, amyloid and tau PET; DAT-SPECT), and EEG in delirium, epilepsy, catatonia mimics (non-convulsive status) and encephalitis. In first-episode psychosis, routine MRI yields clinically actionable findings in only a small minority, so many guidelines advise targeted rather than universal imaging.
+The strongest caution in psychiatric neuroimaging is about effect sizes and sample sizes. Marek's group showed that brain-wide associations between imaging measures and behavioural or mental health phenotypes are small and need thousands of participants to replicate; many earlier small-sample findings were inflated. Reverse inference (concluding a mental state from activation of a region, for example "amygdala lit up, so fear") is logically weak because regions serve many functions. As of Nov 2026, no imaging, EEG or blood test is approved for diagnosing a primary psychiatric disorder; quantitative EEG and "brain mapping" offered commercially for diagnosing ADHD or depression lack validation. Clinically meaningful uses are excluding organic causes, dementia subtyping (FDG-PET, amyloid and tau PET; DAT-SPECT), and EEG in delirium, epilepsy, catatonia mimics (non-convulsive status) and encephalitis. In first-episode psychosis, routine MRI yields clinically actionable findings in only a small minority, so many guidelines advise targeted rather than universal imaging.
 :::
 
 :::recall
@@ -382,13 +382,13 @@ Treatment is immunotherapy (steroids, immunoglobulin, plasma exchange) and tumou
 - **Reproductive hormones**: the premenstrual phase (premenstrual dysphoric disorder), after childbirth (postpartum depression and psychosis) and the menopause transition are windows of raised risk for some women.
 - **Cortisol**: Cushing's syndrome and long-term steroid medicines can cause depression, mania or psychosis.
 
-### The gut–brain axis
-The gut has its own nervous system, and gut microbes produce substances that affect immunity and possibly mood. Animal studies are striking; human evidence is still early. As of Nov 2026, probiotics ("psychobiotics") do not have reliable evidence as a treatment for depression or anxiety. Diet quality does relate to mood, and a Mediterranean-style diet trial (SMILES, 2017) gave promising but small results.
+### The gut-brain axis
+The gut has its own nervous system, and gut microbes produce substances that affect immunity and possibly mood. Animal studies are striking; human evidence is still early. As of Nov 2026, probiotics ("psychobiotics") do not have reliable evidence as a treatment for depression or anxiety. Diet quality does relate to mood, and a Mediterranean-style diet trial gave promising but small results.
 
 ### Genes and prescribing (pharmacogenomics)
 Some gene variants change how a person handles a medicine:
 - **CYP2D6 and CYP2C19**: "poor metabolisers" build up high levels of some antidepressants and antipsychotics; "ultra-rapid metabolisers" may get little effect. International guidance suggests dose changes for known genotypes.
-- **HLA-B*15:02**: a variant common in people of East and South-East Asian descent, and present in parts of India, strongly raises the risk of a life-threatening skin reaction (Stevens–Johnson syndrome) with **carbamazepine** (and possibly oxcarbazepine and phenytoin). Testing before starting carbamazepine is recommended where feasible in at-risk populations.
+- **HLA-B*15:02**: a variant common in people of East and South-East Asian descent, and present in parts of India, strongly raises the risk of a life-threatening skin reaction (Stevens-Johnson syndrome) with **carbamazepine** (and possibly oxcarbazepine and phenytoin). Testing before starting carbamazepine is recommended where feasible in at-risk populations.
 - **HLA-A*31:01**: linked to carbamazepine hypersensitivity in several populations.
 
 :::widget decide
@@ -404,13 +404,13 @@ Some gene variants change how a person handles a medicine:
 :::
 
 :::clinician
-Inflammation: Osimo and colleagues (Psychological Medicine, 2019) estimated that about a quarter of people with depression have low-grade inflammation (CRP above 3 mg/L). Trials of anti-inflammatory add-ons (celecoxib, minocycline, infliximab in high-CRP subgroups) show inconsistent results, and none is a routine treatment as of Nov 2026; stratifying by inflammatory markers is the main research direction. Autoimmune encephalitis: the Graus criteria (Lancet Neurology, 2016) define possible autoimmune encephalitis by subacute onset (under three months) of working memory deficits, altered mental status or psychiatric symptoms with at least one of new focal CNS findings, unexplained seizures, CSF pleocytosis or suggestive MRI. The 2020 Pollak consensus (Lancet Psychiatry) on autoimmune psychosis lists red flags including rapid progression, catatonia, antipsychotic intolerance, seizures, dyskinesia, autonomic instability and reduced consciousness. Pharmacogenomics: CPIC guidelines give actionable CYP2D6 and CYP2C19 recommendations for SSRIs and TCAs, but RCT evidence that panel-guided antidepressant selection improves outcomes is modest (for example the PRIME Care trial, JAMA 2022, small benefit in remission at some time points). The US label for carbamazepine advises HLA-B*15:02 screening in patients with ancestry in genetically at-risk populations, which explicitly include South Asian Indians; allele frequency varies widely between Indian communities.
+Inflammation: Osimo's group estimated that about a quarter of people with depression have low-grade inflammation (CRP above 3 mg/L). Trials of anti-inflammatory add-ons (celecoxib, minocycline, infliximab in high-CRP subgroups) show inconsistent results, and none is a routine treatment as of Nov 2026; stratifying by inflammatory markers is the main research direction. Autoimmune encephalitis: the Graus criteria define possible autoimmune encephalitis by subacute onset (under three months) of working memory deficits, altered mental status or psychiatric symptoms with at least one of new focal CNS findings, unexplained seizures, CSF pleocytosis or suggestive MRI. The 2020 Pollak consensus on autoimmune psychosis lists red flags including rapid progression, catatonia, antipsychotic intolerance, seizures, dyskinesia, autonomic instability and reduced consciousness. Pharmacogenomics: CPIC guidelines give actionable CYP2D6 and CYP2C19 recommendations for SSRIs and TCAs, but RCT evidence that panel-guided antidepressant selection improves outcomes is modest. The US label for carbamazepine advises HLA-B*15:02 screening in patients with ancestry in genetically at-risk populations, which explicitly include South Asian Indians; allele frequency varies widely between Indian communities.
 :::
 
 :::recall
 1. List four red flags for autoimmune encephalitis in a new psychosis. || Rapid onset after a viral prodrome, seizures, orofacial dyskinesia or catatonia, autonomic instability, reduced consciousness, antipsychotic intolerance.
 2. Which tumour is linked with anti-NMDA receptor encephalitis? || Ovarian teratoma.
-3. Which gene variant should be tested before carbamazepine in at-risk Asian populations and why? || HLA-B*15:02, because it greatly raises the risk of Stevens–Johnson syndrome or toxic epidermal necrolysis.
+3. Which gene variant should be tested before carbamazepine in at-risk Asian populations and why? || HLA-B*15:02, because it greatly raises the risk of Stevens-Johnson syndrome or toxic epidermal necrolysis.
 4. What is the status of probiotics for depression as of Nov 2026? || Not an evidence-based treatment; human evidence is early and inconsistent.
 :::
 
@@ -444,7 +444,7 @@ Classification (working, explicit episodic and semantic, implicit procedural, pr
 Sympathetic-adrenal and HPA axes → feedback → acute versus chronic stress, allostatic load → findings in depression (dexamethasone non-suppression), PTSD and early adversity → links to hippocampus, immunity and sleep → clinical implications.
 
 **4. Basic principles of pharmacokinetics with clinical examples (10 marks).**
-Absorption and first pass → distribution, protein binding, blood–brain barrier → metabolism by CYP enzymes, inducers and inhibitors with psychiatric examples → excretion (lithium) → half-life, steady state, washout → therapeutic index and drug monitoring → special groups (elderly, pregnancy, liver and kidney disease, pharmacogenomics).
+Absorption and first pass → distribution, protein binding, blood-brain barrier → metabolism by CYP enzymes, inducers and inhibitors with psychiatric examples → excretion (lithium) → half-life, steady state, washout → therapeutic index and drug monitoring → special groups (elderly, pregnancy, liver and kidney disease, pharmacogenomics).
 
 ### Short notes (5 marks each)
 - Synaptic transmission
@@ -480,9 +480,9 @@ Where is the locus coeruleus and what does it make? :: In the pons; noradrenalin
 Which serotonin receptor is an ion channel? :: 5-HT3.
 Name the four dopamine pathways. :: Mesolimbic, mesocortical, nigrostriatal, tuberoinfundibular.
 What D2 occupancy gives antipsychotic effect without EPS? :: About 65 to 78 per cent.
-What is Gerstmann syndrome? :: Agraphia, acalculia, finger agnosia and left–right disorientation from a dominant parietal lesion.
+What is Gerstmann syndrome? :: Agraphia, acalculia, finger agnosia and left-right disorientation from a dominant parietal lesion.
 Which aphasias spare repetition? :: Transcortical motor and transcortical sensory.
-What is Klüver–Bucy syndrome? :: Placidity, hyperorality, hypersexuality and visual agnosia after bilateral amygdala damage.
+What is Klüver-Bucy syndrome? :: Placidity, hyperorality, hypersexuality and visual agnosia after bilateral amygdala damage.
 What is Ribot's law? :: Recent memories are lost before remote ones in retrograde amnesia.
 Which vitamin deficiency causes Korsakoff syndrome? :: Thiamine.
 What is the master clock of the body? :: The suprachiasmatic nucleus of the hypothalamus.
@@ -518,7 +518,7 @@ Q: Which ion rushes into the neuron during the rising phase of the action potent
 Q: Microglia are best described as:
 - Myelin-making cells
 - *The brain's immune cells that also prune synapses
-- Cells forming the blood–brain barrier alone
+- Cells forming the blood-brain barrier alone
 - Neurons in the cerebellum
 > Microglia defend and prune.
 
@@ -688,7 +688,7 @@ Q: HLA-B*15:02 testing is recommended before starting which medicine in at-risk 
 - Valproate
 - *Carbamazepine
 - Sertraline
-> It predicts Stevens–Johnson syndrome with carbamazepine.
+> It predicts Stevens-Johnson syndrome with carbamazepine.
 
 Q: Xanomeline-trospium is notable because it:
 - Is a long-acting injectable haloperidol

@@ -42,7 +42,7 @@ This module gives you the **basic map**: the main defences, the big theories of 
 :::
 
 :::clinician
-Distinguish defence from coping (Lazarus and Folkman, 1984). Coping is conscious, effortful and goal-directed (problem-focused or emotion-focused); defences are largely unconscious, automatic and aimed at regulating affect and self-esteem. The two overlap at the "mature" end: suppression and anticipation sit close to deliberate coping. Phebe Cramer's work ("Protecting the Self", 2006) gives the best empirical bridge, showing defences can be reliably coded from narratives, follow a developmental sequence (denial, then projection, then identification) and increase under stress. Defence assessment is useful clinically because it predicts how a patient will meet bad news, a new diagnosis or an interpretation, not because it diagnoses a disorder.
+Distinguish defence from coping. Coping is conscious, effortful and goal-directed (problem-focused or emotion-focused); defences are largely unconscious, automatic and aimed at regulating affect and self-esteem. The two overlap at the "mature" end: suppression and anticipation sit close to deliberate coping. Phebe Cramer's work gives the best empirical bridge, showing defences can be reliably coded from narratives, follow a developmental sequence (denial, then projection, then identification) and increase under stress. Defence assessment is useful clinically because it predicts how a patient will meet bad news, a new diagnosis or an interpretation, not because it diagnoses a disorder.
 :::
 
 :::recall
@@ -120,7 +120,7 @@ Exams like this distinction. **Supported** by later research: much mental life i
 :::
 
 :::clinician
-For depth on primary and secondary process, dream work, compromise formation, signal anxiety and the developmental ladder of danger situations, see Part I of the Psychodynamics in depth module, which assumes this map. Keep three teaching points here. First, the topographic and structural models are not alternatives: Freud kept both, and "unconscious" in the structural model applies to parts of the ego and superego (defences themselves are unconscious ego operations). Second, the Oedipus complex was challenged early from India: Girindrasekhar Bose argued in correspondence with Freud (1929) that a wish to be the opposite sex, and mother-son dynamics in extended families, were more central for his Bengali patients, and A. K. Ramanujan's essay on the "Indian Oedipus" explored folktales in which the father kills the son. Third, when you teach psychosexual stages to undergraduates, pair them with Erikson's psychosocial stages, which keep the developmental sequence while dropping the biological determinism.
+For depth on primary and secondary process, dream work, compromise formation, signal anxiety and the developmental ladder of danger situations, see Part I of the Psychodynamics in depth module, which assumes this map. Keep three teaching points here. First, the topographic and structural models are not alternatives: Freud kept both, and "unconscious" in the structural model applies to parts of the ego and superego (defences themselves are unconscious ego operations). Second, the Oedipus complex was challenged early from India: Girindrasekhar Bose argued in correspondence with Freud (1929) that a wish to be the opposite sex, and mother-son dynamics in extended families, were more central for his Bengali patients, and A. K. Ramanujan's writing on Oedipus-like tales in India explored folktales in which the father kills the son. Third, when you teach psychosexual stages to undergraduates, pair them with Erikson's psychosocial stages, which keep the developmental sequence while dropping the biological determinism.
 :::
 
 :::recall
@@ -192,7 +192,7 @@ Joseph, 45, is furious that his elder brother got the family house. At the Onam 
 :::
 
 :::clinician
-Notice how the same behaviour can serve different defences, and the same defence can produce different behaviours: the meaning lies in the function, which you can only infer from context, history and how the person responds when you gently notice it. Repression as a mechanism for forgetting trauma is the most scientifically contested of Freud's defences. Laboratory "motivated forgetting" exists (think/no-think paradigm, Anderson and Green, Nature 2001), but the claim that massive, repeated trauma is routinely repressed and later accurately recovered in therapy is not supported; the "memory wars" of the 1990s showed that suggestive techniques can create false memories (Loftus). Clinicians should never "search for repressed memories". This is a safeguarding issue, not only a theoretical one.
+Notice how the same behaviour can serve different defences, and the same defence can produce different behaviours: the meaning lies in the function, which you can only infer from context, history and how the person responds when you gently notice it. Repression as a mechanism for forgetting trauma is the most scientifically contested of Freud's defences. Laboratory "motivated forgetting" exists, but the claim that massive, repeated trauma is routinely repressed and later accurately recovered in therapy is not supported; the "memory wars" of the 1990s showed that suggestive techniques can create false memories (Loftus). Clinicians should never "search for repressed memories". This is a safeguarding issue, not only a theoretical one.
 :::
 
 :::recall
@@ -265,7 +265,7 @@ Do not memorise these tables as lists of names. Ask of every person you meet in 
 :::
 
 :::clinician
-Stage theories are scaffolds, not laws. Contemporary developmental science favours continuous, domain-specific change shaped by culture (Vygotsky, Bronfenbrenner's ecological systems) over universal, discrete stages. Cross-cultural work shows that the timing of milestones like autonomy and identity varies: in many Indian families, autonomy in self-care may be encouraged later than in North American families, and identity is negotiated within family and community rather than primarily through separation. Sudhir Kakar's "The Inner World" (1978) remains the key psychoanalytic account of Indian childhood, emphasising prolonged closeness to the mother and the shift at around four or five to a world of men and joint-family hierarchy.
+Stage theories are scaffolds, not laws. Contemporary developmental science favours continuous, domain-specific change shaped by culture (Vygotsky, Bronfenbrenner's ecological systems) over universal, discrete stages. Cross-cultural work shows that the timing of milestones like autonomy and identity varies: in many Indian families, autonomy in self-care may be encouraged later than in North American families, and identity is negotiated within family and community rather than primarily through separation. Sudhir Kakar's work from the late 1970s remains the key psychoanalytic account of Indian childhood, emphasising prolonged closeness to the mother and the shift at around four or five to a world of men and joint-family hierarchy.
 :::
 
 :::recall
@@ -545,7 +545,7 @@ Karthik, 23, has an intrusive thought that his mother will die. Each time, he ta
 :::
 
 :::clinician
-Projective identification is used in three senses: as a defence (an unwanted part of the self is located in another and controlled there), as communication (the patient induces in the therapist what they cannot put into words) and as a mode of object relation (Ogden, 1979). The countertransference implication (feeling unaccountably angry, hopeless or rescuing with a patient) is developed in the Psychodynamics in depth module, Sections 2.2 and 2.5. For exams, the sharpest one-line distinction: in projection the other person need not change; in projective identification the other person is pressured into feeling or acting in line with the projection.
+Projective identification is used in three senses: as a defence (an unwanted part of the self is located in another and controlled there), as communication (the patient induces in the therapist what they cannot put into words) and as a mode of object relation. The countertransference implication (feeling unaccountably angry, hopeless or rescuing with a patient) is developed in the Psychodynamics in depth module, Sections 2.2 and 2.5. For exams, the sharpest one-line distinction: in projection the other person need not change; in projective identification the other person is pressured into feeling or acting in line with the projection.
 :::
 
 :::recall
@@ -619,7 +619,7 @@ Some patterns are common in Indian clinics. Recognise them without stereotyping:
 :::
 
 :::clinician
-Somatisation as a defence (affect transformed into bodily symptoms) must be held separately from somatic idioms of distress and from somatic symptom disorder in DSM-5-TR, which no longer requires symptoms to be medically unexplained and focuses on excessive thoughts, feelings and behaviours about them. Kleinman's work in China and later Indian studies (for example on "tension" and "sinking heart") show that bodily language is a primary mode of expressing distress, not a failure to "psychologise". The anger-turned-inwards model of depression ("Mourning and Melancholia", 1917) has historical value but limited empirical support as a general cause; self-criticism and introjective (self-critical) depression in Blatt's model have stronger evidence. Dhat syndrome appears in the DSM-5-TR glossary of cultural concepts of distress; Indian studies (Prakash, Grover and colleagues) show high comorbidity with depression, anxiety and sexual dysfunction.
+Somatisation as a defence (affect transformed into bodily symptoms) must be held separately from somatic idioms of distress and from somatic symptom disorder in DSM-5-TR, which no longer requires symptoms to be medically unexplained and focuses on excessive thoughts, feelings and behaviours about them. Kleinman's work in China and later Indian studies (for example on "tension" and "sinking heart") show that bodily language is a primary mode of expressing distress, not a failure to "psychologise". The anger-turned-inwards model of depression has historical value but limited empirical support as a general cause; self-criticism and introjective (self-critical) depression in Blatt's model have stronger evidence. Dhat syndrome appears in the DSM-5-TR glossary of cultural concepts of distress; Indian studies show high comorbidity with depression, anxiety and sexual dysfunction.
 :::
 
 :::recall
@@ -814,7 +814,7 @@ A neutral stimulus paired repeatedly with one that naturally causes a response c
 - **Conditioned stimulus (CS)**: a bell paired with food. **Conditioned response (CR)**: salivation to the bell.
 - **Extinction**: the CR fades when the CS is repeatedly presented without the UCS.
 - **Generalisation**: similar stimuli trigger the response; **discrimination**: learning to tell them apart.
-- **Little Albert** (Watson and Rayner, 1920): a baby conditioned to fear a white rat by pairing it with a loud noise; the fear generalised to other furry things. Ethically unacceptable today.
+- **Little Albert**: a baby conditioned to fear a white rat by pairing it with a loud noise; the fear generalised to other furry things. Ethically unacceptable today.
 
 ### Operant conditioning (Thorndike, Skinner)
 Behaviour is shaped by its **consequences**.
@@ -869,7 +869,7 @@ Animals exposed to shocks they could not escape later failed to escape even when
 :::
 
 :::clinician
-Mowrer's two-factor theory (1947, 1960) links the two forms: fear is acquired by classical conditioning and maintained by operant negative reinforcement of avoidance, the rationale for exposure with response prevention. Its limits (many phobics recall no conditioning event; fears of snakes and heights are more common than of cars or electrical sockets) led to Seligman's preparedness theory and to Rachman's three pathways of fear acquisition (direct conditioning, vicarious learning, information). The extinction burst, spontaneous recovery and renewal effects matter for parent training and for exposure planning (see Brain and behaviour, Section 3.2). On learned helplessness, Maier and Seligman's 2016 Psychological Review paper revised the theory: passivity is the default mammalian response to prolonged aversive events, and what is learned is control, mediated by the medial prefrontal cortex inhibiting the dorsal raphe. The Bobo doll studies are important historically but measured play aggression towards a toy shortly after modelling; the link to real-world violence is weaker than textbooks imply.
+Mowrer's two-factor theory (1947, 1960) links the two forms: fear is acquired by classical conditioning and maintained by operant negative reinforcement of avoidance, the rationale for exposure with response prevention. Its limits (many phobics recall no conditioning event; fears of snakes and heights are more common than of cars or electrical sockets) led to Seligman's preparedness theory and to Rachman's three pathways of fear acquisition (direct conditioning, vicarious learning, information). The extinction burst, spontaneous recovery and renewal effects matter for parent training and for exposure planning (see Brain and behaviour, Section 3.2). On learned helplessness, Maier and Seligman's 2016 revision of the theory: passivity is the default mammalian response to prolonged aversive events, and what is learned is control, mediated by the medial prefrontal cortex inhibiting the dorsal raphe. The Bobo doll studies are important historically but measured play aggression towards a toy shortly after modelling; the link to real-world violence is weaker than textbooks imply.
 :::
 
 :::recall

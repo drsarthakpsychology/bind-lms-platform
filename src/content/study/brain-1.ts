@@ -39,7 +39,7 @@ A panic attack is mostly the sympathetic arm firing at full power when there is 
 :::
 
 :::clinician
-Teach the biopsychosocial model as levels of explanation, not as a menu. Kendler's "explanatory pluralism" (American Journal of Psychiatry, 2005; 2012 essay on "the dappled nature of causes") is the cleanest defence: psychiatric disorders have causes at the genetic, neural, psychological and social levels, none of which reduces cleanly to another. Practically, this frees you from the false question "is it chemical or is it psychological?" that patients and families in India often ask, sometimes because a "chemical" cause feels less shameful and sometimes because it feels more frightening. The honest answer is "both, and we can work at more than one level".
+Teach the biopsychosocial model as levels of explanation, not as a menu. Kendler's "explanatory pluralism" is the cleanest defence: psychiatric disorders have causes at the genetic, neural, psychological and social levels, none of which reduces cleanly to another. Practically, this frees you from the false question "is it chemical or is it psychological?" that patients and families in India often ask, sometimes because a "chemical" cause feels less shameful and sometimes because it feels more frightening. The honest answer is "both, and we can work at more than one level".
 :::
 
 :::recall
@@ -77,7 +77,7 @@ The brain has around 86 billion **neurons** (nerve cells) and at least as many s
 | **Axon terminals** | Endings that release chemical messengers | The loudspeaker |
 
 ### Glial cells: not just glue
-- **Astrocytes** feed neurons, mop up excess chemical messengers and help form the blood–brain barrier.
+- **Astrocytes** feed neurons, mop up excess chemical messengers and help form the blood-brain barrier.
 - **Oligodendrocytes** make myelin in the brain and spinal cord (**Schwann cells** do this in peripheral nerves).
 - **Microglia** are the brain's immune cells. They clear debris and prune unused connections.
 
@@ -111,14 +111,14 @@ Sneha, 29, a teacher in Pune, develops blurred vision in one eye, then months la
 :::
 
 :::clinician
-The sodium–potassium ATPase uses a large share of neuronal energy, which is one reason the brain (about 2 per cent of body weight) uses about 20 per cent of resting energy and is so vulnerable to hypoxia and hypoglycaemia. Local anaesthetics and several anticonvulsants (carbamazepine, phenytoin, lamotrigine) block voltage-gated sodium channels, reducing high-frequency firing; this shared mechanism partly explains their mood-stabilising and neuropathic-pain uses. Microglial synaptic pruning (complement-tagged, involving C3 and C4) is now central to neurodevelopmental hypotheses of schizophrenia, discussed in Part III.
+The sodium-potassium ATPase uses a large share of neuronal energy, which is one reason the brain (about 2 per cent of body weight) uses about 20 per cent of resting energy and is so vulnerable to hypoxia and hypoglycaemia. Local anaesthetics and several anticonvulsants (carbamazepine, phenytoin, lamotrigine) block voltage-gated sodium channels, reducing high-frequency firing; this shared mechanism partly explains their mood-stabilising and neuropathic-pain uses. Microglial synaptic pruning (complement-tagged, involving C3 and C4) is now central to neurodevelopmental hypotheses of schizophrenia, discussed in Part III.
 :::
 
 :::recall
 1. Name the five parts of a neuron and what each does. || Dendrites receive; cell body sums and sustains; axon carries; myelin insulates and speeds; terminals release messengers.
 2. What is the resting potential, and roughly what value? || The slight negative charge inside a resting neuron, about minus 70 millivolts.
 3. What does "all-or-none" mean? || A neuron either fires a full action potential or none; stronger input raises firing rate, not spike size.
-4. Name three types of glia and a job for each. || Astrocytes (support, clear transmitters, blood–brain barrier); oligodendrocytes (myelin in CNS); microglia (immune defence, pruning).
+4. Name three types of glia and a job for each. || Astrocytes (support, clear transmitters, blood-brain barrier); oligodendrocytes (myelin in CNS); microglia (immune defence, pruning).
 :::
 
 :::mcq
@@ -175,7 +175,7 @@ Some transmitters make the receiving neuron **more** likely to fire (excitatory)
 :::
 
 :::clinician
-Calcium entry through voltage-gated calcium channels triggers vesicle fusion via the SNARE complex; botulinum and tetanus toxins cleave SNARE proteins, and gabapentinoids (pregabalin, gabapentin) bind the alpha-2-delta subunit of these channels to reduce release. On the serotonin hypothesis: the 2022 umbrella review by Moncrieff and colleagues (Molecular Psychiatry) found no consistent evidence of reduced serotonin activity in depression. It was widely misreported as "antidepressants don't work". It did not test efficacy, and critics noted methodological limits. The fair position is that monoamine medicines work for many people, but probably not by "correcting a deficiency"; downstream plasticity and changes in emotional processing are better current accounts.
+Calcium entry through voltage-gated calcium channels triggers vesicle fusion via the SNARE complex; botulinum and tetanus toxins cleave SNARE proteins, and gabapentinoids (pregabalin, gabapentin) bind the alpha-2-delta subunit of these channels to reduce release. On the serotonin hypothesis: the 2022 umbrella review by Moncrieff's group found no consistent evidence of reduced serotonin activity in depression. It was widely misreported as "antidepressants don't work". It did not test efficacy, and critics noted methodological limits. The fair position is that monoamine medicines work for many people, but probably not by "correcting a deficiency"; downstream plasticity and changes in emotional processing are better current accounts.
 :::
 
 :::recall
@@ -557,7 +557,7 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
   "unit": "per cent of D2 receptors",
   "answer": [60, 80],
   "reveal": "About 65 to 80 per cent. Below that, the medicine often does not work. Above about 80 per cent, stiffness and restlessness become likely, and prolactin rises. This is why higher doses are not automatically better.",
-  "clinician": "PET studies (Kapur and colleagues, American Journal of Psychiatry 2000, with haloperidol in first-episode patients) found clinical response likely above about 65 per cent striatal D2 occupancy, prolactin elevation above about 72 per cent and extrapyramidal symptoms above about 78 per cent. Clozapine and quetiapine are effective at lower and more transient occupancy, part of the 'fast-off' hypothesis. Aripiprazole reaches very high occupancy without EPS because it is a partial agonist."
+  "clinician": "PET studies found clinical response likely above about 65 per cent striatal D2 occupancy, prolactin elevation above about 72 per cent and extrapyramidal symptoms above about 78 per cent. Clozapine and quetiapine are effective at lower and more transient occupancy, part of the 'fast-off' hypothesis. Aripiprazole reaches very high occupancy without EPS because it is a partial agonist."
 }
 :::
 
@@ -584,7 +584,7 @@ Rare but life-threatening: high fever, severe rigidity, confusion, unstable bloo
 :::
 
 :::clinician
-Hypotheses beyond the four pathways: Howes and Kapur's revised dopamine hypothesis (Schizophrenia Bulletin, 2009) locates the main abnormality in increased presynaptic dopamine synthesis and release, mainly in the associative (dorsal) striatum rather than the classic limbic striatum, with aberrant salience as the bridge to delusion formation. There is a fifth, often-forgotten pathway: thalamic dopamine. D2 blockade in the pituitary raises prolactin because dopamine is the prolactin-inhibiting factor; risperidone, paliperidone and amisulpride raise prolactin most because they cross the blood–brain barrier poorly and so reach high pituitary occupancy relative to striatal occupancy. Long-term hyperprolactinaemia carries risks of osteoporosis and sexual dysfunction; ask about these directly, since Indian patients rarely volunteer them. Tardive dyskinesia now has licensed VMAT2 inhibitors in some countries (valbenazine, deutetrabenazine; tetrabenazine is older and more widely available).
+Hypotheses beyond the four pathways: Howes and Kapur's revised dopamine hypothesis locates the main abnormality in increased presynaptic dopamine synthesis and release, mainly in the associative (dorsal) striatum rather than the classic limbic striatum, with aberrant salience as the bridge to delusion formation. There is a fifth, often-forgotten pathway: thalamic dopamine. D2 blockade in the pituitary raises prolactin because dopamine is the prolactin-inhibiting factor; risperidone, paliperidone and amisulpride raise prolactin most because they cross the blood-brain barrier poorly and so reach high pituitary occupancy relative to striatal occupancy. Long-term hyperprolactinaemia carries risks of osteoporosis and sexual dysfunction; ask about these directly, since Indian patients rarely volunteer them. Tardive dyskinesia now has licensed VMAT2 inhibitors in some countries (valbenazine, deutetrabenazine; tetrabenazine is older and more widely available).
 :::
 
 :::recall
@@ -657,14 +657,14 @@ Fluent nonsense with made-up words can look like the "word salad" of schizophren
 ### Parietal, temporal and occipital signs
 - **Dominant (usually left) parietal**: **Gerstmann syndrome**, four signs: cannot write (agraphia), cannot calculate (acalculia), cannot name fingers (finger agnosia), confuses left and right.
 - **Non-dominant (usually right) parietal**: neglect of the left side, dressing apraxia, getting lost, and **anosognosia** (unaware of the deficit).
-- **Temporal**: memory problems; temporal lobe seizures with déjà vu, rising feelings in the stomach, smells, lip-smacking; bilateral damage to the amygdala can cause **Klüver–Bucy syndrome** (placidity, putting things in the mouth, hypersexuality).
+- **Temporal**: memory problems; temporal lobe seizures with déjà vu, rising feelings in the stomach, smells, lip-smacking; bilateral damage to the amygdala can cause **Klüver-Bucy syndrome** (placidity, putting things in the mouth, hypersexuality).
 - **Occipital**: loss of half the visual field; **Anton syndrome** (cortically blind but denies it); vivid visual hallucinations.
 
 :::widget worked
 {
   "title": "Localising from the bedside",
   "steps": [
-    { "q": "Mr Kapoor, 64, a right-handed retired engineer in Chandigarh, suddenly cannot do simple sums, writes poorly, calls his index finger 'thumb' and confuses left and right. Which syndrome?", "a": "Gerstmann syndrome: agraphia, acalculia, finger agnosia, left–right confusion." },
+    { "q": "Mr Kapoor, 64, a right-handed retired engineer in Chandigarh, suddenly cannot do simple sums, writes poorly, calls his index finger 'thumb' and confuses left and right. Which syndrome?", "a": "Gerstmann syndrome: agraphia, acalculia, finger agnosia, left-right confusion." },
     { "q": "Where is the lesion?", "a": "Dominant (left) parietal lobe, around the angular gyrus." },
     { "q": "What does the sudden onset suggest, and what should happen?", "a": "A stroke. This needs urgent neurological assessment and imaging, not a psychiatric label." }
   ],
@@ -675,13 +675,13 @@ Fluent nonsense with made-up words can look like the "word salad" of schizophren
 :::
 
 :::clinician
-Frontal circuits are best understood as frontal–subcortical loops (Cummings, Archives of Neurology 1993): dorsolateral, orbitofrontal and anterior cingulate circuits each run cortex to striatum to globus pallidus to thalamus and back, so lesions anywhere on the loop (for example the caudate in Huntington's disease, or thalamic strokes) can produce a "frontal" syndrome. Behavioural variant frontotemporal dementia often first presents to psychiatry with disinhibition, apathy, loss of empathy, compulsive behaviour and dietary change (sweet craving), frequently misdiagnosed as late-onset mania or depression; the Rascovsky 2011 criteria require three of six features for possible bvFTD. Executive tests in India need care: verbal fluency norms vary by language and education, and trail making assumes familiarity with the Latin alphabet; the colour trails test is a common alternative.
+Frontal circuits are best understood as frontal-subcortical loops: dorsolateral, orbitofrontal and anterior cingulate circuits each run cortex to striatum to globus pallidus to thalamus and back, so lesions anywhere on the loop (for example the caudate in Huntington's disease, or thalamic strokes) can produce a "frontal" syndrome. Behavioural variant frontotemporal dementia often first presents to psychiatry with disinhibition, apathy, loss of empathy, compulsive behaviour and dietary change (sweet craving), frequently misdiagnosed as late-onset mania or depression; the Rascovsky 2011 criteria require three of six features for possible bvFTD. Executive tests in India need care: verbal fluency norms vary by language and education, and trail making assumes familiarity with the Latin alphabet; the colour trails test is a common alternative.
 :::
 
 :::recall
 1. Name the three frontal syndromes and their key features. || Dorsolateral (dysexecutive, perseveration); orbitofrontal (disinhibition, poor judgement); medial (apathy, akinetic mutism).
 2. In which aphasias is repetition preserved? || Transcortical motor and transcortical sensory (and anomic).
-3. List the four signs of Gerstmann syndrome and the lesion site. || Agraphia, acalculia, finger agnosia, left–right disorientation; dominant parietal (angular gyrus).
+3. List the four signs of Gerstmann syndrome and the lesion site. || Agraphia, acalculia, finger agnosia, left-right disorientation; dominant parietal (angular gyrus).
 4. What is anosognosia? || Lack of awareness of one's own deficit, typical of non-dominant parietal lesions.
 :::
 
@@ -745,7 +745,7 @@ A lasting memory disorder after thiamine deficiency (usually with alcohol): seve
   "unit": "per cent",
   "answer": [10, 25],
   "reveal": "Only a minority, perhaps around 1 in 6. Most have one or two signs. That is why any malnourished or heavy-drinking person who is confused should get thiamine without waiting for the full picture.",
-  "clinician": "Autopsy series (Harper and colleagues, 1986) found the full triad in only about 16 per cent, and most cases were missed in life. The Caine criteria (two of: dietary deficiency, eye signs, cerebellar dysfunction, altered mental state or mild memory impairment) are more sensitive. Treat with high-dose parenteral thiamine; oral thiamine is poorly absorbed in alcohol use disorder."
+  "clinician": "Autopsy series found the full triad in only about 16 per cent, and most cases were missed in life. The Caine criteria (two of: dietary deficiency, eye signs, cerebellar dysfunction, altered mental state or mild memory impairment) are more sensitive. Treat with high-dose parenteral thiamine; oral thiamine is poorly absorbed in alcohol use disorder."
 }
 :::
 
@@ -827,7 +827,7 @@ A small cluster of cells in the hypothalamus, the **suprachiasmatic nucleus (SCN
 :::
 
 :::clinician
-HPA findings in depression: about half of people with severe melancholic or psychotic depression fail to suppress cortisol after dexamethasone (the dexamethasone suppression test), but low specificity ended its diagnostic use. Glucocorticoid receptor resistance and the inflammation–HPA interaction remain active research areas. Childhood adversity programmes stress responsivity, and the long-term effect in adults can be blunted as well as heightened cortisol. Allostatic load (McEwen) is the cumulative wear from chronic stress. On sleep: CBT for insomnia (CBT-I) is the first-line treatment in all major guidelines, ahead of hypnotics; digital CBT-I has good evidence. Orexin (hypocretin) neurons in the lateral hypothalamus stabilise wakefulness: their loss causes narcolepsy type 1, and dual orexin receptor antagonists (suvorexant, lemborexant, daridorexant) are a newer class of hypnotics available in some countries.
+HPA findings in depression: about half of people with severe melancholic or psychotic depression fail to suppress cortisol after dexamethasone (the dexamethasone suppression test), but low specificity ended its diagnostic use. Glucocorticoid receptor resistance and the inflammation-HPA interaction remain active research areas. Childhood adversity programmes stress responsivity, and the long-term effect in adults can be blunted as well as heightened cortisol. Allostatic load (McEwen) is the cumulative wear from chronic stress. On sleep: CBT for insomnia (CBT-I) is the first-line treatment in all major guidelines, ahead of hypnotics; digital CBT-I has good evidence. Orexin (hypocretin) neurons in the lateral hypothalamus stabilise wakefulness: their loss causes narcolepsy type 1, and dual orexin receptor antagonists (suvorexant, lemborexant, daridorexant) are a newer class of hypnotics available in some countries.
 :::
 
 :::recall
@@ -1013,7 +1013,7 @@ GLP-1 is a fullness hormone from the gut. Medicines that copy it (semaglutide, l
 :::
 
 :::clinician
-Arcuate nucleus circuitry: AgRP and NPY neurons drive feeding and are inhibited by leptin and insulin; POMC neurons (producing alpha-MSH acting at MC4 receptors) promote satiety, and MC4R mutations are the commonest monogenic cause of severe childhood obesity. Leptin deficiency is rare, but leptin resistance is the rule in common obesity. Prader–Willi syndrome (hyperphagia, raised ghrelin) is a useful exam link. Antipsychotic weight gain correlates with H1 and 5-HT2C affinity and is greatest with clozapine and olanzapine; metformin and, increasingly, GLP-1 receptor agonists are used for mitigation, with trial evidence for GLP-1 agonists in antipsychotic-treated patients growing as of Nov 2026. Thirst: osmoreceptors in the organum vasculosum of the lamina terminalis and subfornical organ (outside the blood–brain barrier) sense osmolality; angiotensin II acts at the subfornical organ. SIADH with SSRIs is most common in older women in the first weeks. Sexual dysfunction: hyperprolactinaemia (prolactin-raising antipsychotics) and serotonergic antidepressants are the main iatrogenic causes; bupropion, mirtazapine, vortioxetine and agomelatine have lower rates. Ask directly, because patients in India rarely volunteer sexual side effects, and non-adherence often follows silently.
+Arcuate nucleus circuitry: AgRP and NPY neurons drive feeding and are inhibited by leptin and insulin; POMC neurons (producing alpha-MSH acting at MC4 receptors) promote satiety, and MC4R mutations are the commonest monogenic cause of severe childhood obesity. Leptin deficiency is rare, but leptin resistance is the rule in common obesity. Prader-Willi syndrome (hyperphagia, raised ghrelin) is a useful exam link. Antipsychotic weight gain correlates with H1 and 5-HT2C affinity and is greatest with clozapine and olanzapine; metformin and, increasingly, GLP-1 receptor agonists are used for mitigation, with trial evidence for GLP-1 agonists in antipsychotic-treated patients growing as of Nov 2026. Thirst: osmoreceptors in the organum vasculosum of the lamina terminalis and subfornical organ (outside the blood-brain barrier) sense osmolality; angiotensin II acts at the subfornical organ. SIADH with SSRIs is most common in older women in the first weeks. Sexual dysfunction: hyperprolactinaemia (prolactin-raising antipsychotics) and serotonergic antidepressants are the main iatrogenic causes; bupropion, mirtazapine, vortioxetine and agomelatine have lower rates. Ask directly, because patients in India rarely volunteer sexual side effects, and non-adherence often follows silently.
 :::
 
 :::recall
@@ -1049,7 +1049,7 @@ Q: Which stage is NOT part of Masters and Johnson's original response cycle?
 
 ## 2.8 Two hemispheres, and how we study genes and behaviour [core][beginner]
 ### The split brain
-The two cerebral hemispheres are joined by the **corpus callosum**, a thick band of about 200 million nerve fibres. In a few people with severe epilepsy, surgeons cut it to stop seizures spreading (a **corpus callosotomy**). **Roger Sperry** (Nobel Prize, 1981) and **Michael Gazzaniga** studied these "split-brain" patients.
+The two cerebral hemispheres are joined by the **corpus callosum**, a thick band of about 200 million nerve fibres. In a few people with severe epilepsy, surgeons cut it to stop seizures spreading (a **corpus callosotomy**). **Roger Sperry** and **Michael Gazzaniga** studied these "split-brain" patients.
 
 Two facts make the experiments work:
 - Each hemisphere sees the **opposite half of the visual field** and controls the **opposite hand**.
@@ -1089,7 +1089,7 @@ Families share both genes and homes, so "it runs in the family" does not prove g
 |---|---|---|
 | **Family studies** | Is risk higher in closer relatives? | First-degree relatives of a person with schizophrenia have roughly ten times the general risk |
 | **Twin studies** | Identical (MZ) twins share all their genes, fraternal (DZ) about half. If MZ twins are more alike than DZ twins, genes matter | MZ concordance for schizophrenia about 40 to 50 per cent, DZ about 10 to 15 per cent |
-| **Adoption studies** | Is an adopted child more like the biological parents (genes) or adoptive parents (environment)? | Children of mothers with schizophrenia, adopted at birth into healthy families, still had raised risk (Heston, 1966) |
+| **Adoption studies** | Is an adopted child more like the biological parents (genes) or adoptive parents (environment)? | Children of mothers with schizophrenia, adopted at birth into healthy families, still had raised risk |
 | **Twins reared apart** | Same genes, different homes | Striking similarities in personality and IQ (Minnesota study) |
 | **Molecular studies** | Find the actual DNA variants | GWAS, polygenic scores (see Section 3.3) |
 | **Animal studies** | Selective breeding and gene "knockouts" | Tryon bred "maze-bright" and "maze-dull" rats |
@@ -1103,8 +1103,8 @@ Twin studies split differences between people into:
 A surprising and repeated finding: for most adult personality traits and many disorders, **shared environment (C) is small**, and unique environment (E) is large. Siblings raised together are often less alike than people expect.
 
 ### Genes and environment work together
-- **Gene–environment interaction**: a gene variant matters only in certain environments (for example, a stressful one).
-- **Gene–environment correlation**: genes shape the environments people get. **Passive** (parents give both genes and home), **evocative** (a child's temperament draws certain reactions), **active** (people choose settings that fit their genes).
+- **Gene-environment interaction**: a gene variant matters only in certain environments (for example, a stressful one).
+- **Gene-environment correlation**: genes shape the environments people get. **Passive** (parents give both genes and home), **evocative** (a child's temperament draws certain reactions), **active** (people choose settings that fit their genes).
 
 :::widget worked
 {
@@ -1121,7 +1121,7 @@ A surprising and repeated finding: for most adult personality traits and many di
 :::
 
 :::clinician
-The equal environments assumption (that MZ and DZ twins experience equally similar environments) is the main criticism of twin designs; studies of misclassified zygosity largely support it for most psychiatric traits. Heritability rises with age for IQ (the Wilson effect: from about 0.2 in infancy to about 0.7 or more in adulthood), probably through active gene–environment correlation. Heritability is population-specific: Turkheimer and colleagues (Psychological Science, 2003) found IQ heritability near zero in very poor US families and high in affluent ones, a reminder for Indian contexts with large socioeconomic gradients. The Danish adoption studies (Kety, Rosenthal, Wender) found schizophrenia-spectrum illness concentrated in biological, not adoptive, relatives. Caspi and colleagues' serotonin-transporter by stress interaction (Science, 2003) became the textbook example of GxE but failed large-scale replication (Border and colleagues, American Journal of Psychiatry 2019). The split-brain literature has also been nuanced: some recent studies (Pinto and colleagues, Brain 2017) suggest split-brain patients can respond accurately to stimuli in either visual field with either hand, implying divided perception but less divided awareness than the classic account.
+The equal environments assumption (that MZ and DZ twins experience equally similar environments) is the main criticism of twin designs; studies of misclassified zygosity largely support it for most psychiatric traits. Heritability rises with age for IQ (the Wilson effect: from about 0.2 in infancy to about 0.7 or more in adulthood), probably through active gene-environment correlation. Heritability is population-specific: Turkheimer's group found IQ heritability near zero in very poor US families and high in affluent ones, a reminder for Indian contexts with large socioeconomic gradients. The Danish adoption studies (Kety, Rosenthal, Wender) found schizophrenia-spectrum illness concentrated in biological, not adoptive, relatives. Caspi's serotonin-transporter by stress interaction became the textbook example of GxE but failed large-scale replication. The split-brain literature has also been nuanced: some recent studies suggest split-brain patients can respond accurately to stimuli in either visual field with either hand, implying divided perception but less divided awareness than the classic account.
 :::
 
 :::recall
@@ -1130,7 +1130,7 @@ The equal environments assumption (that MZ and DZ twins experience equally simil
 3. What is the left-hemisphere interpreter? || The left hemisphere's tendency to invent confident explanations for behaviour it did not initiate.
 4. Give Falconer's formula. || Heritability equals twice the difference between MZ and DZ twin correlations.
 5. What do A, C and E stand for in twin studies? || Additive genetics, common (shared) environment, unique (non-shared) environment.
-6. Name the three types of gene–environment correlation. || Passive, evocative and active.
+6. Name the three types of gene-environment correlation. || Passive, evocative and active.
 :::
 
 :::mcq
@@ -1149,10 +1149,10 @@ Q: If identical twins are much more alike for a trait than fraternal twins, this
 > Greater MZ similarity indicates genetic influence.
 
 Q: A child with an outgoing temperament draws more friendly attention from teachers. This is:
-- Passive gene–environment correlation
-- *Evocative gene–environment correlation
-- Active gene–environment correlation
-- Gene–environment interaction
+- Passive gene-environment correlation
+- *Evocative gene-environment correlation
+- Active gene-environment correlation
+- Gene-environment interaction
 > The child's traits evoke responses.
 :::
 

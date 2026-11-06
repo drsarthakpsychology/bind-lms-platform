@@ -173,7 +173,7 @@ Under the **Bharatiya Sakshya Adhiniyam 2023, section 39** (formerly Evidence Ac
 
 ### Medical negligence
 - Negligence means a **duty of care**, a **breach** of the expected standard, and **harm** caused by that breach.
-- The **Bolam test** (UK, 1957): a professional is not negligent if they acted in accordance with a practice accepted as proper by a responsible body of professionals in that field.
+- The **Bolam test**: a professional is not negligent if they acted in accordance with a practice accepted as proper by a responsible body of professionals in that field.
 - **Jacob Mathew v. State of Punjab (2005)**: the Supreme Court held that **criminal** liability for medical negligence requires **gross** negligence or recklessness, not mere error of judgement.
 - **Consumer Protection Act 2019**: patients can bring claims for deficiency in medical services (medical services were brought within consumer law in **Indian Medical Association v. V. P. Shantha**, 1995).
 - Common mental health negligence claims: suicide of an inpatient without adequate observation, failure to warn about serious side effects (for example tardive dyskinesia, lithium toxicity), inadequate monitoring (clozapine blood counts), and breaches of confidentiality.
@@ -232,7 +232,7 @@ Research ethics grew out of terrible abuses:
 ### The key documents
 | Document | Main contribution |
 |---|---|
-| **Nuremberg Code** (1947) | Voluntary consent; favourable risk–benefit; right to withdraw |
+| **Nuremberg Code** (1947) | Voluntary consent; favourable risk-benefit; right to withdraw |
 | **Declaration of Helsinki** (World Medical Association, 1964; most recently revised in 2024) | Ethics of medical research; independent ethics committees; protection of vulnerable groups; placebo rules |
 | **Belmont Report** (1979) | Three principles: **respect for persons** (consent, protecting those with reduced autonomy), **beneficence** (maximise benefits, minimise harms), **justice** (fair selection and sharing of burdens and benefits) |
 | **ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants** (2017) | India's main guidance, including social, behavioural and mental health research, vulnerable groups, and ethics committees |
@@ -280,7 +280,7 @@ The ICMR 2017 guidelines set out twelve general principles (including essentiali
 :::
 
 :::recall
-1. What did the Nuremberg Code establish? || That voluntary consent is absolutely essential, with favourable risk–benefit and the right to withdraw.
+1. What did the Nuremberg Code establish? || That voluntary consent is absolutely essential, with favourable risk-benefit and the right to withdraw.
 2. Name the three Belmont principles. || Respect for persons, beneficence, justice.
 3. What is India's main research ethics guidance for human participants? || The ICMR National Ethical Guidelines (2017).
 4. When is deception in research acceptable? || Only when essential, with no harmless alternative, not affecting willingness to participate, and followed by debriefing.
@@ -421,7 +421,7 @@ Other relevant programmes include the **Rashtriya Kishor Swasthya Karyakram** (a
   "unit": "per cent",
   "answer": [80, 90],
   "reveal": "About 85 per cent were not receiving care for common mental disorders. The gap was somewhat smaller for severe mental illness (around three-quarters) and largest for alcohol use disorders (well over 80 per cent). Programmes like DMHP and Tele-MANAS are attempts to close this gap.",
-  "clinician": "NMHS 2015-16 (Gururaj and colleagues): weighted current prevalence of mental morbidity about 10.6 per cent and lifetime about 13.7 per cent in adults; treatment gaps of roughly 70 to 92 per cent across disorders (for example about 85 per cent for common mental disorders, about 73.6 per cent for severe mental disorders, and about 86 per cent for alcohol use disorder). A second national survey (NMHS-2) has been under way; check for published results before citing newer figures."
+  "clinician": "NMHS 2015-16: weighted current prevalence of mental morbidity about 10.6 per cent and lifetime about 13.7 per cent in adults; treatment gaps of roughly 70 to 92 per cent across disorders (for example about 85 per cent for common mental disorders, about 73.6 per cent for severe mental disorders, and about 86 per cent for alcohol use disorder). A second national survey (NMHS-2) has been under way; check for published results before citing newer figures."
 }
 :::
 
@@ -438,7 +438,7 @@ Other relevant programmes include the **Rashtriya Kishor Swasthya Karyakram** (a
 :::
 
 :::clinician
-Indian evidence on task-sharing is internationally influential: the MANAS trial in Goa (Patel and colleagues, Lancet 2010) showed lay health counsellors improved recovery from common mental disorders in primary care; the PREMIUM trials (Lancet 2017) showed the Healthy Activity Program for depression and Counselling for Alcohol Problems delivered by lay counsellors were effective; and the Dava and Dua project in Gujarat (Mehta and colleagues) linked faith healing at a dargah with psychiatric care. Means restriction for pesticides, with bans on the most toxic agents, is among the most effective population suicide-prevention measures (Sri Lanka's experience; India banned several highly hazardous pesticides in recent years). Responsible media reporting follows the Press Council of India guidelines (2019) aligned with WHO advice. Tele-MANAS handled several million calls in its first years; its effectiveness and quality of linkage to in-person care are being studied as of Nov 2026. DMHP coverage was extended to most districts under the National Health Mission, but staffing and supply of medicines remain uneven.
+Indian evidence on task-sharing is internationally influential: the MANAS trial in Goa showed lay health counsellors improved recovery from common mental disorders in primary care; the PREMIUM trials showed the Healthy Activity Program for depression and Counselling for Alcohol Problems delivered by lay counsellors were effective; and the Dava and Dua project in Gujarat linked faith healing at a dargah with psychiatric care. Means restriction for pesticides, with bans on the most toxic agents, is among the most effective population suicide-prevention measures (Sri Lanka's experience; India banned several highly hazardous pesticides in recent years). Responsible media reporting follows the Press Council of India guidelines (2019) aligned with WHO advice. Tele-MANAS handled several million calls in its first years; its effectiveness and quality of linkage to in-person care are being studied as of Nov 2026. DMHP coverage was extended to most districts under the National Health Mission, but staffing and supply of medicines remain uneven.
 :::
 
 :::recall

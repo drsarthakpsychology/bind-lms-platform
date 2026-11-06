@@ -46,7 +46,7 @@ You will learn many test names in this module. Do not try to memorise them as a 
 :::
 
 :::clinician
-Anastasi's classic definition, "an objective and standardised measure of a sample of behaviour", still frames the field; the Standards for Educational and Psychological Testing (AERA, APA and NCME, 2014) is the governing professional reference, with validity defined as "the degree to which evidence and theory support the interpretations of test scores for proposed uses". The key implication: validity belongs to an interpretation for a purpose, not to a test. Meyer and colleagues (American Psychologist, 2001) showed that the validity of many psychological tests is comparable to that of many medical tests, and that multi-method assessment adds information that interviews alone miss, because patients and observers each see only part of the picture. In India, administration and interpretation of clinical psychological tests for diagnosis and certification is the professional domain of RCI-registered clinical and rehabilitation psychologists (see the Ethics and law module).
+Anastasi's classic definition, "an objective and standardised measure of a sample of behaviour", still frames the field; the joint professional testing standards of the American educational, psychological and measurement associations (2014 revision) are the governing professional reference, with validity defined as "the degree to which evidence and theory support the interpretations of test scores for proposed uses". The key implication: validity belongs to an interpretation for a purpose, not to a test. Meyer's group showed that the validity of many psychological tests is comparable to that of many medical tests, and that multi-method assessment adds information that interviews alone miss, because patients and observers each see only part of the picture. In India, administration and interpretation of clinical psychological tests for diagnosis and certification is the professional domain of RCI-registered clinical and rehabilitation psychologists (see the Ethics and law module).
 :::
 
 :::recall
@@ -81,7 +81,7 @@ If you step on a scale three times in a minute and it says 58, 64 and 51 kg, it 
 ### Types of reliability
 | Type | The question it answers | How it is checked |
 |---|---|---|
-| **Test–retest** | Is the score stable over time? | Same people, same test, two occasions; correlate |
+| **Test-retest** | Is the score stable over time? | Same people, same test, two occasions; correlate |
 | **Alternate (parallel) forms** | Do two versions give the same result? | Give Form A and Form B; correlate |
 | **Split-half** | Do the two halves of the test agree? | Correlate odd and even items, then correct for length |
 | **Internal consistency** | Do all the items measure the same thing? | Cronbach's alpha |
@@ -94,7 +94,7 @@ Reliability is shown as a number from 0 (no consistency) to 1 (perfect). As a ro
 :::widget sort
 {
   "prompt": "Which type of reliability is being checked?",
-  "buckets": ["Test–retest", "Inter-rater", "Internal consistency", "Alternate forms"],
+  "buckets": ["Test-retest", "Inter-rater", "Internal consistency", "Alternate forms"],
   "items": [
     { "text": "Two psychologists score the same Rorschach protocol and compare", "bucket": 1 },
     { "text": "Students take a memory test in January and again in March", "bucket": 0 },
@@ -107,7 +107,7 @@ Reliability is shown as a number from 0 (no consistency) to 1 (perfect). As a ro
 :::
 
 :::trap Stability depends on what is measured
-A mood questionnaire **should** change over two months if the person recovers. Low test–retest reliability for a state measure is not always a flaw. Intelligence, a stable trait, should show high test–retest reliability.
+A mood questionnaire **should** change over two months if the person recovers. Low test-retest reliability for a state measure is not always a flaw. Intelligence, a stable trait, should show high test-retest reliability.
 :::
 
 :::example Why reliability matters for one child
@@ -115,19 +115,19 @@ Rohan, 9, in Nashik, gets an IQ of 68 on one test and 76 on another a month late
 :::
 
 :::clinician
-Classical test theory: observed score equals true score plus error; reliability is the proportion of observed-score variance that is true-score variance. The standard error of measurement (SEM) equals SD multiplied by the square root of (1 minus reliability). For a Wechsler full scale IQ (SD 15, reliability about 0.97), SEM is about 2.6, so a 95 per cent confidence interval is roughly plus or minus 5 points; for a subtest (SD 3, reliability about 0.80) it is wide. Split-half coefficients are corrected with the Spearman–Brown formula. Cronbach's alpha rises with the number of items and is a lower bound on reliability only under strict assumptions; McDonald's omega is increasingly preferred. Cohen's kappa corrects inter-rater agreement for chance; the intraclass correlation is used for continuous ratings. Report every individual score with its confidence interval.
+Classical test theory: observed score equals true score plus error; reliability is the proportion of observed-score variance that is true-score variance. The standard error of measurement (SEM) equals SD multiplied by the square root of (1 minus reliability). For a Wechsler full scale IQ (SD 15, reliability about 0.97), SEM is about 2.6, so a 95 per cent confidence interval is roughly plus or minus 5 points; for a subtest (SD 3, reliability about 0.80) it is wide. Split-half coefficients are corrected with the Spearman-Brown formula. Cronbach's alpha rises with the number of items and is a lower bound on reliability only under strict assumptions; McDonald's omega is increasingly preferred. Cohen's kappa corrects inter-rater agreement for chance; the intraclass correlation is used for continuous ratings. Report every individual score with its confidence interval.
 :::
 
 :::recall
 1. What does reliability mean? || Consistency of measurement across time, forms, items or raters.
-2. Name five types of reliability. || Test–retest, alternate forms, split-half, internal consistency, inter-rater.
+2. Name five types of reliability. || Test-retest, alternate forms, split-half, internal consistency, inter-rater.
 3. What reliability is needed for individual decisions? || About 0.90 or higher.
-4. Why might a valid mood scale have low test–retest reliability? || Because mood genuinely changes; the scale should track that change.
+4. Why might a valid mood scale have low test-retest reliability? || Because mood genuinely changes; the scale should track that change.
 :::
 
 :::mcq
 Q: A researcher correlates scores on odd-numbered items with even-numbered items of a test. This checks:
-- Test–retest reliability
+- Test-retest reliability
 - *Split-half reliability
 - Predictive validity
 - Inter-rater reliability
@@ -192,7 +192,7 @@ A questionnaire that "looks right" may still be poor. And some good tests delibe
 :::
 
 :::clinician
-Modern validity theory (Messick, 1989; the 2014 Standards) treats construct validity as the unifying concept, with five sources of evidence: test content, response processes, internal structure, relations with other variables (convergent, discriminant, criterion) and consequences of testing. Campbell and Fiske's multitrait–multimethod matrix remains the classic design for convergent and discriminant evidence. Incremental validity (does the test add prediction beyond what is already known, such as the interview?) is the practical question for clinicians and is often neglected. Ecological validity (does performance in the clinic reflect real-world functioning?) is the weak point of many neuropsychological tests. Digital phenotyping and voice-based screening are research areas as of Nov 2026; published accuracy often falls substantially on external validation, and none is a validated diagnostic tool in Indian populations.
+Modern validity theory (Messick, 1989; the 2014 Standards) treats construct validity as the unifying concept, with five sources of evidence: test content, response processes, internal structure, relations with other variables (convergent, discriminant, criterion) and consequences of testing. Campbell and Fiske's multitrait-multimethod matrix remains the classic design for convergent and discriminant evidence. Incremental validity (does the test add prediction beyond what is already known, such as the interview?) is the practical question for clinicians and is often neglected. Ecological validity (does performance in the clinic reflect real-world functioning?) is the weak point of many neuropsychological tests. Digital phenotyping and voice-based screening are research areas as of Nov 2026; published accuracy often falls substantially on external validation, and none is a validated diagnostic tool in Indian populations.
 :::
 
 :::recall
@@ -206,7 +206,7 @@ Modern validity theory (Messick, 1989; the 2014 Standards) treats construct vali
 Q: A new IQ test correlates highly with the Wechsler scale given on the same day. This is evidence of:
 - Face validity
 - *Concurrent validity
-- Test–retest reliability
+- Test-retest reliability
 - Content validity
 > Agreement with an established measure at the same time.
 
@@ -335,7 +335,7 @@ Q: Validity refers to:
 
 Q: A test given twice, a month apart, to the same people is being checked for:
 - Inter-rater reliability
-- *Test–retest reliability
+- *Test-retest reliability
 - Construct validity
 - Face validity
 > Stability over time.
@@ -343,7 +343,7 @@ Q: A test given twice, a month apart, to the same people is being checked for:
 Q: Cronbach's alpha measures:
 - Predictive validity
 - *Internal consistency
-- Test–retest stability
+- Test-retest stability
 - Face validity
 > Whether items hang together.
 
@@ -466,7 +466,7 @@ The **PPV depends on how common the condition is** in the group you are testing.
 Lowering a cut-off catches more true cases (higher sensitivity) but raises more false alarms (lower specificity). For a dangerous, treatable condition (suicide risk), we accept more false alarms. For a label with heavy consequences, we want high specificity and a confirmatory assessment.
 
 :::clinician
-The receiver operating characteristic (ROC) curve plots sensitivity against 1 minus specificity across cut-offs; the area under the curve (AUC) summarises discrimination (0.5 chance; 0.7 to 0.8 acceptable; 0.8 to 0.9 good). The Youden index (sensitivity plus specificity minus 1) is one method for an "optimal" cut-off, but clinical cost weighting is usually better. Likelihood ratios (LR+ equals sensitivity divided by 1 minus specificity) are independent of prevalence and convert pre-test to post-test odds, which is the formal way to use base rates. Reliable change index (Jacobson and Truax, 1991) tests whether a change between two scores exceeds measurement error; clinically significant change additionally requires moving into the functional range. These matter when you judge whether therapy "worked" from rating scales.
+The receiver operating characteristic (ROC) curve plots sensitivity against 1 minus specificity across cut-offs; the area under the curve (AUC) summarises discrimination (0.5 chance; 0.7 to 0.8 acceptable; 0.8 to 0.9 good). The Youden index (sensitivity plus specificity minus 1) is one method for an "optimal" cut-off, but clinical cost weighting is usually better. Likelihood ratios (LR+ equals sensitivity divided by 1 minus specificity) are independent of prevalence and convert pre-test to post-test odds, which is the formal way to use base rates. Reliable change index tests whether a change between two scores exceeds measurement error; clinically significant change additionally requires moving into the functional range. These matter when you judge whether therapy "worked" from rating scales.
 :::
 
 :::recall
@@ -497,7 +497,7 @@ Q: The same screening test is used in a memory clinic and in a general community
 - **Spearman**: a general factor (**g**) underlies all mental tasks, plus specific abilities.
 - **Thurstone**: several primary mental abilities rather than one g.
 - **Cattell and Horn**: **fluid** intelligence (solving new problems; peaks early, declines with age) and **crystallised** intelligence (knowledge and vocabulary; keeps growing).
-- **Cattell–Horn–Carroll (CHC) theory**: a three-layer model with g at the top, broad abilities in the middle and narrow skills at the bottom. Most modern tests are built on it.
+- **Cattell-Horn-Carroll (CHC) theory**: a three-layer model with g at the top, broad abilities in the middle and narrow skills at the bottom. Most modern tests are built on it.
 - **Gardner**: multiple intelligences (linguistic, logical-mathematical, spatial, musical, bodily-kinaesthetic, interpersonal, intrapersonal, naturalistic). Popular in schools, weak research support.
 - **Sternberg**: triarchic theory: analytical, creative and practical intelligence.
 
@@ -619,7 +619,7 @@ The **Minnesota Multiphasic Personality Inventory** (Hathaway and McKinley, 1940
 | 2 | Depression (D) | Low mood, hopelessness |
 | 3 | Hysteria (Hy) | Physical symptoms under stress, denial |
 | 4 | Psychopathic deviate (Pd) | Rule-breaking, family conflict |
-| 5 | Masculinity–femininity (Mf) | Gender-typed interests |
+| 5 | Masculinity-femininity (Mf) | Gender-typed interests |
 | 6 | Paranoia (Pa) | Suspiciousness |
 | 7 | Psychasthenia (Pt) | Anxiety, worry, obsessions |
 | 8 | Schizophrenia (Sc) | Unusual thinking, alienation |
@@ -657,7 +657,7 @@ On the MMPI-2, a T-score of **65 or above** is usually treated as clinically sig
 :::
 
 :::clinician
-Interpretation of the MMPI-2 relies on validity configuration first (Cannot Say, VRIN, TRIN, F, Fb, Fp, FBS, L, K, S), then two-point code types (for example 2-7 anxious depression; 4-9 impulsive acting out; 6-8 paranoid and thought-disordered; 1-3 "conversion V" with somatic focus and denial), with Harris–Lingoes subscales and the Restructured Clinical scales to clarify. The MMPI-2-RF (338 items) and MMPI-3 (335 items) use restructured scales that remove a general demoralisation factor, improving discriminant validity, and are increasingly preferred in forensic work. Fp (infrequency-psychopathology) is the best scale for detecting overreported psychotic symptoms. Indian use: the MMPI-2 and 16PF have been translated and studied in Indian samples, but published Indian norms are limited and dated, so US norms are often used with caution; cultural item differences (religious content, family items) can elevate certain scales. The NEO-PI-3 and the briefer Big Five Inventory have the strongest cross-cultural replication, including Indian samples (McCrae and colleagues' 50-culture study).
+Interpretation of the MMPI-2 relies on validity configuration first (Cannot Say, VRIN, TRIN, F, Fb, Fp, FBS, L, K, S), then two-point code types (for example 2-7 anxious depression; 4-9 impulsive acting out; 6-8 paranoid and thought-disordered; 1-3 "conversion V" with somatic focus and denial), with Harris-Lingoes subscales and the Restructured Clinical scales to clarify. The MMPI-2-RF (338 items) and MMPI-3 (335 items) use restructured scales that remove a general demoralisation factor, improving discriminant validity, and are increasingly preferred in forensic work. Fp (infrequency-psychopathology) is the best scale for detecting overreported psychotic symptoms. Indian use: the MMPI-2 and 16PF have been translated and studied in Indian samples, but published Indian norms are limited and dated, so US norms are often used with caution; cultural item differences (religious content, family items) can elevate certain scales. The NEO-PI-3 and the briefer Big Five Inventory have the strongest cross-cultural replication, including Indian samples (McCrae's 50-culture study).
 :::
 
 :::recall
@@ -739,7 +739,7 @@ This is a long-running debate. Some Rorschach scores (especially indicators of *
 :::
 
 :::clinician
-Meta-analytic evidence: Mihura and colleagues (Psychological Bulletin, 2013) reviewed Comprehensive System variables against external criteria and found good validity for several cognitive and perceptual variables (for example the Perceptual-Thinking Index, form quality minus, weighted special scores) and poor support for many others; these findings shaped R-PAS, which retains supported variables, uses international norms and controls the number of responses (the "R-optimised" procedure). The Exner CS norms were criticised for overpathologising non-patients. TAT has no universally accepted scoring; research systems with reasonable reliability include McClelland's need for achievement, affiliation and power, and Westen's Social Cognition and Object Relations Scale (SCORS), which has supportive validity for personality pathology. Lilienfeld, Wood and Garb (Psychological Science in the Public Interest, 2000) remain the key sceptical review. Human figure drawings have weak validity for personality or abuse but some value as rough developmental indicators (Goodenough-Harris). In India, projective use remains common in training and hospital settings; teach students to report only well-supported indices and to frame others as hypotheses.
+Meta-analytic evidence: Mihura's group reviewed Comprehensive System variables against external criteria and found good validity for several cognitive and perceptual variables (for example the Perceptual-Thinking Index, form quality minus, weighted special scores) and poor support for many others; these findings shaped R-PAS, which retains supported variables, uses international norms and controls the number of responses (the "R-optimised" procedure). The Exner CS norms were criticised for overpathologising non-patients. TAT has no universally accepted scoring; research systems with reasonable reliability include McClelland's need for achievement, affiliation and power, and Westen's Social Cognition and Object Relations Scale (SCORS), which has supportive validity for personality pathology. Lilienfeld, Wood and Garb remain the key sceptical review. Human figure drawings have weak validity for personality or abuse but some value as rough developmental indicators (Goodenough-Harris). In India, projective use remains common in training and hospital settings; teach students to report only well-supported indices and to frame others as hypotheses.
 :::
 
 :::recall
@@ -772,7 +772,7 @@ Rating scales measure **how severe** symptoms are, and track change over time. S
 | Scale | Measures | Rated by | Items and range |
 |---|---|---|---|
 | **HAM-D** (Hamilton Depression) | Depression severity | Clinician | Usually 17 items; 0 to 52 |
-| **MADRS** (Montgomery–Åsberg) | Depression, sensitive to change | Clinician | 10 items; 0 to 60 |
+| **MADRS** (Montgomery-Åsberg) | Depression, sensitive to change | Clinician | 10 items; 0 to 60 |
 | **BDI-II** (Beck Depression Inventory) | Depression | Self | 21 items; 0 to 63 |
 | **PHQ-9** | Depression screening and severity | Self | 9 items; 0 to 27 |
 | **HAM-A** (Hamilton Anxiety) | Anxiety | Clinician | 14 items; 0 to 56 |
@@ -781,7 +781,7 @@ Rating scales measure **how severe** symptoms are, and track change over time. S
 | **BPRS** (Brief Psychiatric Rating Scale) | General psychopathology, especially psychosis | Clinician | 18 items, each 1 to 7 |
 | **PANSS** (Positive and Negative Syndrome Scale) | Schizophrenia | Clinician | 30 items: 7 positive, 7 negative, 16 general; each 1 to 7; total 30 to 210 |
 | **SANS and SAPS** | Negative and positive symptoms | Clinician | Andreasen's detailed scales |
-| **Y-BOCS** (Yale–Brown Obsessive Compulsive Scale) | OCD severity | Clinician | 10 items (5 obsessions, 5 compulsions); 0 to 40 |
+| **Y-BOCS** (Yale-Brown Obsessive Compulsive Scale) | OCD severity | Clinician | 10 items (5 obsessions, 5 compulsions); 0 to 40 |
 | **AUDIT** | Harmful alcohol use | Self or clinician | 10 items; 0 to 40 |
 | **CIWA-Ar** | Alcohol withdrawal | Clinician | 10 items; guides treatment |
 | **AIMS** | Tardive dyskinesia | Clinician | Body areas rated |
@@ -795,7 +795,7 @@ Rating scales measure **how severe** symptoms are, and track change over time. S
   "unit": "points",
   "answer": [10, 10],
   "reveal": "10 or more. The bands are 5, 10, 15 and 20 for mild, moderate, moderately severe and severe. Item 9 asks about thoughts of death or self-harm, and any positive answer needs a direct risk conversation the same day, whatever the total.",
-  "clinician": "A cut-off of 10 gave sensitivity and specificity of about 85 per cent each in the original primary care validation (Kroenke and colleagues, 2001), with broadly similar performance in individual participant data meta-analysis (Levis and colleagues, BMJ 2019), though accuracy varies by setting. Hindi and other Indian-language versions are validated; for low-literacy settings it is read aloud."
+  "clinician": "A cut-off of 10 gave sensitivity and specificity of about 85 per cent each in the original primary care validation, with broadly similar performance in individual participant data meta-analysis, though accuracy varies by setting. Hindi and other Indian-language versions are validated; for low-literacy settings it is read aloud."
 }
 :::
 
@@ -839,7 +839,7 @@ A high HAM-D score shows many depressive symptoms; it does not tell you whether 
 :::
 
 :::clinician
-The HAM-D-17's psychometric problems are well documented (Bagby and colleagues, American Journal of Psychiatry 2004): multidimensional structure, weak item-level reliability for some items and items (insomnia, weight) that move in opposite directions in atypical depression. The six-item HAM-D (Bech's melancholia subscale) is more unidimensional and sensitive to drug effects. Common bands for HAM-D-17: 0 to 7 normal or remission; 8 to 16 mild; 17 to 23 moderate; 24 and above severe, though thresholds vary between sources. Response in trials is usually a 50 per cent fall from baseline; remission on HAM-D is 7 or less and on MADRS about 10 or less. PANSS was developed by Kay, Fiszbein and Opler (1987); five-factor solutions (positive, negative, disorganised, excited, depressed) are used in research, and a 20 to 25 per cent reduction is a common minimal response criterion in schizophrenia trials. BPRS (Overall and Gorham, 1962) is quicker and widely used in Indian clinical work. Y-BOCS has a symptom checklist plus the 10-item severity scale; a 35 per cent reduction is the conventional response threshold, and Y-BOCS-II (2010) extended the item scores. Use structured interviews (SCID-5, MINI, and in India the culturally adapted MINI versions) for diagnosis, not severity scales.
+The HAM-D-17's psychometric problems are well documented: multidimensional structure, weak item-level reliability for some items and items (insomnia, weight) that move in opposite directions in atypical depression. The six-item HAM-D (Bech's melancholia subscale) is more unidimensional and sensitive to drug effects. Common bands for HAM-D-17: 0 to 7 normal or remission; 8 to 16 mild; 17 to 23 moderate; 24 and above severe, though thresholds vary between sources. Response in trials is usually a 50 per cent fall from baseline; remission on HAM-D is 7 or less and on MADRS about 10 or less. PANSS was developed by Kay, Fiszbein and Opler (1987); five-factor solutions (positive, negative, disorganised, excited, depressed) are used in research, and a 20 to 25 per cent reduction is a common minimal response criterion in schizophrenia trials. BPRS is quicker and widely used in Indian clinical work. Y-BOCS has a symptom checklist plus the 10-item severity scale; a 35 per cent reduction is the conventional response threshold, and Y-BOCS-II (2010) extended the item scores. Use structured interviews (SCID-5, MINI, and in India the culturally adapted MINI versions) for diagnosis, not severity scales.
 :::
 
 :::recall
@@ -886,7 +886,7 @@ Neuropsychological tests measure thinking skills that depend on particular brain
 | **Clock drawing** | Draw a clock showing ten past eleven | Quick test of planning and visuospatial skill |
 
 ### Fixed and flexible batteries
-- **Fixed batteries** give the same set of tests to everyone (the **Halstead–Reitan** and **Luria–Nebraska** batteries are classic Western examples).
+- **Fixed batteries** give the same set of tests to everyone (the **Halstead-Reitan** and **Luria-Nebraska** batteries are classic Western examples).
 - **Flexible (hypothesis-testing) approaches** choose tests to answer the specific question. Most modern practice is flexible, built around a core set.
 
 ### Key Indian batteries
@@ -895,7 +895,7 @@ Neuropsychological tests measure thinking skills that depend on particular brain
 | **PGI Battery of Brain Dysfunction (PGI-BBD)** | PGIMER Chandigarh (Pershad and Verma) | PGI Memory Scale, Verbal Adult Intelligence Scale, Bhatia's short performance tests, Nahor-Benson test (perceptual), Bender Visual Motor Gestalt Test | Widely used to screen for and grade brain dysfunction in adults |
 | **PGI Memory Scale** | PGIMER (Pershad and Wig) | Ten subtests: remote and recent memory, mental balance, attention and concentration, delayed and immediate recall, verbal retention for similar and dissimilar pairs, visual retention, recognition | Memory assessment in Indian adults |
 | **NIMHANS Neuropsychological Battery** | NIMHANS Bengaluru (Rao, Subbakrishna, Gopukumar) | Tests of motor speed, attention (for example colour trails, digit vigilance), executive functions (verbal fluency, Tower of London, Wisconsin Card Sorting, Stroop), comprehension, learning and memory (auditory verbal learning, complex figure, logical memory) and visuospatial skill, with Indian norms by age and education | Detailed adult assessment; separate child and elderly versions exist |
-| **AIIMS Comprehensive Neuropsychological Battery in Hindi** | AIIMS New Delhi (Gupta and colleagues) | Adult and child forms; scales for motor, tactile, visual, receptive and expressive speech, reading, writing, arithmetic, memory and intellectual processes, with left and right hemisphere summary scales | Hindi-speaking patients; modelled on Luria's approach |
+| **AIIMS Comprehensive Neuropsychological Battery in Hindi** | AIIMS New Delhi | Adult and child forms; scales for motor, tactile, visual, receptive and expressive speech, reading, writing, arithmetic, memory and intellectual processes, with left and right hemisphere summary scales | Hindi-speaking patients; modelled on Luria's approach |
 
 ### Common individual tests
 - **Bender Visual Motor Gestalt Test**: copying nine designs; visuo-motor integration.
