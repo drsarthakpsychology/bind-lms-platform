@@ -1,3 +1,4 @@
+import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 /**
@@ -7,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
  */
 export default function VerifyLoading() {
   return (
+    <LoadingFrame>
     <div className="flex min-h-screen items-center justify-center bg-background px-5">
       <div className="w-full max-w-md rounded-lg border border-border bg-card hard-shadow-md">
         <div className="space-y-3 p-6 text-center">
@@ -19,5 +21,6 @@ export default function VerifyLoading() {
         </div>
       </div>
     </div>
+    </LoadingFrame>
   );
 }

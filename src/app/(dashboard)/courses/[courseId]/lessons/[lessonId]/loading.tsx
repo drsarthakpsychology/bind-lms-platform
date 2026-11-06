@@ -1,7 +1,9 @@
+import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
+    <LoadingFrame>
     <div className="mx-auto max-w-3xl space-y-8">
       <div className="flex items-center justify-between">
         <Skeleton className="h-4 w-24 rounded-md border-2 border-border" />
@@ -16,5 +18,6 @@ export default function Loading() {
         <Skeleton className="h-9 w-48 rounded-md border-2 border-border" />
       </div>
     </div>
+    </LoadingFrame>
   );
 }
