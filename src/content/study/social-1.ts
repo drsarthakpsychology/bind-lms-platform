@@ -62,7 +62,7 @@ Many classic studies used **deception** (participants were misled about the real
 :::
 
 :::clinician
-Two methodological ideas recur in exam questions. **WEIRD samples** (Henrich, Heine and Norenzayan, Behavioral and Brain Sciences 2010): most published participants are Western, Educated, Industrialised, Rich and Democratic, and on several measures (the Müller-Lyer illusion, fairness in economic games, independent self-construal) they sit at the extreme of the human range rather than its centre. **Demand characteristics** (Orne, 1962): cues in a study that tell participants what the researcher hopes to find. Countermeasures include cover stories, double-blind procedures and behavioural rather than self-report outcomes. For replication: the Open Science Collaboration (Science, 2015) repeated 100 studies from three leading journals; about 36% of the replications reached statistical significance, and social psychology studies replicated less often (about a quarter) than cognitive ones (about half). Effect sizes in replications were on average about half the originals.
+Two methodological ideas recur in exam questions. **WEIRD samples**: most published participants are Western, Educated, Industrialised, Rich and Democratic, and on several measures (the Müller-Lyer illusion, fairness in economic games, independent self-construal) they sit at the extreme of the human range rather than its centre. **Demand characteristics**: cues in a study that tell participants what the researcher hopes to find. Countermeasures include cover stories, double-blind procedures and behavioural rather than self-report outcomes. For replication: the Open Science Collaboration in 2015 repeated 100 studies from three leading journals; about 36% of the replications reached statistical significance, and social psychology studies replicated less often (about a quarter) than cognitive ones (about half). Effect sizes in replications were on average about half the originals.
 :::
 
 :::recall
@@ -106,7 +106,7 @@ Schemas help: they let you fill gaps and act fast. They also hurt: you notice wh
 A **self-fulfilling prophecy** happens when an expectation changes behaviour in a way that makes the expectation come true. In **Rosenthal and Jacobson (1968)**, teachers were told some randomly chosen pupils were "late bloomers". By the end of the year, the youngest of those pupils had gained more on IQ tests.
 
 :::trap Pygmalion is real but smaller than you think
-Later reviews (Jussim and Harber, 2005) found teacher expectancy effects are real but **usually small**, strongest for younger children and for groups that are already stereotyped, and they fade. Don't write "teachers' beliefs decide a child's IQ".
+Later reviews found teacher expectancy effects are real but **usually small**, strongest for younger children and for groups that are already stereotyped, and they fade. Don't write "teachers' beliefs decide a child's IQ".
 :::
 
 ### Other common errors
@@ -122,7 +122,7 @@ Later reviews (Jussim and Harber, 2005) found teacher expectancy effects are rea
   "choices": [
     { "label": "Silver medallists looked happier than bronze medallists", "verdict": "ok", "outcome": "That is not what happened.", "why": "Silver is objectively better, so this is the natural guess. But silver medallists compare themselves with gold ('I nearly won'), an upward counterfactual." },
     { "label": "Bronze medallists looked happier than silver medallists", "verdict": "best", "outcome": "Correct. Bronze medallists were rated happier, both on the podium and just after the event.", "why": "Bronze medallists compare themselves with finishing fourth and getting nothing ('at least I got a medal'), a downward counterfactual. How we feel depends on what we compare with." },
-    { "label": "There was no difference; happiness tracks the medal", "verdict": "ok", "outcome": "There was a clear difference.", "why": "The finding shows that emotion follows the comparison we make, not the objective outcome. A later study of the 2004 Olympics (Matsumoto and Willingham, 2006) found broadly similar smile patterns." }
+    { "label": "There was no difference; happiness tracks the medal", "verdict": "ok", "outcome": "There was a clear difference.", "why": "The finding shows that emotion follows the comparison we make, not the objective outcome. A later study of the 2004 Olympics found broadly similar smile patterns." }
   ]
 }
 :::
@@ -132,7 +132,7 @@ A young woman from a small town comes to a Mumbai hospital with fainting attacks
 :::
 
 :::clinician
-Dual-process accounts (Kahneman's System 1 and System 2; Chaiken and Trope's dual-process models in social psychology) are useful descriptions, but treat the "two systems" as a convenient simplification, not two brain modules. On priming: Bargh, Chen and Burrows (1996) reported that students exposed to words about old age walked more slowly down a corridor. Doyen and colleagues (PLoS ONE, 2012) failed to replicate this with infrared timing gates, and found the effect only when experimenters expected it, which suggests experimenter expectancy. Many behavioural priming effects have since failed large replications; semantic priming in reaction-time tasks remains robust. Anchoring, by contrast, replicated strongly in the Many Labs 1 project (Klein and colleagues, 2014). In clinical reasoning, availability and anchoring are well documented sources of diagnostic error; structured differential diagnosis and "what else could this be?" are the practical debiasing tools.
+Dual-process accounts (Kahneman's System 1 and System 2; Chaiken and Trope's dual-process models in social psychology) are useful descriptions, but treat the "two systems" as a convenient simplification, not two brain modules. On priming: a well-known 1996 study reported that students exposed to words about old age walked more slowly down a corridor. A 2012 replication team failed to replicate this with infrared timing gates, and found the effect only when experimenters expected it, which suggests experimenter expectancy. Many behavioural priming effects have since failed large replications; semantic priming in reaction-time tasks remains robust. Anchoring, by contrast, replicated strongly in the Many Labs 1 project (2014). In clinical reasoning, availability and anchoring are well documented sources of diagnostic error; structured differential diagnosis and "what else could this be?" are the practical debiasing tools.
 :::
 
 :::widget sort
@@ -155,7 +155,7 @@ Dual-process accounts (Kahneman's System 1 and System 2; Chaiken and Trope's dua
 2. Name the three classic heuristics. || Representativeness, availability, anchoring and adjustment.
 3. What is a self-fulfilling prophecy? || An expectation that changes behaviour so that the expectation comes true.
 4. Why do bronze medallists often look happier than silver medallists? || They compare downward (to no medal), while silver medallists compare upward (to gold).
-5. Which famous priming study failed to replicate? || Bargh's elderly-words slow-walking study (Doyen and colleagues, 2012).
+5. Which famous priming study failed to replicate? || Bargh's elderly-words slow-walking study (it failed a 2012 replication).
 :::
 
 :::mcq
@@ -246,11 +246,11 @@ A student who fails NEET and says "I'm not intelligent" (internal, stable, uncon
 :::
 
 ### The errors we make
-- **Fundamental attribution error (FAE)**, also called **correspondence bias**: overestimating personal causes and underestimating the situation when explaining other people's behaviour (named by Lee Ross, 1977).
-- **Actor-observer bias**: explaining our own behaviour by situations and others' by traits (Jones and Nisbett, 1971).
+- **Fundamental attribution error (FAE)**, also called **correspondence bias**: overestimating personal causes and underestimating the situation when explaining other people's behaviour (named by Lee Ross).
+- **Actor-observer bias**: explaining our own behaviour by situations and others' by traits (first described by Edward Jones and Richard Nisbett).
 - **Self-serving bias**: taking credit for success (internal) and blaming failure on circumstances (external).
 - **Defensive attribution and belief in a just world**: Melvin Lerner showed people want to believe the world is fair, so they sometimes blame victims ("she must have done something to deserve it").
-- **Ultimate attribution error** (Pettigrew, 1979): the group version: good acts by our group are due to character and bad ones to circumstances; for an outgroup it is the reverse.
+- **Ultimate attribution error** (Thomas Pettigrew's term): the group version: good acts by our group are due to character and bad ones to circumstances; for an outgroup it is the reverse.
 
 :::widget decide
 {
@@ -268,7 +268,7 @@ A student who fails NEET and says "I'm not intelligent" (internal, stable, uncon
 **Joan Miller (1984)** asked Hindu Indians and Americans of different ages to explain everyday good and bad behaviours of people they knew. American adults gave many more **dispositional** explanations ("he is selfish"); Indian adults gave many more **contextual** ones (roles, duties, the situation). Children in both cultures were similar, so the difference **grows with socialisation**. Morris and Peng (1994) found the same pattern comparing American and Chinese newspaper reports of murders. The FAE is real, but it is not equally strong everywhere.
 
 :::clinician
-The actor-observer asymmetry is weaker than textbooks claim: Malle's meta-analysis (Psychological Bulletin, 2006) of 173 studies found an average effect close to zero, appearing mainly for negative events and hypothetical scenarios. The self-serving bias, by contrast, is robust across cultures but smaller in East Asian samples (Mezulis and colleagues, Psychological Bulletin, 2004), and it is reduced in depression (the "depressive realism" literature, whose own effects are smaller than first reported). Clinically, Weiner's model underpins attributional retraining and links to the reformulated learned-helplessness model (internal, stable, global attributions for bad events), which is covered in the Personality theories module. Attribution of controllability predicts stigma: Corrigan's work shows that people who see mental illness as controllable feel more anger and less willingness to help.
+The actor-observer asymmetry is weaker than textbooks claim: a 2006 meta-analysis of 173 studies found an average effect close to zero, appearing mainly for negative events and hypothetical scenarios. The self-serving bias, by contrast, is robust across cultures but smaller in East Asian samples, and it is reduced in depression (the "depressive realism" literature, whose own effects are smaller than first reported). Clinically, Weiner's model underpins attributional retraining and links to the reformulated learned-helplessness model (internal, stable, global attributions for bad events), which is covered in the Personality theories module. Attribution of controllability predicts stigma: Corrigan's work shows that people who see mental illness as controllable feel more anger and less willingness to help.
 :::
 
 :::recall
@@ -312,7 +312,7 @@ Daniel Katz (1960) described four **functions**:
 | **Value-expressive** | Shows who you are | Being vegetarian as an expression of ahimsa |
 
 ### Where attitudes come from
-- **Mere exposure** (Zajonc, 1968): repeated exposure to something neutral makes us like it more. Advertising jingles depend on this.
+- **Mere exposure**, shown by Robert Zajonc: repeated exposure to something neutral makes us like it more. Advertising jingles depend on this.
 - **Classical conditioning**: pairing a product with a pleasant film star.
 - **Operant conditioning**: being praised for voicing an attitude.
 - **Observational learning**: copying parents and peers.
@@ -329,7 +329,7 @@ In 1930 to 1931, **Richard LaPiere** travelled across the United States with a y
   "unit": "places",
   "answer": [0, 3],
   "reveal": "Only **one**. Yet when he wrote to them months later, about nine in ten of the 128 that replied said they would **not** accept Chinese guests. What people say and what they do can differ sharply.",
-  "clinician": "LaPiere (Social Forces, 1934): 250 of 251 establishments served them; of 128 replies, about 92% said no. Critics note that different staff may have answered the letter, and the couple's presence with a white man and their fluent English changed the situation. The study still launched decades of research on when attitudes predict behaviour."
+  "clinician": "LaPiere, 1934: 250 of 251 establishments served them; of 128 replies, about 92% said no. Critics note that different staff may have answered the letter, and the couple's presence with a white man and their fluent English changed the situation. The study still launched decades of research on when attitudes predict behaviour."
 }
 :::
 
@@ -339,7 +339,7 @@ Later research shows attitudes predict behaviour **better** when:
 - social pressure is low, and the person has direct experience with the object
 
 ### The theory of planned behaviour
-Icek Ajzen (1991) extended the earlier **theory of reasoned action** (Fishbein and Ajzen, 1975). Behaviour follows **intention**, and intention depends on three things:
+Icek Ajzen (1991) extended the earlier **theory of reasoned action**, which he had built with Martin Fishbein. Behaviour follows **intention**, and intention depends on three things:
 1. **Attitude towards the behaviour** (is it good or bad for me?)
 2. **Subjective norms** (what do people important to me think I should do?)
 3. **Perceived behavioural control** (can I actually do it?)
@@ -354,7 +354,7 @@ Perceived control can also predict behaviour directly. The model is used widely 
 | **Osgood's semantic differential (1957)** | Rate the object on pairs of opposite adjectives (good to bad, strong to weak, active to passive) | Three factors: evaluation, potency, activity |
 | **Bogardus social distance scale (1925)** | "Would you accept a member of this group as: a close relative by marriage, a friend, a neighbour, a co-worker, a citizen, a visitor, or exclude them?" | Used widely in India for caste and religious distance |
 
-**Implicit measures** try to get past what people are willing to say. The best known is the **Implicit Association Test** (Greenwald, McGhee and Schwartz, 1998), which measures how quickly people pair concepts (for example, "fair skin" or "dark skin" with "good" or "bad"). Others include physiological measures and the **bogus pipeline** (convincing people a machine can detect their true attitude).
+**Implicit measures** try to get past what people are willing to say. The best known is the **Implicit Association Test**, developed by Anthony Greenwald in 1998, which measures how quickly people pair concepts (for example, "fair skin" or "dark skin" with "good" or "bad"). Others include physiological measures and the **bogus pipeline** (convincing people a machine can detect their true attitude).
 
 :::widget sort
 {
@@ -374,7 +374,7 @@ Perceived control can also predict behaviour directly. The model is used widely 
 :::
 
 :::clinician
-Treat the IAT with care. Test-retest reliability is modest (around r of 0.5, below the standard expected for individual assessment), and meta-analyses find weak prediction of discriminatory behaviour (Oswald and colleagues, JPSP 2013). Forscher and colleagues (JPSP, 2019), pooling 492 studies, found that procedures which change implicit measures produce little or no change in behaviour. The IAT is useful as a research tool for group-level associations and as a teaching device, not as a diagnostic of an individual's "hidden prejudice". The MODE model (Fazio, 1990) is the standard account of when attitudes guide behaviour: spontaneously and automatically when motivation or opportunity to deliberate is low, and through deliberate reasoning (as in the theory of planned behaviour) when both are high. Meta-analyses of the theory of planned behaviour (Armitage and Conner, 2001) find it explains roughly 39% of the variance in intentions and 27% in behaviour.
+Treat the IAT with care. Test-retest reliability is modest (around r of 0.5, below the standard expected for individual assessment), and meta-analyses find weak prediction of discriminatory behaviour. A 2019 analysis pooling 492 studies found that procedures which change implicit measures produce little or no change in behaviour. The IAT is useful as a research tool for group-level associations and as a teaching device, not as a diagnostic of an individual's "hidden prejudice". Russell Fazio's MODE model is the standard account of when attitudes guide behaviour: spontaneously and automatically when motivation or opportunity to deliberate is low, and through deliberate reasoning (as in the theory of planned behaviour) when both are high. Meta-analyses of the theory of planned behaviour find it explains roughly 39% of the variance in intentions and 27% in behaviour.
 :::
 
 :::recall
@@ -530,12 +530,12 @@ Richard Petty and John Cacioppo (1986) proposed two routes:
 }
 :::
 
-The **heuristic-systematic model** (Shelly Chaiken, 1980) makes a similar distinction (systematic versus heuristic processing) and adds that both can run at the same time.
+Shelly Chaiken's **heuristic-systematic model** makes a similar distinction (systematic versus heuristic processing) and adds that both can run at the same time.
 
 ### Fear, resistance and inoculation
 - **Fear appeals** work when people feel both **threatened** and **able to act** (Witte's extended parallel process model). Fear without a clear, doable action leads to denial. Graphic tobacco warnings on Indian cigarette packs work best alongside a quitline number.
-- **Reactance** (Jack Brehm, 1966): when people feel their freedom is threatened, they push back and may like the forbidden thing more.
-- **Inoculation** (William McGuire, 1961): exposing people to a **weakened** form of an argument, with a refutation, protects them against the full argument later, like a vaccine. Modern "prebunking" games such as **Bad News** (Roozenbeek and van der Linden, 2019) teach people the tricks of misinformation; versions have been tested in India for WhatsApp misinformation.
+- **Reactance**, described by Jack Brehm: when people feel their freedom is threatened, they push back and may like the forbidden thing more.
+- **Inoculation**, William McGuire's idea: exposing people to a **weakened** form of an argument, with a refutation, protects them against the full argument later, like a vaccine. Modern "prebunking" games such as **Bad News** teach people the tricks of misinformation; versions have been tested in India for WhatsApp misinformation.
 
 :::widget sort
 {
@@ -568,15 +568,15 @@ Leon Festinger (1957) said that holding two inconsistent cognitions (beliefs, at
 :::
 
 Other dissonance paradigms:
-- **Effort justification** (Aronson and Mills, 1959): students who went through an embarrassing "initiation" to join a dull discussion group rated it more interesting. We value what we suffered for, which may explain loyalty after harsh ragging or tough medical training.
-- **Post-decision dissonance** (Brehm, 1956): after choosing between two similar options, we rate the chosen one higher and the rejected one lower ("spreading of alternatives").
+- **Effort justification**, shown by Elliot Aronson and Judson Mills: students who went through an embarrassing "initiation" to join a dull discussion group rated it more interesting. We value what we suffered for, which may explain loyalty after harsh ragging or tough medical training.
+- **Post-decision dissonance**, first shown by Jack Brehm: after choosing between two similar options, we rate the chosen one higher and the rejected one lower ("spreading of alternatives").
 - **Hypocrisy induction**: making people publicly advocate a behaviour, then reminding them of times they failed to do it, increases the behaviour (used in condom-use and water-saving campaigns).
 
 ### Self-perception: a rival explanation
 Daryl Bem (1967) argued we don't need inner tension at all. We simply **infer our attitudes from our behaviour**, the way an observer would: "I said it was fun for only $1, so I must have liked it." Later work suggests both are right: **self-perception** explains change when the attitude is weak or unclear, and **dissonance** when the behaviour clearly contradicts a strong attitude and produces measurable arousal.
 
 :::clinician
-Cooper and Fazio's "new look" (1984) argues dissonance requires four ingredients: the behaviour has aversive consequences, the person feels personally responsible (free choice), there is physiological arousal, and the arousal is attributed to one's own behaviour. Zanna and Cooper (1974) showed that when participants could misattribute their arousal to a placebo pill described as causing tension, attitude change disappeared, which is strong evidence for the arousal component. Self-affirmation theory (Steele, 1988) adds that affirming an important value elsewhere reduces the need for dissonance reduction. Clinical links: dissonance-based eating-disorder prevention (The Body Project, Stice and colleagues) has replicated across independent trials and countries; motivational interviewing deliberately develops discrepancy between a client's values and their behaviour, though it avoids the confrontational pressure that triggers reactance. Note a replication warning: a multi-lab test of the classic induced-compliance paradigm (Vaidis and colleagues, Advances in Methods and Practices in Psychological Science 2024; 39 labs, 19 countries, nearly 4,900 participants) found that writing a counter-attitudinal essay did shift attitudes, but **free choice made no difference**, although the theory predicts that choice is what creates dissonance. The everyday phenomenon of justifying our actions is not in doubt; the precise mechanism is.
+Cooper and Fazio's "new look" (1984) argues dissonance requires four ingredients: the behaviour has aversive consequences, the person feels personally responsible (free choice), there is physiological arousal, and the arousal is attributed to one's own behaviour. A 1974 experiment showed that when participants could misattribute their arousal to a placebo pill described as causing tension, attitude change disappeared, which is strong evidence for the arousal component. Claude Steele's self-affirmation theory adds that affirming an important value elsewhere reduces the need for dissonance reduction. Clinical links: dissonance-based eating-disorder prevention (The Body Project) has replicated across independent trials and countries; motivational interviewing deliberately develops discrepancy between a client's values and their behaviour, though it avoids the confrontational pressure that triggers reactance. Note a replication warning: a 2024 multi-lab test of the classic induced-compliance paradigm, with 39 labs in 19 countries and nearly 4,900 participants, found that writing a counter-attitudinal essay did shift attitudes, but **free choice made no difference**, although the theory predicts that choice is what creates dissonance. The everyday phenomenon of justifying our actions is not in doubt; the precise mechanism is.
 :::
 
 :::recall
@@ -621,7 +621,7 @@ Solomon Asch (1951, 1956) asked a different question: would people conform when 
   "unit": "%",
   "answer": [30, 40],
   "reveal": "About **37%** of answers on those critical trials conformed. About **three in four** participants conformed at least once, and about **one in four** never did. In a control condition without pressure, errors were under 1%.",
-  "clinician": "Asch's figures (Psychological Monographs, 1956): 36.8% conforming responses on critical trials; about 75% conformed at least once; about 25% never conformed. In interviews, some participants said they actually saw the lines differently (distortion of perception), some doubted their own judgment, and most knew the answer was wrong but went along (distortion of action). Note the large individual differences: averages hide a range from complete independence to near-total yielding."
+  "clinician": "Asch's figures: 36.8% conforming responses on critical trials; about 75% conformed at least once; about 25% never conformed. In interviews, some participants said they actually saw the lines differently (distortion of perception), some doubted their own judgment, and most knew the answer was wrong but went along (distortion of action). Note the large individual differences: averages hide a range from complete independence to near-total yielding."
 }
 :::
 
@@ -632,7 +632,7 @@ Solomon Asch (1951, 1956) asked a different question: would people conform when 
 | **Unanimity** | One other person giving the right answer (an ally) cuts conformity sharply, to about a quarter of its usual level; even an ally giving a **different** wrong answer helps |
 | **Private answers** | Writing answers privately drops conformity a lot (so most of it was public going-along, not changed belief) |
 | **Task difficulty** | Harder or more ambiguous tasks increase conformity |
-| **Culture** | Higher in collectivist cultures (Bond and Smith, 1996) |
+| **Culture** | Higher in collectivist cultures |
 | **Status and attraction** | Higher when the group is valued or high in status |
 
 :::widget decide
@@ -673,7 +673,7 @@ Herbert Kelman (1958) described three levels: **compliance** (public only, to ge
 Serge Moscovici showed that a **consistent minority** can move a majority. In his 1969 study, groups of six judged the colour of blue slides. When two confederates **consistently** called them "green", about 8% of the real participants' answers were "green"; when the confederates were **inconsistent**, it dropped to about 1%. Minority influence tends to work more slowly, through real thinking (conversion), and shows up in private and later judgments more than in public ones. Many social reforms in India, from campaigns against sati to the movement for decriminalising homosexuality, began as consistent minorities.
 
 :::clinician
-Bond and Smith's meta-analysis (Psychological Bulletin, 1996) of 133 Asch-type studies in 17 countries found conformity was higher in collectivist cultures and had declined in the United States since the 1950s. Larsen's (1974) "child of its time" argument and later replications show conformity is sensitive to era and context. Moscovici's genetic model and Nemeth's work on dissent show that minority dissent improves the quality of group thinking (more divergent and original thought), even when the minority is wrong, which is the empirical case for appointing a devil's advocate (though authentic dissent works better than role-played dissent). For clinicians, normative influence explains a great deal of real behaviour change: social-norms interventions (for example, telling students the true, lower rate of heavy drinking among peers) work when people overestimate how common a harmful behaviour is.
+A 1996 meta-analysis of 133 Asch-type studies in 17 countries found conformity was higher in collectivist cultures and had declined in the United States since the 1950s. Later replications show conformity is sensitive to era and context. Moscovici's genetic model and Nemeth's work on dissent show that minority dissent improves the quality of group thinking (more divergent and original thought), even when the minority is wrong, which is the empirical case for appointing a devil's advocate (though authentic dissent works better than role-played dissent). For clinicians, normative influence explains a great deal of real behaviour change: social-norms interventions (for example, telling students the true, lower rate of heavy drinking among peers) work when people overestimate how common a harmful behaviour is.
 :::
 
 :::recall
@@ -736,7 +736,7 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
   "unit": "%",
   "answer": [60, 70],
   "reveal": "**65%** (26 of 40) gave the full 450 volts. **Every** participant went to at least 300 volts. Many sweated, trembled, laughed nervously and argued, but continued.",
-  "clinician": "Milgram, Journal of Abnormal and Social Psychology, 1963. In the full programme (Obedience to Authority, 1974) he ran about 20 variations with around 780 participants; obedience across them averaged well below the headline figure. The 65% figure comes from the remote, voice-feedback-free baseline; with voice feedback (the 'new baseline') it was 62.5%."
+  "clinician": "The original report appeared in 1963. Across his full programme, described in 1974, Milgram ran about 20 variations with around 780 participants; obedience across them averaged well below the headline figure. The 65% figure comes from the remote, voice-feedback-free baseline; with voice feedback (the 'new baseline') it was 62.5%."
 }
 :::
 
@@ -758,10 +758,10 @@ The pattern is clear: obedience falls as the victim becomes **closer** and the a
 Milgram's explanation was the **agentic state**: in a hierarchy, people stop seeing themselves as acting on their own judgment and see themselves as the agent of someone else's wishes, shifting responsibility upwards. Small graded steps (each shock only 15 volts more than the last) also made stopping hard: each step was a foot in the door.
 
 :::trap The critiques you must know
-- **Ethics** (Baumrind, 1964): severe stress, deception and pressure to continue. Milgram's follow-up found 84% of participants said they were glad to have taken part, but this does not settle the question. Studies like this led to modern ethics rules.
+- **Ethics**, raised by Diana Baumrind in 1964: severe stress, deception and pressure to continue. Milgram's follow-up found 84% of participants said they were glad to have taken part, but this does not settle the question. Studies like this led to modern ethics rules.
 - **Did they believe it?** Gina Perry's archival work (2012) found that many participants doubted the shocks were real, and that the experimenter often went beyond the four standard prods.
 - **Obedience or engaged followership?** Haslam and Reicher argue that people continued because they **identified with the scientific goal**, not because they mindlessly obeyed. Tellingly, the prod "You have no other choice, you must go on", the only true order, made people **more** likely to refuse.
-- **Still, it replicates in part.** Burger (2009) stopped at 150 volts for ethical reasons and found about 70% were willing to go beyond that point, similar to Milgram's rate at the same point. Doliński and colleagues (Poland, 2017) found 90% went to the highest level of a lower-voltage version.
+- **Still, it replicates in part.** Burger (2009) stopped at 150 volts for ethical reasons and found about 70% were willing to go beyond that point, similar to Milgram's rate at the same point. A Polish team in 2017 found 90% went to the highest level of a lower-voltage version.
 :::
 
 :::widget decide
@@ -771,13 +771,13 @@ Milgram's explanation was the **agentic state**: in a hierarchy, people stop see
   "choices": [
     { "label": "Very few; nearly all refused at once", "verdict": "ok", "outcome": "When a separate group of nurses was asked what they would do, almost all said they would refuse.", "why": "Predictions about our own obedience are badly wrong, as Milgram's psychiatrists also showed." },
     { "label": "About half", "verdict": "ok", "outcome": "The real figure was much higher.", "why": "The authority of 'the doctor' within a hospital hierarchy was very strong." },
-    { "label": "Almost all: 21 of 22", "verdict": "best", "outcome": "Correct. 21 of 22 nurses were stopped by a researcher as they prepared to give the overdose.", "why": "A field demonstration of obedience. Later work (Rank and Jacobson, 1977) found far fewer nurses complied when the drug was familiar (Valium) and they could talk to colleagues, so context matters. This is why modern Indian and international hospitals use rules such as read-back of verbal orders and 'speak up' safety cultures." }
+    { "label": "Almost all: 21 of 22", "verdict": "best", "outcome": "Correct. 21 of 22 nurses were stopped by a researcher as they prepared to give the overdose.", "why": "A field demonstration of obedience. A 1977 follow-up found far fewer nurses complied when the drug was familiar (Valium) and they could talk to colleagues, so context matters. This is why modern Indian and international hospitals use rules such as read-back of verbal orders and 'speak up' safety cultures." }
   ]
 }
 :::
 
 :::clinician
-For an Indian clinical audience, the relevance is direct: steep hierarchies in medical training (consultant, senior resident, junior resident, intern, nurse) are a well-documented risk for patient safety, because juniors see errors but do not challenge them. Aviation's crew resource management, adapted into "speak-up" and "two-challenge" rules in healthcare, is applied social psychology. Theoretical refinements: Haslam, Reicher and Birney (2014) recreated the four prods with an online analogue and found the direct order prod reduced compliance; Haslam and Reicher's identity-leadership account explains why obedience varies so much across Milgram's variations (identification with the experimenter versus the learner). The ethics of deception studies are now governed in India by the ICMR guidelines, which require that any deception be justified, minimal and followed by debriefing with the right to withdraw data.
+For an Indian clinical audience, the relevance is direct: steep hierarchies in medical training (consultant, senior resident, junior resident, intern, nurse) are a well-documented risk for patient safety, because juniors see errors but do not challenge them. Aviation's crew resource management, adapted into "speak-up" and "two-challenge" rules in healthcare, is applied social psychology. Theoretical refinements: A 2014 study recreated the four prods with an online analogue and found the direct order prod reduced compliance; Haslam and Reicher's identity-leadership account explains why obedience varies so much across Milgram's variations (identification with the experimenter versus the learner). The ethics of deception studies are now governed in India by the ICMR guidelines, which require that any deception be justified, minimal and followed by debriefing with the right to withdraw data.
 :::
 
 :::recall
@@ -819,7 +819,7 @@ Zajonc even showed it in cockroaches (1969): they ran a simple runway faster wit
 }
 :::
 
-Why does presence arouse us? Three accounts: **mere presence** (Zajonc: other people are unpredictable, so we become alert); **evaluation apprehension** (Cottrell, 1968: we worry about being judged; a blindfolded audience has less effect); and **distraction-conflict** (Baron, 1986: attending to both the task and the audience creates conflict and arousal).
+Why does presence arouse us? Three accounts: **mere presence** (Zajonc: other people are unpredictable, so we become alert); **evaluation apprehension** (Nickolas Cottrell's idea: we worry about being judged; a blindfolded audience has less effect); and **distraction-conflict** (Robert Baron's idea: attending to both the task and the audience creates conflict and arousal).
 
 ### Social loafing
 Max Ringelmann (around 1913) found that people pulling a rope in a group pulled less hard per person than when alone. Latané, Williams and Harkins (1979) had students clap and shout as loudly as they could; per person, the noise **fell** as groups got larger, even when they only **believed** others were shouting with them.
@@ -834,11 +834,11 @@ Group projects in Indian colleges where one student does all the work and four n
 ### Deindividuation
 **Deindividuation** is a loss of self-awareness and personal responsibility in groups, especially with **anonymity** and **high arousal**, leading to behaviour people would not do alone. Ed Diener's Halloween study (1976) left a bowl of sweets with a note: "Take only one." Children who came in **groups** and were **anonymous** (no names asked) were the most likely to take extra.
 
-The **SIDE model** (social identity model of deindividuation effects; Reicher, Spears and Postmes) reinterprets this: anonymity does not make people lawless; it makes them follow the **norms of the group** more strongly. Anonymous crowds can be violent or peaceful, depending on the group's norms. A meta-analysis (Postmes and Spears, 1998) supported this: deindividuation increased conformity to local group norms, not general antisocial behaviour.
+The **SIDE model** (social identity model of deindividuation effects; Reicher, Spears and Postmes) reinterprets this: anonymity does not make people lawless; it makes them follow the **norms of the group** more strongly. Anonymous crowds can be violent or peaceful, depending on the group's norms. A 1998 meta-analysis supported this: deindividuation increased conformity to local group norms, not general antisocial behaviour.
 
 ### Group decisions
-- **Group polarisation**: after discussion, groups move to a **more extreme** version of the view members already leaned towards. It was first found as the "risky shift" (Stoner, 1961), but groups that start cautious get more cautious. Two causes: **persuasive arguments** (you hear new arguments on your side) and **social comparison** (you want to be a slightly better example of the group's position). Online echo chambers are polarisation machines.
-- **Groupthink** (Irving Janis, 1972): a mode of thinking in highly cohesive groups where the wish for agreement overrides realistic appraisal of alternatives. Janis studied the **Bay of Pigs invasion** (1961) and other policy disasters.
+- **Group polarisation**: after discussion, groups move to a **more extreme** version of the view members already leaned towards. It was first found as the "risky shift" by James Stoner in 1961, but groups that start cautious get more cautious. Two causes: **persuasive arguments** (you hear new arguments on your side) and **social comparison** (you want to be a slightly better example of the group's position). Online echo chambers are polarisation machines.
+- **Groupthink**, Irving Janis's term: a mode of thinking in highly cohesive groups where the wish for agreement overrides realistic appraisal of alternatives. Janis studied the **Bay of Pigs invasion** (1961) and other policy disasters.
 
 :::define Groupthink: antecedents, symptoms, prevention
 **Antecedents**: high cohesiveness, insulation from outsiders, a directive leader, no procedures for weighing evidence, high stress.
@@ -866,7 +866,7 @@ Two about **overestimating the group** (invulnerability, morality), two about **
 :::
 
 :::clinician
-Evidence on groupthink is weaker than its fame: Esser's review (1998) found case studies broadly supportive but laboratory tests mixed, with cohesiveness alone not reliably producing defective decisions. Directive leadership and lack of procedures appear to matter more. Brainstorming is another well-known case: Osborn's claim that groups generate more ideas is contradicted by meta-analyses (Mullen, Johnson and Salas, 1991) showing nominal groups (the same number of people working alone, ideas pooled) outperform interacting groups, because of production blocking, evaluation apprehension and loafing. Electronic brainstorming partly fixes this. On deindividuation, Zimbardo's 1969 hood study (hooded women delivered longer "shocks") is often cited, but Johnson and Downing (1979) showed that when women were dressed as nurses the effect reversed, which supports the SIDE account. The Stanford prison experiment is discussed in Part III.
+Evidence on groupthink is weaker than its fame: Esser's review (1998) found case studies broadly supportive but laboratory tests mixed, with cohesiveness alone not reliably producing defective decisions. Directive leadership and lack of procedures appear to matter more. Brainstorming is another well-known case: Osborn's claim that groups generate more ideas is contradicted by meta-analyses showing nominal groups (the same number of people working alone, ideas pooled) outperform interacting groups, because of production blocking, evaluation apprehension and loafing. Electronic brainstorming partly fixes this. On deindividuation, Zimbardo's 1969 hood study (hooded women delivered longer "shocks") is often cited, but a 1979 follow-up showed that when women were dressed as nurses the effect reversed, which supports the SIDE account. The Stanford prison experiment is discussed in Part III.
 :::
 
 :::recall
@@ -940,7 +940,7 @@ Meta-analyses link transformational leadership to follower satisfaction and perf
 :::
 
 :::clinician
-Research priorities in leadership have shifted towards leader-member exchange (LMX: the quality of the dyadic relationship, with in-group and out-group subordinates), servant leadership, authentic leadership and the social identity approach (Haslam, Reicher and Platow, "The New Psychology of Leadership"), in which leaders succeed by being seen as prototypical of the group, championing it, crafting a shared identity and embedding it in structures. Fiedler's model has some meta-analytic support from laboratory studies but weaker support in the field, and the LPC scale's meaning has been debated. Indian leadership research also describes paternalistic leadership (shared with East Asia and the Middle East), and Sinha's work on the "soft work culture" in Indian public organisations, where hierarchy, personalised relationships and low work centrality coexist. In clinical settings, leadership style on psychiatric wards predicts staff burnout and patient incidents.
+Research priorities in leadership have shifted towards leader-member exchange (LMX: the quality of the dyadic relationship, with in-group and out-group subordinates), servant leadership, authentic leadership and the social identity approach to leadership developed by Alex Haslam, Steve Reicher and Michael Platow, in which leaders succeed by being seen as prototypical of the group, championing it, crafting a shared identity and embedding it in structures. Fiedler's model has some meta-analytic support from laboratory studies but weaker support in the field, and the LPC scale's meaning has been debated. Indian leadership research also describes paternalistic leadership (shared with East Asia and the Middle East), and Sinha's work on the "soft work culture" in Indian public organisations, where hierarchy, personalised relationships and low work centrality coexist. In clinical settings, leadership style on psychiatric wards predicts staff burnout and patient incidents.
 :::
 
 :::recall

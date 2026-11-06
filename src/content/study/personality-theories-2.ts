@@ -10,7 +10,7 @@ Gray, Eysenck's student, rotated Eysenck's E and N by about 30 degrees and propo
 | System | Responds to | Personality outcome |
 |---|---|---|
 | **Behavioural activation (approach) system, BAS** | Signals of reward and non-punishment | High BAS: impulsivity, reward-seeking, positive emotion (dopamine pathways) |
-| **Behavioural inhibition system, BIS** | In the revised theory (Gray and McNaughton, 2000): **conflict** between approach and avoidance, novelty | High BIS: anxiety, worry, rumination, risk assessment (septo-hippocampal system) |
+| **Behavioural inhibition system, BIS** | In the revised theory of 2000: **conflict** between approach and avoidance, novelty | High BIS: anxiety, worry, rumination, risk assessment (septo-hippocampal system) |
 | **Fight-flight-freeze system, FFFS** | Punishment and clear threat | High FFFS: fear, active avoidance, panic (amygdala, periaqueductal grey) |
 Gray's model separates **fear** (FFFS: getting away from a clear threat) from **anxiety** (BIS: approaching a threat with caution), which maps onto the difference between panic or phobia and generalised worry. Carver and White's **BIS/BAS scales** (1994) measure the systems.
 
@@ -26,14 +26,14 @@ Cloninger's **Temperament and Character Inventory (TCI)** has four inherited **t
 
 ### Sensation seeking and behavioural inhibition
 - **Marvin Zuckerman's sensation seeking**: the need for varied, novel, complex and intense experience, with four subscales: **thrill and adventure seeking**, **experience seeking**, **disinhibition** and **boredom susceptibility**. It predicts risky driving, substance use and extreme sports.
-- **Jerome Kagan's behavioural inhibition**: about one in five infants are "high-reactive" at four months (much crying and limb movement to new sights and sounds). Many become shy, cautious toddlers. As adults, the inhibited group showed stronger amygdala responses to unfamiliar faces (Schwartz and colleagues, 2003). Most inhibited children become less shy over time, but they remain at higher risk of social anxiety.
+- **Jerome Kagan's behavioural inhibition**: about one in five infants are "high-reactive" at four months (much crying and limb movement to new sights and sounds). Many become shy, cautious toddlers. As adults, the inhibited group showed stronger amygdala responses to unfamiliar faces. Most inhibited children become less shy over time, but they remain at higher risk of social anxiety.
 
 ### Behaviour genetics
 **How it works**: identical (MZ) twins share almost all their genes; non-identical (DZ) twins share about half. If MZ twins are much more similar than DZ twins, genes matter. **Adoption studies** compare children with their biological and adoptive parents.
 
 :::widget decide
 {
-  "scene": "The Minnesota Study of Twins Reared Apart (Bouchard, Tellegen and colleagues) found identical twins separated in infancy and raised in different families, sometimes different countries, and compared them with identical twins raised together.",
+  "scene": "The Minnesota Study of Twins Reared Apart, led by Thomas Bouchard, found identical twins separated in infancy and raised in different families, sometimes different countries, and compared them with identical twins raised together.",
   "ask": "Predict how similar the separated twins were in personality.",
   "choices": [
     { "label": "Much less similar than twins raised together, because family environment shapes personality", "verdict": "ok", "outcome": "That is the intuitive guess, but not the result.", "why": "If the shared home mattered a lot, being raised together should make twins much more alike." },
@@ -49,7 +49,7 @@ Three key conclusions (Plomin's "laws"):
 3. The **non-shared environment** (unique experiences) explains a lot.
 
 ### The search for personality genes
-In 1996, two studies reported that a variant of the dopamine D4 receptor gene (**DRD4**) was linked to **novelty seeking**. It caused great excitement, but meta-analyses found the link **did not replicate** (Munafò and colleagues, 2008). The same happened with the serotonin transporter gene and neuroticism. Today's genome-wide studies, with hundreds of thousands of people, find **hundreds of genetic variants each with tiny effects** on traits such as neuroticism. Personality is **polygenic**: no "anxiety gene" exists.
+In 1996, two studies reported that a variant of the dopamine D4 receptor gene (**DRD4**) was linked to **novelty seeking**. It caused great excitement, but meta-analyses found the link **did not replicate**. The same happened with the serotonin transporter gene and neuroticism. Today's genome-wide studies, with hundreds of thousands of people, find **hundreds of genetic variants each with tiny effects** on traits such as neuroticism. Personality is **polygenic**: no "anxiety gene" exists.
 
 :::trap The candidate-gene lesson
 Exams may ask about "the gene for novelty seeking". The right answer is that early **candidate-gene** findings (DRD4 and novelty seeking; 5-HTTLPR and neuroticism) failed to replicate. Personality, like most psychological traits, is influenced by thousands of variants of very small effect, plus environment.
@@ -71,7 +71,7 @@ Exams may ask about "the gene for novelty seeking". The right answer is that ear
 :::
 
 :::clinician
-Neuroscience of the Big Five: DeYoung and colleagues (Psychological Science, 2010) reported structural correlates (for example, extraversion with medial orbitofrontal volume, neuroticism with regions involved in threat and punishment), the basis of DeYoung's cybernetic Big Five theory. Larger, preregistered analyses have been sobering: Avinun and colleagues (2020), using over 1,100 participants and replication samples, found no robust associations between Big Five traits and brain structure. Treat single-sample brain-trait findings with caution. Molecular: the 2018 neuroticism GWAS (Nagel and colleagues, Nature Genetics; about 449,000 participants) identified 136 loci, with genetic correlations between neuroticism and depression, anxiety and schizophrenia. Clinically, Cloninger's TCI is used in Indian psychiatric research (for example, in studies of bipolar disorder and substance use), and harm avoidance is consistently raised in depression and anxiety disorders, partly as a state effect. The RST distinction between fear and anxiety has pharmacological support: anxiolytics affect BIS-type risk assessment more than FFFS-type escape.
+Neuroscience of the Big Five: Colin DeYoung's 2010 study reported structural correlates (for example, extraversion with medial orbitofrontal volume, neuroticism with regions involved in threat and punishment), the basis of DeYoung's cybernetic Big Five theory. Larger, preregistered analyses have been sobering: a 2020 study of over 1,100 participants, with replication samples, found no robust associations between Big Five traits and brain structure. Treat single-sample brain-trait findings with caution. Molecular: the 2018 neuroticism GWAS (about 449,000 participants) identified 136 loci, with genetic correlations between neuroticism and depression, anxiety and schizophrenia. Clinically, Cloninger's TCI is used in Indian psychiatric research (for example, in studies of bipolar disorder and substance use), and harm avoidance is consistently raised in depression and anxiety disorders, partly as a state effect. The RST distinction between fear and anxiety has pharmacological support: anxiolytics affect BIS-type risk assessment more than FFFS-type escape.
 :::
 
 :::recall
@@ -106,7 +106,7 @@ Evolutionary psychology asks two questions about personality: **Why do we have t
 Buss argues that humans faced recurring **adaptive problems** (finding mates, forming alliances, getting status, avoiding danger, caring for children), and that the Big Five correspond to the most important differences people track in others when solving them: **Who is dominant and active? (extraversion) Who is cooperative? (agreeableness) Who is reliable? (conscientiousness) Who is emotionally stable? (neuroticism) Who is creative and knowledgeable? (openness).** That is why these traits are so heavily coded in language.
 
 ### Why does variation persist?
-1. **Balancing selection through trade-offs** (Daniel Nettle, 2006): each trait has costs and benefits, and the balance depends on the environment, so no single level is best.
+1. **Balancing selection through trade-offs**, an argument made by Daniel Nettle: each trait has costs and benefits, and the balance depends on the environment, so no single level is best.
 | Trait | Benefits | Costs |
 |---|---|---|
 | **Extraversion** | Mating success, social allies, exploration | Physical risk, accidents, family instability |
@@ -122,7 +122,7 @@ Buss argues that humans faced recurring **adaptive problems** (finding mates, fo
 Life history strategies range from **fast** (early sexual maturity, more partners, less parental investment, more risk-taking: favoured in harsh, unpredictable environments) to **slow** (later maturity, fewer children, high investment, long-term planning). Some researchers link personality profiles to these strategies.
 
 ### Sex differences
-Buss and colleagues (1992) asked students which would upset them more: a partner forming a deep **emotional** attachment to someone else, or a partner enjoying **sexual** intercourse with someone else. Men more often chose sexual infidelity and women emotional infidelity, which Buss explained by men's uncertainty about paternity and women's need for a partner's investment.
+David Buss's team (1992) asked students which would upset them more: a partner forming a deep **emotional** attachment to someone else, or a partner enjoying **sexual** intercourse with someone else. Men more often chose sexual infidelity and women emotional infidelity, which Buss explained by men's uncertainty about paternity and women's need for a partner's investment.
 
 :::widget decide
 {
@@ -140,7 +140,7 @@ Buss and colleagues (1992) asked students which would upset them more: a partner
 Personality is not only human. Gosling (2001) reviewed studies showing that observers can reliably rate animals (from chimpanzees and hyenas to octopuses and fish) on dimensions resembling extraversion, neuroticism and agreeableness. Bold and shy guppies differ in how they inspect predators, with survival costs and benefits. This supports the idea that personality differences have deep biological roots.
 
 :::clinician
-Critiques of evolutionary personality psychology centre on "just-so stories" (post hoc adaptive explanations), the difficulty of testing claims about ancestral environments, and the risk of naturalising social inequalities. Life-history accounts of personality have weakened: Zietsch and Sidari (2020) and others found that the "fast-slow" personality factor does not hold together as predicted, and that associations with childhood adversity are weak or inconsistent. Better-supported clinical links are the trade-off accounts: for example, the association of openness and creativity with schizotypy and the familial co-aggregation of creativity with bipolar disorder (Kyaga and colleagues' Swedish registry studies), and the vigilance benefits that may help explain why high neuroticism persists despite its health costs.
+Critiques of evolutionary personality psychology centre on "just-so stories" (post hoc adaptive explanations), the difficulty of testing claims about ancestral environments, and the risk of naturalising social inequalities. Life-history accounts of personality have weakened: recent analyses found that the "fast-slow" personality factor does not hold together as predicted, and that associations with childhood adversity are weak or inconsistent. Better-supported clinical links are the trade-off accounts: for example, the association of openness and creativity with schizotypy and the familial co-aggregation of creativity with bipolar disorder (Swedish registry studies), and the vigilance benefits that may help explain why high neuroticism persists despite its health costs.
 :::
 
 :::recall
@@ -193,7 +193,7 @@ Key ideas that make this a **personality theory**:
 :::
 
 ### Measuring the gunas
-Psychologists have built scales such as the **Vedic Personality Inventory** (David Wolf, 1999) and Indian scales including the **Mysore Triguna Scale** and the related **Mysore Tridosha Scale** for Ayurvedic constitution (Shilpa and Venkatesha Murthy, 2011). Studies report that **sattva** scores go with emotional stability, conscientiousness and agreeableness; **tamas** with neuroticism and low conscientiousness; and **rajas** with extraversion and some neuroticism. Sattva scores also relate to well-being and lower stress. The cautions are that samples are often small, items can overlap with Big Five wording, and some scales have only content validity.
+Psychologists have built scales such as the **Vedic Personality Inventory** (developed by David Wolf) and Indian scales including the **Mysore Triguna Scale** and the related **Mysore Tridosha Scale** for Ayurvedic constitution (both developed in Mysore). Studies report that **sattva** scores go with emotional stability, conscientiousness and agreeableness; **tamas** with neuroticism and low conscientiousness; and **rajas** with extraversion and some neuroticism. Sattva scores also relate to well-being and lower stress. The cautions are that samples are often small, items can overlap with Big Five wording, and some scales have only content validity.
 
 ### Prakriti in Ayurveda
 Ayurveda describes each person's constitution (**prakriti**) by three **doshas**: **vata** (air and space: quick, changeable, creative, anxious when imbalanced), **pitta** (fire: sharp, intense, ambitious, irritable when imbalanced) and **kapha** (earth and water: steady, calm, loyal, sluggish when imbalanced). A research programme called **Ayurgenomics** (for example, CSIR studies from 2008 onwards) has reported differences in gene expression and biochemistry between people classed as extreme vata, pitta and kapha types. These are early, interesting findings; they do not yet establish prakriti as a validated personality classification.
@@ -271,9 +271,9 @@ The **self-concept** is the set of beliefs a person holds about who they are. **
 - **George Herbert Mead** (1934): the self grows through social interaction, play and games, by taking the role of the **generalised other**.
 
 ### The self as knowledge
-- **Self-schemas** (Hazel Markus, 1977): organised beliefs about the self in specific areas ("I am independent"). People who are **schematic** for a trait process related information faster and remember it better.
-- **Possible selves** (Markus and Nurius, 1986): images of who we might become (hoped-for selves and feared selves) that guide motivation.
-- **Self-discrepancy theory** (E. Tory Higgins, 1987): we compare the **actual self** with two standards.
+- **Self-schemas**, Hazel Markus's idea: organised beliefs about the self in specific areas ("I am independent"). People who are **schematic** for a trait process related information faster and remember it better.
+- **Possible selves**, also from Markus: images of who we might become (hoped-for selves and feared selves) that guide motivation.
+- **Self-discrepancy theory**, from E. Tory Higgins: we compare the **actual self** with two standards.
 | Discrepancy | Feelings | Example |
 |---|---|---|
 | **Actual versus ideal** (who I hope to be) | **Dejection**: sadness, disappointment, depression | "I wanted to be a doctor and I'm not" |
@@ -303,14 +303,14 @@ Higgins later added **regulatory focus**: a **promotion** focus (towards ideals,
 - **High self-esteem is not narcissism**: narcissists have inflated, fragile self-views and need admiration; secure high self-esteem does not.
 
 ### Self-monitoring and self-verification
-- **Self-monitoring** (Mark Snyder, 1974): high self-monitors adjust their behaviour to fit each situation; low self-monitors act on their inner attitudes consistently.
+- **Self-monitoring**, Mark Snyder's idea: high self-monitors adjust their behaviour to fit each situation; low self-monitors act on their inner attitudes consistently.
 - **Self-verification** (William Swann): people want others to see them as they see themselves, even when that view is negative. A depressed person may prefer a partner who confirms their low self-view.
 
 ### Culture and the self
 Hazel Markus and Shinobu Kitayama (1991) contrasted the **independent self** (unique, separate, defined by personal traits; common in North America and western Europe) with the **interdependent self** (defined by relationships, roles and group membership; common in East and South Asia). In interdependent cultures, self-criticism and fitting in may be valued over self-enhancement. Indian research complicates the neat contrast: **Sinha and Tripathi** showed Indians hold both orientations and switch between them by context, and in large Indian cities the two sit side by side in the same person.
 
 :::clinician
-Self-esteem and depression: prospective meta-analyses (Sowislo and Orth, Psychological Bulletin, 2013) support a vulnerability model in which low self-esteem predicts later depression more than depression predicts later low self-esteem, while for anxiety the effects are more balanced. Self-discrepancy has clinical support: actual-ideal discrepancies are relatively specific to dysphoria and actual-ought to anxiety, though the specificity is weaker in later studies. Compassion-focused approaches (Gilbert) and self-compassion (Neff) offer an alternative to boosting self-esteem: self-compassion predicts resilience without the contingency and comparison costs of high self-esteem. The self-enhancement debate: Heine and colleagues (1999) argued that Japanese culture shows little self-enhancement; Sedikides and colleagues (2003) argued that people in all cultures self-enhance on the traits their culture values (individualists on agentic traits, collectivists on communal ones). In India, both patterns appear depending on domain.
+Self-esteem and depression: prospective meta-analyses support a vulnerability model in which low self-esteem predicts later depression more than depression predicts later low self-esteem, while for anxiety the effects are more balanced. Self-discrepancy has clinical support: actual-ideal discrepancies are relatively specific to dysphoria and actual-ought to anxiety, though the specificity is weaker in later studies. Compassion-focused approaches (Gilbert) and self-compassion (Neff) offer an alternative to boosting self-esteem: self-compassion predicts resilience without the contingency and comparison costs of high self-esteem. The self-enhancement debate: some researchers argued that Japanese culture shows little self-enhancement; others argued that people in all cultures self-enhance on the traits their culture values (individualists on agentic traits, collectivists on communal ones). In India, both patterns appear depending on domain.
 :::
 
 :::recall
@@ -356,7 +356,7 @@ Humans don't respond to uncontrollable events in the same way. Abramson, Seligma
 | **Global versus specific** | "It ruins everything" | "It affects only this area" |
 A **pessimistic** style (internal, stable, global for bad events) leads to helplessness and depression after setbacks. It is measured by the **Attributional Style Questionnaire (ASQ)** or, from written or spoken material, by **content analysis of verbatim explanations (CAVE)**.
 
-The **hopelessness theory** (Abramson, Metalsky and Alloy, 1989) narrowed this: a specific "hopelessness depression" arises when stable and global attributions, inferences about consequences and inferences about the self lead to the expectation that bad things will happen and that nothing can be done.
+The **hopelessness theory** of Lyn Abramson and her colleagues narrowed this: a specific "hopelessness depression" arises when stable and global attributions, inferences about consequences and inferences about the self lead to the expectation that bad things will happen and that nothing can be done.
 
 :::widget worked
 {
@@ -383,7 +383,7 @@ The **hopelessness theory** (Abramson, Metalsky and Alloy, 1989) narrowed this: 
 Fifty years after the dog studies, Maier and Seligman (2016) revised their own theory using neuroscience: **passivity is the default** response to prolonged bad events (driven by brainstem serotonin systems); what animals **learn** is **control**, detected by the medial prefrontal cortex, which then switches off the passive default. In other words, it is not helplessness that is learnt, but **hope** (or control) that must be learnt.
 
 :::trap Explanatory style and depression: what the evidence allows
-The diathesis-stress pattern (pessimistic style + negative events = depression) has reasonable support, but effects are modest and the ASQ has only moderate reliability. Resilience programmes built on this theory, such as the **Penn Resiliency Program**, show **small** effects on depressive symptoms in school children that tend to fade (Brunwasser, Gillham and Kim, 2009). Present it as one vulnerability factor among many.
+The diathesis-stress pattern (pessimistic style + negative events = depression) has reasonable support, but effects are modest and the ASQ has only moderate reliability. Resilience programmes built on this theory, such as the **Penn Resiliency Program**, show **small** effects on depressive symptoms in school children that tend to fade. Present it as one vulnerability factor among many.
 :::
 
 :::clinician
@@ -439,8 +439,8 @@ Stages are meant to be **invariant** in order, **universal** across cultures and
 :::
 
 ### The critiques
-- **Gilligan's ethic of care**: Carol Gilligan's **In a Different Voice** (1982) argued that Kohlberg's original all-male sample and justice-centred scoring undervalued an **ethic of care** (responsibility, relationships, avoiding hurt) more often voiced by women. She described three levels: **orientation to individual survival**, **goodness as self-sacrifice**, and the **morality of non-violence** (care for self and others).
-- **But**: a meta-analysis (Jaffee and Hyde, 2000) found only **small** gender differences in care and justice orientations; both sexes use both, depending on the dilemma.
+- **Gilligan's ethic of care**: Carol Gilligan argued in 1982 that Kohlberg's original all-male sample and justice-centred scoring undervalued an **ethic of care** (responsibility, relationships, avoiding hurt) more often voiced by women. She described three levels: **orientation to individual survival**, **goodness as self-sacrifice**, and the **morality of non-violence** (care for self and others).
+- **But**: a 2000 meta-analysis found only **small** gender differences in care and justice orientations; both sexes use both, depending on the dilemma.
 - **Culture**: Snarey's review (1985) of studies in 27 countries found stages 1 to 4 almost everywhere, but stage 5 was rare and found mainly in urban, educated samples, which suggests the top of the scale reflects Western liberal values.
 
 ### An Indian challenge: Shweder's three ethics
@@ -639,7 +639,7 @@ Q: Levenson's IPC scale divides the external locus into:
 - Family and wider society
 > I (internal), P (powerful others), C (chance).
 
-Q: Arrange Mischel's work in time order: (1) CAPS (2) Personality and Assessment critique (3) Watts and colleagues' marshmallow replication (4) Bing Nursery delay studies.
+Q: Arrange Mischel's work in time order: (1) CAPS (2) the 1968 critique of traits (3) the large marshmallow replication (4) Bing Nursery delay studies.
 - 4, 2, 1, 3
 - 2, 1, 4, 3
 - *2, 4, 1, 3

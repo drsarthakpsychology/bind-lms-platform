@@ -11,12 +11,12 @@ They often go together but need not: a landlord may hold no strong feelings yet 
 
 ### How stereotypes form and stick
 - **Categorisation** is automatic and useful, but it brings **outgroup homogeneity** ("they are all alike; we are all different").
-- **Illusory correlation** (Hamilton and Gifford, 1976): when two rare things occur together (a minority group and an unusual behaviour), the pairing is especially memorable, so people overestimate how often it happens. In their study, both groups had the same ratio of good to bad behaviours, yet people judged the smaller group as worse.
+- **Illusory correlation**, shown by David Hamilton and Robert Gifford: when two rare things occur together (a minority group and an unusual behaviour), the pairing is especially memorable, so people overestimate how often it happens. In their study, both groups had the same ratio of good to bad behaviours, yet people judged the smaller group as worse.
 - **Subtyping**: someone who doesn't fit the stereotype is filed as an "exception", so the stereotype survives.
 - **Self-fulfilling prophecies and confirmation bias** keep stereotypes alive.
 
 ### The stereotype content model
-Susan Fiske and colleagues (2002) found that across many cultures, stereotypes sit on two dimensions: **warmth** (are they friend or foe?) and **competence** (can they act on their intentions?). Each combination brings its own emotion and its own form of discrimination:
+Susan Fiske and her team (2002) found that across many cultures, stereotypes sit on two dimensions: **warmth** (are they friend or foe?) and **competence** (can they act on their intentions?). Each combination brings its own emotion and its own form of discrimination:
 | | Low competence | High competence |
 |---|---|---|
 | **High warmth** | **Pity** (paternalistic prejudice): for example, older people and people with disabilities | **Admiration**: the ingroup and close allies |
@@ -38,9 +38,9 @@ Susan Fiske and colleagues (2002) found that across many cultures, stereotypes s
 :::
 
 ### Prejudice in the person
-- **The authoritarian personality** (Adorno and colleagues, 1950): harsh, status-conscious parenting produces people who are submissive to authority, hostile to outgroups and rigid in thinking, measured by the **F (fascism) scale**. Criticised for its psychoanalytic assumptions and because all items were worded in one direction (agreeing raised the score, so acquiescence inflated it).
+- **The authoritarian personality**, described by Theodor Adorno's group in 1950: harsh, status-conscious parenting produces people who are submissive to authority, hostile to outgroups and rigid in thinking, measured by the **F (fascism) scale**. Criticised for its psychoanalytic assumptions and because all items were worded in one direction (agreeing raised the score, so acquiescence inflated it).
 - **Right-wing authoritarianism** (Altemeyer): submission to authority, aggression towards those authority condemns, and conventionalism.
-- **Social dominance orientation** (Pratto, Sidanius and colleagues, 1994): a preference for group hierarchy and inequality.
+- **Social dominance orientation**, from Felicia Pratto and Jim Sidanius: a preference for group hierarchy and inequality.
 Duckitt's **dual-process model** links RWA to seeing the world as **dangerous** and SDO to seeing it as a **competitive jungle**.
 
 ### Prejudice that hides
@@ -54,7 +54,7 @@ When people fear confirming a negative stereotype about their group, the worry i
 
 :::widget decide
 {
-  "scene": "Hoff and Pandey (World Bank, 2004 to 2006) gave maze puzzles, with small cash rewards, to 11- and 12-year-old boys from high and low castes in villages in Uttar Pradesh. In one condition caste was not mentioned. In another, each boy's name, village and caste were announced to the mixed group before they began.",
+  "scene": "In the early 2000s, the economists Karla Hoff and Priyanka Pandey gave maze puzzles, with small cash rewards, to 11- and 12-year-old boys from high and low castes in villages in Uttar Pradesh. In one condition caste was not mentioned. In another, each boy's name, village and caste were announced to the mixed group before they began.",
   "ask": "Predict what happened.",
   "choices": [
     { "label": "Caste made no difference in either condition", "verdict": "ok", "outcome": "That was true only in the first condition.", "why": "When caste was not mentioned, low-caste and high-caste boys performed equally well." },
@@ -65,7 +65,7 @@ When people fear confirming a negative stereotype about their group, the worry i
 :::
 
 :::trap Stereotype threat: a replication note
-The core idea is plausible and widely taught, but the effect is **smaller and less reliable** than early studies suggested. Meta-analyses find signs of publication bias (Flore and Wicherts, 2015), and a large preregistered study in Dutch high schools found no effect on girls' maths scores (Flore, Mulder and Wicherts, 2018). In exams, describe it, give the classic study, and add that its size and generality are debated.
+The core idea is plausible and widely taught, but the effect is **smaller and less reliable** than early studies suggested. Meta-analyses find signs of publication bias, and a large preregistered study in Dutch high schools found no effect on girls' maths scores. In exams, describe it, give the classic study, and add that its size and generality are debated.
 :::
 
 ### Prejudice in India
@@ -143,7 +143,7 @@ Henri Tajfel asked a startling question: what is the **least** you need to make 
 }
 :::
 
-**Social identity theory** (Tajfel and Turner, 1979) has three steps: **social categorisation** (sorting people into groups), **social identification** (taking on the group as part of who you are), and **social comparison** (comparing your group with others to maintain **positive distinctiveness**).
+Tajfel and Turner's **social identity theory** has three steps: **social categorisation** (sorting people into groups), **social identification** (taking on the group as part of who you are), and **social comparison** (comparing your group with others to maintain **positive distinctiveness**).
 
 When a group has low status, its members have three strategies:
 | Strategy | When | Example |
@@ -152,7 +152,7 @@ When a group has low status, its members have three strategies:
 | **Social creativity** | Boundaries closed and the status system seems stable | Comparing on a new dimension, revaluing the trait ("Black is beautiful", "Dark is beautiful"), or comparing with a different group |
 | **Social competition** | The status difference seems illegitimate and unstable | Collective action, protest, political movements |
 
-**Self-categorisation theory** (Turner, 1987) extends this: which identity is active depends on the context, and when a group identity is salient we see ourselves as interchangeable members of it (depersonalisation).
+John Turner's **self-categorisation theory** extends this: which identity is active depends on the context, and when a group identity is salient we see ourselves as interchangeable members of it (depersonalisation).
 
 ### The contact hypothesis
 Gordon Allport (1954) proposed that contact between groups reduces prejudice under four conditions:
@@ -165,7 +165,7 @@ Pettigrew and Tropp's meta-analysis (2006) of **515 studies** with more than 250
 
 :::widget decide
 {
-  "scene": "Matt Lowe (American Economic Review, 2021) organised cricket leagues for about 800 young men in rural Uttar Pradesh. Players were randomly assigned to teams that were either all one caste or mixed-caste, and so also randomly faced opponents of the same or other castes.",
+  "scene": "In a 2021 field experiment, the economist Matt Lowe organised cricket leagues for about 800 young men in rural Uttar Pradesh. Players were randomly assigned to teams that were either all one caste or mixed-caste, and so also randomly faced opponents of the same or other castes.",
   "ask": "Predict the effect on friendships across caste lines.",
   "choices": [
     { "label": "Any contact with other castes, as teammates or opponents, increased cross-caste friendships", "verdict": "ok", "outcome": "Not quite. The type of contact mattered.", "why": "Contact is not one thing." },
@@ -177,13 +177,13 @@ Pettigrew and Tropp's meta-analysis (2006) of **515 studies** with more than 250
 
 ### Other ways to reduce conflict
 - **Superordinate goals** (Sherif).
-- **The jigsaw classroom** (Elliot Aronson, 1971, in newly desegregated schools in Austin, Texas): each pupil learns one part of a lesson and must teach it to the group, so everyone depends on everyone.
+- **The jigsaw classroom** (Elliot Aronson's method, first used in 1971 in newly desegregated schools in Austin, Texas): each pupil learns one part of a lesson and must teach it to the group, so everyone depends on everyone.
 - **Recategorisation**: the **common ingroup identity model** (Gaertner and Dovidio): help "us" and "them" become a larger "we" (for example, "Indians" rather than Hindus and Muslims), while dual identities ("Indian Muslim") often work better than asking people to drop a subgroup identity.
 - **Civic engagement**: Ashutosh Varshney's study of Hindu-Muslim relations (2002) compared pairs of Indian cities with similar populations, such as Aligarh and Calicut (Kozhikode). Cities where Hindus and Muslims were linked through **everyday associations** (business groups, trade unions, professional bodies, clubs) had far fewer riots. Associational ties gave leaders on both sides a way to stop rumours and contain violence.
-- **GRIT** (graduated and reciprocated initiatives in tension reduction; Charles Osgood, 1962): one side announces and makes a small conciliatory move, inviting the other side to reciprocate, then repeats.
+- **GRIT** (graduated and reciprocated initiatives in tension reduction, proposed by Charles Osgood): one side announces and makes a small conciliatory move, inviting the other side to reciprocate, then repeats.
 
 :::clinician
-Paluck, Green and Green's review (Behavioural Public Policy, 2019) of randomised contact studies found real but smaller effects than correlational work, few studies with adults or long follow-ups, and weaker effects for racial and ethnic prejudice than for other targets. Mousa (Science, 2020) found that Iraqi Christians assigned Muslim teammates in a football league were more likely to train with Muslims and vote for a Muslim player, but general attitudes changed little: behaviour towards specific outgroup members shifts more readily than abstract attitudes. Two further cautions: the "sedative" effect of contact (positive contact can reduce disadvantaged groups' support for collective action against inequality; Saguy and colleagues, 2009), and negative contact, which has a stronger per-encounter effect than positive contact (Barlow and colleagues, 2012). In clinical training, the same logic underlies contact-based anti-stigma programmes (for example, people with lived experience of mental illness speaking to students), which outperform education alone in the short term.
+A 2019 review of randomised contact studies found real but smaller effects than correlational work, few studies with adults or long follow-ups, and weaker effects for racial and ethnic prejudice than for other targets. A 2020 field experiment found that Iraqi Christians assigned Muslim teammates in a football league were more likely to train with Muslims and vote for a Muslim player, but general attitudes changed little: behaviour towards specific outgroup members shifts more readily than abstract attitudes. Two further cautions: the "sedative" effect of contact (positive contact can reduce disadvantaged groups' support for collective action against inequality), and negative contact, which has a stronger per-encounter effect than positive contact. In clinical training, the same logic underlies contact-based anti-stigma programmes (for example, people with lived experience of mental illness speaking to students), which outperform education alone in the short term.
 :::
 
 :::recall
@@ -230,7 +230,7 @@ Q: A low-status group that cannot leave its group, and sees the hierarchy as sta
   "ask": "Predict: among students with high empathy, did easy escape reduce helping?",
   "choices": [
     { "label": "Yes; when they could just leave, they left", "verdict": "ok", "outcome": "That happened in the low-empathy group, not the high-empathy group.", "why": "If helping were only about reducing our own distress, leaving would be the cheapest way out." },
-    { "label": "No; high-empathy students mostly offered to take her place, even when they could easily leave", "verdict": "best", "outcome": "Correct. Empathic concern led to helping whether escape was easy or hard. Low-empathy students helped mainly when escape was hard.", "why": "Batson argued this shows a truly altruistic motive. Critics (Cialdini and colleagues) argued that empathy also creates a sense of 'oneness' with the victim, so helping may still serve the self. The debate continues." },
+    { "label": "No; high-empathy students mostly offered to take her place, even when they could easily leave", "verdict": "best", "outcome": "Correct. Empathic concern led to helping whether escape was easy or hard. Low-empathy students helped mainly when escape was hard.", "why": "Batson argued this shows a truly altruistic motive. Critics, including Robert Cialdini, argued that empathy also creates a sense of 'oneness' with the victim, so helping may still serve the self. The debate continues." },
     { "label": "No one offered to help in any condition", "verdict": "ok", "outcome": "Many students offered to take the shocks.", "why": "Helping varied in a clear pattern by empathy and escape." }
   ]
 }
@@ -240,7 +240,7 @@ Q: A low-status group that cannot leave its group, and sees the hierarchy as sta
 On a night in March 1964, **Kitty Genovese** was murdered outside her apartment in New York. The *New York Times* reported that 38 neighbours watched and did nothing. The story became the most famous example of bystander apathy.
 
 :::trap The Kitty Genovese story was exaggerated
-Later investigation (Manning, Levine and Collins, American Psychologist, 2007) found that few witnesses saw the attack clearly, most heard only part of it, and at least one or two called the police. The parable of "38 silent witnesses" is largely a myth, but it inspired research that is real.
+A 2007 re-examination of the case found that few witnesses saw the attack clearly, most heard only part of it, and at least one or two called the police. The parable of "38 silent witnesses" is largely a myth, but it inspired research that is real.
 :::
 
 Bibb Latané and John Darley wondered whether the presence of others, rather than coldness, explained the inaction. In their **seizure study** (1968), students talked over an intercom about college life, each alone in a booth. One "participant" (a recording) mentioned he had seizures, then later seemed to have one, choking and calling for help.
@@ -253,7 +253,7 @@ Bibb Latané and John Darley wondered whether the presence of others, rather tha
   "unit": "%",
   "answer": [25, 38],
   "reveal": "**31%**. The more people a student thought were listening, the less likely and the slower they were to help. Nobody was cold: those who didn't act were often trembling and anxious. They were stuck, each assuming someone else would act.",
-  "clinician": "Darley and Latané (JPSP, 1968): helping before the end of the seizure was 85% in two-person groups, 62% in three-person groups and 31% in six-person groups. In the 'smoke-filled room' study (Latané and Darley, 1968), 75% of people alone reported smoke pouring into the room; with two passive confederates, only 10% did."
+  "clinician": "Darley and Latané's figures: helping before the end of the seizure was 85% in two-person groups, 62% in three-person groups and 31% in six-person groups. In the 'smoke-filled room' study, 75% of people alone reported smoke pouring into the room; with two passive confederates, only 10% did."
 }
 :::
 
@@ -287,13 +287,13 @@ Helping requires a person to pass all five; the presence of others can block sev
 - **Similarity** and perceived **deservingness**: we help people like us and those whose need seems uncontrollable (Weiner).
 - **Rural versus urban**: helping is lower in big, dense cities (Milgram's urban overload idea, and Levine's cross-city field studies).
 - **Competence**: trained people (nurses, first-aiders) help more in medical emergencies.
-- **Being one of a group** that shares an identity with the victim increases helping (Levine and colleagues: football fans helped an injured stranger more if he wore their team's shirt).
+- **Being one of a group** that shares an identity with the victim increases helping (in one UK study, football fans helped an injured stranger more if he wore their team's shirt).
 
 ### Applying it in India: the Good Samaritan law
 India loses well over a lakh and a half of lives on its roads each year. For decades, bystanders hesitated to help accident victims partly from **fear of police questioning, court visits and hospital demands**: audience inhibition and high costs in Piliavin's model. In **SaveLIFE Foundation v. Union of India (2016)**, the Supreme Court gave legal force to guidelines protecting Good Samaritans, and the **Motor Vehicles (Amendment) Act, 2019** (Section 134A) protects anyone who helps an accident victim in good faith from civil or criminal liability, and from being forced to give their identity. This is social psychology turned into law: lowering the costs of helping.
 
 :::clinician
-Fischer and colleagues' meta-analysis (Psychological Bulletin, 2011; 105 effect sizes, over 7,700 participants) confirmed the bystander effect but found it **weaker in dangerous emergencies**, when the perpetrator is present, and when the other bystanders are friends rather than strangers: dangerous situations are recognised faster as emergencies, and others can provide physical support. Philpot and colleagues (American Psychologist, 2020) analysed CCTV footage of 219 real public conflicts in Lancaster, Amsterdam and Cape Town: at least one bystander intervened in about **9 of 10** incidents, and the chance that **someone** intervened rose with the number of bystanders. The individual-level bystander effect and group-level helping can coexist. The Piliavin "subway" field experiment (1969) found a man with a cane who collapsed was helped very quickly in almost every trial, and a man who seemed drunk about half the time, with no diffusion of responsibility, because subway passengers could not leave. For clinicians: bystander intervention training (notice, interpret, take responsibility, know how) is the basis of gatekeeper suicide-prevention programmes and of ward safety cultures.
+A 2011 meta-analysis (105 effect sizes, over 7,700 participants) confirmed the bystander effect but found it **weaker in dangerous emergencies**, when the perpetrator is present, and when the other bystanders are friends rather than strangers: dangerous situations are recognised faster as emergencies, and others can provide physical support. A 2020 study analysed CCTV footage of 219 real public conflicts in Lancaster, Amsterdam and Cape Town: at least one bystander intervened in about **9 of 10** incidents, and the chance that **someone** intervened rose with the number of bystanders. The individual-level bystander effect and group-level helping can coexist. The Piliavin "subway" field experiment (1969) found a man with a cane who collapsed was helped very quickly in almost every trial, and a man who seemed drunk about half the time, with no diffusion of responsibility, because subway passengers could not leave. For clinicians: bystander intervention training (notice, interpret, take responsibility, know how) is the basis of gatekeeper suicide-prevention programmes and of ward safety cultures.
 :::
 
 :::recall
@@ -318,7 +318,7 @@ Q: Which finding most challenges the idea that bystanders rarely help in real co
 - *CCTV analyses of real public conflicts
 - The smoke-filled room study
 - The Good Samaritan study with trainee priests
-> Philpot and colleagues found intervention in about 9 of 10 incidents.
+> CCTV studies found intervention in about 9 of 10 incidents.
 :::
 
 ## 3.4 Aggression: theories and reduction [core][advanced]
@@ -366,7 +366,7 @@ In 1961, Bandura, Ross and Ross showed nursery-school children an adult who eith
 Many studies link violent media with short-term increases in aggressive thoughts, feelings and minor aggression. The **American Psychological Association** (2015, reaffirmed 2020) concluded that violent video games are associated with increased aggression, but that there is **not enough evidence** to link them to criminal violence. Ferguson and others argue even the aggression effects are small and inflated by poor measures. In India, a cluster of **mob lynchings in 2017 and 2018**, fuelled by forwarded rumours of child kidnappers, showed rumour, deindividuation and group polarisation working together; WhatsApp responded by limiting message forwarding in India.
 
 ### Reducing aggression
-- **Catharsis does not work**: venting anger on a punching bag **increases** later aggression (Bushman, 2002). Thinking about something else works better.
+- **Catharsis does not work**: venting anger on a punching bag **increases** later aggression. Thinking about something else works better.
 - **Punishment** works only when it is quick, certain and seen as fair, and it models aggression.
 - **Modelling non-aggressive responses**, teaching social and emotional skills, anger-management (cognitive restructuring, relaxation, problem solving) and reducing exposure to aggressive cues.
 - **Apology** and **empathy training** reduce retaliation.
@@ -387,7 +387,7 @@ Many studies link violent media with short-term increases in aggressive thoughts
 :::
 
 :::clinician
-Biological findings need careful framing. The meta-analytic correlation between testosterone and aggression in humans is small (around r of 0.08; Archer, Neuroscience and Biobehavioral Reviews, 2006), and the relationship is bidirectional (competition and status challenges raise testosterone). The MAOA-by-maltreatment interaction (Caspi and colleagues, Science, 2002) has partial meta-analytic support but small effects and is not usable for individual prediction or in court. Clinically, reactive aggression is associated with threat hypersensitivity and poor prefrontal regulation (for example in PTSD, intermittent explosive disorder and some brain injuries), whereas proactive aggression with callous-unemotional traits is associated with reduced amygdala response to others' distress. The general aggression model informs violence-risk interventions, and structured professional judgment tools (such as the HCR-20) combine historical, clinical and risk-management factors that map loosely onto person and situation inputs.
+Biological findings need careful framing. The meta-analytic correlation between testosterone and aggression in humans is small (around r of 0.08 in a 2006 meta-analysis), and the relationship is bidirectional (competition and status challenges raise testosterone). The MAOA-by-maltreatment interaction (first reported in 2002) has partial meta-analytic support but small effects and is not usable for individual prediction or in court. Clinically, reactive aggression is associated with threat hypersensitivity and poor prefrontal regulation (for example in PTSD, intermittent explosive disorder and some brain injuries), whereas proactive aggression with callous-unemotional traits is associated with reduced amygdala response to others' distress. The general aggression model informs violence-risk interventions, and structured professional judgment tools (such as the HCR-20) combine historical, clinical and risk-management factors that map loosely onto person and situation inputs.
 :::
 
 :::recall
@@ -420,7 +420,7 @@ The same density can feel cosy at a family wedding and unbearable in a hospital 
 Three explanations of crowding stress:
 | Model | Idea |
 |---|---|
-| **Stimulus overload** (Milgram, 1970) | Too much input; people cope by filtering out, including filtering out other people's needs |
+| **Stimulus overload** (Milgram's urban overload idea) | Too much input; people cope by filtering out, including filtering out other people's needs |
 | **Behavioural constraint / loss of control** | Others restrict what we can do |
 | **Density-intensity** (Freedman) | Density intensifies whatever we already feel: pleasant situations feel more pleasant, unpleasant ones more unpleasant |
 
@@ -434,7 +434,7 @@ Edward Hall (1966) described four **distance zones** in **proxemics**:
 | **Personal** | About half a metre to just over a metre | Friends, ordinary conversation |
 | **Social** | About 1 to 3.5 metres | Business, formal meetings, a doctor across a desk |
 | **Public** | More than about 3.5 metres | Lectures, speeches |
-Distances vary by culture (Hall's **contact** cultures, such as Arab and southern European, stand closer), by gender, by relationship and by status. When personal space is invaded, people show stress, avoid eye contact or leave (Felipe and Sommer, 1966, sat uncomfortably close to people in a library and on a hospital ground; most moved away within minutes).
+Distances vary by culture (Hall's **contact** cultures, such as Arab and southern European, stand closer), by gender, by relationship and by status. When personal space is invaded, people show stress, avoid eye contact or leave (in a classic 1966 study, researchers sat uncomfortably close to people in a library and on a hospital ground; most moved away within minutes).
 
 :::widget guess
 {
@@ -491,7 +491,7 @@ Key eyewitness findings and reforms:
 - **Weapon focus**: attention goes to a weapon, not the face.
 - **Own-race (cross-race) bias**: we recognise faces of our own group better.
 - **Misinformation effect**: post-event information is absorbed into memory.
-- **Confidence**: confidence at the **first, fair identification** is fairly diagnostic; confidence inflated later (after feedback, repeated questioning or seeing the accused on TV) is not (Wixted and Wells, 2017).
+- **Confidence**: confidence at the **first, fair identification** is fairly diagnostic; confidence inflated later (after feedback, repeated questioning or seeing the accused on TV) is not.
 - **Line-up reforms**: double-blind administration (the officer doesn't know who the suspect is), fair fillers, a warning that the culprit may not be present, and recording confidence immediately.
 
 **False confessions**: Kassin and Kiechel (1996) falsely accused students of crashing a computer by pressing a forbidden key. Most signed a written confession, and some even "remembered" details, especially when a confederate claimed to have seen them do it. **Indian law** has engaged directly with interrogation psychology: in **Selvi v. State of Karnataka (2010)**, the Supreme Court held that **narco-analysis, polygraph and brain-mapping tests** cannot be done without consent, as they violate the right against self-incrimination (Article 20(3)). India stopped using jury trials after the 1960s; judges decide facts, so research on jury decision-making applies mainly to judicial bias and to other countries.
@@ -503,7 +503,7 @@ Key eyewitness findings and reforms:
 - The **Seville Statement on Violence** (1986), signed by scientists from many countries, argued that biology does not make war inevitable.
 
 :::clinician
-Environmental psychology also covers pro-environmental behaviour. Descriptive-norm messages outperform appeals to the environment: in Goldstein, Cialdini and Griskevicius's hotel study (Journal of Consumer Research, 2008), "most guests who stayed in this room reused their towels" raised reuse to about 49% versus about 37% for the standard environmental message. Social norms can backfire when the norm is bad ("so many people litter here"). In India, the Chipko movement of the 1970s is a classic case study of community-based environmental collective action. For law: Indian courts' reliance on "expert opinion" under the Bharatiya Sakshya Adhiniyam 2023 (which replaced the Indian Evidence Act) raises the same issues of eyewitness reliability and suggestibility that Gudjonsson's suggestibility scales address. Peace psychology in India includes research on youth in conflict-affected Kashmir and the North-East, showing high rates of trauma exposure and the protective roles of community and religious coping.
+Environmental psychology also covers pro-environmental behaviour. Descriptive-norm messages outperform appeals to the environment: in a 2008 hotel study, "most guests who stayed in this room reused their towels" raised reuse to about 49% versus about 37% for the standard environmental message. Social norms can backfire when the norm is bad ("so many people litter here"). In India, the Chipko movement of the 1970s is a classic case study of community-based environmental collective action. For law: Indian courts' reliance on "expert opinion" under the Bharatiya Sakshya Adhiniyam 2023 (which replaced the Indian Evidence Act) raises the same issues of eyewitness reliability and suggestibility that Gudjonsson's suggestibility scales address. Peace psychology in India includes research on youth in conflict-affected Kashmir and the North-East, showing high rates of trauma exposure and the protective roles of community and religious coping.
 :::
 
 :::recall
@@ -532,7 +532,7 @@ Q: Which line-up procedure is most recommended by eyewitness research?
 :::
 
 ## 3.6 The replication crisis: what held up and what did not [core][advanced]
-From about 2011, social psychology faced a crisis of confidence. Three events triggered it: a respected journal published apparent evidence for **precognition** (Bem, 2011) using standard methods, which made people ask whether the standard methods were the problem; a prominent Dutch researcher, **Diederik Stapel**, was found to have **fabricated** data in dozens of papers; and Simmons, Nelson and Simonsohn showed how ordinary flexible practices could make almost anything look significant ("false-positive psychology", 2011).
+From about 2011, social psychology faced a crisis of confidence. Three events triggered it: a respected journal published apparent evidence for **precognition** (by Daryl Bem, in 2011) using standard methods, which made people ask whether the standard methods were the problem; a prominent Dutch researcher, **Diederik Stapel**, was found to have **fabricated** data in dozens of papers; and Simmons, Nelson and Simonsohn showed how ordinary flexible practices could make almost anything look significant (they called it "false-positive psychology").
 
 ### Why findings failed
 - **Small samples** (low statistical power) make chance findings and inflated effects common.
@@ -547,8 +547,8 @@ From about 2011, social psychology faced a crisis of confidence. Three events tr
   "buckets": ["Held up well", "Real but smaller or contested", "Largely failed"],
   "items": [
     { "text": "Anchoring: arbitrary numbers bias estimates", "bucket": 0 },
-    { "text": "Ego depletion: self-control is a resource that one task 'uses up'", "bucket": 2, "why": "Multi-lab replications (Hagger and colleagues, 2016, 23 labs; Vohs and colleagues, 2021, 36 labs) found effects close to zero." },
-    { "text": "Power posing raises testosterone and risk-taking", "bucket": 2, "why": "Hormone and behaviour effects failed to replicate (Ranehill and colleagues, 2015); the first author of the original study later said she no longer believed the effects were real. Small effects on self-reported feelings of power are still debated." },
+    { "text": "Ego depletion: self-control is a resource that one task 'uses up'", "bucket": 2, "why": "Multi-lab replications (23 labs in 2016; 36 labs in 2021) found effects close to zero." },
+    { "text": "Power posing raises testosterone and risk-taking", "bucket": 2, "why": "Hormone and behaviour effects failed to replicate (in a 2015 study of 200 people); the first author of the original study later said she no longer believed the effects were real. Small effects on self-reported feelings of power are still debated." },
     { "text": "The bystander effect", "bucket": 1, "why": "Confirmed by meta-analysis, but weaker in dangerous emergencies; and in real conflicts someone usually intervenes." },
     { "text": "Behavioural priming: reading words about old age makes you walk slowly", "bucket": 2 },
     { "text": "Gain versus loss framing changes choices", "bucket": 0 },
@@ -564,11 +564,11 @@ From about 2011, social psychology faced a crisis of confidence. Three events tr
 In 1971, Philip Zimbardo turned a basement at Stanford University into a mock prison. Student volunteers were randomly assigned as "guards" or "prisoners". The study was stopped after six days instead of two weeks because some guards became abusive and some prisoners broke down. For decades it was taught as proof that roles and situations alone can turn ordinary people cruel.
 
 :::trap Why the Stanford prison experiment is now treated as a demonstration, not evidence
-- **Guards were coached**. Recordings and archives (Le Texier, American Psychologist, 2019) show the guards were briefed and encouraged to be "tough", and the researchers themselves ran the prison.
+- **Guards were coached**. Recordings and archives, analysed by the historian Thibault Le Texier, show the guards were briefed and encouraged to be "tough", and the researchers themselves ran the prison.
 - **Demand characteristics**: participants may have acted out what they thought the researchers wanted.
 - **One study, small sample, no control group, never properly published** as a peer-reviewed experiment.
-- **The BBC Prison Study** (Haslam and Reicher, 2002) did not find guards spontaneously becoming tyrannical. Tyranny emerged only when a group shared an identity and a leader legitimised it.
-- **Self-selection**: Carnes and McFarland (2007) found that an advert for a "study of prison life" attracted people higher in aggressiveness and authoritarianism than an advert for a "psychological study".
+- **The BBC Prison Study** (run by Alex Haslam and Steve Reicher in 2002) did not find guards spontaneously becoming tyrannical. Tyranny emerged only when a group shared an identity and a leader legitimised it.
+- **Self-selection**: a 2007 study found that an advert for a "study of prison life" attracted people higher in aggressiveness and authoritarianism than an advert for a "psychological study".
 In an exam: describe it, then critically evaluate with these points and give the social identity reinterpretation.
 :::
 
@@ -592,7 +592,7 @@ In an exam: describe it, then critically evaluate with these points and give the
 :::
 
 :::clinician
-Quantitatively: the Open Science Collaboration (Science, 2015) found 36% of 97 significant original effects replicated at p below 0.05, with replication effect sizes on average half the originals; Camerer and colleagues (Nature Human Behaviour, 2018) replicated 13 of 21 social science studies from Nature and Science, again at about half the original effect size; and prediction markets of researchers forecast which studies would replicate surprisingly well, suggesting the field "knew" which findings were fragile. Ego depletion: Baumeister and colleagues' radish-and-cookie study (1998) and Hagger and colleagues' 2010 meta-analysis (d of about 0.6) contrast with the 2016 registered replication (23 labs, about 2,100 participants, d of about 0.04) and Vohs and colleagues 2021 (36 labs, about 3,500 participants, d of about 0.06), with the earlier meta-analytic estimate attributed largely to publication bias. Implications for clinicians: interventions built on fragile findings (for example, "glucose restores willpower") should not be taught to patients as established. Apply the same scepticism to small, unreplicated clinical trials and to effects reported without confidence intervals.
+Quantitatively: the 2015 Open Science Collaboration found 36% of 97 significant original effects replicated at p below 0.05, with replication effect sizes on average half the originals; a 2018 project replicated 13 of 21 social science studies from two of the most prestigious general science journals, again at about half the original effect size; and prediction markets of researchers forecast which studies would replicate surprisingly well, suggesting the field "knew" which findings were fragile. Ego depletion: Roy Baumeister's 1998 radish-and-cookie study and a 2010 meta-analysis (d of about 0.6) contrast with the 2016 registered replication (23 labs, about 2,100 participants, d of about 0.04) and a 2021 multisite test (36 labs, about 3,500 participants, d of about 0.06), with the earlier meta-analytic estimate attributed largely to publication bias. Implications for clinicians: interventions built on fragile findings (for example, "glucose restores willpower") should not be taught to patients as established. Apply the same scepticism to small, unreplicated clinical trials and to effects reported without confidence intervals.
 :::
 
 :::recall

@@ -63,7 +63,7 @@ Every approach is a different lens, not a rival answer to the same question. A t
 :::
 
 :::clinician
-Dan McAdams's three-level framework is a useful integration for postgraduate answers: **Level 1, dispositional traits** (broad, decontextualised, comparative: the Big Five); **Level 2, characteristic adaptations** (goals, values, coping strategies, schemas, attachment styles, contextualised in time and role); **Level 3, integrative life narratives** (the internalised, evolving story a person constructs to give life unity and purpose). The levels are only modestly correlated, so knowing someone's traits does not tell you their life story. McAdams and Pals (American Psychologist, 2006) added evolution and culture as frames around all three. This maps neatly onto the theories in this module: trait theories (level 1), social-cognitive and humanistic theories (level 2), and narrative and existential approaches (level 3).
+Dan McAdams's three-level framework is a useful integration for postgraduate answers: **Level 1, dispositional traits** (broad, decontextualised, comparative: the Big Five); **Level 2, characteristic adaptations** (goals, values, coping strategies, schemas, attachment styles, contextualised in time and role); **Level 3, integrative life narratives** (the internalised, evolving story a person constructs to give life unity and purpose). The levels are only modestly correlated, so knowing someone's traits does not tell you their life story. McAdams and Pals later added evolution and culture as frames around all three. This maps neatly onto the theories in this module: trait theories (level 1), social-cognitive and humanistic theories (level 2), and narrative and existential approaches (level 3).
 :::
 
 :::recall
@@ -116,7 +116,7 @@ Allport (1897 to 1967) saw traits as **real structures inside the person** (neur
 - **Central**: the handful (Allport thought about five to ten) you would mention in a reference letter: honest, warm, ambitious.
 - **Secondary**: narrower preferences and attitudes that appear only in some situations ("hates waiting in queues").
 
-**Common traits versus personal dispositions**: common traits allow comparison across people (nomothetic); personal dispositions are unique to each person (idiographic). Allport favoured studying the individual, for example through **Letters from Jenny** (1965), an analysis of 301 letters an older woman wrote over eleven years.
+**Common traits versus personal dispositions**: common traits allow comparison across people (nomothetic); personal dispositions are unique to each person (idiographic). Allport favoured studying the individual, for example through his analysis of 301 letters an older woman wrote over eleven years.
 
 **The proprium**: Allport's word for the self, the parts of personality that feel central and "mine". It develops through stages: bodily self, self-identity, self-esteem, self-extension, self-image, self as rational coper, and **propriate striving** (long-term goals).
 
@@ -146,7 +146,7 @@ Exams ask for the two types. **Perseverative** = low-level repetitive habits. **
 :::
 
 :::clinician
-The lexical hypothesis has been tested across many languages, including Hindi-related and other Indian lexical work, with broadly similar large factors emerging, though the number and content of factors depend on which words are included (for example, whether evaluative terms like "good" and "evil" are retained, which tends to yield a sixth honesty-related factor). On MBTI stability: test-retest studies report that a substantial minority to about half of respondents change at least one of the four letters on retest after short intervals, because type assignment dichotomises continuous scores near the midpoint (Pittenger, 2005). Type A: early prospective studies (the Western Collaborative Group Study) found an association with coronary heart disease that later trials such as MRFIT did not confirm; meta-analyses identify hostility and anger as the toxic component, and modern work emphasises "Type D" (negative affectivity with social inhibition), whose prognostic value in cardiac patients is itself inconsistent across large samples.
+The lexical hypothesis has been tested across many languages, including Hindi-related and other Indian lexical work, with broadly similar large factors emerging, though the number and content of factors depend on which words are included (for example, whether evaluative terms like "good" and "evil" are retained, which tends to yield a sixth honesty-related factor). On MBTI stability: test-retest studies report that a substantial minority to about half of respondents change at least one of the four letters on retest after short intervals, because type assignment dichotomises continuous scores near the midpoint. Type A: early prospective studies (the Western Collaborative Group Study) found an association with coronary heart disease that later trials such as MRFIT did not confirm; meta-analyses identify hostility and anger as the toxic component, and modern work emphasises "Type D" (negative affectivity with social inhibition), whose prognostic value in cardiac patients is itself inconsistent across large samples.
 :::
 
 :::recall
@@ -213,7 +213,7 @@ Eysenck combined factor analysis with **hypothesis testing** and **biology**. He
 }
 :::
 
-**Measures**: the Maudsley Personality Inventory, then the Eysenck Personality Inventory (E and N, with a Lie scale), and the **Eysenck Personality Questionnaire (EPQ)**, which added P.
+**Measures**: an early inventory named after his London hospital, then the Eysenck Personality Inventory (E and N, with a Lie scale), and the **Eysenck Personality Questionnaire (EPQ)**, which added P.
 
 :::trap Two critiques to write in every Eysenck answer
 1. **The P scale is the weakest part**: low reliability, odd item content, and it mixes low agreeableness with low conscientiousness. The Big Five splits it into those two.
@@ -305,7 +305,7 @@ Both spell the five: **O**penness, **C**onscientiousness, **E**xtraversion, **A*
 McCrae and Costa's **five-factor theory** separates **basic tendencies** (the five traits, which they see as largely biological, like temperament) from **characteristic adaptations** (habits, attitudes, roles, relationships, which are shaped by culture and experience). Traits influence adaptations, not the other way round, in their view. This is a strong and controversial claim, because traits do change somewhat with life experience.
 
 ### Is it universal?
-McCrae and Terracciano (2005) had people in **50 cultures** (including India) rate someone they knew well. The same five factors appeared in most cultures, supporting a broadly universal structure. Problems appear in some non-literate and rural samples, where five-factor structure replicates less cleanly, and in some Asian languages extra factors appear (for example, an "interpersonal relatedness" factor in Chinese research by Cheung and colleagues).
+McCrae and Terracciano (2005) had people in **50 cultures** (including India) rate someone they knew well. The same five factors appeared in most cultures, supporting a broadly universal structure. Problems appear in some non-literate and rural samples, where five-factor structure replicates less cleanly, and in some Asian languages extra factors appear (for example, an "interpersonal relatedness" factor in Chinese research).
 
 ### HEXACO: a sixth factor
 Kibeom Lee and Michael Ashton re-analysed lexical studies in many languages and found **six** factors: **H**onesty-Humility, **E**motionality, e**X**traversion, **A**greeableness, **C**onscientiousness and **O**penness.
@@ -320,13 +320,13 @@ Kibeom Lee and Michael Ashton re-analysed lexical studies in many languages and 
   "max": 100,
   "unit": "%",
   "answer": [35, 50],
-  "reveal": "About **40%** on average (a meta-analysis by Vukasović and Bratko, 2015). Most of the rest is **non-shared environment** and measurement error. The **shared** family environment adds surprisingly little to adult personality.",
+  "reveal": "About **40%** on average (from a 2015 meta-analysis). Most of the rest is **non-shared environment** and measurement error. The **shared** family environment adds surprisingly little to adult personality.",
   "clinician": "Heritability is a population statistic: it describes the proportion of variance in a given population and environment, not how much of one person's trait is 'genetic'. Twin estimates (about 40 to 50%) are larger than SNP-based heritability from molecular studies (often 10 to 20%), the 'missing heritability' problem, attributed to many very small effects, rare variants and non-additive effects."
 }
 :::
 
 ### What the Big Five predicts
-Roberts and colleagues (2007) reviewed long-term studies and found that personality traits predict **mortality, divorce and occupational success** about as well as socioeconomic status and IQ do.
+Brent Roberts and his team (2007) reviewed long-term studies and found that personality traits predict **mortality, divorce and occupational success** about as well as socioeconomic status and IQ do.
 - **Conscientiousness**: longevity, health behaviours, academic performance, job performance (the most consistent predictor across jobs), and lower risk of dementia.
 - **Neuroticism**: depression, anxiety, poorer physical health, marital dissatisfaction.
 - **Extraversion**: positive emotion, leadership emergence, sales success.
@@ -334,7 +334,7 @@ Roberts and colleagues (2007) reviewed long-term studies and found that personal
 - **Openness**: creativity, liberal political attitudes, educational attainment.
 
 :::clinician
-Correlations are modest at the individual level (typically r of 0.1 to 0.3) but consequential at scale, as Roberts and colleagues (Perspectives on Psychological Science, 2007) argued. The DSM-5 alternative model of personality disorders (Section III) and ICD-11's trait qualifiers both draw on maladaptive versions of the five-factor space: negative affectivity (neuroticism), detachment (low extraversion), antagonism or dissociality (low agreeableness), disinhibition (low conscientiousness), and psychoticism (DSM-5) or anankastia (ICD-11; extreme conscientiousness), which is why trait psychology is now part of diagnosis. In India, the NEO-PI-R, NEO-FFI and the Big Five Inventory have been translated and normed in several languages (Hindi, Marathi, Tamil, Bengali and others), with broadly similar structure but generally lower internal consistencies for openness and agreeableness in some samples; use local norms where available. The Big Five do not capture everything: religiosity, honesty-humility, values, attractiveness and abilities are partly outside the five.
+Correlations are modest at the individual level (typically r of 0.1 to 0.3) but consequential at scale, as Brent Roberts and his team argued in 2007. The DSM-5 alternative model of personality disorders (Section III) and ICD-11's trait qualifiers both draw on maladaptive versions of the five-factor space: negative affectivity (neuroticism), detachment (low extraversion), antagonism or dissociality (low agreeableness), disinhibition (low conscientiousness), and psychoticism (DSM-5) or anankastia (ICD-11; extreme conscientiousness), which is why trait psychology is now part of diagnosis. In India, the NEO-PI-R, NEO-FFI and the Big Five Inventory have been translated and normed in several languages (Hindi, Marathi, Tamil, Bengali and others), with broadly similar structure but generally lower internal consistencies for openness and agreeableness in some samples; use local norms where available. The Big Five do not capture everything: religiosity, honesty-humility, values, attractiveness and abilities are partly outside the five.
 :::
 
 :::recall
@@ -478,7 +478,7 @@ Q: Low scorers on HEXACO Honesty-Humility are most likely to be:
 If traits are real, people should behave consistently. Do they?
 
 ### The person-situation debate
-In **Personality and Assessment** (1968), Walter Mischel argued that the correlation between a trait score and behaviour in any single situation rarely exceeds about 0.30, a ceiling he called the **personality coefficient**. A child who is honest in one test (not cheating on an exam) may not be honest in another (not stealing coins), as Hartshorne and May had found in the 1920s. Mischel concluded that behaviour depends heavily on the situation.
+In a famous 1968 critique, Walter Mischel argued that the correlation between a trait score and behaviour in any single situation rarely exceeds about 0.30, a ceiling he called the **personality coefficient**. A child who is honest in one test (not cheating on an exam) may not be honest in another (not stealing coins), as Hartshorne and May had found in the 1920s. Mischel concluded that behaviour depends heavily on the situation.
 
 :::widget guess
 {
@@ -489,21 +489,21 @@ In **Personality and Assessment** (1968), Walter Mischel argued that the correla
   "unit": "r",
   "answer": [0.25, 0.35],
   "reveal": "About **0.30**. That means a trait explains under a tenth of the variation in one behaviour. But Funder and Ozer showed that the classic **situational** effects in social psychology (Milgram, bystanders) are about the same size when converted to correlations: around 0.3 to 0.4.",
-  "clinician": "Funder and Ozer (JPSP, 1983) converted famous situational effects to correlations and found values of roughly 0.36 to 0.42, comparable to the 'personality coefficient'. Richard, Bond and Stokes-Zoota (2003) found the average social psychology effect was about r of 0.21. Neither persons nor situations dominate; both matter."
+  "clinician": "In 1983, David Funder and Daniel Ozer converted famous situational effects to correlations and found values of roughly 0.36 to 0.42, comparable to the 'personality coefficient'. A 2003 review of a century of research found the average social psychology effect was about r of 0.21. Neither persons nor situations dominate; both matter."
 }
 :::
 
 ### How the debate was resolved
-1. **Aggregation** (Seymour Epstein, 1979): one behaviour is a poor sample. Averaged over many occasions, trait-behaviour correlations rise sharply (often to 0.6 or more), just as one exam question is a poor test of knowledge but a full paper is good.
+1. **Aggregation**, shown by Seymour Epstein: one behaviour is a poor sample. Averaged over many occasions, trait-behaviour correlations rise sharply (often to 0.6 or more), just as one exam question is a poor test of knowledge but a full paper is good.
 2. **Interactionism**: behaviour = person **and** situation **and** their interaction. Some people are consistent in some areas (Bem and Allen's "predicting some of the people some of the time").
 3. **Strong versus weak situations**: in strong situations (a funeral, a red traffic light) everyone behaves alike; in weak, ambiguous ones (a party), traits show.
 4. **Whole trait theory** (William Fleeson): people vary a lot from moment to moment, but each person's **average** and **range** across many moments (a "density distribution") is very stable. Traits describe the centre of a distribution of states.
 5. **If-then signatures** (Mischel and Shoda, section 2.6): consistency lies in a person's stable **pattern** of reacting to particular situations.
 
 ### Are traits stable over life?
-- **Rank-order stability** (do you keep your position compared with others?) rises with age: about 0.3 in childhood, about 0.5 in college years, about 0.6 at 30, and peaks around 0.7 to 0.75 between 50 and 70 (Roberts and DelVecchio, 2000). Personality is never "set like plaster", in William James's phrase, but it does become more consistent.
-- **Mean-level change**: people on average become **more conscientious, more agreeable and less neurotic** from adolescence into middle age: the **maturity principle** (Roberts, Walton and Viechtbauer, 2006). Social roles (work, partnership, parenting) are thought to drive some of this (social investment theory).
-- **Therapy changes traits**: a meta-analysis (Roberts and colleagues, 2017) found that psychological interventions produced noticeable decreases in neuroticism over a few months, with gains that lasted.
+- **Rank-order stability** (do you keep your position compared with others?) rises with age: about 0.3 in childhood, about 0.5 in college years, about 0.6 at 30, and peaks around 0.7 to 0.75 between 50 and 70. Personality is never "set like plaster", in William James's phrase, but it does become more consistent.
+- **Mean-level change**: people on average become **more conscientious, more agreeable and less neurotic** from adolescence into middle age: the **maturity principle**. Social roles (work, partnership, parenting) are thought to drive some of this (social investment theory).
+- **Therapy changes traits**: a 2017 meta-analysis found that psychological interventions produced noticeable decreases in neuroticism over a few months, with gains that lasted.
 
 :::widget decide
 {
@@ -518,7 +518,7 @@ In **Personality and Assessment** (1968), Walter Mischel argued that the correla
 :::
 
 :::clinician
-Distinguish four kinds of stability: rank-order (correlations over time), mean-level (group averages), individual-level (reliable change for a given person) and ipsative (stability of a person's profile shape). The cumulative continuity principle (rank-order stability increases with age) and the maturity principle are among the most replicated findings in personality science. The dose-response link between therapy and trait change (Roberts and colleagues, Psychological Bulletin, 2017; 207 studies) showed the largest changes for emotional stability, with changes visible at about four weeks of treatment and maintained at follow-ups, and changes did not differ much by type of therapy. A practical implication: a high N score at intake predicts poorer outcome, but N itself is a legitimate treatment target, as in the Unified Protocol for transdiagnostic treatment of emotional disorders, which explicitly aims at neuroticism.
+Distinguish four kinds of stability: rank-order (correlations over time), mean-level (group averages), individual-level (reliable change for a given person) and ipsative (stability of a person's profile shape). The cumulative continuity principle (rank-order stability increases with age) and the maturity principle are among the most replicated findings in personality science. The dose-response link between therapy and trait change (a 2017 synthesis of 207 studies) showed the largest changes for emotional stability, with changes visible at about four weeks of treatment and maintained at follow-ups, and changes did not differ much by type of therapy. A practical implication: a high N score at intake predicts poorer outcome, but N itself is a legitimate treatment target, as in the Unified Protocol for transdiagnostic treatment of emotional disorders, which explicitly aims at neuroticism.
 :::
 
 :::recall
@@ -602,12 +602,12 @@ William Stephenson's **Q-sort** asks a person to sort about 100 statements about
   "unit": "r",
   "answer": [0.25, 0.45],
   "reveal": "About **0.34**, staying around 0.31 at follow-up. A control group who did not have therapy started at about 0.58 and barely changed. Clients' self and ideal became more alike: congruence increased.",
-  "clinician": "Butler and Haigh (in Rogers and Dymond, Psychotherapy and Personality Change, 1954): client group pre-therapy r of about minus 0.01, post-therapy 0.34, follow-up 0.31; controls 0.58. A wait-list subgroup did not change during the waiting period. Critics note that increased self-ideal congruence can come from lowering the ideal as well as raising the self, and that very high congruence can reflect defensiveness."
+  "clinician": "Butler and Haigh, 1954: client group pre-therapy r of about minus 0.01, post-therapy 0.34, follow-up 0.31; controls 0.58. A wait-list subgroup did not change during the waiting period. Critics note that increased self-ideal congruence can come from lowering the ideal as well as raising the self, and that very high congruence can reflect defensiveness."
 }
 :::
 
 :::clinician
-Evidence today: the relationship conditions Rogers emphasised are among the best-supported common factors in psychotherapy. Meta-analyses for the APA task force on evidence-based relationships (Norcross and Lambert, 2019) found empathy correlates with outcome at about r of 0.28 (Elliott and colleagues, 2018), positive regard and affirmation at about 0.28 (Farber and colleagues), and congruence or genuineness at about 0.23 (Kolden and colleagues). These are correlational and partly reflect client factors. What is not supported is the claim that the conditions are **sufficient** for all problems: specific techniques add benefit for disorders such as OCD, PTSD and panic. Person-centred counselling has trial evidence for mild to moderate depression (the UK's counselling for depression model), and its skills (reflection, summarising, non-judgmental stance) are the foundation of counselling micro-skills in Indian training programmes. Theoretical critiques: the self-concept and actualising tendency are hard to operationalise; the theory assumes an individualist self that may fit less well in families where decisions are shared, though conditions of worth around marks, marriage and career are vivid in Indian clinical work.
+Evidence today: the relationship conditions Rogers emphasised are among the best-supported common factors in psychotherapy. Meta-analyses for the APA task force on evidence-based relationships found empathy correlates with outcome at about r of 0.28, positive regard and affirmation at about 0.28, and congruence or genuineness at about 0.23. These are correlational and partly reflect client factors. What is not supported is the claim that the conditions are **sufficient** for all problems: specific techniques add benefit for disorders such as OCD, PTSD and panic. Person-centred counselling has trial evidence for mild to moderate depression (the UK's counselling for depression model), and its skills (reflection, summarising, non-judgmental stance) are the foundation of counselling micro-skills in Indian training programmes. Theoretical critiques: the self-concept and actualising tendency are hard to operationalise; the theory assumes an individualist self that may fit less well in families where decisions are shared, though conditions of worth around marks, marriage and career are vivid in Indian clinical work.
 :::
 
 :::recall
@@ -683,7 +683,7 @@ The **Jonah complex**: the fear of one's own greatness, which makes people evade
 :::
 
 :::trap Maslow never drew the pyramid
-The famous pyramid was drawn by a management consultant, Charles McDermid, in 1960, and spread through business textbooks (Bridgman, Cummings and Ballard, 2019). Maslow wrote of a hierarchy that is **flexible**, with needs partly met at the same time. Exams still use "Maslow's pyramid"; add a line that the rigid, stepwise version is a later simplification.
+The famous pyramid was drawn by a management consultant, Charles McDermid, in 1960, and spread through business textbooks (as historians of management showed in 2019). Maslow wrote of a hierarchy that is **flexible**, with needs partly met at the same time. Exams still use "Maslow's pyramid"; add a line that the rigid, stepwise version is a later simplification.
 :::
 
 ### How well does it hold up?
@@ -699,10 +699,10 @@ The famous pyramid was drawn by a management consultant, Charles McDermid, in 19
 }
 :::
 
-Other critiques: Maslow's sample of self-actualisers was small, hand-picked and defined by his own values; the hierarchy reflects an individualist culture (Nevis, 1983, proposed a Chinese hierarchy with belonging at the base and self-actualisation as service to society); and an early review (Wahba and Bridwell, 1976) found little support for the ranking. In many Indian traditions, the highest aim (moksha, liberation) is closer to **self-transcendence** than to individual self-actualisation.
+Other critiques: Maslow's sample of self-actualisers was small, hand-picked and defined by his own values; the hierarchy reflects an individualist culture (Edwin Nevis proposed a Chinese hierarchy with belonging at the base and self-actualisation as service to society); and an early review in 1976 found little support for the ranking. In many Indian traditions, the highest aim (moksha, liberation) is closer to **self-transcendence** than to individual self-actualisation.
 
 :::clinician
-Maslow's lasting influence is less the hierarchy than the shift to studying health, which seeded positive psychology. Kenrick and colleagues (Perspectives on Psychological Science, 2010) proposed an evolutionary renovation that replaces self-actualisation with mate acquisition, mate retention and parenting, which was controversial. In clinical work, the hierarchy is a pragmatic reminder: in disaster mental health and in severe poverty, psychological first aid begins with safety, food and shelter (the IASC guidelines' intervention pyramid places basic services and security at the base), and in Indian public mental health, social determinants (debt, housing, food insecurity) often must be addressed before talking therapies can help. Measures of need satisfaction in research today usually draw on self-determination theory (autonomy, competence, relatedness), which has stronger empirical support than Maslow's model.
+Maslow's lasting influence is less the hierarchy than the shift to studying health, which seeded positive psychology. In 2010, a group led by Douglas Kenrick proposed an evolutionary renovation that replaces self-actualisation with mate acquisition, mate retention and parenting, which was controversial. In clinical work, the hierarchy is a pragmatic reminder: in disaster mental health and in severe poverty, psychological first aid begins with safety, food and shelter (the IASC guidelines' intervention pyramid places basic services and security at the base), and in Indian public mental health, social determinants (debt, housing, food insecurity) often must be addressed before talking therapies can help. Measures of need satisfaction in research today usually draw on self-determination theory (autonomy, competence, relatedness), which has stronger empirical support than Maslow's model.
 :::
 
 :::recall
@@ -737,7 +737,7 @@ May brought European existentialism to American psychology.
 - **Freedom and destiny**: existential freedom (freedom of action) and essential freedom (freedom of being, to think and choose one's attitude), always within the limits of **destiny** (our givens: body, death, history).
 
 ### Viktor Frankl (1905 to 1997)
-Frankl, a Viennese psychiatrist, survived Auschwitz and other camps, where his wife and parents died. In **Man's Search for Meaning** (1946) he described how prisoners who held on to a purpose were more likely to survive.
+Frankl, a Viennese psychiatrist, survived Auschwitz and other camps, where his wife and parents died. In his 1946 account of camp life he described how prisoners who held on to a purpose were more likely to survive.
 - **The will to meaning** is the primary human motive (in contrast to Freud's will to pleasure and Adler's will to power).
 - **Three sources of meaning**: **creative** (what we give to the world: work, deeds), **experiential** (what we take from it: love, beauty, nature) and **attitudinal** (the stance we take towards unavoidable suffering).
 - **The tragic triad**: pain, guilt and death, which everyone faces.
@@ -757,7 +757,7 @@ Frankl, a Viennese psychiatrist, survived Auschwitz and other camps, where his w
 :::
 
 ### Irvin Yalom: the four givens
-Yalom's **Existential Psychotherapy** (1980) organised the field around four **ultimate concerns**, each with a conflict:
+In 1980, Irvin Yalom organised the field around four **ultimate concerns**, each with a conflict:
 | Given | The conflict |
 |---|---|
 | **Death** | Awareness of death versus the wish to go on living |
@@ -785,7 +785,7 @@ The Gita opens with Arjuna on the battlefield of Kurukshetra, unable to fight, h
 :::
 
 :::clinician
-Empirically, meaning in life is now well measured (the Meaning in Life Questionnaire, Steger and colleagues, 2006, with presence and search subscales; the Purpose in Life test, Crumbaugh and Maholick, based on Frankl), and presence of meaning correlates with well-being and lower depression across cultures, including Indian samples. Meaning-centred psychotherapy for patients with advanced cancer (Breitbart and colleagues) has randomised-trial support for improving spiritual well-being and reducing hopelessness and desire for hastened death. Terror management theory (Greenberg, Pyszczynski and Solomon) operationalised Yalom's death anxiety experimentally, but the classic mortality-salience effect failed the Many Labs 4 replication, so treat its laboratory findings cautiously. Paradoxical intention has modest trial support for insomnia and some anxiety problems, and is conceptually close to exposure and to acceptance and commitment therapy's "willingness". Frankl's account of meaning in the camps is testimony and theory, not data, though later research on survivors supports the protective role of purpose.
+Empirically, meaning in life is now well measured (the Meaning in Life Questionnaire, with presence and search subscales, and the Purpose in Life test, based on Frankl), and presence of meaning correlates with well-being and lower depression across cultures, including Indian samples. Meaning-centred psychotherapy for patients with advanced cancer has randomised-trial support for improving spiritual well-being and reducing hopelessness and desire for hastened death. Terror management theory (Greenberg, Pyszczynski and Solomon) operationalised Yalom's death anxiety experimentally, but the classic mortality-salience effect failed the Many Labs 4 replication, so treat its laboratory findings cautiously. Paradoxical intention has modest trial support for insomnia and some anxiety problems, and is conceptually close to exposure and to acceptance and commitment therapy's "willingness". Frankl's account of meaning in the camps is testimony and theory, not data, though later research on survivors supports the protective role of purpose.
 :::
 
 :::recall
@@ -862,7 +862,7 @@ Rotter's **social learning theory** (1954) predicts behaviour with a formula:
 - **Reinforcement value**: how much the person wants that reinforcement.
 - **The psychological situation**: the situation as the person perceives it.
 
-From many experiences, people form **generalised expectancies**, the best known being **locus of control** (Rotter, 1966):
+From many experiences, people form **generalised expectancies**, the best known being **locus of control**, introduced by Rotter in 1966:
 - **Internal locus**: "What happens to me depends on what I do."
 - **External locus**: "What happens to me depends on luck, fate or powerful others."
 
@@ -883,7 +883,7 @@ Internal locus is generally linked with better health behaviours, academic achie
 :::
 
 :::clinician
-Self-efficacy is among the most-used constructs in health psychology: it predicts adherence, rehabilitation outcomes and smoking cessation, and the four sources map onto intervention techniques (graded tasks, peer modelling, encouragement, and arousal reappraisal). Bandura's 1977 study with snake phobics showed that participant modelling (guided mastery) produced the largest increases in efficacy and in approach behaviour, and that efficacy predicted behaviour better than past performance. Distinguish self-efficacy (capability belief, task-specific), self-esteem (global self-worth), and locus of control (contingency belief about outcomes). Twenge, Zhang and Im's meta-analysis (Personality and Social Psychology Review, 2004) reported a shift towards external locus among young Americans from 1960 to 2002. Bandura's moral disengagement scale has been used in Indian research on bullying, corruption and communal violence. Rotter's formula is an expectancy-value model, the same family as Atkinson's achievement motivation and Vroom's work motivation.
+Self-efficacy is among the most-used constructs in health psychology: it predicts adherence, rehabilitation outcomes and smoking cessation, and the four sources map onto intervention techniques (graded tasks, peer modelling, encouragement, and arousal reappraisal). Bandura's 1977 study with snake phobics showed that participant modelling (guided mastery) produced the largest increases in efficacy and in approach behaviour, and that efficacy predicted behaviour better than past performance. Distinguish self-efficacy (capability belief, task-specific), self-esteem (global self-worth), and locus of control (contingency belief about outcomes). A 2004 meta-analysis reported a shift towards external locus among young Americans from 1960 to 2002. Bandura's moral disengagement scale has been used in Indian research on bullying, corruption and communal violence. Rotter's formula is an expectancy-value model, the same family as Atkinson's achievement motivation and Vroom's work motivation.
 :::
 
 :::recall
@@ -908,7 +908,7 @@ Q: A student is sure that regular revision leads to good marks, but doubts she c
 ### Walter Mischel (1930 to 2018)
 After challenging traits in 1968 (section 2.1), Mischel built a theory of how people can be both **variable and consistent**.
 
-**Delay of gratification**: in the famous "marshmallow test" at Stanford's Bing Nursery School (Mischel, Ebbesen and Zeiss, 1972), a preschool child could eat one treat now, or wait alone (often up to 15 or 20 minutes) for the researcher to return and get two. Children who distracted themselves (singing, covering their eyes, thinking of the marshmallow as a cloud) waited longest: self-control was a **skill of attention and thought**, not just willpower. Follow-ups (Shoda, Mischel and Peake, 1990) reported that children who waited longer had higher SAT scores and better coping in adolescence.
+**Delay of gratification**: in the famous "marshmallow test" at Stanford's Bing Nursery School in the early 1970s, a preschool child could eat one treat now, or wait alone (often up to 15 or 20 minutes) for the researcher to return and get two. Children who distracted themselves (singing, covering their eyes, thinking of the marshmallow as a cloud) waited longest: self-control was a **skill of attention and thought**, not just willpower. Follow-ups in 1990 reported that children who waited longer had higher SAT scores and better coping in adolescence.
 
 :::widget decide
 {
@@ -916,13 +916,13 @@ After challenging traits in 1968 (section 2.1), Mischel built a theory of how pe
   "ask": "Predict what they found.",
   "choices": [
     { "label": "The link between waiting and later achievement was as strong as in the original study", "verdict": "ok", "outcome": "The link was much weaker.", "why": "The original follow-ups had small, privileged samples from a university nursery." },
-    { "label": "The link was about half the size, and shrank by about two-thirds after accounting for family background and early ability", "verdict": "best", "outcome": "Correct. Waiting predicted achievement modestly, but much of that was explained by social and cognitive factors; and waiting did not predict behaviour problems at 15.", "why": "Delay is partly a marker of the child's circumstances: a child from a home where promises are often broken may sensibly take the treat now (Kidd and colleagues, 2013, showed children waited less after an unreliable experimenter)." },
+    { "label": "The link was about half the size, and shrank by about two-thirds after accounting for family background and early ability", "verdict": "best", "outcome": "Correct. Waiting predicted achievement modestly, but much of that was explained by social and cognitive factors; and waiting did not predict behaviour problems at 15.", "why": "Delay is partly a marker of the child's circumstances: a child from a home where promises are often broken may sensibly take the treat now (a 2013 study showed children waited less after an unreliable experimenter)." },
     { "label": "There was no link at all with any later outcome", "verdict": "ok", "outcome": "A modest link remained for achievement.", "why": "It was a conceptual replication with a smaller, more qualified effect, not a total failure." }
   ]
 }
 :::
 
-**The cognitive-affective personality system (CAPS)** (Mischel and Shoda, 1995): personality is a stable network of **cognitive-affective units** that become active in particular situations. The five units:
+**The cognitive-affective personality system (CAPS)** (Mischel and Yuichi Shoda, 1995): personality is a stable network of **cognitive-affective units** that become active in particular situations. The five units:
 1. **Encodings**: how I categorise situations, people and myself ("this is a test of my competence").
 2. **Expectancies and beliefs**: about outcomes and my own efficacy.
 3. **Affects**: feelings and emotional reactions.
@@ -932,7 +932,7 @@ After challenging traits in 1968 (section 2.1), Mischel built a theory of how pe
 **If-then behavioural signatures**: consistency lies in stable patterns such as "**if** teased by peers, **then** aggressive; **if** warned by an adult, **then** compliant". Shoda, Mischel and Wright (1994) observed children at a summer camp hour by hour and found that two children with the same average aggression had very different, but stable, if-then profiles.
 
 ### George Kelly (1905 to 1967)
-Kelly's **The Psychology of Personal Constructs** (1955) began from his experience as a counsellor in rural Kansas, where he found that his explanations helped clients even when they were made up; what mattered was a new way of seeing.
+Kelly's theory, set out in full in 1955, began from his experience as a counsellor in rural Kansas, where he found that his explanations helped clients even when they were made up; what mattered was a new way of seeing.
 
 - **The person as scientist**: everyone forms hypotheses about the world, tests them and revises them.
 - **Constructive alternativism**: there are always alternative ways to interpret (construe) events; nobody is a victim of their biography.
@@ -970,12 +970,12 @@ Kelly's **The Psychology of Personal Constructs** (1955) began from his experien
 :::
 
 :::clinician
-CAPS anticipated modern idiographic and network approaches to personality and psychopathology (for example, ecological momentary assessment and person-specific network models). Kelly's influence runs through cognitive therapy (Beck acknowledged the parallel between constructs and schemas), constructivist therapies and research methods: repertory grids are still used in clinical research, organisational psychology and market research, and software computes construct correlations and principal components. On the marshmallow research: Mischel himself always emphasised that the strategies, not the child's fixed willpower, were the point; the Watts and colleagues conceptual replication (Psychological Science, 2018) and later analyses refined, rather than refuted, the idea that early self-regulation is one of many predictors of later outcomes. Gratification delay and executive function are also shaped by poverty and scarcity, which links to Indian research on how scarcity taxes cognitive bandwidth (Mani and colleagues, Science 2013, with sugarcane farmers in Tamil Nadu performing worse on cognitive tests before harvest than after).
+CAPS anticipated modern idiographic and network approaches to personality and psychopathology (for example, ecological momentary assessment and person-specific network models). Kelly's influence runs through cognitive therapy (Beck acknowledged the parallel between constructs and schemas), constructivist therapies and research methods: repertory grids are still used in clinical research, organisational psychology and market research, and software computes construct correlations and principal components. On the marshmallow research: Mischel himself always emphasised that the strategies, not the child's fixed willpower, were the point; the 2018 conceptual replication and later analyses refined, rather than refuted, the idea that early self-regulation is one of many predictors of later outcomes. Gratification delay and executive function are also shaped by poverty and scarcity, which links to Indian research on how scarcity taxes cognitive bandwidth (a 2013 study found sugarcane farmers in Tamil Nadu performed worse on cognitive tests before harvest than after).
 :::
 
 :::recall
 1. What did children who waited longest in the marshmallow test do? || Distracted themselves or changed how they thought about the treat.
-2. What did Watts and colleagues find? || The link with later achievement was about half the original, and largely explained by background and early ability.
+2. What did the 2018 marshmallow replication find? || The link with later achievement was about half the original, and largely explained by background and early ability.
 3. Name Mischel's five cognitive-affective units. || Encodings, expectancies and beliefs, affects, goals and values, competencies and self-regulatory plans.
 4. What is an if-then signature? || A stable pattern of behaving in particular ways in particular situations.
 5. State Kelly's fundamental postulate. || A person's processes are psychologically channelised by the ways in which he anticipates events.
