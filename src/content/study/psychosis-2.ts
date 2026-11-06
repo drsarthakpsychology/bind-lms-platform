@@ -183,6 +183,10 @@ After a first episode, continuing medicine for at least **1 to 2 years** after r
 {"drug": "paliperidone palmitate", "target": "dopamine D2 receptors in the striatum", "routes": ["depot", "oral"], "notes": {"muscle": "Injected into muscle, the drug dissolves slowly over weeks.", "slow": "Slow, steady release keeps levels stable and protects against missed tablets."}, "caption": "Compare a daily tablet with a long-acting injection."}
 :::
 
+:::widget journey
+{"drug": "risperidone", "target": "dopamine D2 and serotonin 2A receptors", "routes": ["oral"], "notes": {"liver": "Converted by CYP2D6 to paliperidone, also active; fluoxetine and paroxetine raise levels.", "bbb": "Crosses the blood-brain barrier, but also acts on the pituitary, which lies outside it, so prolactin rises easily."}, "caption": "Why risperidone raises prolactin more than its brain occupancy would suggest."}
+:::
+
 :::recall
 1. Name the six principles of treatment. || Engage; antipsychotic; psychological and family work; rehabilitation; physical health; relapse prevention.
 2. What predicts non-response early in treatment? || No improvement by about 2 to 4 weeks at an adequate dose.

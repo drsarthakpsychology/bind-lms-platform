@@ -38,6 +38,10 @@ export const part3 = String.raw`
 {"system": "dopamine", "caption": "The four pathways with dopamine flowing. Toggle D2 blockade and then 5-HT2A blockade, and match each change to a symptom or side effect."}
 :::
 
+:::widget neuron
+{"title": "Interneurons and the brakes on cortex", "myelinated": true, "caption": "Fast-spiking parvalbumin interneurons release GABA to keep pyramidal neurons below threshold and in rhythm. If their NMDA receptors under-function, the brake weakens, pyramidal neurons fire too readily, gamma rhythms break down and downstream dopamine neurons become dysregulated."}
+:::
+
 :::recall
 1. Which dopamine finding in schizophrenia is most replicated? || Increased presynaptic dopamine synthesis and release capacity in the associative striatum.
 2. What is aberrant salience? || Dysregulated dopamine assigning importance to irrelevant stimuli; delusions explain the resulting sense of significance.

@@ -644,6 +644,10 @@ About 40 to 60% of people do not respond fully to a first SSRI. Before calling O
 {"title": "The treatment ladder for OCD", "shape": "stack", "layers": [{"label": "Neurosurgery", "detail": "DBS or ablation for severe, refractory OCD, with consent and Board approval."}, {"label": "Neuromodulation", "detail": "Deep TMS."}, {"label": "Augmentation", "detail": "Low-dose risperidone or aripiprazole; weaker options such as memantine or NAC."}, {"label": "Switch or clomipramine", "detail": "Another SSRI or clomipramine."}, {"label": "Optimise", "detail": "Maximum tolerated SSRI dose for long enough; intensive ERP."}, {"label": "First line", "detail": "ERP and an SSRI, with family work."}], "caption": "Climb only after checking diagnosis, dose, duration, adherence and therapy quality at each rung."}
 :::
 
+:::widget journey
+{"drug": "clomipramine", "target": "serotonin transporters (parent drug) and noradrenaline transporters (metabolite)", "routes": ["oral", "iv"], "notes": {"liver": "Converted to desmethylclomipramine, which mainly blocks noradrenaline reuptake; fluvoxamine slows this conversion.", "vein": "Intravenous clomipramine bypasses first-pass metabolism; used in a few specialist centres for oral non-responders."}, "caption": "Why the route and the liver change how serotonergic clomipramine is."}
+:::
+
 :::recall
 1. List five things to check before calling OCD treatment-resistant. || Diagnosis, dose, duration, adherence, quality of ERP (also accommodation and comorbidity).
 2. Which augmenting drugs have the best evidence? || Low-dose risperidone or aripiprazole.

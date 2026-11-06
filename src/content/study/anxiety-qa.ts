@@ -56,6 +56,95 @@ Be kind and patient, but don't help them avoid. Encourage small, planned steps t
 - Give constant reassurance, which works like a safety blanket.
 :::
 
+:::qa What is the difference between fear and anxiety? [starting]
+### Short answer
+Fear is the alarm for a danger that is here now; anxiety is the same alarm for something that might happen. Fear peaks fast and fades when the danger goes; anxiety is a longer, watchful tension.
+
+| | Fear | Anxiety |
+|---|---|---|
+| Trigger | A danger now (a dog lunging) | A possible future danger (tomorrow's result) |
+| Speed | Seconds | Hours to days |
+| Body | Sudden surge: racing heart, jump back | Muscle tension, restlessness, poor sleep |
+| Behaviour | Escape or fight | Watchfulness, caution, avoidance |
+:::
+
+:::qa Why do anxious people avoid things, and why is that a problem? [starting]
+### Short answer
+Avoiding brings instant relief, so the brain learns to avoid again. But the person never discovers the feared thing is safe, so the fear stays and spreads.
+
+### Example
+Neha avoids the metro after one panic attack. Relief follows. Next she avoids buses, then markets. Each avoidance shrinks her life and strengthens the fear.
+
+### The fix
+Small, planned steps towards the feared thing, staying long enough to learn that it is manageable.
+:::
+
+:::qa What does 'ghabrahat' usually mean, and how should you ask about it? [starting]
+### Short answer
+It is a common Hindi and Urdu word for a restless, panicky, uneasy feeling. It can mean anxiety, panic, low mood or a body symptom, so ask the person to describe a recent episode.
+
+### Good follow-up questions
+1. "Tell me about the last time it happened, from the start."
+2. "Did it come suddenly or build slowly?"
+3. "What happened in your body?"
+4. "What went through your mind?"
+5. "What did you do next?"
+:::
+
+:::qa Is it safe to breathe into a paper bag during a panic attack? [starting]
+### Short answer
+It is not recommended. It can be unsafe if the cause is actually a medical problem such as asthma or a heart condition, and it acts as a safety behaviour that keeps panic going.
+
+### What helps more
+- Remembering that panic peaks within minutes and passes.
+- Slowing breathing gently, without forcing it.
+- Staying where you are rather than escaping.
+- Learning, in treatment, that the sensations are uncomfortable but harmless.
+:::
+
+:::qa Can children have anxiety disorders? [starting]
+### Short answer
+Yes. Separation anxiety, specific phobias, selective mutism and social anxiety often begin in childhood. Children may show anxiety through tummy aches, crying, clinging, tantrums or refusing school.
+
+### What parents can do
+- Stay calm and warm.
+- Encourage small brave steps rather than allowing avoidance.
+- Praise effort.
+- Seek help if anxiety stops school, friendships or sleep.
+:::
+
+:::qa Why do some people feel anxious after drinking lots of tea, coffee or energy drinks? [starting]
+### Short answer
+Caffeine stimulates the nervous system, speeding the heart and making people jittery. In large amounts it can trigger panic-like attacks, especially in people already prone to anxiety.
+
+### Practical points
+- Count all sources: tea, coffee, colas, energy drinks, some painkillers.
+- Cut down gradually to avoid withdrawal headaches.
+- Ask about caffeine in every anxious patient.
+:::
+
+:::qa What is the difference between shyness and social anxiety disorder? [starting]
+### Short answer
+Shyness is a common personality trait that may make new situations uncomfortable but does not stop life. Social anxiety disorder is intense fear of being judged that leads to avoidance and real harm to study, work or relationships.
+
+| | Shyness | Social anxiety disorder |
+|---|---|---|
+| Intensity | Mild to moderate | Intense fear |
+| Avoidance | Little | Avoids or endures with dread |
+| Impact | Life goes on | Jobs refused, friendships lost |
+| Duration | Lifelong trait | Typically months or more, with distress |
+:::
+
+:::qa Do medicines for anxiety work straight away? [starting]
+### Short answer
+Most do not. The main medicines, SSRIs, take several weeks to help and may cause jitteriness in the first days. Fast-acting sedatives like alprazolam work quickly but can cause dependence.
+
+### What to expect
+- Weeks 1 to 2: side effects possible, little benefit.
+- Weeks 4 to 6: benefit usually becomes clear.
+- Months: continued improvement; treatment usually continues for a year or more.
+:::
+
 ## 6.4 Q&A bank · Beginner [core][beginner]
 Think each question through, then open the answer.
 
@@ -117,6 +206,154 @@ Anxiety in India is often voiced through the body and family, treated late or wi
 - **Family**: accommodation and family decision-making shape treatment; joint sessions can help.
 - **Cultural context**: companionship norms for women affect how agoraphobia is judged; shame for the family may dominate social fears.
 - **Practice**: clarify idioms, screen for anxiety behind body complaints, explain the stress response, avoid long-term benzodiazepines, offer CBT techniques adapted to language and literacy, and use task-sharing and digital tools.
+:::
+
+:::qa Apply the DSM-5-TR criteria for panic disorder to a case. [beginner]
+### Short answer
+Confirm recurrent unexpected panic attacks with four or more of 13 symptoms peaking within minutes, then at least a month of worry or behaviour change, then exclude substances, medical causes and other disorders.
+
+### Case
+Arjun, 26, a software engineer in Bengaluru, has had five sudden attacks of palpitations, sweating, tingling, chest tightness and fear of dying over six weeks, two of them at night. He now avoids the gym and checks his pulse often. ECG and thyroid are normal; he drinks two coffees a day.
+
+### Step by step
+1. **Panic attacks**: abrupt, peak within minutes, five symptoms. Met.
+2. **Recurrent and unexpected**: five attacks, including nocturnal ones. Met.
+3. **At least a month of worry or behaviour change**: avoids exercise, checks pulse. Met.
+4. **Exclusions**: tests normal; caffeine modest; no drugs.
+5. **Other disorders**: not only in social situations or with a phobic object.
+**Diagnosis**: panic disorder. Screen for agoraphobia, depression and alcohol use.
+:::
+
+:::qa How do you distinguish GAD from depression when both are present? [beginner]
+### Short answer
+Look at the direction of thinking and the core symptoms: GAD is driven by forward-looking worry and tension; depression by low mood, loss of pleasure and backward-looking rumination. Many people meet criteria for both, and both should be treated.
+
+| Feature | GAD | Depression |
+|---|---|---|
+| Core | Excessive, uncontrollable worry | Low mood or loss of pleasure |
+| Thinking | "What if..." about the future | "I failed; I am worthless" about the past |
+| Pleasure | Can enjoy things when worry eases | Broadly lost |
+| Sleep | Difficulty falling asleep | Early waking common in melancholia |
+| Risk | Raised with comorbid depression | Suicidal thinking more common |
+### Practical point
+An SSRI or SNRI treats both; CBT can target worry and low mood together.
+:::
+
+:::qa How do you distinguish agoraphobia from social anxiety disorder and specific phobia? [beginner]
+### Short answer
+Ask what the person fears will happen: agoraphobia fears being unable to escape or get help if panic-like symptoms strike; social anxiety fears being judged; specific phobia fears one object or situation itself.
+
+| | Agoraphobia | Social anxiety | Specific phobia (situational) |
+|---|---|---|---|
+| Feared outcome | Collapse, panic, no help | Embarrassment, judgement | Harm from the situation (lift stuck) |
+| Situations | Two or more of five | Social scrutiny | One situation |
+| Companion helps? | Often | Sometimes worse | Sometimes |
+:::
+
+:::qa What is interoceptive exposure, and how is it done? [beginner]
+### Short answer
+Interoceptive exposure deliberately brings on the body sensations a person with panic fears, so they learn the sensations are harmless and stop triggering catastrophic fear.
+
+### Common exercises
+| Exercise | Sensation produced |
+|---|---|
+| Spinning in a chair | Dizziness |
+| Breathing through a thin straw | Breathlessness |
+| Running on the spot | Racing heart |
+| Over-breathing for a minute | Light-headedness, tingling |
+| Staring at a light then a wall | Visual distortion |
+### Steps
+1. Test each exercise and rate fear.
+2. Choose those most like the person's panic.
+3. Repeat until fear falls, without safety behaviours.
+4. Combine with real-life exposure.
+:::
+
+:::qa A patient has taken alprazolam 0.5 mg three times a day for five years. How would you plan a taper? [beginner]
+### Short answer
+Agree goals and pace with the patient, consider switching to a long-acting benzodiazepine, then reduce by about 10% of the current dose every one to two weeks, slowing near the end, while treating the underlying anxiety and insomnia.
+
+### Step by step
+1. **Assess**: why it was started, current anxiety, sleep, alcohol, other sedatives, falls, memory.
+2. **Explain**: tolerance, dependence, withdrawal symptoms, and that tapering is slow and supported.
+3. **Switch** (optional): to an equivalent dose of diazepam or clonazepam to smooth levels.
+4. **Reduce**: about 10% of the current dose every 1 to 2 weeks; pause if withdrawal is severe; slow down in the last steps.
+5. **Treat the cause**: SSRI and CBT for anxiety; CBT for insomnia.
+6. **Monitor**: withdrawal (anxiety, insomnia, tremor, perceptual changes, rarely seizures).
+7. **Never stop abruptly** after long use.
+:::
+
+:::qa What are the common medical mimics of anxiety, and which clues point to each? [beginner]
+### Short answer
+Hyperthyroidism, arrhythmias, hypoglycaemia, phaeochromocytoma, asthma or COPD, pulmonary embolism, and substance intoxication or withdrawal are the most important; specific clues and simple tests distinguish them.
+
+| Mimic | Clues | Test |
+|---|---|---|
+| Hyperthyroidism | Weight loss, heat intolerance, tremor, fast resting pulse | Thyroid function |
+| Supraventricular tachycardia | Sudden start and stop, very fast regular pulse | ECG, Holter |
+| Hypoglycaemia | Linked to fasting or insulin; sweating, confusion | Glucose during episode |
+| Phaeochromocytoma | Episodic headache, sweating, very high blood pressure | Plasma or urine metanephrines |
+| Asthma or COPD | Wheeze, cough, triggers | Spirometry |
+| Pulmonary embolism | Sudden breathlessness, chest pain, risk factors | Urgent medical assessment |
+| Alcohol or benzodiazepine withdrawal | Recent stopping, tremor, sweating | History, timing |
+:::
+
+:::qa How does CBT for GAD work in practice? [beginner]
+### Short answer
+CBT for GAD builds awareness of worry, separates solvable problems from hypothetical ones, tests beliefs about worry, builds tolerance of uncertainty, and reduces safety behaviours such as reassurance-seeking.
+
+### Components
+1. **Worry diary**: when, what, how long.
+2. **Classifying worries**: real, current problems (use problem-solving) versus hypothetical "what ifs" (practise letting go).
+3. **Uncertainty work**: behavioural experiments acting without full certainty.
+4. **Beliefs about worry**: testing "worry keeps me safe" and "worry is uncontrollable".
+5. **Worry postponement**: a set worry time each day.
+6. **Imaginal exposure**: writing out the feared scenario to process it rather than avoid it.
+7. **Applied relaxation** as an alternative evidence-based approach.
+:::
+
+:::qa Why should benzodiazepines be avoided during exposure therapy? [beginner]
+### Short answer
+Because exposure works through new learning, and benzodiazepines can impair memory consolidation, block the experience of fear needed for learning, and act as a safety signal that takes the credit for coping.
+
+### Three mechanisms
+- **Memory**: sedation weakens consolidation of extinction learning.
+- **Attribution**: the person thinks "I coped because of the tablet".
+- **State dependence**: learning in a sedated state transfers poorly to the drug-free state.
+### Practical rule
+If a patient uses benzodiazepines, plan exposure sessions when they have not taken a dose, and taper over the course of therapy.
+:::
+
+:::qa A 9-year-old refuses school every morning with stomach aches. How do you assess? [beginner]
+### Short answer
+Separate separation anxiety from social anxiety, bullying, learning difficulties, depression and medical causes, by asking what the child fears and when symptoms occur, and by talking to the child, parents and school.
+
+### Questions to answer
+| Question | Points to |
+|---|---|
+| Fine at school if a parent stays? | Separation anxiety |
+| Fears being laughed at or speaking in class? | Social anxiety |
+| Being hurt or teased by peers? | Bullying |
+| Struggles with reading or maths? | Learning disorder |
+| Low mood, loss of interest? | Depression |
+| Symptoms also at weekends? | Medical cause |
+### Next steps
+Graded return to school with the school's help, family-based CBT, reducing parental accommodation.
+:::
+
+:::qa What is applied relaxation, and how does it differ from relaxation as a safety behaviour? [beginner]
+### Short answer
+Applied relaxation (Öst) is a structured programme that teaches people to relax rapidly and then apply it in real anxiety-provoking situations; it is an evidence-based treatment for GAD and panic. Relaxation becomes a safety behaviour when used to escape feelings during exposure or credited for preventing disaster.
+
+### Stages of applied relaxation
+1. Progressive muscle relaxation.
+2. Release-only relaxation.
+3. Cue-controlled relaxation (a word linked to relaxing).
+4. Differential relaxation during activities.
+5. Rapid relaxation in seconds.
+6. Application in real situations.
+### The distinction
+The aim is coping while staying in the situation, not avoiding the feelings.
 :::
 
 ## 6.5 Q&A bank · Advanced [core][advanced]
@@ -183,6 +420,136 @@ Two Phase 3 trials showed a real, moderate effect from a single dose, but unblin
 5. **Duration**: weeks to months, not years; need for repeat doses unknown.
 6. **Safety**: dosing-day effects manageable in trials; unknown in routine care; misuse potential; legal status (not approved; illegal in India).
 7. **Conclusion**: promising, not established; regulators' review and independent replication are needed.
+:::
+
+:::qa Compare SSRIs with SNRIs for anxiety disorders. [advanced]
+### Short answer
+Both are first-line and broadly similar in efficacy; SNRIs (venlafaxine, duloxetine) add noradrenaline reuptake blockade, which may help some and adds blood pressure and sweating effects. Choice rests on tolerability, comorbidity and cost.
+
+| | SSRIs | SNRIs |
+|---|---|---|
+| Targets | Serotonin transporter | Serotonin and noradrenaline transporters |
+| Evidence | GAD, panic, social anxiety, PTSD, OCD | GAD, panic, social anxiety; duloxetine for pain |
+| Side effects | Nausea, sexual dysfunction, early jitteriness | Same plus sweating, raised blood pressure, more discontinuation (venlafaxine) |
+| Useful when | First choice for most | Comorbid pain (duloxetine); SSRI failure |
+:::
+
+:::qa Explain the neurobiology of extinction and its implications for exposure therapy. [advanced]
+### Short answer
+Extinction is new inhibitory learning stored in ventromedial prefrontal cortex and dependent on hippocampal context; it suppresses rather than erases the amygdala's fear memory. This explains relapse and guides varied, repeated exposure.
+
+### Circuit
+- Lateral amygdala stores the conditioned association.
+- Infralimbic or ventromedial prefrontal cortex stores the extinction memory and inhibits the amygdala via intercalated cells.
+- Hippocampus gates which memory wins in a given context.
+### Molecular
+NMDA receptor activity is needed for extinction learning (the rationale for D-cycloserine).
+### Clinical implications
+- Practise in many contexts (renewal).
+- Repeat over time (spontaneous recovery).
+- Prepare for stressors (reinstatement).
+- Use retrieval cues that bring back the safety learning.
+:::
+
+:::qa Why does GAD respond to pregabalin while panic disorder does not have the same evidence? [advanced]
+### Short answer
+Pregabalin damps overactive excitatory release through alpha-2-delta calcium channel binding, which reduces the persistent arousal and tension of GAD; panic disorder's acute attacks and catastrophic misinterpretation have been studied less with pregabalin, and evidence there is limited.
+
+### Points to make
+- **Licensed indication**: GAD (in Europe and India), with several positive trials and fast onset.
+- **Mechanism**: reduces release of glutamate, noradrenaline and substance P from hyperexcited neurons.
+- **Panic**: little trial evidence; SSRIs and CBT remain first-line.
+- **Caution**: misuse, especially with opioids; withdrawal seizures; weight gain; dizziness.
+:::
+
+:::qa Explain anxiety sensitivity and its role in panic. [advanced]
+### Short answer
+Anxiety sensitivity is the fear of anxiety-related sensations based on beliefs that they are harmful. High anxiety sensitivity predicts the onset of panic attacks and panic disorder and is reduced by CBT and interoceptive exposure.
+
+### Dimensions
+| Dimension | Example belief |
+|---|---|
+| Physical concerns | "A racing heart means a heart attack" |
+| Cognitive concerns | "Losing concentration means I'm going mad" |
+| Social concerns | "People will notice and reject me" |
+### Evidence
+- Prospective studies show it predicts later panic.
+- It is distinct from trait anxiety.
+- It is transdiagnostic, raised in PTSD, depression and substance use.
+### Treatment
+Psychoeducation, interoceptive exposure and behavioural experiments reduce it.
+:::
+
+:::qa What does the evidence say about combining CBT with medicine for anxiety disorders? [advanced]
+### Short answer
+Both are effective; combining them can help in severe or comorbid cases, but long-term outcomes after stopping favour CBT, and benzodiazepines in particular can undermine CBT gains.
+
+### Key findings
+- In panic disorder, combined treatment gave the best short-term results, but after medicine was stopped, people who had CBT alone or CBT plus placebo did better than those on medicine alone or combined treatment.
+- In social anxiety, both are effective; cognitive therapy has strong long-term outcomes.
+- In children, CBT plus sertraline was more effective than either alone in a large trial.
+### Practical guidance
+- Offer CBT first where available.
+- Add an SSRI for severe, comorbid or CBT-resistant cases.
+- Avoid regular benzodiazepines alongside exposure.
+:::
+
+:::qa Discuss the role of intolerance of uncertainty across disorders. [advanced]
+### Short answer
+Intolerance of uncertainty, the tendency to find uncertainty unbearable, was first described as central to GAD but is now seen as transdiagnostic, raised in OCD, social anxiety, panic, depression and eating disorders, making it a useful treatment target.
+
+### Measurement
+The Intolerance of Uncertainty Scale (prospective and inhibitory factors).
+### Mechanisms
+- Drives worry as an attempt to prepare for every possibility.
+- Drives checking and reassurance in OCD.
+- Raises threat appraisal in ambiguous social situations.
+### Treatment
+Behavioural experiments that involve acting under uncertainty: sending an email without rereading it, choosing a restaurant without researching, leaving tasks slightly unfinished.
+:::
+
+:::qa How would you design a study to test whether internet CBT works for panic disorder in Indian college students? [advanced]
+### Short answer
+A randomised controlled trial comparing guided internet CBT in local languages with an active control, with blinded outcome assessment, adequate sample size, follow-up beyond treatment and attention to engagement and cultural fit.
+
+### Design
+1. **Population**: students meeting criteria for panic disorder on a structured interview.
+2. **Intervention**: guided internet CBT in Hindi or regional languages, culturally adapted.
+3. **Control**: an active control (for example online relaxation or psychoeducation) to account for attention and expectancy.
+4. **Randomisation and concealment**: computer-generated, concealed allocation.
+5. **Outcomes**: panic severity (PDSS) by blinded assessors; secondary outcomes depression, functioning, dropout.
+6. **Follow-up**: 6 and 12 months.
+7. **Analysis**: intention-to-treat, pre-registered.
+8. **Process data**: engagement, guidance time, qualitative feedback.
+9. **Ethics**: consent, safety protocol for suicidal risk.
+:::
+
+:::qa What are the limits of the fear-conditioning model of phobias? [advanced]
+### Short answer
+Many people with phobias recall no conditioning event, many people with conditioning events do not develop phobias, fears are unevenly distributed across objects, and fear can be acquired by observation and instruction. Preparedness, temperament and cognitive factors fill these gaps.
+
+### Problems and responses
+| Problem | Response |
+|---|---|
+| No remembered trauma | Observational and informational learning; non-associative accounts (some fears are innate) |
+| Trauma without phobia | Vulnerability, temperament, prior safe experience (latent inhibition) |
+| Fears cluster on snakes, heights, blood | Preparedness: evolutionarily relevant stimuli are learned faster |
+| Fear persists despite knowledge | Separate emotional and declarative learning systems |
+:::
+
+:::qa Explain why pregabalin and gabapentin misuse has become a concern. [advanced]
+### Short answer
+They produce euphoria and sedation at high doses, enhance opioid effects, are less tightly controlled than benzodiazepines in many places, and are associated with dependence, withdrawal and respiratory depression when combined with opioids.
+
+### Risk factors
+- History of substance or opioid use.
+- High doses and rapid escalation.
+- Prisons and opioid substitution settings.
+### Clinical safeguards
+- Ask about substance use before prescribing.
+- Avoid in people on opioids where possible.
+- Limit quantities; monitor for dose escalation.
+- Taper gradually when stopping.
 :::
 
 `;
