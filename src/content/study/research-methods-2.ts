@@ -190,7 +190,7 @@ Q: Checking whether counsellors deliver a school programme as the manual says is
 - *Process (fidelity) evaluation
 - Impact evaluation
 - Summative evaluation
-- Needs assessment
+- Needs assessment of the school
 > Delivery as planned is process evaluation.
 
 Q: A study starts with 200 people with schizophrenia and 200 without, and looks back at cannabis use in adolescence. This is a:
@@ -272,13 +272,13 @@ Q: For a study with 12-year-olds, the right approach is:
 - Parental consent only
 - *Parental consent plus the child's assent
 - The child's assent only
-- No consent, as children cannot decide
+- No consent, as children cannot legally decide anything
 > Both are required.
 
 Q: A researcher reuses large parts of his own published paper in a new article without citing it. This is:
 - Fabrication
 - Falsification
-- Acceptable practice
+- Acceptable practice if the work is his own
 - *Self-plagiarism (duplicate publication)
 > Reusing one's own published text without acknowledgement is misconduct.
 
@@ -338,10 +338,10 @@ A **thesis or dissertation** usually has chapters: introduction, review of liter
 
 :::mcq
 Q: In APA 7, a 2020 article by three authors is cited in the text:
-- *With the first surname and the Latin short form for 'and others', from the first citation
+- *First surname plus the Latin short form for 'and others', from the start
 - With all three surnames every time
-- With all three surnames first, then the short form
-- With the first surname and the English words 'and others'
+- With all three surnames the first time, then the short form after that
+- With the first surname and the English words 'and others', every time it is cited
 > APA 7 uses the short form from the first citation for three or more authors.
 
 Q: Limitations of the study are usually discussed in the:
@@ -355,7 +355,7 @@ Q: The numbered referencing style used by many medical journals is:
 - APA
 - MLA
 - *Vancouver
-- Harvard
+- Harvard (author-date)
 > References are numbered in the order they are cited.
 :::
 
@@ -406,7 +406,7 @@ Studying unusual claims carefully is good science. Parapsychology was among the 
 :::mcq
 Q: A funnel plot of studies is lopsided, with small studies showing only large positive effects. This suggests:
 - *Publication or small-study bias
-- A very strong real effect
+- A very strong real effect that small studies detect best
 - Perfect replication
 - High inter-rater reliability
 > Small negative or null studies are missing.
@@ -447,7 +447,7 @@ Exams at every level, and every viva, ask you to **critique** a study. Use the s
 :::mcq
 Q: In a therapy trial, more patients drop out of the treatment arm than the control arm, and the authors analyse only completers. The main problem is:
 - Low reliability of the outcome scale
-- Too much statistical power
+- Too much statistical power from the large control arm
 - Cohort effects
 - *Biased results from differential attrition
 > Completers-only analysis can make treatment look better than it is.
@@ -456,7 +456,7 @@ Q: A depression trial uses "health education classes of the same length" as the 
 - *Non-specific effects such as attention
 - Sampling error
 - Instrumentation
-- Maturation of the patients only
+- Maturation of the patients only, over the trial period
 > An active control matches the non-specific ingredients.
 :::
 `;

@@ -54,7 +54,7 @@ A clinical psychologist in Delhi gives a new anxiety scale to 200 college studen
 Q: σ stands for:
 - *The population standard deviation
 - The sample mean
-- The sample standard deviation
+- The standard deviation of one sample
 - The sum of scores
 > Greek letters are for population parameters.
 
@@ -295,7 +295,7 @@ Q: The median of 7, 3, 9, 1, 5, 11 is:
 Q: For data with a few very extreme scores, the best average is the:
 - *Median
 - Mean
-- Mode
+- Mode (most frequent)
 - Range
 > The median is resistant to extreme scores.
 
@@ -612,8 +612,8 @@ Q: A drug that does not work is declared effective. This is a:
 
 Q: p = .03 means:
 - *If H0 were true, results this extreme would occur about 3% of the time
-- There is a 3% chance that the null hypothesis is actually true
-- There is a 97% chance that the result will replicate in a new study
+- There is only a 3% chance that the null hypothesis is actually true
+- There is a 97% chance that the same result will replicate in a new study
 - The effect is large enough to matter in practice
 > p is conditional on the null being true.
 
@@ -651,6 +651,10 @@ Conceptually, r is the average product of paired z scores: r = Σ(zX × zY) ÷ n
 - **Outliers** can create or destroy a correlation.
 - **Combining groups** with different means can create a misleading correlation (or hide one).
 - **Unreliable measures** lower (attenuate) r.
+
+:::widget curve
+{"kind": "inverted-u", "title": "A strong relation that r misses", "caption": "Arousal and performance follow an inverted U: performance rises, peaks, then falls. Pearson's r for data like this can be near zero even though the relation is strong. Always plot first; use eta for curved relations."}
+:::
 
 ### Spearman's rank-order correlation (rho)
 For ordinal data, or when interval data are skewed or have outliers. Rank each variable, find the differences d, then:
@@ -715,9 +719,9 @@ Q: The correlation between an IQ test and job performance is computed only among
 > Restricting the range of one variable usually lowers r.
 
 Q: r = −.80 between hours of sleep loss and attention score means:
-- *A strong relation where more sleep loss goes with lower attention
+- *A strong relation: more sleep loss, lower attention
 - A weak relation, because the sign is negative
-- 80% of the variation in attention is caused by sleep loss
+- 80% of the variation in attention scores is caused by sleep loss
 - No relation, since negative values mean none
 > The sign shows direction; the size shows strength. r² = .64 is shared variance, not causation.
 
@@ -794,7 +798,7 @@ Q: An independent t-test with groups of 15 and 17 has df of:
 Q: Levene's test gives p = .01. You should:
 - Switch to the paired t-test instead
 - *Read the 'equal variances not assumed' (Welch) row
-- Abandon the analysis and collect new data
+- Abandon the analysis and collect a new, larger sample
 - Use a one-tailed test
 > Variances differ, so use the corrected test.
 :::
@@ -840,7 +844,7 @@ Q: Chi-square is the right test when the data are:
 - Means of two groups
 - Ranks of two judges
 - *Frequencies in categories
-- Paired difference scores
+- Paired difference scores of the same people
 > It compares observed with expected counts.
 
 Q: A 2 × 3 contingency table has df of:
@@ -884,8 +888,8 @@ Q: A sten scale has a mean and SD of:
 > Sten = standard ten, used in the 16PF.
 
 Q: The 95% confidence interval for a mean of 40 with SE = 2 is about:
-- 38 to 42
-- 34 to 46
+- 38.0 to 42.0
+- 34.1 to 45.9
 - 39 to 41
 - *36.1 to 43.9
 > 40 ± 1.96 × 2 = 40 ± 3.92.
@@ -914,7 +918,7 @@ Q: Which would most increase power?
 Q: The critical z for a one-tailed test at α = .05 is:
 - *1.645
 - 1.96
-- 2.58
+- 2.326
 - 1.00
 > All 5% is in one tail.
 
@@ -957,14 +961,14 @@ Q: In a chi-square test, an expected frequency is computed as:
 - (O − E)² ÷ E
 - Row total ÷ column total
 - *Row total × column total ÷ N
-- N ÷ number of cells, always
+- N ÷ number of cells, in every case
 > Under independence, a cell's expected count is (row × column) ÷ N.
 
 Q: Correlating gender (male, female) with a continuous anxiety score needs:
 - Biserial r
 - *Point-biserial r
 - Phi
-- Tetrachoric r
+- Tetrachoric r (two splits)
 > One true dichotomy and one continuous variable.
 :::
 `;
