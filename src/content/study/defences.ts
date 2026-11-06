@@ -2,6 +2,7 @@ import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
 import { part1 } from "./defences-1";
 import { part2 } from "./defences-2";
+import { part3 } from "./defences-3";
 
 export const meta: ModuleMeta = {
   id: "defences",
@@ -28,4 +29,4 @@ export const meta: ModuleMeta = {
   noteId: "defences",
 };
 
-export const text = part1 + part2;
+export const text = part1 + part2 + part3;

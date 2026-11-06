@@ -13,6 +13,45 @@ Defences are not signs of illness. Everyone uses them, many times a day, mostly 
 3. It works by **changing how we see** the feeling, the situation, or ourselves.
 4. It has a **cost** as well as a benefit.
 
+
+:::widget flow
+{
+ "title": "How a defence works, moment by moment",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "t",
+   "label": "Trigger",
+   "detail": "Something happens outside (bad news) or inside (a forbidden wish, a painful memory)."
+  },
+  {
+   "id": "s",
+   "label": "Signal anxiety",
+   "detail": "A small, often unnoticed rise of anxiety, guilt or shame warns that a feeling may become unbearable."
+  },
+  {
+   "id": "d",
+   "label": "Defence switches on",
+   "detail": "Automatically, the mind changes how the feeling, the situation or the self is seen: it denies, moves, reverses or reframes."
+  },
+  {
+   "id": "r",
+   "label": "Relief now",
+   "detail": "The person feels calmer straight away. This relief is why defences repeat."
+  },
+  {
+   "id": "c",
+   "label": "Cost later",
+   "detail": "Rigid or extreme defences distort reality or harm relationships, health or work."
+  }
+ ],
+ "edgeLabels": {
+  "r>c": "if rigid or extreme"
+ },
+ "caption": "Press Play. Then pick a defence you used this week and walk it through the five steps."
+}
+:::
+
 :::analogy The pressure cooker valve
 A defence is like the valve on a pressure cooker. A good valve lets out a little steam at the right time and the food cooks well. A blocked valve lets pressure build until something bursts. A valve stuck open means nothing ever cooks. Healthy defences let feelings out in manageable amounts.
 :::
@@ -76,6 +115,29 @@ Sigmund Freud (1856 to 1939), a Viennese neurologist, built the first theory of 
 - **Preconscious**: what you can recall if you try (your friend's phone number).
 - **Unconscious**: wishes, fears and memories kept out of awareness, which still influence you.
 
+
+:::widget layers
+{
+ "title": "Freud's topographic model as an iceberg",
+ "shape": "iceberg",
+ "layers": [
+  {
+   "label": "Conscious",
+   "detail": "What you are aware of right now: this sentence, the chair you sit on."
+  },
+  {
+   "label": "Preconscious",
+   "detail": "Just below the surface: easily recalled when needed, like a friend's phone number."
+  },
+  {
+   "label": "Unconscious",
+   "detail": "The large hidden part: wishes, fears and memories kept out of awareness, which still shape feelings and behaviour."
+  }
+ ],
+ "caption": "Most of the iceberg is under water. Defences work largely in the hidden part, which is why people rarely notice using them."
+}
+:::
+
 **The structural model** describes three parts of the personality:
 - **Id**: present from birth; wants pleasure now (the **pleasure principle**). Entirely unconscious.
 - **Ego**: develops to deal with reality; plans, delays and balances (the **reality principle**). It uses the defences.
@@ -83,6 +145,29 @@ Sigmund Freud (1856 to 1939), a Viennese neurologist, built the first theory of 
 
 :::analogy The rider, the horse and the parent in the back seat
 The **id** is a strong horse that wants to run to the food. The **ego** is the rider who must get somewhere safe and on time. The **superego** is a strict parent in the back seat saying "you should be ashamed for even thinking of stopping". The rider's tricks to keep everyone calm are the defences.
+:::
+
+
+:::widget layers
+{
+ "title": "Id, ego and superego across the levels of awareness",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Superego",
+   "detail": "Conscience and ideals taken in from parents and culture. Partly conscious (\"I should\"), partly unconscious guilt."
+  },
+  {
+   "label": "Ego",
+   "detail": "Deals with reality, plans and delays. Its defences operate unconsciously; its reasoning is often conscious."
+  },
+  {
+   "label": "Id",
+   "detail": "Present from birth, wholly unconscious, seeks pleasure now."
+  }
+ ],
+ "caption": "Tap each layer. Exams often ask which parts can be conscious: only the ego and superego can."
+}
 :::
 
 ### Psychosexual stages in brief
@@ -406,6 +491,33 @@ Q: A doctor talks about her own father's death only in terms of medical statisti
 ## 2.1 Vaillant's four levels of defence [core][beginner]
 The psychiatrist **George Vaillant** grouped defences into four levels, from the most reality-distorting to the most healthy. This is the version most often asked in Indian university and NET exams.
 
+
+:::widget layers
+{
+ "title": "Vaillant's ladder of defences",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Mature",
+   "detail": "Altruism, anticipation, asceticism, humour, sublimation, suppression. Feelings stay in awareness and are used well."
+  },
+  {
+   "label": "Neurotic",
+   "detail": "Repression, displacement, reaction formation, intellectualisation, isolation, undoing, rationalisation, dissociation. Common in ordinary adults under stress."
+  },
+  {
+   "label": "Immature",
+   "detail": "Acting out, passive aggression, projection, hypochondriasis, schizoid fantasy, splitting. Common in adolescence and personality disorders; they upset other people."
+  },
+  {
+   "label": "Psychotic",
+   "detail": "Delusional projection, psychotic denial, distortion. Reality itself is reshaped."
+  }
+ ],
+ "caption": "The top of the pyramid is the healthiest. Tap each level and name one defence from your own week."
+}
+:::
+
 ### Level I: Psychotic (narcissistic) defences
 They twist reality itself. Normal in young children and dreams; in adults, seen in psychosis.
 - **Delusional projection**: one's own impulses seen outside as fixed false beliefs ("they are poisoning me").
@@ -663,6 +775,57 @@ Erik Erikson (1902 to 1994) kept Freud's idea of stages but shifted the focus fr
 **H**ope, **W**ill, **P**urpose, **C**ompetence, **F**idelity, **L**ove, **C**are, **W**isdom.
 :::
 
+
+:::widget flow
+{
+ "title": "Erikson's eight stages across life",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Trust vs mistrust",
+   "detail": "Infancy. Virtue: hope. Reliable care builds basic trust."
+  },
+  {
+   "id": "2",
+   "label": "Autonomy vs shame",
+   "detail": "Early childhood. Virtue: will. Doing things for oneself."
+  },
+  {
+   "id": "3",
+   "label": "Initiative vs guilt",
+   "detail": "Play age. Virtue: purpose. Trying and planning."
+  },
+  {
+   "id": "4",
+   "label": "Industry vs inferiority",
+   "detail": "School age. Virtue: competence. Being good at things."
+  },
+  {
+   "id": "5",
+   "label": "Identity vs role confusion",
+   "detail": "Adolescence. Virtue: fidelity. Who am I?"
+  },
+  {
+   "id": "6",
+   "label": "Intimacy vs isolation",
+   "detail": "Young adulthood. Virtue: love."
+  },
+  {
+   "id": "7",
+   "label": "Generativity vs stagnation",
+   "detail": "Middle adulthood. Virtue: care for the next generation."
+  },
+  {
+   "id": "8",
+   "label": "Integrity vs despair",
+   "detail": "Old age. Virtue: wisdom."
+  }
+ ],
+ "caption": "Press Play to move through a life. Each crisis is a turning point, not a pass or fail; later stages can rework earlier ones."
+}
+:::
+
 ### Identity in more detail: Marcia's four statuses
 James Marcia turned Erikson's identity stage into something measurable, using two questions: **has the person explored options?** and **have they committed?**
 
@@ -732,6 +895,42 @@ Jean Piaget (1896 to 1980) watched children, including his own, and saw that the
 - **Assimilation**: fitting new experience into an existing schema (a toddler calls a cow "dog").
 - **Accommodation**: changing a schema to fit new experience ("cows are different: they moo").
 - **Equilibration**: the drive to balance the two, which pushes development forward.
+
+
+:::widget flow
+{
+ "title": "Assimilation, accommodation and equilibration",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Existing schema",
+   "detail": "A toddler's schema: four legs and fur means dog."
+  },
+  {
+   "id": "a",
+   "label": "Assimilation",
+   "detail": "A cow is called \"dog\": the new thing is fitted into the old schema."
+  },
+  {
+   "id": "d",
+   "label": "Disequilibrium",
+   "detail": "The cow moos and is huge; the schema does not fit. Confusion pushes learning."
+  },
+  {
+   "id": "c",
+   "label": "Accommodation",
+   "detail": "A new schema forms: cows are different from dogs."
+  },
+  {
+   "id": "e",
+   "label": "Equilibrium",
+   "detail": "Balance is restored, at a more advanced level, until the next surprise."
+  }
+ ],
+ "caption": "Piaget's engine of development. Go round the loop with an example from a child you know."
+}
+:::
 
 ### What changes at each stage
 | Stage | Key achievements | Key limits |
@@ -816,6 +1015,37 @@ A neutral stimulus paired repeatedly with one that naturally causes a response c
 - **Generalisation**: similar stimuli trigger the response; **discrimination**: learning to tell them apart.
 - **Little Albert**: a baby conditioned to fear a white rat by pairing it with a loud noise; the fear generalised to other furry things. Ethically unacceptable today.
 
+
+:::widget flow
+{
+ "title": "Classical conditioning in three stages",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "b",
+   "label": "Before",
+   "detail": "Food (UCS) produces salivation (UCR). The bell is neutral: no salivation."
+  },
+  {
+   "id": "d",
+   "label": "During",
+   "detail": "Bell and food are paired many times."
+  },
+  {
+   "id": "a",
+   "label": "After",
+   "detail": "The bell alone (now a CS) produces salivation (CR)."
+  },
+  {
+   "id": "x",
+   "label": "Extinction",
+   "detail": "Bell repeatedly without food: the CR fades, though it can return (spontaneous recovery)."
+  }
+ ],
+ "caption": "Swap in a clinical example: a lift (neutral) paired with a panic attack (UCS) becomes a feared cue."
+}
+:::
+
 ### Operant conditioning (Thorndike, Skinner)
 Behaviour is shaped by its **consequences**.
 | | Adding something | Taking something away |
@@ -847,6 +1077,42 @@ Behaviour is shaped by its **consequences**.
     { "text": "Leaving a party early ends the social anxiety, so he leaves early every time", "bucket": 1 },
     { "text": "A worker's bonus is cut after repeated lateness", "bucket": 3 }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "How avoidance keeps a fear alive (two-factor theory)",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "c",
+   "label": "Cue",
+   "detail": "A crowded bus, learned through classical conditioning to trigger fear."
+  },
+  {
+   "id": "f",
+   "label": "Fear rises",
+   "detail": "Heart races, breath quickens, frightening thoughts."
+  },
+  {
+   "id": "e",
+   "label": "Escape or avoid",
+   "detail": "Getting off the bus, or never boarding."
+  },
+  {
+   "id": "r",
+   "label": "Relief",
+   "detail": "Fear drops at once. Removing an unpleasant state is negative reinforcement, so avoidance grows stronger."
+  },
+  {
+   "id": "n",
+   "label": "No new learning",
+   "detail": "The person never discovers the bus is safe, so the cue keeps its power."
+  }
+ ],
+ "caption": "Exposure breaks this loop at the escape step. Find the step a therapist would target."
 }
 :::
 

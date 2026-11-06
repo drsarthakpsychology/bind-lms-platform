@@ -19,6 +19,29 @@ Lawrence Kohlberg gave children and adults dilemmas (the best known: should Hein
 Stages 1 to 6 in six P words.
 :::
 
+
+:::widget layers
+{
+ "title": "Kohlberg's levels of moral reasoning",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Postconventional",
+   "detail": "Stage 5 social contract; stage 6 universal ethical principles. Laws serve people and principles."
+  },
+  {
+   "label": "Conventional",
+   "detail": "Stage 3 good relationships; stage 4 law and order. Being good in others' eyes, keeping society together."
+  },
+  {
+   "label": "Preconventional",
+   "detail": "Stage 1 obedience and punishment; stage 2 self-interest and exchange."
+  }
+ ],
+ "caption": "Reasoning climbs from the bottom. Remember Shweder's warning: duty and community reasoning is not automatically lower."
+}
+:::
+
 ### Critiques that matter
 - **Carol Gilligan** (1982) argued that Kohlberg's scheme, built from interviews with boys, ranks an **ethic of justice** above an **ethic of care**, and so made women appear "less developed". Later meta-analyses found only small sex differences, but her point that care is a mature moral voice was widely accepted.
 - **Richard Shweder** studied moral reasoning in **Bhubaneswar** and **Chicago** and described three ethics: **autonomy** (rights and harm), **community** (duty, hierarchy, role) and **divinity** (purity, sacredness). Kohlberg's top stages measure only autonomy. A Hindu elder reasoning from dharma and duty is not "stuck at stage 4"; he is using a different, sophisticated ethic.
@@ -105,6 +128,41 @@ The starting picture of attachment (Bowlby's secure base, Ainsworth's Strange Si
 - **Avoidant**: little visible distress; ignores the parent on return.
 - **Ambivalent (resistant)**: very distressed; angry and clingy at reunion, hard to soothe.
 - **Disorganised**: contradictory, frightened or frozen behaviour; linked to frightening or frightened caregiving, maltreatment and unresolved parental trauma.
+
+
+:::widget layers
+{
+ "title": "The circles around a child",
+ "shape": "rings",
+ "layers": [
+  {
+   "label": "Child",
+   "detail": "Temperament, health, developing attachment."
+  },
+  {
+   "label": "Microsystem",
+   "detail": "Parents, grandparents, siblings, crèche, school: the people the child meets directly."
+  },
+  {
+   "label": "Mesosystem",
+   "detail": "Links between those settings: how home and school talk to each other."
+  },
+  {
+   "label": "Exosystem",
+   "detail": "Settings the child is not in but which affect them: a parent's workplace, the panchayat, health services."
+  },
+  {
+   "label": "Macrosystem",
+   "detail": "Culture, religion, economy, laws, beliefs about childhood."
+  },
+  {
+   "label": "Chronosystem",
+   "detail": "Change over time: migration, a death, a pandemic year."
+  }
+ ],
+ "caption": "Bronfenbrenner's ecological model. Place one stress and one support for a child you know on each ring."
+}
+:::
 
 ### Many caregivers, one secure base
 In many Indian homes care is shared by grandparents, aunts, older siblings and domestic helpers. Children can be securely attached to **several figures**, and a grandmother may be the main one. Assess **who actually comforts the child when frightened**, not who the "mother" is on paper.
@@ -206,6 +264,37 @@ Older patients are not "younger patients with grey hair". Ask what they are choo
 - In a Muslim family in Lucknow, a widow observes iddat, a defined period of mourning with community support around her.
 - In a Christian family in Kochi, a memorial Mass at forty days and on each anniversary gathers the community.
 Rituals give time, company and permission to grieve. But rituals can also hide grief: after the formal mourning ends, the bereaved person, often a widow, may be left alone with it.
+:::
+
+
+:::widget flow
+{
+ "title": "The dual process model of grief",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "l",
+   "label": "Loss-oriented coping",
+   "detail": "Crying, looking at photographs, remembering, yearning."
+  },
+  {
+   "id": "o1",
+   "label": "Oscillation",
+   "detail": "Moving away from the pain for a while is healthy, not denial."
+  },
+  {
+   "id": "r",
+   "label": "Restoration-oriented coping",
+   "detail": "Learning new roles, sorting finances, taking a break from grief, new activities."
+  },
+  {
+   "id": "o2",
+   "label": "Oscillation",
+   "detail": "Coming back to the loss again. Getting stuck on either side signals trouble."
+  }
+ ],
+ "caption": "Healthy grief swings between both sides. Prolonged grief is often stuck on the loss side; avoidant grief is stuck on the restoration side."
+}
 :::
 
 ### When grief becomes a disorder
