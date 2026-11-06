@@ -9,7 +9,7 @@ import { loadLearnState, saveLearnState } from "../../study/actions";
 
 export const metadata: Metadata = { title: "Learn" };
 
-/** /games/play?lesson=… | ?mode=review | ?mode=blitz */
+/** /games/play?lesson=… | ?mode=review (?mode=blitz goes to /games/blitz) */
 export default async function PlayPage({ searchParams }: { searchParams: Promise<{ lesson?: string; mode?: string }> }) {
   await requireFeature("learn");
   const { lesson, mode } = await searchParams;
@@ -19,8 +19,8 @@ export default async function PlayPage({ searchParams }: { searchParams: Promise
       {node}
     </ActivityFrame>
   );
-  if (mode === "blitz")
-    return frame("60-second blitz", "As many right answers as you can in one minute. Speed builds fluent recall.", ["Answer fast; don't overthink.", "Each right answer adds to your score.", "Beat your best."], <Player key="blitz" mode={{ kind: "blitz" }} serverState={serverState} save={saveLearnState} />);
+  // Blitz moved to its own server-scored game (the only timed one).
+  if (mode === "blitz") redirect("/games/blitz");
   if (mode === "review")
     return frame("Review", "The questions you're about to forget, brought back at the right time (1, 3, 7, 14, then 30 days).", ["Answer each question.", "Right moves it to a longer gap; wrong brings it back sooner.", "Do this daily: it's the fastest way to keep what you learned."], <Player key="review" mode={{ kind: "review" }} serverState={serverState} save={saveLearnState} />);
   const l = lesson ? findLesson(lesson) : undefined;
