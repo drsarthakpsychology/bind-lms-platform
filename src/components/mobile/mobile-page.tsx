@@ -22,7 +22,9 @@ export function MobilePage({
 }) {
   return (
     <div
-      className={cn("mx-auto flex min-h-dvh w-full flex-col bg-background lg:max-w-3xl", className)}
+      // Full-screen pages (inset) fill the screen; pages inside the shell
+      // don't, so an empty page doesn't scroll for nothing.
+      className={cn("mx-auto flex w-full flex-col bg-background lg:max-w-3xl", inset && "min-h-dvh", className)}
       style={
         inset
           ? {

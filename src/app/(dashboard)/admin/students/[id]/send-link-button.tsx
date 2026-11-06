@@ -8,13 +8,14 @@ import { Button } from "@/components/ui/button";
 import { sendLoginLink } from "../../cohorts/actions";
 
 /** Email this student a fresh login link (older links stop working). */
-export function SendLinkButton({ email }: { email: string }) {
+export function SendLinkButton({ email, className, variant = "outline" }: { email: string; className?: string; variant?: "outline" | "default" }) {
   const router = useRouter();
   const [pending, start] = React.useTransition();
   return (
     <Button
       size="sm"
-      variant="outline"
+      variant={variant}
+      className={className}
       disabled={pending}
       onClick={() =>
         start(async () => {

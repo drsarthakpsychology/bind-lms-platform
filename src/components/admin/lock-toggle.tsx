@@ -38,7 +38,7 @@ export function LockToggle({
       aria-pressed={locked}
       aria-label={locked ? "Unlock this student's access" : "Lock this student's access"}
       className={cn(
-        "inline-flex h-8 items-center gap-1.5 rounded-full border-2 px-3 text-small font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60",
+        "inline-flex h-8 items-center gap-1.5 rounded-md border-2 px-3 text-small font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60",
         locked
           ? "border-foreground bg-foreground text-background"
           : "border-border bg-card text-foreground hover:bg-accent active:translate-y-px",

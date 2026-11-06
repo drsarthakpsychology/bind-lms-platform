@@ -75,7 +75,7 @@ export default async function NotificationsPage() {
         actions={
           unread > 0 ? (
             <form action={markAllNotificationsRead}>
-              <button type="submit" className="rounded-full border-2 border-foreground px-3 py-1 text-caption font-semibold">
+              <button type="submit" className="inline-flex min-h-10 items-center whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold active:translate-y-px pointer-coarse:min-h-11">
                 Mark all read
               </button>
             </form>
@@ -98,7 +98,17 @@ export default async function NotificationsPage() {
                     key={n.id}
                     href={n.href}
                     leading={<Bell className="size-4 text-foreground" aria-hidden />}
-                    title={n.read_at ? n.title : `● ${n.title}`}
+                    title={
+                      n.read_at ? (
+                        n.title
+                      ) : (
+                        <>
+                          <span aria-hidden>● </span>
+                          <span className="sr-only">New: </span>
+                          {n.title}
+                        </>
+                      )
+                    }
                     subtitle={n.body}
                     trailing={
                       <span className={cn("text-caption", n.read_at ? "text-muted-foreground" : "font-bold text-foreground")}>

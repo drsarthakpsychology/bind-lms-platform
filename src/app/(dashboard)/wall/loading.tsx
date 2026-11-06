@@ -1,7 +1,9 @@
+import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
+    <LoadingFrame>
     <div className="mx-auto w-full max-w-3xl space-y-6">
       <div className="space-y-3">
         <Skeleton className="h-4 w-24" />
@@ -13,5 +15,6 @@ export default function Loading() {
         ))}
       </div>
     </div>
+    </LoadingFrame>
   );
 }

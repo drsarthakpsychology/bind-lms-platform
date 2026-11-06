@@ -39,7 +39,7 @@ function ShareRow({ credentialId, title }: { credentialId: string; title: string
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold hover:bg-muted"
+        className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted pointer-coarse:h-11"
       >
         <Share2 className="size-3.5" aria-hidden /> Share on LinkedIn
       </a>
@@ -54,11 +54,11 @@ function ShareRow({ credentialId, title }: { credentialId: string; title: string
             /* clipboard unavailable */
           }
         }}
-        className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold hover:bg-muted"
+        className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted pointer-coarse:h-11"
       >
         <Copy className="size-3.5" aria-hidden /> {copied ? "Copied" : "Copy post"}
       </button>
-      <a href={url} target="_blank" rel="noreferrer" className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold hover:bg-muted">
+      <a href={url} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted pointer-coarse:h-11">
         <ExternalLink className="size-3.5" aria-hidden /> Verify
       </a>
     </div>
@@ -72,7 +72,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
   const issued = earned.filter((e) => e.status === "issued").length;
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full max-w-4xl space-y-8">
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Your credentials</p>
         <h1 className="text-h1">My Achievements</h1>
@@ -100,10 +100,10 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
                     {b.icon ?? "🎓"}
                   </span>
                   <div className="min-w-0">
-                    <p className="font-bold leading-tight">{b.title}</p>
+                    <p className="font-bold leading-tight break-words">{b.title}</p>
                     {b.description ? <p className="text-sm text-muted-foreground">{b.description}</p> : null}
                     <p className="mt-1 text-xs font-semibold text-muted-foreground">Issued {b.issued_at ? new Date(b.issued_at).toLocaleDateString() : "—"}</p>
-                    <p className="break-all font-mono text-[0.65rem] text-muted-foreground">{b.credential_id}</p>
+                    <p className="font-mono text-caption [overflow-wrap:anywhere] text-muted-foreground">{b.credential_id}</p>
                   </div>
                 </div>
                 <ShareRow credentialId={b.credential_id} title={b.title} />
@@ -125,7 +125,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
             {certificates.map((c) => (
               <li key={c.credential_id} className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
                 <div className="min-w-0 flex-1">
-                  <p className="font-bold">{c.title}</p>
+                  <p className="font-bold break-words">{c.title}</p>
                   <p className="text-xs text-muted-foreground">
                     {c.issued_at ? `Issued ${new Date(c.issued_at).toLocaleDateString()}` : "Pending"}{c.revoked_at ? ` · Revoked ${new Date(c.revoked_at).toLocaleDateString()}` : ""}
                   </p>
@@ -151,7 +151,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
                       if (r.url) window.open(r.url, "_blank");
                       else setMsg(r.error ?? "Couldn't prepare the download.");
                     }}
-                    className="inline-flex h-9 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3 text-xs font-semibold hover:bg-muted"
+                    className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted pointer-coarse:h-11"
                   >
                     <Download className="size-3.5" aria-hidden /> PDF
                   </button>

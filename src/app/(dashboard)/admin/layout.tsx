@@ -1,4 +1,6 @@
 import { redirect } from "next/navigation";
+import { after } from "next/server";
+import { opportunisticDoubtFollowups } from "@/app/api/cron/doubt-followup/followup";
 import { getSession } from "@/lib/auth/session";
 import { AdminSectionTabs } from "@/components/navigation/admin-section-tabs";
 
@@ -20,6 +22,10 @@ export default async function AdminLayout({
   if (session.profile.role !== "admin" && session.profile.role !== "view_admin") {
     redirect("/dashboard");
   }
+
+  // Doubt answered → notice / 48 h email: a cheap catch-up after the page is
+  // sent (throttled to once per 15 min per server; the daily cron does the rest).
+  after(opportunisticDoubtFollowups);
 
   // Navigation lives in the app sidebar (admin nav items); this layout only
   // owns the server-side role guard and a consistent content container.

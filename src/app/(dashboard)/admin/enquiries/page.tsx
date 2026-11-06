@@ -84,11 +84,11 @@ export default async function AdminEnquiriesPage() {
                 </div>
                 {row.message ? <p className="rounded-xl bg-background p-3 text-sm whitespace-pre-wrap break-words">{row.message}</p> : <p className="text-caption text-muted-foreground">No message.</p>}
                 <div className="mt-auto flex flex-wrap items-center gap-2">
-                  {w ? <a href={`https://wa.me/${w}`} target="_blank" rel="noopener noreferrer" className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">WhatsApp</a> : null}
-                  {row.phone ? <a href={`tel:${digits(row.phone)}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Call</a> : null}
-                  <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(row.email)}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Email</Link>
-                  <Link href={`/admin/people/${personKey(row.email)}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold">Pipeline record</Link>
-                  {!isStudent ? <Link href={`/admin/students/add?email=${encodeURIComponent(row.email)}`} className="inline-flex h-9 items-center rounded-full border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">Make a student</Link> : null}
+                  {w ? <a href={`https://wa.me/${w}`} target="_blank" rel="noopener noreferrer" className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">WhatsApp</a> : null}
+                  {row.phone ? <a href={`tel:${digits(row.phone)}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Call</a> : null}
+                  <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(row.email)}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Email</Link>
+                  <Link href={`/admin/people/${personKey(row.email)}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Pipeline record</Link>
+                  {!isStudent ? <Link href={`/admin/students/add?email=${encodeURIComponent(row.email)}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">Make a student</Link> : null}
                   <span className="ml-auto text-caption text-muted-foreground">{new Date(row.created_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} · {row.source ?? "website"}</span>
                 </div>
               </li>

@@ -53,7 +53,7 @@ export function StatCard({
       {href ? (
         <span
           aria-hidden
-          className="absolute top-2 right-2 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
+          className="absolute top-2 right-2 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 pointer-coarse:opacity-100"
         >
           <ArrowUpRight className="size-4" />
         </span>

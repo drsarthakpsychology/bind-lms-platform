@@ -219,7 +219,8 @@ export default async function LessonPage({
       <div className="flex items-center justify-between gap-3">
         <Link
           href={`/courses/${courseId}`}
-          className="inline-flex min-h-10 min-w-0 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
+          title={course?.title ?? "Course"}
+          className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
         >
           <ChevronLeft className="size-4 shrink-0" aria-hidden />
           <span className="truncate">{course?.title ?? "Course"}</span>
@@ -285,7 +286,7 @@ export default async function LessonPage({
               alreadyComplete={lastLessonCompleted}
             />
             {lessonComplete ? (
-              <span className="inline-flex h-9 w-fit items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">
+              <span className="inline-flex min-h-9 w-fit items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">
                 <CheckCircle2 className="size-4" aria-hidden /> Watched
               </span>
             ) : null}
@@ -510,7 +511,7 @@ export default async function LessonPage({
       {/* Up next — the course playlist beside the video (laptops and up). */}
       {nextUp.length > 0 ? (
         <aside aria-label="Lectures in this course" className="hidden lg:block">
-          <div className="sticky top-20 flex max-h-[calc(100dvh-6rem)] flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
+          <div className="sticky top-[calc(var(--top-h)+1rem)] flex max-h-[calc(100dvh-var(--top-h)-2rem)] flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
             <div className="border-b-2 border-foreground bg-brand px-4 py-3 text-brand-foreground">
               <p className="truncate text-sm font-bold">{course?.title ?? "Course"}</p>
               <p className="text-caption opacity-90">
