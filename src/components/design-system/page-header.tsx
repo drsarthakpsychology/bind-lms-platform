@@ -24,7 +24,8 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 pb-6 sm:flex-row sm:items-start sm:justify-between",
+        // Short laptop screens (<720px tall) get a tighter header.
+        "flex flex-col gap-4 pb-6 sm:flex-row sm:items-start sm:justify-between short:gap-2 short:lg:pb-4",
         className
       )}
     >

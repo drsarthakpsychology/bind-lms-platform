@@ -227,6 +227,8 @@ Code finding: the layout switches at **one** point, `lg` (1024 px).
 | **Android phones** 360–412 wide | Phone shell | 360 px is the narrowest common width; long names and email addresses overflow chips | Test at 360 and at the WCAG reflow width of 320; truncate the middle of emails, not the end |
 | **Zoom 200 % / large text** (any device) | Mostly reflows | Fixed-height chips and tab bars clip text | No fixed heights on text containers; `min-height` instead |
 
+> **Update 2026-11-06 (branch `agent/mobile`), BUILT on the student shell:** tablets (768-1023) get the icon rail and a sticky top bar instead of bottom tabs; `pointer: coarse` raises shared controls to 44 px; `tall:`/`short:` variants (720 px) gate extra sticky bars and compact headers; the study reader is two-column from 768. Screenshots still owed: [RESPONSIVE_CHECKLIST.md](RESPONSIVE_CHECKLIST.md).
+
 **Most important responsive problems, in order:**
 1. Tablets get the phone shell.
 2. Short laptop screens lose space to sticky layers.
