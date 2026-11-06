@@ -26,7 +26,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["5", "12", "20", "10"],
     answer: 3,
     explanation:
-      "Hermann Rorschach's Psychodiagnostik (1921) used 10 inkblots, and every major system (Exner's Comprehensive System, R-PAS) uses the same 10 cards. 5, 12 and 20 are wrong; 20 is the number of TAT cards Murray recommended per person, which students sometimes confuse.",
+      "Hermann Rorschach used 10 inkblots in his 1921 work, and every major system (Exner's Comprehensive System, R-PAS) uses the same 10 cards. 5, 12 and 20 are wrong; 20 is the number of TAT cards Murray recommended per person, which students sometimes confuse.",
     module: M,
     ref: "Rorschach 1921; Exner 2003",
   },
@@ -164,7 +164,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: [".29", ".67", ".40", ".60"],
     answer: 2,
     explanation:
-      "Afr = responses to VIII–X ÷ responses to I–VII = 6 / (21 − 6) = 6/15 = .40, which is low for adults and suggests avoidance of emotional stimulation. .29 is 6/21, dividing by total R. .67 and .60 come from inverting or miscounting the card groups.",
+      "Afr = responses to VIII to X ÷ responses to I to VII = 6 / (21 − 6) = 6/15 = .40, which is low for adults and suggests avoidance of emotional stimulation. .29 is 6/21, dividing by total R. .67 and .60 come from inverting or miscounting the card groups.",
     module: M,
     ref: "Exner 2003 ch. 7",
   },
@@ -314,7 +314,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both true; R explains A. Meyer and colleagues (2011) found that wide variation in R (very short or very long records) confounds many indices, so R-PAS asks for 'two, maybe three' responses per card, prompts after one and pulls after four. This standardises protocol length.",
+      "Both true; R explains A. Meyer and colleagues found that wide variation in R (very short or very long records) confounds many indices, so R-PAS asks for 'two, maybe three' responses per card, prompts after one and pulls after four. This standardises protocol length.",
     module: M,
     ref: "Meyer, Viglione, Mihura, Erard & Erdberg 2011",
   },
@@ -589,7 +589,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The RISB has 40 stems; each completion is rated from 0 (positive) to 6 (strong conflict) and summed into an adjustment score. 60 stems in 15 areas is the Sacks Sentence Completion Test. 100 words is the Kent–Rosanoff word-association list. Pictures belong to apperception tests.",
+      "The RISB has 40 stems; each completion is rated from 0 (positive) to 6 (strong conflict) and summed into an adjustment score. 60 stems in 15 areas is the Sacks Sentence Completion Test. 100 words is the Kent-Rosanoff word-association list. Pictures belong to apperception tests.",
     module: M,
     ref: "Rotter & Rafferty 1950",
   },
@@ -658,7 +658,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["Karen Machover", "Florence Goodenough", "Lauretta Bender", "John Buck"],
     answer: 3,
     explanation:
-      "Buck introduced the HTP in 1948. Machover developed the projective Draw-a-Person (1949). Goodenough developed the Draw-a-Man test of intelligence (1926). Bender developed the Visual Motor Gestalt Test.",
+      "Buck introduced the HTP in 1948. Machover developed the projective Draw-a-Person. Goodenough developed the Draw-a-Man test of intelligence. Bender developed the Visual Motor Gestalt Test.",
     module: M,
     ref: "Buck 1948",
   },
@@ -678,7 +678,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Machover (1949) proposed that the figure represents the drawer's body image and self-concept, so features were interpreted as expressions of conflicts. Counting details for mental age is Goodenough's intellectual scoring. Drawings are untimed and not speed measures. There is no rule that the figure represents the father.",
+      "Machover proposed that the figure represents the drawer's body image and self-concept, so features were interpreted as expressions of conflicts. Counting details for mental age is Goodenough's intellectual scoring. Drawings are untimed and not speed measures. There is no rule that the figure represents the father.",
     module: M,
     ref: "Machover 1949",
   },
@@ -693,7 +693,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["the TAT", "the Rorschach", "children's human figure drawings", "the MMPI-A"],
     answer: 2,
     explanation:
-      "Koppitz (1968) identified emotional indicators on children's human figure drawings, signs that are rare in normal children's drawings at a given age (for example, gross asymmetry, tiny figures, omission of a neck after a certain age). She is also known for the developmental scoring of the Bender-Gestalt in children, but emotional indicators in this sense belong to figure drawings. They are not TAT, Rorschach or MMPI-A scores.",
+      "Koppitz identified emotional indicators on children's human figure drawings, signs that are rare in normal children's drawings at a given age (for example, gross asymmetry, tiny figures, omission of a neck after a certain age). She is also known for the developmental scoring of the Bender-Gestalt in children, but emotional indicators in this sense belong to figure drawings. They are not TAT, Rorschach or MMPI-A scores.",
     module: M,
     ref: "Koppitz 1968",
   },
@@ -712,7 +712,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both true; R explains A. Reviews from Swensen (1957, 1968) to Lilienfeld, Wood and Garb (2000) found little support for sign-by-sign interpretation; global ratings of overall maladjustment fare somewhat better. Hence the caution against single-sign interpretation.",
+      "Both true; R explains A. Reviews from Swensen to Lilienfeld, Wood and Garb found little support for sign-by-sign interpretation; global ratings of overall maladjustment fare somewhat better. Hence the caution against single-sign interpretation.",
     module: M,
     ref: "Lilienfeld, Wood & Garb 2000",
   },
@@ -723,7 +723,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "Chapman and Chapman's (1967) work on 'illusory correlation' showed that",
+    stem: "Chapman and Chapman's work on 'illusory correlation' showed that",
     options: [
       "drawings are valid indicators of paranoia",
       "clinicians always detect real correlations in data",
@@ -752,7 +752,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The KFD (1970) adds action: everyone in the family doing something, which brings out perceived roles and interactions. Copying nine designs is the Bender-Gestalt. House, tree and person is the HTP. Completing sentences is a sentence-completion test.",
+      "The KFD adds action: everyone in the family doing something, which brings out perceived roles and interactions. Copying nine designs is the Bender-Gestalt. House, tree and person is the HTP. Completing sentences is a sentence-completion test.",
     module: M,
     ref: "Burns & Kaufman 1970",
   },
@@ -763,7 +763,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "The 'projective hypothesis', named by L. K. Frank (1939), states that",
+    stem: "The 'projective hypothesis', named by L. K. Frank, states that",
     options: [
       "people reveal their needs, conflicts and ways of organising experience when they respond to ambiguous stimuli",
       "test scores must be projected onto a normal curve",
@@ -791,7 +791,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-I, C-II, D-III", "A-IV, B-II, C-I, D-III", "A-IV, B-II, C-III, D-I"],
     answer: 2,
     explanation:
-      "Lindzey (1959) grouped techniques by response type: association (Rorschach, word association), construction (TAT stories), completion (sentence completion), choice or ordering (Szondi), and expression (drawing, play). So A-IV, B-II, C-I, D-III. The first code swaps Rorschach and TAT. The second swaps TAT and SCT. The fourth swaps SCT and DAP.",
+      "Lindzey grouped techniques by response type: association (Rorschach, word association), construction (TAT stories), completion (sentence completion), choice or ordering (Szondi), and expression (drawing, play). So A-IV, B-II, C-I, D-III. The first code swaps Rorschach and TAT. The second swaps TAT and SCT. The fourth swaps SCT and DAP.",
     module: M,
     ref: "Lindzey 1959",
   },
@@ -876,7 +876,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Jung treated delayed reaction, failure to respond, repeating the stimulus, unusual or very personal responses and physiological changes as signs that a word touched an emotional complex. Common responses and opposites are typical of ordinary associations (Kent–Rosanoff norms). Answering in one word is simply the instruction.",
+      "Jung treated delayed reaction, failure to respond, repeating the stimulus, unusual or very personal responses and physiological changes as signs that a word touched an emotional complex. Common responses and opposites are typical of ordinary associations (Kent-Rosanoff norms). Answering in one word is simply the instruction.",
     module: M,
     ref: "Jung 1910; Kent & Rosanoff 1910",
   },

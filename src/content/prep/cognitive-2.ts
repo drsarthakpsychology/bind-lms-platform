@@ -23,7 +23,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "Tulving (1972) distinguished episodic memory from semantic memory. Episodic memory is memory for",
+    stem: "Tulving distinguished episodic memory from semantic memory. Episodic memory is memory for",
     options: [
       "general facts and word meanings",
       "motor skills",
@@ -43,7 +43,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "The levels-of-processing framework of Craik and Lockhart (1972) proposes that",
+    stem: "The levels-of-processing framework of Craik and Lockhart proposes that",
     options: [
       "deeper, more meaningful processing at encoding produces more durable memory traces",
       "memory consists of three separate stores",
@@ -63,7 +63,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "In Craik and Tulving's (1975) experiments, participants answered questions about words before a surprise memory test. Which order of later recognition, from best to worst, did they find?",
+    stem: "In Craik and Tulving's experiments, participants answered questions about words before a surprise memory test. Which order of later recognition, from best to worst, did they find?",
     options: [
       "Case (Is it in capitals?) > rhyme > sentence",
       "Rhyme > sentence > case",
@@ -111,7 +111,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "If deep processing is defined as whatever leads to good memory, and good memory is explained by deep processing, the argument is circular (Baddeley, 1978; Eysenck, 1978). The framework predicts the opposite of the first option. It was tested extensively. It relies on semantic processing as the deepest level.",
+      "If deep processing is defined as whatever leads to good memory, and good memory is explained by deep processing, the argument is circular, a point made by Baddeley and by Michael Eysenck. The framework predicts the opposite of the first option. It was tested extensively. It relies on semantic processing as the deepest level.",
     module: M,
     ref: "Baddeley 1978",
   },
@@ -122,7 +122,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Morris, Bransford and Franks (1977) found that words encoded by rhyme were better recognised than words encoded semantically when the test asked which words rhymed with test items. This demonstrates",
+    stem: "Morris, Bransford and Franks found that words encoded by rhyme were better recognised than words encoded semantically when the test asked which words rhymed with test items. This demonstrates",
     options: [
       "the levels-of-processing effect",
       "the generation effect",
@@ -151,7 +151,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Tulving and Thomson (1973) showed that even a strong associate fails as a cue if it was not part of the original encoding, while a weak associate present at study works well. The other options deny the dependence of retrieval on encoding context, which is the core of the principle.",
+      "Tulving and Thomson showed that even a strong associate fails as a cue if it was not part of the original encoding, while a weak associate present at study works well. The other options deny the dependence of retrieval on encoding context, which is the core of the principle.",
     module: M,
     ref: "Tulving & Thomson 1973",
   },
@@ -162,7 +162,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "Godden and Baddeley (1975) had divers learn word lists either on land or underwater. Recall was best when",
+    stem: "Godden and Baddeley had divers learn word lists either on land or underwater. Recall was best when",
     options: [
       "the learning and recall environments were the same",
       "learning took place underwater and recall on land",
@@ -207,7 +207,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["context-dependent memory", "state-dependent memory", "mood-congruent memory", "the spacing effect"],
     answer: 1,
     explanation:
-      "State-dependent memory concerns the internal physiological state at learning and retrieval (Goodwin et al., 1969). Context-dependent memory concerns the external environment. Mood-congruent memory concerns better recall of material whose emotional tone matches current mood. The spacing effect concerns distributed practice.",
+      "State-dependent memory concerns the internal physiological state at learning and retrieval (as in Goodwin's alcohol studies). Context-dependent memory concerns the external environment. Mood-congruent memory concerns better recall of material whose emotional tone matches current mood. The spacing effect concerns distributed practice.",
     module: M,
     ref: "Goodwin et al. 1969",
   },
@@ -222,7 +222,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["state-dependent memory", "context-dependent memory", "mood-congruent memory", "retrograde amnesia"],
     answer: 2,
     explanation:
-      "Mood congruence is better recall of material whose emotional tone matches current mood, regardless of mood at encoding (Bower, 1981). Mood-dependent (state-dependent) memory would require matching mood at encoding and retrieval. Context-dependence concerns external settings. Retrograde amnesia is loss of pre-injury memories.",
+      "Mood congruence is better recall of material whose emotional tone matches current mood, regardless of mood at encoding, as Bower described. Mood-dependent (state-dependent) memory would require matching mood at encoding and retrieval. Context-dependence concerns external settings. Retrograde amnesia is loss of pre-injury memories.",
     module: M,
     ref: "Bower 1981; Blaney 1986",
   },
@@ -233,7 +233,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Slamecka and Graf (1978) found that words people produced themselves from a cue (for example, 'rapid – f___') were remembered better than words they simply read ('rapid – fast'). This is the",
+    stem: "Slamecka and Graf found that words people produced themselves from a cue (for example, 'rapid: f___') were remembered better than words they simply read ('rapid: fast'). This is the",
     options: ["testing effect", "spacing effect", "von Restorff effect", "generation effect"],
     answer: 3,
     explanation:
@@ -248,7 +248,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "Roediger and Karpicke (2006) compared repeated studying with repeated testing of prose passages. On a test one week later,",
+    stem: "Roediger and Karpicke compared repeated studying with repeated testing of prose passages. On a test one week later,",
     options: [
       "repeated testing led to much better retention than repeated studying, even though repeated studying had looked better after 5 minutes",
       "repeated studying was better at every delay",
@@ -339,7 +339,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Warrington and Weiskrantz (1970) showed that amnesic patients who could not recall or recognise studied words",
+    stem: "Warrington and Weiskrantz showed that amnesic patients who could not recall or recognise studied words",
     options: [
       "showed no learning of any kind",
       "performed better than controls on recall",
@@ -359,7 +359,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "statement",
-    stem: "Graf, Squire and Mandler (1984) gave amnesic patients and controls word stems after studying a list. Which statements describe their findings?",
+    stem: "Graf, Squire and Mandler gave amnesic patients and controls word stems after studying a list. Which statements describe their findings?",
     statements: [
       "When told to use the stems to recall studied words, amnesics performed worse than controls.",
       "When told to complete each stem with the first word that came to mind, amnesics showed as much priming as controls.",
@@ -400,7 +400,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "Ebbinghaus's (1885) forgetting curve, obtained with nonsense syllables, showed that",
+    stem: "Ebbinghaus's forgetting curve, obtained with nonsense syllables, showed that",
     options: [
       "forgetting is steady and linear over time",
       "forgetting is rapid at first and then slows down",
@@ -452,7 +452,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "match",
     stem: "Match the experimental sequence (List I) with what it represents (List II).",
     lists: {
-      left: ["Learn A – Learn B – Test A", "Learn A – Learn B – Test B", "Learn A – Rest – Test A", "Rest – Learn B – Test B"],
+      left: ["Learn A, then Learn B, then Test A", "Learn A, then Learn B, then Test B", "Learn A, then Rest, then Test A", "Rest, then Learn B, then Test B"],
       right: [
         "Experimental group for retroactive interference",
         "Experimental group for proactive interference",
@@ -474,7 +474,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Jenkins and Dallenbach (1924) found that participants forgot less over 8 hours of sleep than over 8 hours awake. They interpreted this as evidence that",
+    stem: "Jenkins and Dallenbach found that participants forgot less over 8 hours of sleep than over 8 hours awake. They interpreted this as evidence that",
     options: [
       "forgetting is caused mainly by decay",
       "dreams strengthen memory",
@@ -502,7 +502,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true and well replicated. R is false: Jenkins and Dallenbach (1924) explained the result by reduced interference; active systems consolidation during slow-wave sleep is a much later account (for example, Diekelmann and Born, 2010). Hence 'A is true, but R is false'.",
+      "A is true and well replicated. R is false: Jenkins and Dallenbach explained the result by reduced interference; active systems consolidation during slow-wave sleep is a much later account (developed by researchers such as Diekelmann and Born). Hence 'A is true, but R is false'.",
     module: M,
     ref: "Jenkins & Dallenbach 1924; Diekelmann & Born 2010",
   },
@@ -513,7 +513,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Tulving and Pearlstone (1966) found that giving category names as cues at recall greatly increased the number of words recalled from categorised lists. This shows that",
+    stem: "Tulving and Pearlstone found that giving category names as cues at recall greatly increased the number of words recalled from categorised lists. This shows that",
     options: [
       "the words had decayed",
       "category names create false memories",
@@ -533,7 +533,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "In the retrieval-practice paradigm (Anderson, Bjork and Bjork, 1994), participants practise retrieving some fruits from a studied list (for example, FRUIT – or___). On a final test, unpractised fruits (such as 'banana') are recalled worse than items from unpractised categories. This is",
+    stem: "In the retrieval-practice paradigm of Anderson, Bjork and Bjork, participants practise retrieving some fruits from a studied list (for example, FRUIT: or___). On a final test, unpractised fruits (such as 'banana') are recalled worse than items from unpractised categories. This is",
     options: [
       "the testing effect",
       "retrieval-induced forgetting",
@@ -553,7 +553,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "In Anderson and Green's (2001) think/no-think paradigm, repeatedly suppressing retrieval of a response reduced its later recall even with independent cues. Neuroimaging studies of this effect showed",
+    stem: "In Anderson and Green's think/no-think paradigm, repeatedly suppressing retrieval of a response reduced its later recall even with independent cues. Neuroimaging studies of this effect showed",
     options: [
       "increased dorsolateral prefrontal activity and reduced hippocampal activity during suppression",
       "increased amygdala activity only",
@@ -562,7 +562,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Anderson et al. (2004) found that suppression engaged lateral prefrontal control regions, which down-regulated hippocampal activity, a proposed mechanism for motivated forgetting. Amygdala activity alone was not the finding. Clear differences were found. The last option reverses the pattern.",
+      "Imaging work by Anderson and colleagues found that suppression engaged lateral prefrontal control regions, which down-regulated hippocampal activity, a proposed mechanism for motivated forgetting. Amygdala activity alone was not the finding. Clear differences were found. The last option reverses the pattern.",
     module: B,
     ref: "Anderson & Green 2001; Anderson et al. 2004",
   },
@@ -593,7 +593,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "Bartlett's (1932) 'War of the Ghosts' studies showed that remembering is",
+    stem: "Bartlett's 'War of the Ghosts' studies showed that remembering is",
     options: [
       "an exact reproduction of what was experienced",
       "unaffected by culture",
@@ -634,7 +634,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "In Loftus and Palmer's (1974) study, participants who were asked how fast cars were going when they 'smashed' into each other",
+    stem: "In Loftus and Palmer's study, participants who were asked how fast cars were going when they 'smashed' into each other",
     options: [
       "gave higher speed estimates and later more often reported seeing broken glass that was not in the film",
       "gave lower speed estimates than those asked about cars that 'hit'",
@@ -691,7 +691,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "In the Deese–Roediger–McDermott (DRM) paradigm, participants hear lists such as 'bed, rest, awake, tired, dream, snooze ...'. The typical result is that",
+    stem: "In the Deese-Roediger-McDermott (DRM) paradigm, participants hear lists such as 'bed, rest, awake, tired, dream, snooze ...'. The typical result is that",
     options: [
       "participants recall every list word perfectly",
       "unrelated words are falsely recalled",
@@ -700,7 +700,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Roediger and McDermott (1995) found the critical lure was recalled about as often as studied words and often given 'remember' judgements, a robust laboratory false memory driven by associative activation. Recall is far from perfect. Unrelated words are rarely produced. First-word forgetting is not the key finding.",
+      "Roediger and McDermott found the critical lure was recalled about as often as studied words and often given 'remember' judgements, a robust laboratory false memory driven by associative activation. Recall is far from perfect. Unrelated words are rarely produced. First-word forgetting is not the key finding.",
     module: M,
     ref: "Roediger & McDermott 1995",
   },
@@ -720,7 +720,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Reality monitoring (Johnson and Raye, 1981) is deciding whether a memory came from imagination or perception; memories with rich perceptual detail and little record of cognitive operations tend to be judged real. External source monitoring concerns distinguishing two outside sources. Proactive interference and encoding specificity are not about attributing a memory's origin.",
+      "Reality monitoring, as described by Johnson and Raye, is deciding whether a memory came from imagination or perception; memories with rich perceptual detail and little record of cognitive operations tend to be judged real. External source monitoring concerns distinguishing two outside sources. Proactive interference and encoding specificity are not about attributing a memory's origin.",
     module: M,
     ref: "Johnson & Raye 1981; Johnson, Hashtroudi & Lindsay 1993",
   },
@@ -731,7 +731,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Neisser and Harsch (1992) questioned students the day after the Challenger shuttle disaster and again about three years later. They found that",
+    stem: "Neisser and Harsch questioned students the day after the Challenger shuttle disaster and again about three years later. They found that",
     options: [
       "flashbulb memories were perfectly accurate",
       "students could not remember the disaster at all",
@@ -740,7 +740,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Brown and Kulik (1977) proposed that flashbulb memories are vivid and lasting, but Neisser and Harsch showed that vividness and confidence persist while accuracy declines; some students insisted their later versions were right. So the memories were not perfectly accurate, the event itself was remembered, and confidence was high, not low.",
+      "Brown and Kulik proposed that flashbulb memories are vivid and lasting, but Neisser and Harsch showed that vividness and confidence persist while accuracy declines; some students insisted their later versions were right. So the memories were not perfectly accurate, the event itself was remembered, and confidence was high, not low.",
     module: M,
     ref: "Brown & Kulik 1977; Neisser & Harsch 1992",
   },
@@ -775,7 +775,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Ribot (1882) observed that older memories tend to survive while those closest to the injury are lost, consistent with gradual consolidation. Childhood memories are usually best preserved, not lost. Loss is graded, not random. Procedural memory is typically spared.",
+      "Ribot observed that older memories tend to survive while those closest to the injury are lost, consistent with gradual consolidation. Childhood memories are usually best preserved, not lost. Loss is graded, not random. Procedural memory is typically spared.",
     module: M,
     ref: "Ribot 1882; Squire & Alvarez 1995",
   },
@@ -876,7 +876,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "Nader, Schafe and LeDoux (2000) reactivated a consolidated auditory fear memory in rats and then infused the protein-synthesis inhibitor anisomycin into the amygdala. They found that",
+    stem: "Nader, Schafe and LeDoux reactivated a consolidated auditory fear memory in rats and then infused the protein-synthesis inhibitor anisomycin into the amygdala. They found that",
     options: [
       "the memory was unaffected because consolidation was complete",
       "the memory was strengthened",
@@ -896,7 +896,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "In Collins and Quillian's (1969) hierarchical network model, verifying 'A canary is an animal' takes longer than 'A canary is a bird' because",
+    stem: "In Collins and Quillian's hierarchical network model, verifying 'A canary is an animal' takes longer than 'A canary is a bird' because",
     options: [
       "'animal' is a less familiar word",
       "the search must move up more levels of the hierarchy",
@@ -905,7 +905,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Properties and categories are stored at the highest applicable node (cognitive economy), so 'animal' is two levels above 'canary' while 'bird' is one level above; more links mean longer RT. Familiarity was a later criticism (Conrad, 1972), not the model's own explanation. Typicality is not part of the model. Sentence length is matched.",
+      "Properties and categories are stored at the highest applicable node (cognitive economy), so 'animal' is two levels above 'canary' while 'bird' is one level above; more links mean longer RT. Familiarity was a later criticism raised by Conrad, not the model's own explanation. Typicality is not part of the model. Sentence length is matched.",
     module: M,
     ref: "Collins & Quillian 1969",
   },
@@ -920,13 +920,13 @@ export const QUESTIONS_2: PrepQuestion[] = [
     statements: [
       "'A robin is a bird' is verified faster than 'A penguin is a bird', although both involve one link.",
       "'A chicken is an animal' can be verified faster than 'A chicken is a bird'.",
-      "Verification time is strongly related to how often a property is associated with a concept (Conrad, 1972).",
+      "Verification time is strongly related to how often a property is associated with a concept, as Conrad showed.",
       "The model correctly predicted typicality effects.",
     ],
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "Typicality effects (1), reversals of the predicted hierarchy (2; Rips, Shoben and Smith, 1973) and property-frequency effects (3) all challenged the model. Statement 4 is false: the model treats all category members alike, so it cannot predict typicality. These problems led to spreading activation and feature-comparison models.",
+      "Typicality effects (1), reversals of the predicted hierarchy (2, shown by Rips, Shoben and Smith) and property-frequency effects (3) all challenged the model. Statement 4 is false: the model treats all category members alike, so it cannot predict typicality. These problems led to spreading activation and feature-comparison models.",
     module: M,
     ref: "Rips, Shoben & Smith 1973; Conrad 1972",
   },
@@ -937,7 +937,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "In a lexical decision task, people decide 'NURSE' is a word faster when it follows 'DOCTOR' than when it follows 'BREAD'. Collins and Loftus (1975) explain this as",
+    stem: "In a lexical decision task, people decide 'NURSE' is a word faster when it follows 'DOCTOR' than when it follows 'BREAD'. Collins and Loftus explain this as",
     options: [
       "the levels-of-processing effect",
       "proactive interference",
@@ -946,7 +946,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Activating 'doctor' spreads activation to linked nodes such as 'nurse', so less additional activation is needed to recognise it (semantic priming, Meyer and Schvaneveldt, 1971). Levels of processing concerns encoding depth. Proactive interference would slow, not speed, responses. The word superiority effect concerns letter perception within words.",
+      "Activating 'doctor' spreads activation to linked nodes such as 'nurse', so less additional activation is needed to recognise it (semantic priming, first shown by Meyer and Schvaneveldt). Levels of processing concerns encoding depth. Proactive interference would slow, not speed, responses. The word superiority effect concerns letter perception within words.",
     module: M,
     ref: "Collins & Loftus 1975; Meyer & Schvaneveldt 1971",
   },
@@ -977,7 +977,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Smith, Shoben and Rips's (1974) feature comparison model explains typicality effects by proposing that",
+    stem: "Smith, Shoben and Rips's feature comparison model explains typicality effects by proposing that",
     options: [
       "concepts are stored in a strict hierarchy",
       "all features of a concept are equally important",

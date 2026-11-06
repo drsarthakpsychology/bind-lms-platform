@@ -23,7 +23,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "In Atkinson and Shiffrin's (1968) multi-store model, information passes through which sequence of stores?",
+    stem: "In Atkinson and Shiffrin's multi-store model, information passes through which sequence of stores?",
     options: [
       "Long-term store → short-term store → sensory register",
       "Episodic buffer → phonological loop → central executive",
@@ -43,7 +43,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "George Miller's (1956) 'magical number seven, plus or minus two' refers to",
+    stem: "George Miller's 'magical number seven, plus or minus two' refers to",
     options: [
       "the capacity of short-term memory, measured in chunks",
       "the number of seconds information lasts in iconic memory",
@@ -63,7 +63,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Cowan (2001) argued that when rehearsal and chunking are prevented, the true capacity of short-term (focus of attention) memory is about",
+    stem: "Cowan argued that when rehearsal and chunking are prevented, the true capacity of short-term (focus of attention) memory is about",
     options: ["7 ± 2 items", "15 to 20 items", "1 item", "4 ± 1 chunks"],
     answer: 3,
     explanation:
@@ -78,7 +78,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "Sperling's (1960) partial-report experiments showed that iconic memory",
+    stem: "Sperling's partial-report experiments showed that iconic memory",
     options: [
       "lasts several minutes",
       "holds more information than can be reported, but decays within about a second",
@@ -113,7 +113,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Darwin, Turvey and Crowder's (1972) 'three-eared man' study, in which letters were presented from the left, right and centre at once, provided evidence for",
+    stem: "Darwin, Turvey and Crowder's 'three-eared man' study, in which letters were presented from the left, right and centre at once, provided evidence for",
     options: [
       "an auditory sensory (echoic) store lasting about 2 seconds or more",
       "a visual store lasting about 250 ms",
@@ -133,7 +133,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "In the Brown–Peterson task, participants hear a consonant trigram and then count backwards by threes before recall. The main finding was that",
+    stem: "In the Brown-Peterson task, participants hear a consonant trigram and then count backwards by threes before recall. The main finding was that",
     options: [
       "recall stayed near 100% for a minute",
       "counting improved recall",
@@ -142,7 +142,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Peterson and Peterson (1959) found rapid forgetting when rehearsal was blocked, which they attributed to decay. Recall did not stay perfect, counting did not help (it prevented rehearsal), and longer delays produced worse, not better, recall.",
+      "Peterson and Peterson found rapid forgetting when rehearsal was blocked, which they attributed to decay. Recall did not stay perfect, counting did not help (it prevented rehearsal), and longer delays produced worse, not better, recall.",
     module: M,
     ref: "Peterson & Peterson 1959",
   },
@@ -155,8 +155,8 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Keppel and Underwood (1962) found almost no forgetting on the first trial of the Brown–Peterson task, even after long delays.",
-      "Much of the forgetting in the Brown–Peterson task reflects proactive interference from items on earlier trials.",
+      "Keppel and Underwood found almost no forgetting on the first trial of the Brown-Peterson task, even after long delays.",
+      "Much of the forgetting in the Brown-Peterson task reflects proactive interference from items on earlier trials.",
     ],
     options: AR,
     answer: 0,
@@ -172,7 +172,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "In Wickens' 'release from proactive interference', recall in the Brown–Peterson task recovers when",
+    stem: "In Wickens' 'release from proactive interference', recall in the Brown-Peterson task recovers when",
     options: [
       "the retention interval is lengthened",
       "the category of the to-be-remembered items is changed (for example, from fruits to professions)",
@@ -192,7 +192,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "In Waugh and Norman's (1965) probe-digit task, digits were presented at either 1 or 4 per second. Forgetting depended on the number of digits that followed the probe, not on the elapsed time. This supports",
+    stem: "In Waugh and Norman's probe-digit task, digits were presented at either 1 or 4 per second. Forgetting depended on the number of digits that followed the probe, not on the elapsed time. This supports",
     options: [
       "trace decay as the cause of short-term forgetting",
       "a separate echoic store",
@@ -232,7 +232,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "statement",
-    stem: "Which statements correctly describe Glanzer and Cunitz's (1966) serial-position findings?",
+    stem: "Which statements correctly describe Glanzer and Cunitz's serial-position findings?",
     statements: [
       "A 30-second filled delay before recall removed the recency effect.",
       "The filled delay left the primacy effect largely intact.",
@@ -261,7 +261,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-III, C-I, D-II", "A-III, B-I, C-IV, D-II", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 2,
     explanation:
-      "Serial position with delay = Glanzer and Cunitz (A-III); partial report = Sperling (B-IV); probe digit = Waugh and Norman (C-I); three-eared man = Darwin, Turvey and Crowder (D-II). The first code swaps Glanzer–Cunitz and Sperling. The second swaps Sperling and Waugh–Norman. The fourth swaps the last two.",
+      "Serial position with delay = Glanzer and Cunitz (A-III); partial report = Sperling (B-IV); probe digit = Waugh and Norman (C-I); three-eared man = Darwin, Turvey and Crowder (D-II). The first code swaps Glanzer-Cunitz and Sperling. The second swaps Sperling and Waugh-Norman. The fourth swaps the last two.",
     module: M,
     ref: "Eysenck & Keane ch. 6",
   },
@@ -275,12 +275,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Patient KF had a digit span of about two items yet could learn new long-term information fairly normally.",
-      "In the Atkinson–Shiffrin model, information must pass through the short-term store to enter the long-term store.",
+      "In the Atkinson-Shiffrin model, information must pass through the short-term store to enter the long-term store.",
     ],
     options: AR,
     answer: 1,
     explanation:
-      "Both statements are true, but R does not explain A; in fact KF's case (Shallice and Warrington, 1970) challenges R. If STS were the only gateway to LTS, a severe STS deficit should impair new long-term learning. KF's preserved learning suggested parallel routes or a non-unitary short-term memory, one motivation for the working memory model.",
+      "Both statements are true, but R does not explain A; in fact KF's case, described by Shallice and Warrington, challenges R. If STS were the only gateway to LTS, a severe STS deficit should impair new long-term learning. KF's preserved learning suggested parallel routes or a non-unitary short-term memory, one motivation for the working memory model.",
     module: M,
     ref: "Shallice & Warrington 1970",
   },
@@ -300,7 +300,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Scoville and Milner (1957) described H.M.'s profound anterograde amnesia for declarative material, with intact short-term memory, intelligence and language; he improved at mirror drawing across days without remembering the practice. So the other three options are contradicted by his case.",
+      "Scoville and Milner described H.M.'s profound anterograde amnesia for declarative material, with intact short-term memory, intelligence and language; he improved at mirror drawing across days without remembering the practice. So the other three options are contradicted by his case.",
     module: M,
     ref: "Scoville & Milner 1957; Corkin 2002",
   },
@@ -311,7 +311,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "Baddeley and Hitch's (1974) original working memory model had three components. Which set is correct?",
+    stem: "Baddeley and Hitch's original working memory model had three components. Which set is correct?",
     options: [
       "Sensory register, short-term store, long-term store",
       "Central executive, phonological loop, visuospatial sketchpad",
@@ -320,7 +320,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The 1974 model had a central executive controlling two slave systems, the phonological loop and visuospatial sketchpad; the episodic buffer was added in 2000. The first option is the Atkinson–Shiffrin model. Episodic, semantic and procedural are long-term memory systems. Iconic, echoic and haptic are sensory stores.",
+      "The 1974 model had a central executive controlling two slave systems, the phonological loop and visuospatial sketchpad; the episodic buffer was added in 2000. The first option is the Atkinson-Shiffrin model. Episodic, semantic and procedural are long-term memory systems. Iconic, echoic and haptic are sensory stores.",
     module: M,
     ref: "Baddeley & Hitch 1974",
   },
@@ -375,7 +375,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Baddeley, Thomson and Buchanan (1975) found span was lower for long words and closely matched reading rate, implying a time-limited rehearsal loop. Long words are recalled worse, not better. The effect is in immediate (short-term) recall. It depends on total articulation time, not the first word.",
+      "Baddeley, Thomson and Buchanan found span was lower for long words and closely matched reading rate, implying a time-limited rehearsal loop. Long words are recalled worse, not better. The effect is in immediate (short-term) recall. It depends on total articulation time, not the first word.",
     module: M,
     ref: "Baddeley, Thomson & Buchanan 1975",
   },
@@ -386,7 +386,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Conrad (1964) found that people recalling visually presented letter lists confused letters such as B, D, G and P. This phonological similarity effect indicates that",
+    stem: "Conrad found that people recalling visually presented letter lists confused letters such as B, D, G and P. This phonological similarity effect indicates that",
     options: [
       "short-term memory uses only visual codes",
       "visually presented items are recoded into a sound-based code in short-term memory",
@@ -395,7 +395,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Even with visual presentation, errors were acoustic, so letters had been recoded into speech-based form in short-term memory. If STM used only visual codes, confusions would follow letter shapes (E and F) instead. LTM tends to be semantic (Baddeley, 1966). Attention to shapes is unrelated to sound-based confusions.",
+      "Even with visual presentation, errors were acoustic, so letters had been recoded into speech-based form in short-term memory. If STM used only visual codes, confusions would follow letter shapes (E and F) instead. LTM tends to be semantic, as Baddeley showed. Attention to shapes is unrelated to sound-based confusions.",
     module: M,
     ref: "Conrad 1964",
   },
@@ -455,7 +455,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Salamé and Baddeley (1982) showed that background speech, even in an unknown language, disrupts serial recall, consistent with obligatory access of speech to the phonological store. People can hear speech while reading. Speech impairs rather than improves recall. Spatial memory is affected little.",
+      "Salamé and Baddeley showed that background speech, even in an unknown language, disrupts serial recall, consistent with obligatory access of speech to the phonological store. People can hear speech while reading. Speech impairs rather than improves recall. Spatial memory is affected little.",
     module: M,
     ref: "Salamé & Baddeley 1982",
   },
@@ -466,7 +466,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "Logie (1995) divided the visuospatial sketchpad into",
+    stem: "Logie divided the visuospatial sketchpad into",
     options: [
       "a visual cache (storing form and colour) and an inner scribe (handling spatial and movement information and rehearsal)",
       "a phonological store and an articulatory process",
@@ -517,7 +517,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Baddeley (1986) used the SAS, an attentional controller that overrides routine schemas, as a model of the central executive. Broadbent's filter is an early-selection attention model. Sperling's work is on sensory memory. Feature integration theory concerns visual binding.",
+      "Baddeley used the SAS, an attentional controller that overrides routine schemas, as a model of the central executive. Broadbent's filter is an early-selection attention model. Sperling's work is on sensory memory. Feature integration theory concerns visual binding.",
     module: M,
     ref: "Baddeley 1986; Norman & Shallice 1986",
   },
@@ -537,7 +537,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Baddeley and Wilson (1988) used the term to replace 'frontal lobe syndrome', describing functional deficits of the executive. A selective phonological store deficit was seen in patient PV, which is different. Iconic memory and the sketchpad are not executive functions.",
+      "Baddeley and Wilson used the term to replace 'frontal lobe syndrome', describing functional deficits of the executive. A selective phonological store deficit was seen in patient PV, which is different. Iconic memory and the sketchpad are not executive functions.",
     module: M,
     ref: "Baddeley & Wilson 1988",
   },
@@ -548,7 +548,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Daneman and Carpenter's (1980) reading span task measures working memory capacity by requiring participants to",
+    stem: "Daneman and Carpenter's reading span task measures working memory capacity by requiring participants to",
     options: [
       "read sentences aloud while remembering the final word of each sentence",
       "repeat digits backwards",
@@ -642,7 +642,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "Ericsson and Kintsch (1995) proposed 'long-term working memory' to explain",
+    stem: "Ericsson and Kintsch proposed 'long-term working memory' to explain",
     options: [
       "how experts rapidly access large amounts of task-relevant information through retrieval structures in long-term memory",
       "why iconic memory lasts longer in experts",
@@ -662,7 +662,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "In Sternberg's (1966) memory-scanning task, reaction time to decide whether a probe was in a memorised set",
+    stem: "In Sternberg's memory-scanning task, reaction time to decide whether a probe was in a memorised set",
     options: [
       "was constant regardless of set size",
       "increased linearly with set size by about 38 ms per item, with equal slopes for 'yes' and 'no' responses",
@@ -751,7 +751,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Craik and Watkins (1973) varied how long words were held by maintenance rehearsal. On a surprise final free-recall test, longer rehearsal",
+    stem: "Craik and Watkins varied how long words were held by maintenance rehearsal. On a surprise final free-recall test, longer rehearsal",
     options: [
       "greatly improved recall",
       "had little or no effect on recall",
@@ -773,9 +773,9 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "statement",
     stem: "Which statements about coding in memory are supported by classic research?",
     statements: [
-      "Short-term memory errors tend to be acoustic (Conrad).",
-      "Long-term memory errors tend to be semantic (Baddeley, 1966).",
-      "People soon forget the exact wording of a sentence but keep its meaning (Sachs, 1967).",
+      "Conrad found that short-term memory errors tend to be acoustic.",
+      "Baddeley found that long-term memory errors tend to be semantic.",
+      "Sachs found that people soon forget the exact wording of a sentence but keep its meaning.",
       "Short-term memory cannot hold visual codes at all.",
     ],
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
@@ -835,7 +835,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["15 to 30 seconds", "250 milliseconds", "24 hours", "several years"],
     answer: 0,
     explanation:
-      "Brown–Peterson studies showed most unrehearsed material is lost within about 15 to 30 seconds. 250 ms is the order of iconic memory duration. Hours and years are long-term memory timescales.",
+      "Brown-Peterson studies showed most unrehearsed material is lost within about 15 to 30 seconds. 250 ms is the order of iconic memory duration. Hours and years are long-term memory timescales.",
     module: M,
     ref: "Peterson & Peterson 1959",
   },
@@ -850,7 +850,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: [
       "a model in which memory is organised by sensory modality only",
       "Baddeley's working memory model",
-      "the Atkinson–Shiffrin multi-store model and similar models of the 1960s",
+      "the Atkinson-Shiffrin multi-store model and similar models of the 1960s",
       "the levels-of-processing framework",
     ],
     answer: 2,
@@ -866,7 +866,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "Neuroimaging (Paulesu, Frith and Frackowiak, 1993) linked the two parts of the phonological loop to which brain areas?",
+    stem: "Brain imaging work by Paulesu, Frith and Frackowiak linked the two parts of the phonological loop to which brain areas?",
     options: [
       "Phonological store in the left inferior parietal (supramarginal) region; articulatory rehearsal in Broca's area",
       "Phonological store in the hippocampus; rehearsal in the cerebellum",
@@ -886,7 +886,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "Craik (1970) gave several lists for immediate free recall and then an unexpected final free-recall test of all lists. In the final test, items from the end of each list were recalled worse than earlier items. This 'negative recency' effect is explained by",
+    stem: "Craik gave several lists for immediate free recall and then an unexpected final free-recall test of all lists. In the final test, items from the end of each list were recalled worse than earlier items. This 'negative recency' effect is explained by",
     options: [
       "stronger proactive interference for early items",
       "decay of iconic memory",
@@ -921,7 +921,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Rundus (1971) asked participants to rehearse aloud during list learning. He found that",
+    stem: "Rundus asked participants to rehearse aloud during list learning. He found that",
     options: [
       "the last items were rehearsed most",
       "rehearsal had no relation to recall",
@@ -951,7 +951,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "1 and 3 are selective-interference findings, and 2 is neuropsychological evidence for a separate phonological store (Vallar and Baddeley, 1984). Statement 4 is false: the central executive is limited in capacity, and executive load (for example, random generation) impairs many tasks.",
+      "1 and 3 are selective-interference findings, and 2 is neuropsychological evidence for a separate phonological store. Statement 4 is false: the central executive is limited in capacity, and executive load (for example, random generation) impairs many tasks.",
     module: M,
     ref: "Baddeley 1986; Vallar & Baddeley 1984",
   },

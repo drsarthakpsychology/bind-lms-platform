@@ -87,11 +87,11 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "numerical",
-    stem: "The correlation between odd and even halves of a 40-item test is .60. What is the Spearman–Brown corrected reliability of the full test?",
+    stem: "The correlation between odd and even halves of a 40-item test is .60. What is the Spearman-Brown corrected reliability of the full test?",
     options: [".36", ".75", ".80", ".60"],
     answer: 1,
     explanation:
-      "Spearman–Brown for doubling: 2r / (1 + r) = 1.2 / 1.6 = .75. The value .60 is the uncorrected half-test correlation, which underestimates full-length reliability. The value .36 squares the correlation, which is not part of the correction. The value .80 is a guess that overcorrects; it would need a half-test correlation of about .67.",
+      "Spearman-Brown for doubling: 2r / (1 + r) = 1.2 / 1.6 = .75. The value .60 is the uncorrected half-test correlation, which underestimates full-length reliability. The value .36 squares the correlation, which is not part of the correction. The value .80 is a guess that overcorrects; it would need a half-test correlation of about .67.",
     module: M,
     ref: "Anastasi & Urbina ch. 4",
   },
@@ -102,7 +102,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "numerical",
-    stem: "A 10-item scale has reliability .50. If it is tripled to 30 items using parallel items, what reliability does the Spearman–Brown formula predict?",
+    stem: "A 10-item scale has reliability .50. If it is tripled to 30 items using parallel items, what reliability does the Spearman-Brown formula predict?",
     options: [".67", ".75", ".90", "1.50"],
     answer: 1,
     explanation:
@@ -121,7 +121,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["30", "60", "120", "100"],
     answer: 2,
     explanation:
-      "Solve Spearman–Brown for k: k = r_d(1 − r_o) / [r_o(1 − r_d)] = .90 × .40 / (.60 × .10) = .36 / .06 = 6. The scale must be 6 times as long: 6 × 20 = 120 items. 30 items (k = 1.5) would give only about .69. 60 items (k = 3) gives .82. 100 items (k = 5) gives .88, still short of .90.",
+      "Solve Spearman-Brown for k: k = r_d(1 − r_o) / [r_o(1 − r_d)] = .90 × .40 / (.60 × .10) = .36 / .06 = 6. The scale must be 6 times as long: 6 × 20 = 120 items. 30 items (k = 1.5) would give only about .69. 60 items (k = 3) gives .82. 100 items (k = 5) gives .88, still short of .90.",
     module: M,
     ref: "Nunnally & Bernstein ch. 7",
   },
@@ -147,7 +147,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "statement",
-    stem: "Which of the following statements about Kuder–Richardson formulas are correct?",
+    stem: "Which of the following statements about Kuder-Richardson formulas are correct?",
     statements: [
       "KR-20 is used for items scored dichotomously (right/wrong).",
       "KR-21 assumes that all items are of equal difficulty.",
@@ -195,7 +195,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. In a speed test, items are easy and the score is the number attempted. Someone who reaches item 50 will have about 25 odd and 25 even correct, so the halves correlate near 1 regardless of true consistency. Hence speed tests need test-retest or separately timed alternate halves. Saying R does not explain A, or that either statement is false, contradicts this standard argument (Anastasi).",
+      "Both are true and R explains A. In a speed test, items are easy and the score is the number attempted. Someone who reaches item 50 will have about 25 odd and 25 even correct, so the halves correlate near 1 regardless of true consistency. Hence speed tests need test-retest or separately timed alternate halves. Saying R does not explain A, or that either statement is false, contradicts this standard argument.",
     module: M,
     ref: "Anastasi & Urbina ch. 4",
   },
@@ -255,7 +255,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "numerical",
-    stem: "A client's BDI-II score falls from 30 before therapy to 20 after. In the norm group SD = 8 and test-retest reliability = .84. Using the Jacobson–Truax reliable change index (RCI), which conclusion is correct?",
+    stem: "A client's BDI-II score falls from 30 before therapy to 20 after. In the norm group SD = 8 and test-retest reliability = .84. Using the Jacobson-Truax reliable change index (RCI), which conclusion is correct?",
     options: [
       "RCI ≈ −1.25; the change is not reliable",
       "RCI ≈ −2.21; the change is reliable at p < .05",
@@ -291,10 +291,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which split-half method estimates full-test reliability from the variance of the differences between the two half scores, without assuming the halves have equal variances?",
-    options: ["Spearman–Brown prophecy formula", "Rulon's formula", "Kuder–Richardson formula 21", "Hoyt's analysis of variance"],
+    options: ["Spearman-Brown prophecy formula", "Rulon's formula", "Kuder-Richardson formula 21", "Hoyt's analysis of variance"],
     answer: 1,
     explanation:
-      "Rulon's formula is r = 1 − σ²(d) / σ²(x), where d is the difference between half scores; it does not need equal half variances (Flanagan's formula is equivalent). Spearman–Brown steps up the half-test correlation and assumes the halves are parallel, with equal variances. KR-21 is an internal-consistency formula based on the mean and variance, not on halves. Hoyt's method uses a persons × items ANOVA and equals KR-20/alpha.",
+      "Rulon's formula is r = 1 − σ²(d) / σ²(x), where d is the difference between half scores; it does not need equal half variances (Flanagan's formula is equivalent). Spearman-Brown steps up the half-test correlation and assumes the halves are parallel, with equal variances. KR-21 is an internal-consistency formula based on the mean and variance, not on halves. Hoyt's method uses a persons × items ANOVA and equals KR-20/alpha.",
     module: M,
     ref: "Rulon 1939; Anastasi & Urbina ch. 4",
   },
@@ -328,12 +328,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Adding more items to a test always increases its reliability.",
-      "The Spearman–Brown formula assumes that the added items are parallel to the existing items.",
+      "The Spearman-Brown formula assumes that the added items are parallel to the existing items.",
     ],
     options: AR,
     answer: 3,
     explanation:
-      "A is false: adding items raises reliability only if the new items measure the same thing about as well as the old ones. Poor or unrelated items can lower internal consistency. R is true: Spearman–Brown predictions hold only for parallel added items. So 'A is false, but R is true'. The first two options require A to be true. The third reverses the truth values.",
+      "A is false: adding items raises reliability only if the new items measure the same thing about as well as the old ones. Poor or unrelated items can lower internal consistency. R is true: Spearman-Brown predictions hold only for parallel added items. So 'A is false, but R is true'. The first two options require A to be true. The third reverses the truth values.",
     module: M,
     ref: "Nunnally & Bernstein ch. 7",
   },
@@ -460,7 +460,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: [".30", ".75", ".81", ".91"],
     answer: 2,
     explanation:
-      "Standardised α = k·r̄ / [1 + (k − 1)·r̄] = 10(.3) / [1 + 9(.3)] = 3 / 3.7 = .81 (this is Spearman–Brown applied to the mean inter-item correlation). The value .30 is just the mean inter-item correlation. The value .75 and .91 do not follow from the formula; .91 would need about 24 items with r̄ = .30.",
+      "Standardised α = k·r̄ / [1 + (k − 1)·r̄] = 10(.3) / [1 + 9(.3)] = 3 / 3.7 = .81 (this is Spearman-Brown applied to the mean inter-item correlation). The value .30 is just the mean inter-item correlation. The value .75 and .91 do not follow from the formula; .91 would need about 24 items with r̄ = .30.",
     module: M,
     ref: "Cortina 1993",
   },
@@ -480,7 +480,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "More items measuring the same construct reduce the relative weight of random error, so reliability rises (Spearman–Brown). A homogeneous sample restricts true-score variance and lowers the coefficient. Shortening the test lowers reliability. Guessing adds random error and lowers reliability.",
+      "More items measuring the same construct reduce the relative weight of random error, so reliability rises (Spearman-Brown). A homogeneous sample restricts true-score variance and lowers the coefficient. Shortening the test lowers reliability. Guessing adds random error and lowers reliability.",
     module: M,
     ref: "Anastasi & Urbina ch. 4",
   },
@@ -493,7 +493,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "passage",
     stem: "Which is the best interpretation of the pattern of coefficients?",
     passage:
-      "A new memory test was studied in one sample. Results: test-retest after 3 weeks, r = .82; split-half corrected by Spearman–Brown, r = .88; alternate forms given 3 weeks apart, r = .70; inter-scorer agreement on the recall protocols, r = .95.",
+      "A new memory test was studied in one sample. Results: test-retest after 3 weeks, r = .82; split-half corrected by Spearman-Brown, r = .88; alternate forms given 3 weeks apart, r = .70; inter-scorer agreement on the recall protocols, r = .95.",
     options: [
       "The alternate-form delayed coefficient is lowest because it includes error from both time sampling and content sampling",
       "The test is invalid, because its coefficients disagree",
@@ -612,12 +612,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
         "Internal consistency of 5-point Likert items",
         "Agreement of two raters assigning diagnostic categories",
       ],
-      right: ["Cohen's kappa", "Coefficient alpha", "Spearman–Brown formula", "KR-20"],
+      right: ["Cohen's kappa", "Coefficient alpha", "Spearman-Brown formula", "KR-20"],
     },
     options: ["A-III, B-IV, C-II, D-I", "A-IV, B-III, C-II, D-I", "A-III, B-II, C-IV, D-I", "A-I, B-IV, C-II, D-III"],
     answer: 0,
     explanation:
-      "Stepping up a half-test correlation uses Spearman–Brown (A-III). Dichotomous items use KR-20 (B-IV). Polytomous items use alpha, the generalisation of KR-20 (C-II). Categorical rater agreement uses kappa (D-I). The second code gives Spearman–Brown to dichotomous items. The third reverses KR-20 and alpha. The fourth gives kappa to the split-half case.",
+      "Stepping up a half-test correlation uses Spearman-Brown (A-III). Dichotomous items use KR-20 (B-IV). Polytomous items use alpha, the generalisation of KR-20 (C-II). Categorical rater agreement uses kappa (D-I). The second code gives Spearman-Brown to dichotomous items. The third reverses KR-20 and alpha. The fourth gives kappa to the split-half case.",
     module: M,
     ref: "Cohen & Swerdlik ch. 5",
   },
@@ -693,7 +693,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about the Spearman–Brown formula are correct?",
+    stem: "Which statements about the Spearman-Brown formula are correct?",
     statements: [
       "It assumes that items added or removed are parallel to the remaining items.",
       "It can predict the reliability of a shortened version of a test.",
@@ -703,7 +703,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["1 and 2 only", "1, 2 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "1 is correct (parallelism assumption); 2 is correct (use k < 1 for shortening); 4 is correct, since k × 0 / [1 + (k − 1) × 0] = 0. Statement 3 is false: Spearman–Brown only adjusts for length; it cannot remove the inflation that speed produces in odd-even coefficients. Hence '1, 2 and 4 only'.",
+      "1 is correct (parallelism assumption); 2 is correct (use k < 1 for shortening); 4 is correct, since k × 0 / [1 + (k − 1) × 0] = 0. Statement 3 is false: Spearman-Brown only adjusts for length; it cannot remove the inflation that speed produces in odd-even coefficients. Hence '1, 2 and 4 only'.",
     module: M,
     ref: "Anastasi & Urbina ch. 4",
   },
@@ -736,7 +736,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NMS,
     difficulty: 3,
     type: "mcq",
-    stem: "Cronbach (1951) showed that coefficient alpha is equivalent to",
+    stem: "Cronbach showed that coefficient alpha is equivalent to",
     options: [
       "the test-retest coefficient corrected for practice",
       "the mean of all possible split-half coefficients computed with the Rulon/Flanagan formula",
@@ -745,7 +745,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Cronbach's 1951 paper showed alpha equals the average of all possible split-half coefficients (using the Flanagan–Rulon formula). It is a single-administration index, so it has nothing to do with retest practice. It is not the maximum split-half value; the greatest lower bound and the maximum split-half are different quantities. It equals the parallel-form correlation only under strict conditions (tau-equivalence), so as a general definition the last option is wrong.",
+      "Cronbach's 1951 paper showed alpha equals the average of all possible split-half coefficients (using the Flanagan-Rulon formula). It is a single-administration index, so it has nothing to do with retest practice. It is not the maximum split-half value; the greatest lower bound and the maximum split-half are different quantities. It equals the parallel-form correlation only under strict conditions (tau-equivalence), so as a general definition the last option is wrong.",
     module: M,
     ref: "Cronbach 1951",
   },
@@ -756,7 +756,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "Hoyt's (1941) method of estimating reliability",
+    stem: "Hoyt's method of estimating reliability",
     options: [
       "uses a persons × items analysis of variance and yields a value identical to KR-20/alpha",
       "correlates odd and even items and steps up the result",
@@ -851,10 +851,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which of the following is a measure of internal consistency?",
-    options: ["Test-retest correlation", "Cronbach's alpha", "Validity coefficient", "Taylor–Russell ratio"],
+    options: ["Test-retest correlation", "Cronbach's alpha", "Validity coefficient", "Taylor-Russell ratio"],
     answer: 1,
     explanation:
-      "Alpha estimates how consistently items in one administration measure the same thing. Test-retest is a stability estimate across time. A validity coefficient correlates a test with a criterion. Taylor–Russell tables concern selection decisions, not internal consistency.",
+      "Alpha estimates how consistently items in one administration measure the same thing. Test-retest is a stability estimate across time. A validity coefficient correlates a test with a criterion. Taylor-Russell tables concern selection decisions, not internal consistency.",
     module: M,
     ref: "Cronbach 1951",
   },
@@ -889,7 +889,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Loevinger (1954) noted that maximising internal consistency by choosing very similar items narrows the construct covered (the bandwidth-fidelity trade-off), which can reduce validity against a complex criterion. Corrected correlations above 1 do occur, but they reflect sampling error or poor reliability estimates, not the attenuation paradox. SEM falls, not rises, as reliability rises. Lengthening with valid items usually raises validity, so 'always lowers' is false.",
+      "Loevinger noted that maximising internal consistency by choosing very similar items narrows the construct covered (the bandwidth-fidelity trade-off), which can reduce validity against a complex criterion. Corrected correlations above 1 do occur, but they reflect sampling error or poor reliability estimates, not the attenuation paradox. SEM falls, not rises, as reliability rises. Lengthening with valid items usually raises validity, so 'always lowers' is false.",
     module: M,
     ref: "Loevinger 1954; Clark & Watson 1995",
   },

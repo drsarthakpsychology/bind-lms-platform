@@ -61,7 +61,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["567", "338", "566", "240"],
     answer: 0,
     explanation:
-      "The MMPI-2 (1989) has 567 true/false items. 338 is the MMPI-2-RF. 566 is the original MMPI (which included 16 repeated items). 240 is the NEO-PI-R.",
+      "The MMPI-2 has 567 true/false items. 338 is the MMPI-2-RF. 566 is the original MMPI (which included 16 repeated items). 240 is the NEO-PI-R.",
     module: M,
     ref: "Butcher et al. 2001, MMPI-2 manual",
   },
@@ -194,7 +194,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "F can rise in genuinely disturbed patients. F(p) (Arbisi and Ben-Porath, 1995) uses items infrequently endorsed by inpatients, so it separates exaggeration from real severe illness. It is a validity scale, not a measure of psychosis. It does not replace clinical scales. Defensiveness is detected by L, K and S, not by F(p).",
+      "F can rise in genuinely disturbed patients. F(p), developed by Arbisi and Ben-Porath, uses items infrequently endorsed by inpatients, so it separates exaggeration from real severe illness. It is a validity scale, not a measure of psychosis. It does not replace clinical scales. Defensiveness is detected by L, K and S, not by F(p).",
     module: M,
     ref: "Arbisi & Ben-Porath 1995",
   },
@@ -316,7 +316,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "1 to 3 are correct (Tellegen and Ben-Porath, 2008; RC scales from Tellegen et al., 2003). Statement 4 is false: the MMPI-2-RF does not use K-correction; defensiveness is handled through the validity scales (L-r, K-r). '1 and 2 only' wrongly drops the higher-order scales.",
+      "1 to 3 are correct; Tellegen and Ben-Porath built the RF around the RC scales. Statement 4 is false: the MMPI-2-RF does not use K-correction; defensiveness is handled through the validity scales (L-r, K-r). '1 and 2 only' wrongly drops the higher-order scales.",
     module: M,
     ref: "Ben-Porath & Tellegen 2008",
   },
@@ -350,7 +350,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["children aged 6 to 11", "adolescents aged 14 to 18", "adults over 65", "job applicants only"],
     answer: 1,
     explanation:
-      "The MMPI-A (1992; 478 items) is normed for adolescents aged 14 to 18, with adolescent-specific scales such as school problems. There is no MMPI form for young children. Older adults take the adult forms. The MMPI is not restricted to job applicants.",
+      "The MMPI-A (478 items) is normed for adolescents aged 14 to 18, with adolescent-specific scales such as school problems. There is no MMPI form for young children. Older adults take the adult forms. The MMPI is not restricted to job applicants.",
     module: M,
     ref: "Butcher et al. 1992",
   },
@@ -361,7 +361,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     exams: NM,
     difficulty: 4,
     type: "mcq",
-    stem: "The MMPI-3 (2020) is best described as",
+    stem: "The MMPI-3 is best described as",
     options: [
       "a 567-item update of the MMPI-2 with the original clinical scales",
       "a projective adaptation of the MMPI",
@@ -370,7 +370,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The MMPI-3 (Ben-Porath and Tellegen, 2020) has 335 items and builds on the RF framework (validity, higher-order, RC, specific-problem and PSY-5 scales) with new normative data and some new scales. It does not return to the 567-item, original-clinical-scale design. It is not projective. Adolescents have the MMPI-A and MMPI-A-RF.",
+      "The MMPI-3, released by Ben-Porath and Tellegen in 2020, has 335 items and builds on the RF framework (validity, higher-order, RC, specific-problem and PSY-5 scales) with new normative data and some new scales. It does not return to the 567-item, original-clinical-scale design. It is not projective. Adolescents have the MMPI-A and MMPI-A-RF.",
     module: M,
     ref: "Ben-Porath & Tellegen 2020",
   },
@@ -381,7 +381,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "The Harris–Lingoes subscales of the MMPI are",
+    stem: "The Harris-Lingoes subscales of the MMPI are",
     options: [
       "rationally grouped content subscales within several clinical scales, used to understand why a scale is elevated",
       "empirically keyed validity scales",
@@ -390,7 +390,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Harris and Lingoes grouped items within scales 2, 3, 4, 6, 8 and 9 by content (for example, D1 Subjective Depression, Pd2 Authority Problems), which helps explain an elevation. They are not validity scales. The RC scales, not Harris–Lingoes, restructured the clinical scales. The MMPI does not measure response time.",
+      "Harris and Lingoes grouped items within scales 2, 3, 4, 6, 8 and 9 by content (for example, D1 Subjective Depression, Pd2 Authority Problems), which helps explain an elevation. They are not validity scales. The RC scales, not Harris-Lingoes, restructured the clinical scales. The MMPI does not measure response time.",
     module: M,
     ref: "Harris & Lingoes 1955; Graham 2012",
   },
@@ -546,7 +546,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["1 and 2 only", "2, 3 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
     answer: 2,
     explanation:
-      "The 16PF5 (1993) has 185 items, five second-order global factors (statement 2), and response-style indices including Impression Management, Infrequency and Acquiescence. Statement 4 is false: the 16PF is factor-analytic, not criterion-keyed; criterion keying is the MMPI's method.",
+      "The 16PF5 has 185 items, five second-order global factors (statement 2), and response-style indices including Impression Management, Infrequency and Acquiescence. Statement 4 is false: the 16PF is factor-analytic, not criterion-keyed; criterion keying is the MMPI's method.",
     module: M,
     ref: "Russell & Karol 1994; Cattell & Mead 2008",
   },
@@ -708,7 +708,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Galton, then Allport and Odbert (1936, about 18,000 trait terms), and later Cattell, Norman and Goldberg assumed that socially important differences are named in language; factor analysis of these terms yields the main dimensions. The hypothesis is about the dictionary as a source of traits, not linguistic determinism. The other two options have no basis.",
+      "Galton, then Allport and Odbert (about 18,000 trait terms), and later Cattell, Norman and Goldberg assumed that socially important differences are named in language; factor analysis of these terms yields the main dimensions. The hypothesis is about the dictionary as a source of traits, not linguistic determinism. The other two options have no basis.",
     module: M,
     ref: "Allport & Odbert 1936; Goldberg 1990",
   },
@@ -743,7 +743,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "The EPQ (1975) measures P, E and N with an L (Lie) scale. Neuroticism and Extraversion only describes the earlier Maudsley Personality Inventory; the EPI added the Lie scale but still lacked P. Sixteen factors is the 16PF. The Big Five is measured by the NEO.",
+      "The EPQ measures P, E and N with an L (Lie) scale. Neuroticism and Extraversion only describes the earlier Maudsley Personality Inventory; the EPI added the Lie scale but still lacked P. Sixteen factors is the 16PF. The Big Five is measured by the NEO.",
     module: M,
     ref: "Eysenck & Eysenck 1975",
   },
@@ -755,10 +755,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In the development of Eysenck's inventories, the Psychoticism (P) scale first appeared in",
-    options: ["the Maudsley Personality Inventory (1959)", "the EPQ (1975)", "the Eysenck Personality Inventory (1964)", "the MMPI (1943)"],
+    options: ["the Maudsley Personality Inventory", "the EPQ", "the Eysenck Personality Inventory", "the MMPI"],
     answer: 1,
     explanation:
-      "The sequence is MPI (E, N) → EPI (E, N, L) → EPQ (adds P) → EPQ-R (1985, revised P). The MPI and EPI had no P scale. The MMPI is a different inventory altogether.",
+      "The sequence is MPI (E, N) → EPI (E, N, L) → EPQ (adds P) → EPQ-R (revised P). The MPI and EPI had no P scale. The MMPI is a different inventory altogether.",
     module: M,
     ref: "Eysenck & Eysenck 1975",
   },
@@ -778,7 +778,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Eysenck (1967) linked Extraversion to the reticulo-cortical arousal loop: introverts have higher baseline cortical arousal and so avoid stimulation, while extraverts seek it. Limbic ('visceral brain') reactivity was his basis for Neuroticism. He linked Psychoticism, not Extraversion, to androgens. Frontal lobe size was not part of his theory.",
+      "Eysenck linked Extraversion to the reticulo-cortical arousal loop: introverts have higher baseline cortical arousal and so avoid stimulation, while extraverts seek it. Limbic ('visceral brain') reactivity was his basis for Neuroticism. He linked Psychoticism, not Extraversion, to androgens. Frontal lobe size was not part of his theory.",
     module: M,
     ref: "Eysenck 1967",
   },
@@ -902,7 +902,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["the halo effect", "the Barnum (Forer) effect", "the Flynn effect", "the Hawthorne effect"],
     answer: 1,
     explanation:
-      "Forer (1949) showed students rate a generic sketch as highly accurate; Meehl called this the Barnum effect. The halo effect is letting one trait colour ratings of others. The Flynn effect is the rise in IQ scores across generations. The Hawthorne effect is behaviour change from being observed.",
+      "Forer showed students rate a generic sketch as highly accurate; Meehl called this the Barnum effect. The halo effect is letting one trait colour ratings of others. The Flynn effect is the rise in IQ scores across generations. The Hawthorne effect is behaviour change from being observed.",
     module: M,
     ref: "Forer 1949; Meehl 1956",
   },

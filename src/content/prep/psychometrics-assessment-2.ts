@@ -81,7 +81,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Kelley (1939) showed that for a normal distribution the 27% extremes give the best trade-off between how different the groups are and how reliable the proportions are. Half of any group, not 27%, lies above the median. The split does not correct for guessing. The middle group is excluded to sharpen the contrast, not because it answers at chance.",
+      "Kelley showed that for a normal distribution the 27% extremes give the best trade-off between how different the groups are and how reliable the proportions are. Half of any group, not 27%, lies above the median. The split does not correct for guessing. The middle group is excluded to sharpen the contrast, not because it answers at chance.",
     module: M,
     ref: "Kelley 1939",
   },
@@ -278,10 +278,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which procedure is widely used to detect differential item functioning (DIF) by comparing groups matched on total score?",
-    options: ["Cronbach's alpha", "Kuder–Richardson formula 21", "Mantel–Haenszel procedure", "Spearman–Brown formula"],
+    options: ["Cronbach's alpha", "Kuder-Richardson formula 21", "Mantel-Haenszel procedure", "Spearman-Brown formula"],
     answer: 2,
     explanation:
-      "The Mantel–Haenszel procedure stratifies examinees by total score and tests whether the odds of passing an item differ between focal and reference groups within strata. Alpha and KR-21 are reliability coefficients. Spearman–Brown predicts reliability from test length. None of these detects DIF.",
+      "The Mantel-Haenszel procedure stratifies examinees by total score and tests whether the odds of passing an item differ between focal and reference groups within strata. Alpha and KR-21 are reliability coefficients. Spearman-Brown predicts reliability from test length. None of these detects DIF.",
     module: M,
     ref: "Holland & Thayer 1988",
   },
@@ -488,7 +488,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "mcq",
-    stem: "Cronbach and Meehl's (1955) concept of the 'nomological network' is central to which type of validity?",
+    stem: "Cronbach and Meehl's concept of the 'nomological network' is central to which type of validity?",
     options: ["Construct validity", "Content validity", "Face validity", "Concurrent validity"],
     answer: 0,
     explanation:
@@ -512,7 +512,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Messick (1989, 1995) defined validity as an overall evaluative judgement about score interpretations and uses, with construct validity as the unifying idea and consequences as one aspect. He rejected validity as a fixed property of the test (validity belongs to interpretations). He criticised the 'three separate kinds' view (the 'trinitarian' model). Correlation with a criterion is only one type of evidence.",
+      "Messick defined validity as an overall evaluative judgement about score interpretations and uses, with construct validity as the unifying idea and consequences as one aspect. He rejected validity as a fixed property of the test (validity belongs to interpretations). He criticised the 'three separate kinds' view (the 'trinitarian' model). Correlation with a criterion is only one type of evidence.",
     module: M,
     ref: "Messick 1989; AERA/APA/NCME Standards 2014",
   },
@@ -583,7 +583,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about the Taylor–Russell tables are correct?",
+    stem: "Which statements about the Taylor-Russell tables are correct?",
     statements: [
       "They use the validity coefficient, the selection ratio and the base rate.",
       "For a given validity, the lower the selection ratio, the greater the improvement over the base rate.",
@@ -648,7 +648,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["1 and 3 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "Factor structure, age differentiation (used by Binet) and correlations with other measures of the construct are all standard construct-related evidence (Anastasi). Statement 4 is false as worded: internal consistency shows homogeneity, which is weak evidence at most; it never establishes construct validity by itself. '1 and 3 only' wrongly omits age differentiation.",
+      "Factor structure, age differentiation (used by Binet) and correlations with other measures of the construct are all standard kinds of construct-related evidence. Statement 4 is false as worded: internal consistency shows homogeneity, which is weak evidence at most; it never establishes construct validity by itself. '1 and 3 only' wrongly omits age differentiation.",
     module: M,
     ref: "Anastasi & Urbina ch. 6",
   },
@@ -687,7 +687,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: a moderator (for example, motivation or gender) changes the predictor–criterion relationship, so validity differs across levels of it. R is false: differential validity means validity coefficients differ between groups; identical regression lines would mean no predictive bias. So 'A is true, but R is false'.",
+      "A is true: a moderator (for example, motivation or gender) changes the predictor-criterion relationship, so validity differs across levels of it. R is false: differential validity means validity coefficients differ between groups; identical regression lines would mean no predictive bias. So 'A is true, but R is false'.",
     module: M,
     ref: "Anastasi & Urbina ch. 6",
   },
@@ -698,7 +698,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "Under Cleary's (1968) regression model, a test is biased against a subgroup when",
+    stem: "Under Cleary's regression model, a test is biased against a subgroup when",
     options: [
       "the subgroup's mean test score is lower than the majority's",
       "the common regression line systematically under-predicts the subgroup's criterion performance",
@@ -833,7 +833,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "An ROC curve plots the true-positive rate (sensitivity) against the false-positive rate (1 − specificity) for every cut-off; the area under it (AUC) summarises accuracy, with .50 being chance. PPV against prevalence is a different plot. Reliability against length is the Spearman–Brown relationship. A score-criterion plot is a scatterplot for a validity coefficient.",
+      "An ROC curve plots the true-positive rate (sensitivity) against the false-positive rate (1 − specificity) for every cut-off; the area under it (AUC) summarises accuracy, with .50 being chance. PPV against prevalence is a different plot. Reliability against length is the Spearman-Brown relationship. A score-criterion plot is a scatterplot for a validity coefficient.",
     module: M,
     ref: "Swets 1988",
   },
@@ -875,7 +875,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "With a base rate of .95 there is almost no room for improvement, so even a valid test adds little; gains are largest near a base rate of .50 (Taylor–Russell). A higher base rate does not mean more value from the test. The test's validity is the same; its usefulness differs. Both plants hire the top 20%, so the selection ratio is identical.",
+      "With a base rate of .95 there is almost no room for improvement, so even a valid test adds little; gains are largest near a base rate of .50 (Taylor-Russell). A higher base rate does not mean more value from the test. The test's validity is the same; its usefulness differs. Both plants hire the top 20%, so the selection ratio is identical.",
     module: M,
     ref: "Taylor & Russell 1939",
   },

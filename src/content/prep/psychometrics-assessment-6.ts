@@ -22,11 +22,11 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "The original Bender Visual Motor Gestalt Test (1938) asks the examinee to copy",
+    stem: "The original Bender Visual Motor Gestalt Test asks the examinee to copy",
     options: ["10 inkblots", "9 geometric figures (A and 1 to 8)", "16 figures", "20 pictures"],
     answer: 1,
     explanation:
-      "Lauretta Bender used 9 designs, labelled A and 1 to 8. The Bender-Gestalt II (2003) expanded the set to 16 figures, which is why '16' is a tempting distractor. Ten inkblots are the Rorschach; 20 pictures relates to TAT administration.",
+      "Lauretta Bender used 9 designs, labelled A and 1 to 8. The Bender-Gestalt II expanded the set to 16 figures, which is why '16' is a tempting distractor. Ten inkblots are the Rorschach; 20 pictures relates to TAT administration.",
     module: M,
     ref: "Bender 1938",
   },
@@ -66,7 +66,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Koppitz (1963, 1975) scored children's copies for developmental errors in four categories: distortion, rotation, integration and perseveration. Adults aged 15 to 50 is the Pascal–Suttell system. The Koppitz system is not specific to dementia or malingering.",
+      "Koppitz scored children's copies for developmental errors in four categories: distortion, rotation, integration and perseveration. Adults aged 15 to 50 is the Pascal-Suttell system. The Koppitz system is not specific to dementia or malingering.",
     module: M,
     ref: "Koppitz 1963, 1975",
   },
@@ -98,7 +98,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "The Pascal–Suttell scoring system for the Bender-Gestalt is intended for",
+    stem: "The Pascal-Suttell scoring system for the Bender-Gestalt is intended for",
     options: [
       "pre-school children only",
       "projective interpretation of figure placement in children",
@@ -107,7 +107,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Pascal and Suttell (1951) counted deviations in adult reproductions; higher scores suggested more psychopathology or organic disturbance. Children are scored with Koppitz's system. Hutt's adaptation, not Pascal–Suttell, emphasises projective interpretation. Reading readiness is not its purpose.",
+      "Pascal and Suttell counted deviations in adult reproductions; higher scores suggested more psychopathology or organic disturbance. Children are scored with Koppitz's system. Hutt's adaptation, not Pascal-Suttell, emphasises projective interpretation. Reading readiness is not its purpose.",
     module: M,
     ref: "Pascal & Suttell 1951",
   },
@@ -118,7 +118,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 2,
     type: "mcq",
-    stem: "The Bender-Gestalt II (Brannigan and Decker, 2003) differs from the original mainly in that it",
+    stem: "The Bender-Gestalt II, revised by Brannigan and Decker, differs from the original mainly in that it",
     options: [
       "removes copying and uses only recall",
       "uses 16 figures, has norms from age 4 to 85+, and adds a recall phase and motor and perception supplementary tests",
@@ -268,11 +268,11 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: ALL,
     difficulty: 1,
     type: "mcq",
-    stem: "The Halstead–Reitan Neuropsychological Battery grew out of the work of",
+    stem: "The Halstead-Reitan Neuropsychological Battery grew out of the work of",
     options: ["A. R. Luria and A.-L. Christensen", "Edith Kaplan", "Ward Halstead and Ralph Reitan", "Lauretta Bender"],
     answer: 2,
     explanation:
-      "Halstead (1947) developed tests of 'biological intelligence', and his student Reitan refined and validated them into the battery. Luria's methods, organised by Christensen, led to the Luria–Nebraska battery. Kaplan developed the Boston process approach. Bender created the Bender-Gestalt test.",
+      "Halstead developed tests of 'biological intelligence', and his student Reitan refined and validated them into the battery. Luria's methods, organised by Christensen, led to the Luria-Nebraska battery. Kaplan developed the Boston process approach. Bender created the Bender-Gestalt test.",
     module: M,
     ref: "Reitan & Wolfson 1993",
   },
@@ -283,7 +283,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NMS,
     difficulty: 2,
     type: "match",
-    stem: "Match the Halstead–Reitan test (List I) with the function it mainly assesses (List II).",
+    stem: "Match the Halstead-Reitan test (List I) with the function it mainly assesses (List II).",
     lists: {
       left: ["Category Test", "Tactual Performance Test", "Seashore Rhythm Test", "Finger Tapping (Oscillation) Test"],
       right: ["Abstract concept formation and learning from feedback", "Tactile form recognition, spatial memory and motor speed while blindfolded", "Non-verbal auditory attention and discrimination", "Motor speed of each hand"],
@@ -322,7 +322,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "The Luria–Nebraska Neuropsychological Battery was standardised by",
+    stem: "The Luria-Nebraska Neuropsychological Battery was standardised by",
     options: [
       "Golden, Hammeke and Purisch, using items from Luria's procedures as compiled by Christensen",
       "Halstead and Reitan, using Halstead's biological intelligence tests",
@@ -331,7 +331,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Golden, Hammeke and Purisch (1978, 1980) turned Christensen's compilation of Luria's qualitative methods into a scored, standardised battery. Halstead and Reitan produced the HRB. Pershad and Verma developed the Indian PGI Battery of Brain Dysfunction. The LNNB is not part of the Wechsler scales.",
+      "Golden, Hammeke and Purisch turned Christensen's compilation of Luria's qualitative methods into a scored, standardised battery. Halstead and Reitan produced the HRB. Pershad and Verma developed the Indian PGI Battery of Brain Dysfunction. The LNNB is not part of the Wechsler scales.",
     module: M,
     ref: "Golden, Hammeke & Purisch 1980",
   },
@@ -342,7 +342,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about the Luria–Nebraska Neuropsychological Battery (Form I) are correct?",
+    stem: "Which statements about the Luria-Nebraska Neuropsychological Battery (Form I) are correct?",
     statements: [
       "It contains 269 items.",
       "It has 11 clinical scales, including Motor, Rhythm, Tactile, Visual, Receptive and Expressive Speech, Writing, Reading, Arithmetic, Memory and Intellectual Processes.",
@@ -372,7 +372,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Luria varied tasks to analyse the components of a failure (syndrome analysis), aiming to locate the disturbed link in a functional system. The fixed, normed battery describes the Halstead–Reitan approach (and the standardised LNNB). Luria's method was not computerised or projective.",
+      "Luria varied tasks to analyse the components of a failure (syndrome analysis), aiming to locate the disturbed link in a functional system. The fixed, normed battery describes the Halstead-Reitan approach (and the standardised LNNB). Luria's method was not computerised or projective.",
     module: M,
     ref: "Luria 1966/1980",
   },
@@ -407,7 +407,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["V. V. Kamat", "Dwarka Pershad and S. K. Verma", "Shobini L. Rao and colleagues", "A. J. Malin"],
     answer: 1,
     explanation:
-      "Pershad and Verma (1990) at PGIMER Chandigarh assembled the PGI-BBD for Indian adults. Kamat adapted the Binet scale. Shobini Rao and colleagues developed the NIMHANS Neuropsychology Battery. Malin adapted the WISC (MISIC) and the VSMS.",
+      "Pershad and Verma at PGIMER Chandigarh assembled the PGI-BBD for Indian adults. Kamat adapted the Binet scale. Shobini Rao and colleagues developed the NIMHANS Neuropsychology Battery. Malin adapted the WISC (MISIC) and the VSMS.",
     module: M,
     ref: "Pershad & Verma 1990",
   },
@@ -428,7 +428,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1 and 2 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "The PGI-BBD has five parts: the PGI Memory Scale, the Verbal Adult Intelligence Scale, Bhatia's Short Scale (performance), the Bender Visual Motor Gestalt Test and the Nahor–Benson test of perceptual acuity. The WCST is not part of it (it is in the NIMHANS battery). '1 and 2 only' leaves out the Bender test.",
+      "The PGI-BBD has five parts: the PGI Memory Scale, the Verbal Adult Intelligence Scale, Bhatia's Short Scale (performance), the Bender Visual Motor Gestalt Test and the Nahor-Benson test of perceptual acuity. The WCST is not part of it (it is in the NIMHANS battery). '1 and 2 only' leaves out the Bender test.",
     module: M,
     ref: "Pershad & Verma 1990",
   },
@@ -474,7 +474,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "The NIMHANS Neuropsychology Battery for adults (Rao, Subbakrishna and Gopukumar, 2004) provides norms for",
+    stem: "The NIMHANS Neuropsychology Battery for adults (by Rao, Subbakrishna and Gopukumar) provides norms for",
     options: ["children aged 5 to 15", "adults over 70 only", "all ages from 2 to 90", "adults aged about 16 to 65"],
     answer: 3,
     explanation:
@@ -512,14 +512,14 @@ export const QUESTIONS_6: PrepQuestion[] = [
     type: "mcq",
     stem: "The AIIMS Comprehensive Neuropsychological Battery in Hindi (adult form; Gupta and colleagues) is largely modelled on",
     options: [
-      "the Luria–Nebraska Neuropsychological Battery",
-      "the Halstead–Reitan Battery",
+      "the Luria-Nebraska Neuropsychological Battery",
+      "the Halstead-Reitan Battery",
       "the Wechsler Memory Scale",
       "the Rorschach",
     ],
     answer: 0,
     explanation:
-      "The AIIMS battery uses Luria–Nebraska-type scales (Motor, Tactile, Visual, Receptive and Expressive Speech, Reading, Writing, Arithmetic, Memory, Intellectual Processes) with Pathognomonic and Left/Right Hemisphere scales, adapted in Hindi. It is not based on the HRB, the WMS or a projective test.",
+      "The AIIMS battery uses Luria-Nebraska-type scales (Motor, Tactile, Visual, Receptive and Expressive Speech, Reading, Writing, Arithmetic, Memory, Intellectual Processes) with Pathognomonic and Left/Right Hemisphere scales, adapted in Hindi. It is not based on the HRB, the WMS or a projective test.",
     module: M,
     ref: "Gupta et al., AIIMS-CNB manual",
   },
@@ -534,7 +534,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["2 to 5 years", "16 to 65 years", "5 to 15 years", "12 to 18 years only"],
     answer: 2,
     explanation:
-      "The children's battery (2004) covers roughly 5 to 15 years and is widely used for learning disability and ADHD assessment in India. 16 to 65 is the adult battery. 2 to 5 and 12 to 18 match neither NIMHANS battery.",
+      "The children's battery covers roughly 5 to 15 years and is widely used for learning disability and ADHD assessment in India. 16 to 65 is the adult battery. 2 to 5 and 12 to 18 match neither NIMHANS battery.",
     module: M,
     ref: "Kar, Rao, Chandramouli & Thennarasu 2004",
   },
@@ -569,7 +569,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["10", "20", "50", "30"],
     answer: 3,
     explanation:
-      "The MMSE (1975) is scored out of 30, covering orientation, registration, attention and calculation, recall, language and copying. The MoCA is also out of 30. 10, 20 and 50 are not MMSE maxima.",
+      "The MMSE is scored out of 30, covering orientation, registration, attention and calculation, recall, language and copying. The MoCA is also out of 30. 10, 20 and 50 are not MMSE maxima.",
     module: M,
     ref: "Folstein, Folstein & McHugh 1975",
   },
@@ -589,7 +589,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Nasreddine and colleagues (2005) designed the MoCA to detect MCI; it includes executive, abstraction and delayed-recall demands where the MMSE has ceiling effects. It is harder, not easier, than the MMSE. It is a 30-point screen, not an IQ test, and it is for adults.",
+      "Nasreddine and colleagues designed the MoCA to detect MCI; it includes executive, abstraction and delayed-recall demands where the MMSE has ceiling effects. It is harder, not easier, than the MMSE. It is a 30-point screen, not an IQ test, and it is for adults.",
     module: M,
     ref: "Nasreddine et al. 2005",
   },
@@ -629,7 +629,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The RAVLT uses list A (15 nouns) for five trials, then list B as interference, then recall of A immediately and after about 20 to 30 minutes, then recognition; it yields learning curves and proactive and retroactive interference indices. Copying a figure is the Rey–Osterrieth test. Digit span and picture naming are separate tests.",
+      "The RAVLT uses list A (15 nouns) for five trials, then list B as interference, then recall of A immediately and after about 20 to 30 minutes, then recognition; it yields learning curves and proactive and retroactive interference indices. Copying a figure is the Rey-Osterrieth test. Digit span and picture naming are separate tests.",
     module: M,
     ref: "Rey 1964; Schmidt 1996",
   },
@@ -640,7 +640,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     exams: NM,
     difficulty: 3,
     type: "mcq",
-    stem: "The Rey–Osterrieth Complex Figure Test assesses",
+    stem: "The Rey-Osterrieth Complex Figure Test assesses",
     options: [
       "only motor speed",
       "only verbal memory",
@@ -686,7 +686,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["visual memory span", "planning: working out a sequence of moves ahead of time", "verbal fluency", "simple reaction time"],
     answer: 1,
     explanation:
-      "Shallice (1982) designed the Tower of London to measure planning: rearranging coloured beads on pegs to match a goal in a minimum number of moves, which requires looking ahead. Visual span is measured by Corsi blocks. Fluency uses word generation. Reaction time is not the main measure.",
+      "Shallice designed the Tower of London to measure planning: rearranging coloured beads on pegs to match a goal in a minimum number of moves, which requires looking ahead. Visual span is measured by Corsi blocks. Fluency uses word generation. Reaction time is not the main measure.",
     module: M,
     ref: "Shallice 1982",
   },
