@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
-import { logEmailSend, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
+import { logEmailSend, PREVIEW_GATE, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { loadOpenFailures } from "@/lib/email/failed";
 import { isQuotaStop, planRetry, type FailedRow } from "@/lib/email/pace";
@@ -21,6 +21,8 @@ export type RetryReport = {
   notRetryable: number;
   /** Stopped because the daily sending limit was reached. */
   stoppedForQuota: boolean;
+  /** This is a preview site: nothing was sent and nothing was marked handled. */
+  previewBlocked: boolean;
   /** Still waiting (each click sends at most BATCH, so the page never times out). */
   left: number;
 };
@@ -42,7 +44,7 @@ async function markHandled(admin: ReturnType<typeof createAdminClient>, ids: str
  * daily limit. Every retry is a new row linked to the email it retries.
  */
 export async function retryFailedEmails(ids: string[] | null): Promise<RetryReport> {
-  const empty: RetryReport = { error: null, sent: 0, failed: 0, alreadyDelivered: 0, duplicates: 0, noCopy: 0, notRetryable: 0, stoppedForQuota: false, left: 0 };
+  const empty: RetryReport = { error: null, sent: 0, failed: 0, alreadyDelivered: 0, duplicates: 0, noCopy: 0, notRetryable: 0, stoppedForQuota: false, previewBlocked: false, left: 0 };
   const me = await requireSuperAdmin();
   if (!me) return { ...empty, error: "Only the Super Admin can send email." };
   if (!process.env.RESEND_API_KEY) return { ...empty, error: "Email isn't set up on the server (no sending key)." };
@@ -92,6 +94,10 @@ export async function retryFailedEmails(ids: string[] | null): Promise<RetryRepo
     if (r.template_id === "credential") {
       // Login emails: a fresh setup link (the old one may have expired).
       const res = await sendCredentialEmails([r.recipient], { admin, appUrl, sendEmail: sendResendEmail, sentBy: me.id });
+      if (res.results.some((x) => x.reason === PREVIEW_GATE)) {
+        report.previewBlocked = true;
+        break;
+      }
       done++;
       if (res.sent) report.sent++;
       else report.failed++;
@@ -105,6 +111,10 @@ export async function retryFailedEmails(ids: string[] | null): Promise<RetryRepo
     const html = r.html ?? undefined;
     const text = r.body_text?.trim() || (html ? htmlToPlain(html) : "");
     const res = await sendResendEmail(r.recipient, r.subject, text, html);
+    if (!res.ok && res.error === PREVIEW_GATE) {
+      report.previewBlocked = true;
+      break;
+    }
     done++;
     await logEmailSend(admin, {
       recipient: r.recipient,

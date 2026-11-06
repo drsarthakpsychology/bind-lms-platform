@@ -5,7 +5,7 @@ import { ArrowRight, UserPlus, Users } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { PageHeader } from "@/components/design-system/page-header";
-import { AddPeopleForm, NewCohortForm } from "@/components/admin/cohorts-ui";
+import { NewCohortForm } from "@/components/admin/cohorts-ui";
 import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -98,14 +98,9 @@ export default async function CohortsPage() {
         </section>
 
         <aside className="space-y-4 lg:sticky lg:top-20">
-          <section className="rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
-            <h2 className="flex items-center gap-2 text-base font-bold">
-              <UserPlus className="size-5 text-link" aria-hidden /> Add people
-            </h2>
-            <div className="mt-3">
-              <AddPeopleForm cohorts={cohorts.map((c) => ({ id: c.id, name: c.name, status: c.status }))} />
-            </div>
-          </section>
+          <Link href="/admin/students/add" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-primary p-4 font-bold text-primary-foreground hard-shadow-sm">
+            <UserPlus className="size-5" aria-hidden /> Add people to a cohort
+          </Link>
           <section className="rounded-2xl border-2 border-foreground bg-card p-4">
             <h2 className="text-base font-bold">New cohort</h2>
             <div className="mt-3">

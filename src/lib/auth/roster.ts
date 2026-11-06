@@ -340,6 +340,13 @@ export async function sendCredentialEmails(
   let failed = 0;
 
   for (const email of emails) {
+    // Preview sites: don't make a new link (it would cancel the student's
+    // current one) when the email isn't going to be sent.
+    if (previewBlocks(email)) {
+      failed++;
+      results.push({ email, ok: false, reason: PREVIEW_GATE });
+      continue;
+    }
     const { data: invite } = await admin
       .from("credential_invites")
       .select("name")
@@ -427,6 +434,8 @@ type EmailSendLog = {
  * (2026_11_admin_redesign.sql); older databases get the basic row.
  */
 export async function logEmailSend(admin: SupabaseClient, log: EmailSendLog): Promise<void> {
+  // A preview site's skipped send isn't a failure — don't put it in Failed.
+  if (log.errorReason === PREVIEW_GATE) return;
   const base = {
     recipient: log.recipient,
     name: log.name,
@@ -486,7 +495,23 @@ export async function sendResendEmail(to: string, subject: string, body: string,
   return first;
 }
 
+/** Marks a send that a preview site deliberately didn't make (never logged as a failure). */
+export const PREVIEW_GATE = "Not sent: this is a preview site, so email only goes to the approved test address.";
+
+/**
+ * Preview and development sites share the live database, so they must never
+ * email real students by accident. They send only to ALLOWED_TEST_RECIPIENT
+ * (one or more addresses, comma-separated) — the same rule the achievements
+ * email already follows. Production sends normally.
+ */
+export function previewBlocks(to: string, env: Record<string, string | undefined> = process.env): boolean {
+  if (env.VERCEL_ENV !== "preview" && env.VERCEL_ENV !== "development") return false;
+  const allowed = (env.ALLOWED_TEST_RECIPIENT ?? "").split(",").map((x) => x.trim().toLowerCase()).filter(Boolean);
+  return !allowed.includes(to.trim().toLowerCase());
+}
+
 async function sendResendOnce(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
+  if (previewBlocks(to)) return { ok: false, error: PREVIEW_GATE };
   const key = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
   // Replies land in the admin Mail inbox through Resend inbound routing.

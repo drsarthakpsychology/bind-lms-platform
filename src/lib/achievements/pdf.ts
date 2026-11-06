@@ -12,7 +12,34 @@ export type CredentialPdfData = {
   signaturePng?: Buffer | null;
   /** Permanent institutional roll number (optional). */
   rollNumber?: string | null;
+  /** Line under the name (default "has successfully completed"). */
+  lead?: string | null;
+  /** Optional short description under the title (custom certificates). */
+  description?: string | null;
+  /** Big heading (default "Certificate of Completion"). */
+  heading?: string | null;
 };
+
+/** Split text into lines that fit `maxWidth` at `size`. */
+function wrap(text: string, font: { widthOfTextAtSize: (t: string, s: number) => number }, size: number, maxWidth: number): string[] {
+  const words = text.replace(/\s+/g, " ").trim().split(" ");
+  const lines: string[] = [];
+  let line = "";
+  for (const w of words) {
+    const next = line ? `${line} ${w}` : w;
+    if (font.widthOfTextAtSize(next, size) > maxWidth && line) {
+      lines.push(line);
+      line = w;
+    } else line = next;
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+/** pdf-lib's standard fonts can't draw characters outside WinAnsi; swap the common ones. */
+function winAnsi(s: string): string {
+  return s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, "-").replace(/…/g, "...").replace(/[^\x20-\x7E\xA0-\xFF]/g, "");
+}
 
 /**
  * Generate an official certificate PDF. The verification QR points at the
@@ -27,16 +54,31 @@ export async function generateCredentialPdf(data: CredentialPdfData): Promise<Bu
 
   page.drawRectangle({ x: 40, y: 40, width: 762, height: 515, borderColor: rgb(0.25, 0.25, 0.28), borderWidth: 2 });
 
-  page.drawText("VIBHA School of Psychology", { x: 280, y: 505, size: 15, font: bold, color: rgb(0.15, 0.15, 0.18) });
-  page.drawText("Certificate of Completion", { x: 300, y: 470, size: 26, font: bold, color: rgb(0.1, 0.1, 0.1) });
-  page.drawText("This certifies that", { x: 360, y: 405, size: 13, font, color: rgb(0.45, 0.45, 0.45) });
-  page.drawText(data.studentName, { x: 240, y: 355, size: 30, font: bold, color: rgb(0.1, 0.1, 0.1) });
-  page.drawText("has successfully completed", { x: 315, y: 305, size: 13, font, color: rgb(0.45, 0.45, 0.45) });
-  page.drawText(data.title, { x: 300, y: 265, size: 18, font: bold, color: rgb(0.1, 0.1, 0.1) });
-
-  page.drawText(`Issued ${data.issuedAt}`, { x: 365, y: 180, size: 11, font, color: rgb(0.45, 0.45, 0.45) });
-  page.drawText(`Credential ID ${data.credentialId}`, { x: 320, y: 150, size: 9, font, color: rgb(0.45, 0.45, 0.45) });
-  if (data.rollNumber) page.drawText(`Roll Number ${data.rollNumber}`, { x: 350, y: 130, size: 9, font, color: rgb(0.45, 0.45, 0.45) });
+  // Every line is centred, so names and titles of any length sit right.
+  const W = 842;
+  const centre = (text: string, y: number, size: number, f: typeof font, color = rgb(0.1, 0.1, 0.1)) => {
+    const t = winAnsi(text);
+    let sz = size;
+    while (sz > 8 && f.widthOfTextAtSize(t, sz) > 700) sz -= 1;
+    page.drawText(t, { x: (W - f.widthOfTextAtSize(t, sz)) / 2, y, size: sz, font: f, color });
+  };
+  const grey = rgb(0.45, 0.45, 0.45);
+  centre("VIBHA School of Psychology", 505, 15, bold, rgb(0.15, 0.15, 0.18));
+  centre(data.heading || "Certificate of Completion", 468, 26, bold);
+  centre("This certifies that", 410, 13, font, grey);
+  centre(data.studentName, 362, 30, bold);
+  centre(data.lead || "has successfully completed", 318, 13, font, grey);
+  centre(data.title, 282, 18, bold);
+  let y = 255;
+  if (data.description) {
+    for (const line of wrap(winAnsi(data.description), font, 11, 560).slice(0, 3)) {
+      centre(line, y, 11, font, rgb(0.3, 0.3, 0.3));
+      y -= 15;
+    }
+  }
+  centre(`Issued ${data.issuedAt}`, 180, 11, font, grey);
+  centre(`Credential ID ${data.credentialId}`, 150, 9, font, grey);
+  if (data.rollNumber) centre(`Roll Number ${data.rollNumber}`, 130, 9, font, grey);
 
   // Signature block (bottom-left) — only when an authorised asset is present.
   if (data.signaturePng) {

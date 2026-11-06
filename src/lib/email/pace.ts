@@ -4,13 +4,15 @@
  * without sending anyone the same email twice. Pure (no database), so tested.
  */
 
-export type FailureKind = "quota" | "rate" | "domain" | "address" | "config" | "network" | "other";
+export type FailureKind = "quota" | "rate" | "domain" | "address" | "config" | "network" | "preview" | "other";
 
 export type Explained = { kind: FailureKind; words: string; retryNow: boolean };
 
 /** Turn a provider error into words an admin understands, and say if retrying now can work. */
 export function explainFailure(reason: string | null | undefined): Explained {
   const r = String(reason ?? "").toLowerCase();
+  if (r.includes("preview site"))
+    return { kind: "preview", words: "Not sent from the preview site (it only emails the test address). Send it from the live site.", retryNow: false };
   if (/daily .*quota|daily email sending quota|quota/.test(r))
     return { kind: "quota", words: "Daily sending limit reached. Retry tomorrow, or after the plan limit resets.", retryNow: true };
   if (/too many requests|rate limit|429/.test(r))

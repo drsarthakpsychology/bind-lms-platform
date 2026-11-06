@@ -19,7 +19,7 @@ const ago = (iso: string) => {
 };
 
 /** Ask box + list. The student writes a doubt; if it reads like a complaint we say so. */
-export function DoubtsBoard({ items, canAskCohort }: { items: DoubtListItem[]; canAskCohort: string | null }) {
+export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: DoubtListItem[]; canAskCohort: string | null; /** Admins reply; they don't ask (owner, 2026-11-06). */ canAsk?: boolean }) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -96,11 +96,11 @@ export function DoubtsBoard({ items, canAskCohort }: { items: DoubtListItem[]; c
             </button>
           </div>
         </div>
-      ) : (
+      ) : canAsk ? (
         <button type="button" onClick={() => setOpen(true)} className="inline-flex h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 text-sm font-bold text-primary-foreground hard-shadow-sm">
           <Plus className="size-5" aria-hidden /> Ask a doubt
         </button>
-      )}
+      ) : null}
 
       <nav className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" aria-label="Filter">
         {(

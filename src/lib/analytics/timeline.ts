@@ -74,3 +74,13 @@ export function buildTimeline(i: TimelineInput, limit = 80): TimelineEvent[] {
 export function daysAgoIso(n: number, now = Date.now()): string {
   return new Date(now - n * 86400000).toISOString();
 }
+
+/** "5 min ago" / "3 h ago" / "2 d ago" / "Never". */
+export function agoLabel(iso: string | null | undefined, now = Date.now()): string {
+  if (!iso) return "Never";
+  const m = Math.round((now - new Date(iso).getTime()) / 60000);
+  if (m < 2) return "just now";
+  if (m < 60) return `${m} min ago`;
+  const h = Math.round(m / 60);
+  return h < 24 ? `${h} h ago` : `${Math.round(h / 24)} d ago`;
+}

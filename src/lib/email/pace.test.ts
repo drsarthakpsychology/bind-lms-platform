@@ -50,3 +50,9 @@ describe("createPacer", () => {
     expect(waits).toEqual([250, 250]);
   });
 });
+
+describe("preview gate words", () => {
+  it("explains a preview skip", () => {
+    expect(explainFailure("Not sent: this is a preview site, so email only goes to the approved test address.").kind).toBe("preview");
+  });
+});

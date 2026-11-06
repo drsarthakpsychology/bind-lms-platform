@@ -25,6 +25,7 @@ export type FailedItem = {
 
 function summary(r: RetryReport): string {
   if (r.error) return r.error;
+  if (r.previewBlocked) return "This is a preview site, so nothing was sent (it only emails the test address). Retry from the live site.";
   const parts = [`Sent ${r.sent}`];
   if (r.failed) parts.push(`failed again ${r.failed}`);
   if (r.alreadyDelivered) parts.push(`${r.alreadyDelivered} already had it (not re-sent)`);
