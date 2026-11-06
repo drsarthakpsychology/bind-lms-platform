@@ -57,14 +57,14 @@ Q: In UGC NET, a candidate unsure of an answer should:
 Teaching is a deliberate, interactive process of helping learners change in knowledge, skills and attitudes. It is **an art and a science**, a **bipolar** process (teacher and learner, in John Adams's phrase) or **tripolar** (teacher, learner and curriculum, as John Dewey saw it). Good teaching is learner-centred, plans for objectives, and checks whether learning happened.
 
 ### Objectives: Bloom's taxonomy
-Benjamin Bloom and colleagues (1956) classified educational objectives into three **domains**.
+In 1956 Benjamin Bloom and colleagues classified educational objectives into three **domains**.
 
 | Domain | Levels, lowest to highest |
 |---|---|
-| **Cognitive** (Bloom 1956) | Knowledge, comprehension, application, analysis, synthesis, evaluation |
-| **Cognitive, revised** (Anderson and Krathwohl, 2001) | **Remember, understand, apply, analyse, evaluate, create** (verbs, with "create" at the top) |
-| **Affective** (Krathwohl, Bloom and Masia, 1964) | Receiving, responding, valuing, organisation, characterisation by a value |
-| **Psychomotor** (Dave, 1970; also Simpson and Harrow) | Imitation, manipulation, precision, articulation, naturalisation |
+| **Cognitive** (Bloom's original, 1956) | Knowledge, comprehension, application, analysis, synthesis, evaluation |
+| **Cognitive, revised** (Anderson and Krathwohl's 2001 revision) | **Remember, understand, apply, analyse, evaluate, create** (verbs, with "create" at the top) |
+| **Affective** (Krathwohl and colleagues' 1964 taxonomy) | Receiving, responding, valuing, organisation, characterisation by a value |
+| **Psychomotor** (Dave's 1970 version; Simpson and Harrow wrote others) | Imitation, manipulation, precision, articulation, naturalisation |
 
 :::mnemonic Revised Bloom
 "**R**emember **U**ncle **A**nil **A**te **E**ight **C**hapatis": remember, understand, apply, analyse, evaluate, create.
@@ -94,7 +94,7 @@ Other names worth knowing:
 - **Programmed instruction** (B. F. Skinner): small steps, active response, immediate feedback, self-pacing. **Linear** (Skinner) versus **branching** (Crowder).
 - **Personalised System of Instruction** (Keller Plan): mastery before moving on.
 - **Dalton Plan** (Helen Parkhurst): contracts and individual work.
-- **Microteaching** (Dwight Allen, Stanford, 1963): practising **one teaching skill** in a short lesson with a small group, followed by feedback and reteaching. The Indian model's cycle is teach 6, feedback 6, replan 12, reteach 6, refeedback 6 minutes: 36 minutes in all.
+- **Microteaching** (developed by Dwight Allen at Stanford in 1963): practising **one teaching skill** in a short lesson with a small group, followed by feedback and reteaching. The Indian model's cycle is teach 6, feedback 6, replan 12, reteach 6, refeedback 6 minutes: 36 minutes in all.
 - **Symposium:** several experts present different aspects of one topic. **Panel discussion:** experts discuss before an audience. **Seminar:** a paper is presented and discussed. **Workshop:** hands-on learning of a skill.
 - **Flanders' Interaction Analysis** (FIACS): 10 categories for coding teacher talk, student talk and silence.
 
@@ -184,7 +184,7 @@ This unit overlaps with the **Research methods** module (40). Here is what Paper
 - A **thesis** (PhD) or **dissertation** (Master's) has preliminary pages, introduction, review, method, results, discussion, summary and conclusions, references and appendices.
 - A **research article** follows **IMRaD**; a **review article** summarises a field; a **short communication** reports a brief finding.
 - **Referencing styles:** **APA** (author–date; psychology and social sciences), **MLA** (author–page; humanities), **Chicago** (notes or author–date; history), **Vancouver** (numbered; medicine), **Harvard** (author–date).
-- **Bibliography** lists all sources consulted; **references** list only those cited. **Ibid.** means "in the same place" (the source just cited); **op. cit.** means "in the work cited" earlier; **et al.** means "and others".
+- **Bibliography** lists all sources consulted; **references** list only those cited. **Ibid.** means "in the same place" (the source just cited); **op. cit.** means "in the work cited" earlier; **et alii** (always shortened in citations) means "and others".
 - An **abstract** summarises; a **synopsis** is the research plan submitted for approval.
 
 ### ICT in research
@@ -336,7 +336,7 @@ Effective teachers: plan clear objectives, use the learners' language and exampl
 
 ### Mass media and society
 - **Functions** (Lasswell; Wright): surveillance of the environment, correlation (interpreting events), transmission of culture, and entertainment.
-- **Theories:** **Hypodermic needle (magic bullet)**: media inject messages into a passive audience (largely rejected). **Two-step flow** (Lazarsfeld and Katz): media influence passes through **opinion leaders**. **Agenda setting** (McCombs and Shaw, 1972): media tell us **what to think about**, not what to think. **Uses and gratifications** (Katz, Blumler): audiences actively choose media to meet needs. **Cultivation** (Gerbner): heavy TV viewing shapes beliefs about reality ("mean world"). **Spiral of silence** (Noelle-Neumann): people who think their view is a minority stay quiet. **Gatekeeping** (Lewin; David Manning White): editors choose what becomes news.
+- **Theories:** **Hypodermic needle (magic bullet)**: media inject messages into a passive audience (largely rejected). **Two-step flow** (Lazarsfeld and Katz): media influence passes through **opinion leaders**. **Agenda setting** (Maxwell McCombs and Donald Shaw's 1972 study): media tell us **what to think about**, not what to think. **Uses and gratifications** (Katz, Blumler): audiences actively choose media to meet needs. **Cultivation** (Gerbner): heavy TV viewing shapes beliefs about reality ("mean world"). **Spiral of silence** (Noelle-Neumann): people who think their view is a minority stay quiet. **Gatekeeping** (Lewin; David Manning White): editors choose what becomes news.
 - Indian landmarks: All India Radio (named in 1936), Doordarshan (1959), the **Satellite Instructional Television Experiment (SITE, 1975 to 1976)**, the Press Council of India, Prasar Bharati (1997), community radio, and the growth of digital media.
 
 :::widget sort
@@ -808,7 +808,7 @@ Data interpretation (DI) sets give a table or chart and several questions. They 
 ### Data and governance
 - **Qualitative** and **quantitative** data; **discrete** and **continuous**; **primary** (collected by you) and **secondary** (already collected: census, NSSO, NFHS).
 - India's data sources: **Census** (the next one has a reference date of 1 March 2027, and is India's first digital census), **National Sample Survey**, **National Family Health Survey (NFHS)**, **AISHE** (All India Survey on Higher Education), **NCRB** reports.
-- **Open data:** the **National Data Sharing and Accessibility Policy (2012)** and the portal **data.gov.in**.
+- **Open data:** the **National Data Sharing and Accessibility Policy (2012)** and the national open-data portal of the Government of India.
 - **Privacy:** the **Digital Personal Data Protection Act, 2023** governs how personal data are collected and processed. **Right to Information Act, 2005** gives citizens access to public information.
 
 :::widget worked

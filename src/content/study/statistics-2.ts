@@ -211,7 +211,7 @@ Q: A main disadvantage of non-parametric tests is that they:
 A p value tells you whether an effect is likely to be more than chance. An **effect size** tells you **how big** it is. APA requires both.
 
 ### The common effect sizes
-| Effect size | Used with | Small | Medium | Large (Cohen, 1988) |
+| Effect size | Used with | Small | Medium | Large (Cohen's labels) |
 |---|---|---|---|---|
 | **Cohen's d** = (M1 − M2) ÷ pooled SD | t-tests | 0.2 | 0.5 | 0.8 |
 | **r** (or φ) | Correlation, chi-square 2 × 2 | .10 | .30 | .50 |
@@ -301,12 +301,12 @@ The regression line is **Ŷ = a + bX** (predicted Y).
 - The overall model is tested with **F**; each predictor with **t** = b ÷ SE(b).
 - **Multicollinearity:** predictors highly correlated with each other make b weights unstable. Check **tolerance** (below .10 is a problem) or the **variance inflation factor, VIF** (above 10, some say above 5).
 - Entry methods: **simultaneous (enter)**; **hierarchical** (blocks entered in an order set by theory, reading ΔR² for each block; for example, demographics first, then stress, then coping); **stepwise** (forward, backward; chosen by the computer, capitalises on chance and is widely criticised).
-- Rule of thumb for sample size: at least 50 + 8 × (number of predictors) to test the overall model (Green, 1991).
+- Rule of thumb for sample size: at least 50 + 8 × (number of predictors) to test the overall model (a common rule of thumb).
 - **Logistic regression** predicts a **dichotomous** outcome (relapse or not); coefficients are reported as **odds ratios**, Exp(B).
 - **Discriminant function analysis** predicts group membership from several predictors.
 
 ### Mediation and moderation
-- **Mediation:** X affects M, which affects Y (X → M → Y). Example: childhood adversity raises rumination, which raises depression. Baron and Kenny's (1986) four steps (X predicts Y; X predicts M; M predicts Y controlling X; the X effect shrinks) are now replaced by testing the **indirect effect (a × b)** directly, with **bootstrapped confidence intervals** (Hayes' PROCESS macro). The **Sobel test** is an older, less powerful option. **Full mediation:** the direct effect disappears; **partial:** it shrinks.
+- **Mediation:** X affects M, which affects Y (X → M → Y). Example: childhood adversity raises rumination, which raises depression. Baron and Kenny's classic four steps (X predicts Y; X predicts M; M predicts Y controlling X; the X effect shrinks) are now replaced by testing the **indirect effect (a × b)** directly, with **bootstrapped confidence intervals** (Hayes' PROCESS macro). The **Sobel test** is an older, less powerful option. **Full mediation:** the direct effect disappears; **partial:** it shrinks.
 - **Moderation:** the X–Y relation depends on a third variable W. Example: stress predicts depression more strongly in people with low social support. Tested with an **interaction term (X × W)** in regression, after **mean-centring** the predictors, and explored with **simple slopes**.
 - Cross-sectional data cannot establish the causal order that mediation implies; longitudinal designs are better.
 
@@ -432,7 +432,7 @@ Used when you **do not** yet know how many factors there are.
 
 ### Confirmatory factor analysis (CFA) and SEM
 - **CFA** tests a factor structure stated **in advance** (for example, that a Hindi translation of a depression scale has the same two factors as the original). You specify which items load on which factor, then test how well the model fits.
-- **Fit indices** (Hu and Bentler, 1999, guides): **χ²** (should be non-significant, but is almost always significant in large samples); **CFI** and **TLI** about .95 or higher; **RMSEA** about .06 or lower (up to .08 acceptable); **SRMR** about .08 or lower.
+- **Fit indices** (widely used guides from Hu and Bentler's simulation work): **χ²** (should be non-significant, but is almost always significant in large samples); **CFI** and **TLI** about .95 or higher; **RMSEA** about .06 or lower (up to .08 acceptable); **SRMR** about .08 or lower.
 - **Measurement invariance** testing (configural, metric, scalar) asks whether a scale measures the same thing in different groups: men and women, Hindi and Tamil versions. Without it, group comparisons on the scale can mislead.
 - **Structural equation modelling (SEM)** combines a **measurement model** (CFA: latent variables measured by items) with a **structural model** (paths between latent variables, like a regression among them). **Path analysis** is SEM with observed variables only. SEM is used to test mediation models, theories with several outcomes, and longitudinal models. It needs large samples (often 200 or more) and should be driven by theory, not by chasing modification indices.
 

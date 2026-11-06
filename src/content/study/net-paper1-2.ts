@@ -15,7 +15,7 @@ ICT questions mix fixed basics (which never change) with digital initiatives (wh
 
 ### The internet and the web
 - The **internet** is the global network of networks; the **World Wide Web** is a service on it, invented by **Tim Berners-Lee** at CERN (proposed in 1989).
-- **Protocols:** **TCP/IP** (basic communication), **HTTP/HTTPS** (web pages; the S means secure, encrypted), **FTP** (file transfer), **SMTP** (sending e-mail), **POP3** and **IMAP** (receiving e-mail; IMAP keeps mail synchronised on the server), **DNS** (turns names like ugc.gov.in into IP addresses).
+- **Protocols:** **TCP/IP** (basic communication), **HTTP/HTTPS** (web pages; the S means secure, encrypted), **FTP** (file transfer), **SMTP** (sending e-mail), **POP3** and **IMAP** (receiving e-mail; IMAP keeps mail synchronised on the server), **DNS** (turns website names into IP addresses).
 - **IP addresses:** **IPv4** is 32-bit (for example 192.168.1.1); **IPv6** is 128-bit, written in hexadecimal.
 - **URL** (uniform resource locator): protocol, domain, path. **Domains:** .com, .org, .edu, .gov, .ac.in (Indian academic), .nic.in (government), .in (India).
 - **Networks:** **PAN** (personal), **LAN** (local area), **MAN** (metropolitan), **WAN** (wide area; the internet is the largest). **Wi-Fi**, **Bluetooth**, **modem**, **router**, **switch**.
@@ -99,8 +99,8 @@ Q: Shodhganga is maintained by:
 
 ### Development goals
 - **Millennium Development Goals (MDGs):** 8 goals, 2000 to 2015.
-- **Sustainable Development Goals (SDGs):** adopted by the UN General Assembly in **September 2015** in "Transforming our World: the 2030 Agenda". **17 goals, 169 targets**, to be met by **2030**. Goal 3 is good health and well-being (including mental health and substance use); goal 4 quality education; goal 13 climate action. NITI Aayog publishes India's **SDG India Index**.
-- **Sustainable development** was defined in the **Brundtland Report**, *Our Common Future* (1987): development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+- **Sustainable Development Goals (SDGs):** adopted by the UN General Assembly in **September 2015** as the 2030 Agenda for Sustainable Development. **17 goals, 169 targets**, to be met by **2030**. Goal 3 is good health and well-being (including mental health and substance use); goal 4 quality education; goal 13 climate action. NITI Aayog publishes India's **SDG India Index**.
+- **Sustainable development** was defined in the **Brundtland Report** (1987) of the World Commission on Environment and Development: development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
 
 ### Human–environment interaction and pollution
 - **Anthropogenic** (human-caused) activities: deforestation, urbanisation, industry, intensive agriculture, mining, fossil fuels.
@@ -172,12 +172,12 @@ Recent climate summits: **COP29** (Baku, 2024) set a new finance goal of at leas
 :::
 
 :::mcq
-Q: The Brundtland Report, which defined sustainable development, was titled:
-- Limits to Growth
-- Agenda 21
-- *Our Common Future
-- Silent Spring
-> Published in 1987 by the World Commission on Environment and Development.
+Q: The Brundtland Report (1987) is best known for:
+- Launching the Sustainable Development Goals
+- Creating the UN Environment Programme
+- *Defining sustainable development
+- Setting binding emission targets
+> It defined sustainable development as meeting present needs without compromising future generations.
 
 Q: India's National Air Quality Index treats an AQI of 250 as:
 - Satisfactory
@@ -504,12 +504,12 @@ Q: Under UGC's 2018 regulations, a thesis with 55% similarity falls in:
 - Level 3
 > Above 40 and up to 60%.
 
-Q: "Et al." means:
+Q: In citations, the Latin phrase et alii (always shortened) means:
 - In the same place
 - In the work cited
 - Compare
 - *And others
-> Latin et alii.
+> It is used when a work has several authors.
 
 Q: In a comprehension passage, a question asking for the author's attitude is a question about:
 - Vocabulary

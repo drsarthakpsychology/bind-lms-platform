@@ -6,7 +6,7 @@ export const part1 = String.raw`
 Every day you hear claims about the mind. "Mobile phones are ruining children's attention." "Meditation cures anxiety." "Toppers sleep less." Some of these are true, some are half-true and some are false. **Research is the disciplined way of finding out which is which.** It is how psychology earns the right to call itself a science.
 
 ### Four ways people fix their beliefs
-The philosopher Charles Sanders Peirce (1877) described four ways people settle what they believe. Kerlinger made this list famous in psychology.
+In 1877 the philosopher Charles Sanders Peirce described four ways people settle what they believe. Kerlinger made this list famous in psychology.
 
 | Method | How the belief is held | Example |
 |---|---|---|
@@ -31,7 +31,7 @@ Authority is not bad: you trust a good textbook. The point is that science is th
 ### Kinds of research
 - **Basic (fundamental) research** builds theory: how does working memory hold information?
 - **Applied research** solves a practical problem: does a memory-training app help children with ADHD in Delhi schools?
-- **Action research** (Kurt Lewin, 1940s) is done by practitioners on their own setting, in cycles of plan, act, observe and reflect. A teacher who changes her feedback style, watches the effect and adjusts is doing action research.
+- **Action research** (first described by Kurt Lewin in the 1940s) is done by practitioners on their own setting, in cycles of plan, act, observe and reflect. A teacher who changes her feedback style, watches the effect and adjusts is doing action research.
 - By purpose: **exploratory** (map a new area), **descriptive** (how common, what kind), **explanatory** (why; cause and effect) and **predictive**.
 - By data: **quantitative** (numbers, measurement, statistics), **qualitative** (words, meanings, experience) and **mixed methods** (both, deliberately combined).
 - By time: **cross-sectional** (one point in time) and **longitudinal** (the same people followed over time).
@@ -106,7 +106,7 @@ Other distinctions:
 - **Continuous** variables can take any value in a range (reaction time). **Discrete** (categorical) variables take separate values (number of siblings, religion). A **dichotomous** variable has two values.
 
 :::mnemonic Moderator or mediator?
-**Moderator = "for whom or when"**: it answers *for whom* or *under what conditions* the effect is stronger. **Mediator = "how or why"**: it is the mechanism in the middle of the chain. Baron and Kenny (1986) made this distinction standard.
+**Moderator = "for whom or when"**: it answers *for whom* or *under what conditions* the effect is stronger. **Mediator = "how or why"**: it is the mechanism in the middle of the chain. Reuben Baron and David Kenny made this distinction standard in the 1980s.
 :::
 
 :::widget sort
@@ -118,7 +118,7 @@ An **operational definition** defines a variable by the **operations used to mea
 - **Measured** operational definition: "Exam anxiety = total score on the Westside Test Anxiety Scale."
 - **Experimental (manipulated)** operational definition: "Sleep deprivation = being kept awake in the lab from 10 p.m. to 6 a.m., checked by a research assistant every 30 minutes."
 
-Bridgman's **operationism** (1927) argued that a concept *is* its measuring operations. Psychologists now treat that as too narrow: one construct can and should be measured several ways (converging operations), and no single measure captures it fully.
+The physicist Percy Bridgman's **operationism**, from the 1920s, argued that a concept *is* its measuring operations. Psychologists now treat that as too narrow: one construct can and should be measured several ways (converging operations), and no single measure captures it fully.
 
 :::widget decide
 {"scene": "Ritika wants to study 'stress among nurses in Mumbai hospitals'. Her guide asks for an operational definition of stress.", "ask": "Which definition is best?", "choices": [{"label": "'Stress is the feeling of pressure that nurses face.'", "verdict": "harm", "outcome": "Her guide sends it back: two researchers could measure this in two different ways.", "why": "It is a conceptual definition, not an operational one. Nothing says how stress will be measured."}, {"label": "'Stress = total score on the Perceived Stress Scale (10-item version) completed at the end of a shift, plus the number of sick days in the last three months from hospital records.'", "verdict": "best", "outcome": "Her guide approves. Another team could repeat it exactly.", "why": "It names the instrument, the version, when it is given and a second converging measure."}, {"label": "'Stress = how stressed a nurse says she is.'", "verdict": "ok", "outcome": "Better, but her guide asks: asked how, on what scale, when?", "why": "It hints at self-report but does not specify the operation, so it cannot be replicated."}]}
@@ -223,7 +223,7 @@ Before you design anything, you find out what is already known. The **review of 
 
 ### Where to look
 - **Primary sources** report original research (a journal article, a thesis). **Secondary sources** summarise others' work (textbooks, review articles). Exams like to ask which is which: a meta-analysis is usually treated as a secondary (review) source, even though it produces new numbers.
-- Databases: **PubMed**, **PsycINFO** (APA), **Scopus**, **Web of Science**, **Google Scholar**. Indian sources: **Shodhganga** (Indian PhD theses, run by INFLIBNET), the **Indian Journal of Psychiatry**, the **Indian Journal of Clinical Psychology**.
+- Databases: **PubMed**, **PsycINFO** (APA), **Scopus**, **Web of Science**, **Google Scholar**. Indian sources: **Shodhganga** (Indian PhD theses, run by INFLIBNET), the national journals of Indian psychiatry and clinical psychology.
 - **Systematic reviews** search exhaustively with stated rules (and follow the PRISMA reporting guideline); **narrative reviews** are selective summaries.
 
 ### A research proposal (synopsis) usually contains
@@ -362,7 +362,7 @@ Q: "Systematic, controlled, empirical, amoral, public and critical" describes sc
 - Wundt
 - *Kerlinger
 - Freud
-> Kerlinger's definition in Foundations of Behavioral Research.
+> This is Fred Kerlinger's well-known definition.
 
 Q: Failing to reject the null hypothesis means:
 - *There is not enough evidence against the null
@@ -470,7 +470,7 @@ Q: A survey of mental health is run only on a free app that requires a smartphon
 ## 2.2 Measurement in research [core][beginner]
 To study a variable you must **measure** it: assign numbers or categories by rules. A study can only be as good as its measures.
 
-### Scales of measurement (Stevens, 1946)
+### Stevens' four scales of measurement
 | Scale | What it tells you | Example | Allowed statistics |
 |---|---|---|---|
 | **Nominal** | Categories only, no order | Religion, diagnosis, blood group | Frequencies, mode, chi-square |
@@ -574,7 +574,7 @@ Total variance in the DV has three sources. A good design:
 - Order effects are handled by **counterbalancing**: **complete** (all possible orders), **ABBA** (reverse order within each person), or a **Latin square** (each condition appears once in each position).
 - **Matched-groups designs** sit between the two.
 
-### Classic designs (Campbell and Stanley, 1963)
+### Classic designs, in Campbell and Stanley's notation
 Notation: **R** = random assignment, **O** = observation (measurement), **X** = treatment.
 
 | Design | Layout | Comment |
@@ -587,7 +587,7 @@ Notation: **R** = random assignment, **O** = observation (measurement), **X** = 
 | **Solomon four-group** (true) | R O X O / R O O / R X O / R O | Tests whether the **pretest itself** changes the effect |
 
 :::widget reveal
-{"prompt": "Why did Solomon (1949) add two extra groups without a pretest?", "answer": "Because a pretest can change how people respond to the treatment (pretest sensitisation, an interaction of testing and treatment). A pretest on attitudes to mental illness, for example, may make people notice the anti-stigma film more. Comparing the pretested and unpretested treatment groups shows whether the pretest altered the effect, which protects external validity. The cost is needing four groups."}
+{"prompt": "Why did Richard Solomon add two extra groups without a pretest?", "answer": "Because a pretest can change how people respond to the treatment (pretest sensitisation, an interaction of testing and treatment). A pretest on attitudes to mental illness, for example, may make people notice the anti-stigma film more. Comparing the pretested and unpretested treatment groups shows whether the pretest altered the effect, which protects external validity. The cost is needing four groups."}
 :::
 
 ### Factorial designs
@@ -641,7 +641,7 @@ Q: Each participant learns word lists in silence, with music and with traffic no
 :::
 
 ## 2.4 Validity and its threats [core][beginner]
-**Validity** in research means how far you can trust the conclusions. Cook and Campbell (1979) named four kinds. Learn them as four questions.
+**Validity** in research means how far you can trust the conclusions. Thomas Cook and Donald Campbell named four kinds. Learn them as four questions.
 
 | Kind | The question it answers | Main threats |
 |---|---|---|
@@ -664,7 +664,7 @@ Campbell and Stanley's eight classic threats, with an Indian classroom example. 
 | **Experimental mortality (attrition)** | Different drop-out across groups | Struggling students left the programme class |
 | **Selection–maturation interaction** | Groups were maturing at different rates | The programme class was younger and changing faster |
 
-Later additions (Cook and Campbell; Shadish, Cook and Campbell, 2002) arise when the control group learns about the treatment:
+Later additions by Cook, Campbell and their colleagues arise when the control group learns about the treatment:
 - **Diffusion or imitation of treatment:** the control group copies the treatment.
 - **Compensatory equalisation:** staff give the control group extras to be fair.
 - **Compensatory rivalry (the John Henry effect):** the control group tries harder to beat the treatment group.
@@ -675,15 +675,15 @@ Later additions (Cook and Campbell; Shadish, Cook and Campbell, 2002) arise when
 :::
 
 ### Threats to construct validity
-- **Demand characteristics** (Orne, 1962): cues that tell participants what the study is about, so they act the part of a "good subject".
-- **Experimenter expectancy effect** (Rosenthal): the researcher's expectations subtly shape results. In the "Pygmalion in the classroom" study (Rosenthal and Jacobson, 1968), children labelled as "bloomers" gained more IQ points.
+- **Demand characteristics** (described by Martin Orne): cues that tell participants what the study is about, so they act the part of a "good subject".
+- **Experimenter expectancy effect** (studied by Robert Rosenthal): the researcher's expectations subtly shape results. In Rosenthal and Jacobson's classroom study of the 1960s, children labelled as "bloomers" gained more IQ points.
 - **Placebo effect:** improvement from expecting help.
 - **Hawthorne effect:** behaviour changes because people know they are being studied (named after the Western Electric Hawthorne Works studies, 1920s and 1930s).
 - **Mono-operation and mono-method bias:** one measure or one method cannot capture a construct.
 - Controls: **single-blind** and **double-blind** procedures, deception with debriefing, standardised scripts, automated instructions, a **placebo control**, multiple measures.
 
 ### Threats to external validity
-- **Population validity:** does it generalise to other people? Most psychology samples are **WEIRD**: Western, educated, industrialised, rich and democratic (Henrich, Heine and Norenzayan, 2010). A finding from American undergraduates may not hold for farmers in Bihar.
+- **Population validity:** does it generalise to other people? Most psychology samples are **WEIRD**: Western, educated, industrialised, rich and democratic, a label coined by Joseph Henrich and colleagues. A finding from American undergraduates may not hold for farmers in Bihar.
 - **Ecological validity:** does it generalise to real-life settings? A memory test in a lab is not a student recalling notes in a noisy exam hall.
 - **Temporal validity:** does it hold at other times?
 - Campbell and Stanley's specific threats: interaction of **testing** and treatment, interaction of **selection** and treatment, **reactive effects of experimental arrangements**, and **multiple-treatment interference**.

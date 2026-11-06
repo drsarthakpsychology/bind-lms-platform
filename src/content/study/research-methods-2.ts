@@ -6,7 +6,7 @@ export const part2 = String.raw`
 Quantitative research asks "how much, how many, does X cause Y?" **Qualitative research** asks "what is this like, what does it mean, how does it happen?" It works with words, images and actions, studies small samples in depth, and treats the researcher as part of the instrument.
 
 ### Paradigms: the beliefs behind a method
-A **paradigm** (Kuhn, 1962) is a shared set of assumptions about the world and how to know it. Three terms come up in every exam:
+A **paradigm** (Thomas Kuhn's term) is a shared set of assumptions about the world and how to know it. Three terms come up in every exam:
 - **Ontology:** what is real? One reality (realism) or many constructed realities (relativism)?
 - **Epistemology:** how can we know it? Objectively and from outside, or through interpretation and interaction?
 - **Methodology:** so, what methods follow?
@@ -23,10 +23,10 @@ A **paradigm** (Kuhn, 1962) is a shared set of assumptions about the world and h
 | Approach | Aim | Key people and ideas |
 |---|---|---|
 | **Phenomenology** | Describe the essence of a lived experience | Husserl: **bracketing (epoché)**, setting aside one's assumptions; Giorgi's descriptive method |
-| **Interpretative phenomenological analysis (IPA)** | How particular people make sense of a major life experience | Jonathan Smith (1996). **Idiographic** (case by case), small homogeneous purposive samples (often 3 to 10), and the **double hermeneutic**: the researcher making sense of the participant making sense of their experience |
-| **Grounded theory** | Build a theory **from** the data, not test one | Glaser and Strauss (1967). **Constant comparison**, **theoretical sampling** and **theoretical saturation** (no new properties emerge). Coding: **open** then **axial** then **selective** (Strauss and Corbin); **memo-writing**. Charmaz's **constructivist** version (2006) |
-| **Thematic analysis** | Identify patterns (themes) of meaning across a data set | Braun and Clarke (2006); **reflexive** thematic analysis (2019): the researcher's interpretation is a resource, not a bias to remove |
-| **Discourse analysis** | How language **constructs** reality and does social actions | Discursive psychology (Potter and Wetherell, 1987); Foucauldian discourse analysis (power, subject positions) |
+| **Interpretative phenomenological analysis (IPA)** | How particular people make sense of a major life experience | Developed by Jonathan Smith in the 1990s. **Idiographic** (case by case), small homogeneous purposive samples (often 3 to 10), and the **double hermeneutic**: the researcher making sense of the participant making sense of their experience |
+| **Grounded theory** | Build a theory **from** the data, not test one | Founded by Barney Glaser and Anselm Strauss in the 1960s. **Constant comparison**, **theoretical sampling** and **theoretical saturation** (no new properties emerge). Coding in Strauss and Corbin's version: **open** then **axial** then **selective**; **memo-writing**. Kathy Charmaz's later **constructivist** version |
+| **Thematic analysis** | Identify patterns (themes) of meaning across a data set | Set out by Virginia Braun and Victoria Clarke; in their later **reflexive** thematic analysis the researcher's interpretation is a resource, not a bias to remove |
+| **Discourse analysis** | How language **constructs** reality and does social actions | Discursive psychology (Jonathan Potter and Margaret Wetherell); Foucauldian discourse analysis (power, subject positions) |
 | **Conversation analysis** | The fine structure of talk: turn-taking, repair, adjacency pairs | Sacks, Schegloff and Jefferson; Jefferson transcription |
 | **Narrative analysis** | How people tell stories to make sense of lives and identities | Structure, plot, turning points; McAdams' life story |
 | **Ethnography** | Understand a culture from the inside through long immersion | Participant observation, field notes, **thick description** (Geertz); emic (insider) versus etic (outsider) views |
@@ -47,7 +47,7 @@ A **paradigm** (Kuhn, 1962) is a shared set of assumptions about the world and h
 A **theme** captures something important about the data in relation to the question; it is not simply a topic that came up often. Analysis can be **inductive** (data-driven) or **deductive** (theory-driven), and **semantic** (surface meaning) or **latent** (underlying ideas).
 
 ### Quality in qualitative research
-Reliability and validity are replaced by **trustworthiness** (Lincoln and Guba, 1985):
+Reliability and validity are replaced by **trustworthiness**, in Yvonna Lincoln and Egon Guba's framework:
 
 | Criterion | Quantitative parallel | How it is achieved |
 |---|---|---|
@@ -56,10 +56,10 @@ Reliability and validity are replaced by **trustworthiness** (Lincoln and Guba, 
 | **Dependability** | Reliability | An **audit trail** of decisions |
 | **Confirmability** | Objectivity | Reflexive journals, audit trail, grounding claims in data |
 
-Denzin (1978) described four kinds of **triangulation**: **data** (different sources, times or places), **investigator** (several researchers), **theory** (several theoretical lenses) and **methodological** (several methods). **Reflexivity** means openly examining how your own position (gender, caste, class, profession, language) shapes the research. A psychologist from Mumbai interviewing tribal women in Jharkhand must think about power, language and trust. Reporting guidelines such as **COREQ** (for interviews and focus groups) and **SRQR** list what to report.
+The sociologist Norman Denzin described four kinds of **triangulation**: **data** (different sources, times or places), **investigator** (several researchers), **theory** (several theoretical lenses) and **methodological** (several methods). **Reflexivity** means openly examining how your own position (gender, caste, class, profession, language) shapes the research. A psychologist from Mumbai interviewing tribal women in Jharkhand must think about power, language and trust. Reporting guidelines such as **COREQ** (for interviews and focus groups) and **SRQR** list what to report.
 
 :::clinician
-Saturation is often misused. In grounded theory it is **theoretical** saturation: the categories are fully developed and new data add no new properties. It is not "we stopped hearing new things after 12 interviews". In reflexive thematic analysis, Braun and Clarke argue that saturation is not a coherent stopping rule at all, because themes are generated by the analyst, not found lying in the data; sample size is instead justified by **information power** (Malterud and colleagues, 2016): narrower aims, dense specific samples, established theory, strong dialogue and focused analysis all mean fewer participants are needed. Examiners at clinical master's interviews increasingly ask this.
+Saturation is often misused. In grounded theory it is **theoretical** saturation: the categories are fully developed and new data add no new properties. It is not "we stopped hearing new things after 12 interviews". In reflexive thematic analysis, Braun and Clarke argue that saturation is not a coherent stopping rule at all, because themes are generated by the analyst, not found lying in the data; sample size is instead justified by **information power**, an idea from Kirsti Malterud and colleagues: narrower aims, dense specific samples, established theory, strong dialogue and focused analysis all mean fewer participants are needed. Examiners at clinical master's interviews increasingly ask this.
 :::
 
 :::recall
@@ -104,7 +104,7 @@ Q: The paradigm behind most mixed-methods research is:
 ## 3.2 Mixed methods, evaluation and the evidence pyramid [core][advanced]
 
 ### Mixed methods
-**Mixed methods** research collects and **integrates** quantitative and qualitative data in one study (Creswell and Plano Clark). Integration is the point: two separate studies stapled together are not mixed methods.
+**Mixed methods** research collects and **integrates** quantitative and qualitative data in one study, in the scheme made popular by John Creswell. Integration is the point: two separate studies stapled together are not mixed methods.
 
 | Core design | Sequence | Purpose | Example |
 |---|---|---|---|
@@ -113,13 +113,13 @@ Q: The paradigm behind most mixed-methods research is:
 | **Exploratory sequential** | QUAL, then quan | Qualitative work **builds** an instrument or hypotheses that are then tested | Interviews on "tension" in Punjabi idioms, then a new scale tested on 500 people |
 | **Embedded (nested)** | One strand inside a larger design of the other type | Answer a secondary question | Interviews about acceptability inside an RCT |
 
-Notation (Morse): capitals show the dominant strand, an arrow shows sequence, a plus sign shows simultaneity: QUAN → qual; QUAL + quan.
+Notation introduced by Janice Morse: capitals show the dominant strand, an arrow shows sequence, a plus sign shows simultaneity: QUAN → qual; QUAL + quan.
 
 ### Programme evaluation
 Evaluation judges the **worth** of a programme so decisions can be made.
-- **Formative** evaluation improves a programme while it runs; **summative** evaluation judges it at the end (Scriven, 1967).
+- **Formative** evaluation improves a programme while it runs; **summative** evaluation judges it at the end, a distinction drawn by Michael Scriven.
 - **Needs assessment** (is there a need?), **process evaluation** (is it delivered as planned? **fidelity**), **outcome evaluation** (did participants change?), **impact evaluation** (did it cause wider, longer-term change?) and **cost-effectiveness** analysis.
-- **CIPP model** (Stufflebeam): **C**ontext, **I**nput, **P**rocess, **P**roduct.
+- Daniel Stufflebeam's **CIPP model**: **C**ontext, **I**nput, **P**rocess, **P**roduct.
 - **Kirkpatrick's four levels** for training: reaction, learning, behaviour, results.
 - A **logic model** links inputs, activities, outputs, outcomes and impact.
 
@@ -187,8 +187,8 @@ Ethics is not a form to fill in at the end. It shapes the question, the design a
 | WMA response | Doctors needed clinical research rules | **Declaration of Helsinki (1964)**, revised many times, most recently in 2024 |
 | **Tuskegee syphilis study** (USA, 1932 to 1972) | Poor Black men with syphilis were left untreated and deceived, even after penicillin became standard | **Belmont Report (1979)**: respect for persons, beneficence, justice |
 | Milgram's obedience studies (1961 onwards) | Severe stress and deception | Debate on deception, debriefing and the right to withdraw |
-| Stanford prison study (Zimbardo, 1971) | Abuse escalated; stopped early; researcher was also the "superintendent" | Concerns about role conflict and harm |
-| Little Albert (Watson and Rayner, 1920) | An infant was conditioned to fear without any de-conditioning | Protection of children and vulnerable people |
+| Zimbardo's Stanford prison study (1971) | Abuse escalated; stopped early; researcher was also the "superintendent" | Concerns about role conflict and harm |
+| Watson and Rayner's Little Albert study (1920) | An infant was conditioned to fear without any de-conditioning | Protection of children and vulnerable people |
 
 ### The Belmont principles
 1. **Respect for persons:** treat people as autonomous; **informed consent**; extra protection for those with reduced autonomy.
@@ -279,18 +279,18 @@ Q: Running many analyses and reporting only the one that reaches significance is
 A **thesis or dissertation** usually has chapters: introduction, review of literature, method, results, discussion, summary and conclusions, references and appendices, plus front matter (certificate, declaration, acknowledgements, contents, list of tables).
 
 ### APA 7 essentials
-- **In-text citation:** author–date. One author: (Sharma, 2021). Two authors: (Sharma & Rao, 2021), using "and" in running text. **Three or more:** first author plus "et al." from the very first citation: (Sharma et al., 2021).
-- **Direct quotes** need a page number: (Sharma, 2021, p. 14).
-- **Journal article reference:** Author, A. A., & Author, B. B. (Year). Title of article in sentence case. *Journal Name in Title Case, volume*(issue), pages. https://doi.org/xxxx
+- **In-text citation:** author–date. One author: the surname and year in brackets. Two authors: both surnames joined by an ampersand inside brackets, or by "and" in running text. **Three or more authors:** the first author's surname followed by the Latin short form for "and others" (from *et alii*), from the very first citation.
+- **Direct quotes** also need the page number after the year.
+- **Journal article reference:** Author, A. A., & Author, B. B. (Year). Title of article in sentence case. *Journal Name in Title Case, volume*(issue), pages, then the DOI.
 - **Book:** Author, A. A. (Year). *Title of book in sentence case and italics* (2nd ed.). Publisher. (No publisher location in APA 7.)
 - **Chapter in an edited book:** Author, A. A. (Year). Title of chapter. In E. E. Editor (Ed.), *Title of book* (pp. xx–xx). Publisher.
 - Up to **20 authors** are listed in a reference; with 21 or more, list the first 19, an ellipsis, then the last.
-- DOIs are written as **https://doi.org/** links. Reference list: alphabetical by first author's surname, **hanging indent**, double-spaced.
+- The DOI (a permanent digital identifier) is written as a full web address. Reference list: alphabetical by first author's surname, **hanging indent**, double-spaced.
 - Numbers: use words for zero to nine and numerals for 10 and above (with many exceptions for statistics, ages and measurements). Statistical symbols are italicised (*M*, *SD*, *t*, *F*, *p*). Do not put a zero before a value that cannot exceed 1 (*p* = .03, *r* = .45).
 - Other styles you should recognise: **MLA** (humanities: author–page), **Chicago** (notes and bibliography, or author–date), **Vancouver** (numbered, used in medicine and many Indian medical journals) and **Harvard** (author–date, close to APA).
 
 :::widget worked
-{"title": "Fix this reference into APA 7", "steps": [{"q": "A student writes: 'Kumar R, Iyer S, Das P and Mehta A. Exam anxiety in Indian adolescents, a cross-sectional study. Indian Journal of Clinical Psychology 2022; 49(2): 101-110. doi:10.1234/ijcp.2022.49.' First, the authors.", "a": "Surname, then initials with full stops, commas between, and an ampersand before the last: Kumar, R., Iyer, S., Das, P., & Mehta, A."}, {"q": "Next, the year and title.", "a": "(2022). Exam anxiety in Indian adolescents: A cross-sectional study. The title is in sentence case; the first word after a colon is capitalised."}, {"q": "Next, the journal, volume, issue and pages.", "a": "Indian Journal of Clinical Psychology, 49(2), 101–110. The journal name and volume are italicised; the issue number in brackets is not; use an en dash between pages."}, {"q": "Finally, the DOI. And how is it cited in the text?", "a": "https://doi.org/10.1234/ijcp.2022.49. In text, with four authors, it is (Kumar et al., 2022) from the first citation."}], "yourTurn": [{"q": "Cite in APA 7, in the text, a 2019 book by Vikram Patel and a co-author, Kiran Rao, and quote a line from p. 56.", "a": "(Patel & Rao, 2019, p. 56). In running text: Patel and Rao (2019) wrote that ... (p. 56)."}]}
+{"title": "Fix this reference into APA 7", "steps": [{"q": "A student's draft lists an invented article like this: 'Kumar R, Iyer S, Das P and Mehta A. Exam anxiety in Indian adolescents, a cross-sectional study. Journal of Student Wellbeing 2022; 49(2): 101-110.' Start with the authors. How should they look?", "a": "Surname, then initials with full stops, commas between names, and an ampersand before the last: Kumar, R., Iyer, S., Das, P., & Mehta, A."}, {"q": "Next, the year and the article title.", "a": "The year in brackets, then the title in sentence case; the first word after a colon is capitalised: (2022). Exam anxiety in Indian adolescents: A cross-sectional study."}, {"q": "Next, the journal, volume, issue and pages.", "a": "Journal name and volume in italics; the issue in brackets, not italic; an en dash between pages: Journal of Student Wellbeing, 49(2), 101–110. If the article has a DOI, it goes last, as a full web address."}, {"q": "How is this four-author work cited in the text?", "a": "By the first surname, the Latin short form for 'and others', and the year, from the very first citation. In running text: 'Kumar and colleagues found …'."}], "yourTurn": [{"q": "You quote one sentence (on p. 56) from an invented 2019 book by two authors, Patel and Rao. What must the in-text citation contain?", "a": "Both surnames (joined by an ampersand inside brackets, or 'and' in running text), the year, and the page number, written as p. 56."}]}
 :::
 
 ### Writing the results in APA style
@@ -298,19 +298,19 @@ A **thesis or dissertation** usually has chapters: introduction, review of liter
 
 :::recall
 1. What does IMRaD stand for? || Introduction, Method, Results and Discussion.
-2. In APA 7, how do you cite a work with three authors the first time? || First author's surname plus et al., and the year: (Sharma et al., 2021).
+2. In APA 7, how do you cite a work with three authors the first time? || The first author's surname, the Latin short form for 'and others', and the year: the short form is used from the very first citation.
 3. What is left out of a book reference in APA 7 that was in APA 6? || The publisher's location.
 4. Which section of an article must allow exact replication? || The Method section.
 5. Name four things a good APA results sentence reports. || The test and df, the statistic, the exact p value, an effect size (and a confidence interval, with descriptive statistics).
 :::
 
 :::mcq
-Q: In APA 7, the in-text citation for a 2020 article by Rao, Singh and Khan is:
-- *(Rao et al., 2020) from the first citation
-- (Rao, Singh, & Khan, 2020) every time
-- (Rao, Singh, & Khan, 2020) first, then (Rao et al., 2020)
-- (Rao and others, 2020)
-> APA 7 uses et al. from the first citation for three or more authors.
+Q: In APA 7, a 2020 article by three authors is cited in the text:
+- *With the first surname and the Latin short form for 'and others', from the first citation
+- With all three surnames every time
+- With all three surnames first, then the short form
+- With the first surname and the English words 'and others'
+> APA 7 uses the short form from the first citation for three or more authors.
 
 Q: Limitations of the study are usually discussed in the:
 - Method
@@ -332,20 +332,20 @@ How should a scientist treat a startling claim, such as that the mind can move o
 
 ### A short history
 - **J. B. Rhine** at Duke University (1930s) ran card-guessing (Zener cards) and dice-throwing studies and reported scores above chance. Critics found sensory leakage (cards visible from the back), poor randomisation, recording errors and **selective reporting**; independent labs often failed to replicate.
-- The **Princeton Engineering Anomalies Research (PEAR)** lab (1979 to 2007) asked people to "influence" random number generators. Over millions of trials it reported a tiny deviation from chance. A meta-analysis by Bösch, Steinkamp and Boller (2006) found the effect was extremely small, varied wildly between studies and fitted a pattern of **small-study and publication bias**: small studies showed the biggest effects.
-- **Ganzfeld** telepathy studies (mild sensory deprivation) produced long debates (Hyman and Honorton's "joint communiqué", 1986), ending in agreement on stricter methods rather than agreement on the effect.
-- In 2011, Daryl **Bem** published nine experiments in a top social psychology journal claiming that people could feel future events ("Feeling the Future"). Attempts to repeat them (for example Ritchie, Wiseman and French, 2012) failed. The episode helped trigger psychology's **replication crisis**, because Bem had used methods that were standard at the time.
+- The **Princeton Engineering Anomalies Research (PEAR)** lab (1979 to 2007) asked people to "influence" random number generators. Over millions of trials it reported a tiny deviation from chance. A large meta-analysis in 2006 found the effect was extremely small, varied wildly between studies and fitted a pattern of **small-study and publication bias**: small studies showed the biggest effects.
+- **Ganzfeld** telepathy studies (mild sensory deprivation) produced long debates (in 1986 the sceptic Ray Hyman and the parapsychologist Charles Honorton issued a joint statement), ending in agreement on stricter methods rather than agreement on the effect.
+- In 2011, Daryl **Bem** published nine experiments in a top social psychology journal claiming that people could feel future events. Attempts by other teams to repeat them failed. The episode helped trigger psychology's **replication crisis**, because Bem had used methods that were standard at the time.
 
 ### What went wrong, and what it taught everyone
 - **Base rates and priors:** "Extraordinary claims require extraordinary evidence" (popularised by Carl Sagan, echoing Hume and Laplace). A claim that would overturn physics needs far stronger evidence than one that fits what we know.
-- **Researcher degrees of freedom:** Simmons, Nelson and Simonsohn (2011) showed that flexible choices (when to stop collecting data, which measures to report, which outliers to drop) can push the false-positive rate from 5% to over 60%.
+- **Researcher degrees of freedom:** In 2011 Joseph Simmons, Leif Nelson and Uri Simonsohn showed that flexible choices (when to stop collecting data, which measures to report, which outliers to drop) can push the false-positive rate from 5% to over 60%.
 - **Publication bias:** journals publish "hits"; failures sit in file drawers (Rosenthal's **file-drawer problem**). A **funnel plot** of study size against effect size reveals it.
 - **Low power:** small studies that find an effect usually **overestimate** it (the winner's curse).
-- **The replication crisis:** the **Open Science Collaboration (2015)** repeated 100 published psychology studies; about 36% gave significant results again, with effects about half the original size. Ioannidis (2005) had argued that "most published research findings are false" when studies are small, effects are small and flexibility is high.
+- **The replication crisis:** in 2015 the **Open Science Collaboration**, a large team of researchers, repeated 100 published psychology studies; about 36% gave significant results again, with effects about half the original size. John Ioannidis had argued in 2005 that "most published research findings are false" when studies are small, effects are small and flexibility is high.
 
 ### The fixes: open science
 - **Preregistration:** hypotheses, sample size and analysis plan are posted publicly before data collection (on OSF, AsPredicted, or CTRI for trials).
-- **Registered reports:** the journal peer-reviews and accepts the method **before** results exist, so publication does not depend on the result (introduced at the journal Cortex, 2013).
+- **Registered reports:** the journal peer-reviews and accepts the method **before** results exist, so publication does not depend on the result (first offered by a neuroscience journal in 2013).
 - **Open data and materials**, so anyone can check and reanalyse.
 - **Larger samples and multi-lab replications.**
 - **Reporting effect sizes and confidence intervals**, not only p values; equivalence testing to show an effect is negligible.
@@ -360,7 +360,7 @@ Studying unusual claims carefully is good science. Parapsychology was among the 
 :::
 
 :::recall
-1. What did the Open Science Collaboration (2015) find? || About 36% of 100 studies replicated with significant results, with effects about half the original size.
+1. What did the Open Science Collaboration's 2015 replication project find? || About 36% of 100 studies replicated with significant results, with effects about half the original size.
 2. What is the file-drawer problem? || Non-significant studies go unpublished, so the published literature overstates effects.
 3. Preregistration versus a registered report. || Preregistration: the plan is posted publicly before data collection. Registered report: the journal reviews and accepts the plan before results exist.
 4. Why do small studies that find effects tend to overestimate them? || Only large chance deviations reach significance in small samples, so the published ones are the inflated ones (winner's curse).
@@ -667,7 +667,7 @@ Q: Under the UGC 2018 plagiarism regulations, similarity of 35% in a thesis fall
 - Level 3
 > Above 10% and up to 40% is level 1.
 
-Q: In APA 7, "(Sharma et al., 2021)" is used from the first citation when a work has:
+Q: In APA 7, the first surname plus the Latin short form for 'and others' is used from the first citation when a work has:
 - *Three or more authors
 - Two authors
 - Six or more authors
