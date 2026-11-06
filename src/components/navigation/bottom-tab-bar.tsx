@@ -73,7 +73,7 @@ export function BottomTabBar({
   const tabs = mode === "admin" ? wanted : wanted.filter((t) => !blockedBy(t.href, blocked));
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
   if (focusedPath) return null;
 
   const cell =
