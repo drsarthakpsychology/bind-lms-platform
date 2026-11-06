@@ -125,6 +125,148 @@ One household earns far more. The mean (30) is higher than four of the five inco
 Say "ordinal at the item level, treated as interval at the scale level", and give the reason (summation and robustness), not just the rule.
 :::
 
+:::qa Twenty students score 12, 15, 17, 18, 21, 22, 22, 24, 25, 26, 27, 27, 28, 29, 31, 33, 34, 36, 38, 41 on a test. Build a grouped frequency table with a class width of 5, and find the modal class. [starting]
+### Step 1: range and classes
+Range = 41 − 12 = 29. With i = 5, start at 10 (a multiple of 5 below the lowest score): 7 classes.
+
+### Step 2: tally
+| Class | Exact limits | Midpoint | f | cf |
+|---|---|---|---|---|
+| 40-44 | 39.5-44.5 | 42 | 1 | 20 |
+| 35-39 | 34.5-39.5 | 37 | 2 | 19 |
+| 30-34 | 29.5-34.5 | 32 | 3 | 17 |
+| 25-29 | 24.5-29.5 | 27 | 6 | 14 |
+| 20-24 | 19.5-24.5 | 22 | 4 | 8 |
+| 15-19 | 14.5-19.5 | 17 | 3 | 4 |
+| 10-14 | 9.5-14.5 | 12 | 1 | 1 |
+
+### Step 3: check and read
+- The f column adds to 20 and the top cf equals N: the tally is complete.
+- The **modal class** is 25-29 (f = 6); the crude mode is its midpoint, 27.
+- The distribution rises to a peak in the middle and tails off on both sides: roughly symmetrical.
+
+### Why grouping costs something
+Once grouped, you no longer know the exact scores inside each class. Statistics from grouped data (mean, median) are estimates that assume scores are spread evenly within each class.
+:::
+
+:::qa Find the percentile rank of a score of 45 in the empathy table from 1.2. [starting]
+### The formula
+PR = [cf below + ((X − L) ÷ i) × f] ÷ N × 100
+where L is the exact lower limit of the class containing X, f its frequency, and cf below the cases under that class.
+
+### Step 1: locate the class
+45 falls in 40-49: L = 39.5, f = 8, cf below = 22, i = 10, N = 35.
+
+### Step 2: the part of the class below 45
+(45 − 39.5) ÷ 10 × 8 = 0.55 × 8 = 4.4 cases.
+
+### Step 3: total below and percentage
+22 + 4.4 = 26.4 cases. PR = 26.4 ÷ 35 × 100 = **75.4**.
+
+### Interpret
+A trainee scoring 45 has more empathy than about 75% of the group. Notice the reverse task (finding the score at a given percentile) uses the median formula with pN in place of N/2.
+:::
+
+:::qa Compute the quartile deviation for the empathy table, given Q1 = 27.71. [starting]
+### Step 1: find Q3
+3N ÷ 4 = 26.25. Reading the cf column (3, 10, 22, 30, 35), the 26.25th case is in 40-49.
+Q3 = 39.5 + [(26.25 − 22) ÷ 8] × 10 = 39.5 + 5.31 = **44.81**
+
+### Step 2: quartile deviation
+Q = (Q3 − Q1) ÷ 2 = (44.81 − 27.71) ÷ 2 = 17.10 ÷ 2 = **8.55**
+
+### Step 3: compare with the SD
+The SD of this table was 11.50. In a normal distribution Q is about two-thirds of the SD (0.6745 × SD = 7.76). Here Q = 8.55 is close, which agrees with the nearly symmetrical shape.
+:::
+
+:::qa Two sections of a class have means of 60 (30 students) and 70 (20 students). What is the combined mean? Why is it not 65? [starting]
+### Step by step
+1. Total of section A = 30 × 60 = 1,800.
+2. Total of section B = 20 × 70 = 1,400.
+3. Combined total = 3,200; combined N = 50.
+4. Combined mean = 3,200 ÷ 50 = **64**.
+
+### Why not 65?
+65 is the simple average of the two means, which treats both sections as equal in size. Section A has more students, so it pulls the combined mean toward 60. This is a **weighted mean**: M = (n1M1 + n2M2) ÷ (n1 + n2).
+
+### Where it matters
+Pooling results from several colleges, combining survey strata, or averaging marks across courses with different credits (the SGPA in CBCS is a weighted mean).
+:::
+
+:::qa Compute the average deviation of 4, 8, 6, 5, 7, and compare it with the SD. Why do statisticians prefer the SD? [starting]
+### Average deviation
+Mean = 6. Absolute deviations: 2, 2, 0, 1, 1. Sum = 6. AD = 6 ÷ 5 = **1.2**.
+
+### SD for comparison
+Population SD = √(10 ÷ 5) = **1.41** (from section 1.4).
+
+### Why the SD wins
+| Point | AD | SD |
+|---|---|---|
+| Ease of understanding | Very easy | Harder |
+| Algebra | Absolute values are awkward | Squares are easy to work with |
+| Link to the normal curve | None | Defines the curve and its areas |
+| Use in further statistics | Rare | Basis of z, t, F, r and regression |
+| Sampling stability | Less stable | More stable across samples |
+
+The SD is always at least as large as the AD, because squaring gives extra weight to large deviations.
+:::
+
+:::qa A distribution has mean 40, median 46 and SD 12. Compute Pearson's coefficient of skewness and describe the shape. [starting]
+### Step 1: the formula
+Sk = 3(M − Md) ÷ SD
+
+### Step 2: compute
+Sk = 3(40 − 46) ÷ 12 = 3(−6) ÷ 12 = **−1.5**
+
+### Step 3: interpret
+- The sign is negative: a **long tail on the left** (low scores).
+- The mean has been pulled below the median by a minority of low scorers.
+- Values beyond about ±1 indicate marked skew.
+
+### What it might mean in practice
+An easy test where most students scored well but a few failed badly; a measure of independence in daily living in a mostly healthy sample. For such data, report the median and IQR, and check before using a test that assumes normality.
+:::
+
+:::qa A student cycles to college at 40 km/h and back at 60 km/h. Which kind of mean gives the right average speed, and why? [starting]
+### The three means
+| Mean | Formula | Here |
+|---|---|---|
+| Arithmetic | (a + b) ÷ 2 | 50 |
+| Geometric | √(a × b) | 48.99 |
+| Harmonic | 2 ÷ (1/a + 1/b) | **48** |
+
+### Which is right
+For **equal distances** travelled at different speeds, use the **harmonic mean**: 48 km/h.
+
+### Why
+Say the trip is 120 km each way. Going takes 3 hours; returning takes 2 hours. Total 240 km in 5 hours = 48 km/h. She spends more **time** at the slower speed, so the true average leans toward 40.
+
+### When each mean is used
+- Arithmetic: most scores.
+- Geometric: growth rates and ratios (average yearly growth).
+- Harmonic: rates over equal amounts (speed over equal distances, price per item over equal spending).
+:::
+
+:::qa What is sampling error, and how is it different from a mistake? Illustrate with an example. [starting]
+### Definition
+Sampling error is the **chance** difference between a sample statistic and the population parameter, which happens simply because a sample is only part of the population.
+
+### Example
+A college has 1,000 students whose true mean sleep is 6.5 hours. Five random samples of 50 give means of 6.3, 6.6, 6.8, 6.4 and 6.5. None of these is a mistake; they vary by chance around 6.5.
+
+### How it differs from other errors
+| Error | Cause | Fixed by a bigger sample? |
+|---|---|---|
+| Sampling error | Chance selection | Yes, it shrinks with √n |
+| Sampling bias | A flawed method (only hostel students) | No |
+| Measurement error | Unreliable tool | No, use a better tool |
+| Mistakes | Data entry errors | No, check the data |
+
+### Why it matters for inference
+Inferential statistics exists to measure sampling error: the standard error, confidence intervals and p values all describe how far a statistic is likely to wander by chance.
+:::
+
 ## 4.2 Q&A bank · Beginner [core][beginner]
 
 :::qa On an IQ test (mean 100, SD 15), what percentage of people score between 90 and 120? Show the z and area working. [beginner]
@@ -270,6 +412,155 @@ t = **5.16**, df = 5, p = .004
 
 ### Conclusion
 Using the wrong test does not just break an assumption (independence); it throws away power. Here both happen to be significant, but in smaller effects the independent test would often miss a real change.
+:::
+
+:::qa On an IQ test (mean 100, SD 15), what score marks the 90th percentile, and which stanine does an IQ of 91 fall in? [beginner]
+### Part 1: the 90th percentile
+1. Find the z that has 90% of the curve below it: area from the mean = .40, so z = **1.28**.
+2. Convert: X = M + z × SD = 100 + 1.28 × 15 = **119.2**.
+
+### Part 2: the stanine for 91
+1. z = (91 − 100) ÷ 15 = −0.60.
+2. Stanine = 2z + 5 = −1.2 + 5 = 3.8, which rounds to **4**.
+3. Check against the bands: stanine 4 covers z from −0.75 to −0.25, which includes −0.60.
+
+### Why both conversions matter
+Clinical reports often give percentiles to families and stanines or scaled scores to schools. Being able to move between raw, z, percentile and stanine lets you check reports for errors.
+:::
+
+:::qa Sixteen trainees rate their confidence (M = 52, s = 8). Does this differ from the known average of 48? Then build a 95% confidence interval. [beginner]
+### Why t, not z
+The population SD is unknown (we only have s), and n is small, so use the **t distribution** with n − 1 df.
+
+### Step 1: standard error
+SE = s ÷ √n = 8 ÷ 4 = **2**
+
+### Step 2: t
+t = (52 − 48) ÷ 2 = **2.00**, df = 15
+
+### Step 3: decide
+Critical t (df 15, two-tailed .05) = **2.13**. 2.00 is short of it: **not significant**.
+
+### Step 4: the 95% CI
+52 ± 2.13 × 2 = 52 ± 4.26, so **47.74 to 56.26**.
+
+### Step 5: the link between the two
+The interval **includes 48**, which is exactly why the test was not significant. A two-tailed test at .05 and a 95% CI always agree. Note that with z (1.96) the same data would have looked significant; small samples need the wider t.
+:::
+
+:::qa A correlation of r = .30 is found between sleep quality and mood in 50 students. Is it significant? Show the t test for r. [beginner]
+### The formula
+t = r × √(n − 2) ÷ √(1 − r²), with df = n − 2
+
+### Step by step
+1. √(n − 2) = √48 = 6.93
+2. √(1 − r²) = √(1 − .09) = √.91 = .954
+3. t = .30 × 6.93 ÷ .954 = 2.08 ÷ .954 = **2.18**
+4. Critical t (df 48, two-tailed .05) ≈ **2.01**
+
+### Decision
+2.18 exceeds 2.01, so r = .30 is **significant** at .05. r² = .09: 9% shared variance.
+
+### The bigger lesson
+With n = 500, r = .10 would also be significant, but it shares only 1% of variance. With n = 10, r = .60 would not be significant. Always read r alongside n.
+:::
+
+:::qa Two groups of unequal size are compared: Group 1 (n = 4): 10, 12, 14, 16. Group 2 (n = 6): 6, 8, 9, 10, 11, 10. Compute the independent t. [beginner]
+### Step 1: means and sums of squares
+- Group 1: M = 13; deviations −3, −1, 1, 3; SS1 = 9 + 1 + 1 + 9 = **20**
+- Group 2: M = 9; deviations −3, −1, 0, 1, 2, 1; SS2 = 9 + 1 + 0 + 1 + 4 + 1 = **16**
+
+### Step 2: pooled variance (weighted by df)
+s²pooled = (SS1 + SS2) ÷ (n1 + n2 − 2) = 36 ÷ 8 = **4.5**
+
+### Step 3: standard error of the difference
+SE = √[4.5 × (1/4 + 1/6)] = √(4.5 × 0.4167) = √1.875 = **1.369**
+
+### Step 4: t and decision
+t = (13 − 9) ÷ 1.369 = **2.92**, df = 8. Critical t = 2.31: **significant** (p = .019).
+
+### Note on unequal n
+With unequal groups, the pooled formula weights each group's variance by its df. If the smaller group also had the larger variance, the test would become unreliable: then use Welch's t.
+:::
+
+:::qa Theory predicts that 50%, 30% and 20% of clients prefer individual, group and online counselling. In a sample of 100, the counts are 40, 35 and 25. Test the fit. [beginner]
+### Step 1: expected frequencies from the theory
+E = 50, 30 and 20.
+
+### Step 2: chi-square
+| Category | O | E | (O − E)² ÷ E |
+|---|---|---|---|
+| Individual | 40 | 50 | 100 ÷ 50 = 2.00 |
+| Group | 35 | 30 | 25 ÷ 30 = 0.83 |
+| Online | 25 | 20 | 25 ÷ 20 = 1.25 |
+| Total | 100 | 100 | **4.08** |
+
+### Step 3: decide
+df = 3 − 1 = 2; critical χ² = 5.99. 4.08 is below it: the data **fit** the theory (p = .13).
+
+### Note
+A goodness-of-fit test can use any expected pattern, not only "all equal". A non-significant result here is the hoped-for outcome: it means the theory is not contradicted.
+:::
+
+:::qa For the help-seeking table (women 30 yes, 20 no; men 15 yes, 35 no), compute the odds ratio and explain how it differs from phi. [beginner]
+### Step 1: odds in each group
+- Women: 30 ÷ 20 = **1.5**
+- Men: 15 ÷ 35 = **0.43**
+
+### Step 2: odds ratio
+OR = 1.5 ÷ 0.43 = (30 × 35) ÷ (20 × 15) = 1,050 ÷ 300 = **3.5**
+
+Women's odds of seeking help are 3.5 times men's.
+
+### Step 3: compare with phi (.30)
+| Index | Range | Meaning | Best for |
+|---|---|---|---|
+| Phi | −1 to +1 | A correlation between two dichotomies | Describing association strength |
+| Odds ratio | 0 to infinity; 1 = no association | Ratio of odds | Epidemiology, logistic regression, case-control studies |
+
+### Why the OR is popular
+It is not affected by how the sample was drawn (it works in case-control designs), and it is what logistic regression reports.
+:::
+
+:::qa In mental health screening, explain Type I and Type II errors, and link them to sensitivity and specificity. [beginner]
+### The screening table
+| | Person truly has depression | Person does not |
+|---|---|---|
+| Screen positive | True positive | **False positive** (like a Type I error) |
+| Screen negative | **False negative** (like a Type II error) | True negative |
+
+### The terms
+- **Sensitivity** = true positives ÷ all who have it (like power).
+- **Specificity** = true negatives ÷ all who do not (like 1 − α).
+- **Positive predictive value** = true positives ÷ all positives; it falls when the condition is rare.
+
+### The trade-off
+Lowering the cut-off on a questionnaire catches more true cases (higher sensitivity, fewer Type II errors) but flags more healthy people (lower specificity, more Type I errors). Which error is worse depends on the cost: missing suicidal depression is far worse than a second interview for someone who is well, so screening tools usually favour sensitivity.
+
+### Link to signal detection
+Moving the cut-off is moving the **criterion**; a better test increases **d′**, separating the two groups so both errors fall.
+:::
+
+:::qa Compute Spearman's rho when there are ties: X = 10, 20, 20, 30, 40; Y = 1, 3, 2, 5, 4. [beginner]
+### Step 1: rank, sharing tied ranks
+- X ranks (lowest = 1): 10 → 1; the two 20s share ranks 2 and 3 → **2.5 each**; 30 → 4; 40 → 5.
+- Y ranks: 1 → 1, 3 → 3, 2 → 2, 5 → 5, 4 → 4.
+
+### Step 2: differences
+| X rank | Y rank | d | d² |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 2.5 | 3 | −0.5 | 0.25 |
+| 2.5 | 2 | 0.5 | 0.25 |
+| 4 | 5 | −1 | 1 |
+| 5 | 4 | 1 | 1 |
+| | | Σd² | **2.5** |
+
+### Step 3: rho
+ρ = 1 − (6 × 2.5) ÷ [5 × (25 − 1)] = 1 − 15 ÷ 120 = **.875**
+
+### A note on ties
+With ties the shortcut formula is slightly off. The exact method is to compute Pearson's r on the ranks, which gives .872 here. With few ties the difference is trivial; with many ties, use the exact method or Kendall's tau.
 :::
 
 ## 4.3 Q&A bank · Advanced [core][advanced]
@@ -423,6 +714,194 @@ Always state which one you report.
 With 40 items, an eigenvalue of 1.1 is only 2.75% of the variance; random data alone produce several eigenvalues above 1. It also ignores sampling error. That is why parallel analysis is now recommended.
 :::
 
+:::qa After the revision-methods ANOVA in 3.1 (means 5, 7, 10; MS within = 0.667; n = 4 per group; df within = 9), run Tukey's HSD. Which pairs differ? [advanced]
+### Step 1: the formula
+HSD = q × √(MS within ÷ n), where q comes from the studentised range table for k = 3 groups and df = 9 at .05: **q = 3.95**.
+
+### Step 2: compute HSD
+√(0.667 ÷ 4) = √0.1667 = 0.408. HSD = 3.95 × 0.408 = **1.61**
+
+### Step 3: compare every pair
+| Pair | Difference | Larger than 1.61? |
+|---|---|---|
+| Highlighting vs re-reading | 7 − 5 = 2 | Yes |
+| Self-testing vs highlighting | 10 − 7 = 3 | Yes |
+| Self-testing vs re-reading | 10 − 5 = 5 | Yes |
+
+### Step 4: report
+All three methods differ: self-testing is best, then highlighting with summary, then re-reading. Tukey keeps the familywise error at .05 across all three comparisons.
+:::
+
+:::qa Four people rank three study conditions (1 = best). Ranks: P1 1, 2, 3; P2 1, 3, 2; P3 1, 2, 3; P4 2, 1, 3. Run a Friedman test. [advanced]
+### Step 1: rank sums per condition
+- Condition A: 1 + 1 + 1 + 2 = **5**
+- Condition B: 2 + 3 + 2 + 1 = **8**
+- Condition C: 3 + 2 + 3 + 3 = **11**
+
+### Step 2: the formula
+χ²F = [12 ÷ (nk(k + 1))] × ΣR² − 3n(k + 1), with n = 4 people and k = 3 conditions.
+
+### Step 3: compute
+- 12 ÷ (4 × 3 × 4) = 12 ÷ 48 = 0.25
+- ΣR² = 25 + 64 + 121 = 210
+- χ²F = 0.25 × 210 − 3 × 4 × 4 = 52.5 − 48 = **4.5**
+
+### Step 4: decide
+df = k − 1 = 2; critical value 5.99. Not significant (p = .105). Condition A looks preferred, but four people are too few to be sure. (With samples this small, exact tables are better than the chi-square approximation.)
+:::
+
+:::qa In a therapy trial, pre-test means were 20 (therapy) and 24 (control), grand mean 22; post-test means were 30 and 32. The pooled within-group slope of post on pre is 0.8. Compute ANCOVA-adjusted post-test means and explain what happened. [advanced]
+### The formula
+Adjusted mean = observed post mean − b × (group's pre mean − grand pre mean)
+
+### Step 1: therapy group
+30 − 0.8 × (20 − 22) = 30 + 1.6 = **31.6**
+
+### Step 2: control group
+32 − 0.8 × (24 − 22) = 32 − 1.6 = **30.4**
+
+### Step 3: interpret
+| | Observed post | Adjusted post |
+|---|---|---|
+| Therapy | 30 | 31.6 |
+| Control | 32 | 30.4 |
+
+The control group looked better (32 versus 30), but it **started** higher. After adjusting for the pre-test, the therapy group is ahead. ANCOVA asks: what would the post-test means be if both groups had started at the same level?
+
+### Caution
+In randomised trials, this adjustment adds power. In non-randomised groups, it cannot remove all pre-existing differences, especially if the pre-test is unreliable or other unmeasured differences exist (Lord's paradox shows two reasonable analyses can disagree).
+:::
+
+:::qa A regression gives Ŷ = 2 + 0.5X + 0.3W + 0.4(X × W), where W (social support) is centred with SD 1. Compute the simple slopes of X (stress) at low and high support, and interpret. [advanced]
+### Step 1: the slope of X depends on W
+Rearranging: Ŷ = (2 + 0.3W) + (0.5 + 0.4W)X. The slope of X is **0.5 + 0.4W**.
+
+### Step 2: pick values of W
+Conventionally one SD below and above the mean: W = −1 and W = +1.
+- Low support (W = −1): slope = 0.5 − 0.4 = **0.1**
+- Mean support (W = 0): slope = **0.5**
+- High support (W = +1): slope = 0.5 + 0.4 = **0.9**
+
+### Step 3: interpret
+With this sign, stress predicts depression **more strongly** when support is high, which would be surprising. If the coefficient had been −0.4, support would buffer stress (slope 0.9 at low support, 0.1 at high). Always check the sign before writing the story.
+
+### Reporting
+Test each simple slope for significance, plot the lines, and give the region of W where the slope is significant (the Johnson-Neyman method).
+:::
+
+:::qa In a logistic regression predicting relapse, B for "number of previous episodes" is 0.69 and the intercept is −2. Interpret B and predict the probability of relapse for a person with 2 previous episodes. [advanced]
+### Step 1: B as an odds ratio
+Exp(B) = e^0.69 = **2.0**: each additional previous episode **doubles the odds** of relapse.
+
+### Step 2: the logit for 2 episodes
+logit = −2 + 0.69 × 2 = −2 + 1.38 = **−0.62**
+
+### Step 3: convert the logit to a probability
+p = 1 ÷ (1 + e^0.62) = 1 ÷ (1 + 1.86) = 1 ÷ 2.86 = **.35**
+
+### Step 4: interpret carefully
+| Episodes | Logit | Probability |
+|---|---|---|
+| 0 | −2.00 | .12 |
+| 2 | −0.62 | .35 |
+| 4 | 0.76 | .68 |
+
+Doubling the odds does not double the probability: the effect on probability depends on where you start. Report odds ratios with confidence intervals, and check model fit (classification table, a pseudo-R², the Hosmer-Lemeshow test).
+:::
+
+:::qa A criterion has SD 10 and correlates .60 with a predictor. Compute the standard error of estimate and a rough 95% band around a predicted score of 70. [advanced]
+### Step 1: SEE
+SEE = SDy × √(1 − r²) = 10 × √(1 − .36) = 10 × √.64 = 10 × 0.8 = **8**
+
+### Step 2: the band
+70 ± 1.96 × 8 = 70 ± 15.7, so about **54 to 86**.
+
+### Step 3: interpret
+Even a correlation of .60, which is large in psychology, leaves wide uncertainty for an individual: the error is 80% of the original SD. That is why selection decisions should rarely rest on one predictor.
+
+### Note
+In small samples the exact prediction interval is wider still, because it also includes uncertainty in the regression line itself.
+:::
+
+:::qa In item analysis, 40 students make up the top 27% and 40 the bottom 27%. On an item, 32 of the top group and 12 of the bottom group are correct. Compute the difficulty and discrimination indices and judge the item. [advanced]
+### Step 1: difficulty index (p)
+p = (U + L) ÷ (nU + nL) = (32 + 12) ÷ 80 = **.55**: 55% answered correctly, a medium-difficulty item.
+
+### Step 2: discrimination index (D)
+D = (U − L) ÷ n per group = (32 − 12) ÷ 40 = **.50**
+
+### Step 3: judge
+| Index | Rough guide | This item |
+|---|---|---|
+| p | .30 to .70 is ideal for most tests | Good |
+| D | .40 or more: very good; .20 to .39: acceptable; below .20: revise; negative: discard | Very good |
+
+### Why the 27% groups
+Kelley showed that the upper and lower 27% give the best balance between extreme groups (sharp contrast) and enough cases (stable estimates). The point-biserial item-total correlation is the modern alternative.
+:::
+
+:::qa A five-item right-wrong test has item difficulty values (p) of .8, .6, .5, .4 and .7, and a total-score variance of 2.0. Compute KR-20. [advanced]
+### Step 1: pq for each item (q = 1 − p)
+| Item | p | q | pq |
+|---|---|---|---|
+| 1 | .8 | .2 | .16 |
+| 2 | .6 | .4 | .24 |
+| 3 | .5 | .5 | .25 |
+| 4 | .4 | .6 | .24 |
+| 5 | .7 | .3 | .21 |
+| | | Σpq | **1.10** |
+
+### Step 2: KR-20
+KR-20 = [k ÷ (k − 1)] × [1 − Σpq ÷ σ²] = (5 ÷ 4) × (1 − 1.10 ÷ 2.0) = 1.25 × 0.45 = **.56**
+
+### Step 3: interpret
+Low reliability, as expected with only five items. Spearman-Brown says a 20-item version of similar items would reach about .84. Note that pq is largest (.25) when p = .5: middle-difficulty items contribute most variance and most to reliability.
+:::
+
+:::qa Four people are tested under three conditions: S1 3, 5, 6; S2 2, 4, 7; S3 4, 5, 8; S4 3, 6, 7. Compute a repeated-measures ANOVA and compare it with treating the data as independent groups. [advanced]
+### Step 1: means
+Condition means: 3, 5, 7. Person means: 4.67, 4.33, 5.67, 5.33. Grand mean = 5. ΣX = 60, ΣX² = 338.
+
+### Step 2: partition the SS
+- SS total = 338 − 60² ÷ 12 = 338 − 300 = **38.00**
+- SS conditions = 4 × [(3 − 5)² + (5 − 5)² + (7 − 5)²] = 4 × 8 = **32.00**
+- SS subjects = 3 × [(4.67 − 5)² + (4.33 − 5)² + (5.67 − 5)² + (5.33 − 5)²] = **3.33**
+- SS error = 38 − 32 − 3.33 = **2.67**
+
+### Step 3: the table
+| Source | SS | df | MS | F |
+|---|---|---|---|---|
+| Conditions | 32.00 | 2 | 16.00 | **36.0** |
+| Subjects | 3.33 | 3 | 1.11 | |
+| Error (conditions × subjects) | 2.67 | 6 | 0.44 | |
+| Total | 38.00 | 11 | | |
+
+Critical F(2, 6) = 5.14: significant.
+
+### Step 4: the same data as independent groups
+SS within would be 3.33 + 2.67 = 6.00 on 9 df, MS = 0.67, F(2, 9) = 24.0. The repeated-measures F is larger because the 3.33 units of **stable person differences** are removed from the error term. That is the power advantage of within-subjects designs. Check sphericity before trusting the F.
+:::
+
+:::qa A study of 103 people finds r = .50. Build a 95% confidence interval for the population correlation using Fisher's z. [advanced]
+### Why a transformation
+The sampling distribution of r is skewed (it cannot pass 1), so you cannot just add and subtract. Fisher's transformation z′ = ½ ln[(1 + r) ÷ (1 − r)] makes it roughly normal, with SE = 1 ÷ √(n − 3).
+
+### Step 1: transform
+z′ for r = .50 is **0.549**.
+
+### Step 2: standard error
+SE = 1 ÷ √(103 − 3) = 1 ÷ 10 = **0.10**
+
+### Step 3: interval in z′ units
+0.549 ± 1.96 × 0.10 = 0.549 ± 0.196, so 0.353 to 0.745.
+
+### Step 4: back-transform
+r = (e^(2z′) − 1) ÷ (e^(2z′) + 1): 0.353 → **.34**; 0.745 → **.63**.
+
+### Interpret
+The true correlation is plausibly between .34 and .63. The interval is **not symmetrical** around .50: it stretches further downward, because r is squeezed near 1. The same method compares two independent correlations.
+:::
+
 ## 4.4 Long answers, short notes and viva [core]
 
 ### Long answer skeletons (15 to 20 marks)
@@ -543,7 +1022,7 @@ Q: Stanine scores have a mean and SD of:
 
 Q: The central limit theorem says that the distribution of sample means is approximately normal:
 - Only if the population itself is normal
-- Only for samples with fewer than thirty people
+- Only for samples with fewer than thirty people in them
 - Never, because each sample is different
 - *For large samples, whatever the population's shape
 > This is why z and t methods work so widely.
@@ -558,7 +1037,7 @@ Q: Rejecting a true null hypothesis is a:
 Q: Power is NOT increased by:
 - A larger sample
 - *A smaller alpha (for example .01 instead of .05)
-- A larger effect size in the population
+- A larger true effect size in the population studied
 - More reliable measures of the outcome
 > A stricter alpha lowers power.
 
@@ -571,7 +1050,7 @@ Q: r = .60 between two tests means the shared variance is:
 
 Q: The correlation between a true dichotomy and a continuous variable is:
 - Biserial
-- Tetrachoric
+- Tetrachoric (both split)
 - *Point-biserial
 - Phi
 > Point-biserial is for a genuine two-category variable.
@@ -579,7 +1058,7 @@ Q: The correlation between a true dichotomy and a continuous variable is:
 Q: A partial correlation r12.3 is the relation between 1 and 2:
 - Ignoring 3
 - *With 3 held constant in both
-- With 3 removed from 1 only
+- With 3 removed from variable 1 only
 - Multiplied by 3
 > Removing the third variable from both.
 
@@ -592,8 +1071,8 @@ Q: Twenty students are tested before and after a workshop. The df for the paired
 
 Q: Two independent groups of 25 give t = 2.10. Which statement is correct? (Critical t for 48 df, two-tailed .05, is about 2.01.)
 - Not significant
-- Significant at .001
-- The df are 50
+- Significant at .001 and at .05
+- The df are 50, not 48
 - *Significant at .05, two-tailed
 > 2.10 exceeds 2.01; df = 48.
 
@@ -606,7 +1085,7 @@ Q: In a chi-square test of independence with a 4 × 3 table, df =
 
 Q: Chi-square should NOT be used when:
 - Data are frequencies
-- Categories are mutually exclusive
+- Categories are mutually exclusive and exhaustive
 - There are three categories
 - *The same person contributes to several cells
 > Observations must be independent.
@@ -622,7 +1101,7 @@ Q: The post hoc test that controls error by dividing alpha by the number of comp
 - Tukey
 - *Bonferroni
 - Scheffé
-- Dunnett
+- Dunnett (versus control)
 > α ÷ number of tests.
 
 Q: A 2 × 3 factorial ANOVA has how many df for the interaction?
@@ -636,14 +1115,14 @@ Q: The assumption of sphericity applies to:
 - Chi-square
 - Independent t
 - *Repeated-measures ANOVA
-- Spearman's rho
+- Spearman's rank correlation
 > Equal variances of difference scores across conditions.
 
 Q: The non-parametric equivalent of the paired t-test is the:
 - Mann-Whitney U
 - *Wilcoxon signed-rank test
-- Kruskal-Wallis
-- Friedman test
+- Kruskal-Wallis H test
+- Friedman two-way ANOVA by ranks
 > Two related measures, ranks of differences.
 
 Q: In a Mann-Whitney test, the obtained U must be:
@@ -661,15 +1140,15 @@ Q: Cohen's d of 0.8 is conventionally:
 > 0.2, 0.5, 0.8.
 
 Q: In Ŷ = a + bX, b represents:
-- The predicted value of Y when X is zero
-- *The change in predicted Y per one-unit change in X
+- The predicted value of Y when X is exactly zero
+- *The change in predicted Y per unit of X
 - The correlation between X and Y
-- The error left over in each prediction
+- The error left over in each prediction of Y
 > The slope.
 
 Q: A VIF of 15 for a predictor suggests:
 - A strong effect
-- Non-normal residuals
+- Non-normal residuals in the model
 - *Serious multicollinearity
 - An outlier
 > Predictors overlap heavily.
