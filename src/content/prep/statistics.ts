@@ -8,7 +8,8 @@ import { QUESTIONS as part6 } from "./statistics-6";
 import { QUESTIONS as part7 } from "./statistics-7";
 import { QUESTIONS as part8 } from "./statistics-8";
 import { QUESTIONS as part9 } from "./statistics-9";
+import { QUESTIONS as part10 } from "./statistics-10";
 
 /** Question bank · statistics. Parts live in statistics-<n>.ts. */
 /** Ordered from foundations (difficulty 1) to research level (difficulty 4); the sort is stable, so topic order is kept within each level. */
-export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8, ...part9].sort((a, b) => a.difficulty - b.difficulty);
+export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8, ...part9, ...part10].sort((a, b) => a.difficulty - b.difficulty);

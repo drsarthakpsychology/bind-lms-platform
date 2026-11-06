@@ -175,7 +175,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Shrinking effect sizes and lower significance rates are what you would expect if the original literature selectively published inflated, underpowered results. This is a 'winner's curse' made worse by publication bias and questionable research practices. Fraud is not implied; ordinary practices are enough to explain the pattern. 'Cannot' overgeneralises, since about a third of studies did replicate, and many effects replicate robustly elsewhere. The replications were high-powered and often reviewed by the original authors, so dismissing them is not justified.",
+      "Shrinking effect sizes and lower significance rates are what you would expect if the original literature selectively published inflated, underpowered results. This is a 'winner's curse' made worse by publication bias and questionable research practices. Fraud is not implied; ordinary practices are enough to explain the pattern. 'Cannot' overgeneralises, since about a third of studies did replicate, and many effects replicate reliably elsewhere. The replications were high-powered and often reviewed by the original authors, so dismissing them is not justified.",
     module: "exam-prep",
     ref: "Open Science Collaboration 2015",
   },

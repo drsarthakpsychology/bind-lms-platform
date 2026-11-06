@@ -112,12 +112,12 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In an SPSS independent-samples t-test output, Levene's test gives F = 7.80, p = .007. Which row of the t-test table should be reported?",
     options: [
-      "The 'Equal variances not assumed' (Welch) row",
+      "Neither row; a paired t-test must be run instead",
       "The 'Equal variances assumed' row",
       "Either row, because they always give the same result",
-      "Neither row; a paired t-test must be run instead",
+      "The 'Equal variances not assumed' (Welch) row",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
       "Levene's test checks the null hypothesis that the two population variances are equal. A p value of .007 rejects it, so the equal-variance assumption is doubtful and the Welch row, which does not pool the variances, should be used. The 'assumed' row would be appropriate if Levene's p were above .05. The two rows can differ, especially with unequal group sizes. Unequal variances do not turn independent groups into paired data.",
     module: "exam-prep",
@@ -281,8 +281,13 @@ const D: Draft[] = [
       "3. As df increase, it approaches the standard normal distribution.",
       "4. Its variance is less than 1.",
     ],
-    options: ["1, 2 and 3 only", "1 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 0,
+    options: [
+      "1 and 3 only",
+      "1, 2 and 3 only",
+      "2, 3 and 4 only",
+      "1, 2, 3 and 4",
+    ],
+    answer: 1,
     explanation:
       "Statements 1 to 3 are correct. The extra spread in the tails comes from estimating σ with s, and it shrinks as df grow; with df above about 120 the t and z critical values are almost the same. Statement 4 is false: for df > 2 the variance of t is df/(df − 2), which is always greater than 1. For example, with 10 df it is 10/8 = 1.25.",
     module: "exam-prep",

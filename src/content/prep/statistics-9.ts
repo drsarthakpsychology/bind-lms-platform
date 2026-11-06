@@ -80,8 +80,13 @@ const D: Draft[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Under the Kaiser criterion, a researcher keeps factors whose eigenvalues are:",
-    options: ["Greater than 1", "Greater than 0.5", "Less than 1", "Exactly equal to the number of items"],
-    answer: 0,
+    options: [
+      "Less than 1",
+      "Greater than 0.5",
+      "Greater than 1",
+      "Exactly equal to the number of items",
+    ],
+    answer: 2,
     explanation:
       "Kaiser's rule keeps factors with eigenvalues above 1, on the reasoning that a factor should explain more variance than a single standardised variable (whose variance is 1). The other cut-offs are not the Kaiser rule. The rule is simple but tends to keep too many factors when there are many variables, so it is usually combined with a scree plot or parallel analysis.",
     module: "assessment",
@@ -158,12 +163,12 @@ const D: Draft[] = [
       "KMO and Bartlett's Test (20 items, N = 340)\nKaiser-Meyer-Olkin Measure of Sampling Adequacy = .82\nBartlett's Test of Sphericity: Approx. Chi-Square = 2894.6, df = 190, Sig. < .001",
     stem: "What do these results show?",
     options: [
-      "The data are suitable for factor analysis: sampling adequacy is good ('meritorious' on Kaiser's labels), and the correlation matrix is not an identity matrix",
+      "There are 190 factors in the data",
       "The data are unsuitable, because Bartlett's test is significant",
       "Exactly 82% of the variance will be explained by the factors",
-      "There are 190 factors in the data",
+      "The data are suitable for factor analysis: sampling adequacy is good ('meritorious' on Kaiser's labels), and the correlation matrix is not an identity matrix",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
       "Step 1: KMO compares the size of correlations with the size of partial correlations; Kaiser's labels call the .80s 'meritorious', and values above about .60 are usually acceptable. Step 2: Bartlett's test checks whether the correlation matrix is an identity matrix (all correlations zero). A significant result means there are correlations worth factoring, which is what we want. KMO is not variance explained. df = 190 is the number of unique correlations among 20 items (20 × 19/2), not a number of factors.",
     module: "assessment",
