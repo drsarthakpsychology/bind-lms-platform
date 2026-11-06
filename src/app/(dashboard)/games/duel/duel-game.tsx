@@ -76,7 +76,8 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   function finished(v: DuelView) {
-    // XP for effort: 3 per right diagnosis, 2 per right feature, +5 for a ranked win. Once per match.
+    // XP for effort: 3 per right diagnosis, 2 per right feature. Once per match.
+    // A ranked win also pays WIN_XP, but on the server (the "duel:win" ledger row).
     const paid = readLocal<string[]>("vibha-duel-xp", []);
     if (paid.includes(v.matchId)) return;
     writeLocal("vibha-duel-xp", [...paid, v.matchId].slice(-100));
@@ -85,7 +86,6 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
       xp += (r.you.dxOk ? 3 : 0) + (r.you.featureOk ? 2 : 0);
       trackLearn({ type: "game", kind: "duel", ok: r.you.dxOk, skill: `${r.topic}:differentiate`, item: `${v.matchId}:${r.round}`, prompt: r.correctDx, ms: r.you.ms ?? undefined });
     }
-    if (v.ranked && v.result?.outcome === "win") xp += 5;
     awardXp(xp, state);
     if (v.result?.rating != null && v.result.delta != null) {
       const rating = v.result.rating;

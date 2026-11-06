@@ -22,6 +22,7 @@ import {
 } from "@/lib/games/daily/engine";
 import { buildView, type CaseView } from "@/lib/games/daily/view";
 import { admin, cohortPeers, currentPlayer, isMissing, learnXp } from "@/lib/games/server";
+import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
 
 export type DailyMeta = {
   day: string;
@@ -38,7 +39,16 @@ export type DailyMeta = {
 };
 
 export type MoveResult =
-  | { ok: true; view: CaseView; meta: DailyMeta; log: Action[]; justFinished: boolean; xp: number }
+  | {
+      ok: true;
+      view: CaseView;
+      meta: DailyMeta;
+      log: Action[];
+      justFinished: boolean;
+      xp: number;
+      /** True when the XP went into the server ledger (a solved daily case), so the browser must not add it again. */
+      xpSaved: boolean;
+    }
   | { ok: false; error: string };
 
 const LAUNCH = "2026-11-01";
@@ -187,8 +197,15 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
     }
   }
 
+  // A solved daily case pays into the ledger (once per day), which is what the
+  // "daily cases solved" milestones and league points count.
+  let xpSaved = false;
+  if (justFinished && mode === "daily" && progress.status === "solved" && xp > 0) {
+    xpSaved = (await awardXp(me.id, XP_SOURCES.dailyCase, xp, day)).ok;
+  }
+
   const m = await meta(me.id, day, stored, mode === "daily" && progress.status !== "playing");
-  return { ok: true, view: buildView(c, progress, mode, me.admin), meta: m, log, justFinished, xp };
+  return { ok: true, view: buildView(c, progress, mode, me.admin), meta: m, log, justFinished, xp, xpSaved };
 }
 
 /** Pick the next practice case for this player (adapts to recent scores). */

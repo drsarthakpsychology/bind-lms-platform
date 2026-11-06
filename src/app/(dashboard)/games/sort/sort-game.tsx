@@ -114,7 +114,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
         haptic(r.done.solved ? "success" : "warning");
         for (let g = 0; g < 4; g++) trackLearn({ type: "game", kind: "criteria-sort", ok: r.groupsDone[g], skill: `${r.done.topic}:differentiate`, item: `${v.boardId}:${g}`, prompt: v.groups[g] });
         if (r.xp > 0) {
-          awardXp(r.xp, state);
+          if (!r.xpSaved) awardXp(r.xp, state);
           setGain(r.xp);
         }
       }

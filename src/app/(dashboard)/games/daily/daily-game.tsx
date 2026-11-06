@@ -105,7 +105,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
         if (!res.view.guesses.some((x) => x.ok)) trackLearn({ type: "game", kind: "daily-case", ok: false, skill: `${reveal.topic}:recognise`, item: res.view.caseId });
       }
       if (res.xp > 0) {
-        awardXp(res.xp, state);
+        if (!res.xpSaved) awardXp(res.xp, state);
         setGain((g) => ({ xp: res.xp, key: (g?.key ?? 0) + 1 }));
       }
       if (mode === "daily") {
