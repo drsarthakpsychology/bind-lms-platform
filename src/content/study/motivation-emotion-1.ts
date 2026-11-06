@@ -45,6 +45,23 @@ Drive reduction works like an air-conditioner thermostat. When the room drifts a
 }
 :::
 
+
+:::widget flow
+{
+  "title": "Hull's drive-reduction loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "need", "label": "Need", "detail": "A biological deficit, such as low body water after a long shift in the sun." },
+    { "id": "drive", "label": "Drive", "detail": "An unpleasant state of tension (thirst) that energises the body." },
+    { "id": "act", "label": "Behaviour", "detail": "Whatever the animal or person does: looking for water, walking to the tap." },
+    { "id": "reduce", "label": "Drive reduced", "detail": "Drinking lowers the tension and restores balance (homeostasis)." },
+    { "id": "learn", "label": "Learning", "detail": "The behaviour that reduced the drive is reinforced, so it is more likely next time." }
+  ],
+  "edgeLabels": { "need>drive": "creates", "drive>act": "energises", "act>reduce": "succeeds", "reduce>learn": "reinforces" },
+  "caption": "Press Play. The loop explains thirst and hunger well; it cannot explain why we seek excitement when no need is pressing."
+}
+:::
+
 ### Where drive theory fails
 Drive reduction explains eating and drinking well. It cannot explain why people **seek tension**: climbing mountains, watching horror films, solving puzzles for fun, or eating dessert when full. Monkeys will work for nothing more than the chance to look out of a window (1953) or open a latch puzzle (Harlow). Those findings pushed the field towards **arousal** and **incentive** theories, which come next.
 
@@ -103,11 +120,36 @@ Deepa has revised thoroughly and the paper is mostly recall; a bit of nervous en
 }
 :::
 
+
+:::widget curve
+{
+  "kind": "inverted-u",
+  "title": "Arousal and performance: move the task-difficulty slider",
+  "caption": "Slide from a simple task to a complex one and watch the peak of the curve move left. The best arousal for a hard, unfamiliar task is lower than for a simple, practised one."
+}
+:::
+
 ### Incentive theory: the pull of the goal
 Incentive theory says behaviour is pulled by **expected rewards** in the environment: money, praise, grades, food that looks good. An incentive's power depends on its **value** to the person and how **likely** they think it is. A cash prize means more to a struggling student than to a rich one.
 
 ### Opponent-process theory
 **Solomon and Corbit** (1974) proposed that every strong emotional state is followed by an **opposite after-reaction**. First-time skydivers feel terror, then relief and elation after landing. With repetition, the first reaction weakens and the after-reaction grows. The theory explains why thrill-seeking becomes pleasant and why drug use moves from pleasure to taking the drug simply to escape withdrawal.
+
+
+:::widget flow
+{
+  "title": "Opponent process: what repetition does",
+  "layout": "chain",
+  "nodes": [
+    { "id": "a1", "label": "First jump: strong A-state", "detail": "Terror during the first skydive. The primary emotional reaction is intense." },
+    { "id": "b1", "label": "Weak B-state", "detail": "Mild relief after landing. The opposite after-reaction is small." },
+    { "id": "rep", "label": "Many repetitions", "detail": "Each exposure strengthens the opponent process and weakens the first reaction." },
+    { "id": "a2", "label": "Weak A-state", "detail": "Only a little fear before the hundredth jump." },
+    { "id": "b2", "label": "Strong B-state", "detail": "A long, intense rush of elation afterwards, which now drives the behaviour." }
+  ],
+  "caption": "The same pattern runs the other way in addiction: early pleasure shrinks, and the opposite state (withdrawal) grows."
+}
+:::
 
 ### Maslow's hierarchy of needs
 **Abraham Maslow** (in a 1943 paper and a 1954 book), a founder of humanistic psychology, arranged needs in a hierarchy:
@@ -118,6 +160,22 @@ Incentive theory says behaviour is pulled by **expected rewards** in the environ
 5. **Self-actualisation**: becoming what one is capable of becoming.
 
 Maslow called the lower four **deficiency needs (D-needs)**: their lack creates tension. **Growth needs (B-needs, "being" needs)** such as truth, beauty and meaning drive self-actualisation. Late in life he added **self-transcendence** above self-actualisation. He described self-actualising people (Lincoln, Einstein, Eleanor Roosevelt) as accepting, spontaneous, problem-centred and prone to **peak experiences**.
+
+
+:::widget layers
+{
+  "title": "Maslow's hierarchy of needs",
+  "shape": "pyramid",
+  "layers": [
+    { "label": "Self-actualisation", "detail": "Becoming what one is capable of becoming. A growth (B) need: truth, beauty, meaning, peak experiences." },
+    { "label": "Esteem", "detail": "Respect from others, self-respect, a sense of achievement. The top deficiency (D) need." },
+    { "label": "Love and belonging", "detail": "Friendship, family, intimacy, being part of a group." },
+    { "label": "Safety", "detail": "Security, stability, freedom from fear, a predictable world." },
+    { "label": "Physiological", "detail": "Food, water, sleep, warmth: the base that must usually be met first." }
+  ],
+  "caption": "Tap each layer. The four lower layers are deficiency needs; the top is a growth need. Maslow treated the order as a general tendency, not a fixed rule."
+}
+:::
 
 :::trap The pyramid is not Maslow's drawing, and the order is not rigid
 Maslow never drew the pyramid; it was popularised later by management writers. He also said the order is flexible: a need need not be fully met before the next appears, and some people (an artist, a freedom fighter) put higher needs first. Exams like statements such as "a lower need must be completely satisfied before a higher need emerges". That statement is **false**.
@@ -182,6 +240,21 @@ Three related words are often confused. An **emotion** is brief and about someth
 
 James's famous line: we do not cry because we are sorry; "we feel sorry because we cry, afraid because we tremble". Each emotion should therefore have its own bodily signature.
 
+
+:::widget flow
+{
+  "title": "James-Lange: the body comes first",
+  "layout": "chain",
+  "nodes": [
+    { "id": "ev", "label": "Event", "detail": "A dog suddenly barks behind you." },
+    { "id": "body", "label": "Bodily change", "detail": "Heart pounds, you tremble and jump." },
+    { "id": "per", "label": "Perception of the body", "detail": "The brain registers the pounding and trembling." },
+    { "id": "feel", "label": "Feeling of fear", "detail": "The feeling is the perception of the bodily change: you are afraid because you tremble." }
+  ],
+  "caption": "Compare this chain with the Cannon-Bard picture below, where feeling and body change happen together."
+}
+:::
+
 ### Cannon-Bard theory: brain first, body and feeling together
 **Walter Cannon** (1927), with **Philip Bard**, attacked James-Lange with five arguments:
 1. Animals whose viscera were cut off from the brain still showed emotional behaviour.
@@ -193,6 +266,21 @@ James's famous line: we do not cry because we are sorry; "we feel sorry because 
 Cannon and Bard proposed that the **thalamus** sends signals **at the same time** to the cortex (producing the feeling) and to the body (producing the arousal):
 
 **event → thalamus → feeling and bodily response together.**
+
+
+:::widget flow
+{
+  "title": "Cannon-Bard: brain first, both at once",
+  "layout": "tree",
+  "nodes": [
+    { "id": "ev", "label": "Event", "detail": "A dog suddenly barks behind you." },
+    { "id": "th", "label": "Thalamus", "parent": "ev", "detail": "Cannon and Bard gave the thalamus the role of sending two signals at the same moment." },
+    { "id": "cx", "label": "Cortex: the feeling of fear", "parent": "th", "detail": "The conscious feeling does not wait for the body." },
+    { "id": "bd", "label": "Body: arousal", "parent": "th", "detail": "Heart rate and breathing rise in parallel, not as the cause of the feeling." }
+  ],
+  "caption": "One trigger, two simultaneous branches. Today the thalamus is seen as a relay, but the idea that feeling need not wait for the body survives."
+}
+:::
 
 :::mnemonic The order of the old theories
 **J**ames-Lange: **J**ust the body first. **C**annon-Bard: **C**oncurrent, at the same time. The two-factor theory (next level): **S**chachter-**S**inger needs **S**ome thinking: arousal plus a label.
@@ -274,6 +362,21 @@ Cannon described how threat triggers the **sympathetic nervous system** and the 
   "answer": [2, 4],
   "reveal": "It drops. The body is spending its resources on the first stressor, so a second one hits harder. A student who has been nursing a sick parent for months often falls ill during exams.",
   "clinician": "Selye described heightened specific resistance with lowered cross-resistance during the resistance stage. The original account rested on glucocorticoid and adrenal changes, and Mason (1971) later showed that the 'non-specific' response depends heavily on the psychological meaning of the stressor, which opened the door to appraisal models."
+}
+:::
+
+
+:::widget flow
+{
+  "title": "Selye's General Adaptation Syndrome",
+  "layout": "chain",
+  "nodes": [
+    { "id": "al", "label": "Alarm", "detail": "Shock (resistance briefly drops), then counter-shock: the sympathetic system and stress hormones mobilise the body." },
+    { "id": "re", "label": "Resistance", "detail": "The body adapts and copes with this stressor, at a cost: resistance to other stressors falls." },
+    { "id": "ex", "label": "Exhaustion", "detail": "If the stressor goes on, reserves run out. Selye's 'diseases of adaptation' appear: ulcers, high blood pressure, infections." }
+  ],
+  "edgeLabels": { "al>re": "stressor continues", "re>ex": "stressor still continues" },
+  "caption": "Press Play to walk the three stages. The model describes the body; it says nothing about how the person interprets the stressor, which is what Lazarus added."
 }
 :::
 
@@ -449,6 +552,23 @@ SDT separates **intrinsic motivation** (doing something because it is interestin
 | **Integrated regulation** | Fits who I am | "Being a careful scientist is part of me" |
 | **Intrinsic motivation** | Interest and enjoyment | "I love solving these problems" |
 
+
+:::widget layers
+{
+  "title": "The self-determination continuum",
+  "shape": "stack",
+  "layers": [
+    { "label": "Intrinsic motivation", "detail": "Doing it for the interest and enjoyment itself. Fully self-determined." },
+    { "label": "Integrated regulation", "detail": "The activity fits who I am and my other values." },
+    { "label": "Identified regulation", "detail": "I value the outcome personally: it matters for my goals." },
+    { "label": "Introjected regulation", "detail": "Guilt, pride and ego push me: I would feel ashamed not to." },
+    { "label": "External regulation", "detail": "Rewards and punishments from outside control me." },
+    { "label": "Amotivation", "detail": "No intention and no value: I don't know why I am doing this." }
+  ],
+  "caption": "Read from the bottom up. The higher the rung, the more the behaviour feels chosen, and the better the persistence, learning and wellbeing that tend to follow."
+}
+:::
+
 ### The overjustification effect
 Can rewards kill interest? **Deci** (1971) paid students to solve interesting puzzles; in a later free period, paid students spent **less** time on the puzzles than unpaid ones. **Lepper, Greene and Nisbett** (1973) gave nursery children who already loved drawing an **expected** "good player" certificate for drawing; later, those children drew less in free play than children who got no reward or an unexpected one. The explanation: an external reward can shift the reason in the person's mind from "I enjoy this" to "I do this for the reward" (**cognitive evaluation theory**, part of SDT).
 
@@ -486,6 +606,22 @@ These theories say motivation is a **product** of how likely you think success i
     { "label": "“Let's look at which questions went wrong and what study method you used. Those are things we can change.”", "verdict": "best", "outcome": "She finds she only reread notes and never practised problems. With practice her next score rises.", "why": "This shifts the attribution from stable ability to unstable, controllable strategy and effort." },
     { "label": "“Maybe statistics isn't for you. Some people just can't do it.”", "verdict": "harm", "outcome": "She drops the subject she needed for her MA entrance.", "why": "Confirming a stable, uncontrollable cause produces helplessness." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+  "title": "Weiner's attribution chain after a failed test",
+  "layout": "chain",
+  "nodes": [
+    { "id": "out", "label": "Outcome", "detail": "Sana fails her first statistics test." },
+    { "id": "why", "label": "Why did it happen?", "detail": "She searches for a cause: ability, effort, luck, the paper's difficulty, her study method." },
+    { "id": "dim", "label": "Three dimensions", "detail": "Locus (inside or outside me), stability (will it last?), controllability (can I change it?)." },
+    { "id": "exp", "label": "Expectancy and emotion", "detail": "A stable cause lowers expectancy of future success; an internal, controllable cause brings guilt and resolve, an internal, uncontrollable one brings shame and hopelessness." },
+    { "id": "act", "label": "Persistence", "detail": "Low ability (stable, uncontrollable) leads to giving up. Poor strategy or effort (unstable, controllable) leads to trying again differently." }
+  ],
+  "caption": "The same failure can end in quitting or in a better plan. The attribution in the middle makes the difference."
 }
 :::
 
@@ -642,6 +778,22 @@ A Carnatic violinist during a long improvisation, a software developer debugging
 :::
 
 ### Self-regulation and self-control
+
+:::widget flow
+{
+  "title": "Self-regulation as a feedback loop (TOTE)",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "goal", "label": "Reference goal", "detail": "Revise two chapters before dinner." },
+    { "id": "test", "label": "Test", "detail": "Compare where you are with the goal: one chapter done." },
+    { "id": "op", "label": "Operate", "detail": "There is a gap, so act to reduce it: open chapter two, phone in another room." },
+    { "id": "test2", "label": "Test again", "detail": "Check progress. Still a gap? Operate again. No gap? Exit and move to the next goal." }
+  ],
+  "caption": "Carver and Scheier modelled self-control as this loop. Problems arise when goals are vague (nothing to compare against) or when monitoring stops."
+}
+:::
+
+
 **Self-regulation** is steering your own behaviour towards goals. **Carver and Scheier's control theory** models it as a **feedback loop**: compare where you are with a reference goal; if there is a gap, act to reduce it; check again. Miller, Galanter and Pribram called this loop the TOTE unit: Test, Operate, Test, Exit.
 
 **Walter Mischel's** "marshmallow" studies at Stanford (from the late 1960s) offered preschoolers one treat now or two if they waited. Children who used strategies (looking away, singing, thinking of the marshmallow as a cloud) waited longer, and longer waiting predicted later academic and social outcomes in follow-ups.
@@ -721,6 +873,19 @@ Today hunger is understood as a network centred on the **arcuate nucleus** and *
 Researchers in Pune (Yajnik and colleagues) showed that Indian newborns are often small and thin but carry relatively more body fat than European babies, the "thin-fat" phenotype. Combined with a modern, calorie-rich diet, this helps explain India's high rates of type 2 diabetes at lower body weights. Hunger, metabolism and culture all meet here.
 :::
 
+
+:::widget brainmap
+{
+  "title": "Where hunger is regulated",
+  "focus": ["hypothalamus", "brainstem"],
+  "notes": {
+    "hypothalamus": "The arcuate and paraventricular nuclei read leptin, ghrelin, insulin and gut signals. The old lateral (start) and ventromedial (stop) 'centres' are parts of this network.",
+    "brainstem": "Receives vagus nerve signals of stomach stretch and gut hormones, and passes them up to the hypothalamus."
+  },
+  "caption": "Tap a region. Hunger is a network reading many signals, not a single switch."
+}
+:::
+
 ### Thirst
 Thirst has two triggers. **Osmotic thirst** comes from salty, concentrated body fluid detected by brain osmoreceptors (after eating salty bhujia). **Hypovolaemic thirst** comes from loss of fluid volume, as in bleeding, vomiting or diarrhoea, detected by the kidneys (via renin and angiotensin) and blood-volume receptors. The hormone **vasopressin (ADH)** makes the kidneys keep water.
 
@@ -777,11 +942,50 @@ Q: Leptin is best described as:
 > Leptin reflects fat stores; ghrelin is the stomach hunger hormone.
 :::
 
+
+:::widget brainmap
+{
+  "title": "Wanting and liking in the brain",
+  "focus": ["brainstem", "basal-ganglia", "prefrontal"],
+  "notes": {
+    "brainstem": "The ventral tegmental area in the midbrain sends dopamine forward: the source of the 'wanting' signal.",
+    "basal-ganglia": "The nucleus accumbens (ventral striatum) receives dopamine; small opioid hotspots here produce 'liking'.",
+    "prefrontal": "Weighs rewards against long-term goals and helps hold back impulses."
+  },
+  "caption": "In addiction, the dopamine 'wanting' pathway becomes sensitised even as 'liking' fades."
+}
+:::
+
+
+:::widget pathways
+{
+  "system": "dopamine",
+  "title": "The four dopamine pathways, and which one carries 'wanting'",
+  "caption": "The mesolimbic pathway (from the ventral tegmental area to the nucleus accumbens) carries incentive salience, the 'wanting' signal. Toggle the D2 blocker to see why antipsychotic medicines can flatten motivation as a side effect."
+}
+:::
+
 ## 2.5 Cognition and emotion: Schachter-Singer, Lazarus and the debate [core][beginner]
 ### Schachter and Singer's two-factor theory (1962)
 **Stanley Schachter and Jerome Singer** argued that emotion needs **two factors**: **physiological arousal** and a **cognitive label** that explains it. Arousal tells you how strongly you feel; the label, taken from the situation, tells you which emotion it is.
 
 **The experiment.** Participants were told they were getting a vitamin ("Suproxin") to test vision. In fact most got **adrenaline**, which produces arousal. Some were **informed** about the real side effects (racing heart, trembling); others were **misinformed** or told nothing. Each then waited with a **stooge** who acted either **euphoric** (playing with paper planes and hula hoops) or **angry** (complaining about an insulting questionnaire). Participants who were aroused **and had no explanation** for their arousal tended to catch the stooge's emotion; informed participants, who could put their arousal down to the injection, did so less.
+
+
+:::widget flow
+{
+  "title": "The two-factor sequence",
+  "layout": "chain",
+  "nodes": [
+    { "id": "ev", "label": "Event or injection", "detail": "Adrenaline, coffee, a swaying bridge or a real threat." },
+    { "id": "ar", "label": "Physiological arousal", "detail": "Racing heart, trembling hands. On its own this says how strongly, not what." },
+    { "id": "se", "label": "Search for an explanation", "detail": "If the cause is unclear, the person looks to the situation and to other people." },
+    { "id": "lab", "label": "Cognitive label", "detail": "“That man is making me angry” or “I'm excited at this party.”" },
+    { "id": "em", "label": "Emotion", "detail": "Arousal plus label gives a specific emotion. With a clear non-emotional cause (the injection), the emotion is weaker." }
+  ],
+  "caption": "Compare with James-Lange (body then feeling) and Cannon-Bard (both at once): here thinking decides which emotion the arousal becomes."
+}
+:::
 
 ### Misattribution of arousal
 If arousal is labelled from context, it can be **mislabelled**. In **Dutton and Aron's** (1974) study on the **Capilano Suspension Bridge** in Vancouver, an attractive female interviewer approached men either on a swaying, frightening bridge or on a low, stable one. Men on the scary bridge wrote more sexual imagery into stories and were more likely to phone her later. Their fear arousal had been partly read as attraction.
@@ -802,6 +1006,23 @@ If arousal is labelled from context, it can be **mislabelled**. In **Dutton and 
 **Richard Lazarus** (1966, 1991) argued that emotion depends on **cognitive appraisal**: our evaluation of what an event means for our wellbeing. The same event can produce different emotions in different people because they appraise it differently. In his **cognitive-motivational-relational theory**, each emotion has a **core relational theme**: anger is "a demeaning offence against me and mine", anxiety is "facing an uncertain, existential threat", guilt is "having transgressed a moral imperative", pride is "enhancing one's ego-identity by taking credit for a valued achievement".
 
 In early experiments Lazarus showed people a disturbing film of a tribal circumcision ritual. Those told beforehand that the procedure was not painful (denial) or who were encouraged to watch it like an anthropologist (intellectualisation) showed **less** physiological stress than those told it was harmful.
+
+
+:::widget flow
+{
+  "title": "Lazarus's appraisal sequence",
+  "layout": "chain",
+  "nodes": [
+    { "id": "ev", "label": "Event", "detail": "Your manager comments on your report in front of the team." },
+    { "id": "rel", "label": "Is it relevant to my goals?", "detail": "Yes: my reputation matters to me." },
+    { "id": "cong", "label": "Good or bad for me?", "detail": "Bad: it feels like a public put-down." },
+    { "id": "who", "label": "Who is responsible? Can I cope?", "detail": "He chose to say it publicly; I can respond calmly later." },
+    { "id": "theme", "label": "Core relational theme", "detail": "A demeaning offence against me and mine." },
+    { "id": "emo", "label": "Emotion: anger", "detail": "A different appraisal (“I really did make an error”) would give guilt or embarrassment instead." }
+  ],
+  "caption": "Appraisal theorists differ: some reduce emotion to a few core themes, others list dimensions such as certainty, control and agency. Most now accept that appraisal can be fast and unconscious."
+}
+:::
 
 ### Zajonc: feeling can come first
 **Robert Zajonc** (1980) argued that **affect can arise without cognition**. His evidence was the **mere exposure effect**: people come to like shapes or symbols shown to them so briefly that they cannot say they saw them. The **Lazarus-Zajonc debate** (1984) was partly about definitions: Lazarus counted fast, automatic, unconscious evaluations as appraisal; Zajonc meant deliberate thought.
@@ -886,6 +1107,22 @@ Rasa theory is strikingly modern: it separates the felt emotion from its express
 }
 :::
 
+
+:::widget flow
+{
+  "title": "How a rasa is produced",
+  "layout": "tree",
+  "nodes": [
+    { "id": "rasa", "label": "Rasa: the savoured emotion", "detail": "What the audience tastes, such as karuna (pathos) in a scene of loss." },
+    { "id": "vib", "label": "Vibhava: causes", "parent": "rasa", "detail": "The characters and situation that give rise to the emotion, such as a mother and her lost son." },
+    { "id": "anu", "label": "Anubhava: expressions", "parent": "rasa", "detail": "Tears, a trembling voice, drooping posture: the visible signs on stage." },
+    { "id": "vya", "label": "Vyabhichari bhava: passing states", "parent": "rasa", "detail": "Transient feelings layered on top: despair, remembering, weariness." },
+    { "id": "sth", "label": "Sthayi bhava: the lasting emotion", "parent": "rasa", "detail": "Shoka (sorrow), the stable emotion that the whole scene builds and that becomes karuna rasa." }
+  ],
+  "caption": "Tap each branch. The Natyashastra separates causes, expressions and passing states, much as modern emotion science separates triggers, expression and feeling."
+}
+:::
+
 ### Facial feedback
 The **facial feedback hypothesis** (from Darwin, James, Tomkins and Izard) says expressions do not only show emotion; they also **feed back** and intensify it. In **Strack, Martin and Stepper's** (1988) study, people holding a pen in their **teeth** (which forces a smile) rated cartoons as funnier than people holding a pen in their **lips** (which blocks a smile).
 
@@ -943,6 +1180,23 @@ Selye looked at the body. **Richard Lazarus and Susan Folkman** said stress is a
 3. **Reappraisal**: as things change, the person re-evaluates.
 
 The same viva exam can be a threat for one student and a challenge for another. Challenge appraisals go with better performance and healthier cardiovascular responses.
+
+
+:::widget flow
+{
+  "title": "The transactional stress loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "ev", "label": "Demand", "detail": "A viva in a few days, a sick parent, a loan repayment." },
+    { "id": "pa", "label": "Primary appraisal", "detail": "Is it relevant? Is it harm or loss, threat, or challenge?" },
+    { "id": "sa", "label": "Secondary appraisal", "detail": "What can I do? What resources do I have: skills, time, money, people?" },
+    { "id": "cope", "label": "Coping", "detail": "Problem-focused (change the situation) or emotion-focused (change how I feel), often both." },
+    { "id": "out", "label": "Outcome", "detail": "The situation and my feelings change, for better or worse." },
+    { "id": "rea", "label": "Reappraisal", "detail": "I look again: the threat may now be a challenge, or a loss. The loop runs again." }
+  ],
+  "caption": "Stress is not in the event or in the person but in this running transaction between them."
+}
+:::
 
 ### Coping
 **Coping** is the effort, thought or action used to manage demands appraised as stressful. Lazarus and Folkman separated:
