@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -82,7 +82,15 @@ export type CurveData = {
 export type LayersData = { title?: Inline; shape: "pyramid" | "rings" | "stack" | "iceberg"; layers: { label: Inline; detail: Inline }[]; caption?: Inline };
 /** Schematic brain (side view + deep structures). Region ids: frontal, parietal, temporal, occipital, motor, sensory, broca, wernicke, prefrontal, cerebellum, brainstem, thalamus, hypothalamus, amygdala, hippocampus, basal-ganglia, corpus-callosum. */
 export type BrainMapData = { title?: Inline; focus?: string[]; notes?: Record<string, Inline>; caption?: Inline };
-export type WidgetData = GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** A medicine's journey: swallowed (or IV / nasal / depot) → gut → liver first pass → blood → blood-brain barrier → brain target → elimination. Notes override the default text per stage id (mouth, gut, liver, blood, bbb, target, out, vein, nose, muscle, slow). */
+export type JourneyData = { drug: string; target: string; route?: "oral" | "iv" | "nasal" | "depot"; routes?: ("oral" | "iv" | "nasal" | "depot")[]; notes?: Record<string, Inline>; title?: Inline; caption?: Inline };
+/** Action potential: threshold slider, all-or-none firing, myelin on/off (saltatory conduction), voltage trace. */
+export type NeuronData = { title?: Inline; myelinated?: boolean; caption?: Inline };
+/** The four dopamine pathways, with a D2-blocker toggle and a serotonin 2A (second-generation) toggle. */
+export type PathwaysData = { system: "dopamine"; title?: Inline; caption?: Inline };
+/** Ligand types at one receptor: full agonist, partial agonist, antagonist, inverse agonist, with a live signal bar. */
+export type ReceptorData = { receptor?: string; title?: Inline; caption?: Inline };
+export type WidgetData = JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

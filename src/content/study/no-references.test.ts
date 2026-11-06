@@ -29,3 +29,14 @@ describe("student content has no formal references", () => {
     });
   }
 });
+
+/** Owner rule (2026-11-06): no em or en dashes in student text; they read as AI-written. */
+describe("student content has no em or en dashes", () => {
+  for (const m of MODULES) {
+    it(m.id, () => {
+      const text = JSON.stringify({ meta: { title: m.title, tagline: m.tagline, outcomes: m.outcomes, writeTask: m.writeTask }, sections: m.sections.map((s) => [s.title, s.blocks]) });
+      const hits = [...text.matchAll(/[—–]/g)].slice(0, 8).map((x) => text.slice(Math.max(0, x.index! - 30), x.index! + 30));
+      expect(hits, hits.join("\n")).toEqual([]);
+    });
+  }
+});
