@@ -2,41 +2,18 @@
  * AI-made practice cases ("AI case"). Shapes only, no runtime code, so both
  * the server and the browser can import them.
  *
- * `DailyCaseShape` mirrors the Daily Case game's case type field for field
- * (src/lib/games/daily/types.ts on the games branch). If that type exists at
- * merge time, `toDailyCase()` in ./adapter.ts is the one place to adapt.
+ * The case shape reuses the Daily Case game's types (src/lib/games/daily),
+ * and `toDailyCase()` in ./adapter.ts turns an AI case into a playable one.
  */
 
 export type Setting = "indian" | "global";
 export type Difficulty = 1 | 2 | 3;
 export type AiCaseStatus = "live" | "flagged" | "removed";
 
-export type InvestigationKind = "mse" | "collateral" | "scale" | "lab";
-
-export type Investigation = {
-  kind: InvestigationKind;
-  /** Button text. Must not give the answer away. */
-  label: string;
-  result: string;
-};
-
-/** Diagnosis chapter (same ids as the games' diagnosis list). */
-export type Chapter =
-  | "neurodevelopmental"
-  | "psychotic"
-  | "bipolar"
-  | "depressive"
-  | "anxiety"
-  | "ocd"
-  | "trauma"
-  | "dissociative"
-  | "somatic"
-  | "eating"
-  | "sleep"
-  | "disruptive"
-  | "substance"
-  | "neurocognitive"
-  | "personality";
+export type { Chapter } from "@/lib/games/diagnoses";
+export type { Investigation, InvestigationKind } from "@/lib/games/daily/types";
+import type { Chapter } from "@/lib/games/diagnoses";
+import type { DailyCase, Investigation } from "@/lib/games/daily/types";
 
 /** What the generator is asked for. */
 export type AiCaseInput = {
@@ -85,22 +62,8 @@ export type AiCaseRecord = AiCase & {
   flags: number;
 };
 
-/** Field-for-field copy of the Daily Case game's `DailyCase`. */
-export type DailyCaseShape = {
-  id: string;
-  difficulty: 1 | 2 | 3;
-  chapter: Chapter;
-  answer: string;
-  synonyms: string[];
-  setting: string;
-  clues: [string, string, string, string, string, string];
-  investigations: Investigation[];
-  differentials: { dx: string; whyNot: string }[];
-  pointer: string;
-  overview: string;
-  module: string;
-  refs: string[];
-};
+/** The Daily Case game's case type: an AI case plays through the same engine. */
+export type DailyCaseShape = DailyCase;
 
 /** The one line every AI case carries for students. */
 export const AI_CASE_LABEL = "AI case";

@@ -5,6 +5,7 @@
  * Every rejected draft's problems go back into the next prompt, so a retry
  * fixes the exact gaps (missing criterion, leaked name, wrong place …).
  */
+import { cleanDeep } from "@/lib/ai/student-text";
 import { CRITERIA, CRITERIA_BY_DX, dxForTopic } from "./criteria";
 import { buildGeneratorPrompt } from "./prompt";
 import type { AiCase, AiCaseInput, Difficulty, Setting } from "./types";
@@ -55,7 +56,9 @@ export async function generateAiCase(input: AiCaseInput, chat: ChatFn, opts: { a
     }
     // Fixture mode (AI switched off) returns no case: stop, don't loop.
     if (res.provider === "fixture") return { ok: false, reason: "unavailable", problems: ["AI is switched off."], tries: i };
-    const raw = res.json ?? parseJsonLoose(res.text);
+    // Every string is cleaned (no dashes, no stock AI phrases) BEFORE the
+    // check, so what the checker accepts is exactly what students read.
+    const raw = cleanDeep(res.json ?? parseJsonLoose(res.text));
     const v = validateDraft(raw, input);
     if (v.ok) {
       const now = (opts.now ?? new Date()).toISOString();

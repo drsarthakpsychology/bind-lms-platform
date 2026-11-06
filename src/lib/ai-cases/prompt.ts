@@ -3,6 +3,7 @@
  * (no student data), so it runs on the content_generation lane.
  */
 import { CRITERIA_BY_DX, DX_NAMES, RULES, rulesFor } from "./criteria";
+import { STUDENT_STYLE_RULES } from "@/lib/ai/student-text";
 import type { AiCaseInput } from "./types";
 
 const DIFFICULTY: Record<1 | 2 | 3, string> = {
@@ -62,6 +63,8 @@ Rules:
 - "pointer": where to look, without naming the answer.
 - "overview": 3 to 5 sentences teaching the key criteria, thresholds and the main look-alike.
 - No phone numbers, links or real people.
+- This is an educational exercise for students, never advice to a real person.
+${STUDENT_STYLE_RULES.split("\n").map((l) => `- ${l}`).join("\n")}
 
 Return exactly this JSON shape:
 {"place": "", "clues": ["", "", "", "", "", ""], "investigations": [{"kind": "mse", "label": "", "result": ""}], "differentials": [{"dx": "", "whyNot": ""}], "pointer": "", "overview": ""${c.duration ? `, "duration": {"value": 0, "unit": "weeks"}` : ""}}${

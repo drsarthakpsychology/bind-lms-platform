@@ -9,8 +9,9 @@
  *      in the text.
  *   4. Fairness: the answer isn't given away, clues build up (evidence spread
  *      over at least 3 clues), the place matches the setting, no phone
- *      numbers or links.
+ *      numbers or links, no book or journal references, no long dashes.
  */
+import { findReference } from "@/lib/ai/student-text";
 import { CRITERIA_BY_DX, DX_NAMES, RULES, type DxCriteria, type Rule } from "./criteria";
 import { draftSchema, type Draft } from "./schema";
 import type { AiCase, AiCaseInput, EvidenceRef } from "./types";
@@ -212,6 +213,12 @@ export function validateDraft(raw: unknown, input: AiCaseInput): Validation {
   });
   for (const [where, t] of [...visible, ["overview", d.overview] as [string, string]]) {
     if (CONTACT.test(t)) problems.push(`The ${where} has a phone number or link; remove it.`);
+  }
+  const taught: [string, string][] = [["overview", d.overview], ...d.differentials.map((x, i): [string, string] => [`differential ${i + 1}`, x.whyNot])];
+  for (const [where, t] of [...visible, ...taught]) {
+    const ref = findReference(t);
+    if (ref) problems.push(`The ${where} cites a source ("${ref}"). No books, journals, authors or links.`);
+    if (/[\u2014\u2013]/.test(t)) problems.push(`The ${where} has a long dash; use a comma or colon.`);
   }
   const indian = INDIAN_PLACES.test(d.place);
   if (input.setting === "indian" && !indian) problems.push(`"place" must be an Indian town or city (e.g. "Indore · district hospital OPD").`);

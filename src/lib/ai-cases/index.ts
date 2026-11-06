@@ -17,7 +17,7 @@ import { rateLimit } from "@/lib/rate-limit";
 import { toDailyCase } from "./adapter";
 import { generateAiCase, resolveInput, type ChatFn } from "./generate";
 import { getAiCase, listLiveCases, saveAiCase } from "./store";
-import type { AiCase, AiCaseInput, DailyCaseShape, Difficulty, Setting } from "./types";
+import type { AiCase, AiCaseInput, AiCaseStatus, DailyCaseShape, Difficulty, Setting } from "./types";
 
 export { toDailyCase } from "./adapter";
 export { AI_CASE_LABEL, AI_CASE_NOTE } from "./types";
@@ -46,12 +46,21 @@ function cacheKey(i: AiCaseInput): string {
   return cacheKeyFor("content_generation", `ai-case|${i.dx}|${i.difficulty}|${i.setting}`, "ai-cases");
 }
 
+function idCacheKey(id: string): string {
+  return cacheKeyFor("content_generation", `ai-case-id|${id}`, "ai-cases");
+}
+
+function looksLikeCase(c: unknown): c is AiCase {
+  const x = c as AiCase | null;
+  return !!x && typeof x.id === "string" && Array.isArray(x.clues) && x.clues.length === 6 && typeof x.answer === "string";
+}
+
 async function fromCache(i: AiCaseInput): Promise<AiCase | null> {
   try {
     const hit = await readCached(cacheKey(i));
     if (hit.hit === "none") return null;
-    const c = JSON.parse(hit.text) as AiCase;
-    return c && Array.isArray(c.clues) && c.clues.length === 6 && c.answer === i.dx ? c : null;
+    const c = JSON.parse(hit.text) as unknown;
+    return looksLikeCase(c) && c.answer === i.dx ? c : null;
   } catch {
     return null;
   }
@@ -104,7 +113,9 @@ export async function getAiPracticeCase(opts: AiPracticeOpts = {}): Promise<AiPr
       const res = await generateAiCase(input, opts.chat ?? platformChat);
       if (res.ok) {
         await saveAiCase(res.case, res.provider);
-        void writeCached(cacheKey(input), "content_generation", res.provider, JSON.stringify(res.case));
+        const json = JSON.stringify(res.case);
+        void writeCached(cacheKey(input), "content_generation", res.provider, json);
+        void writeCached(idCacheKey(res.case.id), "content_generation", res.provider, json);
         return wrap(res.case, true);
       }
       console.warn(`[ai-cases] ${input.dx} d${input.difficulty} ${input.setting}: ${res.reason} after ${res.tries} tries: ${res.problems.slice(0, 3).join(" | ")}`);
@@ -117,6 +128,30 @@ export async function getAiPracticeCase(opts: AiPracticeOpts = {}): Promise<AiPr
     ...(opts.topic ? await listLiveCases({ topic: opts.topic }) : []),
   ].filter((c) => !exclude.has(c.id));
   return loose.length ? wrap(pick(loose), false) : null;
+}
+
+/**
+ * One AI case by id, for playing it (a reload, the next move). The table is
+ * the source of truth; the shared cache covers the time before the table
+ * exists. Removed cases can't be played; a flagged one can still be finished.
+ */
+export async function loadAiCase(id: string): Promise<{ case: AiCase; daily: DailyCaseShape; status: AiCaseStatus } | null> {
+  if (!/^ai-[a-z0-9-]{2,80}$/.test(id)) return null;
+  const rec = await getAiCase(id);
+  if (rec) {
+    if (rec.status === "removed") return null;
+    const { status, flags: _flags, ...c } = rec;
+    void _flags;
+    return { case: c, daily: toDailyCase(c), status };
+  }
+  try {
+    const hit = await readCached(idCacheKey(id));
+    if (hit.hit === "none") return null;
+    const c = JSON.parse(hit.text) as unknown;
+    return looksLikeCase(c) && c.id === id ? { case: c, daily: toDailyCase(c), status: "live" } : null;
+  } catch {
+    return null;
+  }
 }
 
 export { flagAiCase, getAiCase, listForReview, setAiCaseStatus } from "./store";
