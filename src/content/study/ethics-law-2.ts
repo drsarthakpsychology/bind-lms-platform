@@ -25,6 +25,47 @@ The **Protection of Children from Sexual Offences Act** protects every person **
 }
 :::
 
+
+:::widget flow
+{
+ "title": "When a child discloses sexual abuse",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "l",
+   "label": "Listen and believe",
+   "detail": "Stay calm. 'Thank you for telling me. It is not your fault.'"
+  },
+  {
+   "id": "n",
+   "label": "No leading questions",
+   "detail": "Let the child tell in their words; do not interview in detail."
+  },
+  {
+   "id": "h",
+   "label": "Be honest about next steps",
+   "detail": "Explain that you must tell people whose job is to keep them safe."
+  },
+  {
+   "id": "r",
+   "label": "Record verbatim",
+   "detail": "Date, time, words used, who was present."
+  },
+  {
+   "id": "p",
+   "label": "Report",
+   "detail": "To the Special Juvenile Police Unit or local police (POCSO section 19); follow institutional procedure."
+  },
+  {
+   "id": "s",
+   "label": "Safety and support",
+   "detail": "Child Welfare Committee if care is needed; trauma-informed support."
+  }
+ ],
+ "caption": "Never confront the alleged abuser. Failure to report is an offence under section 21."
+}
+:::
+
 ### The hard case: adolescents in consensual relationships
 POCSO treats **any** sexual activity with a person under 18 as an offence, regardless of consent. When a 17-year-old tells you she is in a consensual sexual relationship with a 19-year-old, the law still requires reporting. Clinicians and courts have debated this. The Law Commission (Report No. 283, 2023) recommended **against** lowering the age of consent, while suggesting judicial discretion in sentencing for genuine adolescent relationships. In 2022, the Supreme Court held that when a minor seeks a medical termination of pregnancy, the doctor need **not** disclose the minor's identity and personal details in the POCSO report, to protect her access to safe care.
 
@@ -79,6 +120,42 @@ The **Rights of Persons with Disabilities Act 2016** gives effect to the UN Conv
 - **Limited guardianship** (section 14): where a person with disability cannot take legally binding decisions even with support, a court or designated authority can appoint a limited guardian who makes **joint decisions** with the person, respecting their wishes. Plenary (total) guardianship is not the default.
 - **Offences** (section 92): insulting, assaulting, or denying food or fluids to a person with disability, among others, are punishable.
 - **Certification** (sections 57 and 58): by notified medical authorities using notified guidelines; a **Unique Disability ID (UDID) card** is issued nationally.
+
+
+:::widget flow
+{
+ "title": "From impairment to rights under the RPwD Act",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "i",
+   "label": "Impairment",
+   "detail": "For example dyslexia, autism, intellectual disability or chronic mental illness."
+  },
+  {
+   "id": "a",
+   "label": "Assessment",
+   "detail": "Notified tools: IQ and VSMS, ISAA, the SLD battery, IDEAS."
+  },
+  {
+   "id": "c",
+   "label": "Certificate and UDID card",
+   "detail": "Issued by the notified medical authority or board."
+  },
+  {
+   "id": "b",
+   "label": "Benchmark 40 per cent or more",
+   "detail": "Opens reservations in education (5 per cent) and government jobs (4 per cent) and other benefits."
+  },
+  {
+   "id": "r",
+   "label": "Reasonable accommodation",
+   "detail": "Extra time, a scribe, flexible work; a right whatever the percentage."
+  }
+ ],
+ "caption": "The Act follows the social model: disability arises from impairment meeting barriers."
+}
+:::
 
 ### Certification tools you will meet
 | Disability | Common tools under the guidelines |
@@ -140,6 +217,43 @@ Key points:
 ### Intoxication (BNS sections 23 and 24)
 - **Involuntary** intoxication (given without knowledge or against will) that makes a person incapable of knowing the nature or wrongness of the act is a defence.
 - **Voluntary** intoxication is **not** a defence; the law treats the person as having the knowledge they would have had if sober.
+
+
+:::widget flow
+{
+ "title": "Two different legal questions",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "A mentally ill accused"
+  },
+  {
+   "id": "r",
+   "label": "Responsibility at the time of the act (BNS 22)",
+   "parent": "q",
+   "detail": "Could they know the nature of the act, or that it was wrong or contrary to law? Looks back to the offence."
+  },
+  {
+   "id": "f",
+   "label": "Fitness to stand trial now (BNSS 367 to 378)",
+   "parent": "q",
+   "detail": "Can they understand the proceedings and make a defence? Looks at the present."
+  },
+  {
+   "id": "r1",
+   "label": "If not responsible: acquittal, with care",
+   "parent": "r"
+  },
+  {
+   "id": "f1",
+   "label": "If unfit: trial postponed, treatment, resume when fit",
+   "parent": "f"
+  }
+ ],
+ "caption": "Exams often mix these up. One looks back, the other looks at today."
+}
+:::
 
 ### Fitness to stand trial (BNSS sections 367 to 378)
 When an accused person appears to be of **unsound mind or to have an intellectual disability** and so **cannot understand the proceedings or make a defence**:
@@ -229,6 +343,47 @@ Research ethics grew out of terrible abuses:
 - The **Tuskegee syphilis study** (USA, 1932 to 1972): Black men with syphilis were observed without treatment, even after penicillin became available. It led to the **Belmont Report** (1979).
 - In psychology, **Milgram's obedience studies** (1960s), the **Stanford Prison Experiment** (1971) and **Little Albert** (1920) raised questions about deception, distress and the right to withdraw.
 
+
+:::widget flow
+{
+ "title": "How research ethics grew",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "n",
+   "label": "1947: Nuremberg Code",
+   "detail": "After Nazi experiments: voluntary consent is essential."
+  },
+  {
+   "id": "h",
+   "label": "1964: Declaration of Helsinki",
+   "detail": "Ethics committees, vulnerable groups; revised many times, most recently in 2024."
+  },
+  {
+   "id": "t",
+   "label": "1972: Tuskegee exposed",
+   "detail": "Untreated syphilis study revealed in the USA."
+  },
+  {
+   "id": "b",
+   "label": "1979: Belmont Report",
+   "detail": "Respect for persons, beneficence, justice."
+  },
+  {
+   "id": "i",
+   "label": "2017: ICMR guidelines; MHCA section 99",
+   "detail": "India's national guidance, and special consent rules for people with mental illness."
+  },
+  {
+   "id": "d",
+   "label": "2019 and 2023: drug trial rules and data protection",
+   "detail": "New Drugs and Clinical Trials Rules; the Digital Personal Data Protection Act."
+  }
+ ],
+ "caption": "Each rule was written in response to a harm. Press Play and say which harm each one answers."
+}
+:::
+
 ### The key documents
 | Document | Main contribution |
 |---|---|
@@ -314,6 +469,50 @@ Q: Under MHCA section 99, research with a person with mental illness who cannot 
 7. **Consult**: supervisor, senior, ethics committee, legal adviser.
 8. **Decide, act, document and review** the outcome.
 
+
+:::widget flow
+{
+ "title": "The eight-step dilemma model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Identify the problem"
+  },
+  {
+   "id": "2",
+   "label": "Gather facts"
+  },
+  {
+   "id": "3",
+   "label": "Check law and codes"
+  },
+  {
+   "id": "4",
+   "label": "Name the principles in tension"
+  },
+  {
+   "id": "5",
+   "label": "List options",
+   "detail": "Include creative middle paths."
+  },
+  {
+   "id": "6",
+   "label": "Weigh consequences"
+  },
+  {
+   "id": "7",
+   "label": "Consult"
+  },
+  {
+   "id": "8",
+   "label": "Decide, act, document, review"
+  }
+ ],
+ "caption": "Use it on each dilemma below before you choose an answer."
+}
+:::
+
 :::mnemonic "I Give Clear Names, Listing Weighted Choices, Documented"
 **I**dentify, **G**ather facts, **C**heck the rules, **N**ame principles, **L**ist options, **W**eigh consequences, **C**onsult, **D**ecide and document.
 :::
@@ -398,6 +597,52 @@ Q: Using an AI tool to transcribe therapy sessions requires above all:
 ## 3.6 Mental health programmes, policy and the system [core][advanced]
 ### How big is the need?
 The **National Mental Health Survey of India** (2015 to 2016, led by NIMHANS) found that about **1 in 10** adults had a current mental disorder, and the **treatment gap** (people who needed care but did not get it) was very large, between about 70 and over 90 per cent depending on the disorder.
+
+
+:::widget flow
+{
+ "title": "India's mental health programmes over time",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "1982 NMHP",
+   "detail": "Mental health into general health care."
+  },
+  {
+   "id": "b",
+   "label": "1996 DMHP",
+   "detail": "District teams, based on the Bellary model."
+  },
+  {
+   "id": "c",
+   "label": "2014 Mental Health Policy",
+   "detail": "Rights, access, community care."
+  },
+  {
+   "id": "d",
+   "label": "2017 MHCA",
+   "detail": "Rights-based law, in force from 2018."
+  },
+  {
+   "id": "e",
+   "label": "2018 onwards Ayushman Bharat",
+   "detail": "Mental health in primary care centres and insurance packages."
+  },
+  {
+   "id": "f",
+   "label": "2020 Manodarpan",
+   "detail": "Support for students, teachers and families."
+  },
+  {
+   "id": "g",
+   "label": "2022 Tele-MANAS and the National Suicide Prevention Strategy",
+   "detail": "A national tele-mental health service; a target of 10 per cent fewer suicide deaths by 2030."
+  }
+ ],
+ "caption": "Press Play to walk the timeline. Exam questions often ask for years and one aim of each."
+}
+:::
 
 ### Programmes and policies in order
 | Year | Programme or policy | What it did |

@@ -68,6 +68,37 @@ Q: Avoiding a medicine that would be dangerous with a patient's heart condition 
 3. **Voluntariness**: no force, threats or pressure.
 4. **Decision**: the person communicates a choice, and can change their mind.
 
+
+:::widget flow
+{
+ "title": "Valid consent, step by step",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "i",
+   "label": "Information",
+   "detail": "What is proposed, why, benefits, risks, alternatives including doing nothing, in words the person understands."
+  },
+  {
+   "id": "c",
+   "label": "Capacity",
+   "detail": "Can they understand, appreciate consequences and communicate a choice for this decision?"
+  },
+  {
+   "id": "v",
+   "label": "Voluntariness",
+   "detail": "No force, threats or pressure, including from family."
+  },
+  {
+   "id": "d",
+   "label": "Decision",
+   "detail": "A choice is communicated and recorded; it can be changed later."
+  }
+ ],
+ "caption": "If any box fails, the consent is not valid. Which box is most often skipped in a busy OPD? (Usually information about alternatives.)"
+}
+:::
+
 :::mnemonic "I Can Volunteer Decisions"
 **I**nformation, **C**apacity, **V**oluntariness, **D**ecision.
 :::
@@ -77,6 +108,56 @@ Under the Mental Healthcare Act 2017 (section 4), a person has capacity for a de
 - **Understand** the information relevant to the decision.
 - **Appreciate** the reasonably foreseeable consequences of deciding, or not deciding.
 - **Communicate** the decision (by speech, writing, signs or any other way).
+
+
+:::widget flow
+{
+ "title": "Assessing capacity for one decision",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Start: capacity is presumed"
+  },
+  {
+   "id": "sup",
+   "label": "Give support first",
+   "parent": "s",
+   "detail": "Simple language, the person's own language, pictures, time, a trusted person."
+  },
+  {
+   "id": "u",
+   "label": "Can they understand the information?",
+   "parent": "sup"
+  },
+  {
+   "id": "a",
+   "label": "Can they appreciate the consequences for themselves?",
+   "parent": "sup",
+   "detail": "Most affected by delusions about the treatment or deep hopelessness."
+  },
+  {
+   "id": "cm",
+   "label": "Can they communicate a choice?",
+   "parent": "sup",
+   "detail": "By any means: speech, writing, signs."
+  },
+  {
+   "id": "yes",
+   "label": "All three: capacity present",
+   "parent": "a",
+   "detail": "Respect the choice, even if unwise."
+  },
+  {
+   "id": "no",
+   "label": "Any one missing: lacks capacity for this decision now",
+   "parent": "cm",
+   "detail": "Record the evidence; review it, since capacity changes."
+  }
+ ],
+ "caption": "Capacity is decision-specific and time-specific. Tap each branch for what to check."
+}
+:::
 
 ### Five rules about capacity
 1. **Presumed**: every adult is assumed to have capacity unless shown otherwise.
@@ -146,6 +227,51 @@ Even then, share only **what is needed**, with **who needs it**, and **record wh
 Confidentiality is a locked cupboard. The patient holds the main key. A few spare keys exist, held by the law and by the duty to prevent serious harm. You should know exactly which keys exist, use them rarely, open only the shelf that is needed, and write down every time you did.
 :::
 
+
+:::widget flow
+{
+ "title": "Should I share this information?",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "A request or a reason to share"
+  },
+  {
+   "id": "c",
+   "label": "Has the person consented?",
+   "parent": "q",
+   "detail": "If yes, share what they agreed to."
+  },
+  {
+   "id": "t",
+   "label": "Is it within the care team?",
+   "parent": "q",
+   "detail": "Share only what is needed for care."
+  },
+  {
+   "id": "h",
+   "label": "Is someone at serious risk of harm?",
+   "parent": "q",
+   "detail": "Share the minimum needed to prevent it, with those who can act."
+  },
+  {
+   "id": "l",
+   "label": "Does the law require it?",
+   "parent": "q",
+   "detail": "POCSO reporting, a court order, Board or Authority requests."
+  },
+  {
+   "id": "n",
+   "label": "None of these: keep it confidential",
+   "parent": "q",
+   "detail": "Curiosity, gossip and unofficial requests are never reasons."
+  }
+ ],
+ "caption": "Whatever you decide, record what you shared, with whom and why."
+}
+:::
+
 ### Tell people the limits at the start
 At the first meeting, explain in simple words what you will keep private and when you might have to share. Then nothing comes as a betrayal later.
 
@@ -201,6 +327,42 @@ A **boundary** is the edge of the professional role. It keeps the relationship s
 
 ### Dual relationships
 A dual (multiple) relationship is when you have another role with the patient: friend, relative, employer, teacher, landlord. These create conflicts of interest and should be **avoided** where possible. In small towns and close communities, some overlap is unavoidable; then **discuss it, document it, and get supervision**.
+
+
+:::widget flow
+{
+ "title": "The slippery slope from crossing to violation",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Small crossing",
+   "detail": "Running over time for one favourite client."
+  },
+  {
+   "id": "2",
+   "label": "Personal sharing",
+   "detail": "Talking about your own problems."
+  },
+  {
+   "id": "3",
+   "label": "Out-of-hours contact",
+   "detail": "Late-night messages about non-urgent things."
+  },
+  {
+   "id": "4",
+   "label": "Secrecy",
+   "detail": "Not mentioning the relationship in supervision."
+  },
+  {
+   "id": "5",
+   "label": "Violation",
+   "detail": "Exploitation: romance, money, favours."
+  }
+ ],
+ "caption": "Each step feels small. The protection is noticing early and taking it to supervision."
+}
+:::
 
 ### Warning signs of a slippery slope
 - Extending sessions only for one patient.
@@ -568,6 +730,45 @@ The MHCA prefers that people are treated in the **community** and, if admitted, 
 | **Supported admission beyond 30 days** | 90 | Same | Similar criteria, with Board approval | Initially up to 90 days, then up to 120, then 180 days at a time |
 | **Emergency treatment** | 94 | Any registered medical practitioner | To prevent death or irreversible harm, serious harm to self or others, or serious property damage from mental illness; no ECT | Up to 72 hours or until assessed at an establishment |
 
+
+:::widget flow
+{
+ "title": "Which admission route under the MHCA?",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "A person with mental illness may need admission"
+  },
+  {
+   "id": "ad",
+   "label": "Adult with capacity who requests it",
+   "parent": "q",
+   "detail": "Independent admission, section 86. Can leave on request (subject to section 88)."
+  },
+  {
+   "id": "mi",
+   "label": "A minor",
+   "parent": "q",
+   "detail": "Section 87: nominated representative applies; two examinations; separate facilities; attendant; Board informed within 72 hours."
+  },
+  {
+   "id": "sv",
+   "label": "Adult needing very high support, with risk",
+   "parent": "q",
+   "detail": "Supported admission, section 89, up to 30 days; section 90 beyond that with Board approval."
+  },
+  {
+   "id": "em",
+   "label": "An emergency anywhere",
+   "parent": "q",
+   "detail": "Section 94: emergency treatment up to 72 hours by any registered medical practitioner; no ECT."
+  }
+ ],
+ "caption": "Tap each route for the key conditions. Independent admission is always preferred where possible."
+}
+:::
+
 ### During supported admission
 - The **nominated representative** may give temporary consent to the treatment plan if the person needs near-total support.
 - **Capacity is reviewed** at least every seven days; when it returns, the person decides.
@@ -645,6 +846,29 @@ Allowed only with the person's **informed consent** and **approval of the Board*
 
 ### Research (section 99)
 Research involving persons with mental illness needs their **free and informed consent**. If they cannot consent, research may proceed only with permission of the State Mental Health Authority (with conditions) and the consent of the nominated representative, and only if it is not possible to do with people who can consent, and is not against the person's interests (Section 3.4 covers research ethics in detail).
+
+
+:::widget layers
+{
+ "title": "From banned to allowed: treatments under the MHCA",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Prohibited",
+   "detail": "ECT without anaesthesia and muscle relaxant; sterilisation as treatment; chaining; seclusion and solitary confinement."
+  },
+  {
+   "label": "Only with special safeguards",
+   "detail": "ECT for minors (necessity, guardian consent, Board permission); psychosurgery (consent plus Board approval); physical restraint as a last resort, recorded and reported."
+  },
+  {
+   "label": "Usual care with informed consent",
+   "detail": "Medicines, modified ECT for adults, psychological treatment."
+  }
+ ],
+ "caption": "Place any treatment on the right layer before you use it."
+}
+:::
 
 ### Decriminalising suicide attempts (section 115)
 - A person who attempts suicide is **presumed, unless proved otherwise, to have severe stress** and **shall not be tried or punished**.
@@ -724,6 +948,42 @@ India has no Tarasoff-type judgment, but **MHCA section 23** allows release of i
 }
 :::
 
+
+:::widget flow
+{
+ "title": "Five steps when someone may be in danger",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Assess",
+   "detail": "Specific victim? Plan? Means? Deadline? History of violence?"
+  },
+  {
+   "id": "c",
+   "label": "Consult",
+   "detail": "A senior or supervisor, and write it down."
+  },
+  {
+   "id": "w",
+   "label": "Work with the patient",
+   "detail": "Can they agree to steps that reduce risk, such as giving up a weapon?"
+  },
+  {
+   "id": "p",
+   "label": "Act proportionately",
+   "detail": "Intensify care, involve family, warn the person at risk or inform police, sharing only what is needed."
+  },
+  {
+   "id": "d",
+   "label": "Document",
+   "detail": "Reasoning, actions, what was shared and with whom."
+  }
+ ],
+ "caption": "This is how the duty to protect is met in practice, within MHCA section 23."
+}
+:::
+
 ### Families, couples and children
 - **Families**: in India, families often expect to be told everything. With an adult patient, you need **consent** to share; you can still **listen** to the family and give general information about the illness without disclosing personal details.
 - **Couples therapy**: agree at the start how "secrets" will be handled.
@@ -779,6 +1039,49 @@ The **RCI Act 1992** set up the Rehabilitation Council of India to regulate the 
 
 :::trap Not every psychologist is a "clinical psychologist"
 An MA in psychology, a counselling diploma, or an online certificate does **not** make someone a clinical psychologist in India. Only RCI-registered professionals with the recognised qualification may use the title and do work reserved to them, such as clinical diagnostic assessment and certification. Counselling psychologists and others work within their competence and are not currently registered by RCI.
+:::
+
+
+:::widget flow
+{
+ "title": "Routes to becoming a clinical psychologist in India",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "u",
+   "label": "Undergraduate psychology"
+  },
+  {
+   "id": "b",
+   "label": "Four-year BA or BSc in psychology (or BSc Clinical Psychology, now B.Clin.Psy)",
+   "parent": "u"
+  },
+  {
+   "id": "m",
+   "label": "Master in Clinical Psychology (M.Clin.Psy), two years, RCI-recognised",
+   "parent": "b",
+   "detail": "Formerly the MA Clinical Psychology, which replaced the MPhil Clinical Psychology after the National Education Policy 2020; renamed by RCI on 3 May 2026."
+  },
+  {
+   "id": "pg",
+   "label": "Postgraduate psychology (MA or MSc)",
+   "parent": "u"
+  },
+  {
+   "id": "psyd",
+   "label": "PsyD in Clinical Psychology, RCI-recognised",
+   "parent": "pg",
+   "detail": "A professional doctorate at a few institutions."
+  },
+  {
+   "id": "r",
+   "label": "RCI registration (CRR number)",
+   "parent": "m",
+   "detail": "Required to practise as and be called a clinical psychologist; renewed with continuing education."
+  }
+ ],
+ "caption": "Older clinicians trained through the MPhil route remain registered. Check RCI notices for the latest rules."
+}
 :::
 
 ### Codes of ethics you should know
