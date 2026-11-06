@@ -52,12 +52,20 @@ export function describePath(path: string, lessonTitles: Map<string, string>): s
     [/^\/practice\/consulting-room/, "Consulting Room"],
     [/^\/practice\/mse/, "MSE practice"],
     [/^\/practice\/medicines/, "Medicines"],
+    [/^\/practice\/leaderboard/, "Rankings"],
     [/^\/practice/, "Practice"],
     [/^\/tools\/psychopharm/, "Medicines library"],
     [/^\/notifications/, "Notifications"],
     [/^\/wall/, "Wall"],
     [/^\/reflect/, "Journal"],
     [/^\/settings/, "Settings"],
+    [/^\/study/, "Notes"],
+    [/^\/games\/leaderboard/, "Quiz leaderboard"],
+    [/^\/games/, "Games"],
+    [/^\/doubts/, "Doubts"],
+    [/^\/journey|^\/passport|^\/record/, "My journey"],
+    [/^\/leaderboard/, "Leaderboard"],
+    [/^\/today/, "Today"],
   ];
   return table.find(([re]) => re.test(path))?.[1] ?? path;
 }

@@ -42,7 +42,7 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
 
   return (
     <div className="space-y-6">
-      <PageHeader eyebrow="Credentials" title="Find & issue" description="Search a student by roll number, name or email to see and manage everything they've earned, or design a certificate for them." />
+      <PageHeader title="Find & issue" description="Search a student by roll number, name or email to see and manage everything they've earned, or design a certificate for them." />
       <form action="/admin/credentials" className="relative">
         <Search className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
         <label className="sr-only" htmlFor="cred-q">Roll number, name or email</label>

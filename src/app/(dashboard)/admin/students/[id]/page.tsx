@@ -311,7 +311,7 @@ async function ActivityTab({ id }: { id: string }) {
                     <Icon className={cn("mt-0.5 size-4 shrink-0", e.kind === "check-missed" ? "text-status-alert-fg" : "text-link")} aria-hidden />
                     <span className="min-w-0 flex-1">
                       <span className="block font-semibold break-words">{e.text}</span>
-                      <span className="block text-caption text-muted-foreground">{when(e.at)}{e.detail ? ` · ${e.detail}` : ""}</span>
+                      <span className="block text-caption text-muted-foreground">{e.kind === "learn" ? new Date(e.at).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" }) : when(e.at)}{e.detail ? ` · ${e.detail}` : ""}</span>
                     </span>
                   </li>
                 );

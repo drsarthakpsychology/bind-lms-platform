@@ -105,7 +105,7 @@ export function FailedList({ items, canWrite }: { items: FailedItem[]; canWrite:
       </ul>
 
       {canWrite ? (
-        <div className="sticky top-16 z-10 flex flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur">
+        <div className="z-10 flex lg:sticky lg:top-16 flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur">
           <label className="flex h-9 items-center gap-2 px-2 text-sm font-semibold">
             <input type="checkbox" className="size-4 accent-primary" checked={all} onChange={() => setPicked(all ? new Set() : new Set(items.map((i) => i.id)))} aria-label="Tick all" />
             {picked.size ? `${picked.size} ticked` : "Tick all"}

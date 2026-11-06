@@ -45,7 +45,7 @@ export default async function AdminDoubtsPage({ searchParams }: { searchParams: 
 
   return (
     <div className="space-y-6">
-      <PageHeader eyebrow="Review" title="Doubts & concerns" description="Reply to students. Private concerns are seen only by the student and the VIBHA team." />
+      <PageHeader title="Doubts & concerns" description="Reply to students. Private concerns are seen only by the student and the VIBHA team." />
       <nav aria-label="Views" className="flex flex-wrap gap-1 rounded-2xl border-2 border-foreground bg-card p-1">
         {VIEWS.map((v) => {
           const n = v.id === "concerns" ? concerns.length : v.id === "open" ? open.length : null;

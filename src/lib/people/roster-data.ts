@@ -128,7 +128,8 @@ export const loadRoster = cache(async (): Promise<Roster> => {
       );
       const row: RosterRow = {
         id,
-        name: a?.name ?? (String(p.name ?? "").trim() || email.split("@")[0]),
+        // Admins see full names (the student boards use "Aanya S.").
+        name: String(p.name ?? "").trim() || a?.name || email.split("@")[0],
         email,
         roll: (p.roll_number as string | null) ?? null,
         mobile: (p.mobile_number as string | null) ?? null,

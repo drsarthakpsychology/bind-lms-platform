@@ -56,7 +56,7 @@ export default async function ActivityPage({ searchParams }: { searchParams: Pro
 
   return (
     <div className="min-w-0 space-y-6">
-      <PageHeader eyebrow="Activity" title="Student activity" description="What students are doing on VIBHA. Only real signals: the page heartbeat and the lecture player." />
+      <PageHeader title="Student activity" description="What students are doing on VIBHA. Only real signals: the page heartbeat and the lecture player." />
       {tabs}
       {view === "live" ? <LiveView rows={rows} byId={byId} /> : null}
       {view === "cohorts" ? <CohortsView rows={rows} cohorts={cohorts} /> : null}

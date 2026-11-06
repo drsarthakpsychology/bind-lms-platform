@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, BookOpen, Gamepad2, Home, Inbox, Mail, Menu, MessageSquare, Play, Stethoscope, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
+import { Activity, Bell, BookOpen, Gamepad2, Home, Mail, Menu, MessageSquare, Play, Stethoscope, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { blockedBy } from "@/lib/access/features";
@@ -33,9 +33,10 @@ const GAMES_TAB: Tab = { href: "/games", label: "Games", icon: Gamepad2 };
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
   { href: "/admin", label: "Home", icon: Home, exact: true },
-  { href: "/admin/emails", label: "Mail", icon: Mail },
-  { href: "/admin/people", label: "People", icon: Users, match: ["/admin/students", "/admin/activity", "/admin/enquiries", "/admin/pulse", "/admin/checkins", "/admin/roster"] },
-  { href: "/admin/triage", label: "Review", icon: Inbox, match: ["/admin/submissions", "/admin/sim-review", "/admin/supervision", "/admin/wall-reports"] },
+  // Phone tabs follow the 2026-11 admin menu: Students, Activity, Messages, and More for the rest.
+  { href: "/admin/students", label: "Students", icon: Users, match: ["/admin/access", "/admin/roster", "/admin/cohorts"] },
+  { href: "/admin/activity", label: "Activity", icon: Activity, match: ["/admin/pulse", "/admin/learning", "/admin/checkins"] },
+  { href: "/admin/emails", label: "Messages", icon: Mail },
 ];
 
 /** Lecture roster: lectures, practice and alerts. */

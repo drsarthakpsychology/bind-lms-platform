@@ -59,7 +59,6 @@ export default async function AdminEnquiriesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Pipeline"
         title="Enquiry forms"
         description={`People who filled the form on the public site. ${rows.length} total · ${todayCount} today · ${fresh.length} not yet students.`}
       />

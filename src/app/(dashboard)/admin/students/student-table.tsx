@@ -197,7 +197,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
       </div>
 
       {/* Bulk bar */}
-      <div className="sticky top-16 z-10 flex flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur">
+      <div className="z-10 flex flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur lg:sticky lg:top-16">
         <label className="flex h-9 items-center gap-2 px-2 text-sm font-semibold">
           <input
             type="checkbox"
@@ -219,15 +219,17 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
             <Button size="sm" variant="outline" disabled={!picked.size || Boolean(busy)} onClick={() => bulk("unlock")}>
               {busy === "unlock" ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Unlock className="size-4" aria-hidden />} Unlock
             </Button>
-            <Button size="sm" variant="outline" disabled={!picked.size} asChild={picked.size > 0}>
-              {picked.size ? (
+            {picked.size ? (
+              <Button size="sm" variant="outline" asChild>
                 <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(pickedRows.map((r) => r.email).join(","))}`}>
                   <MessageSquare className="size-4" aria-hidden /> Message
                 </Link>
-              ) : (
-                <span><MessageSquare className="size-4" aria-hidden /> Message</span>
-              )}
-            </Button>
+              </Button>
+            ) : (
+              <Button size="sm" variant="outline" disabled>
+                <MessageSquare className="size-4" aria-hidden /> Message
+              </Button>
+            )}
           </>
         ) : null}
         <Button size="sm" variant="secondary" onClick={download} className="ml-auto">

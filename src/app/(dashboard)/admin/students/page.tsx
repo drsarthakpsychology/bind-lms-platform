@@ -30,7 +30,6 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Students"
         title="All students"
         description={`${rows.length} students · ${active} have signed in · ${onNow} on VIBHA right now · ${attention} need attention`}
         actions={
