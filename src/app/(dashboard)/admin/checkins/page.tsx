@@ -52,8 +52,9 @@ export default async function AdminCheckinsPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Cohort check-ins"
-        description="Weekly workload / energy / preparedness, aggregated. No student identifiers — trends only."
+        eyebrow="Activity"
+        title="Wellbeing check-ins"
+        description="What this is: once a week students can answer three quick questions — how heavy the workload felt, their energy, and how prepared they feel. You only ever see the cohort's averages, never who said what. Use it to spot a week that was too heavy and ease the next one."
       />
 
       {aggregate.length === 0 ? (

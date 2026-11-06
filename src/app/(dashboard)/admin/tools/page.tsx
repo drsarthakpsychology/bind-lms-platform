@@ -1,17 +1,13 @@
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
-import { CalendarDays, Upload } from "lucide-react";
+import Link from "next/link";
 import { PageHeader } from "@/components/design-system/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMaster } from "@/lib/auth/master";
-import { BulkImportForm } from "./bulk-import-form";
-import { CohortCalendarForm } from "./cohort-calendar-form";
 import { MasterPasswordCard } from "./master-password";
 
 export const dynamic = "force-dynamic";
 
-// Note: no <Link> here — the calendar card is a form now (cohort-calendar-form.tsx).
 
 export default async function AdminToolsPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
@@ -25,55 +21,20 @@ export default async function AdminToolsPage() {
   const uses = (events ?? []).map((e) => ({ email: String(e.email), at: String(e.created_at) }));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <PageHeader
-        title="Admin tools"
-        description="Automations that save you the weekend work."
+        title="Support key"
+        description="A key you set that lets you sign in as a student to help them. Only works for student accounts, and every use is recorded."
       />
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Upload className="size-4 text-link" aria-hidden />
-              Bulk student import
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-3 text-small text-muted-foreground">
-              Upload a CSV with headers <code>name,email</code>. Creates accounts —
-              re-uploading skips existing emails — and sends a welcome email when
-              email is set up.
-            </p>
-            <BulkImportForm />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <CalendarDays className="size-4 text-link" aria-hidden />
-              Cohort calendar
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-small text-muted-foreground">
-              Generate the whole session schedule from a start date and weekly
-              pattern, instead of entering every date by hand.
-            </p>
-            <CohortCalendarForm />
-          </CardContent>
-        </Card>
-
-        <Card className="lg:col-span-2">
-          <CardContent className="pt-6">
-            <MasterPasswordCard
-              state={{ ready, set: Boolean(setting), enabled: Boolean(setting?.enabled), updatedAt: setting?.updatedAt ?? null }}
-              uses={uses}
-            />
-          </CardContent>
-        </Card>
+      <div className="rounded-2xl border-2 border-foreground bg-card p-4 sm:p-6">
+        <MasterPasswordCard
+          state={{ ready, set: Boolean(setting), enabled: Boolean(setting?.enabled), updatedAt: setting?.updatedAt ?? null }}
+          uses={uses}
+        />
       </div>
+      <p className="text-caption text-muted-foreground">
+        Moved: bulk student import is now in <Link href="/admin/students/add?way=file" className="font-bold underline">Students → Add students → Upload a file</Link>; the session calendar is in each cohort&apos;s <Link href="/admin/cohorts" className="font-bold underline">Settings</Link> tab.
+      </p>
     </div>
   );
 }

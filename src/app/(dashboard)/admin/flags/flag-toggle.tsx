@@ -50,9 +50,12 @@ export function FlagToggle({
   status,
   enabled,
   liveForCohortOne,
+  description,
 }: {
   flagKey: string;
   label: string;
+  /** One line on what the tool is, so the switch makes sense. */
+  description?: string;
   status?: string;
   enabled?: boolean;
   liveForCohortOne?: boolean;
@@ -88,9 +91,12 @@ export function FlagToggle({
   }
 
   return (
-    <div className="rounded-lg border-2 border-border bg-card px-4 py-3">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-small font-medium">{label}</p>
+    <div className="flex h-full flex-col rounded-2xl border-2 border-foreground bg-card px-4 py-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-sm font-bold">{label}</p>
+          {description ? <p className="mt-0.5 text-caption text-muted-foreground">{description}</p> : null}
+        </div>
         <span
           className={cn(
             "inline-flex shrink-0 items-center rounded-md border-2 border-border px-2 py-0.5 text-caption font-semibold hard-shadow-flat",
@@ -106,7 +112,7 @@ export function FlagToggle({
         onValueChange={(next) => void handleChange(next)}
         options={OPTIONS}
         label={`${label} status`}
-        className="mt-3 w-full [&>button]:flex-1"
+        className="mt-auto w-full pt-3 [&>button]:flex-1"
       />
 
       {error && !busy && (

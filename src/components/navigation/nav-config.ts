@@ -123,7 +123,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
-      // Study cards = the review queue for the students' Rounds flash cards.
+
       // Not an admin job day to day: reachable from What's live → Rounds.
       { href: "/admin/cards", label: "Rounds cards", hidden: true },
       { href: "/admin/idioms", label: "Idioms", hidden: true },

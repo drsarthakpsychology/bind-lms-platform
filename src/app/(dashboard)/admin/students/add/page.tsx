@@ -69,7 +69,7 @@ export default async function AddStudentsPage({ searchParams }: { searchParams: 
               <>
                 <h2 className="mb-1 flex items-center gap-2 text-h3 font-bold"><UserPlus className="size-5 text-link" aria-hidden /> Type or paste emails</h2>
                 <p className="mb-4 text-small text-muted-foreground">One per line, or separated by commas. People who already have an account are just added to the cohort.</p>
-                <AddPeopleForm cohorts={opts} defaultCohortId={sp.cohort} />
+                <AddPeopleForm cohorts={opts} defaultCohortId={sp.cohort} initialText={sp.email ?? ""} />
               </>
             ) : (
               <>

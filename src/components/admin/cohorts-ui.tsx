@@ -86,10 +86,10 @@ const OUTCOME: Record<AddRow["outcome"], string> = {
   failed: "Not added",
 };
 
-export function AddPeopleForm({ cohorts, defaultCohortId }: { cohorts: CohortOpt[]; defaultCohortId?: string }) {
+export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { cohorts: CohortOpt[]; defaultCohortId?: string; initialText?: string }) {
   const router = useRouter();
   const [pending, start] = React.useTransition();
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState(initialText);
   const [cohortId, setCohortId] = React.useState(defaultCohortId ?? cohorts[cohorts.length - 1]?.id ?? "");
   const [scope, setScope] = React.useState<"full" | "lectures_only">("full");
   const [mail, setMail] = React.useState(true);

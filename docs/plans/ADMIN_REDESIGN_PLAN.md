@@ -45,7 +45,7 @@
 | **Activity** | Live · Cohorts · Falling behind · Learning insights · Wellbeing (anonymous check-ins) | |
 | **Pipeline** | Everyone · Enquiries · Follow-up due · No reply · Joined | enquiries page folded in (old URL redirects) |
 | **Messages** | Inbox · Compose email · Notifications · Sent · Failed | "Logins" folder moves to Students (old link redirects) |
-| **Content** | Courses & lectures · What's live · Medicines | Study cards leave the menu (page kept, linked from What's live → Rounds) |
+| **Content** | Courses & lectures · What's live · Medicines | Study cards leave the menu (it is the review queue for Rounds, which is already retired; page kept, linked at the foot of What's live) |
 | **Review** | Needs a look · Submissions · Doubts (reply only) · Sign-offs · Wall reports (only when something is reported) | Practice sessions folded into "Needs a look" |
 | **Credentials** | Find by roll number · Issue certificate · Badges & templates | |
 | **System** | Usage & limits (with provider detail) · Admin management · Support key | bulk import → Students; cohort calendar → Cohort settings |

@@ -21,7 +21,7 @@ export default async function LearningInsightsPage() {
 
   return (
     <div className="min-w-0">
-      <PageHeader eyebrow="People" title="Learning insights" description="How the class is doing with self-study." />
+      <PageHeader eyebrow="Activity" title="Learning insights" description="Each student's self-study: which Notes modules they finished, test scores, what they mix up, and who has gone quiet." />
       {!res.ok ? (
         <p className="rounded-2xl border-2 border-foreground bg-card p-4 text-sm">
           Learning data could not be loaded right now. Please try again in a few minutes.

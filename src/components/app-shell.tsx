@@ -59,7 +59,7 @@ export function AppShell({
         Skip to content
       </a>
       {/* Search palette — opens from the top bar, ⌘K or "/". */}
-      <PaletteHost />
+      <PaletteHost isAdmin={isAdminView} />
 
       <TopBar
         homeHref={isAdminView ? "/admin" : "/dashboard"}
