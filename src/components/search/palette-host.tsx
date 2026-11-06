@@ -1,5 +1,6 @@
 import { getLibraryDocs } from "@/lib/corpus/library";
-import { STATIC_ENTRIES, type PaletteEntry } from "@/lib/search/palette";
+import { STATIC_ENTRIES, referencePaletteEntries, type PaletteEntry } from "@/lib/search/palette";
+import { referenceIndex } from "@/lib/reference/data";
 import { CommandPalette } from "./command-palette";
 import { createAdminClient } from "@/lib/supabase/server";
 
@@ -22,7 +23,14 @@ export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
 
   const studentEntries: PaletteEntry[] = isAdmin ? await studentPaletteEntries() : [];
 
-  return <CommandPalette entries={[...STATIC_ENTRIES, ...studentEntries, ...caseEntries]} />;
+  let referenceEntries: PaletteEntry[] = [];
+  try {
+    referenceEntries = referencePaletteEntries(referenceIndex({ full: false }));
+  } catch {
+    referenceEntries = []; // search still works without the Quick Reference
+  }
+
+  return <CommandPalette entries={[...STATIC_ENTRIES, ...studentEntries, ...referenceEntries, ...caseEntries]} />;
 }
 
 /**
