@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Check, Loader2, Mail, Minus, Plus, Settings2, UserMinus, X } from "lucide-react";
 import {
-  addPeopleToCohort,
+  addPeopleFromPaste,
   createCohort,
   reopenDetails,
   removeFromCohort,
@@ -18,6 +18,8 @@ import {
   updateCohort,
   type AddRow,
 } from "@/app/(dashboard)/admin/cohorts/actions";
+import { pasteCount } from "@/app/(dashboard)/admin/students/people-paste";
+import type { NameMatch } from "@/app/(dashboard)/admin/students/people-paste";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -86,7 +88,26 @@ const OUTCOME: Record<AddRow["outcome"], string> = {
   failed: "Not added",
 };
 
-export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { cohorts: CohortOpt[]; defaultCohortId?: string; initialText?: string }) {
+/**
+ * THE add-people form (Students → Add, the cohort page, and the Add people
+ * panel reachable from anywhere). Paste names or emails → pick a cohort →
+ * tick "send login email" → done. `pickCohort` shows the cohort picker even
+ * when a default cohort is set (the panel preselects the page's cohort).
+ */
+export function AddPeopleForm({
+  cohorts,
+  defaultCohortId,
+  initialText = "",
+  pickCohort = false,
+  idPrefix = "add",
+}: {
+  cohorts: CohortOpt[];
+  defaultCohortId?: string;
+  initialText?: string;
+  pickCohort?: boolean;
+  /** Unique ids when two forms can be on one page (the panel over the cohort page). */
+  idPrefix?: string;
+}) {
   const router = useRouter();
   const [pending, start] = React.useTransition();
   const [text, setText] = React.useState(initialText);
@@ -95,7 +116,8 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
   const [mail, setMail] = React.useState(true);
   const [rows, setRows] = React.useState<AddRow[] | null>(null);
   const [invalid, setInvalid] = React.useState<string[]>([]);
-  const count = text.split(/[\s,;]+/).filter((x) => x.includes("@")).length;
+  const [unmatched, setUnmatched] = React.useState<NameMatch[]>([]);
+  const count = pasteCount(text);
 
   if (!cohorts.length) return <p className="text-sm text-muted-foreground">Create a cohort first.</p>;
 
@@ -106,8 +128,12 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
         onSubmit={(e) => {
           e.preventDefault();
           start(async () => {
-            const r = await addPeopleToCohort(cohortId, text, { sendEmail: mail, scope });
-            if (r.error) return void toast.error(r.error);
+            const r = await addPeopleFromPaste(cohortId, text, { sendEmail: mail, scope });
+            setUnmatched(r.unmatched);
+            if (r.error) {
+              setRows(r.unmatched.length ? [] : null);
+              return void toast.error(r.error);
+            }
             setRows(r.rows);
             setInvalid(r.invalid);
             const ok = r.rows.filter((x) => x.outcome !== "failed").length;
@@ -118,21 +144,21 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
         }}
       >
         <div className="space-y-1.5">
-          <Label htmlFor="emails">Emails</Label>
+          <Label htmlFor={`${idPrefix}-emails`}>Names or emails</Label>
           <Textarea
-            id="emails"
+            id={`${idPrefix}-emails`}
             rows={4}
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder={"one@gmail.com\ntwo@gmail.com, three@outlook.com"}
+            placeholder={"priya@gmail.com\nAarav Mehta\nneha@outlook.com"}
             className="font-mono text-sm"
           />
-          <p className="text-caption text-muted-foreground">Paste one or many. Commas, spaces or new lines all work.</p>
+          <p className="text-caption text-muted-foreground">One per line or comma-separated. New people need an email; names find people already on VIBHA.</p>
         </div>
-        {!defaultCohortId ? (
+        {!defaultCohortId || pickCohort ? (
           <div className="space-y-1.5">
-            <Label htmlFor="add-cohort">Cohort</Label>
-            <select id="add-cohort" className={field} value={cohortId} onChange={(e) => setCohortId(e.target.value)}>
+            <Label htmlFor={`${idPrefix}-cohort`}>Cohort</Label>
+            <select id={`${idPrefix}-cohort`} className={field} value={cohortId} onChange={(e) => setCohortId(e.target.value)}>
               {cohorts.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
@@ -155,16 +181,16 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
                 type="button"
                 onClick={() => setScope(v)}
                 aria-pressed={scope === v}
-                className={cn("h-10 rounded-xl border-2 border-foreground text-sm font-semibold", scope === v ? "bg-foreground text-background" : "bg-card")}
+                className={cn("h-10 rounded-md border-2 border-foreground text-sm font-semibold pointer-coarse:h-11", scope === v ? "bg-foreground text-background" : "bg-card")}
               >
                 {l}
               </button>
             ))}
           </div>
         </fieldset>
-        <label className="flex items-center gap-2 text-sm font-medium">
-          <input type="checkbox" className="size-4 accent-[#1d44d8]" checked={mail} onChange={(e) => setMail(e.target.checked)} />
-          Email them their login link now
+        <label className="flex min-h-11 items-center gap-2 text-sm font-medium">
+          <input type="checkbox" className="size-5 accent-[#1d44d8]" checked={mail} onChange={(e) => setMail(e.target.checked)} />
+          Send login email now
         </label>
         <Button type="submit" disabled={pending || !count}>
           {pending ? <Loader2 className="animate-spin" aria-hidden /> : <Plus aria-hidden />}
@@ -174,7 +200,7 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
 
       {rows ? (
         <div className="rounded-2xl border-2 border-foreground bg-card p-3" role="status">
-          <p className="text-sm font-bold">Done</p>
+          <p className="text-sm font-bold">{rows.length ? "Done" : "Nothing added"}</p>
           <ul className="mt-2 max-h-72 space-y-1 overflow-y-auto text-sm">
             {rows.map((r) => (
               <li key={r.email} className="flex flex-wrap items-center gap-x-2 border-b border-foreground/10 py-1.5 last:border-0">
@@ -189,6 +215,18 @@ export function AddPeopleForm({ cohorts, defaultCohortId, initialText = "" }: { 
             ))}
           </ul>
           {invalid.length ? <p className="mt-2 text-caption text-destructive">Skipped (not emails): {invalid.join(", ")}</p> : null}
+          {unmatched.length ? (
+            <div className="mt-2 text-caption">
+              <p className="font-semibold text-destructive">Not added. Paste their email instead:</p>
+              <ul className="mt-1 list-disc pl-5">
+                {unmatched.map((u) => (
+                  <li key={u.name}>
+                    {u.name} <span className="text-muted-foreground">({u.reason === "more-than-one" ? "more than one person has this name" : "no one on VIBHA has this name"})</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </div>

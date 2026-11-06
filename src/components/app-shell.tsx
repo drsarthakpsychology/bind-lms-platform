@@ -10,6 +10,7 @@ import { STUDENT_ITEMS, ADMIN_ITEMS, LECTURE_ONLY_ITEMS, withStudy, withoutBlock
 import { PaletteHost } from "@/components/search/palette-host";
 import { InboxBadge } from "@/components/admin/inbox-badge";
 import { InboxLink } from "@/components/navigation/inbox-link";
+import { AddPeopleHost } from "@/components/admin/add-people-host";
 
 /**
  * Application shell — the layout people already know from YouTube:
@@ -64,6 +65,12 @@ export function AppShell({
       <React.Suspense fallback={null}>
         <PaletteHost isAdmin={isAdminView} />
       </React.Suspense>
+      {/* Add people panel — one panel, opened from the palette, Home, Students and cohorts. */}
+      {isAdminView ? (
+        <React.Suspense fallback={null}>
+          <AddPeopleHost />
+        </React.Suspense>
+      ) : null}
 
       <TopBar
         homeHref={isAdminView ? "/admin" : "/dashboard"}

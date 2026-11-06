@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
-import { Bell, ChevronLeft, Mail, MessageCircleQuestion, PlayCircle, UserPlus } from "lucide-react";
+import { Bell, ChevronLeft, Mail, MessageCircleQuestion, PlayCircle } from "lucide-react";
 import { loadAllLessons, loadCohort, loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { loadRoster } from "@/lib/people/roster-data";
 import { ACCOUNT_LABEL, ACCOUNT_TONE } from "@/lib/people/account-status";
 import { isBehind } from "@/lib/people/attention";
 import { agoLabel } from "@/lib/analytics/timeline";
+import { AddPeopleButton } from "@/components/admin/add-people-panel";
 import { AddPeopleForm, CohortSettings, LessonSharing, MemberActions } from "@/components/admin/cohorts-ui";
 import { CohortCalendarForm } from "../../tools/cohort-calendar-form";
 import { Badge } from "@/components/ui/badge";
@@ -74,7 +75,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
         </div>
         {canWrite ? (
           <div className="flex flex-wrap gap-2">
-            <Link href={`/admin/students/add?cohort=${id}`} className={cn(pill, "bg-primary text-primary-foreground")}><UserPlus className="size-4" aria-hidden /> Add people</Link>
+            <AddPeopleButton cohortId={id} size="default" />
             <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(emails)}`} className={cn(pill, "bg-card")}><Bell className="size-4" aria-hidden /> Message cohort</Link>
           </div>
         ) : null}
