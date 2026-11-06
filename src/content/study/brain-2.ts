@@ -696,5 +696,39 @@ Q: Xanomeline-trospium is notable because it:
 - Is an NMDA antagonist for depression
 - Is a GABA-A modulator for postpartum depression
 > Approved in the US in 2024, a new mechanism.
+Q: Vasopressin (ADH) is released from the:
+- Anterior pituitary
+- *Posterior pituitary
+- Adrenal medulla
+- Pineal gland
+> Made in the hypothalamus and released from the posterior pituitary.
+
+Q: Ghrelin is best described as a:
+- Fullness hormone from fat
+- *Hunger hormone from the stomach
+- Thyroid hormone
+- Sex hormone
+> It rises before meals.
+
+Q: A split-brain patient's left hemisphere invents a reason for an action started by the right hemisphere. This illustrates:
+- The Wada test
+- *The left-hemisphere interpreter
+- Dichotic listening
+- Anosognosia from parietal stroke
+> Gazzaniga's interpreter.
+
+Q: In twin studies, the influence that makes siblings different from each other is called:
+- Additive genetics
+- Shared environment
+- *Unique (non-shared) environment
+- Assortative mating
+> E in the ACE model.
+
+Q: Children of mothers with schizophrenia adopted at birth into healthy families still showed raised risk. This came from:
+- Twin studies
+- *Adoption studies
+- Family studies alone
+- Linkage studies
+> Heston's adoption study.
 :::
 `;

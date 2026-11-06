@@ -943,7 +943,220 @@ Q: A woman on lithium develops diarrhoea and vomiting during a heatwave and beco
 > Dehydration raises lithium levels; this is an emergency.
 :::
 
-## 2.7 Level check · Beginner [core][beginner]
+## 2.7 Hormones and drives: the endocrine system, hunger, thirst and sex [core][beginner]
+### The endocrine system
+Glands release **hormones** into the blood. Most are controlled from the brain through the **hypothalamus** and the **pituitary**, and most switch themselves off by **negative feedback** (like a thermostat).
+
+| Gland | Main hormones | What they do | Link to mental health |
+|---|---|---|---|
+| **Hypothalamus** | Releasing hormones (CRH, TRH, GnRH), dopamine | Commands the pituitary | Stress, appetite, sleep, sex drive |
+| **Anterior pituitary** | ACTH, TSH, FSH, LH, growth hormone, prolactin | Controls other glands | Raised prolactin from antipsychotics |
+| **Posterior pituitary** | Oxytocin, vasopressin (ADH) | Bonding and labour; water balance | Low sodium with some medicines |
+| **Thyroid** | Thyroxine (T4) and T3 | Energy and metabolism | Low: mimics depression; high: mimics anxiety or mania; lithium can lower it |
+| **Parathyroid** | Parathyroid hormone | Calcium | High calcium causes low mood and confusion ("stones, bones, groans and psychic moans") |
+| **Adrenal cortex** | Cortisol, aldosterone | Stress, blood sugar, salt | Cushing's: depression, psychosis; Addison's: fatigue, low mood |
+| **Adrenal medulla** | Adrenaline, noradrenaline | Fight or flight | Panic-like episodes in rare tumours (phaeochromocytoma) |
+| **Pancreas** | Insulin, glucagon | Blood sugar | Low sugar mimics anxiety; antipsychotics raise diabetes risk |
+| **Pineal** | Melatonin | Signals night | Sleep timing |
+| **Gonads** | Testosterone, oestrogen, progesterone | Sexual development and drive | Mood changes around periods, pregnancy, menopause |
+
+### Hunger: what tells us to eat and to stop
+Older textbooks describe two "centres": damage to the **lateral hypothalamus** makes animals stop eating, and damage to the **ventromedial hypothalamus** makes them overeat. The modern picture is a balance of signals arriving at the **arcuate nucleus** of the hypothalamus:
+- **Hunger signals**: **ghrelin** from the empty stomach (short-term), low blood sugar, and hunger neurons using neuropeptide Y.
+- **Fullness signals**: stretch of the stomach, gut hormones (**CCK**, **PYY**, **GLP-1**) after a meal, **insulin**, and **leptin** from fat cells (long-term: "we have enough stored").
+- **Reward**: the dopamine system makes tasty food attractive even when we are full ("hedonic" eating).
+
+:::example From a hormone to a medicine
+GLP-1 is a fullness hormone from the gut. Medicines that copy it (semaglutide, liraglutide, tirzepatide) reduce appetite and cause large weight loss. Psychiatrists now study them for antipsychotic weight gain and, in research, for alcohol and other cravings (see the Frontiers module).
+:::
+
+### Thirst: two kinds
+- **Osmotic thirst**: when the blood becomes too salty (after a salty meal or sweating), sensors in the hypothalamus detect it, trigger thirst, and release **vasopressin (ADH)** so the kidneys keep water.
+- **Volume (hypovolaemic) thirst**: when blood volume falls (bleeding, vomiting, diarrhoea), the kidneys release renin, producing **angiotensin II**, which triggers thirst and salt craving.
+
+:::safety Water and salt problems in psychiatry
+- **Psychogenic polydipsia**: some people with chronic schizophrenia drink huge amounts of water, which can dilute blood sodium and cause confusion and seizures.
+- **Lithium** can stop the kidneys responding to vasopressin, causing great thirst and passing large volumes of urine.
+- **SSRIs, carbamazepine and oxcarbazepine** can cause low sodium, especially in older adults: watch for confusion, falls and headache.
+:::
+
+### Sex: hormones, brain and response
+- **Organising effects**: before birth, a gene on the Y chromosome (SRY) leads to testes, and their testosterone shapes body and some brain structures. **Activating effects**: at puberty and in adult life, hormones switch on sexual behaviour.
+- **Testosterone** supports sexual desire in both men and women. **Oestrogen** supports vaginal health and arousal. **Oxytocin** rises with touch and orgasm and supports bonding.
+- The **medial preoptic area** of the hypothalamus is important for sexual behaviour; dopamine increases desire; serotonin and prolactin tend to reduce it.
+- **Masters and Johnson's response cycle**: excitement, plateau, orgasm, resolution. Later models add **desire** before excitement, and **Basson's circular model** notes that for many women, desire often follows arousal and closeness rather than coming first.
+
+:::widget sort
+{
+  "prompt": "Match each clinical problem to the hormone or signal most involved.",
+  "buckets": ["Prolactin", "Vasopressin (ADH)", "Leptin or ghrelin", "Thyroid hormone", "Serotonin"],
+  "items": [
+    { "text": "A man on risperidone has lost interest in sex and has breast swelling", "bucket": 0 },
+    { "text": "A woman on lithium is always thirsty and passes large amounts of urine", "bucket": 1 },
+    { "text": "A woman on an SSRI cannot reach orgasm", "bucket": 4, "why": "Raised serotonin delays orgasm and lowers desire, a common and often unasked-about side effect." },
+    { "text": "A man feels hungry soon after meals and keeps gaining weight on olanzapine", "bucket": 2, "why": "Antipsychotic weight gain involves appetite signals (and H1 and 5-HT2C block) that override fullness." },
+    { "text": "A woman, 45, is slow, cold, constipated and low after starting lithium", "bucket": 3 }
+  ]
+}
+:::
+
+:::widget decide
+{
+  "scene": "Mr Pillai, 76, in Thiruvananthapuram, started sertraline three weeks ago for depression. His daughter calls: he is confused, unsteady and has had a fall. The family thinks his depression is 'getting worse'.",
+  "ask": "What should be checked first?",
+  "choices": [
+    { "label": "Increase the sertraline dose", "verdict": "harm", "outcome": "His confusion deepens and he has a seizure.", "why": "New confusion and falls soon after starting an SSRI in an older adult suggest low sodium, which a higher dose would worsen." },
+    { "label": "Urgent blood test for sodium, and medical review", "verdict": "best", "outcome": "His sodium is very low. The SSRI is stopped, sodium is corrected carefully, and he recovers; a different antidepressant is chosen later.", "why": "SSRI-related hyponatraemia (often via inappropriate vasopressin release) is common in older people and is a medical emergency when severe." },
+    { "label": "Wait and see for two weeks", "verdict": "harm", "outcome": "He is admitted after another fall.", "why": "Acute confusion in an older adult always needs prompt medical assessment." }
+  ]
+}
+:::
+
+:::clinician
+Arcuate nucleus circuitry: AgRP and NPY neurons drive feeding and are inhibited by leptin and insulin; POMC neurons (producing alpha-MSH acting at MC4 receptors) promote satiety, and MC4R mutations are the commonest monogenic cause of severe childhood obesity. Leptin deficiency is rare, but leptin resistance is the rule in common obesity. Prader–Willi syndrome (hyperphagia, raised ghrelin) is a useful exam link. Antipsychotic weight gain correlates with H1 and 5-HT2C affinity and is greatest with clozapine and olanzapine; metformin and, increasingly, GLP-1 receptor agonists are used for mitigation, with trial evidence for GLP-1 agonists in antipsychotic-treated patients growing as of Nov 2026. Thirst: osmoreceptors in the organum vasculosum of the lamina terminalis and subfornical organ (outside the blood–brain barrier) sense osmolality; angiotensin II acts at the subfornical organ. SIADH with SSRIs is most common in older women in the first weeks. Sexual dysfunction: hyperprolactinaemia (prolactin-raising antipsychotics) and serotonergic antidepressants are the main iatrogenic causes; bupropion, mirtazapine, vortioxetine and agomelatine have lower rates. Ask directly, because patients in India rarely volunteer sexual side effects, and non-adherence often follows silently.
+:::
+
+:::recall
+1. Name the hormones of the posterior pituitary and what they do. || Oxytocin (bonding, labour, milk let-down) and vasopressin or ADH (water retention by the kidneys).
+2. Which hormone from fat cells signals long-term energy stores, and which stomach hormone signals hunger? || Leptin; ghrelin.
+3. Distinguish osmotic and volume thirst. || Osmotic: blood too concentrated, sensed in the hypothalamus, vasopressin released. Volume: blood volume falls, renin and angiotensin II trigger thirst and salt appetite.
+4. What are organising and activating effects of sex hormones? || Organising: early, lasting effects on body and brain structure. Activating: later effects switching behaviour on at puberty and in adulthood.
+5. Name two psychiatric medicines that commonly cause low sodium. || SSRIs and carbamazepine (also oxcarbazepine).
+:::
+
+:::mcq
+Q: Destroying the ventromedial hypothalamus in classic animal studies caused:
+- Refusal to eat
+- *Overeating and obesity
+- Loss of thirst
+- Loss of sleep
+> The VMH was called the satiety centre; lesions cause hyperphagia.
+
+Q: A man with chronic schizophrenia drinks over ten litres of water a day and has a seizure. The most likely cause is:
+- High sodium
+- *Low sodium from psychogenic polydipsia
+- Lithium toxicity
+- Low thyroid
+> Excess water dilutes sodium.
+
+Q: Which stage is NOT part of Masters and Johnson's original response cycle?
+- Excitement
+- Plateau
+- *Desire
+- Resolution
+> Desire was added by later models.
+:::
+
+## 2.8 Two hemispheres, and how we study genes and behaviour [core][beginner]
+### The split brain
+The two cerebral hemispheres are joined by the **corpus callosum**, a thick band of about 200 million nerve fibres. In a few people with severe epilepsy, surgeons cut it to stop seizures spreading (a **corpus callosotomy**). **Roger Sperry** (Nobel Prize, 1981) and **Michael Gazzaniga** studied these "split-brain" patients.
+
+Two facts make the experiments work:
+- Each hemisphere sees the **opposite half of the visual field** and controls the **opposite hand**.
+- In most people, **speech** is produced by the **left** hemisphere.
+
+What they found:
+- A word flashed to the **right** visual field (left hemisphere) can be read aloud.
+- A word flashed to the **left** visual field (right hemisphere) cannot be named, but the **left hand** can pick out the matching object by touch.
+- The **right** hemisphere is better at faces, spatial layout and some emotional tones.
+- The left hemisphere acts as an **interpreter**: it makes up a confident explanation for actions started by the right hemisphere that it knows nothing about.
+
+:::example The chicken claw and the snow shovel
+In a famous study, a split-brain patient's left hemisphere saw a chicken claw and his right hemisphere saw a snowy scene. His right hand picked a picture of a chicken; his left hand picked a shovel. Asked why, his speaking left hemisphere answered without hesitation: "The chicken claw goes with the chicken, and you need a shovel to clean out the chicken shed." The story was invented on the spot and believed. This is a striking picture of how all of us explain our behaviour after the fact, and of confabulation.
+:::
+
+:::widget decide
+{
+  "scene": "In a lab demonstration, a split-brain patient fixes her eyes on a central dot. The word 'KEY' is flashed briefly to the left of the dot. She is asked what she saw, and then asked to find the object with either hand among items hidden behind a screen.",
+  "ask": "What will happen?",
+  "choices": [
+    { "label": "She says 'key' and picks it with her right hand", "verdict": "harm", "outcome": "This would happen with an intact corpus callosum, not after it is cut.", "why": "The left visual field goes to the right hemisphere, which cannot speak and cannot pass the word to the left hemisphere." },
+    { "label": "She says she saw nothing, but her left hand picks out the key", "verdict": "best", "outcome": "Exactly what Sperry and Gazzaniga found.", "why": "The right hemisphere saw the word and controls the left hand; the speaking left hemisphere had no access to it." },
+    { "label": "She says 'key' but cannot pick it with either hand", "verdict": "ok", "outcome": "Not what happens.", "why": "Naming requires the left hemisphere, which never received the word." }
+  ]
+}
+:::
+
+### Other ways to study the two hemispheres
+- **Wada test**: a short-acting anaesthetic is injected into one carotid artery to "switch off" one hemisphere before epilepsy surgery, checking where language and memory are.
+- **Dichotic listening**: different words in each ear; most people report right-ear words better (left hemisphere language).
+- Functional imaging and brain stimulation now often replace the Wada test.
+
+### Behaviour genetics: separating genes and environment
+Families share both genes and homes, so "it runs in the family" does not prove genes. Behaviour genetics uses natural experiments.
+
+| Method | The logic | Example finding |
+|---|---|---|
+| **Family studies** | Is risk higher in closer relatives? | First-degree relatives of a person with schizophrenia have roughly ten times the general risk |
+| **Twin studies** | Identical (MZ) twins share all their genes, fraternal (DZ) about half. If MZ twins are more alike than DZ twins, genes matter | MZ concordance for schizophrenia about 40 to 50 per cent, DZ about 10 to 15 per cent |
+| **Adoption studies** | Is an adopted child more like the biological parents (genes) or adoptive parents (environment)? | Children of mothers with schizophrenia, adopted at birth into healthy families, still had raised risk (Heston, 1966) |
+| **Twins reared apart** | Same genes, different homes | Striking similarities in personality and IQ (Minnesota study) |
+| **Molecular studies** | Find the actual DNA variants | GWAS, polygenic scores (see Section 3.3) |
+| **Animal studies** | Selective breeding and gene "knockouts" | Tryon bred "maze-bright" and "maze-dull" rats |
+
+### Three sources of difference: the "ACE" model
+Twin studies split differences between people into:
+- **A**: additive genetic effects (heritability).
+- **C**: common (shared) environment: what makes siblings alike (same home, same income, same school).
+- **E**: unique (non-shared) environment: what makes siblings different (different friends, illnesses, experiences), plus measurement error.
+
+A surprising and repeated finding: for most adult personality traits and many disorders, **shared environment (C) is small**, and unique environment (E) is large. Siblings raised together are often less alike than people expect.
+
+### Genes and environment work together
+- **Gene–environment interaction**: a gene variant matters only in certain environments (for example, a stressful one).
+- **Gene–environment correlation**: genes shape the environments people get. **Passive** (parents give both genes and home), **evocative** (a child's temperament draws certain reactions), **active** (people choose settings that fit their genes).
+
+:::widget worked
+{
+  "title": "Estimating heritability from twin correlations",
+  "steps": [
+    { "q": "In a twin study of anxiety scores, identical twins correlate 0.50 and fraternal twins correlate 0.30. Falconer's formula estimates heritability as twice the difference between the MZ and DZ correlations. What is the estimate?", "a": "2 times (0.50 minus 0.30) = 0.40, so about 40 per cent of the variation is linked to genetic differences." },
+    { "q": "Shared environment (C) is estimated as the MZ correlation minus heritability. What is C?", "a": "0.50 minus 0.40 = 0.10: shared family environment explains about 10 per cent." },
+    { "q": "Unique environment (E) is 1 minus the MZ correlation. What is E?", "a": "1 minus 0.50 = 0.50: half the variation comes from experiences not shared by twins, plus measurement error." }
+  ],
+  "yourTurn": [
+    { "q": "For a trait, MZ twins correlate 0.80 and DZ twins 0.40. Estimate A, C and E.", "a": "A = 2 times 0.40 = 0.80. C = 0.80 minus 0.80 = 0. E = 1 minus 0.80 = 0.20. A highly heritable trait with no measurable shared environment effect." }
+  ]
+}
+:::
+
+:::clinician
+The equal environments assumption (that MZ and DZ twins experience equally similar environments) is the main criticism of twin designs; studies of misclassified zygosity largely support it for most psychiatric traits. Heritability rises with age for IQ (the Wilson effect: from about 0.2 in infancy to about 0.7 or more in adulthood), probably through active gene–environment correlation. Heritability is population-specific: Turkheimer and colleagues (Psychological Science, 2003) found IQ heritability near zero in very poor US families and high in affluent ones, a reminder for Indian contexts with large socioeconomic gradients. The Danish adoption studies (Kety, Rosenthal, Wender) found schizophrenia-spectrum illness concentrated in biological, not adoptive, relatives. Caspi and colleagues' serotonin-transporter by stress interaction (Science, 2003) became the textbook example of GxE but failed large-scale replication (Border and colleagues, American Journal of Psychiatry 2019). The split-brain literature has also been nuanced: some recent studies (Pinto and colleagues, Brain 2017) suggest split-brain patients can respond accurately to stimuli in either visual field with either hand, implying divided perception but less divided awareness than the classic account.
+:::
+
+:::recall
+1. What structure is cut in split-brain surgery and why? || The corpus callosum, to stop severe epileptic seizures spreading between hemispheres.
+2. A word flashed to the left visual field of a split-brain patient: can they name it? What can they do? || They cannot name it, but the left hand can pick out the object.
+3. What is the left-hemisphere interpreter? || The left hemisphere's tendency to invent confident explanations for behaviour it did not initiate.
+4. Give Falconer's formula. || Heritability equals twice the difference between MZ and DZ twin correlations.
+5. What do A, C and E stand for in twin studies? || Additive genetics, common (shared) environment, unique (non-shared) environment.
+6. Name the three types of gene–environment correlation. || Passive, evocative and active.
+:::
+
+:::mcq
+Q: In most split-brain patients, an object felt only by the left hand cannot be named because:
+- The left hand has no sensory nerves
+- *Touch from the left hand goes to the right hemisphere, which cannot pass it to the speaking left hemisphere
+- The corpus callosum controls speech
+- The cerebellum is cut
+> Information stays in the non-speaking hemisphere.
+
+Q: If identical twins are much more alike for a trait than fraternal twins, this suggests:
+- Shared environment is the main cause
+- *Genes contribute substantially
+- The trait cannot be measured
+- Adoption has no effect
+> Greater MZ similarity indicates genetic influence.
+
+Q: A child with an outgoing temperament draws more friendly attention from teachers. This is:
+- Passive gene–environment correlation
+- *Evocative gene–environment correlation
+- Active gene–environment correlation
+- Gene–environment interaction
+> The child's traits evoke responses.
+:::
+
+## 2.9 Level check · Beginner [core][beginner]
 Score 80% or more to open the Advanced level.
 
 :::mcq
@@ -1017,12 +1230,12 @@ Q: A heavy drinker who is confused should receive which treatment before glucose
 - Benzodiazepine only
 > Thiamine prevents Wernicke's worsening and Korsakoff syndrome.
 
-Q: Cortisol is released by the:
-- Pituitary gland
-- Hypothalamus
-- *Adrenal cortex
-- Pineal gland
-> The final step of the HPA axis.
+Q: Leptin, released by fat cells, mainly signals:
+- Hunger right now
+- *That energy stores are sufficient, reducing appetite over the long term
+- Thirst
+- Sexual desire
+> A long-term fullness signal.
 
 Q: The master body clock is in the:
 - Pineal gland
@@ -1038,12 +1251,12 @@ Q: Fluvoxamine raises clozapine levels because it:
 - Is excreted by the kidney
 > Inhibition of CYP1A2 slows clozapine breakdown.
 
-Q: A drug that partly activates a receptor and limits its activity when the natural transmitter is high is a:
-- Full agonist
-- Antagonist
-- *Partial agonist
-- Inverse agonist
-> For example aripiprazole at D2.
+Q: Fraternal twins correlate 0.20 and identical twins 0.60 on a trait. Falconer's estimate of heritability is:
+- 0.20
+- 0.40
+- *0.80
+- 0.60
+> Twice the difference: 2 times 0.40.
 
 Q: Lithium levels rise with dehydration mainly because lithium:
 - Is broken down by the liver
