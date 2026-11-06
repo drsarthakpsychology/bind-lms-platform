@@ -12,9 +12,9 @@ const EVENT = "plms:add-people";
 /** URL trigger (used by the ⌘K palette): `?add=people`, optionally `&addCohort=<id>`. */
 export const ADD_PEOPLE_PARAM = "add";
 
-/** Open the Add people panel from anywhere (optionally with a cohort preselected). */
-export function openAddPeople(cohortId?: string) {
-  window.dispatchEvent(new CustomEvent(EVENT, { detail: { cohortId } }));
+/** Open the Add people panel from anywhere (optionally with a cohort preselected and people filled in). */
+export function openAddPeople(cohortId?: string, text?: string) {
+  window.dispatchEvent(new CustomEvent(EVENT, { detail: { cohortId, text } }));
 }
 
 /**
@@ -27,15 +27,15 @@ export function AddPeoplePanel({ cohorts, canWrite }: { cohorts: { id: string; n
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
-  const [byEvent, setByEvent] = React.useState<{ open: boolean; cohortId?: string; n: number }>({ open: false, n: 0 });
+  const [byEvent, setByEvent] = React.useState<{ open: boolean; cohortId?: string; text?: string; n: number }>({ open: false, n: 0 });
   const byUrl = sp.get(ADD_PEOPLE_PARAM) === "people";
   const open = byUrl || byEvent.open;
   const cohortId = (byUrl ? sp.get("addCohort") : byEvent.cohortId) ?? undefined;
 
   React.useEffect(() => {
     function onOpen(e: Event) {
-      const detail = (e as CustomEvent<{ cohortId?: string }>).detail ?? {};
-      setByEvent((s) => ({ open: true, cohortId: detail.cohortId, n: s.n + 1 }));
+      const detail = (e as CustomEvent<{ cohortId?: string; text?: string }>).detail ?? {};
+      setByEvent((s) => ({ open: true, cohortId: detail.cohortId, text: detail.text, n: s.n + 1 }));
     }
     window.addEventListener(EVENT, onOpen);
     return () => window.removeEventListener(EVENT, onOpen);
@@ -72,7 +72,14 @@ export function AddPeoplePanel({ cohorts, canWrite }: { cohorts: { id: string; n
           {!canWrite ? (
             <p className="text-sm">Only the Super Admin can add people.</p>
           ) : (
-            <AddPeopleForm key={`${byEvent.n}-${known ?? "any"}`} cohorts={cohorts} defaultCohortId={known} pickCohort idPrefix="panel" />
+            <AddPeopleForm
+              key={`${byEvent.n}-${known ?? "any"}`}
+              cohorts={cohorts}
+              defaultCohortId={known}
+              initialText={byUrl ? "" : (byEvent.text ?? "")}
+              pickCohort
+              idPrefix="panel"
+            />
           )}
           <p className="mt-6 text-caption text-muted-foreground">
             Have a spreadsheet?{" "}
