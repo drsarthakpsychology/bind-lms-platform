@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { makeRng } from "@/lib/learn/model/picker";
-import { EXAM_SPECS, specById } from "@/content/prep/specs";
-import { SUBJECTS } from "./types";
-import { GOALS, learnTarget, prepSkill, studyHref, subjectOfSkill, subjectWeights } from "./catalog";
-import { allocate, pickPractice, reviewQueue, sampleDiagnostic, sampleMock } from "./sampling";
+import { ALL_SPECS, EXAM_SPECS, PRACTICE_SPECS, SUBJECT_GROUPS, specById } from "@/content/prep/specs";
+import { SUBJECTS, type PrepQuestion } from "./types";
+import { EXAM_TRACKS_ENABLED, GOALS, PREP_EXAMS, PREP_TITLE, SUBJECT_MODULE, activeGoal, learnTarget, planWeights, prepSkill, specVisible, studyHref, subjectOfSkill, subjectWeights, topicModules, unifiedWeights } from "./catalog";
+import { allocate, diagnosticSize, mixByDifficulty, pickPractice, reviewQueue, sampleDiagnostic, sampleMock, stepUp } from "./sampling";
 import { bestPerUser, scoreDiagnostic, scoreMock, standing } from "./scoring";
 import { buildPlan, nextActions, statusOf, type PathState, type SkillSnap } from "./plan";
 import { pickPanel, selfScore } from "./interview";
@@ -15,9 +15,9 @@ const NOW = new Date("2026-11-06T10:00:00Z");
 
 describe("exam specs", () => {
   it("every pattern is well formed and mirrors the research numbers", () => {
-    const ids = EXAM_SPECS.map((s) => s.id);
+    const ids = ALL_SPECS.map((s) => s.id);
     expect(new Set(ids).size).toBe(ids.length);
-    for (const s of EXAM_SPECS) {
+    for (const s of ALL_SPECS) {
       expect(s.minutes).toBeGreaterThan(0);
       expect(s.marksPerRight).toBeGreaterThan(0);
       expect(s.marksPerWrong).toBeLessThanOrEqual(0);
@@ -40,6 +40,53 @@ describe("exam specs", () => {
   it("every goal has at least one pattern", () => {
     for (const g of GOALS) expect(EXAM_SPECS.some((s) => s.exam === g.id)).toBe(true);
   });
+  it("the shared mocks: 100 in 120 minutes over every subject, 50-question sectionals, +1 / -0.25", () => {
+    const full = specById("psych-full")!;
+    expect(full).toMatchObject({ exam: null, minutes: 120, marksPerRight: 1, marksPerWrong: -0.25 });
+    expect(full.sections.reduce((a, x) => a + x.count, 0)).toBe(100);
+    // The union of every exam's syllabus: no subject left out.
+    expect(new Set(full.sections.flatMap((x) => x.subjects))).toEqual(new Set(SUBJECTS));
+    expect(new Set(SUBJECT_GROUPS.flatMap((g) => g.subjects)).size).toBe(SUBJECTS.length);
+    const parts = PRACTICE_SPECS.slice(1);
+    expect(parts).toHaveLength(SUBJECT_GROUPS.length);
+    for (const p of parts) expect(p).toMatchObject({ exam: null, minutes: 60, marksPerRight: 1, marksPerWrong: -0.25, sections: [expect.objectContaining({ count: 50 })] });
+  });
+  it("no en or em dashes in anything a student reads from the specs", () => {
+    for (const s of ALL_SPECS) expect(JSON.stringify([s.title, s.short, s.cycle, s.source, s.notes, s.sections.map((x) => x.title)]), s.id).not.toMatch(/[\u2013\u2014]/);
+  });
+});
+
+describe("one shared course (exam tracks off)", () => {
+  it("is the default, and hides exam choices", () => {
+    expect(EXAM_TRACKS_ENABLED).toBe(false);
+    expect(activeGoal("cuet-pg")).toBeNull();
+    expect(activeGoal("cuet-pg", true)).toBe("cuet-pg");
+    expect(specVisible(specById("psych-full")!)).toBe(true);
+    expect(specVisible(specById("cuet-pg-huqp20")!)).toBe(false);
+    expect(specVisible(specById("cuet-pg-huqp20")!, true)).toBe(true);
+  });
+  it("names the section and the three exams, without dashes", () => {
+    expect(PREP_TITLE).toBe("Psychology Entrance & Competitive Exam Preparation");
+    expect(PREP_EXAMS.join(" · ")).toBe("CUET-PG · UGC-NET · Clinical Psychology Entrances (M.Clin.Psy)");
+    expect(PREP_TITLE + PREP_EXAMS.join("")).not.toMatch(/[\u2013\u2014]/);
+  });
+  it("weights every subject, averaged over the exams, summing to 1", () => {
+    const w = unifiedWeights();
+    expect([...w.keys()].sort()).toEqual([...SUBJECTS].sort());
+    expect([...w.values()].reduce((a, b) => a + b, 0)).toBeCloseTo(1, 6);
+    for (const v of w.values()) expect(v).toBeGreaterThan(0);
+    // Tested by every exam beats tested by one.
+    expect(w.get("psychopathology")!).toBeGreaterThan(w.get("organisational")!);
+    // NET Paper 1 is part of the one course.
+    expect(w.get("ugc-paper1")!).toBeGreaterThan(0.05);
+    expect(planWeights(null)).toEqual(w);
+    expect(planWeights("cuet-pg")).toEqual(subjectWeights("cuet-pg"));
+  });
+  it("a subject no pattern names still gets a share", () => {
+    const w = unifiedWeights([{ ...specById("cuet-pg-huqp20")!, sections: [{ title: "x", count: 10, subjects: ["statistics"] }] }]);
+    expect(w.get("ugc-paper1")!).toBeGreaterThan(0);
+    expect(w.get("statistics")!).toBeGreaterThan(w.get("ugc-paper1")!);
+  });
 });
 
 describe("catalog", () => {
@@ -57,11 +104,31 @@ describe("catalog", () => {
     expect(subjectOfSkill("depression:criteria")).toBeNull();
   });
   it("learn links prefer the questions' module, then the subject map, and fall back safely", () => {
-    expect(learnTarget("psychopathology", SAMPLE_QUESTIONS)).toBe("more-disorders");
-    expect(learnTarget("biological", SAMPLE_QUESTIONS)).toBe("brain");
+    expect(learnTarget("psychopathology", SAMPLE_QUESTIONS)[0]).toBe("more-disorders");
+    expect(learnTarget("psychopathology", SAMPLE_QUESTIONS)).toContain("exam-prep/3-1");
+    expect(learnTarget("biological", SAMPLE_QUESTIONS)).toEqual(["brain"]);
     expect(studyHref("exam-prep/2-2")).toBe("/study/exam-prep/2-2");
     expect(studyHref("exam-prep/9-9", (m, s) => m === "exam-prep" && !s)).toBe("/study/exam-prep");
     expect(studyHref("nope", () => false)).toBe("/study/exam-prep");
+  });
+  it("learn links go to the new dedicated modules when they exist, else the old mapping", () => {
+    expect(SUBJECT_MODULE.cognitive[0]).toBe("thinking-language");
+    expect(SUBJECT_MODULE["perception-attention"][0]).toBe("sensation-perception");
+    expect(SUBJECT_MODULE["learning-motivation-emotion"][0]).toBe("learning-memory");
+    expect(SUBJECT_MODULE.developmental[0]).toBe("lifespan");
+    expect(SUBJECT_MODULE["history-systems"][0]).toBe("foundations");
+    expect(SUBJECT_MODULE["indian-psychology"][0]).toBe("foundations");
+    expect(SUBJECT_MODULE["ugc-paper1"][0]).toBe("net-paper1");
+    for (const s of ["health", "positive", "organisational"] as const) expect(SUBJECT_MODULE[s][0]).toBe("applied");
+    expect(SUBJECT_MODULE.counselling[0]).toBe("therapies");
+    expect(topicModules("learning-motivation-emotion", "intrinsic-motivation")[0]).toBe("motivation-emotion");
+    expect(topicModules("learning-motivation-emotion", "operant-conditioning")[0]).toBe("learning-memory");
+    const live = new Set(["exam-prep", "child"]);
+    const exists = (m: string, s?: string) => live.has(m) && (!s || s === "2-3");
+    expect(studyHref(SUBJECT_MODULE.cognitive, exists)).toBe("/study/exam-prep/2-3");
+    expect(studyHref(SUBJECT_MODULE.developmental, exists)).toBe("/study/child");
+    live.add("thinking-language");
+    expect(studyHref(SUBJECT_MODULE.cognitive, exists)).toBe("/study/thinking-language");
   });
   it("views never carry the answer, explanation or source", () => {
     const v = toView({ ...SAMPLE_QUESTIONS[0], ref: "secret book p.1" });
@@ -87,9 +154,20 @@ describe("sampling", () => {
     // Subjects interleave: the first two questions are not the same subject.
     expect(d[0].subject).not.toBe(d[1].subject);
   });
-  it("the diagnostic leaves out subjects the goal doesn't test", () => {
+  it("the diagnostic leaves out subjects the goal doesn't test (exam tracks)", () => {
     const d = sampleDiagnostic(SAMPLE_QUESTIONS, "cuet-pg", makeRng(2));
     expect(d.some((q) => q.subject === "ugc-paper1")).toBe(false);
+  });
+  it("the shared-course diagnostic samples every subject, easier first within each", () => {
+    expect(diagnosticSize(null)).toBe(30);
+    const d = sampleDiagnostic(SAMPLE_QUESTIONS, null, makeRng(2));
+    expect(new Set(d.map((q) => q.subject))).toEqual(new Set(SAMPLE_QUESTIONS.map((q) => q.subject)));
+    expect(new Set(d.map((q) => q.id)).size).toBe(d.length);
+    const last = new Map<string, number>();
+    for (const q of d) {
+      expect(q.difficulty).toBeGreaterThanOrEqual(last.get(q.subject) ?? 0);
+      last.set(q.subject, q.difficulty);
+    }
   });
   it("a mock fills each section from its subjects only, without repeats", () => {
     const paper = sampleMock(SAMPLE_QUESTIONS, specById("ugc-net-04")!, makeRng(3));
@@ -99,6 +177,21 @@ describe("sampling", () => {
     const all = paper.sections.flatMap((s) => s.ids);
     expect(new Set(all).size).toBe(all.length);
     expect(paper.sections[0].wanted).toBe(50);
+  });
+  it("the full shared mock draws from every subject group, untagged, at mixed difficulty", () => {
+    const paper = sampleMock(SAMPLE_QUESTIONS, specById("psych-full")!, makeRng(9));
+    expect(paper.sections).toHaveLength(SUBJECT_GROUPS.length);
+    const all = paper.sections.flatMap((s) => s.ids);
+    expect(new Set(all).size).toBe(all.length);
+    // The sample bank is small, so every question fits.
+    expect(all.length).toBe(SAMPLE_QUESTIONS.length);
+    expect(paper.sections.find((s) => s.title.includes("NET Paper 1"))!.ids.every((id) => KEY.get(id)!.subject === "ugc-paper1")).toBe(true);
+  });
+  it("mixByDifficulty spreads levels instead of bunching one", () => {
+    const qs = SAMPLE_QUESTIONS.filter((q) => q.subject === "statistics");
+    const sorted = [...qs].sort((a, b) => b.difficulty - a.difficulty);
+    expect(new Set(mixByDifficulty(sorted).slice(0, 3).map((q) => q.difficulty)).size).toBe(3);
+    expect(mixByDifficulty(sorted)).toHaveLength(qs.length);
   });
   it("a mock puts seen questions last", () => {
     const spec = { ...specById("semester-objective")!, sections: [{ title: "S", count: 2, subjects: ["statistics" as const] }] };
@@ -117,6 +210,35 @@ describe("sampling", () => {
     const picked = pickPractice(SAMPLE_QUESTIONS, "statistics", { theta: 2.5, b: () => undefined, due: () => false }, makeRng(6), new Map(), 2);
     // At theta 2.5: easy (b -1) → 0.97, medium (b 0) → 0.92, hard (b 1) → 0.82 (core), very hard (b 1.8) → 0.67.
     expect(picked.map((p) => p.id)).toContain("st-3");
+  });
+  it("steps up a level as ability grows", () => {
+    expect(stepUp(-2)).toBe(1);
+    expect(stepUp(0)).toBe(2);
+    expect(stepUp(1.5)).toBe(3);
+    expect(stepUp(2.6)).toBe(4);
+    expect(stepUp(5)).toBe(4);
+  });
+  const ladder = (counts: Record<1 | 2 | 3 | 4, number>): PrepQuestion[] =>
+    ([1, 2, 3, 4] as const).flatMap((d) => Array.from({ length: counts[d] }, (_, i) => ({ ...SAMPLE_QUESTIONS[0], id: `l${d}-${i}`, topic: `t${i % 3}`, difficulty: d })));
+  it("practice starts a new subject near easy and medium", () => {
+    const bank = ladder({ 1: 8, 2: 8, 3: 8, 4: 8 });
+    const lvl = new Map(bank.map((q) => [q.id, q.difficulty]));
+    const picked = pickPractice(bank, "statistics", { theta: 0, b: () => undefined, due: () => false }, makeRng(11), new Map(), 10);
+    const levels = picked.map((p) => lvl.get(p.id)!);
+    expect(levels.filter((d) => d <= 2).length).toBeGreaterThanOrEqual(8);
+    expect(levels).not.toContain(4);
+    expect(levels).toContain(2);
+  });
+  it("practice brings in very hard questions once ability is high", () => {
+    // Plenty of hard questions sit in the 70 to 85 % band at theta 2.6; very hard (69 %) would never be picked without the climb.
+    const bank = ladder({ 1: 0, 2: 4, 3: 14, 4: 3 });
+    const lvl = new Map(bank.map((q) => [q.id, q.difficulty]));
+    const picked = pickPractice(bank, "statistics", { theta: 2.6, b: () => undefined, due: () => false }, makeRng(12), new Map(), 10);
+    expect(picked).toHaveLength(10);
+    expect(new Set(picked.map((p) => p.id)).size).toBe(10);
+    expect(picked.some((p) => lvl.get(p.id) === 4)).toBe(true);
+    const mean = picked.reduce((a, p) => a + p.p, 0) / picked.length;
+    expect(mean).toBeGreaterThan(0.7);
   });
   it("review queue keeps only missed, due questions that still exist", () => {
     const cards = [
@@ -175,6 +297,15 @@ describe("scoring", () => {
 
 describe("plan", () => {
   const snap = (theta: number, n: number): SkillSnap => ({ theta, n, lastAt: NOW.toISOString() });
+  it("the shared plan lists every subject, weakest and most tested first", () => {
+    const plan = buildPlan(null, new Map([["statistics" as const, snap(-1.5, 5)], ["organisational" as const, snap(3, 20)]]), NOW);
+    expect(plan.map((t) => t.subject).sort()).toEqual([...SUBJECTS].sort());
+    expect(plan[0].subject).toBe("statistics");
+    expect(plan[plan.length - 1].subject).toBe("organisational");
+    // Untested: the most-tested subject comes before the least.
+    const at = (s: string) => plan.findIndex((t) => t.subject === s);
+    expect(at("ugc-paper1")).toBeLessThan(at("positive"));
+  });
   it("orders weakest × heaviest first and puts strong topics last", () => {
     const skills = new Map([
       ["ugc-paper1" as const, snap(-1, 5)],
@@ -204,11 +335,26 @@ describe("plan", () => {
     interviews: 0,
     learnHref: (s) => `/study/${s}`,
     now: NOW,
+    tracks: true,
     ...over,
   });
-  it("shows only one step before the goal and before the diagnostic", () => {
+  it("shows only one step before the goal and before the diagnostic (exam tracks)", () => {
     expect(nextActions(base({ goal: null }))).toEqual([expect.objectContaining({ kind: "goal" })]);
     expect(nextActions(base({ diagnosed: false }))).toEqual([expect.objectContaining({ kind: "diagnostic" })]);
+  });
+  it("never asks for an exam with tracks off: the starting check covers every subject", () => {
+    const shared = (over: Partial<PathState> = {}) => base({ goal: null, tracks: false, plan: buildPlan(null, new Map(), NOW), ...over });
+    const a = nextActions(shared({ diagnosed: false }));
+    expect(a).toEqual([expect.objectContaining({ kind: "diagnostic" })]);
+    expect(a[0].why).toMatch(/30 questions across every subject/);
+    expect(nextActions(shared()).some((x) => x.kind === "goal")).toBe(false);
+    // A stored goal is ignored while tracks are off.
+    expect(nextActions(shared({ goal: "cuet-pg", diagnosed: false }))[0].kind).toBe("diagnostic");
+    expect(nextActions(shared()).length).toBeLessThanOrEqual(3);
+  });
+  it("offers the interview to everyone in the shared course after a mock", () => {
+    const st = base({ goal: null, tracks: false, plan: buildPlan(null, new Map(), NOW), answered: 200, mocks: 1, lastMockAt: "2026-11-05T00:00:00Z" });
+    expect(nextActions(st).some((x) => x.kind === "interview")).toBe(true);
   });
   it("never shows more than three steps, topic first", () => {
     const a = nextActions(base({ due: 10, answered: 200, mocks: 1, lastMockAt: "2026-10-01T00:00:00Z" }));
@@ -230,6 +376,11 @@ describe("interview", () => {
     const panel = pickPanel(SAMPLE_INTERVIEWS, "mcp-entrance", makeRng(7));
     expect(panel).toHaveLength(5);
     expect(panel.map((q) => q.category)).toEqual(["motivation", "academic", "clinical-vignette", "assessment", "research"]);
+  });
+  it("draws from every category and exam with no goal", () => {
+    const panel = pickPanel(SAMPLE_INTERVIEWS, null, makeRng(7), new Set(), 7);
+    expect(new Set(panel.map((q) => q.category)).size).toBe(7);
+    expect(panel.some((q) => q.id === "iv-cur-1")).toBe(true);
   });
   it("prefers unseen items", () => {
     const panel = pickPanel(SAMPLE_INTERVIEWS, "mcp-entrance", makeRng(8), new Set(["iv-mot-1"]));

@@ -49,7 +49,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           { Icon: Check, label: "Right", value: view.right },
           { Icon: X, label: "Wrong", value: view.wrong },
           { Icon: Circle, label: "Blank", value: view.blank },
-          { Icon: Trophy, label: "Accuracy", value: view.accuracy === null ? "–" : `${Math.round(view.accuracy * 100)}%` },
+          { Icon: Trophy, label: "Accuracy", value: view.accuracy === null ? "None" : `${Math.round(view.accuracy * 100)}%` },
         ].map(({ Icon, label, value }) => (
           <div key={label} className="rounded-md border-2 border-foreground bg-card p-3">
             <p className="flex items-center gap-1.5 text-2xl font-bold tabular-nums">

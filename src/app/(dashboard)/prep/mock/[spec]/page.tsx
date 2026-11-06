@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
 import { specById } from "@/content/prep/specs";
+import { specVisible } from "@/lib/prep/catalog";
 import { cn } from "@/lib/utils";
 import { BackToPrep, PrepFrame, card } from "../../ui";
 import { prepViewer } from "../../viewer";
@@ -18,7 +19,8 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
   await requireFeature("learn");
   const { spec: id } = await params;
   const spec = specById(id);
-  if (!spec) notFound();
+  // Exam-pattern mocks stay hidden while exam tracks are off.
+  if (!spec || !specVisible(spec)) notFound();
   const me = await prepViewer();
 
   return (
@@ -32,7 +34,7 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
         intro={
           <div className="mx-auto max-w-2xl space-y-5 lg:mx-0">
             <header className="space-y-1">
-              <p className="text-eyebrow text-link">Timed mock</p>
+              <p className="text-eyebrow text-link">{spec.exam === null ? "Psychology mock test" : "Timed mock"}</p>
               <h1 className="text-h1">{spec.title}</h1>
             </header>
             <div className={cn(card, "hard-shadow-md")}>
