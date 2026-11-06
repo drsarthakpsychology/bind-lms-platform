@@ -1,7 +1,8 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
 import { part1 } from "./personality-theories-1";
-import { part2 } from "./personality-theories-2";
+import { exam, part2 } from "./personality-theories-2";
+import { qa } from "./personality-theories-qa";
 
 export const meta: ModuleMeta = {
   id: "personality-theories",
@@ -27,4 +28,4 @@ export const meta: ModuleMeta = {
   ],
 };
 
-export const text = part1 + part2;
+export const text = part1 + part2 + qa + exam;
