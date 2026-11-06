@@ -27,6 +27,10 @@ Severity is judged mainly by **how much support the person needs in daily life**
 {"prompt": "An IQ test is built so that the average is 100. How many points below average is two standard deviations, the usual cut-off for intellectual disability?", "min": 0, "max": 50, "unit": "points", "answer": [30, 30], "reveal": "Thirty points. Each standard deviation is 15 points, so two below the average of 100 is a score of about 70. Allowing for measurement error of about 5 points, scores of roughly 65 to 75 can fit an intellectual disability if adaptive functioning is also clearly impaired.", "clinician": "DSM-5-TR places the cut-off at about two standard deviations below the population mean, including a margin for measurement error (about plus or minus 5 points), so roughly 65 to 75. ICD-11 also uses standard deviations: mild 2 to 3 SD below the mean, moderate 3 to 4 SD, and severe and profound 4 or more SD below, separated by adaptive behaviour. Provisional diagnosis is used when testing is not possible (infants, severe sensory or motor impairment)."}
 :::
 
+:::widget curve
+{"kind": "normal", "title": "IQ scores across the population", "caption": "Move the slider along the bell curve. The average is 100 and each standard deviation is 15 points. Two standard deviations below the mean (about 70) marks the zone where intellectual disability is considered, but only if adaptive functioning is also clearly impaired. Notice how few people score below 70: about 2 in 100."}
+:::
+
 ### Global developmental delay
 In children **under five**, reliable IQ testing is often not possible. When a young child is clearly behind in two or more areas of development, the diagnosis is **global developmental delay**. It is reassessed later; some children catch up, others are later diagnosed with intellectual disability.
 
@@ -193,6 +197,10 @@ In the Starting level you met the two groups of ADHD symptoms. Now we apply the 
 {"vignette": "Dev, 8, from Indore. His class teacher writes that he 'never sits through a period', calls out answers, leaves worksheets half-done and loses his pencil box weekly. His mother says the same happens at home and at his grandmother's: he cannot wait his turn in games, runs and climbs in the house, talks over everyone and forgets what he was sent to fetch. It has been like this since he was three. He sleeps well, his hearing and vision were checked last year, and his reading is at his class level. Other children have started to avoid him. Count only the inattentive symptoms here.", "rule": "Inattentive presentation needs at least six of the nine inattentive symptoms (for a child), present in two settings, with impairment.", "symptoms": [{"label": "Careless mistakes, poor attention to detail", "present": false, "why": "Not described. Half-finished work is not the same as careless errors."}, {"label": "Difficulty sustaining attention in tasks or play", "present": true, "why": "Never sits through a period."}, {"label": "Does not seem to listen when spoken to", "present": false, "why": "Not described here."}, {"label": "Does not follow through or finish tasks", "present": true, "why": "Worksheets left half-done."}, {"label": "Difficulty organising tasks and activities", "present": false}, {"label": "Avoids tasks that need sustained mental effort", "present": false}, {"label": "Loses things needed for tasks", "present": true, "why": "Loses his pencil box weekly."}, {"label": "Easily distracted", "present": false, "why": "Not stated; don't assume."}, {"label": "Forgetful in daily activities", "present": true, "why": "Forgets what he was sent to fetch."}], "need": 6, "needCore": false, "verdict": "Only four inattentive symptoms are described, so the inattentive group is not met from this story. But Dev clearly shows hyperactive-impulsive symptoms (calls out, cannot wait, runs and climbs, talks over others, cannot stay seated) in several settings since early childhood, with impairment. If those reach six, he meets the predominantly hyperactive-impulsive presentation. Ask about the missing inattentive symptoms: a fuller history may show combined presentation."}
 :::
 
+:::widget flow
+{"title": "Reaching an ADHD diagnosis step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Enough symptoms", "detail": "Count inattentive and hyperactive-impulsive symptoms separately against the thresholds for age."}, {"id": "b", "label": "Beyond the expected for age", "detail": "Compare with other children of the same developmental level, not with the parents' hopes."}, {"id": "c", "label": "Childhood onset", "detail": "Several symptoms present before 12: school reports and parents' memories help."}, {"id": "d", "label": "Two or more settings", "detail": "Home and school at least; tuition, sport and family gatherings add evidence."}, {"id": "e", "label": "Clear impairment", "detail": "Learning, friendships, family life, safety."}, {"id": "f", "label": "Not better explained", "detail": "Rule out learning disorder, sensory problems, sleep, anxiety, depression, trauma, medical causes."}, {"id": "g", "label": "Name the presentation", "detail": "Combined, mainly inattentive, or mainly hyperactive-impulsive; then plan help."}], "caption": "Press Play. Every step must be satisfied; a rating scale alone is not a diagnosis."}
+:::
+
 ### ADHD across the life span
 - **Preschool**: very high activity, accidents, being excluded from playgroups. Diagnosis is harder before four because all young children are active.
 - **School age**: classroom problems, poor marks below ability, being punished, peer rejection.
@@ -292,6 +300,10 @@ Key facts:
 {"prompt": "For Tourette's disorder or a persistent tic disorder, tics must have been present for more than how many months since they started?", "min": 0, "max": 36, "unit": "months", "answer": [12, 12], "reveal": "More than one year since the first tic. Tics present for less than a year are called a provisional tic disorder; most of these fade.", "clinician": "DSM-5-TR: Tourette's requires multiple motor and one or more vocal tics at some time during the illness, tics may wax and wane but persisted for more than 1 year since first onset, onset before age 18, not attributable to a substance or medical condition. Provisional tic disorder: present for less than 1 year. Transient tics occur in up to about 1 in 5 school children; Tourette's in about 3 to 9 per 1,000 school-age children."}
 :::
 
+:::widget flow
+{"title": "Why tics are hard to stop, and how habit reversal breaks the loop", "layout": "cycle", "nodes": [{"id": "a", "label": "Premonitory urge", "detail": "An itch, pressure or tension in a body part."}, {"id": "b", "label": "Tic", "detail": "The movement or sound happens."}, {"id": "c", "label": "Relief", "detail": "The urge fades for a while."}, {"id": "d", "label": "Learning", "detail": "Relief rewards the tic, strengthening the urge-tic link. In habit reversal the child learns to notice the urge and do a competing response until the urge passes, which weakens the loop."}], "caption": "Press Play to go round the cycle. Telling a child to stop does not break it; teaching awareness and a competing response can."}
+:::
+
 ### What comes with tics
 In Tourette's, **ADHD** (about half) and **obsessive-compulsive symptoms** (about a third) are common and often cause more trouble than the tics themselves. Anxiety, rage attacks and learning problems also occur.
 
@@ -369,6 +381,10 @@ Babies fear strangers and separation; preschoolers fear the dark, animals and mo
 
 :::example School refusal in Kolkata
 Rohit, 11, has missed most of the last month of school. Every morning he has a stomach ache and sometimes vomits. On Sundays he is fine. His tests for gut problems are normal. He tells you, when his mother steps out, that he is scared his mother will "fall ill and die" while he is at school, since she was in hospital last year. This is **school refusal driven by separation anxiety**, not truancy. Truants hide their absence and do not want to be at home with parents.
+:::
+
+:::widget flow
+{"title": "How school refusal keeps itself going", "layout": "cycle", "nodes": [{"id": "a", "label": "School morning", "detail": "Fear rises: of separation, of a teacher, of a test."}, {"id": "b", "label": "Body alarm", "detail": "Stomach ache, nausea, crying."}, {"id": "c", "label": "Allowed to stay home", "detail": "Fear drops at once: a powerful reward."}, {"id": "d", "label": "Next morning is harder", "detail": "Missed work and lost friendships add new worries, and the brain has learned that avoiding works."}], "caption": "Press Play. Breaking the cycle means small, steady steps back, with support, not a single forced return."}
 :::
 
 ### Depression in children and teenagers
@@ -457,6 +473,10 @@ A child with DMDD has **severe, frequent temper outbursts** far out of proportio
 {"prompt": "DMDD should not be diagnosed for the first time before what age?", "min": 2, "max": 12, "unit": "years", "answer": [6, 6], "reveal": "Not before 6 years (because tantrums are normal in young children) and not after 18. The outbursts must have started before 10.", "clinician": "DSM-5-TR DMDD: outbursts three or more times a week on average; mood between outbursts persistently irritable or angry most of the day, nearly every day; present for 12 months or more without a break of 3 or more consecutive months; in at least two of three settings and severe in at least one; first diagnosis between 6 and 18 years; onset before 10. It cannot coexist with ODD, intermittent explosive disorder or bipolar disorder (if criteria for both DMDD and ODD are met, diagnose DMDD only). ICD-11 has no DMDD; it uses ODD with chronic irritability-anger."}
 :::
 
+:::widget flow
+{"title": "The coercive cycle between parent and child", "layout": "cycle", "nodes": [{"id": "a", "label": "Parent gives an instruction", "detail": "Often vague or shouted from another room."}, {"id": "b", "label": "Child refuses or whines", "detail": "Defiance escalates."}, {"id": "c", "label": "Parent gives in, or explodes", "detail": "Giving in rewards the child's defiance; exploding teaches that shouting wins and models aggression."}, {"id": "d", "label": "Both learn", "detail": "The child learns defiance works; the parent learns that giving in or exploding ends the noise. Next time both escalate faster."}], "caption": "Press Play. Parent training breaks the cycle with clear calm instructions, praise for cooperation, and consistent non-violent consequences."}
+:::
+
 ### What causes disruptive behaviour?
 Disruptive behaviour grows from a mix of **child factors** (difficult temperament, ADHD, language delay, low intelligence, callous traits) and **environment** (harsh, inconsistent or neglectful parenting, family conflict and violence, parental substance use or mental illness, poverty, deviant peers, abuse). A common cycle is the **coercive cycle**: the child whines or defies; the parent gives in, which rewards the defiance; or the parent explodes, which teaches the child that shouting wins. Both escalate.
 
@@ -535,6 +555,10 @@ Abuse and neglect harm children's mental health for life. Look for:
 The **Protection of Children from Sexual Offences Act** protects every person **under 18**. Anyone who knows or has reason to believe that a sexual offence against a child has happened, or may happen, **must report it** to the Special Juvenile Police Unit or the local police (Section 19). Not reporting is itself an offence (Section 21). The child's identity must be protected, and interviews, examinations and court processes must be child-friendly.
 :::
 
+:::widget flow
+{"title": "When a child discloses abuse", "layout": "chain", "nodes": [{"id": "a", "label": "Listen", "detail": "Stay calm. Let the child speak in their own words. No leading questions."}, {"id": "b", "label": "Believe and reassure", "detail": "'You did the right thing telling me. It is not your fault.'"}, {"id": "c", "label": "Do not promise secrecy", "detail": "Explain kindly that you must tell people who can keep them safe."}, {"id": "d", "label": "Record", "detail": "Write the child's exact words, date and time."}, {"id": "e", "label": "Report", "detail": "Tell your supervisor at once; make sure the report reaches the police or Special Juvenile Police Unit (POCSO Section 19)."}, {"id": "f", "label": "Protect", "detail": "Plan immediate safety and medical care; involve the Child Welfare Committee."}], "caption": "Press Play. Investigation is for trained officials; your job is to listen, record, report and protect."}
+:::
+
 ### What you do if a child tells you
 1. **Listen calmly.** Let the child speak in their own words. Do not push for details or ask leading questions.
 2. **Believe and reassure**: "You did the right thing telling me. It is not your fault."
@@ -599,6 +623,10 @@ Most children are dry by day around three, and dry at night somewhat later. Bedw
 
 :::widget guess
 {"prompt": "From what age can encopresis be diagnosed?", "min": 1, "max": 10, "unit": "years", "answer": [4, 4], "reveal": "Four years (or an equivalent developmental level), one year earlier than enuresis, because bowel control usually comes before night bladder control.", "clinician": "DSM-5-TR encopresis: repeated passage of faeces into inappropriate places, at least once a month for at least 3 months, chronological age at least 4 years; subtypes with constipation and overflow incontinence (most cases) or without. Prevalence about 1% of 5-year-olds, more in boys."}
+:::
+
+:::widget flow
+{"title": "A child who wets the bed: first decisions", "layout": "tree", "nodes": [{"id": "r", "label": "Bedwetting at age five or older", "detail": "Take a history and test the urine."}, {"id": "p", "label": "Never been dry (primary)", "detail": "Usually developmental and familial. Reassure, remove blame, simple measures, then an alarm.", "parent": "r"}, {"id": "s", "label": "Wetting again after a dry spell (secondary)", "detail": "Look for stress, abuse, urine infection, constipation, diabetes, new medicines.", "parent": "r"}, {"id": "d", "label": "Daytime symptoms too", "detail": "Urgency, frequency, holding: think bladder dysfunction or constipation; examine the spine.", "parent": "r"}, {"id": "q", "label": "Needs quick dryness", "detail": "Camp or sleepover: desmopressin with fluid restriction, short term.", "parent": "r"}], "caption": "Tap each branch."}
 :::
 
 ### How they are treated

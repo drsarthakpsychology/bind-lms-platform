@@ -102,7 +102,16 @@ The paradox that "a stimulant calms a hyperactive child" is not really a paradox
 {"scene": "Arjun, 9, from Mumbai, has combined-type ADHD confirmed across home and school. Parent training and school changes have helped a little, but he still cannot learn in class and has been suspended twice. His mother is worried that medicine 'will change his personality' and 'make him an addict'. His father wants 'the strongest dose'. He has no heart symptoms and no family history of sudden death.", "ask": "How do you proceed?", "choices": [{"label": "Start methylphenidate at a high dose to get a quick effect, as the father wants", "verdict": "harm", "outcome": "Arjun stops eating, cannot sleep, and becomes tearful and withdrawn. His mother stops the medicine and refuses to try again.", "why": "Stimulants are titrated from a low dose. Starting high causes side effects that can end a useful treatment for good."}, {"label": "Explain how the medicine works, its benefits and side effects, and the evidence on addiction; record baseline height, weight, pulse and blood pressure; start a low dose and titrate weekly with teacher and parent ratings", "verdict": "best", "outcome": "On a moderate dose, Arjun's teacher reports he finishes work and is calmer. His appetite dips at lunch but he eats well at breakfast and dinner. His mother says he is 'still Arjun, just able to show it'.", "why": "Shared decision-making, baseline checks, slow titration and structured feedback from school give the best results and keep families on board."}, {"label": "Refuse medicine and continue only parent training", "verdict": "ok", "outcome": "The parents keep trying, but Arjun is suspended again and his self-esteem falls further.", "why": "Parent training is good, but in a school-age child with severe, impairing ADHD despite it, medicine is recommended."}]}
 :::
 
+:::widget curve
+{"kind": "inverted-u", "title": "Arousal, dopamine and performance", "caption": "Move the slider. Too little prefrontal dopamine and noradrenaline (bored, under-aroused) and too much (overdosed, anxious) both worsen performance; the best focus sits in the middle. Stimulants at the right dose move many people with ADHD towards the peak, which is why the dose is titrated, not pushed as high as possible."}
+:::
+
 ### Adult ADHD
+
+:::widget journey
+{"drug": "methylphenidate", "target": "dopamine and noradrenaline transporters in the prefrontal cortex and striatum", "routes": ["oral"], "notes": {"gut": "Immediate-release tablets are absorbed within about an hour; slow-release and osmotic forms release the drug in stages so one morning dose covers the school day.", "liver": "Methylphenidate is broken down mainly by an esterase, not by CYP enzymes, so it has few enzyme interactions.", "out": "A short half-life of a few hours: effects wear off by evening, which helps sleep."}, "caption": "Follow one dose of methylphenidate. Its short action explains why timing matters for school and for sleep."}
+:::
+
 ADHD in adults is real, common and under-diagnosed in India. Adults rarely bounce off walls. Instead they describe a restless mind, chronic lateness, unfinished projects, forgotten bills and appointments, impulsive spending, job-hopping, and quick temper. Many have depression, anxiety, substance use or a sleep problem as well, which can hide the ADHD.
 
 Diagnosis needs evidence of childhood symptoms (old school reports, a parent's account) and current impairment, and careful exclusion of mood disorder, substance use, sleep disorders and personality difficulties. Stimulants work in adults too.
@@ -167,6 +176,10 @@ Some genetic conditions come with a typical pattern of thinking, behaviour and m
 | **Lesch-Nyhan syndrome** | HPRT1 deficiency, X-linked, boys | High uric acid, gout, movement disorder | Severe **self-biting** of lips and fingers |
 | **Fetal alcohol spectrum disorder** | Alcohol in pregnancy | Smooth groove above the lip, thin upper lip, short eye openings, small head | ADHD-like problems, poor judgement, learning problems; often with normal appearance |
 
+:::widget flow
+{"title": "Genomic imprinting at chromosome 15q11-q13", "layout": "tree", "nodes": [{"id": "r", "label": "The 15q11-q13 region", "detail": "Some genes here work only from the father's copy, one key gene (UBE3A in neurons) only from the mother's."}, {"id": "pw", "label": "Father's copy missing or silent", "detail": "Deletion on the paternal chromosome, or two maternal copies: Prader-Willi syndrome (hyperphagia, skin picking, compulsions; psychosis risk with maternal disomy).", "parent": "r"}, {"id": "an", "label": "Mother's copy missing or silent", "detail": "Deletion on the maternal chromosome, two paternal copies, or a UBE3A mutation: Angelman syndrome (happy demeanour, absent speech, seizures, ataxia).", "parent": "r"}], "caption": "Tap each branch. Same region, opposite parent, very different behavioural phenotypes."}
+:::
+
 :::analogy Same address, different parent
 Prader-Willi and Angelman syndromes involve the **same region of chromosome 15**. Which syndrome results depends on which parent's copy is missing: missing father's copy gives Prader-Willi; missing mother's copy gives Angelman. This is called **genomic imprinting**: some genes are switched on only from one parent.
 :::
@@ -230,6 +243,10 @@ Treating a child means treating a system: the child, the parents, the school, an
 | Trauma | Trauma-focused CBT, EMDR |
 | Eating disorders | Family-based treatment (FBT) |
 | Autism, ID | Parent-mediated early intervention, behavioural approaches, speech and occupational therapy |
+
+:::widget flow
+{"title": "Choosing the first treatment for a young person", "layout": "tree", "nodes": [{"id": "r", "label": "Diagnosis made, severity rated", "detail": "Always include psychoeducation, family and school work."}, {"id": "psy", "label": "Psychological treatment first", "detail": "Mild to moderate anxiety and depression, ODD, early conduct problems, eating disorders (family-based), mild tics, school refusal.", "parent": "r"}, {"id": "both", "label": "Combine early", "detail": "Moderate to severe depression or anxiety, OCD: CBT plus an SSRI often gives the best results.", "parent": "r"}, {"id": "med", "label": "Medicine needed early", "detail": "Severe impairing ADHD in school-age children, psychosis, mania, severe tics, catatonia.", "parent": "r"}], "caption": "Tap each branch. A prescription is never the whole plan."}
+:::
 
 ### The special rules for medicines in children
 - **Fewer trials, less certainty.** Many medicines are used "off-label" in children because trials were done only in adults.
@@ -407,7 +424,10 @@ Atomoxetine target dose in children? :: About 1.2 mg/kg/day, maximum 1.4 mg/kg/d
 2. Name five short-note topics from this module. || Fragile X, Tourette's, enuresis, DMDD, RAD, SLD in India, POCSO, school refusal, methylphenidate, behavioural phenotypes.
 :::
 
-## 4.2 Module test [core]
+`;
+
+export const test = String.raw`
+## 4.5 Module test [core]
 :::mcq
 Q: The main yardstick for judging a child's behaviour is:
 - The parent's opinion alone

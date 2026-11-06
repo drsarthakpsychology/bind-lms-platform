@@ -13,6 +13,10 @@ We always ask: **is this behaviour what we expect for this child's age and stage
 ### 2. The child lives inside a family and a school
 A child cannot book her own appointment. Someone else noticed a problem and brought her. That person's worry, the family's stresses and the school's demands are all part of the picture. A child who is "naughty" may be hungry, bullied, unable to read the board, scared of a violent home, or simply bored in a class that is too slow for him.
 
+:::widget layers
+{"title": "The child at the centre of many systems", "shape": "rings", "layers": [{"label": "The child", "detail": "Temperament, genes, health, development, language, the child's own view of the world."}, {"label": "Family and home", "detail": "Parents, grandparents, siblings, how the home runs, money, conflict, love and discipline."}, {"label": "School, tuition and friends", "detail": "Teachers, class size, language of teaching, exam pressure, bullying, friendships."}, {"label": "Community", "detail": "Neighbourhood safety, religious and cultural life, health services, anganwadi, screens and social media."}, {"label": "Society and policy", "detail": "Poverty, caste and gender norms, education policy, disability law, child protection laws."}], "caption": "Tap each ring, from the centre outwards. A problem that shows in the child may start in any ring, and help can be given in any ring."}
+:::
+
 ### 3. Many people hold part of the story
 Parents see the mornings and evenings. Teachers see how the child copes with rules, reading and other children. Grandparents may see what parents miss. The child sees her own inner world, and from about eight or nine years can often tell you about worry and sadness better than any adult. Good assessment collects all these views and expects them to differ.
 
@@ -114,6 +118,10 @@ Before a child can say "Look, a bird!", she says it with one finger and a glance
 - **Any loss of language, social or motor skills at any age.** Regression always needs prompt assessment.
 - Parents who are worried. Parental concern is a useful predictor in its own right.
 
+:::widget flow
+{"title": "A worried parent and a young child: what to do next", "layout": "tree", "nodes": [{"id": "r", "label": "Concern about development", "detail": "Start with the history: which streams are behind, since when, any loss of skills?"}, {"id": "reg", "label": "Skills lost", "detail": "Regression at any age: prompt specialist assessment (autism, epilepsy syndromes, Rett, metabolic, hearing loss, neglect).", "parent": "r"}, {"id": "many", "label": "Several streams behind", "detail": "Possible global developmental delay: refer for assessment and early intervention; check hearing, vision, thyroid, growth.", "parent": "r"}, {"id": "one", "label": "One stream behind", "detail": "For example language only: check hearing first, screen for autism, consider a language disorder.", "parent": "r"}, {"id": "ok", "label": "Within the normal range", "detail": "Reassure, give play and talk advice, and agree a date to check again. Parental worry alone is still a reason to review.", "parent": "r"}], "caption": "Tap each branch. Hearing is checked in every speech delay."}
+:::
+
 :::safety Loss of skills is never "a phase"
 A child who used words and then stops, or who walked and now cannot, needs urgent assessment. Causes range from autism (where some children lose early words) to epilepsy syndromes, Rett syndrome in girls, metabolic and neurodegenerative disorders, hearing loss and severe neglect.
 :::
@@ -193,6 +201,10 @@ Some children have mainly the first group, some mainly the second, and many have
 
 :::widget guess
 {"prompt": "Out of every 100 school-age children worldwide, about how many have ADHD?", "min": 0, "max": 20, "unit": "children", "answer": [5, 8], "reveal": "About 5 to 7 in every 100 children. So in a class of 40, two or three children are likely to have it. In adults it is lower, roughly 2 to 3 in 100.", "clinician": "Pooled worldwide estimate about 7.2% in children (2015, cited in DSM-5-TR) and about 2.5% in adults. Indian school-based studies range widely (roughly 2% to 17%) depending on method; clinic samples are heavily male (about 3 to 4 boys for every girl), community samples less so (about 2 to 1)."}
+:::
+
+:::widget brainmap
+{"title": "Brain networks linked with ADHD", "focus": ["prefrontal", "basal-ganglia", "cerebellum"], "notes": {"prefrontal": "Planning, holding goals in mind and stopping impulses. On average this area matures a little later in children with ADHD.", "basal-ganglia": "Selecting actions and processing reward. Dopamine signalling here is involved in motivation and the pull of immediate rewards.", "cerebellum": "Timing and coordination, including timing of attention. Differences here are found in some studies."}, "caption": "Tap each area. These are group averages from research, not a test: brain scans cannot diagnose ADHD in a single child."}
 :::
 
 ### Why it matters
@@ -324,6 +336,10 @@ Intellectual disability is like a lift that moves slowly between every floor: ev
 - **Big classes, heavy syllabus.** A class of 50 with rote learning leaves little room for children who learn differently.
 - **Tuition culture and exam pressure.** Hours of tuition can mask a learning disorder for years, or add exhaustion and anxiety.
 - **Stigma.** Families may fear the word "disability" and delay assessment, even though a certificate brings help.
+
+:::widget flow
+{"title": "A child struggling at school: sorting the cause", "layout": "tree", "nodes": [{"id": "r", "label": "Falling behind at school", "detail": "First check vision, hearing, attendance, sleep and the language of teaching."}, {"id": "gen", "label": "Behind in everything, and in daily skills", "detail": "Think of intellectual disability: test general ability and adaptive functioning.", "parent": "r"}, {"id": "spec", "label": "One skill far behind, others fine", "detail": "Think of a specific learning disorder: test reading, writing and maths in each language taught.", "parent": "r"}, {"id": "att", "label": "Can do the work but cannot sustain attention", "detail": "Think of ADHD, alongside sleep problems and anxiety.", "parent": "r"}, {"id": "new", "label": "Was doing well, recently dropped", "detail": "Think of emotional, family or medical causes: depression, bullying, abuse, illness.", "parent": "r"}], "caption": "Tap each branch. More than one can apply at once."}
+:::
 
 ### The good news: help exists
 In India, children with a certified **specific learning disability** (under the Rights of Persons with Disabilities Act, 2016) can receive **accommodations in board exams**: extra time, a scribe or reader, exemption from a third language, and use of a calculator in some boards. Remedial teaching by a special educator, matched to the child's specific difficulty, works far better than more tuition of the same kind.
