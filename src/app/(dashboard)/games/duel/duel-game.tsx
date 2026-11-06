@@ -92,7 +92,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
       const rating = v.result.rating;
       const delta = v.result.delta;
       const outcome = v.result.outcome;
-      setProf((p) => ({ ...p, rating, games: p.games + (v.ranked ? 1 : 0), wins: p.wins + (outcome === "win" ? 1 : 0), losses: p.losses + (outcome === "loss" ? 1 : 0), history: [{ id: v.matchId, when: new Date().toISOString(), opp: v.opp.name, outcome, score: `${v.score.you}–${v.score.opp}`, delta, ranked: v.ranked, forfeit: (v.result?.reason === "forfeit" ? (v.result.youForfeited ? "you" : "them") : null) as "you" | "them" | null }, ...p.history].slice(0, 10) }));
+      setProf((p) => ({ ...p, rating, games: p.games + (v.ranked ? 1 : 0), wins: p.wins + (outcome === "win" ? 1 : 0), losses: p.losses + (outcome === "loss" ? 1 : 0), history: [{ id: v.matchId, when: new Date().toISOString(), opp: v.opp.name, outcome, score: `${v.score.you} to ${v.score.opp}`, delta, ranked: v.ranked, forfeit: (v.result?.reason === "forfeit" ? (v.result.youForfeited ? "you" : "them") : null) as "you" | "them" | null }, ...p.history].slice(0, 10) }));
     }
   }
 
@@ -176,7 +176,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
                   {!h.ranked && <span className="text-muted-foreground"> · practice</span>}
                 </span>
                 <span className="tabular-nums">{h.score}</span>
-                <span className={cn("w-12 text-right font-bold tabular-nums")}>{h.delta === null ? "–" : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
+                <span className={cn("w-12 text-right font-bold tabular-nums")}>{h.delta === null ? <span className="text-xs font-semibold text-muted-foreground">none</span> : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
               </li>
             ))}
           </ul>
@@ -235,7 +235,7 @@ function Queue({ matchId, since, rating, onMatch, onCancel, onBot }: { matchId: 
         0:{String(secs).padStart(2, "0")}
       </p>
       <p className="text-sm text-muted-foreground">
-        Looking for players rated {Math.round(rating - pairWindow(waited))}–{Math.round(rating + pairWindow(waited))}. After 20 seconds you&apos;ll play the practice bot instead (unranked).
+        Looking for players rated {Math.round(rating - pairWindow(waited))} to {Math.round(rating + pairWindow(waited))}. After 20 seconds you&apos;ll play the practice bot instead (unranked).
       </p>
       {err && <p className="text-sm font-semibold">{err}</p>}
       <div className="grid gap-2 sm:grid-cols-2">

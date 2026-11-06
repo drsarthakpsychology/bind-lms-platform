@@ -27,7 +27,7 @@ export const NEURO: Concept[] = [
   c("half-life", "neuroscience", "Half-life", "Time for the drug level in the blood to fall by half", "Elimination t½; about 5 half-lives to steady state and to washout", ["pharmacokinetics"]),
   c("cyp", "neuroscience", "CYP450 enzymes", "Liver enzymes that break down many medicines", "Hepatic cytochrome P450 isoenzymes (e.g., 1A2, 2D6, 3A4); basis of many interactions", ["pharmacokinetics"]),
   c("neuroplasticity", "neuroscience", "Neuroplasticity", "The brain's ability to rewire with experience", "Synaptic and structural change with learning, therapy and medication; BDNF involved", ["synapse"]),
-  c("bbb", "neuroscience", "Blood–brain barrier", "A protective filter between blood and brain", "Endothelial tight junctions limiting CNS entry of many substances", ["pharmacokinetics"]),
+  c("bbb", "neuroscience", "Blood-brain barrier", "A protective filter between blood and brain", "Endothelial tight junctions limiting CNS entry of many substances", ["pharmacokinetics"]),
 ];
 
 export const PHARM: Concept[] = [
@@ -65,7 +65,7 @@ export const PHARM: Concept[] = [
   c("methylphenidate", "pharmacology", "Methylphenidate", "Stimulant medicine for ADHD", "Dopamine/noradrenaline reuptake inhibitor; appetite, sleep, BP/HR effects", ["adhd", "stimulant"]),
   c("atomoxetine", "pharmacology", "Atomoxetine", "Non-stimulant ADHD medicine", "Selective noradrenaline reuptake inhibitor; onset over weeks", ["adhd"]),
   c("donepezil", "pharmacology", "Donepezil", "Medicine that boosts acetylcholine in Alzheimer's", "Acetylcholinesterase inhibitor; GI effects, bradycardia", ["dementia"]),
-  c("memantine", "pharmacology", "Memantine", "Alzheimer's medicine acting on glutamate", "NMDA receptor antagonist for moderate–severe Alzheimer's", ["dementia"]),
+  c("memantine", "pharmacology", "Memantine", "Alzheimer's medicine acting on glutamate", "NMDA receptor antagonist for moderate to severe Alzheimer's", ["dementia"]),
   c("disulfiram", "pharmacology", "Disulfiram", "Makes you feel very sick if you drink alcohol", "Aldehyde dehydrogenase inhibitor; acetaldehyde reaction with alcohol", ["substance", "alcohol"]),
   c("naltrexone", "pharmacology", "Naltrexone", "Reduces craving for alcohol and blocks opioids", "Opioid antagonist for alcohol and opioid use disorders", ["substance", "alcohol"]),
   c("buprenorphine", "pharmacology", "Buprenorphine", "Opioid replacement that is safer in overdose", "μ-opioid partial agonist for opioid substitution therapy", ["substance"]),

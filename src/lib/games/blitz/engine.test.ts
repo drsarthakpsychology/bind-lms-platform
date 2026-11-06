@@ -78,6 +78,6 @@ describe("blitz questions", () => {
   });
 
   it("no em or en dashes in anything a student reads", () => {
-    for (const q of BLITZ_QUESTIONS) expect(/[–—]/.test([q.prompt, ...q.options, q.why, q.learn].join(" ")), q.id).toBe(false);
+    for (const q of BLITZ_QUESTIONS) expect(/[\u2013\u2014]/.test([q.prompt, ...q.options, q.why, q.learn].join(" ")), q.id).toBe(false);
   });
 });

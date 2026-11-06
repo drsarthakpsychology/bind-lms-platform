@@ -435,7 +435,7 @@ function GuessBox({ disabled, guessed, onGuess }: { disabled: boolean; guessed: 
     [disabled, onGuess],
   );
 
-  // Desktop shortcuts: 1–4 highlight a result, Enter guesses it (outside the text box too).
+  // Desktop shortcuts: 1 to 4 highlight a result, Enter guesses it (outside the text box too).
   React.useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const t = e.target as HTMLElement | null;
