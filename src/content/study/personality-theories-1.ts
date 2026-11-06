@@ -85,6 +85,14 @@ Q: A theory that explains almost any behaviour after the fact, but makes no pred
 ## 1.2 Types and early traits: from humours to Allport [core][starting]
 A **type** is a category: you are in it or not. A **trait** is a dimension: everyone has some amount. Modern research strongly favours traits, because when you measure most characteristics, scores fall on a continuous curve, not into separate boxes.
 
+:::widget curve
+{
+ "kind": "normal",
+ "title": "Why traits beat types: scores fall on a curve",
+ "caption": "Move the slider along a trait such as extraversion. Most people sit near the middle; very few are at the extremes. A type system cuts this curve in two, so two people a hair apart near the middle get opposite labels, which is why type tests are unstable on retest."
+}
+:::
+
 ### Early type theories
 | Theory | Types | Status today |
 |---|---|---|
@@ -117,6 +125,28 @@ Allport (1897 to 1967) saw traits as **real structures inside the person** (neur
 - **Secondary**: narrower preferences and attitudes that appear only in some situations ("hates waiting in queues").
 
 **Common traits versus personal dispositions**: common traits allow comparison across people (nomothetic); personal dispositions are unique to each person (idiographic). Allport favoured studying the individual, for example through his analysis of 301 letters an older woman wrote over eleven years.
+
+:::widget layers
+{
+ "title": "Allport's three kinds of personal dispositions",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Cardinal",
+   "detail": "One master trait that organises almost everything a person does. Rare."
+  },
+  {
+   "label": "Central",
+   "detail": "The five to ten traits you would put in a reference letter."
+  },
+  {
+   "label": "Secondary",
+   "detail": "Narrow preferences and attitudes that appear only in some situations."
+  }
+ ],
+ "caption": "The narrower the base, the fewer people have that level: almost everyone has secondary traits, few have a cardinal one."
+}
+:::
 
 **The proprium**: Allport's word for the self, the parts of personality that feel central and "mine". It develops through stages: bodily self, self-identity, self-esteem, self-extension, self-image, self as rational coper, and **propriate striving** (long-term goals).
 
@@ -192,6 +222,32 @@ Eysenck combined factor analysis with **hypothesis testing** and **biology**. He
 
 **A hierarchy**: specific responses at the bottom, then habitual responses, then traits, then **types** (superfactors) at the top.
 
+:::widget layers
+{
+ "title": "Eysenck's hierarchy of personality",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Type (superfactor)",
+   "detail": "Extraversion, the broad dimension at the top."
+  },
+  {
+   "label": "Traits",
+   "detail": "Sociability, liveliness, activity, assertiveness, sensation seeking."
+  },
+  {
+   "label": "Habitual responses",
+   "detail": "Usually chatting to strangers at parties; usually volunteering to speak first."
+  },
+  {
+   "label": "Specific responses",
+   "detail": "Chatting to the stranger next to you at last Saturday's wedding."
+  }
+ ],
+ "caption": "Each level is a correlation of the level below: habits are repeated acts, traits are clusters of habits, types are clusters of traits."
+}
+:::
+
 **The four temperaments return**: E and N together recreate the ancient humours: high N and high E = **choleric**; high N, low E = **melancholic**; low N, high E = **sanguine**; low N, low E = **phlegmatic**.
 
 **The biology Eysenck proposed**:
@@ -210,6 +266,14 @@ Eysenck combined factor analysis with **hypothesis testing** and **biology**. He
     { "label": "Introverts", "verdict": "best", "outcome": "Correct. Introverts produced more saliva in response to the lemon juice.", "why": "If introverts start at higher cortical arousal, the same stimulus produces a bigger response, which fits Eysenck's prediction. Later arousal findings were more mixed: introverts and extraverts differ more in arousability (reactivity) than in resting arousal." },
     { "label": "No difference; saliva has nothing to do with personality", "verdict": "ok", "outcome": "Studies found a reliable difference in this paradigm.", "why": "This was one of Eysenck's best-replicated biological predictions." }
   ]
+}
+:::
+
+:::widget curve
+{
+ "kind": "inverted-u",
+ "title": "Eysenck's arousal idea as a curve",
+ "caption": "Move the arousal slider. Everyone performs and feels best at a moderate level of arousal. Introverts, in Eysenck's theory, start further along the curve, so a noisy party pushes them past their peak; extraverts start lower and need extra stimulation to reach theirs."
 }
 :::
 
@@ -298,6 +362,32 @@ Both spell the five: **O**penness, **C**onscientiousness, **E**xtraversion, **A*
     { "text": "Warmth", "bucket": 2, "why": "In the NEO, warmth is an extraversion facet, though it overlaps with agreeableness." },
     { "text": "Values (openness to re-examining values)", "bucket": 0 }
   ]
+}
+:::
+
+:::widget flow
+{
+ "title": "Two roads to the Big Five",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "b",
+   "label": "The Big Five"
+  },
+  {
+   "id": "l",
+   "label": "Lexical road",
+   "parent": "b",
+   "detail": "Trait words in the dictionary (Allport and Odbert) were factor analysed by Tupes and Christal, Norman and Goldberg: five factors kept appearing."
+  },
+  {
+   "id": "q",
+   "label": "Questionnaire road",
+   "parent": "b",
+   "detail": "Costa and McCrae built the NEO inventories from existing theory and items, then added conscientiousness and agreeableness to neuroticism, extraversion and openness."
+  }
+ ],
+ "caption": "Two independent methods arriving at the same five factors is part of why the model is trusted."
 }
 :::
 
@@ -560,6 +650,41 @@ When incongruence is large and defences fail, the self-concept can break down (d
 Karthik, 21, is a third-year engineering student in Chennai. His parents' approval has always depended on his ranks. He loves painting but has learnt to see it as "time-pass". He feels flat and anxious, and says, "I don't know what I actually want." His self-concept ("I am a future engineer who should love this") is incongruent with his experience (boredom with engineering, joy in painting). A Rogerian counsellor would not tell him to change courses; she would offer the conditions in which he can hear his own valuing again.
 :::
 
+:::widget flow
+{
+ "title": "How conditions of worth lead to distress",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Need for positive regard",
+   "detail": "Every child needs warmth and acceptance."
+  },
+  {
+   "id": "b",
+   "label": "Conditional love",
+   "detail": "“We love you when you top the class.”"
+  },
+  {
+   "id": "c",
+   "label": "Conditions of worth",
+   "detail": "The child values experience by others' standards, not her own organismic valuing."
+  },
+  {
+   "id": "d",
+   "label": "Incongruence",
+   "detail": "Self-concept (“I love engineering”) clashes with experience (boredom, joy in painting)."
+  },
+  {
+   "id": "e",
+   "label": "Threat and defence",
+   "detail": "Distortion and denial keep the clash out of awareness, at a cost: anxiety, flatness, confusion."
+  }
+ ],
+ "caption": "Therapy reverses the chain: unconditional positive regard loosens conditions of worth so the person can hear their own valuing again."
+}
+:::
+
 ### The fully functioning person
 Rogers's picture of psychological health:
 1. **Openness to experience**: no need for defences.
@@ -646,6 +771,40 @@ From the most basic to the highest:
 4. **Esteem**: self-respect, achievement and competence, and respect and recognition from others.
 5. **Self-actualisation**: "What a man can be, he must be": becoming everything one is capable of.
 Maslow later added **self-transcendence** (1969): serving something beyond the self (altruism, spirituality), above self-actualisation.
+
+:::widget layers
+{
+ "title": "Maslow's hierarchy (top = highest)",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Self-transcendence (added later)",
+   "detail": "Serving something beyond the self: altruism, spirituality, a cause."
+  },
+  {
+   "label": "Self-actualisation",
+   "detail": "Becoming everything one is capable of. A being need."
+  },
+  {
+   "label": "Esteem",
+   "detail": "Competence, achievement, respect from others."
+  },
+  {
+   "label": "Belongingness and love",
+   "detail": "Friendship, family, intimacy, acceptance."
+  },
+  {
+   "label": "Safety",
+   "detail": "Security, stability, protection from danger."
+  },
+  {
+   "label": "Physiological",
+   "detail": "Food, water, air, sleep, warmth."
+  }
+ ],
+ "caption": "Maslow himself never drew this pyramid and said the order was flexible. The lower four are deficiency needs; the upper levels are growth needs."
+}
+:::
 
 ### Two kinds of needs
 - **Deficiency needs (D-needs)**: the lower four. They come from a lack; once satisfied they stop motivating. Their lack causes illness.
@@ -756,6 +915,38 @@ Frankl, a Viennese psychiatrist, survived Auschwitz and other camps, where his w
 }
 :::
 
+:::widget flow
+{
+ "title": "Frankl's three roads to meaning",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "m",
+   "label": "The will to meaning"
+  },
+  {
+   "id": "c",
+   "label": "Creative",
+   "parent": "m",
+   "detail": "What we give to the world: work, deeds, creations. A nurse finding meaning in caring for patients."
+  },
+  {
+   "id": "e",
+   "label": "Experiential",
+   "parent": "m",
+   "detail": "What we receive: love, beauty, nature, truth. Meaning in a relationship or a sunrise."
+  },
+  {
+   "id": "a",
+   "label": "Attitudinal",
+   "parent": "m",
+   "detail": "The stance we take towards suffering that cannot be changed. The last human freedom."
+  }
+ ],
+ "caption": "When all three are blocked, Frankl described an existential vacuum, and in illness a noogenic neurosis."
+}
+:::
+
 ### Irvin Yalom: the four givens
 In 1980, Irvin Yalom organised the field around four **ultimate concerns**, each with a conflict:
 | Given | The conflict |
@@ -829,6 +1020,36 @@ Social-cognitive theories keep the behaviourists' rigour but add what happens **
 **A**ttention, **R**etention, **R**eproduction, **M**otivation. Or remember: you can't copy what you didn't **see**, can't **remember**, can't **do**, or don't **want** to do.
 :::
 
+:::widget flow
+{
+ "title": "Reciprocal determinism: a shy student",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "p",
+   "label": "Person",
+   "detail": "Belief: “I have nothing useful to say.” Anxiety in class."
+  },
+  {
+   "id": "b",
+   "label": "Behaviour",
+   "detail": "She stays silent in discussions."
+  },
+  {
+   "id": "e",
+   "label": "Environment",
+   "detail": "The teacher stops calling on her; classmates don't ask her views."
+  }
+ ],
+ "edgeLabels": {
+  "p>b": "guides",
+  "b>e": "shapes",
+  "e>p": "confirms"
+ },
+ "caption": "Each part influences the others. A teacher can break the loop at any point: a small, safe speaking task changes behaviour, which changes the environment and then the belief."
+}
+:::
+
 **Self-efficacy** (1977) is the belief in one's capability to organise and carry out the actions needed to achieve a goal. It is **specific** ("I can give an injection", not "I am a capable person") and it is different from **outcome expectancy** ("If I study, I'll pass"). You can believe studying works (outcome) yet doubt you can make yourself study (efficacy). Four sources:
 | Source | Example | Strength |
 |---|---|---|
@@ -849,6 +1070,36 @@ Social-cognitive theories keep the behaviourists' rigour but add what happens **
     { "text": "A man recovering from a heart attack walks a little further each day", "bucket": 0, "why": "Graded tasks that guarantee success are the most powerful builder of self-efficacy, used in cardiac and stroke rehabilitation." },
     { "text": "A diabetic patient sees a video of someone her age learning to inject insulin", "bucket": 1 }
   ]
+}
+:::
+
+:::widget flow
+{
+ "title": "Bandura's four steps of observational learning",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Attention",
+   "detail": "Noticing the model. More likely if the model is similar, high status, attractive or rewarded."
+  },
+  {
+   "id": "r",
+   "label": "Retention",
+   "detail": "Storing what was seen as images or words."
+  },
+  {
+   "id": "p",
+   "label": "Reproduction",
+   "detail": "Having the skills to perform it."
+  },
+  {
+   "id": "m",
+   "label": "Motivation",
+   "detail": "A reason to act: direct, vicarious or self-reinforcement."
+  }
+ ],
+ "caption": "A failure at any step blocks imitation. The Bobo doll follow-up showed motivation decides performance even when learning has happened."
 }
 :::
 
@@ -930,6 +1181,36 @@ After challenging traits in 1968 (section 2.1), Mischel built a theory of how pe
 5. **Competencies and self-regulatory plans**: what I can do and how I manage myself.
 
 **If-then behavioural signatures**: consistency lies in stable patterns such as "**if** teased by peers, **then** aggressive; **if** warned by an adult, **then** compliant". Shoda, Mischel and Wright (1994) observed children at a summer camp hour by hour and found that two children with the same average aggression had very different, but stable, if-then profiles.
+
+:::widget layers
+{
+ "title": "Mischel's cognitive-affective units",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Encodings",
+   "detail": "How I categorise situations, people and myself: “This is a test of my competence.”"
+  },
+  {
+   "label": "Expectancies and beliefs",
+   "detail": "About outcomes and my own efficacy: “If I speak up, I'll be laughed at.”"
+  },
+  {
+   "label": "Affects",
+   "detail": "Feelings and emotional reactions triggered by the situation."
+  },
+  {
+   "label": "Goals and values",
+   "detail": "What I want and care about."
+  },
+  {
+   "label": "Competencies and self-regulatory plans",
+   "detail": "What I can do and how I manage myself to reach goals."
+  }
+ ],
+ "caption": "A situation activates some units, which activate others, producing a stable if-then signature."
+}
+:::
 
 ### George Kelly (1905 to 1967)
 Kelly's theory, set out in full in 1955, began from his experience as a counsellor in rural Kansas, where he found that his explanations helped clients even when they were made up; what mattered was a new way of seeing.

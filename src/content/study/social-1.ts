@@ -105,6 +105,47 @@ Schemas help: they let you fill gaps and act fast. They also hurt: you notice wh
 ### When expectations make themselves true
 A **self-fulfilling prophecy** happens when an expectation changes behaviour in a way that makes the expectation come true. In **Rosenthal and Jacobson (1968)**, teachers were told some randomly chosen pupils were "late bloomers". By the end of the year, the youngest of those pupils had gained more on IQ tests.
 
+:::widget flow
+{
+ "title": "How a teacher's expectation can make itself come true",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Expectation",
+   "detail": "The teacher believes Ravi is a 'late bloomer' who will do well."
+  },
+  {
+   "id": "b",
+   "label": "Teacher's behaviour",
+   "detail": "More warmth, more time to answer, harder questions, more detailed feedback."
+  },
+  {
+   "id": "c",
+   "label": "Student's response",
+   "detail": "Ravi feels capable, tries harder and learns more."
+  },
+  {
+   "id": "d",
+   "label": "Outcome",
+   "detail": "Ravi's marks rise."
+  },
+  {
+   "id": "e",
+   "label": "Expectation confirmed",
+   "detail": "“I knew he had it in him.” The belief grows stronger, and the loop runs again."
+  }
+ ],
+ "edgeLabels": {
+  "a>b": "shapes",
+  "b>c": "signals",
+  "c>d": "effort",
+  "d>e": "seen as proof"
+ },
+ "caption": "The same loop runs with low expectations, which is how stereotypes about a group can turn into real differences in performance."
+}
+:::
+
 :::trap Pygmalion is real but smaller than you think
 Later reviews found teacher expectancy effects are real but **usually small**, strongest for younger children and for groups that are already stereotyped, and they fade. Don't write "teachers' beliefs decide a child's IQ".
 :::
@@ -201,6 +242,43 @@ Harold Kelley (1967) said that when we have seen a person many times, we look at
 
 :::mnemonic Kelley: "CDC"
 **C**onsensus, **D**istinctiveness, **C**onsistency. All **H**igh = the **situation** (stimulus). Low, Low, High = the **person**.
+:::
+
+:::widget flow
+{
+ "title": "Kelley's covariation model as a decision tree",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "Is the behaviour consistent over time?"
+  },
+  {
+   "id": "lo",
+   "label": "Low consistency",
+   "parent": "q",
+   "detail": "Something unusual about this one occasion: a circumstance attribution."
+  },
+  {
+   "id": "hi",
+   "label": "High consistency: check consensus and distinctiveness",
+   "parent": "q"
+  },
+  {
+   "id": "int",
+   "label": "Low consensus, low distinctiveness",
+   "parent": "hi",
+   "detail": "Internal: something about the person. 'Arjun laughs at every comedian; nobody else laughs at this one.'"
+  },
+  {
+   "id": "ext",
+   "label": "High consensus, high distinctiveness",
+   "parent": "hi",
+   "detail": "External: something about the stimulus. 'Everyone laughs at this comedian, and Arjun laughs only at him.'"
+  }
+ ],
+ "caption": "Tap each branch. Mixed patterns (for example, low consensus with high distinctiveness) give mixed attributions."
+}
 :::
 
 When we see something only once, Kelley said we use **causal schemas**: the **discounting principle** (if there is a good external reason, we discount the internal one) and the **augmenting principle** (if someone acts despite pressure against it, we strengthen the internal attribution).
@@ -317,6 +395,28 @@ Daniel Katz (1960) described four **functions**:
 - **Operant conditioning**: being praised for voicing an attitude.
 - **Observational learning**: copying parents and peers.
 - **Genes**: twin studies suggest some attitudes (for example to the death penalty) are partly heritable, through temperament.
+
+:::widget layers
+{
+ "title": "The ABC of an attitude: one woman's view of vaccines",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Affective",
+   "detail": "“I feel uneasy and scared when I think about the injection.”"
+  },
+  {
+   "label": "Behavioural",
+   "detail": "“I'll delay my daughter's vaccination.”"
+  },
+  {
+   "label": "Cognitive",
+   "detail": "“I read that vaccines have side effects.”"
+  }
+ ],
+ "caption": "The three parts usually line up, but not always. A health worker can target any one of them: the facts (cognitive), the fear (affective) or the next step (behavioural)."
+}
+:::
 
 ### Do attitudes predict behaviour?
 In 1930 to 1931, **Richard LaPiere** travelled across the United States with a young Chinese couple, at a time of strong anti-Chinese prejudice. They visited 251 hotels and restaurants. Later he wrote to each place asking: "Will you accept members of the Chinese race as guests?"
@@ -530,6 +630,37 @@ Richard Petty and John Cacioppo (1986) proposed two routes:
 }
 :::
 
+:::widget flow
+{
+ "title": "The elaboration likelihood model",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "m",
+   "label": "A persuasive message arrives"
+  },
+  {
+   "id": "mot",
+   "label": "Motivated AND able to think about it?",
+   "parent": "m"
+  },
+  {
+   "id": "c",
+   "label": "Yes: central route",
+   "parent": "mot",
+   "detail": "Careful thought about the arguments. Strong arguments persuade; weak ones backfire. Change lasts, resists counter-arguments and predicts behaviour."
+  },
+  {
+   "id": "p",
+   "label": "No: peripheral route",
+   "parent": "mot",
+   "detail": "Reliance on cues: attractive or famous source, number of arguments, mood, music. Change is weaker, shorter and easily reversed."
+  }
+ ],
+ "caption": "Motivation comes from personal relevance and need for cognition; ability needs time, knowledge and freedom from distraction."
+}
+:::
+
 Shelly Chaiken's **heuristic-systematic model** makes a similar distinction (systematic versus heuristic processing) and adds that both can run at the same time.
 
 ### Fear, resistance and inoculation
@@ -564,6 +695,36 @@ Leon Festinger (1957) said that holding two inconsistent cognitions (beliefs, at
     { "label": "The $1 group", "verdict": "best", "outcome": "Correct. The $1 group rated the task as more enjoyable than both the $20 group and the controls.", "why": "One dollar was not enough to justify lying. To reduce dissonance between 'I said it was fun' and 'it was boring', they changed the attitude: 'Maybe it wasn't so bad.' This is insufficient justification." },
     { "label": "All three groups rated it equally boring", "verdict": "ok", "outcome": "There was a clear difference between groups.", "why": "Behaviour changed attitude, but only when the external justification was small." }
   ]
+}
+:::
+
+:::widget flow
+{
+ "title": "How dissonance changes an attitude",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Two clashing cognitions",
+   "detail": "“The task was boring” and “I told someone it was fun.”"
+  },
+  {
+   "id": "b",
+   "label": "Unpleasant arousal (dissonance)",
+   "detail": "Strongest when the act was freely chosen, had consequences and has no good external excuse."
+  },
+  {
+   "id": "c",
+   "label": "Look for a justification",
+   "detail": "$20 is a good excuse: no need to change. $1 is not."
+  },
+  {
+   "id": "d",
+   "label": "Change the attitude",
+   "detail": "“Actually, it wasn't so bad.” The attitude moves to fit the behaviour."
+  }
+ ],
+ "caption": "Each arrow is a place where dissonance can be blocked: an external reward, an excuse, or misattributing the arousal to something else."
 }
 :::
 
@@ -647,6 +808,21 @@ Solomon Asch (1951, 1956) asked a different question: would people conform when 
 }
 :::
 
+:::widget guess
+{
+ "prompt": "In Asch's studies, conformity rose as the number of confederates increased, then levelled off. With how many confederates did it reach about its maximum?",
+ "min": 1,
+ "max": 15,
+ "unit": "confederates",
+ "answer": [
+  3,
+  4
+ ],
+ "reveal": "About **three or four**. With one confederate, people rarely conformed; with two, a little more; with three or four, conformity was near its peak, and adding more made little difference. A unanimous small group is more powerful than a large divided one.",
+ "clinician": "Later work suggests the shape depends on whether the majority are seen as independent sources: several separate people agreeing carries more weight than one large group seen as a single unit."
+}
+:::
+
 ### Two reasons we conform
 Deutsch and Gerard (1955) separated:
 - **Informational influence**: we conform because we think others know better. It leads to real, **private acceptance** (internalisation). Sherif's study is the classic case.
@@ -666,6 +842,28 @@ Herbert Kelman (1958) described three levels: **compliance** (public only, to ge
     { "text": "During a fire alarm in a new building, Ravi follows the crowd towards an exit he has never seen.", "bucket": 0, "why": "In a crisis and in ambiguity, others are a source of information." },
     { "text": "A guest at a wedding eats meat, though he is usually vegetarian, to avoid seeming rude.", "bucket": 1 }
   ]
+}
+:::
+
+:::widget layers
+{
+ "title": "Kelman's three levels of social influence",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Internalisation",
+   "detail": "The person genuinely accepts the view because it fits their values. Lasts without anyone watching."
+  },
+  {
+   "label": "Identification",
+   "detail": "The person adopts the view because they want to be like a group or person they admire. Lasts while the relationship matters."
+  },
+  {
+   "label": "Compliance",
+   "detail": "Public agreement only, to gain approval or avoid punishment. Disappears when no one is watching."
+  }
+ ],
+ "caption": "Top is deepest. Asch's participants mostly complied; Sherif's internalised."
 }
 :::
 
@@ -754,6 +952,41 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
 
 The pattern is clear: obedience falls as the victim becomes **closer** and the authority becomes **more distant or less legitimate**, and it collapses when others **model disobedience**.
 
+:::widget flow
+{
+ "title": "How small steps led to 450 volts",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Agree to take part",
+   "detail": "A small, reasonable first commitment to a Yale science study."
+  },
+  {
+   "id": "b",
+   "label": "15 volts",
+   "detail": "A tiny shock: hard to refuse."
+  },
+  {
+   "id": "c",
+   "label": "Each step only 15 volts more",
+   "detail": "No obvious point to stop; stopping now implies the last shock was wrong too."
+  },
+  {
+   "id": "d",
+   "label": "Responsibility shifts upwards",
+   "detail": "“The experimenter is in charge.” The agentic state."
+  },
+  {
+   "id": "e",
+   "label": "450 volts",
+   "detail": "65% reached the end. Graded commitment is a foot-in-the-door on a large scale."
+  }
+ ],
+ "caption": "Ethics committees, hospital speak-up rules and military training against unlawful orders all try to create a clear point to stop."
+}
+:::
+
 ### Why people obeyed
 Milgram's explanation was the **agentic state**: in a hierarchy, people stop seeing themselves as acting on their own judgment and see themselves as the agent of someone else's wishes, shifting responsibility upwards. Small graded steps (each shock only 15 volts more than the last) also made stopping hard: each step was a foot in the door.
 
@@ -819,6 +1052,14 @@ Zajonc even showed it in cockroaches (1969): they ran a simple runway faster wit
 }
 :::
 
+:::widget curve
+{
+ "kind": "inverted-u",
+ "title": "Arousal, task difficulty and an audience",
+ "caption": "Move the arousal and task sliders. An audience raises arousal. On an easy, well-learnt task the best performance comes at higher arousal, so an audience helps; on a hard or new task the peak comes at lower arousal, so the same audience pushes performance down the far side of the curve."
+}
+:::
+
 Why does presence arouse us? Three accounts: **mere presence** (Zajonc: other people are unpredictable, so we become alert); **evaluation apprehension** (Nickolas Cottrell's idea: we worry about being judged; a blindfolded audience has less effect); and **distraction-conflict** (Robert Baron's idea: attending to both the task and the audience creates conflict and arousal).
 
 ### Social loafing
@@ -839,6 +1080,41 @@ The **SIDE model** (social identity model of deindividuation effects; Reicher, S
 ### Group decisions
 - **Group polarisation**: after discussion, groups move to a **more extreme** version of the view members already leaned towards. It was first found as the "risky shift" by James Stoner in 1961, but groups that start cautious get more cautious. Two causes: **persuasive arguments** (you hear new arguments on your side) and **social comparison** (you want to be a slightly better example of the group's position). Online echo chambers are polarisation machines.
 - **Groupthink**, Irving Janis's term: a mode of thinking in highly cohesive groups where the wish for agreement overrides realistic appraisal of alternatives. Janis studied the **Bay of Pigs invasion** (1961) and other policy disasters.
+
+:::widget flow
+{
+ "title": "Janis's groupthink model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Antecedents",
+   "detail": "High cohesion, insulation, directive leader, no procedures for weighing evidence, high stress and low hope of a better solution."
+  },
+  {
+   "id": "b",
+   "label": "Concurrence seeking",
+   "detail": "A strong wish to agree and keep harmony."
+  },
+  {
+   "id": "c",
+   "label": "Symptoms",
+   "detail": "Invulnerability, rationalisation, morality, stereotyped outsiders, pressure on dissenters, self-censorship, illusion of unanimity, mindguards."
+  },
+  {
+   "id": "d",
+   "label": "Defective decision making",
+   "detail": "Few alternatives considered, risks not examined, information ignored, no contingency plans."
+  },
+  {
+   "id": "e",
+   "label": "Poor outcome",
+   "detail": "For example, the Bay of Pigs invasion."
+  }
+ ],
+ "caption": "Prevention works at the start of the chain: an impartial leader, a devil's advocate and outside experts."
+}
+:::
 
 :::define Groupthink: antecedents, symptoms, prevention
 **Antecedents**: high cohesiveness, insulation from outsiders, a directive leader, no procedures for weighing evidence, high stress.

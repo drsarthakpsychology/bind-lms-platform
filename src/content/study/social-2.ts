@@ -37,6 +37,36 @@ Susan Fiske and her team (2002) found that across many cultures, stereotypes sit
 }
 :::
 
+:::widget flow
+{
+ "title": "From a categorisation to discrimination",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Categorise",
+   "detail": "We automatically sort people into groups (caste, religion, region, gender)."
+  },
+  {
+   "id": "b",
+   "label": "Stereotype (cognitive)",
+   "detail": "Beliefs about the group's traits, kept alive by illusory correlation, subtyping and confirmation bias."
+  },
+  {
+   "id": "c",
+   "label": "Prejudice (affective)",
+   "detail": "Feelings: pity, envy, contempt or fear, as the stereotype content model predicts."
+  },
+  {
+   "id": "d",
+   "label": "Discrimination (behavioural)",
+   "detail": "Unequal treatment: refusing a tenant, a job, a marriage proposal."
+  }
+ ],
+ "caption": "Each link can be weakened: individuating information breaks stereotypes, contact reduces anxiety and prejudice, and laws and norms limit discrimination."
+}
+:::
+
 ### Prejudice in the person
 - **The authoritarian personality**, described by Theodor Adorno's group in 1950: harsh, status-conscious parenting produces people who are submissive to authority, hostile to outgroups and rigid in thinking, measured by the **F (fascism) scale**. Criticised for its psychoanalytic assumptions and because all items were worded in one direction (agreeing raised the score, so acquiescence inflated it).
 - **Right-wing authoritarianism** (Altemeyer): submission to authority, aggression towards those authority condemns, and conventionalism.
@@ -125,6 +155,36 @@ In 1954, Muzafer Sherif and colleagues took 22 boys of about 11 or 12, all simil
 Gina Perry's archival research (2018) and earlier work showed that an **earlier attempt** by Sherif, at Middle Grove, New York, in 1953, **failed**: the boys refused to turn on each other and partly suspected they were being manipulated, and the researchers may have tried to provoke them. Staff at Robbers Cave also shaped events. The study remains a powerful illustration, but it was not a neutral, controlled experiment.
 :::
 
+:::widget flow
+{
+ "title": "The three stages of Robbers Cave",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Group formation",
+   "detail": "Two groups bond separately and name themselves: the Rattlers and the Eagles."
+  },
+  {
+   "id": "b",
+   "label": "Competition",
+   "detail": "A tournament with prizes for winners only. Name-calling, raids and flag burning follow."
+  },
+  {
+   "id": "c",
+   "label": "Mere contact",
+   "detail": "Pleasant shared meals and films. Hostility continues: food fights."
+  },
+  {
+   "id": "d",
+   "label": "Superordinate goals",
+   "detail": "A broken water supply, a stuck truck, money for a film: problems needing both groups. Hostility falls and cross-group friendships grow."
+  }
+ ],
+ "caption": "Competition for scarce resources creates conflict; shared goals that need both groups reduce it."
+}
+:::
+
 ### Relative deprivation
 People feel deprived not by what they have, but by what they have **compared with what they expect** or compared with others. Runciman (1966) separated **egoistic** deprivation (I am worse off than others) from **fraternalistic** deprivation (my group is worse off than other groups). Fraternalistic deprivation predicts collective action and intergroup hostility far better. **Tripathi and Srivastava (1981)** applied this in India, finding that Muslims who felt more fraternalistic deprivation showed more ingroup favouritism and hostility towards the outgroup.
 
@@ -144,6 +204,31 @@ Henri Tajfel asked a startling question: what is the **least** you need to make 
 :::
 
 Tajfel and Turner's **social identity theory** has three steps: **social categorisation** (sorting people into groups), **social identification** (taking on the group as part of who you are), and **social comparison** (comparing your group with others to maintain **positive distinctiveness**).
+
+:::widget flow
+{
+ "title": "Social identity theory in three steps",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Social categorisation",
+   "detail": "Sorting people, including yourself, into groups."
+  },
+  {
+   "id": "b",
+   "label": "Social identification",
+   "detail": "Taking the group into your sense of who you are; its successes feel like yours."
+  },
+  {
+   "id": "c",
+   "label": "Social comparison",
+   "detail": "Comparing your group with others to keep it positively distinct, which produces ingroup favouritism."
+  }
+ ],
+ "caption": "Self-esteem is the motor: we favour our groups because their standing becomes part of our own."
+}
+:::
 
 When a group has low status, its members have three strategies:
 | Strategy | When | Example |
@@ -257,6 +342,41 @@ Bibb Latané and John Darley wondered whether the presence of others, rather tha
 }
 :::
 
+:::widget flow
+{
+ "title": "Latané and Darley's decision model of helping",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Notice the event",
+   "detail": "Blocked by distraction, hurry and urban overload."
+  },
+  {
+   "id": "b",
+   "label": "Interpret it as an emergency",
+   "detail": "Blocked by pluralistic ignorance: everyone looks calm."
+  },
+  {
+   "id": "c",
+   "label": "Assume responsibility",
+   "detail": "Blocked by diffusion of responsibility: someone else will act."
+  },
+  {
+   "id": "d",
+   "label": "Know how to help",
+   "detail": "Blocked by lack of skills; first-aid training helps."
+  },
+  {
+   "id": "e",
+   "label": "Decide and act",
+   "detail": "Blocked by audience inhibition and costs, such as fear of police and court hassles before India's Good Samaritan protections."
+  }
+ ],
+ "caption": "Press Play: the presence of other people can block help at steps 1, 2, 3 and 5."
+}
+:::
+
 ### Latané and Darley's five steps
 Helping requires a person to pass all five; the presence of others can block several:
 1. **Notice** the event (others distract us; busy cities overload us).
@@ -337,6 +457,41 @@ Q: Which finding most challenges the idea that bystanders rarely help in real co
 | **Social learning** | Aggression is learnt by watching models and by its consequences | Albert Bandura |
 | **Excitation transfer** | Leftover arousal from one source (exercise, a thriller film) intensifies anger at a later provocation | Dolf Zillmann |
 | **General aggression model** | Person and situation inputs act through thoughts, feelings and arousal, then an appraisal leads to impulsive or thoughtful action | Anderson and Bushman (2002) |
+
+:::widget flow
+{
+ "title": "The general aggression model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Inputs",
+   "detail": "Person (hostile attribution style, beliefs about aggression, alcohol) and situation (provocation, heat, pain, weapons, violent media)."
+  },
+  {
+   "id": "b",
+   "label": "Present internal state",
+   "detail": "Hostile thoughts, angry feelings and physiological arousal, each feeding the others."
+  },
+  {
+   "id": "c",
+   "label": "Appraisal",
+   "detail": "A quick, automatic reading of the situation, then, if there is time and capacity, a reappraisal."
+  },
+  {
+   "id": "d",
+   "label": "Action",
+   "detail": "Impulsive aggression, or a thoughtful response (which may or may not be aggressive)."
+  },
+  {
+   "id": "e",
+   "label": "Social encounter",
+   "detail": "The outcome feeds back into future inputs: aggression learnt, rewarded or punished."
+  }
+ ],
+ "caption": "Anger management targets the appraisal step: slowing down so reappraisal can happen."
+}
+:::
 
 The original frustration-aggression hypothesis was too strong: frustration doesn't always lead to aggression, and aggression has other causes. Neal Miller revised it in 1941 (frustration produces several responses, one of which is aggression), and **displacement** explains why aggression is often aimed at a safer target (the man shouted at by his boss shouts at his wife).
 
@@ -426,6 +581,38 @@ Three explanations of crowding stress:
 
 Baum and Valins found that students in **long-corridor** dormitories (many people sharing one corridor and bathroom) felt more crowded and withdrew socially more than students in **suite** dormitories of the same density, where small groups shared space. Design changed experience. Indian research on household crowding, including studies by Uday Jain in the 1980s, similarly found that high density was linked to stress mainly when people felt little control, and that cultural norms about togetherness and good family relationships softened its effects. Mumbai's chawls and Dharavi show both the costs of extreme density and the strong community ties that help people cope.
 
+:::widget flow
+{
+ "title": "Three explanations of crowding stress",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "High density"
+  },
+  {
+   "id": "o",
+   "label": "Too much input",
+   "parent": "r",
+   "detail": "Stimulus overload: we filter, including filtering out others' needs."
+  },
+  {
+   "id": "c",
+   "label": "Loss of control",
+   "parent": "r",
+   "detail": "Others restrict what we can do; perceived control is the key protective factor."
+  },
+  {
+   "id": "i",
+   "label": "Intensified feelings",
+   "parent": "r",
+   "detail": "Density-intensity: a crowded wedding feels more joyful, a crowded queue more irritating."
+  }
+ ],
+ "caption": "Which branch applies depends on the setting and how much control people feel they have."
+}
+:::
+
 ### Personal space and territory
 Edward Hall (1966) described four **distance zones** in **proxemics**:
 | Zone | Rough distance | Used for |
@@ -446,6 +633,32 @@ Distances vary by culture (Hall's **contact** cultures, such as Arab and souther
   "answer": [3, 4],
   "reveal": "About **3.5 metres** (roughly 12 feet). Beyond that is public distance. Hall's figures were based on middle-class Americans; actual comfortable distances differ across cultures and settings, which matters for where you place chairs in a counselling room.",
   "clinician": "Hall's zones in feet: intimate 0 to 1.5, personal 1.5 to 4, social 4 to 12, public 12 and beyond. In clinical settings, seating at an angle of about 90 to 120 degrees, at personal-to-social distance, with a clear exit for both people, is standard practice for safety and comfort."
+}
+:::
+
+:::widget layers
+{
+ "title": "Hall's distance zones",
+ "shape": "rings",
+ "layers": [
+  {
+   "label": "Intimate (touching to about half a metre)",
+   "detail": "Lovers, comforting, close family. Strangers here cause discomfort."
+  },
+  {
+   "label": "Personal (about half a metre to just over a metre)",
+   "detail": "Friends and ordinary conversation."
+  },
+  {
+   "label": "Social (about 1 to 3.5 metres)",
+   "detail": "Formal meetings, a doctor across a desk, most counselling rooms."
+  },
+  {
+   "label": "Public (more than about 3.5 metres)",
+   "detail": "Lectures, speeches, stage performances."
+  }
+ ],
+ "caption": "The centre is you. Comfortable distances vary with culture, gender, status and relationship."
 }
 :::
 
@@ -572,6 +785,41 @@ In 1971, Philip Zimbardo turned a basement at Stanford University into a mock pr
 In an exam: describe it, then critically evaluate with these points and give the social identity reinterpretation.
 :::
 
+:::widget flow
+{
+ "title": "How a false finding gets published",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Small sample",
+   "detail": "Low statistical power: real effects are often missed, and chance effects look big."
+  },
+  {
+   "id": "b",
+   "label": "Flexible analysis",
+   "detail": "Try several outcomes, drop a condition, add participants until p dips below 0.05."
+  },
+  {
+   "id": "c",
+   "label": "A 'significant' result",
+   "detail": "Often a false positive or an inflated effect."
+  },
+  {
+   "id": "d",
+   "label": "Publication bias",
+   "detail": "Journals accept it; null results stay in the file drawer."
+  },
+  {
+   "id": "e",
+   "label": "Failed replication",
+   "detail": "A large, preregistered study finds a much smaller effect, or none."
+  }
+ ],
+ "caption": "Preregistration blocks step 2, registered reports block step 4, and large multi-lab studies fix step 1."
+}
+:::
+
 ### What changed
 - **Preregistration**: stating hypotheses and analyses before collecting data.
 - **Registered reports**: journals accept a study **before** results are known, based on its question and method.
@@ -614,7 +862,248 @@ Q: Which reform most directly prevents publication bias?
 
 # Part IV · Exam zone
 
-## 4.1 Long answers, short notes and viva [core]
+## 4.1 Q&A bank · Starting [starting]
+Think each question through before opening the answer. These model the depth examiners reward.
+
+:::qa What makes social psychology different from personality psychology and sociology? [starting]
+### Short answer
+Social psychology studies how the **social situation** (real, imagined or implied others) shapes the **individual's** thoughts, feelings and behaviour. Personality psychology asks how individuals **differ**; sociology studies **groups and institutions** as wholes.
+### Comparison
+| | Personality psychology | Social psychology | Sociology |
+|---|---|---|---|
+| Unit of analysis | The individual's stable traits | The individual in a situation | Groups, institutions, society |
+| Typical question | Why is Ravi more anxious than his brother? | Why does Ravi stay silent when everyone else agrees? | How does caste shape marriage patterns? |
+| Typical method | Questionnaires, longitudinal studies | Experiments, field experiments | Surveys, census data, ethnography |
+### Lewin's formula
+B = f(P, E): behaviour depends on the person **and** the environment. Social psychology's distinctive lesson is how much of E is doing the work, which we routinely underestimate (the fundamental attribution error).
+### Exam tip
+Give one example from India for each discipline; it shows you understand the boundaries rather than reciting definitions.
+:::
+
+:::qa Why is random assignment the key to an experiment, and what are its costs? [starting]
+### Short answer
+Random assignment makes groups equal **on average** on everything except the manipulated variable, so differences in the outcome can be attributed to the manipulation. That is what lets an experiment claim **cause**.
+### How it works
+1. Researchers want to know whether watching aggressive models increases children's aggression.
+2. If they simply compare children who already watch violent TV with those who don't, many other things differ (home environment, supervision, temperament).
+3. Randomly assigning children to watch an aggressive or a calm model spreads all these other factors evenly across the groups.
+### The costs
+| Problem | Example | Partial fix |
+|---|---|---|
+| Artificiality (low mundane realism) | A shock machine is not everyday life | Field experiments |
+| Demand characteristics | Participants guess the hypothesis | Cover stories, behavioural measures, double-blind procedures |
+| Ethics | Deception, stress | Ethics review, debriefing, the right to withdraw |
+| WEIRD samples | Mostly Western students | Cross-cultural replication, including Indian samples |
+| Some variables can't be assigned | Caste, gender, age | Quasi-experiments and natural experiments |
+### Conclusion
+Good social psychology combines lab experiments (for cause) with field and correlational studies (for realism and generality).
+:::
+
+:::qa Explain Kelley's covariation model with a worked example, and give its limits. [starting]
+### Short answer
+Kelley said that when we have repeated observations, we judge cause by looking at **consensus**, **distinctiveness** and **consistency**.
+### Worked example: Priya complains about the hostel food
+| Information | Finding | Level |
+|---|---|---|
+| Consensus | Most other students also complain | High |
+| Distinctiveness | Priya rarely complains about anything else | High |
+| Consistency | She complains almost every week | High |
+High, high, high points to the **stimulus**: the food really is bad. If nobody else complained (low consensus) and Priya complained about everything (low distinctiveness), we would conclude the cause is **Priya**.
+### Limits
+- People **underuse consensus information** (they ignore what others do), which fits the fundamental attribution error.
+- We rarely have all three kinds of information; then we use **causal schemas** (discounting and augmenting).
+- The model describes a logical ideal; real attributions are faster and more biased.
+- It is less useful for explaining goal-directed actions, where people ask about reasons and intentions rather than covariation (a point made by Bertram Malle).
+:::
+
+:::qa How are attitudes measured? Compare the main scales. [starting]
+### Short answer
+Attitudes are measured mostly through **self-report scales**, supplemented by **implicit** and **behavioural** measures because people may not be willing or able to report their attitudes.
+### The classic scales
+| Scale | Construction | Strength | Weakness |
+|---|---|---|---|
+| Thurstone | Judges sort statements into 11 piles; each gets a scale value | Interval-like scale values | Laborious; judges' own attitudes may bias values |
+| Likert | Respondents rate agreement with each statement; scores are summed | Easy, reliable, widely used | Ordinal; acquiescence bias |
+| Guttman | Items ordered so agreeing with a strong one implies agreeing with weaker ones | Tests one-dimensionality | Hard to achieve with complex attitudes |
+| Semantic differential | Rate the object on bipolar adjective pairs | Gives evaluation, potency, activity | Adjectives may not suit every object |
+| Bogardus | Accept a group member as relative, friend, neighbour, citizen or visitor? | Simple measure of social distance; used for caste and religion in India | Single dimension of closeness |
+### Beyond self-report
+- **Implicit measures** such as the IAT: useful for group-level research, weak for individual prediction.
+- **Physiological** measures (skin conductance, facial muscle activity).
+- **Behavioural** measures (the lost-letter technique, seating distance).
+- **Bogus pipeline**: reduces social desirability by convincing people a machine can detect lies.
+### Exam tip
+Always link measurement to the **attitude-behaviour problem** (LaPiere) and the **principle of compatibility**.
+:::
+
+## 4.2 Q&A bank · Beginner [beginner]
+:::qa Compare cognitive dissonance theory and self-perception theory. Which explains the evidence better? [beginner]
+### Short answer
+Both explain why behaviour changes attitudes. **Dissonance** says inconsistency creates unpleasant **arousal** that we reduce by changing the attitude; **self-perception** says we simply **infer** our attitudes from our behaviour, with no tension involved. The evidence suggests both are right, under different conditions.
+### Point by point
+| Issue | Dissonance (Festinger) | Self-perception (Bem) |
+|---|---|---|
+| Mechanism | Motivational: reduce tension | Cognitive: observe and infer |
+| Arousal | Necessary | Not needed |
+| Best fits | Behaviour that clearly contradicts a strong, important attitude | Weak, vague or new attitudes |
+| Key evidence | Misattribution studies: when arousal is blamed on a pill, attitude change disappears | Observers who read about the $1 participant predict the same attitude as the participant gave |
+### Resolution
+- Dissonance applies in the **latitude of rejection** (behaviour far from one's attitude); self-perception in the **latitude of acceptance** (behaviour close to it).
+- The **new look** adds that dissonance needs aversive consequences, personal responsibility and arousal.
+- Replication caution: the classic free-choice manipulation failed to add an effect in a large 2024 multi-lab test, so the mechanism is less settled than textbooks suggest.
+### Application
+Motivational interviewing, hypocrisy-induction campaigns and The Body Project all use behaviour to shift attitudes.
+:::
+
+:::qa Why do people conform? Use classic studies and cross-cultural evidence. [beginner]
+### Short answer
+People conform for two main reasons: to be **right** (informational influence) and to be **liked or accepted** (normative influence). The strength of conformity depends on the task, the group and the culture.
+### The two classic paradigms
+| | Sherif (autokinetic effect) | Asch (line judgment) |
+|---|---|---|
+| Task | Ambiguous: how far a light 'moves' | Clear: which line matches |
+| Main influence | Informational | Normative |
+| Result | Estimates converge on a norm that persists alone | About 37% conforming answers; three in four conform at least once |
+| Change | Private acceptance | Mostly public compliance |
+### Factors that change conformity
+- **Group size** up to about three or four.
+- **Unanimity**: one ally cuts conformity sharply.
+- **Privacy**: written answers reduce it.
+- **Status and cohesion** of the group.
+- **Culture**: higher in collectivist cultures, and declining in the United States over time.
+### Minority influence
+A **consistent** minority produces slower, deeper, private change (Moscovici), often by making the majority think more carefully.
+### Evaluation
+Asch's task was trivial; real conformity involves values and identities. Conformity is not always bad: norms coordinate behaviour, and informational conformity is often rational.
+:::
+
+:::qa Critically evaluate Milgram's obedience studies. [beginner]
+### Short answer
+Milgram showed that ordinary people will harm another person on the orders of a legitimate authority far more often than anyone predicted. The finding partly replicates, but its interpretation, ethics and generality are seriously debated.
+### The core findings
+- 65% went to 450 volts; every participant reached 300 volts.
+- Psychiatrists had predicted about one in a thousand.
+- Obedience fell with closer victims, distant or less legitimate authority, and peers who refused.
+### Explanations
+1. **Agentic state**: responsibility shifts to the authority.
+2. **Graded commitment**: 15-volt steps make stopping hard.
+3. **Legitimacy** of the setting (Yale) and the experimenter.
+4. **Engaged followership** (Haslam and Reicher): people continued because they identified with the scientific goal; the direct order "you have no other choice" produced **refusal**.
+### Critiques
+| Critique | Point |
+|---|---|
+| Ethics | Severe stress and deception (Baumrind) |
+| Belief in the shocks | Archival work suggests many doubted they were real |
+| Standardisation | Prods were not always used as scripted |
+| Generality | Mostly American men in the 1960s |
+### Replications
+Burger's 150-volt version (about 70% willing to continue) and a Polish lower-voltage version (90%) suggest the core effect persists.
+### Application
+Hofling's nurses; medical hierarchy and patient safety; "speak-up" cultures; military training on unlawful orders.
+:::
+
+:::qa How do Fiedler's contingency model and the nurturant-task model differ in their view of leadership? [beginner]
+### Short answer
+Fiedler treats leadership style as **fixed** and argues the **situation** should be matched to the leader. Sinha's nurturant-task model describes a culturally fitting style that **changes over time** as subordinates mature.
+### Comparison
+| Issue | Fiedler's contingency model | Sinha's nurturant-task model |
+|---|---|---|
+| Origin | US laboratory and field studies | Indian organisations |
+| Style | Task-oriented (low LPC) or relationship-oriented (high LPC); stable | Nurturance contingent on task performance |
+| Situation | Leader-member relations, task structure, position power | Hierarchical, relationship-centred culture with dependency needs |
+| Change | Change the situation, not the leader | The leader moves towards participation as subordinates grow |
+| Evidence | Mixed, better in labs than in the field | Supported in Indian studies; fits paternalistic leadership research in Asia |
+### Worked application
+A new head of a district hospital with demoralised, dependent junior staff: an NT leader offers personal care and guidance tied to clear standards, then gradually shares decisions. Fiedler would ask whether her situational control is moderate (favouring a relationship-oriented leader) and might restructure tasks to raise control.
+### Conclusion
+Contingency thinking and cultural fit are both needed; modern social identity approaches add that leaders succeed when seen as "one of us".
+:::
+
+## 4.3 Q&A bank · Advanced [advanced]
+:::qa Compare realistic conflict theory and social identity theory as explanations of intergroup conflict, with Indian applications. [advanced]
+### Short answer
+**Realistic conflict theory** says conflict arises from **competition for scarce resources**; **social identity theory** says even **mere categorisation** produces ingroup favouritism, because group membership supports self-esteem. Most real conflicts involve both.
+### Comparison
+| Issue | Realistic conflict (Sherif) | Social identity (Tajfel and Turner) |
+|---|---|---|
+| Cause | Incompatible goals, scarce resources | Need for positive distinctiveness |
+| Key study | Robbers Cave | Minimal group paradigm |
+| Necessary condition | Competition | Categorisation alone |
+| Remedy | Superordinate goals | Recategorisation, dual identities, legitimacy of status differences |
+| Weakness | Doesn't explain favouritism without competition | Minimal groups are artificial; favouritism is weaker for negative outcomes |
+### Indian applications
+- **Resources**: competition over jobs, reservations and land can sharpen caste and communal tensions (realistic conflict and fraternalistic deprivation, as Tripathi and Srivastava showed).
+- **Identity**: language movements and regional identities show social creativity and competition when status differences seem illegitimate.
+- **Reduction**: cooperative cricket teams in Uttar Pradesh increased cross-caste friendships; cities with Hindu-Muslim civic associations had fewer riots.
+### Integration
+Self-categorisation theory explains **when** an identity becomes salient; relative deprivation explains **when** it becomes mobilised; contact and superordinate goals explain **how** to reduce it.
+:::
+
+:::qa Is the bystander effect real? Evaluate the evidence from the laboratory and from real life. [advanced]
+### Short answer
+Yes, at the **individual** level: each person is less likely to help when others are present. But in **real public conflicts**, someone usually helps, because more bystanders means more potential helpers.
+### Laboratory evidence
+| Study | Finding |
+|---|---|
+| Seizure study | 85% helped alone; 31% when four others were believed present |
+| Smoke-filled room | 75% reported alone; 10% with two passive confederates |
+| Meta-analysis (2011) | Effect confirmed, but weaker in dangerous emergencies, with perpetrators present, and among friends |
+### Real-world evidence
+CCTV analysis of 219 public conflicts in three countries found at least one intervener in about 9 of 10 cases, and the chance of intervention rose with group size.
+### Reconciling the two
+- The probability that **a given person** helps falls with group size.
+- The probability that **someone** helps can still rise, because there are more people.
+- Dangerous situations are quickly recognised as emergencies, and groups offer physical safety.
+### Myth correction
+The Kitty Genovese story of "38 silent witnesses" was exaggerated.
+### Application in India
+Fear of legal hassle raised the cost of helping road-accident victims; Good Samaritan protections now lower it. Training in the five steps (notice, interpret, take responsibility, know how, act) underpins first-aid and gatekeeper programmes.
+:::
+
+:::qa Which classic social psychology findings survived the replication crisis, and how should a student judge a new finding? [advanced]
+### Short answer
+Effects tested in large, preregistered, multi-lab studies sort into three groups: **robust** (anchoring, framing, conformity, contact), **real but smaller or contested** (bystander effect, stereotype threat, facial feedback), and **largely failed** (ego depletion, behavioural priming, power-pose hormones, mortality salience).
+### Why many failed
+| Cause | Effect |
+|---|---|
+| Small samples | Inflated or false effects |
+| Flexible analysis (p-hacking, HARKing) | False positives |
+| Publication bias | Nulls never seen |
+| Hidden procedural flexibility | Hard to reproduce |
+### A checklist for a new finding
+1. Sample size and power.
+2. Preregistered? Registered report?
+3. Effect size with a confidence interval, not just a p-value.
+4. Independent replication, ideally multi-lab.
+5. Does it fit theory and prior evidence, or is it surprising and cute?
+6. Is the measure valid (behaviour, not just self-report)?
+### Special case: the Stanford prison experiment
+Coached guards, demand characteristics, no control group, self-selection, and a contrasting BBC Prison Study make it a demonstration, not evidence that roles alone create cruelty.
+### Conclusion
+The crisis improved the field: the robust core is real, and methods are better.
+:::
+
+:::qa How can social psychology be applied to reduce prejudice towards people with mental illness in India? [advanced]
+### Short answer
+Combine **contact**, **attribution change**, **norm change** and **structural change**, choosing approaches with evidence rather than education alone.
+### Building blocks
+| Principle | Application |
+|---|---|
+| Contact (Allport's four conditions) | People with lived experience speak to students and community groups, as equals, with institutional support |
+| Attribution (Weiner) | Reduce blame by explaining illness as partly uncontrollable, while avoiding purely biological messages that can increase perceived dangerousness |
+| Stereotype content model | Counter paternalistic pity (high warmth, low competence) by showing competence and recovery |
+| Social norms | Show that most people support those with mental illness; celebrities sharing their stories create new norms |
+| Persuasion (ELM) | Central-route messages for health workers; peripheral cues (trusted local figures) for wider audiences |
+| Structural change | Implement the Mental Healthcare Act 2017's rights, insurance parity and community services |
+### Cautions
+- Education alone produces short-lived attitude change.
+- Imagined and extended contact help where direct contact is hard.
+- Measure behaviour (help-seeking, hiring, renting), not only attitudes.
+### Example programme
+A district campaign pairing trained people with lived experience and ASHA workers, combined with local leaders publicly endorsing help-seeking, uses contact, norms and trusted sources together.
+:::
+
+## 4.4 Long answers, short notes and viva [core]
 ### Long answer skeletons
 **Q1. Explain attribution theories. Discuss the biases in attribution with cross-cultural evidence. (15 marks)**
 1. Define attribution; internal versus external (Heider's naive psychologist).
@@ -658,7 +1147,7 @@ What is structural violence? :: Harm built into social systems, such as preventa
 Name two Indian social psychologists and their contributions. :: J. B. P. Sinha (nurturant-task leader); Durganand Sinha (indigenisation); also R. C. Tripathi (intergroup relations) and Ajit Dalal (health attributions).
 :::
 
-## 4.2 Module test [core]
+## 4.5 Module test [core]
 :::mcq
 Q: The definition of social psychology as the study of how the real, imagined or implied presence of others affects us was given by:
 - *Gordon Allport

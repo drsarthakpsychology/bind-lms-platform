@@ -14,6 +14,23 @@ Gray, Eysenck's student, rotated Eysenck's E and N by about 30 degrees and propo
 | **Fight-flight-freeze system, FFFS** | Punishment and clear threat | High FFFS: fear, active avoidance, panic (amygdala, periaqueductal grey) |
 Gray's model separates **fear** (FFFS: getting away from a clear threat) from **anxiety** (BIS: approaching a threat with caution), which maps onto the difference between panic or phobia and generalised worry. Carver and White's **BIS/BAS scales** (1994) measure the systems.
 
+:::widget brainmap
+{
+ "title": "Where Gray's three systems are thought to live",
+ "focus": [
+  "basal-ganglia",
+  "hippocampus",
+  "amygdala"
+ ],
+ "notes": {
+  "basal-ganglia": "BAS: dopamine reward pathways through the striatum drive approach and reward seeking.",
+  "hippocampus": "BIS: the septo-hippocampal system detects conflict between approach and avoidance and drives anxious risk assessment.",
+  "amygdala": "FFFS: with the periaqueductal grey, drives fear, escape and freezing in the face of clear threat."
+ },
+ "caption": "Fear (FFFS) gets you away from danger; anxiety (BIS) makes you approach it cautiously. Anxiolytic medicines act more on BIS-type anxiety."
+}
+:::
+
 ### Robert Cloninger's psychobiological model
 Cloninger's **Temperament and Character Inventory (TCI)** has four inherited **temperaments**, each originally tied to a neurotransmitter, and three learnt **character** dimensions:
 | Temperament | Description | Proposed transmitter |
@@ -47,6 +64,36 @@ Three key conclusions (Plomin's "laws"):
 1. Most traits are **moderately heritable** (about 40 to 50%).
 2. The **shared environment** (what siblings have in common) explains little of adult personality.
 3. The **non-shared environment** (unique experiences) explains a lot.
+
+:::widget flow
+{
+ "title": "How twin studies estimate heritability",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Measure the trait in MZ and DZ twin pairs",
+   "detail": "Identical twins share almost all genes; non-identical twins about half."
+  },
+  {
+   "id": "b",
+   "label": "Compare the correlations",
+   "detail": "If MZ twins correlate much more than DZ twins, genes matter."
+  },
+  {
+   "id": "c",
+   "label": "Estimate heritability",
+   "detail": "A rough rule doubles the difference: 2 x (MZ correlation minus DZ correlation). For personality this gives about 40%."
+  },
+  {
+   "id": "d",
+   "label": "Split the environment",
+   "detail": "Shared environment (what siblings have in common) comes out near zero; non-shared environment and error are large."
+  }
+ ],
+ "caption": "Adoption studies and twins reared apart check the same conclusions with different assumptions."
+}
+:::
 
 ### The search for personality genes
 In 1996, two studies reported that a variant of the dopamine D4 receptor gene (**DRD4**) was linked to **novelty seeking**. It caused great excitement, but meta-analyses found the link **did not replicate**. The same happened with the serotonin transporter gene and neuroticism. Today's genome-wide studies, with hundreds of thousands of people, find **hundreds of genetic variants each with tiny effects** on traits such as neuroticism. Personality is **polygenic**: no "anxiety gene" exists.
@@ -192,6 +239,28 @@ Key ideas that make this a **personality theory**:
 }
 :::
 
+:::widget layers
+{
+ "title": "The three gunas in the Bhagavad Gita",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Sattva",
+   "detail": "Clarity, calm, knowledge, harmony. Food: fresh and nourishing. Charity: given quietly, expecting nothing."
+  },
+  {
+   "label": "Rajas",
+   "detail": "Activity, passion, desire, restlessness. Food: very spicy, sour, hot. Charity: given for show or return."
+  },
+  {
+   "label": "Tamas",
+   "detail": "Inertia, dullness, confusion. Food: stale. Charity: given to the unworthy, at the wrong time."
+  }
+ ],
+ "caption": "All three are present in everyone in a changing balance; the ideal is to go beyond them (gunatita)."
+}
+:::
+
 ### Measuring the gunas
 Psychologists have built scales such as the **Vedic Personality Inventory** (developed by David Wolf) and Indian scales including the **Mysore Triguna Scale** and the related **Mysore Tridosha Scale** for Ayurvedic constitution (both developed in Mysore). Studies report that **sattva** scores go with emotional stability, conscientiousness and agreeableness; **tamas** with neuroticism and low conscientiousness; and **rajas** with extraversion and some neuroticism. Sattva scores also relate to well-being and lower stress. The cautions are that samples are often small, items can overlap with Big Five wording, and some scales have only content validity.
 
@@ -205,6 +274,40 @@ The **Taittiriya Upanishad** describes five sheaths (**pancha kosha**) around th
 3. **Manomaya kosha**: the mind of perception, feeling and desire.
 4. **Vijnanamaya kosha**: the intellect, discrimination and judgment.
 5. **Anandamaya kosha**: the sheath of bliss.
+
+:::widget layers
+{
+ "title": "The pancha kosha: five sheaths around the self",
+ "shape": "rings",
+ "layers": [
+  {
+   "label": "Atman (the self)",
+   "detail": "The true self at the centre, beyond all sheaths."
+  },
+  {
+   "label": "Anandamaya kosha",
+   "detail": "The sheath of bliss."
+  },
+  {
+   "label": "Vijnanamaya kosha",
+   "detail": "Intellect, discrimination and judgment."
+  },
+  {
+   "label": "Manomaya kosha",
+   "detail": "The mind of perception, feeling and desire."
+  },
+  {
+   "label": "Pranamaya kosha",
+   "detail": "Vital energy and breath."
+  },
+  {
+   "label": "Annamaya kosha",
+   "detail": "The physical body, 'made of food'."
+  }
+ ],
+ "caption": "Tap from the outside in. Yoga-based therapies in India often use this model to organise practices from body to breath to mind."
+}
+:::
 
 Vedantic thought also describes the **antahkarana** (the inner instrument) with four functions: **manas** (the mind that receives sensations and doubts), **buddhi** (the intellect that decides), **chitta** (the store of memories and impressions) and **ahamkara** (the "I-maker", the ego that claims experiences as "mine"). Suffering comes from identifying with the outer sheaths and the ego; liberation comes from realising the atman.
 
@@ -295,6 +398,32 @@ Higgins later added **regulatory focus**: a **promotion** focus (towards ideals,
 }
 :::
 
+:::widget flow
+{
+ "title": "Higgins's self-discrepancy theory",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Actual self compared with..."
+  },
+  {
+   "id": "i",
+   "label": "Ideal self (hopes and wishes)",
+   "parent": "a",
+   "detail": "Gap brings dejection: sadness, disappointment, depression. Linked to a promotion focus on gains."
+  },
+  {
+   "id": "o",
+   "label": "Ought self (duties and obligations)",
+   "parent": "a",
+   "detail": "Gap brings agitation: anxiety, guilt, fear. Linked to a prevention focus on avoiding losses."
+  }
+ ],
+ "caption": "Ask a client which kind of gap hurts: it guides whether to work on hopes or on duties."
+}
+:::
+
 ### Self-esteem
 - Measured most often by the **Rosenberg Self-Esteem Scale** (1965), a 10-item questionnaire.
 - **Does high self-esteem cause success?** Baumeister and colleagues' major review (2003) found high self-esteem is linked to **feeling happier** and to **persistence after failure**, but it **does not cause** better school performance, better job performance or healthier behaviour; often good outcomes raise self-esteem instead. Programmes that boost self-esteem directly have not improved achievement.
@@ -373,6 +502,36 @@ The **hopelessness theory** of Lyn Abramson and her colleagues narrowed this: a 
 }
 :::
 
+:::widget flow
+{
+ "title": "From a bad event to helplessness: the reformulated model",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Bad event",
+   "detail": "Failing first-year anatomy."
+  },
+  {
+   "id": "b",
+   "label": "Explanation",
+   "detail": "Internal (“I'm stupid”), stable (“always”), global (“at everything”)."
+  },
+  {
+   "id": "c",
+   "label": "Expectation",
+   "detail": "“Nothing I do will make a difference”: hopelessness."
+  },
+  {
+   "id": "d",
+   "label": "Helplessness and depression",
+   "detail": "Passivity, low mood, low self-esteem, giving up."
+  }
+ ],
+ "caption": "CBT and attribution retraining work on the second box: realistic, specific, changeable explanations."
+}
+:::
+
 ### What explanatory style predicts
 - **Depression** after negative events, in adults and children.
 - **Health**: Peterson, Seligman and Vaillant (1988) coded essays written at age 25 by Harvard graduates; a pessimistic style predicted poorer physical health from age 45 to 60.
@@ -438,6 +597,46 @@ Stages are meant to be **invariant** in order, **universal** across cultures and
 }
 :::
 
+:::widget flow
+{
+ "title": "Kohlberg's six stages",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "s1",
+   "label": "1. Punishment and obedience",
+   "detail": "Avoid punishment."
+  },
+  {
+   "id": "s2",
+   "label": "2. Instrumental exchange",
+   "detail": "Serve your own interests; fair deals."
+  },
+  {
+   "id": "s3",
+   "label": "3. Good interpersonal relationships",
+   "detail": "Be seen as a good person."
+  },
+  {
+   "id": "s4",
+   "label": "4. Law and order",
+   "detail": "Keep the social system going."
+  },
+  {
+   "id": "s5",
+   "label": "5. Social contract",
+   "detail": "Laws serve welfare and rights and can be changed."
+  },
+  {
+   "id": "s6",
+   "label": "6. Universal principles",
+   "detail": "Self-chosen principles of justice and dignity. Later dropped from scoring as too rare."
+  }
+ ],
+ "caption": "Preconventional (1, 2), conventional (3, 4), postconventional (5, 6). The order is invariant; few adults reach 5."
+}
+:::
+
 ### The critiques
 - **Gilligan's ethic of care**: Carol Gilligan argued in 1982 that Kohlberg's original all-male sample and justice-centred scoring undervalued an **ethic of care** (responsibility, relationships, avoiding hurt) more often voiced by women. She described three levels: **orientation to individual survival**, **goodness as self-sacrifice**, and the **morality of non-violence** (care for self and others).
 - **But**: a 2000 meta-analysis found only **small** gender differences in care and justice orientations; both sexes use both, depending on the dilemma.
@@ -488,7 +687,232 @@ Q: An elder in Bhubaneswar says it is a serious wrong for a widow to eat fish, b
 
 # Part IV · Exam zone
 
-## 4.1 Long answers, short notes and viva [core]
+## 4.1 Q&A bank · Starting [starting]
+Think each question through before opening the answer. These model the depth examiners reward.
+
+:::qa What is the difference between a type and a trait approach, and why has the field moved to traits? [starting]
+### Short answer
+A **type** puts people into separate categories; a **trait** places everyone on a continuous dimension. The field moved to traits because measured characteristics are distributed continuously, and type cut-offs throw away information and are unstable.
+### Comparison
+| Issue | Types | Traits |
+|---|---|---|
+| Structure | Categories (introvert or extravert) | Dimensions (how extraverted, from very low to very high) |
+| Examples | Humours, Sheldon, Jung, MBTI, Type A | Allport, Cattell, Eysenck's dimensions, Big Five, HEXACO |
+| Retest stability | Poor near the cut-off | Good |
+| Prediction | Weaker | Stronger, especially aggregated |
+### Why traits won
+1. Most traits show a **normal distribution**, not two humps.
+2. Splitting at the middle labels near-identical people differently.
+3. Trait scores predict outcomes (health, work, relationships) better.
+### A nuance
+Eysenck used "type" for his superfactors but treated them as dimensions. A few genuine categories may exist at extremes (for example, some evidence for a taxon in schizotypy), but they are exceptions.
+:::
+
+:::qa Compare the approaches of Allport, Cattell and Eysenck. [starting]
+### Short answer
+All three are trait theorists, but **Allport** was idiographic and theoretical, **Cattell** was a data-driven factor analyst who found many primary traits, and **Eysenck** combined factor analysis with hypothesis testing and biology to find three superfactors.
+### Comparison
+| Issue | Allport | Cattell | Eysenck |
+|---|---|---|---|
+| Method | Case studies, rational analysis, lexical list | Factor analysis of L, Q and T data | Factor analysis plus experiments |
+| Emphasis | The unique individual | A periodic table of traits | Biological causes |
+| Units | Cardinal, central, secondary dispositions | 16 source traits; ergs and sentiments | P, E, N superfactors in a hierarchy |
+| Measure | Personal documents | 16PF | EPQ |
+| Big idea | Functional autonomy; the proprium | Specification equation; fluid and crystallised abilities | Arousal and limbic reactivity |
+| Main weakness | Hard to test | Factors hard to replicate exactly | Weak P scale; integrity problems in later health papers |
+### How they connect
+The lexical list began with Allport, Cattell refined it, and the Big Five emerged from the same lexical road. Eysenck's E and N survive almost unchanged in the Big Five.
+:::
+
+:::qa What does the Big Five predict in real life, and how strong are the effects? [starting]
+### Short answer
+The Big Five predict health, longevity, relationships, education and work, with **modest correlations** (about 0.1 to 0.3) that matter a lot when added up over a lifetime and across a population.
+### Trait by trait
+| Trait | Outcomes it predicts |
+|---|---|
+| Conscientiousness | Longevity, healthy habits, grades, job performance, lower dementia risk |
+| Neuroticism | Depression, anxiety, many physical health problems, marital dissatisfaction |
+| Extraversion | Positive emotion, leadership emergence, social network size |
+| Agreeableness | Relationship quality, less antisocial behaviour |
+| Openness | Creativity, educational attainment, liberal attitudes |
+### How big?
+Reviews of long-term studies found traits predict mortality, divorce and occupational success about as well as socioeconomic status and IQ.
+### Cautions
+- Correlations are averages; they do not decide one person's fate.
+- Self-report bias; informant reports help.
+- Causality can run both ways (illness raises neuroticism scores).
+:::
+
+:::qa What is HEXACO, and what does it add to the Big Five? [starting]
+### Short answer
+HEXACO is a **six-factor** model from cross-language lexical studies. It adds **Honesty-Humility** and reshapes emotionality and agreeableness.
+### The six factors
+| Factor | Key content |
+|---|---|
+| Honesty-Humility | Sincerity, fairness, greed avoidance, modesty |
+| Emotionality | Fearfulness, anxiety, dependence, sentimentality (anger moves elsewhere) |
+| eXtraversion | Social self-esteem, boldness, sociability, liveliness |
+| Agreeableness | Forgiveness, gentleness, flexibility, patience (low = irritable) |
+| Conscientiousness | Organisation, diligence, perfectionism, prudence |
+| Openness | Aesthetic appreciation, inquisitiveness, creativity, unconventionality |
+### Why it matters
+Honesty-Humility predicts **cheating, workplace deviance, exploitation and the dark triad** better than any Big Five factor. In applied settings such as integrity screening, this is a real gain.
+### Debate
+Big Five defenders argue honesty is a facet of agreeableness. HEXACO researchers reply that it emerges as its own factor in many languages when evaluative words are included.
+:::
+
+## 4.2 Q&A bank · Beginner [beginner]
+:::qa How was the person-situation debate resolved? [beginner]
+### Short answer
+Neither persons nor situations "win". Traits predict **aggregated** behaviour well, situations matter a lot for single acts, and individuals show **stable patterns of variation** across situations.
+### The challenge
+Mischel's 1968 critique: trait-behaviour correlations in single situations rarely exceed about 0.30.
+### The responses
+| Response | Key idea |
+|---|---|
+| Aggregation | Average behaviour across many occasions and correlations rise sharply |
+| Situational effects are similar in size | Classic social psychology effects convert to correlations of about 0.3 to 0.4 |
+| Strong versus weak situations | Traits show most in ambiguous situations |
+| Interactionism | Behaviour depends on person, situation and their interaction |
+| If-then signatures (CAPS) | Stable patterns of responding differently to different situations |
+| Whole trait theory | Traits are stable distributions of varying states |
+### Conclusion
+Personality is best seen as **consistent variability**: knowing someone's traits tells you their typical range, and knowing the situation tells you where in that range they will be.
+:::
+
+:::qa Compare Rogers and Maslow. [beginner]
+### Short answer
+Both are humanists who see people as growth-oriented. **Rogers** built a theory of the **self** and of therapy; **Maslow** built a theory of **motivation** and of healthy, exceptional people.
+### Comparison
+| Issue | Rogers | Maslow |
+|---|---|---|
+| Core motive | One actualising tendency | A hierarchy of needs ending in self-actualisation |
+| Focus | Self-concept, congruence, conditions of worth | D-needs, B-needs, self-actualisers |
+| Source of data | Therapy sessions | Studies of admired people |
+| Healthy person | Fully functioning person | Self-actualiser, peak experiences |
+| Cause of problems | Conditions of worth and incongruence | Unmet needs; metapathologies |
+| Application | Client-centred therapy; core conditions | Motivation, education, management |
+| Research | Q-sort studies; relationship meta-analyses | Cross-national needs research; little support for a strict order |
+### Evaluation
+Rogers is more testable and has more clinical impact; Maslow had more influence on management and positive psychology. Both have been criticised for an individualist view of the self.
+:::
+
+:::qa How does self-efficacy differ from self-esteem and locus of control? [beginner]
+### Short answer
+**Self-efficacy** is "**can I do this specific task?**"; **self-esteem** is "**am I worthwhile overall?**"; **locus of control** is "**do outcomes depend on what I do?**".
+### Comparison
+| Concept | Question | Scope | Theorist | Example |
+|---|---|---|---|---|
+| Self-efficacy | Can I do it? | Task-specific | Bandura | "I can give an injection" |
+| Outcome expectancy | Will doing it work? | Task-specific | Bandura | "If I give it correctly, the pain will ease" |
+| Locus of control | Do my actions or outside forces decide outcomes? | Generalised | Rotter | "My results depend on my effort" |
+| Self-esteem | Am I worthwhile? | Global | Rosenberg | "I am a person of worth" |
+### Why the distinction matters clinically
+A depressed doctor may keep internal locus and good injection self-efficacy but have very low self-esteem; a patient may believe exercise helps (outcome expectancy) but doubt she can manage it (low efficacy). Each needs a different intervention.
+:::
+
+:::qa Explain Kelly's personal construct theory and its use in practice. [beginner]
+### Short answer
+Kelly saw people as **scientists** who interpret and predict events through personal, bipolar **constructs**, and who can always choose new ways to construe their lives (constructive alternativism).
+### Key ideas
+- **Fundamental postulate**: processes are channelled by the ways we anticipate events.
+- **Constructs** are bipolar ("warm versus cold") and form a hierarchy with core and peripheral constructs.
+- **Eleven corollaries**, including individuality, organisation, choice, range, experience, commonality and sociality.
+- **Emotions** as transitions in construing: anxiety, threat, guilt, hostility.
+### In practice
+| Tool | What it does |
+|---|---|
+| Rep test and repertory grid | Elicits a person's constructs by comparing triads of significant people |
+| Fixed-role therapy | The client lives as a new character for a while to test new constructs |
+| Laddering | Moves from peripheral to core constructs by asking why a pole matters |
+### Evaluation
+Strengths: respects the individual, gives a measurable idiographic tool, anticipated cognitive therapy. Weaknesses: little on emotion and development, and the corollaries are abstract.
+:::
+
+## 4.3 Q&A bank · Advanced [advanced]
+:::qa Critically evaluate biological explanations of personality. [advanced]
+### Short answer
+Biology clearly matters: traits are moderately heritable and linked to reward and threat systems. But specific claims (single genes, neat transmitter-trait links, brain-structure correlates) have often failed to replicate.
+### What holds up
+| Evidence | Finding |
+|---|---|
+| Twin and adoption studies | Heritability about 40%; shared environment near zero |
+| Twins reared apart | About as similar as twins reared together |
+| Temperament | Behavioural inhibition in infancy predicts later shyness and amygdala reactivity |
+| Genome-wide studies | Many tiny genetic effects; genetic overlap of neuroticism with depression and anxiety |
+### What has not held up
+- Candidate genes (DRD4 and novelty seeking; serotonin transporter and neuroticism).
+- Many small-sample brain-imaging correlations with the Big Five.
+- Simple one-transmitter-one-trait mappings (Cloninger's original links are only partly supported).
+- Eysenck's resting-arousal hypothesis (reactivity is better supported than baseline).
+### Models compared
+| Model | Systems | Status |
+|---|---|---|
+| Eysenck | Cortical arousal (E), limbic reactivity (N) | Historically central; partly revised |
+| Gray's RST | BAS, BIS, FFFS | Strong conceptual and pharmacological support |
+| Cloninger | Four temperaments, three character dimensions | Widely used clinically; neurotransmitter links weak |
+### Conclusion
+Biology sets ranges and sensitivities; experience, especially non-shared, shapes where a person ends up.
+:::
+
+:::qa Compare the triguna model with the Big Five. [advanced]
+### Short answer
+Both describe broad dimensions of human nature, but the triguna model is **dynamic, moral and spiritual**, aimed at liberation, while the Big Five is **descriptive and value-neutral**, aimed at prediction.
+### Comparison
+| Issue | Triguna | Big Five |
+|---|---|---|
+| Source | Samkhya philosophy, Bhagavad Gita | Lexical and questionnaire factor analysis |
+| Units | Sattva, rajas, tamas, all present in a changing balance | Five independent continuous traits |
+| Stability | Balance changes with food, company, practice | Fairly stable, slowly maturing |
+| Values | Sattva is preferred; ultimate aim is to go beyond all three | Neither pole is "better" in principle |
+| Goal | Self-realisation, liberation | Description and prediction |
+| Measurement | Vedic Personality Inventory, Indian guna scales | NEO, BFI and others |
+| Evidence | Correlates sensibly with Big Five and well-being; small samples | Large, cross-cultural evidence base |
+### Points of contact
+Sattva overlaps with emotional stability, conscientiousness and agreeableness; rajas with extraversion and some neuroticism; tamas with neuroticism and low conscientiousness.
+### Evaluation
+The triguna model adds a **change-oriented** and **ethical** dimension that Western trait models lack, and is culturally meaningful for many Indian clients. Its measures need stronger validation, and it should not be used to label patients as "tamasic by nature".
+:::
+
+:::qa Using explanatory style and self-discrepancy theory, formulate a student's depression after failing an entrance exam. [advanced]
+### The case
+Rohan, 19, failed NEET for the second time. He says: "I'm useless. I'll never be a doctor. My parents sacrificed everything; I've let them down." He sleeps most of the day.
+### Explanatory style
+| Dimension | His explanation | Effect |
+|---|---|---|
+| Internal | "I'm useless" | Lowers self-esteem |
+| Stable | "I'll never be a doctor" | Hopelessness about the future |
+| Global | Implies he is useless in general | Depression spreads beyond exams |
+### Self-discrepancy
+- **Actual versus ought**: "My parents sacrificed everything" points to a duty gap, so **agitation and guilt**.
+- **Actual versus ideal**: "I'll never be a doctor" points to a hope gap, so **dejection**.
+- Both together are common in Indian exam culture, where family duty and personal dreams are tied.
+### Formulation and plan
+1. Assess risk carefully (hopelessness is a key warning sign), with a helpline and family involvement as needed.
+2. Behavioural activation to restore routine and mastery.
+3. Cognitive work on the three dimensions: "I failed this exam this year" (specific, unstable), with honest acknowledgement of controllable factors.
+4. Family session to explore the ought self: what parents actually want, and alternative careers.
+5. Build self-efficacy through small, achievable goals.
+:::
+
+:::qa Evaluate Kohlberg's theory in the light of Gilligan, Shweder and Haidt. [advanced]
+### Short answer
+Kohlberg described the development of **justice reasoning** well, but Gilligan added **care**, Shweder added **community and divinity**, and Haidt showed that moral judgment is often **intuitive**, with reasoning following.
+### The three challenges
+| Critic | Claim | Evidence | Verdict |
+|---|---|---|---|
+| Gilligan | An ethic of care is undervalued, especially in women's reasoning | Interviews with women facing real dilemmas | Care matters; gender differences are small |
+| Shweder | Morality includes duty, hierarchy, purity, not only harm and rights | Bhubaneswar and Chicago comparisons | Strong support for cultural breadth |
+| Haidt | Intuition drives judgment; reasoning justifies | Moral dumbfounding; moral foundations research | Well supported, though reasoning can change intuitions over time |
+### What remains of Kohlberg
+- The sequence of justice reasoning is well supported longitudinally.
+- Stage 5 and above are rare, and culturally linked to education.
+- Reasoning predicts behaviour only modestly; moral identity and emotion matter.
+### Integration
+A full account of moral character needs reasoning (Kohlberg), care (Gilligan), cultural ethics (Shweder), intuitions (Haidt), and emotions and identity.
+:::
+
+## 4.4 Long answers, short notes and viva [core]
 ### Long answer skeletons
 **Q1. Compare the trait theories of Allport, Cattell and Eysenck. How does the five-factor model integrate them? (15 marks)**
 1. Define trait; type versus trait.
@@ -532,7 +956,7 @@ What feelings follow an actual-ought discrepancy? :: Agitation: anxiety, guilt, 
 What does the 2016 revision of learned helplessness say? :: Passivity is the default; control is what is learnt.
 :::
 
-## 4.2 Module test [core]
+## 4.5 Module test [core]
 :::mcq
 Q: "Dynamic organisation within the individual of those psychophysical systems that determine his characteristic behaviour and thought" is the definition of personality by:
 - Raymond Cattell
