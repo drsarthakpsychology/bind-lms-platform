@@ -13,6 +13,7 @@ import * as m_depression from "@/content/study/depression";
 import * as m_ethicsLaw from "@/content/study/ethics-law";
 import * as m_interviewMse from "@/content/study/interview-mse";
 import * as m_lifespan from "@/content/study/lifespan";
+import * as m_learningMemory from "@/content/study/learning-memory";
 import * as m_examPrep from "@/content/study/exam-prep";
 import * as m_frontiers from "@/content/study/frontiers";
 import * as m_medicineProfiles from "@/content/study/medicine-profiles";
@@ -27,18 +28,20 @@ import * as m_psychodynamics from "@/content/study/psychodynamics";
 import * as m_psychosis from "@/content/study/psychosis";
 import * as m_researchMethods from "@/content/study/research-methods";
 import * as m_social from "@/content/study/social";
+import * as m_sensationPerception from "@/content/study/sensation-perception";
 import * as m_stabilisers from "@/content/study/stabilisers";
 import * as m_statistics from "@/content/study/statistics";
 import * as m_substance from "@/content/study/substance";
 import * as m_suicide from "@/content/study/suicide";
 import * as m_therapies from "@/content/study/therapies";
+import * as m_thinkingLanguage from "@/content/study/thinking-language";
 import * as m_trauma from "@/content/study/trauma";
 
 /**
  * The course, in curriculum order (sorted by module number). Add a module by
  * creating its file in src/content/study (meta + text) and importing it here.
  */
-const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_frontiers, m_interviewMse, m_lifespan, m_medicineProfiles, m_moreDisorders, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_psychodynamics, m_psychosis, m_researchMethods, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_trauma];
+const SOURCES: { meta: ModuleMeta; text: string }[m_antidepressants, m_antipsychotics, m_anxiety, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_frontiers, m_interviewMse, m_learningMemory, m_lifespan, m_medicineProfiles, m_moreDisorders, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_psychodynamics, m_psychosis, m_researchMethods, m_sensationPerception, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_thinkingLanguage, m_trauma];
 
 function build(src: { meta: ModuleMeta; text: string }): StudyModule {
   const sections = parseModule(src.text);
