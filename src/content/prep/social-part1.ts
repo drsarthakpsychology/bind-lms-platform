@@ -477,13 +477,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Kelley's covariation model has been criticised as a normative ideal rather than a description of everyday attribution.",
-      "R: Studies show people under-use consensus information and often lack the time or information to perform covariation analysis.",
+      "A: Kelley's covariation model has been criticised as describing how people should reason rather than how they usually do.",
+      "R: Kelley's model uses three kinds of information: consensus, distinctiveness and consistency.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. McArthur found that consensus information affected attributions less than distinctiveness and consistency, and Nisbett and Borgida showed people ignore base rates in judging behaviour. Real-world perceivers usually observe single events and rely on causal schemata, heuristics and knowledge structures, so the model describes how people could reason more than how they do.",
+      "Both statements are true, but R does not explain A. The criticism in A comes from evidence that people under-use consensus information, ignore base rates and usually see a single event, so they rarely have the data for a full covariation analysis; they fall back on causal schemata and shortcuts. R correctly describes the model's three dimensions, but simply listing them does not explain why the model is seen as an ideal rather than a description.",
     ref: "McArthur 1972; Nisbett & Borgida 1975",
   }),
   s({

@@ -117,12 +117,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Conduction velocity is faster in myelinated axons than in unmyelinated axons of the same diameter.",
-      "R: In myelinated axons the action potential is regenerated only at the nodes of Ranvier, where voltage-gated Na⁺ channels are concentrated.",
+      "R: Myelin is formed by oligodendrocytes in the central nervous system and by Schwann cells in the peripheral nervous system.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Myelin reduces membrane capacitance and current leak, so current spreads passively and quickly under the internode, and the slow step of regenerating the spike happens only at the nodes (saltatory conduction). This is why a myelinated axon can conduct at up to about 120 m/s while an unmyelinated axon of similar size conducts at around 1 to 2 m/s.",
+      "Both statements are true, but R does not explain A. A is true because myelin insulates the axon, so current spreads quickly and passively under each myelinated stretch and the slow step of regenerating the spike happens only at the nodes of Ranvier (saltatory conduction). R is also true, but it only says which cells make myelin; it says nothing about why myelin speeds conduction. In exams, check whether R gives the mechanism behind A, not just a related fact.",
     ref: "Pinel, ch. 4",
   }),
   b({

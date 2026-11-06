@@ -63,13 +63,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: In split-brain research, stimuli are flashed for less than about 150 to 200 milliseconds.",
+      "A: In split-brain research, stimuli are usually shown for several seconds so that both hemispheres can examine them carefully.",
       "R: A brief flash prevents the patient from moving the eyes to bring the stimulus into the other visual field.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Saccades take roughly 150 to 200 ms to start, so a shorter exposure ensures the image stays in one visual hemifield and reaches only the opposite hemisphere. Longer exposures would let the eyes move so that both hemispheres receive the stimulus, defeating the lateralised design.",
+      "A is false and R is true. Researchers flash stimuli for less than about 150 to 200 milliseconds, because an eye movement takes about that long to start. If the image stayed up for seconds, the patient would move the eyes and the picture would reach both hemispheres, which would defeat the whole design. R states the correct reason for using brief flashes, which is exactly why A is wrong.",
     ref: "Kalat, ch. 14",
   }),
   b({
@@ -816,12 +816,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Long-term lithium treatment can cause hypothyroidism.",
-      "R: Lithium inhibits the release of thyroid hormones from the thyroid gland.",
+      "R: Lithium has a narrow therapeutic index, so its blood level must be monitored regularly.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Lithium is concentrated by the thyroid and inhibits iodine uptake, iodination and especially release of T4 and T3, so TSH rises; goitre and hypothyroidism develop in a substantial minority of long-term users, particularly women. This is why thyroid function is checked before and during lithium therapy.",
+      "Both statements are true, but R does not explain A. Lithium causes hypothyroidism because it is concentrated in the thyroid and blocks the release of thyroid hormones, so TSH rises; this is why thyroid function is checked before and during treatment. R is also true (toxicity can begin not far above the therapeutic range), but a narrow therapeutic index is about dosing safety and does not explain why the thyroid is affected.",
     ref: "Stahl's Prescriber's Guide: lithium; Kaplan & Sadock's Synopsis",
   }),
   b({

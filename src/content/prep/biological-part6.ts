@@ -104,12 +104,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Fluoxetine and paroxetine can raise the blood levels of drugs metabolised by CYP2D6, such as many tricyclic antidepressants.",
-      "R: Fluoxetine and paroxetine are potent inhibitors of CYP2D6.",
+      "R: Fluoxetine has an active metabolite, norfluoxetine, with a half-life of one to two weeks.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Inhibiting CYP2D6 slows the clearance of its substrates (TCAs, some antipsychotics, codeine activation, tamoxifen activation, metoprolol), raising their levels or, for prodrugs, reducing their activation. Sertraline and escitalopram have much weaker 2D6 inhibition, which is why they are preferred when interactions matter.",
+      "Both statements are true, but R does not explain A. A is true because fluoxetine and paroxetine strongly inhibit the liver enzyme CYP2D6, which slows the breakdown of drugs that depend on it, so their levels rise. R is true too, and it explains why fluoxetine's effects (and interactions) linger for weeks after stopping, but a long half-life is not the reason for the interaction. Note also that paroxetine has no such long-acting metabolite, yet it causes the same interaction.",
     module: "antidepressants",
     ref: "Stahl, ch. 7; Maudsley Prescribing Guidelines",
   }),
@@ -902,13 +902,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Bupropion is less likely than SSRIs to cause sexual dysfunction.",
+      "A: Bupropion is more likely than SSRIs to cause sexual dysfunction.",
       "R: Bupropion has little direct effect on serotonin and acts mainly on noradrenaline and dopamine reuptake.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. SSRI-related sexual dysfunction is thought to arise partly from serotonin's inhibitory effect on dopamine and noradrenaline in sexual circuits (including via 5-HT2 receptors). Bupropion, an NDRI with negligible serotonergic action, rarely causes sexual dysfunction and is sometimes added to reverse SSRI-induced problems.",
+      "A is false and R is true. Bupropion is in fact less likely than SSRIs to cause sexual dysfunction, and it is sometimes added to an SSRI to reduce this side effect. The reason is given in R: SSRI sexual side effects are linked to raised serotonin, while bupropion works on noradrenaline and dopamine and has almost no serotonergic action. Its own main safety concern is a dose-related risk of seizures.",
     module: "antidepressants",
     ref: "Stahl's Prescriber's Guide: bupropion",
   }),

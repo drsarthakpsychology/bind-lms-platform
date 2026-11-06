@@ -550,13 +550,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: fMRI has limited temporal resolution for tracking neural events.",
-      "R: The haemodynamic response peaks about 4 to 6 seconds after a brief burst of neural activity and lasts several seconds.",
+      "A: fMRI has limited temporal resolution for tracking fast neural events.",
+      "R: fMRI uses no ionising radiation, so the same person can be scanned many times.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Because the blood-flow response is sluggish and smeared in time, fMRI cannot resolve events that are only tens of milliseconds apart, although clever designs (event-related and rapid designs, timing differences between regions) give resolution of about a second. Spatial resolution, by contrast, is a few millimetres.",
+      "Both statements are true, but R does not explain A. fMRI is slow because it measures blood flow, and the haemodynamic response peaks about 4 to 6 seconds after a burst of neural activity and is spread out over several seconds. R is a real advantage of fMRI over PET or CT, but it has nothing to do with timing. The two statements are about different properties of the method.",
     ref: "Huettel, Song & McCarthy, Functional MRI, ch. 7",
   }),
   b({

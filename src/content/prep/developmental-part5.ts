@@ -237,13 +237,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Large-scale studies have found that a dramatic 'midlife crisis' is experienced by only a minority of adults.",
-      "R: Personality traits show substantial stability across adulthood, and most middle-aged adults report relatively high wellbeing.",
+      "A: Large-scale studies show that most adults go through a dramatic midlife crisis around age 40 to 45.",
+      "R: Personality traits show substantial stability across adulthood, and most middle-aged adults report fairly high wellbeing.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. McCrae and Costa found no age peak in turmoil scores at midlife, and the MIDUS survey found that only about 10 to 20% reported a crisis, often linked to specific events rather than age. Because traits are fairly stable and wellbeing is often good in midlife, a universal age-linked crisis is not expected. The term 'midlife crisis' was coined by Elliott Jaques.",
+      "A is false and R is true. Surveys such as the US MIDUS study found that only a minority, roughly 10 to 20%, report a midlife crisis, and these are often linked to particular events (job loss, illness, divorce) rather than to age itself. Studies of personality found no rise in turmoil at midlife. R is true and is part of the reason A is wrong: stable traits and good wellbeing do not fit a universal crisis.",
     ref: "Costa & McCrae 1980; Lachman 2004, Annu Rev Psychol",
   }),
   d({
@@ -677,12 +677,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Robert Butler proposed that 'life review' is a normal process in later life.",
-      "R: Butler argued that reviewing past experiences and resolving old conflicts can help older adults achieve integrity, though it can also bring regret or depression.",
+      "R: Butler also coined the term 'ageism' for prejudice against people because of their age.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Butler challenged the view that reminiscence in older people was a sign of decline, describing life review as a universal process prompted by awareness of approaching death, which can promote integrity (in Erikson's terms) but sometimes leads to despair. It underlies reminiscence and life-review therapies.",
+      "Both statements are true, but R does not explain A. Butler argued that awareness of approaching death prompts older people to look back over their lives and work through unresolved conflicts, which can lead to integrity or sometimes to regret, and that this reminiscence is healthy rather than a sign of decline. R is a true fact about another of his contributions, but it does not explain why life review happens.",
     ref: "Butler 1963, Psychiatry",
   }),
   // ── Lifespan perspective and ageing in India ──────────────────────────────

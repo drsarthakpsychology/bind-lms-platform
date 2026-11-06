@@ -674,12 +674,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Vygotsky argued that make-believe play creates a zone of proximal development.",
-      "R: In play, children must follow the implicit rules of the role they adopt, which develops self-restraint and abstract thought.",
+      "R: Vygotsky died young, in 1934, and much of his work became widely known in the West only decades later.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Vygotsky wrote that in play a child behaves 'a head taller than himself'. Pretending a stick is a horse separates meaning from objects, and acting out a role (a mother, a shopkeeper) requires following rules and inhibiting impulses, so play stretches capacities ahead of everyday performance. Research links sociodramatic play to self-regulation.",
+      "Both statements are true, but R does not explain A. Vygotsky saw play as a ZPD because in pretend play children follow the hidden rules of their roles and use objects to stand for other things, so they behave 'a head taller' than in everyday life. R is a true historical fact about Vygotsky's life and the spread of his ideas, but it gives no reason why play would create a ZPD.",
     module: undefined,
     ref: "Vygotsky 1933/1966; Berk, Mann & Ogan 2006",
   }),
@@ -1237,13 +1237,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Children of 3 often fail the appearance-reality task, saying a sponge painted to look like a rock 'really is a rock'.",
+      "A: Most 3-year-olds pass the appearance-reality task, correctly saying that a sponge painted to look like a rock looks like a rock but is really a sponge.",
       "R: Three-year-olds have difficulty holding two conflicting representations of the same object at once.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Flavell, Flavell and Green found 3-year-olds make realism errors ('it really is a rock') or phenomenism errors on such tasks. The common explanation, shared with false-belief failure, is difficulty representing that one thing can be represented in two different ways (dual representation), which improves around age 4 to 5.",
+      "A is false and R is true. Flavell and colleagues found that most 3-year-olds fail the task: they say it 'really is a rock' or that it 'looks like a sponge'. Children usually pass around age 4 to 5, at about the same time they pass false-belief tasks. R gives the usual explanation for the failure, the difficulty of representing one object in two ways at once, which is why A cannot be true.",
     module: "child",
     ref: "Flavell, Flavell & Green 1983, Cogn Psychol",
   }),

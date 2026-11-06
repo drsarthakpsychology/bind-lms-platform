@@ -492,12 +492,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Infants can be securely attached to one parent and insecurely attached to the other.",
-      "R: Attachment security reflects the history of interaction with a particular caregiver rather than a single fixed trait of the infant.",
+      "R: Infants usually begin to show wariness of strangers at about 6 to 8 months.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Main and Weston and later meta-analyses found that attachment to mother and to father are only modestly related, consistent with relationship-specific internal working models. This is one argument against a purely temperamental account of attachment.",
+      "Both statements are true, but R does not explain A. A is true because attachment security reflects the history of a particular relationship, so an infant may have learned to trust one parent's responses and not the other's; mother and father attachment classifications are only modestly related. R is a true milestone in early social development, but stranger wariness has nothing to do with why security can differ between parents.",
     ref: "Main & Weston 1981; Fox et al. 1991",
   }),
   d({

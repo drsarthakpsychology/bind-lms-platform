@@ -798,13 +798,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Erikson believed that the basic sense of trust develops in the first year of life.",
-      "R: In infancy, the consistency and warmth of caregiving teaches the child whether the world can be relied on.",
+      "A: Erikson believed that a basic sense of trust develops in the first year of life.",
+      "R: Erikson trained in psychoanalysis in Vienna under Anna Freud.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Erikson's first stage, trust versus mistrust, depends on the quality and predictability of care: reliable feeding, comfort and responsiveness build a basic trust that underlies later hope, whereas neglect or inconsistency leads to mistrust. This links naturally with attachment research.",
+      "Both statements are true, but R does not explain A. Erikson placed trust versus mistrust in infancy because the reliability and warmth of early care teach the baby whether the world can be depended on. R is a true fact about his training, which explains his psychoanalytic roots, but it does not explain why trust develops in the first year.",
     ref: "Erikson 1950",
   }),
   d({
