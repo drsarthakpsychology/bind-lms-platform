@@ -6,6 +6,7 @@ import { QUESTIONS as part4 } from "./research-methods-4";
 import { QUESTIONS as part5 } from "./research-methods-5";
 import { QUESTIONS as part6 } from "./research-methods-6";
 import { QUESTIONS as part7 } from "./research-methods-7";
+import { QUESTIONS as part8 } from "./research-methods-8";
 
 /** Question bank · research-methods. Parts live in research-methods-<n>.ts. */
-export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7];
+export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8];
