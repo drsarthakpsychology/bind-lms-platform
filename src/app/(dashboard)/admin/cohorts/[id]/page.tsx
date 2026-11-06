@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
-import { Bell, ChevronLeft, Mail, MessageCircleQuestion, PlayCircle, UserPlus } from "lucide-react";
+import { Bell, ChevronLeft, Mail, MessageCircleQuestion, PlayCircle } from "lucide-react";
 import { loadAllLessons, loadCohort, loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { loadRoster } from "@/lib/people/roster-data";
 import { ACCOUNT_LABEL, ACCOUNT_TONE } from "@/lib/people/account-status";
 import { isBehind } from "@/lib/people/attention";
 import { agoLabel } from "@/lib/analytics/timeline";
+import { AddPeopleButton } from "@/components/admin/add-people-panel";
 import { AddPeopleForm, CohortSettings, LessonSharing, MemberActions } from "@/components/admin/cohorts-ui";
 import { CohortCalendarForm } from "../../tools/cohort-calendar-form";
 import { Badge } from "@/components/ui/badge";
@@ -56,11 +57,11 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
   const avail = people.reduce((a, { r }) => a + (r?.lecturesAvailable ?? 0), 0);
   const pct = avail ? Math.round((done / avail) * 100) : 0;
 
-  const pill = "inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-bold";
+  const pill = "inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-bold";
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/cohorts" className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">
+      <Link href="/admin/cohorts" className="inline-flex min-h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">
         <ChevronLeft className="size-4" aria-hidden /> All cohorts
       </Link>
       <header className="flex flex-wrap items-end justify-between gap-4">
@@ -74,7 +75,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
         </div>
         {canWrite ? (
           <div className="flex flex-wrap gap-2">
-            <Link href={`/admin/students/add?cohort=${id}`} className={cn(pill, "bg-primary text-primary-foreground")}><UserPlus className="size-4" aria-hidden /> Add people</Link>
+            <AddPeopleButton cohortId={id} size="default" />
             <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(emails)}`} className={cn(pill, "bg-card")}><Bell className="size-4" aria-hidden /> Message cohort</Link>
           </div>
         ) : null}

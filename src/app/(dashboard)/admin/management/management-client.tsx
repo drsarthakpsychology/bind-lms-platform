@@ -55,7 +55,7 @@ export function ManagementClient({ admins, me }: { admins: AdminRow[]; me: { id:
               <option value="admin">Super Admin (full access)</option>
             </select>
           </label>
-          <button type="submit" disabled={busy} className="min-h-11 rounded-full border-2 border-foreground bg-foreground px-5 py-2 text-sm font-bold text-background disabled:opacity-50">
+          <button type="submit" disabled={busy} className="min-h-11 rounded-md border-2 border-foreground bg-foreground px-5 py-2 text-sm font-bold text-background disabled:opacity-50">
             {busy ? "Adding…" : "Add administrator"}
           </button>
         </form>
@@ -99,7 +99,7 @@ export function ManagementClient({ admins, me }: { admins: AdminRow[]; me: { id:
                       const res = await resendAdminInvite(a.email);
                       setMessage(res.error ?? `Setup link sent to ${a.email}.`);
                     }}
-                    className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-sm font-semibold"
+                    className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold"
                   >
                     Resend link
                   </button>
@@ -110,7 +110,7 @@ export function ManagementClient({ admins, me }: { admins: AdminRow[]; me: { id:
                       const res = await removeAdmin(a.id);
                       setMessage(res.error ?? "Removed.");
                     }}
-                    className="min-h-9 rounded-full border-2 border-foreground bg-card px-3 text-sm font-semibold text-red-600"
+                    className="min-h-9 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold text-red-600"
                   >
                     Remove
                   </button>

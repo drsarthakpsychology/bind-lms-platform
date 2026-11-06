@@ -6,7 +6,14 @@ import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { drugDetail } from "@/lib/psychopharm/store";
-import { ReviewFilter } from "./review-filter";
+import { FilterBar } from "@/components/admin/filter-bar";
+
+const STATUSES = [
+  { value: "draft", label: "Draft" },
+  { value: "in_review", label: "In review" },
+  { value: "verified", label: "Verified" },
+  { value: "published", label: "Published" },
+];
 
 /** Map a document status to an unmistakable pill (dot + label, never colour alone). */
 function statusPill(status: string): { tone: "ai" | "scripted" | "neutral" | "warning"; label: string } {
@@ -37,7 +44,7 @@ function statusPill(status: string): { tone: "ai" | "scripted" | "neutral" | "wa
 export default async function PsychReviewPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; status?: string; class?: string }>;
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
@@ -55,9 +62,16 @@ export default async function PsychReviewPage({
   for (const d of docs ?? []) statusByDrug.set(d.drug_id, d.status);
 
   const q = (sp.q ?? "").trim().toLowerCase();
+  const status = STATUSES.some((s) => s.value === sp.status) ? sp.status! : null;
+  const drugClass = (sp.class ?? "").trim() || null;
+  const classes = [...new Set((drugs ?? []).map((d) => (d.drug_class as string | null) ?? "").filter(Boolean))].sort((a, b) => a.localeCompare(b));
   const filtered = (drugs ?? []).filter(
-    (d) => !q || d.generic_name.toLowerCase().includes(q) || (d.drug_class ?? "").toLowerCase().includes(q),
+    (d) =>
+      (!q || d.generic_name.toLowerCase().includes(q) || (d.drug_class ?? "").toLowerCase().includes(q)) &&
+      (!status || (statusByDrug.get(d.id) ?? "draft") === status) &&
+      (!drugClass || d.drug_class === drugClass),
   );
+  const filteringBy = q || status || drugClass;
 
   return (
     <div className="space-y-6">
@@ -68,11 +82,22 @@ export default async function PsychReviewPage({
         badge={<span className="text-caption text-muted-foreground">{(drugs ?? []).length} medications</span>}
       />
 
-      <ReviewFilter />
+      <FilterBar
+        search={{ label: "Filter medications", placeholder: "Filter by medication name…" }}
+        selects={[
+          { param: "status", label: "Status", allLabel: "Any status", options: STATUSES },
+          { param: "class", label: "Drug class", allLabel: "All drug classes", options: classes.map((c) => ({ value: c, label: c })) },
+        ]}
+      />
+      {filteringBy ? (
+        <p className="text-caption text-muted-foreground" role="status">
+          {filtered.length} of {(drugs ?? []).length} shown
+        </p>
+      ) : null}
 
       <div className="space-y-2">
         {filtered.length === 0 ? (
-          <p className="text-small text-muted-foreground">No medications match “{sp.q}”.</p>
+          <p className="text-small text-muted-foreground">No medications match these filters.</p>
         ) : (
           filtered.map((drug) => {
             const { tone, label } = statusPill(statusByDrug.get(drug.id) ?? "draft");

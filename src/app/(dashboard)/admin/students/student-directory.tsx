@@ -53,14 +53,14 @@ export function StudentDirectory({ rows }: { rows: DirectoryRow[] }) {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search by email or number"
-            className="h-12 w-full rounded-full border-2 border-foreground bg-card pr-11 pl-11 text-base outline-none placeholder:text-muted-foreground focus-visible:ring-[3px] focus-visible:ring-ring/60 md:text-sm"
+            className="h-12 w-full rounded-md border-2 border-foreground bg-card pr-11 pl-11 text-base outline-none placeholder:text-muted-foreground focus-visible:ring-[3px] focus-visible:ring-ring/60 md:text-sm"
           />
           {q ? (
             <button
               type="button"
               onClick={() => setQ("")}
               aria-label="Clear search"
-              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full hover:bg-accent"
+              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md hover:bg-accent"
             >
               <X className="size-4" aria-hidden />
             </button>

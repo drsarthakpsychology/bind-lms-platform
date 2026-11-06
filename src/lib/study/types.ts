@@ -34,13 +34,15 @@ export type Block =
   /** Shown only in one reading view (the Student / Clinician switch). */
   | { t: "view"; view: "student" | "clinician"; blocks: Block[] }
   /** An interactive piece (guess, decide, sort, build, moodline, worked, synapse). Data is JSON in the source. */
-  | { t: "widget"; kind: WidgetKind; data: WidgetData };
+  | { t: "widget"; kind: WidgetKind; data: WidgetData }
+  /** A question with a fully developed answer (Q&A bank). The answer is ordinary blocks. */
+  | { t: "qa"; q: Inline; level?: Level; blocks: Block[] };
 
 /** Starting → Beginner → Advanced. Each level opens when the previous level check is passed. */
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -61,7 +63,34 @@ export type MoodlineData = { prompt: Inline; series: number[]; labels?: string[]
 export type WorkedData = { title: Inline; steps: { q: Inline; a: Inline }[]; yourTurn?: { q: Inline; a: Inline }[] };
 export type SynapseData = { drug: "ssri" | "snri" | "maoi" | "none"; caption: Inline };
 export type RevealData = { prompt: Inline; answer: Inline };
-export type WidgetData = GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData;
+/** Flowchart / process / cycle / hierarchy. chain = nodes in order; cycle = nodes round a loop; tree = nodes with `parent`. Tap a node for its detail; Play steps through. */
+export type FlowData = {
+  title?: Inline;
+  layout: "chain" | "cycle" | "tree";
+  nodes: { id: string; label: Inline; detail?: Inline; parent?: string }[];
+  /** Labels on the arrows between consecutive nodes (chain/cycle), keyed "from>to". */
+  edgeLabels?: Record<string, Inline>;
+  caption?: Inline;
+};
+/** Interactive curve explorers with sliders. */
+export type CurveData = {
+  kind: "normal" | "sdt" | "forgetting" | "inverted-u" | "dose-response" | "half-life";
+  title?: Inline;
+  caption?: Inline;
+};
+/** Layered models: pyramid (layers[0] = top), rings (layers[0] = centre), stack (layers[0] = top), iceberg (layers[0] = above water). */
+export type LayersData = { title?: Inline; shape: "pyramid" | "rings" | "stack" | "iceberg"; layers: { label: Inline; detail: Inline }[]; caption?: Inline };
+/** Schematic brain (side view + deep structures). Region ids: frontal, parietal, temporal, occipital, motor, sensory, broca, wernicke, prefrontal, cerebellum, brainstem, thalamus, hypothalamus, amygdala, hippocampus, basal-ganglia, corpus-callosum. */
+export type BrainMapData = { title?: Inline; focus?: string[]; notes?: Record<string, Inline>; caption?: Inline };
+/** A medicine's journey: swallowed (or IV / nasal / depot) → gut → liver first pass → blood → blood-brain barrier → brain target → elimination. Notes override the default text per stage id (mouth, gut, liver, blood, bbb, target, out, vein, nose, muscle, slow). */
+export type JourneyData = { drug: string; target: string; route?: "oral" | "iv" | "nasal" | "depot"; routes?: ("oral" | "iv" | "nasal" | "depot")[]; notes?: Record<string, Inline>; title?: Inline; caption?: Inline };
+/** Action potential: threshold slider, all-or-none firing, myelin on/off (saltatory conduction), voltage trace. */
+export type NeuronData = { title?: Inline; myelinated?: boolean; caption?: Inline };
+/** The four dopamine pathways, with a D2-blocker toggle and a serotonin 2A (second-generation) toggle. */
+export type PathwaysData = { system: "dopamine"; title?: Inline; caption?: Inline };
+/** Ligand types at one receptor: full agonist, partial agonist, antagonist, inverse agonist, with a live signal bar. */
+export type ReceptorData = { receptor?: string; title?: Inline; caption?: Inline };
+export type WidgetData = JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

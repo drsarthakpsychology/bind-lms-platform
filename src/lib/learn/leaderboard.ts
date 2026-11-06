@@ -73,15 +73,16 @@ export type PublicRow = { rank: number; name: string; weekXp: number; xp: number
 /**
  * The quiz leaderboard one student sees: their own cohort only (see
  * sameGroup), ranked by this week's quiz and game XP, then total XP. Shows
- * the whole cohort (up to 100), so everyone can see where everyone stands —
- * including the people at the bottom — not just the top few.
+ * the top 10 plus the student and the people either side of them. There is
+ * no public list of the bottom places (plan §1, "Not adopted": public
+ * ranking of the bottom half lowers scores and motivation).
  */
 export async function loadQuizBoard(userId: string | null): Promise<{ rows: PublicRow[]; myRank: number | null; total: number }> {
   const [everyone, cohorts] = await Promise.all([loadBoard().catch(() => [] as BoardRow[]), loadCohortMap().catch(() => new Map<string, string[]>())]);
   const mine = (userId && cohorts.get(userId)) || [];
   const board = everyone.filter((r) => r.userId === userId || sameGroup(mine, cohorts.get(r.userId) ?? []));
   const idx = board.findIndex((r) => r.userId === userId);
-  const rows = boardWindow(board.length, idx, 100).map((k) => ({
+  const rows = boardWindow(board.length, idx, 10).map((k) => ({
     rank: k + 1,
     name: board[k].name,
     weekXp: board[k].weekXp,

@@ -88,10 +88,10 @@ export function PeopleView({ people, initialView = "all" }: { people: Person[]; 
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search name, email or phone"
-            className="h-11 w-full rounded-full border-2 border-foreground bg-card pr-10 pl-11 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:text-sm"
+            className="h-11 w-full rounded-md border-2 border-foreground bg-card pr-10 pl-11 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:text-sm"
           />
           {q ? (
-            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full hover:bg-accent">
+            <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md hover:bg-accent">
               <X className="size-4" aria-hidden />
             </button>
           ) : null}
@@ -260,7 +260,7 @@ function PeopleBoard({ people }: { people: Person[] }) {
                         id={`stage-${p.key}`}
                         value={p.stage}
                         onChange={(e) => move(p.email, e.target.value)}
-                        className="h-7 max-w-28 rounded-full border-2 border-foreground bg-card px-2 text-[0.7rem] font-bold"
+                        className="h-7 max-w-28 rounded-md border-2 border-foreground bg-card px-2 text-[0.7rem] font-bold"
                       >
                         {STAGES.map((o) => (
                           <option key={o.id} value={o.id}>{o.label}</option>

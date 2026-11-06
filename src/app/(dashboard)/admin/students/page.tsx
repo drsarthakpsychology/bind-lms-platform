@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { KeyRound, UserPlus } from "lucide-react";
+import { KeyRound } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { loadRoster } from "@/lib/people/roster-data";
+import { AddPeopleButton } from "@/components/admin/add-people-panel";
 import { PageHeader } from "@/components/design-system/page-header";
 import { Button } from "@/components/ui/button";
 import { StudentTable } from "./student-table";
@@ -38,9 +39,7 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
               <Button asChild variant="outline" size="sm">
                 <Link href="/admin/students/logins"><KeyRound aria-hidden /> Login links</Link>
               </Button>
-              <Button asChild size="sm">
-                <Link href={`/admin/students/add${sp.cohort ? `?cohort=${sp.cohort}` : ""}`}><UserPlus aria-hidden /> Add students</Link>
-              </Button>
+              <AddPeopleButton cohortId={sp.cohort} label="Add students" />
             </>
           ) : undefined
         }

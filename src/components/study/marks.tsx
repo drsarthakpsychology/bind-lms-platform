@@ -34,7 +34,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel }: { own
           aria-pressed={on}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
           )}
         >
@@ -48,7 +48,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel }: { own
           aria-controls={panelId}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             open ? "bg-muted" : "bg-card hover:bg-muted",
           )}
         >

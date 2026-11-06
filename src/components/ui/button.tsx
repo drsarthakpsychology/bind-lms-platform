@@ -5,10 +5,12 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  // Pill control with a 2px ink border. Hover: a colour panel sweeps up
+  // Rounded-rectangle control (10px, --radius-input) with a 2px ink border.
+  // Owner rule 2026-11-06: every button is a rounded rectangle; pills are for
+  // status tags and filter chips only. Hover: a colour panel sweeps up
   // (btn-sweep), the button lifts off a hard shadow. Press: it sinks into the
   // shadow. Same language as the public homepage.
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-border text-sm font-bold whitespace-nowrap outline-none transition-[transform,background-color,color,box-shadow] duration-fast ease-snappy focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/30 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-border text-sm font-bold whitespace-nowrap outline-none transition-[transform,background-color,color,box-shadow] duration-fast ease-snappy focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/30 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {

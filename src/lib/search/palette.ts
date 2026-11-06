@@ -14,7 +14,7 @@ export interface PaletteEntry {
   hint?: string;
   href: string;
   /** Group the result clusters under. */
-  group: "Tools" | "Courses" | "Cases" | "Competencies" | "Admin" | "Nav";
+  group: "Tools" | "Reference" | "Courses" | "Cases" | "Competencies" | "Admin" | "Nav";
   /** Keywords beyond the label, searched too (e.g. "patient", "MSE"). */
   keywords?: string[];
   shortcut?: string;
@@ -31,6 +31,7 @@ const TOOLS: PaletteEntry[] = [
   { id: "learn", label: "Games", hint: "Coach, quizzes, Detective, review", href: "/games", group: "Tools", keywords: ["cards", "review", "quiz", "game", "streak", "xp"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
   { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
+  { id: "reference", label: "Quick Reference A–Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"] },
   { id: "notes", label: "Notes", hint: "One-page revision notes", href: "/study/notes", group: "Tools", keywords: ["notes", "study", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"] },
   { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"] },
   { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },
@@ -48,11 +49,14 @@ const ADMIN: PaletteEntry[] = [
   { id: "ad-overview", label: "Admin overview", href: "/admin", group: "Admin" },
   { id: "ad-students", label: "Students", href: "/admin/students", group: "Admin" },
   { id: "ad-courses", label: "Courses", href: "/admin/courses", group: "Admin" },
-  { id: "ad-add", label: "Add students", href: "/admin/students/add", group: "Admin", keywords: ["new student", "invite", "import", "csv", "enrol", "bulk"] },
+  { id: "ad-add-panel", label: "Add people…", hint: "Paste names or emails, pick a cohort, send login email", href: "?add=people", group: "Admin", keywords: ["add students", "add to cohort", "new student", "invite", "enrol", "bulk"] },
+  { id: "ad-add", label: "Add students (upload a file)", href: "/admin/students/add?way=file", group: "Admin", keywords: ["import", "csv", "spreadsheet", "bulk"] },
   { id: "ad-emails", label: "Messages", href: "/admin/emails", group: "Admin", keywords: ["mail", "email", "inbox", "sent", "replies", "campaign", "send"] },
   { id: "ad-notify", label: "Send a notification", href: "/admin/emails?folder=notify", group: "Admin", keywords: ["bell", "announce", "message students", "nudge"] },
   { id: "ad-failed", label: "Failed emails (retry)", href: "/admin/emails?folder=failed", group: "Admin", keywords: ["retry", "bounced", "error"] },
   { id: "ad-credentials", label: "Credentials & certificates", href: "/admin/credentials", group: "Admin", keywords: ["certificate", "badge", "achievement", "roll number", "revoke"] },
+  { id: "ad-inbox", label: "Reply to doubts", hint: "Inbox: doubts and replies waiting on you", href: "/admin/inbox", group: "Admin", keywords: ["inbox", "doubts", "answer", "reply", "concerns", "unanswered", "questions"] },
+  { id: "ad-message", label: "Message…", hint: "Send a message to students (in-app, email optional)", href: "/admin/emails?folder=notify", group: "Admin", keywords: ["message", "notify", "tell", "announce", "send", "text students", "nudge"] },
   { id: "ad-doubts", label: "Doubts & concerns", href: "/admin/doubts", group: "Admin", keywords: ["questions", "complaints", "reply"] },
   { id: "ad-cohorts", label: "Cohorts", href: "/admin/cohorts", group: "Admin", keywords: ["batch", "cohort 1", "cohort 2"] },
   { id: "ad-compose", label: "Compose email", href: "/admin/emails?folder=compose", group: "Admin", keywords: ["new email", "write", "send"] },
@@ -66,6 +70,12 @@ const ADMIN: PaletteEntry[] = [
 ];
 
 export const STATIC_ENTRIES: PaletteEntry[] = [...TOOLS, ...COURSES, ...ADMIN];
+
+/** Quick Reference entries (the index is built server-side in src/lib/reference/data.ts). */
+export function referencePaletteEntries(items: { slug: string; label: string; kind: string; aliases: string[] }[]): PaletteEntry[] {
+  const kind: Record<string, string> = { disorder: "Disorder", medicine: "Medicine", term: "Word" };
+  return items.map((i) => ({ id: `ref-${i.slug}`, label: i.label, hint: `Quick Reference · ${kind[i.kind] ?? ""}`, href: `/study/reference/${i.slug}`, group: "Reference", keywords: i.aliases.map((a) => a.toLowerCase()) }));
+}
 
 /** Score a query against an entry: exact label hit > keyword hit > hint hit. */
 export function scoreEntry(entry: PaletteEntry, query: string): number {

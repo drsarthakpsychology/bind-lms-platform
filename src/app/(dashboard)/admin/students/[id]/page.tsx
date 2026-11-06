@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { Award, Bell, CheckCircle2, ChevronLeft, Circle, Clock, KeyRound, Mail, MessageSquare, PlayCircle, ShieldAlert, Sparkles, Upload } from "lucide-react";
+import { Award, CheckCircle2, ChevronLeft, Circle, Clock, Mail, MessageCircleQuestion, MessageSquare, PlayCircle, ShieldAlert, Sparkles, Upload } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadRoster } from "@/lib/people/roster-data";
 import { loadStudentDetail } from "@/lib/analytics/activity";
-import { buildTimeline, daysAgoIso, type TimelineEvent } from "@/lib/analytics/timeline";
+import { agoLabel, buildTimeline, daysAgoIso, type TimelineEvent } from "@/lib/analytics/timeline";
 import { loadAllLessons, loadCohortSummaries, loadPersonAccess } from "@/lib/cohorts/admin-data";
 import { normalise } from "@/lib/learn/engine";
+import { selectOwnedCredentials } from "@/lib/achievements/owned";
 import { ACCOUNT_LABEL, ACCOUNT_NEXT, ACCOUNT_TONE } from "@/lib/people/account-status";
 import { FLAG_LABEL } from "@/lib/people/attention";
 import { personKey } from "@/lib/crm/people";
@@ -17,6 +18,12 @@ import { LockToggle } from "@/components/admin/lock-toggle";
 import { Badge } from "@/components/ui/badge";
 import { StudentActions } from "../student-actions";
 import { SendLinkButton } from "./send-link-button";
+import { PersonHeader, NextStepLink } from "@/components/admin/person-header";
+import { NextStepAction, StudentActionRail } from "@/components/admin/student-action-rail";
+import { InlineReply } from "@/components/admin/inbox-reply";
+import { StatusPill } from "@/components/mobile/status-pill";
+import { loadInbox, type InboxThread } from "../../inbox/data";
+import { progressPct, suggestNextStep } from "./next-step";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Student" };
@@ -59,8 +66,10 @@ const EVENT_ICON: Record<TimelineEvent["kind"], typeof Clock> = {
 };
 
 /**
- * One student, one page (2026-11 redesign): everything about a person in
- * tabs — overview, access & login, activity timeline, credentials, messages.
+ * One student, one page (Student 360, DI §C-8): a PersonHeader (status,
+ * cohorts, last seen, progress, flags, ONE suggested next step) with the
+ * action rail, their doubts on Overview (reply in place), and tabs only for
+ * deep detail — access & login, activity timeline, credentials, messages.
  * Replaces the separate "Access" and "Activity" person pages (their old
  * addresses redirect here).
  */
@@ -81,39 +90,66 @@ export default async function StudentProfilePage({ params, searchParams }: { par
   const name = (person.details?.full_name as string) || r?.name || (p.name as string) || email;
   const { data: extra } = await admin.from("profiles").select("roll_number, is_test, status, expires_at").eq("id", id).maybeSingle();
 
+  const [{ threads: waiting }, certCount, { data: myDoubts }] = await Promise.all([
+    loadInbox({ userId: id, withEmails: false }),
+    admin.from("credentials").select("id", { count: "exact", head: true }).eq("user_id", id).eq("type", "certificate").is("revoked_at", null),
+    admin.from("doubts").select("id, title, kind, status, created_at").eq("user_id", id).order("created_at", { ascending: false }).limit(20),
+  ]);
+  const doubts: DoubtLine[] = (myDoubts ?? []).map((d) => ({
+    id: d.id as string,
+    title: String(d.title ?? "Doubt"),
+    kind: d.kind === "complaint" ? "complaint" : "doubt",
+    status: String(d.status ?? "open"),
+    createdAt: String(d.created_at ?? ""),
+    waiting: waiting.find((w) => w.id === d.id) ?? null,
+  }));
+  const next = suggestNextStep({
+    account: r?.account ?? null,
+    waitingDoubts: waiting.length,
+    cohorts: r?.cohorts.length ?? person.cohortIds.size,
+    flags: r?.flags ?? [],
+    lecturesDone: r?.lecturesDone ?? 0,
+    lecturesAvailable: r?.lecturesAvailable ?? 0,
+    certificates: certCount.error ? 0 : (certCount.count ?? 0),
+  });
+  const nextAction =
+    next.action === "reply" ? (
+      <NextStepLink href={`/admin/students/${id}?tab=overview#doubts`}>Reply</NextStepLink>
+    ) : next.action === "access" ? (
+      <NextStepLink href={`/admin/students/${id}?tab=access`}>Open access</NextStepLink>
+    ) : next.action === "message" ? (
+      <NextStepLink href={`/admin/emails?folder=notify&to=${encodeURIComponent(email)}`}>Send a nudge</NextStepLink>
+    ) : next.action === "certificate" ? (
+      <NextStepLink href={`/admin/credentials?student=${id}`}>Issue certificate</NextStepLink>
+    ) : (next.action === "login-link" || next.action === "add-cohort") && canWrite ? (
+      <NextStepAction action={next.action} email={email} />
+    ) : undefined;
+
   return (
-    <div className="space-y-6">
-      <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold">
+    <div className="space-y-5 sm:space-y-6">
+      <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-link hover:underline">
         <ChevronLeft className="size-4" aria-hidden /> Students
       </Link>
 
-      <header className="flex flex-wrap items-start gap-4">
-        <span aria-hidden className="grid size-14 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary font-pix text-lg text-primary-foreground">
-          {name.slice(0, 1).toUpperCase()}
-        </span>
-        <div className="min-w-0 flex-1">
-          <h1 className="text-h1 break-words">{name}</h1>
-          <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
-            <span className="font-mono font-bold text-foreground">{(extra?.roll_number as string | null) ?? "No roll number"}</span>
-            <span>· {email}</span>
-            {p.mobile_number ? (
-              <a className="font-semibold text-link underline" href={`https://wa.me/91${p.mobile_number}`} target="_blank" rel="noopener noreferrer">· WhatsApp +91 {String(p.mobile_number)}</a>
-            ) : <span>· No mobile</span>}
-          </p>
-          <div className="mt-2 flex flex-wrap items-center gap-1.5">
-            {r ? <Badge variant={ACCOUNT_TONE[r.account]}>{ACCOUNT_LABEL[r.account]}</Badge> : null}
-            <span className="rounded-full border-2 border-foreground/20 px-2 py-0.5 text-caption font-semibold">{p.scope === "lectures_only" ? "Lectures only" : "Full platform"}</span>
-            {(r?.cohorts ?? []).map((c) => (
-              <Link key={c.id} href={`/admin/cohorts/${c.id}`} className="rounded-full border-2 border-foreground px-2 py-0.5 text-caption font-bold hover:bg-accent">{c.name}</Link>
-            ))}
-            {extra?.is_test ? <Badge variant="pending">Test account</Badge> : null}
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Link href={`/admin/emails?folder=notify&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Bell className="size-4" aria-hidden /> Notify</Link>
-          <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(email)}`} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold hover:bg-accent"><Mail className="size-4" aria-hidden /> Email</Link>
-        </div>
-      </header>
+      <PersonHeader
+        name={name}
+        roll={(extra?.roll_number as string | null) ?? null}
+        email={email}
+        mobile={p.mobile_number ? String(p.mobile_number) : null}
+        status={r ? { label: ACCOUNT_LABEL[r.account], tone: ACCOUNT_TONE[r.account] } : null}
+        scopeLabel={p.scope === "lectures_only" ? "Lectures only" : "Full platform"}
+        cohorts={r?.cohorts ?? []}
+        lastSeen={r?.lastSeen ? agoLabel(r.lastSeen) : "Never"}
+        onNow={r?.presence === "now"}
+        lecturesDone={r?.lecturesDone ?? 0}
+        lecturesAvailable={r?.lecturesAvailable ?? 0}
+        progressPct={progressPct(r?.lecturesDone ?? 0, r?.lecturesAvailable ?? 0)}
+        flags={(r?.flags ?? []).map((f) => FLAG_LABEL[f])}
+        isTest={Boolean(extra?.is_test)}
+        next={next}
+        nextAction={nextAction}
+        actions={<StudentActionRail id={id} email={email} canWrite={canWrite} />}
+      />
 
       <nav aria-label="Student sections" className="-mx-4 border-b-2 border-foreground/10 px-4 sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10">
         <ul className="-mb-0.5 flex gap-1 overflow-x-auto [scrollbar-width:none]">
@@ -134,10 +170,10 @@ export default async function StudentProfilePage({ params, searchParams }: { par
         </ul>
       </nav>
 
-      {tab === "overview" ? <Overview id={id} r={r} details={person.details} /> : null}
+      {tab === "overview" ? <Overview r={r} details={person.details} doubts={doubts} canWrite={canWrite} /> : null}
       {tab === "access" ? <AccessTab id={id} email={email} canWrite={canWrite} person={person} r={r} isTest={Boolean(extra?.is_test)} /> : null}
       {tab === "activity" ? <ActivityTab id={id} /> : null}
-      {tab === "credentials" ? <CredentialsTab id={id} roll={(extra?.roll_number as string | null) ?? null} /> : null}
+      {tab === "credentials" ? <CredentialsTab id={id} email={email} roll={(extra?.roll_number as string | null) ?? null} /> : null}
       {tab === "messages" ? <MessagesTab id={id} email={email} /> : null}
     </div>
   );
@@ -154,32 +190,44 @@ function Stat({ value, label }: { value: React.ReactNode; label: string }) {
   );
 }
 
-function Overview({ id, r, details }: { id: string; r: Row; details: Record<string, string | null> | null }) {
-  const next = r ? ACCOUNT_NEXT[r.account] : null;
+type DoubtLine = { id: string; title: string; kind: "doubt" | "complaint"; status: string; createdAt: string; waiting: InboxThread | null };
+
+function Overview({ r, details, doubts, canWrite }: { r: Row; details: Record<string, string | null> | null; doubts: DoubtLine[]; canWrite: boolean }) {
   return (
     <div className="space-y-6">
-      {next ? (
-        <p className="flex items-start gap-2 rounded-2xl border-2 border-foreground bg-status-pending-bg p-4 text-sm font-semibold text-status-pending-fg">
-          <KeyRound className="mt-0.5 size-4 shrink-0" aria-hidden /> {next}{" "}
-          <Link href={`/admin/students/${id}?tab=access`} className="underline">Open Access & login</Link>
-        </p>
-      ) : null}
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Stat value={r?.presence === "now" ? "On now" : r?.lastSeen ? when(r.lastSeen) : "Never"} label="Last on VIBHA" />
+      <section id="doubts" aria-labelledby="doubts-h" className="scroll-mt-24 rounded-xl border-2 border-foreground bg-card p-4">
+        <h2 id="doubts-h" className="flex items-center gap-2 text-base font-semibold">
+          <MessageCircleQuestion className="size-4 text-link" aria-hidden /> Their doubts
+          <span className="font-normal tabular-nums text-muted-foreground">({doubts.length})</span>
+        </h2>
+        {doubts.length ? (
+          <ul className="mt-3 divide-y-2 divide-foreground/10">
+            {doubts.map((d) => (
+              <li key={d.id} className="space-y-2 py-3 first:pt-0 last:pb-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  {d.kind === "complaint" ? <ShieldAlert className="size-4 shrink-0 text-status-alert-fg" aria-hidden /> : null}
+                  <Link href={`/doubts/${d.id}`} className="min-w-0 font-semibold break-words hover:underline">{d.title}</Link>
+                  <StatusPill
+                    tone={d.waiting ? "warning" : d.status === "solved" ? "ai" : "neutral"}
+                    label={d.waiting ? (d.waiting.need.reason === "student-replied" ? "They wrote back" : "Waiting for you") : d.status === "solved" ? "Solved" : d.status === "hidden" ? "Hidden" : "Answered"}
+                  />
+                  <span className="text-caption text-muted-foreground">{d.kind === "complaint" ? "Private concern · " : ""}{agoLabel(d.createdAt)}</span>
+                </div>
+                {d.waiting?.followUp ? <p className="line-clamp-3 border-l-4 border-link pl-3 text-small whitespace-pre-line break-words">{d.waiting.followUp}</p> : d.waiting?.body ? <p className="line-clamp-3 text-small whitespace-pre-line break-words text-muted-foreground">{d.waiting.body}</p> : null}
+                {d.waiting ? <InlineReply target="doubt" id={d.id} label={`Reply to ${d.title}`} canWrite={canWrite} /> : null}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-2 text-sm text-muted-foreground">No doubts asked yet.</p>
+        )}
+      </section>
+      <div className="grid grid-cols-2 gap-3 sm:max-w-lg">
         <Stat value={hm(r?.min7 ?? 0)} label={`this week · ${hm(r?.min30 ?? 0)} in 30 days`} />
-        <Stat value={`${r?.lecturesDone ?? 0}/${r?.lecturesAvailable ?? 0}`} label="lectures finished" />
         <Stat value={`${r?.xp ?? 0} XP`} label="Notes & Games" />
       </div>
-      {r?.flags.length ? (
-        <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-          <h2 className="text-base font-bold">Needs attention</h2>
-          <ul className="mt-2 flex flex-wrap gap-2">
-            {r.flags.map((f) => <li key={f} className="rounded-full bg-status-pending-bg px-3 py-1 text-sm font-bold text-status-pending-fg">{FLAG_LABEL[f]}</li>)}
-          </ul>
-        </section>
-      ) : null}
-      <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-        <h2 className="text-base font-bold">Their details</h2>
+      <section className="rounded-xl border-2 border-foreground bg-card p-4">
+        <h2 className="text-base font-semibold">Their details</h2>
         {details ? (
           <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
             {DETAIL_LABELS.map(([k, l]) => (
@@ -346,13 +394,14 @@ async function ActivityTab({ id }: { id: string }) {
   );
 }
 
-async function CredentialsTab({ id, roll }: { id: string; roll: string | null }) {
-  const { data, error } = await createAdminClient().from("credentials").select("id, credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title)").eq("user_id", id).order("created_at", { ascending: false });
+async function CredentialsTab({ id, email, roll }: { id: string; email: string; roll: string | null }) {
+  // Includes custom certificates sent to the student's email address.
+  const { data, error } = await selectOwnedCredentials(createAdminClient(), "id, credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title)", id, email);
   const one = <T,>(x: T | T[] | null | undefined): T | null => (Array.isArray(x) ? (x[0] ?? null) : (x ?? null));
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <Link href={`/admin/credentials?q=${encodeURIComponent(roll ?? id)}`} className="inline-flex h-10 items-center rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Manage or issue a certificate</Link>
+        <Link href={`/admin/credentials?q=${encodeURIComponent(roll ?? id)}`} className="inline-flex h-10 items-center rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground">Manage or issue a certificate</Link>
       </div>
       {error ? (
         <p className="text-sm text-muted-foreground">Credentials aren&apos;t set up in the database yet.</p>

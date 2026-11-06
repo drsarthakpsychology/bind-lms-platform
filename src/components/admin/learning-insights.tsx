@@ -246,7 +246,7 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
           <a
             href={csvHref}
             download
-            className="inline-flex h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground hard-shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-x-px active:translate-y-px"
+            className="inline-flex h-11 items-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground hard-shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-x-px active:translate-y-px"
           >
             <Download className="size-4" aria-hidden /> Download CSV
           </a>

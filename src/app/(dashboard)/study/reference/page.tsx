@@ -1,0 +1,35 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { requireFeature } from "@/lib/flags";
+import { referenceIndex } from "@/lib/reference/data";
+import { ReferenceLibrary, type RefKind } from "@/components/reference/reference-library";
+
+export const metadata: Metadata = { title: "Quick Reference A–Z" };
+
+const KINDS = new Set(["disorder", "medicine", "term"]);
+
+/**
+ * /study/reference — the Quick Reference A–Z: disorders, medicines and words,
+ * each one tap from a short, deep summary. A separate library: nothing here
+ * appears inside lessons (owner rule 2026-11-06).
+ */
+export default async function ReferencePage({ searchParams }: { searchParams: Promise<{ q?: string; kind?: string }> }) {
+  await requireFeature("learn");
+  const sp = await searchParams;
+  const items = referenceIndex();
+  const kind = KINDS.has(sp.kind ?? "") ? (sp.kind as RefKind) : "all";
+  return (
+    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6">
+      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold">
+        <ArrowLeft className="size-4" aria-hidden /> Notes
+      </Link>
+      <header className="space-y-1">
+        <p className="text-eyebrow text-link">Quick Reference</p>
+        <h1 className="text-h1">A to Z</h1>
+        <p className="text-sm text-muted-foreground">Disorders, medicines and words. Tap one for a short summary you can read in a minute.</p>
+      </header>
+      <ReferenceLibrary items={items} initialQuery={(sp.q ?? "").slice(0, 80)} initialKind={kind} />
+    </div>
+  );
+}

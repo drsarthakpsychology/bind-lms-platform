@@ -176,7 +176,7 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
           className="h-12 w-full rounded-2xl border-2 border-foreground bg-card pr-11 pl-12 text-base font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
         />
         {q ? (
-          <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 grid size-9 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+          <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 grid size-9 -translate-y-1/2 place-items-center rounded-md hover:bg-muted">
             <X className="size-4" aria-hidden />
           </button>
         ) : null}

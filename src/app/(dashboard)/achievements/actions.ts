@@ -6,6 +6,7 @@ import { evaluate } from "@/lib/achievements/engine";
 import { loadEvalCtx } from "@/lib/achievements/server";
 import { credentialDownloadUrl } from "@/lib/achievements/storage";
 import type { AchievementRequirement } from "@/lib/achievements/rules";
+import { ownsCredential, selectOwnedCredentials } from "@/lib/achievements/owned";
 
 export type MyCredential = {
   credential_id: string;
@@ -43,23 +44,20 @@ export async function loadMyAchievements(): Promise<{ earned: MyCredential[]; pr
   const admin = createAdminClient();
 
   const [{ data: creds }, { data: achievements }, ctx] = await Promise.all([
-    admin
-      .from("credentials")
-      .select("credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title, description, icon, tone)")
-      .eq("user_id", me.id)
-      .order("created_at", { ascending: false }),
+    // Their own, plus custom certificates sent to their email address.
+    selectOwnedCredentials(admin, "credential_id, type, status, issued_at, revoked_at, revoke_reason, reason, achievements(title, description, icon, tone)", me.id, me.email),
     admin.from("achievements").select("id, type, title, description, icon, tone, requirements, enabled").eq("enabled", true),
     loadEvalCtx(admin, me.id),
   ]);
 
   const earned: MyCredential[] = (creds ?? []).map((c) => {
-    const a = Array.isArray(c.achievements) ? c.achievements[0] : c.achievements;
+    const a = (Array.isArray(c.achievements) ? c.achievements[0] : c.achievements) as Record<string, unknown> | null;
     return {
       credential_id: c.credential_id as string,
       type: c.type as MyCredential["type"],
       status: c.status as MyCredential["status"],
       title: (a?.title as string) ?? "",
-      description: (a?.description as string) ?? null,
+      description: (a?.description as string) ?? (c.type === "certificate" ? ((c.reason as string) ?? null) : null),
       icon: (a?.icon as string) ?? null,
       tone: (a?.tone as string) ?? "lime",
       issued_at: (c.issued_at as string) ?? null,
@@ -94,13 +92,14 @@ export async function downloadMyCertificate(credentialId: string): Promise<{ url
   const me = await requireSession();
   if (!me) return { url: null, error: "Not signed in." };
   const admin = createAdminClient();
-  const { data } = await admin
+  // Try with recipient_email (email-linked certificates); older databases lack the column.
+  let { data, error } = await admin
     .from("credentials")
-    .select("pdf_storage_path, status")
+    .select("pdf_storage_path, status, user_id, recipient_email")
     .eq("credential_id", credentialId)
-    .eq("user_id", me.id)
     .maybeSingle();
-  if (!data) return { url: null, error: "Not found." };
+  if (error) ({ data, error } = await admin.from("credentials").select("pdf_storage_path, status, user_id").eq("credential_id", credentialId).maybeSingle());
+  if (!data || !ownsCredential(data as { user_id?: unknown; recipient_email?: unknown }, me.id, me.email)) return { url: null, error: "Not found." };
   if (data.status !== "issued" || !data.pdf_storage_path) return { url: null, error: "Certificate not yet issued." };
   const url = await credentialDownloadUrl(data.pdf_storage_path as string, 60 * 15);
   return { url, error: null };
