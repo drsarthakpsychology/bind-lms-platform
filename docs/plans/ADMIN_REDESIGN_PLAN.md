@@ -1,5 +1,5 @@
 # Admin dashboard redesign — plan
-> Status: **PROPOSED** (becomes VERIFIED section by section as it ships). Base: branch `testing` @ `036327f` + `main` @ `b2a9698` + `docs-ssot-architecture`. Work branch: `admin-redesign`. Nothing merges to `main` without the owner saying "merge".
+> Status: **BUILT on branch `admin-redesign`** (2026-11-06) — VERIFIED in code, tests and screen checks; not merged to `main`. Items under §6 "Later" remain PROPOSED. Base: branch `testing` @ `036327f` + `main` @ `b2a9698` + `docs-ssot-architecture`. Work branch: `admin-redesign`. Nothing merges to `main` without the owner saying "merge".
 > Source of requirements: the owner's dictation and prompt of 2026-11-06 (every point is listed in §9 so nothing is dropped).
 
 ## 1. What is there today (checked in code and in the live database, read-only)

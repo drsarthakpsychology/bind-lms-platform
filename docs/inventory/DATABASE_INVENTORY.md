@@ -130,3 +130,10 @@ Totals: 118 tables with DDL in repo; ~100 distinct names queried from code; 5 vi
 - Views (DDL present): `checkins_aggregate, formulation_wall_visible, student_last_activity, wall_posts_visible, wall_replies_visible`.
 ## Defined but never queried via `.from()`
 `app_roles, rate_limits` (used through RPC/helpers), and several `psych_*` observation tables (`psych_clinical_pearls, psych_comorbidity_notes, psych_dose_ranges, psych_mechanism_tags, psych_med_timeline, psych_observation_prompts, psych_red_flags, psych_session_observations, psych_therapist_questions, psych_user_acknowledgements`) — may be read via scripts/JSON or SQL; REQUIRES VERIFICATION before treating as dead.
+
+## Added by the admin redesign (2026-11-06) — `supabase/migrations_pending/2026_11_admin_redesign.sql` (additive; owner runs it)
+- `email_sends`: `html`, `retry_of` (→ email_sends), `retried_at`; indexes.
+- `notifications`: `credential_id` nullable; `type` allows `message`, `nudge`; `body_html`, `sent_by`, `batch_id`, `opened_at`; admin read policy.
+- **`attention_checks`** (new): `user_id`, `lesson_id`, `asked_at`, `answered_at`, `missed`, `position_seconds` — "Still watching?" results. RLS: own or admin read; writes via server only.
+- Indexes on `page_visits (entered_at)`, `(user_id, entered_at)`, `progress (updated_at)`.
+- Read-only check of the live database on 2026-11-06: `page_visits`, `notifications`, `achievements`, `credentials`, `admin_audit_log`, `profiles.roll_number`, `profiles.cohort_ended_at` **exist in production** (DDL for `page_visits` / `cohort_ended_at` is still not in the repo).

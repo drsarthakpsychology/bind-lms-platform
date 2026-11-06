@@ -1,22 +1,26 @@
 # Module: Notifications & communication
-> Verified against `main` @ `b2a9698`. Flow diagram below.
+> **VERIFIED against branch `admin-redesign`**, 2026-11-06.
 
 | Channel | Implementation | Status |
 |---|---|---|
-| Credential / welcome email | `roster.ts` → Resend `fetch`; `email_sends` log; admin retry/clear failed (`admin/emails`, `failed-pick.ts`) | VERIFIED working path (needs `RESEND_API_KEY`; production key presence UNVERIFIED) |
-| Admin compose to recipients | `admin/emails/compose-tab.tsx`, `recipient-picker.tsx` (students, course chips, **single-cohort chips** so one cohort's mail never reaches another) | VERIFIED |
-| Delivery tracking | Resend webhook `/api/emails/resend` (Svix-verified) → `email_sends.delivered_at/…`; inbound mail table `email_inbound` | VERIFIED |
-| Rate guard | `RESEND_DAILY_LIMIT` batching in `src/lib/reminders.ts` | VERIFIED code; value UNVERIFIED |
-| Daily reminders | GitHub cron → `?task=send-reminders` | **STUB**: logs `not_configured`, sends nothing |
-| Nudges | `/api/admin/nudge`, `/nudge/bulk` | VERIFIED route; mechanism (email vs in-app) `UNVERIFIED` |
-| In-app | `/notifications` (wall replies, reports to review) | VERIFIED page |
-| Push/SMS/WhatsApp | none (mobile number is collected for WhatsApp use) | G – not implemented |
+| One email sender | `sendResendEmail` in `src/lib/auth/roster.ts`: **paced to ≤ 4/second** (`createPacer`, `lib/email/pace.ts`), one automatic retry on "too many requests", **preview sites only email `ALLOWED_TEST_RECIPIENT`** (`previewBlocks`; skipped sends are not logged as failures and login links are not rotated) | VERIFIED |
+| Compose | `admin/emails/compose-tab.tsx`: **Formatted** (toolbar editor `components/admin/rich-editor.tsx`, cleaned by `lib/email/rich-html.ts` → inline-styled email + plain text), **Plain text** (text-only email), **HTML** (own code); live preview; send test to me; stops a batch when the daily quota is hit | VERIFIED |
+| Stored copies | `logEmailSend` keeps `html` + `retry_of` when the columns exist (`2026_11_admin_redesign.sql`), else the old row | VERIFIED |
+| Failed | `admin/emails/failed-list.tsx` + `retry-actions.ts`: reasons in plain words, attempts, Retry one / ticked / all (40 per click), never twice to the same person+subject, skips people who got it later, login emails get a fresh link, stops at the daily limit, originals marked handled (`dismissed_at`, `retried_at`) | VERIFIED |
+| In-app notifications | `lib/notify/send.ts` → `notifications` rows (`type` message/nudge, `body_html`, `batch_id`, `opened_at`); admin composer `admin/emails/notify-tab.tsx` (chat-like or formatted, cohort chips, "Also email it" tick box, sent list with opened counts); student bell count (`top-bar.tsx`), list `/notifications`, open full screen `/notifications/[id]` (marks read, Close) | VERIFIED code; needs DB step `2026_11_admin_redesign.sql` |
+| Nudges | `lib/nudge/send.ts`: email **and** a notification (best effort) | VERIFIED |
+| Achievements/certificates | `lib/achievements/notify.ts` (unchanged) | VERIFIED |
+| Daily reminders | cron `send-reminders` | still a STUB |
+| Push/SMS/WhatsApp | none (WhatsApp links only) | G – not built |
+
 ```mermaid
 flowchart LR
-  Admin -->|"compose / bulk import"| SA["Server Action"]
-  SA --> RS["Resend API"]
-  RS --> Student
-  RS -. webhook .-> WH["api/emails/resend"]
+  Admin -->|"compose / notify / retry"| SA["Server actions"]
+  SA --> PACE["paced sender (≤4/s, preview gate)"]
+  PACE --> RS["Resend"]
+  SA --> NT[("notifications")]
+  NT --> BELL["Student bell → /notifications/[id]"]
+  RS -. "webhook" .-> WH["/api/emails/resend"]
   WH --> ES[("email_sends")]
-  CRON["GitHub cron send-reminders"] --> X["stub: not_configured"]
+  ES --> FAIL["Messages → Failed → Retry"]
 ```

@@ -57,3 +57,23 @@
 | 51 | Leaderboard penalties / negative scores | – | **G** | – | – | – | proposed only |
 
 Counts: **51 features** — A: 37 · A/H (implemented, state unverified): 3 · B: 5 · H: 2 · G/F (stub): 1 · G: 3. Class E (replaced) items are noted inline (e.g. `/tools/psychopharm` root → medicines; old `/study/*` game URLs and `/practice/learn` redirect to `/games`). Classification is INFERRED from code reading, not production usage data.
+
+## Added 2026-11-06 (branch `admin-redesign`, VERIFIED in code; not yet on `main`)
+| # | Feature | Users | Class | Where |
+|---|---|---|---|---|
+| 52 | One account status + attention flags | admin | A | `lib/people/account-status.ts`, `attention.ts` |
+| 53 | Students list without sideways scroll, bulk actions, CSV download | admin | A | `admin/students/student-table.tsx` |
+| 54 | Student profile with tabs + activity timeline | admin | A | `admin/students/[id]`, `lib/analytics/timeline.ts` |
+| 55 | Single Add students page | admin | A | `admin/students/add` |
+| 56 | Compose Formatted / Plain text / HTML | admin | A | `admin/emails/compose-tab.tsx`, `components/admin/rich-editor.tsx` |
+| 57 | Failed email retry (safe, paced) | admin | A | `admin/emails/retry-actions.ts` |
+| 58 | Admin → student notifications (+ optional email) | admin/student | A (needs DB step) | `lib/notify/send.ts`, `/notifications/[id]` |
+| 59 | Live activity, cohort comparison, falling behind | admin | A | `admin/activity`, `lib/analytics/live.ts` |
+| 60 | "Still watching?" check (pause after 60 s) | student/admin | A (results stored after DB step) | `lessons/[lessonId]/attention-check.tsx`, `lib/attention/schedule.ts` |
+| 61 | Cohort workspace tabs | admin | A | `admin/cohorts/[id]` |
+| 62 | Reply-only Doubts & concerns | admin | A | `admin/doubts` |
+| 63 | Credentials find by roll number + custom certificate designer | admin | A | `admin/credentials` |
+| 64 | AI provider detail | admin | A | `admin/infra` |
+| 65 | Quick student search (⌘K) | admin | A | `components/search/palette-host.tsx` |
+| 66 | Preview-site email gate | system | A | `previewBlocks` in `lib/auth/roster.ts` |
+Feature 37 (daily reminders) is unchanged (still a stub). Feature 40 (certificates): name is now editable and centred on the PDF for custom certificates; the old `admin/students/certificate-action.ts` path still prints the email.

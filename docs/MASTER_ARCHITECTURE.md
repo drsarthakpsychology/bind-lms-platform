@@ -69,5 +69,8 @@ Supabase (auth + data — single point of failure) · Cloudflare R2 (all lecture
 5. Large Practice/Sim/AI surface with many feature flags; actual production flag states are `UNVERIFIED` (stored in DB table `feature_flags`).
 6. Cohort model is new (Nov 2026); production data migration status of `2026_11_cohorts.sql` is `UNVERIFIED`.
 
+## 7b. In progress (not on `main` yet)
+Branch **`admin-redesign`** (built on `testing`): the full admin dashboard redesign — see [ADMIN_REDESIGN_PLAN](plans/ADMIN_REDESIGN_PLAN.md), [ADMIN_DASHBOARD](modules/ADMIN_DASHBOARD.md), [NOTIFICATIONS](modules/NOTIFICATIONS.md). Needs DB step `2026_11_admin_redesign.sql`.
+
 ## 8. How to change this system
 Follow [DOCUMENTATION_CHANGE_POLICY](changes/DOCUMENTATION_CHANGE_POLICY.md): read this file → read the module doc → check dependencies → propose → implement after approval → verify → update docs + CHANGELOG.
