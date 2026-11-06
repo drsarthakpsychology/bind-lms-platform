@@ -6,7 +6,7 @@
  * - Chance of a right answer: P = 1 / (1 + e^-(theta - b)).
  * - After an answer with outcome o in [0, 1] (partial credit allowed):
  *     theta += K(n_student) * (o - P),   b -= K(n_item) * (o - P)
- *   with a shrinking step K(n) = 0.4 / (1 + 0.05 n), so early answers move a
+ *   with shrinking steps (student 0.9/(1+0.08n), item 0.4/(1+0.05n)), so early answers move a
  *   rating a lot and later ones settle it.
  * - Ability fades toward the prior when a skill isn't practised (forgetting).
  * Pure functions only.
@@ -45,6 +45,15 @@ export function kFactor(n: number): number {
   return 0.4 / (1 + 0.05 * Math.max(0, n));
 }
 
+/**
+ * Student step: larger at first so a new learner can reach mastery in a
+ * handful of right answers (about 7 from scratch) instead of ~23, then settling.
+ * Items keep the smaller kFactor so one student can't swing a question's difficulty.
+ */
+export function studentK(n: number): number {
+  return 0.9 / (1 + 0.08 * Math.max(0, n));
+}
+
 export type Rated = { theta: number; n: number };
 export type ItemRating = { b: number; n: number };
 
@@ -55,7 +64,7 @@ export function eloUpdate(student: Rated, item: ItemRating, outcome: number): { 
   const err = o - p;
   return {
     p,
-    student: { theta: clampTheta(student.theta + kFactor(student.n) * err), n: student.n + 1 },
+    student: { theta: clampTheta(student.theta + studentK(student.n) * err), n: student.n + 1 },
     item: { b: clampTheta(item.b - kFactor(item.n) * err), n: item.n + 1 },
   };
 }

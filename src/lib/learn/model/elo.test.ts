@@ -24,7 +24,7 @@ describe("eloUpdate", () => {
   it("moves learner up and item down on a right answer", () => {
     const r = eloUpdate({ theta: 0, n: 0 }, { b: 0, n: 0 }, 1);
     expect(r.p).toBe(0.5);
-    expect(r.student.theta).toBeCloseTo(0.2);
+    expect(r.student.theta).toBeCloseTo(0.45);
     expect(r.item.b).toBeCloseTo(-0.2);
     expect(r.student.n).toBe(1);
     expect(r.item.n).toBe(1);
@@ -33,15 +33,24 @@ describe("eloUpdate", () => {
     const r = eloUpdate({ theta: 0, n: 0 }, { b: 0, n: 0 }, 0.5);
     expect(r.student.theta).toBeCloseTo(0);
     const w = eloUpdate({ theta: 0, n: 0 }, { b: 0, n: 0 }, 0.25);
-    expect(w.student.theta).toBeCloseTo(-0.1);
+    expect(w.student.theta).toBeCloseTo(-0.225);
   });
   it("uses each side's own K", () => {
     const r = eloUpdate({ theta: 0, n: 20 }, { b: 0, n: 0 }, 1);
-    expect(r.student.theta).toBeCloseTo(0.1);
+    expect(r.student.theta).toBeCloseTo(0.9 / 2.6 / 2);
     expect(r.item.b).toBeCloseTo(-0.2);
   });
   it("clamps bad outcomes", () => {
-    expect(eloUpdate({ theta: 0, n: 0 }, { b: 0, n: 0 }, 7).student.theta).toBeCloseTo(0.2);
+    expect(eloUpdate({ theta: 0, n: 0 }, { b: 0, n: 0 }, 7).student.theta).toBeCloseTo(0.45);
+  });
+  it("a new learner reaches the mastery threshold (P ≥ 0.85 at b = 0) in under 10 right answers", () => {
+    let st = { theta: 0, n: 0 };
+    let k = 0;
+    while (1 / (1 + Math.exp(-st.theta)) < 0.85 && k < 50) {
+      st = eloUpdate(st, { b: 0, n: 30 }, 1).student;
+      k++;
+    }
+    expect(k).toBeLessThan(10);
   });
 });
 
