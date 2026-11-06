@@ -43,10 +43,35 @@ const ONSET_BY_DRUG = new Map(ONSET_PATCHES.map((p) => [p.generic_name, p.onset_
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 
+/**
+ * Parsed once per server instance. KNOWLEDGE_BASE.json is ~10 MB; the admin
+ * Medicines list calls drugDetail() for every drug (~150), and re-reading and
+ * re-parsing the file on each call made that page take ~22 s. The files are
+ * read-only build inputs, so caching for the life of the instance is safe.
+ */
+const JSON_CACHE = new Map<string, unknown[]>();
+
 function loadJSON<T>(name: string): T[] {
+  const hit = JSON_CACHE.get(name);
+  if (hit) return hit as T[];
   const p = join(REPO, name);
-  if (!existsSync(p)) return [];
-  return JSON.parse(readFileSync(p, "utf8")) as T[];
+  const rows = existsSync(p) ? (JSON.parse(readFileSync(p, "utf8")) as T[]) : [];
+  JSON_CACHE.set(name, rows);
+  return rows;
+}
+
+/** Knowledge-base rows grouped by drug, built once (drugDetail runs per drug). */
+let KB_BY_DRUG: Map<string, KbRow[]> | null = null;
+function kbRowsFor(drug: string): KbRow[] {
+  if (!KB_BY_DRUG) {
+    KB_BY_DRUG = new Map();
+    for (const r of loadJSON<KbRow>("KNOWLEDGE_BASE.json")) {
+      const list = KB_BY_DRUG.get(r.drug);
+      if (list) list.push(r);
+      else KB_BY_DRUG.set(r.drug, [r]);
+    }
+  }
+  return KB_BY_DRUG.get(drug) ?? [];
 }
 
 interface KbRow {
@@ -145,7 +170,7 @@ function hasVerified(drug: string): boolean {
   // A drug is "verified" if it has KB rows AND (curated draft OR multiple fields).
   // In test mode we still report curated/rich coverage for honest labeling; the
   // published-only gate is a DB/RLS property (enforced in production).
-  const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
+  const kb = kbRowsFor(drug);
   const curated = ALL_DRAFT.some((d) => d.generic_name === drug);
   const covered = curated || kb.length >= 3;
   return covered;
@@ -217,7 +242,7 @@ export interface BandView {
 }
 
 export function drugDetail(drug: string): DrugDetail | null {
-  const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
+  const kb = kbRowsFor(drug);
   const curated = ALL_DRAFT.find((d) => d.generic_name === drug);
   // A drug is renderable if it has a KB row OR a curated record (bands +
   // mechanism). Curated-only drugs (some FDA-sourced) have no KB row but must

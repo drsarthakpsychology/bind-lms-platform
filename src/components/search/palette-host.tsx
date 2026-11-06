@@ -1,7 +1,7 @@
 import { getLibraryDocs } from "@/lib/corpus/library";
 import { STATIC_ENTRIES, type PaletteEntry } from "@/lib/search/palette";
 import { CommandPalette } from "./command-palette";
-import { loadRoster } from "@/lib/people/roster-data";
+import { createAdminClient } from "@/lib/supabase/server";
 
 /**
  * Server-side palette host — merges the static entries with the case-library
@@ -20,16 +20,36 @@ export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
     keywords: d.title.toLowerCase().split(/\s+/).slice(0, 6),
   }));
 
-  const studentEntries: PaletteEntry[] = isAdmin
-    ? (await loadRoster()).rows.map((r) => ({
-        id: `st-${r.id}`,
-        label: r.name,
-        hint: `${r.roll ?? "No roll no."} · ${r.email}`,
-        href: `/admin/students/${r.id}`,
-        group: "Admin" as const,
-        keywords: [r.email, r.roll ?? "", r.mobile ?? "", "student"].filter(Boolean).map((k) => k.toLowerCase()),
-      }))
-    : [];
+  const studentEntries: PaletteEntry[] = isAdmin ? await studentPaletteEntries() : [];
 
   return <CommandPalette entries={[...STATIC_ENTRIES, ...studentEntries, ...caseEntries]} />;
+}
+
+/**
+ * One light query (5 columns) — NOT loadRoster(), which runs ~10 queries plus
+ * the activity rollup and made every admin page load wait on it.
+ */
+async function studentPaletteEntries(): Promise<PaletteEntry[]> {
+  try {
+    const { data } = await createAdminClient()
+      .from("profiles")
+      .select("id, email, name, roll_number, mobile_number")
+      .eq("role", "student")
+      .limit(5000);
+    return (data ?? []).map((p) => {
+      const email = String(p.email ?? "");
+      const roll = (p.roll_number as string | null) ?? null;
+      const mobile = (p.mobile_number as string | null) ?? null;
+      return {
+        id: `st-${p.id}`,
+        label: String(p.name ?? "").trim() || email.split("@")[0],
+        hint: `${roll ?? "No roll no."} · ${email}`,
+        href: `/admin/students/${p.id}`,
+        group: "Admin" as const,
+        keywords: [email, roll ?? "", mobile ?? "", "student"].filter(Boolean).map((k) => k.toLowerCase()),
+      };
+    });
+  } catch {
+    return []; // search still works without the student list
+  }
 }

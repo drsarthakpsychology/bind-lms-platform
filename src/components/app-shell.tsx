@@ -59,7 +59,9 @@ export function AppShell({
         Skip to content
       </a>
       {/* Search palette — opens from the top bar, ⌘K or "/". */}
-      <PaletteHost isAdmin={isAdminView} />
+      <React.Suspense fallback={null}>
+        <PaletteHost isAdmin={isAdminView} />
+      </React.Suspense>
 
       <TopBar
         homeHref={isAdminView ? "/admin" : "/dashboard"}

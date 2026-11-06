@@ -57,6 +57,12 @@ describe("achievement engine", () => {
     expect(evaluate({ kind: "course_complete", course_id: "missing" }, ctx({ completedLessons: new Set(["l1", "l2"]) })).ok).toBe(false);
   });
 
+  it("never returns undefined for a kind it can't check (e.g. 'membership' stored in the database)", () => {
+    const r = evaluate({ kind: "membership" } as never, ctx());
+    expect(r).toEqual({ ok: false, reason: "Awarded by the VIBHA team" });
+    expect(evaluate({} as never, ctx()).ok).toBe(false);
+  });
+
   it("is a pure predicate (idempotent — repeated evaluation is stable)", () => {
     const c = ctx({ xp: 500 });
     const first = evaluate({ kind: "xp", min: 100 }, c);

@@ -64,5 +64,11 @@ export function evaluate(req: AchievementRequirement, ctx: EvalCtx): EvalResult 
       const ok = lessons.length > 0 && missing.length === 0;
       return { ok, reason: ok ? `Completed all ${lessons.length} lectures` : `${lessons.length - missing.length}/${lessons.length} lectures completed` };
     }
+    default:
+      // Kinds this engine can't check from records (e.g. "membership", or a
+      // rule typed in the database that the code doesn't know yet) are given
+      // by hand. Never returning undefined here keeps /achievements from
+      // crashing on "Cannot read properties of undefined (reading 'reason')".
+      return { ok: false, reason: "Awarded by the VIBHA team" };
   }
 }
