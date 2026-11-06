@@ -1,5 +1,6 @@
 "use server";
 
+import { isQuotaStop } from "@/lib/email/pace";
 import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { revalidatePath } from "next/cache";
 import { isHiddenAccount } from "@/lib/people/hidden";
@@ -122,8 +123,16 @@ export async function sendCampaignEmail(input: {
   let sent = 0;
   let failed = 0;
 
+  let quotaHit = false;
   for (const email of emails) {
+    // Daily limit reached: stop instead of logging a failure for everyone left.
+    if (quotaHit) {
+      failed++;
+      results.push({ email, ok: false, reason: "Not sent: the daily sending limit was reached. Send again tomorrow." });
+      continue;
+    }
     const res = await sendResendEmail(email, subject, text, html);
+    if (!res.ok && isQuotaStop(res.error)) quotaHit = true;
     await logEmailSend(admin, {
       recipient: email,
       name: null,
@@ -135,6 +144,7 @@ export async function sendCampaignEmail(input: {
       sentBy: profile.id,
       providerId: res.id ?? null,
       bodyText: text,
+      html: html || null,
     });
     if (res.ok) {
       sent++;

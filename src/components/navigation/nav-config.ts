@@ -39,101 +39,96 @@ export function withoutBlocked(items: NavItem[], blocked: string[] = []): NavIte
 }
 
 /**
- * Admin nav is grouped into labelled chunks (Launch / Review / Content /
- * System) rather than one flat column — 20+ simultaneous options exceeds the
- * ~3–5 chunk working-memory ceiling, and grouping collapses the scan into a
- * few chunks. The launch-critical surfaces (build/upload courses, people,
- * emails, what's live) sit at the top so they're always one glance away —
- * not buried at the bottom of a long list. Each destination carries a unique
- * icon: no glyph is reused for two different places, so the icon→destination
- * mapping stays 1:1.
- */
-export const ADMIN_ITEMS: NavItem[] = [
-  { href: "/admin", label: "Home", icon: "home", exact: true },
-
-  // Launch — the go-live surfaces: upload content, manage people, send
-  // credentials, switch what's live. Highest value when the programme is
-  // first going out to students.
-  { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Launch" },
-  { href: "/admin/emails", label: "Mail", icon: "mail", section: "Launch" },
-  { href: "/admin/people", label: "People pipeline", icon: "users", section: "Launch" },
-  { href: "/admin/cohorts", label: "Cohorts", icon: "users", section: "Launch" },
-  { href: "/admin/students", label: "Students", icon: "clipboardList", section: "Launch" },
-  { href: "/admin/flags", label: "What's live", icon: "toggle", section: "Launch" },
-
-  // Review — the daily review workflow, highest-frequency first.
-  { href: "/admin/triage", label: "Review triage", icon: "listFilter", section: "Review" },
-  { href: "/admin/submissions", label: "Submissions", icon: "fileCheck", section: "Review" },
-  { href: "/admin/sim-review", label: "Practice sessions", icon: "stethoscope", section: "Review" },
-  { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck", section: "Review" },
-  { href: "/admin/wall-reports", label: "Wall reports", icon: "flag", section: "Review" },
-  { href: "/admin/enquiries", label: "Enquiries", icon: "inbox", section: "Review" },
-  { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse", section: "Review" },
-
-  // Content — the rest of the knowledge base and authoring. "Modules" is
-  // intentionally absent: it's an unimplemented access/scheduling skeleton
-  // (no content editor, no rows) that confused admins with Courses. The route
-  // still exists but isn't surfaced; Courses + lessons are the real content.
-  { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
-  { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
-
-  // System — platform health.
-  { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
-  { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
-  { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },
-  { href: "/admin/achievements", label: "Achievements", icon: "award", section: "System" },
-  { href: "/admin/management", label: "Admin Management", icon: "key", section: "System" },
-];
-
-/**
- * Admin sidebar: five places, grouped by job (the Shopify / Google Classroom
- * pattern) instead of 20 loose links. Each place opens on its most-used page
- * and shows its other pages as tabs along the top (see ADMIN_SECTIONS).
+ * Admin navigation (2026-11 redesign, docs/plans/ADMIN_REDESIGN_PLAN.md).
+ * One place per job: every admin task has exactly one home, other screens
+ * only link to it. Sidebar places are grouped (People / Communicate / Teach /
+ * Settings) so ten places still scan as four chunks; each place shows its
+ * other pages as tabs (ADMIN_SECTIONS). Old addresses keep working: hidden
+ * tabs still mark a page as belonging to a place, and moved pages redirect.
  */
 export type AdminSection = {
   key: string;
   label: string;
   icon: string;
   href: string;
+  /** Sidebar group header. */
+  group?: string;
   /** `hidden` tabs only mark a page as belonging here (not shown as a tab). */
   tabs: { href: string; label: string; hidden?: boolean }[];
 };
 
 export const ADMIN_SECTIONS: AdminSection[] = [
   { key: "home", label: "Home", icon: "home", href: "/admin", tabs: [] },
-  // Mail has its own folder rail (Inbox / Sent / Logins / Failed), like Gmail,
-  // so it needs no tab row.
-  { key: "mail", label: "Mail", icon: "mail", href: "/admin/emails", tabs: [{ href: "/admin/emails", label: "Mail", hidden: true }] },
+  {
+    key: "students",
+    label: "Students",
+    icon: "clipboardList",
+    href: "/admin/students",
+    group: "People",
+    tabs: [
+      { href: "/admin/students", label: "All students" },
+      { href: "/admin/access", label: "Access for many" },
+      { href: "/admin/roster", label: "Logins", hidden: true },
+    ],
+  },
+  {
+    key: "cohorts",
+    label: "Cohorts",
+    icon: "users",
+    href: "/admin/cohorts",
+    group: "People",
+    tabs: [{ href: "/admin/cohorts", label: "Cohorts", hidden: true }],
+  },
+  {
+    key: "activity",
+    label: "Activity",
+    icon: "activity",
+    href: "/admin/activity",
+    group: "People",
+    tabs: [
+      { href: "/admin/activity", label: "Live & students" },
+      { href: "/admin/pulse", label: "Who needs a nudge" },
+      { href: "/admin/learning", label: "Learning insights" },
+      { href: "/admin/checkins", label: "Wellbeing (anonymous)" },
+    ],
+  },
+  {
+    key: "pipeline",
+    label: "Pipeline",
+    icon: "radar",
+    href: "/admin/people",
+    group: "People",
+    tabs: [
+      { href: "/admin/people", label: "Pipeline" },
+      { href: "/admin/enquiries", label: "Enquiry forms" },
+    ],
+  },
+  {
+    key: "mail",
+    label: "Messages",
+    icon: "mail",
+    href: "/admin/emails",
+    group: "Communicate",
+    // Messages has its own folder rail (Inbox / Compose / Notifications / Sent / Failed).
+    tabs: [{ href: "/admin/emails", label: "Messages", hidden: true }],
+  },
   {
     key: "content",
     label: "Content",
     icon: "bookOpen",
     href: "/admin/courses",
+    group: "Teach",
     tabs: [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
-      { href: "/admin/cards", label: "Study cards" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
+      // Study cards = the review queue for the students' Rounds flash cards.
+      // Not an admin job day to day: reachable from What's live → Rounds.
+      { href: "/admin/cards", label: "Rounds cards", hidden: true },
+      { href: "/admin/idioms", label: "Idioms", hidden: true },
+      { href: "/admin/corpus", label: "Corpus", hidden: true },
       { href: "/admin/modules", label: "Modules", hidden: true },
-    ],
-  },
-  {
-    key: "people",
-    label: "People",
-    icon: "users",
-    href: "/admin/people",
-    tabs: [
-      { href: "/admin/people", label: "Pipeline" },
-      { href: "/admin/cohorts", label: "Cohorts" },
-      { href: "/admin/students", label: "Students" },
-      { href: "/admin/access", label: "Access" },
-      { href: "/admin/activity", label: "Activity" },
-      { href: "/admin/roster", label: "Roster", hidden: true },
-      { href: "/admin/enquiries", label: "Enquiries" },
-      { href: "/admin/pulse", label: "Progress" },
-      { href: "/admin/learning", label: "Learning" },
-      { href: "/admin/checkins", label: "Check-ins" },
     ],
   },
   {
@@ -141,13 +136,26 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     label: "Review",
     icon: "inbox",
     href: "/admin/triage",
+    group: "Teach",
     tabs: [
       { href: "/admin/triage", label: "Needs a look" },
       { href: "/admin/submissions", label: "Submissions" },
-      { href: "/admin/sim-review", label: "Practice sessions" },
-      { href: "/doubts", label: "Doubts & concerns" },
+      { href: "/admin/doubts", label: "Doubts & concerns" },
       { href: "/admin/supervision", label: "Sign-offs" },
-      { href: "/admin/wall-reports", label: "Wall reports" },
+      { href: "/admin/sim-review", label: "Practice sessions", hidden: true },
+      { href: "/admin/wall-reports", label: "Wall reports", hidden: true },
+      { href: "/admin/calibration", label: "Calibration", hidden: true },
+    ],
+  },
+  {
+    key: "credentials",
+    label: "Credentials",
+    icon: "award",
+    href: "/admin/credentials",
+    group: "Teach",
+    tabs: [
+      { href: "/admin/credentials", label: "Find & issue" },
+      { href: "/admin/achievements", label: "Badges & certificate types" },
     ],
   },
   {
@@ -155,14 +163,24 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     label: "System",
     icon: "gauge",
     href: "/admin/infra",
+    group: "Settings",
     tabs: [
-      { href: "/admin/infra", label: "Usage & limits" },
-      { href: "/admin/tools", label: "Admin tools" },
-      { href: "/admin/achievements", label: "Achievements" },
-      { href: "/admin/management", label: "Admin Management" },
+      { href: "/admin/infra", label: "Usage & AI providers" },
+      { href: "/admin/management", label: "Admins" },
+      { href: "/admin/tools", label: "Support key" },
     ],
   },
 ];
+
+/** Flat list for the mobile drawer / older shells (same places, same order). */
+export const ADMIN_ITEMS: NavItem[] = ADMIN_SECTIONS.map((s) => ({
+  href: s.href,
+  label: s.label,
+  icon: s.icon,
+  exact: s.key === "home",
+  section: s.group,
+  match: s.tabs.map((t) => t.href),
+}));
 
 /** Which admin section a path belongs to (longest matching tab wins). */
 export function adminSectionFor(pathname: string): AdminSection | null {
@@ -179,13 +197,7 @@ export function adminSectionFor(pathname: string): AdminSection | null {
 }
 
 /** Sidebar items for admin: one per section; active across all its tabs. */
-export const ADMIN_SIDEBAR: NavItem[] = ADMIN_SECTIONS.map((s) => ({
-  href: s.href,
-  label: s.label,
-  icon: s.icon,
-  exact: s.key === "home",
-  match: s.tabs.map((t) => t.href),
-}));
+export const ADMIN_SIDEBAR: NavItem[] = ADMIN_ITEMS;
 
 /** Notes and Games only appear in the nav once Learn is unlocked (no links to locked screens). */
 export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {

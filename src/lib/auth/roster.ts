@@ -1,6 +1,7 @@
 import { parse } from "csv-parse/sync";
 import { createHash, randomBytes } from "node:crypto";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { createPacer } from "@/lib/email/pace";
 
 /**
  * Shared roster-provisioning logic. One source of truth for turning a list of
@@ -414,11 +415,19 @@ type EmailSendLog = {
   providerId?: string | null;
   /** Plain-text copy for the Mail reading pane (setup emails: never stored, the link is secret). */
   bodyText?: string | null;
+  /** HTML copy, so a failed email can be retried exactly (never for setup emails). */
+  html?: string | null;
+  /** When this row is a retry: the failed row it retries. */
+  retryOf?: string | null;
 };
 
-/** Insert one email_sends row (the control center's unified history feed). */
+/**
+ * Insert one email_sends row (the control center's unified history feed).
+ * Keeps the HTML copy and the retry link when the database has those columns
+ * (2026_11_admin_redesign.sql); older databases get the basic row.
+ */
 export async function logEmailSend(admin: SupabaseClient, log: EmailSendLog): Promise<void> {
-  await admin.from("email_sends").insert({
+  const base = {
     recipient: log.recipient,
     name: log.name,
     subject: log.subject,
@@ -429,7 +438,15 @@ export async function logEmailSend(admin: SupabaseClient, log: EmailSendLog): Pr
     sent_by: log.sentBy,
     provider_id: log.providerId ?? null,
     body_text: log.bodyText ?? null,
-  });
+  };
+  const extra: Record<string, unknown> = {};
+  if (log.html) extra.html = log.html;
+  if (log.retryOf) extra.retry_of = log.retryOf;
+  if (Object.keys(extra).length) {
+    const { error } = await admin.from("email_sends").insert({ ...base, ...extra });
+    if (!error) return;
+  }
+  await admin.from("email_sends").insert(base);
 }
 
 /**
@@ -455,12 +472,27 @@ export async function resetCredential(
  * `body` is the plain-text fallback; `html` (optional) is the ready-made HTML
  * version — Resend gets both, so every client renders the right one.
  */
+// One pacer for the whole server instance: at most 4 sends a second, under
+// the provider's 10/second limit (the cause of 41 failed sends in Nov 2026).
+const paceSends = createPacer(250);
+
 export async function sendResendEmail(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
+  const first = await sendResendOnce(to, subject, body, html);
+  // "Too many requests": wait a little over a second and try once more.
+  if (!first.ok && /too many requests|rate limit/i.test(first.error ?? "")) {
+    await new Promise((r) => setTimeout(r, 1200));
+    return sendResendOnce(to, subject, body, html);
+  }
+  return first;
+}
+
+async function sendResendOnce(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
   // Replies land in the admin Mail inbox through Resend inbound routing.
   const replyTo = process.env.RESEND_REPLY_TO;
   if (!key) return { ok: false, error: "RESEND_API_KEY is not configured." };
+  await paceSends();
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
