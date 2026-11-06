@@ -26,6 +26,7 @@ import {
   VolumeX,
 } from "lucide-react";
 import { Watermark } from "./watermark";
+import { AttentionCheckCard, useAttentionCheck } from "./attention-check";
 import { pingProgress } from "./actions";
 
 /** Element plus the vendor-prefixed fullscreen methods (Safari/iOS/old Edge). */
@@ -184,6 +185,8 @@ export function VideoPlayer({
   // single-file sources; HLS shows the quality menu instead.
   const mediaTypeRef = useRef<"hls" | "mp4" | null>(null);
 
+  const attention = useAttentionCheck(videoRef, lessonId);
+  const { askingRef } = attention;
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isPseudoFullscreen, setIsPseudoFullscreen] = useState(false);
@@ -546,10 +549,12 @@ export function VideoPlayer({
     const interval = setInterval(() => {
       const video = videoRef.current;
       if (!video || video.paused || !video.duration) return;
+      // While a "Still watching?" check is open, minutes aren't counted yet.
+      if (askingRef.current) return;
       pingProgress(lessonId, video.currentTime, video.duration);
     }, 10000);
     return () => clearInterval(interval);
-  }, [lessonId]);
+  }, [lessonId, askingRef]);
 
   // ---- Pause when the tab isn't visible ----
   useEffect(() => {
@@ -1047,6 +1052,8 @@ export function VideoPlayer({
         >
           <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
         </div>
+        {/* "Still watching?" — inside the fullscreen container, outside the watermark layer. */}
+        <AttentionCheckCard phase={attention.phase} secondsLeft={attention.secondsLeft} onYes={attention.answer} onResume={attention.resume} />
 
         {tampered && (
           <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
