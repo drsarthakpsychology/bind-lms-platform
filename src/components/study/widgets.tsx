@@ -18,6 +18,8 @@ import { useExplainView } from "@/components/learn/view-toggle";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import { BrainMap, Curve, Flow, Layers } from "./visuals";
+import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
 /**
  * Interactive pieces inside module text. Every one makes the student commit
@@ -529,6 +531,14 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Synapse d={data as SynapseData} />;
     case "reveal":
       return <Reveal d={data as RevealData} />;
+    case "flow":
+      return <Flow d={data as FlowData} />;
+    case "curve":
+      return <Curve d={data as CurveData} />;
+    case "layers":
+      return <Layers d={data as LayersData} />;
+    case "brainmap":
+      return <BrainMap d={data as BrainMapData} />;
   }
 }
 
