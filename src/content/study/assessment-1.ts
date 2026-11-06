@@ -14,6 +14,37 @@ A **psychological test** is a standard way of collecting a **sample of behaviour
 A thermometer tells you the temperature. It does not tell you whether the fever is malaria, dengue or a cold. A psychological test is a thermometer for one aspect of behaviour. The clinician is the doctor who puts the reading together with everything else.
 :::
 
+
+:::widget flow
+{
+ "title": "From a question to a decision",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "Referral question",
+   "detail": "What decision does someone need to make? Is there intellectual disability? Depression or dementia?"
+  },
+  {
+   "id": "t",
+   "label": "Tests",
+   "detail": "Standardised samples of behaviour, compared with norms. Each gives a piece of evidence."
+  },
+  {
+   "id": "a",
+   "label": "Assessment",
+   "detail": "Tests plus interview, history from family, observation and records, put together by a clinician."
+  },
+  {
+   "id": "d",
+   "label": "Diagnosis or opinion",
+   "detail": "A clinical judgement that answers the question, with its uncertainty stated."
+  }
+ ],
+ "caption": "No single test jumps straight to the last box."
+}
+:::
+
 ### Three things every good test has
 1. **Standard procedure**: the same instructions, materials, timing and scoring for everyone.
 2. **Norms**: scores from a large, representative group to compare against.
@@ -76,6 +107,29 @@ Q: The Vineland Social Maturity Scale mainly measures:
 
 :::analogy The bathroom scale
 If you step on a scale three times in a minute and it says 58, 64 and 51 kg, it is unreliable. You cannot trust any single reading. A reliable scale says 58, 58, 58.5.
+:::
+
+
+:::widget layers
+{
+ "title": "Observed score = true score + error",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Observed score",
+   "detail": "The number you actually get on the day."
+  },
+  {
+   "label": "True score",
+   "detail": "What the person would score with a perfect test: the stable part."
+  },
+  {
+   "label": "Error",
+   "detail": "Chance influences: tiredness, guessing, a noisy room, a harsh scorer. Reliability is the share of score differences that is true, not error."
+  }
+ ],
+ "caption": "Classical test theory in one picture. Every type of reliability is a way of estimating how big the error layer is."
+}
 :::
 
 ### Types of reliability
@@ -235,6 +289,15 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
   "answer": [66, 70],
   "reveal": "About 68 per cent. About 95 per cent fall within two standard deviations (IQ 70 to 130) and about 99.7 per cent within three (IQ 55 to 145). So an IQ below 70 is in roughly the bottom 2 per cent.",
   "clinician": "Strictly, 68.3, 95.4 and 99.7 per cent for one, two and three SDs. An IQ of 70 is at about the 2nd percentile and 130 at about the 98th. These proportions hold only if the distribution is normal; at the extremes, real IQ distributions have more cases than the curve predicts (for example a 'bump' at the low end from genetic and acquired causes of intellectual disability)."
+}
+:::
+
+
+:::widget curve
+{
+ "kind": "normal",
+ "title": "The normal curve: z, percentile and IQ",
+ "caption": "Drag the marker. Watch an IQ of 115 become z of plus 1 and about the 84th percentile, and an IQ of 70 become z of minus 2, about the 2nd percentile. Then find the IQ at the 50th percentile."
 }
 :::
 
@@ -462,6 +525,15 @@ The **PPV depends on how common the condition is** in the group you are testing.
 }
 :::
 
+
+:::widget curve
+{
+ "kind": "sdt",
+ "title": "Moving a cut-off: hits and false alarms",
+ "caption": "The two humps are people without and with the condition. Slide the cut-off left: you catch more true cases (sensitivity up) but raise more false alarms (specificity down). Pull the humps apart (better discrimination) and both improve together."
+}
+:::
+
 ### Choosing a cut-off is a trade-off
 Lowering a cut-off catches more true cases (higher sensitivity) but raises more false alarms (lower specificity). For a dangerous, treatable condition (suicide risk), we accept more false alarms. For a label with heavy consequences, we want high specificity and a confirmatory assessment.
 
@@ -500,6 +572,29 @@ Q: The same screening test is used in a memory clinic and in a general community
 - **Cattell-Horn-Carroll (CHC) theory**: a three-layer model with g at the top, broad abilities in the middle and narrow skills at the bottom. Most modern tests are built on it.
 - **Gardner**: multiple intelligences (linguistic, logical-mathematical, spatial, musical, bodily-kinaesthetic, interpersonal, intrapersonal, naturalistic). Popular in schools, weak research support.
 - **Sternberg**: triarchic theory: analytical, creative and practical intelligence.
+
+
+:::widget layers
+{
+ "title": "Intelligence as a hierarchy (CHC model)",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "g: general ability",
+   "detail": "The common factor behind performance on all mental tests."
+  },
+  {
+   "label": "Broad abilities",
+   "detail": "Fluid reasoning, crystallised knowledge, visual processing, working memory, processing speed, long-term retrieval and others."
+  },
+  {
+   "label": "Narrow abilities",
+   "detail": "Specific skills such as vocabulary, inductive reasoning, digit span, spatial scanning."
+  }
+ ],
+ "caption": "Modern IQ tests are built on this three-level model. The Wechsler index scores sit at the middle level and the full scale IQ estimates g."
+}
+:::
 
 ### The Wechsler scales
 David Wechsler built tests that give a **deviation IQ** (mean 100, SD 15) and a profile of strengths and weaknesses.
@@ -632,6 +727,42 @@ On the MMPI-2, a T-score of **65 or above** is usually treated as clinically sig
 **H**s, **D**, **H**y, **P**d, **M**f, **P**a, **P**t, **S**c, **M**a, **S**i.
 :::
 
+
+:::widget flow
+{
+ "title": "Reading an MMPI profile in order",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "v",
+   "label": "Validity first",
+   "detail": "Cannot Say, VRIN and TRIN (consistency), then F family (overreporting) and L and K (underreporting)."
+  },
+  {
+   "id": "d",
+   "label": "Decide if interpretable",
+   "detail": "If validity is poor, say so and stop; the clinical scales cannot be trusted."
+  },
+  {
+   "id": "c",
+   "label": "Clinical scales",
+   "detail": "Which are at T 65 or above? Look at the two highest together (code type)."
+  },
+  {
+   "id": "s",
+   "label": "Subscales and restructured scales",
+   "detail": "Clarify what is driving an elevation."
+  },
+  {
+   "id": "i",
+   "label": "Integrate",
+   "detail": "Compare with interview, history and other tests before writing anything."
+  }
+ ],
+ "caption": "Skipping the first box is the commonest serious error in personality test reports."
+}
+:::
+
 ### Other questionnaires
 | Test | Basis | What it gives |
 |---|---|---|
@@ -700,6 +831,29 @@ Projective tests give **unclear or open material** and ask people to make sense 
 - Murray interpreted stories in terms of the hero's **needs** and the environment's **press** (pressures).
 - **Indian adaptation**: Uma Chowdhury developed an Indian TAT (1960) with pictures showing Indian settings and people.
 - The **Children's Apperception Test (CAT)** (Bellak) uses animal pictures for young children.
+
+
+:::widget layers
+{
+ "title": "How strong is the evidence? Projective indices",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Better supported",
+   "detail": "Rorschach perceptual accuracy (form quality) and thought disorder indices; some TAT coding systems for object relations."
+  },
+  {
+   "label": "Mixed",
+   "detail": "Many other Rorschach variables; dependency indicators; general TAT impressions."
+  },
+  {
+   "label": "Poorly supported",
+   "detail": "Single drawing features as signs of abuse or personality; colour preferences; intuitive symbol reading."
+  }
+ ],
+ "caption": "Report only from the top layer with confidence; treat the rest as hypotheses to check."
+}
+:::
 
 ### Other projective methods
 - **Sentence completion** ("My mother...", "I am afraid of..."): quick and often clinically rich.
@@ -884,6 +1038,30 @@ Neuropsychological tests measure thinking skills that depend on particular brain
 | **HMSE** (Hindi Mental State Examination) | Adapted for Hindi speakers with low literacy | Developed in a rural Indian dementia study |
 | **ACE-III** (Addenbrooke's) | 100 points across five domains | Several Indian-language versions validated |
 | **Clock drawing** | Draw a clock showing ten past eleven | Quick test of planning and visuospatial skill |
+
+
+:::widget brainmap
+{
+ "title": "What neuropsychological tests probe",
+ "focus": [
+  "prefrontal",
+  "hippocampus",
+  "temporal",
+  "parietal",
+  "occipital",
+  "motor"
+ ],
+ "notes": {
+  "prefrontal": "Executive tests: Wisconsin Card Sorting, Stroop, Trail Making B or Colour Trails, verbal fluency, Tower of London.",
+  "hippocampus": "New learning and delayed recall: word list learning, logical memory, complex figure recall.",
+  "temporal": "Naming and semantic knowledge; verbal memory on the left.",
+  "parietal": "Visuospatial and constructional tasks: figure copy, block design, clock drawing.",
+  "occipital": "Visual perception and visual field screening.",
+  "motor": "Finger tapping and other motor speed tasks."
+ },
+ "caption": "Patterns across tests, not single scores, point to where a problem lies."
+}
+:::
 
 ### Fixed and flexible batteries
 - **Fixed batteries** give the same set of tests to everyone (the **Halstead-Reitan** and **Luria-Nebraska** batteries are classic Western examples).

@@ -17,6 +17,61 @@ Every test you use was once a draft written by someone. Knowing how tests are bu
 9. **Validity**: content, criterion and construct evidence.
 10. **Norms and manual**: standardise on a large representative sample; publish administration, scoring and interpretation rules.
 
+
+:::widget flow
+{
+ "title": "The ten steps of test construction",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Define the construct"
+  },
+  {
+   "id": "2",
+   "label": "Blueprint"
+  },
+  {
+   "id": "3",
+   "label": "Write item pool",
+   "detail": "Two or three times the final number of items."
+  },
+  {
+   "id": "4",
+   "label": "Expert review",
+   "detail": "Content validity and cultural fit."
+  },
+  {
+   "id": "5",
+   "label": "Pilot",
+   "detail": "Try-out on a small similar group."
+  },
+  {
+   "id": "6",
+   "label": "Item analysis",
+   "detail": "Difficulty, discrimination, item-total correlation, distractors."
+  },
+  {
+   "id": "7",
+   "label": "Factor structure"
+  },
+  {
+   "id": "8",
+   "label": "Reliability"
+  },
+  {
+   "id": "9",
+   "label": "Validity"
+  },
+  {
+   "id": "10",
+   "label": "Norms and manual"
+  }
+ ],
+ "caption": "Press Play and say what could go wrong at each step if it were skipped."
+}
+:::
+
 ### Item formats and their traps
 | Format | Good for | Watch out for |
 |---|---|---|
@@ -129,6 +184,55 @@ Classical statistics depend on the sample: an item looks "easy" in a bright grou
 | **One-parameter (Rasch)** | Difficulty only | Simple, strong measurement properties |
 | **Two-parameter** | Difficulty and discrimination | Most personality and symptom scales |
 | **Three-parameter** | Plus guessing | Multiple-choice ability tests |
+
+
+:::widget flow
+{
+ "title": "Classical test theory or item response theory?",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "Two ways to model a test"
+  },
+  {
+   "id": "c",
+   "label": "Classical test theory",
+   "parent": "r",
+   "detail": "Observed score = true score + error. Statistics such as p and D depend on the sample."
+  },
+  {
+   "id": "i",
+   "label": "Item response theory",
+   "parent": "r",
+   "detail": "Models the chance of each answer from the person's trait level (theta)."
+  },
+  {
+   "id": "c1",
+   "label": "One SEM for everyone",
+   "parent": "c"
+  },
+  {
+   "id": "c2",
+   "label": "Simple, small samples",
+   "parent": "c"
+  },
+  {
+   "id": "i1",
+   "label": "Precision varies by trait level",
+   "parent": "i",
+   "detail": "The information function shows where the test measures well."
+  },
+  {
+   "id": "i2",
+   "label": "Adaptive testing and DIF",
+   "parent": "i",
+   "detail": "Needs large samples and model fit."
+  }
+ ],
+ "caption": "Tap each branch; exam questions often ask for three differences."
+}
+:::
 
 ### What IRT makes possible
 - **Item and test information**: shows at which trait levels the test measures precisely. A depression scale may be precise for moderate depression but poor at the mild end.
@@ -273,6 +377,52 @@ Most tests in the world were built in North America or Europe, in English, for u
 | **Method bias** | The way of testing disadvantages a group | Timed paper-and-pencil tests for someone who has never held a pen; unfamiliarity with multiple choice |
 | **Item bias** | Specific items work differently | An item about "snow" or "baseball"; a vocabulary word common in one dialect only |
 
+
+:::widget flow
+{
+ "title": "Adapting a test for an Indian language",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "d",
+   "label": "Decide",
+   "detail": "Adapt an existing test or build a local one?"
+  },
+  {
+   "id": "t",
+   "label": "Translate",
+   "detail": "Bilingual experts write the new version."
+  },
+  {
+   "id": "b",
+   "label": "Back-translate",
+   "detail": "Different translators turn it back into the original; compare meanings."
+  },
+  {
+   "id": "c",
+   "label": "Cultural review",
+   "detail": "Replace unfamiliar pictures, names, money and food."
+  },
+  {
+   "id": "i",
+   "label": "Cognitive interviews",
+   "detail": "Ask people what they think each item means."
+  },
+  {
+   "id": "p",
+   "label": "Pilot and DIF",
+   "detail": "Check item statistics and differential item functioning across groups."
+  },
+  {
+   "id": "n",
+   "label": "Local norms",
+   "detail": "Reliability, validity and norms stratified by education and region."
+  }
+ ],
+ "caption": "A translation alone is not an adaptation."
+}
+:::
+
 ### Steps in adapting a test
 1. **Decide**: adapt an existing test, or build a new local one?
 2. **Translate** by bilingual experts, then **back-translate** into the original by different translators, and compare.
@@ -363,6 +513,37 @@ Q: Disability due to a mental illness for certification in India is commonly ass
 4. **Item or subtest level**, only as hypotheses.
 5. **Integrate** with history, observation, interview and collateral information.
 
+
+:::widget layers
+{
+ "title": "Interpret from the top down",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "1. Was testing valid?",
+   "detail": "Understanding, cooperation, effort, hearing, vision, language, fatigue, medicines."
+  },
+  {
+   "label": "2. Global scores",
+   "detail": "Full scale IQ or overall profile, with confidence intervals."
+  },
+  {
+   "label": "3. Indexes and scales",
+   "detail": "Strengths and weaknesses, checked against base rates of normal variation."
+  },
+  {
+   "label": "4. Subtests and items",
+   "detail": "Only as hypotheses."
+  },
+  {
+   "label": "5. Integration",
+   "detail": "History, observation, interview and informants decide what the numbers mean."
+  }
+ ],
+ "caption": "Most errors in reports come from starting at layer 4."
+}
+:::
+
 ### Effort and performance validity
 In compensation claims, criminal cases, disability certification and sometimes in school, people may underperform deliberately or present symptoms that are not genuine (**malingering**), or underperform without conscious intent (fatigue, depression, "why try?").
 - **Performance validity tests** (for example the Test of Memory Malingering) look very hard but are easy even for people with real brain injury. Very poor scores suggest poor effort.
@@ -430,6 +611,54 @@ Q: A report says "Mr X is a sensitive person who sometimes worries about what ot
 7. **Interpret and integrate** all the data.
 8. **Write** the report.
 9. **Feedback** to the person (and, with consent, family and referrer) in plain language.
+
+
+:::widget flow
+{
+ "title": "The assessment process",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Clarify the question"
+  },
+  {
+   "id": "2",
+   "label": "Plan tests"
+  },
+  {
+   "id": "3",
+   "label": "Consent"
+  },
+  {
+   "id": "4",
+   "label": "Interview and history"
+  },
+  {
+   "id": "5",
+   "label": "Administer"
+  },
+  {
+   "id": "6",
+   "label": "Score and check"
+  },
+  {
+   "id": "7",
+   "label": "Interpret and integrate"
+  },
+  {
+   "id": "8",
+   "label": "Write the report"
+  },
+  {
+   "id": "9",
+   "label": "Feedback",
+   "detail": "Plain language, strengths included, a clear plan."
+  }
+ ],
+ "caption": "Every heading of the report maps to one of these steps."
+}
+:::
 
 ### Report headings
 | Heading | What it contains |
