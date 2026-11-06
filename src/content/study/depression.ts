@@ -1907,7 +1907,6 @@ What is Beck's cognitive triad? :: Negative views of self, world and future.
 What is learned helplessness? :: Learning from uncontrollable events that action is pointless.
 Name the 5 Ps. :: Presenting, predisposing, precipitating, perpetuating, protective.
 Strongest single suicide risk factor? :: A previous attempt.
-National tele-mental health number in India? :: Tele-MANAS, 14416.
 How long to continue after a first episode remits? :: At least 6 months, often up to a year.
 Define treatment-resistant depression. :: Failure of at least two adequate antidepressant trials.
 Three augmentation options? :: Lithium, an atypical antipsychotic, thyroid hormone.
