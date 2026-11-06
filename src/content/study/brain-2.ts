@@ -102,6 +102,26 @@ Modern psychiatry increasingly thinks in **circuits**, groups of brain areas tha
 You can explain exposure therapy in brain terms to a patient: "Every time you stay with the fear and nothing bad happens, your front brain is learning a new message: this is safe. The old alarm memory stays, but the new safety memory learns to win." This is accurate, hopeful, and helps people stay in the room.
 :::
 
+
+:::widget brainmap
+{
+ "title": "The fear and safety circuit",
+ "focus": [
+  "amygdala",
+  "prefrontal",
+  "hippocampus",
+  "hypothalamus"
+ ],
+ "notes": {
+  "amygdala": "The alarm: detects threat and triggers fear responses.",
+  "prefrontal": "The ventromedial prefrontal cortex stores the new safety memory learned in exposure and damps the amygdala.",
+  "hippocampus": "Adds context: is this place safe or dangerous? Context explains why fear can return in a new setting.",
+  "hypothalamus": "Turns the alarm into a body response through the HPA axis and the sympathetic nerves."
+ },
+ "caption": "In anxiety and PTSD, the alarm is strong and the braking from the prefrontal cortex and hippocampus is weak. Exposure strengthens the brake."
+}
+:::
+
 ### Fear extinction: new learning, not erasing
 When a fear is "extinguished", the original fear memory is not deleted. A new safety memory is formed in the ventromedial prefrontal cortex and competes with it. This explains three common clinical events:
 - **Spontaneous recovery**: the fear returns after time passes.
@@ -126,6 +146,37 @@ Drugs raise dopamine in the nucleus accumbens far more, and more reliably, than 
 - Control shifts from goal-directed choice to **habit** (from ventral to dorsal striatum).
 - The prefrontal "brake" weakens, so stopping feels impossible even when the person sincerely wants to.
 - Baseline reward drops, so ordinary life feels flat without the drug.
+
+
+:::widget flow
+{
+ "title": "The addiction cycle",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "b",
+   "label": "Binge or intoxication",
+   "detail": "A big dopamine surge in the nucleus accumbens; strong reward learning."
+  },
+  {
+   "id": "w",
+   "label": "Withdrawal and negative mood",
+   "detail": "Baseline reward falls and stress systems rise, so ordinary life feels flat or painful."
+  },
+  {
+   "id": "p",
+   "label": "Preoccupation and craving",
+   "detail": "Cues trigger craving; prefrontal control weakens; habit takes over from choice."
+  }
+ ],
+ "edgeLabels": {
+  "b>w": "tolerance",
+  "w>p": "relief-seeking",
+  "p>b": "relapse"
+ },
+ "caption": "Each turn of the loop strengthens it. Treatments aim at different points: medicines for withdrawal and craving, cue exposure and coping skills for preoccupation, and building other rewards."
+}
+:::
 
 :::analogy The well-worn path
 A habit circuit is like a path through a field. Walk it every day for years and it becomes a road; it does not vanish when you stop walking it. Recovery is building another road and walking it until it is just as easy.

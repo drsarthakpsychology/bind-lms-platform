@@ -86,6 +86,50 @@ At rest, the inside of a neuron is slightly negative compared with the outside, 
 
 When enough excitatory signals arrive, the voltage rises to a **threshold** (about minus 55 millivolts). Then sodium channels snap open, sodium rushes in, and the inside briefly turns positive. This spike is the **action potential**. Potassium then flows out and the cell resets. For a brief moment afterwards (the **refractory period**) it cannot fire again.
 
+
+:::widget flow
+{
+ "title": "An action potential, step by step",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Resting",
+   "detail": "Inside about minus 70 mV. Pumps push sodium out and pull potassium in; the cell is ready."
+  },
+  {
+   "id": "b",
+   "label": "Inputs add up",
+   "detail": "Excitatory signals at the dendrites nudge the voltage up; inhibitory ones pull it down. The cell body sums them."
+  },
+  {
+   "id": "c",
+   "label": "Threshold",
+   "detail": "At about minus 55 mV, voltage-gated sodium channels at the start of the axon snap open."
+  },
+  {
+   "id": "d",
+   "label": "Sodium rushes in",
+   "detail": "The inside briefly turns positive (around plus 30 mV): the spike."
+  },
+  {
+   "id": "e",
+   "label": "Potassium flows out",
+   "detail": "Sodium channels close, potassium channels open, and the voltage falls back."
+  },
+  {
+   "id": "f",
+   "label": "Refractory period",
+   "detail": "For a moment the cell cannot fire again, so the signal travels one way only, down the axon."
+  }
+ ],
+ "edgeLabels": {
+  "c>d": "all or none"
+ },
+ "caption": "Press Play to step through one spike. Then ask: where would a local anaesthetic act? (Answer: it blocks the sodium channels at step 4.)"
+}
+:::
+
 :::define All-or-none
 An action potential either happens fully or not at all. A stronger stimulus does not make a bigger spike; it makes the neuron fire **more often**.
 :::
@@ -211,6 +255,34 @@ Think of the brain in layers, from the oldest at the bottom to the newest at the
 - **Limbic system**: a ring of structures for emotion and memory. The **amygdala** detects threat and emotional importance; the **hippocampus** stores new memories.
 - **Basal ganglia**: start and smooth movement, form habits, and help pick which action to do next.
 - **Cerebral cortex**: the wrinkled outer layer, divided into four lobes on each side.
+
+
+:::widget brainmap
+{
+ "title": "Where the big parts sit",
+ "focus": [
+  "frontal",
+  "parietal",
+  "temporal",
+  "occipital",
+  "cerebellum",
+  "brainstem",
+  "thalamus",
+  "hypothalamus"
+ ],
+ "notes": {
+  "frontal": "Planning, judgement, self-control, movement, speech production on the left.",
+  "parietal": "Touch, body sense, where things are in space.",
+  "temporal": "Hearing, understanding language (left), memory and emotion.",
+  "occipital": "Vision.",
+  "cerebellum": "Balance, smooth movement, timing; also some thinking.",
+  "brainstem": "Breathing, heart rate, wakefulness.",
+  "thalamus": "The relay station for the senses.",
+  "hypothalamus": "Hunger, thirst, temperature, sleep, hormones."
+ },
+ "caption": "Tap each region and say one symptom you would expect if it were damaged."
+}
+:::
 
 ### The four lobes
 | Lobe | Main jobs | If damaged |
@@ -624,6 +696,26 @@ When you meet a patient whose personality has changed, whose speech is odd or wh
 Frontal problems hide well in a short interview. The person may chat politely and pass a simple memory test, then go home and spend the family's savings. **Always ask someone who knows the person** what has changed.
 :::
 
+
+:::widget brainmap
+{
+ "title": "The language areas",
+ "focus": [
+  "broca",
+  "wernicke",
+  "temporal",
+  "frontal"
+ ],
+ "notes": {
+  "broca": "Left inferior frontal gyrus: producing speech. Damage gives slow, effortful, telegraphic speech.",
+  "wernicke": "Left posterior superior temporal gyrus: understanding speech. Damage gives fluent but empty speech with poor comprehension.",
+  "temporal": "The arcuate fasciculus runs under the cortex from Wernicke's back to Broca's area; damage there spares understanding but ruins repetition (conduction aphasia).",
+  "frontal": "Areas around Broca's area, if damaged while Broca's itself is spared, give transcortical motor aphasia with repetition preserved."
+ },
+ "caption": "Most people's language areas are on the left. Tap Broca's and Wernicke's areas and predict what each patient would sound like."
+}
+:::
+
 ### Language: the aphasias
 **Aphasia** is a problem with language itself, not with moving the mouth (that is **dysarthria**). Most aphasias come from left-hemisphere damage.
 
@@ -717,6 +809,63 @@ Q: Which test is most sensitive to dorsolateral frontal dysfunction?
 In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lobes removed to treat severe epilepsy. His seizures improved, but he could no longer form new long-term memories of events or facts. He could still learn new skills, such as tracing a star in a mirror, getting better each day while insisting he had never done it. His case proved that memory has separate systems and that the hippocampus is needed to form new explicit memories.
 :::
 
+
+:::widget flow
+{
+ "title": "The memory systems as a family tree",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "m",
+   "label": "Long-term memory"
+  },
+  {
+   "id": "e",
+   "label": "Explicit (declarative)",
+   "parent": "m",
+   "detail": "What you can consciously recall. Needs the hippocampus to form new memories."
+  },
+  {
+   "id": "i",
+   "label": "Implicit (non-declarative)",
+   "parent": "m",
+   "detail": "Shown by doing, not telling. Survives hippocampal damage."
+  },
+  {
+   "id": "ep",
+   "label": "Episodic",
+   "parent": "e",
+   "detail": "Events from your life, tied to a time and place."
+  },
+  {
+   "id": "se",
+   "label": "Semantic",
+   "parent": "e",
+   "detail": "Facts and meanings, stored widely in the temporal cortex."
+  },
+  {
+   "id": "pr",
+   "label": "Procedural",
+   "parent": "i",
+   "detail": "Skills and habits: basal ganglia and cerebellum."
+  },
+  {
+   "id": "pm",
+   "label": "Priming",
+   "parent": "i",
+   "detail": "Easier processing of something met before, without awareness."
+  },
+  {
+   "id": "cc",
+   "label": "Conditioning",
+   "parent": "i",
+   "detail": "Learned emotional and reflex responses; the amygdala for fear."
+  }
+ ],
+ "caption": "Henry Molaison lost the left branch for new learning but kept the right one. Tap each box for the brain system behind it."
+}
+:::
+
 ### Two kinds of amnesia
 - **Anterograde**: cannot form new memories after the injury.
 - **Retrograde**: loses memories from before. Usually the most recent memories go first and the oldest survive (**Ribot's law**).
@@ -781,6 +930,47 @@ Q: Korsakoff syndrome is caused mainly by deficiency of:
 When you face a threat, two systems switch on:
 1. **Fast**: the sympathetic nerves and the adrenal glands release adrenaline in seconds.
 2. **Slower**: the **HPA axis**. The **hypothalamus** releases CRH, which tells the **pituitary** to release ACTH, which tells the **adrenal** glands to release **cortisol**. Cortisol raises blood sugar, sharpens attention and damps inflammation. It then switches off its own production (negative feedback).
+
+
+:::widget flow
+{
+ "title": "The HPA axis and its brake",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "h",
+   "label": "Hypothalamus",
+   "detail": "Senses threat and releases CRH."
+  },
+  {
+   "id": "p",
+   "label": "Pituitary",
+   "detail": "CRH tells it to release ACTH into the blood."
+  },
+  {
+   "id": "a",
+   "label": "Adrenal cortex",
+   "detail": "ACTH makes it release cortisol."
+  },
+  {
+   "id": "c",
+   "label": "Cortisol acts",
+   "detail": "Raises blood sugar, sharpens attention, damps inflammation."
+  },
+  {
+   "id": "f",
+   "label": "Negative feedback",
+   "detail": "Cortisol acts on the hypothalamus, pituitary and hippocampus to switch the system off. In chronic stress and some depressions this brake works poorly."
+  }
+ ],
+ "edgeLabels": {
+  "h>p": "CRH",
+  "p>a": "ACTH",
+  "a>c": "cortisol"
+ },
+ "caption": "Press Play to go round the loop. Where does the dexamethasone suppression test check the brake? (At the feedback step: a synthetic steroid should switch cortisol off.)"
+}
+:::
 
 Short bursts of stress are healthy. Long, uncontrollable stress keeps cortisol high or makes the system misfire. Over time this can harm sleep, mood, memory (the hippocampus is rich in cortisol receptors), blood sugar and the heart.
 
@@ -872,6 +1062,15 @@ Two questions describe every medicine:
 {"drug": "ssri", "caption": "Press 'Add SSRI' to block the recycling pump, then 'Let time pass'. The chemistry changes in hours; the receptors adapt and the brain rewires over the following weeks. That gap is why antidepressants are judged only after an adequate trial."}
 :::
 
+
+:::widget curve
+{
+ "kind": "dose-response",
+ "title": "Full agonist, partial agonist, antagonist",
+ "caption": "Compare the curves. A full agonist reaches the top; a partial agonist like aripiprazole or buprenorphine levels off lower however high the dose (a ceiling), and in the presence of a full agonist it pulls the response down. Potency shifts a curve left or right; efficacy sets its height."
+}
+:::
+
 ### The body's handling of a medicine
 - **Absorption**: from the gut into blood. Some medicines are partly destroyed by the liver before they reach the body (**first-pass effect**).
 - **Distribution**: most psychiatric medicines are fat-soluble and cross into the brain; many bind to blood proteins.
@@ -890,6 +1089,15 @@ The **half-life** is the time for the blood level to fall by half. It decides ho
   "answer": [4, 5],
   "reveal": "About four to five half-lives. The same rule tells you how long a medicine takes to be almost gone after stopping. Fluoxetine and its active breakdown product last so long that it takes weeks to wash out, which matters before switching to a medicine that could interact with it.",
   "clinician": "After one half-life the level is at 50 per cent of steady state, after two 75 per cent, three 87.5 per cent, four about 94 per cent, five about 97 per cent. Norfluoxetine's half-life of one to two weeks is why a five-week washout is required before starting an MAOI after fluoxetine. Loading doses (for example valproate in mania in some protocols) reach target levels faster but do not change the time to true steady state."
+}
+:::
+
+
+:::widget curve
+{
+ "kind": "half-life",
+ "title": "Repeated doses build to a steady level",
+ "caption": "Move the sliders for half-life and dosing interval. Count how many half-lives it takes for the peaks and troughs to level off (about four to five), then see why a long half-life medicine takes so long to wash out."
 }
 :::
 
