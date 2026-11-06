@@ -162,7 +162,7 @@ Understanding grasps meaningful connections from the inside; explaining links ev
 First-rank symptoms are reliable to rate and characteristic of schizophrenia, but they miss many cases and occur in other psychoses, so they are signals for specialist assessment rather than a diagnostic test.
 
 **What they are**: thought echo, third-person discussing voices, running commentary, thought insertion, withdrawal and broadcasting, delusional perception, made feelings, impulses and actions, and somatic passivity.
-**Strengths**: clearly describable; reliable to rate; express a breakdown of the self–world boundary that is characteristic of schizophrenia.
+**Strengths**: clearly describable; reliable to rate; express a breakdown of the self-world boundary that is characteristic of schizophrenia.
 **Weaknesses**: in a large systematic review, sensitivity was only about 57 to 58% and specificity about 75 to 81%. They occur in mania, psychotic depression and some dissociative and organic states, and are absent in many with schizophrenia.
 **Current status**: DSM-5 removed their special weight; ICD-11 keeps passivity phenomena among core symptoms without privileging them.
 **Use**: as strong signals for specialist assessment, not as a diagnostic test.

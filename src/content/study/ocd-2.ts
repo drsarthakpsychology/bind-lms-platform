@@ -78,6 +78,10 @@ CBT for hoarding: motivational work, skills in sorting and decision-making, prac
 {"prompt": "Hoarding disorder, or something else?", "buckets": ["Hoarding disorder", "Not hoarding disorder"], "items": [{"text": "A retired teacher whose flat is full of newspapers; she cannot use her kitchen and panics if her son tries to clear it", "bucket": 0}, {"text": "A man with an organised coin collection in labelled albums", "bucket": 1}, {"text": "A woman with severe depression who has no energy to clear the clutter but feels nothing about the objects", "bucket": 1, "why": "Clutter from low energy, without a need to save, is explained by depression."}, {"text": "A man with dementia who stores rotting food because he forgets what it is", "bucket": 1, "why": "Cognitive deficits explain this; exclusion criterion F."}, {"text": "A woman who brings home every free pamphlet and plastic bag 'in case', with rooms piled to the ceiling", "bucket": 0, "why": "With excessive acquisition."}]}
 :::
 
+:::widget flow
+{"title": "Hoarding disorder or something else?", "layout": "tree", "nodes": [{"id": "root", "label": "Many possessions and clutter", "detail": "Start here."}, {"id": "discard", "label": "Difficulty discarding from a need to save?", "detail": "Distress at throwing things away.", "parent": "root"}, {"id": "hd", "label": "Hoarding disorder", "detail": "If living areas are congested and life is impaired.", "parent": "discard"}, {"id": "collect", "label": "Organised, themed, rooms usable?", "detail": "Pleasure and pride.", "parent": "root"}, {"id": "hobby", "label": "Collecting (a hobby)", "detail": "Not a disorder.", "parent": "collect"}, {"id": "other", "label": "Explained by something else?", "detail": "Obsessions, low energy in depression, dementia, psychosis, autism.", "parent": "root"}, {"id": "treat", "label": "Treat that condition", "detail": "Hoarding is then a feature, not the diagnosis.", "parent": "other"}]}
+:::
+
 :::recall
 1. What is the core of hoarding disorder? || Persistent difficulty discarding due to a perceived need to save, causing clutter that compromises living areas.
 2. Give two differences between hoarding and collecting. || Value and theme; organisation and usable rooms; distress versus pleasure.
@@ -127,6 +131,10 @@ E. Not better explained by another disorder (delusions or tactile hallucinations
 {"title": "Habit reversal for hair pulling", "steps": [{"q": "Awareness: when does Pooja, 19, pull?", "a": "While studying late at night, alone, with her left hand, mostly from the crown, often without noticing until she sees hair on the desk."}, {"q": "Warning signs?", "a": "Hand drifting to her head, touching and stroking hair first, feeling tense or bored."}, {"q": "Competing response?", "a": "When her hand rises: make a fist and press it into her lap for 60 seconds, or hold a stress ball."}, {"q": "Stimulus control?", "a": "Study at the dining table, not in bed; wear a cap; keep a fidget toy; finger tape on the left hand."}, {"q": "Support?", "a": "Her sister praises her when she uses the competing response and gently reminds her if she sees her hand drift."}]}
 :::
 
+:::widget flow
+{"title": "Habit reversal training", "layout": "chain", "nodes": [{"id": "aware", "label": "Awareness training", "detail": "When, where and how pulling happens; early warning signs."}, {"id": "compete", "label": "Competing response", "detail": "A response that makes pulling impossible, held for a minute."}, {"id": "stim", "label": "Stimulus control", "detail": "Change places, hands and objects that trigger pulling."}, {"id": "support", "label": "Social support", "detail": "Someone who praises progress and gently reminds."}, {"id": "relapse", "label": "Relapse plan", "detail": "What to do during stressful periods."}]}
+:::
+
 :::recall
 1. What are body-focused repetitive behaviours? || Repetitive self-grooming behaviours such as hair pulling and skin picking.
 2. Distinguish focused from automatic pulling. || Focused: deliberate, urge- or tension-driven. Automatic: outside awareness during other activities.
@@ -165,6 +173,10 @@ Q: The best-supported psychological treatment for trichotillomania is:
 
 :::note ICD-11 says
 ICD-11 groups **obsessive-compulsive or related disorders** as: OCD, body dysmorphic disorder, **olfactory reference disorder** (a persistent belief that one gives off a foul body odour, with checking and avoidance), **hypochondriasis** (health anxiety), hoarding disorder, and **body-focused repetitive behaviour disorders** (trichotillomania and excoriation). Tourette syndrome is cross-listed. Insight is specified as "fair to good" or "poor to absent".
+:::
+
+:::widget flow
+{"title": "What drives the repetitive behaviour?", "layout": "tree", "nodes": [{"id": "root", "label": "Repetitive behaviour", "detail": "Ask what triggers it and what it is for."}, {"id": "obs", "label": "Triggered by an obsession, to prevent harm", "detail": "OCD.", "parent": "root"}, {"id": "app", "label": "To fix or hide a perceived flaw", "detail": "Body dysmorphic disorder.", "parent": "root"}, {"id": "save", "label": "A need to keep things", "detail": "Hoarding disorder.", "parent": "root"}, {"id": "tension", "label": "Tension or urge relief, no obsession", "detail": "Trichotillomania or excoriation.", "parent": "root"}, {"id": "urge", "label": "A physical premonitory urge, sudden and brief", "detail": "Tic disorder.", "parent": "root"}, {"id": "bugs", "label": "To remove 'insects' felt under the skin", "detail": "Psychosis or substance-induced formication.", "parent": "root"}]}
 :::
 
 :::recall
@@ -316,6 +328,14 @@ The **error-related negativity**, an EEG wave over the ACC after a mistake, is e
 
 :::widget sort
 {"prompt": "Which mechanism does each finding support?", "buckets": ["CSTC hyperactivity", "Habit over goal-directed control", "Error monitoring", "Genetics"], "items": [{"text": "OFC and caudate metabolism fall after successful ERP", "bucket": 0}, {"text": "Patients keep pressing for a reward that has been devalued", "bucket": 1}, {"text": "Enlarged EEG wave after mistakes, also in unaffected siblings", "bucket": 2}, {"text": "30 risk loci, overlapping with Tourette syndrome and anorexia", "bucket": 3}]}
+:::
+
+:::widget brainmap
+{"title": "The OCD circuit", "focus": ["prefrontal", "basal-ganglia", "thalamus"], "notes": {"prefrontal": "Orbitofrontal and anterior cingulate cortex: valuing outcomes, detecting errors and threat; overactive in OCD.", "basal-ganglia": "Caudate and ventral striatum: selecting and stopping actions; direct and indirect pathways.", "thalamus": "Relays the loop back to cortex; if not damped, the 'something is wrong' signal keeps cycling."}, "caption": "Activity in this loop partly normalises after successful SSRI treatment or ERP."}
+:::
+
+:::widget flow
+{"title": "The cortico-striato-thalamo-cortical loop", "layout": "cycle", "nodes": [{"id": "ofc", "label": "Orbitofrontal and cingulate cortex", "detail": "Signal: 'something is wrong'."}, {"id": "str", "label": "Caudate and ventral striatum", "detail": "Direct pathway amplifies; indirect pathway brakes."}, {"id": "gp", "label": "Globus pallidus and substantia nigra", "detail": "Output gate of the basal ganglia."}, {"id": "thal", "label": "Thalamus", "detail": "Released from inhibition, it excites cortex again."}], "caption": "An imbalance favouring the direct pathway may keep the loop running, so the feeling of completion never arrives."}
 :::
 
 :::recall

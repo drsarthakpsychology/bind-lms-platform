@@ -29,6 +29,10 @@ An intrusive thought is like a spam email. Most people see it, recognise it as j
 {"prompt": "Is each reaction to an intrusive thought more likely to let it fade, or make it stick?", "buckets": ["Lets it fade", "Makes it stick"], "items": [{"text": "\"That's a weird thought. Anyway...\"", "bucket": 0}, {"text": "\"Only a terrible person would think that. I must be evil.\"", "bucket": 1}, {"text": "Praying ten times to cancel the thought", "bucket": 1, "why": "A ritual to 'undo' the thought teaches the brain the thought was dangerous."}, {"text": "Noticing the thought and carrying on with what you were doing", "bucket": 0}, {"text": "Asking your mother again and again, 'Am I a good person?'", "bucket": 1}, {"text": "Trying hard never to think it again", "bucket": 1, "why": "Suppressing a thought tends to bring it back more often."}]}
 :::
 
+:::widget flow
+{"title": "Two paths for the same thought", "layout": "tree", "nodes": [{"id": "thought", "label": "Intrusive thought", "detail": "\"What if I pushed someone off the platform?\""}, {"id": "ignore", "label": "\"That's a weird thought\"", "detail": "Noticed and let go.", "parent": "thought"}, {"id": "fade", "label": "Thought fades", "detail": "It has no special meaning, so it passes.", "parent": "ignore"}, {"id": "meaning", "label": "\"Having this thought means I'm dangerous\"", "detail": "The thought is given meaning and importance.", "parent": "thought"}, {"id": "fight", "label": "Fighting the thought", "detail": "Pushing it away, checking, praying to cancel it.", "parent": "meaning"}, {"id": "stick", "label": "Thought returns more often", "detail": "Suppression and rituals make it stick.", "parent": "fight"}]}
+:::
+
 :::recall
 1. What is an intrusive thought? || An unwanted thought, image or urge that arrives uninvited; not a wish or plan.
 2. Roughly how common are intrusive thoughts? || Almost universal: over 9 in 10 people report them.
@@ -68,6 +72,10 @@ People use "OCD" casually for liking order. Real OCD is distressing and disablin
 
 :::widget decide
 {"scene": "Your hostel roommate Shalini, 20, checks that the door is locked twenty times before sleeping and is late for every class because she goes back to check the gas. She asks you, 'Can you just tell me it's locked? Then I can sleep.'", "ask": "What is the most helpful way to respond over time?", "choices": [{"label": "Always reassure her: 'Yes, it's locked, I checked.'", "verdict": "ok", "outcome": "She sleeps that night. Within a month she asks you five times a night, and you both lose sleep.", "why": "Reassurance is kind but works like a compulsion. It brings brief relief and makes the need grow."}, {"label": "Mock her: 'Stop being so mental.'", "verdict": "harm", "outcome": "She feels ashamed and hides her checking. The problem gets worse in secret.", "why": "Shame makes people hide OCD and delays help."}, {"label": "Tell her you care, that the checking seems to be taking over, and encourage her to see the college counsellor; later, with her agreement, gently reduce how much reassurance you give", "verdict": "best", "outcome": "She sees a psychologist and starts treatment. Together you agree a plan to stop answering 'is it locked?' questions.", "why": "Caring support plus professional help, and slowly reducing reassurance, helps break the cycle."}]}
+:::
+
+:::widget flow
+{"title": "The OCD cycle", "layout": "cycle", "nodes": [{"id": "obs", "label": "Obsession", "detail": "\"My hands are contaminated; my family could get ill.\""}, {"id": "anx", "label": "Anxiety or disgust", "detail": "Distress rises sharply."}, {"id": "comp", "label": "Compulsion", "detail": "Washing in a fixed way for 20 minutes."}, {"id": "relief", "label": "Short relief", "detail": "Distress falls for a while."}, {"id": "learn", "label": "The brain learns", "detail": "\"Washing was needed.\" The next obsession comes back stronger."}], "caption": "Exposure and response prevention breaks the loop between anxiety and compulsion."}
 :::
 
 :::recall
@@ -111,6 +119,10 @@ Not all compulsions can be seen. Many people perform **mental rituals**: repeati
 Religious practice is not OCD. In scrupulosity, the person is tormented by fear of doing it wrong, repeats rituals far beyond what their faith asks, and gets no peace from them. Religious leaders often recognise this and can be helpful partners in treatment.
 :::
 
+:::widget layers
+{"title": "What you can see, and what you can't", "shape": "iceberg", "layers": [{"label": "Visible rituals", "detail": "Washing, checking, arranging, repeating actions."}, {"label": "Reassurance-seeking", "detail": "Asking others again and again; often noticed only by family."}, {"label": "Mental rituals", "detail": "Counting, praying, cancelling 'bad' thoughts, reviewing events."}, {"label": "Avoidance", "detail": "Quietly steering clear of people, places and objects."}, {"label": "The obsessions", "detail": "The unwanted thoughts and doubts that drive everything above."}], "caption": "Much of OCD sits below the surface, which is why direct, kind questions matter."}
+:::
+
 :::recall
 1. Name four common OCD themes. || Contamination, harm and checking, symmetry, forbidden thoughts (also doubt and responsibility).
 2. What is a mental ritual? || A compulsion done in the mind: counting, praying, cancelling thoughts, reviewing.
@@ -138,6 +150,10 @@ Accommodation reduces fights and distress in the short term. In the long run it 
 
 :::widget decide
 {"scene": "Rajeev, 16, from Lucknow, insists that his parents change clothes and wash for 15 minutes when they come home, or he screams and cries. His mother, Sunita, now does this every evening 'to keep the peace'. His father has started staying late at work.", "ask": "What advice is most helpful for the parents?", "choices": [{"label": "Keep doing whatever stops the screaming", "verdict": "harm", "outcome": "Within months Rajeev demands that relatives wash too, and stops visitors coming at all.", "why": "Accommodation brings short-term peace but feeds OCD, which keeps expanding."}, {"label": "Refuse all of his demands from tomorrow, without telling him", "verdict": "harm", "outcome": "Rajeev panics, breaks things and refuses to eat. The family is in crisis.", "why": "Abrupt withdrawal of accommodation without a plan or support is frightening and can backfire."}, {"label": "Get Rajeev assessed for OCD; with the therapist, plan gradual, agreed reductions in accommodation alongside his treatment, explained kindly to him", "verdict": "best", "outcome": "With ERP and a step-by-step family plan, the washing demands fade over weeks, and the father comes home on time.", "why": "Treatment plus planned, supportive reduction of accommodation is what works."}]}
+:::
+
+:::widget flow
+{"title": "How accommodation feeds OCD", "layout": "cycle", "nodes": [{"id": "demand", "label": "Request or distress", "detail": "\"Change your clothes before you come in!\""}, {"id": "accom", "label": "Family accommodates", "detail": "To keep the peace, the family complies."}, {"id": "calm", "label": "Short-term calm", "detail": "The person feels relief; the family avoids a scene."}, {"id": "grow", "label": "OCD grows", "detail": "The rule becomes fixed and new rules are added."}, {"id": "burden", "label": "Family burden", "detail": "Exhaustion, anger, guilt, and more distress at the next refusal."}]}
 :::
 
 :::recall
@@ -378,6 +394,10 @@ Even with absent insight the diagnosis remains OCD, not a psychotic disorder, if
 The Yale-Brown Obsessive Compulsive Scale has a symptom checklist followed by 10 severity items (five for obsessions, five for compulsions: time, interference, distress, resistance, control), each scored 0 to 4, for a total of 0 to 40. Rough bands: 0 to 7 subclinical, 8 to 15 mild, 16 to 23 moderate, 24 to 31 severe, 32 to 40 extreme. Response in trials is often defined as a 25 to 35% fall; the CY-BOCS is used in children. The DOCS measures four symptom dimensions (contamination, responsibility for harm, unacceptable thoughts, symmetry).
 :::
 
+:::widget layers
+{"title": "The insight specifier", "shape": "stack", "layers": [{"label": "Good or fair insight", "detail": "\"My fear is probably not true.\""}, {"label": "Poor insight", "detail": "\"My fear is probably true.\""}, {"label": "Absent insight or delusional beliefs", "detail": "\"I am completely sure my fear is true.\" Still OCD if the content is OCD content."}], "caption": "Insight can shift with stress and over time; rate it at each visit."}
+:::
+
 :::recall
 1. State criterion B for OCD. || Time-consuming (for example over an hour a day) or causing clinically significant distress or impairment.
 2. Name the three insight specifiers. || Good or fair; poor; absent or delusional beliefs.
@@ -428,6 +448,10 @@ They can co-occur.
 
 :::widget sort
 {"prompt": "OCD or OCPD?", "buckets": ["OCD", "OCPD"], "items": [{"text": "\"My way is the correct way. Others are sloppy.\"", "bucket": 1}, {"text": "\"I hate these thoughts. I know they make no sense.\"", "bucket": 0}, {"text": "Cannot delegate at work because nobody does it properly; has been like this all adult life", "bucket": 1}, {"text": "Checks the gas twenty times because of a terrifying doubt", "bucket": 0}, {"text": "Rigid about rules, money and lists, and proud of it", "bucket": 1}]}
+:::
+
+:::widget flow
+{"title": "The cognitive model of OCD", "layout": "chain", "nodes": [{"id": "intr", "label": "Normal intrusion", "detail": "An unwanted thought, image or urge."}, {"id": "appr", "label": "Appraisal", "detail": "Inflated responsibility, thought-action fusion, need for certainty."}, {"id": "dist", "label": "Distress", "detail": "Anxiety, guilt or disgust follow the appraisal."}, {"id": "neut", "label": "Neutralising", "detail": "Rituals, reassurance, avoidance, suppression."}, {"id": "maint", "label": "Maintenance", "detail": "No disconfirmation; the intrusion becomes more frequent and more important."}]}
 :::
 
 :::recall
@@ -487,6 +511,14 @@ These ranges are for learning. They are not advice for anyone to take or change 
 {"scene": "Imtiaz, 31, with contamination OCD (Y-BOCS 28), has taken sertraline 50 mg for three weeks with no change. His family asks to switch to 'a stronger medicine'.", "ask": "What is the best next step?", "choices": [{"label": "Switch to another SSRI now", "verdict": "harm", "outcome": "He goes through three medicines in three months without an adequate trial of any, and loses hope.", "why": "Three weeks at a low dose is not an adequate trial in OCD."}, {"label": "Explain that OCD needs higher doses and more time; increase sertraline step by step towards 150 to 200 mg, and start ERP", "verdict": "best", "outcome": "By three months his Y-BOCS falls to 15; ERP lets him touch door handles without washing.", "why": "Adequate dose and duration, combined with ERP, is the evidence-based approach."}, {"label": "Add alprazolam to calm him", "verdict": "harm", "outcome": "He feels calmer but washes just as much, and becomes reliant on the tablets.", "why": "Benzodiazepines do not treat OCD and can interfere with ERP."}]}
 :::
 
+:::widget curve
+{"kind": "dose-response", "title": "Dose and response in OCD", "caption": "OCD often needs the upper part of the SSRI dose range: response keeps rising with dose, unlike depression where it flattens earlier. Explore how efficacy and side effects change as you move along the curve."}
+:::
+
+:::widget curve
+{"kind": "half-life", "title": "Why fluoxetine forgives missed doses", "caption": "Fluoxetine and its active metabolite have very long half-lives, so levels stay near steady state if a dose is missed; short half-life drugs such as paroxetine fall quickly and can cause discontinuation symptoms."}
+:::
+
 :::recall
 1. What are the first-line treatments for OCD? || ERP (CBT) and SSRIs or clomipramine; often combined.
 2. How do SSRI doses and response times in OCD differ from depression? || Higher doses; slower response (often 10 to 12 weeks).
@@ -517,6 +549,10 @@ Q: Which antidepressant has the strongest evidence among tricyclics for OCD?
 - **"Normal" washing is agreed**: before eating, after the toilet, when visibly dirty. The goal is ordinary life, not filth.
 - **Expect discomfort.** ERP is challenging; the therapist explains the rationale, collaborates, and never surprises or forces.
 - **Imaginal exposure** for feared thoughts (writing and reading a script of the feared story) helps where real exposure is impossible (for example "What if I harm my baby?").
+
+:::widget flow
+{"title": "One ERP practice session", "layout": "chain", "nodes": [{"id": "plan", "label": "Choose the step", "detail": "From the agreed hierarchy, for example touching the main door handle (50)."}, {"id": "predict", "label": "Name the prediction", "detail": "\"My children will fall ill.\" Rate belief."}, {"id": "expose", "label": "Exposure", "detail": "Touch the handle, then carry on cooking."}, {"id": "prevent", "label": "Response prevention", "detail": "No washing, wiping or asking for reassurance."}, {"id": "ride", "label": "Stay with the feeling", "detail": "Notice anxiety rise and fall; no escape."}, {"id": "review", "label": "Review", "detail": "What happened versus what you predicted? What did you learn?"}]}
+:::
 
 :::recall
 1. What is the active ingredient of ERP? || Response prevention: not doing the ritual.
@@ -594,6 +630,10 @@ About 40 to 60% of people do not respond fully to a first SSRI. Before calling O
 - **Clomipramine plus an SSRI**: may help, but fluvoxamine, fluoxetine and paroxetine raise clomipramine levels; check ECG and levels.
 - **Memantine** (10 to 20 mg) and **N-acetylcysteine** (up to about 2400 to 3000 mg/day) have mixed trial evidence.
 - Benzodiazepines are not effective for core OCD symptoms.
+:::
+
+:::widget layers
+{"title": "The treatment ladder for OCD", "shape": "stack", "layers": [{"label": "Neurosurgery", "detail": "DBS or ablation for severe, refractory OCD, with consent and Board approval."}, {"label": "Neuromodulation", "detail": "Deep TMS."}, {"label": "Augmentation", "detail": "Low-dose risperidone or aripiprazole; weaker options such as memantine or NAC."}, {"label": "Switch or clomipramine", "detail": "Another SSRI or clomipramine."}, {"label": "Optimise", "detail": "Maximum tolerated SSRI dose for long enough; intensive ERP."}, {"label": "First line", "detail": "ERP and an SSRI, with family work."}], "caption": "Climb only after checking diagnosis, dose, duration, adherence and therapy quality at each rung."}
 :::
 
 :::recall

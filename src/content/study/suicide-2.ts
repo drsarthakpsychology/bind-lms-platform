@@ -28,6 +28,10 @@ To reduce missed information, cover four time frames in order: **presenting** su
 {"scene": "Mr Pillai, 58, a retired bank manager in Thiruvananthapuram, is seen for 'sleep problems' after his wife's death last year. He says he is 'just tired'. He has stopped meeting friends and has written letters to his children 'just in case'. A junior colleague asks, 'You're not suicidal, are you, sir?' He laughs: 'No, no.'", "ask": "What should happen next?", "choices": [{"label": "Accept his answer and treat his sleep", "verdict": "harm", "outcome": "The letters, withdrawal and recent bereavement are never explored.", "why": "A leading question invited a socially easy 'no'. Warning signs were present."}, {"label": "Ask again, gently and directly: 'Since your wife died, have you had thoughts of ending your life? You mentioned letters for your children. Can you tell me about them?'", "verdict": "best", "outcome": "He admits he has been thinking about suicide for months and has made preparations. A safety plan, treatment and family involvement follow.", "why": "Direct, specific, non-judgemental questions, linked to what he has already said, uncover hidden risk."}, {"label": "Ask his son whether he is suicidal, without telling him", "verdict": "ok", "outcome": "The son is unsure; the key information remains with Mr Pillai.", "why": "Collateral is valuable, ideally with consent, but the person himself must be asked first and directly."}]}
 :::
 
+:::widget flow
+{"title": "The asking sequence", "layout": "chain", "nodes": [{"id": "future", "label": "The future", "detail": "How do you see the future? (hopelessness)"}, {"id": "passive", "label": "Passive thoughts", "detail": "Have you felt life isn't worth living?"}, {"id": "active", "label": "Active thoughts", "detail": "Have you had thoughts of ending your life?"}, {"id": "detail", "label": "Frequency and control", "detail": "How often? How strong? Can you push them away?"}, {"id": "plan", "label": "Plan and preparation", "detail": "Is there a plan, and have any steps been taken?"}, {"id": "intent", "label": "Intent", "detail": "How likely are you to act?"}, {"id": "past", "label": "Past attempts", "detail": "Have you tried before?"}, {"id": "reasons", "label": "Reasons for living", "detail": "What keeps you going?"}]}
+:::
+
 :::recall
 1. Why avoid "You wouldn't do anything silly, would you?" || It is euphemistic and leading; it invites "no".
 2. Give the step-by-step sequence of questions. || Future and hopelessness; passive ideation; active ideation; frequency and control; plan and preparation; intent; past attempts; reasons for living.
@@ -76,6 +80,10 @@ Instead of labelling a person "low", "medium" or "high" risk, write a **risk for
 - Document what was asked, what was said (in the person's words), collateral, the formulation and the plan.
 :::
 
+:::widget layers
+{"title": "Building a risk formulation", "shape": "stack", "layers": [{"label": "Plan", "detail": "What we will do together, who does what, and when we review."}, {"label": "What would make it worse", "detail": "Intoxication, contact with creditors, being alone at night."}, {"label": "Protective factors", "detail": "Reasons for living, supports, engagement."}, {"label": "Perpetuating factors", "detail": "What keeps the crisis going."}, {"label": "Precipitating factors", "detail": "Why now?"}, {"label": "Predisposing factors", "detail": "History, temperament, family, past attempts."}], "caption": "Read from the bottom up: the formulation explains why this person is suicidal now and leads to a plan, instead of a risk label."}
+:::
+
 :::recall
 1. Name six areas to establish about suicidal thinking. || Ideation, plan, access to means, preparation, intent, past attempts (plus reasons for living).
 2. What is a risk formulation? || An account of why the person is suicidal now, what protects them, what would worsen things, and the plan, rather than a risk label.
@@ -107,6 +115,10 @@ Every person who presents after self-harm deserves **respectful, prompt care** a
 
 :::widget decide
 {"scene": "Priya, 19, an engineering student in Hyderabad, is medically stable after an episode of self-harm. A ward staff member says loudly, 'She just wanted attention; she'll do it again.' Priya asks to leave without seeing anyone else.", "ask": "What do you do?", "choices": [{"label": "Let her leave since she is medically fine", "verdict": "harm", "outcome": "She goes home without any assessment, plan or follow-up.", "why": "Medical stability is not the end of care. Every self-harm presentation needs psychosocial assessment."}, {"label": "Apologise for the comment, speak with her privately and respectfully, explain why a short conversation matters, check her capacity and current safety, and complete a psychosocial assessment and plan with her", "verdict": "best", "outcome": "She discloses months of ragging and exam failure. A plan with her parents, the college counsellor and follow-up is agreed.", "why": "Respect repairs the harm of judgemental care; assessment uncovers what needs to change."}, {"label": "Agree with the staff member and discharge her with advice to 'stop doing this'", "verdict": "harm", "outcome": "She feels humiliated and does not seek help when the next crisis comes.", "why": "Judgemental responses increase future risk."}]}
+:::
+
+:::widget flow
+{"title": "The self-harm care pathway", "layout": "chain", "nodes": [{"id": "medical", "label": "Medical care", "detail": "Treat injury or poisoning; check consciousness."}, {"id": "respect", "label": "Respect", "detail": "Calm, non-judgemental staff attitudes."}, {"id": "capacity", "label": "Capacity and sobriety", "detail": "Wait until the person can take part."}, {"id": "assess", "label": "Psychosocial assessment", "detail": "Episode, current state, context, supports, safety."}, {"id": "plan", "label": "Plan together", "detail": "Safety plan, treatment, practical help."}, {"id": "follow", "label": "Follow-up", "detail": "Early contact after discharge; inform other services."}]}
 :::
 
 :::recall
@@ -156,6 +168,14 @@ Reducing access to lethal means is one of the most effective suicide prevention 
 | Inpatient admission | High intent, recent serious attempt, cannot stay safe, psychosis or severe agitation, no safe environment |
 
 Under the Mental Healthcare Act 2017, admission may be **independent** (the person consents) or **supported** (when strict criteria are met, including recent threats or attempts of self-harm, with safeguards and review by the Mental Health Review Board). Admission does not remove risk; the weeks after discharge need especially close follow-up.
+
+:::widget flow
+{"title": "The six steps of a safety plan", "layout": "chain", "nodes": [{"id": "signs", "label": "1. Warning signs", "detail": "Thoughts, feelings and situations that come before a crisis."}, {"id": "cope", "label": "2. Coping on my own", "detail": "Walks, music, prayer, a shower."}, {"id": "distract", "label": "3. People and places for distraction", "detail": "A friend's shop, a temple, a park."}, {"id": "help", "label": "4. People I can ask for help", "detail": "Names and numbers."}, {"id": "prof", "label": "5. Professionals and services", "detail": "Clinic, emergency department."}, {"id": "safe", "label": "6. Making my surroundings safer", "detail": "Reducing access to means, agreed with family."}], "caption": "Written with the person, in their words, and kept where they can reach it."}
+:::
+
+:::widget flow
+{"title": "Choosing the level of care", "layout": "tree", "nodes": [{"id": "root", "label": "After assessment", "detail": "Match care to need, not to a score."}, {"id": "out", "label": "Outpatient with close follow-up", "detail": "Ideation without intent or plan; good supports; can use a safety plan.", "parent": "root"}, {"id": "crisis", "label": "Crisis or home treatment", "detail": "More severe distress, willing to engage, supports present; daily contact.", "parent": "root"}, {"id": "admit", "label": "Inpatient admission", "detail": "High intent, recent serious attempt, psychosis or agitation, no safe place.", "parent": "root"}, {"id": "indep", "label": "Independent admission", "detail": "The person consents.", "parent": "admit"}, {"id": "supp", "label": "Supported admission", "detail": "Strict MHCA criteria with safeguards and Board review.", "parent": "admit"}]}
+:::
 
 :::recall
 1. List the six steps of a safety plan. || Warning signs; internal coping; people and places for distraction; people to ask for help; professionals and services; making the environment safer.
@@ -259,6 +279,10 @@ Q: Which factor most increases violence risk in a person with psychosis?
 {"scene": "Ms Thomas, 42, from Kochi, has bipolar disorder with two past suicide attempts during depressive episodes. She stopped lithium a year ago because of weight gain and is now depressed again. She asks for 'just an antidepressant'.", "ask": "What is the best plan?", "choices": [{"label": "Start an antidepressant alone", "verdict": "harm", "outcome": "She becomes agitated and has a mixed episode within weeks, with more suicidal thoughts.", "why": "Antidepressant monotherapy in bipolar disorder risks switching and mixed states; lithium's antisuicidal benefit is lost."}, {"label": "Discuss restarting lithium (addressing the weight concerns), with close monitoring, a safety plan, means safety, and psychological support", "verdict": "best", "outcome": "She agrees to restart lithium with dietary support. Her mood lifts over weeks and she has no further attempts.", "why": "Lithium has the best evidence for lowering suicide in mood disorders; collaborative attention to side effects improves adherence."}, {"label": "Admit her immediately without discussion", "verdict": "ok", "outcome": "She feels unheard; the core treatment question is unaddressed.", "why": "Admission may be needed if she cannot stay safe, but it is not a substitute for effective treatment and collaboration."}]}
 :::
 
+:::widget layers
+{"title": "Levels of prevention", "shape": "stack", "layers": [{"label": "Indicated", "detail": "People who have attempted or are suicidal now: assessment, safety planning, CT-SP, DBT, follow-up, lithium or clozapine where indicated."}, {"label": "Selective", "detail": "Groups at higher risk: gatekeeper training in colleges, support after bereavement, screening in primary care."}, {"label": "Universal", "detail": "Everyone: means restriction, alcohol policy, safe media reporting, school well-being programmes, reducing stigma."}], "caption": "Population measures at the base often prevent the most deaths."}
+:::
+
 :::recall
 1. Which two medicines have the strongest evidence for reducing suicide in specific disorders? || Lithium (mood disorders) and clozapine (schizophrenia).
 2. Name three psychological interventions that reduce suicidal behaviour. || DBT, CT-SP, CAMS (also ASSIP, safety planning with follow-up).
@@ -292,6 +316,10 @@ Losing a patient to suicide is common in a mental health career and deeply affec
 
 :::widget decide
 {"scene": "A Class 11 student in Kota has died by suicide. The coaching centre wants to hold a large assembly with her photo, and some students are sharing details of how she died on WhatsApp.", "ask": "What would you advise the centre?", "choices": [{"label": "Hold the assembly with her photo and a detailed account so students understand", "verdict": "harm", "outcome": "Several vulnerable students become more distressed; one discloses new suicidal thoughts.", "why": "Glorifying memorials and detailed accounts increase the risk of contagion."}, {"label": "Inform students simply and sensitively; offer small-group and individual support, especially to close friends and vulnerable students; ask students not to share details or images; give clear information about where to get help; contact the family respectfully", "verdict": "best", "outcome": "Students feel supported; those at risk are identified and linked to counselling.", "why": "Planned postvention follows safe messaging, supports the bereaved and reduces contagion."}, {"label": "Say nothing and carry on with classes", "verdict": "harm", "outcome": "Rumours spread; distressed students receive no support.", "why": "Silence leaves the bereaved unsupported and lets unsafe messaging spread."}]}
+:::
+
+:::widget flow
+{"title": "Postvention in a college", "layout": "chain", "nodes": [{"id": "inform", "label": "Inform sensitively", "detail": "Simple facts, no method details, no glorifying."}, {"id": "support", "label": "Support those closest", "detail": "Friends, roommates, classmates, staff."}, {"id": "identify", "label": "Identify those at risk", "detail": "Watch for clusters and vulnerable students."}, {"id": "message", "label": "Safe messaging", "detail": "Ask students not to share images or details online."}, {"id": "family", "label": "Contact the family", "detail": "Respectfully, offering support."}, {"id": "review", "label": "Review and learn", "detail": "Non-blaming review of what can improve."}]}
 :::
 
 :::recall

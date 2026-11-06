@@ -92,6 +92,10 @@ Picture a bridge. Pain, losses and illness are loads piling onto it. Support, ho
 {"prompt": "Risk factor or protective factor?", "buckets": ["Raises risk", "Protects"], "items": [{"text": "A previous suicide attempt", "bucket": 0}, {"text": "A close bond with her younger sister", "bucket": 1}, {"text": "Heavy drinking during a crisis", "bucket": 0}, {"text": "Feeling he is a burden on his family", "bucket": 0}, {"text": "Regular contact with a trusted counsellor", "bucket": 1}, {"text": "Religious beliefs that give life meaning", "bucket": 1}, {"text": "Being rejected by family for being gay", "bucket": 0}]}
 :::
 
+:::widget flow
+{"title": "How a suicidal crisis builds", "layout": "chain", "nodes": [{"id": "pain", "label": "Unbearable pain", "detail": "Emotional pain from illness, loss, shame, violence or humiliation."}, {"id": "hope", "label": "Hopelessness", "detail": "The belief that the pain will never change."}, {"id": "trap", "label": "Feeling trapped or a burden", "detail": "No way out; others would be better off without me."}, {"id": "means", "label": "Means and opportunity", "detail": "Access to a lethal method, alcohol, being alone."}, {"id": "act", "label": "Crisis point", "detail": "The moment where help, safety and connection can change the outcome."}], "caption": "Help can break the chain at any link: easing pain, restoring hope, reconnecting the person, and putting distance between them and the means."}
+:::
+
 :::recall
 1. Name four common contributors to suicide. || Mental illness, losses and crises, violence and abuse, isolation, chronic illness, alcohol, access to means, previous attempt.
 2. What is the single strongest predictor of future suicide? || A previous suicide attempt.
@@ -128,6 +132,10 @@ Then **listen**. Do not panic, lecture, judge or promise secrecy. Thank them for
 {"scene": "Your college friend Karan, 20, failed his exams, broke up with his girlfriend last week and has been giving away his books and his cricket bat. Tonight he messages: 'Thanks for everything, bro. You've been a good friend.'", "ask": "What do you do?", "choices": [{"label": "Reply 'Anytime!' and go to sleep", "verdict": "harm", "outcome": "You learn in the morning that Karan was found in crisis and taken to hospital.", "why": "Giving away possessions plus a goodbye-style message are warning signs that need immediate action."}, {"label": "Call him now, ask directly whether he is thinking of ending his life, stay on the phone or go to him, and get help (his family, the hostel warden, emergency services) while not leaving him alone if he is at risk", "verdict": "best", "outcome": "He says he had planned to end his life tonight. You stay with him and the warden calls his parents and takes him to the emergency department. He gets treatment and is alive.", "why": "Recognising warning signs, asking directly and getting help immediately save lives."}, {"label": "Message his ex-girlfriend to ask what happened", "verdict": "ok", "outcome": "Precious time passes before anyone checks on Karan.", "why": "Gathering information can wait. Direct contact and help come first."}]}
 :::
 
+:::widget flow
+{"title": "If you notice warning signs", "layout": "chain", "nodes": [{"id": "notice", "label": "Notice", "detail": "Talk of death or being a burden, giving things away, goodbyes, sudden calm."}, {"id": "ask", "label": "Ask directly", "detail": "\"Are you thinking of ending your life?\""}, {"id": "listen", "label": "Listen", "detail": "Without shock, lecturing or promises of secrecy."}, {"id": "stay", "label": "Stay and make safer", "detail": "Don't leave them alone if risk seems high; reduce access to means together."}, {"id": "link", "label": "Link to help", "detail": "Family, a doctor, emergency services, the college counsellor."}]}
+:::
+
 :::recall
 1. Name five warning signs of suicide. || Talking of death or being a burden; searching for ways; withdrawing and saying goodbye; giving things away; sudden calm; more alcohol; reckless behaviour.
 2. How should you ask about suicide? || Directly, calmly, privately, in clear words, then listen without judging.
@@ -160,6 +168,10 @@ Some people hurt themselves to cope with overwhelming feelings, not to die. This
 
 :::widget sort
 {"prompt": "Helpful or unhelpful after someone tells you about suicidal thoughts?", "buckets": ["Helpful", "Unhelpful"], "items": [{"text": "\"Thank you for telling me. I'm here.\"", "bucket": 0}, {"text": "\"Think of how your parents would feel!\"", "bucket": 1, "why": "Guilt-tripping adds shame and burden."}, {"text": "Helping them make a plan of who to call and what to do when the thoughts get strong", "bucket": 0}, {"text": "Promising never to tell anyone", "bucket": 1}, {"text": "Staying with them and contacting a professional together", "bucket": 0}, {"text": "\"Everyone feels like that; you'll get over it.\"", "bucket": 1}]}
+:::
+
+:::widget flow
+{"title": "Why self-harm can become a habit", "layout": "cycle", "nodes": [{"id": "feel", "label": "Overwhelming feeling", "detail": "Tension, emptiness, anger or shame builds."}, {"id": "harm", "label": "Self-injury", "detail": "Used to make the feeling stop."}, {"id": "relief", "label": "Brief relief", "detail": "The feeling drops for a while."}, {"id": "learn", "label": "The brain learns", "detail": "Relief rewards the behaviour, so it becomes the go-to way of coping."}, {"id": "shame", "label": "Shame and hiding", "detail": "Afterwards guilt and secrecy add to the next build-up of feeling."}], "caption": "Treatment builds other ways to get through intense feelings, so the cycle loses its pull."}
 :::
 
 :::recall
@@ -310,6 +322,14 @@ Q: Which is the most helpful response?
 {"prompt": "After a hospital-treated episode of self-harm, roughly how many people out of 100 die by suicide within the next five years?", "min": 0, "max": 30, "unit": "in 100", "answer": [3, 5], "reveal": "About 4 in 100, many times higher than in the general population. Risk is highest in the first year, especially the first weeks. So every episode of self-harm needs a careful psychosocial assessment and follow-up.", "clinician": "A large systematic review estimated suicide after hospital-presenting self-harm at about 1.6% within 1 year and about 3.9% within 5 years; non-fatal repetition within a year is around 15 to 20%."}
 :::
 
+:::widget layers
+{"title": "The iceberg of suicidal behaviour", "shape": "iceberg", "layers": [{"label": "Deaths by suicide", "detail": "The visible tip: about 727,000 deaths a year worldwide."}, {"label": "Hospital-treated self-harm and attempts", "detail": "Many times more common than deaths."}, {"label": "Attempts never seen by services", "detail": "Many attempts never reach a hospital."}, {"label": "Suicidal thoughts", "detail": "Far more people think about suicide than ever act on it."}], "caption": "Prevention must reach the large hidden base, not only the visible tip."}
+:::
+
+:::widget flow
+{"title": "Naming self-harm accurately", "layout": "tree", "nodes": [{"id": "root", "label": "Self-directed harm", "detail": "Any intentional self-injury or self-poisoning."}, {"id": "intent", "label": "Some intent to die", "detail": "Suicidal behaviour.", "parent": "root"}, {"id": "nointent", "label": "No intent to die", "detail": "Non-suicidal self-injury, often to manage emotion.", "parent": "root"}, {"id": "attempt", "label": "Suicide attempt", "detail": "Potentially injurious act with some intent to die.", "parent": "intent"}, {"id": "interrupted", "label": "Interrupted or aborted attempt", "detail": "Stopped by others or by the person before injury.", "parent": "intent"}, {"id": "death", "label": "Suicide", "detail": "Death from self-directed injury with intent to die.", "parent": "intent"}], "caption": "Intent decides the label, but intent can change between episodes, so every episode deserves assessment."}
+:::
+
 :::recall
 1. Distinguish suicidal ideation, attempt and NSSI. || Ideation: thoughts. Attempt: self-injurious behaviour with some intent to die. NSSI: self-injury without intent to die.
 2. What is the "gender paradox" in suicide? || Women report more ideation and attempts; men die by suicide more often.
@@ -378,6 +398,14 @@ Most people who think about suicide never act. Modern models separate the **deve
 
 :::widget sort
 {"prompt": "Which model's idea is each statement closest to?", "buckets": ["Durkheim", "Interpersonal theory", "IMV model", "Shneidman"], "items": [{"text": "\"After losing my job and being shamed in the village, I feel trapped with no way out.\"", "bucket": 2, "why": "Defeat, humiliation and entrapment."}, {"text": "\"Nobody needs me, and my family would be better off without me.\"", "bucket": 1, "why": "Thwarted belongingness and perceived burdensomeness."}, {"text": "Suicide rates rose after a sudden economic crash", "bucket": 0, "why": "Anomic suicide."}, {"text": "\"The pain inside is unbearable; I just want it to stop.\"", "bucket": 3, "why": "Psychache."}]}
+:::
+
+:::widget flow
+{"title": "The integrated motivational-volitional model", "layout": "chain", "nodes": [{"id": "pre", "label": "Background", "detail": "Vulnerabilities, environment and life events."}, {"id": "defeat", "label": "Defeat and humiliation", "detail": "Feeling beaten, rejected, shamed."}, {"id": "entrap", "label": "Entrapment", "detail": "No escape from the situation or from one's own thoughts."}, {"id": "ideation", "label": "Suicidal ideation", "detail": "Thoughts of ending life as the way out."}, {"id": "action", "label": "Suicidal behaviour", "detail": "Only if volitional factors are present: means, impulsivity, exposure to suicide, planning, capability."}], "caption": "Motivational moderators (thwarted belongingness, burdensomeness, lack of future thinking) speed the move from entrapment to ideation."}
+:::
+
+:::widget flow
+{"title": "The three-step theory", "layout": "chain", "nodes": [{"id": "s1", "label": "Step 1: pain plus hopelessness", "detail": "Together they produce suicidal ideation."}, {"id": "s2", "label": "Step 2: pain exceeds connectedness", "detail": "Ideation becomes strong when pain outweighs the bonds and purposes that hold the person to life."}, {"id": "s3", "label": "Step 3: capability", "detail": "Dispositional (low fear of pain), acquired (habituation) and practical (access, knowledge) capability allow action."}]}
 :::
 
 :::recall

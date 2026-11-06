@@ -34,6 +34,10 @@ Schizophrenia arises from **many small influences** adding up over development: 
 {"prompt": "Gene, development or environment?", "buckets": ["Genetic", "Neurodevelopmental", "Environmental"], "items": [{"text": "22q11.2 deletion", "bucket": 0}, {"text": "Low birth weight after maternal malnutrition", "bucket": 1}, {"text": "Daily high-potency cannabis from age 15", "bucket": 2}, {"text": "Growing up in a large city", "bucket": 2}, {"text": "Delayed motor milestones and social awkwardness in childhood", "bucket": 1}, {"text": "A parent with schizophrenia", "bucket": 0, "why": "Shared genes, though family environment also contributes."}]}
 :::
 
+:::widget layers
+{"title": "The stress-vulnerability model", "shape": "stack", "layers": [{"label": "Illness threshold", "detail": "When vulnerability plus stress cross this line, psychosis appears."}, {"label": "Stress", "detail": "Cannabis, migration, discrimination, trauma, sleep loss, conflict."}, {"label": "Vulnerability", "detail": "Genes, obstetric complications, neurodevelopment."}], "caption": "A highly vulnerable person may become ill with little stress; a less vulnerable person only with a lot."}
+:::
+
 :::recall
 1. What is the twin heritability of schizophrenia? || About 80%.
 2. Give the approximate risk for a child of one affected parent and for an identical co-twin. || About 10%; about 40 to 50%.
@@ -84,6 +88,14 @@ Q: The stress-vulnerability model proposes that schizophrenia appears when:
 
 :::widget decide
 {"scene": "Ramesh, 28, is recovering from his second episode. His mother, devoted and anxious, does everything for him, checks on him constantly and cries when he goes out alone. His father often says, 'He is just lazy, he could work if he tried.'", "ask": "What would most reduce his risk of relapse?", "choices": [{"label": "Increase his antipsychotic dose", "verdict": "ok", "outcome": "He becomes drowsy; the family tension continues and he relapses within a year.", "why": "Medicine matters, but high expressed emotion is a separate, treatable relapse risk."}, {"label": "Offer family intervention: education about the illness, reducing criticism and over-involvement, and teaching communication and problem-solving, alongside continued medicine", "verdict": "best", "outcome": "The father stops calling him lazy; the mother lets him take the bus alone. He stays well and starts part-time work.", "why": "Family interventions targeting expressed emotion reduce relapse."}, {"label": "Advise him to cut contact with his parents", "verdict": "harm", "outcome": "He moves out, stops medicine and relapses.", "why": "The family is a resource; the aim is to change patterns, not to remove support."}]}
+:::
+
+:::widget flow
+{"title": "Phases of schizophrenia", "layout": "chain", "nodes": [{"id": "pre", "label": "Premorbid", "detail": "Subtle childhood differences in motor, cognitive or social development."}, {"id": "pro", "label": "Prodrome", "detail": "Withdrawal, falling functioning, odd ideas, sleep change."}, {"id": "acute", "label": "Acute phase", "detail": "Positive symptoms dominate."}, {"id": "stable", "label": "Residual or stable phase", "detail": "Negative and cognitive symptoms may persist; relapses possible."}]}
+:::
+
+:::widget flow
+{"title": "The relapse cycle", "layout": "cycle", "nodes": [{"id": "stop", "label": "Medicine stopped or cannabis resumed", "detail": "Often because of side effects or feeling well."}, {"id": "stress", "label": "Stress and conflict", "detail": "High criticism or over-involvement at home."}, {"id": "warn", "label": "Early warning signs", "detail": "Poor sleep, suspiciousness, withdrawal."}, {"id": "relapse", "label": "Relapse", "detail": "Admission, lost work, more family strain."}, {"id": "burden", "label": "More family stress", "detail": "Which raises the risk of the next relapse."}], "caption": "Family intervention, adherence support and an early-warning plan break the cycle."}
 :::
 
 :::recall
@@ -158,6 +170,10 @@ History (including collateral), MSE, risk (to self, from others, to others, of n
 
 ### How long to continue
 After a first episode, continuing medicine for at least **1 to 2 years** after remission is usually advised. In trials, about **27%** relapsed within a year on maintenance antipsychotics versus about **64%** on placebo.
+
+:::widget curve
+{"kind": "half-life", "title": "Why long-acting injections steady the level", "caption": "A long-acting injection releases drug slowly, so levels rise to a steady state over several doses and fall slowly if a dose is late. Daily tablets missed for several days drop quickly, which is one reason injections reduce relapse."}
+:::
 
 :::recall
 1. Name the six principles of treatment. || Engage; antipsychotic; psychological and family work; rehabilitation; physical health; relapse prevention.
@@ -286,6 +302,10 @@ Persistent significant symptoms despite **at least two** antipsychotics, each gi
 {"scene": "Deepa, 32, from Nagpur, has had schizophrenia for nine years. She has taken risperidone 6 mg, olanzapine 20 mg and haloperidol, each for months, with confirmed adherence (including an injection). She still hears constant voices and has tried to harm herself twice.", "ask": "What is the best next step?", "choices": [{"label": "Combine two other antipsychotics at high doses", "verdict": "harm", "outcome": "She becomes stiff and sedated; the voices continue.", "why": "High-dose combinations have weak evidence and more side effects. Clozapine is indicated."}, {"label": "Offer clozapine with careful titration and blood monitoring, explain benefits and risks, and continue psychological and family support", "verdict": "best", "outcome": "After three months on clozapine her voices are much quieter, and she has no further suicidal behaviour.", "why": "She meets criteria for treatment-resistant schizophrenia; clozapine is the evidence-based choice and reduces suicidal behaviour."}, {"label": "Accept that nothing more can help", "verdict": "harm", "outcome": "She continues to suffer and remains at risk.", "why": "Clozapine has not been tried."}]}
 :::
 
+:::widget flow
+{"title": "Starting clozapine safely", "layout": "chain", "nodes": [{"id": "confirm", "label": "Confirm resistance", "detail": "Two adequate antipsychotic trials, adherence confirmed."}, {"id": "base", "label": "Baseline", "detail": "Blood count, ECG, weight, glucose, lipids, smoking status."}, {"id": "titrate", "label": "Slow titration", "detail": "12.5 mg, rising gradually towards about 300 mg."}, {"id": "monitor", "label": "Monitor", "detail": "Blood counts; myocarditis signs in the first two months; constipation; seizures."}, {"id": "levels", "label": "Check levels", "detail": "Aim around 350 ng/mL or more; adjust for smoking changes."}, {"id": "review", "label": "Review response", "detail": "Give an adequate trial before judging."}]}
+:::
+
 :::recall
 1. Define treatment-resistant schizophrenia. || Persistent symptoms despite two adequate antipsychotic trials with confirmed adherence.
 2. Name four serious clozapine side effects. || Agranulocytosis, myocarditis, severe constipation or ileus, seizures (also NMS).
@@ -330,6 +350,10 @@ DSM-5-TR uses it as a specifier ("with catatonia") for other mental disorders, a
 
 :::widget decide
 {"scene": "Mr Kumar, 45, with a history of depression, is brought to emergency in Patna: mute and motionless for four days, not eating or drinking, staring, with an arm held in an odd position. His temperature is normal; CK is mildly raised. A colleague suggests haloperidol 'to calm him'.", "ask": "What is the best plan?", "choices": [{"label": "Give haloperidol", "verdict": "harm", "outcome": "He becomes rigid and febrile with rising CK: neuroleptic malignant syndrome.", "why": "Antipsychotics can worsen catatonia and precipitate NMS."}, {"label": "Give a lorazepam test dose, start regular lorazepam, rehydrate, start clot prevention, investigate medical causes, and plan ECT if he does not respond quickly", "verdict": "best", "outcome": "Within hours of lorazepam he begins to speak and drink. His underlying depression is then treated.", "why": "Benzodiazepines first, ECT if needed, with medical support and a search for causes."}, {"label": "Wait for him to start talking", "verdict": "harm", "outcome": "He becomes dehydrated with acute kidney injury.", "why": "Catatonic stupor is a medical emergency."}]}
+:::
+
+:::widget flow
+{"title": "Managing catatonia", "layout": "chain", "nodes": [{"id": "rec", "label": "Recognise", "detail": "3 of 12 signs; examine actively; Bush-Francis scale."}, {"id": "med", "label": "Medical safety", "detail": "Fluids, nutrition, clot prevention, CK, renal function, temperature."}, {"id": "cause", "label": "Search for causes", "detail": "Mood disorder, encephalitis, seizures, withdrawal, NMS."}, {"id": "loraz", "label": "Lorazepam", "detail": "Test dose, then regular doses."}, {"id": "ect", "label": "ECT", "detail": "If no response, malignant catatonia or life at risk."}, {"id": "avoid", "label": "Avoid antipsychotics early", "detail": "Until NMS is excluded and catatonia improves."}]}
 :::
 
 :::recall

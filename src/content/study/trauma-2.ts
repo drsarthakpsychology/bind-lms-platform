@@ -32,6 +32,10 @@ export const part2 = String.raw`
 {"prompt": "Which diagnosis fits, judged mainly by timing and stressor?", "buckets": ["Acute stress disorder", "PTSD", "Adjustment disorder", "Prolonged grief disorder"], "items": [{"text": "Two weeks after an assault: flashbacks, numbness, feeling unreal, avoiding, poor sleep", "bucket": 0}, {"text": "Four months after a car crash: nightmares, avoidance, guilt and jumpiness, unable to work", "bucket": 1}, {"text": "Six weeks after failing her UPSC attempt, low, tearful, and stopped studying, more than expected", "bucket": 2, "why": "A stressor, not a trauma, with onset within 3 months."}, {"text": "Eighteen months after her husband's death, intense yearning, disbelief, and unable to resume any part of life, beyond what her community expects", "bucket": 3}]}
 :::
 
+:::widget flow
+{"title": "Which stress-related diagnosis?", "layout": "tree", "nodes": [{"id": "root", "label": "After a stressful or traumatic event", "detail": "Start with the type of event, then timing."}, {"id": "trauma", "label": "Criterion A trauma", "detail": "Death, serious injury or sexual violence.", "parent": "root"}, {"id": "asd", "label": "3 days to 1 month", "detail": "Acute stress disorder (9 of 14 symptoms).", "parent": "trauma"}, {"id": "ptsd", "label": "More than 1 month", "detail": "PTSD (1-1-2-2).", "parent": "trauma"}, {"id": "stress", "label": "Any other stressor", "detail": "Job loss, divorce, exams.", "parent": "root"}, {"id": "adj", "label": "Onset within 3 months", "detail": "Adjustment disorder; resolves within 6 months after the stressor ends.", "parent": "stress"}, {"id": "death", "label": "Death of a close person", "detail": "Bereavement.", "parent": "root"}, {"id": "pgd", "label": "12 months or more, disabling", "detail": "Prolonged grief disorder (adults).", "parent": "death"}]}
+:::
+
 :::recall
 1. What is the duration window for acute stress disorder? || 3 days to 1 month.
 2. How many symptoms does acute stress disorder require? || Nine or more of 14.
@@ -71,6 +75,10 @@ Trauma-focused therapies remain central. Many clinicians use a **phased** approa
 
 :::widget sort
 {"prompt": "Which part of complex PTSD does each describe?", "buckets": ["Core PTSD", "Affect dysregulation", "Negative self-concept", "Relationship difficulties"], "items": [{"text": "Nightmares and flashbacks of years of abuse", "bucket": 0}, {"text": "Explosive rage at small slights, then complete numbness", "bucket": 1}, {"text": "\"I am dirty and worthless, I deserved it\"", "bucket": 2}, {"text": "Cannot let anyone close, ends friendships when they deepen", "bucket": 3}, {"text": "Always on guard, sits with her back to the wall", "bucket": 0}]}
+:::
+
+:::widget layers
+{"title": "Phased treatment for complex PTSD", "shape": "stack", "layers": [{"label": "Reintegration", "detail": "Relationships, work, meaning, identity beyond the trauma."}, {"label": "Trauma processing", "detail": "Trauma-focused therapy: memories and meanings."}, {"label": "Stabilisation and skills", "detail": "Safety, emotion regulation, relationship skills (for example STAIR)."}], "caption": "Many people can start trauma processing sooner than once thought; the phases overlap."}
 :::
 
 :::recall
@@ -276,6 +284,10 @@ Q: Which statement about medicines in PTSD is correct?
 EMDR is effective, but trials comparing it with and without eye movements suggest the eye movements may add little beyond the exposure and cognitive elements. One proposal is that tasks that tax working memory make the memory less vivid and emotional. Report this honestly in an exam answer.
 :::
 
+:::widget flow
+{"title": "Cognitive processing therapy in outline", "layout": "chain", "nodes": [{"id": "edu", "label": "Education", "detail": "PTSD as 'stuck' natural recovery."}, {"id": "impact", "label": "Impact statement", "detail": "What the trauma means about self, others and the world."}, {"id": "stuck", "label": "Find stuck points", "detail": "Self-blame, over-generalised beliefs about safety, trust, power, esteem and intimacy."}, {"id": "challenge", "label": "Socratic questioning", "detail": "Worksheets to test and balance beliefs."}, {"id": "themes", "label": "Five themes", "detail": "Safety, trust, power and control, esteem, intimacy."}, {"id": "final", "label": "Final impact statement", "detail": "Compare old and new meanings."}]}
+:::
+
 :::recall
 1. What are the two kinds of exposure in prolonged exposure therapy? || Imaginal (recounting the memory) and in vivo (approaching avoided safe situations).
 2. What are stuck points in CPT? || Unhelpful beliefs about the trauma, such as self-blame or over-generalised mistrust.
@@ -308,6 +320,10 @@ People who work with trauma are affected by it.
 
 :::widget decide
 {"scene": "Dr Fatima, 30, a psychologist in a Srinagar trauma clinic, has listened to many accounts of violence. Lately she checks her children's school route repeatedly, sleeps badly, feels numb with her husband and dreads Mondays. She tells you, 'I should be able to handle this. It's my job.'", "ask": "What is the most helpful response?", "choices": [{"label": "'Yes, toughen up; it comes with the job.'", "verdict": "harm", "outcome": "She hides her distress, makes mistakes and later leaves the profession.", "why": "Stigma about helper distress drives burnout and attrition."}, {"label": "'What you describe sounds like vicarious trauma, which is a known, normal risk of this work. Let's talk to your supervisor about caseload and support, and consider getting help for yourself.'", "verdict": "best", "outcome": "Her caseload is adjusted, she joins peer supervision and sees a therapist. She recovers and stays in the work.", "why": "Naming it, normalising it and acting at both personal and organisational levels protects the helper."}, {"label": "'Take a week off and you'll be fine.'", "verdict": "ok", "outcome": "She feels better briefly, but the symptoms return with the same caseload.", "why": "Rest helps but does not fix the underlying workload and support problems."}]}
+:::
+
+:::widget layers
+{"title": "What helpers show, and what lies beneath", "shape": "iceberg", "layers": [{"label": "Visible", "detail": "Tiredness, irritability, sick days, lateness."}, {"label": "Less visible", "detail": "Sleep problems, numbness, cynicism, avoiding certain cases."}, {"label": "Hidden", "detail": "Changed beliefs about safety and people, intrusive images from clients' stories, moral injury."}]}
 :::
 
 :::recall
@@ -462,6 +478,14 @@ Twin heritability is roughly 30 to 40%. A genome-wide study published in 2024 (o
 {"prompt": "Which mechanism does each finding support?", "buckets": ["Amygdala-prefrontal imbalance", "HPA axis changes", "Pre-existing vulnerability", "Overmodulation"], "items": [{"text": "Stronger cortisol suppression after dexamethasone", "bucket": 1}, {"text": "Unexposed identical twins of people with PTSD also have smaller hippocampi", "bucket": 2}, {"text": "Reduced vmPFC activity during recall of extinction", "bucket": 0}, {"text": "Excessive prefrontal inhibition with numbing and depersonalisation", "bucket": 3}, {"text": "Hyperresponsive amygdala to masked fearful faces", "bucket": 0}]}
 :::
 
+:::widget brainmap
+{"title": "The PTSD circuit", "focus": ["amygdala", "prefrontal", "hippocampus", "hypothalamus"], "notes": {"amygdala": "Hyperresponsive to threat cues, even when they are not consciously seen.", "prefrontal": "Ventromedial prefrontal and rostral cingulate cortex under-active: weak recall of extinction, weak brake on the amygdala.", "hippocampus": "Smaller on average; poor coding of context, so fear spreads to safe settings. May be a pre-existing vulnerability.", "hypothalamus": "HPA axis: often normal or low cortisol with enhanced negative feedback; raised CRH."}}
+:::
+
+:::widget flow
+{"title": "The stress hormone chain", "layout": "chain", "nodes": [{"id": "hyp", "label": "Hypothalamus", "detail": "Releases CRH, often raised in PTSD."}, {"id": "pit", "label": "Pituitary", "detail": "Releases ACTH."}, {"id": "adr", "label": "Adrenal glands", "detail": "Release cortisol (and adrenaline)."}, {"id": "fb", "label": "Feedback", "detail": "Cortisol switches the system off; in PTSD this feedback is unusually strong, so cortisol can be low."}, {"id": "na", "label": "Noradrenaline unopposed", "detail": "Strong emotional memory encoding and hyperarousal."}]}
+:::
+
 :::recall
 1. Describe the cortisol pattern typical of PTSD. || Normal or low baseline cortisol with enhanced negative feedback; raised CSF CRH.
 2. What did the Vietnam twin study suggest about the hippocampus? || Smaller hippocampi may be a pre-existing vulnerability.
@@ -580,6 +604,10 @@ Q: Compared with DSM-5-TR, ICD-11 PTSD:
 
 :::widget decide
 {"scene": "A district hospital in Odisha after a cyclone has one psychiatrist and two counsellors for 200,000 affected people. Officials ask you to 'screen everyone and give them therapy'.", "ask": "Which plan is best?", "choices": [{"label": "Screen everyone in the first week and start trauma therapy for all who score high", "verdict": "harm", "outcome": "Many early high scorers would have recovered naturally; the team is overwhelmed and people with severe needs wait.", "why": "Early distress is common and often transient; blanket early therapy wastes scarce resources and may not help."}, {"label": "Organise PFA and practical support through community workers now; restore schools, livelihoods and routines; train local workers to identify people with persistent or severe distress after the first month; refer them for brief trauma-focused therapy and the psychiatrist for complex cases", "verdict": "best", "outcome": "Most people recover with support. Those with ongoing PTSD, depression or suicidal thoughts are identified and treated.", "why": "A stepped, community-based approach matches resources to need and follows the evidence."}, {"label": "Prescribe sleeping tablets to all who report poor sleep", "verdict": "harm", "outcome": "Benzodiazepine dependence rises; PTSD is not treated.", "why": "Mass sedation is not evidence-based and can harm."}]}
+:::
+
+:::widget layers
+{"title": "A stepped disaster mental health response", "shape": "pyramid", "layers": [{"label": "Specialist care", "detail": "Psychiatrist for complex cases, severe depression, psychosis, suicidality."}, {"label": "Focused psychological help", "detail": "Brief trauma-focused therapies by trained, supervised workers for persisting problems."}, {"label": "Community and family support", "detail": "PFA, reuniting families, restoring schools and livelihoods."}, {"label": "Basic services and security", "detail": "Safety, shelter, food, water, health care."}], "caption": "Everyone needs the base; only a minority need the top."}
 :::
 
 :::recall

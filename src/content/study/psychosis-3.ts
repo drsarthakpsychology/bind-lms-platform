@@ -26,6 +26,14 @@ export const part3 = String.raw`
 {"prompt": "Which pathway or mechanism explains each finding?", "buckets": ["Mesolimbic or associative striatum", "Mesocortical", "Nigrostriatal", "Tuberoinfundibular", "NMDA hypofunction"], "items": [{"text": "Galactorrhoea and missed periods on risperidone", "bucket": 3}, {"text": "Raised dopamine synthesis capacity in people at high risk who later develop psychosis", "bucket": 0}, {"text": "Rigidity and tremor on haloperidol", "bucket": 2}, {"text": "Ketamine producing psychosis-like symptoms in volunteers", "bucket": 4}, {"text": "Apathy and poor working memory", "bucket": 1}]}
 :::
 
+:::widget brainmap
+{"title": "The dopamine pathways", "focus": ["brainstem", "basal-ganglia", "prefrontal", "hypothalamus"], "notes": {"brainstem": "Ventral tegmental area and substantia nigra: dopamine cell bodies.", "basal-ganglia": "Striatum: mesolimbic (ventral) and nigrostriatal (dorsal) targets; raised presynaptic dopamine in the associative striatum in psychosis; D2 blockade here causes EPS.", "prefrontal": "Mesocortical target: reduced dopamine linked to negative and cognitive symptoms.", "hypothalamus": "Tuberoinfundibular pathway: dopamine inhibits prolactin; blockade raises it."}}
+:::
+
+:::widget flow
+{"title": "The glutamate-dopamine chain", "layout": "chain", "nodes": [{"id": "nmda", "label": "NMDA receptor hypofunction", "detail": "On parvalbumin GABA interneurons."}, {"id": "disinhib", "label": "Less inhibition", "detail": "Pyramidal neurons are disinhibited."}, {"id": "gamma", "label": "Disrupted gamma rhythms", "detail": "Working memory and cognition suffer."}, {"id": "glu", "label": "Excess glutamate output", "detail": "Downstream circuits are over-driven."}, {"id": "da", "label": "Dopamine dysregulation", "detail": "Midbrain dopamine neurons fire abnormally."}, {"id": "sal", "label": "Aberrant salience", "detail": "Irrelevant events feel significant; delusions explain them."}]}
+:::
+
 :::recall
 1. Which dopamine finding in schizophrenia is most replicated? || Increased presynaptic dopamine synthesis and release capacity in the associative striatum.
 2. What is aberrant salience? || Dysregulated dopamine assigning importance to irrelevant stimuli; delusions explain the resulting sense of significance.
@@ -84,6 +92,10 @@ PET studies show that antipsychotic response becomes likely at around **65%** st
 - **Akathisia**: reduce dose, propranolol, consider mirtazapine (low dose).
 - **Tardive dyskinesia**: review the need for the antipsychotic, switch to clozapine or quetiapine, VMAT2 inhibitors (valbenazine, deutetrabenazine) where available.
 - **Pregnancy**: avoid sudden stopping; weigh relapse risk; prefer drugs with more safety data and monitor for gestational diabetes.
+:::
+
+:::widget curve
+{"kind": "dose-response", "title": "Full antagonist, partial agonist and the D2 window", "caption": "Compare a full antagonist with a partial agonist such as aripiprazole: the partial agonist cannot drive the receptor to zero activity, which lowers EPS and prolactin. Response becomes likely around 65% D2 occupancy; EPS above about 78%."}
 :::
 
 :::recall
@@ -159,6 +171,10 @@ Psychotic experiences occur in about 5 to 6% of the general population over a li
 
 :::widget sort
 {"prompt": "Where does each feature sit in HiTOP?", "buckets": ["Thought disorder spectrum", "Detachment spectrum"], "items": [{"text": "Persecutory delusions", "bucket": 0}, {"text": "Avolition and asociality", "bucket": 1}, {"text": "Third-person voices", "bucket": 0}, {"text": "Restricted emotional expression", "bucket": 1}, {"text": "Odd, magical beliefs of schizotypy", "bucket": 0}]}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Psychosis as a continuum", "caption": "Many traits and experiences are spread along a continuum in the population. Psychotic experiences are reported by about 5 to 6% of people over a lifetime; illness lies in the far tail, where experiences are frequent, distressing and disabling. Use the explorer to see how small the tail beyond a cut-off is."}
 :::
 
 :::recall

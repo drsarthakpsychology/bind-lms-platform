@@ -77,6 +77,10 @@ Common types:
 {"prompt": "Hallucination, delusion, or neither?", "buckets": ["Hallucination", "Delusion", "Neither"], "items": [{"text": "Hears a voice saying 'You are worthless' when nobody is around", "bucket": 0}, {"text": "Is completely sure the government has put a chip in her tooth", "bucket": 1}, {"text": "Believes, like his whole family, that fasting on Tuesdays brings blessings", "bucket": 2, "why": "A shared cultural or religious belief is not a delusion."}, {"text": "Smells burning rubber that no one else can smell", "bucket": 0}, {"text": "Believes that the colour of passing cars tells him he must save India", "bucket": 1}, {"text": "Hears his name called once as he falls asleep", "bucket": 2, "why": "Common at the edge of sleep in healthy people."}]}
 :::
 
+:::widget flow
+{"title": "How a delusion can take hold", "layout": "chain", "nodes": [{"id": "odd", "label": "Something feels strange", "detail": "A vague sense that things are changed or significant."}, {"id": "notice", "label": "Ordinary events seem special", "detail": "A song, a look, a car colour feels meant for you."}, {"id": "explain", "label": "An explanation forms", "detail": "\"They are watching me.\""}, {"id": "fixed", "label": "The belief becomes fixed", "detail": "New events are read as proof; doubts are explained away."}, {"id": "act", "label": "It shapes behaviour", "detail": "Avoiding food, staying indoors."}]}
+:::
+
 :::recall
 1. What is a hallucination? || A perception without any outside cause, felt as real.
 2. Give the three features of a delusion. || Complete certainty; unchanged by evidence; not shared by the person's community.
@@ -405,6 +409,10 @@ The key question: **is there psychosis outside mood episodes?** In bipolar or de
 - **Delusional disorder**: at least 3 months of delusions.
 :::
 
+:::widget flow
+{"title": "The duration ladder", "layout": "tree", "nodes": [{"id": "root", "label": "Psychotic symptoms, not organic, not mood-only", "detail": "Then ask how long."}, {"id": "brief", "label": "1 day to under 1 month", "detail": "Brief psychotic disorder, with full recovery.", "parent": "root"}, {"id": "sf", "label": "1 to under 6 months", "detail": "Schizophreniform disorder.", "parent": "root"}, {"id": "scz", "label": "6 months or more", "detail": "Schizophrenia.", "parent": "root"}, {"id": "del", "label": "Delusions only, 1 month or more, functioning preserved", "detail": "Delusional disorder.", "parent": "root"}, {"id": "sa", "label": "Major mood episodes for most of the illness, plus 2 weeks of psychosis without mood symptoms", "detail": "Schizoaffective disorder.", "parent": "root"}]}
+:::
+
 :::recall
 1. Give the duration ladder. || Brief psychotic: 1 day to under 1 month; schizophreniform: 1 to under 6 months; schizophrenia: 6 months or more.
 2. What is the key test for schizoaffective disorder? || Psychosis for 2 weeks or more without mood episodes, with mood episodes for most of the illness.
@@ -448,6 +456,10 @@ Before diagnosing a primary psychotic disorder, exclude medical and substance ca
 :::clinician
 ### First-episode work-up
 Full blood count, renal, liver and thyroid function, calcium, glucose or HbA1c, lipids, B12 and folate, HIV and syphilis serology, urine drug screen, pregnancy test where relevant, ECG (QT), weight, BMI, waist, blood pressure. MRI with neurological signs or atypical features; EEG when seizures or encephalopathy are suspected; lumbar puncture and autoimmune antibodies (NMDA receptor, LGI1, CASPR2) when encephalitis is suspected. Baseline prolactin before starting prolactin-raising drugs.
+:::
+
+:::widget flow
+{"title": "Is this psychosis organic?", "layout": "tree", "nodes": [{"id": "root", "label": "New psychosis", "detail": "Look for red flags before diagnosing a primary disorder."}, {"id": "cons", "label": "Clouded or fluctuating consciousness", "detail": "Delirium: search for medical causes.", "parent": "root"}, {"id": "neuro", "label": "Seizures, dyskinesias, autonomic instability", "detail": "Encephalitis, including anti-NMDA receptor.", "parent": "root"}, {"id": "vis", "label": "Visual, tactile or olfactory hallucinations", "detail": "Substances, delirium, neurological disease.", "parent": "root"}, {"id": "late", "label": "Onset after 40 or very sudden", "detail": "Neurological, endocrine, drug causes.", "parent": "root"}, {"id": "drug", "label": "Recent substance or new medicine", "detail": "Cannabis, stimulants, steroids, levodopa.", "parent": "root"}, {"id": "none", "label": "No red flags", "detail": "Proceed with a primary psychosis work-up.", "parent": "root"}]}
 :::
 
 :::recall

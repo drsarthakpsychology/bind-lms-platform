@@ -166,7 +166,7 @@ SSRIs act on serotonin over weeks and are first-line; benzodiazepines act on GAB
 
 | | SSRIs | Benzodiazepines | Pregabalin |
 |---|---|---|---|
-| Target | Serotonin transporter; downstream 5-HT1A autoreceptor desensitisation | Alpha–gamma-2 interface of GABA-A; increase opening frequency | Alpha-2-delta subunit of voltage-gated calcium channels; less neurotransmitter release |
+| Target | Serotonin transporter; downstream 5-HT1A autoreceptor desensitisation | Alpha-gamma-2 interface of GABA-A; increase opening frequency | Alpha-2-delta subunit of voltage-gated calcium channels; less neurotransmitter release |
 | Onset | Weeks (benefit often clear by 4 to 6) | Within an hour | Days |
 | Indications | GAD, panic, social anxiety (first-line) | Short-term severe anxiety; not for panic per NICE | GAD |
 | Main risks | Early jitteriness, nausea, sexual dysfunction, discontinuation symptoms | Dependence, withdrawal, cognitive and motor impairment, falls, interaction with alcohol and opioids, impaired exposure learning | Misuse (especially with opioids), dizziness, weight gain, withdrawal seizures |

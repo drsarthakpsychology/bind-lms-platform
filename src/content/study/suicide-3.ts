@@ -23,6 +23,10 @@ Suicidal risk **fluctuates**. Rudd's fluid vulnerability theory separates **base
 {"scene": "An emergency department in Pune requires every self-harm patient to be scored as 'low', 'medium' or 'high' risk, and only 'high-risk' patients are referred to psychiatry. Sameer, 27, scores 'low' because he has no past attempts and says he is fine now. He has just lost his job and drinks heavily.", "ask": "What would an evidence-based service do?", "choices": [{"label": "Follow the protocol and discharge him without referral", "verdict": "harm", "outcome": "He receives no follow-up. Two weeks later he presents again, more seriously.", "why": "A 'low' score does not mean low risk. Allocating care by score misses many people who go on to harm themselves."}, {"label": "Offer every self-harm patient a psychosocial assessment and a needs-based plan, regardless of score: for Sameer, a safety plan, help with alcohol and job loss, family involvement with consent, and early follow-up", "verdict": "best", "outcome": "He engages with an alcohol service and a counsellor. He does not re-present.", "why": "Assessment and care based on needs and formulation, not on a prediction score, is the recommended approach."}, {"label": "Admit everyone who self-harms", "verdict": "harm", "outcome": "Beds overflow; many patients feel coerced and avoid future help.", "why": "Blanket admission is neither feasible nor helpful; care should match needs."}]}
 :::
 
+:::widget curve
+{"kind": "sdt", "title": "Where should a 'high-risk' line be drawn?", "caption": "Move the criterion: a lower threshold catches more people who will act (hits) but labels many more who never will (false alarms). With a rare outcome, no threshold gives a useful positive predictive value, which is why care must not depend on the label."}
+:::
+
 :::recall
 1. Why does a seemingly accurate risk tool produce mostly false positives? || Because suicide is rare; with a low base rate, positive predictive value is very low.
 2. What does NICE advise instead of risk categories? || A needs-based psychosocial assessment, formulation and plan for everyone.
@@ -57,6 +61,14 @@ Economic shocks, debt, unemployment, discrimination, gender-based violence, and 
 
 :::widget sort
 {"prompt": "At which level does each factor mainly act?", "buckets": ["Biological", "Psychological", "Social or structural"], "items": [{"text": "Low cerebrospinal fluid 5-HIAA with impulsive aggression", "bucket": 0}, {"text": "Overgeneral memory that blocks problem-solving", "bucket": 1}, {"text": "A sudden farm-debt crisis in a district", "bucket": 2}, {"text": "Entrapment after public humiliation", "bucket": 1}, {"text": "HPA axis changes after childhood abuse", "bucket": 0}, {"text": "Easy availability of highly hazardous pesticides", "bucket": 2}]}
+:::
+
+:::widget brainmap
+{"title": "Brain systems linked to suicidal behaviour", "focus": ["prefrontal", "amygdala", "hypothalamus", "brainstem"], "notes": {"prefrontal": "Ventral prefrontal regions show altered serotonin receptor binding; linked to impulsive decision-making under distress.", "amygdala": "Heightened threat and emotional reactivity.", "hypothalamus": "HPA axis overactivity; non-suppression on the dexamethasone test in depression predicts later suicide.", "brainstem": "The raphe nuclei supply serotonin; low CSF 5-HIAA is associated with impulsive, violent attempts."}, "caption": "No brain measure predicts suicide in an individual; these findings explain vulnerability across groups."}
+:::
+
+:::widget layers
+{"title": "Levels of influence on suicide", "shape": "rings", "layers": [{"label": "Individual", "detail": "Genes, temperament, mental illness, hopelessness, entrapment."}, {"label": "Relationships", "detail": "Family conflict, violence, isolation, bereavement."}, {"label": "Community", "detail": "School and work pressure, ragging, discrimination, access to services."}, {"label": "Society", "detail": "Economic shocks, alcohol policy, means availability, media, law and stigma."}], "caption": "Prevention works at every ring, not only inside the clinic."}
 :::
 
 :::recall
@@ -110,6 +122,10 @@ Q: Which finding suggests that suicidal behaviour is not simply a consequence of
 
 :::widget worked
 {"title": "A DBT chain analysis", "steps": [{"q": "Target behaviour?", "a": "Meghna, 22, harmed herself on Saturday night."}, {"q": "Vulnerability factors?", "a": "Slept three hours; skipped meals; had argued with her mother; had drunk alcohol at a party."}, {"q": "Prompting event?", "a": "Her boyfriend did not reply to messages for two hours."}, {"q": "Links in the chain?", "a": "Thought: 'He's leaving me, I'm unlovable.' Emotion: panic, then shame. Body: chest tight, heat. Urge: 'I need this feeling to stop.' Action: self-harm."}, {"q": "Consequences?", "a": "Short-term relief (reinforcing the behaviour); later guilt and hiding wounds."}, {"q": "Where could skills replace links?", "a": "Sleep and food (reduce vulnerability); check the facts (he was driving); TIPP skills for intense emotion (cold water on the face, paced breathing); reaching out to her sister; a plan for Saturday nights."}]}
+:::
+
+:::widget flow
+{"title": "A DBT chain analysis", "layout": "chain", "nodes": [{"id": "vuln", "label": "Vulnerabilities", "detail": "Little sleep, skipped meals, argument, alcohol."}, {"id": "prompt", "label": "Prompting event", "detail": "No reply to messages for two hours."}, {"id": "thought", "label": "Thoughts", "detail": "'He's leaving me; I'm unlovable.'"}, {"id": "emotion", "label": "Emotions and body", "detail": "Panic, shame, chest tightness."}, {"id": "urge", "label": "Urge", "detail": "'I need this feeling to stop.'"}, {"id": "behaviour", "label": "Target behaviour", "detail": "Self-harm."}, {"id": "conseq", "label": "Consequences", "detail": "Short-term relief; later guilt."}], "caption": "Each link is a place where a skill could be used instead."}
 :::
 
 :::recall

@@ -29,6 +29,10 @@ A traumatic event is like a deep cut. Most cuts heal by themselves if they are k
 {"prompt": "Does each event meet the clinical meaning of 'trauma' (threat of death, serious injury or sexual violence)?", "buckets": ["Clinical trauma", "Painful, but not clinical trauma"], "items": [{"text": "Being trapped in a burning building", "bucket": 0}, {"text": "Failing a university exam", "bucket": 1, "why": "Very stressful, but not a threat to life or safety."}, {"text": "Being sexually assaulted", "bucket": 0}, {"text": "A father dying peacefully of old age in hospital", "bucket": 1, "why": "A great loss and a cause of grief, but not violent or accidental death."}, {"text": "Learning that your brother was killed in a road accident", "bucket": 0, "why": "Learning about the violent or accidental death of a close family member counts."}, {"text": "Being dumped by a partner", "bucket": 1}, {"text": "Surviving a flood in which neighbours drowned", "bucket": 0}]}
 :::
 
+:::widget flow
+{"title": "The survival responses", "layout": "chain", "nodes": [{"id": "detect", "label": "Danger detected", "detail": "The alarm fires before conscious thought."}, {"id": "fight", "label": "Fight", "detail": "Heart and muscles prepare to resist."}, {"id": "flight", "label": "Flight", "detail": "Prepare to escape."}, {"id": "freeze", "label": "Freeze", "detail": "If neither is possible: stillness, numbness, things feel unreal or slow."}, {"id": "after", "label": "Afterwards", "detail": "Shaking, tears, exhaustion; the body settles over hours to days."}], "caption": "None of these responses is a choice or a weakness; they are automatic."}
+:::
+
 :::recall
 1. What is the clinical meaning of trauma? || Exposure to actual or threatened death, serious injury or sexual violence (directly, as a witness, by learning of it in a close person, or by repeated work exposure).
 2. What is the freeze response? || An automatic survival response in which the person goes still or numb when fight or flight is impossible.
@@ -71,6 +75,10 @@ For most people these reactions **fade gradually** as life returns to its rhythm
 {"prompt": "Which helps natural recovery after a trauma, and which tends to get in the way?", "buckets": ["Helps recovery", "Gets in the way"], "items": [{"text": "Getting back into a daily routine of meals and sleep", "bucket": 0}, {"text": "Drinking every night to stop the memories", "bucket": 1}, {"text": "A family that listens without pushing for details", "bucket": 0}, {"text": "Being told 'it was your own fault for going out late'", "bucket": 1}, {"text": "Continuing to live with the person who was violent", "bucket": 1, "why": "The danger is not over, so the alarm cannot settle."}, {"text": "Practical help with money and repairs after a flood", "bucket": 0}]}
 :::
 
+:::widget curve
+{"kind": "inverted-u", "title": "The window of arousal", "caption": "Too little arousal leaves people numb and switched off; too much leaves them flooded and unable to think. Recovery after trauma means widening the middle zone where a person can feel, think and cope. Move the sliders to see how arousal and task difficulty interact."}
+:::
+
 :::recall
 1. Name the four kinds of normal reaction after trauma. || Re-living, avoiding, feeling changed (mood and beliefs), being on edge (plus body symptoms).
 2. Give three things that help natural recovery. || Safety, practical help, listening support, routine, avoiding alcohol and drugs.
@@ -107,6 +115,10 @@ In an ordinary memory you know you are remembering. In a **flashback**, the past
 {"scene": "Your college friend Ayesha, 21, was in a serious road accident six months ago. She now refuses to travel by car, jumps at loud horns, has nightmares and says, 'I should have stopped my brother from driving so fast.' Her marks have fallen. She asks if she should 'just try to forget it'.", "ask": "What is the most helpful response?", "choices": [{"label": "'Yes, don't think about it at all; it will go away.'", "verdict": "harm", "outcome": "She avoids more and more, and the memories come back more strongly.", "why": "Trying hard not to think about trauma usually keeps PTSD going."}, {"label": "'What you're describing sounds like it might be post-traumatic stress, and it's treatable. Would you be willing to see someone at the college clinic?'", "verdict": "best", "outcome": "She is assessed and starts trauma-focused therapy. Over months she travels by car again.", "why": "You named the problem gently, offered hope and pointed her to effective help."}, {"label": "'Tell me exactly what happened, every detail, right now.'", "verdict": "harm", "outcome": "She becomes very distressed, feels overwhelmed and avoids you afterwards.", "why": "Pushing for details without training or her consent can overwhelm her. Listen to what she chooses to share."}]}
 :::
 
+:::widget flow
+{"title": "How avoidance keeps PTSD going", "layout": "cycle", "nodes": [{"id": "remind", "label": "Reminder", "detail": "A smell, sound, place or thought."}, {"id": "fear", "label": "Fear and re-living", "detail": "The memory floods back as if happening now."}, {"id": "avoid", "label": "Avoidance", "detail": "Stay away, push the memory down, drink to forget."}, {"id": "relief", "label": "Short relief", "detail": "Distress drops."}, {"id": "stuck", "label": "Memory stays unprocessed", "detail": "The fear is never updated, so the next reminder hits as hard."}], "caption": "Trauma-focused therapy helps the person approach the memory safely so it can be filed as past."}
+:::
+
 :::recall
 1. Name the four groups of PTSD symptoms. || Re-living (intrusions); avoidance; negative changes in thinking and mood; being on edge (arousal).
 2. How does a flashback differ from a memory? || In a flashback the past feels as if it is happening now.
@@ -141,6 +153,10 @@ You do not need to be a therapist to help in the first hours and days. You need 
 
 :::widget decide
 {"scene": "After a building collapse in Mumbai, you are volunteering at a relief camp. Mrs Gupta, 58, sits silent, holding her phone, not eating. A journalist wants to interview her about 'how it felt'.", "ask": "What do you do?", "choices": [{"label": "Encourage her to talk to the journalist; talking helps", "verdict": "harm", "outcome": "She breaks down on camera. The clip is shared widely; she feels humiliated.", "why": "Pressing survivors to recount events, especially publicly, can harm. Consent and privacy matter."}, {"label": "Gently introduce yourself, offer water and food, ask if she is waiting to hear from someone, help her contact family, and politely keep the journalist away unless she chooses to speak", "verdict": "best", "outcome": "She is trying to reach her son. You help her find him on the camp list. She eats a little.", "why": "Look, listen, link: safety and practical needs first, at her pace."}, {"label": "Leave her alone; she wants privacy", "verdict": "ok", "outcome": "She sits unnoticed for hours without knowing her son is safe in the next camp.", "why": "Respecting privacy is good, but a gentle offer of help and information would have met her real need."}]}
+:::
+
+:::widget flow
+{"title": "Psychological first aid", "layout": "chain", "nodes": [{"id": "prepare", "label": "Prepare", "detail": "Learn about the event, services and safety."}, {"id": "look", "label": "Look", "detail": "Safety, urgent needs, people in severe distress."}, {"id": "listen", "label": "Listen", "detail": "Approach gently; ask about needs; let them talk or not."}, {"id": "link", "label": "Link", "detail": "Basic needs, information, loved ones, services."}]}
 :::
 
 :::recall
@@ -366,6 +382,10 @@ Plus: **F** more than 1 month; **G** distress or impairment; **H** not due to su
 {"vignette": "Rohit, 34, a bank cashier in Indore, was held at gunpoint during a robbery eight months ago. He has nightmares about it most weeks and his heart races whenever a customer reaches into a bag. He now takes the long way to avoid the branch and refuses to talk about it. He tells himself he 'should have pressed the alarm' and feels ashamed. He no longer enjoys cricket and feels distant from his wife. He jumps at loud noises, sits facing the door everywhere, and sleeps four hours a night. He has taken leave from work. No alcohol or drugs.", "rule": "Tick each symptom present. PTSD needs 1 intrusion, 1 avoidance, 2 negative cognition or mood, and 2 arousal symptoms, for more than a month.", "symptoms": [{"label": "Intrusion: distressing dreams", "present": true, "core": true}, {"label": "Intrusion: bodily reaction to reminders", "present": true, "core": true}, {"label": "Avoidance: external reminders", "present": true, "core": true, "why": "Avoids the branch."}, {"label": "Avoidance: internal reminders", "present": true, "why": "Refuses to talk or think about it."}, {"label": "Mood: self-blame", "present": true, "why": "'Should have pressed the alarm'."}, {"label": "Mood: persistent shame", "present": true}, {"label": "Mood: loss of interest", "present": true}, {"label": "Mood: detachment", "present": true}, {"label": "Arousal: exaggerated startle", "present": true}, {"label": "Arousal: hypervigilance", "present": true, "why": "Sits facing the door."}, {"label": "Arousal: sleep disturbance", "present": true}, {"label": "Arousal: reckless behaviour", "present": false}], "need": 6, "needCore": true, "verdict": "Every cluster is met (intrusion 2, avoidance 2, negative cognition and mood 4, arousal 3), for eight months, with impairment and no substance cause. PTSD. Next: screen for depression, alcohol use and suicidal thoughts, and check for dissociative symptoms."}
 :::
 
+:::widget layers
+{"title": "PTSD: the 1-1-2-2 rule", "shape": "stack", "layers": [{"label": "B. Intrusion: 1 of 5", "detail": "Memories, nightmares, flashbacks, distress and bodily reactions to reminders."}, {"label": "C. Avoidance: 1 of 2", "detail": "Internal reminders (thoughts, feelings) and external reminders (people, places)."}, {"label": "D. Cognition and mood: 2 of 7", "detail": "Amnesia, negative beliefs, distorted blame, negative emotion, loss of interest, detachment, no positive emotion."}, {"label": "E. Arousal: 2 of 6", "detail": "Irritability, recklessness, hypervigilance, startle, concentration, sleep."}, {"label": "F to H", "detail": "More than 1 month; distress or impairment; not due to substances or illness."}]}
+:::
+
 :::recall
 1. Give the number needed in each PTSD cluster. || Intrusion 1 of 5; avoidance 1 of 2; negative cognitions and mood 2 of 7; arousal 2 of 6.
 2. What is the duration rule? || More than 1 month.
@@ -403,6 +423,14 @@ Social support, a sense of control or meaning, good coping, getting back to rout
 
 :::widget sort
 {"prompt": "When does each risk factor act: before, during or after the trauma?", "buckets": ["Before", "During", "After"], "items": [{"text": "Childhood sexual abuse in a woman later assaulted as an adult", "bucket": 0}, {"text": "Feeling detached and unreal during the attack", "bucket": 1, "why": "Peritraumatic dissociation predicts PTSD."}, {"text": "Family who blame her for the assault", "bucket": 2}, {"text": "Being trapped and believing she would die", "bucket": 1}, {"text": "Losing her job and home in the months after the flood", "bucket": 2}, {"text": "Previous depression", "bucket": 0}]}
+:::
+
+:::widget flow
+{"title": "Fear conditioning after trauma", "layout": "chain", "nodes": [{"id": "event", "label": "Trauma", "detail": "Terror during a road accident at night."}, {"id": "pair", "label": "Pairing", "detail": "Headlights, horns, darkness are present at the same time."}, {"id": "cs", "label": "Conditioned cues", "detail": "Afterwards these cues trigger fear on their own."}, {"id": "gen", "label": "Generalisation", "detail": "Fear spreads to all traffic, all night journeys."}, {"id": "avoid", "label": "Avoidance", "detail": "Never travelling at night prevents the fear from being unlearned."}]}
+:::
+
+:::widget flow
+{"title": "Ehlers and Clark: why PTSD persists", "layout": "cycle", "nodes": [{"id": "app", "label": "Negative appraisals", "detail": "'I'll never be safe', 'It was my fault'."}, {"id": "mem", "label": "Poorly integrated memory", "detail": "Fragmented, sensory, easily triggered, felt as now."}, {"id": "threat", "label": "Sense of current threat", "detail": "The danger feels present, not past."}, {"id": "strat", "label": "Unhelpful strategies", "detail": "Suppression, avoidance, rumination, safety behaviours, alcohol."}, {"id": "block", "label": "Change is blocked", "detail": "Strategies stop appraisals and memory from being updated."}]}
 :::
 
 :::recall
