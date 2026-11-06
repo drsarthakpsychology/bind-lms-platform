@@ -33,7 +33,7 @@ function PolicyHeading({
       <a
         href={`#${id}`}
         aria-label={`Link to this section: ${text}`}
-        className="ml-2 text-link opacity-0 transition-opacity focus-visible:opacity-100 group-hover:opacity-100"
+        className="ml-2 text-link opacity-0 transition-opacity focus-visible:opacity-100 group-hover:opacity-100 pointer-coarse:opacity-100"
       >
         #
       </a>
