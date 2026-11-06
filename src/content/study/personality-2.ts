@@ -32,6 +32,10 @@ Severity is like the height of a fever: it tells you how ill someone is and how 
 {"title": "Translating a case into ICD-11", "steps": [{"q": "Arvind, 34, a software engineer in Pune, has had two marriages end because he 'shuts down' and refuses to talk for weeks after conflict. He has one acquaintance, no close friends, keeps his work at a distance, and feels anxious and ashamed much of the time. He has lost two jobs after angry outbursts when criticised. What is the first question?", "a": "How severe is his personality dysfunction? Look at self-functioning (identity, self-worth, self-direction) and interpersonal functioning (relationships, empathy, conflict), and at the harm across areas of life."}, {"q": "His sense of himself is fragile and shame-based; most relationships fail; work is disrupted but he stays employed; he has no self-harm or violence. How would you rate severity?", "a": "Moderate personality disorder: marked problems across several areas (relationships, work), but not the pervasive, severe disruption or risk to self or others seen in severe disorder."}, {"q": "Which trait domains stand out?", "a": "Negative affectivity (anxiety, shame, anger when criticised) and detachment (shutting down, few relationships, emotional distance)."}, {"q": "How would you write it, and what does it suggest for treatment?", "a": "Personality disorder, moderate, with prominent negative affectivity and detachment. Treatment should target emotional regulation and shame, and help him stay engaged in relationships, for example schema therapy or a mentalisation-based approach, with attention to engagement because detachment may lead to drop-out."}], "yourTurn": [{"q": "Fatima, 27, has a stable job and long friendships, but becomes very anxious and self-critical under stress and sometimes avoids social events for a few weeks. No real harm to her life overall. How might ICD-11 describe this?", "a": "Probably personality difficulty (not a disorder) with negative affectivity, or no personality diagnosis at all; problems are limited, intermittent and not causing pervasive impairment."}]}
 :::
 
+:::widget layers
+{"title": "ICD-11 severity: from difficulty to severe disorder", "shape": "stack", "layers": [{"label": "Severe personality disorder", "detail": "Severe problems in nearly all areas of self and relationships; often harm to self or others; major impairment."}, {"label": "Moderate personality disorder", "detail": "Marked problems across several areas; most relationships compromised; some harm may occur."}, {"label": "Mild personality disorder", "detail": "Problems in some areas, often not obvious to others; usually no substantial harm."}, {"label": "Personality difficulty", "detail": "Problems that are limited or come and go; not a disorder."}, {"label": "No personality problem", "detail": "Ordinary variation in traits."}], "caption": "Tap each level. Severity guides how intensive care should be; trait domains guide what it focuses on."}
+:::
+
 ### Why it matters
 - **Fewer arbitrary boundaries** and fewer "not otherwise specified" diagnoses.
 - **Severity predicts outcomes** (risk, service use, treatment response) better than category.
@@ -104,6 +108,10 @@ In individual DBT, the therapist works on problems in a fixed order:
 3. **Quality-of-life-interfering behaviours**: substance use, eating problems, homelessness, unemployment, other disorders.
 4. **Skills acquisition**.
 
+:::widget layers
+{"title": "The DBT target hierarchy", "shape": "pyramid", "layers": [{"label": "1. Life-threatening behaviours", "detail": "Suicide attempts, self-harm, suicidal urges, harm to others. Always first."}, {"label": "2. Therapy-interfering behaviours", "detail": "Missing sessions, not doing diary cards, arriving late, and therapist behaviours that harm the work."}, {"label": "3. Quality-of-life-interfering behaviours", "detail": "Substance use, eating problems, homelessness, unemployment, other disorders."}, {"label": "4. Skills acquisition", "detail": "Building mindfulness, distress tolerance, emotion regulation and interpersonal skills."}], "caption": "Tap each level. The top of the pyramid is addressed first in every session."}
+:::
+
 ### Chain analysis
 A **chain analysis** examines one problem behaviour in detail: vulnerabilities, the prompting event, each link of thoughts, feelings, sensations and actions leading to the behaviour, and the consequences. The aim is to find where a skill could break the chain next time.
 
@@ -162,6 +170,10 @@ The MBT therapist takes a **not-knowing**, curious stance ("Help me understand w
 
 :::widget sort
 {"prompt": "Which pre-mentalising mode is showing? Place each statement.", "buckets": ["Psychic equivalence", "Teleological mode", "Pretend mode"], "items": [{"text": "'I feel you're bored with me, so you are bored with me.'", "bucket": 0}, {"text": "'If you really cared, you'd extend the session by an hour.'", "bucket": 1}, {"text": "A long, fluent analysis of her childhood that has no emotional connection to anything happening now", "bucket": 2}, {"text": "'He didn't text back. That proves he's leaving.'", "bucket": 0}, {"text": "'Only when I see the cuts do I know how bad I feel.'", "bucket": 1}, {"text": "Talks for twenty minutes about 'my attachment wounds' using therapy words, while the session drifts nowhere", "bucket": 2}]}
+:::
+
+:::widget flow
+{"title": "How mentalising collapses under emotional pressure", "layout": "chain", "nodes": [{"id": "a", "label": "Calm", "detail": "The person can think about their own and others' minds: 'Maybe he is busy.'"}, {"id": "b", "label": "Attachment stress", "detail": "A cue of rejection activates the attachment system and arousal rises."}, {"id": "c", "label": "Thinking goes offline", "detail": "Prefrontal control weakens; fast, automatic assumptions take over."}, {"id": "d", "label": "Pre-mentalising modes", "detail": "Psychic equivalence ('I feel abandoned, so I am'), teleological ('only action proves care'), or pretend mode (empty talk)."}, {"id": "e", "label": "Action", "detail": "Self-harm, rage, or frantic demands replace reflection."}, {"id": "f", "label": "MBT response", "detail": "Lower arousal, slow down, stay curious, rebuild mentalising before exploring meaning."}], "caption": "Press Play. MBT intervenes by restoring reflection when arousal rises, not by explaining the past."}
 :::
 
 ### Other evidence-based therapies
@@ -233,6 +245,10 @@ Medicines do **not** treat personality disorders themselves. They can help comor
 
 :::widget decide
 {"scene": "Shalini, 29, with borderline personality disorder, comes to a new outpatient clinic in Chennai on quetiapine 300 mg, sertraline 150 mg, clonazepam 2 mg, valproate 1000 mg and amitriptyline 75 mg, each added after different crises over five years. She has gained 18 kg, sleeps 12 hours, and still self-harms. She has never had structured psychotherapy. She overdosed on amitriptyline last year.", "ask": "What is the best plan?", "choices": [{"label": "Add lamotrigine for mood instability", "verdict": "harm", "outcome": "She now takes six medicines, develops a rash, and her self-harm continues.", "why": "Adding more medicine without evidence repeats the problem. Lamotrigine did not help BPD in a large trial."}, {"label": "Review every medicine with her, agree on a slow, one-at-a-time reduction (stopping amitriptyline first because of overdose risk, then tapering clonazepam slowly), check for comorbid depression, refer to structured psychotherapy, and dispense in small amounts", "verdict": "best", "outcome": "Over the following months amitriptyline and clonazepam are stopped, valproate is tapered after checking there is no bipolar disorder, and she starts a DBT skills group. She loses some weight and feels more alert.", "why": "Rationalising polypharmacy, reducing lethal and dependence-forming medicines, and providing the psychological treatment that actually works is the evidence-based path. Valproate also carries major risks in a woman of childbearing age."}, {"label": "Stop all five medicines at once", "verdict": "harm", "outcome": "She has a benzodiazepine withdrawal seizure and severe insomnia.", "why": "Abrupt stopping of benzodiazepines can cause seizures. Reduce one at a time, slowly."}]}
+:::
+
+:::widget flow
+{"title": "Deprescribing in borderline personality disorder", "layout": "chain", "nodes": [{"id": "a", "label": "List everything", "detail": "Each medicine, why it was started, whether it helped."}, {"id": "b", "label": "Agree goals", "detail": "Fewer side effects, clearer thinking, safer supplies; the person decides with you."}, {"id": "c", "label": "Stop the most dangerous first", "detail": "Tricyclics, long-term benzodiazepines, valproate in women who could conceive."}, {"id": "d", "label": "One change at a time", "detail": "Slow tapers with review of mood and risk after each step."}, {"id": "e", "label": "Keep what treats comorbid illness", "detail": "For example an SSRI for coexisting major depression."}, {"id": "f", "label": "Add what works", "detail": "Structured therapy, skills groups, a crisis plan."}], "caption": "Press Play. Deprescribing is a treatment in its own right."}
 :::
 
 ### Crises: what helps
@@ -391,7 +407,10 @@ Personality change in mid-life suggests? :: A medical cause such as frontotempor
 2. Name five short-note topics from this module. || General criteria, schizotypal, avoidant versus schizoid, OCPD versus OCD, DBT, mentalisation, ICD-11, splitting, narcissistic injury, polypharmacy.
 :::
 
-## 4.2 Module test [core]
+`;
+
+export const test = String.raw`
+## 4.5 Module test [core]
 :::mcq
 Q: Which is a general criterion for a personality disorder?
 - Onset after 40

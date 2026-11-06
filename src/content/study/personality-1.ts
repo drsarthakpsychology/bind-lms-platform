@@ -23,6 +23,10 @@ Healthy personality is like a bunch of keys: you pick the one that fits the door
 {"prompt": "A personality trait, or a pattern that may be a disorder? Place each description.", "buckets": ["Ordinary trait", "Possible personality disorder"], "items": [{"text": "Sanjay is quiet at parties but has close friends and a job he enjoys", "bucket": 0}, {"text": "Since her teens, Ritu has suspected every friend, colleague and partner of plotting against her, and has lost three jobs over it", "bucket": 1}, {"text": "Arun likes his desk tidy and makes lists", "bucket": 0}, {"text": "Since college, Neha's relationships have swung from adoration to rage within weeks; she cuts herself when she fears being left", "bucket": 1}, {"text": "Mohan has been irritable and withdrawn for two months since losing his job", "bucket": 0, "why": "A recent change after a stressor is not a long-standing personality pattern. Think of depression or an adjustment problem."}, {"text": "Kiran has avoided almost every social event, job interview and friendship since school, sure he will be ridiculed, though he longs for company", "bucket": 1}]}
 :::
 
+:::widget flow
+{"title": "Is this a personality disorder? A first decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "A long-standing pattern causing trouble", "detail": "Start by describing the pattern in thinking, emotion, relationships and impulse control."}, {"id": "new", "label": "Began recently, or after an illness or injury", "detail": "Not a personality disorder. Think of depression, mania, psychosis, substances, dementia, brain injury or personality change due to a medical condition.", "parent": "r"}, {"id": "cult", "label": "Fits the person's culture and context", "detail": "Not a disorder. Interdependence, religious practice or restraint may be normal where they live.", "parent": "r"}, {"id": "narrow", "label": "Only in one situation", "detail": "Think of a relationship problem, a reaction to an abusive setting, or a specific anxiety.", "parent": "r"}, {"id": "pd", "label": "Since youth, rigid, across settings, harmful", "detail": "Consider a personality disorder; describe severity and traits, check comorbidity, and gather collateral history.", "parent": "r"}], "caption": "Tap each branch. Most errors happen at the first two branches."}
+:::
+
 ### Why the word "disorder" needs care
 Personality disorder diagnoses carry heavy **stigma**. People given these labels are often treated as "difficult", "manipulative" or "attention-seeking", and their physical and mental health complaints are taken less seriously. Remember three things:
 1. A personality disorder describes **patterns that cause suffering**, not a bad character.
@@ -88,6 +92,10 @@ DSM-5-TR describes **ten** personality disorders, grouped into **three clusters*
 - **Avoidant**: avoids people and activities from fear of criticism or rejection, feels inadequate, longs for closeness.
 - **Dependent**: needs to be taken care of, clings, cannot make everyday decisions without reassurance, fears being left alone.
 - **Obsessive-compulsive**: preoccupied with order, perfectionism and control, at the cost of flexibility and efficiency. (This is different from obsessive-compulsive disorder, which you meet in another module.)
+
+:::widget flow
+{"title": "The ten personality disorders in three clusters", "layout": "tree", "nodes": [{"id": "r", "label": "DSM-5-TR personality disorders", "detail": "Ten categories grouped by the impression they make."}, {"id": "a", "label": "Cluster A: odd", "detail": "Distant, suspicious or eccentric.", "parent": "r"}, {"id": "a1", "label": "Paranoid", "detail": "Distrust and suspicion of others' motives.", "parent": "a"}, {"id": "a2", "label": "Schizoid", "detail": "Detached, little emotion, no wish for closeness.", "parent": "a"}, {"id": "a3", "label": "Schizotypal", "detail": "Odd beliefs and perceptions, social unease.", "parent": "a"}, {"id": "b", "label": "Cluster B: dramatic", "detail": "Emotional, erratic, rule-breaking.", "parent": "r"}, {"id": "b1", "label": "Antisocial", "detail": "Disregard for others' rights since youth.", "parent": "b"}, {"id": "b2", "label": "Borderline", "detail": "Unstable emotions, relationships and self; abandonment fear.", "parent": "b"}, {"id": "b3", "label": "Histrionic", "detail": "Attention-seeking, shallow shifting emotion.", "parent": "b"}, {"id": "b4", "label": "Narcissistic", "detail": "Grandiosity, need for admiration, low empathy.", "parent": "b"}, {"id": "c", "label": "Cluster C: anxious", "detail": "Fearful and inhibited.", "parent": "r"}, {"id": "c1", "label": "Avoidant", "detail": "Avoids people from fear of rejection, longs for closeness.", "parent": "c"}, {"id": "c2", "label": "Dependent", "detail": "Needs to be cared for; clings; fears being alone.", "parent": "c"}, {"id": "c3", "label": "Obsessive-compulsive", "detail": "Perfectionism, control, rigidity.", "parent": "c"}], "caption": "Tap each box. Use the tree to learn the ten, but remember people rarely fit just one."}
+:::
 
 :::mnemonic Mad, bad and sad
 A rough, old shorthand: **Cluster A is "mad"** (odd, like a mild echo of psychosis), **Cluster B is "bad"** (dramatic and rule-breaking), **Cluster C is "sad"** (anxious and fearful). Use it only to remember, never to describe a person.
@@ -169,6 +177,10 @@ Q: Which pair is most often confused because both involve few relationships?
 {"prompt": "Here is one person's mood, rated every few hours over three days (0 is calm). What does this pattern suggest?", "series": [0, 2, -3, -1, 1, -4, 0, 2, -2, 3, -3, 0], "labels": ["Mon am", "Mon pm", "Tue am", "Tue pm", "Wed am", "Wed pm"], "options": ["A depressive episode", "A manic episode", "Rapid, reactive swings within hours, typical of borderline emotional instability", "Normal stable mood"], "answer": 2, "why": "The mood swings up and down many times within a day, usually after events such as an argument or a message. That reactive, hour-to-hour instability is typical of borderline personality. A depressive or manic episode would hold steady at a low or high level for days or weeks."}
 :::
 
+:::widget flow
+{"title": "The abandonment cycle in borderline personality", "layout": "cycle", "nodes": [{"id": "a", "label": "A trigger", "detail": "A late reply, a change of plan, a partner spending time with friends."}, {"id": "b", "label": "Fear of being left", "detail": "'He's going to leave me', felt as certain and unbearable."}, {"id": "c", "label": "Frantic effort", "detail": "Dozens of calls and messages, accusations, pleading."}, {"id": "d", "label": "Conflict", "detail": "The other person pulls back or gets angry."}, {"id": "e", "label": "Feared outcome seems confirmed", "detail": "Emptiness, rage or despair; self-harm may bring brief relief."}, {"id": "f", "label": "Belief strengthened", "detail": "'People always leave me', which makes the next trigger hit harder."}], "caption": "Press Play. Therapy works at every link: noticing triggers, checking the facts, tolerating the feeling, and asking for reassurance in safer ways."}
+:::
+
 :::example Two lives
 **Neha**, 22, a commerce student in Ahmedabad, has had stormy relationships since school. When her boyfriend does not answer calls, she panics, sends dozens of messages, then cuts her arm. She feels empty most days and has changed her course three times.
 
@@ -177,6 +189,10 @@ Q: Which pair is most often confused because both involve few relationships?
 
 :::widget guess
 {"prompt": "Among people diagnosed with borderline personality disorder and followed for ten years, about what percentage no longer met the criteria at some point (remission)?", "min": 0, "max": 100, "unit": "percent", "answer": [75, 95], "reveal": "Most of them: around 85 to 90 in 100 had a period of remission within ten years, and relapse after a long remission was uncommon. Impulsive behaviours such as self-harm improve fastest; feelings of emptiness and difficulties in work and relationships improve more slowly.", "clinician": "McLean Study of Adult Development (and 2012): 2-year remission 93%, 4-year sustained remission 78% by 16 years; recovery (remission plus good social and vocational functioning) about 50% to 60%. The Collaborative Longitudinal Personality Disorders Study found similar symptomatic improvement with persisting functional impairment."}
+:::
+
+:::widget brainmap
+{"title": "Emotion and control circuits studied in borderline personality", "focus": ["amygdala", "prefrontal", "hippocampus"], "notes": {"amygdala": "Reacts strongly and quickly to emotional faces and perceived rejection in many studies, part of the brain's alarm system.", "prefrontal": "Regions that calm and reappraise emotion often show weaker control signals, so feelings rise fast and settle slowly.", "hippocampus": "Smaller volumes are reported in some studies, possibly linked to early stress and trauma."}, "caption": "Tap each area. These are averages across groups that help explain emotional instability; they do not diagnose an individual."}
 :::
 
 :::safety Self-harm is a risk, not a nuisance
@@ -229,6 +245,10 @@ Babies differ from birth: some are easily upset and slow to calm, some cautious,
 
 ### Early experience and attachment
 Many people with personality disorders, especially borderline, report **childhood abuse, neglect, loss or chaotic care**. Not everyone with these experiences develops a disorder, and not everyone with a disorder had them. A powerful idea is the **invalidating environment**: a child whose emotions are repeatedly dismissed, punished or ignored ("Stop crying, it's nothing") does not learn to understand, trust or calm her own feelings.
+
+:::widget flow
+{"title": "The biosocial transaction over time", "layout": "cycle", "nodes": [{"id": "a", "label": "Sensitive temperament", "detail": "The child reacts strongly and takes longer to calm."}, {"id": "b", "label": "Strong emotion shown", "detail": "Crying, anger, fear."}, {"id": "c", "label": "Invalidating response", "detail": "'Stop overreacting', punishment, or being ignored."}, {"id": "d", "label": "Escalation", "detail": "Only extreme displays get attention, so the child learns to escalate, while not learning to name or soothe feelings."}, {"id": "e", "label": "More sensitivity", "detail": "Each round strengthens emotional reactivity and mistrust of one's own feelings."}], "caption": "Press Play. Neither the child nor the parent is to blame: it is the mismatch, repeated over years, that matters. DBT validation and skills break the cycle."}
+:::
 
 :::analogy A sensitive plant in harsh weather
 Imagine a plant that is naturally sensitive to cold. In a warm greenhouse it grows well. Left out in a harsh winter, it is damaged far more than a hardier plant would be. Temperament is the plant; the environment is the weather. Neither alone explains the damage.
@@ -404,6 +424,10 @@ Personality cannot be assessed in one rushed interview, especially when the pers
 {"scene": "Mr Iyer, 52, is admitted with severe depression. He is clingy, phones his wife a dozen times a day from the ward, asks the nurses to choose his meals, and says he 'can't do anything alone'. A trainee writes 'dependent personality disorder' in the notes.", "ask": "What is the best response?", "choices": [{"label": "Keep the diagnosis; the behaviour clearly fits", "verdict": "harm", "outcome": "The label follows him in his records for years. After recovery he is independent and runs his own business.", "why": "Dependency and indecision are common in severe depression. A personality diagnosis needs a long-standing pattern, ideally assessed when the person is well."}, {"label": "Treat the depression, and take a lifelong history from Mr Iyer and his wife; revisit personality only when he is well", "verdict": "best", "outcome": "His wife says he has always been confident and decisive. After recovery, the dependent behaviour disappears.", "why": "State (current illness) must be separated from trait (long-term pattern). Collateral history is key."}, {"label": "Ask him to complete a personality questionnaire today", "verdict": "ok", "outcome": "The questionnaire scores high on dependency and neuroticism, which reflects his depression more than his personality.", "why": "Self-report questionnaires completed during depression are distorted by the low mood."}]}
 :::
 
+:::widget flow
+{"title": "Separating state from trait", "layout": "chain", "nodes": [{"id": "a", "label": "Note the current picture", "detail": "Record behaviour as 'observed during the current episode'."}, {"id": "b", "label": "Take a lifetime history", "detail": "School, college, work, relationships, coping with past stress."}, {"id": "c", "label": "Get collateral", "detail": "Someone who has known the person for years: 'What were they like before?'"}, {"id": "d", "label": "Look for consistency", "detail": "Same pattern with different people and places since youth?"}, {"id": "e", "label": "Treat the episode", "detail": "Depression, mania, psychosis, intoxication."}, {"id": "f", "label": "Reassess when well", "detail": "Use structured interviews only when the person is in a stable state."}], "caption": "Press Play. Skipping steps is how people with depression get labelled 'dependent' for life."}
+:::
+
 ### Tools you may meet
 - **Structured interviews**: the Structured Clinical Interview for DSM-5 Personality Disorders (SCID-5-PD); the International Personality Disorder Examination (IPDE), developed with the World Health Organization and field-tested internationally, including in India.
 - **Screening questionnaires**: the SAPAS (8 questions, quick screen), the Personality Diagnostic Questionnaire (PDQ-4).
@@ -473,6 +497,10 @@ A pervasive **distrust and suspiciousness**. The person:
 - Suspiciousness; inappropriate or constricted emotion; odd appearance or behaviour.
 - No close friends; social anxiety that does not lessen with familiarity, linked to paranoid fears rather than self-criticism.
 
+:::widget flow
+{"title": "A suspicious patient: personality, delusion or psychosis?", "layout": "tree", "nodes": [{"id": "r", "label": "Long-standing suspicion of others", "detail": "Ask how fixed the belief is, how long it has lasted, and whether there are other psychotic symptoms."}, {"id": "p", "label": "Suspicious attitude, some flexibility, since youth", "detail": "Paranoid personality disorder.", "parent": "r"}, {"id": "d", "label": "One fixed false belief, otherwise well", "detail": "Delusional disorder (for example persecutory or jealous type).", "parent": "r"}, {"id": "s", "label": "Fixed beliefs plus hallucinations, disorganisation or decline", "detail": "Schizophrenia or another psychotic disorder.", "parent": "r"}, {"id": "c", "label": "Understandable mistrust", "detail": "Real discrimination, persecution or abuse: not a disorder.", "parent": "r"}], "caption": "Tap each branch."}
+:::
+
 :::trap Culture before odd beliefs
 Belief in spirit possession, the evil eye (nazar), astrology or the power of a guru's blessing is common and shared in many Indian communities. It is not schizotypal thinking. Ask: is the belief shared by the person's community, and does the person hold it in the same way they do?
 :::
@@ -517,6 +545,10 @@ Q: Which Cluster A disorder has the strongest genetic link with schizophrenia?
 
 ## 2.3 Cluster B: antisocial, histrionic and narcissistic [core][beginner]
 Cluster B disorders share **dramatic, emotional or erratic** behaviour. Borderline personality has its own section next.
+
+:::widget layers
+{"title": "Narcissism: what shows and what lies beneath", "shape": "iceberg", "layers": [{"label": "Above the surface: grandiosity", "detail": "Boasting, entitlement, need for admiration, contempt for others."}, {"label": "Just below: sensitivity to criticism", "detail": "Rage, sulking or collapse when admiration is withdrawn (narcissistic injury)."}, {"label": "Deeper: fragile self-worth", "detail": "Shame, emptiness, fear of being ordinary or worthless."}, {"label": "Deepest: early experience", "detail": "Often a history of conditional love, idealisation or neglect of the child's real feelings."}], "caption": "Tap each layer. Therapy that only confronts the surface often fails; empathic attention to the layers beneath builds the alliance."}
+:::
 
 ### Antisocial personality disorder
 A pattern of **disregard for, and violation of, the rights of others**, beginning in childhood or early adolescence as conduct disorder and continuing into adult life. Features include repeated law-breaking, lying and conning, impulsivity, irritability and fights, reckless disregard for safety, irresponsibility at work and with money, and **lack of remorse**. It is diagnosed only in adults, and only if conduct disorder was present before about fifteen.
@@ -579,6 +611,10 @@ You met the four areas of instability at the Starting level. Here you apply the 
 ### What often comes with it
 Most people with borderline personality disorder have at least one other condition: **depression** (very common), **anxiety disorders**, **PTSD and complex PTSD**, **substance use**, **eating disorders** (especially bulimia and binge eating), and **ADHD**. Treating these matters, but treating them alone without addressing the personality pattern often gives disappointing results.
 
+:::widget flow
+{"title": "Responding to a crisis call from someone with borderline personality", "layout": "tree", "nodes": [{"id": "r", "label": "Distressed call", "detail": "Listen and validate first. Then ask directly about intent, plan, means, and what has stopped them so far."}, {"id": "low", "label": "Distress, no intent or plan", "detail": "Work through the crisis plan and skills together; agree the next few hours; arrange routine follow-up.", "parent": "r"}, {"id": "mid", "label": "Thoughts with some planning or access to means", "detail": "Reduce means, involve a trusted person to stay, arrange urgent review within a day.", "parent": "r"}, {"id": "high", "label": "Clear intent, plan or recent overdose", "detail": "Emergency assessment now; medical care if anything was taken; a brief, focused admission if needed.", "parent": "r"}], "caption": "Tap each branch. Every call deserves a calm, structured risk assessment, not 'it's the usual'."}
+:::
+
 ### Good general care: what everyone should do
 Whatever the setting, these principles help:
 - **Validate first**: acknowledge feelings before problem-solving ("It makes sense you felt terrified when he left").
@@ -631,6 +667,10 @@ Cluster C disorders share **anxiety and fear**. They are the most common persona
 
 ### Avoidant personality disorder
 A pattern of **social inhibition, feelings of inadequacy and hypersensitivity to criticism**. The person avoids jobs that involve contact with people, will not get involved unless sure of being liked, holds back in close relationships for fear of shame, is preoccupied with criticism or rejection, feels inferior, and avoids new activities. Unlike schizoid people, they **long for relationships**. It overlaps heavily with social anxiety disorder; many experts see them as points on one continuum.
+
+:::widget flow
+{"title": "How avoidance keeps avoidant personality going", "layout": "cycle", "nodes": [{"id": "a", "label": "Belief", "detail": "'If people see the real me, they will reject me.'"}, {"id": "b", "label": "Avoid", "detail": "Turn down the invitation, the promotion, the date."}, {"id": "c", "label": "Short-term relief", "detail": "Anxiety drops at once."}, {"id": "d", "label": "No chance to learn otherwise", "detail": "The belief is never tested; skills and confidence fade; loneliness grows."}], "caption": "Press Play. CBT and schema therapy test the belief through graded steps towards people."}
+:::
 
 ### Dependent personality disorder
 A pervasive **need to be taken care of**, leading to submissive, clinging behaviour and fear of separation. The person cannot make everyday decisions without excessive advice, needs others to take responsibility for major areas of life, cannot express disagreement for fear of losing support, struggles to start projects alone, goes to great lengths to obtain support (even volunteering for unpleasant tasks), feels helpless alone, urgently seeks another relationship when one ends, and is preoccupied with fears of being left to care for themselves. They are at risk of staying in **abusive relationships**.
@@ -699,6 +739,10 @@ Many conditions can look like a personality disorder, and personality disorders 
 
 :::widget decide
 {"scene": "Mr Patel, 58, a temple trustee in Surat, has become rude, makes inappropriate sexual jokes, spends money impulsively, and eats sweets constantly over the past eighteen months. He used to be quiet and formal. His family say 'his true nature is finally showing' and ask whether this is a personality disorder.", "ask": "What is the best next step?", "choices": [{"label": "Agree it is a late-onset personality disorder and suggest therapy", "verdict": "harm", "outcome": "A year later he is unable to manage his affairs and is diagnosed with advanced frontotemporal dementia; the family's finances have suffered.", "why": "Personality disorders begin by early adulthood. New disinhibition, impulsivity and change in eating in mid-life point to a neurocognitive disorder."}, {"label": "Recognise a new personality change in later life and arrange neurological and cognitive assessment, including brain imaging", "verdict": "best", "outcome": "Imaging shows frontal and temporal atrophy. The family receives a diagnosis, plans for his finances, and gets carer support.", "why": "Behavioural variant frontotemporal dementia often presents with disinhibition, apathy, loss of empathy, compulsive behaviour and change in eating."}, {"label": "Start an antidepressant and review in a year", "verdict": "ok", "outcome": "Little change; the diagnosis is delayed.", "why": "Depression can change behaviour, but this pattern needs neurological assessment first."}]}
+:::
+
+:::widget flow
+{"title": "New personality change in adult life: think medical first", "layout": "tree", "nodes": [{"id": "r", "label": "Personality changed in adulthood", "detail": "Not a personality disorder by definition. Find the cause."}, {"id": "n", "label": "Neurological", "detail": "Frontotemporal dementia, head injury, stroke, brain tumour, epilepsy, Huntington's, multiple sclerosis.", "parent": "r"}, {"id": "i", "label": "Infection and inflammation", "detail": "Encephalitis (including autoimmune), HIV, neurosyphilis.", "parent": "r"}, {"id": "m", "label": "Metabolic and endocrine", "detail": "Thyroid, Cushing's, B12 deficiency, liver failure.", "parent": "r"}, {"id": "p", "label": "Psychiatric and substances", "detail": "Mania, depression, psychosis, alcohol, stimulants, cannabis.", "parent": "r"}], "caption": "Tap each branch. Examination, cognitive testing, bloods and brain imaging guide the search."}
 :::
 
 :::clinician
