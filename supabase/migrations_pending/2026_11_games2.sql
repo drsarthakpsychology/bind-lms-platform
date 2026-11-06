@@ -66,7 +66,7 @@ drop policy if exists "games2_teams_member_select" on public.games2_teams;
 create policy "games2_teams_member_select" on public.games2_teams
   for select using (
     public.is_admin()
-    or exists (select 1 from public.games2_team_members m where m.team_id = id and m.user_id = auth.uid())
+    or exists (select 1 from public.games2_team_members m where m.team_id = games2_teams.id and m.user_id = auth.uid())
   );
 
 -- 4. Ward Week team votes: one vote per member per decision step.
