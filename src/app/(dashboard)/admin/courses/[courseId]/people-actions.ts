@@ -102,7 +102,7 @@ export async function changeCohortMembership(courseId: string, userId: string, c
   }
   refresh(courseId);
   revalidatePath(`/admin/cohorts/${cohortId}`);
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }
 

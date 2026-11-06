@@ -183,7 +183,7 @@ export async function removeFromCohort(cohortId: string, userId: string): Promis
   const { error } = await createAdminClient().from("cohort_members").delete().eq("cohort_id", cohortId).eq("user_id", userId);
   if (error) return { error: error.message };
   refresh(cohortId);
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }
 
@@ -208,7 +208,7 @@ export async function setPersonCohorts(userId: string, cohortIds: string[]): Pro
     }
   }
   refresh();
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }
 
@@ -217,7 +217,7 @@ export async function setPersonScope(userId: string, scope: "full" | "lectures_o
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const { error } = await createAdminClient().from("profiles").update({ scope }).eq("id", userId);
   if (error) return { error: error.message };
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }
 
@@ -245,7 +245,7 @@ export async function setPersonLesson(userId: string, lessonId: string, granted:
     ? await admin.from("lesson_grants").upsert({ lesson_id: lessonId, user_id: userId, granted_by: me.id }, { onConflict: "lesson_id,user_id", ignoreDuplicates: true })
     : await admin.from("lesson_grants").delete().eq("user_id", userId).eq("lesson_id", lessonId);
   if (error) return { error: error.message };
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }
 
@@ -254,6 +254,6 @@ export async function reopenDetails(userId: string): Promise<Result> {
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const { error } = await createAdminClient().from("student_details").update({ confirmed_at: null }).eq("user_id", userId);
   if (error) return { error: error.message };
-  revalidatePath(`/admin/cohorts/student/${userId}`);
+  revalidatePath(`/admin/students/${userId}`);
   return { error: null };
 }

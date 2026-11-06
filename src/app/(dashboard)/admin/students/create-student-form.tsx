@@ -72,7 +72,7 @@ export function CreateStudentForm() {
               ) : null}
               <span className="block">
                 Or{" "}
-                <Link href="/admin/emails?tab=credentials" className="font-semibold text-link underline">
+                <Link href="/admin/students/logins" className="font-semibold text-link underline">
                   email them the setup link
                 </Link>
                 .

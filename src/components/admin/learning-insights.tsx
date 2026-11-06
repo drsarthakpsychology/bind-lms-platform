@@ -268,7 +268,7 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
               {data.perStudent.map((s) => (
                 <tr key={s.userId} className={cn("border-b border-foreground/10 last:border-0", s.daysInactive !== null && s.daysInactive > 7 && "bg-status-alert-bg")}>
                   <td className="px-3 py-2 font-sans">
-                    <Link href={`/admin/activity/${s.userId}`} className="font-bold text-link underline-offset-4 hover:underline">
+                    <Link href={`/admin/students/${s.userId}?tab=activity`} className="font-bold text-link underline-offset-4 hover:underline">
                       {s.name}
                     </Link>
                   </td>

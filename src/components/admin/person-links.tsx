@@ -6,12 +6,13 @@ import { cn } from "@/lib/utils";
  * The same row of links on every page about one person, so you can jump
  * between their access, activity, pipeline record, switches and mail.
  */
-export function PersonLinks({ userId, email, here }: { userId: string | null; email: string; here: "access" | "activity" | "people" | "switches" }) {
+export function PersonLinks({ userId, email, here }: { userId: string | null; email: string; here: "profile" | "access" | "activity" | "people" | "switches" }) {
   const links: [string, string, string][] = [
     ...(userId
       ? ([
-          ["access", "Access & cohorts", `/admin/cohorts/student/${userId}`],
-          ["activity", "Activity", `/admin/activity/${userId}`],
+          ["profile", "Student profile", `/admin/students/${userId}`],
+          ["access", "Access & login", `/admin/students/${userId}?tab=access`],
+          ["activity", "Activity", `/admin/students/${userId}?tab=activity`],
         ] as [string, string, string][])
       : []),
     ["people", "Pipeline record", `/admin/people/${personKey(email)}`],

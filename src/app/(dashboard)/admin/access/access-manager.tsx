@@ -234,7 +234,7 @@ export function AccessManager({
                 aria-label={`Tick ${r.email}`}
                 className="size-4 accent-[#1d44d8]"
               />
-              <Link href={`/admin/cohorts/student/${r.id}`} className="min-w-0 flex-1 basis-48">
+              <Link href={`/admin/students/${r.id}`} className="min-w-0 flex-1 basis-48">
                 <span className="block truncate text-sm font-bold hover:underline">{r.name || r.email.split("@")[0]}</span>
                 <span className="block truncate text-caption text-muted-foreground">{r.email}</span>
               </Link>

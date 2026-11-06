@@ -215,12 +215,12 @@ export default async function MailPage({
               <h1 className="mb-4 text-h1">New email</h1>
               <ComposeTab
                 adminEmail={adminProfile?.email ?? ""}
-                initialTo={sp.to ? [sp.to] : []}
+                initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []}
                 templates={EMAIL_TEMPLATES.map((t) => ({ id: t.id, label: t.label, defaultSubject: t.defaultSubject, hint: t.hint }))}
               />
             </div>
           ) : folder === "notify" ? (
-            <NotifyTab batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? [sp.to] : []} />
+            <NotifyTab batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []} />
           ) : folder === "failed" && !openSent ? (
             <FailedList items={failedItems} canWrite={canWrite} />
           ) : listFolder ? (
