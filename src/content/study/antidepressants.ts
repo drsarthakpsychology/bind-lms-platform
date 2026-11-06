@@ -1,5 +1,6 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
+import { qaBank } from "./antidepressants-qa";
 
 export const meta: ModuleMeta = {
   id: "antidepressants",
@@ -56,6 +57,17 @@ A neurotransmitter is a key. A receptor is a lock. Only the right key fits the r
 - An **antagonist** (a blocker) sits in the lock and turns nothing. It stops the real messenger working.
 
 One messenger can have many receptor types. Serotonin alone has more than a dozen (5-HT1A, 5-HT2A, 5-HT2C, 5-HT3 and others). Each sits in different places and does different jobs. This is why one medicine can help mood but upset the stomach: it is acting on serotonin receptors in both the brain and the gut.
+
+:::widget receptor
+{"receptor": "5-HT1A", "title": "Try each kind of key in a serotonin lock", "caption": "Tap each option and watch the signal bar. Serotonin itself is the full agonist. Buspirone, and the extra action of vilazodone and vortioxetine, are partial agonists here. Keep the inverse agonist in mind: it pushes a receptor below its resting level, which a plain blocker cannot do."}
+:::
+
+### Where serotonin comes from
+Almost all the serotonin in the brain is made by a small cluster of cells in the **brainstem**, called the **raphe nuclei**. Their long fibres spread upwards like the branches of a tree to nearly every part of the brain. So a medicine that changes serotonin at the raphe changes it in mood, fear, sleep and appetite circuits all at once.
+
+:::widget brainmap
+{"title": "One small source, many destinations", "focus": ["brainstem", "prefrontal", "amygdala", "hippocampus", "hypothalamus", "basal-ganglia"], "notes": {"brainstem": "The raphe nuclei make the brain's serotonin; the locus coeruleus nearby makes its noradrenaline. Antidepressants act first on the cell bodies here.", "prefrontal": "Planning, mood control and how we judge ourselves. Serotonin and noradrenaline here shape concentration and negative thinking.", "amygdala": "The alarm centre. In depression and anxiety it over-reacts to sad or threatening faces; antidepressants calm this bias within days.", "hippocampus": "Memory and the stress brake. Long stress shrinks its connections; antidepressants raise growth factors that help them regrow.", "hypothalamus": "Sleep, appetite, body clock and stress hormones. Many early changes on antidepressants (sleep, appetite) start here.", "basal-ganglia": "Reward and drive, through dopamine. Serotonin can damp this down, which may explain emotional blunting on SSRIs."}, "caption": "Tap each region. Notice that the same messenger does different jobs in different places, which is why benefits and side effects arrive together."}
+:::
 
 :::widget sort
 {"prompt": "Messenger, receptor, or medicine action? Place each card.", "buckets": ["A messenger (neurotransmitter)", "A receptor (the lock)", "What a medicine does"], "items": [{"text": "Serotonin", "bucket": 0}, {"text": "5-HT2C", "bucket": 1, "why": "5-HT2C is one of the serotonin receptor types. The letters and numbers name the lock, not the key."}, {"text": "Blocks the receptor so the real messenger cannot act", "bucket": 2, "why": "That is an antagonist."}, {"text": "Dopamine", "bucket": 0}, {"text": "Histamine H1", "bucket": 1}, {"text": "Turns the receptor on only part of the way", "bucket": 2, "why": "That is a partial agonist, like aripiprazole at dopamine receptors."}, {"text": "Noradrenaline", "bucket": 0}, {"text": "Muscarinic M1", "bucket": 1, "why": "M1 is an acetylcholine receptor. Blocking it causes dry mouth and confusion."}]}
@@ -139,6 +151,10 @@ A tablet swallowed in Chennai has a long journey before it reaches a receptor in
 Absorption is boarding the train. Distribution is travelling to every station, though only some passengers get through the strict gate at the brain station. Metabolism is the ticket inspector changing your ticket so you must get off. Excretion is leaving the station.
 :::
 
+:::widget journey
+{"drug": "sertraline", "target": "serotonin pumps (SERT) on serotonin nerve endings in the cortex and limbic system, and on the cell bodies in the raphe", "routes": ["oral"], "notes": {"mouth": "A 50 mg sertraline tablet is swallowed, ideally after breakfast or dinner. Food does not stop it working but makes nausea less likely.", "gut": "The tablet dissolves and sertraline passes slowly through the wall of the small intestine. Levels in the blood peak several hours later, not straight away.", "liver": "On its first pass, liver CYP enzymes (several of them share the work) turn part of the dose into a much weaker leftover. Because many enzymes share the job, one blocked enzyme rarely changes sertraline levels much.", "blood": "Most of the sertraline in the blood is stuck to proteins. Only the small free part can leave the blood. It also reaches platelets, where it blocks their serotonin pump too.", "bbb": "Sertraline is fat-soluble, so it slips through the tight wall of brain blood vessels easily.", "out": "Liver changes leave a product the kidneys can remove. Half the drug is gone in about a day, so one dose a day keeps levels steady."}, "caption": "Press Play and follow one dose from mouth to synapse. Then think: at which stops could another medicine, food or liver disease change how much arrives?"}
+:::
+
 ### Half-life: the one number to understand
 The **half-life** is the time it takes for the amount of medicine in the blood to fall by half. If a medicine has a half-life of one day, then a day after the last dose half is left; after two days a quarter; after three days an eighth.
 
@@ -146,6 +162,10 @@ Half-life tells you three practical things:
 - **How often to take it.** Short half-life: often twice a day. Long half-life: once a day is plenty.
 - **How long until it builds up.** With regular doses, the level climbs and then levels off. This plateau is called **steady state**.
 - **How long it takes to leave**, and how rough stopping may be. Short half-life medicines drop fast, and stopping them suddenly feels worse.
+
+:::widget curve
+{"kind": "half-life", "title": "Take a tablet every day and watch the level climb", "caption": "Slide the half-life. A short one (like venlafaxine) gives spiky levels that settle quickly and fall quickly. A long one (like fluoxetine) gives smooth levels that take a long time to settle and a long time to leave."}
+:::
 
 :::widget guess
 {"prompt": "With regular daily doses, how many half-lives does it take for a medicine to reach (nearly) steady state?", "min": 1, "max": 10, "unit": "half-lives", "answer": [4, 5], "reveal": "About 4 to 5 half-lives. After one half-life the level is half way to the plateau, after two it is three-quarters, after three seven-eighths, and after four or five it is close enough to call steady. The same rule tells you how long a medicine takes to wash out after stopping.", "clinician": "Accumulation follows 1 minus 0.5 to the power n, where n is the number of half-lives: 50%, 75%, 87.5%, 93.75%, 96.9%. Plasma levels drawn before about 4 to 5 half-lives after a dose change underestimate the eventual steady state."}
@@ -397,6 +417,10 @@ An SSRI blocks reuptake within hours, yet mood lifts more slowly. So the immedia
 The autoreceptor is a thermostat. The medicine first fights the thermostat, which turns the heater down. Once the thermostat is reset, the heater can warm the room.
 :::
 
+:::widget flow
+{"title": "From the first tablet to a lifted mood", "layout": "chain", "nodes": [{"id": "a", "label": "SERT blocked", "detail": "Within hours of the first dose, the serotonin pump is mostly blocked, both at nerve endings and around the cell bodies in the raphe."}, {"id": "b", "label": "Serotonin rises at the raphe", "detail": "Extra serotonin builds up first around the cell bodies, where 5-HT1A autoreceptors sit."}, {"id": "c", "label": "The brake bites", "detail": "The 5-HT1A autoreceptors sense the rise and slow the neurons' firing. Release in the cortex barely changes at first. Side effects from gut and spinal receptors arrive now."}, {"id": "d", "label": "The brake wears out", "detail": "With constant stimulation the autoreceptors desensitise and are reduced in number. Firing returns to normal while the pump is still blocked."}, {"id": "e", "label": "More release where it matters", "detail": "Now serotonin release in the prefrontal cortex, hippocampus and amygdala rises properly."}, {"id": "f", "label": "Genes and growth", "detail": "Changed signalling switches on genes such as BDNF. New dendritic spines and synapses grow; the hippocampus recovers some of what stress took."}, {"id": "g", "label": "Mood lifts", "detail": "Biased attention to bad news fades first, then sleep, energy and interest return, and mood follows."}], "edgeLabels": {"a>b": "hours", "c>d": "days to weeks", "e>f": "slow"}, "caption": "Press Play. The early steps explain the early side effects; the later steps explain the delay in benefit."}
+:::
+
 :::widget guess
 {"prompt": "At a good dose, if a patient has shown NO improvement at all, after how many weeks is it reasonable to say this medicine at this dose is unlikely to work?", "min": 1, "max": 12, "unit": "weeks", "answer": [3, 4], "reveal": "About 3 to 4 weeks with no improvement at all suggests that medicine at that dose will not work, so the plan should change (raise the dose or switch). If there is partial improvement, it is usually worth continuing longer, because response can keep building.", "clinician": "Non-improvement (under 20% reduction on a rating scale) at 2 to 4 weeks predicts non-response with high sensitivity. Partial response at 4 weeks: continue to 6 to 8 weeks before judging. In older adults, allow longer before deciding."}
 :::
@@ -566,6 +590,10 @@ Q: Why do SSRIs increase bleeding risk?
 - Useful in older adults, insomnia, poor appetite; little sexual dysfunction; safe in heart disease.
 - Rare low white cell count: report sore throat and fever.
 
+:::widget receptor
+{"receptor": "alpha-2", "title": "Mirtazapine at the brake receptor", "caption": "Noradrenaline normally acts as the full agonist at its own alpha-2 brake, telling the neuron to release less. Choose Antagonist: that is mirtazapine. The brake signal drops to background, so the neuron releases more noradrenaline, and more serotonin too, because alpha-2 brakes also sit on serotonin nerve endings."}
+:::
+
 :::student
 ### Typical adult daily doses (for learning; check current guidelines)
 | Medicine | Typical adult daily range |
@@ -717,6 +745,10 @@ Q: A patient on phenelzine eats aged cheese and develops a sudden severe headach
 | Vilazodone | SERT block plus 5-HT1A partial agonist | Take with food |
 | Esketamine | NMDA receptor antagonist | Nasal spray for treatment-resistant depression: see the Advanced level |
 
+:::widget receptor
+{"receptor": "5-HT1A", "title": "Vilazodone and vortioxetine: a pump blocker with a partial key", "caption": "Pick Partial agonist: that is vilazodone at 5-HT1A. Then pick Full agonist, which is closer to vortioxetine's action there. Both medicines block SERT and also switch on 5-HT1A receptors directly. The idea is to turn the autoreceptor brake down sooner, so release rises without waiting so long. Whether this truly speeds recovery is still argued."}
+:::
+
 :::student
 ### Typical adult daily doses (for learning; check current guidelines)
 | Medicine | Typical daily range |
@@ -825,6 +857,10 @@ SSRIs or SNRIs with: MAOIs (the most dangerous), **tramadol**, pethidine, fentan
 | Course | Usually settles quickly once drugs are stopped | Slower to resolve |
 | Blood tests | CK may rise in severe cases | **CK very high**, white cells raised, iron low |
 | Treatment | Stop drugs, benzodiazepines, cyproheptadine | Stop antipsychotic, cooling, fluids, benzodiazepines, dantrolene or bromocriptine |
+
+:::widget flow
+{"title": "Hot, confused and on psychiatric medicines: sorting it out", "layout": "tree", "nodes": [{"id": "r", "label": "Fever, confusion and abnormal muscles on psychiatric medicines", "detail": "Treat as a medical emergency first: airway, temperature, fluids, bloods including CK, sodium and glucose. Then use the examination to sort the cause."}, {"id": "q1", "label": "Clonus and very brisk reflexes, came on over hours", "parent": "r", "detail": "Neuromuscular excitement, worse in the legs. Look for a new serotonergic drug or dose rise."}, {"id": "q2", "label": "Lead-pipe rigidity everywhere, came on over days", "parent": "r", "detail": "Slow, stiff, mute, sweating, blood pressure swinging. Look for a dopamine blocker or a stopped Parkinson's medicine."}, {"id": "q3", "label": "Hot, dry, flushed, big pupils, full bladder, quiet bowel", "parent": "r", "detail": "Muscles normal. Look for stacked anticholinergic medicines."}, {"id": "ss", "label": "Serotonin syndrome", "parent": "q1", "detail": "Stop serotonergic drugs, benzodiazepines, cooling, cyproheptadine if moderate; intensive care if severe."}, {"id": "nms", "label": "Neuroleptic malignant syndrome", "parent": "q2", "detail": "Stop the antipsychotic, cool, fluids, benzodiazepines; dantrolene or bromocriptine in severe cases; watch kidneys."}, {"id": "ach", "label": "Anticholinergic toxicity", "parent": "q3", "detail": "Stop the culprits, catheterise if retained, cool; specialist physostigmine only in selected cases."}], "caption": "Tap each branch. The muscles and the speed of onset sort most cases before any blood test comes back."}
+:::
 
 :::widget decide
 {"scene": "Mr Khan, 45, in Hyderabad, takes escitalopram 20 mg and olanzapine 10 mg. He had dental surgery yesterday and was given tramadol. This evening he is agitated, sweating heavily, temperature 38.6 °C, pulse 124, with jerking at both ankles when the feet are flexed and very brisk reflexes. His pupils are large. The junior doctor says 'He's on olanzapine and has a fever: this is NMS, start bromocriptine.'", "ask": "What is the best interpretation and plan?", "choices": [{"label": "Agree it is NMS: stop olanzapine and give bromocriptine", "verdict": "harm", "outcome": "Bromocriptine adds dopamine and serotonin effects; his agitation and clonus worsen.", "why": "Fast onset after tramadol, clonus, hyperreflexia, sweating and large pupils point to serotonin syndrome, not NMS."}, {"label": "Serotonin syndrome from tramadol plus escitalopram: stop both, give fluids, cooling and a benzodiazepine, and consider cyproheptadine; monitor closely", "verdict": "best", "outcome": "Within a day his temperature and clonus settle. Escitalopram is restarted later; tramadol is listed as an interaction to avoid.", "why": "Rapid onset after a new serotonergic drug with neuromuscular excitation (clonus, hyperreflexia) is the signature of serotonin toxicity."}, {"label": "Give paracetamol and review in the morning", "verdict": "harm", "outcome": "His temperature rises overnight and he needs intensive care.", "why": "This is a medical emergency, and antipyretics do not treat muscle-generated heat."}]}
@@ -962,6 +998,14 @@ Q: A 15-year-old girl has moderate depression that has not improved with psychol
 4. **Combine** antidepressants, for example mirtazapine added to an SSRI or SNRI.
 5. Add or switch to an evidence-based **psychological therapy**.
 6. **ECT** for severe, psychotic, life-threatening or resistant depression; esketamine and rTMS where available (Advanced level).
+
+:::widget flow
+{"title": "Choosing how to switch", "layout": "tree", "nodes": [{"id": "s", "label": "Switching from one antidepressant to another", "detail": "First ask why: no response, side effects, or a new medical problem. The reason guides the next choice."}, {"id": "m", "label": "Is either drug an irreversible MAOI?", "parent": "s", "detail": "Phenelzine or tranylcypromine on either side changes every rule."}, {"id": "mw", "label": "Yes: full washout", "parent": "m", "detail": "Stop the first drug and wait. After fluoxetine the wait before an MAOI is long; after an irreversible MAOI, wait for the body to make new enzyme before any serotonergic drug."}, {"id": "f", "label": "No: is the old drug fluoxetine?", "parent": "s", "detail": "Its long-lived metabolite keeps working and keeps blocking CYP2D6 after the last dose."}, {"id": "fy", "label": "Yes: stop, short gap, start the new drug low", "parent": "f", "detail": "Fluoxetine tapers itself. Start the new drug at a low dose and watch for interactions and serotonin toxicity."}, {"id": "same", "label": "Same target (SSRI to SSRI, SSRI to SNRI)", "parent": "s", "detail": "Usually a direct switch or a short cross-taper: the new drug covers the old one, so discontinuation is mild."}, {"id": "diff", "label": "Different target (SSRI to mirtazapine, bupropion, agomelatine, a tricyclic)", "parent": "s", "detail": "Cross-taper: lower the old one in steps while the new one builds up. Watch for discontinuation as the old one falls, and for added side effects while both overlap."}], "caption": "Tap through the branches. Every switch has two dangers to watch: too much serotonin while both are on board, and discontinuation as the old drug leaves."}
+:::
+
+:::widget decide
+{"scene": "Ms Fernandes, 42, a nurse in Goa, has OCD and depression. Fluoxetine 40 mg for several months helped only a little. Her psychiatrist wants to move her to clomipramine. The resident writes: 'Stop fluoxetine tonight, start clomipramine 150 mg tomorrow.'", "ask": "What do you advise?", "choices": [{"label": "Follow the plan as written", "verdict": "harm", "outcome": "Within days she is shaky, sweating and confused, with a racing pulse. Her clomipramine level is several times the expected value, and her ECG shows a widened QRS.", "why": "Fluoxetine and norfluoxetine stay for weeks and strongly block CYP2D6, so clomipramine builds up. Two serotonergic drugs overlapping, at a full tricyclic dose from day one, risks both serotonin toxicity and tricyclic cardiotoxicity."}, {"label": "Stop fluoxetine, then start clomipramine at 25 mg after a gap, rise slowly, check an ECG and, where available, a clomipramine level, and warn her about serotonin toxicity", "verdict": "best", "outcome": "She tolerates the slow build-up. Her OCD improves over the following months on a moderate dose.", "why": "The switch respects fluoxetine's long tail: a low start, slow climb and monitoring cover the CYP2D6 interaction and the serotonergic overlap."}, {"label": "Keep fluoxetine and add clomipramine 150 mg on top", "verdict": "harm", "outcome": "She develops serotonin toxicity and is admitted.", "why": "Combining a strongly serotonergic tricyclic at full dose with an SSRI that raises its level is the worst of both options."}]}
+:::
 
 :::widget worked
 {"title": "Switching from an SSRI to another antidepressant", "steps": [{"q": "Rani has had no response to escitalopram 20 mg after a fair trial. You plan to switch to venlafaxine. What are the three ways to switch?", "a": "**Direct switch** (stop one, start the other the next day), **taper and switch** (reduce, then start), or **cross-taper** (reduce one while building the other)."}, {"q": "Which is usually chosen between two SSRIs, or from an SSRI to venlafaxine?", "a": "Often a **direct switch** or short cross-taper, because they act on the same target, so discontinuation is covered. Start the new drug at a low dose."}, {"q": "What must you watch for during any cross-taper of two serotonergic drugs?", "a": "**Serotonin syndrome** (both are on board) and **discontinuation symptoms** (as the old one falls)."}, {"q": "When is a cross-taper NOT allowed?", "a": "To or from an **irreversible MAOI**: a full washout is required. From **fluoxetine**, its long half-life means the new drug often starts low after a short gap, with extra care for interactions (CYP2D6) and serotonin toxicity."}], "yourTurn": [{"q": "A man on paroxetine 40 mg needs to switch to mirtazapine. Paroxetine causes bad discontinuation. Outline a safe plan.", "a": "Cross-taper: start mirtazapine 15 mg at night while reducing paroxetine slowly in steps; mirtazapine's 5-HT2A and 5-HT3 block may soften discontinuation. Watch for discontinuation symptoms and sedation; review regularly."}]}
@@ -1188,6 +1232,10 @@ Positron emission tomography (PET) studies show that the usual starting doses of
 - In **OCD**, higher doses help more, suggesting other mechanisms or targets.
 - When **tapering**, the last few milligrams change occupancy the most, which is why final steps must be smallest.
 
+:::widget curve
+{"kind": "dose-response", "title": "Potency, efficacy and the plateau", "caption": "Move the sliders. Potency shifts the curve left or right (how many milligrams you need). Efficacy sets how high it can climb. For SSRIs in depression we start close to the top of the curve already, which is why doubling the dose often adds side effects more than benefit."}
+:::
+
 :::widget worked
 {"title": "Why doubling the dose does not double the effect", "steps": [{"q": "A simple model: occupancy = dose divided by (dose plus D50), where D50 is the dose that gives 50% occupancy. Suppose D50 for an SSRI is 10 mg. What is the occupancy at 10 mg?", "a": "10 divided by (10 plus 10) = **50%**."}, {"q": "At 40 mg?", "a": "40 divided by 50 = **80%**. Four times the dose gave only 30 more percentage points."}, {"q": "At 80 mg?", "a": "80 divided by 90 = about **89%**. Doubling from 40 to 80 adds only 9 points."}, {"q": "Now taper from 10 mg to 5 mg, then 5 mg to 0. Which step drops occupancy more?", "a": "10 mg gives 50%; 5 mg gives 5 divided by 15, about 33%; 0 gives 0. The final step (33 to 0) is twice as big as the first (50 to 33). This is the arithmetic behind hyperbolic tapering."}], "yourTurn": [{"q": "With D50 of 10 mg, what dose gives 75% occupancy?", "a": "Occupancy 0.75 = dose divided by (dose plus 10), so dose = 30 mg."}]}
 :::
@@ -1295,6 +1343,14 @@ Classic antidepressants all work through monoamines. Since 2019, medicines that 
 ### Ketamine and esketamine: the glutamate surge
 - Ketamine blocks **NMDA receptors**, preferentially on inhibitory interneurons. The brake on pyramidal neurons is released, producing a burst of **glutamate**, which stimulates **AMPA** receptors, triggers **BDNF** release and the **mTOR** pathway, and leads to rapid growth of new synaptic connections.
 - **Esketamine** is the S-enantiomer of ketamine, given as a **nasal spray** in a clinic.
+
+:::widget flow
+{"title": "Ketamine: from a blocked channel to new synapses", "layout": "chain", "nodes": [{"id": "k1", "label": "NMDA block on interneurons", "detail": "Ketamine plugs the NMDA channel. Tonically firing GABA interneurons are hit hardest, so their brake on pyramidal neurons weakens."}, {"id": "k2", "label": "Glutamate surge", "detail": "Released from the brake, pyramidal neurons fire a burst of glutamate in the prefrontal cortex."}, {"id": "k3", "label": "AMPA receptors switch on", "detail": "The glutamate acts on AMPA receptors (the NMDA ones are blocked). Blocking AMPA in animals removes the antidepressant effect."}, {"id": "k4", "label": "BDNF release and mTOR signalling", "detail": "Calcium entry releases BDNF, which activates the mTOR pathway and protein synthesis at synapses."}, {"id": "k5", "label": "New spines within hours", "detail": "Dendritic spines lost under chronic stress regrow in the prefrontal cortex within about a day in animal studies."}, {"id": "k6", "label": "Rapid relief that fades", "detail": "Mood and suicidal thinking can ease within hours, but the new connections are fragile; without repeated dosing or other treatment, benefit usually fades within days."}], "caption": "Press Play. Compare this with the slow SSRI chain earlier: here the growth step comes first and fast."}
+:::
+
+:::widget journey
+{"drug": "esketamine or ketamine", "target": "NMDA receptors on GABA interneurons in the prefrontal cortex", "routes": ["nasal", "iv"], "notes": {"nose": "Each device sprays a small dose into both nostrils; the patient waits a few minutes between devices. The medicine soaks into the blood-rich lining of the nose, so the gut and much of the liver's first pass are skipped. Swallowed ketamine, by contrast, is largely destroyed by the liver.", "vein": "Racemic ketamine for depression is given as a slow drip into a vein over about 40 minutes, in a monitored setting. All of it reaches the blood.", "blood": "Levels rise within minutes. Dissociation and a rise in blood pressure peak soon after, which is why patients stay for observation.", "out": "The liver turns it into norketamine and other products, cleared over hours. The effect on mood outlasts the drug, because the synapses it helps grow remain for a while."}, "caption": "Switch between Nasal spray and Into a vein. Both skip the gut, which is the point: oral ketamine loses most of the dose on its first pass through the liver."}
+:::
 - Regulatory history (US FDA): approved 5 March 2019 for treatment-resistant depression together with an oral antidepressant; extended in 2020 to depression with acute suicidal ideation or behaviour; approved on 21 January 2025 as a stand-alone treatment for treatment-resistant depression. Approval and availability differ by country; check local status.
 - Typical regimen: 56 mg or 84 mg per session, given more often at first, then less often for maintenance. Each dose is supervised.
 - Side effects: **dissociation** (feeling unreal or detached), dizziness, sedation, nausea, **raised blood pressure**, and a potential for **misuse**. Not for people with uncontrolled hypertension, aneurysm or recent bleeding in the brain.
@@ -1308,13 +1364,20 @@ Classic antidepressants all work through monoamines. Since 2019, medicines that 
 :::
 
 ### Dextromethorphan with bupropion: kinetics used on purpose
-Dextromethorphan (the cough suppressant) is an NMDA antagonist and sigma-1 agonist, but it is cleared so fast by CYP2D6 that it barely acts. Combining it with **bupropion**, a strong CYP2D6 inhibitor, keeps its levels high. This combination was approved in the US on 18 August 2022 for major depressive disorder. It is a neat example of a pharmacokinetic interaction turned into a treatment. It carries bupropion's seizure risk and dextromethorphan's serotonergic risk.
+Dextromethorphan (the cough suppressant) is an NMDA antagonist and sigma-1 agonist, but it is cleared so fast by CYP2D6 that it barely acts. Combining it with **bupropion**, a strong CYP2D6 inhibitor, keeps its levels high. This combination was approved in the US on 18 August 2022 for major depressive disorder. It is a neat example of a pharmacokinetic interaction turned into a treatment. It carries bupropion's seizure risk and dextromethorphan's serotonergic risk. In April 2026 the same combination was also approved in the US for agitation in Alzheimer's dementia.
+
+### Antipsychotics as add-on treatments
+Several second-generation antipsychotics are approved in the US as add-ons to an antidepressant: aripiprazole, quetiapine extended release, brexpiprazole and, from November 2025, lumateperone. Their benefit is real but modest, and they bring akathisia, weight and metabolic risks, so they are chosen after weighing those costs.
 
 ### Neurosteroids: brexanolone and zuranolone
 - **Allopregnanolone** is a natural metabolite of progesterone. It is a **positive allosteric modulator of GABA-A receptors**, including the extrasynaptic receptors that give a steady, tonic calming current. Levels fall sharply after childbirth, one proposed contributor to postpartum depression.
 - **Brexanolone** is intravenous allopregnanolone, approved in the US in March 2019 for postpartum depression. It is given as a continuous infusion in hospital because it can cause excessive sedation and sudden loss of consciousness.
 - **Zuranolone** is an oral neuroactive steroid with the same action. The US FDA approved it on 4 August 2023 for **postpartum depression**, as the first oral medicine for that condition. It was **not** approved for major depressive disorder in general.
 - Zuranolone is taken once daily in the evening with fat-containing food, as a short fixed course. It carries a boxed warning about impaired driving. Effective contraception is advised during treatment.
+
+:::widget journey
+{"drug": "zuranolone and brexanolone", "target": "GABA-A receptors, including the extrasynaptic ones that set the brain's steady background calm", "routes": ["oral", "iv"], "notes": {"mouth": "Zuranolone capsules are taken in the evening with a meal that contains some fat.", "gut": "Fat in the meal clearly increases how much is absorbed, which is why the label insists on food.", "liver": "CYP3A4 does most of the work. Strong CYP3A4 blockers raise the level, so the dose is lowered; strong inducers such as rifampicin or carbamazepine drop it too far to work.", "vein": "Brexanolone is the same natural neurosteroid given as a continuous drip in hospital, because by mouth it would be destroyed quickly.", "blood": "Both are fat-soluble and largely protein-bound. Brexanolone is given with continuous oxygen monitoring because of the risk of sudden heavy sedation.", "out": "Zuranolone's half-life is long enough for once-a-day dosing, but sedation the next morning is common, so driving is not allowed for at least 12 hours after a dose."}, "caption": "Switch between Tablet and Into a vein. Same target, two very different journeys: a two-week home course versus a long hospital drip."}
+:::
 
 :::widget guess
 {"prompt": "How long is a single course of zuranolone for postpartum depression?", "min": 1, "max": 60, "unit": "days", "answer": [14, 14], "reveal": "14 days, taken once each evening. Improvement can appear within days, which is very different from classic antidepressants. Patients must not drive for at least 12 hours after each dose.", "clinician": "50 mg once daily in the evening with fat-containing food for 14 days; reduce to 40 mg if CNS depressant effects occur; 30 mg with strong CYP3A4 inhibitors; avoid CYP3A4 inducers. Boxed warning: no driving or hazardous activity for at least 12 hours after each dose. Brexanolone, by contrast, is a 60-hour continuous IV infusion with continuous pulse oximetry."}
@@ -1351,6 +1414,10 @@ Q: Zuranolone differs from SSRIs because it:
 ## 5.5 Treatment-resistant depression: the pathway [core][advanced]
 :::define Treatment-resistant depression (working definition)
 Depression that has not responded to **at least two adequate trials** of antidepressants (right dose, long enough, actually taken) in the current episode. Many services also stage resistance by how many treatments have failed, including augmentation and ECT.
+:::
+
+:::widget flow
+{"title": "The treatment-resistant depression pathway", "layout": "tree", "nodes": [{"id": "t0", "label": "Not better after a fair trial", "detail": "Use a rating scale to be sure. Partial response and no response lead to different next steps."}, {"id": "t1", "label": "Check for pseudo-resistance", "parent": "t0", "detail": "Wrong diagnosis (bipolar, psychotic, medical), missed doses, too low a dose or too short a time, alcohol or other substances, interacting drugs, ongoing abuse or stress."}, {"id": "t2", "label": "Partial response", "parent": "t0", "detail": "Something is working. Raise the dose if possible, then augment or combine rather than throw it away."}, {"id": "t2a", "label": "Augment", "parent": "t2", "detail": "Aripiprazole, quetiapine, brexpiprazole or lithium; in the US, lumateperone was added to this list in November 2025."}, {"id": "t2b", "label": "Combine", "parent": "t2", "detail": "Add mirtazapine to an SSRI or SNRI; or bupropion to an SSRI."}, {"id": "t3", "label": "No response at all", "parent": "t0", "detail": "Switch, often to a different class."}, {"id": "t4", "label": "Two or more failures, or severe and urgent", "parent": "t0", "detail": "Treatment-resistant depression. Consider ECT, esketamine, rTMS, a specialist review, and lithium if not yet tried. Psychological therapy runs alongside at every step."}], "caption": "Tap each branch. The tree shows the order of thinking, not a fixed timetable: severity and risk can move a person straight to the last branch."}
 :::
 
 ### The large studies, honestly
@@ -1520,6 +1587,9 @@ Why add bupropion to dextromethorphan? :: CYP2D6 inhibition keeps dextromethorph
 Mental Healthcare Act 2017 rule for ECT? :: Only modified ECT (anaesthesia and muscle relaxant).
 :::
 
+`;
+
+const p3 = String.raw`
 ## 4.3 Module test [core]
 :::mcq
 Q: A patient asks why his mood hasn't improved after 4 days on sertraline. The best answer is:
@@ -1720,4 +1790,4 @@ Q: Venlafaxine's noradrenaline effect:
 :::
 `;
 
-export const text = p1 + p2;
+export const text = p1 + p2 + qaBank + p3;
