@@ -19,7 +19,7 @@ const LEVEL: Record<Level, { label: string; tone: string; Icon: typeof BadgeChec
   weak: { label: "Weak", tone: "bg-status-alert-bg text-status-alert-fg", Icon: TriangleAlert },
 };
 
-export function DiagnosticRunner({ goal, goalName, questions: initial, saving }: { goal: PrepExam; goalName: string; questions: PrepQView[]; saving: boolean }) {
+export function DiagnosticRunner({ goal, goalName, questions: initial, saving }: { goal: PrepExam | null; goalName: string; questions: PrepQView[]; saving: boolean }) {
   // Frozen on first render, so a background refresh never swaps the questions mid-check.
   const [questions] = React.useState(initial);
   const [stage, setStage] = React.useState<"intro" | "quiz" | "sending" | "done">("intro");
@@ -65,7 +65,7 @@ export function DiagnosticRunner({ goal, goalName, questions: initial, saving }:
   if (!questions.length) {
     return (
       <div className={card}>
-        <p className="font-semibold">Questions for {goalName} are still being added.</p>
+        <p className="font-semibold">{goal ? `Questions for ${goalName} are still being added.` : "Questions are still being added."}</p>
         <p className="mt-1 text-muted-foreground">The starting check opens as soon as they land.</p>
       </div>
     );
@@ -81,7 +81,7 @@ export function DiagnosticRunner({ goal, goalName, questions: initial, saving }:
         <div className={cn(card, "space-y-4 hard-shadow-md")}>
           <ul className="space-y-2">
             <li className="flex gap-2">
-              <Clock className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions across the syllabus, about {Math.max(5, Math.round(questions.length))} minutes. No timer.
+              <Clock className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions {goal ? "across the syllabus" : "across every subject"}, easier first, about {Math.max(5, Math.round(questions.length))} minutes. No timer.
             </li>
             <li className="flex gap-2">
               <BadgeCheck className="mt-0.5 size-5 shrink-0" aria-hidden /> No marks and no rank. It builds your plan.
@@ -106,7 +106,7 @@ export function DiagnosticRunner({ goal, goalName, questions: initial, saving }:
           <h1 className="text-h1">
             {result.right} of {result.answered} right
           </h1>
-          <p className="text-muted-foreground">{saving ? "Your plan is ready. Weakest, biggest topics come first." : "Staff preview: nothing was saved."}</p>
+          <p className="text-muted-foreground">{saving ? (goal ? "Your plan is ready. Weakest, biggest topics come first." : "Your plan is ready. Weakest and most tested subjects come first.") : "Staff preview: nothing was saved."}</p>
         </header>
         <section aria-labelledby="profile" className={cn(card, "space-y-3")}>
           <h2 id="profile" className="text-h3">

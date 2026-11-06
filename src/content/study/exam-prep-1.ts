@@ -123,7 +123,7 @@ Sleep is part of studying. Memory is consolidated during sleep, and all-night re
 :::
 
 :::clinician
-Key evidence: Dunlosky and colleagues (Psychological Science in the Public Interest, 2013) rated practice testing and distributed practice as high utility, and rereading, highlighting and summarisation as low utility. Roediger and Karpicke (Psychological Science, 2006) demonstrated the testing effect; Cepeda and colleagues (Psychological Bulletin, 2006) reviewed spacing; Rohrer and Taylor showed interleaving benefits for discrimination between similar problem types, which is exactly what MCQ exams with look-alike options demand. The same principles underlie the platform's checkpoints and spaced re-tests.
+Key evidence: A 2013 review of ten common study techniques rated practice testing and distributed practice as high utility, and rereading, highlighting and summarisation as low utility. Roediger and Karpicke's 2006 experiments demonstrated the testing effect; a 2006 review of more than 300 experiments confirmed the benefit of spacing; Rohrer and Taylor showed interleaving benefits for discrimination between similar problem types, which is exactly what MCQ exams with look-alike options demand. The same principles underlie the platform's checkpoints and spaced re-tests.
 :::
 
 :::recall

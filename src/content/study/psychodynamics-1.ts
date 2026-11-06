@@ -98,7 +98,7 @@ Ritu, 19, develops a sudden weakness of her right hand on the morning of an engi
 :::
 
 :::clinician
-Drive theory (libido and aggression as the engines of mental life) has largely been set aside in mainstream practice, and Freud's specific developmental claims (fixed psychosexual stages, universal Oedipal fantasies, penis envy) have weak or no empirical support. What survived is broader. Westen's review "The scientific legacy of Sigmund Freud" (Psychological Bulletin, 1998) argued that several core propositions are well supported by cognitive and social psychology: much of mental life, including thought, feeling and motive, is unconscious; mental processes run in parallel and can conflict; stable personality patterns begin in childhood and shape later relationships; mental representations of self and others guide interactions; and development involves learning to regulate feelings and move from immature dependence to mature interdependence. Implicit memory, implicit attitudes and motivated reasoning are the experimental cousins of "the unconscious", although they are not the same thing as a dynamic unconscious that actively keeps material out of awareness. Teach Freud as a starting map, not a set of facts.
+Drive theory (libido and aggression as the engines of mental life) has largely been set aside in mainstream practice, and Freud's specific developmental claims (fixed psychosexual stages, universal Oedipal fantasies, penis envy) have weak or no empirical support. What survived is broader. Westen's 1998 review of Freud's scientific legacy argued that several core propositions are well supported by cognitive and social psychology: much of mental life, including thought, feeling and motive, is unconscious; mental processes run in parallel and can conflict; stable personality patterns begin in childhood and shape later relationships; mental representations of self and others guide interactions; and development involves learning to regulate feelings and move from immature dependence to mature interdependence. Implicit memory, implicit attitudes and motivated reasoning are the experimental cousins of "the unconscious", although they are not the same thing as a dynamic unconscious that actively keeps material out of awareness. Teach Freud as a starting map, not a set of facts.
 :::
 
 :::recall
@@ -158,7 +158,7 @@ The usefulness of this ladder is a simple question to ask yourself in session: *
 :::
 
 :::clinician
-Signal anxiety comes from Freud's revision in "Inhibitions, Symptoms and Anxiety" (1926), replacing his earlier "toxic" theory in which dammed-up libido turned into anxiety. Modern psychodynamic models of panic (for example the model underlying panic-focused psychodynamic psychotherapy, Milrod and colleagues, American Journal of Psychiatry 2007) emphasise conflicts around separation and autonomy and around anger, with panic attacks following unacknowledged angry feelings towards attachment figures. Note the practical point: an anxiety hierarchy of this kind is a hypothesis-generating tool, not a diagnostic test, and it does not replace screening for medical, substance and primary anxiety disorders.
+Signal anxiety comes from Freud's 1926 revision of his theory of anxiety, replacing his earlier "toxic" theory in which dammed-up libido turned into anxiety. Modern psychodynamic models of panic (for example the model underlying panic-focused psychodynamic psychotherapy, first tested in a 2007 randomised trial) emphasise conflicts around separation and autonomy and around anger, with panic attacks following unacknowledged angry feelings towards attachment figures. Note the practical point: an anxiety hierarchy of this kind is a hypothesis-generating tool, not a diagnostic test, and it does not replace screening for medical, substance and primary anxiety disorders.
 :::
 
 :::recall
@@ -345,7 +345,7 @@ Q: An inner expectation such as "people come when I need them" is called:
 Ego psychology moved the spotlight from the wild id to the **ego as the organ of adaptation**. Its question is not only "what is the conflict?" but "**how well is this person coping, and with what tools?**"
 
 ### The key contributors
-- **Anna Freud** systematised the defences in "The Ego and the Mechanisms of Defence" (1936) and described defences such as identification with the aggressor and altruistic surrender.
+- **Anna Freud** systematised the defences in 1936 and described defences such as identification with the aggressor and altruistic surrender.
 - **Heinz Hartmann** argued that much of the ego works without conflict (the **conflict-free sphere**: perception, memory, language, motor skill) and develops in an **average expectable environment**.
 - **George Vaillant** followed Harvard men across their adult lives and found that **mature defences predicted better health, work and relationships** decades later.
 
@@ -395,7 +395,7 @@ Rohan, 12, was bullied for a year. Now in a new school he mocks smaller boys in 
 :::
 
 :::clinician
-The Defense Mechanism Rating Scales (DMRS; Perry) code defences from transcripts and yield an Overall Defensive Functioning score, which tends to rise with successful dynamic therapy and correlates with symptom improvement (for example Perry and Bond, American Journal of Psychiatry 2012, in long-term dynamic psychotherapy). Vaillant's Grant Study findings ("Adaptation to Life", 1977; "Triumphs of Experience", 2012) are observational and based on a sample of privileged white American men, so treat their generality with caution. Ego strength is a clinical rather than a psychometric concept, but it is decisive in selection for brief expressive therapy versus supportive work: low reality testing, poor impulse control and unstable object relations point towards a more supportive, structured approach.
+The Defense Mechanism Rating Scales (DMRS; Perry) code defences from transcripts and yield an Overall Defensive Functioning score, which tends to rise with successful dynamic therapy and correlates with symptom improvement (for example in a 2012 study of long-term dynamic psychotherapy). Vaillant's Grant Study findings (reported in 1977 and again in 2012) are observational and based on a sample of privileged white American men, so treat their generality with caution. Ego strength is a clinical rather than a psychometric concept, but it is decisive in selection for brief expressive therapy versus supportive work: low reality testing, poor impulse control and unstable object relations point towards a more supportive, structured approach.
 :::
 
 :::recall
@@ -480,7 +480,7 @@ Kernberg's **borderline personality organisation** is a wide band that includes 
 :::
 
 :::clinician
-Kleinian "positions" are best taught as modes of experiencing rather than developmental claims about neonates, which are untestable. The clinical value lies in recognising splitting and projective identification in the countertransference, and in the move towards integration as a therapeutic aim. Kernberg's structural interview and the derived Structured Interview of Personality Organization (STIPO) operationalise identity, defences and reality testing; transference-focused psychotherapy (TFP) is the treatment built on this model (randomised comparison with DBT and supportive therapy, Clarkin and colleagues, American Journal of Psychiatry 2007, with all three improving and TFP showing more change in reflective function). The ICD-11 and DSM-5-TR Alternative Model level-of-personality-functioning dimension (self: identity, self-direction; interpersonal: empathy, intimacy) owes much to this tradition.
+Kleinian "positions" are best taught as modes of experiencing rather than developmental claims about neonates, which are untestable. The clinical value lies in recognising splitting and projective identification in the countertransference, and in the move towards integration as a therapeutic aim. Kernberg's structural interview and the derived Structured Interview of Personality Organization (STIPO) operationalise identity, defences and reality testing; transference-focused psychotherapy (TFP) is the treatment built on this model: a 2007 randomised comparison with DBT and supportive therapy found that all three improved, with TFP showing more change in reflective function. The ICD-11 and DSM-5-TR Alternative Model level-of-personality-functioning dimension (self: identity, self-direction; interpersonal: empathy, intimacy) owes much to this tradition.
 :::
 
 :::recall
@@ -571,7 +571,7 @@ Caregivers inevitably fail sometimes. If the failures are **small and repaired**
 :::
 
 :::clinician
-Kohut's later work ("The Restoration of the Self", 1977; "How Does Analysis Cure?", 1984) described mirror, idealising and twinship transferences, and a therapeutic sequence of understanding followed by explanation. Self psychology fed into intersubjective and relational schools (Stolorow, Mitchell), which treat the therapy as co-created by two subjectivities. Empirically, rupture-and-repair in the alliance is well supported as a process: a meta-analysis by Eubanks, Muran and Safran (Psychotherapy, 2018) found that repair of alliance ruptures is associated with better outcomes, across therapy models. This gives some empirical backing to Kohut's emphasis, though not to his developmental theory as such.
+Kohut's later work (1977 and 1984) described mirror, idealising and twinship transferences, and a therapeutic sequence of understanding followed by explanation. Self psychology fed into intersubjective and relational schools (Stolorow, Mitchell), which treat the therapy as co-created by two subjectivities. Empirically, rupture-and-repair in the alliance is well supported as a process: a 2018 meta-analysis found that repair of alliance ruptures is associated with better outcomes, across therapy models. This gives some empirical backing to Kohut's emphasis, though not to his developmental theory as such.
 :::
 
 :::recall
@@ -639,7 +639,7 @@ Parents' AAI categories predict their infants' Strange Situation classifications
   "unit": "%",
   "answer": [70, 80],
   "reveal": "About three quarters. That is high for psychology, but it also means about a quarter do not match, so attachment is not destiny.",
-  "clinician": "Van IJzendoorn's meta-analysis (Psychological Bulletin, 1995; 18 samples, n about 850) found roughly 75% correspondence for secure versus insecure classifications, with sensitivity accounting for only a modest part of the association, giving rise to the 'transmission gap'. Later work using larger, more diverse samples (Verhage and colleagues, Psychological Bulletin 2016) found a weaker but still significant association that has declined in more recent and high-risk samples. Teach it as a meaningful tendency, not a law."
+  "clinician": "A 1995 meta-analysis (18 samples, n about 850) found roughly 75% correspondence for secure versus insecure classifications, with sensitivity accounting for only a modest part of the association, giving rise to the 'transmission gap'. A 2016 meta-analysis using larger, more diverse samples found a weaker but still significant association that has declined in more recent and high-risk samples. Teach it as a meaningful tendency, not a law."
 }
 :::
 
@@ -657,7 +657,7 @@ The AAI (developmental, interview, scores **coherence of narrative** about paren
 :::
 
 :::clinician
-Clinically relevant findings: disorganised infant attachment is over-represented in maltreated samples and predicts later dissociative symptoms and externalising problems, but it is not a diagnosis and many disorganised infants have not been maltreated (frightened or frightening parental behaviour, unresolved parental loss). Attachment-based interventions with good evidence include video-feedback to promote positive parenting (VIPP-SD) and Attachment and Biobehavioral Catch-up (ABC). Mentalization-based treatment (Bateman and Fonagy; randomised trials in borderline personality disorder, American Journal of Psychiatry 1999 and 2009) translates attachment and mentalising theory into therapy. Indian data are limited and mostly questionnaire-based; joint families and multiple caregivers mean the "primary attachment figure" may be a grandmother or aunt, and many measures were normed in Western samples, so interpret cautiously.
+Clinically relevant findings: disorganised infant attachment is over-represented in maltreated samples and predicts later dissociative symptoms and externalising problems, but it is not a diagnosis and many disorganised infants have not been maltreated (frightened or frightening parental behaviour, unresolved parental loss). Attachment-based interventions with good evidence include video-feedback to promote positive parenting (VIPP-SD) and Attachment and Biobehavioral Catch-up (ABC). Mentalization-based treatment (developed by Bateman and Fonagy and tested in randomised trials in borderline personality disorder in 1999 and 2009) translates attachment and mentalising theory into therapy. Indian data are limited and mostly questionnaire-based; joint families and multiple caregivers mean the "primary attachment figure" may be a grandmother or aunt, and many measures were normed in Western samples, so interpret cautiously.
 :::
 
 :::recall
@@ -757,7 +757,7 @@ Psychiatrist J. S. Neki described the **guru-chela** (teacher-disciple) relation
 :::
 
 :::clinician
-Empirical work supports parts of this framework. In the transference literature, Høglend and colleagues' First Experimental Study of Transference interpretations (American Journal of Psychiatry, 2008) randomised patients in dynamic therapy to sessions with or without moderate transference interpretation; patients with poor object relations benefited more from transference work, contrary to the conventional expectation. Countertransference management (self-insight, self-integration, anxiety management, empathy, conceptualising skill) is associated with better outcomes, and acting out countertransference with worse (Hayes, Gelso and colleagues, meta-analysis in Psychotherapy, 2018). Resistance in the motivational interviewing literature is reframed as "sustain talk" and "discord", which overlaps with the psychodynamic concept and shows that confrontational styles increase it (Miller and Rollnick).
+Empirical work supports parts of this framework. In the transference literature, the First Experimental Study of Transference interpretations (FEST, 2008) randomised patients in dynamic therapy to sessions with or without moderate transference interpretation; patients with poor object relations benefited more from transference work, contrary to the conventional expectation. Countertransference management (self-insight, self-integration, anxiety management, empathy, conceptualising skill) is associated with better outcomes, and acting out countertransference with worse (a 2018 meta-analysis). Miller and Rollnick's motivational interviewing reframes resistance as "sustain talk" and "discord", which overlaps with the psychodynamic concept, and its research shows that confrontational styles increase it.
 :::
 
 :::recall
@@ -803,7 +803,7 @@ Q: Ego psychology's main focus is:
 - Brain chemistry
 > Ego psychology shifted attention to adaptation.
 
-Q: Who wrote "The Ego and the Mechanisms of Defence" (1936)?
+Q: Who systematised the ego's defence mechanisms in 1936 and described identification with the aggressor?
 - Melanie Klein
 - *Anna Freud
 - Heinz Hartmann

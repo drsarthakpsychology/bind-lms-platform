@@ -75,10 +75,11 @@ export async function saveGoal(userId: string, goal: PrepExam, now = new Date())
   return safe(db.from("prep_profile").upsert({ user_id: userId, goal, updated_at: now.toISOString() }, { onConflict: "user_id" }));
 }
 
-export async function saveDiagnostic(userId: string, goal: PrepExam, result: DiagnosticResult, now = new Date()): Promise<boolean> {
+/** Store the starting check. With no goal (exam tracks off) a stored goal is left as it was, for when tracks return. */
+export async function saveDiagnostic(userId: string, goal: PrepExam | null, result: DiagnosticResult, now = new Date()): Promise<boolean> {
   const db = admin();
   if (!db) return false;
-  return safe(db.from("prep_profile").upsert({ user_id: userId, goal, diagnostic: result, diagnostic_at: now.toISOString(), updated_at: now.toISOString() }, { onConflict: "user_id" }));
+  return safe(db.from("prep_profile").upsert({ user_id: userId, ...(goal ? { goal } : {}), diagnostic: result, diagnostic_at: now.toISOString(), updated_at: now.toISOString() }, { onConflict: "user_id" }));
 }
 
 /* ----------------------------------------------------- the model */

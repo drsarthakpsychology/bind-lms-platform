@@ -156,7 +156,7 @@ export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () =
 export function KeysHint({ mark = false }: { mark?: boolean }) {
   return (
     <p className="hidden text-caption text-muted-foreground lg:block">
-      Keys: <kbd className="font-mono">1</kbd>–<kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next{mark ? (
+      Keys: <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next{mark ? (
         <>
           {" "}· <kbd className="font-mono">M</kbd> mark for review
         </>

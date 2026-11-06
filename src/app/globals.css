@@ -685,10 +685,22 @@ video::-webkit-media-controls {
 .vibha-float-dot { animation: vibha-float-dot 2.6s var(--ease-snappy) var(--dl, 0s) infinite; }
 @keyframes vibha-dash { to { stroke-dashoffset: -16; } }
 .vibha-dash { animation: vibha-dash 0.9s linear infinite; }
+@keyframes vibha-ping { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(1.8); opacity: 0; } }
+.vibha-ping { transform-box: fill-box; transform-origin: center; animation: vibha-ping 1.4s var(--ease-out-expo) infinite; }
+@keyframes vibha-ap-slide { from { transform: translateX(0); } to { transform: translateX(216px); } }
+.vibha-ap-slide { animation: vibha-ap-slide 2.4s linear both; }
+@keyframes vibha-ap-jump {
+  0% { transform: translateX(0); } 16% { transform: translateX(44px); } 33% { transform: translateX(84px); }
+  50% { transform: translateX(124px); } 66% { transform: translateX(164px); } 83% { transform: translateX(204px); } 100% { transform: translateX(216px); }
+}
+.vibha-ap-jump { animation: vibha-ap-jump 0.8s steps(1, end) both; }
+@keyframes vibha-dock { from { transform: translateY(-34px); opacity: 0; } to { transform: none; opacity: 1; } }
+.vibha-dock { animation: vibha-dock 700ms var(--ease-out-expo) both; }
 @media (prefers-reduced-motion: reduce) {
   .vibha-pop, .vibha-draw { animation: none; stroke-dasharray: none; }
   .vibha-float-dot { animation: none; transform: translate(var(--dx), 96px); }
   .vibha-dash { animation: none; }
+  .vibha-ping, .vibha-ap-slide, .vibha-ap-jump, .vibha-dock { animation: none; }
 }
 
 /* --- Colour-blind mode (Settings → "Colour-blind friendly") ---
