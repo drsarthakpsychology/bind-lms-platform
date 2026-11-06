@@ -3,6 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { generateCredentialPdf } from "./pdf";
 import { newCredentialId, putCredentialAsset } from "./storage";
 import { notifyCredential } from "./notify";
+import { CUSTOM_SIGNATORY } from "./linkedin";
 
 /**
  * The monthly merit certificate (owner decision 38), issued by the monthly
@@ -55,6 +56,7 @@ export async function issueMeritCertificate(admin: SupabaseClient, achievementId
       heading: "Certificate of Merit",
       lead: "is recognised as a top performer for",
       description: input.detail,
+      signatory: CUSTOM_SIGNATORY,
     });
     key = await putCredentialAsset(`certificates/${credentialId}.pdf`, pdf, "application/pdf");
   } catch (e) {
