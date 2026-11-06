@@ -703,6 +703,10 @@ No single cause explains depression. Think **vulnerability plus stress**: genes 
 {"title": "Vulnerability plus stress", "shape": "iceberg", "layers": [{"label": "What everyone sees", "detail": "The episode: low mood, poor sleep, withdrawal. It usually begins after a stressor, such as a loss or a humiliation."}, {"label": "Current pressures", "detail": "Debt, conflict, caring duties, illness, no confidant. These lower the threshold."}, {"label": "Early experience", "detail": "Loss of a parent, neglect, abuse or a critical upbringing shape beliefs and tune the stress system."}, {"label": "Genes and biology", "detail": "Many small genetic effects, the stress-hormone system and brain plasticity set how much load a person can carry before an episode starts."}], "caption": "Tap each layer, from the surface down. The trigger is only the visible tip; treatment works on the layers beneath as well."}
 :::
 
+:::widget neuron
+{"title": "How a neuron fires", "myelinated": true, "caption": "Every idea in this module, from serotonin release to ketamine's glutamate burst, rests on this event. Slide the threshold: a neuron fires fully or not at all. Antidepressants do not make neurons fire 'more strongly'; they change how often they fire and how strongly the message is received."}
+:::
+
 ### Plasticity, stress hormones and sleep
 - **Neuroplasticity.** Chronic stress and depression lower **BDNF**, a growth factor that helps neurons keep and grow connections. The hippocampus (a memory area) is smaller in people with long or repeated depression. Antidepressants, ECT and exercise raise BDNF.
 - **The stress system (HPA axis).** The hypothalamus releases CRH, the pituitary releases ACTH, the adrenal glands release **cortisol**. In many depressed people this system is overactive and does not switch off normally.
@@ -1176,6 +1180,10 @@ Q: A woman with mild depression for a month, no risk, asks for "the strongest ta
 {"prompt": "In people who will respond to an antidepressant, by when does some improvement usually start to show?", "min": 0, "max": 8, "unit": "weeks", "answer": [1, 2], "reveal": "Usually within the first 1 to 2 weeks; full benefit builds over several more. The old idea that 'nothing happens for a month' is a myth. If there is no improvement at all after 3 to 4 weeks at a good dose, that medicine is unlikely to work at that dose, so the plan should change.", "clinician": "Pooled trial data show the fastest rate of improvement in weeks 1 to 2; in individual practice an effect is usually seen by week 2. No discernible improvement by week 3 to 4 at a therapeutic dose predicts non-response: increase the dose or switch. Partial improvement at week 4 may still become full response, so continue."}
 :::
 
+:::widget journey
+{"drug": "sertraline", "target": "serotonin transporters (SERT) on serotonin neurons from the raphe nuclei, which project to the cortex and limbic system", "routes": ["oral"], "notes": {"gut": "Sertraline is absorbed slowly; taking it with food raises absorption a little and eases early nausea.", "liver": "Several CYP enzymes (including CYP2C19 and CYP2B6) share its breakdown, so single-gene differences and interactions matter less than with fluoxetine or paroxetine.", "blood": "Most of it is bound to blood proteins. Its half-life is about a day, so once-daily dosing works and steady state comes within about a week.", "out": "Broken down in the liver to a weaker metabolite, then removed in urine and faeces."}, "caption": "Press Play and follow one tablet. Blocking SERT happens within hours of reaching the brain; the slow adaptations that lift mood come later."}
+:::
+
 ### Choosing a first antidepressant
 - **SSRIs first** for most people: effective, tolerable, safer in overdose.
 - **Sertraline** is a common first choice: well studied in heart disease and widely used around pregnancy and breastfeeding.
@@ -1393,6 +1401,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 6. **Treatment-resistant depression**: failure of **at least 2 adequate trials**. Options include ECT, esketamine nasal spray (where available), rTMS, and specialist combinations.
 
 :::clinician
+:::widget receptor
+{"receptor": "D2", "caption": "Aripiprazole, a common add-on in depression that has not responded, is a partial agonist at D2 receptors. Switch between full agonist, partial agonist and antagonist and watch the signal bar: a partial agonist steadies dopamine signalling, raising it where it is low and lowering it where it is high. That is why it causes restlessness (akathisia) more than sedation."}
+:::
+
 ### Augmentation doses (for learning; check current guidelines)
 | Option | Typical dose | Notes |
 |---|---|---|
@@ -1405,6 +1417,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 
 :::widget flow
 {"title": "When the first treatment fails", "layout": "chain", "nodes": [{"id": "a", "label": "Optimise", "detail": "A therapeutic dose, taken every day, for a fair trial. Many 'failures' are really low doses or missed tablets."}, {"id": "b", "label": "Recheck", "detail": "Is it bipolar? Psychotic? Alcohol? Thyroid? Ongoing abuse or debt? A personality factor?"}, {"id": "c", "label": "Switch", "detail": "To another SSRI, or another class: an SNRI, mirtazapine, bupropion or vortioxetine."}, {"id": "d", "label": "Augment", "detail": "Add lithium, an atypical antipsychotic such as aripiprazole or quetiapine, or thyroid hormone."}, {"id": "e", "label": "Combine", "detail": "Two antidepressants with different actions, such as an SSRI with mirtazapine."}, {"id": "f", "label": "Treatment-resistant care", "detail": "After at least two adequate trials: ECT, esketamine where available, rTMS, specialist combinations."}], "caption": "Keep the psychological therapy going at every step. No single next step has been shown to beat the others."}
+:::
+
+:::widget pathways
+{"system": "dopamine", "caption": "Psychotic depression is treated with an antidepressant plus an antipsychotic (or with ECT). Turn on D2 block, then add serotonin 2A block, and see each pathway: easing of delusions in the mesolimbic pathway, and the side effects that come from the other three."}
 :::
 
 ### Electroconvulsive therapy (ECT)
@@ -1769,6 +1785,10 @@ Q: Rumination in depression is most linked to overconnectivity of which network?
 
 :::widget guess
 {"prompt": "Zuranolone for postpartum depression is taken once daily for a short fixed course. How many days?", "min": 1, "max": 60, "unit": "days", "answer": [14, 14], "reveal": "Fourteen days, taken in the evening with food. Improvement was seen within days in trials. It carries a boxed warning about impaired driving.", "clinician": "US label: 50 mg once daily in the evening with fat-containing food for 14 days. Boxed warning: do not drive or use machinery for at least 12 hours after each dose. Side effects include sleepiness, dizziness and confusion. Use in breastfeeding needs individual discussion. Check current approvals in your country."}
+:::
+
+:::widget journey
+{"drug": "esketamine", "target": "NMDA glutamate receptors, especially on inhibitory interneurons in the prefrontal cortex", "routes": ["nasal", "iv"], "notes": {"nose": "Esketamine is sprayed into each nostril in a certified clinic. It skips the gut and much of the liver's first pass, which is why a nasal dose works at all: swallowed ketamine is heavily broken down by the liver.", "vein": "Research and off-label ketamine is given as a slow intravenous infusion over about 40 minutes.", "blood": "Levels peak within minutes to an hour. Dissociation and a rise in blood pressure track the peak, so the person is observed for at least two hours.", "out": "Cleared by liver enzymes to norketamine and other metabolites, some of which may add to the antidepressant effect."}, "caption": "Switch between the nasal and intravenous routes. Fast entry explains the fast effect, and also why monitoring after each dose is essential."}
 :::
 
 ### Other newer antidepressants (US approvals)
