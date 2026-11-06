@@ -91,6 +91,10 @@ Withdrawal gets the substance out; relapse prevention keeps life moving forward.
 - **Disulfiram** blocks the breakdown of alcohol, so drinking causes a very unpleasant reaction (flushing, pounding heart, nausea, vomiting, low blood pressure). It works only if taken, so it helps most when someone (often a family member) supervises each dose. It is dangerous in heart disease and must never be given secretly.
 - **Baclofen, topiramate and gabapentin** are second-line options with some evidence.
 
+:::widget receptor
+{"receptor": "mu opioid", "title": "Why buprenorphine is safer, and why timing its first dose matters", "caption": "Set the receptor to full agonist (heroin, methadone), then switch to partial agonist (buprenorphine). Buprenorphine binds more tightly but signals less, so it caps respiratory depression and blocks extra heroin. If it is given while heroin is still on the receptors, the signal drops suddenly: precipitated withdrawal. That is why the first dose waits until withdrawal is visible."}
+:::
+
 ### Opioids
 **Opioid agonist treatment** (also called opioid substitution therapy, OST) replaces short-acting street opioids with a long-acting, prescribed opioid taken by mouth or under the tongue:
 - **Methadone**, a full agonist, taken as a daily liquid.
@@ -99,6 +103,10 @@ Withdrawal gets the substance out; relapse prevention keeps life moving forward.
 These are the most effective treatments for opioid dependence. They **halve the risk of death**, reduce HIV and hepatitis spread, crime and illicit use, and help people return to work and family.
 
 **Naltrexone** blocks opioids and can help highly motivated people after full detox, but adherence is often poor and overdose risk rises if it is stopped.
+
+:::widget journey
+{"drug": "buprenorphine-naloxone", "target": "mu opioid receptors, where buprenorphine binds tightly as a partial agonist", "routes": ["oral", "iv"], "notes": {"mouth": "The tablet or film is held under the tongue until it dissolves; buprenorphine is absorbed through the lining of the mouth. Swallowed, much of it would be lost in the liver.", "vein": "If the tablet is crushed and injected, the naloxone (which is poorly absorbed under the tongue) becomes active and blocks the opioid effect, discouraging injection.", "out": "A long half-life allows once-daily dosing, and even alternate-day dosing in some programmes."}, "caption": "Compare the sublingual route with injection. The naloxone partner only matters if the medicine is misused."}
+:::
 
 ### Tobacco
 Nicotine replacement, varenicline and bupropion (see section 2.6).
@@ -188,6 +196,10 @@ Listen for **change talk** (the person's own statements in favour of change) and
 {"scene": "Rakesh, 38, an auto-rickshaw driver in Jaipur, comes because his wife insisted. He says: 'Everyone drinks after work. It's only three or four quarters at night. My wife is just nagging. But yes, my chest was paining last week and the doctor said my pressure is high.'", "ask": "Which response best fits motivational interviewing?", "choices": [{"label": "'Three or four quarters is very heavy. You must stop now or you will have a heart attack.'", "verdict": "harm", "outcome": "Rakesh crosses his arms: 'You doctors exaggerate. My father drank more and lived to 80.' He does not return.", "why": "Warnings and confrontation provoke sustain talk and discord. He argues for drinking."}, {"label": "'Drinking with friends after work matters to you, and you're also worried about the chest pain and your blood pressure.'", "verdict": "best", "outcome": "Rakesh nods: 'Yes, my brother had a heart attack at 45. I don't want that.' He begins to talk about cutting down.", "why": "A double-sided reflection acknowledges both sides of his ambivalence and lets him hear his own reason for change, which he then expands."}, {"label": "'Why don't you just drink less?'", "verdict": "ok", "outcome": "He says it's not that easy. The conversation stalls.", "why": "A closed, advice-giving question invites 'yes, but'. Open questions and reflections work better."}]}
 :::
 
+:::widget flow
+{"title": "The stages of change", "layout": "cycle", "nodes": [{"id": "a", "label": "Precontemplation", "detail": "Not considering change. Raise doubt gently; give information without pressure."}, {"id": "b", "label": "Contemplation", "detail": "Thinking about it, ambivalent. Explore both sides; strengthen change talk."}, {"id": "c", "label": "Preparation", "detail": "Planning. Help set a date, a goal and a plan."}, {"id": "d", "label": "Action", "detail": "Making changes. Support skills, medicines, coping with craving."}, {"id": "e", "label": "Maintenance", "detail": "Keeping changes. Prevent relapse; build a life that does not need the substance."}, {"id": "f", "label": "Relapse", "detail": "Common. Learn from it and re-enter the cycle, often at contemplation or preparation."}], "caption": "Press Play. People go round the cycle several times; matching your approach to the stage helps."}
+:::
+
 ### The stages of change
 Prochaska and DiClemente described stages people move through, often more than once:
 1. **Precontemplation**: not considering change ("I don't have a problem").
@@ -258,6 +270,10 @@ Key principles:
 {"scene": "Leela, 32, from Chennai, has bipolar I disorder and alcohol use disorder. She has been admitted twice with mania after binges. Her community team says, 'We can't treat her bipolar disorder until she stops drinking.' The de-addiction centre says, 'We don't take people with mania.' She is currently drinking daily and her mood is rising.", "ask": "What is the best approach?", "choices": [{"label": "Wait until she stops drinking before treating her mood disorder", "verdict": "harm", "outcome": "She becomes fully manic, spends her savings and is admitted under the Mental Healthcare Act.", "why": "Untreated bipolar disorder fuels drinking and vice versa. Withholding treatment helps neither."}, {"label": "Offer integrated care: treat the bipolar disorder now (a mood stabiliser and close monitoring), offer motivational work and relapse-prevention medicine for alcohol, and coordinate one plan between teams", "verdict": "best", "outcome": "Her mood stabilises; with naltrexone and regular sessions her drinking falls sharply. She has no admissions in the following year.", "why": "Integrated treatment of both conditions together gives the best outcomes in dual diagnosis."}, {"label": "Refer her to a residential rehabilitation centre only", "verdict": "ok", "outcome": "She stops drinking there but relapses into mania after discharge because her mood disorder was not treated.", "why": "Rehabilitation helps, but must be combined with treatment of the mental illness."}]}
 :::
 
+:::widget flow
+{"title": "Dual diagnosis: why both conditions must be treated together", "layout": "cycle", "nodes": [{"id": "a", "label": "Mental illness symptoms", "detail": "Anxiety, low mood, voices, insomnia, mania."}, {"id": "b", "label": "Substance used to cope", "detail": "Alcohol to sleep, cannabis to calm down, stimulants for energy."}, {"id": "c", "label": "Short-term relief", "detail": "Symptoms ease for hours."}, {"id": "d", "label": "Longer-term worsening", "detail": "Withdrawal, rebound and direct effects worsen mood, anxiety and psychosis, and disrupt treatment."}], "caption": "Press Play. Treating only one side leaves the other to restart the cycle."}
+:::
+
 ### Special groups
 - **Adolescents**: early use predicts later addiction; involve families; focus on school, peers and skills.
 - **Women**: often hidden use, more stigma, faster physical harm from alcohol (the "telescoping" effect), and pregnancy-related needs. Women-only and child-friendly services improve access.
@@ -318,6 +334,11 @@ Addiction science is moving fast. At the Advanced level, you should be able to e
 - **New smoking-cessation medicines** such as cytisinicline are close to approval in some countries.
 
 ### New dangers
+
+:::widget curve
+{"kind": "dose-response", "title": "Potency: why fentanyl and nitazenes are so dangerous", "caption": "Shift the curve far to the left to model a very potent opioid. A tiny amount produces a maximal effect, so a few grains more can stop breathing. Contaminated supplies and unpredictable strength are what make these drugs deadly."}
+:::
+
 - **Synthetic opioids** such as **fentanyl** and the even stronger **nitazenes** have caused overdose epidemics in North America and parts of Europe. Contaminated supplies are a growing global risk.
 - **Xylazine**, an animal sedative mixed into fentanyl in the US, causes severe skin wounds and does not respond to naloxone.
 - **High-potency cannabis**: THC levels have risen steeply in many markets, increasing psychosis and dependence risks.
@@ -415,7 +436,10 @@ NDPS immunity for treatment seekers? :: Section 64A.
 2. Name five short-note topics from this module. || CIWA-Ar, COWS, Korsakoff's, disulfiram, buprenorphine induction, cannabis and psychosis, stages of change, gambling disorder, NDPS 64A.
 :::
 
-## 4.2 Module test [core]
+`;
+
+export const test = String.raw`
+## 4.5 Module test [core]
 :::mcq
 Q: Which group of substance use disorder criteria includes craving?
 - Social impairment

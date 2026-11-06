@@ -16,6 +16,10 @@ Most people who drink alcohol, smoke or try a drug do not become addicted. Subst
 In ordinary use, the person is driving with working brakes: they can slow down or stop when they decide to. In addiction, the accelerator is pressed harder (craving) and the brakes are worn (weaker control). The driver still matters, and can learn to drive more safely, but willpower alone is like pressing a brake pedal that is no longer connected properly.
 :::
 
+:::widget flow
+{"title": "How use can turn into addiction", "layout": "chain", "nodes": [{"id": "a", "label": "First use", "detail": "Curiosity, friends, a celebration, or to cope with stress or pain."}, {"id": "b", "label": "Repeated use", "detail": "The substance reliably changes feelings; the brain marks it as important."}, {"id": "c", "label": "Risky use", "detail": "Bigger amounts, more often, in riskier ways."}, {"id": "d", "label": "Harm", "detail": "Health, money, work and relationships begin to suffer."}, {"id": "e", "label": "Loss of control", "detail": "Craving, failed attempts to stop, use despite harm."}, {"id": "f", "label": "Dependence", "detail": "Tolerance and withdrawal; use to avoid feeling ill."}], "caption": "Press Play. Most people stop at the early steps. Help can begin at any step, and people can move back down the chain."}
+:::
+
 ### Addiction is not a moral failure
 Addiction changes how the brain's **reward** and **self-control** systems work. People with addiction often hate what they are doing and have tried many times to stop. Shaming them makes things worse: it pushes use underground, delays help and raises the risk of overdose. At the same time, people with addiction are not helpless; they can and do recover, most often with help.
 
@@ -72,6 +76,10 @@ The brain has a **reward system** that makes us repeat things that help us survi
 
 Every addictive substance raises dopamine in this system, often far more and far faster than natural rewards. The brain learns, powerfully, that this substance matters. Cues linked with the substance (a friend, a place, a time of day, the sound of a bottle opening) start to trigger dopamine and craving on their own.
 
+:::widget brainmap
+{"title": "The brain circuits addiction changes", "focus": ["basal-ganglia", "prefrontal", "amygdala", "hippocampus"], "notes": {"basal-ganglia": "Reward and habit. The nucleus accumbens marks substances as important; with repeated use, control shifts to habit circuits in the dorsal striatum.", "prefrontal": "Planning and stopping. Weaker control here makes it harder to resist urges, especially under stress.", "amygdala": "Stress and negative emotion. During withdrawal, stress systems here are overactive, so people use to stop feeling bad.", "hippocampus": "Memory of places, people and times linked with use, which become powerful triggers for craving."}, "caption": "Tap each area. Treatment aims at each circuit: medicines for reward and withdrawal, therapy for control and triggers."}
+:::
+
 :::analogy The highlighter pen
 Think of dopamine as a highlighter the brain uses on its to-do list. Food, friends and achievements get a yellow line. Addictive substances grab the pen and colour the whole page bright orange. Soon everything linked to them is highlighted, and the rest of life looks dull by comparison.
 :::
@@ -79,11 +87,19 @@ Think of dopamine as a highlighter the brain uses on its to-do list. Food, frien
 ### 2. Tolerance
 With repeated use, the brain adapts to the substance. The same amount has **less effect**, so the person needs **more** to get the same effect. A man who once felt drunk after two drinks can now drink a bottle and walk straight.
 
+:::widget receptor
+{"receptor": "mu opioid", "title": "Agonist, partial agonist and antagonist at the opioid receptor", "caption": "Pick each kind of drug. Heroin and methadone are full agonists (maximum signal, so overdose can stop breathing). Buprenorphine is a partial agonist (a ceiling on its effect, safer in overdose, and it can push heroin off the receptor and cause withdrawal if given too early). Naloxone and naltrexone are antagonists (no signal; they block or reverse opioids)."}
+:::
+
 ### 3. Withdrawal
 When the substance is stopped or reduced, the adapted brain is suddenly out of balance, and the person feels the **opposite** of what the substance did. Alcohol and sleeping pills calm the brain, so withdrawal brings shaking, anxiety, sweating, sleeplessness and, at worst, fits and confusion. Opioids relieve pain and cause constipation, so withdrawal brings aches, diarrhoea, runny nose and restlessness. Many people keep using mainly **to avoid withdrawal**, not for pleasure.
 
 :::widget sort
 {"prompt": "Tolerance, withdrawal or neither? Place each description.", "buckets": ["Tolerance", "Withdrawal", "Neither"], "items": [{"text": "Ramesh now needs half a bottle of whisky to feel what two pegs did five years ago", "bucket": 0}, {"text": "On waking, Suresh's hands shake and he feels sick and frightened until he has a drink", "bucket": 1}, {"text": "Fatima has yawning, runny nose, stomach cramps and goosebumps a day after her last heroin", "bucket": 1}, {"text": "Arjun's one cup of tea in the morning gives him the same lift it always has", "bucket": 2}, {"text": "Ravi uses three times as much 'brown sugar' as when he started to get any effect", "bucket": 0}, {"text": "Meena feels pleasantly relaxed after one glass of wine at dinner", "bucket": 2}]}
+:::
+
+:::widget curve
+{"kind": "dose-response", "title": "Tolerance shifts the dose-response curve", "caption": "Move the curve to the right to model tolerance: the same dose now gives a smaller effect, so more is needed. After a period without use (prison, hospital, detox), the curve shifts back to the left, which is why the old dose can then cause a fatal overdose."}
 :::
 
 ### Why stopping is hard even after withdrawal ends
@@ -146,6 +162,11 @@ India has one of the largest numbers of tobacco users in the world. **Smokeless 
 - **Injecting drug use** is concentrated in the north-east (Manipur, Mizoram, Nagaland), Punjab, Delhi and some cities. Shared needles spread **HIV and hepatitis C**.
 
 ### Others
+
+:::widget journey
+{"drug": "heroin", "target": "mu opioid receptors in the brainstem breathing centres, the reward system and pain pathways", "routes": ["iv", "nasal"], "notes": {"vein": "Injected heroin reaches the brain within seconds, giving an intense rush. Speed of arrival is a key reason injected and smoked drugs are so addictive.", "bbb": "Heroin crosses the blood-brain barrier faster than morphine, then is converted to morphine inside the brain.", "target": "In the brainstem, mu receptors control breathing; too much signal there is what kills in overdose."}, "caption": "Compare the injected route with absorption through the nose or lungs. The faster a drug arrives, the stronger the reward and the greater the overdose risk."}
+:::
+
 - **Sedatives** used without prescription: alprazolam, nitrazepam, clonazepam.
 - **Inhalants**: correction fluid ("whitener"), glue, petrol, paint thinner, often among street children and young adolescents.
 - **Stimulants**: methamphetamine in the north-east and Punjab, cocaine and MDMA in some metropolitan party scenes.
