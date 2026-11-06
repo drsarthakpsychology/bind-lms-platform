@@ -9,6 +9,8 @@ import { PART as p07 } from "./psychopathology-07";
 import { PART as p08 } from "./psychopathology-08";
 import { PART as p09 } from "./psychopathology-09";
 import { PART as p10 } from "./psychopathology-10";
+import { PART as p11 } from "./psychopathology-11";
+import { PART as p12 } from "./psychopathology-12";
 
 /** Question bank · psychopathology. Content lives in psychopathology-NN.ts part files. */
-export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10];
+export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12];
