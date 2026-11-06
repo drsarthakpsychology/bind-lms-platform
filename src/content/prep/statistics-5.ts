@@ -588,8 +588,13 @@ const D: Draft[] = [
     difficulty: 2,
     type: "numerical",
     stem: "For an independent t-test, the difference between means is 5 and the pooled SD is 10. What is Cohen's d, and how is it usually described?",
-    options: ["0.50, medium", "0.05, negligible", "2.00, very large", "0.50, small"],
-    answer: 0,
+    options: [
+      "2.00, very large",
+      "0.05, negligible",
+      "0.50, medium",
+      "0.50, small",
+    ],
+    answer: 2,
     explanation:
       "Step 1: d = (M₁ − M₂)/s_pooled = 5/10 = 0.50. Step 2: by Cohen's conventions, 0.2 is small, 0.5 medium and 0.8 large, so 0.50 is medium. It means the group means are half an SD apart. 0.05 moves the decimal point. 2.00 divides 10 by 5. 'Small' uses the wrong benchmark.",
     module: "exam-prep",

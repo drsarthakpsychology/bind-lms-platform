@@ -126,8 +126,13 @@ const D: Draft[] = [
     difficulty: 2,
     type: "numerical",
     stem: "A test has a mean of 40 and an SD of 6. Every score is doubled and then 5 is added. What are the new mean and SD?",
-    options: ["Mean 85, SD 12", "Mean 85, SD 17", "Mean 80, SD 12", "Mean 45, SD 6"],
-    answer: 0,
+    options: [
+      "Mean 45, SD 6",
+      "Mean 85, SD 17",
+      "Mean 80, SD 12",
+      "Mean 85, SD 12",
+    ],
+    answer: 3,
     explanation:
       "For Y = 2X + 5, the mean becomes 2(40) + 5 = 85, and the SD is multiplied only by the multiplier (|2| × 6 = 12), because adding a constant shifts every score equally and leaves the spread unchanged. SD 17 wrongly adds 5 to the SD. Mean 80 forgets the added 5. Mean 45 with SD 6 applies only the addition.",
     module: "exam-prep",
