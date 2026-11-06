@@ -86,8 +86,13 @@ const D: Draft[] = [
       "3. Scientific conclusions should not be based only on whether a p-value passes a specific threshold.",
       "4. A p-value does not measure the size of an effect or the importance of a result.",
     ],
-    options: ["1 and 3 only", "1, 3 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: [
+      "1 and 3 only",
+      "2, 3 and 4 only",
+      "1, 3 and 4 only",
+      "1, 2, 3 and 4",
+    ],
+    answer: 2,
     explanation:
       "Statements 1, 3 and 4 are principles 1, 3 and 5 of the ASA statement (Wasserstein & Lazar, 2016). Statement 2 contradicts principle 2, which says p-values do not measure the probability that the hypothesis is true, or that the data were produced by chance alone. The other principles are: proper inference needs full reporting and transparency, and a p-value alone is not a good measure of evidence. '1 and 3 only' leaves out the correct statement 4.",
     module: "exam-prep",

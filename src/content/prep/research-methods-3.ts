@@ -147,8 +147,13 @@ const D: Draft[] = [
       "3. For the same total sample size, cluster sampling usually gives more precise estimates than simple random sampling.",
       "4. In cluster sampling, only some clusters are selected, while in stratified sampling units are drawn from every stratum.",
     ],
-    options: ["1 and 2 only", "1, 2 and 4 only", "2, 3 and 4 only", "1, 3 and 4 only"],
-    answer: 1,
+    options: [
+      "1 and 2 only",
+      "1, 3 and 4 only",
+      "2, 3 and 4 only",
+      "1, 2 and 4 only",
+    ],
+    answer: 3,
     explanation:
       "Statement 1 is correct: homogeneous strata reduce sampling variance. Statement 2 is correct: clusters that each mirror the population lose little information. Statement 4 is correct: that is the structural difference between the two. Statement 3 is false: because people in the same cluster tend to resemble one another (intraclass correlation), cluster samples are usually less precise for a given n (design effect greater than 1). They are used for cost and practicality, not precision.",
     module: "exam-prep",
