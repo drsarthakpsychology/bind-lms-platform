@@ -284,13 +284,13 @@ function Build({ d }: { d: BuildData }) {
       <p className={label}>Build the diagnosis</p>
       <div className="mt-2 rounded-xl bg-muted p-3 text-[0.98rem] leading-relaxed"><Rich text={d.vignette} /></div>
       <p className="mt-3 text-sm"><span className="font-semibold">Rule: </span><Rich text={d.rule} /></p>
-      <div className="sticky top-16 z-10 mt-3 flex items-center gap-3 rounded-xl border-2 border-foreground bg-card px-3 py-2">
+      <div className="top-2 z-10 mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border-2 border-foreground bg-card px-3 py-2 tall:sticky md:top-[calc(var(--top-h)+0.5rem)]">
         <div className="flex gap-1" aria-hidden>
           {Array.from({ length: Math.max(d.need, count) }, (_, i) => (
             <span key={i} className={cn("size-3.5 rounded-full border-2 border-foreground transition-colors duration-base", i < count ? "bg-brand" : "bg-card")} />
           ))}
         </div>
-        <span className="text-sm font-semibold tabular-nums">{count} ticked · need {d.need}{d.needCore ? " incl. a core symptom" : ""}</span>
+        <span className="min-w-0 text-sm font-semibold tabular-nums">{count} ticked · need {d.need}{d.needCore ? " incl. a core symptom" : ""}</span>
         <span className={cn("ml-auto text-sm font-bold", meets ? "text-foreground" : "text-muted-foreground")}>{meets ? "Threshold met" : "Not yet"}</span>
       </div>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2">

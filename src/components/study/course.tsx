@@ -51,7 +51,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
         <span className="block text-xl font-bold leading-tight sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
-      <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
+      <span className="flex shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
         {next.kind === "done" ? "Review" : "Continue"} <ArrowRight className="size-4" aria-hidden />
       </span>
     </Link>
@@ -260,7 +260,7 @@ export function ModuleView({
 
   return (
     <div className="mx-auto max-w-4xl space-y-7 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/study" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> All modules
       </Link>
 
@@ -300,7 +300,7 @@ export function ModuleView({
             {due ? `Your next re-test is due on ${due}. It takes 20 minutes and doubles how much you keep.` : "All re-tests done. This module is in long-term memory."}
           </p>
           {nextModule ? (
-            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
+            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
               Start Module {nextModule.num}: {nextModule.title} <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : null}

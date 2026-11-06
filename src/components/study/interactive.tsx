@@ -180,7 +180,7 @@ export function TestRunner({
             {right} <span className="text-xl font-semibold">/ {items.length}</span>
           </p>
           <p className="mt-1 text-sm opacity-90">{right / items.length >= 0.8 ? "Strong. Look over the ones you missed, then move on." : "Go back to the sections behind the ones you missed, then re-test."}</p>
-          <button type="button" onClick={() => { setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex items-center gap-1.5 rounded-full border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
+          <button type="button" onClick={() => { setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
             <RotateCcw className="size-4" aria-hidden /> Try again
           </button>
         </div>
