@@ -26,7 +26,7 @@ const D: Draft[] = [
     options: ["6", "8", "9", "10"],
     answer: 1,
     explanation:
-      "Mean = ΣX/N = (4 + 8 + 6 + 10 + 12)/5 = 40/5 = 8. 10 is the mean of the three largest scores. 9 is halfway between the median (8) and the largest score, which is not a statistic. 6 is one of the scores, not their average.",
+      "Step 1: add the scores: 4 + 8 + 6 + 10 + 12 = 40. Step 2: divide by the number of scores, N = 5: 40/5 = 8. So the mean is 8. 10 is the mean of only the three largest scores (8, 10, 12). 6 is one of the scores. 9 does not come from any standard calculation on these data.",
     module: "exam-prep",
     ref: "Garrett ch.2",
   },
@@ -143,7 +143,7 @@ const D: Draft[] = [
     options: ["55", "56", "57", "58"],
     answer: 1,
     explanation:
-      "Combined mean = (n₁M₁ + n₂M₂)/(n₁ + n₂) = (20 × 50 + 30 × 60)/50 = (1000 + 1800)/50 = 56. 55 is the unweighted average of the two means, which is wrong because the sections differ in size. 57 and 58 over-weight Section B.",
+      "Step 1: find each section's total: Section A = 20 × 50 = 1000; Section B = 30 × 60 = 1800. Step 2: add the totals: 1000 + 1800 = 2800. Step 3: divide by all 50 students: 2800/50 = 56. 55 is the simple average of the two means, which is wrong because the sections are of different sizes; the larger Section B must pull the combined mean towards 60. 57 and 58 give Section B too much weight.",
     module: "exam-prep",
     ref: "Garrett ch.2",
   },
@@ -168,12 +168,12 @@ const D: Draft[] = [
     difficulty: 3,
     type: "passage",
     passage:
-      "Frequency distribution of scores (N = 40): 10–19: 5; 20–29: 8; 30–39: 12; 40–49: 10; 50–59: 5. The class interval is 10, and exact limits are used (e.g., 29.5–39.5).",
+      "Frequency distribution of scores (N = 40): 10 to 19: 5; 20 to 29: 8; 30 to 39: 12; 40 to 49: 10; 50 to 59: 5. The class interval is 10, and exact limits are used (e.g., 29.5 to 39.5).",
     stem: "What is the median?",
     options: ["33.67", "34.50", "35.33", "36.17"],
     answer: 2,
     explanation:
-      "N/2 = 20. The cumulative frequencies are 5, 13, 25…, so the median class is 30–39 (exact lower limit L = 29.5), with F = 13 below it and f = 12 in it. Median = L + [(N/2 − F)/f] × i = 29.5 + (7/12)(10) = 29.5 + 5.83 = 35.33. 34.50 is the class midpoint. 36.17 is the grouped mode. 33.67 uses the wrong cumulative frequency.",
+      "N/2 = 20. The cumulative frequencies are 5, 13, 25…, so the median class is 30 to 39 (exact lower limit L = 29.5), with F = 13 below it and f = 12 in it. Median = L + [(N/2 − F)/f] × i = 29.5 + (7/12)(10) = 29.5 + 5.83 = 35.33. 34.50 is the class midpoint. 36.17 is the grouped mode. 33.67 uses the wrong cumulative frequency.",
     module: "exam-prep",
     ref: "Garrett ch.2",
   },
@@ -184,12 +184,12 @@ const D: Draft[] = [
     difficulty: 3,
     type: "passage",
     passage:
-      "Frequency distribution of scores (N = 40): 10–19: 5; 20–29: 8; 30–39: 12; 40–49: 10; 50–59: 5. The class interval is 10, and exact limits are used.",
+      "Frequency distribution of scores (N = 40): 10 to 19: 5; 20 to 29: 8; 30 to 39: 12; 40 to 49: 10; 50 to 59: 5. The class interval is 10, and exact limits are used.",
     stem: "Using Mode = L + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × i, what is the mode?",
     options: ["34.50", "35.33", "36.17", "37.00"],
     answer: 2,
     explanation:
-      "The modal class is 30–39 (f₁ = 12), with f₀ = 8 before it and f₂ = 10 after it. Mode = 29.5 + [(12 − 8)/(24 − 8 − 10)] × 10 = 29.5 + (4/6)(10) = 29.5 + 6.67 = 36.17. The mode lies above the class midpoint (34.50) because the next class (10) is larger than the previous one (8). 35.33 is the median. 37.00 is a miscalculation.",
+      "The modal class is 30 to 39 (f₁ = 12), with f₀ = 8 before it and f₂ = 10 after it. Mode = 29.5 + [(12 − 8)/(24 − 8 − 10)] × 10 = 29.5 + (4/6)(10) = 29.5 + 6.67 = 36.17. The mode lies above the class midpoint (34.50) because the next class (10) is larger than the previous one (8). 35.33 is the median. 37.00 is a miscalculation.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -222,7 +222,7 @@ const D: Draft[] = [
     options: ["2.00", "2.14", "4.00", "4.57"],
     answer: 0,
     explanation:
-      "The mean is 40/8 = 5. The squared deviations are 9, 1, 1, 1, 0, 0, 4, 16, summing to 32. σ² = 32/8 = 4, so σ = 2.00. 2.14 is the sample SD, √(32/7). 4.00 is the variance, not the SD. 4.57 is the sample variance (32/7).",
+      "Step 1: mean = (2 + 4 + 4 + 4 + 5 + 5 + 7 + 9)/8 = 40/8 = 5. Step 2: deviations from 5 are −3, −1, −1, −1, 0, 0, 2, 4. Step 3: squares are 9, 1, 1, 1, 0, 0, 4, 16, which add to 32. Step 4: population variance σ² = 32/8 = 4. Step 5: σ = √4 = 2.00. 2.14 is the sample SD, √(32/7). 4.00 is the variance, not the SD. 4.57 is the sample variance, 32/7.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -236,7 +236,7 @@ const D: Draft[] = [
     options: ["2.00", "2.67", "4.00", "8.00"],
     answer: 2,
     explanation:
-      "Mean = 5, and SS = (−2)² + 0² + 2² = 8, so s² = SS/(n − 1) = 8/2 = 4.00. 2.67 divides by n (8/3), which gives the population formula. 2.00 is the SD. 8.00 is the sum of squares itself.",
+      "Step 1: mean = (3 + 5 + 7)/3 = 5. Step 2: deviations are −2, 0 and +2. Step 3: sum of squares SS = 4 + 0 + 4 = 8. Step 4: sample variance s² = SS/(n − 1) = 8/2 = 4.00. 2.67 divides by n (8/3), which is the population formula. 2.00 is the standard deviation, √4. 8.00 is the sum of squares before dividing.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -250,7 +250,7 @@ const D: Draft[] = [
     options: ["10", "20", "35", "70"],
     answer: 0,
     explanation:
-      "Q = (Q3 − Q1)/2 = (45 − 25)/2 = 10. 20 is the interquartile range itself, before halving. 35 is the midpoint between the quartiles. 70 is their sum.",
+      "Step 1: interquartile range = Q3 − Q1 = 45 − 25 = 20. Step 2: the quartile deviation (semi-interquartile range) is half of this: Q = 20/2 = 10. It tells us that the middle 50% of scores spread about 10 points either side of the median in a symmetrical distribution. 20 is the IQR before halving. 35 is the midpoint between the quartiles. 70 is their sum.",
     module: "exam-prep",
     ref: "Garrett ch.3",
   },
@@ -402,7 +402,7 @@ const D: Draft[] = [
     options: ["35", "40", "45", "50"],
     answer: 2,
     explanation:
-      "IQR = 30 − 20 = 10. Upper fence = Q3 + 1.5 × IQR = 30 + 15 = 45. So a score of 48 would be shown as an outlier. 35 uses 0.5 × IQR. 40 uses 1 × IQR. 50 is Q3 + 2 × IQR. The lower fence would be 20 − 15 = 5.",
+      "Step 1: IQR = Q3 − Q1 = 30 − 20 = 10. Step 2: 1.5 × IQR = 15. Step 3: upper fence = Q3 + 15 = 30 + 15 = 45. Any value above 45, such as 48, is plotted as a separate point (an outlier). The lower fence is Q1 − 15 = 5. 35 uses 0.5 × IQR. 40 uses 1 × IQR. 50 uses 2 × IQR.",
     module: "exam-prep",
     ref: "Tukey 1977",
   },
@@ -513,7 +513,7 @@ const D: Draft[] = [
     options: ["1.30", "1.50", "2.00", "3.00"],
     answer: 2,
     explanation:
-      "z = (X − M)/SD = (130 − 100)/15 = 2.00. 1.30 divides X by 100. 1.50 divides 30 by 20. 3.00 divides 30 by 10. An IQ of 130 lies 2 SDs above the mean, at about the 98th percentile.",
+      "Step 1: z = (X − M)/SD. Step 2: X − M = 130 − 100 = 30. Step 3: 30/15 = 2.00. So an IQ of 130 lies 2 SDs above the mean, at about the 98th percentile. 1.30 divides X by 100 instead of finding the deviation. 1.50 divides 30 by 20. 3.00 divides 30 by 10.",
     module: "assessment",
     ref: "standard stats",
   },
@@ -527,7 +527,7 @@ const D: Draft[] = [
     options: ["34.13%", "68.26%", "95.44%", "99.72%"],
     answer: 1,
     explanation:
-      "The area between the mean and z = 1 is .3413, so ±1 SD covers 2 × 34.13 = 68.26%. 34.13% is only one side. 95.44% is ±2 SD, and 99.72% is ±3 SD.",
+      "The normal table gives an area of .3413 between the mean and z = +1. The curve is symmetrical, so the area between the mean and z = −1 is also .3413. Adding them: .3413 + .3413 = .6826, about 68.26%. 34.13% is only one side of the mean. 95.44% is the area within ±2 SD, and 99.72% within ±3 SD.",
     module: "assessment",
     ref: "Garrett ch.5",
   },
@@ -541,7 +541,7 @@ const D: Draft[] = [
     options: ["43.32", "56.68", "86.64", "93.32"],
     answer: 3,
     explanation:
-      "Percentile rank = 50 (the area below the mean) + 43.32 = 93.32. 43.32 forgets the lower half of the curve. 56.68 is 100 − 43.32. 86.64 doubles the area, which gives the proportion between −1.5 and +1.5.",
+      "Step 1: half the normal curve (50%) lies below the mean. Step 2: the table gives 43.32% between the mean and z = 1.5. Step 3: percentile rank = 50 + 43.32 = 93.32, so about 93% of people score lower. 43.32 forgets the lower half of the curve. 56.68 is 100 − 43.32, which mixes up the tails. 86.64 doubles the area, giving the proportion between −1.5 and +1.5.",
     module: "assessment",
     ref: "normal table",
   },
@@ -569,7 +569,7 @@ const D: Draft[] = [
     options: ["12", "38", "48.8", "62"],
     answer: 1,
     explanation:
-      "T = 50 + 10z = 50 + 10(−1.2) = 38. 62 ignores the negative sign. 48.8 adds z to 50 without multiplying by 10. 12 is 10 × 1.2, without adding the mean.",
+      "Step 1: T-scores have mean 50 and SD 10, so T = 50 + 10z. Step 2: 10 × (−1.2) = −12. Step 3: T = 50 − 12 = 38. The score is 1.2 SDs below the mean on either scale. 62 ignores the minus sign. 48.8 adds z to 50 without multiplying by 10. 12 forgets to add the mean.",
     module: "assessment",
     ref: "standard stats",
   },
@@ -583,7 +583,7 @@ const D: Draft[] = [
     options: ["55", "60", "65", "115"],
     answer: 1,
     explanation:
-      "First find z = (115 − 100)/15 = 1.0, then T = 50 + 10(1) = 60. Standard scores on different scales convert through z. 55 and 65 come from incorrect scaling. 115 is the original IQ, not a T-score.",
+      "Step 1: convert IQ to z: z = (115 − 100)/15 = 15/15 = 1.0. Step 2: convert z to a T-score: T = 50 + 10 × 1.0 = 60. Any standard score converts to another through z, because z is the common unit (SDs from the mean). 55 and 65 come from scaling wrongly (half or one and a half SDs). 115 is the original IQ, not a T-score.",
     module: "assessment",
     ref: "standard stats",
   },
@@ -678,7 +678,7 @@ const D: Draft[] = [
     options: ["59.0", "60.0", "62.8", "64.5"],
     answer: 2,
     explanation:
-      "X = M + z × SD = 50 + 1.28 × 10 = 62.8. 64.5 uses z = 1.645, the 95th percentile. 60.0 uses z = 1, which marks the 84th percentile. 59.0 uses z = 0.9, mistaking the percentile proportion for z.",
+      "Step 1: the 90th percentile leaves 90% of the curve below it, which corresponds to z ≈ 1.28. Step 2: X = M + z × SD = 50 + 1.28 × 10. Step 3: X = 50 + 12.8 = 62.8. 64.5 uses z = 1.645, the 95th percentile. 60.0 uses z = 1, which marks the 84th percentile. 59.0 uses z = 0.9, mistaking the proportion .90 for a z value.",
     module: "assessment",
     ref: "normal table",
   },
@@ -692,7 +692,7 @@ const D: Draft[] = [
     options: ["about 13.6%", "about 47.7%", "about 81.9%", "about 95.4%"],
     answer: 2,
     explanation:
-      "85 is z = −1 and 130 is z = +2. They lie on opposite sides of the mean, so add the areas: .3413 + .4772 = .8185, about 81.9%. 13.6% subtracts the areas. 47.7% counts only the upper part. 95.4% is the figure for ±2 SD.",
+      "Step 1: convert both scores to z. 85 gives (85 − 100)/15 = −1; 130 gives (130 − 100)/15 = +2. Step 2: they lie on opposite sides of the mean, so add the areas from the mean: .3413 + .4772 = .8185. Step 3: convert to a percentage: about 81.9%. 13.6% subtracts the two areas, which is only right when both z values are on the same side. 47.7% counts only the upper part. 95.4% is the area for ±2 SD.",
     module: "assessment",
     ref: "normal table",
   },
@@ -724,7 +724,7 @@ const D: Draft[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. Means average out individual extremes, so they vary less than single scores, by a factor of √n. For example, with σ = 15 and n = 25, sample means have an SD (standard error) of 3.",
+      "Both are true, and R explains A. A mean averages several scores, so unusually high and low scores tend to cancel out and means vary less than single scores. R puts a number on this: the spread of sample means (the standard error) is σ/√n. For example, with σ = 15 and n = 25, SE = 15/5 = 3, a fifth of the spread of individual scores.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -833,7 +833,7 @@ const D: Draft[] = [
     options: ["±1.645", "±1.96", "±2.33", "±2.58"],
     answer: 3,
     explanation:
-      "For α = .01 two-tailed, .005 is in each tail, so z = ±2.58 (more precisely 2.576). ±1.96 is for α = .05 two-tailed. ±2.33 is for α = .01 one-tailed (or .02 two-tailed). ±1.645 is for α = .05 one-tailed (or .10 two-tailed).",
+      "With α = .01 two-tailed, the 1% rejection region is split equally: .005 in each tail. The z that leaves .005 above it is about 2.58 (more precisely 2.576), so the critical values are ±2.58. ±1.96 is for α = .05 two-tailed (.025 per tail). ±2.33 is for α = .01 one-tailed. ±1.645 is for α = .05 one-tailed.",
     module: "exam-prep",
     ref: "normal table",
   },

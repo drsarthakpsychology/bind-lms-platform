@@ -54,7 +54,7 @@ const D: Draft[] = [
     options: [".10", ".20", ".33", ".50"],
     answer: 2,
     explanation:
-      "P(D | A) = P(A and D)/P(A) = .10/.30 = .333. .20 is the unconditional P(D), which would apply only if the disorders were independent. .50 is P(A | D) = .10/.20, the reverse conditional. .10 is the joint probability.",
+      "Step 1: conditional probability is P(D | A) = P(A and D)/P(A). Step 2: P(A and D) = .10 and P(A) = .30. Step 3: .10/.30 = .333. So one in three anxious patients is also depressed. .20 is the unconditional P(D), which would apply only if the disorders were independent. .50 is the reverse conditional, P(A | D) = .10/.20. .10 is the joint probability, not a conditional one.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -140,7 +140,7 @@ const D: Draft[] = [
     options: ["Mean 20, SD 4", "Mean 20, SD 16", "Mean 80, SD 4", "Mean 20, SD 2"],
     answer: 0,
     explanation:
-      "Mean = np = 100 × .20 = 20. Variance = npq = 100 × .20 × .80 = 16, so SD = 4. 'SD 16' reports the variance. 'Mean 80' uses q instead of p. 'SD 2' takes √4 twice.",
+      "Step 1: the binomial mean is np = 100 × .20 = 20. Step 2: the variance is npq, where q = 1 − p = .80: 100 × .20 × .80 = 16. Step 3: the SD is √16 = 4. 'SD 16' reports the variance instead of the SD. 'Mean 80' uses q instead of p. 'SD 2' takes the square root twice.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -182,7 +182,7 @@ const D: Draft[] = [
     options: ["24", "56", "336", "512"],
     answer: 1,
     explanation:
-      "C(8, 3) = 8!/(3! 5!) = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = 56. 336 is the number of ordered selections (permutations), which counts each committee 6 times. 24 is 8 × 3. 512 is 8³, which allows repeats.",
+      "Step 1: order does not matter, so use combinations: C(n, r) = n!/[r!(n − r)!]. Step 2: C(8, 3) = (8 × 7 × 6)/(3 × 2 × 1). Step 3: 336/6 = 56. 336 is the number of ordered selections (permutations); it counts each committee 3! = 6 times. 24 is 8 × 3. 512 is 8³, which would allow the same student to be picked more than once.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -214,7 +214,7 @@ const D: Draft[] = [
     options: [".008", ".200", ".488", ".600"],
     answer: 2,
     explanation:
-      "Use the complement: P(at least one) = 1 − P(none) = 1 − .80³ = 1 − .512 = .488. .600 simply adds .20 three times, which overcounts the overlaps. .008 is P(all three) = .20³. .200 is the probability for a single referral.",
+      "Step 1: 'at least one' is easiest through the complement: P(at least one) = 1 − P(none). Step 2: P(a referral is not urgent) = 1 − .20 = .80. Step 3: the referrals are independent, so P(none urgent) = .80 × .80 × .80 = .512. Step 4: 1 − .512 = .488. .600 adds .20 three times, which double-counts cases where two or three are urgent. .008 is P(all three urgent) = .20³. .200 is for a single referral.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -228,7 +228,7 @@ const D: Draft[] = [
     options: ["About .15", "About .41", "About .58", "About .80"],
     answer: 1,
     explanation:
-      "P(says Blue and is Blue) = .15 × .80 = .12. P(says Blue and is Green) = .85 × .20 = .17. P(Blue | says Blue) = .12/(.12 + .17) = .12/.29 ≈ .41. Tversky and Kahneman (1982) found that most people answer .80, ignoring the low base rate of Blue taxis (base-rate neglect). .15 is the base rate alone. .58 is the probability that the taxi was Green.",
+      "P(says Blue and is Blue) = .15 × .80 = .12. P(says Blue and is Green) = .85 × .20 = .17. P(Blue | says Blue) = .12/(.12 + .17) = .12/.29 ≈ .41. Tversky and Kahneman found that most people answer .80, ignoring the low base rate of Blue taxis (base-rate neglect). .15 is the base rate alone. .58 is the probability that the taxi was Green.",
     module: "exam-prep",
     ref: "Tversky & Kahneman 1982",
   },
@@ -242,7 +242,7 @@ const D: Draft[] = [
     options: [".135", ".271", ".500", ".865"],
     answer: 0,
     explanation:
-      "Poisson: P(X = k) = e^(−λ) λ^k/k!. For k = 0, P = e^(−2) = .135. .271 is P(X = 1) = 2e^(−2) (and also P(X = 2)). .865 is P(at least one call), 1 − .135. .500 has no basis.",
+      "Step 1: the Poisson formula is P(X = k) = e^(−λ) λ^k/k!. Step 2: for k = 0, λ^0 = 1 and 0! = 1, so P = e^(−2). Step 3: e^(−2) ≈ .135. So about one hour in seven will have no calls. .271 is P(X = 1) = 2e^(−2) (it is also P(X = 2)). .865 is P(at least one call), 1 − .135. .500 has no basis.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -256,7 +256,7 @@ const D: Draft[] = [
     options: [".30", ".36", ".40", ".60"],
     answer: 0,
     explanation:
-      "P = (3/5) × (2/4) = 6/20 = .30. Drawing without replacement changes the second probability. .36 = (3/5)², which is drawing with replacement. .60 is the probability that the first card is red. .40 has no basis in this calculation.",
+      "Step 1: P(first card red) = 3/5. Step 2: one red card is now gone, so 2 red cards remain out of 4: P(second red | first red) = 2/4. Step 3: multiply: (3/5) × (2/4) = 6/20 = .30. .36 = (3/5)², which would be right only with replacement. .60 is just the probability for the first card. .40 does not come from a correct calculation.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -328,7 +328,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "The binomial counts successes in n Bernoulli trials (III). The Poisson models rare-event counts per interval (I). The t distribution arises when (M − μ)/(s/√n) uses an estimated SD (IV), as in Gosset's 'Student' (1908). Chi-square with k df is the distribution of the sum of k squared z-variables (II). The distractors swap binomial with Poisson, or t with chi-square.",
+      "The binomial counts successes in n Bernoulli trials (III). The Poisson models rare-event counts per interval (I). The t distribution arises when (M − μ)/(s/√n) uses an estimated SD (IV), as in Gosset's 'Student'. Chi-square with k df is the distribution of the sum of k squared z-variables (II). The distractors swap binomial with Poisson, or t with chi-square.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -386,7 +386,7 @@ const D: Draft[] = [
     options: ["0.20", "0.25", "0.80", "4.00"],
     answer: 1,
     explanation:
-      "Odds = p/(1 − p) = .20/.80 = 0.25, that is, 1 to 4. 0.20 is the probability itself. 0.80 is the probability of not relapsing. 4.00 is the odds against relapse (.80/.20).",
+      "Step 1: odds = p/(1 − p). Step 2: p = .20, so 1 − p = .80. Step 3: odds = .20/.80 = 0.25, which can be read as '1 to 4': one relapse for every four non-relapses. 0.20 is the probability itself, not the odds. 0.80 is the probability of not relapsing. 4.00 is the odds against relapse, .80/.20.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -444,7 +444,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "β is the probability of failing to reject a false null hypothesis. α is the Type I error rate. 1 − α is the probability of correctly retaining a true null. 1 − β is power, the probability of correctly rejecting a false null.",
+      "β (beta) is the probability of a Type II error: failing to reject the null hypothesis when it is actually false, that is, missing a real effect. α is the probability of a Type I error (a false positive). 1 − α is the probability of correctly keeping a true null. 1 − β is power, the probability of correctly detecting a real effect.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -601,7 +601,7 @@ const D: Draft[] = [
     options: [".05", ".20", ".80", ".95"],
     answer: 2,
     explanation:
-      "Power = 1 − β = 1 − .20 = .80, the conventional minimum recommended by Cohen. .95 is 1 − α, the probability of correctly retaining a true null. .05 and .20 are the two error probabilities themselves.",
+      "Power is the probability of detecting an effect that is really there, which is 1 minus the probability of missing it: power = 1 − β = 1 − .20 = .80. This is the conventional minimum Cohen recommended. .95 is 1 − α, the probability of correctly keeping a true null. .05 and .20 are the two error probabilities themselves.",
     module: "exam-prep",
     ref: "Cohen 1988",
   },
@@ -630,7 +630,7 @@ const D: Draft[] = [
     options: ["76.08 to 83.92", "74.84 to 85.16", "78.00 to 82.00", "77.42 to 82.58"],
     answer: 1,
     explanation:
-      "CI = 80 ± 2.58 × 2 = 80 ± 5.16 = 74.84 to 85.16. 76.08 to 83.92 uses 1.96, which gives the 95% interval. 78 to 82 is ±1 SE. 77.42 to 82.58 forgets to multiply by the SE.",
+      "Step 1: a 99% interval uses z = 2.58. Step 2: margin of error = z × SE = 2.58 × 2 = 5.16. Step 3: interval = 80 ± 5.16, from 80 − 5.16 = 74.84 to 80 + 5.16 = 85.16. 76.08 to 83.92 uses 1.96, which gives a 95% interval. 78 to 82 is only ±1 SE. 77.42 to 82.58 forgets to multiply 2.58 by the SE.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -687,7 +687,7 @@ const D: Draft[] = [
     options: AR,
     answer: 3,
     explanation:
-      "R is true, and it is why A is false. Two CIs fail to overlap only when the means differ by about 1.96(SE₁ + SE₂), but significance needs only 1.96√(SE₁² + SE₂²), which is smaller. So the intervals can overlap moderately (with equal SEs, by up to about half an arm) while p < .05. Non-overlap is a conservative rule, and overlap does not mean non-significance (Cumming & Finch, 2005). So the correct option is 'A false, R true'.",
+      "R is true, and it is why A is false. Two CIs fail to overlap only when the means differ by about 1.96(SE₁ + SE₂), but significance needs only 1.96√(SE₁² + SE₂²), which is smaller. So the intervals can overlap moderately (with equal SEs, by up to about half an arm) while p < .05. Non-overlap is a conservative rule, and overlap does not mean non-significance. So the correct option is 'A false, R true'.",
     module: "exam-prep",
     ref: "Cumming & Finch 2005",
   },
@@ -808,7 +808,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "When power is low, only unusually large sample effects cross the significance threshold, so significant estimates are inflated, with a 'Type M' (magnitude) error, and occasionally have the wrong sign, a 'Type S' error (Gelman & Carlin, 2014). The 'winner's curse' explains d = 0.70 against a plausible true value of 0.30. Low power also lowers the probability that a significant result is true, so it is not only about Type II errors. A p-value is not the probability that H0 is false.",
+      "When power is low, only unusually large sample effects cross the significance threshold, so significant estimates are inflated, with a 'Type M' (magnitude) error, and occasionally have the wrong sign, a 'Type S' error. The 'winner's curse' explains d = 0.70 against a plausible true value of 0.30. Low power also lowers the probability that a significant result is true, so it is not only about Type II errors. A p-value is not the probability that H0 is false.",
     module: "exam-prep",
     ref: "Gelman & Carlin 2014; Button et al. 2013",
   },

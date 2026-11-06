@@ -30,7 +30,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Strength depends on the absolute value |r|, and the sign shows only direction. |−.85| = .85 is the largest, so it is the strongest relationship, even though it is negative. +.60 and −.40 are moderate, and +.05 is negligible.",
+      "The strength of a correlation is judged by its size ignoring the sign, |r|. The sign only shows direction: positive (both rise together) or negative (one rises as the other falls). |−.85| = .85 is the largest value here, so it is the strongest relationship. +.60 and −.40 are moderate, and +.05 is close to zero.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -44,7 +44,7 @@ const D: Draft[] = [
     options: ["7%", "49%", "70%", "84%"],
     answer: 1,
     explanation:
-      "The coefficient of determination is r² = .70² = .49, or 49%. 70% wrongly reads r as a proportion of variance. 84% is √.70. 7% misplaces the decimal point.",
+      "Step 1: the proportion of shared variance is the coefficient of determination, r². Step 2: .70² = .70 × .70 = .49. Step 3: as a percentage, 49%. So about half the variation in marks goes with variation in study hours, and about 51% is due to other factors. 70% wrongly treats r as a proportion of variance. 84% is √.70. 7% misplaces the decimal point.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -72,7 +72,7 @@ const D: Draft[] = [
     options: [".20", ".60", ".80", ".97"],
     answer: 2,
     explanation:
-      "ρ = 1 − 6Σd²/[n(n² − 1)] = 1 − (6 × 4)/(5 × 24) = 1 − 24/120 = .80. .97 forgets the 6 (1 − 4/120). .60 doubles the subtracted term. .20 is the subtracted term itself (24/120), not rho.",
+      "Step 1: Spearman's formula is ρ = 1 − 6Σd²/[n(n² − 1)]. Step 2: 6Σd² = 6 × 4 = 24. Step 3: n(n² − 1) = 5 × (25 − 1) = 5 × 24 = 120. Step 4: ρ = 1 − 24/120 = 1 − .20 = .80. .97 forgets the 6 (1 − 4/120). .60 doubles the subtracted term. .20 is the subtracted term itself, not rho.",
     module: "exam-prep",
     ref: "Garrett ch.6",
   },
@@ -86,7 +86,7 @@ const D: Draft[] = [
     options: [".33", ".40", ".60", ".93"],
     answer: 2,
     explanation:
-      "ρ = 1 − (6 × 66)/[10(100 − 1)] = 1 − 396/990 = 1 − .40 = .60. .40 is the subtracted term rather than ρ. .93 forgets the 6 (1 − 66/990). .33 is an arithmetic slip.",
+      "Step 1: ρ = 1 − 6Σd²/[n(n² − 1)]. Step 2: 6Σd² = 6 × 66 = 396. Step 3: n(n² − 1) = 10 × 99 = 990. Step 4: 396/990 = .40, so ρ = 1 − .40 = .60. .40 is the subtracted term, not ρ. .93 forgets the 6 (1 − 66/990). .33 is an arithmetic slip.",
     module: "exam-prep",
     ref: "Garrett ch.6",
   },
@@ -167,7 +167,7 @@ const D: Draft[] = [
     options: [".25", ".40", ".50", "1.00"],
     answer: 2,
     explanation:
-      "r_pb = (10/10) × √(.5 × .5) = 1 × .5 = .50. 1.00 forgets the √(pq) term. .25 uses pq instead of √(pq). .40 is a miscalculation. Point-biserial r is just Pearson r with one variable coded 0/1.",
+      "Step 1: mean difference M1 − M0 = 60 − 50 = 10. Step 2: divide by the SD of all scores: 10/10 = 1.0. Step 3: √(pq) = √(.5 × .5) = √.25 = .5. Step 4: r_pb = 1.0 × .5 = .50. 1.00 forgets the √(pq) term. .25 uses pq instead of √(pq). .40 is an arithmetic slip. The point-biserial r is simply Pearson's r with one variable coded 0 and 1.",
     module: "exam-prep",
     ref: "Guilford & Fruchter ch.14",
   },
@@ -341,7 +341,7 @@ const D: Draft[] = [
     options: ["1.2", "2.0", "12.0", "24.0"],
     answer: 2,
     explanation:
-      "cov(X, Y) = r × sx × sy = .50 × 4 × 6 = 12.0. 24.0 omits r. 2.0 is r × sx. 1.2 divides instead of multiplying. Because covariance depends on the units of measurement, r (a standardised covariance) is reported for strength.",
+      "Step 1: Pearson's r is the covariance divided by the product of the SDs, so the covariance is r × sx × sy. Step 2: sx × sy = 4 × 6 = 24. Step 3: cov = .50 × 24 = 12.0. 24.0 leaves out r. 2.0 is r × sx only. 1.2 divides instead of multiplying. Because covariance depends on the units of measurement, r, a standardised covariance, is reported for strength.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -409,7 +409,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 3,
     type: "mcq",
-    stem: "Anscombe's (1973) quartet consists of four datasets with nearly identical means, variances and correlations (r ≈ .82), yet their scatterplots look completely different: linear, curved, linear with one outlier, and vertical with one influential point. Its main lesson is that:",
+    stem: "Anscombe's quartet consists of four datasets with nearly identical means, variances and correlations (r ≈ .82), yet their scatterplots look completely different: linear, curved, linear with one outlier, and vertical with one influential point. Its main lesson is that:",
     options: [
       "Summary statistics can hide very different patterns, so data should always be plotted",
       "Correlation is always a reliable summary of a relationship",
@@ -464,7 +464,7 @@ const D: Draft[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. With r1y = .50, r2y = 0 and r12 = .50, R² = (.25 + 0 − 0)/(1 − .25) = .333, which is more than the .25 from predictor 1 alone. Predictor 2 'cleans' predictor 1 of criterion-irrelevant variance, so its beta weight is negative even though its zero-order r is 0. This is the classic suppressor effect (Horst, 1941).",
+      "Both are true, and R explains A. With r1y = .50, r2y = 0 and r12 = .50, R² = (.25 + 0 − 0)/(1 − .25) = .333, which is more than the .25 from predictor 1 alone. Predictor 2 'cleans' predictor 1 of criterion-irrelevant variance, so its beta weight is negative even though its zero-order r is 0. This is the classic suppressor effect.",
     module: "exam-prep",
     ref: "Horst 1941; Cohen et al. 2003",
   },
@@ -508,7 +508,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "For a k × k table, C can reach at most √[(k − 1)/k]; for a 2 × 2 table that is .707. So C is not on a common 0–1 scale. Cramér's V = √[χ²/(N(k − 1))] does reach 1. C is never negative, because it comes from the square root of χ². It applies to any r × c table. N appears in its formula.",
+      "For a k × k table, C can reach at most √[(k − 1)/k]; for a 2 × 2 table that is .707. So C is not on a common 0 to 1 scale. Cramér's V = √[χ²/(N(k − 1))] does reach 1. C is never negative, because it comes from the square root of χ². It applies to any r × c table. N appears in its formula.",
     module: "exam-prep",
     ref: "Guilford & Fruchter",
   },
@@ -612,7 +612,7 @@ const D: Draft[] = [
     options: [".36", ".50", ".60", ".90"],
     answer: 2,
     explanation:
-      "r = cov/(sx sy) = 18/(5 × 6) = 18/30 = .60. .36 is r². .90 divides 18 by 20. .50 is a miscalculation.",
+      "Step 1: r = cov/(sx × sy). Step 2: sx × sy = 5 × 6 = 30. Step 3: r = 18/30 = .60. .36 is r², the shared variance, not r. .90 divides 18 by 20 instead of 30. .50 is an arithmetic slip. Dividing by the SDs is what turns a covariance, which depends on units, into a correlation between −1 and +1.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -623,12 +623,12 @@ const D: Draft[] = [
     difficulty: 3,
     type: "passage",
     passage:
-      "Correlations (N = 120), with two-tailed significance in brackets:\nAnxiety–Rumination: r = .48 (p < .001)\nAnxiety–Sleep quality: r = −.21 (p = .021)\nRumination–Sleep quality: r = −.15 (p = .102)\nAnxiety–Age: r = .04 (p = .664)",
+      "Correlations (N = 120), with two-tailed significance in brackets:\nAnxiety-Rumination: r = .48 (p < .001)\nAnxiety-Sleep quality: r = −.21 (p = .021)\nRumination-Sleep quality: r = −.15 (p = .102)\nAnxiety-Age: r = .04 (p = .664)",
     stem: "Which interpretation is correct at α = .05?",
     options: [
-      "Anxiety correlates significantly with rumination (positively) and with sleep quality (negatively); the rumination–sleep and anxiety–age correlations are not significant",
+      "Anxiety correlates significantly with rumination (positively) and with sleep quality (negatively); the rumination-sleep and anxiety-age correlations are not significant",
       "All four correlations are significant, because N is large",
-      "Rumination–sleep is significant because r is negative",
+      "Rumination-sleep is significant because r is negative",
       "Anxiety explains 48% of the variance in rumination",
     ],
     answer: 0,
@@ -651,7 +651,7 @@ const D: Draft[] = [
     options: AR,
     answer: 3,
     explanation:
-      "R is true, and it is why A is false. If Rater B always gives exactly 5 points more than Rater A, r = 1.0, but the two never agree on a single score. Pearson r measures consistency of ordering and linear association, not absolute agreement. An absolute-agreement intraclass correlation, or Bland–Altman analysis, is needed for that. So the correct option is 'A false, R true'.",
+      "R is true, and it is why A is false. If Rater B always gives exactly 5 points more than Rater A, r = 1.0, but the two never agree on a single score. Pearson r measures consistency of ordering and linear association, not absolute agreement. An absolute-agreement intraclass correlation, or Bland-Altman analysis, is needed for that. So the correct option is 'A false, R true'.",
     module: "assessment",
     ref: "Bland & Altman 1986; Shrout & Fleiss 1979",
   },

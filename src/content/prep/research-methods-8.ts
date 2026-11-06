@@ -179,9 +179,9 @@ const D: Draft[] = [
     stem: "In Campbell and Stanley's terms, this design is a:",
     options: [
       "Static-group comparison",
-      "Pretest–posttest control group design (true experiment)",
+      "Pretest-posttest control group design (true experiment)",
       "Interrupted time-series design",
-      "One-group pretest–posttest design (pre-experimental)",
+      "One-group pretest-posttest design (pre-experimental)",
     ],
     answer: 3,
     explanation:
@@ -248,16 +248,16 @@ const D: Draft[] = [
     exams: [c, n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "The Marlowe–Crowne scale is often given alongside self-report questionnaires in order to:",
+    stem: "The Marlowe-Crowne scale is often given alongside self-report questionnaires in order to:",
     options: [
       "Measure acquiescence by reverse-keyed items",
-      "Assess test–retest reliability",
+      "Assess test-retest reliability",
       "Screen for depression",
       "Measure respondents' tendency to give socially desirable answers",
     ],
     answer: 3,
     explanation:
-      "Crowne and Marlowe (1960) built a social desirability scale of culturally approved but improbable behaviours, such as 'I have never been irked when people expressed ideas very different from my own'. High scorers may be presenting themselves favourably. It does not measure stability over time and is not a depression screen. Acquiescence is a different response set, detected by balanced keying.",
+      "Crowne and Marlowe built a social desirability scale of culturally approved but improbable behaviours, such as 'I have never been irked when people expressed ideas very different from my own'. High scorers may be presenting themselves favourably. It does not measure stability over time and is not a depression screen. Acquiescence is a different response set, detected by balanced keying.",
     module: "exam-prep",
     ref: "Crowne & Marlowe 1960",
   },
@@ -308,7 +308,7 @@ const D: Draft[] = [
     options: ["70", "100", "120", "140"],
     answer: 2,
     explanation:
-      "The number of cells is 3 × 4 = 12, so 12 × 10 = 120 participants. 70 adds the levels, (3 + 4) × 10, instead of multiplying them. 100 and 140 come from miscounting the cells.",
+      "Step 1: count the cells. A 3 × 4 design has 3 × 4 = 12 combinations of conditions. Step 2: in a completely between-subjects design each participant serves in only one cell, so multiply cells by participants per cell: 12 × 10 = 120. 70 comes from adding the levels, (3 + 4) × 10, instead of multiplying them. 100 and 140 come from miscounting the cells as 10 or 14.",
     module: "exam-prep",
     ref: "standard RM",
   },
@@ -318,7 +318,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "In a randomised pretest–posttest control group design with a continuous outcome, a widely recommended analysis is:",
+    stem: "In a randomised pretest-posttest control group design with a continuous outcome, a widely recommended analysis is:",
     options: [
       "Separate paired t-tests in each group, comparing their p-values",
       "Chi-square on posttest scores",
@@ -327,7 +327,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "In randomised designs, ANCOVA adjusting for baseline removes pretest-related error variance and usually gives more power than gain-score analysis or posttest-only comparisons. Chi-square is for categorical data. Comparing within-group p-values is a known fallacy: a difference in significance is not a significant difference. The pretest–posttest correlation does not test the treatment effect.",
+      "In randomised designs, ANCOVA adjusting for baseline removes pretest-related error variance and usually gives more power than gain-score analysis or posttest-only comparisons. Chi-square is for categorical data. Comparing within-group p-values is a known fallacy: a difference in significance is not a significant difference. The pretest-posttest correlation does not test the treatment effect.",
     module: "exam-prep",
     ref: "Vickers & Altman 2001",
   },
@@ -337,7 +337,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 2,
     type: "mcq",
-    stem: "To test whether arousal affects performance in an inverted-U shape (as in the Yerkes–Dodson law), the researcher must:",
+    stem: "To test whether arousal affects performance in an inverted-U shape (as in the Yerkes-Dodson law), the researcher must:",
     options: [
       "Measure arousal only as a dependent variable",
       "Use only two extreme levels of arousal",
@@ -441,7 +441,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Lord (1967) showed that with pre-existing, non-randomised groups, gain-score analysis and ANCOVA can give opposite answers, because they assume different counterfactuals. Gain scores assume each group would have stayed at its own mean, while ANCOVA compares people with equal baselines, who regress towards different group means. Neither is automatically right without causal assumptions. Simpson's paradox concerns aggregation reversing an association. The kappa paradox concerns agreement indices.",
+      "Lord showed that with pre-existing, non-randomised groups, gain-score analysis and ANCOVA can give opposite answers, because they assume different counterfactuals. Gain scores assume each group would have stayed at its own mean, while ANCOVA compares people with equal baselines, who regress towards different group means. Neither is automatically right without causal assumptions. Simpson's paradox concerns aggregation reversing an association. The kappa paradox concerns agreement indices.",
     module: "exam-prep",
     ref: "Lord 1967; Wainer 1991",
   },
@@ -484,7 +484,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Statements 1, 2 and 4 are correct: Nosek et al. (2015) introduced the TOP guidelines, with levels for data, code, materials, design and preregistration. Statement 3 is false: deviations are allowed and common. What matters is that they are reported and justified, so readers can tell planned from unplanned analyses.",
+      "Statements 1, 2 and 4 are correct: Nosek and colleagues introduced the TOP guidelines, with levels for data, code, materials, design and preregistration. Statement 3 is false: deviations are allowed and common. What matters is that they are reported and justified, so readers can tell planned from unplanned analyses.",
     module: "exam-prep",
     ref: "Nosek et al. 2015, 2018",
   },
@@ -550,7 +550,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Warner's (1965) randomised response technique protects individual privacy while allowing the prevalence of the sensitive behaviour to be estimated from known probabilities, which reduces under-reporting. The bogus pipeline (Jones & Sigall, 1971) makes respondents believe a machine detects lies. Delphi is an expert-consensus method. Random digit dialling is a telephone sampling method.",
+      "Warner's randomised response technique protects individual privacy while allowing the prevalence of the sensitive behaviour to be estimated from known probabilities, which reduces under-reporting. The bogus pipeline makes respondents believe a machine detects lies. Delphi is an expert-consensus method. Random digit dialling is a telephone sampling method.",
     module: "exam-prep",
     ref: "Warner 1965",
   },

@@ -50,7 +50,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "A p-value is P(data at least as extreme | H0 true). It is calculated assuming H0, so it cannot be the probability that H0 is true; that would need Bayesian priors. It is not a replication probability: even a true effect with p = .03 has only about a 50–60% chance of being significant again. The last option is an invented reading that has no meaning in significance testing.",
+      "A p-value is P(data at least as extreme | H0 true). It is calculated assuming H0, so it cannot be the probability that H0 is true; that would need Bayesian priors. It is not a replication probability: even a true effect with p = .03 has only about a 50 to 60% chance of being significant again. The last option is an invented reading that has no meaning in significance testing.",
     module: "exam-prep",
     ref: "Wasserstein & Lazar 2016",
   },
@@ -94,7 +94,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Statements 1, 3 and 4 are principles 1, 3 and 5 of the ASA statement (Wasserstein & Lazar, 2016). Statement 2 contradicts principle 2, which says p-values do not measure the probability that the hypothesis is true, or that the data were produced by chance alone. The other principles are: proper inference needs full reporting and transparency, and a p-value alone is not a good measure of evidence. '1 and 3 only' leaves out the correct statement 4.",
+      "Statements 1, 3 and 4 are principles 1, 3 and 5 of the ASA statement. Statement 2 contradicts principle 2, which says p-values do not measure the probability that the hypothesis is true, or that the data were produced by chance alone. The other principles are: proper inference needs full reporting and transparency, and a p-value alone is not a good measure of evidence. '1 and 3 only' leaves out the correct statement 4.",
     module: "exam-prep",
     ref: "Wasserstein & Lazar 2016",
   },
@@ -154,7 +154,7 @@ const D: Draft[] = [
     options: ["A-III, B-I, C-II, D-IV", "A-II, B-I, C-III, D-IV", "A-III, B-IV, C-II, D-I", "A-I, B-III, C-II, D-IV"],
     answer: 0,
     explanation:
-      "p-hacking is exploiting flexibility in analysis (III). HARKing, 'hypothesising after the results are known' (Kerr, 1998), is presenting post hoc hypotheses as a priori (I). Optional stopping inflates Type I error by peeking at the data (II). The file-drawer problem (Rosenthal, 1979) is publication bias (IV). Optional stopping is a form of p-hacking, but its specific description is II.",
+      "p-hacking is exploiting flexibility in analysis (III). HARKing, 'hypothesising after the results are known', is presenting post hoc hypotheses as a priori (I). Optional stopping inflates Type I error by peeking at the data (II). The file-drawer problem is publication bias (IV). Optional stopping is a form of p-hacking, but its specific description is II.",
     module: "exam-prep",
     ref: "Kerr 1998; Simmons, Nelson & Simonsohn 2011; Rosenthal 1979",
   },
@@ -165,7 +165,7 @@ const D: Draft[] = [
     difficulty: 3,
     type: "passage",
     passage:
-      "The Open Science Collaboration (2015) repeated 100 studies published in three psychology journals. 97% of the original studies had reported significant results. 36% of the replications were significant, and the mean replication effect size was about half the original.",
+      "The Open Science Collaboration repeated 100 studies published in three psychology journals. 97% of the original studies had reported significant results. 36% of the replications were significant, and the mean replication effect size was about half the original.",
     stem: "Which conclusion is best supported?",
     options: [
       "Most original findings were fraudulent",
@@ -222,7 +222,7 @@ const D: Draft[] = [
     options: [".36", ".64", ".80", ".95"],
     answer: 1,
     explanation:
-      "Out of 1000 hypotheses, 100 are true, and 80 of these are detected (power .80). 900 are false, and 45 give false positives (α .05). PPV = 80/(80 + 45) = 80/125 = .64. .95 wrongly equates 1 − α with PPV. .80 is the power. .36 is the false discovery proportion (45/125). This is Ioannidis's (2005) argument for why low prior odds undermine published findings.",
+      "Out of 1000 hypotheses, 100 are true, and 80 of these are detected (power .80). 900 are false, and 45 give false positives (α .05). PPV = 80/(80 + 45) = 80/125 = .64. .95 wrongly equates 1 − α with PPV. .80 is the power. .36 is the false discovery proportion (45/125). This is Ioannidis's argument for why low prior odds undermine published findings.",
     module: "exam-prep",
     ref: "Ioannidis 2005",
   },
@@ -241,7 +241,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Neyman and Pearson (1928, 1933) framed testing as a decision between H0 and H1 with long-run error rates α and β, which gave Type II error and power (1 − β). Fisher treated p as a continuous measure of evidence against H0 without a formal alternative. Karl Pearson developed the correlation coefficient and the chi-square test. Gosset developed the t distribution.",
+      "Neyman and Pearson framed testing as a decision between H0 and H1 with long-run error rates α and β, which gave Type II error and power (1 − β). Fisher treated p as a continuous measure of evidence against H0 without a formal alternative. Karl Pearson developed the correlation coefficient and the chi-square test. Gosset developed the t distribution.",
     module: "exam-prep",
     ref: "Gigerenzer 2004",
   },
@@ -309,7 +309,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "Meehl (1967) argued that, in 'soft' psychology, improving measurement precision and sample size makes theory tests weaker rather than stronger. His reasoning was that:",
+    stem: "Meehl argued that, in 'soft' psychology, improving measurement precision and sample size makes theory tests weaker rather than stronger. His reasoning was that:",
     options: [
       "Psychology's theories are usually too precise to test",
       "Greater precision raises the Type I error rate above α",
@@ -375,7 +375,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Equivalence or non-inferiority testing reverses the usual logic. TOST tests whether the difference is significantly greater than −3 and significantly less than +3, which is equivalent to a 90% CI falling within the bounds (Lakens, 2017). A non-significant ordinary test cannot establish equivalence, which is a Type II error trap. A one-tailed test with a lenient α still tests the nil null. Chi-square is for categorical counts.",
+      "Equivalence or non-inferiority testing reverses the usual logic. TOST tests whether the difference is significantly greater than −3 and significantly less than +3, which is equivalent to a 90% CI falling within the bounds. A non-significant ordinary test cannot establish equivalence, which is a Type II error trap. A one-tailed test with a lenient α still tests the nil null. Chi-square is for categorical counts.",
     module: "exam-prep",
     ref: "Lakens 2017; Schuirmann 1987",
   },
@@ -435,7 +435,7 @@ const D: Draft[] = [
     options: ["A-II, B-I, C-IV, D-III", "A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-III, D-I"],
     answer: 1,
     explanation:
-      "Popper: falsifiability (II). Kuhn, The Structure of Scientific Revolutions (1962): paradigms, normal science, anomalies and paradigm shifts (IV). Lakatos: progressive versus degenerating research programmes, with a hard core and a protective belt (I). Feyerabend, Against Method (1975): 'anything goes' (III). The distractors swap Kuhn with Lakatos, or Lakatos with Feyerabend.",
+      "Popper: falsifiability (II). Kuhn: paradigms, normal science, anomalies and paradigm shifts (IV). Lakatos: progressive versus degenerating research programmes, with a hard core and a protective belt (I). Feyerabend: 'anything goes', the view that no single method binds science (III). The distractors swap Kuhn with Lakatos, or Lakatos with Feyerabend.",
     module: "exam-prep",
     ref: "Chalmers, What Is This Thing Called Science?",
   },
@@ -485,7 +485,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "MacCorquodale and Meehl (1948) distinguished intervening variables from hypothetical constructs. A hypothetical construct, unlike an intervening variable:",
+    stem: "MacCorquodale and Meehl distinguished intervening variables from hypothetical constructs. A hypothetical construct, unlike an intervening variable:",
     options: [
       "Is a purely mathematical summary of the relation between observed inputs and outputs, with no surplus meaning",
       "Has surplus meaning: it refers to processes or entities thought to really exist, beyond the observed relations",
@@ -550,7 +550,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Physicist Percy Bridgman stated operationism in The Logic of Modern Physics (1927). Stevens brought operationism into psychology in the 1930s and devised the scales of measurement, but the quoted principle is Bridgman's. Popper's focus was falsifiability. Skinner discussed operational analysis of psychological terms in 1945, but he did not originate the doctrine.",
+      "Physicist Percy Bridgman stated operationism in the 1920s, writing about concepts in physics. Stevens brought operationism into psychology in the 1930s and devised the scales of measurement, but the quoted principle is Bridgman's. Popper's focus was falsifiability. Skinner discussed operational analysis of psychological terms in 1945, but he did not originate the doctrine.",
     module: "exam-prep",
     ref: "Bridgman 1927",
   },
@@ -603,7 +603,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Lewin (1946) described action research as spirals of planning, action and fact-finding about the results of the action, done with the people concerned to bring about change. Basic research seeks general knowledge without immediate application. Ex post facto research studies variables that have already occurred. Ethnography describes a culture through prolonged fieldwork, without a change cycle as its core.",
+      "Lewin described action research as spirals of planning, action and fact-finding about the results of the action, done with the people concerned to bring about change. Basic research seeks general knowledge without immediate application. Ex post facto research studies variables that have already occurred. Ethnography describes a culture through prolonged fieldwork, without a change cycle as its core.",
     module: "exam-prep",
     ref: "Lewin 1946",
   },
@@ -640,7 +640,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "For Kuhn (1962), normal science is puzzle-solving guided by a shared paradigm. When anomalies accumulate, a crisis follows and may end in a revolution or paradigm shift, so the crisis is not normal science. Aiming to falsify is Popper's ideal, which Kuhn argued is not how most scientists actually work. 'Science by amateurs' has nothing to do with the term.",
+      "For Kuhn, normal science is puzzle-solving guided by a shared paradigm. When anomalies accumulate, a crisis follows and may end in a revolution or paradigm shift, so the crisis is not normal science. Aiming to falsify is Popper's ideal, which Kuhn argued is not how most scientists actually work. 'Science by amateurs' has nothing to do with the term.",
     module: "exam-prep",
     ref: "Kuhn 1962",
   },
@@ -771,7 +771,7 @@ const D: Draft[] = [
     exams: [n, s],
     difficulty: 4,
     type: "match",
-    stem: "Match Greene, Caracelli and Graham's (1989) purpose of mixing methods (List I) with its meaning (List II).",
+    stem: "Match Greene, Caracelli and Graham's purpose of mixing methods (List I) with its meaning (List II).",
     lists: {
       left: ["A. Triangulation", "B. Complementarity", "C. Development", "D. Initiation"],
       right: [
@@ -784,7 +784,7 @@ const D: Draft[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-I, C-IV, D-III", "A-II, B-IV, C-III, D-I"],
     answer: 0,
     explanation:
-      "Greene et al. named five purposes. Triangulation seeks corroboration (II). Complementarity seeks elaboration of overlapping but different facets (IV). Development uses one method to inform the other (I). Initiation seeks contradictions that spark new perspectives (III). Expansion, the fifth, extends the breadth of inquiry by using different methods for different components. The distractors swap triangulation with complementarity, or development with initiation.",
+      "Greene and colleagues named five purposes. Triangulation seeks corroboration (II). Complementarity seeks elaboration of overlapping but different facets (IV). Development uses one method to inform the other (I). Initiation seeks contradictions that spark new perspectives (III). Expansion, the fifth, extends the breadth of inquiry by using different methods for different components. The distractors swap triangulation with complementarity, or development with initiation.",
     module: "exam-prep",
     ref: "Greene, Caracelli & Graham 1989",
   },
@@ -821,7 +821,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Methodological (between-method) triangulation uses different methods to study the same phenomenon (Denzin, 1978). Investigator triangulation uses several researchers. Theory triangulation interprets the data through several theoretical lenses. Data triangulation draws on different sources, times or places while possibly using the same method.",
+      "Methodological (between-method) triangulation uses different methods to study the same phenomenon. Investigator triangulation uses several researchers. Theory triangulation interprets the data through several theoretical lenses. Data triangulation draws on different sources, times or places while possibly using the same method.",
     module: "exam-prep",
     ref: "Denzin 1978",
   },
@@ -845,7 +845,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "In Q methodology (Stephenson, 1935), participants rank-order a set of statements into a quasi-normal grid. The data are then analysed by:",
+    stem: "In Q methodology, participants rank-order a set of statements into a quasi-normal grid. The data are then analysed by:",
     options: [
       "Correlating and factor-analysing persons (their whole Q-sorts) rather than items, to find shared viewpoints",
       "Factor-analysing items across a large random sample, as in R methodology",
@@ -891,7 +891,7 @@ const D: Draft[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: capitals mark priority (QUAL) and the plus sign marks concurrent timing. R is false because it misstates the plus sign. In Morse's (1991) notation, '+' means simultaneous and '→' means sequential. Capitals do mark priority, but the false part makes R false as a whole.",
+      "A is true: capitals mark priority (QUAL) and the plus sign marks concurrent timing. R is false because it misstates the plus sign. In Morse's notation, '+' means simultaneous and '→' means sequential. Capitals do mark priority, but the false part makes R false as a whole.",
     module: "exam-prep",
     ref: "Morse 1991",
   },

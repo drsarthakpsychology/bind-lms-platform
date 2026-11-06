@@ -22,16 +22,16 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 1,
     type: "mcq",
-    stem: "The term 'meta-analysis', meaning the statistical analysis of a large collection of results from individual studies, was coined by:",
+    stem: "The term 'meta-analysis', meaning the statistical analysis of a large collection of results from individual studies, was coined in 1976 by:",
     options: [
-      "Robert Rosenthal (1979)",
-      "Gene Glass (1976)",
-      "Jacob Cohen (1962)",
-      "Archie Cochrane (1972)",
+      "Robert Rosenthal",
+      "Gene Glass",
+      "Jacob Cohen",
+      "Archie Cochrane",
     ],
     answer: 1,
     explanation:
-      "Glass introduced 'meta-analysis' in his 1976 presidential address to the American Educational Research Association, and with Smith applied it to psychotherapy outcomes in 1977. Rosenthal (1979) described the file-drawer problem. Cohen (1962) studied statistical power in published research. Cochrane's 1972 book inspired evidence-based medicine and the Cochrane Collaboration, but he did not coin the term.",
+      "Glass introduced 'meta-analysis' in his 1976 presidential address to the American Educational Research Association, and with Smith applied it to psychotherapy outcomes in 1977. Rosenthal described the file-drawer problem. Cohen studied statistical power in published research. Cochrane's 1972 book inspired evidence-based medicine and the Cochrane Collaboration, but he did not coin the term.",
     module: "exam-prep",
     ref: "Glass 1976",
   },
@@ -41,7 +41,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "Smith and Glass's (1977) meta-analysis of psychotherapy outcome studies concluded that the average person receiving therapy was better off than about what percentage of untreated controls?",
+    stem: "Smith and Glass's meta-analysis of psychotherapy outcome studies concluded that the average person receiving therapy was better off than about what percentage of untreated controls?",
     options: [
       "50%",
       "75%",
@@ -50,7 +50,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Smith and Glass found an average effect size of about 0.68 SD. Under normality, a person at the treated mean sits at about the 75th percentile of the control distribution (Φ(0.68) ≈ .75). Fifty per cent would mean no effect. Sixty per cent corresponds to d ≈ 0.25. Ninety-five per cent would need d ≈ 1.65. This study answered Eysenck's (1952) claim that therapy was no better than spontaneous remission.",
+      "Smith and Glass found an average effect size of about 0.68 SD. Under normality, a person at the treated mean sits at about the 75th percentile of the control distribution (Φ(0.68) ≈ .75). Fifty per cent would mean no effect. Sixty per cent corresponds to d ≈ 0.25. Ninety-five per cent would need d ≈ 1.65. This study answered Eysenck's claim that therapy was no better than spontaneous remission.",
     module: "exam-prep",
     ref: "Smith & Glass 1977",
   },
@@ -124,7 +124,7 @@ const D: Draft[] = [
     explanation:
       "Statements 1 and 2 define the two models. Statement 3 is correct: adding between-study variance (τ²) widens the CI. Statement 4 is the reverse of the truth: because τ² is added to every study's variance, weights become more equal, so small studies get relatively more weight under random effects. '1 and 2 only' leaves out the correct statement 3.",
     module: "exam-prep",
-    ref: "Borenstein et al. 2009 ch.10–13",
+    ref: "Borenstein et al. 2009 ch.10 to 13",
   },
   {
     id: "rm-meta-706",
@@ -136,7 +136,7 @@ const D: Draft[] = [
     options: ["20%, low", "47.5%, moderate", "50%, moderate", "95%, high"],
     answer: 2,
     explanation:
-      "df = k − 1 = 20. I² = (Q − df)/Q × 100 = (40 − 20)/40 × 100 = 50%. Higgins et al. (2003) suggested 25%, 50% and 75% as rough markers of low, moderate and high heterogeneity, so 50% is moderate. 47.5% results from using df = 21. 20% confuses df with I². 95% is unrelated to these numbers.",
+      "df = k − 1 = 20. I² = (Q − df)/Q × 100 = (40 − 20)/40 × 100 = 50%. Higgins and colleagues suggested 25%, 50% and 75% as rough markers of low, moderate and high heterogeneity, so 50% is moderate. 47.5% results from using df = 21. 20% confuses df with I². 95% is unrelated to these numbers.",
     module: "exam-prep",
     ref: "Higgins et al. 2003",
   },
@@ -168,7 +168,7 @@ const D: Draft[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. Rosenthal (1979) argued that if the fail-safe N is very large relative to the number of studies (he suggested more than 5k + 10), the file drawer is unlikely to overturn the result. It is now criticised because it assumes the missing studies average exactly zero and focuses on significance rather than effect size. Funnel-plot methods are preferred.",
+      "Both are true, and R explains A. Rosenthal argued that if the fail-safe N is very large relative to the number of studies (he suggested more than 5k + 10), the file drawer is unlikely to overturn the result. It is now criticised because it assumes the missing studies average exactly zero and focuses on significance rather than effect size. Funnel-plot methods are preferred.",
     module: "exam-prep",
     ref: "Rosenthal 1979",
   },
@@ -187,7 +187,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "In Egger et al. (1997), the slope estimates the underlying effect, while the intercept captures asymmetry: if small, imprecise studies show systematically larger effects, the regression line misses the origin. A non-zero slope simply reflects a non-zero pooled effect. R² is not the test criterion. Fail-safe N is a different method and cannot be negative in a meaningful way.",
+      "In Egger and colleagues, the slope estimates the underlying effect, while the intercept captures asymmetry: if small, imprecise studies show systematically larger effects, the regression line misses the origin. A non-zero slope simply reflects a non-zero pooled effect. R² is not the test criterion. Fail-safe N is a different method and cannot be negative in a meaningful way.",
     module: "exam-prep",
     ref: "Egger et al. 1997",
   },
@@ -197,7 +197,7 @@ const D: Draft[] = [
     exams: [n, s],
     difficulty: 3,
     type: "mcq",
-    stem: "The trim-and-fill method (Duval & Tweedie, 2000) addresses publication bias by:",
+    stem: "The trim-and-fill method addresses publication bias by:",
     options: [
       "Removing all studies with fewer than 30 participants",
       "Estimating the number of studies missing from the asymmetric side of the funnel plot, imputing their mirror images, and recalculating the pooled effect",
@@ -288,7 +288,7 @@ const D: Draft[] = [
     explanation:
       "When effects vary, meta-regression on continuous study characteristics (sessions) and subgroup analysis on categorical ones (control type) look for moderators. Publication-bias analyses examine small-study effects, not sources of heterogeneity. Sphericity is an assumption of repeated-measures ANOVA. Inter-rater reliability concerns coding agreement between the reviewers.",
     module: "exam-prep",
-    ref: "Borenstein et al. 2009 ch.19–20",
+    ref: "Borenstein et al. 2009 ch.19 to 20",
   },
   {
     id: "rm-meta-715",
@@ -319,13 +319,13 @@ const D: Draft[] = [
     statements: [
       "1. Evidence from randomised trials starts as high certainty, and evidence from observational studies starts as low.",
       "2. Certainty can be downgraded for risk of bias, inconsistency, indirectness, imprecision and publication bias.",
-      "3. Observational evidence can be upgraded, for example for a large effect or a dose–response gradient.",
+      "3. Observational evidence can be upgraded, for example for a large effect or a dose-response gradient.",
       "4. GRADE rates evidence on four levels: high, moderate, low and very low.",
     ],
     options: ["1, 2, 3 and 4", "1 and 2 only", "2, 3 and 4 only", "1, 2 and 4 only"],
     answer: 0,
     explanation:
-      "All four statements are correct. GRADE starts RCTs at high and observational studies at low. It downgrades for five factors (statement 2). It upgrades observational evidence for a large effect, a dose–response gradient, or plausible confounding that would reduce the observed effect (statement 3). It ends with four certainty levels (statement 4). Each partial option leaves out at least one true statement.",
+      "All four statements are correct. GRADE starts RCTs at high and observational studies at low. It downgrades for five factors (statement 2). It upgrades observational evidence for a large effect, a dose-response gradient, or plausible confounding that would reduce the observed effect (statement 3). It ends with four certainty levels (statement 4). Each partial option leaves out at least one true statement.",
     module: "exam-prep",
     ref: "Guyatt et al. 2008 GRADE",
   },
@@ -474,11 +474,11 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "Using Landis and Koch's (1977) benchmarks, a kappa of 0.72 for agreement on ICD-11 diagnoses would be described as:",
+    stem: "Using Landis and Koch's benchmarks, a kappa of 0.72 for agreement on ICD-11 diagnoses would be described as:",
     options: ["Slight", "Fair", "Moderate", "Substantial"],
     answer: 3,
     explanation:
-      "Landis and Koch's labels are: below 0 poor, .00–.20 slight, .21–.40 fair, .41–.60 moderate, .61–.80 substantial, and .81–1.00 almost perfect. So 0.72 is substantial. The benchmarks are arbitrary conventions, and some authors, such as Cicchetti and Fleiss, use different cut-offs.",
+      "Landis and Koch's labels are: below 0 poor, .00 to .20 slight, .21 to .40 fair, .41 to .60 moderate, .61 to .80 substantial, and .81 to 1.00 almost perfect. So 0.72 is substantial. The benchmarks are arbitrary conventions, and some authors, such as Cicchetti and Fleiss, use different cut-offs.",
     module: "assessment",
     ref: "Landis & Koch 1977",
   },
@@ -492,7 +492,7 @@ const D: Draft[] = [
     options: ["−0.05", "0.00", "0.50", "0.90"],
     answer: 0,
     explanation:
-      "po = .90. Each rater says 'present' 95% of the time, so pe = (.95 × .95) + (.05 × .05) = .9025 + .0025 = .905. κ = (.90 − .905)/(1 − .905) = −.005/.095 ≈ −0.05. This is the kappa paradox (Feinstein & Cicchetti, 1990): with extreme prevalence, chance agreement is so high that high raw agreement gives a kappa near or below zero. 0.90 is raw agreement. 0.00 and 0.50 are guesses that ignore the calculation.",
+      "po = .90. Each rater says 'present' 95% of the time, so pe = (.95 × .95) + (.05 × .05) = .9025 + .0025 = .905. κ = (.90 − .905)/(1 − .905) = −.005/.095 ≈ −0.05. This is the kappa paradox: with extreme prevalence, chance agreement is so high that high raw agreement gives a kappa near or below zero. 0.90 is raw agreement. 0.00 and 0.50 are guesses that ignore the calculation.",
     module: "assessment",
     ref: "Feinstein & Cicchetti 1990",
   },
@@ -597,7 +597,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Weighted kappa (Cohen, 1968) gives partial credit for near-misses on ordinal categories, using linear or quadratic weights. Unweighted kappa treats every disagreement as equally serious. Percentage agreement ignores both chance agreement and degree of disagreement. Pearson's r measures linear association, not agreement: two raters can correlate perfectly while one is always a category higher.",
+      "Weighted kappa gives partial credit for near-misses on ordinal categories, using linear or quadratic weights. Unweighted kappa treats every disagreement as equally serious. Percentage agreement ignores both chance agreement and degree of disagreement. Pearson's r measures linear association, not agreement: two raters can correlate perfectly while one is always a category higher.",
     module: "assessment",
     ref: "Cohen 1968",
   },
@@ -616,7 +616,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "In Shrout and Fleiss's (1979) scheme, raters treated as random gives a two-way random model (ICC 2). Interest in absolute scores needs absolute agreement, and generalising to one rater needs the single-measure form ',1'. ICC(3,k) treats the raters as fixed, ignores rater mean differences (consistency) and refers to their average, so it answers a different question. Kappa is for categorical ratings. Alpha across raters equals a consistency ICC for averaged ratings and ignores systematic rater bias.",
+      "In Shrout and Fleiss's scheme, raters treated as random gives a two-way random model (ICC 2). Interest in absolute scores needs absolute agreement, and generalising to one rater needs the single-measure form ',1'. ICC(3,k) treats the raters as fixed, ignores rater mean differences (consistency) and refers to their average, so it answers a different question. Kappa is for categorical ratings. Alpha across raters equals a consistency ICC for averaged ratings and ignores systematic rater bias.",
     module: "assessment",
     ref: "Shrout & Fleiss 1979; Koo & Li 2016",
   },
@@ -628,14 +628,14 @@ const D: Draft[] = [
     type: "mcq",
     stem: "To assess agreement among four psychiatrists who each assign one of five diagnostic categories to the same patients, the appropriate statistic is:",
     options: [
-      "Spearman–Brown formula",
+      "Spearman-Brown formula",
       "Cohen's kappa",
       "Point-biserial correlation",
       "Fleiss' kappa",
     ],
     answer: 3,
     explanation:
-      "Fleiss' kappa (1971) extends chance-corrected agreement to more than two raters for nominal categories. Cohen's kappa is defined for two raters. Point-biserial r correlates a dichotomous variable with a continuous one. The Spearman–Brown formula projects reliability for changes in test length or the number of raters averaged; it does not measure agreement.",
+      "Fleiss' kappa extends chance-corrected agreement to more than two raters for nominal categories. Cohen's kappa is defined for two raters. Point-biserial r correlates a dichotomous variable with a continuous one. The Spearman-Brown formula projects reliability for changes in test length or the number of raters averaged; it does not measure agreement.",
     module: "assessment",
     ref: "Fleiss 1971",
   },
@@ -681,7 +681,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "The halo effect (Thorndike, 1920) is a global impression spreading to specific ratings (III). Leniency (generosity) error is overly favourable rating (I). Central tendency error is clustering ratings in the middle (II). Contrast error is judging relative to the person just rated (IV). The distractors swap halo with leniency, or central tendency with contrast.",
+      "The halo effect is a global impression spreading to specific ratings (III). Leniency (generosity) error is overly favourable rating (I). Central tendency error is clustering ratings in the middle (II). Contrast error is judging relative to the person just rated (IV). The distractors swap halo with leniency, or central tendency with contrast.",
     module: "assessment",
     ref: "Guilford 1954; Thorndike 1920",
   },
@@ -743,7 +743,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "mcq",
-    stem: "Bales' Interaction Process Analysis (1950), used to observe small groups, classifies each act of communication into:",
+    stem: "Bales' Interaction Process Analysis, used to observe small groups, classifies each act of communication into:",
     options: [
       "12 categories in socio-emotional and task areas",
       "4 categories of conflict style",
@@ -752,7 +752,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Bales' IPA codes every act into 12 categories: positive socio-emotional (such as showing solidarity), task-related answers (such as giving suggestions), task-related questions, and negative socio-emotional (such as showing antagonism). Conflict-style models such as Thomas–Kilmann are self-report frameworks. Reinforcement coding comes from behaviour analysis. The 16 factors are Cattell's personality dimensions.",
+      "Bales' IPA codes every act into 12 categories: positive socio-emotional (such as showing solidarity), task-related answers (such as giving suggestions), task-related questions, and negative socio-emotional (such as showing antagonism). Conflict-style models such as Thomas-Kilmann are self-report frameworks. Reinforcement coding comes from behaviour analysis. The 16 factors are Cattell's personality dimensions.",
     module: "exam-prep",
     ref: "Bales 1950",
   },

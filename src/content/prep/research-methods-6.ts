@@ -22,7 +22,7 @@ const D: Draft[] = [
     exams: [c, n, m, s],
     difficulty: 1,
     type: "mcq",
-    stem: "The three basic ethical principles in the Belmont Report (1979) are:",
+    stem: "The three basic ethical principles in the Belmont Report are:",
     options: [
       "Consent, debriefing and deception",
       "Autonomy, confidentiality and fidelity",
@@ -31,7 +31,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "The Belmont Report names respect for persons (applied through informed consent), beneficence (applied through risk–benefit assessment) and justice (applied through fair selection of subjects). Confidentiality and fidelity are narrower duties. Integrity and responsibility appear among the APA General Principles. Consent and debriefing are procedures, not Belmont principles.",
+      "The Belmont Report names respect for persons (applied through informed consent), beneficence (applied through risk-benefit assessment) and justice (applied through fair selection of subjects). Confidentiality and fidelity are narrower duties. Integrity and responsibility appear among the APA General Principles. Consent and debriefing are procedures, not Belmont principles.",
     module: "ethics-law",
     ref: "Belmont Report 1979",
   },
@@ -41,7 +41,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 1,
     type: "mcq",
-    stem: "The Nuremberg Code (1947), drawn up after the trials of Nazi doctors, begins with the principle that:",
+    stem: "The Nuremberg Code, drawn up after the trials of Nazi doctors, begins with the principle that:",
     options: [
       "Results must be published in a peer-reviewed journal",
       "Research must be reviewed by an ethics committee",
@@ -64,7 +64,7 @@ const D: Draft[] = [
     options: ["World Medical Association", "World Health Organization", "American Psychological Association", "Indian Council of Medical Research"],
     answer: 0,
     explanation:
-      "The World Medical Association adopted the Declaration of Helsinki in 1964 and has revised it many times. WHO issues other guidance, such as the CIOMS guidelines, jointly with CIOMS. The APA has its own Ethical Principles and Code of Conduct (2002, amended 2010 and 2016). ICMR issues India's National Ethical Guidelines (2017).",
+      "The World Medical Association adopted the Declaration of Helsinki in 1964 and has revised it many times. WHO issues other guidance, such as the CIOMS guidelines, jointly with CIOMS. The APA has its own Ethical Principles and Code of Conduct (2002, amended 2010 and 2016). ICMR issues India's National Ethical Guidelines.",
     module: "ethics-law",
     ref: "WMA Declaration of Helsinki",
   },
@@ -76,7 +76,7 @@ const D: Draft[] = [
     type: "match",
     stem: "Match the study (List I) with its main ethical criticism (List II).",
     lists: {
-      left: ["A. Tuskegee syphilis study (1932–1972)", "B. Milgram's obedience studies (1963)", "C. Humphreys' Tearoom Trade (1970)", "D. Watson and Rayner's 'Little Albert' (1920)"],
+      left: ["A. Tuskegee syphilis study (1932 to 1972)", "B. Milgram's obedience studies (1963)", "C. Humphreys' Tearoom Trade (1970)", "D. Watson and Rayner's 'Little Albert' (1920)"],
       right: [
         "I. Covert observation of men in public toilets, then tracing them to their homes under false pretences",
         "II. Conditioning fear in an infant, who was not deconditioned afterwards",
@@ -227,7 +227,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 3,
     type: "mcq",
-    stem: "Freedman's (1987) concept of 'clinical equipoise' justifies a randomised trial when:",
+    stem: "Freedman's concept of 'clinical equipoise' justifies a randomised trial when:",
     options: [
       "The individual investigator personally has no preference between treatments",
       "Participants are paid equally in both arms",
@@ -263,7 +263,7 @@ const D: Draft[] = [
     explanation:
       "Statements 1 and 2 restate Standard 8.12 (publication credit). Statement 4 restates 8.14 (sharing research data for verification), subject to confidentiality and legal rights. Statement 3 violates 8.13 (duplicate publication of data): psychologists do not publish data previously published as original, without proper acknowledgement, whatever the discipline.",
     module: "ethics-law",
-    ref: "APA Ethics Code 8.12–8.14",
+    ref: "APA Ethics Code 8.12 to 8.14",
   },
   {
     id: "rm-eth-613",
@@ -291,7 +291,7 @@ const D: Draft[] = [
     explanation:
       "Fabrication is inventing data (II). Falsification is distorting real data or processes (I). Plagiarism is appropriating others' work without credit (IV). Together these three are the 'FFP' core of research misconduct in most definitions. Duplicate publication is misrepresenting old findings as new (III). The distractors swap fabrication and falsification, the commonest confusion.",
     module: "ethics-law",
-    ref: "US ORI definition; APA 8.10–8.13",
+    ref: "US ORI definition; APA 8.10 to 8.13",
   },
   {
     id: "rm-eth-614",
@@ -320,7 +320,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 2,
     type: "mcq",
-    stem: "The '3Rs' framework for the ethical use of animals in research (Russell & Burch, 1959) stands for:",
+    stem: "The '3Rs' framework for the ethical use of animals in research stands for:",
     options: [
       "Randomise, Replicate, Reduce",
       "Respect, Responsibility, Rights",
@@ -339,7 +339,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "Leon Kamin (1974) questioned Sir Cyril Burt's twin studies of IQ heritability mainly because:",
+    stem: "Leon Kamin questioned Sir Cyril Burt's twin studies of IQ heritability mainly because:",
     options: [
       "Burt's reported correlation for separated identical twins stayed at .771 to three decimal places across reports with different sample sizes",
       "Burt used only fraternal twins",
@@ -348,7 +348,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Kamin noticed implausible identical correlations, .771 for monozygotic twins reared apart, as the sample supposedly grew from 21 to 53 pairs, along with missing methodological detail. Hearnshaw's 1979 biography later concluded that fraud was likely, though some defenders dispute this. Burt claimed to study identical twins reared apart, not only fraternal twins. His samples were British. He reported high heritability, about .77, not a value below .30.",
+      "Kamin noticed implausible identical correlations, .771 for monozygotic twins reared apart, as the sample supposedly grew from 21 to 53 pairs, along with missing methodological detail. Burt's biographer, Leslie Hearnshaw, later concluded that fraud was likely, though some defenders dispute this. Burt claimed to study identical twins reared apart, not only fraternal twins. His samples were British. He reported high heritability, about .77, not a value below .30.",
     module: "ethics-law",
     ref: "Kamin 1974; Hearnshaw 1979",
   },
@@ -358,7 +358,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 2,
     type: "mcq",
-    stem: "A major ethical criticism of Zimbardo's Stanford Prison Experiment (1971) was that:",
+    stem: "A major ethical criticism of Zimbardo's Stanford Prison Experiment was that:",
     options: [
       "Only women took part",
       "Participants were paid too little",
@@ -494,7 +494,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "statement",
-    stem: "Holmes (1976) distinguished two functions of debriefing after deception. Which of the following statements are correct?",
+    stem: "Holmes distinguished two functions of debriefing after deception. Which of the following statements are correct?",
     statements: [
       "1. 'Dehoaxing' means convincing participants that they were deceived and correcting the false information.",
       "2. 'Desensitising' means removing any undesirable emotional effects, such as lowered self-esteem, produced by the procedure.",
@@ -509,7 +509,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Holmes defined dehoaxing (1) and desensitising (2) as the two goals. Ross, Lepper and Hubbard (1975) showed perseverance effects (4): impressions from false feedback persisted after a standard debriefing, and process debriefing, which explains the perseverance mechanism, worked better. Statement 3 contradicts that evidence. So the answer is 1, 2 and 4 only.",
+      "Holmes defined dehoaxing (1) and desensitising (2) as the two goals. Ross, Lepper and Hubbard showed perseverance effects (4): impressions from false feedback persisted after a standard debriefing, and process debriefing, which explains the perseverance mechanism, worked better. Statement 3 contradicts that evidence. So the answer is 1, 2 and 4 only.",
     module: "ethics-law",
     ref: "Holmes 1976; Ross, Lepper & Hubbard 1975",
   },
@@ -600,7 +600,7 @@ const D: Draft[] = [
     options: [
       "Open Science Framework only",
       "PROSPERO",
-      "Clinical Trials Registry – India (CTRI)",
+      "Clinical Trials Registry, India (CTRI)",
       "Registrar of Newspapers",
     ],
     answer: 2,
@@ -666,7 +666,7 @@ const D: Draft[] = [
     explanation:
       "APA 7 formats DOIs as hyperlinks beginning with https://doi.org/, with no label and no full stop after them. 'doi:' was APA 6 style. 'Retrieved from' is used only when a retrieval date is needed for content that changes. Access dates are not used for DOIs.",
     module: "exam-prep",
-    ref: "APA 7th ed. 9.34–9.35",
+    ref: "APA 7th ed. 9.34 to 9.35",
   },
   {
     id: "rm-apa-633",
@@ -723,7 +723,7 @@ const D: Draft[] = [
     explanation:
       "APA uses words for numbers that begin a sentence (1). Numerals are used for 10 and above, and also below 10 for ages, times, units of measurement, scores, scale points and statistics, so '7 years' and '3 min' (2) and '5-point scale' (3) are correct. 'Twelve sessions' (4) should be '12 sessions', because numbers of 10 and above use numerals unless they begin a sentence.",
     module: "exam-prep",
-    ref: "APA 7th ed. 6.32–6.33",
+    ref: "APA 7th ed. 6.32 to 6.33",
   },
   {
     id: "rm-apa-636",
@@ -731,7 +731,7 @@ const D: Draft[] = [
     exams: [n, s],
     difficulty: 3,
     type: "statement",
-    stem: "Which of the following are changes introduced in APA 7th edition (2019) compared with the 6th edition?",
+    stem: "Which of the following are changes introduced in APA 7th edition compared with the 6th edition?",
     statements: [
       "1. The publisher's location is no longer included in book references.",
       "2. Up to 20 authors are listed in a reference before an ellipsis is used.",
@@ -793,7 +793,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "JARS-Quant (Appelbaum et al., 2018) asks for estimates of effect size and their precision (confidence intervals), as well as test statistics, degrees of freedom and exact p values. 'Significant or not' alone is discouraged. Descriptive statistics are required, but they are not enough on their own. Raw data are shared through repositories, not printed in the Results section.",
+      "JARS-Quant asks for estimates of effect size and their precision (confidence intervals), as well as test statistics, degrees of freedom and exact p values. 'Significant or not' alone is discouraged. Descriptive statistics are required, but they are not enough on their own. Raw data are shared through repositories, not printed in the Results section.",
     module: "exam-prep",
     ref: "Appelbaum et al. 2018",
   },
@@ -866,7 +866,7 @@ const D: Draft[] = [
     explanation:
       "APA 7 tables and figures share a format: a bold number ('Table 1'), then a double-spaced italic title in title case above the table, with notes below it. Titles below the table, side captions and missing titles do not follow APA style.",
     module: "exam-prep",
-    ref: "APA 7th ed. 7.10–7.11",
+    ref: "APA 7th ed. 7.10 to 7.11",
   },
   {
     id: "rm-apa-644",
@@ -896,7 +896,7 @@ const D: Draft[] = [
     options: ["Kumar (2020-1) and Kumar (2020-2)", "Kumar (2020a) and Kumar (2020b)", "Kumar (2020, i) and Kumar (2020, ii)", "Kumar (2020) and Kumar (2020, second)"],
     answer: 1,
     explanation:
-      "APA adds lowercase letters after the year (2020a, 2020b). They are assigned in the order the titles appear alphabetically in the reference list, and used consistently in text. The other formats are not APA conventions.",
+      "APA style adds a lowercase letter after the year: Kumar (2020a) and Kumar (2020b). The letters are assigned by putting the two references in alphabetical order of their titles, and the same letters are then used in the text and the reference list. The other formats (2020-1, 2020, i, '2020, second') are not APA conventions and would confuse readers about which work is meant.",
     module: "exam-prep",
     ref: "APA 7th ed. 9.47",
   },
@@ -929,7 +929,7 @@ const D: Draft[] = [
     lists: {
       left: ["A. CONSORT", "B. PRISMA", "C. STROBE", "D. COREQ"],
       right: [
-        "I. Observational studies such as cohort, case–control and cross-sectional designs",
+        "I. Observational studies such as cohort, case-control and cross-sectional designs",
         "II. Qualitative interview and focus-group research",
         "III. Randomised controlled trials",
         "IV. Systematic reviews and meta-analyses",
@@ -974,7 +974,7 @@ const D: Draft[] = [
     explanation:
       "APA 7 specifies double-spacing, 1-inch margins and references with a hanging indent of 0.5 inch. References are ordered alphabetically by the first author's surname, not by year, so statement 3 is false. Year order applies only among works by the same author or authors.",
     module: "exam-prep",
-    ref: "APA 7th ed. 2.21–2.24, 9.43",
+    ref: "APA 7th ed. 2.21 to 2.24, 9.43",
   },
 ];
 

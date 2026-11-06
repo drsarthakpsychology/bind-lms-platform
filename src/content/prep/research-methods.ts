@@ -9,4 +9,5 @@ import { QUESTIONS as part7 } from "./research-methods-7";
 import { QUESTIONS as part8 } from "./research-methods-8";
 
 /** Question bank · research-methods. Parts live in research-methods-<n>.ts. */
-export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8];
+/** Ordered from foundations (difficulty 1) to research level (difficulty 4); the sort is stable, so topic order is kept within each level. */
+export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8].sort((a, b) => a.difficulty - b.difficulty);

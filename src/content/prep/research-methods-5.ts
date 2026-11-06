@@ -22,7 +22,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 1,
     type: "mcq",
-    stem: "Grounded theory was introduced in The Discovery of Grounded Theory (1967) by:",
+    stem: "Grounded theory was introduced in 1967 by:",
     options: [
       "Jonathan Smith",
       "Virginia Braun and Victoria Clarke",
@@ -31,7 +31,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Glaser and Strauss developed grounded theory from their studies of dying in hospitals, proposing that theory be generated inductively from data. Braun and Clarke (2006) described thematic analysis. Jonathan Smith developed interpretative phenomenological analysis (1996). Potter and Wetherell (1987) founded discourse analysis in social psychology.",
+      "Glaser and Strauss developed grounded theory from their studies of dying in hospitals, proposing that theory be generated inductively from data. Braun and Clarke described thematic analysis. Jonathan Smith developed interpretative phenomenological analysis. Potter and Wetherell founded discourse analysis in social psychology.",
     module: "exam-prep",
     ref: "Glaser & Strauss 1967",
   },
@@ -71,13 +71,13 @@ const D: Draft[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Assertion (A): Glaser (1992) criticised Strauss and Corbin's Basics of Qualitative Research for 'forcing' the data.",
+      "Assertion (A): Glaser criticised Strauss and Corbin's version of grounded theory for 'forcing' the data.",
       "Reason (R): Glaser held that theory should emerge from the data, whereas the coding paradigm of axial coding imposes a preconceived framework on them.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. In Basics of Grounded Theory Analysis: Emergence vs Forcing (1992), Glaser argued that Strauss and Corbin's prescribed procedures, especially the conditions–actions–consequences paradigm, turned grounded theory into 'full conceptual description' forced into a preset mould. This split created Glaserian (classic) and Straussian grounded theory, and Charmaz's constructivist version came later.",
+      "Both are true, and R explains A. Writing in the early 1990s, Glaser argued that Strauss and Corbin's prescribed procedures, especially the conditions-actions-consequences paradigm, turned grounded theory into 'full conceptual description' forced into a preset mould. This split created Glaserian (classic) and Straussian grounded theory, and Charmaz's constructivist version came later.",
     module: "exam-prep",
     ref: "Glaser 1992",
   },
@@ -96,7 +96,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Charmaz (2006, 2014) keeps grounded theory tools such as coding, constant comparison, memos and theoretical sampling, but rejects the objectivist idea that theory 'emerges' independent of the researcher. Analysis is an interpretive construction, and reflexivity is central. Grounded theory does not use statistical verification. Memo-writing is central to every version. Hypotheses set in advance contradict the inductive logic of grounded theory.",
+      "Charmaz keeps grounded theory tools such as coding, constant comparison, memos and theoretical sampling, but rejects the objectivist idea that theory 'emerges' independent of the researcher. Analysis is an interpretive construction, and reflexivity is central. Grounded theory does not use statistical verification. Memo-writing is central to every version. Hypotheses set in advance contradict the inductive logic of grounded theory.",
     module: "exam-prep",
     ref: "Charmaz 2014",
   },
@@ -115,7 +115,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "The constant comparative method (Glaser, 1965) is the core analytic move of grounded theory; it brings out similarities, differences and the properties of categories. Member checking returns interpretations to participants. Bracketing is the phenomenological suspension of presuppositions. Negative cases are sought to test categories, but that is one specific use of comparison, not the general method.",
+      "The constant comparative method is the core analytic move of grounded theory; it brings out similarities, differences and the properties of categories. Member checking returns interpretations to participants. Bracketing is the phenomenological suspension of presuppositions. Negative cases are sought to test categories, but that is one specific use of comparison, not the general method.",
     module: "exam-prep",
     ref: "Glaser 1965",
   },
@@ -150,7 +150,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "Glaser (1978) proposed 'theoretical coding families' to relate substantive codes to one another. His best-known family, the 'six Cs', consists of:",
+    stem: "Glaser proposed 'theoretical coding families' to relate substantive codes to one another. His best-known family, the 'six Cs', consists of:",
     options: [
       "Causes, contexts, contingencies, consequences, covariances and conditions",
       "Codes, categories, concepts, constructs, core and comparison",
@@ -159,7 +159,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "In Theoretical Sensitivity (1978), Glaser listed coding families. The 'six Cs' (causes, contexts, contingencies, consequences, covariances, conditions) is the first and most cited. The second option strings together grounded theory vocabulary that is not a coding family. The third mixes trustworthiness and quality criteria from Lincoln and Guba and from Yardley. The fourth mixes procedures with analytic terms.",
+      "Glaser listed several 'coding families'. The 'six Cs' (causes, contexts, contingencies, consequences, covariances, conditions) is the first and most cited. The second option strings together grounded theory vocabulary that is not a coding family. The third mixes trustworthiness and quality criteria from Lincoln and Guba and from Yardley. The fourth mixes procedures with analytic terms.",
     module: "exam-prep",
     ref: "Glaser 1978",
   },
@@ -200,7 +200,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Jonathan Smith introduced IPA in health psychology in 1996 and developed it with Flowers and Larkin (2009, 2022). Giorgi developed descriptive phenomenological psychology based on Husserl. Charmaz developed constructivist grounded theory. Sacks founded conversation analysis.",
+      "Jonathan Smith introduced IPA in health psychology in 1996 and developed it with Flowers and Larkin. Giorgi developed descriptive phenomenological psychology based on Husserl. Charmaz developed constructivist grounded theory. Sacks founded conversation analysis.",
     module: "exam-prep",
     ref: "Smith 1996",
   },
@@ -256,7 +256,7 @@ const D: Draft[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. Close case-by-case analysis is labour-intensive, so samples are small: Smith et al. suggest about 3 to 6 for student projects and more for doctorates. Homogeneity lets the researcher examine convergence and divergence within a group for whom the question is meaningful. Representativeness is not the aim.",
+      "Both are true, and R explains A. Close case-by-case analysis is labour-intensive, so samples are small: Smith and colleagues suggest about 3 to 6 for student projects and more for doctorates. Homogeneity lets the researcher examine convergence and divergence within a group for whom the question is meaningful. Representativeness is not the aim.",
     module: "exam-prep",
     ref: "Smith, Flowers & Larkin 2009 ch.3",
   },
@@ -291,7 +291,7 @@ const D: Draft[] = [
     exams: [n, s],
     difficulty: 4,
     type: "mcq",
-    stem: "In the second edition of Smith, Flowers and Larkin's IPA text (2022), the earlier terms 'emergent themes' and 'superordinate themes' were replaced, respectively, by:",
+    stem: "In the second edition of Smith, Flowers and Larkin's IPA text, the earlier terms 'emergent themes' and 'superordinate themes' were replaced, respectively, by:",
     options: [
       "'Experiential statements' and 'personal experiential themes'",
       "'Initial codes' and 'candidate themes'",
@@ -330,7 +330,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 1,
     type: "mcq",
-    stem: "The widely cited 2006 paper 'Using thematic analysis in psychology' was written by:",
+    stem: "The six-phase approach to thematic analysis that is now standard in psychology was set out in 2006 by:",
     options: [
       "Glaser and Strauss",
       "Lincoln and Guba",
@@ -339,7 +339,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Virginia Braun and Victoria Clarke (2006, Qualitative Research in Psychology) set out the six-phase approach to thematic analysis, later developed as 'reflexive thematic analysis'. Lincoln and Guba wrote Naturalistic Inquiry (1985), the source of the trustworthiness criteria. Glaser and Strauss founded grounded theory. Miles and Huberman wrote Qualitative Data Analysis, on matrix and display methods.",
+      "Virginia Braun and Victoria Clarke set out the six-phase approach to thematic analysis, later developed as 'reflexive thematic analysis'. Lincoln and Guba proposed the trustworthiness criteria for qualitative research. Glaser and Strauss founded grounded theory. Miles and Huberman are known for matrix and display methods of qualitative analysis.",
     module: "exam-prep",
     ref: "Braun & Clarke 2006",
   },
@@ -349,7 +349,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "Which is the correct sequence of Braun and Clarke's (2006) six phases of thematic analysis?",
+    stem: "Which is the correct sequence of Braun and Clarke's six phases of thematic analysis?",
     options: [
       "Familiarisation → generating initial codes → searching for themes → reviewing themes → defining and naming themes → producing the report",
       "Generating initial codes → familiarisation → reviewing themes → searching for themes → producing the report → defining and naming themes",
@@ -475,7 +475,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "Discursive psychology, which grew from Potter and Wetherell's Discourse and Social Psychology (1987), treats language mainly as:",
+    stem: "Discursive psychology, which grew from Potter and Wetherell's work in the late 1980s, treats language mainly as:",
     options: [
       "A transparent window onto internal attitudes and cognitions",
       "Social action: what talk does, such as blaming, justifying or building facts, in context",
@@ -531,7 +531,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "'(.)' marks a micropause of under about 0.2 seconds, while timed pauses are written like '(0.5)'. Overlapping talk is shown with square brackets [ ]. Latching is shown with '='. Quieter talk is enclosed in degree signs ° °.",
+      "In Jefferson's transcription system, '(.)' marks a micropause, a pause too short to time (under about 0.2 seconds). Longer pauses are timed and written with the number of seconds, for example '(0.5)'. Overlapping talk is shown with square brackets [ ]. Latching, where one turn follows another with no gap at all, is shown with '='. Talk that is noticeably quieter is enclosed in degree signs, ° °. Conversation analysts use these marks because pauses and overlaps carry meaning, for example a delay before a refusal.",
     module: "exam-prep",
     ref: "Jefferson 2004",
   },
@@ -632,7 +632,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Labov and Waletzky (1967) and Labov (1972) identified abstract, orientation (who, when, where), complicating action (what happened), evaluation (so what: the narrator's stance and the reason for telling), resolution and coda (returning to the present). Orientation sets the scene. Complicating action carries the plot. The coda closes the story and links it to the present. Only the evaluation carries the point.",
+      "Labov and Waletzky and Labov identified abstract, orientation (who, when, where), complicating action (what happened), evaluation (so what: the narrator's stance and the reason for telling), resolution and coda (returning to the present). Orientation sets the scene. Complicating action carries the plot. The coda closes the story and links it to the present. Only the evaluation carries the point.",
     module: "exam-prep",
     ref: "Labov 1972",
   },
@@ -661,7 +661,7 @@ const D: Draft[] = [
     exams: [c, n, m, s],
     difficulty: 2,
     type: "match",
-    stem: "Match Lincoln and Guba's (1985) trustworthiness criterion (List I) with the conventional quantitative criterion it parallels (List II).",
+    stem: "Match Lincoln and Guba's trustworthiness criterion (List I) with the conventional quantitative criterion it parallels (List II).",
     lists: {
       left: ["A. Credibility", "B. Transferability", "C. Dependability", "D. Confirmability"],
       right: ["I. Objectivity", "II. Reliability", "III. External validity", "IV. Internal validity"],
@@ -684,7 +684,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 3,
     type: "statement",
-    stem: "Which of the following techniques are correctly paired with the trustworthiness criterion they mainly support (Lincoln & Guba, 1985)?",
+    stem: "Which of the following techniques are correctly paired with the trustworthiness criterion they mainly support?",
     statements: [
       "1. Member checking: credibility",
       "2. Thick description: transferability",
@@ -766,7 +766,7 @@ const D: Draft[] = [
     exams: [n, s],
     difficulty: 3,
     type: "mcq",
-    stem: "Which of the following is NOT one of Yardley's (2000) criteria for judging the quality of qualitative research?",
+    stem: "Which of the following is NOT one of Yardley's criteria for judging the quality of qualitative research?",
     options: [
       "Sensitivity to context",
       "Commitment and rigour",
@@ -785,7 +785,7 @@ const D: Draft[] = [
     exams: [c, n, s],
     difficulty: 2,
     type: "match",
-    stem: "Match the paradigm question (List I), as framed by Guba and Lincoln (1994), with what it asks (List II).",
+    stem: "Match the paradigm question (List I), as framed by Guba and Lincoln, with what it asks (List II).",
     lists: {
       left: ["A. Ontology", "B. Epistemology", "C. Methodology", "D. Axiology"],
       right: [
@@ -803,7 +803,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Ontology concerns the nature of reality (II). Epistemology concerns the knower–known relationship (IV). Methodology concerns how inquiry proceeds (I). Axiology concerns values (III); it was added in later versions of the framework. Students often swap ontology and epistemology.",
+      "Ontology concerns the nature of reality (II). Epistemology concerns the knower-known relationship (IV). Methodology concerns how inquiry proceeds (I). Axiology concerns values (III); it was added in later versions of the framework. Students often swap ontology and epistemology.",
     module: "exam-prep",
     ref: "Guba & Lincoln 1994",
   },
@@ -859,7 +859,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "The Delphi method (RAND, 1950s) uses iterative anonymous questionnaires with controlled feedback to reach consensus. The nominal group technique is a face-to-face structured meeting with silent idea generation and voting. A Q-sort ranks statements by one person's viewpoint. A focus group is a moderated live discussion that relies on interaction, not anonymity.",
+      "The Delphi method uses iterative anonymous questionnaires with controlled feedback to reach consensus. The nominal group technique is a face-to-face structured meeting with silent idea generation and voting. A Q-sort ranks statements by one person's viewpoint. A focus group is a moderated live discussion that relies on interaction, not anonymity.",
     module: "exam-prep",
     ref: "Linstone & Turoff 1975",
   },

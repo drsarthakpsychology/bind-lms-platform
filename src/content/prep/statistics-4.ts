@@ -58,7 +58,7 @@ const D: Draft[] = [
     options: ["0.25", "0.50", "1.00", "2.00"],
     answer: 2,
     explanation:
-      "ẑY = .50 × 2.0 = 1.00. The prediction is closer to the mean than the predictor score (regression towards the mean), because r < 1. 2.00 assumes perfect correlation. 0.50 is r itself. 0.25 is r².",
+      "Step 1: in z-score form the regression prediction is ẑY = r × zX. Step 2: ẑY = .50 × 2.0 = 1.00. So someone 2 SDs above the mean on X is predicted to be only 1 SD above the mean on Y: the prediction moves towards the mean because r is less than 1. 2.00 assumes perfect correlation. 0.50 is r itself. 0.25 is r².",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -186,7 +186,7 @@ const D: Draft[] = [
     options: ["F(3, 100) = 8.33", "F(3, 100) = 11.11", "F(3, 103) = 33.33", "F(3, 100) = 0.33"],
     answer: 1,
     explanation:
-      "F = (.25/3)/(.75/100) = .0833/.0075 = 11.11 with df = (k, n − k − 1) = (3, 100). 33.33 forgets to divide R² by k, and the df are wrong. 8.33 divides by .01 instead of .0075. 0.33 is R²/(1 − R²).",
+      "Step 1: numerator = R²/k = .25/3 = .0833. Step 2: denominator = (1 − R²)/(n − k − 1) = .75/(104 − 3 − 1) = .75/100 = .0075. Step 3: F = .0833/.0075 = 11.11, with df = (3, 100). This is far beyond the .05 critical value of about 2.70. 33.33 forgets to divide R² by k and uses wrong df. 8.33 divides by .01 instead of .0075. 0.33 is R²/(1 − R²).",
     module: "exam-prep",
     ref: "Field 2018 ch.9",
   },
@@ -240,7 +240,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "mcq",
-    stem: "A Durbin–Watson statistic of 1.98 in a regression output indicates that:",
+    stem: "A Durbin-Watson statistic of 1.98 in a regression output indicates that:",
     options: [
       "Adjacent residuals show little autocorrelation, so the independence of errors looks satisfactory",
       "There is strong positive autocorrelation of residuals",
@@ -249,7 +249,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Durbin–Watson ranges from 0 to 4. Values near 2 mean no first-order autocorrelation, values near 0 mean positive autocorrelation, and values near 4 mean negative autocorrelation. Values roughly between 1.5 and 2.5 are usually acceptable. It is not R². It does not assess collinearity, which is checked with VIF or tolerance.",
+      "Durbin-Watson ranges from 0 to 4. Values near 2 mean no first-order autocorrelation, values near 0 mean positive autocorrelation, and values near 4 mean negative autocorrelation. Values roughly between 1.5 and 2.5 are usually acceptable. It is not R². It does not assess collinearity, which is checked with VIF or tolerance.",
     module: "exam-prep",
     ref: "Field 2018 ch.9",
   },
@@ -330,7 +330,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Moderation is an interaction (1). Centring helps interpretation and reduces non-essential collinearity, although it does not change the interaction test itself (2) (Aiken & West, 1991). Simple-slopes analysis probes the interaction (4). Statement 3 describes mediation, not moderation. A moderator changes the strength of an effect; it is not part of the causal chain.",
+      "Moderation is an interaction (1). Centring helps interpretation and reduces non-essential collinearity, although it does not change the interaction test itself (2). Simple-slopes analysis probes the interaction (4). Statement 3 describes mediation, not moderation. A moderator changes the strength of an effect; it is not part of the causal chain.",
     module: "exam-prep",
     ref: "Aiken & West 1991; Hayes 2018",
   },
@@ -368,7 +368,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "The product ab is skewed, so normal-theory tests such as Sobel are underpowered. Percentile or bias-corrected bootstrap CIs are preferred (Preacher & Hayes, 2008; Hayes's PROCESS). Baron and Kenny's steps have low power, and the requirement of a significant total effect is no longer considered necessary. Sobel is not the most powerful. Separate p-values do not test the product.",
+      "The product ab is skewed, so normal-theory tests such as Sobel are underpowered. Percentile or bias-corrected bootstrap CIs are preferred. Baron and Kenny's steps have low power, and the requirement of a significant total effect is no longer considered necessary. Sobel is not the most powerful. Separate p-values do not test the product.",
     module: "exam-prep",
     ref: "Preacher & Hayes 2008; Hayes 2018",
   },
@@ -420,7 +420,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Selecting predictors by repeated significance tests inflates Type I error, biases estimates upwards and depends on sample-specific quirks (Thompson, 1995; Harrell). It does not include every predictor; it selects. It works with continuous predictors. Theory-driven ordering is hierarchical regression, which is the recommended alternative.",
+      "Selecting predictors by repeated significance tests inflates Type I error, biases estimates upwards and depends on sample-specific quirks. It does not include every predictor; it selects. It works with continuous predictors. Theory-driven ordering is hierarchical regression, which is the recommended alternative.",
     module: "exam-prep",
     ref: "Thompson 1995; Harrell 2015",
   },
@@ -478,7 +478,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "A model is supported only within the range of observed predictor values. The age–reaction-time relationship may be curvilinear or change beyond 40, so predictions far outside the data are unreliable. Multicollinearity concerns correlated predictors, and there is only one here. A Type I error concerns hypothesis tests, not prediction. Heteroscedasticity may exist, but the main problem is extrapolation.",
+      "A model is supported only within the range of observed predictor values. The age-reaction-time relationship may be curvilinear or change beyond 40, so predictions far outside the data are unreliable. Multicollinearity concerns correlated predictors, and there is only one here. A Type I error concerns hypothesis tests, not prediction. Heteroscedasticity may exist, but the main problem is extrapolation.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -529,7 +529,7 @@ const D: Draft[] = [
     options: [".27", ".35", ".47", ".60"],
     answer: 2,
     explanation:
-      "β1 = (.60 − .50 × .50)/(1 − .25) = (.60 − .25)/.75 = .35/.75 = .467. Likewise β2 = (.50 − .30)/.75 = .267. As a check, R² = β1r1y + β2r2y = .28 + .133 = .413. .60 is the zero-order r. .35 is only the numerator. .27 is β2.",
+      "Step 1: β1 = (r1y − r2y × r12)/(1 − r12²). Step 2: r2y × r12 = .50 × .50 = .25, so the numerator is .60 − .25 = .35. Step 3: 1 − r12² = 1 − .25 = .75. Step 4: β1 = .35/.75 = .467. In the same way β2 = (.50 − .60 × .50)/.75 = .20/.75 = .267. Check: R² = β1r1y + β2r2y = .28 + .133 = .413, matching the R² formula. .60 is the zero-order r. .35 is only the numerator. .27 is β2.",
     module: "exam-prep",
     ref: "Cohen et al. 2003 ch.3",
   },
@@ -558,7 +558,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "numerical",
-    stem: "By Green's (1991) rule of thumb, N ≥ 50 + 8k for testing the overall R² of a model. What is the minimum sample for a model with 6 predictors?",
+    stem: "By Green's rule of thumb, N ≥ 50 + 8k for testing the overall R² of a model. What is the minimum sample for a model with 6 predictors?",
     options: ["56", "98", "104", "114"],
     answer: 1,
     explanation:
@@ -668,7 +668,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Residual variance that increases with Ŷ violates homoscedasticity. This biases standard errors, even though the coefficients are unbiased. Remedies include log or square-root transformations, weighted least squares and robust SEs. A good fit shows a random, even band. Multicollinearity does not show up in this plot. Independence of residuals is checked separately, for example with Durbin–Watson.",
+      "Residual variance that increases with Ŷ violates homoscedasticity. This biases standard errors, even though the coefficients are unbiased. Remedies include log or square-root transformations, weighted least squares and robust SEs. A good fit shows a random, even band. Multicollinearity does not show up in this plot. Independence of residuals is checked separately, for example with Durbin-Watson.",
     module: "exam-prep",
     ref: "Field 2018 ch.9",
   },
@@ -702,7 +702,7 @@ const D: Draft[] = [
     options: ["0.07", "0.33", "3.00", "6.75"],
     answer: 2,
     explanation:
-      "t = B/SE = 0.45/0.15 = 3.00, which tests H0: β = 0 with n − k − 1 df. 0.33 is SE/B. 0.07 is B × SE. 6.75 is a miscalculation. With large df, |t| = 3.00 corresponds to p ≈ .003.",
+      "Step 1: the t statistic for a regression coefficient tests H0: β = 0 and is the estimate divided by its standard error: t = B/SE. Step 2: t = 0.45/0.15 = 3.00, with n − k − 1 df. With large df, |t| = 3.00 corresponds to p ≈ .003. 0.33 is SE/B, upside down. 0.07 is B × SE. 6.75 is an arithmetic slip.",
     module: "exam-prep",
     ref: "Field 2018 ch.9",
   },

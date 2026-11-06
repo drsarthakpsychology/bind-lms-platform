@@ -59,7 +59,7 @@ const D: Draft[] = [
     options: ["12", "20", "24", "120"],
     answer: 1,
     explanation:
-      "k = N/n = 2400/120 = 20. The researcher picks a random start between 1 and 20 and then takes every 20th name. 12 and 24 come from dividing wrongly. 120 is the sample size, not the interval.",
+      "Step 1: the sampling interval is k = N/n. Step 2: k = 2400/120 = 20. Step 3: choose a random start between 1 and 20 (say 7), then take every 20th name: 7, 27, 47 and so on, which gives exactly 120 names. 12 and 24 come from dividing the wrong numbers. 120 is the sample size, not the interval.",
     module: "exam-prep",
     ref: "standard sampling",
   },
@@ -183,7 +183,7 @@ const D: Draft[] = [
     options: ["196", "385", "400", "1537"],
     answer: 1,
     explanation:
-      "n = z²p(1 − p)/e² = (1.96² × .25)/.05² = (3.8416 × .25)/.0025 = 384.16, which rounds up to 385. 400 is what you get with z ≈ 2. 1537 is the size for a ±2.5-point margin. 196 comes from wrongly using z rather than z² (1.96/.01).",
+      "Step 1: use n = z²p(1 − p)/e². Step 2: with 95% confidence z = 1.96, so z² = 3.8416. With no prior estimate use p = .5, which gives the largest p(1 − p) = .25. The margin e = .05, so e² = .0025. Step 3: n = (3.8416 × .25)/.0025 = .9604/.0025 = 384.16. Step 4: always round a sample size up, so 385. 400 is what you get if you round z to 2. 1537 is the size for a margin of ±2.5 points. 196 comes from using z instead of z².",
     module: "exam-prep",
     ref: "standard sampling",
   },
@@ -243,7 +243,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "In grounded theory (Glaser & Strauss, 1967), sampling is driven by the developing analysis. The researcher seeks people, places or events that will elaborate and refine emerging categories, until theoretical saturation. It is not random or representative sampling. It is not set in advance to test an existing theory, since grounded theory is inductive. Statistical adequacy is not the criterion.",
+      "In grounded theory, sampling is driven by the developing analysis. The researcher seeks people, places or events that will elaborate and refine emerging categories, until theoretical saturation. It is not random or representative sampling. It is not set in advance to test an existing theory, since grounded theory is inductive. Statistical adequacy is not the criterion.",
     module: "exam-prep",
     ref: "Glaser & Strauss 1967; Charmaz 2014",
   },
@@ -294,7 +294,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "Respondent-driven sampling (Heckathorn, 1997) improves on ordinary snowball sampling mainly by:",
+    stem: "Respondent-driven sampling improves on ordinary snowball sampling mainly by:",
     options: [
       "Using a complete sampling frame of the hidden population",
       "Recruiting only from clinical services",
@@ -434,7 +434,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Berkson's bias (admission-rate bias) happens because people with two conditions are more likely to be hospitalised than those with one. Hospital samples therefore over-represent comorbidity and can create associations that do not exist in the population. Recall bias is a difference in remembering past exposures, typical of case–control studies. The Hawthorne effect is a response to being observed. Regression concerns retest scores of extreme groups.",
+      "Berkson's bias (admission-rate bias) happens because people with two conditions are more likely to be hospitalised than those with one. Hospital samples therefore over-represent comorbidity and can create associations that do not exist in the population. Recall bias is a difference in remembering past exposures, typical of case-control studies. The Hawthorne effect is a response to being observed. Regression concerns retest scores of extreme groups.",
     module: "exam-prep",
     ref: "Berkson 1946",
   },
@@ -447,14 +447,14 @@ const D: Draft[] = [
     stem: "Which of the following statements about sample size in qualitative research are correct?",
     statements: [
       "1. Data saturation is usually defined as the point at which new data no longer produce new codes or themes.",
-      "2. Guest, Bunce and Johnson (2006) found that most codes in a relatively homogeneous interview study were identified within the first 12 interviews.",
-      "3. Braun and Clarke (2021) recommend data saturation as the gold-standard criterion for sample size in reflexive thematic analysis.",
-      "4. Malterud et al.'s 'information power' holds that the more relevant information a sample holds, the fewer participants are needed.",
+      "2. Guest, Bunce and Johnson found that most codes in a relatively homogeneous interview study were identified within the first 12 interviews.",
+      "3. Braun and Clarke recommend data saturation as the gold-standard criterion for sample size in reflexive thematic analysis.",
+      "4. Malterud and colleagues' 'information power' holds that the more relevant information a sample holds, the fewer participants are needed.",
     ],
     options: ["1, 2 and 3 only", "1, 2 and 4 only", "2, 3 and 4 only", "1 and 4 only"],
     answer: 1,
     explanation:
-      "Statement 1 is the common definition. Statement 2 is correct: Guest et al. reported that saturation occurred within about 12 interviews, with basic themes present by 6. Statement 4 is correct: information power depends on aim, specificity, theory, dialogue quality and analysis strategy. Statement 3 is false: Braun and Clarke (2021) argue that saturation fits poorly with reflexive thematic analysis, because meaning is generated by the researcher, not 'found' until it runs out. So '1 and 4 only' wrongly leaves out the correct statement 2.",
+      "Statement 1 is the common definition. Statement 2 is correct: Guest and colleagues reported that saturation occurred within about 12 interviews, with basic themes present by 6. Statement 4 is correct: information power depends on aim, specificity, theory, dialogue quality and analysis strategy. Statement 3 is false: Braun and Clarke argue that saturation fits poorly with reflexive thematic analysis, because meaning is generated by the researcher, not 'found' until it runs out. So '1 and 4 only' wrongly leaves out the correct statement 2.",
     module: "exam-prep",
     ref: "Guest et al. 2006; Malterud et al. 2016; Braun & Clarke 2021",
   },
@@ -473,7 +473,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "Rosenthal and Rosnow (1975) reviewed evidence that volunteers tend to be better educated, of higher social class, more intelligent, higher in need for approval and more sociable. This 'volunteer bias' threatens generalisation. The first option reverses the findings. 'Identical' contradicts the review. Volunteers tend to be less, not more, authoritarian.",
+      "Rosenthal and Rosnow reviewed evidence that volunteers tend to be better educated, of higher social class, more intelligent, higher in need for approval and more sociable. This 'volunteer bias' threatens generalisation. The first option reverses the findings. 'Identical' contradicts the review. Volunteers tend to be less, not more, authoritarian.",
     module: "exam-prep",
     ref: "Rosenthal & Rosnow 1975",
   },
@@ -591,7 +591,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "match",
-    stem: "Match each scale of measurement (List I) with the transformation that keeps its information intact (List II), following Stevens (1946).",
+    stem: "Match each scale of measurement (List I) with the transformation that keeps its information intact (List II), following Stevens.",
     lists: {
       left: ["A. Nominal", "B. Ordinal", "C. Interval", "D. Ratio"],
       right: [
@@ -634,14 +634,14 @@ const D: Draft[] = [
       right: [
         "I. Judges sort statements into 11 piles, and each statement's median placement is its scale value",
         "II. Items are cumulative, so agreeing with a strong item implies agreeing with all weaker ones",
-        "III. Respondents rate a concept on bipolar adjective pairs such as good–bad or strong–weak",
+        "III. Respondents rate a concept on bipolar adjective pairs such as good-bad or strong-weak",
         "IV. Agreement with each item is rated (e.g., on 5 points) and the ratings are summed",
       ],
     },
     options: ["A-IV, B-II, C-I, D-III", "A-IV, B-I, C-II, D-III", "A-III, B-I, C-II, D-IV", "A-IV, B-I, C-III, D-II"],
     answer: 1,
     explanation:
-      "Likert's (1932) method of summated ratings adds up agreement ratings (IV). Thurstone and Chave's (1929) equal-appearing intervals use judges' median placements as scale values (I). Guttman's scalogram is cumulative and unidimensional (II). Osgood's semantic differential uses bipolar adjectives (III). The distractors swap the judge-based Thurstone method with the cumulative Guttman method.",
+      "Likert's method of summated ratings adds up agreement ratings (IV). Thurstone and Chave's equal-appearing intervals use judges' median placements as scale values (I). Guttman's scalogram is cumulative and unidimensional (II). Osgood's semantic differential uses bipolar adjectives (III). The distractors swap the judge-based Thurstone method with the cumulative Guttman method.",
     module: "exam-prep",
     ref: "Likert 1932; Thurstone & Chave 1929; Guttman 1944; Osgood et al. 1957",
   },
@@ -674,7 +674,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Osgood, Suci and Tannenbaum (1957) identified Evaluation (good–bad), Potency (strong–weak) and Activity (active–passive) across many concepts and cultures. Valence, arousal and dominance is the PAD model of emotion (Mehrabian & Russell), which resembles EPA but is a different framework. Cognitive, affective and conative are the tripartite components of attitude. Warmth and competence come from the stereotype content model.",
+      "Osgood, Suci and Tannenbaum identified Evaluation (good-bad), Potency (strong-weak) and Activity (active-passive) across many concepts and cultures. Valence, arousal and dominance is the PAD model of emotion (Mehrabian & Russell), which resembles EPA but is a different framework. Cognitive, affective and conative are the tripartite components of attitude. Warmth and competence come from the stereotype content model.",
     module: "exam-prep",
     ref: "Osgood, Suci & Tannenbaum 1957",
   },
@@ -688,7 +688,7 @@ const D: Draft[] = [
     options: ["Bogardus social distance scale", "Thurstone equal-appearing interval scale", "Semantic differential", "Q-sort"],
     answer: 0,
     explanation:
-      "Bogardus (1925) measured willingness to accept social contact at increasing levels of closeness, a cumulative, Guttman-like format. Thurstone scales use statements with judge-derived scale values. The semantic differential uses bipolar adjectives. A Q-sort has a person sort statements into a forced distribution.",
+      "Bogardus measured willingness to accept social contact at increasing levels of closeness, a cumulative, Guttman-like format. Thurstone scales use statements with judge-derived scale values. The semantic differential uses bipolar adjectives. A Q-sort has a person sort statements into a forced distribution.",
     module: "exam-prep",
     ref: "Bogardus 1925",
   },
@@ -759,12 +759,12 @@ const D: Draft[] = [
     options: [
       "Judges disagree about where they belong, so they are ambiguous",
       "They are too extreme in their attitude position",
-      "They show low item–total correlations in respondents' data",
+      "They show low item-total correlations in respondents' data",
       "They duplicate other statements' scale values",
     ],
     answer: 0,
     explanation:
-      "Each statement's scale value is the median of the judges' placements, and Q (the spread) shows how much judges disagree. A wide spread means the statement is ambiguous, so it is dropped. Extreme statements are kept, because they are needed to anchor the ends of the scale. Item–total correlation is the Likert method of item selection. Statements with similar scale values are acceptable as long as the final set covers the range.",
+      "Each statement's scale value is the median of the judges' placements, and Q (the spread) shows how much judges disagree. A wide spread means the statement is ambiguous, so it is dropped. Extreme statements are kept, because they are needed to anchor the ends of the scale. Item-total correlation is the Likert method of item selection. Statements with similar scale values are acceptable as long as the final set covers the range.",
     module: "exam-prep",
     ref: "Thurstone & Chave 1929",
   },
@@ -788,7 +788,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "In Thurstone's (1927) law of comparative judgement, each stimulus produces a distribution of momentary responses on a psychological continuum. The spread of this distribution is called the:",
+    stem: "In Thurstone's law of comparative judgement, each stimulus produces a distribution of momentary responses on a psychological continuum. The spread of this distribution is called the:",
     options: ["Discriminal dispersion", "Just-noticeable difference", "Weber fraction", "Q value"],
     answer: 0,
     explanation:
@@ -872,7 +872,7 @@ const D: Draft[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Including some reverse-keyed items in a questionnaire, so that agreement sometimes indicates low levels of the trait, is mainly a way to control:",
-    options: ["Acquiescence (yea-saying) response set", "The halo effect in observers", "Regression to the mean", "Test–retest unreliability"],
+    options: ["Acquiescence (yea-saying) response set", "The halo effect in observers", "Regression to the mean", "Test-retest unreliability"],
     answer: 0,
     explanation:
       "Balanced keying means that a respondent who agrees with everything does not get an extreme trait score, and acquiescence can then be detected. The halo effect is a rater's global impression colouring specific ratings, an observer bias. Regression is a statistical artefact on retest. Reverse keying does not address stability over time.",

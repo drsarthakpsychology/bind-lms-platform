@@ -124,7 +124,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "The microgenetic method has three features: observation spans the period of rapid change, the density of observation is high relative to the rate of change, and analysis is trial by trial (Siegler & Crowley, 1991). A time-lag design compares same-age cohorts across years. A cross-sequential design follows several cohorts across times of measurement. A retrospective cohort design uses past records to reconstruct exposure and outcome.",
+      "The microgenetic method has three features: observation spans the period of rapid change, the density of observation is high relative to the rate of change, and analysis is trial by trial. A time-lag design compares same-age cohorts across years. A cross-sequential design follows several cohorts across times of measurement. A retrospective cohort design uses past records to reconstruct exposure and outcome.",
     module: "exam-prep",
     ref: "Siegler & Crowley 1991",
   },
@@ -173,7 +173,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 2,
     type: "mcq",
-    stem: "A prospective cohort study differs from a case–control study in that it:",
+    stem: "A prospective cohort study differs from a case-control study in that it:",
     options: [
       "Starts with people who have the outcome and looks back for exposures",
       "Is better suited to very rare outcomes",
@@ -182,7 +182,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "A prospective cohort measures exposure before the outcome happens, so it gives temporal order and allows incidence and relative risk to be calculated. Starting with cases and looking back is the case–control design. Incidence is a strength of cohort studies, not a limitation. For rare outcomes, case–control designs are preferred, because a cohort would need to be huge.",
+      "A prospective cohort measures exposure before the outcome happens, so it gives temporal order and allows incidence and relative risk to be calculated. Starting with cases and looking back is the case-control design. Incidence is a strength of cohort studies, not a limitation. For rare outcomes, case-control designs are preferred, because a cohort would need to be huge.",
     module: "exam-prep",
     ref: "Gordis, Epidemiology",
   },
@@ -218,7 +218,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Cross-lagged panel correlation compares rX1Y2 with rY1X2. If X at time 1 predicts Y at time 2 more strongly than the reverse, X → Y is the more plausible direction. This was used in Eron, Huesmann et al.'s (1972) TV-violence study. The method is suggestive but not conclusive, since different stabilities and third variables can distort it. No covariate is being partialled. There is no cut-off assignment for regression discontinuity, and no randomised groups for a Solomon design.",
+      "Cross-lagged panel correlation compares rX1Y2 with rY1X2. If X at time 1 predicts Y at time 2 more strongly than the reverse, X → Y is the more plausible direction. This was used in Eron, Huesmann and colleagues' TV-violence study. The method is suggestive but not conclusive, since different stabilities and third variables can distort it. No covariate is being partialled. There is no cut-off assignment for regression discontinuity, and no randomised groups for a Solomon design.",
     module: "exam-prep",
     ref: "Eron et al. 1972; Kenny 1975",
   },
@@ -232,12 +232,12 @@ const D: Draft[] = [
     options: [
       "Prospective cohort study",
       "Randomised controlled trial",
-      "Case–control study",
+      "Case-control study",
       "Cross-sectional prevalence survey of the general population",
     ],
     answer: 2,
     explanation:
-      "Case–control studies start with people who already have the disorder and compare their past exposures with those of matched controls, so they need far fewer people for rare outcomes. A cohort would need to follow enormous numbers to get enough cases. Risk factors such as obstetric complications cannot ethically be randomised. A general population survey would find very few cases.",
+      "Case-control studies start with people who already have the disorder and compare their past exposures with those of matched controls, so they need far fewer people for rare outcomes. A cohort would need to follow enormous numbers to get enough cases. Risk factors such as obstetric complications cannot ethically be randomised. A general population survey would find very few cases.",
     module: "exam-prep",
     ref: "Gordis, Epidemiology",
   },
@@ -247,11 +247,11 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "numerical",
-    stem: "In a case–control study, 40 of 100 cases and 20 of 100 controls report childhood trauma. What is the odds ratio for trauma?",
+    stem: "In a case-control study, 40 of 100 cases and 20 of 100 controls report childhood trauma. What is the odds ratio for trauma?",
     options: ["2.00", "2.67", "1.50", "0.38"],
     answer: 1,
     explanation:
-      "OR = (a × d)/(b × c) = (40 × 80)/(60 × 20) = 3200/1200 = 2.67. Odds of exposure in cases are 40/60 = 0.667, and in controls 20/80 = 0.25; 0.667/0.25 = 2.67. The value 2.00 is the ratio of the proportions exposed (0.40/0.20), which is not the right measure for case–control data. 1.50 confuses odds with a difference. 0.38 is the inverted ratio (1/2.67).",
+      "OR = (a × d)/(b × c) = (40 × 80)/(60 × 20) = 3200/1200 = 2.67. Odds of exposure in cases are 40/60 = 0.667, and in controls 20/80 = 0.25; 0.667/0.25 = 2.67. The value 2.00 is the ratio of the proportions exposed (0.40/0.20), which is not the right measure for case-control data. 1.50 confuses odds with a difference. 0.38 is the inverted ratio (1/2.67).",
     module: "exam-prep",
     ref: "standard epidemiology",
   },
@@ -304,7 +304,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Simpson's paradox happens when a relationship in aggregated data reverses or disappears within subgroups because of a lurking variable, here the department applied to (Bickel et al., 1975, Berkeley data). The ecological fallacy is inferring individual relationships from group-level correlations. Regression to the mean concerns extreme scores moving toward the average on retest. Restriction of range lowers a correlation when variability is limited; it does not reverse group comparisons.",
+      "Simpson's paradox happens when a relationship in aggregated data reverses or disappears within subgroups because of a lurking variable, here the department applied to. The ecological fallacy is inferring individual relationships from group-level correlations. Regression to the mean concerns extreme scores moving toward the average on retest. Restriction of range lowers a correlation when variability is limited; it does not reverse group comparisons.",
     module: "exam-prep",
     ref: "Bickel, Hammel & O'Connell 1975",
   },
@@ -323,7 +323,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "The ecological fallacy (Robinson, 1950) is assuming that a relationship between group-level aggregates holds for individuals. State-level correlations can differ in size or even direction from individual-level ones. The gambler's fallacy is expecting a random outcome to 'even out'. The Hawthorne effect is a change caused by being observed. The base-rate fallacy is ignoring prior probabilities when judging likelihood.",
+      "The ecological fallacy is assuming that a relationship between group-level aggregates holds for individuals. State-level correlations can differ in size or even direction from individual-level ones. The gambler's fallacy is expecting a random outcome to 'even out'. The Hawthorne effect is a change caused by being observed. The base-rate fallacy is ignoring prior probabilities when judging likelihood.",
     module: "exam-prep",
     ref: "Robinson 1950",
   },
@@ -362,7 +362,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "The Hawthorne effect is a change in behaviour caused by the awareness of being studied or given attention, named after the Western Electric studies. A practice effect comes from repeating a test. A floor effect means scores bunch at the bottom of a scale. The Pygmalion effect is when one person's expectations change another's performance (Rosenthal & Jacobson, 1968); here there is no expectancy holder.",
+      "The Hawthorne effect is a change in behaviour caused by the awareness of being studied or given attention, named after the Western Electric studies. A practice effect comes from repeating a test. A floor effect means scores bunch at the bottom of a scale. The Pygmalion effect is when one person's expectations change another's performance; here there is no expectancy holder.",
     module: "exam-prep",
     ref: "Roethlisberger & Dickson 1939",
   },
@@ -426,7 +426,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "In Shadish, Cook and Campbell's (2002) framework, treatment diffusion, compensatory rivalry and resentful demoralisation are classified as threats to:",
+    stem: "In Shadish, Cook and Campbell's framework, treatment diffusion, compensatory rivalry and resentful demoralisation are classified as threats to:",
     options: [
       "Internal validity",
       "External validity",
@@ -435,7 +435,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Cook and Campbell (1979) listed these under internal validity. Shadish, Cook and Campbell (2002) moved them to construct validity, reasoning that they change what the treatment and control conditions actually represent. The causal link may be real, but it is wrongly labelled. Statistical conclusion validity covers power, error rates and assumptions. External validity covers generalisation across units, treatments, outcomes and settings. Answering 'internal validity' reflects the 1979 scheme, not the 2002 one.",
+      "Cook and Campbell listed these under internal validity. Shadish, Cook and Campbell moved them to construct validity, reasoning that they change what the treatment and control conditions actually represent. The causal link may be real, but it is wrongly labelled. Statistical conclusion validity covers power, error rates and assumptions. External validity covers generalisation across units, treatments, outcomes and settings. Answering 'internal validity' reflects the 1979 scheme, not the 2002 one.",
     module: "exam-prep",
     ref: "Shadish, Cook & Campbell 2002 Table 3.1",
   },
@@ -479,7 +479,7 @@ const D: Draft[] = [
     options: ["A-II, B-I, C-III, D-IV", "A-I, B-II, C-III, D-IV", "A-II, B-I, C-IV, D-III", "A-III, B-I, C-II, D-IV"],
     answer: 0,
     explanation:
-      "Compensatory rivalry is the control group trying harder (II); Saretsky (1972) named it the John Henry effect. Resentful demoralisation is the control group performing worse out of resentment (I). Diffusion is when the treatment leaks into the control condition (III). Novelty and disruption effects are responses to the newness of an innovation, not to its content (IV). The distractors swap the two motivational reactions of control groups, which are easily confused.",
+      "Compensatory rivalry is the control group trying harder (II); Saretsky named it the John Henry effect. Resentful demoralisation is the control group performing worse out of resentment (I). Diffusion is when the treatment leaks into the control condition (III). Novelty and disruption effects are responses to the newness of an innovation, not to its content (IV). The distractors swap the two motivational reactions of control groups, which are easily confused.",
     module: "exam-prep",
     ref: "Shadish, Cook & Campbell 2002",
   },
@@ -489,7 +489,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "mcq",
-    stem: "Orne's (1962) concept of demand characteristics refers to:",
+    stem: "Orne's concept of demand characteristics refers to:",
     options: [
       "Characteristics of the population that limit generalisation",
       "The experimenter's unconscious influence on how participants respond",
@@ -498,7 +498,7 @@ const D: Draft[] = [
     ],
     answer: 3,
     explanation:
-      "Orne described demand characteristics as the totality of cues (rumours, instructions, setting, procedure) that let a participant work out the hypothesis and play the 'good subject'. He proposed quasi-controls such as simulators and pre-inquiry. Unconscious experimenter influence is Rosenthal's experimenter expectancy effect. Evaluation apprehension is Rosenberg's (1965) term for anxiety about being judged. Population limits are an external validity issue.",
+      "Orne described demand characteristics as the totality of cues (rumours, instructions, setting, procedure) that let a participant work out the hypothesis and play the 'good subject'. He proposed quasi-controls such as simulators and pre-inquiry. Unconscious experimenter influence is Rosenthal's experimenter expectancy effect. Evaluation apprehension is Rosenberg's term for anxiety about being judged. Population limits are an external validity issue.",
     module: "exam-prep",
     ref: "Orne 1962",
   },
@@ -508,7 +508,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "mcq",
-    stem: "Rosenthal and Fode (1963) told student experimenters that their rats were 'maze-bright' or 'maze-dull', although the rats were randomly allocated. The 'bright' rats performed better. This demonstrated:",
+    stem: "Rosenthal and Fode told student experimenters that their rats were 'maze-bright' or 'maze-dull', although the rats were randomly allocated. The 'bright' rats performed better. This demonstrated:",
     options: [
       "Demand characteristics",
       "Evaluation apprehension",
@@ -527,7 +527,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 3,
     type: "match",
-    stem: "Match each validity type in Shadish, Cook and Campbell (2002) (List I) with the question it answers (List II).",
+    stem: "Match each validity type in Shadish, Cook and Campbell (List I) with the question it answers (List II).",
     lists: {
       left: ["A. Statistical conclusion validity", "B. Internal validity", "C. Construct validity", "D. External validity"],
       right: [
@@ -550,7 +550,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "statement",
-    stem: "Which of the following are threats to statistical conclusion validity in Shadish, Cook and Campbell (2002)?",
+    stem: "Which of the following are threats to statistical conclusion validity in Shadish, Cook and Campbell?",
     statements: ["1. Low statistical power", "2. Fishing and the error-rate problem", "3. Mono-operation bias", "4. Restriction of range"],
     options: ["1 and 2 only", "1, 2 and 4 only", "1, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
@@ -602,7 +602,7 @@ const D: Draft[] = [
     exams: [n, m, s],
     difficulty: 3,
     type: "mcq",
-    stem: "A researcher measures 'aggression' only as the number of shocks given in a teacher–learner paradigm. A reviewer objects that the results may apply only to this one measure. The reviewer is pointing to:",
+    stem: "A researcher measures 'aggression' only as the number of shocks given in a teacher-learner paradigm. A reviewer objects that the results may apply only to this one measure. The reviewer is pointing to:",
     options: [
       "Selection bias",
       "Restriction of range",
@@ -621,7 +621,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "statement",
-    stem: "According to Campbell and Stanley (1963), which of the following are threats to external validity?",
+    stem: "According to Campbell and Stanley, which of the following are threats to external validity?",
     statements: [
       "1. Reactive or interaction effect of testing",
       "2. Statistical regression",
@@ -631,7 +631,7 @@ const D: Draft[] = [
     options: ["1, 3 and 4 only", "1 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "Campbell and Stanley listed four threats to external validity: the interaction effect of testing (a pretest makes people more responsive to X), the interaction of selection and X, reactive effects of experimental arrangements, and multiple-treatment interference. Statistical regression is one of their eight threats to internal validity, along with history, maturation, testing, instrumentation, selection, mortality and selection–maturation interaction. So 1, 3 and 4 only.",
+      "Campbell and Stanley listed four threats to external validity: the interaction effect of testing (a pretest makes people more responsive to X), the interaction of selection and X, reactive effects of experimental arrangements, and multiple-treatment interference. Statistical regression is one of their eight threats to internal validity, along with history, maturation, testing, instrumentation, selection, mortality and selection-maturation interaction. So 1, 3 and 4 only.",
     module: "exam-prep",
     ref: "Campbell & Stanley 1963",
   },
@@ -641,11 +641,11 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "Which threat to internal validity appears in Shadish, Cook and Campbell's (2002) list but was not among Campbell and Stanley's (1963) eight?",
+    stem: "Which threat to internal validity appears in Shadish, Cook and Campbell's list but was not among Campbell and Stanley's eight?",
     options: ["History", "Ambiguous temporal precedence", "Instrumentation", "Experimental mortality (attrition)"],
     answer: 1,
     explanation:
-      "Shadish et al. added ambiguous temporal precedence, meaning lack of clarity about which variable came first, which matters especially in correlational and quasi-experimental work. History and instrumentation are in both lists. Mortality, renamed attrition, is also in both. Their full internal validity list is: ambiguous temporal precedence, selection, history, maturation, regression, attrition, testing, instrumentation, and additive or interactive effects of these.",
+      "Shadish and colleagues added ambiguous temporal precedence, meaning lack of clarity about which variable came first, which matters especially in correlational and quasi-experimental work. History and instrumentation are in both lists. Mortality, renamed attrition, is also in both. Their full internal validity list is: ambiguous temporal precedence, selection, history, maturation, regression, attrition, testing, instrumentation, and additive or interactive effects of these.",
     module: "exam-prep",
     ref: "Shadish, Cook & Campbell 2002 Table 2.4",
   },
@@ -663,7 +663,7 @@ const D: Draft[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true, and R explains A. In classical test theory, the expected retest score is the mean plus r(observed − mean), where r is the test–retest correlation. As r falls, the predicted score moves closer to the mean, because extreme scores are partly lucky or unlucky error. With perfect reliability (r = 1), there would be no regression from this source.",
+      "Both are true, and R explains A. In classical test theory, the expected retest score is the mean plus r(observed − mean), where r is the test-retest correlation. As r falls, the predicted score moves closer to the mean, because extreme scores are partly lucky or unlucky error. With perfect reliability (r = 1), there would be no regression from this source.",
     module: "exam-prep",
     ref: "Campbell & Kenny 1999",
   },
@@ -673,7 +673,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "numerical",
-    stem: "A memory test has a mean of 100, an SD of 15 and a test–retest correlation of .75. A group selected because it scored 70 on average is retested with no intervention. What retest mean would you expect from regression alone?",
+    stem: "A memory test has a mean of 100, an SD of 15 and a test-retest correlation of .75. A group selected because it scored 70 on average is retested with no intervention. What retest mean would you expect from regression alone?",
     options: ["70.0", "77.5", "92.5", "100.0"],
     answer: 1,
     explanation:
@@ -687,16 +687,16 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 4,
     type: "mcq",
-    stem: "In a pretest–posttest control group experiment, the attitude-change film works only for participants whose pretest made them think about the issue. The problem with this experiment is:",
+    stem: "In a pretest-posttest control group experiment, the attitude-change film works only for participants whose pretest made them think about the issue. The problem with this experiment is:",
     options: [
       "Testing, a threat to internal validity",
-      "Selection–maturation interaction, a threat to internal validity",
+      "Selection-maturation interaction, a threat to internal validity",
       "Instrumentation, a threat to internal validity",
       "The interaction of testing and treatment, a threat to external validity",
     ],
     answer: 3,
     explanation:
-      "Because the control group was also pretested, the main effect of testing is controlled, and internal validity is intact. The problem is that the effect may not generalise to an unpretested population, which is the reactive or interaction effect of testing, one of Campbell and Stanley's external validity threats. The Solomon four-group design detects it. Instrumentation and selection–maturation are not involved.",
+      "Because the control group was also pretested, the main effect of testing is controlled, and internal validity is intact. The problem is that the effect may not generalise to an unpretested population, which is the reactive or interaction effect of testing, one of Campbell and Stanley's external validity threats. The Solomon four-group design detects it. Instrumentation and selection-maturation are not involved.",
     module: "exam-prep",
     ref: "Campbell & Stanley 1963",
   },
@@ -762,7 +762,7 @@ const D: Draft[] = [
     exams: [n, m],
     difficulty: 3,
     type: "mcq",
-    stem: "Which of the following best describes evaluation apprehension (Rosenberg, 1965)?",
+    stem: "Which of the following best describes evaluation apprehension?",
     options: [
       "Participants deliberately sabotaging the study",
       "The experimenter's anxiety about whether the hypothesis will be supported",
@@ -805,11 +805,11 @@ const D: Draft[] = [
       "Diffusion of treatment",
       "Multiple-treatment interference",
       "Compensatory equalisation",
-      "Selection–history interaction",
+      "Selection-history interaction",
     ],
     answer: 1,
     explanation:
-      "Multiple-treatment interference is when the effects of earlier treatments cannot be erased, so later effects are specific to that sequence. This is an external validity threat. Diffusion means the treatment spreading to the control group. Compensatory equalisation means administrators giving extra resources to controls. Selection–history is when groups selected differently meet different events.",
+      "Multiple-treatment interference is when the effects of earlier treatments cannot be erased, so later effects are specific to that sequence. This is an external validity threat. Diffusion means the treatment spreading to the control group. Compensatory equalisation means administrators giving extra resources to controls. Selection-history is when groups selected differently meet different events.",
     module: "exam-prep",
     ref: "Campbell & Stanley 1963",
   },
