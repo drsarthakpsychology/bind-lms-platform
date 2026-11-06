@@ -214,7 +214,7 @@ export function SectionReader({
   );
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 md:grid md:grid-cols-[14rem_minmax(0,1fr)] md:gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12 lg:py-8 short:lg:py-5">
+    <div className="mx-auto w-full max-w-6xl md:grid md:grid-cols-[14rem_minmax(0,1fr)] md:gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1rem)] max-h-[calc(100dvh-var(--top-h)-2rem)] overflow-y-auto overscroll-contain rounded-3xl border-2 border-foreground bg-card p-3">
           <Link href={`/study/${moduleId}`} className="flex min-h-10 items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-semibold hover:bg-muted pointer-coarse:min-h-11">
