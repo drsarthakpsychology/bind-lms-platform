@@ -1,3 +1,4 @@
+import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 /**
@@ -6,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
  */
 export default function PracticeLoading() {
   return (
+    <LoadingFrame>
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <Skeleton className="h-7 w-40" />
       <Skeleton className="mt-3 h-8 w-72" />
@@ -24,5 +26,6 @@ export default function PracticeLoading() {
         ))}
       </div>
     </div>
+    </LoadingFrame>
   );
 }

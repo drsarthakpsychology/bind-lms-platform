@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { logout } from "@/lib/auth/actions";
+import { MiddleTruncate } from "@/components/ui/middle-truncate";
 
 /** Initial for the avatar: first letter of the email (no fake names). */
 export function initialOf(email: string | null | undefined) {
@@ -58,7 +59,7 @@ export function AccountMenu({
           <button
             type="button"
             aria-label="Your account"
-            className="rounded-full outline-none transition-transform duration-fast ease-snappy hover:-rotate-6 hover:scale-105 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:scale-95"
+            className="grid size-10 shrink-0 place-items-center rounded-full outline-none transition-transform duration-fast ease-snappy hover:-rotate-6 hover:scale-105 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:scale-95 pointer-coarse:size-11"
           >
             <Avatar email={email} />
           </button>
@@ -67,7 +68,7 @@ export function AccountMenu({
           <DropdownMenuLabel className="flex items-center gap-3 px-2 py-2">
             <Avatar email={email} />
             <span className="min-w-0">
-              <span className="block truncate text-sm font-bold">{email ?? "Signed in"}</span>
+              <MiddleTruncate text={email ?? "Signed in"} className="text-sm font-bold" />
               <span className="block text-caption capitalize text-muted-foreground">{role}</span>
             </span>
           </DropdownMenuLabel>

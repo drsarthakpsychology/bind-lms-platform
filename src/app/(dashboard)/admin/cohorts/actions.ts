@@ -6,6 +6,7 @@ import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { deriveName, generateCredential, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
 import { parseEmails } from "@/lib/cohorts/rules";
+import { matchNames, splitPeople, type NameMatch } from "../students/people-paste";
 
 type Result = { error: string | null };
 const APP_URL = () => liveAppUrl();
@@ -164,6 +165,33 @@ export async function addPeopleToCohort(
   });
   refresh(cohortId);
   return { error: null, rows, invalid };
+}
+
+/**
+ * The Add people panel: names OR emails. Emails go straight to
+ * addPeopleToCohort (the one add-people path); names are matched to existing
+ * students first, and any that don't match exactly once come back as
+ * "unmatched" so the admin can paste an email instead.
+ */
+export async function addPeopleFromPaste(
+  cohortId: string,
+  text: string,
+  opts: { sendEmail: boolean; scope: "full" | "lectures_only" },
+): Promise<{ error: string | null; rows: AddRow[]; invalid: string[]; unmatched: NameMatch[] }> {
+  if (!(await requireSuperAdmin())) return { error: "Not authorized.", rows: [], invalid: [], unmatched: [] };
+  const { emails, names } = splitPeople(text);
+  let matched: NameMatch[] = [];
+  if (names.length) {
+    const { data } = await createAdminClient().from("profiles").select("name, email").eq("role", "student").limit(10000);
+    matched = matchNames(names, (data ?? []).map((p) => ({ name: (p.name as string | null) ?? null, email: (p.email as string | null) ?? null })));
+  }
+  const unmatched = matched.filter((m) => !m.email);
+  const all = [...emails, ...matched.filter((m) => m.email).map((m) => m.email!)];
+  if (!all.length) {
+    return { error: unmatched.length ? "No one matched. Paste their email instead." : "Paste at least one name or email.", rows: [], invalid: [], unmatched };
+  }
+  const res = await addPeopleToCohort(cohortId, all.join("\n"), opts);
+  return { ...res, unmatched };
 }
 
 /** Email a fresh login link to one person. */

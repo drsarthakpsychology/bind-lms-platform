@@ -20,6 +20,12 @@ describe("command palette search", () => {
     expect(searchPalette(STATIC_ENTRIES, "rankings")[0].id).toBe("board-overall");
   });
 
+  it("admin jobs: reply to doubts, message, add people", () => {
+    expect(searchPalette(STATIC_ENTRIES, "reply to doubts")[0].id).toBe("ad-inbox");
+    expect(searchPalette(STATIC_ENTRIES, "message")[0].id).toBe("ad-message");
+    expect(searchPalette(STATIC_ENTRIES, "add people")[0].href).toBe("?add=people");
+  });
+
   it("empty query returns nothing", () => {
     expect(searchPalette(STATIC_ENTRIES, "")).toEqual([]);
   });

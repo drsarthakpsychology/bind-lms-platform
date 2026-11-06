@@ -20,7 +20,7 @@ export function ActivityFrame({ title, purpose, how, fallback, children }: { tit
       </div>
       <div className="min-w-0 lg:rounded-3xl lg:border-2 lg:border-foreground lg:bg-card lg:py-2">{children}</div>
       <aside className="hidden lg:block" aria-label="About this activity">
-        <div className="sticky top-20 space-y-4">
+        <div className="sticky top-[calc(var(--top-h)+1rem)] space-y-4">
           <BackPill fallback={fallback} className="h-11 w-full justify-center text-base" />
           <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background">
             <p className="text-xs font-semibold tracking-wide text-primary uppercase">You&apos;re in</p>

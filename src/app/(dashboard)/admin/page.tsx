@@ -11,6 +11,7 @@ import { openComplaintCount } from "@/lib/doubts/data";
 import Link from "next/link";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
+import { AddPeopleButton } from "@/components/admin/add-people-panel";
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatCard } from "@/components/design-system/stat-card";
 import { Reveal } from "@/components/motion/reveal";
@@ -114,8 +115,8 @@ export default async function AdminOverviewPage() {
     {
       label: "Student concerns",
       count: complaints,
-      detail: "Private concerns students raised. Reply in Review.",
-      href: "/admin/doubts",
+      detail: "Private concerns students raised. Reply in the Inbox.",
+      href: "/admin/inbox",
       icon: <ShieldAlert className="size-4" />,
       urgent: complaints > 0,
     },
@@ -234,11 +235,7 @@ export default async function AdminOverviewPage() {
                   <Bell aria-hidden /> Message
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm">
-                <Link href="/admin/students/add">
-                  <UserPlus aria-hidden /> Add students
-                </Link>
-              </Button>
+              <AddPeopleButton variant="outline" label="Add people" />
               <Button asChild size="sm">
                 <Link href="/admin/courses">
                   <Plus aria-hidden /> New course

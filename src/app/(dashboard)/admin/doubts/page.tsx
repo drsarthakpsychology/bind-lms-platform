@@ -9,6 +9,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { agoLabel } from "@/lib/analytics/timeline";
 import { cn } from "@/lib/utils";
+import { FilterBar } from "@/components/admin/filter-bar";
 
 export const metadata: Metadata = { title: "Doubts & concerns" };
 export const dynamic = "force-dynamic";
@@ -24,7 +25,7 @@ const VIEWS = [
  * reply, not to ask: private concerns first, then doubts nobody has answered,
  * filterable by cohort. Each opens the thread to reply or mark solved.
  */
-export default async function AdminDoubtsPage({ searchParams }: { searchParams: Promise<{ view?: string; cohort?: string }> }) {
+export default async function AdminDoubtsPage({ searchParams }: { searchParams: Promise<{ view?: string; cohort?: string; q?: string; status?: string }> }) {
   if (!(await requireAdmin())) redirect("/dashboard");
   const session = await getSession();
   if (session.status !== "ok") redirect("/dashboard");
@@ -40,7 +41,10 @@ export default async function AdminDoubtsPage({ searchParams }: { searchParams: 
   const cohortName = new Map((cohorts ?? []).map((c) => [c.id as string, c.name as string]));
   const concerns = items.filter((d) => d.kind === "complaint" && d.status !== "hidden");
   const open = items.filter((d) => d.kind === "doubt" && d.status === "open" && d.replies === 0);
-  const list = view === "concerns" ? concerns : view === "open" ? open : items.filter((d) => d.kind === "doubt");
+  const viewList = view === "concerns" ? concerns : view === "open" ? open : items.filter((d) => d.kind === "doubt");
+  const needle = (sp.q ?? "").trim().toLowerCase().slice(0, 100);
+  const status = ["open", "solved", "hidden"].includes(sp.status ?? "") ? sp.status : null;
+  const list = viewList.filter((d) => (!status || d.status === status) && (!needle || `${d.title} ${d.author} ${d.topic ?? ""}`.toLowerCase().includes(needle)));
   const q = (v: string, c?: string) => `/admin/doubts?view=${v}${c ? `&cohort=${c}` : ""}`;
 
   return (
@@ -57,12 +61,13 @@ export default async function AdminDoubtsPage({ searchParams }: { searchParams: 
           );
         })}
       </nav>
-      <div className="flex flex-wrap gap-1">
-        <Link href={q(view)} className={cn("inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold", !sp.cohort && "bg-foreground text-background")}>All cohorts</Link>
-        {(cohorts ?? []).map((c) => (
-          <Link key={c.id as string} href={q(view, c.id as string)} className={cn("inline-flex h-9 items-center rounded-full border-2 border-foreground px-3 text-sm font-bold", sp.cohort === c.id && "bg-foreground text-background")}>{String(c.name)}</Link>
-        ))}
-      </div>
+      <FilterBar
+        search={{ label: "Search doubts", placeholder: "Search by title, student or topic" }}
+        selects={[
+          { param: "cohort", label: "Cohort", allLabel: "All cohorts", options: (cohorts ?? []).map((c) => ({ value: c.id as string, label: String(c.name) })) },
+          { param: "status", label: "Status", allLabel: "Any status", options: [{ value: "open", label: "Open" }, { value: "solved", label: "Solved" }, { value: "hidden", label: "Hidden" }] },
+        ]}
+      />
       {list.length ? (
         <ul className="divide-y-2 divide-foreground/10 overflow-hidden rounded-2xl border-2 border-foreground bg-card">
           {list.map((d) => (
@@ -81,7 +86,7 @@ export default async function AdminDoubtsPage({ searchParams }: { searchParams: 
           ))}
         </ul>
       ) : (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">{view === "concerns" ? "No private concerns. Good." : "Nothing here."}</p>
+        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">{needle || status ? "Nothing matches these filters." : view === "concerns" ? "No private concerns. Good." : "Nothing here."}</p>
       )}
     </div>
   );

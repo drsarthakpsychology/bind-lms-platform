@@ -13,6 +13,8 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/study", label: "Notes", icon: "bookOpen" },
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
+  // Postgraduate exam prep (CUET PG, UGC NET, clinical entrances, semester exams): one pathway.
+  { href: "/prep", label: "Prep", icon: "target" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
   { href: "/achievements", label: "Achievements", icon: "award", section: "More" },
@@ -102,6 +104,16 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/people", label: "Pipeline" },
       { href: "/admin/enquiries", label: "Enquiry forms" },
     ],
+  },
+  {
+    // Top-bar Inbox (DI §C-6): everything waiting on a reply. On phones it is
+    // in More (the bottom bar keeps 4 tabs + More so labels stay readable at 360px).
+    key: "inbox",
+    label: "Inbox",
+    icon: "inbox",
+    href: "/admin/inbox",
+    group: "Communicate",
+    tabs: [{ href: "/admin/inbox", label: "Inbox", hidden: true }],
   },
   {
     key: "mail",
@@ -199,7 +211,7 @@ export function adminSectionFor(pathname: string): AdminSection | null {
 /** Sidebar items for admin: one per section; active across all its tabs. */
 export const ADMIN_SIDEBAR: NavItem[] = ADMIN_ITEMS;
 
-/** Notes and Games only appear in the nav once Learn is unlocked (no links to locked screens). */
+/** Notes, Games and Prep only appear in the nav once Learn is unlocked (no links to locked screens). */
 export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {
-  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games");
+  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games" && i.href !== "/prep");
 }

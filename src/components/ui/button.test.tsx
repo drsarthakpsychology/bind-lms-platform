@@ -16,6 +16,13 @@ describe("Button", () => {
     expect(btn).toHaveClass("cursor-pointer", "duration-fast", "ease-snappy");
   });
 
+  it("is a rounded rectangle, never a pill (owner rule 2026-11-06)", () => {
+    const { container } = render(<Button>Save</Button>);
+    const btn = container.querySelector("button");
+    expect(btn).toHaveClass("rounded-md");
+    expect(btn).not.toHaveClass("rounded-full");
+  });
+
   it("renders an anchor when used with asChild", () => {
     render(
       <Button asChild>
