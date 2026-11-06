@@ -59,7 +59,7 @@ export function TopBar({
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-4 lg:h-16">
+      <div className="flex h-14 items-center gap-2 px-2 sm:gap-3 sm:px-4 lg:h-16">
         <button
           type="button"
           onClick={toggleSidebar}
@@ -97,7 +97,7 @@ export function TopBar({
           </kbd>
         </button>
 
-        <div className="ml-auto flex items-center gap-1 sm:gap-2 md:ml-0">
+        <div className="ml-auto flex items-center gap-0.5 sm:gap-2 md:ml-0">
           <button type="button" onClick={openSearch} aria-label="Search" className={cn(iconBtn, "md:hidden")}>
             <Search className="size-5" aria-hidden />
           </button>

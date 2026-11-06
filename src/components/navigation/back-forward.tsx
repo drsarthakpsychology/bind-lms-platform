@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const btn =
-  "inline-flex size-9 items-center justify-center rounded-full border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:opacity-40 disabled:hover:border-transparent disabled:hover:bg-transparent";
+  "inline-flex size-9 items-center justify-center rounded-md border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:opacity-40 disabled:hover:border-transparent disabled:hover:bg-transparent pointer-coarse:size-11";
 
 /**
  * The same Back / Forward buttons on every page, like a browser — so people
@@ -32,7 +32,8 @@ export function BackForward({ className }: { className?: string }) {
       <button type="button" onClick={() => router.back()} aria-label="Go back" className={btn}>
         <ChevronLeft className="size-5" aria-hidden />
       </button>
-      <button type="button" onClick={() => router.forward()} aria-label="Go forward" className={btn}>
+      {/* Phones have a system back gesture and little top-bar room: Forward shows from sm up. */}
+      <button type="button" onClick={() => router.forward()} aria-label="Go forward" className={cn(btn, "hidden sm:inline-flex")}>
         <ChevronRight className="size-5" aria-hidden />
       </button>
     </div>
