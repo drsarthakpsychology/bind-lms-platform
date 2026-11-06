@@ -3,6 +3,8 @@ import { QUESTIONS as part1 } from "./biological-part1";
 import { QUESTIONS as part2 } from "./biological-part2";
 import { QUESTIONS as part3 } from "./biological-part3";
 import { QUESTIONS as part4 } from "./biological-part4";
+import { QUESTIONS as part5 } from "./biological-part5";
+import { QUESTIONS as part6 } from "./biological-part6";
 
 /** Question bank · biological. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4];
+export const QUESTIONS: PrepQuestion[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6];
