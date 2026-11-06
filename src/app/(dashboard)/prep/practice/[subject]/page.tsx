@@ -19,7 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ subject: 
 /**
  * /prep/practice/<subject>: a 10-question adaptive round. The Elo model
  * predicts each question's chance; the Goldilocks picker aims near 70 %
- * success with a few reviews, one stretch and one easy win.
+ * success with a few reviews, one stretch and one easy win, and every round
+ * holds one question at the next level up, so it climbs from easy and medium
+ * to hard and very hard as ability grows.
  */
 export default async function PracticePage({ params }: { params: Promise<{ subject: string }> }) {
   await requireFeature("learn");

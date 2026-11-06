@@ -10,7 +10,7 @@ import { AiGuardError, guardStudentCall } from "@/lib/ai/guards";
 import { AiUnavailableError } from "@/lib/ai/router";
 import { makeRng } from "@/lib/learn/model/picker";
 import { specById } from "@/content/prep/specs";
-import { isGoal } from "@/lib/prep/catalog";
+import { EXAM_TRACKS_ENABLED, activeGoal, isGoal, specVisible } from "@/lib/prep/catalog";
 import { BANK, INTERVIEW_KEY, KEY, learnHrefForQuestion } from "@/lib/prep/bank";
 import { resultView, type MockResultView } from "@/lib/prep/results";
 import { sampleMock, type Paper } from "@/lib/prep/sampling";
@@ -19,7 +19,7 @@ import { selfScore } from "@/lib/prep/interview";
 import { finishAttempt, loadAttempt, loadItemB, loadProfile, loadSeen, recordPrep, saveDiagnostic, saveGoal, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
 import { toView, type PrepQView, type PrepReveal } from "@/lib/prep/view";
 import type { PrepExam } from "@/lib/prep/types";
-import { DIAG_COOKIE, GOAL_COOKIE } from "./viewer";
+import { ALL_SUBJECTS, DIAG_COOKIE, GOAL_COOKIE } from "./viewer";
 
 const YEAR = 60 * 60 * 24 * 365;
 
@@ -35,9 +35,10 @@ const choice = z.number().int().min(0).max(3).nullable();
 
 /* ------------------------------------------------------------ goal */
 
+/** Pick an exam. Only while exam tracks are on; the shared course has no goal. */
 export async function setGoal(goal: string): Promise<{ ok: boolean }> {
   const me = await who();
-  if (!me || !isGoal(goal)) return { ok: false };
+  if (!EXAM_TRACKS_ENABLED || !me || !isGoal(goal)) return { ok: false };
   await saveGoal(me.id, goal);
   // A copy in a cookie keeps the choice even before the prep tables exist.
   (await cookies()).set(GOAL_COOKIE, `${me.id.slice(0, 8)}:${goal}`, { path: "/prep", maxAge: YEAR, sameSite: "lax", httpOnly: true });
@@ -47,20 +48,24 @@ export async function setGoal(goal: string): Promise<{ ok: boolean }> {
 
 /* ------------------------------------------------------ diagnostic */
 
-const diagSchema = z.object({ goal: z.string(), answers: z.array(z.object({ id, choice })).max(40) });
+const diagSchema = z.object({ goal: z.string().nullable(), answers: z.array(z.object({ id, choice })).max(40) });
 
-/** Grade the diagnostic on the server, seed the student model and store the topic profile. */
-export async function submitDiagnostic(input: { goal: string; answers: { id: string; choice: number | null }[] }): Promise<{ result: DiagnosticResult; saved: boolean }> {
+/**
+ * Grade the diagnostic on the server, seed the student model and store the
+ * topic profile. `goal` only counts with exam tracks on; otherwise the check
+ * is the shared course's (every subject).
+ */
+export async function submitDiagnostic(input: { goal: string | null; answers: { id: string; choice: number | null }[] }): Promise<{ result: DiagnosticResult; saved: boolean }> {
   const parsed = diagSchema.safeParse(input);
   const answers = parsed.success ? parsed.data.answers.filter((a) => KEY.has(a.id)) : [];
-  const goal: PrepExam | null = parsed.success && isGoal(parsed.data.goal) ? parsed.data.goal : null;
+  const goal: PrepExam | null = parsed.success && isGoal(parsed.data.goal) ? activeGoal(parsed.data.goal) : null;
   const b = await loadItemB(answers.map((a) => a.id));
   const result = scoreDiagnostic(answers, KEY, (x) => b.get(x));
   const me = await who();
-  if (!me || !goal) return { result, saved: false };
+  if (!me || !parsed.success || (EXAM_TRACKS_ENABLED && !goal)) return { result, saved: false };
   if (me.learner) await recordPrep(me.id, answers.map((a) => ({ q: KEY.get(a.id)!, outcome: a.choice !== null && a.choice === KEY.get(a.id)!.answer ? 1 : 0 })));
   const saved = await saveDiagnostic(me.id, goal, result);
-  (await cookies()).set(DIAG_COOKIE, `${me.id.slice(0, 8)}:${goal}`, { path: "/prep", maxAge: YEAR, sameSite: "lax", httpOnly: true });
+  (await cookies()).set(DIAG_COOKIE, `${me.id.slice(0, 8)}:${goal ?? ALL_SUBJECTS}`, { path: "/prep", maxAge: YEAR, sameSite: "lax", httpOnly: true });
   revalidatePath("/prep");
   return { result, saved };
 }
@@ -87,7 +92,7 @@ export type MockPaperView = { attemptId: string | null; specId: string; deadline
 /** Start a timed mock: sample a fresh paper on the server and start the clock. */
 export async function startMock(specId: string): Promise<MockPaperView | { error: string }> {
   const spec = specById(specId);
-  if (!spec) return { error: "That mock doesn't exist." };
+  if (!spec || !specVisible(spec)) return { error: "That mock doesn't exist." };
   const me = await who();
   if (!me) return { error: "Please sign in again." };
   const now = new Date();
@@ -170,7 +175,7 @@ export async function revealInterview(qid: string): Promise<InterviewReveal | { 
 }
 
 const FEEDBACK_PROMPT =
-  "You are a senior clinical psychologist on an interview panel for a clinical psychology master's (M.Clin.Psy) or similar programme in India. " +
+  "You are a senior psychologist on an admission interview panel in India: a clinical psychology master's (M.Clin.Psy), an MA/MSc Psychology or a research programme. " +
   "A candidate has answered a practice interview question. Give short, kind, specific feedback in plain English (90-160 words): " +
   "1) what they did well, 2) which must-cover points they missed or got wrong, 3) one concrete way to make the answer stronger. " +
   "Point out any red flag from the list if their answer shows it. Never invent facts, citations or statistics. " +
@@ -226,7 +231,7 @@ export async function saveInterviewSession(input: z.input<typeof sessionSchema>)
     return [{ id: q.id, answer: it.answer, covered, flags, pct: selfScore(q.mustCover.length, covered.length, flags.length).pct, feedback: it.feedback ?? null }];
   });
   const score = items.length ? Math.round(items.reduce((a, i) => a + i.pct, 0) / items.length) : 0;
-  const goal = (await loadProfile(me.id)).goal;
+  const goal = activeGoal((await loadProfile(me.id)).goal);
   const saved = me.learner ? await saveInterview(me.id, goal, items, score) : false;
   revalidatePath("/prep");
   return { saved, score };
