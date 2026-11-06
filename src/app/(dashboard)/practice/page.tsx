@@ -57,7 +57,7 @@ export default async function PracticeHubPage() {
   const resume = user ? await lastPracticePlace(user.id, visible.filter((t) => !t.locked).map((t) => ({ href: t.href, title: t.title }))) : null;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-5xl">
       <Reveal delay={0.05}>
         <header className="mb-6">
           <p className="text-eyebrow text-muted-foreground">Practice</p>

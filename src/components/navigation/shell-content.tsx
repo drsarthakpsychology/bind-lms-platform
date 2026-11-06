@@ -20,7 +20,7 @@ export function ShellContent({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-6 pb-[calc(var(--nav-h)+2rem)] sm:px-6 lg:px-10 lg:py-8 lg:pb-12">
+    <div className="mx-auto w-full max-w-7xl px-4 py-6 pb-[calc(var(--nav-h)+2rem)] sm:px-6 md:pb-12 lg:px-10 lg:py-8 short:lg:py-6">
       {children}
     </div>
   );

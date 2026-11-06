@@ -29,6 +29,15 @@ export function isInnerStudentPath(pathname: string, role: string): boolean {
   );
 }
 
+/**
+ * A study reading page (a section or a checkpoint). It has its own contents
+ * rail, so on tablets (768-1023) the app's icon rail steps aside to leave
+ * room for two columns: contents + text.
+ */
+export function isReaderPath(pathname: string): boolean {
+  return /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
+}
+
 /** The patient session is full-bleed: no shell padding, no bottom tab bar. */
 export function isImmersiveSessionPath(pathname: string): boolean {
   return /^\/practice\/consulting-room\/session\//.test(pathname);
@@ -45,5 +54,7 @@ export function SidebarGate({
 }) {
   const pathname = usePathname();
   const hide = isInnerStudentPath(pathname ?? "", role);
-  return <>{hide ? fallback : children}</>;
+  if (hide) return <>{fallback}</>;
+  if (isReaderPath(pathname ?? "")) return <div className="contents md:max-lg:hidden">{children}</div>;
+  return <>{children}</>;
 }

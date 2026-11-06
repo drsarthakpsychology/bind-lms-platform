@@ -79,7 +79,7 @@ export default async function MaterialViewerPage({
     : "Course materials";
 
   return (
-    <div className="flex h-full min-h-[calc(100vh-3.5rem)] flex-col">
+    <div className="flex h-full min-h-[calc(100dvh-var(--top-h))] flex-col">
       {/* Minimal header — the shell top bar is hidden on this drill-down, so
           the header owns the notch inset (T66). */}
       <header
