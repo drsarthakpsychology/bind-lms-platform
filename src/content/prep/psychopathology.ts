@@ -13,6 +13,8 @@ import { PART as p11 } from "./psychopathology-11";
 import { PART as p12 } from "./psychopathology-12";
 import { PART as p13 } from "./psychopathology-13";
 import { PART as p14 } from "./psychopathology-14";
+import { PART as p15 } from "./psychopathology-15";
+import { PART as p16 } from "./psychopathology-16";
 
 /** Question bank · psychopathology. Content lives in psychopathology-NN.ts part files. */
-export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14];
+export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...p16];
