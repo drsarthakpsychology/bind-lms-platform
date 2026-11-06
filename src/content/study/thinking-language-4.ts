@@ -136,6 +136,14 @@ Q: Adoptive siblings' IQs correlate modestly in childhood but almost not at all 
 - **Mike Anderson's theory of the minimal cognitive architecture** (1992) tries to explain both individual differences and development. A **basic processing mechanism**, varying in **speed** between people but not changing much with age, limits two **specific processors** (verbal-propositional and visual-spatial thinking). Separately, **modules** (for example, for perceiving three dimensions, theory of mind, language) mature with age and work regardless of the basic mechanism. This explains why a person with intellectual disability can have normal theory of mind or language, and why savants exist.
 - **Stephen Ceci's bioecological theory** (1990) argues that intelligence is **multiple cognitive potentials** shaped by **context** (motivation, social setting, physical setting) and **knowledge**. Ceci found that expert racetrack handicappers in the United States used remarkably complex reasoning to predict odds, and their skill was **unrelated to their IQ**. He also showed how strongly schooling raises IQ.
 
+:::widget neuron
+{
+ "title": "Processing speed and myelin",
+ "myelinated": true,
+ "caption": "Switch myelin off and on. Myelinated axons conduct impulses many times faster, jumping between gaps in the sheath. Myelination continues into the twenties, and individual differences in white-matter integrity are linked to processing speed, the 'basic processing mechanism' in Anderson's theory."
+}
+:::
+
 ### Comparing theories
 | Theory | Unit of intelligence | Main evidence | Main weakness |
 |---|---|---|---|
@@ -477,6 +485,123 @@ Convergent thinking narrows to one correct answer; divergent thinking generates 
 Creative work needs divergent thinking to generate ideas and convergent thinking to choose and refine the best one.
 :::
 
+:::qa What are System 1 and System 2 thinking? Give two examples of each. [starting]
+| | System 1 | System 2 |
+|---|---|---|
+| Nature | Fast, automatic, intuitive | Slow, effortful, deliberate |
+| Awareness | Mostly unconscious | Conscious |
+| Capacity | Runs alongside other tasks | Limited by working memory |
+| Examples | Recognising a friend's face; sensing anger in a voice | Solving 17 × 24; checking diagnostic criteria one by one |
+
+### How they interact
+System 1 offers quick answers; System 2 is supposed to check them but often does not, which is why the bat-and-ball problem fools so many people.
+
+### Caution
+These are types of processing, not two brain organs, and intuition built on real experience is often accurate.
+:::
+
+:::qa What is a concept? Why are concepts useful? [starting]
+### Short answer
+A concept is a mental category that groups objects, events or ideas sharing common properties.
+
+### Why they are useful
+1. **Economy**: we do not treat every object as new.
+2. **Prediction**: knowing something is a "snake" tells us it may be dangerous.
+3. **Communication**: shared concepts let us talk about the world.
+4. **Reasoning**: concepts are the units we combine in propositions and arguments.
+
+### Example
+Once a child has the concept "fruit", she can expect a new fruit like a rambutan to be sweet and edible.
+:::
+
+:::qa What is insight in problem solving? How does it differ from trial-and-error? [starting]
+| | Insight | Trial and error |
+|---|---|---|
+| How the solution comes | Suddenly, after restructuring the problem | Gradually, as wrong attempts drop out |
+| Feeling | "Aha!" | No sudden moment |
+| After solving | Smooth performance; transfers to similar problems | Slow improvement over trials |
+| Classic study | Köhler's chimpanzees joining sticks | Thorndike's cats in puzzle boxes |
+
+### Example
+A student stuck on a puzzle takes a walk and suddenly sees a new way to arrange the pieces: insight. Another tries every arrangement until one works: trial and error.
+:::
+
+:::qa What is confirmation bias? Give an everyday and a clinical example. [starting]
+### Short answer
+Confirmation bias is the tendency to seek, notice and remember information that supports what we already believe, and to ignore what contradicts it.
+
+### Examples
+- **Everyday**: a cricket fan remembers every match his team won when he wore his lucky shirt and forgets the losses.
+- **Clinical**: a clinician who suspects depression asks only about low mood and misses symptoms of thyroid disease.
+
+### Reducing it
+1. Ask "what evidence would prove me wrong?"
+2. Actively look for alternatives.
+3. Ask a colleague to argue the other side.
+:::
+
+:::qa Explain the five levels of language with examples. [starting]
+| Level | Unit | Example |
+|---|---|---|
+| Phonology | Phonemes, the sounds that change meaning | "Pin" versus "bin"; Hindi "kal" versus "khal" |
+| Morphology | Morphemes, the smallest units of meaning | "Un-kind-ness" has three |
+| Syntax | Rules for word order | Hindi: "Ram ne seb khaya" (subject, object, verb) |
+| Semantics | Meaning | "Bank" of a river versus a bank |
+| Pragmatics | Use in social context | "Can you pass the salt?" is a request |
+
+### Why it matters
+Language difficulties can occur at any level: a child may have a speech-sound problem (phonology) but normal understanding (semantics).
+:::
+
+:::qa What did Binet and Simon contribute to intelligence testing? [starting]
+### Short answer
+In 1905 they built the first practical intelligence test, to identify Paris schoolchildren who needed extra help.
+
+### Key ideas
+1. **Mental age**: the age level at which a child performs.
+2. **Items arranged by age**, based on what typical children could do.
+3. Tests of **judgment, reasoning and comprehension**, not just sensory speed (as Galton had used).
+4. Binet saw intelligence as improvable through education, not fixed.
+
+### What followed
+Stern proposed the ratio IQ; Terman adapted the test as the Stanford-Binet; Wechsler later introduced the deviation IQ.
+:::
+
+:::qa Calculation: a 12-year-old has a mental age of 15, and an 8-year-old has a mental age of 6. Find their ratio IQs. Why is ratio IQ not used for adults? [starting]
+### Working
+- First child: 15 divided by 12, times 100 = **125**.
+- Second child: 6 divided by 8, times 100 = **75**.
+
+### Why not for adults
+Mental age stops rising in the late teens, but chronological age keeps rising, so ratio IQ would fall every year even if ability stayed the same. Modern tests use the **deviation IQ**, comparing each person with others of the same age (mean 100, SD 15).
+:::
+
+:::qa What is the difference between fluid and crystallised intelligence? How do they change with age? [starting]
+| | Fluid intelligence | Crystallised intelligence |
+|---|---|---|
+| Meaning | Reasoning about new problems | Knowledge and skills built up through education and experience |
+| Example tasks | Matrices, series, new puzzles | Vocabulary, general knowledge |
+| With age | Peaks in early adulthood, then slowly declines | Rises or holds steady into later life |
+
+### Everyday example
+A young engineer may solve a new puzzle faster; an experienced judge may understand a complex legal argument better. Both are intelligent in different ways.
+:::
+
+:::qa What is creativity, and why is it more than divergent thinking? [starting]
+### Short answer
+Creativity is producing something both **novel** and **useful or appropriate**. Divergent thinking generates many ideas, but creative work also needs knowledge, judgment, persistence and motivation.
+
+### What creativity needs
+1. **Knowledge** of the field.
+2. **Divergent thinking** to generate options.
+3. **Convergent thinking** to choose and refine.
+4. **Motivation**, especially interest and enjoyment.
+5. **An environment** that allows risk and accepts new ideas.
+
+### Example
+A tailor who designs a new blouse pattern needs skill with cloth, many ideas, judgment about what will fit and sell, and customers willing to try it.
+:::
+
 ## 5.2 Q&A bank · Beginner [beginner]
 Answers here assume the Beginner sections. Write your own outline first.
 
@@ -578,6 +703,159 @@ The Cognitive Assessment System measures each process with specific tasks.
 
 ### Evaluation
 Strong theoretical basis in neuropsychology and clear educational use; fewer independent replications than CHC-based tests, and some overlap with working memory and executive function measures.
+:::
+
+:::qa Compare the classical, prototype and exemplar views of concepts, with evidence for each. [beginner]
+| View | A concept is | Evidence for | Evidence against |
+|---|---|---|---|
+| Classical | A set of defining features | Works for formal concepts (triangle, prime number) | No defining features for "game"; fuzzy boundaries; typicality effects |
+| Prototype | An average or best example | Typical members verified faster, named first, learned earlier; dot-pattern studies | Ignores variability; cannot explain knowledge of unusual members |
+| Exemplar | Many stored members | Captures variability; explains sensitivity to specific cases | Memory-heavy; unclear which exemplars count |
+
+### Synthesis
+People probably use prototypes for quick judgments, exemplars for unusual cases, and theories about what makes something what it is when reasoning carefully.
+:::
+
+:::qa Explain the Wason selection task and the reasons proposed for why the social version is easier. [beginner]
+### The abstract task
+Cards: E, K, 4, 7. Rule: "If a card has a vowel on one side, it has an even number on the other." Correct choice: **E and 7**. Fewer than one in ten choose this; most choose E, or E and 4.
+
+### The social version
+"If someone is drinking beer, they must be over 18." Cards: beer, cola, 25, 16. Correct: beer and 16. About three-quarters solve it.
+
+### Explanations
+| Theory | Claim |
+|---|---|
+| Familiarity | Real-world experience with the rule |
+| Pragmatic reasoning schemas (Cheng and Holyoak) | Learned rules for permission and obligation |
+| Cheater detection (Cosmides) | An evolved mechanism for spotting violations of social contracts |
+| Matching bias | In the abstract version people choose cards named in the rule |
+
+### Lesson
+Human reasoning is not purely formal logic; content and context strongly affect performance.
+:::
+
+:::qa Calculation: what is the minimum number of moves to solve a Tower of Hanoi with 4 discs? With 5? Why does hill climbing fail on it? [beginner]
+### Working
+Minimum moves = 2 raised to n, minus 1.
+- 4 discs: 16 minus 1 = **15**.
+- 5 discs: 32 minus 1 = **31**.
+
+### Why hill climbing fails
+Hill climbing always takes the move that seems closest to the goal. To move the largest disc, you must first move the smaller discs **away** from the goal peg, which looks like moving backwards. Only planning with sub-goals (means-ends analysis) solves it efficiently.
+
+### Clinical link
+Tower tasks (Tower of London) measure planning in frontal lobe conditions.
+:::
+
+:::qa Describe the major obstacles to problem solving and the classic experiments that demonstrated them. [beginner]
+| Obstacle | Meaning | Experiment |
+|---|---|---|
+| Mental set (Einstellung) | Using a familiar method when a simpler one exists | Luchins' water jars |
+| Functional fixedness | Seeing objects only in their usual function | Duncker's candle problem; Maier's two-string problem |
+| Confirmation bias | Seeking supporting evidence | Wason's 2-4-6 task |
+| Unnecessary constraints | Assuming rules that are not there | The nine-dot problem (lines must go outside the square) |
+| Surface focus | Missing a useful analogy | Gick and Holyoak's radiation problem |
+
+### Overcoming them
+Breaks and incubation, restating the problem, listing object features, generating alternatives, and comparing several analogies.
+:::
+
+:::qa What is the difference between normative and descriptive models of decision making? Explain bounded rationality. [beginner]
+| | Normative | Descriptive |
+|---|---|---|
+| Question | How should a rational person decide? | How do people actually decide? |
+| Example | Expected utility theory | Prospect theory; heuristics and biases |
+
+### Bounded rationality
+Herbert Simon argued that people have limited time, information and processing capacity, so they **satisfice**: they choose the first option that meets their needs rather than searching for the best.
+
+### Example
+Choosing a coaching institute: rather than comparing every one in the city, a student picks the first with good results, a reasonable fee and a convenient location.
+
+### Gigerenzer's view
+Simple heuristics can be **ecologically rational**: well matched to real environments, sometimes beating complex models.
+:::
+
+:::qa What are the main stages of children's private speech, according to Vygotsky? What does research show? [beginner]
+### Stages
+1. **Social speech**: adults guide the child's actions with words.
+2. **Private speech**: the child talks aloud to guide herself, especially from about 3 to 7 years.
+3. **Inner speech**: speech goes silent and abbreviated, becoming verbal thought.
+
+### Research findings
+- Children use more private speech on harder tasks.
+- Children who use more task-relevant private speech often perform better.
+- Private speech becomes quieter and more abbreviated with age.
+- Children with ADHD may use private speech later and less effectively.
+
+### Contrast with Piaget
+Piaget called it egocentric speech, a sign of immature thought that simply fades. Vygotsky saw it as a tool for self-regulation.
+:::
+
+:::qa Explain Chomsky's arguments against Skinner's account of language. How have later researchers responded? [beginner]
+### Chomsky's arguments
+1. **Productivity**: children say sentences they have never heard.
+2. **Poverty of the stimulus**: input is too limited to teach complex grammar.
+3. **Rule-based errors**: "goed" and "mouses" are never modelled by adults.
+4. **Little correction**: parents rarely correct grammar.
+5. **Speed and uniformity**: children everywhere learn grammar fast, at similar ages.
+
+### Later responses
+| View | Response |
+|---|---|
+| Statistical learning | Infants extract patterns from input far better than once thought |
+| Usage-based (Tomasello) | Grammar builds from joint attention and reading intentions |
+| Social interactionist (Bruner) | Child-directed speech and routines scaffold learning |
+| Nativist support | Nicaraguan Sign Language; critical period evidence |
+
+### Current view
+Children bring strong learning abilities, and possibly language-specific biases, to rich social input.
+:::
+
+:::qa Explain Thurstone's primary mental abilities and how his theory relates to Spearman's g. [beginner]
+### The seven abilities
+Verbal comprehension, word fluency, number, space, associative memory, perceptual speed and inductive reasoning.
+
+### Relation to g
+| Spearman | Thurstone |
+|---|---|
+| One general factor plus specific factors | Seven separate group factors |
+| Based on correlations among school tests | Based on 56 tests with a different factor method |
+| Emphasised what tests share | Emphasised how abilities differ |
+
+When Thurstone tested broader samples, his primary abilities correlated with each other, and he accepted a second-order g. The two theories describe different levels of the same hierarchy, as Vernon and later Carroll showed.
+:::
+
+:::qa Describe Guilford's structure of intellect model and evaluate it. [beginner]
+### The model
+Every ability combines three dimensions:
+- **Operations**: cognition, memory (later split into recording and retention), divergent production, convergent production, evaluation.
+- **Contents**: figural (later visual and auditory), symbolic, semantic, behavioural.
+- **Products**: units, classes, relations, systems, transformations, implications.
+The total grew from 120 to 150 to 180 abilities.
+
+### Strengths
+- Systematic and detailed.
+- Introduced **divergent production**, the basis of creativity testing.
+
+### Weaknesses
+1. His own data showed many supposedly independent abilities correlated, consistent with g.
+2. Many cells were never measured reliably.
+3. Little practical value for prediction.
+:::
+
+:::qa What is emotional intelligence? Compare ability, mixed and trait models. [beginner]
+| Model | Proponents | Definition | Measure |
+|---|---|---|---|
+| Ability | Mayer and Salovey | Perceiving, using, understanding and managing emotions | MSCEIT, with right and wrong answers |
+| Mixed | Goleman; Bar-On | A broad set including self-awareness, motivation, empathy, social skill | Self-report and 360-degree ratings |
+| Trait | Petrides | Self-perceived emotional dispositions | Self-report questionnaire |
+
+### Evaluation
+- Ability EI is distinct from IQ and personality and predicts some social outcomes modestly.
+- Mixed and trait models overlap strongly with personality traits.
+- Claims that EI matters "more than IQ" are not supported.
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
@@ -701,6 +979,174 @@ The strong version (language determines thought) is not supported. The weak vers
 
 ### Conclusion
 Language works as a tool that makes some distinctions quicker and more habitual, especially when words are used during the task. It does not limit what can be thought.
+:::
+
+:::qa Compare mental logic and mental models theories of deductive reasoning. Which explains the evidence better? [advanced]
+| | Mental logic | Mental models |
+|---|---|---|
+| Claim | People have formal inference rules in the mind | People build small models of possible situations and check for counterexamples |
+| Proponents | Rips, Braine | Johnson-Laird |
+| Difficulty predicted by | Number of rule steps | Number of models needed |
+| Explains errors as | Missing or misapplied rules | Failing to build all models |
+
+### Evidence
+- Problems needing more models are harder and slower, as mental models predicts.
+- People draw invalid conclusions that fit the first model they build.
+- Content effects (belief bias, the social Wason task) are hard for a pure logic theory.
+
+### Conclusion
+Mental models fits more of the data, although dual-process views add that fast intuitive processes often decide before any model is built.
+:::
+
+:::qa Explain dual-process theories of reasoning. What are their strengths and criticisms? [advanced]
+### Claim
+Reasoning involves two kinds of process: Type 1 (fast, automatic, associative, independent of working memory) and Type 2 (slow, deliberate, rule-based, dependent on working memory).
+
+### Evidence
+- Belief bias increases under time pressure and with working-memory load.
+- People higher in cognitive ability and in the disposition to reflect resist intuitive errors more.
+- The Cognitive Reflection Test separates intuitive from reflective answers.
+
+### Criticisms
+1. Features may not cluster neatly into two types.
+2. Intuition can follow logical rules (people sometimes "feel" a conflict before reasoning).
+3. Risk of explaining everything after the fact.
+
+### Applied value
+Slowing down at key decisions, checklists and "consider the opposite" strategies all aim to engage Type 2 processing.
+:::
+
+:::qa How does expertise change problem solving? Discuss chunking, deliberate practice and the limits of practice. [advanced]
+### What experts do differently
+| Feature | Evidence |
+|---|---|
+| Large stores of meaningful chunks | Chess masters recall real but not random positions better |
+| Classify problems by deep structure | Physics experts group by principle; novices by surface |
+| Work forwards from knowledge | Novices work backwards from the goal |
+| Better self-monitoring | Experts notice errors sooner |
+
+### Deliberate practice
+Focused, effortful practice with feedback aimed at weaknesses, sustained for years.
+
+### Limits
+A large 2014 meta-analysis found deliberate practice explained about 12 percent of performance differences overall, more in games and music and much less in professions. Starting age, working memory, personality and opportunity also matter.
+
+### Clinical example
+Experienced clinicians recognise patterns quickly, but this can also produce premature closure; expertise needs structured checking.
+:::
+
+:::qa What is metacognition? Explain its role in learning and in psychological disorders. [advanced]
+### Definition
+Knowledge about one's own thinking (person, task, strategy knowledge) and the regulation of it (planning, monitoring, evaluating).
+
+### In learning
+- Accurate monitoring decides what to restudy; immediate judgments of learning are inflated by fluency, delayed ones are accurate.
+- Students often mistake familiarity for knowledge; self-testing corrects this.
+- Teaching metacognitive strategies improves achievement.
+
+### In disorders
+| Condition | Metacognitive feature | Treatment |
+|---|---|---|
+| Generalised anxiety | Positive and negative beliefs about worry | Metacognitive therapy |
+| Psychosis | Overconfidence in errors, jumping to conclusions, reduced insight | Metacognitive training |
+| Depression | Rumination maintained by beliefs that it helps | Metacognitive therapy, rumination-focused CBT |
+| OCD | Thought-action fusion | CBT targeting beliefs about thoughts |
+:::
+
+:::qa Discuss the critical period hypothesis for language. What evidence supports and challenges it? [advanced]
+### The hypothesis
+Lenneberg proposed that language is acquired most easily before puberty, as the brain matures.
+
+### Supporting evidence
+1. Genie, isolated until 13, learned words but not grammar.
+2. Immigrants arriving before about 7 reach native-like grammar; later arrivals decline steadily.
+3. Deaf children exposed to sign language late show lasting grammatical difficulties.
+4. Nicaraguan Sign Language: younger children made the grammar more systematic.
+
+### Challenges
+- Genie suffered extreme abuse and deprivation, confounding the result.
+- Decline with age is gradual, not a sharp cut-off.
+- Adults can learn vocabulary and much grammar well; accent is most age-sensitive.
+
+### Conclusion
+A **sensitive period**, strongest for phonology and grammar, fits the evidence better than a strict critical period.
+:::
+
+:::qa Evaluate Sternberg's triarchic theory of intelligence. [advanced]
+### The theory
+- **Analytical**: metacomponents, performance and knowledge-acquisition components.
+- **Creative**: dealing with novelty and automatising familiar tasks.
+- **Practical**: adapting to, shaping or selecting environments; tacit knowledge.
+Later reframed as **successful intelligence**.
+
+### Strengths
+- Brings in context, culture and real-world competence.
+- Studies such as the Kenyan herbal-knowledge research show practical and academic skills can diverge.
+- Useful for education and selection beyond IQ.
+
+### Weaknesses
+1. Measures of practical intelligence often correlate with g.
+2. Some findings have not replicated.
+3. The three parts are hard to measure independently.
+
+### Conclusion
+A valuable widening of the concept of intelligence, with mixed empirical support for its distinct parts.
+:::
+
+:::qa What is test bias? How should intelligence be assessed fairly in a multilingual country like India? [advanced]
+### Kinds of bias
+| Kind | Meaning | Example |
+|---|---|---|
+| Content | Items assume particular knowledge | Pictures of objects unknown in a rural area |
+| Language | Testing in a weaker language | A Desia-speaking child tested in English |
+| Norms | Norm group unlike the person | Urban English-medium norms for a rural child |
+| Predictive | Test predicts differently for groups | Same score predicting different school success |
+| Situational | Unfamiliar testing setting, anxiety, stereotype threat | A child never tested under time pressure |
+
+### Fair practice
+1. Test in the person's strongest language, with an interpreter for instructions if needed.
+2. Prefer recent, local norms.
+3. Use non-verbal and performance measures alongside verbal ones.
+4. Always assess adaptive functioning and gather history from family and school.
+5. Interpret scores as ranges and state the limits in the report.
+:::
+
+:::qa A 7-year-old in Class 2 is referred for "low IQ" because she cannot read. Outline your assessment and possible explanations. [advanced]
+### Possible explanations
+| Explanation | Clues |
+|---|---|
+| Specific learning disorder (reading) | Average non-verbal reasoning; weak phonological and successive processing |
+| Intellectual disability | Global delay in reasoning and adaptive skills; delayed milestones |
+| Hearing or vision problem | Missed sounds, squinting, poor speech |
+| Language of instruction | Taught in a language not spoken at home |
+| Poor or interrupted schooling | Irregular attendance, frequent school changes |
+| ADHD or emotional difficulties | Inattention, anxiety, problems at home |
+
+### Assessment
+1. History: milestones, schooling, languages, family history.
+2. Hearing and vision screening.
+3. Intellectual assessment with Indian norms, including non-verbal measures.
+4. Reading, phonological awareness and, where available, PASS processes.
+5. Adaptive behaviour (for example the Vineland Social Maturity Scale).
+6. Observation in class and teacher reports.
+
+### Outcome
+A diagnosis is made only when the pattern fits; many children labelled "low IQ" have specific, treatable reading difficulties.
+:::
+
+:::qa Discuss the major theories of creativity and evaluate them. [advanced]
+| Theory | Key idea | Strength | Limitation |
+|---|---|---|---|
+| Wallas's stages | Preparation, incubation, illumination, verification | Matches creators' accounts; incubation effect supported | Stages overlap and repeat in practice |
+| Guilford's divergent thinking | Creativity as divergent production | Measurable; led to tests | Divergent thinking alone does not equal creative achievement |
+| Mednick's associative theory | Remote associations; flat associative hierarchies | Testable with the Remote Associates Test | The test overlaps with verbal ability and insight |
+| Amabile's componential model | Skills, creative processes, intrinsic motivation | Explains effects of rewards and environment | Interactions between components unclear |
+| Investment theory | Buy low, sell high; six resources | Combines person and environment | Hard to test as a whole |
+| Systems model | Individual, domain, field | Shows creativity is socially judged | Less about the creative process itself |
+| Four C model | Mini-c to Big-C | Values everyday creativity | Descriptive rather than explanatory |
+
+### Conclusion
+Creativity is best understood as an interaction of cognitive processes, personality, motivation, knowledge and social context, which no single theory covers fully.
 :::
 
 ## 5.4 Long answers and short notes [core]

@@ -220,6 +220,14 @@ Light enters through the **cornea**, passes the **pupil** (sized by the iris), i
 
 The **blind spot** is where the optic nerve leaves the eye: no receptors at all. You never notice it because the other eye covers it and the brain fills in.
 
+:::widget neuron
+{
+ "title": "Rate coding: how a neuron signals 'brighter'",
+ "myelinated": true,
+ "caption": "Raise the input above threshold and watch the firing rate climb while each spike stays the same size. Sensory systems signal intensity by rate and by how many neurons fire, which is one physiological basis for psychophysical laws such as Stevens'."
+}
+:::
+
 ### Dark adaptation
 Walk from a sunny street into a cinema and you are nearly blind; slowly the seats appear. Cones adapt first and quickly, then reach their limit; rods adapt more slowly but become far more sensitive. The bend in the curve where rods take over is the **rod-cone break**.
 

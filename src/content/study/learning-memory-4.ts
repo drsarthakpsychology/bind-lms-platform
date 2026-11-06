@@ -155,6 +155,14 @@ Add **Thorndike** (connectionism, trial and error), **Skinner** (radical behavio
 - **Donald Hebb** (1949): "neurons that fire together wire together". When one cell repeatedly helps fire another, the connection between them strengthens. Groups of such cells form **cell assemblies** that represent ideas.
 - **Eric Kandel** (Nobel Prize 2000) studied the sea slug **Aplysia**, whose gill-withdrawal reflex habituates and sensitises. **Habituation** involved less neurotransmitter released from sensory neurons; **sensitisation** involved serotonin from facilitating interneurons enhancing release. **Long-term** sensitisation required **new protein synthesis** (via the CREB pathway) and growth of new synapses. Short-term memory changes existing synapses; long-term memory builds new ones.
 
+:::widget neuron
+{
+ "title": "Firing together: the raw material of Hebbian learning",
+ "myelinated": true,
+ "caption": "A neuron fires only when its inputs push it past threshold. Hebb's rule says that when one cell repeatedly helps another cross that threshold, the connection between them strengthens. Long-term potentiation, next, is the mechanism."
+}
+:::
+
 ### Long-term potentiation
 Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampus with a brief high-frequency burst and found that the synapses then responded more strongly for hours to days: **long-term potentiation (LTP)**. The key is the **NMDA glutamate receptor**, which opens only when two things happen together: glutamate binds **and** the receiving cell is already depolarised (removing a magnesium block). It is a molecular **coincidence detector**, exactly the Hebbian rule. Richard Morris showed that rats given a drug blocking NMDA receptors (AP5) could not learn the hidden platform's location in a **water maze**.
 
@@ -482,6 +490,14 @@ Shepard Siegel proposed that drug cues (the room, the syringe, the ritual) come 
 }
 :::
 
+:::widget receptor
+{
+ "receptor": "mu-opioid",
+ "title": "Medicines that change the reward signal in addiction",
+ "caption": "Try each ligand. A full agonist (heroin, morphine) gives the full signal, the strongest reinforcer. A partial agonist (buprenorphine) gives a capped signal that reduces craving and withdrawal with less euphoria. An antagonist (naltrexone) blocks the receptor, so using the drug brings no reward and the learned link between using and reward can extinguish."
+}
+:::
+
 ### Exposure as inhibitory learning
 Michelle Craske and colleagues reframed exposure therapy using extinction research: exposure does not erase fear; it builds a **new, competing "safe" memory** that must win retrieval. To strengthen it:
 - **Expectancy violation**: design exposures to test a specific feared prediction ("If I stay in the lift for 10 minutes, I will faint") and let it be disconfirmed.
@@ -657,6 +673,131 @@ Students who reread a passage did slightly better five minutes later, but studen
 Close the book and write what you remember, answer questions a day later, use flashcards, and spread these sessions over days.
 :::
 
+:::qa Define learning. Why are maturation, fatigue and drug effects excluded? [starting]
+### Short answer
+Learning is a relatively permanent change in behaviour, or in the capacity for behaviour, that results from experience.
+
+### Why the exclusions
+| Change | Why it is not learning |
+|---|---|
+| Maturation (a baby starts walking) | Driven by the body's growth, appearing on schedule with little practice |
+| Fatigue (slower reactions late in a match) | Temporary; disappears with rest |
+| Drugs or illness (talkative after alcohol) | Temporary state change, not from experience with the task |
+| Injury | Change caused by damage, not by experience |
+
+### Learning versus performance
+Learning can be present without being shown, as when rats explored a maze without food and only revealed what they had learned once food appeared.
+:::
+
+:::qa Describe Pavlov's experiment and name the five key terms. [starting]
+### The experiment
+Pavlov measured dogs' saliva. A metronome or bell sounded just before food was placed in the dog's mouth. After several pairings, the sound alone produced salivation.
+
+| Term | In Pavlov's study |
+|---|---|
+| Unconditioned stimulus (UCS) | Food |
+| Unconditioned response (UCR) | Salivation to food |
+| Neutral stimulus (NS) | Bell before training |
+| Conditioned stimulus (CS) | Bell after training |
+| Conditioned response (CR) | Salivation to the bell |
+
+### Why it mattered
+It gave psychology an objective, measurable way to study learning and became the basis of behaviourism.
+:::
+
+:::qa What is stimulus generalisation, and how does discrimination develop? Give a clinical example. [starting]
+### Short answer
+Generalisation is responding to stimuli similar to the conditioned stimulus. Discrimination is learning to respond only to the CS, because similar stimuli are never followed by the UCS.
+
+### Example
+After being bitten by a large black dog, a child fears all dogs (generalisation). With repeated safe experiences with small, friendly dogs, she learns that only some dogs are dangerous (discrimination).
+
+### Clinical link
+In anxiety disorders, fear often generalises too widely: after an accident on one road, a person fears all driving. Exposure therapy uses graded, varied situations to build discrimination between real and imagined danger.
+:::
+
+:::qa Describe Thorndike's puzzle-box experiment and state the law of effect. [starting]
+### The experiment
+Hungry cats were placed in boxes that opened when they pulled a loop or pressed a lever. Food waited outside. At first, cats tried many actions at random. Over trials, the useless actions dropped out and escape time fell gradually.
+
+### The law of effect
+Responses followed by satisfying consequences become more likely; responses followed by discomfort become less likely.
+
+### Significance
+- Showed **trial-and-error** learning, not sudden insight.
+- Laid the foundation for Skinner's operant conditioning.
+- Introduced the idea that consequences shape behaviour.
+:::
+
+:::qa What is shaping? Describe how you would shape a child with autism to say "water". [starting]
+### Short answer
+Shaping is reinforcing successive approximations to a target behaviour until the full behaviour appears.
+
+### Steps
+1. Reinforce any vocal sound when the child wants water (eye contact plus a sound gets a sip).
+2. Then reinforce only sounds starting with "w" or "p" (for "pani").
+3. Then only "wa" or "pa".
+4. Then the whole word.
+5. Gradually fade prompts and reinforce the word in different settings.
+
+### Principles
+- Reinforce immediately.
+- Move to the next step only when the current one is reliable.
+- If the child struggles, go back a step.
+:::
+
+:::qa What are the main features of sensory, short-term and long-term memory? [starting]
+| Store | Duration | Capacity | Coding |
+|---|---|---|---|
+| Sensory | Under a second (visual) to a few seconds (auditory) | Large | Raw sensory form |
+| Short-term | About 15 to 30 seconds without rehearsal | About seven items, or about four chunks | Mainly acoustic |
+| Long-term | Minutes to a lifetime | Effectively unlimited | Mainly meaning |
+
+### How information moves
+Attention moves information from sensory memory into short-term memory; rehearsal and meaningful processing move it into long-term memory; retrieval brings it back.
+:::
+
+:::qa What is chunking? How does it help memory? [starting]
+### Short answer
+Chunking is grouping separate items into larger meaningful units, so that short-term memory holds more.
+
+### Examples
+- 9825014376 is hard; 98250 14376 is easier.
+- IGNOUNCERTCBSE is hard; IGNOU, NCERT, CBSE is easy.
+- A chess master sees whole patterns, not single pieces.
+
+### Why it works
+Short-term memory holds a limited number of **units**, not of individual items. Meaningful units use long-term knowledge to pack more into each slot.
+
+### Study use
+Group facts into meaningful clusters, use acronyms and tables, and link new ideas to familiar ones.
+:::
+
+:::qa Describe Ebbinghaus's forgetting curve. What practical lessons does it teach? [starting]
+### The curve
+Ebbinghaus learned nonsense syllables and measured savings when relearning. He lost over 40 percent within 20 minutes, over half within an hour, and about two-thirds within a day; after that, forgetting slowed and about a fifth remained after a month.
+
+### Lessons
+1. Forgetting is fastest soon after learning, so the first review should come early.
+2. Each review flattens the curve; space later reviews further apart.
+3. Meaningful material is forgotten more slowly than nonsense.
+4. Overlearning (practice beyond the first perfect recall) slows forgetting.
+
+### A study plan
+Review the same day, then after a day, a few days and a week, testing yourself each time.
+:::
+
+:::qa What is the difference between recall, recognition and relearning? Which is most sensitive? [starting]
+| Measure | Task | Example | Difficulty |
+|---|---|---|---|
+| Recall | Produce the information with few cues | Write the four schedules of reinforcement | Hardest |
+| Recognition | Identify it among options | Choose "variable ratio" in an MCQ | Easier |
+| Relearning (savings) | Learn it again and measure time saved | Relearning a poem you once knew | Most sensitive |
+
+### Why relearning is most sensitive
+Even when nothing can be recalled or recognised, material is often relearnt faster, showing that some trace remained. Ebbinghaus used this savings method.
+:::
+
 ## 5.2 Q&A bank · Beginner [beginner]
 Answers here assume the Beginner sections. Write your own outline first.
 
@@ -754,6 +895,159 @@ Proactive interference is old learning disrupting new learning; retroactive inte
 | Revising similar topics (two theories of attention) | Study them apart in time, but test them together to learn the differences |
 | Learning look-alike drug names | Use distinctive cues and contrast tables |
 | After learning, before an exam | Sleep, and avoid cramming similar new material |
+:::
+
+:::qa Explain the four temporal arrangements of classical conditioning and their relative effectiveness. [beginner]
+| Arrangement | Timing | Effectiveness | Note |
+|---|---|---|---|
+| Delay | CS starts first and overlaps the UCS | Best | The CS clearly predicts the UCS |
+| Trace | CS ends, a gap, then the UCS | Good with short gaps | Needs the hippocampus to bridge the gap |
+| Simultaneous | CS and UCS start together | Weak | The CS predicts nothing new |
+| Backward | UCS before CS | Weakest | The CS may even signal safety |
+
+### Key point
+The best interval depends on the response: about half a second for eyeblink, seconds for fear, and hours for taste aversion.
+:::
+
+:::qa What do spontaneous recovery, renewal and reinstatement tell us about extinction? Why does this matter in therapy? [beginner]
+| Phenomenon | What happens | What it shows |
+|---|---|---|
+| Spontaneous recovery | CR returns after time passes | Extinction learning weakens with time |
+| Renewal | CR returns in a different context | Extinction is tied to the place it was learned |
+| Reinstatement | CR returns after an unsignalled UCS | Original learning remains |
+| Rapid reacquisition | Relearning is faster | Original learning remains |
+
+### Therapy implications
+1. Do exposure in several settings and with varied stimuli.
+2. Prepare clients for occasional returns of fear.
+3. Use reminders of therapy (retrieval cues) in high-risk settings.
+4. Avoid treating a lapse as complete failure.
+:::
+
+:::qa What is the partial reinforcement extinction effect, and how can it be explained? [beginner]
+### Short answer
+Behaviour learned under intermittent reinforcement takes much longer to extinguish than behaviour learned under continuous reinforcement.
+
+### Explanations
+1. **Discrimination hypothesis**: after continuous reward, the change to no reward is obvious; after partial reward, runs without reward are normal, so the change is hard to detect.
+2. **Frustration theory (Amsel)**: under partial reward, the animal learns to keep responding even when frustrated by non-reward.
+3. **Sequential theory (Capaldi)**: the memory of non-reward becomes a cue for responding, because reward often followed it.
+
+### Applications
+- Gambling persistence.
+- Parents who "sometimes give in" to tantrums make tantrums harder to stop.
+- To make a new healthy habit durable, move from continuous to intermittent praise.
+:::
+
+:::qa Contrast Tolman's and Skinner's views of learning, using latent learning as evidence. [beginner]
+| | Tolman | Skinner |
+|---|---|---|
+| What is learned | Expectancies and cognitive maps | Responses strengthened by consequences |
+| Role of reinforcement | Affects performance, not learning | Necessary for learning |
+| Inner processes | Intervening variables are needed | Unnecessary to explain behaviour |
+| Key evidence | Latent learning, place learning, shortcuts | Schedules, shaping, operant control |
+
+### Latent learning
+Rats that explored a maze for ten days without food made far fewer errors as soon as food was introduced, matching rats always fed. They had learned the maze without reinforcement.
+
+### Evaluation
+Latent learning challenges strict reinforcement theory and anticipates cognitive psychology, although Skinner's methods remain powerful for changing behaviour.
+:::
+
+:::qa Explain learned helplessness and its reformulation in terms of attributions. [beginner]
+### Original theory
+Dogs given inescapable shock later failed to escape when escape was possible, showing passivity, poor learning and distress. Seligman proposed that learning outcomes are independent of behaviour produces helplessness, a model of depression.
+
+### Reformulation
+In humans, helplessness leads to depression when bad events are explained as:
+| Dimension | Depressive style | Healthier style |
+|---|---|---|
+| Internal versus external | "It's me" | "The exam was unusually hard" |
+| Stable versus unstable | "It will always be like this" | "This time" |
+| Global versus specific | "It ruins everything" | "Only this subject" |
+
+### Later developments
+Hopelessness theory; and a neural reappraisal showing that passivity is the default response to prolonged stress, while what is learned in controllable situations is control, via the prefrontal cortex.
+:::
+
+:::qa Describe a token economy. What are its strengths, problems and ethical safeguards? [beginner]
+### How it works
+1. Define target behaviours clearly (self-care, completing tasks).
+2. Give tokens immediately for each target behaviour.
+3. Exchange tokens for back-up reinforcers (snacks, outings, privileges).
+4. Gradually thin the schedule and shift to natural reinforcers like praise.
+
+### Strengths
+Clear, consistent, measurable; effective on wards, in special schools and in classrooms.
+
+### Problems
+- Behaviour may not generalise outside the programme.
+- People may work only for tokens.
+- Requires consistent staff.
+
+### Safeguards
+No basic rights (food, sleep, dignity, family contact) may be made contingent on tokens; consent where possible; regular review; plans to fade the system.
+:::
+
+:::qa Evaluate Atkinson and Shiffrin's multi-store model. [beginner]
+### Strengths
+- Clear distinctions in duration, capacity and coding between stores.
+- Supported by the serial position curve, Glanzer and Cunitz's distractor effect, and the H. M. and K. F. dissociation.
+- Generated a great deal of research.
+
+### Weaknesses
+| Problem | Evidence |
+|---|---|
+| Short-term memory is not one store | K. F.'s verbal deficit with intact visual memory; working memory research |
+| Long-term memory is not one store | Episodic, semantic and procedural memory dissociate |
+| Rehearsal is not the only route | We remember much that we never rehearsed; deep processing matters more |
+| Information need not pass through short-term memory in sequence | K. F. learned new long-term information despite poor short-term memory |
+
+### Conclusion
+A useful first map, replaced in detail by working memory, levels of processing and multiple memory systems.
+:::
+
+:::qa Calculation and reasoning: a list of 20 words is read once. Sketch the serial position curve and explain the effect of a 30-second distractor and of slower presentation. [beginner]
+### The curve
+A U shape: high recall for the first few words (primacy), low in the middle, high for the last few (recency).
+
+### Manipulations
+| Change | Effect | Reason |
+|---|---|---|
+| 30-second distractor before recall | Recency disappears, primacy stays | Last items are lost from short-term memory |
+| Slower presentation | Primacy increases, recency unchanged | More time to rehearse early items into long-term memory |
+| Amnesic patient | Normal recency, poor primacy | Short-term memory intact, long-term transfer impaired |
+
+### Conclusion
+The two ends of the curve reflect different stores, one of the strongest arguments for separate short-term and long-term memory.
+:::
+
+:::qa What is encoding specificity? Explain context- and state-dependent memory with examples. [beginner]
+### Short answer
+A retrieval cue works best when it matches information present at encoding.
+
+### Context-dependent memory
+Divers learned words on land or under water. Recall was about 40 percent better when the learning and testing places matched. Recognition was not affected, because the item itself is a strong cue.
+
+### State-dependent memory
+Material learned after alcohol is recalled better after alcohol than sober. Mood works similarly: sad moods bring back sad memories.
+
+### Practical uses
+| Situation | Application |
+|---|---|
+| Exam revision | Practise under exam-like conditions, or vary settings so no one context is needed |
+| Police interviews | Reinstating the context in the cognitive interview |
+| Depression | Mood-congruent recall keeps low mood going; therapy targets it |
+:::
+
+:::qa Compare episodic, semantic and procedural memory, with brain bases. [beginner]
+| | Episodic | Semantic | Procedural |
+|---|---|---|---|
+| Content | Personal events in time and place | Facts and knowledge | Skills and habits |
+| Awareness | Conscious recollection ("I remember") | Conscious knowing ("I know") | No conscious recollection |
+| Example | Your first day at college | Lithium is a mood stabiliser | Riding a scooter |
+| Brain | Hippocampus, medial temporal lobe, prefrontal cortex | Lateral and anterior temporal cortex | Basal ganglia, cerebellum, motor cortex |
+| Affected early in | Alzheimer's disease | Semantic dementia | Parkinson's disease, Huntington's disease |
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
@@ -875,6 +1169,162 @@ Memory is assessed with bedside screens, structured scales and neuropsychologica
 
 ### Indian considerations
 Use familiar words, the person's language and appropriate education-adjusted norms; low literacy can be mistaken for impairment.
+:::
+
+:::qa Calculation: using the Rescorla-Wagner model with αβ = 0.25 and λ = 1, find V after three trials. Then explain what happens if a second cue is added once V reaches 1. [advanced]
+### Working
+| Trial | Error (λ minus V) | Change in V | New V |
+|---|---|---|---|
+| 1 | 1.00 | 0.25 | 0.25 |
+| 2 | 0.75 | 0.19 | 0.44 |
+| 3 | 0.56 | 0.14 | 0.58 |
+
+Each trial adds less, giving the negatively accelerated learning curve.
+
+### Adding a second cue at V = 1
+The total expectation is already 1, so the error is zero. The new cue gains no strength: **blocking**.
+
+### Exam tip
+Always use the **sum** of V for all cues present on that trial when calculating the error.
+:::
+
+:::qa Explain Kamin's blocking experiment. Why was it so important for theories of conditioning? [advanced]
+### Procedure
+| Phase | Blocking group | Control group |
+|---|---|---|
+| 1 | Noise followed by shock | Nothing (or unrelated training) |
+| 2 | Noise plus light followed by shock | Noise plus light followed by shock |
+| Test | Light alone | Light alone |
+
+### Result
+The blocking group showed little fear of the light; the control group showed strong fear.
+
+### Importance
+1. Contiguity alone is not enough: the light was paired with shock equally often in both groups.
+2. Learning occurs only when the outcome is **surprising**.
+3. Led directly to the Rescorla-Wagner model and to the idea of prediction error, later found in dopamine neurons.
+:::
+
+:::qa What is biological preparedness? Discuss its relevance to phobias. [advanced]
+### Short answer
+Preparedness is the idea that evolution makes some associations easy to learn and others hard.
+
+### Evidence
+- Taste aversion forms after one pairing, with long delays, and links illness to taste, not to light or sound.
+- Fear conditioned to snakes and spiders resists extinction more than fear conditioned to flowers.
+- Monkeys learn fear of snakes, but not of flowers, by watching another monkey's fear.
+
+### Relevance to phobias
+| Observation | Explanation |
+|---|---|
+| Phobias cluster around ancient dangers (snakes, heights, dark, blood) | Prepared fears |
+| Few phobias of guns or electric sockets, despite their danger | Unprepared |
+| Phobias are irrational and persistent | Prepared learning is resistant to extinction and to reasoning |
+
+### Critique
+Some "prepared" effects may reflect cultural learning and familiarity; the evolutionary story is hard to test directly.
+:::
+
+:::qa Compare Hull, Guthrie and Tolman as learning theorists. [advanced]
+| | Hull | Guthrie | Tolman |
+|---|---|---|---|
+| Core idea | Drive reduction; habit strength | Contiguity; one-trial learning | Expectancies; cognitive maps |
+| Role of reinforcement | Essential (reduces drive) | Not needed; it only changes the situation | Affects performance, not learning |
+| Method | Formal, mathematical, hypothetico-deductive | Informal, practical | Experimental with intervening variables |
+| Famous contribution | Reaction potential equals habit strength times drive (times incentive) | Three ways to break habits: threshold, fatigue, incompatible response | Latent learning, place learning |
+| Weakness | Learning happens without drive reduction | Vague, hard to test | Less precise predictions |
+
+### Legacy
+Hull influenced motivation research and mathematical models; Guthrie's habit-breaking methods anticipate exposure and habit reversal; Tolman paved the way for cognitive psychology.
+:::
+
+:::qa Explain Kandel's work on Aplysia. What did it reveal about short-term and long-term memory? [advanced]
+### The model
+The sea slug's gill-withdrawal reflex involves few, large neurons that can be studied individually.
+
+### Findings
+| Learning | Mechanism |
+|---|---|
+| Habituation | Less neurotransmitter released by sensory neurons |
+| Short-term sensitisation | Serotonin from facilitating interneurons increases transmitter release |
+| Long-term sensitisation | Gene activation via CREB, new protein synthesis and growth of new synapses |
+
+### Significance
+1. Learning changes the strength of specific synapses.
+2. Short-term memory modifies existing proteins; long-term memory needs new proteins and structural change.
+3. The same molecular steps were later found in mammals, including in the hippocampus.
+:::
+
+:::qa Describe the major factors that affect the accuracy of eyewitness testimony, and how procedures can reduce error. [advanced]
+### Factors
+| Type | Factor | Effect |
+|---|---|---|
+| Estimator (event) | Weapon focus | Attention drawn away from the face |
+| | High stress | Poorer face identification |
+| | Own-race bias | Poorer identification of other-group faces |
+| | Delay | More forgetting and more opportunity for contamination |
+| System (procedure) | Leading questions | Misinformation incorporated into memory |
+| | Biased line-ups | Suspect stands out |
+| | Feedback after identification | Confidence inflated |
+
+### Better procedures
+1. Double-blind line-ups with fair fillers.
+2. A warning that the culprit may not be present.
+3. Record confidence immediately.
+4. Use the cognitive interview; avoid repeated, suggestive questioning.
+5. In Indian practice, hold identification parades promptly and prevent prior exposure to the accused.
+:::
+
+:::qa What is reconsolidation, and how might it be used clinically? [advanced]
+### Short answer
+When a stored memory is reactivated, it becomes briefly unstable and must be stored again. During this window it can be weakened, strengthened or updated.
+
+### Evidence
+In rats, a drug blocking protein synthesis given just after a fear memory was reactivated erased the conditioned fear, while the same drug without reactivation had no effect.
+
+### Clinical uses tested
+| Approach | Idea | Status |
+|---|---|---|
+| Propranolol after trauma memory recall | Weaken the emotional component | Mixed trial results |
+| Extinction within the reconsolidation window | Update the original memory rather than create a competing one | Promising in some studies, inconsistent replication |
+| Imagery rescripting in therapy | Recall and modify the meaning of a memory | Supported for some conditions |
+
+### Caution
+Reactivated memories can also be distorted, which links reconsolidation to false memory risks.
+:::
+
+:::qa A 58-year-old man with heavy drinking presents with confusion, unsteady gait and abnormal eye movements. What is happening, and what must be done? [advanced]
+### Diagnosis
+The triad of confusion, ataxia and eye-movement abnormalities suggests **Wernicke's encephalopathy**, caused by thiamine (vitamin B1) deficiency. The full triad is present in only a minority, so suspicion should be high in anyone at risk.
+
+### Immediate action
+1. Give **thiamine** urgently, by injection, in high doses, before any glucose.
+2. Treat alcohol withdrawal and correct other deficiencies (magnesium).
+3. Monitor for delirium and medical complications.
+
+### If untreated
+It can progress to **Korsakoff syndrome**: dense anterograde amnesia, temporally graded retrograde amnesia, confabulation and apathy, with damage to the mammillary bodies and medial thalamus. Recovery is often incomplete.
+
+### Psychologist's role
+Memory assessment, rehabilitation with errorless learning and external aids, and support for the family.
+:::
+
+:::qa How has learning research changed the practice of exposure therapy? [advanced]
+### From habituation to inhibitory learning
+Older models assumed fear must fall during each session (habituation). Extinction research showed that exposure creates a new "safe" memory that competes with the old fear memory.
+
+### Principles now used
+| Principle | In practice |
+|---|---|
+| Expectancy violation | State the feared prediction, design the exposure to test it, and review what happened |
+| Remove safety behaviours | Stop holding the rail, carrying water or checking the exit |
+| Vary contexts and stimuli | Different places, people and times, to reduce renewal |
+| Deepened extinction | Combine feared cues once each is less frightening |
+| Retrieval cues | Small reminders of therapy for difficult situations |
+| Tolerate fear | Success is measured by learning, not by how low anxiety falls in the session |
+
+### Outcome
+These changes aim to reduce relapse, which older approaches did not address well.
 :::
 
 ## 5.4 Long answers and short notes [core]

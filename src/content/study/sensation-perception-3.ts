@@ -565,6 +565,138 @@ Gestalt principles describe how the brain groups parts into wholes. Four common 
 These rules explain why logos, signs and teaching slides are read quickly when they follow them, and confusingly when they do not.
 :::
 
+:::qa What is transduction? Explain it for two senses. [starting]
+### Short answer
+Transduction is the conversion of physical energy into electrical signals in the nervous system. Every sense has receptors specialised for one kind of energy.
+
+| Sense | Energy | Receptor | What happens |
+|---|---|---|---|
+| Vision | Light | Rods and cones | Light changes a pigment molecule, which changes the cell's electrical charge |
+| Hearing | Pressure waves | Hair cells in the cochlea | Bending of tiny hairs opens channels and creates a signal |
+| Touch | Pressure | Mechanoreceptors in the skin | Stretching the membrane opens channels |
+| Taste and smell | Chemicals | Taste and olfactory receptors | Molecules bind to receptor proteins |
+
+### Why it matters
+Whatever the energy, the brain receives only nerve impulses. Which sense you experience depends on which pathway is active, not on the stimulus (the law of specific nerve energies).
+:::
+
+:::qa What is sensory adaptation, and why is it useful? Give two examples. [starting]
+### Short answer
+Sensory adaptation is a fall in response when a stimulus stays the same. It frees the senses to detect change, which usually matters more.
+
+### Examples
+- The strong smell of a fish market fades after a few minutes.
+- You stop feeling your watch or spectacles.
+- Cold water in a swimming pool feels warmer after a minute.
+
+### Why it is useful
+1. Change often signals danger or opportunity; a steady background rarely does.
+2. It saves processing for new information.
+3. It lets each sense work across a huge range of intensities.
+
+### Adaptation versus habituation
+Adaptation happens in the receptors and early pathways; habituation is learning in the brain to ignore an unimportant stimulus.
+:::
+
+:::qa What is the difference between bottom-up and top-down processing? Give an everyday example where both work together. [starting]
+### Short answer
+Bottom-up processing builds perception from the raw input upwards. Top-down processing uses knowledge, expectation and context to interpret that input.
+
+| | Bottom-up | Top-down |
+|---|---|---|
+| Starts from | Features in the stimulus | What you know and expect |
+| Direction | Data-driven | Concept-driven |
+| Example | Detecting the edges and colours of a sign | Reading a smudged sign because you know the shop |
+
+### Both together
+Reading handwritten notes: the ink shapes give bottom-up information; your knowledge of words and of the topic fills gaps. Neither alone would be enough.
+:::
+
+:::qa What is the cocktail party effect, and what does it show about attention? [starting]
+### Short answer
+It is the ability to follow one conversation in a noisy room while still noticing important sounds, such as your own name, from conversations you were ignoring.
+
+### What it shows
+1. Attention is **selective**: we can focus on one stream among many.
+2. Ignored information is **not completely blocked**: some of it is processed enough to catch important words.
+3. Physical cues (voice, location) help separate one speaker from others.
+
+### Where it leads
+These observations started the scientific study of attention and the debate about whether selection happens early (before meaning) or late (after meaning), which you meet at the Beginner level.
+:::
+
+:::qa Name and explain four kinds of attention, with examples from daily life. [starting]
+| Kind | What it does | Example |
+|---|---|---|
+| **Selective** | Focuses on one source, ignoring others | Listening to the teacher while the class next door is noisy |
+| **Divided** | Shares attention between tasks | Stirring the dal while talking on the phone |
+| **Sustained** | Stays alert for rare events over time | A night guard watching CCTV |
+| **Executive** | Overrides habits, switches and plans | Not checking your phone during a viva |
+
+### Key points
+- All four draw on a **limited** capacity.
+- Performance on divided tasks drops when both tasks use the same kind of resource.
+- Sustained attention falls within the first half hour of a dull watch.
+:::
+
+:::qa What are depth cues? Explain three monocular cues and one binocular cue. [starting]
+### Short answer
+Depth cues are pieces of information the brain uses to judge distance and three-dimensional shape from a flat retinal image.
+
+### Monocular cues (one eye is enough)
+- **Interposition**: a nearer object hides part of a farther one.
+- **Linear perspective**: parallel lines, like railway tracks, seem to meet in the distance.
+- **Aerial perspective**: distant hills look hazy and bluish.
+
+### Binocular cue
+- **Retinal disparity**: each eye sees a slightly different view; the brain combines them into a vivid sense of depth (stereopsis). 3D films work by giving each eye a different image.
+
+### Why it matters
+Artists use monocular cues to create depth on a flat canvas; people who lose sight in one eye can still judge depth fairly well using them.
+:::
+
+:::qa What are perceptual constancies? Describe size, shape and lightness constancy. [starting]
+### Short answer
+Perceptual constancy is seeing an object as stable in size, shape, brightness or colour even though its image on the retina keeps changing.
+
+| Constancy | Stays the same | Despite | Example |
+|---|---|---|---|
+| Size | Perceived size | A shrinking image with distance | A bus driving away does not seem to shrink |
+| Shape | Perceived shape | A changing image as it turns | An opening door still looks rectangular |
+| Lightness | Perceived whiteness | Changes in light | A white kurta looks white in sun and shade |
+
+### Why it matters
+Without constancy, the world would seem to change size, shape and colour every time we moved. Constancy depends on judging distance, angle and lighting, which is why some illusions fool it.
+:::
+
+:::qa What is the difference between an illusion and a hallucination? [starting]
+### Short answer
+An illusion is a misperception of something that is really there. A hallucination is a perception with no external stimulus at all.
+
+| | Illusion | Hallucination |
+|---|---|---|
+| Stimulus present? | Yes | No |
+| Who has it? | Everyone, under the right conditions | Uncommon; occurs in illness, sleep deprivation, drugs, grief and some healthy people |
+| Example | Equal lines looking unequal (Müller-Lyer); a coat on a hook seen as a person in the dark | Hearing a voice when nobody is speaking |
+| Meaning | Shows the brain's normal rules misapplied | May need clinical assessment |
+
+### Clinical note
+In delirium and severe fear, illusions become common. Context matters: some experiences, such as hearing a dead relative's voice during grief, are culturally understood and not always signs of illness.
+:::
+
+:::qa Why do we have a blind spot, and why don't we notice it? [starting]
+### Short answer
+The blind spot is where the optic nerve leaves the eye. There are no rods or cones there, so light falling on it is not detected.
+
+### Why we don't notice it
+1. The two blind spots fall on different parts of the scene, so each eye covers the other's gap.
+2. Even with one eye, the brain **fills in** the missing area using surrounding colour and pattern.
+3. The eyes move constantly, so no part of the scene stays in the gap.
+
+### What it teaches
+Perception is not a direct copy of the retinal image. The brain constructs a complete, seamless picture from incomplete input.
+:::
+
 ## 4.2 Q&A bank · Beginner [beginner]
 Answers here assume the Beginner sections. Write your own outline first.
 
@@ -663,6 +795,140 @@ Melzack and Wall proposed a "gate" in the spinal cord that controls how much pai
 
 ### Limitation
 Phantom limb pain shows pain can arise with no input at all, which led to Melzack's later idea of a brain-wide pain network (the neuromatrix).
+:::
+
+:::qa Compare the three classical psychophysical methods. Which would you use to measure a hearing threshold quickly, and which for a research study? [beginner]
+| Method | Procedure | Strength | Weakness |
+|---|---|---|---|
+| Limits | Stimulus raised or lowered in steps until the response changes | Quick | Habituation and expectation errors; needs ascending and descending series |
+| Constant stimuli | Fixed intensities presented many times at random | Most accurate; no order errors | Slow and tiring |
+| Adjustment | Participant adjusts the stimulus | Fast and engaging | Least precise |
+
+### Choice
+- **Quick clinical threshold**: a modified method of limits, as in audiometry, often as an adaptive staircase.
+- **Research**: constant stimuli, to plot a full psychometric function and read its 50 percent point.
+:::
+
+:::qa Calculation: the Weber fraction for loudness is 0.05. A tone is at 60 units. What is the JND? What would it be at 240 units? [beginner]
+### Working
+1. JND equals k times I.
+2. At 60 units: 0.05 × 60 = **3 units**.
+3. At 240 units: 0.05 × 240 = **12 units**.
+
+### Interpretation
+Four times the starting intensity needs four times the change. The proportion (5 percent) stays the same, which is Weber's law.
+
+:::trap Watch the base
+Always multiply the fraction by the **starting** (standard) intensity, not by the changed value.
+:::
+:::
+
+:::qa Calculation: using Stevens' power law, how much does perceived brightness change if light intensity is multiplied by 8, given an exponent of about 0.33? [beginner]
+### Working
+1. Sensation is proportional to intensity raised to n.
+2. Ratio of sensations = 8 raised to 0.33.
+3. 8 raised to one-third = **2**.
+
+### Interpretation
+Eight times the light looks only about twice as bright. Brightness is strongly compressive, which protects vision across the huge range from starlight to sunlight. By contrast, with an exponent of about 3.5, doubling an electric shock makes it feel roughly eleven times stronger.
+:::
+
+:::qa Calculation: in a detection task, an observer has a hit rate of 0.69 and a false-alarm rate of 0.31. The z-scores are about +0.5 and minus 0.5. Find d′ and describe the bias. [beginner]
+### Working
+1. d′ = z(hit rate) minus z(false-alarm rate).
+2. d′ = 0.5 minus (minus 0.5) = **1.0**.
+
+### Bias
+Misses (0.31) equal false alarms (0.31), so the criterion is **neutral**, halfway between the two distributions.
+
+### Interpretation
+A d′ of 1 is modest sensitivity: the signal and noise distributions overlap a lot. Compare with a d′ of 2, where they are well separated.
+:::
+
+:::qa Distinguish the place, frequency and volley theories of pitch. Which range does each explain? [beginner]
+| Theory | Claim | Best for |
+|---|---|---|
+| Place (Helmholtz; von Békésy) | Each frequency vibrates the basilar membrane most at a particular place; high near the base, low near the apex | High frequencies |
+| Frequency (Rutherford) | Nerve fibres fire at the same rate as the sound wave | Low frequencies, up to about 1,000 Hz |
+| Volley (Wever and Bray) | Groups of fibres fire in turn, together following faster rhythms | About 1,000 to 4,000 or 5,000 Hz |
+
+### Modern view
+All three operate: timing codes low tones, place codes high tones, and both combine in the middle. Cochlear implants use the place principle by stimulating different points along the cochlea.
+:::
+
+:::qa Describe Hubel and Wiesel's discoveries and explain their importance for theories of pattern recognition. [beginner]
+### Findings
+- **Simple cells** respond to a bar of a particular orientation in a particular position.
+- **Complex cells** respond to that orientation anywhere in a region, often when moving.
+- **Hypercomplex (end-stopped) cells** respond to bars of a particular length or to corners.
+- Cells are arranged in orientation columns and ocular dominance columns.
+- Early visual deprivation (one eye closed in kittens) permanently changes these columns, showing a sensitive period.
+
+### Importance
+1. Physiological support for **feature analysis** theories such as Pandemonium.
+2. A model of **hierarchical** processing from simple to complex features.
+3. Clinical relevance: amblyopia ("lazy eye") must be treated early, during the sensitive period.
+:::
+
+:::qa Explain Kahneman's capacity model of attention and how it differs from filter models. [beginner]
+### Short answer
+Kahneman described attention as a limited pool of mental effort that can be shared between tasks, rather than a filter on a single channel.
+
+### Components
+- **Available capacity**, which rises and falls with arousal.
+- **Allocation policy**, shaped by enduring dispositions (sudden movement, your name), momentary intentions and an evaluation of demands.
+- **Possible activities**, each drawing on the pool.
+
+### How it differs
+| | Filter models | Capacity model |
+|---|---|---|
+| Question | Where is information selected? | How is effort shared? |
+| Explains | Dichotic listening results | Dual-task performance; effects of arousal and practice |
+| Weakness | Rigid; one channel | One pool cannot explain why some task pairs interfere little (multiple resources) |
+:::
+
+:::qa What is feature integration theory? Describe the evidence from visual search and illusory conjunctions. [beginner]
+### Short answer
+Treisman proposed that simple features are registered in parallel without attention, and that focused attention is needed to bind features into objects.
+
+### Evidence
+1. **Feature search**: a red target among green items pops out; search time stays flat as distractors increase.
+2. **Conjunction search**: a red T among red Xs and green Ts needs serial checking; search time rises steeply with distractors.
+3. **Illusory conjunctions**: with attention overloaded, people report wrong combinations, such as a blue X when a blue O and red X were shown.
+4. **Balint's syndrome**: patients with parietal damage show many binding errors.
+
+### Later revisions
+Wolfe's guided search showed that feature information can guide attention during conjunction search, softening the strict two-stage split.
+:::
+
+:::qa Describe the major monocular and binocular depth cues and say which work at long and short distances. [beginner]
+| Cue | Type | Range |
+|---|---|---|
+| Interposition | Pictorial | Any distance |
+| Relative and familiar size | Pictorial | Any distance |
+| Linear perspective, texture gradient | Pictorial | Medium to long |
+| Aerial perspective | Pictorial | Long (kilometres) |
+| Motion parallax | Movement | Short to medium |
+| Accommodation | Oculomotor | Very short (about 2 metres) |
+| Convergence | Oculomotor, binocular | Short (a few metres) |
+| Retinal disparity | Binocular | Short to medium; strongest within about 30 metres |
+
+### Key idea
+No single cue is enough. The brain combines cues, weighting each by its reliability at that distance.
+:::
+
+:::qa Explain the phi phenomenon and the autokinetic effect. Why are they important in the history of psychology? [beginner]
+### Phi phenomenon
+Lights flashing on and off in sequence are seen as one light moving. Wertheimer's study of it in 1912 founded Gestalt psychology, because the movement is a property of the whole pattern, not of any single light. Film, LED signboards and festival chaser lights rely on it.
+
+### Autokinetic effect
+A still point of light in a completely dark room seems to drift, because there is no frame of reference and the eyes make small movements.
+
+### Historical importance
+| Phenomenon | Used by | Showed |
+|---|---|---|
+| Phi | Wertheimer | Perception of wholes; Gestalt psychology |
+| Autokinetic | Sherif | How group norms form when reality is ambiguous: estimates of movement converged in groups |
 :::
 
 ## 4.3 Q&A bank · Advanced [advanced]
@@ -777,6 +1043,164 @@ Much evidence shows that perception goes beyond the input, using knowledge, expe
 
 ### Conclusion
 Perception is constructive in its use of context, expectation and attention, as predictive accounts suggest, but claims that wishes and moods directly change what we see need careful, well-controlled evidence.
+:::
+
+:::qa Compare Weber's, Fechner's and Stevens' laws. Why did Stevens' law replace Fechner's for many purposes? [advanced]
+| Law | Statement | Method | Shape |
+|---|---|---|---|
+| Weber | JND is a constant fraction of intensity | Difference thresholds | Linear growth of the JND |
+| Fechner | Sensation grows with the logarithm of intensity | Derived by adding up JNDs | Always compressive |
+| Stevens | Sensation grows as intensity raised to a power n | Magnitude estimation | Compressive (n below 1), linear (n = 1) or expansive (n above 1) |
+
+### Why Stevens replaced Fechner
+1. Fechner assumed every JND is an equal step of sensation; direct scaling showed it is not.
+2. Fechner's law cannot explain expansive senses such as electric shock.
+3. Magnitude estimation gave consistent power functions across many dimensions, and cross-modal matching confirmed them.
+
+### Critiques of Stevens
+Exponents shift with the range of stimuli, the first number given and the response scale, so they are context-dependent descriptions rather than fixed constants.
+:::
+
+:::qa What is an ROC curve? How is it used to compare diagnostic tests? [advanced]
+### Short answer
+A receiver operating characteristic curve plots the hit rate against the false-alarm rate as the criterion moves from strict to lenient. Its shape shows sensitivity independent of bias.
+
+### Reading it
+- The diagonal is chance (d′ of zero).
+- Curves bowing towards the top-left show better discrimination.
+- The **area under the curve** runs from 0.5 (chance) to 1.0 (perfect).
+
+### Use in clinical work
+| Use | Example |
+|---|---|
+| Choosing a cut-off | A depression screening questionnaire: lower cut-offs catch more cases but flag more non-cases |
+| Comparing tests | Two dementia screens compared by area under the curve |
+| Showing the trade-off | Sensitivity and specificity move in opposite directions along the curve |
+
+### Point
+A test is not "good" at one cut-off; its value is the whole curve, and the best cut-off depends on the costs of misses and false alarms.
+:::
+
+:::qa Explain Lavie's load theory. How does it resolve the early versus late selection debate? [advanced]
+### Short answer
+Load theory says the stage of selection depends on perceptual load. When the main task is perceptually demanding, no capacity is left for distractors, so they are filtered early. When the task is easy, spare capacity spills over to distractors, which are processed late.
+
+### Two kinds of load
+| Load | Effect on distractors | Reason |
+|---|---|---|
+| High perceptual load | Less interference | No capacity left to perceive them |
+| High cognitive (working memory) load | More interference | Control processes that keep priorities are weakened |
+
+### Evidence
+Flanker interference falls as the number of items in the search display rises; brain imaging shows reduced visual responses to distractors under high load.
+
+### Applications
+Tasks that are perceptually rich can protect against distraction, while stress and memory load make people more distractible. This helps explain distraction in anxiety and ADHD.
+:::
+
+:::qa Explain Milner and Goodale's two visual streams. What evidence supports them? [advanced]
+### Short answer
+The ventral stream (to the temporal lobe) supports vision for perception and recognition; the dorsal stream (to the parietal lobe) supports vision for action, guiding reaching and grasping in real time.
+
+### Evidence
+1. **Patient D. F.**, with ventral damage from carbon monoxide poisoning, could not report the orientation of a slot but could post a card through it accurately.
+2. **Optic ataxia**, with dorsal damage, shows the reverse: recognition is fine but reaching is inaccurate.
+3. In some studies, grasp size is less affected by size illusions than verbal judgments of size.
+
+### Importance
+It refines the earlier "what versus where" model, offers a way to reconcile Gibson (dorsal, direct, action-based) and Gregory (ventral, knowledge-based), and explains dissociations seen after stroke.
+:::
+
+:::qa Explain the attentional blink and the psychological refractory period. What do they tell us about the limits of attention? [advanced]
+| | Attentional blink | Psychological refractory period |
+|---|---|---|
+| Task | Report two targets in a rapid stream | Respond to two stimuli in quick succession |
+| Finding | Second target missed 200 to 500 ms after the first; spared just after (lag-1 sparing) | Second response delayed; delay shrinks as the gap grows |
+| Explanation | Processing the first target ties up consolidation into working memory | A central bottleneck in choosing a response |
+| What it shows | A limit in time on conscious report | A limit on making two decisions at once |
+
+### Wider lesson
+Attention has limits at several stages: perception (load), consolidation (blink) and response selection (bottleneck). Practice reduces but rarely removes them.
+:::
+
+:::qa Discuss the clinical significance of attentional bias in anxiety, and evaluate attention bias modification. [advanced]
+### Attentional bias
+Anxious people detect and dwell on threat faster: in the **dot-probe** task, they respond faster to probes replacing threat words; in the **emotional Stroop**, they are slower to name the ink of threat words. Bias helps maintain anxiety by repeatedly confirming that danger is everywhere.
+
+### Attention bias modification
+Computer training that places probes mostly behind neutral stimuli, to train attention away from threat.
+
+### Evaluation
+| For | Against |
+|---|---|
+| Early trials showed reduced anxiety | Later meta-analyses found small effects, shrinking with better-quality trials |
+| Cheap and scalable | Many people show no measurable bias to begin with |
+| Plausible mechanism | Effects on real-world symptoms are inconsistent |
+
+### Conclusion
+Attentional bias is a real maintaining factor, but training it alone is not an adequate treatment; CBT with exposure remains first-line.
+:::
+
+:::qa How would you explain Charles Bonnet syndrome to an older patient and family, and how does it differ from psychosis? [advanced]
+### What to say
+"When the eyes send less information to the brain, the visual parts of the brain can produce pictures of their own. It is like the brain filling in a blank screen. It is common in people with poor eyesight and is not a sign of madness or of dementia."
+
+### Differences from psychosis
+| Feature | Charles Bonnet syndrome | Psychosis |
+|---|---|---|
+| Insight | Knows the images are not real | Often believes they are real |
+| Modality | Visual, often detailed (patterns, small people, faces) | Mostly auditory |
+| Associated | Visual loss (cataract, glaucoma, macular degeneration) | Delusions, disorganisation, mood change |
+| Distress | Often fear of being thought mad | Varies |
+
+### Management
+Reassurance and explanation, treat the eye problem (cataract surgery), improve lighting, blink or move the eyes when images appear, and rule out delirium and dementia.
+:::
+
+:::qa Design an experiment to test whether expertise affects inattentional blindness. Include variables, design and controls. [advanced]
+### Hypothesis
+Experts searching within their domain will notice unexpected domain-irrelevant objects less often than novices, because their focused search is more efficient.
+
+### Design
+- **Participants**: radiologists and medical students (quasi-experimental grouping by expertise).
+- **Task**: search chest CT slices for nodules; on a critical trial a small gorilla image appears.
+- **Independent variable**: expertise (expert versus novice).
+- **Dependent variables**: proportion noticing the unexpected image; nodule detection accuracy; eye-tracking fixations on the image.
+
+### Controls
+1. Same images and timing for both groups.
+2. Ask "Did you see anything unusual?" only after the critical trial, so expectation is not raised.
+3. Eye tracking to separate "did not look" from "looked but did not see".
+4. Counterbalance image order.
+
+### Ethics and limits
+Informed consent with debriefing; expertise is not randomly assigned, so age and fatigue are possible confounds.
+:::
+
+:::qa Evaluate the New Look approach to perception. Which findings have survived? [advanced]
+### The claim
+Needs, values and emotions shape perception itself.
+
+### Classic studies
+- Poor children overestimated coin sizes more than rich children.
+- Hungry people judged food pictures brighter.
+- Incongruous playing cards (a red spade) were misperceived.
+- Taboo words had higher recognition thresholds (perceptual defence).
+
+### Problems
+1. Word frequency and reluctance to say taboo words aloud explain perceptual defence.
+2. Many effects are on **judgment or memory**, not perception.
+3. Small samples and weak controls; some results did not replicate.
+
+### What survived
+| Survived | In modern form |
+|---|---|
+| Expectation shapes perception | Perceptual set, priming, predictive processing |
+| Emotion grabs attention | Attentional bias to threat; emotion-induced blindness |
+| Motivation affects what we notice | Effects mainly via attention rather than altered sensation |
+
+### Conclusion
+The broad idea, that perception is not neutral, is supported, but the mechanisms are mostly attentional and decisional.
 :::
 
 ## 4.4 Long answers and short notes [core]

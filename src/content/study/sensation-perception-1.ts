@@ -75,6 +75,14 @@ Most perception is both at once. You read a doctor's scrawled prescription partl
 }
 :::
 
+:::widget neuron
+{
+ "title": "From receptor potential to nerve impulse",
+ "myelinated": true,
+ "caption": "A receptor's graded response must push the sensory neuron past threshold. Below threshold, nothing travels; above it, a full-sized spike fires every time. A stronger stimulus does not make bigger spikes: it makes more of them, and recruits more neurons. That is how intensity is coded. Switch myelin off to see why unmyelinated pain fibres carry slow, dull pain."
+}
+:::
+
 ### Sensory adaptation
 Receptors respond less to a stimulus that does not change. Walk into a fish market in Kochi and the smell is overwhelming; ten minutes later you hardly notice it. You stop feeling your watch, your spectacles or your clothes. Adaptation frees the system to notice **change**, which usually matters more for survival than a steady background.
 
