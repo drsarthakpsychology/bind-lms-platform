@@ -1,0 +1,700 @@
+/* Module · Brain and behaviour, Parts III and IV (Advanced level and exam zone). Original text written for VIBHA School of Psychology. */
+export const part2 = String.raw`
+# Part III · Advanced: signalling, circuits, genes and the frontier
+
+## 3.1 Inside the receiving cell: signalling in depth [core][advanced]
+A medicine binds a receptor in seconds, yet most psychiatric medicines take weeks to work. The answer lies **inside** the receiving cell, in chains of reactions that end by changing which genes are switched on.
+
+### From receptor to gene
+1. A transmitter binds a **G-protein-coupled receptor**.
+2. The G-protein splits and switches an enzyme on or off. **Gs** turns adenylyl cyclase on (more cyclic AMP); **Gi** turns it off; **Gq** activates phospholipase C (making IP3 and DAG, which release calcium and activate protein kinase C).
+3. These **second messengers** activate protein kinases, which add phosphate groups to other proteins and change their behaviour.
+4. Some kinases reach the nucleus and switch on **transcription factors** such as CREB. These change gene expression, for example raising **BDNF** (brain-derived neurotrophic factor), which helps neurons grow and form connections.
+
+| Receptor | G-protein | Main effect | Clinical link |
+|---|---|---|---|
+| D1 | Gs | More cyclic AMP | Working memory in prefrontal cortex |
+| D2 | Gi | Less cyclic AMP | Target of all licensed antipsychotics except xanomeline-trospium |
+| 5-HT1A | Gi | Inhibits firing (autoreceptor and postsynaptic) | Buspirone; delay of SSRI effect |
+| 5-HT2A | Gq | Excites cortical neurons | Psychedelics (agonists); atypical antipsychotics (antagonists) |
+| Alpha-2 | Gi | Brakes noradrenaline release | Clonidine, mirtazapine |
+| M1 | Gq | Excites, supports memory | Anticholinergic confusion; xanomeline target |
+
+:::analogy Doorbell and household
+The receptor is a doorbell. Ringing it once (the transmitter) sets off a chain in the house: someone walks to the door, calls others, and eventually the family rearranges the furniture. Medicines that ring the bell every day for weeks end up changing the whole layout, which is why their full effect is slow.
+:::
+
+### Receptors change with use
+- **Downregulation**: with constant stimulation, cells reduce the number of receptors or uncouple them (desensitisation). This underlies **tolerance**.
+- **Upregulation**: with constant blockade, cells add receptors. Long-term D2 blockade upregulates D2 receptors, one theory of **tardive dyskinesia** and of **supersensitivity psychosis** after stopping antipsychotics.
+
+### Autoreceptors explain the delay
+Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an SSRI first raises serotonin, these autoreceptors sense it and **slow the neuron's firing**, cancelling much of the gain. Over a few weeks the autoreceptors desensitise, the neurons fire normally again, and serotonin release at the far ends finally rises. Downstream changes in BDNF and connections follow.
+
+:::widget reveal
+{"prompt": "Mirtazapine blocks alpha-2 receptors on noradrenaline and serotonin terminals. Using the idea of autoreceptors and brakes, predict what that does to transmitter release.", "answer": "Alpha-2 receptors are brakes. Blocking them takes the brake off, so more noradrenaline and serotonin are released. Mirtazapine raises monoamines without touching the reuptake pump, which is why it is called a noradrenergic and specific serotonergic antidepressant (NaSSA)."}
+:::
+
+### Allosteric modulators and the NMDA receptor
+- **Benzodiazepines** do not open the GABA-A channel themselves. They bind a separate site and make GABA more effective (positive allosteric modulators). That is why they are safer alone than barbiturates, which can open the channel directly at high doses.
+- The **NMDA receptor** needs two things at once: glutamate binding and a depolarised cell that pushes out the magnesium plug. It is a **coincidence detector**, which makes it the key to learning (Section 3.3). Ketamine and memantine block it inside the channel.
+- **Neurosteroids** such as allopregnanolone are positive modulators at a different GABA-A site. Brexanolone and oral zuranolone, licensed in the United States for postpartum depression, act here.
+
+:::widget decide
+{
+  "scene": "Dr Rao, a junior resident in Vizag, wants to add diazepam to a patient with severe insomnia who drinks half a bottle of whisky each night and was recently given a barbiturate-containing tablet by a local practitioner.",
+  "ask": "What does receptor knowledge tell you to do?",
+  "choices": [
+    { "label": "Add diazepam; benzodiazepines are safe", "verdict": "harm", "outcome": "The patient is found unrousable with slow breathing after a heavy night.", "why": "Alcohol, barbiturates and benzodiazepines all enhance GABA-A at different sites. Together, the effects multiply and can stop breathing. Barbiturates can open the channel directly." },
+    { "label": "Avoid adding a sedative, stop the barbiturate safely, assess alcohol use and treat withdrawal or dependence properly", "verdict": "best", "outcome": "A planned, supervised alcohol detoxification is arranged; insomnia is then treated with CBT-I.", "why": "The safest route avoids stacking GABA-A enhancers and treats the real driver of his insomnia." },
+    { "label": "Switch the barbiturate to a higher dose of diazepam only", "verdict": "ok", "outcome": "Safer than a barbiturate, but nightly drinking on top remains dangerous.", "why": "Substituting reduces some risk, but without addressing alcohol the combined sedation persists." }
+  ]
+}
+:::
+
+:::clinician
+The NMDA receptor requires glycine or D-serine as co-agonist at the GluN1 subunit; the glutamate hypofunction model of schizophrenia derives from PCP and ketamine producing positive, negative and cognitive symptoms in healthy volunteers, and from anti-NMDA receptor encephalitis. Proposed mechanisms of ketamine's rapid antidepressant effect include blocking NMDA receptors on GABA interneurons (disinhibiting pyramidal cells), a glutamate burst activating AMPA receptors, BDNF release and mTOR-dependent synaptogenesis within hours; the metabolite hydroxynorketamine and opioid-system involvement remain debated. Muscarinic agonism as an antipsychotic mechanism reached clinical use when xanomeline-trospium (an M1 and M4 preferring agonist, with a peripheral muscarinic antagonist to limit cholinergic side effects) was approved by the US FDA in September 2024 for schizophrenia, the first approved antipsychotic without direct D2 blockade. As of Nov 2026, its adjunctive trial in inadequate responders (ARISE) missed its primary endpoint (2025), and the M4 positive allosteric modulator emraclidine failed its phase 2 trials (2024). Treat it as an important proof of principle with a still-maturing evidence base, and check current availability before mentioning it to Indian patients.
+:::
+
+:::recall
+1. Trace the pathway from a G-protein receptor to gene expression. || Receptor to G-protein to enzyme (adenylyl cyclase or phospholipase C) to second messenger (cAMP, IP3/DAG, calcium) to kinases to transcription factors (CREB) to genes such as BDNF.
+2. Why does an SSRI take weeks to act, in autoreceptor terms? || 5-HT1A autoreceptors first slow serotonin neuron firing; they desensitise over weeks, then release rises and downstream plasticity follows.
+3. Why is the NMDA receptor called a coincidence detector? || It opens only when glutamate binds and the cell is already depolarised enough to expel the magnesium block.
+4. How do benzodiazepines differ from barbiturates at GABA-A? || Benzodiazepines only increase GABA's effect (allosteric); barbiturates can open the channel directly at high doses, so are more lethal.
+:::
+
+:::mcq
+Q: Long-term D2 receptor blockade leading to more D2 receptors is an example of:
+- Desensitisation
+- *Upregulation
+- Allosteric modulation
+- Enzyme induction
+> Chronic blockade increases receptor number, a proposed mechanism of tardive dyskinesia.
+
+Q: Which receptor is a Gq-coupled target of psychedelic drugs?
+- 5-HT1A
+- 5-HT3
+- *5-HT2A
+- D2
+> Psychedelics are 5-HT2A agonists; 5-HT2A couples to Gq.
+
+Q: Zuranolone and brexanolone act mainly as:
+- D2 antagonists
+- *Positive allosteric modulators of GABA-A receptors (neurosteroids)
+- NMDA antagonists
+- Serotonin reuptake inhibitors
+> They are neurosteroid analogues at GABA-A.
+:::
+
+## 3.2 Circuits of symptoms [core][advanced]
+Modern psychiatry increasingly thinks in **circuits**, groups of brain areas that work together, rather than single chemicals or single regions. A symptom is what a circuit produces when it runs wrongly.
+
+### Five circuits worth knowing
+| Circuit | Key parts | When it misfires |
+|---|---|---|
+| **Fear and safety** | Amygdala (threat), ventromedial prefrontal cortex (safety, "it's over now"), hippocampus (context) | Anxiety disorders and PTSD: a strong amygdala alarm with weak prefrontal and hippocampal braking |
+| **Reward and motivation** | Ventral tegmental area, nucleus accumbens, orbitofrontal cortex | Addiction (cues hijack wanting); anhedonia in depression (little anticipation of reward) |
+| **Habit and checking (CSTC loop)** | Orbitofrontal cortex, anterior cingulate, caudate, thalamus | OCD: a loop that keeps signalling "not done, check again" |
+| **Default mode network** | Medial prefrontal cortex, posterior cingulate, precuneus | Rumination in depression: the self-focused "mind-wandering" network stays switched on |
+| **Salience network** | Anterior insula, dorsal anterior cingulate | Psychosis: ordinary things feel loaded with meaning (aberrant salience) |
+
+:::student
+You can explain exposure therapy in brain terms to a patient: "Every time you stay with the fear and nothing bad happens, your front brain is learning a new message: this is safe. The old alarm memory stays, but the new safety memory learns to win." This is accurate, hopeful, and helps people stay in the room.
+:::
+
+### Fear extinction: new learning, not erasing
+When a fear is "extinguished", the original fear memory is not deleted. A new safety memory is formed in the ventromedial prefrontal cortex and competes with it. This explains three common clinical events:
+- **Spontaneous recovery**: the fear returns after time passes.
+- **Renewal**: the fear returns in a new place (a phobia treated in the clinic returns at home).
+- **Reinstatement**: a fresh shock or stress brings the old fear back.
+
+:::widget decide
+{
+  "scene": "Farah, 31, from Srinagar, had a car accident and now panics in cars. After six sessions of graded exposure in the clinic car park, she can sit in a car calmly. She plans to stop therapy.",
+  "ask": "Knowing how fear extinction works, what is the best plan?",
+  "choices": [
+    { "label": "Stop now; the fear has gone", "verdict": "ok", "outcome": "A month later she panics on a highway and believes therapy failed.", "why": "Extinction learned in one setting does not automatically transfer. Renewal in new contexts is expected." },
+    { "label": "Practise in varied places, times and moods (highways, night, as a passenger and driver), and plan for a possible return of fear", "verdict": "best", "outcome": "She has a small wobble on a mountain road, uses her plan, and keeps driving.", "why": "Varying contexts and preparing for spontaneous recovery strengthen the safety memory and its reach." },
+    { "label": "Add a benzodiazepine before each drive to make it easier", "verdict": "harm", "outcome": "She manages drives only with tablets, and fear returns when she stops.", "why": "Sedatives can block the learning that exposure depends on, and the safety gets credited to the pill." }
+  ]
+}
+:::
+
+### Addiction as learning gone wrong
+Drugs raise dopamine in the nucleus accumbens far more, and more reliably, than natural rewards. With repetition:
+- Cues (a lane, a friend, a time of day) learn to predict the drug and trigger craving (**incentive salience**).
+- Control shifts from goal-directed choice to **habit** (from ventral to dorsal striatum).
+- The prefrontal "brake" weakens, so stopping feels impossible even when the person sincerely wants to.
+- Baseline reward drops, so ordinary life feels flat without the drug.
+
+:::analogy The well-worn path
+A habit circuit is like a path through a field. Walk it every day for years and it becomes a road; it does not vanish when you stop walking it. Recovery is building another road and walking it until it is just as easy.
+:::
+
+:::widget sort
+{
+  "prompt": "Which circuit is most involved?",
+  "buckets": ["Fear and safety", "Reward", "CSTC (habit and checking)", "Default mode", "Salience"],
+  "items": [
+    { "text": "Washing hands for an hour because it never feels 'just right'", "bucket": 2 },
+    { "text": "Flashbacks and startle after a bomb blast", "bucket": 0 },
+    { "text": "Craving whenever passing the liquor shop on the way home", "bucket": 1 },
+    { "text": "Lying awake going over every mistake of the day, again and again", "bucket": 3 },
+    { "text": "A number plate seems to carry a secret message meant only for him", "bucket": 4, "why": "Aberrant salience: an ordinary stimulus is tagged as hugely meaningful, a proposed first step to delusion." },
+    { "text": "No longer looking forward to anything, even her daughter's visit", "bucket": 1, "why": "Anticipatory anhedonia reflects reduced reward-circuit activity." }
+  ]
+}
+:::
+
+:::clinician
+Treat circuit models as heuristics with uneven evidence. Strongest: fear conditioning and extinction (translational from rodents, with human vmPFC and amygdala imaging), and dopamine prediction-error signalling (Schultz; human PET shows dopamine release to drugs and cues). CSTC hyperactivity in OCD rests on PET and fMRI with symptom provocation and on the efficacy of neurosurgical and DBS interventions targeting the loop (ventral capsule and ventral striatum), but newer models emphasise an imbalance between goal-directed and habitual control (Gillan and colleagues). Default mode hyperconnectivity in depression is inconsistent across large samples; the REST-meta-MDD consortium (Yan and colleagues, PNAS 2019) actually found reduced DMN functional connectivity in recurrent depression. Aberrant salience (Kapur, American Journal of Psychiatry 2003) remains the most coherent bridge between presynaptic dopamine excess and delusion formation, and connects to predictive processing accounts where delusions are attempts to explain persistent prediction errors. Research Domain Criteria (RDoC) organises research around such systems (negative valence, positive valence, cognitive systems, social processes, arousal and regulatory, sensorimotor) rather than diagnoses; see the Frontiers module.
+:::
+
+:::recall
+1. Name the brain areas in the fear and safety circuit and what each adds. || Amygdala (threat alarm), ventromedial prefrontal cortex (safety and extinction), hippocampus (context).
+2. Give the three ways extinguished fear returns. || Spontaneous recovery (time), renewal (new context), reinstatement (new stress or shock).
+3. What happens to control in addiction over time? || It shifts from goal-directed (ventral striatum) to habitual (dorsal striatum) with weaker prefrontal control and cue-driven craving.
+4. What is aberrant salience? || Ordinary stimuli are inappropriately tagged as significant (linked to excess dopamine), a proposed route to delusions.
+:::
+
+:::mcq
+Q: A spider phobia treated successfully in the clinic returns when the patient sees a spider at her in-laws' house. This is:
+- Reinstatement
+- *Renewal
+- Spontaneous recovery
+- Habituation failure only
+> Return of fear in a new context is renewal.
+
+Q: The network most associated with self-focused thought and rumination is the:
+- Salience network
+- *Default mode network
+- Dorsal attention network
+- Nigrostriatal pathway
+> The default mode network is active during self-referential mind-wandering.
+:::
+
+## 3.3 Plasticity, development and genes [core][advanced]
+### Learning changes synapses
+**Neuroplasticity** is the brain's ability to change its structure and function with experience. The best-studied form is **long-term potentiation (LTP)**: when one neuron repeatedly helps fire another, the connection between them strengthens ("cells that fire together wire together", after Donald Hebb). LTP was first shown in the hippocampus in 1973.
+
+How it works at the synapse:
+1. Repeated strong input depolarises the receiving cell.
+2. The magnesium plug leaves the NMDA receptor; calcium flows in.
+3. Calcium triggers kinases that insert more AMPA receptors (the synapse "listens harder").
+4. With repetition, new proteins are made and the synapse grows (structural change, helped by BDNF).
+
+**Long-term depression (LTD)** is the opposite: weak, poorly timed input weakens a synapse. Both are needed; a brain that only strengthened would fill up with noise.
+
+### The brain across life
+- **Before birth**: neurons are made, migrate to their places and connect. Problems here (infection, malnutrition, alcohol in pregnancy, genetic variants) raise later risk of autism, intellectual disability and schizophrenia.
+- **Childhood**: an overgrowth of synapses, then **synaptic pruning** of unused ones. "Use it or lose it."
+- **Adolescence**: pruning in the prefrontal cortex and myelination continue into the mid-twenties. The reward system matures earlier than prefrontal control, one reason teenagers take risks. Most serious mental illnesses begin between about 14 and 25.
+- **Adulthood and old age**: plasticity continues but slows; cognitive reserve (education, bilingualism, active life) buffers decline.
+
+:::widget guess
+{
+  "prompt": "Twin studies estimate how much of the variation in risk for schizophrenia in a population is due to genetic differences. What is the estimate?",
+  "min": 0,
+  "max": 100,
+  "unit": "per cent",
+  "answer": [70, 85],
+  "reveal": "About 80 per cent, among the highest in psychiatry. Bipolar disorder is similar (around 60 to 85 per cent), depression much lower (around 35 to 40 per cent). But 'heritable' does not mean 'inevitable': an identical twin of a person with schizophrenia has roughly a 40 to 50 per cent chance, not 100 per cent.",
+  "clinician": "Heritability is a population statistic for variance explained in a particular environment, not a statement about an individual, and it says nothing about modifiability (phenylketonuria is highly heritable and fully treatable by diet). Twin heritability for schizophrenia is about 0.79 (Hilker and colleagues, Biological Psychiatry 2018, Danish registry); SNP-based heritability is far lower (about 0.24), the 'missing heritability' gap."
+}
+:::
+
+### Genes: many small effects
+For almost all mental disorders, there is **no single gene**. Risk comes from thousands of common variants, each with a tiny effect, plus a few rare variants with larger effects, all interacting with environment.
+
+| Finding | What it means |
+|---|---|
+| **Genome-wide association studies (GWAS)** | Scan the genome in huge samples to find variants linked with a disorder. The 2022 schizophrenia study found 287 linked regions; a 2025 study of depression across ancestries found about 700 variants |
+| **Polygenic risk score** | Adds up a person's many small-effect variants. Useful in research; **not** useful for diagnosing or predicting an individual's illness in the clinic as of Nov 2026 |
+| **Copy number variants (CNVs)** | Missing or extra stretches of DNA. 22q11.2 deletion carries roughly a 25 per cent lifetime risk of schizophrenia-spectrum psychosis |
+| **Shared genetics** | Many variants raise risk for several disorders (schizophrenia, bipolar, depression, ADHD, autism), challenging sharp diagnostic boundaries |
+| **Epigenetics** | Chemical tags (for example DNA methylation) that change gene activity without changing the DNA code. Early adversity can alter them |
+
+:::trap "Gene for X" headlines
+Be suspicious of any headline about "the gene for depression" or a single "warrior gene". Early candidate-gene findings (such as the serotonin transporter variant with life stress, and COMT with cannabis) mostly failed to replicate in large samples. Teach students to ask: how big was the sample, and has it been replicated?
+:::
+
+:::widget decide
+{
+  "scene": "A couple in Ahmedabad, both in their thirties, ask you: 'My brother has schizophrenia. We saw an online test that gives a genetic risk score. Should we test our unborn child?'",
+  "ask": "What is the most accurate guidance?",
+  "choices": [
+    { "label": "Yes, the score will tell you if the child will get schizophrenia", "verdict": "harm", "outcome": "They pay for a test whose result they misread as a verdict, and are frightened for years.", "why": "Polygenic scores explain only a small share of individual risk and are not validated for prenatal prediction. They can cause harm through false certainty." },
+    { "label": "Explain that risk for a child with an affected uncle is only modestly raised above the general population, that current genetic scores cannot predict an individual's illness, and offer referral to a genetic counsellor if they want more", "verdict": "best", "outcome": "They feel reassured and informed, and decide not to test.", "why": "Accurate numbers, honest limits and a route to specialist counselling respect their choice." },
+    { "label": "Tell them genetics plays no role", "verdict": "harm", "outcome": "They later read otherwise and stop trusting your advice.", "why": "Schizophrenia is strongly heritable; denying it is inaccurate." }
+  ]
+}
+:::
+
+:::clinician
+Adult hippocampal neurogenesis in humans is contested: Sorrells and colleagues (Nature, 2018) found it drops to undetectable levels in adults, while Boldrini (Cell Stem Cell, 2018) and Moreno-Jiménez (Nature Medicine, 2019) reported persistence into old age, with differences partly explained by tissue fixation methods; later single-cell studies remain mixed. So "antidepressants work by neurogenesis" is a rodent-derived hypothesis, not established human fact. The complement component C4 finding (Sekar and colleagues, Nature 2016) links the strongest schizophrenia GWAS signal (the MHC region) to synaptic pruning, a mechanism coherent with the adolescent onset and reduced dendritic spine density seen post-mortem. The Psychiatric Genomics Consortium schizophrenia GWAS (Trubetskoy and colleagues, Nature 2022) reported 287 loci with enrichment in synaptic genes expressed in neurons, not glia. The trans-ancestry depression GWAS (Adams and colleagues, Cell 2025) reported about 700 independent variants and highlighted the need for non-European samples; South Asian representation in psychiatric genetics remains small, so polygenic scores built in European samples predict even less well in Indian patients. Pharmacogenomic panels are a separate matter (Section 3.5).
+:::
+
+:::recall
+1. Describe LTP in four steps. || Strong repeated input depolarises the cell; magnesium leaves the NMDA receptor and calcium enters; kinases insert more AMPA receptors; with repetition, structural growth via new proteins and BDNF.
+2. Why are teenagers risk-takers in brain terms? || The reward system matures before prefrontal control, which keeps developing into the mid-twenties.
+3. What is a polygenic risk score and what is its clinical status? || A sum of many small-effect variants; useful in research, not valid for individual diagnosis or prediction as of Nov 2026.
+4. Name one copy number variant with high psychosis risk. || 22q11.2 deletion (about 25 per cent lifetime risk of psychosis).
+:::
+
+:::mcq
+Q: Which statement about the heritability of schizophrenia is correct?
+- It means 80 per cent of an individual's illness is caused by genes
+- *It describes how much of the variation in risk across a population relates to genetic differences
+- It proves the illness cannot be treated
+- It means identical twins are always both affected
+> Heritability is a population statistic; identical twins are concordant in only about 40 to 50 per cent.
+
+Q: Long-term potentiation depends especially on which receptor acting as a coincidence detector?
+- GABA-B
+- *NMDA
+- 5-HT3
+- Nicotinic
+> NMDA receptors open only with glutamate plus depolarisation, admitting calcium.
+:::
+
+## 3.4 Seeing and stimulating the brain [core][advanced]
+### Tools to look at the brain
+| Tool | What it shows | Good for in psychiatry |
+|---|---|---|
+| **EEG** | Electrical activity, millisecond by millisecond | Epilepsy, delirium (diffuse slowing), sleep studies, some encephalitis; not a test for "mental illness" |
+| **CT** | Structure, using X-rays; quick, cheap | Bleeding, large strokes, tumours, after head injury |
+| **MRI** | Structure in fine detail, no radiation | White-matter disease, small strokes, atrophy patterns in dementia, MS, encephalitis |
+| **Functional MRI (fMRI)** | Changes in blood oxygen as a sign of activity | Research; not a clinical diagnostic tool in psychiatry |
+| **PET and SPECT** | Metabolism, blood flow or specific molecules (for example dopamine transporters, amyloid) | Dementia subtyping, DAT scan for Lewy body dementia and Parkinson's; amyloid PET where available |
+
+### EEG rhythms
+| Wave | Frequency | When seen |
+|---|---|---|
+| **Delta** | Below 4 per second | Deep sleep; in an awake adult, abnormal (delirium, lesions) |
+| **Theta** | 4 to 7 per second | Drowsiness, children; excess in some encephalopathies |
+| **Alpha** | 8 to 13 per second | Awake, relaxed, eyes closed, at the back of the head |
+| **Beta** | Above 13 per second | Alert concentration; increased by benzodiazepines |
+
+:::mnemonic Slow to fast: "Do Try All Brains"
+**D**elta, **T**heta, **A**lpha, **B**eta. Diffuse slowing (more delta and theta) in an awake confused patient is the EEG signature of **delirium**.
+:::
+
+:::widget decide
+{
+  "scene": "Meena, 58, in Coimbatore, has had a gradual change over a year: she has become apathetic, eats sweets compulsively, has made inappropriate comments to neighbours and lost interest in her grandchildren. Her MMSE score is normal. She was diagnosed with depression and has not improved on two antidepressants.",
+  "ask": "What is the most useful next step?",
+  "choices": [
+    { "label": "Try a third antidepressant at a higher dose", "verdict": "ok", "outcome": "No change after another two months; the family's distress grows.", "why": "Not unreasonable in true depression, but the pattern points elsewhere and delays the right diagnosis." },
+    { "label": "Detailed history from family, executive-function testing and an MRI looking for frontal and temporal atrophy; refer to a memory or neurology clinic", "verdict": "best", "outcome": "MRI shows frontal and anterior temporal atrophy, supporting behavioural variant frontotemporal dementia. The family gets an accurate explanation and support.", "why": "Late-onset personality change, disinhibition, apathy and dietary change with a normal MMSE suggest bvFTD. Imaging is genuinely useful here." },
+    { "label": "Order an fMRI to confirm depression", "verdict": "harm", "outcome": "An expensive scan that cannot diagnose depression; the result is uninterpretable.", "why": "No functional scan is validated to diagnose depression or any primary psychiatric disorder." }
+  ]
+}
+:::
+
+### When should a psychiatric patient have a scan?
+Most people with a typical presentation do not need one. Red flags that justify imaging include:
+- First episode of psychosis or mood disorder **after about 40 to 50**, or with atypical features.
+- **Neurological signs**: focal weakness, seizures, abnormal gait, new severe headache.
+- **Cognitive decline** or personality change in middle or late life.
+- Head injury, catatonia, or a poor response to standard treatment with atypical features.
+
+### Stimulating the brain
+- **Electroconvulsive therapy (ECT)**: a brief, controlled seizure under anaesthesia and muscle relaxant. The most effective acute treatment for severe depression, catatonia and some treatment-resistant states. In India, the Mental Healthcare Act 2017 bans ECT without anaesthesia and muscle relaxant (see the Ethics and law module).
+- **Repetitive transcranial magnetic stimulation (rTMS)**: magnetic pulses over the scalp, usually over the left dorsolateral prefrontal cortex for depression. No anaesthesia; awake outpatient sessions. Widely offered in Indian cities.
+- **Accelerated, imaging-guided TMS** (for example the Stanford "SAINT" protocol): many sessions per day over five days, targeted with MRI. Cleared in the United States in 2022 for treatment-resistant depression.
+- **Deep brain stimulation (DBS)**: implanted electrodes; established in Parkinson's disease, used in specialist centres for severe treatment-resistant OCD.
+- **Vagus nerve stimulation**: an implanted device; modest evidence in chronic depression.
+- **Transcranial direct current stimulation (tDCS)**: weak current via scalp electrodes; cheap and portable; evidence for depression is mixed.
+
+:::widget guess
+{
+  "prompt": "In a standard course of rTMS for depression, how many treatment sessions are usually given?",
+  "min": 1,
+  "max": 60,
+  "unit": "sessions",
+  "answer": [20, 36],
+  "reveal": "Usually about 20 to 30 daily sessions on weekdays, each lasting from a few minutes (with newer 'theta burst' patterns) to around 40 minutes. Accelerated protocols compress this into several sessions per day.",
+  "clinician": "The original FDA-cleared protocol (2008) used 10 Hz stimulation for about 37 minutes per session, five days a week for four to six weeks. Intermittent theta burst stimulation (iTBS) was non-inferior in the THREE-D trial (Blumberger and colleagues, Lancet 2018) at about 3 minutes per session. The SAINT/Stanford neuromodulation therapy protocol (ten iTBS sessions daily for five days, targeting the DLPFC subregion most anticorrelated with subgenual cingulate on fMRI) reported high remission rates in small trials; larger replication is ongoing as of Nov 2026, and cost and access limit its use in India."
+}
+:::
+
+:::clinician
+The strongest caution in psychiatric neuroimaging is about effect sizes and sample sizes. Marek and colleagues (Nature, 2022) showed that brain-wide associations between imaging measures and behavioural or mental health phenotypes are small and need thousands of participants to replicate; many earlier small-sample findings were inflated. Reverse inference (concluding a mental state from activation of a region, for example "amygdala lit up, so fear") is logically weak because regions serve many functions. As of Nov 2026, no imaging, EEG or blood test is approved for diagnosing a primary psychiatric disorder; quantitative EEG and "brain mapping" offered commercially for diagnosing ADHD or depression lack validation. Clinically meaningful uses are excluding organic causes, dementia subtyping (FDG-PET, amyloid and tau PET; DAT-SPECT), and EEG in delirium, epilepsy, catatonia mimics (non-convulsive status) and encephalitis. In first-episode psychosis, routine MRI yields clinically actionable findings in only a small minority, so many guidelines advise targeted rather than universal imaging.
+:::
+
+:::recall
+1. Which EEG pattern suggests delirium? || Diffuse slowing, with more delta and theta activity in an awake patient.
+2. Name three red flags that justify brain imaging in a psychiatric patient. || Late first onset or atypical features; neurological signs or seizures; cognitive decline or personality change in mid or late life (also head injury, catatonia, atypical non-response).
+3. Where is rTMS usually applied for depression? || The left dorsolateral prefrontal cortex.
+4. What can a DAT scan help diagnose? || Lewy body dementia and Parkinson's disease (reduced dopamine transporter uptake).
+:::
+
+:::mcq
+Q: Which statement about functional MRI in psychiatry is correct as of Nov 2026?
+- It is the standard test to diagnose depression
+- *It is a research tool; no fMRI test is approved to diagnose a primary psychiatric disorder
+- It is required before starting antipsychotics
+- It measures serotonin levels directly
+> fMRI measures blood oxygen changes; diagnostic use is not validated.
+
+Q: Alpha rhythm is best seen:
+- In deep sleep
+- *In an awake, relaxed person with eyes closed, over the back of the head
+- During a seizure
+- In coma
+> Posterior alpha with eyes closed is the normal awake resting rhythm.
+:::
+
+## 3.5 The body talks back: immunity, hormones, gut and genes in prescribing [core][advanced]
+### The immune system and the brain
+The brain is not sealed off from the body. Inflammation in the body sends signals into the brain through the blood, through nerves such as the vagus, and through the brain's own microglia. Everyone has felt this as "sickness behaviour" in fever: tired, withdrawn, no appetite, low mood. In a subgroup of people with depression, markers of inflammation (such as C-reactive protein, CRP) are raised.
+
+### Autoimmune encephalitis: the diagnosis not to miss
+In **anti-NMDA receptor encephalitis**, the immune system makes antibodies against the NMDA receptor. It often starts like a psychiatric illness:
+- A young person, often a woman, sometimes after a flu-like illness.
+- Anxiety, insomnia, strange behaviour, then psychosis or mania.
+- Then: seizures, abnormal movements of the mouth and limbs, catatonia, falling consciousness, unstable pulse and blood pressure.
+- In some women an ovarian **teratoma** (a tumour) triggers it.
+
+Treatment is immunotherapy (steroids, immunoglobulin, plasma exchange) and tumour removal. Many recover well if treated early.
+
+:::widget build
+{
+  "vignette": "Divya, 23, an IT employee in Pune, had a fever two weeks ago. Since then she has become fearful, sleepless and convinced colleagues are plotting against her. Over three days she has had one seizure, odd chewing movements of her mouth, periods of staring and not responding, and her pulse swings between fast and slow. She is very sensitive to a small dose of haloperidol, becoming rigid.",
+  "rule": "Tick the features that should make you suspect autoimmune encephalitis rather than a primary psychotic illness. Suspicion is strong with three or more red flags.",
+  "symptoms": [
+    { "label": "Recent viral-like illness before onset", "present": true, "why": "A prodrome of fever or headache is common." },
+    { "label": "Seizure", "present": true, "core": true, "why": "Seizures are a major red flag in new psychosis." },
+    { "label": "Abnormal movements of mouth and face", "present": true, "core": true, "why": "Orofacial dyskinesias are typical." },
+    { "label": "Autonomic instability (pulse and blood pressure swings)", "present": true, "why": "Common as the illness progresses." },
+    { "label": "Unusual sensitivity to antipsychotics (rigidity)", "present": true, "why": "Suggests an underlying encephalopathy and raises the risk of NMS-like reactions." },
+    { "label": "Paranoid ideas", "present": true, "why": "Present, but common to both; on its own it does not distinguish." },
+    { "label": "Gradual decline in functioning over two years", "present": false, "why": "A long prodrome would fit schizophrenia better; here onset is rapid." }
+  ],
+  "need": 3,
+  "needCore": true,
+  "verdict": "Several red flags are present: rapid onset after a viral prodrome, a seizure, orofacial dyskinesia, autonomic instability and antipsychotic intolerance. This needs urgent neurology input, MRI, EEG, lumbar puncture with NMDA receptor antibody testing, and a search for an ovarian teratoma. Paranoia alone would not raise the question."
+}
+:::
+
+### Hormones in mental health
+- **Thyroid**: underactivity mimics depression; overactivity mimics anxiety or mania. Lithium can cause hypothyroidism.
+- **Reproductive hormones**: the premenstrual phase (premenstrual dysphoric disorder), after childbirth (postpartum depression and psychosis) and the menopause transition are windows of raised risk for some women.
+- **Cortisol**: Cushing's syndrome and long-term steroid medicines can cause depression, mania or psychosis.
+
+### The gut–brain axis
+The gut has its own nervous system, and gut microbes produce substances that affect immunity and possibly mood. Animal studies are striking; human evidence is still early. As of Nov 2026, probiotics ("psychobiotics") do not have reliable evidence as a treatment for depression or anxiety. Diet quality does relate to mood, and a Mediterranean-style diet trial (SMILES, 2017) gave promising but small results.
+
+### Genes and prescribing (pharmacogenomics)
+Some gene variants change how a person handles a medicine:
+- **CYP2D6 and CYP2C19**: "poor metabolisers" build up high levels of some antidepressants and antipsychotics; "ultra-rapid metabolisers" may get little effect. International guidance suggests dose changes for known genotypes.
+- **HLA-B*15:02**: a variant common in people of East and South-East Asian descent, and present in parts of India, strongly raises the risk of a life-threatening skin reaction (Stevens–Johnson syndrome) with **carbamazepine** (and possibly oxcarbazepine and phenytoin). Testing before starting carbamazepine is recommended where feasible in at-risk populations.
+- **HLA-A*31:01**: linked to carbamazepine hypersensitivity in several populations.
+
+:::widget decide
+{
+  "scene": "Dr Sen in Guwahati wants to start carbamazepine for a young woman with bipolar disorder who has not tolerated lithium or valproate. HLA testing is available in a lab two days away.",
+  "ask": "What is the best approach?",
+  "choices": [
+    { "label": "Start carbamazepine today; skin reactions are rare", "verdict": "ok", "outcome": "She is fine, but the risk was avoidable. In a carrier, the outcome could have been severe.", "why": "Reactions are rare overall, but carrier risk is high, and the population in North-East India includes groups with higher HLA-B*15:02 frequency." },
+    { "label": "Send HLA-B*15:02 testing and use a safe bridging option until the result; if positive, avoid carbamazepine and related drugs", "verdict": "best", "outcome": "The test is positive. A different mood stabiliser is chosen, and the result is recorded prominently in her notes.", "why": "Testing in at-risk populations prevents a potentially fatal reaction, and the result guides lifelong prescribing." },
+    { "label": "Order a full commercial pharmacogenomic panel to choose every future medicine", "verdict": "ok", "outcome": "The panel arrives with colour-coded advice that partly conflicts with her clinical history.", "why": "Broad panels for antidepressant choice have limited evidence of benefit; the targeted HLA test is the high-value step here." }
+  ]
+}
+:::
+
+:::clinician
+Inflammation: Osimo and colleagues (Psychological Medicine, 2019) estimated that about a quarter of people with depression have low-grade inflammation (CRP above 3 mg/L). Trials of anti-inflammatory add-ons (celecoxib, minocycline, infliximab in high-CRP subgroups) show inconsistent results, and none is a routine treatment as of Nov 2026; stratifying by inflammatory markers is the main research direction. Autoimmune encephalitis: the Graus criteria (Lancet Neurology, 2016) define possible autoimmune encephalitis by subacute onset (under three months) of working memory deficits, altered mental status or psychiatric symptoms with at least one of new focal CNS findings, unexplained seizures, CSF pleocytosis or suggestive MRI. The 2020 Pollak consensus (Lancet Psychiatry) on autoimmune psychosis lists red flags including rapid progression, catatonia, antipsychotic intolerance, seizures, dyskinesia, autonomic instability and reduced consciousness. Pharmacogenomics: CPIC guidelines give actionable CYP2D6 and CYP2C19 recommendations for SSRIs and TCAs, but RCT evidence that panel-guided antidepressant selection improves outcomes is modest (for example the PRIME Care trial, JAMA 2022, small benefit in remission at some time points). The US label for carbamazepine advises HLA-B*15:02 screening in patients with ancestry in genetically at-risk populations, which explicitly include South Asian Indians; allele frequency varies widely between Indian communities.
+:::
+
+:::recall
+1. List four red flags for autoimmune encephalitis in a new psychosis. || Rapid onset after a viral prodrome, seizures, orofacial dyskinesia or catatonia, autonomic instability, reduced consciousness, antipsychotic intolerance.
+2. Which tumour is linked with anti-NMDA receptor encephalitis? || Ovarian teratoma.
+3. Which gene variant should be tested before carbamazepine in at-risk Asian populations and why? || HLA-B*15:02, because it greatly raises the risk of Stevens–Johnson syndrome or toxic epidermal necrolysis.
+4. What is the status of probiotics for depression as of Nov 2026? || Not an evidence-based treatment; human evidence is early and inconsistent.
+:::
+
+:::mcq
+Q: A 19-year-old develops psychosis over a week after a fever, then has a seizure and abnormal mouth movements. The key next step is:
+- Start clozapine
+- *Urgent neurological work-up including antibody testing in blood and spinal fluid
+- Discharge with outpatient follow-up in a month
+- Start ECT immediately
+> Rapid psychosis with seizures and dyskinesia demands an autoimmune encephalitis work-up.
+
+Q: Lithium is most likely to affect which gland?
+- Adrenal
+- *Thyroid
+- Pineal
+- Pancreas
+> Lithium commonly causes hypothyroidism and goitre; check thyroid function.
+:::
+
+# Part IV · Exam zone
+
+## 4.1 Long answers and short notes [core]
+### Long answer skeletons
+**1. Describe the dopamine pathways and their relevance to antipsychotic action (15 marks).**
+Introduction (dopamine synthesis, D1-like and D2-like receptors) → the four pathways with origin, target and normal role → the dopamine hypothesis of schizophrenia and its revision (presynaptic excess in the associative striatum, aberrant salience) → effects of D2 blockade in each pathway (wanted effects, negative and cognitive worsening, EPS, hyperprolactinaemia) → the therapeutic window of occupancy → how atypical drugs differ (5-HT2A block, fast-off, partial agonism) → newer non-D2 approaches (muscarinic) → conclusion.
+
+**2. Neurobiology of memory and its disorders (15 marks).**
+Classification (working, explicit episodic and semantic, implicit procedural, priming, conditioning) → anatomy of each → consolidation and LTP → H.M. → amnesias (anterograde, retrograde, Ribot) → Korsakoff, transient global amnesia, dissociative amnesia, dementia → bedside and formal testing.
+
+**3. The stress response and its role in psychiatric disorders (10 marks).**
+Sympathetic-adrenal and HPA axes → feedback → acute versus chronic stress, allostatic load → findings in depression (dexamethasone non-suppression), PTSD and early adversity → links to hippocampus, immunity and sleep → clinical implications.
+
+**4. Basic principles of pharmacokinetics with clinical examples (10 marks).**
+Absorption and first pass → distribution, protein binding, blood–brain barrier → metabolism by CYP enzymes, inducers and inhibitors with psychiatric examples → excretion (lithium) → half-life, steady state, washout → therapeutic index and drug monitoring → special groups (elderly, pregnancy, liver and kidney disease, pharmacogenomics).
+
+### Short notes (5 marks each)
+- Synaptic transmission
+- Neurotransmitter receptors: ionotropic versus metabotropic
+- Extrapyramidal side effects
+- Frontal lobe syndromes
+- Aphasias
+- Sleep architecture and changes in depression
+- Long-term potentiation
+- Anti-NMDA receptor encephalitis
+- HLA-B*15:02 and carbamazepine
+- rTMS
+
+:::student
+In a short note, aim for five crisp points with one example each, plus a line on clinical relevance. Draw a labelled diagram (synapse, HPA axis or dopamine pathways) whenever you can; examiners award marks quickly for a clear figure.
+:::
+
+:::clinician
+For postgraduate and NET-level answers, add one or two lines of current evidence with a named landmark study (for example Kapur's D2 occupancy data, Marek's brain-wide association work, the PGC 2022 schizophrenia GWAS, xanomeline-trospium approval in 2024), and show you know its limits. Examiners reward a balanced "what we know, what we do not" paragraph more than a long list.
+:::
+
+:::recall
+1. List the steps of a long answer on dopamine pathways. || Synthesis and receptors; four pathways; dopamine hypothesis and its revision; D2 blockade effects per pathway; occupancy window; atypicals; non-D2 approaches.
+2. What should every short note include besides facts? || An example per point, a diagram if possible, and a line on clinical relevance.
+:::
+
+## 4.2 Viva rapid-fire [core]
+:::viva
+What is the resting membrane potential? :: About minus 70 millivolts, inside negative.
+What is saltatory conduction? :: Jumping of the action potential between nodes of Ranvier along a myelinated axon.
+Name the rate-limiting enzyme for serotonin synthesis. :: Tryptophan hydroxylase.
+Where is the locus coeruleus and what does it make? :: In the pons; noradrenaline.
+Which serotonin receptor is an ion channel? :: 5-HT3.
+Name the four dopamine pathways. :: Mesolimbic, mesocortical, nigrostriatal, tuberoinfundibular.
+What D2 occupancy gives antipsychotic effect without EPS? :: About 65 to 78 per cent.
+What is Gerstmann syndrome? :: Agraphia, acalculia, finger agnosia and left–right disorientation from a dominant parietal lesion.
+Which aphasias spare repetition? :: Transcortical motor and transcortical sensory.
+What is Klüver–Bucy syndrome? :: Placidity, hyperorality, hypersexuality and visual agnosia after bilateral amygdala damage.
+What is Ribot's law? :: Recent memories are lost before remote ones in retrograde amnesia.
+Which vitamin deficiency causes Korsakoff syndrome? :: Thiamine.
+What is the master clock of the body? :: The suprachiasmatic nucleus of the hypothalamus.
+What happens to REM latency in depression? :: It shortens.
+How many half-lives to steady state? :: About four to five.
+Name a CYP1A2 inducer relevant to psychiatry. :: Tobacco smoke.
+Which drug raises lamotrigine levels? :: Valproate.
+What is a partial agonist? :: A drug that partly activates a receptor, acting as a brake or a booster depending on transmitter levels.
+What test should precede carbamazepine in at-risk Asian patients? :: HLA-B*15:02.
+What is the first antipsychotic approved without direct D2 blockade? :: Xanomeline-trospium, a muscarinic agonist, US approval 2024.
+What EEG finding suggests delirium? :: Diffuse slowing.
+What is a DAT scan used for? :: Showing loss of dopamine transporters in Parkinson's disease and Lewy body dementia.
+:::
+
+## 4.3 Module test [core]
+Score 80% or more to complete the module.
+
+:::mcq
+Q: The parasympathetic system is responsible for:
+- Pupil dilation in fear
+- *Slowing the heart and promoting digestion
+- Releasing cortisol
+- Voluntary movement
+> Rest and digest.
+
+Q: Which ion rushes into the neuron during the rising phase of the action potential?
+- Potassium
+- *Sodium
+- Chloride
+- Magnesium
+> Voltage-gated sodium channels open.
+
+Q: Microglia are best described as:
+- Myelin-making cells
+- *The brain's immune cells that also prune synapses
+- Cells forming the blood–brain barrier alone
+- Neurons in the cerebellum
+> Microglia defend and prune.
+
+Q: Which step triggers vesicles to release their transmitter?
+- Potassium leaving the cell
+- *Calcium entering the axon terminal
+- Myelin breaking down
+- Receptors upregulating
+> Calcium influx triggers vesicle fusion.
+
+Q: Noradrenaline is synthesised from:
+- Serotonin
+- Tryptophan
+- *Dopamine
+- Acetylcholine
+> Tyrosine to L-DOPA to dopamine to noradrenaline.
+
+Q: Ondansetron reduces nausea by blocking:
+- D2 receptors
+- *5-HT3 receptors
+- H1 receptors
+- M1 receptors
+> The ion-channel serotonin receptor.
+
+Q: A man on olanzapine gains 12 kg in six months. The receptors most responsible are:
+- D2 and alpha-1
+- *H1 and 5-HT2C
+- 5-HT3 and nicotinic
+- GABA-A and NMDA
+> Histamine H1 and 5-HT2C blockade drive appetite and weight gain.
+
+Q: Tardive dyskinesia typically appears:
+- Within hours of the first dose
+- *After months to years of treatment
+- Only after stopping treatment for a day
+- Only in children
+> It is a late, sometimes permanent side effect.
+
+Q: Raised prolactin from risperidone is explained by D2 blockade in the:
+- Mesolimbic pathway
+- Mesocortical pathway
+- Nigrostriatal pathway
+- *Tuberoinfundibular pathway
+> Dopamine normally inhibits prolactin release from the pituitary.
+
+Q: A patient can speak fluently and understands well but cannot repeat sentences. The lesion is most likely in the:
+- Broca's area
+- Wernicke's area
+- *Arcuate fasciculus
+- Occipital lobe
+> Conduction aphasia.
+
+Q: A retired teacher becomes apathetic, speaks little and sits for hours without starting any activity. The most likely frontal area affected is the:
+- Orbitofrontal cortex
+- *Medial frontal cortex and anterior cingulate
+- Occipital cortex
+- Primary motor cortex
+> The medial frontal (apathetic) syndrome.
+
+Q: Henry Molaison could still learn mirror tracing because:
+- His hippocampus was intact
+- *Procedural memory depends on the basal ganglia and cerebellum, not the hippocampus
+- He was faking amnesia
+- Working memory stores skills
+> Implicit and explicit memory are separate systems.
+
+Q: Confabulation is characteristic of:
+- Broca's aphasia
+- *Korsakoff syndrome
+- Transient global amnesia
+- Generalised anxiety disorder
+> Gaps are filled with believed false stories.
+
+Q: Which hormone signals "night" to the body?
+- Cortisol
+- *Melatonin
+- Thyroxine
+- Oxytocin
+> Melatonin from the pineal gland.
+
+Q: Sleepwalking arises mostly from:
+- REM sleep
+- Stage N1
+- *Stage N3 (slow-wave sleep)
+- Wakefulness
+> Arousal disorders come from deep NREM sleep.
+
+Q: Carbamazepine lowers the level of many other medicines because it:
+- Inhibits CYP enzymes
+- *Induces CYP enzymes, including its own metabolism
+- Blocks their absorption
+- Binds them in the blood
+> A strong enzyme inducer.
+
+Q: A medicine with a half-life of 24 hours, given daily, reaches steady state in about:
+- 1 day
+- *4 to 5 days
+- 2 weeks
+- 6 weeks
+> Four to five half-lives.
+
+Q: Which medicine has the narrowest therapeutic index?
+- Sertraline
+- *Lithium
+- Fluoxetine
+- Escitalopram
+> Small rises in lithium level cause toxicity.
+
+Q: The delay in SSRI benefit is best explained at first by:
+- Slow absorption from the gut
+- *5-HT1A autoreceptors initially reducing serotonin neuron firing until they desensitise
+- The SSRI not reaching the brain for weeks
+- Liver enzymes destroying the SSRI
+> Autoreceptor desensitisation, then downstream plasticity.
+
+Q: A fear that was extinguished in therapy returns after a frightening new life event. This is:
+- Renewal
+- *Reinstatement
+- Habituation
+- Sensitisation only
+> A new stressor reinstates the old fear.
+
+Q: In addiction, control over drug-taking shifts over time from:
+- Dorsal to ventral striatum
+- *Ventral (goal-directed) to dorsal (habit) striatum
+- Cerebellum to occipital cortex
+- Brainstem to hippocampus
+> Habit takes over from goal-directed control.
+
+Q: Which is TRUE about polygenic risk scores as of Nov 2026?
+- They can diagnose schizophrenia in an individual
+- *They are research tools with little power to predict an individual's illness
+- They are recommended before all pregnancies
+- They work equally well in all ancestries
+> They explain a small share of variance and transfer poorly across ancestries.
+
+Q: A 22q11.2 deletion is important in psychiatry because it:
+- Causes Down syndrome
+- *Carries a high lifetime risk of psychosis
+- Protects against depression
+- Causes Huntington's disease
+> About a quarter of carriers develop psychotic illness.
+
+Q: Which scan best supports a diagnosis of Lewy body dementia?
+- Plain CT
+- *Dopamine transporter (DAT) SPECT
+- fMRI during a memory task
+- EEG alone
+> Reduced striatal DAT uptake supports DLB.
+
+Q: rTMS for depression is usually applied over the:
+- Occipital cortex
+- *Left dorsolateral prefrontal cortex
+- Cerebellum
+- Brainstem
+> The standard target.
+
+Q: A young woman with new psychosis, seizures and orofacial dyskinesia should be tested for:
+- Thyroid antibodies only
+- *Anti-NMDA receptor antibodies
+- HLA-B*15:02
+- Vitamin D only
+> Anti-NMDA receptor encephalitis.
+
+Q: HLA-B*15:02 testing is recommended before starting which medicine in at-risk Asian patients?
+- Lithium
+- Valproate
+- *Carbamazepine
+- Sertraline
+> It predicts Stevens–Johnson syndrome with carbamazepine.
+
+Q: Xanomeline-trospium is notable because it:
+- Is a long-acting injectable haloperidol
+- *Treats schizophrenia through muscarinic receptors without direct D2 blockade
+- Is an NMDA antagonist for depression
+- Is a GABA-A modulator for postpartum depression
+> Approved in the US in 2024, a new mechanism.
+:::
+`;
