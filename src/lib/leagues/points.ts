@@ -7,7 +7,8 @@
  * - Server XP: positive rows in xp_ledger in the window (duel wins, daily
  *   case and other server-side awards). Shop spends never count.
  * - Skill: each item answered correctly on its first try in the window earns
- *   FIRST_TRY_POINTS by difficulty (easy 2, medium 4, hard 6).
+ *   FIRST_TRY_POINTS by difficulty (easy 2, medium 4, hard 6), capped at the
+ *   effort XP of the same window (answer events are sent by the browser).
  */
 
 export const FIRST_TRY_POINTS = { 1: 2, 2: 4, 3: 6 } as const;
@@ -75,6 +76,8 @@ export type PointsBreakdown = { effort: number; server: number; skill: number; t
 export function leaguePoints(input: PointsInput, from: string, to: string): PointsBreakdown {
   const effort = effortXp(input.history, from, to);
   const server = ledgerXp(input.ledger);
-  const skill = skillPoints(input.firstTries, input.difficulty ?? (() => 1));
+  // Answer events come from the browser, so the skill bonus can never be more
+  // than the (server-clamped) effort XP: no XP, no bonus.
+  const skill = Math.min(effort, skillPoints(input.firstTries, input.difficulty ?? (() => 1)));
   return { effort, server, skill, total: effort + server + skill };
 }

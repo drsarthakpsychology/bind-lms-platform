@@ -20,6 +20,35 @@ export type AchievementRequirement =
 
 export const REQUIREMENT_KINDS = ["module_complete", "sections_read", "xp", "watch_seconds", "course_complete"] as const;
 
+/**
+ * Milestone requirements (src/lib/achievements/milestones.ts), checked from
+ * server records only:
+ *   - streak_days        : best daily streak of at least `min` days.
+ *   - league_promoted    : promoted at least `count` times, and/or reached `tier`.
+ *   - duels_won          : ranked duels won (xp_ledger "duel:win").
+ *   - daily_cases_solved : daily cases solved (xp_ledger "daily_case:solved").
+ *   - module_mastered    : a module (or `count` modules) completed with a test
+ *                          score of at least MASTERY_TEST_PCT.
+ *   - xp_total           : Learn XP plus server-awarded XP (spends don't lower it).
+ * `secret: true` hides the progress line until it is earned.
+ */
+export type MilestoneRequirement = (
+  | { kind: "streak_days"; min: number }
+  | { kind: "league_promoted"; count?: number; tier?: number }
+  | { kind: "duels_won"; min: number }
+  | { kind: "daily_cases_solved"; min: number }
+  | { kind: "module_mastered"; module?: string; count?: number }
+  | { kind: "xp_total"; min: number }
+) & { secret?: boolean };
+
+export const MILESTONE_KINDS = ["streak_days", "league_promoted", "duels_won", "daily_cases_solved", "module_mastered", "xp_total"] as const;
+
+/** Any rule the engine can check. */
+export type AnyRequirement = AchievementRequirement | MilestoneRequirement;
+
+/** Share of the module test needed to call a module mastered. */
+export const MASTERY_TEST_PCT = 80;
+
 /** Lightweight, content-derived facts the engine needs per study module. */
 export type ModuleFacet = { id: string; title: string; reading: number; activities: number; hasTest: boolean };
 

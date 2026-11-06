@@ -132,6 +132,9 @@ describe("league points", () => {
     expect(firsts).toEqual(["b"]);
     const p = leaguePoints({ history: { "2026-11-03": 40 }, ledger: [{ source: "daily_case:solved", amount: 15 }], firstTries: ["b", "c"], difficulty: (i) => (i === "b" ? 3 : 1) }, "2026-11-02", "2026-11-09");
     expect(p).toEqual({ effort: 40, server: 15, skill: 8, total: 63 });
+    // The skill bonus can't outgrow real (server-clamped) effort.
+    const farmed = leaguePoints({ history: { "2026-11-03": 5 }, ledger: [], firstTries: ids(50), difficulty: () => 3 }, "2026-11-02", "2026-11-09");
+    expect(farmed.skill).toBe(5);
   });
 });
 
