@@ -24,11 +24,20 @@ A full agonist turns a light fully on; an antagonist keeps it off; a partial ago
 {"prompt": "How does each medicine mainly act? Place each.", "buckets": ["Blocks a transporter (reuptake)", "Blocks a receptor (antagonist)", "Partial agonist", "Blocks an enzyme"], "items": [{"text": "Sertraline keeps serotonin in the synapse longer", "bucket": 0}, {"text": "Haloperidol blocks dopamine D2 receptors", "bucket": 1}, {"text": "Aripiprazole partly stimulates D2 receptors", "bucket": 2}, {"text": "Donepezil stops acetylcholine being broken down", "bucket": 3}, {"text": "Methylphenidate stops dopamine and noradrenaline being taken back up", "bucket": 0}, {"text": "Buprenorphine partly stimulates opioid receptors", "bucket": 2}, {"text": "Naltrexone blocks opioid receptors", "bucket": 1}, {"text": "Moclobemide and older MAOIs stop monoamines being broken down", "bucket": 3}]}
 :::
 
+### The journey of a tablet
+:::widget flow
+{"title": "From swallowing a tablet to a change in the brain", "layout": "chain", "nodes": [{"id": "a", "label": "Swallowed", "detail": "The tablet dissolves in the stomach and small intestine. Food, acidity and gut speed affect how fast."}, {"id": "b", "label": "Absorbed", "detail": "The medicine crosses the gut wall into the blood that drains to the liver."}, {"id": "c", "label": "First pass through the liver", "detail": "Liver enzymes break down part of the dose before it reaches the rest of the body. Some medicines lose most of their dose here."}, {"id": "d", "label": "Carried in the blood", "detail": "Much of the medicine travels stuck to blood proteins; only the free part can act."}, {"id": "e", "label": "Crosses into the brain", "detail": "Fat-soluble medicines pass the blood-brain barrier. Some are pumped back out, which is why a few reach the brain poorly."}, {"id": "f", "label": "Binds its target", "detail": "Receptors, transporters, enzymes or ion channels. The chemical change starts here."}, {"id": "g", "label": "The brain adapts", "detail": "Over days to weeks, receptors and connections change. Many benefits, and some side effects, come from this stage."}, {"id": "h", "label": "Removed", "detail": "Broken down by the liver and removed by the kidneys or bile. The half-life tells you how fast."}], "caption": "Press Play to follow a dose step by step. Problems can arise at any step: poor absorption, enzyme interactions, kidney disease, or a brain that adapts slowly."}
+:::
+
 ### Dose matters
 More medicine is not always better. As the dose rises, the effect rises, then **levels off** (a plateau), while side effects may keep climbing. The aim is the dose that gives the most benefit with the fewest problems. For some medicines (lithium is the classic example), the gap between a helpful dose and a harmful one is **narrow**, so blood levels must be checked.
 
 :::widget guess
 {"prompt": "For lithium, the usual target blood level for long-term prevention in bipolar disorder lies between about 0.6 and what upper value (mmol/L)?", "min": 0, "max": 3, "step": 0.1, "unit": "mmol/L", "answer": [0.8, 1.0], "reveal": "About 0.6 to 0.8 or 1.0 mmol/L, with higher levels sometimes used for acute mania. Above about 1.5 mmol/L toxicity becomes likely, and above 2.0 it can be life-threatening. That narrow gap is why lithium needs regular blood tests.", "clinician": "Maintenance typically 0.6 to 0.8 mmol/L (some guidelines 0.6 to 1.0); acute mania 0.8 to 1.0 (up to 1.2); older adults often 0.4 to 0.6 or 0.8. Levels drawn 12 hours after the last dose. Toxicity: mild 1.5 to 2.0, moderate to severe above 2.0 (coarse tremor, ataxia, dysarthria, confusion, seizures, arrhythmia); acute and chronic toxicity differ in their relation to serum level."}
+:::
+
+:::widget curve
+{"kind": "dose-response", "title": "Dose and effect: why more is not always better", "caption": "Slide the dose. The effect rises and then flattens (the plateau), while side effects can keep rising. Compare a full agonist with a partial agonist: the partial agonist has a ceiling, which is why buprenorphine is safer in overdose than methadone."}
 :::
 
 :::clinician
@@ -80,6 +89,10 @@ The **half-life** is the time it takes for the blood level to fall by half. It d
 
 :::widget guess
 {"prompt": "A medicine has a half-life of about one day. Roughly how many days of regular dosing does it take to reach a steady level in the blood?", "min": 1, "max": 20, "unit": "days", "answer": [4, 5], "reveal": "About four to five days, because steady state takes about four to five half-lives. Fluoxetine's active product has a half-life of a week or more, so it takes over a month to reach steady state and stays in the body for weeks after stopping.", "clinician": "After each half-life, the concentration covers half the remaining distance to steady state: 50%, 75%, 87.5%, 93.75%, 96.9% after 1 to 5 half-lives. Norfluoxetine half-life about 4 to 16 days; hence the 5-week washout before starting an MAOI after fluoxetine. Loading doses (for example valproate in acute mania) shortcut the wait for drugs with long half-lives."}
+:::
+
+:::widget curve
+{"kind": "half-life", "title": "Half-life and steady state", "caption": "Try a short half-life (several hours) with once-daily dosing: the level swings high and low. Then try a long half-life: the level climbs slowly and smoothly to a plateau after about four to five half-lives. This is why some medicines need slow-release forms and others are taken once a day."}
 :::
 
 ### Interactions: when medicines meet
@@ -154,6 +167,10 @@ Most side effects are not random. They come from a medicine acting on receptors 
 
 :::widget sort
 {"prompt": "Which receptor action best explains each side effect?", "buckets": ["H1 blockade", "M1 (anticholinergic) blockade", "Alpha-1 blockade", "D2 blockade"], "items": [{"text": "An older man on amitriptyline cannot pass urine and becomes confused", "bucket": 1}, {"text": "A woman on quetiapine falls when she stands up quickly at night", "bucket": 2}, {"text": "A young woman on risperidone stops having periods and notices breast discharge", "bucket": 3, "why": "D2 blockade in the tuberoinfundibular pathway raises prolactin."}, {"text": "A man on mirtazapine sleeps heavily and gains weight", "bucket": 0}, {"text": "A student on haloperidol cannot sit still and paces", "bucket": 3, "why": "Akathisia."}, {"text": "A patient on chlorpromazine has a very dry mouth and constipation", "bucket": 1}]}
+:::
+
+:::widget brainmap
+{"title": "Where common side effects come from", "focus": ["hypothalamus", "basal-ganglia", "brainstem", "hippocampus"], "notes": {"hypothalamus": "Appetite and weight: H1 and 5-HT2C blockade here increase hunger. D2 blockade nearby, in the hypothalamus-pituitary pathway, raises prolactin.", "basal-ganglia": "Movement: D2 blockade in the striatum causes stiffness, tremor, restlessness and, long term, abnormal movements.", "brainstem": "Nausea and alertness: serotonin 5-HT3 receptors in the vomiting centre cause early SSRI nausea; histamine and noradrenaline neurons here set wakefulness.", "hippocampus": "Memory: muscarinic (acetylcholine) blockade and benzodiazepines impair forming new memories, most noticeably in older people."}, "caption": "Tap each highlighted area. The same receptor can have different effects depending on where it sits."}
 :::
 
 ### Why this matters at the bedside
