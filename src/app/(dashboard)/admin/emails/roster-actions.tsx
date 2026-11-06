@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Check, Copy, Link2, Loader2, RefreshCw, Search, Send, X } from "lucide-react";
 import { sendCredentialEmailsAction, sendTestEmailAction, resetCredentialAction } from "../students/bulk-import";
-import type { InviteRow } from "./page";
+import type { InviteRow } from "@/lib/people/logins-data";
 import { LockToggle } from "@/components/admin/lock-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

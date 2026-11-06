@@ -60,6 +60,9 @@ export default async function NotificationsPage() {
     : null;
   const reports = reportsQuery?.data ?? [];
 
+  // Messages from the VIBHA team (and nudges) vs achievements.
+  const messages = (notes ?? []).filter((n) => n.type === "message" || n.type === "nudge");
+  const achievements = (notes ?? []).filter((n) => n.type === "badge" || n.type === "certificate");
   const hasNotes = (notes ?? []).length > 0;
   const hasStudent = replyItems.length > 0;
   const hasAdmin = reports.length > 0;
@@ -84,13 +87,32 @@ export default async function NotificationsPage() {
           <EmptyState
             icon={<Bell className="size-5" aria-hidden />}
             title="Nothing needs your attention"
-            description="Achievements you earn and replies to your wall posts will appear here."
+            description="Messages from the VIBHA team, achievements you earn and replies to your wall posts appear here."
           />
         ) : (
           <>
-            {hasNotes ? (
+            {messages.length ? (
+              <MobileSection title="From the VIBHA team" description={messages.some((n) => !n.read_at) ? `${messages.filter((n) => !n.read_at).length} new` : "Tap to open"}>
+                {messages.map((n) => (
+                  <MobileListItem
+                    key={n.id}
+                    href={n.href}
+                    leading={<Bell className="size-4 text-foreground" aria-hidden />}
+                    title={n.read_at ? n.title : `● ${n.title}`}
+                    subtitle={n.body}
+                    trailing={
+                      <span className={cn("text-caption", n.read_at ? "text-muted-foreground" : "font-bold text-foreground")}>
+                        {formatRelativeTime(n.created_at)}
+                      </span>
+                    }
+                  />
+                ))}
+              </MobileSection>
+            ) : null}
+
+            {achievements.length ? (
               <MobileSection title="Achievements" description={unread > 0 ? `${unread} new` : "Your earned credentials"}>
-                {(notes ?? []).map((n) => (
+                {achievements.map((n) => (
                   <MobileListItem
                     key={n.id}
                     href={n.href}

@@ -33,7 +33,9 @@ export function TopBar({
   showSettings,
   viewModeSwitch,
   isAdminView,
+  unread = 0,
 }: {
+  unread?: number;
   homeHref: string;
   role: string;
   gateRole: string;
@@ -97,8 +99,13 @@ export function TopBar({
             <Search className="size-5" aria-hidden />
           </button>
           {viewModeSwitch ? <div className="hidden sm:block">{viewModeSwitch}</div> : null}
-          <Link href="/notifications" aria-label="Notifications" className={iconBtn}>
+          <Link href="/notifications" aria-label={unread ? `Notifications, ${unread} unread` : "Notifications"} className={cn(iconBtn, "relative")}>
             <Bell className="size-5" aria-hidden />
+            {unread ? (
+              <span aria-hidden className="absolute -top-0.5 -right-0.5 grid h-5 min-w-5 place-items-center rounded-full border-2 border-background bg-destructive px-1 text-[0.65rem] font-bold leading-none text-white">
+                {unread > 9 ? "9+" : unread}
+              </span>
+            ) : null}
           </Link>
           <AccountMenu email={email} role={role} showSettings={showSettings} />
         </div>

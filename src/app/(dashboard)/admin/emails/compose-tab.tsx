@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Eye, Loader2, MailCheck, PencilLine, Send, Terminal } from "lucide-react";
+import { Code2, Eye, Loader2, MailCheck, PencilLine, Send, Terminal, Type, WandSparkles } from "lucide-react";
+import { RichEditor } from "@/components/admin/rich-editor";
+import { htmlToPlain, richToEmailHtml } from "@/lib/email/rich-html";
 import { sendCampaignEmail, sendTestCampaignEmail } from "./actions";
 import { RecipientPicker } from "./recipient-picker";
 import { Button } from "@/components/ui/button";
@@ -34,8 +36,16 @@ const BLANK_HTML = `<!DOCTYPE html>
 </body>
 </html>`;
 
+type Mode = "formatted" | "text" | "html";
+const MODES: { id: Mode; label: string; hint: string; icon: React.ComponentType<{ className?: string }> }[] = [
+  { id: "formatted", label: "Formatted", hint: "Headings, bold, lists and links with buttons. No code.", icon: WandSparkles },
+  { id: "text", label: "Plain text", hint: "A simple text email, like a normal personal email.", icon: Type },
+  { id: "html", label: "HTML", hint: "Paste or edit your own HTML email (inline styles).", icon: Code2 },
+];
+
 /**
- * The compose tab — ready-made templates or a fully custom HTML email, with a
+ * The compose tab — three ways to write: Formatted (toolbar, no code), Plain
+ * text, or your own HTML; plus ready-made templates. With a
  * LIVE visual preview (sandboxed iframe, so pasted markup can never run
  * scripts) before anything is sent. "Send test to me" verifies the exact
  * render in the admin's inbox; "Send to N" confirms the recipient list first.
@@ -52,7 +62,15 @@ export function ComposeTab({
 }) {
   const [templateId, setTemplateId] = React.useState("");
   const [subject, setSubject] = React.useState("");
-  const [html, setHtml] = React.useState(BLANK_HTML);
+  const [mode, setMode] = React.useState<Mode>("formatted");
+  const [rawHtml, setRawHtml] = React.useState(BLANK_HTML);
+  const [rich, setRich] = React.useState("");
+  const [text, setText] = React.useState("");
+  const [editorKey, setEditorKey] = React.useState(0);
+  // What actually goes out, per mode. Plain text sends no HTML at all.
+  const html = mode === "html" ? rawHtml : mode === "formatted" ? (rich.replace(/<[^>]*>/g, "").trim() ? richToEmailHtml(rich) : "") : "";
+  const plain = mode === "text" ? text : mode === "formatted" ? htmlToPlain(rich) : "";
+  const hasBody = Boolean(html.trim() || plain.trim());
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set(initialTo));
 
   const [testBusy, setTestBusy] = React.useState(false);
@@ -63,14 +81,21 @@ export function ComposeTab({
 
   // The preview lags a beat behind typing so a long HTML paste doesn't stall
   // the editor (React's useDeferredValue — the textarea stays responsive).
-  const previewHtml = React.useDeferredValue(html);
+  const previewHtml = React.useDeferredValue(
+    mode === "text"
+      ? `<pre style="margin:0;padding:24px;font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;white-space:pre-wrap;color:#1a1a1a;background:#fff">${text.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</pre>`
+      : html,
+  );
 
   async function applyTemplate(id: string) {
     setTemplateId(id);
     setSendResult(null);
     if (!id) {
       setSubject("");
-      setHtml(BLANK_HTML);
+      setRawHtml(BLANK_HTML);
+      setRich("");
+      setText("");
+      setEditorKey((k) => k + 1);
       return;
     }
     const res = await fetch("/api/emails/seed", {
@@ -80,8 +105,10 @@ export function ComposeTab({
     }).catch(() => null);
     const data = res?.ok ? ((await res.json()) as { subject?: string; html?: string }) : null;
     if (data?.html) {
+      // Templates are designed HTML emails, so they open in HTML mode.
       setSubject(data.subject ?? "");
-      setHtml(data.html);
+      setRawHtml(data.html);
+      setMode("html");
     }
   }
 
@@ -89,7 +116,7 @@ export function ComposeTab({
     if (testBusy) return;
     setTestBusy(true);
     setTestResult(null);
-    const res = await sendTestCampaignEmail({ subject, html });
+    const res = await sendTestCampaignEmail({ subject, html, text: mode === "text" ? text : undefined });
     setTestBusy(false);
     setTestResult({ ok: res.ok, detail: res.error ?? res.detail });
   }
@@ -101,6 +128,7 @@ export function ComposeTab({
     const res = await sendCampaignEmail({
       subject,
       html,
+      text: plain || undefined,
       recipientEmails: Array.from(selected),
       templateId: templateId || null,
     });
@@ -164,23 +192,62 @@ export function ComposeTab({
               placeholder="What this email is about"
             />
           </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="campaign-html" className="flex items-center gap-1.5">
-              <Terminal className="size-3.5 text-muted-foreground" aria-hidden />
-              Email HTML
-            </Label>
-            <Textarea
-              id="campaign-html"
-              value={html}
-              onChange={(e) => setHtml(e.target.value)}
-              rows={16}
-              spellCheck={false}
-              className="w-full rounded-md border-2 border-border bg-background px-3 py-2 font-mono text-xs leading-relaxed"
-            />
-            <p className="text-caption text-muted-foreground">
-              Write it as an HTML email — inline styles only, so it renders the same everywhere.
-            </p>
+          <div className="space-y-2">
+            <span className="text-sm font-semibold">How do you want to write it?</span>
+            <div role="radiogroup" aria-label="Email type" className="grid grid-cols-3 gap-1 rounded-xl border-2 border-foreground bg-card p-1">
+              {MODES.map((m) => {
+                const Icon = m.icon;
+                const on = mode === m.id;
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={on}
+                    onClick={() => setMode(m.id)}
+                    className={cn(
+                      "flex h-10 items-center justify-center gap-1.5 rounded-lg text-sm font-bold transition-colors",
+                      on ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-foreground",
+                    )}
+                  >
+                    <Icon className="size-4" aria-hidden /> {m.label}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-caption text-muted-foreground">{MODES.find((m) => m.id === mode)?.hint}</p>
           </div>
+          {mode === "formatted" ? (
+            <RichEditor key={editorKey} id="campaign-rich" onChange={setRich} ariaLabel="Email message" />
+          ) : mode === "text" ? (
+            <div className="space-y-1.5">
+              <Label htmlFor="campaign-text">Message</Label>
+              <Textarea
+                id="campaign-text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                rows={14}
+                placeholder={"Hi,\n\nWrite your email here.\n\nWarmly,\nVIBHA School of Psychology"}
+                className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-sm leading-relaxed"
+              />
+            </div>
+          ) : (
+            <div className="space-y-1.5">
+              <Label htmlFor="campaign-html" className="flex items-center gap-1.5">
+                <Terminal className="size-3.5 text-muted-foreground" aria-hidden />
+                Email HTML
+              </Label>
+              <Textarea
+                id="campaign-html"
+                value={rawHtml}
+                onChange={(e) => setRawHtml(e.target.value)}
+                rows={16}
+                spellCheck={false}
+                className="w-full rounded-md border-2 border-border bg-background px-3 py-2 font-mono text-xs leading-relaxed"
+              />
+              <p className="text-caption text-muted-foreground">Inline styles only, so it renders the same everywhere. A plain-text copy is made for you.</p>
+            </div>
+          )}
 
           {/* Recipients */}
           <div className="rounded-md border-2 border-border bg-card p-4">
@@ -194,7 +261,7 @@ export function ComposeTab({
 
           {/* Actions */}
           <div className="flex flex-wrap items-center gap-2">
-            <Button type="button" variant="secondary" onClick={runTest} disabled={testBusy || !subject.trim() || !html.trim()}>
+            <Button type="button" variant="secondary" onClick={runTest} disabled={testBusy || !subject.trim() || !hasBody}>
               {testBusy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Eye className="size-4" aria-hidden />}
               {testBusy ? "Sending…" : "Send test to me"}
             </Button>
@@ -204,7 +271,7 @@ export function ComposeTab({
                 setSendResult(null);
                 setConfirmOpen(true);
               }}
-              disabled={selected.size === 0 || !subject.trim() || !html.trim()}
+              disabled={selected.size === 0 || !subject.trim() || !hasBody}
             >
               <Send className="size-4" aria-hidden />
               Send to {selected.size}

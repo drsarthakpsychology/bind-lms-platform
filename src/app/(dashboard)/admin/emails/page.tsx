@@ -1,40 +1,27 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
-import { requireAdmin } from "@/lib/auth/guards";
+import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
+import { FailedList, type FailedItem } from "./failed-list";
+import { NotifyTab } from "./notify-tab";
+import { loadNotifyBatches } from "@/lib/notify/send";
+import { explainFailure } from "@/lib/email/pace";
 import { EMAIL_TEMPLATES } from "@/lib/email/templates";
-import { RosterActions } from "./roster-actions";
 import { ComposeTab } from "./compose-tab";
-import { MailKeys, InboundControls, ClearFailedButton } from "./mail-client";
+import { MailKeys, InboundControls } from "./mail-client";
 import { loadOpenFailures } from "@/lib/email/failed";
-import { isHiddenAccount, isRobotEmail } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { personKey } from "@/lib/crm/people";
-import { AlertTriangle, ArrowLeft, Inbox, KeyRound, PenSquare, Send } from "lucide-react";
+import { AlertTriangle, ArrowLeft, Bell, Inbox, PenSquare, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-export type InviteRow = {
-  id: string;
-  email: string;
-  name: string;
-  status: "pending" | "sent" | "failed";
-  /** When the student finished setting their own password (null = not yet). */
-  setup_completed_at: string | null;
-  error_reason: string | null;
-  sent_at: string | null;
-  created_at: string;
-  /** The account's lock state (from profiles.status) — used for the LockToggle. */
-  lockStatus: "active" | "blocked";
-  /** The profile id for the LockToggle (null if no profile row exists). */
-  lockUserId: string | null;
-};
 
+// Logins moved to Students → Logins (one home for account and login state).
 const FOLDERS = [
   { id: "inbox", label: "Inbox", icon: Inbox },
+  { id: "notify", label: "Notifications", icon: Bell },
   { id: "sent", label: "Sent", icon: Send },
-  { id: "logins", label: "Logins", icon: KeyRound },
   { id: "failed", label: "Failed", icon: AlertTriangle },
 ] as const;
 type Folder = (typeof FOLDERS)[number]["id"] | "compose";
@@ -99,52 +86,17 @@ export default async function MailPage({
   const sp = await searchParams;
   const legacy = sp.tab === "credentials" ? "logins" : sp.tab === "compose" ? "compose" : sp.tab === "sent" ? "sent" : undefined;
   const raw = sp.folder ?? legacy ?? "inbox";
-  const folder: Folder = (["inbox", "sent", "logins", "failed", "compose"] as const).includes(raw as Folder) ? (raw as Folder) : "inbox";
+  if (raw === "logins") redirect("/admin/students/logins");
+  const folder: Folder = (["inbox", "notify", "sent", "failed", "compose"] as const).includes(raw as Folder) ? (raw as Folder) : "inbox";
+  const canWrite = isSuperAdmin(adminProfile);
   const q = (sp.q ?? "").trim().toLowerCase().slice(0, 100);
 
-  const supabase = await createClient();
   const admin = createAdminClient();
   const [{ count: unread }, failures] = await Promise.all([
     admin.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
     loadOpenFailures<SentRow>(admin),
   ]);
   const failedCount = failures.length;
-
-  let credentialsRows: InviteRow[] = [];
-  if (folder === "logins") {
-    const { data } = await supabase
-      .from("credential_invites")
-      .select("id, email, name, status, setup_completed_at, error_reason, sent_at, created_at")
-      .order("created_at", { ascending: false });
-    const rows = ((data ?? []) as Omit<InviteRow, "lockStatus" | "lockUserId">[]).filter((r) => !isRobotEmail(r.email));
-    const emails = rows.map((r) => r.email);
-    const { data: profs } = emails.length > 0 ? await supabase.from("profiles").select("id, email, status").in("email", emails) : { data: [] };
-    const lockByEmail = new Map((profs ?? []).map((p) => [p.email as string, { status: p.status as string, id: p.id as string }]));
-    credentialsRows = rows.map((r) => {
-      const prof = lockByEmail.get(r.email);
-      return { ...r, lockStatus: (prof?.status === "blocked" ? "blocked" : "active") as "active" | "blocked", lockUserId: prof?.id ?? null };
-    });
-    // Every real student appears, even one added without a login invite yet.
-    const have = new Set(rows.map((r) => r.email.toLowerCase()));
-    const { data: others } = await admin.from("profiles").select("id, email, name, status, is_test, created_at, active_session_token").eq("role", "student").limit(5000);
-    for (const p of others ?? []) {
-      const email = String(p.email ?? "");
-      if (!email || have.has(email.toLowerCase()) || isHiddenAccount(p)) continue;
-      credentialsRows.push({
-        id: `p-${p.id}`,
-        email,
-        name: (p.name as string | null) || email.split("@")[0],
-        status: "pending",
-        // Already signing in = their account works, so it counts as set up.
-        setup_completed_at: p.active_session_token ? ((p.created_at as string) ?? null) : null,
-        error_reason: null,
-        sent_at: null,
-        created_at: (p.created_at as string) ?? new Date(0).toISOString(),
-        lockStatus: p.status === "blocked" ? "blocked" : "active",
-        lockUserId: p.id as string,
-      });
-    }
-  }
 
   let sent: SentRow[] = [];
   if (folder === "sent" || folder === "failed") {
@@ -181,8 +133,41 @@ export default async function MailPage({
       openIn = (data as InRow) ?? undefined;
     }
   }
+  let failedItems: FailedItem[] = [];
+  if (folder === "failed") {
+    // How many times each (person, subject) has failed, cleared ones included.
+    const recips = [...new Set(failures.map((f) => f.recipient))];
+    const { data: hist } = recips.length
+      ? await admin.from("email_sends").select("recipient, subject").eq("status", "failed").in("recipient", recips.slice(0, 500)).limit(10000)
+      : { data: [] as { recipient: string; subject: string }[] };
+    const tries = new Map<string, number>();
+    for (const h of hist ?? []) tries.set(`${String(h.recipient).toLowerCase()}|${h.subject}`, (tries.get(`${String(h.recipient).toLowerCase()}|${h.subject}`) ?? 0) + 1);
+    const { data: copies, error: noHtmlCol } = failures.length
+      ? await admin.from("email_sends").select("id, html").in("id", failures.slice(0, 500).map((f) => f.id))
+      : { data: [] as { id: string; html: string | null }[], error: null };
+    const hasHtml = new Set((noHtmlCol ? [] : (copies ?? [])).filter((c) => c.html).map((c) => c.id as string));
+    failedItems = sent.map((f) => {
+      const ex = explainFailure(f.error_reason);
+      const kind = f.template_id === "credential" ? "Login email" : f.template_id === "nudge" ? "Nudge" : f.template_id === "notification" ? "Notification" : "Email";
+      return {
+        id: f.id,
+        recipient: f.recipient,
+        name: f.name,
+        subject: f.subject,
+        kindLabel: kind,
+        reason: ex.words,
+        reasonKind: ex.kind,
+        retryNow: ex.retryNow,
+        attempts: Math.max(1, tries.get(`${f.recipient.toLowerCase()}|${f.subject}`) ?? 1),
+        lastTry: when(f.created_at),
+        canResend: f.template_id === "credential" || Boolean(f.body_text) || hasHtml.has(f.id),
+      };
+    });
+  }
+  const notify = folder === "notify" ? await loadNotifyBatches() : null;
+
   const reading = Boolean(openSent || openIn);
-  const listFolder = folder === "inbox" || folder === "sent" || folder === "failed";
+  const listFolder = folder === "inbox" || folder === "sent" || (folder === "failed" && Boolean(openSent));
 
   const counts: Record<string, number | null> = { inbox: unread ?? 0, failed: failedCount };
 
@@ -234,14 +219,10 @@ export default async function MailPage({
                 templates={EMAIL_TEMPLATES.map((t) => ({ id: t.id, label: t.label, defaultSubject: t.defaultSubject, hint: t.hint }))}
               />
             </div>
-          ) : folder === "logins" ? (
-            <div className="p-4 sm:p-6">
-              <h1 className="text-h1">Logins</h1>
-              <p className="mt-1 mb-5 text-small text-muted-foreground">
-                Who has their setup link, and who has set their own password. Nobody&apos;s password is stored or shown anywhere.
-              </p>
-              <RosterActions rows={credentialsRows} />
-            </div>
+          ) : folder === "notify" ? (
+            <NotifyTab batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? [sp.to] : []} />
+          ) : folder === "failed" && !openSent ? (
+            <FailedList items={failedItems} canWrite={canWrite} />
           ) : listFolder ? (
             <div className="grid min-h-full grid-cols-[minmax(0,1fr)] content-start xl:content-stretch xl:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
               {/* List */}
@@ -257,12 +238,6 @@ export default async function MailPage({
                     className="h-10 w-full rounded-full border-2 border-foreground bg-background px-4 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
                   />
                 </form>
-                {folder === "failed" && failedCount > 0 ? (
-                  <div className="flex items-center justify-between gap-3 border-b-2 border-foreground/10 px-4 py-2.5">
-                    <p className="text-caption text-muted-foreground">Dealt with these? Clear them so the count goes away. Nothing is deleted.</p>
-                    <ClearFailedButton count={failedCount} />
-                  </div>
-                ) : null}
                 {folder === "inbox" ? (
                   inbox.length === 0 ? (
                     <p className="p-6 text-sm font-semibold text-muted-foreground">

@@ -26,8 +26,11 @@ export function AppShell({
   showStudy = false,
   blocked = [],
   viewModeSwitch,
+  unread = 0,
   children,
 }: {
+  /** Unread notifications (bell badge). */
+  unread?: number;
   role: "admin" | "student";
   mode: SidebarMode;
   scope?: "full" | "lectures_only";
@@ -66,6 +69,7 @@ export function AppShell({
         showSettings={showSettings}
         viewModeSwitch={viewModeSwitch}
         isAdminView={isAdminView}
+        unread={unread}
       />
 
       <div className="lg:flex">

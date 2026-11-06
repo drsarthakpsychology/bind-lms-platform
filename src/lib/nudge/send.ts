@@ -71,5 +71,42 @@ export async function sendNudges(
   }
 
   await Promise.all(Array.from({ length: Math.min(CONCURRENCY, recipients.length) }, worker));
+  await notifyToo(admin, recipients, draft, sentBy);
   return { sent: sentIds.length, sentIds, failed, notConfigured: false };
+}
+
+/**
+ * A nudge also lands on the student's bell (owner's ask, 2026-11-06). Best
+ * effort: if the notifications database step hasn't run yet, the email still
+ * went and nothing breaks.
+ */
+async function notifyToo(
+  admin: ReturnType<typeof createAdminClient>,
+  recipients: NudgeRecipient[],
+  draft: { subject: string; message: string },
+  sentBy: string | null,
+) {
+  if (!recipients.length) return;
+  const batch = crypto.randomUUID();
+  const rows = recipients.map((r) => {
+    const id = crypto.randomUUID();
+    const text = personalise(draft.message, r.name);
+    return {
+      id,
+      user_id: r.id,
+      type: "nudge",
+      credential_id: null,
+      title: personalise(draft.subject, r.name),
+      body: text.slice(0, 500),
+      href: `/notifications/${id}`,
+      sent_by: sentBy,
+      batch_id: batch,
+    };
+  });
+  try {
+    const table = admin.from("notifications") as unknown as { insert?: (rows: unknown[]) => Promise<unknown> };
+    if (typeof table.insert === "function") await table.insert(rows);
+  } catch {
+    // Database step not run yet — email-only nudge.
+  }
 }

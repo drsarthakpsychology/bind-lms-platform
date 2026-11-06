@@ -120,8 +120,17 @@ export default async function DashboardLayout({
     }
   }
 
+  // Bell count: unread notifications (messages, nudges, achievements).
+  let unread = 0;
+  if (role === "student" || role === "alumni") {
+    const supabase = await createClient();
+    const { count } = await supabase.from("notifications").select("id", { count: "exact", head: true }).eq("user_id", session.profile.id).is("read_at", null);
+    unread = count ?? 0;
+  }
+
   return (
     <AppShell
+      unread={unread}
       role={shellRole}
       mode={mode}
       scope={effectiveScope}

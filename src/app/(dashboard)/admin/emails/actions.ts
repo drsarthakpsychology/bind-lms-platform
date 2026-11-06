@@ -164,6 +164,8 @@ export async function sendCampaignEmail(input: {
 export async function sendTestCampaignEmail(input: {
   subject: string;
   html: string;
+  /** Plain-text emails: the text itself (html is then empty). */
+  text?: string;
 }): Promise<{ error: string | null; ok: boolean; detail: string }> {
   const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", ok: false, detail: "" };
@@ -171,9 +173,10 @@ export async function sendTestCampaignEmail(input: {
 
   const subject = `[TEST] ${input.subject.trim()}` || "[TEST] no subject";
   const html = input.html.trim();
-  if (!html) return { error: "Write the email first.", ok: false, detail: "" };
+  const plain = input.text?.trim() ?? "";
+  if (!html && !plain) return { error: "Write the email first.", ok: false, detail: "" };
 
-  const res = await sendResendEmail(profile.email, subject, htmlToText(html), html);
+  const res = await sendResendEmail(profile.email, subject, plain || htmlToText(html), html || undefined);
   return {
     error: null,
     ok: res.ok,
