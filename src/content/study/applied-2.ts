@@ -31,6 +31,21 @@ export const part2 = String.raw`
 - **Territoriality** (Irwin Altman): **primary** territories (your home, your bedroom), **secondary** territories (your usual seat in class, the neighbourhood tea stall) and **public** territories (a park bench). People mark and defend them.
 - **Privacy** is not just being alone; Altman described it as the **regulation** of how much contact we have, opening and closing the boundary as needed.
 
+
+:::widget layers
+{
+  "title": "Hall's zones of personal space",
+  "shape": "rings",
+  "layers": [
+    { "label": "Intimate (up to about 45 cm)", "detail": "Comforting, loving, whispering. Strangers here cause strong discomfort." },
+    { "label": "Personal (about 45 cm to 1.2 m)", "detail": "Conversations with friends and family." },
+    { "label": "Social (about 1.2 to 3.6 m)", "detail": "Business, shopkeepers, acquaintances." },
+    { "label": "Public (beyond about 3.6 m)", "detail": "Lectures, speeches, performances." }
+  ],
+  "caption": "Distances vary with culture, gender and setting; these are Hall's American figures."
+}
+:::
+
 ### Restorative environments
 - **Roger Ulrich's** study of patients recovering from gall bladder surgery found that those whose windows looked onto **trees** had shorter hospital stays, needed fewer strong painkillers and received fewer negative nurse notes than matched patients facing a brick wall (**stress recovery theory**).
 - **Attention restoration theory**, from a husband-and-wife team of American environmental psychologists: nature restores **directed attention** that tires with effort. Restorative settings have four qualities: **being away**, **extent** (a whole other world), **soft fascination** and **compatibility** with what you want to do.
@@ -94,6 +109,21 @@ Q: Telling hotel guests that most previous guests reused towels is an example of
 > Descriptive norms describe what most people do.
 :::
 
+
+:::widget layers
+{
+  "title": "Layered psychosocial support after a disaster",
+  "shape": "pyramid",
+  "layers": [
+    { "label": "Specialised services", "detail": "Psychiatric and psychological treatment for the few with severe or lasting problems." },
+    { "label": "Focused non-specialised support", "detail": "Trained health and community workers help individuals and families: psychological first aid, basic counselling." },
+    { "label": "Community and family supports", "detail": "Reuniting families, community groups, schools reopening, rituals of mourning." },
+    { "label": "Basic services and security", "detail": "Safety, food, water, shelter, health care, delivered with dignity." }
+  ],
+  "caption": "Most people need the wide base; only a few need the narrow top. Start at the bottom."
+}
+:::
+
 ## 3.2 Forensic psychology [core][advanced]
 **Forensic psychology** applies psychology to the **legal system**: investigation, courts, prisons and victims. The word "forensic" comes from the Latin forum, where Roman trials were held.
 
@@ -102,6 +132,22 @@ Memory is **reconstructive**, not a recording.
 - **Elizabeth Loftus and John Palmer** showed students a film of a car crash, then asked how fast the cars were going when they "**smashed**" into or "**hit**" each other. The word "smashed" produced higher speed estimates, and days later those students were more likely to "remember" broken glass that was never in the film. This is the **misinformation effect**.
 - Other factors that lower accuracy: **weapon focus** (attention goes to the weapon, not the face), high stress, brief exposure, long delays, and **own-race bias** (people recognise faces of their own group better).
 - **Lineups**: errors fall when lineups are run **double-blind** (the officer does not know who the suspect is), when witnesses are told the culprit **may not be present**, when fillers match the description, and when the witness's **initial confidence** is recorded at once (initial confidence is informative; later confidence inflates).
+
+
+:::widget flow
+{
+  "title": "How an eyewitness memory can change",
+  "layout": "chain",
+  "nodes": [
+    { "id": "enc", "label": "Encoding", "detail": "A brief, stressful view; attention goes to the weapon, not the face." },
+    { "id": "sto", "label": "Storage", "detail": "Days pass; the memory fades and is open to change." },
+    { "id": "mis", "label": "Post-event information", "detail": "A leading question, a news report or a co-witness adds false details." },
+    { "id": "ret", "label": "Retrieval", "detail": "The witness reconstructs the event, blending the original with the added detail." },
+    { "id": "conf", "label": "Confidence grows", "detail": "Feedback (“good, you picked the suspect”) inflates confidence, which juries trust." }
+  ],
+  "caption": "Safeguards target each link: record initial confidence, use double-blind lineups and avoid leading questions."
+}
+:::
 
 ### Interviewing and confessions
 - The **cognitive interview** (Fisher and Geiselman) improves recall with **context reinstatement**, **report everything**, **changing the order** of recall and **changing perspective**, without increasing errors much.
@@ -213,6 +259,30 @@ In 1898 **Norman Triplett** noticed that cyclists rode faster when racing agains
 
 Remedies include pre-performance routines, an external focus of attention (on the target, not the body), practising under pressure, and reappraising arousal as excitement.
 
+
+:::widget curve
+{
+  "kind": "inverted-u",
+  "title": "Arousal and performance in sport",
+  "caption": "A shooter or archer (complex, fine motor task) peaks at lower arousal than a weightlifter (simple, strength task). Move the slider, then remember that IZOF says each athlete also has a personal zone."
+}
+:::
+
+:::widget flow
+{
+  "title": "How choking happens",
+  "layout": "chain",
+  "nodes": [
+    { "id": "pr", "label": "Pressure", "detail": "A final, a selector watching, a big crowd." },
+    { "id": "sf", "label": "Self-focus", "detail": "Attention turns inward: “I must not mess this up.”" },
+    { "id": "em", "label": "Explicit monitoring", "detail": "The athlete consciously controls a skill that is normally automatic." },
+    { "id": "bd", "label": "Skill breaks down", "detail": "Timing and fluency are lost, and errors increase." },
+    { "id": "fix", "label": "Remedies", "detail": "Pre-performance routines, an external focus, practising under pressure, reappraising arousal as excitement." }
+  ],
+  "caption": "For thinking-heavy tasks, worry can instead use up working memory: the distraction route."
+}
+:::
+
 ### Mental skills
 - **Goal setting**: **outcome** goals (win the match), **performance** goals (first-serve percentage) and **process** goals (keep the elbow high). Performance and process goals are more controllable.
 - **Imagery**: rehearsing skills in the mind. The **PETTLEP** model says imagery works best when it matches the real thing in **P**hysical position, **E**nvironment, **T**ask, **T**iming, **L**earning stage, **E**motion and **P**erspective.
@@ -310,6 +380,21 @@ It can be **benign** (opening up about a problem, seeking help) or **toxic** (tr
 - **ICD-11** includes **gaming disorder** as a diagnosis: **impaired control** over gaming, **increasing priority** given to gaming over other interests and activities, and **continuation despite harm**, usually for at least 12 months, with significant impairment.
 - Most heavy gamers do **not** have a disorder; the key is loss of control and harm.
 - In India, the **Promotion and Regulation of Online Gaming Act 2025** banned real-money online games and their advertising; rules under the Act took effect on **1 May 2026** and set up an online gaming authority. Esports and social games are promoted separately.
+
+
+:::widget flow
+{
+  "title": "The checking loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "f", "label": "FOMO or boredom", "detail": "A worry that others are doing something rewarding." },
+    { "id": "c", "label": "Check the phone", "detail": "Open the app, scroll, refresh." },
+    { "id": "r", "label": "Unpredictable reward", "detail": "Sometimes a like or a message, sometimes nothing: a variable-ratio schedule." },
+    { "id": "b", "label": "Brief relief, then comparison", "detail": "Upward comparison can lower mood and raise FOMO again." }
+  ],
+  "caption": "Breaking the loop: notifications off, phone-free times and places, and active rather than passive use."
+}
+:::
 
 ### Cyberbullying and online harms
 Cyberbullying differs from offline bullying: it can happen **anywhere, any time**, reach a **large audience**, be **anonymous** and stay **permanent**. Victims show higher depression and anxiety. Other harms include **sextortion**, non-consensual sharing of images, **deepfakes**, scams targeting older adults, and radicalisation. India's cyber crime reporting portal and helpline 1930 handle complaints.
@@ -420,6 +505,23 @@ An Indian-founded company, **Wysa** (Bengaluru), offers an AI-guided support app
 }
 :::
 
+
+:::widget flow
+{
+  "title": "Should this AI tool be used with clients?",
+  "layout": "tree",
+  "nodes": [
+    { "id": "q", "label": "Proposed AI tool", "detail": "A chatbot, a prediction model or an assessment aid." },
+    { "id": "e", "label": "Is there evidence for this use, in people like mine?", "parent": "q", "detail": "Look for trials with active controls, clinical samples and independent evaluation, including Indian languages." },
+    { "id": "s", "label": "Is it safe?", "parent": "q", "detail": "Crisis pathways to humans, testing for harmful or sycophantic replies, monitoring after launch." },
+    { "id": "p", "label": "Is data protected?", "parent": "q", "detail": "Consent, the DPDP Act, no identifiable data in public tools, clear data storage." },
+    { "id": "o", "label": "Is a qualified human responsible?", "parent": "q", "detail": "Oversight of every clinical decision, clear accountability." },
+    { "id": "no", "label": "Any answer is no", "parent": "s", "detail": "Do not use it with clients; at most, pilot it with safeguards and evaluation." }
+  ],
+  "caption": "A simple screen before any AI tool reaches a client."
+}
+:::
+
 ### Principles for psychologists using AI
 1. **Competence**: understand what the tool does and its limits.
 2. **Consent and transparency**: tell clients when AI is used in their care.
@@ -502,6 +604,22 @@ Many universities offer electives beyond the fields above. This section gives a 
     { "text": "Running an anti-bullying programme across a school", "bucket": 0 },
     { "text": "Studying stress and sleep in soldiers posted at high altitude", "bucket": 3 }
   ]
+}
+:::
+
+
+:::widget flow
+{
+  "title": "The SSB officer selection process",
+  "layout": "chain",
+  "nodes": [
+    { "id": "d1", "label": "Screening", "detail": "Officer intelligence rating test and a picture perception and discussion test." },
+    { "id": "psy", "label": "Psychological tests", "detail": "Thematic Apperception Test, Word Association Test, Situation Reaction Test, self-description." },
+    { "id": "gto", "label": "Group testing officer tasks", "detail": "Group discussion, planning exercise, progressive group task, command task, obstacles, lecturette." },
+    { "id": "int", "label": "Personal interview", "detail": "A long interview on background, choices and reasoning." },
+    { "id": "conf", "label": "Conference", "detail": "Psychologist, GTO and interviewer decide together." }
+  ],
+  "caption": "A classic assessment centre: several methods, several assessors, one joint decision."
 }
 :::
 
@@ -650,7 +768,316 @@ What are the core features of ICD-11 gaming disorder? :: Impaired control, incre
 What is the SSB an example of? :: An assessment centre.
 :::
 
-## 4.3 Module test [core]
+## 4.3 Q&A bank · Starting [starting]
+Try each question first, then open the answer.
+
+:::qa What is the biopsychosocial model, and why did Engel argue it was needed? [starting]
+### Short answer
+The biopsychosocial model explains health and illness as the product of **biological, psychological and social factors acting together**. Engel argued that the biomedical model could not explain why people with the same disease differ so much in symptoms, course and recovery.
+
+### Problems with the biomedical model
+- It treats the mind and social context as irrelevant.
+- It cannot explain illness without detectable disease, or disease without illness.
+- It ignores the doctor-patient relationship.
+
+### The model in practice: type 2 diabetes
+| Level | Factors |
+|---|---|
+| Biological | Genes, insulin resistance, the thin-fat phenotype |
+| Psychological | Beliefs about cause and control, diabetes distress, depression, self-efficacy |
+| Social | Family cooking habits, shift work, cost of medicines, stigma, clinic access |
+
+### Why it matters
+Treatment plans that address all three levels (medicine, education and coping, family and community support) do better than medicine alone.
+:::
+
+:::qa Compare the Health Belief Model and the Theory of Planned Behaviour. [starting]
+### Short answer
+Both are social-cognitive models of health behaviour. The **HBM** focuses on beliefs about **threat** and the **costs and benefits** of action; the **TPB** focuses on **intention**, shaped by attitude, social norms and perceived control.
+
+### Comparison
+| Feature | HBM | TPB |
+|---|---|---|
+| Origin | Low TB screening uptake in the 1950s | Ajzen's general model of reasoned action |
+| Key predictors | Susceptibility, severity, benefits, barriers, cues, self-efficacy | Attitude, subjective norm, perceived behavioural control |
+| Role of intention | Not central | Central: the closest predictor |
+| Social influence | Only through cues | Built in as subjective norm |
+| Best predictors in research | Barriers and benefits | Perceived control and attitude |
+| Main weakness | Weak on emotion and habit | The intention-behaviour gap |
+
+### Example
+Getting children vaccinated in a village: the HBM points to barriers (distance, lost wages) and cues (ASHA visits); the TPB adds what the mother-in-law and neighbours think (subjective norm).
+:::
+
+:::qa Explain PERMA with one practical example of each element. [starting]
+### Short answer
+PERMA is Seligman's model of wellbeing with five elements: **Positive emotion, Engagement, Relationships, Meaning and Accomplishment**. Each can be pursued for its own sake.
+
+### Table
+| Element | What it means | Practical example for a college student |
+|---|---|---|
+| Positive emotion | Joy, gratitude, hope | Ending each day by noting three things that went well |
+| Engagement | Absorption and flow | Joining a theatre group where skills are stretched |
+| Relationships | Warm, supportive ties | A regular call with grandparents; a study group |
+| Meaning | Serving something bigger | Volunteering at a local anganwadi |
+| Accomplishment | Mastery and achievement | Finishing a short course and seeing progress |
+
+### A caution
+PERMA describes wellbeing; it does not mean people should feel happy all the time. Sadness and stress are normal parts of a good life.
+:::
+
+:::qa Distinguish Herzberg's hygiene factors from motivators, and evaluate the theory. [starting]
+### Short answer
+Herzberg argued that **hygiene factors** (pay, policies, supervision, conditions) prevent dissatisfaction but do not motivate, while **motivators** (achievement, recognition, the work itself, responsibility, growth) create satisfaction and effort.
+
+### Comparison
+| Hygiene factors | Motivators |
+|---|---|
+| Salary, job security | Achievement |
+| Company policy | Recognition |
+| Supervision | The work itself |
+| Working conditions | Responsibility |
+| Relations with colleagues | Advancement and growth |
+
+### Evaluation
+- **Strength**: practical; led to job enrichment (adding responsibility and variety).
+- **Weakness**: his interview method invited people to credit good events to themselves and blame bad ones on the company; later studies found pay can motivate.
+- **Indian note**: in many Indian jobs, security and fair pay are major motivators, especially for workers supporting large families.
+:::
+
+:::qa What makes transformational leadership different from transactional leadership? [starting]
+### Short answer
+**Transactional** leaders exchange rewards for performance and correct mistakes; **transformational** leaders inspire followers to go beyond self-interest, change how they see their work and grow.
+
+### Comparison
+| Feature | Transactional | Transformational |
+|---|---|---|
+| Basis | Exchange: rewards for results | Inspiration and shared vision |
+| Behaviours | Contingent reward, management by exception | Idealised influence, inspirational motivation, intellectual stimulation, individualised consideration |
+| Follower motive | Self-interest | Commitment to the group and its purpose |
+| Best for | Stable, routine work | Change, crisis, innovation |
+
+### Evidence
+Both are linked with performance; the best leaders use both. Laissez-faire (absent) leadership is consistently harmful.
+
+### Indian example
+A principal who sets clear targets and rewards (transactional), and also shares a vision of a school where every child reads, mentors young teachers and invites new ideas (transformational).
+:::
+
+## 4.4 Q&A bank · Beginner [beginner]
+
+:::qa How does psychoneuroimmunology explain the link between stress and illness? [beginner]
+### Short answer
+PNI shows that the brain, endocrine system and immune system are in constant two-way communication, so chronic stress can **weaken defences and raise inflammation**, while immune signals can change **mood and behaviour**.
+
+### Evidence
+| Study | Finding |
+|---|---|
+| Conditioned immunosuppression in rats | The immune system can be classically conditioned |
+| Exam stress in medical students | Lower natural killer cell activity |
+| Dementia caregivers | Slower wound healing |
+| Cold-virus exposure | Higher stress, higher infection risk |
+| Meta-analysis of hundreds of studies | Acute stress boosts some defences; chronic stress suppresses many |
+
+### Pathways
+1. **Direct**: HPA axis (cortisol) and sympathetic nerves act on immune cells.
+2. **Behavioural**: poor sleep, smoking, alcohol, poor diet, missed medicines.
+3. **Reverse**: cytokines act on the brain to cause sickness behaviour and possibly depression.
+
+### Application
+Stress reduction, sleep, exercise and social support improve some immune markers, which supports psychological care in chronic illness.
+:::
+
+:::qa Explain resilience and post-traumatic growth, and how they differ. [beginner]
+### Short answer
+**Resilience** is maintaining or regaining healthy functioning despite adversity; **post-traumatic growth** is positive change that goes **beyond** previous functioning because of the struggle. A person can be resilient without growth, or grow while still distressed.
+
+### Comparison
+| Feature | Resilience | Post-traumatic growth |
+|---|---|---|
+| Outcome | Stable or recovered functioning | Change beyond the previous level |
+| Timing | Can be immediate | Develops over time through struggle |
+| Distress | Brief | Often coexists with continuing distress |
+| Key researchers | Werner, Masten, Bonanno | Tedeschi and Calhoun |
+| Measure | Many scales; trajectories over time | The PTG Inventory (five domains) |
+
+### Protective factors for resilience
+Individual (hope, self-regulation, faith), family (one stable caregiver), community (schools, mentors, services).
+
+### Critique
+Retrospective reports of growth often do not match changes measured before and after the event; some reported growth may be a coping story.
+:::
+
+:::qa Describe HRD and OD, with reference to Indian contributions. [beginner]
+### Short answer
+**HRD** develops people's competencies and potential through systems such as appraisal, training and career planning; **OD** is planned change of the whole organisation using behavioural science. Indian psychologists, especially Udai Pareek and T. V. Rao, were early world leaders in HRD.
+
+### HRD
+- **Mechanisms**: developmental appraisal, potential appraisal, career planning, feedback and counselling, training, rewards, welfare.
+- **Indian milestone**: an integrated HRD system designed for Larsen and Toubro in the mid-1970s; the National HRD Network followed.
+- **Evaluation**: Kirkpatrick's four levels (reaction, learning, behaviour, results).
+
+### OD
+| Approach | Idea |
+|---|---|
+| Lewin's three steps | Unfreeze, change, refreeze; force-field analysis |
+| Action research | Diagnose, plan, act, evaluate with members as partners |
+| T-groups | Learning about self and group through unstructured group experience (in India, through ISABS) |
+| Process consultation | Helping a group see and improve its own processes |
+| Appreciative inquiry | Build on strengths: discover, dream, design, destiny |
+
+### Indian context
+Personalised, hierarchical relationships and family ownership shape both; the nurturant-task leader model fits many settings.
+:::
+
+:::qa What is community psychology, and how does task sharing address India's mental health treatment gap? [beginner]
+### Short answer
+Community psychology works **with communities** to prevent problems and promote wellbeing, using ecological, preventive and empowering approaches. **Task sharing** trains non-specialists to deliver psychological care, which is essential where specialists are few.
+
+### Core principles
+- Ecological thinking (people and settings shape each other).
+- Prevention at primary, secondary and tertiary levels.
+- Empowerment and participation.
+- Sense of community and social support.
+
+### The Indian gap
+- Few psychiatrists and clinical psychologists per population, concentrated in cities.
+- A large treatment gap for common and severe disorders.
+
+### Task-sharing evidence
+| Programme | What it showed |
+|---|---|
+| Lay counsellors in Goa primary care | Better recovery from common mental disorders |
+| A brief behavioural activation programme | Lay counsellors effectively treat depression |
+| Community volunteers in Mehsana | Identification, support and links to services |
+| Grandmothers on park benches in Zimbabwe | Problem-solving therapy reduces depression |
+
+### Limits
+Needs training, supervision, referral pathways and fair pay for workers; scale-up is harder than trials.
+:::
+
+:::qa Explain stigma using Goffman and Link and Phelan, and suggest how to reduce mental illness stigma in India. [beginner]
+### Short answer
+Goffman described stigma as a deeply discrediting attribute that spoils identity; Link and Phelan showed it is a **process** of labelling, stereotyping, separation, status loss and discrimination that depends on **power**. Contact-based approaches reduce it best.
+
+### Levels of stigma
+| Level | Example |
+|---|---|
+| Public | Neighbours avoid a family after a son's psychosis |
+| Self | “People like me can't marry or work” (the why-try effect) |
+| Structural | Insurance exclusions, discriminatory rules |
+| Courtesy (associative) | The family is shamed too |
+
+### Reducing stigma in India
+1. **Contact**: people with lived experience speak in schools and communities.
+2. **Language**: avoid labels such as "pagal"; use person-first language.
+3. **Media**: responsible portrayals in films and news.
+4. **Law**: use the protections of the Mental Healthcare Act and the RPwD Act.
+5. **Services**: integrate mental health into general clinics so seeking help is ordinary.
+:::
+
+## 4.5 Q&A bank · Advanced [advanced]
+
+:::qa Critically evaluate the use of narco-analysis, polygraph and brain-mapping in Indian investigations. [advanced]
+### Short answer
+These techniques measure **arousal or brain responses, not truth**, are vulnerable to error and suggestion, and, after the Supreme Court's 2010 Selvi judgment, cannot be used **without consent**. Their scientific and legal value is limited.
+
+### The techniques
+| Technique | What it measures | Main problems |
+|---|---|---|
+| Polygraph | Heart rate, blood pressure, breathing, sweating | Anxious innocent people fail; practised liars pass; questions shape results |
+| Narco-analysis | Talk under a sedative | Statements can be fantasy or suggestion; not reliable truth |
+| Brain electrical activation profiling | Brain responses to crime details | Weak independent validation; experience-versus-knowledge confusion |
+
+### The law
+- Involuntary use violates the right against self-incrimination and personal liberty.
+- Voluntary tests are allowed with safeguards; results alone are not evidence; information found as a result may be admissible.
+
+### Better practice
+The concealed information test has stronger science, and information-gathering interviews (PEACE) reduce false confessions. A psychologist should refuse involuntary testing and explain the limits.
+:::
+
+:::qa How should a sports psychologist assess and help an athlete who chokes under pressure? [advanced]
+### Short answer
+Assess **when, where and how** performance drops, distinguish the **explicit-monitoring** and **distraction** routes, rule out clinical anxiety or depression, then build routines, attentional skills and pressure practice.
+
+### Assessment
+1. Interview: situations, thoughts, focus of attention, bodily signs.
+2. Measures: competitive anxiety (cognitive, somatic, confidence), reinvestment tendency.
+3. Performance data: practice versus competition.
+4. Screen for clinical problems and refer when needed.
+
+### Intervention plan
+| Problem | Intervention |
+|---|---|
+| Conscious control of automatic skills | External focus, analogy cues, pre-performance routine |
+| Worry using working memory | Expressive writing before events, cognitive restructuring |
+| High somatic arousal | Breathing, relaxation; reappraise arousal as excitement |
+| Unfamiliar pressure | Practise under simulated pressure (crowds, stakes) |
+| Ego-oriented climate | Work with coach on mastery climate and process goals |
+
+### Evaluation
+Track performance under pressure over a season, not only in one match.
+:::
+
+:::qa Evaluate the debate about social media and adolescent mental health. [advanced]
+### Short answer
+Adolescent anxiety and depression rose in many countries from the early 2010s, alongside smartphones and social media. One side argues social media is a major cause; the other finds **small average associations** and argues that **content, context and vulnerability** matter more than time.
+
+### The two positions
+| Position | Main arguments |
+|---|---|
+| Social media as a major cause | Timing of the rise; stronger links for girls and heavy users; disrupted sleep and exercise; some natural experiments and experiments reducing use |
+| Small and context-dependent effects | Large datasets show very small average associations; direction of causation unclear; benefits for connection and support; measurement of "screen time" is crude |
+
+### Where most researchers agree
+- Night-time use that disrupts sleep, cyberbullying, harmful content and compulsive use are risks.
+- Vulnerable young people may be harmed more.
+- Active, social use differs from passive scrolling.
+
+### Implications in India
+- Policy now includes parental-consent rules for children's data and a ban on real-money gaming.
+- Practical advice: active parental mediation, device-free sleep, digital skills in schools, and help for those who struggle.
+:::
+
+:::qa What are the main ethical issues when psychologists use AI, and how should they be managed? [advanced]
+### Short answer
+The core issues are **evidence, safety, privacy, bias, transparency and accountability**. They are managed by applying ordinary professional ethics with added checks for AI-specific risks.
+
+### Issues and safeguards
+| Issue | Risk | Safeguard |
+|---|---|---|
+| Evidence | Tools marketed without good trials | Use only tools with relevant evidence; evaluate locally |
+| Safety | Missed crises, harmful or flattering replies | Human crisis routes, testing, monitoring |
+| Privacy | Sensitive data stored or reused | Consent, approved platforms, no identifiable data in public tools; follow data protection law |
+| Bias | Poor performance in Indian languages and cultures | Test on local populations and idioms of distress |
+| Transparency | Clients unaware AI is involved | Tell clients clearly and record consent |
+| Accountability | Unclear responsibility for harm | A qualified human remains responsible for decisions |
+| Competence | Misunderstanding what the tool does | Training before use |
+
+### Dated context
+As at November 2026, regulators were still developing rules: several US states restrict AI therapy, the EU limits emotion recognition at work and in schools, and India relies on data protection law, research ethics guidelines and professional codes.
+:::
+
+:::qa A district wants to reduce farmer distress after repeated crop failures. Design an applied psychology programme using ideas from this module. [advanced]
+### Short answer
+Combine **community psychology** (prevention, task sharing, empowerment), **health psychology** (stress and illness), **positive psychology** (resilience and meaning) and **peace and poverty psychology** (structural causes), with careful evaluation.
+
+### Programme design
+| Level | Action | Theory behind it |
+|---|---|---|
+| Structural | Work with officials on timely insurance payouts, debt relief information and market access | Scarcity and structural violence |
+| Community | Train volunteers and ASHAs to recognise distress, offer support and link to services; farmer support groups | Task sharing, sense of community, empowerment |
+| Primary care | Screening and brief problem-solving or behavioural activation by trained counsellors | Stepped care evidence |
+| Specialist | Clear referral to the district mental health team and Tele-MANAS | Layered support |
+| Individual coping | Problem-solving, stress management, meaning-focused and religious coping where wanted | Transactional model, goodness of fit |
+| Means and safety | Safer pesticide storage and community safety planning, led by health services | Primary prevention |
+
+### Evaluation
+Use a stepped rollout across villages, measure distress, help-seeking, functioning and use of services, and include farmers in deciding what counts as success.
+:::
+
+## 4.6 Module test [core]
 :::mcq
 Q: Which conference endorsed the practitioner-scholar model?
 - Boulder

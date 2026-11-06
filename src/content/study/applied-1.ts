@@ -49,6 +49,23 @@ UGC NET Unit 10 ("Emerging Areas") lists: **gender, poverty, disability and migr
 }
 :::
 
+
+:::widget flow
+{
+  "title": "The applied fields as a family tree",
+  "layout": "tree",
+  "nodes": [
+    { "id": "ap", "label": "Applied psychology", "detail": "Theory, research and methods used to solve real problems." },
+    { "id": "h", "label": "Health and wellbeing", "parent": "ap", "detail": "Health, positive, community and clinical psychology." },
+    { "id": "w", "label": "Work and learning", "parent": "ap", "detail": "Organisational, educational and school, counselling and career psychology." },
+    { "id": "s", "label": "Society and law", "parent": "ap", "detail": "Forensic, peace, political and cultural psychology; gender, poverty, disability and migration." },
+    { "id": "e", "label": "Environments and performance", "parent": "ap", "detail": "Environmental, sports, military, traffic and aviation psychology." },
+    { "id": "d", "label": "Digital life", "parent": "ap", "detail": "Cyberpsychology, digital learning and AI in psychology." }
+  ],
+  "caption": "Tap each branch. Most university electives sit on one of these five branches."
+}
+:::
+
 ### Who can practise what in India
 - **Clinical psychologists** must be registered with the **Rehabilitation Council of India (RCI)**; this is required under the RCI Act 1992 and recognised by the Mental Healthcare Act 2017.
 - **Counselling, organisational, school, sports and forensic psychologists** are not separately licensed in India at present. They typically hold an MA or MSc, often with a specialisation or diploma, and follow professional codes (for example the Indian Association of Clinical Psychologists, the National Academy of Psychology, or employer and court rules).
@@ -95,6 +112,20 @@ In 1977 the psychiatrist **George Engel** argued that the **biomedical model** (
 Two men aged 50 are diagnosed with type 2 diabetes in Ahmedabad. Rakesh believes it is his fate, has no one to cook healthy food, works night shifts and skips follow-ups. Imran's wife joins him at the clinic, he believes small changes help, walks every evening and checks his sugar. Same disease, very different outcomes, explained by psychological and social factors.
 :::
 
+
+:::widget layers
+{
+  "title": "The biopsychosocial model",
+  "shape": "rings",
+  "layers": [
+    { "label": "Biological", "detail": "Genes, blood sugar, blood pressure, infection, the 'thin-fat' body type common in India." },
+    { "label": "Psychological", "detail": "Beliefs about the illness, mood, coping, self-efficacy, habits." },
+    { "label": "Social", "detail": "Family meals, work shifts, income, access to clinics, stigma, culture." }
+  ],
+  "caption": "Engel's model: each ring shapes the others. The same diagnosis can follow very different paths."
+}
+:::
+
 ### Why behaviour matters so much in India
 Most deaths in India are now from **non-communicable diseases** (heart disease, stroke, diabetes, chronic lung disease, cancers), about six in every ten. These are driven heavily by behaviour: **tobacco** (used by more than one in four Indian adults in the second Global Adult Tobacco Survey, 2016 to 2017), diet, physical inactivity, alcohol and stress. The ICMR-INDIAB study (2023) estimated more than **10 crore (100 million)** people with diabetes in India. Changing behaviour is therefore central to Indian health.
 
@@ -109,10 +140,42 @@ Most deaths in India are now from **non-communicable diseases** (heart disease, 
 | **Cues to action** | What prompts me? | A friend's diagnosis, an SMS reminder |
 | **Self-efficacy** (added 1988) | Can I do it? | "I can arrange a day off and go" |
 
+
+:::widget flow
+{
+  "title": "Health Belief Model: what tips a person into action",
+  "layout": "tree",
+  "nodes": [
+    { "id": "act", "label": "Likelihood of acting", "detail": "For example, going for a mammogram or a TB test." },
+    { "id": "threat", "label": "Perceived threat", "parent": "act", "detail": "Built from perceived susceptibility (could it happen to me?) and severity (how bad would it be?)." },
+    { "id": "bal", "label": "Benefits minus barriers", "parent": "act", "detail": "Will acting help, and what stands in the way: cost, distance, lost wages, embarrassment? Barriers are often the strongest predictor." },
+    { "id": "eff", "label": "Self-efficacy", "parent": "act", "detail": "Can I actually do it?" },
+    { "id": "cue", "label": "Cues to action", "parent": "act", "detail": "An SMS reminder, an ASHA visit, a relative's diagnosis." }
+  ],
+  "caption": "Tap each branch. Interventions work best when they target the weakest branch for that community."
+}
+:::
+
 **2. The Theory of Planned Behaviour (TPB)** (Icek Ajzen, 1985 and 1991). **Intention** is the closest predictor of behaviour, and intention depends on:
 - **Attitude** towards the behaviour (good or bad, pleasant or not),
 - **Subjective norm** (what important others think I should do),
 - **Perceived behavioural control** (how easy or hard I think it is), which also predicts behaviour directly.
+
+
+:::widget flow
+{
+  "title": "Theory of Planned Behaviour",
+  "layout": "tree",
+  "nodes": [
+    { "id": "beh", "label": "Behaviour", "detail": "Actually walking 30 minutes a day." },
+    { "id": "int", "label": "Intention", "parent": "beh", "detail": "The closest predictor: “I plan to walk every evening.”" },
+    { "id": "att", "label": "Attitude", "parent": "int", "detail": "Walking is good and pleasant (or not)." },
+    { "id": "sn", "label": "Subjective norm", "parent": "int", "detail": "My family and doctor think I should." },
+    { "id": "pbc", "label": "Perceived behavioural control", "parent": "beh", "detail": "How easy it feels. It shapes intention and also predicts behaviour directly." }
+  ],
+  "caption": "The gap between intention and behaviour is real; plans of the form “if it is 7 pm, I will walk” help close it."
+}
+:::
 
 **3. The Transtheoretical Model (TTM, stages of change)** (Prochaska and DiClemente in 1983; from smokers who quit). People move through stages:
 1. **Precontemplation**: not thinking of change ("I don't have a problem").
@@ -122,6 +185,23 @@ Most deaths in India are now from **non-communicable diseases** (heart disease, 
 5. **Maintenance**: keeping it up and preventing relapse.
 
 Relapse is expected and people often cycle through stages several times. Interventions should be **matched to the stage**: information and consciousness-raising for precontemplators, decisional balance (pros and cons) for contemplators, plans and skills for those preparing and acting.
+
+
+:::widget flow
+{
+  "title": "Stages of change, with relapse",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "pc", "label": "Precontemplation", "detail": "Not considering change. Help: information, raising awareness, no pressure." },
+    { "id": "c", "label": "Contemplation", "detail": "Ambivalent. Help: weigh pros and cons, explore values." },
+    { "id": "p", "label": "Preparation", "detail": "Planning soon. Help: a concrete plan, removing obstacles." },
+    { "id": "a", "label": "Action", "detail": "Changing now. Help: skills, support, rewards." },
+    { "id": "m", "label": "Maintenance", "detail": "Keeping it up. Help: relapse prevention, coping with triggers." },
+    { "id": "r", "label": "Relapse", "detail": "Common and expected. People usually re-enter at contemplation or preparation, wiser than before." }
+  ],
+  "caption": "Press Play to go round. Most people cycle more than once before change lasts."
+}
+:::
 
 :::widget sort
 {
@@ -228,8 +308,41 @@ A person's top few are their **signature strengths**. Using them in new ways eac
 }
 :::
 
+
+:::widget flow
+{
+  "title": "The VIA classification: six virtues",
+  "layout": "tree",
+  "nodes": [
+    { "id": "v", "label": "Character", "detail": "24 strengths grouped under six virtues found across many traditions." },
+    { "id": "w", "label": "Wisdom and knowledge", "parent": "v", "detail": "Creativity, curiosity, judgement, love of learning, perspective." },
+    { "id": "c", "label": "Courage", "parent": "v", "detail": "Bravery, perseverance, honesty, zest." },
+    { "id": "h", "label": "Humanity", "parent": "v", "detail": "Love, kindness, social intelligence." },
+    { "id": "j", "label": "Justice", "parent": "v", "detail": "Teamwork, fairness, leadership." },
+    { "id": "t", "label": "Temperance", "parent": "v", "detail": "Forgiveness, humility, prudence, self-regulation." },
+    { "id": "tr", "label": "Transcendence", "parent": "v", "detail": "Appreciation of beauty, gratitude, hope, humour, spirituality." }
+  ],
+  "caption": "Tap a virtue to see its strengths. Your top few are your signature strengths."
+}
+:::
+
 ### Broaden and build
 **Barbara Fredrickson**'s **broaden-and-build theory** (1998, 2001) says negative emotions narrow attention to deal with threats, while **positive emotions broaden** our attention and thinking (more creative, more open), and over time this **builds** lasting resources: friendships, skills, resilience.
+
+
+:::widget flow
+{
+  "title": "Broaden and build: an upward spiral",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "pe", "label": "Positive emotion", "detail": "Joy after a good conversation with a friend." },
+    { "id": "br", "label": "Broadened thinking", "detail": "More open, creative and flexible attention." },
+    { "id": "bu", "label": "Built resources", "detail": "New friendships, skills, ideas and resilience." },
+    { "id": "wb", "label": "Better coping and wellbeing", "detail": "Resources make it easier to handle the next stress, which brings more positive emotion." }
+  ],
+  "caption": "Fredrickson's idea: positive emotions are not just pleasant; over time they build lasting resources."
+}
+:::
 
 ### Positive interventions
 Short exercises tested in trials include:
@@ -318,6 +431,21 @@ Q: In the VIA classification, gratitude and hope fall under the virtue of:
 }
 :::
 
+
+:::widget flow
+{
+  "title": "Hackman and Oldham's job characteristics model",
+  "layout": "chain",
+  "nodes": [
+    { "id": "core", "label": "Core job features", "detail": "Skill variety, task identity, task significance, autonomy, feedback." },
+    { "id": "psy", "label": "Critical psychological states", "detail": "Work feels meaningful; I feel responsible for outcomes; I know how I am doing." },
+    { "id": "out", "label": "Outcomes", "detail": "Higher intrinsic motivation, satisfaction and quality of work; lower absence and turnover." }
+  ],
+  "edgeLabels": { "core>psy": "create", "psy>out": "lead to" },
+  "caption": "Growth-need strength moderates the chain: people who want growth respond most to enriched jobs."
+}
+:::
+
 ### Theories of leadership
 1. **Trait approach** ("great man"): leaders are born with special traits. Research found only modest links (intelligence, extraversion, conscientiousness, emotional stability).
 2. **Behavioural approach**: what leaders do. The **Ohio State studies** found two dimensions: **initiating structure** (task focus) and **consideration** (people focus). The **Michigan studies** found **job-centred** versus **employee-centred** leaders. **Blake and Mouton's Managerial Grid** crossed concern for production and for people (the ideal "team" style is high on both).
@@ -327,6 +455,22 @@ Q: In the VIA classification, gratitude and hope fall under the virtue of:
    - **House's path-goal theory**: the leader clears the path to goals by being directive, supportive, participative or achievement-oriented as needed.
 4. **Transformational versus transactional leadership** (James MacGregor Burns in 1978; developed by Bernard Bass). **Transactional** leaders exchange rewards for performance. **Transformational** leaders inspire followers to go beyond self-interest through the **four I's**: **idealised influence, inspirational motivation, intellectual stimulation and individualised consideration**.
 5. **Indian contribution**: **J. B. P. Sinha's nurturant-task leader** combines task focus with care contingent on performance (see the foundations module).
+
+
+:::widget flow
+{
+  "title": "How leadership theories developed",
+  "layout": "chain",
+  "nodes": [
+    { "id": "t", "label": "Trait", "detail": "Leaders are born with special qualities. Only modest support." },
+    { "id": "b", "label": "Behavioural", "detail": "What leaders do: initiating structure and consideration; the Managerial Grid." },
+    { "id": "c", "label": "Contingency", "detail": "The best style depends on the situation: Fiedler, situational leadership, path-goal." },
+    { "id": "tf", "label": "Transformational", "detail": "Inspiring followers beyond self-interest through the four I's." },
+    { "id": "in", "label": "Indian models", "detail": "The nurturant-task leader: care contingent on performance, moving to participation." }
+  ],
+  "caption": "Each stage added something the earlier one missed, from who leaders are to what they do, when, and why followers commit."
+}
+:::
 
 :::widget decide
 {
@@ -510,6 +654,22 @@ Pathways run in both directions: stress affects immunity through the **HPA axis*
 }
 :::
 
+
+:::widget flow
+{
+  "title": "Stress and immunity: a two-way street",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "st", "label": "Chronic stress", "detail": "Caregiving, debt, exams, conflict." },
+    { "id": "ax", "label": "HPA and sympathetic activation", "detail": "Cortisol and catecholamines stay high or poorly regulated." },
+    { "id": "im", "label": "Immune changes", "detail": "Weaker cellular defences, more inflammation, slower wound healing, poorer vaccine responses." },
+    { "id": "cy", "label": "Cytokines signal the brain", "detail": "Inflammatory messengers reach the brain." },
+    { "id": "sb", "label": "Sickness behaviour", "detail": "Fatigue, low mood, withdrawal, poor sleep, which make stress harder to handle." }
+  ],
+  "caption": "Psychoneuroimmunology in one loop. Behaviour (sleep, diet, smoking) adds a second path at every step."
+}
+:::
+
 ### Living with chronic illness
 A **chronic illness** lasts a long time and is usually managed rather than cured: diabetes, hypertension, asthma, arthritis, HIV, epilepsy, chronic kidney disease. Psychological tasks include accepting the diagnosis, managing symptoms and treatment, keeping relationships and work going, and dealing with uncertainty and changed identity.
 
@@ -528,8 +688,38 @@ A patient who believes hypertension is "acute" and only present when he feels te
 Indian research led by **Ajit Dalal** found that accident victims and patients often explain illness through several causes at once: germs and bad luck, but also **karma**, fate or God's will. Such beliefs did not stop people from following treatment; in some studies they helped acceptance and reduced blame. A good health psychologist explores the patient's causal beliefs rather than dismissing them.
 :::
 
+
+:::widget flow
+{
+  "title": "Leventhal's common-sense model",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "sym", "label": "Symptoms or diagnosis", "detail": "Headache, a high BP reading, a doctor's words." },
+    { "id": "rep", "label": "Illness representation", "detail": "Identity, cause, timeline, consequences, control or cure. Emotions such as fear run alongside." },
+    { "id": "cop", "label": "Coping", "detail": "Taking tablets, changing diet, visiting a healer, or ignoring it." },
+    { "id": "app", "label": "Appraisal of results", "detail": "“I feel fine now, so the BP is gone.” This feeds back into the representation." }
+  ],
+  "caption": "A wrong timeline belief (acute instead of chronic) is a common reason people stop medicines."
+}
+:::
+
 ### Pain
 **Ronald Melzack and Patrick Wall's gate control theory** (1965) proposed that a "gate" in the **dorsal horn of the spinal cord** controls how much pain signal reaches the brain. Large-fibre input (rubbing a bruise) and **messages from the brain** (attention, emotion, expectation) can close the gate; anxiety and focusing on pain can open it. This explained why soldiers sometimes feel little pain from serious wounds, and why distraction, relaxation, CBT and TENS machines reduce pain. Melzack later proposed the **neuromatrix**: pain is an output of a brain network, which is why phantom limb pain exists.
+
+
+:::widget flow
+{
+  "title": "Gate control theory of pain",
+  "layout": "chain",
+  "nodes": [
+    { "id": "inj", "label": "Injury", "detail": "Small pain fibres fire after a bumped elbow." },
+    { "id": "gate", "label": "Spinal gate (dorsal horn)", "detail": "Decides how much signal passes up. Rubbing (large-fibre input) helps close it." },
+    { "id": "brain", "label": "Brain", "detail": "Pain is felt and interpreted, shaped by attention, emotion and expectation." },
+    { "id": "desc", "label": "Descending control", "detail": "Messages from the brain can close the gate (distraction, calm) or open it (anxiety, focus on pain)." }
+  ],
+  "caption": "This is why CBT, relaxation and distraction reduce real pain, and why anxiety makes it worse."
+}
+:::
 
 ### Adherence
 **Adherence** is the extent to which a person's behaviour (taking medicines, following diets, attending appointments) matches agreed recommendations. The WHO (2003) estimated that in long-term illness only **about half** of patients in high-income countries adhere, and fewer in low-income settings. Causes include forgetting, side effects, cost, complexity, poor understanding and beliefs about the illness or medicine.
@@ -592,6 +782,20 @@ Q: A patient stops his blood pressure tablets because he "only has BP when tense
 | **Community** | Good schools, mentors, safe neighbourhoods, religious and cultural groups |
 
 **George Bonanno** showed that after bereavement or potentially traumatic events, the **most common** trajectory is **resilience**: a stable, healthy level of functioning with only brief disruption. Chronic distress, delayed distress and recovery patterns are less common.
+
+
+:::widget layers
+{
+  "title": "Protective factors for resilience",
+  "shape": "rings",
+  "layers": [
+    { "label": "Individual", "detail": "Problem-solving, self-regulation, hope, humour, faith, an easy temperament." },
+    { "label": "Family", "detail": "At least one warm, stable caregiver; structure and support." },
+    { "label": "Community", "detail": "Good schools, mentors, safe neighbourhoods, religious and cultural groups, services." }
+  ],
+  "caption": "Resilience is ordinary magic: it comes from these everyday systems working together, not from rare qualities."
+}
+:::
 
 ### Hope and optimism
 - **Hope theory** (C. R. Snyder): hope is **agency** (the will: "I can do it") plus **pathways** (the ways: "I can find routes to my goal").
@@ -693,6 +897,20 @@ Q: A main criticism of retrospective PTG reports is that:
 
 **Geert Hofstede**, from surveys of IBM employees in many countries, described national cultural dimensions: **power distance, individualism-collectivism, masculinity-femininity, uncertainty avoidance**, and later **long-term orientation** and **indulgence**. India scores **high on power distance** and moderate on individualism, which shapes expectations of bosses and teams.
 
+
+:::widget layers
+{
+  "title": "Schein's three levels of organisational culture",
+  "shape": "iceberg",
+  "layers": [
+    { "label": "Artefacts", "detail": "What you can see: dress, office layout, rituals, slogans. Above the water." },
+    { "label": "Espoused values", "detail": "What the organisation says it values: mission statements, stated policies." },
+    { "label": "Basic underlying assumptions", "detail": "Unspoken beliefs that really guide behaviour: “never question a senior”, “mistakes are punished”." }
+  ],
+  "caption": "Change efforts that touch only the visible tip rarely change how people actually behave."
+}
+:::
+
 ### Human resource development (HRD)
 **HRD** is the planned development of people's competencies, potential and wellbeing in an organisation. India was an early leader: **Udai Pareek and T. V. Rao** designed an integrated **HRD system for Larsen and Toubro** in the mid-1970s, and the **National HRD Network** followed in 1985. Key HRD mechanisms in their model:
 - Performance appraisal (developmental, not only for pay)
@@ -723,6 +941,20 @@ Training is often evaluated with **Kirkpatrick's four levels**: **reaction** (di
     { "text": "The annual report lists “innovation” as a core value", "bucket": 1 },
     { "text": "Staff assume that admitting a mistake will cost them their bonus", "bucket": 2 }
   ]
+}
+:::
+
+
+:::widget flow
+{
+  "title": "Lewin's three-step model of change",
+  "layout": "chain",
+  "nodes": [
+    { "id": "u", "label": "Unfreeze", "detail": "Create readiness: show why change is needed, address fears, reduce restraining forces." },
+    { "id": "c", "label": "Change", "detail": "Move to new ways with training, support and involvement." },
+    { "id": "r", "label": "Refreeze", "detail": "Stabilise the new ways through systems, rewards and norms so people do not slide back." }
+  ],
+  "caption": "Force-field analysis comes first: list driving and restraining forces, then weaken the restraints."
 }
 :::
 
@@ -829,6 +1061,24 @@ Key frameworks:
 
 Integration usually goes with the best adjustment; marginalisation with the worst.
 
+
+:::widget flow
+{
+  "title": "Berry's acculturation strategies",
+  "layout": "tree",
+  "nodes": [
+    { "id": "q", "label": "A person living in a new culture", "detail": "Two questions decide the strategy." },
+    { "id": "k", "label": "Keeps heritage culture", "parent": "q", "detail": "Language, food, festivals, family ways." },
+    { "id": "n", "label": "Does not keep heritage culture", "parent": "q", "detail": "Lets go of the home culture." },
+    { "id": "i", "label": "Integration", "parent": "k", "detail": "Keeps heritage and joins the new culture. Usually the best adjustment." },
+    { "id": "s", "label": "Separation", "parent": "k", "detail": "Keeps heritage and stays apart from the new culture." },
+    { "id": "a", "label": "Assimilation", "parent": "n", "detail": "Drops heritage and joins the new culture fully." },
+    { "id": "m", "label": "Marginalisation", "parent": "n", "detail": "Neither culture. Usually the worst adjustment." }
+  ],
+  "caption": "Tap through the tree. The receiving society's attitudes also limit which strategies are possible."
+}
+:::
+
 :::widget decide
 {
   "scene": "Arjun, 19, from a Tamil family, has moved to Delhi for college. He avoids all North Indian classmates, eats only at a South Indian mess and feels lonely. His counsellor suggests he try to “become a Delhi boy and forget Chennai ways”.",
@@ -898,6 +1148,22 @@ In a 2013 study, sugarcane farmers in Tamil Nadu took cognitive tests **before h
 ### Migration
 India has a huge internal migration: the 2011 Census counted about **45 crore** internal migrants. Migration brings opportunity but also **acculturative stress**, separation from family, discrimination and insecure work. The **2020 COVID-19 lockdown** exposed this when millions of migrant workers walked home from cities. Refugees and asylum seekers face high rates of trauma, depression and PTSD, worsened by post-migration stressors such as uncertainty and detention.
 
+
+:::widget flow
+{
+  "title": "How stigma is built (Link and Phelan)",
+  "layout": "chain",
+  "nodes": [
+    { "id": "l", "label": "Labelling", "detail": "A difference is noticed and named: “mental case”." },
+    { "id": "s", "label": "Stereotyping", "detail": "The label is linked to negative traits: dangerous, weak, unreliable." },
+    { "id": "sep", "label": "Separation", "detail": "“Us” and “them”." },
+    { "id": "st", "label": "Status loss and discrimination", "detail": "Fewer jobs, marriage proposals, friendships, services." },
+    { "id": "p", "label": "Power", "detail": "All of this happens only when the labelling group has social, economic or political power." }
+  ],
+  "caption": "Self-stigma follows when people apply these steps to themselves. Contact with people with lived experience breaks the chain best."
+}
+:::
+
 ### Stigma
 - **Erving Goffman** (1963) described stigma as an attribute that is "**deeply discrediting**", reducing a person "from a whole and usual person to a tainted, discounted one": a **spoiled identity**.
 - **Link and Phelan** (2001) listed its components: **labelling**, **stereotyping**, **separation** ("us" and "them"), **status loss** and **discrimination**, all depending on **power**.
@@ -908,6 +1174,22 @@ India has a huge internal migration: the 2011 Census counted about **45 crore** 
 Psychologists work with child abuse (POCSO Act 2012 requires reporting of child sexual abuse and child-friendly procedures), intimate partner violence, elder abuse and community violence. Key ideas include the **cycle of violence** (tension building, incident, reconciliation, calm), **trauma-informed care** (safety, trustworthiness, choice, collaboration, empowerment, cultural sensitivity) and safety planning.
 
 ### Peace psychology and conflict resolution
+
+:::widget flow
+{
+  "title": "Galtung's three forms of violence",
+  "layout": "tree",
+  "nodes": [
+    { "id": "v", "label": "Violence", "detail": "Avoidable harm to human needs." },
+    { "id": "d", "label": "Direct", "parent": "v", "detail": "Visible harm by a person or group: a beating, a riot." },
+    { "id": "s", "label": "Structural", "parent": "v", "detail": "Harm built into systems: poverty, caste exclusion, unequal access to health." },
+    { "id": "c", "label": "Cultural", "parent": "v", "detail": "Ideas, stories and symbols that make the other two seem normal or right." }
+  ],
+  "caption": "Positive peace means removing structural and cultural violence, not just stopping direct violence."
+}
+:::
+
+
 - **Johan Galtung** distinguished **direct violence** (physical harm), **structural violence** (harm built into social systems: poverty, caste exclusion, unequal access to health) and **cultural violence** (ideas that justify the other two). **Negative peace** is the absence of war; **positive peace** is the presence of justice and cooperation.
 - **Gordon Allport's contact hypothesis** (1954): intergroup contact reduces prejudice under four conditions: **equal status, common goals, intergroup cooperation and support from authorities**. A meta-analysis of over 500 studies (2006) confirmed that contact reduces prejudice, most strongly when the conditions are met.
 - **Muzafer Sherif's Robbers Cave study** (1954): boys at a summer camp formed rival groups and hostility grew through competition; it fell only when the groups had to work together on **superordinate goals** (fixing the water supply, pulling a stuck truck).
