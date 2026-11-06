@@ -16,7 +16,8 @@ Every module is written in the study dialect (`src/lib/study/parse.ts`). Types a
 - **No tappable glossary terms.**
 - **No week numbers in student prose.**
 - **No colour-only meaning.**
-- **Teach visually.** Use a picture or interaction wherever it explains better than text.
+- **No em dashes (—) or en dashes (–)** anywhere in student text: they read as AI-written. Use commas, colons, full stops or brackets; write ranges as "3 to 5". Avoid AI-sounding phrases. Enforced by the same test file.
+- **Teach visually, a lot:** aim for 25 to 40 visuals and interactions per module. Use a picture or interaction wherever it explains better than text.
 
 ## Q&A bank: `:::qa`
 ```
@@ -42,6 +43,10 @@ One or two sentences.
 | `curve` | interactive explorers with sliders: `normal` (z, percentile, two-tailed p, IQ), `sdt` (d′, criterion, hits and false alarms), `forgetting` (Ebbinghaus with spaced reviews), `inverted-u` (arousal × task complexity), `dose-response` (potency vs efficacy, partial agonist), `half-life` (repeated dosing → steady state) | `{"kind":"normal","title":"…","caption":"…"}` |
 | `layers` | layered models: `pyramid` (Maslow; layers[0] = top), `rings` (Bronfenbrenner; layers[0] = centre), `iceberg` (Freud's topography; layers[0] = above water), `stack` (any ordered levels) | `{"title":"…","shape":"rings","layers":[{"label":"Microsystem","detail":"…"}],"caption":"…"}` |
 | `brainmap` | where something happens in the brain. Regions: frontal, prefrontal, motor, sensory, parietal, occipital, temporal, broca, wernicke, cerebellum, brainstem, corpus-callosum, thalamus, hypothalamus, basal-ganglia, amygdala, hippocampus | `{"title":"…","focus":["amygdala","hippocampus"],"notes":{"amygdala":"…"},"caption":"…"}` |
+| `journey` | a medicine's route through the body to its brain target, animated: tablet → gut → liver first pass → blood → blood-brain barrier → target → elimination; also IV, nasal spray, depot | `{"drug":"sertraline","target":"serotonin transporters in the raphe and cortex","routes":["oral","iv"],"notes":{"liver":"…"},"caption":"…"}` |
+| `neuron` | action potential: threshold slider (all-or-none), myelin on/off (saltatory conduction), live voltage trace | `{"title":"…","myelinated":true,"caption":"…"}` |
+| `pathways` | the four dopamine pathways with animated flow; toggle a D2 blocker and then serotonin 2A block, and see each pathway's effect | `{"system":"dopamine","caption":"…"}` |
+| `receptor` | full agonist vs partial agonist vs antagonist vs inverse agonist at one receptor, with a live signal bar | `{"receptor":"D2","caption":"…"}` |
 | `synapse` | reuptake and enzyme block (ssri/snri/maoi), with a time-passes step | `{"drug":"ssri","caption":"…"}` |
 | `moodline` | mood over time → pick the pattern | see types |
 | `guess`, `decide`, `sort`, `build`, `worked`, `reveal` | commit first, then the reasoning (see types) | see types |

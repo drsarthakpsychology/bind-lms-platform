@@ -2,22 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, ClipboardList, Clock, MessagesSquare, RotateCcw, Settings2, Target, Zap, type LucideIcon } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
-import { goalLabel } from "@/lib/prep/catalog";
+import { EXAM_TRACKS_ENABLED, PREP_TITLE, goalLabel } from "@/lib/prep/catalog";
 import { loadPath } from "@/lib/prep/path";
 import type { NextAction } from "@/lib/prep/plan";
 import { cn } from "@/lib/utils";
 import { GoalPicker } from "./goal-picker";
-import { btnInk, btnPlain, card, PrepFrame, StatusTag } from "./ui";
+import { btnInk, btnPlain, card, PrepFrame, PrepHero, StatusTag } from "./ui";
 import { cookieGoal, prepViewer } from "./viewer";
 
-export const metadata: Metadata = { title: "Prep" };
+export const metadata: Metadata = { title: PREP_TITLE, description: "One course for CUET-PG, UGC-NET and clinical psychology entrances (M.Clin.Psy): every subject, from foundations to advanced." };
 
 const ICON: Record<NextAction["kind"], LucideIcon> = { goal: Target, diagnostic: ClipboardList, topic: Zap, review: RotateCcw, mock: Clock, interview: MessagesSquare };
 
 /**
- * /prep: one pathway (goal → starting check → plan → learn → practise → mocks
- * → interview → review). The screen only ever shows the next 1–3 steps; the
- * full plan sits behind "See full plan".
+ * /prep: Psychology Entrance & Competitive Exam Preparation. One shared
+ * course for CUET-PG, UGC-NET and the clinical entrances: starting check →
+ * plan → learn → practise → mocks → interview → review. Subject mastery
+ * first; exam tracks (the goal picker) only with EXAM_TRACKS_ENABLED. The
+ * screen only ever shows the next 1 to 3 steps; the full plan sits behind
+ * "See full plan".
  */
 export default async function PrepPage() {
   await requireFeature("learn");
@@ -25,15 +28,18 @@ export default async function PrepPage() {
   const path = await loadPath(me.id, await cookieGoal(me.id));
   const goal = path.profile.goal;
 
-  if (!goal) {
+  // Exam tracks only: pick an exam first. Off, nobody is asked.
+  if (EXAM_TRACKS_ENABLED && !goal) {
     return (
       <PrepFrame>
-        <header className="space-y-2">
-          <p className="text-eyebrow text-link">Prep</p>
-          <h1 className="text-h1">Which exam are you preparing for?</h1>
+        <PrepHero eyebrow="Exam Prep" />
+        <section aria-labelledby="pick" className="space-y-3">
+          <h2 id="pick" className="text-h2">
+            Which exam are you preparing for?
+          </h2>
           <p className="text-muted-foreground">We&apos;ll build one clear plan for it. You can change this later.</p>
-        </header>
-        <GoalPicker current={null} />
+          <GoalPicker current={null} />
+        </section>
       </PrepFrame>
     );
   }
@@ -42,15 +48,18 @@ export default async function PrepPage() {
 
   return (
     <PrepFrame>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div className="space-y-1">
-          <p className="text-eyebrow text-link">Prep · {goalLabel(goal)}</p>
-          <h1 className="text-h1">{path.diagnosed ? "Your next steps" : "Start here"}</h1>
-        </div>
-        <Link href="/prep/goal" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground hover:underline">
-          <Settings2 className="size-4" aria-hidden /> Change exam
-        </Link>
-      </header>
+      <PrepHero eyebrow={goal ? `Exam Prep · ${goalLabel(goal)}` : "Exam Prep · One course"}>
+        <p className="text-muted-foreground">{goal ? "Your plan follows this exam." : "The same course for all three. Learn every subject first, then practise for the exam."}</p>
+      </PrepHero>
+
+      <div className="flex flex-wrap items-end justify-between gap-3 border-t-2 border-foreground pt-5">
+        <h2 className="text-h2">{path.diagnosed ? "Your next steps" : "Start here"}</h2>
+        {goal ? (
+          <Link href="/prep/goal" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground hover:underline">
+            <Settings2 className="size-4" aria-hidden /> Change exam
+          </Link>
+        ) : null}
+      </div>
 
       {!me.learner ? <p className="rounded-md border-2 border-dashed border-foreground/50 p-3 text-sm text-muted-foreground">Staff preview: answers are not saved to a student record.</p> : null}
 
@@ -63,9 +72,9 @@ export default async function PrepPage() {
 
       {first ? (
         <section aria-labelledby="next" className="space-y-3">
-          <h2 id="next" className="sr-only">
+          <h3 id="next" className="sr-only">
             Next steps
-          </h2>
+          </h3>
           <ActionCard action={first} primary />
           {rest.length ? (
             <ul className="space-y-3">
@@ -86,7 +95,7 @@ export default async function PrepPage() {
             <ArrowRight className="size-4 transition-transform duration-200 group-open:rotate-90 motion-reduce:transition-none" aria-hidden />
           </summary>
           <div className="space-y-5 border-t-2 border-foreground px-4 pt-4 pb-5">
-            <p className="text-sm text-muted-foreground">Weakest and biggest topics first. Share = how much of the exam it covers.</p>
+            <p className="text-sm text-muted-foreground">{goal ? "Weakest and biggest topics first. Share: how much of your exam it covers." : "Every subject the exams ask. Weakest and most tested first. Share: how much of the exams it covers."}</p>
             <ol className="space-y-2.5">
               {path.plan.map((t, i) => (
                 <li key={t.subject} className="rounded-md border-2 border-foreground/80 p-3">
