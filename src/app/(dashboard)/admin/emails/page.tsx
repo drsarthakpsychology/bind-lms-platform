@@ -13,6 +13,7 @@ import { personKey } from "@/lib/crm/people";
 import { AlertTriangle, ArrowLeft, Bell, Inbox, PenSquare, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { FilterBar, type FilterSelect } from "@/components/admin/filter-bar";
 
 export const dynamic = "force-dynamic";
 
@@ -58,6 +59,45 @@ type InRow = {
   archived_at: string | null;
 };
 
+/** One word for where a sent email got to (the Status filter). */
+function sentStatusKey(r: SentRow): string {
+  if (r.status === "failed") return "failed";
+  if (r.bounced_at) return "bounced";
+  if (r.clicked_at) return "clicked";
+  if (r.opened_at) return "opened";
+  if (r.delivered_at) return "delivered";
+  return "sent";
+}
+
+const SENT_STATUS = [
+  { value: "delivered", label: "Delivered" },
+  { value: "opened", label: "Opened" },
+  { value: "clicked", label: "Clicked" },
+  { value: "not-opened", label: "Not opened" },
+  { value: "bounced", label: "Bounced" },
+];
+const KINDS = [
+  { value: "login", label: "Login emails" },
+  { value: "notification", label: "Notifications" },
+  { value: "nudge", label: "Nudges" },
+  { value: "reply", label: "Replies" },
+  { value: "doubt", label: "Doubt answered" },
+  { value: "other", label: "Other emails" },
+];
+function kindOf(template: string | null): string {
+  if (template === "credential") return "login";
+  if (template === "notification" || template === "nudge" || template === "reply") return template;
+  if (template === "doubt-answered") return "doubt";
+  return "other";
+}
+const SENT_SELECTS: FilterSelect[] = [
+  { param: "status", label: "Status", allLabel: "Any status", options: SENT_STATUS },
+  { param: "kind", label: "Type", allLabel: "All types", options: KINDS },
+];
+const INBOX_SELECTS: FilterSelect[] = [
+  { param: "read", label: "Read or unread", allLabel: "Read and unread", options: [{ value: "unread", label: "Unread" }, { value: "read", label: "Read" }] },
+];
+
 function sentStatus(r: SentRow): { label: string; cls: string } {
   if (r.status === "failed") return { label: "Failed", cls: "border-destructive bg-status-alert-bg text-status-alert-fg" };
   if (r.bounced_at) return { label: "Bounced", cls: "border-destructive bg-status-alert-bg text-status-alert-fg" };
@@ -77,7 +117,7 @@ function sentStatus(r: SentRow): { label: string; cls: string } {
 export default async function MailPage({
   searchParams,
 }: {
-  searchParams: Promise<{ folder?: string; tab?: string; id?: string; to?: string; q?: string }>;
+  searchParams: Promise<{ folder?: string; tab?: string; id?: string; to?: string; q?: string; status?: string; kind?: string; read?: string }>;
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
@@ -110,7 +150,14 @@ export default async function MailPage({
         .limit(300);
       rows = (data ?? []) as SentRow[];
     }
-    sent = rows.filter((r) => !q || `${r.recipient} ${r.name ?? ""} ${r.subject}`.toLowerCase().includes(q));
+    const st = folder === "sent" && SENT_STATUS.some((o) => o.value === sp.status) ? sp.status : null;
+    const kind = folder === "sent" && KINDS.some((o) => o.value === sp.kind) ? sp.kind : null;
+    sent = rows.filter(
+      (r) =>
+        (!q || `${r.recipient} ${r.name ?? ""} ${r.subject}`.toLowerCase().includes(q)) &&
+        (!st || sentStatusKey(r) === st || (st === "not-opened" && !r.opened_at && !r.clicked_at && !r.bounced_at)) &&
+        (!kind || kindOf(r.template_id) === kind),
+    );
   }
 
   let inbox: InRow[] = [];
@@ -121,7 +168,10 @@ export default async function MailPage({
       .is("archived_at", null)
       .order("received_at", { ascending: false })
       .limit(300);
-    inbox = ((data ?? []) as InRow[]).filter((r) => !q || `${r.from_email} ${r.from_name ?? ""} ${r.subject ?? ""}`.toLowerCase().includes(q));
+    const read = sp.read === "unread" || sp.read === "read" ? sp.read : null;
+    inbox = ((data ?? []) as InRow[]).filter(
+      (r) => (!q || `${r.from_email} ${r.from_name ?? ""} ${r.subject ?? ""}`.toLowerCase().includes(q)) && (!read || (read === "unread" ? !r.read_at : Boolean(r.read_at))),
+    );
   }
 
   const openSent = sp.id && (folder === "sent" || folder === "failed") ? sent.find((r) => r.id === sp.id) : undefined;
@@ -227,17 +277,14 @@ export default async function MailPage({
             <div className="grid min-h-full grid-cols-[minmax(0,1fr)] content-start xl:content-stretch xl:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
               {/* List */}
               <section aria-label={folder} className={cn("min-w-0 border-foreground/10 xl:border-r-2", reading && "hidden xl:block")}>
-                <form className="flex items-center gap-2 border-b-2 border-foreground/10 p-3" action="/admin/emails">
-                  <input type="hidden" name="folder" value={folder} />
+                <div className="border-b-2 border-foreground/10 p-3">
                   <h1 className="sr-only">{folder === "inbox" ? "Inbox" : folder === "sent" ? "Sent" : "Failed"}</h1>
-                  <input
-                    name="q"
-                    defaultValue={q}
-                    type="search"
-                    placeholder={`Search ${folder}`}
-                    className="h-10 w-full rounded-md border-2 border-foreground bg-background px-4 text-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+                  <FilterBar
+                    key={folder}
+                    search={{ label: `Search ${folder}`, placeholder: `Search ${folder}` }}
+                    selects={folder === "inbox" ? INBOX_SELECTS : folder === "sent" ? SENT_SELECTS : []}
                   />
-                </form>
+                </div>
                 {folder === "inbox" ? (
                   inbox.length === 0 ? (
                     <p className="p-6 text-sm font-semibold text-muted-foreground">
