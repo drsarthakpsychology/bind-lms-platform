@@ -1,5 +1,5 @@
 /**
- * The two student leaderboards, named once so every screen (nav, search,
+ * The student leaderboards, named once so every screen (nav, search,
  * cards, the boards themselves, docs) uses the same words.
  *
  * - Quiz leaderboard: Learn XP from quizzes, games and notes checks, this week.
@@ -7,9 +7,20 @@
  * - Overall leaderboard: level points (lectures + quizzes + time on VIBHA),
  *   all time. Ranking: lib/standing/score.ts.
  *
+ * - Weekly league: tiers Neuron → Mind, promotion and relegation, this week.
+ *   Home of /leaderboard. Ranking: lib/leagues/*.
+ *
  * Pure, so it is testable.
  */
 export const BOARDS = {
+  league: {
+    key: "league",
+    label: "Weekly league",
+    short: "League",
+    href: "/leaderboard",
+    explainer: "Points from everything you do this week. Top 5 move up, bottom 5 move down.",
+    period: "This week",
+  },
   quiz: {
     key: "quiz",
     label: "Quiz leaderboard",
@@ -22,7 +33,7 @@ export const BOARDS = {
     key: "overall",
     label: "Overall leaderboard",
     short: "Overall",
-    href: "/leaderboard",
+    href: "/leaderboard/overall",
     explainer: "Points from lectures, quizzes and time on VIBHA.",
     period: "All time",
   },

@@ -3,6 +3,10 @@
 import { createAdminClient, createClient } from "@/lib/supabase/server";
 import { istToday, normalise, type LearnState } from "@/lib/learn/engine";
 import { clampLearnSave } from "@/lib/learn/integrity";
+import { after } from "next/server";
+import { awardEligibleBadges } from "@/lib/achievements/server";
+import { newlyFinishedModules } from "@/lib/achievements/completion";
+import { moduleFacets } from "@/lib/achievements/rules";
 
 /** The stored state, plus the id of the student it belongs to (keys the browser copy). */
 export type OwnedLearnState = LearnState & { owner?: string };
@@ -75,6 +79,14 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
       .from("learn_progress")
       .upsert({ user_id: user.id, state: clean, xp: clean.xp, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
     if (error) console.warn("saveLearnState: learn_progress write failed:", error.message);
+    // A module just finished: award its badge (and any mastery milestone) on
+    // the server, after the response, so the save stays fast.
+    if (!error) {
+      const finished = newlyFinishedModules(prev?.state.study ?? null, clean.study, moduleFacets());
+      if (finished.length && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+        after(() => awardEligibleBadges(createAdminClient(), user.id, null).then(() => undefined, (e) => console.warn("module badge award failed:", e instanceof Error ? e.message : e)));
+      }
+    }
     return { ok: !error, clamped };
   } catch (e) {
     console.warn("saveLearnState failed:", e instanceof Error ? e.message : e);
