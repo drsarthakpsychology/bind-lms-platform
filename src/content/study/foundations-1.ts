@@ -52,6 +52,20 @@ The main **perspectives** you will meet in this module and across the course:
 }
 :::
 
+
+:::widget layers
+{
+  "title": "Three levels of analysis",
+  "shape": "rings",
+  "layers": [
+    { "label": "Biological", "detail": "Genes, brain circuits, hormones, sleep, illness. The innermost level, inside the body." },
+    { "label": "Psychological", "detail": "Thoughts, emotions, learning, memory, motives, personality." },
+    { "label": "Social and cultural", "detail": "Family, peers, school, caste and class, religion, language, media, the economy." }
+  ],
+  "caption": "One behaviour, such as exam anxiety, can be studied at every ring. The biopsychosocial approach asks how the rings act on each other."
+}
+:::
+
 ### The fields of psychology
 Psychology has grown into dozens of fields. A few you will meet in Indian MA programmes and entrance exams:
 - **Clinical**: assessment and treatment of mental disorders. In India, practising as a clinical psychologist requires registration with the **Rehabilitation Council of India (RCI)**.
@@ -98,6 +112,24 @@ Q: A researcher wants to know whether a school yoga programme lowers exam anxiet
 ## 1.2 How psychologists find things out: the methods [core][starting]
 A method is a set of rules for collecting evidence so that other people can check it. Each method answers a different kind of question, and each has strengths and blind spots.
 
+
+:::widget flow
+{
+  "title": "Which method fits the question?",
+  "layout": "tree",
+  "nodes": [
+    { "id": "q", "label": "What do you want to know?", "detail": "Start from the question, not from a favourite method." },
+    { "id": "cause", "label": "Does X cause Y?", "parent": "q", "detail": "Only an experiment with random assignment can answer this directly." },
+    { "id": "exp", "label": "Experiment (lab or field)", "parent": "cause", "detail": "Manipulate the IV, measure the DV, randomise, control confounds. If groups already exist, use a quasi-experiment and say so." },
+    { "id": "rel", "label": "Do X and Y go together?", "parent": "q", "detail": "Correlational study: measure both and compute r. No causal claim." },
+    { "id": "what", "label": "What happens, how often, in whom?", "parent": "q", "detail": "Observation, surveys and tests describe behaviour and its frequency." },
+    { "id": "deep", "label": "What is it like, and what does it mean?", "parent": "q", "detail": "Case studies and qualitative interviews give depth and meaning, not generalisation." },
+    { "id": "time", "label": "How does it change over time?", "parent": "q", "detail": "Longitudinal designs follow the same people; cross-sectional designs compare age groups at one time." }
+  ],
+  "caption": "Tap each branch. Exam answers score higher when the method is justified by the question."
+}
+:::
+
 ### Introspection
 **Introspection** means looking inward and reporting your own conscious experience. Wundt used **trained** observers reporting immediate experience under controlled conditions (the colour, intensity and duration of a light). Titchener pushed it further, asking observers to break experience into its elements. Introspection fell out of favour because trained observers in different labs **disagreed** and there was no way to settle disputes (the "imageless thought" controversy with the Würzburg school). Today, careful self-report remains essential in questionnaires, interviews and **think-aloud** protocols, and contemplative traditions (including Indian ones) are being studied as forms of trained first-person observation.
 
@@ -138,6 +170,23 @@ An **experiment** is the only method that can establish **cause and effect**. Th
     { "label": "Run an experiment: randomly assign students to drink tea or a matched caffeine-free drink, then measure attention blind", "verdict": "best", "outcome": "She finds a small, short-lived effect of caffeine, not of tea itself.", "why": "Random assignment and a control group let her test cause and separate caffeine from tea." },
     { "label": "Survey more students to make the correlation stronger", "verdict": "ok", "outcome": "The correlation is more precise but still says nothing about cause.", "why": "More data improves the estimate but not the design." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+  "title": "The logic of an experiment",
+  "layout": "chain",
+  "nodes": [
+    { "id": "h", "label": "Hypothesis", "detail": "Caffeine improves attention in students." },
+    { "id": "ra", "label": "Random assignment", "detail": "Each student has an equal chance of being in either group, so groups are equal on average in sleep, age, wealth." },
+    { "id": "iv", "label": "Manipulate the IV", "detail": "One group gets caffeinated tea, the other an identical caffeine-free drink." },
+    { "id": "ctl", "label": "Hold everything else constant", "detail": "Same time of day, same room, same instructions; testers do not know who got what." },
+    { "id": "dv", "label": "Measure the DV", "detail": "Scores on the same attention test." },
+    { "id": "cmp", "label": "Compare groups", "detail": "A reliable difference can be put down to the IV, because alternatives were controlled." }
+  ],
+  "caption": "Remove any link in this chain and the causal conclusion weakens."
 }
 :::
 
@@ -200,6 +249,15 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
 - **Hermann von Helmholtz**: measured the **speed of nerve conduction** (about 30 metres a second in frogs, far slower than people expected), showing that mental processes take measurable time; also developed the trichromatic theory of colour vision.
 - **Paul Broca** (1861) and later **Carl Wernicke**: language areas of the brain; **Fritsch and Hitzig** (1870): electrical stimulation of the motor cortex.
 
+
+:::widget neuron
+{
+  "title": "Helmholtz's discovery: nerve signals take time",
+  "myelinated": true,
+  "caption": "Helmholtz measured nerve conduction at about 30 metres a second in frogs. Try the threshold slider (a nerve fires all-or-none) and switch myelin off to see conduction slow. Mental processes take measurable time, which opened the door to reaction-time research in Wundt's laboratory."
+}
+:::
+
 ### Psychophysics: measuring the mind
 **Ernst Weber** found that the **just noticeable difference (JND)** between two stimuli is a **constant proportion** of the original stimulus (**Weber's law**). If you can just tell 100 g from 102 g, you will just tell 200 g from 204 g.
 
@@ -214,6 +272,22 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
   "answer": [9, 11],
   "reveal": "About 10 g. The Weber fraction here is 2%, and 2% of 500 g is 10 g. The noticeable difference grows in proportion to the stimulus.",
   "clinician": "Weber fractions differ by modality (roughly 2% for lifted weights, around 8% for brightness and 10% for loudness, far larger for taste), and the law breaks down at very low and very high intensities. Stevens later proposed a power law (sensation as intensity raised to an exponent that differs by modality), which fits magnitude-estimation data better than Fechner's logarithmic law."
+}
+:::
+
+
+:::widget flow
+{
+  "title": "From psychophysics to a new science",
+  "layout": "chain",
+  "nodes": [
+    { "id": "f", "label": "1860: Fechner", "detail": "Psychophysics: the relation between stimulus and sensation can be measured." },
+    { "id": "w", "label": "1879: Wundt's laboratory", "detail": "Leipzig. The conventional birth date of experimental psychology." },
+    { "id": "e", "label": "1885: Ebbinghaus", "detail": "Memory studied experimentally with nonsense syllables." },
+    { "id": "j", "label": "1890: James", "detail": "His two-volume textbook: stream of consciousness, habit, self, emotion." },
+    { "id": "a", "label": "1892: APA founded", "detail": "G. Stanley Hall founds the American Psychological Association." }
+  ],
+  "caption": "Five dates that examiners love. Press Play to walk them in order."
 }
 :::
 
@@ -273,6 +347,15 @@ Q: Which pair is correctly matched?
 > Mill argued combined ideas can create something new.
 :::
 
+
+:::widget curve
+{
+  "kind": "forgetting",
+  "title": "Ebbinghaus's forgetting curve, and what spaced review does",
+  "caption": "Ebbinghaus found that forgetting is fastest soon after learning. Add reviews and watch the curve flatten: the same principle is behind the spaced checkpoints in this course."
+}
+:::
+
 ## 1.4 Indian psychological thought: the starting picture [core][starting]
 India did not have "psychology departments" until the twentieth century, but it had thousands of years of careful thinking about the **mind, the self, consciousness, suffering and how to change**. Scholars such as **K. Ramakrishna Rao, Anand Paranjpe and Ajit Dalal** define **Indian psychology** as psychology **rooted in the Indian traditions of thought and practice**, not simply psychology done in India by Indians.
 
@@ -310,6 +393,35 @@ All three are always present; their balance shifts with food, habits, company an
 3. **Manomaya kosha**: the mind of thoughts, feelings and senses.
 4. **Vijnanamaya kosha**: the discerning intellect and wisdom.
 5. **Anandamaya kosha**: the layer of bliss, closest to the self.
+
+
+:::widget layers
+{
+  "title": "The five koshas (sheaths) of the person",
+  "shape": "rings",
+  "layers": [
+    { "label": "Anandamaya kosha", "detail": "The sheath of bliss, closest to the self." },
+    { "label": "Vijnanamaya kosha", "detail": "The discerning intellect, wisdom and judgement." },
+    { "label": "Manomaya kosha", "detail": "The mind of thoughts, feelings and the senses." },
+    { "label": "Pranamaya kosha", "detail": "The vital layer: breath and energy." },
+    { "label": "Annamaya kosha", "detail": "The physical body, 'made of food'. The outermost sheath." }
+  ],
+  "caption": "From the Taittiriya Upanishad. Tap from the centre outwards. Yoga therapy plans care at every ring."
+}
+:::
+
+:::widget layers
+{
+  "title": "The three gunas",
+  "shape": "stack",
+  "layers": [
+    { "label": "Sattva", "detail": "Clarity, calm, balance, knowledge, contentment." },
+    { "label": "Rajas", "detail": "Activity, passion, restlessness, desire. Drives all action." },
+    { "label": "Tamas", "detail": "Inertia, dullness, confusion, heaviness. Needed in small measure for rest and sleep." }
+  ],
+  "caption": "All three are always present in the mind and in nature; what changes is their balance. They are qualities from Samkhya, not Ayurvedic doshas."
+}
+:::
 
 :::example Panchakosha in a Bengaluru yoga university
 At **S-VYASA** (Swami Vivekananda Yoga Anusandhana Samsthana), near Bengaluru, an **Integrated Approach to Yoga Therapy** plans treatment across all five koshas: postures and diet for the body, breathing practices for the vital layer, relaxation and devotional chanting for the mind, counselling and self-study for the intellect, and service and joy for the innermost layer. Trials from this group report benefits in anxiety, depression and chronic illness, though many are small. The model gives a biopsychosocial-spiritual map in Indian terms.
@@ -492,6 +604,22 @@ Structuralism faded after Titchener's death in 1927. Its legacy: it made psychol
 Titchener labelled himself a structuralist and presented his work as Wundt's. Wundt called his own approach **voluntarism** and stressed the mind's active, organising role (apperception) and cultural psychology. Exams set "Wundt founded structuralism" as a trap; the safer answer is **Titchener**.
 :::
 
+
+:::widget flow
+{
+  "title": "Structuralism: breaking experience into elements",
+  "layout": "tree",
+  "nodes": [
+    { "id": "c", "label": "Conscious experience", "detail": "Titchener's subject matter, studied by trained introspection." },
+    { "id": "s", "label": "Sensations", "parent": "c", "detail": "Elements of perception: a patch of red, a tone." },
+    { "id": "i", "label": "Images", "parent": "c", "detail": "Elements of ideas: the remembered red." },
+    { "id": "a", "label": "Affections", "parent": "c", "detail": "Elements of feeling: only pleasant or unpleasant." },
+    { "id": "attr", "label": "Attributes of each element", "parent": "s", "detail": "Quality, intensity, duration, clearness." }
+  ],
+  "caption": "Titchener's map of the mind. The method could not settle disagreements between laboratories, which helped bring the school down."
+}
+:::
+
 ### Functionalism: what the mind is for
 American psychologists, influenced by **Darwin**, asked a different question: **what is consciousness for?** How does it help us adapt?
 - **William James**: consciousness is a continuous **stream**, not a set of elements; it is personal, changing and selective; **habit** frees attention.
@@ -575,6 +703,25 @@ Q: A rat explores a maze without food for several days. When food is placed at t
 > Latent learning and cognitive maps.
 :::
 
+
+:::widget flow
+{
+  "title": "The schools in order",
+  "layout": "chain",
+  "nodes": [
+    { "id": "st", "label": "Structuralism", "detail": "Titchener: elements of consciousness by introspection." },
+    { "id": "fn", "label": "Functionalism", "detail": "James, Dewey, Angell: what the mind does to help us adapt." },
+    { "id": "ge", "label": "Gestalt", "detail": "Wertheimer, Köhler, Koffka: wholes and organisation." },
+    { "id": "pa", "label": "Psychoanalysis", "detail": "Freud: the unconscious and conflict, from the clinic." },
+    { "id": "be", "label": "Behaviourism", "detail": "Watson, Skinner: observable behaviour only." },
+    { "id": "hu", "label": "Humanistic", "detail": "Maslow, Rogers: growth, choice, the whole person." },
+    { "id": "co", "label": "Cognitive", "detail": "Miller, Chomsky, Neisser: the mind as information processor." },
+    { "id": "mc", "label": "Multicultural and indigenous", "detail": "Culture shapes mind; psychology from many places." }
+  ],
+  "caption": "Roughly chronological, though several overlapped. Each school reacted against the one before it."
+}
+:::
+
 ## 2.2 Gestalt, psychoanalysis, humanism and the cognitive revolution [core][beginner]
 ### Gestalt psychology: the whole is different from its parts
 In 1912 **Max Wertheimer** published his study of the **phi phenomenon**: two lights flashed one after the other, at the right interval, look like one light moving. The movement is **not in either light**; it is in the pattern. With **Wolfgang Köhler** and **Kurt Koffka**, he founded **Gestalt psychology** ("Gestalt" is German for form or whole) in opposition to structuralism's elements and later to behaviourism's stimulus-response chains.
@@ -591,6 +738,20 @@ A string of small lights flashing one after another along a balcony in Ahmedabad
 
 ### Psychoanalysis
 **Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). His great book on dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in the NET syllabus, a "first force", and the source of much of clinical psychology.
+
+
+:::widget layers
+{
+  "title": "Freud's topographic model",
+  "shape": "iceberg",
+  "layers": [
+    { "label": "Conscious", "detail": "What you are aware of right now. The tip above the water." },
+    { "label": "Preconscious", "detail": "Not in awareness now but easily recalled: your phone number, yesterday's lunch." },
+    { "label": "Unconscious", "detail": "Wishes, fears and memories kept out of awareness, which still shape feelings and behaviour." }
+  ],
+  "caption": "Most of the mind, Freud argued, lies below the surface. The details are in the psychodynamics module."
+}
+:::
 
 ### Humanistic psychology: the third force
 In the 1950s and 1960s **Abraham Maslow** and **Carl Rogers** described a **"third force"** against behaviourism (which saw people as machines) and psychoanalysis (which saw them as driven by dark forces). Humanistic psychology emphasises:
@@ -679,6 +840,21 @@ The **Mandukya Upanishad** describes four states:
 
 The idea of a **witness (sakshi)** that observes thoughts without being them has parallels in mindfulness-based and acceptance-based therapies ("you are not your thoughts").
 
+
+:::widget layers
+{
+  "title": "Four states of consciousness (Mandukya Upanishad)",
+  "shape": "stack",
+  "layers": [
+    { "label": "Turiya", "detail": "'The fourth': pure consciousness that underlies and witnesses the other three." },
+    { "label": "Sushupti", "detail": "Deep dreamless sleep: no objects, yet we later say “I slept well”." },
+    { "label": "Svapna", "detail": "Dreaming: awareness of an inner world." },
+    { "label": "Jagrat", "detail": "Waking: awareness of the outer world through the senses." }
+  ],
+  "caption": "Read from the bottom up. The idea of a witnessing awareness behind changing states has echoes in mindfulness and acceptance therapies."
+}
+:::
+
 ### The inner instrument (antahkarana)
 Vedanta describes the mind as a fourfold **inner instrument**:
 | Part | Function | Modern parallel |
@@ -763,6 +939,23 @@ The striking psychological point: in Samkhya, **the mind is part of matter**. Th
 
 Samkhya names three kinds of suffering: **adhyatmika** (from within: illness, desire, grief), **adhibhautika** (from other beings: injury, conflict) and **adhidaivika** (from nature or fate: floods, earthquakes).
 
+
+:::widget flow
+{
+  "title": "How Samkhya says the world unfolds from prakriti",
+  "layout": "tree",
+  "nodes": [
+    { "id": "pr", "label": "Prakriti (nature, made of the three gunas)", "detail": "Unmanifest while the gunas are balanced; in the presence of purusha the balance is disturbed and evolution begins." },
+    { "id": "ma", "label": "Mahat or buddhi (intellect)", "parent": "pr", "detail": "The first product: discernment." },
+    { "id": "ah", "label": "Ahamkara (I-sense)", "parent": "ma", "detail": "The sense of 'I' and 'mine'." },
+    { "id": "mn", "label": "Manas and the ten senses", "parent": "ah", "detail": "Mind, five senses of knowledge and five organs of action." },
+    { "id": "tm", "label": "Five subtle elements", "parent": "ah", "detail": "Sound, touch, form, taste and smell in subtle form." },
+    { "id": "gr", "label": "Five gross elements", "parent": "tm", "detail": "Space, air, fire, water, earth." }
+  ],
+  "caption": "With purusha, the witnessing consciousness, there are 25 principles (tattvas). Note that the mind sits inside nature."
+}
+:::
+
 ### Patanjali's Yoga Sutras
 The **Yoga Sutras** of **Patanjali** (dates are uncertain, often placed between the 2nd century BCE and the 4th century CE) are 196 short aphorisms in four chapters (**samadhi, sadhana, vibhuti, kaivalya**). Sutra 1.2 defines yoga: **"yogas chitta vritti nirodhah"**: yoga is the **stilling of the fluctuations of the mind**.
 
@@ -799,6 +992,25 @@ The **Yoga Sutras** of **Patanjali** (dates are uncertain, often placed between 
 | 8. **Samadhi** | Absorption |
 
 The first five are the **outer** limbs; the last three together are called **samyama**.
+
+
+:::widget layers
+{
+  "title": "The eight limbs, from outer to inner",
+  "shape": "stack",
+  "layers": [
+    { "label": "Samadhi", "detail": "Absorption: the innermost limb." },
+    { "label": "Dhyana", "detail": "Meditation: an unbroken flow of attention." },
+    { "label": "Dharana", "detail": "Concentration on one point. With dhyana and samadhi it forms samyama." },
+    { "label": "Pratyahara", "detail": "Withdrawing the senses from their objects: the bridge between outer and inner." },
+    { "label": "Pranayama", "detail": "Regulation of breath." },
+    { "label": "Asana", "detail": "A steady, comfortable posture." },
+    { "label": "Niyama", "detail": "Observances: purity, contentment, discipline, self-study, surrender." },
+    { "label": "Yama", "detail": "Ethical restraints: non-violence, truth, non-stealing, moderation, non-possessiveness." }
+  ],
+  "caption": "Read from the bottom up: practice moves from conduct and body to breath, attention and absorption."
+}
+:::
 
 :::mnemonic Eight limbs: "Your New Aunt Prefers Peaceful Days Doing Sudoku"
 **Y**ama, **N**iyama, **A**sana, **P**ranayama, **P**ratyahara, **D**harana, **D**hyana, **S**amadhi.
@@ -894,6 +1106,26 @@ The **Abhidhamma** texts analyse the mind into moments of consciousness and **52
 
 Two kinds of meditation: **samatha** (calm, concentration) and **vipassana** (insight into impermanence and no-self).
 
+
+:::widget flow
+{
+  "title": "Dependent origination: how suffering keeps itself going",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "av", "label": "Ignorance", "detail": "Not seeing impermanence and no-self." },
+    { "id": "fo", "label": "Mental formations", "detail": "Habits and intentions built from past actions." },
+    { "id": "co", "label": "Consciousness", "detail": "Awareness shaped by those formations." },
+    { "id": "nm", "label": "Mind and body", "detail": "The person as a changing bundle." },
+    { "id": "se", "label": "Six senses and contact", "detail": "Eyes, ears, nose, tongue, body, mind meet their objects." },
+    { "id": "fe", "label": "Feeling", "detail": "Each contact is felt as pleasant, unpleasant or neutral." },
+    { "id": "cr", "label": "Craving", "detail": "Wanting more of the pleasant, less of the unpleasant." },
+    { "id": "cl", "label": "Clinging and becoming", "detail": "Holding on, forming identity around what we crave." },
+    { "id": "bi", "label": "Birth, ageing and death", "detail": "New rounds of existence and suffering, which feed ignorance again." }
+  ],
+  "caption": "A shortened version of the twelve links. Meditation aims to break the loop at the step from feeling to craving, the same point that mindfulness-based therapies target."
+}
+:::
+
 :::example Vipassana in Tihar Jail
 In 1993 to 1994, under Inspector General **Kiran Bedi**, **Tihar Jail** in Delhi held ten-day Vipassana courses in the tradition taught by **S. N. Goenka** (whose main centre is at Igatpuri, Maharashtra), including one for about a thousand prisoners. Early studies reported less hostility and better wellbeing among participants, and the documentary "Doing Time, Doing Vipassana" brought it to the world. Later prison programmes, such as one in Alabama in the United States, reported similar early findings. The studies were mostly uncontrolled, so they suggest benefit rather than prove it.
 :::
@@ -910,6 +1142,20 @@ Sufis distinguish **maqamat** (stations), earned through effort (repentance, pat
 
 :::example Dava and Dua in Gujarat
 At the **Mira Datar dargah** in Unava, Mehsana district, families have long brought relatives with mental illness for healing. A Gujarat-based partnership known as **"Dava and Dua"** (medicine and prayer) set up a mental health clinic beside the shrine, so people could receive psychiatric care while continuing their faith practices. After the **Erwadi tragedy** in Tamil Nadu (2001), when chained patients at a dargah died in a fire, such respectful partnerships became a model: work with faith healing rather than against it, and remove restraint and neglect.
+:::
+
+
+:::widget layers
+{
+  "title": "Stages of the nafs in Sufi psychology",
+  "shape": "stack",
+  "layers": [
+    { "label": "Nafs al-mutma'inna", "detail": "The self at peace: settled in trust and remembrance." },
+    { "label": "Nafs al-lawwama", "detail": "The self-reproaching self: aware of its faults, struggling to change." },
+    { "label": "Nafs al-ammara", "detail": "The commanding self: driven by impulses and appetites." }
+  ],
+  "caption": "Read from the bottom up. Sufi practice (dhikr, muraqaba, service) is meant to move the self upward, towards fana and baqa."
+}
 :::
 
 ### Integral Yoga: evolving consciousness
@@ -933,6 +1179,23 @@ Key ideas:
     { "text": "The five skandhas", "bucket": 0 },
     { "text": "Supermind and the triple transformation", "bucket": 2 }
   ]
+}
+:::
+
+
+:::widget layers
+{
+  "title": "Sri Aurobindo's levels of consciousness",
+  "shape": "stack",
+  "layers": [
+    { "label": "Supermind", "detail": "The highest level in his scheme, the goal of the supramental transformation." },
+    { "label": "Overmind, intuition, illumined mind, higher mind", "detail": "Levels of spiritual mind above ordinary thinking." },
+    { "label": "Mind", "detail": "Ordinary thinking and reasoning." },
+    { "label": "Vital", "detail": "Life energy, desires, emotions, drive." },
+    { "label": "Physical", "detail": "The body and its habits." },
+    { "label": "Subconscient and inconscient", "detail": "What lies below waking awareness." }
+  ],
+  "caption": "Integral Yoga aims to transform every level, not escape from the lower ones. The psychic being, the evolving soul, stands behind them all."
 }
 :::
 
@@ -1017,6 +1280,22 @@ For inference **for others** (parartha anumana), Nyaya used five steps:
 | 5 | **Nigamana** (conclusion) | Therefore the hill has fire. |
 
 Unlike Aristotle's three-part syllogism, it includes a concrete **example** and is meant to persuade a listener. Inference for oneself (**svartha anumana**) needs no such formal steps.
+
+
+:::widget flow
+{
+  "title": "The five-membered syllogism, step by step",
+  "layout": "chain",
+  "nodes": [
+    { "id": "p", "label": "Pratijna: proposition", "detail": "The hill has fire." },
+    { "id": "h", "label": "Hetu: reason", "detail": "Because it has smoke." },
+    { "id": "u", "label": "Udaharana: example with the rule", "detail": "Wherever there is smoke there is fire, as in a kitchen." },
+    { "id": "up", "label": "Upanaya: application", "detail": "This hill has smoke, which always goes with fire." },
+    { "id": "n", "label": "Nigamana: conclusion", "detail": "Therefore the hill has fire." }
+  ],
+  "caption": "The example step makes the invariable connection (vyapti) visible to a listener. This is inference for others."
+}
+:::
 
 ### Fallacies (hetvabhasa)
 A reason that only looks like a reason is a **hetvabhasa**. Nyaya lists five kinds, including the **inconclusive** reason (savyabhichara: "the hill has fire because it is knowable", but many knowable things lack fire), the **contradictory** reason (viruddha), the **counterbalanced** reason (satpratipaksha), the **unproved** reason (asiddha) and the **contradicted** reason (badhita, refuted by stronger evidence such as perception).

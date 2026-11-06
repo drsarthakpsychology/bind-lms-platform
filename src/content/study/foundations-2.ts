@@ -49,6 +49,23 @@ The UGC NET syllabus follows a scheme built on the work of **Durganand Sinha** a
 | **1990s: paradigmatic concerns** | Debates about whether positivist methods fit Indian realities; a **disciplinary identity crisis** |
 | **2000s onward: Indian psychology in academia** | The Pondicherry Manifesto (2002), a 2008 handbook, new courses and, after 2020, Indian Knowledge Systems in syllabi |
 
+
+:::widget flow
+{
+  "title": "Phases of Indian academic psychology",
+  "layout": "chain",
+  "nodes": [
+    { "id": "p1", "label": "Pre-independence", "detail": "Western experimental psychology and psychoanalysis implanted in a few elite departments." },
+    { "id": "p2", "label": "Post-independence", "detail": "Expansion; mostly replication of Western studies with borrowed tests." },
+    { "id": "p3", "label": "1970s: social issues", "detail": "Problem-oriented research on poverty, deprivation, rural development, communal tension." },
+    { "id": "p4", "label": "1980s: indigenisation", "detail": "Concepts and methods from Indian culture: the nurturant-task leader, anasakti, socially oriented achievement." },
+    { "id": "p5", "label": "1990s: paradigm debates", "detail": "Doubts about positivism; a disciplinary identity crisis." },
+    { "id": "p6", "label": "2000s onward: Indian psychology", "detail": "The Pondicherry Manifesto, new courses, Indian Knowledge Systems after 2020." }
+  ],
+  "caption": "Press Play. The phases overlap in reality, but this is the order the NET syllabus uses."
+}
+:::
+
 ### The colonial encounter and its effects
 Indian psychologists have described several problems inherited from the colonial start:
 - **A borrowed discipline**: concepts, tests and theories arrived ready-made and were applied without asking whether they fit. Durganand Sinha called much early work "**Western psychology in Indian garb**".
@@ -243,6 +260,20 @@ Sinha saw the Indian story as moving from the first towards the second, and argu
 }
 :::
 
+
+:::widget flow
+{
+  "title": "Berry's route to real universals",
+  "layout": "chain",
+  "nodes": [
+    { "id": "ie", "label": "Imposed etic", "detail": "A concept from one culture is assumed to be universal and applied elsewhere." },
+    { "id": "em", "label": "Emic studies", "detail": "Researchers study how the concept is understood inside each culture, in local terms." },
+    { "id": "de", "label": "Derived etic", "detail": "Comparing several emic studies yields a concept that is truly comparable across cultures." }
+  ],
+  "caption": "Indigenous psychologies supply the emic studies. Today the derived etic is tested statistically with measurement invariance across groups."
+}
+:::
+
 ### The critics
 Indigenous and Indian psychology face serious criticisms, which a PG answer must include:
 - **Essentialism**: treating "Indian culture" as one fixed thing ignores huge variation of region, language, caste, class, gender, religion, urban and rural life, and change over time.
@@ -311,6 +342,21 @@ Every paradigm answers three linked questions:
 | **Co-operative inquiry** | Participatory reality | People are co-researchers in their own lives | Cycles of action and reflection with participants (John Heron and Peter Reason) |
 
 Guba and Lincoln's essays on these "**paradigmatic controversies**" are the standard reference: they argue that the paradigms differ on deep assumptions, not just techniques, but that there are also "confluences" (mixed methods) between them.
+
+
+:::widget flow
+{
+  "title": "How a paradigm hangs together",
+  "layout": "chain",
+  "nodes": [
+    { "id": "o", "label": "Ontology", "detail": "What is real? One objective world, or constructed realities?" },
+    { "id": "e", "label": "Epistemology", "detail": "How can a knower know it? Objectively and from outside, or from within and through dialogue?" },
+    { "id": "m", "label": "Methodology", "detail": "So how should we research it? Experiments and measurement, or interviews, discourse and participation?" },
+    { "id": "t", "label": "Methods and techniques", "detail": "Specific tools: a randomised trial, a grounded theory analysis, a co-operative inquiry cycle." }
+  ],
+  "caption": "Each answer constrains the next. Mismatches, such as positivist methods with a constructionist question, weaken a study."
+}
+:::
 
 ### The crisis in psychology
 The NET syllabus speaks of a **crisis in psychology due to strict adherence to the experimental-analytical paradigm (logical empiricism)**. In the early twentieth century the **Vienna Circle**'s **logical positivism** held that only statements that can be verified by observation or logic are meaningful. Psychology adopted **operationism** (Bridgman; S. S. Stevens): a concept means the operations used to measure it ("intelligence is what intelligence tests measure").
@@ -573,7 +619,312 @@ Who described the guru-chela model of therapy? :: J. S. Neki.
 What is the Pondicherry Manifesto? :: A 2002 statement calling for an Indian psychology rooted in Indian traditions.
 :::
 
-## 4.3 Module test [core]
+## 4.3 Q&A bank · Starting [starting]
+Try each question first, then open the answer.
+
+:::qa Why is psychology called a science, and what makes it different from common sense? [starting]
+### Short answer
+Psychology is a science because it tests its claims against **systematically collected, public evidence** using methods others can repeat. Common sense is often right, but it is untested, contradictory and shaped by bias.
+
+### Four features of a scientific approach
+1. **Empirical**: claims are checked against observation, not authority.
+2. **Systematic**: data are collected with clear procedures and measures.
+3. **Public and repeatable**: methods are reported so others can check them.
+4. **Self-correcting**: findings are revised when better evidence appears, as the replication crisis showed.
+
+### Common sense versus evidence
+| Common-sense belief | What research shows |
+|---|---|
+| "Opposites attract" | Similarity predicts attraction far more |
+| "Venting anger gets it out of your system" | Venting tends to keep anger going |
+| "Birds of a feather flock together" and "opposites attract" | Proverbs contradict each other; only data can decide |
+
+### Example
+"Children from joint families are more secure." It sounds plausible, but whether it is true, for whom and under what conditions is an empirical question.
+:::
+
+:::qa Distinguish between correlational and experimental research, with an Indian example. [starting]
+### Short answer
+Correlational research **measures** two variables and asks whether they go together; experimental research **manipulates** one variable and randomly assigns people, so it can test cause.
+
+### Comparison
+| Feature | Correlational | Experimental |
+|---|---|---|
+| Researcher's role | Measures | Manipulates the IV |
+| Assignment | None; people come as they are | Random assignment to groups |
+| Can it show cause? | No | Yes, if well controlled |
+| Main threats | Reverse causation, third variables | Artificiality, demand effects |
+| When used | When manipulation is impossible or unethical | When cause is the question |
+
+### Indian example
+- **Correlational**: in schools in Rajasthan, students who eat the midday meal score higher on attention tests. But poorer children may also miss school more, so other factors could explain it.
+- **Experimental**: randomly assign schools to receive breakfast or not, then compare attention scores. Now a difference can be attributed to the breakfast.
+:::
+
+:::qa What did Wundt contribute to psychology, and why is he often misunderstood? [starting]
+### Short answer
+Wundt founded the first formal psychology laboratory (Leipzig, 1879), trained the first generation of psychologists and made psychology an experimental science. He is often wrongly presented as a structuralist, because his student Titchener reshaped his ideas.
+
+### Contributions
+- The laboratory and the first psychology journal.
+- Reaction-time and psychophysical experiments with brief, controlled self-reports.
+- **Voluntarism**: the mind actively organises experience (apperception).
+- The **tridimensional theory of feeling**: pleasant-unpleasant, tension-relaxation, excitement-calm.
+- **Folk (cultural) psychology**: higher mental processes must be studied through language, myth and custom.
+
+### The misunderstanding
+| Popular view | More accurate view |
+|---|---|
+| Wundt founded structuralism | Titchener named structuralism; Wundt called his system voluntarism |
+| He only used introspection | He relied mostly on measured reactions, with limited self-report |
+| He ignored culture | He wrote ten volumes on cultural psychology |
+:::
+
+:::qa What do the three gunas and the five koshas tell us about the person? [starting]
+### Short answer
+The **gunas** describe the **qualities** that colour all mental life (clarity, activity and inertia, in shifting balance), while the **koshas** describe the **layers** of the person, from body to bliss. Together they give a holistic, change-oriented picture.
+
+### The gunas
+| Guna | In the mind | Increased by (traditional view) |
+|---|---|---|
+| Sattva | Clarity, calm, kindness | Fresh food, study, good company, meditation |
+| Rajas | Drive, restlessness, desire | Stimulants, competition, overwork |
+| Tamas | Dullness, confusion, inertia | Heavy food, oversleeping, neglect |
+
+### The koshas, outer to inner
+Annamaya (body), pranamaya (breath and energy), manomaya (mind and emotion), vijnanamaya (intellect and wisdom), anandamaya (bliss).
+
+### What they add to psychology
+- A person is not only a mind in a body but **layers that affect each other**: poor sleep (body) disturbs breath and mood.
+- Change is possible at every layer.
+- Yoga therapy and some Indian personality measures use these ideas, which can then be tested empirically.
+:::
+
+:::qa List the six darshanas and say what each contributes to psychology. [starting]
+### Short answer
+The six classical systems come in three pairs, and each pair offers something different: **logic and knowledge** (Nyaya-Vaisheshika), **mind and its discipline** (Samkhya-Yoga) and **duty and the self** (Mimamsa-Vedanta).
+
+### Table
+| System | Main idea | Psychological relevance |
+|---|---|---|
+| Nyaya | Valid means of knowledge (pramanas), logic | Theory of evidence and reasoning |
+| Vaisheshika | Categories of reality, atoms | Early classification of experience |
+| Samkhya | Purusha and prakriti; the gunas | A model of mind as part of nature, and personality qualities |
+| Yoga | Disciplining the mind | Attention, mental states, practice and detachment |
+| Mimamsa | Ritual, duty, interpretation of texts | Theories of meaning and action |
+| Vedanta | The self (atman) and Brahman | Models of self, consciousness and identity |
+
+Add the heterodox systems (Buddhism, Jainism and Charvaka) for a complete answer.
+:::
+
+## 4.4 Q&A bank · Beginner [beginner]
+
+:::qa Compare structuralism and functionalism on subject matter, method, aims and legacy. [beginner]
+### Short answer
+Structuralism asked **what consciousness is made of** and used trained introspection; functionalism asked **what consciousness is for** and used many methods to study adaptation. Functionalism proved more lasting because it opened psychology to applied work.
+
+### Comparison
+| Dimension | Structuralism | Functionalism |
+|---|---|---|
+| Key figures | Titchener (Cornell) | James, Dewey, Angell, Carr (Chicago) |
+| Subject matter | Elements of conscious experience | Mental acts and their adaptive use |
+| Method | Analytic introspection by trained observers | Introspection plus objective observation, tests, animal and child studies |
+| Influence | Darwin played no role | Strongly Darwinian |
+| Aim | Pure science of mind | Practical application as well as science |
+| Fate | Ended with Titchener in 1927 | Absorbed into mainstream American psychology |
+
+### Legacy
+- Structuralism: made psychology experimental; a clear target for later schools.
+- Functionalism: individual differences, testing, educational and applied psychology, and the bridge to behaviourism.
+:::
+
+:::qa Why did behaviourism give way to the cognitive revolution? [beginner]
+### Short answer
+Behaviourism made psychology objective and produced effective therapies, but it could not explain **language, problem solving, memory and expectation** without talking about inner processes. New ideas from computing, linguistics and information theory gave psychologists a scientific way to study the mind again.
+
+### What behaviourism could not explain
+1. **Language**: children produce sentences they have never heard; reinforcement alone cannot explain this.
+2. **Latent learning**: rats learn mazes without reward, implying inner maps.
+3. **Insight**: sudden solutions without trial and error.
+4. **Memory limits**: the capacity of short-term memory needed an inner system.
+
+### What made the shift possible
+| Source | Contribution |
+|---|---|
+| Computer science | The mind as an information processor; programs that solve problems |
+| Linguistics | Chomsky's generative grammar and his critique of Skinner's account of language |
+| Information theory | Measuring capacity and channels |
+| Neo-behaviourists | Tolman's intervening variables and cognitive maps |
+
+### Balanced conclusion
+Behaviourism did not vanish: its methods and therapies remain. Cognitive psychology kept its rigour while readmitting the mind.
+:::
+
+:::qa How does Patanjali's model of the mind compare with modern cognitive-behavioural ideas? [beginner]
+### Short answer
+Both see suffering as rooted in **how the mind works**, both describe recurring mental patterns that can be changed with practice, and both value attention. They differ in their final aims and in their view of the self.
+
+### Parallels
+| Patanjali | Modern parallel |
+|---|---|
+| Vrittis (fluctuations), including viparyaya (error) | Automatic thoughts and cognitive distortions |
+| Kleshas: raga (attachment) and dvesha (aversion) | Approach and avoidance; craving and avoidance cycles |
+| Abhyasa (steady practice) | Repeated practice and homework |
+| Vairagya (non-attachment) | Acceptance and defusion |
+| Five mental states, from scattered to one-pointed | Mind-wandering versus sustained attention |
+| Samskaras (deep impressions) | Schemas and habits |
+
+### Differences
+- **Aim**: CBT aims at symptom relief and functioning; yoga aims at liberation (kaivalya).
+- **Self**: Yoga posits a witnessing consciousness (purusha) separate from the mind; CBT makes no such claim.
+- **Method**: CBT tests thoughts against evidence; yoga stills them through practice.
+
+### Why it matters
+Mindfulness and acceptance therapies sit between the two, which helps explain their appeal in India.
+:::
+
+:::qa Explain the Nyaya theory of pramanas and its relevance to research methods. [beginner]
+### Short answer
+Nyaya holds that valid knowledge comes through four **pramanas**: perception, inference, comparison and testimony. These correspond closely to the sources of evidence a researcher uses.
+
+### The four pramanas
+1. **Pratyaksha (perception)**: from indeterminate (bare awareness) to determinate (recognised and named).
+2. **Anumana (inference)**: from a sign that has an invariable connection (vyapti) with what it shows, set out in a five-step syllogism for others.
+3. **Upamana (comparison)**: learning what a new term refers to through a described likeness.
+4. **Shabda (testimony)**: reliable words of an expert.
+
+### Mapping to research
+| Pramana | Research equivalent |
+|---|---|
+| Perception | Observation and measurement |
+| Inference | Drawing conclusions from data with clear rules; avoiding faulty reasons (hetvabhasa) |
+| Comparison | Analogy and model-building |
+| Testimony | Literature review and expert consensus, judged for reliability |
+
+### Example of a fallacy
+"This therapy works because many famous people use it" is an **inconclusive reason**: fame does not invariably go with effectiveness.
+:::
+
+:::qa Compare the Buddhist and Vedantic views of the self. [beginner]
+### Short answer
+Vedanta teaches an **unchanging true self (atman)**, ultimately one with Brahman, behind the changing mind; Buddhism teaches **no fixed self (anatta)**, only five changing aggregates. Both agree that ordinary identification with body and mind causes suffering.
+
+### Comparison
+| Point | Vedanta (especially Advaita) | Buddhism |
+|---|---|---|
+| The self | Atman: pure, unchanging consciousness | No permanent self; the person is five skandhas |
+| Cause of suffering | Avidya: mistaking the self for body and mind | Craving rooted in ignorance of impermanence and no-self |
+| Liberation | Realising atman is Brahman | Nirvana: ending craving |
+| Main method | Self-inquiry, discrimination, devotion, meditation | The Eightfold Path, samatha and vipassana |
+
+### Psychological relevance
+- Both encourage **observing thoughts without identifying with them**, the basis of decentring in mindfulness therapies.
+- The Buddhist model fits modern views of the self as a constructed process; the Vedantic model fits work on a witnessing awareness in long-term meditators.
+:::
+
+## 4.5 Q&A bank · Advanced [advanced]
+
+:::qa Critically evaluate the contribution of Girindrasekhar Bose to psychology. [advanced]
+### Short answer
+Bose was the first original psychoanalyst outside Europe: he developed his own **theory of the opposite wish**, engaged Freud as an equal, and built Indian institutions for clinical and academic psychology. His theory was less influential internationally than it deserved, partly because of colonial hierarchies of knowledge.
+
+### Contributions
+| Area | Contribution |
+|---|---|
+| Theory | Opposite wish: wishes come in pairs (to beat and be beaten); one is expressed, the other repressed |
+| Engagement | Long correspondence with Freud, disagreeing on the castration complex |
+| Institutions | Indian Psychoanalytical Society (1922); head of the Calcutta department; applied psychology wing; Lumbini Park Mental Hospital; the journal Samiksha |
+| Culture | Used Indian texts and examples; stressed the mother and male identification with femininity |
+
+### Critique
+- Like Freud's, the theory is difficult to test.
+- His clinical samples were small and mostly Bengali middle-class.
+- Yet he showed that psychoanalysis could be rethought from another culture, anticipating indigenous psychology.
+:::
+
+:::qa Discuss the phases of development of psychology in India and the "identity crisis" of the discipline. [advanced]
+### Short answer
+Indian psychology moved from **implantation** of Western ideas, through **expansion and replication**, to **problem-oriented** research, **indigenisation** and now **Indian psychology** in academia. The identity crisis is the felt gap between an imported, positivist discipline and Indian social realities and intellectual traditions.
+
+### Phases
+| Phase | Hallmark |
+|---|---|
+| Pre-independence | Calcutta, Mysore, Patna; experimental work and Bose's psychoanalysis |
+| Post-independence | Expansion; testing; replication of Western studies |
+| 1970s | Poverty, deprivation, rural development, population, communal tension |
+| 1980s | Indigenous concepts: nurturant-task leader, anasakti, socially oriented achievement |
+| 1990s | Paradigm debates; doubts about relevance |
+| 2000s onward | Pondicherry Manifesto, Indian psychology courses, Indian Knowledge Systems |
+
+### The identity crisis
+- **Borrowed tools** that did not fit, a sense of **irrelevance** to most Indians, and **dependence** on Western prestige.
+- Three responses: make psychology socially useful, build theory from Indian life, and draw on classical thought.
+- A risk now: replacing uncritical borrowing with uncritical revival. The way forward is rigorous, plural and socially relevant research.
+:::
+
+:::qa What is indigenous psychology, and how can it avoid becoming essentialist? [advanced]
+### Short answer
+Indigenous psychology builds psychological knowledge from the concepts, problems and practices of a people rather than importing it. It avoids essentialism by recognising **diversity within a culture**, testing its claims, and comparing across cultures.
+
+### Core ideas
+- Indigenisation **from without** (adapt imported tools) and **from within** (start from local concepts).
+- Emic, imposed etic and derived etic.
+- Examples: kapwa, amae, the nurturant-task leader, lajja.
+
+### Safeguards against essentialism
+| Risk | Safeguard |
+|---|---|
+| "Indians are collectivist" as a fixed fact | Sample across region, class, caste, gender, religion, urban and rural settings |
+| Relying only on Sanskrit texts | Include Buddhist, Jain, Islamic, Sikh, Dalit, Adivasi and folk sources |
+| Romanticising the past | Treat traditions as theories to test |
+| Isolation from global psychology | Cross-indigenous comparison; measurement invariance testing |
+| Political misuse | Transparent, peer-reviewed scholarship |
+
+### Conclusion
+Indigenous psychology is strongest when it is both culturally rooted and scientifically open.
+:::
+
+:::qa Compare positivism and social constructionism as paradigms for researching mental health stigma in India. [advanced]
+### Short answer
+A positivist study would **measure** stigma as a real attitude and test predictors; a constructionist study would analyse how stigma is **produced in language and interaction**. They answer different questions and can complement each other.
+
+### Comparison
+| Dimension | Positivism or post-positivism | Social constructionism |
+|---|---|---|
+| Ontology | Stigma is a real, measurable attitude | Stigma is constructed in talk, media and institutions |
+| Epistemology | Objective measurement by a separate researcher | Knowledge is co-constructed; the researcher is part of it |
+| Method | Standardised scales, surveys, experiments on contact | Discourse analysis of films, news, WhatsApp forwards and family talk |
+| Typical question | Does contact with people with lived experience reduce stigma scores? | How do Bollywood films build the figure of the "pagal"? |
+| Strength | Generalisable, testable interventions | Reveals meanings and power that scales miss |
+| Weakness | Can miss local meanings | Hard to generalise or evaluate interventions |
+
+### Integration
+A mixed-methods design could first map local meanings qualitatively, then build and test a culturally valid stigma scale and an intervention.
+:::
+
+:::qa How should a psychologist reconcile science and spirituality when working with clients in India? [advanced]
+### Short answer
+Treat science and spirituality as **different kinds of knowledge**: use evidence to guide treatment, and respect the client's spiritual worldview as a source of meaning, coping and community, while staying alert to harm.
+
+### A working framework
+1. **Assess**: ask about faith, practices and healers as part of the history.
+2. **Respect**: spiritual coping (prayer, satsang, dargah visits) can help; do not dismiss it.
+3. **Integrate where safe**: breathing, meditation or prayer can sit alongside therapy and medicine.
+4. **Protect**: challenge practices that cause harm, such as chaining, fasting a sick person or stopping essential medicine.
+5. **Collaborate**: partnerships such as clinics beside shrines show that care and faith can work together.
+
+### The Indian frame
+| Concept | Use |
+|---|---|
+| Apara vidya | Science: public, testable, cumulative |
+| Para vidya | Self-knowledge and spiritual insight |
+| Avidya and vidya | Know both, as the Isha Upanishad advises |
+
+### Boundary
+A psychologist offers evidence-based care and does not endorse or test every metaphysical claim; the aim is the client's wellbeing, not winning an argument.
+:::
+
+## 4.6 Module test [core]
 :::mcq
 Q: Which era defined psychology as the study of the soul?
 - *Ancient and medieval philosophy
