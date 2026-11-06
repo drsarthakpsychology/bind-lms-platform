@@ -49,6 +49,8 @@ export function BlitzGame({ bests }: { bests: Bests }) {
   const inflight = React.useRef<Promise<unknown> | null>(null);
   const finishing = React.useRef(false);
   const timers = React.useRef<number[]>([]);
+  /** Bumped each round, so a late reply from the last round is ignored. */
+  const gen = React.useRef(0);
 
   const later = React.useCallback((fn: () => void, ms: number) => {
     timers.current.push(window.setTimeout(fn, ms));
@@ -106,7 +108,12 @@ export function BlitzGame({ bests }: { bests: Bests }) {
   }, []);
 
   const start = React.useCallback(() => {
+    // Drop anything still scheduled from the last round.
+    timers.current.forEach((t) => window.clearTimeout(t));
+    timers.current = [];
+    gen.current += 1;
     finishing.current = false;
+    setBusy(false);
     token.current = null;
     setRun(emptyRun());
     setMisses([]);
@@ -135,7 +142,9 @@ export function BlitzGame({ bests }: { bests: Bests }) {
       if (phase !== "run" || !q || busy || reveal || !token.current) return;
       setBusy(true);
       const asked = q;
+      const mine = gen.current;
       const p = answerBlitz(token.current, asked.n, choice).then((res) => {
+        if (mine !== gen.current) return;
         setBusy(false);
         if (!res.ok) {
           if (res.over) void finish();
