@@ -42,7 +42,8 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       moduleId={m.id}
       moduleNum={m.num}
       moduleTitle={m.title}
-      section={{ id: s.id, num: s.num, title: s.title, part: s.part, tag: s.tag, isTest: s.isTest, minutes: sectionMinutes(s) }}
+      section={{ id: s.id, num: s.num, title: s.title, part: s.part, tag: s.tag, level: s.level, levelCheck: s.levelCheck, isTest: s.isTest, minutes: sectionMinutes(s) }}
+      levelChecks={Object.fromEntries(m.sections.filter((x) => x.levelCheck).map((x) => [x.levelCheck!, sectionHref(m, x)]))}
       toc={toc}
       prevHref={prev ? sectionHref(m, prev) : undefined}
       next={next}

@@ -4,7 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock, ListOrdered } from "lucide-react";
-import type { Card, Mcq } from "@/lib/study/types";
+import type { Card, Level, Mcq } from "@/lib/study/types";
+import { ViewToggle } from "@/components/learn/view-toggle";
 import { CardDeck, TestRunner } from "./interactive";
 import { addStudySeconds, emptyState, finishSection, istToday, studyKey, visitSection, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
@@ -120,11 +121,14 @@ export function SectionReader({
   mcq,
   checks = [],
   owner = "",
+  levelChecks = {},
 }: {
   moduleId: string;
   moduleNum: number;
   moduleTitle: string;
-  section: { id: string; num: string; title: string; part?: string; tag?: "core" | "extra"; isTest: boolean; minutes: number };
+  section: { id: string; num: string; title: string; part?: string; tag?: "core" | "extra"; level?: Level; levelCheck?: Level; isTest: boolean; minutes: number };
+  /** Where each level's check lives, for the level gate. */
+  levelChecks?: Partial<Record<Level, string>>;
   toc: TocItem[];
   prevHref?: string;
   next: { href: string; label: string };
@@ -160,6 +164,7 @@ export function SectionReader({
   const readCount = toc.filter((t) => !t.isTest && st.study.done[studyKey(moduleId, t.id)]).length;
   const readTotal = toc.filter((t) => !t.isTest).length;
   const atEnd = step >= chunks.length;
+  const locked = isLevelLocked(section.level, st.study.tests, moduleId);
   // Recall questions are not asked straight after reading: they wait for the
   // checkpoint, once the student has moved on (see lib/study/checkpoints.ts).
   void recall;
@@ -245,6 +250,7 @@ export function SectionReader({
             </span>
             {section.tag === "extra" ? <span className="rounded-full border-2 border-foreground px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-foreground">Extra · read once</span> : null}
             {section.tag === "core" ? <span className="rounded-full bg-primary px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-primary-foreground">Core · must know</span> : null}
+            {section.level ? <span className="rounded-full border-2 border-foreground bg-card px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-foreground">{LEVEL_NAME[section.level]}</span> : null}
             {done ? (
               <span className="inline-flex items-center gap-1 font-semibold text-foreground">
                 <Check className="size-4" aria-hidden /> Done
@@ -261,9 +267,26 @@ export function SectionReader({
               <span className="shrink-0 text-xs font-semibold tabular-nums text-muted-foreground">{atEnd ? "All parts read" : `Part ${step + 1} of ${chunks.length}`}</span>
             </div>
           ) : null}
+          <div className="mt-3"><ViewToggle /></div>
           {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} /> : null}
         </header>
 
+        {locked ? (
+          <LevelGate level={section.level!} checkHref={levelChecks[prevLevel(section.level!)!]} />
+        ) : section.levelCheck ? (
+          <div className="max-w-[68ch] space-y-6">
+            {chunks.map((c, k) => <div key={k}>{c.node}</div>)}
+            <TestRunner
+              items={mcq}
+              moduleId={`${moduleId}@${section.levelCheck}`}
+              label={`Level check · ${LEVEL_NAME[section.levelCheck]}`}
+              intro={["Score 80% or more to open the next level.", "One question at a time; answers and reasons at the end.", "You can retry as often as you like."]}
+            />
+            <Link href={next.href} className="flex h-12 items-center justify-center gap-2 rounded-md border-2 border-foreground bg-card font-semibold">
+              {next.label} <ArrowRight className="size-5" aria-hidden />
+            </Link>
+          </div>
+        ) : (
         <div className="max-w-[68ch] space-y-8">
           {shownParts.map((k) => (
             <div key={k} ref={(el) => { partRefs.current[k] = el; }} className={cn("scroll-mt-24", k > 0 && wide && !section.isTest && "border-t-2 border-foreground/10 pt-8", s.reveal)}>
@@ -308,9 +331,10 @@ export function SectionReader({
             </Link>
           ) : null}
         </div>
+        )}
 
         {/* Phone: Back and Next, fixed at the bottom while reading */}
-        {!wide && !section.isTest && !atEnd ? (
+        {!wide && !section.isTest && !section.levelCheck && !locked && !atEnd ? (
           <nav className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card px-4 pt-3 lg:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }} aria-label="Parts of this section">
             <div className="mx-auto flex max-w-xl items-center gap-2">
               <button type="button" onClick={() => go(step - 1)} disabled={step === 0} className="inline-flex h-12 items-center gap-1 rounded-xl border-2 border-foreground px-4 font-semibold disabled:opacity-30">
@@ -323,6 +347,36 @@ export function SectionReader({
           </nav>
         ) : null}
       </article>
+    </div>
+  );
+}
+
+const LEVEL_NAME: Record<Level, string> = { starting: "Starting", beginner: "Beginner", advanced: "Advanced" };
+
+function prevLevel(l: Level): Level | undefined {
+  return l === "advanced" ? "beginner" : l === "beginner" ? "starting" : undefined;
+}
+
+/** A level opens when the previous level's check is passed with 80% or more. */
+export function isLevelLocked(level: Level | undefined, tests: Record<string, { best: number; total: number }>, moduleId: string): boolean {
+  const p = level ? prevLevel(level) : undefined;
+  if (!p) return false;
+  const t = tests[`${moduleId}@${p}`];
+  return !t || t.best / Math.max(1, t.total) < 0.8;
+}
+
+function LevelGate({ level, checkHref }: { level: Level; checkHref?: string }) {
+  const p = prevLevel(level)!;
+  return (
+    <div className="max-w-[68ch] rounded-2xl border-2 border-foreground bg-card p-5 shadow-[var(--shadow-hard-sm)]">
+      <p className="text-xs font-semibold uppercase tracking-wide text-link">{LEVEL_NAME[level]} level · locked</p>
+      <p className="mt-1 text-xl font-bold">Pass the {LEVEL_NAME[p]} check to open this</p>
+      <p className="mt-2 text-[0.95rem] text-muted-foreground">Score 80% or more. Already know it? Take the check straight away to skip ahead.</p>
+      {checkHref ? (
+        <Link href={checkHref} className="mt-4 inline-flex h-12 items-center gap-2 rounded-md border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground">
+          Take the {LEVEL_NAME[p]} check <ArrowRight className="size-5" aria-hidden />
+        </Link>
+      ) : null}
     </div>
   );
 }

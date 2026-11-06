@@ -30,7 +30,38 @@ export type Block =
   | { t: "box"; kind: BoxKind; title?: Inline; blocks: Block[] }
   | { t: "recall"; items: Card[] }
   | { t: "mcq"; items: Mcq[] }
-  | { t: "viva"; items: Card[] };
+  | { t: "viva"; items: Card[] }
+  /** Shown only in one reading view (the Student / Clinician switch). */
+  | { t: "view"; view: "student" | "clinician"; blocks: Block[] }
+  /** An interactive piece (guess, decide, sort, build, moodline, worked, synapse). Data is JSON in the source. */
+  | { t: "widget"; kind: WidgetKind; data: WidgetData };
+
+/** Starting → Beginner → Advanced. Each level opens when the previous level check is passed. */
+export type Level = "starting" | "beginner" | "advanced";
+export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
+
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal";
+
+export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
+export type DecideData = {
+  scene: Inline;
+  ask: Inline;
+  choices: { label: Inline; verdict: "best" | "ok" | "harm"; outcome: Inline; why: Inline }[];
+};
+export type SortData = { prompt: Inline; buckets: Inline[]; items: { text: Inline; bucket: number; why?: Inline }[] };
+export type BuildData = {
+  vignette: Inline;
+  rule: Inline;
+  symptoms: { label: Inline; present: boolean; core?: boolean; why?: Inline }[];
+  need: number;
+  needCore: boolean;
+  verdict: Inline;
+};
+export type MoodlineData = { prompt: Inline; series: number[]; labels?: string[]; options: Inline[]; answer: number; why: Inline };
+export type WorkedData = { title: Inline; steps: { q: Inline; a: Inline }[]; yourTurn?: { q: Inline; a: Inline }[] };
+export type SynapseData = { drug: "ssri" | "snri" | "maoi" | "none"; caption: Inline };
+export type RevealData = { prompt: Inline; answer: Inline };
+export type WidgetData = GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */
@@ -40,6 +71,10 @@ export type Section = {
   title: string;
   /** core = expected in every exam; extra = depth for distinction answers. */
   tag?: "core" | "extra";
+  /** Level within the module (interactive modules). */
+  level?: Level;
+  /** This section is the check that opens the next level. */
+  levelCheck?: Level;
   /** The part of the module this section belongs to (e.g. "Part II · The MSE"). */
   part?: string;
   blocks: Block[];

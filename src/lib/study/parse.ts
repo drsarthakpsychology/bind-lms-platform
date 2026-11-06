@@ -1,4 +1,4 @@
-import type { Block, BoxKind, Card, ListItem, Mcq, Section } from "./types";
+import type { Block, BoxKind, Card, Level, ListItem, Mcq, Section, WidgetData, WidgetKind } from "./types";
 
 /**
  * A small Markdown dialect for course chapters, so content stays easy to write
@@ -19,6 +19,7 @@ import type { Block, BoxKind, Card, ListItem, Mcq, Section } from "./types";
  */
 
 const BOXES = new Set<BoxKind>(["define", "word", "trap", "mnemonic", "example", "sounds", "analogy", "note", "safety"]);
+const WIDGETS = new Set<WidgetKind>(["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal"]);
 
 export function slugNum(num: string): string {
   return num.replace(/\./g, "-").toLowerCase();
@@ -35,6 +36,8 @@ export function countWords(blocks: Block[]): number {
     else if (b.t === "box") n += countWords(b.blocks) + (b.title ? b.title.split(/\s+/).length : 0);
     else if (b.t === "recall" || b.t === "viva") b.items.forEach((c) => (w(c.q), w(c.a)));
     else if (b.t === "mcq") b.items.forEach((m) => (w(m.q), m.options.forEach(w), m.why && w(m.why)));
+    else if (b.t === "view") n += countWords(b.blocks);
+    else if (b.t === "widget") n += JSON.stringify(b.data).split(/\s+/).length * 0.6;
   }
   return n;
 }
@@ -155,7 +158,18 @@ export function parseBlocks(lines: string[]): Block[] {
       if (kind === "recall") blocks.push({ t: "recall", items: parseCards(body, "||") });
       else if (kind === "viva") blocks.push({ t: "viva", items: parseCards(body, "::") });
       else if (kind === "mcq") blocks.push({ t: "mcq", items: parseMcqs(body) });
-      else if (BOXES.has(kind as BoxKind)) blocks.push({ t: "box", kind: kind as BoxKind, title, blocks: parseBlocks(body) });
+      else if (kind === "student" || kind === "clinician") blocks.push({ t: "view", view: kind, blocks: parseBlocks(body) });
+      else if (kind === "widget") {
+        const wk = (title ?? "") as WidgetKind;
+        if (!WIDGETS.has(wk)) throw new Error(`Unknown widget :::widget ${title}`);
+        let data: WidgetData;
+        try {
+          data = JSON.parse(body.join("\n")) as WidgetData;
+        } catch (e) {
+          throw new Error(`Bad JSON in :::widget ${wk}: ${(e as Error).message}\n${body.join("\n").slice(0, 200)}`);
+        }
+        blocks.push({ t: "widget", kind: wk, data });
+      } else if (BOXES.has(kind as BoxKind)) blocks.push({ t: "box", kind: kind as BoxKind, title, blocks: parseBlocks(body) });
       else throw new Error(`Unknown block :::${kind}`);
       continue;
     }
@@ -202,7 +216,7 @@ export function parseModule(src: string): Section[] {
   const lines = src.replace(/\r/g, "").split("\n");
   const sections: Section[] = [];
   let part: string | undefined;
-  let cur: { num: string; title: string; tag?: "core" | "extra"; part?: string; lines: string[] } | null = null;
+  let cur: { num: string; title: string; tag?: "core" | "extra"; level?: Level; part?: string; lines: string[] } | null = null;
   const close = () => {
     if (!cur) return;
     const blocks = parseBlocks(cur.lines);
@@ -211,6 +225,8 @@ export function parseModule(src: string): Section[] {
       num: cur.num,
       title: cur.title,
       tag: cur.tag,
+      level: cur.level,
+      levelCheck: levelCheckOf(cur.title, blocks),
       part: cur.part,
       blocks,
       words: countWords(blocks),
@@ -226,10 +242,13 @@ export function parseModule(src: string): Section[] {
       part = line.slice(2).trim();
       continue;
     }
-    const h = line.match(/^## (\S+)\s+(.*?)\s*(?:\[(core|extra)\])?\s*$/);
+    const h = line.match(/^## (\S+)\s+(.*?)\s*((?:\[(?:core|extra|starting|beginner|advanced)\]\s*)*)$/);
     if (h) {
       close();
-      cur = { num: h[1], title: h[2], tag: h[3] as "core" | "extra" | undefined, part, lines: [] };
+      const tags = [...h[3].matchAll(/\[(\w+)\]/g)].map((t) => t[1]);
+      const tag = tags.find((t) => t === "core" || t === "extra") as "core" | "extra" | undefined;
+      const level = tags.find((t) => t === "starting" || t === "beginner" || t === "advanced") as Level | undefined;
+      cur = { num: h[1], title: h[2], tag, level, part, lines: [] };
       continue;
     }
     if (cur) cur.lines.push(line);
@@ -238,8 +257,16 @@ export function parseModule(src: string): Section[] {
   return sections;
 }
 
+/** "Level check · Starting" (with MCQs) is the gate that opens the next level. */
+function levelCheckOf(title: string, blocks: Block[]): Level | undefined {
+  const m = title.match(/^level check\s*[·:-]\s*(starting|beginner|advanced)/i);
+  return m && blocks.some((b) => b.t === "mcq") ? (m[1].toLowerCase() as Level) : undefined;
+}
+
 /** Study minutes for a section: careful reading (about 110 words a minute) plus recall time. */
 export function sectionMinutes(s: Section): number {
-  const recall = s.blocks.reduce((a, b) => a + (b.t === "recall" ? b.items.length * 1.5 : b.t === "mcq" ? b.items.length * 1 : b.t === "viva" ? b.items.length * 0.5 : 0), 0);
+  const widgetMin = (b: Block): number =>
+    b.t === "widget" ? (b.kind === "decide" ? 3 : b.kind === "worked" ? 4 : b.kind === "build" || b.kind === "sort" ? 3 : 2) : b.t === "view" || b.t === "box" ? b.blocks.reduce((a, x) => a + widgetMin(x), 0) : 0;
+  const recall = s.blocks.reduce((a, b) => a + (b.t === "recall" ? b.items.length * 1.5 : b.t === "mcq" ? b.items.length * 1 : b.t === "viva" ? b.items.length * 0.5 : 0) + widgetMin(b), 0);
   return Math.max(3, Math.round(s.words / 110 + recall));
 }

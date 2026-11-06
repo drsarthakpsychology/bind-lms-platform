@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Block, BoxKind, ListItem } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich, splitTag } from "./rich";
+import { ViewOnly, Widget } from "./widgets";
 
 /** How each box looks and what its label says. Palette: blue, lime, ink, white; red only for traps and safety. */
 const BOX: Record<BoxKind, { label: string; cls: string; labelCls: string }> = {
@@ -193,6 +194,14 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
               </aside>
             );
           }
+          case "view":
+            return (
+              <ViewOnly key={i} view={b.view}>
+                <Blocks blocks={b.blocks} />
+              </ViewOnly>
+            );
+          case "widget":
+            return <Widget key={i} kind={b.kind} data={b.data} />;
           // Self-tests are taken out of the reading (see lib/study/chunk.ts).
           case "recall":
           case "viva":

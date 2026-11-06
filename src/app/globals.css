@@ -605,6 +605,25 @@ video::-webkit-media-controls {
    BASE
    ============================================================================= */
 
+/* --- Study widgets: small, purposeful motion (transform/opacity only) --- */
+@keyframes vibha-pop { from { opacity: 0; transform: translateY(4px) scale(0.98); } to { opacity: 1; transform: none; } }
+.vibha-pop { animation: vibha-pop var(--duration-base) var(--ease-out-expo) both; }
+@keyframes vibha-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.vibha-draw { stroke-dasharray: 1; animation: vibha-draw 1.4s var(--ease-out-expo) both; }
+@keyframes vibha-float-dot {
+  0% { transform: translate(var(--dx), 44px); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(calc(var(--dx) + 8px), 128px); opacity: 0.9; }
+}
+.vibha-float-dot { animation: vibha-float-dot 2.6s var(--ease-snappy) var(--dl, 0s) infinite; }
+@keyframes vibha-dash { to { stroke-dashoffset: -16; } }
+.vibha-dash { animation: vibha-dash 0.9s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .vibha-pop, .vibha-draw { animation: none; stroke-dasharray: none; }
+  .vibha-float-dot { animation: none; transform: translate(var(--dx), 96px); }
+  .vibha-dash { animation: none; }
+}
+
 /* --- Colour-blind mode (Settings → "Colour-blind friendly") ---
    Same world, same layout. Only the meaning colours change: right/success
    turns blue, wrong/alert turns orange (the Okabe–Ito pair that red-green
