@@ -28,6 +28,14 @@ The receptor is a doorbell. Ringing it once (the transmitter) sets off a chain i
 - **Downregulation**: with constant stimulation, cells reduce the number of receptors or uncouple them (desensitisation). This underlies **tolerance**.
 - **Upregulation**: with constant blockade, cells add receptors. Long-term D2 blockade upregulates D2 receptors, one theory of **tardive dyskinesia** and of **supersensitivity psychosis** after stopping antipsychotics.
 
+
+:::widget receptor
+{
+ "receptor": "D2",
+ "caption": "Compare haloperidol (antagonist) with aripiprazole (partial agonist) at a D2 receptor. When dopamine is high, the partial agonist lowers the signal; when dopamine is low, it lifts it a little. This is why aripiprazole treats psychosis with less stiffness and less prolactin rise."
+}
+:::
+
 ### Autoreceptors explain the delay
 Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an SSRI first raises serotonin, these autoreceptors sense it and **slow the neuron's firing**, cancelling much of the gain. Over a few weeks the autoreceptors desensitise, the neurons fire normally again, and serotonin release at the far ends finally rises. Downstream changes in BDNF and connections follow.
 
@@ -88,6 +96,28 @@ Q: Zuranolone and brexanolone act mainly as:
 
 ## 3.2 Circuits of symptoms [core][advanced]
 Modern psychiatry increasingly thinks in **circuits**, groups of brain areas that work together, rather than single chemicals or single regions. A symptom is what a circuit produces when it runs wrongly.
+
+
+:::widget brainmap
+{
+ "title": "Circuits of symptoms",
+ "focus": [
+  "amygdala",
+  "prefrontal",
+  "basal-ganglia",
+  "thalamus",
+  "hippocampus"
+ ],
+ "notes": {
+  "amygdala": "Fear and salience: overactive in anxiety and PTSD.",
+  "prefrontal": "Orbitofrontal and anterior cingulate cortex in the OCD loop; ventromedial cortex for safety learning; medial cortex in the default mode network.",
+  "basal-ganglia": "The nucleus accumbens for reward and craving; the caudate in OCD checking loops; the dorsal striatum for habits.",
+  "thalamus": "Relays the cortico-striato-thalamo-cortical loop back to the cortex.",
+  "hippocampus": "Context for fear memories."
+ },
+ "caption": "Tap each region and say which circuit, and which symptom, it belongs to."
+}
+:::
 
 ### Five circuits worth knowing
 | Circuit | Key parts | When it misfires |

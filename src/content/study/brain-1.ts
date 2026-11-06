@@ -86,49 +86,14 @@ At rest, the inside of a neuron is slightly negative compared with the outside, 
 
 When enough excitatory signals arrive, the voltage rises to a **threshold** (about minus 55 millivolts). Then sodium channels snap open, sodium rushes in, and the inside briefly turns positive. This spike is the **action potential**. Potassium then flows out and the cell resets. For a brief moment afterwards (the **refractory period**) it cannot fire again.
 
-
-:::widget flow
+:::widget neuron
 {
- "title": "An action potential, step by step",
- "layout": "chain",
- "nodes": [
-  {
-   "id": "a",
-   "label": "Resting",
-   "detail": "Inside about minus 70 mV. Pumps push sodium out and pull potassium in; the cell is ready."
-  },
-  {
-   "id": "b",
-   "label": "Inputs add up",
-   "detail": "Excitatory signals at the dendrites nudge the voltage up; inhibitory ones pull it down. The cell body sums them."
-  },
-  {
-   "id": "c",
-   "label": "Threshold",
-   "detail": "At about minus 55 mV, voltage-gated sodium channels at the start of the axon snap open."
-  },
-  {
-   "id": "d",
-   "label": "Sodium rushes in",
-   "detail": "The inside briefly turns positive (around plus 30 mV): the spike."
-  },
-  {
-   "id": "e",
-   "label": "Potassium flows out",
-   "detail": "Sodium channels close, potassium channels open, and the voltage falls back."
-  },
-  {
-   "id": "f",
-   "label": "Refractory period",
-   "detail": "For a moment the cell cannot fire again, so the signal travels one way only, down the axon."
-  }
- ],
- "edgeLabels": {
-  "c>d": "all or none"
- },
- "caption": "Press Play to step through one spike. Then ask: where would a local anaesthetic act? (Answer: it blocks the sodium channels at step 4.)"
+ "title": "Fire a neuron yourself",
+ "myelinated": false,
+ "caption": "Slide the input up slowly. Below threshold nothing travels; at threshold you get a full spike every time, never a half spike. Push harder and the spikes come more often. Then switch myelin on and watch the signal jump from node to node and arrive sooner."
 }
 :::
+
 
 :::define All-or-none
 An action potential either happens fully or not at all. A stronger stimulus does not make a bigger spike; it makes the neuron fire **more often**.
@@ -645,6 +610,14 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
 }
 :::
 
+
+:::widget pathways
+{
+ "system": "dopamine",
+ "caption": "Switch on a D2 blocker and watch all four roads change at once: fewer delusions (mesolimbic), more apathy (mesocortical), stiffness (nigrostriatal) and raised prolactin (tuberoinfundibular). Then add serotonin 2A block, as with second-generation drugs, and see which side effects ease."
+}
+:::
+
 ### Extrapyramidal side effects in time order
 - **Acute dystonia**: hours to days. Painful muscle spasms of the neck, eyes (oculogyric crisis), tongue or jaw.
 - **Parkinsonism**: days to weeks. Stiffness, tremor, slow movement, mask-like face.
@@ -684,6 +657,28 @@ Q: A man on an antipsychotic paces the ward, says he "can't stay in his skin" an
 
 ## 2.3 The lobes in the clinic: frontal syndromes and language [core][beginner]
 When you meet a patient whose personality has changed, whose speech is odd or who gets lost, a rough idea of **where** the problem is helps you decide **who** needs to see them.
+
+
+:::widget brainmap
+{
+ "title": "Three parts of the frontal lobe, three syndromes",
+ "focus": [
+  "prefrontal",
+  "frontal",
+  "motor",
+  "basal-ganglia",
+  "thalamus"
+ ],
+ "notes": {
+  "prefrontal": "Dorsolateral prefrontal cortex: planning, working memory, flexible thinking. Underside (orbitofrontal): social judgement and impulse control. Inner surface: drive and initiation.",
+  "frontal": "The whole frontal lobe links to deep structures in loops, so a lesion anywhere on the loop can look 'frontal'.",
+  "motor": "Primary motor cortex: weakness of the opposite side if damaged.",
+  "basal-ganglia": "Part of each frontal loop; caudate damage in Huntington's disease gives frontal-type changes.",
+  "thalamus": "Closes the loop back to the cortex; thalamic strokes can cause apathy and memory problems."
+ },
+ "caption": "Tap each area and link it to one bedside sign: perseveration, disinhibition or apathy."
+}
+:::
 
 ### Three frontal syndromes
 | Syndrome | Area | What you see | A quick bedside test |
@@ -882,6 +877,26 @@ In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lo
 }
 :::
 
+
+:::widget brainmap
+{
+ "title": "The memory circuit",
+ "focus": [
+  "hippocampus",
+  "thalamus",
+  "temporal",
+  "prefrontal"
+ ],
+ "notes": {
+  "hippocampus": "Forms new explicit memories. Removed on both sides in Henry Molaison; damaged early in Alzheimer's disease.",
+  "thalamus": "The medial thalamus (with the mammillary bodies just below it) is damaged in Korsakoff syndrome.",
+  "temporal": "Stores facts and meanings (semantic memory), especially at the front of the lobe.",
+  "prefrontal": "Working memory and strategies for learning and recall; frontal problems cause disorganised remembering."
+ },
+ "caption": "Damage at different points of the same circuit gives different memory problems. Tap the thalamus and connect it to thiamine deficiency."
+}
+:::
+
 :::define Korsakoff syndrome
 A lasting memory disorder after thiamine deficiency (usually with alcohol): severe anterograde amnesia, some retrograde amnesia, and **confabulation** (filling memory gaps with made-up stories the person believes), with relatively preserved other thinking. Damage to the mammillary bodies and the thalamus.
 :::
@@ -1048,6 +1063,14 @@ Two questions describe every medicine:
 - **Pharmacodynamics**: what the medicine does to the body (which receptor, what effect).
 - **Pharmacokinetics**: what the body does to the medicine (absorption, distribution, metabolism, excretion).
 
+
+:::widget receptor
+{
+ "receptor": "opioid",
+ "caption": "Try each ligand at the same receptor. Morphine (full agonist) drives the signal to the top; buprenorphine (partial agonist) stops part-way and blocks morphine from doing more; naloxone (antagonist) sits in the lock with no signal; an inverse agonist pushes the background signal below zero."
+}
+:::
+
 ### What a medicine does at a receptor
 | Term | What it does | Example |
 |---|---|---|
@@ -1076,6 +1099,25 @@ Two questions describe every medicine:
 - **Distribution**: most psychiatric medicines are fat-soluble and cross into the brain; many bind to blood proteins.
 - **Metabolism**: mainly in the liver, by a family of enzymes called **cytochrome P450 (CYP)**.
 - **Excretion**: mostly by the kidneys. **Lithium** is not metabolised at all; it leaves only through the kidneys, so dehydration and kidney problems push levels up.
+
+
+:::widget journey
+{
+ "drug": "sertraline",
+ "target": "serotonin transporters on serotonin neurons",
+ "routes": [
+  "oral"
+ ],
+ "notes": {
+  "gut": "Absorbed slowly; taking it with food makes little difference.",
+  "liver": "Some is broken down on the first pass through the liver, mainly by CYP enzymes including CYP2C19 and CYP3A4.",
+  "blood": "Most of it travels bound to blood proteins; only the free part acts.",
+  "brain": "Fat-soluble, so it crosses the blood-brain barrier and blocks the serotonin recycling pump.",
+  "elimination": "Half-life about a day, so steady state takes around four to five days of regular doses."
+ },
+ "caption": "Follow one tablet from mouth to brain to exit. Ask at each stop: what could change the amount reaching the brain here? (Food, liver enzymes, other medicines, protein binding, kidney or liver disease.)"
+}
+:::
 
 ### Half-life and steady state
 The **half-life** is the time for the blood level to fall by half. It decides how often to give a medicine and how long it lingers.
@@ -1168,6 +1210,24 @@ Glands release **hormones** into the blood. Most are controlled from the brain t
 | **Pineal** | Melatonin | Signals night | Sleep timing |
 | **Gonads** | Testosterone, oestrogen, progesterone | Sexual development and drive | Mood changes around periods, pregnancy, menopause |
 
+
+:::widget brainmap
+{
+ "title": "Where drives are controlled",
+ "focus": [
+  "hypothalamus",
+  "brainstem",
+  "amygdala"
+ ],
+ "notes": {
+  "hypothalamus": "Arcuate nucleus balances hunger and fullness signals; other nuclei control thirst, temperature, sleep and sexual behaviour, and the pituitary.",
+  "brainstem": "Receives gut and vagus nerve signals about stretch and nutrients.",
+  "amygdala": "Adds emotional value to food and sex cues."
+ },
+ "caption": "The hypothalamus is small but runs the body's basic drives. Tap it and list four drives it controls."
+}
+:::
+
 ### Hunger: what tells us to eat and to stop
 Older textbooks describe two "centres": damage to the **lateral hypothalamus** makes animals stop eating, and damage to the **ventromedial hypothalamus** makes them overeat. The modern picture is a balance of signals arriving at the **arcuate nucleus** of the hypothalamus:
 - **Hunger signals**: **ghrelin** from the empty stomach (short-term), low blood sugar, and hunger neurons using neuropeptide Y.
@@ -1256,6 +1316,26 @@ Q: Which stage is NOT part of Masters and Johnson's original response cycle?
 :::
 
 ## 2.8 Two hemispheres, and how we study genes and behaviour [core][beginner]
+
+:::widget brainmap
+{
+ "title": "The two hemispheres and their bridge",
+ "focus": [
+  "corpus-callosum",
+  "broca",
+  "wernicke",
+  "occipital"
+ ],
+ "notes": {
+  "corpus-callosum": "About 200 million fibres joining the hemispheres. Cut in split-brain surgery for severe epilepsy.",
+  "broca": "Speech production, usually on the left, which is why a split-brain patient can name only what the left hemisphere sees.",
+  "wernicke": "Speech understanding, usually left.",
+  "occipital": "Each occipital lobe sees the opposite half of the visual field."
+ },
+ "caption": "Trace a word flashed to the left visual field: right occipital lobe, then no route across a cut corpus callosum to the left-hemisphere speech areas."
+}
+:::
+
 ### The split brain
 The two cerebral hemispheres are joined by the **corpus callosum**, a thick band of about 200 million nerve fibres. In a few people with severe epilepsy, surgeons cut it to stop seizures spreading (a **corpus callosotomy**). **Roger Sperry** and **Michael Gazzaniga** studied these "split-brain" patients.
 
