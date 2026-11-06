@@ -21,6 +21,8 @@ export type Student = {
   fullName: string;
   /** Alias if set, else first name and initial (platform boards). */
   publicName: string;
+  /** First name and initial. */
+  shortName: string;
   alias: string | null;
   title: string | null;
   look: string | null;
@@ -49,6 +51,7 @@ export async function loadStudents(admin: Admin = createAdminClient()): Promise<
         id: p.id as string,
         fullName: name?.trim() || short,
         publicName: alias ?? short,
+        shortName: short,
         alias,
         title: typeof p.title === "string" && p.title ? p.title : null,
         look: typeof p.look === "string" && p.look ? p.look : null,

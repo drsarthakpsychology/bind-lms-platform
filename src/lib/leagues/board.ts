@@ -17,7 +17,7 @@ import { daysLeftInWeek, leagueWeek, monthLabel, monthOf, nextMonth } from "./we
  * the student's own private numbers leave the server (no ids, no emails).
  */
 
-export type BoardEntry = { key: string; rank: number; name: string; title: string | null; look: string | null; points: number; me: boolean };
+export type BoardEntry = { key: string; rank: number; name: string; title: string | null; look: string | null; points: number; me: boolean; gapBefore?: boolean };
 
 export type MyLeague = {
   week: string;
@@ -31,7 +31,7 @@ export type MyLeague = {
   percentile: { line: string; value: number; topPct: number };
   war: { month: string; entries: (WarEntry & { mine: boolean })[] };
   lastWeek: Closed | null;
-  me: { points: number; alias: string | null; publicName: string; title: string | null; look: string | null };
+  me: { points: number; alias: string | null; publicName: string; shortName: string; title: string | null; look: string | null };
 };
 
 function entry(s: Student | undefined, rank: number, points: number, me: boolean, real: boolean, key: string): BoardEntry {
@@ -42,7 +42,8 @@ function entry(s: Student | undefined, rank: number, points: number, me: boolean
 function windowed(ids: readonly string[], pts: ReadonlyMap<string, number>, me: string, by: ReadonlyMap<string, Student>, real: boolean, prefix: string) {
   const ranked = rankGroup(ids.map((id) => ({ userId: id, tier: 1 as Tier, points: pts.get(id) ?? 0 })));
   const idx = ranked.findIndex((r) => r.userId === me);
-  const entries = boardWindow(ranked.length, idx, 10).map((k) => entry(by.get(ranked[k].userId), ranked[k].rank, ranked[k].points, k === idx, real, `${prefix}${k}`));
+  const keep = boardWindow(ranked.length, idx, 10);
+  const entries = keep.map((k, j) => ({ ...entry(by.get(ranked[k].userId), ranked[k].rank, ranked[k].points, k === idx, real, `${prefix}${k}`), gapBefore: j > 0 && k - keep[j - 1] > 1 }));
   return { entries, myRank: idx >= 0 ? ranked[idx].rank : null, total: ranked.length };
 }
 
@@ -137,6 +138,6 @@ export const loadMyLeague = cache(async (userId: string, at?: string): Promise<M
     percentile: { line: percentileLine(pct, delta), value: pct.percentile, topPct: pct.topPct },
     war: { month: monthLabel(month), entries: war },
     lastWeek: groups.closed.get(userId) ?? null,
-    me: { points: wp.get(userId) ?? 0, alias: me?.alias ?? null, publicName: me?.publicName ?? "You", title: me?.title ?? null, look: me?.look ?? null },
+    me: { points: wp.get(userId) ?? 0, alias: me?.alias ?? null, publicName: me?.publicName ?? "You", shortName: me?.shortName ?? "your first name", title: me?.title ?? null, look: me?.look ?? null },
   };
 });

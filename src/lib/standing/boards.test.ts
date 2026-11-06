@@ -1,13 +1,17 @@
 import { describe, expect, it } from "vitest";
 import { BOARDS, boardWindow, OLD_OVERALL_HREF, sameGroup, scopeLine } from "./boards";
 
-describe("the two leaderboards", () => {
+describe("the leaderboards", () => {
   it("have different names, homes and periods", () => {
     expect(BOARDS.quiz.label).toBe("Quiz leaderboard");
     expect(BOARDS.overall.label).toBe("Overall leaderboard");
     expect(BOARDS.quiz.href.startsWith("/games/")).toBe(true);
     expect(BOARDS.overall.href).not.toBe(OLD_OVERALL_HREF);
     expect(BOARDS.quiz.period).not.toBe(BOARDS.overall.period);
+  });
+  it("puts the weekly league at /leaderboard", () => {
+    expect(BOARDS.league.href).toBe("/leaderboard");
+    expect(new Set(Object.values(BOARDS).map((b) => b.href)).size).toBe(Object.keys(BOARDS).length);
   });
 });
 
