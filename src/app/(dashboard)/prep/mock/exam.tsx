@@ -87,7 +87,7 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
 
   React.useEffect(() => {
     if (phase !== "exam" && phase !== "confirm") return;
-    const timer = window.setInterval(() => {
+    const timer = setInterval(() => {
       const t = Date.now() + offset.current;
       setNow(t);
       // Auto-submit once at time-up; if that fails, the student can press Try again.
@@ -96,7 +96,7 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
         submitRef.current(true);
       }
     }, 1000);
-    return () => window.clearInterval(timer);
+    return () => clearInterval(timer);
   }, [phase, paper]);
 
   // Leaving mid-exam asks first (the browser shows its own message).
