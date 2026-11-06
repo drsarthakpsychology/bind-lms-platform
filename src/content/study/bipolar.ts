@@ -1,5 +1,6 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
+import { qaBank } from "./bipolar-qa";
 
 export const meta: ModuleMeta = {
   id: "bipolar",
@@ -35,6 +36,10 @@ Most people know that mood can drop too low. Fewer know that it can also rise **
 
 A high is not simply being happy. When you are happy after good news, you still sleep, you still listen to others, and you can calm down. In a manic high, the brain's accelerator is stuck. The person needs little sleep but does not feel tired, talks fast, has endless ideas, feels unusually important, and does risky things they would never normally do.
 
+:::widget layers
+{"title": "The mood scale, from top to bottom", "shape": "stack", "layers": [{"label": "Mania", "detail": "Very high or irritable for days, little sleep without tiredness, racing ideas, risky actions, sometimes false beliefs. Life is seriously disrupted."}, {"label": "Hypomania", "detail": "A milder, shorter high. Others notice the change, but life carries on and there are no false beliefs."}, {"label": "Usual mood", "detail": "The person's own normal: up with good news, down with bad, and back again."}, {"label": "Low patch", "detail": "Ordinary sadness or stress that passes."}, {"label": "Depression", "detail": "A long, wide, deep low that changes sleep, energy and thinking and stops the person living their life."}], "caption": "Tap each band. Bipolar disorder means episodes at the top as well as the bottom of this scale, with usual mood in between for many people."}
+:::
+
 ### "Mood swings" in daily talk
 People say "she's so bipolar" about someone who changes mood quickly. That is not what the illness is. In bipolar disorder:
 - An **episode** lasts days to months, not minutes or hours.
@@ -68,6 +73,10 @@ Q: Anjali's mood changes several times a day depending on texts from her friends
 ## 0.2 What mania looks like from the outside [core][starting]
 :::example Ravi's week
 Ravi, 32, a shop owner in Indore, is usually quiet. One week his wife notices he sleeps only two or three hours but is up early, cheerful and full of plans. He talks so fast that customers cannot keep up. He announces that he will open ten new shops and "become the richest man in Madhya Pradesh". He buys a car on loan, gives expensive gifts to relatives, and calls friends at 2 a.m. When his brother questions him, he shouts. By the end of the week he says God has chosen him for a special mission. He insists he has never felt better.
+:::
+
+:::widget flow
+{"title": "How Ravi's high unfolded", "layout": "chain", "nodes": [{"id": "a", "label": "Less sleep", "detail": "Two or three hours a night, but up early and not tired. Often the very first sign."}, {"id": "b", "label": "More energy and ideas", "detail": "Fast talk, endless plans, calls at 2 a.m."}, {"id": "c", "label": "Big self-image", "detail": "'Ten new shops', 'the richest man in Madhya Pradesh'."}, {"id": "d", "label": "Risky actions", "detail": "A car on loan, expensive gifts, quarrels when questioned."}, {"id": "e", "label": "Loss of touch with reality", "detail": "A fixed false belief: chosen by God for a mission."}, {"id": "f", "label": "The crash", "detail": "Often a slide into depression afterwards, with shame about what happened."}], "caption": "Press Play. Acting at the first box, when sleep drops, prevents the most harm."}
 :::
 
 Notice what makes this an illness:
@@ -119,6 +128,10 @@ So every clinician who sees a depressed person asks: **"Have you ever had the op
 {"prompt": "Why might a person with bipolar II disorder be treated for 'recurrent depression' for years before anyone notices?", "answer": "Their highs are milder (hypomania). Hypomania can feel like being productive, confident and sociable, so they never mention it, and it rarely causes enough trouble to be brought to a doctor. Unless someone asks specifically, and asks the family, only the depressions are seen."}
 :::
 
+:::widget flow
+{"title": "Why every depressed person is asked about highs", "layout": "tree", "nodes": [{"id": "r", "label": "A person comes in depressed", "detail": "They usually come when low, because highs feel good or go unnoticed."}, {"id": "q", "parent": "r", "label": "Ever a time of unusual energy, little sleep and big plans?", "detail": "Ask the person and the family. Families often remember more."}, {"id": "y", "parent": "q", "label": "Yes", "detail": "Think bipolar depression. Different medicines are used; an antidepressant alone can tip the person into a high."}, {"id": "n", "parent": "q", "label": "No, and the family agrees", "detail": "Treat as depression, and keep asking at later visits, because a first high can come later."}], "caption": "One question changes the whole plan."}
+:::
+
 ### Two kinds of high
 - **Mania**: severe. It lasts longer, or needs hospital care, and it seriously disrupts life. It may include delusions.
 - **Hypomania**: milder and shorter. Others notice the change, but life is not seriously disrupted, and there are no delusions.
@@ -146,6 +159,10 @@ Bipolar disorder affects about 1 in 100 people, men and women equally (bipolar I
 ### A little history
 In 1949 the Australian psychiatrist John Cade reported that **lithium**, a simple salt, calmed mania. It became one of the most important discoveries in psychiatry and is still a first-choice treatment today.
 
+:::widget flow
+{"title": "The sleep loop in mania", "layout": "cycle", "nodes": [{"id": "a", "label": "Less sleep", "detail": "A night shift, exam season, a wedding, a newborn baby."}, {"id": "b", "label": "Mood and energy rise", "detail": "In someone with bipolar disorder, lost sleep can push mood upwards."}, {"id": "c", "label": "Feels no need to sleep", "detail": "Ideas race and rest seems a waste of time."}, {"id": "d", "label": "Even less sleep", "detail": "So the high climbs further."}], "caption": "Protecting sleep is one of the simplest ways to break this loop early."}
+:::
+
 ### What keeps people well
 - Taking medicines regularly, even when well.
 - **Regular sleep** and daily routine: sleep loss is a major trigger.
@@ -159,6 +176,10 @@ In 1949 the Australian psychiatrist John Cade reported that **lithium**, a simpl
 
 :::widget decide
 {"scene": "Your hostel-mate Meghna has hardly slept for four nights. She is cleaning the room at 3 a.m., talking very fast about a startup that will 'change India', and has ordered things worth ₹40,000 online. She laughs off your worry: 'I've never felt better!'", "ask": "What do you do?", "choices": [{"label": "Join in the excitement; she seems happy, so it must be fine", "verdict": "harm", "outcome": "By the weekend she has maxed out her card, quarrelled with the warden and been brought to emergency by police.", "why": "No sleep for days, racing speech, grandiose plans and heavy spending are warning signs of mania, not happiness."}, {"label": "Stay calm and kind, avoid arguing about her plans, and tell the hostel warden or her family today so she can see a doctor quickly", "verdict": "best", "outcome": "Her parents come the next day and take her to a psychiatrist, who starts treatment early.", "why": "People in mania often lack insight. Calmly involving responsible adults early prevents harm."}, {"label": "Lecture her loudly that she is behaving like a mad person", "verdict": "harm", "outcome": "She becomes angry and locks herself in the room.", "why": "Arguing and labelling provoke irritability and close communication."}]}
+:::
+
+:::widget layers
+{"title": "What keeps people well", "shape": "pyramid", "layers": [{"label": "Acting on early warning signs", "detail": "Knowing one's own first signs and having an agreed plan with family and clinic."}, {"label": "Regular medicines", "detail": "Taken even when well; stopping suddenly often brings relapse."}, {"label": "Avoiding alcohol and drugs", "detail": "Cannabis, alcohol and stimulants make episodes more likely."}, {"label": "Sleep and routine", "detail": "The base: regular bedtime, meals and daily rhythm. Sleep loss is a major trigger."}], "caption": "Build from the base up. Medicines work best on top of a steady routine."}
 :::
 
 :::recall
@@ -320,6 +341,10 @@ During this period, **3 or more** of the following (**4** if the mood is only ir
 {"vignette": "Imran, 27, a sales executive in Kochi, is brought by his parents. For the past 9 days he has been 'on top of the world'. He sleeps two hours a night and says he doesn't need more. He talks non-stop and switches topics mid-sentence. He has booked flights to Dubai to 'close a billion-dollar deal' and spent his savings. He keeps getting distracted by the ceiling fan during the interview. His appetite is normal. He has not used any drugs (urine test negative). His boss has suspended him.", "rule": "Tick each B symptom present. Mania needs 3 or more (4 if mood is only irritable), with marked impairment.", "symptoms": [{"label": "Grandiosity", "present": true, "why": "A 'billion-dollar deal'."}, {"label": "Decreased need for sleep", "present": true}, {"label": "Pressured speech", "present": true}, {"label": "Flight of ideas or racing thoughts", "present": true, "why": "Switching topics mid-sentence."}, {"label": "Distractibility", "present": true, "why": "The ceiling fan."}, {"label": "More goal-directed activity", "present": true, "why": "The Dubai trip planning."}, {"label": "Risky spending or behaviour", "present": true}, {"label": "Increased appetite", "present": false, "why": "Not a mania criterion, and his appetite is normal."}], "need": 3, "needCore": false, "verdict": "Seven of seven B symptoms, over 7 days, with marked impairment (suspended at work), no substance cause. A manic episode: this is bipolar I disorder. Assess risk (money, driving, safety) and the need for admission."}
 :::
 
+:::widget flow
+{"title": "The manic episode, criterion by criterion", "layout": "chain", "nodes": [{"id": "a", "label": "A: mood plus energy", "detail": "Abnormally elevated, expansive or irritable mood AND increased activity or energy, most of the day, nearly every day."}, {"id": "b", "label": "Duration", "detail": "At least 7 days, or any duration if hospital admission is needed."}, {"id": "c", "label": "B: three of seven", "detail": "DIGFAST symptoms; four if the mood is only irritable."}, {"id": "d", "label": "C: severity", "detail": "Marked impairment, or admission, or psychotic features."}, {"id": "e", "label": "D: not a substance or illness", "detail": "Not caused by a drug or medical condition. A full episode that outlasts an antidepressant's effect still counts."}], "edgeLabels": {"a>b": "for", "b>c": "with", "c>d": "and", "d>e": "and"}, "caption": "One manic episode that meets all five is enough for bipolar I."}
+:::
+
 ### Stages of mania [extra]
 | Stage | Picture |
 |---|---|
@@ -373,6 +398,10 @@ If psychotic features are present, it is mania, whatever the duration or impairm
 
 :::widget sort
 {"prompt": "Mania or hypomania? Place each case.", "buckets": ["Mania", "Hypomania"], "items": [{"text": "5 days of high energy and little sleep; colleagues notice; she finishes a project early", "bucket": 1}, {"text": "3 days of elation, then admitted after climbing a temple tower to 'talk to God'", "bucket": 0, "why": "Admission makes any duration count; the belief is also psychotic."}, {"text": "10 days of grandiosity; sacked for abusing his manager", "bucket": 0, "why": "Marked impairment."}, {"text": "6 days of talkativeness and new ideas; family say 'not himself' but life carries on", "bucket": 1}, {"text": "4 days of high mood with a belief that he is a secret prince", "bucket": 0, "why": "Psychotic features always mean mania."}, {"text": "A week of feeling sharp and sociable, sleeping 5 hours, no harm done", "bucket": 1}]}
+:::
+
+:::widget flow
+{"title": "Mania or hypomania? A decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "A distinct high period with three or more symptoms", "detail": "Work down the branches in order."}, {"id": "p", "parent": "r", "label": "Psychotic features?", "detail": "Yes: mania, whatever the length or impairment."}, {"id": "h", "parent": "r", "label": "Needed admission?", "detail": "Yes: mania, even if it lasted less than 7 days."}, {"id": "i", "parent": "r", "label": "Marked impairment, at least 7 days?", "detail": "Yes: mania."}, {"id": "o", "parent": "r", "label": "At least 4 days, observable change, no marked impairment?", "detail": "Hypomania."}, {"id": "s", "parent": "r", "label": "Shorter than 4 days?", "detail": "Sub-threshold. Record it: such spells can still matter for the future."}], "caption": "Psychosis and admission each upgrade a high to mania."}
 :::
 
 ### Mixed features
@@ -438,6 +467,10 @@ People with bipolar disorder seek help when depressed. **Hypomania feels good** 
 | Antidepressant-induced high, agitation, or loss of effect | Possible bipolarity |
 | Mixed features during depression | |
 
+:::widget flow
+{"title": "Hunting for hypomania, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Ask the patient openly", "detail": "'Has there been a time of a few days when you felt the opposite of depressed?'"}, {"id": "b", "label": "Ask specific questions", "detail": "Less need for sleep without tiredness, more talk, more projects, more spending, out-of-character actions."}, {"id": "c", "label": "Ask about antidepressants", "detail": "Did one ever make you feel 'wired', brilliant or agitated within days?"}, {"id": "d", "label": "Ask the family", "detail": "They notice hypomania more often than the patient."}, {"id": "e", "label": "Use a screen", "detail": "HCL-32 or MDQ to catch what questions missed."}, {"id": "f", "label": "Draw a life chart", "detail": "Put every episode on a timeline to see the pattern."}], "caption": "Hypomania feels good, so it is rarely offered. You have to look for it."}
+:::
+
 ### Screening scales
 | Scale | Use |
 |---|---|
@@ -485,6 +518,10 @@ Bipolar II has less severe highs, but the depressions are often long and frequen
 {"prompt": "Farhan's mood over two years, rated monthly. Which diagnosis fits?", "series": [0.8, -1.2, 1, -1.4, 0.9, -1.1, 1.2, -1.3, 0.7, -1.2, 1, -1], "labels": ["Year 1", "Year 2"], "options": ["Bipolar I disorder", "Bipolar II disorder", "Cyclothymic disorder", "Normal mood"], "answer": 2, "why": "Many ups and downs, but none reaches the hypomania line or the major depression line, and he is rarely at his usual level. Two years of sub-threshold highs and lows is cyclothymia. Watch for progression to bipolar I or II."}
 :::
 
+:::widget flow
+{"title": "Which bipolar diagnosis?", "layout": "tree", "nodes": [{"id": "r", "label": "A history of highs (and usually lows)", "detail": "Ask the questions in order."}, {"id": "s", "parent": "r", "label": "Caused by a drug or medical condition?", "detail": "Substance or medication-induced, or due to another medical condition. Think of these especially with first mania after 50."}, {"id": "m", "parent": "r", "label": "Ever a full manic episode?", "detail": "Bipolar I. Depression is common but not required."}, {"id": "h", "parent": "r", "label": "Hypomania plus a major depressive episode, never mania?", "detail": "Bipolar II."}, {"id": "c", "parent": "r", "label": "Two years of milder ups and downs, never full episodes?", "detail": "Cyclothymic disorder (one year in young people)."}], "caption": "The highest high ever reached decides the type."}
+:::
+
 ### Other bipolar diagnoses
 - **Substance or medication-induced bipolar disorder**: steroids, stimulants, levodopa, and antidepressant-induced switches that do not persist beyond the drug.
 - **Due to another medical condition**: hyperthyroidism, Cushing's, multiple sclerosis, frontal or right-hemisphere lesions, HIV, neurosyphilis. Think of these especially in **first-onset mania after 50**.
@@ -516,7 +553,7 @@ Q: A woman has had recurrent depressions and one clear episode of hypomania, nev
 ## 2.2 Why it happens [core][beginner]
 ### Genetics: the strongest of the common psychiatric disorders
 - Twin studies give heritability of about 60 to 85%, and up to about 90% in some.
-- About 1 in 100 people in the general population develop it; for a first-degree relative the risk is about 5 to 10%.
+- Against the general lifetime risk of about 1 in 100 that you met in the Starting level, a first-degree relative carries about 5 to 10%.
 - Identical twins share it only 40 to 70% of the time, so genes are not destiny.
 - Many genes of small effect, overlapping with schizophrenia and depression. The Advanced level covers the latest findings.
 
@@ -525,6 +562,14 @@ Q: A woman has had recurrent depressions and one clear episode of hypomania, nev
 - **Body clock**: disrupted circadian rhythms. Sleep loss can trigger mania; regular sleep protects.
 - **Cell signalling**: lithium and valproate act on signalling pathways inside neurons and protect them.
 - **Kindling**: early episodes often follow stress; later episodes can start on their own, as if the brain has been sensitised.
+
+:::widget flow
+{"title": "Kindling in bipolar disorder", "layout": "cycle", "nodes": [{"id": "a", "label": "Stress or sleep loss", "detail": "Early episodes usually follow a clear trigger."}, {"id": "b", "label": "An episode", "detail": "Mania or depression, with broken sleep and stress hormones high."}, {"id": "c", "label": "The brain is sensitised", "detail": "Each episode seems to leave mood systems more reactive."}, {"id": "d", "label": "Easier next time", "detail": "Smaller triggers are enough, and later episodes can begin with no trigger at all."}], "caption": "A reason to treat early and keep people well: fewer episodes may mean a gentler course. The evidence is mixed, and not everyone follows this pattern."}
+:::
+
+:::widget brainmap
+{"title": "Brain areas in bipolar disorder", "focus": ["prefrontal", "amygdala", "basal-ganglia", "hypothalamus", "hippocampus"], "notes": {"prefrontal": "The brakes and planning areas. During mood episodes they control emotional responses less well.", "amygdala": "Over-reactive to emotional faces and words, in highs and lows.", "basal-ganglia": "The striatum, a reward centre rich in dopamine. Too much dopamine drive fits the energy and goal-chasing of mania.", "hypothalamus": "Holds the body's master clock. Disturbed daily rhythms and sleep loss can trigger episodes.", "hippocampus": "Memory and stress regulation. Some studies find it larger in people taking lithium."}, "caption": "Tap each area. The Advanced level adds clock genes, cell signalling and reward sensitivity."}
+:::
 
 ### Triggers
 - Sleep deprivation: night shifts, long-distance travel, exams, a newborn baby, festivals and weddings.
@@ -535,6 +580,10 @@ Q: A woman has had recurrent depressions and one clear episode of hypomania, nev
 
 :::widget reveal
 {"prompt": "Why might a wedding season in India be a risky time for someone with bipolar disorder?", "answer": "Late nights and broken sleep, travel, heavy social stimulation, alcohol, irregular meals and missed doses all come together. Even happy stress counts. Planning ahead (protecting sleep, keeping doses, limiting alcohol, a family member watching for early signs) prevents relapse."}
+:::
+
+:::widget layers
+{"title": "Triggers sit on top of vulnerability", "shape": "iceberg", "layers": [{"label": "Triggers you can see", "detail": "Lost sleep, travel, exams, weddings, a newborn, stopping lithium, antidepressants, steroids, cannabis."}, {"label": "The body clock", "detail": "A daily rhythm that is easily knocked off course."}, {"label": "Reward drive", "detail": "Goals and successes can fire up drive very strongly."}, {"label": "Genes", "detail": "The most heritable of the common mood disorders, through many genes of small effect."}], "caption": "The trigger is the tip. Treatment protects the layers below as well: medicines, sleep, routine."}
 :::
 
 :::recall
@@ -587,6 +636,10 @@ Q: Which statement about the genetics of bipolar disorder is TRUE?
 {"prompt": "Bipolar disorder, borderline personality disorder or ADHD? Place each pattern.", "buckets": ["Bipolar disorder", "Borderline personality disorder", "ADHD"], "items": [{"text": "Distinct episodes of days to weeks, with less need for sleep", "bucket": 0}, {"text": "Mood shifts within hours after a fight with a partner", "bucket": 1}, {"text": "Restless and distractible every day since primary school", "bucket": 2}, {"text": "Chronic emptiness and intense fear of abandonment", "bucket": 1}, {"text": "Grandiose plans that are clearly different from his usual self", "bucket": 0}, {"text": "Impulsive and forgetful in every setting, with no clear 'episodes'", "bucket": 2}]}
 :::
 
+:::widget flow
+{"title": "Differential diagnosis of a high", "layout": "tree", "nodes": [{"id": "r", "label": "Elevated or irritable mood with overactivity", "detail": "Rule out the look-alikes before calling it bipolar disorder."}, {"id": "s", "parent": "r", "label": "Substance?", "detail": "Stimulants, cannabis, alcohol withdrawal. Timing with use and a urine drug screen; it settles as the drug clears."}, {"id": "m", "parent": "r", "label": "Medicine?", "detail": "Steroids, levodopa, antidepressants. Timing with the medicine."}, {"id": "o", "parent": "r", "label": "Organic?", "detail": "Hyperthyroidism, brain lesions (especially right-sided or frontal), HIV, neurosyphilis, delirium. Think hard when onset is after 50 or there are neurological signs."}, {"id": "p", "parent": "r", "label": "Psychosis without mood episodes?", "detail": "Schizophrenia or schizoaffective disorder: psychosis persists between mood changes."}, {"id": "b", "parent": "r", "label": "Shifts over hours, tied to relationships?", "detail": "Borderline personality disorder: chronic emptiness, fear of abandonment, no decreased need for sleep."}, {"id": "a", "parent": "r", "label": "Lifelong, continuous restlessness?", "detail": "ADHD: present since childhood, not episodic, no decreased need for sleep."}, {"id": "bp", "parent": "r", "label": "None of these: a bipolar episode", "detail": "Distinct episodes of days or longer with sleep and energy change."}], "caption": "Tap each branch. Episodes, sleep and energy separate bipolar disorder from most look-alikes."}
+:::
+
 ### Investigations
 Thyroid function, urine drug screen, blood count, kidney and liver tests, calcium and glucose; pregnancy test where relevant; ECG; brain imaging if onset is late, there are neurological signs, or the picture is atypical. Before lithium: kidney function (eGFR), thyroid, calcium, weight.
 
@@ -617,6 +670,10 @@ Sudden confusion, sleeplessness, rapidly changing mood and strange beliefs about
 
 :::widget guess
 {"prompt": "A woman has had one episode of postpartum psychosis. Out of 100 such women, about how many have another episode after a later delivery?", "min": 0, "max": 100, "step": 5, "unit": "in 100", "answer": [30, 50], "reveal": "About 30 to 50 in 100, with each later delivery. That is why pregnancy planning, a written birth plan, protected sleep after delivery and early review are essential. Postpartum psychotic episodes occur in about 1 in 500 to 1 in 1,000 deliveries overall, more often in first pregnancies.", "clinician": "DSM-5-TR: postpartum mood episodes with psychotic features occur in about 1 in 500 to 1 in 1,000 deliveries; recurrence risk with each subsequent delivery is 30 to 50% after one such episode. Risk is also raised with bipolar I and a family history of bipolar disorder. Plan prophylaxis (often lithium or an antipsychotic) with the woman and her obstetrician."}
+:::
+
+:::widget flow
+{"title": "Planning a pregnancy with bipolar disorder", "layout": "chain", "nodes": [{"id": "a", "label": "Before conception", "detail": "Review medicines, avoid valproate, start folic acid, discuss risks of medicines and of relapse honestly."}, {"id": "b", "label": "Pregnancy", "detail": "Monitor closely; lithium levels change as blood volume rises, so check them more often."}, {"id": "c", "label": "Birth plan", "detail": "A written plan shared with the obstetric team: who to call, which medicines, how sleep will be protected."}, {"id": "d", "label": "First days after delivery", "detail": "The highest-risk time. Protected sleep, early review, family alert to warning signs of postpartum psychosis."}, {"id": "e", "label": "First months", "detail": "Continued review, support with feeding decisions and medicines, and a relapse plan."}], "caption": "Planning before conception gives the safest choices for mother and baby."}
 :::
 
 ### Children and teenagers
@@ -668,6 +725,11 @@ Q: Three days after delivery, a woman with a family history of bipolar disorder 
 5. **ECT** for severe or treatment-resistant mania, or mania in pregnancy.
 6. Reduce stimulation, restore sleep, involve the family.
 
+:::widget flow
+{"title": "The acute mania pathway", "layout": "chain", "nodes": [{"id": "a", "label": "Safety", "detail": "Risk to self, others, money and reputation. Admission is often needed."}, {"id": "b", "label": "Remove triggers", "detail": "Stop antidepressants and stimulants; reduce caffeine and alcohol."}, {"id": "c", "label": "Antimanic medicine", "detail": "An antipsychotic for fast control, lithium or valproate, or both in severe mania."}, {"id": "d", "label": "Short-term calm and sleep", "detail": "Lorazepam for agitation and sleep, tapered once settled."}, {"id": "e", "label": "ECT if needed", "detail": "Severe or treatment-resistant mania, or mania in pregnancy."}, {"id": "f", "label": "Low stimulation and family", "detail": "A quiet room, consistent limits, protected money and phone, and the family brought in."}], "caption": "Press Play. The order matters: safety and removing the trigger come before choosing the medicine."}
+:::
+
+
 :::widget decide
 {"scene": "Gaurav, 31, was started on sertraline by a GP for depression. He is now brought to emergency after five nights without sleep, shouting that he is 'the chosen one' and trying to withdraw all his family's savings. He is pacing and refuses tablets at first.", "ask": "What is the best first plan?", "choices": [{"label": "Increase the sertraline, since his depression has clearly lifted", "verdict": "harm", "outcome": "He becomes more agitated and runs out of the department.", "why": "This is mania. Antidepressants can drive it; raising the dose makes it worse."}, {"label": "Stop the sertraline, use calm de-escalation, offer an oral antipsychotic (with short-term lorazepam if needed), assess risk and admit", "verdict": "best", "outcome": "He accepts oral olanzapine after a calm conversation, sleeps that night, and is admitted. Lithium is planned for the longer term.", "why": "Remove the trigger, treat the mania quickly, try oral medicine first, and protect him and his family's money."}, {"label": "Give an injection straight away without trying to talk to him", "verdict": "ok", "outcome": "He is sedated, but feels assaulted and distrusts the team for months.", "why": "Rapid tranquillisation is sometimes needed for danger, but de-escalation and oral medicine come first when it is safe to try."}]}
 :::
@@ -706,6 +768,14 @@ Common Indian brand names are examples only; brands change.
 
 :::widget reveal
 {"prompt": "An untreated manic episode often settles on its own in time. So why treat at all?", "answer": "Because a lot of harm can happen during the episode: lost savings, jobs, relationships, reputation, legal trouble, injury, exhaustion and dehydration, and suicide during mixed or post-manic depressive states. Untreated mania often lasts months. Treatment shortens it and protects the person's life outside the illness."}
+:::
+
+:::widget pathways
+{"system": "dopamine", "caption": "Antipsychotics calm mania by blocking D2 receptors in the mesolimbic pathway, easing drive, grandiosity and psychosis. Turn on D2 block, then add serotonin 2A block, and watch what happens in the other three pathways: movement side effects, prolactin and thinking."}
+:::
+
+:::widget receptor
+{"receptor": "D2", "caption": "Aripiprazole and cariprazine are partial agonists at D2 receptors. Compare full agonist, partial agonist and antagonist. A partial agonist holds the signal at a middle level, so it calms excess dopamine in mania without shutting it off completely. This is also why low doses of aripiprazole may be too weak for mania."}
 :::
 
 :::recall
@@ -754,6 +824,10 @@ An antidepressant **without** a mood stabiliser can trigger mania, mixed states 
 | Lamotrigine | See the titration guess in 3.4 | Lamitor, Lametec | Rash risk; slow titration |
 :::
 
+:::widget flow
+{"title": "Choosing treatment for bipolar depression", "layout": "tree", "nodes": [{"id": "r", "label": "A person with bipolar disorder is depressed", "detail": "First check adherence, sleep, alcohol, thyroid and recent stressors."}, {"id": "s", "parent": "r", "label": "Severe, psychotic, or not eating?", "detail": "Consider ECT and admission."}, {"id": "q", "parent": "r", "label": "Acute treatment with evidence", "detail": "Quetiapine (bipolar I and II), lurasidone, olanzapine with fluoxetine, cariprazine, lumateperone."}, {"id": "l", "parent": "r", "label": "Prevention of further depressions", "detail": "Lamotrigine (slow start) and lithium, which also lowers suicide risk."}, {"id": "a", "parent": "r", "label": "Antidepressant?", "detail": "Never alone in bipolar I. If used, add to a mood stabiliser, choose an SSRI or bupropion, avoid in mixed features or rapid cycling, stop after recovery."}, {"id": "p", "parent": "r", "label": "Alongside every option", "detail": "Psychoeducation, a sleep routine, social rhythm therapy, family work, CBT."}], "caption": "Tap each branch. Bipolar depression is treated with its own set of medicines, not simply with antidepressants."}
+:::
+
 :::recall
 1. Why avoid antidepressant monotherapy in bipolar I? || It can trigger mania, mixed states or rapid cycling, and works less well.
 2. Name five evidence-based treatments for bipolar depression. || Quetiapine, lurasidone, olanzapine-fluoxetine, cariprazine, lumateperone (plus lamotrigine for prevention, lithium, ECT).
@@ -776,17 +850,33 @@ Lithium is the **gold standard** for long-term bipolar treatment. It prevents bo
 {"prompt": "How many hours after the last dose should a lithium blood sample be taken?", "min": 1, "max": 24, "unit": "hours", "answer": [12, 12], "reveal": "12 hours after the last dose. With night-time dosing, that means a morning sample before the next dose. A sample taken soon after a dose reads falsely high.", "clinician": "Take the level 12 hours post-dose, and about 5 to 7 days after starting or after any dose change, when steady state is reached. Repeat after each change until the target level is stable."}
 :::
 
+:::widget journey
+{"drug": "lithium", "target": "enzymes inside neurons (inositol monophosphatase and GSK-3) and the signalling pathways they control", "routes": ["oral"], "notes": {"gut": "Lithium is a simple salt, absorbed almost completely from the gut. Slow-release tablets smooth the peaks.", "liver": "Unusually, the liver does not break lithium down at all. There is no first pass and no CYP interactions. Everything depends on the kidneys.", "blood": "Lithium is not bound to proteins and spreads through body water. Its half-life is about a day in young adults and longer in older people, so steady state comes about 5 to 7 days after a change.", "bbb": "Lithium crosses into the brain slowly, so brain levels lag behind blood levels.", "out": "Removed almost entirely by the kidneys, which handle it like sodium. Dehydration, low salt, NSAIDs, ACE inhibitors and thiazides make the kidneys hold on to it, so levels rise."}, "caption": "Follow the tablet. Because only the kidneys clear lithium, anything that changes kidney handling of salt and water changes the level."}
+:::
+
 ### Target levels
 - Most adults: about **0.6 to 0.8 mmol/L** for maintenance.
 - If relapse occurs at that level and lithium is tolerated: up to **0.8 to 1.0 mmol/L**.
 - Acute mania: about **0.8 to 1.0 mmol/L**, with close monitoring.
 - Older adults: often **0.4 to 0.6 mmol/L**, with a lower ceiling in the very old.
 
+:::widget curve
+{"kind": "half-life", "title": "Lithium: half-life and steady state", "caption": "Set the half-life to about 24 hours, close to lithium's in a young adult. Levels settle after about 4 to 5 half-lives, which is why the blood level is checked about 5 to 7 days after starting or changing the dose. Slide it longer, as in an older person or someone with weaker kidneys: the climb is slower and the level settles higher."}
+:::
+
+:::widget layers
+{"title": "Lithium levels, from danger to too little", "shape": "stack", "layers": [{"label": "Above about 2.0 mmol/L", "detail": "Severe toxicity: confusion, seizures, coma, kidney failure. Emergency; dialysis may be needed."}, {"label": "About 1.5 to 2.0 mmol/L", "detail": "Toxicity is reliable here: coarse tremor, vomiting, diarrhoea, unsteadiness, slurred speech."}, {"label": "About 1.0 to 1.5 mmol/L", "detail": "Above the usual range. Side effects rise; older people can be toxic here."}, {"label": "About 0.8 to 1.0 mmol/L", "detail": "Acute mania, or maintenance after relapse at lower levels."}, {"label": "About 0.6 to 0.8 mmol/L", "detail": "The usual maintenance range for most adults."}, {"label": "About 0.4 to 0.6 mmol/L", "detail": "Often enough for older adults."}, {"label": "Below about 0.4 mmol/L", "detail": "Usually too low to protect against relapse."}], "caption": "Tap each band. The gap between helpful and harmful is narrow, which is why lithium is dosed by blood level."}
+:::
+
 ### Before starting
 Kidney function (eGFR) and urea and electrolytes, thyroid function, calcium, weight or BMI, ECG if there is heart disease or risk, and a pregnancy test where relevant.
 
 :::widget guess
 {"prompt": "Once a patient is stable on lithium, how often should the lithium level, kidney function and thyroid function be checked?", "min": 1, "max": 24, "unit": "months", "answer": [3, 6], "reveal": "Every 3 to 6 months. Many guidelines check levels every 3 months in the first year, then every 6 months when stable, with kidney and thyroid tests every 6 months. Check more often in older people, those on interacting drugs, and those with kidney problems.", "clinician": "Typical schedule: level every 3 months for the first year, then every 6 months if stable (every 3 months if older, on interacting drugs, poor adherence, renal impairment, or last level 0.8 or above). eGFR, thyroid function and calcium every 6 months; weight regularly."}
+:::
+
+:::widget flow
+{"title": "Lithium monitoring, from first test to long-term", "layout": "chain", "nodes": [{"id": "a", "label": "Baseline", "detail": "Kidney function (eGFR), urea and electrolytes, thyroid, calcium, weight, ECG if heart risk, pregnancy test where relevant."}, {"id": "b", "label": "Start", "detail": "Usually at night, at a low dose in older people."}, {"id": "c", "label": "First level", "detail": "About 5 to 7 days after starting, 12 hours after the last dose."}, {"id": "d", "label": "Adjust", "detail": "Change the dose and recheck the level after each change until stable."}, {"id": "e", "label": "First year", "detail": "Levels about every 3 months; kidney, thyroid and calcium about every 6 months."}, {"id": "f", "label": "When stable", "detail": "Levels about every 6 months (3 if older, on interacting drugs or with kidney problems)."}], "caption": "A steady routine of tests is what makes lithium safe."}
 :::
 
 ### Side effects
@@ -806,6 +896,10 @@ Toxic effects reliably appear above about **1.5 mmol/L**, but can occur at lower
 | Early | Loss of appetite, nausea, vomiting, **diarrhoea**, **coarse tremor**, muscle weakness, drowsiness |
 | Moderate | Unsteadiness (**ataxia**), slurred speech, confusion, muscle twitching |
 | Severe (often above about 2 mmol/L) | Disorientation, seizures, coma, kidney failure, death |
+
+:::widget flow
+{"title": "How lithium toxicity builds", "layout": "chain", "nodes": [{"id": "a", "label": "Something changes", "detail": "A hot summer, diarrhoea, fever, a new painkiller such as diclofenac, a blood pressure tablet, a crash diet."}, {"id": "b", "label": "Kidneys hold lithium", "detail": "When salt and water run low, the kidneys reabsorb sodium, and lithium with it."}, {"id": "c", "label": "Level climbs", "detail": "Without any change in dose."}, {"id": "d", "label": "Early signs", "detail": "Nausea, diarrhoea, coarse tremor, weakness, drowsiness."}, {"id": "e", "label": "Moderate", "detail": "Unsteadiness, slurred speech, confusion, twitching."}, {"id": "f", "label": "Severe", "detail": "Seizures, coma, kidney failure. Stop lithium, check the level, give fluids, consider dialysis."}], "caption": "Diarrhoea from toxicity causes more dehydration, which raises the level further: a dangerous spiral. Early action breaks it."}
+:::
 
 **Things that raise lithium levels**: dehydration (heat, fever, vomiting, diarrhoea), low-salt diets, **NSAIDs** (ibuprofen, diclofenac), **ACE inhibitors** and angiotensin receptor blockers, **thiazide diuretics**, and kidney impairment.
 
@@ -883,6 +977,10 @@ Q: Which medicine is safest for pain in a patient on lithium?
 Exposure in pregnancy carries a high risk of major malformations (including neural tube defects) and of neurodevelopmental problems in the child. Avoid in women and girls of childbearing potential unless no alternative works and effective contraception is in place; regulators in several countries require a formal pregnancy prevention programme. Indian brands: Encorate Chrono, Valparin Chrono, Dicorate ER. Carbamazepine: Mazetol, Tegretol.
 :::
 
+:::widget flow
+{"title": "Which mood stabiliser?", "layout": "tree", "nodes": [{"id": "r", "label": "Long-term treatment is needed", "detail": "Consider the pattern of episodes, the person's body and their plans."}, {"id": "li", "parent": "r", "label": "Classic mania, family lithium response, suicide risk", "detail": "Lithium: best evidence for preventing relapse and suicide."}, {"id": "va", "parent": "r", "label": "Mixed states or rapid cycling, not able to become pregnant", "detail": "Valproate, with liver, blood count and weight checks."}, {"id": "la", "parent": "r", "label": "Mostly depressive relapses, bipolar II", "detail": "Lamotrigine, started slowly because of rash."}, {"id": "ap", "parent": "r", "label": "An antipsychotic controlled the episode", "detail": "Continue it (quetiapine, aripiprazole, olanzapine) with metabolic checks; long-acting injection if adherence is hard."}, {"id": "cb", "parent": "r", "label": "Others have failed", "detail": "Carbamazepine, after HLA-B*15:02 testing where available; many interactions."}], "caption": "Tap each branch. Most people do best on the medicine that matches their pattern, with a plan they agreed to."}
+:::
+
 :::recall
 1. Which mood stabiliser mainly prevents bipolar depression? || Lamotrigine.
 2. Give four cautions with valproate. || Teratogenic, weight gain, liver injury, low platelets (also pancreatitis, ammonia, PCOS).
@@ -920,6 +1018,10 @@ Q: A man on carbamazepine says his partner's contraceptive pill failed while she
 4. Offer **oral medicine** before an injection.
 5. Rapid tranquillisation only if de-escalation fails and there is danger, then monitor.
 
+:::widget flow
+{"title": "De-escalation, before any medicine", "layout": "chain", "nodes": [{"id": "a", "label": "Safe space", "detail": "Keep a safe distance, open posture, calm low voice, an exit for both of you."}, {"id": "b", "label": "Listen and name it", "detail": "'You're frustrated that you can't leave.'"}, {"id": "c", "label": "Offer choices", "detail": "'Would you like to sit here or walk in the corridor?'"}, {"id": "d", "label": "Offer oral medicine", "detail": "Before any injection."}, {"id": "e", "label": "Rapid tranquillisation only if needed", "detail": "When there is danger and talking has failed; then monitor pulse, blood pressure, breathing and consciousness."}], "caption": "Each step gives the person more control, which lowers the chance of the next one being needed."}
+:::
+
 ### The legal frame in India
 Many manic patients lack insight and the capacity to decide about admission. Use the **least restrictive** option. Under the Mental Healthcare Act 2017, a person may choose a **nominated representative** and write an **advance directive** while well, and supported admission is possible when a person with severe illness cannot decide and is at risk, with review safeguards.
 
@@ -934,8 +1036,16 @@ A **relapse signature** is a person's own early warning signs, in order, with ag
 {"title": "Building Ravi's relapse signature", "steps": [{"q": "Ravi, 32, has bipolar I. When well, he and his wife Neeta look back at his last two manic episodes. What were the earliest signs?", "a": "Sleeping 5 hours and feeling fine; making many plans; calling friends late at night."}, {"q": "What came next, in the middle stage?", "a": "Online shopping, irritability when questioned, talking fast."}, {"q": "What were the late signs?", "a": "Not sleeping at all; believing he would become a minister."}, {"q": "Now agree an action for each stage.", "a": "Early: keep routine, cut caffeine, tell Neeta, contact the clinic within days. Middle: Neeta holds the cards, same-week appointment, extra night-time medicine as agreed with the psychiatrist. Late: Neeta calls the team the same day; consider admission."}, {"q": "How is it kept useful?", "a": "A copy on the fridge and on both phones; reviewed after any episode and at regular check-ups; updated when triggers change (for example a new night-shift job)."}], "yourTurn": [{"q": "Meena's first sign before depression is sleeping 10 hours and stopping her morning walk. Write an action for that early stage.", "a": "For example: tell her sister, restart a daily walk with a friend, keep a fixed wake time, use her mood chart daily, and book a clinic review within days. If thoughts of death appear, contact the team the same day."}]}
 :::
 
+:::widget flow
+{"title": "A relapse signature, stage by stage", "layout": "chain", "nodes": [{"id": "a", "label": "Early signs", "detail": "Ravi: 5 hours of sleep and feeling fine, many plans, late-night calls. Action: routine, no caffeine, tell Neeta, clinic within days."}, {"id": "b", "label": "Middle signs", "detail": "Online shopping, irritability, fast talk. Action: Neeta holds the cards, same-week appointment, agreed extra night-time medicine."}, {"id": "c", "label": "Late signs", "detail": "No sleep at all, believes he will become a minister. Action: the team is called the same day; admission considered."}, {"id": "d", "label": "After the episode", "detail": "Review what happened, update the signature, change triggers such as a night-shift job."}], "caption": "The earlier the stage at which the plan is used, the smaller the damage."}
+:::
+
 :::sounds Talking to a manic patient
 "I can see you've got lots of ideas and energy right now. I also notice you haven't slept for three nights. When people with your illness lose sleep like this, things can get out of control. What I want is to help you sleep tonight, and then we'll talk through your plans tomorrow."
+:::
+
+:::widget layers
+{"title": "A biopsychosocial formulation for bipolar disorder", "shape": "rings", "layers": [{"label": "Biological", "detail": "Strong family history, sleep loss on night shifts, cannabis use, stopping lithium suddenly."}, {"label": "Psychological", "detail": "Little insight during highs, shame after them, beliefs that medicine is 'for mad people', high reward drive."}, {"label": "Social", "detail": "Family conflict and fear of stigma at marriage time, money lost in a high, a supportive sister who can act as nominated representative."}], "caption": "Tap each ring. Each ring holds both risks and strengths, and each needs its own part of the plan."}
 :::
 
 ### Psychological and social care
@@ -1109,18 +1219,22 @@ Q: A relapse signature is:
 
 ## 4.1 The biology in depth [core][advanced]
 ### Dopamine: up in mania, down in depression
-- The **dopamine hypothesis** proposes raised dopamine signalling in mania and reduced signalling in bipolar depression. Imaging and pharmacology fit: stimulants and levodopa can trigger mania; D2 blockers and partial agonists treat it.
+- In 2.2 you met the link between dopamine and mania. The fuller **dopamine dysregulation** idea proposes raised signalling in mania and reduced signalling in bipolar depression, with a failure of the receptor adjustments that would normally restore balance between the two states.
 - PET studies suggest raised D2/D3 receptor availability and striatal dopamine function in mania, with the reverse pattern in depression. One idea is that the brain over-corrects, swinging between the two states.
 
 ### The body clock
-- Mood episodes are tightly linked to **circadian rhythm**: sleep loss triggers mania; mania in turn reduces sleep, a vicious circle.
+- The sleep loop from the Starting level has a molecular basis. Core **clock genes** (CLOCK, BMAL1, PER, CRY) run a feedback loop of roughly 24 hours in the suprachiasmatic nucleus of the hypothalamus and in cells throughout the body.
 - Mice with a mutation in the clock gene **CLOCK** show mania-like behaviour that lithium reverses.
 - **Lithium lengthens the circadian period** and stabilises daily rhythms, partly through GSK-3, an enzyme that also regulates clock proteins.
 - The **social zeitgeber** idea: daily social cues (meals, work, bedtime) set the clock; when routines break (travel, shift work, a newborn), vulnerable people relapse. This is the basis of IPSRT.
 - Mania peaks in spring and summer in many countries; depressions in autumn and winter.
 
+:::widget flow
+{"title": "The social zeitgeber model", "layout": "chain", "nodes": [{"id": "a", "label": "Life event", "detail": "A new baby, a night-shift job, long-distance travel, a wedding season."}, {"id": "b", "label": "Social rhythms break", "detail": "Bedtime, mealtimes, work and social contact lose their regular timing."}, {"id": "c", "label": "Body clock destabilises", "detail": "The time cues (zeitgebers) that set the circadian clock are lost; sleep and hormone rhythms drift."}, {"id": "d", "label": "Body symptoms", "detail": "Sleep loss and disturbed energy and appetite."}, {"id": "e", "label": "Episode", "detail": "In a vulnerable person, mania or depression follows."}], "caption": "This is the basis of interpersonal and social rhythm therapy (IPSRT): keep the rhythms, protect the clock."}
+:::
+
 ### Kindling and progression
-- **Kindling** (borrowed from epilepsy research): early episodes need a stressor; with each episode the brain becomes more sensitised, so later episodes start more easily, even unprovoked.
+- 2.2 introduced kindling. The term comes from epilepsy research, where repeated sub-threshold stimulation of the brain eventually produces seizures on its own. It was applied to mood disorders alongside **behavioural sensitisation**, in which repeated stimulant doses produce ever larger responses.
 - Some long-term studies show more frequent episodes and more cognitive problems after many episodes, which is one argument for **early, sustained treatment**. The evidence is mixed; not everyone progresses.
 
 ### Cells, energy and structure
@@ -1129,11 +1243,19 @@ Q: A relapse signature is:
 - **Inflammation and oxidative stress**: raised inflammatory markers in mania and depression, partly returning towards normal between episodes.
 - **Brain imaging**: overactive amygdala and reduced prefrontal control during emotional tasks; more white matter hyperintensities; some loss of cortical grey matter over repeated episodes. People on lithium tend to have **larger** grey matter and hippocampal volumes than those not on it, consistent with a protective effect.
 
+:::widget brainmap
+{"title": "Circuits and clocks in bipolar disorder", "focus": ["prefrontal", "amygdala", "basal-ganglia", "hypothalamus", "hippocampus"], "notes": {"prefrontal": "Ventrolateral and dorsolateral prefrontal cortex show reduced top-down control during emotional tasks, in both highs and lows.", "amygdala": "Hyper-reactive to emotional stimuli; partly normalises with treatment.", "basal-ganglia": "Ventral striatum: heightened response when anticipating reward in people with, and at risk of, bipolar disorder. Raised D2/D3 function in mania on PET.", "hypothalamus": "Suprachiasmatic nucleus, the master clock. Lithium lengthens the circadian period, partly through GSK-3, which also regulates clock proteins.", "hippocampus": "Larger grey matter and hippocampal volumes in people taking lithium, consistent with a protective effect."}, "caption": "Imaging findings are averages across groups; they cannot yet diagnose or predict for one person."}
+:::
+
 ### Reward sensitivity
 - People with bipolar disorder, and those at risk, often show **heightened reward sensitivity**: goals and possible rewards trigger strong drive. Goal-attainment events (a promotion, a new relationship) can precede mania, while failures can precede depression.
 
 :::widget reveal
 {"prompt": "Put the circadian and reward ideas together. Why might an exam topper who stays up for three nights before a big result be at special risk, if she has bipolar disorder?", "answer": "Sleep loss directly destabilises the body clock and can trigger mania. A big goal-attainment event (a top result, a job offer) strongly activates the reward system, which in reward-sensitive people can push towards a high. Two triggers arrive together. Protecting sleep and planning around big events is real relapse prevention."}
+:::
+
+:::widget flow
+{"title": "The goal-attainment spiral", "layout": "cycle", "nodes": [{"id": "a", "label": "A success", "detail": "A promotion, a top result, a new relationship."}, {"id": "b", "label": "Strong reward drive", "detail": "In reward-sensitive people, success fires up wanting and goal-setting."}, {"id": "c", "label": "Bigger goals, more confidence", "detail": "New projects pile up; risks feel small."}, {"id": "d", "label": "Less sleep", "detail": "Late nights chasing the goals."}, {"id": "e", "label": "Rising mood", "detail": "Sleep loss and drive feed a climb towards hypomania or mania."}], "caption": "The mirror image happens with failure, which can precede depression. Planning around big events is real relapse prevention."}
 :::
 
 :::recall
@@ -1162,6 +1284,14 @@ Q: Which finding supports a circadian model of bipolar disorder?
 - **Kidney**: lithium enters collecting duct cells through sodium channels and blocks the response to antidiuretic hormone (via GSK-3 and aquaporin-2), causing thirst and dilute urine (nephrogenic diabetes insipidus).
 - **Thyroid**: lithium is concentrated in the thyroid and reduces hormone release.
 
+:::widget flow
+{"title": "Lithium and inositol depletion", "layout": "chain", "nodes": [{"id": "a", "label": "Receptor fires", "detail": "Many receptors signal through phospholipase C, splitting PIP2 into IP3 and DAG."}, {"id": "b", "label": "IP3 is recycled", "detail": "IP3 is broken down step by step to inositol, which is needed to rebuild PIP2."}, {"id": "c", "label": "Lithium blocks IMPase", "detail": "Lithium inhibits inositol monophosphatase (and inositol polyphosphate phosphatase)."}, {"id": "d", "label": "Inositol runs short", "detail": "Especially in the busiest neurons, which recycle the most."}, {"id": "e", "label": "Overactive signalling damped", "detail": "Activity is reduced most where it is highest, sparing quieter cells."}], "caption": "This 'use-dependent' damping is one elegant explanation of how a simple ion can steady mood without sedating."}
+:::
+
+:::widget flow
+{"title": "Why lithium makes people thirsty", "layout": "chain", "nodes": [{"id": "a", "label": "Lithium enters the collecting duct", "detail": "It passes into kidney collecting duct cells through epithelial sodium channels (ENaC)."}, {"id": "b", "label": "GSK-3 and signalling change", "detail": "Inside the cell, lithium disturbs the signalling that responds to antidiuretic hormone (ADH)."}, {"id": "c", "label": "Fewer water channels", "detail": "Less aquaporin-2 reaches the cell surface."}, {"id": "d", "label": "ADH ignored", "detail": "The kidney cannot concentrate urine: nephrogenic diabetes insipidus."}, {"id": "e", "label": "Dilute urine, thirst", "detail": "Large volumes of dilute urine and drinking to keep up. Amiloride, which blocks ENaC, can help by keeping lithium out."}], "caption": "Knowing the mechanism explains the treatment: block the entry channel."}
+:::
+
 ### Valproate, lamotrigine and carbamazepine
 | Drug | Main actions | Why it matters |
 |---|---|---|
@@ -1186,6 +1316,10 @@ Q: Which finding supports a circadian model of bipolar disorder?
 - Aripiprazole and cariprazine: partial agonism gives akathisia rather than sedation; little prolactin rise.
 - Risperidone: strong D2 binding outside the blood-brain barrier at the pituitary raises prolactin (menstrual changes, galactorrhoea, sexual dysfunction).
 - Lithium tremor: fine postural tremor; treat with dose reduction or propranolol. Coarse tremor suggests toxicity.
+:::
+
+:::widget receptor
+{"receptor": "D2", "title": "Partial agonism in bipolar disorder", "caption": "Cariprazine prefers D3 over D2, and both it and aripiprazole are partial agonists. Use the switch to compare a full antagonist (haloperidol-like) with a partial agonist. The partial agonist leaves some signal on, which fits fewer movement and prolactin effects, more akathisia, and possible benefits for mood and motivation through D3."}
 :::
 
 :::recall
@@ -1241,6 +1375,10 @@ Q: A woman on lithium for 10 years drinks 5 litres a day and passes large volume
 {"scene": "Dr Sen, a junior resident, suggests starting a 22-year-old with first-episode mania on 'something modern instead of lithium, because lithium is old and needs too many blood tests'. The patient has classic euphoric mania, no kidney disease, and a grandmother who did well on lithium.", "ask": "As the senior, what do you say?", "choices": [{"label": "Agree; newer drugs are better and simpler", "verdict": "ok", "outcome": "The patient is treated with an atypical antipsychotic, gains 12 kg in a year and stops taking it.", "why": "Antipsychotics are reasonable options, but 'newer' does not mean better, and metabolic effects matter for a young person."}, {"label": "Explain that lithium has the strongest evidence for preventing relapse and suicide, that classic euphoric mania and a family history of lithium response predict good response, and that monitoring is manageable; discuss lithium with the patient and family", "verdict": "best", "outcome": "The patient chooses lithium after informed discussion. Monitoring is arranged, and he stays well.", "why": "Evidence, response predictors and shared decision-making, rather than habit or novelty, should drive the choice."}, {"label": "Insist on lithium without discussing side effects with the patient", "verdict": "harm", "outcome": "The patient stops it after feeling thirsty and shaky, without telling anyone.", "why": "Good evidence still needs informed consent and preparation for side effects."}]}
 :::
 
+:::widget layers
+{"title": "How strong is the evidence? A ladder for new treatments", "shape": "stack", "layers": [{"label": "Approved and widely used", "detail": "Cariprazine and lumateperone for bipolar depression (US). Lithium, the oldest, still has the strongest evidence."}, {"label": "Large randomised trials", "detail": "Quetiapine, lurasidone and others for bipolar depression."}, {"label": "Small randomised trials", "detail": "Ketamine for bipolar depression; midday bright light; blue-light-blocking glasses for mania."}, {"label": "Open or observational studies", "detail": "Lithium in drinking water and suicide rates; chronotherapy series."}, {"label": "Exclusion and warning", "detail": "Psychedelic trials exclude bipolar I; lithium with classic psychedelics may provoke seizures."}], "caption": "Tap from the top down. A new treatment should be judged by its rung, not by how new it is."}
+:::
+
 :::recall
 1. Name two newer US-approved treatments for bipolar depression. || Cariprazine and lumateperone.
 2. What timing of bright light therapy helped bipolar depression without switching? || Midday light.
@@ -1265,6 +1403,10 @@ Q: A man with bipolar I, stable on lithium, plans to try psilocybin at a retreat
 - Risk genes point to synapses, ion channels and calcium signalling (for example **CACNA1C**, a calcium channel gene).
 - Polygenic scores are useful in research but far too weak to diagnose or predict for an individual.
 
+:::widget layers
+{"title": "What the genetics of bipolar disorder can and cannot tell you", "shape": "stack", "layers": [{"label": "Twin heritability", "detail": "About 60 to 85 percent: the highest of the common mood disorders."}, {"label": "GWAS loci", "detail": "298 risk regions in the largest study, including calcium channel genes such as CACNA1C."}, {"label": "Genetic overlap", "detail": "Bipolar I sits closer to schizophrenia; bipolar II closer to major depression."}, {"label": "Polygenic scores", "detail": "Useful in research; a higher schizophrenia or depression score predicts poorer lithium response in groups."}, {"label": "One patient", "detail": "No gene test can diagnose bipolar disorder or pick the right medicine yet."}], "caption": "From the population down to the person, predictive power falls at every step."}
+:::
+
 ### Predicting lithium response
 - Clinical predictors of a good lithium response: **classic euphoric mania**, full recovery between episodes, an episode pattern of mania then depression then a well interval, **family history of bipolar disorder (especially of lithium response)**, later onset, no rapid cycling, no substance misuse.
 - Genetic studies (international lithium consortia) have found a few loci, and show that a **higher polygenic score for schizophrenia or depression predicts poorer lithium response**. Not yet useful clinically.
@@ -1279,6 +1421,10 @@ Q: A man with bipolar I, stable on lithium, plans to try psilocybin at a retreat
 
 :::widget decide
 {"scene": "A 30-year-old man from Kolkata with bipolar I has not responded to lithium or valproate. The team considers carbamazepine. HLA testing is available at a city lab for a moderate cost, with results in a few days.", "ask": "What do you do?", "choices": [{"label": "Start carbamazepine straight away; the rash is rare", "verdict": "ok", "outcome": "He is fine, but if he had carried HLA-B*15:02 he would have faced a high risk of a life-threatening skin reaction.", "why": "The reaction is rare overall but strongly linked to a gene that is present in a meaningful share of South Asians. Where testing is available, it is recommended before starting."}, {"label": "Test for HLA-B*15:02 first, explain why, and use a different option if positive", "verdict": "best", "outcome": "He is negative. Carbamazepine is started with monitoring of blood count, sodium and liver tests, and a warning about rash.", "why": "Targeted genetic testing prevents a rare but devastating reaction."}, {"label": "Never use carbamazepine in Indian patients", "verdict": "harm", "outcome": "A useful option is removed for the large majority who do not carry the allele.", "why": "Testing, not blanket avoidance, is the evidence-based approach."}]}
+:::
+
+:::widget flow
+{"title": "Before carbamazepine: the HLA decision", "layout": "tree", "nodes": [{"id": "r", "label": "Carbamazepine is being considered", "detail": "Usually after lithium and valproate have not worked or are unsuitable."}, {"id": "a", "parent": "r", "label": "South or East Asian ancestry, including Indian?", "detail": "Test for HLA-B*15:02 where available."}, {"id": "p", "parent": "a", "label": "Positive", "detail": "High risk of Stevens-Johnson syndrome or toxic epidermal necrolysis. Choose another drug, and avoid oxcarbazepine and phenytoin too."}, {"id": "n", "parent": "a", "label": "Negative", "detail": "Start with monitoring: blood count, sodium, liver tests; warn about rash; check interactions (it induces CYP3A4)."}, {"id": "m", "parent": "r", "label": "Suspected mitochondrial disease?", "detail": "Not for carbamazepine, but before valproate: test POLG, because valproate can cause fatal liver failure."}], "caption": "Targeted testing, not blanket avoidance, is the evidence-based approach."}
 :::
 
 :::recall
@@ -1301,6 +1447,10 @@ Q: Before starting carbamazepine in a patient of Indian ancestry, which test is 
 ### The metabolic burden
 - People with bipolar disorder have higher rates of obesity, type 2 diabetes and heart disease, and die years earlier on average. Causes include the illness itself, lifestyle, poor access to physical care, and medicines (especially olanzapine, quetiapine and valproate).
 - **Metformin** has good evidence for reducing antipsychotic-related weight gain.
+
+:::widget flow
+{"title": "The metabolic spiral", "layout": "cycle", "nodes": [{"id": "a", "label": "Medicines that raise appetite", "detail": "Olanzapine, quetiapine and valproate, through H1 and 5HT2C block and other routes."}, {"id": "b", "label": "Weight gain", "detail": "Often rapid in the first months."}, {"id": "c", "label": "Insulin resistance and inflammation", "detail": "Raised glucose, lipids and inflammatory markers."}, {"id": "d", "label": "Low energy and mood", "detail": "Tiredness and low self-esteem; less activity; risk of stopping medicines."}, {"id": "e", "label": "Less movement, more weight", "detail": "The loop tightens, and heart risk climbs."}], "caption": "Break it early: choose medicines with care, monitor weight from the start, encourage activity, and consider metformin when weight rises."}
+:::
 
 ### GLP-1 receptor agonists
 - Trials of liraglutide, exenatide and semaglutide in people on antipsychotics (mostly with schizophrenia, some with bipolar disorder) show meaningful weight loss.
@@ -1341,6 +1491,10 @@ Q: A woman with bipolar disorder on lithium starts semaglutide and has repeated 
 - **Computational models**: people with bipolar disorder may update expectations too strongly after reward (high learning rates), so a few good events can snowball into a high.
 - **Digital phenotyping**: smartphone data (activity, sleep, call and text patterns, typing speed, voice features) can detect early signs of mania or depression in research studies. Accuracy varies between people, and privacy and consent are real concerns.
 - **Mood forecasting**: models trained on daily mood ratings try to predict the next episode. Promising in research, not yet reliable for individual decisions.
+
+:::widget curve
+{"kind": "sdt", "title": "Digital alerts for early mania: hits versus false alarms", "caption": "Imagine a phone app that warns of a coming high from sleep, activity and typing speed. Move the criterion. A sensitive setting catches most early relapses but sends many false alarms, which people learn to ignore. A strict setting is quieter but misses relapses. Every digital phenotyping tool has to choose a point on this trade-off, ideally with the patient."}
+:::
 
 ### ICD-11 says
 | Topic | DSM-5-TR | ICD-11 |
@@ -1401,7 +1555,7 @@ A specifier for a manic or hypomanic episode with at least three depressive symp
 
 ## 6.2 Viva rapid-fire [core]
 :::viva
-Minimum duration of a manic episode? :: One week (7 days), or any duration if admitted.
+Minimum duration of a manic episode? :: Seven days, or any duration if admitted.
 Minimum duration of hypomania? :: Four consecutive days.
 How many manic symptoms are needed? :: Three, or four if mood is only irritable.
 Expand DIGFAST. :: Distractibility, insomnia (less need for sleep), grandiosity, flight of ideas, activity, speech pressure, thoughtlessness.
@@ -1415,7 +1569,7 @@ First step in managing mania on an antidepressant? :: Stop the antidepressant.
 Gold standard maintenance treatment? :: Lithium.
 Mood stabiliser to avoid in women who may become pregnant? :: Valproate.
 Drug that mainly prevents bipolar depression? :: Lamotrigine.
-Usual lamotrigine target and time to reach it? :: 200 mg over about six weeks.
+Usual lamotrigine target, and how is it reached? :: 200 mg a day, by the slow climb you guessed in 3.4.
 How does valproate change lamotrigine dosing? :: Halve the lamotrigine schedule.
 Lithium maintenance level? :: About 0.6 to 0.8 mmol/L, 12 hours after the last dose.
 Three drugs that raise lithium levels? :: NSAIDs, ACE inhibitors, thiazides.
@@ -1642,4 +1796,4 @@ Q: A family wants a stable patient to stop lithium suddenly. The main risk is:
 - Kidney failure
 > Taper slowly if stopping, over months.
 :::
-`;
+` + qaBank;

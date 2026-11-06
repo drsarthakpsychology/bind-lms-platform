@@ -1,5 +1,6 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
+import { qaBank } from "./depression-qa";
 
 export const meta: ModuleMeta = {
   id: "depression",
@@ -50,6 +51,10 @@ Mood shows up in four places at once. This matters, because doctors look for cha
 - **Thinking**: how you see yourself, the world and the future.
 - **Body**: sleep, appetite, energy, how fast you move.
 - **Doing**: work, study, meeting people, looking after yourself.
+
+:::widget layers
+{"title": "Four places mood lives", "shape": "stack", "layers": [{"label": "Feeling", "detail": "What it is like inside: sad, empty, flat, irritable, or calm and content. This is the layer people usually mean by 'mood'."}, {"label": "Thinking", "detail": "How you see yourself, the world and the future. Low mood bends thoughts towards 'I'm useless', 'nothing works', 'it will never change'."}, {"label": "Body", "detail": "Sleep, appetite, energy and speed. In depression the body slows or becomes restless, and sleep and hunger change."}, {"label": "Doing", "detail": "Work, study, meeting people, looking after yourself. When mood stays low, this layer shrinks, and that shrinking keeps the low going."}], "caption": "Tap each layer. A passing bad mood touches one or two layers. Depression changes all four together, for a long time."}
+:::
 
 When someone's mood drops for a long time, all four change together. They feel sad, they think "I'm useless", they sleep badly and lose appetite, and they stop going out. That cluster is what we will learn to recognise.
 
@@ -106,6 +111,10 @@ Two more clues help. In depression, thinking turns against the self ("I am a bur
 
 :::trap Sadness with a reason can still be depression
 A trigger does not rule depression out. A job loss can start a real depressive illness. What matters is the pattern: how long, how wide, how deep, and how much it stops the person. Equally, having no reason does not make it "fake".
+:::
+
+:::widget flow
+{"title": "Four questions, in order", "layout": "chain", "nodes": [{"id": "a", "label": "How long?", "detail": "Ordinary sadness passes in hours or days. Depression is there most of the day, nearly every day, for a long stretch."}, {"id": "b", "label": "How wide?", "detail": "Sadness is about one thing. In depression, everything turns grey, even things the person used to love."}, {"id": "c", "label": "How deep?", "detail": "Sadness stays in the feelings. Depression reaches the body: sleep, appetite, energy and speed of movement."}, {"id": "d", "label": "Does it stop life?", "detail": "Sad people still study, work and meet friends. In depression these start to fall apart."}, {"id": "e", "label": "Talk to a professional", "detail": "If the answers point to 'long, wide, deep and stopping life', the kind next step is a proper assessment, not a label from a friend."}], "edgeLabels": {"a>b": "then", "b>c": "then", "c>d": "then", "d>e": "if yes to most"}, "caption": "Press Play. Ask the questions in this order and you will rarely confuse a bad week with an illness."}
 :::
 
 :::recall
@@ -169,6 +178,10 @@ In India, psychiatrists and licensed clinical psychologists (registered with the
 {"scene": "Your classmate Sana shows you her phone. She took an online quiz that says 'severe depression'. She looks scared and asks, 'So I have depression, right? You study psychology.'", "ask": "What do you say?", "choices": [{"label": "'Yes, that score means severe depression. You should start medicine.'", "verdict": "harm", "outcome": "Sana panics and searches for tablets online.", "why": "A screening quiz is not a diagnosis, and a student should never diagnose or suggest medicines."}, {"label": "'Those quizzes are rubbish. You're fine.'", "verdict": "harm", "outcome": "Sana feels dismissed and stops talking about it.", "why": "The quiz may be picking up real distress. Brushing it off closes the door."}, {"label": "'I can't diagnose you, but I'm glad you told me. How have you been feeling? A proper check with a professional would really help.'", "verdict": "best", "outcome": "Sana talks for twenty minutes, then agrees to book an appointment at the college counselling centre.", "why": "You took her seriously, stayed in your role, listened, and pointed her to someone who can assess her properly."}]}
 :::
 
+:::widget flow
+{"title": "How a diagnosis gets made", "layout": "chain", "nodes": [{"id": "a", "label": "Listen to the story", "detail": "The clinician hears what has changed, in the person's own words, and from the family where helpful."}, {"id": "b", "label": "Count the symptoms", "detail": "Which experiences from the agreed list are present, and are they new or clearly worse?"}, {"id": "c", "label": "Check the time rule", "detail": "Have they lasted long enough, most days? A rough few days does not count."}, {"id": "d", "label": "Check the impact", "detail": "Do they cause real distress or stop the person living their life?"}, {"id": "e", "label": "Rule out other causes", "detail": "A medicine, alcohol, a thyroid problem or another illness can look like depression. These are checked first."}, {"id": "f", "label": "Give the name", "detail": "Only now is the label used. It names the pattern. Explaining why it happened is a separate step."}], "caption": "No blood test or scan appears in this chain. Tests are used only to rule out body causes."}
+:::
+
 :::recall
 1. What is a diagnosis, in one line? || An agreed name for a pattern of experiences, with rules for when to use it.
 2. Name the two main diagnostic systems. || DSM-5-TR (American Psychiatric Association) and ICD-11 (World Health Organization).
@@ -200,6 +213,10 @@ Depression is one of the most common health problems in the world. The World Hea
 India's National Mental Health Survey found depression among the most common mental disorders, and found that **most people with it never received any treatment**. This "treatment gap" is driven by stigma, shortage of professionals, cost, and the fact that many people do not see their suffering as a health problem.
 
 Distress in India is often described through the body: aches, burning, weakness ("kamzori"), "gas", heaviness in the head. People may call it "tension". Families may blame stress, nazar (the evil eye), or the person's attitude. A good clinician listens to these words and then gently asks about mood, interest, sleep and hope.
+
+:::widget layers
+{"title": "Risk sits in rings around a person", "shape": "rings", "layers": [{"label": "The person", "detail": "Genes from a parent with depression, a long-term illness such as diabetes or pain, the months after childbirth."}, {"label": "Family and home", "detail": "Loss of a loved one, conflict, violence at home, long caring duties, no one to confide in."}, {"label": "Community", "detail": "Stigma ('pagal'), debt, exam pressure, unemployment, being new to a city."}, {"label": "Society", "detail": "Poverty, discrimination, and too few trained professionals, which keeps the treatment gap wide."}], "caption": "Tap from the centre outwards. Most people who become depressed have strain in more than one ring."}
+:::
 
 ### Who is at higher risk
 - People with a close relative who has had depression.
@@ -238,6 +255,10 @@ The most important fact about depression is hopeful: **it is treatable, and most
 - **People.** A trusted person to talk to is one of the strongest protections there is.
 - **Hospital care and other treatments** for the most severe cases, which you will meet in the Beginner level.
 
+:::widget flow
+{"title": "Why doing less keeps low mood going", "layout": "cycle", "nodes": [{"id": "a", "label": "Low mood", "detail": "Everything feels heavy and pointless."}, {"id": "b", "label": "Do less", "detail": "Skip college, stop calling friends, stay in bed. It feels like rest."}, {"id": "c", "label": "Fewer good moments", "detail": "No laughter with friends, no small wins, no sunlight. Life gives back less."}, {"id": "d", "label": "Feel worse", "detail": "With fewer good moments the mood sinks further, and doing anything feels even harder."}], "caption": "The circle can be broken anywhere. Small, planned steps (a short walk, one phone call) are one of the simplest ways out. You will learn the full version of this loop in the Beginner level."}
+:::
+
 ### Being a good first listener
 You do not need to fix anyone. You need to be safe, kind and clear.
 1. **Make time.** Put the phone away. Sit at the same level.
@@ -253,6 +274,10 @@ You do not need to fix anyone. You need to be safe, kind and clear.
 
 :::note This is a place to learn
 This platform teaches you about mental health. It is not a help service. If you or someone you know is struggling, please talk to a doctor, a counsellor or a trusted adult.
+:::
+
+:::widget layers
+{"title": "What helps, from the ground up", "shape": "pyramid", "layers": [{"label": "Hospital care and specialist treatments", "detail": "For the most severe or unsafe situations. Few people need this level."}, {"label": "Medicines", "detail": "Most useful in moderate and severe depression, alongside talking help."}, {"label": "Talking therapies", "detail": "A trained therapist helps with harsh thoughts, daily activity, problems and relationships."}, {"label": "Daily life and people", "detail": "Sleep, meals, movement, sunlight and a person to talk to. Everyone needs this base, whatever else they receive."}], "caption": "Tap each level. The wide base is for everyone; each level above is added when it is needed."}
 :::
 
 :::recall
@@ -406,6 +431,10 @@ ICD-11 splits the same ground into single episode depressive disorder, recurrent
 {"prompt": "Which diagnosis fits best? Place each short story.", "buckets": ["Major depressive disorder", "Persistent depressive disorder", "Not a depressive disorder: think bipolar"], "items": [{"text": "Two clear episodes of severe low mood with good years in between, never any highs", "bucket": 0}, {"text": "'I've felt low and tired most days for as long as I can remember, at least three years'", "bucket": 1}, {"text": "Low mood now, and last year a week of no sleep, big plans and heavy spending", "bucket": 2, "why": "Any past mania or hypomania makes it bipolar."}, {"text": "First-ever episode: low mood, no interest, poor sleep, guilt for over a month", "bucket": 0}, {"text": "Mild, constant gloom and low self-esteem for 2 years, never fully well for long", "bucket": 1}, {"text": "Recurrent depressions plus a few days of feeling 'supercharged' that his wife noticed", "bucket": 2, "why": "Short highs that others notice may be hypomania. Ask carefully."}]}
 :::
 
+:::widget flow
+{"title": "Which depressive disorder? A first sort", "layout": "tree", "nodes": [{"id": "root", "label": "Low, empty or irritable mood that affects life", "detail": "Start here, then ask the questions below in order. The first 'yes' usually decides."}, {"id": "bp", "parent": "root", "label": "Ever a manic or hypomanic episode?", "detail": "Yes: this is a bipolar disorder, not a depressive disorder. Ask the patient and the family."}, {"id": "sec", "parent": "root", "label": "Caused by a substance, medicine or body illness?", "detail": "Yes: substance or medication-induced depressive disorder, or depressive disorder due to another medical condition."}, {"id": "pdd", "parent": "root", "label": "Low most days for years?", "detail": "Persistent depressive disorder, with or without full episodes on top."}, {"id": "pmdd", "parent": "root", "label": "Tied to the menstrual cycle?", "detail": "Premenstrual dysphoric disorder, confirmed with daily ratings over two cycles."}, {"id": "dmdd", "parent": "root", "label": "A child with constant irritability and frequent outbursts?", "detail": "Disruptive mood dysregulation disorder, onset before 10."}, {"id": "mdd", "parent": "root", "label": "None of these, and a full episode is present", "detail": "Major depressive disorder, single or recurrent."}], "caption": "The bipolar question always comes first, because it changes treatment the most."}
+:::
+
 :::recall
 1. What do all depressive disorders share? || Sad, empty or irritable mood with body and thinking changes that impair life.
 2. What single history finding changes the diagnosis to bipolar disorder? || Any past manic or hypomanic episode.
@@ -429,7 +458,7 @@ The **major depressive episode** is the building block of most depressive diagno
 :::
 
 :::define Criterion A
-**Five or more** of the nine symptoms below, present during the same 14 days, most of the day, nearly every day, and a **change** from the person's usual self. **At least one** must be (1) depressed mood or (2) loss of interest or pleasure.
+**Five or more** of the nine symptoms below, present during the same period (at least the minimum you just guessed), most of the day, nearly every day, and a **change** from the person's usual self. **At least one** must be (1) depressed mood or (2) loss of interest or pleasure.
 :::
 
 | # | Symptom | What it looks like |
@@ -477,6 +506,10 @@ Depressed mood, then **S**leep, **I**nterest, **G**uilt, **E**nergy, **C**oncent
 ICD-11 lists **ten** symptoms in three clusters (affective, cognitive-behavioural, neurovegetative). It adds **hopelessness about the future** as a separate symptom. At least five are needed, including depressed mood or loss of interest, over the same minimum period as DSM-5-TR.
 :::
 
+:::widget flow
+{"title": "Criteria A to E, as a checklist", "layout": "chain", "nodes": [{"id": "a", "label": "A: five of nine", "detail": "At least five symptoms in the same period, nearly every day, including depressed mood or loss of interest."}, {"id": "b", "label": "B: it matters", "detail": "Clinically significant distress or trouble at work, study, home or with people."}, {"id": "c", "label": "C: not a substance or illness", "detail": "Not explained by alcohol, drugs, a medicine or a medical condition such as hypothyroidism."}, {"id": "d", "label": "D: not a psychotic disorder", "detail": "Not better explained by schizophrenia, schizoaffective disorder or a related condition."}, {"id": "e", "label": "E: never high", "detail": "No past manic or hypomanic episode. If there was one, think bipolar."}], "edgeLabels": {"a>b": "and", "b>c": "and", "c>d": "and", "d>e": "and"}, "caption": "All five links must hold. Most exam errors come from forgetting C and E."}
+:::
+
 :::recall
 1. State criterion A for a major depressive episode exactly. || Five or more of nine symptoms in the same window, nearly every day, a change from before, at least one being depressed mood or loss of interest.
 2. What does criterion E exclude? || Any past manic or hypomanic episode.
@@ -516,12 +549,16 @@ These two are near-opposites, and exam questions love the contrast.
 | Notes | Commoner in inpatients and with psychosis; responds well to physical treatments such as ECT | "Atypical" is a historical name, not rare. Commoner in women and in bipolar depression |
 
 :::sounds How it sounds
-- Melancholic: "Subah 3–4 baje neend khul jaati hai, phir bas padha rehta hoon. Subah sabse bura lagta hai." (I wake at 3 or 4 and just lie there. Mornings are the worst.)
+- Melancholic: "Subah 3-4 baje neend khul jaati hai, phir bas padha rehta hoon. Subah sabse bura lagta hai." (I wake at 3 or 4 and just lie there. Mornings are the worst.)
 - Atypical: "Bas sota rehta hoon, haath-pair bhaari lagte hain. Koi kuch keh de toh bahut bura lag jaata hai." (I sleep all day, my limbs feel heavy, and I'm crushed if anyone says anything.)
 :::
 
 :::widget sort
 {"prompt": "Melancholic or atypical? Place each feature.", "buckets": ["Melancholic features", "Atypical features"], "items": [{"text": "Wakes at 4 a.m., two hours before the alarm", "bucket": 0}, {"text": "Sleeps 11 hours and still naps", "bucket": 1}, {"text": "Brightens when her sister visits, then sinks again", "bucket": 1, "why": "Mood reactivity is the core of atypical features."}, {"text": "Nothing at all lifts his mood, not even his son's wedding", "bucket": 0, "why": "No reactivity is a melancholic core feature."}, {"text": "Arms and legs feel like lead for hours", "bucket": 1}, {"text": "Worst in the morning, slightly better by evening", "bucket": 0}, {"text": "Lost 6 kg; food tastes of nothing", "bucket": 0}, {"text": "Eating far more, gained 5 kg", "bucket": 1}, {"text": "Has always been crushed by any hint of rejection", "bucket": 1, "why": "A long-standing trait, present even when not depressed."}, {"text": "Feels guilty about things long past, out of proportion", "bucket": 0}]}
+:::
+
+:::widget moodline
+{"prompt": "Tanvi, 27, a teacher in Shimla, rated her mood monthly for three years. What pattern do you see?", "series": [0, 0, -0.2, -2.4, -2.7, -2.5, -0.3, 0, 0, -2.5, -2.8, -2.4], "labels": ["Year 1", "Year 2", "Year 3"], "options": ["Random ups and downs", "Episodes that return at the same time each year", "Persistent depressive disorder", "Bipolar disorder"], "answer": 1, "why": "Each dip begins in the same months and lifts at the same time of year, with full recovery in between. If this repeats over at least two years, with no other explanation such as a yearly job loss, it fits a seasonal pattern. Light therapy is one option."}
 :::
 
 ### The other specifiers
@@ -574,6 +611,10 @@ Depressed mood for most of the day, more days than not, for **at least 2 years**
 - It often starts quietly before 25. The person may think "this is just how I am".
 - Full major depressive episodes can occur on top of it (once called "double depression"). Specify, for example, "with intermittent major depressive episodes".
 - Untreated, many never fully recover. Treatment (an antidepressant plus therapy) improves the outlook.
+
+:::widget moodline
+{"prompt": "Mohan, 42, says, 'I've never really been happy.' Here is his mood over six years. Which description fits?", "series": [-1.1, -1.2, -1.0, -2.7, -2.8, -1.2, -1.1, -1.3, -1.0, -2.6, -1.2, -1.1], "labels": ["Year 1", "Year 3", "Year 5"], "options": ["Recurrent major depression with full recovery", "Persistent low mood with full episodes on top", "Normal mood", "Cyclothymia"], "answer": 1, "why": "His baseline never returns to zero: a long, milder low (persistent depressive disorder). Twice it drops into a full major depressive episode, then comes back to the same grey baseline, not to wellness. This is the old 'double depression'. Treating only the full episodes leaves him at his grey baseline, which is still illness."}
+:::
 
 ### Premenstrual dysphoric disorder
 - In most cycles of the past year: **at least 5 symptoms** in the final days before menses, starting to improve within a few days after onset, and minimal or absent after menses.
@@ -658,12 +699,28 @@ No single cause explains depression. Think **vulnerability plus stress**: genes 
 {"prompt": "If an SSRI raises serotonin in the synapse within hours, why doesn't mood lift the same day?", "answer": "Because mood depends on slower adaptations: receptors adjust, gene activity changes, growth factors such as BDNF rise, and brain connections are rebuilt. The chemistry is the first domino, not the whole effect. This is why patients are asked to keep going through the early days, when side effects may come before benefit."}
 :::
 
+:::widget layers
+{"title": "Vulnerability plus stress", "shape": "iceberg", "layers": [{"label": "What everyone sees", "detail": "The episode: low mood, poor sleep, withdrawal. It usually begins after a stressor, such as a loss or a humiliation."}, {"label": "Current pressures", "detail": "Debt, conflict, caring duties, illness, no confidant. These lower the threshold."}, {"label": "Early experience", "detail": "Loss of a parent, neglect, abuse or a critical upbringing shape beliefs and tune the stress system."}, {"label": "Genes and biology", "detail": "Many small genetic effects, the stress-hormone system and brain plasticity set how much load a person can carry before an episode starts."}], "caption": "Tap each layer, from the surface down. The trigger is only the visible tip; treatment works on the layers beneath as well."}
+:::
+
+:::widget neuron
+{"title": "How a neuron fires", "myelinated": true, "caption": "Every idea in this module, from serotonin release to ketamine's glutamate burst, rests on this event. Slide the threshold: a neuron fires fully or not at all. Antidepressants do not make neurons fire 'more strongly'; they change how often they fire and how strongly the message is received."}
+:::
+
 ### Plasticity, stress hormones and sleep
 - **Neuroplasticity.** Chronic stress and depression lower **BDNF**, a growth factor that helps neurons keep and grow connections. The hippocampus (a memory area) is smaller in people with long or repeated depression. Antidepressants, ECT and exercise raise BDNF.
 - **The stress system (HPA axis).** The hypothalamus releases CRH, the pituitary releases ACTH, the adrenal glands release **cortisol**. In many depressed people this system is overactive and does not switch off normally.
 - **Sleep.** Depression shortens the time before dreaming (REM) sleep starts, increases REM, and reduces deep sleep.
 - **Inflammation.** A subgroup has raised inflammatory markers. Depression is common in inflammatory illness.
 - **Circuits.** Brain imaging shows overactive alarm areas (amygdala), underactive "brake" areas in the front of the brain, and weaker reward responses (linked to loss of pleasure).
+
+:::widget flow
+{"title": "The stress hormone axis (HPA axis)", "layout": "chain", "nodes": [{"id": "a", "label": "Stress", "detail": "A threat, loss or long strain is noticed by the brain."}, {"id": "b", "label": "Hypothalamus: CRH", "detail": "The hypothalamus releases corticotropin-releasing hormone (CRH)."}, {"id": "c", "label": "Pituitary: ACTH", "detail": "CRH tells the pituitary gland to release ACTH into the blood."}, {"id": "d", "label": "Adrenal glands: cortisol", "detail": "ACTH makes the adrenal glands release cortisol, the main stress hormone. In the short term this helps: energy, alertness."}, {"id": "e", "label": "Feedback switch", "detail": "Normally cortisol acts on receptors in the hippocampus and hypothalamus to switch the system off again."}, {"id": "f", "label": "In depression", "detail": "In many depressed people the switch-off is weak. Cortisol stays high, sleep and appetite change, and over time high cortisol harms the hippocampus."}], "edgeLabels": {"a>b": "signals", "b>c": "CRH", "c>d": "ACTH", "d>e": "cortisol", "e>f": "weak brake"}, "caption": "Press Play. The Advanced level adds what this means for memory, plasticity and the dexamethasone test."}
+:::
+
+:::widget brainmap
+{"title": "Brain areas involved in mood", "focus": ["prefrontal", "amygdala", "hippocampus", "hypothalamus"], "notes": {"prefrontal": "The front of the brain acts like a brake and a planner. It is often underactive in depression, which fits poor concentration and difficulty stopping negative thoughts.", "amygdala": "The alarm centre. It reacts more strongly to sad or threatening faces and words in depression, feeding the negative bias.", "hippocampus": "A memory area that also helps switch off cortisol. It is smaller in people with long or repeated depression, possibly from stress hormones and lower BDNF.", "hypothalamus": "Controls sleep, appetite and the stress hormone axis. Changes here fit the body symptoms of depression."}, "caption": "Tap each highlighted area. No single area 'causes' depression; the trouble is in how they talk to each other."}
+:::
 
 :::analogy The signals and the road
 Monoamines are the traffic signals; neural connections are the road. Antidepressants fix the signals in hours, but it takes much longer for the repair crew (BDNF and plasticity) to rebuild the damaged road.
@@ -708,9 +765,17 @@ Negative views of the **self** ("I am a failure"), the **world** ("nothing works
 {"prompt": "Name the thinking error in each thought.", "buckets": ["All-or-nothing", "Mind reading", "Catastrophising"], "items": [{"text": "'Unless I get 100% I'm a total failure.'", "bucket": 0}, {"text": "'My friends didn't reply fast. They must hate me now.'", "bucket": 1}, {"text": "'This headache is surely a brain tumour.'", "bucket": 2}, {"text": "'If the marriage proposal falls through, my life is over.'", "bucket": 2}, {"text": "'The teacher looked at me. She thinks I'm stupid.'", "bucket": 1}, {"text": "'Either I'm the perfect daughter or I'm worthless.'", "bucket": 0}]}
 :::
 
+:::widget flow
+{"title": "Beck's cognitive model, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Early experience", "detail": "For example, a parent who praised only top marks."}, {"id": "b", "label": "Core belief", "detail": "A deep, quiet belief forms: 'I am only acceptable if I succeed.'"}, {"id": "c", "label": "Rules for living", "detail": "'If I fail, people will reject me.' These rules keep the person safe while things go well."}, {"id": "d", "label": "Critical incident", "detail": "A failure that fits the belief: a lost job, a failed interview."}, {"id": "e", "label": "Negative automatic thoughts", "detail": "Quick, believable thoughts pop up: 'I'm useless', 'everyone is laughing at me'. They follow the triad: self, world, future."}, {"id": "f", "label": "Symptoms", "detail": "Low mood, withdrawal, poor sleep and poor concentration follow, and these seem to prove the thoughts true."}], "caption": "The early stages can lie quiet for years. CBT works mostly on the last three boxes first, then on the rules and beliefs."}
+:::
+
 ### The behavioural model
 - Low mood leads to **withdrawal**. Withdrawal removes rewarding experiences. Fewer rewards deepen low mood (Lewinsohn). This loop is broken by **behavioural activation**: act first, mood follows.
 - **Learned helplessness** (Seligman): repeated uncontrollable bad events teach that action is pointless. Later reworked as a hopeless way of explaining events: internal ("it's me"), stable ("always"), global ("everything").
+
+:::widget flow
+{"title": "The depressive maintenance cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Negative thoughts (the triad)", "detail": "'I'm a failure, nothing works, it will always be like this.'"}, {"id": "b", "label": "Low mood", "detail": "The thoughts feel like facts, so mood drops further."}, {"id": "c", "label": "Rumination", "detail": "Going over 'why me, why did I fail' again and again. It feels like problem-solving but solves nothing and deepens the low."}, {"id": "d", "label": "Withdrawal and avoidance", "detail": "Staying in the room, not answering calls, skipping classes. This feels protective."}, {"id": "e", "label": "Fewer rewards, less evidence against", "detail": "No good moments, no chance to see that friends care. The beliefs go unchallenged and seem confirmed."}], "caption": "Press Play and watch each step feed the next. CBT challenges the thoughts, rumination-focused work interrupts the brooding, and behavioural activation breaks the withdrawal. Any break slows the whole wheel."}
+:::
 
 ### Psychodynamic and attachment views [extra]
 - Freud's "Mourning and Melancholia": in melancholia, anger at a lost loved one is turned inward, as self-reproach.
@@ -847,8 +912,16 @@ The first meeting decides whether the person comes back. Aim for **safety, trust
 | EPDS (Edinburgh) | Patient | Around childbirth |
 | HADS | Patient | Medically ill; avoids body symptoms |
 
+:::widget curve
+{"kind": "sdt", "title": "Screening with a cut-off: the trade-off", "caption": "A screening tool such as the PHQ-9 uses a cut-off score (10 is common). Move the criterion: a lower cut-off catches more true cases (hits) but flags more people who are not depressed (false alarms). A higher cut-off misses more cases. A screen only says 'look closer'; the interview makes the diagnosis."}
+:::
+
 ### Investigations
 Blood count, thyroid function, glucose, kidney and liver tests, sodium; B12 and folate where indicated; ECG before some medicines; HIV and syphilis tests by risk; brain imaging if there are neurological signs, late first onset or atypical features.
+
+:::widget flow
+{"title": "The first interview, in eight moves", "layout": "chain", "nodes": [{"id": "a", "label": "Welcome and frame", "detail": "Who you are, how long you have, confidentiality and its one limit: safety."}, {"id": "b", "label": "Open question", "detail": "'What brings you here today?' Then listen without interrupting for a few minutes."}, {"id": "c", "label": "Focus", "detail": "The nine symptoms, how long, and what they have done to work, study, family and self-care."}, {"id": "d", "label": "Risk", "detail": "Suicidal thoughts, plans, past attempts; risk to children; self-neglect."}, {"id": "e", "label": "Highs", "detail": "Any time of unusual energy, little sleep and big plans? Ask the family too."}, {"id": "f", "label": "Other causes", "detail": "Alcohol, drugs, medicines, thyroid and other body illness."}, {"id": "g", "label": "Their world", "detail": "Stressors, supports, beliefs about the cause, hopes for treatment."}, {"id": "h", "label": "Close", "detail": "Summarise, explain, agree the next step and a date to meet again."}], "caption": "Safety, trust and enough information to act, in that order."}
+:::
 
 :::recall
 1. List the eight steps of a first interview. || Frame, open question, focus, risk, highs, other causes, the person's world, close.
@@ -908,6 +981,10 @@ In physical illness, tiredness, poor appetite and poor sleep may come from the i
 {"scene": "Mrs Kaur, 47, from Amritsar, has felt low and tired for months. She has gained weight, feels cold, her skin is dry and she is constipated. She asks you to 'just start the depression tablet'.", "ask": "What do you do first?", "choices": [{"label": "Start an SSRI today and review later", "verdict": "ok", "outcome": "Three months on she is no better. A thyroid test then shows severe hypothyroidism.", "why": "An antidepressant is not wrong for depression, but here the body clues point to a treatable cause that should be checked first or at the same time."}, {"label": "Explain that her symptoms might have a body cause, check thyroid function and blood count today, and arrange early review", "verdict": "best", "outcome": "Her TSH is very high. Thyroxine is started, and her mood improves as her thyroid recovers. You keep monitoring her mood.", "why": "Cold intolerance, dry skin, weight gain and constipation suggest hypothyroidism, which mimics and worsens depression."}, {"label": "Tell her it's just stress and to rest", "verdict": "harm", "outcome": "She stops seeking help. Her thyroid illness and her low mood both worsen.", "why": "It dismisses real symptoms and misses a medical cause."}]}
 :::
 
+:::widget flow
+{"title": "Differential diagnosis tree", "layout": "tree", "nodes": [{"id": "root", "label": "A person presents with a depressive syndrome", "detail": "Work down the branches. More than one can be true at once."}, {"id": "bp", "parent": "root", "label": "Bipolar?", "detail": "Any past mania or hypomania, a bipolar family history, very early onset, atypical or psychotic features, onset after childbirth, or a 'too good' response to an antidepressant."}, {"id": "bp1", "parent": "bp", "label": "Yes: bipolar depression", "detail": "Avoid an antidepressant alone; use treatments for bipolar depression."}, {"id": "org", "parent": "root", "label": "Organic (a body cause)?", "detail": "Thyroid, anaemia, B12, stroke, Parkinson's disease, cancer, HIV, steroids, interferon, efavirenz. Look for body signs and order the basic tests."}, {"id": "org1", "parent": "org", "label": "Yes: depressive disorder due to another medical condition", "detail": "Treat the cause, and treat the mood too if it persists."}, {"id": "sub", "parent": "root", "label": "Substance?", "detail": "Did it start during heavy drinking, drug use or withdrawal? Does it improve after some weeks of abstinence?"}, {"id": "sub1", "parent": "sub", "label": "Yes: substance-induced depressive disorder", "detail": "Treat the substance use; reassess mood after abstinence."}, {"id": "oth", "parent": "root", "label": "Another psychiatric picture?", "detail": "Grief, adjustment disorder, persistent depressive disorder, negative symptoms of schizophrenia, dementia, anxiety disorders."}, {"id": "uni", "parent": "root", "label": "None of these: unipolar depression", "detail": "Major depressive disorder. Still recheck at every review, because highs and medical causes can appear later."}], "caption": "Tap any box. Bipolar, organic and substance causes are checked in every patient because each changes treatment."}
+:::
+
 :::recall
 1. Name six differential diagnoses of depression. || Bipolar depression, adjustment disorder, grief, persistent depressive disorder, negative symptoms of schizophrenia, dementia, anxiety, substance use, medical causes.
 2. Which antidepressant is well studied after a heart attack? || Sertraline.
@@ -939,6 +1016,10 @@ Move from general to specific. Use plain, calm words.
 
 :::widget decide
 {"scene": "Vikram, 38, a software engineer in Bengaluru, has a moderate depressive episode. He has just said, 'Honestly, sometimes I wonder what the point is.' You feel uneasy. There are ten minutes left.", "ask": "What do you do?", "choices": [{"label": "Move on quickly to medicines, so as not to upset him", "verdict": "harm", "outcome": "You never learn that he has been storing his father's sleeping tablets.", "why": "Avoiding the topic leaves risk unknown. Asking does not increase risk."}, {"label": "Say, 'Thank you for telling me. When you say what's the point, have you had thoughts of ending your life?' and then ask about plans, means, past attempts and what keeps him going", "verdict": "best", "outcome": "He admits to thoughts and a store of tablets, but says his daughter keeps him going. Together you agree a safety plan; with his consent his wife removes the tablets, and you arrange review within days.", "why": "A direct, calm question, followed by plan, means and protective factors, lets you judge urgency and act on it."}, {"label": "Tell him firmly that suicide is a sin and he must not think like that", "verdict": "harm", "outcome": "He feels judged and says he was 'only joking'.", "why": "Moral judgement shuts the conversation and hides risk."}]}
+:::
+
+:::widget flow
+{"title": "Asking about suicide: from general to specific", "layout": "chain", "nodes": [{"id": "a", "label": "The future", "detail": "'How do you see the future?'"}, {"id": "b", "label": "Life worth living?", "detail": "'Do you sometimes feel life is not worth living?'"}, {"id": "c", "label": "Thoughts of ending life", "detail": "'Have you had thoughts of ending your life?'"}, {"id": "d", "label": "Method", "detail": "'Have you thought about how you would do it?'"}, {"id": "e", "label": "Preparations", "detail": "'Have you made any preparations, or done anything towards it?' Ask about access to pesticides, medicines and heights."}, {"id": "f", "label": "What stops you", "detail": "'What has kept you going so far?' These are the protective factors you will build on."}, {"id": "g", "label": "Past attempts", "detail": "'Have you ever tried before?' The strongest single risk factor."}], "caption": "Each step opens the next. Stop and act the moment you hear a plan with intent or means."}
 :::
 
 ### Risk factors and protective factors
@@ -1017,6 +1098,10 @@ Arrange the factors under **biological, psychological and social** headings, and
 "Major depressive disorder, single episode, moderate, with anxious distress. Passive death wishes, no plan or intent; low current risk; safety plan agreed. Insight grade 4."
 :::
 
+:::widget layers
+{"title": "The biopsychosocial formulation, as rings", "shape": "rings", "layers": [{"label": "Biological", "detail": "Ananya: a grandmother with 'nervous breakdowns', broken sleep, skipped meals. These set the body's vulnerability and keep the episode going."}, {"label": "Psychological", "detail": "A belief that she must succeed to be accepted, rumination at night, the thought 'I am a failure'."}, {"label": "Social", "detail": "A failed placement interview, a father who says she has shamed the family, a supportive aunt and a choir that she has stopped attending."}], "caption": "Tap each ring. Run the 5 Ps through every ring and you get the full grid; the perpetuating factors in each ring become the treatment plan."}
+:::
+
 :::recall
 1. What are the 5 Ps? || Presenting, predisposing, precipitating, perpetuating, protective.
 2. Which column of the formulation becomes the treatment plan? || Perpetuating factors.
@@ -1046,6 +1131,10 @@ Treatment matches severity and risk. Everyone starts at step 1; people move up i
 
 :::widget worked
 {"title": "A stepped treatment plan", "steps": [{"q": "Neha, 29, a teacher in Jaipur, has a first episode: low mood, poor sleep, guilt and poor focus for over a month. PHQ-9 is 16. She has passive death wishes, no plan, strong family support and no past highs. Thyroid tests are normal. Where does she sit in stepped care?", "a": "Step 3: moderately severe depression. Offer an antidepressant plus a psychological therapy, with a safety plan."}, {"q": "Which antidepressant would you suggest first, and why?", "a": "An SSRI such as sertraline or escitalopram: effective, well tolerated, safer in overdose than tricyclics. Choose with her, considering side effects she wants to avoid, other medicines, and any plans for pregnancy."}, {"q": "What do you tell her about the first days and when to come back?", "a": "Side effects such as nausea or restlessness can come before benefit and usually ease. Some improvement is often visible early; full effect builds over a longer stretch. Review soon, earlier if young or at risk, and return at once if suicidal thoughts worsen."}, {"q": "What psychological help do you add?", "a": "Behavioural activation or CBT, weekly if possible; in a busy public clinic, a trained lay counsellor programme or group work. Involve her husband with her consent."}, {"q": "At review there is no improvement at all despite taking it daily at a good dose. What now?", "a": "Recheck the diagnosis (including past highs), adherence, alcohol and stressors. Then raise the dose, or switch. Keep the therapy going."}, {"q": "She recovers fully. How long does treatment continue?", "a": "Continue the same dose for several months after full remission (you will guess how long in 4.3), then taper slowly with a plan for early warning signs."}], "yourTurn": [{"q": "Suresh, 63, has severe depression with delusions that he has ruined his family and has stopped eating and drinking for three days. Where is he in stepped care, and what are the options?", "a": "Step 4: severe psychotic depression with food and fluid refusal. Urgent specialist care and admission; ECT is the fastest and most effective option; alternatively an antidepressant plus an antipsychotic. Monitor hydration, kidney function and physical health."}]}
+:::
+
+:::widget flow
+{"title": "The stepped-care pathway", "layout": "chain", "nodes": [{"id": "a", "label": "Step 1: everyone", "detail": "Assessment, a plain explanation, a safety plan, sleep and activity advice, and a date to review."}, {"id": "b", "label": "Step 2: mild", "detail": "Guided self-help, behavioural activation, problem-solving, group exercise or brief CBT."}, {"id": "c", "label": "Step 3: moderate to severe", "detail": "An antidepressant (usually an SSRI) plus a psychological therapy."}, {"id": "d", "label": "Step 4: severe, psychotic or high risk", "detail": "Specialist care; antidepressant plus antipsychotic, or ECT; admission if unsafe."}], "edgeLabels": {"a>b": "if mild", "b>c": "if not improving or more severe", "c>d": "if severe, psychotic or unsafe"}, "caption": "People enter at the step their severity and risk call for, and move up if they do not improve."}
 :::
 
 ### When the family has other plans
@@ -1089,6 +1178,10 @@ Q: A woman with mild depression for a month, no risk, asks for "the strongest ta
 
 :::widget guess
 {"prompt": "In people who will respond to an antidepressant, by when does some improvement usually start to show?", "min": 0, "max": 8, "unit": "weeks", "answer": [1, 2], "reveal": "Usually within the first 1 to 2 weeks; full benefit builds over several more. The old idea that 'nothing happens for a month' is a myth. If there is no improvement at all after 3 to 4 weeks at a good dose, that medicine is unlikely to work at that dose, so the plan should change.", "clinician": "Pooled trial data show the fastest rate of improvement in weeks 1 to 2; in individual practice an effect is usually seen by week 2. No discernible improvement by week 3 to 4 at a therapeutic dose predicts non-response: increase the dose or switch. Partial improvement at week 4 may still become full response, so continue."}
+:::
+
+:::widget journey
+{"drug": "sertraline", "target": "serotonin transporters (SERT) on serotonin neurons from the raphe nuclei, which project to the cortex and limbic system", "routes": ["oral"], "notes": {"gut": "Sertraline is absorbed slowly; taking it with food raises absorption a little and eases early nausea.", "liver": "Several CYP enzymes (including CYP2C19 and CYP2B6) share its breakdown, so single-gene differences and interactions matter less than with fluoxetine or paroxetine.", "blood": "Most of it is bound to blood proteins. Its half-life is about a day, so once-daily dosing works and steady state comes within about a week.", "out": "Broken down in the liver to a weaker metabolite, then removed in urine and faeces."}, "caption": "Press Play and follow one tablet. Blocking SERT happens within hours of reaching the brain; the slow adaptations that lift mood come later."}
 :::
 
 ### Choosing a first antidepressant
@@ -1197,6 +1290,10 @@ Stopping suddenly can cause discontinuation symptoms within days. Remember **FIN
 Reduce gradually, in steps the patient can tolerate. Newer evidence suggests that the relationship between dose and receptor occupancy is curved, so the final steps should be the smallest (for example moving through low doses, or using liquid preparations). Restart the previous dose and taper more slowly if symptoms are troublesome. Distinguish discontinuation (within days, physical symptoms, settles on reinstatement) from relapse (later, gradual, mood symptoms).
 :::
 
+:::widget curve
+{"kind": "dose-response", "title": "Potency, efficacy and why 'more' is not always better", "caption": "Shift the curve to see potency: the dose needed for an effect. Tick 'partial agonist' to see efficacy: the ceiling of effect. For many SSRIs the dose-response curve flattens early, so going above the usual dose often adds side effects more than benefit. Aripiprazole, used as an add-on in depression, is a partial agonist at dopamine receptors."}
+:::
+
 ### Important risks
 | Risk | Who and what | Action |
 |---|---|---|
@@ -1208,6 +1305,10 @@ Reduce gradually, in steps the patient can tolerate. Newer evidence suggests tha
 | **Falls** | Older adults on TCAs, mirtazapine | Lowest effective dose |
 
 :::clinician
+:::widget synapse
+{"drug": "maoi", "caption": "An MAOI stops the enzyme that breaks down serotonin, noradrenaline and dopamine inside the nerve ending. Watch the levels rise. The same enzyme in the gut normally breaks down tyramine from foods, which is why aged cheese can cause a dangerous rise in blood pressure."}
+:::
+
 ### Interactions worth memorising
 - **Fluoxetine and paroxetine** strongly inhibit CYP2D6: raise levels of tricyclics, some antipsychotics, metoprolol; reduce activation of **tamoxifen** (avoid) and codeine.
 - **Fluvoxamine** inhibits CYP1A2 and 2C19: raises clozapine, olanzapine, theophylline and caffeine.
@@ -1218,6 +1319,10 @@ Reduce gradually, in steps the patient can tolerate. Newer evidence suggests tha
 
 ### Pregnancy and breastfeeding (outline)
 Untreated depression also carries risks. Sertraline is often preferred; paroxetine is avoided in the first trimester because of cardiac malformation concerns. Late-pregnancy SSRI exposure carries a small risk of neonatal adaptation symptoms and persistent pulmonary hypertension of the newborn. Sertraline and paroxetine pass into breast milk least. Decide with the woman, an obstetrician and, ideally, a perinatal psychiatrist.
+:::
+
+:::widget curve
+{"kind": "half-life", "title": "Half-life and steady state", "caption": "Slide the half-life. Fluoxetine and its active metabolite last for days, so levels build slowly, take long to settle, and fade gently when it is stopped: few discontinuation symptoms. Paroxetine and venlafaxine have short half-lives: levels fall fast after a missed dose, which is why stopping them suddenly causes the worst discontinuation symptoms."}
 :::
 
 :::recall
@@ -1296,6 +1401,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 6. **Treatment-resistant depression**: failure of **at least 2 adequate trials**. Options include ECT, esketamine nasal spray (where available), rTMS, and specialist combinations.
 
 :::clinician
+:::widget receptor
+{"receptor": "D2", "caption": "Aripiprazole, a common add-on in depression that has not responded, is a partial agonist at D2 receptors. Switch between full agonist, partial agonist and antagonist and watch the signal bar: a partial agonist steadies dopamine signalling, raising it where it is low and lowering it where it is high. That is why it causes restlessness (akathisia) more than sedation."}
+:::
+
 ### Augmentation doses (for learning; check current guidelines)
 | Option | Typical dose | Notes |
 |---|---|---|
@@ -1304,6 +1413,14 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 | Quetiapine XR | 150 to 300 mg | Sedation, weight, metabolic effects |
 | Liothyronine (T3) | 20 to 50 micrograms | Monitor thyroid function and heart |
 | Mirtazapine added to an SSRI or SNRI | 15 to 45 mg at night | Common combination; weight gain |
+:::
+
+:::widget flow
+{"title": "When the first treatment fails", "layout": "chain", "nodes": [{"id": "a", "label": "Optimise", "detail": "A therapeutic dose, taken every day, for a fair trial. Many 'failures' are really low doses or missed tablets."}, {"id": "b", "label": "Recheck", "detail": "Is it bipolar? Psychotic? Alcohol? Thyroid? Ongoing abuse or debt? A personality factor?"}, {"id": "c", "label": "Switch", "detail": "To another SSRI, or another class: an SNRI, mirtazapine, bupropion or vortioxetine."}, {"id": "d", "label": "Augment", "detail": "Add lithium, an atypical antipsychotic such as aripiprazole or quetiapine, or thyroid hormone."}, {"id": "e", "label": "Combine", "detail": "Two antidepressants with different actions, such as an SSRI with mirtazapine."}, {"id": "f", "label": "Treatment-resistant care", "detail": "After at least two adequate trials: ECT, esketamine where available, rTMS, specialist combinations."}], "caption": "Keep the psychological therapy going at every step. No single next step has been shown to beat the others."}
+:::
+
+:::widget pathways
+{"system": "dopamine", "caption": "Psychotic depression is treated with an antidepressant plus an antipsychotic (or with ECT). Turn on D2 block, then add serotonin 2A block, and see each pathway: easing of delusions in the mesolimbic pathway, and the side effects that come from the other three."}
 :::
 
 ### Electroconvulsive therapy (ECT)
@@ -1318,6 +1435,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 
 :::sounds Explaining ECT to a family
 "ECT today is not like the old films. Your mother will be fully asleep under anaesthesia, and a medicine relaxes her muscles so her body hardly moves. A small current causes a brief, controlled seizure in the brain for less than a minute. Most people wake within minutes, a little confused for a while. It is one of the most effective treatments we have for severe depression like hers."
+:::
+
+:::widget flow
+{"title": "One ECT session, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Consent and checks", "detail": "Informed consent (or the legal process if capacity is lacking), fasting, a physical check, and any medicines that raise seizure threshold reviewed."}, {"id": "b", "label": "Anaesthesia", "detail": "A short general anaesthetic: the person is fully asleep."}, {"id": "c", "label": "Muscle relaxant", "detail": "Succinylcholine relaxes the muscles so the body hardly moves. Oxygen is given."}, {"id": "d", "label": "Brief stimulus", "detail": "A short electrical pulse through electrodes, placed on both sides or on the right side only."}, {"id": "e", "label": "Controlled seizure", "detail": "A seizure of about 25 seconds or more on the EEG. Heart and oxygen are monitored throughout."}, {"id": "f", "label": "Recovery", "detail": "Waking within minutes; some confusion and headache for a while. The next session is usually two or three days later."}], "caption": "The Mental Healthcare Act 2017 forbids ECT without anaesthesia and a muscle relaxant."}
 :::
 
 ### Other brain stimulation
@@ -1369,6 +1490,10 @@ Q: Compared with bilateral ECT, right unilateral ECT:
 
 :::widget moodline
 {"prompt": "Read Sushma's mood over five years. What does the line tell you about planning her treatment?", "series": [0, -2.6, -2.8, -1.2, -1, -1.1, -2.7, -2.9, -1.3, -1.1, -2.8, -1.2], "labels": ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "options": ["She recovers fully each time; stop treatment after each episode", "Recurrent episodes with incomplete recovery in between; treat to full remission and continue long term", "This is bipolar disorder", "This is normal mood variation"], "answer": 1, "why": "Each episode is followed by a partial lift that never reaches her usual self, then another drop. Residual symptoms drive relapse. Aim for full remission, consider longer-term medicine and relapse-prevention therapy such as MBCT. No highs, so not bipolar."}
+:::
+
+:::widget flow
+{"title": "Kindling: why each episode makes the next easier", "layout": "cycle", "nodes": [{"id": "a", "label": "Major stress", "detail": "The first episode usually follows a big loss or humiliation."}, {"id": "b", "label": "Episode", "detail": "Stress hormones, poor sleep and inflammation run high for months."}, {"id": "c", "label": "Brain is sensitised", "detail": "Stress systems and mood circuits are left more reactive, a little like a path worn into grass."}, {"id": "d", "label": "Lower threshold", "detail": "Next time a smaller stress is enough, and later episodes can start with no clear trigger at all."}], "caption": "This 'kindling' idea comes from epilepsy research. It fits the finding that recurrence risk rises with each episode, and it is one reason to treat to full remission and to continue treatment. The evidence is mixed: not everyone follows this path."}
 :::
 
 :::recall
@@ -1507,6 +1632,10 @@ This level assumes you know the Beginner material. Here we look at what each med
 3. With continued exposure, the 5HT1A autoreceptors **desensitise and downregulate**. The brake comes off, the neuron fires more, and serotonin release at the terminals rises.
 4. Postsynaptic receptors also adapt (some 5HT2A downregulation), and downstream signalling changes gene expression, including **BDNF**.
 
+:::widget flow
+{"title": "Why SSRIs take time: the autoreceptor story", "layout": "chain", "nodes": [{"id": "a", "label": "SERT blocked", "detail": "Within hours the SSRI blocks the serotonin transporter."}, {"id": "b", "label": "Serotonin rises at the cell body", "detail": "Around the raphe neurons first, not yet much at the far terminals."}, {"id": "c", "label": "5HT1A brake on", "detail": "Somatodendritic 5HT1A autoreceptors sense the serotonin and slow firing. Net effect in the cortex is small."}, {"id": "d", "label": "Brake wears off", "detail": "With continued exposure the autoreceptors desensitise and downregulate."}, {"id": "e", "label": "Firing and release climb", "detail": "Raphe neurons fire more, so serotonin release at cortical terminals rises."}, {"id": "f", "label": "Downstream rebuilding", "detail": "Postsynaptic receptors adapt, gene expression shifts, BDNF rises and connections are rebuilt. Mood follows."}], "caption": "Side effects use the fast steps; benefit needs the slow ones. That mismatch is what you explain to patients in the first days."}
+:::
+
 Early side effects come from serotonin reaching **other receptors** before the slow adaptations:
 - **5HT3** in the brainstem and gut: nausea, vomiting, loose stools.
 - **5HT2A** and **5HT2C**: restlessness, insomnia, early anxiety (2C), sexual dysfunction (2A in spinal and cortical pathways; also serotonin's brake on dopamine).
@@ -1514,6 +1643,10 @@ Early side effects come from serotonin reaching **other receptors** before the s
 
 :::widget reveal
 {"prompt": "Why might adding pindolol (a beta-blocker that also blocks 5HT1A autoreceptors) to an SSRI speed up response, at least in theory?", "answer": "Blocking the 5HT1A autoreceptor removes the brake on raphe firing straight away, instead of waiting for it to desensitise. Studies were mixed, partly because standard pindolol doses may not occupy enough autoreceptors, but the idea shows how the delay is thought to work. Vilazodone and vortioxetine were designed with 5HT1A activity partly for this reason."}
+:::
+
+:::widget brainmap
+{"title": "Where the monoamine pathways run", "focus": ["brainstem", "prefrontal", "hippocampus", "basal-ganglia", "hypothalamus"], "notes": {"brainstem": "The raphe nuclei (serotonin) and locus coeruleus (noradrenaline) sit here and send fibres across the whole brain. The SSRI story begins with raphe autoreceptors.", "prefrontal": "Receives serotonin, noradrenaline and dopamine. Few dopamine transporters here, so NET also clears dopamine; blocking NET raises prefrontal dopamine.", "hippocampus": "Serotonin and noradrenaline support neurogenesis and plasticity here; chronic stress and cortisol work against them.", "basal-ganglia": "The ventral striatum (nucleus accumbens) receives dopamine from the ventral tegmental area. Blunted reward responses here fit anhedonia.", "hypothalamus": "Serotonin and noradrenaline tune sleep, appetite and the HPA axis, the body symptoms of depression."}, "caption": "Tap each region. Antidepressant side effects and benefits both depend on which pathway a drug touches."}
 :::
 
 ### The others, receptor by receptor
@@ -1567,7 +1700,7 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 
 ## 5.2 Circuits, stress and plasticity [core][advanced]
 ### The stress system in detail
-- Corticotropin-releasing hormone (CRH) from the hypothalamus drives ACTH and cortisol. Cortisol normally switches the system off through **glucocorticoid receptors** in the hippocampus and hypothalamus (negative feedback).
+- You met the CRH, ACTH and cortisol chain in 2.1. The switch-off depends on two receptor types: high-affinity **mineralocorticoid receptors**, which set the resting tone, and lower-affinity **glucocorticoid receptors** in the hippocampus, hypothalamus and pituitary, which are occupied when cortisol is high and do most of the braking (negative feedback).
 - In many people with severe, melancholic or psychotic depression, feedback is weak: cortisol stays high and fails to fall after **dexamethasone** (the dexamethasone suppression test, now a research tool, not a diagnostic test).
 - High cortisol over time reduces hippocampal neurogenesis and dendrite branching, linking stress, memory problems and depression.
 - Early adversity can programme the stress system, partly through **epigenetic** changes (chemical tags that alter how genes are read, for example on the glucocorticoid receptor gene).
@@ -1576,6 +1709,10 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 - **BDNF**, acting on **TrkB** receptors, supports synapse growth. Stress lowers BDNF; antidepressants, ECT and exercise raise it.
 - Chronic stress causes loss of dendritic **spines** (the points where synapses form) in the prefrontal cortex.
 - Fast-acting treatments such as ketamine trigger a glutamate burst, AMPA receptor activation, BDNF release and **mTOR** signalling, which rebuilds spines within hours to days (see 5.3).
+
+:::widget flow
+{"title": "The neurotrophic story, from stress to repair", "layout": "chain", "nodes": [{"id": "a", "label": "Chronic stress", "detail": "Long-running cortisol and excess glutamate signalling."}, {"id": "b", "label": "BDNF falls", "detail": "Less brain-derived neurotrophic factor acting on TrkB receptors."}, {"id": "c", "label": "Spines and dendrites shrink", "detail": "Fewer synaptic spines in the prefrontal cortex and hippocampus; less neurogenesis in the hippocampus."}, {"id": "d", "label": "Circuits weaken", "detail": "Prefrontal control over the amygdala and reward circuits loosens. Rumination and negative bias grow."}, {"id": "e", "label": "Treatments raise BDNF", "detail": "Antidepressants slowly, ECT and exercise over a course, ketamine within hours via mTOR."}, {"id": "f", "label": "Spines regrow", "detail": "Connections are rebuilt, and new learning (for example in therapy) can take hold."}], "caption": "This model links stress, slow antidepressant action and fast-acting treatments in one line. It is supported mainly by animal and post-mortem work, with indirect human evidence."}
+:::
 
 ### Circuits
 | Circuit | Finding in depression | Link to symptoms |
@@ -1586,8 +1723,12 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 | Subgenual anterior cingulate (Brodmann area 25) | Overactive; target of deep brain stimulation trials | Sadness, self-focus |
 | Default mode network | Overconnected | Rumination, self-referential thinking |
 
+:::widget brainmap
+{"title": "Circuits of depression", "focus": ["prefrontal", "amygdala", "basal-ganglia", "hippocampus", "thalamus"], "notes": {"prefrontal": "Dorsolateral prefrontal cortex: underactive control, the target of rTMS. Subgenual anterior cingulate (area 25), just beneath the front: overactive, the target of deep brain stimulation trials.", "amygdala": "Hyper-responsive to negative faces and words; this bias can shift within hours of a first antidepressant dose, before mood changes.", "basal-ganglia": "Ventral striatum: blunted response to reward and to its anticipation, the circuit of anhedonia.", "hippocampus": "Reduced volume with long or repeated episodes; links to memory complaints and to cortisol feedback.", "thalamus": "A relay in the limbic-cortical loops; some imaging studies show altered thalamic activity, though findings vary."}, "caption": "Imaging findings are group averages with small effects. None of them can yet diagnose depression in an individual."}
+:::
+
 ### Sleep and the body clock
-- Depression often shows shortened REM latency, more REM density and less slow-wave sleep.
+- The REM changes from 2.1 (earlier, denser REM, less slow-wave sleep) are thought to reflect a weaker monoamine brake on REM-generating cholinergic neurons. Most SSRIs, SNRIs, tricyclics and MAOIs suppress REM, but mirtazapine and bupropion barely do and still work, so REM suppression is not needed for benefit.
 - **Sleep deprivation** for one night can lift mood within a day in many depressed people, but the effect usually reverses after recovery sleep. "Triple chronotherapy" (sleep deprivation, sleep phase advance and bright light) tries to hold the gain.
 - Bright light therapy helps seasonal depression and has some evidence in non-seasonal depression.
 
@@ -1633,6 +1774,10 @@ Q: Rumination in depression is most linked to overconnectivity of which network?
 {"scene": "Ishaan, 35, has treatment-resistant depression after three adequate trials. He has read about 'ketamine therapy' at a private wellness centre in Mumbai that offers home-use lozenges and a package of six sessions.", "ask": "What do you advise?", "choices": [{"label": "Tell him ketamine is a party drug and dangerous, end of discussion", "verdict": "ok", "outcome": "He goes to the centre anyway without telling you.", "why": "His concern is real and the evidence for ketamine in TRD is real. Dismissing it loses the chance to guide him safely."}, {"label": "Discuss the evidence honestly: rapid but often short-lived benefit; risks of dissociation, blood pressure rise and misuse; that it should be given under medical monitoring, not at home; and compare it with other TRD options such as ECT, lithium augmentation, rTMS or esketamine where legally available", "verdict": "best", "outcome": "Ishaan chooses lithium augmentation first and agrees to talk again before trying any ketamine-based treatment.", "why": "Informed choice, safety and the full menu of options. Unsupervised home use removes the monitoring that makes it safer."}, {"label": "Encourage the home lozenges because they are convenient", "verdict": "harm", "outcome": "He takes extra doses on bad days and becomes dependent.", "why": "Unmonitored, unregulated ketamine raises the risk of misuse and harm."}]}
 :::
 
+:::widget flow
+{"title": "Ketamine: the glutamate burst model", "layout": "chain", "nodes": [{"id": "a", "label": "NMDA block on interneurons", "detail": "Ketamine blocks NMDA receptors, especially on fast-firing inhibitory interneurons."}, {"id": "b", "label": "Disinhibition", "detail": "With the interneurons quietened, the main pyramidal neurons are released from their brake."}, {"id": "c", "label": "Glutamate burst", "detail": "Pyramidal neurons release a surge of glutamate."}, {"id": "d", "label": "AMPA activation", "detail": "The glutamate acts on AMPA receptors, which is needed for the antidepressant effect in animal studies."}, {"id": "e", "label": "BDNF and mTOR", "detail": "BDNF is released and the mTOR pathway switches on protein synthesis."}, {"id": "f", "label": "New spines in hours", "detail": "Synaptic spines regrow quickly in the prefrontal cortex. The effect often fades within days unless repeated."}], "caption": "A leading model, not the only one. Other ideas involve ketamine's metabolites and NMDA receptors active at rest."}
+:::
+
 ### Neurosteroids: a new target for postpartum depression
 - **Allopregnanolone**, a natural brain steroid, rises in pregnancy and falls sharply after birth. It is a **positive allosteric modulator of GABA-A receptors**, acting on both synaptic receptors (like benzodiazepines) and extrasynaptic receptors (unlike benzodiazepines).
 - **Brexanolone**, an intravenous form of allopregnanolone, was approved in the US in 2019 for postpartum depression. It needs a 60-hour infusion in hospital, with monitoring for oversedation.
@@ -1640,6 +1785,10 @@ Q: Rumination in depression is most linked to overconnectivity of which network?
 
 :::widget guess
 {"prompt": "Zuranolone for postpartum depression is taken once daily for a short fixed course. How many days?", "min": 1, "max": 60, "unit": "days", "answer": [14, 14], "reveal": "Fourteen days, taken in the evening with food. Improvement was seen within days in trials. It carries a boxed warning about impaired driving.", "clinician": "US label: 50 mg once daily in the evening with fat-containing food for 14 days. Boxed warning: do not drive or use machinery for at least 12 hours after each dose. Side effects include sleepiness, dizziness and confusion. Use in breastfeeding needs individual discussion. Check current approvals in your country."}
+:::
+
+:::widget journey
+{"drug": "esketamine", "target": "NMDA glutamate receptors, especially on inhibitory interneurons in the prefrontal cortex", "routes": ["nasal", "iv"], "notes": {"nose": "Esketamine is sprayed into each nostril in a certified clinic. It skips the gut and much of the liver's first pass, which is why a nasal dose works at all: swallowed ketamine is heavily broken down by the liver.", "vein": "Research and off-label ketamine is given as a slow intravenous infusion over about 40 minutes.", "blood": "Levels peak within minutes to an hour. Dissociation and a rise in blood pressure track the peak, so the person is observed for at least two hours.", "out": "Cleared by liver enzymes to norketamine and other metabolites, some of which may add to the antidepressant effect."}, "caption": "Switch between the nasal and intravenous routes. Fast entry explains the fast effect, and also why monitoring after each dose is essential."}
 :::
 
 ### Other newer antidepressants (US approvals)
@@ -1685,6 +1834,10 @@ Psychedelics are among the most talked-about ideas in psychiatry. This section s
 - **Australia** has allowed specially authorised psychiatrists to prescribe psilocybin for treatment-resistant depression and MDMA for PTSD since July 2023.
 - **India**: psilocybin and MDMA are controlled under the NDPS Act, with no approved medical use.
 
+:::widget layers
+{"title": "The evidence ladder for a new treatment", "shape": "stack", "layers": [{"label": "Regulatory approval and real-world use", "detail": "Approved by an agency for a specific use, then watched for rare harms. No classic psychedelic has reached this step."}, {"label": "Phase 3 trials", "detail": "Large, controlled, often several sites. Psilocybin for TRD reported phase 3 results; a decision is pending."}, {"label": "Phase 2 randomised trials", "detail": "Dose-finding against placebo or a low dose. Blinding often fails with psychedelics."}, {"label": "Open-label studies", "detail": "Everyone knows they got the drug; expectancy is high."}, {"label": "Case reports and enthusiasm", "detail": "Stories and media coverage. Useful for ideas, useless as proof."}], "caption": "Tap from the bottom up. Each rung controls for more bias. Hype usually lives on the bottom two."}
+:::
+
 ### Why the evidence is hard to judge
 - **Blinding fails**: people usually know whether they had the active drug, which inflates expectations.
 - **Expectancy and hype**: enthusiastic media and selected participants.
@@ -1717,6 +1870,10 @@ Q: Which statement about psychedelic medicine is accurate as of late 2026?
 - **Cytokines** (IL-6, TNF-alpha) reach the brain and shift tryptophan away from serotonin towards the **kynurenine pathway** (via the enzyme IDO), producing quinolinic acid, which stimulates NMDA receptors. They also dampen dopamine in reward circuits, which fits with anhedonia and fatigue.
 - **Interferon-alpha** treatment (for hepatitis C, in the past) caused depression in a large share of patients: a natural experiment.
 - **Trials**: the anti-TNF drug infliximab did not help depression overall, but helped the subgroup with high CRP. Celecoxib, minocycline and omega-3 trials are mixed. Anti-inflammatory treatment for depression is **not** standard care; it is a research question about targeting a subgroup.
+
+:::widget flow
+{"title": "Inflammation and the kynurenine pathway", "layout": "chain", "nodes": [{"id": "a", "label": "Inflammation", "detail": "Obesity, chronic illness, childhood adversity or infection raise cytokines such as IL-6 and TNF-alpha."}, {"id": "b", "label": "IDO switched on", "detail": "Cytokines activate the enzyme indoleamine 2,3-dioxygenase."}, {"id": "c", "label": "Tryptophan diverted", "detail": "Tryptophan, the building block of serotonin, is pushed down the kynurenine pathway instead."}, {"id": "d", "label": "Quinolinic acid", "detail": "Microglia turn kynurenine into quinolinic acid, which stimulates NMDA receptors."}, {"id": "e", "label": "Mood and reward change", "detail": "Less serotonin, more glutamate excitotoxicity and dampened dopamine in reward circuits: fatigue, anhedonia, low mood."}], "caption": "This pathway explains why interferon caused depression and why only the high-CRP subgroup seemed to benefit from infliximab."}
+:::
 
 ### Metabolism and the gut
 - Depression with atypical features clusters with obesity, insulin resistance and inflammation.
@@ -1755,6 +1912,10 @@ Q: Which statement about GLP-1 agonists and mood is best supported in late 2026?
 - The largest genome-wide studies, with hundreds of thousands of cases across ancestries, have found **hundreds of risk variants**, each with a tiny effect, many in genes for synapses and neuron development.
 - Most early "candidate gene" findings (for example the serotonin transporter variant interacting with stress) **did not replicate** in large samples. Treat single-gene stories with suspicion.
 - **Polygenic risk scores** summarise many variants. They are useful in research but too weak to diagnose or predict in an individual.
+
+:::widget layers
+{"title": "How much do genes tell us? From strongest to weakest", "shape": "stack", "layers": [{"label": "Twin heritability", "detail": "About 35 to 40 percent of variation in risk, across a population, not in any one person."}, {"label": "SNP heritability", "detail": "Common variants measured on chips explain less, under 10 percent: the 'missing heritability'."}, {"label": "GWAS loci", "detail": "Hundreds of risk variants, each with a tiny effect, many in synapse and neurodevelopment genes."}, {"label": "Polygenic risk score", "detail": "Adds the variants up. Useful for research groups, too weak for an individual."}, {"label": "Predicting one patient", "detail": "Not possible today. No gene test can diagnose depression or tell you who will get it."}], "caption": "Read top to bottom: each step moves from populations towards the person, and the predictive power drops at every step."}
+:::
 
 ### Pharmacogenomics: genes and how drugs are handled
 | Gene | What it does | Drugs affected | Practical point |
@@ -1801,6 +1962,10 @@ DSM categories are reliable enough to share, but they are not natural kinds. Two
 - Depression sits in the internalising spectrum, in a **distress** subfactor with generalised anxiety and PTSD, next to a **fear** subfactor (panic, phobias).
 - This explains why depression and anxiety co-occur so often: they share much of their underlying risk.
 
+:::widget layers
+{"title": "HiTOP: where depression sits", "shape": "pyramid", "layers": [{"label": "General factor (p)", "detail": "A broad liability to psychopathology shared by almost all disorders."}, {"label": "Spectra", "detail": "Internalising, thought disorder, disinhibited and antagonistic externalising, detachment, somatoform."}, {"label": "Subfactors", "detail": "Within internalising: distress (depression, GAD, PTSD) and fear (panic, phobias)."}, {"label": "Syndromes", "detail": "Clusters like major depression, built from symptoms that co-occur."}, {"label": "Symptoms and traits", "detail": "The base layer: low mood, anhedonia, worry, insomnia and so on, each a dimension."}], "caption": "Tap from the top down. Depression and GAD share the distress subfactor, which is why they co-occur so often."}
+:::
+
 ### Computational psychiatry
 - Uses mathematical models of learning and decision-making to measure hidden processes. Example: **reinforcement learning** models estimate how strongly a person updates expectations after reward. In anhedonia, reward learning is blunted.
 - **Predictive processing** models frame depression as overly confident negative predictions that resist updating.
@@ -1809,6 +1974,10 @@ DSM categories are reliable enough to share, but they are not natural kinds. Two
 
 :::widget sort
 {"prompt": "Which framework does each statement describe?", "buckets": ["DSM-5-TR", "RDoC", "HiTOP"], "items": [{"text": "Five of nine symptoms for a minimum period makes the diagnosis", "bucket": 0}, {"text": "A research grid of functional domains studied from genes to behaviour", "bucket": 1}, {"text": "Depression and GAD sit together in a 'distress' subfactor", "bucket": 2}, {"text": "Positive valence systems, such as reward learning", "bucket": 1}, {"text": "Built from statistical clustering of symptoms into dimensions", "bucket": 2}, {"text": "Categories with clear thresholds, used for clinical records and exams", "bucket": 0}]}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Dimensions and cut-offs", "caption": "Depressive symptoms are spread continuously across people. A diagnosis draws a line on this curve. Move the line and watch how many people fall beyond it: a small shift in threshold changes prevalence a lot, which is one argument for dimensional models."}
 :::
 
 :::recall
@@ -1886,7 +2055,7 @@ Ketamine is an NMDA receptor antagonist. Sub-anaesthetic intravenous doses reduc
 ## 7.2 Viva rapid-fire [core]
 :::viva
 How many symptoms are needed for a major depressive episode? :: Five of nine, one being depressed mood or loss of interest.
-Minimum duration of a major depressive episode? :: Two weeks.
+Minimum duration of a major depressive episode? :: Fourteen days, most of the day, nearly every day.
 What finding rules out MDD? :: Any past manic or hypomanic episode.
 What replaces depressed mood in children? :: Irritable mood.
 What is anhedonia? :: Loss of interest or pleasure in previously enjoyable activities.
@@ -1896,13 +2065,13 @@ Core of melancholic features? :: Loss of pleasure in nearly everything or lack o
 Associated features of atypical depression? :: Weight or appetite gain, hypersomnia, leaden paralysis, rejection sensitivity.
 How many symptoms define anxious distress? :: Two of five.
 How many manic symptoms define mixed features? :: Three.
-Peripartum onset window in DSM-5-TR? :: Pregnancy or the 4 weeks after delivery.
+Peripartum onset window in DSM-5-TR? :: Pregnancy or the first month after delivery (the window you guessed in 1.3).
 How do baby blues differ from postpartum depression? :: Common, mild, no loss of function, settle within days.
 Age rules for DMDD? :: Diagnosed between 6 and 18; onset before 10.
 How is PMDD confirmed? :: Daily prospective ratings over at least 2 cycles.
 Prolonged grief disorder duration in DSM-5-TR and ICD-11? :: 12 months; 6 months.
 Why do antidepressants take time to work? :: Autoreceptor desensitisation and downstream plasticity.
-When does early improvement usually appear? :: Within the first 1 to 2 weeks in responders.
+When does early improvement usually appear? :: Early, in the first fortnight or so in people who will respond; full benefit builds later.
 What is Beck's cognitive triad? :: Negative views of self, world and future.
 What is learned helplessness? :: Learning from uncontrollable events that action is pointless.
 Name the 5 Ps. :: Presenting, predisposing, precipitating, perpetuating, protective.
@@ -2135,4 +2304,4 @@ Q: Which is a relative contraindication to ECT?
 - Psychotic depression
 > Pregnancy and age are not contraindications.
 :::
-`;
+` + qaBank;
