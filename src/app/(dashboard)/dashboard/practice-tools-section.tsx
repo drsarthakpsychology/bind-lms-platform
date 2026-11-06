@@ -37,7 +37,7 @@ export async function PracticeToolsSection() {
           <p className="text-eyebrow text-link">Practice</p>
           <h2 className="text-h1">Try it yourself</h2>
         </div>
-        <Link href="/practice" className="shrink-0 text-sm font-bold text-link underline-offset-4 hover:underline">
+        <Link href="/practice" className="inline-flex min-h-11 shrink-0 items-center text-sm font-bold text-link underline-offset-4 hover:underline">
           See all
         </Link>
       </div>
