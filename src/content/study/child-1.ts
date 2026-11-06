@@ -38,7 +38,7 @@ Most children with difficulties first reach a **paediatrician**, a school counse
 7. **Psychosocial context.** Parental conflict, domestic violence, migration, poverty, screen time, adverse childhood experiences.
 8. **Seeing the child.** Observation during play, a developmentally adjusted mental state examination, physical examination including growth, head circumference, dysmorphic features, skin (neurocutaneous markers) and neurological signs.
 
-Informant disagreement is expected, not a nuisance. In a large meta-analysis by Achenbach and colleagues, agreement between parents and teachers on behaviour problems was only modest (correlations around 0.3), and agreement between adults and children on internalising symptoms was lower still. Adults under-report children's anxiety and sadness; children under-report their own disruptive behaviour.
+Informant disagreement is expected, not a nuisance. In a large, classic meta-analysis, agreement between parents and teachers on behaviour problems was only modest (correlations around 0.3), and agreement between adults and children on internalising symptoms was lower still. Adults under-report children's anxiety and sadness; children under-report their own disruptive behaviour.
 :::
 
 :::widget decide
@@ -192,7 +192,7 @@ Some children have mainly the first group, some mainly the second, and many have
 :::
 
 :::widget guess
-{"prompt": "Out of every 100 school-age children worldwide, about how many have ADHD?", "min": 0, "max": 20, "unit": "children", "answer": [5, 8], "reveal": "About 5 to 7 in every 100 children. So in a class of 40, two or three children are likely to have it. In adults it is lower, roughly 2 to 3 in 100.", "clinician": "Pooled worldwide estimate about 7.2% in children (Thomas et al., 2015, cited in DSM-5-TR) and about 2.5% in adults. Indian school-based studies range widely (roughly 2% to 17%) depending on method; clinic samples are heavily male (about 3 to 4 boys for every girl), community samples less so (about 2 to 1)."}
+{"prompt": "Out of every 100 school-age children worldwide, about how many have ADHD?", "min": 0, "max": 20, "unit": "children", "answer": [5, 8], "reveal": "About 5 to 7 in every 100 children. So in a class of 40, two or three children are likely to have it. In adults it is lower, roughly 2 to 3 in 100.", "clinician": "Pooled worldwide estimate about 7.2% in children (2015, cited in DSM-5-TR) and about 2.5% in adults. Indian school-based studies range widely (roughly 2% to 17%) depending on method; clinic samples are heavily male (about 3 to 4 boys for every girl), community samples less so (about 2 to 1)."}
 :::
 
 ### Why it matters
@@ -265,7 +265,7 @@ Q: Which feature is needed before ADHD can be diagnosed?
 - **Not every autistic person has an intellectual disability.** Many have average or above-average intelligence.
 
 :::widget guess
-{"prompt": "In the latest United States surveillance of 8-year-olds, about 1 in how many children had an autism diagnosis?", "min": 10, "max": 200, "unit": "children", "answer": [28, 36], "reveal": "About 1 in 31 eight-year-olds (data for 2022, reported in 2025). Twenty years earlier it was about 1 in 150. Most of the rise reflects better awareness, broader criteria and more diagnosis in girls and minority groups, not a true epidemic. Indian estimates are lower, roughly 1 in 100 or fewer, mainly because many children are never assessed.", "clinician": "CDC ADDM Network, MMWR Surveillance Summary April 2025: 32.2 per 1,000 eight-year-olds (about 1 in 31), male to female about 3.4 to 1. Global median prevalence is about 0.6% to 1% (DSM-5-TR). Indian multicentre data (INCLEN, Arora et al., 2018) found about 1% among children aged 2 to 9 years in selected districts. As of Nov 2026, researchers continue to attribute the rise mainly to ascertainment."}
+{"prompt": "In the latest United States surveillance of 8-year-olds, about 1 in how many children had an autism diagnosis?", "min": 10, "max": 200, "unit": "children", "answer": [28, 36], "reveal": "About 1 in 31 eight-year-olds (data for 2022, reported in 2025). Twenty years earlier it was about 1 in 150. Most of the rise reflects better awareness, broader criteria and more diagnosis in girls and minority groups, not a true epidemic. Indian estimates are lower, roughly 1 in 100 or fewer, mainly because many children are never assessed.", "clinician": "CDC ADDM Network, MMWR Surveillance Summary April 2025: 32.2 per 1,000 eight-year-olds (about 1 in 31), male to female about 3.4 to 1. Global median prevalence is about 0.6% to 1% (DSM-5-TR). Indian multicentre data (INCLEN, 2018) found about 1% among children aged 2 to 9 years in selected districts. As of Nov 2026, researchers continue to attribute the rise mainly to ascertainment."}
 :::
 
 :::clinician

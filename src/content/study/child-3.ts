@@ -228,7 +228,7 @@ Treating a child means treating a system: the child, the parents, the school, an
 | Depression | CBT, interpersonal therapy for adolescents (IPT-A), family support |
 | Self-harm and emotional instability in adolescents | DBT for adolescents (DBT-A), mentalisation-based treatment for adolescents |
 | Trauma | Trauma-focused CBT, EMDR |
-| Eating disorders | Family-based treatment (the Maudsley approach) |
+| Eating disorders | Family-based treatment (FBT) |
 | Autism, ID | Parent-mediated early intervention, behavioural approaches, speech and occupational therapy |
 
 ### The special rules for medicines in children
@@ -258,7 +258,7 @@ Treating a child means treating a system: the child, the parents, the school, an
 |---|---|---|---|
 | Depression | Fluoxetine; escitalopram | Fluoxetine 10 mg, then 20 mg (max 40 to 60 mg); escitalopram 5 to 10 mg, up to 20 mg | Boxed warning: monitor weekly early for agitation and suicidal thinking |
 | Anxiety | Sertraline; fluoxetine | Sertraline 12.5 to 25 mg, then 50 to 200 mg | Activation, GI upset |
-| OCD | Sertraline (6 years and over), fluoxetine (7 and over), fluvoxamine (8 and over) | Sertraline up to 200 mg; fluvoxamine 25 mg at night, up to 200 mg (Fluvoxin) | POTS trial (JAMA 2004): CBT plus sertraline best; clomipramine (10 and over) for refractory cases with ECG |
+| OCD | Sertraline (6 years and over), fluoxetine (7 and over), fluvoxamine (8 and over) | Sertraline up to 200 mg; fluvoxamine 25 mg at night, up to 200 mg (Fluvoxin) | POTS trial: CBT plus sertraline best; clomipramine (10 and over) for refractory cases with ECG |
 | Psychosis | Aripiprazole, risperidone; clozapine for treatment resistance | Aripiprazole 2 mg, target 10 mg (max 30 mg); risperidone 0.5 mg, 1 to 3 mg | Weight, glucose, lipids, prolactin, movement disorders; olanzapine causes most weight gain in youth |
 | Mania | Aripiprazole, risperidone, quetiapine; lithium (12 and over in the US label; 7 and over for maintenance after a 2018 trial) | Lithium start 300 mg twice daily or about 15 to 20 mg/kg/day divided; target level 0.8 to 1.2 mmol/L acutely | Avoid valproate in girls of childbearing potential (teratogenic, polycystic ovaries) |
 | Sleep onset in neurodevelopmental conditions | Melatonin | 1 to 3 mg, up to about 10 mg | Behavioural sleep plan first |
@@ -269,7 +269,7 @@ Treating a child means treating a system: the child, the parents, the school, an
 :::
 
 :::recall
-1. Which therapy has the best evidence for adolescent eating disorders? || Family-based treatment (the Maudsley approach).
+1. Which therapy has the best evidence for adolescent eating disorders? || Family-based treatment (FBT).
 2. Name two ways children differ from adults in response to medicines. || More activation with SSRIs; much greater antipsychotic weight gain and metabolic effects; often faster metabolism.
 3. What is the difference between consent and assent? || Consent is the legal permission (parent for under-18s); assent is the child's own agreement, sought and respected as far as possible.
 4. Which antipsychotic causes the most weight gain in adolescents? || Olanzapine.
@@ -327,7 +327,7 @@ Families and schools often blame phones for every problem. The evidence is more 
 
 :::clinician
 ### Evidence notes
-- **Screen time**: Orben and Przybylski (Nature Human Behaviour, 2019) estimated that digital technology use explained at most about 0.4% of the variation in adolescent well-being across three large datasets, comparable to eating potatoes. Later work (including Haidt's synthesis and critiques by Odgers and others) continues to debate causal impacts of social media, especially for early adolescent girls. Experimental studies of reducing social media show small improvements in some outcomes. As of Nov 2026, several countries (for example Australia from December 2025) have introduced age limits for social media accounts; evaluations are ongoing.
+- **Screen time**: A large analysis of three national datasets estimated that digital technology use explained at most about 0.4% of the variation in adolescent well-being across three large datasets, comparable to eating potatoes. Later work (including Haidt's synthesis and critiques by Odgers and others) continues to debate causal impacts of social media, especially for early adolescent girls. Experimental studies of reducing social media show small improvements in some outcomes. As of Nov 2026, several countries (for example Australia from December 2025) have introduced age limits for social media accounts; evaluations are ongoing.
 - **PRIDE** (Sangath, Goa and New Delhi): a lay-counsellor-delivered transdiagnostic problem-solving intervention reduced psychosocial problems in secondary school students; a second-stage, more intensive step was tested for persistent problems (results in 2023 showed benefit on some outcomes).
 - **School mental health in India**: Manodarpan (Ministry of Education, 2020) provides psychosocial support for students; Tele-MANAS (2022) is the national tele-mental health service; implementation quality varies widely.
 - **Neurodiversity**: the debate concerns aims (reducing distress and building skills versus normalising behaviour). Many behavioural interventions have been revised to emphasise autonomy, consent and natural settings. Respect the language preferences of autistic people (many prefer "autistic person").
@@ -589,7 +589,7 @@ Q: Which therapy has the strongest evidence for an adolescent with anorexia nerv
 - *Family-based treatment
 - Olanzapine alone
 - Hypnotherapy
-> The Maudsley family-based approach.
+> Family-based treatment, with parents leading refeeding at first.
 
 Q: Under the Mental Healthcare Act 2017, a minor admitted to a mental health establishment must be:
 - Kept in an adult ward

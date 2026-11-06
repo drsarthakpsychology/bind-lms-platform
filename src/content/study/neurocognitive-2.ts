@@ -38,7 +38,7 @@ Cognitive tests help you **detect**, **describe** and **track** cognitive proble
 - **MMSE** items: orientation to time (5) and place (5); registration of three words (3); attention (serial sevens or spelling WORLD backwards, 5); recall of three words (3); naming two objects (2); repetition ("no ifs, ands or buts", 1); three-stage command (3); reading and obeying "close your eyes" (1); writing a sentence (1); copying intersecting pentagons (1). Cut-offs are education-dependent; in people with no schooling, cut-offs around 17 to 19 have been proposed in Indian studies. Annual decline in untreated Alzheimer's is about 2 to 4 points.
 - **MoCA**: visuospatial and executive 5 (trail B, cube, clock contour, numbers, hands), naming 3, attention 6 (digits forward and backward, tapping, serial sevens), language 3 (sentence repetition and fluency), abstraction 2, delayed recall 5, orientation 6. Add 1 point if 12 years or less of education. Hindi and other Indian language versions exist; a MoCA basic version for illiterate and low-educated people (MoCA-B) has been validated.
 - **ACE-III**: attention 18, memory 26, verbal fluency 14, language 26, visuospatial 16. Cut-off 88 (sensitivity about 1.0, specificity about 0.96 for dementia in the original study) and 82 (specificity about 1.0). Mini-ACE (30 points) for quick use. Validated in Malayalam, Kannada, Hindi, Telugu, Tamil, Bengali and others (for example Mathuranath and colleagues in Kerala).
-- **HMSE** (Ganguli et al., 1995): developed for a largely illiterate rural population in Ballabgarh; 30 points; does not require reading or writing.
+- **HMSE** (1995): developed for a largely illiterate rural population in Ballabgarh; 30 points; does not require reading or writing.
 - **Other tools**: Mini-Cog (3-word recall plus clock, total 5; a score below 3 is a positive screen), clock drawing test, Community Screening Instrument for Dementia (CSI-D) and the 10/66 battery for low-literacy community studies, Vellore Screening Instruments, IQCODE and the Everyday Abilities Scale for India (informant measures), CDR for staging, and neuropsychological batteries (for example the NIMHANS neuropsychology battery) in specialist settings.
 - **Sensitivity and specificity depend on prevalence**: in low-prevalence community settings, positive screens have low positive predictive value; always confirm clinically.
 :::
@@ -101,11 +101,11 @@ They carry a risk of **ARIA** (amyloid-related imaging abnormalities): brain swe
 
 **Before cholinesterase inhibitors**: pulse; ECG if pulse below about 60, conduction disease, syncope, or on rate-slowing drugs (beta-blockers, verapamil, digoxin). Interactions: anticholinergic drugs oppose the effect; succinylcholine prolonged in anaesthesia.
 
-**Evidence**: Cochrane reviews show cholinesterase inhibitors improve ADAS-Cog by about 2 to 3 points and MMSE by about 1 to 1.5 points over 6 months versus placebo, with small benefits in function and global impression; memantine gives small benefits in moderate to severe disease. DOMINO-AD (2012): continuing donepezil in moderate to severe disease gave benefit over stopping; stopping was associated with higher risk of nursing home placement in the first year.
+**Evidence**: Systematic reviews show cholinesterase inhibitors improve ADAS-Cog by about 2 to 3 points and MMSE by about 1 to 1.5 points over 6 months versus placebo, with small benefits in function and global impression; memantine gives small benefits in moderate to severe disease. DOMINO-AD (2012): continuing donepezil in moderate to severe disease gave benefit over stopping; stopping was associated with higher risk of nursing home placement in the first year.
 
 ### Anti-amyloid monoclonal antibodies
-- **Lecanemab** (Leqembi): 10 mg/kg IV every 2 weeks; CLARITY-AD (NEJM 2023, 1,795 participants): 27% slowing on CDR-Sum of Boxes at 18 months (difference 0.45 points on an 18-point scale). ARIA-E (oedema) about 12.6% overall, about 33% in APOE e4 homozygotes; ARIA-H (microhaemorrhage, siderosis) about 17%. Subcutaneous maintenance formulation approved in the US in 2025.
-- **Donanemab** (Kisunla; in India, Lormalzi): IV monthly (700 mg for three doses, then 1,400 mg; a slower titration schedule approved in 2025 lowers ARIA); TRAILBLAZER-ALZ 2 (JAMA 2023, 1,736 participants): about 35% slowing on iADRS in those with low to medium tau; ARIA-E about 24%; treatment can stop when amyloid clears on PET. Three treatment-related deaths in the trial.
+- **Lecanemab** (Leqembi): 10 mg/kg IV every 2 weeks; CLARITY-AD (1, 795 participants): 27% slowing on CDR-Sum of Boxes at 18 months (difference 0.45 points on an 18-point scale). ARIA-E (oedema) about 12.6% overall, about 33% in APOE e4 homozygotes; ARIA-H (microhaemorrhage, siderosis) about 17%. Subcutaneous maintenance formulation approved in the US in 2025.
+- **Donanemab** (Kisunla; in India, Lormalzi): IV monthly (700 mg for three doses, then 1,400 mg; a slower titration schedule approved in 2025 lowers ARIA); TRAILBLAZER-ALZ 2 (1, 736 participants): about 35% slowing on iADRS in those with low to medium tau; ARIA-E about 24%; treatment can stop when amyloid clears on PET. Three treatment-related deaths in the trial.
 - **Eligibility**: MCI or mild dementia due to Alzheimer's disease, confirmed amyloid (PET or CSF; blood tests increasingly used for triage), APOE genotyping, baseline MRI (exclude more than four microhaemorrhages, superficial siderosis, major infarcts), no anticoagulation (bleeding risk with ARIA-H), MRI before specified doses and with new symptoms.
 - **Regulatory status, as of Nov 2026**: both approved in the US; lecanemab approved in the EU (2025) for APOE e4 non-carriers and heterozygotes, and donanemab subsequently with similar restrictions; NICE in England did not recommend either for NHS use on cost-effectiveness grounds. In India, CDSCO approved donanemab and Eli Lilly launched it as Lormalzi in May 2026 for MCI or mild dementia due to Alzheimer's; cost, access to amyloid confirmation and MRI monitoring limit use to a few specialist centres.
 - **Aducanumab**, the first such antibody, was withdrawn by its maker in 2024.
@@ -167,9 +167,9 @@ In late dementia, people lose speech, mobility and the ability to swallow. Commo
 - **Mortality warning**: FDA boxed warning (2005, extended to typicals in 2008): antipsychotics in older people with dementia increase mortality about 1.6 to 1.7 times (about 1 extra death per 100 treated over 10 to 12 weeks) and stroke about 3 times.
 - **Risperidone**: licensed in the UK for up to 6 weeks for persistent aggression in Alzheimer's disease causing risk; 0.25 mg twice daily, increase by 0.25 mg twice daily every 2 days, usual 0.5 mg twice daily, maximum 1 mg twice daily (Risdone, Sizodon).
 - **Aripiprazole** (2 to 10 mg) and **quetiapine** (12.5 to 50 mg; weak evidence for agitation, used in Parkinson's and Lewy body disease) are alternatives. **Brexpiprazole** was approved by the FDA in 2023 for agitation associated with Alzheimer's dementia (0.5 mg to 2 to 3 mg); not marketed in India as of Nov 2026.
-- **Citalopram** 10 to 30 mg reduced agitation in CitAD (JAMA 2014) at the cost of QT prolongation and cognitive worsening at 30 mg; sertraline and trazodone are used. **Mirtazapine** was not effective for agitation in the HTA-SYMBAD trial (Lancet 2021) and was associated with higher mortality.
-- **Pain**: stepped analgesia (paracetamol up to 3 g daily, then low-dose opioids) reduced agitation in nursing home residents (Husebo et al., BMJ 2011).
-- **Depression in dementia**: antidepressants show little benefit over placebo in trials (HTA-SADD, Lancet 2011); psychosocial approaches first; treat severe depression.
+- **Citalopram** 10 to 30 mg reduced agitation in CitAD at the cost of QT prolongation and cognitive worsening at 30 mg; sertraline and trazodone are used. **Mirtazapine** was not effective for agitation in the HTA-SYMBAD trial and was associated with higher mortality.
+- **Pain**: stepped analgesia (paracetamol up to 3 g daily, then low-dose opioids) reduced agitation in nursing home residents.
+- **Depression in dementia**: antidepressants show little benefit over placebo in trials (HTA-SADD); psychosocial approaches first; treat severe depression.
 - **Sleep**: sleep hygiene, daytime light and activity; melatonin evidence weak; avoid benzodiazepines and Z-drugs; trazodone 50 mg has modest evidence.
 - **Deprescribing**: review antipsychotics at 6 to 12 weeks; the DART-AD trial showed higher long-term mortality in those continuing antipsychotics.
 - **Non-drug evidence**: person-centred care training (for example WHELD), music therapy, structured activities and carer interventions reduce agitation and antipsychotic use.
@@ -235,9 +235,9 @@ Delirium is not always fully reversible. Some people take weeks or months to rec
 :::clinician
 ### Deeper notes
 - **Neurobiology**: cholinergic deficiency (serum anticholinergic activity correlates with delirium), dopamine excess, neuroinflammation (IL-6, IL-8, CRP elevations; microglial priming in ageing and neurodegeneration), aberrant stress responses, and disrupted functional connectivity (reduced default mode and attention network coordination on fMRI; diffuse EEG slowing). Biomarker studies show raised neurofilament light during delirium, suggesting neuronal injury.
-- **Long-term outcomes**: in older people, delirium is associated with about a 2 to 3-fold increase in incident dementia and accelerated decline in those with dementia (Fong et al.; Davis et al.); in ICU survivors, long-term cognitive impairment comparable to moderate traumatic brain injury in some (BRAIN-ICU, NEJM 2013).
+- **Long-term outcomes**: in older people, delirium is associated with about a 2 to 3-fold increase in incident dementia and accelerated decline in those with dementia; in ICU survivors, long-term cognitive impairment comparable to moderate traumatic brain injury in some (BRAIN-ICU).
 - **ICU bundle (ABCDEF)**: Assess and manage pain; Both spontaneous awakening and breathing trials; Choice of sedation (avoid benzodiazepines, consider dexmedetomidine); Delirium assessment and management; Early mobility and exercise; Family engagement.
-- **Post-operative delirium prevention**: proactive geriatric consultation (Marcantonio et al., 1998: about one third reduction after hip fracture), depth-of-anaesthesia monitoring (mixed evidence), avoid anticholinergics and benzodiazepine premedication, multimodal analgesia.
+- **Post-operative delirium prevention**: proactive geriatric consultation (1998: about one third reduction after hip fracture), depth-of-anaesthesia monitoring (mixed evidence), avoid anticholinergics and benzodiazepine premedication, multimodal analgesia.
 - **Terminal delirium**: haloperidol or levomepromazine (where available) and midazolam for distressing agitation; palliative sedation is a last resort with clear documentation and family agreement.
 - **Paediatric delirium**: Cornell Assessment of Pediatric Delirium (CAPD) for screening; risk with benzodiazepines, deep sedation and young age.
 :::
@@ -296,10 +296,10 @@ In India, low education, high blood pressure, diabetes, hearing loss and air pol
 
 :::clinician
 ### Evidence and status, as of Nov 2026
-- **Lancet Commission** (Livingston et al., 2024): 14 modifiable risk factors account for about 45% of dementia worldwide; added high LDL cholesterol and untreated vision loss to the 2020 list of 12. Hearing loss and high LDL had the largest population attributable fractions (about 7% each). Indian estimates suggest an even higher potentially modifiable share because of low education and high hypertension prevalence.
-- **Hearing**: the ACHIEVE trial (Lancet 2023) found hearing intervention slowed cognitive decline over 3 years by about 48% in a subgroup of older adults at higher risk, but not overall.
+- **A major international commission** (2024): 14 modifiable risk factors account for about 45% of dementia worldwide; added high LDL cholesterol and untreated vision loss to the 2020 list of 12. Hearing loss and high LDL had the largest population attributable fractions (about 7% each). Indian estimates suggest an even higher potentially modifiable share because of low education and high hypertension prevalence.
+- **Hearing**: the ACHIEVE trial found hearing intervention slowed cognitive decline over 3 years by about 48% in a subgroup of older adults at higher risk, but not overall.
 - **Blood pressure**: SPRINT MIND (2019) intensive blood pressure control reduced MCI risk.
-- **Multidomain**: FINGER (Lancet 2015) improved cognition modestly; US POINTER (2025) structured lifestyle intervention modestly improved global cognition compared with self-guided.
+- **Multidomain**: FINGER improved cognition modestly; US POINTER (2025) structured lifestyle intervention modestly improved global cognition compared with self-guided.
 - **Blood biomarkers**: in May 2025 the FDA cleared the first blood test (Fujirebio Lumipulse plasma p-tau217 to beta-amyloid 1-42 ratio) to aid diagnosis in symptomatic adults 55 and over; other assays followed. Alzheimer's Association clinical practice guidelines (2025) recommend blood biomarker tests with high sensitivity and specificity as triage or confirmatory tests in specialist care for people with cognitive symptoms, not in asymptomatic people or primary care screening.
 - **GLP-1 agonists**: Novo Nordisk's EVOKE and EVOKE+ phase 3 trials (about 3,800 people with MCI or mild dementia due to Alzheimer's) reported in November 2025 that oral semaglutide did not slow progression on CDR-SB over 2 years, despite some biomarker changes; full data presented at AAN 2026.
 - **Pipeline**: anti-tau antibodies and antisense oligonucleotides (for example BIIB080), subcutaneous anti-amyloid maintenance, presymptomatic trials (AHEAD 3-45 with lecanemab), and combination approaches; lithium microdose and other repurposed drugs are under study.
@@ -322,7 +322,7 @@ Q: As of Nov 2026, Alzheimer's blood biomarker tests are best used for:
 - Choosing antipsychotics
 > Not for asymptomatic screening.
 
-Q: Which risk factor had one of the largest population attributable fractions in the 2024 Lancet Commission?
+Q: Which risk factor had one of the largest population attributable fractions in the 2024 international commission on dementia prevention?
 - Left-handedness
 - *Hearing loss
 - Vegetarian diet
@@ -344,7 +344,7 @@ Onset (hours to days versus months to years) → course (fluctuating versus prog
 Definition of major and mild NCD → Alzheimer's (pathology, genetics, course) → vascular → Lewy body and Parkinson's disease dementia (core features, neuroleptic sensitivity, one-year rule) → frontotemporal (behavioural and language variants) → others (NPH, CJD, HIV, Huntington's, alcohol) → reversible causes and work-up → cognitive testing (MMSE, MoCA, ACE-III) → treatment (cholinesterase inhibitors, memantine, anti-amyloid antibodies) → BPSD and carers → capacity and planning → prevention.
 
 ### Short notes to practise
-CAM · 4AT · Delirium superimposed on dementia · Lewy body dementia · Frontotemporal dementia · Normal pressure hydrocephalus · Pseudodementia · ACE-III · Cholinesterase inhibitors · Anti-amyloid antibodies and ARIA · Antipsychotics in dementia · Lancet Commission risk factors.
+CAM · 4AT · Delirium superimposed on dementia · Lewy body dementia · Frontotemporal dementia · Normal pressure hydrocephalus · Pseudodementia · ACE-III · Cholinesterase inhibitors · Anti-amyloid antibodies and ARIA · Antipsychotics in dementia · Modifiable risk factors for dementia.
 
 :::viva
 Core feature of delirium? :: Disturbance of attention and awareness, with acute onset and fluctuation.
@@ -370,7 +370,7 @@ Main cardiac side effect of cholinesterase inhibitors? :: Bradycardia.
 ARIA highest risk? :: APOE e4 homozygotes.
 Antipsychotic mortality risk in dementia? :: About 1.6 to 1.7 times higher.
 Approach to BPSD? :: DICE: describe, investigate, create, evaluate.
-Modifiable dementia risk share? :: About 45% (14 factors, Lancet Commission 2024).
+Modifiable dementia risk share? :: About 45% (14 factors).
 Dementia prevalence in older Indians? :: About 7.4% of people aged 60 and over (LASI-DAD).
 :::
 

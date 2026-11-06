@@ -147,7 +147,7 @@ Families are often offered expensive "cures": chelation, stem-cell injections, h
 | Sleep onset | Melatonin | 1 to 3 mg, up to about 6 to 10 mg, 30 to 60 minutes before bed | After sleep hygiene; prolonged-release forms exist |
 | Anxiety | SSRIs (for example sertraline, fluoxetine) | Start very low (sertraline 12.5 to 25 mg) | Evidence weaker than in non-autistic youth; activation common |
 
-SSRIs do not reduce repetitive behaviours in autistic children (the large citalopram trial by King and colleagues was negative). As of Nov 2026, oxytocin and bumetanide trials have not shown reliable benefit; no drug is approved for core features.
+SSRIs do not reduce repetitive behaviours in autistic children (a large citalopram trial was negative). As of Nov 2026, oxytocin and bumetanide trials have not shown reliable benefit; no drug is approved for core features.
 :::
 
 :::recall
@@ -230,7 +230,7 @@ Treatment is a plan, not a pill.
 - **Symptom thresholds**: six of nine in a domain under 17; five of nine at 17 and over; at least 6 months; several symptoms before 12; two or more settings; clear impairment; not better explained.
 - **Rating scales**: Vanderbilt (parent and teacher, includes screening for ODD, CD, anxiety and depression), Conners-3, SNAP-IV, ADHD Rating Scale-5; Adult ADHD Self-Report Scale (ASRS v1.1) for adults; DIVA-5 structured interview for adults.
 - **MTA study** (1999, 579 children): at 14 months, carefully titrated medication management beat intensive behavioural treatment and community care for core symptoms; combined treatment gave modest added benefit for some outcomes (oppositional symptoms, parent satisfaction) and allowed lower doses. Group differences faded at long-term follow-up, partly because treatments converged.
-- **Comparative efficacy** (Cortese et al., Lancet Psychiatry 2018): methylphenidate first choice in children and adolescents; amphetamines first choice in adults. Lisdexamfetamine and other amphetamines are not marketed in India.
+- **Comparative efficacy**: methylphenidate first choice in children and adolescents; amphetamines first choice in adults. Lisdexamfetamine and other amphetamines are not marketed in India.
 - **Preschool**: parent training first; methylphenidate only if severe and after parent training (Preschool ADHD Treatment Study, PATS: effective, with more side effects).
 - Full medicine profiles and dosing are in section 3.2.
 :::
@@ -312,7 +312,7 @@ In Tourette's, **ADHD** (about half) and **obsessive-compulsive symptoms** (abou
 :::clinician
 ### Managing tics
 1. **Psychoeducation** for the child, family and school is often enough. Teachers should not tell the child to stop; a pass to leave the room briefly can help.
-2. **Comprehensive Behavioural Intervention for Tics (CBIT)**, built on **habit reversal training** (awareness training plus a competing response held for about a minute when the urge comes), is first-line when tics impair. It works about as well as medicine in trials (Piacentini et al., JAMA 2010).
+2. **Comprehensive Behavioural Intervention for Tics (CBIT)**, built on **habit reversal training** (awareness training plus a competing response held for about a minute when the urge comes), is first-line when tics impair. It works about as well as medicine in trials.
 3. **Medicine** for moderate to severe tics:
    - **Clonidine** (Arkamin) 0.025 to 0.05 mg at night, increase every 3 to 7 days to 0.1 to 0.3 mg daily in divided doses; or **guanfacine**. Also helps ADHD. Sedation, low blood pressure; taper to stop (rebound hypertension).
    - **Aripiprazole** (Arip MT) start 1 to 2 mg, usual 5 to 10 mg (up to 15 to 20 mg in older adolescents). FDA-approved for Tourette's from age 6.
@@ -320,7 +320,7 @@ In Tourette's, **ADHD** (about half) and **obsessive-compulsive symptoms** (abou
    - **Haloperidol** 0.25 to 0.5 mg, usual 1 to 4 mg, and **pimozide** (ECG needed, QT prolongation, CYP3A4 interactions) are older approved options with more extrapyramidal effects.
    - **Tetrabenazine** for refractory cases (depression risk).
    - Deep brain stimulation only for severe, refractory adult Tourette's.
-4. **Treat ADHD**: methylphenidate does not usually worsen tics on average (Cochrane review 2011; later meta-analyses), so it can be used with monitoring.
+4. **Treat ADHD**: methylphenidate does not usually worsen tics on average (later meta-analyses), so it can be used with monitoring.
 
 ### Learning disorder: management
 Evidence-based remediation is **structured, explicit, systematic phonics-based instruction** for reading (multisensory approaches such as Orton-Gillingham-based programmes), taught by a special educator, frequent and sustained. Coloured overlays, eye exercises and "brain training" games have no good evidence. Accommodations (extra time, reader, scribe, calculator, oral exams) reduce the impact while skills build. Screen for ADHD, anxiety and low self-esteem.
@@ -399,8 +399,8 @@ Board exams, competitive entrance coaching (for engineering and medicine), compa
 - **Depression**: irritable mood can replace depressed mood in children and adolescents; failure to make expected weight gain counts as a weight symptom. **Persistent depressive disorder**: 1 year in youth, not 2. Screen with PHQ-A, the Mood and Feelings Questionnaire (MFQ), or the RCADS; screen for past hypomania and family history of bipolar disorder.
 
 ### Treatment and evidence
-- **Anxiety**: CBT with exposure first (Coping Cat and similar, parent involvement in younger children). **CAMS** trial (Walkup et al., NEJM 2008, ages 7 to 17): response at 12 weeks was 81% with combination CBT plus sertraline, 60% CBT, 55% sertraline, 24% placebo. SSRIs for moderate to severe or CBT-unresponsive anxiety: sertraline start 12.5 to 25 mg, usual 50 to 200 mg; fluoxetine start 5 to 10 mg, usual 10 to 40 mg (Fludac, Flunil). Avoid long-term benzodiazepines.
-- **Depression**: mild, watchful waiting and supportive care; moderate to severe, CBT or interpersonal therapy for adolescents (IPT-A), and **fluoxetine** as the first-choice medicine (start 10 mg, increase to 20 mg after about a week; maximum usually 40 to 60 mg in adolescents). Escitalopram is the second option (approved in the US from 12 years; start 5 to 10 mg, up to 20 mg). **TADS** (JAMA 2004, ages 12 to 17): 12-week response 71% combination, 61% fluoxetine, 43% CBT, 35% placebo; combination also reduced suicidal events relative to fluoxetine alone. Avoid paroxetine, venlafaxine and tricyclics (poor efficacy, more harm in youth).
+- **Anxiety**: CBT with exposure first (Coping Cat and similar, parent involvement in younger children). **CAMS** trial (ages 7 to 17): response at 12 weeks was 81% with combination CBT plus sertraline, 60% CBT, 55% sertraline, 24% placebo. SSRIs for moderate to severe or CBT-unresponsive anxiety: sertraline start 12.5 to 25 mg, usual 50 to 200 mg; fluoxetine start 5 to 10 mg, usual 10 to 40 mg (Fludac, Flunil). Avoid long-term benzodiazepines.
+- **Depression**: mild, watchful waiting and supportive care; moderate to severe, CBT or interpersonal therapy for adolescents (IPT-A), and **fluoxetine** as the first-choice medicine (start 10 mg, increase to 20 mg after about a week; maximum usually 40 to 60 mg in adolescents). Escitalopram is the second option (approved in the US from 12 years; start 5 to 10 mg, up to 20 mg). **TADS** (ages 12 to 17): 12-week response 71% combination, 61% fluoxetine, 43% CBT, 35% placebo; combination also reduced suicidal events relative to fluoxetine alone. Avoid paroxetine, venlafaxine and tricyclics (poor efficacy, more harm in youth).
 - **The warning**: since 2004 antidepressants carry an FDA boxed warning about increased suicidal thinking and behaviour in children, adolescents and young adults under 25 (in trials, about 4% on drug versus 2% on placebo; no completed suicides). Untreated depression is the larger danger; monitor closely, especially in the first month and after dose changes, and warn families to watch for agitation, insomnia and new suicidal talk.
 - **Coaching centre guidelines** (Ministry of Education, January 2024): no enrolment under 16 or before Class 10, counselling system required, no misleading promises of ranks; enforcement varies by state.
 :::

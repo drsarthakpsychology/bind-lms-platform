@@ -30,7 +30,7 @@ Personality disorder diagnoses carry heavy **stigma**. People given these labels
 3. **People improve.** Long-term studies show that many no longer meet criteria years later, and good treatments exist.
 
 :::widget guess
-{"prompt": "Out of every 100 adults in the general population, about how many have a personality disorder of some kind?", "min": 0, "max": 40, "unit": "adults", "answer": [7, 13], "reveal": "About 1 in 10 (studies range roughly from 7 to 12 in 100). In mental health clinics the figure is far higher: many people treated for depression, anxiety or addiction also have a personality disorder, which affects how they respond to treatment.", "clinician": "Global meta-analysis (Winsper et al., British Journal of Psychiatry, 2020): pooled prevalence of any personality disorder about 7.8%, higher in high-income countries; Cluster C most common in the community. In psychiatric outpatients, rates of 40% to 50% are reported with structured interviews. Indian community data are sparse; clinic studies suggest under-recognition."}
+{"prompt": "Out of every 100 adults in the general population, about how many have a personality disorder of some kind?", "min": 0, "max": 40, "unit": "adults", "answer": [7, 13], "reveal": "About 1 in 10 (studies range roughly from 7 to 12 in 100). In mental health clinics the figure is far higher: many people treated for depression, anxiety or addiction also have a personality disorder, which affects how they respond to treatment.", "clinician": "Global meta-analysis (2020): pooled prevalence of any personality disorder about 7.8%, higher in high-income countries; Cluster C most common in the community. In psychiatric outpatients, rates of 40% to 50% are reported with structured interviews. Indian community data are sparse; clinic studies suggest under-recognition."}
 :::
 
 :::clinician
@@ -176,7 +176,7 @@ Q: Which pair is most often confused because both involve few relationships?
 :::
 
 :::widget guess
-{"prompt": "Among people diagnosed with borderline personality disorder and followed for ten years, about what percentage no longer met the criteria at some point (remission)?", "min": 0, "max": 100, "unit": "percent", "answer": [75, 95], "reveal": "Most of them: around 85 to 90 in 100 had a period of remission within ten years, and relapse after a long remission was uncommon. Impulsive behaviours such as self-harm improve fastest; feelings of emptiness and difficulties in work and relationships improve more slowly.", "clinician": "McLean Study of Adult Development (Zanarini et al., American Journal of Psychiatry 2010 and 2012): 2-year remission 93%, 4-year sustained remission 78% by 16 years; recovery (remission plus good social and vocational functioning) about 50% to 60%. The Collaborative Longitudinal Personality Disorders Study found similar symptomatic improvement with persisting functional impairment."}
+{"prompt": "Among people diagnosed with borderline personality disorder and followed for ten years, about what percentage no longer met the criteria at some point (remission)?", "min": 0, "max": 100, "unit": "percent", "answer": [75, 95], "reveal": "Most of them: around 85 to 90 in 100 had a period of remission within ten years, and relapse after a long remission was uncommon. Impulsive behaviours such as self-harm improve fastest; feelings of emptiness and difficulties in work and relationships improve more slowly.", "clinician": "McLean Study of Adult Development (and 2012): 2-year remission 93%, 4-year sustained remission 78% by 16 years; recovery (remission plus good social and vocational functioning) about 50% to 60%. The Collaborative Longitudinal Personality Disorders Study found similar symptomatic improvement with persisting functional impairment."}
 :::
 
 :::safety Self-harm is a risk, not a nuisance
@@ -247,8 +247,8 @@ What counts as "deviant" depends on culture. In many Indian families, deferring 
 
 :::clinician
 ### Aetiological evidence in brief
-- **Heritability**: twin studies estimate about 40% to 60% for most personality disorders (Torgersen 2000; Kendler and colleagues), with shared environment contributing little and non-shared environment much.
-- **Childhood adversity**: retrospective studies report childhood sexual abuse in 40% to 70% of patients with BPD; prospective cohorts (for example Johnson et al., 1999) confirm that documented abuse and neglect raise the risk of adult personality disorder about four-fold. Neglect and emotional abuse may matter as much as sexual abuse.
+- **Heritability**: twin studies estimate about 40% to 60% for most personality disorders , with shared environment contributing little and non-shared environment much.
+- **Childhood adversity**: retrospective studies report childhood sexual abuse in 40% to 70% of patients with BPD; prospective cohorts confirm that documented abuse and neglect raise the risk of adult personality disorder about four-fold. Neglect and emotional abuse may matter as much as sexual abuse.
 - **Neurobiology**: heightened amygdala reactivity to emotional faces and reduced prefrontal regulation in BPD; altered serotonergic function linked to impulsive aggression; low autonomic arousal and reduced amygdala response to others' distress in psychopathy.
 - **Developmental models**: Linehan's biosocial theory (emotional vulnerability plus invalidating environment); Fonagy's mentalisation model (insecure, especially disorganised, attachment undermines the capacity to understand mental states); Kernberg's object relations model (splitting and identity diffusion); Young's schema model (early maladaptive schemas from unmet core needs).
 - **Course**: personality traits show mean-level maturation with age (the "maturity principle"); Cluster B symptoms, especially impulsivity, decline most with age.
@@ -416,7 +416,7 @@ Personality cannot be assessed in one rushed interview, especially when the pers
 
 :::clinician
 ### Practical notes
-- **SAPAS** (Moran et al., 2003): 8 yes/no items; a score of 3 or more has sensitivity about 0.94 and specificity about 0.85 for any personality disorder in psychiatric outpatients.
+- **SAPAS** (2003): 8 yes/no items; a score of 3 or more has sensitivity about 0.94 and specificity about 0.85 for any personality disorder in psychiatric outpatients.
 - **IPDE**: semi-structured, covers ICD-10 and DSM-IV categories; developed by Loranger and the WHO, with field trials in 11 countries including India.
 - **Countertransference** is information, not evidence. Strong urges to rescue, reject, or bend rules are common with Cluster B presentations; use supervision and team consultation.
 - **Disclosure**: many patients find a personality disorder diagnosis validating when explained well; others feel condemned. Offer written information and the chance to ask questions; never use the label as a reason to refuse care.
@@ -599,7 +599,7 @@ Whatever the setting, these principles help:
 - **Bipolar II versus BPD**: look for discrete hypomanic episodes (several days, reduced need for sleep, increased goal-directed activity) that are a change from baseline; BPD mood shifts are hours-long and interpersonally triggered. Both can coexist (about 10% to 20%).
 - **Complex PTSD (ICD-11)**: PTSD core symptoms plus disturbances in self-organisation (affect dysregulation, negative self-concept, relational disturbances), usually after prolonged or repeated trauma; less fear of abandonment, less self-image instability and fewer impulsive self-harm behaviours than in BPD. The two often overlap.
 - **Adolescents**: BPD can be diagnosed in adolescence (NICE, Australian guidelines); early intervention programmes such as Helping Young People Early (HYPE, Melbourne) show benefit.
-- **Structured clinical management** and **good psychiatric management (GPM)** (Gunderson): generalist approaches with psychoeducation, case management, focus on interpersonal hypersensitivity and life outside treatment; GPM equalled DBT at 1 and 2 years in McMain's 2009 trial.
+- **Structured clinical management** and **good psychiatric management (GPM)**, developed by John Gunderson: generalist approaches with psychoeducation, case management, focus on interpersonal hypersensitivity and life outside treatment; GPM equalled DBT at 1 and 2 years in McMain's 2009 trial.
 - **Never** use a BPD diagnosis to deny assessment of physical symptoms or to refuse emergency care.
 :::
 
@@ -652,7 +652,7 @@ A pervasive **preoccupation with orderliness, perfectionism and control**, at th
 - **Avoidant PD and social anxiety disorder**: 30% to 50% overlap; avoidant PD shows a more pervasive sense of inadequacy; CBT for social anxiety and SSRIs (sertraline, escitalopram, paroxetine) help both; group CBT and schema therapy have evidence for avoidant PD.
 - **Dependent PD**: differential from dependence in depression, agoraphobia, and culturally sanctioned interdependence; watch for dependence transferring to the therapist, and plan endings carefully.
 - **OCPD**: comorbid with OCD in about 20% to 30%; associated with anorexia nervosa, hoarding and treatment resistance in OCD. CBT and schema therapy; SSRIs have weak evidence.
-- **Schema therapy** (Bamelis et al., 2014) for Cluster C plus paranoid, histrionic and narcissistic PDs outperformed treatment as usual and clarification-oriented psychotherapy on recovery.
+- **Schema therapy** (2014) for Cluster C plus paranoid, histrionic and narcissistic PDs outperformed treatment as usual and clarification-oriented psychotherapy on recovery.
 :::
 
 :::recall
@@ -703,7 +703,7 @@ Many conditions can look like a personality disorder, and personality disorders 
 
 :::clinician
 ### Comorbidity matters for treatment
-- Personality disorders predict poorer response and higher relapse in depression and anxiety treatment trials (effect modest; Newton-Howes 2006 meta-analysis: about doubling of poor outcome in depression). They do not mean treatment of the comorbid disorder will fail; adapt it (longer, more structured, attention to alliance ruptures).
+- Personality disorders predict poorer response and higher relapse in depression and anxiety treatment trials (effect modest: roughly a doubling of the odds of poor outcome in depression). They do not mean treatment of the comorbid disorder will fail; adapt it (longer, more structured, attention to alliance ruptures).
 - **Substance use and antisocial or borderline PD**: integrated treatment; DBT has adaptations for substance use (DBT-S).
 - **Medical causes of personality change**: frontotemporal dementia, Huntington's disease, temporal lobe epilepsy (interictal hyposexuality, religiosity, hypergraphia, viscosity are described but debated), traumatic brain injury (especially orbitofrontal), anti-NMDA receptor encephalitis, neurosyphilis, HIV, multiple sclerosis, endocrine disorders (Cushing's, thyroid). ICD-11 and DSM-5-TR code "personality change due to another medical condition" with subtypes (labile, disinhibited, aggressive, apathetic, paranoid).
 :::

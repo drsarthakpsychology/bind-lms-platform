@@ -45,7 +45,7 @@ Severity is like the height of a fever: it tells you how ill someone is and how 
 - **Severity descriptors**: mild (problems in some areas of self and interpersonal functioning, often not apparent to others, usually no substantial harm to self or others); moderate (marked problems across multiple areas, most relationships compromised, may be associated with some harm); severe (severe disturbance in nearly all areas, often with harm to self or others).
 - **Measures**: PID-5 (220 items; brief form 25 items) for AMPD traits; PiCD (Personality Inventory for ICD-11) and SASPD (9 items) for severity; LPFS-BF 2.0 for brief AMPD Criterion A.
 - **Mapping to the five-factor model**: negative affectivity to neuroticism; detachment to low extraversion; antagonism or dissociality to low agreeableness; disinhibition to low conscientiousness; anankastia to very high conscientiousness; psychoticism to unusual aspects of openness.
-- **Evidence**: the general severity factor ("g-PD") accounts for much of the variance across PD categories (Sharp et al., 2015) and is closely related to borderline features; severity predicts functional outcomes better than category count. Clinicians find AMPD clinically useful in surveys, but reliability for Criterion A varies.
+- **Evidence**: the general severity factor ("g-PD") accounts for much of the variance across PD categories (2015) and is closely related to borderline features; severity predicts functional outcomes better than category count. Clinicians find AMPD clinically useful in surveys, but reliability for Criterion A varies.
 - **HiTOP** places personality traits on spectra shared with other disorders: internalising (negative affectivity), detachment, antagonistic externalising, disinhibited externalising, and thought disorder (psychoticism).
 :::
 
@@ -117,11 +117,11 @@ A **chain analysis** examines one problem behaviour in detail: vulnerabilities, 
 
 :::clinician
 ### Evidence and adaptations
-- **Linehan 1991** (44 women): DBT reduced parasuicide and inpatient days versus treatment as usual. **Linehan 2006** (101 women): versus community treatment by experts, DBT halved suicide attempts, reduced emergency and inpatient use, and had fewer dropouts.
-- **DBT for adolescents (DBT-A)**: Mehlum 2014 (Norway) and McCauley 2018 (US, 173 adolescents with recent self-harm): DBT reduced self-harm and suicide attempts compared with individual and group supportive therapy at 6 months.
-- **Meta-analyses**: DBT reduces self-harm and suicidal behaviour with moderate effect; benefits for general BPD symptoms are smaller and comparable with other structured therapies. Cochrane review (Storebø et al., 2020): DBT and MBT have the most evidence, with low-certainty evidence overall.
+- **Linehan's first trial** (44 women): DBT reduced parasuicide and inpatient days versus treatment as usual. **Her second, larger trial** (101 women): versus community treatment by experts, DBT halved suicide attempts, reduced emergency and inpatient use, and had fewer dropouts.
+- **DBT for adolescents (DBT-A)**: trials in Norway and the US (the larger with 173 adolescents with recent self-harm): DBT reduced self-harm and suicide attempts compared with individual and group supportive therapy at 6 months.
+- **Meta-analyses**: DBT reduces self-harm and suicidal behaviour with moderate effect; benefits for general BPD symptoms are smaller and comparable with other structured therapies. Pooled reviews: DBT and MBT have the most evidence, with low-certainty evidence overall.
 - **Standard length**: about 12 months (skills curriculum twice through, 24 weeks each). **Four-miss rule**: missing four consecutive scheduled sessions of a type ends the treatment year.
-- **Adaptations**: DBT-PTSD (Bohus 2020, superior to cognitive processing therapy for childhood-abuse PTSD with BPD features), DBT for substance use, DBT skills-only groups, radically open DBT for over-controlled presentations (chronic depression, anorexia, OCPD).
+- **Adaptations**: DBT-PTSD (superior to cognitive processing therapy for childhood-abuse PTSD with BPD features), DBT for substance use, DBT skills-only groups, radically open DBT for over-controlled presentations (chronic depression, anorexia, OCPD).
 - **India**: DBT skills groups are offered in some centres (for example NIMHANS, private practices in metropolitan cities); full programmes with phone coaching and consultation teams are rare because of staffing; adapted, briefer skills-based versions and family skills groups are more feasible. Validation of DBT outcome measures in Indian languages is limited.
 :::
 
@@ -141,12 +141,12 @@ Q: In the DBT target hierarchy, which of these is addressed first?
 - Learning DEAR MAN
 > Life-threatening behaviour comes first.
 
-Q: Which trial showed that DBT halved suicide attempts compared with community treatment by experts?
-- TADS
-- *Linehan and colleagues, 2006
-- CATIE
-- STAR*D
-> 101 women with recent suicidal behaviour.
+Q: In Linehan's larger trial against community treatment by experts, DBT's clearest advantage was:
+- Better general mood only
+- *About half as many suicide attempts, with fewer emergency visits and dropouts
+- Faster weight gain
+- Fewer hallucinations
+> DBT's strongest evidence is for reducing suicidal behaviour and self-harm.
 :::
 
 ## 3.3 Mentalisation and the other structured therapies [core][advanced]
@@ -184,12 +184,12 @@ The MBT therapist takes a **not-knowing**, curious stance ("Help me understand w
 
 :::clinician
 ### Evidence
-- **MBT**: Bateman and Fonagy (1999) day-hospital MBT for 18 months versus general psychiatric care reduced suicidal acts, self-harm and admissions; 8-year follow-up (2008) showed sustained gains (fewer suicide attempts, better employment). Outpatient MBT versus structured clinical management (2009, 134 patients) both improved, MBT more so by 18 months. MBT has adaptations for adolescents (MBT-A), families (MBT-F), and antisocial PD (MBT-ASPD trial in UK probation services).
-- **TFP**: Clarkin et al. 2007 (TFP, DBT and supportive therapy all improved; TFP improved reflective function); Doering et al. 2010 (TFP better than experienced community psychotherapists).
-- **Schema therapy**: Giesen-Bloo et al. 2006 (over 3 years, schema therapy more effective and with fewer dropouts than TFP); Arntz et al. 2022 (combined individual and group schema therapy superior to treatment as usual for BPD).
-- **GPM**: McMain et al. 2009 and 2012 (GPM equivalent to DBT at 1 and 2 years for suicidal BPD).
-- **STEPPS**: Blum et al. 2008 (added to usual care, improved BPD symptoms).
-- **Cochrane** (Storebø 2020, 75 RCTs): psychotherapy reduces BPD severity, self-harm and suicide-related outcomes compared with treatment as usual (low-certainty evidence); DBT and MBT best studied. Common factors and structure probably account for much of the benefit (the "Dodo bird" debate).
+- **MBT**: the first MBT trial: day-hospital MBT for 18 months versus general psychiatric care reduced suicidal acts, self-harm and admissions; 8-year follow-up showed sustained gains (fewer suicide attempts, better employment). Outpatient MBT versus structured clinical management (2009, 134 patients) both improved, MBT more so by 18 months. MBT has adaptations for adolescents (MBT-A), families (MBT-F), and antisocial PD (MBT-ASPD trial in UK probation services).
+- **TFP**: one trial (TFP, DBT and supportive therapy all improved; TFP improved reflective function); another (TFP better than experienced community psychotherapists).
+- **Schema therapy**: a three-way comparison (over 3 years, schema therapy more effective and with fewer dropouts than TFP); a later multicentre trial (combined individual and group schema therapy superior to treatment as usual for BPD).
+- **GPM**: two reports from one large trial (GPM equivalent to DBT at 1 and 2 years for suicidal BPD).
+- **STEPPS**: one trial (added to usual care, improved BPD symptoms).
+- **Pooled evidence** (about 75 RCTs): psychotherapy reduces BPD severity, self-harm and suicide-related outcomes compared with treatment as usual (low-certainty evidence); DBT and MBT best studied. Common factors and structure probably account for much of the benefit (the "Dodo bird" debate).
 - **Brief and stepped models**: brief structured interventions, for example 10-session GPM or emergency department-based brief interventions, are being trialled to widen access (as of Nov 2026, several stepped-care trials are under way in the UK and Australia).
 :::
 
@@ -209,12 +209,12 @@ Q: A patient says, 'You looked at your watch, so you want me gone.' In MBT terms
 - Teleological mode
 > Feeling is treated as fact.
 
-Q: Which trial found GPM to be as effective as DBT for suicidal patients with borderline personality disorder?
-- Linehan 1991
-- *McMain and colleagues, 2009
-- Bateman and Fonagy 1999
-- Giesen-Bloo 2006
-> Good psychiatric management equalled DBT.
+Q: When good psychiatric management (GPM) was compared head to head with DBT for suicidal patients with borderline personality disorder, the result was:
+- DBT was far superior
+- *The two gave similar outcomes at one and two years
+- GPM made patients worse
+- Neither helped
+> A structured generalist approach delivered well can match a specialist therapy.
 :::
 
 ## 3.4 Medicines, crises and the team [core][advanced]
@@ -247,13 +247,13 @@ Working with people who self-harm repeatedly, who idealise and then attack you, 
 
 :::clinician
 ### Evidence and prescribing notes
-- **Cochrane** (Stoffers-Winterling et al., 2022, 46 RCTs): no medication consistently improved BPD severity, self-harm, suicidality or function compared with placebo; low-certainty evidence of small effects on some symptoms (for example antipsychotics for psychotic-like symptoms). **LABILE trial** (Crawford et al., 2018, 276 patients): lamotrigine up to 200 mg (400 mg with oral contraception) did not improve BPD symptoms at 52 weeks.
-- **Quetiapine extended-release 150 mg** (Black et al., 2014) improved BPD symptoms over 300 mg and placebo in an 8-week trial; not replicated at scale.
+- **Pooled evidence** (about 46 RCTs): no medication consistently improved BPD severity, self-harm, suicidality or function compared with placebo; low-certainty evidence of small effects on some symptoms (for example antipsychotics for psychotic-like symptoms). **LABILE trial** (2018, 276 patients): lamotrigine up to 200 mg (400 mg with oral contraception) did not improve BPD symptoms at 52 weeks.
+- **Quetiapine extended-release 150 mg** (2014) improved BPD symptoms over 300 mg and placebo in an 8-week trial; not replicated at scale.
 - **Crisis use**: for acute agitation and insomnia, for example promethazine 25 mg (Phenergan) or low-dose quetiapine 25 to 50 mg for a few days; avoid benzodiazepines where possible; if used, short courses only, small supplies.
 - **Comorbid conditions**: treat depression (SSRIs; avoid tricyclics and MAOIs), ADHD (methylphenidate with diversion safeguards, or atomoxetine), PTSD (trauma-focused therapy, DBT-PTSD), bipolar disorder (treat as usual, prefer lithium only with careful overdose risk management).
 - **Valproate**: avoid in women of childbearing potential (MHRA and EMA restrictions; teratogenic, about 10% malformations and neurodevelopmental risks in up to 30% to 40% of exposed children).
 - **Clozapine**: case series for severe, persistent self-harm in BPD; specialist use only.
-- **Antisocial PD and aggression**: no licensed treatment; consider lithium (Sheard 1976 in prisoners) or SSRIs for impulsive aggression with weak evidence; treat substance use and ADHD.
+- **Antisocial PD and aggression**: no licensed treatment; consider lithium (an early trial in prisoners) or SSRIs for impulsive aggression with weak evidence; treat substance use and ADHD.
 - **Law (India)**: under Section 115 of the Mental Healthcare Act 2017, a person who attempts suicide is presumed, unless proved otherwise, to have severe stress, and the government has a duty to provide care and rehabilitation. Capacity to refuse treatment after self-harm must be assessed carefully and documented; capacity can fluctuate in crisis.
 :::
 
@@ -316,7 +316,7 @@ Personality is judged against a culture, and so are personality disorders. At th
 - **Indian data**: clinic-based studies (for example from NIMHANS, PGIMER and AIIMS) report personality disorders in roughly 5% to 20% of psychiatric outpatients, with borderline and anankastic (obsessive-compulsive) patterns most commonly recorded; community prevalence data are limited. Under-diagnosis may reflect stigma, short consultations, family-mediated presentations, and limited psychotherapy services.
 - **Self-harm in young Indian women**: domestic violence, marital conflict and dowry-related harassment are prominent precipitants in hospital-based studies; the Protection of Women from Domestic Violence Act 2005 and Section 80 (dowry death) and Section 85 to 86 (cruelty) of the Bharatiya Nyaya Sanhita 2023 (replacing IPC 304B and 498A) are relevant.
 - **Gender bias**: vignette studies show clinicians are more likely to diagnose BPD or histrionic PD in women and antisocial PD in men given identical histories.
-- **HYPE** (Chanen et al., Melbourne): CAT-based early intervention for youth with BPD features; the MOBY trial (2022) found HYPE plus general psychiatric care was not superior to general care on primary outcome, but all groups improved, supporting early, good-quality general care.
+- **HYPE** (Melbourne): CAT-based early intervention for youth with BPD features; the MOBY trial (2022) found HYPE plus general psychiatric care was not superior to general care on primary outcome, but all groups improved, supporting early, good-quality general care.
 - **Digital**: RCTs of app-supported DBT skills show small improvements in emotion regulation; not a substitute for structured therapy in high-risk patients.
 - **Neurobiology**: meta-analyses show amygdala hyperreactivity and altered prefrontal-limbic connectivity in BPD, and altered oxytocin signalling has been proposed; none yet has diagnostic or treatment value.
 :::

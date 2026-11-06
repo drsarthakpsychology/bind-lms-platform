@@ -38,7 +38,7 @@ A simple way to remember what makes addiction different from heavy use:
 ### How the rulebooks name it
 - **DSM-5-TR** uses one diagnosis, **substance use disorder** (for example alcohol use disorder), graded mild, moderate or severe by the number of criteria met from eleven (details in section 2.1).
 - **ICD-11** keeps two steps: **harmful pattern of use** (a pattern causing damage to physical or mental health, or behaviour causing harm to others) and **substance dependence** (at least two of three: impaired control; increasing precedence of use over other activities; physiological features such as tolerance and withdrawal, over at least 12 months, or 1 month if use is continuous). ICD-11 also has "hazardous substance use" in the chapter on factors influencing health.
-- **Addiction as a brain disease**: the "brain disease model" (Volkow and colleagues) emphasises neuroadaptation in reward, stress and executive circuits; critics (for example Heyman, Lewis) point to high natural recovery rates and the role of choice, context and social adversity. Most clinicians use a biopsychosocial view: brain changes are real, and environment and choice remain important targets for change.
+- **Addiction as a brain disease**: the "brain disease model" emphasises neuroadaptation in reward, stress and executive circuits; critics point to high natural recovery rates and the role of choice, context and social adversity. Most clinicians use a biopsychosocial view: brain changes are real, and environment and choice remain important targets for change.
 :::
 
 :::recall
@@ -96,8 +96,8 @@ Withdrawal passes, but **craving** can last months or years, triggered by cues a
 :::clinician
 ### Neurobiology in brief
 - **Mesolimbic dopamine pathway**: ventral tegmental area to nucleus accumbens; all addictive drugs increase accumbal dopamine, through different first targets: alcohol (GABA-A enhancement, NMDA inhibition, endogenous opioid release), opioids (mu receptors on GABA interneurons in VTA, disinhibiting dopamine neurons), nicotine (alpha-4 beta-2 nicotinic receptors on dopamine neurons), cannabis (CB1 receptors on GABA and glutamate terminals), cocaine (dopamine transporter blockade), amphetamines (reverse transport and VMAT2 effects), benzodiazepines (GABA-A on VTA interneurons).
-- **Three-stage cycle** (Koob and Volkow): binge and intoxication (basal ganglia, reward and incentive salience); withdrawal and negative affect (extended amygdala, corticotropin-releasing factor, dynorphin; "anti-reward"); preoccupation and anticipation (prefrontal cortex, impaired executive control and craving).
-- **Incentive sensitisation** (Robinson and Berridge): "wanting" (dopamine-driven salience) grows with use, while "liking" (hedonic, opioid-mediated) does not, explaining craving for drugs no longer enjoyed.
+- **Koob and Volkow's three-stage cycle**: binge and intoxication (basal ganglia, reward and incentive salience); withdrawal and negative affect (extended amygdala, corticotropin-releasing factor, dynorphin; "anti-reward"); preoccupation and anticipation (prefrontal cortex, impaired executive control and craving).
+- **Robinson and Berridge's incentive sensitisation theory**: "wanting" (dopamine-driven salience) grows with use, while "liking" (hedonic, opioid-mediated) does not, explaining craving for drugs no longer enjoyed.
 - **Cue reactivity and reconsolidation**: cue exposure triggers striatal dopamine; extinction-based cue exposure therapy alone has modest effects outside the clinic because of context renewal.
 - **Implications**: medicines that block reward (naltrexone), reduce withdrawal-related negative states (acamprosate, possibly), substitute with a safer agonist (methadone, buprenorphine, nicotine replacement), or aversive approaches (disulfiram).
 :::
