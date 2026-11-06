@@ -11,7 +11,9 @@ export const metadata: Metadata = { robots: { index: false, follow: false } };
  * Public credential verification. Reads the authoritative record server-side
  * (service role) by opaque credential_id and returns ONLY approved public
  * fields: display name, credential title, institution, issue date, credential
- * id and status. Revoked credentials keep their URL and show "Revoked".
+ * id, status and (certificates only) the paragraph about what the person did.
+ * Never the recipient's email or phone. Revoked credentials keep their URL
+ * and show "Revoked".
  */
 export default async function VerifyCertificatePage({ params }: { params: Promise<{ certificateId: string }> }) {
   const { certificateId } = await params;
@@ -19,7 +21,7 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
 
   const { data: cred } = await admin
     .from("credentials")
-    .select("credential_id, student_name, status, issued_at, revoked_at, achievements(title)")
+    .select("credential_id, student_name, type, status, issued_at, revoked_at, reason, achievements(title)")
     .eq("credential_id", certificateId)
     .maybeSingle();
 
@@ -44,6 +46,9 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
   const title = (a?.title as string) ?? "VIBHA School of Psychology";
   const verified = cred.status === "issued";
   const revoked = cred.status === "revoked";
+  // Badges store a rule snapshot in `reason`; only certificates show it (the paragraph).
+  const paragraph = cred.type === "certificate" && typeof cred.reason === "string" && cred.reason.trim() ? cred.reason.trim() : null;
+  const fmt = (iso: string) => new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" });
 
   return (
     <div className="flex min-h-screen flex-col bg-background px-5">
@@ -70,8 +75,9 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
             <p className="text-h2">{cred.student_name}</p>
             <p className="text-sm text-muted-foreground">earned</p>
             <p className="text-h3">{title}</p>
-            {verified && cred.issued_at ? <p className="text-caption text-muted-foreground">Issued {new Date(cred.issued_at).toLocaleDateString()}</p> : null}
-            {revoked && cred.revoked_at ? <p className="text-caption text-red-600">Revoked {new Date(cred.revoked_at).toLocaleDateString()}</p> : null}
+            {paragraph ? <p className="rounded-md border-2 border-foreground/15 bg-muted/40 p-3 text-left text-sm leading-relaxed">{paragraph}</p> : null}
+            {verified && cred.issued_at ? <p className="text-caption text-muted-foreground">Issued {fmt(cred.issued_at)}</p> : null}
+            {revoked && cred.revoked_at ? <p className="text-caption text-red-600">Revoked {fmt(cred.revoked_at)}</p> : null}
             <p className="break-all font-mono text-[0.65rem] text-muted-foreground">Credential ID {cred.credential_id}</p>
           </CardContent>
         </Card>

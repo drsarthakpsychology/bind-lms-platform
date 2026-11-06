@@ -9,6 +9,7 @@ import { loadStudentDetail } from "@/lib/analytics/activity";
 import { buildTimeline, daysAgoIso, type TimelineEvent } from "@/lib/analytics/timeline";
 import { loadAllLessons, loadCohortSummaries, loadPersonAccess } from "@/lib/cohorts/admin-data";
 import { normalise } from "@/lib/learn/engine";
+import { selectOwnedCredentials } from "@/lib/achievements/owned";
 import { ACCOUNT_LABEL, ACCOUNT_NEXT, ACCOUNT_TONE } from "@/lib/people/account-status";
 import { FLAG_LABEL } from "@/lib/people/attention";
 import { personKey } from "@/lib/crm/people";
@@ -137,7 +138,7 @@ export default async function StudentProfilePage({ params, searchParams }: { par
       {tab === "overview" ? <Overview id={id} r={r} details={person.details} /> : null}
       {tab === "access" ? <AccessTab id={id} email={email} canWrite={canWrite} person={person} r={r} isTest={Boolean(extra?.is_test)} /> : null}
       {tab === "activity" ? <ActivityTab id={id} /> : null}
-      {tab === "credentials" ? <CredentialsTab id={id} roll={(extra?.roll_number as string | null) ?? null} /> : null}
+      {tab === "credentials" ? <CredentialsTab id={id} email={email} roll={(extra?.roll_number as string | null) ?? null} /> : null}
       {tab === "messages" ? <MessagesTab id={id} email={email} /> : null}
     </div>
   );
@@ -346,8 +347,9 @@ async function ActivityTab({ id }: { id: string }) {
   );
 }
 
-async function CredentialsTab({ id, roll }: { id: string; roll: string | null }) {
-  const { data, error } = await createAdminClient().from("credentials").select("id, credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title)").eq("user_id", id).order("created_at", { ascending: false });
+async function CredentialsTab({ id, email, roll }: { id: string; email: string; roll: string | null }) {
+  // Includes custom certificates sent to the student's email address.
+  const { data, error } = await selectOwnedCredentials(createAdminClient(), "id, credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title)", id, email);
   const one = <T,>(x: T | T[] | null | undefined): T | null => (Array.isArray(x) ? (x[0] ?? null) : (x ?? null));
   return (
     <div className="space-y-4">

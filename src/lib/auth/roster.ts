@@ -485,12 +485,15 @@ export async function resetCredential(
 // the provider's 10/second limit (the cause of 41 failed sends in Nov 2026).
 const paceSends = createPacer(250);
 
-export async function sendResendEmail(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
-  const first = await sendResendOnce(to, subject, body, html);
+/** A file attached to an email (content is base64). */
+export type EmailAttachment = { filename: string; content: string };
+
+export async function sendResendEmail(to: string, subject: string, body: string, html?: string, attachments?: EmailAttachment[]): Promise<SendResult> {
+  const first = await sendResendOnce(to, subject, body, html, attachments);
   // "Too many requests": wait a little over a second and try once more.
   if (!first.ok && /too many requests|rate limit/i.test(first.error ?? "")) {
     await new Promise((r) => setTimeout(r, 1200));
-    return sendResendOnce(to, subject, body, html);
+    return sendResendOnce(to, subject, body, html, attachments);
   }
   return first;
 }
@@ -510,7 +513,7 @@ export function previewBlocks(to: string, env: Record<string, string | undefined
   return !allowed.includes(to.trim().toLowerCase());
 }
 
-async function sendResendOnce(to: string, subject: string, body: string, html?: string): Promise<SendResult> {
+async function sendResendOnce(to: string, subject: string, body: string, html?: string, attachments?: EmailAttachment[]): Promise<SendResult> {
   if (previewBlocks(to)) return { ok: false, error: PREVIEW_GATE };
   const key = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
@@ -522,7 +525,7 @@ async function sendResendOnce(to: string, subject: string, body: string, html?: 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], subject, text: body, ...(html ? { html } : {}), ...(replyTo ? { reply_to: replyTo } : {}) }),
+      body: JSON.stringify({ from, to: [to], subject, text: body, ...(html ? { html } : {}), ...(attachments?.length ? { attachments } : {}), ...(replyTo ? { reply_to: replyTo } : {}) }),
     });
     const j = (await res.json().catch(() => null)) as { id?: string; message?: string } | null;
     if (!res.ok) return { ok: false, error: j?.message ?? `Resend returned HTTP ${res.status}` };
