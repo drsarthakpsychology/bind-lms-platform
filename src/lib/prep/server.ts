@@ -185,12 +185,12 @@ export async function startAttempt(userId: string, paper: Paper, minutes: number
   return r?.id ? { id: String(r.id), deadline } : null;
 }
 
-export type StoredAttempt = { id: string; specId: string; paper: Paper; deadline: string; submittedAt: string | null; result: MockScore | null; standing: Standing | null; answers: Record<string, unknown>; marked: string[] };
+export type StoredAttempt = { id: string; specId: string; paper: Paper; deadline: string; submittedAt: string | null; result: MockScore | null; standing: Standing | null; answers: Record<string, unknown>; marked: string[]; late: boolean };
 
 export async function loadAttempt(userId: string, id: string): Promise<StoredAttempt | null> {
   const db = admin();
   if (!db || !userId || !/^[0-9a-f-]{36}$/i.test(id)) return null;
-  const r = await one(db.from("prep_mock_attempts").select("id, spec_id, paper, deadline_at, submitted_at, result, answers, marked").eq("id", id).eq("user_id", userId).maybeSingle());
+  const r = await one(db.from("prep_mock_attempts").select("id, spec_id, paper, deadline_at, submitted_at, result, answers, marked, late").eq("id", id).eq("user_id", userId).maybeSingle());
   if (!r) return null;
   const paper = r.paper as Paper | null;
   if (!paper || !Array.isArray(paper.sections)) return null;
@@ -204,6 +204,7 @@ export async function loadAttempt(userId: string, id: string): Promise<StoredAtt
     result: result?.score ?? null,
     standing: result?.standing ?? null,
     answers: (r.answers as Record<string, unknown>) ?? {},
+    late: r.late === true,
     marked: Array.isArray(r.marked) ? (r.marked as unknown[]).filter((x): x is string => typeof x === "string") : [],
   };
 }

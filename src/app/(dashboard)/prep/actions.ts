@@ -128,7 +128,7 @@ export async function submitMock(input: z.input<typeof submitSchema>): Promise<M
   const now = new Date();
 
   const stored = d.attemptId && me.learner ? await loadAttempt(me.id, d.attemptId) : null;
-  if (stored?.submittedAt && stored.result) return resultView(spec, stored.result, stored.standing, { saved: true, late: false, marked: stored.marked });
+  if (stored?.submittedAt && stored.result) return resultView(spec, stored.result, stored.standing, { saved: true, late: stored.late, marked: stored.marked });
   // The stored paper wins. Without one (tables not set up, or a staff preview),
   // only real questions from this pattern's subjects are scored.
   const paper: Paper = stored?.paper ?? {
