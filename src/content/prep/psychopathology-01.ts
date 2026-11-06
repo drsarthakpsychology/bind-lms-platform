@@ -264,7 +264,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: Davis and colleagues (1991) proposed subcortical hyperdopaminergia with prefrontal hypodopaminergia, and PET work (Howes and Kapur) locates presynaptic excess mainly in the associative striatum. R is false: D2-blocking typical antipsychotics work mainly on positive symptoms and can worsen secondary negative symptoms. Hence A true, R false.",
+      "A is true: Davis and colleagues proposed subcortical hyperdopaminergia with prefrontal hypodopaminergia, and PET work (Howes and Kapur) locates presynaptic excess mainly in the associative striatum. R is false: D2-blocking typical antipsychotics work mainly on positive symptoms and can worsen secondary negative symptoms. Hence A true, R false.",
     ref: "Stahl's Essential Psychopharmacology, psychosis chapter",
   }),
   Q({
@@ -295,7 +295,7 @@ export const PART: PrepQuestion[] = [
     options: ["Critical comments", "Hostility", "Emotional over-involvement", "Double-bind communication"],
     answer: 3,
     explanation:
-      "High EE, measured with the Camberwell Family Interview (Brown, Vaughn and Leff), is defined mainly by critical comments, hostility and emotional over-involvement; warmth and positive remarks are also rated. Double-bind communication is Bateson's (1956) earlier, largely unsupported family theory of causation, not an EE index. High EE predicts relapse, not causation.",
+      "High EE, measured with the Camberwell Family Interview (Brown, Vaughn and Leff), is defined mainly by critical comments, hostility and emotional over-involvement; warmth and positive remarks are also rated. Double-bind communication is Bateson's earlier, largely unsupported family theory of causation, not an EE index. High EE predicts relapse, not causation.",
     ref: "Kaplan & Sadock schizophrenia psychosocial factors",
   }),
   Q({
@@ -314,7 +314,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 3,
     explanation:
-      "All four are established. Men have an earlier modal onset. Urbanicity, migrant status and cannabis are robust environmental risks. A season-of-birth effect (roughly 5–8% excess for winter-spring births) is well replicated. Women show a second peak in the mid-40s to 50s, possibly related to falling oestrogen. Options excluding any of these are incomplete.",
+      "All four are established. Men have an earlier modal onset. Urbanicity, migrant status and cannabis are well-replicated environmental risks. A season-of-birth effect (roughly 5 to 8% excess for winter-spring births) is well replicated. Women show a second peak in the mid-40s to 50s, possibly related to falling oestrogen. Options excluding any of these are incomplete.",
     ref: "DSM-5-TR schizophrenia development and course; Kaplan & Sadock epidemiology",
   }),
   Q({
@@ -370,7 +370,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Attenuated psychosis syndrome is in Section III (Conditions for Further Study) because of concerns about stigma, false positives and conversion rates (about 20–35% to psychosis over a few years). Clinically it can be recorded as 'other specified schizophrenia spectrum and other psychotic disorder'. It is not an official diagnosis, not a schizotypal specifier, and there is no 'ICD-11 appendix' in DSM.",
+      "Attenuated psychosis syndrome is in Section III (Conditions for Further Study) because of concerns about stigma, false positives and conversion rates (about 20 to 35% to psychosis over a few years). Clinically it can be recorded as 'other specified schizophrenia spectrum and other psychotic disorder'. It is not an official diagnosis, not a schizotypal specifier, and there is no 'ICD-11 appendix' in DSM.",
     ref: "DSM-5-TR Section III, attenuated psychosis syndrome",
   }),
   Q({
@@ -453,10 +453,10 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The approximate lifetime risk of schizophrenia for the monozygotic co-twin of an affected person is:",
-    options: ["1%", "10%", "About 45–50%", "About 90%"],
+    options: ["1%", "10%", "About 45 to 50%", "About 90%"],
     answer: 2,
     explanation:
-      "Classic twin data (Gottesman) put MZ concordance at about 40–50%, compared with about 10–15% for DZ twins and siblings and about 1% in the general population. Heritability is around 80%. Less than 100% MZ concordance shows that environment matters. 1% is general population risk, 10% is roughly sibling or DZ risk, and 90% overstates genetic determination.",
+      "Classic twin data (Gottesman) put MZ concordance at about 40 to 50%, compared with about 10 to 15% for DZ twins and siblings and about 1% in the general population. Heritability is around 80%. Less than 100% MZ concordance shows that environment matters. 1% is general population risk, 10% is roughly sibling or DZ risk, and 90% overstates genetic determination.",
     ref: "Kaplan & Sadock genetics of schizophrenia",
   }),
   Q({
@@ -474,7 +474,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "DSM-5-TR states that these course specifiers are to be used only after a 1-year duration of the disorder and if they do not contradict the diagnostic course criteria. Six months is the diagnostic threshold, not the specifier threshold. Treatment status and severity ratings (on the 0–4 Clinician-Rated Dimensions scale) are separate and optional.",
+      "DSM-5-TR states that these course specifiers are to be used only after a 1-year duration of the disorder and if they do not contradict the diagnostic course criteria. Six months is the diagnostic threshold, not the specifier threshold. Treatment status and severity ratings (on the 0 to 4 Clinician-Rated Dimensions scale) are separate and optional.",
     ref: "DSM-5-TR schizophrenia specifiers",
   }),
   Q({

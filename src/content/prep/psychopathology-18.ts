@@ -59,7 +59,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Both are true. Sass and Parnas (2003) proposed the ipseity-disturbance model (A). Parnas and colleagues developed the EASE (2005), and studies show more anomalous self-experiences in the schizophrenia spectrum than in bipolar or other psychotic disorders (R). R describes a measurement tool and supportive findings, not the reason the theory holds, so R is not the correct explanation of A.",
+      "Both are true. Sass and Parnas proposed the ipseity-disturbance model (A). Parnas and colleagues developed the EASE, and studies show more anomalous self-experiences in the schizophrenia spectrum than in bipolar or other psychotic disorders (R). R describes a measurement tool and supportive findings, not the reason the theory holds, so R is not the correct explanation of A.",
     module: "psychosis",
     ref: "Sass & Parnas 2003; Parnas et al. 2005",
   }),
@@ -100,7 +100,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 4 only", "2 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
     answer: 2,
     explanation:
-      "Stone and colleagues' systematic review (2005) found about 4% misdiagnosis since the 1970s, overturning Slater's 1965 claims (1). Positive clinical signs are central to modern diagnosis (2). Comorbid neurological disease is common, e.g., 10–20% of patients with functional seizures also have epilepsy (3). DSM-5 made a psychological stressor optional, recorded as a specifier (4 false).",
+      "Stone and colleagues' systematic review found about 4% misdiagnosis since the 1970s, overturning Slater's earlier claim that most such diagnoses were wrong (1). Positive clinical signs are central to modern diagnosis (2). Comorbid neurological disease is common, e.g., 10 to 20% of patients with functional seizures also have epilepsy (3). DSM-5 made a psychological stressor optional, recorded as a specifier (4 false).",
     ref: "Stone et al. 2005 BMJ; DSM-5-TR FND",
   }),
   Q({
@@ -109,7 +109,7 @@ export const PART: PrepQuestion[] = [
     exams: MCP,
     difficulty: 4,
     type: "mcq",
-    stem: "Which statement about the course of bipolar I disorder is best supported by longitudinal studies (e.g., Judd et al., NIMH Collaborative Depression Study)?",
+    stem: "Which statement about the course of bipolar I disorder is best supported by longitudinal studies (e.g., Judd and colleagues, NIMH Collaborative Depression Study)?",
     options: [
       "Patients are symptomatic mostly with manic symptoms",
       "Most patients are fully euthymic between episodes for over 95% of follow-up",
@@ -118,7 +118,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Judd et al. (2002) found bipolar I patients were symptomatic in about 47% of weeks over a mean of 13 years, with depressive symptoms about three times as frequent as manic or hypomanic symptoms; bipolar II patients were symptomatic in about 54% of weeks, with depression dominating even more. Mania-predominant course and near-complete inter-episode euthymia are contradicted by these data; residual symptoms are common, and episodes often become more, not less, frequent (consistent with kindling).",
+      "Judd and colleagues found bipolar I patients were symptomatic in about 47% of weeks over a mean of 13 years, with depressive symptoms about three times as frequent as manic or hypomanic symptoms; bipolar II patients were symptomatic in about 54% of weeks, with depression dominating even more. Mania-predominant course and near-complete inter-episode euthymia are contradicted by these data; residual symptoms are common, and episodes often become more, not less, frequent (consistent with kindling).",
     module: "bipolar",
     ref: "Judd et al. 2002, 2003 Arch Gen Psychiatry",
   }),
@@ -137,7 +137,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Meta-analyses (Marshall 2005; Perkins 2005) link longer DUP to poorer remission, more negative symptoms and worse functioning, which underpins early intervention in psychosis services. DUP is measured from onset of frank psychotic symptoms to first adequate treatment. The other options misstate the association or the definition.",
+      "Meta-analyses link longer DUP to poorer remission, more negative symptoms and worse functioning, which underpins early intervention in psychosis services. DUP is measured from onset of frank psychotic symptoms to first adequate treatment. The other options misstate the association or the definition.",
     module: "psychosis",
     ref: "Marshall et al. 2005; Perkins et al. 2005",
   }),
@@ -214,7 +214,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: Ozer et al. (2003) found peritraumatic dissociation among the larger predictors (r about 0.35). R is false: later analyses showed persistent dissociation and other post-trauma factors (lack of social support, ongoing stress, negative appraisals) are as strong or stronger, and Brewin et al. (2000) found lack of social support among the largest effects. Calling it 'the single strongest' overstates the evidence. Hence A true, R false.",
+      "A is true: Ozer and colleagues found peritraumatic dissociation among the larger predictors (r about 0.35). R is false: later analyses showed persistent dissociation and other post-trauma factors (lack of social support, ongoing stress, negative appraisals) are as strong or stronger, and Brewin and colleagues found lack of social support among the largest effects. Calling it 'the single strongest' overstates the evidence. Hence A true, R false.",
     module: "trauma",
     ref: "Ozer et al. 2003; Brewin et al. 2000",
   }),
@@ -245,7 +245,7 @@ export const PART: PrepQuestion[] = [
     exams: MCP,
     difficulty: 4,
     type: "mcq",
-    stem: "Which cognitive domain shows the largest average impairment in first-episode schizophrenia in meta-analyses (e.g., Mesholam-Gately et al., 2009)?",
+    stem: "Which cognitive domain shows the largest average impairment in first-episode schizophrenia in meta-analyses?",
     options: [
       "Vocabulary (crystallised knowledge)",
       "Simple reaction time to visual stimuli",
@@ -254,7 +254,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Mesholam-Gately et al. found the largest deficits in immediate verbal memory (effect size about 1.2 SD) and processing speed (e.g., digit symbol coding about 1.5 SD in later analyses), with smaller deficits in vocabulary, which is relatively preserved as a 'hold' measure. Visual acuity is a sensory, not cognitive, measure. Cognitive impairment is a core feature and predicts functional outcome more than positive symptoms do.",
+      "Mesholam-Gately and colleagues found the largest deficits in immediate verbal memory (effect size about 1.2 SD) and processing speed (e.g., digit symbol coding about 1.5 SD in later analyses), with smaller deficits in vocabulary, which is relatively preserved as a 'hold' measure. Visual acuity is a sensory, not cognitive, measure. Cognitive impairment is a core feature and predicts functional outcome more than positive symptoms do.",
     module: "psychosis",
     ref: "Mesholam-Gately et al. 2009 Neuropsychology",
   }),
@@ -269,15 +269,15 @@ export const PART: PrepQuestion[] = [
       left: ["A. Baby blues", "B. Postpartum depression", "C. Postpartum psychosis", "D. Postpartum OCD"],
       right: [
         "1. Onset typically within 2 weeks; confusion, mood lability, delusions; strong link with bipolar disorder; psychiatric emergency",
-        "2. Transient tearfulness and lability in up to 50–80% of mothers, resolving within about 2 weeks",
+        "2. Transient tearfulness and lability in up to 50 to 80% of mothers, resolving within about 2 weeks",
         "3. Intrusive ego-dystonic thoughts of harming the baby with avoidance; not associated with acting on them",
-        "4. Major depressive episode; prevalence about 10–15%",
+        "4. Major depressive episode; prevalence about 10 to 15%",
       ],
     },
     options: ["A-2, B-1, C-4, D-3", "A-4, B-2, C-1, D-3", "A-2, B-4, C-1, D-3", "A-2, B-4, C-3, D-1"],
     answer: 2,
     explanation:
-      "Baby blues are common, mild and self-limiting. Postpartum depression is an MDE with peripartum onset. Postpartum psychosis (1–2 per 1000 deliveries) begins rapidly, often in the first 2 weeks, with mixed or manic features and confusion, and is linked to bipolar disorder and a high risk of suicide and infanticide. Postpartum OCD involves ego-dystonic harm intrusions that are not acted upon.",
+      "Baby blues are common, mild and self-limiting. Postpartum depression is an MDE with peripartum onset. Postpartum psychosis (1 to 2 per 1000 deliveries) begins rapidly, often in the first 2 weeks, with mixed or manic features and confusion, and is linked to bipolar disorder and a high risk of suicide and infanticide. Postpartum OCD involves ego-dystonic harm intrusions that are not acted upon.",
     module: "depression",
     ref: "Jones et al. 2014 Lancet",
   }),
@@ -337,7 +337,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 4 only", "2 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
     answer: 2,
     explanation:
-      "Ventricular enlargement (since Johnstone et al. 1976), reduced frontotemporal and hippocampal grey matter (ENIGMA consortium), and elevated presynaptic striatal dopamine synthesis capacity (Howes et al. meta-analysis) are robust (1, 2, 3). Some volume loss may be medication-related, but changes are present at first episode and in unmedicated patients, so statement 4 is false.",
+      "Ventricular enlargement (since Johnstone and colleagues), reduced frontotemporal and hippocampal grey matter (ENIGMA consortium), and elevated presynaptic striatal dopamine synthesis capacity are well replicated (1, 2, 3). Some volume loss may be medication-related, but changes are present at first episode and in unmedicated patients, so statement 4 is false.",
     module: "psychosis",
     ref: "Howes et al. 2012; van Erp et al. 2018 ENIGMA",
   }),
@@ -437,16 +437,16 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP_MA,
     difficulty: 2,
     type: "mcq",
-    stem: "The Y-BOCS total score (0–40) combines severity ratings of:",
+    stem: "The Y-BOCS total score (0 to 40) combines severity ratings of:",
     options: [
       "Depression and anxiety",
       "Positive and negative symptoms",
-      "Obsessions (items 1–5) and compulsions (items 6–10)",
+      "Obsessions (items 1 to 5) and compulsions (items 6 to 10)",
       "Mania and depression",
     ],
     answer: 2,
     explanation:
-      "The Yale-Brown Obsessive Compulsive Scale rates time, interference, distress, resistance and control separately for obsessions and compulsions (0–20 each), giving 0–40; scores around 16 or more often indicate clinically significant OCD in trials. The other options describe HADS, PANSS and other scales.",
+      "The Yale-Brown Obsessive Compulsive Scale rates time, interference, distress, resistance and control separately for obsessions and compulsions (0 to 20 each), giving 0 to 40; scores around 16 or more often indicate clinically significant OCD in trials. The other options describe HADS, PANSS and other scales.",
     module: "assessment",
     ref: "Goodman et al. 1989",
   }),
@@ -545,7 +545,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Russell's sign (Gerald Russell, who described bulimia in 1979) is calluses or scars on the dorsum of the hand from repeated contact with the teeth during self-induced vomiting. Parotid swelling and dental erosion are other vomiting signs. Lanugo and bradycardia are typical of low-weight anorexia nervosa.",
+      "Russell's sign is calluses or scars on the dorsum of the hand from repeated contact with the teeth during self-induced vomiting. Parotid swelling and dental erosion are other vomiting signs. Lanugo and bradycardia are typical of low-weight anorexia nervosa.",
     module: "more-disorders",
     ref: "Russell 1979",
   }),

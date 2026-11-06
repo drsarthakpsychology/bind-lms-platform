@@ -236,7 +236,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Cyclothymic disorder requires at least 2 years (1 in youth) of numerous hypomanic and depressive symptom periods that never meet criteria for hypomania, mania or MDE, present at least half the time, with no symptom-free interval longer than 2 months. Bipolar II requires full hypomanic and depressive episodes. PDD does not include hypomanic symptoms. Short-duration hypomania refers to 2–3 day hypomanic episodes with MDEs.",
+      "Cyclothymic disorder requires at least 2 years (1 in youth) of numerous hypomanic and depressive symptom periods that never meet criteria for hypomania, mania or MDE, present at least half the time, with no symptom-free interval longer than 2 months. Bipolar II requires full hypomanic and depressive episodes. PDD does not include hypomanic symptoms. Short-duration hypomania refers to 2 to 3 day hypomanic episodes with MDEs.",
     ref: "DSM-5-TR cyclothymic disorder",
   }),
   Q({
@@ -308,7 +308,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-2, C-4, D-3", "A-2, B-1, C-3, D-4", "A-2, B-4, C-1, D-3", "A-2, B-1, C-4, D-3"],
     answer: 3,
     explanation:
-      "Lewinsohn's behavioural theory attributes depression to low rates of response-contingent positive reinforcement. Abramson, Seligman and Teasdale (1978) reformulated learned helplessness with internal, stable, global attributions. Brown and Harris (1978, Camberwell) identified vulnerability factors such as lack of a confiding relationship, three or more children under 14 at home, and loss of mother before 11, plus provoking life events. Beck proposed the negative triad of self, world and future, maintained by schemas and cognitive errors.",
+      "Lewinsohn's behavioural theory attributes depression to low rates of response-contingent positive reinforcement. Abramson, Seligman and Teasdale reformulated learned helplessness with internal, stable, global attributions. Brown and Harris identified vulnerability factors such as lack of a confiding relationship, three or more children under 14 at home, and loss of mother before 11, plus provoking life events. Beck proposed the negative triad of self, world and future, maintained by schemas and cognitive errors.",
     ref: "Kaplan & Sadock; Brown & Harris 1978",
   }),
   Q({
@@ -360,7 +360,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "DSM-5-TR reports a female-to-male ratio of about 1.5–3 from early adolescence. In the US, 18–29-year-olds have about three times the rate of those 60 and older. MDD (about 7% 12-month prevalence in the US) is far more common than bipolar I (around 1%). Bipolar I is the disorder with a roughly equal sex ratio.",
+      "DSM-5-TR reports a female-to-male ratio of about 1.5 to 3 from early adolescence. In the US, 18 to 29-year-olds have about three times the rate of those 60 and older. MDD (about 7% 12-month prevalence in the US) is far more common than bipolar I (around 1%). Bipolar I is the disorder with a roughly equal sex ratio.",
     ref: "DSM-5-TR MDD prevalence",
   }),
   Q({
@@ -389,7 +389,7 @@ export const PART: PrepQuestion[] = [
     exams: CUET_NET_MA,
     difficulty: 2,
     type: "mcq",
-    stem: "In 'Mourning and Melancholia' (1917), Freud distinguished melancholia from mourning chiefly by:",
+    stem: "In his psychoanalytic account of depression, Freud distinguished melancholia from normal mourning chiefly by:",
     options: [
       "The absence of any identifiable loss in melancholia",
       "A fall in self-regard, with reproaches against a lost, ambivalently loved object turned against the ego",
@@ -408,7 +408,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "passage",
     passage:
-      "A 17-year-old boy has had six distinct episodes in 18 months, each lasting 2–3 days, of euphoria, sleeping 3 hours without fatigue, grandiosity and rapid speech, noted by family and teachers. Between these he has had two 3-week periods of low mood, anhedonia, hypersomnia, worthlessness, poor concentration and passive death wishes. He does not use substances. Functioning dropped during the low periods only.",
+      "A 17-year-old boy has had six distinct episodes in 18 months, each lasting 2 to 3 days, of euphoria, sleeping 3 hours without fatigue, grandiosity and rapid speech, noted by family and teachers. Between these he has had two 3-week periods of low mood, anhedonia, hypersomnia, worthlessness, poor concentration and passive death wishes. He does not use substances. Functioning dropped during the low periods only.",
     stem: "What is the most accurate DSM-5-TR diagnosis?",
     options: [
       "Bipolar II disorder, with rapid cycling",
@@ -418,7 +418,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Hypomania needs at least 4 consecutive days, so these 2–3 day episodes do not qualify; with full major depressive episodes present, DSM-5-TR uses 'other specified bipolar and related disorder, short-duration hypomanic episodes (2–3 days) and major depressive episodes'. Bipolar II needs full hypomanic episodes. Cyclothymia is excluded once full MDE criteria are met. DMDD involves chronic irritability with temper outbursts, not episodic euphoria, and cannot be diagnosed alongside bipolar disorder.",
+      "Hypomania needs at least 4 consecutive days, so these 2 to 3 day episodes do not qualify; with full major depressive episodes present, DSM-5-TR uses 'other specified bipolar and related disorder, short-duration hypomanic episodes (2 to 3 days) and major depressive episodes'. Bipolar II needs full hypomanic episodes. Cyclothymia is excluded once full MDE criteria are met. DMDD involves chronic irritability with temper outbursts, not episodic euphoria, and cannot be diagnosed alongside bipolar disorder.",
     ref: "DSM-5-TR other specified bipolar and related disorder",
   }),
   Q({
@@ -436,7 +436,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Fawcett's prospective work showed that severe psychic anxiety, panic, agitation, global insomnia and alcohol use predict suicide in the short term (within a year), and hopelessness is a robust predictor (Beck). Women attempt more often, but completed suicide is higher in men in most countries (India has a relatively narrower male–female gap). Good past response and religious affiliation are protective, not risk factors.",
+      "Fawcett's prospective work showed that severe psychic anxiety, panic, agitation, global insomnia and alcohol use predict suicide in the short term (within a year), and hopelessness is a strong predictor, as Beck showed. Women attempt more often, but completed suicide is higher in men in most countries (India has a relatively narrower male-female gap). Good past response and religious affiliation are protective, not risk factors.",
     module: "suicide",
     ref: "Fawcett et al. 1990; Kaplan & Sadock suicide chapter",
   }),
@@ -483,7 +483,7 @@ export const PART: PrepQuestion[] = [
     options: ["Bipolar I disorder", "Major depressive disorder", "Generalised anxiety disorder", "Specific phobia"],
     answer: 0,
     explanation:
-      "Bipolar I disorder has heritability around 60–85%, among the highest in psychiatry alongside schizophrenia and autism. MDD heritability is about 35–40%, GAD about 30%, and specific phobia about 30%, with more environmental contribution.",
+      "Bipolar I disorder has heritability around 60 to 85%, among the highest in psychiatry alongside schizophrenia and autism. MDD heritability is about 35 to 40%, GAD about 30%, and specific phobia about 30%, with more environmental contribution.",
     module: "bipolar",
     ref: "Kaplan & Sadock; DSM-5-TR genetic and physiological risk factors",
   }),
@@ -529,7 +529,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP_MA,
     difficulty: 3,
     type: "mcq",
-    stem: "The hopelessness theory of depression (Abramson, Metalsky and Alloy, 1989) differs from the 1978 reformulated helplessness model mainly in that:",
+    stem: "The hopelessness theory of depression differs from the 1978 reformulated helplessness model mainly in that:",
     options: [
       "It proposes a subtype of depression whose proximal sufficient cause is hopelessness, arising from stable and global attributions for negative events together with negative inferences about consequences and self",
       "It abandons the role of attributions altogether",

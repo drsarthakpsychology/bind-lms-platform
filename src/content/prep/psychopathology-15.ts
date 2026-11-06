@@ -153,7 +153,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "passage",
     passage:
-      "A 27-year-old IT professional has, for 2 years, spent 6–8 hours daily on a multiplayer online game, with failed attempts to cut down, irritability when unable to play, neglect of sleep and meals, and a recent job loss. He continues despite these problems. There are no mood episodes or psychosis.",
+      "A 27-year-old IT professional has, for 2 years, spent 6 to 8 hours daily on a multiplayer online game, with failed attempts to cut down, irritability when unable to play, neglect of sleep and meals, and a recent job loss. He continues despite these problems. There are no mood episodes or psychosis.",
     stem: "How do ICD-11 and DSM-5-TR differ in classifying this presentation?",
     options: [
       "Both list internet gaming disorder as a full diagnosis",
@@ -319,7 +319,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Both are true and R explains A. Red flags for organic psychosis include onset after about 35–40, neurological signs, seizures, headache, cognitive impairment, visual or other non-auditory hallucinations and fluctuating consciousness. These justify brain imaging, EEG and, where indicated, autoimmune encephalitis testing before diagnosing a primary psychotic disorder.",
+      "Both are true and R explains A. Red flags for organic psychosis include onset after about 35 to 40, neurological signs, seizures, headache, cognitive impairment, visual or other non-auditory hallucinations and fluctuating consciousness. These justify brain imaging, EEG and, where indicated, autoimmune encephalitis testing before diagnosing a primary psychotic disorder.",
     module: "psychosis",
     ref: "DSM-5-TR psychotic disorder due to another medical condition; Dalmau anti-NMDAR",
   }),

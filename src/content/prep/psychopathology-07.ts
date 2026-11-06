@@ -120,7 +120,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Linehan proposes that heightened emotional sensitivity, reactivity and slow return to baseline interact with an environment that dismisses or punishes emotional expression, so the person never learns to label and regulate emotions. This is the rationale for DBT. Rapprochement failure is Mahler's and Masterson's psychodynamic account. Excessive praise relates to narcissism theories. Twin studies show moderate heritability (about 40–50%), not purely genetic causation.",
+      "Linehan proposes that heightened emotional sensitivity, reactivity and slow return to baseline interact with an environment that dismisses or punishes emotional expression, so the person never learns to label and regulate emotions. This is the rationale for DBT. Rapprochement failure is Mahler's and Masterson's psychodynamic account. Excessive praise relates to narcissism theories. Twin studies show moderate heritability (about 40 to 50%), not purely genetic causation.",
     module: "therapies",
     ref: "Linehan 1993",
   }),
@@ -176,7 +176,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Zanarini's McLean study found that about 85–90% remitted symptomatically over 10–16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the last option. This challenges the old view that PD is lifelong and unchangeable.",
+      "Zanarini's McLean study found that about 85 to 90% remitted symptomatically over 10 to 16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the last option. This challenges the old view that PD is lifelong and unchangeable.",
     ref: "Zanarini et al. 2010; Gunderson CLPS",
   }),
   Q({

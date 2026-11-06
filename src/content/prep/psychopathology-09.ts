@@ -97,7 +97,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-3, C-2, D-4", "A-3, B-1, C-2, D-4", "A-3, B-2, C-1, D-4", "A-2, B-1, C-3, D-4"],
     answer: 1,
     explanation:
-      "Cameron (1944) described asyndesis (lack of connections), metonyms (imprecise approximations) and over-inclusion. Goldstein emphasised loss of abstract attitude, leading to concrete thinking despite intact vocabulary. Carl Schneider (1930) identified derailment, substitution, omission, fusion and drivelling. Bleuler placed loosening of associations among his fundamental 'four As' (associations, affect, ambivalence, autism).",
+      "Cameron described asyndesis (lack of connections), metonyms (imprecise approximations) and over-inclusion. Goldstein emphasised loss of abstract attitude, leading to concrete thinking despite intact vocabulary. Carl Schneider identified derailment, substitution, omission, fusion and drivelling. Bleuler placed loosening of associations among his fundamental 'four As' (associations, affect, ambivalence, autism).",
     ref: "Fish's Clinical Psychopathology (fish.txt ~2500–2520)",
   }),
   Q({
@@ -343,7 +343,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Research since Strauss (1969) and Kendler and colleagues shows delusions vary along dimensions (conviction, preoccupation, extension, bizarreness, distress, impact on action), challenging the all-or-none Jaspers view (A true). Brett-Jones, Garety and Hemsley showed that conviction can shift with hypothetical contradiction, and this supports the dimensional view and underpins CBTp's collaborative belief-testing (R true and explains A).",
+      "Research since Strauss and Kendler and colleagues shows delusions vary along dimensions (conviction, preoccupation, extension, bizarreness, distress, impact on action), challenging the all-or-none Jaspers view (A true). Brett-Jones, Garety and Hemsley showed that conviction can shift with hypothetical contradiction, and this supports the dimensional view and underpins CBTp's collaborative belief-testing (R true and explains A).",
     module: "therapies",
     ref: "Garety & Hemsley 1994; Kendler et al. 1983",
   }),
@@ -399,7 +399,7 @@ export const PART: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "In David's (1990) model, insight is:",
+    stem: "In David's model, insight is:",
     options: [
       "A single all-or-none judgement of whether the patient knows they are ill",
       "A multidimensional construct comprising recognition of illness, relabelling of unusual experiences as pathological, and treatment adherence",
@@ -446,7 +446,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Primary obsessional slowness, described by Rachman (1974), involves taking hours over washing, dressing or shaving because of meticulous ordering and checking, often with little anxiety and relatively little resistance, in contrast to typical anxiety-driven compulsions. It responds poorly to standard ERP and needs prompting, pacing and shaping. It is not depressive retardation or catatonia.",
+      "Primary obsessional slowness, described by Rachman, involves taking hours over washing, dressing or shaving because of meticulous ordering and checking, often with little anxiety and relatively little resistance, in contrast to typical anxiety-driven compulsions. It responds poorly to standard ERP and needs prompting, pacing and shaping. It is not depressive retardation or catatonia.",
     ref: "Rachman 1974",
   }),
   Q({

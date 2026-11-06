@@ -409,7 +409,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 3 only", "1, 2 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "A discrepancy between very low test scores and preserved real-world function suggests non-organic contributions (depressive pseudodementia, dissociation, malingering) (1). Performance validity tests such as the TOMM assess effort (2). Collateral history of functioning is crucial (4). Major NCD cannot be diagnosed on a screening score alone; it needs evidence of decline from a previous level and functional impairment, with consistent findings (3 false).",
+      "A discrepancy between very low test scores and preserved real-world function suggests non-organic contributions (depressive pseudodementia, dissociation, malingering) (1). Performance validity tests such as the TOMM assess effort (2). Collateral history of everyday functioning is essential (4). Major NCD cannot be diagnosed on a screening score alone; it needs evidence of decline from a previous level and functional impairment, with consistent findings (3 false).",
     module: "assessment",
     ref: "Tombaugh TOMM; DSM-5-TR NCD Criterion A",
   }),

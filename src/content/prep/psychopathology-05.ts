@@ -95,7 +95,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Approximate answers (Vorbeireden, 'talking past the point') show that the question is understood but the answer is just off, with clouding, hallucinations, somatic conversion symptoms and later amnesia: Ganser's 1898 description in prisoners. DSM-5-TR lists it under other specified dissociative disorder (and DSM-IV listed it in dissociative NOS). Confabulation fills memory gaps with false memories. Paraphasia is a language error. Malingering involves conscious deception for external gain; Ganser syndrome is considered dissociative, though the distinction can be hard.",
+      "Approximate answers (Vorbeireden, 'talking past the point') show that the question is understood but the answer is just off, with clouding, hallucinations, somatic conversion symptoms and later amnesia: Ganser's original description in prisoners. DSM-5-TR lists it under other specified dissociative disorder (and DSM-IV listed it in dissociative NOS). Confabulation fills memory gaps with false memories. Paraphasia is a language error. Malingering involves conscious deception for external gain; Ganser syndrome is considered dissociative, though the distinction can be hard.",
     module: "mse-deep",
     ref: "Fish's Clinical Psychopathology, Vorbeireden (line ~3233)",
   }),
@@ -225,7 +225,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "DSM-5-TR describes dhat as a South Asian cultural explanation of distress in young men, who attribute anxiety, fatigue, weakness, erectile problems and low mood to loss of 'dhatu' (semen) in urine or by nocturnal emission, linked to Ayurvedic ideas of seven bodily dhatus. It is not a psychosis and occurs mainly in young men; a variant concerns leucorrhoea in women. Genital retraction is koro. It is not a separate DSM diagnosis; related DSM conditions include MDD, GAD, SSD and sexual dysfunctions. The term was introduced by N.N. Wig (1960).",
+      "DSM-5-TR describes dhat as a South Asian cultural explanation of distress in young men, who attribute anxiety, fatigue, weakness, erectile problems and low mood to loss of 'dhatu' (semen) in urine or by nocturnal emission, linked to Ayurvedic ideas of seven bodily dhatus. It is not a psychosis and occurs mainly in young men; a variant concerns leucorrhoea in women. Genital retraction is koro. It is not a separate DSM diagnosis; related DSM conditions include MDD, GAD, SSD and sexual dysfunctions. The term was introduced by N.N. Wig.",
     ref: "DSM-5-TR glossary of cultural concepts, dhat syndrome (dsm5tr.txt ~46760)",
   }),
   Q({
@@ -276,7 +276,7 @@ export const PART: PrepQuestion[] = [
     options: ["Severe", "Mild", "Moderate", "Extreme"],
     answer: 0,
     explanation:
-      "DSM-5-TR severity for adults is based on BMI: mild at least 17, moderate 16–16.99, severe 15–15.99, extreme below 15. A BMI of 15.5 is severe. For children, BMI percentiles are used. Severity may be increased to reflect clinical symptoms, disability and need for supervision. ICD-11 uses 'significantly low' (BMI 14–18.5) and 'dangerously low' (below 14) body weight.",
+      "DSM-5-TR severity for adults is based on BMI: mild at least 17, moderate 16 to 16.99, severe 15 to 15.99, extreme below 15. A BMI of 15.5 is severe. For children, BMI percentiles are used. Severity may be increased to reflect clinical symptoms, disability and need for supervision. ICD-11 uses 'significantly low' (BMI 14 to 18.5) and 'dangerously low' (below 14) body weight.",
     ref: "DSM-5-TR AN severity",
   }),
   Q({
@@ -295,7 +295,7 @@ export const PART: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "DSM-5 lowered the frequency to once weekly for 3 months (1). Severity is mild 1–3, moderate 4–7, severe 8–13 and extreme 14 or more compensatory episodes per week (2). If it happens only during AN, AN binge-eating/purging type takes precedence (3). People with BN are usually of normal or above-normal weight (4 false).",
+      "DSM-5 lowered the frequency to once weekly for 3 months (1). Severity is mild 1 to 3, moderate 4 to 7, severe 8 to 13 and extreme 14 or more compensatory episodes per week (2). If it happens only during AN, AN binge-eating/purging type takes precedence (3). People with BN are usually of normal or above-normal weight (4 false).",
     ref: "DSM-5-TR bulimia nervosa",
   }),
   Q({
@@ -364,7 +364,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Fairburn, Cooper and Shafran (2003) argue that judging self-worth largely by eating, shape and weight drives dietary restraint, which leads to binges, compensatory behaviour and low weight. Four maintaining processes can be added (clinical perfectionism, core low self-esteem, mood intolerance, interpersonal problems), which underpin enhanced CBT (CBT-E). Enmeshment is Minuchin's psychosomatic family model. Serotonin dysfunction is a biological hypothesis. Fear of sexual maturity is Crisp's psychodynamic account.",
+      "Fairburn, Cooper and Shafran argue that judging self-worth largely by eating, shape and weight drives dietary restraint, which leads to binges, compensatory behaviour and low weight. Four maintaining processes can be added (clinical perfectionism, core low self-esteem, mood intolerance, interpersonal problems), which underpin enhanced CBT (CBT-E). Enmeshment is Minuchin's psychosomatic family model. Serotonin dysfunction is a biological hypothesis. Fear of sexual maturity is Crisp's psychodynamic account.",
     module: "therapies",
     ref: "Fairburn, Cooper & Shafran 2003",
   }),
@@ -435,7 +435,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: idiopathic RBD converts to Parkinson's disease, dementia with Lewy bodies or multiple system atrophy in a large majority over 10–15 years. R is false: DSM-5-TR keeps RBD as a suggestive feature of NCD with Lewy bodies, with severe neuroleptic sensitivity. The core features are fluctuating cognition, recurrent well-formed visual hallucinations and parkinsonism. The 2017 McKeith consensus criteria did make RBD a core clinical feature, which is a frequent exam trap.",
+      "A is true: idiopathic RBD converts to Parkinson's disease, dementia with Lewy bodies or multiple system atrophy in a large majority over 10 to 15 years. R is false: DSM-5-TR keeps RBD as a suggestive feature of NCD with Lewy bodies, with severe neuroleptic sensitivity. The core features are fluctuating cognition, recurrent well-formed visual hallucinations and parkinsonism. The more recent international consensus criteria for dementia with Lewy bodies do make RBD a core clinical feature, which is a frequent exam trap.",
     module: "neurocognitive",
     ref: "DSM-5-TR NCD with Lewy bodies (dsm5tr.txt ~38684)",
   }),
@@ -467,7 +467,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "An AHI of 15 or more meets DSM-5-TR criteria for obstructive sleep apnoea hypopnoea even without symptoms; 15–30 is moderate. CPAP is first-line, and sedatives such as benzodiazepines and Z-drugs can worsen apnoeas. Hypersomnolence disorder is not diagnosed when another sleep disorder explains the sleepiness. Depressive symptoms should be reassessed after OSA treatment.",
+      "An AHI of 15 or more meets DSM-5-TR criteria for obstructive sleep apnoea hypopnoea even without symptoms; 15 to 30 is moderate. CPAP is first-line, and sedatives such as benzodiazepines and Z-drugs can worsen apnoeas. Hypersomnolence disorder is not diagnosed when another sleep disorder explains the sleepiness. Depressive symptoms should be reassessed after OSA treatment.",
     ref: "DSM-5-TR obstructive sleep apnoea hypopnoea",
   }),
   Q({

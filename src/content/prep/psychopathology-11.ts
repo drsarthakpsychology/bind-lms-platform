@@ -86,7 +86,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: Sifneos (1973) described alexithymia in psychosomatic patients; it is measured by the Toronto Alexithymia Scale (TAS-20) and is linked to somatisation, eating disorders and autism. R is false: it is a personality trait or construct, not a DSM diagnosis. Hence A true, R false.",
+      "A is true: Sifneos described alexithymia in psychosomatic patients; it is measured by the Toronto Alexithymia Scale (TAS-20) and is linked to somatisation, eating disorders and autism. R is false: it is a personality trait or construct, not a DSM diagnosis. Hence A true, R false.",
     ref: "Sifneos 1973; Taylor & Bagby TAS-20",
   }),
   Q({
@@ -138,7 +138,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "DSM-5 decoupled catatonia from schizophrenia: it is a specifier for several disorders, can be due to a medical condition, and can be unspecified (1). A positive lorazepam challenge (1–2 mg IV or IM) supports the diagnosis and predicts response (2). Mood disorders, especially bipolar, account for a large share of catatonia (3). Antipsychotics can worsen catatonia and raise NMS risk; benzodiazepines and ECT are first-line (4 false).",
+      "DSM-5 decoupled catatonia from schizophrenia: it is a specifier for several disorders, can be due to a medical condition, and can be unspecified (1). A positive lorazepam challenge (1 to 2 mg IV or IM) supports the diagnosis and predicts response (2). Mood disorders, especially bipolar, account for a large share of catatonia (3). Antipsychotics can worsen catatonia and raise NMS risk; benzodiazepines and ECT are first-line (4 false).",
     module: "psychosis",
     ref: "DSM-5-TR catatonia; Fink & Taylor",
   }),
@@ -236,7 +236,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: ICD-11 created a separate catatonia grouping (6A40–6A41, plus 6E69 for secondary catatonia) to reflect that catatonia occurs across mood, psychotic, neurodevelopmental, substance-related and medical conditions. R is false and contradicts A: ICD-10 tied catatonia mainly to schizophrenia (F20.2) and organic catatonic disorder, but ICD-11 removed that link. Hence A true, R false.",
+      "A is true: ICD-11 created a separate catatonia grouping (6A40 to 6A41, plus 6E69 for secondary catatonia) to reflect that catatonia occurs across mood, psychotic, neurodevelopmental, substance-related and medical conditions. R is false and contradicts A: ICD-10 tied catatonia mainly to schizophrenia (F20.2) and organic catatonic disorder, but ICD-11 removed that link. Hence A true, R false.",
     module: "psychosis",
     ref: "ICD-11 6A40",
   }),

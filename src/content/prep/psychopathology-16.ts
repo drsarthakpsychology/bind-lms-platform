@@ -42,7 +42,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-3, B-4, C-1, D-2", "A-4, B-3, C-1, D-2", "A-3, B-1, C-4, D-2", "A-3, B-4, C-2, D-1"],
     answer: 0,
     explanation:
-      "Durkheim's Le Suicide (1897) related suicide to social integration and regulation. Joiner's interpersonal-psychological theory requires a desire for death (burdensomeness plus thwarted belongingness) together with acquired capability. Shneidman emphasised psychache. O'Connor's IMV model separates the motivational phase (defeat, entrapment) from the volitional phase (access to means, impulsivity, exposure).",
+      "Durkheim's sociological study of suicide related it to social integration and regulation. Joiner's interpersonal-psychological theory requires a desire for death (burdensomeness plus thwarted belongingness) together with acquired capability. Shneidman emphasised psychache. O'Connor's IMV model separates the motivational phase (defeat, entrapment) from the volitional phase (access to means, impulsivity, exposure).",
     ref: "Durkheim 1897; Joiner 2005; Shneidman 1993; O'Connor 2011",
   }),
   Q({
@@ -70,7 +70,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 3,
     type: "mcq",
-    stem: "India's National Suicide Prevention Strategy (2022) sets which headline target?",
+    stem: "India's National Suicide Prevention Strategy sets which headline target?",
     options: [
       "Reduce suicide mortality by 10% by 2030 compared with 2020",
       "Eliminate suicide by 2025",
@@ -134,7 +134,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A is true: meta-analyses (Cipriani 2013) show lithium reduces suicide and all-cause mortality in mood disorders. R is false: the anti-suicidal effect appears partly independent of mood stabilisation, possibly through reduced impulsivity and aggression, and is seen even in partial responders. Clozapine has a similar anti-suicidal effect in schizophrenia (InterSePT).",
+      "A is true: meta-analyses show lithium reduces suicide and all-cause mortality in mood disorders. R is false: the anti-suicidal effect appears partly independent of mood stabilisation, possibly through reduced impulsivity and aggression, and is seen even in partial responders. Clozapine has a similar anti-suicidal effect in schizophrenia (InterSePT).",
     module: "stabilisers",
     ref: "Cipriani et al. 2013 BMJ",
   }),
@@ -169,7 +169,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "Antidepressant discontinuation syndrome in DSM-5-TR is characterised by:",
     options: [
-      "Symptoms (e.g., dizziness, 'electric shock' sensations, nausea, insomnia, anxiety) beginning within 2–4 days of abrupt stopping or marked reduction of an antidepressant taken for at least 1 month",
+      "Symptoms (e.g., dizziness, 'electric shock' sensations, nausea, insomnia, anxiety) beginning within 2 to 4 days of abrupt stopping or marked reduction of an antidepressant taken for at least 1 month",
       "Symptoms beginning only after 6 months",
       "A return of the original depressive symptoms after several weeks",
       "Craving and drug-seeking behaviour",
@@ -245,7 +245,7 @@ export const PART: PrepQuestion[] = [
     options: ["1, 2 and 4 only", "1 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "DSM-5 added cannabis withdrawal (three of seven symptoms within about a week of stopping heavy use) (1). Di Forti et al. (2019, EU-GEI) linked daily high-potency use to markedly higher psychosis odds (2), and adolescent onset raises risk (4). THC is the psychotomimetic compound; CBD may have antipsychotic or anxiolytic properties (3 false).",
+      "DSM-5 added cannabis withdrawal (three of seven symptoms within about a week of stopping heavy use) (1). Di Forti and colleagues linked daily high-potency use to markedly higher psychosis odds (2), and adolescent onset raises risk (4). THC is the psychotomimetic compound; CBD may have antipsychotic or anxiolytic properties (3 false).",
     module: "substance",
     ref: "Di Forti et al. 2019 Lancet Psychiatry; DSM-5-TR cannabis withdrawal",
   }),

@@ -18,5 +18,5 @@ import { PART as p16 } from "./psychopathology-16";
 import { PART as p17 } from "./psychopathology-17";
 import { PART as p18 } from "./psychopathology-18";
 
-/** Question bank · psychopathology. Content lives in psychopathology-NN.ts part files. */
-export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...p16, ...p17, ...p18];
+/** Question bank · psychopathology. Ordered from foundations (difficulty 1) to entrance-topper level (difficulty 4). Content lives in psychopathology-NN.ts part files. */
+export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...p16, ...p17, ...p18].sort((a, b) => a.difficulty - b.difficulty);

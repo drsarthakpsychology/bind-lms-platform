@@ -15,7 +15,7 @@ export const PART: PrepQuestion[] = [
     options: ["One", "Two", "Three", "Four"],
     answer: 1,
     explanation:
-      "Two or more of 11 criteria within 12 months are needed. Severity is mild with 2–3, moderate with 4–5 and severe with 6 or more. DSM-IV dependence needed three of seven, and abuse needed one of four; DSM-5 merged abuse and dependence into a single dimension, dropped 'legal problems' and added 'craving'.",
+      "Two or more of 11 criteria within 12 months are needed. Severity is mild with 2 to 3, moderate with 4 to 5 and severe with 6 or more. DSM-IV dependence needed three of seven, and abuse needed one of four; DSM-5 merged abuse and dependence into a single dimension, dropped 'legal problems' and added 'craving'.",
     ref: "DSM-5-TR SUD criteria",
   }),
   Q({
@@ -52,7 +52,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Delirium tremens typically appears 48–96 hours after the last drink, with fluctuating disorientation, vivid (often visual or tactile) hallucinations, tremor and autonomic hyperactivity, and carries significant mortality if untreated. Alcoholic hallucinosis occurs with clear consciousness. Wernicke encephalopathy features confusion, ataxia and ophthalmoplegia without marked autonomic overactivity. Uncomplicated withdrawal begins 6–24 hours after cessation, without delirium.",
+      "Delirium tremens typically appears 48 to 96 hours after the last drink, with fluctuating disorientation, vivid (often visual or tactile) hallucinations, tremor and autonomic hyperactivity, and carries significant mortality if untreated. Alcoholic hallucinosis occurs with clear consciousness. Wernicke encephalopathy features confusion, ataxia and ophthalmoplegia without marked autonomic overactivity. Uncomplicated withdrawal begins 6 to 24 hours after cessation, without delirium.",
     ref: "Kaplan & Sadock alcohol withdrawal",
   }),
   Q({
@@ -149,7 +149,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 3,
     type: "mcq",
-    stem: "According to the National Mental Health Survey of India (2015–16), which disorder group had the highest current prevalence among adults?",
+    stem: "According to the National Mental Health Survey of India (2015 to 2016), which disorder group had the highest current prevalence among adults?",
     options: [
       "Depressive disorders",
       "Substance use disorders (including tobacco use disorder)",
@@ -286,7 +286,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In major NCD, significant decline interferes with independence in everyday activities (at least needing help with complex instrumental ADLs such as bills or medication). In mild NCD, modest decline does not prevent independence, though greater effort or compensation may be needed. Testing performance is typically more than 2 SD below norms for major and 1–2 SD for mild. One domain is enough for either. Memory involvement and aetiology are not the dividing criteria.",
+      "In major NCD, significant decline interferes with independence in everyday activities (at least needing help with complex instrumental ADLs such as bills or medication). In mild NCD, modest decline does not prevent independence, though greater effort or compensation may be needed. Testing performance is typically more than 2 SD below norms for major and 1 to 2 SD for mild. One domain is enough for either. Memory involvement and aetiology are not the dividing criteria.",
     module: "neurocognitive",
     ref: "DSM-5-TR major and mild NCD",
   }),
@@ -344,7 +344,7 @@ export const PART: PrepQuestion[] = [
     options: ["Presenilin-1 mutation", "Apolipoprotein E ε4 allele", "Huntingtin CAG repeat", "APP duplication"],
     answer: 1,
     explanation:
-      "APOE ε4 is the main common susceptibility allele for late-onset AD: one copy roughly triples risk and two copies raise it about 8–12-fold, but it is neither necessary nor sufficient. Presenilin-1, presenilin-2 and APP mutations cause rare autosomal dominant early-onset AD. The huntingtin CAG expansion causes Huntington's disease. APP is on chromosome 21, which explains early AD in Down syndrome.",
+      "APOE ε4 is the main common susceptibility allele for late-onset AD: one copy roughly triples risk and two copies raise it about 8 to 12-fold, but it is neither necessary nor sufficient. Presenilin-1, presenilin-2 and APP mutations cause rare autosomal dominant early-onset AD. The huntingtin CAG expansion causes Huntington's disease. APP is on chromosome 21, which explains early AD in Down syndrome.",
     module: "neurocognitive",
     ref: "Kaplan & Sadock; DSM-5-TR NCD due to Alzheimer's",
   }),
@@ -373,7 +373,7 @@ export const PART: PrepQuestion[] = [
     exams: CUET_NET_MA,
     difficulty: 1,
     type: "mcq",
-    stem: "The Mini-Mental State Examination (Folstein, 1975) has a maximum score of:",
+    stem: "The Mini-Mental State Examination has a maximum score of:",
     options: ["10", "30", "50", "100"],
     answer: 1,
     explanation:
@@ -408,7 +408,7 @@ export const PART: PrepQuestion[] = [
     options: ["Vascular disease", "Alzheimer's disease", "Lewy body disease", "Frontotemporal lobar degeneration"],
     answer: 1,
     explanation:
-      "Alzheimer's disease accounts for roughly 60–70% of dementia, often mixed with vascular pathology. Vascular NCD is second, and Lewy body disease is commonly cited third. FTLD is a leading cause of early-onset dementia (under 65) but less common overall.",
+      "Alzheimer's disease accounts for roughly 60 to 70% of dementia, often mixed with vascular pathology. Vascular NCD is second, and Lewy body disease is commonly cited third. FTLD is a leading cause of early-onset dementia (under 65) but less common overall.",
     module: "neurocognitive",
     ref: "WHO dementia fact sheet; DSM-5-TR",
   }),

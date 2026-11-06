@@ -84,7 +84,7 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: According to Clark's (1986) cognitive model, panic attacks result from the catastrophic misinterpretation of benign bodily sensations.",
+      "A: According to Clark's cognitive model, panic attacks result from the catastrophic misinterpretation of benign bodily sensations.",
       "R: Safety behaviours, such as holding on to a rail when dizzy, prevent disconfirmation of the feared catastrophe and so maintain panic.",
     ],
     answer: 1,
@@ -198,7 +198,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4", "A-3, B-4, C-1, D-2", "A-3, B-1, C-4, D-2"],
     answer: 3,
     explanation:
-      "Mowrer's two-factor theory: fear is acquired by classical conditioning and maintained by operant (negative) reinforcement of avoidance. Seligman's preparedness (1971): evolution prepares us to fear snakes, heights and the like more readily. Barlow's triple vulnerability: generalised biological, generalised psychological and specific psychological vulnerabilities. Dugas and Ladouceur's model puts intolerance of uncertainty at the core of GAD worry.",
+      "Mowrer's two-factor theory: fear is acquired by classical conditioning and maintained by operant (negative) reinforcement of avoidance. Seligman's preparedness: evolution prepares us to fear snakes, heights and the like more readily. Barlow's triple vulnerability: generalised biological, generalised psychological and specific psychological vulnerabilities. Dugas and Ladouceur's model puts intolerance of uncertainty at the core of GAD worry.",
     ref: "Barlow, Anxiety and Its Disorders; Dugas et al. 1998",
   }),
   Q({
@@ -226,7 +226,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "passage",
     passage:
-      "A 42-year-old man reports episodes of sudden pounding headache, palpitations and profuse sweating lasting 10–20 minutes, several times a week, sometimes at rest. During one episode his BP was 220/120 mmHg. Between episodes he worries about having more. He has lost 4 kg. There is no avoidance.",
+      "A 42-year-old man reports episodes of sudden pounding headache, palpitations and profuse sweating lasting 10 to 20 minutes, several times a week, sometimes at rest. During one episode his BP was 220/120 mmHg. Between episodes he worries about having more. He has lost 4 kg. There is no avoidance.",
     stem: "Before diagnosing panic disorder, the most important step is:",
     options: [
       "Begin CBT with interoceptive exposure",
@@ -327,7 +327,7 @@ export const PART: PrepQuestion[] = [
     exams: MCP,
     difficulty: 4,
     type: "mcq",
-    stem: "In the Clark and Wells (1995) cognitive model of social anxiety disorder, which process is held to be most important in preventing disconfirmation of negative beliefs during social situations?",
+    stem: "In the Clark and Wells cognitive model of social anxiety disorder, which process is held to be most important in preventing disconfirmation of negative beliefs during social situations?",
     options: [
       "Overestimation of the probability of physical catastrophe",
       "Thought-action fusion",
@@ -378,7 +378,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 3,
     type: "mcq",
-    stem: "According to the National Mental Health Survey of India (2015–16), the current prevalence of neurotic and stress-related disorders among adults was approximately:",
+    stem: "According to the National Mental Health Survey of India (2015 to 2016), the current prevalence of neurotic and stress-related disorders among adults was approximately:",
     options: ["0.5%", "10.6%", "13.7%", "3.5%"],
     answer: 3,
     explanation:
@@ -438,7 +438,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Abrupt cessation of a short-acting, high-potency benzodiazepine produces withdrawal within 1–3 days: rebound anxiety, insomnia, tremor, perceptual disturbance, depersonalisation, tachycardia and risk of seizures and delirium. Standard management is conversion to an equivalent dose of a long-acting agent such as diazepam, then gradual taper, with psychological support. Calling it a GAD relapse misses the time-locked onset after stopping. An SSRI alone does not prevent seizures. Hyperthyroidism is worth excluding but is not the most likely explanation.",
+      "Abrupt cessation of a short-acting, high-potency benzodiazepine produces withdrawal within 1 to 3 days: rebound anxiety, insomnia, tremor, perceptual disturbance, depersonalisation, tachycardia and risk of seizures and delirium. Standard management is conversion to an equivalent dose of a long-acting agent such as diazepam, then gradual taper, with psychological support. Calling it a GAD relapse misses the time-locked onset after stopping. An SSRI alone does not prevent seizures. Hyperthyroidism is worth excluding but is not the most likely explanation.",
     module: "stabilisers",
     ref: "Maudsley Prescribing Guidelines, benzodiazepine withdrawal; DSM-5-TR sedative withdrawal",
   }),

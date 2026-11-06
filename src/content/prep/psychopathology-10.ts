@@ -69,7 +69,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP_MA,
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about pseudohallucinations are correct according to Fish's Clinical Psychopathology?",
+    stem: "Which statements about pseudohallucinations are correct according to classical descriptive psychopathology?",
     statements: [
       "1. Jaspers located pseudohallucinations in inner subjective space and regarded them as variants of imagery",
       "2. Hare defined pseudohallucinations in terms of insight, that is, recognising that the experience is not real",
@@ -164,7 +164,7 @@ export const PART: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1, 2, 3 and 4 only", "2, 3, 4 and 5 only", "1, 2, 3, 4 and 5"],
     answer: 1,
     explanation:
-      "Jaspers' four aspects are activity (existence) of self, unity, continuity of identity, and boundaries (1–4). Disturbances map on to them: depersonalisation and passivity (activity), doubling of self (unity), 'I am not the person I was' (continuity), and transitivism or thought broadcasting (boundaries). Body image is a separate domain of psychopathology, so statement 5 is not one of the four.",
+      "Jaspers' four aspects are activity (existence) of self, unity, continuity of identity, and boundaries (1 to 4). Disturbances map on to them: depersonalisation and passivity (activity), doubling of self (unity), 'I am not the person I was' (continuity), and transitivism or thought broadcasting (boundaries). Body image is a separate domain of psychopathology, so statement 5 is not one of the four.",
     ref: "Fish's Clinical Psychopathology (fish.txt ~3883–3893)",
   }),
   Q({
@@ -339,7 +339,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Loss of personal identity and autobiographical memory with travel, a clear emotional precipitant, intact new learning and procedural memory, and normal investigations indicate dissociative amnesia with fugue. Organic amnesia rarely removes personal identity while preserving new learning; this 'reverse' pattern is a key clue. TGA features dense anterograde amnesia with repetitive questioning and preserved identity, resolving within 24 hours. Korsakoff involves severe anterograde amnesia. Post-traumatic amnesia needs head injury.",
+      "Loss of personal identity and autobiographical memory with travel, a clear emotional precipitant, intact new learning and procedural memory, and normal investigations indicate dissociative amnesia with fugue. Organic amnesia rarely removes personal identity while preserving new learning; this 'reverse' pattern is the giveaway. TGA features dense anterograde amnesia with repetitive questioning and preserved identity, resolving within 24 hours. Korsakoff involves severe anterograde amnesia. Post-traumatic amnesia needs head injury.",
     module: "more-disorders",
     ref: "DSM-5-TR dissociative amnesia; Fish",
   }),
@@ -387,7 +387,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Phenomenological psychiatry (Minkowski, von Gebsattel, and Fish's discussion of time) notes that lived time slows in depression, with the future feeling blocked, and accelerates in mania. Both are linked to the pace of mental events and to mood. R is the generally accepted explanation of A, so both are true and R explains A.",
+      "Phenomenological psychiatry (Minkowski, von Gebsattel and later descriptive psychopathologists) notes that lived time slows in depression, with the future feeling blocked, and accelerates in mania. Both are linked to the pace of mental events and to mood. R is the generally accepted explanation of A, so both are true and R explains A.",
     ref: "Fish's Clinical Psychopathology, disorders of time experience",
   }),
 ];

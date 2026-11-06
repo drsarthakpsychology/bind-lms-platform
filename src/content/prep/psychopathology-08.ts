@@ -20,7 +20,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "DSM-5 moved severity from IQ bands (as in DSM-IV: 50–70 mild, etc.) to adaptive functioning across conceptual, social and practical domains, because adaptive functioning decides the level of support needed. IQ still informs diagnosis (about 2 SD below the mean, roughly 65–75 allowing for measurement error). Mental age and age at onset are not severity criteria. DSM-5-TR adopted the term 'intellectual developmental disorder', in line with ICD-11's 'disorders of intellectual development'.",
+      "DSM-5 moved severity from IQ bands (as in DSM-IV: 50 to 70 mild, etc.) to adaptive functioning across conceptual, social and practical domains, because adaptive functioning decides the level of support needed. IQ still informs diagnosis (about 2 SD below the mean, roughly 65 to 75 allowing for measurement error). Mental age and age at onset are not severity criteria. DSM-5-TR adopted the term 'intellectual developmental disorder', in line with ICD-11's 'disorders of intellectual development'.",
     ref: "DSM-5-TR intellectual developmental disorder",
   }),
   Q({
@@ -33,7 +33,7 @@ export const PART: PrepQuestion[] = [
     statements: [
       "1. All three social communication and interaction deficits in Criterion A must be present",
       "2. At least two of four restricted, repetitive behaviour patterns are required, and these include sensory hyper- or hyporeactivity",
-      "3. Severity levels (1–3) are rated separately for social communication and for restricted, repetitive behaviours",
+      "3. Severity levels (1 to 3) are rated separately for social communication and for restricted, repetitive behaviours",
       "4. Asperger's disorder remains a separate diagnosis",
     ],
     options: ["1 and 2 only", "2 and 3 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
@@ -73,7 +73,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Both are true. DSM-5 removed the DSM-IV exclusion, so ADHD and ASD can be co-diagnosed, which reflects high comorbidity (around 30–50% of autistic children show significant ADHD symptoms). R states the old rule. It describes what was changed rather than explaining why the change was made (that was the evidence on comorbidity and the treatment implications), so it is not the correct explanation of A.",
+      "Both are true. DSM-5 removed the DSM-IV exclusion, so ADHD and ASD can be co-diagnosed, which reflects high comorbidity (around 30 to 50% of autistic children show significant ADHD symptoms). R states the old rule. It describes what was changed rather than explaining why the change was made (that was the evidence on comorbidity and the treatment implications), so it is not the correct explanation of A.",
     ref: "DSM-5-TR highlights of changes",
   }),
   Q({
@@ -109,7 +109,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Tourette's needs multiple motor tics and one or more vocal tics (not necessarily at the same time), persisting more than a year since onset, with onset before 18. Coprolalia occurs in only about 10–15% and is not required. Only one tic type for over a year is persistent (chronic) motor or vocal tic disorder. Tics present for less than a year are provisional tic disorder.",
+      "Tourette's needs multiple motor tics and one or more vocal tics (not necessarily at the same time), persisting more than a year since onset, with onset before 18. Coprolalia occurs in only about 10 to 15% and is not required. Only one tic type for over a year is persistent (chronic) motor or vocal tic disorder. Tics present for less than a year are provisional tic disorder.",
     ref: "DSM-5-TR tic disorders",
   }),
   Q({
@@ -151,7 +151,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-4, C-2, D-3", "A-2, B-1, C-4, D-3", "A-4, B-2, C-1, D-3", "A-2, B-4, C-1, D-3"],
     answer: 3,
     explanation:
-      "DSM-5-TR reports ASD at about 3–4:1 male-to-female. ADHD in community samples is about 2:1 in children (around 1.6:1 in adults). Anorexia nervosa shows roughly a 10:1 female-to-male ratio in clinical populations. Rett syndrome is an X-linked MECP2 disorder seen almost entirely in girls; affected males usually do not survive. The other codes swap ASD and ADHD or assign anorexia a male excess.",
+      "DSM-5-TR reports ASD at about 3 to 4:1 male-to-female. ADHD in community samples is about 2:1 in children (around 1.6:1 in adults). Anorexia nervosa shows roughly a 10:1 female-to-male ratio in clinical populations. Rett syndrome is an X-linked MECP2 disorder seen almost entirely in girls; affected males usually do not survive. The other codes swap ASD and ADHD or assign anorexia a male excess.",
     ref: "DSM-5-TR ASD, ADHD and tic disorders prevalence",
   }),
   Q({
@@ -227,7 +227,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 month", "3 months", "12 months", "6 months"],
     answer: 3,
     explanation:
-      "DSM-5 added a minimum duration of about 6 months and a frequency of about 75–100% of occasions for most sexual dysfunctions, to separate transient difficulties from disorders. Premature (early) ejaculation is defined as ejaculation within about 1 minute of vaginal penetration, also for 6 months. DSM-5 merged female hypoactive desire and arousal disorders into female sexual interest/arousal disorder, and merged vaginismus and dyspareunia into genito-pelvic pain/penetration disorder.",
+      "DSM-5 added a minimum duration of about 6 months and a frequency of about 75 to 100% of occasions for most sexual dysfunctions, to separate transient difficulties from disorders. Premature (early) ejaculation is defined as ejaculation within about 1 minute of vaginal penetration, also for 6 months. DSM-5 merged female hypoactive desire and arousal disorders into female sexual interest/arousal disorder, and merged vaginismus and dyspareunia into genito-pelvic pain/penetration disorder.",
     ref: "DSM-5-TR sexual dysfunctions",
   }),
   Q({
@@ -310,7 +310,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "passage",
     passage:
-      "An 8-year-old girl is referred for 'not paying attention' in class for 4 months. Her teacher describes brief staring spells, many times a day, lasting 5–10 seconds, during which she stops mid-sentence and then resumes without awareness. Her parents had not noticed problems at home. Hyperventilation in the clinic provokes a similar spell.",
+      "An 8-year-old girl is referred for 'not paying attention' in class for 4 months. Her teacher describes brief staring spells, many times a day, lasting 5 to 10 seconds, during which she stops mid-sentence and then resumes without awareness. Her parents had not noticed problems at home. Hyperventilation in the clinic provokes a similar spell.",
     stem: "What is the most appropriate next step?",
     options: [
       "Diagnose ADHD, predominantly inattentive presentation, and start methylphenidate",
@@ -329,11 +329,11 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 3,
     type: "mcq",
-    stem: "The National Mental Health Survey of India (2015–16) estimated the prevalence of mental disorders among adolescents aged 13–17 years at approximately:",
+    stem: "The National Mental Health Survey of India (2015 to 2016) estimated the prevalence of mental disorders among adolescents aged 13 to 17 years at approximately:",
     options: ["1.5%", "13.7%", "22.4%", "7.3%"],
     answer: 3,
     explanation:
-      "NMHS found about 7.3% prevalence among 13–17-year-olds, nearly double in urban metros (about 13.5%) compared with rural areas (about 6.9%), with depressive episodes, agoraphobia, intellectual disability, autism and psychotic disorder among the commoner conditions. 13.7% is adult lifetime prevalence, and 22.4% is substance use disorder including tobacco in adults.",
+      "NMHS found about 7.3% prevalence among 13 to 17-year-olds, nearly double in urban metros (about 13.5%) compared with rural areas (about 6.9%), with depressive episodes, agoraphobia, intellectual disability, autism and psychotic disorder among the commoner conditions. 13.7% is adult lifetime prevalence, and 22.4% is substance use disorder including tobacco in adults.",
     ref: "NMHS 2015–16 summary (journalsofindia.com)",
   }),
 ];

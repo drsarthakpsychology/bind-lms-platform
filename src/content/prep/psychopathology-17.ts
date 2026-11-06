@@ -177,7 +177,7 @@ export const PART: PrepQuestion[] = [
     options: ["Bulimia nervosa", "Binge-eating disorder", "Generalised anxiety disorder", "Anorexia nervosa"],
     answer: 3,
     explanation:
-      "Anorexia nervosa has one of the highest standardised mortality ratios of any psychiatric disorder (around 5–6), from medical complications and suicide. Bulimia nervosa and BED have lower but raised mortality. GAD has much lower excess mortality.",
+      "Anorexia nervosa has one of the highest standardised mortality ratios of any psychiatric disorder (around 5 to 6), from medical complications and suicide. Bulimia nervosa and BED have lower but raised mortality. GAD has much lower excess mortality.",
     module: "more-disorders",
     ref: "Arcelus et al. 2011 meta-analysis",
   }),
@@ -311,7 +311,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-4, C-3, D-2", "A-4, B-3, C-1, D-2", "A-4, B-1, C-2, D-3", "A-4, B-1, C-3, D-2"],
     answer: 3,
     explanation:
-      "Mesolimbic dopamine excess is linked to positive psychotic symptoms. Cholinergic loss (nucleus basalis of Meynert) underlies the cholinergic hypothesis of Alzheimer's disease and the use of cholinesterase inhibitors. Reduced GABA-A inhibition is linked to anxiety, hence benzodiazepine efficacy. Reduced serotonergic function features in the monoamine hypothesis of depression. These are simplified textbook associations.",
+      "Mesolimbic dopamine excess is linked to positive psychotic symptoms. Cholinergic loss (nucleus basalis of Meynert) underlies the cholinergic hypothesis of Alzheimer's disease and the use of cholinesterase inhibitors. Reduced GABA-A inhibition is linked to anxiety, hence benzodiazepine efficacy. Reduced serotonergic function features in the monoamine hypothesis of depression. These are simplified classic associations, not complete explanations.",
     module: "brain",
     ref: "Stahl's Essential Psychopharmacology",
   }),
@@ -492,7 +492,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Both are true. Clozapine is the only antipsychotic with established superiority in treatment-resistant schizophrenia (Kane et al., 1988) (A). TRS is usually defined as persistent symptoms despite two adequate trials of different antipsychotics at adequate dose and duration, with adherence confirmed (TRRIP consensus) (R). R defines the indication but does not explain why clozapine works in TRS, so it is not the correct explanation of A.",
+      "Both are true. Clozapine is the only antipsychotic with established superiority in treatment-resistant schizophrenia (A). TRS is usually defined as persistent symptoms despite two adequate trials of different antipsychotics at adequate dose and duration, with adherence confirmed (TRRIP consensus) (R). R defines the indication but does not explain why clozapine works in TRS, so it is not the correct explanation of A.",
     module: "antipsychotics",
     ref: "Kane et al. 1988; Howes et al. 2017 TRRIP",
   }),
@@ -563,7 +563,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Seligman and Maier (1967) found dogs given inescapable shocks later failed to learn escape when it was possible, which became a model of depression. Rats receiving food illustrate operant reinforcement. Harlow's monkeys illustrate attachment and separation. Later work by Maier (2016) suggested that passivity is the default response, and that what is learned is control.",
+      "Seligman and Maier found dogs given inescapable shocks later failed to learn escape when it was possible, which became a model of depression. Rats receiving food illustrate operant reinforcement. Harlow's monkeys illustrate attachment and separation. Later work by Maier suggested that passivity is the default response, and that what is learned is control.",
     module: "depression",
     ref: "Seligman & Maier 1967; Maier & Seligman 2016",
   }),
@@ -591,7 +591,7 @@ export const PART: PrepQuestion[] = [
     options: ["HAM-D", "MADRS", "BPRS", "PHQ-9"],
     answer: 3,
     explanation:
-      "The PHQ-9 scores the nine DSM depressive symptoms over 2 weeks (0–27; 5, 10, 15 and 20 mark mild, moderate, moderately severe and severe), and item 9 screens for suicidal ideation. It has been validated in Hindi and other Indian languages. HAM-D and MADRS are clinician-rated. BPRS is a broad clinician-rated scale.",
+      "The PHQ-9 scores the nine DSM depressive symptoms over 2 weeks (0 to 27; 5, 10, 15 and 20 mark mild, moderate, moderately severe and severe), and item 9 screens for suicidal ideation. It has been validated in Hindi and other Indian languages. HAM-D and MADRS are clinician-rated. BPRS is a broad clinician-rated scale.",
     module: "assessment",
     ref: "Kroenke et al. 2001",
   }),

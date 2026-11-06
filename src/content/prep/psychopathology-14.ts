@@ -38,7 +38,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Wakefield (1992) combines a value component (harm, judged by social standards) with a factual component (dysfunction of an evolved mechanism). This distinguishes disorder from normal distress, such as grief or fear in real danger, which reflects mechanisms working as designed. Social disapproval alone, DSM listing (circular) and statistical deviation are rejected as insufficient.",
+      "Wakefield combines a value component (harm, judged by social standards) with a factual component (dysfunction of an evolved mechanism). This distinguishes disorder from normal distress, such as grief or fear in real danger, which reflects mechanisms working as designed. Social disapproval alone, DSM listing (circular) and statistical deviation are rejected as insufficient.",
     ref: "Wakefield 1992",
   }),
   Q({
@@ -89,12 +89,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Engel (1977) proposed the biopsychosocial model as an alternative to the biomedical model.",
+      "A: Engel proposed the biopsychosocial model as an alternative to the biomedical model.",
       "R: Engel argued that the biomedical model could not account for why people with the same biological lesion differ in illness experience, help-seeking and outcome.",
     ],
     answer: 0,
     explanation:
-      "Both are true and R explains A. Engel's 1977 Science paper criticised reductionist biomedicine for ignoring the psychological and social factors that shape illness and recovery, using examples such as diabetes and grief. This underpins case formulation using predisposing, precipitating, perpetuating and protective factors across biological, psychological and social domains.",
+      "Both are true and R explains A. Engel's classic critique attacked reductionist biomedicine for ignoring the psychological and social factors that shape illness and recovery, using examples such as diabetes and grief. This underpins case formulation using predisposing, precipitating, perpetuating and protective factors across biological, psychological and social domains.",
     module: "case-sheet",
     ref: "Engel 1977",
   }),
@@ -129,7 +129,7 @@ export const PART: PrepQuestion[] = [
     options: ["Eugen Bleuler", "Sigmund Freud", "Kurt Schneider", "Emil Kraepelin"],
     answer: 3,
     explanation:
-      "Kraepelin (1899, 6th edition of his textbook) separated dementia praecox (chronic deteriorating course) from manic-depressive insanity (episodic, with recovery), the 'Kraepelinian dichotomy'. Bleuler renamed dementia praecox 'schizophrenia' in 1911. Schneider described first-rank symptoms. Freud focused on neuroses.",
+      "Kraepelin separated dementia praecox (chronic deteriorating course) from manic-depressive insanity (episodic, with recovery), the 'Kraepelinian dichotomy'. Bleuler renamed dementia praecox 'schizophrenia' in 1911. Schneider described first-rank symptoms. Freud focused on neuroses.",
     ref: "Kaplan & Sadock history of psychiatry",
   }),
   Q({
@@ -180,7 +180,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 2 only", "2 and 4 only", "1, 3 and 4 only", "1, 2 and 3 only"],
     answer: 3,
     explanation:
-      "HiTOP (Kotov et al., 2017) uses empirically derived spectra (1). RDoC (Insel, 2010) is a research framework of functional domains studied across units of analysis (2). Caspi and colleagues' 'p factor' represents general liability across disorders (3). RDoC is explicitly a research framework and not designed for clinical diagnosis or billing (4 false).",
+      "HiTOP uses empirically derived spectra (1). RDoC is a research framework of functional domains studied across units of analysis (2). Caspi and colleagues' 'p factor' represents general liability across disorders (3). RDoC is explicitly a research framework and not designed for clinical diagnosis or billing (4 false).",
     ref: "Kotov et al. 2017; Insel et al. 2010; Caspi et al. 2014",
   }),
   Q({
@@ -189,7 +189,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP_MA,
     difficulty: 3,
     type: "mcq",
-    stem: "The US-UK Diagnostic Project (Cooper et al., 1972) found that schizophrenia was diagnosed much more often in New York than in London. This was mainly because:",
+    stem: "The US-UK Diagnostic Project found that schizophrenia was diagnosed much more often in New York than in London. This was mainly because:",
     options: [
       "Schizophrenia was genuinely more common in New York",
       "British psychiatrists used more lenient criteria",
@@ -207,7 +207,7 @@ export const PART: PrepQuestion[] = [
     exams: CUET_NET_MA,
     difficulty: 2,
     type: "mcq",
-    stem: "Rosenhan's 'On being sane in insane places' (1973) is most often cited to illustrate:",
+    stem: "Rosenhan's pseudopatient study, in which healthy volunteers gained admission to psychiatric hospitals by reporting a single hallucination, is most often cited to illustrate:",
     options: [
       "The efficacy of antipsychotics",
       "The heritability of schizophrenia",
@@ -216,7 +216,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Pseudopatients reporting a single auditory hallucination ('thud') were admitted, mostly diagnosed with schizophrenia, and discharged 'in remission'; staff interpreted normal behaviour (note-taking) through the label. The study supported labelling theory critiques (Scheff, Szasz). It has since been heavily criticised (Spitzer) and its data questioned (Cahalan, 2019). It did not address drug efficacy, heritability or the MMPI.",
+      "Pseudopatients reporting a single auditory hallucination ('thud') were admitted, mostly diagnosed with schizophrenia, and discharged 'in remission'; staff interpreted normal behaviour (note-taking) through the label. The study supported labelling theory critiques (Scheff, Szasz). It has since been heavily criticised (Spitzer) and its data questioned. It did not address drug efficacy, heritability or the MMPI.",
     ref: "Rosenhan 1973; Spitzer 1975",
   }),
   Q({
@@ -238,7 +238,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2", "A-3, B-2, C-1, D-4", "A-3, B-1, C-2, D-4"],
     answer: 3,
     explanation:
-      "Developmental psychopathology (Cicchetti) uses equifinality (many routes to the same outcome) and multifinality (one risk factor, many outcomes). Gene-environment correlation (passive, evocative, active; Plomin, Scarr and McCartney) means genes shape exposure. Gene-environment interaction means genotype moderates the effect of an environment, as in Caspi et al. (2003), although that finding has replicated inconsistently.",
+      "Developmental psychopathology (Cicchetti) uses equifinality (many routes to the same outcome) and multifinality (one risk factor, many outcomes). Gene-environment correlation (passive, evocative, active; Plomin, Scarr and McCartney) means genes shape exposure. Gene-environment interaction means genotype moderates the effect of an environment, as in Caspi and colleagues, although that finding has replicated inconsistently.",
     ref: "Cicchetti & Rogosch 1996; Caspi et al. 2003",
   }),
   Q({
@@ -285,7 +285,7 @@ export const PART: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "Watson and Rayner's 'Little Albert' study (1920) is cited as evidence that:",
+    stem: "Watson and Rayner's 'Little Albert' study is cited as evidence that:",
     options: [
       "Phobias are always inherited",
       "Phobias reflect unconscious Oedipal conflict",
@@ -306,7 +306,7 @@ export const PART: PrepQuestion[] = [
     type: "passage",
     passage:
       "In a birth cohort, children exposed to severe maltreatment had higher rates of adult antisocial behaviour, but this effect was concentrated among boys with a low-activity MAOA genotype; boys with high-activity MAOA who were maltreated had much lower rates.",
-    stem: "This finding (Caspi et al., 2002) is an example of:",
+    stem: "This finding is an example of:",
     options: [
       "Passive gene-environment correlation",
       "Equifinality",
@@ -331,7 +331,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Both are true. The schizophrenogenic mother idea (1948) lacked evidence and caused blame and guilt in families (A). EE research shows that family criticism, hostility and over-involvement predict relapse rather than causing the illness (R). R is related but does not explain why the earlier theory is rejected; that rests on the lack of evidence for causation and the strong genetic and neurodevelopmental findings. Hence R is not the correct explanation of A.",
+      "Both are true. The schizophrenogenic mother idea lacked evidence and caused blame and guilt in families (A). EE research shows that family criticism, hostility and over-involvement predict relapse rather than causing the illness (R). R is related but does not explain why the earlier theory is rejected; that rests on the lack of evidence for causation and the strong genetic and neurodevelopmental findings. Hence R is not the correct explanation of A.",
     module: "psychosis",
     ref: "Kaplan & Sadock; Butzlaff & Hooley 1998",
   }),
@@ -359,7 +359,7 @@ export const PART: PrepQuestion[] = [
     exams: CUET_NET,
     difficulty: 2,
     type: "mcq",
-    stem: "Thomas Szasz's critique 'The Myth of Mental Illness' (1961) argued that:",
+    stem: "Thomas Szasz's critique of the concept of mental illness argued that:",
     options: [
       "Mental illness is entirely genetic",
       "Psychiatric diagnosis is perfectly reliable",
@@ -379,7 +379,7 @@ export const PART: PrepQuestion[] = [
     type: "match",
     stem: "Match the cognitive model (List I) with the disorder it was developed for (List II).",
     lists: {
-      left: ["A. Ehlers and Clark (2000)", "B. Salkovskis (1985)", "C. Fairburn, Cooper and Shafran (2003)", "D. Garety and colleagues (2001)"],
+      left: ["A. Ehlers and Clark", "B. Salkovskis", "C. Fairburn, Cooper and Shafran", "D. Garety and colleagues"],
       right: ["1. Eating disorders (transdiagnostic)", "2. Positive symptoms of psychosis", "3. Persistent PTSD", "4. OCD"],
     },
     options: ["A-3, B-1, C-4, D-2", "A-4, B-3, C-1, D-2", "A-3, B-4, C-2, D-1", "A-3, B-4, C-1, D-2"],
@@ -403,7 +403,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "In the beads task (Huq, Garety and Hemsley, 1988), deluded patients make decisions after seeing only one or two beads, showing a data-gathering bias that is targeted in metacognitive training (Moritz). The WCST tests set-shifting and executive function. The Stroop tests response inhibition and selective attention. The Iowa Gambling Task tests affective decision-making (ventromedial PFC).",
+      "In the beads task, deluded patients make decisions after seeing only one or two beads, showing a data-gathering bias that is targeted in metacognitive training (Moritz). The WCST tests set-shifting and executive function. The Stroop tests response inhibition and selective attention. The Iowa Gambling Task tests affective decision-making (ventromedial PFC).",
     module: "psychosis",
     ref: "Huq, Garety & Hemsley 1988",
   }),

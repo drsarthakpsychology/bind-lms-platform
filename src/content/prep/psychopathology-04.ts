@@ -86,7 +86,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2", "A-3, B-1, C-2, D-4", "A-3, B-2, C-1, D-4"],
     answer: 2,
     explanation:
-      "Salkovskis (1985) argued that intrusions become obsessions when appraised as signalling responsibility for harm. Shafran and Rachman described thought-action fusion (thinking it makes it more likely, or is morally equal to doing it). Imaging shows hyperactivity in orbitofrontal cortex, anterior cingulate and caudate within CSTC loops. 'Not just right' experiences reflect the incompleteness dimension (Janet's 'sentiment d'incomplétude', developed by Summerfeldt), distinct from harm avoidance.",
+      "Salkovskis argued that intrusions become obsessions when appraised as signalling responsibility for harm. Shafran and Rachman described thought-action fusion (thinking it makes it more likely, or is morally equal to doing it). Imaging shows hyperactivity in orbitofrontal cortex, anterior cingulate and caudate within CSTC loops. 'Not just right' experiences reflect the incompleteness dimension (Janet's 'sentiment d'incomplétude', developed by Summerfeldt), distinct from harm avoidance.",
     ref: "Salkovskis 1985; Shafran, Thordarson & Rachman 1996",
   }),
   Q({
@@ -444,7 +444,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Although most people experience potentially traumatic events, only a minority (roughly 5–10% lifetime) develop PTSD. Conditional risk is highest after rape, combat, captivity and genocide-type interpersonal violence. Women have about twice the conditional risk of men, despite men reporting more trauma exposure overall. Trauma type strongly matters.",
+      "Although most people experience potentially traumatic events, only a minority (roughly 5 to 10% lifetime) develop PTSD. Conditional risk is highest after rape, combat, captivity and genocide-type interpersonal violence. Women have about twice the conditional risk of men, despite men reporting more trauma exposure overall. Trauma type strongly matters.",
     module: "trauma",
     ref: "DSM-5-TR PTSD prevalence; Kessler et al.",
   }),

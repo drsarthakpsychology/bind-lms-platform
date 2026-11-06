@@ -192,7 +192,7 @@ export const PART: PrepQuestion[] = [
     exams: ALL,
     difficulty: 2,
     type: "mcq",
-    stem: "The National Mental Health Survey of India (2015–16) was carried out by:",
+    stem: "The National Mental Health Survey of India (2015 to 2016) was carried out by:",
     options: [
       "NIMHANS, Bengaluru, for the Ministry of Health and Family Welfare",
       "The WHO alone",
@@ -201,7 +201,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "NMHS 2015–16 was implemented by NIMHANS, Bengaluru, with state partner institutes, commissioned by the Ministry of Health and Family Welfare. It surveyed about 34,800 adults (and adolescents in some states) across 12 states with a uniform methodology (MINI interviews). It was not a WHO-only, hospital-records or private practitioner survey.",
+      "NMHS 2015 to 2016 was implemented by NIMHANS, Bengaluru, with state partner institutes, commissioned by the Ministry of Health and Family Welfare. It surveyed about 34,800 adults (and adolescents in some states) across 12 states with a uniform methodology (MINI interviews). It was not a WHO-only, hospital-records or private practitioner survey.",
     ref: "NMHS 2015–16 summary",
   }),
   Q({
@@ -210,7 +210,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 2,
     type: "statement",
-    stem: "Which statements about NMHS 2015–16 findings are correct?",
+    stem: "Which statements about NMHS 2015 to 2016 findings are correct?",
     statements: [
       "1. The current prevalence of any mental morbidity (excluding tobacco use disorder) was about 10.6%",
       "2. Lifetime prevalence was about 13.7%",
@@ -220,7 +220,7 @@ export const PART: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 0,
     explanation:
-      "NMHS reported current mental morbidity of about 10.6% and lifetime prevalence of about 13.7% (1, 2), with higher rates in urban metros for psychoses, mood and neurotic disorders (3). Treatment gaps were very large, roughly 70–92% across disorders and over 80% for any disorder, not below 20% (4 false).",
+      "NMHS reported current mental morbidity of about 10.6% and lifetime prevalence of about 13.7% (1, 2), with higher rates in urban metros for psychoses, mood and neurotic disorders (3). Treatment gaps were very large, roughly 70 to 92% across disorders and over 80% for any disorder, not below 20% (4 false).",
     ref: "NMHS 2015–16 summary",
   }),
   Q({
@@ -229,7 +229,7 @@ export const PART: PrepQuestion[] = [
     exams: NET_MCP,
     difficulty: 3,
     type: "mcq",
-    stem: "In NMHS 2015–16, the current prevalence of depressive disorder among Indian adults was about:",
+    stem: "In NMHS 2015 to 2016, the current prevalence of depressive disorder among Indian adults was about:",
     options: ["2.7%", "0.4%", "10.6%", "22.4%"],
     answer: 0,
     explanation:
@@ -267,7 +267,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Both are true, and R explains A. The association between low SES and schizophrenia is robust (A). Goldberg and Morrison's (1963) finding that patients' fathers were not concentrated in lower classes, while patients drifted downward after onset, is the classic evidence that the association arises largely through social drift rather than low SES causing schizophrenia. Social causation plays a larger role in depression and substance use, and environmental factors such as urbanicity and migration remain relevant to schizophrenia risk.",
+      "Both are true, and R explains A. The association between low SES and schizophrenia is well established (A). Goldberg and Morrison's finding that patients' fathers were not concentrated in lower classes, while patients drifted downward after onset, is the classic evidence that the association arises largely through social drift rather than low SES causing schizophrenia. Social causation plays a larger role in depression and substance use, and environmental factors such as urbanicity and migration remain relevant to schizophrenia risk.",
     module: "psychosis",
     ref: "Goldberg & Morrison 1963; Dohrenwend et al. 1992",
   }),
@@ -293,7 +293,7 @@ export const PART: PrepQuestion[] = [
     type: "match",
     stem: "Match the epidemiological study (List I) with its key contribution (List II).",
     lists: {
-      left: ["A. Epidemiologic Catchment Area (ECA) study", "B. National Comorbidity Survey (NCS/NCS-R)", "C. WHO DOSMD", "D. NMHS India 2015–16"],
+      left: ["A. Epidemiologic Catchment Area (ECA) study", "B. National Comorbidity Survey (NCS/NCS-R)", "C. WHO DOSMD", "D. NMHS India 2015 to 2016"],
       right: [
         "1. First nationally representative US survey using a structured interview (CIDI), highlighting comorbidity",
         "2. Large US multi-site survey in the early 1980s using the DIS",
@@ -304,7 +304,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-2, B-1, C-3, D-4", "A-1, B-2, C-3, D-4", "A-2, B-3, C-1, D-4", "A-2, B-1, C-4, D-3"],
     answer: 0,
     explanation:
-      "The ECA (1980s, five US sites) used the Diagnostic Interview Schedule. The NCS (1990–92) and NCS-R (2001–03) were nationally representative using the CIDI, highlighting comorbidity and early onset. WHO DOSMD reported better schizophrenia outcomes in developing countries. NMHS India documented about 10.6% current morbidity and very large treatment gaps.",
+      "The ECA used the Diagnostic Interview Schedule. The NCS (1990 to 1992) and NCS-R (2001 to 2003) were nationally representative using the CIDI, highlighting comorbidity and early onset. WHO DOSMD reported better schizophrenia outcomes in developing countries. NMHS India documented about 10.6% current morbidity and very large treatment gaps.",
     ref: "Kessler et al.; Regier et al.; Sartorius et al.; NMHS",
   }),
   Q({
@@ -313,7 +313,7 @@ export const PART: PrepQuestion[] = [
     exams: MCP,
     difficulty: 4,
     type: "statement",
-    stem: "Which statements about NMHS 2015–16 subgroup findings are correct?",
+    stem: "Which statements about NMHS 2015 to 2016 subgroup findings are correct?",
     statements: [
       "1. Overall current morbidity was higher in men than in women, driven largely by substance use disorders",
       "2. State-level current morbidity ranged roughly from under 6% (Assam) to about 14% (Manipur)",
@@ -323,7 +323,7 @@ export const PART: PrepQuestion[] = [
     options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
     answer: 1,
     explanation:
-      "NMHS found higher morbidity in men (about 13.9% vs 7.5% in women), largely because of alcohol and other substance use (1), state rates from about 5.8% (Assam) to 14.1% (Manipur) (2), and high suicidal risk in about 0.9–1% of adults, higher in urban metros (about 1.7%) and in the 40–49 age group (3). Urban metros had higher, not lower, prevalence (4 false).",
+      "NMHS found higher morbidity in men (about 13.9% vs 7.5% in women), largely because of alcohol and other substance use (1), state rates from about 5.8% (Assam) to 14.1% (Manipur) (2), and high suicidal risk in about 0.9 to 1% of adults, higher in urban metros (about 1.7%) and in the 40 to 49 age group (3). Urban metros had higher, not lower, prevalence (4 false).",
     ref: "NMHS 2015–16 summary (journalsofindia.com)",
   }),
   Q({
@@ -333,10 +333,10 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The lifetime prevalence of schizophrenia is approximately:",
-    options: ["0.3–0.7%", "3–5%", "10%", "15–20%"],
+    options: ["0.3 to 0.7%", "3 to 5%", "10%", "15 to 20%"],
     answer: 0,
     explanation:
-      "DSM-5-TR gives a lifetime prevalence of approximately 0.3–0.7%, with variation by country, ethnicity and migrant status; the common teaching figure is 'about 1%'. Three to five percent is closer to the lifetime prevalence of bipolar spectrum or PTSD figures. Ten percent and 15–20% are in the range of lifetime MDD figures in some countries.",
+      "DSM-5-TR gives a lifetime prevalence of approximately 0.3 to 0.7%, with variation by country, ethnicity and migrant status; the common teaching figure is 'about 1%'. Three to five percent is closer to the lifetime prevalence of bipolar spectrum or PTSD figures. Ten percent and 15 to 20% are in the range of lifetime MDD figures in some countries.",
     module: "psychosis",
     ref: "DSM-5-TR schizophrenia prevalence",
   }),
@@ -355,7 +355,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The treatment gap (Kohn et al., WHO) is the percentage of people with a disorder who need care but do not get it; NMHS found it above 80% for most disorders in India, motivating programmes such as the DMHP, Tele-MANAS and task-sharing with lay counsellors. Drug approval delays, comparative efficacy and waiting times are different concepts.",
+      "The treatment gap (Kohn and colleagues, WHO) is the percentage of people with a disorder who need care but do not get it; NMHS found it above 80% for most disorders in India, motivating programmes such as the DMHP, Tele-MANAS and task-sharing with lay counsellors. Drug approval delays, comparative efficacy and waiting times are different concepts.",
     ref: "Kohn et al. 2004; NMHS",
   }),
   Q({
@@ -364,16 +364,16 @@ export const PART: PrepQuestion[] = [
     exams: MCP_MA,
     difficulty: 3,
     type: "mcq",
-    stem: "Which statement about suicide epidemiology in India is best supported by national data (NCRB) and Lancet studies?",
+    stem: "Which statement about suicide epidemiology in India is best supported by national crime records data (NCRB) and large epidemiological studies?",
     options: [
-      "Young adults (roughly 15–39 years) account for a large share of suicide deaths, and India has a relatively high female suicide rate compared with the global average",
+      "Young adults (roughly 15 to 39 years) account for a large share of suicide deaths, and India has a relatively high female suicide rate compared with the global average",
       "Suicide is concentrated in people over 80",
       "Women account for almost no suicides in India",
       "Suicide rates are the same in every state",
     ],
     answer: 0,
     explanation:
-      "Indian data show a large share of suicide deaths among young adults, and India's female suicide rate is well above the global average, with family problems, marital issues and illness commonly recorded as causes. State rates vary widely (higher in southern states such as Kerala, Tamil Nadu and Karnataka, and Sikkim). The other options are wrong. The National Suicide Prevention Strategy (2022) aims to reduce suicide mortality by 10% by 2030.",
+      "Indian data show a large share of suicide deaths among young adults, and India's female suicide rate is well above the global average, with family problems, marital issues and illness commonly recorded as causes. State rates vary widely (higher in southern states such as Kerala, Tamil Nadu and Karnataka, and Sikkim). The other options are wrong. The National Suicide Prevention Strategy aims to reduce suicide mortality by 10% by 2030.",
     module: "suicide",
     ref: "NCRB ADSI; Dandona et al. Lancet Public Health 2018",
   }),
