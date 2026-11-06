@@ -1,3 +1,4 @@
+import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
 import { ColourBlindToggle } from "@/components/settings/colour-blind-toggle";
 import { getSession } from "@/lib/auth/session";
@@ -42,7 +43,7 @@ export default async function SettingsPage() {
             {(email?.[0] ?? "S").toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-small font-semibold text-foreground">{email ?? "Signed in"}</p>
+            <MiddleTruncate text={email ?? "Signed in"} className="text-small font-semibold text-foreground" />
             <p className="mt-0.5 flex items-center gap-1.5 text-caption text-muted-foreground">
               <span className="capitalize">{role}</span>
               <span aria-hidden>·</span>

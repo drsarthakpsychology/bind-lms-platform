@@ -27,7 +27,7 @@ export function BackLink({ fallback, ...props }: Omit<React.ComponentProps<typeo
 export function BackPill({ fallback, className }: { fallback?: string; className?: string }) {
   const back = useBack(fallback);
   return (
-    <Link href={back.href} className={cn("inline-flex h-10 shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 text-sm font-semibold", className)}>
+    <Link href={back.href} className={cn("inline-flex h-10 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold pointer-coarse:h-11", className)}>
       <ArrowLeft className="size-4" aria-hidden />
       <span>Back</span>
       <span className="sr-only"> ({back.label})</span>

@@ -37,6 +37,9 @@ export type ModelRows = {
   confusions: Map<string, ConfusionRow>;
 };
 
+/** Prep (postgraduate exam) skills and items live in the same tables but show on /prep, not on the module map. */
+export const isPrepKey = (k: string) => k.startsWith("prep-") || k.startsWith("prep:");
+
 export const confusionKey = (chosen: string, correct: string) => `${cleanAnswer(chosen)}\u0000${cleanAnswer(correct)}`;
 
 /** Starting ability for a skill never practised: the average of its topic's other skills (e.g. from placement), else 0. */
@@ -110,7 +113,7 @@ export function buildMap(list: SkillRow[], now: Date, titles: Record<string, str
   const ids = TOPICS.map((t) => t.id);
   for (const r of list) {
     const t = splitSkill(r.skill).topic;
-    if (r.n > 0 && !ids.includes(t)) ids.push(t);
+    if (r.n > 0 && !ids.includes(t) && !isPrepKey(t)) ids.push(t);
   }
   const topics = ids.map((id) => {
     const cells = COMPETENCIES.map((c): MapCell => {
@@ -139,7 +142,7 @@ export type WeakSpot = { skill: string; topic: string; label: string; state: Mas
 /** Skills that need work most: shaky first, then fading, then still learning; weakest first within each. */
 export function weakSpots(list: SkillRow[], now: Date, k = 5): WeakSpot[] {
   return list
-    .filter((r) => r.n > 0)
+    .filter((r) => r.n > 0 && !isPrepKey(r.skill))
     .map((r) => {
       const { topic } = splitSkill(r.skill);
       return {
@@ -214,6 +217,6 @@ export function seedRows(result: PlacementResult, existing: Map<string, SkillRow
 
 export function dueCount(cards: Iterable<CardRow>, now: Date): number {
   let n = 0;
-  for (const c of cards) if (isDue(c, now)) n++;
+  for (const c of cards) if (!isPrepKey(c.item) && isDue(c, now)) n++;
   return n;
 }

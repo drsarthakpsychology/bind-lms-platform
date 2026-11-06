@@ -49,7 +49,7 @@ export function LessonThumb({
         className={cn(
           "relative font-pix leading-none transition-[opacity,transform] duration-base ease-snappy",
           size === "lg" ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl",
-          !locked && "group-hover/thumb:scale-75 group-hover/thumb:opacity-0",
+          !locked && "group-hover/thumb:scale-75 group-hover/thumb:opacity-0 group-focus-visible/thumb:scale-75 group-focus-visible/thumb:opacity-0",
         )}
       >
         {num}
@@ -64,7 +64,7 @@ export function LessonThumb({
             size === "lg" ? "size-16" : "size-11",
             state === "next" && size === "lg"
               ? "translate-y-0 opacity-100 group-hover/thumb:scale-110"
-              : "scale-50 opacity-0 group-hover/thumb:scale-100 group-hover/thumb:opacity-100",
+              : "scale-50 opacity-0 group-hover/thumb:scale-100 group-hover/thumb:opacity-100 group-focus-visible/thumb:scale-100 group-focus-visible/thumb:opacity-100",
           )}
         >
           <Play className={cn("fill-current", size === "lg" ? "size-7 translate-x-0.5" : "size-5 translate-x-px")} />
