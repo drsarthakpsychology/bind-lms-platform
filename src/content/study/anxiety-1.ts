@@ -23,7 +23,7 @@ Anxiety works like a smoke alarm. A good alarm rings for real fires and stays qu
 :::
 
 ### A little anxiety helps
-Some anxiety improves performance: it sharpens attention before an exam or a match. Too little and you don't prepare; too much and your mind goes blank. Performance is best somewhere in the middle. This inverted-U pattern is often called the Yerkes–Dodson curve.
+Some anxiety improves performance: it sharpens attention before an exam or a match. Too little and you don't prepare; too much and your mind goes blank. Performance is best somewhere in the middle. This inverted-U pattern is often called the Yerkes-Dodson curve.
 
 :::widget sort
 {"prompt": "Where does each sign of anxiety show up? Place each card.", "buckets": ["Body", "Thoughts", "Behaviour"], "items": [{"text": "Heart pounding", "bucket": 0}, {"text": "\"What if I fail and everyone laughs?\"", "bucket": 1}, {"text": "Avoiding the lift and taking the stairs", "bucket": 2}, {"text": "Tight shoulders and a headache", "bucket": 0}, {"text": "Mind going blank in the viva", "bucket": 1}, {"text": "Asking a friend again and again, 'Are you sure it's fine?'", "bucket": 2, "why": "Seeking reassurance is a behaviour that gives brief relief but keeps the worry going."}, {"text": "Butterflies in the stomach", "bucket": 0}]}

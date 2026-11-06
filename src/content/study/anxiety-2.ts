@@ -420,7 +420,7 @@ Mark Bouton's work showed that extinction does not delete the fear memory. It cr
 | Rapid reacquisition | Fear is relearned faster than the first time |
 
 ### The inhibitory learning approach
-Michelle Craske and colleagues translated this into practice:
+Michelle Craske's group translated this into practice:
 - **Expectancy violation**: design each exposure to maximally disconfirm the specific prediction ("I'll faint within two minutes"). Ask: what did you expect, and what happened?
 - **Deepened extinction**: combine feared cues (crowd plus heat plus caffeine) once each has been extinguished alone.
 - **Variability**: vary the stimuli, order and contexts, rather than a rigid ladder.

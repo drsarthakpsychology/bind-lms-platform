@@ -410,7 +410,7 @@ Q: A trainee does not want to say they are a student, in case the patient refuse
 In most of medicine, the history points you towards a diagnosis and an investigation confirms it. In psychiatry there is usually no scan and no blood test that does that job. The interview has to do all of it, and something else at the same time.
 
 :::define The dual task
-A psychiatric interview must simultaneously (i) gather the information needed for a criteria-based diagnosis, formulation and treatment plan, and (ii) build the patient–clinician relationship on which all treatment will depend. Neither task can be sacrificed for the other.
+A psychiatric interview must simultaneously (i) gather the information needed for a criteria-based diagnosis, formulation and treatment plan, and (ii) build the patient-clinician relationship on which all treatment will depend. Neither task can be sacrificed for the other.
 :::
 
 The interview is not merely an evaluation that precedes treatment. **The interview itself is often an essential part of treatment.** From the first moments it shapes the relationship, which can have a profound influence on outcome. A skilful interview gives better information, a more accurate diagnosis, better rapport and better adherence to the management plan.
@@ -793,7 +793,7 @@ Run it alongside the present illness, to rule diagnoses in or out with pertinent
 | Category | Screen for |
 |---|---|
 | Mood | Depression: sadness, tearfulness, sleep, appetite, energy, concentration, sexual function, guilt, psychomotor change, interest. Mania: impulsivity, grandiosity, recklessness, excess energy, less need for sleep, overspending, talkativeness, racing thoughts, hypersexuality. Mixed: irritability, lability |
-| Anxiety | Generalised worry; panic (time to peak, body symptoms, fear of recurrence, agoraphobia); obsessive–compulsive symptoms (checking, cleaning, ordering, counting); PTSD (nightmares, flashbacks, startle, avoidance); social anxiety; phobias |
+| Anxiety | Generalised worry; panic (time to peak, body symptoms, fear of recurrence, agoraphobia); obsessive-compulsive symptoms (checking, cleaning, ordering, counting); PTSD (nightmares, flashbacks, startle, avoidance); social anxiety; phobias |
 | Psychosis | Hallucinations by modality; paranoia; delusions (TV or radio messages, broadcasting, control, reference); the patient's own spiritual or cultural framing; reality testing |
 | Other | ADHD symptoms; eating disorder symptoms (bingeing, purging, excessive exercise) |
 
@@ -1076,7 +1076,7 @@ Set this against past lethality and known risk and protective factors. Suicide i
 3. Cultural factors in self-coping and past help-seeking (11 to 13)
 4. Cultural factors in current help-seeking (14 to 16)
 :::
-The Outline has five parts: cultural identity; cultural concepts of distress; stressors and cultural features of vulnerability and resilience; cultural features of the clinician–patient relationship; overall cultural assessment.
+The Outline has five parts: cultural identity; cultural concepts of distress; stressors and cultural features of vulnerability and resilience; cultural features of the clinician-patient relationship; overall cultural assessment.
 
 :::note Two points examiners like
 - The CFI is person-centred: it asks this person's views rather than assuming what a group believes. That is how it avoids stereotyping. There are no right or wrong answers.
@@ -1173,7 +1173,7 @@ Chosen from the possibilities raised by history and examination, never ordered b
 | Toxicology and drug levels | Urine drug screen when substance use is suspected (some medicines give false positives). Levels: lithium 0.6 to 1.0 mEq/L; carbamazepine 4 to 12 µg/mL; valproate 50 to 100 µg/mL |
 | Electrophysiology | EEG (fits, dementia, episodic odd behaviour); video EEG (epileptic versus non-epileptic seizures); polysomnography (sleep disorders) |
 | Neuroimaging | CT (dementia, delirium, fits, first-episode psychosis); MRI (higher resolution). PET, SPECT and MRS remain mostly research tools |
-| Psychological tests | Objective: MMPI, 16-PF (personality); WAIS, Stanford–Binet, Bhatia's battery (intelligence). Projective: Rorschach, TAT, Draw-a-Person, Sentence Completion. Neuropsychological: Wisconsin Card Sorting, Wechsler Memory Scale, PGI Memory Scale, Bender Gestalt, Benton Visual Retention, PGI Battery of Brain Dysfunction |
+| Psychological tests | Objective: MMPI, 16-PF (personality); WAIS, Stanford-Binet, Bhatia's battery (intelligence). Projective: Rorschach, TAT, Draw-a-Person, Sentence Completion. Neuropsychological: Wisconsin Card Sorting, Wechsler Memory Scale, PGI Memory Scale, Bender Gestalt, Benton Visual Retention, PGI Battery of Brain Dysfunction |
 
 ### The formulation
 :::define Diagnostic formulation

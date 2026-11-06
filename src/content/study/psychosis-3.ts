@@ -1,3 +1,4 @@
+import { qa } from "./psychosis-qa";
 /* Module · Schizophrenia spectrum and catatonia, Parts IV and V (Advanced; exam zone). Original text written for VIBHA School of Psychology. */
 export const part3 = String.raw`
 # Part IV · Advanced: mechanisms, new medicines and the global picture
@@ -12,7 +13,7 @@ export const part3 = String.raw`
 | Tuberoinfundibular | Hypothalamus to pituitary | D2 blockade raises prolactin |
 
 ### What imaging actually shows
-- The strongest, most replicated finding is **increased presynaptic dopamine synthesis and release capacity**, especially in the **associative (dorsal) striatum**, rather than more D2 receptors. It is present in people at clinical high risk who go on to develop psychosis and rises as psychosis emerges (Howes and colleagues).
+- The strongest, most replicated finding is **increased presynaptic dopamine synthesis and release capacity**, especially in the **associative (dorsal) striatum**, rather than more D2 receptors. It is present in people at clinical high risk who go on to develop psychosis and rises as psychosis emerges, a line of work led by Oliver Howes.
 - **Aberrant salience** (Kapur): dysregulated dopamine assigns importance to irrelevant events and perceptions; delusions are the person's attempt to explain this strange sense of significance. Antipsychotics dampen salience, so beliefs lose urgency before they fade.
 - A subgroup of people with treatment-resistant schizophrenia appear to have **normal** striatal dopamine synthesis, which may explain why D2 blockers fail them while clozapine, with a broader action, can still work.
 
@@ -45,7 +46,7 @@ Q: Why might some people with treatment-resistant schizophrenia not respond to D
 PET studies show that antipsychotic response becomes likely at around **65%** striatal D2 occupancy; prolactin rises above about **72%**; extrapyramidal side effects become likely above about **78%**. This narrow window explains why "more" is not "better", and why low doses work in first episodes.
 
 :::widget guess
-{"prompt": "PET studies suggest antipsychotic response becomes likely at roughly what percentage of striatal D2 receptors occupied?", "min": 0, "max": 100, "unit": "%", "answer": [60, 70], "reveal": "About 65%. Above roughly 78%, stiffness and tremor become likely. The useful range is narrow.", "clinician": "Kapur and colleagues reported response at about 65% occupancy, hyperprolactinaemia above about 72%, and EPS above about 78%."}
+{"prompt": "PET studies suggest antipsychotic response becomes likely at roughly what percentage of striatal D2 receptors occupied?", "min": 0, "max": 100, "unit": "%", "answer": [60, 70], "reveal": "About 65%. Above roughly 78%, stiffness and tremor become likely. The useful range is narrow.", "clinician": "Shitij Kapur's PET work found response at about 65% occupancy, hyperprolactinaemia above about 72%, and EPS above about 78%."}
 :::
 
 ### Receptor profiles that explain side effects
@@ -260,7 +261,8 @@ What is ICD-11 acute and transient psychotic disorder? :: Sudden, polymorphic ps
 Number of loci in the 2022 schizophrenia GWAS? :: 287.
 :::
 
-## 5.3 Module test [core]
+${qa}
+## 5.6 Module test [core]
 Answer every question before looking back. Your best score is saved.
 
 :::mcq

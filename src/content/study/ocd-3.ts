@@ -1,3 +1,4 @@
+import { qa } from "./ocd-qa";
 /* Module · OCD and related disorders, Part IV (exam zone). Original text written for VIBHA School of Psychology. */
 export const part3 = String.raw`
 # Part IV · Exam zone
@@ -54,7 +55,8 @@ What is olfactory reference disorder? :: ICD-11: persistent belief of emitting a
 What is koro? :: A culture-bound fear of genital retraction leading to death.
 :::
 
-## 4.3 Module test [core]
+${qa}
+## 4.6 Module test [core]
 Answer every question before looking back. Your best score is saved.
 
 :::mcq

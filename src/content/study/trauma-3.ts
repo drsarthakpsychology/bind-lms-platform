@@ -1,3 +1,4 @@
+import { qa } from "./trauma-qa";
 /* Module · Trauma and stressor-related disorders, Part V (exam zone). Original text written for VIBHA School of Psychology. */
 export const part3 = String.raw`
 # Part V · Exam zone
@@ -54,7 +55,8 @@ What is moral injury? :: Distress from acting against or witnessing violations o
 What is written exposure therapy? :: Five sessions of structured trauma writing.
 :::
 
-## 5.3 Module test [core]
+${qa}
+## 5.6 Module test [core]
 Answer every question before looking back. Your best score is saved.
 
 :::mcq

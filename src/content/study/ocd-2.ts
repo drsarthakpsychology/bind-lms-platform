@@ -304,7 +304,7 @@ Parallel loops run from frontal cortex to the striatum, then through the globus 
 Imaging shows **hyperactivity of the OFC, ACC and caudate** at rest and on symptom provocation, which partly **normalises after successful treatment with either an SSRI or behaviour therapy**. Two different treatments produce similar circuit changes.
 
 ### Habit and goal-directed control
-Experiments by Claire Gillan and colleagues showed that people with OCD rely more on **habits** and less on **goal-directed** control. In outcome-devaluation tests, they kept responding for rewards that were no longer valuable. One view is that compulsions start as habits, and obsessions come later as a way of explaining them ("I must be washing because I'm contaminated"). In large online samples, a transdiagnostic **"compulsive behaviour and intrusive thought"** dimension, cutting across OCD, eating disorders and addiction, tracks reduced goal-directed control better than diagnosis does.
+Claire Gillan's experiments showed that people with OCD rely more on **habits** and less on **goal-directed** control. In outcome-devaluation tests, they kept responding for rewards that were no longer valuable. One view is that compulsions start as habits, and obsessions come later as a way of explaining them ("I must be washing because I'm contaminated"). In large online samples, a transdiagnostic **"compulsive behaviour and intrusive thought"** dimension, cutting across OCD, eating disorders and addiction, tracks reduced goal-directed control better than diagnosis does.
 
 ### Error signals
 The **error-related negativity**, an EEG wave over the ACC after a mistake, is enlarged in OCD and in unaffected relatives: a candidate marker of an overactive "something is wrong" signal.

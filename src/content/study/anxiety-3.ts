@@ -1,3 +1,4 @@
+import { qa } from "./anxiety-qa";
 /* Module · Anxiety disorders, Part VI (exam zone). Original text written for VIBHA School of Psychology. */
 export const part3 = String.raw`
 # Part VI · Exam zone
@@ -66,7 +67,8 @@ Name the four forms of return of fear. :: Spontaneous recovery, renewal, reinsta
 Where does ICD-11 place hypochondriasis? :: Obsessive-compulsive and related disorders.
 :::
 
-## 6.3 Module test [core]
+${qa}
+## 6.6 Module test [core]
 Answer every question before looking back. Your best score is saved.
 
 :::mcq

@@ -1,4 +1,4 @@
-/* Module 1 · Part II — The mental status examination. Source: VIBHA School of Psychology study notes (2026 edition). */
+/* Module 1 · Part II, The mental status examination. Source: VIBHA School of Psychology study notes (2026 edition). */
 export const part2 = String.raw`
 # Part II · The mental status examination
 
@@ -138,7 +138,7 @@ Recorded **here**, in behaviour, because it is observed rather than reported:
 :::clinician
 ### Rating and treating catatonia
 - DSM-5-TR catatonia needs **3 or more of 12** signs (stupor, catalepsy, waxy flexibility, mutism, negativism, posturing, mannerism, stereotypy, agitation not influenced by external stimuli, grimacing, echolalia, echopraxia). It can be specified with another mental disorder, due to a medical condition, or unspecified.
-- The Bush–Francis Catatonia Rating Scale has 23 items; its first 14 form a screening instrument. Examine for grasp reflex, waxy flexibility and gegenhalten (resistance proportional to the force applied).
+- The Bush-Francis Catatonia Rating Scale has 23 items; its first 14 form a screening instrument. Examine for grasp reflex, waxy flexibility and gegenhalten (resistance proportional to the force applied).
 - Lorazepam is first-line: many respond to standard doses (up to 4 mg a day), but some need 8 to 24 mg a day. Response is usually rapid. A clear improvement after a test dose supports the diagnosis.
 - ECT is the most effective treatment, and urgent when there is no response, or in malignant catatonia (fever and autonomic instability). Catatonia in established schizophrenia responds less to benzodiazepines alone.
 - Always look for medical causes: autoimmune encephalitis, non-convulsive status epilepticus, CNS infection, metabolic disorders and drug withdrawal (including abrupt clozapine or benzodiazepine withdrawal). Distinguish neuroleptic malignant syndrome; avoid starting antipsychotics until it is excluded.
@@ -686,7 +686,7 @@ Also recorded here: autoscopy (seeing oneself), abnormal vestibular sensations, 
 2. Give Jaspers' definition and why he framed it that way. || False perception, not distortion or misinterpretation, occurring with real perceptions; covers functional hallucinations, excludes dreams.
 3. Classify hallucinations on six axes. || Modality, complexity, person, command, relation to sleep, special forms.
 4. Distinguish true perception, pseudohallucination and mental image. || Substantiality, space, delineation, will, constancy, insight.
-5. Summarise the Jaspers–Hare disagreement. || Space vs insight; modern instruments rate both separately.
+5. Summarise the Jaspers-Hare disagreement. || Space vs insight; modern instruments rate both separately.
 6. Distinguish illusion from functional hallucination. What is pareidolia? || Transforms vs coexists; effortless vivid illusions from fantasy.
 7. Define depersonalisation, derealisation and somatic passivity. || Self unreal; world unreal; body sensations imposed from outside.
 :::

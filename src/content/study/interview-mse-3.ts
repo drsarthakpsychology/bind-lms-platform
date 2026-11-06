@@ -105,8 +105,8 @@ Then always check the "as if": "Does it feel as if, or are you sure it really ha
 
 :::recall
 1. List Schneider's first-rank symptoms. || Thought echo; third-person discussing voices; running commentary; somatic passivity; thought insertion, withdrawal and broadcasting; delusional perception; made feelings, impulses and actions.
-2. What do FRS have in common? || A breakdown of the self–world boundary: something of the self is experienced as coming from outside.
-3. What did the large 2015 systematic review conclude? || Sensitivity about 57–58%; specificity about 75–81%; FRS should not be used alone to diagnose schizophrenia.
+2. What do FRS have in common? || A breakdown of the self-world boundary: something of the self is experienced as coming from outside.
+3. What did the large 2015 systematic review conclude? || Sensitivity about 57 to 58%; specificity about 75 to 81%; FRS should not be used alone to diagnose schizophrenia.
 4. Name three look-alikes of thought insertion. || Obsessions, PTSD intrusions, religious inspiration (also dissociative states).
 :::
 
@@ -120,7 +120,7 @@ Q: Which statement about first-rank symptoms is best supported by evidence?
 :::
 
 ## 4.3 Structured interviews and the problem of reliability [core][advanced]
-Before the 1970s, two psychiatrists seeing the same patient often gave different diagnoses. The famous US–UK Diagnostic Project found that New York psychiatrists diagnosed schizophrenia far more often than London psychiatrists in similar patients. Much of the difference came from how they interviewed and what they counted. This drove the move to explicit criteria (DSM-III, 1980) and to structured interviews.
+Before the 1970s, two psychiatrists seeing the same patient often gave different diagnoses. The famous US-UK Diagnostic Project found that New York psychiatrists diagnosed schizophrenia far more often than London psychiatrists in similar patients. Much of the difference came from how they interviewed and what they counted. This drove the move to explicit criteria (DSM-III, 1980) and to structured interviews.
 
 ### Kinds of interview
 | Type | What it is | Examples |
@@ -135,7 +135,7 @@ Inter-rater reliability is the degree to which two raters agree. **Cohen's kappa
 :::
 
 :::widget guess
-{"prompt": "In the DSM-5 field trials, real clinicians in ordinary clinics each interviewed the same patients. What was the agreement (kappa) for major depressive disorder? (0 means chance, 1 means perfect)", "min": 0, "max": 1, "step": 0.05, "unit": "kappa", "answer": [0.25, 0.35], "reveal": "Only about 0.3, which counts as poor. Generalised anxiety disorder was even lower, about 0.2. Some diagnoses did much better: PTSD about 0.67, autism about 0.69. Even common diagnoses can be unreliable when clinicians interview in their own way.", "clinician": "The 2013 DSM-5 field trials (test–retest, separate clinicians, routine settings) reported kappas of about 0.28 for MDD, 0.20 for GAD, 0.46 for schizophrenia, 0.56 for bipolar I and 0.67 for PTSD. Methods differed from earlier trials, which used joint interviews and inflated agreement."}
+{"prompt": "In the DSM-5 field trials, real clinicians in ordinary clinics each interviewed the same patients. What was the agreement (kappa) for major depressive disorder? (0 means chance, 1 means perfect)", "min": 0, "max": 1, "step": 0.05, "unit": "kappa", "answer": [0.25, 0.35], "reveal": "Only about 0.3, which counts as poor. Generalised anxiety disorder was even lower, about 0.2. Some diagnoses did much better: PTSD about 0.67, autism about 0.69. Even common diagnoses can be unreliable when clinicians interview in their own way.", "clinician": "The 2013 DSM-5 field trials (test-retest, separate clinicians, routine settings) reported kappas of about 0.28 for MDD, 0.20 for GAD, 0.46 for schizophrenia, 0.56 for bipolar I and 0.67 for PTSD. Methods differed from earlier trials, which used joint interviews and inflated agreement."}
 :::
 
 ### Why agreement fails

@@ -1,3 +1,4 @@
+import { qa } from "./interview-mse-qa";
 /* Module 1 · Part V: Exam zone. Original text written for VIBHA School of Psychology. */
 export const part4 = String.raw`
 # Part V · Exam zone
@@ -42,7 +43,7 @@ Do these cold, before re-reading. Examiners reward structure and completeness. E
 3. The eight follow-up questions.
 4. Causes: emotion, psychiatric disorder, suggestion, sense organ, deprivation and brain disorder.
 5. Illusions: definition, recording, pareidolia, illusion vs functional hallucination.
-6. Pseudohallucination: the three-way table and the Jaspers–Hare debate with the modern resolution.
+6. Pseudohallucination: the three-way table and the Jaspers-Hare debate with the modern resolution.
 7. Depersonalisation, derealisation, somatic passivity, autoscopy.
 8. Close with the cultural caution.
 :::
@@ -83,7 +84,7 @@ Seven headings in a fixed order, because a deficit at any level makes later test
 :::
 
 :::word Life chart
-A graphical display of the course of illness over time, showing sequence of episodes, polarity, severity, frequency, relation to stressors and response to treatment. Episodes are drawn above or below a baseline according to polarity; bar height is severity, width is duration; stressors and treatment periods are marked along the timeline. Most valuable in recurrent depressive and bipolar disorders, where it shows periodicity, stressor–relapse links and the effect of adherence at a glance.
+A graphical display of the course of illness over time, showing sequence of episodes, polarity, severity, frequency, relation to stressors and response to treatment. Episodes are drawn above or below a baseline according to polarity; bar height is severity, width is duration; stressors and treatment periods are marked along the timeline. Most valuable in recurrent depressive and bipolar disorders, where it shows periodicity, stressor-relapse links and the effect of adherence at a glance.
 :::
 
 ## 5.3 Viva rapid-fire [core]
@@ -176,7 +177,8 @@ Name the sign from what the patient says or does. Speed matters here: in a viva 
 6. What is formication, and when do you think of it? || Insects crawling on the skin; cocaine use and alcohol withdrawal.
 :::
 
-## 5.5 Module test [core]
+${qa}
+## 5.8 Module test [core]
 Answer every question before looking back. Your best score is saved, and the course brings the test back after a gap, when retrieving it does the most good.
 
 :::mcq
