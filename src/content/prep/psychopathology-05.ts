@@ -69,12 +69,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature is required in DSM-5-TR depersonalisation/derealisation disorder?",
-    options: [
-      "Reality testing remains intact during the experiences",
-      "Amnesia for the episodes",
-      "Onset after age 40",
-      "Co-occurring panic attacks",
-    ],
+    options: ["Reality testing remains intact during the experiences", "Amnesia for the episodes once they have passed", "Onset after the age of 40 years in most cases", "Panic attacks occurring alongside the episodes"],
     answer: 0,
     explanation:
       "Criterion B requires that reality testing remains intact: the person knows the experiences are subjective ('as if'). Amnesia would suggest dissociative amnesia or DID. Mean onset is around 16, and onset after 40 is rare and suggests an organic cause. Panic attacks can cause transient depersonalisation, but if they fully account for the experience the diagnosis is not made.",
@@ -106,12 +101,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The key shift from DSM-IV somatisation disorder to DSM-5 somatic symptom disorder was:",
-    options: [
-      "A focus on excessive thoughts, feelings and behaviours about symptoms, rather than on symptoms being medically unexplained",
-      "Raising the required number of symptoms to eight",
-      "Requiring at least one pseudoneurological symptom",
-      "Requiring onset before age 30",
-    ],
+    options: ["A focus on excessive thoughts, feelings and behaviours about symptoms, not their explanation", "Raising the required number of symptoms to eight, spread across four separate symptom groups", "Requiring at least one pseudoneurological symptom, such as weakness, blindness or seizures", "Requiring onset before age 30 and a fluctuating course lasting several years"],
     answer: 0,
     explanation:
       "DSM-5 removed the 'medically unexplained' requirement and instead emphasises positive psychological criteria: disproportionate thoughts, high anxiety or excessive time and energy devoted to symptoms, persisting usually more than 6 months. DSM-IV somatisation disorder needed eight symptoms (four pain, two GI, one sexual, one pseudoneurological) beginning before 30. Those counts and the age rule were dropped.",
@@ -217,12 +207,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about dhat syndrome is most accurate according to DSM-5-TR's cultural concepts of distress?",
-    options: [
-      "It is a cultural explanation of distress in which anxiety, weakness and fatigue are attributed to loss of semen, with no identifiable physiological dysfunction",
-      "It is a culture-bound psychosis seen mainly in elderly women",
-      "It is a fear that the penis will retract into the abdomen and cause death",
-      "It is a diagnosis coded as a separate sexual dysfunction in DSM-5-TR",
-    ],
+    options: ["A cultural explanation of distress in which anxiety and weakness are blamed on semen loss", "A culture-bound psychosis seen mainly in elderly women in rural South Asia", "A fear that the penis will retract into the abdomen and cause death", "A diagnosis coded in DSM-5-TR as a separate sexual dysfunction"],
     answer: 0,
     explanation:
       "DSM-5-TR describes dhat as a South Asian cultural explanation of distress in young men, who attribute anxiety, fatigue, weakness, erectile problems and low mood to loss of 'dhatu' (semen) in urine or by nocturnal emission, linked to Ayurvedic ideas of seven bodily dhatus. It is not a psychosis and occurs mainly in young men; a variant concerns leucorrhoea in women. Genital retraction is koro. It is not a separate DSM diagnosis; related DSM conditions include MDD, GAD, SSD and sexual dysfunctions. The term was introduced by N.N. Wig.",
@@ -305,12 +290,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Binge-eating disorder differs from bulimia nervosa chiefly by:",
-    options: [
-      "The absence of regular inappropriate compensatory behaviours",
-      "Binges being smaller in size",
-      "The absence of distress about bingeing",
-      "Onset only after age 40",
-    ],
+    options: ["The absence of regular inappropriate compensatory behaviours", "Binges that are smaller in size and shorter in duration", "The absence of any marked distress about the bingeing", "Onset that is typically delayed until after age 40"],
     answer: 0,
     explanation:
       "BED involves recurrent binges (once weekly for 3 months) with marked distress and three of five features (eating rapidly, until uncomfortably full, when not hungry, alone due to embarrassment, feeling disgusted or guilty), but without the regular compensatory behaviours of BN. Binges are of similar size. Marked distress is required. BED onset is typically in adolescence or young adulthood, though it presents later than BN.",
@@ -356,12 +336,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Fairburn's transdiagnostic cognitive-behavioural theory of eating disorders proposes that the core psychopathology common to AN, BN and related disorders is:",
-    options: [
-      "Over-evaluation of eating, shape and weight, and their control, as the basis for self-worth",
-      "Enmeshed family structure with conflict avoidance",
-      "Deficient serotonin function causing impulsivity",
-      "Unconscious fear of sexual maturity",
-    ],
+    options: ["Judging self-worth largely by eating, shape and weight", "An enmeshed family structure that avoids open conflict", "Deficient serotonin function causing impulsive eating", "Unconscious fear of sexual maturity and adult roles"],
     answer: 0,
     explanation:
       "Fairburn, Cooper and Shafran argue that judging self-worth largely by eating, shape and weight drives dietary restraint, which leads to binges, compensatory behaviour and low weight. Four maintaining processes can be added (clinical perfectionism, core low self-esteem, mood intolerance, interpersonal problems), which underpin enhanced CBT (CBT-E). Enmeshment is Minuchin's psychosomatic family model. Serotonin dysfunction is a biological hypothesis. Fear of sexual maturity is Crisp's psychodynamic account.",
@@ -459,12 +434,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 50-year-old obese man reports daytime sleepiness, morning headaches, low mood and poor concentration. His wife reports loud snoring with pauses. Polysomnography shows 22 obstructive apnoeas and hypopnoeas per hour. Before starting an antidepressant or hypnotic, the best step is:",
-    options: [
-      "Diagnose obstructive sleep apnoea hypopnoea (moderate) and refer for CPAP; avoid benzodiazepines",
-      "Start zolpidem for sleep maintenance",
-      "Diagnose hypersomnolence disorder",
-      "Diagnose MDD with atypical features",
-    ],
+    options: ["Moderate obstructive sleep apnoea; refer for CPAP, avoid sedatives", "Insomnia disorder; start zolpidem to improve sleep maintenance", "Hypersomnolence disorder; advise scheduled short daytime naps", "MDD with atypical features; start an SSRI and review in a month"],
     answer: 0,
     explanation:
       "An AHI of 15 or more meets DSM-5-TR criteria for obstructive sleep apnoea hypopnoea even without symptoms; 15 to 30 is moderate. CPAP is first-line, and sedatives such as benzodiazepines and Z-drugs can worsen apnoeas. Hypersomnolence disorder is not diagnosed when another sleep disorder explains the sleepiness. Depressive symptoms should be reassessed after OSA treatment.",
@@ -477,12 +447,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A 17-year-old cannot fall asleep before 3 a.m. and struggles to wake for school, but sleeps normally from 3 a.m. to 11 a.m. on holidays. The most likely diagnosis is:",
-    options: [
-      "Circadian rhythm sleep-wake disorder, delayed sleep phase type",
-      "Insomnia disorder",
-      "Narcolepsy",
-      "Hypersomnolence disorder",
-    ],
+    options: ["Circadian rhythm sleep-wake disorder, delayed phase type", "Insomnia disorder, with marked sleep-onset difficulty", "Narcolepsy, with excessive sleepiness and cataplexy", "Hypersomnolence disorder, with long unrefreshing sleep"],
     answer: 0,
     explanation:
       "Delayed sleep phase type involves a delay in the major sleep period relative to desired times, with normal sleep quality and duration when allowed to follow the delayed schedule; it is common in adolescents. Insomnia disorder would involve poor sleep even at the preferred time. Narcolepsy features irresistible sleep attacks and REM phenomena. Hypersomnolence involves excessive sleepiness despite at least 7 hours of sleep.",

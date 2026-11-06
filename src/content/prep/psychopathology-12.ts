@@ -34,12 +34,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 26-year-old woman sits on the edge of her chair, talking rapidly and loudly, hard to interrupt. She jumps from her job to film stars to 'the stars in the sky are my sisters', laughing and then tearful. She says she is 'on top of the world, the best I've ever been'. She has slept 2 hours a night for a week.",
     stem: "Which set of MSE descriptors is most accurate?",
-    options: [
-      "Psychomotor retardation; poverty of speech; depressed mood",
-      "Pressured speech; flight of ideas with clang and chance associations; elated mood with labile affect",
-      "Circumstantial speech; perseveration; euthymic mood",
-      "Mutism; thought blocking; flat affect",
-    ],
+    options: ["Psychomotor retardation; poverty of speech; depressed mood with reactive affect", "Pressured speech; flight of ideas with clang associations; elated, labile affect", "Circumstantial speech; perseveration; euthymic mood with full-range affect", "Mutism; thought blocking; flat affect with long response latencies"],
     answer: 1,
     explanation:
       "Rapid, loud, hard-to-interrupt speech is pressure of speech. Rapid topic shifts linked by association ('stars') are flight of ideas. Subjective elation with shifts to tears indicates elated mood and labile affect. These, with reduced sleep, suggest mania. The other options describe depressive, organic-obsessional or catatonic pictures.",
@@ -55,12 +50,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 72-year-old man admitted with pneumonia is alert at 10 a.m. but at night picks at his sheets, shouts at 'snakes' on the wall and tries to pull out his IV line. He cannot say the months backwards, loses track mid-sentence and thinks he is at his old office. His daughter says he was managing his own finances last month.",
     stem: "The most important MSE findings for diagnosis are:",
-    options: [
-      "Visual hallucinations alone, suggesting late-onset schizophrenia",
-      "Impaired attention and orientation, fluctuating through the day, with visual hallucinations and acute onset, indicating delirium",
-      "Disorientation alone, indicating Alzheimer's disease",
-      "Agitation alone, indicating mania",
-    ],
+    options: ["Visual hallucinations alone, suggesting late-onset schizophrenia", "Acute, fluctuating inattention and disorientation with hallucinations: delirium", "Disorientation alone, suggesting Alzheimer's disease", "Agitation and overactivity alone, suggesting mania"],
     answer: 1,
     explanation:
       "Acute onset, fluctuation (better in the morning, worse at night), impaired attention (months backwards) and disorientation with visual hallucinations in a medically ill older man point to delirium. Hallucinations are secondary. Alzheimer's is insidious, and he was managing finances a month ago. Mania is not suggested by the inattention and medical context.",
@@ -90,12 +80,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 19-year-old student is brought by his parents. He sits motionless, staring, and answers questions after long delays with single words. When asked about voices, he glances at the corner and smiles. He suddenly says 'Stop it!' to no one present. His affect is flat; occasionally he giggles without apparent reason.",
     stem: "Which inference about perception is most defensible from these observations?",
-    options: [
-      "No perceptual abnormality can be inferred without the patient's report",
-      "Behaviour suggests he is responding to hallucinations (attending to unseen stimuli, talking back), which should be recorded as observed and explored further",
-      "He is definitely experiencing visual hallucinations",
-      "His giggling proves auditory hallucinations",
-    ],
+    options: ["Nothing about perception can be inferred without his own report", "Behaviour suggests response to hallucinations; record it and explore", "He is definitely experiencing visual hallucinations", "His giggling proves that he is hearing voices"],
     answer: 1,
     explanation:
       "When patients do not report experiences, the MSE records observed behaviour suggesting hallucinations ('appeared to be responding to unseen stimuli: glancing, talking back, smiling'), and the clinician explores further. One cannot conclude definitively which modality is involved, nor that giggling proves hallucinations, as it could be incongruous affect. Ignoring observable evidence is also wrong.",
@@ -111,12 +96,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 33-year-old woman attends voluntarily. She is well groomed and cooperative. Speech is normal. Mood: 'low for months'. Affect: reactive, tearful. She describes hearing her name called once or twice when tired, and occasionally hearing her late father's voice say 'beta' when she is falling asleep. She knows these are 'tricks of my mind'. She denies delusions. MMSE 29/30. She asks for help with sadness after her divorce.",
     stem: "Which statement about her perceptual experiences is most accurate?",
-    options: [
-      "They indicate psychotic depression and require an antipsychotic",
-      "They are first-rank symptoms and suggest schizophrenia",
-      "They are best described as non-pathological perceptual experiences (hearing one's name called, hypnagogic and bereavement-related phenomena) with full insight, and do not by themselves indicate psychosis",
-      "They are functional hallucinations triggered by noise",
-    ],
+    options: ["They indicate psychotic depression and need an antipsychotic", "They are first-rank symptoms and suggest schizophrenia", "Common non-pathological experiences with insight, not signs of psychosis", "Functional hallucinations that are triggered by background noise"],
     answer: 2,
     explanation:
       "Hearing one's name called, hypnagogic voices and hearing a deceased parent are common in the general population and in grief, especially with insight. They do not constitute psychotic features. Calling this psychotic depression would require delusions or hallucinations without insight. These are not first-rank symptoms (second-person, brief, recognised as internal). Functional hallucinations need a concurrent real stimulus, which is not described.",
@@ -130,12 +110,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient with schizophrenia says, 'Yes, I have a mental illness and the tablets help, but the voices are real; they really are the CBI.' The most accurate rating of insight is:",
-    options: [
-      "Complete (full) insight",
-      "Absent insight",
-      "Partial insight: awareness of illness and treatment need, but inability to relabel psychotic experiences as pathological",
-      "Intellectual insight with full emotional insight",
-    ],
+    options: ["Complete insight, since he accepts both the illness and its treatment", "Absent insight, since he still firmly believes the voices are real", "Partial insight: accepts illness and treatment, but cannot relabel the voices", "Intellectual insight combined with full emotional insight into the voices"],
     answer: 2,
     explanation:
       "In David's three dimensions, he recognises illness and accepts treatment but cannot relabel his hallucinations and delusional attribution as symptoms, so insight is partial. Complete insight would include relabelling. Absent insight would mean denying illness altogether. Intellectual versus emotional insight describes a different distinction, and his denial of the voices' pathological nature contradicts full insight.",
@@ -151,12 +126,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 45-year-old man sits slumped, with little spontaneous movement and long response latencies. He speaks in a low monotone. He says, 'Nothing will ever get better. I am a burden; my family would be better off without me.' He wakes at 3 a.m. and feels worst in the morning. He has thought of hanging himself from the fan and has bought a rope.",
     stem: "What is the most urgent element to record and act on?",
-    options: [
-      "Diurnal variation of mood",
-      "Psychomotor retardation",
-      "Suicidal ideation with a plan and preparation (rope), requiring immediate risk assessment and safety planning",
-      "Early-morning awakening",
-    ],
+    options: ["Diurnal variation, with mood worst in the morning", "Psychomotor retardation and slowed speech", "Suicidal ideation with a plan and a bought rope", "Early-morning awakening at about 3 a.m."],
     answer: 2,
     explanation:
       "All the findings are melancholic features, but suicidal ideation with a specific method and preparatory acts (buying a rope), plus hopelessness and perceived burdensomeness, indicates high risk and calls for an immediate risk assessment, means restriction, supervision and possibly admission. Diurnal variation, retardation and early waking matter for diagnosis but are not the priority.",
@@ -195,12 +165,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 28-year-old man answers 'What is your job?' with: 'Job... rob, the robber, Robin Hood was in the forest, forests are green, green is for go, I go now.' When asked to stay on topic he can briefly, but drifts again. He is cheerful, overfamiliar, and has not slept for 3 nights. On another day, when calm on treatment, he answers relevantly.",
     stem: "Which conclusion about the thought disorder is most appropriate?",
-    options: [
-      "Schizophrenic loosening of associations; diagnosis is schizophrenia",
-      "Flight of ideas with clang and chance associations in the context of a manic syndrome, though formal thought disorder alone does not reliably separate mania from schizophrenia",
-      "Circumstantiality due to epilepsy",
-      "Perseveration due to frontal damage",
-    ],
+    options: ["Loosening of associations; the diagnosis is schizophrenia", "Flight of ideas with clang and chance links, in a manic picture", "Circumstantiality linked to temporal lobe epilepsy", "Perseveration caused by frontal lobe damage"],
     answer: 1,
     explanation:
       "Connections by sound (job, rob) and meaning (forest, green, go) are understandable, so this is flight of ideas, here with euphoria, overfamiliarity and sleeplessness suggesting mania. Andreasen's work showed that positive thought disorder overlaps heavily between mania and schizophrenia, so diagnosis rests on the whole syndrome and course. Loosening implies non-understandable links. Circumstantiality returns to the goal. Perseveration repeats the same response.",
@@ -214,12 +179,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "On MSE, which observation in 'appearance and behaviour' should most prompt enquiry about self-harm?",
-    options: [
-      "Wearing long sleeves in hot weather with fresh linear scars on the forearm",
-      "Bright clothing",
-      "Being early for the appointment",
-      "Carrying a book",
-    ],
+    options: ["Long sleeves in hot weather, with fresh linear scars on the forearm", "Brightly coloured clothing, heavy make-up and many bangles", "Arriving well before the appointment time and waiting quietly", "Carrying a thick book and reading it in the waiting room"],
     answer: 0,
     explanation:
       "Long sleeves in heat, scars or fresh wounds on the forearms, bandages and weight loss are observations that should lead to sensitive questions about self-harm and risk. Bright clothing may be noted in mania but is not specific. Punctuality and carrying a book are not risk indicators. The MSE records what is observed, then integrates it with history.",
@@ -235,12 +195,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 52-year-old woman says: 'Since the operation my husband looks exactly like himself, but he isn't him. Someone has replaced him. The real one is being kept somewhere.' She treats him coldly but accepts phone calls from him warmly. She has mild cognitive decline on testing.",
     stem: "Which MSE description and next step are best?",
-    options: [
-      "Fregoli delusion; no investigation needed",
-      "Capgras delusion (delusional misidentification); assess risk to the husband and investigate for neurological or neurodegenerative causes",
-      "Hallucination of a double (autoscopy)",
-      "Overvalued idea of infidelity",
-    ],
+    options: ["Fregoli delusion; no investigation is needed", "Capgras delusion; assess risk and look for an organic cause", "Autoscopy, a hallucination of her own double", "An overvalued idea that her husband is unfaithful"],
     answer: 1,
     explanation:
       "The belief that a familiar person has been replaced by an identical impostor is Capgras delusion. That it occurs only face to face, not on the phone, fits the face-processing (affective recognition) account. With cognitive decline, organic causes (DLB, Alzheimer's, stroke) should be investigated. Misidentification delusions carry risk of violence towards the 'impostor'. Fregoli concerns strangers being a familiar persecutor. Autoscopy is seeing one's own double. No infidelity theme is present.",
@@ -254,7 +209,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient after a left frontal stroke speaks slowly and effortfully in short, telegraphic phrases, understands questions well and is frustrated by his errors. This is:",
-    options: ["Wernicke's (fluent) aphasia", "Broca's (expressive, non-fluent) aphasia", "Conduction aphasia", "Schizophasia"],
+    options: ["Wernicke's (fluent, receptive) aphasia", "Broca's (expressive, non-fluent) aphasia", "Conduction aphasia (poor repetition)", "Schizophasia (psychotic word salad)"],
     answer: 1,
     explanation:
       "Broca's aphasia (left inferior frontal) produces non-fluent, effortful, agrammatic or telegraphic speech with relatively preserved comprehension and insight (frustration). Wernicke's aphasia (left posterior superior temporal) is fluent but meaningless with poor comprehension and little awareness; it can be mistaken for schizophrenic word salad. Conduction aphasia mainly impairs repetition. Schizophasia is psychotic thought disorder, not a focal language lesion.",
@@ -270,12 +225,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 24-year-old woman with recurrent self-harm says, during a calm interview, 'Sometimes when I'm very stressed I feel unreal, and I hear a voice inside my head calling me useless. It goes when I calm down. I know it's my own mind, sort of.' She has no other psychotic features, and functioning between crises is good.",
     stem: "Which interpretation is most appropriate?",
-    options: [
-      "Schizophrenia; start clozapine",
-      "Transient, stress-related dissociative and quasi-psychotic experiences consistent with borderline personality disorder criterion 9, requiring further assessment rather than an automatic psychosis diagnosis",
-      "Delusional disorder",
-      "Malingering",
-    ],
+    options: ["Schizophrenia; start clozapine for her persistent internal voices", "Stress-related quasi-psychotic experiences fitting BPD; assess further", "Delusional disorder, persecutory type, with associated hallucinations", "Malingering, in order to obtain medication or a hospital admission"],
     answer: 1,
     explanation:
       "DSM-5-TR BPD criterion 9 is 'transient, stress-related paranoid ideation or severe dissociative symptoms'. Internal, critical voices during stress with partial insight are common in BPD and should be explored carefully (some patients do have comorbid psychosis). Schizophrenia requires persistent psychotic symptoms and 6 months' duration, and clozapine is not indicated. There is no fixed delusion. There is no evidence of feigning.",
@@ -289,12 +239,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about bedside cognitive screening in Indian clinical settings is most accurate?",
-    options: [
-      "MMSE cut-offs are universal and need no adjustment",
-      "Tests depending on literacy and numeracy (serial sevens, writing a sentence) can misclassify people with little schooling; education-adjusted or adapted tools (e.g., Hindi MMSE, Addenbrooke's adaptations) should be used",
-      "Clock drawing is unaffected by education",
-      "Low scores always indicate dementia",
-    ],
+    options: ["MMSE cut-offs are universal and need no adjustment for education", "Literacy-based items can mislead with little schooling; use adapted tools", "Clock drawing is unaffected by education and can be used alone", "Low scores always indicate dementia, whatever the background"],
     answer: 1,
     explanation:
       "Education and literacy strongly affect MMSE-type tests. Ganguli's Hindi Mental State Examination and other adaptations replace literacy-dependent items. Clock drawing is also education-sensitive. Low scores need to be interpreted alongside functional history, mood and sensory deficits, and can reflect delirium, depression, low education or sensory impairment rather than dementia.",
@@ -310,12 +255,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "During an interview, a 30-year-old man stares fixedly at the wall, does not respond to questions for minutes, and when the examiner raises his arm it stays elevated. When asked to shake hands, he extends and withdraws his hand several times without completing the action. Nursing notes say he has not eaten for 2 days and his temperature is 38.6 °C with a pulse of 118.",
     stem: "Which conclusion is most accurate?",
-    options: [
-      "Simple depressive retardation; encourage oral intake",
-      "Catatonia with catalepsy, ambitendency and mutism; fever and tachycardia raise concern for malignant catatonia or NMS and need urgent medical work-up, IV fluids and benzodiazepines",
-      "Dissociative stupor; reassure",
-      "Conversion paralysis",
-    ],
+    options: ["Depressive retardation; encourage oral fluids and food by mouth", "Catatonia with autonomic signs; urgent work-up, fluids, lorazepam", "Dissociative stupor; reassure the family and observe on the ward", "Conversion paralysis; start physiotherapy and give reassurance"],
     answer: 1,
     explanation:
       "Staring, mutism, catalepsy (posture maintained) and ambitendency (offering and withdrawing the hand) are catatonic signs. Autonomic instability (fever, tachycardia) with food refusal suggests malignant catatonia, which can be fatal, or NMS if he is on antipsychotics. Investigations (CK, electrolytes, renal function), fluids, lorazepam and early ECT are indicated. The other options ignore both the catatonic signs and the danger.",
@@ -362,12 +302,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 16-year-old girl attends with her mother. She looks emaciated, wears baggy layers, and is restless, standing during the interview. She says she is 'fine, just a bit big on the thighs'. She counts calories obsessively and runs 10 km daily. Her BMI is 14.9. She denies hunger and minimises concerns, while her mother is in tears.",
     stem: "Which MSE observation most reflects disturbed body image and insight?",
-    options: [
-      "Restlessness",
-      "Wearing baggy layers",
-      "Her statement that she is 'big on the thighs' at a BMI of 14.9, with minimisation of the seriousness of her low weight",
-      "Mother's tearfulness",
-    ],
+    options: ["Restlessness and standing throughout the interview", "Wearing baggy layers that hide her body", "Calling herself 'big on the thighs' at a BMI of 14.9", "Her mother's tearfulness during the interview"],
     answer: 2,
     explanation:
       "Describing herself as big at a dangerously low BMI shows a disturbance in how body weight and shape are experienced, and minimising the seriousness reflects poor insight (DSM-5-TR AN Criterion C). Restlessness (overactivity) and baggy clothing (concealment) are relevant but less specific. Mother's distress is not part of the patient's MSE. At a BMI below 15 her AN would be rated extreme, and medical risk assessment is urgent.",
@@ -381,12 +316,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In organic confusional states, orientation is usually lost in which order?",
-    options: [
-      "Person first, then place, then time",
-      "Place first, then person, then time",
-      "Time first, then place, with orientation to self (person) usually preserved longest",
-      "All simultaneously",
-    ],
+    options: ["Person first, then place, then time last", "Place first, then person, then time last", "Time first, then place, with person kept longest", "All three are lost together at the same time"],
     answer: 2,
     explanation:
       "Disorientation in delirium and dementia typically affects time first, then place, with personal identity usually preserved until very late. Loss of personal identity with intact orientation to time and place should raise suspicion of a dissociative disorder. The other orders are not the usual organic pattern.",
@@ -420,7 +350,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A depressed patient's speech is slow, with long pauses before answering and a soft, monotonous voice. This is recorded as:",
-    options: ["Increased latency of response with reduced prosody", "Pressure of speech", "Echolalia", "Neologism"],
+    options: ["Increased response latency with reduced prosody", "Pressure of speech with loud, rapid delivery", "Echolalia, repeating the examiner's words", "Neologisms and idiosyncratic word use"],
     answer: 0,
     explanation:
       "Long pauses before answering (increased response latency), slow rate, soft volume and monotony (reduced prosody) are typical of psychomotor retardation in depression, and also occur with parkinsonism or negative symptoms. Pressure of speech is the opposite. Echolalia is repeating the examiner. Neologisms are new words.",
@@ -436,12 +366,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 38-year-old woman describes: 'Whenever I see a knife I get an image of stabbing my husband. I love him; the image horrifies me. I've hidden all the knives and I avoid cooking. I keep asking him if I'm a dangerous person.' She has no history of violence, and is very distressed.",
     stem: "On MSE, how should these experiences be classified, and what does this imply for risk?",
-    options: [
-      "Homicidal ideation with intent; high risk to the husband",
-      "Obsessional images (harm obsessions) with avoidance and reassurance-seeking; ego-dystonic harm obsessions are not associated with increased violence",
-      "Command hallucinations",
-      "Delusion of control",
-    ],
+    options: ["Homicidal ideation with intent, carrying a high risk to the husband", "Harm obsessions with avoidance and reassurance-seeking; low risk", "Command hallucinations instructing her to stab her husband", "A delusion that her thoughts and actions are controlled from outside"],
     answer: 1,
     explanation:
       "Intrusive, unwanted, horrifying images of harming a loved one, with avoidance and reassurance-seeking, are harm obsessions. They are ego-dystonic, resisted and recognised as one's own. Evidence indicates that people with OCD do not act on such obsessions, so reassurance and appropriate treatment (CBT with ERP) rather than coercive measures are indicated. Homicidal ideation with intent involves ego-syntonic wishes or plans. No hallucination or passivity is described.",

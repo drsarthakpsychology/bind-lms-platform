@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In classical psychoanalysis, the 'fundamental rule' asks the patient to:",
-    options: [
-      "Complete homework between sessions",
-      "Keep a diary of automatic thoughts",
-      "Relax deeply before speaking",
-      "Say whatever comes to mind, without censoring it (free association)",
-    ],
+    options: ["Complete written homework between sessions", "Keep a daily diary of automatic thoughts", "Relax deeply before beginning to speak", "Say whatever comes to mind, without censoring"],
     answer: 3,
     explanation:
       "Freud's fundamental rule is free association: the patient reports thoughts, feelings and images as they arise, even if they seem trivial, embarrassing or irrelevant. The places where associations stop or swerve point to resistance and unconscious conflict. Homework and thought diaries belong to CBT, and deep relaxation belongs to behaviour therapy and hypnosis, which Freud gave up.",
@@ -30,12 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Transference refers to:",
-    options: [
-      "The therapist's emotional reactions to the patient",
-      "Moving a patient to another therapist",
-      "The patient's conscious agreement to work with the therapist",
-      "The patient's unconscious redirection onto the therapist of feelings and expectations from earlier important relationships",
-    ],
+    options: ["The therapist's own emotional reactions to the patient", "Referral of a patient to another therapist", "The patient's conscious agreement to work together", "Redirection onto the therapist of feelings from past relationships"],
     answer: 3,
     explanation:
       "In transference the patient experiences the therapist as if they were an important figure from the past, such as a critical father, and relives old patterns in the room. The therapist's own emotional reactions to the patient are countertransference. Agreement to work together is the working (therapeutic) alliance. Referral to another therapist is not a technical term here.",
@@ -104,12 +94,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In psychodynamic technique, the usual recommendation about the order of interventions is to:",
-    options: [
-      "Interpret deep unconscious content in the first session",
-      "Avoid any comment on feelings",
-      "Start with the content of the drive, then the defence",
-      "Interpret defence before content, and move from surface to depth, working with material close to the patient's awareness",
-    ],
+    options: ["Interpret deep unconscious content in the very first session", "Avoid any comment on feelings until the patient raises them", "Start with the content of the drive, then the defence", "Defence before content, moving from surface to depth"],
     answer: 3,
     explanation:
       "Ego psychologists advised working from surface to depth: first noticing and clarifying the defence ('you seem to change the subject when we talk about your mother'), then the anxiety it guards against, and only then the hidden feeling or wish. Premature deep interpretation tends to increase resistance and can feel like an attack. Interventions also usually move from clarification, to confrontation, to interpretation.",
@@ -163,12 +148,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "Across several stories a patient tells, a pattern appears: she wants to be taken care of; she expects others to reject or criticise her when she shows need; and she then withdraws and feels ashamed. She tells the therapist she is 'fine' whenever the therapist asks about her week.",
     stem: "In Luborsky's CCRT terms, the three components are:",
-    options: [
-      "Id, ego and superego",
-      "Situation, thought and emotion",
-      "Defence, anxiety and impulse",
-      "Wish (to be cared for), response of other (rejection, criticism) and response of self (withdrawal, shame)",
-    ],
+    options: ["Id, ego and superego in conflict", "Situation, automatic thought and emotion", "Defence, anxiety and hidden impulse", "Wish, response of other, response of self"],
     answer: 3,
     explanation:
       "The CCRT is built from relationship episodes: what the patient wants (wish), how she expects or experiences others responding (RO), and how she then reacts (RS). Her 'I'm fine' to the therapist suggests the same pattern is appearing in the transference. Id, ego and superego are Freud's structures; situation, thought and emotion is CBT; defence, anxiety and impulse is Malan's triangle of conflict.",
@@ -280,12 +260,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Which statement best summarises current evidence on psychodynamic therapy?",
-    options: [
-      "There are no controlled trials of psychodynamic therapy",
-      "Psychodynamic therapy has been shown to harm most patients",
-      "It is effective only for psychosis",
-      "Meta-analyses show effect sizes comparable to other bona fide therapies for depression, anxiety and some personality disorders, with some evidence that gains continue to grow after treatment ends",
-    ],
+    options: ["There are no controlled trials of psychodynamic therapy at all", "Psychodynamic therapy has been shown to harm most patients", "Psychodynamic therapy is effective only for psychosis", "Effects are comparable to other bona fide therapies and may grow after ending"],
     answer: 3,
     explanation:
       "Reviews of randomised trials, including short-term and long-term psychodynamic therapy, show effects broadly similar to CBT and other established treatments, and several studies find benefits increasing at follow-up, which is consistent with structural change. The evidence base is smaller than for CBT. It is not harmful in general, and psychosis is not its main indication.",
@@ -298,12 +273,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "'Working through' in psychoanalytic therapy refers to:",
-    options: [
-      "The first session",
-      "A single dramatic insight that cures symptoms",
-      "Completing CBT homework",
-      "The repeated exploration of the same conflict in different contexts over time, until insight becomes lasting change",
-    ],
+    options: ["The first session, in which the history is taken", "A single dramatic insight that removes symptoms", "Completing CBT homework tasks between sessions", "Repeatedly meeting the same conflict until change lasts"],
     answer: 3,
     explanation:
       "Freud realised that one interpretation rarely changes deep patterns, so the same conflict has to be met again and again (with the boss, with the partner, with the therapist) until the patient can recognise and change it. This slow repetition is working through. One-off insight is the old 'cathartic' idea, and homework is a CBT concept.",
@@ -316,12 +286,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The 'therapeutic frame' in psychodynamic therapy refers to:",
-    options: [
-      "The diagnostic label",
-      "The theory the therapist believes in",
-      "The physical picture frame in the room",
-      "The stable conditions of therapy, such as fixed time, place, duration, fees and boundaries, which create safety and make deviations meaningful",
-    ],
+    options: ["The diagnostic label given to the patient", "The theoretical school the therapist follows", "The physical picture frame on the wall", "The stable time, place, fee and boundaries of therapy"],
     answer: 3,
     explanation:
       "The frame is the consistent structure of therapy: regular sessions, consistent length, confidentiality, clear boundaries and the therapist's neutral stance. It gives the patient a reliable setting, and how the patient responds to it (arriving late, asking for extra time) becomes material for exploration. Diagnosis and theoretical orientation are separate matters.",
@@ -336,12 +301,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 45-year-old man with long-standing schizophrenia, poor ego strength and recent loss of his mother is referred for psychotherapy. He becomes disorganised under stress and has limited capacity to reflect on his feelings.",
     stem: "Within the psychodynamic spectrum, which approach is most appropriate?",
-    options: [
-      "Classical psychoanalysis on the couch four times weekly",
-      "Short-term anxiety-provoking psychotherapy",
-      "Intensive short-term dynamic psychotherapy with strong confrontation of defences",
-      "Supportive psychotherapy: strengthening adaptive defences, giving advice and reassurance, problem solving, and maintaining a warm, real relationship",
-    ],
+    options: ["Classical psychoanalysis on the couch, four times a week", "Short-term anxiety-provoking psychotherapy", "Intensive short-term dynamic therapy that confronts defences", "Supportive psychotherapy that strengthens coping and defences"],
     answer: 3,
     explanation:
       "The expressive-supportive continuum matches technique to ego strength. Patients with fragile ego functioning and psychosis do better with supportive work that reinforces healthy defences and coping, rather than uncovering techniques that raise anxiety. Couch analysis, STAPP and ISTDP all require good ego strength and the ability to tolerate anxiety, so they could destabilise him.",
@@ -394,12 +354,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which patient characteristic is usually considered most favourable for insight-oriented (expressive) dynamic psychotherapy?",
-    options: [
-      "Active psychosis",
-      "Severe cognitive impairment",
-      "Ongoing heavy substance use with no wish to stop",
-      "Psychological mindedness, motivation for change, ability to form relationships and tolerate frustration",
-    ],
+    options: ["Active psychotic symptoms", "Severe cognitive impairment", "Ongoing heavy substance use", "Psychological mindedness and motivation"],
     answer: 3,
     explanation:
       "Selection criteria for expressive dynamic therapy (Sifneos, Malan, Davanloo) include psychological mindedness, motivation for self-understanding, at least one meaningful past relationship, capacity to tolerate anxiety, and a circumscribed focus. Active psychosis, severe cognitive impairment and uncontrolled substance use usually call for supportive or other treatments first.",
@@ -432,12 +387,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A patient who was humiliated by her father speaks to her new therapist in a cold, belittling way. After several sessions the therapist notices that he feels small, incompetent and ashamed before each session, which is unusual for him, and finds himself wanting to cancel.",
     stem: "Which concept best accounts for the therapist's experience?",
-    options: [
-      "Positive transference",
-      "Countertransference due purely to the therapist's own childhood",
-      "Reaction formation",
-      "Projective identification: the patient unconsciously puts her intolerable humiliated self into the therapist, who comes to feel it while she takes the role of the humiliating father",
-    ],
+    options: ["Positive transference towards a helpful therapist", "Countertransference arising purely from his own childhood", "Reaction formation against his own anger", "Projective identification of her humiliated self"],
     answer: 3,
     explanation:
       "Klein described projective identification, and later writers emphasised its interpersonal side: the patient evokes in the therapist the feelings she cannot bear (shame, smallness) and enacts the other role herself. Recognising this lets the therapist understand rather than act out, for example by cancelling or retaliating. This is not positive transference. The fact that the feeling is unusual for him argues against a purely personal cause. Reaction formation turns a feeling into its opposite in oneself.",
@@ -451,12 +401,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The 'repetition compulsion' described by Freud refers to:",
-    options: [
-      "Compulsive hand-washing in OCD",
-      "A habit learned through operant reinforcement",
-      "Tics in Tourette's disorder",
-      "The tendency to repeat painful early experiences and relationship patterns, often without awareness, including in the transference",
-    ],
+    options: ["Compulsive hand-washing in obsessive-compulsive disorder", "A habit learned and kept going by operant reinforcement", "Tics in Tourette's disorder that the person cannot suppress", "Repeating painful early patterns, often unaware, with the therapist too"],
     answer: 3,
     explanation:
       "Freud noticed that people often recreate distressing situations, for example repeatedly choosing rejecting partners. He called this repetition compulsion and saw transference as one form of it, which makes the pattern visible in therapy. It is not the same as OCD compulsions, a learned habit or tics.",

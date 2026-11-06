@@ -53,12 +53,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Judith Beck's cognitive conceptualisation, which statement is an INTERMEDIATE belief?",
-    options: [
-      "'I am unlovable.'",
-      "'She's ignoring my message.'",
-      "'I feel sad.'",
-      "'If people get to know the real me, they will reject me.'",
-    ],
+    options: ["'I am completely unlovable.'", "'She's ignoring my message on purpose.'", "'I feel very sad and empty.'", "'If people know the real me, they'll reject me.'"],
     answer: 3,
     explanation:
       "Intermediate beliefs are rules, attitudes and conditional assumptions ('If... then...'), sitting between core beliefs and automatic thoughts. 'I am unlovable' is a core belief, a global absolute statement about the self. 'She's ignoring my message' is a situation-specific automatic thought. 'I feel sad' is an emotion, not a cognition.",
@@ -89,12 +84,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "'Collaborative empiricism' in cognitive therapy means:",
-    options: [
-      "The therapist tells the patient which thoughts are wrong",
-      "Patient and therapist rely on free association to uncover unconscious material",
-      "The therapist is non-directive and avoids testing beliefs",
-      "Patient and therapist work as a team, treating thoughts as hypotheses to be tested against evidence",
-    ],
+    options: ["The therapist explains which of the patient's thoughts are wrong", "Patient and therapist use free association to uncover hidden material", "The therapist is non-directive and avoids testing any beliefs", "Patient and therapist test thoughts together as hypotheses"],
     answer: 3,
     explanation:
       "Collaborative empiricism is the stance in which therapist and patient work jointly, like co-investigators, to examine thoughts as testable hypotheses through Socratic questioning and behavioural experiments. Telling the patient what is wrong contradicts guided discovery. Free association is psychoanalytic. CBT is structured and active, not non-directive.",
@@ -107,12 +97,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which is the best example of a Socratic question in CBT?",
-    options: [
-      "'Your thought is irrational, isn't it?'",
-      "'You should stop thinking that way.'",
-      "'Why do you always think so negatively?'",
-      "'What is the evidence for and against the idea that everyone at work thinks you are incompetent?'",
-    ],
+    options: ["'Your thought is irrational, isn't it? Surely you can see that?'", "'You should stop thinking that way and focus on the positives.'", "'Why do you always think so negatively about everything?'", "'What is the evidence for and against the idea that they think so?'"],
     answer: 3,
     explanation:
       "Socratic questioning uses open, curious questions that help patients examine evidence and reach their own conclusions (guided discovery; Padesky's 'guided discovery rather than changing minds'). Leading questions ('isn't it?'), directives ('you should') and blaming 'why always' questions are not Socratic and tend to provoke defensiveness.",
@@ -164,12 +149,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In a dysfunctional thought record, the column that follows 'automatic thought' and 'emotion' typically asks the patient to write:",
-    options: [
-      "Dreams from the previous night",
-      "Early childhood memories",
-      "Free associations",
-      "An alternative or balanced response, after weighing the evidence",
-    ],
+    options: ["Dreams from the previous night, with associations", "Early childhood memories linked to the situation", "Free associations to the emotion", "A balanced alternative thought, after weighing the evidence"],
     answer: 3,
     explanation:
       "Thought records typically have columns for situation, emotion (with intensity), automatic thought (with belief rating), evidence for and against, an alternative or balanced thought, and an outcome (re-rating emotion and belief). Dreams, childhood memories and free associations are psychodynamic material.",
@@ -198,12 +178,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In early CBT for severe depression, activity scheduling with 'mastery' and 'pleasure' ratings is used mainly because:",
-    options: [
-      "It reveals unconscious conflicts",
-      "It replaces the need for any cognitive work",
-      "It is used only after core beliefs have been modified",
-      "Severely depressed patients have reduced activity and reinforcement, and increasing structured activity improves mood and provides evidence against beliefs such as 'I can't do anything'",
-    ],
+    options: ["It reveals unconscious conflicts behind the patient's inactivity", "It removes the need for any cognitive work later in therapy", "It is used only after core beliefs have been modified", "Activity counters withdrawal, lifts mood and tests hopeless beliefs"],
     answer: 3,
     explanation:
       "Beck recommended behavioural techniques first in severe depression, where concentration is poor. Activity monitoring and scheduling with mastery and pleasure ratings counter withdrawal, increase reinforcement and test hopeless predictions. They do not uncover unconscious conflict. In standard CT they are combined with cognitive work, although Jacobson's component analysis suggested BA alone may be as effective.",
@@ -239,12 +214,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Beck's cognitive model of anxiety, anxiety is held to result from:",
-    options: [
-      "Unconscious sexual impulses",
-      "Low dopamine",
-      "Accurate perception of danger only",
-      "Overestimation of threat combined with underestimation of one's ability to cope and of rescue factors",
-    ],
+    options: ["Unconscious sexual or aggressive impulses", "Low dopamine in the reward pathways", "An accurate perception of real danger", "Overestimated threat and underestimated coping"],
     answer: 3,
     explanation:
       "Beck's model treats anxiety as arising from biased threat appraisal (overestimating the probability and severity of danger) relative to perceived coping and rescue resources. Unconscious impulses are Freud's signal anxiety theory. Dopamine is not central. Realistic danger produces adaptive fear, not disorder.",
@@ -258,12 +228,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "DeRubeis, Hollon and colleagues compared cognitive therapy with paroxetine in moderate to severe depression. A key finding of the follow-up was:",
-    options: [
-      "CT was ineffective in severe depression",
-      "Paroxetine produced lower relapse after discontinuation than CT",
-      "Neither treatment beat placebo",
-      "Acute response was similar, but patients who had received CT had lower relapse after treatment ended than those withdrawn from medication",
-    ],
+    options: ["CT was ineffective in more severe depression", "Paroxetine gave lower relapse after stopping than CT", "Neither treatment did better than placebo", "Similar acute response, but less relapse after CT ended"],
     answer: 3,
     explanation:
       "Acute response to CT by experienced therapists was comparable to paroxetine, even in more severe depression, challenging the NIMH TDCRP conclusion. After treatment ended, prior CT showed an enduring effect, with relapse similar to continued medication and lower than medication withdrawal. Placebo was beaten at 8 weeks.",
@@ -277,12 +242,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Padesky and Mooney's 'hot cross bun' (five-part) model links:",
-    options: [
-      "Id, ego, superego, reality and morality",
-      "Oral, anal, phallic, latency and genital stages",
-      "Attention, memory, perception, language and reasoning",
-      "Thoughts, emotions, physical reactions and behaviours, within the environment or life situation",
-    ],
+    options: ["Id, ego, superego, reality and morality", "Oral, anal, phallic, latency and genital stages", "Attention, memory, perception, language and reasoning", "Thoughts, emotions, body reactions and behaviour, in context"],
     answer: 3,
     explanation:
       "The five-part model shows the interaction of thoughts, emotions, bodily sensations and behaviours, all within the environment, and is used to socialise patients to the CBT model. The other options are Freud's structures, psychosexual stages and cognitive domains.",
@@ -315,12 +275,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "The Cognitive Therapy Scale-Revised (CTS-R) is used to:",
-    options: [
-      "Measure severity of depression",
-      "Diagnose personality disorders",
-      "Assess patient insight",
-      "Rate therapist competence in delivering CBT across items such as agenda setting, feedback, collaboration, guided discovery and conceptual integration",
-    ],
+    options: ["Measure the severity of depression in trials", "Diagnose personality disorders in research", "Assess patients' insight into their illness", "Rate a therapist's competence in delivering CBT"],
     answer: 3,
     explanation:
       "The CTS-R, developed from Young and Beck's CTS, rates therapist competence on 12 items, including agenda setting, feedback, collaboration, pacing, interpersonal effectiveness, eliciting key cognitions, guided discovery, conceptual integration and homework, using a 0 to 6 scale. It is used in training and trials to check fidelity. It does not measure patient symptoms or diagnoses.",
@@ -335,12 +290,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A depressed patient says in session: 'I know my thought \"I'm a failure\" isn't logical. I've done the thought records and found lots of evidence against it. But I still feel like a failure.'",
     stem: "Which CBT approach best addresses this 'head-heart' gap?",
-    options: [
-      "Repeat the same thought record more times",
-      "Switch to free association",
-      "Tell the patient to stop feeling that way",
-      "Use experiential methods (behavioural experiments, imagery rescripting, chair work, positive data logs) to engage emotional, implicational-level learning",
-    ],
+    options: ["Repeat the same thought record more often until it 'sinks in'", "Switch to free association to uncover what lies beneath", "Tell her firmly that she should stop feeling like a failure", "Use experiential methods such as experiments, imagery and chair work"],
     answer: 3,
     explanation:
       "Teasdale and Barnard's Interacting Cognitive Subsystems distinguish propositional (rational) from implicational ('felt sense') meaning. Experiential methods such as behavioural experiments, imagery, chair work and positive data logs (Padesky's core belief work) target the latter. Repeating thought records keeps work at the intellectual level. Free association does not address the belief directly. Instructing the patient to stop feeling is invalidating.",
@@ -353,12 +303,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The Dysfunctional Attitude Scale measures:",
-    options: [
-      "Severity of current depressive symptoms",
-      "Psychotic symptoms",
-      "Personality disorder traits",
-      "Underlying conditional assumptions (e.g., about approval and achievement) thought to confer vulnerability to depression",
-    ],
+    options: ["The severity of current depressive symptoms", "The presence and severity of psychotic symptoms", "Traits of the DSM personality disorders", "Conditional assumptions that may cause vulnerability"],
     answer: 3,
     explanation:
       "The DAS assesses dysfunctional attitudes (intermediate beliefs), such as 'If I fail partly, it is as bad as being a complete failure', hypothesised as cognitive vulnerabilities. The BDI-II measures current symptom severity. Psychotic symptoms and PD traits are measured with other instruments.",
@@ -388,12 +333,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Beck developed cognitive therapy after observing in his research on depression that:",
-    options: [
-      "Dreams of depressed patients showed more hostility than controls, confirming 'anger turned inward'",
-      "Depression always followed bereavement",
-      "Depressed patients responded best to free association",
-      "Depressed patients' dreams and free associations showed themes of loss and defeat ('masochistic' content), and their conscious automatic thoughts were systematically negative",
-    ],
+    options: ["Dreams showed more hostility, confirming 'anger turned inward'", "Depression always followed a bereavement in his sample", "Patients responded best to free association alone", "Dreams showed loss and defeat, and conscious thoughts were negative"],
     answer: 3,
     explanation:
       "Beck set out to test the psychoanalytic 'anger turned inward' theory but found dreams themed on loss, failure and defeat rather than hostility, and noticed rapid, negative 'automatic thoughts' that patients could report. This led him to a cognitive theory. The anger-inward hypothesis was not confirmed. He did not find depression always followed bereavement or that free association worked best.",
@@ -408,12 +348,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 35-year-old man believes 'If I'm not in control, something terrible will happen.' He checks his work for hours, avoids delegating, and becomes anxious whenever plans change. He grew up with an alcoholic father and chaotic home life. Currently, after promotion, he has panic attacks and low mood.",
     stem: "In a longitudinal CBT conceptualisation, which element is the conditional assumption, and which are compensatory strategies?",
-    options: [
-      "Conditional assumption: alcoholic father; compensatory strategies: panic attacks",
-      "Conditional assumption: 'I'm a failure'; compensatory strategies: low mood",
-      "Conditional assumption: promotion; compensatory strategies: chaotic home life",
-      "Conditional assumption: 'If I'm not in control, something terrible will happen'; compensatory strategies: excessive checking and refusing to delegate",
-    ],
+    options: ["Assumption: alcoholic father; strategies: panic attacks and low mood", "Assumption: 'I'm a failure'; strategies: low mood and withdrawal", "Assumption: the promotion; strategies: chaotic home life", "Assumption: 'If not in control, disaster'; strategies: checking"],
     answer: 3,
     explanation:
       "In J. Beck's longitudinal diagram, early experiences (chaotic home, alcoholic father) shape core beliefs (e.g., 'the world is dangerous', 'I'm vulnerable'), leading to conditional assumptions ('If I'm not in control, something terrible will happen') and compensatory strategies (over-checking, control, not delegating). Promotion is a precipitant. Panic and low mood are current reactions. The other pairings confuse these levels.",
@@ -426,12 +361,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The 'responsibility pie chart' technique in CBT is especially used to target:",
-    options: [
-      "Hallucinations",
-      "Motor tics",
-      "Sleep onset",
-      "Excessive self-blame or inflated responsibility, by allocating proportions of responsibility to all contributing factors",
-    ],
+    options: ["Hallucinations, by tracing where the voices come from", "Motor tics, by dividing urges into small portions", "Sleep onset, by sharing out time spent in bed", "Excessive self-blame, by sharing out responsibility"],
     answer: 3,
     explanation:
       "The responsibility pie (pie chart) helps patients list all contributing factors to an outcome, assign each a slice, and leave their own share until last, typically revealing that their share is smaller than believed. It is used for guilt in depression, PTSD (e.g., survivor guilt) and inflated responsibility in OCD. It is not used for hallucinations, tics or sleep onset.",
@@ -445,12 +375,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The NIMH Treatment of Depression Collaborative Research Program compared CBT, IPT, imipramine plus clinical management, and placebo plus clinical management. Its main finding was:",
-    options: [
-      "CBT was clearly superior to all other treatments",
-      "Placebo was as effective as imipramine in all patients",
-      "IPT was ineffective",
-      "All active treatments were broadly similar overall; in more severe depression, imipramine and, to some extent, IPT outperformed placebo, while CBT showed less consistent separation",
-    ],
+    options: ["CBT was clearly superior to all the other treatments", "Placebo was as effective as imipramine in all patients", "IPT was ineffective compared with placebo", "Few overall differences; in severe cases imipramine did best"],
     answer: 3,
     explanation:
       "The TDCRP found few overall differences between active treatments. In severe depression, imipramine performed best, IPT showed some advantage over placebo, and CBT did not separate consistently, findings later challenged by DeRubeis's mega-analysis and the 2005 trial, and possibly influenced by site effects and therapist expertise. CBT was not clearly superior. IPT was effective. Placebo was not equal to imipramine in severe cases.",
@@ -484,12 +409,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In CBT for insomnia, 'sleep restriction' involves:",
-    options: [
-      "Taking sleeping pills every night",
-      "Spending as much time in bed as possible to catch up",
-      "Banning sleep during the weekend",
-      "Limiting time in bed to roughly the actual average sleep time (not below about 5 to 5.5 hours), then gradually extending it as sleep efficiency improves",
-    ],
+    options: ["Taking a sleeping pill every night for a month", "Spending as long as possible in bed to catch up", "Banning all sleep on weekends to build sleep pressure", "Limiting time in bed to actual sleep time, then extending it"],
     answer: 3,
     explanation:
       "Sleep restriction (Spielman) compresses time in bed to the actual sleep time, increasing homeostatic sleep pressure and sleep efficiency, then lengthens it in 15-minute steps when efficiency exceeds about 85 to 90%. Staying longer in bed worsens insomnia. Hypnotics are not part of CBT-I. Weekend sleep bans are not a component; consistent wake time is.",
@@ -503,12 +423,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The 'Coping Cat' programme (Kendall) is a CBT protocol for:",
-    options: [
-      "Adult schizophrenia",
-      "Couples with marital distress",
-      "Older adults with dementia",
-      "Anxiety disorders in children aged about 7 to 13",
-    ],
+    options: ["Adults with schizophrenia", "Couples with marital distress", "Older adults with dementia", "Anxious children aged about 7 to 13"],
     answer: 3,
     explanation:
       "Coping Cat uses the FEAR plan (Feeling frightened? Expecting bad things? Attitudes and actions that help; Results and rewards) and graded exposure for childhood anxiety; it was a core arm of the CAMS trial with sertraline. It is not for psychosis, couples or dementia.",
@@ -522,12 +437,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In cognitive therapy for OCD (Salkovskis), intrusive thoughts are treated as:",
-    options: [
-      "Signs of hidden desires that must be interpreted",
-      "Symptoms of psychosis",
-      "Thoughts that must be suppressed",
-      "Normal phenomena experienced by most people; the problem is the appraisal of responsibility and the neutralising that follows",
-    ],
+    options: ["Signs of hidden desires that must be found and interpreted", "Early symptoms of a developing psychotic process", "Thoughts that must be suppressed as soon as they appear", "Normal intrusions; the problem is how they are appraised"],
     answer: 3,
     explanation:
       "Rachman and de Silva showed that about 90% of non-clinical people have intrusions similar in content to obsessions. Salkovskis's model therefore targets responsibility appraisals and neutralising (rituals, suppression, reassurance), often comparing 'Theory A' (I am dangerous) with 'Theory B' (I am a worrier who is anxious about being dangerous). Interpreting desires is psychodynamic. Suppression paradoxically increases intrusions (Wegner).",

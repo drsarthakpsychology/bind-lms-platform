@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Defining abnormality as behaviour that is statistically rare has which major weakness?",
-    options: [
-      "It cannot be measured",
-      "It depends entirely on culture",
-      "It ignores the person's distress",
-      "It would classify desirable rare traits, such as very high intelligence, as abnormal",
-    ],
+    options: ["It cannot be measured reliably with standard instruments", "It depends entirely on the values of a particular culture", "It ignores how much distress the person actually feels", "It would label desirable rare traits, such as genius, as abnormal"],
     answer: 3,
     explanation:
       "The statistical-infrequency criterion treats anything far from the mean as abnormal, so exceptional giftedness would qualify, while common disorders such as depression (affecting many people) might not. It is easily measured, which is its strength. Cultural relativity and neglect of distress are weaknesses of the social-norm and statistical approaches respectively, but the key failure tested here is mislabelling desirable rarity.",
@@ -30,12 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Wakefield's 'harmful dysfunction' analysis defines a mental disorder as:",
-    options: [
-      "Any behaviour that society disapproves of",
-      "Any condition listed in DSM",
-      "Statistical deviation causing distress",
-      "A condition that is harmful by social values AND results from failure of a mental mechanism to perform its naturally selected (evolved) function",
-    ],
+    options: ["Any behaviour that the society in question strongly disapproves of", "Any condition that happens to be listed in the current DSM", "A statistical deviation from the norm that causes personal distress", "Harm judged by social values, caused by failure of an evolved mental function"],
     answer: 3,
     explanation:
       "Wakefield combines a value component (harm, judged by social standards) with a factual component (dysfunction of an evolved mechanism). This distinguishes disorder from normal distress, such as grief or fear in real danger, which reflects mechanisms working as designed. Social disapproval alone, DSM listing (circular) and statistical deviation are rejected as insufficient.",
@@ -70,12 +60,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The diathesis-stress model proposes that psychological disorders result from:",
-    options: [
-      "Stress alone, regardless of vulnerability",
-      "Genes alone",
-      "Unconscious conflict only",
-      "An interaction between a pre-existing vulnerability and environmental stressors",
-    ],
+    options: ["Stress alone, regardless of any pre-existing vulnerability", "Genetic factors alone, with environment playing no real part", "Unconscious conflict alone, rooted in early childhood", "A pre-existing vulnerability interacting with environmental stress"],
     answer: 3,
     explanation:
       "Diathesis-stress (Meehl, Zubin and Spring for schizophrenia) holds that a vulnerability (genetic, biological, psychological) interacts with stress to produce disorder: the greater the diathesis, the less stress is needed. Stress-only and gene-only accounts ignore this interaction. Unconscious conflict is a psychodynamic construct. Differential susceptibility theory (Belsky) adds that some 'vulnerable' individuals also benefit more from good environments.",
@@ -190,12 +175,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The US-UK Diagnostic Project found that schizophrenia was diagnosed much more often in New York than in London. This was mainly because:",
-    options: [
-      "Schizophrenia was genuinely more common in New York",
-      "British psychiatrists used more lenient criteria",
-      "Diagnostic differences disappeared on blind assessment with standardised interviews, showing the gap reflected US psychiatrists' broader concept of schizophrenia",
-      "British patients were older",
-    ],
+    options: ["Schizophrenia was genuinely more common in New York than London", "British psychiatrists used more lenient criteria for schizophrenia", "Standardised assessment removed the gap: US criteria were broader", "The British patients were older, so had more mood disorders"],
     answer: 2,
     explanation:
       "When patients were assessed by project psychiatrists using standardised interviews (the PSE), rates became similar, showing that the difference lay in American diagnostic practice (a broader schizophrenia concept, under-diagnosis of mania). This contributed to the development of operational criteria in DSM-III. It was not a true prevalence difference, British criteria were narrower, and age was not the explanation.",
@@ -208,12 +188,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Rosenhan's pseudopatient study, in which healthy volunteers gained admission to psychiatric hospitals by reporting a single hallucination, is most often cited to illustrate:",
-    options: [
-      "The efficacy of antipsychotics",
-      "The heritability of schizophrenia",
-      "The power of diagnostic labels and context to shape how behaviour is interpreted in psychiatric settings",
-      "The value of the MMPI",
-    ],
+    options: ["The efficacy of antipsychotics in acute schizophrenia", "The heritability of schizophrenia in adoptive families", "How diagnostic labels and setting shape the reading of behaviour", "The value of the MMPI in detecting feigned symptoms"],
     answer: 2,
     explanation:
       "Pseudopatients reporting a single auditory hallucination ('thud') were admitted, mostly diagnosed with schizophrenia, and discharged 'in remission'; staff interpreted normal behaviour (note-taking) through the label. The study supported labelling theory critiques (Scheff, Szasz). It has since been heavily criticised (Spitzer) and its data questioned. It did not address drug efficacy, heritability or the MMPI.",
@@ -248,12 +223,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Seligman's preparedness theory and 'smoke detector' arguments (Nesse) both suggest that anxiety disorders:",
-    options: [
-      "Are purely learned without biological constraints",
-      "Arise only from childhood trauma",
-      "Are always maladaptive in every context",
-      "Reflect evolved defence systems that are biased towards false alarms because missing a real threat is costlier than a false alarm",
-    ],
+    options: ["Are purely learned, without any biological constraints", "Arise only from traumatic experiences in childhood", "Are always maladaptive, whatever the context", "Reflect evolved defences biased towards false alarms"],
     answer: 3,
     explanation:
       "Preparedness proposes that evolution makes ancestral threats (snakes, heights) easier to condition, and Nesse's smoke detector principle argues that defences are set to fire readily because false positives are cheap relative to missed dangers. This explains why anxiety is common and phobias cluster around certain stimuli. 'Purely learned' ignores biological constraints. Trauma is one route only. Anxiety is often adaptive.",
@@ -267,12 +237,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Kernberg's model of personality organisation, borderline personality organisation is characterised by:",
-    options: [
-      "Intact identity, mature defences and intact reality testing",
-      "Loss of reality testing and identity diffusion",
-      "Mature defences with neurotic conflicts",
-      "Identity diffusion, primitive defences (splitting, projective identification) and generally intact reality testing",
-    ],
+    options: ["Integrated identity, mature defences and intact reality testing", "Loss of reality testing together with identity diffusion", "Mature, repression-based defences with neurotic-level conflicts", "Identity diffusion, primitive defences, generally intact reality testing"],
     answer: 3,
     explanation:
       "Kernberg classified personality organisation as neurotic (integrated identity, mature or repression-based defences, intact reality testing), borderline (identity diffusion, primitive splitting-based defences, reality testing generally preserved but vulnerable under stress) and psychotic (loss of reality testing). The other options describe neurotic or psychotic organisation, or mix them.",
@@ -286,12 +251,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Watson and Rayner's 'Little Albert' study is cited as evidence that:",
-    options: [
-      "Phobias are always inherited",
-      "Phobias reflect unconscious Oedipal conflict",
-      "Fear can only be learned through observation",
-      "Fear can be acquired through classical conditioning, pairing a neutral stimulus (white rat) with an aversive one (loud noise)",
-    ],
+    options: ["Phobias are inherited and do not depend on any learning experience", "Phobias reflect unconscious Oedipal conflict displaced onto an animal", "Fear can be learned only by watching other people show fear", "Fear can be acquired by classical conditioning (rat paired with loud noise)"],
     answer: 3,
     explanation:
       "Albert developed fear of a white rat after it was paired with a loud noise, and the fear generalised to similar furry objects. This illustrates classical conditioning of fear. The study had serious ethical and methodological problems. Inherited phobias contradict its point. The Oedipal explanation is Freud's Little Hans. Observational learning (Bandura; Mineka's monkeys) is a different route.",
@@ -307,12 +267,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In a birth cohort, children exposed to severe maltreatment had higher rates of adult antisocial behaviour, but this effect was concentrated among boys with a low-activity MAOA genotype; boys with high-activity MAOA who were maltreated had much lower rates.",
     stem: "This finding is an example of:",
-    options: [
-      "Passive gene-environment correlation",
-      "Equifinality",
-      "Purely environmental causation",
-      "Gene-environment interaction (genetic moderation of an environmental effect)",
-    ],
+    options: ["Passive gene-environment correlation", "Equifinality across developmental pathways", "Purely environmental causation", "Gene-environment interaction"],
     answer: 3,
     explanation:
       "The MAOA genotype moderates the effect of maltreatment on antisocial outcomes, which is the definition of gene-environment interaction. Correlation would mean genes influence exposure to maltreatment, which is not what is described. Equifinality refers to multiple pathways to one outcome. Purely environmental causation ignores the genetic moderation. Meta-analyses largely support the MAOA finding, unlike some other candidate GxE results.",
@@ -342,12 +297,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A key change in DSM-5 compared with DSM-IV was the introduction of:",
-    options: [
-      "The multiaxial system",
-      "Global Assessment of Functioning (GAF) on Axis V",
-      "The NOS ('not otherwise specified') category",
-      "'Other specified' and 'unspecified' categories, and greater use of dimensional severity ratings",
-    ],
+    options: ["A multiaxial system with five separate diagnostic axes", "The Global Assessment of Functioning (GAF) scale on Axis V", "The 'not otherwise specified' (NOS) residual categories", "'Other specified' and 'unspecified' categories, with dimensional ratings"],
     answer: 3,
     explanation:
       "DSM-5 replaced NOS with 'other specified' (the clinician states the reason, e.g., 'short-duration hypomania') and 'unspecified' (the reason is not stated), and added dimensional severity measures and cross-cutting symptom measures. The multiaxial system and GAF existed in DSM-III to DSM-IV and were removed in DSM-5. NOS categories were already in DSM-IV.",
@@ -360,12 +310,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Thomas Szasz's critique of the concept of mental illness argued that:",
-    options: [
-      "Mental illness is entirely genetic",
-      "Psychiatric diagnosis is perfectly reliable",
-      "Only psychosis is real",
-      "Most so-called mental illnesses are 'problems in living' rather than diseases, and psychiatric labels can serve social control",
-    ],
+    options: ["Mental illness is entirely genetic and should be treated medically", "Psychiatric diagnosis is perfectly reliable once explicit criteria are used", "Only psychosis is real illness; neurotic problems are imagined or invented", "Most 'mental illnesses' are problems in living, and labels can serve social control"],
     answer: 3,
     explanation:
       "Szasz argued that disease requires demonstrable bodily pathology, so most mental 'illnesses' are problems in living, and that psychiatric labelling and coercion can serve social control. This fed the anti-psychiatry movement (with Laing and Goffman). He did not argue for genetic causation or perfect reliability, and he did not exempt psychosis.",
@@ -395,12 +340,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "The 'jumping to conclusions' (JTC) reasoning bias in delusions is typically demonstrated using:",
-    options: [
-      "The Wisconsin Card Sorting Test",
-      "The Stroop task",
-      "The Iowa Gambling Task",
-      "The 'beads task', in which patients request fewer beads before deciding which jar they come from",
-    ],
+    options: ["The Wisconsin Card Sorting Test of set-shifting", "The Stroop colour-word interference task", "The Iowa Gambling Task of risky choice", "The beads task, deciding which jar beads come from"],
     answer: 3,
     explanation:
       "In the beads task, deluded patients make decisions after seeing only one or two beads, showing a data-gathering bias that is targeted in metacognitive training (Moritz). The WCST tests set-shifting and executive function. The Stroop tests response inhibition and selective attention. The Iowa Gambling Task tests affective decision-making (ventromedial PFC).",

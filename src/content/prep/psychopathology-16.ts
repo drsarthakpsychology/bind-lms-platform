@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "How does DSM-5-TR handle suicidal behaviour and non-suicidal self-injury (NSSI)?",
-    options: [
-      "It adds codes for current and past suicidal behaviour and NSSI in 'Other Conditions That May Be a Focus of Clinical Attention', while suicidal behaviour disorder and NSSI disorder remain in Section III",
-      "Both are full diagnoses in the depressive disorders chapter",
-      "Both are criteria of borderline personality disorder only",
-      "They are not mentioned",
-    ],
+    options: ["It adds codes for suicidal behaviour and NSSI, while the proposed disorders stay in Section III", "Suicidal behaviour disorder and NSSI disorder are full diagnoses in the depressive chapter", "Both are recorded only as criteria of borderline personality disorder", "Neither is mentioned anywhere in DSM-5-TR or its coding sections"],
     answer: 0,
     explanation:
       "DSM-5-TR introduced symptom codes (e.g., 'current suicidal behaviour', 'history of suicidal behaviour', 'non-suicidal self-injury, current/history') so they can be recorded regardless of diagnosis. The proposed disorders remain in Conditions for Further Study. They are not full depressive diagnoses. Suicidal behaviour and self-harm are a BPD criterion but occur far more widely.",
@@ -92,12 +87,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 17-year-old girl cuts her forearms superficially about twice a week to 'feel relief' when overwhelmed. She denies wanting to die. Over the past year, she has cut on more than 40 days. She has no other features of BPD except emotional reactivity. Her parents ask whether she is 'suicidal'.",
     stem: "Which statement is most accurate?",
-    options: [
-      "This fits non-suicidal self-injury (NSSI); although she denies suicidal intent, NSSI is a strong risk factor for later suicide attempts and needs ongoing assessment and treatment (e.g., DBT-A)",
-      "Because she denies suicidal intent, there is no future suicide risk",
-      "This is suicidal behaviour disorder",
-      "NSSI requires a diagnosis of borderline personality disorder",
-    ],
+    options: ["NSSI; although not suicidal, it raises later suicide risk and needs care", "Since she denies suicidal intent, there is no future suicide risk at all", "Suicidal behaviour disorder, current, because she repeatedly self-injures", "NSSI, which by definition requires a diagnosis of borderline personality disorder"],
     answer: 0,
     explanation:
       "The proposed DSM-5-TR NSSI criteria include self-injury on 5 or more days in the past year without suicidal intent, done to relieve negative feelings, resolve interpersonal difficulty or induce a positive state. NSSI predicts later suicide attempts, so 'no risk' is wrong. Suicidal behaviour disorder requires a suicide attempt. NSSI occurs across many conditions and does not require BPD. DBT for adolescents has the best evidence for repeated self-harm.",
@@ -168,12 +158,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Antidepressant discontinuation syndrome in DSM-5-TR is characterised by:",
-    options: [
-      "Symptoms (e.g., dizziness, 'electric shock' sensations, nausea, insomnia, anxiety) beginning within 2 to 4 days of abrupt stopping or marked reduction of an antidepressant taken for at least 1 month",
-      "Symptoms beginning only after 6 months",
-      "A return of the original depressive symptoms after several weeks",
-      "Craving and drug-seeking behaviour",
-    ],
+    options: ["Dizziness, 'electric shocks', nausea and anxiety within 2 to 4 days of stopping", "Similar symptoms that begin only 6 months or more after stopping", "A gradual return of the original depressive symptoms after several weeks", "Craving for the antidepressant and drug-seeking behaviour"],
     answer: 0,
     explanation:
       "Discontinuation symptoms (FINISH: flu-like, insomnia, nausea, imbalance, sensory disturbances such as 'brain zaps', hyperarousal) begin within days of stopping, are commonest with short half-life agents (paroxetine, venlafaxine), and resolve on reinstatement. Relapse appears later and gradually, with the original symptom picture. Craving and drug-seeking are not features, which helps distinguish discontinuation from addiction.",
@@ -189,12 +174,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 34-year-old woman on sertraline 150 mg is started on tramadol and linezolid in hospital. Within 12 hours she develops agitation, sweating, tremor, inducible clonus in the lower limbs, hyperreflexia, diarrhoea and a temperature of 38.4 °C. She has not received antipsychotics.",
     stem: "Which diagnosis and management are correct?",
-    options: [
-      "Serotonin syndrome (Hunter criteria met by inducible clonus with agitation and diaphoresis); stop serotonergic drugs, give supportive care and benzodiazepines, and cyproheptadine if moderate to severe",
-      "Neuroleptic malignant syndrome; give dantrolene",
-      "Anticholinergic toxicity; give physostigmine",
-      "Panic attack; reassure",
-    ],
+    options: ["Serotonin syndrome; stop serotonergic drugs, give supportive care", "Neuroleptic malignant syndrome; give dantrolene and bromocriptine", "Anticholinergic toxicity; give physostigmine under cardiac monitoring", "A panic attack; reassure her and observe on the ward overnight"],
     answer: 0,
     explanation:
       "Rapid onset after adding serotonergic agents (tramadol, linezolid, an MAO inhibitor antibiotic) to an SSRI, with neuromuscular hyperactivity (clonus, hyperreflexia), autonomic signs and altered mental state, indicates serotonin syndrome; inducible clonus with agitation or diaphoresis meets Hunter criteria. NMS evolves over days with lead-pipe rigidity and bradyreflexia after dopamine blockade. Anticholinergic toxicity causes dry, hot skin and mydriasis without clonus. Panic does not cause clonus or fever.",
@@ -289,12 +269,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In DSM-5-TR, 'uncomplicated bereavement', 'relational problems' and 'nonadherence to medical treatment' are classified as:",
-    options: [
-      "Other conditions that may be a focus of clinical attention (Z codes), not mental disorders",
-      "Mental disorders in the trauma chapter",
-      "Personality disorders",
-      "Section III conditions for further study",
-    ],
+    options: ["Other conditions that may be a focus of clinical attention (Z codes)", "Mental disorders listed in the trauma- and stressor-related chapter", "Personality disorders in the cluster C group", "Section III conditions proposed for further study"],
     answer: 0,
     explanation:
       "These are 'other conditions that may be a focus of clinical attention', using ICD-10-CM Z codes (previously V codes). They allow clinicians to record relevant issues (e.g., parent-child relational problems, academic problems, housing problems) without implying a mental disorder. They are not trauma-chapter diagnoses, personality disorders or Section III proposals.",
@@ -328,12 +303,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 9-year-old boy wakes about 90 minutes after falling asleep, screams, sits up with a terrified expression, sweats and has a racing pulse. He is hard to wake and confused when roused, cannot describe a dream, and has no memory of the event next morning. Episodes occur about twice a month.",
     stem: "Which diagnosis and advice are most appropriate?",
-    options: [
-      "NREM sleep arousal disorder, sleep terror type; reassure, ensure safety and regular sleep, and consider scheduled awakenings if frequent",
-      "Nightmare disorder; imagery rehearsal therapy",
-      "Nocturnal panic attacks; start an SSRI",
-      "REM sleep behaviour disorder; start clonazepam",
-    ],
+    options: ["Sleep terrors (NREM arousal disorder); reassure, keep sleep regular", "Nightmare disorder; start imagery rehearsal therapy each night", "Nocturnal panic attacks; start an SSRI and review in 6 weeks", "REM sleep behaviour disorder; start clonazepam at bedtime"],
     answer: 0,
     explanation:
       "Sleep terrors arise from N3 sleep in the first third of the night, with intense autonomic arousal, unresponsiveness, confusion, no dream recall and amnesia; they are common in childhood and usually outgrown. Management includes reassurance, safety, avoiding sleep deprivation and scheduled awakenings. Nightmares occur in REM with vivid recall and quick orientation. Nocturnal panic involves full awakening and awareness. RBD involves dream enactment, mainly in older men.",
@@ -453,12 +423,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 48-year-old former boxer has progressive memory decline, irritability and impulsivity after years of repeated head impacts. Which DSM-5-TR neurocognitive disorder subtype is most relevant?",
-    options: [
-      "NCD due to traumatic brain injury (with chronic traumatic encephalopathy as a related neuropathology)",
-      "NCD due to prion disease",
-      "NCD due to HIV infection",
-      "Substance/medication-induced NCD",
-    ],
+    options: ["NCD due to traumatic brain injury", "NCD due to prion disease", "NCD due to HIV infection", "Substance/medication-induced NCD"],
     answer: 0,
     explanation:
       "DSM-5-TR includes NCD due to traumatic brain injury, which requires evidence of TBI (loss of consciousness, post-traumatic amnesia, disorientation or neurological signs) with cognitive impairment immediately after injury or after recovery of consciousness. Chronic traumatic encephalopathy is a related neuropathological entity after repeated head impacts. Prion, HIV and substance-induced NCDs are separate subtypes with different causes.",

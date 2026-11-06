@@ -130,12 +130,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about DSM-5-TR separation anxiety disorder is correct?",
-    options: [
-      "Onset must be before age 18",
-      "It requires at least 6 months of symptoms in children",
-      "It is classified under neurodevelopmental disorders",
-      "It can be diagnosed in adults, with symptoms typically lasting 6 months or more",
-    ],
+    options: ["Onset of symptoms must occur before the age of 18 years", "Symptoms must last at least 6 months in children and adolescents", "It is classified among the neurodevelopmental disorders", "It can be diagnosed in adults, usually with 6 months or more of symptoms"],
     answer: 3,
     explanation:
       "DSM-5 moved separation anxiety disorder to the anxiety disorders chapter and removed the onset-before-18 requirement, so adults can be diagnosed. Duration is at least 4 weeks in children and adolescents and typically 6 months or more in adults. It was formerly under 'disorders usually first diagnosed in infancy, childhood or adolescence', not neurodevelopmental disorders.",
@@ -208,12 +203,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Borkovec's avoidance model of worry proposes that worry in GAD is maintained because:",
-    options: [
-      "Worry heightens physiological arousal, which is rewarding",
-      "Worry is predominantly in vivid imagery, increasing emotional processing",
-      "Worry is a form of metacognitive belief that thoughts are dangerous",
-      "Verbal-linguistic worry suppresses somatic and emotional arousal to threatening imagery, negatively reinforcing worry and blocking emotional processing",
-    ],
+    options: ["Worry raises physiological arousal, which is experienced as rewarding", "Worry is mostly vivid imagery, which deepens emotional processing", "Worry is driven by beliefs that thoughts themselves are dangerous", "Verbal worry dampens arousal to feared images, so it is negatively reinforced"],
     answer: 3,
     explanation:
       "Borkovec showed that worry is mainly verbal-linguistic thought rather than imagery, and it dampens autonomic response to feared images. This brief relief negatively reinforces worry and prevents full emotional processing and habituation. Arousal is reduced, not raised. Imagery-based processing is what worry avoids. Beliefs about the dangerousness of worry are Wells's metacognitive model (Type 2 worry).",
@@ -228,12 +218,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 42-year-old man reports episodes of sudden pounding headache, palpitations and profuse sweating lasting 10 to 20 minutes, several times a week, sometimes at rest. During one episode his BP was 220/120 mmHg. Between episodes he worries about having more. He has lost 4 kg. There is no avoidance.",
     stem: "Before diagnosing panic disorder, the most important step is:",
-    options: [
-      "Begin CBT with interoceptive exposure",
-      "Start an SSRI and review in 6 weeks",
-      "Administer the Panic Disorder Severity Scale",
-      "Test plasma free metanephrines or 24-hour urinary catecholamines to exclude phaeochromocytoma",
-    ],
+    options: ["Begin CBT with interoceptive exposure to the feared sensations", "Start an SSRI and review the response after 6 weeks", "Rate severity with the Panic Disorder Severity Scale first", "Test metanephrines or urinary catecholamines for phaeochromocytoma"],
     answer: 3,
     explanation:
       "Paroxysmal hypertension with headache, sweating and palpitations (the classic triad) plus weight loss suggests phaeochromocytoma. DSM-5-TR Criterion C requires that attacks are not attributable to another medical condition, so this must be excluded first. CBT, SSRIs and rating scales are appropriate only after a medical cause is ruled out; delay could be dangerous.",
@@ -246,12 +231,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "As a group, anxiety disorders differ from most other disorders in that:",
-    options: [
-      "Their median age of onset is in the 30s",
-      "They are more common in men",
-      "They are rare in childhood",
-      "They are the most prevalent class of mental disorders, with onset often in childhood or adolescence",
-    ],
+    options: ["Their median age of onset is in the 30s, later than mood disorders", "They are more common in men than in women in most surveys", "They are rare in childhood and usually begin after age 25", "They are the most prevalent class, and often begin in childhood or adolescence"],
     answer: 3,
     explanation:
       "Epidemiological surveys (e.g., NCS-R, WHO World Mental Health) find anxiety disorders the most prevalent class, with lifetime prevalence near 30%, early median onset (around 11 years, earliest for specific phobia and separation anxiety) and roughly twofold female preponderance. So later onset, male excess and rarity in childhood are all wrong.",
@@ -280,12 +260,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 26-year-old woman avoids restaurants, buses and weddings. She explains that she fears vomiting in public. She has never vomited in the last 10 years, monitors her stomach sensations constantly, avoids foods she believes 'might' cause nausea, and carries anti-emetics. She is not concerned about her weight or shape and eats an adequate though restricted range of 'safe' foods. Weight is normal.",
     stem: "Which DSM-5-TR diagnosis is most accurate?",
-    options: [
-      "Agoraphobia",
-      "Avoidant/restrictive food intake disorder",
-      "Social anxiety disorder",
-      "Specific phobia, other type (fear of vomiting / emetophobia)",
-    ],
+    options: ["Agoraphobia, without panic disorder", "Avoidant/restrictive food intake disorder", "Social anxiety disorder, generalised", "Specific phobia, other type (emetophobia)"],
     answer: 3,
     explanation:
       "Fear of vomiting with avoidance of situations that might provoke it is classified as specific phobia, 'other' type (DSM-5-TR gives choking and vomiting as examples). Agoraphobia concerns escape being difficult or help unavailable in the event of panic-like symptoms; the focus here is the vomiting itself. ARFID would require significant nutritional, weight or psychosocial consequences of food avoidance. Social anxiety centres on scrutiny and negative evaluation, which is not her primary fear.",
@@ -328,12 +303,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In the Clark and Wells cognitive model of social anxiety disorder, which process is held to be most important in preventing disconfirmation of negative beliefs during social situations?",
-    options: [
-      "Overestimation of the probability of physical catastrophe",
-      "Thought-action fusion",
-      "Attentional bias to external threat words",
-      "A shift to self-focused attention generating an observer-perspective self-image, combined with safety behaviours",
-    ],
+    options: ["Overestimating the probability of a physical catastrophe in public", "Thought-action fusion about harming others in social situations", "An attentional bias towards external threat words and angry faces", "Self-focused attention with an observer-perspective image"],
     answer: 3,
     explanation:
       "Clark and Wells proposed that in feared social situations attention shifts inward; the person builds a distorted 'observer perspective' image of how they look, uses safety behaviours (avoiding eye contact, rehearsing sentences) that can make them seem odd, and fails to notice disconfirming social cues. Post-event processing adds to this. Physical catastrophe misinterpretation is the panic model. Thought-action fusion belongs to OCD. External threat bias is a broader attentional finding, but the model specifically emphasises internal focus.",
@@ -430,12 +400,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 48-year-old executive was prescribed alprazolam 1.5 mg/day for 2 years. He stopped abruptly 3 days ago. He now has severe anxiety, tremor, insomnia, perceptual hypersensitivity to light and sound, depersonalisation and muscle twitching. Pulse 112/min. He is fully oriented.",
     stem: "Which is the most appropriate formulation and plan?",
-    options: [
-      "Relapse of generalised anxiety disorder; restart alprazolam at the same dose indefinitely",
-      "First-episode panic disorder; start an SSRI only",
-      "Hyperthyroidism; check TFTs and treat with carbimazole",
-      "Sedative, hypnotic or anxiolytic withdrawal; risk of seizures; switch to a long-acting benzodiazepine (e.g., diazepam) and taper slowly",
-    ],
+    options: ["GAD relapse; restart alprazolam at the same dose indefinitely", "First-episode panic disorder; start an SSRI only", "Hyperthyroidism; check TFTs and start carbimazole", "Benzodiazepine withdrawal; switch to diazepam and taper slowly"],
     answer: 3,
     explanation:
       "Abrupt cessation of a short-acting, high-potency benzodiazepine produces withdrawal within 1 to 3 days: rebound anxiety, insomnia, tremor, perceptual disturbance, depersonalisation, tachycardia and risk of seizures and delirium. Standard management is conversion to an equivalent dose of a long-acting agent such as diazepam, then gradual taper, with psychological support. Calling it a GAD relapse misses the time-locked onset after stopping. An SSRI alone does not prevent seizures. Hyperthyroidism is worth excluding but is not the most likely explanation.",

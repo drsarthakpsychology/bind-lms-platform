@@ -112,12 +112,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Linehan's biosocial theory proposes that borderline personality disorder arises from:",
-    options: [
-      "Excessive parental praise leading to grandiosity",
-      "Failure of the rapprochement subphase of separation-individuation",
-      "A biological vulnerability to emotional dysregulation transacting with an invalidating environment",
-      "A purely genetic predisposition without environmental input",
-    ],
+    options: ["Excessive parental praise that leads to grandiosity and entitlement", "Failure of the rapprochement subphase of separation-individuation", "Biological emotional vulnerability interacting with an invalidating environment", "A purely genetic predisposition, with little role for the environment"],
     answer: 2,
     explanation:
       "Linehan proposes that heightened emotional sensitivity, reactivity and slow return to baseline interact with an environment that dismisses or punishes emotional expression, so the person never learns to label and regulate emotions. This is the rationale for DBT. Rapprochement failure is Mahler's and Masterson's psychodynamic account. Excessive praise relates to narcissism theories. Twin studies show moderate heritability (about 40 to 50%), not purely genetic causation.",
@@ -168,12 +163,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about the course of borderline personality disorder is best supported by longitudinal studies (e.g., McLean Study of Adult Development, CLPS)?",
-    options: [
-      "Most patients remain fully symptomatic for life",
-      "Remission of diagnostic criteria is uncommon within 10 years",
-      "Most patients achieve symptomatic remission over 10 years, though recovery of good psychosocial functioning is less frequent",
-      "Impulsive symptoms are the most persistent features",
-    ],
+    options: ["Most patients stay fully symptomatic throughout their adult life", "Remission of diagnostic criteria is uncommon within the first 10 years", "Most remit symptomatically by 10 years; full functional recovery is rarer", "Impulsive symptoms such as self-harm are the most persistent features"],
     answer: 2,
     explanation:
       "Zanarini's McLean study found that about 85 to 90% remitted symptomatically over 10 to 16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the last option. This challenges the old view that PD is lifelong and unchangeable.",
@@ -186,12 +176,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The DSM-5-TR general criteria for personality disorder require that the enduring pattern is manifested in at least two of which areas?",
-    options: [
-      "Memory, attention, language and perception",
-      "Mood, sleep, appetite and energy",
-      "Cognition, affectivity, interpersonal functioning and impulse control",
-      "Occupation, education, housing and finances",
-    ],
+    options: ["Memory, attention, language and visual perception", "Mood, sleep, appetite and daily energy level", "Cognition, affectivity, interpersonal functioning, impulse control", "Occupation, education, housing and personal finances"],
     answer: 2,
     explanation:
       "General Criterion A requires a pattern of inner experience and behaviour that deviates markedly from cultural expectations in at least two of: cognition (ways of perceiving self, others and events), affectivity, interpersonal functioning and impulse control. It must be inflexible, pervasive, stable, and traceable to adolescence or early adulthood. The other options list cognitive domains, depressive symptoms or social circumstances.",
@@ -303,12 +288,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 45-year-old man with no previous psychiatric history becomes, over 1 year, uncharacteristically impulsive, crude and socially inappropriate. He makes sexual jokes at work, has lost interest in his family, eats compulsively and has been caught shoplifting. His wife says he was always a reserved and responsible man.",
     stem: "Which conclusion is most appropriate?",
-    options: [
-      "Late-onset antisocial personality disorder",
-      "Histrionic personality disorder",
-      "Narcissistic personality disorder",
-      "Personality change due to another medical condition should be suspected; investigate for behavioural-variant frontotemporal NCD",
-    ],
+    options: ["Late-onset antisocial personality disorder", "Histrionic personality disorder", "Narcissistic personality disorder", "Possible bvFTD: investigate for an organic cause"],
     answer: 3,
     explanation:
       "Personality disorders begin by adolescence or early adulthood. A marked change from a previously stable personality in mid-life, with disinhibition, apathy, loss of empathy and hyperorality, strongly suggests bvFTD or another frontal lesion, requiring neurological work-up (MRI, neuropsychology). ASPD cannot begin in mid-life and requires conduct disorder before 15. Histrionic and narcissistic PD are lifelong patterns.",

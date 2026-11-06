@@ -31,12 +31,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In motivational interviewing, the core skills are summarised as OARS. What does OARS stand for?",
-    options: [
-      "Observe, Assess, Refer, Support",
-      "Open questions, Affirmations, Reflections, Summaries",
-      "Orientation, Agenda, Review, Summary",
-      "Options, Advice, Reassurance, Solutions",
-    ],
+    options: ["Observe, Assess, Refer, Support", "Open questions, Affirmations, Reflections, Summaries", "Orientation, Agenda, Review, Summary", "Options, Advice, Reassurance, Solutions"],
     answer: 1,
     explanation:
       "OARS stands for open questions, affirmations (recognising strengths and efforts), reflective listening and summaries. Reflections are the main tool, and skilled MI practitioners use more reflections than questions. The other options are invented or describe other kinds of sessions.",
@@ -94,12 +89,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A man with liver damage says, 'I know I drink too much, but drinking is the only thing that helps me sleep.' The doctor replies, 'You have to stop now. If you don't, you will die. Here is a list of reasons why you must quit.' The man becomes defensive and says, 'You don't understand my life.'",
     stem: "In MI terms, what happened?",
-    options: [
-      "The doctor used a good double-sided reflection",
-      "The doctor showed the 'righting reflex', arguing for change, which provoked sustain talk and discord",
-      "The patient showed commitment language",
-      "The doctor used evocation correctly",
-    ],
+    options: ["The doctor used a good double-sided reflection of both views", "The doctor's righting reflex provoked sustain talk and discord", "The patient showed clear commitment language about stopping", "The doctor used evocation correctly to draw out reasons"],
     answer: 1,
     explanation:
       "The righting reflex is the helper's urge to fix the problem by arguing for change. When the helper argues for change, the ambivalent person tends to argue the other side (sustain talk) and the relationship becomes strained (discord). A double-sided reflection would have been: 'Drinking helps you sleep, and at the same time you can see it is damaging your health.' The patient's statement is sustain talk, not commitment. Evocation means drawing out the client's own reasons.",
@@ -134,12 +124,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A client says, 'Everyone keeps nagging me about my smoking. It's my life.' Which response is an 'amplified reflection'?",
-    options: [
-      "'You must stop smoking for your family.'",
-      "'So there's absolutely no reason at all for you to think about your smoking.'",
-      "'Why do you smoke?'",
-      "'How many cigarettes do you smoke a day?'",
-    ],
+    options: ["'You must stop smoking for your family's sake.'", "'So there's no reason at all to think about smoking.'", "'Why do you keep smoking when you know it's harmful?'", "'How many cigarettes do you smoke each day?'"],
     answer: 1,
     explanation:
       "An amplified reflection states the client's position in a slightly stronger form, without sarcasm, which often prompts the client to pull back and voice the other side ('Well, I do worry about my cough sometimes'). Telling the client what to do is the righting reflex. 'Why' questions can sound accusing. A factual question gathers information but does not reflect.",
@@ -189,12 +174,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Brief interventions for hazardous drinking in primary care often follow the FRAMES model. Which element is correctly expanded?",
-    options: [
-      "F = Fear arousal",
-      "R = Responsibility for change rests with the person",
-      "A = Avoid giving any advice",
-      "S = Strict confrontation",
-    ],
+    options: ["F = Fear arousal about the health risks of drinking", "R = Responsibility for change rests with the person", "A = Avoid giving any direct advice about drinking", "S = Strict confrontation of the person's denial"],
     answer: 1,
     explanation:
       "FRAMES stands for Feedback (personal risk), Responsibility (the choice is the person's), Advice (clear advice to change), Menu of options, Empathy and Self-efficacy. It is not based on fear arousal or confrontation, and giving clear advice is part of it. Brief interventions using FRAMES reduce drinking in primary care.",
@@ -228,12 +208,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In MI, information is often shared using 'elicit-provide-elicit'. This means:",
-    options: [
-      "Give a lecture, then a test, then another lecture",
-      "Ask what the person already knows or wants to know, offer information with permission, then ask what they make of it",
-      "Elicit symptoms, provide a diagnosis, elicit consent for medication",
-      "Provide a leaflet and end the session",
-    ],
+    options: ["Give a lecture, then a quiz, then another lecture", "Ask what they know, give information with permission, then ask their view", "Elicit symptoms, provide a diagnosis, elicit consent for medicine", "Provide a leaflet about the risks and end the session"],
     answer: 1,
     explanation:
       "Elicit-provide-elicit respects autonomy: first ask what the person knows and whether they want information, then give it briefly and neutrally, then ask for their reaction ('What do you make of that?'). This avoids lecturing and keeps the person active. The other options either lecture or skip the person's own view.",
@@ -303,12 +278,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Tuckman's model of group development lists stages in which order?",
-    options: [
-      "Norming, forming, storming, performing",
-      "Forming, storming, norming, performing (and later adjourning)",
-      "Storming, forming, performing, norming",
-      "Performing, norming, storming, forming",
-    ],
+    options: ["Norming, forming, storming, performing", "Forming, storming, norming, performing", "Storming, forming, performing, norming", "Performing, norming, storming, forming"],
     answer: 1,
     explanation:
       "Tuckman described forming (orientation, dependence on the leader), storming (conflict and challenges to the leader), norming (cohesion and agreed norms), performing (productive work), and later added adjourning (ending). Yalom's clinical stages are similar: orientation, conflict, then cohesiveness. The other orders are wrong.",
@@ -381,12 +351,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In the fourth session of an outpatient group, one member, Arjun, talks for most of the session about his work problems. Others look at the floor; two members check their phones. Arjun says, 'Nobody ever listens to me, at work or anywhere.'",
     stem: "What is the most helpful intervention in an interactional group?",
-    options: [
-      "Ask Arjun to continue his story in detail",
-      "Turn to the here and now: 'Arjun, you said nobody listens. I notice some people seem to have drifted off. Could we look at what is happening between us right now?'",
-      "End the session early",
-      "Give Arjun advice about his boss",
-    ],
+    options: ["Ask Arjun to continue his story in more detail for the group", "Point to the here and now: some people seem to have drifted off", "End the session early to avoid an awkward moment for Arjun", "Give Arjun practical advice about how to handle his boss"],
     answer: 1,
     explanation:
       "Arjun's complaint is being re-enacted in the room, which is the social microcosm at work. Bringing attention to the here and now, with care, lets members give honest feedback (perhaps that they disengage when he talks at length) and lets Arjun learn something he can use outside. Letting him continue repeats the pattern, ending early avoids it, and advice-giving misses the interpersonal learning.",
@@ -399,12 +364,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Alcoholics Anonymous is an example of:",
-    options: [
-      "A psychoanalytic group",
-      "A peer-led mutual help (self-help) group based on twelve steps",
-      "A token economy",
-      "A pharmacological treatment",
-    ],
+    options: ["A psychoanalytic group led by a trained analyst", "A peer-led mutual help group based on twelve steps", "A token economy run in a residential setting", "A pharmacological treatment programme"],
     answer: 1,
     explanation:
       "AA is a peer-led fellowship using the twelve steps, sponsorship and regular meetings, with no professional leader. Twelve-step facilitation therapy, which encourages involvement in AA, did as well as CBT in Project MATCH and appears to improve abstinence rates over time. It is not psychoanalytic, operant or pharmacological.",
@@ -418,12 +378,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "S.H. Foulkes's group analysis emphasises:",
-    options: [
-      "The group matrix: the shared web of communication and relationships through which individual change happens, with the conductor taking a facilitating role",
-      "Directive behavioural assignments for each member",
-      "Hypnosis of the whole group",
-      "Strict leader interpretation of each individual in turn, ignoring the group",
-    ],
+    options: ["The group matrix: the shared web of communication, with a 'conductor'", "Directive behavioural assignments set for each member", "Hypnosis of the whole group at the start of each session", "Strict leader interpretation of each person in turn"],
     answer: 0,
     explanation:
       "Foulkes, who founded group analysis in Britain, saw the group as a whole as the agent of therapy. The 'matrix' is the network of communication in which individual problems are located and worked through, and the therapist is a 'conductor' rather than a director. Behavioural assignments, hypnosis and individual-only interpretation are not features of group analysis.",
@@ -436,12 +391,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about the evidence for group psychotherapy is most accurate?",
-    options: [
-      "Group therapy is always less effective than individual therapy",
-      "Group therapy has no randomised trials",
-      "For many conditions, including depression and anxiety disorders, group formats of evidence-based therapies produce outcomes broadly similar to individual formats, at lower cost per patient",
-      "Group therapy is harmful for depression",
-    ],
+    options: ["Group therapy is always less effective than individual therapy", "Group therapy has never been tested in randomised trials", "Group formats often match individual formats, at lower cost", "Group therapy is harmful for people with depression"],
     answer: 2,
     explanation:
       "Meta-analyses comparing group and individual versions of the same treatments (for example, CBT for depression, social anxiety and panic) find broadly similar outcomes, with some exceptions where individual therapy does slightly better (for example, social anxiety in some trials). Groups are cost-efficient, which matters in low-resource settings. Blanket claims of inferiority, no evidence or harm are wrong.",
@@ -456,12 +406,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 24-year-old man with schizophrenia stopped his antipsychotic because of weight gain and sedation. He says, 'The pills make me fat and sleepy, but when I stop, my voices come back and I end up in hospital.' The psychiatrist has 15 minutes.",
     stem: "Which response best fits MI and shared decision-making?",
-    options: [
-      "'You are non-adherent and lack insight; you must take the depot.'",
-      "'On one hand the tablets make you put on weight and feel sleepy, and on the other you've noticed they keep the voices away and keep you out of hospital. What would you like to do about that?'",
-      "'Let's not talk about medication today.'",
-      "'Everybody on this drug gains weight, so just accept it.'",
-    ],
+    options: ["'You are not taking your tablets and you lack insight, so you need the depot.'", "'The tablets cause weight gain and sleepiness, yet keep the voices away. What now?'", "'Let's leave the subject of medication for another day when you feel better.'", "'Everyone on this drug gains weight, so it's best to just accept it and carry on.'"],
     answer: 1,
     explanation:
       "A double-sided reflection captures both sides of his ambivalence and ends with an open question that hands the choice back to him. This often leads to change talk and opens a joint discussion of options, such as switching to a drug with fewer metabolic effects or adding weight management. Labelling and ordering him tends to produce discord. Avoiding the topic misses the key issue. Dismissing his concern ignores a real and treatable side-effect.",

@@ -97,7 +97,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which sign suggests opioid withdrawal rather than opioid intoxication?",
-    options: ["Pinpoint pupils", "Pupillary dilation, lacrimation, rhinorrhoea and piloerection", "Respiratory depression", "Drowsiness and slurred speech"],
+    options: ["Pinpoint pupils with reduced response to light", "Dilated pupils, lacrimation, rhinorrhoea and piloerection", "Slow, shallow breathing and respiratory depression", "Drowsiness, slurred speech and impaired attention"],
     answer: 1,
     explanation:
       "Opioid withdrawal produces a flu-like picture: dysphoria, nausea, muscle aches, lacrimation, rhinorrhoea, mydriasis, piloerection ('cold turkey'), sweating, diarrhoea, yawning, fever and insomnia. Pinpoint pupils, respiratory depression and drowsiness are signs of intoxication, and naloxone reverses them.",
@@ -110,12 +110,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In DSM-5-TR, gambling disorder is classified:",
-    options: [
-      "Under impulse-control disorders",
-      "In the substance-related and addictive disorders chapter, as a non-substance-related disorder",
-      "In Section III as a condition for further study",
-      "Under obsessive-compulsive and related disorders",
-    ],
+    options: ["Under impulse-control disorders, alongside kleptomania", "In the addictions chapter, as a non-substance-related disorder", "In Section III, as a condition for further study", "Under obsessive-compulsive and related disorders"],
     answer: 1,
     explanation:
       "DSM-5 moved pathological gambling, renamed gambling disorder, from impulse-control disorders into the addictions chapter, because it activates reward systems in similar ways and has similar phenomenology (tolerance, chasing losses, withdrawal-like restlessness). It needs four of nine criteria over 12 months. Internet gaming disorder is the one in Section III. It is not an OCRD.",
@@ -150,12 +145,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "According to the National Mental Health Survey of India (2015 to 2016), which disorder group had the highest current prevalence among adults?",
-    options: [
-      "Depressive disorders",
-      "Substance use disorders (including tobacco use disorder)",
-      "Neurotic and stress-related disorders",
-      "Schizophrenia and other psychotic disorders",
-    ],
+    options: ["Depressive disorders", "Substance use disorders, including tobacco", "Neurotic and stress-related disorders", "Schizophrenia and other psychoses"],
     answer: 1,
     explanation:
       "NMHS found substance use disorders, including moderate-to-severe tobacco use disorder, at about 22.4% of adults, far exceeding other groups; alcohol use disorder alone was around 4.6%, mostly in men. Current depression was about 2.7%, neurotic and stress-related disorders about 3.5%, and psychotic disorders well under 1%. Men had higher overall morbidity, driven largely by substance use.",
@@ -168,12 +158,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The incentive-sensitisation theory of addiction (Robinson and Berridge) proposes that repeated drug use:",
-    options: [
-      "Increases the pleasure ('liking') produced by the drug",
-      "Sensitises mesolimbic dopamine systems that attribute incentive salience, so 'wanting' grows even as 'liking' stays the same or declines",
-      "Causes addiction only through avoidance of withdrawal",
-      "Reduces cue reactivity over time",
-    ],
+    options: ["Increases the pleasure ('liking') that the drug produces over time", "Sensitises dopamine-based 'wanting', even as 'liking' stays flat or falls", "Leads to addiction only through the avoidance of withdrawal symptoms", "Reduces reactivity to drug-related cues with each new exposure"],
     answer: 1,
     explanation:
       "Robinson and Berridge distinguish 'wanting' (incentive salience, dopamine-dependent) from 'liking' (hedonic impact, opioid and other hotspots). Sensitised wanting, triggered especially by cues, explains compulsive craving even when pleasure has declined. Increased liking contradicts the model. Withdrawal avoidance is the opponent-process or negative reinforcement view (Koob). Cue reactivity increases rather than decreases.",
@@ -188,12 +173,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 30-year-old man with 10 years of daily heavy drinking presents with 2 weeks of hearing derogatory voices talking about him in the third person, with fear and suspiciousness, in clear consciousness, beginning a few days after cutting down his intake. He is oriented, with no tremor or autonomic signs. The voices are still present after 5 weeks of supervised abstinence.",
     stem: "Which statement is most accurate?",
-    options: [
-      "This is uncomplicated alcohol withdrawal; it needs no further assessment",
-      "This began as alcohol-induced psychotic disorder (alcoholic hallucinosis), but persistence beyond about 1 month of abstinence calls for re-evaluation for an independent primary psychotic disorder",
-      "This is delirium tremens because hallucinations are present",
-      "This is Korsakoff syndrome",
-    ],
+    options: ["Uncomplicated alcohol withdrawal that needs no further assessment", "Alcoholic hallucinosis; if it lasts beyond a month, reassess for psychosis", "Delirium tremens, since hallucinations have appeared after stopping", "Korsakoff syndrome caused by long-standing thiamine deficiency"],
     answer: 1,
     explanation:
       "Alcoholic hallucinosis features mainly auditory, often derogatory, hallucinations in clear consciousness during or after reduced drinking, and usually resolves within weeks. DSM-5-TR suggests that symptoms persisting for a substantial period (about 1 month) after withdrawal support an independent disorder, and a minority evolve into schizophrenia-like illness. Uncomplicated withdrawal does not include persistent hallucinations. DTs require disturbed consciousness. Korsakoff syndrome is amnestic, not hallucinatory.",
@@ -219,12 +199,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The core feature of DSM-5-TR delirium is:",
-    options: [
-      "Gradual memory loss over months",
-      "Disturbance in attention and awareness that develops over a short period and tends to fluctuate",
-      "Visual hallucinations with clear consciousness",
-      "Loss of language with preserved attention",
-    ],
+    options: ["Gradual decline in memory over many months, with preserved alertness", "Disturbed attention and awareness, developing quickly and fluctuating", "Visual hallucinations occurring in clear consciousness", "Loss of language function with attention largely preserved"],
     answer: 1,
     explanation:
       "Delirium is defined by a disturbance in attention (directing, focusing, sustaining, shifting) and awareness, developing over hours to days and fluctuating, plus an additional cognitive disturbance, with evidence of a medical, substance or multiple cause. Gradual memory loss suggests major NCD. Hallucinations in clear consciousness suggest a psychotic disorder. Isolated language loss suggests aphasia or primary progressive aphasia.",
@@ -238,12 +213,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 78-year-old woman 2 days after hip surgery is quiet, sleepy, slow to respond and inattentive; nurses describe her as 'no trouble'. Months of the year backwards is impossible for her. Which statement is correct?",
-    options: [
-      "This is depression, as she is withdrawn and slowed",
-      "This is hypoactive delirium, which is common in the elderly, often missed and carries a poor prognosis",
-      "This is normal post-operative fatigue",
-      "This is Alzheimer's disease presenting acutely",
-    ],
+    options: ["Depression, since she is withdrawn, quiet and slowed", "Hypoactive delirium, which is common, often missed and serious", "Normal post-operative fatigue that will settle in days", "Alzheimer's disease presenting suddenly after surgery"],
     answer: 1,
     explanation:
       "Acute inattention with drowsiness and reduced activity after surgery is hypoactive delirium, the most common subtype in older adults, frequently mistaken for depression or fatigue and associated with higher mortality. Depression does not usually cause acute inattention of this degree. Alzheimer's disease is insidious; delirium may unmask it, but an acute change needs a search for causes such as infection, drugs, hypoxia and electrolytes. Tools such as CAM and 4AT help detection.",
@@ -278,12 +248,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "What distinguishes major from mild neurocognitive disorder in DSM-5-TR?",
-    options: [
-      "The number of domains affected",
-      "Whether cognitive deficits interfere with independence in everyday activities",
-      "Whether memory is involved",
-      "Whether the cause is Alzheimer's disease",
-    ],
+    options: ["The number of cognitive domains that are affected", "Whether deficits interfere with independence in daily life", "Whether memory is among the domains that are impaired", "Whether the underlying cause is Alzheimer's disease"],
     answer: 1,
     explanation:
       "In major NCD, significant decline interferes with independence in everyday activities (at least needing help with complex instrumental ADLs such as bills or medication). In mild NCD, modest decline does not prevent independence, though greater effort or compensation may be needed. Testing performance is typically more than 2 SD below norms for major and 1 to 2 SD for mild. One domain is enough for either. Memory involvement and aetiology are not the dividing criteria.",
@@ -322,12 +287,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 70-year-old man has had 3 months of poor memory, low mood and slowness. Onset was fairly abrupt after his wife's illness. On testing he often says 'I don't know' without trying, highlights his own failures, and performs inconsistently across similar tasks. He has early waking and weight loss. He has had one previous depressive episode.",
     stem: "Which conclusion and next step are best?",
-    options: [
-      "Major NCD due to Alzheimer's disease; start donepezil",
-      "Cognitive impairment likely secondary to depression ('depressive pseudodementia'); treat the depression and re-test, while keeping in mind the raised later dementia risk",
-      "Malingering; no treatment needed",
-      "Vascular NCD; start aspirin",
-    ],
+    options: ["Major NCD due to Alzheimer's disease; start donepezil now", "Depression-related cognitive impairment; treat depression and re-test", "Malingering for secondary gain; no treatment is needed", "Vascular NCD after a silent stroke; start aspirin"],
     answer: 1,
     explanation:
       "Relatively abrupt onset, prior depression, biological depressive features, 'don't know' answers, highlighting of deficits and inconsistent performance point to depression-related cognitive impairment (Kiloh's 'pseudodementia'). In Alzheimer's, patients tend to make near-miss errors, minimise deficits and show consistent decline. Treating depression often improves cognition, but late-life depression with cognitive impairment does raise later dementia risk. There is no evidence of malingering or vascular events.",
@@ -355,12 +315,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "A 74-year-old with dementia and vivid visual hallucinations of children in the room is given haloperidol 5 mg for agitation and becomes severely rigid, confused and febrile. In retrospect, which diagnosis was most likely, and which lesson does this teach?",
-    options: [
-      "Alzheimer's disease; haloperidol should be given at a higher dose",
-      "Neurocognitive disorder with Lewy bodies; severe neuroleptic sensitivity is a suggestive feature, and typical antipsychotics should be avoided",
-      "Delirium due to urinary infection; haloperidol is first-line at any dose",
-      "Frontotemporal NCD; haloperidol is contraindicated only in FTD",
-    ],
+    options: ["Alzheimer's disease; the haloperidol dose should be increased", "Lewy body disease; neuroleptic sensitivity means avoiding typical antipsychotics", "Delirium from urinary infection; haloperidol is first-line at any dose", "Frontotemporal NCD; haloperidol is contraindicated only in FTD"],
     answer: 1,
     explanation:
       "Well-formed visual hallucinations in dementia suggest Lewy body disease, and a severe reaction to antipsychotics (rigidity, confusion, NMS-like states, sometimes fatal) is a DSM-5-TR suggestive feature. Typical antipsychotics should be avoided; cholinesterase inhibitors (rivastigmine) help hallucinations, and if an antipsychotic is unavoidable, very low-dose quetiapine or clozapine is used. Higher haloperidol doses would be dangerous. Infection must always be checked, but the history points to DLB. Neuroleptic sensitivity is not unique to FTD.",
@@ -419,12 +374,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 40-year-old man has irritability, depression, choreiform movements and executive decline; his father had similar symptoms. Which statement is correct?",
-    options: [
-      "It is autosomal recessive",
-      "It is autosomal dominant with CAG repeat expansion, and anticipation is more marked with paternal transmission",
-      "Memory for remote events is the first and most marked deficit",
-      "It is caused by prion protein",
-    ],
+    options: ["It is autosomal recessive, so both parents must carry the gene", "It is autosomal dominant (CAG repeats), with paternal anticipation", "Loss of memory for remote events is the earliest and main deficit", "It is caused by an abnormal prion protein"],
     answer: 1,
     explanation:
       "Huntington's disease is autosomal dominant, caused by CAG expansion (36 or more repeats) in HTT on chromosome 4. Anticipation occurs, and is greater with paternal transmission (juvenile Westphal variant). It produces a 'subcortical' pattern of psychomotor slowing, executive dysfunction and psychiatric symptoms, with relative preservation of recognition memory early on. Prion disease causes Creutzfeldt-Jakob disease.",

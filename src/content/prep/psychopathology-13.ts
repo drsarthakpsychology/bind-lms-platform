@@ -89,12 +89,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In a village in West Bengal, over 2 weeks, dozens of young men present to the primary health centre in acute panic, holding their genitals, convinced that their penis is shrinking into the abdomen and that they will die. Some have tied strings to prevent retraction. Rumours of 'contaminated food' are spreading. Examinations are normal, and most settle within hours with reassurance.",
     stem: "Which is the best formulation and public mental health response?",
-    options: [
-      "An epidemic of koro, a culturally shaped acute anxiety reaction spread by rumour; reassurance, community education with local leaders, and brief anxiolysis if needed",
-      "An outbreak of delusional disorder requiring antipsychotics for all",
-      "Mass factitious disorder for financial gain",
-      "Infectious encephalitis requiring lumbar puncture in all cases",
-    ],
+    options: ["A koro epidemic spread by rumour; reassure, educate and work with leaders", "An outbreak of delusional disorder needing antipsychotics for all", "Mass factitious disorder aimed at financial compensation", "Infectious encephalitis needing lumbar puncture in every case"],
     answer: 0,
     explanation:
       "Koro epidemics, documented in India, Singapore, Thailand and China, are acute panic-like episodes driven by culturally held beliefs about genital retraction, spreading through rumour and social contagion. Normal examinations, rapid settling and the mass context support this. Management is reassurance, community psychoeducation with trusted local figures and rumour control, with brief anxiolysis if needed. These are not delusional disorders (brief, responsive to reassurance), nor feigning, and organic investigation is warranted only for atypical cases.",
@@ -107,12 +102,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Amok, classically described in Malaysia, is:",
-    options: [
-      "A dissociative episode of brooding followed by an outburst of violent, often homicidal behaviour, with subsequent amnesia",
-      "A startle-induced state of echolalia and echopraxia",
-      "Fear of offending others with one's body odour",
-      "Soul loss after a frightening event",
-    ],
+    options: ["Brooding followed by a sudden, violent and often homicidal outburst, then amnesia", "A startle-induced state with echolalia, echopraxia and automatic obedience", "Fear of offending or embarrassing others through one's body odour or gaze", "Loss of the soul after a frightening event, with weakness and poor appetite"],
     answer: 0,
     explanation:
       "Amok involves a period of brooding followed by a sudden, frenzied violent attack, often ending in exhaustion and amnesia; it is mostly reported in men. A startle-induced state with echo phenomena is latah. Fear of offending through odour is a form of taijin kyofusho (jikoshu-kyofu). Soul loss after fright is susto.",
@@ -125,12 +115,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The core Cultural Formulation Interview (CFI) in DSM-5-TR consists of:",
-    options: [
-      "16 questions covering the cultural definition of the problem; cultural perceptions of cause, context and support; cultural factors affecting self-coping and past help-seeking; and current help-seeking",
-      "A 50-item self-report scale of acculturation",
-      "A structured diagnostic interview replacing SCID",
-      "A projective test for cultural identity",
-    ],
+    options: ["16 questions on the problem, its causes and context, coping, and help-seeking", "A 50-item self-report scale measuring degree of acculturation", "A structured diagnostic interview intended to replace the SCID", "A projective test that assesses cultural identity through pictures"],
     answer: 0,
     explanation:
       "The core CFI is a 16-question semi-structured interview grouped into these four domains, with an informant version and supplementary modules (e.g., explanatory model, level of functioning, spirituality, older adults, immigrants). It complements diagnosis but does not replace structured diagnostic interviews. It is not an acculturation scale or a projective test.",
@@ -162,12 +147,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 30-year-old woman from rural Karnataka is brought by family, who believe she is under 'bhanamati' (sorcery). For 3 months she has had episodes of feeling something entering her body, unusual movements and speaking in another voice, mostly after quarrels; between episodes she has persistent low mood, poor sleep, guilt and passive death wishes. The family has consulted a local healer and a temple. She asks whether 'medicine can work against black magic'.",
     stem: "Which approach best reflects culturally informed practice?",
-    options: [
-      "Explore the explanatory model respectfully (e.g., using the CFI), assess for dissociative and depressive disorders and risk, and negotiate a plan that can work alongside culturally meaningful healing where safe",
-      "Tell the family that sorcery does not exist, and insist that they stop all traditional healing as a condition of treatment",
-      "Diagnose schizophrenia because she believes in sorcery",
-      "Avoid any psychiatric diagnosis because the beliefs are cultural",
-    ],
+    options: ["Explore her explanatory model, assess for depression and dissociation, and plan alongside safe healing", "Tell the family that sorcery does not exist and make stopping healers a condition of care", "Diagnose schizophrenia, since a belief in sorcery is a delusion", "Avoid any psychiatric diagnosis, since the beliefs are cultural"],
     answer: 0,
     explanation:
       "Sorcery attributions (bhanamati in Karnataka and Telangana) are cultural explanations, not delusions, when shared by the community. Good practice elicits the explanatory model, assesses for underlying disorders (here possible dissociative trance and an MDE with suicide risk), and negotiates treatment that respects pluralistic help-seeking while ensuring safety. Dismissing beliefs damages engagement. Culturally shared beliefs do not indicate schizophrenia. Refusing to diagnose risks missing treatable depression and suicide risk.",
@@ -243,12 +223,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In psychiatric epidemiology, 'incidence' refers to:",
-    options: [
-      "The number of new cases arising in a population during a specified period",
-      "The total number of existing cases at one point in time",
-      "The proportion of people who ever had the disorder",
-      "The ratio of male to female cases",
-    ],
+    options: ["The number of new cases arising in a population during a specified period", "The total number of existing cases in a population at one point in time", "The proportion of people in a population who have ever had the disorder", "The ratio of male to female cases among those diagnosed in a period"],
     answer: 0,
     explanation:
       "Incidence is the rate of new cases over a period, which is needed for studying causes. Point prevalence is the proportion of existing cases at one time; lifetime prevalence is the proportion who have ever had the disorder. Prevalence is roughly incidence multiplied by duration, so chronic disorders have high prevalence relative to incidence. The sex ratio is a separate measure.",
@@ -347,12 +322,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The 'treatment gap' in global mental health refers to:",
-    options: [
-      "The proportion of people with a disorder who need treatment but do not receive it",
-      "The delay between drug discovery and approval",
-      "The difference in efficacy between medication and psychotherapy",
-      "The time between referral and appointment in hospitals",
-    ],
+    options: ["The share of people with a disorder who need but do not get treatment", "The delay between discovery of a drug and its approval for use", "The difference in efficacy between medication and psychotherapy", "The waiting time between referral and a hospital appointment"],
     answer: 0,
     explanation:
       "The treatment gap (Kohn and colleagues, WHO) is the percentage of people with a disorder who need care but do not get it; NMHS found it above 80% for most disorders in India, motivating programmes such as the DMHP, Tele-MANAS and task-sharing with lay counsellors. Drug approval delays, comparative efficacy and waiting times are different concepts.",
@@ -365,12 +335,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about suicide epidemiology in India is best supported by national crime records data (NCRB) and large epidemiological studies?",
-    options: [
-      "Young adults (roughly 15 to 39 years) account for a large share of suicide deaths, and India has a relatively high female suicide rate compared with the global average",
-      "Suicide is concentrated in people over 80",
-      "Women account for almost no suicides in India",
-      "Suicide rates are the same in every state",
-    ],
+    options: ["Young adults make up a large share, and India's female rate is high", "Suicide is concentrated mainly in people over 80 years of age", "Women account for almost no suicides recorded in India", "Suicide rates are roughly the same across every Indian state"],
     answer: 0,
     explanation:
       "Indian data show a large share of suicide deaths among young adults, and India's female suicide rate is well above the global average, with family problems, marital issues and illness commonly recorded as causes. State rates vary widely (higher in southern states such as Kerala, Tamil Nadu and Karnataka, and Sikkim). The other options are wrong. The National Suicide Prevention Strategy aims to reduce suicide mortality by 10% by 2030.",
@@ -384,12 +349,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Why might hospital-based studies overestimate the strength of association between two disorders (for example, depression and a medical illness)?",
-    options: [
-      "Berkson's bias: people with two conditions are more likely to be hospitalised than those with one",
-      "Hawthorne effect",
-      "Regression to the mean",
-      "Recall bias in controls only",
-    ],
+    options: ["Berkson's bias: people with two conditions are more likely to be admitted", "The Hawthorne effect: patients change behaviour when they are observed", "Regression to the mean: extreme scores move towards average on retesting", "Recall bias: controls remember past exposures less accurately than cases"],
     answer: 0,
     explanation:
       "Berkson's (admission rate) bias arises because the probability of hospital admission is higher for those with multiple conditions, creating spurious associations in clinical samples. This is why community surveys (ECA, NCS, NMHS) are preferred for comorbidity estimates. The Hawthorne effect is behaviour change when observed. Regression to the mean affects repeated measurements. Recall bias concerns differential memory between cases and controls.",

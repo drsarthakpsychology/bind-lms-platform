@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "For a DSM-5-TR major depressive episode, which combination is required?",
-    options: [
-      "Five of nine symptoms for 2 weeks, at least one being depressed mood or loss of interest/pleasure",
-      "Four of nine symptoms for 2 weeks, including sleep disturbance",
-      "Five of nine symptoms for 1 month, at least one being hopelessness",
-      "Three of nine symptoms for 2 weeks plus functional impairment",
-    ],
+    options: ["Five of nine symptoms for 2 weeks, at least one being depressed mood or loss of interest", "Four of nine symptoms for 2 weeks, at least one being sleep disturbance or fatigue", "Five of nine symptoms for 1 month, at least one being hopelessness or guilt", "Three of nine symptoms for 2 weeks, plus clear impairment in daily functioning"],
     answer: 0,
     explanation:
       "Criterion A needs five or more of nine symptoms most of the day, nearly every day, for at least 2 weeks, with at least one being depressed mood or markedly diminished interest or pleasure. Four or three symptoms are below threshold. One month is not the duration. Hopelessness is not one of the nine DSM symptoms (it is an added symptom in ICD-11's depressive episode).",
@@ -70,12 +65,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The DSM-5-TR specifier 'with peripartum onset' applies when the onset of mood symptoms occurs:",
-    options: [
-      "Only within 4 weeks after delivery",
-      "Within 6 months after delivery",
-      "Within 12 months after delivery",
-      "During pregnancy or in the 4 weeks following delivery",
-    ],
+    options: ["Only within the first 4 weeks after delivery", "At any time within 6 months after delivery", "At any time within 12 months after delivery", "During pregnancy or within 4 weeks after delivery"],
     answer: 3,
     explanation:
       "DSM-5 replaced 'postpartum onset' with 'peripartum onset' to include onset during pregnancy, keeping a 4-week postpartum window; about half of 'postpartum' depressions begin before delivery. The 6- and 12-month windows are used in many research and clinical guidelines but are not the DSM rule. ICD-11 uses 'mental or behavioural disorders associated with pregnancy, childbirth or the puerperium' for onset within about 6 weeks after delivery.",
@@ -88,12 +78,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about DSM-5-TR persistent depressive disorder is correct?",
-    options: [
-      "It requires that a major depressive episode has never occurred",
-      "In children and adolescents the minimum duration is 2 years, the same as adults",
-      "Mood may be irritable in adults as well as children",
-      "The individual has never been without symptoms for more than 2 months at a time during the 2-year period",
-    ],
+    options: ["It requires that a full major depressive episode has never occurred", "In children and adolescents the minimum duration is also 2 years", "Mood may be irritable rather than depressed in adults as well as children", "The person is never symptom-free for more than 2 months during the 2 years"],
     answer: 3,
     explanation:
       "Criterion C states that during the 2-year period (1 year for children and adolescents) the person has never been without the symptoms for more than 2 months. DSM-5 merged chronic MDD and dysthymia, so major depressive episodes may be present (with specifiers such as 'with persistent major depressive episode'), making the first option wrong. The child and adolescent duration is 1 year. Irritable mood can substitute for depressed mood only in children and adolescents.",
@@ -125,12 +110,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Confirmation of a DSM-5-TR diagnosis of premenstrual dysphoric disorder requires:",
-    options: [
-      "Retrospective recall of symptoms over the last year",
-      "A serum progesterone level in the luteal phase",
-      "Prospective daily ratings during at least two symptomatic cycles",
-      "Exclusion of all other mood disorders",
-    ],
+    options: ["Retrospective recall of symptoms over the past year", "A serum progesterone level taken in the luteal phase", "Prospective daily ratings over at least two cycles", "Exclusion of all other current and past mood disorders"],
     answer: 2,
     explanation:
       "Criterion D/Note: symptoms must be confirmed by prospective daily ratings during at least two symptomatic cycles; the diagnosis can be made provisionally before that. Retrospective recall is unreliable and inflates rates. No hormone level is diagnostic. PMDD can be superimposed on another disorder if it is not merely an exacerbation of it, so blanket exclusion is wrong. ICD-11 lists PMDD under depressive disorders and cross-lists it with genitourinary conditions.",
@@ -210,12 +190,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Bipolar II disorder in DSM-5-TR requires:",
-    options: [
-      "At least one manic episode and one major depressive episode",
-      "At least one hypomanic episode and at least one major depressive episode, with no lifetime manic episode",
-      "At least one hypomanic episode only",
-      "Two years of numerous hypomanic and depressive symptoms",
-    ],
+    options: ["At least one manic episode and at least one major depressive episode", "At least one hypomanic and one major depressive episode, never mania", "At least one hypomanic episode, with or without depression", "Two years of frequent hypomanic and depressive symptoms"],
     answer: 1,
     explanation:
       "Bipolar II needs at least one hypomanic and at least one major depressive episode, and never a manic episode. A single manic episode makes it bipolar I (which does not require any depressive episode). Hypomania alone without MDE would be other specified bipolar disorder. Two years of subthreshold symptoms describes cyclothymic disorder.",
@@ -246,12 +221,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The rapid cycling specifier in DSM-5-TR bipolar disorders requires:",
-    options: [
-      "At least four mood episodes in the previous 12 months",
-      "At least two mood episodes in 6 months",
-      "Mood switches within the same day",
-      "At least four episodes over the lifetime",
-    ],
+    options: ["At least four mood episodes in the previous 12 months", "At least two mood episodes within any 6-month period", "Switches between mood states within the same day", "At least four mood episodes at any time over the lifetime"],
     answer: 0,
     explanation:
       "Rapid cycling means at least four mood episodes (manic, hypomanic or major depressive) in the previous 12 months, separated by partial or full remission for at least 2 months or a switch to the opposite polarity. It is more common in women, in bipolar II, with hypothyroidism and possibly with antidepressant exposure. Within-day switches ('ultradian cycling') are not a DSM specifier. The other counts are wrong.",
@@ -318,12 +288,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which biological finding is most consistently reported in melancholic depression?",
-    options: [
-      "Shortened REM latency and non-suppression on the dexamethasone suppression test",
-      "Prolonged REM latency with increased slow-wave sleep",
-      "Low cortisol with exaggerated suppression on dexamethasone",
-      "Increased hippocampal volume on MRI",
-    ],
+    options: ["Shortened REM latency and dexamethasone non-suppression", "Prolonged REM latency with increased slow-wave sleep", "Low cortisol with exaggerated dexamethasone suppression", "Increased hippocampal volume on structural MRI"],
     answer: 0,
     explanation:
       "Melancholic depression is associated with HPA-axis hyperactivity (raised cortisol, dexamethasone non-suppression) and sleep changes including shortened REM latency, increased REM density and reduced slow-wave sleep. Prolonged REM latency and increased slow-wave sleep are the opposite. Low cortisol with enhanced suppression is more typical of PTSD. Recurrent depression is linked to reduced, not increased, hippocampal volume.",
@@ -352,12 +317,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which statement about the epidemiology of major depressive disorder is correct?",
-    options: [
-      "Rates are roughly equal in men and women in adulthood",
-      "Females have about 1.5 to 3 times higher rates beginning in early adolescence",
-      "Prevalence is highest in those over 60",
-      "It is less common than bipolar I disorder",
-    ],
+    options: ["Rates are roughly equal in men and women throughout adulthood", "Rates are about 1.5 to 3 times higher in females from early adolescence", "Prevalence is highest in people over 60 in most countries", "It is less common in the community than bipolar I disorder"],
     answer: 1,
     explanation:
       "DSM-5-TR reports a female-to-male ratio of about 1.5 to 3 from early adolescence. In the US, 18 to 29-year-olds have about three times the rate of those 60 and older. MDD (about 7% 12-month prevalence in the US) is far more common than bipolar I (around 1%). Bipolar I is the disorder with a roughly equal sex ratio.",
@@ -372,12 +332,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 67-year-old retired teacher has 5 weeks of severe low mood, early-morning waking, weight loss of 7 kg and agitation. She says her bowels have 'rotted away', that she is already dead and should not be fed, and that she has brought ruin upon her family through past sins. She has stopped drinking fluids for 2 days.",
     stem: "Which description and management priority are most accurate?",
-    options: [
-      "Major depressive episode, severe, with mood-congruent psychotic features; nihilistic (Cotard-type) delusions; ECT is a strong option given food and fluid refusal",
-      "Delusional disorder, somatic type; start an antipsychotic alone",
-      "Major depressive episode with mood-incongruent psychotic features; urgent CT for frontal tumour before any treatment",
-      "Somatic symptom disorder with predominant gastrointestinal complaints; reassurance and CBT",
-    ],
+    options: ["Severe MDE with mood-congruent psychotic (nihilistic) features; ECT is a strong option", "Delusional disorder, somatic type; start an antipsychotic alone and review", "MDE with mood-incongruent psychotic features; urgent CT before any treatment", "Somatic symptom disorder with gastrointestinal focus; reassurance and CBT"],
     answer: 0,
     explanation:
       "Nihilistic delusions (organs rotted, being dead) and delusions of guilt and ruin fit depressive themes, so they are mood-congruent; the Cotard picture in an older melancholic patient is classic. Refusing food and fluid makes ECT a first-line consideration because of its speed and efficacy in psychotic depression. Delusional disorder excludes a major mood episode during the delusion. Organic screening is appropriate, but 'mood-incongruent' is wrong. Somatic symptom disorder does not involve delusional conviction or severe depressive syndrome.",
@@ -390,12 +345,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In his psychoanalytic account of depression, Freud distinguished melancholia from normal mourning chiefly by:",
-    options: [
-      "The absence of any identifiable loss in melancholia",
-      "A fall in self-regard, with reproaches against a lost, ambivalently loved object turned against the ego",
-      "The presence of hallucinations of the dead person in mourning",
-      "A biological rather than psychological origin of melancholia",
-    ],
+    options: ["The absence of any identifiable loss, real or symbolic, in melancholia", "A fall in self-regard, with reproaches against a lost loved object turned on the self", "The presence of hallucinations of the dead person in normal mourning", "A biological rather than a psychological origin for melancholia"],
     answer: 1,
     explanation:
       "Freud argued that in melancholia the lost object is introjected and the ambivalent hostility felt towards it is turned inward, producing self-reproach and lowered self-esteem, which mourning lacks ('in mourning the world becomes poor and empty; in melancholia it is the ego itself'). Melancholia may follow a loss that is unconscious or symbolic, so 'no loss' misstates him. Hallucinations are not his distinguishing criterion. He offered a psychological, not purely biological, account.",
@@ -410,12 +360,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 17-year-old boy has had six distinct episodes in 18 months, each lasting 2 to 3 days, of euphoria, sleeping 3 hours without fatigue, grandiosity and rapid speech, noted by family and teachers. Between these he has had two 3-week periods of low mood, anhedonia, hypersomnia, worthlessness, poor concentration and passive death wishes. He does not use substances. Functioning dropped during the low periods only.",
     stem: "What is the most accurate DSM-5-TR diagnosis?",
-    options: [
-      "Bipolar II disorder, with rapid cycling",
-      "Cyclothymic disorder",
-      "Disruptive mood dysregulation disorder",
-      "Other specified bipolar and related disorder (short-duration hypomania with major depressive episodes)",
-    ],
+    options: ["Bipolar II disorder, with rapid cycling", "Cyclothymic disorder", "Disruptive mood dysregulation disorder", "Other specified bipolar disorder (short hypomanias)"],
     answer: 3,
     explanation:
       "Hypomania needs at least 4 consecutive days, so these 2 to 3 day episodes do not qualify; with full major depressive episodes present, DSM-5-TR uses 'other specified bipolar and related disorder, short-duration hypomanic episodes (2 to 3 days) and major depressive episodes'. Bipolar II needs full hypomanic episodes. Cyclothymia is excluded once full MDE criteria are met. DMDD involves chronic irritability with temper outbursts, not episodic euphoria, and cannot be diagnosed alongside bipolar disorder.",
@@ -428,12 +373,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which feature most increases short-term suicide risk in a patient with major depression, compared with the others listed?",
-    options: [
-      "Female sex",
-      "Prominent psychic anxiety, agitation and global insomnia with recent hopelessness",
-      "Previous history of good response to an SSRI",
-      "Strong religious affiliation",
-    ],
+    options: ["Female sex, given the higher rates of suicide attempts in women", "Severe psychic anxiety, agitation and insomnia with hopelessness", "A history of good response to an SSRI in a previous episode", "A strong religious affiliation and regular attendance at worship"],
     answer: 1,
     explanation:
       "Fawcett's prospective work showed that severe psychic anxiety, panic, agitation, global insomnia and alcohol use predict suicide in the short term (within a year), and hopelessness is a strong predictor, as Beck showed. Women attempt more often, but completed suicide is higher in men in most countries (India has a relatively narrower male-female gap). Good past response and religious affiliation are protective, not risk factors.",
@@ -512,12 +452,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "For DSM-5-TR melancholic features, which symptom pattern is sufficient?",
-    options: [
-      "Loss of pleasure in almost all activities, plus depression regularly worse in the morning, early-morning awakening at least 2 hours early, and excessive guilt",
-      "Mood reactivity, plus early-morning awakening, weight loss and guilt",
-      "Loss of pleasure in almost all activities, plus hypersomnia and increased appetite",
-      "Lack of reactivity, plus leaden paralysis and rejection sensitivity",
-    ],
+    options: ["Loss of pleasure plus morning worsening, waking 2 hours early and excessive guilt", "Mood reactivity plus early-morning waking, marked weight loss and guilt", "Loss of pleasure plus hypersomnia, increased appetite and weight gain", "Lack of reactivity plus leaden paralysis and rejection sensitivity"],
     answer: 0,
     explanation:
       "Melancholic features need Criterion A (loss of pleasure in all or almost all activities, or lack of reactivity) plus at least three Criterion B items: distinct quality of mood, worse in the morning, early waking (at least 2 hours early), marked psychomotor change, significant anorexia or weight loss, and excessive or inappropriate guilt. The first option meets this. Mood reactivity excludes melancholia. Hypersomnia, increased appetite, leaden paralysis and rejection sensitivity are atypical features.",
@@ -530,12 +465,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The hopelessness theory of depression differs from the 1978 reformulated helplessness model mainly in that:",
-    options: [
-      "It proposes a subtype of depression whose proximal sufficient cause is hopelessness, arising from stable and global attributions for negative events together with negative inferences about consequences and self",
-      "It abandons the role of attributions altogether",
-      "It treats internality as the single most important attributional dimension",
-      "It applies only to bipolar depression",
-    ],
+    options: ["It names a subtype caused by hopelessness from stable, global attributions", "It abandons the role of causal attributions in depression altogether", "It makes internality the single most important attributional dimension", "It applies only to the depressive phase of bipolar disorder, not unipolar"],
     answer: 0,
     explanation:
       "Hopelessness theory specifies a 'hopelessness depression' subtype. Its proximal sufficient cause is hopelessness, fed by stable and global attributions plus negative inferences about consequences and self-worth, in a diathesis-stress framework. Attributions remain central, so the second option is wrong. It downgraded internality, which mainly affects self-esteem, so the third is wrong. It concerns unipolar depression, not bipolar.",

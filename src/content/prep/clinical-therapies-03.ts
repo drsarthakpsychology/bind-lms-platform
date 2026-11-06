@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In Ellis's ABC model, 'B' stands for:",
-    options: ["Beliefs about the activating event", "Behaviour", "Bodily sensations", "Background"],
+    options: ["Beliefs about the activating event", "Behaviour that follows the event", "Bodily sensations during the event", "Background history of the client"],
     answer: 0,
     explanation:
       "In REBT, A is the Activating event, B the Beliefs about it (rational or irrational), and C the emotional and behavioural Consequences. Ellis's central point is that B, not A, largely produces C. D (Disputing) and E (Effective new philosophy) extend the model. In behavioural ABC, B is behaviour, which is the common confusion.",
@@ -25,12 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "According to Ellis, the core irrational belief from which other irrational beliefs derive is:",
-    options: [
-      "Demandingness: absolutistic 'musts', 'shoulds' and 'oughts'",
-      "Low self-esteem",
-      "Learned helplessness",
-      "Unconscious guilt",
-    ],
+    options: ["Demandingness: rigid 'musts' and 'shoulds'", "Low self-esteem from early criticism", "Learned helplessness after failure", "Unconscious guilt over hidden wishes"],
     answer: 0,
     explanation:
       "Ellis held that demandingness (rigid musts about self, others and the world) is primary, and that awfulising, low frustration tolerance ('I can't stand it') and global rating of self or others derive from it. Low self-esteem is closer to a consequence (self-downing). Learned helplessness is Seligman's construct. Unconscious guilt is psychoanalytic.",
@@ -149,12 +144,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Ellis's approach was renamed several times. The correct chronological sequence is:",
-    options: [
-      "Rational Therapy, then Rational-Emotive Therapy, then Rational Emotive Behaviour Therapy",
-      "REBT, then RET, then RT",
-      "Rational-Emotive Therapy, then Cognitive Therapy, then REBT",
-      "Reality Therapy, then REBT",
-    ],
+    options: ["Rational Therapy, then RET, then REBT", "REBT, then RET, then Rational Therapy", "RET, then Cognitive Therapy, then REBT", "Reality Therapy, then RET, then REBT"],
     answer: 0,
     explanation:
       "Ellis began Rational Therapy in 1955, renamed it Rational-Emotive Therapy in 1961, and Rational Emotive Behaviour Therapy in 1993 to stress the behavioural component. Cognitive Therapy is Beck's. Reality Therapy is Glasser's separate approach.",
@@ -169,12 +159,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 30-year-old woman becomes enraged when her husband comes home late. She says: 'He should know better. He must call me. It's unbearable when he doesn't. He's a totally selfish man.' The REBT therapist wants to work at the level of beliefs.",
     stem: "Which reformulation reflects the rational alternative REBT would help her develop?",
-    options: [
-      "'I would strongly prefer he call, but there is no law that he must. It's frustrating but bearable, and his lateness doesn't make him a totally bad person.'",
-      "'He's right to come late; I shouldn't mind at all.'",
-      "'I must never feel angry.'",
-      "'He must call, or I'll leave.'",
-    ],
+    options: ["'I'd much prefer he called, but he doesn't have to. It's frustrating, not unbearable.'", "'He's right to come home late, and I shouldn't mind about it at all.'", "'I must never feel angry with him, whatever he does to me.'", "'He absolutely must call me, or I will leave him.'"],
     answer: 0,
     explanation:
       "REBT turns demands into flexible preferences, awfulising and LFT into 'bad but bearable', and global rating of others into unconditional other-acceptance, while keeping a healthy negative emotion (annoyance). Telling her not to mind at all invalidates legitimate preferences. 'I must never feel angry' is a new demand. 'He must call or I'll leave' keeps the demand.",
@@ -187,12 +172,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Meichenbaum's stress inoculation training has three phases. They are:",
-    options: [
-      "Conceptualisation, skills acquisition and rehearsal, application and follow-through",
-      "Relaxation, hierarchy, desensitisation",
-      "Precontemplation, contemplation, action",
-      "Alarm, resistance, exhaustion",
-    ],
+    options: ["Conceptualisation, skills rehearsal, application", "Relaxation, hierarchy, desensitisation", "Precontemplation, contemplation, action", "Alarm, resistance, exhaustion"],
     answer: 0,
     explanation:
       "SIT moves from conceptualising the stress response, to acquiring and rehearsing coping skills (relaxation, self-instruction, problem solving), to applying them in graded real or imagined stressors with relapse prevention, analogous to medical inoculation. The second option is SD, the third the transtheoretical model's stages, and the fourth Selye's general adaptation syndrome.",
@@ -206,12 +186,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Meichenbaum and Goodman's self-instructional training for impulsive children proceeds through which sequence?",
-    options: [
-      "Cognitive modelling by the adult, overt external guidance, overt self-guidance, faded overt self-guidance, covert self-instruction",
-      "Covert self-instruction, then overt self-guidance, then modelling",
-      "Punishment, then reward, then extinction",
-      "Free play, interpretation, insight",
-    ],
+    options: ["Adult models aloud, guides aloud, child talks aloud, whispers, then thinks silently", "Child thinks silently first, then talks aloud, then the adult models the task", "Punishment for errors, then reward for success, then extinction of guessing", "Free play, then interpretation of play themes, then insight"],
     answer: 0,
     explanation:
       "The adult first models the task while talking aloud, then guides the child aloud, then the child talks aloud alone, then whispers, and finally uses silent inner speech, drawing on Vygotsky and Luria's internalisation of speech. The reversed order makes no developmental sense. Operant sequences and play therapy are unrelated.",
@@ -225,12 +200,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In D'Zurilla and Nezu's problem-solving therapy, which step directly follows 'problem definition and formulation'?",
-    options: [
-      "Generation of alternative solutions (brainstorming)",
-      "Implementation",
-      "Verification",
-      "Termination",
-    ],
+    options: ["Generation of alternative solutions (brainstorming)", "Implementation of the chosen solution in real life", "Verification of the outcome against the goal", "Termination of therapy and relapse prevention"],
     answer: 0,
     explanation:
       "Rational problem solving involves problem definition and formulation, generation of alternatives (brainstorming with deferment of judgement), decision making (weighing pros and cons), then solution implementation and verification. A positive problem orientation underpins these steps. PST has evidence for depression, especially in older adults and primary care.",
@@ -256,12 +226,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "William Glasser's reality therapy is based on:",
-    options: [
-      "Choice theory: people choose behaviours to meet basic needs (survival, love and belonging, power, freedom and fun), and therapy focuses on present responsible choices",
-      "Classical conditioning of anxiety",
-      "Analysis of transference",
-      "Mindful acceptance of thoughts",
-    ],
+    options: ["Choice theory: people choose behaviours to meet basic needs", "Classical conditioning of anxiety to neutral cues", "Analysis of transference in the therapy relationship", "Mindful acceptance of thoughts and feelings"],
     answer: 0,
     explanation:
       "Reality therapy and choice theory emphasise personal responsibility, present behaviour and the WDEP procedure (Wants, Doing, Evaluation, Planning; Wubbolding). It has been widely used in schools and corrections. It does not centre on conditioning, transference or mindfulness.",
@@ -310,12 +275,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 25-year-old man is referred by court for repeated road-rage incidents. He says: 'Other drivers deliberately cut me off. They must respect me. When it happens I just explode.' He has no psychiatric disorder other than intermittent explosive outbursts.",
     stem: "Which intervention package has the best evidence for this problem?",
-    options: [
-      "Cognitive-behavioural anger management: cue identification, arousal reduction, cognitive restructuring of hostile attributions and demands, and rehearsal of alternative responses",
-      "Catharsis by hitting a punching bag whenever angry",
-      "Long-term psychoanalysis only",
-      "Benzodiazepines as needed",
-    ],
+    options: ["CBT anger management: cues, calming, restructuring, rehearsal", "Catharsis: hitting a punching bag whenever he feels angry", "Long-term psychoanalysis focused only on his early childhood", "A benzodiazepine to take whenever he feels his temper rising"],
     answer: 0,
     explanation:
       "CBT-based anger management (Novaco's stress inoculation approach; Deffenbacher) has moderate effects in meta-analyses, combining awareness of cues, relaxation, cognitive restructuring (hostile attribution bias, demands) and skills rehearsal. Catharsis by venting increases subsequent aggression. Psychoanalysis lacks evidence for this. Benzodiazepines can disinhibit aggression.",
@@ -328,12 +288,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In REBT, 'unconditional self-acceptance' means:",
-    options: [
-      "Accepting oneself as a fallible human being regardless of achievements or approval, while still rating specific behaviours",
-      "Believing one is better than others",
-      "Never trying to change any behaviour",
-      "Accepting oneself only when successful",
-    ],
+    options: ["Accepting oneself as fallible, whatever one achieves", "Believing oneself to be better than other people", "Never trying to change any of one's behaviour", "Accepting oneself only when one is successful"],
     answer: 0,
     explanation:
       "Ellis argued against global self-rating altogether: people can rate their acts and traits, but not their total worth. USA means accepting oneself as fallible and worthwhile simply by existing, which removes the basis for self-downing and shame while allowing behaviour change. Feeling superior is another global rating. USA does not mean avoiding change. Conditional acceptance is what REBT challenges.",
@@ -366,12 +321,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In rational-emotive imagery (Maultsby), the client is asked to:",
-    options: [
-      "Vividly imagine the activating event, feel the unhealthy emotion, then change the emotion to its healthy counterpart by changing the belief",
-      "Imagine pleasant beaches to relax",
-      "Imagine the therapist as a parent figure",
-      "Visualise the feared object while receiving an electric shock",
-    ],
+    options: ["Imagine the event, feel the unhealthy emotion, then shift to the healthy one", "Imagine a pleasant beach scene in great detail to relax the whole body", "Imagine the therapist as a caring parent figure who offers comfort", "Picture the feared object while receiving a mild electric shock"],
     answer: 0,
     explanation:
       "Rational-emotive imagery has the client imagine the worst version of A, experience the unhealthy negative emotion (e.g., anxiety), then shift to the healthy alternative (concern) and notice the belief change that made this possible, as emotional rehearsal of rational beliefs. Relaxing imagery is a relaxation method. Parental imagery suggests transference. Shock pairing is aversion therapy.",
@@ -384,12 +334,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Assertiveness training typically teaches clients to:",
-    options: [
-      "Express their needs and feelings directly and respectfully, without aggression or passivity",
-      "Always agree to avoid conflict",
-      "Dominate conversations",
-      "Suppress all negative emotions",
-    ],
+    options: ["Express needs and feelings directly and respectfully", "Always agree with others to avoid conflict", "Take control of conversations and win arguments", "Suppress negative emotions in front of others"],
     answer: 0,
     explanation:
       "Assertiveness training (Wolpe, Lazarus; Alberti and Emmons) teaches direct, honest and respectful expression of needs and feelings through modelling and role-play, using techniques such as 'I' statements, broken record and fogging. Always agreeing is passive. Dominating is aggressive. Suppressing feelings is not the goal.",

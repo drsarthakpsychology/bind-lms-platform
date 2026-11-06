@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "On MSE, the term 'mood' refers to ______, whereas 'affect' refers to ______.",
-    options: [
-      "the observed emotional expression; the patient's subjective report",
-      "a momentary emotion; a lifelong temperament",
-      "the patient's sustained, subjectively experienced emotional state; the observable, moment-to-moment expression of emotion",
-      "thought content; thought form",
-    ],
+    options: ["the observed emotional expression in the room; the patient's own subjective report", "a brief, momentary emotional reaction; a lifelong emotional temperament or style", "the sustained, subjectively reported state; the observed, changing expression", "the content of the patient's thinking; the form or flow of that thinking"],
     answer: 2,
     explanation:
       "Mood is the pervasive, sustained emotional state reported by the patient (the 'climate'); affect is the observed, more variable expression (the 'weather'), described by range, reactivity, intensity, congruence and appropriateness. The first option reverses them. Temperament is a trait-level concept. Thought form and content are separate MSE headings.",
@@ -52,7 +47,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A 40-year-old woman with sudden paralysis of both legs, with normal neurological findings and positive Hoover's sign, smiles and calmly says, 'I'm sure it will sort itself out.' The observed attitude is called:",
-    options: ["Euphoria", "Moria", "La belle indifférence", "Apathy"],
+    options: ["Euphoria (elevated mood)", "Moria (facetious joking)", "La belle indifférence", "Apathy (loss of motivation)"],
     answer: 2,
     explanation:
       "La belle indifférence is a lack of concern disproportionate to a serious symptom, classically described in conversion (functional neurological) disorder. It is not a reliable discriminator, as it also occurs in neurological disease and is absent in many FND patients. Euphoria is elevated mood. Moria (Witzelsucht) is facetious joking typical of frontal lesions. Apathy is a lack of motivation and emotion.",
@@ -96,12 +91,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Contemporary research distinguishes 'anticipatory' from 'consummatory' anhedonia. In schizophrenia, the most consistent finding is:",
-    options: [
-      "Intact anticipatory pleasure with absent consummatory pleasure",
-      "Both are absent in all patients",
-      "Relatively intact in-the-moment (consummatory) pleasure with impaired anticipatory pleasure and motivation",
-      "Anhedonia is absent in schizophrenia",
-    ],
+    options: ["Intact anticipatory pleasure but absent pleasure in the moment", "Both kinds of pleasure absent in all patients", "Near-normal in-the-moment pleasure, impaired anticipation and motivation", "No anhedonia at all, as it is a feature only of depression"],
     answer: 2,
     explanation:
       "Laboratory studies (Gard, Kring) show that people with schizophrenia report near-normal pleasure when actually experiencing rewards but show deficits in anticipating future pleasure and translating it into effortful goal-directed behaviour, linking anhedonia to avolition and dopaminergic 'wanting'. The other options reverse or overstate the pattern. Anhedonia is a recognised negative symptom.",
@@ -193,12 +183,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 35-year-old patient on haloperidol 20 mg/day for 3 weeks paces the ward constantly, shifting weight from foot to foot when standing, and describes an unbearable inner restlessness, 'like I must keep moving'. He has no new psychotic symptoms, and anxiety appears secondary to the restlessness.",
     stem: "What is the most likely explanation and appropriate management?",
-    options: [
-      "Agitation from worsening psychosis; increase haloperidol",
-      "Akathisia; reduce the antipsychotic dose or switch, and consider propranolol",
-      "Tardive dyskinesia; start tetrabenazine",
-      "Catatonic excitement; start ECT",
-    ],
+    options: ["Agitation from worsening psychosis; increase haloperidol", "Akathisia; lower the dose or switch, and consider propranolol", "Tardive dyskinesia; add tetrabenazine", "Catatonic excitement; arrange ECT"],
     answer: 1,
     explanation:
       "Akathisia is a subjective sense of restlessness with objective movements such as pacing and foot shifting, typically within days to weeks of starting or raising a D2 antagonist. It is linked to suicidality and non-adherence. Management is dose reduction or switching to a lower-risk drug, with propranolol, benzodiazepines or mirtazapine as options. Increasing haloperidol worsens it. Tardive dyskinesia appears after months to years as choreoathetoid orofacial movements. Catatonic excitement is purposeless and not driven by subjective restlessness.",
@@ -212,12 +197,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In a stuporose patient, which finding most strongly suggests a functional (psychiatric) cause rather than an organic one?",
-    options: [
-      "Abnormal EEG with diffuse slowing",
-      "Following the examiner with the eyes and resisting eye-opening, with later recall of events during the stupor",
-      "Incontinence and decorticate posturing",
-      "Fluctuating level of arousal with asterixis",
-    ],
+    options: ["An abnormal EEG showing diffuse slowing of background rhythm", "Eyes follow the examiner, resist opening, and events are recalled later", "Incontinence with decorticate posturing of the upper limbs", "Fluctuating arousal with a flapping tremor of the outstretched hands"],
     answer: 1,
     explanation:
       "In depressive, catatonic or dissociative stupor, the eyes are often open and follow objects, eye-opening is resisted, and patients may later recall what happened, implying preserved consciousness. Organic stupor shows EEG slowing, abnormal neurological signs (posturing), incontinence and fluctuating arousal with asterixis (metabolic encephalopathy). Even so, organic causes must be excluded carefully.",
@@ -247,12 +227,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Waxy flexibility (flexibilitas cerea) refers to:",
-    options: [
-      "Rigidity that increases with movement",
-      "Slight, even resistance to passive movement, like bending wax, with the limb then staying in the position in which it is placed",
-      "Tremor at rest",
-      "Sudden loss of muscle tone triggered by emotion",
-    ],
+    options: ["Rigidity that increases the more the limb is moved, as in frontal lobe disease", "Plastic, even resistance to passive movement, with the limb then staying where placed", "A regular tremor at rest that lessens on purposeful movement", "Sudden loss of muscle tone triggered by strong emotion such as laughter"],
     answer: 1,
     explanation:
       "Waxy flexibility combines plastic resistance during passive movement with maintenance of the imposed posture (catalepsy). Rigidity increasing with movement suggests other extrapyramidal or frontal signs. Rest tremor is parkinsonian. Sudden emotion-triggered loss of tone is cataplexy (narcolepsy).",
@@ -266,12 +241,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which feature best distinguishes a complex tic from a compulsion?",
-    options: [
-      "Tics are always simple",
-      "Tics are typically preceded by a premonitory sensory urge and are not aimed at neutralising an obsession, whereas compulsions are performed in response to an obsession or rigid rules to reduce distress",
-      "Compulsions are never voluntary",
-      "Tics never cause distress",
-    ],
+    options: ["Tics are always simple, whereas compulsions are complex sequences", "Tics follow a sensory urge and do not neutralise an obsession; compulsions do", "Compulsions are entirely involuntary, whereas tics can be fully controlled", "Tics never cause distress, whereas compulsions always do"],
     answer: 1,
     explanation:
       "Tics are sudden, rapid, recurrent movements or vocalisations often preceded by a premonitory urge and followed by relief, but they are not driven by cognitive content. Compulsions are performed to neutralise obsessions or according to rules. Overlap exists in tic-related OCD ('just right' compulsions). Complex tics do exist. Compulsions are experienced as semi-voluntary. Tics can be distressing and impairing.",
@@ -287,12 +257,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 58-year-old man with a 3-week history of agitated depression says: 'I am rotten inside, I have no stomach, the food just falls through. I cannot die; I will suffer like this for ever because I am already dead.' He refuses food and sits wringing his hands.",
     stem: "Which pairing of psychopathological terms correctly describes his delusions?",
-    options: [
-      "Nihilistic delusion, and delusion of immortality as part of the Cotard syndrome",
-      "Hypochondriacal overvalued idea and grandiose delusion",
-      "Delusion of reference and delusional perception",
-      "Somatic passivity and delusion of control",
-    ],
+    options: ["Nihilistic delusion with delusion of immortality (Cotard)", "Hypochondriacal overvalued idea with grandiose delusion", "Delusion of reference with delusional perception", "Somatic passivity with a delusion of control"],
     answer: 0,
     explanation:
       "Cotard's syndrome includes nihilistic delusions (non-existence of organs, being dead) and, paradoxically, delusions of immortality or eternal suffering ('I cannot die'). It is typically seen in agitated melancholia in older people. The beliefs are held with delusional conviction, not as overvalued ideas, and the immortality belief has a depressive rather than grandiose quality. There is no self-reference, perceptual trigger or external control.",
@@ -320,12 +285,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Ambivalence, one of Bleuler's fundamental symptoms of schizophrenia, means:",
-    options: [
-      "Rapid alternation between mania and depression",
-      "Holding of contradictory feelings, wishes or ideas towards the same object at the same time",
-      "Inability to make decisions due to obsessional doubt",
-      "Reduced emotional responsiveness",
-    ],
+    options: ["Rapid alternation between manic and depressive moods in one day", "Holding contradictory feelings or wishes towards the same object at once", "Inability to make decisions because of persistent obsessional doubt", "A general reduction in the range and intensity of emotional response"],
     answer: 1,
     explanation:
       "Bleuler's 'four As' are associations (loosening), affect (blunting or incongruity), ambivalence (simultaneous contradictory attitudes, e.g., love and hate, wanting and refusing) and autism (withdrawal into fantasy). Rapid mood alternation is mixed or rapid-cycling mood disorder. Obsessional doubt is different. Reduced responsiveness is blunted affect.",
@@ -339,12 +299,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Free-floating anxiety, in descriptive psychopathology, is anxiety that:",
-    options: [
-      "Is attached to a specific feared object",
-      "Is not attached to any particular object or situation and can attach itself to whatever comes to mind",
-      "Arises only at night",
-      "Is caused by withdrawal",
-    ],
+    options: ["Is attached to a specific feared object or situation", "Is not attached to any one object and can attach to anything", "Arises mainly at night when the person is alone", "Is caused by withdrawal from a sedative substance"],
     answer: 1,
     explanation:
       "Free-floating anxiety is diffuse apprehension unattached to a specific stimulus, so it readily 'finds' content; it is the classical description of generalised anxiety. Anxiety attached to a specific object is phobic. Nocturnal and withdrawal-related anxiety are separate concepts defined by timing or cause.",

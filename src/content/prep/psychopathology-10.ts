@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Jaspers defined a hallucination as:",
-    options: [
-      "A misinterpretation of a real external stimulus",
-      "A vivid image experienced in inner subjective space",
-      "A false perception which is not a sensory distortion or misinterpretation, but occurs at the same time as real perceptions",
-      "Any perception occurring while falling asleep",
-    ],
+    options: ["A misinterpretation of a real external stimulus, often coloured by emotion", "A vivid image experienced in inner subjective space, not in outer space", "A false perception, not a misreading, occurring alongside real perceptions", "Any perception that occurs during the transition from waking into sleep"],
     answer: 2,
     explanation:
       "Jaspers' definition excludes dreams and illusions and includes functional hallucinations; the simpler 'perception without an object' does not cover functional hallucinations. Misinterpreting a real stimulus is an illusion. An image in inner subjective space is Jaspers' pseudohallucination. Perceptions while falling asleep are hypnagogic hallucinations, which are usually non-pathological.",
@@ -136,12 +131,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Autoscopy (the phantom mirror-image or seeing one's double) is most commonly associated with:",
-    options: [
-      "Schizophrenia exclusively",
-      "Epilepsy and focal lesions of the parieto-occipital or temporal regions",
-      "Bulimia nervosa",
-      "Generalised anxiety disorder",
-    ],
+    options: ["Schizophrenia, in which it is the most common", "Epilepsy and parieto-occipital or temporal lesions", "Bulimia nervosa, as a body-image disturbance", "Generalised anxiety disorder during worry episodes"],
     answer: 1,
     explanation:
       "Fish notes that autoscopy can occur in schizophrenia and as a hysterical symptom, but it is more often linked to organic conditions, especially epilepsy and focal lesions of parieto-occipital and temporal regions, which suggests a disturbance of the body schema. Negative autoscopy is failing to see one's own image in a mirror. It is not characteristic of bulimia or GAD.",
@@ -246,12 +236,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A patient after a complex partial seizure walks around, appears dazed, carries out semi-purposeful actions such as buttoning and unbuttoning a shirt, and later has amnesia. This disturbance of consciousness is best termed:",
-    options: [
-      "Twilight state with automatism",
-      "Stupor",
-      "Coma",
-      "Oneiroid state",
-    ],
+    options: ["Twilight state with automatisms", "Stupor with mutism and akinesia", "Coma with no response to pain", "Oneiroid state with dream-like scenes"],
     answer: 0,
     explanation:
       "A twilight state is a narrowed field of consciousness with relatively preserved motor activity, abrupt onset and end, and later amnesia; it is seen in epilepsy (post-ictal or ictal), alcohol and dissociative states, often with automatisms. Stupor is akinesis and mutism with preserved consciousness. Coma is unrousable unconsciousness. Oneiroid states involve dream-like, often fantastic, scenic hallucinations.",
@@ -310,12 +295,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Cognitive and neuroimaging research on auditory verbal hallucinations most supports which account?",
-    options: [
-      "They result from damage to the primary auditory cortex alone",
-      "They reflect a failure of source monitoring, so that inner speech is misattributed to an external source, with activation of speech-related cortex",
-      "They are always conscious fabrication",
-      "They arise only from cochlear pathology",
-    ],
+    options: ["Damage confined to the primary auditory cortex", "Misattribution of inner speech to an outside source", "Conscious fabrication by the patient in most cases", "Pathology of the cochlea and auditory nerve"],
     answer: 1,
     explanation:
       "Models from Frith, Bentall and others propose that AVHs arise when self-generated inner speech is not tagged as self-produced (a corollary discharge or self-monitoring failure) and so is externally attributed. fMRI shows activation of Broca's area, superior temporal gyrus and related networks during hallucinations, and subvocalisation can sometimes be detected. Hallucinations are not fabrication, and primary auditory cortex damage or cochlear disease is not the usual basis in psychosis.",
@@ -350,12 +330,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient says, 'I feel nothing for my children any more. I know I love them, but the feeling is just not there.' This is described as:",
-    options: [
-      "The 'feeling of loss of feeling' (affective depersonalisation)",
-      "La belle indifférence",
-      "Alexithymia",
-      "Blunted affect observed by the examiner",
-    ],
+    options: ["The 'feeling of loss of feeling' (affective depersonalisation)", "La belle indifférence towards a disabling symptom", "Alexithymia, a trait-level difficulty naming feelings", "Blunted affect, as observed by the examiner"],
     answer: 0,
     explanation:
       "The distressing subjective experience of being unable to feel emotions (the 'feeling of loss of feeling') is a form of depersonalisation common in depression. La belle indifférence is inappropriate unconcern about a disabling symptom. Alexithymia (Sifneos) is difficulty identifying and describing emotions, often without distress about it. Blunted affect is an observed sign, whereas this is a subjective complaint.",

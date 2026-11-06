@@ -14,12 +14,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 21-year-old woman reports 8 months of fear that she smells of sweat and faeces. She showers four times daily, uses strong deodorants, repeatedly checks her odour by sniffing her clothes, and avoids buses because she believes people cover their noses because of her. No one else notices any smell. She has no other psychotic symptoms.",
     stem: "Which diagnosis best fits in ICD-11 (with the corresponding DSM-5-TR option)?",
-    options: [
-      "Social anxiety disorder in both systems",
-      "Delusional disorder, somatic type, in both systems",
-      "Olfactory reference disorder in ICD-11; other specified obsessive-compulsive and related disorder (olfactory reference syndrome) in DSM-5-TR",
-      "Body dysmorphic disorder in both systems",
-    ],
+    options: ["Social anxiety disorder in both ICD-11 and DSM-5-TR", "Delusional disorder, somatic type, in both of the systems", "Olfactory reference disorder (ICD-11); other specified OCRD (DSM)", "Body dysmorphic disorder in both ICD-11 and DSM-5-TR"],
     answer: 2,
     explanation:
       "Persistent preoccupation with emitting a foul or offensive body odour, with repetitive checking, washing, reassurance-seeking or avoidance and ideas of reference, is olfactory reference disorder (ICD-11 6B22, an OCRD). DSM-5-TR lists 'olfactory reference syndrome' as an example of other specified OCRD (also called jikoshu-kyofu, a taijin kyofusho variant). Social anxiety centres on scrutiny rather than a belief about odour. Delusional disorder would apply only if there were no repetitive behaviours and conviction were delusional, though insight specifiers handle conviction in ORD. BDD concerns appearance, not smell.",
@@ -34,12 +29,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 30-year-old man had a 2-week episode of grandiosity, decreased sleep need and pressured speech last year, which ended spontaneously. Over the past 5 weeks he has had persecutory delusions and third-person hallucinations, with euthymic mood throughout. He has never had a depressive episode. There is no substance use.",
     stem: "Which diagnostic reasoning is correct?",
-    options: [
-      "Bipolar I disorder, with mood-incongruent psychotic features",
-      "Schizoaffective disorder, bipolar type",
-      "Too early to decide: if psychosis persists without mood symptoms and total duration of psychosis is short relative to mood episodes, schizoaffective disorder is possible; currently schizophreniform disorder (provisional) is the most defensible label, with the past manic episode noted",
-      "Brief psychotic disorder",
-    ],
+    options: ["Bipolar I disorder, with mood-incongruent psychotic features", "Schizoaffective disorder, bipolar type", "Schizophreniform disorder (provisional), with the past manic episode noted", "Brief psychotic disorder, with marked stressor"],
     answer: 2,
     explanation:
       "Psychosis occurring entirely outside a mood episode excludes 'bipolar with psychotic features', since in bipolar disorder psychotic features occur during mood episodes. Schizoaffective disorder requires a major mood episode concurrent with Criterion A at some point; here the manic episode did not include psychosis, so Criterion A was not concurrent. Current psychosis of 5 weeks fits schizophreniform disorder (provisional), with the past manic episode recorded; longitudinal follow-up is essential. Brief psychotic disorder needs under 1 month.",
@@ -73,12 +63,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which feature most reliably distinguishes PTSD flashbacks from psychotic hallucinations?",
-    options: [
-      "Flashbacks always occur at night",
-      "Flashbacks are never visual",
-      "Flashbacks are re-experiencing of elements of the actual traumatic event, often triggered by reminders, rather than novel perceptions with themes unrelated to the trauma",
-      "Hallucinations always involve smell",
-    ],
+    options: ["Flashbacks occur only at night, during sleep or on waking", "Flashbacks are never visual and are always purely auditory", "Flashbacks replay elements of the real trauma, usually cued", "Psychotic hallucinations always involve the sense of smell"],
     answer: 2,
     explanation:
       "Flashbacks are dissociative re-experiencing of sensory elements of the real trauma, usually triggered by reminders and accompanied by the emotions of the event. Psychotic hallucinations are typically novel, may comment or command, and have themes that are not limited to trauma memories. Flashbacks occur at any time and are commonly visual. Hallucinations are mostly auditory in schizophrenia. Note that PTSD with psychotic features and trauma-related psychosis do occur, so careful assessment is needed.",
@@ -94,12 +79,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 63-year-old man presents with 6 months of apathy, word-finding difficulty and slowness, with low mood that he denies. His wife says he no longer initiates activities but is not sad. MoCA is 20/30, with poor delayed recall improved by cues and poor fluency. MRI shows extensive periventricular white matter hyperintensities and two lacunes. He has long-standing hypertension and diabetes.",
     stem: "Which diagnosis best fits?",
-    options: [
-      "Major depressive disorder only",
-      "Major NCD due to Alzheimer's disease",
-      "Major or mild vascular neurocognitive disorder, with apathy (a common feature of subcortical ischaemic disease)",
-      "Behavioural-variant frontotemporal NCD",
-    ],
+    options: ["Major depressive disorder only", "Major NCD due to Alzheimer's disease", "Vascular NCD with prominent apathy", "Behavioural-variant frontotemporal NCD"],
     answer: 2,
     explanation:
       "Vascular risk factors, white-matter disease with lacunes on MRI, apathy, psychomotor slowing and a retrieval-type memory deficit (cued recall helps) fit subcortical vascular NCD; whether it is major or mild depends on functional independence. Apathy without sadness differs from depression, although post-stroke depression is common and should be screened for. Alzheimer's disease typically shows a storage deficit not helped by cues. bvFTD would show early disinhibition, loss of empathy and hyperorality.",
@@ -134,12 +114,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A woman reports that, only in the week before her periods over most cycles of the last year, she has marked mood swings, irritability, anxiety, bloating and difficulty concentrating, which resolve within a few days of menses onset. Before diagnosing PMDD, which disorder must be distinguished as a 'premenstrual exacerbation'?",
-    options: [
-      "Schizophrenia",
-      "Narcolepsy",
-      "An underlying MDD, PDD or GAD that worsens premenstrually",
-      "Anorexia nervosa",
-    ],
+    options: ["Schizophrenia with cyclical exacerbations", "Narcolepsy with daytime sleepiness", "Underlying MDD, PDD or GAD worsening premenstrually", "Anorexia nervosa with irregular menses"],
     answer: 2,
     explanation:
       "PMDD Criterion E excludes cases in which the symptoms are merely an exacerbation of another disorder such as MDD, panic disorder, PDD or a personality disorder; prospective daily ratings help show a symptom-free follicular phase. Schizophrenia, narcolepsy and anorexia are not the relevant differentials for this cyclical affective picture.",
@@ -155,12 +130,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 27-year-old IT professional has, for 2 years, spent 6 to 8 hours daily on a multiplayer online game, with failed attempts to cut down, irritability when unable to play, neglect of sleep and meals, and a recent job loss. He continues despite these problems. There are no mood episodes or psychosis.",
     stem: "How do ICD-11 and DSM-5-TR differ in classifying this presentation?",
-    options: [
-      "Both list internet gaming disorder as a full diagnosis",
-      "Neither recognises it in any form",
-      "ICD-11 diagnoses gaming disorder (predominantly online) as a disorder due to addictive behaviours; DSM-5-TR lists internet gaming disorder only in Section III, so clinically 'other specified impulse-control' or similar coding is used",
-      "Both classify it as OCD",
-    ],
+    options: ["Both list internet gaming disorder as a full diagnosis", "Neither system recognises it in any form", "ICD-11 has gaming disorder; DSM-5-TR keeps it in Section III", "Both classify it as a form of OCD"],
     answer: 2,
     explanation:
       "ICD-11 6C51 gaming disorder requires impaired control, increasing priority over other activities, and continuation despite harm, usually for 12 months, with online or offline specifiers. DSM-5-TR places internet gaming disorder in Conditions for Further Study (five of nine criteria over 12 months), so it is not an official diagnosis; clinicians use other specified or unspecified codes. Gaming is reward-driven rather than obsession-driven, so OCD is wrong.",
@@ -215,12 +185,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 52-year-old woman has had 4 months of depression, irritability and new-onset suspiciousness. On examination she has fine choreiform movements of the fingers, which she says are 'fidgeting', and her mother died in her 50s 'in a psychiatric hospital with jerking'. She makes errors in planning tasks but scores 27/30 on MMSE.",
     stem: "What is the most important next step?",
-    options: [
-      "Start an SSRI and review in 6 weeks",
-      "Diagnose late-onset delusional disorder",
-      "Genetic counselling followed, with consent, by testing for HTT CAG repeat expansion (Huntington's disease)",
-      "Prescribe haloperidol for chorea without further assessment",
-    ],
+    options: ["Start an SSRI and review her mood in 6 weeks", "Diagnose late-onset delusional disorder", "Genetic counselling, then consented HTT testing", "Prescribe haloperidol for the chorea only"],
     answer: 2,
     explanation:
       "Psychiatric change (depression, irritability, paranoia), executive dysfunction, subtle chorea and an affected parent strongly suggest Huntington's disease. Predictive or diagnostic genetic testing should follow genetic counselling and informed consent because of implications for the patient and family. MMSE is insensitive to executive deficits. Treating depression alone or labelling delusional disorder misses the cause. Symptomatic treatment may be needed later, but it does not replace diagnosis.",
@@ -255,12 +220,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature best distinguishes dementia from delirium?",
-    options: [
-      "Presence of memory impairment",
-      "Older age",
-      "Gradual onset with relatively preserved attention and stable level of consciousness until late stages",
-      "Visual hallucinations",
-    ],
+    options: ["The presence of memory impairment on testing", "Older age at the time of first presentation", "Gradual onset with attention preserved until late", "The presence of vivid visual hallucinations"],
     answer: 2,
     explanation:
       "Dementia (major NCD) usually develops insidiously over months or years with preserved attention and alertness until late, whereas delirium is acute, fluctuating and fundamentally a disturbance of attention and awareness. Memory impairment occurs in both. Age is a risk factor for both. Visual hallucinations occur in delirium and in DLB.",
@@ -276,12 +236,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 25-year-old woman presents with periods of 'losing time': she finds clothes she does not remember buying, people greet her by another name, and her diary contains entries in different handwriting. She reports childhood sexual abuse. She also hears voices of a child and an angry man inside her head, which she knows are 'parts of me'. Between these, she is depressed and self-harms.",
     stem: "Which diagnosis should be considered first, and which feature most strongly supports it over schizophrenia?",
-    options: [
-      "Schizophrenia; internal voices",
-      "Borderline personality disorder only; self-harm",
-      "Dissociative identity disorder; recurrent gaps in recall of everyday events with evidence of distinct identity states, and voices experienced as internal parts of the self",
-      "Bipolar disorder; mood swings",
-    ],
+    options: ["Schizophrenia; the internal voices are enough to settle the diagnosis", "Borderline personality disorder alone; the self-harm is the key feature", "DID; everyday amnesia, signs of switching, voices felt as parts of self", "Bipolar disorder; the mood swings are the main and defining feature"],
     answer: 2,
     explanation:
       "Recurrent amnesia for everyday events, evidence of switching (different handwriting, being called another name, unexplained purchases) and a trauma history point to DID. Voices in DID are typically experienced internally as parts of the self, often child or persecutor alters, which differs from the external, first-rank-type voices more typical of schizophrenia, though there is overlap. BPD and depression may coexist but do not explain the identity disruption. Mood swings alone do not suggest bipolar disorder.",
@@ -295,12 +250,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 70-year-old man with Parkinson's disease on levodopa and pramipexole develops new compulsive gambling and hypersexuality. The most likely cause is:",
-    options: [
-      "Late-onset bipolar disorder",
-      "Frontotemporal dementia",
-      "Impulse-control disorder induced by dopamine agonist therapy",
-      "Antisocial personality disorder",
-    ],
+    options: ["Late-onset bipolar disorder, manic episode", "Frontotemporal dementia, behavioural variant", "Dopamine agonist-induced impulse-control disorder", "Antisocial personality disorder, late presentation"],
     answer: 2,
     explanation:
       "Dopamine agonists such as pramipexole and ropinirole cause impulse-control disorders (gambling, hypersexuality, compulsive shopping, binge eating) in a significant minority of patients; management involves reducing or switching the agonist. Bipolar disorder would require mood episodes. FTD could cause disinhibition but the temporal link with the agonist is key. ASPD cannot start at 70.",
@@ -332,12 +282,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 23-year-old woman presents with 3 weeks of anxiety, insomnia and bizarre behaviour, followed by visual and auditory hallucinations, then decreased responsiveness, orofacial dyskinesias and episodes of tachycardia and hypertension. She had a flu-like illness a month ago. Her psychiatrist started haloperidol, after which she became rigid and febrile. CSF shows lymphocytic pleocytosis.",
     stem: "The most likely diagnosis and key investigation are:",
-    options: [
-      "Schizophrenia with NMS; no further tests",
-      "Catatonic depression; ECT immediately without investigation",
-      "Anti-NMDA receptor encephalitis; CSF and serum anti-NMDAR (GluN1) antibodies and pelvic imaging for ovarian teratoma",
-      "Herpes simplex encephalitis only; acyclovir and discharge",
-    ],
+    options: ["Schizophrenia complicated by NMS; no further tests", "Catatonic depression; ECT at once, without investigation", "Anti-NMDA receptor encephalitis; antibodies and teratoma search", "Herpes simplex encephalitis; acyclovir, then discharge"],
     answer: 2,
     explanation:
       "Prodromal viral-like illness, psychiatric onset, then decreased consciousness, dyskinesias, autonomic instability, antipsychotic intolerance and CSF pleocytosis are classic for anti-NMDAR encephalitis, mainly in young women and often linked to ovarian teratoma. Testing CSF antibodies and imaging for teratoma guide immunotherapy and tumour removal. Labelling it schizophrenia or depression misses a treatable cause. HSV encephalitis can trigger anti-NMDAR encephalitis but would not by itself account for the full picture, and acyclovir alone is insufficient.",
@@ -351,12 +296,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which pattern best distinguishes an illness anxiety disorder patient from one with somatic symptom disorder?",
-    options: [
-      "Illness anxiety patients have prominent, distressing physical symptoms",
-      "Somatic symptom disorder patients have no somatic symptoms",
-      "In illness anxiety disorder somatic symptoms are absent or mild and the distress is about the idea of being ill; in SSD the distress centres on the symptoms themselves",
-      "They cannot be distinguished",
-    ],
+    options: ["Illness anxiety involves prominent, distressing physical symptoms", "Somatic symptom disorder involves no somatic symptoms at all", "Illness anxiety centres on the idea of illness; SSD on the symptoms", "The two disorders cannot be distinguished clinically"],
     answer: 2,
     explanation:
       "DSM-5 split DSM-IV hypochondriasis: those with significant somatic symptoms plus excessive concern go to SSD (about 75%), while those with little or no symptoms but high health anxiety go to illness anxiety disorder. The other options invert or deny this distinction.",
@@ -394,12 +334,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 36-year-old man on lithium for bipolar disorder presents with coarse tremor, vomiting, diarrhoea, ataxia, slurred speech and confusion after starting ibuprofen and a thiazide for hypertension. He is not manic.",
     stem: "What is the most likely problem and immediate step?",
-    options: [
-      "Manic relapse; increase lithium",
-      "Lithium toxicity due to drug interactions that raise lithium levels; stop lithium, check serum lithium, renal function and electrolytes, and give supportive care (haemodialysis if severe)",
-      "Wernicke encephalopathy; give thiamine",
-      "Cerebellar stroke; start aspirin",
-    ],
+    options: ["Manic relapse; increase the lithium dose and add an antipsychotic", "Lithium toxicity from interactions; stop lithium, check levels", "Wernicke encephalopathy; give high-dose parenteral thiamine", "Cerebellar stroke; start aspirin and arrange urgent imaging"],
     answer: 1,
     explanation:
       "NSAIDs and thiazide diuretics reduce renal lithium clearance and commonly precipitate toxicity; ACE inhibitors and dehydration do the same. Coarse tremor, GI upset, ataxia, dysarthria and confusion are typical. Management is stopping lithium, urgent levels, fluids and electrolyte correction, and haemodialysis in severe cases (e.g., level above 4 mmol/L or neurological signs). This is not mania. Wernicke and stroke are less likely given the medication history.",
@@ -415,12 +350,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 14-year-old girl has lost 10 kg over 6 months by restricting food. She says she is not afraid of weight gain and does not think she is fat, but that eating causes 'tummy pain' and she has 'no appetite'. Her BMI is 15.2. She exercises for 2 hours daily and becomes distressed if made to eat calorie-dense foods.",
     stem: "Which diagnosis should be considered most carefully, and why?",
-    options: [
-      "ARFID, because she denies fear of weight gain",
-      "Anorexia nervosa should still be considered: DSM-5-TR allows persistent behaviour that interferes with weight gain to substitute for stated fear of weight gain, and denial is common",
-      "Functional abdominal pain only",
-      "No disorder, because she is still growing",
-    ],
+    options: ["ARFID, because she denies any fear of gaining weight", "Anorexia nervosa, as weight-preventing behaviour can replace fear", "Functional abdominal pain, with no underlying eating disorder", "No disorder at all, because adolescents are still growing"],
     answer: 1,
     explanation:
       "DSM-5 Criterion B accepts persistent weight-gain-preventing behaviour (excessive exercise, distress at energy-dense foods) even if fear is denied, which is common in adolescents. Selective avoidance of calorie-dense foods and compulsive exercise suggest AN rather than ARFID, which is not driven by weight or shape concerns. Medical causes (e.g., coeliac or inflammatory bowel disease) should be excluded, but 'functional pain only' ignores the weight loss. A BMI of 15.2 at 14 is serious.",
@@ -434,12 +364,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which finding most strongly suggests malingering rather than a genuine disorder, according to DSM-5-TR guidance?",
-    options: [
-      "Presence of any psychiatric symptom",
-      "A medicolegal context, marked discrepancy between claimed distress and objective findings, lack of cooperation with evaluation, and presence of antisocial personality disorder",
-      "A history of childhood trauma",
-      "Symptoms that respond to treatment",
-    ],
+    options: ["The presence of any psychiatric symptom that cannot be explained medically", "Medicolegal context, mismatch with objective findings, poor cooperation, antisocial PD", "A history of childhood trauma or neglect in the person's background", "Symptoms that improve with standard treatment over several weeks"],
     answer: 1,
     explanation:
       "DSM-5-TR says malingering should be strongly suspected with any combination of a medicolegal context (e.g., referral by an attorney), marked discrepancy between claimed stress or disability and objective findings, poor cooperation with evaluation or treatment, and antisocial PD. Symptoms alone, trauma history and treatment response do not suggest feigning.",
@@ -452,12 +377,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 28-year-old man with ADHD has episodes of irritability lasting hours, and a sustained 6-day period of reduced need for sleep, grandiose business plans, rapid speech and risky driving. The 6-day period is best regarded as:",
-    options: [
-      "Part of ADHD hyperactivity",
-      "A hypomanic episode, since it is a distinct period of change from baseline lasting 4 or more days with three or more symptoms",
-      "A manic episode, because it lasted more than 4 days",
-      "Borderline affective instability",
-    ],
+    options: ["Part of his long-standing ADHD hyperactivity and impulsivity", "A hypomanic episode: a distinct 4-day change with three symptoms", "A manic episode, simply because it lasted longer than 4 days", "Borderline affective instability under interpersonal stress"],
     answer: 1,
     explanation:
       "ADHD symptoms are trait-like and continuous; a distinct episode of change with decreased sleep need, grandiosity and pressured speech lasting at least 4 days qualifies as hypomania if it lacks marked impairment, psychosis or hospitalisation. Mania requires 1 week (or hospitalisation) or marked impairment; risky driving alone without marked impairment does not make it mania. Brief reactive irritability fits BPD or ADHD, but a 6-day distinct episode does not.",
@@ -473,12 +393,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 33-year-old woman reports her 'heart is weak'. For 9 months she has had palpitations, chest discomfort and dizziness, saw five cardiologists (all normal), checks her pulse 30 times a day, avoids exercise, and spends hours researching heart disease online. She is distressed and has stopped working.",
     stem: "The best DSM-5-TR diagnosis is:",
-    options: [
-      "Panic disorder",
-      "Illness anxiety disorder",
-      "Somatic symptom disorder, with persistent course",
-      "Factitious disorder",
-    ],
+    options: ["Panic disorder with agoraphobic avoidance", "Illness anxiety disorder, care-seeking type", "Somatic symptom disorder, persistent course", "Factitious disorder imposed on self"],
     answer: 2,
     explanation:
       "She has distressing somatic symptoms with disproportionate, persistent thoughts and behaviours (checking, researching, doctor shopping, avoidance) for over 6 months and functional impairment: SSD, specified as persistent (more than 6 months, marked impairment). Illness anxiety disorder applies when symptoms are absent or mild. Panic disorder requires discrete unexpected attacks. Factitious disorder involves falsification, which is not suggested.",
@@ -491,12 +406,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which pattern best differentiates bipolar depression from unipolar depression, on clinical grounds, in a patient with no prior mania?",
-    options: [
-      "Older age at onset and gradual onset",
-      "Early onset, abrupt onset, atypical features (hypersomnia, hyperphagia), psychotic features, postpartum onset, family history of bipolar disorder and antidepressant-induced switching",
-      "Absence of family history",
-      "Prominent anxiety and middle insomnia",
-    ],
+    options: ["Later age at onset and a gradual, insidious onset of symptoms", "Early, abrupt onset, atypical or psychotic features, family history", "No family history of any mood disorder in first-degree relatives", "Prominent anxiety, middle insomnia and somatic complaints"],
     answer: 1,
     explanation:
       "Features suggesting a bipolar diathesis in a first depression include onset before about 25, abrupt onset, atypical features, psychotic features, postpartum onset, multiple brief recurrences, family history of bipolar disorder and hypomania on antidepressants (Mitchell and colleagues' probabilistic approach). Later, gradual onset with anxiety and insomnia leans unipolar. Absence of family history does not suggest bipolarity.",

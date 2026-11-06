@@ -52,12 +52,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Anhedonia refers to:",
-    options: [
-      "Inability to sleep",
-      "Excessive guilt",
-      "Rapid speech",
-      "Markedly diminished interest or pleasure in activities",
-    ],
+    options: ["Persistent inability to fall or stay asleep", "Excessive or inappropriate feelings of guilt", "Rapid, pressured speech that is hard to interrupt", "Markedly reduced interest or pleasure in activities"],
     answer: 3,
     explanation:
       "Anhedonia is loss of interest or pleasure and is one of the two cardinal symptoms of a major depressive episode, alongside depressed mood. It is also a negative symptom of schizophrenia. Insomnia, guilt and rapid speech are separate symptoms.",
@@ -89,12 +84,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Compulsions in OCD are best described as:",
-    options: [
-      "Involuntary jerky movements",
-      "Pleasurable habits",
-      "Fixed false beliefs",
-      "Repetitive behaviours or mental acts performed in response to an obsession or rigid rules, aimed at reducing distress or preventing a feared event",
-    ],
+    options: ["Sudden, involuntary jerky movements that the person cannot suppress", "Pleasurable habits that the person enjoys and does not want to change", "Fixed false beliefs held despite clear evidence to the contrary", "Repetitive acts done in response to an obsession or rigid rule, to reduce distress"],
     answer: 3,
     explanation:
       "Compulsions (washing, checking, counting, praying) are performed to neutralise obsessions or according to rigid rules, and are not realistically connected to what they aim to prevent, or are clearly excessive. Involuntary jerky movements are tics or chorea. Compulsions are not pleasurable. Fixed false beliefs are delusions.",
@@ -122,12 +112,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Tolerance refers to:",
-    options: [
-      "Symptoms that appear after stopping a substance",
-      "Strong desire to use a substance",
-      "Using a substance in hazardous situations",
-      "Needing markedly increased amounts to achieve the desired effect, or a diminished effect with continued use of the same amount",
-    ],
+    options: ["Unpleasant symptoms that appear after stopping or cutting down a substance", "A strong desire or urge to use the substance, especially when reminded of it", "Repeated use of the substance in situations where it is physically hazardous", "Needing more of the substance for the same effect, or less effect from the same amount"],
     answer: 3,
     explanation:
       "Tolerance is the need for increasing amounts, or a reduced effect with the same amount; it is one of the 11 DSM-5-TR SUD criteria. Symptoms on stopping are withdrawal. Strong desire is craving. Use in physically hazardous situations is a separate criterion.",
@@ -271,12 +256,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Bleuler coined the term 'schizophrenia' in 1911 to emphasise:",
-    options: [
-      "A split or multiple personality",
-      "Inevitable deterioration to dementia",
-      "Its onset in old age",
-      "A splitting of psychic functions (thought, emotion, behaviour) from one another",
-    ],
+    options: ["A split or multiple personality within one person", "Inevitable deterioration to dementia in early life", "Its typical onset in old age rather than youth", "A splitting apart of thought, emotion and behaviour"],
     answer: 3,
     explanation:
       "Bleuler's 'schizo-phrenia' refers to the loosening and splitting apart of mental functions, not a split personality, which is the common lay misunderstanding (that is closer to DID). He rejected Kraepelin's emphasis on inevitable deterioration and young onset ('praecox') as defining features, and described the fundamental 'four As'.",
@@ -355,12 +335,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature is required for a diagnosis of ADHD in DSM-5-TR?",
-    options: [
-      "Symptoms present in only one setting",
-      "Onset after age 12",
-      "An IQ below 70",
-      "Several symptoms present in two or more settings (e.g., home and school)",
-    ],
+    options: ["Symptoms present in only one setting, such as school", "Onset of the first symptoms after the age of 12", "A measured IQ below 70 on standard testing", "Several symptoms present in two or more settings"],
     answer: 3,
     explanation:
       "ADHD requires several symptoms in two or more settings, several present before 12, at least 6 months' duration, and interference with functioning. Symptoms in one setting suggest a situational problem. IQ is not a criterion; ADHD occurs across the IQ range and with intellectual disability only if symptoms exceed what is expected for mental age.",
@@ -374,12 +349,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Disulfiram helps in alcohol use disorder by:",
-    options: [
-      "Blocking opioid receptors to reduce reward",
-      "Modulating glutamate to reduce craving",
-      "Replacing alcohol with a safer sedative",
-      "Inhibiting aldehyde dehydrogenase, so that drinking causes an unpleasant acetaldehyde reaction (flushing, nausea, palpitations)",
-    ],
+    options: ["Blocking opioid receptors so that drinking is less rewarding", "Modulating glutamate and GABA to reduce craving after detox", "Replacing alcohol with a safer, longer-acting sedative", "Blocking alcohol breakdown so that drinking causes an unpleasant reaction"],
     answer: 3,
     explanation:
       "Disulfiram is an aversive agent that inhibits aldehyde dehydrogenase, causing acetaldehyde build-up and the disulfiram-ethanol reaction; it works best with supervised administration. Naltrexone blocks opioid receptors. Acamprosate modulates glutamate and GABA. No safe 'replacement' exists for alcohol, although benzodiazepines are used short-term for withdrawal.",
@@ -393,12 +363,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which of the following is a GOOD prognostic factor in schizophrenia?",
-    options: [
-      "Insidious onset",
-      "Prominent negative symptoms",
-      "Male sex and early onset",
-      "Acute onset with an obvious precipitating stressor and prominent mood symptoms",
-    ],
+    options: ["Insidious onset over several years", "Prominent negative symptoms from the start", "Male sex and early age at onset", "Acute onset, clear stressor and mood symptoms"],
     answer: 3,
     explanation:
       "Good-prognosis features include acute onset, later onset, clear precipitants, good premorbid functioning, mood symptoms, being married, female sex, positive rather than negative symptoms, and good social support. Insidious onset, negative symptoms, male sex and early onset predict poorer outcome.",
@@ -449,12 +414,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The Brief Psychiatric Rating Scale (BPRS) and the PANSS are used primarily to rate:",
-    options: [
-      "Intelligence",
-      "Personality traits",
-      "Neuropsychological deficits",
-      "Severity of psychopathology, especially psychotic symptoms",
-    ],
+    options: ["General intelligence and reasoning ability", "Normal personality traits such as extraversion", "Neuropsychological deficits in memory and attention", "Severity of psychopathology, especially psychosis"],
     answer: 3,
     explanation:
       "The BPRS (Overall and Gorham, 18 or 24 items) and the PANSS (Kay, 30 items: positive, negative and general psychopathology subscales) are clinician-rated measures of symptom severity, widely used in schizophrenia trials. They do not measure intelligence, personality traits or neuropsychological functions.",
@@ -468,12 +428,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Latah, reported mainly in Malaysia and Indonesia, is characterised by:",
-    options: [
-      "Brooding followed by homicidal violence",
-      "Fear of genital retraction",
-      "Belief of being possessed by a cannibal spirit",
-      "Exaggerated startle followed by echolalia, echopraxia, automatic obedience and sometimes coprolalia",
-    ],
+    options: ["Brooding followed by an outburst of homicidal violence", "Fear that the genitals will retract into the body", "Belief of being possessed by a cannibal spirit", "Exaggerated startle followed by echolalia and echopraxia"],
     answer: 3,
     explanation:
       "Latah is a hyper-startle reaction, mainly in middle-aged women, with echo phenomena, command obedience and obscene utterances, often socially tolerated or even entertaining in its setting. Brooding and violence describe amok. Genital retraction is koro. Cannibal-spirit possession is windigo (Algonquian peoples).",
@@ -522,12 +477,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement correctly distinguishes hypomania from mania?",
-    options: [
-      "Hypomania lasts at least 2 weeks",
-      "Hypomania may include psychotic features",
-      "Hypomania requires hospitalisation",
-      "Hypomania is not severe enough to cause marked impairment or require hospitalisation, and has no psychotic features",
-    ],
+    options: ["Hypomania must last at least 2 weeks to be diagnosed", "Hypomania may include mood-congruent psychotic features", "Hypomania requires hospitalisation to be diagnosed", "Hypomania lacks marked impairment, hospitalisation and psychosis"],
     answer: 3,
     explanation:
       "Hypomania lasts at least 4 consecutive days, is an observable change, and by definition lacks marked impairment, psychosis or need for hospitalisation; any of these makes the episode manic. Two weeks is the MDE duration. Psychotic features or hospitalisation define mania.",
@@ -555,12 +505,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Seligman's learned helplessness experiments originally involved:",
-    options: [
-      "Children learning to read",
-      "Rats in a Skinner box receiving food",
-      "Monkeys separated from mothers",
-      "Dogs exposed to inescapable shock that later failed to escape avoidable shock",
-    ],
+    options: ["Children learning to read with and without rewards", "Rats in a Skinner box receiving food for lever presses", "Infant monkeys separated from their mothers", "Dogs given inescapable shock that later failed to escape"],
     answer: 3,
     explanation:
       "Seligman and Maier found dogs given inescapable shocks later failed to learn escape when it was possible, which became a model of depression. Rats receiving food illustrate operant reinforcement. Harlow's monkeys illustrate attachment and separation. Later work by Maier suggested that passivity is the default response, and that what is learned is control.",
@@ -574,7 +519,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which is an intrusion symptom of PTSD?",
-    options: ["Exaggerated startle response", "Persistent negative emotional state", "Avoidance of reminders", "Recurrent distressing dreams related to the trauma"],
+    options: ["Exaggerated startle response to sudden noises", "Persistent negative emotions such as fear or shame", "Effortful avoidance of reminders of the trauma", "Recurrent distressing dreams related to the trauma"],
     answer: 3,
     explanation:
       "Intrusion symptoms (Criterion B) include intrusive memories, distressing dreams, flashbacks, and psychological or physiological distress on exposure to cues. Exaggerated startle is an arousal symptom (E). Persistent negative emotion is a Criterion D symptom. Avoidance is Criterion C.",

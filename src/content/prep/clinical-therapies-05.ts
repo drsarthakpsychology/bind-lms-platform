@@ -134,12 +134,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The Acceptance and Action Questionnaire-II (AAQ-II) is used to measure:",
-    options: [
-      "Severity of depression",
-      "Personality traits of the Big Five",
-      "Psychological inflexibility and experiential avoidance",
-      "Intelligence",
-    ],
+    options: ["Severity of depressive symptoms", "Big Five personality traits", "Psychological inflexibility", "General intelligence"],
     answer: 2,
     explanation:
       "The AAQ-II is a brief self-report measure of psychological inflexibility (higher scores mean more experiential avoidance). It is used to test ACT's proposed mechanism of change, since gains in flexibility are expected to mediate outcome. It does not measure depression severity, the Big Five or intelligence.",
@@ -153,12 +148,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Mindfulness-based cognitive therapy (MBCT) was designed mainly to:",
-    options: [
-      "Treat acute psychosis",
-      "Treat childhood ADHD",
-      "Prevent relapse in people with recurrent depression who are currently well",
-      "Replace antidepressants in severe acute depression",
-    ],
+    options: ["Treat acute psychosis in inpatients", "Treat ADHD in school-age children", "Prevent relapse in recurrent depression", "Replace antidepressants in severe acute depression"],
     answer: 2,
     explanation:
       "Segal, Williams and Teasdale built MBCT as an 8-week group programme, combining Kabat-Zinn's mindfulness-based stress reduction with cognitive therapy ideas, to prevent relapse in recurrent depression. It is taught when people are in remission, so they can notice early signs of a downward spiral. It was not designed for acute psychosis, ADHD or as the main treatment for severe acute depression.",
@@ -228,12 +218,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A large randomised trial in UK primary care compared two groups of people with recurrent depression who were in remission on maintenance antidepressants: one continued antidepressants; the other received MBCT with support to taper and stop medication. Over 2 years, relapse rates were similar in the two groups.",
     stem: "What is the most accurate interpretation?",
-    options: [
-      "MBCT is useless, since it did not beat medication",
-      "Antidepressants should be stopped in everyone with recurrent depression",
-      "MBCT with supported tapering is a reasonable alternative to maintenance antidepressants for people who prefer to stop medication, though it was not shown to be superior",
-      "The trial proves mindfulness cures depression",
-    ],
+    options: ["MBCT is useless, since it did not beat maintenance medication", "Antidepressants should now be stopped in everyone with recurrent depression", "MBCT with tapering is a fair alternative for those who wish to stop medication", "The trial proves that mindfulness cures recurrent depression"],
     answer: 2,
     explanation:
       "The trial (PREVENT) found MBCT plus tapering was not superior to maintenance antidepressants, but relapse was similar, which supports offering MBCT as an alternative for people who do not wish to stay on medication long term. It does not show MBCT is useless, it does not justify stopping medication for everyone, and similar relapse rates are not a 'cure'.",
@@ -247,12 +232,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In MBCT, 'decentering' refers to:",
-    options: [
-      "Moving the client's attention away from the therapist",
-      "Proving that thoughts are false",
-      "Relating to thoughts as passing mental events rather than as accurate reflections of reality or of the self",
-      "Changing the content of core beliefs",
-    ],
+    options: ["Moving the client's attention away from the therapist", "Proving that negative thoughts are false", "Seeing thoughts as passing mental events, not facts", "Changing the content of core beliefs"],
     answer: 2,
     explanation:
       "Decentering (also called metacognitive awareness) means stepping back and seeing 'I am worthless' as a thought, not a fact. Teasdale's work suggested that this shift, rather than changing belief content, is how both cognitive therapy and MBCT prevent relapse. MBCT does not try to prove thoughts false or rewrite core beliefs, and the term has nothing to do with attention to the therapist.",
@@ -286,12 +266,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Compassion-focused therapy was developed especially for people who:",
-    options: [
-      "Have no emotional problems",
-      "Have specific phobias only",
-      "Have high levels of shame and self-criticism, and often find CBT reasoning helpful 'in the head' but not emotionally reassuring",
-      "Need medication management only",
-    ],
+    options: ["Have no clear emotional problems but want personal growth", "Have specific phobias without other difficulties", "Have high shame and self-criticism that CBT logic does not soothe", "Need medication management only, without psychological work"],
     answer: 2,
     explanation:
       "Gilbert noticed that many self-critical clients could generate alternative thoughts in CBT but said them in a hostile inner voice, so nothing changed emotionally. CFT trains the capacity for warmth and soothing (compassionate mind training) to address shame and self-attack across diagnoses. It is not a phobia-specific treatment or a medication approach.",
@@ -399,12 +374,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In Adrian Wells's metacognitive therapy, the 'cognitive attentional syndrome' (CAS) refers to:",
-    options: [
-      "A single negative automatic thought",
-      "A neurological attention deficit",
-      "Perseverative worry or rumination, threat monitoring, and unhelpful coping behaviours such as thought suppression",
-      "A type of dissociative amnesia",
-    ],
+    options: ["A single negative automatic thought about the self", "A neurological deficit in sustaining attention", "Worry or rumination, threat monitoring and unhelpful coping", "A type of dissociative amnesia for stressful events"],
     answer: 2,
     explanation:
       "Wells argues that disorder is maintained not by the content of thoughts but by a style of thinking: repetitive worry or rumination, fixed attention on threat, and coping that backfires (suppression, avoidance, reassurance-seeking). The CAS is driven by metacognitive beliefs, both positive ('worrying helps me cope') and negative ('my worry is uncontrollable and dangerous'). It is not a single thought, a neurological deficit or amnesia.",
@@ -435,12 +405,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The 'attention training technique' (ATT) in metacognitive therapy involves:",
-    options: [
-      "Relaxing with pleasant imagery",
-      "Meditating on the breath for 45 minutes",
-      "Listening to several simultaneous sounds and practising selective attention, rapid switching and dividing attention, to build flexible external control of attention",
-      "Interpreting dreams",
-    ],
+    options: ["Relaxing with pleasant, calming imagery of a safe place", "Meditating on the breath for 45 minutes, twice a day", "Practising focusing, switching and dividing attention between sounds", "Interpreting dreams to uncover hidden sources of worry"],
     answer: 2,
     explanation:
       "ATT is a structured auditory exercise of about 12 minutes in which the person focuses on one sound, switches between sounds, then spreads attention across all of them. It aims to weaken self-focused, threat-locked attention and strengthen the sense of control over attention. It is not relaxation, a long breath meditation, or dream work.",
@@ -470,12 +435,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In functional analytic psychotherapy, a client who habitually withdraws when hurt tells the therapist, for the first time, 'What you said last week upset me.' The therapist warmly thanks her. In FAP terms, the client's disclosure is a:",
-    options: [
-      "CRB1 (a clinically relevant problem behaviour)",
-      "CRB3 (the client's own interpretation of her behaviour)",
-      "CRB2 (a clinically relevant improvement occurring in session), naturally reinforced by the therapist",
-      "Transference neurosis",
-    ],
+    options: ["CRB1, an in-session problem behaviour", "CRB3, her own account of her behaviour", "CRB2, an in-session improvement", "A transference neurosis"],
     answer: 2,
     explanation:
       "FAP labels in-session problem behaviours as CRB1 (here, usual withdrawal), in-session improvements as CRB2 (here, speaking up about hurt), and the client's descriptions of how their behaviour works as CRB3. The therapist's genuine, immediate response reinforces CRB2 so it generalises to outside relationships. Transference neurosis is a psychoanalytic concept, not a FAP term.",
@@ -488,12 +448,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about the evidence for ACT is the most accurate?",
-    options: [
-      "ACT has no randomised trials",
-      "ACT has been shown to be clearly superior to CBT across all disorders",
-      "Meta-analyses show ACT is more effective than waiting list and usual care across many conditions, and broadly comparable to established treatments such as CBT",
-      "ACT works only for psychosis",
-    ],
+    options: ["ACT has not yet been tested in randomised trials", "ACT is clearly superior to CBT across all disorders", "ACT beats inactive controls and is broadly comparable to CBT", "ACT has been shown to work only for psychosis"],
     answer: 2,
     explanation:
       "Hundreds of randomised trials now exist. Pooled analyses find ACT better than inactive controls and usual care for anxiety, depression, chronic pain and substance use, and roughly equal to CBT where they have been compared directly. Claims of clear superiority are not supported, and its use is not limited to psychosis.",
@@ -508,12 +463,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 35-year-old man with schizophrenia hears voices daily. Antipsychotics reduce their volume but not their frequency. He spends hours arguing with the voices, stays indoors to 'keep them calm', and has stopped visiting his daughter. He wants to be a good father.",
     stem: "Which ACT-consistent plan is most appropriate?",
-    options: [
-      "Aim to eliminate the voices through more arguing until they stop",
-      "Tell him the voices are not real and he must ignore them",
-      "Help him notice the voices without fighting or obeying them (defusion and acceptance), link the work to his value of being a father, and plan small committed actions such as a visit to his daughter while the voices are present",
-      "Advise complete rest at home until the voices disappear",
-    ],
+    options: ["Help him argue back harder with the voices until they finally stop", "Tell him plainly that the voices are not real and that he must ignore them", "Defuse from and accept the voices, and take value-led steps such as visiting his daughter", "Advise complete rest at home until the voices have fully disappeared"],
     answer: 2,
     explanation:
       "ACT for psychosis does not aim to remove voices; it aims to reduce their control over behaviour. Defusion and acceptance lower the struggle, and values (being a father) give a reason for committed action even when voices are present. Brief ACT in inpatients has been linked to lower rehospitalisation, partly by lowering belief in and distress from symptoms. Arguing and staying home are avoidance and fusion. Telling him voices are not real tends to damage engagement.",

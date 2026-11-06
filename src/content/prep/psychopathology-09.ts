@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Jaspers' external characteristics of a delusion include all of the following EXCEPT:",
-    options: [
-      "Extraordinary conviction (subjective certainty)",
-      "Imperviousness to other experiences and counter-argument",
-      "Impossibility or falsity of content",
-      "Recognition by the patient that the belief comes from their own mind and is senseless",
-    ],
+    options: ["Extraordinary conviction (subjective certainty) about the belief", "Imperviousness to other experiences and to counter-argument", "Impossibility or falsity of the content of the belief", "Recognition that the belief comes from one's own mind and is senseless"],
     answer: 3,
     explanation:
       "Jaspers listed certainty, incorrigibility and impossibility or falsity of content as the external features of delusions; the content criterion is the weakest, since a delusion can occasionally be true (e.g., morbid jealousy of a partner who is unfaithful). Recognising a thought as one's own but senseless describes an obsession, not a delusion.",
@@ -67,12 +62,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "An overvalued idea (Wernicke) differs from a delusion in that it:",
-    options: [
-      "Is always bizarre",
-      "Is held with less fixity and is understandable in the context of the person's background and personality, though it dominates their life",
-      "Is experienced as alien and resisted",
-      "Arises suddenly without any understandable antecedent",
-    ],
+    options: ["Is always bizarre and physically impossible in its content", "Is less fixed and understandable from the background, yet dominates life", "Is experienced as alien to the self and is actively resisted", "Arises suddenly, fully formed, without any understandable antecedent"],
     answer: 1,
     explanation:
       "An overvalued idea is a comprehensible, emotionally charged belief that comes to dominate a person's life (e.g., the conviction of being fat in anorexia nervosa), held strongly but not with delusional incorrigibility, and understandable from personality and experience. Bizarreness suggests delusion. Alien and resisted describes obsessions. A sudden ununderstandable origin describes primary delusions.",
@@ -196,12 +186,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 62-year-old man repeatedly searches his wife's clothes and phone, interrogates her about 'lovers' and follows her, despite no evidence. He drinks heavily. Which statement is most important clinically?",
-    options: [
-      "Morbid jealousy is benign and rarely leads to violence",
-      "Treatment should focus solely on couples' communication",
-      "Morbid (Othello) jealousy carries a significant risk of violence and homicide to the partner; risk assessment and safeguarding, including possible separation, are essential",
-      "The belief must be false for the diagnosis to be made",
-    ],
+    options: ["Morbid jealousy is usually benign and rarely leads to violence", "Treatment should focus only on the couple's communication skills", "It carries real risk of violence to the partner; assess risk and safeguard", "The belief must be shown to be false before diagnosis is made"],
     answer: 2,
     explanation:
       "Morbid jealousy, whether delusional or obsessional or overvalued, is linked with alcohol misuse and is a recognised risk factor for intimate partner violence and homicide. Risk assessment, protection of the partner and sometimes geographical separation are recommended alongside treatment. It is not benign. Couples work alone is inadequate if there is psychosis or danger. The truth of the belief is not what matters; the pathological basis and conduct of the belief are, so it can be diagnosed even if the partner is in fact unfaithful.",
@@ -214,12 +199,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature is NOT typical of an obsession in classical descriptive psychopathology?",
-    options: [
-      "It is recognised as one's own thought",
-      "It is intrusive and unwanted",
-      "It is resisted, at least initially",
-      "It is experienced as inserted by an outside agency",
-    ],
+    options: ["It is recognised as one's own thought, not imposed from outside", "It is intrusive, unwanted and often felt to be senseless", "It is resisted, at least in the early stages of the illness", "It is experienced as put into the mind by an outside agency"],
     answer: 3,
     explanation:
       "Obsessions are repetitive, intrusive thoughts, images or impulses recognised as originating from one's own mind, experienced as unwanted and often senseless, and usually resisted. Experiencing a thought as inserted from outside is thought insertion, a first-rank symptom of psychosis.",
@@ -273,12 +253,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which phenomenon is most typical of a 'secondary' delusion?",
-    options: [
-      "A delusion that cannot be understood from mood or experience",
-      "A delusion arising suddenly, fully formed",
-      "A depressed man's belief that he has committed an unforgivable sin and deserves punishment",
-      "A delusional perception after seeing a traffic signal",
-    ],
+    options: ["A delusion that cannot be understood from the person's mood or experience", "A delusion that arises suddenly, fully formed, out of nowhere", "A depressed man's belief that he has committed an unforgivable sin", "A delusional perception triggered by seeing a traffic signal"],
     answer: 2,
     explanation:
       "Secondary delusions (delusion-like ideas, in Jaspers' terms) are understandable as arising from another psychological state, such as mood (guilt in depression), hallucinations or other delusions. A sin delusion in depression is a classic mood-congruent secondary delusion. Non-understandability, sudden full formation and delusional perception are all features of primary delusions.",
@@ -311,7 +286,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The belief that an elderly patient is infested with insects crawling under the skin, without supporting evidence, is called:",
-    options: ["Koro", "Capgras syndrome", "Ekbom syndrome (delusional parasitosis)", "Couvade syndrome"],
+    options: ["Koro (genital retraction belief)", "Capgras syndrome (impostor belief)", "Ekbom syndrome (delusional parasitosis)", "Couvade syndrome (sympathetic pregnancy)"],
     answer: 2,
     explanation:
       "Delusional parasitosis (Ekbom syndrome) is the fixed belief of skin infestation, often with tactile hallucinations and specimen-bringing ('matchbox sign'); in DSM-5-TR it is delusional disorder, somatic type. Koro is genital retraction fear. Capgras is impostor replacement. Couvade is the experience of pregnancy symptoms by the partner of a pregnant woman.",
@@ -400,12 +375,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In David's model, insight is:",
-    options: [
-      "A single all-or-none judgement of whether the patient knows they are ill",
-      "A multidimensional construct comprising recognition of illness, relabelling of unusual experiences as pathological, and treatment adherence",
-      "Equivalent to intelligence",
-      "Present only in neurotic disorders",
-    ],
+    options: ["A single all-or-none judgement of whether the patient knows they are ill", "A set of dimensions: awareness of illness, relabelling experiences, accepting treatment", "Largely the same thing as general intelligence and education", "Something that is lost only in psychosis and kept in neurotic disorders"],
     answer: 1,
     explanation:
       "Anthony David proposed three overlapping dimensions of insight: awareness of illness, ability to relabel unusual mental events as pathological, and acceptance of treatment. This informed the Schedule for the Assessment of Insight. Insight is graded, not binary. It is related to but distinct from intelligence. It can be partial in psychosis and impaired in some 'neurotic' conditions (e.g., poor-insight OCD). Aubrey Lewis defined insight as 'a correct attitude to a morbid change in oneself'.",
@@ -420,12 +390,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A patient writes: 'The tree of justice will flower with the tempests of rubber, so the governors electrify my left kidney with hearsay, and spaghetti grows in Monday.' He produces this calmly and cannot elaborate. There is no pressure of speech, and his mood is flat.",
     stem: "The best description of the thought disorder is:",
-    options: [
-      "Flight of ideas",
-      "Incoherence (word salad, schizophasia)",
-      "Circumstantiality",
-      "Pressure of thought",
-    ],
+    options: ["Flight of ideas with clang associations", "Incoherence (word salad, schizophasia)", "Circumstantiality with eventual return", "Pressure of thought with crowded ideas"],
     answer: 1,
     explanation:
       "Grammatically loose or ungrammatical strings of words with no comprehensible meaning, both within and between clauses, constitute incoherence (word salad, or schizophasia when extreme), seen in chronic schizophrenia. Flight of ideas shows understandable links and pressure, which are absent here. Circumstantiality eventually reaches the goal. Pressure of thought is a subjective sense of crowded, rapid thoughts.",
@@ -438,12 +403,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In descriptive psychopathology, an 'obsessional slowness' presentation (Rachman) is characterised by:",
-    options: [
-      "Rapid repetitive hand-washing",
-      "Psychomotor retardation due to depression",
-      "Extreme slowness in everyday activities due to meticulous, ordered, repetitive sequences, with little apparent anxiety or resistance",
-      "Catatonic stupor",
-    ],
+    options: ["Rapid, repetitive hand-washing driven by fear of contamination", "Psychomotor retardation caused by a severe depressive episode", "Hours-long slowness from meticulous ordered sequences, little anxiety", "Catatonic stupor with mutism, posturing and waxy flexibility"],
     answer: 2,
     explanation:
       "Primary obsessional slowness, described by Rachman, involves taking hours over washing, dressing or shaving because of meticulous ordering and checking, often with little anxiety and relatively little resistance, in contrast to typical anxiety-driven compulsions. It responds poorly to standard ERP and needs prompting, pacing and shaping. It is not depressive retardation or catatonia.",
@@ -472,12 +432,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Jaspers distinguished 'understanding' (Verstehen) from 'explanation' (Erklären). In this framework, a primary delusion is:",
-    options: [
-      "Understandable through empathy as arising from the person's mood",
-      "Explainable only by tracing causal connections in brain processes, but not empathically understandable",
-      "Both fully understandable and explainable",
-      "Neither understandable nor relevant to psychopathology",
-    ],
+    options: ["Understandable through empathy as arising from mood", "Explainable only causally, not empathically understandable", "Both fully understandable and fully explainable", "Neither understandable nor relevant to psychopathology"],
     answer: 1,
     explanation:
       "For Jaspers, static and genetic understanding lets the clinician grasp how one psychic event follows from another (e.g., guilt from depression). A primary delusion is, by definition, un-understandable (it represents a break in meaningful connections), so it can only be explained causally, for example by brain processes. Calling it understandable describes secondary delusions. It is central to psychopathology, so the last option is wrong.",
@@ -490,12 +445,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A clang association is:",
-    options: [
-      "The link of ideas by sound (rhyme or pun) rather than meaning",
-      "Repetition of the interviewer's words",
-      "A sudden halt in speech",
-      "The creation of new words",
-    ],
+    options: ["The linking of ideas by sound, such as rhyme or pun, rather than meaning", "Automatic repetition of the words or phrases just spoken by the interviewer", "A sudden halt in the flow of speech, with the thread of thought lost", "The creation of new words, or use of words with a private meaning"],
     answer: 0,
     explanation:
       "Clang associations connect words by their sound, such as rhymes and puns ('I'm sad, mad, bad, glad'). They are typical of mania and also occur in schizophrenia. Repeating the interviewer's words is echolalia. A sudden halt is thought blocking. Coining new words is neologism.",

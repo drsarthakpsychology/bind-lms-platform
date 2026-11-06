@@ -47,12 +47,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In the initial phase of IPT, the therapist carries out the 'interpersonal inventory'. This means:",
-    options: [
-      "A projective test of attachment",
-      "A detailed review of the patient's important current relationships: what each person gives and takes, what is satisfying and unsatisfying, and what the patient would like to change",
-      "A list of the patient's medications",
-      "A family tree of psychiatric illness",
-    ],
+    options: ["A projective test that assesses attachment style", "A review of key current relationships and what the patient wants changed", "A list of the patient's current and past medications", "A family tree of psychiatric illness across three generations"],
     answer: 1,
     explanation:
       "The interpersonal inventory maps key relationships and links them to the timing of the depression, which lets the therapist choose the focal problem area and build an interpersonal formulation. The initial phase also gives the diagnosis, explains depression as a treatable illness, and grants the 'sick role'. It is not a projective test, a medication list or a genetic pedigree.",
@@ -104,12 +99,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 61-year-old bank manager became depressed 3 months after retiring. He misses the status and routine of work, feels useless at home, and argues with his wife about how he spends his day. He has no history of depression.",
     stem: "Which IPT problem area and strategies fit best?",
-    options: [
-      "Grief; reconstruct the relationship with a deceased person",
-      "Role transition; mourn and accept the loss of the old role, look at the positives and negatives of both roles, and build skills and supports for the new role",
-      "Interpersonal deficits; long-term work on lifelong isolation",
-      "No IPT focus applies; refer for psychoanalysis",
-    ],
+    options: ["Grief; reconstruct the relationship with someone who has died", "Role transition; mourn the old role and build the new one", "Interpersonal deficits; long-term work on lifelong isolation", "No IPT focus applies; refer for psychoanalysis instead"],
     answer: 1,
     explanation:
       "Retirement is a classic role transition. IPT helps the patient grieve the old role, see the old role more realistically, identify what the new role offers, and develop new relationships, activities and skills. Grief applies to a death. Interpersonal deficits applies to people with long-standing isolation, which he does not have. The marital arguments can be addressed within the transition work.",
@@ -122,12 +112,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In IPT, 'communication analysis' involves:",
-    options: [
-      "Interpreting dreams for hidden meanings",
-      "Reconstructing a recent important conversation in detail (what each person said and felt) to find where communication went wrong and practise alternatives",
-      "Recording heart rate during conversations",
-      "Teaching the patient to avoid all conflict",
-    ],
+    options: ["Interpreting dreams for hidden interpersonal meanings", "Going through a recent key conversation to see where it went wrong", "Recording heart rate while the patient talks to family members", "Teaching the patient to avoid all conflict with other people"],
     answer: 1,
     explanation:
       "Communication analysis looks closely at a specific recent exchange: who said what, what was meant, what was felt and what was left unsaid. It often reveals indirect communication, assumptions or silence, which the patient then rehearses differently through role play. IPT does not interpret dreams, use physiological recording or encourage avoidance of conflict.",
@@ -140,12 +125,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "IPT draws theoretically on which traditions?",
-    options: [
-      "Classical conditioning and token economies",
-      "The interpersonal school of Harry Stack Sullivan, Adolf Meyer's psychobiology, and attachment theory",
-      "Rational emotive theory",
-      "Gestalt psychology",
-    ],
+    options: ["Classical conditioning theory and token economies", "Sullivan's interpersonal school, Meyer and attachment theory", "Rational emotive behaviour theory and its ABC model", "Gestalt psychology and Lewin's field theory"],
     answer: 1,
     explanation:
       "IPT's roots lie in Meyer's view that mental illness reflects attempts to adapt to the environment, Sullivan's interpersonal psychiatry, and Bowlby's attachment theory, along with research linking depression to life events and social support. It is not based on conditioning, REBT or Gestalt therapy, although its techniques are eclectic.",
@@ -158,12 +138,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Interpersonal and social rhythm therapy (IPSRT), developed by Ellen Frank for bipolar disorder, adds which element to IPT?",
-    options: [
-      "Exposure and response prevention",
-      "Stabilising daily routines (sleep, waking, meals, social contact) using a social rhythm metric, based on the idea that disrupted rhythms trigger mood episodes",
-      "Psychoanalytic dream work",
-      "Token economy",
-    ],
+    options: ["Exposure and response prevention for intrusive thoughts", "Regular daily routines tracked with a social rhythm metric", "Psychoanalytic interpretation of dreams", "A token economy for medication adherence"],
     answer: 1,
     explanation:
       "IPSRT combines IPT with regularising daily routines, tracked with the social rhythm metric, because circadian and social disruption (shift work, travel, late nights) can precipitate bipolar episodes. In the STEP-BD programme, intensive psychosocial treatments including IPSRT improved recovery from bipolar depression compared with brief care. It does not use ERP, dream work or tokens.",
@@ -212,12 +187,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In the IPT 'grief' problem area, the two main goals are:",
-    options: [
-      "To forget the deceased and suppress sadness",
-      "To help the mourning process, and to help the patient re-establish interests and relationships that can partly substitute for what was lost",
-      "To uncover early childhood trauma",
-      "To change irrational beliefs about death",
-    ],
+    options: ["To help the patient forget the deceased and suppress sadness", "To aid mourning and help the patient build new ties and interests", "To uncover early childhood trauma linked to the loss", "To dispute irrational beliefs about death and dying"],
     answer: 1,
     explanation:
       "IPT treats the grief focus by facilitating delayed or stuck mourning (talking about the deceased, the death and mixed feelings) and helping the patient build new relationships and activities. Suppressing sadness is the opposite. Childhood trauma work belongs to other models, and IPT does not use disputation of beliefs.",
@@ -252,12 +222,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Behavioural activation for depression is based mainly on the idea that depression is maintained by:",
-    options: [
-      "Unconscious guilt",
-      "Low levels of positive reinforcement and avoidance, so that withdrawal reduces rewarding experiences further",
-      "Excess dopamine",
-      "Too much social contact",
-    ],
+    options: ["Unconscious guilt about aggressive wishes towards others", "Low positive reinforcement, kept going by avoidance", "Excess dopamine activity in the brain's reward pathways", "Too much social contact and stimulation in daily life"],
     answer: 1,
     explanation:
       "Following Lewinsohn and Ferster, BA sees depression as a cycle: life events reduce rewards, the person withdraws and avoids, and this further cuts off reward and mastery. BA breaks the cycle by scheduling activities that are rewarding or that fit the person's values. It is not a psychoanalytic or dopamine-excess model.",
@@ -271,12 +236,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Jacobson's component analysis study compared the full cognitive therapy package with its behavioural activation component alone. The main finding was:",
-    options: [
-      "Full cognitive therapy was much better than BA alone",
-      "BA alone did about as well as the full package, both acutely and at follow-up",
-      "BA alone made depression worse",
-      "Neither treatment was effective",
-    ],
+    options: ["Full cognitive therapy did much better than BA alone", "BA alone did about as well as the full package", "BA alone made depression worse in most patients", "Neither treatment was better than waiting list"],
     answer: 1,
     explanation:
       "The study found BA alone was as effective as full CT, which challenged the assumption that changing thoughts is required. This led to modern BA. A later trial found BA comparable to antidepressants and better than CT in more severely depressed patients, and a UK trial found BA delivered by junior mental health workers was no worse than CBT and cheaper.",
@@ -326,12 +286,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 30-year-old woman with moderate depression stays in bed until noon, has stopped cooking and no longer phones friends. She says she will start again 'when I feel motivated'. Her activity diary shows mood is lowest on days she stays home all day.",
     stem: "What is the best behavioural activation response?",
-    options: [
-      "Agree to wait until motivation returns before scheduling anything",
-      "Explain that in depression action often comes before motivation ('outside-in'), and plan small, specific, scheduled activities linked to her values, starting with easy steps",
-      "Ask her to complete a full thought record for each hour in bed",
-      "Recommend complete rest for 2 weeks",
-    ],
+    options: ["Agree to wait until her motivation returns before planning anything", "Explain that action can come before motivation, and plan small scheduled steps", "Ask her to fill in a thought record for every hour spent in bed", "Recommend 2 weeks of complete rest to restore her energy"],
     answer: 1,
     explanation:
       "BA works 'outside in': doing the activity first tends to lift mood, rather than waiting to feel like it. Activities should be small, specific and scheduled (what, when, where), graded in difficulty, and linked to what matters to her. Waiting for motivation keeps the cycle going. Thought records are a CT tool. Rest increases withdrawal.",
@@ -359,12 +314,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The Healthy Activity Programme (HAP), tested in Goa as part of the PREMIUM programme, is:",
-    options: [
-      "A drug trial of fluoxetine",
-      "A behavioural activation-based brief psychological treatment for depression delivered by lay counsellors in primary care",
-      "A yoga-only intervention",
-      "A long-term psychoanalytic programme",
-    ],
+    options: ["A drug trial of fluoxetine in primary care clinics", "A brief BA-based treatment delivered by lay counsellors", "A yoga-only programme for mild depression in schools", "A long-term psychoanalytic programme in district hospitals"],
     answer: 1,
     explanation:
       "HAP is a brief BA-based treatment designed so that lay counsellors without formal mental health training could deliver it in primary health centres. A randomised trial in Goa showed it improved recovery from moderate to severe depression and was cost-effective. It shows how task-sharing can help close India's treatment gap. It is not a drug, yoga or psychoanalytic programme.",
@@ -380,12 +330,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In a large trial of adults with major depression, participants were randomised to behavioural activation, cognitive therapy, antidepressant medication or pill placebo. Among the more severely depressed participants, BA and medication did better than cognitive therapy, while all active treatments did similarly in less severe depression. Drop-out was higher on medication.",
     stem: "Which conclusion is most justified?",
-    options: [
-      "Cognitive therapy is ineffective for depression",
-      "BA is a credible first-line option even in more severe outpatient depression, and may be more easily disseminated than full CT",
-      "Medication should never be used",
-      "Placebo was as good as BA",
-    ],
+    options: ["Cognitive therapy is ineffective for depression in general", "BA is a credible first-line option, even in more severe depression", "Medication should not be used for outpatient depression at all", "Placebo was just as effective as behavioural activation"],
     answer: 1,
     explanation:
       "The trial (Dimidjian and colleagues) supported BA as an efficacious treatment comparable to medication in more severe outpatient depression, with better retention, and BA is simpler to train. It did not show CT was ineffective; CT was effective overall but performed less well at this site in the more severe subgroup. Medication was effective, though with more drop-out. BA outperformed placebo.",
@@ -399,12 +344,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Termination in IPT is handled by:",
-    options: [
-      "Ending without warning to test independence",
-      "Discussing the ending openly in the last few sessions, reviewing gains and warning signs, acknowledging feelings about ending, and planning for possible continuation or maintenance treatment",
-      "Extending therapy indefinitely",
-      "Avoiding any mention of ending",
-    ],
+    options: ["Ending without warning, to test the patient's independence", "Discussing the ending openly, reviewing gains and relapse signs", "Extending therapy indefinitely to prevent any relapse", "Avoiding any mention of ending so as not to upset the patient"],
     answer: 1,
     explanation:
       "IPT is time-limited (often 12 to 16 weekly sessions), and the ending is planned from the start. The final phase reviews progress, attributes gains to the patient's work, normalises sadness about ending (as distinct from relapse), and discusses relapse signs and maintenance options. Sudden or avoided endings, or open-ended therapy, contradict the model.",

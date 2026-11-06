@@ -44,12 +44,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "During a session, the therapist asks the parents of a 14-year-old who refuses school to decide together, right now, what time he must leave home tomorrow. The mother keeps turning to her son for agreement; the father goes silent. The therapist blocks the son from interrupting and encourages the parents to keep talking until they agree.",
     stem: "Which structural techniques are being used?",
-    options: [
-      "Enactment and boundary-making to strengthen the parental subsystem",
-      "Externalising the problem",
-      "Paradoxical prescription",
-      "Genogram construction",
-    ],
+    options: ["Enactment and boundary-making", "Externalising the problem", "Paradoxical prescription", "Genogram construction"],
     answer: 0,
     explanation:
       "An enactment has the family carry out its usual pattern in the session so the therapist can see and change it. Blocking the son and keeping the parents talking marks a boundary around the parental subsystem and restores hierarchy. Externalising belongs to narrative therapy, paradox to strategic therapy, and the genogram to Bowenian work.",
@@ -100,12 +95,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which question is the clearest example of a 'circular question'?",
-    options: [
-      "'When your daughter refuses to eat, who gets most upset, your husband or your son? And what does your husband do then?'",
-      "'Why does your daughter refuse to eat?'",
-      "'How do you feel right now?'",
-      "'Do you want to try a new diet plan?'",
-    ],
+    options: ["'When she refuses food, who gets most upset, and what does your husband do then?'", "'Why do you think your daughter keeps refusing to eat her meals at home?'", "'How are you feeling right now, as we talk together about all this?'", "'Would you like to try a new diet plan for her at home this month?'"],
     answer: 0,
     explanation:
       "Circular questions ask one family member about relationships and differences between others, which brings out patterns and connections rather than single causes. They often use comparisons and sequences ('who is most...', 'what happens then'). 'Why' questions invite linear blame. A question about the speaker's own feeling is individual, not circular. A diet plan is advice.",
@@ -158,12 +148,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "'Suppose tonight, while you are asleep, a miracle happens and the problem is solved. When you wake up, what will be the first thing you notice that tells you things are different?' This is:",
-    options: [
-      "The miracle question of solution-focused brief therapy",
-      "A circular question of the Milan school",
-      "A Socratic question in CBT",
-      "A dream interpretation in psychoanalysis",
-    ],
+    options: ["The miracle question (solution-focused therapy)", "A circular question (Milan systemic therapy)", "A Socratic question (cognitive therapy)", "A dream interpretation (psychoanalysis)"],
     answer: 0,
     explanation:
       "The miracle question helps clients describe a concrete preferred future, which becomes the goal of therapy. Solution-focused therapy also uses exception questions ('when is the problem less?'), scaling questions ('0 to 10, where are you now?') and coping questions. It is not a Milan, CBT or psychoanalytic technique.",
@@ -192,12 +177,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Jay Haley's strategic family therapy is characterised by:",
-    options: [
-      "Directives, including paradoxical tasks, designed to change the sequence of behaviour around the symptom, with attention to power and hierarchy",
-      "Non-directive reflection of feelings",
-      "Free association and dream analysis",
-      "Genograms of five generations",
-    ],
+    options: ["Directives, often paradoxical, to change the sequence around the symptom", "Non-directive reflection of each family member's feelings in turn", "Free association and analysis of the family members' dreams", "Detailed genograms covering five generations of the family"],
     answer: 0,
     explanation:
       "Haley's strategic therapy sees symptoms as serving a function in family hierarchy and communication. The therapist takes responsibility for change and gives directives, which can be straightforward or paradoxical (prescribing the symptom), and even 'ordeals' that make keeping the symptom costlier than giving it up. Reflection is person-centred, free association is psychoanalytic, and genograms are Bowenian.",
@@ -228,12 +208,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 14-year-old girl with anorexia nervosa (BMI 15.1, medically stable) lives with both parents. The parents feel helpless, blame themselves and have stopped insisting she eats. The team wants to use the best-evidenced outpatient approach.",
     stem: "Which approach and first-phase strategy are most appropriate?",
-    options: [
-      "Family-based treatment (the Maudsley approach): parents are supported to take temporary charge of their daughter's eating and weight restoration, without blaming them or her",
-      "Individual long-term psychoanalysis while parents stay out of treatment",
-      "Admit her for 6 months as a first step",
-      "Tell the parents to avoid all discussion of food",
-    ],
+    options: ["Family-based treatment: parents take temporary charge of eating, without blame", "Individual long-term psychoanalysis, with parents kept out of treatment", "Admission for 6 months as a first step, then outpatient follow-up", "Advice to the parents to avoid all discussion of food at home"],
     answer: 0,
     explanation:
       "FBT is the first-line treatment for adolescent anorexia. Phase 1 empowers parents to manage meals and restore weight, treating the illness as something that has 'taken over' their daughter (externalising, non-blaming). Phase 2 hands control of eating back gradually, and Phase 3 addresses normal adolescent issues. Individual analysis excluding parents has weaker evidence, long admission is not first-line for a medically stable teenager, and avoiding food talk leaves the illness unchallenged.",
@@ -279,12 +254,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Emotionally focused couple therapy (Sue Johnson) is grounded mainly in:",
-    options: [
-      "Adult attachment theory, viewing couple distress as a negative cycle driven by unmet attachment needs and fears",
-      "Operant conditioning and token economies",
-      "Rational emotive theory",
-      "Psychoanalytic drive theory",
-    ],
+    options: ["Adult attachment theory and negative interaction cycles", "Operant conditioning principles and token economies", "Rational emotive behaviour theory and disputing", "Psychoanalytic drive theory and Oedipal conflict"],
     answer: 0,
     explanation:
       "EFT for couples sees distress as an escalating cycle (often pursue and withdraw) driven by fears of abandonment or rejection. The therapist helps partners name the cycle, reach the underlying attachment emotions, and create new bonding interactions in which needs are expressed and met. It is not based on token economies, REBT or drive theory.",
@@ -297,12 +267,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Integrative behavioural couple therapy (Jacobson and Christensen) differs from traditional behavioural couple therapy mainly by adding:",
-    options: [
-      "Emotional acceptance strategies (empathic joining, unified detachment, tolerance building) alongside behaviour change",
-      "Dream interpretation",
-      "Medication for both partners",
-      "Individual psychoanalysis for each partner",
-    ],
+    options: ["Acceptance strategies alongside behaviour change", "Interpretation of each partner's dreams", "Medication for both partners", "Separate psychoanalysis for each partner"],
     answer: 0,
     explanation:
       "Traditional behavioural couple therapy used behaviour exchange and communication and problem-solving training. IBCT kept these but added acceptance work, because some differences between partners will not change. Empathic joining, unified detachment (looking at the problem together as an 'it') and tolerance building help partners accept each other. A large trial found similar outcomes for both approaches, with IBCT gains holding better over 5 years.",
@@ -315,12 +280,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Multisystemic therapy (Henggeler) is an intensive home- and community-based treatment mainly for:",
-    options: [
-      "Adolescents with serious antisocial behaviour and conduct problems, addressing family, school, peers and community",
-      "Older adults with dementia",
-      "Adults with specific phobia",
-      "Infants with colic",
-    ],
+    options: ["Adolescents with serious antisocial behaviour", "Older adults with dementia and agitation", "Adults with a specific phobia", "Infants with colic and feeding problems"],
     answer: 0,
     explanation:
       "MST works across all the systems around a young person with severe conduct problems or offending (family, peers, school, neighbourhood), with therapists available around the clock and small caseloads. It has evidence for reducing reoffending and out-of-home placement, though results outside the US have been more mixed. It is not designed for dementia, phobia or infant colic.",
@@ -334,12 +294,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Bateson's 'double bind' refers to:",
-    options: [
-      "A communication in which contradictory messages at different levels are given, and the receiver can neither comment on the contradiction nor escape",
-      "Two parents agreeing on discipline",
-      "A legal contract between therapist and family",
-      "Attachment to two caregivers",
-    ],
+    options: ["Contradictory messages at two levels, with no way to comment or escape", "Two parents agreeing consistently on how to discipline a child", "A written legal contract between therapist and family", "A child's attachment to two different caregivers"],
     answer: 0,
     explanation:
       "In a double bind, a parent might say 'come and hug me' while stiffening and looking cold, and punish both responding and not responding, while the child cannot point out the contradiction or leave. Bateson's group proposed this as a cause of schizophrenia. That causal claim has not been supported, but the idea shaped communications theory and family therapy.",
@@ -353,12 +308,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A genogram is:",
-    options: [
-      "A diagram of a family over at least three generations, showing relationships, important events and patterns such as illness, conflict and cut-offs",
-      "A genetic blood test",
-      "A personality questionnaire",
-      "A brain imaging technique",
-    ],
+    options: ["A diagram of a family across three or more generations", "A genetic blood test for inherited disorders", "A self-report questionnaire about family life", "A brain imaging technique used in family research"],
     answer: 0,
     explanation:
       "The genogram, associated with Bowen and developed by McGoldrick, maps family members, marriages, deaths, illnesses and relationship quality across generations. It helps identify repeated patterns and is widely used in family therapy and case formulation. It is not a genetic test, a questionnaire or imaging.",
@@ -372,12 +322,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A distinctive early Indian contribution to family involvement in psychiatric care was:",
-    options: [
-      "Vidya Sagar's practice in Amritsar of admitting patients with their family members, who stayed in tents in the hospital grounds and were involved in care",
-      "Banning families from hospital wards",
-      "The first token economy in Asia",
-      "The development of the MMPI",
-    ],
+    options: ["Vidya Sagar's admission of patients with relatives, who camped in the grounds", "A policy of banning families from hospital wards during treatment", "The first token economy programme set up in Asia", "The development of the MMPI for Indian patients"],
     answer: 0,
     explanation:
       "In the 1950s, Vidya Sagar at the Amritsar mental hospital involved families directly, with relatives camping on the premises and taking part in group discussions and care. This was an early form of family psychoeducation and community care, and it influenced later Indian family ward models. The other options are wrong or unrelated.",
@@ -392,12 +337,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A Milan-style team tells a family: 'Your son's refusal to leave home is a kind sacrifice. As long as he stays sick, he keeps you both busy and together, and protects you from facing the emptiness in your marriage. We recommend that nothing change for now.'",
     stem: "Which interventions are illustrated?",
-    options: [
-      "Positive connotation of the symptom and its function for the whole family, combined with a paradoxical prescription of no change",
-      "Externalisation and re-authoring",
-      "Exposure and response prevention",
-      "Empathic reflection",
-    ],
+    options: ["Positive connotation with a paradoxical 'no change' prescription", "Externalisation of the problem and re-authoring of the story", "Exposure and response prevention for the son's avoidance", "Empathic reflection of each family member's feelings"],
     answer: 0,
     explanation:
       "Positive connotation frames the symptom as serving a positive purpose for the family system, which avoids blame and highlights the system's pull towards stability (homeostasis). Advising that nothing change is a paradoxical prescription: complying makes the pattern visible and voluntary, while rebelling produces change. These are not narrative, ERP or person-centred techniques.",
@@ -410,12 +350,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In family systems theory, the 'identified patient' is:",
-    options: [
-      "The family member presented as having the problem, whose symptoms are seen as expressing difficulties in the whole family system",
-      "The person who pays for therapy",
-      "The therapist's main informant",
-      "The oldest member of the family",
-    ],
+    options: ["The member presented as 'the problem', whose symptoms reflect the system", "The family member who pays the fees and arranges the sessions", "The therapist's main informant about the family's history", "The oldest member of the family, who usually speaks for the rest"],
     answer: 0,
     explanation:
       "Systemic therapists see the person brought for help (often a child) as the 'identified patient' whose symptoms may stabilise or express tensions in the family. Treatment therefore targets patterns of interaction, not just the individual. The other options misdefine the term.",

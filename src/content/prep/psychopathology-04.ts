@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which DSM-5-TR insight specifier for OCD replaced the DSM-IV 'with poor insight' as the way to record fully delusional OCD beliefs?",
-    options: [
-      "With poor insight",
-      "With good or fair insight",
-      "With absent insight/delusional beliefs",
-      "Tic-related",
-    ],
+    options: ["With poor insight (the beliefs are probably true)", "With good or fair insight (probably not true)", "With absent insight/delusional beliefs", "Tic-related, with a current or past tic disorder"],
     answer: 2,
     explanation:
       "DSM-5 introduced a three-level insight specifier: good or fair, poor, and absent insight/delusional beliefs. A person who is completely convinced that their OCD beliefs are true is diagnosed with OCD with absent insight, not a psychotic disorder. 'Poor insight' means the person thinks the beliefs are probably true. 'Tic-related' is a separate specifier for current or past tic disorder.",
@@ -30,12 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature best distinguishes an obsession from a delusion of thought insertion?",
-    options: [
-      "Obsessions are always about contamination",
-      "Delusions of thought insertion are always accompanied by anxiety",
-      "In obsessions the person recognises the thought as a product of their own mind, even if unwanted",
-      "Obsessions are never resisted",
-    ],
+    options: ["Obsessions always concern contamination, whereas delusions vary", "Delusions of thought insertion are always accompanied by anxiety", "In obsessions the thought is recognised as coming from one's own mind", "Obsessions are never resisted, while inserted thoughts always are"],
     answer: 2,
     explanation:
       "The classical criterion (Schneider, Lewis, and Fish) is that obsessions are experienced as the patient's own thoughts, recognised as originating within their own mind even though they are intrusive and resisted, whereas thought insertion is experienced as alien thoughts put in from outside. Obsessions cover many themes, not only contamination. Anxiety is not what defines thought insertion. Resistance is typical of obsessions, especially early on, though it may fade with chronicity.",
@@ -96,12 +86,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about DSM-5-TR hoarding disorder is correct?",
-    options: [
-      "It is diagnosed only when items have no monetary value",
-      "It is coded as a subtype of OCD",
-      "The core feature is persistent difficulty discarding possessions because of a perceived need to save them and distress on discarding, regardless of their actual value",
-      "Excessive acquisition is required for diagnosis",
-    ],
+    options: ["It can be diagnosed only when the saved items have no monetary value", "It is coded as a subtype of OCD, with hoarding as the main compulsion", "Its core is persistent difficulty discarding possessions, whatever their value", "Excessive acquisition of items is required for the diagnosis"],
     answer: 2,
     explanation:
       "Hoarding disorder centres on persistent difficulty parting with possessions regardless of value, leading to clutter that compromises living areas. Items may have value, so the first option is wrong. DSM-5 made it a separate OCRD rather than an OCD symptom. 'With excessive acquisition' is a specifier present in most cases, not a requirement. Insight specifiers also apply.",
@@ -188,12 +173,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "PANDAS/PANS refers to:",
-    options: [
-      "Late-onset OCD after age 60 associated with stroke",
-      "OCD caused by SSRI withdrawal",
-      "Abrupt onset of OCD symptoms or severe eating restriction in children, linked with infections (classically group A streptococcus) and postulated autoimmune basal ganglia involvement",
-      "A form of hoarding seen in frontotemporal dementia",
-    ],
+    options: ["Late-onset OCD after age 60 that follows a stroke in the basal ganglia region", "OCD-like symptoms that appear after sudden withdrawal of an SSRI medicine", "Sudden-onset OCD or eating restriction in children, linked to infection", "A form of hoarding and ritual seen in early frontotemporal dementia"],
     answer: 2,
     explanation:
       "Paediatric autoimmune neuropsychiatric disorders associated with streptococcal infections (PANDAS) and the broader PANS describe sudden-onset OCD symptoms (or severe food restriction) in children with other neuropsychiatric symptoms. They are postulated to involve antibodies cross-reacting with basal ganglia, analogous to Sydenham's chorea. The concept remains controversial. The other options describe unrelated phenomena.",
@@ -293,12 +273,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "DSM-5-TR acute stress disorder requires how many of its 14 listed symptoms, with what duration?",
-    options: [
-      "Five symptoms; 2 days to 2 weeks",
-      "Nine symptoms; 3 days to 1 month after trauma",
-      "Six symptoms; within 48 hours",
-      "Nine symptoms; 1 to 3 months",
-    ],
+    options: ["Five of 14 symptoms; 2 days to 2 weeks", "Nine of 14 symptoms; 3 days to 1 month after trauma", "Six of 14 symptoms; within 48 hours of trauma", "Nine of 14 symptoms; 1 to 3 months after trauma"],
     answer: 1,
     explanation:
       "ASD needs nine or more of 14 symptoms from any of five categories (intrusion, negative mood, dissociation, avoidance, arousal), lasting 3 days to 1 month after the trauma. DSM-IV's ASD required dissociative symptoms and lasted 2 days to 4 weeks; DSM-5 removed the mandatory dissociation. ICD-11 treats 'acute stress reaction' as a normal response (Z-code-like) rather than a disorder.",
@@ -381,12 +356,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which neuroendocrine finding is most characteristic of chronic PTSD, distinguishing it from melancholic depression?",
-    options: [
-      "Lower basal cortisol with enhanced negative feedback (supersuppression on low-dose dexamethasone)",
-      "High cortisol with dexamethasone non-suppression",
-      "Raised thyroxine with suppressed TSH",
-      "Elevated prolactin",
-    ],
+    options: ["Low basal cortisol with exaggerated suppression on low-dose dexamethasone", "High cortisol with non-suppression on the dexamethasone test", "Raised thyroxine with a suppressed TSH level", "Persistently elevated prolactin levels"],
     answer: 0,
     explanation:
       "Yehuda's work showed that many people with chronic PTSD have normal or low basal cortisol, increased glucocorticoid receptor sensitivity and exaggerated suppression on low-dose dexamethasone, with raised CRF and noradrenergic activity. Melancholic depression typically shows hypercortisolaemia and non-suppression. Thyroid and prolactin changes are not characteristic of PTSD.",
@@ -417,12 +387,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "DSM-5-TR has separate PTSD criteria for children aged 6 years and younger. Which feature distinguishes them from the adult criteria?",
-    options: [
-      "A minimum duration of 3 months",
-      "No requirement of a traumatic event",
-      "Exposure through television counts in young children",
-      "Only one symptom from either avoidance or negative cognitions and mood is needed, and spontaneous intrusive memories may appear as play re-enactment",
-    ],
+    options: ["A minimum symptom duration of 3 months rather than 1 month", "No requirement for exposure to a traumatic event", "Exposure through television coverage counts for young children", "One avoidance-or-mood symptom suffices; intrusions may appear as play"],
     answer: 3,
     explanation:
       "For children 6 and under, DSM-5-TR merges avoidance and negative cognitions into one cluster needing only one symptom, makes the criteria more behavioural, and notes that intrusive memories may not seem distressing and may be expressed as play re-enactment. Duration is still more than 1 month. Criterion A exposure is required, and media exposure is not accepted.",
@@ -436,12 +401,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about the epidemiology of PTSD is best supported?",
-    options: [
-      "Most people exposed to trauma develop PTSD",
-      "Men have higher conditional risk of PTSD after trauma than women",
-      "Rape and interpersonal violence carry among the highest conditional risks of PTSD",
-      "PTSD rates are unrelated to trauma type",
-    ],
+    options: ["Most people who are exposed to trauma go on to develop PTSD", "Men have a higher conditional risk of PTSD after trauma than women", "Rape and interpersonal violence carry among the highest conditional risks", "PTSD rates are much the same whatever the type of trauma"],
     answer: 2,
     explanation:
       "Although most people experience potentially traumatic events, only a minority (roughly 5 to 10% lifetime) develop PTSD. Conditional risk is highest after rape, combat, captivity and genocide-type interpersonal violence. Women have about twice the conditional risk of men, despite men reporting more trauma exposure overall. Trauma type strongly matters.",
@@ -457,12 +417,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 52-year-old widow from Kerala lost her husband 14 months ago. Nearly every day she yearns intensely for him, feels part of herself has died, cannot accept the death, avoids his favourite temple, and feels life is meaningless. She has stopped meeting relatives. She sleeps 6 hours, eats normally, retains self-worth, and denies guilt or suicidal ideas. In her community, mourning formally ends by 1 year.",
     stem: "Which DSM-5-TR formulation is most defensible?",
-    options: [
-      "Normal grief; no diagnosis because grief is culturally expected",
-      "Major depressive disorder, single episode",
-      "Adjustment disorder with depressed mood",
-      "Prolonged grief disorder, as yearning with at least three accessory symptoms persists beyond 12 months and beyond community norms",
-    ],
+    options: ["Normal grief; no diagnosis because grieving is culturally expected", "Major depressive disorder, single episode, moderate", "Adjustment disorder with depressed mood", "Prolonged grief disorder, beyond 12 months and beyond local norms"],
     answer: 3,
     explanation:
       "She meets prolonged grief disorder: more than 12 months since death, daily yearning, and at least three symptoms (identity disruption, disbelief, avoidance, meaninglessness, social withdrawal), with impairment, and the duration exceeds her cultural norm of 1 year (Criterion E). She lacks the pervasive low mood, neurovegetative change, worthlessness and guilt needed for MDD. Adjustment disorder is not used when another specific disorder (PGD) better accounts for the response. Calling it normal grief ignores the duration and the impairment beyond cultural expectations.",

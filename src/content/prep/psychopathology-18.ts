@@ -72,12 +72,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 79-year-old woman on oxybutynin, amitriptyline (for neuropathic pain) and diphenhydramine at night becomes acutely confused with dry mouth, flushed dry skin, dilated pupils, urinary retention, tachycardia and visual hallucinations of insects. Temperature 37.9 °C.",
     stem: "Which mechanism and management are most likely?",
-    options: [
-      "Serotonin syndrome; cyproheptadine",
-      "Neuroleptic malignant syndrome; dantrolene",
-      "Anticholinergic delirium from cumulative anticholinergic burden; stop offending drugs, give supportive care, and consider physostigmine in selected severe cases with monitoring",
-      "Alcohol withdrawal; diazepam",
-    ],
+    options: ["Serotonin syndrome; give cyproheptadine and stop the SSRI", "Neuroleptic malignant syndrome; give dantrolene urgently", "Anticholinergic delirium; stop the drugs and give support", "Alcohol withdrawal delirium; give diazepam by mouth"],
     answer: 2,
     explanation:
       "Oxybutynin, amitriptyline and diphenhydramine produce a high cumulative anticholinergic burden, a major cause of delirium in older people. The toxidrome ('hot as a hare, dry as a bone, red as a beet, blind as a bat, mad as a hatter', with urinary retention) fits. Treatment is stopping the drugs and supportive care, with physostigmine only in selected cases under cardiac monitoring. Serotonin syndrome causes sweating and clonus. NMS follows dopamine blockade with rigidity. There is no alcohol history.",
@@ -110,12 +105,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Which statement about the course of bipolar I disorder is best supported by longitudinal studies (e.g., Judd and colleagues, NIMH Collaborative Depression Study)?",
-    options: [
-      "Patients are symptomatic mostly with manic symptoms",
-      "Most patients are fully euthymic between episodes for over 95% of follow-up",
-      "Patients are symptomatic in nearly half of follow-up weeks, with depressive symptoms far more frequent than manic or hypomanic symptoms",
-      "Episodes become less frequent with each recurrence in most patients",
-    ],
+    options: ["Patients are symptomatic mostly with manic symptoms", "Patients are fully well between episodes for over 95% of follow-up", "Patients are symptomatic in nearly half of weeks, mostly depressive", "Episodes become less frequent with each recurrence"],
     answer: 2,
     explanation:
       "Judd and colleagues found bipolar I patients were symptomatic in about 47% of weeks over a mean of 13 years, with depressive symptoms about three times as frequent as manic or hypomanic symptoms; bipolar II patients were symptomatic in about 54% of weeks, with depression dominating even more. Mania-predominant course and near-complete inter-episode euthymia are contradicted by these data; residual symptoms are common, and episodes often become more, not less, frequent (consistent with kindling).",
@@ -129,12 +119,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Duration of untreated psychosis (DUP) is clinically important because:",
-    options: [
-      "Longer DUP has no relation to outcome",
-      "Shorter DUP is associated with worse response",
-      "Longer DUP is associated with poorer symptomatic and functional outcome, supporting early intervention services",
-      "DUP is defined from first prodromal symptom to death",
-    ],
+    options: ["Longer DUP has no consistent relation to outcome", "Shorter DUP is linked to a worse response to treatment", "Longer DUP predicts poorer outcome, supporting early intervention", "DUP is measured from the first prodromal sign to recovery"],
     answer: 2,
     explanation:
       "Meta-analyses link longer DUP to poorer remission, more negative symptoms and worse functioning, which underpins early intervention in psychosis services. DUP is measured from onset of frank psychotic symptoms to first adequate treatment. The other options misstate the association or the definition.",
@@ -169,12 +154,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "A 26-year-old presents with severe abdominal pain, cyclical vomiting and compulsive hot showers that relieve symptoms. He has used high-potency cannabis daily for 4 years. Investigations are normal. The most likely diagnosis and definitive treatment are:",
-    options: [
-      "Cannabis withdrawal; resume cannabis",
-      "Bulimia nervosa; CBT-E",
-      "Cannabinoid hyperemesis syndrome; cannabis cessation (with topical capsaicin or haloperidol for acute episodes)",
-      "Acute intermittent porphyria; haem arginate",
-    ],
+    options: ["Cannabis withdrawal; resume cannabis", "Bulimia nervosa; start CBT-E", "Cannabinoid hyperemesis; stop cannabis", "Acute porphyria; give haem arginate"],
     answer: 2,
     explanation:
       "Cannabinoid hyperemesis syndrome affects chronic heavy users, with cyclical nausea, vomiting and abdominal pain characteristically relieved by hot showers or baths. Only sustained cessation cures it; acute options include topical capsaicin, haloperidol or droperidol, while standard antiemetics work poorly. Withdrawal does not produce this pattern, and resuming cannabis perpetuates it. Bulimia involves self-induced vomiting after binges. Porphyria lacks the hot-shower relief and the cannabis link.",
@@ -227,12 +207,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 22-year-old woman with type 1 diabetes has HbA1c of 12.8%, recurrent diabetic ketoacidosis and a normal BMI. She admits deliberately skipping insulin doses 'to keep weight off', and binges about twice weekly. She has a strong preoccupation with shape.",
     stem: "Which classification is most appropriate in DSM-5-TR?",
-    options: [
-      "Anorexia nervosa",
-      "Binge-eating disorder",
-      "Bulimia nervosa, with insulin omission as the inappropriate compensatory behaviour",
-      "ARFID",
-    ],
+    options: ["Anorexia nervosa, binge-purge type", "Binge-eating disorder", "Bulimia nervosa (insulin omission)", "Avoidant/restrictive food intake disorder"],
     answer: 2,
     explanation:
       "DSM-5-TR recognises that individuals with diabetes may omit or reduce insulin to prevent weight gain as a compensatory behaviour ('diabulimia' is a lay term). With recurrent binges, compensation at least weekly over 3 months, shape over-evaluation and normal weight, BN is the best fit. AN requires significantly low weight. BED excludes compensatory behaviour. ARFID excludes shape and weight concerns. Mortality and complication risk are high, so joint diabetes and eating-disorder care is needed.",
@@ -288,12 +263,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Which finding from the AESOP and EU-GEI studies best explains raised psychosis incidence among some migrant and minority ethnic groups in Europe?",
-    options: [
-      "Higher genetic loading in migrants",
-      "Misdiagnosis alone",
-      "Social adversity, discrimination and ethnic density effects (lower risk where one's own group is more numerous)",
-      "Lower cannabis use in migrants",
-    ],
+    options: ["Higher genetic loading in migrant groups", "Misdiagnosis by clinicians alone", "Social adversity, discrimination and ethnic density", "Lower cannabis use among migrants"],
     answer: 2,
     explanation:
       "Elevated incidence (e.g., in Black Caribbean people in the UK) is linked to social disadvantage, discrimination, isolation and an 'ethnic density' effect (higher risk where one's group is a smaller minority), supporting social-environmental causation. Rates in countries of origin are not raised, which argues against genetic loading. Diagnostic bias may contribute but does not explain the findings, which persist with standardised assessment. Cannabis is a separate risk factor and does not explain the effect away.",
@@ -309,12 +279,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 29-year-old man has religious obsessions that he has committed blasphemy, with repeated mental prayers and confession-seeking from a priest (several times daily), for 2 years. He fully believes he will go to hell unless he prays in an exact way, and nothing his priest says shakes this. There are no hallucinations or other delusions.",
     stem: "What is the most appropriate DSM-5-TR diagnosis?",
-    options: [
-      "Delusional disorder, grandiose type",
-      "Schizophrenia",
-      "OCD (scrupulosity), with absent insight/delusional beliefs",
-      "Normal religious practice",
-    ],
+    options: ["Delusional disorder, grandiose type", "Schizophrenia, paranoid presentation", "OCD (scrupulosity) with absent insight", "Normal religious practice for his community"],
     answer: 2,
     explanation:
       "Religious obsessions (scrupulosity) with mental compulsions and reassurance-seeking are OCD. Full conviction about the feared consequence is recorded with the 'absent insight/delusional beliefs' specifier rather than as a psychotic disorder. Delusional disorder and schizophrenia are not diagnosed when the beliefs are OCD-related obsessions. The excess, distress and impairment exceed normal religious practice, which is the cultural reference point that clinicians should check with the patient's community.",
@@ -348,12 +313,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which is a 'B criterion' symptom of a manic episode?",
-    options: [
-      "Hypersomnia",
-      "Feelings of worthlessness",
-      "Decreased need for sleep (e.g., feels rested after only 3 hours)",
-      "Psychomotor retardation",
-    ],
+    options: ["Hypersomnia, sleeping much longer than usual", "Feelings of worthlessness or excessive guilt", "Decreased need for sleep without feeling tired", "Psychomotor retardation observable by others"],
     answer: 2,
     explanation:
       "Manic B criteria include inflated self-esteem, decreased need for sleep, pressured speech, flight of ideas, distractibility, increased goal-directed activity or psychomotor agitation, and excessive risky activities. Hypersomnia, worthlessness and retardation are depressive symptoms. Decreased need for sleep (not fatigued) differs from insomnia (wanting sleep but unable to).",
@@ -400,12 +360,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about dissociative amnesia is correct?",
-    options: [
-      "It is caused by head injury",
-      "It typically involves loss of procedural memory such as driving",
-      "It involves inability to recall important autobiographical information, usually of a traumatic or stressful nature, inconsistent with ordinary forgetting",
-      "It is always permanent",
-    ],
+    options: ["It is caused by head injury and shows on brain imaging", "It typically involves loss of procedural skills such as driving", "It involves loss of autobiographical memory, usually after stress or trauma", "It is always permanent once it has developed"],
     answer: 2,
     explanation:
       "Dissociative amnesia is localised, selective or generalised loss of autobiographical memory, usually linked to trauma or stress, beyond ordinary forgetting and not due to substances or neurological conditions. Head injury points to an organic cause. Procedural memory is typically preserved. Memory often returns, sometimes rapidly.",
@@ -419,12 +374,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which of the following is a conduct disorder symptom rather than an ODD symptom?",
-    options: [
-      "Often loses temper",
-      "Often argues with authority figures",
-      "Has deliberately set fires with the intention of causing serious damage",
-      "Is often touchy or easily annoyed",
-    ],
+    options: ["Often loses temper over minor frustrations", "Often argues with parents and teachers", "Has deliberately set fires to cause serious damage", "Is often touchy or easily annoyed by others"],
     answer: 2,
     explanation:
       "Fire-setting with intent to cause damage is a conduct disorder symptom (destruction of property). Losing temper, arguing with adults and being touchy or easily annoyed are ODD symptoms in the angry/irritable and argumentative/defiant clusters. CD involves violation of others' basic rights or major age-appropriate norms.",
@@ -438,12 +388,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The Y-BOCS total score (0 to 40) combines severity ratings of:",
-    options: [
-      "Depression and anxiety",
-      "Positive and negative symptoms",
-      "Obsessions (items 1 to 5) and compulsions (items 6 to 10)",
-      "Mania and depression",
-    ],
+    options: ["Depression (items 1 to 5) and anxiety (items 6 to 10)", "Positive (items 1 to 5) and negative symptoms (items 6 to 10)", "Obsessions (items 1 to 5) and compulsions (items 6 to 10)", "Mania (items 1 to 5) and depression (items 6 to 10)"],
     answer: 2,
     explanation:
       "The Yale-Brown Obsessive Compulsive Scale rates time, interference, distress, resistance and control separately for obsessions and compulsions (0 to 20 each), giving 0 to 40; scores around 16 or more often indicate clinically significant OCD in trials. The other options describe HADS, PANSS and other scales.",
@@ -471,7 +416,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which drug class is approved for symptomatic treatment of mild to moderate Alzheimer's disease?",
-    options: ["Typical antipsychotics", "SSRIs", "Cholinesterase inhibitors (donepezil, rivastigmine, galantamine)", "Benzodiazepines"],
+    options: ["Typical antipsychotics such as haloperidol", "SSRIs such as sertraline and citalopram", "Cholinesterase inhibitors such as donepezil", "Benzodiazepines such as lorazepam"],
     answer: 2,
     explanation:
       "Cholinesterase inhibitors give modest symptomatic benefit in mild to moderate AD, and memantine (an NMDA antagonist) is used in moderate to severe AD. Anti-amyloid monoclonal antibodies (lecanemab, donanemab) are newer disease-modifying options in early AD in some countries. Antipsychotics increase mortality in dementia. SSRIs treat comorbid depression. Benzodiazepines worsen cognition and falls.",
@@ -537,12 +482,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Russell's sign, seen in bulimia nervosa, refers to:",
-    options: [
-      "Fine body hair (lanugo)",
-      "Swollen parotid glands",
-      "Calluses or abrasions on the knuckles from self-induced vomiting",
-      "Low heart rate",
-    ],
+    options: ["Fine downy body hair (lanugo) on the trunk", "Swollen parotid glands at the angle of the jaw", "Calluses on the knuckles from self-induced vomiting", "A low resting heart rate below 50 per minute"],
     answer: 2,
     explanation:
       "Russell's sign is calluses or scars on the dorsum of the hand from repeated contact with the teeth during self-induced vomiting. Parotid swelling and dental erosion are other vomiting signs. Lanugo and bradycardia are typical of low-weight anorexia nervosa.",
@@ -556,12 +496,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which is the first-line treatment for chronic insomnia disorder in adults according to major guidelines?",
-    options: [
-      "Long-term zolpidem",
-      "Antihistamines",
-      "Cognitive behavioural therapy for insomnia (CBT-I)",
-      "Alcohol at bedtime",
-    ],
+    options: ["Long-term nightly zolpidem or zopiclone", "Sedating antihistamines such as promethazine", "Cognitive behavioural therapy for insomnia (CBT-I)", "A small alcoholic drink at bedtime"],
     answer: 2,
     explanation:
       "CBT-I (sleep restriction, stimulus control, cognitive restructuring, sleep hygiene, relaxation) is first-line for chronic insomnia (American College of Physicians, European guidelines), with durable benefits. Z-drugs are for short-term use only. Sedating antihistamines have poor evidence and anticholinergic effects. Alcohol fragments sleep.",

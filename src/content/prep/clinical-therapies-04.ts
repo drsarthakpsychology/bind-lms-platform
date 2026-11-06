@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Dialectical behaviour therapy (DBT) was developed by Marsha Linehan originally for:",
-    options: [
-      "Children with ADHD",
-      "Chronically suicidal women who met criteria for borderline personality disorder",
-      "Older adults with dementia",
-      "Couples with sexual difficulties",
-    ],
+    options: ["Children and adolescents with ADHD", "Chronically suicidal women with borderline PD", "Older adults with dementia and agitation", "Couples with sexual difficulties"],
     answer: 1,
     explanation:
       "Linehan built DBT for chronically suicidal, self-harming women, most of whom met criteria for borderline personality disorder. Standard CBT asked them to change too quickly and they dropped out, so she added acceptance and validation, balanced against change. DBT has since been adapted for adolescents, eating disorders and substance use, but it was not designed for ADHD, dementia or sexual problems.",
@@ -118,12 +113,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Linehan's biosocial theory, 'emotional vulnerability' refers to:",
-    options: [
-      "Lack of any emotions",
-      "High sensitivity to emotional triggers, intense reactions, and a slow return to emotional baseline",
-      "Inability to recognise faces",
-      "An unconscious fear of castration",
-    ],
+    options: ["A lack of any emotional response to everyday events", "High sensitivity, intense reactions and slow return to baseline", "Inability to recognise faces or emotions in other people", "An unconscious fear of castration from early childhood"],
     answer: 1,
     explanation:
       "Linehan describes three parts of emotional vulnerability: reacting to small triggers (sensitivity), reacting strongly (reactivity) and taking a long time to calm down (slow return to baseline). When this temperament meets an invalidating environment, the child does not learn to label, trust or regulate emotions. It does not mean absence of emotion, a face-recognition problem or a psychoanalytic conflict.",
@@ -156,12 +146,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In a DBT session, the therapist and patient go step by step through the evening before an overdose: she was already exhausted and had not eaten (vulnerability), her sister cancelled a visit (prompting event), she thought 'nobody cares', felt shame and rage, sat alone scrolling old messages, then swallowed tablets. They then identify where she could have used a different skill and what happened afterwards (her sister rushed over).",
     stem: "This procedure is called:",
-    options: [
-      "Free association",
-      "Behavioural chain analysis, followed by solution analysis",
-      "Systematic desensitisation",
-      "Paradoxical intention",
-    ],
+    options: ["Free association about the overdose", "Behavioural chain analysis, then solution analysis", "Systematic desensitisation to rejection", "Paradoxical intention about the urge"],
     answer: 1,
     explanation:
       "Chain analysis maps the vulnerability factors, the prompting event, each link of thought, feeling, sensation and action, the problem behaviour and its consequences, including reinforcing ones such as the sister's attention. Solution analysis then chooses a skill or change for each weak link. Free association is unstructured and psychoanalytic. Systematic desensitisation treats phobic anxiety. Paradoxical intention (Frankl) asks clients to intend the feared symptom.",
@@ -196,12 +181,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In DBT, 'wise mind' is described as:",
-    options: [
-      "Purely logical thinking without feelings",
-      "The overlap of 'reasonable mind' and 'emotion mind', where intuitive knowing combines both",
-      "Acting only on strong emotions",
-      "An unconscious part of the psyche",
-    ],
+    options: ["Purely logical thinking, with feelings set aside", "The integration of reasonable mind and emotion mind", "Acting on whatever one feels most strongly", "An unconscious part of the psyche, as in Jung"],
     answer: 1,
     explanation:
       "DBT describes three states of mind: reasonable mind (cool, logical), emotion mind (driven by current feelings) and wise mind, their integration, which feels like a quiet, intuitive knowing. Mindfulness practice is meant to help people reach wise mind. Pure logic is reasonable mind; acting on strong feeling alone is emotion mind; it is not a psychoanalytic structure.",
@@ -266,12 +246,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In Linehan's later randomised trial comparing DBT with community treatment by non-behavioural experts for suicidal women with BPD, the main finding was that DBT:",
-    options: [
-      "Was no better than community treatment on any outcome",
-      "Roughly halved suicide attempts and reduced emergency visits and psychiatric admissions",
-      "Increased drop-out compared with community treatment",
-      "Was effective only when combined with clozapine",
-    ],
+    options: ["Was no better than expert community treatment on any outcome", "Roughly halved suicide attempts and cut emergency visits", "Increased drop-out compared with community treatment", "Worked only when combined with clozapine"],
     answer: 1,
     explanation:
       "Compared with treatment by experienced community experts, DBT produced about half the rate of suicide attempts, fewer emergency department visits and inpatient admissions, and lower drop-out. This trial mattered because it controlled for therapist expertise and general factors, which earlier trials had not. Clozapine was not part of the protocol.",
@@ -304,12 +279,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A DBT patient calls her therapist at 11 p.m. saying she wants to cut herself after a fight with her boyfriend. The therapist has agreed to phone coaching. The patient has not yet acted on the urge.",
     stem: "What is the most appropriate response in keeping with DBT?",
-    options: [
-      "Spend an hour exploring her childhood memories of rejection",
-      "Briefly validate, then coach a specific crisis-survival skill (e.g., TIPP: cold water on the face, paced breathing) and get a commitment to use it before ending the call",
-      "Refuse to speak because calls are never allowed",
-      "Tell her to go ahead if it helps her feel better",
-    ],
+    options: ["Spend an hour on the phone exploring her childhood rejections", "Briefly validate, coach a crisis skill such as TIPP, get a commitment", "Refuse to speak, since phone calls are never allowed in DBT", "Tell her to go ahead if cutting will help her feel better"],
     answer: 1,
     explanation:
       "Telephone coaching is short and skills-focused: validate the distress, pick a skill that fits the moment (TIPP, distract with ACCEPTS, self-soothe), troubleshoot obstacles and get a commitment, saving deeper analysis for the next session. Long exploratory talk on the phone can reinforce crisis calls. Refusing all contact breaks the agreed treatment frame. Encouraging self-harm is never acceptable. DBT also has a rule that, after self-harm, the patient waits 24 hours before calling, to avoid rewarding the act with contact.",
@@ -341,12 +311,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "DBT for adolescents (DBT-A) adds which feature to standard DBT?",
-    options: [
-      "Removal of all skills training",
-      "A multi-family skills group including parents, and a 'walking the middle path' module about dialectics in family life",
-      "Mandatory inpatient admission",
-      "Replacement of individual therapy by medication",
-    ],
+    options: ["Removal of all skills training for adolescents", "Parents join skills groups, plus a 'middle path' module", "Mandatory inpatient admission for the first month", "Replacement of individual therapy by medication"],
     answer: 1,
     explanation:
       "Miller, Rathus and Linehan's adolescent adaptation includes caregivers in multi-family skills groups and adds 'walking the middle path' (validation, behaviour change principles and dialectical thinking for families). A Norwegian trial found DBT-A reduced self-harm more than enhanced usual care. Skills and individual therapy remain central, and admission is not required.",
@@ -376,12 +341,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In Linehan's stage model, Stage 2 of DBT focuses mainly on:",
-    options: [
-      "Gaining behavioural control over severe dyscontrol such as self-harm",
-      "Reducing 'quiet desperation', often through processing past trauma (for example with DBT prolonged exposure), once behavioural control is achieved",
-      "Pre-treatment orientation and commitment",
-      "Achieving capacity for sustained joy and freedom",
-    ],
+    options: ["Gaining control over severe behaviours such as self-harm", "Moving from quiet desperation, often by treating past trauma", "Orientation and commitment before treatment starts", "Building capacity for lasting joy and freedom"],
     answer: 1,
     explanation:
       "Pre-treatment covers orientation and commitment. Stage 1 targets severe behavioural dyscontrol. Stage 2 moves from quiet desperation to emotional experiencing, which often means treating PTSD, now done with the DBT prolonged exposure protocol (Harned). Stage 3 deals with ordinary problems in living and self-respect. Stage 4 aims at a sense of completeness, freedom and joy.",

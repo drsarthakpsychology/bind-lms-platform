@@ -25,12 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient has had prominent avolition and alogia plus grossly disorganised behaviour for 7 months, with no delusions, hallucinations or disorganised speech at any point. Why does this NOT satisfy DSM-5-TR Criterion A for schizophrenia?",
-    options: [
-      "Negative symptoms cannot be counted towards Criterion A",
-      "At least one of the two Criterion A symptoms must be delusions, hallucinations or disorganised speech",
-      "Grossly disorganised behaviour is a criterion only for brief psychotic disorder",
-      "Criterion A needs three symptoms when negative symptoms are present",
-    ],
+    options: ["Negative symptoms cannot be counted towards Criterion A at all", "At least one Criterion A symptom must be delusions, hallucinations or disorganised speech", "Grossly disorganised behaviour counts only towards brief psychotic disorder", "Criterion A requires three symptoms whenever negative symptoms are present"],
     answer: 1,
     explanation:
       "DSM-5 added the rule that at least one of the two (or more) Criterion A symptoms must be delusions, hallucinations or disorganised speech; negative symptoms plus disorganised or catatonic behaviour alone do not qualify. Negative symptoms do count as one of the five Criterion A items, so option A is wrong. Grossly disorganised or catatonic behaviour is Criterion A4 for schizophrenia, so option C is wrong. There is no three-symptom rule, so option D is wrong.",
@@ -240,12 +235,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A catatonic inpatient on haloperidol develops fever of 39.5 °C, rigidity, fluctuating blood pressure, diaphoresis and a creatine kinase of 12,000 IU/L. The best next step is:",
-    options: [
-      "Increase haloperidol because catatonic excitement is worsening",
-      "Stop the antipsychotic, give supportive care and start lorazepam, with ECT if no rapid response",
-      "Add an anticholinergic and continue haloperidol at the same dose",
-      "Switch to clozapine immediately",
-    ],
+    options: ["Increase haloperidol, since the catatonic excitement is getting worse", "Stop the antipsychotic, give supportive care and lorazepam, with ECT if needed", "Add an anticholinergic and continue haloperidol at the same dose", "Switch straight to clozapine to cover both psychosis and catatonia"],
     answer: 1,
     explanation:
       "This is neuroleptic malignant syndrome, which overlaps with malignant catatonia. The antipsychotic must be stopped, and management is supportive care plus benzodiazepines (lorazepam), with dantrolene or bromocriptine in selected cases and ECT for refractory cases. More haloperidol worsens it. Anticholinergics treat dystonia and parkinsonism, not NMS. Clozapine is not started during acute NMS; any rechallenge waits at least 2 weeks after resolution.",
@@ -274,12 +264,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which finding is the strongest support for the glutamate (NMDA receptor hypofunction) model of schizophrenia?",
-    options: [
-      "Amphetamine produces paranoid psychosis in healthy volunteers",
-      "Phencyclidine and ketamine produce positive, negative and cognitive symptoms in healthy people",
-      "Clozapine has high affinity for 5-HT2A receptors",
-      "L-dopa produces visual hallucinations in Parkinson's disease",
-    ],
+    options: ["Amphetamine produces a paranoid psychosis in healthy volunteers", "PCP and ketamine produce positive, negative and cognitive symptoms", "Clozapine has high affinity for 5-HT2A as well as D4 receptors", "L-dopa produces visual hallucinations in Parkinson's disease"],
     answer: 1,
     explanation:
       "NMDA antagonists such as PCP and ketamine reproduce the whole schizophrenia picture, including negative and cognitive symptoms, which dopamine agonists do not. This is the central evidence for NMDA hypofunction, often linked to downstream dopamine dysregulation. Amphetamine and L-dopa psychosis support the dopamine hypothesis and mainly produce positive symptoms. Clozapine's 5-HT2A affinity supports serotonin-dopamine models.",
@@ -324,12 +309,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The WHO International Pilot Study of Schizophrenia and the later Determinants of Outcome of Severe Mental Disorders (DOSMD) study, which included centres at Agra and Chandigarh, reported that:",
-    options: [
-      "Schizophrenia was rarer in developing countries than in developed ones",
-      "Outcome of schizophrenia was on average better in developing-country centres than in developed-country centres",
-      "First-rank symptoms were absent in Indian centres",
-      "Indian patients needed higher antipsychotic doses for remission",
-    ],
+    options: ["Schizophrenia was much rarer in developing countries than in developed ones", "Average outcome was better in developing-country centres than in developed ones", "First-rank symptoms were almost absent in the Indian centres", "Indian patients needed higher antipsychotic doses to reach remission"],
     answer: 1,
     explanation:
       "Both WHO studies found broadly similar incidence of narrowly defined schizophrenia across centres but a more favourable course and outcome in developing-country centres such as Agra and Chandigarh. Reasons proposed include family involvement, lower EE and acute onset, though the finding is now debated. Incidence was not markedly lower, first-rank symptoms were present in all centres, and the studies did not address dose requirements.",
@@ -344,12 +324,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 22-year-old engineering student is brought with 3 weeks of insomnia, suspiciousness and hearing voices. Over the last 2 months he had used a synthetic cannabinoid daily. He has stopped all use since admission 10 days ago and has been abstinent and drug-screen negative since; the voices and persecutory beliefs persist unchanged. There is no family history. His uncle says he has been 'withdrawn and odd' for about a year, with falling grades.",
     stem: "Which conclusion is best supported?",
-    options: [
-      "Substance/medication-induced psychotic disorder, because symptoms began during heavy cannabinoid use",
-      "Brief psychotic disorder, because the active phase is under 1 month",
-      "A primary psychotic disorder (likely schizophrenia) should be considered, as psychosis persists after abstinence and a year-long prodrome preceded heavy use",
-      "Cannabis intoxication delirium",
-    ],
+    options: ["Substance-induced psychotic disorder, since symptoms began during heavy use", "Brief psychotic disorder, since the active phase is under 1 month", "Consider a primary psychosis: symptoms persist off drugs and a prodrome came first", "Cannabis intoxication delirium, with fluctuating awareness"],
     answer: 2,
     explanation:
       "DSM-5-TR points to an independent psychotic disorder when symptoms precede substance use or persist for a substantial period (about 1 month) after cessation of intoxication or withdrawal, or when there is other evidence such as a prior history. A year of prodromal decline plus persistence after abstinence favours a primary disorder; with prodrome counted, total duration exceeds 6 months, so schizophrenia is likely, though continued observation is needed. Option A ignores the pre-existing prodrome. Option B ignores prodromal duration and the lack of return to premorbid function. Delirium requires disturbed attention and awareness.",
@@ -362,12 +337,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Where is attenuated psychosis syndrome placed in DSM-5-TR?",
-    options: [
-      "As a full diagnosis in the schizophrenia spectrum chapter",
-      "In Section III, Conditions for Further Study, with 'other specified schizophrenia spectrum disorder' available for clinical coding",
-      "Under schizotypal personality disorder as a specifier",
-      "In the ICD-11-only appendix",
-    ],
+    options: ["As a full diagnosis within the schizophrenia spectrum chapter", "In Section III, with 'other specified' coding for clinical use", "As a specifier of schizotypal personality disorder", "Only in ICD-11, with no mention anywhere in DSM-5-TR"],
     answer: 1,
     explanation:
       "Attenuated psychosis syndrome is in Section III (Conditions for Further Study) because of concerns about stigma, false positives and conversion rates (about 20 to 35% to psychosis over a few years). Clinically it can be recorded as 'other specified schizophrenia spectrum and other psychotic disorder'. It is not an official diagnosis, not a schizotypal specifier, and there is no 'ICD-11 appendix' in DSM.",
@@ -398,12 +368,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In DSM-5-TR, a person who comes to share the persecutory delusion of a dominant partner with delusional disorder, without meeting criteria for delusional disorder in their own right, is classified as:",
-    options: [
-      "Shared psychotic disorder (folie à deux)",
-      "Delusional disorder, persecutory type",
-      "Other specified schizophrenia spectrum and other psychotic disorder (delusional symptoms in partner of individual with delusional disorder)",
-      "Brief psychotic disorder, with marked stressor",
-    ],
+    options: ["Shared psychotic disorder (folie à deux), as a separate diagnosis", "Delusional disorder, persecutory type, in their own right", "Other specified schizophrenia spectrum disorder (delusions in the partner)", "Brief psychotic disorder, with marked stressor"],
     answer: 2,
     explanation:
       "DSM-5 removed shared psychotic disorder as a separate diagnosis. If the person meets delusional disorder criteria, that is diagnosed; otherwise the example 'delusional symptoms in partner of individual with delusional disorder' under other specified schizophrenia spectrum disorder is used. Option A is the DSM-IV and ICD-10 category (ICD-10 F24 induced delusional disorder). Option B needs full criteria. Brief psychotic disorder does not fit a chronic shared belief.",

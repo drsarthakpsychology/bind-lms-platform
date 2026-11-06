@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In DSM-5-TR, the severity of intellectual developmental disorder (mild, moderate, severe, profound) is determined by:",
-    options: [
-      "IQ score bands alone",
-      "Mental age",
-      "Age at onset",
-      "Adaptive functioning in the conceptual, social and practical domains",
-    ],
+    options: ["IQ score bands, as measured on a standard intelligence test", "Mental age compared with the person's chronological age", "Age at onset together with the presumed underlying cause", "Adaptive functioning in conceptual, social and practical areas"],
     answer: 3,
     explanation:
       "DSM-5 moved severity from IQ bands (as in DSM-IV: 50 to 70 mild, etc.) to adaptive functioning across conceptual, social and practical domains, because adaptive functioning decides the level of support needed. IQ still informs diagnosis (about 2 SD below the mean, roughly 65 to 75 allowing for measurement error). Mental age and age at onset are not severity criteria. DSM-5-TR adopted the term 'intellectual developmental disorder', in line with ICD-11's 'disorders of intellectual development'.",
@@ -101,12 +96,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Tourette's disorder in DSM-5-TR requires:",
-    options: [
-      "Only vocal tics for more than 1 year",
-      "Coprolalia",
-      "Onset after 18 years",
-      "Multiple motor tics and at least one vocal tic at some time, persisting more than 1 year since first tic onset, with onset before 18",
-    ],
+    options: ["Only vocal tics, present for more than 1 year since their onset", "Coprolalia, with or without motor tics, for at least 1 year", "Multiple motor tics and a vocal tic, beginning after the age of 18", "Multiple motor tics and a vocal tic for over a year, starting before 18"],
     answer: 3,
     explanation:
       "Tourette's needs multiple motor tics and one or more vocal tics (not necessarily at the same time), persisting more than a year since onset, with onset before 18. Coprolalia occurs in only about 10 to 15% and is not required. Only one tic type for over a year is persistent (chronic) motor or vocal tic disorder. Tics present for less than a year are provisional tic disorder.",
@@ -239,12 +229,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 23-year-old man from Bihar attends the andrology clinic with 'weakness' and fear that he is losing semen in his urine, which he believes is draining his strength. He reports fatigue, poor concentration, low mood, and erections that are 'not as strong as before'. He has nocturnal emissions about twice a month. Examination, urinalysis and testosterone are normal.",
     stem: "Which approach is most appropriate?",
-    options: [
-      "Diagnose erectile disorder and prescribe a PDE-5 inhibitor alone",
-      "Tell him firmly that his belief is superstition and discharge him",
-      "Diagnose a delusional disorder, somatic type",
-      "Recognise dhat syndrome as a cultural explanation of distress; assess for underlying depression, anxiety and sexual dysfunction; provide culturally sensitive sex education and treat comorbidity",
-    ],
+    options: ["Diagnose erectile disorder and prescribe a PDE-5 inhibitor on its own", "Tell him firmly that the belief is superstition and discharge him", "Diagnose delusional disorder, somatic type, and start an antipsychotic", "Treat dhat as a cultural idiom: screen for comorbidity and educate sensitively"],
     answer: 3,
     explanation:
       "Dhat is a cultural concept of distress, so management involves screening for the DSM-5-TR conditions often linked with it (depression, anxiety, SSD, sexual dysfunction), respectful psychoeducation about normal sexual physiology, and treatment of comorbidity. A PDE-5 inhibitor alone ignores the core distress. Dismissing the belief damages the alliance. The belief is culturally shared and not held with delusional fixity, so delusional disorder is wrong.",
@@ -274,12 +259,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "For gender dysphoria in children, DSM-5-TR requires six of eight criteria for at least 6 months, one of which must be:",
-    options: [
-      "Strong dislike of one's sexual anatomy",
-      "Preference for cross-gender roles in play",
-      "Preference for playmates of the other gender",
-      "A strong desire to be of the other gender or an insistence that one is the other (or an alternative) gender",
-    ],
+    options: ["A strong dislike of one's own sexual anatomy", "A strong preference for cross-gender roles in play", "A strong preference for playmates of the other gender", "A strong desire to be, or insistence that one is, another gender"],
     answer: 3,
     explanation:
       "Criterion A1 (a strong desire to be, or insistence that one is, another gender) is mandatory for children, so that gender-nonconforming behaviour alone, such as toy or playmate preference, is not enough. Anatomical dislike, role play and playmate preference are among the other seven items. Adolescents and adults need two of six criteria.",
@@ -292,12 +272,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "DSM-5 introduced a distinction between a paraphilia and a paraphilic disorder. A paraphilic disorder is:",
-    options: [
-      "Any atypical sexual interest, regardless of distress or harm",
-      "A paraphilia present for at least 1 month",
-      "A paraphilia that occurs only in adolescents",
-      "A paraphilia that currently causes distress or impairment to the individual, or whose satisfaction has entailed harm or risk of harm to others",
-    ],
+    options: ["Any atypical sexual interest, whether or not it causes distress or harm", "Any paraphilia that has been present for at least 1 month", "A paraphilia that appears only during adolescence", "A paraphilia causing distress or impairment, or harm or risk to others"],
     answer: 3,
     explanation:
       "DSM-5 distinguishes a paraphilia (an atypical sexual interest, which is not in itself a disorder) from a paraphilic disorder, which requires distress or impairment, or acting on urges with non-consenting persons (harm or risk of harm). Duration is at least 6 months. Paedophilic disorder requires age 16 or more and being at least 5 years older than the child. Specifiers include 'in a controlled environment' and 'in full remission'.",

@@ -60,12 +60,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Flooding differs from implosive therapy (Stampfl) chiefly in that implosive therapy:",
-    options: [
-      "Uses relaxation and a graded hierarchy",
-      "Is always done in vivo",
-      "Uses imagined, exaggerated scenes that often include hypothesised psychodynamic themes, whereas flooding uses realistic exposure (often in vivo)",
-      "Uses positive reinforcement only",
-    ],
+    options: ["Uses relaxation together with a graded anxiety hierarchy", "Must always be carried out in vivo, never in imagination", "Uses imagined, exaggerated scenes, sometimes with dynamic cues", "Relies only on positive reinforcement of each approach step"],
     answer: 2,
     explanation:
       "Both are intense, non-graded exposure methods with response prevention of escape. Implosion (Stampfl and Levis) uses vivid imagery, deliberately exaggerated and sometimes incorporating psychodynamic cues; flooding uses realistic stimuli, ideally in vivo. Relaxation and hierarchies belong to SD. Implosion is imaginal by definition. Neither relies on positive reinforcement.",
@@ -114,12 +109,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 28-year-old with contamination OCD has completed six ERP sessions. In each session he touches a 'contaminated' door handle, but he has started silently saying 'it's fine, it's fine' and rubbing his hands on his jeans afterwards. His anxiety ratings drop quickly, but between sessions his washing has not reduced.",
     stem: "What is the most likely reason for poor generalisation, and the next step?",
-    options: [
-      "He is not anxious enough, so exposure should be stopped",
-      "Covert neutralising and safety behaviours are acting as hidden compulsions; identify and prevent them, and extend response prevention to between-session practice",
-      "He needs relaxation training before further exposure",
-      "ERP is ineffective for contamination fears; switch to psychoanalysis",
-    ],
+    options: ["He is not anxious enough during exposure, so ERP should be stopped", "Hidden rituals are blocking learning; identify them and add them to response prevention", "He needs several weeks of relaxation training before any further exposure", "ERP does not work for contamination fears; he should switch to psychoanalysis"],
     answer: 1,
     explanation:
       "Mental rituals ('it's fine') and subtle wiping are neutralising behaviours that prevent full exposure and maintain the belief that contamination is dangerous, so learning does not generalise. The fix is to identify covert rituals, add them to response prevention, and set homework. Stopping exposure is wrong. Relaxation is not required and can act as a safety behaviour. ERP has strong evidence for contamination OCD.",
@@ -133,7 +123,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A token economy is based mainly on principles of:",
-    options: ["Classical conditioning", "Operant conditioning (secondary reinforcement)", "Psychoanalysis", "Observational learning only"],
+    options: ["Classical conditioning (stimulus pairing)", "Operant conditioning (secondary reinforcement)", "Psychoanalytic theory (sublimation)", "Observational learning (modelling) only"],
     answer: 1,
     explanation:
       "Token economies give tokens (conditioned or secondary reinforcers) for target behaviours, which can be exchanged for backup reinforcers. This is operant conditioning. Ayllon and Azrin applied it in a psychiatric hospital. Classical conditioning pairs stimuli. Psychoanalysis is unrelated. Modelling may assist, but tokens operate through reinforcement.",
@@ -146,12 +136,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A major limitation repeatedly noted for token economies in long-stay psychiatric wards is:",
-    options: [
-      "They never change behaviour within the ward",
-      "They require medication to work",
-      "Gains often fail to generalise or be maintained outside the reinforcing environment unless fading and natural reinforcers are built in",
-      "They are based on classical conditioning",
-    ],
+    options: ["They never change behaviour, even within the ward", "They work only when combined with medication", "Gains often fail to generalise outside the programme", "They are based mainly on classical conditioning"],
     answer: 2,
     explanation:
       "Token economies reliably change behaviour within the programme, but generalisation and maintenance after discharge are weak unless tokens are faded and natural social reinforcers are used. They do not need medication. Ethical concerns about withholding basic rights as backup reinforcers also arise.",
@@ -229,12 +214,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Covert sensitisation (Cautela) differs from traditional aversion therapy because:",
-    options: [
-      "It uses electric shock",
-      "It uses emetic drugs",
-      "Both the unwanted behaviour and the aversive consequence are imagined",
-      "It rewards the target behaviour",
-    ],
+    options: ["It pairs the behaviour with real electric shock", "It pairs the behaviour with emetic drugs", "Both the behaviour and its aversive result are imagined", "It rewards the target behaviour to weaken it"],
     answer: 2,
     explanation:
       "In covert sensitisation, the patient imagines the target behaviour (e.g., drinking) paired with vivid imagined aversive consequences (nausea, humiliation), avoiding the ethical problems of physical aversives. Shock and emetics belong to traditional aversion therapy, now largely abandoned for ethical reasons, and historically misused in 'conversion therapy' for homosexuality. It does not reward the target behaviour.",
@@ -247,12 +227,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Bandura's participant modelling for snake phobia involved:",
-    options: [
-      "Imagining snakes while relaxed",
-      "Free association about fears",
-      "The therapist modelling approach to the snake, then guiding the client through graded joint approach with physical assistance",
-      "Electric shock paired with snake images",
-    ],
+    options: ["Imagining snakes while deeply relaxed, step by step", "Free association about the meaning of the fear", "Therapist demonstrates, then guides graded joint approach", "Electric shock paired with pictures of snakes"],
     answer: 2,
     explanation:
       "Bandura, Blanchard and Ritter found participant (guided) modelling, in which the therapist demonstrates and then helps the client perform graded approaches, more effective than symbolic modelling or SD, and it raised self-efficacy. Imagining while relaxed is SD. Free association is psychoanalytic. Shock pairing is aversion therapy.",
@@ -265,12 +240,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The core components of habit reversal training for tics and trichotillomania are:",
-    options: [
-      "Free association and interpretation",
-      "Awareness training and a competing response, with social support",
-      "Flooding and implosion",
-      "Aversive shock and response cost",
-    ],
+    options: ["Free association and interpretation of the urge", "Awareness training and a competing response, with support", "Flooding and implosion with the urge to pull", "Aversive shock combined with response cost"],
     answer: 1,
     explanation:
       "HRT includes awareness training (detecting early warning signs), competing response training (a physically incompatible action held for about a minute), and social support, with relaxation and motivation components in fuller versions. CBIT for Tourette's builds on HRT. The other options are unrelated or aversive methods.",
@@ -286,12 +256,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 20-year-old nursing student faints whenever she sees blood or has an injection. She wants to complete her clinical training. Her heart rate rises briefly when she sees blood, then drops sharply before she faints.",
     stem: "Which technique is specifically indicated?",
-    options: [
-      "Progressive muscle relaxation during exposure",
-      "Applied tension (tensing large muscle groups to raise blood pressure) combined with graded exposure",
-      "Benzodiazepines before each exposure",
-      "Thought stopping",
-    ],
+    options: ["Progressive muscle relaxation during graded exposure", "Applied tension to raise blood pressure, with graded exposure", "A benzodiazepine before each exposure session", "Thought stopping whenever she sees blood"],
     answer: 1,
     explanation:
       "Blood-injection-injury phobia features a diphasic vasovagal response. Öst's applied tension teaches tensing arms, legs and torso to raise blood pressure and prevent fainting, combined with graded exposure. Relaxation would lower blood pressure further and is contraindicated. Benzodiazepines can impair exposure learning. Thought stopping lacks evidence.",
@@ -337,12 +302,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Contingency management with vouchers (Higgins) has the strongest evidence for which problem?",
-    options: [
-      "Stimulant (cocaine, methamphetamine) use disorders",
-      "Schizophrenia negative symptoms",
-      "Panic disorder",
-      "Body dysmorphic disorder",
-    ],
+    options: ["Stimulant use disorders (cocaine, methamphetamine)", "Negative symptoms of chronic schizophrenia", "Panic disorder with agoraphobic avoidance", "Body dysmorphic disorder with checking"],
     answer: 0,
     explanation:
       "Contingency management, which gives vouchers or prizes for verified abstinence (urine tests), is among the most effective treatments for stimulant use disorders, for which no medication has strong evidence. It also works for smoking and opioid adherence. It is not a primary treatment for negative symptoms, panic or BDD.",
@@ -356,12 +316,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In CBT for panic disorder, spinning in a chair, hyperventilating for 1 minute and breathing through a straw are used for:",
-    options: [
-      "Relaxation training",
-      "Interoceptive exposure to feared bodily sensations",
-      "Thought stopping",
-      "Aversion conditioning",
-    ],
+    options: ["Relaxation training to reduce arousal", "Interoceptive exposure to feared sensations", "Thought stopping when panic starts", "Aversion conditioning to panic cues"],
     answer: 1,
     explanation:
       "Interoceptive exposure (Barlow's Panic Control Treatment) deliberately induces dizziness, breathlessness and palpitations so that patients learn these sensations are not dangerous, reducing fear of bodily sensations. It is not relaxation (which can act as a safety behaviour), thought stopping or aversion.",
@@ -398,12 +353,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Mary Cover Jones is known for:",
-    options: [
-      "Developing the token economy",
-      "Removing a child's (Peter's) fear of rabbits by gradual approach paired with food and peer modelling, an early form of desensitisation",
-      "Creating the MMPI",
-      "Founding person-centred therapy",
-    ],
+    options: ["Developing the first token economy on a hospital ward", "Treating a boy's rabbit fear by gradual approach paired with food", "Creating the MMPI with colleagues in Minnesota", "Founding person-centred therapy in the 1940s"],
     answer: 1,
     explanation:
       "Mary Cover Jones, the 'mother of behaviour therapy', treated 3-year-old Peter's rabbit fear by gradually bringing a rabbit closer while he ate and watched other children play with it. This anticipated Wolpe's counterconditioning. Ayllon and Azrin developed token economies. Hathaway and McKinley created the MMPI. Rogers founded person-centred therapy.",
@@ -416,12 +366,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Biofeedback is best described as:",
-    options: [
-      "A projective technique",
-      "A drug treatment",
-      "Providing real-time information about physiological processes (e.g., EMG, heart rate variability, skin temperature) so the person can learn to control them",
-      "A psychodynamic interpretation technique",
-    ],
+    options: ["A projective technique that uses ambiguous images", "A drug treatment that alters autonomic function", "Real-time feedback of body signals so they can be controlled", "A psychodynamic technique for interpreting bodily symptoms"],
     answer: 2,
     explanation:
       "Biofeedback uses instruments to feed back physiological signals, enabling operant learning of self-regulation. It has evidence for tension headache, migraine, Raynaud's, some anxiety problems and, as neurofeedback, partial evidence in ADHD. It is not projective, pharmacological or interpretive.",
@@ -452,12 +397,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Social skills training for people with schizophrenia typically includes:",
-    options: [
-      "Interpretation of transference",
-      "Free association",
-      "Instruction, modelling, behavioural rehearsal (role-play), feedback and homework",
-      "Flooding",
-    ],
+    options: ["Interpretation of transference in a group setting", "Free association and discussion of early memories", "Instruction, modelling, role-play, feedback and homework", "Flooding with feared social situations"],
     answer: 2,
     explanation:
       "Social skills training (Liberman) breaks interpersonal skills into components and teaches them through instruction, modelling, role-play, positive and corrective feedback, and homework for generalisation; it has evidence for improving social skills and functioning. Transference interpretation and free association are psychodynamic. Flooding is an exposure technique for anxiety.",
@@ -492,12 +432,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In a trial of exposure for spider phobia, Group 1 receives exposure in one room with one spider; Group 2 receives exposure with several spiders in several rooms. At post-treatment both groups show equal fear reduction. One month later, both groups are tested with a novel spider in a novel room.",
     stem: "Which result does the inhibitory learning model predict?",
-    options: [
-      "Group 2 shows less return of fear, because variability during extinction enhances retrieval of the inhibitory memory across contexts",
-      "Group 1 shows less return of fear, because consistent exposure strengthens habituation",
-      "Both groups show identical fear because post-treatment fear was equal",
-      "Neither group shows any fear because extinction erases the original memory",
-    ],
+    options: ["Group 2, because varied exposure improves retrieval of the new learning", "Group 1, because consistent exposure gives stronger habituation", "Neither; equal post-treatment fear guarantees equal long-term fear", "Neither shows fear, because extinction erases the original memory"],
     answer: 0,
     explanation:
       "Inhibitory learning theory predicts that variable stimuli and contexts during exposure improve generalisation and reduce renewal, even if within-treatment fear reduction is similar or slower; Rowe and Craske showed this. Equal post-treatment fear does not guarantee equal long-term outcome. Extinction does not erase the fear memory. Consistent exposure in one context increases renewal risk in new contexts.",
