@@ -16,6 +16,42 @@ A **case sheet** (case record) is the written account of everything you learned 
 Clinical care is a relay race. The case sheet is the baton. A smooth handover (clear, complete, readable) keeps the patient moving forward. A dropped baton (a missing allergy, an unrecorded suicide threat) can lose the race.
 :::
 
+
+:::widget flow
+{
+ "title": "The record in the cycle of care",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Assess",
+   "detail": "Interview, informants, examination, tests."
+  },
+  {
+   "id": "r",
+   "label": "Record",
+   "detail": "Write it clearly, attributed, dated and signed."
+  },
+  {
+   "id": "p",
+   "label": "Plan",
+   "detail": "The plan follows from what is written: formulation, diagnosis, risk."
+  },
+  {
+   "id": "t",
+   "label": "Treat",
+   "detail": "Others act on the record when you are not there."
+  },
+  {
+   "id": "v",
+   "label": "Review",
+   "detail": "Progress notes compare today with what was recorded before."
+  }
+ ],
+ "caption": "If one turn of the cycle is missing from the record, the next clinician starts blind."
+}
+:::
+
 ### Ten principles that never change
 - **Accurate**: write what was said and seen, not what you assumed.
 - **Attributed**: say **who** said it ("per sister", "patient reports").
@@ -94,6 +130,37 @@ Most Indian training centres follow a similar order. Learn it until you can writ
 | **16. Investigations** | What tests and why |
 | **17. Management plan** | Biological, psychological and social; short and long term |
 | **18. Risk assessment** | To self, to others, from others, with a safety plan |
+
+
+:::widget layers
+{
+ "title": "The case sheet in five layers",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "1. Who and why",
+   "detail": "Identification data, informants, chief complaints."
+  },
+  {
+   "label": "2. The story",
+   "detail": "History of present illness."
+  },
+  {
+   "label": "3. The background",
+   "detail": "Past, treatment, substance, family, personal history, premorbid personality."
+  },
+  {
+   "label": "4. What you found today",
+   "detail": "Physical examination and MSE."
+  },
+  {
+   "label": "5. What it means and what to do",
+   "detail": "Summary, formulation, differential and provisional diagnosis, investigations, management, risk."
+  }
+ ],
+ "caption": "Eighteen headings collapse into five questions. If you forget a heading in an exam, ask which layer it belongs to."
+}
+:::
 
 :::mnemonic The order of the history: "I Can Hear Past Family Personal Problems"
 **I**dentification and informants, **C**hief complaints, **H**istory of present illness, **P**ast (and treatment and substance), **F**amily, **P**ersonal, **P**remorbid personality.
@@ -176,6 +243,36 @@ Patients describe their experiences in everyday language: "my mind is not workin
 }
 :::
 
+
+:::widget flow
+{
+ "title": "Quote, clarify, name",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "Quote",
+   "detail": "\"Koi mere kaan mein kuch keh raha hai\" (someone is saying something in my ear)."
+  },
+  {
+   "id": "c",
+   "label": "Clarify",
+   "detail": "Voice or sound? Inside or outside the head? When? What does it say? How real?"
+  },
+  {
+   "id": "n",
+   "label": "Name",
+   "detail": "Only now add the term that fits: here, tinnitus, not a hallucination."
+  }
+ ],
+ "edgeLabels": {
+  "q>c": "ask",
+  "c>n": "only if it fits"
+ },
+ "caption": "Skipping the middle box is how a ringing ear becomes a schizophrenia diagnosis."
+}
+:::
+
 :::trap Labels without evidence
 "Patient is delusional" tells the reader nothing they can check. Write **what** the belief is, **how firmly** it is held, **what evidence** the patient gives, and **how it affects** behaviour. Then the reader can agree or disagree with the label.
 :::
@@ -231,6 +328,55 @@ For each informant write: **name or relationship, age, how long and how closely 
 
 :::example Writing an informant line
 "Informants: (1) the patient: reliable but inadequate, as she lacks insight into recent behaviour; (2) mother, 52, homemaker, lives with the patient: reliable and adequate; (3) elder brother, 30, lives in Mumbai, visits monthly: reliable but inadequate for recent events."
+:::
+
+
+:::widget flow
+{
+ "title": "Judging an informant",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "r",
+   "label": "Each informant"
+  },
+  {
+   "id": "rel",
+   "label": "Reliable?",
+   "parent": "r",
+   "detail": "Consistent, no obvious motive to distort, not hostile, not unwell themselves."
+  },
+  {
+   "id": "ad",
+   "label": "Adequate?",
+   "parent": "r",
+   "detail": "Enough contact to know: lives with the patient, sees them often, knows them over years."
+  },
+  {
+   "id": "rel1",
+   "label": "Yes: weigh their account highly",
+   "parent": "rel"
+  },
+  {
+   "id": "rel2",
+   "label": "Doubtful: record why and seek others",
+   "parent": "rel",
+   "detail": "For example a property dispute or a hostile relationship."
+  },
+  {
+   "id": "ad1",
+   "label": "Yes: use for recent events",
+   "parent": "ad"
+  },
+  {
+   "id": "ad2",
+   "label": "No: use for distant history only",
+   "parent": "ad",
+   "detail": "A brother in another city may know childhood well but not last week."
+  }
+ ],
+ "caption": "Write both judgements, with the reason, for every informant."
+}
 :::
 
 ### Chief complaints
@@ -405,6 +551,52 @@ The HPI is the heart of the case sheet. It answers: **what happened, in what ord
 9. **Impact**: work, study, family roles, self-care, relationships.
 10. **Help sought so far**: doctors, medicines, traditional healers, temples or dargahs, and the effect.
 
+
+:::widget flow
+{
+ "title": "The shape of an HPI",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "w",
+   "label": "Last well",
+   "detail": "\"Apparently well until about six months ago.\""
+  },
+  {
+   "id": "o",
+   "label": "Onset and precipitant",
+   "detail": "Abrupt, acute, subacute or insidious; temporally associated with an event."
+  },
+  {
+   "id": "s",
+   "label": "Symptoms in order",
+   "detail": "Each with frequency, severity and how it changed."
+  },
+  {
+   "id": "b",
+   "label": "Biological functions",
+   "detail": "Sleep, appetite, weight, energy, libido, menstruation."
+  },
+  {
+   "id": "n",
+   "label": "Relevant negatives",
+   "detail": "Past highs, psychosis, substances, medical illness: asked, not assumed."
+  },
+  {
+   "id": "r",
+   "label": "Risk and impact",
+   "detail": "Harm to self or others; work, family, self-care."
+  },
+  {
+   "id": "h",
+   "label": "Help sought",
+   "detail": "Doctors, medicines, healers, temples, and their effect."
+  }
+ ],
+ "caption": "Press Play and narrate an HPI for a patient you have seen, one box at a time."
+}
+:::
+
 :::analogy A film, not a photograph
 The MSE is a photograph of today. The HPI is the film that led to it: scene by scene, in order, with what each scene did to the character.
 :::
@@ -432,6 +624,43 @@ The MSE is a photograph of today. The HPI is the film that led to it: scene by s
     { "label": "Ask her and her mother about any past periods of unusually high mood, energy, reduced need for sleep or overspending, and record the answer as a positive finding or a relevant negative", "verdict": "best", "outcome": "Her mother describes a week last year when she slept two hours a night and spent her savings. The diagnosis becomes bipolar II disorder and the plan changes.", "why": "Relevant negatives are only negative after you have asked. Informants catch hypomania that patients often recall as 'feeling good'." },
     { "label": "Ask about her childhood instead", "verdict": "ok", "outcome": "Useful later, but the bipolar question was more urgent.", "why": "Personal history matters, but differential-shaping negatives come first." }
   ]
+}
+:::
+
+
+:::widget moodline
+{
+ "prompt": "Ms G's mother helped you draw a life chart of her mood over five years (0 is her usual self). What does it show?",
+ "series": [
+  0,
+  -0.5,
+  -2.4,
+  -2.6,
+  -1.2,
+  0,
+  1.8,
+  2.1,
+  0.5,
+  0,
+  -0.3,
+  -2.5,
+  -2.7
+ ],
+ "labels": [
+  "Year 1",
+  "Year 2",
+  "Year 3",
+  "Year 4",
+  "Year 5"
+ ],
+ "options": [
+  "Recurrent depression only",
+  "Depressions with a hypomanic period in between",
+  "Steady low mood throughout",
+  "Ordinary ups and downs"
+ ],
+ "answer": 1,
+ "why": "Two depressive episodes reach the major depression zone, with a period in the hypomania band between them that Ms G recalled only as 'feeling good'. A life chart from an informant can change the diagnosis to bipolar II and change treatment."
 }
 :::
 
@@ -495,6 +724,51 @@ Also: **ECT** (number, response, cognitive effects), **psychotherapy** (type, se
     { "label": "For each medicine: name, dose, how long at that dose, whether taken regularly, side effects, and why it was stopped", "verdict": "best", "outcome": "Two medicines were taken for less than a month at starting doses; one was stopped because of nausea. He does not meet criteria for treatment resistance.", "why": "An adequate trial is defined by dose, duration and adherence. The record must show them." },
     { "label": "Ask only which medicine he liked best", "verdict": "ok", "outcome": "Some useful information, but adequacy is not established.", "why": "Preference matters, but you need the full treatment details." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "Was that a real trial of the medicine?",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "t",
+   "label": "A past medicine 'did not work'"
+  },
+  {
+   "id": "d",
+   "label": "Adequate dose?",
+   "parent": "t",
+   "detail": "Was it raised to a therapeutic dose, not left at the starting dose?"
+  },
+  {
+   "id": "u",
+   "label": "Adequate duration?",
+   "parent": "t",
+   "detail": "Long enough at that dose to judge."
+  },
+  {
+   "id": "a",
+   "label": "Taken regularly?",
+   "parent": "t",
+   "detail": "Ask, check pill counts, ask family, consider levels."
+  },
+  {
+   "id": "x",
+   "label": "All three yes: a true non-response",
+   "parent": "a",
+   "detail": "Counts towards treatment resistance."
+  },
+  {
+   "id": "y",
+   "label": "Any no: not an adequate trial",
+   "parent": "u",
+   "detail": "Record it as an inadequate trial, not a failure."
+  }
+ ],
+ "caption": "Treatment resistance is a claim about adequate trials. The record must show dose, duration and adherence."
 }
 :::
 
@@ -582,6 +856,52 @@ Use **shapes and lines**, never colour alone, so that the tree is readable when 
 }
 :::
 
+
+:::widget flow
+{
+ "title": "A genogram read aloud: Ms N's family",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "gp",
+   "label": "Paternal grandfather (square, crossed: died at 70)",
+   "detail": "Admitted to a mental hospital for a year in his thirties; old records later confirmed schizophrenia. Write the diagnosis beside the shape."
+  },
+  {
+   "id": "f",
+   "label": "Father, 55 (square)",
+   "parent": "gp",
+   "detail": "Well."
+  },
+  {
+   "id": "u",
+   "label": "Paternal uncle (square)",
+   "parent": "gp",
+   "detail": "Well; his son is listed below."
+  },
+  {
+   "id": "c",
+   "label": "Cousin (square, crossed: died at 24)",
+   "parent": "u",
+   "detail": "Died by suicide. Record age and cause."
+  },
+  {
+   "id": "p",
+   "label": "Ms N, 23 (circle, double outline, arrow): the patient",
+   "parent": "f",
+   "detail": "First episode of psychosis."
+  },
+  {
+   "id": "s",
+   "label": "Brother, 20 (square)",
+   "parent": "f",
+   "detail": "Well."
+  }
+ ],
+ "caption": "Every meaning is carried by a shape, a line or a written label, never by colour alone."
+}
+:::
+
 ### What to write beside the tree
 - For each relative with illness: relationship, illness (as described and, if known, diagnosis), treatment, outcome.
 - **Family atmosphere**: warmth, conflict, criticism, over-involvement, violence, who the patient is closest to.
@@ -652,6 +972,52 @@ Q: High expressed emotion in a family is linked most consistently with:
     { "label": "Ask the family to step out briefly, explain that you ask everyone on this medicine, and ask in plain, respectful words; record findings factually", "verdict": "best", "outcome": "He admits to delayed ejaculation and low desire, relieved to be asked. A medicine change is planned.", "why": "Privacy, normalising and plain language make sensitive questions possible and clinically useful." },
     { "label": "Ask in front of the family", "verdict": "harm", "outcome": "He denies all problems out of embarrassment.", "why": "Without privacy the answer is unreliable and the patient is humiliated." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "The personal history as a life line",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "b",
+   "label": "Birth",
+   "detail": "Pregnancy, delivery, cry, NICU."
+  },
+  {
+   "id": "d",
+   "label": "Development",
+   "detail": "Milestones and delays."
+  },
+  {
+   "id": "c",
+   "label": "Childhood",
+   "detail": "Temperament, fears, separations, adversity."
+  },
+  {
+   "id": "s",
+   "label": "School",
+   "detail": "Medium, performance, failures, peers."
+  },
+  {
+   "id": "w",
+   "label": "Work",
+   "detail": "Jobs, durations, reasons for change."
+  },
+  {
+   "id": "m",
+   "label": "Relationships and marriage",
+   "detail": "Sexual and marital history, children; menstrual and obstetric history for women."
+  },
+  {
+   "id": "n",
+   "label": "Now",
+   "detail": "Living situation, finances, supports, religion, forensic history, leisure."
+  }
+ ],
+ "caption": "Tell it as a life, in order. Gaps (\"not known\") are written, not left blank."
 }
 :::
 
@@ -733,6 +1099,53 @@ The MSE is written under eight headings, describing what you saw and heard **tod
 6. **Cognitive functions** (consciousness, orientation, attention, memory, intelligence, abstraction)
 7. **Insight** (with grade)
 8. **Judgement** (personal, social, test)
+
+
+:::widget flow
+{
+ "title": "The eight MSE headings, in order",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Appearance and behaviour"
+  },
+  {
+   "id": "2",
+   "label": "Speech"
+  },
+  {
+   "id": "3",
+   "label": "Mood and affect",
+   "detail": "Mood in the patient's words; affect as you observe it."
+  },
+  {
+   "id": "4",
+   "label": "Thought",
+   "detail": "Stream, form, content, possession."
+  },
+  {
+   "id": "5",
+   "label": "Perception"
+  },
+  {
+   "id": "6",
+   "label": "Cognition"
+  },
+  {
+   "id": "7",
+   "label": "Insight",
+   "detail": "Describe and grade."
+  },
+  {
+   "id": "8",
+   "label": "Judgement",
+   "detail": "Personal, social, test."
+  }
+ ],
+ "caption": "A snapshot of now. Anything the patient tells you about the past belongs in the history instead."
+}
+:::
 
 ### Investigations: say why
 Do not write a list of tests. Write each with its **reason**:

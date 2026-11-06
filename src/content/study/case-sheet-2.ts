@@ -44,6 +44,37 @@ Predisposing factors are dry wood. Precipitating factors are the match. Perpetua
 }
 :::
 
+
+:::widget flow
+{
+ "title": "Mr S: the perpetuating cycle",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "l",
+   "label": "Low mood and shame",
+   "detail": "After the robbery, his core belief 'a man must provide' is activated."
+  },
+  {
+   "id": "w",
+   "label": "Withdraws from the shop",
+   "detail": "Feels he cannot face customers."
+  },
+  {
+   "id": "i",
+   "label": "Income and contact fall",
+   "detail": "Debt grows; fewer moments of mastery or pleasure."
+  },
+  {
+   "id": "b",
+   "label": "Belief confirmed",
+   "detail": "'I really am a failure as a provider.'"
+  }
+ ],
+ "caption": "Perpetuating factors usually form a loop. The plan should break it: behavioural activation with a graded return to the shop, and help with the debt."
+}
+:::
+
 ### Writing it as a narrative
 Examiners and good clinicians prefer a short narrative that links the factors, not just a filled grid.
 
@@ -100,6 +131,47 @@ Q: The main purpose of a formulation is to:
    - **Personality** factors and **no disorder** (normal reaction)
 3. For each, write **points for** and **points against**.
 4. Choose the **provisional diagnosis** with its classification code.
+
+
+:::widget flow
+{
+ "title": "Climbing the diagnostic ladder",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Describe the syndrome",
+   "detail": "For example: a manic syndrome with psychotic features."
+  },
+  {
+   "id": "o",
+   "label": "Organic causes",
+   "detail": "Delirium, thyroid, steroids, epilepsy, encephalitis, dementia. Must not be missed."
+  },
+  {
+   "id": "u",
+   "label": "Substance-induced",
+   "detail": "Intoxication, withdrawal, prescribed medicines."
+  },
+  {
+   "id": "p",
+   "label": "Primary psychiatric disorders",
+   "detail": "Most likely first, each with points for and against."
+  },
+  {
+   "id": "r",
+   "label": "Personality factors",
+   "detail": "Long-standing patterns that shape or explain the picture."
+  },
+  {
+   "id": "n",
+   "label": "No disorder",
+   "detail": "A normal reaction, a cultural experience, or a social problem."
+  }
+ ],
+ "caption": "Write every rung, even when you can rule it out in a line. Examiners check the bottom rungs first."
+}
+:::
 
 :::mnemonic The diagnostic ladder: "Organic, Substance, Psychotic, Mood, Anxiety, Personality"
 Climb from the causes you must never miss (organic, substance) to those that are common, then to personality and normal reactions.
@@ -185,6 +257,45 @@ Each item should say **what, who, when** and **how we will know it is working**.
 }
 :::
 
+
+:::widget layers
+{
+ "title": "Building a risk formulation",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "What is the risk?",
+   "detail": "To self, to others, from others, other risks such as driving or money."
+  },
+  {
+   "label": "Static factors",
+   "detail": "History and demographics that do not change."
+  },
+  {
+   "label": "Dynamic factors",
+   "detail": "Symptoms, substance use, stressors that can change."
+  },
+  {
+   "label": "Protective factors",
+   "detail": "Family, reasons for living, engagement with care."
+  },
+  {
+   "label": "Current state",
+   "detail": "Plan, intent, access to means, today."
+  },
+  {
+   "label": "What would change it",
+   "detail": "Triggers that would raise or lower risk."
+  },
+  {
+   "label": "The plan",
+   "detail": "Who does what, by when; safety plan; follow-up; crisis contacts."
+  }
+ ],
+ "caption": "A rating word on its own is the top line only. A defensible entry fills every layer."
+}
+:::
+
 ### Documentation the law expects (Mental Healthcare Act 2017)
 - **Capacity**: for treatment decisions, record that the person can understand the information, appreciate its consequences, and communicate a decision (section 4 sets these out). Capacity is decision-specific and can change.
 - **Informed consent**: what was explained (benefits, risks, alternatives), in which language, and the person's decision.
@@ -237,6 +348,37 @@ Q: Guidelines advise that risk scales should:
   "yourTurn": [
     { "q": "Write a brief SOAP note: Mr S (depression), outpatient review a month after starting sertraline. He says 'sleep is better, mood a little better'; wife says he opened the shop three days last week; PHQ-9 down from 19 to 12; nausea gone; denies death wishes now; plan agreed to increase activity.", "a": "S: Reports better sleep and slightly improved mood; wife reports he worked three days last week. O: Brighter affect, normal speech rate; no death wishes or plans; PHQ-9 12 (19 at baseline); no side effects. A: Partial response; risk reduced. P: Continue sertraline; increase behavioural activation (shop five days, one social visit); review in a month or earlier if worse." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "A SOAP note",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Subjective",
+   "detail": "What the patient and family report since the last note, in their words."
+  },
+  {
+   "id": "o",
+   "label": "Objective",
+   "detail": "MSE today, vitals, ward observations, results, scale scores."
+  },
+  {
+   "id": "a",
+   "label": "Assessment",
+   "detail": "Better, same or worse; response; side effects; current risk."
+  },
+  {
+   "id": "p",
+   "label": "Plan",
+   "detail": "Changes and next steps, with who and when."
+  }
+ ],
+ "caption": "Sort each line of a progress note into one of the four boxes before you write it."
 }
 :::
 
@@ -509,6 +651,50 @@ In a clinical exam you take a history and MSE in about 45 to 60 minutes, then pr
 6. **Summary** in three or four sentences.
 7. **Differential and provisional diagnosis**, with reasons.
 8. **Formulation** (briefly), **investigations** and **management**.
+
+
+:::widget flow
+{
+ "title": "The long case in ten minutes",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Opening line",
+   "detail": "Who, and the main problem, in one sentence."
+  },
+  {
+   "id": "2",
+   "label": "Chief complaints"
+  },
+  {
+   "id": "3",
+   "label": "HPI as a story"
+  },
+  {
+   "id": "4",
+   "label": "Relevant background only"
+  },
+  {
+   "id": "5",
+   "label": "MSE: abnormal findings first"
+  },
+  {
+   "id": "6",
+   "label": "Summary"
+  },
+  {
+   "id": "7",
+   "label": "Differential with reasons"
+  },
+  {
+   "id": "8",
+   "label": "Formulation, investigations, plan"
+  }
+ ],
+ "caption": "Press Play and time yourself presenting a case you know, about a minute per box."
+}
+:::
 
 ### Things examiners notice
 - You **know** the facts (no "I think he said...").
