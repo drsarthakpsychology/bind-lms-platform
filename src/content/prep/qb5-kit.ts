@@ -1,4 +1,4 @@
-import type { Difficulty, PrepExam, PrepQuestion, Subject } from "@/lib/prep/types";
+import type { Difficulty, InterviewCategory, InterviewQuestion, PrepExam, PrepQuestion, Subject } from "@/lib/prep/types";
 
 /**
  * Small builders for the indian-psychology, ethics-law and ugc-paper1 banks.
@@ -91,5 +91,33 @@ export function kit(subject: Subject, exams: PrepExam[], module?: string) {
       answer,
       explanation,
     }),
+  };
+}
+
+/** Builder for mock-interview items. */
+export function ivkit(category: InterviewCategory, exams: PrepExam[], module?: string) {
+  return (
+    id: string,
+    difficulty: Difficulty,
+    question: string,
+    followUps: string[],
+    modelAnswer: string,
+    mustCover: string[],
+    redFlags: string[],
+    x?: { exams?: PrepExam[]; module?: string },
+  ): InterviewQuestion => {
+    const m = x?.module ?? module;
+    return {
+      id,
+      category,
+      exams: x?.exams ?? exams,
+      difficulty,
+      question,
+      followUps,
+      modelAnswer,
+      mustCover,
+      redFlags,
+      ...(m ? { module: m } : {}),
+    };
   };
 }
