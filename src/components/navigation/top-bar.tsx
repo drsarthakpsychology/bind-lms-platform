@@ -55,7 +55,9 @@ export function TopBar({
     <header
       className={cn(
         "z-40 border-b-2 border-foreground bg-card md:sticky md:top-0",
-        innerPage && "hidden md:block",
+        // Lesson and material pages are focus pages: below laptop width their
+        // own back bar replaces the masthead.
+        innerPage && "hidden lg:block",
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
@@ -64,7 +66,7 @@ export function TopBar({
           type="button"
           onClick={toggleSidebar}
           aria-label="Show or hide the menu"
-          className={cn(iconBtn, "hidden md:inline-flex", innerPage && "md:hidden")}
+          className={cn(iconBtn, "hidden md:inline-flex", innerPage && "lg:hidden")}
         >
           <Menu className="size-5" aria-hidden />
         </button>
