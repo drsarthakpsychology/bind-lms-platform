@@ -108,7 +108,7 @@ Positive studies are published more often and faster. Negative studies may sit i
   "unit": "%",
   "answer": [30, 45],
   "reveal": "Roughly a third or more. That is why a single uncontrolled study claiming that most people improved tells you very little.",
-  "clinician": "Placebo response rates in modern antidepressant RCTs commonly fall in the 30 to 40% range and have risen over decades; drug-placebo differences in response are usually around 10 to 15 percentage points (NNT roughly 6 to 9; see Cipriani and colleagues, Lancet 2018 network meta-analysis)."
+  "clinician": "Placebo response rates in modern antidepressant RCTs commonly fall in the 30 to 40% range and have risen over decades; drug-placebo differences in response are usually around 10 to 15 percentage points (NNT roughly 6 to 9). A large 2018 network meta-analysis of 21 antidepressants found every one more effective than placebo, with modest differences between them."
 }
 :::
 
@@ -348,7 +348,7 @@ Almost every antidepressant works on serotonin or noradrenaline and takes a long
 - For esketamine, patients are **watched in the clinic after each dose** and must not drive that day.
 
 :::clinician
-Evidence: Zarate and colleagues (Archives of General Psychiatry, 2006) showed rapid response to a single infusion; meta-analyses confirm large short-term effects against saline and smaller effects against active placebo (midazolam). Esketamine's phase 3 programme (TRANSFORM-1 to -3, SUSTAIN-1) had mixed individual results; approval rested on TRANSFORM-2 plus a relapse-prevention trial, a point of criticism (Turner, Lancet Psychiatry 2019). ESCAPE-TRD (Reif and colleagues, NEJM 2023) found esketamine superior to quetiapine augmentation on remission at the 8-week assessment. ELEKT-D (Anand and colleagues, NEJM 2023) found IV ketamine non-inferior to ECT for non-psychotic TRD in outpatients, though ECT may be better for severe and psychotic depression and inpatients. US prescribing requires a REMS programme with at least two hours of post-dose observation. Mechanism remains debated: NMDA blockade, AMPA throughput, mTOR and BDNF signalling, and possibly opioid-system involvement (an early naltrexone-blockade study suggested this; later studies conflicted).
+Evidence: a small 2006 placebo-controlled trial showed rapid response to a single infusion; meta-analyses confirm large short-term effects against saline and smaller effects against active placebo (midazolam). Esketamine's phase 3 programme (TRANSFORM-1 to -3, SUSTAIN-1) had mixed individual results; approval rested on TRANSFORM-2 plus a relapse-prevention trial, a point of criticism raised in 2019. ESCAPE-TRD (2023) found esketamine superior to quetiapine augmentation on remission at the 8-week assessment. ELEKT-D (2023) found IV ketamine non-inferior to ECT for non-psychotic TRD in outpatients, though ECT may be better for severe and psychotic depression and inpatients. US prescribing requires a REMS programme with at least two hours of post-dose observation. Mechanism remains debated: NMDA blockade, AMPA throughput, mTOR and BDNF signalling, and possibly opioid-system involvement (an early naltrexone-blockade study suggested this; later studies conflicted).
 :::
 
 :::recall
@@ -390,7 +390,7 @@ Q: Why must patients be observed after an esketamine dose?
 ### Psilocybin for treatment-resistant depression
 - **Psilocybin** comes from "magic mushrooms" and acts mainly on the **serotonin 2A receptor**.
 - **COMP360** is a manufactured psilocybin developed by Compass Pathways.
-- A phase 2 trial (NEJM, 2022) found a single 25 mg dose beat a 1 mg dose for treatment-resistant depression at the main time point, with more side effects including headache, nausea and some suicidal behaviour in all groups.
+- A 2022 phase 2 trial found a single 25 mg dose beat a 1 mg dose for treatment-resistant depression at the main time point, with more side effects including headache, nausea and some suicidal behaviour in all groups.
 - **Two phase 3 trials** have since met their main goal: COMP005 (a single dose, results June 2025) and COMP006 (two doses, with six-month data in July 2026).
 - **As of November 2026**: the company is completing a **rolling application** to the FDA, expected to be finished by the end of 2026. It is **not yet approved** anywhere as a medicine except under Australia's authorised-prescriber scheme.
 
@@ -426,7 +426,7 @@ In India, psilocybin mushrooms and MDMA are controlled under the **NDPS Act**; p
 :::
 
 :::clinician
-MAPP1 (Mitchell and colleagues, Nature Medicine 2021) and MAPP2 (Mitchell and colleagues, Nature Medicine 2023) reported large between-group effect sizes on CAPS-5. The FDA Psychopharmacologic Drugs Advisory Committee (4 June 2024) voted 2 to 9 on effectiveness and 1 to 10 on whether benefits outweighed risks, citing functional unblinding, expectation bias, incomplete abuse-liability and cardiovascular data, and concerns about therapy conduct and data collection. Psilocybin: Goodwin and colleagues (NEJM, 2022) phase 2b showed a MADRS difference of about 6.6 points for 25 mg versus 1 mg at the primary time point, with response not significantly different at later follow-up. COMP005 (n about 258) showed a placebo-adjusted MADRS difference of minus 3.6 at the primary time point; COMP006 (nearly 600 participants, two doses) reported maintained response through 26 weeks in the company's July 2026 release. Peer-reviewed full results and the FDA's assessment are still awaited, and DEA rescheduling would be needed for US launch. Key safety issues: transient blood pressure rises, headache, anxiety, rare prolonged psychosis or hallucinogen persisting perception disorder, and the vulnerability of patients during altered states (requiring two-therapist and recording policies).
+The phase 3 trials MAPP1 (2021) and MAPP2 (2023) reported large between-group effect sizes on CAPS-5. The FDA Psychopharmacologic Drugs Advisory Committee (4 June 2024) voted 2 to 9 on effectiveness and 1 to 10 on whether benefits outweighed risks, citing functional unblinding, expectation bias, incomplete abuse-liability and cardiovascular data, and concerns about therapy conduct and data collection. Psilocybin: a 2022 phase 2b trial of 233 participants showed a MADRS difference of about 6.6 points for 25 mg versus 1 mg at the primary time point, with response not significantly different at later follow-up. COMP005 (n about 258) showed a placebo-adjusted MADRS difference of minus 3.6 at the primary time point; COMP006 (nearly 600 participants, two doses) reported maintained response through 26 weeks in the company's July 2026 release. Peer-reviewed full results and the FDA's assessment are still awaited, and DEA rescheduling would be needed for US launch. Key safety issues: transient blood pressure rises, headache, anxiety, rare prolonged psychosis or hallucinogen persisting perception disorder, and the vulnerability of patients during altered states (requiring two-therapist and recording policies).
 :::
 
 :::recall
@@ -487,7 +487,7 @@ A rival muscarinic drug, emraclidine, **failed** two phase 2 trials in November 
   "unit": "days",
   "answer": [14, 14],
   "reveal": "Fourteen days, once each evening. Benefit appeared within days in trials, which matters for a new mother. But it is a short course, and some women need further treatment afterwards.",
-  "clinician": "Zuranolone 50 mg once daily in the evening with fat-containing food for 14 days (SKYLARK, Deligiannidis and colleagues, American Journal of Psychiatry 2023). Boxed warning for impaired ability to drive; avoid driving or hazardous activity for at least 12 hours after dosing. Its intravenous predecessor, brexanolone, required a continuous infusion of about 60 hours in a monitored setting. Breastfeeding data are limited; discuss with the patient."
+  "clinician": "Zuranolone 50 mg once daily in the evening with fat-containing food for 14 days (the regimen tested in the 2023 SKYLARK trial). Boxed warning for impaired ability to drive; avoid driving or hazardous activity for at least 12 hours after dosing. Its intravenous predecessor, brexanolone, required a continuous infusion of about 60 hours in a monitored setting. Breastfeeding data are limited; discuss with the patient."
 }
 :::
 
@@ -504,7 +504,7 @@ A rival muscarinic drug, emraclidine, **failed** two phase 2 trials in November 
 :::
 
 :::clinician
-EMERGENT-2 (Kaul and colleagues, Lancet 2024) and EMERGENT-3 showed PANSS total reductions of roughly 8 to 10 points versus placebo at five weeks in acutely exacerbated inpatients. Long-term open-label data suggest sustained effect and weight neutrality; head-to-head trials against established antipsychotics are lacking. Its availability and CDSCO status in India should be checked; as of late 2026 it is not a standard option in Indian practice. Other approved or emerging agents to watch include the TAAR1 agonists (ulotaront failed phase 3 in 2023) and further muscarinic modulators. For zuranolone, the MDD programme (WATERFALL, CORAL, SHORELINE) gave modest and inconsistent effects, and the FDA issued a complete response letter for MDD in August 2023 while approving PPD.
+EMERGENT-2 (2024) and EMERGENT-3 showed PANSS total reductions of roughly 8 to 10 points versus placebo at five weeks in acutely exacerbated inpatients. Long-term open-label data suggest sustained effect and weight neutrality; head-to-head trials against established antipsychotics are lacking. Its availability and CDSCO status in India should be checked; as of late 2026 it is not a standard option in Indian practice. Other approved or emerging agents to watch include the TAAR1 agonists (ulotaront failed phase 3 in 2023) and further muscarinic modulators. For zuranolone, the MDD programme (WATERFALL, CORAL, SHORELINE) gave modest and inconsistent effects, and the FDA issued a complete response letter for MDD in August 2023 while approving PPD.
 :::
 
 :::recall
@@ -542,8 +542,8 @@ Q: Zuranolone works mainly by:
 
 ### Question 2: can they treat addiction?
 The idea: GLP-1 signals may dampen the **reward** from alcohol and other substances.
-- A small randomised trial of low-dose semaglutide (JAMA Psychiatry, 2025) reduced alcohol craving and drinking in a laboratory setting.
-- A randomised trial published in **The Lancet in April 2026** found that semaglutide reduced **heavy-drinking days** more than placebo in people with **both** obesity and alcohol use disorder.
+- A small 2025 randomised trial of low-dose semaglutide (48 people) reduced alcohol craving and drinking in a laboratory setting.
+- A randomised trial of **108 people**, published in **April 2026**, found that semaglutide reduced **heavy-drinking days** more than placebo in people with **both** obesity and alcohol use disorder.
 - An earlier trial of exenatide found no overall benefit, but a possible benefit in people with obesity.
 - **Status: promising, not yet a recommended treatment for alcohol use disorder.** Larger trials, people without obesity, and longer follow-up are needed.
 
@@ -582,13 +582,13 @@ GLP-1 medicines are being misused for weight loss by people who are not overweig
 :::
 
 :::clinician
-Key sources: EMA PRAC conclusion (April 2024) of no causal association with suicidal thoughts; FDA Drug Safety Communication (13 January 2026) requesting removal of suicidal behaviour and ideation warnings, based on a meta-analysis of 91 placebo-controlled trials (about 108,000 patients) and a Sentinel cohort of more than 2 million new users with type 2 diabetes compared with SGLT2 inhibitor users. Observational work (for example Wang and colleagues, Nature Medicine 2024) suggested lower rates of suicidal ideation with semaglutide versus non-GLP-1 weight or diabetes drugs, subject to confounding. Alcohol: Hendershot and colleagues (JAMA Psychiatry 2025; n=48; low-dose semaglutide reduced laboratory alcohol self-administration and some drinking measures); Klausen and colleagues (Lancet, published online April 2026; n=108 with AUD and BMI of 30 or more; heavy-drinking days fell by about 41 versus 26 percentage points); Klausen and colleagues (JCI Insight 2022; exenatide, negative overall, post hoc benefit with obesity). Practical points: GI losses can raise lithium levels; delayed gastric emptying may alter absorption of oral drugs; rapid weight loss reduces muscle mass; cost and supply constrain use, although cheaper versions are becoming available in India as patents lapse. Check current local regulation.
+Key sources: EMA PRAC conclusion (April 2024) of no causal association with suicidal thoughts; FDA Drug Safety Communication (13 January 2026) requesting removal of suicidal behaviour and ideation warnings, based on a meta-analysis of 91 placebo-controlled trials (about 108,000 patients) and a Sentinel cohort of more than 2 million new users with type 2 diabetes compared with SGLT2 inhibitor users. Observational work (for example a large 2024 health-records study) suggested lower rates of suicidal ideation with semaglutide versus non-GLP-1 weight or diabetes drugs, subject to confounding. Alcohol: a 2025 trial (n=48; low-dose semaglutide reduced laboratory alcohol self-administration and some drinking measures); an April 2026 trial (n=108 with AUD and BMI of 30 or more; heavy-drinking days fell by about 41 versus 26 percentage points); a 2022 exenatide trial (negative overall, post hoc benefit with obesity). Practical points: GI losses can raise lithium levels; delayed gastric emptying may alter absorption of oral drugs; rapid weight loss reduces muscle mass; cost and supply constrain use, although cheaper versions are becoming available in India as patents lapse. Check current local regulation.
 :::
 
 :::recall
 1. Name three GLP-1 medicines. || Semaglutide, liraglutide, tirzepatide (dual agonist), also exenatide.
 2. What did the FDA conclude in January 2026 about suicidality? || No increased risk; it asked for suicidality warnings to be removed from weight-loss product labels.
-3. What did the April 2026 Lancet trial find? || Semaglutide reduced heavy-drinking days more than placebo in people with obesity and alcohol use disorder.
+3. What did the April 2026 semaglutide trial in alcohol use disorder find? || Semaglutide reduced heavy-drinking days more than placebo in people with obesity and alcohol use disorder.
 4. Why check lithium levels in a patient starting semaglutide? || Vomiting, diarrhoea or poor intake can cause dehydration and raise lithium levels.
 :::
 
