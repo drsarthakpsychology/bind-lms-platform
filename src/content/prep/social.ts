@@ -1,6 +1,7 @@
 import type { PrepQuestion } from "@/lib/prep/types";
 import { QUESTIONS as part1 } from "./social-part1";
 import { QUESTIONS as part2 } from "./social-part2";
+import { QUESTIONS as part3 } from "./social-part3";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -13,4 +14,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · social. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3]);
