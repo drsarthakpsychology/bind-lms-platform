@@ -146,3 +146,15 @@ New blocks:
   - mock interviews with model answers and rubrics
   - advanced clinical, counselling, research-methods and assessment practice
 - **Don't overwhelm students:** one pathway (goal → diagnostic → plan → learn in modules → practise → mocks → interview → review), showing at most 1–3 next actions at a time. Everything lives inside existing modules and one Prep section.
+
+## 7. Owner direction (2026-11-06, 18:01): academic depth and unified prep
+- **Depth:** every syllabus topic is covered in substantial depth, up to postgraduate, RCI and PhD conceptual level. The textbooks are used extensively; Atkinson & Hilgard and Bear/Connors/Paradiso were added.
+- **Progression:** the three levels build on each other. Depth, technical complexity and academic language grow, and nothing is repeated in new words.
+- **Q&A banks** in every module (`:::qa`), with fully developed answers: headings, bullet points, tables, examples and step-by-step reasoning. Questions are varied, with no filler.
+- **Visual teaching first:** flowcharts and cycles, interactive curves, layered models, a brain map, the synapse, and guess/decide/sort widgets (see `docs/design/CONTENT_WIDGETS.md`).
+- **No formal references** in student content: no book titles, citations, journals, et al., links or page numbers. Enforced by `src/content/study/no-references.test.ts`. Sources stay internal (admin-only `ref`).
+- **Prep is unified:** "Psychology Entrance & Competitive Exam Preparation — CUET-PG · UGC-NET · Clinical Psychology Entrances".
+  - One curriculum. Students don't choose an exam.
+  - Unified diagnostic, plan, progressive practice, mock tests and interviews.
+  - Exam-specific tracks are kept behind `EXAM_TRACKS_ENABLED = false` for later.
+- **Review before merge:** automated gates (types, tests, the references guard, valid widget JSON), plus a level-progression review pass on each module.
