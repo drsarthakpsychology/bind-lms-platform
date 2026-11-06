@@ -80,4 +80,4 @@ export const MILESTONES: Milestone[] = [
 ];
 
 /** What a locked secret milestone shows instead of its real description. */
-export const SECRET_TEXT = "Secret milestone. Keep going.";
+export const SECRET_TEXT = "A secret milestone.";
