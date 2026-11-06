@@ -50,7 +50,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Sensorimotor (birth to about 2), preoperational (about 2–7), concrete operational (about 7–11) and formal operational (about 11 onward). Piaget held the order to be invariant, though ages vary. The other sequences scramble this order.",
+      "Piaget's four stages are sensorimotor (birth to about 2, thinking through action and the senses), preoperational (about 2 to 7, symbolic thought but not yet logical operations), concrete operational (about 7 to 11, logical thinking about concrete things) and formal operational (from about 11 or 12, abstract and hypothetical reasoning). Piaget held that the order is the same for every child, because each stage builds on the structures of the one before, although the ages vary from child to child. The other options place the preoperational, concrete or sensorimotor stages in the wrong positions.",
     ref: "Santrock, ch. 6",
   }),
   d({
@@ -76,7 +76,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Primary circular reactions (about 1–4 months) centre on the infant's own body (ii). Secondary circular reactions (4–8 months) repeat actions with interesting external effects (iv). Coordination of secondary schemes (8–12 months) brings intentional means–end behaviour and the A-not-B error (i). Tertiary circular reactions (12–18 months) involve active experimentation with variations (iii). The other codes swap primary and secondary, or the last two substages.",
+      "Primary circular reactions (about 1 to 4 months) centre on the infant's own body (ii). Secondary circular reactions (4 to 8 months) repeat actions with interesting external effects (iv). Coordination of secondary schemes (8 to 12 months) brings intentional means-end behaviour and the A-not-B error (i). Tertiary circular reactions (12 to 18 months) involve active experimentation with variations (iii). The other codes swap primary and secondary, or the last two substages.",
     ref: "Berk, Child Development, ch. 6",
   }),
   d({
@@ -93,7 +93,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In substage 4 (about 8–12 months) infants search for hidden objects for the first time, but their search is tied to where they previously succeeded, hence the A-not-B error. By substage 5 they follow visible displacements; in substage 6 they can track invisible displacements through representation. Substages 2 and 3 come before hidden-object search begins. (Later work, for example Diamond's, links the error to immature prefrontal inhibitory control.)",
+      "In substage 4 (about 8 to 12 months) infants search for hidden objects for the first time, but their search is tied to where they previously succeeded, hence the A-not-B error. By substage 5 they follow visible displacements; in substage 6 they can track invisible displacements through representation. Substages 2 and 3 come before hidden-object search begins. (Later work, for example Diamond's, links the error to immature prefrontal inhibitory control.)",
     ref: "Berk, ch. 6; Diamond 1985",
   }),
   d({
@@ -109,7 +109,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Using the violation-of-expectation method (longer looking at surprising events), Baillargeon, Spelke and Wasserman (1985) and Baillargeon (1987) inferred that young infants represent hidden objects, months earlier than Piaget's manual-search tasks implied. Critics argue that looking-time effects may reflect perceptual novelty rather than knowledge, but the finding is the standard challenge to Piaget's timeline.",
+      "Both are true and R explains A. Using the violation-of-expectation method (longer looking at surprising events), Baillargeon, Spelke and Wasserman and Baillargeon inferred that young infants represent hidden objects, months earlier than Piaget's manual-search tasks implied. Critics argue that looking-time effects may reflect perceptual novelty rather than knowledge, but the finding is the standard challenge to Piaget's timeline.",
     ref: "Baillargeon 1987, Dev Psychol",
   }),
   d({
@@ -152,7 +152,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Hughes' (1975) 'policeman doll' study, in which most 3½- to 5-year-olds hid a boy doll so that two policemen could not see it, suggested that:",
+    stem: "Hughes' 'policeman doll' study, in which most 3½- to 5-year-olds hid a boy doll so that two policemen could not see it, suggested that:",
     options: [
       "Children cannot hide objects before age 7",
       "Egocentrism persists until adolescence",
@@ -161,7 +161,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "About 90% succeeded on the policeman task, implying perspective-taking ability far earlier than the abstract three mountains task suggested; Donaldson (1978) argued that tasks with 'human sense' reveal greater competence. The result goes against lasting egocentrism and shows that children of 3–5 can hide objects successfully. The study did not test conservation.",
+      "About 90% succeeded on the policeman task, implying perspective-taking ability far earlier than the abstract three mountains task suggested; Donaldson argued that tasks with 'human sense' reveal greater competence. The result goes against lasting egocentrism and shows that children of 3 to 5 can hide objects successfully. The study did not test conservation.",
     ref: "Hughes 1975; Donaldson, Children's Minds (1978)",
   }),
   d({
@@ -169,7 +169,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The finding that children conserve number around age 6–7, mass around 7–8, weight around 9–10 and volume around 11–12 illustrates:",
+    stem: "The finding that children conserve number around age 6 to 7, mass around 7 to 8, weight around 9 to 10 and volume around 11 to 12 illustrates:",
     options: [
       "Transductive reasoning",
       "Vertical décalage",
@@ -188,13 +188,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: In McGarrigle and Donaldson's (1974) 'naughty teddy' study, more 4–6-year-olds conserved number when a teddy 'accidentally' messed up a row of counters than when the experimenter rearranged them deliberately.",
+      "A: In McGarrigle and Donaldson's 'naughty teddy' study, more 4 to 6-year-olds conserved number when a teddy 'accidentally' messed up a row of counters than when the experimenter rearranged them deliberately.",
       "R: When an adult deliberately changes something and then repeats the question, children may infer that a different answer is expected.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. About 62% conserved in the teddy condition compared with about 16% in the standard condition. Rose and Blank's (1974) one-question version made a similar point: the standard procedure's deliberate change plus repeated question creates a pragmatic demand to change the answer, so Piaget may have underestimated conservation. (Later work by Moore and Frye suggested part of the effect may be distraction, so children did not notice the change.)",
+      "Both are true and R explains A. About 62% conserved in the teddy condition compared with about 16% in the standard condition. Rose and Blank's one-question version made a similar point: the standard procedure's deliberate change plus repeated question creates a pragmatic demand to change the answer, so Piaget may have underestimated conservation. (Later work by Moore and Frye suggested part of the effect may be distraction, so children did not notice the change.)",
     ref: "McGarrigle & Donaldson 1974, Cognition; Rose & Blank 1974",
   }),
   d({
@@ -276,7 +276,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: violation-of-expectation and simplified tasks show earlier competence. B: cross-cultural work (for example Dasen) and adult studies show formal operations are far from universal and are tied to schooling and expertise. C: neo-Piagetian and information-processing accounts emphasise domain-specific, uneven progress. D is wrong as a criticism because it misstates the theory: Piaget saw children as active constructors of knowledge ('little scientists'); the opposite charge, neglect of social and cultural influence, came from Vygotskians.",
+      "A: violation-of-expectation and simplified tasks show earlier competence. B: cross-cultural work (for example the work of Dasen) and adult studies show formal operations are far from universal and are tied to schooling and expertise. C: neo-Piagetian and information-processing accounts emphasise domain-specific, uneven progress. D is wrong as a criticism because it misstates the theory: Piaget saw children as active constructors of knowledge ('little scientists'); the opposite charge, neglect of social and cultural influence, came from Vygotskians.",
     ref: "Berk, ch. 6; Santrock, ch. 6",
   }),
   d({
@@ -346,7 +346,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Object permanence is the central sensorimotor achievement; Piaget thought it develops gradually from about 8 months and is complete by about 18–24 months. Conservation of liquid is a concrete-operational task. Understanding others' viewpoints relates to egocentrism and theory of mind. Biological understanding is a separate domain.",
+      "Object permanence is the central sensorimotor achievement; Piaget thought it develops gradually from about 8 months and is complete by about 18 to 24 months. Conservation of liquid is a concrete-operational task. Understanding others' viewpoints relates to egocentrism and theory of mind. Biological understanding is a separate domain.",
     ref: "Santrock, ch. 6",
   }),
   d({
@@ -372,7 +372,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Riegel (1973) proposed dialectical operations that embrace contradiction (ii). Perry (1970) traced Harvard students' shift from dualism (right versus wrong) through multiplicity to relativism and commitment (iv). Arlin (1975) proposed a problem-finding stage (i). Labouvie-Vief described pragmatic, emotionally integrated adult thought (iii). The other codes swap these.",
+      "Riegel proposed dialectical operations that embrace contradiction (ii). Perry traced Harvard students' shift from dualism (right versus wrong) through multiplicity to relativism and commitment (iv). Arlin proposed a problem-finding stage (i). Labouvie-Vief described pragmatic, emotionally integrated adult thought (iii). The other codes swap these.",
     ref: "Santrock, ch. 13; Papalia & Feldman, ch. 13",
   }),
   d({
@@ -384,12 +384,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Concrete operations",
       "Primary circular reactions",
-      "Mental representation, emerging in sensorimotor substage 6 (about 18–24 months)",
+      "Mental representation, emerging in sensorimotor substage 6 (about 18 to 24 months)",
       "Formal operations",
     ],
     answer: 2,
     explanation:
-      "Piaget described his daughter Jacqueline imitating a tantrum she had seen a day earlier; this requires a stored representation, marking the transition to symbolic thought. Primary circular reactions are body-centred repetitions of about 1–4 months. Concrete and formal operations come much later. (Meltzoff later showed deferred imitation as early as 6–9 months.)",
+      "Piaget described his daughter Jacqueline imitating a tantrum she had seen a day earlier; this requires a stored representation, marking the transition to symbolic thought. Primary circular reactions are body-centred repetitions of about 1 to 4 months. Concrete and formal operations come much later. (Meltzoff later showed deferred imitation as early as 6 to 9 months.)",
     ref: "Piaget 1962; Meltzoff 1988",
   }),
   d({
@@ -406,7 +406,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Dasen (1975) found Aboriginal children, from a culture where spatial location matters for travel and survival, developed spatial concepts earlier than Western peers but quantity conservation later, showing that the timing of Piagetian concepts depends on cultural relevance and practice. Ages were not identical. Conservation was acquired, just later. Stage order was preserved.",
+      "Dasen found Aboriginal children, from a culture where spatial location matters for travel and survival, developed spatial concepts earlier than Western peers but quantity conservation later, showing that the timing of Piagetian concepts depends on cultural relevance and practice. Ages were not identical. Conservation was acquired, just later. Stage order was preserved.",
     ref: "Dasen 1975, J Cross-Cult Psychol",
   }),
   d({
@@ -462,7 +462,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "All four are correct. Diamond (1985) showed that the delay infants can tolerate before the error appears grows by about 2 seconds a month between 7½ and 12 months. Monkeys with dorsolateral prefrontal (but not parietal or hippocampal) lesions make the error. The error is attributed to the need to hold the new location in mind and inhibit a prepotent reach. Infants sometimes look at B while reaching to A, suggesting knowledge ahead of action.",
+      "All four are correct. Diamond showed that the delay infants can tolerate before the error appears grows by about 2 seconds a month between 7½ and 12 months. Monkeys with dorsolateral prefrontal (but not parietal or hippocampal) lesions make the error. The error is attributed to the need to hold the new location in mind and inhibit a prepotent reach. Infants sometimes look at B while reaching to A, suggesting knowledge ahead of action.",
     ref: "Diamond 1985, Child Dev; Diamond & Goldman-Rakic 1989",
   }),
   d({
@@ -479,7 +479,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "From about 11–12 years, formal operational thinkers can reason about propositions, hypotheses and abstract concepts such as justice or algebra. Concrete operational children reason logically but only about concrete, present objects. Preoperational children are pre-logical. Sensorimotor infants think through action.",
+      "From about 11 to 12 years, formal operational thinkers can reason about propositions, hypotheses and abstract concepts such as justice or algebra. Concrete operational children reason logically but only about concrete, present objects. Preoperational children are pre-logical. Sensorimotor infants think through action.",
     ref: "Santrock, ch. 11",
   }),
   // ── Vygotsky ────────────────────────────────────────────────────────────────
@@ -510,14 +510,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The term 'scaffolding' for adjustable, temporary support in tutoring was introduced by:",
     options: [
-      "Wood, Bruner and Ross (1976)",
-      "Vygotsky (1934)",
-      "Piaget (1952)",
-      "Bronfenbrenner (1979)",
+      "Wood, Bruner and Ross",
+      "Vygotsky",
+      "Piaget",
+      "Bronfenbrenner",
     ],
     answer: 0,
     explanation:
-      "Wood, Bruner and Ross coined 'scaffolding' when describing how a tutor helped 3–5-year-olds build a pyramid of blocks: recruiting interest, simplifying, marking critical features and withdrawing support as competence grew. The idea fits Vygotsky's ZPD, but Vygotsky (who died in 1934) did not use the term. Piaget and Bronfenbrenner are not associated with it.",
+      "Wood, Bruner and Ross coined 'scaffolding' when describing how a tutor helped 3 to 5-year-olds build a pyramid of blocks: recruiting interest, simplifying, marking critical features and withdrawing support as competence grew. The idea fits Vygotsky's ZPD, but Vygotsky (who died in 1934) did not use the term. Piaget and Bronfenbrenner are not associated with it.",
     module: undefined,
     ref: "Wood, Bruner & Ross 1976, J Child Psychol Psychiatry",
   }),
@@ -535,7 +535,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both statements are true, but R does not explain A. A states Vygotsky's view: private speech guides problem solving and goes 'underground' as inner speech. R states Piaget's contrasting view. R describes a rival theory rather than giving the reason for Vygotsky's position. Research (for example Berk) supports Vygotsky: private speech increases with task difficulty and predicts better performance.",
+      "Both statements are true, but R does not explain A. A states Vygotsky's view: private speech guides problem solving and goes 'underground' as inner speech. R states Piaget's contrasting view. R describes a rival theory rather than giving the reason for Vygotsky's position. Research (for example the work of Berk) supports Vygotsky: private speech increases with task difficulty and predicts better performance.",
     module: undefined,
     ref: "Vygotsky 1934/1986; Berk 1992",
   }),
@@ -579,7 +579,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Dynamic assessment uses a test–teach–retest format to estimate learning potential (the width of the ZPD), which matters for children from disadvantaged or culturally different backgrounds whose static scores underestimate ability. Piaget's method does not deliberately teach. Mental age and g describe static ability, not responsiveness to mediation.",
+      "Dynamic assessment uses a test-teach-retest format to estimate learning potential (the width of the ZPD), which matters for children from disadvantaged or culturally different backgrounds whose static scores underestimate ability. Piaget's method does not deliberately teach. Mental age and g describe static ability, not responsiveness to mediation.",
     module: undefined,
     ref: "Feuerstein 1979; Lidz, Dynamic Assessment",
   }),
@@ -602,7 +602,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Rogoff described guided participation, children's learning through joint cultural activities, often non-verbal (ii). Palincsar and Brown (1984) developed reciprocal teaching of reading comprehension through summarising, questioning, clarifying and predicting (iii). Wood, Bruner and Ross coined scaffolding (iv). The ZPD is Vygotsky's (i). The other codes swap these.",
+      "Rogoff described guided participation, children's learning through joint cultural activities, often non-verbal (ii). Palincsar and Brown developed reciprocal teaching of reading comprehension through summarising, questioning, clarifying and predicting (iii). Wood, Bruner and Ross coined scaffolding (iv). The ZPD is Vygotsky's (i). The other codes swap these.",
     module: undefined,
     ref: "Rogoff 1990; Palincsar & Brown 1984",
   }),
@@ -690,7 +690,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Flavell, Beach and Chinsky (1966) found that young children did not spontaneously rehearse to-be-remembered pictures but could do so and remembered better when told to. This is called a:",
+    stem: "Flavell, Beach and Chinsky found that young children did not spontaneously rehearse to-be-remembered pictures but could do so and remembered better when told to. This is called a:",
     options: [
       "Capacity deficiency",
       "Utilisation deficiency",
@@ -699,7 +699,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A production deficiency means the child can use a strategy but does not produce it spontaneously; prompting helps. A utilisation deficiency (Miller) means the child produces the strategy but does not yet benefit from it. A mediation deficiency (Reese) means the child cannot benefit even when given the strategy. Capacity deficiency is not the standard term for this finding.",
+      "A production deficiency means the child can use a strategy but does not produce it spontaneously; prompting helps. A utilisation deficiency (described by Miller) means the child produces the strategy but does not yet benefit from it. A mediation deficiency (described by Reese) means the child cannot benefit even when given the strategy. Capacity deficiency is not the standard term for this finding.",
     module: undefined,
     ref: "Flavell, Beach & Chinsky 1966; Miller 1990",
   }),
@@ -709,7 +709,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Chi's (1978) study comparing child chess experts with adult chess novices found that the children:",
+    stem: "Chi's study comparing child chess experts with adult chess novices found that the children:",
     options: [
       "Recalled chess positions better than the adults but recalled digit lists worse",
       "Were worse at recalling both chess positions and digits",
@@ -747,7 +747,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "In the Sally–Anne false-belief task (Baron-Cohen, Leslie and Frith, 1985), most children with autism, unlike typically developing 4-year-olds and children with Down syndrome of lower mental age:",
+    stem: "In the Sally-Anne false-belief task, most children with autism, unlike typically developing 4-year-olds and children with Down syndrome of lower mental age:",
     options: [
       "Refused to answer",
       "Answered correctly that Sally would look in her own basket",
@@ -768,7 +768,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "match",
     stem: "Match the theory-of-mind task in List I with what it tests in List II.",
     lists: {
-      left: ["A. Smarties (unexpected contents) task", "B. Maxi and the chocolate (Wimmer and Perner)", "C. Appearance–reality task (sponge rock)", "D. Second-order false belief (ice-cream van story)"],
+      left: ["A. Smarties (unexpected contents) task", "B. Maxi and the chocolate (described by Wimmer and Perner)", "C. Appearance-reality task (sponge rock)", "D. Second-order false belief (ice-cream van story)"],
       right: [
         "i. Understanding that an object can look like one thing but be another",
         "ii. Understanding what one person thinks another person thinks",
@@ -784,7 +784,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Smarties (Perner et al., 1987): children who see pencils in a sweet tube are asked what they first thought and what a friend will think (iii). Maxi (Wimmer and Perner, 1983): unexpected transfer (iv). Appearance–reality (Flavell): a sponge that looks like a rock (i). Second-order belief (Perner and Wimmer, 1985), passed around 6–7 years: 'Where does John think Mary will go?' (ii). The other codes swap these.",
+      "Smarties: children who see pencils in a sweet tube are asked what they first thought and what a friend will think (iii). Maxi: unexpected transfer (iv). Appearance-reality (described by Flavell): a sponge that looks like a rock (i). Second-order belief, passed around 6 to 7 years: 'Where does John think Mary will go?' (ii). The other codes swap these.",
     module: "child",
     ref: "Wimmer & Perner 1983; Perner, Leekam & Wimmer 1987",
   }),
@@ -796,7 +796,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Onishi and Baillargeon (2005) reported that 15-month-olds looked longer when an actor searched where the toy really was, rather than where the actor falsely believed it was.",
+      "A: Onishi and Baillargeon reported that 15-month-olds looked longer when an actor searched where the toy really was, rather than where the actor falsely believed it was.",
       "R: This implies that infants have some implicit sensitivity to false beliefs long before they pass verbal false-belief tasks at about 4 years.",
     ],
     options: AR,
@@ -816,7 +816,7 @@ export const QUESTIONS: PrepQuestion[] = [
     statements: [
       "A. Rehearsal, organisation and elaboration strategies emerge in roughly that order across middle childhood.",
       "B. Metamemory (knowledge about one's own memory) improves with age.",
-      "C. Processing speed increases with age, following a similar exponential curve across many tasks (Kail).",
+      "C. Processing speed increases with age, following a similar exponential curve across many tasks (described by Kail).",
       "D. Short-term memory span is fully adult-like by age 3.",
     ],
     options: [
@@ -827,7 +827,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: rehearsal appears around 7, organisation (grouping by category) around 9–10, and elaboration later in adolescence. B: children increasingly know what makes remembering easier or harder. C: Kail showed a common exponential speed-up across diverse tasks, suggesting a global change. D is wrong: digit span grows from about 2–3 items at age 2–3 to about 7 in adolescence.",
+      "A: rehearsal appears around 7, organisation (grouping by category) around 9 to 10, and elaboration later in adolescence. B: children increasingly know what makes remembering easier or harder. C: Kail showed a common exponential speed-up across diverse tasks, suggesting a global change. D is wrong: digit span grows from about 2 or 3 items at age 2 or 3 to about 7 in adolescence.",
     module: undefined,
     ref: "Kail 1991; Berk, ch. 7",
   }),
@@ -903,7 +903,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Microgenetic studies (Siegler, Kuhn) use dense, trial-by-trial observation across a period of rapid change, revealing the path, rate, breadth and sources of change. 'Microscope' is a literal misreading. Comparing ages at one time is a cross-sectional design. Gene expression is not involved; 'genetic' here means developmental origin.",
+      "Microgenetic studies (used by Siegler and by Kuhn) use dense, trial-by-trial observation across a period of rapid change, revealing the path, rate, breadth and sources of change. 'Microscope' is a literal misreading. Comparing ages at one time is a cross-sectional design. Gene expression is not involved; 'genetic' here means developmental origin.",
     module: undefined,
     ref: "Siegler & Crowley 1991, Am Psychol",
   }),
@@ -943,7 +943,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Flavell (1979) defined metacognition as 'cognition about cognition': knowing your strengths, task demands and strategies, plus monitoring and controlling your learning. It is the opposite of unaware thinking. Automatic processing is a different concept. Memory for early events is autobiographical memory.",
+      "Flavell defined metacognition as 'cognition about cognition': knowing your strengths, task demands and strategies, plus monitoring and controlling your learning. It is the opposite of unaware thinking. Automatic processing is a different concept. Memory for early events is autobiographical memory.",
     module: undefined,
     ref: "Flavell 1979, Am Psychol",
   }),
@@ -1003,7 +1003,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: children of about 2–7 usually say the taller glass has more because they centre on height and do not reverse the transformation. R is false: the preoperational stage begins with the symbolic function, so children use words, images and pretend play. Their limitation is in operations (logical, reversible mental actions), not in representation.",
+      "A is true: children of about 2 to 7 usually say the taller glass has more because they centre on height and do not reverse the transformation. R is false: the preoperational stage begins with the symbolic function, so children use words, images and pretend play. Their limitation is in operations (logical, reversible mental actions), not in representation.",
     ref: "Santrock, ch. 6",
   }),
   d({
@@ -1026,7 +1026,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "A: Kuhn and others found that perhaps 30–50% of adults in Western samples consistently reason formally on Piagetian tasks. B: people reason more abstractly in domains they know well (Piaget himself conceded this in 1972). C: cross-cultural work links formal reasoning to schooling. D is wrong: there is wide individual and cultural variation, and many adults never use formal operations on standard tasks.",
+      "A: Kuhn and others found that perhaps 30 to 50% of adults in Western samples consistently reason formally on Piagetian tasks. B: people reason more abstractly in domains they know well (Piaget himself conceded this in 1972). C: cross-cultural work links formal reasoning to schooling. D is wrong: there is wide individual and cultural variation, and many adults never use formal operations on standard tasks.",
     ref: "Kuhn et al. 1977; Piaget 1972, Human Development",
   }),
   d({
@@ -1035,18 +1035,18 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "Vygotsky's best-known books include:",
+    stem: "Vygotsky argued that good learning can lead development. For a teacher, this means instruction should be pitched:",
     options: [
-      "Childhood and Society",
-      "The Origins of Intelligence in Children",
-      "Thought and Language and Mind in Society",
-      "The Ecology of Human Development",
+      "Slightly beyond what the child can do alone, where help makes success possible",
+      "Only at the level the child has already mastered alone",
+      "Far beyond the child's reach, so that the child is always struggling",
+      "Only after the child has reached formal operations",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
-      "Thought and Language (Myshlenie i rech', 1934) and the edited collection Mind in Society (1978) are Vygotsky's best-known works in English. The Origins of Intelligence in Children is Piaget's. Childhood and Society is Erikson's. The Ecology of Human Development is Bronfenbrenner's.",
+      "Teaching works best inside the zone of proximal development: tasks the child cannot yet do alone but can do with a more skilled partner. Support is then withdrawn as the child takes over. Teaching only what the child already does alone adds nothing new. Tasks far beyond the zone cannot be done even with help, so the child learns little and may lose interest. Waiting for formal operations is a stage-readiness idea closer to Piaget, and it is not Vygotsky's view.",
     module: undefined,
-    ref: "Vygotsky 1934; Vygotsky 1978",
+    ref: "Vygotsky 1978, Mind in Society, ch. 6",
   }),
   d({
     id: "dev-ip-0054",
@@ -1063,7 +1063,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Miyake et al. (2000) found three related but separable executive functions: inhibition, updating and shifting; Diamond (2013) similarly lists inhibitory control, working memory and cognitive flexibility, with prolonged prefrontal development into the twenties. Sensation, perception and attention are basic processes. Assimilation, accommodation and equilibration are Piaget's processes. Encoding, storage and retrieval are memory stages.",
+      "Miyake and colleagues found three related but separable executive functions: inhibition, updating and shifting; Diamond similarly lists inhibitory control, working memory and cognitive flexibility, with prolonged prefrontal development into the twenties. Sensation, perception and attention are basic processes. Assimilation, accommodation and equilibration are Piaget's processes. Encoding, storage and retrieval are memory stages.",
     module: undefined,
     ref: "Miyake et al. 2000; Diamond 2013, Annu Rev Psychol",
   }),
@@ -1075,7 +1075,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which conclusion is best supported?",
     passage:
-      "Mischel's preschoolers were offered one marshmallow now or two if they waited alone. In follow-ups, longer waiting at age 4 correlated with higher adolescent SAT scores. Watts, Duncan and Quan (2018) repeated the study with a larger, more diverse sample and controlled for family background, early cognitive ability and home environment. The association with age-15 achievement became small and largely disappeared.",
+      "Mischel's preschoolers were offered one marshmallow now or two if they waited alone. In follow-ups, longer waiting at age 4 correlated with higher adolescent SAT scores. Watts, Duncan and Quan repeated the study with a larger, more diverse sample and controlled for family background, early cognitive ability and home environment. The association with age-15 achievement became small and largely disappeared.",
     options: [
       "Delay ability strongly and causally determines later achievement in all children",
       "Much of the original association may reflect shared links with family background and early cognitive skills rather than a unique effect of delay ability",
@@ -1102,7 +1102,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "With the symbolic function, children aged about 2–7 use objects to stand for others (a block as a phone), and make-believe flourishes. Infants in substage 2 have practice play only. In concrete operations, games with rules dominate (Piaget's sequence: practice play, symbolic play, games with rules). Formal operations are not linked to a peak in pretend play.",
+      "With the symbolic function, children aged about 2 to 7 use objects to stand for others (a block as a phone), and make-believe flourishes. Infants in substage 2 have practice play only. In concrete operations, games with rules dominate (Piaget's sequence: practice play, symbolic play, games with rules). Formal operations are not linked to a peak in pretend play.",
     ref: "Piaget 1962, Play, Dreams and Imitation in Childhood",
   }),
   d({
@@ -1129,7 +1129,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Case proposed central conceptual structures and growth in executive processing space (iii). Pascual-Leone proposed M-capacity growing in steps (ii). Kail documented a common exponential speed curve (iv). Karmiloff-Smith (Beyond Modularity, 1992) proposed representational redescription (i). The other codes swap Case and Pascual-Leone, Pascual-Leone and Kail, or Kail and Karmiloff-Smith.",
+      "Case proposed central conceptual structures and growth in executive processing space (iii). Pascual-Leone proposed M-capacity growing in steps (ii). Kail documented a common exponential speed curve (iv). Karmiloff-Smith proposed representational redescription (i). The other codes swap Case and Pascual-Leone, Pascual-Leone and Kail, or Kail and Karmiloff-Smith.",
     module: undefined,
     ref: "Case 1992; Pascual-Leone 1970; Kail 1991; Karmiloff-Smith 1992",
   }),
@@ -1173,7 +1173,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Wellman, Cross and Watson's (2001) meta-analysis showed a robust shift from below-chance to above-chance performance between about 3 and 5 years, centred around 4, across cultures. Implicit sensitivity may appear in infancy, but explicit verbal tasks are failed at 18 months. Second-order false belief appears around 6–7. 8 and 12 years are far later than the first-order transition.",
+      "Wellman, Cross and Watson's meta-analysis showed a robust shift from below-chance to above-chance performance between about 3 and 5 years, centred around 4, across cultures. Implicit sensitivity may appear in infancy, but explicit verbal tasks are failed at 18 months. Second-order false belief appears around 6 to 7. 8 and 12 years are far later than the first-order transition.",
     module: "child",
     ref: "Wellman, Cross & Watson 2001, Child Dev",
   }),
@@ -1199,7 +1199,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Infantile (childhood) amnesia, the scarcity of adult memories from before about age 3–4, has been linked to all of the following EXCEPT:",
+    stem: "Infantile (childhood) amnesia, the scarcity of adult memories from before about age 3 to 4, has been linked to all of the following EXCEPT:",
     options: [
       "Immature hippocampal and prefrontal systems",
       "Complete absence of any memory ability in infants",
@@ -1208,7 +1208,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Infants clearly remember: Rovee-Collier's mobile-kicking studies show retention over days to weeks, and deferred imitation shows recall. Accepted explanations include neurological immaturity (hippocampus, dentate gyrus neurogenesis, prefrontal cortex), the emergence of a cognitive self around 18–24 months (Howe and Courage), language and narrative skills, and cultural and parental reminiscing style (Fivush, Wang). So 'complete absence' is the incorrect one.",
+      "Infants clearly remember: Rovee-Collier's mobile-kicking studies show retention over days to weeks, and deferred imitation shows recall. Accepted explanations include neurological immaturity (hippocampus, dentate gyrus neurogenesis, prefrontal cortex), the emergence of a cognitive self around 18 to 24 months (described by Howe and Courage), language and narrative skills, and cultural and parental reminiscing style (described by Fivush and Wang). So 'complete absence' is the incorrect one.",
     module: undefined,
     ref: "Howe & Courage 1993; Rovee-Collier 1999; Wang 2003",
   }),
@@ -1217,7 +1217,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "A child aged about 7–11 can reason logically about real objects but struggles with purely hypothetical problems. Piaget would place the child in the:",
+    stem: "A child aged about 7 to 11 can reason logically about real objects but struggles with purely hypothetical problems. Piaget would place the child in the:",
     options: [
       "Preoperational stage",
       "Formal operational stage",
@@ -1237,13 +1237,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Children of 3 often fail the appearance–reality task, saying a sponge painted to look like a rock 'really is a rock'.",
+      "A: Children of 3 often fail the appearance-reality task, saying a sponge painted to look like a rock 'really is a rock'.",
       "R: Three-year-olds have difficulty holding two conflicting representations of the same object at once.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Flavell, Flavell and Green (1983) found 3-year-olds make realism errors ('it really is a rock') or phenomenism errors on such tasks. The common explanation, shared with false-belief failure, is difficulty representing that one thing can be represented in two different ways (dual representation), which improves around age 4–5.",
+      "Both are true and R explains A. Flavell, Flavell and Green found 3-year-olds make realism errors ('it really is a rock') or phenomenism errors on such tasks. The common explanation, shared with false-belief failure, is difficulty representing that one thing can be represented in two different ways (dual representation), which improves around age 4 to 5.",
     module: "child",
     ref: "Flavell, Flavell & Green 1983, Cogn Psychol",
   }),

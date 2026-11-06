@@ -63,13 +63,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: In split-brain research, stimuli are flashed for less than about 150–200 milliseconds.",
+      "A: In split-brain research, stimuli are flashed for less than about 150 to 200 milliseconds.",
       "R: A brief flash prevents the patient from moving the eyes to bring the stimulus into the other visual field.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Saccades take roughly 150–200 ms to start, so a shorter exposure ensures the image stays in one visual hemifield and reaches only the opposite hemisphere. Longer exposures would let the eyes move so that both hemispheres receive the stimulus, defeating the lateralised design.",
+      "Both are true and R explains A. Saccades take roughly 150 to 200 ms to start, so a shorter exposure ensures the image stays in one visual hemifield and reaches only the opposite hemisphere. Longer exposures would let the eyes move so that both hemispheres receive the stimulus, defeating the lateralised design.",
     ref: "Kalat, ch. 14",
   }),
   b({
@@ -87,7 +87,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Juhn Wada introduced intracarotid amobarbital injection (1949); while one hemisphere is briefly inactivated, speech and memory are tested, showing which side supports them. Sleep EEG cannot show language dominance. Different words to each ear describes dichotic listening, a non-invasive behavioural index. Planum temporale size correlates only loosely with dominance. Today fMRI often replaces the Wada test.",
+      "Juhn Wada introduced intracarotid amobarbital injection; while one hemisphere is briefly inactivated, speech and memory are tested, showing which side supports them. Sleep EEG cannot show language dominance. Different words to each ear describes dichotic listening, a non-invasive behavioural index. Planum temporale size correlates only loosely with dominance. Today fMRI often replaces the Wada test.",
     ref: "Wada & Rasmussen 1960; Kolb & Whishaw, ch. 11",
   }),
   b({
@@ -96,7 +96,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "According to Rasmussen and Milner's (1977) Wada-test data, the pattern of speech representation in left-handed and ambidextrous patients without early left-hemisphere damage was roughly:",
+    stem: "According to Rasmussen and Milner's Wada-test data, the pattern of speech representation in left-handed and ambidextrous patients without early left-hemisphere damage was roughly:",
     options: [
       "About 50% left and 50% right",
       "About 70% left, 15% right and 15% bilateral",
@@ -105,7 +105,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Among non-right-handers without early brain damage, about 70% had left-hemisphere speech, about 15% right and about 15% bilateral. Among right-handers about 96% had left-hemisphere speech. So most left-handers are still left-dominant for language: a 50–50 split or 'mostly right' both overstate the shift, and the right-handed figure does not apply.",
+      "Among non-right-handers without early brain damage, about 70% had left-hemisphere speech, about 15% right and about 15% bilateral. Among right-handers about 96% had left-hemisphere speech. So most left-handers are still left-dominant for language: a 50 to 50 split or 'mostly right' both overstate the shift, and the right-handed figure does not apply.",
     ref: "Rasmussen & Milner 1977; Kolb & Whishaw, ch. 11",
   }),
   b({
@@ -123,7 +123,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Kimura (1961) found a right-ear advantage for verbal material: when the ears compete, contralateral pathways dominate, so right-ear input reaches the left (language) hemisphere most directly. A left-ear advantage is typical for melodies and environmental sounds, which the right hemisphere handles better. The effect is consistent, so 'no advantage' is wrong. The advantage is not explained by better peripheral hearing.",
+      "Kimura found a right-ear advantage for verbal material: when the ears compete, contralateral pathways dominate, so right-ear input reaches the left (language) hemisphere most directly. A left-ear advantage is typical for melodies and environmental sounds, which the right hemisphere handles better. The effect is consistent, so 'no advantage' is wrong. The advantage is not explained by better peripheral hearing.",
     ref: "Kimura 1961; Kolb & Whishaw, ch. 11",
   }),
   b({
@@ -187,7 +187,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A: Geschwind and Levitsky (1968) found a larger left planum temporale in about 65% of brains. C: Davidson's work links left frontal asymmetry with approach and positive affect, and right with withdrawal. D: the hemispheric encoding/retrieval asymmetry (HERA) model (Tulving et al., 1994) is a well-known imaging finding. B is not supported: a large resting-state study (Nielsen et al., 2013) found no evidence of 'left-brained' or 'right-brained' people; lateralisation is network-specific, not a personality trait.",
+      "A: Geschwind and Levitsky found a larger left planum temporale in about 65% of brains. C: Davidson's work links left frontal asymmetry with approach and positive affect, and right with withdrawal. D: the hemispheric encoding/retrieval asymmetry (HERA) model is a well-known imaging finding. B is not supported: a large resting-state study found no evidence of 'left-brained' or 'right-brained' people; lateralisation is network-specific, not a personality trait.",
     ref: "Geschwind & Levitsky 1968; Davidson 1992; Tulving et al. 1994; Nielsen et al. 2013",
   }),
   b({
@@ -196,7 +196,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Levy, Trevarthen and Sperry (1972) showed split-brain patients chimeric faces (left half of one face joined to the right half of another). When asked to point to the face they saw, patients usually chose:",
+    stem: "Levy, Trevarthen and Sperry showed split-brain patients chimeric faces (left half of one face joined to the right half of another). When asked to point to the face they saw, patients usually chose:",
     options: [
       "Neither, because they saw only a blurred image",
       "The face whose half appeared in the right visual field, showing left-hemisphere dominance for faces",
@@ -312,7 +312,7 @@ export const QUESTIONS: PrepQuestion[] = [
         "i. Larger left planum temporale in most brains",
         "ii. Frontal EEG asymmetry linked to approach and withdrawal emotion",
         "iii. Right-ear advantage in dichotic listening for speech",
-        "iv. Nobel Prize (1981) for split-brain research",
+        "iv. Nobel Prize for split-brain research",
       ],
     },
     options: [
@@ -435,7 +435,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Dexamethasone, a synthetic glucocorticoid, normally suppresses ACTH and cortisol through negative feedback. Carroll and colleagues (1981) found non-suppression in many patients with melancholic depression, reflecting HPA hyperactivity and impaired feedback. Exaggerated suppression is more typical of PTSD (Yehuda). Low ACTH with normal suppression is not the depressive pattern. Cortisol is raised, not absent. The test's low specificity limits its clinical use.",
+      "Dexamethasone, a synthetic glucocorticoid, normally suppresses ACTH and cortisol through negative feedback. Carroll and colleagues found non-suppression in many patients with melancholic depression, reflecting HPA hyperactivity and impaired feedback. Exaggerated suppression is more typical of PTSD (described by Yehuda). Low ACTH with normal suppression is not the depressive pattern. Cortisol is raised, not absent. The test's low specificity limits its clinical use.",
     ref: "Carroll et al. 1981; Kaplan & Sadock's Synopsis",
   }),
   b({
@@ -464,7 +464,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Which of the following statements about cortisol are correct?",
     statements: [
-      "A. In healthy people it peaks in the early morning, with a further rise in the first 30–45 minutes after waking.",
+      "A. In healthy people it peaks in the early morning, with a further rise in the first 30 to 45 minutes after waking.",
       "B. It is lowest around midnight.",
       "C. It acts mainly on membrane receptors and second messengers, like peptide hormones.",
       "D. In the brain it binds both mineralocorticoid (MR) and glucocorticoid (GR) receptors, with higher affinity for MR.",
@@ -494,7 +494,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: animal studies (Sapolsky, McEwen) show prolonged glucocorticoid exposure shrinks CA3 dendrites and reduces neurogenesis, and hippocampal volume is reduced in Cushing's syndrome and some recurrent depression. R is false: the hippocampus is among the brain regions richest in MR and GR receptors, which is why it is both a key site of HPA negative feedback and vulnerable to glucocorticoid damage (the glucocorticoid cascade hypothesis).",
+      "A is true: animal studies (described by Sapolsky and McEwen) show prolonged glucocorticoid exposure shrinks CA3 dendrites and reduces neurogenesis, and hippocampal volume is reduced in Cushing's syndrome and some recurrent depression. R is false: the hippocampus is among the brain regions richest in MR and GR receptors, which is why it is both a key site of HPA negative feedback and vulnerable to glucocorticoid damage (the glucocorticoid cascade hypothesis).",
     ref: "Sapolsky, Krey & McEwen 1986; McEwen 1999",
   }),
   b({
@@ -503,7 +503,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The concept of 'allostatic load', introduced by McEwen and Stellar (1993), refers to:",
+    stem: "The concept of 'allostatic load', introduced by McEwen and Stellar, refers to:",
     options: [
       "The cumulative wear and tear on the body from repeated or prolonged activation of stress-response systems",
       "The maximum amount of stress a person can tolerate before illness",
@@ -512,7 +512,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Allostasis is achieving stability through change; allostatic load is the cumulative cost when these responses are too frequent, too prolonged, fail to switch off or are inadequate, measured by markers such as cortisol, blood pressure, waist-hip ratio and HbA1c. It is not a fixed tolerance limit. Return to a fixed set point describes homeostasis, the concept allostasis was meant to extend. Counting life events is the Holmes–Rahe approach.",
+      "Allostasis is achieving stability through change; allostatic load is the cumulative cost when these responses are too frequent, too prolonged, fail to switch off or are inadequate, measured by markers such as cortisol, blood pressure, waist-hip ratio and HbA1c. It is not a fixed tolerance limit. Return to a fixed set point describes homeostasis, the concept allostasis was meant to extend. Counting life events is the Holmes-Rahe approach.",
     ref: "McEwen & Stellar 1993; McEwen 1998, NEJM",
   }),
   b({
@@ -568,7 +568,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Insel, Young and colleagues found that prairie voles have dense oxytocin receptors in the nucleus accumbens and V1a vasopressin receptors in the ventral pallidum; blocking these prevents pair bonds, and increasing V1a expression in promiscuous male meadow voles produced partner preference (Lim et al., 2004). Thyroid, adrenal medulla and melatonin differences were not the explanation.",
+      "Insel, Young and colleagues found that prairie voles have dense oxytocin receptors in the nucleus accumbens and V1a vasopressin receptors in the ventral pallidum; blocking these prevents pair bonds, and increasing V1a expression in promiscuous male meadow voles produced partner preference. Thyroid, adrenal medulla and melatonin differences were not the explanation.",
     ref: "Young & Wang 2004, Nat Neurosci; Lim et al. 2004, Nature",
   }),
   b({
@@ -604,7 +604,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "The distinction between 'organisational' and 'activational' effects of sex hormones (Phoenix, Goy, Gerall and Young, 1959) means that:",
+    stem: "The distinction between 'organisational' and 'activational' effects of sex hormones means that:",
     options: [
       "Hormones in adulthood permanently reorganise the brain, while early hormones have only temporary effects",
       "Hormones early in development permanently shape neural structures, while hormones in adulthood temporarily activate behaviours in already-organised systems",
@@ -682,7 +682,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Taylor and colleagues' (2000) 'tend-and-befriend' model proposes that under stress:",
+    stem: "Taylor and colleagues' 'tend-and-befriend' model proposes that under stress:",
     options: [
       "Males and females respond identically with fight or flight",
       "Females in particular often respond by protecting offspring and seeking social affiliation, a response linked to oxytocin and endogenous opioids",
@@ -708,7 +708,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: the dual-hormone hypothesis (Mehta and Josephs, 2010) found testosterone predicted dominance mainly in people with low cortisol, as HPA and HPG axes interact. R is false: the anterior pituitary releases ACTH and LH, which stimulate cortisol from the adrenal cortex and testosterone from the testes (and some from the adrenals and ovaries). The pituitary does not produce either steroid.",
+      "A is true: the dual-hormone hypothesis found testosterone predicted dominance mainly in people with low cortisol, as HPA and HPG axes interact. R is false: the anterior pituitary releases ACTH and LH, which stimulate cortisol from the adrenal cortex and testosterone from the testes (and some from the adrenals and ovaries). The pituitary does not produce either steroid.",
     ref: "Mehta & Josephs 2010, Horm Behav",
   }),
   b({
@@ -735,7 +735,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "The Trier Social Stress Test (Kirschbaum et al., 1993) reliably raises cortisol mainly because it combines:",
+    stem: "The Trier Social Stress Test reliably raises cortisol mainly because it combines:",
     options: [
       "Exercise and caffeine",
       "Physical pain and cold exposure",
@@ -744,7 +744,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Dickerson and Kemeny's (2004) meta-analysis showed that tasks combining uncontrollability with social-evaluative threat produce the largest cortisol responses, and the TSST (speech plus serial subtraction before stern evaluators) does exactly this. Pain and cold describe the cold pressor test, which raises cortisol less reliably. Sleep loss, fasting, exercise and caffeine are not components of the TSST.",
+      "Dickerson and Kemeny's meta-analysis showed that tasks combining uncontrollability with social-evaluative threat produce the largest cortisol responses, and the TSST (speech plus serial subtraction before stern evaluators) does exactly this. Pain and cold describe the cold pressor test, which raises cortisol less reliably. Sleep loss, fasting, exercise and caffeine are not components of the TSST.",
     ref: "Kirschbaum, Pirke & Hellhammer 1993; Dickerson & Kemeny 2004",
   }),
   b({
@@ -777,7 +777,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which explanation of the two curves is most consistent with HPA physiology?",
     passage:
-      "Salivary cortisol is sampled in two healthy students. Student P wakes at 7:00, and cortisol rises by about 60% over the next 30 minutes, then declines steadily to a low point near midnight. Student Q, who has worked night shifts for two weeks and sleeps 9:00–16:00, shows a flattened curve with no clear morning rise and higher evening values than P.",
+      "Salivary cortisol is sampled in two healthy students. Student P wakes at 7:00, and cortisol rises by about 60% over the next 30 minutes, then declines steadily to a low point near midnight. Student Q, who has worked night shifts for two weeks and sleeps 9:00 to 16:00, shows a flattened curve with no clear morning rise and higher evening values than P.",
     options: [
       "Q's pattern indicates adrenal failure",
       "P shows the normal cortisol awakening response and diurnal decline; Q shows circadian misalignment, with a blunted and shifted rhythm that has not fully adapted to the new schedule",
@@ -786,7 +786,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "A sharp rise in the first 30–45 minutes after waking (the cortisol awakening response) and a steady fall to a midnight nadir is normal. Night-shift workers often show flattened, partially shifted rhythms because the SCN clock, entrained by light, adapts slowly and incompletely. Adrenal failure would show low cortisol at all times, not a flattened pattern with high evening values. A morning rise is normal, not a sign of anxiety. Cortisol's circadian rhythm is one of the most robust in physiology.",
+      "A sharp rise in the first 30 to 45 minutes after waking (the cortisol awakening response) and a steady fall to a midnight nadir is normal. Night-shift workers often show flattened, partially shifted rhythms because the SCN clock, entrained by light, adapts slowly and incompletely. Adrenal failure would show low cortisol at all times, not a flattened pattern with high evening values. A morning rise is normal, not a sign of anxiety. Cortisol's circadian rhythm is one of the most robust in physiology.",
     ref: "Fries, Dettenborn & Kirschbaum 2009, Int J Psychophysiol",
   }),
   b({
@@ -863,7 +863,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The SAM system acts in seconds: sympathetic nerves and adrenal medullary adrenaline raise heart rate and blood pressure and release glucose (glycogenolysis). CRH release starts the slower HPA axis, with cortisol peaking 20–30 minutes after a stressor, so C belongs to the HPA response, not the SAM response.",
+      "The SAM system acts in seconds: sympathetic nerves and adrenal medullary adrenaline raise heart rate and blood pressure and release glucose (glycogenolysis). CRH release starts the slower HPA axis, with cortisol peaking 20 to 30 minutes after a stressor, so C belongs to the HPA response, not the SAM response.",
     ref: "Taylor, Health Psychology, ch. 6",
   }),
   b({
@@ -881,7 +881,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "High licking and grooming increased GR expression in the offspring's hippocampus through demethylation of the GR exon 17 promoter (Weaver et al., 2004), giving more efficient feedback and milder stress responses. Cross-fostering showed the effect follows the rearing mother, not the biological one, so it is not explained by genes. Option 1 describes the low-licking offspring. The difference shows in HPA (cortisol/corticosterone) responses, not only adrenaline.",
+      "High licking and grooming increased GR expression in the offspring's hippocampus through demethylation of the GR exon 17 promoter, giving more efficient feedback and milder stress responses. Cross-fostering showed the effect follows the rearing mother, not the biological one, so it is not explained by genes. Option 1 describes the low-licking offspring. The difference shows in HPA (cortisol/corticosterone) responses, not only adrenaline.",
     ref: "Weaver et al. 2004, Nat Neurosci; Meaney 2001",
   }),
   b({
@@ -932,7 +932,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Melatonin secretion is most strongly suppressed by light that is:",
     options: [
-      "Short-wavelength (blue, about 460–480 nm), detected by melanopsin-containing retinal ganglion cells",
+      "Short-wavelength (blue, about 460 to 480 nm), detected by melanopsin-containing retinal ganglion cells",
       "Long-wavelength (red), detected by rods",
       "Ultraviolet, detected by the skin",
       "Any colour equally, detected by cones",

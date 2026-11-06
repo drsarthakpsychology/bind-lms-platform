@@ -62,7 +62,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "In Erikson's theory, a toddler (about 1–3 years) who is allowed to try things such as feeding and dressing alone is resolving the crisis of:",
+    stem: "In Erikson's theory, a toddler (about 1 to 3 years) who is allowed to try things such as feeding and dressing alone is resolving the crisis of:",
     options: [
       "Trust versus mistrust",
       "Autonomy versus shame and doubt",
@@ -114,7 +114,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Marcia (1966) crossed exploration (crisis) with commitment. Achievement: explored and committed (iv). Moratorium: exploring, not yet committed (ii). Foreclosure: committed without exploring, typically accepting parental choices (i). Diffusion: neither (iii). The other codes swap achievement and moratorium, moratorium and foreclosure, or foreclosure and diffusion.",
+      "Marcia crossed exploration (crisis) with commitment. Achievement: explored and committed (iv). Moratorium: exploring, not yet committed (ii). Foreclosure: committed without exploring, typically accepting parental choices (i). Diffusion: neither (iii). The other codes swap achievement and moratorium, moratorium and foreclosure, or foreclosure and diffusion.",
     ref: "Marcia 1966, J Pers Soc Psychol",
   }),
   d({
@@ -155,18 +155,18 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "statement",
-    stem: "Which of the following are books by Erik Erikson?",
-    statements: ["A. Childhood and Society (1950)", "B. Young Man Luther (1958)", "C. Gandhi's Truth (1969)", "D. Motivation and Personality (1954)"],
-    options: [
-      "A, B, C and D",
-      "A and D only",
-      "B, C and D only",
-      "A, B and C only",
+    stem: "Which of the following statements about Erik Erikson's work are correct?",
+    statements: [
+      "A. He studied child-rearing among the Sioux and Yurok peoples of North America.",
+      "B. He wrote psychological life studies (psychobiographies) of Martin Luther and Mahatma Gandhi.",
+      "C. His study of Gandhi drew on visits to Ahmedabad and on the 1918 textile mill strike there.",
+      "D. He proposed the hierarchy of needs, with self-actualisation at the top.",
     ],
-    answer: 3,
+    options: ["A, B and C only", "A and D only", "B, C and D only", "A, B, C and D"],
+    answer: 0,
     explanation:
-      "Erikson wrote Childhood and Society, the psychobiography Young Man Luther, and Gandhi's Truth: On the Origins of Militant Nonviolence, which won the Pulitzer Prize and US National Book Award; it grew out of his visits to Ahmedabad and studies of the 1918 mill strike. Motivation and Personality (1954) is Abraham Maslow's.",
-    ref: "Erikson 1969, Gandhi's Truth",
+      "A is correct: Erikson's anthropological fieldwork showed how child-rearing fits each culture's way of life, which shaped his psychosocial view of development. B is correct: he used his stage theory to study the identity crises of Luther and Gandhi. C is correct: his Gandhi study grew out of his time in Ahmedabad and centred on the 1918 mill strike; it won major literary prizes in the USA. D is wrong: the hierarchy of needs is Abraham Maslow's humanistic theory, not Erikson's.",
+    ref: "Erikson 1958, Young Man Luther; Erikson 1969, Gandhi's Truth",
   }),
   d({
     id: "dev-erik-0074",
@@ -182,7 +182,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In The Life Cycle Completed (extended edition, 1997), Joan Erikson described how in advanced age each earlier conflict re-emerges with the dystonic element dominant (for example mistrust as one depends on others), and drew on Tornstam's gerotranscendence, a shift toward a cosmic, less materialistic outlook. Identity is formed earlier. Trust becomes newly salient, not irrelevant. A return to the oral stage is Freudian, not Eriksonian.",
+      "Extending Erik's stage theory late in her life, Joan Erikson described how in advanced age each earlier conflict re-emerges with the dystonic element dominant (for example mistrust as one depends on others), and drew on Tornstam's gerotranscendence, a shift toward a cosmic, less materialistic outlook. Identity is formed earlier. Trust becomes newly salient, not irrelevant. A return to the oral stage is Freudian, not Eriksonian.",
     ref: "Erikson & Erikson 1997, The Life Cycle Completed; Tornstam 2005",
   }),
   d({
@@ -226,7 +226,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "In Erikson's theory, the crisis of young adulthood (about 20–40) is:",
+    stem: "In Erikson's theory, the crisis of young adulthood (about 20 to 40) is:",
     options: [
       "Intimacy versus isolation",
       "Generativity versus stagnation",
@@ -254,7 +254,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Oral (birth to about 1), anal (about 1–3), phallic (about 3–6), latency (about 6 to puberty) and genital (puberty onward). The other options misplace the anal, phallic or latency periods.",
+      "Freud's stages follow the body zone that he thought was the main source of pleasure at each age. Oral comes first (birth to about 1, sucking and feeding), then anal (about 1 to 3, toilet training and control), then phallic (about 3 to 6, the genitals and the Oedipus complex), then latency (about 6 to puberty, a quiet period when sexual energy is turned to school and friendships), and finally genital (from puberty, mature sexuality). A memory aid is 'Old Age Pensioners Love Grapes'. Each wrong option misplaces the anal, phallic or latency period.",
     ref: "Freud 1905, Three Essays on the Theory of Sexuality",
   }),
   d({
@@ -272,7 +272,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Freud's 1908 paper 'Character and Anal Erotism' linked orderliness, parsimony and obstinacy (the 'anal triad') to conflicts over toilet training, an anal-retentive character. Oral fixation is linked to dependency, gullibility or biting sarcasm. Phallic fixation is linked to vanity and recklessness. The genital stage is the mature endpoint, not a fixation point.",
+      "In a 1908 paper Freud linked orderliness, parsimony and obstinacy (the 'anal triad') to conflicts over toilet training, an anal-retentive character. Oral fixation is linked to dependency, gullibility or biting sarcasm. Phallic fixation is linked to vanity and recklessness. The genital stage is the mature endpoint, not a fixation point.",
     ref: "Freud 1908; Feist & Feist, ch. 2",
   }),
   d({
@@ -296,7 +296,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A, B and C are correct: in the phallic stage the boy's rivalry with the father and fear of castration lead him to repress his wishes and identify with the father, internalising parental standards as the superego ('heir of the Oedipus complex'). D is wrong: Jung proposed 'Electra complex' (1913); Freud rejected it and spoke of the female Oedipus complex, linked to penis envy.",
+      "A, B and C are correct: in the phallic stage the boy's rivalry with the father and fear of castration lead him to repress his wishes and identify with the father, internalising parental standards as the superego ('heir of the Oedipus complex'). D is wrong: Jung proposed 'Electra complex'; Freud rejected it and spoke of the female Oedipus complex, linked to penis envy.",
     ref: "Freud 1924, The Dissolution of the Oedipus Complex",
   }),
   d({
@@ -305,7 +305,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Freud's case of 'Little Hans' (1909) concerned a five-year-old's:",
+    stem: "Freud's case of 'Little Hans' concerned a five-year-old's:",
     options: [
       "Phobia of horses, interpreted as displaced fear of his father in the Oedipal situation",
       "Obsessional fear of rats",
@@ -314,7 +314,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Hans's fear of being bitten by a horse was interpreted as displaced castration anxiety towards his father; the case, conducted largely through Hans's father, was Freud's main child evidence for the Oedipus complex. The fear of rats is the Rat Man (1909), an obsessional neurosis. Hysterical symptoms are associated with Anna O. and Dora. The wolves dream is the Wolf Man (1918). Behaviourists (Wolpe and Rachman) later reinterpreted Hans's phobia as conditioned after he saw a horse fall.",
+      "Hans's fear of being bitten by a horse was interpreted as displaced castration anxiety towards his father; the case, conducted largely through Hans's father, was Freud's main child evidence for the Oedipus complex. The fear of rats is the Rat Man, an obsessional neurosis. Hysterical symptoms are associated with Anna O. and Dora. The wolves dream is the Wolf Man. Behaviourists (described by Wolpe and Rachman) later reinterpreted Hans's phobia as conditioned after he saw a horse fall.",
     ref: "Freud 1909; Wolpe & Rachman 1960",
   }),
   d({
@@ -394,7 +394,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Abraham (1924) split the oral stage into an early sucking phase (oral incorporative, linked to dependency and optimism) and a later biting phase after teething (oral sadistic, linked to aggression and sarcasm). He also split the anal stage into expulsive and retentive phases, but that answers a different question. Phallic and genital phases are separate Freudian stages. Autistic and symbiotic phases are Mahler's terms.",
+      "Abraham split the oral stage into an early sucking phase (oral incorporative, linked to dependency and optimism) and a later biting phase after teething (oral sadistic, linked to aggression and sarcasm). He also split the anal stage into expulsive and retentive phases, but that answers a different question. Phallic and genital phases are separate Freudian stages. Autistic and symbiotic phases are Mahler's terms.",
     ref: "Abraham 1924; Feist & Feist, ch. 2",
   }),
   d({
@@ -418,7 +418,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: Popper used psychoanalysis as an example of an unfalsifiable theory. B: Freud's evidence came mostly from middle-class Viennese adults recalling childhood, not from observing children. C: studies of weaning and toilet training (for example Sears and colleagues) found weak or no links to the predicted traits. D is not a valid criticism: Freud placed enormous emphasis on early childhood; if anything he is criticised for overemphasising it.",
+      "A: Popper used psychoanalysis as an example of an unfalsifiable theory. B: Freud's evidence came mostly from middle-class Viennese adults recalling childhood, not from observing children. C: studies of weaning and toilet training (for example the work of Sears and colleagues) found weak or no links to the predicted traits. D is not a valid criticism: Freud placed enormous emphasis on early childhood; if anything he is criticised for overemphasising it.",
     ref: "Popper 1963; Fisher & Greenberg 1996",
   }),
   d({
@@ -427,17 +427,17 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "Freud's Three Essays on the Theory of Sexuality, which set out the psychosexual stages, was published in:",
+    stem: "In Freud's theory, the superego first takes shape:",
     options: [
-      "1856",
-      "1905",
-      "1950",
-      "1923",
+      "At the end of the phallic stage, when the Oedipus complex is resolved",
+      "In the oral stage, during weaning",
+      "In the anal stage, during toilet training",
+      "In the genital stage, after puberty",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
-      "Three Essays appeared in 1905, the same year as Jokes and Their Relation to the Unconscious and the Dora case. 1856 is Freud's year of birth. 1950 is when Erikson's Childhood and Society appeared. 1923 is The Ego and the Id, which set out the structural model.",
-    ref: "Freud 1905",
+      "Freud called the superego the 'heir of the Oedipus complex'. Around age 5 or 6 the child gives up the Oedipal wishes and identifies with the same-sex parent, taking in that parent's rules and ideals as conscience and ego ideal. The oral stage is when the id dominates and the ego is only beginning. Toilet training in the anal stage brings outside demands for control, but these are not yet internalised as a superego. The genital stage comes after the superego is already formed.",
+    ref: "Freud 1923, The Ego and the Id; Freud 1924",
   }),
   // ── Moral development: Piaget, Kohlberg, Gilligan, Turiel ─────────────────
   d({
@@ -455,7 +455,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Kohlberg grouped six stages into three levels: preconventional (stages 1–2, focused on punishment and self-interest), conventional (stages 3–4, focused on approval and social order) and postconventional (stages 5–6, focused on social contract and universal principles). Heteronomous and autonomous morality are Piaget's terms. The others are Freud's and Piaget's cognitive stages.",
+      "Kohlberg grouped six stages into three levels: preconventional (stages 1 to 2, focused on punishment and self-interest), conventional (stages 3 to 4, focused on approval and social order) and postconventional (stages 5 to 6, focused on social contract and universal principles). Heteronomous and autonomous morality are Piaget's terms. The others are Freud's and Piaget's cognitive stages.",
     ref: "Kohlberg 1969; Santrock, ch. 10",
   }),
   d({
@@ -499,7 +499,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Kohlberg's Moral Judgment Interview probes why a person chooses; 'steal because it's not a big crime and he won't be caught' (stage 1–2), 'steal because a loving husband would' (stage 3) and 'steal because the right to life outranks property rights' (stage 5–6) all support the same decision for different reasons.",
+      "Both are true and R explains A. Kohlberg's Moral Judgment Interview probes why a person chooses; 'steal because it's not a big crime and he won't be caught' (stage 1 to 2), 'steal because a loving husband would' (stage 3) and 'steal because the right to life outranks property rights' (stage 5 to 6) all support the same decision for different reasons.",
     ref: "Colby & Kohlberg 1987",
   }),
   d({
@@ -508,7 +508,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "In Colby, Kohlberg, Gibbs and Lieberman's (1983) 20-year longitudinal study of Kohlberg's original sample:",
+    stem: "In Colby, Kohlberg, Gibbs and Lieberman's 20-year longitudinal study of Kohlberg's original sample:",
     options: [
       "Participants moved through the stages in the predicted order without skipping, but stage 5 was uncommon and stage 6 so rare it was dropped from the scoring manual",
       "Most participants reached stage 6 by early adulthood",
@@ -517,7 +517,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The 58 boys followed from ages 10–16 progressed through stages in invariant sequence with very few regressions; stage 4 was the most common adult stage, stage 5 reached only by a minority in their twenties and thirties, and stage 6 was not found in the data, leading to its removal from standard scoring. Stage 6 was not common. Stage skipping was rare. Reasoning advanced rather than declined.",
+      "The 58 boys followed from ages 10 to 16 progressed through stages in invariant sequence with very few regressions; stage 4 was the most common adult stage, stage 5 reached only by a minority in their twenties and thirties, and stage 6 was not found in the data, leading to its removal from standard scoring. Stage 6 was not common. Stage skipping was rare. Reasoning advanced rather than declined.",
     ref: "Colby et al. 1983, Monogr Soc Res Child Dev",
   }),
   d({
@@ -526,7 +526,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Carol Gilligan's In a Different Voice (1982) criticised Kohlberg's theory for:",
+    stem: "In 1982 Carol Gilligan criticised Kohlberg's theory for:",
     options: [
       "Ignoring cognitive development entirely",
       "Building stages from an all-male sample and privileging an ethic of justice over an ethic of care",
@@ -546,8 +546,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Which statements about research on gender and moral reasoning are supported by meta-analyses?",
     statements: [
-      "A. Walker (1984) found little or no overall gender difference in scores on Kohlberg's stages when education and occupation were controlled.",
-      "B. Jaffee and Hyde (2000) found small differences, with females slightly more care-oriented and males slightly more justice-oriented.",
+      "A. Walker found little or no overall gender difference in scores on Kohlberg's stages when education and occupation were controlled.",
+      "B. Jaffee and Hyde found small differences, with females slightly more care-oriented and males slightly more justice-oriented.",
       "C. Both men and women use care and justice reasoning, depending on the kind of dilemma.",
       "D. Women consistently score two full stages lower than men.",
     ],
@@ -577,7 +577,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Gilligan described a move from caring only for oneself, through equating goodness with caring for others at one's own expense, to a mature ethic in which care includes oneself as well as others, with transitions between levels. The second option reverses the first two levels. The third lists Kohlberg's stages 4–6. The fourth uses Piaget's terms.",
+      "Gilligan described a move from caring only for oneself, through equating goodness with caring for others at one's own expense, to a mature ethic in which care includes oneself as well as others, with transitions between levels. The second option reverses the first two levels. The third lists Kohlberg's stages 4 to 6. The fourth uses Piaget's terms.",
     ref: "Gilligan 1982, ch. 3",
   }),
   d({
@@ -602,7 +602,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "In The Moral Judgment of the Child (1932), Piaget found that younger children (about 4–7) judge a child who broke 15 cups accidentally as naughtier than one who broke one cup while stealing jam, see rules as unchangeable, and believe misdeeds are punished automatically (immanent justice). From about age 10, children weigh intentions and see rules as social agreements. The other codes reverse or duplicate these.",
+      "In his studies of children's moral judgement, Piaget found that younger children (about 4 to 7) judge a child who broke 15 cups accidentally as naughtier than one who broke one cup while stealing jam, see rules as unchangeable, and believe misdeeds are punished automatically (immanent justice). From about age 10, children weigh intentions and see rules as social agreements. The other codes reverse or duplicate these.",
     ref: "Piaget 1932",
   }),
   d({
@@ -611,7 +611,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Joan Miller's (1984) and Shweder's studies in India challenged Kohlberg's universality claim by showing that:",
+    stem: "Joan Miller's and Shweder's studies in India challenged Kohlberg's universality claim by showing that:",
     options: [
       "Indian participants never reasoned about justice",
       "Many Hindu Indian adults treated interpersonal obligations, such as helping a relative, as moral duties rather than personal choices",
@@ -638,7 +638,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Turiel and colleagues found that by about 3–4 years children judge hitting as wrong even if a teacher allows it (moral), but judge calling a teacher by her first name as acceptable if the school permits it (conventional). This challenges Kohlberg's idea that morality is first confused with convention. The other pairs belong to Kohlberg, Gilligan and Piaget.",
+      "Turiel and colleagues found that by about 3 to 4 years children judge hitting as wrong even if a teacher allows it (moral), but judge calling a teacher by her first name as acceptable if the school permits it (conventional). This challenges Kohlberg's idea that morality is first confused with convention. The other pairs belong to Kohlberg, Gilligan and Piaget.",
     ref: "Turiel 1983, The Development of Social Knowledge",
   }),
   d({
@@ -693,7 +693,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Reviews (for example Blasi, 1980) find modest correlations between stage and behaviour such as honesty or helping. Rest argued that moral behaviour needs moral sensitivity (recognising an issue), judgement (Kohlberg's focus), motivation (prioritising moral values) and character (persistence), and situations such as those in Milgram's studies also matter.",
+      "Both are true and R explains A. Reviews find modest correlations between stage and behaviour such as honesty or helping. Rest argued that moral behaviour needs moral sensitivity (recognising an issue), judgement (Kohlberg's focus), motivation (prioritising moral values) and character (persistence), and situations such as those in Milgram's studies also matter.",
     ref: "Blasi 1980, Psychol Bull; Rest 1986",
   }),
   d({
@@ -720,9 +720,9 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "statement",
-    stem: "Snarey's (1985) review of cross-cultural studies of Kohlberg's theory found that:",
+    stem: "Snarey's review of cross-cultural studies of Kohlberg's theory found that:",
     statements: [
-      "A. Stages 1–4 were found across a wide range of cultures.",
+      "A. Stages 1 to 4 were found across a wide range of cultures.",
       "B. Stage sequence was largely invariant across cultures.",
       "C. Postconventional reasoning was rare in traditional village (folk) societies.",
       "D. Postconventional reasoning was found mainly in urban, educated, Western samples, suggesting the scoring may miss other kinds of advanced moral thought.",
@@ -735,7 +735,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "All four are correct. Snarey reviewed 45 studies in 27 cultural areas and found broad support for universality of stages 1–4 and of sequence, but stage 5 was largely absent in folk cultures and found mostly in complex urban societies; he and others suggested the manual may not capture communal forms of principled reasoning.",
+      "All four are correct. Snarey reviewed 45 studies in 27 cultural areas and found broad support for universality of stages 1 to 4 and of sequence, but stage 5 was largely absent in folk cultures and found mostly in complex urban societies; he and others suggested the manual may not capture communal forms of principled reasoning.",
     ref: "Snarey 1985, Psychol Bull",
   }),
   d({
@@ -753,7 +753,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Kohlberg (and Walker's 1980 work) argued that each moral stage requires a corresponding cognitive level (and social perspective-taking level), but reaching that level does not ensure the moral stage; experiences of role-taking and cognitive conflict are also needed. So the causal direction is from cognition to morality, the two are related, and formal operations do not guarantee postconventional reasoning.",
+      "Kohlberg (and later work by Walker) argued that each moral stage requires a corresponding cognitive level (and social perspective-taking level), but reaching that level does not ensure the moral stage; experiences of role-taking and cognitive conflict are also needed. So the causal direction is from cognition to morality, the two are related, and formal operations do not guarantee postconventional reasoning.",
     ref: "Kohlberg 1976; Walker 1980, Child Dev",
   }),
   d({
@@ -779,7 +779,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "McAdams and de St. Aubin's (1992) model of generativity extended Erikson by emphasising:",
+    stem: "McAdams and de St. Aubin's model of generativity extended Erikson by emphasising:",
     options: [
       "Generativity as an exclusively biological drive to have children",
       "Generativity as arising from inner desire and cultural demand, expressed in concern, commitment, action and a life narrative",
@@ -821,7 +821,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Longitudinal work (for example Kroger, Martinussen and Marcia's 2010 meta-analysis) shows only a minority reach achievement by young adulthood, and people cycle through 'MAMA' patterns (moratorium–achievement–moratorium–achievement), with status varying by domain. Commitment is one of Marcia's two core dimensions. The model concerns adolescents and adults. It was built from Erikson, not Kohlberg.",
+      "Longitudinal work (for example a meta-analysis by Kroger, Martinussen and Marcia) shows only a minority reach achievement by young adulthood, and people cycle through 'MAMA' patterns (moratorium-achievement-moratorium-achievement), with status varying by domain. Commitment is one of Marcia's two core dimensions. The model concerns adolescents and adults. It was built from Erikson, not Kohlberg.",
     ref: "Kroger, Martinussen & Marcia 2010, J Adolesc",
   }),
   d({
@@ -872,7 +872,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which statements about the cultural context of identity development are supported?",
     statements: [
       "A. In collectivist settings, identity may be framed more in terms of family roles and social obligations than individual choice.",
-      "B. Arnett's 'emerging adulthood' (about 18–25) describes a prolonged period of identity exploration in industrialised societies.",
+      "B. Arnett's 'emerging adulthood' (about 18 to 25) describes a prolonged period of identity exploration in industrialised societies.",
       "C. Marcia's statuses assume that exploring alternatives is possible, which depends on social and economic opportunity.",
       "D. Identity exploration is identical in all cultures and historical periods.",
     ],
@@ -884,7 +884,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "A: identity in many Asian and Indian contexts is often relational and embedded in family and community. B: Arnett (2000) described emerging adulthood as an age of identity exploration, instability, self-focus, feeling in-between and possibilities, typical of societies with long education and late marriage. C: foreclosure may be adaptive where choices are limited. D contradicts A–C.",
+      "A: identity in many Asian and Indian contexts is often relational and embedded in family and community. B: Arnett described emerging adulthood as an age of identity exploration, instability, self-focus, feeling in-between and possibilities, typical of societies with long education and late marriage. C: foreclosure may be adaptive where choices are limited. D contradicts A-C.",
     ref: "Arnett 2000, Am Psychol; Kroger 2007",
   }),
   d({
@@ -973,7 +973,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Haidt (2001) challenged rationalist models such as Kohlberg's: because intuitions (quick gut feelings of approval or disgust) arrive first, the judgement is usually already made, and reasoning then works like a lawyer defending it. His evidence included 'moral dumbfounding', in which people condemned harmless taboo acts even after every reason they offered was removed. Haidt later developed moral foundations theory (care, fairness, loyalty, authority, sanctity, liberty).",
+      "Both are true and R explains A. Haidt challenged rationalist models such as Kohlberg's: because intuitions (quick gut feelings of approval or disgust) arrive first, the judgement is usually already made, and reasoning then works like a lawyer defending it. His evidence included 'moral dumbfounding', in which people condemned harmless taboo acts even after every reason they offered was removed. Haidt later developed moral foundations theory (care, fairness, loyalty, authority, sanctity, liberty).",
     ref: "Haidt 2001, Psychol Rev",
   }),
   d({
@@ -1008,7 +1008,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Kohlberg and colleagues set up just communities (for example in Cambridge, Massachusetts) where students and staff made rules together in community meetings, giving practice in perspective-taking and moral discussion. Blatt and Kohlberg (1975) had shown that classroom dilemma discussion raised stage scores. Punishment, virtue lists ('bag of virtues', which Kohlberg criticised) and gender separation are not part of the model.",
+      "Kohlberg and colleagues set up just communities (for example in Cambridge, Massachusetts) where students and staff made rules together in community meetings, giving practice in perspective-taking and moral discussion. Blatt and Kohlberg had shown that classroom dilemma discussion raised stage scores. Punishment, virtue lists ('bag of virtues', which Kohlberg criticised) and gender separation are not part of the model.",
     ref: "Power, Higgins & Kohlberg 1989",
   }),
   d({
@@ -1017,7 +1017,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 4,
     type: "mcq",
-    stem: "Wolpe and Rachman's (1960) reinterpretation of Little Hans argued that his horse phobia:",
+    stem: "Wolpe and Rachman's reinterpretation of Little Hans argued that his horse phobia:",
     options: [
       "Was more parsimoniously explained by classical conditioning after he witnessed a frightening accident with a horse",
       "Confirmed Freud's Oedipal interpretation",
@@ -1043,7 +1043,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In the preschool years (about 3–6) children plan, imagine and take initiative; harsh criticism of their efforts can produce guilt about their own wishes. Industry follows in the school years. Autonomy belongs to toddlerhood. Trust belongs to infancy.",
+      "In Erikson's third stage, initiative versus guilt (about 3 to 6), children plan games, take on roles in make-believe and try out ideas. When adults support this, the child develops a sense of purpose. When adults are harsh or punish the child's plans, the child may feel guilty about having wishes and ideas at all. Being called 'bossy' and feeling bad about it fits this conflict. Industry versus inferiority comes later, in the school years, and is about competence at skills. Autonomy versus shame and doubt is the toddler stage, about doing things for oneself. Trust versus mistrust belongs to infancy.",
     ref: "Santrock, ch. 8",
   }),
 ];

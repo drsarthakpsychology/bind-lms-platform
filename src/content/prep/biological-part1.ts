@@ -28,12 +28,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "+40 mV",
       "0 mV",
-      "−20 mV",
-      "−70 mV",
+      "-20 mV",
+      "-70 mV",
     ],
     answer: 3,
     explanation:
-      "A typical neuron rests at about −70 mV (range roughly −60 to −80 mV), inside negative relative to outside. +40 mV is near the peak of the action potential (overshoot), not rest. −20 mV is a depolarised value well past the usual threshold (about −55 mV). 0 mV would mean no potential difference across the membrane, which happens only if the ion gradients are lost.",
+      "A typical neuron rests at about -70 mV (range roughly -60 to -80 mV), inside negative relative to outside. +40 mV is near the peak of the action potential (overshoot), not rest. -20 mV is a depolarised value well past the usual threshold (about -55 mV). 0 mV would mean no potential difference across the membrane, which happens only if the ion gradients are lost.",
     ref: "Kalat, Biological Psychology, ch. 2; Pinel, Biopsychology, ch. 4",
   }),
   b({
@@ -51,7 +51,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "By the Goldman equation, membrane potential is a permeability-weighted average of the ion equilibrium potentials. At rest K⁺ leak channels make permeability to K⁺ roughly 25–40 times that to Na⁺, so the potential sits near E_K (about −90 mV). The pump moves K⁺ in, not out (3 Na⁺ out, 2 K⁺ in). The membrane is not completely impermeable to Na⁺: a small Na⁺ leak is why rest (−70 mV) is less negative than E_K. Voltage-gated channels are mostly closed at rest, so their number does not set the resting potential.",
+      "By the Goldman equation, membrane potential is a permeability-weighted average of the ion equilibrium potentials. At rest K⁺ leak channels make permeability to K⁺ roughly 25 to 40 times that to Na⁺, so the potential sits near E_K (about -90 mV). The pump moves K⁺ in, not out (3 Na⁺ out, 2 K⁺ in). The membrane is not completely impermeable to Na⁺: a small Na⁺ leak is why rest (-70 mV) is less negative than E_K. Voltage-gated channels are mostly closed at rest, so their number does not set the resting potential.",
     ref: "Kandel, Principles of Neural Science, ch. 9 (Goldman equation)",
   }),
   b({
@@ -60,7 +60,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "For each cycle that uses one ATP, the sodium–potassium pump moves:",
+    stem: "For each cycle that uses one ATP, the sodium-potassium pump moves:",
     options: [
       "2 Na⁺ out and 3 K⁺ in",
       "3 Na⁺ in and 2 K⁺ out",
@@ -122,7 +122,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Myelin reduces membrane capacitance and current leak, so current spreads passively and quickly under the internode, and the slow step of regenerating the spike happens only at the nodes (saltatory conduction). This is why a myelinated axon can conduct at up to about 120 m/s while an unmyelinated axon of similar size conducts at around 1–2 m/s.",
+      "Both are true and R explains A. Myelin reduces membrane capacitance and current leak, so current spreads passively and quickly under the internode, and the slow step of regenerating the spike happens only at the nodes (saltatory conduction). This is why a myelinated axon can conduct at up to about 120 m/s while an unmyelinated axon of similar size conducts at around 1 to 2 m/s.",
     ref: "Pinel, ch. 4",
   }),
   b({
@@ -138,7 +138,7 @@ export const QUESTIONS: PrepQuestion[] = [
         "i. Myelinates a single segment of one peripheral axon",
         "ii. Immune defence and removal of debris in the CNS",
         "iii. Myelinates segments of several CNS axons",
-        "iv. Buffers extracellular K⁺, supports the blood–brain barrier and takes up glutamate",
+        "iv. Buffers extracellular K⁺, supports the blood-brain barrier and takes up glutamate",
       ],
     },
     options: [
@@ -149,7 +149,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Oligodendrocytes send processes to myelinate segments of many CNS axons (iii); a Schwann cell wraps one segment of one peripheral axon (i). Microglia are the CNS's resident immune cells (ii). Astrocytes buffer K⁺, clear glutamate and contribute to the blood–brain barrier (iv). Option 2 swaps the two myelinating cells, a common confusion. Options 3 and 4 swap astrocyte and microglia or astrocyte and oligodendrocyte roles.",
+      "Oligodendrocytes send processes to myelinate segments of many CNS axons (iii); a Schwann cell wraps one segment of one peripheral axon (i). Microglia are the CNS's resident immune cells (ii). Astrocytes buffer K⁺, clear glutamate and contribute to the blood-brain barrier (iv). Option 2 swaps the two myelinating cells, a common confusion. Options 3 and 4 swap astrocyte and microglia or astrocyte and oligodendrocyte roles.",
     ref: "Kalat, ch. 1",
   }),
   b({
@@ -231,7 +231,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Loewi (1921) bathed a second frog heart in fluid from a vagus-stimulated heart and showed chemical transmission (iii). Sherrington inferred a delay and summation at junctions from reflex studies and named the synapse (iv). Cajal's silver-stain studies supported the neuron doctrine against Golgi's reticular theory (i). Hodgkin and Huxley used the squid giant axon and voltage clamp to explain the spike's Na⁺ and K⁺ currents (ii). The other codes swap Loewi with Sherrington, or Cajal with Hodgkin–Huxley.",
+      "Loewi bathed a second frog heart in fluid from a vagus-stimulated heart and showed chemical transmission (iii). Sherrington inferred a delay and summation at junctions from reflex studies and named the synapse (iv). Cajal's silver-stain studies supported the neuron doctrine against Golgi's reticular theory (i). Hodgkin and Huxley used the squid giant axon and voltage clamp to explain the spike's Na⁺ and K⁺ currents (ii). The other codes swap Loewi with Sherrington, or Cajal with Hodgkin-Huxley.",
     ref: "Kalat, ch. 2; Finger, Origins of Neuroscience",
   }),
   b({
@@ -268,7 +268,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: ["A, B and C only", "A and C only", "B, C and D only", "A, B and D only"],
     answer: 0,
     explanation:
-      "A, B and C are correct. The Mg²⁺ block is relieved only when the membrane is already depolarised, so the receptor acts as a coincidence detector (presynaptic release plus postsynaptic depolarisation), which is the basis of its role in long-term potentiation. Glycine or D-serine must bind its co-agonist site. Ca²⁺ entry triggers kinases such as CaMKII. D is wrong: NMDA is an ionotropic receptor; metabotropic glutamate receptors (mGluR1–8) are the G-protein-coupled ones.",
+      "A, B and C are correct. The Mg²⁺ block is relieved only when the membrane is already depolarised, so the receptor acts as a coincidence detector (presynaptic release plus postsynaptic depolarisation), which is the basis of its role in long-term potentiation. Glycine or D-serine must bind its co-agonist site. Ca²⁺ entry triggers kinases such as CaMKII. D is wrong: NMDA is an ionotropic receptor; metabotropic glutamate receptors (mGluR1 to 8) are the G-protein-coupled ones.",
     ref: "Kandel, ch. 13 and 67; Stahl, ch. 4",
   }),
   b({
@@ -438,7 +438,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In myasthenia gravis, autoantibodies attack nicotinic ACh receptors on the muscle side of the neuromuscular junction, so weakness worsens with use and improves with acetylcholinesterase inhibitors such as pyridostigmine. Antibodies to presynaptic Ca²⁺ channels cause Lambert–Eaton syndrome, where strength briefly improves with use. Nigral dopamine loss is Parkinson's disease. Peripheral demyelination describes Guillain–Barré syndrome.",
+      "In myasthenia gravis, autoantibodies attack nicotinic ACh receptors on the muscle side of the neuromuscular junction, so weakness worsens with use and improves with acetylcholinesterase inhibitors such as pyridostigmine. Antibodies to presynaptic Ca²⁺ channels cause Lambert-Eaton syndrome, where strength briefly improves with use. Nigral dopamine loss is Parkinson's disease. Peripheral demyelination describes Guillain-Barré syndrome.",
     ref: "Kalat, ch. 8",
   }),
   b({
@@ -467,7 +467,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which conclusion is best supported by the findings in the passage?",
     passage:
-      "A researcher records from a neuron and applies drug X. Before the drug, a brief puff of glutamate onto a dendrite produces a large EPSP when the cell is held at −30 mV but almost none when held at −80 mV, although both responses are abolished by APV. After drug X is applied, the response at −80 mV becomes as large as at −30 mV. Removing Mg²⁺ from the bathing solution has the same effect as drug X.",
+      "A researcher records from a neuron and applies drug X. Before the drug, a brief puff of glutamate onto a dendrite produces a large EPSP when the cell is held at -30 mV but almost none when held at -80 mV, although both responses are abolished by APV. After drug X is applied, the response at -80 mV becomes as large as at -30 mV. Removing Mg²⁺ from the bathing solution has the same effect as drug X.",
     options: [
       "Drug X is an AMPA receptor agonist",
       "Drug X blocks GABA-A receptors",
@@ -476,7 +476,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "APV sensitivity shows the response is NMDA-mediated, and the strong voltage dependence (large at −30 mV, small at −80 mV) is the signature of Mg²⁺ block. Because removing Mg²⁺ mimics drug X, X must remove or bypass the Mg²⁺ block. An AMPA agonist would act at a receptor not blocked by APV and would not make an APV-sensitive response voltage-independent. Blocking GABA-A would change inhibition but not the voltage dependence of an isolated NMDA current. A glycine-site antagonist would shrink NMDA responses at all voltages, not enlarge them.",
+      "APV sensitivity shows the response is NMDA-mediated, and the strong voltage dependence (large at -30 mV, small at -80 mV) is the signature of Mg²⁺ block. Because removing Mg²⁺ mimics drug X, X must remove or bypass the Mg²⁺ block. An AMPA agonist would act at a receptor not blocked by APV and would not make an APV-sensitive response voltage-independent. Blocking GABA-A would change inhibition but not the voltage dependence of an isolated NMDA current. A glycine-site antagonist would shrink NMDA responses at all voltages, not enlarge them.",
     ref: "Kandel, ch. 13",
   }),
   b({
@@ -565,7 +565,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Electrical synapses join cells through gap junctions (connexon channels), so ions flow directly, with almost no delay, and often in both directions; they help synchronise networks (for example in the inferior olive and among some interneurons). Chemical synapses have the longer delay (about 0.5–1 ms or more). Chemical synapses, not electrical ones, can amplify and can turn excitation into inhibition through different receptors. Electrical synapses do exist in the mammalian brain, though they are less common than chemical ones.",
+      "Electrical synapses join cells through gap junctions (connexon channels), so ions flow directly, with almost no delay, and often in both directions; they help synchronise networks (for example in the inferior olive and among some interneurons). Chemical synapses have the longer delay (about 0.5 to 1 ms or more). Chemical synapses, not electrical ones, can amplify and can turn excitation into inhibition through different receptors. Electrical synapses do exist in the mammalian brain, though they are less common than chemical ones.",
     ref: "Kandel, ch. 11",
   }),
   b({
@@ -639,14 +639,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "numerical",
     stem: "Using the Nernst equation at body temperature (E ≈ 61.5 × log₁₀[ion]out/[ion]in mV for a monovalent cation), what is the approximate equilibrium potential for K⁺ if [K⁺]out = 5 mM and [K⁺]in = 140 mM?",
     options: [
-      "−89 mV",
+      "-89 mV",
       "+89 mV",
-      "−61 mV",
-      "−142 mV",
+      "-61 mV",
+      "-142 mV",
     ],
     answer: 0,
     explanation:
-      "log₁₀(5/140) = log₁₀(0.0357) ≈ −1.447; −1.447 × 61.5 ≈ −89 mV. A positive value would apply if K⁺ were more concentrated outside, the reverse of reality. −61 mV is what a tenfold gradient gives (log 10 = 1), but the gradient here is 28-fold. −142 mV would need roughly a 200-fold gradient, or doubling the slope.",
+      "log₁₀(5/140) = log₁₀(0.0357) ≈ -1.447; -1.447 × 61.5 ≈ -89 mV. A positive value would apply if K⁺ were more concentrated outside, the reverse of reality. -61 mV is what a tenfold gradient gives (log 10 = 1), but the gradient here is 28-fold. -142 mV would need roughly a 200-fold gradient, or doubling the slope.",
     ref: "Kandel, ch. 9 (Nernst equation)",
   }),
   b({
@@ -682,7 +682,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Acetylcholinesterase hydrolyses ACh into choline and acetate within milliseconds; choline is taken back up for reuse. Choline acetyltransferase synthesises ACh. MAO and COMT break down monoamines such as dopamine and noradrenaline, not ACh.",
+      "Acetylcholinesterase sits in the synaptic cleft and splits acetylcholine into choline and acetate within about a millisecond, which is why the signal at the neuromuscular junction is so brief. The choline is taken back into the terminal and reused. Drugs that block this enzyme (donepezil in Alzheimer's disease, pyridostigmine in myasthenia gravis, and nerve agents in poisoning) work by letting acetylcholine build up. Choline acetyltransferase does the opposite job: it makes acetylcholine from choline and acetyl-CoA. Monoamine oxidase and catechol-O-methyltransferase break down dopamine, noradrenaline and serotonin, not acetylcholine.",
     ref: "Kalat, ch. 2",
   }),
   b({
@@ -736,7 +736,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: ["A and B only", "A, C and D only", "B and D only", "A, B, C and D"],
     answer: 1,
     explanation:
-      "GABA-A is a pentameric Cl⁻ channel (A correct). AMPA is an ionotropic glutamate receptor passing Na⁺ and K⁺ (C correct). Muscarinic receptors (M1–M5) are G-protein-coupled (D correct). B is wrong: nicotinic receptors are ligand-gated cation channels, the classic ionotropic receptor at the neuromuscular junction.",
+      "GABA-A is a pentameric Cl⁻ channel (A correct). AMPA is an ionotropic glutamate receptor passing Na⁺ and K⁺ (C correct). Muscarinic receptors (M1-M5) are G-protein-coupled (D correct). B is wrong: nicotinic receptors are ligand-gated cation channels, the classic ionotropic receptor at the neuromuscular junction.",
     ref: "Kalat, ch. 2",
   }),
   b({
@@ -772,7 +772,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Tryptophan is hydroxylated by tryptophan hydroxylase (the rate-limiting step) to 5-hydroxytryptophan, which is decarboxylated to serotonin (5-HT); its main metabolite is 5-HIAA. Tyrosine is the precursor of the catecholamines. Choline is the precursor of acetylcholine. Glutamine is the precursor of glutamate (and through it GABA) in the glutamate–glutamine cycle.",
+      "Tryptophan is hydroxylated by tryptophan hydroxylase (the rate-limiting step) to 5-hydroxytryptophan, which is decarboxylated to serotonin (5-HT); its main metabolite is 5-HIAA. Tyrosine is the precursor of the catecholamines. Choline is the precursor of acetylcholine. Glutamine is the precursor of glutamate (and through it GABA) in the glutamate-glutamine cycle.",
     ref: "Kaplan & Sadock's Synopsis, neurotransmitters",
   }),
   b({
@@ -799,16 +799,16 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Multiple sclerosis and Guillain–Barré syndrome are both demyelinating conditions. Which pairing is correct?",
+    stem: "Multiple sclerosis and Guillain-Barré syndrome are both demyelinating conditions. Which pairing is correct?",
     options: [
-      "Multiple sclerosis: peripheral Schwann cell myelin; Guillain–Barré: central oligodendrocyte myelin",
-      "Multiple sclerosis: central oligodendrocyte myelin; Guillain–Barré: peripheral Schwann cell myelin",
+      "Multiple sclerosis: peripheral Schwann cell myelin; Guillain-Barré: central oligodendrocyte myelin",
+      "Multiple sclerosis: central oligodendrocyte myelin; Guillain-Barré: peripheral Schwann cell myelin",
       "Both affect only central myelin",
       "Both affect only the neuron's cell body, not myelin",
     ],
     answer: 1,
     explanation:
-      "Multiple sclerosis is an immune attack on CNS myelin made by oligodendrocytes, producing plaques in the brain and spinal cord. Guillain–Barré syndrome is an acute immune attack on peripheral nerves (Schwann cell myelin, sometimes axons), producing ascending weakness. Option 1 reverses them. Neither is confined to central myelin, and both target myelin rather than the cell body.",
+      "Multiple sclerosis is an immune attack on CNS myelin made by oligodendrocytes, producing plaques in the brain and spinal cord. Guillain-Barré syndrome is an acute immune attack on peripheral nerves (Schwann cell myelin, sometimes axons), producing ascending weakness. Option 1 reverses them. Neither is confined to central myelin, and both target myelin rather than the cell body.",
     ref: "Kalat, ch. 1",
   }),
   b({

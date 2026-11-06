@@ -32,7 +32,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Pharmacokinetics covers ADME, which determines how much drug reaches its site of action and for how long. Pharmacodynamics covers mechanisms and effects (receptors, dose–response). Drug history and pricing are not pharmacological subdisciplines.",
+      "Pharmacokinetics asks what the body does to a drug: how it is absorbed, how it is distributed (for example into fat or across the blood-brain barrier), how it is metabolised (mostly by liver enzymes such as the cytochrome P450 family) and how it is excreted (mainly by the kidneys). These steps decide how much drug reaches its target and for how long, which is why half-life and drug interactions matter. Pharmacodynamics is the other half: what the drug does to the body, such as which receptors it binds and how strong its effect is. Drug history and drug pricing are not branches of pharmacology.",
     ref: "Stahl, ch. 2; Kaplan & Sadock's Synopsis, psychopharmacology principles",
   }),
   b({
@@ -44,12 +44,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "It never reaches steady state",
       "1 half-life",
-      "10–12 half-lives",
-      "4–5 half-lives",
+      "10 to 12 half-lives",
+      "4 to 5 half-lives",
     ],
     answer: 3,
     explanation:
-      "Each half-life closes half the remaining gap to steady state: about 50% after one, 75% after two, 87.5% after three, 94% after four and 97% after five half-lives. The same rule describes elimination after stopping. One half-life gives only 50%. 10–12 half-lives is unnecessary. With repeated fixed dosing a drug with first-order kinetics does reach steady state.",
+      "Each half-life closes half the remaining gap to steady state: about 50% after one, 75% after two, 87.5% after three, 94% after four and 97% after five half-lives. The same rule describes elimination after stopping. One half-life gives only 50%. 10 to 12 half-lives is unnecessary. With repeated fixed dosing a drug with first-order kinetics does reach steady state.",
     ref: "Kaplan & Sadock's Synopsis, pharmacokinetics",
   }),
   b({
@@ -140,10 +140,10 @@ export const QUESTIONS: PrepQuestion[] = [
     lists: {
       left: ["A. Chlorpromazine", "B. Lithium", "C. Imipramine", "D. Iproniazid"],
       right: [
-        "i. John Cade, Australia (1949), calming of manic patients",
-        "ii. Delay and Deniker, Paris (1952), antipsychotic effect",
+        "i. John Cade, Australia, calming of manic patients",
+        "ii. Delay and Deniker, Paris, antipsychotic effect",
         "iii. Originally a tuberculosis drug; elevated mood led to MAO-inhibitor antidepressants",
-        "iv. Roland Kuhn (1957), tested as an antipsychotic but found to relieve depression",
+        "iv. Roland Kuhn, tested as an antipsychotic but found to relieve depression",
       ],
     },
     options: [
@@ -154,7 +154,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Chlorpromazine, developed from antihistamines and used by Laborit in anaesthesia, was shown by Delay and Deniker (1952) to treat psychosis (ii). Cade (1949) reported lithium's anti-manic effect (i). Kuhn found that imipramine, a chlorpromazine-like compound, relieved depression (iv). Iproniazid, a tuberculosis drug, lifted mood and was found to inhibit MAO (iii). All four were serendipitous discoveries. The other codes swap these.",
+      "Chlorpromazine, developed from antihistamines and used by Laborit in anaesthesia, was shown by Delay and Deniker to treat psychosis (ii). Cade reported lithium's anti-manic effect (i). Kuhn found that imipramine, a chlorpromazine-like compound, relieved depression (iv). Iproniazid, a tuberculosis drug, lifted mood and was found to inhibit MAO (iii). All four were serendipitous discoveries. The other codes swap these.",
     ref: "Healy, The Creation of Psychopharmacology; Stahl, ch. 6",
   }),
   b({
@@ -162,7 +162,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Seeman and colleagues' (1976) finding that supports the dopamine hypothesis of schizophrenia was that:",
+    stem: "Seeman and colleagues' finding that supports the dopamine hypothesis of schizophrenia was that:",
     options: [
       "Patients had raised dopamine metabolites in urine",
       "The average clinical dose of antipsychotics correlated closely with their affinity for D2 receptors",
@@ -171,7 +171,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Across many antipsychotics, the dose needed clinically was inversely related to D2 binding affinity (Seeman et al., 1976; Creese, Burt and Snyder, 1976), but not to affinity for other receptors, pointing to D2 blockade as the shared mechanism. Urinary metabolite findings were inconsistent. Serotonin blockade varies widely between drugs. Amphetamine worsens or produces psychosis, which also supports the hypothesis but in the opposite direction to option 4.",
+      "Across many antipsychotics, the dose needed clinically was inversely related to D2 binding affinity, but not to affinity for other receptors, pointing to D2 blockade as the shared mechanism. Urinary metabolite findings were inconsistent. Serotonin blockade varies widely between drugs. Amphetamine worsens or produces psychosis, which also supports the hypothesis but in the opposite direction to option 4.",
     module: "antipsychotics",
     ref: "Seeman et al. 1976, Nature; Creese et al. 1976, Science",
   }),
@@ -182,7 +182,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which explanation of the findings is best supported?",
     passage:
-      "In a PET study with [¹¹C]raclopride, patients on different antipsychotic doses are scanned. Clinical response becomes likely when striatal D2 occupancy exceeds about 65%. Prolactin rises above normal above about 72% occupancy, and extrapyramidal side effects become common above about 78%. Patients on clozapine improve at occupancies of only 20–67%.",
+      "In a PET study with [¹¹C]raclopride, patients on different antipsychotic doses are scanned. Clinical response becomes likely when striatal D2 occupancy exceeds about 65%. Prolactin rises above normal above about 72% occupancy, and extrapyramidal side effects become common above about 78%. Patients on clozapine improve at occupancies of only 20 to 67%.",
     options: [
       "D2 occupancy is unrelated to either response or side effects",
       "Higher D2 occupancy always means better clinical response with no side-effect cost",
@@ -191,7 +191,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Kapur et al. (2000) showed a window: around 65–78% occupancy gives response with fewer EPS, and higher occupancy brings prolactin and EPS problems, so 'more is better' is false. Occupancy clearly relates to both outcomes. Clozapine's effect at low D2 occupancy, with fast dissociation and broad receptor actions, suggests other mechanisms, so the claim that it blocks more D2 receptors is the opposite of the data.",
+      "Kapur and colleagues showed a window: around 65 to 78% occupancy gives response with fewer EPS, and higher occupancy brings prolactin and EPS problems, so 'more is better' is false. Occupancy clearly relates to both outcomes. Clozapine's effect at low D2 occupancy, with fast dissociation and broad receptor actions, suggests other mechanisms, so the claim that it blocks more D2 receptors is the opposite of the data.",
     module: "antipsychotics",
     ref: "Kapur et al. 2000, Am J Psychiatry; Nordström et al. 1995",
   }),
@@ -220,7 +220,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Which statements about clozapine are supported by evidence?",
     statements: [
-      "A. It is more effective than chlorpromazine in treatment-resistant schizophrenia (Kane et al., 1988).",
+      "A. It is more effective than chlorpromazine in treatment-resistant schizophrenia.",
       "B. It reduces suicidal behaviour in schizophrenia more than olanzapine (InterSePT trial).",
       "C. It has a high risk of extrapyramidal side effects.",
       "D. It is associated with significant weight gain and metabolic risk.",
@@ -233,7 +233,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: Kane et al. (1988) showed about 30% response to clozapine versus 4% to chlorpromazine in treatment-resistant patients. B: InterSePT (Meltzer et al., 2003) found clozapine reduced suicidal behaviour more than olanzapine. D: clozapine, like olanzapine, carries high weight-gain and metabolic risk. C is wrong: clozapine has very low EPS risk, and it is used in patients with tardive dyskinesia or Parkinson's disease psychosis.",
+      "A: Kane and colleagues showed about 30% response to clozapine versus 4% to chlorpromazine in treatment-resistant patients. B: InterSePT found clozapine reduced suicidal behaviour more than olanzapine. D: clozapine, like olanzapine, carries high weight-gain and metabolic risk. C is wrong: clozapine has very low EPS risk, and it is used in patients with tardive dyskinesia or Parkinson's disease psychosis.",
     module: "antipsychotics",
     ref: "Kane et al. 1988; Meltzer et al. 2003",
   }),
@@ -313,7 +313,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Combining an SSRI with an MAOI risks serotonin syndrome. Because norfluoxetine's half-life is about 1–2 weeks (fluoxetine itself about 2–4 days), it takes around five weeks for it to clear. Shorter-acting SSRIs need about two weeks before starting an MAOI.",
+      "Both are true and R explains A. Combining an SSRI with an MAOI risks serotonin syndrome. Because norfluoxetine's half-life is about 1 to 2 weeks (fluoxetine itself about 2 to 4 days), it takes around five weeks for it to clear. Shorter-acting SSRIs need about two weeks before starting an MAOI.",
     module: "antidepressants",
     ref: "Stahl's Prescriber's Guide: fluoxetine",
   }),
@@ -344,14 +344,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The usual maintenance range for serum lithium in bipolar disorder is about:",
     options: [
-      "0.6–1.0 mmol/L",
-      "2.0–3.0 mmol/L",
-      "0.05–0.1 mmol/L",
-      "5–10 mmol/L",
+      "0.6 to 1.0 mmol/L",
+      "2.0 to 3.0 mmol/L",
+      "0.05 to 0.1 mmol/L",
+      "5 to 10 mmol/L",
     ],
     answer: 0,
     explanation:
-      "Most guidelines target 0.6–0.8 mmol/L for maintenance (up to 1.0, and occasionally 1.2 for acute mania), measured 12 hours after the last dose. Toxicity typically starts above about 1.5 mmol/L, and levels above 2.0 can be life-threatening, which is why 2.0–3.0 and 5–10 are dangerous. 0.05–0.1 is far below the therapeutic range.",
+      "Most guidelines target 0.6 to 0.8 mmol/L for maintenance (up to 1.0, and occasionally 1.2 for acute mania), measured 12 hours after the last dose. Toxicity typically starts above about 1.5 mmol/L, and levels above 2.0 can be life-threatening, which is why 2.0 to 3.0 and 5 to 10 are dangerous. 0.05 to 0.1 is far below the therapeutic range.",
     module: "stabilisers",
     ref: "NICE CG185; Maudsley Prescribing Guidelines",
   }),
@@ -389,7 +389,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Neural tube defects",
       "Agranulocytosis only",
       "Hyponatraemia",
-      "Stevens–Johnson syndrome and toxic epidermal necrolysis",
+      "Stevens-Johnson syndrome and toxic epidermal necrolysis",
     ],
     answer: 3,
     explanation:
@@ -411,7 +411,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Valproate exposure in pregnancy carries about a 10% risk of major malformations (spina bifida, heart and facial defects) and roughly 30–40% risk of developmental problems including lower IQ and autism; regulators (MHRA, EMA) restrict its use unless a pregnancy prevention programme is in place. Hypothyroidism is a lithium effect. Valproate is an effective antimanic. Tardive dyskinesia is linked to antipsychotics.",
+      "Valproate exposure in pregnancy carries about a 10% risk of major malformations (spina bifida, heart and facial defects) and roughly 30 to 40% risk of developmental problems including lower IQ and autism; regulators (MHRA, EMA) restrict its use unless a pregnancy prevention programme is in place. Hypothyroidism is a lithium effect. Valproate is an effective antimanic. Tardive dyskinesia is linked to antipsychotics.",
     module: "stabilisers",
     ref: "MHRA 2018 valproate guidance",
   }),
@@ -423,7 +423,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Lamotrigine must be started at a low dose and increased slowly.",
-      "R: Rapid titration increases the risk of serious skin rash, including Stevens–Johnson syndrome.",
+      "R: Rapid titration increases the risk of serious skin rash, including Stevens-Johnson syndrome.",
     ],
     options: AR,
     answer: 0,
@@ -504,7 +504,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Siegel (1982) found that tolerance is partly a classically conditioned compensatory response: cues that predict the drug trigger physiological changes opposing its effect. In a novel setting the compensatory response is absent, so the same dose has a stronger effect, and more rats died. In the familiar setting compensation protected them. Food and time of day were not the manipulated cues in the key experiment.",
+      "Siegel found that tolerance is partly a classically conditioned compensatory response: cues that predict the drug trigger physiological changes opposing its effect. In a novel setting the compensatory response is absent, so the same dose has a stronger effect, and more rats died. In the familiar setting compensation protected them. Food and time of day were not the manipulated cues in the key experiment.",
     module: "substance",
     ref: "Siegel et al. 1982, Science",
   }),
@@ -555,7 +555,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "A: as a μ partial agonist, buprenorphine has a ceiling on respiratory depression (though combinations with sedatives remain dangerous). B: its high affinity displaces full agonists but provides less effect, so it can precipitate withdrawal; induction is done once withdrawal has begun. C: naltrexone, a full antagonist, precipitates withdrawal if opioids are present, so 7–10 days opioid-free is usual. D is wrong: methadone has a long and variable half-life (about 24–36 hours, sometimes longer), allowing once-daily dosing and causing accumulation risk early in treatment.",
+      "A: as a μ partial agonist, buprenorphine has a ceiling on respiratory depression (though combinations with sedatives remain dangerous). B: its high affinity displaces full agonists but provides less effect, so it can precipitate withdrawal; induction is done once withdrawal has begun. C: naltrexone, a full antagonist, precipitates withdrawal if opioids are present, so 7 to 10 days opioid-free is usual. D is wrong: methadone has a long and variable half-life (about 24 to 36 hours, sometimes longer), allowing once-daily dosing and causing accumulation risk early in treatment.",
     module: "substance",
     ref: "Stahl, ch. 13; WHO opioid dependence guidelines",
   }),
@@ -608,7 +608,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: unlike amphetamine, which mainly produces positive symptoms, NMDA antagonists produce positive, negative and cognitive symptoms, which supports the glutamate (NMDA hypofunction) hypothesis of schizophrenia (Javitt and Zukin, 1991; Krystal et al., 1994). R is false: PCP and ketamine are non-competitive NMDA receptor channel blockers, not D2 agonists.",
+      "A is true: unlike amphetamine, which mainly produces positive symptoms, NMDA antagonists produce positive, negative and cognitive symptoms, which supports the glutamate (NMDA hypofunction) hypothesis of schizophrenia. R is false: PCP and ketamine are non-competitive NMDA receptor channel blockers, not D2 agonists.",
     module: "psychosis",
     ref: "Javitt & Zukin 1991, Am J Psychiatry; Krystal et al. 1994",
   }),
@@ -626,7 +626,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "LSD, psilocybin (via psilocin) and mescaline are 5-HT2A agonists; blocking 5-HT2A (for example with ketanserin) abolishes psilocybin's subjective effects in humans (Vollenweider et al., 1998). NMDA blockade is the mechanism of dissociatives such as ketamine and PCP. Dopamine reuptake inhibition is cocaine's mechanism. μ-opioid agonism is the mechanism of morphine and heroin.",
+      "LSD, psilocybin (via psilocin) and mescaline are 5-HT2A agonists; blocking 5-HT2A (for example with ketanserin) abolishes psilocybin's subjective effects in humans. NMDA blockade is the mechanism of dissociatives such as ketamine and PCP. Dopamine reuptake inhibition is cocaine's mechanism. μ-opioid agonism is the mechanism of morphine and heroin.",
     module: "substance",
     ref: "Vollenweider et al. 1998, NeuroReport",
   }),
@@ -641,7 +641,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The drug has no pharmacological effect at all",
       "Placebo response in depression is negligible",
-      "Part of the apparent drug–placebo difference in the first comparison may reflect unblinding through side effects, which raises expectations",
+      "Part of the apparent drug-placebo difference in the first comparison may reflect unblinding through side effects, which raises expectations",
       "Atropine is an effective antidepressant",
     ],
     answer: 2,
@@ -750,7 +750,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: Berman et al. (2000) and Zarate et al. (2006) showed rapid antidepressant effects within hours of an infusion, and intranasal esketamine is approved for treatment-resistant depression. R is false: ketamine is an NMDA receptor antagonist. Its proposed mechanism involves a glutamate surge, AMPA receptor activation, BDNF release and mTOR-dependent synaptogenesis, not SERT blockade.",
+      "A is true: Berman and colleagues and Zarate and colleagues showed rapid antidepressant effects within hours of an infusion, and intranasal esketamine is approved for treatment-resistant depression. R is false: ketamine is an NMDA receptor antagonist. Its proposed mechanism involves a glutamate surge, AMPA receptor activation, BDNF release and mTOR-dependent synaptogenesis, not SERT blockade.",
     module: "antidepressants",
     ref: "Zarate et al. 2006, Arch Gen Psychiatry; Duman & Aghajanian 2012",
   }),
@@ -782,11 +782,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Reduced hepatic and renal clearance and a higher proportion of body fat prolong the action of many drugs, and the brain is more sensitive",
       "They absorb drugs much faster from the gut",
       "They have more cytochrome P450 enzymes",
-      "Drugs cannot cross the blood–brain barrier in old age",
+      "Drugs cannot cross the blood-brain barrier in old age",
     ],
     answer: 0,
     explanation:
-      "Ageing reduces liver blood flow, some metabolic capacity and kidney function (lithium, amisulpride), increases body fat (which prolongs lipophilic drugs such as diazepam) and increases pharmacodynamic sensitivity (falls, delirium, anticholinergic effects). Hence 'start low, go slow'. Gut absorption is little changed or slightly slower. Enzyme activity does not increase. The blood–brain barrier may be leakier, not impermeable.",
+      "Ageing reduces liver blood flow, some metabolic capacity and kidney function (lithium, amisulpride), increases body fat (which prolongs lipophilic drugs such as diazepam) and increases pharmacodynamic sensitivity (falls, delirium, anticholinergic effects). Hence 'start low, go slow'. Gut absorption is little changed or slightly slower. Enzyme activity does not increase. The blood-brain barrier may be leakier, not impermeable.",
     module: "brain",
     ref: "Kaplan & Sadock's Synopsis, geriatric psychopharmacology",
   }),
@@ -810,7 +810,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "All four pairings are correct. Disulfiram causes acetaldehyde accumulation and an aversive reaction. Naltrexone reduces heavy drinking by blocking opioid-mediated reward. Acamprosate is thought to restore glutamate–GABA balance and supports abstinence. Long-acting benzodiazepines such as chlordiazepoxide prevent withdrawal seizures and delirium tremens through cross-tolerance with alcohol.",
+      "All four pairings are correct. Disulfiram causes acetaldehyde accumulation and an aversive reaction. Naltrexone reduces heavy drinking by blocking opioid-mediated reward. Acamprosate is thought to restore glutamate-GABA balance and supports abstinence. Long-acting benzodiazepines such as chlordiazepoxide prevent withdrawal seizures and delirium tremens through cross-tolerance with alcohol.",
     module: "substance",
     ref: "Stahl, ch. 13; Maudsley Prescribing Guidelines",
   }),
@@ -819,7 +819,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The blood–brain barrier allows a drug to enter the brain more easily when the drug is:",
+    stem: "The blood-brain barrier allows a drug to enter the brain more easily when the drug is:",
     options: [
       "Strongly bound to plasma proteins",
       "Large and highly water-soluble",
@@ -846,7 +846,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "When alcohol dehydrogenase is saturated, the liver removes roughly a fixed amount (about one standard drink, 7–10 g, per hour) regardless of concentration, so levels fall linearly and the half-life concept does not apply. Constant-fraction elimination is first-order kinetics, which applies to most drugs. Alcohol is mostly metabolised, not excreted unchanged. Blood alcohol is easily measured. Phenytoin and high-dose aspirin also show saturable kinetics.",
+      "When alcohol dehydrogenase is saturated, the liver removes roughly a fixed amount (about one standard drink, 7 to 10 g, per hour) regardless of concentration, so levels fall linearly and the half-life concept does not apply. Constant-fraction elimination is first-order kinetics, which applies to most drugs. Alcohol is mostly metabolised, not excreted unchanged. Blood alcohol is easily measured. Phenytoin and high-dose aspirin also show saturable kinetics.",
     module: "substance",
     ref: "Standard pharmacology texts (Katzung, Rang & Dale)",
   }),
@@ -950,7 +950,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A and B are correct: THC partially activates CB1, which is highly expressed in memory, motor and reward areas, explaining effects on memory, coordination and appetite. D is correct: studies such as Di Forti et al. (2019) associate daily high-potency use with raised psychosis risk, especially with early onset. C is wrong: THC is the main intoxicant; CBD is not intoxicating in the same way and may even have antipsychotic and anticonvulsant properties.",
+      "A and B are correct: THC partially activates CB1, which is highly expressed in memory, motor and reward areas, explaining effects on memory, coordination and appetite. D is correct: studies such as Di Forti and colleagues associate daily high-potency use with raised psychosis risk, especially with early onset. C is wrong: THC is the main intoxicant; CBD is not intoxicating in the same way and may even have antipsychotic and anticonvulsant properties.",
     module: "substance",
     ref: "Di Forti et al. 2019, Lancet Psychiatry; Stahl, ch. 13",
   }),
@@ -986,7 +986,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Carbamazepine induces CYP3A4 (and other enzymes), including those that break it down, so its half-life falls from about 25–65 hours to about 12–17 hours over two to four weeks and doses often need increasing. It also induces the metabolism of many other drugs (oral contraceptives, other anticonvulsants, many antipsychotics), so it has many interactions. It is metabolised rather than excreted unchanged.",
+      "Carbamazepine induces CYP3A4 (and other enzymes), including those that break it down, so its half-life falls from about 25 to 65 hours to about 12 to 17 hours over two to four weeks and doses often need increasing. It also induces the metabolism of many other drugs (oral contraceptives, other anticonvulsants, many antipsychotics), so it has many interactions. It is metabolised rather than excreted unchanged.",
     module: "stabilisers",
     ref: "Stahl's Prescriber's Guide: carbamazepine",
   }),

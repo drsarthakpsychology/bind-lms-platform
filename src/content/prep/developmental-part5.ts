@@ -34,7 +34,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Hall's two-volume Adolescence (1904) described adolescence as inevitably turbulent, a recapitulation of a stormy stage in human evolution. Margaret Mead's Coming of Age in Samoa (1928) challenged its universality. Piaget described formal operations. Erikson described the identity crisis but not as a universal 'storm'.",
+      "Hall's two-volume work on adolescence described adolescence as inevitably turbulent, a recapitulation of a stormy stage in human evolution. Margaret Mead's fieldwork in Samoa challenged its universality. Piaget described formal operations. Erikson described the identity crisis but not as a universal 'storm'.",
     ref: "Hall 1904; Arnett 1999, Am Psychol",
   }),
   d({
@@ -43,7 +43,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "statement",
-    stem: "Arnett's (1999) review 'Adolescent storm and stress, reconsidered' concluded that:",
+    stem: "Arnett's review 'Adolescent storm and stress, reconsidered' concluded that:",
     statements: [
       "A. Conflict with parents, mood disruption and risk behaviour are more common in adolescence than at other ages.",
       "B. Storm and stress is not universal; many adolescents do not experience it, and it varies by culture.",
@@ -80,7 +80,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Authoritative parents are warm and responsive but set clear limits and explain them (iv); this style is linked to the best outcomes in many Western studies. Authoritarian parents are controlling and cold (ii). Permissive parents are warm but set few demands (i). Neglectful parents are neither warm nor demanding (iii), the style linked to the poorest outcomes. Maccoby and Martin (1983) added the fourth style. The other codes swap authoritative and authoritarian, authoritarian and permissive, or permissive and neglectful.",
+      "Authoritative parents are warm and responsive but set clear limits and explain them (iv); this style is linked to the best outcomes in many Western studies. Authoritarian parents are controlling and cold (ii). Permissive parents are warm but set few demands (i). Neglectful parents are neither warm nor demanding (iii), the style linked to the poorest outcomes. Maccoby and Martin added the fourth style. The other codes swap authoritative and authoritarian, authoritarian and permissive, or permissive and neglectful.",
     ref: "Baumrind 1971; Maccoby & Martin 1983",
   }),
   d({
@@ -97,7 +97,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Chao (1994) argued that Chinese parental control reflects 'guan' (to govern and to care for) and 'chiao shun' (training), so controlling parenting may not carry the same meaning or effects as in Western families; Steinberg, Dornbusch and others found authoritative parenting predicted achievement less strongly for Asian-American students. The meaning of a parenting practice depends on cultural context.",
+      "Both are true and R explains A. Chao argued that Chinese parental control reflects 'guan' (to govern and to care for) and 'chiao shun' (training), so controlling parenting may not carry the same meaning or effects as in Western families; Steinberg, Dornbusch and others found authoritative parenting predicted achievement less strongly for Asian-American students. The meaning of a parenting practice depends on cultural context.",
     ref: "Chao 1994, Child Dev; Steinberg et al. 1992",
   }),
   d({
@@ -115,7 +115,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Reward sensitivity rises sharply around puberty, peaking in mid-adolescence, while self-regulation matures gradually into the mid-20s; the gap creates a window of vulnerability, especially with peers present (Gardner and Steinberg's 2005 driving game showed adolescents took more risks with peers watching). Reward sensitivity increases rather than disappears. The prefrontal cortex is not mature by 12. Dopaminergic reward signalling is heightened, not lowered.",
+      "Reward sensitivity rises sharply around puberty, peaking in mid-adolescence, while self-regulation matures gradually into the mid-20s; the gap creates a window of vulnerability, especially with peers present (in Gardner and Steinberg's driving-game study, adolescents took more risks with peers watching). Reward sensitivity increases rather than disappears. The prefrontal cortex is not mature by 12. Dopaminergic reward signalling is heightened, not lowered.",
     ref: "Steinberg 2008, Dev Rev; Gardner & Steinberg 2005",
   }),
   d({
@@ -133,7 +133,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Girls' growth spurt typically begins around 9–10 and peaks around 11–12; boys' begins around 11–12 and peaks around 13–14. This is why many girls are briefly taller than boys of the same age in early adolescence. The timing varies with nutrition and genetics, and there has been a secular trend toward earlier puberty.",
+      "Girls' growth spurt typically begins around 9 to 10 and peaks around 11 to 12; boys' begins around 11 to 12 and peaks around 13 to 14. This is why many girls are briefly taller than boys of the same age in early adolescence. The timing varies with nutrition and genetics, and there has been a secular trend toward earlier puberty.",
     ref: "Santrock, ch. 11",
   }),
   d({
@@ -169,7 +169,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Arnett (2000) proposed 'emerging adulthood' because many 18–25-year-olds in societies with long education and late marriage do not see themselves as fully adult; its features are identity exploration, instability, self-focus, feeling in-between and a sense of possibilities. The other terms refer to different age periods.",
+      "Arnett proposed 'emerging adulthood' because many 18 to 25-year-olds in societies with long education and late marriage do not see themselves as fully adult; its features are identity exploration, instability, self-focus, feeling in-between and a sense of possibilities. The other terms refer to different age periods.",
     ref: "Arnett 2000, Am Psychol",
   }),
   d({
@@ -189,7 +189,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Gardner and Steinberg (2005) and Chein et al. (2011) showed that peers specifically increased adolescents' risky choices and reward-region activity, consistent with the dual systems model. Adolescents alone took similar risks to adults, so they can perceive risk. Peers increased, not reduced, risk-taking. Adults were the least affected by peers.",
+      "Gardner and Steinberg and Chein and colleagues showed that peers specifically increased adolescents' risky choices and reward-region activity, consistent with the dual systems model. Adolescents alone took similar risks to adults, so they can perceive risk. Peers increased, not reduced, risk-taking. Adults were the least affected by peers.",
     ref: "Gardner & Steinberg 2005, Dev Psychol; Chein et al. 2011, Dev Sci",
   }),
   d({
@@ -217,16 +217,16 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Daniel Levinson's The Seasons of a Man's Life (1978) proposed that men's adult lives:",
+    stem: "From interviews with men in midlife, Daniel Levinson proposed that men's adult lives:",
     options: [
       "Are fully determined by early childhood",
       "Show no change after age 20",
       "Follow Freud's psychosexual stages",
-      "Alternate between stable structure-building periods and transitional periods, including a midlife transition around 40–45",
+      "Alternate between stable structure-building periods and transitional periods, including a midlife transition around 40 to 45",
     ],
     answer: 3,
     explanation:
-      "From interviews with 40 men aged 35–45, Levinson described eras and transitions (early adult transition at about 17–22, the age-30 transition, the midlife transition at about 40–45), with themes of 'the Dream' and the mentor relationship. He later studied women (The Seasons of a Woman's Life, 1996). His model stresses ongoing adult change, not stability, early determination or Freudian stages.",
+      "From interviews with 40 men aged 35 to 45, Levinson described eras and transitions (early adult transition at about 17 to 22, the age-30 transition, the midlife transition at about 40 to 45), with themes of 'the Dream' and the mentor relationship. He later studied women (in a later companion study). His model stresses ongoing adult change, not stability, early determination or Freudian stages.",
     ref: "Levinson 1978",
   }),
   d({
@@ -243,7 +243,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. McCrae and Costa found no age peak in turmoil scores at midlife, and the MIDUS survey found that only about 10–20% reported a crisis, often linked to specific events rather than age. Because traits are fairly stable and wellbeing is often good in midlife, a universal age-linked crisis is not expected. The term 'midlife crisis' was coined by Elliott Jaques (1965).",
+      "Both are true and R explains A. McCrae and Costa found no age peak in turmoil scores at midlife, and the MIDUS survey found that only about 10 to 20% reported a crisis, often linked to specific events rather than age. Because traits are fairly stable and wellbeing is often good in midlife, a universal age-linked crisis is not expected. The term 'midlife crisis' was coined by Elliott Jaques.",
     ref: "Costa & McCrae 1980; Lachman 2004, Annu Rev Psychol",
   }),
   d({
@@ -288,7 +288,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Vaillant directed the Grant Study and showed defences mature with age; he added 'career consolidation' and 'keeper of the meaning' to Erikson's stages (iii). Havighurst described developmental tasks such as selecting a mate or adjusting to retirement (i). Super proposed career stages: growth, exploration, establishment, maintenance and disengagement (iv). Jaques coined 'midlife crisis' (1965) (ii). The other codes swap these.",
+      "Vaillant directed the Grant Study and showed defences mature with age; he added 'career consolidation' and 'keeper of the meaning' to Erikson's stages (iii). Havighurst described developmental tasks such as selecting a mate or adjusting to retirement (i). Super proposed career stages: growth, exploration, establishment, maintenance and disengagement (iv). Jaques coined 'midlife crisis' (ii). The other codes swap these.",
     ref: "Vaillant 1977; Havighurst 1953; Super 1980; Jaques 1965",
   }),
   d({
@@ -306,7 +306,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Studies (for example Gorchoff, John and Helson, 2008) found marital satisfaction often rises after children leave, partly because couples have more time together; distress is more likely when parents' identity was centred on parenting or when children leave 'off time'. The other options describe a universal negative 'syndrome' that research does not support.",
+      "Studies found marital satisfaction often rises after children leave, partly because couples have more time together; distress is more likely when parents' identity was centred on parenting or when children leave 'off time'. The other options describe a universal negative 'syndrome' that research does not support.",
     ref: "Gorchoff, John & Helson 2008, Psychol Sci",
   }),
   // ── Ageing theories ────────────────────────────────────────────────────────
@@ -334,7 +334,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Disengagement theory (Cumming and Henry, 1961) saw mutual withdrawal as normal (iii). Activity theory (associated with Havighurst) holds that staying active and engaged promotes wellbeing (ii). Continuity theory (Atchley) emphasises preserving internal and external continuity (iv). Socioemotional selectivity theory (Carstensen) holds that a limited future time perspective shifts goals toward emotional meaning (i). The other codes swap these.",
+      "Disengagement theory saw mutual withdrawal as normal (iii). Activity theory (associated with Havighurst) holds that staying active and engaged promotes wellbeing (ii). Continuity theory (described by Atchley) emphasises preserving internal and external continuity (iv). Socioemotional selectivity theory (described by Carstensen) holds that a limited future time perspective shifts goals toward emotional meaning (i). The other codes swap these.",
     ref: "Cumming & Henry 1961; Atchley 1989; Carstensen 1992",
   }),
   d({
@@ -378,7 +378,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Rowe and Kahn's (1997) model of 'successful ageing' has three components:",
+    stem: "Rowe and Kahn's model of 'successful ageing' has three components:",
     options: [
       "Integrity, wisdom and despair",
       "Wealth, fame and longevity",
@@ -398,7 +398,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Which of the following are biological theories of ageing?",
     statements: [
-      "A. The Hayflick limit: cultured human cells divide only about 40–60 times",
+      "A. The Hayflick limit: cultured human cells divide only about 40 to 60 times",
       "B. Telomere shortening with each cell division",
       "C. Free-radical (oxidative damage) theory",
       "D. Disengagement theory",
@@ -411,7 +411,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: Hayflick (1961) found normal cells stop dividing after a limited number of doublings. B: telomeres (protective chromosome caps) shorten with each division, linked to cellular senescence (Blackburn, Greider and Szostak, Nobel 2009). C: Harman's (1956) free-radical theory proposes cumulative oxidative damage. D is a psychosocial theory about withdrawal from roles, not a biological mechanism.",
+      "A: Hayflick found normal cells stop dividing after a limited number of doublings. B: telomeres (protective chromosome caps) shorten with each division, linked to cellular senescence. C: Harman's free-radical theory proposes cumulative oxidative damage. D is a psychosocial theory about withdrawal from roles, not a biological mechanism.",
     ref: "Hayflick 1965; Harman 1956",
   }),
   d({
@@ -422,14 +422,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Disengagement theory of ageing was proposed by:",
     options: [
-      "Rowe and Kahn (1997)",
-      "Cumming and Henry (1961)",
-      "Laura Carstensen (1992)",
-      "Paul Baltes (1987)",
+      "Rowe and Kahn",
+      "Cumming and Henry",
+      "Laura Carstensen",
+      "Paul Baltes",
     ],
     answer: 1,
     explanation:
-      "Elaine Cumming and William Henry proposed in Growing Old (1961) that ageing involves inevitable mutual withdrawal between the individual and society. Rowe and Kahn proposed successful ageing. Carstensen developed socioemotional selectivity theory. Baltes set out the lifespan perspective and, with Margret Baltes, the SOC model.",
+      "Elaine Cumming and William Henry proposed in 1961 that ageing involves inevitable mutual withdrawal between the individual and society. Rowe and Kahn proposed successful ageing. Carstensen developed socioemotional selectivity theory. Baltes set out the lifespan perspective and, with Margret Baltes, the SOC model.",
     ref: "Cumming & Henry 1961",
   }),
   d({
@@ -490,7 +490,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Salthouse (1996) argued that generalised slowing underlies many age-related deficits (iii). Hasher and Zacks (1988) proposed that older adults have weaker inhibition of irrelevant information (iv). Stern described cognitive reserve: education and mental activity let some people tolerate more brain pathology before symptoms (i). Baltes distinguished the biologically based mechanics (declining) from the knowledge-based pragmatics (maintained) (ii). The other codes swap these.",
+      "Salthouse argued that generalised slowing underlies many age-related deficits (iii). Hasher and Zacks proposed that older adults have weaker inhibition of irrelevant information (iv). Stern described cognitive reserve: education and mental activity let some people tolerate more brain pathology before symptoms (i). Baltes distinguished the biologically based mechanics (declining) from the knowledge-based pragmatics (maintained) (ii). The other codes swap these.",
     ref: "Salthouse 1996, Psychol Rev; Hasher & Zacks 1988; Stern 2002",
   }),
   d({
@@ -499,7 +499,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "The Nun Study (Snowdon and colleagues) is known for finding that:",
+    stem: "The Nun Study (described by Snowdon and colleagues) is known for finding that:",
     options: [
       "Nuns never develop dementia",
       "Low 'idea density' in autobiographies written by nuns in their early 20s predicted Alzheimer's disease and cognitive decline decades later",
@@ -541,7 +541,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "The 'Berlin wisdom paradigm' (Baltes and Staudinger) defines wisdom as:",
+    stem: "The 'Berlin wisdom paradigm' (described by Baltes and Staudinger) defines wisdom as:",
     options: [
       "The ability to memorise long lists",
       "High scores on fluid intelligence tests",
@@ -567,7 +567,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: processing and response speed decline steadily across adulthood (Salthouse). R is false: crystallised intelligence is maintained or increases into the 60s or 70s; it is fluid intelligence and speed that decline. Even if R were true, it would not explain slowing on simple reaction-time tasks.",
+      "A is true: processing and response speed decline steadily across adulthood (described by Salthouse). R is false: crystallised intelligence is maintained or increases into the 60s or 70s; it is fluid intelligence and speed that decline. Even if R were true, it would not explain slowing on simple reaction-time tasks.",
     ref: "Salthouse 1996",
   }),
   // ── Death, dying and grief ─────────────────────────────────────────────────
@@ -577,7 +577,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "The correct order of Kübler-Ross's five stages, as described in On Death and Dying (1969), is:",
+    stem: "The correct order of Kübler-Ross's five stages, as she described them from interviews with dying patients, is:",
     options: [
       "Denial, anger, bargaining, depression, acceptance",
       "Anger, denial, depression, bargaining, acceptance",
@@ -604,7 +604,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The model (1999) describes alternation between grief work (crying, reminiscing) and restoration tasks (managing finances, new identity), including taking 'time off' from grief; rigid focus on either is linked to poorer outcomes. It rejects fixed stages. It is compatible with 'continuing bonds' rather than severing them. Constant avoidance is one of the problematic extremes.",
+      "The model describes alternation between grief work (crying, reminiscing) and restoration tasks (managing finances, new identity), including taking 'time off' from grief; rigid focus on either is linked to poorer outcomes. It rejects fixed stages. It is compatible with 'continuing bonds' rather than severing them. Constant avoidance is one of the problematic extremes.",
     ref: "Stroebe & Schut 1999, Death Stud",
   }),
   d({
@@ -640,7 +640,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "DSM-5-TR (2022) added prolonged grief disorder, requiring at least 12 months since the loss for adults (6 months for children and adolescents), with intense yearning or preoccupation most days and other symptoms such as identity disruption, disbelief, avoidance, intense emotional pain and numbness. ICD-11 uses at least 6 months. Two weeks is the duration for a major depressive episode. Five years is not a criterion.",
+      "DSM-5-TR added prolonged grief disorder, requiring at least 12 months since the loss for adults (6 months for children and adolescents), with intense yearning or preoccupation most days and other symptoms such as identity disruption, disbelief, avoidance, intense emotional pain and numbness. ICD-11 uses at least 6 months. Two weeks is the duration for a major depressive episode. Five years is not a criterion.",
     module: "trauma",
     ref: "DSM-5-TR (APA 2022); ICD-11 6B42",
   }),
@@ -650,7 +650,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about the 'continuing bonds' view of grief (Klass, Silverman and Nickman, 1996) are correct?",
+    stem: "Which statements about the 'continuing bonds' view of grief are correct?",
     statements: [
       "A. Maintaining an inner relationship with the deceased can be a normal, adaptive part of grieving.",
       "B. It challenged the idea that healthy grief requires 'letting go' or decathexis.",
@@ -665,7 +665,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A, B and C are correct: Klass and colleagues argued, against Freud's 'Mourning and Melancholia' emphasis on withdrawing libido, that bonds often continue in healthy ways, and cultural rituals of remembrance support them. D is wrong: whether a bond helps depends on its form (for example comforting memories versus belief that the person will return).",
+      "A, B and C are correct: Klass and colleagues argued, against Freud's emphasis on withdrawing libido, that bonds often continue in healthy ways, and cultural rituals of remembrance support them. D is wrong: whether a bond helps depends on its form (for example comforting memories versus belief that the person will return).",
     ref: "Klass, Silverman & Nickman 1996",
   }),
   d({
@@ -682,7 +682,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Butler (1963) challenged the view that reminiscence in older people was a sign of decline, describing life review as a universal process prompted by awareness of approaching death, which can promote integrity (in Erikson's terms) but sometimes leads to despair. It underlies reminiscence and life-review therapies.",
+      "Both are true and R explains A. Butler challenged the view that reminiscence in older people was a sign of decline, describing life review as a universal process prompted by awareness of approaching death, which can promote integrity (in Erikson's terms) but sometimes leads to despair. It underlies reminiscence and life-review therapies.",
     ref: "Butler 1963, Psychiatry",
   }),
   // ── Lifespan perspective and ageing in India ──────────────────────────────
@@ -692,7 +692,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "statement",
-    stem: "Paul Baltes' (1987) lifespan perspective holds that development is:",
+    stem: "Paul Baltes' lifespan perspective holds that development is:",
     statements: [
       "A. Lifelong",
       "B. Multidimensional and multidirectional, involving both gains and losses",
@@ -794,7 +794,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The 'sandwich generation' is squeezed between caring for dependent children and ageing parents, with risks of stress and role strain. The 'lost generation' refers to those who came of age during the First World War. 'Baby boomers' is a birth cohort (about 1946–64). 'Empty nesters' are parents whose children have left home.",
+      "The 'sandwich generation' is squeezed between caring for dependent children and ageing parents, with risks of stress and role strain. The 'lost generation' refers to those who came of age during the First World War. 'Baby boomers' is a birth cohort (about 1946 to 64). 'Empty nesters' are parents whose children have left home.",
     ref: "Santrock, ch. 16",
   }),
   d({
@@ -829,7 +829,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: Vaillant found that defences matured from adolescence to midlife and that mature defences predicted better health, relationships and career success (Adaptation to Life, 1977; Aging Well, 2002). R is false: the Grant Study followed 268 male Harvard sophomores (from 1938–1944) into old age; Vaillant also studied the Glueck inner-city men and the Terman women.",
+      "A is true: Vaillant found that defences matured from adolescence to midlife and that mature defences predicted better health, relationships and career success. R is false: the Grant Study followed 268 male Harvard sophomores (from 1938 to 1944) into old age; Vaillant also studied the Glueck inner-city men and the Terman women.",
     ref: "Vaillant 1977, 2002",
   }),
   d({
@@ -838,7 +838,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Which lifestyle factor has the strongest and most consistent evidence for reducing the risk of cognitive decline and dementia, according to the 2020 Lancet Commission on dementia prevention?",
+    stem: "Which lifestyle factor has the strongest and most consistent evidence for reducing the risk of cognitive decline and dementia, according to the 2020 international expert commission on dementia prevention?",
     options: [
       "Avoiding all social contact to reduce infection",
       "Taking ginkgo biloba supplements",
@@ -847,7 +847,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Livingston et al. (2020) identified 12 modifiable risk factors (less education, hearing loss, traumatic brain injury, hypertension, alcohol, obesity, smoking, depression, social isolation, physical inactivity, diabetes and air pollution) accounting for about 40% of dementia; the 2024 update added untreated vision loss and high LDL cholesterol (14 factors, about 45%). Trials of ginkgo have not shown benefit, single brain-training games show limited transfer, and isolation is itself a risk factor.",
+      "Livingston and colleagues identified 12 modifiable risk factors (less education, hearing loss, traumatic brain injury, hypertension, alcohol, obesity, smoking, depression, social isolation, physical inactivity, diabetes and air pollution) accounting for about 40% of dementia; the 2024 update added untreated vision loss and high LDL cholesterol (14 factors, about 45%). Trials of ginkgo have not shown benefit, single brain-training games show limited transfer, and isolation is itself a risk factor.",
     module: "neurocognitive",
     ref: "Livingston et al. 2020, 2024, Lancet",
   }),
@@ -857,7 +857,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Margaret Mead's Coming of Age in Samoa (1928) is important in developmental psychology because it:",
+    stem: "Margaret Mead's 1928 account of adolescence in Samoa is important in developmental psychology because it:",
     options: [
       "Argued that adolescent turmoil is shaped by culture rather than being biologically inevitable",
       "Proved that puberty does not occur in Samoa",
@@ -866,7 +866,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Mead reported that Samoan adolescence was relatively calm and attributed this to cultural factors, challenging Hall's biological 'storm and stress'. Freeman (1983) later disputed her fieldwork, but the book remains a landmark argument for cultural influence. It did not claim puberty was absent, and it has nothing to do with the Strange Situation or longitudinal ageing studies.",
+      "Mead reported that Samoan adolescence was relatively calm and attributed this to cultural factors, challenging Hall's biological 'storm and stress'. Freeman later disputed her fieldwork, but the book remains a landmark argument for cultural influence. It did not claim puberty was absent, and it has nothing to do with the Strange Situation or longitudinal ageing studies.",
     ref: "Mead 1928; Freeman 1983",
   }),
   d({
@@ -875,7 +875,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 4,
     type: "statement",
-    stem: "Which statements about brain development in adolescence are supported by longitudinal MRI research (for example Giedd and colleagues)?",
+    stem: "Which statements about brain development in adolescence are supported by longitudinal MRI research (for example the work of Giedd and colleagues)?",
     statements: [
       "A. Cortical grey matter volume peaks in late childhood or early adolescence and then declines, partly reflecting synaptic pruning.",
       "B. White matter volume and integrity increase steadily into the 20s, reflecting myelination.",
@@ -890,7 +890,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Giedd et al. (1999) and Gogtay et al. (2004) found an inverted-U for grey matter (peaking around 11 in girls and 12 in boys for frontal cortex), steady white matter growth, and a back-to-front sequence with prefrontal cortex maturing last. D is wrong: maturation continues into the mid-20s.",
+      "Giedd and colleagues and Gogtay and colleagues found an inverted-U for grey matter (peaking around 11 in girls and 12 in boys for frontal cortex), steady white matter growth, and a back-to-front sequence with prefrontal cortex maturing last. D is wrong: maturation continues into the mid-20s.",
     ref: "Giedd et al. 1999, Nat Neurosci; Gogtay et al. 2004, PNAS",
   }),
   d({
@@ -908,7 +908,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In Western populations natural menopause occurs on average around 51, and Indian studies often report a somewhat earlier mean (about 46–47), so 'about 50' is the best general answer. Menopause is defined as 12 months without menstruation. 30 would be premature ovarian insufficiency, 65 is far later than typical, and the age varies across populations, so a single figure of 40 is wrong.",
+      "In Western populations natural menopause occurs on average around 51, and Indian studies often report a somewhat earlier mean (about 46 to 47), so 'about 50' is the best general answer. Menopause is defined as 12 months without menstruation. 30 would be premature ovarian insufficiency, 65 is far later than typical, and the age varies across populations, so a single figure of 40 is wrong.",
     ref: "Santrock, ch. 15; Ahuja et al. 2016 (Indian menopause age review)",
   }),
   d({
@@ -917,7 +917,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Research on personality change across adulthood (for example Roberts, Walton and Viechtbauer's 2006 meta-analysis) shows that, on average:",
+    stem: "Meta-analyses of personality change across adulthood show that, on average:",
     options: [
       "All traits decline in old age",
       "Personality is completely fixed after age 30",
@@ -953,7 +953,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Ageism (Butler's term, 1969) is age-based prejudice (ii). Primary ageing is universal, intrinsic deterioration (iv). Secondary ageing results from disease and lifestyle and is often controllable (i). Terminal decline (Kleemeier, 1962) is accelerated decline in the last years of life, often a better predictor of function than chronological age (iii). The other codes swap primary and secondary ageing, ageism and primary ageing, or secondary ageing and terminal decline.",
+      "Ageism (a term coined by Butler) is age-based prejudice (ii). Primary ageing is universal, intrinsic deterioration (iv). Secondary ageing results from disease and lifestyle and is often controllable (i). Terminal decline is accelerated decline in the last years of life, often a better predictor of function than chronological age (iii). The other codes swap primary and secondary ageing, ageism and primary ageing, or secondary ageing and terminal decline.",
     ref: "Butler 1969; Kleemeier 1962; Papalia & Feldman, ch. 17",
   }),
   d({
@@ -970,7 +970,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Conformity to peers, especially for antisocial behaviour, peaks around 14 (Berndt, 1979; Steinberg and Monahan, 2007, on resistance to peer influence), as time with peers increases and social-evaluative sensitivity rises with puberty-linked changes in social brain networks.",
+      "Both are true and R explains A. Conformity to peers, especially for antisocial behaviour, peaks around 14 (as shown in studies by Berndt and by Steinberg and Monahan), as time with peers increases and social-evaluative sensitivity rises with puberty-linked changes in social brain networks.",
     ref: "Steinberg & Monahan 2007, Dev Psychol",
   }),
   d({
@@ -988,7 +988,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "LASI, led by the International Institute for Population Sciences (Mumbai) with Harvard and USC, surveyed over 70,000 people aged 45+ and their spouses in its first wave (2017–18), across all states and union territories, providing data on chronic disease, disability, cognition, depression, social support and finances. It is not a child language study, a drug trial or a twin study.",
+      "LASI, led by the International Institute for Population Sciences (Mumbai) with Harvard and USC, surveyed over 70,000 people aged 45+ and their spouses in its first wave (2017 to 18), across all states and union territories, providing data on chronic disease, disability, cognition, depression, social support and finances. It is not a child language study, a drug trial or a twin study.",
     module: undefined,
     ref: "LASI Wave 1 India Report (IIPS 2020)",
   }),
@@ -1006,7 +1006,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Cabeza's (2002) HAROLD model (Hemispheric Asymmetry Reduction in OLDer adults) describes bilateral recruitment; the finding that high-performing older adults show more bilateral activity than low performers (Cabeza et al., 2002) supports a compensation account rather than mere dedifferentiation. The scaffolding theory of ageing (Park and Reuter-Lorenz, 2009) extends this idea.",
+      "Both are true and R explains A. Cabeza's HAROLD model (Hemispheric Asymmetry Reduction in OLDer adults) describes bilateral recruitment; the finding that high-performing older adults show more bilateral activity than low performers supports a compensation account rather than mere dedifferentiation. The scaffolding theory of ageing extends this idea.",
     ref: "Cabeza 2002, Psychol Aging; Park & Reuter-Lorenz 2009",
   }),
 ];

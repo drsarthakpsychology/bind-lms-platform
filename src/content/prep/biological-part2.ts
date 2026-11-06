@@ -92,7 +92,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Fluent speech with good comprehension and poor repetition is conduction aphasia, classically from disconnection of Wernicke's and Broca's areas through the arcuate fasciculus (Wernicke–Geschwind model). Corpus callosum damage causes interhemispheric disconnection signs, not a repetition deficit. A left inferior frontal lesion gives non-fluent Broca's aphasia. The right angular gyrus is not a language area in most right-handers.",
+      "Fluent speech with good comprehension and poor repetition is conduction aphasia, classically from disconnection of Wernicke's and Broca's areas through the arcuate fasciculus (Wernicke-Geschwind model). Corpus callosum damage causes interhemispheric disconnection signs, not a repetition deficit. A left inferior frontal lesion gives non-fluent Broca's aphasia. The right angular gyrus is not a language area in most right-handers.",
     ref: "Kolb & Whishaw, ch. 19",
   }),
   b({
@@ -135,11 +135,11 @@ export const QUESTIONS: PrepQuestion[] = [
     difficulty: 3,
     type: "statement",
     stem: "Gerstmann syndrome, linked to the left angular gyrus, includes which of the following?",
-    statements: ["A. Finger agnosia", "B. Left–right disorientation", "C. Acalculia", "D. Agraphia", "E. Prosopagnosia"],
+    statements: ["A. Finger agnosia", "B. Left-right disorientation", "C. Acalculia", "D. Agraphia", "E. Prosopagnosia"],
     options: ["A, B and E only", "A, B, C and D only", "C, D and E only", "A, B, C, D and E"],
     answer: 1,
     explanation:
-      "Gerstmann's tetrad is finger agnosia, left–right disorientation, acalculia and agraphia, from a left (dominant) angular gyrus lesion. Prosopagnosia, the inability to recognise faces, follows lesions of the fusiform gyrus (usually right or bilateral occipitotemporal), so E is not part of the syndrome.",
+      "Gerstmann's tetrad is finger agnosia, left-right disorientation, acalculia and agraphia, from a left (dominant) angular gyrus lesion. Prosopagnosia, the inability to recognise faces, follows lesions of the fusiform gyrus (usually right or bilateral occipitotemporal), so E is not part of the syndrome.",
     ref: "Kolb & Whishaw, ch. 14",
   }),
   b({
@@ -156,7 +156,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "The tamping iron destroyed much of the left (and possibly part of the right) ventromedial and orbital frontal cortex. Gage became impulsive, profane and unreliable while his intellect and movement were largely spared, the classic picture of orbitofrontal disinhibition (Harlow's report; Damasio's reconstruction, 1994). Occipital damage affects vision. Hippocampal damage causes amnesia. Primary motor cortex damage causes weakness, which Gage did not have.",
+      "The tamping iron destroyed much of the left (and possibly part of the right) ventromedial and orbital frontal cortex. Gage became impulsive, profane and unreliable while his intellect and movement were largely spared, the classic picture of orbitofrontal disinhibition (as described by his physician, Harlow, and reconstructed from the skull much later by the Damasios). Occipital damage affects vision. Hippocampal damage causes amnesia. Primary motor cortex damage causes weakness, which Gage did not have.",
     ref: "Damasio et al. 1994, Science; Kolb & Whishaw, ch. 16",
   }),
   b({
@@ -176,7 +176,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: ["A-iii, B-i, C-ii", "A-i, B-iii, C-ii", "A-iii, B-ii, C-i", "A-ii, B-i, C-iii"],
     answer: 0,
     explanation:
-      "Dorsolateral damage gives the 'dysexecutive' picture: poor planning, rigid thinking and perseveration on the Wisconsin Card Sorting Test (iii). Orbitofrontal damage gives disinhibition and poor social judgement (i). Medial frontal and anterior cingulate damage gives apathy and loss of initiative, up to akinetic mutism (ii). The distractor codes swap these three classical syndromes (Cummings, 1993).",
+      "Dorsolateral damage gives the 'dysexecutive' picture: poor planning, rigid thinking and perseveration on the Wisconsin Card Sorting Test (iii). Orbitofrontal damage gives disinhibition and poor social judgement (i). Medial frontal and anterior cingulate damage gives apathy and loss of initiative, up to akinetic mutism (ii). The distractor codes swap these three classical syndromes.",
     ref: "Cummings 1993, Arch Neurol; Kaplan & Sadock's Synopsis",
   }),
   b({
@@ -193,7 +193,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Ungerleider and Mishkin (1982) described a ventral stream to inferotemporal cortex for object identity and a dorsal stream to posterior parietal cortex for spatial location; Milner and Goodale reframed the dorsal stream as 'vision for action'. Option 2 reverses them. The frontal lobe and cerebellum are not the targets of these cortical streams. The thalamus (LGN) sends input to V1; it is not where the streams end.",
+      "Ungerleider and Mishkin described a ventral stream to inferotemporal cortex for object identity and a dorsal stream to posterior parietal cortex for spatial location; Milner and Goodale reframed the dorsal stream as 'vision for action'. Option 2 reverses them. The frontal lobe and cerebellum are not the targets of these cortical streams. The thalamus (LGN) sends input to V1; it is not where the streams end.",
     ref: "Goldstein, Sensation and Perception, ch. 4",
   }),
   b({
@@ -219,7 +219,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Face blindness follows fusiform face area damage (iv). Cerebral colour blindness follows V4 damage (i). Motion blindness (Zihl's patient L.M.) follows V5/MT damage (ii). Pure alexia without agraphia (Dejerine) needs a left occipital lesion plus a splenial lesion that stops right-hemisphere visual input reaching left language areas (iii); the patient can write but not read what was written. Option 1 swaps colour and motion areas; the others misplace face and reading areas.",
+      "Face blindness follows fusiform face area damage (iv). Cerebral colour blindness follows V4 damage (i). Motion blindness (Zihl's patient L.M.) follows V5/MT damage (ii). Pure alexia without agraphia (first described by Dejerine) needs a left occipital lesion plus a splenial lesion that stops right-hemisphere visual input reaching left language areas (iii); the patient can write but not read what was written. Option 1 swaps colour and motion areas; the others misplace face and reading areas.",
     ref: "Kolb & Whishaw, ch. 13",
   }),
   b({
@@ -265,7 +265,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "In correct order, the Papez circuit (1937) runs:",
+    stem: "In correct order, the Papez circuit runs:",
     options: [
       "Hippocampus → fornix → mammillary bodies → anterior thalamic nucleus → cingulate gyrus → parahippocampal/entorhinal cortex → hippocampus",
       "Amygdala → stria terminalis → hypothalamus → cingulate gyrus → amygdala",
@@ -291,7 +291,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Paul MacLean coined 'limbic system' (1952) and later proposed the 'triune brain'. Broca (1878) had earlier described 'le grand lobe limbique', the rim of cortex around the brainstem, but did not frame a functional emotion system. Papez described the emotional circuit (1937) that MacLean built on. Klüver (with Bucy) described the effects of bilateral temporal lobectomy in monkeys.",
+      "Paul MacLean coined 'limbic system' and later proposed the 'triune brain'. Broca had earlier described 'le grand lobe limbique', the rim of cortex around the brainstem, but did not frame a functional emotion system. Papez described the emotional circuit that MacLean built on. Klüver (with Bucy) described the effects of bilateral temporal lobectomy in monkeys.",
     ref: "Kalat, ch. 12",
   }),
   b({
@@ -299,12 +299,12 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "statement",
-    stem: "Which of the following are features of the Klüver–Bucy syndrome?",
+    stem: "Which of the following are features of the Klüver-Bucy syndrome?",
     statements: ["A. Hyperorality", "B. Psychic blindness (visual agnosia)", "C. Loss of fear (placidity)", "D. Hypersexuality", "E. Profound insomnia"],
     options: ["A, B and C only", "A, B, C and D only", "B, C and E only", "A, C, D and E only"],
     answer: 1,
     explanation:
-      "Bilateral anterior temporal lesions including the amygdala (Klüver and Bucy, 1939, in monkeys) produce hyperorality, psychic blindness (looking at objects without recognising their significance), tameness and loss of fear, hypersexuality, hypermetamorphosis and dietary change. Insomnia is not part of the syndrome. In humans a partial form is seen after herpes simplex encephalitis and in some frontotemporal dementia.",
+      "Bilateral anterior temporal lesions including the amygdala (first described by Klüver and Bucy in monkeys) produce hyperorality, psychic blindness (looking at objects without recognising their significance), tameness and loss of fear, hypersexuality, hypermetamorphosis and dietary change. Insomnia is not part of the syndrome. In humans a partial form is seen after herpes simplex encephalitis and in some frontotemporal dementia.",
     ref: "Kolb & Whishaw, ch. 20; Kaplan & Sadock's Synopsis",
   }),
   b({
@@ -321,7 +321,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "After removal of most of both hippocampi and adjacent cortex, H.M. could not form new declarative memories (anterograde amnesia) and had graded retrograde amnesia for some years before surgery, yet his mirror-drawing improved across days without memory of practising (Milner). His remote memories were largely intact, so 'lost all memories' is wrong. His procedural learning was preserved, the reverse of option 3. His digit span (short-term memory) was normal, the reverse of option 4.",
+      "After removal of most of both hippocampi and adjacent cortex, H.M. could not form new declarative memories (anterograde amnesia) and had graded retrograde amnesia for some years before surgery, yet his mirror-drawing improved across days without memory of practising (as Brenda Milner showed). His remote memories were largely intact, so 'lost all memories' is wrong. His procedural learning was preserved, the reverse of option 3. His digit span (short-term memory) was normal, the reverse of option 4.",
     ref: "Scoville & Milner 1957; Kolb & Whishaw, ch. 18",
   }),
   b({
@@ -354,7 +354,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. LeDoux showed that simple tone–shock fear conditioning survives auditory cortex lesions because the medial geniculate nucleus projects directly to the lateral amygdala (the fast 'low road'). The cortical 'high road' is slower but carries finer detail, which is needed for discriminating similar tones.",
+      "Both are true and R explains A. LeDoux showed that simple tone-shock fear conditioning survives auditory cortex lesions because the medial geniculate nucleus projects directly to the lateral amygdala (the fast 'low road'). The cortical 'high road' is slower but carries finer detail, which is needed for discriminating similar tones.",
     ref: "LeDoux, The Emotional Brain (1996)",
   }),
   b({
@@ -362,7 +362,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Patient S.M., who has bilateral amygdala damage from Urbach–Wiethe disease, is best known for:",
+    stem: "Patient S.M., who has bilateral amygdala damage from Urbach-Wiethe disease, is best known for:",
     options: [
       "Inability to produce speech",
       "Loss of the ability to recognise any faces",
@@ -371,7 +371,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "S.M. cannot recognise fearful faces and shows little fear when exposed to snakes, spiders or haunted houses (Adolphs, Feinstein and colleagues), showing the amygdala's role in fear. She recognises identity in faces normally, so it is not prosopagnosia. Her declarative memory is largely intact. Her speech is normal.",
+      "S.M. cannot recognise fearful faces and shows little fear when exposed to snakes, spiders or haunted houses (described by Adolphs, Feinstein and colleagues), showing the amygdala's role in fear. She recognises identity in faces normally, so it is not prosopagnosia. Her declarative memory is largely intact. Her speech is normal.",
     ref: "Adolphs et al. 1994, Nature; Feinstein et al. 2011",
   }),
   b({
@@ -410,7 +410,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "In rats, small lesions are made in one of two hypothalamic regions. Group 1 eats much more than controls for several weeks and becomes obese, then body weight stabilises at a new high level; when food is made less palatable, Group 1 eats less than controls. Group 2 stops eating and drinking and dies unless tube-fed; if kept alive, it gradually recovers some eating, but body weight stabilises below control level.",
     options: [
       "Group 1 has lateral hypothalamic lesions; Group 2 has ventromedial lesions; both groups show a raised set point",
-      "Group 1 has ventromedial lesions; Group 2 has lateral hypothalamic lesions; the findings fit a shifted body-weight set point rather than a simple on–off 'hunger centre' model",
+      "Group 1 has ventromedial lesions; Group 2 has lateral hypothalamic lesions; the findings fit a shifted body-weight set point rather than a simple on-off 'hunger centre' model",
       "Both groups have suprachiasmatic lesions with disrupted meal timing",
       "Group 1 has paraventricular lesions causing high CRH; Group 2 has arcuate lesions causing leptin excess",
     ],
@@ -552,7 +552,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: Schmahmann and Sherman (1998) described the cerebellar cognitive affective syndrome after posterior lobe lesions. R is false: the cerebral cortex projects massively to the cerebellum through the pontine nuclei, and the cerebellum projects back through the thalamus to prefrontal and parietal cortex as well as motor cortex. These closed loops are why cerebellar damage can affect cognition.",
+      "A is true: Schmahmann and Sherman described the cerebellar cognitive affective syndrome after posterior lobe lesions. R is false: the cerebral cortex projects massively to the cerebellum through the pontine nuclei, and the cerebellum projects back through the thalamus to prefrontal and parietal cortex as well as motor cortex. These closed loops are why cerebellar damage can affect cognition.",
     ref: "Schmahmann & Sherman 1998, Brain",
   }),
   b({
@@ -581,7 +581,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Moruzzi and Magoun (1949) showed that electrical stimulation of the brainstem reticular formation in sleeping cats:",
+    stem: "Moruzzi and Magoun showed that electrical stimulation of the brainstem reticular formation in sleeping cats:",
     options: [
       "Produced seizures in the temporal lobe",
       "Produced immediate REM sleep",
@@ -615,7 +615,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The Bell–Magendie law states that:",
+    stem: "The Bell-Magendie law states that:",
     options: [
       "Dorsal spinal roots carry sensory information in and ventral roots carry motor commands out",
       "Ventral spinal roots carry sensory information and dorsal roots carry motor commands",
@@ -642,7 +642,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: ["A and B only", "A, B and C only", "C and D only", "A, B, C and D"],
     answer: 1,
     explanation:
-      "A, B and C are correct: sympathetic outflow is thoracolumbar, parasympathetic is craniosacral (cranial nerves III, VII, IX, X and S2–S4), and both divisions use ACh at nicotinic receptors on ganglion cells. D is wrong: sympathetic postganglionic fibres to eccrine sweat glands release ACh, so not all release noradrenaline. The adrenal medulla, effectively a modified ganglion, releases adrenaline into the blood.",
+      "A, B and C are correct: sympathetic outflow is thoracolumbar, parasympathetic is craniosacral (cranial nerves III, VII, IX, X and S2-S4), and both divisions use ACh at nicotinic receptors on ganglion cells. D is wrong: sympathetic postganglionic fibres to eccrine sweat glands release ACh, so not all release noradrenaline. The adrenal medulla, effectively a modified ganglion, releases adrenaline into the blood.",
     ref: "Kalat, ch. 4",
   }),
   b({
@@ -672,11 +672,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Arachnoid granulations",
       "Choroid plexus in the ventricles",
       "Pia mater",
-      "Blood–brain barrier endothelium",
+      "Blood-brain barrier endothelium",
     ],
     answer: 1,
     explanation:
-      "The choroid plexus, mostly in the lateral ventricles, secretes about 500 ml of CSF a day. Arachnoid granulations absorb CSF into the venous sinuses, the opposite job; blocked absorption causes communicating hydrocephalus. The pia mater is the innermost meningeal layer and does not secrete CSF. The blood–brain barrier restricts passage into brain tissue rather than producing CSF.",
+      "The choroid plexus, mostly in the lateral ventricles, secretes about 500 ml of CSF a day. Arachnoid granulations absorb CSF into the venous sinuses, the opposite job; blocked absorption causes communicating hydrocephalus. The pia mater is the innermost meningeal layer and does not secrete CSF. The blood-brain barrier restricts passage into brain tissue rather than producing CSF.",
     ref: "Kalat, ch. 4",
   }),
   b({
@@ -693,7 +693,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "The dorsal anterior cingulate activates during response conflict (incongruent Stroop trials, flanker tasks) and after errors (the error-related negativity in EEG), supporting conflict-monitoring theories (Botvinick, Carter and colleagues). Pitch is processed in auditory cortex. Semantic memory depends on anterior temporal and distributed cortex. Fine finger movement depends on primary motor cortex and corticospinal tracts.",
+      "The dorsal anterior cingulate activates during response conflict (incongruent Stroop trials, flanker tasks) and after errors (the error-related negativity in EEG), supporting conflict-monitoring theories (described by Botvinick, Carter and colleagues). Pitch is processed in auditory cortex. Semantic memory depends on anterior temporal and distributed cortex. Fine finger movement depends on primary motor cortex and corticospinal tracts.",
     ref: "Botvinick et al. 2001, Psychol Rev",
   }),
   b({
@@ -721,7 +721,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Match the discovery in List I with its discoverers in List II.",
     lists: {
       left: ["A. Place cells in the hippocampus", "B. Grid cells in the entorhinal cortex", "C. Long-term potentiation", "D. Mirror neurons in premotor cortex"],
-      right: ["i. Bliss and Lømo (1973)", "ii. May-Britt and Edvard Moser (2005)", "iii. Rizzolatti and colleagues (1990s)", "iv. O'Keefe and Dostrovsky (1971)"],
+      right: ["i. Bliss and Lømo", "ii. May-Britt and Edvard Moser", "iii. Rizzolatti and colleagues", "iv. O'Keefe and Dostrovsky"],
     },
     options: [
       "A-ii, B-iv, C-i, D-iii",
@@ -748,7 +748,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Korbinian Brodmann (1909) mapped cortex by its cytoarchitecture, using Nissl staining to compare cell density and layer thickness. Functional imaging came decades later. Arterial territories (anterior, middle, posterior cerebral) are a separate scheme. Skull shape was the basis of Gall's phrenology, which was discredited.",
+      "Korbinian Brodmann mapped cortex by its cytoarchitecture, using Nissl staining to compare cell density and layer thickness. Functional imaging came decades later. Arterial territories (anterior, middle, posterior cerebral) are a separate scheme. Skull shape was the basis of Gall's phrenology, which was discredited.",
     ref: "Kolb & Whishaw, ch. 3",
   }),
   b({
@@ -869,7 +869,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Primary somatosensory cortex lies in the postcentral gyrus, the front of the parietal lobe. The frontal lobe holds the motor cortex in front of the central sulcus. The temporal lobe processes hearing and memory, and the occipital lobe processes vision.",
+      "The central sulcus divides the frontal lobe from the parietal lobe. Just behind it, in the postcentral gyrus of the parietal lobe, lies primary somatosensory cortex (Brodmann areas 3, 1 and 2), mapped as a sensory homunculus with large areas for the lips and hands. The frontal lobe holds the primary motor cortex in the precentral gyrus, just in front of the sulcus. The temporal lobe handles hearing, language comprehension and memory, and the occipital lobe handles vision. Damage to the postcentral gyrus causes loss of touch and position sense on the opposite side of the body.",
     ref: "Kalat, ch. 4",
   }),
   b({
@@ -877,7 +877,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Anterograde amnesia after an anoxic episode, with damage confined to the CA1 field of both hippocampi (patient R.B., Zola-Morgan, Squire and Amaral 1986), showed that:",
+    stem: "Anterograde amnesia after an anoxic episode, with damage confined to the CA1 field of both hippocampi (patient R.B., studied by Zola-Morgan, Squire and Amaral), showed that:",
     options: [
       "Damage restricted to the hippocampus itself is enough to produce clinically significant anterograde amnesia",
       "The amygdala is necessary for declarative memory",
@@ -936,7 +936,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "MacLean proposed the triune brain (developed through the 1960s and 1990). It became popular but comparative neuroanatomy shows that brain regions did not evolve as stacked layers, and non-mammalian vertebrates have homologues of cortical and limbic structures, so the model is considered outdated. Papez described the emotion circuit, not the triune model. Sperry studied split-brain patients. Lashley's equipotentiality concerned memory distribution in cortex.",
+      "MacLean proposed the triune brain (developed from the 1960s onward). It became popular but comparative neuroanatomy shows that brain regions did not evolve as stacked layers, and non-mammalian vertebrates have homologues of cortical and limbic structures, so the model is considered outdated. Papez described the emotion circuit, not the triune model. Sperry studied split-brain patients. Lashley's equipotentiality concerned memory distribution in cortex.",
     ref: "Cesario, Johnson & Eisthen 2020, Curr Dir Psychol Sci",
   }),
   b({
@@ -954,7 +954,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: ["A and C only", "A, B and D only", "B and C only", "A, B, C and D"],
     answer: 1,
     explanation:
-      "Lashley (In Search of the Engram, 1950) proposed mass action (A) and equipotentiality (B) and wryly concluded that learning seemed impossible because he could not localise the trace (D). C is the very view he rejected. Later work (for example Thompson's cerebellar eyeblink engram, hippocampal place-specific memory and engram-cell studies) showed that some memories do have identifiable sites, and his maze task was complex enough to engage many senses and regions.",
+      "Lashley, summing up decades of lesion work in 1950, proposed mass action (A) and equipotentiality (B) and wryly concluded that learning seemed impossible because he could not localise the trace (D). C is the very view he rejected. Later work (for example Thompson's cerebellar eyeblink engram, hippocampal place-specific memory and engram-cell studies) showed that some memories do have identifiable sites, and his maze task was complex enough to engage many senses and regions.",
     ref: "Lashley 1950; Kalat, ch. 13",
   }),
   b({
@@ -979,7 +979,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Which of the following is a circumventricular organ that lacks a normal blood–brain barrier and triggers vomiting in response to toxins in the blood?",
+    stem: "Which of the following is a circumventricular organ that lacks a normal blood-brain barrier and triggers vomiting in response to toxins in the blood?",
     options: [
       "Nucleus accumbens",
       "Locus coeruleus",

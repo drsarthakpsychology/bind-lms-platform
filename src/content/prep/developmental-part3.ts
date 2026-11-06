@@ -23,7 +23,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 1,
     type: "mcq",
-    stem: "Harlow's studies with infant rhesus monkeys (1958) showed that infants preferred:",
+    stem: "Harlow's studies with infant rhesus monkeys showed that infants preferred:",
     options: [
       "The wire 'mother' that provided milk",
       "A soft cloth 'mother' even when a wire 'mother' provided milk",
@@ -60,7 +60,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Match the attachment classification in List I with its approximate proportion in Ainsworth's original Baltimore sample in List II.",
     lists: {
       left: ["A. Secure (B)", "B. Insecure-avoidant (A)", "C. Insecure-resistant (C)"],
-      right: ["i. About 12%", "ii. About 66–70%", "iii. About 20–22%"],
+      right: ["i. About 12%", "ii. About 66 to 70%", "iii. About 20 to 22%"],
     },
     options: [
       "A-iii, B-ii, C-i",
@@ -93,7 +93,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A, B and C are central to Bowlby's ethological theory (Attachment and Loss, 1969–1980). D is the secondary-drive ('cupboard love') view of learning theorists and Freud, which Bowlby rejected, supported by Harlow's monkeys and by Schaffer and Emerson's finding that infants attach to responsive people, not necessarily feeders.",
+      "A, B and C are central to Bowlby's ethological theory (set out in his three-volume work on attachment and loss). D is the secondary-drive ('cupboard love') view of learning theorists and Freud, which Bowlby rejected, supported by Harlow's monkeys and by Schaffer and Emerson's finding that infants attach to responsive people, not necessarily feeders.",
     ref: "Bowlby 1969, Attachment",
   }),
   d({
@@ -101,7 +101,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Bowlby's '44 juvenile thieves' study (1944) reported that many of the thieves diagnosed with 'affectionless psychopathy':",
+    stem: "Bowlby's '44 juvenile thieves' study reported that many of the thieves diagnosed with 'affectionless psychopathy':",
     options: [
       "Had securely attached relationships with both parents",
       "Had experienced prolonged early separation from their mothers, compared with few in a control group",
@@ -126,7 +126,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. In Maternal Deprivation Reassessed (1972) Rutter argued that separation per se was less harmful than Bowlby claimed; the cause of separation (discord rather than illness or death) and the failure ever to form bonds (privation) predicted antisocial outcomes. This refined, rather than discarded, attachment theory.",
+      "Both are true and R explains A. In his 1972 reassessment of maternal deprivation, Rutter argued that separation per se was less harmful than Bowlby claimed; the cause of separation (discord rather than illness or death) and the failure ever to form bonds (privation) predicted antisocial outcomes. This refined, rather than discarded, attachment theory.",
     ref: "Rutter 1972",
   }),
   d({
@@ -136,7 +136,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which conclusion best fits the findings of the English and Romanian Adoptees study?",
     passage:
-      "Children raised in severely depriving Romanian institutions were adopted into UK families at different ages. Those adopted before about 6 months showed cognitive and social outcomes close to UK-born adoptees by age 6 and into adulthood. Those adopted after 6 months had, on average, lower IQ and a higher rate of a 'deprivation-specific' pattern: quasi-autistic features, disinhibited social engagement, inattention/overactivity and cognitive impairment. Many of these problems persisted to age 22–25, though a minority of late-adopted children showed no impairment.",
+      "Children raised in severely depriving Romanian institutions were adopted into UK families at different ages. Those adopted before about 6 months showed cognitive and social outcomes close to UK-born adoptees by age 6 and into adulthood. Those adopted after 6 months had, on average, lower IQ and a higher rate of a 'deprivation-specific' pattern: quasi-autistic features, disinhibited social engagement, inattention/overactivity and cognitive impairment. Many of these problems persisted to age 22 to 25, though a minority of late-adopted children showed no impairment.",
     options: [
       "All children adopted after 6 months were severely impaired",
       "Deprivation has no lasting effect if the child is later adopted",
@@ -153,16 +153,16 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Schaffer and Emerson's (1964) longitudinal study of 60 Glasgow infants found that:",
+    stem: "Schaffer and Emerson's longitudinal study of 60 Glasgow infants found that:",
     options: [
       "Infants attached most strongly to whoever fed them most",
       "Infants attached only to their mothers",
       "Attachments formed only after 2 years",
-      "Specific attachments appeared around 7–9 months, multiple attachments followed soon after, and infants attached most strongly to adults who responded sensitively, not necessarily to those who fed them",
+      "Specific attachments appeared around 7 to 9 months, multiple attachments followed soon after, and infants attached most strongly to adults who responded sensitively, not necessarily to those who fed them",
     ],
     answer: 3,
     explanation:
-      "Mothers reported separation protest at home; specific attachment appeared at 7–9 months, and by 18 months most infants had multiple attachments (fathers, grandparents, siblings), with about a third having a primary attachment to someone other than the main carer. Intensity related to responsiveness and interaction. This challenged monotropy and feeding-based accounts. Attachments formed well before 2 years.",
+      "Mothers reported separation protest at home; specific attachment appeared at 7 to 9 months, and by 18 months most infants had multiple attachments (fathers, grandparents, siblings), with about a third having a primary attachment to someone other than the main carer. Intensity related to responsiveness and interaction. This challenged monotropy and feeding-based accounts. Attachments formed well before 2 years.",
     ref: "Schaffer & Emerson 1964, Monogr Soc Res Child Dev",
   }),
   d({
@@ -170,7 +170,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Van IJzendoorn and Kroonenberg's (1988) meta-analysis of Strange Situation studies across eight countries found that:",
+    stem: "Van IJzendoorn and Kroonenberg's meta-analysis of Strange Situation studies across eight countries found that:",
     options: [
       "Every country had identical distributions",
       "Variation in attachment types within countries was about one and a half times greater than variation between countries",
@@ -195,7 +195,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Takahashi (1990) and Miyake and colleagues found many traditionally reared Japanese infants rarely left their mothers, so separation episodes caused extreme distress, inflating resistant classifications; several sessions were cut short. This raises the question of whether the procedure has the same meaning across cultures, an important critique of its universality.",
+      "Both are true and R explains A. Takahashi, and also Miyake and colleagues, found many traditionally reared Japanese infants rarely left their mothers, so separation episodes caused extreme distress, inflating resistant classifications; several sessions were cut short. This raises the question of whether the procedure has the same meaning across cultures, an important critique of its universality.",
     ref: "Takahashi 1990, Human Development",
   }),
   d({
@@ -216,7 +216,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Main and colleagues' AAI codes the coherence of adults' accounts of their own childhood. Autonomous parents tend to have secure infants (ii). Dismissing parents, who minimise attachment, tend to have avoidant infants (iv). Preoccupied parents, entangled in past relationships, tend to have resistant infants (iii). Parents unresolved about loss or trauma tend to have disorganised infants (i). Van IJzendoorn's (1995) meta-analysis found about 75% secure–insecure correspondence.",
+      "Main and colleagues' AAI codes the coherence of adults' accounts of their own childhood. Autonomous parents tend to have secure infants (ii). Dismissing parents, who minimise attachment, tend to have avoidant infants (iv). Preoccupied parents, entangled in past relationships, tend to have resistant infants (iii). Parents unresolved about loss or trauma tend to have disorganised infants (i). Van IJzendoorn's meta-analysis found about 75% secure-insecure correspondence.",
     ref: "Main, Kaplan & Cassidy 1985; van IJzendoorn 1995, Psychol Bull",
   }),
   d({
@@ -239,7 +239,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A: Main and Solomon (1986, 1990) described contradictory, freezing and disoriented behaviour. B: rates reach up to about 50–80% in some maltreated samples versus about 15% in low-risk samples. C: when the attachment figure is the source of fear, the infant can neither approach nor flee. D is wrong: many disorganised infants are not maltreated, and experts (Granqvist et al., 2017) warn against using attachment classifications for child protection decisions about individuals.",
+      "A: Main and Solomon described contradictory, freezing and disoriented behaviour. B: rates reach up to about 50 to 80% in some maltreated samples versus about 15% in low-risk samples. C: when the attachment figure is the source of fear, the infant can neither approach nor flee. D is wrong: many disorganised infants are not maltreated, and experts warn against using attachment classifications for child protection decisions about individuals.",
     ref: "Main & Hesse 1990; Granqvist et al. 2017, Attach Hum Dev",
   }),
   d({
@@ -256,7 +256,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Lorenz (1935) showed that greylag goslings imprint on the first suitable moving object, including Lorenz himself, during a brief critical period after hatching. This influenced Bowlby's ethological view of attachment. Operant conditioning is learning by consequences. Object permanence and conservation are Piagetian concepts.",
+      "Lorenz showed that greylag goslings imprint on the first suitable moving object, including Lorenz himself, during a brief critical period after hatching. This influenced Bowlby's ethological view of attachment. Operant conditioning is learning by consequences. Object permanence and conservation are Piagetian concepts.",
     ref: "Lorenz 1935",
   }),
   d({
@@ -264,7 +264,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "In Bowlby's phases of attachment development, the phase in which separation protest and stranger wariness first clearly appear (about 6–8 months to 18–24 months) is:",
+    stem: "In Bowlby's phases of attachment development, the phase in which separation protest and stranger wariness first clearly appear (from about 6 to 8 months until 18 to 24 months) is:",
     options: [
       "Pre-attachment",
       "Clear-cut attachment",
@@ -273,7 +273,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Bowlby described pre-attachment (birth to about 6 weeks; signals to anyone), attachment in the making (6 weeks to 6–8 months; preference for familiar people, no protest), clear-cut attachment (6–8 months to 18–24 months; separation anxiety and secure-base behaviour), and the goal-corrected partnership (from about 2 years; understanding the caregiver's goals and negotiating).",
+      "Bowlby described pre-attachment (birth to about 6 weeks; signals to anyone), attachment in the making (6 weeks until 6 to 8 months; preference for familiar people, no protest), clear-cut attachment (from 6 to 8 months until 18 to 24 months; separation anxiety and secure-base behaviour), and the goal-corrected partnership (from about 2 years; understanding the caregiver's goals and negotiating).",
     ref: "Bowlby 1969; Berk, ch. 10",
   }),
   d({
@@ -281,16 +281,16 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "De Wolff and van IJzendoorn's (1997) meta-analysis found that the association between maternal sensitivity and infant attachment security was:",
+    stem: "De Wolff and van IJzendoorn's meta-analysis found that the association between maternal sensitivity and infant attachment security was:",
     options: [
       "Zero",
-      "Near perfect (r about .90)",
-      "Moderate (r about .24), leaving a 'transmission gap' in explaining how parental attachment passes to the infant",
+      "Near perfect (r about 0.90)",
+      "Moderate (r about 0.24), leaving a 'transmission gap' in explaining how parental attachment passes to the infant",
       "Negative",
     ],
     answer: 2,
     explanation:
-      "Sensitivity predicted security with an effect of about r = .24, significant but smaller than Ainsworth's original estimates, leading to the 'transmission gap' problem: parental AAI status predicts infant attachment more strongly than measured sensitivity explains. Other contributors include mind-mindedness and reflective functioning, mutuality, stimulation and support. The other options misstate the effect.",
+      "Sensitivity predicted security with an effect of about r = 0.24, significant but smaller than Ainsworth's original estimates, leading to the 'transmission gap' problem: parental AAI status predicts infant attachment more strongly than measured sensitivity explains. Other contributors include mind-mindedness and reflective functioning, mutuality, stimulation and support. The other options misstate the effect.",
     ref: "De Wolff & van IJzendoorn 1997, Child Dev",
   }),
   d({
@@ -311,7 +311,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Thomas and Chess (from 1956) rated nine dimensions and found about 40% easy (regular, positive, adaptable), 10% difficult (irregular, intense, negative), 15% slow-to-warm-up (low activity, mild negativity, slow to adapt) and about 35% who fitted no category. They stressed 'goodness of fit' between temperament and the environment. The other codes swap these percentages.",
+      "Thomas and Chess, in a study begun in 1956, rated nine dimensions and found about 40% easy (regular, positive, adaptable), 10% difficult (irregular, intense, negative), 15% slow-to-warm-up (low activity, mild negativity, slow to adapt) and about 35% who fitted no category. They stressed 'goodness of fit' between temperament and the environment. The other codes swap these percentages.",
     ref: "Thomas & Chess 1977, Temperament and Development",
   }),
   d({
@@ -344,7 +344,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: Kagan (1984) suggested that innately reactive infants might be more distressed by separation and be classified as resistant. Counter-evidence includes infants having different classifications with each parent (Main and Weston, 1981) and interventions that improve sensitivity changing attachment (for example van den Boom, 1994). R is false: Ainsworth's own Baltimore home observations linked maternal sensitivity to secure attachment.",
+      "A is true: Kagan suggested that innately reactive infants might be more distressed by separation and be classified as resistant. Counter-evidence includes infants having different classifications with each parent and interventions that improve sensitivity changing attachment. R is false: Ainsworth's own Baltimore home observations linked maternal sensitivity to secure attachment.",
     ref: "Kagan 1984; Main & Weston 1981; van den Boom 1994",
   }),
   d({
@@ -352,7 +352,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Hazan and Shaver (1987) applied attachment theory to adult romantic relationships using a 'love quiz' in a newspaper. They found that:",
+    stem: "Hazan and Shaver applied attachment theory to adult romantic relationships using a 'love quiz' in a newspaper. They found that:",
     options: [
       "All adults were securely attached",
       "Adults could be classified as secure, avoidant or anxious-ambivalent in roughly the same proportions as Ainsworth's infants",
@@ -369,7 +369,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "match",
-    stem: "Match Bartholomew and Horowitz's (1991) adult attachment style in List I with its combination of self- and other-models in List II.",
+    stem: "Match Bartholomew and Horowitz's adult attachment style in List I with its combination of self- and other-models in List II.",
     lists: {
       left: ["A. Secure", "B. Preoccupied", "C. Dismissing", "D. Fearful"],
       right: [
@@ -387,7 +387,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Crossing models of self (worthy or not) with models of others (trustworthy or not) gives four styles: secure, positive–positive (ii); preoccupied, negative self but positive others, so dependent on others' approval (iv); dismissing, positive self but negative others, so avoiding closeness to protect self-esteem (iii); fearful, negative–negative, wanting closeness but fearing rejection (i). The other codes swap preoccupied and dismissing or dismissing and fearful.",
+      "Crossing models of self (worthy or not) with models of others (trustworthy or not) gives four styles: secure, positive-positive (ii); preoccupied, negative self but positive others, so dependent on others' approval (iv); dismissing, positive self but negative others, so avoiding closeness to protect self-esteem (iii); fearful, negative-negative, wanting closeness but fearing rejection (i). The other codes swap preoccupied and dismissing or dismissing and fearful.",
     ref: "Bartholomew & Horowitz 1991, J Pers Soc Psychol",
   }),
   d({
@@ -412,7 +412,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Mahler's theory of separation–individuation describes a 'rapprochement' subphase (about 15–24 months) in which the toddler:",
+    stem: "Mahler's theory of separation-individuation describes a 'rapprochement' subphase (about 15 to 24 months) in which the toddler:",
     options: [
       "Having become aware of separateness, returns anxiously to the mother for reassurance, swinging between closeness and independence",
       "Is unaware that the mother is a separate person",
@@ -421,7 +421,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Mahler's sequence is normal autism, symbiosis, then separation–individuation with differentiation, practising (elated exploration, 'love affair with the world'), rapprochement (renewed need for closeness and ambivalence, the 'rapprochement crisis'), and the beginning of object constancy. Unawareness of separateness belongs to the autistic and symbiotic phases. Object constancy comes after rapprochement. Carefree practising is the preceding subphase.",
+      "Mahler's sequence is normal autism, symbiosis, then separation-individuation with differentiation, practising (elated exploration, 'love affair with the world'), rapprochement (renewed need for closeness and ambivalence, the 'rapprochement crisis'), and the beginning of object constancy. Unawareness of separateness belongs to the autistic and symbiotic phases. Object constancy comes after rapprochement. Carefree practising is the preceding subphase.",
     ref: "Mahler, Pine & Bergman 1975, The Psychological Birth of the Human Infant",
   }),
   d({
@@ -432,7 +432,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which statements about the Strange Situation procedure are correct?",
     statements: [
       "A. It has eight episodes, most lasting about three minutes.",
-      "B. It is designed for infants of about 12–18 months.",
+      "B. It is designed for infants of about 12 to 18 months.",
       "C. It includes two separations from and two reunions with the caregiver.",
       "D. Classification depends mainly on how much the infant cries during separation.",
     ],
@@ -444,7 +444,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "A, B and C are correct: the procedure has eight episodes, involving a stranger, two separations and two reunions, for infants of roughly 12–18 months. D is wrong: crying during separation varies a lot even among secure infants (some B infants hardly cry); classification depends mainly on reunion behaviour (proximity seeking, contact maintenance, avoidance, resistance).",
+      "A, B and C are correct: the procedure has eight episodes, involving a stranger, two separations and two reunions, for infants of roughly 12 to 18 months. D is wrong: crying during separation varies a lot even among secure infants (some B infants hardly cry); classification depends mainly on reunion behaviour (proximity seeking, contact maintenance, avoidance, resistance).",
     ref: "Ainsworth et al. 1978",
   }),
   d({
@@ -454,7 +454,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which interpretation is most consistent with attachment research?",
     passage:
-      "In a trial in the Netherlands, mothers of irritable newborns were randomly assigned to a short home-visiting intervention at 6–9 months that taught them to read and respond sensitively to their babies' cues, or to a control group. At 12 months, a far higher proportion of the intervention group's infants than of the controls' infants were classified as secure in the Strange Situation. Infant irritability was similar in both groups at the start.",
+      "In a trial in the Netherlands, mothers of irritable newborns were randomly assigned to a short home-visiting intervention at 6 to 9 months that taught them to read and respond sensitively to their babies' cues, or to a control group. At 12 months, a far higher proportion of the intervention group's infants than of the controls' infants were classified as secure in the Strange Situation. Infant irritability was similar in both groups at the start.",
     options: [
       "The intervention made infants less irritable, which alone explains the result",
       "Temperament alone determines attachment classification",
@@ -463,7 +463,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Van den Boom's (1994) experiment manipulated sensitivity while infant temperament was equivalent at baseline, so the large difference in security supports a causal role for caregiving. That contradicts the view that temperament alone decides classification. Irritability was matched at the start, and attachment changed after birth, so the last two options are not supported.",
+      "Van den Boom's experiment manipulated sensitivity while infant temperament was equivalent at baseline, so the large difference in security supports a causal role for caregiving. That contradicts the view that temperament alone decides classification. Irritability was matched at the start, and attachment changed after birth, so the last two options are not supported.",
     ref: "van den Boom 1994, Child Dev",
   }),
   d({
@@ -497,7 +497,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Main and Weston (1981) and later meta-analyses (Fox, Kimmerly and Schafer, 1991) found that attachment to mother and to father are only modestly related, consistent with relationship-specific internal working models. This is one argument against a purely temperamental account of attachment.",
+      "Both are true and R explains A. Main and Weston and later meta-analyses found that attachment to mother and to father are only modestly related, consistent with relationship-specific internal working models. This is one argument against a purely temperamental account of attachment.",
     ref: "Main & Weston 1981; Fox et al. 1991",
   }),
   d({
@@ -562,17 +562,17 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Bowlby's 1951 report for the World Health Organization, which strongly influenced child-care policy, was titled:",
+    stem: "Bowlby's 1951 report for the World Health Organization, which strongly influenced child-care policy, argued that:",
     options: [
-      "The Nature of Love",
-      "Childhood and Society",
-      "Patterns of Attachment",
-      "Maternal Care and Mental Health",
+      "A warm, intimate and continuous relationship with the mother or a permanent mother-substitute is essential for mental health",
+      "Children develop best when cared for by many rotating caregivers",
+      "Early separation from parents has no lasting effects",
+      "Feeding is the main basis of the child's tie to the mother",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
-      "Maternal Care and Mental Health (1951) argued that warm, continuous maternal care was as important for mental health as vitamins for physical health. Childhood and Society is Erikson's 1950 book. Patterns of Attachment (1978) is Ainsworth and colleagues' monograph on the Strange Situation. 'The Nature of Love' (1958) is Harlow's APA presidential address on monkeys.",
-    ref: "Bowlby 1951",
+      "Bowlby reviewed studies of children in hospitals and institutions and concluded that maternal care in infancy matters for mental health as much as vitamins matter for physical health. The report led hospitals to allow parents to stay with children and pushed policy away from large institutions. Rotating caregivers is close to the institutional care he criticised. He claimed separation could have lasting effects (a claim Rutter later refined). Bowlby rejected the feeding ('cupboard love') view of attachment.",
+    ref: "Bowlby 1951, Maternal Care and Mental Health (WHO)",
   }),
   // ── Bronfenbrenner ─────────────────────────────────────────────────────────
   d({
@@ -619,7 +619,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The parent's workplace affects the child indirectly: exosystem (iii). Home–school links: mesosystem (iv). Broad laws, values and policies such as the Right to Education: macrosystem (i). Timing of life events and historical change: chronosystem (ii), added by Bronfenbrenner in 1986. The other codes swap exosystem and mesosystem, mesosystem and macrosystem, or macrosystem and chronosystem.",
+      "The parent's workplace affects the child indirectly: exosystem (iii). Home-school links: mesosystem (iv). Broad laws, values and policies such as the Right to Education: macrosystem (i). Timing of life events and historical change: chronosystem (ii), added by Bronfenbrenner in 1986. The other codes swap exosystem and mesosystem, mesosystem and macrosystem, or macrosystem and chronosystem.",
     ref: "Bronfenbrenner 1979, 1986",
   }),
   d({
@@ -638,7 +638,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Bronfenbrenner and Morris (1998, 2006) placed proximal processes (regular, increasingly complex interactions between the person and their environment) at the centre, shaped by the person's characteristics, the context (the nested systems) and time (micro-, meso- and macro-time). The other expansions are invented and do not match the model.",
+      "Bronfenbrenner and Morris placed proximal processes (regular, increasingly complex interactions between the person and their environment) at the centre, shaped by the person's characteristics, the context (the nested systems) and time (micro-, meso- and macro-time). The other expansions are invented and do not match the model.",
     ref: "Bronfenbrenner & Morris 2006, Handbook of Child Psychology",
   }),
   d({
@@ -656,7 +656,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: Bronfenbrenner and Morris argued that development occurs through progressively more complex reciprocal interactions between an active person and the people, objects and symbols in the immediate environment, occurring regularly over extended periods (for example parent–child play, reading, solving problems). R is false: large-scale cultural values belong to the macrosystem; proximal processes are immediate, face-to-face interactions.",
+      "A is true: Bronfenbrenner and Morris argued that development occurs through progressively more complex reciprocal interactions between an active person and the people, objects and symbols in the immediate environment, occurring regularly over extended periods (for example parent-child play, reading, solving problems). R is false: large-scale cultural values belong to the macrosystem; proximal processes are immediate, face-to-face interactions.",
     ref: "Bronfenbrenner & Morris 2006",
   }),
   d({
@@ -702,7 +702,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A: this famous 1977 critique of laboratory research called for ecological validity. B: Bronfenbrenner helped design Head Start (1965). D: the PPCT model stresses interactions among process, person, context and time. C is wrong: he saw the person as active, shaping and being shaped by settings (bidirectional influences).",
+      "A: this famous 1977 critique of laboratory research called for ecological validity. B: Bronfenbrenner helped design Head Start. D: the PPCT model stresses interactions among process, person, context and time. C is wrong: he saw the person as active, shaping and being shaped by settings (bidirectional influences).",
     ref: "Bronfenbrenner 1977, Am Psychol",
   }),
   d({
@@ -738,7 +738,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Schaffer and Emerson showed multiple attachments, studies of fathers and of other carers show many attachment figures, and adoption studies (Tizard, Rutter) show substantial recovery, with lasting effects mainly after prolonged privation. Hence 'sensitive period' is preferred. Infants do form attachments in the first year, fathers are frequent attachment figures, and early experience does matter.",
+      "Schaffer and Emerson showed multiple attachments, studies of fathers and of other carers show many attachment figures, and adoption studies (described by Tizard and Rutter) show substantial recovery, with lasting effects mainly after prolonged privation. Hence 'sensitive period' is preferred. Infants do form attachments in the first year, fathers are frequent attachment figures, and early experience does matter.",
     ref: "Rutter 1972; Schaffer & Emerson 1964",
   }),
   d({
@@ -755,7 +755,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Fonagy, Steele and colleagues found that parents' reflective functioning on the AAI, especially among parents with trauma histories, predicted their infants' security; related work on 'mind-mindedness' (Meins) also predicts security. This helps explain how parental attachment passes to the child. It has nothing to do with newborn reflexes, IQ or deprivation.",
+      "Fonagy, Steele and colleagues found that parents' reflective functioning on the AAI, especially among parents with trauma histories, predicted their infants' security; related work on 'mind-mindedness' (described by Meins) also predicts security. This helps explain how parental attachment passes to the child. It has nothing to do with newborn reflexes, IQ or deprivation.",
     ref: "Fonagy et al. 1991; Meins et al. 2001",
   }),
   d({
@@ -765,13 +765,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Stranger anxiety typically emerges around 6–8 months of age.",
+      "A: Stranger anxiety typically emerges around 6 to 8 months of age.",
       "R: Infants of this age have formed specific attachments and can distinguish familiar from unfamiliar people.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Wariness of strangers usually emerges with clear-cut attachment, as infants have learned to recognise their caregivers and anticipate them; it peaks around 8–10 months and varies with temperament and context (it is reduced when the caregiver is nearby or the stranger approaches gradually).",
+      "Both are true and R explains A. Wariness of strangers usually emerges with clear-cut attachment, as infants have learned to recognise their caregivers and anticipate them; it peaks around 8 to 10 months and varies with temperament and context (it is reduced when the caregiver is nearby or the stranger approaches gradually).",
     ref: "Berk, ch. 10",
   }),
   d({
@@ -786,7 +786,7 @@ export const QUESTIONS: PrepQuestion[] = [
         "i. Attachment Q-sort for home observation of secure-base behaviour",
         "ii. Disorganised attachment category and the Adult Attachment Interview",
         "iii. Meta-analyses of cross-cultural and intergenerational attachment data",
-        "iv. Maternal Deprivation Reassessed and the English and Romanian Adoptees study",
+        "iv. A reassessment of maternal deprivation and the English and Romanian Adoptees study",
       ],
     },
     options: [
@@ -797,7 +797,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Main (with Solomon) identified disorganised attachment and (with George and Kaplan) developed the AAI (ii). Waters (with Deane) developed the Attachment Q-sort (i). Rutter reassessed maternal deprivation and led the ERA study (iv). Van IJzendoorn conducted influential meta-analyses (iii). The other codes swap Main and Waters, Waters and Rutter, or Rutter and van IJzendoorn.",
+      "Main (with Solomon) identified disorganised attachment and (with George and Kaplan) developed the AAI (ii). Waters (with Deane) developed the Attachment Q-sort (i). Rutter reassessed maternal deprivation and led the English and Romanian Adoptees study (iv). Van IJzendoorn conducted influential meta-analyses (iii). The other codes swap Main and Waters, Waters and Rutter, or Rutter and van IJzendoorn.",
     ref: "Cassidy & Shaver, Handbook of Attachment",
   }),
   d({

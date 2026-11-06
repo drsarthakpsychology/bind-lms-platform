@@ -33,7 +33,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Cooing (vowel-like sounds) appears around 2 months, canonical babbling (repeated consonant–vowel syllables such as 'bababa') around 6–10 months, first words around 12 months, and two-word combinations around 18–24 months. The other sequences put babbling, first words or cooing out of order.",
+      "Cooing (vowel-like sounds) appears around 2 months, canonical babbling (repeated consonant-vowel syllables such as 'bababa') around 6 to 10 months, first words around 12 months, and two-word combinations around 18 to 24 months. The other sequences put babbling, first words or cooing out of order.",
     ref: "Berk, Child Development, ch. 9",
   }),
   d({
@@ -60,13 +60,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Werker and Tees (1984) found that English-learning infants of 6–8 months could discriminate Hindi dental and retroflex consonants, but most could not by 10–12 months.",
+      "A: Werker and Tees found that English-learning infants of 6 to 8 months could discriminate Hindi dental and retroflex consonants, but most could not by 10 to 12 months.",
       "R: Infants' speech perception becomes tuned to the sound contrasts of their native language during the first year (perceptual narrowing).",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Using a conditioned head-turn procedure, Werker and Tees showed that younger infants discriminated non-native contrasts (Hindi /ʈa/–/t̪a/ and a Salish contrast) that English-speaking adults find hard, but this ability declined by the end of the first year as perception was reorganised around native categories. Hindi-learning infants kept the contrast.",
+      "Both are true and R explains A. Using a conditioned head-turn procedure, Werker and Tees showed that younger infants discriminated non-native contrasts (Hindi /ʈa/-/t̪a/ and a Salish contrast) that English-speaking adults find hard, but this ability declined by the end of the first year as perception was reorganised around native categories. Hindi-learning infants kept the contrast.",
     ref: "Werker & Tees 1984, Infant Behav Dev",
   }),
   d({
@@ -92,7 +92,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Chomsky: innate LAD and universal grammar (iii). Skinner (Verbal Behavior, 1957): operant learning of mands, tacts and other verbal operants (i). Bruner: the LASS, adults' scaffolded routines such as joint book-reading and peekaboo (iv). Tomasello: usage-based, social-cognitive account (ii). The other codes swap Chomsky and Skinner, Skinner and Bruner, or Bruner and Tomasello.",
+      "Chomsky: innate LAD and universal grammar (iii). Skinner: operant learning of mands, tacts and other verbal operants (i). Bruner: the LASS, adults' scaffolded routines such as joint book-reading and peekaboo (iv). Tomasello: usage-based, social-cognitive account (ii). The other codes swap Chomsky and Skinner, Skinner and Bruner, or Bruner and Tomasello.",
     ref: "Chomsky 1965; Skinner 1957; Bruner 1983; Tomasello 2003",
   }),
   d({
@@ -117,7 +117,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Brown and Hanlon's (1970) analysis of parent–child conversations found that parents:",
+    stem: "Brown and Hanlon's analysis of parent-child conversations found that parents:",
     options: [
       "Systematically corrected nearly all grammatical errors",
       "Corrected children mainly for the truth of what they said, not for grammatical errors",
@@ -134,7 +134,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Jean Berko's 'wug test' (1958) showed that young children:",
+    stem: "Jean Berko's 'wug test' showed that young children:",
     options: [
       "Learn grammar only by imitation",
       "Can only repeat words they have heard",
@@ -166,7 +166,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Markman proposed the whole-object, taxonomic and mutual exclusivity constraints as biases that narrow the possible meanings of new words, helping fast mapping. Overregularisation concerns grammatical morphology, not word-meaning constraints.",
+      "Markman proposed that young children approach new words with built-in assumptions that cut down the possible meanings. The whole-object assumption makes a child take 'rabbit' to mean the whole animal, not its ears or colour. The taxonomic assumption makes the child extend 'dog' to other dogs, not to a bone or a lead that goes with dogs. Mutual exclusivity makes the child assume each thing has one name, so a new word probably labels the thing that has no name yet. These assumptions help explain fast mapping. Overregularisation ('goed', 'mouses') is about grammatical endings, not word meaning, so D does not belong.",
     ref: "Markman 1990, Cogn Sci",
   }),
   d({
@@ -174,7 +174,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Carey and Bartlett's (1978) 'chromium' study, in which preschoolers heard a new colour word used just once and later showed partial knowledge of it, demonstrated:",
+    stem: "Carey and Bartlett's 'chromium' study, in which preschoolers heard a new colour word used just once and later showed partial knowledge of it, demonstrated:",
     options: [
       "Overextension",
       "Fast mapping",
@@ -202,7 +202,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Saffran, Aslin and Newport (1996) showed that brief exposure lets 8-month-olds track syllable co-occurrence statistics, and their novelty preference shows they distinguished words from part-words. There were no pauses, so pause cues cannot explain the result. Discrimination clearly occurred. The 'words' were meaningless, so this is segmentation, not vocabulary learning.",
+      "Saffran, Aslin and Newport showed that brief exposure lets 8-month-olds track syllable co-occurrence statistics, and their novelty preference shows they distinguished words from part-words. There were no pauses, so pause cues cannot explain the result. Discrimination clearly occurred. The 'words' were meaningless, so this is segmentation, not vocabulary learning.",
     ref: "Saffran, Aslin & Newport 1996, Science",
   }),
   d({
@@ -210,7 +210,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "Lenneberg (1967) proposed a critical period for language acquisition lasting from early childhood until about:",
+    stem: "Lenneberg proposed a critical period for language acquisition lasting from early childhood until about:",
     options: [
       "Old age",
       "Age 1",
@@ -219,7 +219,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Lenneberg linked the critical period to brain maturation and lateralisation, ending around puberty, citing better language recovery after brain injury in children than in adults. Evidence includes Genie and Johnson and Newport's (1989) finding that grammatical judgement in a second language declined with age of arrival, although many now speak of a sensitive period with gradual decline. The other ages are not part of his proposal.",
+      "Lenneberg linked the critical period to brain maturation and lateralisation, ending around puberty, citing better language recovery after brain injury in children than in adults. Evidence includes Genie and Johnson and Newport's finding that grammatical judgement in a second language declined with age of arrival, although many now speak of a sensitive period with gradual decline. The other ages are not part of his proposal.",
     ref: "Lenneberg 1967; Johnson & Newport 1989",
   }),
   d({
@@ -236,7 +236,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Curtiss (1977) documented that Genie learned many words and used them meaningfully, but her syntax stayed telegraphic and rule-poor. Interpretation is limited because she may have had pre-existing cognitive impairment, suffered severe abuse and malnutrition, and was a single case. She did not learn perfect grammar, she did acquire words, and she had been severely isolated from infancy.",
+      "Curtiss documented that Genie learned many words and used them meaningfully, but her syntax stayed telegraphic and rule-poor. Interpretation is limited because she may have had pre-existing cognitive impairment, suffered severe abuse and malnutrition, and was a single case. She did not learn perfect grammar, she did acquire words, and she had been severely isolated from infancy.",
     ref: "Curtiss 1977, Genie: A Psycholinguistic Study",
   }),
   d({
@@ -252,7 +252,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. When deaf schools opened in Nicaragua in the late 1970s, the first cohort developed a rudimentary shared signing system; later, younger cohorts learning from them produced more systematic grammar, such as spatial modulations (Senghas and Coppola, 2001). This supports children's role in creating structure, similar to Bickerton's claims about pidgins becoming creoles, and to Singleton and Newport's case of 'Simon', who surpassed his parents' inconsistent ASL.",
+      "Both are true and R explains A. When deaf schools opened in Nicaragua in the late 1970s, the first cohort developed a rudimentary shared signing system; later, younger cohorts learning from them produced more systematic grammar, such as spatial modulations. This supports children's role in creating structure, similar to Bickerton's claims about pidgins becoming creoles, and to Singleton and Newport's case of 'Simon', who surpassed his parents' inconsistent ASL.",
     ref: "Senghas & Coppola 2001, Psychol Sci; Singleton & Newport 2004",
   }),
   d({
@@ -269,7 +269,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Adults in many cultures speak to infants with a higher, more variable pitch, slower rate, clear pauses, simple vocabulary and repetition; infants prefer it from birth (Fernald), and it may help segmentation and attention. The other options describe the opposite of child-directed speech. Note that it is not universal in form: some cultures speak relatively little to young infants directly.",
+      "Adults in many cultures speak to infants with a higher, more variable pitch, slower rate, clear pauses, simple vocabulary and repetition; infants prefer it from birth (described by Fernald), and it may help segmentation and attention. The other options describe the opposite of child-directed speech. Note that it is not universal in form: some cultures speak relatively little to young infants directly.",
     ref: "Fernald 1985; Berk, ch. 9",
   }),
   d({
@@ -303,16 +303,16 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Roger Brown's longitudinal study of Adam, Eve and Sarah (1973) introduced which measure of early grammatical development?",
+    stem: "Roger Brown's longitudinal study of Adam, Eve and Sarah introduced which measure of early grammatical development?",
     options: [
       "Phonological loop span",
-      "Type–token ratio",
+      "Type-token ratio",
       "Peabody vocabulary score",
       "Mean length of utterance (MLU) in morphemes",
     ],
     answer: 3,
     explanation:
-      "Brown used MLU in morphemes to define stages of grammatical development and found that 14 grammatical morphemes (such as present progressive '-ing', plural '-s', past '-ed') were acquired in a fairly consistent order. Type–token ratio measures lexical diversity. The Peabody Picture Vocabulary Test measures receptive vocabulary. The phonological loop is Baddeley's working-memory component.",
+      "Brown used MLU in morphemes to define stages of grammatical development and found that 14 grammatical morphemes (such as present progressive '-ing', plural '-s', past '-ed') were acquired in a fairly consistent order. Type-token ratio measures lexical diversity. The Peabody Picture Vocabulary Test measures receptive vocabulary. The phonological loop is Baddeley's working-memory component.",
     ref: "Brown 1973, A First Language",
   }),
   d({
@@ -320,7 +320,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "statement",
-    stem: "Which statements about Eimas et al.'s (1971) study of infant speech perception are correct?",
+    stem: "Which statements about Eimas and colleagues' study of infant speech perception are correct?",
     statements: [
       "A. It used the high-amplitude sucking procedure with 1- and 4-month-olds.",
       "B. Infants discriminated /ba/ from /pa/ across the adult category boundary but not equivalent acoustic differences within a category.",
@@ -335,7 +335,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A, B and C are correct: sucking rate recovered when the voice-onset time crossed the /ba/–/pa/ boundary (about 25 ms) but not for equal changes within a category, suggesting categorical perception in early infancy. D is wrong: the study tested only infants; later work found categorical perception of speech sounds in chinchillas and some other animals (Kuhl and Miller, 1975), so it is not unique to humans or to speech.",
+      "A, B and C are correct: sucking rate recovered when the voice-onset time crossed the /ba/-/pa/ boundary (about 25 ms) but not for equal changes within a category, suggesting categorical perception in early infancy. D is wrong: the study tested only infants; later work found categorical perception of speech sounds in chinchillas and some other animals, so it is not unique to humans or to speech.",
     ref: "Eimas et al. 1971, Science; Kuhl & Miller 1975",
   }),
   d({
@@ -352,7 +352,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "After a slow start (about 1–3 new words per week), many toddlers show rapid vocabulary growth around 18 months once they have about 50 words, linked to insight that things have names, categorisation and better segmentation. Vocabulary continues to grow at school age, but the spurt is a toddler phenomenon. At 6 months infants are babbling, not naming.",
+      "After a slow start (about 1 to 3 new words per week), many toddlers show rapid vocabulary growth around 18 months once they have about 50 words, linked to insight that things have names, categorisation and better segmentation. Vocabulary continues to grow at school age, but the spurt is a toddler phenomenon. At 6 months infants are babbling, not naming.",
     ref: "Berk, ch. 9",
   }),
   d({
@@ -369,7 +369,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In Naigles' (1990) preferential-looking studies, 2-year-olds looked at a causal scene after hearing a transitive frame and at a non-causal scene after an intransitive one, supporting the idea that sentence structure guides verb learning. Using meanings to discover grammatical categories is Pinker's semantic bootstrapping, the converse. The other options are not claims of the theory, and 2-year-olds clearly learn verbs.",
+      "In Naigles' preferential-looking studies, 2-year-olds looked at a causal scene after hearing a transitive frame and at a non-causal scene after an intransitive one, supporting the idea that sentence structure guides verb learning. Using meanings to discover grammatical categories is Pinker's semantic bootstrapping, the converse. The other options are not claims of the theory, and 2-year-olds clearly learn verbs.",
     ref: "Gleitman 1990; Naigles 1990, J Child Lang",
   }),
   d({
@@ -377,7 +377,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Johnson and Newport (1989) tested Chinese and Korean immigrants to the US on English grammar. They found that:",
+    stem: "Johnson and Newport tested Chinese and Korean immigrants to the US on English grammar. They found that:",
     options: [
       "Only years of residence predicted performance",
       "Adults who arrived later always outperformed children",
@@ -386,7 +386,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Those who arrived at 3–7 performed like native speakers; performance then fell linearly with age of arrival up to puberty, and among adult arrivals scores were low and varied without a clear age trend, supporting a maturational sensitive period. Later arrivals did not outperform children. Years of residence mattered little once age of arrival was considered.",
+      "Those who arrived at 3 to 7 performed like native speakers; performance then fell linearly with age of arrival up to puberty, and among adult arrivals scores were low and varied without a clear age trend, supporting a maturational sensitive period. Later arrivals did not outperform children. Years of residence mattered little once age of arrival was considered.",
     ref: "Johnson & Newport 1989, Cogn Psychol",
   }),
   d({
@@ -396,13 +396,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Joint attention, in which infant and caregiver attend to the same object, typically emerges around 9–12 months.",
+      "A: Joint attention, in which infant and caregiver attend to the same object, typically emerges around 9 to 12 months.",
       "R: Babbling disappears completely by 6 months of age.",
     ],
     options: AR,
     answer: 2,
     explanation:
-      "A is true: around 9–12 months infants follow gaze and points and begin to point themselves, and joint attention predicts later vocabulary (Tomasello's 'nine-month revolution'). R is false: canonical babbling begins around 6–10 months and continues, gradually blending into first words; it does not disappear at 6 months.",
+      "A is true: around 9 to 12 months infants follow gaze and points and begin to point themselves, and joint attention predicts later vocabulary (Tomasello's 'nine-month revolution'). R is false: canonical babbling begins around 6 to 10 months and continues, gradually blending into first words; it does not disappear at 6 months.",
     ref: "Tomasello 1999; Carpenter, Nagell & Tomasello 1998",
   }),
   d({
@@ -412,7 +412,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The idea that the language we speak shapes or limits the way we think is known as:",
     options: [
-      "The Sapir–Whorf hypothesis (linguistic relativity)",
+      "The Sapir-Whorf hypothesis (linguistic relativity)",
       "Universal grammar",
       "The critical period hypothesis",
       "Fast mapping",
@@ -453,7 +453,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Hart and Risley's (1995) observational study of American families reported that:",
+    stem: "Hart and Risley's observational study of American families reported that:",
     options: [
       "Children from low-income families heard more words",
       "All families talked to their children equally often",
@@ -462,7 +462,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies (for example Sperry, Sperry and Miller, 2019) questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is option 3. The other options contradict it.",
+      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is option 3. The other options contradict it.",
     ref: "Hart & Risley 1995; Sperry et al. 2019, Child Dev",
   }),
   // ── Developmental research designs and infant methods ─────────────────────
@@ -582,7 +582,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, S],
     difficulty: 2,
     type: "mcq",
-    stem: "In the habituation–dishabituation paradigm, an infant who looks longer at a new stimulus after repeated exposure to an old one is taken to:",
+    stem: "In the habituation-dishabituation paradigm, an infant who looks longer at a new stimulus after repeated exposure to an old one is taken to:",
     options: [
       "Prefer familiar stimuli in general",
       "Be unable to tell the stimuli apart",
@@ -605,10 +605,10 @@ export const QUESTIONS: PrepQuestion[] = [
     lists: {
       left: ["A. Preferential looking", "B. Visual cliff", "C. High-amplitude sucking", "D. Violation of expectation"],
       right: [
-        "i. Gibson and Walk (1960), depth perception in crawling infants",
-        "ii. Eimas et al. (1971), speech-sound discrimination",
-        "iii. Fantz (1961), infants' preference for patterned stimuli such as faces",
-        "iv. Baillargeon (1985, 1987), object permanence",
+        "i. Gibson and Walk, depth perception in crawling infants",
+        "ii. Eimas and colleagues, speech-sound discrimination",
+        "iii. Fantz, infants' preference for patterned stimuli such as faces",
+        "iv. Baillargeon, object permanence",
       ],
     },
     options: [
@@ -684,7 +684,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A, B and D are core principles: permission plus assent, the child's right to withdraw, and minimising harm. C is wrong: guidelines require researchers to act on information that seriously threatens a child's wellbeing (for example consulting, informing parents or authorities), even though this affects confidentiality. In India, the ICMR National Ethical Guidelines (2017) similarly require assent for children aged about 7 and above.",
+      "A, B and D are core principles: permission plus assent, the child's right to withdraw, and minimising harm. C is wrong: guidelines require researchers to act on information that seriously threatens a child's wellbeing (for example consulting, informing parents or authorities), even though this affects confidentiality. In India, the ICMR National Ethical Guidelines similarly require assent for children aged about 7 and above.",
     ref: "SRCD Ethical Standards; ICMR 2017 guidelines",
   }),
   d({
@@ -740,7 +740,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Young Lives, coordinated from the University of Oxford since 2002, has followed two cohorts of children (born around 1994–95 and 2001–02) in four countries, including undivided Andhra Pradesh (now Andhra Pradesh and Telangana), studying poverty, schooling, nutrition and wellbeing. It is longitudinal, not cross-sectional; it is observational, not a Delhi-only experiment; and it studies children and young people, not older adults.",
+      "Young Lives, coordinated from the University of Oxford since 2002, has followed two cohorts of children (born around 1994 to 95 and 2001 to 02) in four countries, including undivided Andhra Pradesh (now Andhra Pradesh and Telangana), studying poverty, schooling, nutrition and wellbeing. It is longitudinal, not cross-sectional; it is observational, not a Delhi-only experiment; and it studies children and young people, not older adults.",
     ref: "Young Lives study documentation (younglives.org.uk)",
   }),
   d({
@@ -750,7 +750,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [C, N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The 'visual cliff' experiment by Gibson and Walk (1960) found that most crawling infants (6–14 months):",
+    stem: "The 'visual cliff' experiment by Gibson and Walk found that most crawling infants (6 to 14 months):",
     options: [
       "Could not see the checkerboard pattern",
       "Crawled happily over the deep side",
@@ -816,7 +816,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Bialystok reported bilingual advantages on tasks requiring inhibition of misleading information (for example the dimensional change card sort and Simon task), attributed to managing two languages; later meta-analyses and large studies (for example Paap and Greenberg, 2013; Lehtonen et al., 2018) found small or null effects, so this remains debated. Bilinguals often have smaller vocabularies in each language (though similar total concepts) and are often slower at picture naming. No 30-point IQ advantage exists.",
+      "Bialystok reported bilingual advantages on tasks requiring inhibition of misleading information (for example the dimensional change card sort and Simon task), attributed to managing two languages; later meta-analyses and large studies found small or null effects, so this remains debated. Bilinguals often have smaller vocabularies in each language (though similar total concepts) and are often slower at picture naming. No 30-point IQ advantage exists.",
     ref: "Bialystok 2001; Lehtonen et al. 2018, Psychol Bull",
   }),
   d({
@@ -832,7 +832,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. At 12 months many infants understand around 50 words but say only a few; production lags comprehension throughout childhood (and adulthood). Production adds the demands of retrieval and motor planning on top of comprehension.",
+      "Children understand words before they can say them. At about 12 months many infants understand around 50 words but say only a handful, and comprehension stays ahead of production throughout childhood and even in adults, whose passive vocabulary is larger than their active one. The reason is the one in R: to understand a word you only need to recognise its sound and link it to a meaning, while to say it you also have to retrieve the word from memory and plan and control the movements of speech. So A is true, R is true, and R explains A.",
     ref: "Fenson et al. 1994; Berk, ch. 9",
   }),
   d({
@@ -849,7 +849,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In Thought and Language Vygotsky described a pre-intellectual stage of speech and a pre-linguistic stage of thought that converge around age 2, after which language becomes the main tool of thought and, via private speech, inner speech. Strong determinism is closer to strong Whorfianism. 'Thought is subvocal speech' is Watson's behaviourist view. Language is central, not irrelevant, in Vygotsky's theory.",
+      "Vygotsky described a pre-intellectual stage of speech and a pre-linguistic stage of thought that converge around age 2, after which language becomes the main tool of thought and, via private speech, inner speech. Strong determinism is closer to strong Whorfianism. 'Thought is subvocal speech' is Watson's behaviourist view. Language is central, not irrelevant, in Vygotsky's theory.",
     ref: "Vygotsky 1934/1986",
   }),
   d({
@@ -861,7 +861,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Which statements about the Dunedin Multidisciplinary Health and Development Study are correct?",
     statements: [
-      "A. It follows about 1,000 people born in Dunedin, New Zealand, in 1972–73.",
+      "A. It follows about 1,000 people born in Dunedin, New Zealand, in 1972 to 73.",
       "B. It has retained an unusually high proportion of its cohort (over 90% at age 45).",
       "C. It showed that childhood self-control predicted adult health, wealth and criminal outcomes.",
       "D. It is a cross-sectional survey repeated with different people each year.",
@@ -874,7 +874,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "A, B and C are correct: the study began with 1,037 babies born between April 1972 and March 1973, retained about 94% of living members at age 45, and Moffitt et al. (2011) linked self-control at ages 3–11 to adult outcomes; it also produced the Caspi G×E papers. D is wrong: it is a prospective longitudinal study of one birth cohort.",
+      "A, B and C are correct: the study began with 1,037 babies born between April 1972 and March 1973, retained about 94% of living members at age 45, and Moffitt and colleagues linked self-control at ages 3 to 11 to adult outcomes; it also produced the Caspi G×E papers. D is wrong: it is a prospective longitudinal study of one birth cohort.",
     ref: "Moffitt et al. 2011, PNAS; Poulton, Moffitt & Silva 2015",
   }),
   d({
@@ -884,14 +884,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which finding best supports a role for social interaction, rather than mere exposure, in early speech learning?",
     options: [
-      "Kuhl et al. (2003): 9-month-old American infants learned Mandarin sound contrasts from live interaction with a Mandarin speaker but not from the same amount of exposure by video or audio",
-      "Eimas et al. (1971): infants perceive speech categorically",
-      "Brown (1973): morphemes are acquired in a consistent order",
-      "Berko (1958): children add plural endings to nonsense words",
+      "Kuhl and colleagues: 9-month-old American infants learned Mandarin sound contrasts from live interaction with a Mandarin speaker but not from the same amount of exposure by video or audio",
+      "Eimas and colleagues: infants perceive speech categorically",
+      "Brown: morphemes are acquired in a consistent order",
+      "Berko: children add plural endings to nonsense words",
     ],
     answer: 0,
     explanation:
-      "Kuhl, Tsao and Liu (2003) gave infants 12 sessions with Mandarin speakers; those who interacted live retained Mandarin phonetic discrimination, while those who watched or listened to recordings did not, suggesting a 'social gating' of speech learning. Eimas, Brown and Berko's findings concern early perceptual abilities, morpheme order and rule productivity, not the role of social interaction.",
+      "Kuhl, Tsao and Liu gave infants 12 sessions with Mandarin speakers; those who interacted live retained Mandarin phonetic discrimination, while those who watched or listened to recordings did not, suggesting a 'social gating' of speech learning. Eimas, Brown and Berko's findings concern early perceptual abilities, morpheme order and rule productivity, not the role of social interaction.",
     ref: "Kuhl, Tsao & Liu 2003, PNAS",
   }),
 ];

@@ -49,7 +49,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "h² = 2(rMZ − rDZ) = 2(0.50 − 0.30) = 0.40. c² = rMZ − h² = 0.50 − 0.40 = 0.10 (equivalently 2rDZ − rMZ = 0.60 − 0.50 = 0.10). Non-shared environment plus error, e² = 1 − rMZ = 0.50. 'h² = 0.20' uses the raw MZ–DZ difference without doubling it, and 'c² = 0.30' simply copies the DZ correlation. 'c² = 0.20' mistakes the MZ–DZ difference for shared environment. 'h² = 0.50' confuses heritability with the MZ correlation.",
+      "h² = 2(rMZ - rDZ) = 2(0.50 - 0.30) = 0.40. c² = rMZ - h² = 0.50 - 0.40 = 0.10 (equivalently 2rDZ - rMZ = 0.60 - 0.50 = 0.10). Non-shared environment plus error, e² = 1 - rMZ = 0.50. 'h² = 0.20' uses the raw MZ-DZ difference without doubling it, and 'c² = 0.30' simply copies the DZ correlation. 'c² = 0.20' mistakes the MZ-DZ difference for shared environment. 'h² = 0.50' confuses heritability with the MZ correlation.",
     ref: "Falconer 1960; Plomin et al., Behavioral Genetics, ch. 6",
   }),
   b({
@@ -65,7 +65,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Lewontin's (1970) analogy: seeds from one genetically varied bag are planted in rich and poor soil. Within each pot height differences are entirely genetic, yet the difference between pots is entirely due to soil. So within-group heritability cannot be used to infer that between-group gaps are genetic.",
+      "Both are true and R explains A. Lewontin's analogy: seeds from one genetically varied bag are planted in rich and poor soil. Within each pot height differences are entirely genetic, yet the difference between pots is entirely due to soil. So within-group heritability cannot be used to infer that between-group gaps are genetic.",
     ref: "Lewontin 1970; Plomin et al., Behavioral Genetics",
   }),
   b({
@@ -113,7 +113,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "match",
-    stem: "Match the type of gene–environment correlation in List I with its example in List II.",
+    stem: "Match the type of gene-environment correlation in List I with its example in List II.",
     lists: {
       left: ["A. Passive", "B. Evocative (reactive)", "C. Active"],
       right: [
@@ -130,7 +130,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Passive rGE: parents provide both genes and an environment correlated with them, with no action by the child (ii). Evocative rGE: the child's genetically influenced traits draw responses from others (i). Active rGE ('niche picking'): people seek out environments that fit their genetic tendencies (iii). Scarr and McCartney (1983) argued passive effects fade and active effects grow with age. The distractors mix up who is acting.",
+      "Passive rGE: parents provide both genes and an environment correlated with them, with no action by the child (ii). Evocative rGE: the child's genetically influenced traits draw responses from others (i). Active rGE ('niche picking'): people seek out environments that fit their genetic tendencies (iii). Scarr and McCartney argued passive effects fade and active effects grow with age. The distractors mix up who is acting.",
     ref: "Plomin, DeFries & Loehlin 1977; Scarr & McCartney 1983",
   }),
   b({
@@ -138,7 +138,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Caspi and colleagues (2002), in the Dunedin cohort, reported that maltreated boys were more likely to develop antisocial behaviour if they carried:",
+    stem: "Caspi and colleagues, in the Dunedin cohort, reported that maltreated boys were more likely to develop antisocial behaviour if they carried:",
     options: [
       "The APOE ε4 allele",
       "Two short alleles of the serotonin transporter gene",
@@ -147,7 +147,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Caspi et al. (2002) found that maltreatment predicted antisocial outcomes mainly in boys with low-activity MAOA, an early, influential gene × environment interaction. The short 5-HTTLPR allele was the subject of their 2003 depression × life-stress report. APOE ε4 is a risk allele for Alzheimer's disease. Expanded CAG repeats in HTT cause Huntington's disease.",
+      "Caspi and colleagues found that maltreatment predicted antisocial outcomes mainly in boys with low-activity MAOA, an early, influential gene × environment interaction. The short 5-HTTLPR allele was the subject of their 2003 depression × life-stress report. APOE ε4 is a risk allele for Alzheimer's disease. Expanded CAG repeats in HTT cause Huntington's disease.",
     ref: "Caspi et al. 2002, Science",
   }),
   b({
@@ -163,7 +163,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Risch et al. (2009) and Culverhouse et al. (2018) found no robust 5-HTTLPR × stress effect, and Border et al. (2019), with over 600,000 people, found no support for historical depression candidate genes. Genome-wide studies show depression involves thousands of variants of very small effect, so small candidate-gene studies were badly underpowered and their positive findings mostly spurious.",
+      "Both are true and R explains A. Risch and colleagues and Culverhouse and colleagues found no robust 5-HTTLPR × stress effect, and Border and colleagues, with over 600,000 people, found no support for historical depression candidate genes. Genome-wide studies show depression involves thousands of variants of very small effect, so small candidate-gene studies were badly underpowered and their positive findings mostly spurious.",
     ref: "Border et al. 2019, Am J Psychiatry; Risch et al. 2009, JAMA",
   }),
   b({
@@ -218,7 +218,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "More than about 200 CGG repeats (full mutation) cause hypermethylation and silencing of FMR1, so FMRP protein is lost; carriers of 55–200 repeats have a premutation that can expand when passed on by mothers. Males are more severely affected. Trisomy X (47,XXX) is a different, usually mild, condition. A 7q11.23 deletion causes Williams syndrome. MECP2 mutations cause Rett syndrome.",
+      "More than about 200 CGG repeats (full mutation) cause hypermethylation and silencing of FMR1, so FMRP protein is lost; carriers of 55 to 200 repeats have a premutation that can expand when passed on by mothers. Males are more severely affected. Trisomy X (47,XXX) is a different, usually mild, condition. A 7q11.23 deletion causes Williams syndrome. MECP2 mutations cause Rett syndrome.",
     ref: "Kaplan & Sadock's Synopsis, intellectual disability",
   }),
   b({
@@ -228,16 +228,16 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "passage",
     stem: "Which explanation best accounts for the difference between the two children?",
     passage:
-      "Two unrelated children each have a deletion of the same region of chromosome 15 (15q11–q13). Child X, whose deletion is on the chromosome inherited from her father, shows infant feeding problems followed by insatiable appetite, obesity and mild intellectual disability. Child Y, whose deletion is on the chromosome inherited from her mother, shows severe intellectual disability, absent speech, seizures, jerky movements and frequent laughter.",
+      "Two unrelated children each have a deletion of the same region of chromosome 15 (15q11-q13). Child X, whose deletion is on the chromosome inherited from her father, shows infant feeding problems followed by insatiable appetite, obesity and mild intellectual disability. Child Y, whose deletion is on the chromosome inherited from her mother, shows severe intellectual disability, absent speech, seizures, jerky movements and frequent laughter.",
     options: [
       "Environmental differences in diet explain the different syndromes",
       "The two deletions must be in completely different chromosomes",
       "Child Y has fragile X syndrome",
-      "Genomic imprinting: genes in this region are expressed only from one parent's copy, so losing the paternal copy gives Prader–Willi syndrome and losing the maternal copy gives Angelman syndrome",
+      "Genomic imprinting: genes in this region are expressed only from one parent's copy, so losing the paternal copy gives Prader-Willi syndrome and losing the maternal copy gives Angelman syndrome",
     ],
     answer: 3,
     explanation:
-      "In 15q11–q13 some genes are active only on the paternal chromosome (for example SNRPN), and UBE3A in neurons is active only on the maternal one. A paternal deletion causes Prader–Willi syndrome (hyperphagia, obesity); a maternal deletion causes Angelman syndrome (severe disability, ataxia, happy demeanour). The passage says the deletions are in the same region. Fragile X involves the X chromosome. Diet cannot produce two distinct genetic syndromes.",
+      "In 15q11-q13 some genes are active only on the paternal chromosome (for example SNRPN), and UBE3A in neurons is active only on the maternal one. A paternal deletion causes Prader-Willi syndrome (hyperphagia, obesity); a maternal deletion causes Angelman syndrome (severe disability, ataxia, happy demeanour). The passage says the deletions are in the same region. Fragile X involves the X chromosome. Diet cannot produce two distinct genetic syndromes.",
     ref: "Plomin et al., Behavioral Genetics; Kaplan & Sadock's Synopsis",
   }),
   b({
@@ -254,7 +254,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Gottesman (1991) pooled European studies: about 1% general population, about 9% for siblings, about 13% for children of one affected parent, about 17% for DZ co-twins, about 46% for children of two affected parents and about 48% for MZ co-twins. 17% is the DZ figure. MZ concordance is well below 100%, showing non-genetic influences. 1% is the population base rate.",
+      "Gottesman pooled European studies: about 1% general population, about 9% for siblings, about 13% for children of one affected parent, about 17% for DZ co-twins, about 46% for children of two affected parents and about 48% for MZ co-twins. 17% is the DZ figure. MZ concordance is well below 100%, showing non-genetic influences. 1% is the population base rate.",
     ref: "Gottesman 1991, Schizophrenia Genesis",
   }),
   b({
@@ -264,13 +264,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Gottesman and Bertelsen (1989) found that the children of the unaffected MZ co-twin of a person with schizophrenia had about the same risk as the children of the affected twin.",
+      "A: Gottesman and Bertelsen found that the children of the unaffected MZ co-twin of a person with schizophrenia had about the same risk as the children of the affected twin.",
       "R: The unaffected co-twin carries the same genetic liability even though it was never expressed.",
     ],
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. In Fischer's Danish twin register, offspring of affected and unaffected MZ twins each had about 17% risk, while offspring of the unaffected DZ co-twin had a much lower risk. This shows the unaffected MZ twin carried an unexpressed genetic diathesis, supporting a diathesis–stress view.",
+      "Both are true and R explains A. In Fischer's Danish twin register, offspring of affected and unaffected MZ twins each had about 17% risk, while offspring of the unaffected DZ co-twin had a much lower risk. This shows the unaffected MZ twin carried an unexpressed genetic diathesis, supporting a diathesis-stress view.",
     ref: "Gottesman & Bertelsen 1989, Arch Gen Psychiatry",
   }),
   b({
@@ -295,7 +295,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Turkheimer and colleagues (2003) found that in a US sample of 7-year-olds, the heritability of IQ was:",
+    stem: "Turkheimer and colleagues found that in a US sample of 7-year-olds, the heritability of IQ was:",
     options: [
       "Higher in poor families than in affluent ones",
       "The same at all socioeconomic levels",
@@ -304,7 +304,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In the National Collaborative Perinatal Project, heritability of IQ was about 0.10 or less in the poorest families and about 0.72 in the most affluent, with shared environment dominant at the low end. This is a gene × SES interaction: where environments are restricting, environmental differences matter more. Later meta-analysis (Tucker-Drob and Bates, 2016) found the effect in US but not in Western European or Australian samples. The other options contradict the finding.",
+      "In the National Collaborative Perinatal Project, heritability of IQ was about 0.10 or less in the poorest families and about 0.72 in the most affluent, with shared environment dominant at the low end. This is a gene × SES interaction: where environments are restricting, environmental differences matter more. Later meta-analysis found the effect in US but not in Western European or Australian samples. The other options contradict the finding.",
     ref: "Turkheimer et al. 2003, Psychol Sci",
   }),
   b({
@@ -317,11 +317,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Be highest in infancy",
       "Decrease steadily from childhood to old age",
       "Stay constant at 50% across life",
-      "Increase from childhood to adulthood (about 40% in childhood to about 60–70% in adulthood)",
+      "Increase from childhood to adulthood (about 40% in childhood to about 60 to 70% in adulthood)",
     ],
     answer: 3,
     explanation:
-      "Twin data (Haworth et al., 2010) show heritability of about 41% at age 9, 55% at 12 and 66% at 17, rising further in adulthood (sometimes called the Wilson effect), while shared-environment effects decline. A likely reason is active gene–environment correlation: people increasingly choose environments that fit their dispositions. The other options are the reverse of this pattern.",
+      "Twin data show heritability of about 41% at age 9, 55% at 12 and 66% at 17, rising further in adulthood (sometimes called the Wilson effect), while shared-environment effects decline. A likely reason is active gene-environment correlation: people increasingly choose environments that fit their dispositions. The other options are the reverse of this pattern.",
     ref: "Haworth et al. 2010, Mol Psychiatry; Plomin & Deary 2015",
   }),
   b({
@@ -329,7 +329,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 4,
     type: "statement",
-    stem: "Turkheimer's (2000) 'three laws of behaviour genetics' state that:",
+    stem: "Turkheimer's 'three laws of behaviour genetics' state that:",
     statements: [
       "A. All human behavioural traits are heritable.",
       "B. The effect of being raised in the same family is smaller than the effect of genes.",
@@ -344,7 +344,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Turkheimer's laws are A, B and C: everything is heritable, shared environment matters less than genes, and much variance is due to non-shared environment (and error). D contradicts the second law: for adult personality, shared family environment typically accounts for close to zero variance, which prompted Plomin and Daniels' (1987) question about why siblings differ so much.",
+      "Turkheimer's laws are A, B and C: everything is heritable, shared environment matters less than genes, and much variance is due to non-shared environment (and error). D contradicts the second law: for adult personality, shared family environment typically accounts for close to zero variance, which prompted Plomin and Daniels' question about why siblings differ so much.",
     ref: "Turkheimer 2000, Curr Dir Psychol Sci; Plomin & Daniels 1987",
   }),
   b({
@@ -395,7 +395,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Tryon (1940) selectively bred rats for maze performance, producing 'maze-bright' and 'maze-dull' strains. Cooper and Zubek (1958) later showed that:",
+    stem: "Tryon selectively bred rats for maze performance, producing 'maze-bright' and 'maze-dull' strains. Cooper and Zubek later showed that:",
     options: [
       "The strain difference was due to differences in vision",
       "Environmental conditions had no effect on the strains",
@@ -404,7 +404,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Cooper and Zubek reared both strains in normal, enriched or restricted cages; in enriched cages the dull rats nearly matched the bright, and in restricted cages the bright rats did as badly as the dull, a classic gene × environment interaction. So environment clearly mattered. Searle (1949) found the strains differed in emotionality and motivation rather than general intelligence. Vision was not the explanation.",
+      "Cooper and Zubek reared both strains in normal, enriched or restricted cages; in enriched cages the dull rats nearly matched the bright, and in restricted cages the bright rats did as badly as the dull, a classic gene × environment interaction. So environment clearly mattered. Searle found the strains differed in emotionality and motivation rather than general intelligence. Vision was not the explanation.",
     ref: "Tryon 1940; Cooper & Zubek 1958",
   }),
   b({
@@ -445,7 +445,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 4,
     type: "mcq",
-    stem: "Heijmans and colleagues (2008) studied people who had been conceived during the Dutch Hunger Winter of 1944–45. Six decades later these individuals showed:",
+    stem: "Heijmans and colleagues studied people who had been conceived during the Dutch Hunger Winter of 1944 to 45. Six decades later these individuals showed:",
     options: [
       "Changes in the base sequence of IGF2",
       "Less DNA methylation of the imprinted IGF2 gene than their same-sex siblings conceived at other times",
@@ -479,7 +479,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 2,
     type: "mcq",
-    stem: "The Minnesota Study of Twins Reared Apart (Bouchard et al., 1990) estimated the heritability of adult IQ at roughly:",
+    stem: "The Minnesota Study of Twins Reared Apart estimated the heritability of adult IQ at roughly:",
     options: [
       "0.05",
       "0.20",
@@ -498,7 +498,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "match",
     stem: "Match the single-gene or microdeletion condition in List I with its typical behavioural phenotype in List II.",
     lists: {
-      left: ["A. Williams syndrome", "B. Rett syndrome", "C. Prader–Willi syndrome", "D. Lesch–Nyhan syndrome"],
+      left: ["A. Williams syndrome", "B. Rett syndrome", "C. Prader-Willi syndrome", "D. Lesch-Nyhan syndrome"],
       right: [
         "i. Severe self-injury (biting lips and fingers), linked to HPRT deficiency",
         "ii. Hypersociability, strong verbal skills relative to severe visuospatial weakness",
@@ -514,7 +514,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Williams syndrome (7q11.23 deletion): hypersociability, relative strength in language and face processing, marked visuospatial deficits (ii). Rett syndrome (MECP2, mostly girls): normal early development, then regression, loss of purposeful hand use and stereotyped hand-wringing (iii). Prader–Willi (paternal 15q deletion): insatiable appetite and compulsive behaviour (iv). Lesch–Nyhan (X-linked HPRT deficiency): compulsive self-injury (i). The other codes swap these behavioural phenotypes.",
+      "Williams syndrome (7q11.23 deletion): hypersociability, relative strength in language and face processing, marked visuospatial deficits (ii). Rett syndrome (MECP2, mostly girls): normal early development, then regression, loss of purposeful hand use and stereotyped hand-wringing (iii). Prader-Willi (paternal 15q deletion): insatiable appetite and compulsive behaviour (iv). Lesch-Nyhan (X-linked HPRT deficiency): compulsive self-injury (i). The other codes swap these behavioural phenotypes.",
     ref: "Kaplan & Sadock's Synopsis, intellectual disability",
   }),
   b({
@@ -525,13 +525,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Sir Francis Galton is associated with which of the following?",
     options: [
       "Discovering the structure of DNA",
-      "Hereditary Genius (1869), coining 'nature and nurture', early use of twins and of correlation",
+      "Studying eminence in families, coining 'nature and nurture', and early use of twins and of correlation",
       "The laws of dominant and recessive inheritance in pea plants",
       "The first adoption study of schizophrenia",
     ],
     answer: 1,
     explanation:
-      "Galton studied family pedigrees of eminent men in Hereditary Genius, popularised the phrase 'nature versus nurture', proposed comparing twins, developed regression and the idea of correlation, and coined 'eugenics'. DNA's structure was Watson, Crick, Franklin and Wilkins (1953). Pea-plant laws are Mendel's (1866). The first adoption study of schizophrenia was Heston's (1966).",
+      "Galton studied family pedigrees of eminent men, popularised the phrase 'nature versus nurture', proposed comparing twins, developed regression and the idea of correlation, and coined 'eugenics'. DNA's structure was Watson, Crick, Franklin and Wilkins. Pea-plant laws are Mendel's. The first adoption study of schizophrenia was Heston's.",
     ref: "Hergenhahn, History of Psychology, ch. 10",
   }),
   b({
@@ -550,7 +550,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "MZ twins reared apart are almost as similar as MZ twins reared together, and unrelated adoptive siblings are hardly similar at all, so shared rearing contributes little. The MZ–DZ gap is large: Falconer gives h² = 2(0.48 − 0.20) = 0.56, more than rMZ itself, and rDZ (0.20) is less than half of rMZ (0.48), a pattern pointing to dominance or epistasis (non-additive effects), common for personality. The data clearly show genetic influence, so 'entirely environmental' is wrong; with rMZ about 0.48, over half the variance is non-shared environment and error, so heritability is far from 100%.",
+      "MZ twins reared apart are almost as similar as MZ twins reared together, and unrelated adoptive siblings are hardly similar at all, so shared rearing contributes little. The MZ-DZ gap is large: Falconer gives h² = 2(0.48 - 0.20) = 0.56, more than rMZ itself, and rDZ (0.20) is less than half of rMZ (0.48), a pattern pointing to dominance or epistasis (non-additive effects), common for personality. The data clearly show genetic influence, so 'entirely environmental' is wrong; with rMZ about 0.48, over half the variance is non-shared environment and error, so heritability is far from 100%.",
     ref: "Plomin et al., Behavioral Genetics, ch. 16 (personality)",
   }),
   b({
@@ -558,7 +558,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M, S],
     difficulty: 3,
     type: "mcq",
-    stem: "Gottesman's (1963) concept of 'reaction range' holds that:",
+    stem: "Gottesman's concept of 'reaction range' holds that:",
     options: [
       "Reaction time is inherited",
       "Genes determine behaviour completely",
@@ -590,7 +590,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The Psychiatric Genomics Consortium reported 108 loci (2014) and 287 (2022), each of tiny effect (A). Sekar et al. (2016) linked C4A variants in the MHC region to increased complement-mediated synaptic pruning (C). Together these show a polygenic architecture (D). B is wrong: polygenic scores explain only a modest part (roughly 7–10% of liability on the observed scale), far short of twin heritability.",
+      "The Psychiatric Genomics Consortium reported 108 loci and 287, each of tiny effect (A). Sekar and colleagues linked C4A variants in the MHC region to increased complement-mediated synaptic pruning (C). Together these show a polygenic architecture (D). B is wrong: polygenic scores explain only a modest part (roughly 7 to 10% of liability on the observed scale), far short of twin heritability.",
     ref: "Schizophrenia Working Group of the PGC 2014; Trubetskoy et al. 2022; Sekar et al. 2016",
   }),
   b({
@@ -624,7 +624,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Lai and colleagues (2001) traced the KE family's dominant speech and language disorder to a mutation in FOXP2, a transcription factor; affected members have difficulty sequencing orofacial movements, with abnormalities in the caudate and Broca's area. It is not a 'language gene' in a simple sense. APOE affects Alzheimer's risk. COMT degrades catecholamines. DISC1 was found through a Scottish family with a translocation associated with schizophrenia and mood disorders.",
+      "Lai and colleagues traced the KE family's dominant speech and language disorder to a mutation in FOXP2, a transcription factor; affected members have difficulty sequencing orofacial movements, with abnormalities in the caudate and Broca's area. It is not a 'language gene' in a simple sense. APOE affects Alzheimer's risk. COMT degrades catecholamines. DISC1 was found through a Scottish family with a translocation associated with schizophrenia and mood disorders.",
     ref: "Lai et al. 2001, Nature",
   }),
   b({
@@ -640,7 +640,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true: one ε4 allele raises risk roughly threefold and two roughly 8–12-fold, and ε4 is linked to earlier onset and more amyloid deposition. R is false: ε4 is a susceptibility gene, not deterministic; many carriers never develop dementia, and many people with Alzheimer's have no ε4. Deterministic causes are rare mutations in APP, PSEN1 and PSEN2 in early-onset familial disease.",
+      "A is true: one ε4 allele raises risk roughly threefold and two roughly 8 to 12-fold, and ε4 is linked to earlier onset and more amyloid deposition. R is false: ε4 is a susceptibility gene, not deterministic; many carriers never develop dementia, and many people with Alzheimer's have no ε4. Deterministic causes are rare mutations in APP, PSEN1 and PSEN2 in early-onset familial disease.",
     ref: "Kaplan & Sadock's Synopsis, neurocognitive disorders",
   }),
   b({
@@ -665,7 +665,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 4,
     type: "mcq",
-    stem: "Belsky and Pluess's 'differential susceptibility' hypothesis differs from the diathesis–stress model in proposing that:",
+    stem: "Belsky and Pluess's 'differential susceptibility' hypothesis differs from the diathesis-stress model in proposing that:",
     options: [
       "Some individuals are more sensitive to environments in both directions, doing worse in adverse and better in supportive conditions",
       "Vulnerable individuals are affected only by adverse environments",
@@ -674,7 +674,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Diathesis–stress predicts that 'vulnerable' people do worse under stress but no better than others in good conditions. Differential susceptibility ('orchids and dandelions') predicts a crossover interaction: the same plastic individuals do worse in bad environments and best in good ones. Option 2 is the diathesis–stress prediction. Both models assume individual differences in sensitivity, which may be partly genetic. Neither restricts environmental effects to childhood.",
+      "Diathesis-stress predicts that 'vulnerable' people do worse under stress but no better than others in good conditions. Differential susceptibility ('orchids and dandelions') predicts a crossover interaction: the same plastic individuals do worse in bad environments and best in good ones. Option 2 is the diathesis-stress prediction. Both models assume individual differences in sensitivity, which may be partly genetic. Neither restricts environmental effects to childhood.",
     ref: "Belsky & Pluess 2009, Psychol Bull",
   }),
   b({
@@ -684,14 +684,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The heritability of the Big Five personality traits, as estimated from twin studies, is typically about:",
     options: [
-      "5–10%",
-      "40–50%",
-      "85–95%",
+      "5 to 10%",
+      "40 to 50%",
+      "85 to 95%",
       "Zero, with variance due only to shared environment",
     ],
     answer: 1,
     explanation:
-      "Meta-analyses (for example Vukasović and Bratko, 2015) put personality heritability at about 40%, with twin studies often giving around 40–50%; most of the remaining variance is non-shared environment and error, and shared environment is near zero. 5–10% is far too low and 85–95% far too high (no personality trait is that heritable). Option 4 inverts the finding about shared environment.",
+      "Meta-analyses (for example the meta-analysis by Vukasović and Bratko) put personality heritability at about 40%, with twin studies often giving around 40 to 50%; most of the remaining variance is non-shared environment and error, and shared environment is near zero. 5 to 10% is far too low and 85 to 95% far too high (no personality trait is that heritable). Option 4 inverts the finding about shared environment.",
     ref: "Vukasović & Bratko 2015, Psychol Bull",
   }),
   b({
@@ -701,7 +701,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "match",
     stem: "Match the study in List I with its main finding in List II.",
     lists: {
-      left: ["A. Heston (1966)", "B. Plomin and Daniels (1987)", "C. Turkheimer et al. (2003)", "D. Bouchard et al. (1990)"],
+      left: ["A. Heston", "B. Plomin and Daniels", "C. Turkheimer and colleagues", "D. Bouchard and colleagues"],
       right: [
         "i. Children in the same family differ mainly because of non-shared environment",
         "ii. Heritability of IQ varies with family socioeconomic status",
@@ -747,7 +747,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "A. They are expressed more often in males because males have only one X chromosome.",
       "B. An affected father passes the condition to all of his sons.",
       "C. Carrier mothers pass the allele to about half of their sons, who are then affected.",
-      "D. Red–green colour blindness is an example.",
+      "D. Red-green colour blindness is an example.",
     ],
     options: [
       "A, C and D only",
@@ -757,7 +757,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "A, C and D are correct: males are hemizygous, so one recessive allele on their X is expressed; a carrier mother passes her affected X to half her sons; red–green colour blindness is a classic example. B is wrong: fathers pass their Y, not their X, to sons, so they cannot transmit X-linked conditions to sons; all their daughters become carriers.",
+      "A, C and D are correct: males are hemizygous, so one recessive allele on their X is expressed; a carrier mother passes her affected X to half her sons; red-green colour blindness is a classic example. B is wrong: fathers pass their Y, not their X, to sons, so they cannot transmit X-linked conditions to sons; all their daughters become carriers.",
     ref: "Plomin et al., Behavioral Genetics, ch. 2",
   }),
   b({
@@ -773,7 +773,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Plomin and Bergeman (1991) described the 'nature of nurture': measures of parenting, peer groups, life events and home environment show genetic influence because of evocative and active gene–environment correlation. This means environmental measures can partly carry genetic effects, which complicates interpreting family correlations as purely environmental.",
+      "Both are true and R explains A. Plomin and Bergeman described the 'nature of nurture': measures of parenting, peer groups, life events and home environment show genetic influence because of evocative and active gene-environment correlation. This means environmental measures can partly carry genetic effects, which complicates interpreting family correlations as purely environmental.",
     ref: "Plomin & Bergeman 1991, Behav Brain Sci; Kendler & Baker 2007",
   }),
   b({
@@ -790,7 +790,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Gottesman and Gould (2003) defined endophenotypes as heritable, state-independent markers associated with an illness, co-segregating in families and found in unaffected relatives, which may be simpler genetically than diagnoses. Examples in schizophrenia include eye-tracking dysfunction, P50 suppression deficits and working-memory deficits. Symptoms are the exophenotype. An endophenotype is a trait, not a gene. Its definition requires a link to illness.",
+      "Gottesman and Gould defined endophenotypes as heritable, state-independent markers associated with an illness, co-segregating in families and found in unaffected relatives, which may be simpler genetically than diagnoses. Examples in schizophrenia include eye-tracking dysfunction, P50 suppression deficits and working-memory deficits. Symptoms are the exophenotype. An endophenotype is a trait, not a gene. Its definition requires a link to illness.",
     ref: "Gottesman & Gould 2003, Am J Psychiatry",
   }),
   b({
@@ -798,7 +798,7 @@ export const QUESTIONS: PrepQuestion[] = [
     exams: [N, M],
     difficulty: 3,
     type: "mcq",
-    stem: "Increasing expression of the NR2B subunit of the NMDA receptor in mouse forebrain ('Doogie' mice, Tang et al., 1999) produced:",
+    stem: "Increasing expression of the NR2B subunit of the NMDA receptor in mouse forebrain ('Doogie' mice, created by Tang and colleagues) produced:",
     options: [
       "Seizures without behavioural change",
       "Complete loss of memory",
