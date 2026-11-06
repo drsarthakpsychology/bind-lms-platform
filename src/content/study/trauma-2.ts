@@ -541,6 +541,10 @@ Medicines produce smaller average effects than trauma-focused therapy. SSRIs and
 {"receptor": "alpha-1", "title": "Prazosin at the alpha-1 receptor", "caption": "Prazosin is an antagonist at alpha-1 adrenergic receptors, blocking noradrenaline's effect on arousal during sleep; this is the rationale for its use in trauma nightmares, though trial results are mixed."}
 :::
 
+:::widget journey
+{"drug": "prazosin", "target": "alpha-1 adrenergic receptors in the brain and blood vessels", "routes": ["oral"], "notes": {"blood": "Also acts on blood vessels, so the first dose can drop blood pressure and cause fainting.", "target": "Blocks noradrenaline's arousing effect during sleep."}, "caption": "Why prazosin is started at 1 mg at night and raised slowly."}
+:::
+
 :::recall
 1. Which two SSRIs have US approval for PTSD? || Sertraline and paroxetine.
 2. What did the large 2018 prazosin trial find? || No benefit over placebo for nightmares in veterans.

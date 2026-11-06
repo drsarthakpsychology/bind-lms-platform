@@ -58,6 +58,79 @@ Because what is ordinary in one community can look strange in another. A belief 
 Judge against the person's own social, cultural and educational background, ask what their family and community believe, and look for distress, disability and other symptoms before calling anything a sign of illness.
 :::
 
+:::qa What are open and closed questions, and when should each be used? [starting]
+### Short answer
+Open questions invite a story ('Tell me about your sleep'); closed questions get specific facts ('Do you wake before 5?'). Start each topic open, then close down to the details.
+
+| | Open | Closed |
+|---|---|---|
+| Gives | The person's own account | Specific facts |
+| Example | "What has this been like?" | "Is it every day?" |
+| Best used | Start of each topic | Filling gaps, confirming |
+| Risk if overused | Wandering | Interrogation, missed information |
+:::
+
+:::qa Why do clinicians write down the patient's own words? [starting]
+### Short answer
+Because the exact words are the most accurate record, show the person's meaning and culture, and let the next clinician judge the finding themselves rather than relying on a label.
+
+### Example
+Weak: "Patient has delusion."
+Better: "States, 'My neighbours put poison in my food', held with full certainty; has stopped eating home food."
+:::
+
+:::qa What should you do if a patient starts crying during an interview? [starting]
+### Short answer
+Pause, put your pen down, acknowledge the feeling gently, offer a tissue and time, and continue only when they are ready. Crying often signals the most important part of the story.
+
+### Words you can use
+"Take your time. This is clearly very painful." Then wait.
+### Avoid
+Rushing on, writing busily, or saying "Don't cry."
+:::
+
+:::qa What is 'rapport', and how do you build it in the first few minutes? [starting]
+### Short answer
+Rapport is a working sense of trust and understanding between you and the patient. It grows when you introduce yourself honestly, explain the purpose, listen without interrupting, show you understand, and respect privacy.
+
+### First-minute checklist
+1. Name, role and supervisor.
+2. Purpose and time available.
+3. Privacy and its limits.
+4. One open question.
+5. Silence while they talk.
+:::
+
+:::qa Why is it important to see the patient alone for part of the interview? [starting]
+### Short answer
+Because sensitive topics such as abuse, sexual problems, substance use and suicidal thoughts are often hidden in front of family. Private time gives the person a chance to speak freely.
+
+### How to arrange it
+"It's our usual practice to speak with everyone alone for part of the time. Would you mind waiting outside for a few minutes?"
+:::
+
+:::qa What is an informant, and why are informants useful? [starting]
+### Short answer
+An informant is someone who knows the patient well, such as a family member or friend. They help fill gaps, especially when the patient has poor insight, memory problems or a psychotic illness, and they describe how the person was before the illness.
+
+### Judge reliability by
+- Relationship to the patient.
+- Ability to observe.
+- How long and how closely they know the patient.
+- Their concern for the patient.
+:::
+
+:::qa What does 'mood' mean in the MSE, and how is it different from 'affect'? [starting]
+### Short answer
+Mood is the person's own description of how they have been feeling (their words, in quotes); affect is the emotion you see expressed in the room (your observation).
+
+| | Mood | Affect |
+|---|---|---|
+| Source | Patient's report | Your observation |
+| Time | Sustained | Moment to moment |
+| Recorded as | "I feel empty" | Restricted, tearful, reactive |
+:::
+
 ## 5.6 Q&A bank · Beginner [core][beginner]
 Think each question through, then open the answer.
 
@@ -135,6 +208,132 @@ Who, what, why now, diagnosis with differentials, and risk with a plan and progn
 5. **Risk and plan**: active suicidal ideation without a plan, protected by his children; managed with a safety plan, admission discussed, antidepressant plus antipsychotic (or ECT if worsening), family involvement and psychotherapy once improving; prognosis good given acute onset and good premorbid function.
 :::
 
+:::qa How do you take a substance use history that gets accurate answers? [beginner]
+### Short answer
+Be non-judgemental and specific, normalise, ask about each substance's amount, pattern, route and consequences, and include tobacco, caffeine and gambling.
+
+### Step by step
+1. Normalise: "Many people use alcohol or other drugs to cope."
+2. Ask about each substance by name.
+3. Quantity and pattern: what, how much, how often, since when.
+4. Dependence features: tolerance, withdrawal, craving, loss of control.
+5. Consequences: health, family, work, legal, driving.
+6. Last use and periods of abstinence.
+7. Readiness for change.
+8. Use screens: AUDIT, CAGE, ASSIST.
+:::
+
+:::qa How do you distinguish thought block from distractibility and from absence seizures? [beginner]
+### Short answer
+Thought block is a sudden stop in the flow of thought, often with a blank, sometimes explained by the patient as thoughts being taken away; distractibility is drift to external stimuli; absence seizures are brief losses of awareness with staring and sometimes eyelid flutter, unrelated to content.
+
+| | Thought block | Distractibility | Absence seizure |
+|---|---|---|---|
+| What happens | Sudden stop, blank | Attention shifts to sounds, objects | Brief loss of awareness |
+| Awareness | Preserved; patient notices | Preserved | Lost briefly |
+| Explanation | May describe thought withdrawal | "I heard the fan" | No memory of the gap |
+| Typical in | Schizophrenia | Mania, delirium, ADHD | Epilepsy (often children) |
+:::
+
+:::qa How should you examine and record orientation in a patient with low literacy? [beginner]
+### Short answer
+Ask practical, culturally appropriate questions (season, festival, nearby landmarks, time of day by meals or light) rather than exact dates alone, and record education so the result is interpreted fairly.
+
+### Examples
+- Time: "Which season is it? Which festival passed recently? Is it morning or evening?"
+- Place: "Where are we now? Which town?"
+- Person: "Who is this with you?"
+### Record
+"Oriented to time (season, part of day), place and person; exact date not known, consistent with education."
+:::
+
+:::qa What is the difference between a hallucination and a pseudohallucination? [beginner]
+### Short answer
+A true hallucination is experienced in outer space with the full reality of a perception; a pseudohallucination is experienced in inner subjective space or with insight that it is not real. The concept is contested, and modern practice rates location and insight separately.
+
+| | True hallucination | Pseudohallucination |
+|---|---|---|
+| Location | Outside, like a real voice | Inside the head |
+| Reality | Taken as real | Often recognised as not real |
+| Diagnostic weight | High | Lower; occurs in trauma, grief, BPD |
+### Practical point
+Record where the voice is heard, how real it seems, and what the person makes of it.
+:::
+
+:::qa How do you test abstraction fairly in an Indian clinic? [beginner]
+### Short answer
+Use proverbs and similarities familiar to the person in their own language, record the exact item and answer, and interpret against education. A concrete answer from someone with little schooling does not imply thought disorder.
+
+### Fair items
+| Proverb | Meaning |
+|---|---|
+| Ek haath se taali nahi bajti | It takes two to quarrel |
+| Naach na jaane aangan tedha | A bad workman blames his tools |
+| Doodh ka jala chhaachh bhi phoonk kar peeta hai | Once bitten, twice shy |
+### Similarities
+"How are a cow and a goat alike?" "How are a table and a chair alike?"
+:::
+
+:::qa How do you write up the MSE of a patient with mania? [beginner]
+### Short answer
+Move through the eight headings, using the patient's words for mood and delusions, and describe, rather than label, the overactivity, speech, thought form and judgement.
+
+### Model lines
+- **Appearance and behaviour**: brightly dressed, over-familiar, restless, interrupts, rapport superficial.
+- **Speech**: rapid, loud, pressured, hard to interrupt.
+- **Mood**: "I've never felt better." Affect elated, irritable when contradicted, labile.
+- **Thought**: flight of ideas, grandiose delusion in her words.
+- **Perception**: describe any mood-congruent voices.
+- **Cognition**: oriented; distractible.
+- **Insight**: grade 1.
+- **Judgement**: personal and social impaired (examples), test intact.
+:::
+
+:::qa What are the key components of a premorbid personality assessment, and why do they matter? [beginner]
+### Short answer
+Interpersonal relationships, leisure, predominant mood, attitude to self and others, work and responsibility, religious and moral attitudes, fantasy life and habits. They show who the person was before illness, so you can judge change, predict prognosis and plan care.
+
+### Best source
+An informant who knew the person well before the illness.
+### Write anecdotes, not adjectives
+"Organised the family's festivals each year; kept the same job nine years" rather than "obsessive personality".
+:::
+
+:::qa How should you interview an older adult with suspected memory problems? [beginner]
+### Short answer
+Allow time, check hearing and vision, interview an informant, screen for delirium and depression, test cognition systematically against education, and ask about safety and daily functioning.
+
+### Step by step
+1. Hearing aids and glasses in place.
+2. Quiet room, short sentences.
+3. Informant: when did changes start, how fast, what changed first?
+4. Delirium screen (4AT): acute change, attention.
+5. Depression screen.
+6. Cognitive screen (MoCA or HMSE) interpreted against education.
+7. Activities of daily living, driving, finances, medicines.
+8. Physical examination and blood tests.
+:::
+
+:::qa How do you handle a patient who asks you personal questions? [beginner]
+### Short answer
+Respond in a way that serves the patient and the relationship: answer simple factual questions briefly, explore the meaning of more personal ones, and keep the focus on the patient.
+
+### Examples
+- "Are you a doctor?" Answer honestly.
+- "Are you married?" A brief answer or "I'm curious what makes you ask" depending on the setting.
+- "Have you ever been depressed?" "I'd rather keep the focus on you; what makes you wonder?"
+### Principle
+Self-disclosure only when it helps the patient.
+:::
+
+:::qa How do you record suicidal ideation in the MSE? [beginner]
+### Short answer
+Under thought content, record whether ideas of death or suicide are present, their nature (passive or active), plan, preparation, intent, protective factors, in the patient's words, or that they were explicitly denied.
+
+### Example
+"Passive death wishes for three weeks: 'Neend mein hi chala jaun toh accha.' Denies active suicidal thoughts, plan or preparation. Protective: daughter, faith."
+:::
+
 ## 5.7 Q&A bank · Advanced [core][advanced]
 Think each question through, then open the answer.
 
@@ -206,6 +405,117 @@ Observation becomes the examination: record consciousness, posture, motor signs 
 
 ### Why it matters
 Catatonia is common in mood disorders, very treatable, and dangerous if missed.
+:::
+
+:::qa Explain the concept of 'insight' as a multidimensional construct and how it is measured. [advanced]
+### Short answer
+Modern views divide insight into awareness of illness, correct attribution of symptoms, acceptance of treatment and awareness of consequences. Scales such as the Schedule for Assessment of Insight and the Beck Cognitive Insight Scale measure different dimensions.
+
+### Dimensions
+| Dimension | Example |
+|---|---|
+| Awareness of illness | "I have a mental illness" |
+| Attribution of symptoms | "The voices are part of my illness" |
+| Treatment acceptance | "Medicine helps me" |
+| Awareness of consequences | "My illness cost me my job" |
+| Cognitive insight | Ability to reflect on and correct one's own beliefs |
+### Neuroscience
+Poor insight in psychosis has been linked to frontal and parietal dysfunction, partly like anosognosia.
+:::
+
+:::qa How do you assess malingering of psychosis? [advanced]
+### Short answer
+Gather a careful history and collateral, observe over time, look for inconsistencies and over-endorsement of obvious symptoms, consider external incentives, and use structured tools; avoid labelling until evidence is strong.
+
+### Clues
+- Dramatic, vague, continuous voices.
+- Endorsing rare or absurd symptoms.
+- Symptoms change with observation.
+- Absent subtle signs (negative symptoms, formal thought disorder).
+- Clear external gain.
+### Tools
+Structured interviews for feigning and performance-validity tests, interpreted with caution.
+:::
+
+:::qa Explain the concept of 'diagnostic overshadowing' and how to prevent it. [advanced]
+### Short answer
+Diagnostic overshadowing is attributing new physical or psychiatric symptoms to an existing diagnosis, leading to missed illness. People with mental illness or intellectual disability are especially at risk.
+
+### Examples
+- Confusion in a person with schizophrenia blamed on psychosis when it is delirium.
+- Chest pain in a person with anxiety dismissed as panic when it is cardiac.
+### Prevention
+- Take every new symptom seriously.
+- Examine and investigate.
+- Ask "What else could this be?"
+- Note red flags in every assessment.
+:::
+
+:::qa Discuss the reliability and validity of the MSE as a clinical tool. [advanced]
+### Short answer
+The MSE is a structured description rather than a test; reliability for prominent signs (pressured speech, florid delusions) is good, but subtle signs (blunted affect, mild thought disorder) vary between clinicians. Validity depends on skill, culture and context.
+
+### Improving reliability
+- Use shared definitions (glossaries such as in SCAN).
+- Record observations and the patient's words, not labels.
+- Use rating scales for specific domains (PANSS, YMRS, catatonia scales).
+- Training and calibration.
+### Validity concerns
+- Cultural misinterpretation.
+- Language and interpreters.
+- State effects (fatigue, medication).
+:::
+
+:::qa Explain the cultural formulation and how it changes an assessment. [advanced]
+### Short answer
+The cultural formulation examines cultural identity, cultural explanations of illness, cultural stressors and supports, cultural features of the clinician-patient relationship, and an overall cultural assessment. It prevents misdiagnosis and improves engagement.
+
+### Outline
+1. Cultural identity.
+2. Cultural concepts of distress (idioms, explanations).
+3. Stressors and supports in the cultural context.
+4. Cultural features of the relationship with the clinician.
+5. Overall assessment and plan.
+### Example
+A woman's possession states understood within her community's beliefs, assessed for distress and impairment, and treated with respect for her framework.
+:::
+
+:::qa What is the difference between descriptive psychopathology and dynamic psychopathology? [advanced]
+### Short answer
+Descriptive psychopathology describes and classifies conscious experiences as the person reports them, without inferring causes; dynamic psychopathology seeks unconscious meanings, conflicts and defences behind symptoms.
+
+| | Descriptive | Dynamic |
+|---|---|---|
+| Focus | Form and content of experience | Unconscious processes and meaning |
+| Method | Careful questioning and observation | Interpretation, transference |
+| Use | Diagnosis, MSE | Formulation, psychotherapy |
+| Example | "Third-person auditory hallucinations" | "Voices express disowned anger" |
+Both can enrich understanding when used for their proper purpose.
+:::
+
+:::qa How do structured interviews perform across cultures, and what are the risks? [advanced]
+### Short answer
+Translated instruments may misfire when idioms, concepts or norms differ; cut-offs validated in one population may over- or under-diagnose in another. Careful translation, back-translation, cognitive interviewing and local validation reduce these risks.
+
+### Steps in adaptation
+1. Forward and back translation.
+2. Expert review for conceptual equivalence.
+3. Cognitive interviews with local people.
+4. Pilot testing.
+5. Validation against clinical diagnosis.
+6. Local norms and cut-offs.
+:::
+
+:::qa What is the role of collateral history in capacity assessment and risk? [advanced]
+### Short answer
+Collateral gives information the patient may not provide (past episodes, behaviour at home, adherence, risk events), helping judge both capacity and risk. Consent should be sought, but safety may justify contact without it.
+
+### Practical points
+- Seek consent; explain why.
+- Record the informant's identity and reliability.
+- Note discrepancies with the patient's account.
+- Share only what is needed.
+- Follow MHCA confidentiality rules.
 :::
 
 `;

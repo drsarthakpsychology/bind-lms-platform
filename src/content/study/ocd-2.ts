@@ -338,6 +338,10 @@ The **error-related negativity**, an EEG wave over the ACC after a mistake, is e
 {"title": "The cortico-striato-thalamo-cortical loop", "layout": "cycle", "nodes": [{"id": "ofc", "label": "Orbitofrontal and cingulate cortex", "detail": "Signal: 'something is wrong'."}, {"id": "str", "label": "Caudate and ventral striatum", "detail": "Direct pathway amplifies; indirect pathway brakes."}, {"id": "gp", "label": "Globus pallidus and substantia nigra", "detail": "Output gate of the basal ganglia."}, {"id": "thal", "label": "Thalamus", "detail": "Released from inhibition, it excites cortex again."}], "caption": "An imbalance favouring the direct pathway may keep the loop running, so the feeling of completion never arrives."}
 :::
 
+:::widget neuron
+{"title": "Error signals and repeated firing", "myelinated": true, "caption": "A neuron fires when input crosses threshold. In OCD, error-monitoring circuits in the cingulate cortex appear to cross threshold too easily, producing a strong 'something is wrong' signal even when nothing is wrong."}
+:::
+
 :::recall
 1. Which cortical regions and which part of the striatum are most implicated in OCD? || Orbitofrontal and anterior cingulate cortex; caudate and ventral striatum.
 2. What happens to these circuits after successful treatment? || Hyperactivity partly normalises, with both SSRIs and behaviour therapy.

@@ -137,6 +137,10 @@ Clonazepam, alprazolam, lorazepam and diazepam calm anxiety within an hour. But:
 {"kind": "half-life", "title": "Short and long half-life benzodiazepines", "caption": "Alprazolam's short half-life makes levels rise and fall between doses, which brings rebound anxiety and harder withdrawal; clonazepam or diazepam stay steadier. This is why tapering often switches to a long-acting drug."}
 :::
 
+:::widget journey
+{"drug": "alprazolam", "target": "GABA-A receptors in the amygdala, cortex and brainstem", "routes": ["oral"], "notes": {"gut": "Absorbed quickly, so calm arrives within an hour.", "liver": "Broken down by CYP3A4; fluvoxamine, some antifungals and grapefruit raise levels.", "out": "Short half-life: levels fall within hours, bringing rebound anxiety between doses."}, "caption": "Fast in, fast out: why alprazolam relieves quickly but traps people in dependence."}
+:::
+
 :::recall
 1. What are first-line medicines for GAD, panic and social anxiety? || SSRIs and SNRIs.
 2. Why start SSRIs at a low dose in anxiety? || Early jitteriness or worsening of anxiety.
@@ -364,6 +368,10 @@ Breathing air rich in carbon dioxide provokes panic attacks far more often in pe
 {"kind": "sdt", "title": "Anxiety as a liberal threat detector", "caption": "Signal detection theory separates sensitivity from bias. Anxious people tend to set a liberal criterion: they detect more real threats but also raise many false alarms. Move the criterion to see the trade-off between hits and false alarms."}
 :::
 
+:::widget neuron
+{"title": "Inhibition: why GABA calms", "myelinated": true, "caption": "A neuron fires only when input pushes it past threshold. GABA opens chloride channels and pulls the membrane further from threshold, so the same excitatory input produces fewer action potentials. Benzodiazepines strengthen this brake."}
+:::
+
 :::recall
 1. Describe LeDoux's two roads to the amygdala. || A fast thalamic low road and a slow cortical high road.
 2. Name four outputs of the central amygdala and their effects. || Hypothalamus (sympathetic, HPA), periaqueductal grey (freezing), locus coeruleus (arousal), parabrachial nucleus (breathing).
@@ -419,6 +427,10 @@ Blocking the serotonin transporter raises serotonin first around the cell bodies
 
 :::widget receptor
 {"receptor": "5-HT1A", "title": "Buspirone as a partial agonist", "caption": "Buspirone is a partial agonist at 5-HT1A receptors: it produces a moderate signal whatever the serotonin level, unlike a full agonist (maximal signal) or an antagonist (no signal). Compare the four ligand types."}
+:::
+
+:::widget receptor
+{"receptor": "GABA-A", "title": "The GABA-A receptor and a benzodiazepine", "caption": "Explore the four ligand types. A benzodiazepine is not on this scale itself: it is a positive allosteric modulator, binding between the alpha and gamma-2 subunits and making each GABA molecule open the chloride channel more often. It boosts GABA's own signal but cannot open the channel alone, which gives it a ceiling; barbiturates and alcohol lack that ceiling at high doses."}
 :::
 
 :::recall
