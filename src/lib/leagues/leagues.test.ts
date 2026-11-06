@@ -239,3 +239,21 @@ describe("shop", () => {
     expect(s.streak.count).toBe(12);
   });
 });
+
+describe("monthly rewards", () => {
+  it("gives merit to the top 3 of each cohort, ties share, never for 0", async () => {
+    const { meritWinners } = await import("./monthly");
+    const w = meritWinners(
+      new Map([["c1", ["a", "b", "c", "d", "e"]], ["c2", ["f", "g"]]]),
+      new Map([["a", 90], ["b", 80], ["c", 70], ["d", 70], ["e", 10], ["f", 5]]),
+    );
+    expect([...w.keys()].sort()).toEqual(["a", "b", "c", "d", "f"]);
+    expect(w.get("d")?.place).toBe(3);
+  });
+  it("names one champion per tier", async () => {
+    const { champions, championTitle } = await import("./monthly");
+    const c = champions(new Map([["a", 4], ["b", 4], ["c", 1], ["z", 2]]), new Map([["a", 50], ["b", 70], ["c", 10]]));
+    expect([...c]).toEqual([["b", 4], ["c", 1]]);
+    expect(championTitle(4, "Nov 2026")).toBe("Cortex Champion · Nov 2026");
+  });
+});
