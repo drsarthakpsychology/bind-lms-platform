@@ -46,14 +46,14 @@ Drive reduction works like an air-conditioner thermostat. When the room drifts a
 :::
 
 ### Where drive theory fails
-Drive reduction explains eating and drinking well. It cannot explain why people **seek tension**: climbing mountains, watching horror films, solving puzzles for fun, or eating dessert when full. Monkeys will work for nothing more than the chance to look out of a window (Butler, 1953) or open a latch puzzle (Harlow). Those findings pushed the field towards **arousal** and **incentive** theories, which come next.
+Drive reduction explains eating and drinking well. It cannot explain why people **seek tension**: climbing mountains, watching horror films, solving puzzles for fun, or eating dessert when full. Monkeys will work for nothing more than the chance to look out of a window (1953) or open a latch puzzle (Harlow). Those findings pushed the field towards **arousal** and **incentive** theories, which come next.
 
 :::student
 Keep a simple picture: **instinct** says "born that way", **drive** says "the body wants balance", and the theories in the next section say "we also want the right amount of stimulation, and we chase rewards".
 :::
 
 :::clinician
-Hull's hypothetico-deductive system (Principles of Behavior, 1943) was the most formal learning theory of its time: reaction potential as a multiplicative function of habit strength and drive, later extended with incentive motivation (K) after Crespi's (1942) contrast effects showed that rats' running speed tracked reward size immediately, which a pure habit account could not explain. Woodworth (1918) had introduced "drive" earlier. The decline of drive theory came from three directions: stimulus-seeking behaviour (Harlow, Butler, Berlyne), incentive effects independent of need, and the physiological discovery that "drive centres" were circuits for reward and salience rather than for tension reduction. The homeostatic idea remains central for hunger, thirst and thermoregulation, now refined as **allostasis** (anticipatory regulation), which you meet in Part III.
+Hull's hypothetico-deductive system (1943) was the most formal learning theory of its time: reaction potential as a multiplicative function of habit strength and drive, later extended with incentive motivation (K) after Crespi's (1942) contrast effects showed that rats' running speed tracked reward size immediately, which a pure habit account could not explain. Woodworth (1918) had introduced "drive" earlier. The decline of drive theory came from three directions: stimulus-seeking behaviour (Harlow, Butler, Berlyne), incentive effects independent of need, and the physiological discovery that "drive centres" were circuits for reward and salience rather than for tension reduction. The homeostatic idea remains central for hunger, thirst and thermoregulation, now refined as **allostasis** (anticipatory regulation), which you meet in Part III.
 :::
 
 :::recall
@@ -83,7 +83,7 @@ Q: According to Hull, a secondary (acquired) drive is best illustrated by:
 ### Arousal theory: not too little, not too much
 **Arousal** is the general level of alertness and activation of the body and brain, from deep sleep to panic. Arousal theory says we are motivated to keep arousal at an **optimal level**. When bored, we seek stimulation; when overwhelmed, we seek calm.
 
-The **Yerkes-Dodson law** (Yerkes and Dodson, 1908, from experiments with mice learning to avoid a shock) describes the link between arousal and performance as an **inverted U**: performance is poor at very low arousal, best at moderate arousal, and poor again at very high arousal. The key refinement is about **task difficulty**:
+The **Yerkes-Dodson law** (Yerkes and Dodson in 1908; from experiments with mice learning to avoid a shock) describes the link between arousal and performance as an **inverted U**: performance is poor at very low arousal, best at moderate arousal, and poor again at very high arousal. The key refinement is about **task difficulty**:
 - For **simple or well-practised tasks**, the best level of arousal is **fairly high**.
 - For **complex or new tasks**, the best level is **lower**.
 
@@ -110,7 +110,7 @@ Incentive theory says behaviour is pulled by **expected rewards** in the environ
 **Solomon and Corbit** (1974) proposed that every strong emotional state is followed by an **opposite after-reaction**. First-time skydivers feel terror, then relief and elation after landing. With repetition, the first reaction weakens and the after-reaction grows. The theory explains why thrill-seeking becomes pleasant and why drug use moves from pleasure to taking the drug simply to escape withdrawal.
 
 ### Maslow's hierarchy of needs
-**Abraham Maslow** ("A Theory of Human Motivation", 1943; Motivation and Personality, 1954), a founder of humanistic psychology, arranged needs in a hierarchy:
+**Abraham Maslow** (in a 1943 paper and a 1954 book), a founder of humanistic psychology, arranged needs in a hierarchy:
 1. **Physiological**: food, water, sleep, warmth.
 2. **Safety**: security, stability, freedom from fear.
 3. **Love and belonging**: friendship, family, intimacy.
@@ -136,7 +136,7 @@ Maslow never drew the pyramid; it was popularised later by management writers. H
 :::
 
 :::clinician
-Empirical tests of a strict hierarchy (Wahba and Bridwell, 1976) found little support for ordered prepotency. A large survey across 123 countries (Tay and Diener, Journal of Personality and Social Psychology, 2011) found the needs broadly universal and linked to wellbeing, but people reported satisfying higher needs even when basic ones were unmet: the hierarchy describes tendencies, not stages. **Alderfer's ERG theory** (1969) collapsed the levels into Existence, Relatedness and Growth, allowed several to operate at once, and added **frustration-regression**: when a higher need is blocked, people fall back on a lower one (a worker denied growth demands more pay). Kenrick and colleagues (2010) proposed an evolutionary "renovated pyramid" with mate acquisition, retention and parenting at the top. For exam answers: state the model, the D/B distinction, the empirical critique, ERG, and the cross-cultural critique that the hierarchy reflects an individualist ideal; in many Indian families belonging and duty may be weighed above individual self-actualisation.
+Empirical tests of a strict hierarchy (1976) found little support for ordered prepotency. A large survey across 123 countries (2011) found the needs broadly universal and linked to wellbeing, but people reported satisfying higher needs even when basic ones were unmet: the hierarchy describes tendencies, not stages. **Alderfer's ERG theory** (1969) collapsed the levels into Existence, Relatedness and Growth, allowed several to operate at once, and added **frustration-regression**: when a higher need is blocked, people fall back on a lower one (a worker denied growth demands more pay). Evolutionary psychologists later proposed an evolutionary "renovated pyramid" with mate acquisition, retention and parenting at the top. For exam answers: state the model, the D/B distinction, the empirical critique, ERG, and the cross-cultural critique that the hierarchy reflects an individualist ideal; in many Indian families belonging and duty may be weighed above individual self-actualisation.
 :::
 
 :::recall
@@ -218,7 +218,7 @@ Neither old theory "won". Modern research shows some truth in both: bodily signa
 :::
 
 :::clinician
-Cannon's critique was strong but not final. Later work found some autonomic differentiation between emotions (Levenson, Ekman and Friesen, 1990, using directed facial actions: anger raised heart rate and finger temperature more than fear did), though meta-analyses show patterns are inconsistent across studies and contexts (Siegel and colleagues, Psychological Bulletin, 2018). Hohmann's (1966) report that people with higher spinal cord injuries felt less intense emotion supported James, but better-controlled studies (Chwalisz, Diener and Gallagher, 1988) did not replicate it. The thalamus is no longer seen as the emotion centre; it is a relay, and the amygdala, insula, hypothalamus and prefrontal cortex carry most of the weight. James's core intuition returned in **Damasio's somatic marker hypothesis** and in interoception research (Craig; Critchley), where awareness of internal bodily states, mapped in the insula, contributes to feeling.
+Cannon's critique was strong but not final. Later work found some autonomic differentiation between emotions (1990, using directed facial actions: anger raised heart rate and finger temperature more than fear did), though meta-analyses show patterns are inconsistent across studies and contexts (2018). Hohmann's (1966) report that people with higher spinal cord injuries felt less intense emotion supported James, but better-controlled studies (1988) did not replicate it. The thalamus is no longer seen as the emotion centre; it is a relay, and the amygdala, insula, hypothalamus and prefrontal cortex carry most of the weight. James's core intuition returned in **Damasio's somatic marker hypothesis** and in interoception research (Craig; Critchley), where awareness of internal bodily states, mapped in the insula, contributes to feeling.
 :::
 
 :::recall
@@ -298,7 +298,7 @@ In India, **Gurmeet Singh and colleagues** (1984) developed the **Presumptive St
 :::
 
 :::clinician
-Critiques of the life-events approach are standard exam material: (1) it treats positive and negative events as equivalent, though undesirable events predict illness far better; (2) it ignores appraisal: a divorce can be relief or catastrophe; (3) retrospective recall is biased, especially in people who are already ill (effort after meaning); (4) several items (changes in sleep or eating habits) overlap with symptoms, inflating correlations; and (5) correlations with illness are modest. Brown and Harris's Life Events and Difficulties Schedule (LEDS), a semi-structured interview rated for contextual threat, addresses many of these flaws and remains the research standard. The PSLES (Singh, Kaur and Kaur, Indian Journal of Psychiatry, 1984) has 51 items rated for presumptive stress and is still used in Indian clinical research.
+Critiques of the life-events approach are standard exam material: (1) it treats positive and negative events as equivalent, though undesirable events predict illness far better; (2) it ignores appraisal: a divorce can be relief or catastrophe; (3) retrospective recall is biased, especially in people who are already ill (effort after meaning); (4) several items (changes in sleep or eating habits) overlap with symptoms, inflating correlations; and (5) correlations with illness are modest. Brown and Harris's Life Events and Difficulties Schedule (LEDS), a semi-structured interview rated for contextual threat, addresses many of these flaws and remains the research standard. The PSLES (1984) has 51 items rated for presumptive stress and is still used in Indian clinical research.
 :::
 
 :::recall
@@ -475,7 +475,7 @@ These theories say motivation is a **product** of how likely you think success i
 ### Attribution and explanatory style
 **Bernard Weiner** analysed how people explain success and failure along three dimensions: **locus** (internal or external), **stability** (stable or unstable) and **controllability**. Attributing failure to lack of effort (internal, unstable, controllable) keeps motivation up; attributing it to low ability (internal, stable, uncontrollable) lowers it.
 
-**Martin Seligman** found that dogs exposed to inescapable shock later failed to escape when escape was possible: **learned helplessness** (Seligman and Maier, 1967). The **reformulated** model (Abramson, Seligman and Teasdale, 1978) said what matters in humans is **explanatory style**: people who explain bad events as **internal, stable and global** ("It's me, it will always be like this, it ruins everything") are more prone to depression.
+**Martin Seligman** found that dogs exposed to inescapable shock later failed to escape when escape was possible: **learned helplessness** (Seligman and Maier in 1967). The **reformulated** model (1978) said what matters in humans is **explanatory style**: people who explain bad events as **internal, stable and global** ("It's me, it will always be like this, it ruins everything") are more prone to depression.
 
 :::widget decide
 {
@@ -493,7 +493,7 @@ These theories say motivation is a **product** of how likely you think success i
 **Edwin Locke and Gary Latham** showed across hundreds of studies that **specific, difficult goals** produce better performance than vague "do your best" goals, provided there is **feedback**, **commitment** and the needed skill. **Albert Bandura's self-efficacy** (1977), the belief that you can perform a specific task, predicts effort and persistence. It grows from four sources: **mastery experiences** (the strongest), **vicarious experience** (seeing similar others succeed), **verbal persuasion** and **physiological and emotional states**.
 
 :::clinician
-SDT now contains six mini-theories: cognitive evaluation theory (effects of rewards and feedback on intrinsic motivation), organismic integration theory (the internalisation continuum above), causality orientations theory (autonomy, controlled and impersonal orientations), basic psychological needs theory, goal contents theory (intrinsic goals such as growth and community versus extrinsic goals such as wealth and image) and relationship motivation theory. The meta-analysis by Deci, Koestner and Ryan (Psychological Bulletin, 1999; 128 studies) found that **expected, tangible, performance-contingent** rewards undermine free-choice intrinsic motivation, while **verbal praise** tends to enhance it; Cameron and Pierce argued the effect is narrower than claimed. Practical summary: rewards that feel controlling undermine; rewards that convey competence and preserve choice do not. Cross-culturally, Iyengar and Lepper (1999) found Asian-American children were more motivated when trusted others (mothers) made choices for them, which some read as a challenge to autonomy; SDT replies that autonomy means volition (endorsing an action), not independence, and that choosing to follow a respected elder can be autonomous (Chirkov and colleagues, 2003). That reply is useful in Indian classrooms and families.
+SDT now contains six mini-theories: cognitive evaluation theory (effects of rewards and feedback on intrinsic motivation), organismic integration theory (the internalisation continuum above), causality orientations theory (autonomy, controlled and impersonal orientations), basic psychological needs theory, goal contents theory (intrinsic goals such as growth and community versus extrinsic goals such as wealth and image) and relationship motivation theory. The meta-analysis by Deci, Koestner and Ryan (1999, 128 studies) found that **expected, tangible, performance-contingent** rewards undermine free-choice intrinsic motivation, while **verbal praise** tends to enhance it; Cameron and Pierce argued the effect is narrower than claimed. Practical summary: rewards that feel controlling undermine; rewards that convey competence and preserve choice do not. Cross-culturally, Iyengar and Lepper (1999) found Asian-American children were more motivated when trusted others (mothers) made choices for them, which some read as a challenge to autonomy; SDT replies that autonomy means volition (endorsing an action), not independence, and that choosing to follow a respected elder can be autonomous (2003). That reply is useful in Indian classrooms and families.
 :::
 
 :::recall
@@ -529,7 +529,7 @@ Q: In Lepper, Greene and Nisbett's study, which group drew least in later free p
 :::
 
 ## 2.2 Social motives: achievement, affiliation and power [core][beginner]
-**Henry Murray** (Explorations in Personality, 1938) listed about twenty **psychogenic needs** (achievement, affiliation, dominance, autonomy, nurturance and others) and paired them with environmental **press**, the forces that help or block a need. To measure needs that people might not report, Murray and **Christiana Morgan** created the **Thematic Apperception Test (TAT)**: people tell stories about ambiguous pictures, and the themes reveal their needs.
+**Henry Murray** (1938) listed about twenty **psychogenic needs** (achievement, affiliation, dominance, autonomy, nurturance and others) and paired them with environmental **press**, the forces that help or block a need. To measure needs that people might not report, Murray and **Christiana Morgan** created the **Thematic Apperception Test (TAT)**: people tell stories about ambiguous pictures, and the themes reveal their needs.
 
 **David McClelland** and colleagues developed TAT scoring systems for three needs that dominate much research:
 | Need | What the person wants | Typical behaviour |
@@ -539,10 +539,10 @@ Q: In Lepper, Greene and Nisbett's study, which group drew least in later free p
 | **Need for power (nPow)** | To have impact, influence or control others | Seeks status and leadership; can be personalised (for self) or socialised (for the group) |
 
 ### Achievement and nations
-In The Achieving Society (1961), McClelland argued that the achievement imagery in a nation's children's stories predicted its later economic growth. He then tested whether achievement motivation could be **trained**.
+In 1961 McClelland argued that the achievement imagery in a nation's children's stories predicted its later economic growth. He then tested whether achievement motivation could be **trained**.
 
 :::example The Kakinada experiment
-In the 1960s McClelland and David Winter ran achievement-motivation training for small businessmen in **Kakinada**, a town in Andhra Pradesh, comparing them with businessmen in a similar town. Trainees practised thinking in achievement terms, set concrete goals and studied models. In the following years trained men started more new businesses, invested more and created more jobs than the comparison group (Motivating Economic Achievement, 1969). It is one of the earliest attempts anywhere to change a motive deliberately, and it was done in India.
+In the 1960s McClelland and David Winter ran achievement-motivation training for small businessmen in **Kakinada**, a town in Andhra Pradesh, comparing them with businessmen in a similar town. Trainees practised thinking in achievement terms, set concrete goals and studied models. In the following years trained men started more new businesses, invested more and created more jobs than the comparison group (1969). It is one of the earliest attempts anywhere to change a motive deliberately, and it was done in India.
 :::
 
 ### The leadership motive pattern
@@ -570,7 +570,7 @@ Atkinson added **fear of failure**, which leads to avoidance of moderate challen
 Indian researchers questioned whether a purely individual achievement motive fits collectivist settings. **Agarwal and Misra** (1986) described **socially oriented achievement motivation**: striving for excellence to meet the expectations of family and community, with goals and standards set by significant others. A student who chooses engineering to fulfil a parent's wish may show high striving without the self-chosen standards that McClelland's model assumes. Both individual and social forms coexist in most Indian students.
 
 :::clinician
-Implicit motives (measured with picture story exercises, the modern TAT) and explicit, self-reported motives correlate weakly (meta-analytic r around 0.1; Köllner and Schultheiss, 2014), and they predict different things: implicit motives predict spontaneous, long-term behavioural trends (operant behaviour), explicit motives predict choices in structured situations (respondent behaviour) (McClelland, Koestner and Weinberger, 1989). Reliability of TAT scoring is acceptable with trained coders, but test-retest reliability is modest, partly because people deliberately vary stories. In Indian work on achievement, Mehta (1969) adapted achievement measures for Indian students, and Agarwal and Misra's distinction parallels Markus and Kitayama's independent and interdependent self-construals. A good exam answer contrasts the McClelland framework with the socially oriented model and adds the Kakinada evidence.
+Implicit motives (measured with picture story exercises, the modern TAT) and explicit, self-reported motives correlate weakly (meta-analytic r around 0.1, 2014), and they predict different things: implicit motives predict spontaneous, long-term behavioural trends (operant behaviour), explicit motives predict choices in structured situations (respondent behaviour) (1989). Reliability of TAT scoring is acceptable with trained coders, but test-retest reliability is modest, partly because people deliberately vary stories. In Indian work on achievement, Mehta (1969) adapted achievement measures for Indian students, and Agarwal and Misra's distinction parallels Markus and Kitayama's independent and interdependent self-construals. A good exam answer contrasts the McClelland framework with the socially oriented model and adds the Kakinada evidence.
 :::
 
 :::recall
@@ -578,7 +578,7 @@ Implicit motives (measured with picture story exercises, the modern TAT) and exp
 2. Who created the TAT? || Henry Murray and Christiana Morgan.
 3. Describe a person high in nAch. || Prefers moderate risks, wants concrete feedback, takes personal responsibility for outcomes.
 4. What is the leadership motive pattern? || Moderate to high need for power, lower need for affiliation, high self-control.
-5. What is socially oriented achievement motivation? || Striving for excellence to meet family and community expectations (Agarwal and Misra, 1986).
+5. What is socially oriented achievement motivation? || Striving for excellence to meet family and community expectations (1986).
 :::
 
 :::mcq
@@ -642,12 +642,12 @@ A Carnatic violinist during a long improvisation, a software developer debugging
 :::
 
 ### Self-regulation and self-control
-**Self-regulation** is steering your own behaviour towards goals. **Carver and Scheier's control theory** models it as a **feedback loop**: compare where you are with a reference goal; if there is a gap, act to reduce it; check again (like the TOTE unit: Test, Operate, Test, Exit, from Miller, Galanter and Pribram, 1960).
+**Self-regulation** is steering your own behaviour towards goals. **Carver and Scheier's control theory** models it as a **feedback loop**: compare where you are with a reference goal; if there is a gap, act to reduce it; check again. Miller, Galanter and Pribram called this loop the TOTE unit: Test, Operate, Test, Exit.
 
 **Walter Mischel's** "marshmallow" studies at Stanford (from the late 1960s) offered preschoolers one treat now or two if they waited. Children who used strategies (looking away, singing, thinking of the marshmallow as a cloud) waited longer, and longer waiting predicted later academic and social outcomes in follow-ups.
 
 :::trap Two famous findings that shrank
-**Ego depletion**, Baumeister's idea that self-control is a limited resource that runs down with use (1998, the radish and cookie study), failed in a large pre-registered replication across 23 labs (Hagger and colleagues, 2016), which found an effect close to zero. A larger, more diverse marshmallow replication (Watts, Duncan and Quan, 2018) found the link with later achievement was about half as large and largely explained by family background. Exams may still teach both; you should know both the original claim and the replication.
+**Ego depletion**, Baumeister's idea that self-control is a limited resource that runs down with use (1998, the radish and cookie study), failed in a large pre-registered replication across 23 labs (2016), which found an effect close to zero. A larger, more diverse marshmallow replication (2018) found the link with later achievement was about half as large and largely explained by family background. Exams may still teach both; you should know both the original claim and the replication.
 :::
 
 :::widget build
@@ -671,7 +671,7 @@ A Carnatic violinist during a long improvisation, a software developer debugging
 :::
 
 :::clinician
-Ego depletion: Hagger and colleagues' Registered Replication Report (Perspectives on Psychological Science, 2016; 23 labs, over 2,000 participants) found d close to 0.04; a second multisite study (Vohs and colleagues, 2021) also found a very small effect. Alternative accounts treat fatigue after effort as a motivational shift (Inzlicht and Schmeichel's process model) rather than a depleted resource; the glucose hypothesis did not hold. **Implementation intentions** ("If situation X, then I will do Y"; Gollwitzer, 1999) are one of the better-supported self-regulation tools (meta-analysis of 94 studies, d about 0.65; Gollwitzer and Sheeran, 2006). For sensation seeking, Zuckerman later linked the trait to low monoamine oxidase activity and dopaminergic reward sensitivity, and to his **impulsive sensation seeking** factor in the Alternative Five model. Flow has been operationalised with the Flow State Scale (Jackson and Marsh) and is central to positive psychology and sports psychology.
+Ego depletion: Hagger and colleagues' Registered Replication Report (2016, 23 labs, over 2,000 participants) found d close to 0.04; a second multisite study (2021) also found a very small effect. Alternative accounts treat fatigue after effort as a motivational shift (Inzlicht and Schmeichel's process model) rather than a depleted resource; the glucose hypothesis did not hold. **Implementation intentions** (Peter Gollwitzer's plans of the form “If situation X, then I will do Y”) are one of the better-supported self-regulation tools (meta-analysis of 94 studies, d about 0.65, 2006). For sensation seeking, Zuckerman later linked the trait to low monoamine oxidase activity and dopaminergic reward sensitivity, and to his **impulsive sensation seeking** factor in the Alternative Five model. Flow has been operationalised with the Flow State Scale (Jackson and Marsh) and is central to positive psychology and sports psychology.
 :::
 
 :::recall
@@ -750,7 +750,7 @@ Rats with dopamine blocked still show pleasure faces to sugar but will not work 
 :::
 
 :::clinician
-The dual-centre model was simplified: LH lesions also damage dopaminergic fibres of passage (the nigrostriatal bundle), producing general akinesia, and VMH lesions alter insulin secretion and vagal tone, raising fat storage. Leptin was cloned by Friedman's group in 1994 (the ob gene); leptin-deficient humans are rare, and most obesity involves leptin resistance rather than deficiency, which is why leptin treatment failed for common obesity. GLP-1 receptor agonists such as semaglutide act on these satiety pathways and on reward circuits; their psychiatric relevance is covered in the frontiers module. The wanting-liking distinction (incentive sensitisation theory, Robinson and Berridge, 1993) is now standard in addiction teaching and helps explain anhedonia in depression as involving motivational (anticipatory) deficits more than consummatory ones.
+The dual-centre model was simplified: LH lesions also damage dopaminergic fibres of passage (the nigrostriatal bundle), producing general akinesia, and VMH lesions alter insulin secretion and vagal tone, raising fat storage. Leptin was cloned by Friedman's group in 1994 (the ob gene); leptin-deficient humans are rare, and most obesity involves leptin resistance rather than deficiency, which is why leptin treatment failed for common obesity. GLP-1 receptor agonists such as semaglutide act on these satiety pathways and on reward circuits; their psychiatric relevance is covered in the frontiers module. The wanting-liking distinction (incentive sensitisation theory, 1993) is now standard in addiction teaching and helps explain anhedonia in depression as involving motivational (anticipatory) deficits more than consummatory ones.
 :::
 
 :::recall
@@ -804,7 +804,7 @@ If arousal is labelled from context, it can be **mislabelled**. In **Dutton and 
 In early experiments Lazarus showed people a disturbing film of a tribal circumcision ritual. Those told beforehand that the procedure was not painful (denial) or who were encouraged to watch it like an anthropologist (intellectualisation) showed **less** physiological stress than those told it was harmful.
 
 ### Zajonc: feeling can come first
-**Robert Zajonc** (1980, "Feeling and thinking: preferences need no inferences") argued that **affect can arise without cognition**. His evidence was the **mere exposure effect**: people come to like shapes or symbols shown to them so briefly that they cannot say they saw them. The **Lazarus-Zajonc debate** (American Psychologist, 1984) was partly about definitions: Lazarus counted fast, automatic, unconscious evaluations as appraisal; Zajonc meant deliberate thought.
+**Robert Zajonc** (1980) argued that **affect can arise without cognition**. His evidence was the **mere exposure effect**: people come to like shapes or symbols shown to them so briefly that they cannot say they saw them. The **Lazarus-Zajonc debate** (1984) was partly about definitions: Lazarus counted fast, automatic, unconscious evaluations as appraisal; Zajonc meant deliberate thought.
 
 :::analogy Two routes to fear
 Seeing something shaped like a snake on a forest path near Mahabaleshwar, you jump before you think. A second later you see it is a stick and calm down. The jump looks like Zajonc's fast affect; the "it's a stick" moment looks like Lazarus's appraisal. LeDoux's brain research (Part III) shows both routes are real.
@@ -826,7 +826,7 @@ Seeing something shaped like a snake on a forest path near Mahabaleshwar, you ju
 :::
 
 :::clinician
-The Schachter-Singer findings were weaker than textbooks suggest: the predicted effects appeared mainly on behavioural and self-report measures in some conditions, the euphoria-anger contrast was not symmetrical, and attempts to replicate (Marshall and Zimbardo, 1979; Maslach, 1979) found that unexplained arousal tends to be labelled **negatively**, not neutrally, whatever the context. Valins (1966) showed that **false heart-rate feedback** alone shifted ratings of attractiveness, suggesting that perceived rather than actual arousal matters. The lasting contributions are misattribution, the role of context in labelling, and the general cognitive turn. Appraisal theories were later formalised as multidimensional models (Scherer's component process model, with sequential stimulus evaluation checks; Smith and Ellsworth's dimensions such as pleasantness, certainty, control and agency) and are the basis of cognitive therapy's emphasis on interpretation. The constructionist **theory of constructed emotion** (Lisa Feldman Barrett, 2017) is a modern descendant of the two-factor view: the brain predicts and categorises interoceptive changes using learned emotion concepts.
+The Schachter-Singer findings were weaker than textbooks suggest: the predicted effects appeared mainly on behavioural and self-report measures in some conditions, the euphoria-anger contrast was not symmetrical, and attempts to replicate (1979, 1979) found that unexplained arousal tends to be labelled **negatively**, not neutrally, whatever the context. Valins (1966) showed that **false heart-rate feedback** alone shifted ratings of attractiveness, suggesting that perceived rather than actual arousal matters. The lasting contributions are misattribution, the role of context in labelling, and the general cognitive turn. Appraisal theories were later formalised as multidimensional models (Scherer's component process model, with sequential stimulus evaluation checks; Smith and Ellsworth's dimensions such as pleasantness, certainty, control and agency) and are the basis of cognitive therapy's emphasis on interpretation. The constructionist **theory of constructed emotion** (Lisa Feldman Barrett in 2017) is a modern descendant of the two-factor view: the brain predicts and categorises interoceptive changes using learned emotion concepts.
 :::
 
 :::recall
@@ -855,7 +855,7 @@ Q: Zajonc's "preferences need no inferences" means that:
 
 ## 2.6 Faces, feedback and culture: is emotion universal? [core][beginner]
 ### Basic emotions
-Darwin (The Expression of the Emotions in Man and Animals, 1872) argued that facial expressions evolved and are shared across humans and other animals. **Paul Ekman** tested this. With Wallace Friesen he travelled to the **Fore** people of Papua New Guinea, who had little contact with outsiders, and found that they matched faces to emotion stories much as Westerners did. Ekman proposed **six basic emotions**: happiness, sadness, fear, anger, disgust and surprise (he later added **contempt**). Ekman and Friesen also created the **Facial Action Coding System (FACS)**, which codes any expression as a set of numbered muscle movements (action units).
+Darwin, in 1872, argued that facial expressions evolved and are shared across humans and other animals. **Paul Ekman** tested this. With Wallace Friesen he travelled to the **Fore** people of Papua New Guinea, who had little contact with outsiders, and found that they matched faces to emotion stories much as Westerners did. Ekman proposed **six basic emotions**: happiness, sadness, fear, anger, disgust and surprise (he later added **contempt**). Ekman and Friesen also created the **Facial Action Coding System (FACS)**, which codes any expression as a set of numbered muscle movements (action units).
 
 ### Display rules
 Cultures have **display rules**: norms about which emotions may be shown, by whom and when. In a classic study, Japanese and American students watched a stressful film. Alone, both showed similar disgust. With an older experimenter present, Japanese students masked negative expressions with polite smiles more than Americans did.
@@ -890,7 +890,7 @@ Rasa theory is strikingly modern: it separates the felt emotion from its express
 The **facial feedback hypothesis** (from Darwin, James, Tomkins and Izard) says expressions do not only show emotion; they also **feed back** and intensify it. In **Strack, Martin and Stepper's** (1988) study, people holding a pen in their **teeth** (which forces a smile) rated cartoons as funnier than people holding a pen in their **lips** (which blocks a smile).
 
 :::trap Facial feedback: small, not zero
-A 17-lab replication of the pen study (Wagenmakers and colleagues, 2016) found no effect. Later work suggested the replication's video cameras may have made people self-conscious (Noah and colleagues, 2018), and a meta-analysis (Coles, Larsen and Lench, 2019) found a **small but real** effect overall. Answer exam questions on facial feedback with "small effects, contested methods", not "proven" or "debunked".
+A 17-lab replication of the pen study (2016) found no effect. Later work suggested the replication's video cameras may have made people self-conscious (2018), and a meta-analysis (2019) found a **small but real** effect overall. Answer exam questions on facial feedback with "small effects, contested methods", not "proven" or "debunked".
 :::
 
 ### Dimensions and wheels
@@ -900,7 +900,7 @@ Not everyone thinks in discrete emotions:
 - **Watson and Tellegen** found that **positive affect** and **negative affect** are relatively independent dimensions (measured by the **PANAS**).
 
 :::clinician
-The universality debate continues. Russell (Psychological Bulletin, 1994) argued that Ekman's forced-choice method inflated agreement; free-labelling studies show lower consensus. Gendron and colleagues (2014) found that the Himba of Namibia sorted faces mainly by valence and arousal rather than into Western categories, and Jack and colleagues (PNAS, 2012) showed that East Asian observers rely more on the eyes and do not represent the six categories as distinctly. The current consensus is **minimal universality**: some facial movements reliably signal broad states such as positive versus negative and high versus low arousal across cultures, while specific categories, intensity and meaning are culturally shaped. The **Many Smiles Collaboration** (Coles and colleagues, Nature Human Behaviour, 2022; 19 countries) found that voluntary smiling and facial mimicry produced small increases in happiness, while the pen-in-mouth task did not. Rasa theory has been used in contemporary research on emotion in music and dance (Hejmadi, Davidson and Rozin, 2000, showed that Americans and Indians could recognise rasa-based bhavas performed by an Indian dancer above chance), and it is a common NET short-note topic under Indian psychology.
+The universality debate continues. Russell (1994) argued that Ekman's forced-choice method inflated agreement; free-labelling studies show lower consensus. Later field studies found that the Himba of Namibia sorted faces mainly by valence and arousal rather than into Western categories, and Jack and colleagues (2012) showed that East Asian observers rely more on the eyes and do not represent the six categories as distinctly. The current consensus is **minimal universality**: some facial movements reliably signal broad states such as positive versus negative and high versus low arousal across cultures, while specific categories, intensity and meaning are culturally shaped. The **Many Smiles Collaboration** (2022, 19 countries) found that voluntary smiling and facial mimicry produced small increases in happiness, while the pen-in-mouth task did not. Rasa theory has been used in contemporary research on emotion in music and dance (2000, showed that Americans and Indians could recognise rasa-based bhavas performed by an Indian dancer above chance), and it is a common NET short-note topic under Indian psychology.
 :::
 
 :::recall
@@ -950,8 +950,8 @@ The same viva exam can be a threat for one student and a challenge for another. 
 - **Emotion-focused coping**: changing how you feel about it (venting, reappraising, distracting yourself, praying, accepting).
 
 Other useful splits:
-- **Approach versus avoidance** coping (Roth and Cohen, 1986): facing the stressor or turning away from it. Avoidance helps briefly but usually harms in the long run.
-- **Meaning-focused coping** (Folkman, 1997): drawing on values and beliefs to find meaning, such as finding purpose while caring for a dying partner.
+- **Approach versus avoidance** coping (1986): facing the stressor or turning away from it. Avoidance helps briefly but usually harms in the long run.
+- **Meaning-focused coping** (Folkman in 1997): drawing on values and beliefs to find meaning, such as finding purpose while caring for a dying partner.
 - **Religious coping** (Pargament): **positive** (seeking spiritual support, benevolent reappraisal) or **negative** ("God is punishing me"). Negative religious coping predicts worse outcomes.
 
 No style is always best. The **goodness-of-fit** idea says problem-focused coping suits **controllable** stressors and emotion-focused coping suits **uncontrollable** ones. Measures include the **Ways of Coping Questionnaire** and Carver's **COPE** and **Brief COPE** (14 subscales such as active coping, planning, denial, substance use, humour, religion and acceptance).
@@ -977,15 +977,15 @@ No style is always best. The **goodness-of-fit** idea says problem-focused copin
 **Type B** people are relaxed, patient and easy-going. In the **Western Collaborative Group Study** (over 3,000 men followed for about eight and a half years), Type A men had about **twice** the rate of coronary heart disease. Later, larger studies were less consistent, and researchers found that the "toxic" part is **hostility**, especially **cynical hostility** (a mistrustful, angry view of others).
 
 Two later types are often examined:
-- **Type C** (Lydia Temoshok, 1980s): cooperative, unassertive, patient, suppressing negative emotions; proposed as cancer-prone. Evidence is **weak**.
-- **Type D** ("distressed"; Johan Denollet, 1996): **negative affectivity** plus **social inhibition** (high worry and gloom, combined with not sharing it). Linked with worse outcomes in heart patients, though later studies were mixed. Measured with the 14-item **DS14**.
+- **Type C** (Lydia Temoshok in the 1980s): cooperative, unassertive, patient, suppressing negative emotions; proposed as cancer-prone. Evidence is **weak**.
+- **Type D** ("distressed"; Johan Denollet in 1996): **negative affectivity** plus **social inhibition** (high worry and gloom, combined with not sharing it). Linked with worse outcomes in heart patients, though later studies were mixed. Measured with the 14-item **DS14**.
 
 :::mnemonic Types in one line
 **A**: Aggressive, in A hurry. **B**: Be calm. **C**: Cooperative, Conceals feelings (Cancer, weak evidence). **D**: Distressed: gloomy and keeps it in.
 :::
 
 ### Protective personality factors
-- **Hardiness** (Suzanne Kobasa, 1979), from a study of executives at Illinois Bell during a stressful company break-up: the **three Cs** of **commitment** (involvement rather than alienation), **control** (believing you can influence events) and **challenge** (seeing change as an opportunity).
+- **Hardiness** (Suzanne Kobasa in 1979), from a study of executives at Illinois Bell during a stressful company break-up: the **three Cs** of **commitment** (involvement rather than alienation), **control** (believing you can influence events) and **challenge** (seeing change as an opportunity).
 - **Sense of coherence** (Aaron Antonovsky): seeing life as **comprehensible**, **manageable** and **meaningful**. Antonovsky founded **salutogenesis**, the study of what keeps people healthy rather than what makes them ill.
 - **Optimism**, internal **locus of control** and **social support** also buffer stress.
 
@@ -1005,7 +1005,7 @@ Two later types are often examined:
 :::
 
 :::clinician
-Meta-analyses (Booth-Kewley and Friedman, 1987; Miller and colleagues, 1996) confirm that hostility and anger predict coronary heart disease more consistently than global Type A, partly through cardiovascular reactivity, health behaviours and social isolation. The Multiple Risk Factor Intervention Trial (MRFIT) found no global Type A effect, although its hostility measures did predict outcome. Global Type A was measured by the Structured Interview (scored on speech style as much as content) and the Jenkins Activity Survey. Type D's predictive value fell in later, larger cohorts once depression and disease severity were controlled (Grande and colleagues, 2012). Antonovsky's Sense of Coherence scale (SOC-29 and SOC-13) has strong links with perceived health. In India, research on stress and coping often finds family support and religious or spiritual coping as prominent resources; a good answer notes that "emotion-focused" coping such as acceptance or prayer is not automatically maladaptive, a point the goodness-of-fit model makes explicit.
+Meta-analyses (1987, 1996) confirm that hostility and anger predict coronary heart disease more consistently than global Type A, partly through cardiovascular reactivity, health behaviours and social isolation. The Multiple Risk Factor Intervention Trial (MRFIT) found no global Type A effect, although its hostility measures did predict outcome. Global Type A was measured by the Structured Interview (scored on speech style as much as content) and the Jenkins Activity Survey. Type D's predictive value fell in later, larger cohorts once depression and disease severity were controlled (2012). Antonovsky's Sense of Coherence scale (SOC-29 and SOC-13) has strong links with perceived health. In India, research on stress and coping often finds family support and religious or spiritual coping as prominent resources; a good answer notes that "emotion-focused" coping such as acceptance or prayer is not automatically maladaptive, a point the goodness-of-fit model makes explicit.
 :::
 
 :::recall

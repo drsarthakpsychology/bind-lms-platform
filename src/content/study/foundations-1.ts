@@ -6,7 +6,7 @@ export const part1 = String.raw`
 The word comes from Greek: **psyche** (breath, soul, mind) and **logos** (study, account). The definition has changed with the field, and exams like to ask which definition belongs to which era:
 | Era | Definition | Associated with |
 |---|---|---|
-| Ancient and medieval | Study of the soul | Plato, Aristotle (De Anima) |
+| Ancient and medieval | Study of the soul | Plato, Aristotle |
 | Late 1800s | Science of conscious experience; "the science of mental life" | Wundt; William James (1890) |
 | 1913 to 1950s | Science of observable behaviour | John B. Watson, B. F. Skinner |
 | From the 1960s | **Scientific study of behaviour and mental processes** | The modern consensus |
@@ -68,12 +68,12 @@ A **psychiatrist** is a medical doctor (MBBS plus MD or DNB in psychiatry) who c
 :::
 
 :::clinician
-Definitional debates are not trivial. The behaviourist definition (Watson, "Psychology as the behaviorist views it", Psychological Review, 1913) excluded consciousness as unscientific; the cognitive revolution readmitted mental processes as theoretical constructs inferred from behaviour (reaction times, error patterns), which is the methodological sense of "mental processes" in the modern definition. A frequent PG question asks whether psychology is a natural science (Naturwissenschaft) or a human science (Geisteswissenschaft); Wilhelm Dilthey's distinction between **explaining** (Erklären, causal laws) and **understanding** (Verstehen, grasping meaning from within) underlies this, and is why Dilthey appears among the "four founding paths" of academic psychology in the UGC NET syllabus (Wundt, Freud, James, Dilthey). Indian scholars (Paranjpe; Misra) argue that Indian traditions add a third aim, **self-knowledge and transformation**, which neither explanation nor understanding fully captures. You will return to this in the section on paradigms.
+Definitional debates are not trivial. The behaviourist definition (1913) excluded consciousness as unscientific; the cognitive revolution readmitted mental processes as theoretical constructs inferred from behaviour (reaction times, error patterns), which is the methodological sense of "mental processes" in the modern definition. A frequent PG question asks whether psychology is a natural science (Naturwissenschaft) or a human science (Geisteswissenschaft); Wilhelm Dilthey's distinction between **explaining** (Erklären, causal laws) and **understanding** (Verstehen, grasping meaning from within) underlies this, and is why Dilthey appears among the "four founding paths" of academic psychology in the UGC NET syllabus (Wundt, Freud, James, Dilthey). Indian scholars (Paranjpe; Misra) argue that Indian traditions add a third aim, **self-knowledge and transformation**, which neither explanation nor understanding fully captures. You will return to this in the section on paradigms.
 :::
 
 :::recall
 1. Give the modern definition of psychology. || The scientific study of behaviour and mental processes.
-2. Who defined psychology as "the science of mental life"? || William James (Principles of Psychology, 1890).
+2. Who defined psychology as "the science of mental life"? || William James, in his great 1890 textbook.
 3. What are the four goals of psychology? || Describe, explain, predict, control or change.
 4. Name the three levels of analysis in the biopsychosocial approach. || Biological, psychological and social-cultural.
 5. Which body registers clinical psychologists in India? || The Rehabilitation Council of India (RCI).
@@ -153,7 +153,7 @@ An **experiment** is the only method that can establish **cause and effect**. Th
 Modern research follows ethical codes (APA; in India, the ICMR's national ethical guidelines for biomedical and health research). Core principles: **informed consent**, **right to withdraw**, **confidentiality**, **minimising harm**, and **debriefing** after any deception. Studies such as Milgram's obedience experiments and the Stanford prison study pushed these rules into place.
 
 :::clinician
-Two methodological issues dominate PG discussions. First, **WEIRD samples**: Henrich, Heine and Norenzayan (Behavioral and Brain Sciences, 2010) showed that most published participants are Western, Educated, Industrialised, Rich and Democratic, yet are often the least typical humans on visual illusions, fairness, self-concept and moral reasoning. Indian samples are under-represented and often urban, English-speaking and student-based, which limits generalisation even within India. Second, the **replication crisis**: the Open Science Collaboration (Science, 2015) replicated 100 studies from three top journals; about 97% of originals had significant results versus about 36% of replications, with effect sizes roughly halved. Responses include pre-registration, registered reports, larger samples and open data. Detailed design, sampling and statistics are taught in the research methods and statistics modules; here the aim is to place the methods in the history of the discipline.
+Two methodological issues dominate PG discussions. First, **WEIRD samples**: Henrich, Heine and Norenzayan (2010) showed that most published participants are Western, Educated, Industrialised, Rich and Democratic, yet are often the least typical humans on visual illusions, fairness, self-concept and moral reasoning. Indian samples are under-represented and often urban, English-speaking and student-based, which limits generalisation even within India. Second, the **replication crisis**: a large collaborative project in 2015 repeated 100 studies from leading psychology journals; about 97% of originals had significant results versus about 36% of replications, with effect sizes roughly halved. Responses include pre-registration, registered reports, larger samples and open data. Detailed design, sampling and statistics are taught in the research methods and statistics modules; here the aim is to place the methods in the history of the discipline.
 :::
 
 :::recall
@@ -185,7 +185,7 @@ Psychology became a separate science in the late 1800s, but its questions are an
 
 ### Philosophical roots
 - **Plato** (around 400 BCE): knowledge is innate and recalled through reason (**rationalism**, **nativism**); the soul has reason, spirit and appetite.
-- **Aristotle**: in De Anima, the first systematic book on the mind; knowledge comes through the senses; memory works by **association** (similarity, contrast, contiguity).
+- **Aristotle**: wrote the first systematic account of the mind (the soul); knowledge comes through the senses; memory works by **association** (similarity, contrast, contiguity).
 - **René Descartes** (1600s): **mind-body dualism**: mind and body are different substances that interact (he suggested the pineal gland as the meeting point); the body works like a machine through **reflexes**. "I think, therefore I am."
 - **British empiricists**: **John Locke** said the mind at birth is a **tabula rasa** (blank slate) written on by experience; **Berkeley**, **Hume**, **Hartley** and **James Mill** developed **associationism**, the idea that complex ideas are built from simple ones by association. **John Stuart Mill** added **mental chemistry**: combined ideas can produce something new, as water differs from hydrogen and oxygen.
 - **Immanuel Kant**: the mind brings built-in categories (space, time, causality) to experience; he also doubted that the mind could ever be measured.
@@ -218,14 +218,14 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
 :::
 
 ### The birth of a science
-**Wilhelm Wundt** set up the first formal psychology laboratory at the **University of Leipzig in 1879**, which is taken as the birth of experimental psychology. He wrote Principles of Physiological Psychology (1873 to 1874), trained many of the first generation of psychologists (including Titchener, James McKeen Cattell and Oswald Külpe) and founded the first psychology journal. Key ideas:
+**Wilhelm Wundt** set up the first formal psychology laboratory at the **University of Leipzig in 1879**, which is taken as the birth of experimental psychology. He wrote the first textbook of physiological psychology (1873 to 1874), trained many of the first generation of psychologists (including Titchener, James McKeen Cattell and Oswald Külpe) and founded the first psychology journal. Key ideas:
 - **Voluntarism**: the mind actively organises experience (apperception).
 - The **tridimensional theory of feeling**: pleasant-unpleasant, tension-relaxation, excitement-calm.
 - **Völkerpsychologie** (folk or cultural psychology, in ten volumes): higher mental processes such as language, myth and custom must be studied through cultural products, not laboratory introspection.
 
 Around him:
 - **Hermann Ebbinghaus** (1885) studied memory on himself with **nonsense syllables** and drew the **forgetting curve**: rapid loss soon after learning, then a slower decline.
-- **William James** published **Principles of Psychology** (1890), introducing the stream of consciousness, habit, the self and his theory of emotion.
+- **William James** published his two-volume textbook of psychology (1890), introducing the stream of consciousness, habit, the self and his theory of emotion.
 - **Francis Galton** studied individual differences, heredity and early mental tests, and introduced correlation (refined by Pearson).
 - **G. Stanley Hall** founded the American Psychological Association in 1892 and studied adolescence.
 
@@ -245,13 +245,13 @@ Around him:
 :::
 
 :::clinician
-Historiographers warn against "great man" and presentist accounts. Wundt is often misrepresented through Titchener's lens: he did not reduce psychology to introspective elements, his laboratory used mainly reaction-time and psychophysical methods with brief, controlled self-reports, and his Völkerpsychologie anticipated cultural psychology (Danziger, Constructing the Subject, 1990, is the standard revisionist account). James had a demonstration laboratory at Harvard from 1875 but did not use it for systematic research. For dates, exams commonly expect: Fechner 1860, Wundt's laboratory 1879, Ebbinghaus 1885, James 1890, APA 1892. Kuhn would call the late nineteenth century "pre-paradigmatic" for psychology: several schools competed without a shared paradigm, which is the frame for the next part.
+Historiographers warn against "great man" and presentist accounts. Wundt is often misrepresented through Titchener's lens: he did not reduce psychology to introspective elements, his laboratory used mainly reaction-time and psychophysical methods with brief, controlled self-reports, and his Völkerpsychologie anticipated cultural psychology (1990, is the standard revisionist account). James had a demonstration laboratory at Harvard from 1875 but did not use it for systematic research. For dates, exams commonly expect: Fechner 1860, Wundt's laboratory 1879, Ebbinghaus 1885, James 1890, APA 1892. Kuhn would call the late nineteenth century "pre-paradigmatic" for psychology: several schools competed without a shared paradigm, which is the frame for the next part.
 :::
 
 :::recall
 1. What did Locke mean by tabula rasa? || The mind at birth is a blank slate written on by experience.
 2. State Weber's law. || The just noticeable difference is a constant proportion of the original stimulus.
-3. What is Fechner's main book and its year? || Elements of Psychophysics, 1860.
+3. What is Fechner's main book and its year? || His founding work on psychophysics, 1860.
 4. Where and when did Wundt open the first psychology laboratory? || Leipzig, 1879.
 5. What was Wundt's Völkerpsychologie? || A ten-volume cultural or folk psychology studying higher mental processes through language, myth and custom.
 6. What did Ebbinghaus's forgetting curve show? || Rapid forgetting soon after learning, then a slower decline.
@@ -335,7 +335,7 @@ The **three gunas** (sattva, rajas, tamas) are qualities of mind and nature from
 :::
 
 :::clinician
-Distinguish three terms that the literature often blurs: (1) **psychology in India** (the discipline as practised in Indian institutions, largely Western in origin); (2) **indigenous Indian psychology** (concepts and methods drawn from Indian culture and life, studied empirically); and (3) **Indian psychology** in the narrower sense of Rao, Paranjpe and Dalal's Handbook of Indian Psychology (2008), a psychology derived from classical Indian thought, which treats consciousness as primary and gives first-person, transformative methods a legitimate place. The Pondicherry **Manifesto of Indian Psychology** (2002) argued for this third sense. Critics (discussed in Part III) warn that the label can privilege Sanskritic, Brahminical and Hindu texts over Buddhist, Jain, Islamic, Dalit, tribal and folk traditions, and that some claims are framed in ways that resist testing. A balanced PG answer presents Indian psychology as a source of theory, method and practice that should be tested and debated like any other.
+Distinguish three terms that the literature often blurs: (1) **psychology in India** (the discipline as practised in Indian institutions, largely Western in origin); (2) **indigenous Indian psychology** (concepts and methods drawn from Indian culture and life, studied empirically); and (3) **Indian psychology** in the narrower sense developed by Rao, Paranjpe and Dalal, a psychology derived from classical Indian thought, which treats consciousness as primary and gives first-person, transformative methods a legitimate place. The Pondicherry **Manifesto of Indian Psychology** (2002) argued for this third sense. Critics (discussed in Part III) warn that the label can privilege Sanskritic, Brahminical and Hindu texts over Buddhist, Jain, Islamic, Dalit, tribal and folk traditions, and that some claims are framed in ways that resist testing. A balanced PG answer presents Indian psychology as a source of theory, method and practice that should be tested and debated like any other.
 :::
 
 :::recall
@@ -515,7 +515,7 @@ American psychologists, influenced by **Darwin**, asked a different question: **
 :::
 
 ### Behaviourism: only what can be observed
-**John B. Watson**'s manifesto, "**Psychology as the Behaviorist Views It**" (1913), declared that psychology should be the objective, experimental study of **observable behaviour**; its goal is the **prediction and control** of behaviour; consciousness and introspection have no place. Watson drew on:
+**John B. Watson**'s **behaviourist manifesto** (1913) declared that psychology should be the objective, experimental study of **observable behaviour**; its goal is the **prediction and control** of behaviour; consciousness and introspection have no place. Watson drew on:
 - **Ivan Pavlov**'s **classical conditioning** in dogs (a neutral stimulus paired with food comes to trigger salivation).
 - **Edward Thorndike**'s **law of effect** (1898, cats in puzzle boxes): responses followed by satisfaction are stamped in.
 
@@ -541,14 +541,14 @@ Behaviourism dominated American psychology from the 1920s to the 1950s and gave 
 :::
 
 :::clinician
-The schools can be compared on Woodworth's and Heidbreder's classic dimensions (Contemporary Schools of Psychology, 1931; Seven Psychologies, 1933): subject matter, method, unit of analysis and aim. Structuralism: consciousness, analytic introspection, elements, pure science. Functionalism: mental acts and their adaptive use, introspection plus objective methods, functions, practical application. Behaviourism: behaviour, objective observation and experiment, stimulus-response units, prediction and control. Watson's methodological behaviourism (consciousness unscientific to study) differs from Skinner's radical behaviourism (private events are behaviour accessible to one person, governed by the same contingencies). Tolman's latent learning (Tolman and Honzik, 1930) and cognitive maps (1948) are the standard evidence that behaviourism needed intervening variables, a term Tolman himself introduced.
+The schools can be compared on four classic dimensions: subject matter, method, unit of analysis and aim. Structuralism: consciousness, analytic introspection, elements, pure science. Functionalism: mental acts and their adaptive use, introspection plus objective methods, functions, practical application. Behaviourism: behaviour, objective observation and experiment, stimulus-response units, prediction and control. Watson's methodological behaviourism (consciousness unscientific to study) differs from Skinner's radical behaviourism (private events are behaviour accessible to one person, governed by the same contingencies). Tolman's latent learning (1930) and cognitive maps (1948) are the standard evidence that behaviourism needed intervening variables, a term Tolman himself introduced.
 :::
 
 :::recall
 1. What were Titchener's three elements of consciousness? || Sensations, images and affections.
 2. What is the stimulus error? || Describing the object (a book) instead of the raw experience.
 3. What question did functionalism ask? || What is consciousness for: how does it help us adapt?
-4. Name Watson's 1913 paper. || "Psychology as the Behaviorist Views It".
+4. What did Watson's 1913 manifesto demand? || That psychology study only observable behaviour, objectively, with the goal of prediction and control.
 5. What did Tolman's latent learning show? || Rats learn a maze without reward and show it once reward is introduced, implying cognitive maps.
 :::
 
@@ -590,7 +590,7 @@ A string of small lights flashing one after another along a balcony in Ahmedabad
 :::
 
 ### Psychoanalysis
-**Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). The Interpretation of Dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in the NET syllabus, a "first force", and the source of much of clinical psychology.
+**Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). His great book on dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in the NET syllabus, a "first force", and the source of much of clinical psychology.
 
 ### Humanistic psychology: the third force
 In the 1950s and 1960s **Abraham Maslow** and **Carl Rogers** described a **"third force"** against behaviourism (which saw people as machines) and psychoanalysis (which saw them as driven by dark forces). Humanistic psychology emphasises:
@@ -605,9 +605,9 @@ In the 1950s and 1960s **Abraham Maslow** and **Carl Rogers** described a **"thi
 By the 1950s behaviourism could not explain language, problem solving or memory well. Several events turned the field:
 - **George Miller**, "The Magical Number Seven, Plus or Minus Two" (1956): limits of short-term memory.
 - A symposium at **MIT on 11 September 1956**, where Miller, Chomsky, Newell and Simon presented work often taken as the start of cognitive science.
-- **Noam Chomsky**'s **review of Skinner's Verbal Behavior** (1959): children produce sentences they have never heard, so language cannot be learned by reinforcement alone.
+- **Noam Chomsky**'s **review of Skinner's book on language** (1959): children produce sentences they have never heard, so language cannot be learned by reinforcement alone.
 - **Newell and Simon**'s computer programs that solved problems, and the **computer metaphor** of the mind as an information processor.
-- **Ulric Neisser**'s book **Cognitive Psychology** (1967) named the field.
+- **Ulric Neisser**'s 1967 textbook gave the new field its name: **cognitive psychology**.
 
 ### Multiculturalism and beyond
 From the 1980s, **multicultural and cross-cultural psychology** argued that most theories were built on narrow samples and that culture shapes the mind (sometimes called a "fourth force" too). Indian indigenous psychology belongs partly to this movement.
@@ -622,7 +622,7 @@ From the 1980s, **multicultural and cross-cultural psychology** argued that most
     { "text": "Unconditional positive regard", "bucket": 2 },
     { "text": "The mind as an information-processing system", "bucket": 3 },
     { "text": "Sultan the chimpanzee joining two sticks", "bucket": 0 },
-    { "text": "Chomsky's review of Verbal Behavior", "bucket": 3 }
+    { "text": "Chomsky's attack on Skinner's account of language", "bucket": 3 }
   ]
 }
 :::
@@ -632,7 +632,7 @@ From the 1980s, **multicultural and cross-cultural psychology** argued that most
 :::
 
 :::clinician
-The NET syllabus's "four founding paths of academic psychology" are **Wundt, Freud, James and Dilthey**, framed in Indian syllabus writing as four distinct entry points: experimental-physiological psychology (Wundt), clinical-depth psychology (Freud), pragmatic-functional psychology (James) and interpretive human-science psychology (Dilthey's descriptive and analytic psychology, 1894, and his Verstehen tradition, later developed in phenomenological and hermeneutic psychology). The "cognitive revolution" narrative is itself debated: Leahey argues there was no Kuhnian revolution but continuity with Tolman's neo-behaviourism, information theory and cybernetics; others stress the rupture over language (Chomsky). Gestalt's influence runs into perception research, Lewin's social psychology and group dynamics, Gestalt therapy (Perls, a separate tradition with the same name) and modern predictive-coding accounts of perceptual organisation. For long answers, a comparison table of schools on founder, subject matter, method, key concepts, contribution and criticism earns marks quickly.
+The NET syllabus's "four founding paths of academic psychology" are **Wundt, Freud, James and Dilthey**, framed in Indian syllabus writing as four distinct entry points: experimental-physiological psychology (Wundt), clinical-depth psychology (Freud), pragmatic-functional psychology (James) and interpretive human-science psychology (Dilthey's descriptive and analytic psychology, 1894, and his Verstehen tradition, later developed in phenomenological and hermeneutic psychology). The "cognitive revolution" narrative is itself debated: some historians argue there was no Kuhnian revolution but continuity with Tolman's neo-behaviourism, information theory and cybernetics; others stress the rupture over language (Chomsky). Gestalt's influence runs into perception research, Lewin's social psychology and group dynamics, Gestalt therapy (Perls, a separate tradition with the same name) and modern predictive-coding accounts of perceptual organisation. For long answers, a comparison table of schools on founder, subject matter, method, key concepts, contribution and criticism earns marks quickly.
 :::
 
 :::recall
@@ -640,7 +640,7 @@ The NET syllabus's "four founding paths of academic psychology" are **Wundt, Fre
 2. Name four Gestalt laws of organisation. || Any four: proximity, similarity, closure, continuity, common fate, figure-ground, Prägnanz.
 3. What did Köhler's chimpanzee studies show? || Insight learning: sudden solutions after restructuring the problem, not gradual trial and error.
 4. Why was humanistic psychology called the third force? || It opposed both psychoanalysis and behaviourism.
-5. Name three events of the cognitive revolution. || Any three: Miller's magical number seven, the 1956 MIT symposium, Chomsky's review of Skinner, Newell and Simon's programs, Neisser's Cognitive Psychology (1967).
+5. Name three events of the cognitive revolution. || Any three: Miller's magical number seven, the 1956 MIT symposium, Chomsky's review of Skinner, Newell and Simon's programs, Neisser's 1967 book that named the field.
 :::
 
 :::mcq
@@ -701,7 +701,7 @@ The **Gita** (700 verses in 18 chapters, within the Mahabharata) opens with **Ar
   "title": "The Gita's chain from attention to ruin, read as a modern psychologist",
   "steps": [
     { "q": "Gita 2.62 to 2.63 describes a chain. It begins: by dwelling on sense objects, a person develops attachment. What modern idea fits “dwelling”?", "a": "Selective attention and rumination: repeatedly focusing on something makes it more salient and more wanted." },
-    { "q": "Attachment gives rise to desire, and blocked desire gives rise to anger. What modern theory links blocked goals to anger?", "a": "The frustration-aggression hypothesis (Dollard and colleagues, 1939), and appraisal theory: anger follows appraising a goal as blocked unfairly." },
+    { "q": "Attachment gives rise to desire, and blocked desire gives rise to anger. What modern theory links blocked goals to anger?", "a": "The frustration-aggression hypothesis (1939), and appraisal theory: anger follows appraising a goal as blocked unfairly." },
     { "q": "Anger leads to delusion (sammoha) and confusion of memory. What does modern research say about strong emotion and thinking?", "a": "High arousal narrows attention and impairs working memory and recall, as the Yerkes-Dodson law and stress research predict." },
     { "q": "Confused memory destroys discernment (buddhi-nasha), and with it the person is lost. What is the modern parallel?", "a": "Loss of executive control and judgement: impulsive decisions with lasting harm. The remedy in both systems is to intervene early, at attention and appraisal." }
   ],
@@ -716,7 +716,7 @@ The **Gita** (700 verses in 18 chapters, within the Mahabharata) opens with **Ar
 :::
 
 :::clinician
-Jeste and Vahia (Psychiatry, 2008) compared the conception of wisdom in the Gita with modern empirical models (Baltes's Berlin wisdom paradigm; Ardelt's three-dimensional model) and found substantial overlap: emotional regulation, control over desires, decisiveness, love of god, duty and work, self-contentedness, compassion and sacrifice, insight and humility, and knowledge of life. Psychiatrists from Indian traditions (Neki; Balodhi) have discussed the Gita as a model of supportive and directive psychotherapy, with Krishna using normalisation, reframing, values clarification and behavioural activation, though such readings are interpretive. The Mandukya states have been compared with sleep architecture and with research on "minimal phenomenal experience" and pure awareness in long-term meditators (Metzinger; Josipovic), an active but early research area. The antahkarana is a functional model and should not be mapped one-to-one onto brain regions.
+Jeste and Vahia (2008) compared the conception of wisdom in the Gita with modern empirical models (Baltes's Berlin wisdom paradigm; Ardelt's three-dimensional model) and found substantial overlap: emotional regulation, control over desires, decisiveness, love of god, duty and work, self-contentedness, compassion and sacrifice, insight and humility, and knowledge of life. Psychiatrists from Indian traditions (Neki; Balodhi) have discussed the Gita as a model of supportive and directive psychotherapy, with Krishna using normalisation, reframing, values clarification and behavioural activation, though such readings are interpretive. The Mandukya states have been compared with sleep architecture and with research on "minimal phenomenal experience" and pure awareness in long-term meditators (Metzinger; Josipovic), an active but early research area. The antahkarana is a functional model and should not be mapped one-to-one onto brain regions.
 :::
 
 :::recall
@@ -832,7 +832,7 @@ The first five are the **outer** limbs; the last three together are called **sam
 :::
 
 :::clinician
-Samkhya's metaphysics is unusual among world philosophies in placing mind (buddhi, ahamkara, manas) within matter while keeping consciousness separate, a position that some philosophers of mind compare with modern debates on the "hard problem" (Chalmers): cognitive functions are explainable mechanistically, but subjective awareness is not obviously so. The guna model has been operationalised in several inventories, notably the **Vedic Personality Inventory** (Wolf, 1998; 56 items, three subscales with adequate internal consistency) and Indian scales developed at NIMHANS and elsewhere; correlations with the Big Five are moderate (sattva with conscientiousness and agreeableness, rajas with extraversion and neuroticism facets, tamas with neuroticism and low conscientiousness), but factor structures vary across samples. Patanjali's vrittis and kleshas map loosely onto CBT concepts (viparyaya as cognitive distortion; raga and dvesha as approach and avoidance), and the bhumis onto attention research (mind-wandering versus sustained attention). Yoga as an adjunct for anxiety and depression has meta-analytic support with high risk of bias; it should not replace evidence-based treatment for moderate to severe disorders.
+Samkhya's metaphysics is unusual among world philosophies in placing mind (buddhi, ahamkara, manas) within matter while keeping consciousness separate, a position that some philosophers of mind compare with modern debates on the "hard problem" (Chalmers): cognitive functions are explainable mechanistically, but subjective awareness is not obviously so. The guna model has been operationalised in several inventories, notably the **Vedic Personality Inventory** (introduced by Wolf in 1998; 56 items, three subscales with adequate internal consistency) and Indian scales developed at NIMHANS and elsewhere; correlations with the Big Five are moderate (sattva with conscientiousness and agreeableness, rajas with extraversion and neuroticism facets, tamas with neuroticism and low conscientiousness), but factor structures vary across samples. Patanjali's vrittis and kleshas map loosely onto CBT concepts (viparyaya as cognitive distortion; raga and dvesha as approach and avoidance), and the bhumis onto attention research (mind-wandering versus sustained attention). Yoga as an adjunct for anxiety and depression has meta-analytic support with high risk of bias; it should not replace evidence-based treatment for moderate to severe disorders.
 :::
 
 :::recall
@@ -937,7 +937,7 @@ Key ideas:
 :::
 
 :::clinician
-Buddhist psychology has had the deepest influence on modern clinical practice: MBSR and MBCT (mindfulness), DBT (mindfulness and radical acceptance, drawn partly from Zen), ACT (self-as-context, defusion), compassion-focused therapy and loving-kindness interventions. The Mind and Life dialogues between the Dalai Lama and scientists (from 1987) helped launch contemplative neuroscience (Davidson, Lutz). Caution: secular mindfulness extracts sati from its ethical framework (sila), which critics call "McMindfulness" (Purser). Sufi concepts have been discussed in Islamic psychology (al-Ghazali's Ihya, with nafs, qalb, ruh and aql as a model of the person) and studied in qawwali and dhikr research on altered states. Aurobindo's psychology has been developed by the **Indian Psychology Institute** in Pondicherry (Matthijs Cornelissen) and by authors in the Foundations and Applications of Indian Psychology (Cornelissen, Misra and Varma). Its claims about higher planes are not empirically testable in standard ways, which exam answers should note while explaining its value as a developmental and educational model.
+Buddhist psychology has had the deepest influence on modern clinical practice: MBSR and MBCT (mindfulness), DBT (mindfulness and radical acceptance, drawn partly from Zen), ACT (self-as-context, defusion), compassion-focused therapy and loving-kindness interventions. The Mind and Life dialogues between the Dalai Lama and scientists (from 1987) helped launch contemplative neuroscience (Davidson, Lutz). Caution: secular mindfulness extracts sati from its ethical framework (sila), which critics call "McMindfulness" (Purser). Sufi concepts have been discussed in Islamic psychology (al-Ghazali's Ihya, with nafs, qalb, ruh and aql as a model of the person) and studied in qawwali and dhikr research on altered states. Aurobindo's psychology has been developed by the **Indian Psychology Institute** in Pondicherry (Matthijs Cornelissen) and by other Indian scholars. Its claims about higher planes are not empirically testable in standard ways, which exam answers should note while explaining its value as a developmental and educational model.
 :::
 
 :::recall

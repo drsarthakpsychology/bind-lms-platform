@@ -17,10 +17,10 @@ Modern academic psychology reached India through **colonial universities** that 
 | **1938** | An **Applied Psychology** wing opened at Calcutta under Bose |
 | **1940** | Bose opened the **Lumbini Park Mental Hospital** in Calcutta; the journal **Samiksha** began in 1947 |
 | **1946 to 1947** | Psychology began at **Patna** (with H. P. Maiti); Uttar Pradesh set up a **Bureau of Psychology** at Allahabad for educational and vocational guidance |
-| **1950** | After Partition, the Government of India and UNESCO invited **Gardner Murphy** to study the roots of communal tension; the result was the book **In the Minds of Men** (1953) |
+| **1950** | After Partition, the Government of India and UNESCO invited **Gardner Murphy** to study the roots of communal tension; his report appeared as a book in 1953 |
 | **1954** | The **All India Institute of Mental Health** opened in Bangalore (it became **NIMHANS** in 1974), with clinical psychology training |
 | **1960s** | Rapid expansion with UGC funding; **Centres of Advanced Study** in psychology at **Utkal** and **Allahabad** |
-| **1970s onward** | **ICSSR surveys** of Indian psychology research (the first edited by S. K. Mitra, 1972; later surveys by Udai Pareek, Janak Pandey and Girishwar Misra) |
+| **1970s onward** | **ICSSR surveys** of Indian psychology research (the first edited by S. K. Mitra, 1972, later surveys by Udai Pareek) |
 | **1989** | The **National Academy of Psychology (NAoP)** was formed |
 | **1992** | The **RCI Act** made RCI a statutory body that registers clinical psychologists |
 | **2002** | The **Pondicherry conference** issued the **Manifesto of Indian Psychology** |
@@ -47,14 +47,14 @@ The UGC NET syllabus follows a scheme built on the work of **Durganand Sinha** a
 | **1970s: towards social issues** | **Problem-oriented** research on national concerns: poverty and deprivation, rural development, population, education, communal tension |
 | **1980s: indigenisation** | Growing criticism of borrowed psychology; efforts to develop concepts and methods from Indian culture |
 | **1990s: paradigmatic concerns** | Debates about whether positivist methods fit Indian realities; a **disciplinary identity crisis** |
-| **2000s onward: Indian psychology in academia** | The Pondicherry Manifesto (2002), the Handbook of Indian Psychology (2008), new courses and, after 2020, Indian Knowledge Systems in syllabi |
+| **2000s onward: Indian psychology in academia** | The Pondicherry Manifesto (2002), a 2008 handbook, new courses and, after 2020, Indian Knowledge Systems in syllabi |
 
 ### The colonial encounter and its effects
 Indian psychologists have described several problems inherited from the colonial start:
 - **A borrowed discipline**: concepts, tests and theories arrived ready-made and were applied without asking whether they fit. Durganand Sinha called much early work "**Western psychology in Indian garb**".
 - **Intellectual dependency**: prestige came from publishing in Western journals and testing Western hypotheses; Indian problems were studied less.
 - **Alienation**: psychology seemed irrelevant to most Indians, and Indian traditions of thinking about the mind were treated as philosophy or religion, not psychology.
-- **Ashis Nandy**, in **The Intimate Enemy** (1983), described how colonialism colonised minds as well as land, shaping how Indians saw themselves; his work is central to **postcolonial** psychology, now developed by scholars such as **Sunil Bhatia** (Decolonizing Psychology, 2018).
+- **Ashis Nandy** (1983) described how colonialism colonised minds as well as land, shaping how Indians saw themselves; his work is central to **postcolonial** psychology, now developed by scholars such as **Sunil Bhatia** .
 
 :::widget sort
 {
@@ -72,16 +72,16 @@ Indian psychologists have described several problems inherited from the colonial
 :::
 
 :::clinician
-Historians stress that "phases" overlap and that the narrative of pure imitation is too simple. Bose's psychoanalysis was original and critical of Freud from the start; Indian psychologists contributed to personality, intelligence and social research early (Kuppuswamy's social psychology, J. P. Das's cognitive work); and the 1970s problem orientation drew on Indian concerns such as caste, deprivation and communal conflict (Misra and Tripathi's deprivation research; Pandey's work on ingratiation). The "disciplinary identity crisis" refers to the felt gap between a positivist, imported discipline and Indian social reality and intellectual traditions, debated in Psychology and Developing Societies (founded 1989) and in the ICSSR surveys. For a PG answer: give dated milestones, the phases, the critique (borrowed discipline, dependency, alienation), the responses (problem orientation, indigenisation, Indian psychology), and a balanced view of current debates, including the risk of replacing one uncritical import with an uncritical revival.
+Historians stress that "phases" overlap and that the narrative of pure imitation is too simple. Bose's psychoanalysis was original and critical of Freud from the start; Indian psychologists contributed to personality, intelligence and social research early (Kuppuswamy's social psychology, J. P. Das's cognitive work); and the 1970s problem orientation drew on Indian concerns such as caste, deprivation and communal conflict (Misra and Tripathi's deprivation research; Pandey's work on ingratiation). The "disciplinary identity crisis" refers to the felt gap between a positivist, imported discipline and Indian social reality and intellectual traditions, debated in Indian journals and in the ICSSR surveys. For a PG answer: give dated milestones, the phases, the critique (borrowed discipline, dependency, alienation), the responses (problem orientation, indigenisation, Indian psychology), and a balanced view of current debates, including the risk of replacing one uncritical import with an uncritical revival.
 :::
 
 :::recall
 1. Who drafted the first experimental psychology syllabus at Calcutta in 1905? || Brajendranath Seal.
 2. Who was the first head of the Calcutta department? || N. N. Sengupta.
 3. When did the Indian Science Congress give psychology its own section? || 1923.
-4. What was "In the Minds of Men"? || Gardner Murphy's 1953 UNESCO-supported study of communal tension in India.
+4. Why was Gardner Murphy invited to India in 1950? || To study the roots of communal tension after Partition, with UNESCO support; his report appeared in 1953.
 5. Name the six phases of Indian academic psychology in the NET scheme. || Pre-independence, post-independence, 1970s social issues, 1980s indigenisation, 1990s paradigmatic concerns and identity crisis, 2000s Indian psychology in academia.
-6. Which book by Ashis Nandy analyses the psychology of colonialism? || The Intimate Enemy (1983).
+6. Whose work analyses colonialism as a colonisation of minds? || Ashis Nandy's.
 :::
 
 :::mcq
@@ -104,7 +104,7 @@ Q: Research on rural development, poverty and deprivation is most typical of whi
 Exams ask for names, institutions, key works and ideas. Learn the people in clusters.
 
 ### The founders in Calcutta
-**Narendra Nath Sengupta** (1889 to 1944) earned his doctorate at **Harvard under Hugo Münsterberg**, one of Wundt's students. He led the Calcutta department from its start and set up experimental work on attention, perception and psychophysics. With the sociologist **Radhakamal Mukerjee** he wrote **Introduction to Social Psychology: Mind in Society** (1928), one of the earliest social psychology books by Indian authors. In 1929 he moved to **Lucknow University**, where he built psychology within philosophy. He is often called the founder of experimental psychology in India.
+**Narendra Nath Sengupta** (1889 to 1944) earned his doctorate at **Harvard under Hugo Münsterberg**, one of Wundt's students. He led the Calcutta department from its start and set up experimental work on attention, perception and psychophysics. With the sociologist **Radhakamal Mukerjee** he wrote one of the earliest social psychology textbooks by Indian authors (1928). In 1929 he moved to **Lucknow University**, where he built psychology within philosophy. He is often called the founder of experimental psychology in India.
 
 **Girindrasekhar Bose** (1887 to 1953) trained in medicine, then psychology, and earned one of the first doctorates in psychology at Calcutta (1921) with a thesis on **the concept of repression**. He corresponded with **Freud** from 1921, founded the **Indian Psychoanalytical Society** (1922), succeeded Sengupta as head of the Calcutta department, opened the **Lumbini Park Mental Hospital** (1940) and started the journal **Samiksha** (1947).
 - His **theory of the opposite wish**: every wish has an opposite (to beat and to be beaten, to see and to be seen); one side is repressed while the other is expressed, and both are present together. He argued this made Freud's castration complex less central.
@@ -118,23 +118,23 @@ Exams ask for names, institutions, key works and ideas. Learn the people in clus
 - **Kamla Chowdhry** (Ahmedabad): headed the psychology division of the **Ahmedabad Textile Industry's Research Association (ATIRA)**, worked with Vikram Sarabhai and was among the founding faculty of **IIM Ahmedabad**, bringing organisational psychology into Indian industry.
 
 ### The indigenisation generation
-- **Durganand Sinha** (died 1998; **Allahabad**): built the Centre of Advanced Study in Psychology at Allahabad; wrote **Psychology in a Third World Country: The Indian Experience** (1986); studied **motivation and rural development** and ecology and behaviour; was **president of the International Association for Cross-Cultural Psychology**; argued for **indigenisation** and an ecologically grounded, socially relevant psychology. He mentored J. B. P. Sinha among others.
-- **Jai B. P. Sinha** (**Patna**): the **nurturant-task leader** (The Nurturant Task Leader, 1980): an effective Indian manager is **task-focused but nurturant**, offering care, guidance and personal interest **contingent on** the subordinate's work, and gradually moving towards participation as the subordinate grows. He also wrote on Indian **work culture** and the Indian mindset.
+- **Durganand Sinha** (died 1998; **Allahabad**): built the Centre of Advanced Study in Psychology at Allahabad; wrote the landmark 1986 critique of psychology in India as a "third world" discipline; studied **motivation and rural development** and ecology and behaviour; was **president of the International Association for Cross-Cultural Psychology**; argued for **indigenisation** and an ecologically grounded, socially relevant psychology. He mentored J. B. P. Sinha among others.
+- **Jai B. P. Sinha** (**Patna**): the **nurturant-task leader** (1980): an effective Indian manager is **task-focused but nurturant**, offering care, guidance and personal interest **contingent on** the subordinate's work, and gradually moving towards participation as the subordinate grows. He also wrote on Indian **work culture** and the Indian mindset.
 - **Udai Pareek** (IIM Ahmedabad and elsewhere): with **T. V. Rao** designed the **HRD system at Larsen and Toubro** (mid-1970s), among the first in the world; co-founded the **Indian Society for Applied Behavioural Science (ISABS)**; developed many instruments on roles, stress and organisational climate.
 - **D. M. Pestonjee** (IIM Ahmedabad): organisational stress and coping, and handbooks of Indian psychological instruments.
 - **J. P. Das** (Utkal, later Alberta): with Naglieri and Kirby developed the **PASS model of intelligence** (planning, attention, simultaneous and successive processing), taught in the UGC NET intelligence unit.
 
 ### Clinical and cultural voices
 - **J. S. Neki** (PGIMER, Chandigarh): the **guru-chela relationship** as a model for therapy in India (1973): more directive, more dependent, with the therapist as a guide.
-- **Sudhir Kakar**: **The Inner World** (1978), a psychoanalytic study of Indian childhood and society; **Shamans, Mystics and Doctors** (1982) on healing traditions.
+- **Sudhir Kakar**: psychoanalytic studies of Indian childhood and society (1978) and of traditional healing (1982).
 - **Ashis Nandy**: colonialism and the self.
 
 ### Indian psychology scholars
-- **K. Ramakrishna Rao** (Andhra University): consciousness studies and parapsychology (he worked with J. B. Rhine in the United States); a leader of national initiatives in Indian psychology; co-editor of the **Handbook of Indian Psychology** (2008).
-- **Anand C. Paranjpe** (Simon Fraser University): **Self and Identity in Modern Psychology and Indian Thought** (1998); theoretical psychology between East and West.
-- **Ajit K. Dalal**: health and Indian psychology; co-editor of the Handbook.
+- **K. Ramakrishna Rao** (Andhra University): consciousness studies and parapsychology (he worked with J. B. Rhine in the United States); a leader of national initiatives in Indian psychology; co-editor of a major 2008 handbook of Indian psychology.
+- **Anand C. Paranjpe** (Simon Fraser University): studies of self and identity in modern psychology and Indian thought (1998); theoretical psychology between East and West.
+- **Ajit K. Dalal**: health and Indian psychology; co-editor of the 2008 handbook.
 - **Girishwar Misra**: cultural psychology, the fourth and fifth ICSSR surveys, and work with Kenneth Gergen on culture and psychological science.
-- **Janak Pandey**: social psychology, **Psychology in India Revisited** (three volumes, 2000 to 2004).
+- **Janak Pandey**: social psychology, a three-volume review of psychology in India (2000 to 2004).
 
 :::widget sort
 {
@@ -143,7 +143,7 @@ Exams ask for names, institutions, key works and ideas. Learn the people in clus
   "items": [
     { "text": "Trained under Münsterberg at Harvard", "bucket": 0 },
     { "text": "Theory of the opposite wish", "bucket": 1 },
-    { "text": "Psychology in a Third World Country (1986)", "bucket": 2 },
+    { "text": "A 1986 critique of borrowed psychology in India", "bucket": 2 },
     { "text": "The nurturant-task leader", "bucket": 3 },
     { "text": "Founded the Indian Psychoanalytical Society", "bucket": 1 },
     { "text": "Introduction to Social Psychology with Radhakamal Mukerjee", "bucket": 0 }
@@ -164,14 +164,14 @@ Exams ask for names, institutions, key works and ideas. Learn the people in clus
 :::
 
 :::clinician
-Bose's correspondence with Freud (1921 to 1937) has been studied by Christiane Hartnack (Psychoanalysis in Colonial India, 2001) and Ashis Nandy ("The savage Freud"). Bose's opposite-wish theory treats wishes as pairs held in balance, with symptoms arising when the balance is disturbed; he also gave greater weight to identification with the mother and to the wish to be female in male development. Bose's 1938 Applied Psychology wing and the Lumbini Park hospital made Calcutta an early centre of clinical work. On J. B. P. Sinha: his model draws on the Indian preference for personalised, hierarchical relationships (sneha and shraddha: affection from the senior, deference from the junior) and was tested in public-sector and industrial organisations in Bihar and elsewhere; it is a standard NET and organisational psychology question, and is compared with the Ohio State and Michigan two-factor models. On the Kuppuswamy scale: it scores education and occupation of the head of family and monthly family income, with income bands that must be updated using the consumer price index, which many papers have done for recent years; always cite the update you use.
+Bose's correspondence with Freud (1921 to 1937) has been studied by historians of psychoanalysis and by Ashis Nandy. Bose's opposite-wish theory treats wishes as pairs held in balance, with symptoms arising when the balance is disturbed; he also gave greater weight to identification with the mother and to the wish to be female in male development. Bose's 1938 Applied Psychology wing and the Lumbini Park hospital made Calcutta an early centre of clinical work. On J. B. P. Sinha: his model draws on the Indian preference for personalised, hierarchical relationships (sneha and shraddha: affection from the senior, deference from the junior) and was tested in public-sector and industrial organisations in Bihar and elsewhere; it is a standard NET and organisational psychology question, and is compared with the Ohio State and Michigan two-factor models. On the Kuppuswamy scale: it scores education and occupation of the head of family and monthly family income, with income bands that must be updated using the consumer price index, which many papers have done for recent years; always cite the update you use.
 :::
 
 :::recall
 1. Under whom did N. N. Sengupta train, and where? || Hugo Münsterberg, at Harvard.
 2. What was Bose's doctoral thesis on? || The concept of repression (1921).
 3. Name Bose's main theory. || The theory of the opposite wish.
-4. What is the nurturant-task leader? || A task-focused leader who gives care and personal attention contingent on performance and gradually shifts to participation (J. B. P. Sinha, 1980).
+4. What is the nurturant-task leader? || A task-focused leader who gives care and personal attention contingent on performance and gradually shifts to participation (1980).
 5. Who designed the L&T HRD system? || Udai Pareek and T. V. Rao.
 6. What is J. S. Neki's contribution? || The guru-chela relationship as a model for therapy in India.
 :::
@@ -203,7 +203,7 @@ Q: Kamla Chowdhry is associated with:
 **Indigenous psychology** is "the scientific study of human behaviour or mind that is native, that is not transported from other regions, and that is designed for its people" (**Kim and Berry**, 1993). It does not reject science; it asks that psychology start from the concepts, problems and ways of life of the people it studies.
 
 ### Why it arose
-Psychology's theories were built mainly on Western, often American, college students. When applied elsewhere they sometimes failed or missed what mattered locally. Indigenous movements grew in the **Philippines** (Virgilio Enriquez's **Sikolohiyang Pilipino**, built around **kapwa**, the shared self), **Taiwan and China** (Kuo-Shu Yang; work on face, guanxi and filial piety), **Japan** (Takeo Doi's **amae**, the wish to be indulged and depend on another, 1971), **Korea**, Mexico and **India**.
+Psychology's theories were built mainly on Western, often American, college students. When applied elsewhere they sometimes failed or missed what mattered locally. Indigenous movements grew in the **Philippines** (Virgilio Enriquez's **Sikolohiyang Pilipino**, built around **kapwa**, the shared self), **Taiwan and China** (Kuo-Shu Yang; work on face, guanxi and filial piety), **Japan** (the psychiatrist's concept of **amae**, the wish to be indulged and to depend on another's goodwill, 1971), **Korea**, Mexico and **India**.
 
 ### From without and from within
 **Enriquez** distinguished two routes, a distinction developed for India by **Durganand Sinha**:
@@ -220,7 +220,7 @@ Sinha saw the Indian story as moving from the first towards the second, and argu
 | **Anasakti** | Pande and Naidu | Non-attachment to outcomes buffers stress |
 | **Guru-chela therapy** | Neki | A culturally fitting therapeutic relationship |
 | **Familial self** | Alan Roland | Indian selves are experienced through family relationships and hierarchy |
-| **The Inner World** | Sudhir Kakar | Indian childhood, the mother and the extended family shape identity |
+| **The Indian inner world** | Sudhir Kakar | Indian childhood, the mother and the extended family shape identity |
 | **Lajja** | Menon and Shweder | An emotion of proper restraint with no neat English equivalent |
 | **Dividual person** | McKim Marriott | In South Asian thought, persons exchange substances and are not sealed individuals |
 | **Deprivation** | Misra and Tripathi | Effects of prolonged poverty on cognition and motivation |
@@ -265,13 +265,13 @@ Indigenous and Indian psychology face serious criticisms, which a PG answer must
 :::
 
 :::clinician
-Kim, Yang and Hwang (Indigenous and Cultural Psychology, 2006) frame indigenous psychology as a "transactional-scientific" approach compatible with universal aims; Hwang's work on Confucian relationalism is the most developed example of building formal theory from indigenous concepts. In India, Sinha (1997, Handbook of Cross-Cultural Psychology) described four stages from Westernisation to indigenisation; Misra and Mohanty edited Perspectives on Indigenous Psychology (2002). Contemporary critiques include Bhatia's postcolonial analysis (urban middle-class Indian identities are hybrid, globalised and not captured by "the traditional Indian self") and calls for caste-conscious psychology (for instance research on stigma, discrimination and mental health among Dalit students). Methodologically, indigenous research often combines emic qualitative work (interviews, discourse in local languages) with etic measurement invariance testing (multi-group confirmatory factor analysis) to see whether constructs are comparable across groups, which is the modern operational form of Berry's derived etic.
+Kim, Yang and Hwang (2006) frame indigenous psychology as a "transactional-scientific" approach compatible with universal aims; Hwang's work on Confucian relationalism is the most developed example of building formal theory from indigenous concepts. In India, Sinha (1997) described four stages from Westernisation to indigenisation; Misra and Mohanty edited a key 2002 volume on indigenous psychology. Contemporary critiques include Bhatia's postcolonial analysis (urban middle-class Indian identities are hybrid, globalised and not captured by "the traditional Indian self") and calls for caste-conscious psychology (for instance research on stigma, discrimination and mental health among Dalit students). Methodologically, indigenous research often combines emic qualitative work (interviews, discourse in local languages) with etic measurement invariance testing (multi-group confirmatory factor analysis) to see whether constructs are comparable across groups, which is the modern operational form of Berry's derived etic.
 :::
 
 :::recall
 1. Give Kim and Berry's definition of indigenous psychology. || The scientific study of human behaviour or mind that is native, not transported from other regions, and designed for its people.
 2. Contrast indigenisation from without and from within. || From without: adapt imported concepts and tests. From within: build theory and methods from local concepts and practices.
-3. What is amae? || Takeo Doi's Japanese concept of the wish to be indulged and to depend on another's benevolence.
+3. What is amae? || A Japanese psychiatrist's concept of the wish to be indulged and to depend on another's benevolence.
 4. What is a derived etic? || A comparable concept built up from several emic studies, after starting with an imposed etic.
 5. Name three criticisms of Indian psychology. || Any three: essentialism, narrow Sanskritic or Hindu sources, romanticism, political misuse, untestable claims, isolation.
 :::
@@ -293,7 +293,7 @@ Q: Sikolohiyang Pilipino is built around the concept of:
 :::
 
 ## 3.4 Paradigms: ontology, epistemology, methodology and the crisis [core][advanced]
-A **paradigm** (Thomas Kuhn, The Structure of Scientific Revolutions, 1962) is a shared set of assumptions, methods and model problems that a scientific community takes for granted during "normal science". When anomalies pile up, a crisis can lead to a **paradigm shift**.
+A **paradigm** (Thomas Kuhn, 1962) is a shared set of assumptions, methods and model problems that a scientific community takes for granted during "normal science". When anomalies pile up, a crisis can lead to a **paradigm shift**.
 
 Every paradigm answers three linked questions:
 1. **Ontology**: what is the nature of reality? Is there one objective reality, or are realities constructed?
@@ -306,7 +306,7 @@ Every paradigm answers three linked questions:
 | **Positivism** | One real world, governed by laws | Objective knowledge is possible; observer separate from observed | Experiments, measurement, hypothesis testing, verification |
 | **Post-positivism** | A real world, known only imperfectly | Objectivity is an ideal; knowledge is probable and open to falsification (Popper) | Experiments with critical tests, multiple measures, triangulation |
 | **Critical perspective** | Reality shaped by social, political, economic power | Knowledge is value-laden; research should expose and change oppression | Participatory, action-oriented, ideology critique (Frankfurt School, feminist, postcolonial) |
-| **Social constructionism** | Realities are constructed in language and social interaction | Knowledge is co-created; no view from nowhere | Discourse analysis, narrative analysis (Kenneth Gergen, 1985) |
+| **Social constructionism** | Realities are constructed in language and social interaction | Knowledge is co-created; no view from nowhere | Discourse analysis, narrative analysis (1985) |
 | **Existential phenomenology** | Reality as lived and experienced | Understanding through careful description of first-person experience | Phenomenological interviews and analysis (Husserl, Heidegger, Merleau-Ponty; Giorgi; IPA) |
 | **Co-operative inquiry** | Participatory reality | People are co-researchers in their own lives | Cycles of action and reflection with participants (John Heron and Peter Reason) |
 
@@ -318,12 +318,12 @@ The NET syllabus speaks of a **crisis in psychology due to strict adherence to t
 Critics argued that this made psychology:
 - **Narrow**: meaning, purpose, values, culture and consciousness were pushed out because they were hard to measure.
 - **Artificial**: laboratory tasks with students lacked ecological validity.
-- **Ahistorical**: Gergen's "Social Psychology as History" (1973) argued that social behaviour changes with history and culture, so its "laws" are not timeless.
+- **Ahistorical**: Kenneth Gergen (1973) argued that social behaviour changes with history and culture, so its "laws" are not timeless.
 - **Fragmented**: Sigmund Koch argued psychology was a collection of studies, not a unified science.
 
-The "**crisis in social psychology**" of the 1970s (Harré and Secord's Explanation of Social Behaviour, 1972) followed. Indian critics added that the paradigm suited neither Indian realities nor Indian traditions.
+The "**crisis in social psychology**" of the 1970s (1972) followed. Indian critics added that the paradigm suited neither Indian realities nor Indian traditions.
 
-A second, newer "crisis" is the **replication crisis**: many published findings did not replicate (the 2015 Open Science Collaboration project; ego depletion; some priming effects). Its causes include small samples, flexible analysis ("p-hacking"), publication bias and incentives. The response has been **open science**: pre-registration, registered reports, larger samples and data sharing. It is a crisis within the experimental paradigm rather than a rejection of it.
+A second, newer "crisis" is the **replication crisis**: many published findings did not replicate (ego depletion, some priming effects). Its causes include small samples, flexible analysis ("p-hacking"), publication bias and incentives. The response has been **open science**: pre-registration, registered reports, larger samples and data sharing. It is a crisis within the experimental paradigm rather than a rejection of it.
 
 :::widget sort
 {
@@ -356,14 +356,14 @@ Indian traditions add their own answers to the three questions:
 :::
 
 :::clinician
-Kuhn's own view was that the social sciences were pre-paradigmatic; Lakatos's research programmes and Laudan's research traditions are often better fits for psychology's coexisting approaches. Guba and Lincoln's tables (Handbook of Qualitative Research; "Paradigmatic controversies, contradictions, and emerging confluences", 2005) list positivism, post-positivism, critical theory, constructivism and the participatory paradigm (Heron and Reason, Qualitative Inquiry, 1997, which also adds axiology: what is intrinsically worthwhile). Pragmatism (Dewey) is the usual philosophical basis for mixed methods. In the replication debate, Simmons, Nelson and Simonsohn's "False-positive psychology" (2011) showed how undisclosed flexibility inflates false-positive rates far beyond 5%, and Bem's precognition paper (2011) exposed weaknesses in standard practice. Indian psychology's methodological claims have been linked to **neurophenomenology** (Varela), which combines trained first-person reports with neural measures, and to second-person and contemplative methods (Thompson; Petitmengin's micro-phenomenology interviews), giving a research route to "self-knowledge" that is open to peer evaluation.
+Kuhn's own view was that the social sciences were pre-paradigmatic; Lakatos's research programmes and Laudan's research traditions are often better fits for psychology's coexisting approaches. The standard comparison tables list positivism, post-positivism, critical theory, constructivism and the participatory paradigm (1997, which also adds axiology: what is intrinsically worthwhile). Pragmatism (Dewey) is the usual philosophical basis for mixed methods. In the replication debate, Simmons, Nelson and Simonsohn's "False-positive psychology" (2011) showed how undisclosed flexibility inflates false-positive rates far beyond 5%, and Bem's precognition paper (2011) exposed weaknesses in standard practice. Indian psychology's methodological claims have been linked to **neurophenomenology** (Varela), which combines trained first-person reports with neural measures, and to second-person and contemplative methods (Thompson; Petitmengin's micro-phenomenology interviews), giving a research route to "self-knowledge" that is open to peer evaluation.
 :::
 
 :::recall
 1. Define ontology, epistemology and methodology. || Ontology: nature of reality. Epistemology: relation between knower and known. Methodology: how to find out.
 2. Who introduced the idea of a paradigm shift? || Thomas Kuhn (1962).
 3. What is operationism? || Defining a concept by the operations used to measure it (Bridgman, Stevens).
-4. What did Gergen argue in "Social Psychology as History"? || Social behaviour changes with history and culture, so its "laws" are not timeless.
+4. What did Gergen argue in 1973 about social psychology? || Social behaviour changes with history and culture, so its "laws" are not timeless.
 5. What is the difference between apara vidya and para vidya? || Apara: lower knowledge, including the sciences and texts. Para: higher knowledge of the imperishable self (Mundaka Upanishad).
 :::
 
@@ -386,9 +386,9 @@ Q: The "crisis" in the NET syllabus refers mainly to problems caused by:
 ## 3.5 Indian psychology today: science, spirituality and self-knowledge [core][advanced]
 ### Indic influences on modern psychology
 Indian ideas have shaped Western psychology more than most textbooks admit:
-- **William James** discussed Indian mysticism and Vivekananda in The Varieties of Religious Experience (1902). **Swami Vivekananda**'s talks after the 1893 Parliament of the World's Religions in Chicago, and his book Raja Yoga (1896), introduced yoga psychology to the West.
+- **William James** discussed Indian mysticism and Vivekananda in his 1902 lectures on religious experience. **Swami Vivekananda**'s talks after the 1893 Parliament of the World's Religions in Chicago, and his 1896 book on raja yoga, introduced yoga psychology to the West.
 - **Carl Jung** studied yoga and gave a seminar on Kundalini yoga (1932) and wrote on Indian thought, though he warned Westerners against imitating it.
-- **Transcendental Meditation** research from 1970 (Robert Keith Wallace in Science) and **Herbert Benson**'s relaxation response brought meditation into physiology labs.
+- **Transcendental Meditation** research from 1970 and **Herbert Benson**'s relaxation response brought meditation into physiology labs.
 - **Mindfulness**: MBSR (1979), MBCT, DBT and ACT draw on Buddhist practice, much of it transmitted from South and Southeast Asia.
 - **Yoga therapy** and **breath practices** are now studied in hospitals worldwide; NIMHANS has a department of integrative medicine for yoga research.
 - **Humanistic and transpersonal psychology** drew on Vedanta and Buddhism (Maslow's peak experiences, Ken Wilber's spectrum of consciousness).
@@ -473,7 +473,7 @@ Frame: **definition → theory or history → evidence → Indian example → cr
 :::widget reveal
 {
   "prompt": "Plan in one minute, then reveal the model outline.",
-  "answer": "1. Introduction: psychology came through colonial universities; distinguish psychology in India, indigenous psychology and Indian psychology. 2. Milestones: Seal's 1905 syllabus and laboratory; the 1916 Calcutta department under Sengupta; Bose and the Indian Psychoanalytical Society (1922); Science Congress section (1923); Indian Psychological Association and journal; Mysore (Gopalaswamy), Patna, Lucknow, Allahabad; Gardner Murphy's UNESCO study; AIIMH (1954) and NIMHANS; UGC expansion and Centres of Advanced Study; ICSSR surveys; NAoP; RCI. 3. Phases: pre-independence, post-independence replication, 1970s social issues, 1980s indigenisation, 1990s paradigmatic concerns and identity crisis, 2000s Indian psychology (Pondicherry Manifesto, Handbook, NEP and IKS). 4. Critique: borrowed discipline, dependency, alienation; Nandy and Bhatia. 5. Contributions: Bose's opposite wish, J. B. P. Sinha's nurturant-task leader, Pareek's HRD, Das's PASS, Neki, Kakar. 6. Current debates: essentialism, narrow sources, testability, cross-indigenous comparison. 7. Conclusion: from imitation to critical engagement; the task now is rigorous, plural, socially relevant psychology."
+  "answer": "1. Introduction: psychology came through colonial universities; distinguish psychology in India, indigenous psychology and Indian psychology. 2. Milestones: Seal's 1905 syllabus and laboratory; the 1916 Calcutta department under Sengupta; Bose and the Indian Psychoanalytical Society (1922); Science Congress section (1923); Indian Psychological Association and journal; Mysore (Gopalaswamy), Patna, Lucknow, Allahabad; Gardner Murphy's UNESCO study; AIIMH (1954) and NIMHANS; UGC expansion and Centres of Advanced Study; ICSSR surveys; NAoP; RCI. 3. Phases: pre-independence, post-independence replication, 1970s social issues, 1980s indigenisation, 1990s paradigmatic concerns and identity crisis, 2000s Indian psychology (Pondicherry Manifesto, the 2008 handbook, NEP and IKS). 4. Critique: borrowed discipline, dependency, alienation; Nandy and Bhatia. 5. Contributions: Bose's opposite wish, J. B. P. Sinha's nurturant-task leader, Pareek's HRD, Das's PASS, Neki, Kakar. 6. Current debates: essentialism, narrow sources, testability, cross-indigenous comparison. 7. Conclusion: from imitation to critical engagement; the task now is rigorous, plural, socially relevant psychology."
 }
 :::
 
@@ -481,7 +481,7 @@ Frame: **definition → theory or history → evidence → Indian example → cr
 :::widget reveal
 {
   "prompt": "Plan, then reveal.",
-  "answer": "1. Context: pre-paradigmatic science; Wundt's laboratory (1879) and voluntarism. 2. A comparison table across structuralism (Titchener; elements; analytic introspection; stimulus error), functionalism (James, Dewey, Angell; adaptation; broadened scope), behaviourism (Watson 1913, Pavlov, Thorndike, Skinner, Tolman; observable behaviour; prediction and control), Gestalt (Wertheimer 1912, Köhler, Koffka; wholes; laws of organisation; insight), psychoanalysis (Freud; unconscious; clinical method), humanistic and existential (Maslow, Rogers, May, Frankl; growth and meaning), transpersonal, cognitive (Miller, Chomsky, Neisser; information processing), multicultural. 3. For each: founder, subject matter, method, key concepts, contribution, criticism. 4. The four founding paths (Wundt, Freud, James, Dilthey). 5. The forces of psychology. 6. Conclusion: schools gave way to perspectives and integrative approaches, but each left lasting methods and questions."
+  "answer": "1. Context: pre-paradigmatic science; Wundt's laboratory (1879) and voluntarism. 2. A comparison table across structuralism (Titchener; elements; analytic introspection; stimulus error), functionalism (James, Dewey, Angell; adaptation; broadened scope), behaviourism (Watson 1913, observable behaviour, prediction and control), Gestalt (Wertheimer 1912, wholes, laws of organisation, insight), psychoanalysis (Freud; unconscious; clinical method), humanistic and existential (Maslow, Rogers, May, Frankl; growth and meaning), transpersonal, cognitive (Miller, Chomsky, Neisser; information processing), multicultural. 3. For each: founder, subject matter, method, key concepts, contribution, criticism. 4. The four founding paths (Wundt, Freud, James, Dilthey). 5. The forces of psychology. 6. Conclusion: schools gave way to perspectives and integrative approaches, but each left lasting methods and questions."
 }
 :::
 
@@ -558,7 +558,7 @@ Frame: **definition, three or four key points, one example, one line of signific
 Who opened the first psychology laboratory, and where? :: Wundt, Leipzig, 1879.
 Who named structuralism? :: Titchener.
 What is the stimulus error? :: Describing the object instead of the raw experience.
-Who wrote "Psychology as the Behaviorist Views It"? :: John B. Watson, 1913.
+Who wrote the 1913 behaviourist manifesto? :: John B. Watson.
 What is the phi phenomenon? :: Apparent motion from lights flashed in sequence, studied by Wertheimer.
 Name the four founding paths in the NET syllabus. :: Wundt, Freud, James and Dilthey.
 What is Dilthey's distinction? :: Explaining (causal laws) versus understanding (grasping meaning from within).
@@ -568,7 +568,7 @@ Name the five kleshas. :: Avidya, asmita, raga, dvesha, abhinivesha.
 What are the five skandhas? :: Form, feeling, perception, mental formations, consciousness.
 What is nafs al-ammara? :: The commanding, impulsive self in Sufi psychology.
 What is upamana? :: Knowledge through comparison or analogy.
-Who wrote Psychology in a Third World Country? :: Durganand Sinha, 1986.
+Who called for indigenising psychology in India in a landmark 1986 critique? :: Durganand Sinha.
 Who described the guru-chela model of therapy? :: J. S. Neki.
 What is the Pondicherry Manifesto? :: A 2002 statement calling for an Indian psychology rooted in Indian traditions.
 :::
@@ -741,7 +741,7 @@ Q: N. N. Sengupta co-wrote an early social psychology book with:
 - Gardner Murphy
 - Durganand Sinha
 - *Radhakamal Mukerjee
-> Introduction to Social Psychology: Mind in Society (1928).
+> An early social psychology textbook, 1928.
 
 Q: Who founded the Indian Psychoanalytical Society in 1922?
 - *Girindrasekhar Bose

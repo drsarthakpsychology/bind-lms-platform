@@ -9,7 +9,7 @@ In 1937 the neuroanatomist **James Papez** proposed a loop of structures for emo
 **Paul MacLean** (1952) widened the loop into the **limbic system**, adding the amygdala, septum and parts of the prefrontal cortex, and later proposed the **triune brain** (a "reptilian" core, a "paleomammalian" limbic layer and a "neomammalian" neocortex). Exams still ask about both, but you should know their status: the Papez circuit is now seen mainly as a **memory** circuit (damage to the mammillary bodies and anterior thalamus causes amnesia, as in Korsakoff syndrome), and the triune brain is **not accepted** by comparative neuroscience: brains did not evolve by adding layers on top of each other.
 
 ### Classic lesion findings
-- **Sham rage** (Bard, 1928): cats with the cortex removed but the hypothalamus intact showed sudden, undirected rage attacks at slight touches. The **hypothalamus** organises the bodily side of emotion; the cortex normally restrains and directs it.
+- **Sham rage** (Bard in 1928): cats with the cortex removed but the hypothalamus intact showed sudden, undirected rage attacks at slight touches. The **hypothalamus** organises the bodily side of emotion; the cortex normally restrains and directs it.
 - **Klüver-Bucy syndrome** (1937 to 1939): monkeys with both temporal lobes removed (including the amygdalae) became **tame and fearless**, put objects in their mouths (**hyperorality**), failed to recognise the meaning of objects (**psychic blindness**, a visual agnosia), touched everything (**hypermetamorphosis**) and showed **hypersexuality**. In humans it can follow herpes encephalitis or trauma.
 
 :::mnemonic Klüver-Bucy: "Hyper, Hyper, Hyper, Placid, Blind"
@@ -24,7 +24,7 @@ The **amygdala**, an almond-shaped group of nuclei in the medial temporal lobe, 
 The **lateral nucleus** receives sensory input and stores fear associations; the **central nucleus** sends output to the hypothalamus and brainstem, producing freezing, raised heart rate and stress hormones.
 
 :::example Patient S.M.
-S.M., a woman in the United States with **Urbach-Wiethe disease**, a rare genetic condition that calcified both her amygdalae, could not recognise fear in faces and did not feel fear when shown snakes and spiders, in a haunted house, or in real-life dangers such as being held at knifepoint (Feinstein and colleagues, 2011). She still felt other emotions. Interestingly, she did feel panic when breathing air with a high carbon dioxide level, a threat detected inside the body rather than outside.
+S.M., a woman in the United States with **Urbach-Wiethe disease**, a rare genetic condition that calcified both her amygdalae, could not recognise fear in faces and did not feel fear when shown snakes and spiders, in a haunted house, or in real-life dangers such as being held at knifepoint (2011). She still felt other emotions. Interestingly, she did feel panic when breathing air with a high carbon dioxide level, a threat detected inside the body rather than outside.
 :::
 
 ### The insula, the cingulate and the prefrontal cortex
@@ -59,7 +59,7 @@ In 1848 a tamping iron passed through the left frontal lobe of **Phineas Gage**,
 Researchers use **skin conductance (galvanic skin response)**, heart rate and heart-rate variability, blood pressure, **facial EMG** (corrugator muscle for frowning, zygomaticus for smiling), startle eye-blink, hormone levels and brain imaging. The **polygraph** combines several of these; why it fails as a "lie detector" is discussed in the applied module.
 
 :::clinician
-Current affective neuroscience treats emotions as products of distributed networks rather than single "centres". Meta-analyses of neuroimaging (Lindquist and colleagues, Behavioral and Brain Sciences, 2012) found little evidence that discrete emotions map onto dedicated regions; the amygdala responds to salience, novelty and uncertainty in general, not only fear. LeDoux himself now distinguishes **defensive survival circuits** (amygdala-dependent threat detection and response) from the **conscious feeling of fear**, which he argues depends on cortical working-memory and self-related networks; calling the amygdala the "fear centre" conflates the two. Interoceptive accounts (Craig's posterior-to-anterior insula model; Barrett and Simmons's predictive interoception) give James's idea a modern form. **Polyvagal theory** (Porges) is popular in trauma training but its central evolutionary and anatomical claims are disputed by autonomic physiologists (Grossman and Taylor, 2007); teach it as a contested model. Clinically, amygdala hyper-reactivity and reduced prefrontal regulation are reported in anxiety disorders, PTSD and depression, and normalisation after CBT or SSRIs has been shown in several imaging studies, though effects are group-level and not diagnostic.
+Current affective neuroscience treats emotions as products of distributed networks rather than single "centres". Meta-analyses of neuroimaging (2012) found little evidence that discrete emotions map onto dedicated regions; the amygdala responds to salience, novelty and uncertainty in general, not only fear. LeDoux himself now distinguishes **defensive survival circuits** (amygdala-dependent threat detection and response) from the **conscious feeling of fear**, which he argues depends on cortical working-memory and self-related networks; calling the amygdala the "fear centre" conflates the two. Interoceptive accounts (Craig's posterior-to-anterior insula model; Barrett and Simmons's predictive interoception) give James's idea a modern form. **Polyvagal theory** (Porges) is popular in trauma training but its central evolutionary and anatomical claims are disputed by autonomic physiologists (2007); teach it as a contested model. Clinically, amygdala hyper-reactivity and reduced prefrontal regulation are reported in anxiety disorders, PTSD and depression, and normalisation after CBT or SSRIs has been shown in several imaging studies, though effects are group-level and not diagnostic.
 :::
 
 :::recall
@@ -110,7 +110,7 @@ The first four are **antecedent-focused** (they act before the emotion is fully 
 ### Reappraisal versus suppression
 **Gross and John** (2003) built the **Emotion Regulation Questionnaire (ERQ)** to measure two strategies:
 - **Cognitive reappraisal**: changing how you think about a situation to change its emotional impact. Linked to more positive emotion, better relationships and wellbeing.
-- **Expressive suppression**: hiding the outward expression of an emotion. It reduces the visible expression but **not** the inner feeling; it **raises** sympathetic arousal, impairs memory for the event (Richards and Gross, 2000) and can make conversation partners feel less close.
+- **Expressive suppression**: hiding the outward expression of an emotion. It reduces the visible expression but **not** the inner feeling; it **raises** sympathetic arousal, impairs memory for the event (2000) and can make conversation partners feel less close.
 
 :::widget sort
 {
@@ -138,10 +138,10 @@ Western studies link suppression with poorer wellbeing. But **Butler, Lee and Gr
 3. **Understanding** emotions: how they blend and change ("irritation can grow into rage").
 4. **Managing** emotions in yourself and others.
 
-It is measured with the **MSCEIT**, a performance test with right and wrong answers. **Daniel Goleman**'s book Emotional Intelligence (1995) popularised a **mixed model** (self-awareness, self-regulation, motivation, empathy and social skill), and **Reuven Bar-On** developed the self-report **EQ-i**.
+It is measured with the **MSCEIT**, a performance test with right and wrong answers. The journalist **Daniel Goleman** (1995) popularised a **mixed model** (self-awareness, self-regulation, motivation, empathy and social skill), and **Reuven Bar-On** developed the self-report **EQ-i**.
 
 :::clinician
-Mixed models and self-report EI scales overlap heavily with the Big Five (especially neuroticism and extraversion) and with self-efficacy, and their incremental validity beyond personality and cognitive ability is limited. Ability EI (MSCEIT) is more distinct but correlates moderately with verbal intelligence, and the "managing" branch carries most of its predictive power for job performance in emotionally demanding work (Joseph and Newman's cascading model, 2010). Claims such as "EQ matters twice as much as IQ" are not supported. Gross's **extended process model** (2015) adds valuation stages (identification, selection, implementation, monitoring), and **regulatory flexibility** (Bonanno and Burton, 2013) argues that adaptation depends on fitting strategy to context rather than on any single strategy. Clinically, reappraisal is the active ingredient of cognitive restructuring; acceptance-based strategies (in ACT and DBT) target the relationship to emotion rather than its content, and rumination and experiential avoidance are trans-diagnostic targets across depression, anxiety and eating disorders.
+Mixed models and self-report EI scales overlap heavily with the Big Five (especially neuroticism and extraversion) and with self-efficacy, and their incremental validity beyond personality and cognitive ability is limited. Ability EI (MSCEIT) is more distinct but correlates moderately with verbal intelligence, and the "managing" branch carries most of its predictive power for job performance in emotionally demanding work. Claims such as "EQ matters twice as much as IQ" are not supported. Gross's **extended process model** (2015) adds valuation stages (identification, selection, implementation, monitoring), and **regulatory flexibility** (Bonanno and Burton in 2013) argues that adaptation depends on fitting strategy to context rather than on any single strategy. Clinically, reappraisal is the active ingredient of cognitive restructuring; acceptance-based strategies (in ACT and DBT) target the relationship to emotion rather than its content, and rumination and experiential avoidance are trans-diagnostic targets across depression, anxiety and eating disorders.
 :::
 
 ### Motivational and emotional conflict
@@ -213,7 +213,7 @@ The stress response runs through two linked systems:
 :::
 
 ### Allostasis and allostatic load
-**Homeostasis** means keeping a set point. **Allostasis** (Sterling and Eyer, 1988) means **stability through change**: the body adjusts its set points to meet expected demands (blood pressure is higher when you stand up or face a challenge). **Bruce McEwen** called the cost of repeated or prolonged adaptation **allostatic load**. He described four patterns:
+**Homeostasis** means keeping a set point. **Allostasis** (Sterling and Eyer in 1988) means **stability through change**: the body adjusts its set points to meet expected demands (blood pressure is higher when you stand up or face a challenge). **Bruce McEwen** called the cost of repeated or prolonged adaptation **allostatic load**. He described four patterns:
 1. **Repeated hits**: frequent stressors.
 2. **Lack of adaptation**: no getting used to a repeated stressor (still panicking at the hundredth presentation).
 3. **Prolonged response**: failure to switch off after the stressor ends.
@@ -225,7 +225,7 @@ The stress response runs through two linked systems:
 ### Stress and illness
 - **Cardiovascular**: acute anger and stress can trigger heart attacks; chronic stress raises blood pressure. Hostility and job strain predict coronary disease.
 - **Immune**: brief, acute stress tends to **boost** some quick immune defences; **chronic** stress **suppresses** many immune functions (Segerstrom and Miller's 2004 meta-analysis of about 300 studies). Medical students show lower natural killer cell activity during exams (Kiecolt-Glaser and colleagues), and wounds heal more slowly in stressed caregivers.
-- **Gut and skin**: stress worsens irritable bowel syndrome and psoriasis. **Peptic ulcers**, once thought "stress ulcers", are mainly caused by the bacterium **Helicobacter pylori** (Marshall and Warren, Nobel Prize 2005), with stress as a contributor.
+- **Gut and skin**: stress worsens irritable bowel syndrome and psoriasis. **Peptic ulcers**, once thought "stress ulcers", are mainly caused by the bacterium **Helicobacter pylori** (Barry Marshall and Robin Warren won the 2005 Nobel Prize for this discovery), with stress as a contributor.
 - **Mind**: stress is a major trigger of depression and anxiety, especially with genetic or early-life vulnerability (the diathesis-stress model).
 
 The details of psychoneuroimmunology and chronic illness are taught in the applied module's health psychology lessons.
@@ -239,7 +239,7 @@ The details of psychoneuroimmunology and chronic illness are taught in the appli
   "unit": "times",
   "answer": [1.5, 2.5],
   "reveal": "About twice as high. Later studies were less consistent, and hostility turned out to be the stronger predictor.",
-  "clinician": "Rosenman and colleagues (JAMA, 1975) reported a relative risk around 2 over roughly eight and a half years of follow-up, independent of standard risk factors. MRFIT and later cohorts did not replicate global Type A effects; hostility, anger and depression have more consistent prospective associations with coronary events."
+  "clinician": "Rosenman and colleagues (1975) reported a relative risk around 2 over roughly eight and a half years of follow-up, independent of standard risk factors. MRFIT and later cohorts did not replicate global Type A effects; hostility, anger and depression have more consistent prospective associations with coronary events."
 }
 :::
 
@@ -247,7 +247,7 @@ The details of psychoneuroimmunology and chronic illness are taught in the appli
 **Burnout** (Christina Maslach) is a response to chronic work stress with three parts: **exhaustion**, **cynicism or depersonalisation** (a cold, detached attitude to clients or work) and **reduced professional efficacy**. It is common among doctors, nurses, teachers and IT workers. **ICD-11** lists burnout as an **occupational phenomenon** (code QD85) in the chapter on factors influencing health status, **not** as a medical condition, and only for the work context.
 
 :::clinician
-Chronic stress is associated with HPA dysregulation, but the direction differs across conditions: melancholic depression often shows hypercortisolaemia and dexamethasone non-suppression, whereas PTSD and some chronic fatigue and burnout samples show low or flattened cortisol with enhanced feedback sensitivity (Yehuda's work on PTSD). Glucocorticoid excess has been linked to reduced hippocampal volume in animal models (Sapolsky) and in Cushing's syndrome, with partial reversibility. Allostatic load is operationalised as composite indices of neuroendocrine, cardiovascular, metabolic and immune markers (Seeman and colleagues, MacArthur Studies of Successful Aging), which predict mortality and decline. The Segerstrom and Miller meta-analysis (Psychological Bulletin, 2004) distinguished acute time-limited stressors (up-regulation of natural immunity), brief naturalistic stressors such as exams (shift from cellular to humoral responses), and chronic stressors (global suppression). Tend-and-befriend remains a hypothesis supported mainly by animal oxytocin work and self-report patterns; human oxytocin findings, especially intranasal studies, have replicated poorly.
+Chronic stress is associated with HPA dysregulation, but the direction differs across conditions: melancholic depression often shows hypercortisolaemia and dexamethasone non-suppression, whereas PTSD and some chronic fatigue and burnout samples show low or flattened cortisol with enhanced feedback sensitivity (Yehuda's work on PTSD). Glucocorticoid excess has been linked to reduced hippocampal volume in animal models (Sapolsky) and in Cushing's syndrome, with partial reversibility. Allostatic load is operationalised as composite indices of neuroendocrine, cardiovascular, metabolic and immune markers (Seeman and colleagues, MacArthur Studies of Successful Aging), which predict mortality and decline. The Segerstrom and Miller meta-analysis (2004) distinguished acute time-limited stressors (up-regulation of natural immunity), brief naturalistic stressors such as exams (shift from cellular to humoral responses), and chronic stressors (global suppression). Tend-and-befriend remains a hypothesis supported mainly by animal oxytocin work and self-report patterns; human oxytocin findings, especially intranasal studies, have replicated poorly.
 :::
 
 :::recall
@@ -305,7 +305,7 @@ Stress management aims at three levels: the **stressor** (change it), the **appr
   "unit": "classes",
   "answer": [8, 8],
   "reveal": "Eight. Each class lasts about two and a half hours, with daily home practice of roughly 45 minutes and a full-day silent retreat near the end.",
-  "clinician": "Standard MBSR: eight weekly 2.5-hour sessions, a day-long retreat in the sixth or seventh week, and around 45 minutes of daily home practice (body scan, sitting meditation, mindful yoga). MBCT keeps the eight-week structure and is recommended by NICE for people with recurrent depression who are currently well. Meta-analyses show moderate effects on stress, anxiety and depression compared with waitlist (Khoury and colleagues, 2015), with smaller effects against active controls (Goldberg and colleagues, 2018)."
+  "clinician": "Standard MBSR: eight weekly 2.5-hour sessions, a day-long retreat in the sixth or seventh week, and around 45 minutes of daily home practice (body scan, sitting meditation, mindful yoga). MBCT keeps the eight-week structure and is recommended by NICE for people with recurrent depression who are currently well. Meta-analyses show moderate effects on stress, anxiety and depression compared with waitlist (2015), with smaller effects against active controls (2018)."
 }
 :::
 
@@ -354,7 +354,7 @@ Yoga combines posture (asana), breathing (pranayama), relaxation and meditation.
 :::
 
 :::clinician
-Evidence summary for exam answers. **PMR and applied relaxation** (Öst) have good evidence in generalised anxiety disorder, comparable to CBT in some trials. **Biofeedback** has the best evidence for tension-type headache and migraine (EMG and thermal), reasonable evidence for HRV biofeedback in anxiety, and contested evidence for EEG neurofeedback in ADHD once blinded raters are used (Cortese and colleagues, 2016). **SIT** has support in anxiety, anger, performance and occupational stress, and is a component of prolonged and trauma-focused CBT protocols. **Mindfulness**: Goldberg and colleagues' meta-analysis (Clinical Psychology Review, 2018) found mindfulness-based interventions superior to no treatment and comparable to other evidence-based treatments for several conditions; adverse effects (anxiety, dissociation) occur in a minority and should be monitored. **Yoga**: Cramer and colleagues' meta-analyses show short-term benefits for depression and anxiety with high risk of bias in many trials. **Organisational interventions** (job redesign, participatory approaches) reduce burnout more durably than individual programmes alone (Panagioti and colleagues, JAMA Internal Medicine, 2017, in physicians). Assessment of stress commonly uses the **Perceived Stress Scale** (Cohen, Kamarck and Mermelstein, 1983; 10-item version widely used in India), the PSLES for life events and the Brief COPE for coping.
+Evidence summary for exam answers. **PMR and applied relaxation** (Öst) have good evidence in generalised anxiety disorder, comparable to CBT in some trials. **Biofeedback** has the best evidence for tension-type headache and migraine (EMG and thermal), reasonable evidence for HRV biofeedback in anxiety, and contested evidence for EEG neurofeedback in ADHD once blinded raters are used (2016). **SIT** has support in anxiety, anger, performance and occupational stress, and is a component of prolonged and trauma-focused CBT protocols. **Mindfulness**: Goldberg and colleagues' meta-analysis (2018) found mindfulness-based interventions superior to no treatment and comparable to other evidence-based treatments for several conditions; adverse effects (anxiety, dissociation) occur in a minority and should be monitored. **Yoga**: Cramer and colleagues' meta-analyses show short-term benefits for depression and anxiety with high risk of bias in many trials. **Organisational interventions** (job redesign, participatory approaches) reduce burnout more durably than individual programmes alone (2017, in physicians). Assessment of stress commonly uses the **Perceived Stress Scale** (Cohen, Kamarck and Mermelstein in 1983; 10-item version widely used in India), the PSLES for life events and the Brief COPE for coping.
 :::
 
 :::recall
@@ -418,7 +418,7 @@ Ananya in Kota and Lucas in Lyon both fail an entrance mock. Ananya says, "I've 
 :::
 
 :::clinician
-Indian research on emotion and wellbeing includes work on **anasakti** (non-attachment, from the Gita; Pande and Naidu, 1992), which predicted lower stress-related strain in some samples, and on **lajja** and **shame-based** self-regulation (Menon and Shweder). Cultural concepts of distress listed in DSM-5-TR include **dhat syndrome** and **kufungisisa** (Zimbabwe: "thinking too much"), and the Cultural Formulation Interview is designed to elicit such idioms. Apathy has its own scales (Marin's Apathy Evaluation Scale) and is a separate target from depression in Parkinson's disease, stroke and dementia; dopaminergic agents have some evidence for apathy, SSRIs may worsen it. Effort-based decision tasks (EEfRT, Treadway) quantify motivational anhedonia and are used in RDoC's positive valence systems domain. For entrance interviews, practise one integrated answer: how the Yerkes-Dodson law, appraisal theory and SDT each inform how you would help an anxious, demotivated student.
+Indian research on emotion and wellbeing includes work on **anasakti** (non-attachment, from the Gita, measured by Pande and Naidu in 1992), which predicted lower stress-related strain in some samples, and on **lajja** and **shame-based** self-regulation (Menon and Shweder). Cultural concepts of distress listed in DSM-5-TR include **dhat syndrome** and **kufungisisa** (Zimbabwe: "thinking too much"), and the Cultural Formulation Interview is designed to elicit such idioms. Apathy has its own scales (Marin's Apathy Evaluation Scale) and is a separate target from depression in Parkinson's disease, stroke and dementia; dopaminergic agents have some evidence for apathy, SSRIs may worsen it. Effort-based decision tasks (EEfRT, Treadway) quantify motivational anhedonia and are used in RDoC's positive valence systems domain. For entrance interviews, practise one integrated answer: how the Yerkes-Dodson law, appraisal theory and SDT each inform how you would help an anxious, demotivated student.
 :::
 
 :::recall
@@ -487,7 +487,7 @@ Short note frame: **definition, three or four key points, one example, one line 
 :::widget reveal
 {
   "prompt": "Short note: Yerkes-Dodson law",
-  "answer": "Inverted-U relation between arousal and performance (Yerkes and Dodson, 1908, mice). Optimal arousal is higher for simple tasks and lower for complex ones. Example: a practised sprinter benefits from high arousal; a student facing new problem types needs calm. Significance: basis of performance anxiety work; refined in sport by IZOF and catastrophe models."
+  "answer": "Inverted-U relation between arousal and performance (1908, mice). Optimal arousal is higher for simple tasks and lower for complex ones. Example: a practised sprinter benefits from high arousal; a student facing new problem types needs calm. Significance: basis of performance anxiety work; refined in sport by IZOF and catastrophe models."
 }
 :::
 
@@ -501,7 +501,7 @@ Short note frame: **definition, three or four key points, one example, one line 
 :::widget reveal
 {
   "prompt": "Short note: Overjustification effect",
-  "answer": "An expected external reward for an intrinsically enjoyable task reduces later intrinsic interest. Deci (1971) puzzles; Lepper, Greene and Nisbett (1973) nursery drawing with expected certificates. Explained by cognitive evaluation theory: the reward is seen as controlling. Meta-analysis (Deci, Koestner and Ryan, 1999): tangible expected rewards undermine, verbal praise does not. Significance: design of school and workplace incentives."
+  "answer": "An expected external reward for an intrinsically enjoyable task reduces later intrinsic interest. Deci (1971) puzzles; Lepper, Greene and Nisbett (1973) nursery drawing with expected certificates. Explained by cognitive evaluation theory: the reward is seen as controlling. Meta-analysis (1999): tangible expected rewards undermine, verbal praise does not. Significance: design of school and workplace incentives."
 }
 :::
 
@@ -529,7 +529,7 @@ Short note frame: **definition, three or four key points, one example, one line 
 :::widget reveal
 {
   "prompt": "Short note: Gross's process model of emotion regulation",
-  "answer": "Five families ordered by timing: situation selection, situation modification, attentional deployment, cognitive change, response modulation. First four antecedent-focused, last response-focused. Reappraisal is linked with better outcomes than suppression in Western samples (Gross and John, 2003, ERQ), with cultural moderation (Butler, Lee and Gross, 2007). Significance: framework for CBT, DBT and ACT targets."
+  "answer": "Five families ordered by timing: situation selection, situation modification, attentional deployment, cognitive change, response modulation. First four antecedent-focused, last response-focused. Reappraisal is linked with better outcomes than suppression in Western samples (measured with the ERQ), though culture moderates the cost of suppression. Significance: framework for CBT, DBT and ACT targets."
 }
 :::
 
@@ -542,7 +542,7 @@ What is the leadership motive pattern? :: Moderate to high nPow, lower nAff, hig
 Which hypothalamic area was called the satiety centre? :: Ventromedial hypothalamus.
 Name the four phases of Masters and Johnson. :: Excitement, plateau, orgasm, resolution.
 What is the core relational theme of anger? :: A demeaning offence against me and mine.
-Who described tend and befriend? :: Shelley Taylor and colleagues, 2000.
+Who described tend and befriend? :: Shelley Taylor's research group, in 2000.
 What is allostasis? :: Stability through change: adjusting set points to meet anticipated demands.
 Give the three Cs of hardiness. :: Commitment, control, challenge.
 What are the phases of stress inoculation training? :: Conceptualisation, skills acquisition and rehearsal, application.
