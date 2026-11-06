@@ -401,9 +401,9 @@ A thought process characterised by a series of ideas **without apparent logical 
 | Poverty of content of speech | Enough speech, but it conveys little information. (Poverty of speech = the amount itself is reduced) |
 
 ### Depth for a distinction: the classical descriptions [extra]
-- **Bleuler (1911)**: schizophrenia as a disorder of associations: condensation (two ideas blended into one false concept), displacement (one idea used for an associated idea), misuse of symbols (concrete thinking).
-- **Cameron (1944)**: asyndesis (lack of adequate connections), metonyms (imprecise expressions instead of exact ones), and over-inclusion (inability to narrow thinking to what is relevant).
-- **Goldstein (1944)**: loss of the abstract attitude, producing concrete thinking.
+- **Bleuler**: schizophrenia as a disorder of associations: condensation (two ideas blended into one false concept), displacement (one idea used for an associated idea), misuse of symbols (concrete thinking).
+- **Cameron**: asyndesis (lack of adequate connections), metonyms (imprecise expressions instead of exact ones), and over-inclusion (inability to narrow thinking to what is relevant).
+- **Goldstein**: loss of the abstract attitude, producing concrete thinking.
 - **Schneider**: five features (derailment, substitution, omission, fusion, drivelling), set against three features of healthy thinking (constancy, organisation, continuity).
 
 :::widget sort
@@ -626,7 +626,7 @@ If the experience doesn't appear to be a true perception, or comes from subjecti
 
 :::note Know the controversy: it earns marks
 - **Jaspers**: defined by inner versus outer space; pseudohallucinations are variants of mental imagery without the same diagnostic weight. No gradual transition between the two.
-- **Hare (1973)**: defined by insight. Since insight fluctuates, better to think of degree of insight, making the concept largely superfluous.
+- **Hare**: defined by insight. Since insight fluctuates, better to think of degree of insight, making the concept largely superfluous.
 - Others argued for a continuum. Modern structured instruments drop the term and rate insight and inside/outside location separately.
 :::
 

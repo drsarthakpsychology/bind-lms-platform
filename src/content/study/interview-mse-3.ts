@@ -3,7 +3,7 @@ export const part3 = String.raw`
 # Part IV · Advanced: phenomenology, reliability and the frontier
 
 ## 4.1 Phenomenology: how we try to understand another mind [core][advanced]
-Every MSE term you have learned rests on a method called **descriptive phenomenology**: describing a person's experience as closely as possible to how they live it, before any theory about its cause. Its founder in psychiatry was Karl Jaspers (General Psychopathology, 1913). Knowing the method lets you handle cases that do not fit the textbook boxes.
+Every MSE term you have learned rests on a method called **descriptive phenomenology**: describing a person's experience as closely as possible to how they live it, before any theory about its cause. Its founder in psychiatry was Karl Jaspers, a psychiatrist and philosopher working in Heidelberg in the early twentieth century. Knowing the method lets you handle cases that do not fit the textbook boxes.
 
 ### Form and content
 Jaspers separated the **form** of an experience (what kind of experience it is) from its **content** (what it is about).
@@ -76,7 +76,7 @@ Kurt Schneider listed **first-rank symptoms** (FRS) as experiences that, in the 
 What they share is a **breakdown of the boundary between self and world**: something that should belong to the self (a thought, a movement, a feeling) is experienced as coming from outside.
 
 :::widget guess
-{"prompt": "In a large review of diagnostic studies, first-rank symptoms correctly identified what share of people who truly had schizophrenia?", "min": 0, "max": 100, "unit": "%", "answer": [55, 62], "reveal": "Only about 57 to 60 in 100. Many people with schizophrenia never show a first-rank symptom. And some people with other psychoses, especially mania and psychotic depression, do show them. So FRS help you suspect schizophrenia and refer, but cannot make the diagnosis alone.", "clinician": "A 2015 Cochrane review of FRS against all other diagnoses found sensitivity about 57% and specificity about 81%; against other psychoses, sensitivity about 58% and specificity about 75%. The authors concluded FRS should not be used alone to diagnose schizophrenia."}
+{"prompt": "In a large review of diagnostic studies, first-rank symptoms correctly identified what share of people who truly had schizophrenia?", "min": 0, "max": 100, "unit": "%", "answer": [55, 62], "reveal": "Only about 57 to 60 in 100. Many people with schizophrenia never show a first-rank symptom. And some people with other psychoses, especially mania and psychotic depression, do show them. So FRS help you suspect schizophrenia and refer, but cannot make the diagnosis alone.", "clinician": "A large 2015 systematic review of FRS against all other diagnoses found sensitivity about 57% and specificity about 81%; against other psychoses, sensitivity about 58% and specificity about 75%. The authors concluded FRS should not be used alone to diagnose schizophrenia."}
 :::
 
 ### Where the rulebooks now stand
@@ -106,7 +106,7 @@ Then always check the "as if": "Does it feel as if, or are you sure it really ha
 :::recall
 1. List Schneider's first-rank symptoms. || Thought echo; third-person discussing voices; running commentary; somatic passivity; thought insertion, withdrawal and broadcasting; delusional perception; made feelings, impulses and actions.
 2. What do FRS have in common? || A breakdown of the self–world boundary: something of the self is experienced as coming from outside.
-3. What did the 2015 Cochrane review conclude? || Sensitivity about 57–58%; specificity about 75–81%; FRS should not be used alone to diagnose schizophrenia.
+3. What did the large 2015 systematic review conclude? || Sensitivity about 57–58%; specificity about 75–81%; FRS should not be used alone to diagnose schizophrenia.
 4. Name three look-alikes of thought insertion. || Obsessions, PTSD intrusions, religious inspiration (also dissociative states).
 :::
 
