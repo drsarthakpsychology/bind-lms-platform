@@ -32,6 +32,7 @@ import { dailyStreak, MAX_CLUES, shareText, type Action, type PracticeRecord } f
 import type { CaseView } from "@/lib/games/daily/view";
 import type { InvestigationKind } from "@/lib/games/daily/types";
 import { CountUp } from "@/lib/games/ui/count-up";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { awardXp } from "@/lib/games/ui/xp";
 import { copyText, readLocal, useLocalJson, writeLocal, writeLocalShared } from "@/lib/games/ui/copy";
 import { btnInk, btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
@@ -251,15 +252,26 @@ function CaseBoard({
       </header>
 
       <ol className="space-y-2" aria-label="Clues">
-        {v.clues.map((c, i) => (
-          <li key={i} className={cn(card, "flex gap-3 p-3", i >= v.cluesOpen && "border-dashed bg-background text-muted-foreground", i === v.clues.length - 1 && playing && anim(fx.rise))}>
-            <span className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground font-pix text-sm", i < v.cluesOpen ? "bg-primary text-primary-foreground" : "bg-background")}>{i + 1}</span>
-            <p className="leading-snug">
-              {i >= v.cluesOpen && <span className="mr-1 font-semibold">Unopened:</span>}
-              {c}
-            </p>
-          </li>
-        ))}
+        {v.clues.map((c, i) => {
+          const fresh = playing && i === v.clues.length - 1 && i > 0;
+          const unopened = i >= v.cluesOpen;
+          return (
+            <li
+              key={i}
+              className={cn(card, "flex gap-3 p-3", unopened && "border-dashed bg-background text-muted-foreground", fresh && "hard-shadow-sm", fresh && anim(fx.reveal), unopened && anim(fx.stagger))}
+              style={unopened ? ({ "--i": i - v.cluesOpen } as React.CSSProperties) : undefined}
+            >
+              <span key={fresh ? `n${i}` : i} className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground font-pix text-sm", i < v.cluesOpen ? "bg-primary text-primary-foreground" : "bg-background", fresh && anim(fx.pop))}>
+                {i + 1}
+              </span>
+              <p className="min-w-0 flex-1 leading-snug">
+                {unopened && <span className="mr-1 font-semibold">Unopened:</span>}
+                {c}
+              </p>
+              {fresh && <span className={cn(chip, "h-fit shrink-0 bg-card text-xs")}>New</span>}
+            </li>
+          );
+        })}
       </ol>
 
       {ordered.length > 0 && (
@@ -298,7 +310,10 @@ function CaseBoard({
             {last.sameChapter && <span className={cn(chip, "ml-auto bg-card text-xs text-foreground")}>Right chapter</span>}
           </p>
           <p className="mt-1 text-sm leading-snug">{last.reason}</p>
-          <p className="mt-1 text-sm font-semibold">Clue {v.cluesOpen} is now open.</p>
+          <div className="mt-1 flex flex-wrap items-center justify-between gap-x-3">
+            <p className="text-sm font-semibold">Clue {v.cluesOpen} is now open.</p>
+            <LearnLink topic={last.name} newTab className="text-current" />
+          </div>
         </div>
       )}
 
@@ -387,14 +402,16 @@ function CaseBoard({
 }
 
 function ClueMeter({ shown, status }: { shown: number; status: CaseView["status"] }) {
+  const reduce = useReducedMotion();
   return (
     <div className="mt-3 flex items-center gap-1.5" aria-label={`${shown} of 6 clues open`}>
       {Array.from({ length: MAX_CLUES }, (_, i) => (
         <span
-          key={i}
+          key={`${i}:${i < shown}`}
           className={cn(
             "h-3 flex-1 rounded-sm border-2 border-foreground transition-colors duration-300",
             i < shown ? (status === "solved" && i === shown - 1 ? "bg-brand" : "bg-primary") : "bg-background",
+            i === shown - 1 && reduce === false && fx.fill,
           )}
         />
       ))}
@@ -525,17 +542,30 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
 
   return (
     <section className="space-y-4" aria-label="Result">
-      <div className={cn(card, "relative overflow-hidden p-5 text-center hard-shadow-md", solved ? "bg-status-success-bg" : "bg-card")}>
-        <p className={cn("mx-auto inline-flex items-center gap-2 rounded-md border-2 border-foreground px-3 py-1 font-pix text-lg uppercase", solved ? "bg-primary text-primary-foreground" : "bg-foreground text-background", anim(fx.stamp))}>
-          {solved ? <Check className="size-5" aria-hidden /> : <X className="size-5" aria-hidden />}
-          {solved ? `Solved on clue ${v.cluesOpen}` : "Not this time"}
-        </p>
+      <div className={cn(card, "relative overflow-hidden p-5 text-center hard-shadow-md", solved ? "bg-status-success-bg" : "bg-card", anim(fx.land))}>
+        <div className="relative mx-auto grid w-fit place-items-center">
+          {solved && <span className={cn("absolute size-28 rounded-full border-4 border-foreground", reduce === false ? fx.ring : "hidden")} style={{ animationDelay: "180ms" }} aria-hidden />}
+          <p className={cn("relative inline-flex items-center gap-2 rounded-md border-2 border-foreground px-3 py-1 font-pix text-lg uppercase hard-shadow-xs", solved ? "bg-primary text-primary-foreground" : "bg-foreground text-background", anim(fx.stamp))}>
+            {solved ? <Check className="size-5" aria-hidden /> : <X className="size-5" aria-hidden />}
+            {solved ? `Solved on clue ${v.cluesOpen}` : "Not this time"}
+          </p>
+        </div>
+        {v.grid && (
+          <p className="mt-3 flex justify-center gap-1 text-xl" aria-label="Your moves, in order">
+            {Array.from(v.grid).map((sq, i) => (
+              <span key={i} className={anim(fx.stagger)} style={{ "--i": i + 3 } as React.CSSProperties} aria-hidden>
+                {sq}
+              </span>
+            ))}
+          </p>
+        )}
         <p className="mt-3 text-sm text-muted-foreground">The diagnosis</p>
         <h2 className="text-h2 leading-tight">{r.answer}</h2>
         <p className="text-sm text-muted-foreground">{r.chapter}</p>
+        <LearnLink topic={r.answer} className="mt-1" />
         <div className="relative mt-4 flex items-end justify-center gap-4">
           <p>
-            <CountUp value={v.score} className="font-pix text-5xl tabular-nums" />
+            <CountUp value={v.score} duration={1} delay={0.3} className="font-pix text-5xl tabular-nums" />
             <span className="ml-1 text-sm font-bold">points</span>
           </p>
           {gain && gain.xp > 0 && (
@@ -577,10 +607,13 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
 
       <div className={cn(card, "p-4")}>
         <h3 className="text-h3">Why the look-alikes were wrong</h3>
-        <ul className="mt-2 space-y-2">
-          {r.lookAlikes.map((x) => (
-            <li key={x.name} className="leading-snug">
-              <span className="font-bold">{x.name}:</span> {x.whyNot}
+        <ul className="mt-2 space-y-1">
+          {r.lookAlikes.map((x, i) => (
+            <li key={x.name} className={cn("leading-snug", anim(fx.stagger))} style={{ "--i": i } as React.CSSProperties}>
+              <p>
+                <span className="font-bold">{x.name}:</span> {x.whyNot}
+              </p>
+              <LearnLink topic={x.name} />
             </li>
           ))}
         </ul>

@@ -9,6 +9,7 @@ import { conceptById } from "@/lib/learn/concepts";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
 import { useExplainView } from "./view-toggle";
@@ -177,7 +178,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
           </div>
           {clues < 4 ? (
             <button type="button" onClick={() => setClues(clues + 1)} className="w-full rounded-2xl border-2 border-dashed border-foreground/50 py-3 text-sm font-bold">
-              Show next clue (−10 points)
+              Show next clue (minus 10 points)
             </button>
           ) : null}
         </>
@@ -189,6 +190,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
               <p className="text-lg font-bold">{solved.correct ? (clues === 1 ? `First clue! +${solved.gained}` : `Solved! +${solved.gained}`) : "Case closed without you."}</p>
               <p className="font-bold">{answer.term}</p>
               <p className="text-sm">{view === "clinician" ? answer.clinician : answer.student}</p>
+              <LearnLink topic={answer.term} className="text-current" />
             </div>
           </div>
           <button type="button" autoFocus onClick={nextRound} className={cn("mt-3 h-12 w-full rounded-2xl border-2 border-foreground font-bold", solved.correct ? "bg-foreground text-primary" : "bg-primary text-primary-foreground")}>
