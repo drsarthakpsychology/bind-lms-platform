@@ -133,3 +133,16 @@ New blocks:
 6. MSE Lab, Ward Week, Rx Detective, Escape Room, Comorbid; Quick Reference A–Z.
 7. Psychopharmacology depth (receptor + clinical, Indian brands); frontier and psychodynamics modules; exam prep.
 8. AI cases (labelled), AI patient grading, AI-drafted doubt answers; books → private R2.
+
+## 6. Owner additions (2026-11-06, 17:01)
+- **Convert all remaining modules** to the interactive three-level format (not only the pilot). In progress in three batches:
+  1. interview-mse, anxiety, ocd, trauma, psychosis, suicide
+  2. brain, defences, assessment, case-sheet, ethics-law, therapies
+  3. child, personality, substance, neurocognitive, more-disorders, medicine-profiles
+- **Postgraduate prep section:** CUET-PG, UGC NET, MCP/M.Phil entrances (NIMHANS, CIP, AIIMS …), PsyD and Master's-level practice. Research first (`PG_PREP_RESEARCH.md`, `PG_PREP_BLUEPRINT.md`), then build. It includes:
+  - topic notes inside existing modules
+  - large, technically hard question banks
+  - topic quizzes and full-length mocks that mirror each exam pattern
+  - mock interviews with model answers and rubrics
+  - advanced clinical, counselling, research-methods and assessment practice
+- **Don't overwhelm students:** one pathway (goal → diagnostic → plan → learn in modules → practise → mocks → interview → review), showing at most 1–3 next actions at a time. Everything lives inside existing modules and one Prep section.

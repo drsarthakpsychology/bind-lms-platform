@@ -4,6 +4,11 @@
 /* Class-based dark mode (controlled by next-themes). */
 @custom-variant dark (&:is(.dark *));
 
+/* Screen height bands. Windows laptops at 125-150% zoom are only ~600-650px
+   tall, so extra sticky bars ("tall:sticky") and roomy headers wait for 720px. */
+@custom-variant tall (@media (min-height: 720px));
+@custom-variant short (@media (max-height: 719.98px));
+
 /* =============================================================================
    DESIGN TOKENS — Neo-Brutalist Pastel
    =============================================================================
@@ -89,8 +94,13 @@
   --radius-input: 0.625rem; /* 10px — controls */
   --radius-pill: 999px;
 
-  /* Phone bottom tab bar height (incl. the notch inset). */
-  --nav-h: calc(4.125rem + env(safe-area-inset-bottom));
+  /* Phone bottom tab bar height (incl. the notch inset). 0 when no tab bar
+     is on screen (tablets and up, lesson pages); see "APP SHELL" below. */
+  --nav-h: 0px;
+  /* The bottom inset nothing else covers: the tab bar already pads it. */
+  --free-inset: env(safe-area-inset-bottom);
+  /* Shell top bar height, for sticky offsets under it. */
+  --top-h: 3.5rem;
 
   /* --- Hard shadow scale (zero blur) --- */
   --shadow-hard-xs: 2px 2px 0 0 var(--hard-shadow-color);
@@ -223,12 +233,6 @@
   --radius-lg: var(--radius); /* 14px — cards, dialogs */
   --radius-xl: 0.875rem; /* 14px */
 
-  /* Bottom tab bar height (mobile). The bar is min-h-14 + safe-area; surfaces
-     that pin a sticky action above it offset by this token (MobileStickyAction).
-     The calc includes the safe-area inset so the offset clears the full bar on
-     notched phones (the raw 3.5rem left sticky actions 34px too low). */
-  --nav-h: calc(4.125rem + env(safe-area-inset-bottom));
-
   --shadow-hard-xs: var(--shadow-hard-xs);
   --shadow-hard-sm: var(--shadow-hard-sm);
   --shadow-hard-md: var(--shadow-hard-md);
@@ -318,6 +322,26 @@
 /* =============================================================================
    APP SHELL — collapsible sidebar (full ↔ slim icon rail, like YouTube)
    ============================================================================= */
+/* Bottom tab bar (phones, <768px). Surfaces that pin a bar above it offset by
+   --nav-h (MobileStickyAction). It includes the safe-area inset so the offset
+   clears the whole bar on notched phones. */
+:root:has(.bottom-tabs) {
+  --nav-h: calc(4.125rem + env(safe-area-inset-bottom));
+  --free-inset: 0px;
+}
+@media (min-width: 768px) {
+  :root:has(.bottom-tabs) {
+    --nav-h: 0px;
+    --free-inset: env(safe-area-inset-bottom);
+  }
+}
+/* Top bar: 56px, 64px on laptops that have the height for it. */
+@media (min-width: 1024px) and (min-height: 720px) {
+  :root {
+    --top-h: 4rem;
+  }
+}
+
 .app-side {
   width: 15.5rem;
   transition: width 200ms cubic-bezier(0.2, 0, 0, 1);
@@ -332,7 +356,7 @@
     gap: 0.25rem;
     min-height: 3.75rem;
     padding: 0.5rem 0.1rem;
-    font-size: 0.6rem;
+    font-size: 0.6875rem;
     line-height: 1.1;
     text-align: center;
   }
@@ -367,7 +391,7 @@
     gap: 0.25rem;
     min-height: 3.75rem;
     padding: 0.5rem 0.1rem;
-    font-size: 0.6rem;
+    font-size: 0.6875rem;
     line-height: 1.1;
     text-align: center;
   }
@@ -390,6 +414,49 @@
   .side-wide {
     display: none;
   }
+  }
+}
+
+/* Touch screens (any width): rail cells and labels a finger can read and hit. */
+@media (pointer: coarse) {
+  .app-side[data-size="mini"] .nav-link {
+    min-height: 4rem;
+    font-size: 0.75rem;
+  }
+}
+@media (pointer: coarse) and (max-width: 1279px) {
+  .app-side[data-size="auto"] .nav-link {
+    min-height: 4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* =============================================================================
+   TOUCH — size by pointer, not by width
+   =============================================================================
+   A finger needs ~44px (WCAG 2.5.8 floor is 24; Apple/Material say 44-48).
+   Coarse pointers (phones, tablets, touch laptops) raise shared controls to
+   44px. Tiny "xs" buttons in dense tables keep their size. */
+@media (pointer: coarse) {
+  [data-slot="button"]:not([data-size="xs"], [data-size="icon-xs"]) {
+    min-height: 2.75rem;
+  }
+  [data-slot="button"]:is([data-size="icon"], [data-size="icon-sm"]) {
+    min-width: 2.75rem;
+  }
+  /* iOS zooms the page when a field under 16px gets focus. Unlayered so it
+     beats the small text utilities a field may carry. */
+  :is(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="color"]), textarea, select):is(
+      .text-xs,
+      .text-sm,
+      .text-small,
+      .text-caption,
+      [class*="text-[0."],
+      [class*="text-[13px]"],
+      [class*="text-[14px]"],
+      [class*="text-[15px]"]
+    ) {
+    font-size: 1rem;
   }
 }
 
@@ -664,6 +731,8 @@ html[data-cvd="on"] .bg-destructive {
 
   html {
     scroll-behavior: smooth;
+    /* A soft peach flash on tap instead of the browser's grey box. */
+    -webkit-tap-highlight-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
 
   body {

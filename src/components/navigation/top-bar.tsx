@@ -21,9 +21,9 @@ const iconBtn = TOP_BAR_ICON_BTN;
 /**
  * The masthead — the layout people already know from YouTube, Gmail and
  * Drive: ☰ + logo on the left, a big search box in the middle, the inbox (admins), the bell and
- * your avatar on the right. Sticky on laptops; on phones it scrolls away so
- * the page gets the room (and on lesson pages the page's own back bar takes
- * over).
+ * your avatar on the right. Sticky on tablets and laptops; on phones it
+ * scrolls away so the page gets the room (and on lesson pages the page's own
+ * back bar takes over). 56px tall, 64px on laptops tall enough to spare it.
  */
 export function TopBar({
   homeHref,
@@ -54,17 +54,19 @@ export function TopBar({
   return (
     <header
       className={cn(
-        "z-40 border-b-2 border-foreground bg-card lg:sticky lg:top-0",
+        "z-40 border-b-2 border-foreground bg-card md:sticky md:top-0",
+        // Lesson and material pages are focus pages: below laptop width their
+        // own back bar replaces the masthead.
         innerPage && "hidden lg:block",
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="flex h-14 items-center gap-2 px-2 sm:gap-3 sm:px-4 lg:h-16">
+      <div className="flex h-14 items-center gap-2 px-2 sm:gap-3 sm:px-4 lg:tall:h-16">
         <button
           type="button"
           onClick={toggleSidebar}
           aria-label="Show or hide the menu"
-          className={cn(iconBtn, "hidden lg:inline-flex", innerPage && "lg:hidden")}
+          className={cn(iconBtn, "hidden md:inline-flex", innerPage && "lg:hidden")}
         >
           <Menu className="size-5" aria-hidden />
         </button>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { makeRng } from "./picker";
-import { applyAttempts, buildMap, buildPractice, confusionKey, practiceCandidates, priorFor, seedRows, weakSpots, type ModelRows, type SkillRow } from "./student";
+import { applyAttempts, buildMap, buildPractice, confusionKey, dueCount, practiceCandidates, priorFor, seedRows, weakSpots, type ModelRows, type SkillRow } from "./student";
 import { BANK, COMPETENCY_LABEL, TOPICS, bankItem, gradeChoice, skillLabel, skillOfItem, topicSkills } from "./topics";
 import { PLACEMENT_SIZE, placementItems, scorePlacement, strengths, weaknesses } from "./placement";
 import { COMPETENCIES } from "./skills";
@@ -152,5 +152,15 @@ describe("placement", () => {
     const seeds = seedRows(r, existing);
     expect(seeds.map((s) => s.skill)).toEqual(topicSkills("ocd").filter((s) => s !== "ocd:recognise"));
     expect(seeds.every((s) => s.n === 0 && s.theta > 0)).toBe(true);
+  });
+});
+
+describe("prep skills stay off the module map", () => {
+  it("leaves prep- skills and prep: cards out of the map, weak spots and due count", () => {
+    const list = [row("prep-statistics:apply", -2, 5), row("depression:criteria", -1, 3)];
+    expect(buildMap(list, NOW).topics.some((t) => t.id.startsWith("prep-"))).toBe(false);
+    expect(weakSpots(list, NOW).map((w) => w.skill)).toEqual(["depression:criteria"]);
+    const card = { stability: 1, difficulty: 5, dueAt: "2026-11-01T00:00:00Z", lastAt: null, reps: 1, lapses: 1 };
+    expect(dueCount([{ ...card, item: "prep:st-1" }, { ...card, item: "dep-1" }], NOW)).toBe(1);
   });
 });
