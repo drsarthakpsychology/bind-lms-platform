@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Flame, Lock, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -93,6 +93,15 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
       </header>
 
       <ContinueCard next={next} />
+
+      <nav aria-label="Your progress" className="flex flex-wrap gap-2">
+        <Link href="/study/map" className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-transform hover:-translate-y-0.5 motion-reduce:transition-none">
+          <MapIcon className="size-4" aria-hidden /> Strengths &amp; weak spots
+        </Link>
+        <Link href="/study/placement" className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-transform hover:-translate-y-0.5 motion-reduce:transition-none">
+          <Compass className="size-4" aria-hidden /> Placement quiz
+        </Link>
+      </nav>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[

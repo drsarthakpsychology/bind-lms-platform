@@ -3,6 +3,8 @@ import { z } from "zod";
 import { getSession } from "@/lib/auth/session";
 import { createAdminClient } from "@/lib/supabase/server";
 import { skillFromPath } from "@/lib/learn/model/skills";
+import { recordAttempts } from "@/lib/learn/model/server";
+import { attemptsFromEvents } from "@/lib/learn/model/events";
 
 export const runtime = "nodejs";
 
@@ -15,6 +17,9 @@ const event = z.object({
   skill: z.string().max(80).optional(),
   item: z.string().max(120).optional(),
   ms: z.number().int().min(0).max(3_600_000).optional(),
+  /** Multiple choice only: what was picked and the right answer (feeds mix-ups; not stored in learn_events). */
+  chosen: z.string().max(200).optional(),
+  correct: z.string().max(200).optional(),
   at: z.string().datetime(),
 });
 const schema = z.object({ events: z.array(event).max(50), path: z.string().max(300) });
@@ -22,7 +27,9 @@ const schema = z.object({ events: z.array(event).max(50), path: z.string().max(3
 /**
  * POST /api/learn/events: a batch of learning events from the browser. Stored
  * for the student model; skill defaults to the module the page belongs to.
- * Students and alumni only; silently ignored if the table isn't there yet.
+ * Events that carry ok/score also update the student model (ability, question
+ * difficulty, spaced review, mix-ups) through recordAttempts.
+ * Students and alumni only; silently ignored if the tables aren't there yet.
  */
 export async function POST(req: Request) {
   const session = await getSession();
@@ -48,5 +55,7 @@ export async function POST(req: Request) {
   } catch {
     /* table not created yet: drop */
   }
+  const attempts = attemptsFromEvents(rows, parsed.data.events);
+  if (attempts.length) await recordAttempts(session.profile.id, attempts);
   return new NextResponse(null, { status: 204 });
 }
