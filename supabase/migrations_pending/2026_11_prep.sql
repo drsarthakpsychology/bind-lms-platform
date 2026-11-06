@@ -11,14 +11,18 @@
 -- The app copes with these tables being absent (reads come back empty).
 -- =============================================================================
 
--- 1. One row per student: their goal and the diagnostic's topic profile.
+-- 1. One row per student: their goal (optional: null while exam tracks are
+--    off and everyone follows the one shared course) and the diagnostic's
+--    topic profile.
 create table if not exists public.prep_profile (
   user_id uuid primary key references auth.users (id) on delete cascade,
-  goal text not null check (goal in ('cuet-pg', 'ugc-net', 'mcp-entrance', 'ma-semester')),
+  goal text check (goal in ('cuet-pg', 'ugc-net', 'mcp-entrance', 'ma-semester')),
   diagnostic jsonb,
   diagnostic_at timestamptz,
   updated_at timestamptz not null default now()
 );
+-- Older runs created goal as not null; the shared course stores no goal.
+alter table public.prep_profile alter column goal drop not null;
 alter table public.prep_profile enable row level security;
 drop policy if exists "prep_profile_own_select" on public.prep_profile;
 create policy "prep_profile_own_select" on public.prep_profile
