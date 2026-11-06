@@ -19,6 +19,8 @@ import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { BrainMap, Curve, Flow, Layers } from "./visuals";
+import { Journey, Neuron, Pathways, Receptor } from "./animations";
+import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
 /**
@@ -539,6 +541,14 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Layers d={data as LayersData} />;
     case "brainmap":
       return <BrainMap d={data as BrainMapData} />;
+    case "journey":
+      return <Journey d={data as JourneyData} />;
+    case "neuron":
+      return <Neuron d={data as NeuronData} />;
+    case "pathways":
+      return <Pathways d={data as PathwaysData} />;
+    case "receptor":
+      return <Receptor d={data as ReceptorData} />;
   }
 }
 

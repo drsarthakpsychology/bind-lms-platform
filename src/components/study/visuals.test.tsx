@@ -39,3 +39,31 @@ describe("visual widgets", () => {
     expect(screen.getByText("Threat detection")).toBeInTheDocument();
   });
 });
+
+import { Journey, Neuron, Pathways, Receptor } from "./animations";
+describe("animated explainers", () => {
+  it("journey steps through stages and switches route", () => {
+    render(<Journey d={{ drug: "sertraline", target: "serotonin transporters", routes: ["oral", "iv"] }} />);
+    fireEvent.click(screen.getByRole("button", { name: /Liver/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/first-pass/);
+    fireEvent.click(screen.getByRole("button", { name: "Into a vein" }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/no first-pass/);
+  });
+  it("neuron is all or none", () => {
+    render(<Neuron d={{}} />);
+    fireEvent.change(screen.getByRole("slider"), { target: { value: "20" } });
+    fireEvent.click(screen.getByRole("button", { name: /Fire/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Below threshold/);
+  });
+  it("pathways explain blocker effects", () => {
+    render(<Pathways d={{ system: "dopamine" }} />);
+    fireEvent.click(screen.getAllByRole("button", { name: "Nigrostriatal" })[0]);
+    fireEvent.click(screen.getByRole("button", { name: /Add a D2 blocker/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Movement side effects/);
+  });
+  it("receptor shows partial agonist", () => {
+    render(<Receptor d={{ receptor: "D2" }} />);
+    fireEvent.click(screen.getByRole("button", { name: "Partial agonist" }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/half/);
+  });
+});
