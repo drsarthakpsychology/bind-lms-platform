@@ -73,8 +73,8 @@ Current affective neuroscience treats emotions as products of distributed networ
 
 :::mcq
 Q: A monkey with bilateral temporal lobe lesions becomes fearless, puts stones in its mouth and approaches a snake. This is:
-- Sham rage
 - *Klüver-Bucy syndrome
+- Sham rage
 - Korsakoff syndrome
 - Learned helplessness
 > Placidity, hyperorality and psychic blindness after temporal lesions.
@@ -88,8 +88,8 @@ Q: A hiker jumps back from a curved stick before consciously recognising it. Whi
 
 Q: Which statement about anger fits Davidson's model?
 - It is a withdrawal emotion linked to right frontal activity
-- *It is an approach emotion linked to left frontal activity
 - It has no frontal asymmetry
+- *It is an approach emotion linked to left frontal activity
 - It is processed only by the hypothalamus
 > Anger motivates approach, so it groups with left frontal activity despite being negative.
 :::
@@ -178,14 +178,14 @@ Miller found that the **avoidance gradient is steeper** than the approach gradie
 :::mcq
 Q: Reminding yourself before a viva that the examiners want to see how you think, not to trap you, is an example of:
 - Response modulation
-- Situation selection
 - *Cognitive change (reappraisal)
+- Situation selection
 - Attentional deployment
 > Changing the meaning of the situation is reappraisal.
 
 Q: Which measure of emotional intelligence is a performance test with scored answers rather than a self-report?
-- EQ-i
 - *MSCEIT
+- EQ-i
 - ERQ
 - PANAS
 > The MSCEIT tests ability; the EQ-i is self-report.
@@ -269,9 +269,9 @@ Q: The correct order of the HPA axis is:
 
 Q: A nurse in a Mumbai ICU feels drained, has become cold and detached with patients, and feels she achieves nothing. This picture is:
 - Type A behaviour
-- *Burnout
 - The alarm stage of GAS
 - Learned helplessness
+- *Burnout
 > Exhaustion, depersonalisation and reduced efficacy define burnout.
 :::
 
@@ -369,15 +369,15 @@ Evidence summary for exam answers. **PMR and applied relaxation** (Öst) have go
 Q: A patient with tension headaches learns to lower forehead muscle tension while watching a display of the signal. This is:
 - Thermal biofeedback
 - Neurofeedback
-- Autogenic training
 - *EMG biofeedback
+- Autogenic training
 > EMG biofeedback measures muscle activity.
 
 Q: According to the buffering hypothesis, social support protects health:
 - Equally at all levels of stress
 - Only when it is received, not perceived
-- *Most strongly when stress is high
 - Only in women
+- *Most strongly when stress is high
 > Buffering means the protective effect is greatest under high stress.
 :::
 
@@ -430,8 +430,8 @@ Indian research on emotion and wellbeing includes work on **anasakti** (non-atta
 
 :::mcq
 Q: Motivational interviewing's emphasis on drawing out the client's own reasons for change fits most closely with:
-- Drive-reduction theory
 - *Self-determination theory's emphasis on autonomy
+- Drive-reduction theory
 - Opponent-process theory
 - The James-Lange theory
 > MI supports autonomous motivation.
@@ -568,107 +568,107 @@ Q: According to Hull, behaviour is strengthened when it:
 > Drive reduction is the reinforcer.
 
 Q: Monkeys working to open latch puzzles for no external reward challenged:
-- Arousal theory
 - *Drive-reduction theory
+- Arousal theory
 - Opponent-process theory
 - Incentive theory
 > Behaviour without any drive to reduce.
 
 Q: In Alderfer's theory, the "R" stands for:
 - Reward
-- Resistance
 - *Relatedness
+- Resistance
 - Recognition
 > Existence, Relatedness, Growth.
 
 Q: A person high in fear of failure, per Atkinson, is most likely to choose a task that is:
 - Of moderate difficulty
-- *Either very easy or very hard
 - Always the hardest
 - Always the easiest
+- *Either very easy or very hard
 > Very easy tasks guarantee success; very hard ones excuse failure.
 
 Q: Vroom's "instrumentality" refers to the belief that:
-- Effort will lead to performance
 - *Performance will lead to a reward
+- Effort will lead to performance
 - The reward is valuable
 - The task is enjoyable
 > Expectancy is effort to performance; instrumentality is performance to reward.
 
 Q: In the SDT continuum, "I exercise because health is important to me" is:
 - External regulation
-- Introjected regulation
 - *Identified regulation
+- Introjected regulation
 - Amotivation
 > Valuing the outcome is identified regulation.
 
 Q: The TAT is used in motivation research mainly to assess:
 - Intelligence
-- *Implicit motives such as nAch, nAff and nPow
 - Self-efficacy
 - Arousal level
+- *Implicit motives such as nAch, nAff and nPow
 > McClelland's scoring systems for implicit motives.
 
 Q: Successful entrepreneurs, according to McClelland, typically score high on:
-- *Need for achievement
 - Need for affiliation
 - Personalised power
+- *Need for achievement
 - Fear of success
 > nAch suits entrepreneurs and individual contributors.
 
 Q: Experience seeking, disinhibition and boredom susceptibility are subscales of:
 - The PANAS
+- *Zuckerman's Sensation Seeking Scale
 - The SRRS
 - The MSCEIT
-- *Zuckerman's Sensation Seeking Scale
 > The fourth subscale is thrill and adventure seeking.
 
 Q: In the flow model, high challenge with low skill produces:
 - Flow
 - Boredom
-- *Anxiety
 - Relaxation
+- *Anxiety
 > Challenge exceeding skill produces anxiety.
 
 Q: Damage to the lateral hypothalamus in rats produced:
 - Overeating and obesity
-- *Reduced eating
 - Excess drinking
+- *Reduced eating
 - Hypersexuality
 > The LH was called the hunger (start-eating) centre.
 
 Q: Which hormone rises before meals and increases hunger?
+- *Ghrelin
 - Leptin
 - Insulin
 - CCK
-- *Ghrelin
 > Ghrelin is released by the stomach.
 
 Q: Which sequence matches the James-Lange theory?
+- *Event, bodily change, feeling
 - Event, feeling, bodily change
 - Event, thalamus, feeling and body together
-- *Event, bodily change, feeling
 - Event, arousal, cognitive label, feeling
 > The feeling is the perception of the bodily change.
 
 Q: A person who is aroused for no obvious reason looks to the situation to decide what she feels. This fits:
 - Cannon-Bard theory
-- *The two-factor theory
 - Facial feedback
 - Opponent process
+- *The two-factor theory
 > Arousal plus a situational label.
 
 Q: Lazarus would say two students feel differently about the same exam because they:
 - Have different thalamic activity
-- *Appraise its meaning for their wellbeing differently
 - Have different display rules
+- *Appraise its meaning for their wellbeing differently
 - Differ only in arousal level
 > Appraisal determines emotion.
 
 Q: Which is NOT one of Ekman's original six basic emotions?
 - Disgust
-- Surprise
 - *Guilt
+- Surprise
 - Fear
 > Guilt is a self-conscious emotion, not in the original six.
 
@@ -688,14 +688,14 @@ Q: In the Natyashastra, the outward expressions of an emotion, such as tears or 
 
 Q: Patient S.M., with bilateral amygdala damage, showed:
 - Loss of all emotions
-- *Absent fear to external threats but intact other emotions
 - Hypersexuality and hyperorality
 - Inability to feel disgust
+- *Absent fear to external threats but intact other emotions
 > She lacked fear of external threats.
 
 Q: The somatic marker hypothesis is associated with:
-- LeDoux
 - *Damasio
+- LeDoux
 - Papez
 - Plutchik
 > Damasio, from vmPFC patients and the Iowa Gambling Task.
@@ -703,15 +703,15 @@ Q: The somatic marker hypothesis is associated with:
 Q: Hiding one's anger behind a calm face, according to Gross, is:
 - Cognitive change
 - Situation selection
-- Attentional deployment
 - *Response modulation (suppression)
+- Attentional deployment
 > Acting on the expression after the emotion has formed.
 
 Q: Choosing between two attractive job offers is an example of:
-- *Approach-approach conflict
 - Avoidance-avoidance conflict
 - Approach-avoidance conflict
 - Double approach-avoidance conflict
+- *Approach-approach conflict
 > Two attractive goals.
 
 Q: According to Lazarus and Folkman, "Do I have the resources to handle this?" is:
@@ -722,30 +722,30 @@ Q: According to Lazarus and Folkman, "Do I have the resources to handle this?" i
 > Secondary appraisal evaluates coping options.
 
 Q: The Indian life events scale developed by Gurmeet Singh and colleagues is the:
+- *PSLES
 - SRRS
 - LEDS
-- *PSLES
 - DS14
 > Presumptive Stressful Life Events Scale.
 
 Q: Kobasa's hardiness research was done with:
 - Medical students during exams
-- *Business executives during a company break-up
 - Skydivers
 - Rats in a maze
+- *Business executives during a company break-up
 > Illinois Bell executives.
 
 Q: Allostatic load refers to:
-- The set point for body weight
 - *The cumulative physiological cost of repeated or prolonged stress responses
+- The set point for body weight
 - The first stage of GAS
 - A coping strategy
 > McEwen's concept.
 
 Q: Chronic stress, according to Segerstrom and Miller's meta-analysis, tends to:
 - Boost all immune functions
-- Have no effect on immunity
 - *Suppress many immune functions
+- Have no effect on immunity
 - Affect only the skin
 > Chronic stressors produce broad suppression.
 
@@ -764,8 +764,8 @@ Q: Expressive writing as a stress intervention is associated with:
 > Writing about stressful experiences over a few days.
 
 Q: A recovering stroke patient lacks initiative but denies sadness and enjoys jokes. The best term is:
-- Anhedonia
 - *Apathy
+- Anhedonia
 - Alexithymia
 - Learned helplessness
 > A primary motivational deficit without low mood.

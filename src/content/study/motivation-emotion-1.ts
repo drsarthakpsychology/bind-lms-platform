@@ -66,15 +66,15 @@ Hull's hypothetico-deductive system (Principles of Behavior, 1943) was the most 
 :::mcq
 Q: A student explains a classmate's habit of helping others by saying, "He has a helping instinct, which we know because he helps." The main weakness of this explanation is that it is:
 - Too biological
-- Untestable because instincts are unconscious
 - *Circular: the behaviour is used to prove the cause that is meant to explain it
+- Untestable because instincts are unconscious
 - Based on drive reduction
 > Circularity was the central criticism of instinct theory.
 
 Q: According to Hull, a secondary (acquired) drive is best illustrated by:
 - Thirst after exercise
-- *The drive for money, learned because money reduces many primary drives
 - Pain avoidance
+- *The drive for money, learned because money reduces many primary drives
 - Shivering in the cold
 > Secondary drives are learned through association with primary drive reduction.
 :::
@@ -150,16 +150,16 @@ Empirical tests of a strict hierarchy (Wahba and Bridwell, 1976) found little su
 :::mcq
 Q: Which statement about Maslow's hierarchy is most accurate?
 - A lower need must be completely satisfied before a higher need emerges
-- *Maslow described the order as a general tendency that individuals can reverse
 - Esteem needs are growth needs
 - Self-actualisation is a deficiency need
+- *Maslow described the order as a general tendency that individuals can reverse
 > Maslow himself allowed flexibility; strict prepotency is a textbook myth.
 
 Q: A worker who is repeatedly denied promotion starts demanding much higher pay. Which concept explains this best?
+- *Frustration-regression in ERG theory
 - Opponent process
 - Drive reduction
 - Optimal arousal
-- *Frustration-regression in ERG theory
 > Blocked growth needs lead to renewed focus on existence needs.
 :::
 
@@ -231,15 +231,15 @@ Cannon's critique was strong but not final. Later work found some autonomic diff
 :::mcq
 Q: Which statement would Cannon and Bard accept?
 - We feel afraid because we tremble
-- *Feeling and bodily arousal are triggered at the same time by the brain
 - Emotion is the label we give to unexplained arousal
 - Each emotion has a unique visceral pattern
+- *Feeling and bodily arousal are triggered at the same time by the brain
 > Cannon-Bard holds that the thalamus triggers feeling and arousal simultaneously.
 
 Q: A person injected with adrenaline says, "I feel as if I were afraid, but I'm not really afraid." Which theory does this observation challenge?
+- *James-Lange
 - Cannon-Bard
 - Opponent-process
-- *James-Lange
 - Drive reduction
 > If bodily change were enough for emotion, the injection should produce real fear (Marañón's observation, used by Cannon).
 :::
@@ -320,8 +320,8 @@ Q: Selye's original observation was that rats exposed to different harmful agent
 Q: Which is a major criticism of the Social Readjustment Rating Scale?
 - It contains too few events
 - It was developed only in India
-- It measures daily hassles instead of life events
 - *It treats positive and negative changes as equally stressful and ignores the person's appraisal
+- It measures daily hassles instead of life events
 > Undesirable events and their meaning matter far more than change per se.
 :::
 
@@ -331,15 +331,15 @@ Score 80% or more to open the Beginner level.
 :::mcq
 Q: Motivation is said to explain three features of behaviour. Which set is correct?
 - Memory, attention and perception
-- *Activation, direction and intensity or persistence
 - Stimulus, response and reinforcement
 - Id, ego and superego
+- *Activation, direction and intensity or persistence
 > These three are the standard dimensions of motivated behaviour.
 
 Q: The term homeostasis was introduced by:
+- *Walter Cannon
 - Clark Hull
 - William McDougall
-- *Walter Cannon
 - Hans Selye
 > Cannon, The Wisdom of the Body (1932).
 
@@ -358,45 +358,45 @@ Q: The Yerkes-Dodson law predicts that, for a very complex task, the best perfor
 > The optimum shifts lower as task difficulty rises.
 
 Q: A first-time bungee jumper feels terror, but after many jumps feels mainly exhilaration afterwards. This fits:
+- *Opponent-process theory
 - Drive reduction
 - James-Lange theory
 - Maslow's hierarchy
-- *Opponent-process theory
 > The after-reaction strengthens with repetition.
 
 Q: In Maslow's hierarchy, the need directly above safety is:
 - Esteem
-- *Love and belonging
 - Self-actualisation
+- *Love and belonging
 - Physiological
 > Physiological, safety, belonging, esteem, self-actualisation.
 
 Q: Maslow's growth needs are also called:
 - D-needs
-- *B-needs (being needs)
 - Primary drives
 - Secondary drives
+- *B-needs (being needs)
 > Being needs drive self-actualisation.
 
 Q: "We feel afraid because we tremble" summarises:
-- *James-Lange theory
 - Cannon-Bard theory
+- *James-Lange theory
 - Schachter-Singer theory
 - Lazarus's appraisal theory
 > Bodily change first, then feeling.
 
 Q: According to Cannon-Bard theory, which structure sends signals to both cortex and body at the same time?
+- *Thalamus
 - Amygdala
 - Hippocampus
 - Cerebellum
-- *Thalamus
 > Cannon and Bard gave the thalamus this role.
 
 Q: Which of these is a MOOD rather than an emotion?
 - A jolt of fear when a car swerves
 - A flash of anger at an insult
-- *Feeling irritable all day without a clear reason
 - Surprise at a sudden noise
+- *Feeling irritable all day without a clear reason
 > Moods are longer, weaker and often objectless.
 
 Q: Selye's term for positive, motivating stress is:
@@ -414,17 +414,17 @@ Q: The correct order of Selye's General Adaptation Syndrome is:
 > A-R-E.
 
 Q: The fight-or-flight response is driven mainly by:
-- The parasympathetic nervous system
 - *The sympathetic nervous system and adrenal medulla
+- The parasympathetic nervous system
 - The cerebellum
 - Growth hormone
 > Sympathetic activation with adrenaline and noradrenaline release.
 
 Q: The Hassles Scale was developed because:
-- *Daily irritations were found to predict health better than major life events
 - Life events had no link with health at all
 - Selye asked for a measure of exhaustion
 - Maslow needed a measure of esteem
+- *Daily irritations were found to predict health better than major life events
 > Kanner and colleagues (1981) showed hassles are strong predictors.
 :::
 
@@ -508,8 +508,8 @@ SDT now contains six mini-theories: cognitive evaluation theory (effects of rewa
 :::mcq
 Q: According to Atkinson, a person high in achievement motivation is most likely to choose a task with a probability of success of about:
 - 0.05
-- 0.95
 - *0.5
+- 0.95
 - It makes no difference
 > Moderate difficulty maximises the product of probability and incentive value.
 
@@ -523,8 +523,8 @@ Q: Under Vroom's theory, an employee who believes hard work will raise performan
 Q: In Lepper, Greene and Nisbett's study, which group drew least in later free play?
 - Children who got no reward
 - Children who got an unexpected reward
-- *Children who expected and received a reward
 - All groups drew the same
+- *Children who expected and received a reward
 > Expected reward undermined intrinsic interest.
 :::
 
@@ -590,10 +590,10 @@ Q: The Kakinada study is best known for showing that:
 > McClelland and Winter trained businessmen and found more business activity afterwards.
 
 Q: A manager uses influence to help her team succeed rather than to boost her own status. McClelland would call this:
+- *Socialised power
 - High affiliation
 - Fear of success
 - Personalised power
-- *Socialised power
 > Power used for the group is socialised power.
 :::
 
@@ -764,15 +764,15 @@ The dual-centre model was simplified: LH lesions also damage dopaminergic fibres
 :::mcq
 Q: A person with long-term heavy alcohol use says, "I don't even enjoy it any more, but I can't stop wanting it." This best fits:
 - Drive reduction
-- Set-point theory
 - *Incentive sensitisation: wanting grows while liking falls
+- Set-point theory
 - The Yerkes-Dodson law
 > Wanting and liking are separable; in addiction wanting is sensitised.
 
 Q: Leptin is best described as:
 - A stomach hormone that increases hunger before meals
-- *A hormone from fat cells that signals long-term energy stores and reduces hunger
 - A brain area that starts eating
+- *A hormone from fat cells that signals long-term energy stores and reduces hunger
 - A thirst hormone
 > Leptin reflects fat stores; ghrelin is the stomach hunger hormone.
 :::
@@ -839,8 +839,8 @@ The Schachter-Singer findings were weaker than textbooks suggest: the predicted 
 
 :::mcq
 Q: In Schachter and Singer's experiment, participants who were correctly informed about the effects of the injection:
-- Showed the strongest emotional contagion
 - *Were less likely to take on the stooge's emotion
+- Showed the strongest emotional contagion
 - Felt no arousal at all
 - Became angry in every condition
 > They could attribute their arousal to the injection.
@@ -914,9 +914,9 @@ The universality debate continues. Russell (Psychological Bulletin, 1994) argued
 :::mcq
 Q: In Russell's circumplex model, "calm contentment" lies in which region?
 - Unpleasant, high arousal
+- *Pleasant, low arousal
 - Unpleasant, low arousal
 - Pleasant, high arousal
-- *Pleasant, low arousal
 > Contentment is pleasant and low in arousal.
 
 Q: Which statement about the facial feedback hypothesis best reflects current evidence?
@@ -927,10 +927,10 @@ Q: Which statement about the facial feedback hypothesis best reflects current ev
 > Meta-analysis and the Many Smiles study point to small effects.
 
 Q: In rasa theory, the aesthetic emotion savoured by the audience is called:
+- *Rasa
 - Sthayi bhava
 - Vibhava
 - Anubhava
-- *Rasa
 > Bhava is the emotion; rasa is its aesthetic savouring.
 :::
 
@@ -1020,16 +1020,16 @@ Meta-analyses (Booth-Kewley and Friedman, 1987; Miller and colleagues, 1996) con
 :::mcq
 Q: A student says, "My chances in the viva are poor and I can't do anything about it." In Lazarus's terms, this mainly reflects:
 - A positive primary appraisal
-- *A secondary appraisal of few coping resources
 - Reappraisal as a challenge
 - Problem-focused coping
+- *A secondary appraisal of few coping resources
 > Secondary appraisal asks what can be done and with what resources.
 
 Q: Antonovsky's three components of a sense of coherence are:
 - Commitment, control and challenge
+- *Comprehensibility, manageability and meaningfulness
 - Autonomy, competence and relatedness
 - Alarm, resistance and exhaustion
-- *Comprehensibility, manageability and meaningfulness
 > The SOC components; the three Cs belong to hardiness.
 :::
 
@@ -1039,14 +1039,14 @@ Score 80% or more to open the Advanced level.
 :::mcq
 Q: In self-determination theory, "I study because I'd feel ashamed if I failed" is:
 - External regulation
-- *Introjected regulation
 - Identified regulation
+- *Introjected regulation
 - Intrinsic motivation
 > Guilt and ego involvement mark introjection.
 
 Q: Which kind of reward is most likely to undermine intrinsic motivation?
-- Unexpected verbal praise
 - *An expected, tangible reward given for doing an enjoyable task
+- Unexpected verbal praise
 - Informational feedback
 - No reward at all
 > Expected, tangible, contingent rewards undermine; praise tends not to.
@@ -1073,72 +1073,72 @@ Q: The strongest source of self-efficacy according to Bandura is:
 > Personal success is the most powerful source.
 
 Q: The TAT was created by:
-- McClelland and Atkinson
 - *Murray and Morgan
+- McClelland and Atkinson
 - Rorschach and Binet
 - Deci and Ryan
 > Henry Murray and Christiana Morgan, 1935.
 
 Q: Socially oriented achievement motivation was described by:
 - McClelland and Winter
-- Zuckerman
 - *Agarwal and Misra
+- Zuckerman
 - Kobasa
 > Indian research, 1986.
 
 Q: Which is NOT one of Zuckerman's sensation-seeking subscales?
 - Thrill and adventure seeking
+- *Achievement striving
 - Disinhibition
 - Boredom susceptibility
-- *Achievement striving
 > The four are thrill and adventure seeking, experience seeking, disinhibition, boredom susceptibility.
 
 Q: Csikszentmihalyi collected data on flow mainly with:
-- Lesion studies
 - *The experience sampling method
+- Lesion studies
 - The TAT
 - Brain scans
 > Participants recorded experience when signalled at random times.
 
 Q: In "wanting versus liking", dopamine is most closely tied to:
 - The pleasure of a sweet taste
-- *Incentive salience, the pull towards a reward
 - Satiety after a meal
+- *Incentive salience, the pull towards a reward
 - Pain relief
 > Dopamine mediates wanting; opioid hotspots mediate liking.
 
 Q: In the Capilano bridge study, men on the scary bridge:
 - Rated the interviewer as less attractive
 - Showed no difference from the control group
-- *Were more likely to call the interviewer later, suggesting misattributed arousal
 - Refused to take part
+- *Were more likely to call the interviewer later, suggesting misattributed arousal
 > Fear arousal was partly read as attraction.
 
 Q: The Lazarus-Zajonc debate was about whether:
 - Emotions are inherited
-- Stress causes illness
 - *Emotion requires prior cognitive appraisal
+- Stress causes illness
 - Facial expressions are universal
 > Zajonc argued affect can precede cognition.
 
 Q: Ekman's research among the Fore of Papua New Guinea supported:
-- *The universality of some basic facial expressions
 - The two-factor theory
 - The overjustification effect
 - Type A behaviour
+- *The universality of some basic facial expressions
 > They matched expressions to stories much as Westerners did.
 
 Q: Abhinavagupta is credited with defending which rasa as the ninth?
 - Vira
 - Adbhuta
-- Hasya
 - *Shanta
+- Hasya
 > Shanta (peace) completed the navarasa.
 
 Q: A person who sees a sudden job loss as "a chance to retrain" is making which primary appraisal?
+- *Challenge
 - Harm or loss
 - Threat
-- *Challenge
 - Irrelevant
 > Challenge appraisals focus on potential gain or growth.
 :::
