@@ -17,7 +17,7 @@ A clinical psychologist in Delhi gives a new anxiety scale to 200 college studen
 | Scale | Example | Average to use | Spread | Typical tests |
 |---|---|---|---|---|
 | Nominal | Diagnosis, mother tongue | Mode | None (or the number of categories) | Chi-square |
-| Ordinal | Merit rank, a mild–moderate–severe rating | Median | Quartile deviation, range | Spearman, Mann-Whitney, Wilcoxon |
+| Ordinal | Merit rank, a mild-moderate-severe rating | Median | Quartile deviation, range | Spearman, Mann-Whitney, Wilcoxon |
 | Interval | IQ, scale totals | Mean | Standard deviation | Pearson, t, ANOVA |
 | Ratio | Reaction time, number of errors | Mean (and geometric mean) | SD, coefficient of variation | All of the above |
 
@@ -25,6 +25,10 @@ A clinical psychologist in Delhi gives a new anxiety scale to 200 college studen
 
 :::widget sort
 {"prompt": "Descriptive or inferential? Place each statement.", "buckets": ["Descriptive", "Inferential"], "items": [{"text": "The 200 students had a mean anxiety score of 34", "bucket": 0}, {"text": "Women in Delhi colleges are probably more anxious than men (p = .01)", "bucket": 1, "why": "It generalises from the sample to a population, with a probability attached."}, {"text": "Scores ranged from 8 to 61", "bucket": 0}, {"text": "We are 95% confident that the population mean lies between 32.1 and 35.9", "bucket": 1}, {"text": "Forty per cent of the sample were first-generation college students", "bucket": 0}, {"text": "Sleep hours predict anxiety in students generally (r = −.30, p below .001)", "bucket": 1}]}
+:::
+
+:::widget flow
+{"title": "Kinds of variable", "layout": "tree", "nodes": [{"id": "v", "label": "Variable", "detail": "Anything that takes different values"}, {"id": "ql", "label": "Qualitative (categorical)", "detail": "Kinds, not amounts", "parent": "v"}, {"id": "qn", "label": "Quantitative", "detail": "Amounts or counts", "parent": "v"}, {"id": "nom", "label": "Nominal", "detail": "No order: religion, diagnosis", "parent": "ql"}, {"id": "ord", "label": "Ordinal", "detail": "Ordered: rank, severity grade", "parent": "ql"}, {"id": "dis", "label": "Discrete", "detail": "Separate values: number of siblings", "parent": "qn"}, {"id": "con", "label": "Continuous", "detail": "Any value in a range: reaction time", "parent": "qn"}]}
 :::
 
 ### Symbols you will meet
@@ -69,18 +73,22 @@ Raw scores are hard to read. A **frequency distribution** shows how many people 
 1. Find the **range**: highest minus lowest.
 2. Choose the number of classes, usually **10 to 20** for large data sets (fewer for small ones), and a convenient **class width (i)** such as 2, 5 or 10.
 3. Start the lowest class at a multiple of i that includes the lowest score.
-4. Tally scores into classes. Each class has **stated limits** (10–19) and **exact limits** (9.5–19.5); its **midpoint** is the average of its limits (14.5).
+4. Tally scores into classes. Each class has **stated limits** (10-19) and **exact limits** (9.5-19.5); its **midpoint** is the average of its limits (14.5).
 5. Add **cumulative frequency (cf)**: the running total from the bottom; and **cumulative percentage** (cf ÷ N × 100), which gives percentile ranks.
 
 Here are the scores of 35 trainee counsellors on an empathy test, already grouped. You will use this table again.
 
 | Class | f | Exact limits | Midpoint (x) | cf |
 |---|---|---|---|---|
-| 50–59 | 5 | 49.5–59.5 | 54.5 | 35 |
-| 40–49 | 8 | 39.5–49.5 | 44.5 | 30 |
-| 30–39 | 12 | 29.5–39.5 | 34.5 | 22 |
-| 20–29 | 7 | 19.5–29.5 | 24.5 | 10 |
-| 10–19 | 3 | 9.5–19.5 | 14.5 | 3 |
+| 50-59 | 5 | 49.5-59.5 | 54.5 | 35 |
+| 40-49 | 8 | 39.5-49.5 | 44.5 | 30 |
+| 30-39 | 12 | 29.5-39.5 | 34.5 | 22 |
+| 20-29 | 7 | 19.5-29.5 | 24.5 | 10 |
+| 10-19 | 3 | 9.5-19.5 | 14.5 | 3 |
+
+:::widget flow
+{"title": "Building a grouped frequency table", "layout": "chain", "nodes": [{"id": "n0", "label": "Range", "detail": "Highest minus lowest"}, {"id": "n1", "label": "Choose classes", "detail": "About 10 to 20, with a convenient width"}, {"id": "n2", "label": "Set limits", "detail": "Stated and exact limits"}, {"id": "n3", "label": "Tally", "detail": "Count scores into classes"}, {"id": "n4", "label": "Cumulate", "detail": "Running totals and cumulative percentages"}]}
+:::
 
 ### Graphs: which one when
 | Graph | Use it for | Note |
@@ -103,7 +111,7 @@ Here are the scores of 35 trainee counsellors on an empathy test, already groupe
 :::
 
 :::recall
-1. What are the exact limits and midpoint of the class 30–39? || Exact limits 29.5–39.5; midpoint 34.5.
+1. What are the exact limits and midpoint of the class 30-39? || Exact limits 29.5-39.5; midpoint 34.5.
 2. Histogram versus bar chart. || A histogram is for continuous data and its bars touch; a bar chart is for categories and its bars are separate.
 3. Against what do you plot an ogive? || Cumulative frequency (or percentage) against the upper exact limit of each class.
 4. What does a bimodal distribution often suggest? || Two different groups mixed together.
@@ -146,7 +154,11 @@ Use the empathy table from 1.2 (N = 35).
 - **Mode (crude):** the midpoint of the class with the highest frequency. A refined formula: Mo = L + [(f1 − f0) ÷ (2f1 − f0 − f2)] × i, where f1 is the modal class frequency and f0 and f2 are the frequencies of the classes below and above it. The **empirical relation** Mo = 3Md − 2M holds roughly for moderately skewed data.
 
 :::widget worked
-{"title": "The median from a grouped table", "steps": [{"q": "N = 35. Which score position is the median?", "a": "N/2 = 17.5. We need the score with 17.5 cases below it."}, {"q": "Which class holds it?", "a": "Reading up the cf column: 3, 10, 22. The 17.5th case falls in the class whose cf passes 17.5, which is 30–39 (cf 22)."}, {"q": "Write down L, F, f and i.", "a": "L = 29.5 (exact lower limit), F = 10 (cases below the class), f = 12 (cases in the class), i = 10."}, {"q": "Compute the median.", "a": "Md = 29.5 + [(17.5 − 10) ÷ 12] × 10 = 29.5 + (7.5 ÷ 12) × 10 = 29.5 + 6.25 = 35.75."}, {"q": "Now the refined mode, and compare all three.", "a": "Mo = 29.5 + [(12 − 7) ÷ (24 − 7 − 8)] × 10 = 29.5 + (5 ÷ 9) × 10 = 35.06. Mean 35.93, median 35.75, mode 35.06: very close, so the distribution is nearly symmetrical, with a very slight positive skew."}], "yourTurn": [{"q": "In the same table, find Q1 (the 25th percentile) using the same formula with N/4 instead of N/2.", "a": "N/4 = 8.75. It falls in the class 20–29 (cf below = 3, f = 7, L = 19.5). Q1 = 19.5 + [(8.75 − 3) ÷ 7] × 10 = 19.5 + 8.21 = 27.71."}]}
+{"title": "The median from a grouped table", "steps": [{"q": "N = 35. Which score position is the median?", "a": "N/2 = 17.5. We need the score with 17.5 cases below it."}, {"q": "Which class holds it?", "a": "Reading up the cf column: 3, 10, 22. The 17.5th case falls in the class whose cf passes 17.5, which is 30-39 (cf 22)."}, {"q": "Write down L, F, f and i.", "a": "L = 29.5 (exact lower limit), F = 10 (cases below the class), f = 12 (cases in the class), i = 10."}, {"q": "Compute the median.", "a": "Md = 29.5 + [(17.5 − 10) ÷ 12] × 10 = 29.5 + (7.5 ÷ 12) × 10 = 29.5 + 6.25 = 35.75."}, {"q": "Now the refined mode, and compare all three.", "a": "Mo = 29.5 + [(12 − 7) ÷ (24 − 7 − 8)] × 10 = 29.5 + (5 ÷ 9) × 10 = 35.06. Mean 35.93, median 35.75, mode 35.06: very close, so the distribution is nearly symmetrical, with a very slight positive skew."}], "yourTurn": [{"q": "In the same table, find Q1 (the 25th percentile) using the same formula with N/4 instead of N/2.", "a": "N/4 = 8.75. It falls in the class 20-29 (cf below = 3, f = 7, L = 19.5). Q1 = 19.5 + [(8.75 − 3) ÷ 7] × 10 = 19.5 + 8.21 = 27.71."}]}
+:::
+
+:::widget layers
+{"title": "Where the three averages sit in a positively skewed distribution", "shape": "stack", "layers": [{"label": "Mean (highest)", "detail": "Pulled toward the long right tail"}, {"label": "Median (middle)", "detail": "Half the scores either side"}, {"label": "Mode (lowest)", "detail": "Under the peak"}], "caption": "In negative skew the order flips. In a normal curve all three coincide."}
 :::
 
 ### Which average when
@@ -294,18 +306,18 @@ Q: In a positively skewed distribution:
 - *The mean is greater than the median
 > The tail of high scores pulls the mean up.
 
-Q: The midpoint of the class 40–44 is:
+Q: The midpoint of the class 40-44 is:
 - 40
 - *42
 - 44
 - 41.5
 > (40 + 44) ÷ 2 = 42.
 
-Q: The exact limits of the class 40–44 are:
-- 40–44
-- 40.5–43.5
-- *39.5–44.5
-- 39–45
+Q: The exact limits of the class 40-44 are:
+- 40-44
+- 40.5-43.5
+- *39.5-44.5
+- 39-45
 > Half a unit below and above the stated limits.
 
 Q: The SD of a set of scores that are all equal to 7 is:
@@ -398,6 +410,10 @@ A **percentile rank** is the percentage of cases at or below a score. Percentile
 {"title": "z scores, T scores and percentiles", "steps": [{"q": "Meera scores 65 on a reasoning test with mean 50 and SD 10. Find her z score.", "a": "z = (65 − 50) ÷ 10 = 1.5. She is one and a half SDs above the mean."}, {"q": "Convert to a T score, a deviation IQ-style score and a stanine.", "a": "T = 50 + 10(1.5) = 65. IQ-style = 100 + 15(1.5) = 122.5. Stanine = 2(1.5) + 5 = 8."}, {"q": "What percentage of the norm group scored below her? (Table area from the mean to z = 1.50 is .4332.)", "a": "Below the mean: 50%. Between the mean and her score: 43.32%. Total 93.32%, so about the 93rd percentile."}, {"q": "Rahul scored 42 on the same test. Find his z and percentile. (Area from the mean to z = 0.80 is .2881.)", "a": "z = (42 − 50) ÷ 10 = −0.8. Below the mean, so the area below him is 50 − 28.81 = 21.19%: about the 21st percentile. T = 42."}, {"q": "Asha gets 70 in maths (M 60, SD 5) and 80 in English (M 75, SD 10). In which subject did she do better compared with her class?", "a": "Maths z = (70 − 60) ÷ 5 = 2.0; English z = (80 − 75) ÷ 10 = 0.5. She did much better in maths, though her raw English mark is higher."}], "yourTurn": [{"q": "What raw score on the reasoning test (M 50, SD 10) marks the top 2.5% of people?", "a": "The top 2.5% starts at z = 1.96. X = M + z × SD = 50 + 1.96 × 10 = 69.6."}]}
 :::
 
+:::widget curve
+{"kind": "normal", "title": "Explore the normal curve", "caption": "Move the z slider: watch the shaded area, the percentile and the matching IQ score. Try z = 1 (84th percentile), z = 1.96 (top 2.5%) and z = −1.5."}
+:::
+
 ### Reading a z table
 Tables give the **area between the mean and z** (some give the area below z). Remember: half the curve (50%) lies on each side. To find the area **between** two z scores on the same side, subtract their table areas; on opposite sides, add them.
 
@@ -456,7 +472,7 @@ Q: Stanine 5 contains about what percentage of a normal group?
 - Probability runs from 0 (impossible) to 1 (certain): p(event) = favourable outcomes ÷ all equally likely outcomes.
 - **Addition rule** for mutually exclusive events: p(A or B) = p(A) + p(B). The chance of rolling a 1 or a 6 is 1/6 + 1/6 = 1/3.
 - **Multiplication rule** for independent events: p(A and B) = p(A) × p(B). Two heads in two tosses: 1/2 × 1/2 = 1/4.
-- **Binomial** situations (two outcomes, fixed number of trials): the number of correct guesses in 20 true–false items follows a binomial distribution. With many trials it approaches the normal curve.
+- **Binomial** situations (two outcomes, fixed number of trials): the number of correct guesses in 20 true-false items follows a binomial distribution. With many trials it approaches the normal curve.
 
 ### The sampling distribution and the standard error
 Imagine drawing thousands of samples of 100 students and computing each sample's mean. Those means form the **sampling distribution of the mean**. Three facts (the **central limit theorem**):
@@ -468,6 +484,10 @@ The standard error measures how much sample means bounce around by chance. **Big
 
 :::widget guess
 {"prompt": "A survey with 100 people gives a standard error of 2 points. If the team surveys 400 people instead (same SD), what will the standard error be?", "min": 0, "max": 4, "step": 0.5, "unit": "points", "answer": [1, 1], "reveal": "1 point. SE = SD ÷ √n, so multiplying n by 4 multiplies √n by 2 and halves the SE. Precision rises with the square root of the sample size, which is why each extra gain in precision costs more."}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "The sampling distribution of the mean", "caption": "Read the curve as the spread of means from many samples. 95% of sample means fall within 1.96 standard errors of the population mean, which is why M ± 1.96 SE gives a 95% interval."}
 :::
 
 ### Confidence intervals
@@ -525,6 +545,10 @@ Q: The probability of rolling two sixes with two dice is:
 5. Decide: if p is at or below α, **reject H0** ("statistically significant"); otherwise **fail to reject H0**.
 6. Report the effect size and confidence interval, and interpret in plain words.
 
+:::widget flow
+{"title": "Hypothesis testing, step by step", "layout": "chain", "nodes": [{"id": "n0", "label": "State H0 and H1", "detail": "No difference, and its opposite"}, {"id": "n1", "label": "Set α", "detail": "Usually .05, before the data"}, {"id": "n2", "label": "Compute the statistic", "detail": "z, t, F or χ²"}, {"id": "n3", "label": "Find p", "detail": "Or compare with the critical value"}, {"id": "n4", "label": "Decide", "detail": "Reject H0 if p is at or below α"}, {"id": "n5", "label": "Report the size", "detail": "Effect size and confidence interval"}]}
+:::
+
 ### What p means, exactly
 **p is the probability of getting results at least as extreme as yours if the null hypothesis were true.** That is all.
 - p is **not** the probability that the null is true.
@@ -543,6 +567,14 @@ Q: The probability of rolling two sixes with two dice is:
 
 :::mnemonic Type I and Type II
 Think of a court. H0 = "the accused is innocent". **Type I** = convicting an innocent person (crying wolf). **Type II** = letting a guilty person go (missing the wolf). The first is the "I"nnocent convicted.
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Two-tailed p values on the curve", "caption": "Set z to 1.96: each tail holds 2.5%, so the two-tailed p is .05. Set z to 2.58 for p = .01. A one-tailed test puts all of α in one tail, so its critical z is only 1.645."}
+:::
+
+:::widget curve
+{"kind": "sdt", "title": "Signal detection: the same trade-off as Type I and Type II errors", "caption": "Move the criterion. Saying 'yes, an effect' more readily raises hits (power) but also false alarms (Type I errors). Pulling the distributions apart (a bigger d′, like a bigger effect or a bigger sample) raises hits without extra false alarms."}
 :::
 
 ### One-tailed and two-tailed tests
@@ -631,6 +663,10 @@ Tied ranks get the average of the ranks they occupy.
 {"title": "Spearman's rho by hand", "steps": [{"q": "Two interviewers at a Hyderabad clinic score six trainees: Interviewer A: 85, 70, 90, 60, 75, 80. Interviewer B: 78, 65, 88, 70, 60, 82. Rank each set (1 = highest).", "a": "A ranks: 2, 5, 1, 6, 4, 3. B ranks: 3, 5, 1, 4, 6, 2."}, {"q": "Find each d (A rank − B rank) and Σd².", "a": "d = −1, 0, 0, 2, −2, 1. d² = 1, 0, 0, 4, 4, 1. Σd² = 10."}, {"q": "Compute rho.", "a": "ρ = 1 − (6 × 10) ÷ [6 × (36 − 1)] = 1 − 60 ÷ 210 = 1 − .286 = .71."}, {"q": "With n = 6 the two-tailed critical value at .05 is .886. Conclusion?", "a": ".71 is a strong positive agreement in this sample, but it does not reach significance with only six trainees. Small n, low power."}]}
 :::
 
+:::widget flow
+{"title": "Choosing a correlation coefficient", "layout": "tree", "nodes": [{"id": "q", "label": "What are the two variables?", "detail": "Start here"}, {"id": "cc", "label": "Both continuous", "detail": "", "parent": "q"}, {"id": "rk", "label": "Both ranks or ordinal", "detail": "", "parent": "q"}, {"id": "dc", "label": "One dichotomy, one continuous", "detail": "", "parent": "q"}, {"id": "dd", "label": "Both dichotomies", "detail": "", "parent": "q"}, {"id": "pr", "label": "Pearson r", "detail": "Linear relation", "parent": "cc"}, {"id": "eta", "label": "Eta", "detail": "Curved relation", "parent": "cc"}, {"id": "sp", "label": "Spearman rho or Kendall tau", "detail": "Tau for small samples with ties", "parent": "rk"}, {"id": "pb", "label": "Point-biserial", "detail": "True dichotomy", "parent": "dc"}, {"id": "bs", "label": "Biserial", "detail": "Artificial dichotomy", "parent": "dc"}, {"id": "phi", "label": "Phi", "detail": "Both true", "parent": "dd"}, {"id": "tet", "label": "Tetrachoric", "detail": "Both artificial", "parent": "dd"}]}
+:::
+
 ### The special correlations
 | Coefficient | Variable 1 | Variable 2 | Example |
 |---|---|---|---|
@@ -658,7 +694,7 @@ Tied ranks get the average of the ranks they occupy.
 :::
 
 :::widget sort
-{"prompt": "Which correlation coefficient fits each pair?", "buckets": ["Point-biserial", "Biserial", "Phi", "Spearman or Kendall"], "items": [{"text": "Gender (male, female) and score on a stigma scale", "bucket": 0}, {"text": "Passed or failed the entrance (from marks) and hours of preparation", "bucket": 1, "why": "Pass or fail is an artificial split of continuous marks."}, {"text": "Gender and whether the person has ever used counselling (yes or no)", "bucket": 2}, {"text": "Ranks given by two coaches to 8 cricketers", "bucket": 3}, {"text": "Item answered right or wrong and total test score (item analysis)", "bucket": 0, "why": "Right or wrong is a true dichotomy at the item level, so item–total correlations are point-biserial."}, {"text": "Class rank and rank in a debate competition", "bucket": 3}]}
+{"prompt": "Which correlation coefficient fits each pair?", "buckets": ["Point-biserial", "Biserial", "Phi", "Spearman or Kendall"], "items": [{"text": "Gender (male, female) and score on a stigma scale", "bucket": 0}, {"text": "Passed or failed the entrance (from marks) and hours of preparation", "bucket": 1, "why": "Pass or fail is an artificial split of continuous marks."}, {"text": "Gender and whether the person has ever used counselling (yes or no)", "bucket": 2}, {"text": "Ranks given by two coaches to 8 cricketers", "bucket": 3}, {"text": "Item answered right or wrong and total test score (item analysis)", "bucket": 0, "why": "Right or wrong is a true dichotomy at the item level, so item-total correlations are point-biserial."}, {"text": "Class rank and rank in a debate competition", "bucket": 3}]}
 :::
 
 :::recall
@@ -709,6 +745,10 @@ t-tests compare **two means** (or one mean with a known value) when the populati
 | **One-sample t** | Does a sample mean differ from a known value? | n − 1 | Do these patients' IQs differ from 100? |
 | **Independent-samples t** | Do two separate groups differ? | n1 + n2 − 2 | CBT group versus waiting list |
 | **Paired (dependent, related) t** | Do two related sets of scores differ? | n − 1 (n pairs) | Before versus after therapy; matched pairs; twins |
+
+:::widget flow
+{"title": "Which t-test?", "layout": "tree", "nodes": [{"id": "q", "label": "Comparing means", "detail": "Two means, or one mean against a value"}, {"id": "one", "label": "One sample against a known value", "detail": "One-sample t, df n − 1", "parent": "q"}, {"id": "two", "label": "Two sets of scores", "detail": "", "parent": "q"}, {"id": "ind", "label": "Different people", "detail": "Independent t, df n1 + n2 − 2; check Levene", "parent": "two"}, {"id": "rel", "label": "Same or matched people", "detail": "Paired t, df n − 1 pairs", "parent": "two"}]}
+:::
 
 ### Assumptions
 1. The DV is interval or ratio.
@@ -776,11 +816,15 @@ Q: Levene's test gives p = .01. You should:
 {"title": "Chi-square test of independence (2 × 2)", "steps": [{"q": "Among 100 students in Guwahati: 50 women (30 sought help for distress, 20 did not) and 50 men (15 sought help, 35 did not). Find the row and column totals.", "a": "Rows: women 50, men 50. Columns: sought help 45, did not 55. N = 100."}, {"q": "Compute the four expected frequencies.", "a": "Women, sought: 50 × 45 ÷ 100 = 22.5. Women, not: 50 × 55 ÷ 100 = 27.5. Men, sought: 22.5. Men, not: 27.5."}, {"q": "Compute each (O − E)² ÷ E and sum.", "a": "(30 − 22.5)² ÷ 22.5 = 56.25 ÷ 22.5 = 2.50. (20 − 27.5)² ÷ 27.5 = 2.05. (15 − 22.5)² ÷ 22.5 = 2.50. (35 − 27.5)² ÷ 27.5 = 2.05. χ² = 9.09."}, {"q": "df, decision and effect size. (Critical χ² for df 1 at .05 is 3.84.)", "a": "df = (2 − 1)(2 − 1) = 1. 9.09 exceeds 3.84: help-seeking is related to gender. Effect size phi = √(χ² ÷ N) = √(9.09 ÷ 100) = .30, a medium association. APA: χ²(1, N = 100) = 9.09, p = .003, φ = .30."}], "yourTurn": [{"q": "In a 3 × 4 table, what are the df? And what effect size would you report instead of phi?", "a": "df = (3 − 1)(4 − 1) = 6. For tables bigger than 2 × 2, report Cramér's V = √[χ² ÷ (N × (k − 1))], where k is the smaller of the number of rows and columns."}]}
 :::
 
+:::widget flow
+{"title": "Which chi-square?", "layout": "tree", "nodes": [{"id": "q", "label": "Counts in categories", "detail": "Nominal data"}, {"id": "one", "label": "One variable", "detail": "Goodness of fit, df k − 1", "parent": "q"}, {"id": "two", "label": "Two variables", "detail": "", "parent": "q"}, {"id": "ind", "label": "Independent people", "detail": "Test of independence, df (r − 1)(c − 1); Fisher's exact test if expected counts are small", "parent": "two"}, {"id": "rel", "label": "Same people twice", "detail": "McNemar test", "parent": "two"}]}
+:::
+
 ### Assumptions and cautions
 - Observations are **independent**: each person counts **once**, in one cell.
 - Use **frequencies**, never percentages or means.
 - **Expected** frequencies should be **at least 5** in most cells (a common rule: no cell below 1, and no more than 20% of cells below 5). For small 2 × 2 tables use **Fisher's exact test**; **Yates' correction for continuity** was used for 2 × 2 tables with df 1 but is now thought too conservative.
-- For **related** (before–after) dichotomous data on the same people, use **McNemar's test**, not ordinary chi-square.
+- For **related** (before-after) dichotomous data on the same people, use **McNemar's test**, not ordinary chi-square.
 - Chi-square tells you **whether** there is an association, not its direction or cause; inspect the cells (or standardised residuals) to see where the difference lies.
 
 :::recall
@@ -788,7 +832,7 @@ Q: Levene's test gives p = .01. You should:
 2. How do you compute an expected frequency in a contingency table? || Row total × column total ÷ N.
 3. df for a goodness-of-fit test and for a test of independence? || k − 1; (rows − 1)(columns − 1).
 4. What is the usual rule about expected frequencies? || They should be at least 5 in most cells; otherwise combine categories or use Fisher's exact test.
-5. Which test for before–after yes/no data on the same people? || McNemar's test.
+5. Which test for before-after yes/no data on the same people? || McNemar's test.
 :::
 
 :::mcq
@@ -895,7 +939,7 @@ Q: n = 5 pairs, Σd² = 4. Spearman's rho is:
 - .90
 > 1 − (6 × 4) ÷ (5 × 24) = 1 − 24/120 = .80.
 
-Q: Before–after scores of 12 patients on a depression scale are best compared with a:
+Q: Before-after scores of 12 patients on a depression scale are best compared with a:
 - *Paired t-test
 - Independent t-test
 - Chi-square test

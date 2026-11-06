@@ -19,6 +19,10 @@ A **paradigm** (Thomas Kuhn's term) is a shared set of assumptions about the wor
 | **Critical theory** (including feminist, Marxist, Dalit and decolonial approaches) | Reality shaped by power, history and social structures | Knowledge is political; research should empower | Participatory action research, critical discourse analysis |
 | **Pragmatism** | Reality is what works in practice | Use whatever answers the question | Mixed methods |
 
+:::widget layers
+{"title": "From beliefs to methods", "shape": "stack", "layers": [{"label": "Ontology", "detail": "What is real?"}, {"label": "Epistemology", "detail": "How can we know it?"}, {"label": "Methodology", "detail": "So, what strategy of inquiry?"}, {"label": "Methods", "detail": "The actual techniques: interviews, surveys, experiments"}], "caption": "Each layer follows from the one above it."}
+:::
+
 ### The main qualitative approaches
 | Approach | Aim | Key people and ideas |
 |---|---|---|
@@ -45,6 +49,14 @@ A **paradigm** (Thomas Kuhn's term) is a shared set of assumptions about the wor
 6. **Produce the report**, with vivid extracts tied to the research question.
 
 A **theme** captures something important about the data in relation to the question; it is not simply a topic that came up often. Analysis can be **inductive** (data-driven) or **deductive** (theory-driven), and **semantic** (surface meaning) or **latent** (underlying ideas).
+
+:::widget flow
+{"title": "Braun and Clarke's six phases", "layout": "chain", "nodes": [{"id": "n0", "label": "Familiarise", "detail": "Transcribe, read and re-read, note ideas"}, {"id": "n1", "label": "Code", "detail": "Label meaningful features across all data"}, {"id": "n2", "label": "Generate themes", "detail": "Group codes into candidate themes"}, {"id": "n3", "label": "Review themes", "detail": "Check against extracts and the whole data set"}, {"id": "n4", "label": "Define and name", "detail": "A clear story for each theme"}, {"id": "n5", "label": "Write up", "detail": "Vivid extracts tied to the question"}], "caption": "In practice you move back and forth between phases."}
+:::
+
+:::widget flow
+{"title": "Grounded theory coding", "layout": "chain", "nodes": [{"id": "n0", "label": "Open coding", "detail": "Break data into concepts"}, {"id": "n1", "label": "Axial coding", "detail": "Relate categories to each other"}, {"id": "n2", "label": "Selective coding", "detail": "Choose a core category"}, {"id": "n3", "label": "Theory", "detail": "An explanatory model grounded in the data"}], "caption": "Constant comparison and theoretical sampling run through every stage until saturation."}
+:::
 
 ### Quality in qualitative research
 Reliability and validity are replaced by **trustworthiness**, in Yvonna Lincoln and Egon Guba's framework:
@@ -115,6 +127,10 @@ Q: The paradigm behind most mixed-methods research is:
 
 Notation introduced by Janice Morse: capitals show the dominant strand, an arrow shows sequence, a plus sign shows simultaneity: QUAN → qual; QUAL + quan.
 
+:::widget flow
+{"title": "Three mixed-methods designs", "layout": "chain", "nodes": [{"id": "n0", "label": "Convergent", "detail": "QUAN and QUAL at once, then merged"}, {"id": "n1", "label": "Explanatory sequential", "detail": "QUAN first, then qual to explain it"}, {"id": "n2", "label": "Exploratory sequential", "detail": "QUAL first, then quan to build and test a tool"}]}
+:::
+
 ### Programme evaluation
 Evaluation judges the **worth** of a programme so decisions can be made.
 - **Formative** evaluation improves a programme while it runs; **summative** evaluation judges it at the end, a distinction drawn by Michael Scriven.
@@ -124,6 +140,10 @@ Evaluation judges the **worth** of a programme so decisions can be made.
 - A **logic model** links inputs, activities, outputs, outcomes and impact.
 
 Indian example: Kerala's community and school-based mental health programmes, or the evaluation of Tele-MANAS (the national tele-mental health helpline launched in 2022), would need process data (calls answered, waiting times, counsellor fidelity) and outcome data (distress before and after, referrals completed).
+
+:::widget flow
+{"title": "A logic model", "layout": "chain", "nodes": [{"id": "n0", "label": "Inputs", "detail": "Trained staff, money, space"}, {"id": "n1", "label": "Activities", "detail": "Sessions, workshops"}, {"id": "n2", "label": "Outputs", "detail": "Sessions held, people reached"}, {"id": "n3", "label": "Outcomes", "detail": "Change in the people reached"}, {"id": "n4", "label": "Impact", "detail": "Longer-term, wider change"}], "caption": "Process evaluation checks the first three; outcome and impact evaluation check the last two."}
+:::
 
 ### Internet-based research
 Online surveys, experiments on platforms, social media data and digital phenotyping (passive phone data).
@@ -139,6 +159,10 @@ From strongest to weakest for questions about treatment effects:
 5. **Cross-sectional surveys**
 6. **Case series and case reports**
 7. **Expert opinion**
+
+:::widget layers
+{"title": "The evidence pyramid (for treatment questions)", "shape": "pyramid", "layers": [{"label": "Systematic reviews and meta-analyses", "detail": "Combine many trials"}, {"label": "Randomised controlled trials", "detail": "Random assignment controls confounding"}, {"label": "Cohort studies", "detail": "Follow exposed and unexposed people forward"}, {"label": "Case-control studies", "detail": "Start from cases, look back"}, {"label": "Cross-sectional surveys", "detail": "One point in time"}, {"label": "Case series and reports", "detail": "Descriptions of individual patients"}, {"label": "Expert opinion", "detail": "Least protected from bias"}], "caption": "Higher is stronger, provided the studies themselves are good."}
+:::
 
 Trials are reported using **CONSORT** and must be registered before recruitment; in India on the **Clinical Trials Registry of India (CTRI)**. Systematic reviews follow **PRISMA**. **Cluster RCTs** randomise groups instead of individuals: Vikram Patel's **MANAS** trial in Goa randomised primary-care clinics to test lay counsellors for common mental disorders.
 
@@ -190,9 +214,13 @@ Ethics is not a form to fill in at the end. It shapes the question, the design a
 | Zimbardo's Stanford prison study (1971) | Abuse escalated; stopped early; researcher was also the "superintendent" | Concerns about role conflict and harm |
 | Watson and Rayner's Little Albert study (1920) | An infant was conditioned to fear without any de-conditioning | Protection of children and vulnerable people |
 
+:::widget flow
+{"title": "From proposal to publication: the ethics path", "layout": "chain", "nodes": [{"id": "n0", "label": "Protocol", "detail": "Design, risks, consent forms"}, {"id": "n1", "label": "Ethics committee", "detail": "Approval before any data"}, {"id": "n2", "label": "Trial registration", "detail": "CTRI for trials"}, {"id": "n3", "label": "Informed consent", "detail": "Voluntary, understood, right to withdraw"}, {"id": "n4", "label": "Data collection", "detail": "With a risk protocol"}, {"id": "n5", "label": "Debrief", "detail": "Especially after deception"}, {"id": "n6", "label": "Honest reporting", "detail": "No fabrication, falsification or plagiarism"}]}
+:::
+
 ### The Belmont principles
 1. **Respect for persons:** treat people as autonomous; **informed consent**; extra protection for those with reduced autonomy.
-2. **Beneficence:** do no harm; maximise benefits and minimise risks (risk–benefit assessment).
+2. **Beneficence:** do no harm; maximise benefits and minimise risks (risk-benefit assessment).
 3. **Justice:** fair distribution of the burdens and benefits of research (do not test on the poor and sell to the rich).
 
 ### Indian rules
@@ -278,19 +306,23 @@ Q: Running many analyses and reporting only the one that reaches significance is
 
 A **thesis or dissertation** usually has chapters: introduction, review of literature, method, results, discussion, summary and conclusions, references and appendices, plus front matter (certificate, declaration, acknowledgements, contents, list of tables).
 
+:::widget flow
+{"title": "The shape of a research article", "layout": "chain", "nodes": [{"id": "n0", "label": "Introduction", "detail": "Broad to narrow: problem, literature, gap, hypotheses"}, {"id": "n1", "label": "Method", "detail": "Enough detail to repeat exactly"}, {"id": "n2", "label": "Results", "detail": "Findings without interpretation"}, {"id": "n3", "label": "Discussion", "detail": "Narrow to broad: meaning, limits, implications"}], "caption": "Think of an hourglass: wide, narrow, narrow, wide."}
+:::
+
 ### APA 7 essentials
-- **In-text citation:** author–date. One author: the surname and year in brackets. Two authors: both surnames joined by an ampersand inside brackets, or by "and" in running text. **Three or more authors:** the first author's surname followed by the Latin short form for "and others" (from *et alii*), from the very first citation.
+- **In-text citation:** author-date. One author: the surname and year in brackets. Two authors: both surnames joined by an ampersand inside brackets, or by "and" in running text. **Three or more authors:** the first author's surname followed by the Latin short form for "and others", from the very first citation.
 - **Direct quotes** also need the page number after the year.
-- **Journal article reference:** Author, A. A., & Author, B. B. (Year). Title of article in sentence case. *Journal Name in Title Case, volume*(issue), pages, then the DOI.
+- **Journal article reference:** Author, A. A., & Author, B. B. (Year). Title of article in sentence case. *Journal Name in Title Case, volume*(issue), pages, then the article's digital object identifier as a web address.
 - **Book:** Author, A. A. (Year). *Title of book in sentence case and italics* (2nd ed.). Publisher. (No publisher location in APA 7.)
-- **Chapter in an edited book:** Author, A. A. (Year). Title of chapter. In E. E. Editor (Ed.), *Title of book* (pp. xx–xx). Publisher.
+- **Chapter in an edited book:** Author, A. A. (Year). Title of chapter. In E. E. Editor (Ed.), *Title of book* (pp. xx-xx). Publisher.
 - Up to **20 authors** are listed in a reference; with 21 or more, list the first 19, an ellipsis, then the last.
-- The DOI (a permanent digital identifier) is written as a full web address. Reference list: alphabetical by first author's surname, **hanging indent**, double-spaced.
+- The digital object identifier (a permanent ID for an article) is written as a web address. Reference list: alphabetical by first author's surname, **hanging indent**, double-spaced.
 - Numbers: use words for zero to nine and numerals for 10 and above (with many exceptions for statistics, ages and measurements). Statistical symbols are italicised (*M*, *SD*, *t*, *F*, *p*). Do not put a zero before a value that cannot exceed 1 (*p* = .03, *r* = .45).
-- Other styles you should recognise: **MLA** (humanities: author–page), **Chicago** (notes and bibliography, or author–date), **Vancouver** (numbered, used in medicine and many Indian medical journals) and **Harvard** (author–date, close to APA).
+- Other styles you should recognise: **MLA** (humanities: author-page), **Chicago** (notes and bibliography, or author-date), **Vancouver** (numbered, used in medicine and many Indian medical journals) and **Harvard** (author-date, close to APA).
 
 :::widget worked
-{"title": "Fix this reference into APA 7", "steps": [{"q": "A student's draft lists an invented article like this: 'Kumar R, Iyer S, Das P and Mehta A. Exam anxiety in Indian adolescents, a cross-sectional study. Journal of Student Wellbeing 2022; 49(2): 101-110.' Start with the authors. How should they look?", "a": "Surname, then initials with full stops, commas between names, and an ampersand before the last: Kumar, R., Iyer, S., Das, P., & Mehta, A."}, {"q": "Next, the year and the article title.", "a": "The year in brackets, then the title in sentence case; the first word after a colon is capitalised: (2022). Exam anxiety in Indian adolescents: A cross-sectional study."}, {"q": "Next, the journal, volume, issue and pages.", "a": "Journal name and volume in italics; the issue in brackets, not italic; an en dash between pages: Journal of Student Wellbeing, 49(2), 101–110. If the article has a DOI, it goes last, as a full web address."}, {"q": "How is this four-author work cited in the text?", "a": "By the first surname, the Latin short form for 'and others', and the year, from the very first citation. In running text: 'Kumar and colleagues found …'."}], "yourTurn": [{"q": "You quote one sentence (on p. 56) from an invented 2019 book by two authors, Patel and Rao. What must the in-text citation contain?", "a": "Both surnames (joined by an ampersand inside brackets, or 'and' in running text), the year, and the page number, written as p. 56."}]}
+{"title": "Fix this reference into APA 7", "steps": [{"q": "A student's draft lists an invented article like this: 'Kumar R, Iyer S, Das P and Mehta A. Exam anxiety in Indian adolescents, a cross-sectional study. Journal of Student Wellbeing 2022; 49(2): 101-110.' Start with the authors. How should they look?", "a": "Surname, then initials with full stops, commas between names, and an ampersand before the last: Kumar, R., Iyer, S., Das, P., & Mehta, A."}, {"q": "Next, the year and the article title.", "a": "The year in brackets, then the title in sentence case; the first word after a colon is capitalised: (2022). Exam anxiety in Indian adolescents: A cross-sectional study."}, {"q": "Next, the journal, volume, issue and pages.", "a": "Journal name and volume in italics; the issue in brackets, not italic; an en dash between pages: Journal of Student Wellbeing, 49(2), 101-110. If the article has a digital object identifier, it goes last, as a web address."}, {"q": "How is this four-author work cited in the text?", "a": "By the first surname, the Latin short form for 'and others', and the year, from the very first citation. In running text: 'Kumar and colleagues found …'."}], "yourTurn": [{"q": "You quote one sentence from a particular page of an invented 2019 book by two authors, Patel and Rao. What must the in-text citation contain?", "a": "Both surnames (joined by an ampersand inside brackets, or 'and' in running text), the year, and the page number (written with the abbreviation for page)."}]}
 :::
 
 ### Writing the results in APA style
@@ -342,6 +374,10 @@ How should a scientist treat a startling claim, such as that the mind can move o
 - **Publication bias:** journals publish "hits"; failures sit in file drawers (Rosenthal's **file-drawer problem**). A **funnel plot** of study size against effect size reveals it.
 - **Low power:** small studies that find an effect usually **overestimate** it (the winner's curse).
 - **The replication crisis:** in 2015 the **Open Science Collaboration**, a large team of researchers, repeated 100 published psychology studies; about 36% gave significant results again, with effects about half the original size. John Ioannidis had argued in 2005 that "most published research findings are false" when studies are small, effects are small and flexibility is high.
+
+:::widget flow
+{"title": "How the literature gets inflated", "layout": "cycle", "nodes": [{"id": "n0", "label": "Small studies", "detail": "Low power"}, {"id": "n1", "label": "Flexible analysis", "detail": "Many ways to reach p below .05"}, {"id": "n2", "label": "Only hits published", "detail": "Failures stay in the file drawer"}, {"id": "n3", "label": "Inflated effects", "detail": "The published record overstates the truth"}, {"id": "n4", "label": "New studies planned on them", "detail": "Underpowered again"}], "caption": "Open-science fixes break this loop at each step."}
+:::
 
 ### The fixes: open science
 - **Preregistration:** hypotheses, sample size and analysis plan are posted publicly before data collection (on OSF, AsPredicted, or CTRI for trials).
@@ -422,270 +458,5 @@ Q: A depression trial uses "health education classes of the same length" as the 
 - Instrumentation
 - Maturation of the patients only
 > An active control matches the non-specific ingredients.
-:::
-
-# Part IV · Exam zone
-
-## 4.1 Long answers, short notes and viva [core]
-
-### Long answer skeletons (15 to 20 marks)
-**1. What is an experimental design? Describe the true experimental designs and the threats to internal validity they control.**
-- Define an experiment: manipulation, control, random assignment; Kerlinger's MAXMINCON.
-- Campbell and Stanley notation (R, O, X), with pre-experimental designs as the contrast.
-- Posttest-only control group; pretest–posttest control group; Solomon four-group, each with its diagram, strengths and limits.
-- Factorial designs: main effects and interactions, with a 2 × 2 example.
-- Table of the eight threats and which design controls each; note that randomisation controls selection and its interactions, the control group controls history, maturation, testing, instrumentation and regression; Solomon additionally controls testing × treatment.
-- Conclude with the internal–external validity trade-off.
-
-**2. Discuss probability and non-probability sampling with examples. What decides sample size?**
-- Population, frame, unit, parameter versus statistic; sampling error versus bias.
-- Four or five probability methods with procedure, example, strengths and limits; four or five non-probability methods likewise.
-- When non-probability sampling is the right choice (qualitative work, hidden populations, pilots).
-- Determinants of sample size: effect size, power, alpha, variability, design and cluster effects, attrition; a worked survey example (n of about 385).
-- Indian example: NMHS multistage stratified cluster design.
-
-**3. Compare quantitative and qualitative research. Describe any two qualitative approaches in detail.**
-- Paradigms: positivism, post-positivism, constructivism, critical theory, pragmatism (ontology and epistemology).
-- Contrast table: aims, sampling, data, analysis, role of the researcher, quality criteria.
-- Two approaches in depth: for example, grounded theory (coding stages, constant comparison, theoretical sampling, saturation) and IPA (idiographic, double hermeneutic, homogeneous samples).
-- Trustworthiness (Lincoln and Guba), triangulation (Denzin), reflexivity.
-- Mixed methods as integration.
-
-**4. Discuss ethical issues in psychological research with reference to Indian guidelines.**
-- History: Nuremberg, Helsinki, Tuskegee, Milgram, Zimbardo.
-- Belmont principles; APA Standard 8 (consent, deception, debriefing, credit).
-- India: ICMR 2017, ethics committees, CTRI, MHCA 2017 Section 99, DPDP Act 2023.
-- Special issues: vulnerable groups, language and literacy, family presence, community consent, online research.
-- Integrity: FFP, UGC 2018 plagiarism levels, questionable practices, open science.
-
-**5. What are single-subject designs? Describe their types and how data are analysed.**
-- Rationale (idiographic, clinical accountability, rare problems); repeated measurement; baseline logic.
-- AB, ABA, ABAB, multiple baseline (three kinds), changing criterion, alternating treatments, each with a sketch.
-- Visual analysis: level, trend, variability, immediacy, overlap.
-- Strengths and limits; ethical problems of withdrawal.
-
-### Short notes (5 marks each): outline points
-- **Operational definition:** Bridgman; measured versus experimental; replicability; converging operations.
-- **Hypothesis:** definition; characteristics; null versus alternative; directional versus non-directional; you never prove it.
-- **Moderator and mediator:** Baron and Kenny; "when or for whom" versus "how"; one example each.
-- **Solomon four-group design:** four groups diagram; controls pretest sensitisation; cost.
-- **Hawthorne effect:** origin; reactivity; controls (habituation, placebo-attention controls).
-- **Ex post facto research:** Kerlinger's definition; examples; self-selection; cannot prove cause.
-- **Interrupted time-series design:** many observations before and after; level and slope; history threat; comparison series.
-- **Cross-sequential design:** Schaie; separates age, cohort and time.
-- **Thematic analysis:** Braun and Clarke's six phases; semantic versus latent; reflexive approach.
-- **Triangulation:** Denzin's four types.
-- **Informed consent:** elements; assent; literacy and language in India.
-- **APA style referencing:** in-text rules; journal and book formats; DOI.
-- **Replication crisis:** OSC 2015; causes; open-science remedies.
-
-:::viva
-What is the difference between random sampling and random assignment? :: Random sampling decides who enters the study and protects external validity. Random assignment decides who gets which condition and protects internal validity.
-Can a correlational study ever suggest cause? :: It can make a causal explanation more or less plausible (temporal order in longitudinal data, ruling out measured confounders, dose–response), but without manipulation and random assignment it cannot establish cause.
-Why is statistical regression a problem in clinical studies? :: Patients usually seek help when at their worst, so they tend to improve on retest anyway. Without a control group, this natural drift looks like a treatment effect.
-How would you decide your sample size for an M.Phil or M.A. dissertation? :: By an a priori power analysis using the expected effect size from past studies, alpha .05 and power .80, adjusted for drop-out; for qualitative work, by information power and the approach (for example, 3 to 10 for IPA).
-What is reflexivity, and why does it matter in India? :: The researcher's ongoing examination of how their own position shapes the research. Caste, class, gender, language and urban–rural differences strongly shape access, trust and what people say.
-Is a meta-analysis always the best evidence? :: Only if the included studies are good and the search is complete. Combining biased or small studies, or missing unpublished ones, gives a precise but wrong answer (garbage in, garbage out).
-:::
-
-## 4.2 Module test [core]
-Twenty-eight questions across the module. Aim for 22 or more.
-
-:::mcq
-Q: The scientific method differs from other ways of knowing mainly because it:
-- *Has built-in ways of finding and fixing its own errors
-- Relies on the most qualified experts
-- Builds on common sense and tradition
-- Reaches conclusions that never need changing
-> Public, replicable testing makes self-correction possible.
-
-Q: Which is NOT one of Kerlinger's criteria for a good research problem?
-- It expresses a relation between variables
-- *It has already been answered in the literature
-- It is stated clearly as a question
-- It implies the possibility of empirical testing
-> A problem should fill a gap, not repeat answered work.
-
-Q: Researchers find that stress raises blood pressure mainly by increasing cortisol. Cortisol is a:
-- Moderator
-- *Mediator
-- Confounding variable
-- Constant
-> It is the mechanism in the middle.
-
-Q: "There will be no significant difference in recall between the music and silence groups" is a:
-- Directional hypothesis
-- *Null hypothesis
-- Research hypothesis
-- Descriptive hypothesis
-> It states no difference.
-
-Q: A list of patients sorted by hospital ward, with every 10th patient chosen, produces a sample made up only of patients in bed 10 of each ward. This problem is:
-- Snowballing
-- Quota bias
-- Coverage error
-- *Periodicity in systematic sampling
-> A repeating pattern in the list matches the sampling interval.
-
-Q: In disproportionate stratified sampling, small strata are oversampled so that:
-- The sample becomes a non-probability sample
-- Weighting of the results is never needed afterwards
-- Sampling error rises
-- *Subgroups have enough people to compare
-> Then weights restore population shares for overall estimates.
-
-Q: A sample is chosen to include exactly 40 men and 60 women, with interviewers picking whoever is available. This is:
-- Stratified random sampling
-- Cluster sampling
-- Systematic sampling
-- *Quota sampling
-> Categories are filled by convenience.
-
-Q: Kerlinger's principle for designing experiments is:
-- PICO
-- CIPP
-- *MAXMINCON
-- IMRaD
-> Maximise systematic, minimise error, control extraneous variance.
-
-Q: Which design controls for the interaction of pretesting with the treatment?
-- *Solomon four-group
-- Pretest–posttest control group
-- Static-group comparison
-- Posttest-only control group
-> Pretested and unpretested treatment groups are compared.
-
-Q: A 2 × 2 graph shows two lines that cross. This indicates:
-- No main effects
-- A ceiling effect
-- Perfect reliability
-- *A disordinal (crossover) interaction
-> The effect of one IV reverses across levels of the other.
-
-Q: In a within-subjects study, performance improves on later conditions simply because of practice. The fix is:
-- Random sampling
-- A larger sample
-- A one-tailed test
-- *Counterbalancing the order of conditions
-> Counterbalancing spreads order effects across conditions.
-
-Q: A memory study runs from January to June, and the participants (all aged 3) improve on every task. A likely explanation without any treatment is:
-- History
-- Instrumentation
-- *Maturation
-- Attrition
-> Natural development over months in young children.
-
-Q: In Rosenthal and Jacobson's classroom study, children labelled as likely to "bloom" gained more. This illustrates:
-- The Hawthorne effect
-- The John Henry effect
-- *The expectancy (Pygmalion) effect
-- Demand characteristics of participants
-> Teachers' expectations shaped outcomes.
-
-Q: WEIRD samples mainly threaten:
-- Internal validity
-- *External (population) validity
-- Statistical conclusion validity
-- Inter-rater reliability
-> Findings may not generalise beyond such samples.
-
-Q: Students below a cut-off on an entrance score get a bridge course; outcomes are compared just above and below the cut-off. This is a:
-- Solomon design
-- Case-control design
-- *Regression discontinuity design
-- Changing-criterion design
-> Assignment by cut-off score.
-
-Q: The main advantage of the multiple-baseline design over ABAB is that it:
-- Needs no baseline
-- Uses random assignment
-- *Does not require withdrawing the treatment
-- Uses large groups
-> Staggered start replaces withdrawal.
-
-Q: The problem of cross-sectional studies of ageing that Schaie's work exposed is:
-- Attrition
-- *Confounding of age with cohort
-- Practice effects
-- Observer drift
-> Different cohorts had different education and experiences.
-
-Q: "Have you stopped skipping classes?" is a poor survey question because it:
-- Is open-ended
-- Uses a Likert format with too few points
-- Is too short to be understood clearly
-- *Assumes something that may not be true
-> Either answer admits skipping classes.
-
-Q: A researcher spends 18 months living in a fishing community in Odisha to understand its beliefs about illness. The approach is:
-- *Ethnography
-- Grounded theory
-- Discourse analysis
-- Narrative analysis
-> Long immersion and participant observation.
-
-Q: In IPA, samples are usually:
-- Large and random
-- *Small, purposive and fairly homogeneous
-- Stratified by age
-- Made of experts only
-> To allow detailed, idiographic analysis.
-
-Q: Grounded theory data collection stops at:
-- *Theoretical saturation
-- 30 participants
-- The end of the budget
-- Statistical significance
-> When categories are fully developed and new data add nothing.
-
-Q: "Thick description" in qualitative research mainly supports:
-- Dependability
-- *Transferability
-- Credibility only
-- Statistical power
-> Readers can judge whether findings fit their setting.
-
-Q: A trial gives questionnaires, then interviews a few participants to understand puzzling results. The design is:
-- Convergent
-- *Explanatory sequential
-- Exploratory sequential
-- Ethnographic
-> Quantitative first, qualitative to explain.
-
-Q: The Belmont Report followed public outrage over:
-- The Milgram experiments
-- The Stanford prison study
-- The Hawthorne studies
-- *The Tuskegee syphilis study
-> Tuskegee led directly to the National Commission and Belmont.
-
-Q: Under the UGC 2018 plagiarism regulations, similarity of 35% in a thesis falls in:
-- Level 0
-- *Level 1
-- Level 2
-- Level 3
-> Above 10% and up to 40% is level 1.
-
-Q: In APA 7, the first surname plus the Latin short form for 'and others' is used from the first citation when a work has:
-- *Three or more authors
-- Two authors
-- Six or more authors
-- Only one author
-> APA 7 simplified the earlier rule.
-
-Q: Bem's 2011 precognition studies are important to research methods mainly because they:
-- *Showed that standard methods could produce false positives
-- Proved that precognition exists in most people
-- Were the first experiments on memory in psychology
-- Showed that qualitative methods are more valid
-> Failed replications highlighted flexible analyses and publication bias.
-
-Q: A preregistered study is one where:
-- *Hypotheses, sample size and analysis are fixed publicly in advance
-- Participants register online before they can take part
-- The ethics committee registers the researcher's name and institution
-- Raw results are posted online before any analysis is done
-> It limits researcher degrees of freedom and HARKing.
 :::
 `;

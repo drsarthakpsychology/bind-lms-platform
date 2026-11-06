@@ -17,6 +17,10 @@ In 1877 the philosopher Charles Sanders Peirce described four ways people settle
 
 Authority is not bad: you trust a good textbook. The point is that science is the only method that has a **built-in way of discovering its own mistakes**.
 
+:::widget layers
+{"title": "How sure can you be? Four ways of knowing", "shape": "stack", "layers": [{"label": "Science", "detail": "Tested against observations anyone can repeat; built-in error correction"}, {"label": "A priori (intuition)", "detail": "Feels self-evident; never tested"}, {"label": "Authority", "detail": "Accepted because of who says it"}, {"label": "Tenacity", "detail": "Held by habit, even against evidence"}], "caption": "From top to bottom: the further down, the less protection against error."}
+:::
+
 ### What makes a method scientific
 - **Empirical:** answers come from observation, not argument alone.
 - **Systematic and controlled:** observations are planned so that other explanations can be ruled out.
@@ -50,6 +54,14 @@ Kerlinger defined scientific research as "systematic, controlled, empirical, amo
 7. **Analyse** the data.
 8. **Interpret** the results against the hypotheses and the literature.
 9. **Report** (article, thesis), and let others check and repeat it.
+
+:::widget flow
+{"title": "The research process", "layout": "chain", "nodes": [{"id": "n0", "label": "Problem", "detail": "Find a specific, researchable question"}, {"id": "n1", "label": "Literature", "detail": "What is known, contested, missing"}, {"id": "n2", "label": "Hypotheses", "detail": "Testable predictions from theory"}, {"id": "n3", "label": "Variables", "detail": "Operational definitions"}, {"id": "n4", "label": "Design, sample, tools", "detail": "Choose how to test fairly"}, {"id": "n5", "label": "Ethics approval", "detail": "Before any data"}, {"id": "n6", "label": "Collect data", "detail": "Follow the plan"}, {"id": "n7", "label": "Analyse", "detail": "The planned tests"}, {"id": "n8", "label": "Interpret", "detail": "Against hypotheses and literature"}, {"id": "n9", "label": "Report", "detail": "So others can check and repeat"}], "caption": "Press Play to walk through it. Each step depends on the one before."}
+:::
+
+:::widget flow
+{"title": "Action research cycle", "layout": "cycle", "nodes": [{"id": "n0", "label": "Plan", "detail": "Spot a problem in your own practice and plan a change"}, {"id": "n1", "label": "Act", "detail": "Try the change"}, {"id": "n2", "label": "Observe", "detail": "Collect evidence of what happens"}, {"id": "n3", "label": "Reflect", "detail": "Judge what worked and why"}, {"id": "n4", "label": "Revise", "detail": "Adjust the plan and go again"}], "caption": "Kurt Lewin's spiral: practitioners improve their own setting in repeated loops."}
+:::
 
 The process is a cycle, not a line: good studies end with new questions.
 
@@ -98,7 +110,7 @@ Kerlinger's criteria: the problem should **express a relation between two or mor
 | **Dependent (DV)** | What is measured; the presumed effect | Exam anxiety score |
 | **Extraneous** | Any other variable that could affect the DV | Sleep, caffeine, exam difficulty |
 | **Confounding** | An extraneous variable that **varies along with the IV**, so you cannot tell which one caused the change | The yoga group also had a kinder teacher |
-| **Moderator** | Changes the **strength or direction** of the IV–DV relation | Yoga helps women more than men |
+| **Moderator** | Changes the **strength or direction** of the IV-DV relation | Yoga helps women more than men |
 | **Mediator (intervening)** | The **process through which** the IV affects the DV | Yoga improves sleep, and better sleep lowers anxiety |
 
 Other distinctions:
@@ -111,6 +123,10 @@ Other distinctions:
 
 :::widget sort
 {"prompt": "Study: 'Does a mindfulness app reduce rumination in depressed outpatients, and does it work better for those who use it at night?' Place each variable.", "buckets": ["Independent variable", "Dependent variable", "Moderator or mediator", "Extraneous or confounding"], "items": [{"text": "Getting the app vs getting usual care", "bucket": 0}, {"text": "Score on a rumination scale after 8 sessions", "bucket": 1}, {"text": "Whether the app is used at night or in the day", "bucket": 2, "why": "It changes the strength of the effect: a moderator."}, {"text": "Improved attention control, through which the app lowers rumination", "bucket": 2, "why": "The 'how' in the middle: a mediator."}, {"text": "Some patients also started an antidepressant during the study", "bucket": 3, "why": "If more of them were in the app group, it confounds the result."}, {"text": "Severity of depression at the start", "bucket": 3, "why": "An extraneous variable to control, for example by randomisation or as a covariate."}]}
+:::
+
+:::widget flow
+{"title": "Mediation: the 'how' in the middle", "layout": "chain", "nodes": [{"id": "n0", "label": "Yoga programme (IV)", "detail": "What the researcher gives"}, {"id": "n1", "label": "Better sleep (mediator)", "detail": "The mechanism"}, {"id": "n2", "label": "Lower anxiety (DV)", "detail": "The outcome"}], "edgeLabels": {"n0>n1": "improves", "n1>n2": "reduces"}, "caption": "A moderator would instead change the strength of these arrows, for example a stronger effect in women."}
 :::
 
 ### Operational definitions
@@ -163,6 +179,10 @@ A **hypothesis** is a tentative, testable statement about the relation between t
 - It is **clear and specific**: who, which variables, which direction.
 - It follows from **theory or past findings**, not from a hunch alone.
 - It is **simple** (parsimony) and limited in scope.
+
+:::widget flow
+{"title": "Kinds of hypothesis", "layout": "tree", "nodes": [{"id": "h", "label": "Hypothesis", "detail": "A testable statement about a relation"}, {"id": "r", "label": "Research (in words)", "detail": "The researcher's prediction", "parent": "h"}, {"id": "s", "label": "Statistical (in symbols)", "detail": "About population values", "parent": "h"}, {"id": "n", "label": "Null (H0)", "detail": "No difference or relation", "parent": "s"}, {"id": "a", "label": "Alternative (H1)", "detail": "The logical opposite of H0", "parent": "s"}, {"id": "d", "label": "Directional (one-tailed)", "detail": "Says which way", "parent": "a"}, {"id": "nd", "label": "Non-directional (two-tailed)", "detail": "Says only that there is a difference", "parent": "a"}]}
+:::
 
 ### Kinds of hypothesis
 | Kind | Meaning | Example |
@@ -225,6 +245,10 @@ Before you design anything, you find out what is already known. The **review of 
 - **Primary sources** report original research (a journal article, a thesis). **Secondary sources** summarise others' work (textbooks, review articles). Exams like to ask which is which: a meta-analysis is usually treated as a secondary (review) source, even though it produces new numbers.
 - Databases: **PubMed**, **PsycINFO** (APA), **Scopus**, **Web of Science**, **Google Scholar**. Indian sources: **Shodhganga** (Indian PhD theses, run by INFLIBNET), the national journals of Indian psychiatry and clinical psychology.
 - **Systematic reviews** search exhaustively with stated rules (and follow the PRISMA reporting guideline); **narrative reviews** are selective summaries.
+
+:::widget flow
+{"title": "How a systematic review filters studies", "layout": "chain", "nodes": [{"id": "n0", "label": "Identify", "detail": "Search all databases with a stated strategy"}, {"id": "n1", "label": "Remove duplicates", "detail": "Same study found twice"}, {"id": "n2", "label": "Screen", "detail": "Titles and abstracts against the rules"}, {"id": "n3", "label": "Eligibility", "detail": "Read full texts"}, {"id": "n4", "label": "Include", "detail": "Final studies, combined in a synthesis or meta-analysis"}], "caption": "This is the PRISMA flow that systematic reviews report."}
+:::
 
 ### A research proposal (synopsis) usually contains
 1. Title
@@ -416,6 +440,14 @@ India's **National Mental Health Survey (2015 to 2016)** interviewed about 35,00
 {"title": "Drawing a proportionate stratified sample", "steps": [{"q": "A university in Hyderabad has 2,000 undergraduates: 1,200 in arts, 500 in science, 300 in commerce. You want a sample of 200 that mirrors the faculties. What fraction of the population is the sample?", "a": "200 ÷ 2,000 = 0.10, so a 10% sampling fraction in every stratum."}, {"q": "How many students from each faculty?", "a": "Arts 1,200 × 0.10 = 120; science 500 × 0.10 = 50; commerce 300 × 0.10 = 30. Total 200."}, {"q": "How do you pick the 120 arts students?", "a": "Randomly, from the arts enrolment list (the frame for that stratum), for example by computer-generated random numbers. Random selection inside each stratum is what makes it stratified random sampling, not quota sampling."}, {"q": "You also want to compare faculties, but 30 commerce students is too few. What do you do?", "a": "Use disproportionate stratified sampling: for example 70 from each faculty. Then, when estimating whole-university figures, weight each stratum back to its true share (arts 0.60, science 0.25, commerce 0.15)."}], "yourTurn": [{"q": "A district has 600 rural and 400 urban schools. You need 50 schools, proportionately. How many from each? And if you then studied every teacher in each chosen school, what is that stage called?", "a": "Rural 600 ÷ 1,000 × 50 = 30; urban 20. Choosing schools and then studying everyone in them is cluster sampling, so the whole design is stratified cluster sampling."}]}
 :::
 
+:::widget flow
+{"title": "Sampling methods", "layout": "tree", "nodes": [{"id": "s", "label": "Sampling", "detail": "Choosing who to study"}, {"id": "p", "label": "Probability", "detail": "Every unit has a known chance", "parent": "s"}, {"id": "np", "label": "Non-probability", "detail": "Chances unknown", "parent": "s"}, {"id": "srs", "label": "Simple random", "detail": "Lottery or computer", "parent": "p"}, {"id": "sys", "label": "Systematic", "detail": "Every k-th unit", "parent": "p"}, {"id": "str", "label": "Stratified", "detail": "Random within strata", "parent": "p"}, {"id": "cl", "label": "Cluster and multistage", "detail": "Random groups, then all or some inside", "parent": "p"}, {"id": "con", "label": "Convenience", "detail": "Whoever is easy to reach", "parent": "np"}, {"id": "pur", "label": "Purposive", "detail": "Chosen for a characteristic", "parent": "np"}, {"id": "q", "label": "Quota", "detail": "Fill categories by convenience", "parent": "np"}, {"id": "sn", "label": "Snowball", "detail": "Participants recruit others", "parent": "np"}]}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Sampling error: how sample means spread", "caption": "Sample means pile up around the population mean in a normal curve. A bigger sample makes the curve narrower, so a single sample is more likely to be close to the truth. Bias shifts the whole curve and size cannot fix it."}
+:::
+
 ### What decides sample size
 - **Effect size:** small effects need big samples.
 - **Desired power** (usually 0.80) and **alpha** (usually .05).
@@ -486,6 +518,10 @@ To study a variable you must **measure** it: assign numbers or categories by rul
 A single Likert item (strongly disagree to strongly agree) is **ordinal**. A total of many Likert items is usually **treated as interval** in practice, and parametric tests are used. Examiners accept "ordinal, often treated as interval", not "ratio".
 :::
 
+:::widget layers
+{"title": "Scales of measurement: each level adds a property", "shape": "stack", "layers": [{"label": "Ratio", "detail": "True zero: 'twice as fast' makes sense"}, {"label": "Interval", "detail": "Equal gaps, no true zero"}, {"label": "Ordinal", "detail": "Order, unequal gaps"}, {"label": "Nominal", "detail": "Categories only"}], "caption": "Higher scales allow everything the lower ones do, plus more."}
+:::
+
 ### Reliability and validity of a measure
 - **Reliability** is **consistency**: test-retest, parallel forms, internal consistency (split-half, Cronbach's alpha), inter-rater.
 - **Validity** is **accuracy**: does it measure what it claims? Content, criterion-related (concurrent and predictive) and construct (convergent and discriminant) validity.
@@ -503,7 +539,7 @@ The statistics module shows how to compute reliability coefficients, and the ass
 - **Thurstone** (equal-appearing intervals): judges place statements on an 11-point scale; respondents agree or disagree with statements of known value.
 - **Likert** (summated ratings): agreement on a 5- or 7-point scale, summed.
 - **Guttman** (cumulative, scalogram): items ordered so that agreeing with a strong item implies agreeing with all milder ones.
-- **Semantic differential** (Osgood): ratings between bipolar adjectives (good–bad), loading on evaluation, potency and activity.
+- **Semantic differential** (Osgood): ratings between bipolar adjectives (good-bad), loading on evaluation, potency and activity.
 - **Bogardus social distance:** how close a relationship a person would accept with a member of a group.
 
 :::widget sort
@@ -568,6 +604,10 @@ Total variance in the DV has three sources. A good design:
 | **Counterbalancing** | Vary the order of conditions to balance order effects | Half do A then B; half B then A |
 | **Blinding** | Hide the condition from participants (single-blind) and from researchers and raters too (double-blind) | Placebo capsules that look identical |
 
+:::widget flow
+{"title": "MAXMINCON in three moves", "layout": "chain", "nodes": [{"id": "n0", "label": "Maximise", "detail": "Make the IV conditions really different"}, {"id": "n1", "label": "Minimise", "detail": "Cut error: reliable measures, standard procedure"}, {"id": "n2", "label": "Control", "detail": "Stop anything else varying with the IV"}], "caption": "Kerlinger's recipe for a clean experiment."}
+:::
+
 ### Between-subjects and within-subjects designs
 - **Between-subjects (independent groups):** each person experiences one condition. No carry-over, but groups may differ, and you need more people.
 - **Within-subjects (repeated measures):** each person experiences all conditions. Each person is their own control, so error variance falls and fewer people are needed. The cost is **order effects**: practice, fatigue, boredom, sensitisation and **carry-over** (the effect of one condition lingering into the next).
@@ -580,14 +620,18 @@ Notation: **R** = random assignment, **O** = observation (measurement), **X** = 
 | Design | Layout | Comment |
 |---|---|---|
 | One-shot case study (pre-experimental) | X O | No comparison at all |
-| One-group pretest–posttest (pre-experimental) | O X O | History, maturation, testing and regression all possible |
+| One-group pretest-posttest (pre-experimental) | O X O | History, maturation, testing and regression all possible |
 | Static-group comparison (pre-experimental) | X O / O, no R | Groups may differ from the start |
 | **Posttest-only control group** (true) | R X O / R O | Simple; randomisation makes a pretest unnecessary |
-| **Pretest–posttest control group** (true) | R O X O / R O O | Checks equivalence; pretest may sensitise people |
+| **Pretest-posttest control group** (true) | R O X O / R O O | Checks equivalence; pretest may sensitise people |
 | **Solomon four-group** (true) | R O X O / R O O / R X O / R O | Tests whether the **pretest itself** changes the effect |
 
 :::widget reveal
 {"prompt": "Why did Richard Solomon add two extra groups without a pretest?", "answer": "Because a pretest can change how people respond to the treatment (pretest sensitisation, an interaction of testing and treatment). A pretest on attitudes to mental illness, for example, may make people notice the anti-stigma film more. Comparing the pretested and unpretested treatment groups shows whether the pretest altered the effect, which protects external validity. The cost is needing four groups."}
+:::
+
+:::widget flow
+{"title": "Classifying research designs", "layout": "tree", "nodes": [{"id": "d", "label": "Designs", "detail": "How the study is built"}, {"id": "e", "label": "Experimental", "detail": "Manipulation", "parent": "d"}, {"id": "ne", "label": "Non-experimental", "detail": "No manipulation", "parent": "d"}, {"id": "pre", "label": "Pre-experimental", "detail": "One-shot; one-group pre-post; static group", "parent": "e"}, {"id": "true", "label": "True experimental", "detail": "Random assignment: post-test only, pre-post control, Solomon, factorial", "parent": "e"}, {"id": "quasi", "label": "Quasi-experimental", "detail": "No random assignment: non-equivalent groups, time series, regression discontinuity", "parent": "e"}, {"id": "sc", "label": "Single-case", "detail": "AB, ABAB, multiple baseline, changing criterion", "parent": "e"}, {"id": "cor", "label": "Correlational and survey", "detail": "Measure as variables occur", "parent": "ne"}, {"id": "epf", "label": "Ex post facto", "detail": "The cause has already happened", "parent": "ne"}, {"id": "obs", "label": "Observation and case study", "detail": "Describe in depth", "parent": "ne"}], "caption": "Tap any box for its key idea."}
 :::
 
 ### Factorial designs
@@ -606,7 +650,7 @@ Other designs: **randomised block** (people grouped into blocks on a nuisance va
 1. Name the three defining features of an experiment. || Manipulation of the IV, control of extraneous variables, random assignment.
 2. What does MAXMINCON stand for? || Maximise systematic variance, minimise error variance, control extraneous variance.
 3. What problem does counterbalancing solve, and in which design? || Order effects (practice, fatigue, carry-over) in within-subjects designs.
-4. What does the Solomon four-group design test that the pretest–posttest design cannot? || Whether the pretest itself interacts with the treatment (pretest sensitisation).
+4. What does the Solomon four-group design test that the pretest-posttest design cannot? || Whether the pretest itself interacts with the treatment (pretest sensitisation).
 5. In a factorial design, what is an interaction? || The effect of one IV depends on the level of another IV.
 :::
 
@@ -662,7 +706,7 @@ Campbell and Stanley's eight classic threats, with an Indian classroom example. 
 | **Statistical regression** | Extreme scorers move toward the mean on retest | Only the weakest students were chosen; they would improve somewhat anyway |
 | **Selection** | Groups differ before treatment | The programme class was the "A" section |
 | **Experimental mortality (attrition)** | Different drop-out across groups | Struggling students left the programme class |
-| **Selection–maturation interaction** | Groups were maturing at different rates | The programme class was younger and changing faster |
+| **Selection-maturation interaction** | Groups were maturing at different rates | The programme class was younger and changing faster |
 
 Later additions by Cook, Campbell and their colleagues arise when the control group learns about the treatment:
 - **Diffusion or imitation of treatment:** the control group copies the treatment.
@@ -671,7 +715,11 @@ Later additions by Cook, Campbell and their colleagues arise when the control gr
 - **Resentful demoralisation:** the control group gives up because it feels left out.
 
 :::mnemonic The eight threats
-**"History Makes Testing Instruments Regress, Selecting Mortal Interactions"**: history, maturation, testing, instrumentation, regression, selection, mortality, selection–maturation interaction.
+**"History Makes Testing Instruments Regress, Selecting Mortal Interactions"**: history, maturation, testing, instrumentation, regression, selection, mortality, selection-maturation interaction.
+:::
+
+:::widget flow
+{"title": "Four kinds of validity, with their main threats", "layout": "tree", "nodes": [{"id": "v", "label": "Validity of conclusions", "detail": "Can we trust them?"}, {"id": "sc", "label": "Statistical conclusion", "detail": "Is there a real relation?", "parent": "v"}, {"id": "in", "label": "Internal", "detail": "Did the IV cause it?", "parent": "v"}, {"id": "co", "label": "Construct", "detail": "Do the measures capture the ideas?", "parent": "v"}, {"id": "ex", "label": "External", "detail": "Does it generalise?", "parent": "v"}, {"id": "sc1", "label": "Low power, many tests", "detail": "Fishing for significance", "parent": "sc"}, {"id": "in1", "label": "History, maturation, testing, regression, selection, attrition", "detail": "The Campbell and Stanley list", "parent": "in"}, {"id": "co1", "label": "Demand characteristics, expectancy, mono-operation", "detail": "", "parent": "co"}, {"id": "ex1", "label": "WEIRD samples, artificial settings", "detail": "", "parent": "ex"}]}
 :::
 
 ### Threats to construct validity
@@ -693,12 +741,12 @@ Tight control raises internal validity but often lowers external validity, and v
 :::
 
 :::widget decide
-{"scene": "A private hospital in Kolkata reports that its new 6-week relaxation group cut anxiety scores by 40%. Patients joined because they scored very high on an anxiety screen. There was no control group. Over the same weeks the city's festival season ended and exams finished.", "ask": "As a reviewer, which explanation do you raise first?", "choices": [{"label": "Statistical regression plus history: very high scorers drift down anyway, and the end of festival and exam stress could lower anxiety for everyone.", "verdict": "best", "outcome": "The hospital adds a waiting-list control group randomly assigned from the same high scorers.", "why": "Both threats are strong in a one-group pretest–posttest design that recruits extreme scorers. Only a randomised control group rules them out."}, {"label": "The relaxation group clearly works; a 40% drop is too large to be chance.", "verdict": "harm", "outcome": "The hospital advertises an effect that may not exist.", "why": "Size of change does not protect against systematic threats like regression and history."}, {"label": "Attrition: maybe anxious people dropped out.", "verdict": "ok", "outcome": "Worth checking, but the data show only 2 of 40 dropped out.", "why": "Always check drop-out, but here regression and history are the bigger problems."}]}
+{"scene": "A private hospital in Kolkata reports that its new 6-week relaxation group cut anxiety scores by 40%. Patients joined because they scored very high on an anxiety screen. There was no control group. Over the same weeks the city's festival season ended and exams finished.", "ask": "As a reviewer, which explanation do you raise first?", "choices": [{"label": "Statistical regression plus history: very high scorers drift down anyway, and the end of festival and exam stress could lower anxiety for everyone.", "verdict": "best", "outcome": "The hospital adds a waiting-list control group randomly assigned from the same high scorers.", "why": "Both threats are strong in a one-group pretest-posttest design that recruits extreme scorers. Only a randomised control group rules them out."}, {"label": "The relaxation group clearly works; a 40% drop is too large to be chance.", "verdict": "harm", "outcome": "The hospital advertises an effect that may not exist.", "why": "Size of change does not protect against systematic threats like regression and history."}, {"label": "Attrition: maybe anxious people dropped out.", "verdict": "ok", "outcome": "Worth checking, but the data show only 2 of 40 dropped out.", "why": "Always check drop-out, but here regression and history are the bigger problems."}]}
 :::
 
 :::recall
 1. Name Cook and Campbell's four types of validity. || Statistical conclusion, internal, construct and external.
-2. List the eight Campbell and Stanley threats to internal validity. || History, maturation, testing, instrumentation, statistical regression, selection, experimental mortality, selection–maturation interaction.
+2. List the eight Campbell and Stanley threats to internal validity. || History, maturation, testing, instrumentation, statistical regression, selection, experimental mortality, selection-maturation interaction.
 3. What is the John Henry effect? || Compensatory rivalry: the control group works harder to outdo the treatment group.
 4. Population validity versus ecological validity. || Population: generalising to other people. Ecological: generalising to real-world settings.
 5. What do demand characteristics threaten? || Construct validity (participants act on what they think the study wants).
@@ -766,6 +814,10 @@ Single-case data are judged mainly by **visual analysis** of graphs: changes in 
 
 :::widget decide
 {"scene": "Arjun, 8, in a special school in Pune, bangs his head when tasks get hard. A behaviour analyst plans functional communication training, teaching him to say 'help' instead. She wants to show the training causes the change.", "ask": "Which design should she use?", "choices": [{"label": "ABAB: train, then stop training to see if head-banging returns, then train again.", "verdict": "harm", "outcome": "The ethics committee objects: deliberately removing treatment risks injury.", "why": "Withdrawal designs are unsuitable when the behaviour is dangerous."}, {"label": "Multiple baseline across settings: start training in class, then a week later at lunch, then later at home, measuring all three throughout.", "verdict": "best", "outcome": "Head-banging drops in each setting only when training starts there. The case is strong, and treatment is never withdrawn.", "why": "Staggered introduction shows control without withdrawal."}, {"label": "AB: measure for a week, then start training.", "verdict": "ok", "outcome": "Head-banging drops, but a new teacher joined that week, so the cause is unclear.", "why": "AB is clinically fine but weak evidence: history and maturation are not ruled out."}]}
+:::
+
+:::widget flow
+{"title": "An ABAB reversal design", "layout": "chain", "nodes": [{"id": "n0", "label": "A: baseline", "detail": "Measure the behaviour until stable"}, {"id": "n1", "label": "B: treatment", "detail": "Behaviour should change"}, {"id": "n2", "label": "A: withdraw", "detail": "Behaviour should return toward baseline"}, {"id": "n3", "label": "B: reinstate", "detail": "Behaviour should change again"}], "caption": "Two demonstrations of control. If withdrawal is unsafe, use a multiple baseline instead."}
 :::
 
 ### Developmental designs
@@ -843,6 +895,10 @@ Asks many people questions to describe attitudes, behaviours or prevalence.
 - **Structured (systematic) observation:** predefined categories and coding schemes, often in a lab.
 - Recording: **event sampling** (record every instance of the behaviour), **time sampling** (observe at set intervals), **interval recording**, **duration** and **latency**.
 - Problems: **observer bias** (seeing what you expect), **reactivity** (people change when watched; reduce by **habituation** or hidden observation), **observer drift**. Check **inter-observer reliability** with percentage agreement or **Cohen's kappa**.
+
+:::widget flow
+{"title": "Non-experimental methods", "layout": "tree", "nodes": [{"id": "m", "label": "Non-experimental", "detail": "No manipulation of the IV"}, {"id": "cor", "label": "Correlational", "detail": "Strength and direction of relations", "parent": "m"}, {"id": "sur", "label": "Survey", "detail": "Questionnaires and interviews at scale", "parent": "m"}, {"id": "obs", "label": "Observation", "detail": "Naturalistic, participant, structured", "parent": "m"}, {"id": "cs", "label": "Case study", "detail": "One person or group in depth", "parent": "m"}, {"id": "arc", "label": "Archival and content analysis", "detail": "Existing records and texts", "parent": "m"}]}
+:::
 
 ### Case study
 An intensive study of one person, group or event, using many sources (interviews, records, tests, observation). Famous examples: Phineas Gage, H.M. (Henry Molaison), Little Hans, Genie. Strengths: rich detail, rare conditions, generates hypotheses, can disprove a universal claim. Weaknesses: cannot be generalised alone; open to researcher bias; often relies on memory.
@@ -927,12 +983,12 @@ Q: The main advantage of a within-subjects design is:
 
 Q: "R X O / R O" describes the:
 - Static-group comparison
-- One-group pretest–posttest
+- One-group pretest-posttest
 - *Posttest-only control group design
 - Solomon four-group design
 > Random assignment, treatment, one measurement.
 
-Q: Which threat is a one-group pretest–posttest study of a ten-month school programme most open to?
+Q: Which threat is a one-group pretest-posttest study of a ten-month school programme most open to?
 - Only selection
 - Only the demand characteristics of the tests
 - Multiple-treatment interference across classes

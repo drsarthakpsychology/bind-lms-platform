@@ -26,6 +26,10 @@ Every UGC NET candidate, whatever the subject, sits **Paper 1** (General Paper o
 | 9 People, development and environment | SDGs, pollution, energy, laws, agreements | Dated facts |
 | 10 Higher education system | Ancient to modern, NEP 2020, regulators | Dated facts |
 
+:::widget guess
+{"prompt": "With 150 questions across both papers in 180 minutes, about how many seconds do you have per question?", "min": 30, "max": 150, "unit": "seconds", "answer": [70, 74], "reveal": "About 72 seconds. Bank time on the fact units so you can spend two or three minutes on each comprehension or data set."}
+:::
+
 ### How to use the time
 With 150 questions in 180 minutes, you have about 72 seconds per question across both papers.
 - Do the **fact units (teaching, communication, ICT, environment, higher education)** fast, banking time.
@@ -70,6 +74,10 @@ In 1956 Benjamin Bloom and colleagues classified educational objectives into thr
 "**R**emember **U**ncle **A**nil **A**te **E**ight **C**hapatis": remember, understand, apply, analyse, evaluate, create.
 :::
 
+:::widget layers
+{"title": "Bloom's revised cognitive taxonomy", "shape": "pyramid", "layers": [{"label": "Create", "detail": "Produce something new: design, plan, compose"}, {"label": "Evaluate", "detail": "Judge with criteria: critique, justify"}, {"label": "Analyse", "detail": "Break into parts and relate them: compare, distinguish"}, {"label": "Apply", "detail": "Use in a new situation: solve, demonstrate"}, {"label": "Understand", "detail": "Explain in your own words: summarise, classify"}, {"label": "Remember", "detail": "Recall facts: list, define, name"}], "caption": "Read from the base up. Each level needs the ones below it."}
+:::
+
 ### Levels of teaching
 | Level | Proponent | Teacher's role | Learner's role |
 |---|---|---|---|
@@ -78,6 +86,14 @@ In 1956 Benjamin Bloom and colleagues classified educational objectives into thr
 | **Reflective level** | Hunt (also linked with Bigge) | Democratic; poses problems | Most active; thinks critically, solves problems |
 
 Herbart's **five formal steps** of teaching: preparation, presentation, comparison and abstraction (association), generalisation, application. Morrison's cycle: exploration, presentation, assimilation, organisation, recitation.
+
+:::widget layers
+{"title": "Levels of teaching", "shape": "stack", "layers": [{"label": "Reflective level (Hunt)", "detail": "Learner most active; problem-solving and critical thinking"}, {"label": "Understanding level (Morrison)", "detail": "Grasping relations and principles"}, {"label": "Memory level (Herbart)", "detail": "Recall of facts; teacher dominant"}], "caption": "Each level rests on the one below."}
+:::
+
+:::widget flow
+{"title": "Herbart's five formal steps", "layout": "chain", "nodes": [{"id": "n0", "label": "Preparation", "detail": "Link to what learners already know"}, {"id": "n1", "label": "Presentation", "detail": "Give the new material"}, {"id": "n2", "label": "Comparison and abstraction", "detail": "Relate new to old"}, {"id": "n3", "label": "Generalisation", "detail": "Draw out the principle"}, {"id": "n4", "label": "Application", "detail": "Use it in new examples"}]}
+:::
 
 ### Learners and what shapes learning
 - **Adolescent learners:** identity formation, peer influence, need for autonomy.
@@ -98,12 +114,20 @@ Other names worth knowing:
 - **Symposium:** several experts present different aspects of one topic. **Panel discussion:** experts discuss before an audience. **Seminar:** a paper is presented and discussed. **Workshop:** hands-on learning of a skill.
 - **Flanders' Interaction Analysis** (FIACS): 10 categories for coding teacher talk, student talk and silence.
 
+:::widget flow
+{"title": "The microteaching cycle (Indian model, 36 minutes)", "layout": "cycle", "nodes": [{"id": "n0", "label": "Teach", "detail": "6 minutes, one skill"}, {"id": "n1", "label": "Feedback", "detail": "6 minutes"}, {"id": "n2", "label": "Replan", "detail": "12 minutes"}, {"id": "n3", "label": "Reteach", "detail": "6 minutes"}, {"id": "n4", "label": "Refeedback", "detail": "6 minutes"}]}
+:::
+
 ### Teaching support systems and online learning
 - **Traditional:** blackboard, charts, models. **Modern:** projectors, smart boards. **ICT-based:** learning management systems (Moodle, Google Classroom), videos, simulations.
 - **MOOCs** (Massive Open Online Courses): the term was coined in 2008. **cMOOCs** (connectivist) versus **xMOOCs** (structured, video-led).
 - **SWAYAM** (Study Webs of Active-Learning for Young Aspiring Minds), India's national MOOC platform, launched in 2017. Each course has **four quadrants**: video lectures (e-tutorial), reading material (e-content), self-assessment tests and a discussion forum. Under UGC's 2021 regulations, a student can earn up to **40%** of a programme's credits through SWAYAM courses.
 - **SWAYAM Prabha:** educational DTH television channels. **NPTEL:** engineering and science courses from the IITs and IISc. **e-PG Pathshala:** postgraduate e-content from UGC and INFLIBNET.
 - **Blended learning** mixes online and face-to-face; the **flipped classroom** has students watch lectures at home and use class time for activity.
+
+:::widget layers
+{"title": "A SWAYAM course: four quadrants", "shape": "stack", "layers": [{"label": "Video lectures (e-tutorial)", "detail": "Recorded teaching"}, {"label": "E-content", "detail": "Readable notes and resources"}, {"label": "Self-assessment", "detail": "Quizzes and assignments"}, {"label": "Discussion forum", "detail": "Questions and peer discussion"}]}
+:::
 
 ### Evaluation systems
 - **Formative** evaluation happens during learning to improve it; **summative** evaluation happens at the end to grade it (Scriven). **Diagnostic** evaluation finds the causes of persistent difficulty; **placement** evaluation decides the starting level.
@@ -180,11 +204,15 @@ This unit overlaps with the **Research methods** module (40). Here is what Paper
 7. Test hypotheses and interpret.
 8. Generalise and report.
 
+:::widget flow
+{"title": "Steps of research", "layout": "chain", "nodes": [{"id": "n0", "label": "Problem", "detail": "Identify and define it"}, {"id": "n1", "label": "Review", "detail": "Survey the literature"}, {"id": "n2", "label": "Hypotheses", "detail": "State testable predictions"}, {"id": "n3", "label": "Design", "detail": "Plan sampling and tools"}, {"id": "n4", "label": "Collect", "detail": "Gather data"}, {"id": "n5", "label": "Analyse", "detail": "Process the data"}, {"id": "n6", "label": "Test and interpret", "detail": "Accept or reject hypotheses"}, {"id": "n7", "label": "Report", "detail": "Generalise and write up"}]}
+:::
+
 ### Thesis, articles and referencing
 - A **thesis** (PhD) or **dissertation** (Master's) has preliminary pages, introduction, review, method, results, discussion, summary and conclusions, references and appendices.
 - A **research article** follows **IMRaD**; a **review article** summarises a field; a **short communication** reports a brief finding.
-- **Referencing styles:** **APA** (author–date; psychology and social sciences), **MLA** (author–page; humanities), **Chicago** (notes or author–date; history), **Vancouver** (numbered; medicine), **Harvard** (author–date).
-- **Bibliography** lists all sources consulted; **references** list only those cited. **Ibid.** means "in the same place" (the source just cited); **op. cit.** means "in the work cited" earlier; **et alii** (always shortened in citations) means "and others".
+- **Referencing styles:** **APA** (author-date; psychology and social sciences), **MLA** (author-page; humanities), **Chicago** (notes or author-date; history), **Vancouver** (numbered; medicine), **Harvard** (author-date).
+- **Bibliography** lists all sources consulted; **references** list only those cited. **Ibid.** means "in the same place" (the source just cited); **op. cit.** means "in the work cited" earlier; the Latin short form used for works with several authors means "and others".
 - An **abstract** summarises; a **synopsis** is the research plan submitted for approval.
 
 ### ICT in research
@@ -246,6 +274,10 @@ Comprehension sets give a passage of about 250 to 400 words and several question
    - **Vocabulary in context:** meaning as used here.
    - **"NOT" questions:** three options are in the passage; find the one that is not.
 5. Eliminate options that are **too extreme** ("always", "never", "only"), **outside the passage**, or true only of one paragraph.
+
+:::widget flow
+{"title": "A method for comprehension sets", "layout": "chain", "nodes": [{"id": "n0", "label": "Questions first", "detail": "Know what to look for"}, {"id": "n1", "label": "Read once, steadily", "detail": "Note each paragraph's main idea"}, {"id": "n2", "label": "Answer from the passage", "detail": "Not from general knowledge"}, {"id": "n3", "label": "Eliminate", "detail": "Extreme, outside-the-passage or one-paragraph options"}]}
+:::
 
 ### Practice passage
 *Read it, then answer the five questions in the check below.*
@@ -312,6 +344,14 @@ Q: The phrase "thinking has material to work with" implies that:
 | **Dance's helical model** | 1967 | Communication grows and builds over time, like a spiral |
 | **Barnlund's transactional model** | 1970 | Sending and receiving happen at the same time, shaped by context |
 
+:::widget flow
+{"title": "Shannon and Weaver's model", "layout": "chain", "nodes": [{"id": "n0", "label": "Information source", "detail": "Creates the message"}, {"id": "n1", "label": "Transmitter", "detail": "Encodes it into a signal"}, {"id": "n2", "label": "Channel", "detail": "Carries the signal; noise enters here"}, {"id": "n3", "label": "Receiver", "detail": "Decodes the signal"}, {"id": "n4", "label": "Destination", "detail": "The message reaches the mind"}], "caption": "Linear and one-way. Later models add feedback."}
+:::
+
+:::widget flow
+{"title": "Osgood and Schramm's circular model", "layout": "cycle", "nodes": [{"id": "n0", "label": "Encoder", "detail": "Puts meaning into a message"}, {"id": "n1", "label": "Interpreter", "detail": "Makes sense of it"}, {"id": "n2", "label": "Decoder", "detail": "Receives and replies, so becomes the next encoder"}]}
+:::
+
 ### Types of communication
 - **Intrapersonal** (with oneself), **interpersonal** (between two people), **group**, **public** and **mass** communication.
 - **Formal** (official channels: **downward**, **upward**, **horizontal**, **diagonal**) and **informal** (the **grapevine**).
@@ -320,6 +360,10 @@ Q: The phrase "thinking has material to work with" implies that:
   - **Proxemics:** use of space (Edward Hall): intimate (up to about 45 cm), personal (about 45 cm to 1.2 m), social (about 1.2 to 3.6 m) and public distance (beyond about 3.6 m).
   - **Haptics:** touch. **Chronemics:** time. **Oculesics:** eye contact. **Paralanguage (vocalics):** tone, pitch, pace, pauses. **Artifactics:** dress and objects.
 - **Mehrabian's** finding (words 7%, tone 38%, face and body 55%) applies only to **messages about feelings and attitudes** when words and tone conflict. It does not mean that 93% of all communication is non-verbal.
+
+:::widget flow
+{"title": "Types of communication", "layout": "tree", "nodes": [{"id": "c", "label": "Communication", "detail": ""}, {"id": "lvl", "label": "By number of people", "detail": "", "parent": "c"}, {"id": "dir", "label": "By direction in an organisation", "detail": "", "parent": "c"}, {"id": "mode", "label": "By mode", "detail": "", "parent": "c"}, {"id": "intra", "label": "Intrapersonal, interpersonal, group, public, mass", "detail": "", "parent": "lvl"}, {"id": "dn", "label": "Downward, upward, horizontal, diagonal", "detail": "Plus the informal grapevine", "parent": "dir"}, {"id": "vb", "label": "Verbal", "detail": "Spoken and written", "parent": "mode"}, {"id": "nv", "label": "Non-verbal", "detail": "Kinesics, proxemics, haptics, chronemics, paralanguage", "parent": "mode"}]}
+:::
 
 ### Barriers to communication
 | Barrier | Example |
@@ -503,6 +547,10 @@ Paper 1 numericals are school-level maths done quickly and accurately. Learn the
 - **Ratios:** combine A : B and B : C by making B the same. **Proportion** a : b = c : d means ad = bc.
 - **Average** = sum ÷ number. If one item leaves or joins, work with the totals.
 
+:::widget guess
+{"prompt": "A price rises by 20% and then falls by 20%. What is the net change?", "min": -10, "max": 10, "unit": "%", "answer": [-4, -4], "reveal": "A 4% fall: 20 − 20 + (20 × −20 ÷ 100) = −4. The second change acts on a bigger base."}
+:::
+
 ### Profit, loss and interest
 - Profit % = (SP − CP) ÷ CP × 100 (always on **cost price**). **Discount** is on the **marked price**.
 - **Simple interest:** SI = P × R × T ÷ 100.
@@ -519,10 +567,14 @@ Paper 1 numericals are school-level maths done quickly and accurately. Learn the
 {"title": "Six numericals, step by step", "steps": [{"q": "A book's price rises from ₹400 to ₹500. What is the percentage increase? If it falls back to ₹400, what is the percentage decrease?", "a": "Increase: 100 ÷ 400 × 100 = 25%. Decrease: 100 ÷ 500 × 100 = 20%. The base changes, so the percentages differ."}, {"q": "The average of five numbers is 40. One number is removed and the average of the remaining four is 38. What was removed?", "a": "Total of five = 200. Total of four = 152. Removed number = 200 − 152 = 48."}, {"q": "A coaching centre buys a projector for ₹900 and sells it after marking it at ₹1,200 with a 10% discount. Find the profit percentage.", "a": "SP = 1,200 − 120 = ₹1,080. Profit = 180. Profit % = 180 ÷ 900 × 100 = 20%."}, {"q": "₹10,000 is invested at 8% a year for 2 years. Find the simple interest, the compound interest (yearly) and the difference.", "a": "SI = 10,000 × 8 × 2 ÷ 100 = ₹1,600. Amount = 10,000 × 1.08 × 1.08 = ₹11,664, so CI = ₹1,664. Difference = ₹64, which equals P(R/100)² = 10,000 × 0.0064."}, {"q": "Anil can paint a wall in 12 days and Bina in 6 days. How long together?", "a": "Per day: 1/12 + 1/6 = 1/12 + 2/12 = 3/12 = 1/4. Together: 4 days. (Shortcut: 12 × 6 ÷ 18 = 4.)"}, {"q": "A student cycles to college at 40 km/h and back at 60 km/h. What is her average speed?", "a": "2 × 40 × 60 ÷ (40 + 60) = 4,800 ÷ 100 = 48 km/h, not 50."}], "yourTurn": [{"q": "A boat goes 15 km/h downstream and 9 km/h upstream. Find the boat's speed in still water and the stream's speed. Then: a 200 m train at 72 km/h crosses a 300 m platform. How long does it take?", "a": "Boat = (15 + 9) ÷ 2 = 12 km/h; stream = (15 − 9) ÷ 2 = 3 km/h. Train: 72 × 5/18 = 20 m/s; distance = 200 + 300 = 500 m; time = 500 ÷ 20 = 25 seconds."}]}
 :::
 
+:::widget guess
+{"prompt": "You go to college at 40 km/h and come back the same way at 60 km/h. What is your average speed?", "min": 40, "max": 60, "unit": "km/h", "answer": [48, 48], "reveal": "48 km/h, not 50. You spend longer at the slower speed, so the average is pulled toward 40: 2 × 40 × 60 ÷ 100."}
+:::
+
 ### Series, codes and relationships
 - **Number series:** look at differences (and differences of differences), ratios, squares and cubes, alternating patterns, primes.
 - **Letter series:** convert letters to positions (A = 1 … Z = 26; reverse: Z = 1). A useful anchor: **EJOTY** marks 5, 10, 15, 20, 25.
-- **Coding–decoding:** find the shift or rule letter by letter (each letter +1; reversed; positions summed).
+- **Coding-decoding:** find the shift or rule letter by letter (each letter +1; reversed; positions summed).
 - **Blood relations:** draw a family tree, with + for male and − for female, and a horizontal line for siblings and a vertical one for generations.
 - **Directions:** draw it; a right turn from north faces east.
 
@@ -587,6 +639,10 @@ An **argument** is a set of statements in which some (**premises**) are offered 
 
 A term is **distributed** when the statement refers to **all** members of its class. Memory hook: universals distribute the **subject**; negatives distribute the **predicate**.
 
+:::widget flow
+{"title": "The four categorical propositions", "layout": "tree", "nodes": [{"id": "p", "label": "Categorical propositions", "detail": ""}, {"id": "u", "label": "Universal", "detail": "", "parent": "p"}, {"id": "pa", "label": "Particular", "detail": "", "parent": "p"}, {"id": "A", "label": "A: All S are P", "detail": "Distributes the subject", "parent": "u"}, {"id": "E", "label": "E: No S is P", "detail": "Distributes both terms", "parent": "u"}, {"id": "I", "label": "I: Some S are P", "detail": "Distributes neither", "parent": "pa"}, {"id": "O", "label": "O: Some S are not P", "detail": "Distributes the predicate", "parent": "pa"}]}
+:::
+
 ### The square of opposition (traditional)
 - **Contradictories** (A and O; E and I): exactly one is true and the other false.
 - **Contraries** (A and E): cannot both be true, but can both be false.
@@ -608,6 +664,10 @@ A syllogism has two premises and a conclusion, with three terms: the **major ter
 5. **Two particular premises:** no conclusion.
 6. If **one premise is particular**, the conclusion must be particular.
 
+:::widget flow
+{"title": "Checking a syllogism", "layout": "chain", "nodes": [{"id": "n0", "label": "Name the terms", "detail": "Major, minor and middle"}, {"id": "n1", "label": "Middle distributed?", "detail": "If not: undistributed middle"}, {"id": "n2", "label": "Conclusion terms distributed fairly?", "detail": "If not: illicit major or minor"}, {"id": "n3", "label": "Negatives and particulars", "detail": "Two negatives or two particulars: no conclusion"}, {"id": "n4", "label": "Confirm with a Venn diagram", "detail": "Try to draw a case that breaks the conclusion"}]}
+:::
+
 ### Venn diagrams: the reliable method
 Draw three overlapping circles for the three terms. Shade empty areas for universal statements; put a mark (x) for "some" statements. Then check whether the conclusion is **already** drawn. In exam questions with "conclusions I and II", test each conclusion separately and look for **either-or (complementary) pairs**: when two "some" or "no" conclusions on the same terms cannot both be false, the answer is "either I or II follows".
 
@@ -616,7 +676,7 @@ Draw three overlapping circles for the three terms. Shade empty areas for univer
 :::
 
 ### Analogies and other reasoning
-- **Analogy** questions ask for the same relation: part–whole, cause–effect, worker–tool, synonym–antonym, degree. Doctor : hospital :: teacher : school.
+- **Analogy** questions ask for the same relation: part-whole, cause-effect, worker-tool, synonym-antonym, degree. Doctor : hospital :: teacher : school.
 - **Classification (odd one out):** find the shared property and the item without it.
 - **Inductive reasoning** in Mill's methods of agreement and difference underlies the logic of experiments.
 
@@ -693,6 +753,10 @@ Indian philosophy asked carefully how we **know**. The **Nyaya** school (founded
 | **Arthapatti** | Postulation, presumption: assuming a fact that alone explains an apparent conflict | "Devadatta is fat but does not eat by day, so he must eat at night" |
 | **Anupalabdhi** | Non-apprehension: knowing an **absence** by not perceiving something that would be perceived if present | Knowing there is no pot on the floor |
 
+:::widget flow
+{"title": "The six pramanas", "layout": "tree", "nodes": [{"id": "pr", "label": "Pramana: a means of valid knowledge", "detail": ""}, {"id": "p1", "label": "Pratyaksha", "detail": "Perception", "parent": "pr"}, {"id": "p2", "label": "Anumana", "detail": "Inference", "parent": "pr"}, {"id": "p3", "label": "Upamana", "detail": "Comparison", "parent": "pr"}, {"id": "p4", "label": "Shabda", "detail": "Reliable testimony", "parent": "pr"}, {"id": "p5", "label": "Arthapatti", "detail": "Postulation", "parent": "pr"}, {"id": "p6", "label": "Anupalabdhi", "detail": "Non-apprehension (knowing absence)", "parent": "pr"}]}
+:::
+
 ### Which school accepts how many
 | Number | School | Pramanas accepted |
 |---|---|---|
@@ -707,6 +771,10 @@ Jaina logic divides knowledge into **pratyaksha** (direct) and **paroksha** (ind
 
 :::mnemonic One to six
 "**C**an **B**right **S**tudents **N**ail **P**aper **B**?" Charvaka 1, Buddhist (and Vaisheshika) 2, Samkhya (and Yoga) 3, Nyaya 4, Prabhakara 5, Bhatta (and Advaita) 6.
+:::
+
+:::widget layers
+{"title": "How many pramanas each school accepts", "shape": "stack", "layers": [{"label": "6: Bhatta Mimamsa, Advaita Vedanta", "detail": "All six"}, {"label": "5: Prabhakara Mimamsa", "detail": "Adds postulation"}, {"label": "4: Nyaya", "detail": "Adds comparison"}, {"label": "3: Samkhya, Yoga", "detail": "Perception, inference, testimony"}, {"label": "2: Buddhism, Vaisheshika", "detail": "Perception, inference"}, {"label": "1: Charvaka", "detail": "Perception only"}], "caption": "Each step up adds one pramana."}
 :::
 
 ### Kinds of perception
@@ -740,6 +808,10 @@ Gautama's three types of inference:
 - **Samanyatodrishta:** from general observation of what is not perceived directly (the sun has moved, because its position has changed).
 
 Later (Navya-Nyaya) types, based on how vyapti is known: **kevalanvayi** (only by agreement), **kevala-vyatireki** (only by difference) and **anvaya-vyatireki** (by both).
+
+:::widget flow
+{"title": "The five-membered inference", "layout": "chain", "nodes": [{"id": "n0", "label": "Pratijna", "detail": "The hill has fire"}, {"id": "n1", "label": "Hetu", "detail": "Because it has smoke"}, {"id": "n2", "label": "Udaharana", "detail": "Wherever there is smoke there is fire, as in a kitchen"}, {"id": "n3", "label": "Upanaya", "detail": "The hill has smoke, always accompanied by fire"}, {"id": "n4", "label": "Nigamana", "detail": "Therefore the hill has fire"}], "caption": "Press Play to hear the argument unfold for a listener (pararthanumana)."}
+:::
 
 ### Hetvabhasa: the five fallacies of the reason
 A **hetvabhasa** is a reason that **looks valid but is not**. Nyaya lists five.
@@ -804,6 +876,10 @@ Data interpretation (DI) sets give a table or chart and several questions. They 
 3. Before calculating, **estimate**: often only one option is close.
 4. Watch for **percentage versus percentage points**: a rise from 20% to 25% is 5 percentage points but a 25% increase.
 5. Know the formulas: percentage change, share of total, average, ratio, **compound annual growth**, and the central angle in a pie chart (share × 360°).
+
+:::widget flow
+{"title": "A method for data interpretation", "layout": "chain", "nodes": [{"id": "n0", "label": "Title and units", "detail": "Thousands? Crores? Per cent?"}, {"id": "n1", "label": "Rows and columns", "detail": "What each one means"}, {"id": "n2", "label": "Estimate first", "detail": "Often only one option is close"}, {"id": "n3", "label": "Calculate exactly", "detail": "Change, share, average, ratio"}, {"id": "n4", "label": "Points or per cent?", "detail": "Check the wording"}]}
+:::
 
 ### Data and governance
 - **Qualitative** and **quantitative** data; **discrete** and **continuous**; **primary** (collected by you) and **secondary** (already collected: census, NSSO, NFHS).

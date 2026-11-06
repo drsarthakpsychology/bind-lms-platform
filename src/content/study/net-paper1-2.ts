@@ -13,6 +13,10 @@ ICT questions mix fixed basics (which never change) with digital initiatives (wh
 - **Number systems:** binary (base 2), octal (8), decimal (10), hexadecimal (16). Binary 1011 = 8 + 0 + 2 + 1 = 11 in decimal; decimal 25 = 11001 in binary.
 - **Generations of computers:** vacuum tubes, transistors, integrated circuits, microprocessors, and the fifth generation built around AI and parallel processing.
 
+:::widget flow
+{"title": "Computer memory", "layout": "tree", "nodes": [{"id": "m", "label": "Memory and storage", "detail": ""}, {"id": "pm", "label": "Primary", "detail": "Directly used by the CPU", "parent": "m"}, {"id": "sm", "label": "Secondary", "detail": "Long-term storage", "parent": "m"}, {"id": "ram", "label": "RAM", "detail": "Volatile working memory", "parent": "pm"}, {"id": "rom", "label": "ROM", "detail": "Non-volatile start-up instructions", "parent": "pm"}, {"id": "cache", "label": "Cache", "detail": "Very fast, near the CPU", "parent": "pm"}, {"id": "hd", "label": "Hard disk, SSD, pen drive, cloud", "detail": "Keeps data without power", "parent": "sm"}]}
+:::
+
 ### The internet and the web
 - The **internet** is the global network of networks; the **World Wide Web** is a service on it, invented by **Tim Berners-Lee** at CERN (proposed in 1989).
 - **Protocols:** **TCP/IP** (basic communication), **HTTP/HTTPS** (web pages; the S means secure, encrypted), **FTP** (file transfer), **SMTP** (sending e-mail), **POP3** and **IMAP** (receiving e-mail; IMAP keeps mail synchronised on the server), **DNS** (turns website names into IP addresses).
@@ -26,6 +30,10 @@ ICT questions mix fixed basics (which never change) with digital initiatives (wh
 - **To:** main recipients. **CC** (carbon copy): others who should see it, visible to all. **BCC** (blind carbon copy): hidden from other recipients.
 - **Attachment**, **signature**, **spam**, **draft**, **reply all**, **forward**.
 - **Phishing:** fake messages that try to steal passwords or money. Never share an OTP.
+
+:::widget flow
+{"title": "How an e-mail travels", "layout": "chain", "nodes": [{"id": "n0", "label": "Compose", "detail": "Attachment encoded"}, {"id": "n1", "label": "SMTP out", "detail": "To the sender's mail server"}, {"id": "n2", "label": "DNS lookup", "detail": "Find the receiver's mail server"}, {"id": "n3", "label": "SMTP across", "detail": "Server to server over TCP/IP"}, {"id": "n4", "label": "Mailbox", "detail": "Stored on the receiving server"}, {"id": "n5", "label": "IMAP or POP3", "detail": "Fetched by the reader's device"}]}
+:::
 
 ### Security
 - **Malware:** **virus** (attaches to files, needs a host), **worm** (spreads itself across networks), **Trojan horse** (looks useful, hides harm), **ransomware** (locks files for payment), **spyware**, **adware**.
@@ -102,7 +110,7 @@ Q: Shodhganga is maintained by:
 - **Sustainable Development Goals (SDGs):** adopted by the UN General Assembly in **September 2015** as the 2030 Agenda for Sustainable Development. **17 goals, 169 targets**, to be met by **2030**. Goal 3 is good health and well-being (including mental health and substance use); goal 4 quality education; goal 13 climate action. NITI Aayog publishes India's **SDG India Index**.
 - **Sustainable development** was defined in the **Brundtland Report** (1987) of the World Commission on Environment and Development: development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
 
-### Human–environment interaction and pollution
+### Human-environment interaction and pollution
 - **Anthropogenic** (human-caused) activities: deforestation, urbanisation, industry, intensive agriculture, mining, fossil fuels.
 - **Air pollution:** particulate matter (**PM2.5** and **PM10**), nitrogen oxides, sulphur dioxide, carbon monoxide, ozone, ammonia, lead. India's **National Air Quality Index** (2014) uses these eight pollutants and six bands: good (0 to 50), satisfactory (51 to 100), moderately polluted (101 to 200), poor (201 to 300), very poor (301 to 400) and severe (401 to 500). The **National Clean Air Programme** began in 2019.
 - **Water pollution:** sewage, industrial effluents, fertiliser run-off (eutrophication), arsenic and fluoride in groundwater. **Biochemical oxygen demand (BOD)** measures organic pollution.
@@ -126,6 +134,10 @@ Q: Shodhganga is maintained by:
 - **Hyogo Framework** (2005 to 2015) was followed by the **Sendai Framework for Disaster Risk Reduction (2015 to 2030)**, with seven targets and four priorities.
 - Psychological first aid and community mental health are part of disaster response (NIMHANS has trained responders for many disasters).
 
+:::widget flow
+{"title": "India's environment laws, in order", "layout": "chain", "nodes": [{"id": "n0", "label": "1972", "detail": "Wildlife (Protection) Act"}, {"id": "n1", "label": "1974", "detail": "Water Act"}, {"id": "n2", "label": "1980", "detail": "Forest (Conservation) Act"}, {"id": "n3", "label": "1981", "detail": "Air Act"}, {"id": "n4", "label": "1986", "detail": "Environment (Protection) Act, after Bhopal"}, {"id": "n5", "label": "2002", "detail": "Biological Diversity Act"}, {"id": "n6", "label": "2010", "detail": "National Green Tribunal Act"}]}
+:::
+
 ### Indian environmental laws
 | Law | Year |
 |---|---|
@@ -138,6 +150,10 @@ Q: Shodhganga is maintained by:
 | National Green Tribunal Act | 2010 |
 
 The **Constitution** places duties on the state (**Article 48A**: protect and improve the environment) and on citizens (**Article 51A(g)**). Courts read the right to a clean environment into **Article 21** (right to life).
+
+:::widget flow
+{"title": "Global environment milestones", "layout": "chain", "nodes": [{"id": "n0", "label": "1972 Stockholm", "detail": "First UN environment conference; UNEP"}, {"id": "n1", "label": "1987 Montreal", "detail": "Ozone layer"}, {"id": "n2", "label": "1992 Rio", "detail": "UNFCCC, biodiversity convention, Agenda 21"}, {"id": "n3", "label": "1997 Kyoto", "detail": "Binding cuts for developed countries"}, {"id": "n4", "label": "2015 Paris", "detail": "Every country's NDC; well below 2°C"}, {"id": "n5", "label": "2022 Kunming-Montreal", "detail": "Biodiversity: 30% protected by 2030"}]}
+:::
 
 ### International agreements
 | Agreement | Year | Purpose |
@@ -155,6 +171,10 @@ The **Constitution** places duties on the state (**Article 48A**: protect and im
 | Minamata Convention | 2013 | Mercury |
 | **Paris Agreement** | **2015** (in force 2016) | Hold warming well below 2°C and pursue 1.5°C; every country submits **nationally determined contributions (NDCs)**; a global stocktake every five years (the first concluded at COP28, Dubai, 2023) |
 | Kunming-Montreal Global Biodiversity Framework | 2022 | Including protecting 30% of land and sea by 2030 |
+
+:::widget sort
+{"prompt": "Which goal does each agreement or law mainly serve?", "buckets": ["Climate", "Ozone", "Nature and biodiversity"], "items": [{"text": "Paris Agreement", "bucket": 0}, {"text": "Kigali Amendment", "bucket": 1, "why": "It phases down HFCs under the ozone treaty, which also helps the climate."}, {"text": "Ramsar Convention", "bucket": 2}, {"text": "National Action Plan on Climate Change", "bucket": 0}, {"text": "Vienna Convention", "bucket": 1}, {"text": "Biological Diversity Act, 2002", "bucket": 2}]}
+:::
 
 Recent climate summits: **COP29** (Baku, 2024) set a new finance goal of at least **US$300 billion a year by 2035** for developing countries; **COP30** was held in **Belém, Brazil** (November 2025); **COP31** is in **Antalya, Türkiye, 9 to 20 November 2026**, with Australia presiding over the negotiations.
 
@@ -217,6 +237,10 @@ Q: Which constitutional article directs the state to protect and improve the env
 
 Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) alongside **pathshalas**, **tols** and **gurukuls**.
 
+:::widget flow
+{"title": "Ancient centres of learning", "layout": "chain", "nodes": [{"id": "n0", "label": "Takshashila", "detail": "Oldest; teachers taught independently"}, {"id": "n1", "label": "Nalanda", "detail": "Gupta period, Kumaragupta I; Xuanzang studied here"}, {"id": "n2", "label": "Valabhi", "detail": "Gujarat, Maitraka rulers"}, {"id": "n3", "label": "Vikramashila", "detail": "Pala king Dharmapala; Atisha"}, {"id": "n4", "label": "Odantapuri and Jagaddala", "detail": "Later Pala foundations"}]}
+:::
+
 ### The colonial period
 | Year | Landmark | What it did |
 |---|---|---|
@@ -226,26 +250,34 @@ Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) a
 | **1857** | Universities of **Calcutta, Bombay and Madras** | The first modern universities, affiliating and examining bodies |
 | 1882 | **Hunter Commission** (Indian Education Commission) | Focused on primary and secondary education |
 | 1902 | **Raleigh Commission** (Indian Universities Commission) | Under Lord Curzon; led to the **Indian Universities Act, 1904** |
-| 1917–19 | **Sadler Commission** (Calcutta University Commission) | Recommended a 12-year school stage before university, and an intermediate stage |
+| 1917-19 | **Sadler Commission** (Calcutta University Commission) | Recommended a 12-year school stage before university, and an intermediate stage |
 | 1929 | Hartog Committee | Quality over expansion |
 | 1944 | **Sargent Plan** | A 40-year post-war plan for education |
+
+:::widget flow
+{"title": "Colonial landmarks", "layout": "chain", "nodes": [{"id": "n0", "label": "1835 Macaulay", "detail": "English-medium education"}, {"id": "n1", "label": "1854 Wood's Despatch", "detail": "Magna Carta of English education"}, {"id": "n2", "label": "1857 Universities", "detail": "Calcutta, Bombay, Madras"}, {"id": "n3", "label": "1882 Hunter", "detail": "Primary and secondary"}, {"id": "n4", "label": "1902 Raleigh", "detail": "Then the 1904 Universities Act"}, {"id": "n5", "label": "1917 Sadler", "detail": "Calcutta University"}, {"id": "n6", "label": "1944 Sargent", "detail": "Post-war plan"}]}
+:::
 
 ### After independence
 | Year | Landmark | Key point |
 |---|---|---|
-| **1948–49** | **University Education Commission** (chaired by **S. Radhakrishnan**) | The first commission of free India; recommended a **University Grants Commission** on the British model |
-| 1952–53 | Secondary Education Commission (Mudaliar) | Diversified secondary education |
+| **1948-49** | **University Education Commission** (chaired by **S. Radhakrishnan**) | The first commission of free India; recommended a **University Grants Commission** on the British model |
+| 1952-53 | Secondary Education Commission (Mudaliar) | Diversified secondary education |
 | **1953 / 1956** | **UGC** inaugurated (28 December 1953); statutory under the **UGC Act, 1956** | Coordinates, funds and maintains standards in universities |
-| **1964–66** | **Education Commission** (chaired by **D. S. Kothari**) | "The destiny of India is now being shaped in her classrooms"; the **10 + 2 + 3** structure; spending 6% of national income on education |
+| **1964-66** | **Education Commission** (chaired by **D. S. Kothari**) | "The destiny of India is now being shaped in her classrooms"; the **10 + 2 + 3** structure; spending 6% of national income on education |
 | 1968 | First National Policy on Education | Based on Kothari |
 | 1976 | **42nd Amendment** | Moved education from the State List to the **Concurrent List** |
 | 1985 | **IGNOU** | National open university |
 | **1986** | **National Policy on Education** (revised by the **Programme of Action, 1992**) | Access, equity, Operation Blackboard, open universities, autonomous colleges, NAAC |
 | 2002 | **86th Amendment** | **Article 21A**: free and compulsory education for children aged 6 to 14 (Right to Education Act, 2009) |
-| 2005–09 | National Knowledge Commission (Sam Pitroda) | Expansion, excellence, a single regulator |
+| 2005-09 | National Knowledge Commission (Sam Pitroda) | Expansion, excellence, a single regulator |
 | 2009 | Yash Pal Committee | Renovation and rejuvenation of higher education; proposed an overarching regulator |
 | 2013 | **RUSA** (Rashtriya Uchchatar Shiksha Abhiyan) | Central funding for state universities |
 | **2020** | **National Education Policy 2020** | See 3.4 |
+
+:::widget flow
+{"title": "After independence", "layout": "chain", "nodes": [{"id": "n0", "label": "1948 Radhakrishnan", "detail": "Recommends a UGC"}, {"id": "n1", "label": "1953 UGC", "detail": "Statutory in 1956"}, {"id": "n2", "label": "1964 Kothari", "detail": "10 + 2 + 3"}, {"id": "n3", "label": "1968 and 1986 NPE", "detail": "National policies"}, {"id": "n4", "label": "1976", "detail": "Education to the Concurrent List"}, {"id": "n5", "label": "2002", "detail": "Article 21A"}, {"id": "n6", "label": "2020 NEP", "detail": "5 + 3 + 3 + 4; 50% GER by 2035"}]}
+:::
 
 ### The Constitution and education
 - **Entry 66, Union List:** coordination and determination of standards in higher education and research (the basis of UGC's powers).
@@ -259,7 +291,7 @@ Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) a
 :::recall
 1. Which document is called the Magna Carta of English education in India, and when? || Wood's Despatch, 1854.
 2. Name the first three modern universities and the year. || Calcutta, Bombay and Madras, 1857.
-3. Who chaired the University Education Commission of 1948–49, and what did it recommend? || S. Radhakrishnan; a University Grants Commission.
+3. Who chaired the University Education Commission of 1948-49, and what did it recommend? || S. Radhakrishnan; a University Grants Commission.
 4. When was the UGC inaugurated, and when did it become statutory? || 28 December 1953; UGC Act, 1956.
 5. Which amendment moved education to the Concurrent List? || The 42nd Amendment, 1976.
 6. Who founded Nalanda and Vikramashila? || Kumaragupta I (Gupta) and Dharmapala (Pala).
@@ -278,7 +310,7 @@ Q: "The destiny of India is now being shaped in her classrooms" is from the repo
 - Mudaliar Commission
 - *Kothari Commission
 - Yash Pal Committee
-> The Education Commission, 1964–66.
+> The Education Commission, 1964-66.
 
 Q: The Chinese pilgrim who studied at Nalanda in the 7th century was:
 - Fa-Hien
@@ -293,17 +325,21 @@ Q: The Chinese pilgrim who studied at Nalanda in the 7th century was:
 ### National Education Policy 2020
 - Approved by the Union Cabinet on **29 July 2020**; drafted by a committee chaired by **Dr K. Kasturirangan**. It replaced the 1986 policy. The Ministry of Human Resource Development was renamed the **Ministry of Education**.
 - **School:** a **5 + 3 + 3 + 4** structure (foundational, preparatory, middle, secondary) replacing 10 + 2; teaching in the **mother tongue or regional language at least up to Grade 5**, preferably Grade 8.
-- **Higher education targets:** a **gross enrolment ratio of 50% by 2035** (AISHE 2021–22 reported about 28%).
+- **Higher education targets:** a **gross enrolment ratio of 50% by 2035** (AISHE 2021-22 reported about 28%).
 - **Multidisciplinary education** in large institutions; colleges move toward autonomous degree-granting status, and the **affiliation system is to be phased out over 15 years**.
 - **Four-year undergraduate programme** with **multiple entry and exit**: a certificate after 1 year, a diploma after 2, a bachelor's degree after 3, and a bachelor's with honours or research after 4.
 - **Academic Bank of Credits**; **Multidisciplinary Education and Research Universities (MERUs)**.
-- **M.Phil is discontinued.** (For clinical psychology, RCI has moved to a two-year M.A. in Clinical Psychology on a "4 + 2" model from 2025–26.)
+- **M.Phil is discontinued.** (For clinical psychology, RCI has moved to a two-year M.A. in Clinical Psychology on a "4 + 2" model from 2025-26.)
 - A single overarching regulator, the **Higher Education Commission of India (HECI)**, with **four verticals**: **NHERC** (regulation), **NAC** (accreditation), **HEGC** (grants) and **GEC** (General Education Council, for learning outcomes and standards). Medical and legal education are kept outside it.
 - A **National Research Foundation** (now the **Anusandhan National Research Foundation**, set up under a 2023 Act).
 - Public spending on education to reach **6% of GDP**; the **National Testing Agency** to run common entrance tests (CUET); the **National Educational Technology Forum (NETF)**; **Indian Knowledge Systems** in the curriculum; internationalisation.
 
 :::note The regulator bill (status as of November 2026)
 The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sabha on **15 December 2025** to replace the UGC, AICTE and NCTE with one body and three councils (for regulation, accreditation and standards), as NEP 2020 proposed. It was referred to a **Joint Parliamentary Committee**, whose report had not been finalised as of November 2026. **The UGC, AICTE and NCTE continue to function.** Check the current status before your exam.
+:::
+
+:::widget flow
+{"title": "NEP 2020's proposed regulator", "layout": "tree", "nodes": [{"id": "h", "label": "Higher Education Commission of India", "detail": "One umbrella body"}, {"id": "n1", "label": "NHERC", "detail": "Regulation", "parent": "h"}, {"id": "n2", "label": "NAC", "detail": "Accreditation", "parent": "h"}, {"id": "n3", "label": "HEGC", "detail": "Grants", "parent": "h"}, {"id": "n4", "label": "GEC", "detail": "Standards and learning outcomes", "parent": "h"}], "caption": "Medical and legal education stay outside. NAC is not the existing NAAC."}
 :::
 
 ### Regulators and other bodies
@@ -323,6 +359,10 @@ The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sa
 | **ICSSR** | 1969 | Social science research councils (also ICHR 1972, ICPR 1977) |
 | **IGNOU** | 1985 | Open and distance learning |
 | **NIOS** | 1989 | Open schooling |
+
+:::widget sort
+{"prompt": "Which body does each job?", "buckets": ["UGC", "NAAC", "RCI", "NTA"], "items": [{"text": "Accredits colleges and universities", "bucket": 1}, {"text": "Registers clinical psychologists", "bucket": 2}, {"text": "Conducts UGC NET and CUET", "bucket": 3}, {"text": "Gives grants and sets standards for universities", "bucket": 0}, {"text": "Maintains the Central Rehabilitation Register", "bucket": 2}, {"text": "Moving to binary accreditation with maturity levels", "bucket": 1}]}
+:::
 
 ### Types of institutions and governance
 - **Central universities** (Act of Parliament), **state universities** (state Act), **state private universities**, **deemed-to-be universities** (declared by the Centre on UGC's advice, under Section 3 of the UGC Act), **Institutions of National Importance** (IITs, IIMs, AIIMS, NITs, by Act of Parliament) and **Institutions of Eminence** (a 2017 scheme).
@@ -369,6 +409,10 @@ Q: The President of India is the Visitor of:
 ## 3.5 Paper 1 question styles: practice across units [core][advanced]
 NTA uses the same few formats across units. Recognising the format saves time.
 
+:::widget flow
+{"title": "Tackling an assertion and reason item", "layout": "chain", "nodes": [{"id": "n0", "label": "Is A true?", "detail": "Judge it alone"}, {"id": "n1", "label": "Is R true?", "detail": "Judge it alone"}, {"id": "n2", "label": "Does R explain A?", "detail": "Only if both are true"}, {"id": "n3", "label": "Pick the code", "detail": "Match your three judgements to the options"}]}
+:::
+
 ### The formats
 - **Statement I and Statement II:** decide whether each is true. Judge each statement **alone** first.
 - **Assertion (A) and Reason (R):** decide whether A is true, whether R is true, and whether R **correctly explains** A. Both can be true without R explaining A.
@@ -377,11 +421,11 @@ NTA uses the same few formats across units. Recognising the format saves time.
 - **Arrange in order (chronology or sequence):** fix the first and last items first.
 
 :::widget worked
-{"title": "Working through the formats", "steps": [{"q": "Assertion (A): Kyoto Protocol imposed binding targets on all countries. Reason (R): The Paris Agreement requires every country to submit an NDC. How do you answer?", "a": "A is false: Kyoto bound only developed (Annex I) countries. R is true. So the answer is 'A is false, but R is true'."}, {"q": "Match: (a) Lasswell, (b) Berlo, (c) Dance, (d) Osgood and Schramm with (i) SMCR, (ii) helical, (iii) circular, (iv) 'who says what in which channel'. Which pair fixes it fastest?", "a": "Lasswell–(iv) and Berlo–(i) are the surest. Then Dance–(ii), Osgood and Schramm–(iii). Answer: a-iv, b-i, c-ii, d-iii."}, {"q": "Arrange in chronological order: (A) Kothari Commission, (B) Wood's Despatch, (C) NEP 2020, (D) Radhakrishnan Commission, (E) Sadler Commission.", "a": "Wood's 1854, Sadler 1917–19, Radhakrishnan 1948–49, Kothari 1964–66, NEP 2020: B, E, D, A, C."}, {"q": "Which are accepted as pramanas by Nyaya? (A) pratyaksha (B) anumana (C) arthapatti (D) upamana (E) shabda. Options: A, B and C only; A, B, D and E only; A and B only; all five.", "a": "Nyaya accepts four: perception, inference, comparison and testimony. Answer: A, B, D and E only."}]}
+{"title": "Working through the formats", "steps": [{"q": "Assertion (A): Kyoto Protocol imposed binding targets on all countries. Reason (R): The Paris Agreement requires every country to submit an NDC. How do you answer?", "a": "A is false: Kyoto bound only developed (Annex I) countries. R is true. So the answer is 'A is false, but R is true'."}, {"q": "Match: (a) Lasswell, (b) Berlo, (c) Dance, (d) Osgood and Schramm with (i) SMCR, (ii) helical, (iii) circular, (iv) 'who says what in which channel'. Which pair fixes it fastest?", "a": "Lasswell-(iv) and Berlo-(i) are the surest. Then Dance-(ii), Osgood and Schramm-(iii). Answer: a-iv, b-i, c-ii, d-iii."}, {"q": "Arrange in chronological order: (A) Kothari Commission, (B) Wood's Despatch, (C) NEP 2020, (D) Radhakrishnan Commission, (E) Sadler Commission.", "a": "Wood's 1854, Sadler 1917-19, Radhakrishnan 1948-49, Kothari 1964-66, NEP 2020: B, E, D, A, C."}, {"q": "Which are accepted as pramanas by Nyaya? (A) pratyaksha (B) anumana (C) arthapatti (D) upamana (E) shabda. Options: A, B and C only; A, B, D and E only; A and B only; all five.", "a": "Nyaya accepts four: perception, inference, comparison and testimony. Answer: A, B, D and E only."}]}
 :::
 
 :::recall
-1. In an assertion–reason item, what extra judgement is needed when both are true? || Whether R correctly explains A.
+1. In an assertion-reason item, what extra judgement is needed when both are true? || Whether R correctly explains A.
 2. What is the fastest way into a match-the-list item? || Fix the pair you are surest of first; it eliminates options.
 :::
 
@@ -399,270 +443,5 @@ Q: Arrange in order: (A) Montreal Protocol (B) Stockholm Conference (C) Paris Ag
 - D, B, A, C
 - *B, A, D, C
 > 1972, 1987, 1992, 2015.
-:::
-
-# Part IV · Exam zone
-
-## 4.1 Long answers, short notes and viva [core]
-Paper 1 is objective, but writing short explanatory answers is the fastest way to fix these units in memory, and the same topics come up in **interviews for teaching posts**, **PhD entrance interviews** and **university education papers**.
-
-### Long answer skeletons
-**1. Discuss the levels of teaching and the factors that affect teaching.**
-- Define teaching; bipolar and tripolar views.
-- Memory (Herbart), understanding (Morrison), reflective (Hunt): aims, teacher and learner roles, steps, merits and limits.
-- Factors: teacher, learner, support material, institution, environment.
-- Link to Bloom's revised taxonomy and evaluation types.
-
-**2. Explain the Nyaya theory of inference and its fallacies.**
-- Pramana and prama; the six pramanas and which schools accept them.
-- Terms: paksha, sadhya, hetu, vyapti, paksha-dharmata.
-- Svartha and parartha; the five members with the hill example.
-- Purvavat, sheshavat, samanyatodrishta.
-- The five hetvabhasas with an example each; comparison with Western syllogism (middle term, undistributed middle).
-
-**3. Discuss NEP 2020 with reference to higher education.**
-- Background (1968, 1986 and 1992; Kasturirangan).
-- Targets (50% GER by 2035), structure (four-year UG, multiple entry and exit, ABC), institutions (multidisciplinary, MERUs, end of affiliation), regulation (HECI and four verticals), research (ANRF), technology (NETF), languages and Indian Knowledge Systems, financing (6% of GDP).
-- Implementation so far and open questions (state concerns, the VBSA Bill, funding).
-
-**4. Describe the major international environmental agreements and India's climate commitments.**
-- Stockholm 1972 to Paris 2015 (table), Kigali, Kunming-Montreal.
-- India: NAPCC, updated NDC, net zero by 2070, ISA, the 50% non-fossil milestone, LiFE.
-- Mental health links: heat, disasters, displacement, eco-anxiety.
-
-### Short notes (5 marks each): outline points
-- **Bloom's revised taxonomy:** six levels with verbs; knowledge dimension (factual, conceptual, procedural, metacognitive).
-- **Microteaching:** origin, cycle (36 minutes), skills, merits.
-- **SWAYAM:** four quadrants; credit transfer; NPTEL and other national coordinators.
-- **Models of communication:** Lasswell, Shannon and Weaver, Berlo, Osgood and Schramm.
-- **Barriers to communication:** six types with examples and remedies.
-- **Square of opposition:** four relations with examples.
-- **Hetvabhasa:** five fallacies with examples.
-- **Plagiarism regulations (UGC, 2018):** levels and penalties.
-- **Environment (Protection) Act, 1986:** background, umbrella character, powers.
-- **Wood's Despatch:** recommendations and impact.
-- **NAAC and NIRF:** accreditation versus ranking; NIRF parameters; the binary shift.
-
-:::viva
-Why does Paper 1 test logic and data alongside teaching? :: Because a lecturer or researcher must reason clearly, read evidence and explain it to learners; the paper tests the general thinking a teacher-researcher needs, whatever the subject.
-How is anupalabdhi different from inference? :: Anupalabdhi knows an absence directly, by the non-perception of something that would be perceived if present; inference reasons from a mark to something not perceived. Bhatta Mimamsa and Advaita treat it as a separate pramana; Nyaya folds it into perception or inference.
-What is the difference between NAAC and NIRF? :: NAAC accredits an institution's quality against standards (now moving to a binary decision with maturity levels); NIRF ranks institutions against one another on published parameters.
-Why is Mehrabian's 7–38–55 rule often misused? :: It came from experiments on single words expressing feelings, where tone and face conflicted with the word. It does not show that most of all communication is non-verbal.
-What would you do to make a large lecture class more reflective-level? :: Pose real problems, use think–pair–share, case discussions, short written reflections and questions that ask why and what if, and give formative feedback rather than only end-of-term marks.
-:::
-
-## 4.2 Module test [core]
-Thirty questions across all ten units. Aim for 24 or more.
-
-:::mcq
-Q: In UGC NET, Paper 1 and Paper 2 together last:
-- *3 hours with no break
-- 2 hours with a break
-- 3 hours, 1 hour for Paper 1
-- 4 hours
-> One sitting covers both papers.
-
-Q: "Characterisation by a value" is the highest level of the:
-- Cognitive domain
-- Psychomotor domain
-- Revised cognitive domain
-- *Affective domain
-> Krathwohl's affective taxonomy.
-
-Q: The understanding level of teaching was advocated by:
-- Herbart
-- Hunt
-- Bloom
-- *Morrison
-> Morrison's understanding level.
-
-Q: The Keller Plan is also known as:
-- Linear programmed instruction
-- The Dalton Plan
-- *Personalised System of Instruction
-- The project method of Kilpatrick
-> Mastery-based, self-paced learning.
-
-Q: An evaluation that compares a learner's score with the scores of other learners is:
-- Criterion-referenced
-- Formative
-- *Norm-referenced
-- Diagnostic
-> Relative standing.
-
-Q: Research that generates new theory, without an immediate application, is:
-- Action research
-- *Fundamental research
-- Applied research
-- Evaluation research
-> Basic or pure research.
-
-Q: Under UGC's 2018 regulations, a thesis with 55% similarity falls in:
-- Level 0
-- *Level 2
-- Level 1
-- Level 3
-> Above 40 and up to 60%.
-
-Q: In citations, the Latin phrase et alii (always shortened) means:
-- In the same place
-- In the work cited
-- Compare
-- *And others
-> It is used when a work has several authors.
-
-Q: In a comprehension passage, a question asking for the author's attitude is a question about:
-- Vocabulary
-- *Tone
-- Detail
-- Title
-> Tone or attitude.
-
-Q: SMCR is the model of:
-- Shannon
-- Lasswell
-- *Berlo
-- Dance
-> Source, message, channel, receiver.
-
-Q: The study of touch in communication is:
-- Kinesics
-- Proxemics
-- Chronemics
-- *Haptics
-> From the Greek for touch.
-
-Q: The theory that media influence flows through opinion leaders is:
-- *Two-step flow
-- Agenda setting
-- Cultivation
-- Uses and gratifications
-> Lazarsfeld and Katz.
-
-Q: If 12 men can build a wall in 10 days, how many days will 8 men take?
-- *15
-- 12
-- 8
-- 20
-> Work = 120 man-days; 120 ÷ 8 = 15.
-
-Q: The compound interest on ₹2,000 at 10% a year for 2 years is:
-- ₹400
-- ₹440
-- *₹420
-- ₹200
-> 2,000 × 1.21 = 2,420.
-
-Q: The next term in 5, 10, 20, 40, ? is:
-- 60
-- 50
-- 100
-- *80
-> Each term doubles.
-
-Q: "No doctors are careless" is an:
-- A proposition
-- *E proposition
-- I proposition
-- O proposition
-> Universal negative.
-
-Q: Two propositions that cannot both be true but can both be false are:
-- Contradictories
-- Subcontraries
-- *Contraries
-- Subalterns
-> A and E.
-
-Q: Which school accepts three pramanas?
-- *Samkhya
-- Charvaka
-- Nyaya
-- Advaita Vedanta
-> Perception, inference and testimony.
-
-Q: In "the hill has fire because it has smoke", the paksha is:
-- Fire
-- *The hill
-- Smoke
-- The kitchen
-> The subject of the inference.
-
-Q: A reason that is present both where the sadhya is and where it is absent is:
-- Viruddha
-- Badhita
-- *Savyabhichara
-- Asiddha
-> Irregular, inconclusive reason.
-
-Q: A sector of 108° in a pie chart is what percentage?
-- *30%
-- 25%
-- 33%
-- 36%
-> 108 ÷ 360 = 0.30.
-
-Q: The share of BA in total enrolment rose from 30% to 36%. This is a rise of:
-- 6%
-- 36%
-- *6 percentage points, or 20%
-- 20 percentage points
-> 6 points; 6 ÷ 30 = 20% relative.
-
-Q: Which memory is volatile?
-- ROM
-- Hard disk
-- *RAM
-- Pen drive
-> RAM loses its contents without power.
-
-Q: IMAP is used for:
-- *Receiving mail and keeping it synchronised on the server
-- Sending mail to an outside server
-- Transferring web pages to a browser
-- Turning domain names into IP addresses
-> POP3 downloads; IMAP synchronises.
-
-Q: The Environment (Protection) Act was passed in:
-- 1974
-- *1986
-- 1981
-- 2002
-> After the Bhopal gas disaster.
-
-Q: The Montreal Protocol deals with:
-- Greenhouse gases from industry
-- *Ozone-depleting substances
-- Movement of hazardous waste
-- Wetlands of international importance
-> Kigali later added HFCs.
-
-Q: COP31 (November 2026) is being held in:
-- *Antalya
-- Belém
-- Baku
-- Dubai
-> Türkiye hosts; Australia presides over negotiations.
-
-Q: Nalanda was founded under the Gupta ruler:
-- *Kumaragupta I
-- Chandragupta Maurya
-- Harsha
-- Dharmapala
-> 5th century CE.
-
-Q: NEP 2020 aims for a GER in higher education of:
-- 35% by 2030
-- 60% by 2040
-- *50% by 2035
-- 100% by 2030
-> The headline higher-education target.
-
-Q: Which body registers clinical psychologists in India?
-- UGC
-- NMC
-- *RCI
-- NCTE
-> The Rehabilitation Council of India.
 :::
 `;

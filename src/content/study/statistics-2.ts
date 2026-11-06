@@ -16,6 +16,10 @@ ANOVA (R. A. Fisher) splits the total variability of the scores into two parts:
 
 **F = MS between ÷ MS within.** If H0 is true, both estimate the same error variance and F is about 1. A large F means the group means differ more than chance would predict.
 
+:::widget flow
+{"title": "Partitioning the variance in one-way ANOVA", "layout": "tree", "nodes": [{"id": "t", "label": "Total variability (SS total)", "detail": "Every score's distance from the grand mean"}, {"id": "b", "label": "Between groups", "detail": "Treatment effect plus error", "parent": "t"}, {"id": "w", "label": "Within groups", "detail": "Error only", "parent": "t"}], "caption": "F compares the two branches: MS between divided by MS within."}
+:::
+
 ### The formulas
 - SS total = Σ(X − GM)², where GM is the grand mean. Computational: ΣX² − (ΣX)² ÷ N.
 - SS between = Σ n(Mj − GM)². Computational: Σ(Tj² ÷ nj) − (ΣX)² ÷ N, where Tj is each group's total.
@@ -98,6 +102,10 @@ Each effect has its own F = MS effect ÷ MS within. A significant interaction me
 {"title": "Reading a two-way ANOVA", "steps": [{"q": "A study in Mumbai crosses Feedback (praise vs none) with Task difficulty (easy vs hard), 10 students per cell (N = 40). SS: Feedback 40, Difficulty 10, Interaction 30, Within 160. Find all the df.", "a": "Feedback 1, Difficulty 1, Interaction (1)(1) = 1, Within 40 − 4 = 36, Total 39."}, {"q": "Compute MS within and the three F ratios.", "a": "MS within = 160 ÷ 36 = 4.44. F Feedback = 40 ÷ 4.44 = 9.0. F Difficulty = 10 ÷ 4.44 = 2.25. F Interaction = 30 ÷ 4.44 = 6.75."}, {"q": "Critical F(1, 36) at .05 is 4.11. Which effects are significant?", "a": "Feedback (9.0) and the interaction (6.75) are; difficulty (2.25) is not."}, {"q": "How do you interpret the significant interaction before the main effect?", "a": "Praise helps more on one kind of task than the other; for example, a big benefit on hard tasks and little on easy ones. Test the simple effect of feedback at each difficulty level and draw the plot. The main effect of feedback is an average that hides this."}]}
 :::
 
+:::widget flow
+{"title": "The ANOVA family", "layout": "tree", "nodes": [{"id": "a", "label": "Comparing means with ANOVA", "detail": ""}, {"id": "one", "label": "One IV, separate groups", "detail": "One-way ANOVA", "parent": "a"}, {"id": "fac", "label": "Two or more IVs", "detail": "Factorial ANOVA: main effects and interactions", "parent": "a"}, {"id": "rm", "label": "Same people in every condition", "detail": "Repeated-measures ANOVA; check sphericity", "parent": "a"}, {"id": "mix", "label": "One between, one within factor", "detail": "Mixed ANOVA: group × time", "parent": "a"}, {"id": "anc", "label": "Plus a continuous covariate", "detail": "ANCOVA", "parent": "a"}, {"id": "man", "label": "Several correlated DVs", "detail": "MANOVA", "parent": "a"}]}
+:::
+
 ### Repeated-measures ANOVA
 The same people are measured under every condition (or at several time points). Individual differences are removed from the error term, so it is **more powerful**.
 - Extra assumption: **sphericity**: the variances of the differences between all pairs of conditions are equal. Tested by **Mauchly's test**. If violated, correct the df with **Greenhouse-Geisser** (conservative) or **Huynh-Feldt**.
@@ -107,7 +115,7 @@ The same people are measured under every condition (or at several time points). 
 ANOVA plus a continuous **covariate** (often the pretest score). It:
 - **removes** the covariate's effect from the DV, reducing error variance and raising power;
 - **adjusts** the group means for small differences on the covariate.
-Extra assumptions: the covariate is measured reliably, ideally before treatment, is linearly related to the DV, and **homogeneity of regression slopes** (the covariate–DV relation is the same in every group). ANCOVA cannot "fix" big pre-existing group differences in non-randomised studies.
+Extra assumptions: the covariate is measured reliably, ideally before treatment, is linearly related to the DV, and **homogeneity of regression slopes** (the covariate-DV relation is the same in every group). ANCOVA cannot "fix" big pre-existing group differences in non-randomised studies.
 
 ### MANOVA (multivariate ANOVA)
 Two or more **correlated DVs** at once (anxiety, depression and stress scores). It controls the Type I error that separate ANOVAs would inflate and can detect group differences on a combination of DVs.
@@ -123,7 +131,7 @@ Two or more **correlated DVs** at once (anxiety, depression and stress scores). 
 1. In a 3 × 4 ANOVA with 5 people per cell, what are the df for A, B, A × B and within? || 2, 3, 6 and 60 − 12 = 48.
 2. What is sphericity, and what corrections are used if it fails? || Equal variances of all pairwise difference scores in repeated measures; Greenhouse-Geisser or Huynh-Feldt.
 3. What two things does ANCOVA do to the DV? || Removes covariate-related error variance and adjusts group means for the covariate.
-4. What is homogeneity of regression slopes? || The covariate–DV relation is the same in every group (an ANCOVA assumption).
+4. What is homogeneity of regression slopes? || The covariate-DV relation is the same in every group (an ANCOVA assumption).
 5. Name the four MANOVA test statistics. Which is most robust? || Wilks' lambda, Pillai's trace, Hotelling's trace, Roy's largest root; Pillai's trace.
 :::
 
@@ -161,9 +169,9 @@ Q: A researcher measures anxiety, depression and stress after three intervention
 | Three or more independent groups | One-way ANOVA | **Kruskal-Wallis H** |
 | Three or more related measures | Repeated-measures ANOVA | **Friedman** test |
 | Relation between two variables | Pearson r | **Spearman ρ**, Kendall τ |
-| Nominal data, independent | — | **Chi-square**, Fisher's exact test |
-| Nominal data, related (two times) | — | **McNemar** test; Cochran's Q for three or more |
-| Fit to a distribution | — | Chi-square goodness of fit; **Kolmogorov-Smirnov**; Shapiro-Wilk (normality) |
+| Nominal data, independent | No parametric test | **Chi-square**, Fisher's exact test |
+| Nominal data, related (two times) | No parametric test | **McNemar** test; Cochran's Q for three or more |
+| Fit to a distribution | No parametric test | Chi-square goodness of fit; **Kolmogorov-Smirnov**; Shapiro-Wilk (normality) |
 
 :::widget worked
 {"title": "Mann-Whitney U by hand", "steps": [{"q": "Ten children rate enjoyment (0 to 25) after a lesson: new storytelling method 12, 15, 18, 20, 22; usual method 8, 10, 11, 14, 16. Rank all ten together (1 = lowest).", "a": "8 (1), 10 (2), 11 (3), 12 (4), 14 (5), 15 (6), 16 (7), 18 (8), 20 (9), 22 (10)."}, {"q": "Sum the ranks in each group.", "a": "New method: 4 + 6 + 8 + 9 + 10 = 37. Usual: 1 + 2 + 3 + 5 + 7 = 18. Check: the total must be N(N + 1) ÷ 2 = 55. It is."}, {"q": "Compute U for each group: U1 = n1n2 + n1(n1 + 1) ÷ 2 − R1.", "a": "U new = 25 + 15 − 37 = 3. U usual = 25 + 15 − 18 = 22. Check: U1 + U2 = n1n2 = 25."}, {"q": "U is the smaller value. Critical U for n1 = n2 = 5, two-tailed .05, is 2. Decide.", "a": "U = 3. For Mann-Whitney, the result is significant only if U is at or below the critical value. 3 is above 2, so it is not significant (exact p = .056). Unlike t or F, a smaller U means a bigger difference."}], "yourTurn": [{"q": "In a Mann-Whitney test, what would U = 0 mean?", "a": "Complete separation: every score in one group is higher than every score in the other."}]}
@@ -231,6 +239,10 @@ Cohen himself said these labels are rough defaults for when nothing better is kn
 
 :::widget worked
 {"title": "From a result to its size", "steps": [{"q": "A trial in Chennai: CBT group (n = 30) M = 12, SD = 5; waiting list (n = 30) M = 18, SD = 6, on a depression scale. Compute Cohen's d.", "a": "Pooled SD (equal n) = √[(25 + 36) ÷ 2] = √30.5 = 5.52. d = (18 − 12) ÷ 5.52 = 1.09: a large effect (CBT lower on depression)."}, {"q": "Convert d to r.", "a": "r = 1.09 ÷ √(1.09² + 4) = 1.09 ÷ √5.19 = 1.09 ÷ 2.28 = .48."}, {"q": "The three-group ANOVA in 3.1 gave F(2, 9) = 38. Recover η².", "a": "η² = (38 × 2) ÷ (38 × 2 + 9) = 76 ÷ 85 = .89, matching the SS calculation."}, {"q": "Compute omega squared for the same ANOVA: ω² = (SS between − df between × MS within) ÷ (SS total + MS within).", "a": "(50.67 − 2 × 0.667) ÷ (56.67 + 0.667) = 49.33 ÷ 57.33 = .86. Slightly smaller than η², because η² overestimates the population effect, especially in small samples."}]}
+:::
+
+:::widget curve
+{"kind": "sdt", "title": "Power as overlap between two distributions", "caption": "Treat one curve as 'no effect' and the other as 'real effect'. The criterion is your critical value. Pull the curves apart (bigger effect or bigger sample) and watch power (hits) rise while α (false alarms) stays the same."}
 :::
 
 ### Power analysis
@@ -305,13 +317,17 @@ The regression line is **Ŷ = a + bX** (predicted Y).
 - **Logistic regression** predicts a **dichotomous** outcome (relapse or not); coefficients are reported as **odds ratios**, Exp(B).
 - **Discriminant function analysis** predicts group membership from several predictors.
 
+:::widget flow
+{"title": "Mediation: X affects Y through M", "layout": "chain", "nodes": [{"id": "n0", "label": "Childhood adversity (X)", "detail": "Predictor"}, {"id": "n1", "label": "Rumination (M)", "detail": "Mediator"}, {"id": "n2", "label": "Depression (Y)", "detail": "Outcome"}], "edgeLabels": {"n0>n1": "path a", "n1>n2": "path b"}, "caption": "Indirect effect = a × b. Test it with a bootstrapped confidence interval."}
+:::
+
 ### Mediation and moderation
 - **Mediation:** X affects M, which affects Y (X → M → Y). Example: childhood adversity raises rumination, which raises depression. Baron and Kenny's classic four steps (X predicts Y; X predicts M; M predicts Y controlling X; the X effect shrinks) are now replaced by testing the **indirect effect (a × b)** directly, with **bootstrapped confidence intervals** (Hayes' PROCESS macro). The **Sobel test** is an older, less powerful option. **Full mediation:** the direct effect disappears; **partial:** it shrinks.
-- **Moderation:** the X–Y relation depends on a third variable W. Example: stress predicts depression more strongly in people with low social support. Tested with an **interaction term (X × W)** in regression, after **mean-centring** the predictors, and explored with **simple slopes**.
+- **Moderation:** the X-Y relation depends on a third variable W. Example: stress predicts depression more strongly in people with low social support. Tested with an **interaction term (X × W)** in regression, after **mean-centring** the predictors, and explored with **simple slopes**.
 - Cross-sectional data cannot establish the causal order that mediation implies; longitudinal designs are better.
 
 :::widget sort
-{"prompt": "Mediation or moderation?", "buckets": ["Mediation (how or why)", "Moderation (when or for whom)"], "items": [{"text": "Exercise lowers depression because it improves sleep", "bucket": 0}, {"text": "A school anti-bullying programme works for boys but not for girls", "bucket": 1}, {"text": "Discrimination raises distress through lowered self-esteem", "bucket": 0}, {"text": "Job demands predict burnout only when control over work is low", "bucket": 1, "why": "Karasek's demand–control idea is a moderation hypothesis."}, {"text": "Mindfulness reduces anxiety by reducing worry", "bucket": 0}, {"text": "The link between screen time and poor sleep is stronger in teenagers than adults", "bucket": 1}]}
+{"prompt": "Mediation or moderation?", "buckets": ["Mediation (how or why)", "Moderation (when or for whom)"], "items": [{"text": "Exercise lowers depression because it improves sleep", "bucket": 0}, {"text": "A school anti-bullying programme works for boys but not for girls", "bucket": 1}, {"text": "Discrimination raises distress through lowered self-esteem", "bucket": 0}, {"text": "Job demands predict burnout only when control over work is low", "bucket": 1, "why": "Karasek's demand-control idea is a moderation hypothesis."}, {"text": "Mindfulness reduces anxiety by reducing worry", "bucket": 0}, {"text": "The link between screen time and poor sleep is stronger in teenagers than adults", "bucket": 1}]}
 :::
 
 :::recall
@@ -353,8 +369,8 @@ Q: To predict whether a patient will relapse within a year (yes or no) from seve
 |---|---|---|---|
 | **Test-retest** | Same test twice, a gap apart | Pearson r (coefficient of stability) | Changes over time |
 | **Parallel (alternate) forms** | Two equivalent forms | Pearson r (coefficient of equivalence) | Item sampling |
-| **Split-half** | One test split (usually odd–even items), halves correlated | r corrected by **Spearman-Brown** | Item sampling within one sitting |
-| **Internal consistency** | Item intercorrelations | **KR-20** (right–wrong items), **KR-21** (equal-difficulty shortcut), **Cronbach's α** (any items) | Item heterogeneity |
+| **Split-half** | One test split (usually odd-even items), halves correlated | r corrected by **Spearman-Brown** | Item sampling within one sitting |
+| **Internal consistency** | Item intercorrelations | **KR-20** (right-wrong items), **KR-21** (equal-difficulty shortcut), **Cronbach's α** (any items) | Item heterogeneity |
 | **Inter-rater (scorer)** | Two raters score the same responses | % agreement, **Cohen's κ**, intraclass correlation (ICC) | Rater differences |
 
 ### The formulas
@@ -366,7 +382,7 @@ Q: To predict whether a patient will relapse within a year (yes or no) from seve
 - **Standard error of measurement (SEM)** = SD × √(1 − r). It is the SD of the errors around a person's true score, used to build a **confidence band** around an individual's score.
 
 :::widget worked
-{"title": "Five reliability calculations", "steps": [{"q": "The odd and even halves of a 40-item attention test correlate .60. What is the reliability of the full test?", "a": "Spearman-Brown: 2(.60) ÷ (1 + .60) = 1.20 ÷ 1.60 = .75."}, {"q": "If the test (reliability .60) were made three times as long with similar items, what would its reliability be?", "a": "r = 3(.60) ÷ [1 + 2(.60)] = 1.80 ÷ 2.20 = .82. Longer tests are more reliable, with diminishing returns."}, {"q": "A 4-item scale has item variances .8, .9, 1.0 and 1.1, and a total-score variance of 9.6. Compute Cronbach's α.", "a": "Σ item variances = 3.8. α = (4 ÷ 3) × (1 − 3.8 ÷ 9.6) = 1.333 × (1 − .396) = 1.333 × .604 = .81."}, {"q": "A 20-item right–wrong test has M = 12 and variance = 16. Estimate KR-21.", "a": "KR-21 = (20 ÷ 19) × [1 − 12 × 8 ÷ (20 × 16)] = 1.053 × (1 − 96 ÷ 320) = 1.053 × .70 = .74."}, {"q": "Two clinicians in Ranchi independently judge 100 patients as depressed or not. Both yes 40; A yes, B no 10; A no, B yes 5; both no 45. Compute κ.", "a": "po = (40 + 45) ÷ 100 = .85. A said yes to 50, B to 45; A said no to 50, B to 55. pe = (50 × 45 + 50 × 55) ÷ 100² = (2,250 + 2,750) ÷ 10,000 = .50. κ = (.85 − .50) ÷ (1 − .50) = .70: substantial agreement (Landis and Koch: .61 to .80)."}, {"q": "An IQ test has SD = 15 and reliability .91. Find the SEM and the 95% band for an obtained IQ of 100.", "a": "SEM = 15 × √(1 − .91) = 15 × .30 = 4.5. 95% band = 100 ± 1.96 × 4.5 = 100 ± 8.8, so about 91 to 109. Report a band, not a single number, especially near cut-offs such as 70."}]}
+{"title": "Five reliability calculations", "steps": [{"q": "The odd and even halves of a 40-item attention test correlate .60. What is the reliability of the full test?", "a": "Spearman-Brown: 2(.60) ÷ (1 + .60) = 1.20 ÷ 1.60 = .75."}, {"q": "If the test (reliability .60) were made three times as long with similar items, what would its reliability be?", "a": "r = 3(.60) ÷ [1 + 2(.60)] = 1.80 ÷ 2.20 = .82. Longer tests are more reliable, with diminishing returns."}, {"q": "A 4-item scale has item variances .8, .9, 1.0 and 1.1, and a total-score variance of 9.6. Compute Cronbach's α.", "a": "Σ item variances = 3.8. α = (4 ÷ 3) × (1 − 3.8 ÷ 9.6) = 1.333 × (1 − .396) = 1.333 × .604 = .81."}, {"q": "A 20-item right-wrong test has M = 12 and variance = 16. Estimate KR-21.", "a": "KR-21 = (20 ÷ 19) × [1 − 12 × 8 ÷ (20 × 16)] = 1.053 × (1 − 96 ÷ 320) = 1.053 × .70 = .74."}, {"q": "Two clinicians in Ranchi independently judge 100 patients as depressed or not. Both yes 40; A yes, B no 10; A no, B yes 5; both no 45. Compute κ.", "a": "po = (40 + 45) ÷ 100 = .85. A said yes to 50, B to 45; A said no to 50, B to 55. pe = (50 × 45 + 50 × 55) ÷ 100² = (2,250 + 2,750) ÷ 10,000 = .50. κ = (.85 − .50) ÷ (1 − .50) = .70: substantial agreement (Landis and Koch: .61 to .80)."}, {"q": "An IQ test has SD = 15 and reliability .91. Find the SEM and the 95% band for an obtained IQ of 100.", "a": "SEM = 15 × √(1 − .91) = 15 × .30 = 4.5. 95% band = 100 ± 1.96 × 4.5 = 100 ± 8.8, so about 91 to 109. Report a band, not a single number, especially near cut-offs such as 70."}]}
 :::
 
 ### Factors that affect reliability
@@ -381,7 +397,7 @@ Rough guides: .70 is acceptable for research, .80 good, and **.90 or more** need
 
 :::recall
 1. Write the Spearman-Brown formula for doubling a test. || r_full = 2r_half ÷ (1 + r_half).
-2. Which internal-consistency formula is for right–wrong items, and which for any items? || KR-20 for dichotomous items; Cronbach's alpha for any items.
+2. Which internal-consistency formula is for right-wrong items, and which for any items? || KR-20 for dichotomous items; Cronbach's alpha for any items.
 3. Give the formula for the SEM. || SEM = SD × √(1 − r).
 4. Why are split-half coefficients misleading for speed tests? || Most people get every attempted item right, so odd and even halves match artificially.
 5. What does kappa correct that percentage agreement does not? || Agreement expected by chance.
@@ -420,6 +436,10 @@ Used when you **do not** yet know how many factors there are.
 3. **Decide how many factors:** **Kaiser's criterion** (eigenvalue above 1; tends to keep too many), Cattell's **scree test** (keep factors before the elbow), and **parallel analysis** (Horn; keep factors whose eigenvalues beat those from random data; the most accurate).
 4. **Rotate** to reach Thurstone's **simple structure** (each item loads highly on one factor and near zero on the others): **orthogonal** rotation keeps factors uncorrelated (**varimax**, the most common; quartimax; equamax); **oblique** rotation lets them correlate (**direct oblimin**, **promax**), which is usually more realistic in psychology.
 5. **Interpret and name** the factors from the items that load on them (loadings of about .30 or .40 and above are usually counted).
+
+:::widget flow
+{"title": "Running an exploratory factor analysis", "layout": "chain", "nodes": [{"id": "n0", "label": "Check suitability", "detail": "Sample size, KMO at least .60, Bartlett significant"}, {"id": "n1", "label": "Extract", "detail": "Principal axis or maximum likelihood"}, {"id": "n2", "label": "Decide how many", "detail": "Parallel analysis and scree plot"}, {"id": "n3", "label": "Rotate", "detail": "Oblique (oblimin, promax) or orthogonal (varimax)"}, {"id": "n4", "label": "Interpret and name", "detail": "Items loading about .40 or more"}, {"id": "n5", "label": "Confirm", "detail": "CFA in a new sample"}]}
+:::
 
 ### The key terms
 - **Factor loading:** the correlation between an item and a factor (in orthogonal solutions).
@@ -508,6 +528,10 @@ Model summary: R = .46, R² = .21, adjusted R² = .20. ANOVA for the model: F(2,
 ### A correlation matrix
 Each cell shows r, its Sig. (2-tailed) and N. The matrix is symmetrical; the diagonal is 1. Look for the pattern, and remember that with many variables some correlations will be "significant" by chance alone (with 20 variables there are 190 correlations, so about 9 or 10 false positives at .05).
 
+:::widget flow
+{"title": "Choosing the right test", "layout": "tree", "nodes": [{"id": "q", "label": "What is your aim?", "detail": "Start here"}, {"id": "diff", "label": "Compare groups or conditions", "detail": "", "parent": "q"}, {"id": "rel", "label": "Relate variables", "detail": "", "parent": "q"}, {"id": "cnt", "label": "Counts in categories", "detail": "", "parent": "q"}, {"id": "two", "label": "Two groups", "detail": "", "parent": "diff"}, {"id": "many", "label": "Three or more", "detail": "", "parent": "diff"}, {"id": "ti", "label": "Independent, interval: independent t", "detail": "Ordinal: Mann-Whitney U", "parent": "two"}, {"id": "tp", "label": "Related, interval: paired t", "detail": "Ordinal: Wilcoxon signed-rank", "parent": "two"}, {"id": "ai", "label": "Independent, interval: one-way ANOVA", "detail": "Ordinal: Kruskal-Wallis", "parent": "many"}, {"id": "ar", "label": "Related, interval: repeated-measures ANOVA", "detail": "Ordinal: Friedman", "parent": "many"}, {"id": "pr", "label": "Interval: Pearson r, regression", "detail": "Ordinal: Spearman, Kendall", "parent": "rel"}, {"id": "lg", "label": "Dichotomous outcome: logistic regression", "detail": "", "parent": "rel"}, {"id": "cs", "label": "Chi-square", "detail": "Fisher's exact if small; McNemar if related", "parent": "cnt"}], "caption": "Tap each box. The detail line gives the non-parametric partner."}
+:::
+
 ### Choosing the right test
 Ask four questions: **What is the DV's level of measurement? How many groups or variables? Are the groups independent or related? Are parametric assumptions met?**
 
@@ -519,10 +543,10 @@ Ask four questions: **What is the DV's level of measurement? How many groups or 
 | Compare 3 or more groups, ordinal | Kruskal-Wallis | Friedman |
 | Two or more IVs | Factorial ANOVA | Repeated-measures or mixed ANOVA |
 | Nominal frequencies | Chi-square (Fisher's exact if small) | McNemar (2 times), Cochran's Q (3 or more) |
-| Relation, interval | Pearson r; regression | — |
-| Relation, ordinal | Spearman ρ, Kendall τ | — |
-| Predict a dichotomous outcome | Logistic regression | — |
-| Many items, find structure | EFA (explore), CFA (confirm) | — |
+| Relation, interval | Pearson r; regression | Not applicable |
+| Relation, ordinal | Spearman ρ, Kendall τ | Not applicable |
+| Predict a dichotomous outcome | Logistic regression | Not applicable |
+| Many items, find structure | EFA (explore), CFA (confirm) | Not applicable |
 
 :::widget sort
 {"prompt": "Choose the test for each study.", "buckets": ["t-test (independent or paired)", "ANOVA family", "Chi-square family", "Non-parametric rank test"], "items": [{"text": "Mean empathy scores of male and female nursing students", "bucket": 0}, {"text": "Whether smokers and non-smokers differ in the proportion who relapse to depression", "bucket": 2}, {"text": "Ranks given to five ward climates by the same 12 nurses", "bucket": 3, "why": "Related ranks across several conditions: Friedman."}, {"text": "Reaction time under three doses of caffeine, in three separate groups", "bucket": 1}, {"text": "Pain ratings (ordinal 1 to 5) before and after a procedure in 15 patients", "bucket": 3, "why": "Related, ordinal: Wilcoxon signed-rank."}, {"text": "Depression scores of the same patients before and after 12 sessions", "bucket": 0, "why": "Interval, two related measures: paired t."}, {"text": "Whether the same students pass or fail before and after a coaching course", "bucket": 2, "why": "Related dichotomous data: McNemar."}, {"text": "Anxiety by gender × type of college", "bucket": 1}]}
@@ -556,280 +580,5 @@ Q: A study compares the proportion of men and women who prefer online therapy. T
 - Paired t
 - *Chi-square test of independence
 > Two nominal variables, frequencies.
-:::
-
-# Part IV · Exam zone
-
-## 4.1 Long answers, short notes and viva [core]
-
-### Long answer skeletons (15 to 20 marks)
-**1. Describe the normal probability curve, its properties and its uses in psychology.**
-- Definition and equation idea (defined by μ and σ); bell shape; asymptotic; mean = median = mode.
-- Area table: 68.26, 95.44, 99.72; ±1.96 and ±2.58.
-- Skewness (Pearson's Sk) and kurtosis (Ku about .263; lepto, meso, platy) with sketches.
-- Uses: standard scores (z, T, stanine, IQ), percentiles from z, norms, grading, ability grouping, testing hypotheses, confidence intervals, the CLT.
-- A worked z example and a limitation (not all traits are normal: reaction times, incomes, symptom counts).
-
-**2. What is analysis of variance? Explain its assumptions, computation and interpretation.**
-- Why not multiple t-tests (familywise error).
-- Partitioning SS: total = between + within; df; MS; F ratio and its logic.
-- A small worked example with the summary table.
-- Assumptions; Levene; Welch; post hoc tests (Tukey, Scheffé, Bonferroni, LSD, Dunnett).
-- Effect sizes (η², ω²); extensions (factorial with interactions, repeated measures with sphericity, ANCOVA, MANOVA).
-
-**3. Discuss correlation: its types, computation and interpretation.**
-- Definition; scatter plots; direction and strength; r².
-- Pearson computation (worked); significance with df n − 2.
-- Spearman (worked) and the special correlations table (point-biserial, biserial, phi, tetrachoric, contingency, Kendall, eta).
-- Partial, part and multiple correlation.
-- What distorts r; correlation is not causation.
-
-**4. Explain hypothesis testing, Type I and Type II errors, power and effect size.**
-- Steps of testing; null and alternative; α; p, and what p is not.
-- The 2 × 2 decision table; trade-off between α and β.
-- Power and its determinants; a priori analysis (64 per group for d = .5).
-- Effect sizes and benchmarks; significance versus importance; confidence intervals; one- versus two-tailed tests.
-
-**5. When are non-parametric tests used? Describe any three.**
-- Assumptions of parametric tests and when they fail; ordinal data; small samples; outliers.
-- Mann-Whitney, Wilcoxon, Kruskal-Wallis, Friedman, chi-square, sign test (with a small worked example).
-- Advantages (few assumptions) and limitations (less power, less suited to complex designs).
-
-### Short notes (5 marks each): outline points
-- **Standard error of the mean:** SD of sampling distribution; σ ÷ √n; CLT; CIs.
-- **Degrees of freedom:** values free to vary; df for t, χ², F, r.
-- **Point-biserial versus biserial r:** true versus artificial dichotomy; examples; item analysis.
-- **Partial correlation:** formula; holding a variable constant; a worked number.
-- **Chi-square assumptions:** independence, frequencies, expected at least 5, Fisher, Yates, McNemar.
-- **Cohen's d:** formula, benchmarks, U3, conversion to r.
-- **Spearman-Brown prophecy formula:** split-half correction; lengthening a test; worked number.
-- **Cronbach's alpha:** formula; meaning; not unidimensionality; acceptable values.
-- **Standard error of measurement:** formula; confidence band; use at cut-offs.
-- **ANCOVA:** covariate; adjusted means; homogeneity of regression slopes.
-- **Factor rotation:** simple structure; orthogonal versus oblique; varimax, oblimin, promax.
-- **Mediation and moderation:** definitions, diagrams, testing (indirect effect, interaction term).
-
-:::viva
-Why do we divide by n − 1 for a sample variance? :: Because deviations from the sample mean are slightly smaller than from the population mean, so dividing by n underestimates the population variance. n − 1 (the degrees of freedom) corrects this bias.
-Can a result be significant but unimportant? :: Yes. With a very large sample, a tiny effect gives a small p. That is why effect sizes, confidence intervals and clinical significance must be reported.
-Why not use several t-tests instead of ANOVA? :: Each test has its own 5% Type I risk, so the chance of at least one false positive rises quickly (about 14% for three tests). ANOVA tests all means at once at the chosen alpha.
-What would you do if your data were badly skewed? :: Check for errors and outliers, consider a transformation (log, square root), use a robust or non-parametric test, or bootstrap confidence intervals, and report what was done.
-What is the difference between the SD and the standard error? :: The SD describes the spread of individual scores; the standard error describes the spread of a statistic (like the mean) across repeated samples. SE = SD ÷ √n.
-Is Cronbach's alpha a measure of unidimensionality? :: No. A long test can have a high alpha even with several factors. Unidimensionality is checked with factor analysis.
-:::
-
-## 4.2 Module test [core]
-Thirty questions. A calculator is allowed. Aim for 24 or more.
-
-:::mcq
-Q: Which scale of measurement has a true zero?
-- Nominal
-- *Ratio
-- Ordinal
-- Interval
-> A true zero allows ratios.
-
-Q: The mean of five scores is 12. Four of them are 10, 11, 13 and 14. The fifth is:
-- 10
-- 11
-- *12
-- 14
-> Total must be 60; 10 + 11 + 13 + 14 = 48; so 12.
-
-Q: Which average is most appropriate for the distribution of family incomes in a district?
-- Mean
-- *Median
-- Mode
-- Midrange
-> Incomes are positively skewed.
-
-Q: A class of 30–39 has a frequency of 10; 15 cases lie below it; N = 50. The median is:
-- 34.5
-- 35
-- *39.5
-- 39
-> Md = 29.5 + [(25 − 15) ÷ 10] × 10 = 39.5.
-
-Q: The sample SD of 1, 3, 5 is:
-- 1.63
-- 4
-- 3
-- *2
-> M = 3, SS = 8, s² = 8 ÷ 2 = 4, s = 2.
-
-Q: A z score of 0.5 corresponds to a T score of:
-- 50.5
-- *55
-- 45
-- 60
-> T = 50 + 10(0.5).
-
-Q: About what percentage of a normal distribution lies more than 1.96 SD from the mean, in either direction?
-- 1%
-- *5%
-- 2.5%
-- 32%
-> 2.5% in each tail.
-
-Q: Stanine scores have a mean and SD of:
-- 50 and 10
-- 5.5 and 2
-- *5 and 2
-- 100 and 15
-> Standard nine.
-
-Q: The central limit theorem says that the distribution of sample means is approximately normal:
-- Only if the population itself is normal
-- Only for samples with fewer than thirty people
-- Never, because each sample is different
-- *For large samples, whatever the population's shape
-> This is why z and t methods work so widely.
-
-Q: Rejecting a true null hypothesis is a:
-- Type II error
-- *Type I error
-- Correct rejection
-- Power error
-> A false positive.
-
-Q: Power is NOT increased by:
-- A larger sample
-- *A smaller alpha (for example .01 instead of .05)
-- A larger effect size in the population
-- More reliable measures of the outcome
-> A stricter alpha lowers power.
-
-Q: r = .60 between two tests means the shared variance is:
-- 60%
-- 40%
-- 6%
-- *36%
-> r² = .36.
-
-Q: The correlation between a true dichotomy and a continuous variable is:
-- Biserial
-- Tetrachoric
-- *Point-biserial
-- Phi
-> Point-biserial is for a genuine two-category variable.
-
-Q: A partial correlation r12.3 is the relation between 1 and 2:
-- Ignoring 3
-- *With 3 held constant in both
-- With 3 removed from 1 only
-- Multiplied by 3
-> Removing the third variable from both.
-
-Q: Twenty students are tested before and after a workshop. The df for the paired t-test is:
-- 38
-- *19
-- 20
-- 18
-> n − 1 pairs.
-
-Q: Two independent groups of 25 give t = 2.10. Which statement is correct? (Critical t for 48 df, two-tailed .05, is about 2.01.)
-- Not significant
-- Significant at .001
-- The df are 50
-- *Significant at .05, two-tailed
-> 2.10 exceeds 2.01; df = 48.
-
-Q: In a chi-square test of independence with a 4 × 3 table, df =
-- 12
-- 7
-- *6
-- 11
-> (4 − 1)(3 − 1).
-
-Q: Chi-square should NOT be used when:
-- Data are frequencies
-- Categories are mutually exclusive
-- There are three categories
-- *The same person contributes to several cells
-> Observations must be independent.
-
-Q: In one-way ANOVA, MS between = 24 and MS within = 6. F =
-- 18
-- *4
-- 30
-- 0.25
-> F = 24 ÷ 6.
-
-Q: The post hoc test that controls error by dividing alpha by the number of comparisons is:
-- Tukey
-- *Bonferroni
-- Scheffé
-- Dunnett
-> α ÷ number of tests.
-
-Q: A 2 × 3 factorial ANOVA has how many df for the interaction?
-- *2
-- 6
-- 5
-- 1
-> (2 − 1)(3 − 1).
-
-Q: The assumption of sphericity applies to:
-- Chi-square
-- Independent t
-- *Repeated-measures ANOVA
-- Spearman's rho
-> Equal variances of difference scores across conditions.
-
-Q: The non-parametric equivalent of the paired t-test is the:
-- Mann-Whitney U
-- *Wilcoxon signed-rank test
-- Kruskal-Wallis
-- Friedman test
-> Two related measures, ranks of differences.
-
-Q: In a Mann-Whitney test, the obtained U must be:
-- Greater than the critical value to be significant
-- Exactly equal to n1 × n2
-- *At or below the critical value to be significant
-- Positive and above 10
-> Small U means the groups are well separated.
-
-Q: Cohen's d of 0.8 is conventionally:
-- Small
-- Medium
-- Trivial
-- *Large
-> 0.2, 0.5, 0.8.
-
-Q: In Ŷ = a + bX, b represents:
-- The predicted value of Y when X is zero
-- *The change in predicted Y per one-unit change in X
-- The correlation between X and Y
-- The error left over in each prediction
-> The slope.
-
-Q: A VIF of 15 for a predictor suggests:
-- A strong effect
-- Non-normal residuals
-- *Serious multicollinearity
-- An outlier
-> Predictors overlap heavily.
-
-Q: The split-half correlation of a test is .70. Its Spearman-Brown reliability is about:
-- .70
-- .76
-- .91
-- *.82
-> 1.4 ÷ 1.7 = .82.
-
-Q: An item loads .70 on one factor and .00 on the other. Its communality is:
-- .70
-- .30
-- *.49
-- 1.00
-> .70² = .49.
-
-Q: SPSS shows Sig. = .000 for an F test. The correct report is:
-- p = .000
-- p = 0
-- *p < .001
-- Not significant
-> p is never exactly zero.
 :::
 `;
