@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SESSION_COOKIE } from "@/lib/auth/session";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitResult } from "@/lib/rate-limit";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { tryMasterLogin } from "@/lib/auth/master-login";
 
@@ -25,7 +25,12 @@ export async function login(
   // LOWERCASED — Supabase matches email case-insensitively, so a case-sprayed
   // variant (`Admin@x.com`, `ADMIN@x.com`) used to mint its own fresh bucket
   // against the same account, defeating the cap.
-  if (!(await rateLimit(`login:${email.toLowerCase()}`, 10))) {
+  // 10 tries a minute per email. If the shared counter can't be read (for
+  // example a test database without the rate_limits step), fall back to this
+  // server's own counter instead of locking everyone out with "Too many
+  // attempts" on their first try.
+  const limit = await rateLimitResult(`login:${email.toLowerCase()}`, 10);
+  if (limit === "limited" || (limit === "unavailable" && !rateLimitFast(`login:email:${email.toLowerCase()}`, 10))) {
     return { error: "Too many attempts. Try again in a minute." };
   }
 

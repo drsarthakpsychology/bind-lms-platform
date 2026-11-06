@@ -41,3 +41,24 @@ export async function rateLimit(key: string, limit: number, windowMs: number = W
     return false;
   }
 }
+
+/**
+ * Like rateLimit, but says WHY a request isn't allowed: "limited" (really over
+ * the limit) vs "unavailable" (the counter couldn't be read — e.g. a database
+ * without the rate_limits step). Login uses this so a counter outage never
+ * shows people "Too many attempts" when they've made one attempt.
+ */
+export async function rateLimitResult(key: string, limit: number, windowMs: number = WINDOW_MS): Promise<"allowed" | "limited" | "unavailable"> {
+  try {
+    const admin = createAdminClient();
+    const { data, error } = await admin.rpc("rate_limit_incr", { p_key: key, p_limit: limit, p_window_ms: windowMs });
+    if (error) {
+      console.error(`rateLimitResult(${key}) unavailable:`, error.message);
+      return "unavailable";
+    }
+    return data ? "allowed" : "limited";
+  } catch (e) {
+    console.error("rateLimitResult error:", e instanceof Error ? e.message : e);
+    return "unavailable";
+  }
+}

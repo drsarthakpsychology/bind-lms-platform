@@ -499,7 +499,7 @@ export async function sendResendEmail(to: string, subject: string, body: string,
 export const PREVIEW_GATE = "Not sent: this is a preview site, so email only goes to the approved test address.";
 
 /**
- * Preview and development sites share the live database, so they must never
+ * Preview and development sites may point at the live database, so they must never
  * email real students by accident. They send only to ALLOWED_TEST_RECIPIENT
  * (one or more addresses, comma-separated) — the same rule the achievements
  * email already follows. Production sends normally.
