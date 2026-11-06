@@ -1,0 +1,753 @@
+/* Module · Learning and memory, Part IV (Advanced) and the exam zone. Original text written for VIBHA School of Psychology. */
+export const part4 = String.raw`
+# Part IV · Advanced: mechanisms, reconstruction and the clinic
+
+## 4.1 What is really learned: contingency, blocking and preparedness [core][advanced]
+Pavlov thought conditioning needed only **contiguity**: CS and UCS close together in time. Three discoveries in the late 1960s showed that animals learn about **prediction**, and that biology sets limits on what can be linked.
+
+### Contingency (Rescorla, 1968)
+Robert Rescorla gave rats tone-shock pairings. For one group, shock came **only** after the tone. For another, there were exactly as many tone-shock pairings, but shocks **also** came at random when no tone was on. The second group showed almost no fear of the tone, despite identical pairings. What matters is whether the CS **adds information**: the probability of the UCS with the CS compared with its probability without it.
+
+### Blocking (Kamin, 1969)
+Leon Kamin first conditioned rats to fear a noise (noise followed by shock). Then he presented noise **plus** a light together, followed by the same shock. When the light was later tested alone, it produced little fear, compared with rats that had the compound trials without the earlier noise training. The noise already predicted the shock perfectly, so the light added nothing: learning to it was **blocked**. Learning happens when an outcome is **surprising**.
+
+Related effects:
+- **Overshadowing**: of two CSs presented together, the more salient one gets most of the learning.
+- **Latent inhibition** (Lubow and Moore, 1959): a stimulus presented many times on its own before conditioning is later harder to condition. Familiar, "irrelevant" stimuli are learned about slowly.
+
+### The Rescorla-Wagner model (1972)
+Robert Rescorla and Allan Wagner turned "surprise drives learning" into an equation. On each trial, the change in associative strength of a CS is:
+
+**ΔV = αβ(λ − ΣV)**
+
+- **ΔV**: how much the CS's associative strength changes on this trial.
+- **α** and **β**: learning-rate parameters for the salience of the CS and of the UCS.
+- **λ** (lambda): the maximum strength the UCS can support (zero on a trial with no UCS).
+- **ΣV**: the **total** strength of **all** CSs present on the trial: what the animal already expects.
+- **(λ − ΣV)** is the **prediction error**: the difference between what happened and what was expected.
+
+:::widget worked
+{
+  "title": "Running the Rescorla-Wagner model",
+  "steps": [
+    { "q": "A tone is paired with food. Let αβ equal 0.3 and λ equal 1. The tone starts at V = 0. What is V after trial 1?", "a": "ΔV = 0.3 × (1 − 0) = 0.3, so V = 0.3." },
+    { "q": "What is V after trial 2 and trial 3?", "a": "Trial 2: ΔV = 0.3 × (1 − 0.3) = 0.21, so V = 0.51. Trial 3: ΔV = 0.3 × (1 − 0.51) ≈ 0.15, so V ≈ 0.66. Each trial adds less: the model produces the negatively accelerated learning curve." },
+    { "q": "Now explain blocking. The noise has been trained to V = 1. A light is added and the compound is paired with the same shock (λ = 1). What does the light learn?", "a": "ΣV = 1 (noise) + 0 (light) = 1. Prediction error = 1 − 1 = 0, so ΔV for the light is zero. Nothing is learned about it: blocking." },
+    { "q": "How does the model explain extinction?", "a": "On CS-alone trials λ = 0, so the error (0 − V) is negative and V falls towards zero." }
+  ],
+  "yourTurn": [
+    { "q": "A light has V = 0.8. It is now paired with a stronger shock that supports λ = 1.5. Predict the direction of learning, then calculate ΔV with αβ = 0.2.", "a": "The outcome is bigger than expected, so V rises: ΔV = 0.2 × (1.5 − 0.8) = 0.14, giving V = 0.94. A surprisingly large outcome produces new learning even for a well-trained CS." }
+  ]
+}
+:::
+
+**What it explains**: acquisition curves, extinction, blocking, overshadowing, contingency effects and conditioned inhibition. **What it fails to explain**: latent inhibition (a stimulus with V = 0 and no UCS should learn nothing, so pre-exposure should not matter), spontaneous recovery and renewal (it treats extinction as unlearning), and some effects of compound stimuli. Attention-based models (Mackintosh, 1975; Pearce and Hall, 1980) let the salience of a CS change with experience to fill these gaps.
+
+### Biological preparedness and taste aversion
+John Garcia and Robert Koelling (1966) let rats drink "bright, noisy, tasty" water: water flavoured with saccharin, delivered with a click and a flash of light when the rat licked. Some rats were then made ill by X-rays or a drug; others received foot shock.
+
+:::widget reveal
+{
+  "prompt": "Predict: which rats came to avoid the taste, and which came to avoid the light and noise?",
+  "answer": "Rats made ill avoided the sweet taste but not the light and noise. Rats shocked avoided the light and noise but not the taste. Associations are selective: illness is readily linked to taste, pain to sights and sounds. Taste aversion also forms in a single trial and with delays of hours between taste and illness, breaking two 'laws' of conditioning. This is biological preparedness."
+}
+:::
+
+Martin Seligman (1970) proposed a **continuum of preparedness**: some associations are **prepared** (learned fast, resistant to extinction, often irrational), some **unprepared**, some **contraprepared** (hard to learn at all). Arne Öhman showed that fear conditioned to pictures of snakes and spiders resists extinction better than fear conditioned to flowers or mushrooms, and can be conditioned to masked pictures the person does not consciously see. This helps explain why phobias cluster around ancient dangers (snakes, heights, the dark, blood) rather than modern ones (electric sockets, cars).
+
+:::widget decide
+{
+  "scene": "Mrs Kaur, 52, from Ludhiana, is having chemotherapy for breast cancer. After her second cycle she has developed a strong aversion to the paneer dish she had eaten the evening before treatment, and now to the hospital's smell. The oncology nurse asks the psychology trainee for advice before the next cycle.",
+  "ask": "What is the best learning-informed suggestion?",
+  "choices": [
+    { "label": "Before each cycle, give her an unusual, non-essential 'scapegoat' food (a distinctly flavoured sweet) so that the aversion forms to it rather than to her usual foods; avoid favourite foods before treatment", "verdict": "best", "outcome": "Over later cycles, aversion forms to the novel sweet, while her regular diet is protected.", "why": "Taste aversions attach most strongly to novel tastes before illness (Bernstein's 'scapegoat' technique). Protecting nutrition matters during chemotherapy." },
+    { "label": "Tell her the aversion is irrational and she should eat the paneer anyway", "verdict": "harm", "outcome": "She feels misunderstood and loses more weight.", "why": "Conditioned taste aversion is automatic and not under rational control; insight does not remove it." },
+    { "label": "Nothing can be done; it is a side effect of the drugs", "verdict": "ok", "outcome": "Anti-nausea medicines help the nausea, but the learned aversions continue to spread.", "why": "Antiemetics matter, and anticipatory nausea can also be helped by relaxation and desensitisation. But the learning itself can be steered." }
+  ]
+}
+:::
+
+:::clinician
+Bernstein (1978) showed that children receiving chemotherapy who ate a novel ice cream ("Mapletoff") before treatment developed an aversion to it, and later work used scapegoat tastes to protect the diet. Anticipatory nausea and vomiting (occurring before the infusion, triggered by hospital cues) is classically conditioned and responds to progressive relaxation, systematic desensitisation and olanzapine-containing antiemetic regimens. The prediction-error principle of Rescorla-Wagner reappears in temporal-difference reinforcement learning and in the dopamine signal discussed in 4.2, which is why it remains the most-cited model in computational psychiatry.
+:::
+
+:::recall
+1. What did Rescorla's (1968) contingency study show? || Learning depends on whether the CS predicts the UCS, not on the number of pairings.
+2. Describe Kamin's blocking procedure and result. || Train noise to shock; then train noise plus light; the light alone elicits little fear because the noise already predicted the shock.
+3. Write the Rescorla-Wagner equation and name the prediction-error term. || ΔV = αβ(λ − ΣV); the error is λ − ΣV.
+4. Name two findings Rescorla-Wagner cannot explain. || Latent inhibition; spontaneous recovery and renewal.
+5. What did Garcia and Koelling show? || Illness is associated with taste and shock with sights and sounds: associations are biologically selective.
+:::
+
+:::mcq
+Q: In the Rescorla-Wagner model, why does a well-trained CS stop gaining strength?
+- The UCS becomes weaker over trials
+- Its salience falls to zero
+- *The prediction error approaches zero
+- Extinction trials are introduced
+> When ΣV approaches λ, there is nothing left to learn.
+
+Q: Pre-exposing a tone many times on its own slows later conditioning to it. This is:
+- Blocking
+- *Latent inhibition
+- Sensory preconditioning
+- Overshadowing
+> Familiar, inconsequential stimuli are conditioned slowly.
+:::
+
+## 4.2 Learning theorists and the biology of learning [core][advanced]
+### Four classic theorists
+| Theorist | Big idea | Key terms | Lasting influence |
+|---|---|---|---|
+| **Clark Hull** (1943, 1952) | Hypothetico-deductive, mathematical theory: behaviour is driven by **drive reduction** | **Habit strength** (sHr) grows with reinforced practice; reaction potential (sEr) = habit strength × drive (D) × incentive (K) | Precise, testable theory; motivation linked to learning; later shown too narrow (animals learn without drive reduction, and seek stimulation) |
+| **Edwin Guthrie** (1935) | **Contiguity**: a combination of stimuli accompanying a movement will, on recurrence, tend to be followed by that movement | **One-trial learning**; "we learn what we do"; practice works by attaching a response to more stimuli | Three ways to **break a habit**: the **threshold** method (introduce the stimulus too weakly to trigger the response, then increase it), the **fatigue** method (repeat until exhausted) and the **incompatible response** method (present the cue while making an incompatible response) |
+| **William Estes** (1950) | **Stimulus sampling theory**: on each trial only a sample of stimulus elements is active, and they become connected to the response | Mathematical learning theory; probability of response equals proportion of conditioned elements | Explained gradual learning curves, spontaneous recovery (elements drift back) and founded mathematical psychology |
+| **Edward Tolman** (1932) | **Purposive behaviourism**: learning is of expectancies and **cognitive maps** | Latent learning, place learning, intervening variables | Bridged behaviourism and cognitive psychology |
+
+Add **Thorndike** (connectionism, trial and error), **Skinner** (radical behaviourism, operant analysis, no inner causes needed), **Pavlov** and **Watson** (behaviourism's manifesto, 1913), and you have the "learning theorists" questions in NET papers.
+
+:::widget sort
+{
+  "prompt": "Who said it?",
+  "buckets": ["Hull", "Guthrie", "Tolman", "Estes"],
+  "items": [
+    { "text": "Reaction potential equals habit strength multiplied by drive", "bucket": 0 },
+    { "text": "To stop a horse from bucking, put a light blanket on it, then heavier loads, until it accepts a saddle", "bucket": 1, "why": "The threshold method: present the cue below the level that triggers the habit." },
+    { "text": "Rats learn the layout of the maze, not a chain of turns", "bucket": 2 },
+    { "text": "Only a random sample of stimulus elements is active on any trial", "bucket": 3 },
+    { "text": "Learning is complete in a single pairing of stimulus and movement", "bucket": 1 },
+    { "text": "Reinforcement works by reducing a biological drive", "bucket": 0 }
+  ]
+}
+:::
+
+### Learning in single cells: Hebb and Kandel
+- **Donald Hebb** (1949): "neurons that fire together wire together". When one cell repeatedly helps fire another, the connection between them strengthens. Groups of such cells form **cell assemblies** that represent ideas.
+- **Eric Kandel** (Nobel Prize 2000) studied the sea slug **Aplysia**, whose gill-withdrawal reflex habituates and sensitises. **Habituation** involved less neurotransmitter released from sensory neurons; **sensitisation** involved serotonin from facilitating interneurons enhancing release. **Long-term** sensitisation required **new protein synthesis** (via the CREB pathway) and growth of new synapses. Short-term memory changes existing synapses; long-term memory builds new ones.
+
+### Long-term potentiation
+Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampus with a brief high-frequency burst and found that the synapses then responded more strongly for hours to days: **long-term potentiation (LTP)**. The key is the **NMDA glutamate receptor**, which opens only when two things happen together: glutamate binds **and** the receiving cell is already depolarised (removing a magnesium block). It is a molecular **coincidence detector**, exactly the Hebbian rule. Richard Morris showed that rats given a drug blocking NMDA receptors (AP5) could not learn the hidden platform's location in a **water maze**.
+
+### Different circuits for different learning
+| Learning | Key structure |
+|---|---|
+| Eyeblink conditioning (delay) | **Cerebellum** (interpositus nucleus; Richard Thompson) |
+| Conditioned fear | **Amygdala** (Joseph LeDoux) |
+| Habits and stimulus-response learning | **Basal ganglia** (striatum) |
+| Spatial and episodic memory; trace conditioning | **Hippocampus** |
+| Reward learning and prediction error | **Dopamine** neurons of the ventral tegmental area and substantia nigra |
+
+### Dopamine and prediction error
+Wolfram Schultz recorded dopamine neurons in monkeys (Schultz, Dayan and Montague, 1997). Before learning, they fired when juice arrived **unexpectedly**. After a light reliably predicted juice, they fired to the **light** and **not** to the juice. If the predicted juice was then **withheld**, their firing **dipped** below baseline at the moment it should have come. Dopamine signals **reward prediction error**, the λ − ΣV of the Rescorla-Wagner model, written in neurons.
+
+:::widget guess
+{
+  "prompt": "After training, a light reliably predicts juice. On a test trial, the light appears but the juice is withheld. What happens to dopamine neuron firing at the moment the juice was expected, as a percentage of normal baseline?",
+  "min": 0,
+  "max": 200,
+  "step": 10,
+  "unit": "% of baseline",
+  "answer": [0, 60],
+  "reveal": "It drops below baseline: a negative prediction error ('worse than expected'). Unexpected reward means a burst; fully predicted reward means no change; omitted reward means a dip. Drugs of abuse cause dopamine surges that the brain cannot 'predict away', one reason they hijack learning."
+}
+:::
+
+:::clinician
+Prediction-error accounts now organise several clinical ideas. Addictive drugs increase dopamine directly, producing a non-diminishing error signal that drives cue learning (Redish, 2004). Aberrant salience in psychosis is modelled as dysregulated, context-inappropriate dopamine prediction errors. Anhedonia in depression has been linked to blunted reward prediction error signals in the ventral striatum, though findings are mixed. In Parkinson's disease, dopamine depletion impairs learning from positive feedback, while dopaminergic medication can impair learning from negative feedback (Frank and colleagues, 2004), offering one explanation for medication-related impulse-control disorders.
+:::
+
+:::recall
+1. State Hull's formula in words. || Reaction potential equals habit strength times drive (times incentive).
+2. Name Guthrie's three methods of breaking a habit. || Threshold, fatigue, incompatible response.
+3. What did Kandel show about long-term memory in Aplysia? || It requires new protein synthesis (CREB) and growth of new synapses.
+4. Why is the NMDA receptor called a coincidence detector? || It opens only when glutamate binds and the cell is already depolarised.
+5. What do dopamine neurons signal, according to Schultz? || Reward prediction error.
+:::
+
+:::mcq
+Q: Gradually introducing a feared stimulus at intensities too weak to provoke fear is Guthrie's:
+- *Threshold method
+- Incompatible response method
+- Fatigue method
+- Extinction method
+> Starting below the response threshold and raising slowly.
+
+Q: Dopamine neurons fire to a cue but not to a fully predicted reward. This matches which concept?
+- Drive reduction
+- Contiguity
+- Stimulus sampling
+- *Prediction error
+> Predicted rewards produce no error; the cue carries the surprise.
+:::
+
+## 4.3 Memory as reconstruction: schemas, eyewitnesses and false memory [core][advanced]
+### Bartlett: remembering is rebuilding
+Frederic Bartlett (*Remembering*, 1932) asked Cambridge students to read a Native American folk tale, **"The War of the Ghosts"**, and retell it repeatedly over months (**repeated reproduction**) or pass it from person to person (**serial reproduction**). The stories became:
+- **Shorter**, with odd details dropped.
+- **Rationalised**: puzzling supernatural parts explained or omitted.
+- **Familiarised**: canoes became boats; seal hunting became fishing.
+- **Reorganised** around a central idea, with a moral sometimes added.
+
+He concluded that memory is **reconstructive**: we store a gist and rebuild details using **schemas**, organised knowledge structures shaped by culture. Later research added **scripts** (schemas for events: what happens at a restaurant, or at a Hindu wedding) and showed that schemas both help (organising) and distort (filling gaps with the typical).
+
+### Eyewitness testimony
+Elizabeth Loftus and John Palmer (1974) showed students films of car accidents and asked, "About how fast were the cars going when they **___** each other?", using the verb smashed, collided, bumped, hit or contacted.
+
+:::widget guess
+{
+  "prompt": "With the verb 'contacted', the average speed estimate was about 32 mph. What was the average estimate when the verb was 'smashed'?",
+  "min": 20,
+  "max": 60,
+  "unit": "mph",
+  "answer": [38, 44],
+  "reveal": "About 41 mph. A week later, in a second experiment, 32 percent of the 'smashed' group said they had seen broken glass, compared with 14 percent of the 'hit' group and 12 percent of controls. There was no broken glass. The question did not just bias the answer; it seemed to change the memory."
+}
+:::
+
+The **misinformation effect**: information given after an event becomes part of the memory of it. Factors that affect eyewitness accuracy:
+- **Weapon focus**: a visible weapon draws attention from the face (Loftus, Loftus and Messo, 1987).
+- **Stress**: very high stress generally impairs face identification, though some central details can be well remembered.
+- **Own-race (cross-race) bias**: people identify faces of their own group more accurately (a robust meta-analytic finding, Meissner and Brigham, 2001).
+- **Confidence**: confidence at the **initial**, fair identification is fairly informative; confidence that grows later, after feedback ("Good, you picked our suspect"), is not.
+- **Line-up procedures**: double-blind administration, fair fillers, a warning that the culprit may not be present, and recording confidence immediately all reduce errors.
+
+Real life is sometimes kinder: Yuille and Cutshall (1986) found that witnesses to a real shooting in Canada gave accurate accounts months later and resisted misleading questions. But in the United States, mistaken eyewitness identification played a part in about 70 percent of convictions later overturned by DNA evidence.
+
+:::example Eyewitness memory in Indian courts
+Indian police use **test identification parades**, conducted under a magistrate's supervision. Indian courts treat such identification as corroborative rather than substantive evidence, and give it less weight if the witness had seen the accused (in the media, a photograph or the police station) before the parade, a legal recognition of the misinformation effect. Delays of months between the event and the parade, common in practice, also weaken accuracy.
+:::
+
+### The cognitive interview
+Ronald Fisher and Edward Geiselman (1992) built an interview from memory research:
+1. **Report everything**, even details that seem trivial.
+2. **Reinstate the context**: mentally return to the scene, the weather, your feelings.
+3. **Recall in different orders**, for example backwards from the end.
+4. **Change perspective**: describe it as another witness would have seen it.
+The **enhanced cognitive interview** adds rapport, witness-led pacing and open questions. Meta-analyses show substantially more correct details, with a small rise in errors.
+
+### False memories
+- **Lost in the mall** (Loftus and Pickrell, 1995): adults were given three true childhood stories from relatives and one false one (being lost in a shopping mall). About a quarter came to remember the false event, at least partly.
+- **Doctored photographs** (Wade and colleagues, 2002): about half of participants "remembered" a childhood hot-air balloon ride after seeing a faked photograph.
+- **The DRM paradigm** (Deese, 1959; Roediger and McDermott, 1995): after hearing bed, rest, awake, tired, dream, snooze, blanket, doze, people very often recall or confidently recognise the unheard word **"sleep"**.
+
+:::widget reveal
+{
+  "prompt": "Why do DRM false memories matter for clinical work, and what do they tell us about the confidence of a memory?",
+  "answer": "They show that a vivid, confident memory can be of something that never happened, simply because it fits the theme of what did. Confidence and vividness are therefore poor guides to accuracy, especially after suggestion, repetition or imagination. Therapists who use leading questions, guided imagery or hypnosis to 'recover' memories risk creating false ones."
+}
+:::
+
+### Flashbulb memories
+Roger Brown and James Kulik (1977) coined **flashbulb memory** for vivid, detailed memories of where people were when they heard shocking news (the assassination of President Kennedy). Later studies tested people soon after an event and again years later. After the Challenger space shuttle disaster (Neisser and Harsch, 1992) and the attacks of 11 September 2001 (Talarico and Rubin, 2003), memories **changed as much as ordinary memories**, but people's **confidence stayed high**. Flashbulb memories feel special, but they are not more accurate.
+
+:::recall
+1. Name three changes Bartlett found in reproductions of "The War of the Ghosts". || Shortening, rationalisation, familiarisation (also reorganisation around a theme).
+2. What did Loftus and Palmer's second experiment show? || The word "smashed" led more people to falsely remember broken glass a week later.
+3. List the four original techniques of the cognitive interview. || Report everything, reinstate context, change order, change perspective.
+4. What is the DRM paradigm? || A list of words related to an unpresented lure produces false recall and recognition of the lure.
+5. What did follow-up studies show about flashbulb memories? || They change over time like ordinary memories, while confidence stays high.
+:::
+
+:::mcq
+Q: Witnesses asked how fast cars "smashed" into each other later falsely reported broken glass. This is best explained by:
+- Weapon focus
+- Encoding specificity
+- *The misinformation effect
+- The own-race bias
+> Post-event information was integrated into the memory.
+
+Q: A witness confidently identifies a suspect, but only after police said "Good, that's our man" at a previous viewing. The confidence is:
+- *Weak evidence, because the feedback inflated it
+- Strong evidence that the identification is accurate
+- Irrelevant in every case, so it should be ignored
+- A sign of a flashbulb memory, which is reliable
+> Initial confidence in a fair procedure is informative; inflated later confidence is not.
+:::
+
+## 4.4 The biology of memory and the amnesias [core][advanced]
+### H. M.: the case that changed memory science
+In 1953, William Scoville removed most of the medial temporal lobes on both sides (including much of the hippocampus and amygdala) of Henry Molaison, 27, to stop severe epilepsy. Seizures improved, but H. M. was left with:
+- Dense **anterograde amnesia**: he could not form new **declarative** memories. He read the same magazine as if new; he met Brenda Milner, who tested him for decades, as a stranger each time.
+- **Temporally graded retrograde amnesia**: memories from the years just before surgery were lost; much older memories were largely preserved.
+- **Intact short-term memory** (normal digit span), intelligence and personality.
+- **Intact procedural learning**: in **mirror drawing** (Milner, 1962), he improved over days while having no memory of having practised. Priming was also preserved.
+H. M. showed that the hippocampus and nearby cortex are needed to **form** lasting declarative memories, but not to store old ones or to learn skills.
+
+### Consolidation and reconsolidation
+- **Systems consolidation**: over months to years, memories become less dependent on the hippocampus and more on the neocortex (the standard model), which explains temporally graded retrograde amnesia. **Multiple trace theory** (Nadel and Moscovitch) argues that vivid episodic detail always needs the hippocampus.
+- **Sleep**: slow-wave sleep supports the replay and transfer of declarative memories; REM sleep has been linked to procedural and emotional memory.
+- **Reconsolidation** (Nader, Schafe and LeDoux, 2000): when a consolidated memory is **reactivated**, it becomes briefly unstable and must be stored again, so it can be weakened or updated in that window. Trials have tested propranolol with reactivation for PTSD, with mixed results.
+
+### The amnesias
+| Condition | Cause | Pattern |
+|---|---|---|
+| **Medial temporal lobe amnesia** | Surgery (H. M.), herpes simplex encephalitis (Clive Wearing, a British musician, 1985), anoxia | Severe anterograde, variable retrograde; skills spared. Clive Wearing could still play the piano and conduct |
+| **Korsakoff syndrome** | **Thiamine (vitamin B1) deficiency**, usually with chronic alcohol use; damage to mammillary bodies and medial thalamus | Anterograde and temporally graded retrograde amnesia, **confabulation** (fluent, false memories, without intent to deceive), apathy; often follows **Wernicke's encephalopathy** (confusion, ataxia, eye-movement problems) |
+| **Transient global amnesia** | Unclear (venous congestion has been proposed); often after exertion, cold water or emotion, in people over 50 | Sudden anterograde amnesia lasting hours; repetitive questioning; full recovery; a gap for the episode |
+| **Post-traumatic amnesia** | Head injury | Confusion and inability to form new memories after the injury; its **duration** predicts outcome |
+| **Alzheimer's disease** | Neurodegeneration beginning in the entorhinal cortex and hippocampus | Rapid forgetting of new information first; semantic and other losses later; procedural memory spared until late |
+| **Dissociative amnesia** | Psychological, usually after severe stress or trauma | Inability to recall important autobiographical information, often of the traumatic event; may include **dissociative fugue** (travel with loss of identity); new learning usually intact |
+
+:::widget sort
+{
+  "prompt": "Anterograde or retrograde? Sort each memory problem.",
+  "buckets": ["Anterograde (new learning after the event)", "Retrograde (memories from before the event)"],
+  "items": [
+    { "text": "After a head injury, a cricketer cannot remember the overs bowled before he was hit", "bucket": 1 },
+    { "text": "H. M. reads the same magazine every day as if it were new", "bucket": 0 },
+    { "text": "After a course of ECT, a woman has gaps for the weeks around her admission", "bucket": 1 },
+    { "text": "A patient with transient global amnesia asks the same question every few minutes", "bucket": 0 },
+    { "text": "A man after encephalitis cannot recall his wedding or the births of his children", "bucket": 1 },
+    { "text": "A student who took a sleeping tablet cannot remember the conversation she had an hour later", "bucket": 0 }
+  ]
+}
+:::
+
+:::widget build
+{
+  "vignette": "Mr Fernandes, 48, from Goa, with a long history of heavy drinking, is admitted after a fall. He is alert. He cannot remember the doctor he met ten minutes ago, but chats fluently about 'meeting friends at the market this morning', though he has been in hospital for three days. His digit span is normal. He recalls his school days and the names of his siblings well. He walks steadily, and his eye movements are now normal after thiamine was given in the emergency room.",
+  "rule": "Tick the features of Korsakoff syndrome present in the story. A typical picture needs at least four of these, including anterograde amnesia.",
+  "symptoms": [
+    { "label": "Anterograde amnesia (cannot retain new information)", "present": true, "core": true },
+    { "label": "Confabulation", "present": true, "why": "His 'market this morning' story is a fluent false memory, offered without intent to deceive." },
+    { "label": "Relatively preserved remote memories", "present": true, "why": "Retrograde loss is temporally graded; school days and family are preserved." },
+    { "label": "Normal immediate (short-term) memory", "present": true, "why": "Digit span is typically normal in Korsakoff syndrome." },
+    { "label": "History of heavy alcohol use or other cause of thiamine deficiency", "present": true },
+    { "label": "Severe loss of general intelligence", "present": false, "why": "Intellect is relatively preserved; that helps separate Korsakoff from a global dementia." },
+    { "label": "Current ataxia and eye-movement paralysis", "present": false, "why": "These are features of the acute Wernicke stage, here treated with thiamine." }
+  ],
+  "need": 4,
+  "needCore": true,
+  "verdict": "This is a Korsakoff picture: dense anterograde amnesia with confabulation, normal immediate memory and preserved remote memories, after thiamine deficiency linked to alcohol. Give thiamine early and generously to anyone at risk, because Wernicke's encephalopathy is a medical emergency and Korsakoff syndrome often does not fully recover."
+}
+:::
+
+:::recall
+1. What was H. M.'s memory profile? || Dense anterograde amnesia, temporally graded retrograde amnesia, normal short-term memory, intact procedural learning and priming.
+2. What is reconsolidation? || A reactivated memory becomes briefly unstable and must be re-stored, so it can be modified.
+3. What causes Korsakoff syndrome, and what is its hallmark? || Thiamine deficiency, usually with alcohol use; anterograde amnesia with confabulation.
+4. What is transient global amnesia? || A sudden episode of anterograde amnesia lasting hours, with full recovery.
+5. What memory is lost first in Alzheimer's disease? || Recent episodic memory (rapid forgetting of new information).
+:::
+
+:::mcq
+Q: Clive Wearing, after herpes encephalitis, could not remember events from minutes before, yet could still play the piano expertly. This shows the sparing of:
+- Episodic memory
+- *Procedural memory
+- Semantic memory for recent events
+- Short-term memory only
+> Skills are procedural and do not depend on the damaged medial temporal lobes.
+
+Q: The temporal gradient of retrograde amnesia (older memories spared) is best explained by:
+- Proactive interference from older memories
+- *Systems consolidation over time
+- Levels of processing at the time of encoding
+- Encoding specificity and missing retrieval cues
+> Over time, memories come to rely on neocortex.
+:::
+
+## 4.5 Learning and memory in the clinic [core][advanced]
+### Learning models of psychological problems
+| Problem | Learning account | Treatment that follows |
+|---|---|---|
+| **Specific phobia, panic** | Fear conditioning, preparedness, two-factor avoidance; interoceptive conditioning in panic (bodily sensations become CSs) | Exposure, with inhibitory learning principles |
+| **OCD** | Rituals and avoidance negatively reinforced by anxiety relief | Exposure and response prevention |
+| **PTSD** | Conditioned fear to trauma cues, generalisation, avoidance; poorly contextualised trauma memories | Trauma-focused CBT, prolonged exposure, EMDR |
+| **Depression** | Learned helplessness and hopelessness; loss of response-contingent reinforcement (Lewinsohn) | Behavioural activation; cognitive therapy |
+| **Addiction** | Drug as reinforcer (positive and negative); cue-induced craving; conditioned tolerance | Contingency management, cue exposure, relapse prevention |
+| **Habit disorders and tics** | Behaviour maintained by automatic reinforcement or tension relief | Habit reversal training |
+
+### Conditioned drug tolerance
+Shepard Siegel proposed that drug cues (the room, the syringe, the ritual) come to trigger a **compensatory response** that opposes the drug's effect. Tolerance is partly tied to **context**. Siegel and colleagues (1982) gave rats increasing doses of heroin in one room, then a large dose either in the same room or in a new one.
+
+:::widget guess
+{
+  "prompt": "Siegel's rats were given a high dose of heroin after tolerance had been built in one setting. In the same setting, about 32 percent died. What percentage died when the dose was given in a different, unfamiliar setting?",
+  "min": 0,
+  "max": 100,
+  "step": 2,
+  "unit": "%",
+  "answer": [58, 70],
+  "reveal": "About 64 percent, double the rate. Without the usual cues, the compensatory response did not kick in. Reports from people who survived overdoses suggest the same: many overdoses happen in unfamiliar places or with an unusual routine. This is why harm-reduction advice includes taking extra care in new settings or after a break in use."
+}
+:::
+
+### Exposure as inhibitory learning
+Michelle Craske and colleagues reframed exposure therapy using extinction research: exposure does not erase fear; it builds a **new, competing "safe" memory** that must win retrieval. To strengthen it:
+- **Expectancy violation**: design exposures to test a specific feared prediction ("If I stay in the lift for 10 minutes, I will faint") and let it be disconfirmed.
+- **Remove safety behaviours** (carrying a water bottle, holding a rail), which stop the person from learning that they are safe.
+- **Vary contexts and stimuli** to reduce renewal.
+- **Occasional reinforced extinction** and **retrieval cues** (a small reminder from therapy) for relapse prevention.
+
+### Memory in psychiatric disorders
+- **Depression**: **mood-congruent** recall; **overgeneral autobiographical memory** (Mark Williams), in which people asked for a specific memory to a cue ("happy") give general summaries ("I used to be happy at college") rather than specific events. It predicts a poorer course and is targeted by **memory specificity training**. Concentration and memory complaints in older depressed adults can mimic dementia ("depressive pseudodementia"); improvement with treatment helps tell them apart, but such patients carry a higher later risk of dementia.
+- **PTSD**: involuntary, vivid, sensory **intrusive memories** with a sense of "now-ness", alongside a fragmented, poorly organised narrative of the trauma. Brewin's **dual representation theory** separates sensory-bound and contextual memory systems. Trauma-focused therapies work partly by putting the memory in its context (time, place, meaning).
+- **Dissociative amnesia**: real and recognised in DSM-5-TR and ICD-11, usually for a circumscribed period around trauma.
+- **The "memory wars"**: in the 1990s, many adults "recovered" memories of childhood abuse during therapy, sometimes after hypnosis, guided imagery or suggestive questioning. Research on false memory showed such techniques can create false memories, while abuse is common and often remembered continuously. Professional guidance (for example, from the British Psychological Society and the American Psychological Association) says both that genuine abuse memories can be forgotten and later remembered, and that therapists must **not** use suggestive techniques to search for "hidden" memories.
+
+:::widget decide
+{
+  "scene": "A counsellor in Hyderabad tells you that her client, Neha, 30, has depression and “unexplained” anxiety. The counsellor believes Neha must have been abused as a child, and plans to use guided imagery and hypnosis to “help her recover the memories”. Neha has no memory of abuse.",
+  "ask": "What do you advise?",
+  "choices": [
+    { "label": "Go ahead; recovered memories are a sign of healing", "verdict": "harm", "outcome": "Neha develops vivid images of abuse by an uncle, breaks contact with her family, and her depression worsens. Years later she is unsure whether any of it happened.", "why": "Hypnosis and guided imagery inflate confidence and can create detailed false memories. A therapist's belief plus suggestive techniques is the classic recipe for false memory." },
+    { "label": "Treat the depression and anxiety she actually has, assess risk, ask open, non-leading questions about her history, and respond carefully if she discloses anything, without searching for memories she does not report", "verdict": "best", "outcome": "Neha improves with evidence-based treatment. If she ever discloses abuse, it can be taken seriously without having been planted.", "why": "This follows professional guidance: take disclosures seriously and support survivors, but avoid techniques that create memories. Treat the presenting problems, which do not need a hidden cause to be real." },
+    { "label": "Tell Neha that abuse is unlikely and she should stop thinking about her past", "verdict": "ok", "outcome": "Neha feels her history is being dismissed and is less likely to share anything important later.", "why": "Neither assuming abuse nor ruling it out is right. Stay open, curious and non-leading." }
+  ]
+}
+:::
+
+### Memory effects of treatments
+- **ECT**: temporary confusion after each session; **anterograde** difficulties that usually recover within weeks of the course ending; some **retrograde** loss for events around the treatment period, which can be lasting. Right unilateral, brief or ultrabrief pulse ECT reduces these effects.
+- **Benzodiazepines and alcohol**: anterograde amnesia ("blackouts"); benzodiazepines impair new learning, which may interfere with exposure therapy.
+- **Anticholinergic medicines** (including some older antidepressants and medicines for urinary problems): impair memory, especially in older adults, and add to dementia risk with long use.
+
+### Assessing memory
+- **Bedside**: orientation, registration and delayed recall of three or five words (MMSE, MoCA, ACE-III), and remote memory questions.
+- **Batteries**: the **Wechsler Memory Scale** (WMS-IV); the Indian **PGI Memory Scale** (Pershad and Wig), with ten subtests covering remote and recent memory, mental balance, attention, immediate and delayed recall, verbal retention for similar and dissimilar pairs, visual retention and recognition; the **Rey Auditory Verbal Learning Test** and **Rey Complex Figure Test**, both included in Indian neuropsychological batteries such as the NIMHANS battery.
+- **Interpretation**: compare **learning** (does the score rise over trials?), **retention** (is it kept after a delay?) and **retrieval** (does recognition help more than recall?). A big gap between poor free recall and good recognition suggests a **retrieval** problem (common in subcortical conditions and depression); poor recall **and** recognition suggests a **storage** problem (typical of hippocampal damage and Alzheimer's disease).
+
+:::clinician
+Education, language and literacy strongly affect memory test scores in India: word lists and story recall must use culturally familiar items and appropriate norms, and illiterate older adults can be misclassified as impaired on tests normed on educated samples. Tools adapted and normed for Indian populations (for example, Hindi and regional-language versions of the ACE-III and the battery developed for the Longitudinal Ageing Study in India) are preferable where available. In functional (non-organic) memory complaints, performance-validity measures and the pattern of inconsistency across tests matter more than any single score.
+:::
+
+:::recall
+1. Explain conditioned drug tolerance. || Drug-related cues trigger a compensatory response that opposes the drug effect, so tolerance is partly context-specific.
+2. Name three principles of exposure as inhibitory learning. || Expectancy violation, removing safety behaviours, varying contexts (also retrieval cues and occasional reinforced extinction).
+3. What is overgeneral autobiographical memory? || Recalling general summaries instead of specific events, typical of depression.
+4. What memory effects does ECT cause? || Temporary confusion, anterograde difficulties that recover in weeks, some lasting retrograde loss around the treatment period.
+5. What does poor recall with good recognition suggest? || A retrieval problem rather than a storage problem.
+:::
+
+:::mcq
+Q: A depressed man is asked to recall a specific memory to the cue "happy" and replies, "I was happy when I was in school." This illustrates:
+- *Overgeneral autobiographical memory
+- Retroactive interference from recent events
+- Mood-congruent recall of happy events
+- Confabulation to fill a gap in memory
+> He gives a general summary, not a specific event.
+
+Q: A patient scores poorly on free recall of a word list, but recognises almost all the words when shown them. This pattern suggests:
+- A storage problem typical of hippocampal damage
+- Normal ageing only
+- Malingering in every case
+- *A retrieval problem rather than a failure to store
+> Recognition supplies the cues that recall lacks, pointing to retrieval difficulty.
+:::
+
+# Part V · Exam zone
+
+## 5.1 Long answers and short notes [core]
+:::example Q1. Describe classical conditioning and its major phenomena. Discuss contemporary views with reference to Rescorla-Wagner and biological preparedness. (15 marks)
+1. Definition; Pavlov's method; the five terms (draw the before, during and after diagram).
+2. Phenomena: acquisition, temporal arrangements, extinction, spontaneous recovery, renewal, generalisation, discrimination, higher-order conditioning, sensory preconditioning.
+3. Little Albert and Mary Cover Jones.
+4. From contiguity to contingency: Rescorla 1968; Kamin's blocking; the Rescorla-Wagner equation with a worked trial; strengths and failures (latent inhibition).
+5. Preparedness: Garcia and Koelling; Seligman's continuum; Öhman.
+6. Applications: phobias, exposure as inhibitory learning, taste aversion in chemotherapy, conditioned drug tolerance.
+:::
+
+:::example Q2. Explain schedules of reinforcement with examples, and discuss their applications. (10 marks)
+1. Continuous versus partial reinforcement; the partial reinforcement extinction effect.
+2. Table of FR, VR, FI and VI with rule, response pattern, cumulative record shape (draw the pause, the steep line, the scallop and the steady slope) and examples (Indian and global).
+3. Concurrent schedules and the matching law.
+4. Applications: token economies, gambling and app design, workplace incentives, differential reinforcement in ABA.
+:::
+
+:::example Q3. Critically evaluate the multi-store model of memory, and compare it with the working memory model and levels of processing. (15 marks)
+1. Atkinson-Shiffrin: the three stores with duration, capacity and coding; evidence (Sperling, Miller, Peterson and Peterson, Conrad, Baddeley 1966, the serial position curve, Glanzer and Cunitz, H. M. and K. F.).
+2. Critiques: unitary stores, the role of rehearsal, K. F.
+3. Working memory: the four components with evidence for each (word length, articulatory suppression, dual tasks, the episodic buffer).
+4. Levels of processing: Craik and Tulving; criticisms (circularity, transfer-appropriate processing).
+5. Synthesis and applications (education, clinical assessment).
+:::
+
+:::example Q4. "Memory is reconstructive." Discuss with reference to research on schemas, eyewitness testimony and false memory. (15 marks)
+Bartlett; schema and script theory; Loftus and Palmer; the misinformation effect; factors in eyewitness accuracy; the cognitive interview; lost in the mall, doctored photographs and DRM; flashbulb memories; the recovered-memory debate; Indian legal practice on identification parades; conclusion.
+:::
+
+### Short notes (5 marks each)
+Spontaneous recovery · Blocking · Rescorla-Wagner model · Taste aversion · Two-factor theory · Learned helplessness · Partial reinforcement extinction effect · Latent learning · Insight learning · Bobo doll studies · Self-efficacy · Systematic desensitisation · Token economy · Long-term potentiation · Sperling's partial report · Serial position effect · Working memory · Encoding specificity · Proactive and retroactive interference · Ebbinghaus's forgetting curve · Korsakoff syndrome · H. M. · Cognitive interview · Flashbulb memory.
+
+:::word Short note: learned helplessness
+Seligman and Maier (1967) used a triadic design: dogs given escapable shock, yoked dogs given identical but inescapable shock, and unshocked controls. In a later shuttle-box escape task, about two-thirds of yoked dogs failed to escape, showing motivational, cognitive and emotional deficits; the other groups learned quickly. Seligman proposed helplessness as a model of depression. The reformulated theory (Abramson, Seligman and Teasdale, 1978) added attributions: internal, stable and global explanations for bad events predict depression; hopelessness theory followed. Critique: animal-to-human generalisation, and a 2016 reappraisal showing that passivity is the default and what is learned is control (via the ventromedial prefrontal cortex).
+:::
+
+:::word Short note: long-term potentiation
+LTP is a long-lasting increase in synaptic strength after brief high-frequency stimulation, first shown by Bliss and Lømo (1973) in the rabbit hippocampus. It depends on NMDA glutamate receptors, which open only when glutamate binds and the postsynaptic cell is depolarised, so they detect coincident activity (Hebb's rule). Calcium entry triggers insertion of more AMPA receptors; late LTP needs protein synthesis. Blocking NMDA receptors prevents spatial learning in the Morris water maze. LTP is the leading cellular model of learning and memory.
+:::
+
+:::word Short note: encoding specificity
+Tulving and Thomson (1973) proposed that a retrieval cue is effective to the extent that it matches information encoded with the item. Evidence: cued recall far exceeds free recall (Tulving and Pearlstone); context-dependent memory in divers (Godden and Baddeley, about 40 percent better in matching settings); state-dependent memory with alcohol; mood-congruent recall. Applications: the cognitive interview's context reinstatement; revising in exam-like conditions or varying study settings.
+:::
+
+## 5.2 Viva rapid-fire [core]
+:::viva
+Define learning. :: A relatively permanent change in behaviour or its potential due to experience.
+Who discovered classical conditioning? :: Ivan Pavlov.
+Best temporal arrangement for conditioning? :: Delay (forward) conditioning.
+What does spontaneous recovery show? :: Extinction suppresses rather than erases learning.
+Who did the Little Albert study? :: Watson and Rayner, 1920.
+Who counterconditioned Peter's fear of rabbits? :: Mary Cover Jones, 1924.
+Who showed contingency matters more than contiguity? :: Robert Rescorla, 1968.
+Who discovered blocking? :: Leon Kamin, 1969.
+What is the prediction error in Rescorla-Wagner? :: Lambda minus the sum of V.
+What does Rescorla-Wagner fail to explain? :: Latent inhibition, spontaneous recovery and renewal.
+Bright, noisy, tasty water study? :: Garcia and Koelling, 1966.
+Who proposed preparedness? :: Martin Seligman.
+Law of effect, by whom? :: Edward Thorndike.
+Who built the operant chamber? :: B. F. Skinner.
+Negative reinforcement does what to behaviour? :: Increases it, by removing something aversive.
+Two-factor theory, by whom? :: O. H. Mowrer.
+Schedule with the highest steady rate? :: Variable ratio.
+Schedule producing a scallop? :: Fixed interval.
+Who proposed the matching law? :: Richard Herrnstein.
+Instinctive drift, by whom? :: Keller and Marian Breland.
+Latent learning study? :: Tolman and Honzik, 1930.
+Insight learning in chimps? :: Wolfgang Köhler.
+Learning sets? :: Harry Harlow.
+Four processes of observational learning? :: Attention, retention, reproduction, motivation.
+Strongest source of self-efficacy? :: Mastery experiences.
+Reciprocal inhibition, by whom? :: Joseph Wolpe.
+First token economy on a ward? :: Ayllon and Azrin, 1968.
+Guthrie's three habit-breaking methods? :: Threshold, fatigue, incompatible response.
+Hull's key motivational concept? :: Drive reduction.
+Stimulus sampling theory? :: William Estes.
+Who discovered LTP? :: Bliss and Lømo, 1973.
+Coincidence-detecting receptor? :: NMDA receptor.
+Dopamine signals what? :: Reward prediction error.
+Who first studied memory experimentally? :: Hermann Ebbinghaus, 1885.
+Partial report technique? :: George Sperling, 1960.
+Magical number? :: Seven, plus or minus two (Miller, 1956).
+Modern estimate of STM capacity? :: About four chunks (Cowan).
+What abolishes the recency effect? :: A filled delay before recall.
+Four components of working memory? :: Central executive, phonological loop, visuospatial sketchpad, episodic buffer.
+Levels of processing, by whom? :: Craik and Lockhart, 1972.
+Episodic versus semantic distinction? :: Endel Tulving, 1972.
+Divers context study? :: Godden and Baddeley, 1975.
+Old learning disrupting new? :: Proactive interference.
+War of the Ghosts? :: Frederic Bartlett, 1932.
+Smashed versus contacted? :: Loftus and Palmer, 1974.
+Lost in the mall? :: Loftus and Pickrell, 1995.
+Cause of Korsakoff syndrome? :: Thiamine deficiency.
+Hallmark of Korsakoff syndrome? :: Anterograde amnesia with confabulation.
+Who operated on H. M.? :: William Scoville, 1953.
+Ribot's law? :: Recent memories are more vulnerable than older ones.
+Indian memory scale with ten subtests? :: PGI Memory Scale.
+:::
+
+## 5.3 Module test [core]
+Answer every question before checking. Your best score is saved.
+
+:::mcq
+Q: In Pavlov's terms, a once-neutral stimulus that now elicits a learned response is the:
+- Unconditioned stimulus
+- Unconditioned response
+- *Conditioned stimulus
+- Conditioned response
+> The CS has acquired its power through pairing.
+
+Q: Which arrangement typically produces the weakest conditioning?
+- Delay
+- Trace with a short gap
+- *Backward
+- Delay with a long CS
+> The UCS first leaves the CS without predictive value.
+
+Q: A child afraid of a dentist's drill also becomes afraid of a kitchen mixer's whirr. This is:
+- Discrimination
+- *Generalisation
+- Higher-order conditioning
+- Latent inhibition
+> The fear spreads to a similar stimulus.
+
+Q: Statement I: Extinction erases the original CS-UCS association. Statement II: Renewal shows that extinction is context-dependent.
+- Both statements are correct
+- Neither statement is correct
+- Only Statement I is correct
+- *Only Statement II is correct
+> Renewal, reinstatement and spontaneous recovery show the original learning survives.
+
+Q: Rats receiving tone-shock pairings plus extra unsignalled shocks show little fear of the tone. This finding is from:
+- *Robert Rescorla
+- Garcia and Koelling
+- Ivan Pavlov
+- Leon Kamin
+> Rescorla's 1968 contingency study.
+
+Q: In Kamin's experiment, prior training to a noise reduced learning about a light added later. This is:
+- Overshadowing
+- Sensory preconditioning
+- Latent inhibition
+- *Blocking
+> The pretrained noise already predicted the shock.
+
+Q: In ΔV = αβ(λ − ΣV), on an extinction trial λ equals:
+- One
+- *Zero
+- The current ΣV
+- The value of α
+> No UCS means the maximum supportable strength is zero.
+
+Q: Rats made ill after drinking flavoured water avoided the taste but not the accompanying light and click. This demonstrates:
+- Contiguity theory
+- Stimulus generalisation
+- *Biological preparedness
+- Learned helplessness
+> Illness is selectively linked to taste.
+
+Q: A student studies more to avoid a scolding from her parents. The scolding being avoided acts as:
+- *Negative reinforcement
+- Positive punishment
+- Negative punishment
+- Positive reinforcement
+> Removing or avoiding an aversive stimulus increases the behaviour.
+
+Q: Match the schedule with its pattern: (a) FR, (b) VR, (c) FI, (d) VI. (i) Scallop; (ii) Post-reinforcement pause; (iii) Highest steady rate; (iv) Moderate steady rate.
+- *a-ii, b-iii, c-i, d-iv
+- a-ii, b-iii, c-iv, d-i
+- a-iii, b-ii, c-i, d-iv
+- a-i, b-iii, c-ii, d-iv
+> FR pause, VR highest, FI scallop, VI steady.
+
+Q: Which form of reinforcement would produce behaviour most resistant to extinction?
+- Continuous
+- Fixed interval
+- Fixed ratio
+- *Variable ratio
+> The partial reinforcement extinction effect is strongest on VR.
+
+Q: Assertion (A): Avoidance behaviour in phobias is very persistent. Reason (R): Avoidance is negatively reinforced by fear reduction and prevents disconfirmation of the feared outcome.
+- A is true, R is false
+- *Both are true, and R explains A
+- A is false, R is true
+- Both are true, but R does not explain A
+> This is Mowrer's two-factor account.
+
+Q: In the original learned helplessness experiments, the critical comparison was between dogs given escapable shock and dogs given:
+- No shock at all during training
+- Food rewards for pressing the panel
+- *Identical, inescapable (yoked) shock
+- Shock only later, in the shuttle box
+> Yoking held shock constant while removing control.
+
+Q: Pigeons fed every 15 seconds regardless of behaviour developed rituals. Skinner called this:
+- Instinctive drift
+- Shaping
+- *Superstitious behaviour
+- Learned helplessness
+> Accidental reinforcement of whatever preceded food.
+
+Q: Which researcher is linked to cognitive maps?
+- Hull
+- Guthrie
+- Estes
+- *Tolman
+> Tolman's purposive behaviourism.
+
+Q: Which is NOT a mark of insight learning according to Köhler?
+- *A slow fall in errors over many trials
+- Transfer of the solution to new problems
+- A sudden solution after a pause
+- Retention of the solution on later trials
+> Gradual improvement is trial and error.
+
+Q: Arrange in chronological order: (1) Rescorla-Wagner model, (2) Thorndike's puzzle box, (3) Bandura's Bobo doll study, (4) Pavlov's Nobel Prize.
+- 4, 2, 3, 1
+- *2, 4, 3, 1
+- 2, 4, 1, 3
+- 4, 2, 1, 3
+> 1898, 1904, 1961, 1972.
+
+Q: According to Bandura, self-efficacy is most strongly built by:
+- *Personal mastery experiences
+- Watching others succeed
+- Verbal persuasion
+- Reducing physiological arousal
+> Mastery experiences are the most powerful source.
+
+Q: Long-term potentiation depends critically on:
+- GABA-A receptors
+- *NMDA glutamate receptors
+- Dopamine D2 receptors
+- Nicotinic receptors
+> NMDA receptors act as coincidence detectors.
+
+Q: Sperling's partial report technique demonstrated that iconic memory:
+- Lasts about 18 seconds without rehearsal
+- Holds only about four items at a time
+- *Holds most of a display but fades fast
+- Codes information mainly acoustically
+> Large capacity, fast decay.
+
+Q: In the Petersons' study, rapid forgetting over 18 seconds was later attributed largely to:
+- Trace decay
+- Motivated forgetting
+- Retroactive interference from counting
+- *Proactive interference from earlier trials
+> Keppel and Underwood found little forgetting on the first trial.
+
+Q: The word length effect is evidence for the:
+- Central executive
+- Episodic buffer
+- *Phonological loop
+- Visuospatial sketchpad
+> Span depends on how long words take to say.
+
+Q: Which of these is an implicit memory?
+- Recalling your school's name
+- Knowing the capital of Kerala
+- Remembering your last birthday party
+- *Faster completion of a word stem seen earlier
+> Priming is implicit.
+
+Q: Learning in a happy mood and recalling better in a happy mood illustrates:
+- Context-dependent memory for places
+- *Mood-dependent memory
+- Levels of processing at encoding
+- Retroactive interference from mood
+> Internal state at encoding acts as a retrieval cue.
+
+Q: Bartlett's participants changed "canoes" to "boats" in their retellings. This is:
+- *Familiarisation
+- Shortening
+- Rationalisation
+- Confabulation
+> Unfamiliar details were replaced with culturally familiar ones.
+
+Q: Which technique is part of the cognitive interview?
+- Asking leading questions to test the witness
+- *Recalling events in a different order
+- Showing a photograph of the suspect first
+- Hypnotising the witness
+> Changing order is one of the four original techniques.
+
+Q: A man with long-standing alcohol use cannot learn new information and fills gaps with fluent, false stories. The likely diagnosis and cause are:
+- Alzheimer's disease; amyloid
+- Transient global amnesia; unknown
+- *Korsakoff syndrome; thiamine deficiency
+- Dissociative amnesia; trauma
+> Anterograde amnesia with confabulation after thiamine deficiency.
+
+Q: H. M. improved at mirror drawing over several days without remembering having practised. This shows:
+- That his episodic memory was still intact
+- That only his recency effect was preserved
+- That the hippocampus is where skills are stored
+- *That declarative and procedural memory dissociate
+> Skill learning was spared despite amnesia.
+
+Q: Heroin-tolerant rats were more likely to die from a large dose given in a new environment. This supports:
+- *Conditioned compensatory responses
+- Blocking of the drug cue by the room
+- Latent learning of the new environment
+- Learned helplessness after injections
+> Siegel's conditioned tolerance model.
+
+Q: Which is the best evidence-based approach for a therapist concerned that a client may have "repressed" abuse memories?
+- Use hypnosis to bring the memories back
+- Use guided imagery of what might have happened
+- Tell the client that abuse is almost certain
+- *Treat current problems; ask open questions
+> Suggestive techniques risk creating false memories.
+:::
+`;

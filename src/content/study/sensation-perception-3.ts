@@ -20,15 +20,10 @@ Gregory (1966, 1970), building on Hermann von Helmholtz's idea of **unconscious 
 - Illusions are **misapplied hypotheses**: the Müller-Lyer fins are read as corners, triggering inappropriate size constancy.
 - Ambiguous figures flip because the data support two hypotheses equally.
 
-:::widget decide
+:::widget reveal
 {
-  "scene": "A student is shown the inside of a hollow mask of Lord Ganesha, lit from below. Even though she knows it is hollow, she sees it as a normal face bulging towards her, and as the mask rotates, it seems to turn the 'wrong' way.",
-  "ask": "Which theory explains this best?",
-  "choices": [
-    { "label": "Gregory: a strong hypothesis that faces are convex overrides the depth cues", "verdict": "best", "outcome": "She realises her knowledge of faces is shaping what she sees, even against the evidence.", "why": "The hollow-face illusion is a classic support for constructivism. Expectation (faces bulge outwards) wins over binocular cues, unless she gets very close." },
-    { "label": "Gibson: the optic array directly specifies a convex face", "verdict": "harm", "outcome": "The explanation cannot account for why the true depth is not seen.", "why": "If perception simply picked up the information in the light, the hollow surface would be seen as hollow. Direct perception struggles with this illusion." },
-    { "label": "Neither: it is a fault in the retina", "verdict": "ok", "outcome": "Retinal input is normal; the effect is in interpretation.", "why": "The retina registers the correct pattern; the illusion arises in how the brain interprets it." }
-  ]
+  "prompt": "A student looks at the inside of a hollow mask of Lord Ganesha, lit from below. She knows it is hollow. Predict what she sees, and say which theory, Gibson's or Gregory's, explains it better.",
+  "answer": "She sees a normal face bulging towards her, and as the mask rotates it seems to turn the 'wrong' way. This is the hollow-face illusion, a classic support for Gregory: a strong hypothesis that faces are convex overrides the depth cues, until she comes very close and binocular disparity wins. If perception simply picked up the information in the light, as Gibson proposed, the hollow surface should be seen as hollow."
 }
 :::
 
@@ -147,7 +142,7 @@ In the late 1940s, Jerome Bruner and colleagues argued that needs and values sha
   "scene": "You are marking an MA answer that says: “McGinnies (1949) proved that the unconscious mind protects us from threatening words.”",
   "ask": "What is the best critical comment?",
   "choices": [
-    { "label": "Agree; the skin-conductance data prove unconscious defence", "verdict": "harm", "outcome": "The answer misses the most-asked critique in exams.", "why": "The findings have simpler explanations that were raised at once and must be discussed." },
+    { "label": "Agree; the skin-conductance data prove unconscious defence", "verdict": "ok", "outcome": "The answer describes the finding but loses the evaluation marks.", "why": "The effect was real in the data, but \"prove\" is too strong: simpler explanations were raised at once and must be discussed." },
     { "label": "Note two alternative explanations: taboo words were less familiar in print (Howes and Solomon, 1950), and participants may have seen them but hesitated to say them aloud to an experimenter (response suppression)", "verdict": "best", "outcome": "The answer gains marks for balanced evaluation.", "why": "Word frequency strongly predicts recognition thresholds, and embarrassment can delay report. Later studies controlling these found smaller effects, along with the opposite pattern in some people: perceptual vigilance (sensitisation) to threat." },
     { "label": "Dismiss the study as unscientific because it was done in the 1940s", "verdict": "ok", "outcome": "Age is not a critique.", "why": "Old studies can be well designed; criticise the method and the alternative explanations, not the date." }
   ]
