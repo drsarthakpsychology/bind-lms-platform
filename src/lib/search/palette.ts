@@ -53,6 +53,8 @@ const ADMIN: PaletteEntry[] = [
   { id: "ad-notify", label: "Send a notification", href: "/admin/emails?folder=notify", group: "Admin", keywords: ["bell", "announce", "message students", "nudge"] },
   { id: "ad-failed", label: "Failed emails (retry)", href: "/admin/emails?folder=failed", group: "Admin", keywords: ["retry", "bounced", "error"] },
   { id: "ad-credentials", label: "Credentials & certificates", href: "/admin/credentials", group: "Admin", keywords: ["certificate", "badge", "achievement", "roll number", "revoke"] },
+  { id: "ad-inbox", label: "Reply to doubts", hint: "Inbox: doubts and replies waiting on you", href: "/admin/inbox", group: "Admin", keywords: ["inbox", "doubts", "answer", "reply", "concerns", "unanswered", "questions"] },
+  { id: "ad-message", label: "Message…", hint: "Send a message to students (in-app, email optional)", href: "/admin/emails?folder=notify", group: "Admin", keywords: ["message", "notify", "tell", "announce", "send", "text students", "nudge"] },
   { id: "ad-doubts", label: "Doubts & concerns", href: "/admin/doubts", group: "Admin", keywords: ["questions", "complaints", "reply"] },
   { id: "ad-cohorts", label: "Cohorts", href: "/admin/cohorts", group: "Admin", keywords: ["batch", "cohort 1", "cohort 2"] },
   { id: "ad-compose", label: "Compose email", href: "/admin/emails?folder=compose", group: "Admin", keywords: ["new email", "write", "send"] },

@@ -114,8 +114,8 @@ export default async function AdminOverviewPage() {
     {
       label: "Student concerns",
       count: complaints,
-      detail: "Private concerns students raised. Reply in Review.",
-      href: "/admin/doubts",
+      detail: "Private concerns students raised. Reply in the Inbox.",
+      href: "/admin/inbox",
       icon: <ShieldAlert className="size-4" />,
       urgent: complaints > 0,
     },
