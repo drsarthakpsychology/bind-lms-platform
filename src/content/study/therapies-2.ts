@@ -12,6 +12,37 @@ Severe emotion dysregulation arises from a **transaction** between:
 
 Over time the person never learns to trust, label or regulate their emotions, and swings between emotional inhibition and extreme displays, including self-harm, which brings rapid relief.
 
+
+:::widget flow
+{
+ "title": "The biosocial transaction",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "v",
+   "label": "Emotional vulnerability",
+   "detail": "High sensitivity, high reactivity, slow return to baseline."
+  },
+  {
+   "id": "i",
+   "label": "Invalidating response",
+   "detail": "\"Stop crying, it's nothing.\""
+  },
+  {
+   "id": "e",
+   "label": "Escalation or suppression",
+   "detail": "Emotions are hidden, then explode."
+  },
+  {
+   "id": "r",
+   "label": "Intermittent reinforcement",
+   "detail": "Only extreme displays get a response, so they become more likely."
+  }
+ ],
+ "caption": "Linehan's theory is a loop between child and environment, not blame of either."
+}
+:::
+
 ### Dialectics: acceptance **and** change
 The central dialectic is that the therapist **fully accepts** the person as they are **and** pushes for **change**. Both are true at once: "You are doing the best you can, **and** you need to do better, try harder and be more motivated to change."
 
@@ -22,6 +53,33 @@ The central dialectic is that the therapist **fully accepts** the person as they
 | **Distress tolerance** | Survive crises without making them worse | **TIPP** (temperature change with cold water, intense exercise, paced breathing, paired muscle relaxation); distraction (ACCEPTS); self-soothing; radical acceptance |
 | **Emotion regulation** | Understand and change emotions | Naming emotions; checking the facts; **opposite action**; reducing vulnerability (**PLEASE**: treat physical illness, balanced eating, avoid mood-altering drugs, balanced sleep, exercise); building positive experiences |
 | **Interpersonal effectiveness** | Ask for what you need and say no while keeping relationships and self-respect | **DEAR MAN** (describe, express, assert, reinforce; stay mindful, appear confident, negotiate), **GIVE** (gentle, interested, validate, easy manner), **FAST** (fair, no apologies, stick to values, truthful) |
+
+
+:::widget layers
+{
+ "title": "DBT's target hierarchy",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Life-threatening behaviour",
+   "detail": "Suicidal and self-harm behaviour: always first."
+  },
+  {
+   "label": "Therapy-interfering behaviour",
+   "detail": "Missing sessions, not doing diary cards, and therapist behaviours too."
+  },
+  {
+   "label": "Quality-of-life-interfering behaviour",
+   "detail": "Substance use, unstable housing, lost jobs."
+  },
+  {
+   "label": "Skills building",
+   "detail": "Using the four modules in daily life."
+  }
+ ],
+ "caption": "The diary card tells the therapist which level the session must start with."
+}
+:::
 
 ### The structure of standard DBT
 1. **Individual therapy** (weekly): working on target behaviours with a **diary card** and **chain analysis**.
@@ -111,6 +169,41 @@ Steven Hayes developed ACT from **relational frame theory**, a behavioural accou
 **Open up** (acceptance, defusion), **be present** (present moment, self-as-context), **do what matters** (values, committed action).
 :::
 
+
+:::widget flow
+{
+ "title": "The ACT hexaflex",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Acceptance"
+  },
+  {
+   "id": "d",
+   "label": "Defusion"
+  },
+  {
+   "id": "p",
+   "label": "Present moment"
+  },
+  {
+   "id": "s",
+   "label": "Self-as-context"
+  },
+  {
+   "id": "v",
+   "label": "Values"
+  },
+  {
+   "id": "c",
+   "label": "Committed action"
+  }
+ ],
+ "caption": "The six processes all point to one centre: psychological flexibility. Tap each and name its opposite."
+}
+:::
+
 ### Classic ACT techniques
 - **Defusion**: "I'm having the thought that I'm a failure"; saying a word aloud repeatedly until it loses its meaning ("milk, milk, milk"); "leaves on a stream".
 - **Metaphors**: the **passengers on the bus** (thoughts shout from the back seats, but you can keep driving towards your values); **tug-of-war with a monster** (drop the rope); **quicksand** (struggling makes you sink).
@@ -181,6 +274,45 @@ Q: The passengers-on-the-bus metaphor teaches that:
 
 ### Why depression returns
 Each episode of depression strengthens links between **low mood** and **negative thinking**. In someone who has recovered, a small dip in mood can reactivate the whole pattern of rumination ("Here it comes again; I'll never be well"), and spiral into a new episode. This is called **cognitive reactivity**.
+
+
+:::widget flow
+{
+ "title": "How a small dip becomes a relapse",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "d",
+   "label": "A small mood dip",
+   "detail": "Tiredness, a minor disappointment."
+  },
+  {
+   "id": "r",
+   "label": "Old patterns reactivated",
+   "detail": "\"Here it comes again; I'll never be well.\""
+  },
+  {
+   "id": "u",
+   "label": "Rumination",
+   "detail": "Trying to solve the mood by thinking about it."
+  },
+  {
+   "id": "w",
+   "label": "Withdrawal",
+   "detail": "Less activity, less contact."
+  },
+  {
+   "id": "e",
+   "label": "A new episode",
+   "detail": "The spiral completes."
+  }
+ ],
+ "edgeLabels": {
+  "d>r": "cognitive reactivity"
+ },
+ "caption": "MBCT aims at the second and third boxes: noticing thoughts as thoughts and stepping out of rumination."
+}
+:::
 
 ### What MBCT teaches
 - **Decentring**: seeing thoughts as passing mental events ("thoughts are not facts").
@@ -366,6 +498,33 @@ India and other low- and middle-income countries have far too few psychologists.
 - **Thinking Healthy Programme** (CBT-based, for perinatal depression), delivered by community health workers in South Asia.
 - **Problem Management Plus** (WHO, problem-solving plus stress management).
 
+
+:::widget layers
+{
+ "title": "Stepped care",
+ "shape": "pyramid",
+ "layers": [
+  {
+   "label": "Specialist and intensive care",
+   "detail": "Complex, severe or high-risk problems: specialist teams, inpatient care, DBT programmes."
+  },
+  {
+   "label": "High-intensity therapy",
+   "detail": "Individual CBT, IPT, family therapy by trained therapists, with or without medicine."
+  },
+  {
+   "label": "Low-intensity help",
+   "detail": "Guided self-help, group programmes, task-shared behavioural activation or problem-solving."
+  },
+  {
+   "label": "Recognition and watchful waiting",
+   "detail": "Primary care identification, psychoeducation, monitoring."
+  }
+ ],
+ "caption": "Most people start near the base and step up if they do not improve. Risk can move someone straight to the top."
+}
+:::
+
 ### Cultural adaptation
 Good adaptation changes the **packaging**, not the **active ingredients**:
 - Use the client's language and idioms ("tension", "dimaag kharab", "mann nahi lagta").
@@ -535,131 +694,6 @@ Postgraduate and PsyD answers should compare therapies on mechanism and evidence
 :::recall
 1. What seven headings fit any therapy answer? || Founder, theory, structure, techniques with example, uses, evidence, limitations.
 :::
-
-## 4.1b Question and answer bank [core]
-Work through each question before reading the answer. Answers are written at a postgraduate level; use them to check your reasoning, not to memorise word for word.
-
-### Q1. Why do common factors matter, and when do specific techniques matter more?
-**Common factors**
-- The alliance, empathy, positive regard, genuineness, hope and a credible rationale predict outcome across therapies.
-- The alliance-outcome link is consistent across hundreds of studies, of small-to-moderate size.
-- Therapist differences also matter: some therapists consistently get better outcomes.
-
-**Where specific techniques clearly matter**
-| Problem | Specific ingredient | Why |
-|---|---|---|
-| Phobias, OCD, panic | Exposure (with response prevention) | Avoidance maintains fear; new learning needs approach |
-| Insomnia | Sleep restriction and stimulus control in CBT-I | Targets the conditioned arousal and sleep pressure mechanisms |
-| Adolescent anorexia | Family taking charge of re-feeding | Medical urgency and family-level maintenance |
-| Recurrent self-harm in BPD | DBT skills and chain analysis | Specific deficits in emotion regulation |
-
-**Reasoning**: For broad, mild-to-moderate problems, many bona fide therapies converge because common factors carry much of the effect. Where a disorder has a well-understood maintaining mechanism, a technique that targets it adds substantial benefit. A good clinician delivers specific methods **through** a strong relationship.
-
-### Q2. Compare cognitive restructuring in CBT with cognitive defusion in ACT.
-| | CBT restructuring | ACT defusion |
-|---|---|---|
-| Target | Content and believability of the thought | Relationship to the thought; its function |
-| Question asked | "Is this thought true? What is the evidence?" | "Is this thought helpful? What happens when you hold it tightly?" |
-| Typical method | Thought records, Socratic questioning, behavioural experiments | "I'm having the thought that...", word repetition, leaves on a stream |
-| Assumption | Changing the thought changes the feeling | Thoughts need not change for behaviour to change |
-| Risk | Can become an argument with a thought, or used for avoidance | Can be misread as dismissing real problems |
-
-**Example**: For "I will fail the exam", CBT examines past results and plans study; ACT notes the thought, makes room for anxiety, and commits to studying because learning matters. **In practice** many therapists use both: restructure thoughts that are clearly distorted and checkable; defuse from repetitive, uncheckable or self-critical thoughts.
-
-### Q3. A client with depression in a joint family in rural Bihar cannot attend weekly sessions. How would you deliver evidence-based help?
-**Step 1: Safety and assessment.** Screen severity and risk; check for physical illness.
-**Step 2: Choose a low-intensity, task-shared option.**
-- Behavioural activation (as in the Healthy Activity Program) delivered by a trained community health worker or lay counsellor.
-- Problem-solving sessions focused on practical stressors.
-**Step 3: Adapt delivery.**
-- Fewer, longer sessions at home or the health and wellness centre; phone check-ins.
-- Involve a family member she chooses; respect the household hierarchy.
-- Use local idioms and examples; simple illustrated material for low literacy.
-**Step 4: Step up if needed.** Refer for medicine and specialist care for moderate to severe depression, psychotic features or high risk.
-**Step 5: Monitor.** A brief scale (for example PHQ-9 read aloud) at each contact.
-
-### Q4. Explain how DBT addresses the problem of invalidation in therapy itself.
-- Standard change-focused CBT can feel to people with borderline patterns like the invalidating environment that shaped them ("you're thinking wrongly"), leading to anger, shame and drop-out.
-- DBT balances **validation** (communicating that the person's responses make sense in context) with **change strategies**.
-- **Levels of validation** range from attentive listening, accurate reflection, articulating the unspoken, validating in terms of past learning or biology, validating in terms of present circumstances, to radical genuineness.
-- **Dialectical strategies** (for example "both-and" statements, devil's advocate, extending) help move past stuck polarities.
-- The **consultation team** helps therapists stay balanced rather than drifting into either harsh pushing or passive acceptance.
-
-### Q5. How does IPT differ from psychodynamic therapy and from CBT?
-| | IPT | Psychodynamic | CBT |
-|---|---|---|---|
-| Focus | Current relationships and roles | Unconscious conflict, past relationships, the therapy relationship | Thoughts and behaviours in the present |
-| Time frame | Here and now | Past and present linked | Here and now |
-| Transference | Not interpreted | Central | Not central |
-| Homework | Informal tasks | Rare | Essential |
-| Length | 12 to 16 sessions | Brief or long-term | 12 to 20 sessions for depression |
-| Model of depression | Medical illness linked to interpersonal context | Conflict, loss, self-criticism | Negative cognitions and behaviour |
-
-See the Psychodynamics in depth module for brief dynamic therapy in detail.
-
-### Q6. What makes a reflection "complex" in motivational interviewing, and why does it matter?
-- A **simple reflection** repeats or rephrases what was said ("You're tired of being told what to do").
-- A **complex reflection** adds meaning or emphasis: the feeling beneath, the unspoken next step, or both sides of ambivalence ("Part of you enjoys the evenings with friends, and part of you is worried about what it's doing to your health").
-- Types: amplified reflection, double-sided reflection, reframing, continuing the paragraph.
-- **Why it matters**: complex reflections deepen understanding and are associated with more change talk; fidelity coding expects a good proportion of reflections to be complex.
-
-### Q7. When is supportive therapy the treatment of choice rather than a fallback?
-- **Severe mental illness** with fragile reality testing, where exploratory work can destabilise.
-- **Acute crisis** (bereavement, disaster, medical diagnosis) where the priority is stabilising coping.
-- **Medical and palliative settings**, where goals are comfort, meaning and adjustment.
-- **Low ego strength**: poor impulse control, limited reflective capacity, unstable relationships.
-- When the patient **prefers** a non-intensive approach and evidence for alternatives is similar.
-Supportive therapy is a planned treatment with goals and techniques (ventilation, honest reassurance, psychoeducation, advice, environmental change, strengthening adaptive defences, problem-solving), not unstructured conversation.
-
-### Q8. Describe the role of the family in treating schizophrenia, with mechanism and evidence.
-**Mechanism**
-- High expressed emotion (criticism, hostility, over-involvement) predicts relapse, probably through chronic stress and reduced adherence.
-- Families also carry burden, stigma and lack of information.
-**Intervention components**
-1. Psychoeducation about illness, medicines and early warning signs.
-2. Communication training (expressing feelings without criticism).
-3. Problem-solving skills.
-4. Crisis planning and support for carers' own well-being.
-**Evidence**: family interventions reduce relapse and readmission substantially over a year or more and improve adherence. **India**: families are closely involved, which makes this both feasible and culturally fitting; burden reduction for carers is an explicit goal.
-
-### Q9. A 16-year-old is referred for career counselling but presents with low mood and sleep problems. How do you proceed?
-1. **Assess first**: mood, sleep, risk (including suicidal thoughts), substance use, academic and family pressure.
-2. **If depression or risk is present**: prioritise safety and treatment; inform parents as needed; refer appropriately.
-3. **Then career work**: interests (for example a Holland-based inventory), aptitudes, values and constraints; explore options with the student and family.
-4. **Address the family's expectations**: often the conflict between parent and child goals is a key stressor.
-5. **Plan with back-ups**: entrance routes, alternative courses, timelines.
-6. **Review**: mood and decision readiness.
-Key principle: never do career counselling over unaddressed depression or risk.
-
-### Q10. Critically evaluate expressive therapies.
-**Strengths**
-- Access experience that is hard to put into words (trauma, young children, severe mental illness, dementia).
-- Engaging, often enjoyable; can improve social connection.
-- Some evidence: music therapy for negative symptoms and social function in schizophrenia, and for agitation in dementia; play therapy moderate effects in children.
-**Limitations**
-- Many small, low-quality trials; heterogeneous methods; difficult blinding.
-- Some large trials show no benefit over usual care (for example group art therapy in psychosis).
-- Risk of overinterpreting artwork or play as "proof" (for example of abuse).
-- Requires trained therapists; few formal training routes in India.
-**Conclusion**: valuable adjuncts for selected people and goals; not substitutes for evidence-based core treatments.
-
-### Q11. How would you adapt CBT for a client with low literacy?
-- Replace written thought records with **spoken** or **picture-based** versions (faces for emotions, simple symbols).
-- Use **stories, proverbs and local examples**.
-- Shorter sessions with more repetition; involve a trusted family member to support practice if the client agrees.
-- Emphasise **behavioural** components (activation, exposure) which need less reading.
-- Use audio recordings of session summaries on the client's phone.
-- Check understanding by asking the client to explain the idea back.
-
-### Q12. What are the main ways psychotherapy can harm, and how are they prevented?
-| Harm | Example | Prevention |
-|---|---|---|
-| Deterioration | Symptoms worsen during therapy | Routine outcome monitoring, supervision |
-| Wrong treatment | Exploratory therapy destabilising psychosis | Accurate assessment and formulation |
-| Iatrogenic memories | Suggestive "recovered memory" work | Avoid suggestive techniques |
-| Harmful protocols | Single-session debriefing, conversion therapy, coercive holding therapy | Evidence-based practice, ethics codes |
-| Boundary violations | Dual relationships, sexual contact | Training, supervision, clear codes |
-| Dependency | Endless therapy without goals | Clear goals, review, planned ending |
 
 ## 4.2 Viva rapid-fire [core]
 :::viva

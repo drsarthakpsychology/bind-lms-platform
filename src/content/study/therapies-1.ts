@@ -30,6 +30,29 @@ The relationship is the vehicle; the techniques are the engine. A great engine i
 }
 :::
 
+
+:::widget layers
+{
+ "title": "Bordin's working alliance",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Bond",
+   "detail": "Trust, warmth and respect between client and therapist."
+  },
+  {
+   "label": "Agreement on goals",
+   "detail": "What are we working towards, in the client's words?"
+  },
+  {
+   "label": "Agreement on tasks",
+   "detail": "What will we do in and between sessions to get there?"
+  }
+ ],
+ "caption": "A rupture in any layer weakens the alliance; repairing it openly often strengthens therapy."
+}
+:::
+
 ### Is one therapy better than another?
 In 1936, Saul Rosenzweig suggested that all therapies might work about equally, quoting the dodo bird from Lewis Carroll's story: "Everybody has won, and all must have prizes." For many common problems (such as mild to moderate depression), well-delivered therapies often do give similar results. But for some conditions, **specific methods clearly matter**: exposure for phobias and OCD, family-based treatment for adolescent anorexia, CBT for insomnia, DBT for recurrent self-harm in borderline personality disorder.
 
@@ -117,6 +140,52 @@ Egan's **SOLER**: **S**it squarely facing the client (or at a slight angle), **O
   "yourTurn": [
     { "q": "A 17-year-old says: 'Everyone in my class is cleverer than me. I'll never crack NEET.' Write a reflection of feeling and an open question.", "a": "Reflection: 'You sound really discouraged, maybe even a bit hopeless about it.' Open question: 'What makes you feel that way right now?' or 'What has the preparation been like for you?'" }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "Ivey's microskills hierarchy",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "Attending",
+   "detail": "Culturally appropriate eye contact, posture, voice and verbal tracking."
+  },
+  {
+   "id": "q",
+   "label": "Questions",
+   "detail": "Open to explore, closed to check facts."
+  },
+  {
+   "id": "o",
+   "label": "Observing",
+   "detail": "Noticing non-verbal cues and discrepancies."
+  },
+  {
+   "id": "p",
+   "label": "Paraphrase and reflect",
+   "detail": "Content and feeling."
+  },
+  {
+   "id": "s",
+   "label": "Summarise",
+   "detail": "Pull threads together."
+  },
+  {
+   "id": "i",
+   "label": "Influencing skills",
+   "detail": "Challenge, reframe, give information, feedback."
+  },
+  {
+   "id": "t",
+   "label": "Integrate",
+   "detail": "Combine skills flexibly within a model of therapy."
+  }
+ ],
+ "caption": "Skills build on each other: listening first, influencing later."
 }
 :::
 
@@ -214,6 +283,32 @@ Q: Interpersonal psychotherapy was developed by:
 ## 1.4 Supportive therapy, psychoeducation and problem-solving [core][starting]
 Not every person needs or can use an intensive, change-focused therapy. **Supportive psychotherapy** aims to **reduce distress, strengthen coping and keep the person stable**. It is the most widely practised therapy in Indian clinics, often within a psychiatric follow-up.
 
+
+:::widget flow
+{
+ "title": "Egan's three stages of helping",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "The current picture",
+   "detail": "Help the client tell the story, spot blind spots, choose what to work on."
+  },
+  {
+   "id": "2",
+   "label": "The preferred picture",
+   "detail": "What would better look like? Set realistic goals."
+  },
+  {
+   "id": "3",
+   "label": "The way forward",
+   "detail": "Strategies, a plan, and support to act."
+  }
+ ],
+ "caption": "Many counselling sessions move through all three stages, briefly, for one problem."
+}
+:::
+
 ### When supportive therapy is the right choice
 - **Crisis** or recent trauma.
 - **Severe mental illness** (schizophrenia, bipolar disorder) between or after episodes.
@@ -241,6 +336,46 @@ Not every person needs or can use an intensive, change-focused therapy. **Suppor
 5. Choose one (or a combination).
 6. Plan the steps: who, what, when.
 7. Do it, then review: what worked? Try again if needed.
+
+
+:::widget flow
+{
+ "title": "Problem-solving in seven steps",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Define the problem"
+  },
+  {
+   "id": "2",
+   "label": "Set a goal"
+  },
+  {
+   "id": "3",
+   "label": "Brainstorm options"
+  },
+  {
+   "id": "4",
+   "label": "Weigh pros and cons"
+  },
+  {
+   "id": "5",
+   "label": "Choose"
+  },
+  {
+   "id": "6",
+   "label": "Plan steps"
+  },
+  {
+   "id": "7",
+   "label": "Do it and review",
+   "detail": "If it did not work, go round again with what you learned."
+  }
+ ],
+ "caption": "A cycle, not a straight line: review feeds the next round."
+}
+:::
 
 :::example A Friendship Bench idea from Zimbabwe, relevant to India
 In Harare, trained lay "grandmothers" sitting on wooden benches outside clinics offered six sessions of structured problem-solving to people with depression and anxiety. In a large trial, people who received this did much better than those who received enhanced usual care. The lesson for India: simple, structured talking help delivered by trusted, trained community members can work, and is the logic behind programmes like the Healthy Activity Program.
@@ -434,6 +569,15 @@ Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this:
 }
 :::
 
+
+:::widget curve
+{
+ "kind": "inverted-u",
+ "title": "Arousal, performance and why exposure is graded",
+ "caption": "Performance is best at moderate arousal, and the peak comes at lower arousal for complex tasks. Exposure steps are chosen to be challenging but manageable (moderate distress), so new learning can happen."
+}
+:::
+
 ### Other behavioural methods
 - **Systematic desensitisation** (Joseph Wolpe): relaxation paired with a graded hierarchy, often in imagination (reciprocal inhibition: you cannot be relaxed and anxious at once). Largely replaced by exposure, but still asked in exams.
 - **Relaxation training**: progressive muscle relaxation (Jacobson), breathing exercises, applied relaxation.
@@ -485,6 +629,42 @@ Aaron Beck noticed that his depressed patients had a stream of quick, negative t
 - **Core beliefs** (schemas): deep beliefs about self, others and the world ("I am unlovable", "Others are dangerous").
 - **Beck's cognitive triad** in depression: negative views of the **self**, the **world** and the **future**.
 
+
+:::widget flow
+{
+ "title": "The CBT cycle (the 'hot cross bun')",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Situation",
+   "detail": "The manager returns a report with corrections."
+  },
+  {
+   "id": "t",
+   "label": "Thoughts",
+   "detail": "\"I'm useless; he'll fire me.\""
+  },
+  {
+   "id": "e",
+   "label": "Emotions",
+   "detail": "Shame, anxiety."
+  },
+  {
+   "id": "b",
+   "label": "Body",
+   "detail": "Tight chest, poor sleep."
+  },
+  {
+   "id": "a",
+   "label": "Behaviour",
+   "detail": "Avoids the manager, procrastinates, which leads to more corrections."
+  }
+ ],
+ "caption": "Each part feeds the others. CBT can enter the loop at thoughts (restructuring) or behaviour (activation, experiments)."
+}
+:::
+
 ### Common thinking traps
 | Trap | Example |
 |---|---|
@@ -498,6 +678,29 @@ Aaron Beck noticed that his depressed patients had a stream of quick, negative t
 | **Emotional reasoning** | "I feel useless, so I must be useless." |
 | **Discounting the positive** | "They only praised me to be nice." |
 | **Labelling** | "I'm a loser." |
+
+
+:::widget layers
+{
+ "title": "Beck's three levels of cognition",
+ "shape": "iceberg",
+ "layers": [
+  {
+   "label": "Automatic thoughts",
+   "detail": "Quick, situation-specific, near the surface: \"She didn't reply; she's angry with me.\""
+  },
+  {
+   "label": "Intermediate beliefs",
+   "detail": "Rules and assumptions: \"If I am not perfect, people will reject me.\""
+  },
+  {
+   "label": "Core beliefs",
+   "detail": "Deep, global beliefs about self, others and world: \"I am unlovable.\""
+  }
+ ],
+ "caption": "Therapy usually starts at the visible tip and works down as trust and skill grow."
+}
+:::
 
 ### The tools
 - **Psychoeducation and a shared formulation** (the "hot cross bun": situation, thoughts, feelings, body, behaviour, each affecting the others).
@@ -593,6 +796,37 @@ Listen for, and reflect, the person's own statements in favour of change:
 - **Mobilising**: **C**ommitment ("I will"), **A**ctivation ("I'm ready"), **T**aking steps ("I didn't drink yesterday").
 
 The opposite is **sustain talk** ("I need a drink to sleep"). MI does not argue with sustain talk; it reflects it and gently invites change talk.
+
+
+:::widget flow
+{
+ "title": "The four processes of MI",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "e",
+   "label": "Engaging",
+   "detail": "Building a working relationship."
+  },
+  {
+   "id": "f",
+   "label": "Focusing",
+   "detail": "Agreeing what to talk about."
+  },
+  {
+   "id": "v",
+   "label": "Evoking",
+   "detail": "Drawing out the person's own reasons for change."
+  },
+  {
+   "id": "p",
+   "label": "Planning",
+   "detail": "Turning commitment into concrete steps."
+  }
+ ],
+ "caption": "Each process rests on the one before. If planning stalls, go back to evoking; if focus is lost, re-engage."
+}
+:::
 
 ### Four processes
 1. **Engaging**: building a working relationship.
@@ -722,12 +956,69 @@ Q: Group IPT delivered by lay facilitators was shown effective for depression in
 ## 2.5 Family and systemic therapy [core][beginner]
 Systemic therapists see a problem not just "inside" one person but in the **patterns between people**. The person with symptoms (the **identified patient**) may be expressing a problem of the whole system.
 
+
+:::widget flow
+{
+ "title": "IPT in three phases",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "i",
+   "label": "Initial",
+   "detail": "Diagnose, give the sick role, interpersonal inventory, choose one problem area, agree the contract."
+  },
+  {
+   "id": "m",
+   "label": "Middle",
+   "detail": "Work on grief, a role dispute, a role transition or interpersonal deficits, with communication analysis and role-play."
+  },
+  {
+   "id": "t",
+   "label": "Termination",
+   "detail": "Review gains, anticipate problems, recognise feelings about ending, plan for relapse prevention."
+  }
+ ],
+ "caption": "IPT is time-limited, usually 12 to 16 sessions."
+}
+:::
+
 ### Key ideas
 - **Circular causality**: A affects B, which affects A again (a mother nags, the son withdraws, the mother nags more), rather than simple "A causes B".
 - **Homeostasis**: families tend to keep things stable, even when the stability includes a symptom.
 - **Boundaries**: rules about who is involved in what. Too rigid (**disengaged**) or too diffuse (**enmeshed**).
 - **Triangulation**: two people in conflict draw in a third (often a child) to reduce tension.
 - **Family life cycle**: families face predictable transitions (marriage, birth, children leaving, retirement).
+
+
+:::widget flow
+{
+ "title": "A circular pattern in a family",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "m",
+   "label": "Mother nags",
+   "detail": "Worried about her son's studies."
+  },
+  {
+   "id": "s",
+   "label": "Son withdraws",
+   "detail": "Stays in his room, gaming."
+  },
+  {
+   "id": "w",
+   "label": "Mother worries more",
+   "detail": "Sees withdrawal as proof he is failing."
+  },
+  {
+   "id": "n",
+   "label": "Nags harder",
+   "detail": "The loop tightens."
+  }
+ ],
+ "caption": "Systemic therapists look for loops like this instead of asking who started it, then help the family find a different move."
+}
+:::
 
 ### The main schools
 | School | Founder(s) | Focus and key techniques |
@@ -749,6 +1040,37 @@ Systemic therapists see a problem not just "inside" one person but in the **patt
     { "label": "Notice that Arjun's behaviour detours the parents' conflict (triangulation); strengthen the parental team, help the parents address their conflict directly, and free Arjun from the role of distraction", "verdict": "best", "outcome": "The parents begin couple sessions; Arjun's school refusal fades as the home tension reduces.", "why": "Seeing the symptom's role in the system allows change at the level where it is maintained." },
     { "label": "Tell the parents they caused Arjun's problem", "verdict": "harm", "outcome": "The parents feel blamed and drop out.", "why": "Systemic thinking explains patterns without blame; blaming destroys engagement." }
   ]
+}
+:::
+
+
+:::widget layers
+{
+ "title": "Levels of a family system",
+ "shape": "rings",
+ "layers": [
+  {
+   "label": "The identified patient",
+   "detail": "The person with symptoms."
+  },
+  {
+   "label": "Subsystems",
+   "detail": "Couple, parents, siblings, grandparents: each with its boundaries."
+  },
+  {
+   "label": "Whole family",
+   "detail": "Rules, roles, hierarchy, communication, life-cycle stage."
+  },
+  {
+   "label": "Extended family and community",
+   "detail": "Joint family, caste and religious community, neighbours."
+  },
+  {
+   "label": "Culture and society",
+   "detail": "Beliefs about illness, gender roles, economics, stigma."
+  }
+ ],
+ "caption": "Problems can be maintained at any ring. Indian families often need the outer rings included."
 }
 :::
 
@@ -821,6 +1143,42 @@ Career choice is one of the biggest sources of stress for Indian students and fa
     { "text": "Started a small online business selling handmade jewellery", "bucket": 4 },
     { "text": "Enjoys keeping accounts and organising data neatly", "bucket": 5 }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "Super's life-span career stages",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "g",
+   "label": "Growth",
+   "detail": "Childhood: interests and self-concept form."
+  },
+  {
+   "id": "e",
+   "label": "Exploration",
+   "detail": "Adolescence to early adulthood: trying roles, choosing a direction."
+  },
+  {
+   "id": "s",
+   "label": "Establishment",
+   "detail": "Settling and advancing in a field."
+  },
+  {
+   "id": "m",
+   "label": "Maintenance",
+   "detail": "Holding on, updating skills."
+  },
+  {
+   "id": "d",
+   "label": "Disengagement",
+   "detail": "Reducing work, retirement, new roles."
+  }
+ ],
+ "caption": "People can recycle through stages after job loss, migration or career change."
 }
 :::
 
