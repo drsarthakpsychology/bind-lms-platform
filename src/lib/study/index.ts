@@ -3,6 +3,7 @@ import type { ModuleMeta, Section, StudyModule } from "./types";
 import * as m_antidepressants from "@/content/study/antidepressants";
 import * as m_antipsychotics from "@/content/study/antipsychotics";
 import * as m_anxiety from "@/content/study/anxiety";
+import * as m_applied from "@/content/study/applied";
 import * as m_assessment from "@/content/study/assessment";
 import * as m_bipolar from "@/content/study/bipolar";
 import * as m_brain from "@/content/study/brain";
@@ -15,9 +16,11 @@ import * as m_interviewMse from "@/content/study/interview-mse";
 import * as m_lifespan from "@/content/study/lifespan";
 import * as m_learningMemory from "@/content/study/learning-memory";
 import * as m_examPrep from "@/content/study/exam-prep";
+import * as m_foundations from "@/content/study/foundations";
 import * as m_frontiers from "@/content/study/frontiers";
 import * as m_medicineProfiles from "@/content/study/medicine-profiles";
 import * as m_moreDisorders from "@/content/study/more-disorders";
+import * as m_motivationEmotion from "@/content/study/motivation-emotion";
 import * as m_netPaper1 from "@/content/study/net-paper1";
 import * as m_mseDeep from "@/content/study/mse-deep";
 import * as m_neurocognitive from "@/content/study/neurocognitive";
@@ -41,7 +44,7 @@ import * as m_trauma from "@/content/study/trauma";
  * The course, in curriculum order (sorted by module number). Add a module by
  * creating its file in src/content/study (meta + text) and importing it here.
  */
-const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_frontiers, m_interviewMse, m_learningMemory, m_lifespan, m_medicineProfiles, m_moreDisorders, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_psychodynamics, m_psychosis, m_researchMethods, m_sensationPerception, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_thinkingLanguage, m_trauma];
+const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_applied, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_foundations, m_frontiers, m_interviewMse, m_learningMemory, m_lifespan, m_medicineProfiles, m_moreDisorders, m_motivationEmotion, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_psychodynamics, m_psychosis, m_researchMethods, m_sensationPerception, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_thinkingLanguage, m_trauma];
 
 function build(src: { meta: ModuleMeta; text: string }): StudyModule {
   const sections = parseModule(src.text);
