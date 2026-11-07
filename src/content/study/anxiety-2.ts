@@ -36,6 +36,10 @@ CBT is first-line for every anxiety disorder in adults and children. Within CBT,
 - **Behavioural experiments**: testing a prediction in real life ("If I let my hands shake while holding tea, people will stare and laugh"). The experiment, not the argument, changes belief.
 - For GAD: worry awareness, problem-solving for real problems, tolerating uncertainty, and testing beliefs about worry.
 
+:::widget thoughtrecord
+{"situation": "Climbing the stairs to the third floor, Amit feels his heart pounding.", "thought": "My heart is racing like this because I am having a heart attack.", "emotion": "terrified", "traps": [{"label": "Catastrophic misinterpretation of body sensations", "right": true, "why": "A normal response to exertion is read as a sign of disaster. This is the heart of Clark's model of panic."}, {"label": "Jumping to conclusions", "right": true, "why": "He decides on the cause without any evidence."}, {"label": "Labelling", "why": "He is not calling himself a name."}, {"label": "All-or-nothing thinking", "why": "Not quite: the problem is the meaning given to the sensation."}], "forEvidence": ["His heart is beating very fast.", "His chest feels tight."], "againstEvidence": ["Anyone's heart races after three flights of stairs.", "He has had ten such attacks and his ECGs were always normal.", "The feeling eased when he sat down, which a heart attack would not do."], "balanced": "My heart is pounding because I climbed the stairs and then got frightened. It is unpleasant, but it is not dangerous, and it will settle."}
+:::
+
 ### Which therapy for which disorder
 | Disorder | Best-supported psychological treatment |
 |---|---|

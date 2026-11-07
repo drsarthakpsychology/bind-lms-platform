@@ -262,6 +262,10 @@ Many people with personality disorders, especially borderline, report **childhoo
 Imagine a plant that is naturally sensitive to cold. In a warm greenhouse it grows well. Left out in a harsh winter, it is damaged far more than a hardier plant would be. Temperament is the plant; the environment is the weather. Neither alone explains the damage.
 :::
 
+:::widget strange
+{"title": "Early attachment, played out", "caption": "Insecure attachment does not cause a personality disorder by itself, but patterns learned here shape what a person expects from others. The ambivalent and disorganised patterns, with their mix of clinging, anger and fear of being left, resemble what is later seen in borderline personality, especially after trauma."}
+:::
+
 ### Culture and context
 What counts as "deviant" depends on culture. In many Indian families, deferring to elders, relying on family for decisions, and keeping emotions private are **expected**, not disordered. Calling a young woman "dependent" because she consults her parents before a decision would be a cultural mistake. On the other hand, real personality difficulties can be hidden for years because families absorb them, or labelled as "nazar", "stubbornness" or "spoilt nature".
 

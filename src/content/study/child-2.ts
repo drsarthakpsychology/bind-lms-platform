@@ -567,6 +567,10 @@ In RAD, the child has learned that calling for help brings no one, so she stops 
 These diagnoses are often misused for any adopted child with behaviour problems. They require **evidence of extremely insufficient care**. RAD in particular must be told apart from autism: autistic children have restricted and repetitive behaviours and do form attachments (often with unusual behaviour), while RAD usually improves dramatically once good care begins.
 :::
 
+:::widget strange
+{"title": "How attachment is observed", "caption": "Watch the reunion step for each type. Securely attached toddlers seek the carer and settle. Avoidant toddlers ignore the return, ambivalent ones cling and resist, and disorganised ones freeze or approach and back away. Disorganised attachment is most common after maltreatment. Reactive attachment disorder is different again: after severe neglect, the child seeks no comfort from anyone."}
+:::
+
 ### Child abuse: what to notice
 Abuse and neglect harm children's mental health for life. Look for:
 - **Physical abuse**: injuries that do not match the story, bruises on soft areas (ears, cheeks, buttocks), bite marks, burns in patterns, fractures in babies who cannot walk.

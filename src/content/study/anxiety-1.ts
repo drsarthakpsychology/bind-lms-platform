@@ -192,6 +192,10 @@ Anxiety disorders are among the most treatable problems in mental health.
 {"prompt": "Rohan is afraid of lifts. Order his exposure ladder from the easiest step to the hardest.", "events": [{"label": "Look at photos and videos of lifts"}, {"label": "Stand in front of a lift and watch the doors open and close"}, {"label": "Step inside a lift with the doors held open"}, {"label": "Ride one floor with a friend"}, {"label": "Ride one floor alone"}, {"label": "Ride ten floors alone in a busy lift"}], "why": "A ladder starts with a step that is hard but possible, and climbs only when the step before has become manageable. The friend is a helper early on and is then dropped, because a companion can become a safety behaviour."}
 :::
 
+:::widget thoughtrecord
+{"situation": "The night before her viva, Sneha's mind goes blank while revising one topic.", "thought": "I will freeze in front of the examiners and fail the whole year.", "emotion": "anxious", "traps": [{"label": "Catastrophising", "right": true, "why": "One blank moment at night has become failing the whole year."}, {"label": "Fortune telling", "right": true, "why": "She is predicting the future as if it were certain."}, {"label": "Mind reading", "why": "Close, but the thought is mainly about what will happen, not what the examiners think."}, {"label": "Should statements", "why": "There is no 'I should' or 'I must' in this thought."}], "forEvidence": ["She could not recall that topic just now.", "She feels very nervous."], "againstEvidence": ["She has passed every viva so far.", "Tired minds go blank at night; the topic came back after a break.", "Examiners usually rephrase a question if a student is stuck."], "balanced": "I am tired and nervous, which is normal before a viva. I know most of this, and if I get stuck I can ask for the question again."}
+:::
+
 ### Being a good support
 - Listen; don't laugh or call it silly.
 - Don't take over the person's tasks or help them avoid.

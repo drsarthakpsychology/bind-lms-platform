@@ -443,6 +443,10 @@ Q: A man is completely convinced that if he does not wash 50 times his family wi
 - **Learning**: obsessions trigger anxiety; compulsions reduce it; the relief reinforces the compulsion (as in Mowrer's model).
 - **Beliefs** that make intrusions feel dangerous (Salkovskis and others): inflated responsibility, overestimating threat, overvaluing thoughts ("thinking it makes it more likely": **thought-action fusion**), need to control thoughts, perfectionism and intolerance of uncertainty.
 
+:::widget thoughtrecord
+{"situation": "While bathing her baby, Farah has a sudden image of letting him slip under the water.", "thought": "Having this thought means I am a terrible mother who might really do it.", "emotion": "horrified", "traps": [{"label": "Thought-action fusion", "right": true, "why": "Treating a thought as if it were the same as the act, or makes the act more likely."}, {"label": "Over-importance of thoughts", "right": true, "why": "She treats the mere presence of the thought as meaningful about who she is."}, {"label": "Fortune telling", "why": "Close, but the core error is the meaning given to having the thought."}, {"label": "Overgeneralising", "why": "She is not drawing a rule from one event."}], "forEvidence": ["The image felt very vivid.", "It keeps coming back."], "againstEvidence": ["Most new parents have intrusive thoughts of harm to their baby.", "She feels horror at the image, which shows it goes against her values.", "She has never harmed anyone, and takes great care of her son."], "balanced": "This is an intrusive thought, of the kind most new parents have. It upsets me because I love him. Thoughts are not actions, and I do not need to fight or neutralise it."}
+:::
+
 ### Differential diagnosis
 | Condition | How it differs from OCD |
 |---|---|

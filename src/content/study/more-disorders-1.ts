@@ -107,6 +107,10 @@ Imagine two dials. One is sleep pressure, which fills up the longer you are awak
 - **Unusual events in sleep** (parasomnias): sleepwalking, night terrors, nightmares, acting out dreams.
 - **Restless legs**: an urge to move the legs in the evening.
 
+:::widget hypnogram
+{"title": "Drag through a night of sleep", "caption": "Notice deep N3 sleep in the first cycles and longer REM periods towards morning, with brief awakenings that are normal and mostly forgotten. Switch on depression to see the classic changes: REM comes early, deep sleep is reduced and the person wakes early and cannot get back to sleep."}
+:::
+
 ### Good sleep habits
 - Keep **regular** sleep and wake times, including weekends.
 - **Morning light** and daytime activity; avoid long or late naps.
