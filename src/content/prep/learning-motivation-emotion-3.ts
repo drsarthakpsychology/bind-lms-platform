@@ -164,7 +164,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "The Yerkes-Dodson law states that",
     options: [
-      "performance always improves as arousal increases, especially on difficult tasks",
+      "performance always improves as arousal increases, and especially so on difficult tasks",
       "arousal has no effect on performance",
       "performance is best at low arousal for all tasks",
       "performance peaks at moderate arousal, and the best level is lower for difficult tasks",
@@ -260,7 +260,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Henry Murray, who proposed a list of psychological needs such as achievement, affiliation and dominance, also developed which test to measure them?",
-    options: ["The MMPI", "The Rorschach Inkblot Test", "The 16PF", "The Thematic Apperception Test"],
+    options: ["The MMPI", "The Rorschach Inkblot Technique", "The 16PF", "The Thematic Apperception Test"],
     answer: 3,
     explanation:
       "Murray, with Christiana Morgan, created the TAT; stories told about pictures reveal needs and environmental 'press'. The MMPI was developed by Hathaway and McKinley. The Rorschach is Hermann Rorschach's. The 16PF is Cattell's.",
@@ -299,7 +299,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In ring-toss games where players choose how far to stand from the peg, people high in need for achievement tend to choose",
-    options: ["the closest distance, where success is certain", "the furthest distance, where success is almost impossible", "moderate distances, where success is possible but not certain", "random distances"],
+    options: ["the closest distance, where success is certain", "the furthest distance, where success is almost impossible but most impressive", "moderate distances, where success is possible but not certain", "random distances"],
     answer: 2,
     explanation:
       "High achievers prefer moderate risk because success there is both possible and informative about their skill. Very easy tasks give little satisfaction, and very hard ones give little chance of success. Choice was systematic, not random. People high in fear of failure tend to choose the extremes.",
@@ -556,7 +556,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Csikszentmihalyi's 'flow', a state of complete absorption in an activity, is most likely when",
     options: [
-      "the task is far too easy for one's skill, so it can be done without any effort",
+      "the task is far too easy for one's skill, so it can be done well without any effort at all",
       "the task is far too hard for one's skill",
       "there are no goals or feedback",
       "challenge is high and matched to high skill, with clear goals and immediate feedback",
@@ -664,7 +664,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
       "the drive to reduce hunger",
       "fear of failure",
       "an inborn motive to deal effectively with the environment and feel competent",
-      "the need to belong, felt as a drive to form close and lasting relationships",
+      "the need to belong, felt as a drive to form close and lasting relationships with others",
     ],
     answer: 2,
     explanation:
@@ -766,7 +766,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Stanley Schachter's 'externality hypothesis' proposed that some people with obesity",
     options: [
       "are less sensitive to food cues",
-      "eat only when their stomach contractions signal hunger, ignoring the sight and smell of food",
+      "eat only when their stomach contractions signal hunger, ignoring the sight and smell of food around them",
       "are more responsive to external cues, such as sight, smell and the clock, than to inner hunger",
       "have no hunger hormones",
     ],
@@ -827,7 +827,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "reinforcement theory, since more money should mean more liking",
       "cognitive dissonance: $1 was too little to justify lying, so that group changed its attitude",
-      "the $1 group finding the task genuinely more interesting because they worked at it harder",
+      "the $1 group finding the task genuinely more interesting because they worked at it much harder",
       "the overjustification effect",
     ],
     answer: 1,
@@ -880,7 +880,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Gollwitzer's 'implementation intentions' help people act on their goals. An example is",
     options: [
-      "'I want to be healthier, so I will exercise more this month.'",
+      "'I want to be healthier, so I will try to exercise much more often this month.'",
       "'I will try my best to walk more often this week.'",
       "'Exercise is important.'",
       "'If it is 7 a.m. on a weekday, then I will go for a 20-minute walk.'",
@@ -923,7 +923,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "a single reflex",
       "a feedback loop: comparing the current state with a goal and acting to reduce the gap",
-      "a process driven only by unconscious drives that push behaviour without any goal",
+      "a process driven only by unconscious drives that push behaviour along without any set goal",
       "impossible without external rewards",
     ],
     answer: 1,
@@ -955,7 +955,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The tendency of the body to keep internal conditions, such as temperature and blood sugar, within a stable range is called",
-    options: ["allostasis", "adaptation", "homeostasis", "arousal"],
+    options: ["allostasis (stability through change)", "adaptation", "homeostasis", "arousal"],
     answer: 2,
     explanation:
       "Walter Cannon named homeostasis; drive-reduction theories assume behaviour helps restore it. Allostasis means achieving stability through change, adjusting set points to demands. Adaptation is a broader term for adjusting to conditions. Arousal is a level of activation.",
@@ -971,7 +971,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "In Schachter's studies, women told they would receive painful shocks more often chose to wait with others than alone, but only with others who were waiting for the same experiment. He summed this up as",
     options: [
-      "'Misery loves any company': anxious people seek out whoever happens to be nearby",
+      "'Misery loves any company': anxious people seek out whoever happens to be nearby at the time",
       "'Fear reduces affiliation.'",
       "'Fear has no effect on affiliation.'",
       "'Misery loves miserable company': anxious people seek others in the same situation",

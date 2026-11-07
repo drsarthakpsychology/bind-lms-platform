@@ -25,7 +25,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In Pavlov's experiments, a bell was sounded just before food was placed in a dog's mouth. After several pairings the dog salivated to the bell alone. In this example, the food is the",
-    options: ["conditioned stimulus", "conditioned response", "unconditioned stimulus", "neutral response"],
+    options: ["conditioned stimulus (CS)", "conditioned response", "unconditioned stimulus", "neutral response"],
     answer: 2,
     explanation:
       "Food produces salivation without any learning, so it is the unconditioned stimulus (US), and salivation to food is the unconditioned response. The bell becomes the conditioned stimulus (CS) and salivation to the bell is the conditioned response (CR). 'Neutral response' is not a technical term; the bell was a neutral stimulus before conditioning.",
@@ -134,7 +134,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Which conditioning arrangement usually produces the strongest excitatory conditioning?",
     options: [
-      "Backward conditioning, in which the US begins shortly before the CS",
+      "Backward conditioning, in which the US begins shortly before the CS appears",
       "Simultaneous conditioning, in which the CS and US begin together",
       "Short-delay conditioning, in which the CS begins shortly before the US",
       "Presenting the CS and US on separate days",
@@ -153,7 +153,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A bell is first paired with food until it reliably produces salivation. A light is then paired with the bell, with no food given. Later, the light alone produces salivation. This is",
-    options: ["sensory preconditioning", "stimulus generalisation", "blocking", "higher-order conditioning"],
+    options: ["sensory preconditioning", "stimulus generalisation to the light", "blocking", "higher-order conditioning"],
     answer: 3,
     explanation:
       "In higher-order conditioning, an established CS (the bell) acts like a US to condition a new stimulus (the light). Sensory preconditioning pairs two neutral stimuli before any US training. Generalisation involves similar stimuli, but a light does not resemble a bell. Blocking involves a compound of two CSs with the US.",
@@ -425,7 +425,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Mary Cover Jones reduced a boy named Peter's fear of rabbits by bringing a rabbit gradually closer while he ate food he liked. This technique is",
-    options: ["flooding", "aversion therapy", "operant shaping", "counterconditioning"],
+    options: ["flooding", "aversion therapy", "operant shaping of approach", "counterconditioning"],
     answer: 3,
     explanation:
       "Pairing the feared stimulus with a pleasant, incompatible response (eating) replaced fear with a new response: counterconditioning, a forerunner of systematic desensitisation. Flooding uses prolonged exposure at full intensity. Aversion therapy pairs a behaviour with something unpleasant. Shaping reinforces successive approximations of a behaviour.",
@@ -488,7 +488,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
       "usual drug cues elicit a conditioned compensatory response opposing the drug, which is absent in a new setting",
       "the new environment altered the drug's absorption, making the same dose chemically stronger",
       "rats in the new environment were more stressed only",
-      "tolerance is purely a change in liver enzymes, and these enzymes work less well in an unfamiliar setting",
+      "tolerance is purely a change in liver enzymes, and these enzymes work much less efficiently in an unfamiliar setting",
     ],
     answer: 0,
     explanation:
@@ -621,7 +621,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Robert Rescorla argued that Pavlovian conditioning is best understood as",
     options: [
-      "a simple reflex transfer in which the CS comes to substitute for the US by mere pairing",
+      "a simple reflex transfer in which the CS comes to substitute for the US through mere pairing alone",
       "a process limited to salivation",
       "learning about relations between events, which lets the organism predict significant events",
       "a form of operant conditioning",
@@ -792,7 +792,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Some cancer patients begin to feel sick when they arrive at the hospital, before receiving chemotherapy. This anticipatory nausea is best explained as",
-    options: ["operant conditioning, since feeling sick is rewarded with extra care", "a side effect of the drug in the blood", "classical conditioning to hospital cues paired with drug-induced nausea", "observational learning"],
+    options: ["operant conditioning, since feeling sick is rewarded with extra care and attention", "a side effect of the drug in the blood", "classical conditioning to hospital cues paired with drug-induced nausea", "observational learning"],
     answer: 2,
     explanation:
       "Hospital sights and smells (CS) have been paired with chemotherapy (US), which causes nausea (UR), so the cues alone now cause nausea (CR). The drug has not yet been given, so it is not a direct drug effect. Nausea is not a voluntary behaviour kept up by rewards such as extra care, and no modelling is involved.",

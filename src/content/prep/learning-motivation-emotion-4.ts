@@ -86,7 +86,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Schachter and Singer's two-factor theory proposes that emotion results from",
     options: [
-      "bodily changes alone, whose perception is itself the emotion",
+      "bodily changes alone, whose perception is itself the felt emotion",
       "thalamic activity alone",
       "facial expressions alone",
       "physiological arousal plus a cognitive label for that arousal",
@@ -208,7 +208,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "In Richard Lazarus's theory, 'primary appraisal' asks",
     options: [
-      "'What can I do about this, and do I have the resources to cope?'",
+      "'What can I do about this, and do I have the resources to cope with it?'",
       "'Is this relevant to my well-being: a harm, threat or challenge?'",
       "'What did others do?'",
       "'How fast is my heart beating?'",
@@ -328,7 +328,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: [
       "the facial feedback hypothesis: expressions can influence emotional experience",
       "the Cannon-Bard theory: feeling and bodily change arise together",
-      "the opponent-process theory: smiling triggers an opposite after-reaction",
+      "the opponent-process theory: smiling triggers an opposite, lingering after-reaction",
       "display rules",
     ],
     answer: 0,
@@ -402,7 +402,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: [
       "facial feedback",
       "cultural display rules that govern when and how emotions are shown",
-      "basic emotions such as disgust being absent in Japanese culture",
+      "basic emotions such as disgust being absent or much weaker in Japanese culture",
       "the James-Lange theory",
     ],
     answer: 1,
@@ -500,7 +500,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "Lisa Feldman Barrett's theory of constructed emotion proposes that",
     options: [
       "emotions are built from core affect and learnt concepts that categorise bodily sensations in context",
-      "each basic emotion has its own dedicated brain circuit and a fixed universal facial expression",
+      "each basic emotion has its own dedicated brain circuit and a fixed facial expression found in every culture",
       "emotions are purely bodily reactions",
       "emotions are identical across all cultures",
     ],
@@ -559,7 +559,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "After bilateral removal of the temporal lobes including the amygdala, Klüver and Bucy's monkeys showed",
     options: [
-      "increased fear and aggression, with constant startle and attacks on their handlers",
+      "increased fear and aggression, with constant startle reactions and attacks on their handlers",
       "tameness, loss of fear, putting objects in the mouth and indiscriminate sexual behaviour",
       "paralysis",
       "loss of hearing only",
@@ -667,7 +667,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "Salovey and Mayer's four-branch model of emotional intelligence includes which abilities?",
     options: [
       "Fluency, flexibility, originality and elaboration",
-      "Self-awareness, empathy, charisma and leadership only",
+      "Self-awareness, self-regulation, empathy, charisma and leadership only",
       "Verbal, numerical, spatial and memory abilities",
       "Perceiving, using, understanding and managing emotions",
     ],
@@ -784,7 +784,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
       "Sensation, perception and memory",
       "Id, ego and superego",
       "Bodily arousal, expression and conscious experience",
-      "Attention, retention, reproduction and motivation",
+      "Attention, retention, reproduction and motivation to act",
     ],
     answer: 2,
     explanation:
