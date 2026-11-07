@@ -343,8 +343,8 @@ const milgram: FigureDef = {
       <T x={276} y={28} size={8} muted>room 2</T>
       <rect x={20} y={230} width={384} height={60} rx={4} {...fillS("a", 1.5)} />
       {Array.from({ length: 30 }, (_, i) => <rect key={i} x={SWX(i)} y={262} width={8} height={18} rx={1.5} {...fillS(i >= 28 ? "c" : "n", 1)} />)}
-      {GROUPS.map((g, k) => <T key={g} x={SWX(k * 4) + (k === 7 ? 10 : 22)} y={250} size={7.5}>{g}</T>)}
-      {Array.from({ length: 30 }, (_, i) => (i % 4 === 0 || i === 29 ? <T key={i} x={SWX(i) + 4} y={259} size={6} muted>{(i + 1) * 15}</T> : null))}
+      {[0, 4, 7].map((k) => <T key={k} x={SWX(k * 4) + (k === 7 ? 10 : 22)} y={248} size={9}>{GROUPS[k]}</T>)}
+      {[0, 9, 19, 29].map((i) => <T key={i} x={SWX(i) + 4} y={259} size={8} muted>{(i + 1) * 15}</T>)}
       <T x={212} y={224} size={8} muted>the shock generator panel (volts)</T>
       {milA.art}
       {milB.art}

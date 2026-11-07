@@ -135,8 +135,8 @@ const multiStore: FigureDef = {
 /* ---------- 4. Eysenck's personality circle ---------- */
 // Reference checked: Eysenck's two dimensions, introversion to extraversion and stability to neuroticism, with Galen's four
 // temperaments in the quadrants and trait words around the circle (Eysenck 1965; Simply Psychology, Eysenck).
-const EC = { x: 130, y: 130 };
-const ER = 98;
+const EC = { x: 130, y: 132 };
+const ER = 92;
 const WORDS: [string, number][] = [
   ["moody", 290], ["anxious", 305], ["rigid", 320], ["pessimistic", 338],
   ["touchy", 22], ["restless", 38], ["aggressive", 55], ["impulsive", 72],
@@ -150,24 +150,24 @@ const eysenck: FigureDef = {
   summary: "Eysenck's two dimensions, introversion to extraversion and stable to unstable, crossed to give four quadrants matching the ancient temperaments.",
   art: (
     <g>
-      <circle cx={EC.x} cy={EC.y} r={ER - 26} {...fillS("a")} />
-      <line x1={EC.x - ER + 10} y1={EC.y} x2={EC.x + ER - 10} y2={EC.y} className={INK} strokeWidth={1.5} />
-      <line x1={EC.x} y1={EC.y - ER + 10} x2={EC.x} y2={EC.y + ER - 10} className={INK} strokeWidth={1.5} />
-      <T x={EC.x} y={EC.y - ER - 4} size={9} bold>unstable</T>
-      <T x={EC.x} y={EC.y + ER + 12} size={9} bold>stable</T>
-      <T x={EC.x - ER + 8} y={EC.y - 6} size={9} anchor="start" bold>introvert</T>
-      <T x={EC.x + ER - 8} y={EC.y - 6} size={9} anchor="end" bold>extravert</T>
+      <circle cx={EC.x} cy={EC.y} r={ER - 18} {...fillS("a")} />
+      <line x1={EC.x - ER + 18} y1={EC.y} x2={EC.x + ER - 18} y2={EC.y} className={INK} strokeWidth={1.5} />
+      <line x1={EC.x} y1={EC.y - ER + 18} x2={EC.x} y2={EC.y + ER - 18} className={INK} strokeWidth={1.5} />
+      <T x={EC.x} y={EC.y - ER - 14} size={9} bold>unstable</T>
+      <T x={EC.x} y={EC.y + ER + 24} size={9} bold>stable</T>
+      <T x={EC.x - ER + 22} y={EC.y - 6} size={9} anchor="start" bold>introvert</T>
+      <T x={EC.x + ER - 22} y={EC.y - 6} size={9} anchor="end" bold>extravert</T>
       {WORDS.map(([w, a]) => {
-        const [x, y] = polar(EC.x, EC.y, ER - 14, a);
+        const [x, y] = polar(EC.x, EC.y, ER + 4, a);
         return <T key={w} x={x} y={y + 3} size={7.5} muted>{w}</T>;
       })}
     </g>
   ),
   labels: [
-    L("mel", "Melancholic", 50, 104, "Unstable introvert: moody, anxious, rigid, pessimistic. Prone to anxiety and depression."),
+    L("mel", "Melancholic", 50, 106, "Unstable introvert: moody, anxious, rigid, pessimistic. Prone to anxiety and depression."),
     L("cho", "Choleric", 140, 104, "Unstable extravert: touchy, restless, aggressive, impulsive."),
     L("san", "Sanguine", 140, 158, "Stable extravert: sociable, outgoing, lively, carefree."),
-    L("phl", "Phlegmatic", 50, 158, "Stable introvert: passive, careful, thoughtful, calm."),
+    L("phl", "Phlegmatic", 56, 158, "Stable introvert: passive, careful, thoughtful, calm."),
     L("e", "Extraversion (E)", 262, 60, "Linked to arousal in the reticular activating system: introverts are more easily aroused, so extraverts seek stimulation."),
     L("n", "Neuroticism (N)", 262, 100, "Emotional instability, linked to a reactive limbic system. High N is a strong risk factor for anxiety and depression."),
     L("p", "Psychoticism (P)", 262, 140, "A third dimension added later: tough-minded, cold and impulsive. Measured with E and N by the Eysenck Personality Questionnaire."),

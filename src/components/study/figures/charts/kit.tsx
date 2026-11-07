@@ -24,9 +24,10 @@ export type LineTone = keyof typeof LINE;
 
 const DOT = { ink: "fill-foreground", acc: "fill-chart-1", red: "fill-chart-5", grey: "fill-chart-4" } as const;
 
+/** Scaffolding text; never smaller than 8 units so it stays legible on a phone. */
 export function T({ x, y, children, size = 10, anchor = "middle", muted, bold, italic }: { x: number; y: number; children: ReactNode; size?: number; anchor?: "start" | "middle" | "end"; muted?: boolean; bold?: boolean; italic?: boolean }) {
   return (
-    <text x={x} y={y} textAnchor={anchor} fontSize={size} fontWeight={bold ? 700 : undefined} fontStyle={italic ? "italic" : undefined} className={muted ? "fill-muted-foreground" : "fill-foreground"}>
+    <text x={x} y={y} textAnchor={anchor} fontSize={Math.max(size, 8)} fontWeight={bold ? 700 : undefined} fontStyle={italic ? "italic" : undefined} className={muted ? "fill-muted-foreground" : "fill-foreground"}>
       {children}
     </text>
   );

@@ -620,7 +620,7 @@ const nmda: FigureDef = {
       <T x={74} y={160} size={8}>GluN1</T><T x={142} y={160} size={8}>GluN2</T>
       <circle cx={74} cy={38} r={5} className="fill-chart-4 stroke-foreground" strokeWidth={1} />
       <circle cx={150} cy={38} r={6} className="fill-chart-1 stroke-foreground" strokeWidth={1} />
-      <circle cx={112} cy={100} r={7} className={`${FILL.n} stroke-foreground`} strokeWidth={1.5} />
+      <circle cx={112} cy={100} r={9} className={`${FILL.n} stroke-foreground`} strokeWidth={1.5} />
       <T x={112} y={103} size={7} bold>Mg</T>
       <Drug x={112} y={128} s={7} />
       <Arrow x1={112} y1={150} x2={112} y2={200} tone="acc" w={2} dash />
@@ -658,7 +658,7 @@ const lithium: FigureDef = {
       <rect x={166} y={30} width={7} height={18} rx={2} className={`${FILL.e} stroke-foreground`} strokeWidth={1} />
       <rect x={177} y={30} width={7} height={18} rx={2} className={`${FILL.e} stroke-foreground`} strokeWidth={1} />
       {[[52, 16], [70, 20], [87, 8], [175, 12], [196, 20], [120, 10]].map(([x, y], i) => (
-        <g key={i}><circle cx={x} cy={y} r={6} className={`${FILL.b} stroke-foreground`} strokeWidth={1} /><T x={x} y={y + 2.5} size={6}>Li</T></g>
+        <g key={i}><circle cx={x} cy={y} r={8} className={`${FILL.b} stroke-foreground`} strokeWidth={1} /><T x={x} y={y + 3} size={8}>Li</T></g>
       ))}
       <Arrow x1={87} y1={44} x2={87} y2={70} tone="acc" size={5} />
       <Arrow x1={175} y1={44} x2={175} y2={70} tone="acc" size={5} />
