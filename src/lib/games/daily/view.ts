@@ -61,7 +61,8 @@ export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice",
           overview: c.overview,
           lookAlikes: c.differentials.map((x) => ({ name: diagnosisById(x.dx)?.name ?? x.dx, whyNot: x.whyNot })),
           module: c.module,
-          refs: admin ? c.refs : null,
+          // Sources are for admins only, and AI cases have none worth showing.
+          refs: admin && opts.ai !== true ? c.refs : null,
         }
       : null,
   };
