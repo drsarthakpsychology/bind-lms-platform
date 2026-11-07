@@ -296,12 +296,12 @@ export const QUESTIONS_7: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Clinician-rated scales such as the YMRS are preferred to self-report for measuring the severity of mania.",
-      "Patients in a manic episode often lack insight into the extent of their symptoms.",
+      "The YMRS has 11 items, four of which are scored on a 0 to 8 scale.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Poor insight and grandiosity make manic patients under-report symptoms, so ratings based on observation and interview (and informants) are more accurate. The YMRS even includes an insight item.",
+      "Both true, but R does not explain A. The item structure of the YMRS does not explain why clinician ratings are preferred. They are preferred because patients in a manic episode often lack insight and under-report symptoms, so ratings based on observation, interview and informants are more accurate.",
     module: M,
     ref: "Young et al. 1978",
   },
@@ -1039,13 +1039,13 @@ export const QUESTIONS_7: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A test can have good content validity and yet poor predictive validity.",
+      "A test with good content validity must also have good predictive validity.",
       "Content validity is judged from how well items represent a domain, whereas predictive validity requires an empirical relationship with a later criterion.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both true; R explains A. A final-year exam may sample the syllabus well (content) but predict later job performance poorly, because predictive validity depends on how strongly the measured content relates to the future criterion, which content review cannot show.",
+      "A is false, but R is true. A final-year exam may sample the syllabus well and still predict later job performance poorly, because predictive validity depends on an empirical link with the future criterion, which content review cannot show. R states this difference correctly.",
     module: M,
     ref: "Anastasi & Urbina ch. 5",
   },

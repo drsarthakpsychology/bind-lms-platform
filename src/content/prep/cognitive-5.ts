@@ -367,12 +367,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Students often judge rereading to be a more effective study method than testing themselves.",
-      "Rereading makes material feel familiar and fluent, which learners mistake for durable learning.",
+      "Retrieval practice usually produces better long-term retention than rereading the same material.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Familiarity from rereading creates an 'illusion of knowing', while self-testing feels harder because retrieval is effortful and errors are visible. Yet testing produces better long-term retention. This mismatch between how learning feels and how well it lasts is a central finding of metacognition research.",
+      "Both true, but R does not explain A. R, the testing effect, makes the students' judgement mistaken; it does not explain why they make it. They prefer rereading because it makes material feel familiar and fluent, which they mistake for durable learning, while self-testing feels harder because retrieval is effortful and errors are visible.",
     module: M,
     ref: "Karpicke, Butler & Roediger 2009; Bjork, Dunlosky & Kornell 2013",
   },
@@ -588,7 +588,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["Fluency 4, flexibility 12", "Fluency 5, flexibility 4", "Fluency 12, flexibility 12", "Fluency 12, flexibility 4"],
     answer: 3,
     explanation:
-      "Fluency counts every relevant idea (12). Flexibility counts the number of distinct categories used (cleaning, making, warmth, swatting = 4). The first option swaps the scores. 'Fluency 5' counts only the largest category. Flexibility of 12 would require every idea to be in a different category.",
+      "Fluency counts every relevant idea (12). Flexibility counts the number of distinct categories used (cleaning, making, warmth, swatting = 4). Fluency 4, flexibility 12 swaps the two scores. 'Fluency 5' counts only the largest category. Flexibility of 12 would require every idea to be in a different category.",
     module: M,
     ref: "Torrance 1974; Guilford 1967",
   },
@@ -900,12 +900,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Transcranial magnetic stimulation (TMS) can show that a brain region is necessary for a task, which fMRI alone cannot.",
-      "TMS temporarily disrupts activity in a targeted region, so any resulting drop in performance shows that the region contributes to the task.",
+      "fMRI measures changes in blood oxygenation (the BOLD signal) rather than neural firing directly.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. fMRI shows that a region is active during a task, which is correlational; activity could be incidental. Disrupting the region with TMS and seeing performance fall is evidence that the region is needed, much like a reversible lesion study in healthy people.",
+      "Both true, but R does not explain A. The BOLD signal is a correct fact about fMRI, but it is not why TMS can show necessity. fMRI shows that a region is active during a task, which is correlational. TMS temporarily disrupts the targeted region, so a resulting drop in performance shows that the region is needed, much like a reversible lesion in healthy people.",
     module: B,
     ref: "Walsh & Cowey 2000",
   },

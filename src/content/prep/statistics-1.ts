@@ -268,12 +268,12 @@ const D: Draft[] = [
     stem: "Which of the following statistics are resistant (robust) to a few extreme outliers?",
     statements: ["1. Median", "2. Mean", "3. Interquartile range", "4. Range"],
     options: [
-      "1 and 2 only",
+      "1 and 3 only",
       "1, 3 and 4 only",
       "2 and 4 only",
-      "1 and 3 only",
+      "1 and 2 only",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "The median and IQR depend only on the middle of the ordered data, so a few extreme values barely change them. The mean is pulled towards outliers. The range is defined by the two most extreme values, so it is the least resistant measure of all.",
     module: "exam-prep",
@@ -291,12 +291,12 @@ const D: Draft[] = [
       right: ["I. β₂ < 3", "II. β₂ = 3", "III. 0", "IV. β₂ > 3"],
     },
     options: [
-      "A-IV, B-II, C-I, D-III",
+      "A-II, B-IV, C-I, D-III",
       "A-III, B-IV, C-I, D-II",
       "A-II, B-I, C-IV, D-III",
-      "A-II, B-IV, C-I, D-III",
+      "A-IV, B-II, C-I, D-III",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "The normal curve has β₂ = 3 (II). Leptokurtic distributions, peaked with heavy tails, have β₂ > 3 (IV). Platykurtic distributions, flat with light tails, have β₂ < 3 (I). Excess kurtosis = β₂ − 3, which is 0 for the normal curve (III). Many programs, including SPSS, report excess kurtosis, so a normal curve shows 0 there, which explains why students confuse the two scales.",
     module: "exam-prep",
@@ -372,12 +372,12 @@ const D: Draft[] = [
       "Monthly salaries (in thousands of rupees) of nine staff at a small NGO: 18, 20, 21, 22, 22, 24, 25, 26, 250. The last figure is the founder's salary.",
     stem: "Which statement best describes the effect of the founder's salary?",
     options: [
-      "It raises the mean to about 47.6 thousand, far above most salaries, while the median stays at 22 thousand; the median better represents a typical salary",
       "It raises the median far more than the mean",
+      "It raises the mean to about 47.6 thousand, far above most salaries, while the median stays at 22 thousand; the median better represents a typical salary",
       "It has no effect on the mean, because outliers are ignored",
       "It makes the mode the best measure of variability",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "Sum = 428, so the mean = 428/9 ≈ 47.6, which is higher than eight of the nine salaries. The median is the 5th ordered value, 22, and it would barely change without the outlier (22 vs 22 for the first eight values). So the median is the representative measure here. The outlier affects the mean, not the median. Outliers are never 'ignored' by the mean. The mode is a measure of central tendency, not variability.",
     module: "exam-prep",
@@ -439,12 +439,12 @@ const D: Draft[] = [
       "4. The new SD is −10.",
     ],
     options: [
-      "1, 3 and 4 only",
+      "1, 2 and 3 only",
       "1 and 2 only",
       "2 and 3 only",
-      "1, 2 and 3 only",
+      "1, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Statement 1 is correct: shifting all scores leaves the spread unchanged. Multiplying by c multiplies the SD by |c|, so the new SD is 2 × 5 = 10 (statement 2), and the variance is multiplied by c², giving 4 × 25 = 100 (statement 3). Statement 4 is impossible: an SD is a square root of averaged squares and cannot be negative.",
     module: "exam-prep",
@@ -624,11 +624,11 @@ const D: Draft[] = [
     },
     options: [
       "A-II, B-I, C-IV, D-III",
-      "A-II, B-IV, C-III, D-I",
-      "A-IV, B-II, C-I, D-III",
       "A-II, B-IV, C-I, D-III",
+      "A-IV, B-II, C-I, D-III",
+      "A-II, B-IV, C-III, D-I",
     ],
-    answer: 3,
+    answer: 1,
     explanation:
       "T-scores, used in the MMPI, have mean 50 and SD 10 (II). Wechsler IQs have 100 and 15 (IV). Stens, the 'standard ten' used for the 16PF, have mean 5.5 and SD 2 (I). Stanines, the 'standard nine', have mean 5 and SD about 2 (III). Stens and stanines are often confused; the sten scale has 10 points, so its middle is 5.5.",
     module: "assessment",
@@ -649,11 +649,11 @@ const D: Draft[] = [
     ],
     options: [
       "1 and 2 only",
-      "1, 2 and 3 only",
       "2, 3 and 4 only",
+      "1, 2 and 3 only",
       "1, 2, 3 and 4",
     ],
-    answer: 1,
+    answer: 2,
     explanation:
       "Statements 1, 2 and 3 are standard properties: symmetry, asymptotic tails, and the curve changing from concave to convex at μ ± σ. Statement 4 is false: β₂ = 3 for the normal curve. It is excess kurtosis (β₂ − 3) that equals 0. The total area under the curve is 1.",
     module: "assessment",
@@ -724,12 +724,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): The sampling distribution of the mean has a smaller spread than the population distribution of individual scores.",
-      "Reason (R): The standard error of the mean equals σ/√n, which is smaller than σ for any n greater than 1.",
+      "Reason (R): The mean of the sampling distribution of the mean equals the population mean, μ.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. A mean averages several scores, so unusually high and low scores tend to cancel out and means vary less than single scores. R puts a number on this: the spread of sample means (the standard error) is σ/√n. For example, with σ = 15 and n = 25, SE = 15/5 = 3, a fifth of the spread of individual scores.",
+      "Both are true, but R does not explain A. R is about the centre of the sampling distribution, not its spread. The spread is smaller because a mean averages several scores, so high and low scores tend to cancel out; the standard error of the mean is σ/√n, which is smaller than σ for any n greater than 1. With σ = 15 and n = 25, SE = 15/5 = 3.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -799,12 +799,12 @@ const D: Draft[] = [
       "4. The standard error of the mean decreases as n increases.",
     ],
     options: [
-      "1 and 2 only",
       "1, 2 and 4 only",
+      "1 and 2 only",
       "2, 3 and 4 only",
       "1, 2, 3 and 4",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "The central limit theorem concerns the distribution of sample means (1), which is centred on μ (2) and has a spread of σ/√n that shrinks with n (4). Statement 3 is a common misconception: a large sample from a skewed population is still skewed. It just represents the population more faithfully.",
     module: "exam-prep",

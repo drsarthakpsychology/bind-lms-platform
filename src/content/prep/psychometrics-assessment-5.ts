@@ -309,12 +309,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "In the Rorschach Performance Assessment System (R-PAS), examiners prompt for a second response if only one is given and pull the card after four responses.",
-      "This 'R-optimised' procedure reduces variability in the number of responses, which otherwise distorts many other scores.",
+      "R-PAS was developed as a successor to Exner's Comprehensive System.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Meyer and colleagues found that wide variation in R (very short or very long records) confounds many indices, so R-PAS asks for 'two, maybe three' responses per card, prompts after one and pulls after four. This standardises protocol length.",
+      "Both true, but R does not explain A. R gives the system's origin, not the reason for the procedure. Examiners prompt and pull because this 'R-optimised' procedure reduces variability in the number of responses; Meyer and colleagues found that very short or very long records confound many other indices.",
     module: M,
     ref: "Meyer, Viglione, Mihura, Erard & Erdberg 2011",
   },
@@ -623,12 +623,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Sentence-completion tests are less ambiguous than the Rorschach.",
-      "Sentence stems give partial structure that restricts the range of likely responses.",
+      "The Rotter Incomplete Sentences Blank has 40 sentence stems.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. A stem such as 'My mother ...' points the respondent to a topic, whereas an inkblot offers almost no structure. This is why SCTs are often called semi-structured projectives, and why responses are more open to conscious control than Rorschach responses.",
+      "Both true, but R does not explain A. The number of stems does not explain the lower ambiguity. Sentence-completion tests are less ambiguous because each stem, such as 'My mother ...', gives partial structure that points the respondent to a topic and restricts the range of likely responses, whereas an inkblot offers almost no structure.",
     module: M,
     ref: "Anastasi & Urbina ch. 14",
   },

@@ -72,12 +72,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Glaser criticised Strauss and Corbin's version of grounded theory for 'forcing' the data.",
-      "Reason (R): Glaser held that theory should emerge from the data, whereas the coding paradigm of axial coding imposes a preconceived framework on them.",
+      "Reason (R): Glaser held that researchers should begin with a detailed coding framework drawn from existing theory before collecting data.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. Writing in the early 1990s, Glaser argued that Strauss and Corbin's prescribed procedures, especially the conditions-actions-consequences paradigm, turned grounded theory into 'full conceptual description' forced into a preset mould. This split created Glaserian (classic) and Straussian grounded theory, and Charmaz's constructivist version came later.",
+      "A is true, but R is false. Glaser held the opposite: theory should emerge from the data. He argued that Strauss and Corbin's prescribed procedures, especially the coding paradigm of axial coding, imposed a preconceived framework. This split created Glaserian (classic) and Straussian grounded theory.",
     module: "exam-prep",
     ref: "Glaser 1992",
   },
@@ -159,7 +159,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Glaser listed several 'coding families'. The 'six Cs' (causes, contexts, contingencies, consequences, covariances, conditions) is the first and most cited. The second option strings together grounded theory vocabulary that is not a coding family. The third mixes trustworthiness and quality criteria from Lincoln and Guba and from Yardley. The fourth mixes procedures with analytic terms.",
+      "Glaser listed several 'coding families'. The 'six Cs' (causes, contexts, contingencies, consequences, covariances, conditions) is the first and most cited. 'Codes, categories, concepts, constructs, core and comparison' strings together grounded theory vocabulary that is not a coding family. The list beginning with credibility mixes trustworthiness and quality criteria from Lincoln and Guba and from Yardley. The list beginning with conditions and core category mixes procedures with analytic terms.",
     module: "exam-prep",
     ref: "Glaser 1978",
   },
@@ -251,12 +251,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): IPA studies usually use small, fairly homogeneous, purposively selected samples.",
-      "Reason (R): IPA's idiographic commitment requires detailed analysis of each case before patterns across cases are examined.",
+      "Reason (R): Interpretative phenomenological analysis was developed by Jonathan Smith in the 1990s.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Close case-by-case analysis is labour-intensive, so samples are small: Smith and colleagues suggest about 3 to 6 for student projects and more for doctorates. Homogeneity lets the researcher examine convergence and divergence within a group for whom the question is meaningful. Representativeness is not the aim.",
+      "Both are true, but R does not explain A. The origin of IPA does not explain its sampling. Samples are small because IPA's idiographic commitment requires detailed analysis of each case before patterns across cases are examined, which is labour-intensive. Homogeneity lets the researcher examine convergence and divergence within a group for whom the question is meaningful.",
     module: "exam-prep",
     ref: "Smith, Flowers & Larkin 2009 ch.3",
   },
@@ -358,7 +358,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "The 2006 phases run: (1) familiarising yourself with the data, (2) generating initial codes, (3) searching for themes, (4) reviewing themes, (5) defining and naming themes, (6) producing the report. Later reflexive TA wording is: coding, generating initial themes, developing and reviewing, refining, defining and naming, writing up. The second and third sequences put coding and theme work in the wrong order. The fourth is grounded theory vocabulary.",
+      "The 2006 phases run: (1) familiarising yourself with the data, (2) generating initial codes, (3) searching for themes, (4) reviewing themes, (5) defining and naming themes, (6) producing the report. Later reflexive TA wording is: coding, generating initial themes, developing and reviewing, refining, defining and naming, writing up. The sequence that starts with generating codes, and the one that searches for themes before coding, put coding and theme work in the wrong order. Open, axial and selective coding is grounded theory vocabulary.",
     module: "exam-prep",
     ref: "Braun & Clarke 2006",
   },

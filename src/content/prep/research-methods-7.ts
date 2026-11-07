@@ -375,8 +375,8 @@ const D: Draft[] = [
     difficulty: 3,
     type: "numerical",
     stem: "A meta-analyst needs to convert a correlation of r = .60 into Cohen's d, using d = 2r/√(1 − r²). What is d?",
-    options: ["0.75", "1.20", "1.50", "0.36"],
-    answer: 2,
+    options: ["1.50", "1.20", "0.75", "0.36"],
+    answer: 0,
     explanation:
       "√(1 − .36) = √.64 = .80, so d = 2(.60)/.80 = 1.20/.80 = 1.50. 1.20 forgets to divide by the square root. 0.75 divides r by .80 without doubling it. 0.36 is r². Converting effect sizes to a common metric lets studies that report different statistics be pooled.",
     module: "exam-prep",
@@ -447,10 +447,10 @@ const D: Draft[] = [
     difficulty: 1,
     type: "numerical",
     stem: "Two observers code 50 intervals of a child's classroom behaviour. They agree on 45 intervals and disagree on 5. What is the percentage of agreement?",
-    options: ["80%", "85%", "90%", "95%"],
-    answer: 2,
+    options: ["10%", "80%", "85%", "90%"],
+    answer: 3,
     explanation:
-      "Percentage agreement = agreements/(agreements + disagreements) × 100 = 45/50 × 100 = 90%. 95% would need 47 or 48 agreements. 80% and 85% come from subtracting the disagreements twice or similar errors. Percentage agreement is easy to calculate but does not correct for chance agreement.",
+      "Percentage agreement = agreements/(agreements + disagreements) × 100 = 45/50 × 100 = 90%. 10% is the disagreement rate, not the agreement rate. 80% and 85% come from subtracting the disagreements twice or similar errors. Percentage agreement is easy to calculate but does not correct for chance agreement.",
     module: "assessment",
     ref: "Cooper, Heron & Heward ch.5",
   },
@@ -540,7 +540,7 @@ const D: Draft[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-III, D-I", "A-II, B-I, C-IV, D-III"],
     answer: 0,
     explanation:
-      "Event recording counts occurrences (II). Duration recording times each episode (IV). Latency is the time from cue to response, such as how long a child takes to start work after being told (I). Inter-response time is the gap between successive responses (III). Latency and inter-response time are often confused, which is what the third option does.",
+      "Event recording counts occurrences (II). Duration recording times each episode (IV). Latency is the time from cue to response, such as how long a child takes to start work after being told (I). Inter-response time is the gap between successive responses (III). Latency and inter-response time are often confused, which is what A-II, B-IV, C-III, D-I does.",
     module: "assessment",
     ref: "Cooper, Heron & Heward ch.4",
   },

@@ -396,13 +396,13 @@ const D: Draft[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Assertion (A): With a large number of variables, the Kaiser criterion (eigenvalue > 1) tends to keep too many factors.",
+      "Assertion (A): With a large number of variables, the Kaiser criterion (eigenvalue > 1) tends to keep too few factors.",
       "Reason (R): Many small eigenvalues just above 1 arise from sampling error, and the rule takes no account of the sample size.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. With 40 items, chance alone can produce several eigenvalues slightly above 1, and the Kaiser rule accepts them as factors. Parallel analysis builds sampling error into the decision by comparing the eigenvalues with those from random data of the same size, which is why it is preferred.",
+      "A is false, but R is true. With many variables the Kaiser rule tends to keep too many factors, not too few: with 40 items, chance alone can produce several eigenvalues slightly above 1, and the rule accepts them. R is true and is the reason. Parallel analysis, which compares eigenvalues with those from random data, is preferred.",
     module: "assessment",
     ref: "Zwick & Velicer 1986",
   },
@@ -496,12 +496,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): In a CFA with 1,500 participants, the model chi-square is often significant even when the model fits well by other indices.",
-      "Reason (R): The model chi-square is approximately (N − 1) times the minimum fit function, so it grows with sample size.",
+      "Reason (R): The model chi-square does not depend on sample size, so it reflects only the size of the misfit.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. A tiny, practically unimportant misfit multiplied by a large N gives a large χ² and a significant p. This is why researchers also report approximate fit indices such as CFI, RMSEA and SRMR, which are less tied to sample size.",
+      "A is true, but R is false. The model chi-square is approximately (N − 1) times the minimum fit function, so it grows with sample size: a tiny, unimportant misfit multiplied by a large N gives a significant χ². This is why researchers also report CFI, RMSEA and SRMR, which are less tied to sample size.",
     module: "assessment",
     ref: "Kline 2016",
   },

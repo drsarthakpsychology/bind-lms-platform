@@ -281,13 +281,13 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Irrelevant distractors interfere less when the main visual task is perceptually demanding.",
+      "Irrelevant distractors interfere more when the main visual task is perceptually demanding.",
       "Lavie proposes that perception has limited capacity that is used automatically, so capacity spills over to distractors only when the main task leaves some unused.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both true; R explains A. A demanding search through many similar items exhausts perceptual capacity, leaving none for the distractor, so its interference drops. This is the core prediction of perceptual load theory.",
+      "A is false, R is true. Under perceptual load theory a demanding task uses up perceptual capacity, leaving none for the distractor, so interference drops rather than rises. R correctly states Lavie's proposal, and it predicts the opposite of A.",
     module: M,
     ref: "Lavie 1995",
   },
@@ -553,12 +553,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "When attention is diverted, people often report wrong combinations of features, such as a red X when a red O and a green X were shown.",
-      "In feature integration theory, features are correctly bound together only when focused attention is directed to their location.",
+      "In feature integration theory, a target defined by one unique feature, such as a red item among green ones, pops out however many distractors there are.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Treisman and Schmidt found these 'illusory conjunctions' when displays were brief and attention was occupied, as FIT predicts: without attention, features float free and can be recombined wrongly.",
+      "Both true, but R does not explain A. A describes illusory conjunctions, found by Treisman and Schmidt with brief displays and occupied attention. R is a correct claim of the same theory about feature search, but pop-out does not explain wrong binding. The explanation is that features are bound correctly only when focused attention is directed to their location.",
     module: M,
     ref: "Treisman & Schmidt 1982",
   },
@@ -841,12 +841,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "About half of people giving directions to a stranger failed to notice when, during a brief interruption, the stranger was replaced by a different person.",
-      "We do not automatically store a detailed picture of a scene across interruptions; we keep mainly what we attended to and its gist.",
+      "We automatically store a detailed visual picture of each scene, so changes across an interruption are normally detected.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both true; R explains A. In Simons and Levin's 'door' study, the swap went unnoticed by many because people encode the gist ('a man asking directions') rather than a detailed visual record. This explains change blindness in real life.",
+      "A is true, R is false. In Simons and Levin's 'door' study many people missed the swap. This happens because we do not keep a detailed picture of a scene across interruptions; we keep mainly what we attended to and its gist. R states the opposite, and if it were true the swap would have been noticed.",
     module: M,
     ref: "Simons & Levin 1998",
   },

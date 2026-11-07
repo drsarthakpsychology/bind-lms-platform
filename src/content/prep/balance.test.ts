@@ -13,6 +13,15 @@ const BALANCED_SUBJECTS: PrepQuestion["subject"][] = [
   "social",
   "personality-theories",
   "history-systems",
+  "learning-motivation-emotion",
+  "perception-attention",
+  "cognitive",
+  "ugc-paper1",
+  "ethics-law",
+  "indian-psychology",
+  "psychometrics-assessment",
+  "statistics",
+  "research-methods",
 ];
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;

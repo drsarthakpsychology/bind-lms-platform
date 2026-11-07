@@ -350,12 +350,12 @@ const D: Draft[] = [
       "Paired Samples Test (wellbeing, before vs after a 6-week programme, N = 30): Mean difference (after − before) = 2.40, SD = 4.15, 95% CI of the Difference: 0.85 to 3.95, t(29) = 3.17, Sig. (2-tailed) = .004",
     stem: "Which conclusion is correct?",
     options: [
-      "Wellbeing rose significantly, by about 2.4 points, and the true mean increase is plausibly between about 0.9 and 4.0 points",
-      "Wellbeing fell, because the SD is larger than the mean",
       "The result is not significant, because the CI does not include zero",
+      "Wellbeing fell, because the SD is larger than the mean",
+      "Wellbeing rose significantly, by about 2.4 points, and the true mean increase is plausibly between about 0.9 and 4.0 points",
       "Each participant improved by exactly 2.4 points",
     ],
-    answer: 0,
+    answer: 2,
     explanation:
       "p = .004 and a 95% CI that lies entirely above zero both show a significant increase. The mean difference (2.40) is the best single estimate, and the CI shows the precision. A large SD of the differences shows that individuals varied; it does not mean wellbeing fell. A CI that excludes zero means the result is significant, not the opposite. 2.4 is an average, not the change for every person.",
     module: "exam-prep",
@@ -371,12 +371,12 @@ const D: Draft[] = [
       "Chi-Square Tests (help-seeking by religion, 3 × 2 table, N = 64): Pearson Chi-Square = 7.95, df = 2, Asymp. Sig. = .019\nNote: 2 cells (33.3%) have expected count less than 5. The minimum expected count is 2.81.",
     stem: "What is the most appropriate response to this output?",
     options: [
-      "Treat the result with caution, because more than 20% of cells have small expected counts; consider combining categories meaningfully or using an exact test",
+      "Conclude that religion causes help-seeking",
       "Report the result as clearly significant; the note can be ignored",
       "Switch to an independent-samples t-test",
-      "Conclude that religion causes help-seeking",
+      "Treat the result with caution, because more than 20% of cells have small expected counts; consider combining categories meaningfully or using an exact test",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
       "The usual guideline is that no more than 20% of cells should have expected counts below 5 and none below 1. Here 33.3% are below 5, so the chi-square approximation may be inaccurate and the p value of .019 may not be trustworthy. Remedies include an exact test (the Fisher-Freeman-Halton extension) or merging small categories if that makes conceptual sense. Ignoring the note is poor practice. A t-test needs a continuous DV. An association in survey data does not show causation.",
     module: "exam-prep",
@@ -412,8 +412,8 @@ const D: Draft[] = [
     passage:
       "Total Variance Explained (10 items, principal axis factoring), initial eigenvalues:\nFactor 1: 4.20 (42.0%, cumulative 42.0%)\nFactor 2: 1.90 (19.0%, cumulative 61.0%)\nFactor 3: 1.10 (11.0%, cumulative 72.0%)\nFactor 4: 0.80 (8.0%, cumulative 80.0%)\nFactors 5 to 10: each below 0.60",
     stem: "Using the Kaiser criterion, how many factors would be kept, and how much total variance do they explain initially?",
-    options: ["3 factors, 72%", "2 factors, 61%", "4 factors, 80%", "1 factor, 42%"],
-    answer: 0,
+    options: ["2 factors, 61%", "3 factors, 72%", "4 factors, 80%", "1 factor, 42%"],
+    answer: 1,
     explanation:
       "Step 1: Kaiser keeps eigenvalues above 1: 4.20, 1.90 and 1.10, which is 3 factors. Step 2: their cumulative variance is 72.0%. Each percentage is eigenvalue/10 × 100, for example 4.20/10 = 42%. Two factors would leave out Factor 3 (eigenvalue 1.10). Four factors would include 0.80, which is below 1. One factor ignores two more eigenvalues above 1. A scree plot or parallel analysis should be checked as well.",
     module: "assessment",
@@ -471,12 +471,12 @@ const D: Draft[] = [
       "Coefficients (DV: job satisfaction)\nPay: B = 0.21, SE = 0.19, β = .18, t = 1.11, Sig. = .270, Tolerance = .115, VIF = 8.70\nBenefits: B = 0.25, SE = 0.20, β = .20, t = 1.25, Sig. = .214, Tolerance = .118, VIF = 8.47\nModel R² = .41, F(2, 117) = 40.6, p < .001",
     stem: "What is the best explanation of this pattern?",
     options: [
-      "Pay and benefits are highly correlated (multicollinearity), which inflates their standard errors, so neither is individually significant even though together they predict satisfaction strongly",
-      "Neither pay nor benefits is related to satisfaction",
       "The model is not significant",
+      "Neither pay nor benefits is related to satisfaction",
+      "Pay and benefits are highly correlated (multicollinearity), which inflates their standard errors, so neither is individually significant even though together they predict satisfaction strongly",
       "Tolerance values above .10 show there is no collinearity at all",
     ],
-    answer: 0,
+    answer: 2,
     explanation:
       "Step 1: VIF values of about 8.5 (tolerance about .12) show that each predictor is largely predictable from the other. Step 2: collinearity inflates the SEs, so the t values are small and neither predictor's unique effect is significant. Step 3: yet R² = .41 and the model F is highly significant, because the predictors share their predictive power. It is wrong to conclude that neither relates to satisfaction, and the model is significant. Tolerance just above .10 is not a sign of 'no collinearity'; VIF above 5 is already a warning sign for many authors.",
     module: "exam-prep",
@@ -513,12 +513,12 @@ const D: Draft[] = [
       "Kruskal-Wallis test: stigma scores by residence (urban, semi-urban, rural), N = 75\nMean ranks: urban 30.2, semi-urban 37.5, rural 46.3\nKruskal-Wallis H = 8.40, df = 2, Asymp. Sig. = .015",
     stem: "Which conclusion is correct?",
     options: [
-      "Stigma differs significantly across the three areas, with the highest ranks in rural areas; pairwise follow-up tests are needed to locate the differences",
+      "All three areas differ significantly from each other",
       "There is no difference, because H is less than 10",
       "Rural participants' mean stigma score is 46.3",
-      "All three areas differ significantly from each other",
+      "Stigma differs significantly across the three areas, with the highest ranks in rural areas; pairwise follow-up tests are needed to locate the differences",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
       "Step 1: p = .015 is below .05, so at least one group's distribution differs. Step 2: the mean ranks rise from urban to rural, so rural respondents tended to score highest. Step 3: H alone does not show which pairs differ, so corrected Mann-Whitney or Dunn tests follow. H is compared with the chi-square distribution on 2 df (critical 5.99), not with 10. 46.3 is a mean rank, not a mean score. The omnibus test cannot show that every pair differs.",
     module: "exam-prep",

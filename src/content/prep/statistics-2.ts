@@ -74,10 +74,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 3 only",
-      "2 and 4 only",
       "1, 3 and 4 only",
+      "2 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Statement 1 is correct: independence would require P(both) = .06. Statement 3 is correct: P(D | A) = .33 > .20. Statement 4 is correct: P(neither) = 1 − P(at least one) = 1 − .40 = .60. Statement 2 is false: mutually exclusive events cannot occur together, but here P(both) = .10, which is not zero.",
     module: "exam-prep",
@@ -195,12 +195,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Two mutually exclusive events, each with a non-zero probability, cannot be independent.",
-      "Reason (R): If A and B are mutually exclusive, P(A and B) = 0, whereas independence requires P(A and B) = P(A) × P(B) > 0.",
+      "Reason (R): Mutually exclusive events always satisfy P(A and B) = P(A) × P(B).",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. When one event occurs, a mutually exclusive event becomes impossible, so learning that A happened changes P(B) from P(B) to 0, which is the opposite of independence. Students often confuse 'mutually exclusive' with 'independent'.",
+      "A is true, but R is false. For mutually exclusive events P(A and B) = 0, whereas P(A) × P(B) is greater than 0 when both probabilities are non-zero, so the independence condition fails. When one event occurs, the other becomes impossible, which is the opposite of independence.",
     module: "exam-prep",
     ref: "standard probability",
   },
@@ -274,12 +274,12 @@ const D: Draft[] = [
       "4. A probability of 1.2 indicates a very likely event.",
     ],
     options: [
-      "1 and 3 only",
+      "1, 2 and 3 only",
       "1 and 2 only",
       "2, 3 and 4 only",
-      "1, 2 and 3 only",
+      "1 and 3 only",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Statements 1, 2 and 3 are basic axioms and rules of probability: bounds, total probability and the complement rule. Statement 4 is impossible, because no probability can exceed 1. '1 and 2 only' and '1 and 3 only' each leave out a true rule.",
     module: "exam-prep",
@@ -321,12 +321,12 @@ const D: Draft[] = [
       ],
     },
     options: [
-      "A-III, B-I, C-II, D-IV",
-      "A-I, B-III, C-IV, D-II",
       "A-III, B-I, C-IV, D-II",
+      "A-I, B-III, C-IV, D-II",
+      "A-III, B-I, C-II, D-IV",
       "A-III, B-IV, C-I, D-II",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "The binomial counts successes in n Bernoulli trials (III). The Poisson models rare-event counts per interval (I). The t distribution arises when (M − μ)/(s/√n) uses an estimated SD (IV), as in Gosset's 'Student'. Chi-square with k df is the distribution of the sum of k squared z-variables (II). The distractors swap binomial with Poisson, or t with chi-square.",
     module: "exam-prep",
@@ -367,10 +367,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 2 only",
-      "2, 3 and 4 only",
       "1, 2 and 3 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "A more lenient cut-off catches more true cases, which raises sensitivity and lowers false negatives (1 and 3), but it also flags more non-cases, which lowers specificity (2). This is the trade-off shown by the ROC curve. Statement 4 is false: with more false positives, PPV usually falls, not rises.",
     module: "assessment",
@@ -480,12 +480,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): With sample size and effect size held constant, lowering α from .05 to .01 increases the probability of a Type II error.",
-      "Reason (R): A stricter α shrinks the rejection region, so a real effect is less likely to produce a test statistic beyond the critical value.",
+      "Reason (R): A Type II error is failing to reject a false null hypothesis, and its probability is written β.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. α and β trade off: making false positives rarer, by moving the critical value further out, makes false negatives commoner. The only ways to reduce both at once are to increase sample size, reduce error variance, or study larger effects.",
+      "Both are true, but R does not explain A. R only defines a Type II error. β rises because a stricter α shrinks the rejection region, so a real effect is less likely to produce a test statistic beyond the critical value. The only ways to reduce both errors at once are to increase sample size, reduce error variance, or study larger effects.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -541,12 +541,12 @@ const D: Draft[] = [
       "4. Reducing error variance, for example by using a more reliable measure",
     ],
     options: [
-      "2, 3 and 4 only",
+      "1, 2 and 4 only",
       "1 and 2 only",
       "1, 2, 3 and 4",
-      "1, 2 and 4 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Power rises with n (smaller SE), with larger effects, and with less error variance (larger standardised effect). It also rises with a more lenient α and with a correctly directed one-tailed test. Lowering α to .01 makes rejection harder, so it reduces power, and statement 3 is false.",
     module: "exam-prep",
@@ -763,12 +763,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Dividing the sum of squared deviations by n tends to underestimate the population variance.",
-      "Reason (R): The sample mean is, by construction, closer to the sample's own scores than the population mean is, so deviations from it are systematically too small.",
+      "Reason (R): The sample mean is, on average, farther from the sample's own scores than the population mean is, so deviations from it are too large.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. Σ(X − M)² ≤ Σ(X − μ)² for any sample, because M minimises the sum of squares. So SS/n is biased downwards, with expected value σ²(n − 1)/n. Multiplying by n/(n − 1) removes the bias, which is Bessel's correction.",
+      "A is true, but R is false. The sample mean minimises the sum of squares, so Σ(X − M)² ≤ Σ(X − μ)² for any sample: deviations from M are too small, not too large. SS/n is therefore biased downwards, with expected value σ²(n − 1)/n, and dividing by n − 1 (Bessel's correction) removes the bias.",
     module: "exam-prep",
     ref: "standard stats",
   },

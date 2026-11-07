@@ -192,12 +192,12 @@ export const QUESTIONS_6: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Many perseverative errors on the WCST suggest difficulty in shifting cognitive set.",
-      "Perseverative errors are sorts that continue to follow the previously correct principle after the rule has changed.",
+      "Perseverative errors are sorts that follow no principle at all, as in random responding.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both true; R explains A. A perseverative error means the person keeps sorting by the old rule despite negative feedback, which is exactly a failure to shift set. This is why the perseverative-error score, rather than the total error score, is the most cited WCST index of executive dysfunction.",
+      "A is true, but R is false. Perseverative errors are sorts that continue to follow the previously correct principle after the rule has changed, despite negative feedback. That is exactly a failure to shift set, which is why the perseverative-error score is the most cited WCST index of executive dysfunction.",
     module: M,
     ref: "Heaton et al. 1993; Lezak et al. 2012",
   },
@@ -739,13 +739,13 @@ export const QUESTIONS_6: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Vocabulary is treated as a 'hold' test when estimating premorbid ability.",
+      "Vocabulary is treated as a 'don't hold' test, one that declines early, when estimating premorbid ability.",
       "Crystallised verbal knowledge is relatively resistant to ageing and to many kinds of brain damage.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both true; R explains A. Wechsler classified Vocabulary and Information among 'hold' tests because they decline little, unlike 'don't hold' tests such as Digit Symbol and Block Design. The comparison between hold and don't-hold tests was the basis of the deterioration index.",
+      "A is false, but R is true. Because crystallised verbal knowledge declines little, Wechsler classified Vocabulary and Information among 'hold' tests, unlike 'don't hold' tests such as Digit Symbol and Block Design. R is true and is the reason Vocabulary is a hold test.",
     module: M,
     ref: "Wechsler 1958; Lezak et al. 2012",
   },
@@ -813,12 +813,12 @@ export const QUESTIONS_6: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Performance validity tests such as the Test of Memory Malingering (TOMM) are recommended in medicolegal neuropsychological assessments.",
-      "Adequate effort cannot be assumed from the examiner's impression, and scores well below what even severely impaired patients obtain suggest invalid performance.",
+      "The TOMM uses forced-choice recognition of 50 line drawings of common objects.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Clinicians are poor at detecting feigning by impression; PVTs such as the TOMM (50 pictures, forced-choice recognition) are so easy that genuine patients, even with dementia-level impairment in many cases, pass them, so failure indicates that the other scores may not reflect true ability. Professional bodies recommend routine PVT use in forensic work.",
+      "Both true, but R does not explain A. R describes the TOMM's format, not why such tests are recommended. They are recommended because adequate effort cannot be assumed from the examiner's impression, and the tests are so easy that genuine patients, even many with severe impairment, pass them, so failure suggests the other scores may not reflect true ability.",
     module: M,
     ref: "Tombaugh 1996; Bush et al. 2005 (NAN position paper)",
   },

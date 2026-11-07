@@ -50,7 +50,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "A p-value is P(data at least as extreme | H0 true). It is calculated assuming H0, so it cannot be the probability that H0 is true; that would need Bayesian priors. It is not a replication probability: even a true effect with p = .03 has only about a 50 to 60% chance of being significant again. The last option is an invented reading that has no meaning in significance testing.",
+      "A p-value is P(data at least as extreme | H0 true). It is calculated assuming H0, so it cannot be the probability that H0 is true; that would need Bayesian priors. It is not a replication probability: even a true effect with p = .03 has only about a 50 to 60% chance of being significant again. Reading p as the probability that the result is due to the manipulation is an invented interpretation that has no meaning in significance testing.",
     module: "exam-prep",
     ref: "Wasserstein & Lazar 2016",
   },
@@ -106,13 +106,13 @@ const D: Draft[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Assertion (A): A non-significant result does not prove that the null hypothesis is true.",
+      "Assertion (A): A non-significant result proves that the null hypothesis is true.",
       "Reason (R): Failing to reject the null may simply reflect low statistical power to detect a real effect.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. 'Absence of evidence is not evidence of absence.' A small sample, a noisy measure or a small true effect can all give p > .05 when H0 is false (a Type II error). To support 'no meaningful effect', researchers use power analysis, confidence intervals, equivalence tests or Bayes factors.",
+      "A is false, but R is true. 'Absence of evidence is not evidence of absence': a small sample, a noisy measure or a small true effect can all give p > .05 when H0 is false (a Type II error). R is true and is the reason A is false. To support 'no meaningful effect', researchers use power analysis, confidence intervals, equivalence tests or Bayes factors.",
     module: "exam-prep",
     ref: "Altman & Bland 1995",
   },
@@ -205,8 +205,8 @@ const D: Draft[] = [
     difficulty: 4,
     type: "numerical",
     stem: "A researcher runs 5 independent significance tests, each at α = .05, when every null hypothesis is true. What is the probability of at least one Type I error, and what per-test α would a Bonferroni correction use?",
-    options: [".050 and .050", ".226 and .010", ".250 and .010", ".226 and .025"],
-    answer: 1,
+    options: [".050 and .050", ".226 and .025", ".250 and .010", ".226 and .010"],
+    answer: 3,
     explanation:
       "Familywise error = 1 − (1 − .05)^5 = 1 − .95^5 = 1 − .7738 = .226. Bonferroni divides α by the number of tests: .05/5 = .01. .250 is the simple sum 5 × .05, which is an upper bound (and the basis of Bonferroni) but not the exact probability for independent tests. .050 ignores multiplicity. .025 halves α instead of dividing it by 5.",
     module: "exam-prep",
@@ -388,12 +388,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): For the same α, a one-tailed test has more power than a two-tailed test when the effect is in the predicted direction.",
-      "Reason (R): In a one-tailed test, the whole rejection region is placed in one tail, which lowers the critical value in that direction.",
+      "Reason (R): A two-tailed test can detect an effect in either direction.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. At α = .05, the critical z is 1.645 one-tailed versus 1.96 two-tailed, so a smaller observed effect in the predicted direction is enough for significance. The cost is that an effect in the opposite direction, however large, cannot be declared significant. One-tailed tests must therefore be justified before the data are seen.",
+      "Both are true, but R does not explain A. R states the advantage of the two-tailed test, not why the one-tailed test is more powerful. The one-tailed test is more powerful because its whole rejection region is in one tail, which lowers the critical value in that direction: at α = .05, critical z is 1.645 one-tailed versus 1.96 two-tailed.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -494,7 +494,7 @@ const D: Draft[] = [
     ],
     answer: 1,
     explanation:
-      "For MacCorquodale and Meehl, an intervening variable (such as Hull's habit strength, used strictly) is just a shorthand for empirical laws linking stimuli and responses. A hypothetical construct (such as anxiety or memory trace) carries surplus meaning that goes beyond those relations, which makes it richer but also more open to being wrong. The first option describes the intervening variable. Neither can be measured without operations. Neither is defined by its role as a DV.",
+      "For MacCorquodale and Meehl, an intervening variable (such as Hull's habit strength, used strictly) is just a shorthand for empirical laws linking stimuli and responses. A hypothetical construct (such as anxiety or memory trace) carries surplus meaning that goes beyond those relations, which makes it richer but also more open to being wrong. A purely mathematical summary with no surplus meaning describes the intervening variable. Neither can be measured without operations. Neither is defined by its role as a DV.",
     module: "exam-prep",
     ref: "MacCorquodale & Meehl 1948",
   },
@@ -678,7 +678,7 @@ const D: Draft[] = [
     options: ["A-IV, B-II, C-I, D-III", "A-II, B-IV, C-I, D-III", "A-IV, B-II, C-III, D-I", "A-I, B-II, C-IV, D-III"],
     answer: 0,
     explanation:
-      "In Morse's notation, an arrow means sequence, a plus sign means concurrent, capitals mark the priority strand and parentheses mark an embedded strand. Quantitative followed by qualitative to explain the results is explanatory sequential (A-IV). Qualitative first, used to build a quantitative phase, is exploratory sequential (B-II). Both at once, then merged, is convergent (C-I). A qualitative strand nested within a dominant quantitative study is embedded (D-III). The first distractor reverses explanatory and exploratory, the classic confusion.",
+      "In Morse's notation, an arrow means sequence, a plus sign means concurrent, capitals mark the priority strand and parentheses mark an embedded strand. Quantitative followed by qualitative to explain the results is explanatory sequential (A-IV). Qualitative first, used to build a quantitative phase, is exploratory sequential (B-II). Both at once, then merged, is convergent (C-I). A qualitative strand nested within a dominant quantitative study is embedded (D-III). A-II, B-IV, C-I, D-III reverses explanatory and exploratory, the classic confusion.",
     module: "exam-prep",
     ref: "Morse 1991; Creswell & Plano Clark 2018",
   },
@@ -797,12 +797,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): 'Purist' critics of mixed methods argue that quantitative and qualitative methods cannot legitimately be combined.",
-      "Reason (R): The incompatibility thesis holds that methods are tied to paradigms with irreconcilable assumptions about reality and knowledge.",
+      "Reason (R): Pragmatists argue that methods can be chosen to fit the research question, whatever paradigm they came from.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Purists, in the 'paradigm wars' (Guba & Lincoln; Smith & Heshusius), held that positivist and constructivist paradigms differ in ontology and epistemology, so their methods cannot be mixed. Pragmatists answer that methods can be separated from paradigms and chosen to fit the question.",
+      "Both are true, but R does not explain A. R states the pragmatists' reply to the purists, not the purists' reason. Purists object because of the incompatibility thesis: methods are tied to paradigms with irreconcilable assumptions about reality and knowledge, so positivist and constructivist methods cannot be mixed.",
     module: "exam-prep",
     ref: "Howe 1988; Johnson & Onwuegbuzie 2004",
   },

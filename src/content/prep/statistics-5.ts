@@ -311,11 +311,11 @@ const D: Draft[] = [
     },
     options: [
       "A-III, B-IV, C-II, D-I",
-      "A-IV, B-III, C-I, D-II",
-      "A-III, B-I, C-IV, D-II",
       "A-III, B-IV, C-I, D-II",
+      "A-III, B-I, C-IV, D-II",
+      "A-IV, B-III, C-I, D-II",
     ],
-    answer: 3,
+    answer: 1,
     explanation:
       "One sample compared with a fixed value calls for the one-sample t-test (III). Two separate groups call for the independent-samples t-test (IV). The same people measured twice call for the paired t-test (I). Four groups call for one-way ANOVA (II), because running six t-tests would inflate the Type I error rate. The distractors swap the paired and independent tests, or the t-test and ANOVA.",
     module: "exam-prep",
@@ -372,12 +372,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Comparing five groups by running all possible t-tests between pairs is poor practice.",
-      "Reason (R): Ten separate tests at α = .05 raise the chance of at least one Type I error far above .05.",
+      "Reason (R): A one-way ANOVA comparing five groups has 4 degrees of freedom between groups.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Five groups give 5 × 4/2 = 10 pairs. If the tests were independent, P(at least one false positive) = 1 − .95¹⁰ = 1 − .60 = .40. A single one-way ANOVA tests all the means at once at α = .05, and planned contrasts or post hoc tests then control the error rate for the pairwise comparisons.",
+      "Both are true, but R does not explain A. The df of the ANOVA is correct (k − 1 = 4) but is not why pairwise t-tests are poor practice. The problem is the error rate: five groups give 10 pairs, and if the tests were independent, P(at least one false positive) = 1 − .95¹⁰ = .40, far above .05. A single ANOVA followed by planned contrasts or post hoc tests controls this.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -577,12 +577,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): If the pre-test and post-test scores of the same people are negatively correlated, the paired t-test can be less powerful than an independent-groups test on the same data.",
-      "Reason (R): The variance of difference scores is s₁² + s₂² − 2r s₁s₂, which exceeds s₁² + s₂² when r is negative.",
+      "Reason (R): The variance of difference scores is s₁² + s₂² − 2r s₁s₂, which is smaller than s₁² + s₂² when r is negative.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. A paired design helps only because r is usually positive, which subtracts the shared variance. With a negative r the subtraction becomes an addition, so the SE of the differences grows. The paired test also has fewer df (n − 1 instead of 2n − 2), so it loses power on both counts. In practice negative pre-post correlations are rare.",
+      "A is true, but R is false. The formula is right, but with a negative r the term −2r s₁s₂ is positive, so the variance of differences is larger, not smaller, than s₁² + s₂². The SE of the differences grows, and the paired test also has fewer df (n − 1 instead of 2n − 2), so it can lose power.",
     module: "exam-prep",
     ref: "standard stats",
   },

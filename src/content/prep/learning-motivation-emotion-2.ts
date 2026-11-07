@@ -303,8 +303,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Behaviour learnt under partial (intermittent) reinforcement is more resistant to extinction than behaviour learnt under continuous reinforcement.",
       "Continuous reinforcement produces the greatest resistance to extinction.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 2 only", "1, 2, 3 and 4", "2, 3 and 4 only", "1, 2 and 3 only"],
+    answer: 3,
     explanation:
       "Statements 1 to 3 are standard findings; in ratio schedules, faster responding brings faster reinforcement, but in interval schedules it does not. Statement 4 contradicts the partial reinforcement extinction effect: continuously reinforced behaviour extinguishes quickly because the change to no reinforcement is easy to detect.",
     module: M,
@@ -343,8 +343,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Capaldi's sequential theory: the memory of non-rewarded trials becomes a cue for responding that was later rewarded.",
       "The effect shows that extinction is faster after partial reinforcement.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1, 2 and 3 only", "1 and 2 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
+    answer: 0,
     explanation:
       "Statements 1 to 3 are the three classic accounts; Capaldi's theory explains why the order of rewarded and non-rewarded trials matters. Statement 4 reverses the effect: extinction is slower, not faster, after partial reinforcement.",
     module: M,
@@ -481,12 +481,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     passage:
       "Phase 1: Group E can end each shock by pressing a panel. Group Y is wired to Group E, so each Y dog receives exactly the same shocks, but its own panel does nothing. Group N gets no shock. Phase 2 (escape test, mean latency to escape, max 60 s): E 25 s, N 27 s, Y 50 s.",
     options: [
-      "It shows that shock always causes helplessness",
       "It equates the amount and timing of shock in groups E and Y, so their difference must be due to control over the shock",
+      "It shows that shock always causes helplessness",
       "It shows group N was fearful",
       "It ensures all groups had control",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "E and Y had identical physical shocks; only controllability differed. E was as good as the unshocked group N, while Y was much slower, so uncontrollability causes the deficit. Shock alone did not cause helplessness (E was normal). Group N was not fearful. Group Y specifically lacked control.",
     module: M,
@@ -502,12 +502,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Avoidance responses can continue for hundreds of trials after shock is no longer given.",
-      "Each successful avoidance response prevents the animal from finding out that the shock no longer occurs.",
+      "Once shock is no longer given, the warning signal quickly stops producing fear.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both true; R explains A. If the animal always avoids, it never experiences the warning signal without shock, so fear is not extinguished and the avoidance keeps being negatively reinforced. This is why exposure therapy for anxiety includes preventing avoidance and safety behaviours.",
+      "A is true, R is false. Fear of the warning signal persists, because each successful avoidance prevents the animal from experiencing the signal without shock, so fear is never extinguished and avoidance keeps being negatively reinforced. This is why exposure therapy for anxiety includes preventing avoidance and safety behaviours.",
     module: T,
     ref: "Solomon, Kamin & Wynne 1953",
   },
@@ -717,12 +717,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Children who see a model punished for aggression may still learn the aggressive behaviours.",
-      "Vicarious punishment affects the performance of learnt behaviour more than its acquisition.",
+      "Seeing a model punished prevents the observer from learning the behaviour at all.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both true; R explains A. Seeing a model punished discourages children from showing the behaviour, but they still store it, as Bandura found when incentives were offered later. This acquisition versus performance distinction was a major break from strict reinforcement theory.",
+      "A is true, R is false. Vicarious punishment affects performance more than acquisition: children who saw the model punished showed less aggression, but when Bandura later offered incentives they reproduced the behaviours, showing they had learnt them. R contradicts this acquisition versus performance distinction.",
     module: M,
     ref: "Bandura 1965",
   },
@@ -813,11 +813,11 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Rats that had explored a maze without food were later trained to reach food in the goal box. When their usual path was blocked, most immediately took a different route that led to the goal, even though they had never been reinforced for that route.",
     options: [
       "Rats learn only chains of reinforced muscle movements",
-      "Rats form a cognitive map, an internal representation of the spatial layout, and use it flexibly",
-      "The rats were guided only by smell",
       "The detour was a random choice",
+      "The rats were guided only by smell",
+      "Rats form a cognitive map, an internal representation of the spatial layout, and use it flexibly",
     ],
-    answer: 1,
+    answer: 3,
     explanation:
       "Taking a new, never-reinforced route to the goal implies knowledge of the layout rather than learnt movement sequences, which is Tolman's cognitive map. A chain of responses would break when the path was blocked. Smell cannot explain consistent choice of the right detour. Most rats chose correctly, so it was not random.",
     module: M,
@@ -938,12 +938,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Biofeedback can help people learn to reduce muscle tension in tension headaches.",
-      "Showing moment-to-moment information about a bodily response lets small changes in the desired direction be reinforced, as in operant shaping.",
+      "Tension-type headache is the most common kind of primary headache.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. EMG biofeedback turns invisible muscle activity into a tone or display; successful reductions are immediately signalled and reinforced, so control is shaped gradually. Biofeedback for tension headache has reasonable evidence, though relaxation training often works about as well.",
+      "Both true, but R does not explain A. How common a headache is says nothing about why biofeedback works. Biofeedback works because showing moment-to-moment information about a bodily response, such as EMG muscle activity shown as a tone, lets small changes in the desired direction be signalled and reinforced, so control is shaped gradually, as in operant shaping.",
     module: T,
     ref: "Nestoriuc, Rief & Martin 2008",
   },

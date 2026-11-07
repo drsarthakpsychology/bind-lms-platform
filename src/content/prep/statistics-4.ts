@@ -106,10 +106,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 2 only",
-      "2, 3 and 4 only",
       "1, 2 and 3 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Both lines pass through the means (1). With perfect correlation, both predictions are exact and the lines coincide (2). With r = 0, Ŷ = My (horizontal) and X̂ = Mx (vertical), so the lines are perpendicular (3). Statement 4 is false: the lines differ whenever |r| < 1, because each minimises squared errors in a different direction.",
     module: "exam-prep",
@@ -223,12 +223,12 @@ const D: Draft[] = [
       "4. Each predictor must itself be normally distributed.",
     ],
     options: [
-      "1, 2, 3 and 4",
+      "1, 2 and 3 only",
       "1 and 2 only",
       "2, 3 and 4 only",
-      "1, 2 and 3 only",
+      "1, 2, 3 and 4",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "OLS inference assumes linearity, independent errors, homoscedasticity and normal residuals (1 to 3). Statement 4 is a common misconception: predictors may be skewed, dichotomous (dummy variables) or of any shape. Only the residuals need to be approximately normal, and even that matters less with large n.",
     module: "exam-prep",
@@ -325,10 +325,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 2 only",
-      "2, 3 and 4 only",
       "1, 2 and 4 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Moderation is an interaction (1). Centring helps interpretation and reduces non-essential collinearity, although it does not change the interaction test itself (2). Simple-slopes analysis probes the interaction (4). Statement 3 describes mediation, not moderation. A moderator changes the strength of an effect; it is not part of the causal chain.",
     module: "exam-prep",
@@ -454,12 +454,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): In linear regression, the predicted criterion score is closer to the criterion mean, in SD units, than the predictor score is to the predictor mean.",
-      "Reason (R): In standard-score form, ẑY = r zX, and |r| < 1 whenever prediction is imperfect.",
+      "Reason (R): In standard-score form, ẑY = zX / r, so predictions are more extreme than the predictor scores.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. This is the statistical basis of Galton's 'regression towards mediocrity': very tall parents have tall children, but less extremely tall on average. The predicted z is shrunk by the factor r.",
+      "A is true, but R is false. In standard-score form ẑY = r zX, and |r| < 1 whenever prediction is imperfect, so the predicted z is shrunk towards 0. This is regression towards the mean: very tall parents have tall children, but less extremely tall on average.",
     module: "exam-prep",
     ref: "Galton 1886",
   },
@@ -491,12 +491,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): The regression line for predicting Y from X is generally different from the line for predicting X from Y.",
-      "Reason (R): The first line minimises squared vertical deviations, in Y, while the second minimises squared horizontal deviations, in X.",
+      "Reason (R): Both regression lines pass through the point given by the two means, (M_X, M_Y).",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. The two least-squares criteria give slopes r(sy/sx) and, written as Y against X, (1/r)(sy/sx). These are equal only when |r| = 1. So predicting X from Y is not simply 'inverting' the Y-on-X equation.",
+      "Both are true, but R does not explain A. R describes what the two lines share, not why they differ. They differ because the Y-on-X line minimises squared vertical deviations, in Y, while the X-on-Y line minimises squared horizontal deviations, in X. The slopes, written as Y against X, are r(sy/sx) and (1/r)(sy/sx), equal only when |r| = 1.",
     module: "exam-prep",
     ref: "Garrett ch.7",
   },
