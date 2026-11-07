@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -124,7 +124,9 @@ export type NervousSystemData = { title?: Inline; caption?: Inline; start?: "sig
 export type BrainExplorerData = { title?: Inline; caption?: Inline; focus?: string[] };
 /** A playable neuron (3D when the device can draw it): push the membrane with Stimulate and a push-size slider, watch the live voltage trace, the sodium and potassium channels and the impulse racing down the axon (myelin on or off); the refractory period blocks a too-early push; challenge: fire 3 in 10 seconds. */
 export type ActionPotentialData = { title?: Inline; caption?: Inline; myelinated?: boolean };
-export type WidgetData = ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** A synapse in 3D (flat cross-section without WebGL): fire the nerve ending and follow calcium entry, vesicle fusion, binding and reuptake, with a live "message received" meter; drugs: reuptake blocker, receptor blocker, botulinum toxin. */
+export type Synapse3dData = { title?: Inline; caption?: Inline; transmitter?: string };
+export type WidgetData = Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

@@ -26,7 +26,8 @@ import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
 import { NervousSystem } from "./scenes/nervous-system";
 import { BrainExplorer } from "./scenes/brain-explorer";
 import { ActionPotential } from "./scenes/action-potential";
-import type { ActionPotentialData, BrainExplorerData, NervousSystemData } from "@/lib/study/types";
+import { SynapseScene } from "./scenes/synapse-scene";
+import type { Synapse3dData, ActionPotentialData, BrainExplorerData, NervousSystemData } from "@/lib/study/types";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
@@ -592,6 +593,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <BrainExplorer d={data as BrainExplorerData} />;
     case "actionpotential":
       return <ActionPotential d={data as ActionPotentialData} />;
+    case "synapse3d":
+      return <SynapseScene d={data as Synapse3dData} />;
   }
 }
 

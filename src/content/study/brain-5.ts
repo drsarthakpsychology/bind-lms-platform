@@ -229,6 +229,10 @@ You know the five steps: make, store, release, bind, stop. Now look closely at t
 | Can it amplify, invert or learn? | Yes: excitatory or inhibitory, strengthened or weakened | Little |
 | Where | Most of the brain | Brainstem nuclei, some interneuron networks, heart muscle, retina |
 
+:::widget synapse3d
+{"title":"Fire a synapse, then break it","transmitter":"dopamine","caption":"Fire once with no drug and name each step. Then add each drug and say which step it changes."}
+:::
+
 Charles Sherrington named the **synapse** in 1897. The argument over whether neurons are separate cells (Santiago Ramón y Cajal's **neuron doctrine**) or a continuous net (Camillo Golgi's reticular theory) was settled in Cajal's favour, though the two shared the 1906 Nobel Prize. In 1921 Otto Loewi showed chemical transmission: fluid from a frog heart whose vagus nerve he stimulated slowed a second heart. He called the substance "Vagusstoff"; it was **acetylcholine**.
 
 :::widget timeline

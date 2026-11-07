@@ -9,6 +9,7 @@ import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { NervousSystem } from "./nervous-system";
 import { BrainExplorer } from "./brain-explorer";
 import { ActionPotential } from "./action-potential";
+import { SynapseScene } from "./synapse-scene";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -94,5 +95,23 @@ describe("explorable scenes", () => {
     expect(screen.getByRole("button", { name: "Myelin off" })).toHaveAttribute("aria-pressed", "false");
     click(/Challenge: 3 in 10 s/);
     expect(screen.getByRole("button", { name: /s left: 0 of 3/ })).toBeDisabled();
+  });
+
+  it("synapse3d: one message crosses and binds, and a receptor blocker stops it", () => {
+    vi.useFakeTimers();
+    render(<SynapseScene d={{ transmitter: "dopamine" }} />);
+    expect(status()).toHaveTextContent(/Press Fire the nerve ending/);
+    click("Fire the nerve ending");
+    expect(status()).toHaveTextContent(/Step 1 of 5, Signal arrives/);
+    wait(900);
+    expect(status()).toHaveTextContent(/Calcium floods in/);
+    wait(2000);
+    expect(status()).toHaveTextContent(/Step 4 of 5, Binding: The dopamine drifts across the gap/);
+    click("Receptor blocker (antagonist)");
+    click("Fire the nerve ending");
+    wait(2900);
+    expect(status()).toHaveTextContent(/blocker molecules already fill the receptors/);
+    expect(status()).toHaveTextContent(/getting no message/);
+    expect(screen.getByLabelText("2 of 4 missions done")).toBeInTheDocument();
   });
 });
