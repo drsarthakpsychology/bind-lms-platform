@@ -223,9 +223,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "A high proportion of minus form-quality responses (high X-%) on the Rorschach mainly suggests",
     options: [
       "impaired reality testing or perceptual distortion",
-      "high creativity",
-      "strong emotional control",
-      "a defensive, guarded style",
+      "high creativity and original thinking",
+      "strong emotional control under stress",
+      "a defensive, guarded style of responding",
     ],
     answer: 0,
     explanation:
@@ -357,10 +357,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In the Rorschach, the inquiry phase that follows the response phase is used to",
     options: [
-      "clarify where on the blot each response was seen and what made it look that way, without leading the examinee",
-      "give the examinee new cards",
-      "interpret the responses to the examinee",
-      "ask the examinee to tell a story about each card",
+      "clarify where each response was seen and what made it look that way",
+      "give the examinee new cards to compare with the first set",
+      "interpret the responses to the examinee and discuss their meaning",
+      "ask the examinee to tell a story about what is happening on each card",
     ],
     answer: 0,
     explanation:
@@ -376,10 +376,15 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The Thematic Apperception Test (TAT) was developed by",
-    options: ["Hermann Rorschach", "Christiana Morgan and Henry Murray", "Leopold Bellak", "Julian Rotter"],
+    options: [
+      "Hermann Rorschach and Emil Oberholzer",
+      "Christiana Morgan and Henry Murray",
+      "Leopold and Sonya Bellak",
+      "Julian Rotter and Janet Rafferty",
+    ],
     answer: 1,
     explanation:
-      "Morgan and Murray introduced the TAT at the Harvard Psychological Clinic in 1935. Rorschach created the inkblot test. Bellak developed the Children's Apperception Test and a TAT analysis method. Rotter developed the Incomplete Sentences Blank.",
+      "Morgan and Murray introduced the TAT at the Harvard Psychological Clinic in 1935. Rorschach created the inkblot test, and Oberholzer published his last paper on it. The Bellaks developed the Children's Apperception Test and a TAT analysis method. Rotter and Rafferty produced the Incomplete Sentences Blank.",
     module: M,
     ref: "Morgan & Murray 1935",
   },
@@ -391,10 +396,15 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The standard TAT set consists of",
-    options: ["10 cards", "20 cards", "24 cards", "31 cards, including one blank card"],
+    options: [
+      "10 cards, half of them coloured",
+      "20 cards, all of human figures",
+      "24 cards, in four sets of six",
+      "31 cards, including one blank card",
+    ],
     answer: 3,
     explanation:
-      "The set has 31 cards: 30 pictures and blank card 16, on which the examinee imagines a picture. Murray recommended giving 20 cards per person, chosen by age and sex, which is why '20' is a common distractor. 10 is the number of Rorschach cards.",
+      "The set has 31 cards: 30 pictures and blank card 16, on which the examinee imagines a picture. Murray recommended giving 20 cards per person, chosen by age and sex, which is why '20' is a common distractor, but the full set is larger and not all cards show people clearly. Ten cards, some coloured, describes the Rorschach. There is no standard 24-card set in four groups.",
     module: M,
     ref: "Murray 1943, TAT manual",
   },
@@ -407,10 +417,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In Murray's need-press theory, which underlies TAT interpretation, 'press' refers to",
     options: [
-      "the storyteller's speed of response",
-      "an inner motive of the hero",
+      "the storyteller's speed and fluency in producing a story",
+      "an inner motive of the hero, such as achievement or affiliation",
       "forces in the environment that help or hinder the hero in meeting needs",
-      "the examiner's prompting",
+      "the examiner's prompting when a story is incomplete",
     ],
     answer: 2,
     explanation:
@@ -447,14 +457,14 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "The Children's Apperception Test (CAT), developed by Leopold and Sonya Bellak, originally used",
     options: [
-      "inkblots in colour",
+      "inkblots in colour, simplified for young children",
       "animal figures in human-like situations, for children aged about 3 to 10",
-      "incomplete sentences",
-      "photographs of psychiatric patients",
+      "incomplete sentences read aloud by the examiner",
+      "photographs of real children's faces showing different emotions",
     ],
     answer: 1,
     explanation:
-      "The CAT used animals because the Bellaks believed young children identify more readily with animal characters; a human-figure version (CAT-H) was added later. Coloured inkblots describe Rorschach cards. Incomplete sentences are the SCT. Photographs of patients are the Szondi test.",
+      "The CAT used animals because the Bellaks believed young children identify more readily with animal characters; a human-figure version (CAT-H) was added later. Coloured inkblots describe Rorschach cards. Incomplete sentences are the SCT. Photographs of faces are used in tests such as the Szondi, not in the CAT.",
     module: M,
     ref: "Bellak & Bellak 1949",
   },
@@ -488,10 +498,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Westen's Social Cognition and Object Relations Scale (SCORS) is used to",
     options: [
-      "score Rorschach colour responses",
-      "measure intelligence from drawings",
-      "score MMPI critical items",
-      "rate TAT and other narratives for the complexity of representations of people, emotional quality of relationships and related dimensions",
+      "score Rorschach colour and shading responses for emotional control",
+      "measure intelligence and maturity from children's human-figure drawings",
+      "score MMPI critical items that signal acute risk",
+      "rate TAT and other narratives for how people and relationships are represented",
     ],
     answer: 3,
     explanation:
@@ -547,10 +557,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In Murray's method of interpreting TAT stories, the 'hero' is",
     options: [
-      "the examiner",
+      "the examiner, as seen through the storyteller's eyes",
       "the character with whom the storyteller is assumed to identify",
-      "always the oldest figure in the picture",
-      "the character who wins at the end",
+      "always the oldest figure shown in the picture",
+      "the character who wins or succeeds at the end of the story",
     ],
     answer: 1,
     explanation:
@@ -582,10 +592,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "The Rotter Incomplete Sentences Blank (RISB) consists of",
     options: [
-      "40 stems, each rated on a scale from conflict to positive response, summed into an overall adjustment score",
-      "60 stems in 15 attitude areas",
-      "100 stimulus words",
-      "20 pictures",
+      "40 stems, each rated for conflict and summed into an overall adjustment score",
+      "60 stems grouped into 15 attitude areas such as family, fears and goals",
+      "100 stimulus words read aloud for free association",
+      "20 pictures to which the examinee writes a sentence",
     ],
     answer: 0,
     explanation:
@@ -672,9 +682,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Machover's projective use of the Draw-a-Person test rests mainly on the hypothesis that",
     options: [
       "the drawn figure reflects the drawer's body image and self-concept",
-      "drawing details reflect mental age only",
+      "drawing details reflect the child's mental age and nothing else",
       "drawings measure motor speed",
-      "the figure always represents the drawer's father",
+      "the drawn figure always represents the drawer's father or authority",
     ],
     answer: 0,
     explanation:
@@ -690,7 +700,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Koppitz's 'emotional indicators' are signs scored on",
-    options: ["the TAT", "the Rorschach", "children's human figure drawings", "the MMPI-A"],
+    options: [
+      "the TAT stories of adolescents",
+      "the Rorschach inkblot test",
+      "children's human figure drawings",
+      "the MMPI-A critical items",
+    ],
     answer: 2,
     explanation:
       "Koppitz identified emotional indicators on children's human figure drawings, signs that are rare in normal children's drawings at a given age (for example, gross asymmetry, tiny figures, omission of a neck after a certain age). She is also known for the developmental scoring of the Bender-Gestalt in children, but emotional indicators in this sense belong to figure drawings. They are not TAT, Rorschach or MMPI-A scores.",
@@ -725,10 +740,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Chapman and Chapman's work on 'illusory correlation' showed that",
     options: [
-      "drawings are valid indicators of paranoia",
-      "clinicians always detect real correlations in data",
+      "drawings are valid indicators of paranoia when the eyes are drawn unusually large",
+      "clinicians always detect real correlations in data, unlike students",
       "students rated Draw-a-Person signs as more valid than MMPI scales",
-      "observers 'see' associations between drawing signs and symptoms that fit their expectations, even when the signs and symptoms were paired at random",
+      "observers 'saw' expected sign-symptom links even when the pairings were random",
     ],
     answer: 3,
     explanation:
@@ -745,10 +760,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In the Kinetic Family Drawing (Burns and Kaufman), the child is asked to",
     options: [
-      "copy nine geometric designs",
+      "copy nine geometric designs onto a blank sheet",
       "draw everyone in the family, including the child, doing something",
-      "draw a house, a tree and a person",
-      "complete sentences about the family",
+      "draw a house, a tree and a person, one on each page",
+      "complete sentences about each member of the family",
     ],
     answer: 1,
     explanation:
@@ -765,10 +780,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'projective hypothesis', named by L. K. Frank, states that",
     options: [
-      "people reveal their needs, conflicts and ways of organising experience when they respond to ambiguous stimuli",
-      "test scores must be projected onto a normal curve",
-      "personality is fixed by age five",
-      "clinicians project their own feelings onto clients",
+      "people reveal their needs and conflicts when they respond to ambiguous stimuli",
+      "test scores must be projected onto a normal curve before interpretation",
+      "personality is fixed by age five and projected into later life",
+      "clinicians project their own feelings onto clients during testing",
     ],
     answer: 0,
     explanation:
@@ -869,8 +884,8 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In Jung's word-association method, which of the following is a classic 'complex indicator'?",
     options: [
-      "Giving the most common response",
-      "Responding with an opposite",
+      "Giving the most common response in the population norms",
+      "Responding with an opposite, such as night for day",
       "Answering in exactly one word",
       "An unusually long reaction time to the stimulus word",
     ],

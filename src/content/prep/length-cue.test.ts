@@ -12,6 +12,7 @@ import type { PrepQuestion } from "@/lib/prep/types";
 const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "research-methods",
   "statistics",
+  "psychometrics-assessment",
   "psychopathology",
   "clinical-therapies",
   "counselling",
