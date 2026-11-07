@@ -36,7 +36,6 @@ export default async function MapPage() {
       <header className="space-y-2">
         <p className="text-eyebrow text-link">Your map</p>
         <h1 className="text-h1">What you know, and what to fix</h1>
-        <p className="max-w-2xl text-muted-foreground">Every answer you give in lessons, games and practice updates this map.</p>
       </header>
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
@@ -140,7 +139,7 @@ export default async function MapPage() {
               })}
             </ol>
           ) : (
-            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet. When you pick a wrong answer, we note what you confused it with.</p>
+            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet.</p>
           )}
         </section>
       </div>

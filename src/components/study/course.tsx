@@ -2,16 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Compass, Flame, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
-import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, NotebookPen, PenLine, RotateCcw, Trophy, Zap, ListChecks } from "lucide-react";
+import { emptyState, istToday, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
-import { activityHref, courseNext, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, testSection, type Next } from "@/lib/study/plan";
+import { activityHref, courseNext, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, sectionTitle, testSection, type Next } from "@/lib/study/plan";
 import { courseProgress, moduleProgress } from "@/lib/study/progress";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
-import { BOARDS } from "@/lib/standing/boards";
-import { ChaiSays } from "@/components/learn/chai";
 import { MarksList, RelatedLab, useSectionMarks, type LabLink } from "./marks";
 
 const EMPTY = emptyState();
@@ -20,7 +18,7 @@ type Save = (s: LearnState) => Promise<unknown>;
 function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
   switch (n.kind) {
     case "read":
-      return { eyebrow: `Module ${n.module.num} · Read`, title: `${n.section.num} ${n.section.title}`, sub: n.module.title };
+      return { eyebrow: `Module ${n.module.num} · Read`, title: `${n.section.num} ${sectionTitle(n.section)}`, sub: n.module.title };
     case "checkpoint":
       return { eyebrow: `Module ${n.module.num} · Checkpoint`, title: n.label.replace(/^Checkpoint \d+: /, "Quiz on "), sub: "Now that you've moved on, see what stuck" };
     case "write":
@@ -49,7 +47,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{l.eyebrow}</span>
-        <span className="block text-xl font-bold leading-tight sm:text-2xl">{l.title}</span>
+        <span className="block text-xl font-bold leading-tight break-words sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
       {/* Narrow phones: just the arrow, so the title keeps its room. */}
@@ -78,9 +76,6 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   const next = courseNext(modules, st.study, today);
   const statuses = modules.map((m) => moduleStatus(m, st.study));
   const progress = courseProgress(modules, st.study);
-  const read = statuses.reduce((a, s) => a + s.readDone, 0);
-  const total = statuses.reduce((a, s) => a + s.readTotal, 0);
-  const streak = liveStreak(st.streak, today);
   const currentId = next.kind !== "done" ? next.module.id : null;
 
   return (
@@ -89,48 +84,15 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
         <p className="text-eyebrow text-link">Notes</p>
         <h1 className="text-h1">Your notes, module by module</h1>
         <p className="max-w-2xl text-muted-foreground">
-          {modules.length} {modules.length === 1 ? "module" : "modules"}. Open any one. We keep your place.
+          {modules.length} {modules.length === 1 ? "module" : "modules"}, all open. {progress.pct}% complete.
         </p>
       </header>
 
       <ContinueCard next={next} />
 
-      <nav aria-label="Your progress" className="flex flex-wrap gap-2">
-        <Link href="/study/map" className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-transform hover:-translate-y-0.5 motion-reduce:transition-none">
-          <MapIcon className="size-4" aria-hidden /> Strengths &amp; weak spots
-        </Link>
-        <Link href="/study/placement" className="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-transform hover:-translate-y-0.5 motion-reduce:transition-none">
-          <Compass className="size-4" aria-hidden /> Placement quiz
-        </Link>
-      </nav>
-
-      <Link
-        href="/prep"
-        className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground/70 bg-card px-4 py-3 transition-transform hover:-translate-y-0.5 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
-      >
-        <Target className="size-5 shrink-0" aria-hidden />
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">Psychology Entrance &amp; Competitive Exam Preparation</span>
-          <span className="block text-sm text-muted-foreground">CUET-PG · UGC-NET · Clinical Psychology Entrances. One course for all three.</span>
-        </span>
-        <ArrowRight className="size-4 shrink-0" aria-hidden />
+      <Link href="/progress" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
+        <Trophy className="size-4" aria-hidden /> Your progress and certificate <ArrowRight className="size-4" aria-hidden />
       </Link>
-
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-        {[
-          { icon: Trophy, value: `${progress.pct}%`, label: "complete" },
-          { icon: BookOpen, value: `${read}/${total}`, label: "sections read" },
-          { icon: ListChecks, value: `${statuses.filter((s) => s.tested).length}/${modules.length}`, label: "tests tried" },
-          { icon: Flame, value: String(streak), label: "day streak" },
-        ].map(({ icon: Icon, value, label }) => (
-          <div key={label} className="rounded-2xl border-2 border-foreground bg-card p-3">
-            <p className="flex items-center gap-1.5 text-2xl font-bold">
-              <Icon className="size-5" aria-hidden /> {value}
-            </p>
-            <p className="text-caption text-muted-foreground">{label}</p>
-          </div>
-        ))}
-      </div>
 
       <MarksList owner={owner} modules={modules} />
 
@@ -138,7 +100,6 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
         <h2 id="modules" className="text-h2">
           The modules
         </h2>
-        <p className="text-sm text-muted-foreground">In curriculum order. Your current module is highlighted.</p>
         <ol className="mt-4 space-y-3">
           {modules.map((m, i) => {
             const s = statuses[i];
@@ -160,7 +121,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
                     <span className="block text-xs font-bold uppercase opacity-80">
                       Module {m.num}
                     </span>
-                    <span className="block text-lg font-bold leading-tight">{m.title}</span>
+                    <span className="block text-lg font-bold leading-tight break-words">{m.title}</span>
                     <span className="mt-2 flex items-center gap-3">
                       <span className="w-full max-w-60">
                         <Bar pct={pct} tone={here ? "primary" : "brand"} />
@@ -176,29 +137,9 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
         </ol>
       </section>
 
-      <section aria-label="More ways to practise" className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-3">
-        <Link href="/games" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-foreground p-4 text-background">
-          <Sparkles className="size-6 shrink-0 text-primary" aria-hidden />
-          <span>
-            <span className="block font-bold">Games</span>
-            <span className="text-caption opacity-85">Review, Coach, quizzes</span>
-          </span>
-        </Link>
-        <Link href="/study/notes" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
-          <NotebookPen className="size-6 shrink-0" aria-hidden />
-          <span>
-            <span className="block font-bold">One-page summaries</span>
-            <span className="text-caption text-muted-foreground">One page per topic, before exams</span>
-          </span>
-        </Link>
-        <Link href={BOARDS.quiz.href} className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
-          <Trophy className="size-6 shrink-0" aria-hidden />
-          <span>
-            <span className="block font-bold">{BOARDS.quiz.label}</span>
-            <span className="text-caption text-muted-foreground">{BOARDS.quiz.explainer} This week.</span>
-          </span>
-        </Link>
-      </section>
+      <Link href="/study/notes" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold underline-offset-4 hover:underline">
+        <NotebookPen className="size-4" aria-hidden /> One-page summaries
+      </Link>
     </div>
   );
 }
@@ -279,7 +220,6 @@ export function ModuleView({
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
         <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
           <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{reading.length} sections</span>
-          {test ? <span className="rounded-full border-2 border-brand-foreground px-3 py-1">Test included</span> : null}
         </div>
         <div className="mt-4 max-w-md">
           <Bar pct={prog.pct} tone="primary" />
@@ -312,27 +252,16 @@ export function ModuleView({
         </div>
       )}
 
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-2">
-        <section className="rounded-3xl border-2 border-foreground bg-card p-5">
-          <h2 className="text-lg font-bold">By the end, you can</h2>
-          <ul className="mt-2 space-y-1.5 text-sm">
-            {m.outcomes.map((o) => (
-              <li key={o} className="flex gap-2">
-                <Check className="mt-0.5 size-4 shrink-0" aria-hidden /> {o}
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background">
-          <h2 className="text-lg font-bold text-primary">How to study this</h2>
-          <ol className="mt-2 space-y-1.5 text-sm">
-            <li><b>1 Read</b> each section. After every few sections, once you&apos;ve moved on, a checkpoint quiz asks what stuck.</li>
-            <li><b>2 Write</b> the key frameworks on paper from memory.</li>
-            <li><b>3 Practise</b> with the activities for this topic.</li>
-            <li><b>4 Test</b> yourself, then re-test after 3, 7 and 21 days.</li>
-          </ol>
-        </section>
-      </div>
+      <details className="rounded-[10px] border-2 border-foreground bg-card p-4">
+        <summary className="flex min-h-11 cursor-pointer items-center font-bold">What you will learn</summary>
+        <ul className="mt-2 space-y-1.5 text-sm">
+          {m.outcomes.map((o) => (
+            <li key={o} className="flex gap-2">
+              <Check className="mt-0.5 size-4 shrink-0" aria-hidden /> {o}
+            </li>
+          ))}
+        </ul>
+      </details>
 
       <section id="steps" aria-label="Steps" className="scroll-mt-24 space-y-6">
         {/* Step 1: Read */}
@@ -354,7 +283,7 @@ export function ModuleView({
                       {isDone ? <Check className="size-3.5" aria-hidden /> : null}
                     </span>
                     <span className="min-w-0 flex-1 font-semibold leading-snug">
-                      <span className="font-bold">{sec.num}</span> {sec.title}
+                      <span className="font-bold">{sec.num}</span> {sectionTitle(sec)}
                       {sec.tag === "extra" ? <span className="ml-2 rounded-full border border-current px-1.5 text-[0.6rem] font-bold uppercase">Extra</span> : null}
                     </span>
                     {marksOf(sec.id).bookmarked ? <BookmarkCheck className="size-4 shrink-0" aria-label="Bookmarked" /> : null}
@@ -392,7 +321,7 @@ export function ModuleView({
 
         {/* Step 3: Practise */}
         <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 3 && "hard-shadow-md")}>
-          <StepHead n={3} title="Practise" done={s.actsDone === s.actsTotal} current={step === 3} sub={`${s.actsDone} of ${s.actsTotal} activities · each opens, then brings you back here`} />
+          <StepHead n={3} title="Practise" done={s.actsDone === s.actsTotal} current={step === 3} sub={`${s.actsDone} of ${s.actsTotal} done`} />
           <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2.5 sm:grid-cols-2">
             {m.activities.map((a) => {
               const isDone = Boolean(st.study.acts[m.id]?.[a.id]);
@@ -428,7 +357,7 @@ export function ModuleView({
               title="Test, then re-test"
               done={Boolean(t)}
               current={step === 4}
-              sub={t ? `Best score ${t.best} of ${t.total} · ${t.tries} attempt${t.tries === 1 ? "" : "s"}` : "Answer every question before checking"}
+              sub={t ? `Best ${t.best} of ${t.total}. Pass with 80% for your certificate.` : "Pass with 80% for your certificate."}
             />
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <Link href={sectionHref(m, test)} className={cn("inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground px-5 font-bold hard-shadow-sm", step >= 4 ? "bg-primary text-primary-foreground" : "bg-card")}>
@@ -445,16 +374,10 @@ export function ModuleView({
       {m.noteId ? (
         <Link href={`/study/notes/${m.noteId}`} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
           <NotebookPen className="size-6 shrink-0" aria-hidden />
-          <span>
-            <span className="block font-bold">One-page summary</span>
-            <span className="text-sm text-muted-foreground">For the night before the exam, after you&apos;ve done the module.</span>
-          </span>
+          <span className="font-bold">One-page summary</span>
         </Link>
       ) : null}
 
-      <ChaiSays mood="happy" size={64}>
-        One section at a time. Answering the recall check before you move on is the part that actually builds memory.
-      </ChaiSays>
     </div>
   );
 }

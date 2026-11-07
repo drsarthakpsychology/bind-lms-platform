@@ -254,7 +254,6 @@ export function SectionReader({
           <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             {section.tag === "extra" ? <span className="rounded-full border-2 border-foreground px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-foreground">Extra · read once</span> : null}
             {section.tag === "core" ? <span className="rounded-full bg-primary px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-primary-foreground">Core · must know</span> : null}
-            {section.level ? <span className="rounded-full border-2 border-foreground bg-card px-2 py-0.5 text-[0.7rem] font-semibold uppercase text-foreground">{LEVEL_NAME[section.level]}</span> : null}
             {done ? (
               <span className="inline-flex items-center gap-1 font-semibold text-foreground">
                 <Check className="size-4" aria-hidden /> Done
@@ -363,5 +362,3 @@ export function SectionReader({
     </div>
   );
 }
-
-const LEVEL_NAME: Record<Level, string> = { starting: "Starting", beginner: "Beginner", advanced: "Advanced" };

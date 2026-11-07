@@ -263,7 +263,7 @@ export function parseModule(src: string): Section[] {
   return sections;
 }
 
-/** "Level check · Starting" (with MCQs) is the gate that opens the next level. */
+/** "Level check · Starting" (with MCQs) is an optional self-test, shown as "Check yourself". It never locks anything. */
 function levelCheckOf(title: string, blocks: Block[]): Level | undefined {
   const m = title.match(/^level check\s*[·:-]\s*(starting|beginner|advanced)/i);
   return m && blocks.some((b) => b.t === "mcq") ? (m[1].toLowerCase() as Level) : undefined;
