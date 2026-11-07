@@ -11,6 +11,7 @@ export default async function DetectivePage() {
   const serverState = await loadLearnState();
   return (
     <ActivityFrame
+      fallback="/practice"
       title="Clinic detective"
       purpose="Guess the medicine or disorder from clues that appear one at a time. The fewer clues you need, the more points."
       how={["Read the first clue.", "Guess, or reveal another clue.", "Wrong guesses cost points.", "The answer card explains every clue."]}

@@ -2,19 +2,21 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { backTarget } from "@/components/navigation/sections";
 import { cn } from "@/lib/utils";
 
 /**
- * Where "Back" goes from an activity. Opened from a module (…?from=/study/<module>)
- * it returns to that module; otherwise to the fallback (Games).
+ * Where "Back" goes from an activity: to `?from=` (a Study module, a note,
+ * Home, another tool) when present, else to `fallback`, else to the top of
+ * the section that owns the page (Practice tools go to Practice, games to
+ * Games, Smart practice tools to Smart practice). Rules: navigation/sections.ts.
  */
-export function useBack(fallback = "/games"): { href: string; label: string } {
+export function useBack(fallback?: string): { href: string; label: string } {
+  const pathname = usePathname() ?? "";
   const from = useSearchParams()?.get("from");
-  if (from && /^\/study(?:\/[a-z0-9-]+){0,2}$/.test(from)) return { href: from, label: from === "/study" ? "Back to Notes" : "Back to the module" };
-  if (from === "/games/quizzes") return { href: from, label: "Back to the quiz path" };
-  return { href: fallback, label: fallback === "/study/notes" ? "Back to notes" : "Back to Games" };
+  return backTarget(pathname, from, fallback);
 }
 
 /** A Link whose destination is the Back target. */
@@ -23,14 +25,13 @@ export function BackLink({ fallback, ...props }: Omit<React.ComponentProps<typeo
   return <Link {...props} href={back.href} />;
 }
 
-/** The labelled Back button shown at the top of every activity (replaces the bare ✕). */
+/** The labelled Back button shown at the top of every activity: says where it goes. */
 export function BackPill({ fallback, className }: { fallback?: string; className?: string }) {
   const back = useBack(fallback);
   return (
-    <Link href={back.href} className={cn("inline-flex h-10 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold pointer-coarse:h-11", className)}>
-      <ArrowLeft className="size-4" aria-hidden />
-      <span>Back</span>
-      <span className="sr-only"> ({back.label})</span>
+    <Link href={back.href} className={cn("inline-flex h-11 max-w-[60%] shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold", className)}>
+      <ArrowLeft className="size-4 shrink-0" aria-hidden />
+      <span className="min-w-0 truncate">{back.label}</span>
     </Link>
   );
 }

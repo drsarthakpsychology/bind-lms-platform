@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BackOrHome } from "@/components/navigation/back-forward";
 import { Clock3, Lock } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -29,12 +29,8 @@ export default async function NotAvailablePage({
         <p className="mt-2 text-small text-muted-foreground">
           Your programme is still preparing this: check back later.
         </p>
-        <Link
-          href="/practice"
-          className="mt-6 inline-block rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-        >
-          Back to practice
-        </Link>
+        {/* Back to wherever the student came from (Journal, Passport, a tool), not always Practice. */}
+        <BackOrHome className="mt-6 inline-flex min-h-11 cursor-pointer items-center rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px" />
       </div>
     );
   }
@@ -54,12 +50,7 @@ export default async function NotAvailablePage({
           "This tool is built and waiting: your faculty reveals tools in stages so the cohort can go deep on one thing at a time."
         )}
       </p>
-      <Link
-        href="/practice"
-        className="mt-6 inline-block rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-      >
-        Back to practice
-      </Link>
+      <BackOrHome className="mt-6 inline-flex min-h-11 cursor-pointer items-center rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px" />
     </div>
   );
 }

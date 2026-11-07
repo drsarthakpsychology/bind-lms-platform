@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { searchPalette, STATIC_ENTRIES, scoreEntry, type PaletteEntry } from "./palette";
+import { searchPalette, STATIC_ENTRIES, scoreEntry, visibleEntries, type PaletteEntry } from "./palette";
 
 describe("command palette search", () => {
   it("exact label match ranks highest", () => {
@@ -24,6 +24,29 @@ describe("command palette search", () => {
     expect(searchPalette(STATIC_ENTRIES, "reply to doubts")[0].id).toBe("ad-inbox");
     expect(searchPalette(STATIC_ENTRIES, "message")[0].id).toBe("ad-message");
     expect(searchPalette(STATIC_ENTRIES, "add people")[0].href).toBe("?add=people");
+  });
+
+  it("Practice tools open in Practice, games open in Games", () => {
+    const href = (id: string) => STATIC_ENTRIES.find((e) => e.id === id)?.href;
+    for (const id of ["daily", "cr", "mse", "formulation", "detective", "scenarios", "terms", "judgment", "clinic", "osce", "ethics", "library"]) {
+      expect(href(id), id).toMatch(/^\/practice\//);
+    }
+    expect(STATIC_ENTRIES.filter((e) => e.group === "Tools" && e.href.startsWith("/games/")).map((e) => e.id)).toEqual([]);
+  });
+
+  it("hides tools whose switch is off, admin screens from students, and blocked sections", () => {
+    const ids = (flags: Record<string, string>, isAdmin = false, blocked: string[] = []) =>
+      visibleEntries(STATIC_ENTRIES, { flags, isAdmin, blocked: (h) => blocked.some((b) => h === b || h.startsWith(`${b}/`)) }).map((e) => e.id);
+    const off = ids({ learn: "unlocked" });
+    expect(off).not.toContain("reflect");
+    expect(off).not.toContain("cr");
+    expect(off).not.toContain("ad-students");
+    expect(off).toContain("daily");
+    expect(ids({ learn: "unlocked", journal: "unlocked" })).toContain("reflect");
+    expect(ids({ learn: "live" })).not.toContain("study");
+    expect(ids({ supervision: "unlocked" })).toContain("record");
+    expect(ids({}, true)).toContain("ad-students");
+    expect(ids({ learn: "unlocked" }, false, ["/practice"])).not.toContain("daily");
   });
 
   it("empty query returns nothing", () => {

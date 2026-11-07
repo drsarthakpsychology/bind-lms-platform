@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -37,5 +38,36 @@ export function BackForward({ className }: { className?: string }) {
         <ChevronRight className="size-5" aria-hidden />
       </button>
     </div>
+  );
+}
+
+/**
+ * "Go back" on a dead-end page (Not unlocked yet): back to wherever the
+ * student came from; with no history (a pasted link), Home.
+ */
+export function BackOrHome({ className }: { className?: string }) {
+  const router = useRouter();
+  const canBack = React.useSyncExternalStore(
+    () => () => {},
+    () => {
+      try {
+        return window.history.length > 1;
+      } catch {
+        return false;
+      }
+    },
+    () => false,
+  );
+  if (!canBack) {
+    return (
+      <Link href="/dashboard" className={className}>
+        Back to Home
+      </Link>
+    );
+  }
+  return (
+    <button type="button" onClick={() => router.back()} className={className}>
+      Go back
+    </button>
   );
 }

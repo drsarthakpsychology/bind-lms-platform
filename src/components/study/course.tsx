@@ -81,8 +81,8 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">Notes</p>
-        <h1 className="text-h1">Your notes, module by module</h1>
+        <p className="text-eyebrow text-link">Study</p>
+        <h1 className="text-h1">All modules</h1>
         <p className="max-w-2xl text-muted-foreground">
           {modules.length} {modules.length === 1 ? "module" : "modules"}, all open. {progress.pct}% complete.
         </p>

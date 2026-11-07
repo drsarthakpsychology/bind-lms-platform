@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, BarChart3, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { activeNavHref } from "./sections";
 
 /**
  * Icon name → component map. Icon components are functions, so they can't be
@@ -65,6 +66,8 @@ export type NavItem = {
   match?: string[];
   /** Shorter label for the slim icon rail, where long words would split. */
   short?: string;
+  /** Feature switch that must be on ("unlocked") for this item to show. */
+  flag?: string;
 };
 
 /**
@@ -82,7 +85,10 @@ export function NavItems({
   onNavigate?: () => void;
   className?: string;
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const from = useSearchParams()?.get("from");
+  // One item lights up: the section that owns this page (navigation/sections.ts).
+  const activeHref = activeNavHref(items, pathname, from);
 
   // An item opens a section when it carries a `section` different from the
   // item before it. Pure, so the render stays deterministic.
@@ -94,12 +100,7 @@ export function NavItems({
   return (
     <nav aria-label="Primary" className={cn("flex flex-col gap-1", className)}>
       {rows.map(({ item, showHeader }) => {
-        const under = (h: string) => pathname === h || pathname.startsWith(`${h}/`);
-        // A deeper item (e.g. /practice/medicines) wins over its parent (/practice).
-        const deeper = items.some((o) => o.href !== item.href && o.href.startsWith(`${item.href}/`) && under(o.href));
-        const active = item.exact
-          ? pathname === item.href
-          : (under(item.href) && !deeper) || (item.match ?? []).some(under);
+        const active = item.href === activeHref;
         const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <React.Fragment key={item.href}>
@@ -112,7 +113,8 @@ export function NavItems({
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
-              aria-label={item.short ? item.label : undefined}
+              // The name stays readable to screen readers in every sidebar size.
+              aria-label={item.label}
               title={item.label}
               className={cn(
                 "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
@@ -122,20 +124,18 @@ export function NavItems({
               )}
             >
               <Icon
-                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/nav:-rotate-6 group-hover/nav:scale-110"
+                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy motion-safe:group-hover/nav:-rotate-6 motion-safe:group-hover/nav:scale-110"
                 aria-hidden
               />
+              {/* The slim rail shows the short word (globals.css, by sidebar width). */}
+              <span aria-hidden className={cn("nav-label min-w-0 truncate", item.short && "nav-long")}>
+                {item.label}
+              </span>
               {item.short ? (
-                <>
-                  {/* The slim rail (data-size mini, or auto under 1280px) shows the short word. */}
-                  <span className="nav-label min-w-0 truncate in-data-[size=mini]:hidden max-xl:in-data-[size=auto]:hidden">{item.label}</span>
-                  <span aria-hidden className="nav-label hidden min-w-0 in-data-[size=mini]:inline max-xl:in-data-[size=auto]:inline">
-                    {item.short}
-                  </span>
-                </>
-              ) : (
-                <span className="nav-label min-w-0 truncate">{item.label}</span>
-              )}
+                <span aria-hidden className="nav-label nav-short min-w-0">
+                  {item.short}
+                </span>
+              ) : null}
             </Link>
           </React.Fragment>
         );

@@ -18,6 +18,8 @@ export interface PaletteEntry {
   /** Keywords beyond the label, searched too (e.g. "patient", "MSE"). */
   keywords?: string[];
   shortcut?: string;
+  /** Feature switch(es): shown only when one of them is on ("unlocked"). */
+  flag?: string | string[];
 }
 
 /**
@@ -26,38 +28,38 @@ export interface PaletteEntry {
  */
 const TOOLS: PaletteEntry[] = [
   { id: "home", label: "Home", hint: "Your next step and today's goal", href: "/dashboard", group: "Nav", keywords: ["dashboard", "start", "continue"] },
-  { id: "study", label: "Study", hint: "Every module, topic by topic", href: "/study", group: "Nav", keywords: ["course", "chapter", "module", "read", "learn", "notes"] },
+  { id: "study", label: "Study", hint: "Every module, topic by topic", href: "/study", group: "Nav", keywords: ["course", "chapter", "module", "read", "learn", "notes"], flag: "learn" },
   { id: "lectures", label: "Lectures", hint: "Your recorded classes", href: "/courses", group: "Nav", keywords: ["video", "class", "watch", "recording", "course"] },
   { id: "medicines", label: "Medicines", hint: "Look up any medicine", href: "/practice/medicines", group: "Nav", keywords: ["drug", "dose", "psychopharmacology", "side effects", "pharmacology"] },
-  { id: "prep", label: "Exam Prep", hint: "Question bank, mock tests and interviews", href: "/prep", group: "Nav", keywords: ["exam", "cuet", "net", "ugc", "entrance", "mcq", "question bank", "mock"] },
-  { id: "smart", label: "Smart practice", hint: "10 questions picked for you", href: "/prep/smart", group: "Tools", keywords: ["coach", "quiz", "quiz path", "today", "review", "revise", "due"] },
+  { id: "prep", label: "Exam Prep", hint: "Question bank, mock tests and interviews", href: "/prep", group: "Nav", keywords: ["exam", "cuet", "net", "ugc", "entrance", "mcq", "question bank", "mock"], flag: "learn" },
+  { id: "smart", label: "Smart practice", hint: "10 questions picked for you", href: "/prep/smart", group: "Tools", keywords: ["coach", "quiz", "quiz path", "today", "review", "revise", "due"], flag: "learn" },
   { id: "practice", label: "Practice", hint: "Clinical skills on real cases", href: "/practice", group: "Nav", keywords: ["clinical", "skills", "cases"] },
-  { id: "games", label: "Games", hint: "Duel, Blitz, Ward Week and more", href: "/games", group: "Nav", keywords: ["game", "play", "duel", "blitz", "streak", "xp"] },
-  { id: "progress", label: "Progress", hint: "Strong topics, weak spots, certificate", href: "/progress", group: "Nav", keywords: ["strengths", "weak", "certificate", "mastery", "report"] },
+  { id: "games", label: "Games", hint: "Duel, Blitz, Ward Week and more", href: "/games", group: "Nav", keywords: ["game", "play", "duel", "blitz", "streak", "xp"], flag: "learn" },
+  { id: "progress", label: "Progress", hint: "Strong topics, weak spots, certificate", href: "/progress", group: "Nav", keywords: ["strengths", "weak", "certificate", "mastery", "report"], flag: "learn" },
   { id: "doubts", label: "Doubts", hint: "Ask your faculty", href: "/doubts", group: "Nav", keywords: ["question", "ask", "help"] },
   { id: "achievements", label: "Achievements", hint: "Badges and certificates", href: "/achievements", group: "Nav", keywords: ["badge", "certificate"] },
   { id: "leaderboard", label: "Leaderboard", hint: "This week's league", href: "/leaderboard", group: "Nav", keywords: ["league", "weekly"] },
-  { id: "reflect", label: "Journal", href: "/reflect", group: "Nav", keywords: ["reflection", "diary"] },
+  { id: "reflect", label: "Journal", href: "/reflect", group: "Nav", keywords: ["reflection", "diary"], flag: "journal" },
   { id: "wall", label: "Wall", hint: "Posts from your batch", href: "/wall", group: "Nav", keywords: ["discussion", "posts", "cohort wall"] },
   { id: "journey", label: "My journey", href: "/journey", group: "Nav", keywords: ["timeline", "history"] },
 
-  { id: "daily", label: "Daily case", hint: "One new patient a day", href: "/games/daily", group: "Tools", keywords: ["case", "diagnose", "daily"] },
-  { id: "cr", label: "Consulting Room", hint: "Interview an AI patient", href: "/practice/consulting-room", group: "Tools", keywords: ["sim", "patient", "voice", "interview", "ai patient"] },
-  { id: "mse", label: "MSE", hint: "Mental status exam", href: "/practice/mse", group: "Tools", keywords: ["mental status"] },
-  { id: "formulation", label: "Formulation", hint: "5P formulation", href: "/practice/formulation", group: "Tools", keywords: ["5p", "narrative"] },
-  { id: "detective", label: "Clinic detective", hint: "Name it from the clues", href: "/games/detective", group: "Tools", keywords: ["clues", "detective"] },
-  { id: "scenarios", label: "What would you do", hint: "Tricky moments with a patient", href: "/games/scenarios", group: "Tools", keywords: ["scenario", "dilemma", "choice"] },
-  { id: "terms", label: "Say it clinically", hint: "Everyday words into case-sheet words", href: "/games/terms", group: "Tools", keywords: ["terms", "words", "vocabulary", "language"] },
-  { id: "judgment", label: "Judgment", hint: "90 seconds, one screen", href: "/practice/judgment", group: "Tools", keywords: ["sct", "script concordance"] },
-  { id: "clinic", label: "Two-minute clinic", hint: "One-liner, differential, next question", href: "/practice/two-minute-clinic", group: "Tools", keywords: ["drill", "micro", "clinic"] },
-  { id: "osce", label: "OSCE Stations", hint: "Timed stations", href: "/practice/osce", group: "Tools", keywords: ["exam", "station"] },
-  { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
-  { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
-  { id: "reference", label: "Quick Reference A to Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"] },
-  { id: "notes", label: "Revision notes", hint: "One-page notes", href: "/study/notes", group: "Tools", keywords: ["notes", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"] },
-  { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"] },
-  { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },
-  { id: "board-quiz", label: BOARDS.quiz.label, hint: `${BOARDS.quiz.explainer} This week.`, href: BOARDS.quiz.href, group: "Nav", keywords: ["leaderboard", "ranking", "rank", "quiz", "games", "xp", "weekly"] },
+  { id: "daily", label: "Daily case", hint: "One new patient a day", href: "/practice/daily", group: "Tools", keywords: ["case", "diagnose", "daily"], flag: "learn" },
+  { id: "cr", label: "Consulting Room", hint: "Interview an AI patient", href: "/practice/consulting-room", group: "Tools", keywords: ["sim", "patient", "voice", "interview", "ai patient"], flag: "consulting_room" },
+  { id: "mse", label: "MSE", hint: "Mental status exam", href: "/practice/mse", group: "Tools", keywords: ["mental status"], flag: "mse" },
+  { id: "formulation", label: "Formulation", hint: "5P formulation", href: "/practice/formulation", group: "Tools", keywords: ["5p", "narrative"], flag: "formulation" },
+  { id: "detective", label: "Clinic detective", hint: "Name it from the clues", href: "/practice/detective", group: "Tools", keywords: ["clues", "detective"], flag: "learn" },
+  { id: "scenarios", label: "What would you do", hint: "Tricky moments with a patient", href: "/practice/scenarios", group: "Tools", keywords: ["scenario", "dilemma", "choice"], flag: "learn" },
+  { id: "terms", label: "Say it clinically", hint: "Everyday words into case-sheet words", href: "/practice/terms", group: "Tools", keywords: ["terms", "words", "vocabulary", "language"], flag: "learn" },
+  { id: "judgment", label: "Judgment", hint: "90 seconds, one screen", href: "/practice/judgment", group: "Tools", keywords: ["sct", "script concordance"], flag: "judgment" },
+  { id: "clinic", label: "Two-minute clinic", hint: "One-liner, differential, next question", href: "/practice/two-minute-clinic", group: "Tools", keywords: ["drill", "micro", "clinic"], flag: "two_minute_clinic" },
+  { id: "osce", label: "OSCE Stations", hint: "Timed stations", href: "/practice/osce", group: "Tools", keywords: ["exam", "station"], flag: "osce" },
+  { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"], flag: "ethics" },
+  { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"], flag: "case_library" },
+  { id: "reference", label: "Quick Reference A to Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"], flag: "learn" },
+  { id: "notes", label: "Revision notes", hint: "One-page notes", href: "/study/notes", group: "Tools", keywords: ["notes", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"], flag: "learn" },
+  { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"], flag: ["supervision", "checkin"] },
+  { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"], flag: "skills_passport" },
+  { id: "board-quiz", label: BOARDS.quiz.label, hint: `${BOARDS.quiz.explainer} This week.`, href: BOARDS.quiz.href, group: "Nav", keywords: ["leaderboard", "ranking", "rank", "quiz", "games", "xp", "weekly"], flag: "learn" },
   { id: "board-overall", label: BOARDS.overall.label, hint: `${BOARDS.overall.explainer} All time.`, href: BOARDS.overall.href, group: "Nav", keywords: ["leaderboard", "rankings", "rank", "level", "points", "overall"] },
 ];
 
@@ -90,6 +92,19 @@ const ADMIN: PaletteEntry[] = [
 ];
 
 export const STATIC_ENTRIES: PaletteEntry[] = [...TOOLS, ...COURSES, ...ADMIN];
+
+/**
+ * What this person may be offered: no tool whose switch is off (it would open
+ * "Not unlocked yet"), no section switched off for them, and admin screens
+ * only for admins.
+ */
+export function visibleEntries(entries: PaletteEntry[], { flags = {}, blocked = () => false, isAdmin = false }: { flags?: Record<string, string>; blocked?: (href: string) => boolean; isAdmin?: boolean }): PaletteEntry[] {
+  return entries.filter((e) => {
+    if (e.group === "Admin" && !isAdmin) return false;
+    if (e.flag && ![e.flag].flat().some((f) => flags[f] === "unlocked")) return false;
+    return !(e.href.startsWith("/") && blocked(e.href.split("?")[0]));
+  });
+}
 
 /** Quick Reference entries (the index is built server-side in src/lib/reference/data.ts). */
 export function referencePaletteEntries(items: { slug: string; label: string; kind: string; aliases: string[] }[]): PaletteEntry[] {

@@ -12,6 +12,7 @@ export default async function ScenariosPage({ searchParams }: { searchParams: Pr
   const serverState = await loadLearnState();
   return (
     <ActivityFrame
+      fallback="/practice"
       title="What would you do?"
       purpose="Real clinic moments. A patient says something tricky; you choose a response and see what happens next."
       how={["Read what the patient says.", "Pick your response.", "See the consequence, then the best choice and why.", "Some wrong answers sound kind: that's the point."]}

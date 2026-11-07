@@ -31,7 +31,7 @@ export default async function MapPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
-        <ArrowLeft className="size-4" aria-hidden /> Notes
+        <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
       <header className="space-y-2">
         <p className="text-eyebrow text-link">Your map</p>

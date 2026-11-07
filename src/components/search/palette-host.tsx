@@ -1,5 +1,6 @@
 import { getLibraryDocs } from "@/lib/corpus/library";
-import { STATIC_ENTRIES, referencePaletteEntries, type PaletteEntry } from "@/lib/search/palette";
+import { STATIC_ENTRIES, referencePaletteEntries, visibleEntries, type PaletteEntry } from "@/lib/search/palette";
+import { blockedBy } from "@/lib/access/features";
 import { referenceIndex } from "@/lib/reference/data";
 import { CommandPalette } from "./command-palette";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -10,7 +11,7 @@ import { createAdminClient } from "@/lib/supabase/server";
  * blobs), then renders the ⌘K palette.
  */
 /** Admins also get every student (name, roll number, email): type to jump to their profile. */
-export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
+export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }: { isAdmin?: boolean; flags?: Record<string, string>; blocked?: string[] }) {
   const docs = await getLibraryDocs();
   const caseEntries: PaletteEntry[] = docs.slice(0, 40).map((d) => ({
     id: `case-${d.hash}`,
@@ -30,7 +31,11 @@ export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
     referenceEntries = []; // search still works without the Quick Reference
   }
 
-  return <CommandPalette entries={[...STATIC_ENTRIES, ...studentEntries, ...referenceEntries, ...caseEntries]} />;
+  // Case reports open the Case library, so they follow its switch too.
+  const cases = flags.case_library === "unlocked" ? caseEntries : [];
+  const reference = flags.learn === "unlocked" ? referenceEntries : [];
+  const entries = visibleEntries([...STATIC_ENTRIES, ...studentEntries, ...reference, ...cases], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
+  return <CommandPalette entries={entries} />;
 }
 
 /**

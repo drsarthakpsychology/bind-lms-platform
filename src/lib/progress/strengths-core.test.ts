@@ -8,6 +8,7 @@ const look: Lookups = {
   hasBank: (id) => id === "depression",
   subjectTitle: (s) => (s === "statistics" ? "Statistics" : null),
   subjectStudyHref: () => "/study/statistics",
+  prepTopicHref: (id) => (id === "depression" ? "/prep/psychopathology/mood" : null),
 };
 const t = (id: string, p: number, n = 10): TopicScore => ({ id, title: id, kind: "topic", p, n, studyHref: null, practiceHref: "/x" });
 
@@ -37,7 +38,8 @@ describe("scoreTopics", () => {
     const dep = out.find((o) => o.id === "depression")!;
     expect(dep.n).toBe(6);
     expect(dep.studyHref).toBe("/study/depression");
-    expect(dep.practiceHref).toContain("/study/map/practice?topic=depression");
+    expect(dep.practiceHref).toBe("/prep/psychopathology/mood");
+    expect(out.find((o) => o.id === "brain")!.practiceHref).toBe("/prep/smart");
     const stats = out.find((o) => o.id === "prep-statistics")!;
     expect(stats.title).toBe("Statistics");
     expect(stats.practiceHref).toBe("/prep/practice/statistics");

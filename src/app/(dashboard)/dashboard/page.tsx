@@ -77,7 +77,7 @@ export default async function DashboardPage() {
       ? { kind: studyNext.kind, label: studyNext.label, href: studyNext.href, module: studyNext.kind === "done" ? null : studyNext.module.title, resumed: Boolean(learn?.study.last) }
       : null,
     weakest: weakest ? { title: weakest.title, href: weakest.practiceHref } : null,
-    dailyCase: flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/games/daily", blocked),
+    dailyCase: flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/practice/daily", blocked),
   });
 
   return (

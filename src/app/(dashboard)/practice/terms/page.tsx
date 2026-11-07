@@ -11,6 +11,7 @@ export default async function TermsPage() {
   const serverState = await loadLearnState();
   return (
     <ActivityFrame
+      fallback="/practice"
       title="Say it clinically"
       purpose="Turn what patients and families say into the words you write in a case sheet, and choose respectful language."
       how={["Read the everyday phrase.", "Pick the clinical term.", "Check the explanation.", "12 questions a round."]}
