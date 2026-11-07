@@ -29,6 +29,10 @@ These are **non-associative** forms: the animal learns about one stimulus, not a
 - **Sensitisation**: after a strong or painful event, responses to many stimuli grow. After a near-accident on the highway, every horn makes you jump.
 - **Dishabituation**: a new or changed stimulus restores a habituated response.
 
+:::widget compare
+{"title": "Slide between the two simplest kinds of learning", "a": {"label": "Habituation", "points": ["A harmless stimulus repeats again and again", "The response gets weaker each time", "Example: the ceiling fan's hum stops bothering you", "A new or changed sound brings the response back (dishabituation)"], "summary": "Habituation: you learn that a repeated thing does not matter, so you stop reacting to it."}, "b": {"label": "Sensitisation", "points": ["A strong or painful event happens once", "Responses to many other stimuli get bigger", "Example: after a near-accident, every horn makes you jump", "It usually fades over hours or days"], "summary": "Sensitisation: one shock puts you on alert, so you react more to everything."}, "caption": "Both are non-associative: you learn about one stimulus, not a link between two."}
+:::
+
 ### Associative learning: three big families
 | Family | What is linked | Classic name |
 |---|---|---|
@@ -73,6 +77,10 @@ Ivan Pavlov, a Russian physiologist, won the Nobel Prize in 1904 for work on dig
 | **Conditioned response (CR)** | The learned response to the CS | Salivation to the bell |
 
 The CR is usually similar to the UCR but not identical: it is often weaker, and sometimes it is a preparation for the UCS rather than a copy of the response to it.
+
+:::widget conditioning
+{"kind": "classical", "title": "Watch Pavlov's dog learn", "caption": "Press Play. Notice the moment the bell alone starts the drooling, and what happens when the bell keeps ringing with no food."}
+:::
 
 :::widget sort
 {
@@ -124,6 +132,10 @@ The CR is usually similar to the UCR but not identical: it is often weaker, and 
 - **Stimulus generalisation**: stimuli similar to the CS also produce the CR, less strongly the less similar they are.
 - **Stimulus discrimination**: with training, the animal responds to the CS and not to similar stimuli that are never followed by the UCS.
 
+:::widget timeline
+{"prompt": "Put the steps of a Pavlov-style experiment in the order they happen in the lab.", "events": [{"label": "Bell alone: the dog only pricks up its ears", "when": "Before"}, {"label": "Bell rings, then food arrives, many times", "when": "Pairing"}, {"label": "Bell alone now makes the dog salivate", "when": "Test"}, {"label": "Bell rings again and again with no food, and salivation fades", "when": "Extinction"}, {"label": "After a night's rest, the bell brings back some salivation", "when": "Next day"}], "why": "Neutral at first, then paired, then a conditioned response, then extinction, then spontaneous recovery. The last step is the clue that extinction hides the old learning rather than wiping it out."}
+:::
+
 :::widget guess
 {
   "prompt": "A dog's salivation to a bell has been completely extinguished. The dog rests overnight. Next morning the bell rings again. What percentage of the original salivation do you predict will return?",
@@ -168,6 +180,10 @@ Around 1898, **Edward Thorndike** put hungry cats in **puzzle boxes** that opene
 
 **B. F. Skinner** (1938) built the **operant chamber** (the "Skinner box"), in which a rat presses a lever or a pigeon pecks a key, and a **cumulative recorder** draws the rate of responding over time. He called the behaviour an **operant**, because it operates on the environment.
 
+:::widget conditioning
+{"kind": "operant", "title": "Watch a rat learn from consequences", "caption": "Press Play. Watch how the pressing rate climbs when presses pay off, and what happens to it when food stops."}
+:::
+
 ### Reinforcement and punishment
 **Reinforcement** always **increases** a behaviour; **punishment** always **decreases** it. **Positive** means something is **added**; **negative** means something is **removed**.
 | | Something added | Something removed |
@@ -197,6 +213,10 @@ This is the most common exam trap. Negative reinforcement **increases** a behavi
 
 ### Shaping
 Skinner taught pigeons to turn circles, and even to play a kind of ping-pong, by **shaping**: reinforcing **successive approximations** to the target behaviour. A speech therapist shapes a child's speech by first praising any sound, then sounds close to the word, then the word.
+
+:::widget flow
+{"title": "Shaping a pigeon to turn a full circle", "layout": "chain", "nodes": [{"id": "a", "label": "Any slight turn of the head to the left", "detail": "At first, reward the smallest hint of the target. The pigeon gets grain for even a tiny head movement in the right direction."}, {"id": "b", "label": "A clear quarter turn", "detail": "Now small head turns earn nothing. Only bigger turns are rewarded, so the bird starts turning further."}, {"id": "c", "label": "A half turn", "detail": "The bar is raised again. Each step asks a little more than the last one."}, {"id": "d", "label": "A full circle", "detail": "Only the complete behaviour is rewarded now. A behaviour the bird never showed at the start has been built piece by piece."}], "edgeLabels": {"a>b": "raise the bar", "b>c": "raise the bar", "c>d": "raise the bar"}, "caption": "Shaping means rewarding closer and closer approximations. The same idea helps a child with autism learn to say a word, one sound at a time."}
+:::
 
 ### The Premack principle
 David Premack (1959): a **more-preferred activity can reinforce a less-preferred one**. "Finish your homework, then you can play cricket." Parents in every culture discovered this long before he named it.
@@ -246,6 +266,10 @@ The best-known model (Atkinson and Shiffrin, 1968) has three stores:
 | **Short-term memory** | About 15 to 30 seconds without rehearsal | About seven items, or fewer chunks | Rehearsal (repeating it) |
 | **Long-term memory** | Minutes to a lifetime | Effectively unlimited | Meaningful encoding |
 
+:::widget memoryflow
+{"title": "Follow one phone number through memory", "caption": "Press Play. Information you do not attend to is lost in the first box. What you rehearse stays in working memory; what you encode with meaning reaches long-term memory, and comes back out when retrieved."}
+:::
+
 ### Three ways to measure what is remembered
 - **Recall**: produce the information with few cues ("Name the founder of psychophysics"). The hardest.
 - **Recognition**: pick it out from options (an MCQ). Easier.
@@ -279,6 +303,10 @@ Hermann Ebbinghaus (1885) learned lists of **nonsense syllables** (like DAX, BUP
 - **Space it out**. Three short sessions on different days beat one long session (the **spacing effect**).
 - **Make it meaningful**. Link new ideas to what you know and to examples; ask "why?".
 - **Mix related topics** (interleave): practise classical and operant questions together so you learn to tell them apart.
+
+:::widget compare
+{"title": "Two ways to prepare for the same exam", "a": {"label": "Cramming", "points": ["One long session the night before", "Rereading the notes again and again", "One topic at a time, in blocks", "Feels fluent and easy"], "summary": "Cramming feels good on the night but fades fast. Rereading creates a feeling of knowing, not durable memory."}, "b": {"label": "Spaced and tested", "points": ["Short sessions spread over several days", "Closing the book and recalling from memory", "Topics mixed together", "Feels harder and slower"], "summary": "Spacing, self-testing and mixing feel effortful, but that effort is exactly what makes memories last."}, "caption": "The study method that feels easier is usually the one that works less well."}
+:::
 
 :::widget guess
 {

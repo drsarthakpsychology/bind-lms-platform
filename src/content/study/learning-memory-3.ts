@@ -98,6 +98,10 @@ Read a list of 20 words once and recall them in any order. Recall is best for th
 - **K. F.** (Shallice and Warrington, 1970), after a left parietal injury, had a digit span of only one or two items for spoken material, yet learned new long-term information normally.
 This **double dissociation** strongly suggests separate short-term and long-term systems.
 
+:::widget compare
+{"title": "A double dissociation: two patients, opposite patterns", "a": {"label": "H. M.", "points": ["Both medial temporal lobes removed", "Normal digit span: short-term memory works", "Cannot lay down new long-term memories", "Meets the same tester as a stranger each time"], "summary": "Short-term memory intact, long-term learning lost."}, "b": {"label": "K. F.", "points": ["Left parietal brain injury", "Digit span of only one or two spoken items", "Learns new long-term information normally", "Weakness mostly for spoken, not visual, material"], "summary": "Short-term memory damaged, long-term learning intact."}, "caption": "When damage to one place spares A but harms B, and damage elsewhere does the opposite, A and B are likely separate systems."}
+:::
+
 ### Critiques of the multi-store model
 - It is **too simple**: short-term memory is not one store (K. F.'s deficit was for spoken, not visual, material), and long-term memory has several kinds.
 - **Rehearsal is not the key to long-term memory**: we remember many things we never rehearsed, and rote repetition (maintenance rehearsal) transfers little.
@@ -374,6 +378,10 @@ Endel Tulving (1972) drew the **episodic-semantic** distinction; Larry Squire's 
 - **Imagery and dual coding** (Allan Paivio): concrete words are remembered better because they can be stored as both words and images.
 - **Mnemonics**: the **method of loci** (place items along a familiar route, such as your walk from home to the bus stand), the **peg-word** system, acronyms.
 - **Spacing and interleaving**, as you saw at the Starting level.
+
+:::widget worked
+{"title": "Use the method of loci for Baddeley's four components", "steps": [{"q": "Pick a route you know without thinking.", "a": "Your walk from home to the bus stand: front door, the gate, the tea stall, the bus stand."}, {"q": "Turn each item into a vivid, odd image.", "a": "Central executive: a boss in a suit giving orders. Phonological loop: a parrot repeating words. Visuospatial sketchpad: an artist drawing a map. Episodic buffer: a film reel stitching scenes together."}, {"q": "Place one image at each spot on the route.", "a": "The boss stands at your front door. The parrot sits on the gate. The artist sketches at the tea stall. The film reel spins at the bus stand."}, {"q": "To recall, walk the route in your mind.", "a": "Each place cues its image, and each image cues the term. You get them back in order, because the route has an order."}], "yourTurn": [{"q": "Why does this work better than repeating the four names?", "a": "It uses imagery and dual coding, links new items to a well-learned structure (elaboration), and provides built-in retrieval cues. Rote repetition gives none of these."}]}
+:::
 
 ### Retrieval: cues are everything
 - **Availability versus accessibility** (Tulving and Pearlstone, 1966): people given category cues ("animals", "fruits") recalled many more words than those given none. The memories were **available** (stored) but not **accessible** without cues.

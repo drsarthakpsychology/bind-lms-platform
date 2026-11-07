@@ -12,6 +12,10 @@ How the CS and UCS are arranged in time decides how well conditioning works.
 | **Simultaneous** | CS and UCS start together | Weak |
 | **Backward** | UCS comes first, then the CS | Weakest; the CS may even signal that the UCS is over |
 
+:::widget timeline
+{"prompt": "Rank the four timing arrangements from the strongest conditioning to the weakest.", "events": [{"label": "Delay: the CS starts first and is still on when the UCS arrives", "when": "Strongest"}, {"label": "Trace: the CS starts and stops, a short gap, then the UCS", "when": "2nd"}, {"label": "Simultaneous: CS and UCS start together", "when": "3rd"}, {"label": "Backward: the UCS comes first, then the CS", "when": "Weakest"}], "why": "Conditioning is about prediction. A signal that comes before the event and overlaps it predicts best. A signal that arrives after the event predicts nothing, and may even come to mean 'it is over'."}
+:::
+
 :::widget guess
 {
   "prompt": "In eyeblink conditioning (a tone followed by a puff of air to the eye), what gap between the start of the tone and the air puff gives the fastest learning?",
@@ -35,6 +39,10 @@ Several findings show that the original learning survives extinction:
 - **Renewal** (Mark Bouton): extinguish fear in context B (the clinic) and it can return in context A (home) or a new context C. Extinction is tied to where it was learned.
 - **Reinstatement**: an unsignalled UCS (for example, a single fresh scare) brings back the extinguished CR.
 - **Rapid reacquisition**: re-pairing the CS and UCS brings the CR back faster than first learning.
+
+:::widget flow
+{"title": "Four ways an extinguished fear comes back", "layout": "tree", "nodes": [{"id": "root", "label": "Fear extinguished in the clinic", "detail": "The fear response has faded during treatment. The old learning is still stored, held back by a new 'it is safe now' memory."}, {"id": "sr", "label": "Spontaneous recovery", "parent": "root", "detail": "Time passes. The newer safety learning weakens faster than the old fear, so some fear returns on its own."}, {"id": "rn", "label": "Renewal", "parent": "root", "detail": "A change of setting. The safety learning was tied to the clinic, so the fear returns at home or in a new place."}, {"id": "ri", "label": "Reinstatement", "parent": "root", "detail": "One fresh, unsignalled scare brings the old fear back, even without the original cue being paired again."}, {"id": "ra", "label": "Rapid reacquisition", "parent": "root", "detail": "Pairing the cue with the bad event once more brings the fear back much faster than the first time it was learned."}], "caption": "All four show the same thing: extinction is new learning laid on top of the old, not erasing it."}
+:::
 
 :::widget decide
 {
@@ -161,6 +169,10 @@ Punishment can suppress behaviour, but research (Azrin and Holz, 1966) showed th
 ### Learned helplessness
 Martin Seligman and Steven Maier (1967) used a **triadic design** with dogs: one group could end shocks by pressing a panel (escapable); a second, **yoked** group got exactly the same shocks but could do nothing; a third got no shocks. Later, in a shuttle box where jumping a low barrier escaped shock, the escapable and no-shock dogs learned quickly. Most of the yoked dogs lay down and whimpered. They had learned that **outcomes did not depend on their behaviour**. This became an influential model of depression.
 
+:::widget flow
+{"title": "The triadic design of learned helplessness", "layout": "tree", "nodes": [{"id": "p", "label": "Phase 1: three groups of dogs", "detail": "The groups differ only in whether they have control over the shocks, not in how many shocks they get."}, {"id": "e", "label": "Escapable shock", "parent": "p", "detail": "These dogs can end each shock by pressing a panel. Later, in the shuttle box, they quickly learn to jump the barrier to escape."}, {"id": "y", "label": "Yoked, inescapable shock", "parent": "p", "detail": "Each dog gets exactly the same shocks as a partner in the escapable group, but nothing it does ends them. Later, most lie down and whine, and do not try to escape even when escape is easy."}, {"id": "n", "label": "No shock", "parent": "p", "detail": "The comparison group. Later, they learn to escape normally."}], "caption": "Because the yoked group received the same shocks, the helplessness came from lack of control, not from the shocks themselves."}
+:::
+
 :::widget guess
 {
   "prompt": "In Seligman and Maier's studies, what percentage of dogs that had received inescapable shock later failed to learn to escape in the shuttle box?",
@@ -208,6 +220,10 @@ Charles Ferster and B. F. Skinner (1957) spent years recording how the **pattern
 ### Continuous and partial reinforcement
 - **Continuous reinforcement** (every response rewarded) is best for **learning** a new behaviour quickly.
 - **Partial (intermittent) reinforcement** (only some responses rewarded) is slower to learn but **much more resistant to extinction**: the **partial reinforcement extinction effect**. If rewards have always been patchy, a run of no rewards does not signal much change.
+
+:::widget compare
+{"title": "Continuous or partial reinforcement?", "a": {"label": "Continuous", "points": ["Every correct response is rewarded", "The behaviour is learned quickly", "When rewards stop, the change is obvious", "Responding stops fast in extinction"], "summary": "Use continuous reinforcement to teach a new behaviour quickly."}, "b": {"label": "Partial", "points": ["Only some responses are rewarded", "Learning is slower at first", "A run of no rewards looks like normal", "Responding goes on for a long time in extinction"], "summary": "Switch to partial reinforcement to make the behaviour last. This is the partial reinforcement extinction effect."}, "caption": "The same logic explains why a child whose tantrums are 'sometimes' rewarded keeps trying so hard."}
+:::
 
 ### The four basic schedules
 | Schedule | Rule | Response pattern | Everyday example |
