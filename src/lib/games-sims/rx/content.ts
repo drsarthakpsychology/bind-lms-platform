@@ -5,7 +5,11 @@
  * reference through drugs.ts, so both stay in step.
  */
 import type { JourneyData } from "@/lib/study/types";
+import type { ItemTags } from "../item-tags";
 import type { Action, Topic } from "./drugs";
+import { BASE_TAGS, MORE_MYSTERIES } from "./mysteries";
+import { MORE_PUZZLES } from "./puzzles";
+import { REVIEWS } from "./reviews";
 
 export { DRUGS, FAMILY, drugById, type Action, type Drug, type Topic } from "./drugs";
 
@@ -24,13 +28,52 @@ export const EFFECTS: Effect[] = [
   { id: "nach", label: "Sodium channel block in the heart", receptor: "heart Na+ channel", action: "antagonist" },
   { id: "dane", label: "More dopamine and noradrenaline", receptor: "DAT", action: "antagonist" },
   { id: "ach", label: "More acetylcholine at the heart", receptor: "M2 (heart)", action: "full" },
+  { id: "herg", label: "Potassium (hERG) channel block in the heart", receptor: "hERG K+ channel", action: "antagonist" },
+  { id: "5ht2c", label: "Serotonin 2C block (appetite brake released)", receptor: "5-HT2C", action: "antagonist" },
+  { id: "sertplt", label: "Serotonin pump block in platelets", receptor: "SERT (platelets)", action: "antagonist" },
+  { id: "adh", label: "Extra water-holding hormone (ADH) effect", receptor: "V2 (kidney)", action: "full" },
+  { id: "ne", label: "More noradrenaline at blood vessels and heart", receptor: "alpha-1 and beta-1", action: "full" },
+  { id: "gaba", label: "GABA-A boost", receptor: "GABA-A", action: "full" },
+  { id: "nanerve", label: "Sodium channel block in nerves", receptor: "Na+ channel (nerves)", action: "antagonist" },
+  { id: "v2block", label: "Kidney deaf to the water-holding hormone", receptor: "V2 (kidney)", action: "antagonist" },
+  { id: "thyroid", label: "Thyroid hormone release slowed", receptor: "thyroid gland", action: "antagonist" },
+  { id: "mufull", label: "Opioid mu receptor stimulation", receptor: "mu opioid", action: "full" },
+  { id: "mupart", label: "Mu opioid partial agonism", receptor: "mu opioid", action: "partial" },
+  { id: "mublock", label: "Opioid receptor block", receptor: "mu opioid", action: "antagonist" },
+  { id: "aldh", label: "Aldehyde enzyme block", receptor: "ALDH", action: "antagonist" },
+  { id: "achgut", label: "More acetylcholine in the gut", receptor: "muscarinic (gut)", action: "full" },
+  { id: "nmda", label: "Glutamate NMDA block", receptor: "NMDA", action: "antagonist" },
+  { id: "beta", label: "Beta receptor block", receptor: "beta-1 and beta-2", action: "antagonist" },
+  { id: "mt1", label: "Melatonin receptor stimulation", receptor: "MT1 and MT2", action: "full" },
+  { id: "a2d", label: "Alpha-2-delta calcium channel binding", receptor: "alpha-2-delta", action: "antagonist" },
+  { id: "5ht1a", label: "Serotonin 1A partial agonism", receptor: "5-HT1A", action: "partial" },
+  { id: "d2up", label: "D2 receptors grown oversensitive after long block", receptor: "D2", action: "antagonist" },
+  { id: "5ht3block", label: "Serotonin 3 block (anti-sickness)", receptor: "5-HT3", action: "antagonist" },
+  { id: "a2block", label: "Alpha-2 brake block (more transmitter released)", receptor: "alpha-2", action: "antagonist" },
+  { id: "d2ctz", label: "D2 block in the vomiting centre", receptor: "D2", action: "antagonist" },
+  { id: "ammonia", label: "Ammonia clearance slowed in the liver", receptor: "urea cycle (liver)", action: "antagonist" },
+  { id: "pth", label: "Parathyroid calcium sensor reset", receptor: "calcium-sensing receptor", action: "antagonist" },
+  { id: "d2meso", label: "D2 block in the reward pathway", receptor: "D2", action: "antagonist" },
 ];
 
 export const effectById = (id: string) => EFFECTS.find((e) => e.id === id);
 
-export type Mystery = { id: string; drug: string; who: string; story: string; clues: string[]; answer: string; options: string[]; why: string; topic: Topic };
+export type Mystery = {
+  id: string;
+  drug: string;
+  who: string;
+  story: string;
+  clues: string[];
+  answer: string;
+  options: string[];
+  why: string;
+  topic: Topic;
+  /** Why each wrong option is wrong, by content. */
+  not?: string;
+  tags?: ItemTags;
+};
 
-export const MYSTERIES: Mystery[] = [
+const BASE_MYSTERIES: Mystery[] = [
   {
     id: "olz-weight",
     drug: "olanzapine",
@@ -177,6 +220,17 @@ export const OUTCOMES: Outcome[] = [
   { id: "breath", label: "Sedation adds up: breathing slows" },
   { id: "reaction", label: "Flushing and vomiting reaction" },
   { id: "safe", label: "No important clash" },
+  { id: "bleed", label: "Bleeding risk goes up" },
+  { id: "lowna", label: "Sodium falls: confusion and falls" },
+  { id: "seiz", label: "Fits become more likely" },
+  { id: "wbc", label: "White cells may fall dangerously" },
+  { id: "bp", label: "Blood pressure drops: dizziness and falls" },
+  { id: "antichol", label: "Anticholinergic overload: confusion, retention, constipation" },
+  { id: "wd", label: "Sudden opioid withdrawal is triggered" },
+  { id: "blocked", label: "One medicine cancels the other's effect" },
+  { id: "downkid", label: "Level goes down: the kidneys clear more" },
+  { id: "slowpulse", label: "Pulse slows too far" },
+  { id: "masked", label: "Warning signs of low blood sugar are hidden" },
 ];
 
 export const outcomeById = (id: string) => OUTCOMES.find((o) => o.id === id);
@@ -192,9 +246,14 @@ export type Puzzle = {
   /** Liver or kidney puzzles animate the journey; others the receptor. */
   journey?: Omit<JourneyData, "caption"> & { caption?: string };
   receptor?: { receptor: string; caption: string };
+  /** Three fixed wrong outcomes, each checked to be false for this pair. */
+  options?: string[];
+  /** Why each wrong option is wrong, by content. */
+  not?: string;
+  tags?: ItemTags;
 };
 
-export const PUZZLES: Puzzle[] = [
+const BASE_PUZZLES: Puzzle[] = [
   {
     id: "ser-tram",
     a: "Sertraline",
@@ -333,6 +392,11 @@ export const PUZZLES: Puzzle[] = [
     topic: "antidepressants",
   },
 ];
+
+export const MYSTERIES: Mystery[] = [...BASE_MYSTERIES.map((m) => ({ ...m, ...BASE_TAGS[m.id] })), ...MORE_MYSTERIES];
+export const PUZZLES: Puzzle[] = [...BASE_PUZZLES.map((p) => ({ ...p, ...BASE_TAGS[p.id] })), ...MORE_PUZZLES];
+export { REVIEWS, type Review } from "./reviews";
+export const reviewById = (id: string) => REVIEWS.find((r) => r.id === id);
 
 /**
  * Medicines whose side effects or checks overlap (sedation and weight, the

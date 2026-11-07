@@ -4,7 +4,7 @@ import { z } from "zod";
 import { attemptsFor, rxXp, runSummary, type Answer } from "@/lib/games-sims/rx/game";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 
-const answer = z.object({ kind: z.enum(["chain", "mystery", "puzzle"]), id: z.string().min(1).max(30), picks: z.array(z.string().max(200)).max(4) });
+const answer = z.object({ kind: z.enum(["chain", "mystery", "puzzle", "review"]), id: z.string().min(1).max(30), picks: z.array(z.string().max(200)).max(4) });
 
 /** One answered question: graded again here and sent to the student model. */
 export async function gradeRxAnswer(input: Answer): Promise<{ ok: boolean }> {
