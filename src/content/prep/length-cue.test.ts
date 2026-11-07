@@ -13,6 +13,7 @@ const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "research-methods",
   "statistics",
   "psychometrics-assessment",
+  "cognitive",
   "psychopathology",
   "clinical-therapies",
   "counselling",
