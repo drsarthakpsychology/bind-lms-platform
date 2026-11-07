@@ -54,6 +54,48 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 }
 :::
 
+
+:::widget timeline
+{
+ "prompt": "Arrange these milestones in psychiatric classification in order.",
+ "events": [
+  {
+   "label": "Kraepelin separates dementia praecox from manic-depressive illness",
+   "when": "1899"
+  },
+  {
+   "label": "The ICD first includes a chapter on mental disorders",
+   "when": "1949"
+  },
+  {
+   "label": "The first DSM is published",
+   "when": "1952"
+  },
+  {
+   "label": "DSM-III brings explicit criteria and multiple axes",
+   "when": "1980"
+  },
+  {
+   "label": "ICD-10 is approved",
+   "when": "1992"
+  },
+  {
+   "label": "DSM-IV",
+   "when": "1994"
+  },
+  {
+   "label": "DSM-5 drops the multiaxial system",
+   "when": "2013"
+  },
+  {
+   "label": "ICD-11 comes into effect",
+   "when": "2022"
+  }
+ ],
+ "why": "The big turning point for exams is DSM-III in 1980, the shift to explicit, reliable criteria. ICD-11 is the version now in force; India's records and insurance still use ICD-10 codes in many places."
+}
+:::
+
 :::mcq
 Q: Which of the following is a Schneiderian first-rank symptom?
 - Persecutory delusion
@@ -190,6 +232,50 @@ Read the high-yield summary and do the activity here. The exam-style questions f
   ]
 }
 :::
+
+:::widget sort
+{
+ "prompt": "Which law is it? Sort each provision.",
+ "buckets": [
+  "Mental Healthcare Act 2017",
+  "Rights of Persons with Disabilities Act 2016",
+  "Rehabilitation Council of India Act 1992"
+ ],
+ "items": [
+  {
+   "text": "A person can make an advance directive about future mental health treatment",
+   "bucket": 0
+  },
+  {
+   "text": "A nominated representative supports decisions during treatment",
+   "bucket": 0
+  },
+  {
+   "text": "A person who attempts suicide is presumed to be under severe stress, unless shown otherwise",
+   "bucket": 0,
+   "why": "Section 115."
+  },
+  {
+   "text": "Mental illness is listed among the specified disabilities, with a certificate and reserved posts",
+   "bucket": 1
+  },
+  {
+   "text": "Clinical psychologists must be registered on the Central Rehabilitation Register",
+   "bucket": 2
+  },
+  {
+   "text": "Practising as a rehabilitation professional without registration is an offence",
+   "bucket": 2
+  },
+  {
+   "text": "The state must provide community-based mental health services close to home",
+   "bucket": 0,
+   "why": "Part of the right to access mental healthcare."
+  }
+ ]
+}
+:::
+
 :::mcq
 Q: On the MMPI-2, the F scale mainly detects:
 - Defensiveness
