@@ -67,7 +67,7 @@ describe("one shared course (exam tracks off)", () => {
   });
   it("names the section and the three exams, without dashes", () => {
     expect(PREP_TITLE).toBe("Psychology Entrance & Competitive Exam Preparation");
-    expect(PREP_EXAMS.join(" · ")).toBe("CUET-PG · UGC-NET · Clinical Psychology Entrances (M.Clin.Psy)");
+    expect(PREP_EXAMS.join(" · ")).toBe("CUET-PG · UGC-NET · Clinical Psychology Entrances (M.Clin.Psy) · MD Psychiatry");
     expect(PREP_TITLE + PREP_EXAMS.join("")).not.toMatch(/[\u2013\u2014]/);
   });
   it("weights every subject, averaged over the exams, summing to 1", () => {
@@ -298,7 +298,7 @@ describe("scoring", () => {
 describe("plan", () => {
   const snap = (theta: number, n: number): SkillSnap => ({ theta, n, lastAt: NOW.toISOString() });
   it("the shared plan lists every subject, weakest and most tested first", () => {
-    const plan = buildPlan(null, new Map([["statistics" as const, snap(-1.5, 5)], ["organisational" as const, snap(3, 20)]]), NOW);
+    const plan = buildPlan(null, new Map([["statistics" as const, snap(-3, 8)], ["organisational" as const, snap(3, 20)]]), NOW);
     expect(plan.map((t) => t.subject).sort()).toEqual([...SUBJECTS].sort());
     expect(plan[0].subject).toBe("statistics");
     expect(plan[plan.length - 1].subject).toBe("organisational");

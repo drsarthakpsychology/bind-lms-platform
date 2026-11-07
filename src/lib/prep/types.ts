@@ -4,7 +4,7 @@
  * Content lives in src/content/prep/<subject>.ts and src/content/prep/interviews/<category>.ts.
  */
 
-export type PrepExam = "cuet-pg" | "ugc-net" | "mcp-entrance" | "ma-semester";
+export type PrepExam = "cuet-pg" | "ugc-net" | "mcp-entrance" | "ma-semester" | "md-psychiatry";
 
 export const SUBJECTS = [
   "research-methods",
@@ -26,6 +26,8 @@ export const SUBJECTS = [
   "organisational",
   "indian-psychology",
   "ethics-law",
+  "psychopharmacology",
+  "clinical-psychiatry",
   "ugc-paper1",
 ] as const;
 export type Subject = (typeof SUBJECTS)[number];
