@@ -791,6 +791,13 @@ Q: Which test is most sensitive to dorsolateral frontal dysfunction?
 ## 2.4 Memory systems [core][beginner]
 "Memory" is not one thing. Patients can lose one kind and keep another, and the pattern tells you where the damage is.
 
+
+:::widget memoryflow
+{
+ "caption": "Follow information from the senses into working memory and long-term memory. Attention lets it in, rehearsal and meaningful encoding keep it, and retrieval brings it back. Henry Molaison lost the encoding step into long-term explicit memory."
+}
+:::
+
 ### The main systems
 - **Working memory**: holding something in mind for seconds while using it (a phone number while you dial). Frontal and parietal cortex.
 - **Explicit (declarative) memory**: what you can consciously recall.
@@ -995,6 +1002,13 @@ The HPA axis is a pressure cooker with a whistle. Normally, rising pressure (cor
 
 :::example Two kinds of stress in Bengaluru
 Nikhil, 28, has a deadline every quarter: tense for a week, then recovers. Lakshmi, 45, has cared for her husband with dementia for three years, sleeps four hours, and has no relief. Both are "stressed", but Lakshmi's stress is chronic, unpredictable and uncontrollable, the kind most linked to depression, raised blood pressure and poor immunity.
+:::
+
+
+:::widget stress
+{
+ "caption": "Trigger a stressor and watch the chain: amygdala, hypothalamus, pituitary, adrenal. Heart rate jumps first (sympathetic nerves), cortisol rises more slowly, then feedback brings both down. Switch on chronic stress and see the brake fail."
+}
 :::
 
 ### Sleep

@@ -297,6 +297,36 @@ Rituals give time, company and permission to grieve. But rituals can also hide g
 }
 :::
 
+
+:::widget compare
+{
+ "title": "Normal grief and prolonged grief disorder",
+ "a": {
+  "label": "Normal grief",
+  "points": [
+   "Waves of yearning that ease over months",
+   "Self-esteem preserved",
+   "Can still enjoy some things",
+   "Returns to roles and routines",
+   "Continuing bonds feel comforting"
+  ],
+  "summary": "Painful but moving; no treatment needed, only support."
+ },
+ "b": {
+  "label": "Prolonged grief disorder",
+  "points": [
+   "Intense yearning or preoccupation nearly every day",
+   "Feels part of self has died",
+   "Avoids reminders or cannot accept the death",
+   "Life feels meaningless; marked loneliness",
+   "Impairment well beyond cultural norms and time limits"
+  ],
+  "summary": "Stuck; grief-focused therapy helps."
+ },
+ "caption": "Slide between the two and list the features you would ask about in an interview."
+}
+:::
+
 ### When grief becomes a disorder
 **Prolonged grief disorder** is a newer diagnosis: intense yearning or preoccupation with the dead person, with marked distress such as feeling part of oneself has died, disbelief, avoiding reminders, intense emotional pain, numbness, feeling life is meaningless, or intense loneliness, persisting **well beyond the expected period** for the person's culture, and impairing life.
 

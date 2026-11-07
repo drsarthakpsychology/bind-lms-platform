@@ -76,6 +76,34 @@ Clinical care is a relay race. The case sheet is the baton. A smooth handover (c
 }
 :::
 
+
+:::widget compare
+{
+ "title": "A weak and a strong entry",
+ "a": {
+  "label": "Weak",
+  "points": [
+   "\"Pt attention-seeking, drama\"",
+   "No source given",
+   "No patient's words",
+   "Undated, unsigned"
+  ],
+  "summary": "Judgement dressed as fact."
+ },
+ "b": {
+  "label": "Strong",
+  "points": [
+   "Behaviour described: cut forearm after an argument",
+   "Per mother, and the patient quoted",
+   "Relevant negatives recorded",
+   "Dated, timed, signed"
+  ],
+  "summary": "Accurate, attributed, defensible."
+ },
+ "caption": "Slide across and rewrite one of your own recent notes in the strong style."
+}
+:::
+
 :::student
 This module is about **writing**. How to **ask** questions in the interview is taught in **The psychiatric interview and MSE** module, and how to observe and describe each part of the mental state in depth is in **The MSE in depth**. Here you learn to turn all of that into a clear, defensible record.
 :::
@@ -661,6 +689,37 @@ The MSE is a photograph of today. The HPI is the film that led to it: scene by s
  ],
  "answer": 1,
  "why": "Two depressive episodes reach the major depression zone, with a period in the hypomania band between them that Ms G recalled only as 'feeling good'. A life chart from an informant can change the diagnosis to bipolar II and change treatment."
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put Mr S's story in the order you would write his HPI.",
+ "events": [
+  {
+   "label": "Apparently well until about five months ago"
+  },
+  {
+   "label": "Robbery at his shop"
+  },
+  {
+   "label": "Tense, sleeping poorly"
+  },
+  {
+   "label": "Early morning waking, loss of interest, weight loss"
+  },
+  {
+   "label": "Ideas of being a burden"
+  },
+  {
+   "label": "Says the family would be better off without him"
+  },
+  {
+   "label": "Stops opening the shop; brought for help"
+  }
+ ],
+ "why": "An HPI is a story in time order, from the last well point to today."
 }
 :::
 

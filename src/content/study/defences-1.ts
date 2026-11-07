@@ -181,6 +181,36 @@ Freud proposed that children pass through stages where pleasure centres on diffe
 | **Latency** | About 6 to puberty | Skills, school, friendships | (A quiet period) |
 | **Genital** | Puberty onwards | Mature sexuality and love | Healthy adult relationships |
 
+
+:::widget timeline
+{
+ "prompt": "Put Freud's psychosexual stages in order.",
+ "events": [
+  {
+   "label": "Oral",
+   "when": "first year"
+  },
+  {
+   "label": "Anal",
+   "when": "about 1 to 3"
+  },
+  {
+   "label": "Phallic",
+   "when": "about 3 to 6"
+  },
+  {
+   "label": "Latency",
+   "when": "about 6 to puberty"
+  },
+  {
+   "label": "Genital",
+   "when": "puberty onwards"
+  }
+ ],
+ "why": "Oral, anal, phallic, latency, genital. Learn the order for exams, and remember that the stages themselves have weak research support."
+}
+:::
+
 :::mnemonic "Old Age Pensioners Love Grapes"
 **O**ral, **A**nal, **P**hallic, **L**atency, **G**enital.
 :::
@@ -1046,6 +1076,14 @@ A neutral stimulus paired repeatedly with one that naturally causes a response c
 }
 :::
 
+
+:::widget conditioning
+{
+ "kind": "classical",
+ "caption": "Play Pavlov's experiment step by step, then extinction. Swap in a lift and a panic attack to see how phobias can start."
+}
+:::
+
 ### Operant conditioning (Thorndike, Skinner)
 Behaviour is shaped by its **consequences**.
 | | Adding something | Taking something away |
@@ -1113,6 +1151,14 @@ Behaviour is shaped by its **consequences**.
   }
  ],
  "caption": "Exposure breaks this loop at the escape step. Find the step a therapist would target."
+}
+:::
+
+
+:::widget conditioning
+{
+ "kind": "operant",
+ "caption": "Watch how a variable ratio schedule keeps lever pressing high, and how removing reward first causes an extinction burst before behaviour fades."
 }
 :::
 
