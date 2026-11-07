@@ -3,6 +3,10 @@ export const part2 = String.raw`
 # Part II · Beginner: conditioning and learning in depth
 
 ## 2.1 Classical conditioning: timing, extinction and its limits [core][beginner]
+
+:::widget figure
+{"id": "pavlov-apparatus", "quiz": true}
+:::
 ### Timing matters
 How the CS and UCS are arranged in time decides how well conditioning works.
 | Arrangement | What happens | How well it works |
@@ -336,6 +340,10 @@ Charles Ferster and B. F. Skinner (1957) spent years recording how the **pattern
 }
 :::
 
+:::widget figure
+{"id": "reinforcement-schedules"}
+:::
+
 ### Beyond the basic four
 - **Concurrent schedules**: two options, each on its own schedule. Richard Herrnstein's **matching law** (1961): the proportion of responses given to an option matches the proportion of reinforcement it provides. People split their time between activities, and between drugs and other rewards, in roughly this way.
 - **Differential reinforcement**: reinforce an **alternative** behaviour (DRA), an **incompatible** behaviour (DRI), **other** behaviour or its absence over a period (DRO), or **low rates** of a behaviour (DRL). These are core tools in applied behaviour analysis.
@@ -482,6 +490,10 @@ Q: In Bandura's 1965 study, offering incentives made children in all three group
 > All groups had learned; consequences affected only performance.
 :::
 
+:::widget figure
+{"id": "bobo-doll"}
+:::
+
 ## 2.5 Behaviour modification: from principles to practice [core][beginner]
 **Behaviour modification** applies learning principles to change behaviour. It always starts with a **functional analysis**, often written as **A-B-C**:
 - **Antecedents**: what comes before (place, people, time, triggers).
@@ -526,6 +538,10 @@ Q: In Bandura's 1965 study, offering incentives made children in all three group
  ],
  "caption": "Reciprocal inhibition: relaxation and anxiety cannot occur together."
 }
+:::
+
+:::widget figure
+{"id": "little-albert", "quiz": true}
 :::
 
 ### Techniques built on operant conditioning

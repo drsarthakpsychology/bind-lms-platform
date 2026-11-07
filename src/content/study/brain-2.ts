@@ -22,6 +22,10 @@ A medicine binds a receptor in seconds, yet most psychiatric medicines take week
 The receptor is a doorbell. Ringing it once (the transmitter) sets off a chain in the house: someone walks to the door, calls others, and eventually the family rearranges the furniture. Medicines that ring the bell every day for weeks end up changing the whole layout, which is why their full effect is slow.
 :::
 
+:::widget figure
+{"id": "gpcr-scene"}
+:::
+
 ### Receptors change with use
 - **Downregulation**: with constant stimulation, cells reduce the number of receptors or uncouple them (desensitisation). This underlies **tolerance**.
 - **Upregulation**: with constant blockade, cells add receptors. Long-term D2 blockade upregulates D2 receptors, one theory of **tardive dyskinesia** and of **supersensitivity psychosis** after stopping antipsychotics.
@@ -77,6 +81,10 @@ Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an S
 }
 :::
 
+:::widget figure
+{"id": "ssri-synapse"}
+:::
+
 ### Allosteric modulators and the NMDA receptor
 - **Benzodiazepines** do not open the GABA-A channel themselves. They bind a separate site and make GABA more effective (positive allosteric modulators). That is why they are safer alone than barbiturates, which can open the channel directly at high doses.
 - The **NMDA receptor** needs two things at once: glutamate binding and a depolarised cell that pushes out the magnesium plug. It is a **coincidence detector**, which makes it the key to learning (Sections 5.3 and 5.5). Ketamine and memantine block it inside the channel.
@@ -126,6 +134,10 @@ Q: Zuranolone and brexanolone act mainly as:
 - NMDA antagonists
 - Serotonin reuptake inhibitors
 > They are neurosteroid analogues at GABA-A.
+:::
+
+:::widget figure
+{"id": "nmda-receptor"}
 :::
 
 `;
@@ -443,6 +455,10 @@ Q: Long-term potentiation depends especially on which receptor acting as a coinc
 
 export const a6Imaging = String.raw`
 ## 6.3 Seeing and stimulating the brain [core][advanced]
+
+:::widget figure
+{"id": "eeg-10-20"}
+:::
 ### Tools to look at the brain
 | Tool | What it shows | Good for in psychiatry |
 |---|---|---|
@@ -542,6 +558,10 @@ Q: Alpha rhythm is best seen:
 - During a seizure
 - In coma
 > Posterior alpha with eyes closed is the normal awake resting rhythm.
+:::
+
+:::widget figure
+{"id": "ect-placements"}
 :::
 
 `;

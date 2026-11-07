@@ -592,6 +592,10 @@ Q: A 5-year-old insists a tall thin glass holds more juice than a short wide one
 > Failure of conservation marks the preoperational stage.
 :::
 
+:::widget figure
+{"id": "conservation-liquid"}
+:::
+
 ## 1.5 Level check · Starting [core][starting]
 Score 80% or more to open the Beginner level.
 
@@ -1227,6 +1231,10 @@ Jean Piaget (1896 to 1980) watched children, including his own, and saw that the
 }
 :::
 
+:::widget figure
+{"id": "three-mountains"}
+:::
+
 ### What changes at each stage
 | Stage | Key achievements | Key limits |
 |---|---|---|
@@ -1357,6 +1365,10 @@ A neutral stimulus paired repeatedly with one that naturally causes a response c
 }
 :::
 
+:::widget figure
+{"id": "pavlov-apparatus"}
+:::
+
 ### Operant conditioning (Thorndike, Skinner)
 Behaviour is shaped by its **consequences**.
 | | Adding something | Taking something away |
@@ -1366,6 +1378,10 @@ Behaviour is shaped by its **consequences**.
 
 :::trap Negative reinforcement is not punishment
 "Negative" means **removing** something; "reinforcement" means the behaviour **increases**. Avoidance in anxiety is kept going by negative reinforcement: leaving the crowded bus removes the fear, so you leave again next time.
+:::
+
+:::widget figure
+{"id": "skinner-box"}
 :::
 
 ### Schedules of reinforcement
@@ -1435,8 +1451,16 @@ Behaviour is shaped by its **consequences**.
 }
 :::
 
+:::widget figure
+{"id": "reinforcement-schedules"}
+:::
+
 ### Social learning (Bandura)
 People learn by **watching others** (observational learning, modelling). In the **Bobo doll** studies, children who watched an adult hit a doll copied the aggression. Bandura's four steps: **attention, retention, reproduction, motivation**. He also described **self-efficacy**: belief in one's own ability to succeed, which strongly predicts whether people try.
+
+:::widget figure
+{"id": "bobo-doll"}
+:::
 
 ### Learned helplessness (Seligman)
 Animals exposed to shocks they could not escape later failed to escape even when they could. Seligman linked this to depression: after repeated uncontrollable events, people stop trying. The later **reformulated** model added attributions: depression is more likely when bad events are explained as **internal** ("it's me"), **stable** ("it will always be like this") and **global** ("it ruins everything").

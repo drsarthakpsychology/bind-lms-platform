@@ -6,7 +6,10 @@
  */
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
+import { MODULES } from "@/lib/study";
+import type { Block } from "@/lib/study/types";
 import { Widget } from "../../widgets";
+import { FIGURES } from "../registry";
 import { CHARTS } from "./index";
 
 beforeAll(() => {
@@ -17,6 +20,28 @@ afterEach(cleanup);
 /** Rough width of a label name at 11px. */
 const nameW = (s: string) => s.length * 6;
 const box = (l: { x: number; y: number; name: string }) => ({ x0: l.x - 9, x1: l.x + 12 + nameW(l.name), y0: l.y - 9, y1: l.y + 9 });
+
+function figureIds(blocks: Block[], out: string[] = []): string[] {
+  for (const b of blocks) {
+    if (b.t === "widget" && b.kind === "figure") out.push((b.data as { id: string }).id);
+    else if ("blocks" in b && Array.isArray(b.blocks)) figureIds(b.blocks, out);
+  }
+  return out;
+}
+
+describe("chart placements in the study modules", () => {
+  const ids = new Set(CHARTS.map((f) => f.id));
+  const placed = MODULES.flatMap((m) => m.sections.flatMap((s) => figureIds(s.blocks)).map((id) => ({ m: m.id, id })));
+  it("every placed figure exists", () => {
+    expect(placed.filter((p) => !FIGURES[p.id]).map((p) => `${p.m}: ${p.id}`)).toEqual([]);
+  });
+  it("places chart figures at least 120 times, and every chart at least once", () => {
+    const charts = placed.filter((p) => ids.has(p.id));
+    expect(charts.length).toBeGreaterThanOrEqual(120);
+    const used = new Set(charts.map((p) => p.id));
+    expect(CHARTS.filter((f) => !used.has(f.id)).map((f) => f.id)).toEqual([]);
+  });
+});
 
 describe("chart figures", () => {
   it("has at least 40 figures with unique ids", () => {

@@ -88,6 +88,10 @@ The paradox that "a stimulant calms a hyperactive child" is not really a paradox
 {"prompt": "After a dose of ordinary (immediate-release) methylphenidate, for about how many hours does the effect last?", "min": 1, "max": 16, "unit": "hours", "answer": [3, 5], "reveal": "Only about 3 to 4 hours, so it is often given two or three times a day. Slow-release and extended-release forms last about 6 to 12 hours, covering the whole school day with one morning dose.", "clinician": "Methylphenidate IR: onset 20 to 60 minutes, duration 3 to 5 hours, half-life about 2 to 3 hours. SR/LA preparations about 6 to 8 hours; OROS (osmotic) about 10 to 12 hours. Food delays absorption slightly but does not reduce it."}
 :::
 
+:::widget figure
+{"id": "stimulant-synapse"}
+:::
+
 ### Side effects families ask about
 - **Appetite loss** (the commonest): give a good breakfast before the dose and a larger evening meal; check weight and height regularly.
 - **Trouble falling asleep**: avoid late doses; melatonin can help.

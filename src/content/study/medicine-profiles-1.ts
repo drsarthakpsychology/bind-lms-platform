@@ -24,6 +24,10 @@ A full agonist turns a light fully on; an antagonist keeps it off; a partial ago
 {"prompt": "How does each medicine mainly act? Place each.", "buckets": ["Blocks a transporter (reuptake)", "Blocks a receptor (antagonist)", "Partial agonist", "Blocks an enzyme"], "items": [{"text": "Sertraline keeps serotonin in the synapse longer", "bucket": 0}, {"text": "Haloperidol blocks dopamine D2 receptors", "bucket": 1}, {"text": "Aripiprazole partly stimulates D2 receptors", "bucket": 2}, {"text": "Donepezil stops acetylcholine being broken down", "bucket": 3}, {"text": "Methylphenidate stops dopamine and noradrenaline being taken back up", "bucket": 0}, {"text": "Buprenorphine partly stimulates opioid receptors", "bucket": 2}, {"text": "Naltrexone blocks opioid receptors", "bucket": 1}, {"text": "Moclobemide and older MAOIs stop monoamines being broken down", "bucket": 3}]}
 :::
 
+:::widget figure
+{"id": "partial-agonist"}
+:::
+
 ### The journey of a tablet
 :::widget flow
 {"title": "From swallowing a tablet to a change in the brain", "layout": "chain", "nodes": [{"id": "a", "label": "Swallowed", "detail": "The tablet dissolves in the stomach and small intestine. Food, acidity and gut speed affect how fast."}, {"id": "b", "label": "Absorbed", "detail": "The medicine crosses the gut wall into the blood that drains to the liver."}, {"id": "c", "label": "First pass through the liver", "detail": "Liver enzymes break down part of the dose before it reaches the rest of the body. Some medicines lose most of their dose here."}, {"id": "d", "label": "Carried in the blood", "detail": "Much of the medicine travels stuck to blood proteins; only the free part can act."}, {"id": "e", "label": "Crosses into the brain", "detail": "Fat-soluble medicines pass the blood-brain barrier. Some are pumped back out, which is why a few reach the brain poorly."}, {"id": "f", "label": "Binds its target", "detail": "Receptors, transporters, enzymes or ion channels. The chemical change starts here."}, {"id": "g", "label": "The brain adapts", "detail": "Over days to weeks, receptors and connections change. Many benefits, and some side effects, come from this stage."}, {"id": "h", "label": "Removed", "detail": "Broken down by the liver and removed by the kidneys or bile. The half-life tells you how fast."}], "caption": "Press Play to follow a dose step by step. Problems can arise at any step: poor absorption, enzyme interactions, kidney disease, or a brain that adapts slowly."}
@@ -107,6 +111,10 @@ The **half-life** is the time it takes for the blood level to fall by half. It d
 {"drug": "sertraline", "target": "serotonin transporters in the raphe nuclei and their projections to cortex and limbic areas", "routes": ["oral"], "notes": {"liver": "Sertraline is broken down by several CYP enzymes, so few single drugs change its level much. That is one reason it is a safe first choice.", "out": "Half-life about a day, so once daily is enough and steady state comes in about five days."}, "caption": "Follow one dose of sertraline from tablet to target. Each stop is a place where an interaction or an illness can change what happens."}
 :::
 
+:::widget figure
+{"id": "pk-steady-state"}
+:::
+
 ### Interactions: when medicines meet
 Two medicines can affect each other in two broad ways:
 - **One changes the other's level**: for example, one medicine blocks the liver enzyme that breaks down another, so the second builds up and causes side effects; or one speeds up the enzyme, so the second falls and stops working.
@@ -160,6 +168,10 @@ Q: Adding valproate to lamotrigine requires:
 
 ## 1.3 Side effects come from receptors [core][starting]
 Most side effects are not random. They come from a medicine acting on receptors **other than** the one it was meant for, or acting on the right receptor in the wrong part of the body. If you know a medicine's receptor profile, you can predict its side effects.
+
+:::widget figure
+{"id": "tca-synapse", "quiz": true}
+:::
 
 ### The side-effect map
 | If a medicine blocks... | Expect... |

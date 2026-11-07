@@ -772,6 +772,10 @@ Key ideas:
 A string of small lights flashing one after another along a balcony in Ahmedabad looks like a single light racing around the building. That is the phi phenomenon. Rangoli patterns rely on closure and symmetry: your eye completes the shape even where the powder line breaks.
 :::
 
+:::widget figure
+{"id": "kanizsa-triangle"}
+:::
+
 ### Psychoanalysis
 **Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). His great book on dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in the NET syllabus, a "first force", and the source of much of clinical psychology.
 

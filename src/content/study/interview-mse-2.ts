@@ -671,6 +671,10 @@ Record the sense involved, whether consciousness was clear, and whether the pati
 - **Illusion**: the stimulus **transforms** and becomes an integral part of the new perception (the fan's sound becomes the voice).
 :::
 
+:::widget figure
+{"id": "muller-lyer"}
+:::
+
 ### D · Depersonalisation and derealisation
 :::define Depersonalisation and derealisation
 **Depersonalisation**: an alteration in the perception of **self**, so that one's own reality feels (as if) temporarily changed or lost. **Derealisation**: an alteration in the perception of the **external world**, so that its reality feels (as if) changed or lost.
@@ -736,6 +740,10 @@ Q: Which hallucination most strongly suggests an organic cause rather than schiz
 Significant disturbance of cognition commonly points to an **organic psychiatric disorder**. This section catches delirium masquerading as a psychiatric presentation. Never skip it; emphasise it whenever delirium or dementia is possible.
 :::
 
+:::widget figure
+{"id": "copy-and-clock"}
+:::
+
 ### The hierarchy of testing
 Test in a fixed order, because each function depends on the one before:
 **Consciousness, then orientation, then attention, then concentration, then memory, then intelligence and abstraction.**
@@ -780,6 +788,10 @@ Is attention easily aroused and sustained? **Digit span**: repeat digits forward
 | Remote | Date and place of marriage; children's names and birthdays; school, teachers |
 
 Note any amnesia (anterograde or retrograde) and **confabulation**: a false memory the patient believes is true.
+
+:::widget figure
+{"id": "working-memory-model", "quiz": true}
+:::
 
 ### 6 · Intelligence
 :::define Intelligence

@@ -340,6 +340,10 @@ Methamphetamine, amphetamines, cocaine, MDMA ("ecstasy") and mephedrone. Effects
 {"transmitter": "dopamine", "title": "Two ways stimulants flood the synapse", "caption": "Pick the SSRI or a reuptake block to picture cocaine: dopamine is released normally but cannot be taken back up. Pick amphetamine: it enters the nerve ending and pushes dopamine out through the transporter, so release happens even without a signal. Both end with far more dopamine in the reward pathway than any natural reward produces."}
 :::
 
+:::widget figure
+{"id": "stimulant-synapse"}
+:::
+
 ### Sedatives and hypnotics
 Benzodiazepines (alprazolam, clonazepam, nitrazepam, diazepam) and "Z-drugs" (zolpidem). Often started on prescription, then continued for years. Tolerance develops quickly, and **sudden stopping after long use can cause seizures and delirium**, like alcohol withdrawal. Mixing with alcohol or opioids is a common cause of fatal overdose.
 

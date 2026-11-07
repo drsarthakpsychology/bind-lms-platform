@@ -12,6 +12,10 @@ export const part3 = String.raw`
 | Nigrostriatal | Substantia nigra to dorsal striatum | D2 blockade here causes extrapyramidal side effects |
 | Tuberoinfundibular | Hypothalamus to pituitary | D2 blockade raises prolactin |
 
+:::widget figure
+{"id": "antipsychotic-d2"}
+:::
+
 ### What imaging actually shows
 - The strongest, most replicated finding is **increased presynaptic dopamine synthesis and release capacity**, especially in the **associative (dorsal) striatum**, rather than more D2 receptors. It is present in people at clinical high risk who go on to develop psychosis and rises as psychosis emerges, a line of work led by Oliver Howes.
 - **Aberrant salience** (Kapur): dysregulated dopamine assigns importance to irrelevant events and perceptions; delusions are the person's attempt to explain this strange sense of significance. Antipsychotics dampen salience, so beliefs lose urgency before they fade.
@@ -57,12 +61,20 @@ Q: Why might some people with treatment-resistant schizophrenia not respond to D
 > A proposed subgroup with "normodopaminergic" illness.
 :::
 
+:::widget figure
+{"id": "nmda-receptor"}
+:::
+
 ## 4.2 Antipsychotic pharmacology and the first non-dopamine drug [core][advanced]
 ### The D2 occupancy window
 PET studies show that antipsychotic response becomes likely at around **65%** striatal D2 occupancy; prolactin rises above about **72%**; extrapyramidal side effects become likely above about **78%**. This narrow window explains why "more" is not "better", and why low doses work in first episodes.
 
 :::widget guess
 {"prompt": "PET studies suggest antipsychotic response becomes likely at roughly what percentage of striatal D2 receptors occupied?", "min": 0, "max": 100, "unit": "%", "answer": [60, 70], "reveal": "About 65%. Above roughly 78%, stiffness and tremor become likely. The useful range is narrow.", "clinician": "Shitij Kapur's PET work found response at about 65% occupancy, hyperprolactinaemia above about 72%, and EPS above about 78%."}
+:::
+
+:::widget figure
+{"id": "d2-occupancy", "quiz": true}
 :::
 
 ### Receptor profiles that explain side effects

@@ -534,6 +534,10 @@ In 1961, Bandura, Ross and Ross showed nursery-school children an adult who eith
 }
 :::
 
+:::widget figure
+{"id": "bobo-doll"}
+:::
+
 ### Situational triggers
 - **Heat**: hotter days, summers and regions see more violent crime (Craig Anderson's work); rising temperatures are now studied as a climate-change risk for violence.
 - **Alcohol**: narrows attention to the most salient cues (Steele and Josephs's **alcohol myopia**), so provocation looms larger than restraint.

@@ -103,6 +103,10 @@ Medicines can help **short-term** insomnia, but tolerance, dependence, falls, me
 {"receptor": "orexin", "title": "Orexin blockers: switching off the wake signal", "caption": "Orexin (also called hypocretin) is a wake-promoting signal from the hypothalamus. Medicines such as suvorexant, lemborexant and daridorexant are antagonists at orexin receptors: they turn the wake signal down rather than sedating the whole brain. In narcolepsy, the orexin cells themselves are lost, which is why sleep intrudes into the day."}
 :::
 
+:::widget figure
+{"id": "benzo-gabaa"}
+:::
+
 ### Narcolepsy and sleep apnoea
 - **Narcolepsy**: scheduled naps and good sleep habits, plus medicines for sleepiness (modafinil, pitolisant, solriamfetol, sodium oxybate) and for cataplexy (sodium oxybate, pitolisant, some antidepressants).
 - **Obstructive sleep apnoea**: **CPAP** (a mask that keeps the airway open with gentle air pressure) is the most effective treatment; weight loss, sleeping on the side, avoiding alcohol and sedatives, dental devices; surgery in selected cases. New weight-loss medicines are now licensed for sleep apnoea with obesity in some countries.

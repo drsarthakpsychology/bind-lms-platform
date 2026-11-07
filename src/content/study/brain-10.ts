@@ -42,6 +42,10 @@ Exams ask you to "discuss the biological basis of schizophrenia" in 15 marks. A 
 }
 :::
 
+:::widget figure
+{"id": "nmda-receptor"}
+:::
+
 ### Other neurotransmitter contributions
 - **GABA**: David Lewis's post-mortem work shows reduced GAD67 and parvalbumin in prefrontal interneurons, linked to working-memory deficits.
 - **Serotonin**: LSD and psilocybin (5-HT2A agonists) cause hallucinations; Herbert Meltzer proposed that a high **5-HT2A to D2 blocking ratio** defines "atypical" antipsychotics; pimavanserin, a 5-HT2A inverse agonist, treats Parkinson's disease psychosis.
@@ -290,6 +294,10 @@ Q: Maier and Seligman's later neuroscience of learned helplessness concluded tha
 - Serotonin plays no part
 - Helplessness cannot be reversed
 > A reversal of the original account.
+:::
+
+:::widget figure
+{"id": "lithium-neuron"}
 :::
 
 ## 7.3 Biological theories of anxiety, OCD and PTSD [core][advanced]

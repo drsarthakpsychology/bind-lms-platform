@@ -80,6 +80,10 @@ Sleep comes in cycles of about **90 minutes**, repeated four or five times a nig
 - **Deep sleep** (stage N3, slow-wave sleep): the hardest to wake from; more in the first half of the night; important for physical recovery.
 - **REM sleep** (rapid eye movement): vivid dreaming; the body's muscles are temporarily paralysed so we don't act out dreams; more in the second half of the night.
 
+:::widget figure
+{"id": "hypnogram"}
+:::
+
 ### What controls sleep
 - **Sleep pressure**: the longer you stay awake, the more a chemical called **adenosine** builds up and makes you sleepy. Caffeine blocks it.
 - **The body clock** (circadian rhythm): a 24-hour clock in the brain, set mainly by **light**, especially morning light. Darkness releases **melatonin**, which signals night.
@@ -150,6 +154,10 @@ Q: Alcohol at bedtime:
 - Has no effect on sleep
 - Treats insomnia
 > Avoid alcohol as a sleep aid.
+:::
+
+:::widget figure
+{"id": "two-process-sleep"}
 :::
 
 ## 1.3 When the body carries distress [core][starting]

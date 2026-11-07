@@ -75,6 +75,10 @@ The brain balances an accelerator and a brake. **Glutamate** is the main acceler
 {"receptor": "GABA-A (benzodiazepine site)", "title": "Four kinds of key at the benzodiazepine site", "caption": "The benzodiazepine site is a second lock on the GABA-A receptor. Diazepam acts like a full agonist there: it makes GABA work much harder. Flumazenil is an antagonist: it sits in the site and blocks benzodiazepines, which is why it reverses an overdose. Some experimental compounds are inverse agonists: they make GABA work less and cause anxiety and seizures. Partial agonists were tried as calming drugs with less dependence."}
 :::
 
+:::widget figure
+{"id": "benzo-gabaa"}
+:::
+
 ### Medicines that strengthen the brake
 | Medicine group | Examples | Main use |
 |---|---|---|
@@ -256,6 +260,10 @@ The oldest and best-proven mood stabiliser. It prevents mania and depression, tr
 Take blood **12 hours after the last dose**, about **5 to 7 days** after starting or changing the dose. Usual maintenance is about **0.6 to 0.8 mmol/L**, rising to 0.8 to 1.0 if relapses continue; acute mania often needs about 0.8 to 1.0 with close monitoring; older adults usually lower (about 0.4 to 0.7). Lithium has a **narrow therapeutic range**: the toxic level is close to the useful one.
 :::
 
+:::widget figure
+{"id": "lithium-neuron"}
+:::
+
 ### Before starting and monitoring
 | When | What |
 |---|---|
@@ -346,6 +354,10 @@ Q: A man stable on lithium is started on ibuprofen for back pain by his GP. The 
 - No interaction
 - Kidney stones only
 > NSAIDs, ACE inhibitors and thiazides raise lithium levels.
+:::
+
+:::widget figure
+{"id": "pk-single-dose"}
 :::
 
 ## 1.2 Valproate [core][beginner]
@@ -680,6 +692,10 @@ Benzodiazepines are **positive allosteric modulators of the GABA-A receptor**: t
 
 :::widget compare
 {"title": "Alprazolam and diazepam: same receptor, different journeys", "a": {"label": "Alprazolam", "points": ["Short half-life", "Fast calm, fast wear-off", "Rebound anxiety between doses", "Sharp withdrawal; strong misuse potential", "Hard to taper directly"], "summary": "Avoided for new prescriptions where possible."}, "b": {"label": "Diazepam", "points": ["Long half-life with active metabolites", "Smooth levels", "Gentle withdrawal", "Builds up in older people and in liver disease", "Used as the vehicle for tapering"], "summary": "Preferred for planned withdrawal regimens, with care in older adults."}, "caption": "Slide between the two. The receptor action is the same; the half-life decides how dependence and withdrawal feel."}
+:::
+
+:::widget figure
+{"id": "benzo-gabaa", "quiz": true}
 :::
 ### Risks
 - **Tolerance and dependence** (can develop within weeks), misuse.

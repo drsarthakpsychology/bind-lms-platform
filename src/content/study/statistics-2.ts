@@ -106,6 +106,10 @@ Each effect has its own F = MS effect ÷ MS within. A significant interaction me
 {"title": "The ANOVA family", "layout": "tree", "nodes": [{"id": "a", "label": "Comparing means with ANOVA", "detail": ""}, {"id": "one", "label": "One IV, separate groups", "detail": "One-way ANOVA", "parent": "a"}, {"id": "fac", "label": "Two or more IVs", "detail": "Factorial ANOVA: main effects and interactions", "parent": "a"}, {"id": "rm", "label": "Same people in every condition", "detail": "Repeated-measures ANOVA; check sphericity", "parent": "a"}, {"id": "mix", "label": "One between, one within factor", "detail": "Mixed ANOVA: group × time", "parent": "a"}, {"id": "anc", "label": "Plus a continuous covariate", "detail": "ANCOVA", "parent": "a"}, {"id": "man", "label": "Several correlated DVs", "detail": "MANOVA", "parent": "a"}]}
 :::
 
+:::widget figure
+{"id": "factorial-interaction"}
+:::
+
 ### Repeated-measures ANOVA
 The same people are measured under every condition (or at several time points). Individual differences are removed from the error term, so it is **more powerful**.
 - Extra assumption: **sphericity**: the variances of the differences between all pairs of conditions are equal. Tested by **Mauchly's test**. If violated, correct the df with **Greenhouse-Geisser** (conservative) or **Huynh-Feldt**.

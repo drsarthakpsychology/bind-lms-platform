@@ -500,6 +500,10 @@ Q: A man says, "I know it's ridiculous, but I keep thinking my hands are contami
 :::
 
 ## 2.3 Perception: true and pseudo-hallucinations, illusions and more [core][beginner]
+
+:::widget figure
+{"id": "muller-lyer"}
+:::
 ### The questions that sort perceptions
 1. **Is there a real stimulus?** If yes and it is misperceived: **illusion**. If no: **hallucination** (or imagery).
 2. **Where is it experienced?** Out in the world, through the senses: **true hallucination**. Inside the head, "in my mind's ear", with insight that it comes from within: **pseudo-hallucination**.
@@ -580,6 +584,10 @@ Q: A man hears a voice commenting on his actions only when the ceiling fan is on
 
 ## 2.4 Cognition at the bedside [core][beginner]
 Cognition is the part of the MSE most often done **badly**: rushed, or skipped because the patient "seems fine". Problems with attention and memory change everything that follows.
+
+:::widget figure
+{"id": "copy-and-clock"}
+:::
 
 ### A quick, reliable bedside sequence
 1. **Level of consciousness**: alert, drowsy, fluctuating?

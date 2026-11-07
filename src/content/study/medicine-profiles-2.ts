@@ -16,6 +16,10 @@ You met the idea of reuptake at the Starting level. Here each medicine gets its 
 - **Lasting side effects**: sexual problems (delayed orgasm, low desire), sweating, emotional blunting in some.
 - **Serious but uncommon**: low sodium in older people, bleeding (especially with NSAIDs or anticoagulants, because platelets need serotonin to clump), serotonin toxicity with other serotonergic drugs, switch to mania in bipolar disorder, increased suicidal thinking early in treatment in people under about 25.
 
+:::widget figure
+{"id": "ssri-synapse"}
+:::
+
 ### What makes each one different
 | Medicine | Its distinctive point | Clinical consequence |
 |---|---|---|
@@ -296,6 +300,10 @@ Clozapine is the only antipsychotic proven to work when two others have failed (
 {"title": "Starting clozapine safely", "layout": "chain", "nodes": [{"id": "a", "label": "Confirm treatment resistance", "detail": "Two adequate trials of different antipsychotics (adequate dose, duration and adherence), with persisting symptoms."}, {"id": "b", "label": "Baseline checks", "detail": "Full blood count with neutrophils, weight, BMI, blood pressure, pulse, temperature, glucose or HbA1c, lipids, ECG; troponin and CRP baseline; bowel habit; smoking status."}, {"id": "c", "label": "Register and consent", "detail": "Register with the blood monitoring service; explain side effects, blood tests and what to report (fever, sore throat, chest pain, constipation)."}, {"id": "d", "label": "Titrate slowly", "detail": "Start with 12.5 mg once or twice on day 1, increase gradually towards a target, often 300 to 450 mg, watching pulse, blood pressure and temperature."}, {"id": "e", "label": "Monitor blood counts", "detail": "Weekly at first, then fortnightly, then monthly, according to the monitoring schedule."}, {"id": "f", "label": "Watch for myocarditis", "detail": "Mostly in the first four weeks: fever, chest pain, fast pulse, breathlessness, raised troponin or CRP. Stop and refer urgently."}, {"id": "g", "label": "Check the level", "detail": "Plasma level after a week at a steady dose if response is poor or side effects appear; usual target about 350 micrograms per litre or above."}, {"id": "h", "label": "Prevent constipation", "detail": "Ask at every visit; prescribe laxatives early. Clozapine-induced gut hypomotility can be fatal."}], "caption": "Press Play to step through. Most serious problems happen early, so the first weeks are the most closely watched."}
 :::
 
+:::widget figure
+{"id": "d2-occupancy"}
+:::
+
 ### The serious risks
 - **Neutropenia and agranulocytosis**: a fall in the white cells that fight infection, most often in the first months. Regular blood counts catch it early.
 - **Myocarditis and cardiomyopathy**: heart muscle inflammation, mostly in the first weeks.
@@ -369,6 +377,10 @@ Q: Clozapine levels are typically lower in:
 
 :::widget flow
 {"title": "How lithium toxicity builds up", "layout": "chain", "nodes": [{"id": "a", "label": "A trigger", "detail": "Vomiting and diarrhoea, a heatwave or fever, a new NSAID painkiller, an ACE inhibitor or thiazide, or a crash diet."}, {"id": "b", "label": "Less lithium leaves the body", "detail": "The kidney handles lithium like sodium. When the body is short of salt or water, it holds on to both."}, {"id": "c", "label": "Level rises", "detail": "Even on an unchanged dose, the blood level climbs above the safe range."}, {"id": "d", "label": "Early signs", "detail": "Coarse tremor, nausea, vomiting, diarrhoea, unsteadiness, slurred speech."}, {"id": "e", "label": "Severe toxicity", "detail": "Confusion, muscle jerks, seizures, heart rhythm problems, kidney failure."}, {"id": "f", "label": "Act", "detail": "Stop lithium, check the level and kidneys urgently, give fluids, treat in hospital; dialysis for severe cases."}], "caption": "Press Play. Teach patients the triggers and the early signs, and to stop lithium and seek help if they become unwell."}
+:::
+
+:::widget figure
+{"id": "lithium-neuron"}
 :::
 
 ### Valproate
@@ -479,6 +491,10 @@ They enhance **GABA**, the brain's main calming messenger, by making the GABA-A 
 | Clonazepam | Slower, long | Panic, akathisia, some sleep disorders |
 | Diazepam | Fast onset, very long acting | Alcohol withdrawal, tapering other benzodiazepines |
 | Chlordiazepoxide | Long acting | Alcohol withdrawal |
+
+:::widget figure
+{"id": "benzo-gabaa"}
+:::
 
 ### Other calming and sleep medicines
 - **Z-drugs** (zolpidem, zopiclone): short-term insomnia; similar risks to benzodiazepines.

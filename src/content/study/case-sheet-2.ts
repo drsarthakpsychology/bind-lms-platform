@@ -418,6 +418,10 @@ Q: Guidelines advise that risk scales should:
 > Scales have poor predictive value for individuals.
 :::
 
+:::widget figure
+{"id": "mhca-time-limits"}
+:::
+
 ## 3.4 Progress notes, discharge summaries and letters [core][advanced]
 ### Progress notes: SOAP
 - **S (Subjective)**: what the patient and family report since the last note, in their words.

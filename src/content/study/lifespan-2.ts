@@ -575,6 +575,10 @@ Benjamin Bloom's group (1956) classified educational objectives in the cognitive
 }
 :::
 
+:::widget figure
+{"id": "forgetting-curve"}
+:::
+
 ### Learning difficulties and inclusion in India
 - The **Right to Education Act, 2009** gives free and compulsory education to children aged 6 to 14.
 - The **Rights of Persons with Disabilities Act, 2016** recognises **specific learning disabilities** (dyslexia, dysgraphia, dyscalculia and others) and requires inclusive education and exam accommodations (extra time, a scribe, exemption from a third language in many boards).
