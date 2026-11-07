@@ -71,7 +71,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/students", label: "All students" },
       { href: "/admin/access", label: "Access for many" },
-      { href: "/admin/roster", label: "Logins", hidden: true },
+      { href: "/admin/students/logins", label: "Logins" },
     ],
   },
   {

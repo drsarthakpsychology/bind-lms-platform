@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
-import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, TriangleAlert, X, Zap } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, User, Users, X } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { trackLearn } from "@/lib/learn/track";
@@ -20,6 +20,7 @@ import { awardXp } from "@/lib/games/ui/xp";
 import { readLocal, writeLocal } from "@/lib/games/ui/copy";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
+import styles from "./duel.module.css";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -113,29 +114,10 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   if (screen.kind === "match") return <RemoteMatch initial={screen.view} onDone={finished} onBack={() => setScreen({ kind: "lobby" })} onAgain={findMatch} />;
   if (screen.kind === "local") return <LocalMatch items={screen.items} seed={screen.seed} onDone={finished} onBack={() => setScreen({ kind: "lobby" })} onAgain={playBot} />;
 
+  // A first-timer (or anyone when ranked play is off) is pointed at the bot.
+  const botFirst = !prof.available || prof.games === 0;
   return (
     <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
-      <section className={cn(card, "bg-foreground p-5 text-background hard-shadow-md")}>
-        <p className="text-eyebrow text-primary">Ranked · {prof.tier}</p>
-        <div className="mt-1 flex flex-wrap items-end gap-x-4 gap-y-1">
-          <p className="font-pix text-5xl tabular-nums">{prof.rating}</p>
-          <p className="pb-1 text-sm opacity-90">
-            ±{prof.rd} · peak {prof.peak}
-          </p>
-        </div>
-        <p className="mt-2 text-sm opacity-90">
-          {prof.games ? `${prof.wins} wins · ${prof.losses} losses${prof.draws ? ` · ${prof.draws} draws` : ""}${prof.forfeits ? ` · ${prof.forfeits} forfeits` : ""}` : "No ranked matches yet. Your first few matches move your rating a lot."}
-        </p>
-        {prof.percentile !== null && <p className="mt-1 text-sm font-semibold text-primary">You&apos;re above {prof.percentile}% of ranked players. (Only you see this.)</p>}
-      </section>
-
-      <div className="rounded-lg border-2 border-foreground bg-status-alert-bg p-3 text-sm text-status-alert-fg">
-        <p className="flex items-center gap-2 font-bold">
-          <TriangleAlert className="size-4" aria-hidden /> Ranked rules
-        </p>
-        <p className="mt-1">5 rounds, live. Leaving, closing the tab or quitting counts as a loss. A loss lowers your rating. Speed breaks ties.</p>
-      </div>
-
       {error && (
         <p role="alert" className="rounded-md border-2 border-foreground bg-status-pending-bg px-3 py-2 text-sm font-semibold">
           {error}
@@ -148,21 +130,45 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
         </button>
       )}
 
-      <div className="grid gap-2 sm:grid-cols-2">
-        <button type="button" className={cn(btnPrimary, "min-h-14 text-lg")} onClick={findMatch} disabled={busy || !prof.available}>
-          {busy ? <LoaderCircle className="size-5 animate-spin" aria-hidden /> : <Swords className="size-5" aria-hidden />} Find a ranked match
-        </button>
-        <button type="button" className={cn(btnSecondary, "min-h-14")} onClick={playBot} disabled={busy}>
-          <Bot className="size-5" aria-hidden /> Practice vs bot (unranked)
-        </button>
-      </div>
-      {!prof.available && <p className="text-sm text-muted-foreground">Ranked matches open once duels are switched on. Practice works now.</p>}
-
-      <section className={cn(card, "p-4")} aria-labelledby="history">
-        <h2 id="history" className="font-bold">
-          Recent matches
+      <section aria-labelledby="duel-who" className="space-y-2">
+        <h2 id="duel-who" className="text-h3">
+          Who do you want to play?
         </h2>
-        {prof.history.length ? (
+        <div className="grid gap-3 sm:grid-cols-2">
+          <OpponentCard icon={Bot} title="Practice bot" line="Starts now. No rating." action="Play the bot" primary={botFirst} busy={busy} onClick={playBot} />
+          <OpponentCard
+            icon={Users}
+            title="A classmate"
+            line={prof.available ? "Ranked. Leaving counts as a loss." : "Ranked play opens soon."}
+            action="Find a match"
+            primary={!botFirst}
+            busy={busy}
+            disabled={!prof.available}
+            onClick={findMatch}
+          />
+        </div>
+      </section>
+
+      <ScoreRules />
+
+      <section className={cn(card, "flex flex-wrap items-center gap-x-4 gap-y-1 p-4")} aria-label="Your rating">
+        <p className="font-pix text-3xl tabular-nums">{prof.rating}</p>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-bold">
+            Rating · {prof.tier}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {prof.games ? `${prof.wins} won · ${prof.losses} lost${prof.draws ? ` · ${prof.draws} drawn` : ""}` : "Play a ranked match to move it."}
+            {prof.percentile !== null ? ` · above ${prof.percentile}% of players` : ""}
+          </p>
+        </div>
+      </section>
+
+      {prof.history.length > 0 && (
+        <section className={cn(card, "p-4")} aria-labelledby="history">
+          <h2 id="history" className="font-bold">
+            Recent matches
+          </h2>
           <ul className="mt-2 divide-y-2 divide-foreground/10">
             {prof.history.map((h) => (
               <li key={h.id} className="flex items-center gap-3 py-2 text-sm">
@@ -173,18 +179,57 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
                 <span className="min-w-0 flex-1 truncate">
                   vs {h.opp}
                   {h.forfeit && <span className="text-muted-foreground"> · {h.forfeit === "you" ? "you left" : "they left"}</span>}
-                  {!h.ranked && <span className="text-muted-foreground"> · practice</span>}
                 </span>
                 <span className="tabular-nums">{h.score}</span>
-                <span className={cn("w-12 text-right font-bold tabular-nums")}>{h.delta === null ? <span className="text-xs font-semibold text-muted-foreground">none</span> : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
+                <span className="w-10 text-right font-bold tabular-nums">{h.delta === null ? "" : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
               </li>
             ))}
           </ul>
-        ) : (
-          <p className="mt-1 text-sm text-muted-foreground">Nothing yet.</p>
-        )}
-      </section>
+        </section>
+      )}
     </div>
+  );
+}
+
+function OpponentCard({ icon: Icon, title, line, action, primary, busy, disabled = false, onClick }: { icon: typeof Bot; title: string; line: string; action: string; primary: boolean; busy: boolean; disabled?: boolean; onClick: () => void }) {
+  return (
+    <div className={cn(card, "flex flex-col gap-3 p-4", primary && "hard-shadow-md", disabled && "opacity-70")}>
+      <div className="flex items-center gap-3">
+        <span className={cn("grid size-12 shrink-0 place-items-center rounded-lg border-2 border-foreground", primary ? "bg-primary text-primary-foreground" : "bg-background")}>
+          <Icon className="size-6" aria-hidden />
+        </span>
+        <div className="min-w-0">
+          <p className="font-bold">{title}</p>
+          <p className="text-sm text-muted-foreground">{line}</p>
+        </div>
+      </div>
+      <button type="button" className={cn(primary ? btnPrimary : btnSecondary, "mt-auto min-h-12 w-full")} onClick={onClick} disabled={busy || disabled}>
+        {busy ? <LoaderCircle className="size-5 animate-spin" aria-hidden /> : <Icon className="size-5" aria-hidden />} {action}
+      </button>
+    </div>
+  );
+}
+
+/** How points are won, as three tiles instead of a paragraph. */
+function ScoreRules() {
+  const tiles: [string, string, string][] = [
+    ["1", "Pick the diagnosis", "+100"],
+    ["2", "Pick what tells it apart", "+50"],
+    ["=", "Same points?", "Faster wins"],
+  ];
+  return (
+    <section aria-label="How to score" className="space-y-1.5">
+      <ol className="grid grid-cols-3 gap-2">
+        {tiles.map(([n, what, pts]) => (
+          <li key={n} className="flex min-w-0 flex-col items-center gap-1 rounded-lg border-2 border-foreground bg-card p-2 text-center">
+            <span className="grid size-6 place-items-center rounded-md border-2 border-foreground font-pix text-xs">{n}</span>
+            <span className="text-xs leading-tight font-semibold sm:text-sm">{what}</span>
+            <span className="font-pix text-sm tabular-nums text-link">{pts}</span>
+          </li>
+        ))}
+      </ol>
+      <p className="text-center text-xs text-muted-foreground">5 rounds · 20 seconds each</p>
+    </section>
   );
 }
 
@@ -234,8 +279,8 @@ function Queue({ matchId, since, rating, onMatch, onCancel, onBot }: { matchId: 
       <p className="font-pix text-3xl tabular-nums" aria-live="polite">
         0:{String(secs).padStart(2, "0")}
       </p>
-      <p className="text-sm text-muted-foreground">
-        Looking for players rated {Math.round(rating - pairWindow(waited))} to {Math.round(rating + pairWindow(waited))}. After 20 seconds you&apos;ll play the practice bot instead (unranked).
+      <p className="text-sm text-muted-foreground" title={`Rated ${Math.round(rating - pairWindow(waited))} to ${Math.round(rating + pairWindow(waited))}`}>
+        No one free after 20 seconds? You play the bot instead.
       </p>
       {err && <p className="text-sm font-semibold">{err}</p>}
       <div className="grid gap-2 sm:grid-cols-2">
@@ -400,7 +445,10 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
 
       {v.phase === "countdown" && (
         <div className={cn(card, "p-8 text-center")}>
-          <p className="text-sm font-bold">Match found{v.bot ? " (practice, unranked)" : ""}. Get ready…</p>
+          <p className="text-sm font-bold">
+            You vs {v.opp.name}
+            {v.bot ? " · practice" : " · ranked"}
+          </p>
           <p key={Math.ceil(left / 1000)} className={cn("mt-2 font-pix text-7xl tabular-nums", anim(fx.pop))} aria-live="assertive">
             {Math.max(1, Math.ceil(left / 1000))}
           </p>
@@ -412,16 +460,17 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
       {v.phase === "reveal" && last && (
         <div className={cn(card, "space-y-3 p-4", anim(fx.rise))} aria-live="polite">
           <p className="text-eyebrow text-link">Round {last.round + 1} answer</p>
-          <p className="text-h3">{last.correctDx}</p>
-          <p className="text-sm">
-            <span className="font-bold">What tells it apart:</span> {last.correctFeature}
-          </p>
+          <div>
+            <p className="text-h3 leading-tight">{last.correctDx}</p>
+            <p className="mt-1 text-sm">
+              <span className="font-bold">Tells it apart:</span> {last.correctFeature}
+            </p>
+          </div>
           <div className="grid grid-cols-2 gap-2">
-            <RoundChip who="You" r={last.you} />
-            <RoundChip who={v.opp.name} r={last.opp} />
+            <PickCard who="You" r={last.you} />
+            <PickCard who={v.opp.name} bot={v.bot} r={last.opp} />
           </div>
           <p className="text-sm text-muted-foreground">{last.why}</p>
-          {!v.ranked && <LearnLink topic={last.correctDx} newTab />}
           <p className="text-sm font-semibold">Next round in {Math.ceil(left / 1000)}…</p>
         </div>
       )}
@@ -432,7 +481,7 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
         <div className="flex justify-end">
           {confirmQuit ? (
             <div className="flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-status-alert-bg p-2 text-sm text-status-alert-fg">
-              <span className="font-bold">{v.ranked ? "Quitting counts as a loss and lowers your rating." : "Quit this practice match?"}</span>
+              <span className="font-bold">{v.ranked ? "Quitting counts as a loss." : "Quit this match?"}</span>
               <button type="button" className={cn(btnSecondary, "min-h-10 text-sm")} onClick={onQuit}>
                 <Flag className="size-4" aria-hidden /> Quit
               </button>
@@ -442,7 +491,7 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
             </div>
           ) : (
             <button type="button" className="inline-flex min-h-11 items-center gap-1 rounded-md px-3 text-sm font-bold underline-offset-4 hover:underline" onClick={() => setConfirmQuit(true)}>
-              <Flag className="size-4" aria-hidden /> Forfeit
+              <Flag className="size-4" aria-hidden /> Quit
             </button>
           )}
         </div>
@@ -451,52 +500,95 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
   );
 }
 
+/** You on the left, your opponent on the right, the live score under each, and what each of you is doing now. */
 function Scoreboard({ v }: { v: DuelView }) {
+  const last = v.closed[v.closed.length - 1];
+  const gained = v.phase === "reveal" && last ? { you: last.you.points, opp: last.opp.points, key: last.round } : null;
+  const inRound = v.phase === "round";
   return (
-    <div className={cn(card, "grid grid-cols-[1fr_auto_1fr] items-center gap-2 p-3 hard-shadow-sm")}>
-      <div className="min-w-0">
-        <p className="truncate font-bold">{v.you.name}</p>
-        <p className="text-xs text-muted-foreground">{v.you.rating ? Math.round(v.you.rating) : v.ranked ? "" : "unranked"}</p>
-        <CountUp value={v.score.you} className="font-pix text-3xl tabular-nums" />
-      </div>
+    <div className={cn(card, "grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 p-3 hard-shadow-sm")} aria-label="Score">
+      <PlayerSide name={v.you.name} icon={User} score={v.score.you} lead={v.score.you > v.score.opp} gained={gained ? { pts: gained.you, key: gained.key } : null} status={inRound ? (v.youAnswered ? "locked" : "turn") : null} />
       <div className="text-center">
-        <Swords className="mx-auto size-5" aria-hidden />
+        <p className="font-pix text-xs">VS</p>
         <p className="mt-1 text-xs font-bold whitespace-nowrap">
           Round {Math.min(v.totalRounds, v.round + 1)}/{v.totalRounds}
         </p>
         <div className="mt-1 flex justify-center gap-1" aria-hidden>
           {Array.from({ length: v.totalRounds }, (_, i) => {
             const r = v.closed.find((c) => c.round === i);
-            return <span key={i} className={cn("size-2.5 rounded-sm border-2 border-foreground", r ? (r.you.points > r.opp.points ? "bg-primary" : r.you.points < r.opp.points ? "bg-foreground" : "bg-brand") : "bg-background")} />;
+            return <span key={i} className={cn("size-2.5 rounded-sm border-2 border-foreground", r ? (r.you.points > r.opp.points ? "bg-primary" : r.you.points < r.opp.points ? "bg-foreground" : "bg-brand") : i === v.round && inRound ? "bg-accent" : "bg-background")} />;
           })}
         </div>
       </div>
-      <div className="min-w-0 text-right">
-        <p className="truncate font-bold">
-          {v.bot && <Bot className="mr-1 inline size-4" aria-hidden />}
-          {v.opp.name}
+      <PlayerSide right name={v.opp.name} icon={v.bot ? Bot : User} score={v.score.opp} lead={v.score.opp > v.score.you} gained={gained ? { pts: gained.opp, key: gained.key } : null} status={inRound ? (v.oppAnswered ? "locked" : "thinking") : null} />
+    </div>
+  );
+}
+
+function PlayerSide({ name, icon: Icon, score, lead, gained, status, right = false }: { name: string; icon: typeof Bot; score: number; lead: boolean; gained: { pts: number; key: number } | null; status: "turn" | "thinking" | "locked" | null; right?: boolean }) {
+  const reduce = useReducedMotion();
+  const anim = (cls: string) => (reduce === false ? cls : undefined);
+  return (
+    <div className={cn("flex min-w-0 items-center gap-2", right && "flex-row-reverse text-right")}>
+      <span key={status === "locked" ? "locked" : "open"} className={cn("relative grid size-11 shrink-0 place-items-center rounded-lg border-2 border-foreground", lead ? "bg-primary text-primary-foreground" : "bg-background", status === "locked" && anim(styles.nod))}>
+        <Icon className="size-5" aria-hidden />
+        {lead && <Crown className="absolute -top-2.5 size-4 text-foreground" aria-label="In the lead" />}
+      </span>
+      <div className="min-w-0">
+        <p className="truncate text-sm font-bold">{name}</p>
+        <p className="relative">
+          <CountUp value={score} className="font-pix text-2xl tabular-nums sm:text-3xl" />
+          {gained && gained.pts > 0 && (
+            <span key={gained.key} className={cn("absolute -top-1 font-pix text-sm text-link", right ? "right-full mr-1" : "left-full ml-1", reduce === false ? fx.burst : "hidden")} aria-hidden>
+              +{gained.pts}
+            </span>
+          )}
         </p>
-        <p className="text-xs text-muted-foreground">{v.opp.rating ? Math.round(v.opp.rating) : ""}</p>
-        <CountUp value={v.score.opp} className="font-pix text-3xl tabular-nums" />
+        {status && (
+          <p className={cn("flex items-center gap-1 text-xs font-semibold", right && "justify-end")} aria-live="polite">
+            {status === "locked" ? (
+              <>
+                <Check className="size-3.5" aria-hidden /> Locked in
+              </>
+            ) : status === "thinking" ? (
+              <>
+                Thinking
+                <span className={styles.dots} aria-hidden>
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </>
+            ) : (
+              "Your turn"
+            )}
+          </p>
+        )}
       </div>
     </div>
   );
 }
 
+/**
+ * One round: tap the diagnosis (+100), then tap what tells it apart (+50).
+ * The second tap locks the answer in; there is no extra button.
+ */
 function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer: (round: number, dx: number, feature: number) => void }) {
   const q = v.question!;
   const [dx, setDx] = React.useState<number | null>(null);
-  const [feature, setFeature] = React.useState<number | null>(null);
   const [sent, setSent] = React.useState(false);
   const locked = sent || v.youAnswered;
   const reduce = useReducedMotion();
 
-  const submit = React.useCallback(() => {
-    if (locked || dx === null || feature === null) return;
-    setSent(true);
-    haptic("tap");
-    onAnswer(v.round, dx, feature);
-  }, [locked, dx, feature, onAnswer, v.round]);
+  const lockIn = React.useCallback(
+    (feature: number) => {
+      if (locked || dx === null) return;
+      setSent(true);
+      haptic("tap");
+      onAnswer(v.round, dx, feature);
+    },
+    [locked, dx, onAnswer, v.round],
+  );
 
   React.useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -507,18 +599,12 @@ function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer:
       if (n >= 1 && n <= 4) {
         e.preventDefault();
         if (dx === null) setDx(n - 1);
-        else setFeature(n - 1);
-      } else if (e.key === "Enter" && t?.tagName !== "BUTTON") {
-        e.preventDefault();
-        submit();
-      } else if (e.key === "Backspace" && dx !== null) {
-        setFeature(null);
-        setDx(null);
-      }
+        else lockIn(n - 1);
+      } else if (e.key === "Backspace" && dx !== null) setDx(null);
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [locked, dx, submit]);
+  }, [locked, dx, lockIn]);
 
   const pct = Math.max(0, Math.min(1, left / ROUND_MS));
   const urgent = left < 5000;
@@ -538,42 +624,57 @@ function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer:
       {!locked ? (
         <>
           <fieldset>
-            <legend className="font-bold">{dx === null ? "1. Pick the diagnosis" : "1. Diagnosis"}</legend>
+            <StepHead n={1} text="Which diagnosis?" pts="+100" done={dx !== null} />
             <div className="mt-2 grid gap-2 sm:grid-cols-2">
               {q.options.map((o, i) => (
                 <Choice key={o} n={i + 1} text={o} picked={dx === i} dim={dx !== null && dx !== i} onClick={() => setDx(i)} />
               ))}
             </div>
           </fieldset>
-          {dx !== null && (
-            <fieldset className={cn(reduce === false && fx.rise)}>
-              <legend className="font-bold">2. What tells it apart?</legend>
+          <fieldset disabled={dx === null} className={cn(dx === null ? "opacity-50" : reduce === false && fx.rise)} key={dx === null ? "wait" : "go"}>
+            <StepHead n={2} text="What tells it apart?" pts="+50" done={false} />
+            {dx !== null && (
               <div className="mt-2 grid gap-2">
                 {q.features.map((f, i) => (
-                  <Choice key={f} n={i + 1} text={f} picked={feature === i} dim={feature !== null && feature !== i} onClick={() => setFeature(i)} />
+                  <Choice key={f} n={i + 1} text={f} picked={false} dim={false} onClick={() => lockIn(i)} />
                 ))}
               </div>
-            </fieldset>
-          )}
-          <button type="button" className={cn(btnPrimary, "w-full min-h-12 text-lg")} disabled={dx === null || feature === null} onClick={submit}>
-            <Zap className="size-5" aria-hidden /> Lock in <span className="hidden text-sm font-normal lg:inline">(Enter)</span>
-          </button>
+            )}
+          </fieldset>
         </>
       ) : (
-        <div className={cn(card, "flex items-center gap-3 p-4")} aria-live="polite">
+        <div className={cn(card, "flex items-center gap-3 p-4", reduce === false && fx.pop)} aria-live="polite">
           <Shield className="size-6 shrink-0" aria-hidden />
           <div>
             <p className="font-bold">Locked in.</p>
-            <p className="text-sm text-muted-foreground">{v.oppAnswered ? `${v.opp.name} has locked in too.` : `${v.opp.name} is still thinking…`}</p>
+            <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              {v.oppAnswered ? (
+                `${v.opp.name} has locked in too.`
+              ) : (
+                <>
+                  Waiting for {v.opp.name}
+                  <span className={styles.dots} aria-hidden>
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                </>
+              )}
+            </p>
           </div>
         </div>
       )}
-      {!locked && v.oppAnswered && (
-        <p className={cn(chip, "bg-foreground text-background", reduce === false && fx.pop)} aria-live="polite">
-          <Zap className="size-3.5" aria-hidden /> {v.opp.name} locked in
-        </p>
-      )}
     </div>
+  );
+}
+
+function StepHead({ n, text, pts, done }: { n: number; text: string; pts: string; done: boolean }) {
+  return (
+    <legend className="flex w-full items-center gap-2 font-bold">
+      <span className={cn("grid size-6 shrink-0 place-items-center rounded-md border-2 border-foreground font-pix text-xs", done ? "bg-primary text-primary-foreground" : "bg-background")}>{done ? <Check className="size-3.5" aria-hidden /> : n}</span>
+      {text}
+      <span className={cn(chip, "ml-auto bg-card font-pix text-xs tabular-nums")}>{pts}</span>
+    </legend>
   );
 }
 
@@ -584,7 +685,7 @@ function Choice({ n, text, picked, dim, onClick }: { n: number; text: string; pi
       aria-pressed={picked}
       onClick={onClick}
       className={cn(
-        "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground px-3 py-2 text-left font-semibold leading-snug transition-transform active:translate-y-px",
+        "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground px-3 py-2 text-left font-semibold leading-snug transition-transform duration-150 active:translate-y-px",
         picked ? "-translate-y-0.5 bg-brand text-brand-foreground hard-shadow-xs" : "bg-card hover:-translate-y-0.5",
         dim && "opacity-70",
       )}
@@ -596,14 +697,25 @@ function Choice({ n, text, picked, dim, onClick }: { n: number; text: string; pi
   );
 }
 
-function RoundChip({ who, r }: { who: string; r: { points: number; ms: number | null; dxOk: boolean; featureOk: boolean } }) {
+type Pick = DuelView["closed"][number]["you"];
+
+/** What one player picked this round, right or wrong, and the points it won. */
+function PickCard({ who, r, bot = false }: { who: string; r: Pick; bot?: boolean }) {
   return (
-    <div className={cn("rounded-md border-2 border-foreground p-2", r.dxOk ? "bg-status-success-bg" : "bg-background")}>
-      <p className="truncate text-sm font-bold">{who}</p>
-      <p className="flex items-center gap-1 text-sm">
-        {r.dxOk ? <Check className="size-4" aria-hidden /> : <X className="size-4" aria-hidden />} {r.ms === null ? "No answer" : r.dxOk ? (r.featureOk ? "Both right" : "Diagnosis right") : "Wrong"}
+    <div className={cn("min-w-0 rounded-md border-2 border-foreground p-2", r.dxOk ? "bg-status-success-bg" : "bg-background")}>
+      <p className="flex items-center gap-1 truncate text-sm font-bold">
+        {bot && <Bot className="size-4 shrink-0" aria-hidden />}
+        <span className="truncate">{who}</span>
       </p>
-      <p className="font-pix tabular-nums">
+      {r.dx === null ? (
+        <p className="text-sm">No answer</p>
+      ) : (
+        <>
+          <Mark ok={r.dxOk} text={r.dx} />
+          <Mark ok={r.featureOk} text={r.featureOk ? "Right reason" : "Wrong reason"} />
+        </>
+      )}
+      <p className="mt-1 font-pix tabular-nums">
         +{r.points}
         {r.ms !== null && <span className="ml-2 text-xs">{(r.ms / 1000).toFixed(1)}s</span>}
       </p>
@@ -611,47 +723,72 @@ function RoundChip({ who, r }: { who: string; r: { points: number; ms: number | 
   );
 }
 
+function Mark({ ok, text }: { ok: boolean; text: string }) {
+  return (
+    <p className="flex items-start gap-1 text-sm leading-snug">
+      {ok ? <Check className="mt-0.5 size-4 shrink-0" aria-label="right" /> : <X className="mt-0.5 size-4 shrink-0" aria-label="wrong" />}
+      <span className="min-w-0 break-words">{text}</span>
+    </p>
+  );
+}
+
 function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgain: () => void }) {
   const r = v.result!;
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
-  const word = r.outcome === "win" ? "Victory" : r.outcome === "loss" ? "Defeat" : "Draw";
+  const word = r.outcome === "win" ? "You win" : r.outcome === "loss" ? `${v.opp.name} wins` : "Draw";
   const why =
     r.reason === "forfeit"
       ? r.youForfeited
-        ? "You left the match. That counts as a loss."
-        : `${v.opp.name} left the match. That counts as their loss.`
+        ? "You left the match, so it counts as a loss."
+        : `${v.opp.name} left the match.`
       : r.reason === "speed"
-        ? `Level on points; ${r.outcome === "win" ? "you were faster" : `${v.opp.name} was faster`}.`
-        : r.reason === "draw"
-          ? "Same points, same time."
-          : `${v.score.you} to ${v.score.opp}.`;
+        ? `${v.score.you} to ${v.score.opp}. Level on points, ${r.outcome === "win" ? "you were faster" : `${v.opp.name} was faster`}.`
+        : `${v.score.you} to ${v.score.opp}.`;
   const rated = v.ranked && r.delta !== null && r.rating !== null;
+  const dxRight = v.closed.filter((c) => c.you.dxOk).length;
+  const whyRight = v.closed.filter((c) => c.you.featureOk).length;
   return (
     <section className="space-y-4" aria-label="Match result">
       <div className={cn(card, "p-6 text-center hard-shadow-md", r.outcome === "win" ? "bg-primary text-primary-foreground" : r.outcome === "loss" ? "bg-foreground text-background" : "bg-card", anim(fx.land))}>
-        <p className={cn("inline-flex items-center gap-2 font-pix text-4xl uppercase", anim(fx.stamp))}>
+        <p className={cn("inline-flex items-center gap-2 font-pix text-3xl uppercase sm:text-4xl", anim(fx.stamp))}>
           {r.outcome === "win" ? <Crown className="size-8" aria-hidden /> : r.outcome === "loss" ? <X className="size-8" aria-hidden /> : <Swords className="size-8" aria-hidden />}
           {word}
         </p>
         <p className="mt-2 font-semibold">{why}</p>
-        {rated ? <RatingChange delta={r.delta!} rating={r.rating!} /> : <p className="mt-3 text-sm">{v.ranked ? "Rating updating…" : "Practice match: no rating change."}</p>}
+        <div className="mt-3 flex flex-wrap justify-center gap-2">
+          <span className={cn(chip, "border-current bg-transparent")}>
+            Diagnosis right {dxRight}/{v.totalRounds}
+          </span>
+          <span className={cn(chip, "border-current bg-transparent")}>
+            Reason right {whyRight}/{v.totalRounds}
+          </span>
+        </div>
+        {rated ? <RatingChange delta={r.delta!} rating={r.rating!} /> : v.ranked ? <p className="mt-3 text-sm">Rating updating…</p> : null}
         {v.ranked && !v.bot && r.outcome === "win" && <p className={cn(chip, "mt-3 border-current bg-transparent", anim(fx.pop))}>+{WIN_XP} league XP</p>}
       </div>
       <div className={cn(card, "p-4")}>
-        <h3 className="font-bold">Round by round</h3>
-        <ol className="mt-2 space-y-3">
+        <h3 className="font-bold">What you got right and wrong</h3>
+        <ol className="mt-2 divide-y-2 divide-foreground/10">
           {v.closed.map((c, i) => (
-            <li key={c.round} className={cn("text-sm", anim(fx.stagger))} style={{ "--i": i + 2 } as React.CSSProperties}>
-              <p className="font-bold">
-                {c.round + 1}. {c.correctDx}
+            <li key={c.round} className={cn("space-y-1 py-3 text-sm", anim(fx.stagger))} style={{ "--i": i + 2 } as React.CSSProperties}>
+              <p className="flex items-baseline justify-between gap-2">
+                <span className="font-bold">
+                  {c.round + 1}. {c.correctDx}
+                </span>
+                <span className="shrink-0 font-pix tabular-nums">
+                  +{c.you.points} <span className="text-muted-foreground">vs +{c.opp.points}</span>
+                </span>
               </p>
-              <p className="text-muted-foreground">{c.correctFeature}</p>
-              <p className="flex flex-wrap items-center gap-x-1">
-                You: {c.you.dx ?? "no answer"}{" "}
-                {c.you.dxOk ? <Check className="inline size-4" aria-label="right" /> : <X className="inline size-4" aria-label="wrong" />} (+{c.you.points}) · {v.opp.name}: +{c.opp.points}
-              </p>
-              <LearnLink topic={c.correctDx} />
+              {c.you.dx === null ? (
+                <p className="flex items-center gap-1">
+                  <X className="size-4 shrink-0" aria-label="wrong" /> No answer in time
+                </p>
+              ) : (
+                <Mark ok={c.you.dxOk} text={`You said ${c.you.dx}`} />
+              )}
+              <Mark ok={c.you.featureOk} text={`Tells it apart: ${c.correctFeature}`} />
+              {!c.you.dxOk && <LearnLink topic={c.correctDx} />}
             </li>
           ))}
         </ol>
@@ -661,7 +798,7 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
           <Swords className="size-4" aria-hidden /> {v.bot ? "Play again" : "Next ranked match"}
         </button>
         <button type="button" className={btnSecondary} onClick={onBack}>
-          <ArrowLeft className="size-4" aria-hidden /> Back to rating
+          <ArrowLeft className="size-4" aria-hidden /> Back
         </button>
         <Link href="/study" className={btnSecondary}>
           Study the look-alikes

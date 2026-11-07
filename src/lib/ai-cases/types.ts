@@ -67,4 +67,4 @@ export type DailyCaseShape = DailyCase;
 
 /** The one line every AI case carries for students. */
 export const AI_CASE_LABEL = "AI case";
-export const AI_CASE_NOTE = "Made by AI and checked by rules, not yet by a clinician";
+export const AI_CASE_NOTE = "Made by AI, not yet checked by a clinician";
