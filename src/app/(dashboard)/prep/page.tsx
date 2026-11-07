@@ -4,6 +4,7 @@ import { ArrowRight, Bookmark, Clock, MessagesSquare, Sparkles, type LucideIcon 
 import { requireFeature } from "@/lib/flags";
 import { PREP_EXAMS, PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/catalog";
 import { loadHome } from "@/lib/prep/path";
+import { longCount } from "@/lib/prep/long-server";
 import { cn } from "@/lib/utils";
 import { ListRow, PrepFrame, PrepHero, card, pctText } from "./ui";
 import { prepViewer } from "./viewer";
@@ -57,6 +58,8 @@ export default async function PrepPage() {
         <Tool href="/prep/interview" icon={MessagesSquare} title="Mock interview" text="Practise for the panel" />
         <Tool href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={Bookmark} title="Saved and wrong" text={home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`} />
       </nav>
+
+      <ListRow href="/prep/long" title="Long answers" sub={`${longCount()} written answers with model answers`} />
 
       <section aria-labelledby="subjects" className="space-y-3">
         <h2 id="subjects" className="text-h2">
