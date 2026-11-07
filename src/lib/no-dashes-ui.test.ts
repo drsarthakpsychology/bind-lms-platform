@@ -6,17 +6,13 @@ import { describe, expect, it } from "vitest";
  * Owner rule (2026-11-06): nothing a student or staff member reads may contain
  * an em dash or an en dash; they read as AI-written. This guard covers the app,
  * components and lib code (strings and comments alike, so nothing slips
- * through). Areas with their own dash guards are skipped here.
+ * through). Every folder is covered, including games and medicines.
  *
  * Code that must still recognise a dash in incoming text (stored titles, model
  * output) writes it as an escape: — or –.
  */
 const ROOTS = ["src/app", "src/components", "src/lib"];
-const SKIP = [
-  "src/app/(dashboard)/medicines",
-  "src/lib/games",
-  "src/app/(dashboard)/games",
-];
+const SKIP: string[] = [];
 const DASH = /[–—]/g;
 
 const cwd = process.cwd();
