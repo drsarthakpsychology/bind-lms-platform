@@ -55,7 +55,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Yalom's existential psychotherapy works with anxiety arising from death, freedom (and the responsibility it brings), existential isolation and the search for meaning. The first option is Freud's structural model, the second is a CBT model, and the third is part of Maslow's hierarchy of needs.",
+      "Yalom's existential psychotherapy works with anxiety arising from death, freedom (and the responsibility it brings), existential isolation and the search for meaning. Id, ego and superego come from Freud's structural model, thoughts, feelings, behaviours and body form a CBT model, and safety, love, esteem and self-actualisation are levels of Maslow's hierarchy.",
     ref: "Yalom 1980, Existential Psychotherapy",
   }),
   Q({
@@ -391,7 +391,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Meta-analyses show guided iCBT, with brief support from a therapist or coach, produces effects similar to face-to-face CBT for depression, panic and social anxiety. Unguided programmes help too but have higher drop-out. iCBT works, so the first option is wrong. Human guidance generally improves results, and iCBT is not consistently superior to face-to-face therapy. India's Tele-MANAS helpline is a related example of using technology to widen access.",
+      "Meta-analyses show guided iCBT, with brief support from a therapist or coach, produces effects similar to face-to-face CBT for depression, panic and social anxiety. Unguided programmes help too but have higher drop-out. iCBT clearly works, so the claim that it helps no disorder is wrong. Human guidance generally improves results, and iCBT is not consistently superior to face-to-face therapy. India's Tele-MANAS helpline is a related example of using technology to widen access.",
     ref: "Andersson et al. 2014; Carlbring et al. 2018",
   }),
   Q({

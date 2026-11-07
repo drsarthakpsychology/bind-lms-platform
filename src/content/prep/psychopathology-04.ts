@@ -89,7 +89,7 @@ export const PART: PrepQuestion[] = [
     options: ["It can be diagnosed only when the saved items have no monetary value", "It is coded as a subtype of OCD, with hoarding as the main compulsion", "Its core is persistent difficulty discarding possessions, whatever their value", "Excessive acquisition of items is required for the diagnosis"],
     answer: 2,
     explanation:
-      "Hoarding disorder centres on persistent difficulty parting with possessions regardless of value, leading to clutter that compromises living areas. Items may have value, so the first option is wrong. DSM-5 made it a separate OCRD rather than an OCD symptom. 'With excessive acquisition' is a specifier present in most cases, not a requirement. Insight specifiers also apply.",
+      "Hoarding disorder centres on persistent difficulty parting with possessions regardless of value, leading to clutter that compromises living areas. Items may have real value, so the diagnosis is not limited to worthless items. DSM-5 made it a separate OCRD rather than an OCD symptom. 'With excessive acquisition' is a specifier present in most cases, not a requirement. Insight specifiers also apply.",
     ref: "DSM-5-TR hoarding disorder",
   }),
   Q({

@@ -53,7 +53,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "MI moves through engaging (building a working relationship), focusing (agreeing on a direction for change), evoking (drawing out the client's own reasons for change) and planning (developing commitment and a specific plan). The first option lists stages of change from the transtheoretical model. The third is a general therapy sequence. The fourth is DBT's stage model.",
+      "MI moves through engaging (building a working relationship), focusing (agreeing on a direction for change), evoking (drawing out the client's own reasons for change) and planning (developing commitment and a specific plan). Precontemplation to action are stages of change from the transtheoretical model. Assessment to termination is a general therapy sequence. Pre-treatment and stages 1 to 3 make up DBT's stage model.",
     module: "substance",
     ref: "Miller & Rollnick 2013",
   }),

@@ -419,7 +419,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Self-compassion means treating oneself with kindness rather than harsh judgement, seeing one's suffering as part of the shared human experience rather than isolating, and holding painful feelings in mindful awareness rather than over-identifying with them. The fourth option lists the opposites of these components. Unlike self-esteem, self-compassion does not depend on feeling better than others, and it is linked to lower depression and anxiety.",
+      "Self-compassion means treating oneself with kindness rather than harsh judgement, seeing one's suffering as part of the shared human experience rather than isolating, and holding painful feelings in mindful awareness rather than over-identifying with them. Self-pity, isolation and over-identification are the opposites of these components. Unlike self-esteem, self-compassion does not depend on feeling better than others, and it is linked to lower depression and anxiety.",
     ref: "Neff 2003",
   }),
   Q({

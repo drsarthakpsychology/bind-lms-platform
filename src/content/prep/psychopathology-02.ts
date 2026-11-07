@@ -81,7 +81,7 @@ export const PART: PrepQuestion[] = [
     options: ["It requires that a full major depressive episode has never occurred", "In children and adolescents the minimum duration is also 2 years", "Mood may be irritable rather than depressed in adults as well as children", "The person is never symptom-free for more than 2 months during the 2 years"],
     answer: 3,
     explanation:
-      "Criterion C states that during the 2-year period (1 year for children and adolescents) the person has never been without the symptoms for more than 2 months. DSM-5 merged chronic MDD and dysthymia, so major depressive episodes may be present (with specifiers such as 'with persistent major depressive episode'), making the first option wrong. The child and adolescent duration is 1 year. Irritable mood can substitute for depressed mood only in children and adolescents.",
+      "Criterion C states that during the 2-year period (1 year for children and adolescents) the person has never been without the symptoms for more than 2 months. DSM-5 merged chronic MDD and dysthymia, so major depressive episodes may be present (with specifiers such as 'with persistent major depressive episode'), so the claim that a full major depressive episode must never have occurred is wrong. The child and adolescent duration is 1 year. Irritable mood can substitute for depressed mood only in children and adolescents.",
     ref: "DSM-5-TR persistent depressive disorder",
   }),
   Q({
@@ -455,7 +455,7 @@ export const PART: PrepQuestion[] = [
     options: ["Loss of pleasure plus morning worsening, waking 2 hours early and excessive guilt", "Mood reactivity plus early-morning waking, marked weight loss and guilt", "Loss of pleasure plus hypersomnia, increased appetite and weight gain", "Lack of reactivity plus leaden paralysis and rejection sensitivity"],
     answer: 0,
     explanation:
-      "Melancholic features need Criterion A (loss of pleasure in all or almost all activities, or lack of reactivity) plus at least three Criterion B items: distinct quality of mood, worse in the morning, early waking (at least 2 hours early), marked psychomotor change, significant anorexia or weight loss, and excessive or inappropriate guilt. The first option meets this. Mood reactivity excludes melancholia. Hypersomnia, increased appetite, leaden paralysis and rejection sensitivity are atypical features.",
+      "Melancholic features need Criterion A (loss of pleasure in all or almost all activities, or lack of reactivity) plus at least three Criterion B items: distinct quality of mood, worse in the morning, early waking (at least 2 hours early), marked psychomotor change, significant anorexia or weight loss, and excessive or inappropriate guilt. Loss of pleasure with morning worsening, waking 2 hours early and excessive guilt meets this. Mood reactivity excludes melancholia. Hypersomnia, increased appetite, leaden paralysis and rejection sensitivity are atypical features.",
     ref: "DSM-5-TR melancholic features",
   }),
   Q({
@@ -468,7 +468,7 @@ export const PART: PrepQuestion[] = [
     options: ["It names a subtype caused by hopelessness from stable, global attributions", "It abandons the role of causal attributions in depression altogether", "It makes internality the single most important attributional dimension", "It applies only to the depressive phase of bipolar disorder, not unipolar"],
     answer: 0,
     explanation:
-      "Hopelessness theory specifies a 'hopelessness depression' subtype. Its proximal sufficient cause is hopelessness, fed by stable and global attributions plus negative inferences about consequences and self-worth, in a diathesis-stress framework. Attributions remain central, so the second option is wrong. It downgraded internality, which mainly affects self-esteem, so the third is wrong. It concerns unipolar depression, not bipolar.",
+      "Hopelessness theory specifies a 'hopelessness depression' subtype. Its proximal sufficient cause is hopelessness, fed by stable and global attributions plus negative inferences about consequences and self-worth, in a diathesis-stress framework. Attributions remain central, so the theory did not abandon them. It downgraded internality, which mainly affects self-esteem, rather than making it the most important dimension. It concerns unipolar depression, not bipolar.",
     ref: "Abramson, Metalsky & Alloy 1989",
   }),
 ];

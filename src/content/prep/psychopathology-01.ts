@@ -28,7 +28,7 @@ export const PART: PrepQuestion[] = [
     options: ["Negative symptoms cannot be counted towards Criterion A at all", "At least one Criterion A symptom must be delusions, hallucinations or disorganised speech", "Grossly disorganised behaviour counts only towards brief psychotic disorder", "Criterion A requires three symptoms whenever negative symptoms are present"],
     answer: 1,
     explanation:
-      "DSM-5 added the rule that at least one of the two (or more) Criterion A symptoms must be delusions, hallucinations or disorganised speech; negative symptoms plus disorganised or catatonic behaviour alone do not qualify. Negative symptoms do count as one of the five Criterion A items, so option A is wrong. Grossly disorganised or catatonic behaviour is Criterion A4 for schizophrenia, so option C is wrong. There is no three-symptom rule, so option D is wrong.",
+      "DSM-5 added the rule that at least one of the two (or more) Criterion A symptoms must be delusions, hallucinations or disorganised speech; negative symptoms plus disorganised or catatonic behaviour alone do not qualify. Negative symptoms do count as one of the five Criterion A items, so the claim that they cannot be counted is wrong. Grossly disorganised or catatonic behaviour is Criterion A4 for schizophrenia, not a feature reserved for brief psychotic disorder. There is no three-symptom rule when negative symptoms are present.",
     ref: "DSM-5-TR schizophrenia Criterion A",
   }),
   Q({
@@ -48,7 +48,7 @@ export const PART: PrepQuestion[] = [
     options: ["1, 2 and 3 only", "1, 2, 3 and 5 only", "2, 3, 4 and 5 only", "1, 3, 4 and 5 only"],
     answer: 1,
     explanation:
-      "The specifier 'with good prognostic features' needs at least two of four: rapid onset (within 4 weeks), confusion or perplexity, good premorbid functioning, and absence of blunted or flat affect (1, 2, 3, 5). Prominent affective symptoms (4) are a classic good-prognosis marker in older literature and in schizophrenia outcome studies, but they are not one of the four DSM specifier items, which rules out options C and D. Option A omits item 5.",
+      "The specifier 'with good prognostic features' needs at least two of four: rapid onset (within 4 weeks), confusion or perplexity, good premorbid functioning, and absence of blunted or flat affect (1, 2, 3, 5). Prominent affective symptoms (4) are a classic good-prognosis marker in older literature and in schizophrenia outcome studies, but they are not one of the four DSM specifier items, which rules out every combination that includes item 4. The combination '1, 2 and 3 only' leaves out item 5.",
     ref: "DSM-5-TR schizophreniform disorder specifiers",
   }),
   Q({
@@ -126,7 +126,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Delusional disorder requires that Criterion A for schizophrenia has never been met. A period of disorganised speech plus hallucinations would meet Criterion A. Hallucinations, if present, may occur in delusional disorder when they are not prominent and are related to the delusional theme (option A). Duration of at least 1 month (option B) and preserved functioning (option D) support, not oppose, the diagnosis.",
+      "Delusional disorder requires that Criterion A for schizophrenia has never been met. A period of disorganised speech plus hallucinations would meet Criterion A. Hallucinations, if present, may occur in delusional disorder when they are not prominent and are related to the delusional theme, so the olfactory experience is allowed. A duration of over 1 month and relatively preserved functioning support, not oppose, the diagnosis.",
     ref: "DSM-5-TR delusional disorder Criteria A–C",
   }),
   Q({
@@ -174,7 +174,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "DSM-IV allowed one bizarre delusion or one Schneiderian hallucination to meet Criterion A; DSM-5 dropped this because of poor reliability in judging bizarreness and the low specificity of first-rank symptoms, which occur in mania and other disorders. Both statements are true and R is the main rationale for A, so option 1 is correct. ICD-11 likewise no longer gives first-rank symptoms special weight.",
+      "DSM-IV allowed one bizarre delusion or one Schneiderian hallucination to meet Criterion A; DSM-5 dropped this because of poor reliability in judging bizarreness and the low specificity of first-rank symptoms, which occur in mania and other disorders. Both statements are true and R is the main rationale for A, so the key is that both are true and R explains A. ICD-11 likewise no longer gives first-rank symptoms special weight.",
     ref: "DSM-5-TR highlights of changes; Kaplan & Sadock schizophrenia chapter",
   }),
   Q({
@@ -327,7 +327,7 @@ export const PART: PrepQuestion[] = [
     options: ["Substance-induced psychotic disorder, since symptoms began during heavy use", "Brief psychotic disorder, since the active phase is under 1 month", "Consider a primary psychosis: symptoms persist off drugs and a prodrome came first", "Cannabis intoxication delirium, with fluctuating awareness"],
     answer: 2,
     explanation:
-      "DSM-5-TR points to an independent psychotic disorder when symptoms precede substance use or persist for a substantial period (about 1 month) after cessation of intoxication or withdrawal, or when there is other evidence such as a prior history. A year of prodromal decline plus persistence after abstinence favours a primary disorder; with prodrome counted, total duration exceeds 6 months, so schizophrenia is likely, though continued observation is needed. Option A ignores the pre-existing prodrome. Option B ignores prodromal duration and the lack of return to premorbid function. Delirium requires disturbed attention and awareness.",
+      "DSM-5-TR points to an independent psychotic disorder when symptoms precede substance use or persist for a substantial period (about 1 month) after cessation of intoxication or withdrawal, or when there is other evidence such as a prior history. A year of prodromal decline plus persistence after abstinence favours a primary disorder; with prodrome counted, total duration exceeds 6 months, so schizophrenia is likely, though continued observation is needed. A substance-induced diagnosis ignores the pre-existing prodrome. Brief psychotic disorder ignores the prodromal duration and the lack of return to premorbid function. Delirium requires disturbed attention and awareness.",
     ref: "DSM-5-TR substance/medication-induced psychotic disorder Criterion C",
   }),
   Q({
@@ -371,7 +371,7 @@ export const PART: PrepQuestion[] = [
     options: ["Shared psychotic disorder (folie à deux), as a separate diagnosis", "Delusional disorder, persecutory type, in their own right", "Other specified schizophrenia spectrum disorder (delusions in the partner)", "Brief psychotic disorder, with marked stressor"],
     answer: 2,
     explanation:
-      "DSM-5 removed shared psychotic disorder as a separate diagnosis. If the person meets delusional disorder criteria, that is diagnosed; otherwise the example 'delusional symptoms in partner of individual with delusional disorder' under other specified schizophrenia spectrum disorder is used. Option A is the DSM-IV and ICD-10 category (ICD-10 F24 induced delusional disorder). Option B needs full criteria. Brief psychotic disorder does not fit a chronic shared belief.",
+      "DSM-5 removed shared psychotic disorder as a separate diagnosis. If the person meets delusional disorder criteria, that is diagnosed; otherwise the example 'delusional symptoms in partner of individual with delusional disorder' under other specified schizophrenia spectrum disorder is used. Shared psychotic disorder (folie à deux) is the DSM-IV and ICD-10 category (ICD-10 F24 induced delusional disorder). Delusional disorder in the partner's own right needs full criteria to be met. Brief psychotic disorder does not fit a chronic shared belief.",
     ref: "DSM-5-TR other specified schizophrenia spectrum disorder",
   }),
   Q({
@@ -408,7 +408,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "DSM-5 moved delusional BDD into BDD itself through the insight specifier 'with absent insight/delusional beliefs'; delusional disorder is not additionally diagnosed when appearance concerns with repetitive behaviours meet BDD criteria. Option A was the DSM-IV approach. Option C double-counts. Olfactory reference disorder (an ICD-11 OCRD, and DSM-5-TR 'other specified OCRD' example) concerns body odour, not appearance.",
+      "DSM-5 moved delusional BDD into BDD itself through the insight specifier 'with absent insight/delusional beliefs'; delusional disorder is not additionally diagnosed when appearance concerns with repetitive behaviours meet BDD criteria. Diagnosing delusional disorder, somatic type, was the DSM-IV approach. Coding both diagnoses together double-counts the same problem. Olfactory reference disorder (an ICD-11 OCRD, and DSM-5-TR 'other specified OCRD' example) concerns body odour, not appearance.",
     ref: "DSM-5-TR body dysmorphic disorder, insight specifier; delusional disorder exclusion note",
   }),
   Q({

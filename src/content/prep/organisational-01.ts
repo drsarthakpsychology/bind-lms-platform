@@ -450,7 +450,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In the JD-R model, high job demands (workload, emotional demands) drain energy through a health-impairment process, leading to exhaustion and burnout. Job resources (support, autonomy, feedback) drive a motivational process leading to engagement and performance, and they also buffer the effects of demands. The first option reverses the processes, and the others ignore the model's core claims.",
+      "In the JD-R model, high job demands (workload, emotional demands) drain energy through a health-impairment process, leading to exhaustion and burnout. Job resources (support, autonomy, feedback) drive a motivational process leading to engagement and performance, and they also buffer the effects of demands. Linking demands to engagement and resources to burnout reverses the two processes, and the claims about pay only or no health effects ignore the model's core ideas.",
     ref: "Demerouti, Bakker et al. 2001; Bakker & Demerouti 2017",
   }),
   Q({

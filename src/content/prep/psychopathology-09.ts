@@ -435,7 +435,7 @@ export const PART: PrepQuestion[] = [
     options: ["Understandable through empathy as arising from mood", "Explainable only causally, not empathically understandable", "Both fully understandable and fully explainable", "Neither understandable nor relevant to psychopathology"],
     answer: 1,
     explanation:
-      "For Jaspers, static and genetic understanding lets the clinician grasp how one psychic event follows from another (e.g., guilt from depression). A primary delusion is, by definition, un-understandable (it represents a break in meaningful connections), so it can only be explained causally, for example by brain processes. Calling it understandable describes secondary delusions. It is central to psychopathology, so the last option is wrong.",
+      "For Jaspers, static and genetic understanding lets the clinician grasp how one psychic event follows from another (e.g., guilt from depression). A primary delusion is, by definition, un-understandable (it represents a break in meaningful connections), so it can only be explained causally, for example by brain processes. Calling it understandable describes secondary delusions. It is central to psychopathology, so calling it neither understandable nor relevant is wrong.",
     ref: "Jaspers, General Psychopathology; Fish introduction",
   }),
   Q({

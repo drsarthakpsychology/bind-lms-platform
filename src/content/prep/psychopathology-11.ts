@@ -15,7 +15,7 @@ export const PART: PrepQuestion[] = [
     options: ["the observed emotional expression in the room; the patient's own subjective report", "a brief, momentary emotional reaction; a lifelong emotional temperament or style", "the sustained, subjectively reported state; the observed, changing expression", "the content of the patient's thinking; the form or flow of that thinking"],
     answer: 2,
     explanation:
-      "Mood is the pervasive, sustained emotional state reported by the patient (the 'climate'); affect is the observed, more variable expression (the 'weather'), described by range, reactivity, intensity, congruence and appropriateness. The first option reverses them. Temperament is a trait-level concept. Thought form and content are separate MSE headings.",
+      "Mood is the pervasive, sustained emotional state reported by the patient (the 'climate'); affect is the observed, more variable expression (the 'weather'), described by range, reactivity, intensity, congruence and appropriateness. Calling mood the observed expression and affect the patient's report reverses the two. Temperament is a trait-level concept. Thought form and content are separate MSE headings.",
     ref: "Kaplan & Sadock MSE; interview-mse-notes",
   }),
   Q({

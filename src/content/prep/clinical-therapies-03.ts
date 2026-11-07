@@ -175,7 +175,7 @@ export const PART: PrepQuestion[] = [
     options: ["Conceptualisation, skills rehearsal, application", "Relaxation, hierarchy, desensitisation", "Precontemplation, contemplation, action", "Alarm, resistance, exhaustion"],
     answer: 0,
     explanation:
-      "SIT moves from conceptualising the stress response, to acquiring and rehearsing coping skills (relaxation, self-instruction, problem solving), to applying them in graded real or imagined stressors with relapse prevention, analogous to medical inoculation. The second option is SD, the third the transtheoretical model's stages, and the fourth Selye's general adaptation syndrome.",
+      "SIT moves from conceptualising the stress response, to acquiring and rehearsing coping skills (relaxation, self-instruction, problem solving), to applying them in graded real or imagined stressors with relapse prevention, analogous to medical inoculation. Relaxation, hierarchy and desensitisation are the steps of systematic desensitisation, precontemplation to action are the transtheoretical stages of change, and alarm, resistance and exhaustion are Selye's general adaptation syndrome.",
     module: "therapies",
     ref: "Meichenbaum 1985",
   }),

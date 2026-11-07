@@ -166,7 +166,7 @@ export const PART: PrepQuestion[] = [
     options: ["Most patients stay fully symptomatic throughout their adult life", "Remission of diagnostic criteria is uncommon within the first 10 years", "Most remit symptomatically by 10 years; full functional recovery is rarer", "Impulsive symptoms such as self-harm are the most persistent features"],
     answer: 2,
     explanation:
-      "Zanarini's McLean study found that about 85 to 90% remitted symptomatically over 10 to 16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the last option. This challenges the old view that PD is lifelong and unchangeable.",
+      "Zanarini's McLean study found that about 85 to 90% remitted symptomatically over 10 to 16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the claim that impulsive symptoms are the most persistent. This challenges the old view that PD is lifelong and unchangeable.",
     ref: "Zanarini et al. 2010; Gunderson CLPS",
   }),
   Q({
