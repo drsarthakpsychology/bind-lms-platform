@@ -342,92 +342,141 @@
   }
 }
 
+/* -----------------------------------------------------------------------------
+   App sidebar sizes. Three looks, picked by the sidebar's own width (a
+   container query), so the look can never disagree with the width:
+     full   15.5rem  icon + name in a row
+     mini    6rem    icon over a short name (tablets, laptops on "auto")
+     icons   4.5rem  icon only (focus pages: questions, reading, a game)
+   The width comes from the screen size and the remembered choice, which
+   sidebar-state.ts mirrors onto <html> (data-sidebar, data-sidebar-focus)
+   before first paint, so nothing jumps after load.
+   -------------------------------------------------------------------------- */
 .app-side {
   width: 15.5rem;
+  container: side / inline-size;
   transition: width 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.app-side[data-size="mini"] {
-  width: 6rem;
-}
-.app-side[data-size="mini"] {
-  .nav-link {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-    min-height: 3.75rem;
-    padding: 0.5rem 0.1rem;
-    font-size: 0.6875rem;
-    line-height: 1.1;
-    text-align: center;
-  }
-  .nav-label {
-    max-width: 100%;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-  .nav-section {
-    height: 2px;
-    margin: 0.75rem 0.5rem;
-    padding: 0;
-    overflow: hidden;
-    font-size: 0;
-    background: var(--line);
-  }
-  .side-wide {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  .app-side {
+    transition: none;
   }
 }
-@media (max-width: 1279px) {
-  .app-side[data-size="auto"] {
+/* Tablets: always the slim rail (the ☰ opens the full menu drawer). */
+@media (max-width: 1023px) {
+  .app-side {
     width: 6rem;
   }
-  .app-side[data-size="auto"] {
-  .nav-link {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-    min-height: 3.75rem;
-    padding: 0.5rem 0.1rem;
-    font-size: 0.6875rem;
-    line-height: 1.1;
-    text-align: center;
+}
+/* Laptops: the slim rail unless the student chose full. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root:not([data-sidebar="full"]) .app-side {
+    width: 6rem;
   }
-  .nav-label {
-    max-width: 100%;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    overflow-wrap: break-word;
-    hyphens: auto;
+}
+/* Wide screens: full unless the student chose the rail. */
+@media (min-width: 1280px) {
+  :root[data-sidebar="mini"] .app-side {
+    width: 6rem;
   }
-  .nav-section {
-    height: 2px;
-    margin: 0.75rem 0.5rem;
-    padding: 0;
-    overflow: hidden;
-    font-size: 0;
-    background: var(--line);
+}
+/* Focus pages on laptops and up: icons only, until the student opens it. */
+@media (min-width: 1024px) {
+  :root .app-side[data-focus] {
+    width: 4.5rem;
   }
-  .side-wide {
-    display: none;
-  }
+  :root[data-sidebar-focus="full"] .app-side[data-focus] {
+    width: 15.5rem;
   }
 }
 
-/* Touch screens (any width): rail cells and labels a finger can read and hit. */
-@media (pointer: coarse) {
-  .app-side[data-size="mini"] .nav-link {
-    min-height: 4rem;
-    font-size: 0.75rem;
+/* The short name only shows in the slim rail. */
+.nav-short {
+  display: none;
+}
+/* The fold control only shows on focus pages. */
+.side-fold {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .app-side[data-focus] .side-fold {
+    display: flex;
   }
 }
-@media (pointer: coarse) and (max-width: 1279px) {
-  .app-side[data-size="auto"] .nav-link {
-    min-height: 4rem;
-    font-size: 0.75rem;
+.side-fold .fold-open {
+  display: none;
+}
+
+@container side (max-width: 7rem) {
+  .nav-link {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    min-height: 3.75rem;
+    padding: 0.5rem 0.1rem;
+    font-size: 0.6875rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .nav-label {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .nav-long {
+    display: none;
+  }
+  .nav-short {
+    display: inline;
+  }
+  .nav-section {
+    height: 2px;
+    margin: 0.75rem 0.5rem;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    background: var(--line);
+  }
+  .side-wide {
+    display: none;
+  }
+  .side-fold {
+    justify-content: center;
+    padding-inline: 0;
+  }
+  .side-fold .fold-open {
+    display: block;
+  }
+  .side-fold .fold-close,
+  .side-fold .fold-text {
+    display: none;
+  }
+}
+/* Icons only: the names are still the links' accessible names (aria-label)
+   and tooltips (title). */
+@container side (max-width: 5rem) {
+  .side-scroll {
+    padding-inline: 0.5rem;
+  }
+  .nav-link {
+    min-height: 2.75rem;
+    padding: 0.5rem 0;
+  }
+  .nav-label {
+    display: none;
+  }
+}
+
+/* Touch screens: rail cells and labels a finger can read and hit. */
+@media (pointer: coarse) {
+  @container side (min-width: 5.01rem) and (max-width: 7rem) {
+    .nav-link {
+      min-height: 4rem;
+      font-size: 0.75rem;
+    }
   }
 }
 

@@ -111,7 +111,8 @@ export function NavItems({
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
-              aria-label={item.short ? item.label : undefined}
+              // The name stays readable to screen readers in every sidebar size.
+              aria-label={item.label}
               title={item.label}
               className={cn(
                 "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
@@ -121,20 +122,18 @@ export function NavItems({
               )}
             >
               <Icon
-                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/nav:-rotate-6 group-hover/nav:scale-110"
+                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy motion-safe:group-hover/nav:-rotate-6 motion-safe:group-hover/nav:scale-110"
                 aria-hidden
               />
+              {/* The slim rail shows the short word (globals.css, by sidebar width). */}
+              <span aria-hidden className={cn("nav-label min-w-0 truncate", item.short && "nav-long")}>
+                {item.label}
+              </span>
               {item.short ? (
-                <>
-                  {/* The slim rail (data-size mini, or auto under 1280px) shows the short word. */}
-                  <span className="nav-label min-w-0 truncate in-data-[size=mini]:hidden max-xl:in-data-[size=auto]:hidden">{item.label}</span>
-                  <span aria-hidden className="nav-label hidden min-w-0 in-data-[size=mini]:inline max-xl:in-data-[size=auto]:inline">
-                    {item.short}
-                  </span>
-                </>
-              ) : (
-                <span className="nav-label min-w-0 truncate">{item.label}</span>
-              )}
+                <span aria-hidden className="nav-label nav-short min-w-0">
+                  {item.short}
+                </span>
+              ) : null}
             </Link>
           </React.Fragment>
         );

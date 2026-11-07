@@ -119,3 +119,24 @@ export function backTarget(pathname: string, from?: string | null, fallback?: st
   const href = safeFrom(from, pathname) ?? fallback ?? defaultBack(pathname);
   return { href, label: backLabel(href) };
 }
+
+/**
+ * Focus pages: the student is doing one thing (answering questions, reading,
+ * playing). The desktop sidebar folds to icons here; the student can open it
+ * and that choice is remembered (sidebar-state.ts).
+ * - Exam Prep: the Question Bank (a subject and its topics), practice sets,
+ *   Smart practice, Saved, Wrong, review, the diagnostic, interview and a mock
+ *   test in progress (not the mock list, results or goal settings).
+ * - Study: the reader (sections and checkpoints), Notes and Quick Reference.
+ * - Games and activity screens: any game, the Lab, Smart practice tools on
+ *   older /games addresses, and the Practice tools that share the game frame.
+ */
+export function isFocusPath(pathname: string): boolean {
+  return (
+    /^\/prep\/(?!goal$|mock$|mock\/result\/)[^/]+(?:\/.*)?$/.test(pathname) ||
+    /^\/study\/(?:notes|reference)(?:\/.*)?$/.test(pathname) ||
+    /^\/study\/(?!map(?:\/|$)|placement$)[^/]+\/.+/.test(pathname) ||
+    /^\/games\/(?!leaderboard$|quizzes$|revise$|progress$|lab$|lab\/cases$)[^/]+(?:\/.*)?$/.test(pathname) ||
+    /^\/practice\/(?:daily|detective|scenarios|terms)(?:\/.*)?$/.test(pathname)
+  );
+}

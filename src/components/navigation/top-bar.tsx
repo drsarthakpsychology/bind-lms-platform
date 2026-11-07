@@ -9,6 +9,7 @@ import { AccountMenu } from "@/components/navigation/account-menu";
 import { BackForward } from "@/components/navigation/back-forward";
 import { toggleSidebar } from "@/components/navigation/sidebar-state";
 import { isImmersiveSessionPath, isInnerStudentPath } from "@/components/navigation/sidebar-gate";
+import { isFocusPath } from "@/components/navigation/sections";
 import { cn } from "@/lib/utils";
 import { TOP_BAR_COUNT, TOP_BAR_ICON_BTN } from "./icon-button";
 
@@ -50,6 +51,8 @@ export function TopBar({
   const pathname = usePathname() ?? "";
   if (isImmersiveSessionPath(pathname)) return null;
   const innerPage = isInnerStudentPath(pathname, gateRole);
+  // Focus pages (questions, reading, a game): ☰ opens or folds the icon sidebar.
+  const focusPage = !isAdminView && isFocusPath(pathname);
 
   return (
     <header
@@ -64,7 +67,7 @@ export function TopBar({
       <div className="flex h-14 items-center gap-2 px-2 sm:gap-3 sm:px-4 lg:tall:h-16">
         <button
           type="button"
-          onClick={toggleSidebar}
+          onClick={() => toggleSidebar(focusPage)}
           aria-label="Show or hide the menu"
           className={cn(iconBtn, "hidden md:inline-flex", innerPage && "lg:hidden")}
         >

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import nextConfig from "../../../next.config";
 import { ADMIN_ITEMS, STUDENT_ITEMS } from "./nav-config";
-import { activeNavHref, backTarget, safeFrom, sectionOf } from "./sections";
+import { activeNavHref, backTarget, isFocusPath, safeFrom, sectionOf } from "./sections";
 
 const lit = (path: string, from?: string) => activeNavHref(STUDENT_ITEMS, path, from);
 
@@ -121,5 +121,41 @@ describe("old addresses keep working", () => {
     expect(rules.find((r) => r.source === "/practice/learn/:tool(detective|scenarios|terms)")?.destination).toBe("/practice/:tool");
     // No rule sends a Practice tool to /games any more.
     for (const r of rules) expect(`${r.source} -> ${r.destination}`).not.toMatch(/(detective|scenarios|terms|daily).*-> \/games/);
+  });
+});
+
+describe("focus pages fold the sidebar to icons", () => {
+  it("questions, reading and games are focus pages", () => {
+    for (const p of [
+      "/prep/psychopathology",
+      "/prep/psychopathology/anxiety",
+      "/prep/practice/psychopathology",
+      "/prep/smart",
+      "/prep/saved",
+      "/prep/wrong",
+      "/prep/review",
+      "/prep/mock/cuet-pg",
+      "/study/mood/1-2",
+      "/study/mood/checkpoint/1",
+      "/study/notes",
+      "/study/notes/dsm-psychosis",
+      "/study/reference",
+      "/study/reference/lithium",
+      "/games/duel",
+      "/games/blitz",
+      "/games/coach",
+      "/games/play",
+      "/games/lab/stroop",
+      "/practice/daily",
+      "/practice/detective",
+    ]) {
+      expect(isFocusPath(p), p).toBe(true);
+    }
+  });
+
+  it("hubs and lists keep the full sidebar", () => {
+    for (const p of ["/dashboard", "/prep", "/prep/goal", "/prep/mock", "/prep/mock/result/abc", "/study", "/study/mood", "/study/map", "/study/map/practice", "/study/placement", "/games", "/games/leaderboard", "/games/quizzes", "/games/revise", "/games/lab", "/games/lab/cases", "/practice", "/practice/medicines", "/courses", "/admin/students"]) {
+      expect(isFocusPath(p), p).toBe(false);
+    }
   });
 });
