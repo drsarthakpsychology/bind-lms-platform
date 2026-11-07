@@ -76,12 +76,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Alexithymia, a term coined by Sifneos, describes difficulty identifying and describing feelings and an externally oriented thinking style.",
-      "R: Alexithymia is a DSM-5-TR diagnosis in the somatic symptom disorders chapter.",
+      "A: Alexithymia is a DSM-5-TR diagnosis listed in the somatic symptom and related disorders chapter.",
+      "R: Alexithymia, a term coined by Sifneos, describes difficulty identifying and describing feelings and an externally oriented thinking style.",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
-      "A is true: Sifneos described alexithymia in psychosomatic patients; it is measured by the Toronto Alexithymia Scale (TAS-20) and is linked to somatisation, eating disorders and autism. R is false: it is a personality trait or construct, not a DSM diagnosis. Hence A true, R false.",
+      "A is false: alexithymia is a personality trait or descriptive construct, measured with tools such as the Toronto Alexithymia Scale, and is not a diagnosis in DSM-5-TR or ICD-11. R is true: Sifneos introduced the term for difficulty identifying and describing feelings, limited fantasy and an externally oriented, concrete thinking style, often seen in patients with somatic complaints. So A is false and R is true.",
     ref: "Sifneos 1973; Taylor & Bagby TAS-20",
   }),
   Q({

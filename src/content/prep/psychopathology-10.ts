@@ -185,12 +185,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Depersonalisation is described by patients in 'as if' terms ('it is as if I am a robot').",
-      "R: In depersonalisation, reality testing is lost and the patient believes they have actually become a machine.",
+      "A: Patients with depersonalisation usually describe it with full conviction, saying they have actually turned into a robot.",
+      "R: In depersonalisation, reality testing is preserved, and the person knows the change is in their own experience.",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
-      "A is true: patients typically describe depersonalisation with 'as if' qualifiers, find it unpleasant, and know the experience is subjective. R is false: by definition reality testing is preserved; if the patient believed they had literally become a machine, that would be a delusion, possibly nihilistic or bizarre. Hence A true, R false.",
+      "A is false: depersonalisation is typically described in 'as if' terms ('it is as if I am a robot' or 'as if I am watching myself in a film'). R is true: insight is kept, which is what separates depersonalisation from a nihilistic or somatic delusion, where the person believes the change is literally real. So A is false and R is true.",
     ref: "DSM-5-TR depersonalisation/derealisation disorder; Fish",
   }),
   Q({

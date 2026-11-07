@@ -119,12 +119,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Lithium maintenance is associated with reduced suicide risk in mood disorders.",
-      "R: Lithium's anti-suicidal effect is fully explained by its effect on preventing mood episodes.",
+      "A: Lithium maintenance has no association with suicide risk in mood disorders.",
+      "R: Meta-analyses of randomised trials report fewer suicides in patients taking lithium than in those taking placebo.",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
-      "A is true: meta-analyses show lithium reduces suicide and all-cause mortality in mood disorders. R is false: the anti-suicidal effect appears partly independent of mood stabilisation, possibly through reduced impulsivity and aggression, and is seen even in partial responders. Clozapine has a similar anti-suicidal effect in schizophrenia (InterSePT).",
+      "A is false: lithium is the medication most consistently linked with reduced suicide and suicide attempts in mood disorders, and stopping it suddenly is followed by a rise in risk. R is true: pooled randomised trials show fewer suicides on lithium than on placebo, and the effect may be partly separate from mood stabilisation, perhaps through reduced impulsive aggression. So A is false and R is true.",
     module: "stabilisers",
     ref: "Cipriani et al. 2013 BMJ",
   }),

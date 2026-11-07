@@ -62,11 +62,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Early in IPT the therapist gives the patient the 'sick role', explaining that depression is a medical illness.",
-      "R: The sick role temporarily excuses the patient from some obligations and reduces self-blame, while also carrying the responsibility to work at recovery.",
+      "R: IPT was originally developed as a time-limited treatment for major depression.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. IPT borrows Parsons's concept of the sick role: calling depression an illness reduces guilt ('I am not lazy, I am ill'), allows some relief from duties, and in return expects the patient to take part in treatment. This medical framing is one feature that separates IPT from psychodynamic therapy.",
+      "Both are true, but R does not explain A. A is true: assigning the sick role excuses the patient temporarily from some duties, reduces self-blame and also carries a duty to work at getting better. R is true as well, since Klerman and Weissman developed IPT for depression in outpatients. The fact that IPT was designed for depression does not explain why the sick role is used, which rests on its effects on guilt and obligations. So R is not the explanation of A.",
     ref: "Weissman et al. 2000; Parsons 1951",
   }),
   Q({

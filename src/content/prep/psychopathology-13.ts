@@ -129,12 +129,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Patients with depression in India often present primarily with somatic complaints such as aches, fatigue and 'gas', rather than reporting sadness.",
-      "R: Somatic presentations show that depression in India is a different disorder from depression in Western countries.",
+      "A: Patients with depression in India rarely report somatic complaints and mostly present with sadness and guilt.",
+      "R: Somatic symptoms such as aches, fatigue and weakness are a common way of expressing depression in primary care across many cultures.",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
-      "A is true: somatic presentation of depression is common in Indian primary care, shaped by idioms of distress, stigma and help-seeking from physicians, though careful enquiry usually reveals psychological symptoms. R is false: cross-cultural studies (e.g., WHO collaborative studies) show a common core of depressive symptoms worldwide; differences are in presentation and idiom, not a different disorder. Somatisation is also common in Western primary care.",
+      "A is false: in Indian clinics depression very often presents with somatic complaints such as body aches, tiredness, 'gas', burning sensations and poor sleep, and sadness may only emerge on direct questioning. R is true: the WHO primary care studies found that most depressed patients worldwide first present with physical symptoms, so this is not unique to India. So A is false and R is true.",
     module: "depression",
     ref: "Kirmayer 2001; WHO collaborative study on depression",
   }),

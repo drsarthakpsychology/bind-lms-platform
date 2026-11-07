@@ -406,8 +406,8 @@ export const PART: PrepQuestion[] = [
     passage:
       "A 35-year-old man calls a helpline at midnight. He has lost his job, his wife has left with the children, and he says he has a bottle of pesticide next to him. He is crying but answering questions.",
     stem: "What is the counsellor's first priority?",
-    options: ["Explore how his childhood may have affected his marriage", "Explain gently that his feelings are not rational", "Book him an appointment for next week at the clinic", "Assess risk directly, get the pesticide away, link emergency help"],
-    answer: 3,
+    options: ["Explore how his childhood may have affected his marriage", "Assess risk directly, get the pesticide away, link emergency help", "Book him an appointment for next week at the clinic", "Explain gently that his feelings are not rational"],
+    answer: 1,
     explanation:
       "With a lethal means at hand, safety comes first: ask directly about intent and plan, try to separate him from the pesticide, and arrange immediate support (emergency services, a trusted person nearby), while staying calm and connected. Exploring childhood, arguing with his feelings or delaying help are inappropriate in an acute crisis. Pesticide poisoning is a major cause of suicide in rural India.",
     ref: "Roberts 2005; WHO suicide prevention guidance",
@@ -481,11 +481,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Counsellors who work repeatedly with trauma survivors are at risk of secondary (vicarious) traumatisation.",
-      "R: Hearing detailed trauma stories over time can change the helper's own beliefs about safety and trust, and produce trauma-like symptoms.",
+      "R: Trauma work can also bring compassion satisfaction, the pleasure that comes from helping others well.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Vicarious traumatisation and compassion fatigue describe how repeated empathic exposure to others' trauma can affect helpers' world view and wellbeing. Regular supervision, peer support, manageable caseloads and self-care are recommended protections, especially for crisis and helpline workers.",
+      "Both are true, but R does not explain A. A is true: repeated exposure to detailed trauma stories can change a helper's beliefs about safety and trust and can produce trauma-like symptoms. R is true too: measures of professional quality of life assess compassion satisfaction alongside burnout and secondary traumatic stress. A positive side of the work cannot explain a risk, so R is not the explanation of A.",
     ref: "McCann & Pearlman 1990; Figley 1995",
   }),
   Q({
@@ -497,8 +497,8 @@ export const PART: PrepQuestion[] = [
     passage:
       "A school introduces a one-off assembly on 'suicide awareness' in which a speaker describes in detail how a student died and shows photos. Over the next month, the counsellor sees more students reporting suicidal thoughts. The principal wants to repeat the assembly in every class.",
     stem: "What is the most evidence-based advice?",
-    options: ["Repeat the assembly in every class, as awareness reduces suicide", "Stop all discussion of mental health in school for now", "Ask class teachers to screen and diagnose depression", "Use structured skills-based programmes, without method details"],
-    answer: 3,
+    options: ["Use structured skills-based programmes, without method details", "Stop all discussion of mental health in school for now", "Ask class teachers to screen and diagnose depression", "Repeat the assembly in every class, as awareness reduces suicide"],
+    answer: 0,
     explanation:
       "Graphic, method-focused presentations can increase risk through contagion. Structured, interactive programmes that build mental health literacy, coping and help-seeking, such as YAM in the European SEYLE trial (which reduced suicide attempts and severe ideation), are recommended, along with clear referral routes. Silence about mental health increases stigma, and teachers are not trained to diagnose.",
     module: "suicide",

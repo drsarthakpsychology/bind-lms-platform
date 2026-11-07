@@ -110,12 +110,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: In more collectivist cultures, including much of India, counselling goals may focus on family harmony as well as individual wishes.",
+      "A: In collectivist cultures, including much of India, counselling goals should be set only from the individual client's wishes, leaving family out of the picture.",
       "R: In collectivist cultures, identity and decisions are often defined in relation to the family and group, rather than mainly by personal independence.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. Hofstede's dimension of individualism versus collectivism, and later work by Triandis and Markus and Kitayama on interdependent selves, suggest that in collectivist settings people see themselves through their relationships. Counsellors therefore often include family, respect interdependence, and avoid pushing an individualistic idea of 'cutting ties'. Within any culture, individuals vary, so assumptions must be checked.",
+      "A is false: culturally responsive counselling in collectivist settings often includes family harmony and shared decisions among its goals, while still respecting the client's own voice. Ignoring the family can make goals unrealistic or alienating. R is true: in collectivist cultures the self is often defined through relationships and roles. So A is false and R is true.",
     ref: "Hofstede 2001; Markus & Kitayama 1991",
   }),
   Q({
@@ -189,8 +189,8 @@ export const PART: PrepQuestion[] = [
         "4. Giving up one's heritage culture and adopting the new culture",
       ],
     },
-    options: ["A-3, B-1, C-4, D-2", "A-4, B-3, C-1, D-2", "A-3, B-4, C-2, D-1", "A-3, B-4, C-1, D-2"],
-    answer: 3,
+    options: ["A-3, B-1, C-4, D-2", "A-3, B-4, C-1, D-2", "A-3, B-4, C-2, D-1", "A-4, B-3, C-1, D-2"],
+    answer: 1,
     explanation:
       "Berry's model crosses two questions: is it important to keep one's heritage culture, and to have relationships with the wider society? Integration answers yes to both, assimilation yes only to the second, separation yes only to the first, and marginalisation no to both. Integration is generally linked to the best adaptation, and marginalisation to the most stress. This matters for migrant workers and students moving between states or countries.",
     ref: "Berry 1997",
@@ -230,8 +230,8 @@ export const PART: PrepQuestion[] = [
     passage:
       "A young urban counsellor sees a 55-year-old Muslim widow from a low-income neighbourhood who is grieving her son. In the first session the counsellor suggests that she 'focus on herself, set boundaries with her in-laws and consider living independently'. The woman does not return.",
     stem: "What is the most likely problem, and the best learning point?",
-    options: ["The client was resistant and not yet ready for counselling", "The counsellor should have started her on an antidepressant", "The client needed a counsellor of her own age and religion", "The counsellor imposed individualistic goals without exploring her world"],
-    answer: 3,
+    options: ["The client was resistant and not yet ready for counselling", "The counsellor imposed individualistic goals without exploring her world", "The client needed a counsellor of her own age and religion", "The counsellor should have started her on an antidepressant"],
+    answer: 1,
     explanation:
       "Early drop-out is common when counsellors impose their own cultural values. The counsellor jumped to individualistic goals without understanding the meaning of family, faith and widowhood for this client, which is a form of cultural encapsulation. Calling the client resistant shifts blame. Medication was not the issue. Matching age may help some clients, but what matters most is culturally responsive practice, which any counsellor can learn.",
     ref: "Sue & Sue, Counseling the Culturally Diverse",
@@ -244,12 +244,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: The multicultural and social justice counselling competencies include advocacy beyond the counselling room.",
+      "A: The multicultural and social justice counselling competencies limit the counsellor's role strictly to work inside the counselling room.",
       "R: Many clients' problems are partly caused or maintained by social conditions such as poverty, discrimination and lack of access to services, which individual counselling alone cannot change.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. The updated competencies (Ratts and colleagues) ask counsellors to work at individual, community and policy levels, for example helping a client access legal aid, or working with a school to tackle discrimination, because some problems lie in the environment rather than within the person.",
+      "A is false: these competencies explicitly include advocacy and action at community, institutional and policy levels, beyond the counselling room. R is true, and it is the reason the competencies call for advocacy: many problems are maintained by social conditions that individual work cannot change. So A is false and R is true.",
     ref: "Ratts et al. 2016 MSJCC",
   }),
   Q({

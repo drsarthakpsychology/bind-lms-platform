@@ -319,11 +319,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In CBT, patients are explicitly taught to become their own therapist towards the end of treatment.",
-      "R: CBT is time-limited and aims at relapse prevention by building skills that patients can use independently after therapy ends.",
+      "R: Beck's cognitive therapy was first developed as a treatment for depression.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Because CBT is time-limited and aims for durable change, therapists progressively hand over responsibility (patients set the agenda, design experiments), create relapse prevention plans ('therapy blueprint') and schedule booster sessions, so skills persist after therapy. This is thought to explain CBT's enduring effects.",
+      "Both statements are true, but R does not explain A. A is true: CBT is time-limited and aims at relapse prevention, so therapists hand over skills such as thought records and behavioural experiments so that patients can use them alone. R is also true, as Beck built cognitive therapy around depression before extending it to anxiety and other disorders. That historical fact says nothing about why patients are trained to be their own therapist, so R is not the explanation of A.",
     ref: "J. Beck, Basics and Beyond",
   }),
   Q({

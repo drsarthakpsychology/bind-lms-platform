@@ -9,7 +9,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-sd-0001",
     topic: "whitehall",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The Whitehall studies of British civil servants found a social gradient in heart disease: the lower the employment grade, the higher the risk. Part of this gradient was explained by:",
     options: [
@@ -32,11 +32,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Health psychology interventions aimed only at individual behaviour may widen health inequalities.",
-      "R: People with more education and resources are often better able to take up and benefit from information-based campaigns.",
+      "R: The Whitehall studies found a social gradient in heart disease among British civil servants.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. When campaigns rely on reading leaflets, booking appointments or buying healthier food, better-off groups tend to respond more, so the gap between groups can grow even when everyone improves a little. This is called intervention-generated inequality. It is why structural measures, such as tobacco taxes and clean water, are combined with individual approaches.",
+      "Both are true, but R does not explain A. A is true: information-based campaigns are often taken up more by people with more education and resources, so gaps between groups can grow even when everyone improves a little (intervention-generated inequality). R is true: the Whitehall studies showed higher heart disease risk at lower employment grades. R shows that inequalities exist, but it does not explain how individual-level interventions widen them, so R is not the explanation of A.",
     ref: "Lorenc et al. 2013; Marmot Review 2010",
   }),
   Q({
@@ -99,7 +99,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-sg-0002",
     topic: "janis-worry",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
@@ -167,7 +167,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-in-0002",
     topic: "exercise",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which statement about exercise and mental health is best supported by systematic reviews?",
     options: [
@@ -343,16 +343,16 @@ export const PART: PrepQuestion[] = [
     id: "hlth-rs-0003",
     topic: "reverse-causation",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 2,
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: A cross-sectional study finding that lonely older adults have more illness cannot show that loneliness causes illness.",
+      "A: A cross-sectional study finding that lonely older adults have more illness proves that loneliness causes illness.",
       "R: Illness can itself cause loneliness, for example by limiting mobility and social contact.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. In a cross-sectional study both variables are measured at one time, so the direction of influence is unclear. Reverse causation (illness leading to isolation) is a plausible alternative, along with confounders such as poverty or depression. Prospective studies and experiments, such as viral challenge studies, are needed to strengthen causal claims.",
+      "A is false: in a cross-sectional study both variables are measured at one time, so the direction of influence is unclear and confounders such as poverty or depression may explain the link. Prospective studies and experiments are needed to support causal claims. R is true and is one reason A fails: reverse causation is plausible. So A is false and R is true.",
     module: "assessment",
     ref: "Research methods",
   }),

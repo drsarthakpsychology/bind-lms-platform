@@ -81,12 +81,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: In Korsakoff syndrome, immediate recall (digit span) is typically preserved while new learning is severely impaired.",
-      "R: Korsakoff syndrome mainly damages the frontal cortex, sparing diencephalic structures.",
+      "A: In Korsakoff syndrome, immediate recall (digit span) is severely impaired along with new learning.",
+      "R: Korsakoff syndrome mainly involves damage to diencephalic structures such as the mammillary bodies and medial thalamus.",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
-      "A is true: Korsakoff patients have normal digit span with dense anterograde amnesia, retrograde amnesia with a temporal gradient, and confabulation. R is false: the key lesions are diencephalic (mammillary bodies, dorsomedial thalamus) and the circuits linking them to the hippocampus, though frontal involvement contributes to confabulation and executive deficits. Hence A true, R false.",
+      "A is false: a hallmark of Korsakoff syndrome is that immediate (working) memory, tested by digit span, is usually preserved, while the ability to lay down new long-term memories is severely impaired, with retrograde gaps and often confabulation. R is true: thiamine deficiency damages the mammillary bodies and the medial dorsal thalamus, with frontal involvement adding to executive problems. So A is false and R is true.",
     module: "neurocognitive",
     ref: "Kaplan & Sadock; Fish memory disorders",
   }),

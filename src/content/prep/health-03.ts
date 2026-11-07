@@ -88,7 +88,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-pain-0005",
     topic: "neuromatrix",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "A man whose leg was amputated a year ago still feels burning pain in his missing foot. Melzack's neuromatrix theory explains this as:",
     options: [
@@ -182,11 +182,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In Fordyce's operant approach, analgesics are given on a fixed time schedule rather than 'as needed' when pain is reported.",
-      "R: Giving medication only when pain is reported can reinforce pain behaviours, such as complaining and grimacing.",
+      "R: Fordyce developed his operant approach for patients with chronic pain rather than acute pain.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Fordyce argued that pain behaviours (guarding, complaining, resting) can be maintained by their consequences, such as attention, relief from duties or medication. Time-contingent dosing breaks the link between pain behaviour and relief. Operant programmes also reward 'well behaviours' and train family members to respond to activity rather than to complaints.",
+      "Both are true, but R does not explain A. A is true: time-contingent dosing breaks the link between pain behaviour (complaining, grimacing) and the relief of medication, which can otherwise reinforce it. R is true: Fordyce worked with people whose chronic pain was maintained by its consequences. The patient group does not explain why dosing is time-based; the reinforcement principle does. So R is not the explanation of A.",
     ref: "Fordyce 1976",
   }),
   Q({
@@ -247,7 +247,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-pain-0014",
     topic: "mcgill",
     exams: NET_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The McGill Pain Questionnaire asks patients to choose words such as 'throbbing', 'exhausting' and 'unbearable'. It was designed to capture:",
     options: [
@@ -325,7 +325,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-ci-0004",
     topic: "illness-perception-intervention",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "mcq",
     stem: "In a randomised trial, patients admitted after a first heart attack received a brief hospital-based intervention aimed at changing their beliefs about the cause, timeline and controllability of their illness. Compared with controls, they:",
     options: [
@@ -463,7 +463,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-ci-0012",
     topic: "self-management",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Lay-led chronic disease self-management programmes, such as Lorig's, are thought to work mainly by:",
     options: [
@@ -518,7 +518,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-tp-0002",
     topic: "type-a-evidence",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Early studies such as the Western Collaborative Group Study found that Type A men had about twice the risk of coronary heart disease. Later research suggested that the harmful component is mainly:",
     options: ["Time urgency, fast speech and impatience", "Hostility, especially cynical mistrust and anger", "Achievement striving and strong ambition", "Working long hours in a demanding office"],
@@ -531,7 +531,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-tp-0003",
     topic: "type-d",
     exams: NET_MCP_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Denollet's 'Type D' (distressed) personality is defined by the combination of:",
     options: [

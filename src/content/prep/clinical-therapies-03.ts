@@ -130,11 +130,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: REBT is typically more directive and philosophically focused than Beck's cognitive therapy.",
-      "R: REBT targets underlying absolutistic demands and aims for 'elegant' philosophical change (unconditional acceptance), whereas Beck's CT tests the accuracy of specific inferences through collaborative empiricism.",
+      "R: Both REBT and Beck's cognitive therapy hold that beliefs and interpretations, rather than events alone, shape emotional reactions.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Ellis's REBT actively and often forcefully disputes core musts, seeking deep philosophical change (unconditional self, other and life acceptance) even if the feared event occurs. Beck's CT is more Socratic, examining evidence for specific inferences and predictions. The different targets (evaluative musts vs inferential distortions) explain the different styles.",
+      "Both are true, but R does not explain A. A is true: Ellis actively disputes absolutistic 'musts' and aims at a philosophical shift towards unconditional acceptance, while Beck's therapist uses collaborative empiricism to test specific inferences. R is true too, since both therapies share the cognitive model of emotion. A shared assumption cannot explain a difference between the two approaches, so R is not the correct explanation of A.",
     ref: "Padesky & Beck 2003; Dryden 2009",
   }),
   Q({

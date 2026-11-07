@@ -47,8 +47,8 @@ export const PART: PrepQuestion[] = [
       left: ["A. Realistic", "B. Investigative", "C. Social", "D. Conventional"],
       right: ["1. Accountant", "2. Research scientist", "3. School counsellor", "4. Electrician"],
     },
-    options: ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-4, B-3, C-2, D-1", "A-4, B-2, C-3, D-1"],
-    answer: 3,
+    options: ["A-4, B-2, C-1, D-3", "A-4, B-2, C-3, D-1", "A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1"],
+    answer: 1,
     explanation:
       "Realistic types like working with tools and machines (electrician). Investigative types like solving abstract problems (research scientist). Social types like helping and teaching people (school counsellor). Conventional types like orderly work with data and records (accountant).",
     ref: "Holland 1997",
@@ -109,12 +109,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Super saw career choice as an attempt to put one's self-concept into practice.",
+      "A: Super saw career choice as a single event that happens once, in late adolescence.",
       "R: For Super, people choose occupations that let them express the kind of person they believe themselves to be.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. Super's theory centres on implementing the vocational self-concept: through work, people express their picture of who they are, and the self-concept changes with experience over the life span. This makes career development a lifelong process rather than a single choice.",
+      "A is false: Super's life-span, life-space theory treats career development as a lifelong process passing through stages (growth, exploration, establishment, maintenance and disengagement), with choices made and remade over time. R is true: Super saw occupational choice as implementing one's self-concept. So A is false and R is true.",
     ref: "Super 1953",
   }),
   Q({
@@ -244,8 +244,8 @@ export const PART: PrepQuestion[] = [
     passage:
       "A career counsellor asks a 30-year-old client: 'Who were your role models growing up? What are your favourite magazines, TV shows or websites? What is your favourite story? What is your favourite saying? What are your earliest memories?' She then helps the client see a 'life theme' that links these answers to possible career directions.",
     stem: "Which approach is this?",
-    options: ["Parsons's trait-and-factor matching interview", "Holland's Self-Directed Search with self-scoring", "Ginzberg's period theory of occupational choice", "Savickas's career construction interview"],
-    answer: 3,
+    options: ["Parsons's trait-and-factor matching interview", "Savickas's career construction interview", "Ginzberg's period theory of occupational choice", "Holland's Self-Directed Search with self-scoring"],
+    answer: 1,
     explanation:
       "The Career Construction Interview uses these questions (role models, magazines, favourite story, motto, early recollections) to draw out life themes and a narrative identity, which the counsellor and client use to author the next chapter of the career story. It is narrative and constructivist. Trait-factor matching and the SDS use tests and matching. Ginzberg's theory describes developmental periods, not an interview method.",
     ref: "Savickas 2011, Career Counseling",

@@ -143,11 +143,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Rogers was among the first to record therapy sessions and study them systematically.",
-      "R: Rogers believed that psychotherapy should be studied scientifically, so that hypotheses about the core conditions could be tested.",
+      "R: Rogers called his approach 'non-directive' in its early phase and 'client-centred' later.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Rogers and his colleagues pioneered audio recording of sessions and empirical research on process and outcome, including the Wisconsin project with people with schizophrenia. His wish to test his ideas scientifically is the reason he introduced recordings. This research tradition fed into later work on empathy and the alliance.",
+      "Both are true, but R does not explain A. A is true: Rogers and his students recorded sessions and studied them, for example with Q-sort measures of self-concept, because he wanted therapy to be studied scientifically. R is true: the name of the approach changed from non-directive to client-centred and later person-centred. A change of name has nothing to do with why he recorded sessions, so R is not the explanation of A.",
     ref: "Rogers & Dymond 1954; Rogers et al. 1967",
   }),
   Q({
@@ -465,11 +465,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Advanced (additive) empathy should usually be used after a solid relationship has been built through basic empathy.",
-      "R: Advanced empathy goes beyond what the client has said, so if used too early it can feel intrusive or wrong and increase defensiveness.",
+      "R: Rogers saw accurate empathic understanding as one of the core conditions of therapeutic change.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Advanced empathy voices what the client is only hinting at or has not yet put into words (hidden feelings, themes, implications). Because it moves ahead of the client, it needs trust and good timing; offered too soon or too confidently, it can feel like mind-reading. Egan places it among the challenging skills used once rapport is established.",
+      "Both are true, but R does not explain A. A is true: advanced empathy goes beyond what the client has said, so if it comes too early it can feel intrusive or wrong and raise defences. R is true: empathy was one of Rogers's core conditions, with congruence and unconditional positive regard. That statement explains why empathy matters in general, not why the additive form should wait for a trusting relationship, so R is not the explanation of A.",
     ref: "Egan; Carkhuff",
   }),
   Q({

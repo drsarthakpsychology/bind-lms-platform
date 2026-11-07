@@ -82,12 +82,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: ACT treats experiential avoidance as a central process in many forms of psychopathology.",
+      "A: The main aim of ACT is to reduce how often unwanted thoughts and feelings occur.",
       "R: Attempts to suppress or control unwanted thoughts and feelings often increase their frequency and narrow a person's life.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. Experiential avoidance means trying to escape or control unwanted internal experiences even when this causes harm. Thought-suppression research (the 'white bear' studies) shows suppression tends to increase intrusions, and avoidance shrinks life around the effort to feel better. ACT offers acceptance and values-based action as the alternative.",
+      "A is false: ACT aims at psychological flexibility, meaning acting on one's values while making room for difficult inner experiences. Symptom reduction may happen, but it is not the target, and trying to remove thoughts is seen as part of the problem (experiential avoidance). R is true: thought suppression studies and clinical observation show that control efforts often backfire and shrink a person's life. So A is false and R is true.",
     ref: "Hayes et al. 1996; Wegner 1987",
   }),
   Q({

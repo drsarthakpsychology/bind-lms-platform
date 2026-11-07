@@ -27,7 +27,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-pe-0002",
     topic: "undo-effect",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "passage",
     passage:
       "Participants were made anxious by being told they had one minute to prepare a speech that would be video-recorded. Their heart rate and blood pressure rose. They were then shown one of four short films: one producing contentment, one producing amusement, a neutral film, or a sad film. Those who watched the contentment or amusement films returned to their baseline heart rate and blood pressure fastest.",
@@ -64,7 +64,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-pe-0004",
     topic: "savouring",
     exams: NET_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A counsellor asks a client to slow down while eating a favourite sweet, notice its taste and smell, and later recall the moment with a friend. This practice is called:",
     options: ["Savouring", "Rumination", "Catastrophising", "Habituation"],
@@ -205,7 +205,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-op-0004",
     topic: "penn-resiliency",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "mcq",
     stem: "Meta-analyses of the Penn Resiliency Program, a school-based CBT programme that teaches optimistic thinking, found that compared with no intervention it:",
     options: [
@@ -223,7 +223,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-op-0005",
     topic: "defensive-pessimism",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
@@ -296,7 +296,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-rs-0003",
     topic: "bonanno-trajectories",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "mcq",
     stem: "Bonanno's research on adults after bereavement or potentially traumatic events found that the most common pattern of response over time is:",
     options: [
@@ -443,7 +443,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-gr-0004",
     topic: "meaning",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Steger's Meaning in Life Questionnaire distinguishes two separate aspects of meaning. These are:",
     options: [
@@ -461,7 +461,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-gr-0005",
     topic: "grit",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "mcq",
     stem: "Angela Duckworth defined 'grit' as passion and perseverance for long-term goals. A large meta-analysis of grit research concluded that:",
     options: [
@@ -646,13 +646,8 @@ export const PART: PrepQuestion[] = [
     passage:
       "Researchers compared ideal emotional states across cultures. European American students tended to value high-arousal positive states such as excitement and enthusiasm, while Hong Kong Chinese students tended to value low-arousal positive states such as calm and peacefulness. Other studies show that in some East Asian samples, people are wary of extreme happiness, believing it may be followed by misfortune.",
     stem: "What is the main implication for well-being research and practice in India and Asia?",
-    options: [
-      "Asian people are less happy, so they need more excitement",
-      "Well-being measures and interventions may need cultural adaptation",
-      "Calmness should be counted as a negative emotional state",
-      "Cultural differences disappear once income is controlled",
-    ],
-    answer: 1,
+    options: ["Well-being measures and interventions may need cultural adaptation", "Asian people are less happy, so they need more excitement", "Calmness should be counted as a negative emotional state", "Cultural differences disappear once income is controlled"],
+    answer: 0,
     explanation:
       "Tsai's affect valuation theory shows that the 'ideal affect' people strive for differs across cultures, and other work shows differing beliefs about happiness itself, such as fear of happiness. Questionnaires that focus on excitement may underestimate well-being where calm and balance are valued, as in many Indian traditions that prize equanimity. Interventions should fit these values. This does not mean Asians are less happy, calm is a positive state, and the differences are not simply due to income.",
     ref: "Tsai, Knutson & Fung 2006; Joshanloo & Weijers 2014",
@@ -680,7 +675,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-pe-0007",
     topic: "awe-elevation",
     exams: NET_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Watching a stranger help an elderly woman cross a busy road, a student feels a warm, uplifting feeling and a wish to be a better person. Jonathan Haidt called this emotion:",
     options: ["Elevation", "Schadenfreude", "Envy", "Nostalgia"],

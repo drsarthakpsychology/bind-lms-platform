@@ -40,11 +40,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Contemporary psychodynamic therapists treat countertransference as a possible source of information about the patient, not only as an obstacle.",
-      "R: The feelings a patient stirs in the therapist can reflect how the patient makes others feel, or feelings the patient cannot yet tolerate in themselves.",
+      "R: Freud first described countertransference and saw it mainly as an obstacle that the analyst should overcome.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Freud first saw countertransference as the analyst's unresolved conflicts, to be overcome. Later writers (Heimann, Racker, Winnicott) argued that the therapist's reactions, such as sudden boredom, irritation or protectiveness, can be a clue to the patient's inner world and relationships, especially through projective identification, as long as the therapist reflects on them rather than acting them out.",
+      "Both are true, but R does not explain A. A is true: since Heimann and Racker, many therapists see the feelings a patient stirs in them as clues to how the patient affects others or to feelings the patient cannot yet bear. R is true: Freud introduced the term and saw countertransference as a problem rooted in the analyst's own conflicts. R describes the older view that A moved away from, so it cannot be the explanation of A.",
     ref: "Heimann 1950; Racker 1957",
   }),
   Q({

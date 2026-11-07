@@ -108,11 +108,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In CBT for depression, patients are encouraged to schedule activities even when they do not feel like doing them.",
-      "R: In depression, low mood reduces activity, and reduced activity further lowers mood, so waiting for motivation keeps the cycle going.",
+      "R: Activity scheduling was an early part of Lewinsohn's behavioural approach to depression.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Activity scheduling and behavioural activation are based on the vicious cycle of low mood, withdrawal and loss of reward. Acting first, in small planned steps, often brings back some pleasure and sense of achievement, which then improves mood and motivation.",
+      "Both are true, but R does not explain A. A is true: activity scheduling asks patients to act according to a plan rather than waiting for motivation, because low mood and low activity feed each other. R is true historically, since Lewinsohn's work on response-contingent reinforcement introduced pleasant-activity scheduling. Where the technique came from does not explain why patients are asked to act before they feel like it, so R is not the explanation of A.",
     module: "depression",
     ref: "Beck et al.; Martell et al.",
   }),

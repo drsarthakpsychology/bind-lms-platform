@@ -254,12 +254,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Safety behaviours tend to maintain anxiety disorders.",
+      "A: Safety behaviours, such as carrying water in case of fainting, reliably reduce anxiety over the long term.",
       "R: Safety behaviours prevent the person from learning that the feared catastrophe would not have happened anyway.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. If a person with panic always sits down when dizzy, they credit sitting down with preventing collapse and never learn that they would not have fainted. CBT therefore helps people drop safety behaviours during exposure or experiments, so the belief can be disconfirmed.",
+      "A is false: safety behaviours may bring short-term relief, but they maintain anxiety over time, and dropping them is a central part of CBT for panic and social anxiety. R is true: by crediting the safety behaviour for the absence of disaster, the person never disconfirms the feared belief ('I didn't faint because I sipped water'). So A is false and R is true.",
     module: "anxiety",
     ref: "Salkovskis 1991",
   }),

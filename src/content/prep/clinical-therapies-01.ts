@@ -186,12 +186,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Behaviours maintained on a variable-ratio schedule are highly resistant to extinction.",
+      "A: Behaviours maintained on a variable-ratio schedule extinguish faster than behaviours maintained on continuous reinforcement.",
       "R: On a variable-ratio schedule, the learner cannot easily detect when reinforcement has stopped, because unreinforced responses were common even during reinforcement.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Variable-ratio schedules (as in gambling) produce high, steady response rates and strong resistance to extinction, because long runs without reward were normal during acquisition, making the change to extinction hard to discriminate (the discrimination hypothesis of the partial reinforcement extinction effect).",
+      "A is false: this is the reverse of the partial reinforcement extinction effect. Behaviour learned under intermittent schedules, especially variable ratio, is far more resistant to extinction than behaviour learned under continuous reinforcement, which is why gambling is so persistent. R is true: it is the usual explanation of that resistance, since a long run without reward feels no different from the training period. So A is false and R is true.",
     ref: "Ferster & Skinner 1957",
   }),
   Q({

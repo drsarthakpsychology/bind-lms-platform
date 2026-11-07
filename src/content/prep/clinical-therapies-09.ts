@@ -263,12 +263,12 @@ export const PART: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Yalom recommends that interactional group therapists focus on the 'here and now' of relationships in the group.",
+      "A: Yalom recommends that interactional group therapists focus mainly on members' childhood histories rather than on relationships within the group.",
       "R: Over time a group becomes a social microcosm, in which members show the same interpersonal patterns they show outside, so these can be seen, fed back and changed in the room.",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true, and R explains A. Yalom argues that because members recreate their typical interpersonal behaviour in the group (the social microcosm), working with what is happening between members right now gives direct, emotionally live material for interpersonal learning. The second step is process illumination: reflecting on what just happened and what it means.",
+      "A is false: Yalom stresses the 'here and now', the relationships and feelings unfolding among members in the session, rather than reconstruction of the past. R is true: the social microcosm idea is exactly why the here and now is so useful, since members' usual patterns appear in the group where they can be noticed and changed. So A is false and R is true.",
     ref: "Yalom & Leszcz 2005",
   }),
   Q({

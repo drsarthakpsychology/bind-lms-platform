@@ -99,7 +99,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-ag-0001",
     topic: "socioemotional-selectivity",
     exams: NET_MCP,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Older adults often pay more attention to, and remember better, positive information than negative information. Carstensen's socioemotional selectivity theory explains this 'positivity effect' as:",
     options: [
@@ -136,7 +136,7 @@ export const PART: PrepQuestion[] = [
     id: "pos-in-0005",
     topic: "anasakti",
     exams: NET_MA,
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Indian psychologists Pande and Naidu developed the concept of 'anasakti', drawn from the Bhagavad Gita. It refers to:",
     options: [

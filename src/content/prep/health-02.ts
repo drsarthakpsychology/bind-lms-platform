@@ -277,11 +277,11 @@ export const PART: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: The Theory of Planned Behaviour extended the earlier Theory of Reasoned Action by adding perceived behavioural control.",
-      "R: Many health behaviours, such as quitting smoking, are not fully under a person's voluntary control, so intention alone predicts them poorly.",
+      "R: The Theory of Planned Behaviour has been applied to many health behaviours, such as condom use, exercise and cancer screening.",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. The Theory of Reasoned Action (Fishbein and Ajzen) used only attitude and subjective norm, and worked best for behaviours under full voluntary control. Ajzen added perceived behavioural control, closely related to Bandura's self-efficacy, because skills, resources and opportunities limit what people can do. That is the reason for the extension.",
+      "Both are true, but R does not explain A. A is true: Ajzen added perceived behavioural control to attitude and subjective norm, because many behaviours are not fully under voluntary control, so intention alone predicts them poorly. R is true, since the model is one of the most widely applied in health psychology. Its wide use does not explain why the extra construct was added, so R is not the explanation of A.",
     ref: "Fishbein & Ajzen 1975; Ajzen 1985, 1991",
   }),
   Q({
@@ -484,7 +484,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-hb-0017",
     topic: "self-efficacy",
     exams: CUET_NET_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "According to Bandura, which is the most powerful source of self-efficacy?",
     options: [
@@ -502,7 +502,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-hb-0018",
     topic: "unrealistic-optimism",
     exams: CUET_NET_MA,
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Many young people say, 'Other people my age may get diabetes or have an accident, but it won't happen to me.' Weinstein called this:",
     options: ["Learned helplessness", "Unrealistic optimism", "Hardiness", "Sense of coherence"],
@@ -629,7 +629,7 @@ export const PART: PrepQuestion[] = [
     id: "hlth-hb-0025",
     topic: "habit",
     exams: MCP,
-    difficulty: 4,
+    difficulty: 3,
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
