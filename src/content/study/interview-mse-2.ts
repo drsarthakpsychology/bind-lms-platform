@@ -1,8 +1,8 @@
-/* Module 1 · Part II — The mental status examination. Source: VIBHA School of Psychology study notes (2026 edition). */
+/* Module 1 · Part II, The mental status examination. Source: VIBHA School of Psychology study notes (2026 edition). */
 export const part2 = String.raw`
 # Part II · The mental status examination
 
-## 2.0 What the MSE is, and what it is not [core]
+## 2.0 What the MSE is, and what it is not [core][beginner]
 The psychiatric equivalent of the physical examination: a structured, cross-sectional snapshot of how the mind is working at this moment, in this room, in front of you.
 
 :::define Mental status examination
@@ -52,6 +52,10 @@ ASEPTIC is a checklist, not a writing order. Write in the proforma order (1 to 8
 Every area is covered, but emphasis follows the history: mood and affect in depression; cognition in delirium and dementia; thought and perception in psychosis; appearance and behaviour in the uncooperative patient.
 :::
 
+:::widget sort
+{"prompt": "How is each MSE finding usually obtained? Place each card.", "buckets": ["Watched or heard during the talk", "Needs a direct question or test"], "items": [{"text": "Unkempt hair and soiled clothes", "bucket": 0}, {"text": "Speech fast and hard to interrupt", "bucket": 0}, {"text": "Whether voices are heard when alone", "bucket": 1, "why": "Many patients will not volunteer this. Ask, gently and normally."}, {"text": "Digit span forwards and backwards", "bucket": 1}, {"text": "Tearful while describing her son", "bucket": 0}, {"text": "Thoughts of ending life", "bucket": 1, "why": "Always asked directly; never left to chance."}, {"text": "Turning to look at an empty corner, as if listening", "bucket": 0, "why": "Hallucinatory behaviour is observed."}]}
+:::
+
 :::recall
 1. Define the MSE in one sentence. || A standardised format recording the psychiatric signs and symptoms present at the time of the interview.
 2. Give five differences between history and MSE. || Subjective vs objective; informants vs own observation; longitudinal vs cross-sectional; HPI vs physical exam analogue; changes with information vs with state.
@@ -68,7 +72,7 @@ Q: A patient says she felt very low last week but today talks cheerfully and jok
 > The MSE is a snapshot of now. Last week belongs in the history.
 :::
 
-## 2.1 General appearance and behaviour [core]
+## 2.1 General appearance and behaviour [core][beginner]
 Entirely observational, it begins before the first question, and it is the one section that can **always** be completed, even in a mute, sedated or hostile patient. It needs more emphasis in the uncooperative patient, not less.
 
 :::note Read against background
@@ -123,6 +127,23 @@ Recorded **here**, in behaviour, because it is observed rather than reported:
 - **Abnormal:** A 25-year-old woman appearing older than her stated age, unkempt, hair matted, wearing soiled clothes unsuited to the season. Guarded and suspicious; repeatedly asked why she was being questioned. Comprehension partially impaired. Psychomotor activity increased with restlessness; stood up three times. No catatonic signs. Gaze aversion throughout. Observed muttering to herself and glancing towards the window twice, suggestive of hallucinatory behaviour. Rapport could not be established.
 :::
 
+:::widget sort
+{"prompt": "Name the catatonic sign. Place each description.", "buckets": ["Waxy flexibility or catalepsy", "Negativism", "Echopraxia", "Stereotypy", "Posturing"], "items": [{"text": "You raise his arm; it stays up for minutes after you let go", "bucket": 0}, {"text": "She pulls away from every attempt to move her, and turns away when asked to face you", "bucket": 1}, {"text": "He copies your hand movements as you scratch your ear", "bucket": 2}, {"text": "He rocks forward and back continuously, with no purpose", "bucket": 3, "why": "Repetitive and not goal-directed. A mannerism would be an odd version of a purposeful act."}, {"text": "She holds an awkward, crucifix-like pose by herself for an hour", "bucket": 4, "why": "Posturing is adopted by the patient; catalepsy is a position the examiner placed."}]}
+:::
+
+:::widget decide
+{"scene": "Mohan, 38, is brought to the ward by his family in Lucknow. He has not spoken, eaten or drunk for three days. He lies rigid, stares and does not respond to questions. A junior writes: 'MSE could not be done.'", "ask": "What is the right approach?", "choices": [{"label": "Agree; wait until he talks", "verdict": "harm", "outcome": "By day five he is dehydrated with a rising temperature and a blood clot in the leg.", "why": "Stupor is a medical emergency. Waiting risks dehydration, clots, pneumonia and death."}, {"label": "Record everything observable (consciousness, posture, rigidity, response to commands, eye movements, catatonic signs), take a full collateral history, and alert the team to urgent physical and catatonia assessment", "verdict": "best", "outcome": "Catatonic signs are documented, a benzodiazepine test dose produces a clear response, and medical causes are screened in parallel.", "why": "In a mute patient, observation is the examination. Catatonia is common, treatable and must not be missed."}, {"label": "Diagnose 'conversion disorder' because tests are normal so far", "verdict": "harm", "outcome": "Treatment is delayed and a medical cause is not looked for.", "why": "A premature label closes the search. Catatonia has psychiatric, neurological and medical causes."}]}
+:::
+
+:::clinician
+### Rating and treating catatonia
+- DSM-5-TR catatonia needs **3 or more of 12** signs (stupor, catalepsy, waxy flexibility, mutism, negativism, posturing, mannerism, stereotypy, agitation not influenced by external stimuli, grimacing, echolalia, echopraxia). It can be specified with another mental disorder, due to a medical condition, or unspecified.
+- The Bush-Francis Catatonia Rating Scale has 23 items; its first 14 form a screening instrument. Examine for grasp reflex, waxy flexibility and gegenhalten (resistance proportional to the force applied).
+- Lorazepam is first-line: many respond to standard doses (up to 4 mg a day), but some need 8 to 24 mg a day. Response is usually rapid. A clear improvement after a test dose supports the diagnosis.
+- ECT is the most effective treatment, and urgent when there is no response, or in malignant catatonia (fever and autonomic instability). Catatonia in established schizophrenia responds less to benzodiazepines alone.
+- Always look for medical causes: autoimmune encephalitis, non-convulsive status epilepticus, CNS infection, metabolic disorders and drug withdrawal (including abrupt clozapine or benzodiazepine withdrawal). Distinguish neuroleptic malignant syndrome; avoid starting antipsychotics until it is excluded.
+:::
+
 :::recall
 1. Name the seven sub-headings of appearance and behaviour. || Appearance; attitude; comprehension; gait and posture; motor activity; social manner; rapport.
 2. Distinguish mannerism from stereotypy; waxy flexibility from catalepsy; echolalia from echopraxia. || Goal-directed vs not; process vs end result; words vs actions.
@@ -146,7 +167,7 @@ Q: A patient keeps a fixed, awkward posture for minutes when you raise her arm a
 > Write the exact behaviour and name it. Catatonia needs urgent assessment.
 :::
 
-## 2.2 Speech [core]
+## 2.2 Speech [core][beginner]
 | Heading | What to note | Abnormal terms |
 |---|---|---|
 | Rate and quantity | Is speech present? Spontaneous? Productivity up or down? Rate fast or slow? | **Mutism**: no speech. **Pressure of speech**: rapid output with a feeling of racing thoughts; hard to interrupt. **Poverty of speech**: decreased amount |
@@ -173,6 +194,10 @@ Circumstantiality, tangentiality, flight of ideas and clang associations appear 
 - Psychosis: answers that drift, a sudden stop mid-sentence (“…and then…”), an odd made-up word.
 :::
 
+:::widget sort
+{"prompt": "Which speech finding is it?", "buckets": ["Pressure of speech", "Poverty of speech", "Poverty of content", "Mutism"], "items": [{"text": "Answers only 'yes' or 'no' after long pauses", "bucket": 1}, {"text": "Talks fluently for two minutes but says almost nothing you can write down", "bucket": 2, "why": "Enough words, too little information."}, {"text": "Rapid, loud, cannot be interrupted, jumps on", "bucket": 0}, {"text": "No speech at all despite being awake and alert", "bucket": 3}, {"text": "Speaks only when spoken to, in a few words", "bucket": 1}]}
+:::
+
 :::recall
 1. Name the three headings for examining speech. || Rate and quantity; volume and tone; flow and rhythm.
 2. Define pressure of speech, poverty of speech, poverty of content of speech, and verbigeration. || Rapid output with racing thoughts; reduced amount; adequate amount, little information; senseless repetition of the same words.
@@ -189,7 +214,7 @@ Q: A patient's speech is fast and hard to interrupt, jumping between topics that
 > Stream and form go under Thought; rate and quantity go under Speech.
 :::
 
-## 2.3 Mood and affect [core]
+## 2.3 Mood and affect [core][beginner]
 :::define Mood and affect
 **Mood** is the pervasive feeling tone which is sustained (lasts for some time) and colours the total experience of the person. **Affect** is the outward, objective expression of the immediate, cross-sectional experience of emotion at a given time.
 :::
@@ -260,6 +285,18 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 - Confusing **blunted** (intensity reduced) with **flat** (range essentially absent). Blunted is a step on the way to flat.
 :::
 
+:::widget sort
+{"prompt": "Which affect term fits best?", "buckets": ["Blunted", "Flat", "Labile", "Inappropriate", "Incongruent"], "items": [{"text": "Laughs loudly during a prayer meeting for a dead neighbour", "bucket": 3, "why": "Does not fit the setting."}, {"text": "Smiles while saying he wants to die", "bucket": 4, "why": "Does not fit his own stated mood and thoughts."}, {"text": "Weeps, then laughs, then weeps again within a minute, without a reason", "bucket": 2}, {"text": "Emotion visible but muted; little change in face or voice", "bucket": 0, "why": "Intensity reduced."}, {"text": "No visible emotion at all, whatever the topic", "bucket": 1, "why": "Range essentially absent."}]}
+:::
+
+:::clinician
+### Pitfalls in judging affect
+- **Medicine and illness can mimic blunting.** Antipsychotic-induced parkinsonism (masked face, slowness) and Parkinson's disease itself reduce facial expression. Check for rigidity and tremor before calling affect blunted.
+- **Depression versus negative symptoms.** Both reduce expression. Depressed affect is sad and painful; blunted affect in schizophrenia is often indifferent. Ask about subjective distress.
+- **Pseudobulbar affect** (after stroke, MS, ALS): sudden crying or laughing out of proportion to feeling. The patient often says, "I'm not as sad as I look."
+- **Culture.** Some communities express emotion with restraint before strangers. Judge against what is usual for the person, ideally with an informant.
+:::
+
 :::recall
 1. Define mood and affect, with three differences. || Sustained vs momentary; subjective vs observed; patient's words vs your words.
 2. Order euphoria, ecstasy, exaltation and elation by severity, with stages. || Euphoria (hypomania), elation (stage II), exaltation (stage III), ecstasy (delirious mania).
@@ -283,7 +320,7 @@ Q: A man says, "I'm fine," while sitting slumped, tearful and slow. You record:
 > Record the patient's own words for mood and your observation of affect separately.
 :::
 
-## 2.4 Thought: stream and form [core]
+## 2.4 Thought: stream and form [core][beginner]
 :::define Normal thinking
 A goal-directed flow of ideas, symbols and associations, initiated by a problem or task, with rational connections between successive ideas, leading towards a reality-oriented conclusion.
 :::
@@ -364,10 +401,14 @@ A thought process characterised by a series of ideas **without apparent logical 
 | Poverty of content of speech | Enough speech, but it conveys little information. (Poverty of speech = the amount itself is reduced) |
 
 ### Depth for a distinction: the classical descriptions [extra]
-- **Bleuler (1911)**: schizophrenia as a disorder of associations: condensation (two ideas blended into one false concept), displacement (one idea used for an associated idea), misuse of symbols (concrete thinking).
-- **Cameron (1944)**: asyndesis (lack of adequate connections), metonyms (imprecise expressions instead of exact ones), and over-inclusion (inability to narrow thinking to what is relevant).
-- **Goldstein (1944)**: loss of the abstract attitude, producing concrete thinking.
+- **Bleuler**: schizophrenia as a disorder of associations: condensation (two ideas blended into one false concept), displacement (one idea used for an associated idea), misuse of symbols (concrete thinking).
+- **Cameron**: asyndesis (lack of adequate connections), metonyms (imprecise expressions instead of exact ones), and over-inclusion (inability to narrow thinking to what is relevant).
+- **Goldstein**: loss of the abstract attitude, producing concrete thinking.
 - **Schneider**: five features (derailment, substitution, omission, fusion, drivelling), set against three features of healthy thinking (constancy, organisation, continuity).
+
+:::widget sort
+{"prompt": "Asked 'How did you get to the hospital today?', what kind of thinking does each answer show?", "buckets": ["Circumstantiality", "Tangentiality", "Flight of ideas", "Loosening of associations"], "items": [{"text": "\"I woke at six, my sister made poha, the bus was late, the conductor was rude, we changed at the bus stand... so, by bus.\"", "bucket": 0, "why": "Many details, but the goal is reached."}, {"text": "\"Hospitals are expensive these days. My cousin built a hospital. Construction costs have risen in Pune.\"", "bucket": 1, "why": "Related to the topic, but the question is never answered."}, {"text": "\"By bus, bus, buzz, bees, honey, money, money is power, power cut last night, night is dark!\"", "bucket": 2, "why": "Fast, with links you can trace (sound and chance associations)."}, {"text": "\"The bus is purple thinking about my elbow. Government water decided the train.\"", "bucket": 3, "why": "No understandable link between the ideas."}]}
+:::
 
 :::recall
 1. Give the four-clause definition of normal thinking. || Goal-directed flow of ideas, initiated by a problem, with rational connections, towards a reality-oriented conclusion.
@@ -394,7 +435,7 @@ Q: Asked where he lives, a man describes his whole journey from childhood homes,
 > Circumstantial speech reaches the goal after detours; tangential speech never gets there.
 :::
 
-## 2.4b Thought: content and possession [core]
+## 2.4b Thought: content and possession [core][beginner]
 What to explore: preoccupations; obsessions; phobias; delusions or overvalued ideas, specifically persecution, reference, grandeur, love, jealousy, guilt, nihilism, poverty and somatic concerns; with hopelessness, helplessness, worthlessness and suicidal ideas.
 
 ### Delusions
@@ -492,6 +533,18 @@ Normally we experience our thinking as our own and under our control. In some il
 - **Schizophrenia:** Productivity reduced; thought block observed twice; loosening of associations present. Content: delusion of persecution: “Mere pados wale mere khaane mein zeher milate hain” (“My neighbours mix poison in my food”), held with full conviction, not amenable to reasoning; delusion of reference: believes TV news anchors speak about him. Possession: thought broadcasting: “Mere vichaar sabko sunai dete hain” (“Everyone can hear my thoughts”). Suicidal and homicidal ideas denied.
 :::
 
+:::widget sort
+{"prompt": "Delusion, overvalued idea or obsession? Place each.", "buckets": ["Delusion", "Overvalued idea", "Obsession"], "items": [{"text": "\"I know it's silly, but the thought that I'll stab my baby keeps coming, and I hide the knives.\"", "bucket": 2, "why": "Own thought, unwanted, resisted, recognised as senseless."}, {"text": "\"A chip has been implanted in my spine by the government. I have no doubt.\"", "bucket": 0}, {"text": "A woman of normal weight who has spent years convinced she must stay thin, and whose life revolves around it", "bucket": 1, "why": "Understandable, feeling-driven and dominant, but not bizarre or totally impervious."}, {"text": "\"My wife is having an affair. The way she folds the towels proves it.\"", "bucket": 0, "why": "Certainty from trivial 'evidence'. Delusional jealousy can occur even if, by chance, it is true."}, {"text": "Keeps thinking the door might be unlocked, knows it is locked, checks it ten times", "bucket": 2}]}
+:::
+
+:::widget reveal
+{"prompt": "A patient's delusion of infidelity turns out to be true: his wife was having an affair. Is it still a delusion?", "answer": "It can be. Truth is not what defines a delusion. What matters is how the belief is reached and held: unshakeable certainty, from evidence that does not support it (towels, a look), not open to reasoning, and not shared by his culture. A belief that is true by coincidence can still be delusional."}
+:::
+
+:::widget flow
+{"title": "Delusion, overvalued idea, obsession or shared belief?", "layout": "tree", "nodes": [{"id": "root", "label": "A strongly held idea", "detail": "Ask in this order."}, {"id": "own", "label": "Recognised as own, unwanted, resisted?", "detail": "If yes: obsession.", "parent": "root"}, {"id": "shared", "label": "Shared by the person's group?", "detail": "If yes: cultural or religious belief, not a delusion.", "parent": "root"}, {"id": "fixed", "label": "Total conviction against clear evidence?", "detail": "If yes: delusion.", "parent": "root"}, {"id": "prim", "label": "Arose out of nowhere?", "detail": "Primary delusion.", "parent": "fixed"}, {"id": "sec", "label": "Understandable from mood or other symptom?", "detail": "Secondary, delusion-like idea.", "parent": "fixed"}, {"id": "over", "label": "Intense, feeling-driven, understandable, less fixed?", "detail": "Overvalued idea.", "parent": "root"}]}
+:::
+
 :::recall
 1. Give the full definition of a delusion. Why is falsity not essential? || False, unshakeable, not amenable to reason, not in keeping with background. It can be true by coincidence.
 2. Name Schneider's three primary delusional experiences. || Delusional mood, delusional perception, sudden delusional idea.
@@ -517,7 +570,7 @@ Q: A student keeps thinking she might shout something rude in class, finds it ho
 > She recognises the thought as her own and resists it. Inserted thoughts are felt as not one's own.
 :::
 
-## 2.5 Perception [core]
+## 2.5 Perception [core][beginner]
 :::define Perception
 The process of being aware of a sensory experience and recognising it by comparison with previous experience.
 :::
@@ -577,7 +630,7 @@ If the experience doesn't appear to be a true perception, or comes from subjecti
 
 :::note Know the controversy: it earns marks
 - **Jaspers**: defined by inner versus outer space; pseudohallucinations are variants of mental imagery without the same diagnostic weight. No gradual transition between the two.
-- **Hare (1973)**: defined by insight. Since insight fluctuates, better to think of degree of insight, making the concept largely superfluous.
+- **Hare**: defined by insight. Since insight fluctuates, better to think of degree of insight, making the concept largely superfluous.
 - Others argued for a continuum. Modern structured instruments drop the term and rate insight and inside/outside location separately.
 :::
 
@@ -624,12 +677,20 @@ Also recorded here: autoscopy (seeing oneself), abnormal vestibular sensations, 
 - “Koi bijli chhodta hai meri taangon mein.” Somatic passivity.
 :::
 
+:::widget sort
+{"prompt": "Which perceptual experience is it?", "buckets": ["Hallucination", "Illusion", "Pseudohallucination", "Depersonalisation", "Derealisation"], "items": [{"text": "At dusk, a coat on a hook looks like a man, until the light goes on", "bucket": 1}, {"text": "Hears two men outside the window discussing him; there is nobody there", "bucket": 0}, {"text": "\"I hear my late father's voice inside my head. I know it's my mind.\"", "bucket": 2, "why": "Inner space, insight retained."}, {"text": "\"I feel like a robot, as if I'm watching myself from outside.\"", "bucket": 3, "why": "The self feels unreal; 'as if' and insight retained."}, {"text": "\"The street looks flat, like a film set, not real.\"", "bucket": 4, "why": "The world feels unreal."}]}
+:::
+
+:::widget worked
+{"title": "Asking about voices, step by step", "steps": [{"q": "Normalise and open.", "a": "'Sometimes when people are under a lot of stress, they hear or see things others don't. Has anything like that happened to you?'"}, {"q": "If yes: what exactly?", "a": "'What do you hear? Is it a noise, or voices? Whose voice? How many? Male or female?'"}, {"q": "Person, content and commands.", "a": "'Do they speak to you, or about you? What do they say? Do they ever tell you to do things? Do you feel you have to obey?'"}, {"q": "Where, when and how real.", "a": "'Do they come from outside, like my voice, or inside your head? When do they come: when falling asleep, or in the day? Could anyone else hear them?'"}, {"q": "Effect and coping.", "a": "'How do they affect you? What do you do when you hear them? Does anything make them better or worse?'"}], "yourTurn": [{"q": "A patient says the voices tell him to 'finish himself'. Which two follow-up questions are essential before anything else?", "a": "'Do you feel you have to do what they say? Have you ever acted on them?' Then a full assessment of suicidal intent and plan."}]}
+:::
+
 :::recall
 1. Define perception, hallucination and illusion. || Recognising sensory experience against past experience; perception without a stimulus; misinterpretation of a real stimulus.
 2. Give Jaspers' definition and why he framed it that way. || False perception, not distortion or misinterpretation, occurring with real perceptions; covers functional hallucinations, excludes dreams.
 3. Classify hallucinations on six axes. || Modality, complexity, person, command, relation to sleep, special forms.
 4. Distinguish true perception, pseudohallucination and mental image. || Substantiality, space, delineation, will, constancy, insight.
-5. Summarise the Jaspers–Hare disagreement. || Space vs insight; modern instruments rate both separately.
+5. Summarise the Jaspers-Hare disagreement. || Space vs insight; modern instruments rate both separately.
 6. Distinguish illusion from functional hallucination. What is pareidolia? || Transforms vs coexists; effortless vivid illusions from fantasy.
 7. Define depersonalisation, derealisation and somatic passivity. || Self unreal; world unreal; body sensations imposed from outside.
 :::
@@ -650,7 +711,7 @@ Q: Which hallucination most strongly suggests an organic cause rather than schiz
 > Visual hallucinations with confusion point to delirium, substances or neurological disease.
 :::
 
-## 2.6 Cognition (higher mental functions) [core]
+## 2.6 Cognition (higher mental functions) [core][beginner]
 :::safety Why this matters more than students think
 Significant disturbance of cognition commonly points to an **organic psychiatric disorder**. This section catches delirium masquerading as a psychiatric presentation. Never skip it; emphasise it whenever delirium or dementia is possible.
 :::
@@ -720,6 +781,30 @@ Concrete answers may occur in schizophrenia, but **always interpret against educ
 - **Delirium:** Consciousness clouded and fluctuating; roused by loud calling. Disoriented to time (gave the year as 2019) and place (thought he was at home); oriented to person. Attention poorly aroused, not sustained: digit span 3 forward, unable backward. Concentration grossly impaired: could not go beyond 93. Recent memory impaired; remote relatively preserved. Abstraction could not be tested reliably given the attention deficit.
 :::
 
+:::widget decide
+{"scene": "Mr Iyer, 74, admitted after hip surgery in Chennai, is drowsy and keeps dozing. You are asked to 'do his MSE and check his memory for dementia'. He fails serial sevens and cannot recall three words.", "ask": "How do you record the cognitive findings?", "choices": [{"label": "'Memory and concentration impaired: likely dementia.'", "verdict": "harm", "outcome": "A dementia label follows him. Days later his drowsiness clears when an infection is treated, and his memory is normal.", "why": "Cognition must be tested in order. Impaired consciousness makes every later test uninterpretable. This picture suggests delirium."}, {"label": "'Consciousness impaired (drowsy, rousable to voice, fluctuating). Later tests not interpretable because of this. Suggest urgent medical review for delirium.'", "verdict": "best", "outcome": "The team finds a urinary infection and opioid excess. He recovers fully within days.", "why": "Report the earliest level that is impaired, and flag delirium: it is a medical emergency."}, {"label": "Skip cognition because he is elderly and tired", "verdict": "harm", "outcome": "The delirium is missed for two more days.", "why": "Cognition matters most exactly when delirium or dementia is possible."}]}
+:::
+
+:::clinician
+### Bedside tools worth having
+- **Glasgow Coma Scale**: eye opening (1 to 4), best verbal response (1 to 5), best motor response (1 to 6); total 3 to 15. Report the components, not just the total.
+- **Delirium screens**: the 4AT (alertness, AMT4, attention by months backwards, acute change or fluctuation) takes about two minutes and needs no training; the CAM requires acute onset with fluctuating course and inattention, plus either disorganised thinking or altered consciousness.
+- **Frontal tests** when the routine screen looks normal but behaviour has changed: verbal fluency (animals in a minute; fewer than about 15 is suspicious in the educated), Luria hand sequence, go/no-go, cognitive estimates, and similarities.
+- **Interpret against education.** In low-literacy Indian populations, use instruments validated for that setting (for example the Hindi Mental State Examination) rather than the standard cut-offs.
+:::
+
+:::widget layers
+{"title": "Test cognition from the bottom up", "shape": "stack", "layers": [{"label": "Intelligence and abstraction", "detail": "General knowledge, proverbs, similarities."}, {"label": "Memory", "detail": "Immediate, recent, remote."}, {"label": "Concentration", "detail": "Serial sevens, months backwards."}, {"label": "Attention", "detail": "Digit span."}, {"label": "Orientation", "detail": "Time, place, person."}, {"label": "Consciousness", "detail": "Alert, drowsy, clouded, stuporous."}], "caption": "A deficit low down makes every level above it uninterpretable."}
+:::
+
+:::widget brainmap
+{"title": "Which brain areas bedside tests probe", "focus": ["prefrontal", "temporal", "hippocampus", "parietal", "broca", "wernicke"], "notes": {"prefrontal": "Verbal fluency, Luria sequence, go/no-go, abstraction: executive functions.", "hippocampus": "Recall of an address after a delay: new learning.", "temporal": "Naming and semantic memory.", "parietal": "Copying figures, clock drawing, calculation.", "broca": "Fluent speech production.", "wernicke": "Understanding speech."}}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Reading a test score against the population", "caption": "IQ and many cognitive tests are scaled to a mean of 100 and a standard deviation of 15. Move the score to see its percentile; a low score must still be read against education and language."}
+:::
+
 :::recall
 1. Name the seven cognitive functions in testing order, and why the order is fixed. || Consciousness, orientation, attention, concentration, memory, intelligence, abstraction. Each depends on the one before.
 2. Grade consciousness. Which scale rates it, with what three categories? || Conscious, confusion, somnolence, clouding, delirium, stupor, coma. GCS: eye, verbal, motor.
@@ -738,7 +823,7 @@ Q: A man scores poorly on serial sevens but gets every orientation question righ
 > Serial sevens and digit span test attention; orientation tests a different function.
 :::
 
-## 2.7 Insight and judgement [core]
+## 2.7 Insight and judgement [core][beginner]
 :::define Insight
 The degree of awareness and understanding that the patient has regarding his or her illness. More broadly, the ability to understand one's own behaviour and emotions.
 :::
@@ -792,6 +877,14 @@ Rate as good/intact or poor/impaired. Better still, use **real situations** from
 A patient with no insight may keep good judgement. Assess and record them separately; never write “insight and judgement impaired” as one reflex phrase.
 :::
 
+:::widget sort
+{"prompt": "Grade the insight (1 to 6).", "buckets": ["Grade 1", "Grade 3", "Grade 4", "Grade 5", "Grade 6"], "items": [{"text": "\"Nothing is wrong with me. My family brought me here by force.\"", "bucket": 0}, {"text": "\"Yes, I'm ill, but it's because my neighbour did black magic.\"", "bucket": 1, "why": "Illness accepted, cause placed outside."}, {"text": "\"Something is wrong inside me, but I don't know what.\"", "bucket": 2}, {"text": "\"I know my anxiety makes me drink and it's ruining my marriage.\" (Drinks again that night.)", "bucket": 3, "why": "Knows, but does not change: intellectual insight."}, {"text": "\"I understood my anger came from feeling worthless, so I joined a group and haven't hit anyone in a year.\"", "bucket": 4, "why": "Understanding that produces lasting change."}]}
+:::
+
+:::widget layers
+{"title": "The six grades of insight", "shape": "stack", "layers": [{"label": "6. True emotional insight", "detail": "Understanding that changes behaviour."}, {"label": "5. Intellectual insight", "detail": "Knows the cause lies within, but does not change."}, {"label": "4. Unknown internal cause", "detail": "Something is wrong inside, not sure what."}, {"label": "3. External attribution", "detail": "Ill, but blames black magic, others or the body."}, {"label": "2. Slight awareness, with denial", "detail": "Half accepts, half denies."}, {"label": "1. Complete denial", "detail": "Nothing is wrong."}]}
+:::
+
 :::recall
 1. Define insight and give the five questions to elicit it. || Awareness and understanding of illness; illness?, what kind?, treatment needed?, hope?, cause?
 2. Reproduce all six grades. || Denial; slight awareness with denial; external cause; unknown in self; intellectual; true emotional.
@@ -816,7 +909,9 @@ Q: Asked what he would do if he found a stamped addressed envelope on the road, 
 > Test answers can be fine while real-life judgement is poor. Record both.
 :::
 
-## 2.9 MMSE and MoCA alongside the MSE [extra]
+# Part III · The MSE in practice
+
+## 2.9 MMSE and MoCA alongside the MSE [extra][beginner]
 The MMSE is often used for a systematic check of higher mental functions inside the cognition section. It is not the MSE.
 
 | Feature | MMSE | MoCA |
@@ -834,6 +929,22 @@ The MMSE is often used for a systematic check of higher mental functions inside 
 - They are **copyrighted**. Learn the domains and interpretation; use the official form clinically.
 :::
 
+:::widget guess
+{"prompt": "On the MoCA (out of 30), from what score upwards is a result usually counted as normal?", "min": 15, "max": 30, "unit": "points", "answer": [26, 26], "reveal": "26 or more is the usual 'normal' line, with 1 point added for people with 12 years of schooling or less. Even with that correction, people with little schooling often score below 26 without any illness, so the score must always be read against education and language.", "clinician": "The original validation used 26 as the cut-off for mild cognitive impairment. Later population studies suggested lower thresholds (around 23) reduce false positives, especially in less educated and non-Western groups. Use locally validated norms where they exist."}
+:::
+
+:::clinician
+### Screens in Indian practice
+- The **Hindi Mental State Examination (HMSE)** was developed for a rural, largely non-literate Hindi-speaking population; it replaces reading and writing items with tasks that do not depend on schooling.
+- Translated MoCA versions exist in several Indian languages; check which version and norms you are using.
+- **ACE-III** (Addenbrooke's) gives domain sub-scores (attention, memory, fluency, language, visuospatial) and has Indian adaptations; useful for telling dementia subtypes apart.
+- A screen never replaces a history from an informant about change over time, which remains the single most useful piece of information for dementia.
+:::
+
+:::widget curve
+{"kind": "sdt", "title": "Choosing a screening cut-off", "caption": "A higher cut-off catches more true impairment (hits) but flags more healthy, less educated people (false alarms). Move the criterion to see why cut-offs need local norms."}
+:::
+
 :::recall
 1. Compare MMSE and MoCA on score, domains and sensitivity to mild impairment. || Both out of 30; MoCA adds executive and abstraction; MoCA more sensitive.
 2. What does an abnormal screen mean? || The need for fuller assessment, not a diagnosis.
@@ -848,7 +959,7 @@ Q: A retired teacher with 16 years of schooling scores 26 on the MMSE but cannot
 > The MMSE misses executive problems, especially in educated people.
 :::
 
-## 2.10 The confusable pairs: master table [core]
+## 2.10 The confusable pairs: master table [core][beginner]
 Almost every mark lost in this topic is lost on one of these pairs. Each row gives the deciding rule and a worked example.
 
 | Pair | The deciding rule | Worked example |
@@ -876,6 +987,10 @@ Almost every mark lost in this topic is lost on one of these pairs. Each row giv
 | Intellectual vs emotional insight | Knowing vs changing | Grade 5 drinks that night; grade 6 changes |
 | Déjà vu vs jamais vu | False familiarity vs false unfamiliarity | New place feels known vs familiar room feels strange |
 
+:::widget sort
+{"prompt": "Lightning round: which of the pair is it?", "buckets": ["Mannerism", "Stereotypy", "Perseveration", "Verbal stereotypy"], "items": [{"text": "A flourishing, odd salute every time he greets someone", "bucket": 0, "why": "An odd version of a goal-directed act."}, {"text": "Taps the table in the same rhythm all interview, for no purpose", "bucket": 1}, {"text": "Gives his age as the answer to the next three questions", "bucket": 2, "why": "A previous answer persists into new questions."}, {"text": "Says 'Jai ho, jai ho' whatever you ask, all day", "bucket": 3, "why": "A fixed phrase unrelated to the question."}]}
+:::
+
 :::recall
 1. Give the deciding rule for five pairs of your choice. || From the table.
 2. Delusion vs obsession: one-word rule? || Resistance (ego-dystonic and resisted = obsession).
@@ -897,7 +1012,7 @@ Q: Which pair is correctly matched?
 > Echolalia copies words, echopraxia copies movements, verbigeration repeats meaningless words.
 :::
 
-## 2.11 Four worked MSE write-ups [core]
+## 2.11 Four worked MSE write-ups [core][beginner]
 Read for the pattern, not the content. Every one moves through the eight headings in order, quotes the patient for mood and delusions, records negatives explicitly, and never uses a diagnostic label in place of a description.
 
 :::word Write-up 1 · No psychopathology
@@ -964,6 +1079,10 @@ Read for the pattern, not the content. Every one moves through the eight heading
 **Insight:** Grade 1: the problem lies with the neighbours. **Judgement:** Personal and social impaired (stopped eating food cooked at home for two weeks); test partly impaired.
 :::
 
+:::widget worked
+{"title": "Write the MSE from what you saw", "steps": [{"q": "Observed: a 19-year-old woman in a crumpled kurta, hair uncombed, sits hunched, looks at the floor, answers after long pauses in a whisper. Write appearance, behaviour and speech.", "a": "A 19-year-old woman appearing her stated age, poorly groomed, hair uncombed, clothes crumpled. Sits hunched with gaze aversion; psychomotor activity reduced. Cooperative; rapport established with difficulty. Speech: reduced in amount, not spontaneous, low volume, long latency."}, {"q": "She says, 'Kuch accha nahi lagta, sab bekaar hai.' Her face barely changes. Write mood and affect.", "a": "Mood (subjective): 'Kuch accha nahi lagta, sab bekaar hai' (Nothing feels good, everything is useless). Objectively depressed. Affect restricted in range, reduced in intensity, non-reactive, congruent with mood."}, {"q": "She says she is a burden and that her family would be better off without her; she has thought of jumping but has made no plan and says her younger brother keeps her going. Write thought content.", "a": "Preoccupied with worthlessness and being a burden. Hopelessness present. Active suicidal ideation with thoughts of jumping; no plan or preparation elicited; denies intent; identifies her brother as a protective factor. No delusions elicited. Homicidal ideas denied."}]}
+:::
+
 :::recall
 1. What four habits do all four write-ups share? || Eight headings in order; patient's words for mood and delusions; explicit negatives; descriptions, not labels.
 2. In write-up 3, why is the memory finding called pseudodementia? || Poor effort and “I don't know” answers in depression, not a primary memory disorder.
@@ -978,7 +1097,7 @@ Q: In a write-up, which line is an interpretation that does not belong in the MS
 > Describe what was seen and heard; leave labels like "manipulative" out.
 :::
 
-## 2.12 Culture, language and literacy in the Indian setting [core]
+## 2.12 Culture, language and literacy in the Indian setting [core][beginner]
 Every definition in this module has a culture clause, and most students skip it. Read this as clinical safety, not an add-on.
 
 ### 1 · The belief problem
@@ -1026,6 +1145,10 @@ Tension, ghabrahat, gas, garmi, dil ghabrana, weakness and dhat-related concerns
 - “Nazar lag gayi” → “What do you and your family think caused this?” (explore, don't dismiss)
 :::
 
+:::widget decide
+{"scene": "You are testing abstraction in Babulal, 60, a farmer from a village near Udaipur who studied up to class 3 and speaks Mewari and Hindi. Your form says: 'Explain: A rolling stone gathers no moss.' He looks puzzled and says, 'Patthar par ghaas nahi ugti.' (Grass doesn't grow on stone.)", "ask": "What do you record?", "choices": [{"label": "'Concrete thinking present: suggests schizophrenia.'", "verdict": "harm", "outcome": "The note misleads the next clinician into looking for a psychosis that is not there.", "why": "You tested his English and schooling, not his abstraction. Concreteness must be judged against education, language and familiarity."}, {"label": "Repeat with a proverb he knows, such as 'Ek haath se taali nahi bajti', and with similarities ('How are a cow and a goat alike?'), then record the exact proverb and answer, noting his education", "verdict": "best", "outcome": "He explains, 'Jhagda dono taraf se hota hai' (A quarrel takes two sides), and says both are animals that give milk. Abstraction is intact.", "why": "A fair test uses proverbs in the person's language and culture, and the record shows what was asked and how it was answered."}, {"label": "Skip abstraction as 'not testable in villagers'", "verdict": "ok", "outcome": "Nothing harmful, but a real finding could be missed in another patient.", "why": "Abstraction can be tested fairly in anyone; adapt the test instead of dropping it."}]}
+:::
+
 :::recall
 1. Whose background is the reference group for judging a delusion? || The patient's own community.
 2. Give two culturally appropriate proverbs and their meanings. || From the table.
@@ -1042,7 +1165,7 @@ Q: A rural woman says "ghabrahat hoti hai" and "dil baith jaata hai". The best n
 > Clarify idioms of distress in the patient's own terms before labelling.
 :::
 
-## 2.13 Blank MSE proforma [core]
+## 2.13 Blank MSE proforma [core][beginner]
 Fill it from memory on paper, then check it against this module. Repeat until you can produce every sub-heading without prompting.
 
 | Heading | Sub-headings to fill |
@@ -1057,7 +1180,7 @@ Fill it from memory on paper, then check it against this module. Repeat until yo
 | 8. Judgement | Personal; social; test |
 
 :::note This is your written practice
-After this section you'll be asked to do Pass 3: write the whole proforma and the insight scale on blank paper, from memory, then correct yourself in red.
+Your written task for this module: write the whole proforma and the insight scale on blank paper, from memory, then correct yourself in red.
 :::
 
 :::mcq
@@ -1067,5 +1190,115 @@ Q: You have no time to complete every MSE heading in an emergency. The headings 
 - Abstract thinking and proverbs
 - General knowledge
 > In a crisis, record what affects safety and decisions first.
+:::
+
+## 2.14 Level check · Beginner [beginner]
+Twelve or more right out of fifteen opens the Advanced level. These are case questions: apply, don't recite.
+
+:::mcq
+Q: A patient's account and his wife's account of when his illness began differ by two months. In the record you should:
+- Pick the more convincing version
+- Average the two dates
+- *Record both, with their sources, and mark onset as uncertain
+- Leave onset blank
+> Discrepancies between informants are data; record who said what.
+
+Q: Which is a recognised exception to confidentiality?
+- The patient's employer asks how he is doing
+- *A credible threat to harm an identifiable person
+- A relative telephones and sounds worried
+- A colleague is curious about an interesting case
+> Harm to others, harm to self, child abuse and non-confidential evaluations are the classic exceptions.
+
+Q: The ingredient that separates empathy from identification is:
+- Warmth
+- *Objectivity, which is retained in empathy and lost in identification
+- Experience
+- Age
+> Identification blurs boundaries and drains the clinician.
+
+Q: A trainee asks all open questions in the first minute and then reads a long yes/no checklist. The better model is:
+- One long funnel
+- *A series of funnels: open, narrow and close for each topic, then transition
+- All closed questions
+- No questions; just listen
+> Each topic gets its own funnel.
+
+Q: Family of procreation (spouse and children) is recorded under:
+- Family history
+- *Personal history (marital history)
+- Premorbid personality
+- Present illness
+> Family history covers the family of origin.
+
+Q: Which premorbid personality entry is best?
+- "Obsessive personality"
+- "Normal personality"
+- *"Kept the same job for nine years, checked every invoice twice, and was upset by any change in routine"
+- "Introvert"
+> Write anecdotes, not adjectives.
+
+Q: A mute, rigid patient has not eaten for three days. The best record of the MSE is:
+- "MSE could not be done"
+- *A detailed record of observed consciousness, posture, rigidity, catatonic signs and responses, noting what could not be assessed
+- A diagnosis of depression
+- "Patient uncooperative"
+> Observation is the examination in a mute patient.
+
+Q: An arm placed in an odd position stays there for minutes. Waxy flexibility describes the moulding; the held position is:
+- Cataplexy
+- *Catalepsy
+- Negativism
+- Posturing
+> Process versus end result. Cataplexy is a sign of narcolepsy.
+
+Q: A man smiles while describing his plan to die. His affect is:
+- Inappropriate
+- *Incongruent
+- Labile
+- Euthymic
+> Incongruent means mismatched to his own stated thoughts or mood; inappropriate means mismatched to the setting.
+
+Q: Asked his address, a man describes the history of his neighbourhood, the buses, his landlord, and finally gives the address. This is:
+- Tangentiality
+- Flight of ideas
+- *Circumstantiality
+- Loosening of associations
+> The goal is reached after detours.
+
+Q: A woman is tormented by the thought that she might shout an obscenity in the temple. She knows it is her own thought and tries to push it away. This is:
+- A delusion
+- Thought insertion
+- *An obsession
+- An overvalued idea
+> Ego-dystonic, resisted and recognised as one's own.
+
+Q: Which hallucination most suggests an organic cause?
+- Third-person voices commenting on his actions
+- *Vivid visual hallucinations of insects in a drowsy, disoriented man
+- A voice heard while falling asleep
+- Thought echo
+> Visual hallucinations with clouded consciousness suggest delirium.
+
+Q: A drowsy patient fails serial sevens. The correct conclusion is:
+- Concentration impaired
+- Early dementia
+- *Consciousness is impaired, so later cognitive tests cannot be interpreted
+- Low intelligence
+> Test in order and report the earliest level impaired.
+
+Q: "I know I'm ill, but it's because of black magic." Insight grade:
+- 1
+- *3
+- 5
+- 6
+> Awareness of illness attributed to an external cause.
+
+Q: A farmer with three years of schooling explains an English proverb literally. You should:
+- Record concrete thinking
+- *Retest with a proverb from his own language and with similarities, and record the exact items and answers
+- Skip cognition
+- Refer for an IQ test
+> Interpret abstraction against education, language and culture.
 :::
 `;

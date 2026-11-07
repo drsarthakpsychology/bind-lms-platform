@@ -141,7 +141,7 @@ export const RISK_LAW: Unit = {
           "Past attempt is the strongest predictor. In India, means restriction (pesticides) matters. Risk scales alone predict poorly; use a formulation-based approach with a safety plan."),
         order("rk2", "Safety plan steps, in order", ["Recognise my warning signs", "Things I can do to calm myself", "People and places that distract me", "People I can ask for help", "Professionals and helplines (Tele-MANAS 14416)", "Making my surroundings safe"],
           "From what I can do alone, to who I can call.",
-          "Stanley–Brown Safety Planning Intervention: warning signs, internal coping, social distraction, help from others, professional contacts, means restriction."),
+          "Stanley-Brown Safety Planning Intervention: warning signs, internal coping, social distraction, help from others, professional contacts, means restriction."),
         tf("rk3", "If a patient discloses a plan to kill themselves soon, confidentiality can be broken to keep them safe.", true,
           "Safety comes before confidentiality.",
           "Confidentiality has limits where there is serious risk to the patient or others; share the minimum necessary, ideally with the patient's knowledge."),

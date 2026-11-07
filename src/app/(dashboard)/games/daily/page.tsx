@@ -21,6 +21,7 @@ export default async function DailyCasePage() {
         "Next clue or a test costs 15 points.",
         "After the case, read why the look-alikes were wrong.",
         "Practice gives you more cases at your level.",
+        "AI case gives you a new case made by AI and checked by rules.",
       ]}
       fallback="/games"
     >

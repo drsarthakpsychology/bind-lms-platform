@@ -2,9 +2,9 @@
  * The "Goldilocks" session picker: not too easy, not too hard.
  *
  * A session of N questions is mixed as:
- * - ~60 % core:        predicted chance of a right answer 0.70–0.85
+ * - ~60 % core:        predicted chance of a right answer 0.70 to 0.85
  * - ~20 % review:      spaced-review cards that are due
- * - ~10 % stretch:     0.50–0.65 (hard, but in reach)
+ * - ~10 % stretch:     0.50 to 0.65 (hard, but in reach)
  * - ~10 % confidence:  above 0.90 (an easy win)
  * Overall that lands near the owner's ~70 % success target (decision 44).
  * A bucket that runs short is filled with the questions closest to the core

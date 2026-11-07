@@ -3,18 +3,19 @@
 import * as React from "react";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
-import { ArrowLeft, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, TriangleAlert, X, Zap } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, TriangleAlert, X, Zap } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { trackLearn } from "@/lib/learn/track";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { canAnswer, matchState, ROUND_MS, type AnswerRec, type MatchRec } from "@/lib/games/duel/engine";
+import { canAnswer, matchState, ROUND_MS, WIN_XP, type AnswerRec, type MatchRec } from "@/lib/games/duel/engine";
 import type { DuelItem } from "@/lib/games/duel/items";
-import { pairWindow } from "@/lib/games/duel/rating";
+import { pairWindow, tierFor } from "@/lib/games/duel/rating";
 import { buildDuelView, type DuelView } from "@/lib/games/duel/view";
 import type { DuelProfile } from "@/lib/games/duel/server";
 import { CountUp } from "@/lib/games/ui/count-up";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { awardXp } from "@/lib/games/ui/xp";
 import { readLocal, writeLocal } from "@/lib/games/ui/copy";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
@@ -76,7 +77,8 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   function finished(v: DuelView) {
-    // XP for effort: 3 per right diagnosis, 2 per right feature, +5 for a ranked win. Once per match.
+    // XP for effort: 3 per right diagnosis, 2 per right feature. Once per match.
+    // A ranked win also pays WIN_XP, but on the server (the "duel:win" ledger row).
     const paid = readLocal<string[]>("vibha-duel-xp", []);
     if (paid.includes(v.matchId)) return;
     writeLocal("vibha-duel-xp", [...paid, v.matchId].slice(-100));
@@ -85,13 +87,12 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
       xp += (r.you.dxOk ? 3 : 0) + (r.you.featureOk ? 2 : 0);
       trackLearn({ type: "game", kind: "duel", ok: r.you.dxOk, skill: `${r.topic}:differentiate`, item: `${v.matchId}:${r.round}`, prompt: r.correctDx, ms: r.you.ms ?? undefined });
     }
-    if (v.ranked && v.result?.outcome === "win") xp += 5;
     awardXp(xp, state);
     if (v.result?.rating != null && v.result.delta != null) {
       const rating = v.result.rating;
       const delta = v.result.delta;
       const outcome = v.result.outcome;
-      setProf((p) => ({ ...p, rating, games: p.games + (v.ranked ? 1 : 0), wins: p.wins + (outcome === "win" ? 1 : 0), losses: p.losses + (outcome === "loss" ? 1 : 0), history: [{ id: v.matchId, when: new Date().toISOString(), opp: v.opp.name, outcome, score: `${v.score.you}–${v.score.opp}`, delta, ranked: v.ranked, forfeit: (v.result?.reason === "forfeit" ? (v.result.youForfeited ? "you" : "them") : null) as "you" | "them" | null }, ...p.history].slice(0, 10) }));
+      setProf((p) => ({ ...p, rating, games: p.games + (v.ranked ? 1 : 0), wins: p.wins + (outcome === "win" ? 1 : 0), losses: p.losses + (outcome === "loss" ? 1 : 0), history: [{ id: v.matchId, when: new Date().toISOString(), opp: v.opp.name, outcome, score: `${v.score.you} to ${v.score.opp}`, delta, ranked: v.ranked, forfeit: (v.result?.reason === "forfeit" ? (v.result.youForfeited ? "you" : "them") : null) as "you" | "them" | null }, ...p.history].slice(0, 10) }));
     }
   }
 
@@ -175,7 +176,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
                   {!h.ranked && <span className="text-muted-foreground"> · practice</span>}
                 </span>
                 <span className="tabular-nums">{h.score}</span>
-                <span className={cn("w-12 text-right font-bold tabular-nums")}>{h.delta === null ? "–" : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
+                <span className={cn("w-12 text-right font-bold tabular-nums")}>{h.delta === null ? <span className="text-xs font-semibold text-muted-foreground">none</span> : `${h.delta > 0 ? "+" : ""}${Math.round(h.delta)}`}</span>
               </li>
             ))}
           </ul>
@@ -234,7 +235,7 @@ function Queue({ matchId, since, rating, onMatch, onCancel, onBot }: { matchId: 
         0:{String(secs).padStart(2, "0")}
       </p>
       <p className="text-sm text-muted-foreground">
-        Looking for players rated {Math.round(rating - pairWindow(waited))}–{Math.round(rating + pairWindow(waited))}. After 20 seconds you&apos;ll play the practice bot instead (unranked).
+        Looking for players rated {Math.round(rating - pairWindow(waited))} to {Math.round(rating + pairWindow(waited))}. After 20 seconds you&apos;ll play the practice bot instead (unranked).
       </p>
       {err && <p className="text-sm font-semibold">{err}</p>}
       <div className="grid gap-2 sm:grid-cols-2">
@@ -420,6 +421,7 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
             <RoundChip who={v.opp.name} r={last.opp} />
           </div>
           <p className="text-sm text-muted-foreground">{last.why}</p>
+          {!v.ranked && <LearnLink topic={last.correctDx} newTab />}
           <p className="text-sm font-semibold">Next round in {Math.ceil(left / 1000)}…</p>
         </div>
       )}
@@ -612,6 +614,7 @@ function RoundChip({ who, r }: { who: string; r: { points: number; ms: number | 
 function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgain: () => void }) {
   const r = v.result!;
   const reduce = useReducedMotion();
+  const anim = (cls: string) => (reduce === false ? cls : undefined);
   const word = r.outcome === "win" ? "Victory" : r.outcome === "loss" ? "Defeat" : "Draw";
   const why =
     r.reason === "forfeit"
@@ -623,35 +626,32 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
         : r.reason === "draw"
           ? "Same points, same time."
           : `${v.score.you} to ${v.score.opp}.`;
+  const rated = v.ranked && r.delta !== null && r.rating !== null;
   return (
     <section className="space-y-4" aria-label="Match result">
-      <div className={cn(card, "p-6 text-center hard-shadow-md", r.outcome === "win" ? "bg-primary text-primary-foreground" : r.outcome === "loss" ? "bg-foreground text-background" : "bg-card")}>
-        <p className={cn("inline-flex items-center gap-2 font-pix text-4xl uppercase", reduce === false && fx.stamp)}>
+      <div className={cn(card, "p-6 text-center hard-shadow-md", r.outcome === "win" ? "bg-primary text-primary-foreground" : r.outcome === "loss" ? "bg-foreground text-background" : "bg-card", anim(fx.land))}>
+        <p className={cn("inline-flex items-center gap-2 font-pix text-4xl uppercase", anim(fx.stamp))}>
           {r.outcome === "win" ? <Crown className="size-8" aria-hidden /> : r.outcome === "loss" ? <X className="size-8" aria-hidden /> : <Swords className="size-8" aria-hidden />}
           {word}
         </p>
         <p className="mt-2 font-semibold">{why}</p>
-        {v.ranked && r.delta !== null ? (
-          <p className="mt-3 text-lg font-bold">
-            Rating {r.delta > 0 ? "+" : ""}
-            {Math.round(r.delta)} → <span className="font-pix tabular-nums">{r.rating}</span>
-          </p>
-        ) : (
-          <p className="mt-3 text-sm">{v.ranked ? "Rating updating…" : "Practice match: no rating change."}</p>
-        )}
+        {rated ? <RatingChange delta={r.delta!} rating={r.rating!} /> : <p className="mt-3 text-sm">{v.ranked ? "Rating updating…" : "Practice match: no rating change."}</p>}
+        {v.ranked && !v.bot && r.outcome === "win" && <p className={cn(chip, "mt-3 border-current bg-transparent", anim(fx.pop))}>+{WIN_XP} league XP</p>}
       </div>
       <div className={cn(card, "p-4")}>
         <h3 className="font-bold">Round by round</h3>
         <ol className="mt-2 space-y-3">
-          {v.closed.map((c) => (
-            <li key={c.round} className="text-sm">
+          {v.closed.map((c, i) => (
+            <li key={c.round} className={cn("text-sm", anim(fx.stagger))} style={{ "--i": i + 2 } as React.CSSProperties}>
               <p className="font-bold">
                 {c.round + 1}. {c.correctDx}
               </p>
               <p className="text-muted-foreground">{c.correctFeature}</p>
-              <p>
-                You: {c.you.dx ?? "no answer"} {c.you.dxOk ? "✓" : "✗"} (+{c.you.points}) · {v.opp.name}: +{c.opp.points}
+              <p className="flex flex-wrap items-center gap-x-1">
+                You: {c.you.dx ?? "no answer"}{" "}
+                {c.you.dxOk ? <Check className="inline size-4" aria-label="right" /> : <X className="inline size-4" aria-label="wrong" />} (+{c.you.points}) · {v.opp.name}: +{c.opp.points}
               </p>
+              <LearnLink topic={c.correctDx} />
             </li>
           ))}
         </ol>
@@ -668,5 +668,38 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
         </Link>
       </div>
     </section>
+  );
+}
+
+/** The rating ticks from the old number to the new one, the change counts up beside it, and a new tier is called out. */
+function RatingChange({ delta, rating }: { delta: number; rating: number }) {
+  const reduce = useReducedMotion();
+  const d = Math.round(delta);
+  const before = rating - d;
+  const up = d > 0;
+  const oldTier = tierFor(before);
+  const newTier = tierFor(rating);
+  const sign = (n: number) => `${up ? "+" : d < 0 ? "-" : ""}${Math.abs(n)}`;
+  return (
+    <div className="mt-4 flex flex-col items-center gap-2">
+      <p className="text-xs font-bold uppercase tracking-wide opacity-80">Rating</p>
+      <div className="flex items-center gap-3">
+        <CountUp value={rating} from={before} duration={1.4} delay={0.5} className="font-pix text-5xl tabular-nums" />
+        <span key={d} className={cn("inline-flex items-center gap-1 rounded-md border-2 border-current px-2 py-1 font-pix text-lg tabular-nums", reduce === false && fx.pop)} style={{ animationDelay: "500ms" }}>
+          {up ? <ArrowUp className="size-4" aria-hidden /> : d < 0 ? <ArrowDown className="size-4" aria-hidden /> : null}
+          <CountUp value={Math.abs(d)} duration={1.4} delay={0.5} format={sign} />
+          <span className="sr-only">{up ? "points gained" : d < 0 ? "points lost" : "no change"}</span>
+        </span>
+      </div>
+      <p className="text-sm font-semibold">
+        {before} <span aria-hidden>→</span>
+        <span className="sr-only">to</span> {rating}
+        {newTier !== oldTier && (
+          <span className={cn("ml-2 inline-flex items-center gap-1 rounded-md border-2 border-current px-2 py-0.5 text-xs font-bold uppercase", reduce === false && fx.stamp)} style={{ animationDelay: "1600ms" }}>
+            {up ? "Up to" : "Down to"} {newTier}
+          </span>
+        )}
+      </p>
+    </div>
   );
 }

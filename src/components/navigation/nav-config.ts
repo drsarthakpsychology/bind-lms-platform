@@ -13,8 +13,9 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/study", label: "Notes", icon: "bookOpen" },
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
-  // Postgraduate exam prep (CUET PG, UGC NET, clinical entrances, semester exams): one pathway.
-  { href: "/prep", label: "Prep", icon: "target" },
+  // Psychology Entrance & Competitive Exam Preparation (CUET-PG, UGC-NET, clinical entrances): one shared course.
+  // Short label here; the page title carries the full name.
+  { href: "/prep", label: "Exam Prep", icon: "target" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
   { href: "/achievements", label: "Achievements", icon: "award", section: "More" },
@@ -134,6 +135,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
+      { href: "/admin/ai-cases", label: "AI cases" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
 
       // Not an admin job day to day: reachable from What's live → Rounds.

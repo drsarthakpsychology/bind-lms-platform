@@ -29,7 +29,7 @@ export const W = [0.4872, 1.4003, 3.7145, 13.8206, 5.1618, 1.2298, 0.8975, 0.031
 export type Grade = 1 | 2 | 3 | 4;
 export type Card = { stability: number; difficulty: number; dueAt: string; lastAt: string | null; reps: number; lapses: number };
 
-/** Outcome 0–1 → grade. Wrong = Again, partial = Hard, right = Good, right and fast = Easy. */
+/** Outcome 0 to 1 → grade. Wrong = Again, partial = Hard, right = Good, right and fast = Easy. */
 export function gradeFor(outcome: number, fast = false): Grade {
   if (!(outcome >= 0.5)) return 1;
   if (outcome < 0.8) return 2;

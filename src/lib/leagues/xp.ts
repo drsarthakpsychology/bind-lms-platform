@@ -17,6 +17,8 @@ export const XP_SOURCES = {
   duelWin: "duel:win",
   duelPlayed: "duel:played",
   dailyCase: "daily_case:solved",
+  blitzRound: "blitz:round",
+  sortSolved: "sort:solved",
   bonus: "bonus:challenge",
 } as const;
 

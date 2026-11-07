@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BarChart3, Flame, FlaskConical, GraduationCap, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Timer, Trophy, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, Flame, FlaskConical, GraduationCap, LayoutGrid, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Swords, Timer, Trophy, Zap } from "lucide-react";
 import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
@@ -31,12 +31,15 @@ function playNow(units: Unit[], st: LearnState, due: number) {
 }
 
 const GAMES = [
+  { href: "/games/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, tone: "lime" },
+  { href: "/games/duel", title: "Differential duel", text: "Live, ranked 1v1 on look-alike diagnoses.", icon: Swords, tone: "ink" },
+  { href: "/games/sort", title: "Criteria sort", text: "Sort 16 criteria into 4 look-alike disorders.", icon: LayoutGrid, tone: "blue" },
+  { href: "/games/blitz", title: "Blitz", text: "60 seconds of fast facts. Build a combo.", icon: Timer, tone: "lime" },
   { href: "/games/coach", title: "Coach", text: "Chai teaches, asks, and repeats what you mix up.", icon: GraduationCap, tone: "ink" },
   { href: "/games/quizzes", title: "Quiz path", text: "Short quizzes by topic. Earn stars.", icon: Route, tone: "white" },
   { href: "/games/detective", title: "Clinic detective", text: "Name the medicine or disorder from clues.", icon: Search, tone: "blue" },
   { href: "/games/scenarios", title: "What would you do?", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, tone: "white" },
   { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet language.", icon: Star, tone: "white" },
-  { href: "/games/play?mode=blitz", title: "60-second blitz", text: "As many as you can in a minute.", icon: Timer, tone: "lime" },
 ] as const;
 
 const TONE: Record<string, string> = {

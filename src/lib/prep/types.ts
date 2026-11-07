@@ -89,7 +89,8 @@ export type InterviewQuestion = {
 
 /** A mock exam pattern. Patterns come from docs/plans/PG_PREP_RESEARCH.md; mark unverified ones. */
 export type ExamSpec = {
-  exam: PrepExam;
+  /** The exam this pattern mirrors; null for a VIBHA practice mock that covers every exam. */
+  exam: PrepExam | null;
   title: string;
   minutes: number;
   marksPerRight: number;

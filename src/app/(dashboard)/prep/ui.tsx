@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, BadgeCheck, Circle, Sprout, TriangleAlert, type LucideIcon } from "lucide-react";
+import { PREP_EXAMS, PREP_SHORT, PREP_TITLE } from "@/lib/prep/catalog";
 import { STATUS_LABEL, type TopicStatus } from "@/lib/prep/plan";
 import { cn } from "@/lib/utils";
 
@@ -24,12 +25,46 @@ export function StatusTag({ status, className }: { status: TopicStatus; classNam
   );
 }
 
-/** "← Prep" back link, 44 px tall. */
-export function BackToPrep({ href = "/prep", label = "Prep" }: { href?: string; label?: string }) {
+/** "← Exam Prep" back link, 44 px tall. */
+export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: string; label?: string }) {
   return (
     <Link href={href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
       <ArrowLeft className="size-4" aria-hidden /> {label}
     </Link>
+  );
+}
+
+/**
+ * The section's name, big, with the three exams on their own line. The
+ * learning is the same for all three, so the exams read as one strip, not
+ * as choices.
+ */
+export function PrepHero({ eyebrow, children }: { eyebrow?: string; children?: React.ReactNode }) {
+  return (
+    <header className="space-y-3">
+      {eyebrow ? (
+        <p className="flex items-center gap-2 text-eyebrow text-link">
+          <span className="size-2 shrink-0 rounded-[2px] bg-primary" aria-hidden />
+          {eyebrow}
+        </p>
+      ) : null}
+      <h1 className="text-h1 text-balance">{PREP_TITLE}</h1>
+      <p className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border-2 border-foreground bg-secondary px-3 py-2 font-mono text-sm font-bold text-secondary-foreground hard-shadow-xs sm:text-base">
+        <span className="sr-only">For </span>
+        {PREP_EXAMS.map((e, i) => (
+          <span key={e} className="inline-flex items-center gap-2">
+            {i ? (
+              <span aria-hidden className="text-link">
+                ·
+              </span>
+            ) : null}
+            {i === PREP_EXAMS.length - 1 ? <span className="sr-only">and </span> : null}
+            <span>{e}</span>
+          </span>
+        ))}
+      </p>
+      {children}
+    </header>
   );
 }
 

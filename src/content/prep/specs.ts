@@ -145,7 +145,7 @@ export const EXAM_SPECS: PrepSpec[] = [
     sections: one(100, CLINICAL_ENTRANCE),
     verified: false,
     source: "Reported by coaching summaries of the 2025 cycle",
-    notes: ["An interview of 50 marks followed the test in 2025 (reported).", "The 2026–27 pattern has not been published."],
+    notes: ["An interview of 50 marks followed the test in 2025 (reported).", "The 2026-27 pattern has not been published."],
   },
   {
     id: "ihbas-delhi",
@@ -175,13 +175,13 @@ export const EXAM_SPECS: PrepSpec[] = [
     exam: "mcp-entrance",
     title: "RINPAS Ranchi clinical psychology entrance",
     short: "RINPAS",
-    cycle: "2025–27 (M.Phil)",
+    cycle: "2025-27 (M.Phil)",
     minutes: 90,
     marksPerRight: 2,
     marksPerWrong: -1,
     sections: one(100, CLINICAL_ENTRANCE),
     verified: false,
-    source: "Ranchi University notice, PG courses 2025–27 (RINPAS)",
+    source: "Ranchi University notice, PG courses 2025-27 (RINPAS)",
     notes: ["The notice does not give the duration; we time it at 90 minutes.", "A practical and viva on interview day is mandatory."],
   },
   {
@@ -228,6 +228,71 @@ export const EXAM_SPECS: PrepSpec[] = [
   },
 ];
 
+/* ------------------------------------------------ shared practice mocks */
+
+/**
+ * The shared course groups every subject into five parts. Together they are
+ * the union of every exam's syllabus (CUET PG, UGC NET Paper 1 and 2, the
+ * clinical entrances, MA/MSc), so nothing any exam asks is left out.
+ */
+export const SUBJECT_GROUPS: { id: string; title: string; subjects: Subject[] }[] = [
+  { id: "foundations-research", title: "Foundations, research and testing", subjects: ["history-systems", "indian-psychology", "research-methods", "statistics", "psychometrics-assessment"] },
+  { id: "mind-brain", title: "Mind and brain", subjects: ["biological", "perception-attention", "learning-motivation-emotion", "cognitive"] },
+  { id: "person-society", title: "Person, development and society", subjects: ["personality-theories", "developmental", "social"] },
+  { id: "clinical-applied", title: "Clinical, counselling and applied", subjects: ["psychopathology", "clinical-therapies", "counselling", "health", "positive", "organisational", "ethics-law"] },
+  { id: "net-paper1", title: "Teaching and reasoning (NET Paper 1)", subjects: ["ugc-paper1"] },
+];
+
+/** VIBHA practice marking for the shared mocks: simple, and it still punishes blind guessing. */
+export const PRACTICE_MARKING = { right: 1, wrong: -0.25 } as const;
+
+/**
+ * Part sizes of the full mock: each group's share of the shared course's
+ * weights (src/lib/prep/catalog.ts unifiedWeights, 6 Nov 2026), rounded to 100.
+ */
+const FULL_PARTS: Record<string, number> = { "foundations-research": 28, "mind-brain": 23, "person-society": 20, "clinical-applied": 21, "net-paper1": 8 };
+
+/**
+ * The mocks students see while exam tracks are off: one full-length mixed
+ * paper across every subject, plus a 50-question test per subject group.
+ * Not any one exam's pattern (exam: null), so the page says so.
+ */
+export const PRACTICE_SPECS: PrepSpec[] = [
+  {
+    id: "psych-full",
+    exam: null,
+    title: "Psychology mock test: full length",
+    short: "Full mock",
+    cycle: "VIBHA practice format",
+    minutes: 120,
+    marksPerRight: PRACTICE_MARKING.right,
+    marksPerWrong: PRACTICE_MARKING.wrong,
+    sections: SUBJECT_GROUPS.map((g) => ({ title: g.title, count: FULL_PARTS[g.id], subjects: g.subjects })),
+    verified: false,
+    source: "VIBHA practice format covering CUET PG, UGC NET and clinical entrance syllabi",
+    notes: ["Every subject, easy to very hard, mixed.", "Practice marking, the same for everyone: not any one exam's scheme."],
+  },
+  ...SUBJECT_GROUPS.map(
+    (g): PrepSpec => ({
+      id: `psych-part-${g.id}`,
+      exam: null,
+      title: `Sectional test: ${g.title}`,
+      short: g.title,
+      cycle: "VIBHA practice format",
+      minutes: 60,
+      marksPerRight: PRACTICE_MARKING.right,
+      marksPerWrong: PRACTICE_MARKING.wrong,
+      sections: [{ title: g.title, count: 50, subjects: g.subjects }],
+      verified: false,
+      source: "VIBHA practice format",
+      notes: ["One subject group, easy to very hard, mixed.", "Practice marking, the same for everyone: not any one exam's scheme."],
+    }),
+  ),
+];
+
+/** Every pattern: the shared practice mocks, then the exam patterns. */
+export const ALL_SPECS: PrepSpec[] = [...PRACTICE_SPECS, ...EXAM_SPECS];
+
 export function specById(id: string): PrepSpec | undefined {
-  return EXAM_SPECS.find((s) => s.id === id);
+  return ALL_SPECS.find((s) => s.id === id);
 }
