@@ -49,6 +49,10 @@ Q: Which statement about suicide in India is accurate?
 {"prompt": "Myth or fact?", "buckets": ["Myth", "Fact"], "items": [{"text": "Talking about suicide makes it more likely", "bucket": 0}, {"text": "Most suicidal people have mixed feelings about dying", "bucket": 1}, {"text": "A person who survives an attempt is at higher risk of a future attempt", "bucket": 1}, {"text": "People who threaten suicide never mean it", "bucket": 0}, {"text": "Suicidal crises often pass, especially with support", "bucket": 1}, {"text": "Suicide only happens to people with depression", "bucket": 0}]}
 :::
 
+:::widget reveal
+{"prompt": "You are worried about a friend. Will asking 'Are you thinking of killing yourself?' put the idea into their head?", "answer": "No. Studies that asked people directly found no rise in suicidal thoughts, and many people felt relief at being asked. A direct, calm question tells the person that you can bear to hear the answer, which makes it easier for them to accept help."}
+:::
+
 :::recall
 1. Does asking about suicide increase risk? || No; it often brings relief and opens a path to help.
 2. What does ambivalence mean in suicide? || Part of the person wants to die and part wants to live; help works with the part that wants to live.
@@ -121,6 +125,10 @@ Q: Which combination most raises concern?
 - Extreme mood swings, rage, or talking of revenge.
 - Sleeping too little or too much.
 
+:::widget sort
+{"prompt": "Is each one a warning sign that needs action today, or a background risk factor?", "buckets": ["Warning sign: act now", "Background risk factor"], "items": [{"text": "Talking or writing about wanting to die", "bucket": 0}, {"text": "Searching online for ways to die", "bucket": 0}, {"text": "Giving away treasured things and saying goodbyes", "bucket": 0}, {"text": "A past episode of depression", "bucket": 1}, {"text": "Sudden calm after a long spell of despair", "bucket": 0, "why": "A sudden calm can mean a decision has been made. Ask gently."}, {"text": "Being male", "bucket": 1}, {"text": "Living alone after a divorce", "bucket": 1, "why": "Raises risk in the background, but is not a sign of a crisis by itself."}, {"text": "Drinking heavily and saying 'Nothing matters any more'", "bucket": 0}]}
+:::
+
 ### How to ask
 Ask **directly, calmly and privately**, using clear words:
 :::word Words you can use
@@ -172,6 +180,10 @@ Some people hurt themselves to cope with overwhelming feelings, not to die. This
 
 :::widget flow
 {"title": "Why self-harm can become a habit", "layout": "cycle", "nodes": [{"id": "feel", "label": "Overwhelming feeling", "detail": "Tension, emptiness, anger or shame builds."}, {"id": "harm", "label": "Self-injury", "detail": "Used to make the feeling stop."}, {"id": "relief", "label": "Brief relief", "detail": "The feeling drops for a while."}, {"id": "learn", "label": "The brain learns", "detail": "Relief rewards the behaviour, so it becomes the go-to way of coping."}, {"id": "shame", "label": "Shame and hiding", "detail": "Afterwards guilt and secrecy add to the next build-up of feeling."}], "caption": "Treatment builds other ways to get through intense feelings, so the cycle loses its pull."}
+:::
+
+:::widget compare
+{"title": "Self-injury without wanting to die, and a suicide attempt", "a": {"label": "Non-suicidal self-injury", "points": ["Aim: to escape a feeling, not to die", "Often repeated, frequently cutting or burning", "Brings brief relief", "Usually hidden, with shame afterwards"], "summary": "NSSI: a way of coping with pain. It still needs care and raises future suicide risk."}, "b": {"label": "Suicide attempt", "points": ["Aim: to die, at least in part", "Often a single act, sometimes planned", "Afterwards: regret, relief at surviving, or disappointment", "May follow hopelessness and feeling trapped"], "summary": "An attempt: intent to die is present. It is the strongest single predictor of later suicide."}, "caption": "You cannot tell intent from the injury alone. Always ask what the person wanted to happen."}
 :::
 
 :::recall
@@ -356,6 +368,10 @@ Q: A girl hurts herself to relieve unbearable tension and says she has never wan
 | Social | Isolation, recent loss, relationship breakdown, unemployment, debt, legal problems, domestic violence, childhood abuse, bullying, discrimination (caste, sexuality, gender identity), migration |
 | Situational | **Access to lethal means**, recent discharge from psychiatric care, exposure to another person's suicide (contagion), harmful media reporting |
 | Demographic | Male sex (deaths), older age in some settings, young age in India, certain occupations (farmers, daily wage earners, doctors, police, armed forces) |
+
+:::widget compare
+{"title": "Fixed and changeable risk factors", "a": {"label": "Static (fixed)", "points": ["Past suicide attempt", "Male sex", "Family history of suicide", "Childhood abuse", "Long-standing mental illness"], "summary": "Static factors tell you who is at higher risk over a lifetime. They cannot be changed."}, "b": {"label": "Dynamic (changeable)", "points": ["Hopelessness and feeling trapped", "Intoxication", "Severe insomnia and agitation", "Access to pesticides or stored medicines", "A recent loss or humiliation"], "summary": "Dynamic factors tell you why now. They are where your plan can make a difference today."}, "caption": "A good formulation names both, and the plan targets the dynamic ones."}
+:::
 
 ### Protective factors
 Connectedness; reasons for living (children, faith, future plans); effective care that is easy to reach; problem-solving and coping skills; cultural and religious beliefs that discourage suicide; restricted access to lethal means; a sense of purpose.
