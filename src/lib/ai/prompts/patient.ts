@@ -17,7 +17,7 @@ export function buildPatientSystemPrompt(case_: SimCase): string {
     .map((r) => `- You will NOT reveal "${r.fact}" until the student ${describeGate(r.gate)}.`)
     .join("\n");
   const fmtRed = red
-    .map((r) => `- RISK: "${r.content}" — only reveal after the student ${describeGate(r.gate)}.`)
+    .map((r) => `- RISK: "${r.content}", only reveal after the student ${describeGate(r.gate)}.`)
     .join("\n");
 
   return `You are role-playing ${case_.identity.name}, a ${case_.identity.age}-year-old ${case_.identity.gender} ${case_.identity.occupation} in ${case_.identity.city}.

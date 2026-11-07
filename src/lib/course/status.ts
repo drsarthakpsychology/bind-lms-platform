@@ -1,5 +1,5 @@
 /**
- * Course / week status — one source of truth so a page can never say both
+ * Course / week status: one source of truth so a page can never say both
  * "Not started" and "In progress" at the same time.
  *
  * The invariant (tested): a course that has not been *started* (nothing
@@ -12,7 +12,7 @@ export type CourseStatus = "not-started" | "in-progress" | "completed";
 
 /**
  * The single course-level status. `started` is true when the student has
- * completed at least one lesson OR watched any part of one — never inferred
+ * completed at least one lesson OR watched any part of one, never inferred
  * from the week the next lesson happens to live in.
  */
 export function deriveCourseStatus(
@@ -31,7 +31,7 @@ export type WeekStatus = "complete" | "in-progress" | "not-started" | "upcoming"
  * A week's status, derived from the same `courseStarted` flag as the course
  * status. A week is "in progress" only when the course has started AND this is
  * the week that holds the next incomplete lesson. Before the course has
- * started, every week is "not-started" — never "in progress".
+ * started, every week is "not-started", never "in progress".
  */
 export function deriveWeekStatus(args: {
   weekComplete: boolean;

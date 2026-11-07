@@ -1,5 +1,5 @@
 /**
- * A7 — Dictation as a conversation (v5.1 A7).
+ * A7: Dictation as a conversation (v5.1 A7).
  *
  * The interviewer is a deterministic state machine: given what a case already
  * has, it asks for the single most important missing piece. The AI (when
@@ -23,23 +23,23 @@ export type DictationField = (typeof DICTATION_FIELDS)[number];
 
 /** A human-readable question per field, in the warm clinical register. */
 export const FIELD_QUESTION: Record<DictationField, string> = {
-  name: "What's a good invented first name and age? (Anonymise — never the real one.)",
-  age: "And how old — even approximately?",
+  name: "What's a good invented first name and age? (Anonymise, never the real one.)",
+  age: "And how old, even approximately?",
   gender: "Are they a man or a woman?",
   occupation: "What do they do for a living?",
   city: "Which city or town? (True to how they'd actually speak.)",
-  family: "What's the family setup — who do they live with?",
+  family: "What's the family setup, who do they live with?",
   register: "How do they speak? (e.g. Hinglish, Gujarati-heavy, educated English.)",
-  chief_complaint: "What would they say brought them in — in their OWN words, roughly?",
+  chief_complaint: "What would they say brought them in, in their OWN words, roughly?",
   timeline: "When did this start, and what's been the course since?",
-  treatment_history: "Have they seen anyone before — a GP, a chemist, a faith healer? What happened?",
+  treatment_history: "Have they seen anyone before: a GP, a chemist, a faith healer? What happened?",
   help_seeking_delay: "How long did they wait before coming to care?",
-  prior_contacts: "Who did they talk to first — a GP, a baba, a family remedy?",
+  prior_contacts: "Who did they talk to first: a GP, a baba, a family remedy?",
   core_belief: "Deep down, what do they believe about themselves? One line.",
   intermediate_beliefs: "What are the 'if… then…' rules they live by? Comma-separated.",
   coping: "What do they DO to cope? Comma-separated.",
-  opening_idiom: "What's the opening phrase they'd say first — an idiom from the bank?",
-  red_flags: "Any risk content — self-harm, suicide, harm to others? One line each.",
+  opening_idiom: "What's the opening phrase they'd say first: an idiom from the bank?",
+  red_flags: "Any risk content: self-harm, suicide, harm to others? One line each.",
   resistance: "What do they deflect about? What shuts them down?",
   affect_rules: "How do they respond to interruption, premature advice, validation?",
 };
@@ -111,7 +111,7 @@ export function applyAnswer(state: DictationState, field: DictationField, rawTex
 /** Extract every field the raw transcript answers, best-effort. */
 export function applyTranscript(state: DictationState, rawTranscript: string): DictationState {
   // Try each unanswered field against the transcript; where the question was
-  // answered as its own line, capture it. This is heuristic — we grab the
+  // answered as its own line, capture it. This is heuristic. We grab the
   // first line that looks like an answer (not a question).
   let next = { ...state };
   const lines = rawTranscript
@@ -222,7 +222,7 @@ export function interviewerPrompt(state: DictationState, question: string): stri
     "You are a warm, unhurried clinical supervisor interviewing a seasoned Indian psychiatrist who is dictating an anonymised composite case from practice.",
     "Your job is ONLY to ask the next follow-up question in natural language. Never write the case yourself, never summarise, never diagnose.",
     `You still need to learn about: ${question}`,
-    got ? `Already covered: ${got}.` : "Nothing collected yet — start with the basics.",
+    got ? `Already covered: ${got}.` : "Nothing collected yet: start with the basics.",
     "Ask ONE short, specific, warm question. No politeness padding, no list of questions.",
   ].join("\n");
 }

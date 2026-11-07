@@ -57,7 +57,7 @@ export const emailFromKey = (key: string) => {
 
 const max = (a: string | null, b: string | null) => (!a ? b : !b ? a : a > b ? a : b);
 
-/** Everyone the programme has touched — enquiries and students — merged by email. */
+/** Everyone the programme has touched, enquiries and students, merged by email. */
 export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
   const since = new Date(Date.now() - 14 * 86400000).toISOString();
   const [{ data: enquiries }, { data: students }, { data: contacts }, { data: invites }, { data: sends }, { data: inbound }, { data: acts }, { data: visits }, { data: prog }] =

@@ -1,7 +1,7 @@
 import "server-only";
 
 /**
- * Automated reminder logic — configurable per type, batched to respect the
+ * Automated reminder logic: configurable per type, batched to respect the
  * Resend daily send limit.
  *
  * Types:
@@ -66,17 +66,17 @@ export function composeReminder(type: ReminderType, ctx: { name?: string; detail
     case "session-tomorrow":
       return {
         subject: "📅 Your session is tomorrow",
-        body: `Hi ${name},\n\nYou have a live session tomorrow${ctx.detail ? `: ${ctx.detail}` : ""}. See you there!\n\n— The team`,
+        body: `Hi ${name},\n\nYou have a live session tomorrow${ctx.detail ? `: ${ctx.detail}` : ""}. See you there!\n\nThe team`,
       };
     case "assignment-due-48h":
       return {
         subject: "⏳ Assignment due in 48 hours",
-        body: `Hi ${name},\n\n${ctx.detail ?? "An assignment"} is due in 48 hours. Don't forget to submit.\n\n— The team`,
+        body: `Hi ${name},\n\n${ctx.detail ?? "An assignment"} is due in 48 hours. Don't forget to submit.\n\nThe team`,
       };
     case "inactive-7d":
       return {
         subject: "👋 We've missed you",
-        body: `Hi ${name},\n\nYou haven't been active for a week. Your lessons are waiting when you're ready.\n\n— The team`,
+        body: `Hi ${name},\n\nYou haven't been active for a week. Your lessons are waiting when you're ready.\n\nThe team`,
       };
   }
 }

@@ -15,15 +15,15 @@ export type Affect =
   | "brittle_cheerful" | "numb" | "agitated" | "resigned";
 
 export interface VoiceParams {
-  /** speechSynthesis rate (0.5–1.4) */
+  /** speechSynthesis rate (0.5 to 1.4) */
   rate: number;
-  /** speechSynthesis pitch (0.5–1.4) */
+  /** speechSynthesis pitch (0.5 to 1.4) */
   pitch: number;
   /** Inline emotion tag for CosyVoice-style TTS ("" for browser). */
   emotionTag: "" | "happy" | "sad" | "angry" | "surprised" | "neutral";
   /** A hint string for a scripted/canned synth when available. */
   styleHint: string;
-  /** volume/quietness hint (0-1) — flat + exhausted patients speak quietly. */
+  /** volume/quietness hint (0-1): flat + exhausted patients speak quietly. */
   loudness: number;
 }
 
@@ -59,7 +59,7 @@ export function affectToVoice(
       pitch = Math.max(0.6, basePitch * 0.92);
       loudness = Math.max(0.35, 0.7 - fatigue * 0.04);
       emotionTag = "sad";
-      styleHint = "Slow, flat, quiet — little prosody, pauses between phrases";
+      styleHint = "Slow, flat, quiet: little prosody, pauses between phrases";
       break;
     case "sad":
     case "resigned":
@@ -115,7 +115,7 @@ export function affectToVoice(
     pitch = 0.7;
     loudness = 0.4;
     emotionTag = "sad";
-    styleHint = "Exhausted and flat — very slow, very quiet, long gaps";
+    styleHint = "Exhausted and flat: very slow, very quiet, long gaps";
   }
 
   return { rate, pitch, emotionTag, styleHint, loudness };

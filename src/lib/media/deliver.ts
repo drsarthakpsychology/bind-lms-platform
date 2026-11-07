@@ -6,14 +6,14 @@ import { getObjectStream } from "@/lib/media/proxy-client";
  * Shared streaming for the media delivery routes.
  *
  * Round-13: every file type (course material, lesson video, segment) streams
- * through ONE implementation with correct HTTP semantics — forwards Range,
+ * through ONE implementation with correct HTTP semantics: forwards Range,
  * returns 206 + Content-Range + Content-Length when ranged, Accept-Ranges:
  * bytes always, and never buffers a whole object into memory. The routes keep
  * their own entry points and auth layers (video keeps its stream token,
  * materials its session check) but share this transport.
  *
  * The one deliberate exception is a student's OWN submission file, which is
- * served via a short-lived signed URL (their own work — no lock). That path
+ * served via a short-lived signed URL (their own work, no lock). That path
  * lives in the submissions route, not here.
  */
 

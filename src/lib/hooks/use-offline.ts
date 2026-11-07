@@ -3,7 +3,7 @@
 import * as React from "react";
 
 /**
- * useOffline — a truthful, subtle connectivity signal.
+ * useOffline: a truthful, subtle connectivity signal.
  *
  * The mobile principle (T48): when connectivity drops, show a clear-but-subtle
  * state and preserve local progress; when it returns, say so. This hook

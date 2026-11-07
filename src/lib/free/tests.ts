@@ -66,15 +66,15 @@ export const PHQ9: Instrument = {
     { text: "Trouble falling or staying asleep, or sleeping too much" },
     { text: "Feeling tired or having little energy" },
     { text: "Poor appetite or overeating" },
-    { text: "Feeling bad about yourself — or that you are a failure or have let yourself or your family down" },
+    { text: "Feeling bad about yourself, or that you are a failure or have let yourself or your family down" },
     { text: "Trouble concentrating on things, such as reading the newspaper or watching television" },
     {
-      text: "Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual",
+      text: "Moving or speaking so slowly that other people could have noticed? Or the opposite: being so fidgety or restless that you have been moving around a lot more than usual",
     },
     { text: "Thoughts that you would be better off dead or of hurting yourself in some way" },
   ],
   extra: DIFFICULTY,
-  source: "Kroenke K, Spitzer RL, Williams JBW. The PHQ-9. J Gen Intern Med. 2001;16(9):606–613.",
+  source: "Kroenke K, Spitzer RL, Williams JBW. The PHQ-9. J Gen Intern Med. 2001;16(9):606-613.",
   kind: "total",
   maxScore: 27,
   bands: [
@@ -106,7 +106,7 @@ export const GAD7: Instrument = {
     { text: "Feeling afraid, as if something awful might happen" },
   ],
   extra: DIFFICULTY,
-  source: "Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092–1097.",
+  source: "Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097.",
   kind: "total",
   maxScore: 21,
   bands: [
@@ -141,7 +141,7 @@ export const WHO5: Instrument = {
     { text: "I woke up feeling fresh and rested" },
     { text: "My daily life has been filled with things that interest me" },
   ],
-  source: "WHO Collaborating Centre in Mental Health, Psychiatric Research Unit (1998). Topp CW et al. The WHO-5 Well-Being Index: a systematic review. Psychother Psychosom. 2015;84:167–176.",
+  source: "WHO Collaborating Centre in Mental Health, Psychiatric Research Unit (1998). Topp CW et al. The WHO-5 Well-Being Index: a systematic review. Psychother Psychosom. 2015;84:167-176.",
   kind: "who5",
   maxScore: 100,
   bands: [
@@ -214,7 +214,7 @@ export const ASRS: Instrument = {
     { text: "How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?" },
     { text: "How often do you feel overly active and compelled to do things, like you were driven by a motor?" },
   ],
-  source: "Kessler RC et al. The World Health Organization Adult ADHD Self-Report Scale (ASRS). Psychol Med. 2005;35(2):245–256.",
+  source: "Kessler RC et al. The World Health Organization Adult ADHD Self-Report Scale (ASRS). Psychol Med. 2005;35(2):245-256.",
   kind: "asrs",
 };
 
@@ -258,7 +258,7 @@ export const MINI_IPIP: Instrument = {
     { text: "Seldom feel blue.", trait: "N", reverse: true },
     { text: "Do not have a good imagination.", trait: "O", reverse: true },
   ],
-  source: "Donnellan MB, Oswald FL, Baird BM, Lucas RE. The Mini-IPIP scales. Psychol Assess. 2006;18(2):192–203. Items from the International Personality Item Pool (ipip.ori.org), public domain.",
+  source: "Donnellan MB, Oswald FL, Baird BM, Lucas RE. The Mini-IPIP scales. Psychol Assess. 2006;18(2):192-203. Items from the International Personality Item Pool (ipip.ori.org), public domain.",
   kind: "bigfive",
 };
 
@@ -338,7 +338,7 @@ export function scoreInstrument(inst: Instrument, answers: number[]): Result {
       return { kind: "who5", raw, score, max: 100, band: bandFor(inst.bands ?? [], score), flags };
     }
     case "asrs": {
-      // Part A: items 1–3 count from "Sometimes", items 4–6 from "Often".
+      // Part A: items 1 to 3 count from "Sometimes", items 4 to 6 from "Often".
       const positives = answers.filter((v, i) => (i < 3 ? v >= 2 : v >= 3)).length;
       return { kind: "asrs", positives, positive: positives >= 4, flags };
     }

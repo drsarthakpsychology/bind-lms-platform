@@ -3,10 +3,10 @@
  *
  * When AI is enabled, the advisor model turns the state machine's next-field
  * question into a warm natural-language follow-up. When disabled (or no
- * provider), we use the deterministic fixtures below — the flow still works
+ * provider), we use the deterministic fixtures below: the flow still works
  * with zero keys, which is the hard requirement.
  *
- * Content-authoring workload (faculty dictating cases) — safe for free-tier,
+ * Content-authoring workload (faculty dictating cases): safe for free-tier,
  * trains-on-data providers. No student data touches this.
  */
 
@@ -27,7 +27,7 @@ export function corpusInterviewerPrompt(state: DictationState, question: string)
     "You are a warm, unhurried clinical supervisor informally collecting an anonymised composite case from a seasoned Indian psychiatrist.",
     "Your job is ONLY to ask the single most useful next follow-up question, in natural, short, warm language. You never write the case, never summarise, never diagnose.",
     `You need to learn: ${question}`,
-    got ? `${got}/${DICTATION_FIELDS.length} fields already gathered.` : "Nothing collected yet — begin with the basics.",
+    got ? `${got}/${DICTATION_FIELDS.length} fields already gathered.` : "Nothing collected yet: begin with the basics.",
     "One short, specific, clinical question. No politeness padding.",
   ].join("\n");
 }

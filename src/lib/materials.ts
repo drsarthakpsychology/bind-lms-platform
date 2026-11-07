@@ -1,5 +1,5 @@
 /**
- * Materials validation — thin wrapper over the media registry.
+ * Materials validation: thin wrapper over the media registry.
  *
  * The registry (src/lib/media/registry.ts) is the single source of truth for
  * which formats are accepted and what they map to. This file keeps the

@@ -4,7 +4,7 @@
  * Haptic feedback for meaningful actions.
  *
  * Uses the Vibration API (Android/Chrome). iOS Safari does NOT support
- * navigator.vibrate, so haptics degrade silently there — Android-only unless a
+ * navigator.vibrate, so haptics degrade silently there: Android-only unless a
  * future route (e.g. the DeviceMotion API on iOS, which requires user gesture
  * and permissions) is added. That's a deliberate, documented trade-off.
  */
@@ -27,6 +27,6 @@ export function haptic(pattern: HapticPattern = "tap"): void {
       navigator.vibrate(PATTERNS[pattern]);
     }
   } catch {
-    /* unsupported — ignore */
+    /* unsupported: ignore */
   }
 }

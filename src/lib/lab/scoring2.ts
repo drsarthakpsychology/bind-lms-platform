@@ -14,7 +14,7 @@ const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 /* ------------------------------------------------------------------ */
 
 /**
- * The Rescorla–Wagner update: the change in associative strength is
+ * The Rescorla-Wagner update: the change in associative strength is
  * proportional to the prediction error (what happened minus what was
  * expected). `lambda` is 1 when food follows the tone, 0 when it does not.
  */
@@ -178,7 +178,7 @@ export function designComplete(c: DesignChoices): boolean {
 /* Correlation or cause                                                */
 /* ------------------------------------------------------------------ */
 
-/** A standard normal draw (Box–Muller) from a uniform generator. */
+/** A standard normal draw (Box-Muller) from a uniform generator. */
 export function normal(rand: () => number): number {
   let u = 0;
   while (u === 0) u = rand();
