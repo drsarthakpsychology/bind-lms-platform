@@ -63,3 +63,9 @@ describe("Rx Detective library", () => {
     expect(mixed.slice(0, 4).map((x) => x.kind)).toEqual(["chain", "mystery", "puzzle", "review"]);
   });
 });
+
+describe("Rx Detective size", () => {
+  it("has at least 500 hand-written cases", () => {
+    expect(MYSTERIES.length + PUZZLES.length + REVIEWS.length).toBeGreaterThanOrEqual(500);
+  });
+});

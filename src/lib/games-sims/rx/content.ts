@@ -9,6 +9,7 @@ import type { ItemTags } from "../item-tags";
 import type { Action, Topic } from "./drugs";
 import { BASE_TAGS, MORE_MYSTERIES } from "./mysteries";
 import { MORE_PUZZLES } from "./puzzles";
+import { PUZZLES_B } from "./puzzles-b";
 import { REVIEWS } from "./reviews";
 
 export { DRUGS, FAMILY, drugById, type Action, type Drug, type Topic } from "./drugs";
@@ -394,7 +395,7 @@ const BASE_PUZZLES: Puzzle[] = [
 ];
 
 export const MYSTERIES: Mystery[] = [...BASE_MYSTERIES.map((m) => ({ ...m, ...BASE_TAGS[m.id] })), ...MORE_MYSTERIES];
-export const PUZZLES: Puzzle[] = [...BASE_PUZZLES.map((p) => ({ ...p, ...BASE_TAGS[p.id] })), ...MORE_PUZZLES];
+export const PUZZLES: Puzzle[] = [...BASE_PUZZLES.map((p) => ({ ...p, ...BASE_TAGS[p.id] })), ...MORE_PUZZLES, ...PUZZLES_B];
 export { REVIEWS, type Review } from "./reviews";
 export const reviewById = (id: string) => REVIEWS.find((r) => r.id === id);
 

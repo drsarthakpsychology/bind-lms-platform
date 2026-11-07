@@ -11,12 +11,12 @@ import type { Topic } from "./drugs";
 type Wrong = [string, string, string];
 type Extra = Pick<Puzzle, "journey" | "receptor">;
 
-function P(id: string, a: string, b: string, story: string, answer: string, wrong: Wrong, why: string, not: string, topic: Topic, level: Level, objective: string, extra: Extra = {}): Puzzle {
+export function P(id: string, a: string, b: string, story: string, answer: string, wrong: Wrong, why: string, not: string, topic: Topic, level: Level, objective: string, extra: Extra = {}): Puzzle {
   return { id, a, b, story, answer, options: wrong, why, not, topic, ...extra, tags: { topic: `${a} with ${b.toLowerCase()}`, level, objective, exams: PHARM_EXAMS, learn: topic } };
 }
 /** Liver journey for "level up" and "level down" puzzles. */
-const J = (drug: string, target: string, liver: string): Extra => ({ journey: { drug, target, notes: { liver } } });
-const K = (drug: string, target: string, out: string): Extra => ({ journey: { drug, target, notes: { liver: `${drug[0].toUpperCase()}${drug.slice(1)} passes the liver largely unchanged.`, out } } });
+export const J = (drug: string, target: string, liver: string): Extra => ({ journey: { drug, target, notes: { liver } } });
+export const K = (drug: string, target: string, out: string): Extra => ({ journey: { drug, target, notes: { liver: `${drug[0].toUpperCase()}${drug.slice(1)} passes the liver largely unchanged.`, out } } });
 
 export const MORE_PUZZLES: Puzzle[] = [
   /* ------------------------------------------------ serotonin syndrome */
