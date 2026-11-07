@@ -72,6 +72,62 @@ A thermometer tells you the temperature. It does not tell you whether the fever 
 }
 :::
 
+
+:::widget sort
+{
+ "prompt": "Which family does each test belong to?",
+ "buckets": [
+  "Intelligence",
+  "Personality (objective)",
+  "Projective",
+  "Neuropsychological",
+  "Rating scale"
+ ],
+ "items": [
+  {
+   "text": "Binet-Kamat",
+   "bucket": 0
+  },
+  {
+   "text": "16PF",
+   "bucket": 1
+  },
+  {
+   "text": "Thematic Apperception Test",
+   "bucket": 2
+  },
+  {
+   "text": "PGI Battery of Brain Dysfunction",
+   "bucket": 3
+  },
+  {
+   "text": "Y-BOCS",
+   "bucket": 4
+  },
+  {
+   "text": "MISIC",
+   "bucket": 0
+  },
+  {
+   "text": "MMPI-2",
+   "bucket": 1
+  },
+  {
+   "text": "Rorschach",
+   "bucket": 2
+  },
+  {
+   "text": "Wisconsin Card Sorting Test",
+   "bucket": 3
+  },
+  {
+   "text": "PANSS",
+   "bucket": 4
+  }
+ ]
+}
+:::
+
 :::student
 You will learn many test names in this module. Do not try to memorise them as a list. For each test, learn **three things**: what it measures, who it is for, and one thing to be careful about.
 :::
@@ -164,6 +220,33 @@ Reliability is shown as a number from 0 (no consistency) to 1 (perfect). As a ro
 A mood questionnaire **should** change over two months if the person recovers. Low test-retest reliability for a state measure is not always a flaw. Intelligence, a stable trait, should show high test-retest reliability.
 :::
 
+
+:::widget worked
+{
+ "title": "Why one score can mislead",
+ "steps": [
+  {
+   "q": "Rohan's IQ test has a standard error of measurement of about 4 points. He scores 68. Roughly what range is his true score likely to fall in (95 per cent)?",
+   "a": "About 68 plus or minus 8, so roughly 60 to 76."
+  },
+  {
+   "q": "Does that range cross the usual boundary for intellectual disability (about 70)?",
+   "a": "Yes. His true score could be on either side of it."
+  },
+  {
+   "q": "So what must the psychologist do before any label?",
+   "a": "Assess adaptive functioning, take a developmental history, consider language and schooling, and report the range, not just 68."
+  }
+ ],
+ "yourTurn": [
+  {
+   "q": "A test with SEM of 2 gives a score of 68. What is the approximate 95 per cent range, and is the picture clearer?",
+   "a": "About 64 to 72. Narrower, but it still touches 70, so adaptive functioning still decides."
+  }
+ ]
+}
+:::
+
 :::example Why reliability matters for one child
 Rohan, 9, in Nashik, gets an IQ of 68 on one test and 76 on another a month later. If the true reliability is modest, his "real" level could be anywhere across that range. A label of intellectual disability, with its consequences for schooling and benefits, should not rest on a single unreliable number. Use more than one source.
 :::
@@ -226,6 +309,40 @@ A clock that is always exactly ten minutes fast is **reliable** (consistent) but
     { "text": "A new 'resilience' scale correlates with coping measures but not with IQ", "bucket": 3, "why": "Correlating with related measures (convergent) and not with unrelated ones (discriminant) is evidence of construct validity." },
     { "text": "A memory test's scores fall in a sensible order: healthy adults, then mild cognitive impairment, then dementia", "bucket": 3, "why": "Known-groups differences that fit the theory support construct validity." }
   ]
+}
+:::
+
+
+:::widget sort
+{
+ "prompt": "A new 'exam stress' scale is tested. Is each finding convergent or discriminant evidence?",
+ "buckets": [
+  "Convergent (should correlate, and does)",
+  "Discriminant (should not correlate, and does not)"
+ ],
+ "items": [
+  {
+   "text": "Correlates strongly with an established anxiety scale",
+   "bucket": 0
+  },
+  {
+   "text": "Barely correlates with height",
+   "bucket": 1
+  },
+  {
+   "text": "Rises in the week before exams",
+   "bucket": 0,
+   "why": "Changing as theory predicts with stress is also construct evidence."
+  },
+  {
+   "text": "Unrelated to vocabulary scores",
+   "bucket": 1
+  },
+  {
+   "text": "Correlates with self-reported sleep problems during exams",
+   "bucket": 0
+  }
+ ]
 }
 :::
 
@@ -310,6 +427,15 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
 | **Scaled score** | 10 | 3 | Wechsler subtests |
 | **Stanine** | 5 | About 2 | School tests (nine bands) |
 | **Percentile** | | | Share of the norm group scoring lower |
+
+
+:::widget curve
+{
+ "kind": "normal",
+ "title": "Find the IQ bands on the curve",
+ "caption": "Drag to IQ 130, then 70. Each is two standard deviations from the mean, and each tail holds only about 2 per cent of people. Then find the borderline band (70 to 79) and see how many people sit there."
+}
+:::
 
 ### IQ classification (as commonly used)
 | IQ | Description |
@@ -507,6 +633,40 @@ When a test sorts people into "probably has the condition" and "probably does no
 A highly **S**e**n**sitive test, when **N**egative, rules **out**. A highly **Sp**ecific test, when **P**ositive, rules **in**.
 :::
 
+
+:::widget sort
+{
+ "prompt": "Does each change raise or lower the positive predictive value of a screening test?",
+ "buckets": [
+  "Raises PPV",
+  "Lowers PPV"
+ ],
+ "items": [
+  {
+   "text": "Using the test in a specialist clinic instead of the general public",
+   "bucket": 0
+  },
+  {
+   "text": "Lowering the cut-off so more people screen positive",
+   "bucket": 1,
+   "why": "More false positives join the positive group."
+  },
+  {
+   "text": "Improving specificity",
+   "bucket": 0
+  },
+  {
+   "text": "Using it in a population where the condition is rare",
+   "bucket": 1
+  },
+  {
+   "text": "Screening only people with symptoms",
+   "bucket": 0
+  }
+ ]
+}
+:::
+
 ### Base rates change everything
 The **PPV depends on how common the condition is** in the group you are testing. The same test that works well in a psychiatry clinic gives many false positives in the general population.
 
@@ -621,6 +781,47 @@ Alfred Binet and Théodore Simon made the first practical intelligence test in P
 ### Malin's Intelligence Scale for Indian Children (MISIC)
 **A. J. Malin** in Nagpur adapted the WISC for Indian children (published 1969). It has **verbal** subtests (information, comprehension, arithmetic, analogies and similarities, vocabulary, digit span) and **performance** subtests (picture completion, block design, object assembly, coding, mazes), giving verbal, performance and full scale IQs for school-age children.
 
+
+:::widget build
+{
+ "vignette": "Pooja, 14, in a Marathi-medium school in Nashik, scores a full scale IQ of 64 on MISIC (likely range 60 to 69). Her mother says she cannot travel alone, struggles to handle money or tell time, needs reminders to bathe, and has few friends. She was slow to talk and walk. Vision and hearing are normal.",
+ "rule": "Tick what is present. Intellectual disability needs deficits in intellectual functioning and in adaptive functioning (conceptual, social or practical), with onset in the developmental period.",
+ "symptoms": [
+  {
+   "label": "Intellectual functioning about two standard deviations below the mean",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Conceptual adaptive deficits (money, time)",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Social adaptive deficits (few friends)",
+   "present": true
+  },
+  {
+   "label": "Practical adaptive deficits (travel, self-care)",
+   "present": true
+  },
+  {
+   "label": "Onset in childhood (late milestones)",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Sudden decline after a head injury last year",
+   "present": false,
+   "why": "Absent; a recent acquired decline would suggest a neurocognitive disorder instead."
+  }
+ ],
+ "need": 3,
+ "needCore": true,
+ "verdict": "The criteria for intellectual disability are met: low measured ability, adaptive deficits across domains, and childhood onset. Severity is judged mainly from adaptive functioning (here probably mild). Use VSMS or a similar adaptive scale for certification, and plan educational support."
+}
+:::
+
 ### Other Indian and non-verbal tests
 - **Bhatia's Battery of Performance Tests** (C. M. Bhatia, 1955): performance tasks such as Koh's block design, Alexander's pass-along, pattern drawing, immediate memory and picture construction. Useful for people with little schooling.
 - **Raven's Progressive Matrices**: non-verbal pattern reasoning (Standard, Coloured for children and older adults, Advanced). Reduces, but does not remove, cultural and educational influence.
@@ -722,6 +923,42 @@ The **Minnesota Multiphasic Personality Inventory** (Hathaway and McKinley, 1940
 | 0 | Social introversion (Si) | Shyness, withdrawal |
 
 On the MMPI-2, a T-score of **65 or above** is usually treated as clinically significant.
+
+
+:::widget sort
+{
+ "prompt": "Match the theme to the MMPI-2 clinical scale.",
+ "buckets": [
+  "2 Depression",
+  "4 Psychopathic deviate",
+  "6 Paranoia",
+  "7 Psychasthenia",
+  "8 Schizophrenia"
+ ],
+ "items": [
+  {
+   "text": "Hopelessness, low mood, guilt",
+   "bucket": 0
+  },
+  {
+   "text": "Rule-breaking and family conflict",
+   "bucket": 1
+  },
+  {
+   "text": "Suspiciousness and feeling persecuted",
+   "bucket": 2
+  },
+  {
+   "text": "Worry, tension, obsessional thinking",
+   "bucket": 3
+  },
+  {
+   "text": "Unusual thoughts, alienation",
+   "bucket": 4
+  }
+ ]
+}
+:::
 
 :::mnemonic Ten scales: "Hot Dogs Help People Make Perfect Pickles So Many Snack"
 **H**s, **D**, **H**y, **P**d, **M**f, **P**a, **P**t, **S**c, **M**a, **S**i.
@@ -981,6 +1218,47 @@ Rating scales measure **how severe** symptoms are, and track change over time. S
 }
 :::
 
+
+:::widget sort
+{
+ "prompt": "Clinician-rated or self-rated?",
+ "buckets": [
+  "Clinician-rated",
+  "Self-rated"
+ ],
+ "items": [
+  {
+   "text": "HAM-D",
+   "bucket": 0
+  },
+  {
+   "text": "PHQ-9",
+   "bucket": 1
+  },
+  {
+   "text": "PANSS",
+   "bucket": 0
+  },
+  {
+   "text": "BDI-II",
+   "bucket": 1
+  },
+  {
+   "text": "YMRS",
+   "bucket": 0
+  },
+  {
+   "text": "GAD-7",
+   "bucket": 1
+  },
+  {
+   "text": "CIWA-Ar",
+   "bucket": 0
+  }
+ ]
+}
+:::
+
 ### Y-BOCS severity bands
 | Total | Severity |
 |---|---|
@@ -1102,6 +1380,42 @@ Neuropsychological tests measure thinking skills that depend on particular brain
 | **PGI Memory Scale** | PGIMER (Pershad and Wig) | Ten subtests: remote and recent memory, mental balance, attention and concentration, delayed and immediate recall, verbal retention for similar and dissimilar pairs, visual retention, recognition | Memory assessment in Indian adults |
 | **NIMHANS Neuropsychological Battery** | NIMHANS Bengaluru (Rao, Subbakrishna, Gopukumar) | Tests of motor speed, attention (for example colour trails, digit vigilance), executive functions (verbal fluency, Tower of London, Wisconsin Card Sorting, Stroop), comprehension, learning and memory (auditory verbal learning, complex figure, logical memory) and visuospatial skill, with Indian norms by age and education | Detailed adult assessment; separate child and elderly versions exist |
 | **AIIMS Comprehensive Neuropsychological Battery in Hindi** | AIIMS New Delhi | Adult and child forms; scales for motor, tactile, visual, receptive and expressive speech, reading, writing, arithmetic, memory and intellectual processes, with left and right hemisphere summary scales | Hindi-speaking patients; modelled on Luria's approach |
+
+
+:::widget build
+{
+ "vignette": "Mrs Rao, 70, in Hyderabad, complains loudly of poor memory over three months since her husband's death. She often answers 'I don't know' on testing but recalls recent news when chatting. She sleeps poorly, has lost interest and weight, and cries easily. Her daughter says daily functioning is mostly intact.",
+ "rule": "Tick features that point more to depression with cognitive complaints (sometimes called pseudodementia) than to early dementia. Three or more favour depression.",
+ "symptoms": [
+  {
+   "label": "Complains more about memory than family notices",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Frequent 'don't know' answers with poor effort",
+   "present": true
+  },
+  {
+   "label": "Clear onset after a loss, with depressive symptoms",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Daily functioning mostly preserved",
+   "present": true
+  },
+  {
+   "label": "Gets lost in familiar places, unaware of problems",
+   "present": false,
+   "why": "Absent here; typical of dementia, where insight is often reduced."
+  }
+ ],
+ "need": 3,
+ "needCore": true,
+ "verdict": "The picture favours a depressive episode with cognitive complaints. Treat the depression and re-test cognition after recovery, because late-life depression can also precede dementia; keep following her up."
+}
+:::
 
 ### Common individual tests
 - **Bender Visual Motor Gestalt Test**: copying nine designs; visuo-motor integration.

@@ -69,6 +69,34 @@ The **Protection of Children from Sexual Offences Act** protects every person **
 ### The hard case: adolescents in consensual relationships
 POCSO treats **any** sexual activity with a person under 18 as an offence, regardless of consent. When a 17-year-old tells you she is in a consensual sexual relationship with a 19-year-old, the law still requires reporting. Clinicians and courts have debated this. The Law Commission (Report No. 283, 2023) recommended **against** lowering the age of consent, while suggesting judicial discretion in sentencing for genuine adolescent relationships. In 2022, the Supreme Court held that when a minor seeks a medical termination of pregnancy, the doctor need **not** disclose the minor's identity and personal details in the POCSO report, to protect her access to safe care.
 
+
+:::widget decide
+{
+ "scene": "A 16-year-old girl in a Kolkata clinic tells you her 17-year-old boyfriend pressured her into sex at a party when she had been drinking, and she does not want anyone to know.",
+ "ask": "What must you do?",
+ "choices": [
+  {
+   "label": "Keep it confidential because both are minors",
+   "verdict": "harm",
+   "outcome": "You fail a legal duty, and she receives no protection or medical care.",
+   "why": "POCSO applies to sexual offences involving anyone under 18, whatever the age of the other person."
+  },
+  {
+   "label": "Listen and support her, explain honestly that you must report, report to the police or Special Juvenile Police Unit, arrange medical care and emergency contraception if needed, and involve the Child Welfare Committee as appropriate",
+   "verdict": "best",
+   "outcome": "She is supported through the process; the case is handled through child-friendly procedures.",
+   "why": "The duty to report applies; how you do it shapes her wellbeing."
+  },
+  {
+   "label": "Ask her detailed questions to judge whether it 'really' was assault",
+   "verdict": "harm",
+   "outcome": "Leading questions distress her and can contaminate evidence.",
+   "why": "Investigation is for trained professionals."
+  }
+ ]
+}
+:::
+
 ### Juvenile Justice (Care and Protection of Children) Act 2015
 - Covers **children in conflict with law** and **children in need of care and protection** (including abandoned, abused and trafficked children), and adoption.
 - For a child of **16 to 18** alleged to have committed a **heinous offence**, the Juvenile Justice Board conducts a **preliminary assessment** of the child's **mental and physical capacity** to commit the offence, ability to understand its consequences, and the circumstances (section 15), with help from experienced psychologists or psycho-social workers. The child may then be tried as an adult by a Children's Court.
@@ -154,6 +182,34 @@ The **Rights of Persons with Disabilities Act 2016** gives effect to the UN Conv
   }
  ],
  "caption": "The Act follows the social model: disability arises from impairment meeting barriers."
+}
+:::
+
+
+:::widget decide
+{
+ "scene": "An employee with bipolar disorder in a Bengaluru IT firm asks for flexible start times while his medicines are adjusted. His manager refuses, saying 'everyone must follow the same rules'.",
+ "ask": "What is the legal and ethical position?",
+ "choices": [
+  {
+   "label": "The manager is right; equality means identical rules",
+   "verdict": "harm",
+   "outcome": "The employee's attendance suffers and he is dismissed.",
+   "why": "Equality under the RPwD Act includes reasonable accommodation."
+  },
+  {
+   "label": "Flexible hours are a reasonable accommodation unless they impose a disproportionate burden; the employee can approach the company's grievance officer or the disability commissioner if refused",
+   "verdict": "best",
+   "outcome": "The firm agrees to a three-month flexible schedule; his performance recovers.",
+   "why": "Reasonable accommodation is a duty, and grievance routes exist."
+  },
+  {
+   "label": "Advise him to hide his diagnosis forever",
+   "verdict": "ok",
+   "outcome": "He avoids conflict now but cannot get support later.",
+   "why": "Disclosure is his choice, but he should know his rights."
+  }
+ ]
 }
 :::
 
@@ -261,6 +317,34 @@ When an accused person appears to be of **unsound mind or to have an intellectua
 - If found unfit, the trial is **postponed**, the person may be released on bail with arrangements for treatment or kept in care under the MHCA, and the trial resumes when they become fit.
 - The BNSS replaced older terms with "mental illness" and "intellectual disability" and allows discharge where a fair trial is not possible.
 
+
+:::widget timeline
+{
+ "prompt": "Put the steps in order when an accused person may be of unsound mind at trial.",
+ "events": [
+  {
+   "label": "Court notices the accused may be unable to understand proceedings"
+  },
+  {
+   "label": "Medical examination by a civil surgeon or medical officer"
+  },
+  {
+   "label": "Referral to a psychiatrist or clinical psychologist"
+  },
+  {
+   "label": "Court decides on fitness to stand trial"
+  },
+  {
+   "label": "If unfit: trial postponed; treatment or bail with care"
+  },
+  {
+   "label": "Trial resumes when the person becomes fit"
+  }
+ ],
+ "why": "These are the BNSS procedures (sections 367 to 378), replacing the old CrPC sections."
+}
+:::
+
 ### Drugs and the law: the NDPS Act 1985
 - Consumption of a narcotic drug or psychotropic substance is an offence (section 27).
 - **Section 64A**: a person charged with consumption, or with possessing a **small quantity** for personal use, who **volunteers for de-addiction treatment** at a recognised centre, is **immune from prosecution** if they complete treatment.
@@ -291,6 +375,34 @@ Under the **Bharatiya Sakshya Adhiniyam 2023, section 39** (formerly Evidence Ac
 - **Jacob Mathew v. State of Punjab (2005)**: the Supreme Court held that **criminal** liability for medical negligence requires **gross** negligence or recklessness, not mere error of judgement.
 - **Consumer Protection Act 2019**: patients can bring claims for deficiency in medical services (medical services were brought within consumer law in **Indian Medical Association v. V. P. Shantha**, 1995).
 - Common mental health negligence claims: suicide of an inpatient without adequate observation, failure to warn about serious side effects (for example tardive dyskinesia, lithium toxicity), inadequate monitoring (clozapine blood counts), and breaches of confidentiality.
+
+
+:::widget decide
+{
+ "scene": "On a busy ward in Delhi, a newly admitted man with severe depression said yesterday he wanted to die. Today the resident lowers his observation level to 'routine' without reassessment because the ward is short-staffed. He attempts suicide that night.",
+ "ask": "Which element of negligence is most clearly at issue?",
+ "choices": [
+  {
+   "label": "None; suicide cannot be prevented",
+   "verdict": "harm",
+   "outcome": "This ignores the duty to assess and respond to known risk.",
+   "why": "Prediction is imperfect, but a reasonable process is expected."
+  },
+  {
+   "label": "Breach of the standard of care: lowering observation without reassessment or documentation, despite recent suicidal statements",
+   "verdict": "best",
+   "outcome": "A review finds the observation policy was not followed; the unit changes its procedures and training.",
+   "why": "Negligence needs a duty, a breach and harm caused by it. Changing observation without assessment departs from accepted practice."
+  },
+  {
+   "label": "Only the nurse is responsible",
+   "verdict": "ok",
+   "outcome": "Responsibility is shared, and blaming one person misses system problems.",
+   "why": "Clinical decisions and staffing systems both matter."
+  }
+ ]
+}
+:::
 
 ### Landmark judgments to know
 | Case | Year | Why it matters |
@@ -393,6 +505,34 @@ Research ethics grew out of terrible abuses:
 | **ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants** (2017) | India's main guidance, including social, behavioural and mental health research, vulnerable groups, and ethics committees |
 | **New Drugs and Clinical Trials Rules** (2019) | Legal rules for clinical trials of drugs in India, including compensation for injury |
 | **MHCA 2017, section 99** | Special consent rules for research with persons with mental illness |
+
+
+:::widget decide
+{
+ "scene": "A PhD student in Delhi plans a study where students are told it is about 'memory', but it actually tests how they react to unfair criticism from a stooge. She does not plan a debriefing.",
+ "ask": "What must change before ethics approval?",
+ "choices": [
+  {
+   "label": "Nothing; deception is standard in psychology",
+   "verdict": "harm",
+   "outcome": "Participants leave upset and misled; complaints follow.",
+   "why": "Deception needs strict justification and debriefing."
+  },
+  {
+   "label": "Justify why deception is essential and harmless alternatives do not exist, minimise distress, allow withdrawal, add a full debriefing explaining the real aim, and offer participants the chance to withdraw their data",
+   "verdict": "best",
+   "outcome": "The committee approves the revised protocol; participants report understanding and no lasting distress.",
+   "why": "These are the conditions under which limited deception can be ethical."
+  },
+  {
+   "label": "Drop the study entirely",
+   "verdict": "ok",
+   "outcome": "Safe, but the research question goes unanswered.",
+   "why": "With safeguards, the study may be acceptable."
+  }
+ ]
+}
+:::
 
 ### Core requirements in practice
 1. **Ethics committee approval** before starting (Institutional Ethics Committee, registered as required).
@@ -679,6 +819,44 @@ Other relevant programmes include the **Rashtriya Kishor Swasthya Karyakram** (a
     { "label": "Combine some direct care with training primary care doctors, ASHAs and community health officers to identify and support common conditions, build links with faith healers for referral, and set up regular outreach clinics", "verdict": "best", "outcome": "Within a year, referrals from primary care and healers rise, follow-up improves, and more people are treated close to home.", "why": "Task-sharing and community partnerships are the core logic of DMHP and the strongest evidence-based way to reduce the treatment gap." },
     { "label": "Campaign to close down faith-healing sites", "verdict": "harm", "outcome": "The community turns against the team, and patients stop coming.", "why": "Confrontation alienates communities. Collaboration, with action against clear abuses like chaining, works better." }
   ]
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put India's mental health programmes and policies in order.",
+ "events": [
+  {
+   "label": "National Mental Health Programme",
+   "when": "1982"
+  },
+  {
+   "label": "District Mental Health Programme",
+   "when": "1996"
+  },
+  {
+   "label": "National Mental Health Policy",
+   "when": "2014"
+  },
+  {
+   "label": "Mental Healthcare Act in force",
+   "when": "2018"
+  },
+  {
+   "label": "Manodarpan",
+   "when": "2020"
+  },
+  {
+   "label": "Tele-MANAS",
+   "when": "October 2022"
+  },
+  {
+   "label": "National Suicide Prevention Strategy",
+   "when": "November 2022"
+  }
+ ],
+ "why": "Exam questions often ask for the year and one aim of each."
 }
 :::
 

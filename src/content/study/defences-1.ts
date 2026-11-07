@@ -76,6 +76,44 @@ All three are protecting themselves. Rahul's way costs him least and helps him m
 }
 :::
 
+
+:::widget sort
+{
+ "prompt": "Healthy use or costly use of a defence?",
+ "buckets": [
+  "Healthy, flexible",
+  "Costly or rigid"
+ ],
+ "items": [
+  {
+   "text": "Joking about hospital food with nurses after surgery, while following the treatment plan",
+   "bucket": 0
+  },
+  {
+   "text": "Refusing a biopsy because 'the lump is nothing', month after month",
+   "bucket": 1
+  },
+  {
+   "text": "Deciding to think about a family quarrel after the exam is over",
+   "bucket": 0
+  },
+  {
+   "text": "Shouting at the children every evening after trouble at work",
+   "bucket": 1,
+   "why": "Repeated displacement harms relationships even if it brings relief."
+  },
+  {
+   "text": "Volunteering at a cancer ward after losing a parent to cancer",
+   "bucket": 0
+  },
+  {
+   "text": "Blaming colleagues for every mistake and never reflecting",
+   "bucket": 1
+  }
+ ]
+}
+:::
+
 :::student
 This module gives you the **basic map**: the main defences, the big theories of how people develop, and how learning shapes behaviour. When you want to go deeper into how psychodynamic therapists actually work with defences, transference and formulation, the **Psychodynamics in depth** module picks up exactly where this one stops.
 :::
@@ -279,6 +317,57 @@ You will meet a dozen defences over and over in clinics and exams. Learn each wi
 | **Humour** | Seeing the funny side while still facing the problem | Joking with nurses about the hospital food after surgery |
 | **Altruism** | Helping others in a way that also meets your own need | A woman who lost a child to cancer volunteers on a children's ward |
 
+
+:::widget flow
+{
+ "title": "What does the defence do with the feeling?",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "f",
+   "label": "A painful feeling or fact"
+  },
+  {
+   "id": "o",
+   "label": "Pushes it out of awareness",
+   "parent": "f",
+   "detail": "Repression (unconscious), suppression (conscious), denial (outside facts)."
+  },
+  {
+   "id": "m",
+   "label": "Moves it to a safer target",
+   "parent": "f",
+   "detail": "Displacement."
+  },
+  {
+   "id": "r",
+   "label": "Reverses it",
+   "parent": "f",
+   "detail": "Reaction formation."
+  },
+  {
+   "id": "x",
+   "label": "Puts it in someone else",
+   "parent": "f",
+   "detail": "Projection."
+  },
+  {
+   "id": "t",
+   "label": "Turns it into thinking or excuses",
+   "parent": "f",
+   "detail": "Intellectualisation, rationalisation."
+  },
+  {
+   "id": "u",
+   "label": "Uses it well",
+   "parent": "f",
+   "detail": "Sublimation, humour, altruism."
+  }
+ ],
+ "caption": "Ask this one question of any defence and you can usually name it."
+}
+:::
+
 :::trap Repression versus suppression
 **Repression** is unconscious: you do not know you are pushing it away. **Suppression** is conscious: you choose to set it aside and you can return to it. Suppression is a **mature**, healthy defence. Mixing the two up is the most common exam error.
 :::
@@ -295,6 +384,34 @@ You will meet a dozen defences over and over in clinics and exams. Learn each wi
     { "text": "A college student, homesick in the hostel, sleeps curled up with a childhood toy and wants to be fed by others", "bucket": 4 },
     { "text": "A man frightened by his own sexual feelings preaches loudly against “immoral films”", "bucket": 3, "why": "The loud opposite of a hidden wish is the classic sign of reaction formation." }
   ]
+}
+:::
+
+
+:::widget decide
+{
+ "scene": "Your colleague Neha, a ward nurse in Nagpur, was criticised harshly by a senior doctor in the morning round. In the afternoon she snaps at a trainee over a small mistake, then says, 'I'm fine, it's nothing.'",
+ "ask": "What is the most helpful response?",
+ "choices": [
+  {
+   "label": "Report her for unprofessional behaviour at once",
+   "verdict": "harm",
+   "outcome": "Neha feels attacked twice in one day and withdraws from the team.",
+   "why": "Displacement under stress is human. A first, one-off event calls for understanding, not discipline."
+  },
+  {
+   "label": "Later, privately: 'That round this morning sounded rough. Do you want to talk about it?'",
+   "verdict": "best",
+   "outcome": "Neha admits she felt humiliated, apologises to the trainee herself, and the team talks about how feedback is given on rounds.",
+   "why": "Naming the likely source gently lets the real feeling be expressed where it belongs."
+  },
+  {
+   "label": "Ignore it completely",
+   "verdict": "ok",
+   "outcome": "The tension passes, but the pattern on rounds continues.",
+   "why": "Not harmful, but a chance to support her and improve team culture is missed."
+  }
+ ]
 }
 :::
 
@@ -355,6 +472,32 @@ Development is not only about children. People keep changing through adolescence
 | Generativity vs stagnation | Middle adult | Can I make my life count for others? |
 | Integrity vs despair | Old age | Was my life worthwhile? |
 
+
+:::widget timeline
+{
+ "prompt": "Put Piaget's stages in order.",
+ "events": [
+  {
+   "label": "Sensorimotor",
+   "when": "birth to about 2"
+  },
+  {
+   "label": "Preoperational",
+   "when": "about 2 to 7"
+  },
+  {
+   "label": "Concrete operational",
+   "when": "about 7 to 11"
+  },
+  {
+   "label": "Formal operational",
+   "when": "about 11 onwards"
+  }
+ ],
+ "why": "Each stage builds on the last; ages are rough averages and vary with culture and schooling."
+}
+:::
+
 ### Piaget's four stages, first look
 | Stage | Rough age | What the child can do |
 |---|---|---|
@@ -372,6 +515,49 @@ Development is not only about children. People keep changing through adolescence
   "answer": [7, 10],
   "reveal": "Around 8 months in Piaget's account, becoming firm by the end of the sensorimotor period. Later experiments using looking time suggest babies have some sense of hidden objects even earlier, around 3 to 5 months. Piaget may have underestimated infants.",
   "clinician": "Baillargeon's violation-of-expectation studies (from 1985) found looking-time evidence of object representation at about 3.5 to 5 months, a central critique of Piaget's method, which relied on infants' motor search. Stranger anxiety (around 8 months) and separation protest arrive at about the same time as object permanence, which links Piaget's cognitive sequence to attachment."
+}
+:::
+
+
+:::widget sort
+{
+ "prompt": "Which thinker does each idea belong to?",
+ "buckets": [
+  "Freud",
+  "Erikson",
+  "Piaget",
+  "Bowlby"
+ ],
+ "items": [
+  {
+   "text": "Identity versus role confusion",
+   "bucket": 1
+  },
+  {
+   "text": "Object permanence",
+   "bucket": 2
+  },
+  {
+   "text": "Secure base and safe haven",
+   "bucket": 3
+  },
+  {
+   "text": "Oral, anal and phallic stages",
+   "bucket": 0
+  },
+  {
+   "text": "Conservation of volume",
+   "bucket": 2
+  },
+  {
+   "text": "Generativity versus stagnation",
+   "bucket": 1
+  },
+  {
+   "text": "Protest, despair, detachment",
+   "bucket": 3
+  }
+ ]
 }
 :::
 
@@ -682,6 +868,50 @@ Many defences sound similar. In exams and in clinics, the skill is to ask **one 
 }
 :::
 
+
+:::widget flow
+{
+ "title": "Naming the defence: a decision tree",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "q",
+   "label": "Is outside reality grossly distorted?"
+  },
+  {
+   "id": "y",
+   "label": "Yes: psychotic level",
+   "parent": "q",
+   "detail": "Delusional projection, psychotic denial, distortion."
+  },
+  {
+   "id": "n",
+   "label": "No: is the feeling put into someone else?",
+   "parent": "q"
+  },
+  {
+   "id": "p1",
+   "label": "Yes, and they come to feel it",
+   "parent": "n",
+   "detail": "Projective identification."
+  },
+  {
+   "id": "p2",
+   "label": "Yes, only in the person's view",
+   "parent": "n",
+   "detail": "Projection."
+  },
+  {
+   "id": "n2",
+   "label": "No: is it aimed elsewhere, reversed, or cancelled?",
+   "parent": "n",
+   "detail": "Displacement (aimed elsewhere), reaction formation (lasting opposite), undoing (an act that cancels)."
+  }
+ ],
+ "caption": "Work down the tree with any example from this section."
+}
+:::
+
 :::example Undoing in an OCD clinic in Chennai
 Karthik, 23, has an intrusive thought that his mother will die. Each time, he taps the doorframe seven times and says a prayer "to cancel it". This is **undoing**. In OCD, rituals like this bring brief relief and then strengthen the obsession, which is why exposure with response prevention asks him, gradually, not to cancel the thought.
 :::
@@ -738,6 +968,41 @@ Certain defences cluster with certain conditions. This helps you understand the 
     { "text": "Convinced the neighbours are against him while he himself is hostile to them", "bucket": 2 },
     { "text": "“Everyone at the factory drinks this much; my problem is my boss, not the bottle”", "bucket": 3 }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "How bodily distress can keep itself going",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "Hidden grief or conflict"
+  },
+  {
+   "id": "b",
+   "label": "Body symptoms",
+   "detail": "Aches, 'gas', weakness, headache."
+  },
+  {
+   "id": "t",
+   "label": "Tests and medicines",
+   "detail": "Results normal; tonics and painkillers."
+  },
+  {
+   "id": "w",
+   "label": "More worry about the body",
+   "detail": "\"Something must be wrong that they are missing.\""
+  },
+  {
+   "id": "a",
+   "label": "Feelings never discussed",
+   "detail": "The original distress stays untouched."
+  }
+ ],
+ "caption": "Breaking the loop means taking the body seriously and gently opening space for feelings and life events."
 }
 :::
 
