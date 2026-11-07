@@ -18,7 +18,7 @@ const BANNED = [
   /\bpp?\.\s?\d+/,
   /\b(Lancet|JAMA|NEJM|New England Journal|Psychological Bulletin|Psychological Review|American Journal of Psychiatry|World Psychiatry|BMJ|Cochrane)\b/,
   /\b\d+(st|nd|rd|th) (ed\.|edition)\b/i,
-  /\([^()]*\b(1[6-9]\d\d|20\d\d)[a-z]?\b[^()]*\)/, // bracketed years, as in a citation
+  /\((?:[A-Z][A-Za-z'&. ]+,? )?(1[6-9]\d\d|20\d\d)[a-z]?\)/, // bracketed years, as in a citation
   /\b[A-Z][a-z]+,\s(1[6-9]\d\d|20\d\d)\b/, // "Name, 1990"
 ];
 
