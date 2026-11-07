@@ -20,6 +20,8 @@ import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { BrainMap, Curve, Flow, Layers } from "./visuals";
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
+import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
+import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
@@ -549,6 +551,16 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Pathways d={data as PathwaysData} />;
     case "receptor":
       return <Receptor d={data as ReceptorData} />;
+    case "conditioning":
+      return <Conditioning d={data as ConditioningData} />;
+    case "memoryflow":
+      return <MemoryFlow d={data as MemoryFlowData} />;
+    case "stress":
+      return <StressResponse d={data as StressData} />;
+    case "timeline":
+      return <Timeline d={data as TimelineData} />;
+    case "compare":
+      return <Compare d={data as CompareData} />;
   }
 }
 
