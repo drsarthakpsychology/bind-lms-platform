@@ -359,7 +359,7 @@ export const QUESTIONS_X02: PrepQuestion[] = [
     { exams: NMS, ref: "McGarrigle & Donaldson 1974" }),
 
   ps("devx-100", "information-processing", 4,
-    "Preschoolers were assigned to four conditions before and after a visit from 'Sam Stone'. Stereotype: told several stories about Sam being clumsy before the visit. Suggestion: interviewed four times after the visit with questions implying Sam had ripped a book and soiled a teddy bear. A fifth interview, by a new interviewer, asked what happened. Among 3- and 4-year-olds:\nControl (neither): about 10% said Sam did a misdeed.\nStereotype only: about 37%.\nSuggestion only: about 50%.\nStereotype plus suggestion: about 72%, and many said they saw it happen.",
+    "Preschoolers were assigned to four conditions before and after a visit from 'Sam Stone'. Stereotype: told several stories about Sam being clumsy before the visit. Suggestion: interviewed four times after the visit with questions implying Sam had ripped a book and soiled a teddy bear. A fifth interview, by a new interviewer, asked what happened. Among 3- and 4-year-olds:\nControl (neither): about 10% said Sam did a misdeed.\nStereotype only: about 42%.\nSuggestion only: about 52%.\nStereotype plus suggestion: about 72%, and many said they saw it happen.",
     "What is the most important practical implication?",
     [
       "Prior expectations and suggestive questioning combine to produce false reports, so interview methods matter greatly",
@@ -367,7 +367,7 @@ export const QUESTIONS_X02: PrepQuestion[] = [
       "Stereotypes alone have no effect on children's reports",
       "Only 3-year-olds are affected by suggestion",
     ], 0,
-    "False reports rose with each factor and were highest when both were present, so the way children are prepared and questioned strongly shapes their reports. The finding argues for careful, non-leading interviews, not for never questioning children; the control group reported accurately. Stereotype alone raised false reports from about 10% to 37%. Older preschoolers were also affected, though less.",
+    "False reports rose with each factor and were highest when both were present, so the way children are prepared and questioned strongly shapes their reports. The finding argues for careful, non-leading interviews, not for never questioning children; the control group reported accurately. Stereotype alone raised false reports from about 10% to 42%. Older preschoolers were also affected, though less.",
     { exams: MCP, ref: "Leichtman & Ceci 1995" }),
 
   ps("devx-101", "information-processing", 3,

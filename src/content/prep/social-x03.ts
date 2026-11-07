@@ -340,7 +340,7 @@ export const QUESTIONS_X03: PrepQuestion[] = [
     { exams: NM, ref: "Stasser & Titus 1985" }),
 
   ps("socx-147", "prejudice", 4,
-    "White participants heard what seemed to be an emergency involving a Black or a White victim. Some believed they were the only witness; others believed two other people were also present. Helping rates:\nAlone: White victim about 85%, Black victim about 94%.\nWith two others: White victim about 75%, Black victim about 38%.",
+    "White participants heard what seemed to be an emergency involving a Black or a White victim. Some believed they were the only witness; others believed two other people were also present. Helping rates:\nAlone: White victim about 81%, Black victim about 94%.\nWith two others: White victim about 75%, Black victim about 38%.",
     "Which interpretation fits the aversive racism account?",
     [
       "Participants were openly prejudiced in every condition",

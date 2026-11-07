@@ -126,10 +126,10 @@ export const QUESTIONS_X01: PrepQuestion[] = [
     { exams: NM, ref: "Charaka Samhita, Sutra Sthana 11.43" }),
 
   mcq("ipx-021", "ayurveda", 3,
-    "In Ayurveda, 'ojas' is the vital essence that supports strength and immunity. Charaka lists among the factors that deplete ojas",
+    "In Ayurveda, 'ojas' is the vital essence that supports strength and immunity. The classical texts list among the factors that deplete ojas",
     ["anger, hunger, worry and grief", "moderate daily exercise", "regular and sufficient sleep", "a balanced and simple diet"], 0,
-    "Charaka says ojas declines with anger, hunger, anxiety, grief and overwork, an early statement that emotional states affect bodily resistance. Moderate exercise, regular sleep and a balanced diet support ojas.",
-    { exams: NM, ref: "Charaka Samhita, Sutra Sthana 17.76" }),
+    "Sushruta says ojas declines with injury, anger, worry, grief, overwork and hunger, and Charaka gives a similar list (worry, fear, grief, fasting and overexertion), an early statement that emotional states affect bodily resistance. Moderate exercise, regular sleep and a balanced diet support ojas.",
+    { exams: NM, ref: "Sushruta Samhita, Sutra Sthana 15; Charaka Samhita, Sutra Sthana 17" }),
 
   mcq("ipx-022", "jain", 1,
     "The 'three jewels' (ratnatraya) of Jainism, the path to liberation, are",
