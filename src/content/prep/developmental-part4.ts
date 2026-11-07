@@ -39,7 +39,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0163",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A 3-year-old says 'I goed to the park and saw two mouses.' She previously said 'went' correctly. This illustrates:",
     options: [
@@ -98,7 +98,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0166",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Chomsky's 'poverty of the stimulus' argument holds that:",
     options: [
@@ -172,7 +172,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0170",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Carey and Bartlett's 'chromium' study, in which preschoolers heard a new colour word used just once and later showed partial knowledge of it, demonstrated:",
     options: [
@@ -225,7 +225,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0173",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Genie, discovered in 1970 at age 13 after extreme isolation, is often cited because she:",
     options: [
@@ -301,7 +301,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0177",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Roger Brown's longitudinal study of Adam, Eve and Sarah introduced which measure of early grammatical development?",
     options: [
@@ -408,7 +408,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-lang-0183",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The idea that the language we speak shapes or limits the way we think is known as:",
     options: [
@@ -462,7 +462,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is option 3. The other options contradict it.",
+      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is the large gap in words heard per hour and its link to later vocabulary. The other options contradict it.",
     ref: "Hart & Risley 1995; Sperry et al. 2019, Child Dev",
   }),
   // ── Developmental research designs and infant methods ─────────────────────
@@ -539,12 +539,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In developmental research, the separate effects of age, cohort and time of measurement cannot all be estimated independently from a single simple design.",
-      "R: Age equals time of measurement minus year of birth, so knowing any two of these determines the third.",
+      "R: Cross-sequential designs remove this problem completely because they combine cross-sectional and longitudinal sampling.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. This 'identification problem' means that any design varying two factors confounds them with the third: cross-sectional confounds age with cohort, longitudinal confounds age with time of measurement, and time-lag designs confound cohort with time. Schaie's sequential strategies and statistical assumptions are needed to disentangle them.",
+      "A is true and R is false. Age equals time of measurement minus year of birth, so the three factors are perfectly linked and any two fix the third. A cross-sectional study confounds age with cohort, and a longitudinal study confounds age with time of measurement. Sequential designs, as Schaie proposed, reduce the problem by letting researchers compare pairs of factors, but they still rely on assumptions about the third, so they do not remove it completely. Since R overstates what sequential designs can do, the options treating R as true are wrong.",
     ref: "Schaie 1965, Psychol Bull; Baltes 1968",
   }),
   d({
@@ -648,7 +648,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "research-designs",
     module: undefined,
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Terman's Genetic Studies of Genius, begun in 1921, is a classic example of:",
     options: [
@@ -692,7 +692,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "research-designs",
     module: undefined,
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A cohort effect refers to:",
     options: [
@@ -827,18 +827,18 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Infants' receptive vocabulary (words understood) usually develops ahead of their productive vocabulary (words spoken).",
-      "R: Understanding a word requires only recognition and mapping to meaning, while producing it also requires recalling the word and controlling articulation.",
+      "R: Most children produce their first recognisable words at around 12 months of age.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Children understand words before they can say them. At about 12 months many infants understand around 50 words but say only a handful, and comprehension stays ahead of production throughout childhood and even in adults, whose passive vocabulary is larger than their active one. The reason is the one in R: to understand a word you only need to recognise its sound and link it to a meaning, while to say it you also have to retrieve the word from memory and plan and control the movements of speech. So A is true, R is true, and R explains A.",
+      "Both are true, but R does not explain A. Comprehension runs ahead because understanding a word needs only recognition and mapping to meaning, whereas production also needs recall of the word and control of articulation. A typical child may understand around 50 words before saying 10. R correctly gives the usual age of first words, but a milestone date does not explain the gap between understanding and speaking. So 'R explains A' is wrong, and since both are true the remaining options are also wrong.",
     ref: "Fenson et al. 1994; Berk, ch. 9",
   }),
   d({
     id: "dev-lang-0204",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Vygotsky's view of the relation between thought and language was that:",
     options: [

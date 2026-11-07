@@ -33,7 +33,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Latané and Darley showed that the more bystanders there are, the less likely any one person is to help, and the slower help comes. The research was prompted by press reports of the 1964 murder of Kitty Genovese in New York, which said many neighbours did nothing (later work showed those reports were exaggerated). Option 1 is the opposite of the finding. Bystanders often fail to help. Untrained people do help, especially when alone.",
+      "Latané and Darley showed that the more bystanders there are, the less likely any one person is to help, and the slower help comes. The research was prompted by press reports of the 1964 murder of Kitty Genovese in New York, which said many neighbours did nothing (later work showed those reports were exaggerated). Being more likely to help when many others are present is the opposite of the finding. Bystanders often fail to help. Untrained people do help, especially when alone.",
     ref: "Latané & Darley 1970; Manning, Levine & Collins 2007",
   }),
   s({
@@ -87,12 +87,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In Piliavin's subway study, the bystander effect was not found: larger groups of passengers did not help less.",
-      "R: On a subway the emergency happens in plain view, so it is clear that help is needed and the victim cannot be ignored.",
+      "R: The study varied whether the victim appeared drunk or ill, and the apparently ill victim was helped more often.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. In a laboratory, the emergency was heard but not seen, so people could doubt it was serious. On the subway, the collapse happened in front of everyone and the situation was unambiguous, so pluralistic ignorance was weak and someone usually helped quickly. Piliavin explained helping with an arousal and cost-reward model: seeing the victim causes unpleasant arousal, and people choose the response that reduces it at the lowest cost.",
+      "Both are true, but R does not explain A. The bystander effect was absent mainly because the emergency happened in full view in a closed carriage, so there was no doubt that help was needed and no easy way to leave, and responsibility could not easily be spread. R is a correct finding from the same study, interpreted through the arousal and cost-reward model, since helping a drunk person seems more costly. But it is about which victim got help, not about the effect of group size. So 'R explains A' is wrong, and since both are true the other options are wrong too.",
     ref: "Piliavin, Rodin & Piliavin 1969; Fischer et al. 2011",
   }),
   s({
@@ -115,7 +115,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-help-0201",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Batson's empathy-altruism hypothesis proposes that:",
     options: [
@@ -271,7 +271,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-agg-0209",
     topic: "aggression",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Berkowitz and LePage's 'weapons effect' study, angered men gave more electric shocks when:",
     options: [
@@ -333,7 +333,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-agg-0212",
     topic: "aggression",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Zillmann's excitation transfer theory predicts that a person who has just exercised hard is more likely to respond aggressively to a provocation because:",
     options: [
@@ -557,7 +557,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-attr2-0223",
     topic: "interpersonal-attraction",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Walster and colleagues' 'computer dance' study, students were randomly paired for a dance. The best predictor of whether a student wanted to see their partner again was:",
     options: [
@@ -579,13 +579,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Similarity in attitudes and values is a strong predictor of attraction.",
+      "A: Research shows that 'opposites attract': dissimilarity in attitudes and values predicts attraction more strongly than similarity.",
       "R: Similar others validate our views and make interaction smoother and more rewarding.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Byrne's 'attraction paradigm' showed that liking for a stranger rises with the proportion of attitudes the stranger shares, and Newcomb's study of students sharing a house found that friendships formed between those with similar attitudes. Similar others confirm that our views are correct and make disagreements less likely. 'Opposites attract' (complementarity) has received much less support.",
+      "A is false and R is true. From Byrne's attraction paradigm to studies of couples and friends, similarity in attitudes and values is one of the most reliable predictors of liking, and evidence that complementary needs build attraction is weak. R correctly gives one reason similarity works: agreement confirms our views and makes interaction easier and more rewarding. Since A is false, the options in which A is true are wrong.",
     ref: "Byrne 1971; Newcomb 1961; Montoya, Horton & Kirchner 2008",
   }),
   s({
@@ -652,7 +652,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-attr2-0228",
     topic: "interpersonal-attraction",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Equity theory of relationships proposes that people are most satisfied when:",
     options: [
@@ -725,7 +725,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Passionate love is a state of intense longing, arousal and preoccupation, often strongest early in a relationship. Companionate love is the warm, trusting affection for someone deeply intertwined with one's life, and it usually grows as passion settles. Option 2 describes passionate love. Love based only on attraction resembles infatuation. Love as a game is Lee's ludus.",
+      "Passionate love is a state of intense longing, arousal and preoccupation, often strongest early in a relationship. Companionate love is the warm, trusting affection for someone deeply intertwined with one's life, and it usually grows as passion settles. An intense, short-lived longing describes passionate love. Love based only on attraction resembles infatuation. Love as a game is Lee's ludus.",
     ref: "Hatfield & Walster 1978; Hatfield & Sprecher 1986",
   }),
   s({
@@ -933,7 +933,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value in option 2. The other lists are invented and do not match the acronym's meaning.",
+      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value: Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration and Experimentation. The other lists are invented and do not match the acronym's meaning.",
     ref: "Pareek 1994; Pareek & Rao",
   }),
   s({
@@ -1083,13 +1083,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Berkowitz revised the frustration-aggression hypothesis to say that frustration leads to aggression mainly when it produces negative feelings.",
+      "A: Berkowitz revised the frustration-aggression hypothesis to state that frustration always leads to aggression and that aggression is always caused by frustration.",
       "R: In Berkowitz's cognitive neoassociation model, any unpleasant event, such as pain, heat or a bad smell, can activate aggressive thoughts and feelings.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Berkowitz argued that frustration is just one kind of aversive event; what matters is the negative feeling it creates, which automatically activates a network of anger-related thoughts, memories and action tendencies. Higher-level thinking can then strengthen or weaken the response. So unpleasant events other than frustration can also produce aggression, which explains the revision.",
+      "A is false and R is true. The 'always' version is the original 1939 hypothesis of Dollard, Doob, Miller, Mowrer and Sears. Berkowitz's revision was the reverse: frustration leads to aggression mainly when it produces negative feelings, and many other unpleasant events can do the same. R correctly states his cognitive neoassociation model, in which negative affect primes a network of aggression-related thoughts, feelings and action tendencies. Because A gives the original strong version rather than Berkowitz's revision, the options in which A is true are wrong.",
     ref: "Berkowitz 1989, 1990",
   }),
   s({

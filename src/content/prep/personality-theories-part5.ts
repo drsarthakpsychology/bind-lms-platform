@@ -110,12 +110,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Bandura distinguished efficacy expectations from outcome expectations.",
-      "R: A person may believe that a certain action would lead to success (outcome expectation) but doubt that they can carry out that action (efficacy expectation).",
+      "R: Bandura described mastery experiences as the most powerful source of self-efficacy.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. A smoker may believe that quitting would greatly improve health (high outcome expectation) yet doubt she could resist cravings (low efficacy). Bandura argued that efficacy expectations are the stronger predictor of whether people try and persist, which is why treatments aim to build mastery step by step.",
+      "Both are true, but R does not explain A. Bandura separated the two because a person may believe an action would lead to success (outcome expectation) yet doubt they can perform it (efficacy expectation), and the two can change independently. R is correct: among the four sources of efficacy (mastery experiences, vicarious experience, verbal persuasion and physiological states), personal mastery has the strongest effect. But that is about where efficacy comes from, not about why it must be kept separate from outcome beliefs. So 'R explains A' is wrong, and the options that call either false are wrong.",
     ref: "Bandura 1977, Psychol Rev",
   }),
   p({
@@ -183,7 +183,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-soccog-0206",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Bandura's account of self-regulation, people regulate their own behaviour through:",
     options: [
@@ -220,7 +220,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-soccog-0208",
     topic: "rotter",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Rotter's social learning theory, behaviour potential in a given situation depends on:",
     options: [
@@ -321,7 +321,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-soccog-0213",
     topic: "mischel",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Mischel's delay-of-gratification studies, children waited longer for a larger reward when they:",
     options: [
@@ -543,7 +543,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-soccog-0224",
     topic: "learning-approaches",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Higgins' self-discrepancy theory predicts that a gap between the actual self and the ideal self tends to produce:",
     options: [
@@ -641,7 +641,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The girls appear to have low self-efficacy for science rather than low ability. Bandura's four sources of efficacy suggest similar role models (vicarious experience), graded successes (mastery), encouragement (verbal persuasion) and reinterpreting anxiety (physiological states), which option 1 combines. Option 2 is psychoanalytic and unsupported. Option 3 ignores the role of beliefs. A single lecture is weak verbal persuasion on its own.",
+      "The girls appear to have low self-efficacy for science rather than low ability. Bandura's four sources of efficacy suggest similar role models (vicarious experience), graded successes (mastery), encouragement (verbal persuasion) and reinterpreting anxiety (physiological states), which the plan with role models, graded tasks and coaching combines. Blaming childhood conflicts is psychoanalytic and unsupported. Treating the decision as a fixed trait ignores the role of beliefs. A single lecture is weak verbal persuasion on its own.",
     ref: "Bandura 1997; Hackett & Betz 1981",
   }),
   p({

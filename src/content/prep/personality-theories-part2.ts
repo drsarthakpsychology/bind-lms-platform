@@ -64,7 +64,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-neo-0055",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Horney's idea of the 'tyranny of the shoulds' refers to:",
     options: [
@@ -164,7 +164,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-neo-0060",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which of the following did Fromm list as basic existential human needs?",
     options: [
@@ -583,12 +583,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Erikson is described as an ego psychologist.",
-      "R: Erikson emphasised the ego's adaptive strengths, such as hope, will and competence, rather than only its defensive role.",
+      "R: Erikson introduced the term 'identity crisis'.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Ego psychology, developed by Anna Freud, Hartmann and others, focused on the ego's role in adaptation. Erikson extended this by showing how the ego develops strengths (virtues) through resolving psychosocial crises across the lifespan, within a cultural and historical context. This is why he is placed in the ego psychology tradition.",
+      "Both are true, but R does not explain A. Erikson is called an ego psychologist because he shifted attention from the id to the ego's adaptive strengths, such as hope, will, purpose and competence, which develop through psychosocial stages. R is a correct fact: his work on adolescence made 'identity crisis' widely known. But coining a term about one stage does not explain why his whole approach is classed as ego psychology. So 'R explains A' is wrong, and the options saying either statement is false are wrong too.",
     ref: "Erikson 1963; Feist & Feist, ch. 9",
   }),
   p({
@@ -695,7 +695,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-neo-0086",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Horney distinguished three views of the self in neurotic people. Which statement describes them correctly?",
     options: [
@@ -729,7 +729,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-neo-0088",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Sullivan's developmental stages, the preadolescent 'chum' relationship is important because:",
     options: [
@@ -775,7 +775,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-obj-0090",
     topic: "object-relations",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The main shift from classical drive theory to object relations theory can be summed up as a move from:",
     options: [
@@ -814,13 +814,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Klein believed that in the depressive position the infant wishes to make reparation to the mother.",
+      "A: Klein believed that in the paranoid-schizoid position the infant wishes to make reparation to the mother.",
       "R: In the depressive position the infant first realises that the mother it attacked in fantasy is the same mother it loves, and so feels guilt.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Once the infant sees the mother as a whole person, its earlier angry fantasies cause guilt and fear of having damaged her, which drives the wish to repair. Klein saw reparation as a source of later creativity, concern and mature love, and the capacity to tolerate mixed feelings as a sign of health.",
+      "A is false and R is true. In the paranoid-schizoid position, roughly the first three to four months, the infant splits the world into good and bad part-objects and fears persecution; it does not yet feel guilt or wish to repair. Reparation belongs to the depressive position. R correctly describes that later position: the infant sees the mother as a whole person, recognises its own aggression, and feels guilt and a wish to make amends. Because A places reparation in the wrong position, options in which A is true are wrong.",
     ref: "Klein 1935, 1940",
   }),
   p({
@@ -863,7 +863,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-neo-0095",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Sullivan's term 'selective inattention' refers to:",
     options: [

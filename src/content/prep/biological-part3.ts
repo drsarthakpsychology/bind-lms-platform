@@ -323,7 +323,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Kimura: dichotic right-ear advantage (iii). Geschwind and Levitsky: planum temporale asymmetry (i). Sperry: split-brain work, Nobel Prize in 1981 shared with Hubel and Wiesel (iv). Davidson: frontal asymmetry and emotion (ii). Option 1 swaps Kimura with Geschwind and Levitsky; option 3 swaps Sperry and Davidson; option 4 misplaces the Nobel.",
+      "Kimura: dichotic right-ear advantage (iii). Geschwind and Levitsky: planum temporale asymmetry (i). Sperry: split-brain work, Nobel Prize in 1981 shared with Hubel and Wiesel (iv). Davidson: frontal asymmetry and emotion (ii). The code A-i, B-iii, C-iv, D-ii swaps Kimura with Geschwind and Levitsky; A-iii, B-i, C-ii, D-iv swaps Sperry and Davidson; A-iii, B-iv, C-i, D-ii misplaces the Nobel.",
     ref: "Kalat, ch. 14",
   }),
   b({
@@ -395,7 +395,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Corticotropin-releasing hormone from the paraventricular nucleus reaches the anterior pituitary through portal blood, triggering ACTH; ACTH stimulates the adrenal cortex (zona fasciculata) to release cortisol, which feeds back to inhibit the hypothalamus and pituitary. Option 2 reverses CRH and ACTH and names the medulla, which belongs to the fast sympatho-adreno-medullary system. Option 3 scrambles the order. Option 1 describes the thyroid (HPT) axis.",
+      "Corticotropin-releasing hormone from the paraventricular nucleus reaches the anterior pituitary through portal blood, triggering ACTH; ACTH stimulates the adrenal cortex (zona fasciculata) to release cortisol, which feeds back to inhibit the hypothalamus and pituitary. The chain starting with ACTH from the hypothalamus reverses CRH and ACTH and names the medulla, which belongs to the fast sympatho-adreno-medullary system. The chain starting with cortisol from the hypothalamus scrambles the order. TRH, TSH and thyroxine describe the thyroid (HPT) axis.",
     ref: "Kaplan & Sadock's Synopsis, psychoneuroendocrinology",
   }),
   b({
@@ -417,7 +417,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Adrenal medulla: adrenaline and noradrenaline (iv). Zona fasciculata of the adrenal cortex: cortisol (ii). Posterior pituitary: oxytocin and vasopressin, made in hypothalamic neurons and released from their terminals (i). Pineal: melatonin (iii). Option 1 swaps cortex and medulla; option 2 swaps posterior pituitary and pineal; option 4 misplaces oxytocin.",
+      "Adrenal medulla: adrenaline and noradrenaline (iv). Zona fasciculata of the adrenal cortex: cortisol (ii). Posterior pituitary: oxytocin and vasopressin, made in hypothalamic neurons and released from their terminals (i). Pineal: melatonin (iii). The code A-ii, B-iv, C-i, D-iii swaps cortex and medulla; A-iv, B-ii, C-iii, D-i swaps posterior pituitary and pineal; A-iv, B-i, C-ii, D-iii misplaces oxytocin.",
     ref: "Kalat, ch. 11",
   }),
   b({
@@ -442,7 +442,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "bio-endo-0128",
     topic: "endocrine-hpa",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Selye's general adaptation syndrome has three stages, in order:",
     options: [
@@ -525,12 +525,12 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "Researchers compare three groups: combat veterans with PTSD, veterans without PTSD, and civilians with major depression. On average, the PTSD group shows lower 24-hour urinary cortisol than the other groups, more glucocorticoid receptors on lymphocytes, and greater cortisol suppression after low-dose (0.5 mg) dexamethasone. The depression group shows higher cortisol and reduced suppression.",
     options: [
-      "PTSD shows the same HPA pattern as depression",
       "PTSD is associated with enhanced negative feedback sensitivity of the HPA axis, whereas depression is associated with reduced feedback",
+      "PTSD shows the same HPA pattern as depression",
       "The PTSD group must have adrenal insufficiency (Addison's disease)",
       "Dexamethasone does not act on the HPA axis",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "Yehuda's work describes lower basal cortisol, more or more sensitive GR, and enhanced suppression in PTSD: a hypersensitive feedback loop, the opposite of the non-suppression seen in melancholic depression. So the two patterns differ. Addison's disease is an organic adrenal failure with a low response to ACTH; nothing here suggests that. Dexamethasone acts precisely by feeding back on the pituitary and hypothalamus.",
     ref: "Yehuda 2002, NEJM; Yehuda et al. 1993",
@@ -550,7 +550,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Magnocellular neurons of the PVN and supraoptic nucleus make oxytocin and vasopressin, transport them down their axons and release them from terminals in the posterior pituitary (neurohypophysis). The anterior pituitary makes its own hormones under hypothalamic releasing hormones, and the adrenal cortex makes steroids. The pineal makes melatonin. Option 4 reverses synthesis and release sites.",
+      "Magnocellular neurons of the PVN and supraoptic nucleus make oxytocin and vasopressin, transport them down their axons and release them from terminals in the posterior pituitary (neurohypophysis). The anterior pituitary makes its own hormones under hypothalamic releasing hormones, and the adrenal cortex makes steroids. The pineal makes melatonin. 'Posterior pituitary; hypothalamus' reverses the synthesis and release sites.",
     ref: "Kalat, ch. 11",
   }),
   b({
@@ -602,7 +602,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "bio-endo-0136",
     topic: "endocrine-hpa",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The distinction between 'organisational' and 'activational' effects of sex hormones means that:",
     options: [
@@ -613,7 +613,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Phoenix and colleagues found that prenatal testosterone given to female guinea pigs permanently masculinised their later sexual behaviour (organisational), while adult hormones trigger behaviour in already-organised circuits (activational). Option 1 reverses the timing. The distinction is about timing and permanence, not which hormone. Steroid hormones are the classic organisers, so option 4 is wrong. (Adolescence is now seen as a second organisational window.)",
+      "Phoenix and colleagues found that prenatal testosterone given to female guinea pigs permanently masculinised their later sexual behaviour (organisational), while adult hormones trigger behaviour in already-organised circuits (activational). The claim that adult hormones permanently reorganise the brain reverses the timing. The distinction is about timing and permanence, not which hormone. Steroid hormones are the classic organisers, so the claim that only peptide hormones organise is wrong. (Adolescence is now seen as a second organisational window.)",
     ref: "Phoenix et al. 1959, Endocrinology; Kalat, ch. 11",
   }),
   b({
@@ -631,7 +631,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Berenbaum and Hines found girls with CAH prefer male-typical toys (trucks, building sets) and activities more than control sisters, supporting a prenatal androgen influence on play. Most still identify as female, so option 4 is wrong. Intelligence differences are not a consistent finding. 'No differences' contradicts the replicated toy-preference effect.",
+      "Berenbaum and Hines found girls with CAH prefer male-typical toys (trucks, building sets) and activities more than control sisters, supporting a prenatal androgen influence on play. Most still identify as female, so the option claiming male gender identity in most cases is wrong. Intelligence differences are not a consistent finding. 'No differences' contradicts the replicated toy-preference effect.",
     ref: "Berenbaum & Hines 1992, Psychol Sci",
   }),
   b({
@@ -726,7 +726,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Steroids (cortisol, oestradiol, testosterone) are derived from cholesterol, are lipid-soluble and act mainly on cytoplasmic or nuclear receptors that change transcription, so their effects are slower and longer-lasting. Peptides (insulin, ACTH, oxytocin) are water-soluble chains of amino acids acting on membrane receptors through second messengers. Option 2 describes peptides; option 1 reverses the two. Many peptide hormones use cAMP, but steroids mainly do not.",
+      "Steroids (cortisol, oestradiol, testosterone) are derived from cholesterol, are lipid-soluble and act mainly on cytoplasmic or nuclear receptors that change transcription, so their effects are slower and longer-lasting. Peptides (insulin, ACTH, oxytocin) are water-soluble chains of amino acids acting on membrane receptors through second messengers. Describing steroids as amino acid chains acting on membrane receptors actually describes peptides, and saying peptides cross membranes to reach nuclear receptors reverses the two. Many peptide hormones use cAMP, but steroids mainly do not.",
     ref: "Kalat, ch. 11",
   }),
   b({
@@ -766,7 +766,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "From outside in, the cortex makes 'salt, sugar, sex': zona glomerulosa makes aldosterone (iii), zona fasciculata makes cortisol (iv), zona reticularis makes androgens such as DHEA (i). The medulla, derived from neural crest, makes catecholamines (ii). Option 2 swaps the outer two layers; option 3 swaps fasciculata and reticularis; option 4 swaps reticularis and medulla.",
+      "From outside in, the cortex makes 'salt, sugar, sex': zona glomerulosa makes aldosterone (iii), zona fasciculata makes cortisol (iv), zona reticularis makes androgens such as DHEA (i). The medulla, derived from neural crest, makes catecholamines (ii). The code A-iv, B-iii, C-i, D-ii swaps the outer two layers; A-iii, B-i, C-iv, D-ii swaps fasciculata and reticularis; A-iii, B-iv, C-ii, D-i swaps reticularis and medulla.",
     ref: "Standard physiology texts",
   }),
   b({
@@ -780,11 +780,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Salivary cortisol is sampled in two healthy students. Student P wakes at 7:00, and cortisol rises by about 60% over the next 30 minutes, then declines steadily to a low point near midnight. Student Q, who has worked night shifts for two weeks and sleeps 9:00 to 16:00, shows a flattened curve with no clear morning rise and higher evening values than P.",
     options: [
       "Q's pattern indicates adrenal failure",
-      "P shows the normal cortisol awakening response and diurnal decline; Q shows circadian misalignment, with a blunted and shifted rhythm that has not fully adapted to the new schedule",
-      "P's morning rise indicates an acute anxiety disorder",
       "Cortisol has no circadian rhythm, so both curves reflect measurement error",
+      "P's morning rise indicates an acute anxiety disorder",
+      "P shows the normal cortisol awakening response and diurnal decline; Q shows circadian misalignment, with a blunted and shifted rhythm that has not fully adapted to the new schedule",
     ],
-    answer: 1,
+    answer: 3,
     explanation:
       "A sharp rise in the first 30 to 45 minutes after waking (the cortisol awakening response) and a steady fall to a midnight nadir is normal. Night-shift workers often show flattened, partially shifted rhythms because the SCN clock, entrained by light, adapts slowly and incompletely. Adrenal failure would show low cortisol at all times, not a flattened pattern with high evening values. A morning rise is normal, not a sign of anxiety. Cortisol's circadian rhythm is one of the most robust in physiology.",
     ref: "Fries, Dettenborn & Kirschbaum 2009, Int J Psychophysiol",
@@ -881,14 +881,14 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "High licking and grooming increased GR expression in the offspring's hippocampus through demethylation of the GR exon 17 promoter, giving more efficient feedback and milder stress responses. Cross-fostering showed the effect follows the rearing mother, not the biological one, so it is not explained by genes. Option 1 describes the low-licking offspring. The difference shows in HPA (cortisol/corticosterone) responses, not only adrenaline.",
+      "High licking and grooming increased GR expression in the offspring's hippocampus through demethylation of the GR exon 17 promoter, giving more efficient feedback and milder stress responses. Cross-fostering showed the effect follows the rearing mother, not the biological one, so it is not explained by genes. Fewer receptors with exaggerated stress responses describes the low-licking offspring. The difference shows in HPA (cortisol/corticosterone) responses, not only adrenaline.",
     ref: "Weaver et al. 2004, Nat Neurosci; Meaney 2001",
   }),
   b({
     id: "bio-endo-0151",
     topic: "endocrine-hpa",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which hormone stimulates milk ejection (let-down) during breastfeeding and uterine contractions during labour?",
     options: [
@@ -951,12 +951,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Hormonal effects on behaviour are usually slower and longer-lasting than synaptic effects.",
-      "R: Hormones travel through the bloodstream and many act by changing gene expression in target cells.",
+      "R: The pituitary gland is often called the master gland because its hormones regulate several other endocrine glands.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Synaptic transmission acts over micrometres in milliseconds. Hormones are carried in the blood to distant targets, often bind intracellular receptors (steroids) or trigger second-messenger cascades, and alter protein synthesis, so their effects take minutes to days and persist. Some steroid actions are rapid, but the general contrast holds.",
+      "Both statements are true, but R does not explain A. A is true because hormones travel through the bloodstream to distant targets, and many of them, especially steroids, act by changing gene expression, which takes time and has lasting effects. R is a correct description of the pituitary's role in the endocrine hierarchy, but it says nothing about why hormonal signalling is slower or longer-lasting than synaptic transmission. Choosing 'R explains A' mistakes a related true fact for the reason. Since both are true, the options saying A or R is false are also wrong.",
     ref: "Kalat, ch. 11",
   }),
   b({

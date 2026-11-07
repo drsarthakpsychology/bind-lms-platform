@@ -26,12 +26,12 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Freud's structural model, the part of the personality that works on the 'pleasure principle' and seeks immediate gratification is the:",
     options: [
-      "Ego",
       "Id",
+      "Ego",
       "Superego",
       "Preconscious",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "The id is present from birth, is entirely unconscious and holds the basic drives; it wants satisfaction now and uses primary-process thinking, such as wish-fulfilling images. The ego works on the reality principle, finding realistic ways to meet the id's demands. The superego holds moral rules and ideals taken in from parents. The preconscious is a level of awareness in Freud's earlier topographic model, not a structure of the personality.",
     ref: "Freud 1923; Feist & Feist, Theories of Personality, ch. 2",
@@ -64,16 +64,16 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0003",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "According to Freud, the ego operates on the:",
     options: [
-      "Pleasure principle",
       "Reality principle, using secondary-process (logical) thinking",
+      "Pleasure principle",
       "Morality principle only",
       "Death instinct",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "The ego develops out of the id to deal with the outside world. It delays gratification until a safe, realistic way is found and uses secondary-process thinking: logical, planned and reality-tested. The pleasure principle belongs to the id. The superego represents moral demands. The death instinct (Thanatos) is one of the two classes of drives Freud proposed in his later work, not the ego's operating principle.",
     ref: "Freud 1911, 1923",
@@ -111,12 +111,12 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Freud distinguished three types of anxiety. Anxiety that the id's impulses will break through and lead to punishment is called:",
     options: [
-      "Reality (objective) anxiety",
       "Neurotic anxiety",
+      "Reality (objective) anxiety",
       "Moral anxiety",
       "Existential anxiety",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "Neurotic anxiety is fear that one's instincts will get out of control and bring punishment. Reality anxiety is fear of real dangers in the world, such as a snake. Moral anxiety comes from conflict between the ego and the superego, felt as guilt or shame. Existential anxiety is a concept of existential writers such as May, not one of Freud's three types. Anxiety is the signal that leads the ego to use defence mechanisms.",
     ref: "Freud 1926; Feist & Feist, ch. 2",
@@ -134,12 +134,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. A very harsh superego can lead to excessive guilt and self-punishment.",
     ],
     options: [
-      "B and C only",
-      "A and C only",
       "A, B and D only",
+      "A and C only",
+      "B and C only",
       "A, B, C and D",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "A, B and D are correct. The conscience comes from punishments and the ego ideal from approved standards; the superego is the 'heir of the Oedipus complex'; and an overly strict superego was linked by Freud to depression and obsessional guilt. C is wrong: much of the superego is unconscious, which is why people can feel guilty without knowing why.",
     ref: "Freud 1923",
@@ -160,12 +160,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-i, B-iii, C-ii, D-iv",
+      "A-i, B-iii, C-iv, D-ii",
       "A-iii, B-i, C-iv, D-ii",
       "A-i, B-iv, C-iii, D-ii",
-      "A-i, B-iii, C-iv, D-ii",
+      "A-i, B-iii, C-ii, D-iv",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Freud held that the dream-work disguises the latent content (the hidden wish) as the manifest content (what is remembered). Condensation merges several elements into one (i). Displacement moves emotional emphasis away from what matters (iii). Symbolisation represents ideas through images (iv). Secondary revision smooths the dream into a story (ii). Interpretation tries to reverse these steps. The other codes swap them.",
     ref: "Freud 1900",
@@ -173,7 +173,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0008",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "In psychoanalysis, the technique in which the patient is asked to say whatever comes to mind, without censoring it, is called:",
     options: [
@@ -195,12 +195,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Freud called dreams 'the royal road to a knowledge of the unconscious'.",
-      "R: Freud believed that during sleep the ego's defences relax, so unconscious wishes can find disguised expression.",
+      "R: Freud held that the manifest content of a dream shows the unconscious wish directly, without any disguise.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Freud thought that in sleep the censorship of the ego is weaker, so repressed wishes press for expression, but in disguised form so as not to wake the sleeper (dreams as 'guardians of sleep'). Analysing the manifest dream back to its latent content therefore gives access to the unconscious. Modern sleep research does not support wish fulfilment as the main function of dreams, but the claim and its reasoning are as stated.",
+      "A is true and R is false. Freud valued dreams so highly because during sleep the ego's defences relax and unconscious wishes find expression. But the censor still works, so the latent content, the hidden wish, is disguised by dream-work (condensation, displacement, symbolisation and secondary revision) into the manifest content the dreamer remembers. Interpretation is needed precisely because the wish is not shown directly. Since R is false, the options in which R is true are wrong.",
     ref: "Freud 1900",
   }),
   p({
@@ -244,7 +244,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0012",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In his later theory, Freud proposed two basic classes of instinct. These are:",
     options: [
@@ -274,7 +274,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "(1) Focusing on abstract facts to avoid feeling distress is intellectualisation. (2) Pushing painful memories out of awareness, while anxiety still leaks out in related settings, is repression. (3) Giving a socially acceptable reason after the fact to protect self-esteem is rationalisation. Option 2 would need refusal to accept reality, attributing impulses to others and redirecting feelings. Option 1 confuses sublimation and reaction formation with the second and third cases. Option 4 swaps the first and third.",
+      "(1) Focusing on abstract facts to avoid feeling distress is intellectualisation. (2) Pushing painful memories out of awareness, while anxiety still leaks out in related settings, is repression. (3) Giving a socially acceptable reason after the fact to protect self-esteem is rationalisation. Denial, projection and displacement would need refusal to accept reality, attributing impulses to others and redirecting feelings. Isolation of affect, sublimation and reaction formation confuses sublimation and reaction formation with the second and third cases. Rationalisation, repression, intellectualisation swaps the first and third cases.",
     ref: "A. Freud 1936; Vaillant 1977",
   }),
   p({
@@ -353,7 +353,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0018",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which defence involves refusing to accept an obvious and painful reality, such as a smoker insisting that smoking is harmless despite clear evidence?",
     options: [
@@ -370,7 +370,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0019",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Freud's view, the ego defends against anxiety by using defence mechanisms that share two features. These are that defences:",
     options: [
@@ -434,7 +434,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-jung-0022",
     topic: "jung",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Jung's 'collective unconscious' refers to:",
     options: [
@@ -476,7 +476,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-jung-0024",
     topic: "jung",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Jung's theory, 'individuation' refers to:",
     options: [
@@ -499,12 +499,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Jung used the word association test to detect complexes.",
-      "R: Long reaction times, unusual responses and physiological changes to certain words suggested the words touched an emotionally charged complex.",
+      "R: Jung worked at the Burghölzli psychiatric hospital in Zurich under Eugen Bleuler.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. In his early work at the Burghölzli clinic in Zurich, Jung read out stimulus words and recorded responses, timing and sometimes skin conductance. Delays, repeating the stimulus, odd answers and changes in breathing or skin response were 'complex indicators', pointing to clusters of emotionally loaded ideas in the personal unconscious.",
+      "Both are true, but R does not explain A. Jung could detect complexes this way because long reaction times, unusual or repeated responses, and physiological changes to certain stimulus words showed that those words had touched an emotionally charged cluster of ideas. R is correct: he did this research at the Burghölzli, where Bleuler supported it. The setting tells us where the work was done, not why the test reveals complexes. So 'R explains A' is wrong, and since both statements are true the other options are wrong too.",
     ref: "Jung 1906; Feist & Feist, ch. 4",
   }),
   p({
@@ -534,12 +534,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which of the following are Jungian concepts?",
     statements: ["A. Synchronicity", "B. Amplification", "C. Fictional finalism", "D. The transcendent function"],
     options: [
-      "B and C only",
-      "A and C only",
       "A, B and D only",
+      "A and C only",
+      "B and C only",
       "A, B, C and D",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "Synchronicity is Jung's term for meaningful coincidences that seem to have no causal link (A). Amplification is his method of interpreting dream symbols by relating them to myths, fairy tales and religious images (B). The transcendent function is the process that unites conscious and unconscious opposites into a new attitude (D). C is wrong: fictional finalism, the idea that we are guided by imagined future goals, is Adler's, drawn from the philosopher Vaihinger.",
     ref: "Jung 1952, 1916; Adler 1930",
@@ -548,7 +548,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-jung-0028",
     topic: "jung",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which pair of terms did Jung introduce into everyday language?",
     options: [
@@ -572,12 +572,12 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "A 48-year-old successful lawyer, admired for being tough and rational, starts dreaming of a gentle, mysterious woman who leads him into a forest. Around the same time he feels a strong pull to start painting, something he dismissed as 'soft' in his youth. His therapist suggests that these experiences reflect parts of himself he had ignored in building his career.",
     options: [
-      "Emergence of the anima during midlife individuation",
       "Fixation in the oral stage",
+      "Emergence of the anima during midlife individuation",
       "Inferiority complex and overcompensation",
       "Conditions of worth",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "For Jung, a man's anima carries his unconscious feminine qualities, such as feeling and receptivity, and often appears in dreams as a mysterious female figure. In midlife, neglected functions and archetypes press for recognition as part of individuation, which fits the dream and the new pull to art. Oral fixation is Freudian. Inferiority and overcompensation are Adler's ideas. Conditions of worth come from Rogers.",
     ref: "Jung 1933; Feist & Feist, ch. 4",
@@ -605,7 +605,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-adler-0031",
     topic: "adler",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "According to Adler, the main driving force in human life is:",
     options: [
@@ -636,12 +636,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-ii, B-i, C-iv, D-iii",
+      "A-ii, B-i, C-iii, D-iv",
       "A-i, B-ii, C-iii, D-iv",
       "A-ii, B-iii, C-i, D-iv",
-      "A-ii, B-i, C-iii, D-iv",
+      "A-ii, B-i, C-iv, D-iii",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Adler described the first-born as dethroned by a new sibling (ii), the second-born as competitive and ambitious (i), the youngest as likely to be pampered (iii) and the only child as used to adult attention (iv). He stressed that the child's interpretation of their position matters more than the actual order. Large modern studies find little or no effect of birth order on personality, though there may be a small effect on intelligence. The other codes swap these positions.",
     ref: "Adler 1931; Rohrer, Egloff & Schmukle 2015, PNAS",
@@ -650,7 +650,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-adler-0033",
     topic: "adler",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Adler's concept of 'social interest' (Gemeinschaftsgefühl) refers to:",
     options: [
@@ -673,12 +673,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Adler's theory is described as teleological, or goal-directed.",
-      "R: Adler believed behaviour is guided by fictional final goals, imagined future aims that the person acts 'as if' they were true.",
+      "R: Adler held that behaviour is fully determined by events in the first five years of life, with no role for future goals.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Influenced by the philosopher Hans Vaihinger, Adler argued that people are pulled by subjective goals, such as 'I must be perfect' or 'I must be in control', more than pushed by past causes. These 'fictional finalisms' give direction to the style of life. This contrasts with Freud's mainly causal, past-focused explanations.",
+      "A is true and R is false. Adler held that behaviour is pulled by fictional final goals, imagined future aims the person acts 'as if' they were true, such as a goal of superiority or security, an idea he took from Vaihinger. That is what makes his theory teleological. R describes a strict, past-focused determinism, which is closer to a caricature of Freud and is the very view Adler rejected. Since R is false, options in which R is true are wrong.",
     ref: "Adler 1930; Vaihinger 1911",
   }),
   p({
@@ -730,7 +730,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-adler-0037",
     topic: "adler",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "According to Adler, the two parenting conditions most likely to lead a child to develop a mistaken style of life with low social interest are:",
     options: [
@@ -754,12 +754,12 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "Ravi stammered badly as a child and was mocked at school. He now works extremely hard to become a famous public speaker. He also constantly needs to win arguments, belittles colleagues, and becomes furious if anyone questions him. He has few close friends and rarely helps others.",
     options: [
-      "Compensation for felt inferiority that has become striving for personal superiority with low social interest",
       "An Oedipus complex resolved through identification",
+      "Compensation for felt inferiority that has become striving for personal superiority with low social interest",
       "A collective unconscious dominated by the shadow",
       "Conditions of worth imposed by his parents",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "Adler noted that people often compensate for a felt weakness, sometimes overcompensating, as with Demosthenes, who is said to have overcome a stammer to become a great orator. Ravi's striving has turned into a need for personal superiority, without concern for others, which Adler saw as the mark of an unhealthy style of life. The Oedipus complex and shadow are Freudian and Jungian ideas. Conditions of worth are Rogers' term for conditional parental love, which is not described here.",
     ref: "Adler 1927; Feist & Feist, ch. 3",
@@ -813,12 +813,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. The collective unconscious",
     ],
     options: [
-      "B and D only",
-      "A and D only",
       "A, B and C only",
+      "A and D only",
+      "B and D only",
       "A, B, C and D",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "Adler began with organ inferiority, the idea that people compensate for weak organs or body parts (A). He stressed the creative power of the self: people actively shape their style of life from heredity and environment (B). The masculine protest was his term for striving to overcome feelings of weakness, which he linked to cultural overvaluation of masculinity (C). D is Jung's concept.",
     ref: "Adler 1907, 1956; Feist & Feist, ch. 3",
@@ -848,12 +848,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Freud's theory is often called a 'psychodynamic' theory.",
-      "R: Freud described personality as the result of conflict between forces such as id, ego and superego, with psychic energy moving between them.",
+      "R: Freud developed psychoanalysis while working as a neurologist in Vienna.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. 'Dynamic' refers to the forces in motion and conflict within the mind. Freud borrowed from nineteenth-century physics and physiology, especially the idea that energy is conserved and must go somewhere, so blocked energy in one place shows up as symptoms elsewhere. 'Psychodynamic' now covers all theories that follow Freud in stressing unconscious conflict.",
+      "Both are true, but R does not explain A. The label 'psychodynamic' refers to the theory's central idea: personality results from the dynamic interplay of mental forces, such as id, ego and superego, with psychic energy moving between them and producing conflict and defence. R is a correct biographical fact, and his medical background did shape his interest in energy models, but where he worked does not explain why the theory is called dynamic. So 'R explains A' is wrong, and since both statements are true, the options that call either false are also wrong.",
     ref: "Freud 1923; Westen 1998",
   }),
   p({
@@ -886,7 +886,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-jung-0045",
     topic: "jung",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Compared with Freud, Jung's view of personality was:",
     options: [
@@ -897,7 +897,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Jung kept the unconscious but widened it (personal and collective), saw libido as general energy, and stressed purpose and future goals (teleology) as well as causes from the past. He gave special importance to the second half of life and to religious and spiritual experience. Option 1 describes Freud. Jung was not a learning theorist. He placed great weight on the unconscious.",
+      "Jung kept the unconscious but widened it (personal and collective), saw libido as general energy, and stressed purpose and future goals (teleology) as well as causes from the past. He gave special importance to the second half of life and to religious and spiritual experience. A focus on sexual drives in early childhood describes Freud. Jung was not a learning theorist. He placed great weight on the unconscious.",
     ref: "Feist & Feist, ch. 4",
   }),
   p({
@@ -961,7 +961,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-freud-0049",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Freud's concept of 'the return of the repressed' refers to:",
     options: [

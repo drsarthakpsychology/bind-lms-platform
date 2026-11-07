@@ -76,7 +76,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Adler founded individual psychology (A-3), which treats the person as an indivisible whole aiming at goals. Jung called his system analytical psychology (B-2) so that it would not be confused with Freud's psychoanalysis. Klein, working in London, built a theory of early object relations and positions, the core of the Kleinian school (C-4). Kohut, in Chicago in the 1970s, developed self psychology (D-1), which centres on empathy and the selfobject needs for mirroring and idealising. The first option swaps Adler and Jung. The third swaps Klein and Kohut. The fourth gives Adler the object relations school and Klein individual psychology, both of which are wrong.",
+      "Adler founded individual psychology (A-3), which treats the person as an indivisible whole aiming at goals. Jung called his system analytical psychology (B-2) so that it would not be confused with Freud's psychoanalysis. Klein, working in London, built a theory of early object relations and positions, the core of the Kleinian school (C-4). Kohut, in Chicago in the 1970s, developed self psychology (D-1), which centres on empathy and the selfobject needs for mirroring and idealising. The code A-2, B-3, C-4, D-1 swaps Adler and Jung. A-3, B-2, C-1, D-4 swaps Klein and Kohut. A-4, B-2, C-3, D-1 gives Adler the object relations school and Klein individual psychology, both of which are wrong.",
     ref: "Mitchell & Black 1995",
   }),
   h({
@@ -92,7 +92,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both are true and R explains A. Structuralism and functionalism were academic schools based in departments at Cornell, Chicago and Columbia. Freud was a physician; his data were case observations collected in the consulting room. The movement spread through bodies such as the Vienna Psychoanalytic Society and the International Psychoanalytical Association, and later through training institutes in Berlin, London and New York. Because of this clinical and institutional base, psychoanalysis stayed largely outside university departments for decades. That is exactly why A holds, so options 2, 3 and 4 do not fit.",
+      "Both are true and R explains A. Structuralism and functionalism were academic schools based in departments at Cornell, Chicago and Columbia. Freud was a physician; his data were case observations collected in the consulting room. The movement spread through bodies such as the Vienna Psychoanalytic Society and the International Psychoanalytical Association, and later through training institutes in Berlin, London and New York. Because of this clinical and institutional base, psychoanalysis stayed largely outside university departments for decades. That is exactly why A holds, so the keys saying R does not explain A, or that either statement is false, do not fit.",
     ref: "Schultz & Schultz, ch. 13",
   }),
   h({
@@ -132,7 +132,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "The two sides disagreed about how early the superego and Oedipal conflicts appear, whether very young children can be analysed, and how much weight to give unconscious phantasy. The society did not break apart. It reached a compromise in which candidates trained in one of separate streams, and the analysts who sided with neither became the Middle Group, later called the Independents (including Winnicott and Fairbairn). Nobody was expelled, so the first option is wrong. There was no complete split, so the second is wrong. Lacan's work belongs to France and came later; it played no part in this settlement.",
+      "The two sides disagreed about how early the superego and Oedipal conflicts appear, whether very young children can be analysed, and how much weight to give unconscious phantasy. The society did not break apart. It reached a compromise in which candidates trained in one of separate streams, and the analysts who sided with neither became the Middle Group, later called the Independents (including Winnicott and Fairbairn). Nobody was expelled, so the expulsion option is wrong. There was no complete split, so the two-organisation option is wrong. Lacan's work belongs to France and came later; it played no part in this settlement.",
     ref: "King & Steiner 1991",
   }),
   h({
@@ -165,7 +165,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both statements are true, but R does not explain A. Lacan's objection to ego psychology was theoretical: he held that the ego forms through identification with an outside image in the mirror stage, so it is a structure of misrecognition, and strengthening it would only reinforce the patient's illusions. The IPA's decision in 1963 concerned his practice, especially his variable-length sessions, and it followed his theoretical stance rather than causing it. Since both are true, options 3 and 4 are out. Option 1 would be right only if the institutional event accounted for the theoretical position, which it does not.",
+      "Both statements are true, but R does not explain A. Lacan's objection to ego psychology was theoretical: he held that the ego forms through identification with an outside image in the mirror stage, so it is a structure of misrecognition, and strengthening it would only reinforce the patient's illusions. The IPA's decision in 1963 concerned his practice, especially his variable-length sessions, and it followed his theoretical stance rather than causing it. Since both are true, the keys saying one of them is false are out. 'R explains A' would be right only if the institutional event accounted for the theoretical position, which it does not.",
     ref: "Roudinesco 1997",
   }),
   h({
@@ -198,7 +198,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true and R is false. Researchers such as Saul Rosenzweig, Robert Sears and others built laboratory analogues of repression and other mechanisms. When Rosenzweig sent Freud reports of his studies, Freud replied politely that he did not think much of them: in his view the wealth of clinical observations already made psychoanalytic claims independent of experimental checking, though such work could do no harm. So Freud did not treat laboratory tests as necessary, and R misdescribes his response. Because R is false, options 1, 2 and 4 cannot be correct.",
+      "A is true and R is false. Researchers such as Saul Rosenzweig, Robert Sears and others built laboratory analogues of repression and other mechanisms. When Rosenzweig sent Freud reports of his studies, Freud replied politely that he did not think much of them: in his view the wealth of clinical observations already made psychoanalytic claims independent of experimental checking, though such work could do no harm. So Freud did not treat laboratory tests as necessary, and R misdescribes his response. Because R is false, every key that treats R as true is wrong.",
     ref: "Rosenzweig 1985; Sears 1943",
   }),
 
@@ -260,7 +260,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "I, II and IV are correct. The association began in the early 1960s, with Bugental as founding president, and held its first meeting in 1963. The 1964 Old Saybrook conference brought together Maslow, Rogers, May, Bugental and others. Husserl's phenomenology and the existential ideas of Kierkegaard, Heidegger and Sartre shaped the focus on lived experience, choice and meaning. Statement III is false: Rogers recorded therapy sessions and used Q-sort measures of self-concept in outcome studies, and many humanists did research, even though they also criticised narrow experimental methods. 'II and IV only' leaves out a true statement, and the other two options include the false statement III.",
+      "I, II and IV are correct. The association began in the early 1960s, with Bugental as founding president, and held its first meeting in 1963. The 1964 Old Saybrook conference brought together Maslow, Rogers, May, Bugental and others. Husserl's phenomenology and the existential ideas of Kierkegaard, Heidegger and Sartre shaped the focus on lived experience, choice and meaning. Statement III is false: Rogers recorded therapy sessions and used Q-sort measures of self-concept in outcome studies, and many humanists did research, even though they also criticised narrow experimental methods. 'II and IV only' leaves out a true statement, and 'I and III only' and the full list both include the false statement III.",
     ref: "Grogan 2013; DeCarvalho 1991",
   }),
   h({
@@ -287,7 +287,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Husserl founded phenomenology, which asks us to describe experience as it appears while bracketing assumptions (A-2). Kierkegaard, the nineteenth-century Danish philosopher, wrote about dread, choice and the single individual's responsibility (B-4). Rollo May edited and introduced the European existential analysts to American readers in the late 1950s and became the main existential psychologist in the USA (C-3). Frankl, drawing on his time in concentration camps, developed logotherapy around the will to meaning (D-1). The first option swaps May and Frankl. The second swaps Husserl and Kierkegaard. The third swaps Kierkegaard and May.",
+      "Husserl founded phenomenology, which asks us to describe experience as it appears while bracketing assumptions (A-2). Kierkegaard, the nineteenth-century Danish philosopher, wrote about dread, choice and the single individual's responsibility (B-4). Rollo May edited and introduced the European existential analysts to American readers in the late 1950s and became the main existential psychologist in the USA (C-3). Frankl, drawing on his time in concentration camps, developed logotherapy around the will to meaning (D-1). The code A-2, B-4, C-1, D-3 swaps May and Frankl, A-4, B-2, C-3, D-1 swaps Husserl and Kierkegaard, and A-2, B-3, C-4, D-1 swaps Kierkegaard and May.",
     ref: "May, Angel & Ellenberger 1958; Frankl 1946",
   }),
   h({
@@ -298,13 +298,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the two statements and choose the correct option.",
     statements: [
-      "A: Carl Rogers was among the first therapists to record and transcribe actual therapy sessions for research.",
+      "A: Carl Rogers refused to allow his therapy sessions to be recorded, believing that research would damage the therapeutic relationship.",
       "R: Rogers believed that what happens in therapy can and should be opened up to empirical study.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. From the early 1940s Rogers and his students at Ohio State and later Chicago used phonograph recordings of sessions. Until then therapy had been treated as a private art. Rogers wanted to find out which therapist conditions actually help clients, so he recorded and transcribed sessions, rated them, and measured change with tools such as the Q-sort. His empirical attitude is the reason for the recordings. Options 2, 3 and 4 are therefore wrong.",
+      "A is false and R is true. Rogers was one of the first therapists to record and transcribe sessions, from the early 1940s at Ohio State and later at Chicago, and his group used the recordings and Q-sort measures to study process and outcome. That followed from the belief in R that therapy should be open to empirical study rather than treated as a private art. Since A is false, the options in which A is true are wrong.",
     ref: "Kirschenbaum 2007",
   }),
   h({
@@ -339,14 +339,14 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 3,
     explanation:
-      "A is false and R is true. Both movements share an interest in growth and well-being, but early positive psychologists deliberately set themselves apart on method. They described humanistic psychology as rich in ideas but weak in cumulative evidence, and they put their own work forward as hard science using surveys, experiments and longitudinal data. Humanistic writers, in turn, objected that their tradition had been misrepresented. This debate shows why A is wrong. Options 1 and 2 need A to be true, and option 3 needs R to be false.",
+      "A is false and R is true. Both movements share an interest in growth and well-being, but early positive psychologists deliberately set themselves apart on method. They described humanistic psychology as rich in ideas but weak in cumulative evidence, and they put their own work forward as hard science using surveys, experiments and longitudinal data. Humanistic writers, in turn, objected that their tradition had been misrepresented. This debate shows why A is wrong. Both 'both true' keys need A to be true, and 'A true, R false' gets both statements wrong.",
     ref: "Seligman & Csikszentmihalyi 2000; Taylor 2001",
   }),
   h({
     id: "his-hum-0118",
     topic: "humanistic-movement",
     exams: [N, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Transpersonal psychology, called the 'fourth force', is best described as the study of:",
     options: [
@@ -377,7 +377,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The passage makes four points: there was a warm reception in applied settings, influence within the universities was limited, there were two criticisms (concepts that were hard to measure and an individualistic, culture-bound ideal), and its concerns returned later under other names, which fits the rise of positive psychology and research on well-being. The second option captures all four. The first contradicts the applied influence the passage describes. The third reverses the pattern, since academia was the weak point. The fourth contradicts the final sentence about its themes returning.",
+      "The passage makes four points: there was a warm reception in applied settings, influence within the universities was limited, there were two criticisms (concepts that were hard to measure and an individualistic, culture-bound ideal), and its concerns returned later under other names, which fits the rise of positive psychology and research on well-being. Only the option about large applied impact with limited academic influence captures all four. Saying it had no influence outside psychology contradicts the applied influence the passage describes. Saying it was popular in universities but rejected by counsellors reverses the pattern, since academia was the weak point. Saying it disappeared completely contradicts the final sentence about its themes returning.",
     ref: "Adapted from Grogan 2013; Smith 1990",
   }),
 
@@ -442,7 +442,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Shannon set out information theory in 1948, defining information as a reduction in uncertainty and measuring it in bits (A-3). Turing described an abstract universal computing machine in 1936 and, in 1950, proposed the imitation game as a test of machine intelligence (B-4). Wiener coined 'cybernetics' for the science of feedback control in machines and organisms (C-1). Broadbent used dichotic listening experiments to propose a filter that selects one channel before full processing (D-2). The first option swaps Shannon and Wiener, the second swaps Shannon and Turing, and the third swaps Wiener and Broadbent.",
+      "Shannon set out information theory in 1948, defining information as a reduction in uncertainty and measuring it in bits (A-3). Turing described an abstract universal computing machine in 1936 and, in 1950, proposed the imitation game as a test of machine intelligence (B-4). Wiener coined 'cybernetics' for the science of feedback control in machines and organisms (C-1). Broadbent used dichotic listening experiments to propose a filter that selects one channel before full processing (D-2). The code A-1, B-4, C-3, D-2 swaps Shannon and Wiener, A-4, B-3, C-1, D-2 swaps Shannon and Turing, and A-3, B-4, C-2, D-1 swaps Wiener and Broadbent.",
     ref: "Gardner 1985",
   }),
   h({
@@ -454,12 +454,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the two statements and choose the correct option.",
     statements: [
       "A: Frederic Bartlett's research on remembering at Cambridge in the 1930s became a reference point for later cognitive psychologists.",
-      "R: Bartlett showed that people reconstruct what they remember using schemas, so that recalled stories shift toward familiar cultural forms, which is the kind of active mental process cognitive psychology set out to study.",
+      "R: Bartlett was knighted in 1948, partly for applied work during the Second World War.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Bartlett had English participants recall an unfamiliar folk tale more than once. Their versions became shorter and more conventional, and unfamiliar details were changed to fit their own expectations. He explained this through schemas, organised knowledge structures that shape recall. Behaviourist America largely ignored this work, but once the cognitive revolution made inner representations respectable, Bartlett's schema idea was revived and widely cited. That revival happened because his findings showed memory to be an active construction, so options 2, 3 and 4 do not fit.",
+      "Both are true, but R does not explain A. Bartlett's work became a reference point because he showed that remembering is reconstructive: people recall stories through schemas, so their versions shift toward familiar cultural forms. That kind of active mental process is exactly what cognitive psychology later set out to study. R is a correct fact about the honour he received, but a knighthood does not explain why cognitive psychologists drew on his ideas about memory. So 'R explains A' is wrong, and the options calling either false are wrong too.",
     ref: "Bartlett 1932",
   }),
   h({
@@ -477,7 +477,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Lashley pointed out that a pianist's finger movements, or the words of a fluent speaker, follow one another faster than feedback from each movement could travel to trigger the next. Errors such as spoonerisms show that later elements are already prepared before earlier ones are produced. So behaviour needs central organisation: plans arranged in a hierarchy. This was an early, influential attack on associative chaining from within physiological psychology. The first option is the chaining view he attacked. The third option contradicts his own findings on mass action and equipotentiality, which argued against tidy localisation of memory. The fourth is Skinner's view of verbal behaviour, which Chomsky later attacked.",
+      "Lashley pointed out that a pianist's finger movements, or the words of a fluent speaker, follow one another faster than feedback from each movement could travel to trigger the next. Errors such as spoonerisms show that later elements are already prepared before earlier ones are produced. So behaviour needs central organisation: plans arranged in a hierarchy. This was an early, influential attack on associative chaining from within physiological psychology. The idea that each response provides the stimulus for the next is the chaining view he attacked. The claim that memory sits in a single removable spot contradicts his own findings on mass action and equipotentiality, which argued against tidy localisation of memory. Learning language entirely through operant reinforcement is Skinner's view of verbal behaviour, which Chomsky later attacked.",
     ref: "Lashley 1951",
   }),
   h({
@@ -572,7 +572,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 2,
     explanation:
-      "A is true and R is false. Historians such as Thomas Leahey have argued that behaviourism never commanded the kind of consensus a Kuhnian paradigm needs. Cognitive ideas also had continuous roots in Tolman, the Gestalt school, Bartlett and the Würzburg school, and the change looked more like a gradual shift in emphasis than a break between incommensurable worldviews. R is false because cognitive psychology kept behaviourism's objective, performance-based methods: reaction time, accuracy, controlled experiments and inferential statistics. It did not go back to trained introspection. Since R is false, options 1, 2 and 4 are wrong.",
+      "A is true and R is false. Historians such as Thomas Leahey have argued that behaviourism never commanded the kind of consensus a Kuhnian paradigm needs. Cognitive ideas also had continuous roots in Tolman, the Gestalt school, Bartlett and the Würzburg school, and the change looked more like a gradual shift in emphasis than a break between incommensurable worldviews. R is false because cognitive psychology kept behaviourism's objective, performance-based methods: reaction time, accuracy, controlled experiments and inferential statistics. It did not go back to trained introspection. Since R is false, every key that treats R as true is wrong.",
     ref: "Leahey 1992",
   }),
   h({
@@ -642,7 +642,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Atkinson and Shiffrin proposed the multi-store model in 1968, with sensory registers, a short-term store and a long-term store, and with control processes such as rehearsal (A-3). Rumelhart and McClelland led the group whose 1986 volumes established parallel distributed processing, or connectionism (B-4). Newell and Simon built the General Problem Solver and argued that a physical symbol system has the necessary and sufficient means for intelligence (C-1). Gazzaniga and Miller are said to have coined 'cognitive neuroscience' in the back of a New York taxi in the late 1970s (D-2). The first option swaps the entries for Rumelhart and McClelland and for Newell and Simon. The second puts both C and D in the wrong places. The third swaps A and B.",
+      "Atkinson and Shiffrin proposed the multi-store model in 1968, with sensory registers, a short-term store and a long-term store, and with control processes such as rehearsal (A-3). Rumelhart and McClelland led the group whose 1986 volumes established parallel distributed processing, or connectionism (B-4). Newell and Simon built the General Problem Solver and argued that a physical symbol system has the necessary and sufficient means for intelligence (C-1). Gazzaniga and Miller are said to have coined 'cognitive neuroscience' in the back of a New York taxi in the late 1970s (D-2). The code A-3, B-1, C-4, D-2 swaps the entries for Rumelhart and McClelland and for Newell and Simon. A-3, B-4, C-2, D-1 puts both C and D in the wrong places. A-4, B-3, C-1, D-2 swaps A and B.",
     ref: "Atkinson & Shiffrin 1968; Rumelhart & McClelland 1986; Gazzaniga 2000",
   }),
   h({
@@ -659,7 +659,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. The challenge came from how connectionist models work: knowledge is stored as patterns of connection weights spread across many simple units. Learning happens by adjusting those weights, and rule-like behaviour, such as forming the past tense, can emerge without any explicit rule being represented. The 1986 publication is a historical fact about how the ideas spread. It tells us when and how the challenge became widely known, not why connectionism conflicted with the symbolic view. So option 1 is wrong, and since both statements are true, options 3 and 4 are wrong too.",
+      "Both are true, but R does not explain A. The challenge came from how connectionist models work: knowledge is stored as patterns of connection weights spread across many simple units. Learning happens by adjusting those weights, and rule-like behaviour, such as forming the past tense, can emerge without any explicit rule being represented. The 1986 publication is a historical fact about how the ideas spread. It tells us when and how the challenge became widely known, not why connectionism conflicted with the symbolic view. So 'R explains A' is wrong, and since both statements are true, the keys saying one is false are wrong too.",
     ref: "Rumelhart & McClelland 1986; Fodor & Pylyshyn 1988",
   }),
   h({
@@ -760,7 +760,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Whig history, a label made famous by the historian Herbert Butterfield, presents the past as a march of progress toward the present (A-2). Internalist history follows ideas and experiments within the field (B-4). Externalist history looks at outside forces such as wars, funding, industry and social movements; for example, the testing boom in the USA followed the Army testing programme of 1917 and 1918 (C-1). Historicism tries to understand the past on its own terms (D-3). The first option swaps internalist and externalist. The third swaps Whig history and historicism. The fourth swaps externalist history and historicism.",
+      "Whig history, a label made famous by the historian Herbert Butterfield, presents the past as a march of progress toward the present (A-2). Internalist history follows ideas and experiments within the field (B-4). Externalist history looks at outside forces such as wars, funding, industry and social movements; for example, the testing boom in the USA followed the Army testing programme of 1917 and 1918 (C-1). Historicism tries to understand the past on its own terms (D-3). The code A-2, B-1, C-4, D-3 swaps internalist and externalist, A-3, B-4, C-1, D-2 swaps Whig history and historicism, and A-2, B-4, C-3, D-1 swaps externalist history and historicism.",
     ref: "Butterfield 1931; Furumoto 1989",
   }),
   h({
@@ -795,7 +795,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. A states a pattern in the record: Darwin and Wallace, James and Lange on emotion, and Leibniz and Newton on calculus all reached similar ideas independently. R reports how some historians use that pattern, as evidence that ideas arise when the climate is ready. Using a fact as evidence does not explain why the fact happened. The causes, such as shared problems, shared reading and new tools, are not given in R. So option 1 is wrong, and since both are true, options 3 and 4 are wrong as well.",
+      "Both are true, but R does not explain A. A states a pattern in the record: Darwin and Wallace, James and Lange on emotion, and Leibniz and Newton on calculus all reached similar ideas independently. R reports how some historians use that pattern, as evidence that ideas arise when the climate is ready. Using a fact as evidence does not explain why the fact happened. The causes, such as shared problems, shared reading and new tools, are not given in R. So 'R explains A' is wrong, and since both are true, the keys saying one is false are wrong as well.",
     ref: "Merton 1961; Boring 1950",
   }),
   h({
@@ -857,7 +857,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Wundt's laboratory came first, in 1879 (b). Wertheimer's paper on the phi phenomenon, usually taken as the start of Gestalt psychology, followed in 1912 (d). Watson's manifesto appeared in 1913 (a). The MIT symposium was in 1956 (c). The first option puts Watson ahead of Wertheimer; the two are only a year apart, which is why this pair is often confused. The third puts the Gestalt paper before Wundt's laboratory. The fourth puts 1956 before 1913.",
+      "Wundt's laboratory came first, in 1879 (b). Wertheimer's paper on the phi phenomenon, usually taken as the start of Gestalt psychology, followed in 1912 (d). Watson's manifesto appeared in 1913 (a). The MIT symposium was in 1956 (c). The order b, a, d, c puts Watson ahead of Wertheimer; the two are only a year apart, which is why this pair is often confused. The order d, b, a, c puts the Gestalt paper before Wundt's laboratory. The order b, d, c, a puts 1956 before 1913.",
     ref: "Hergenhahn, timeline",
   }),
   h({
@@ -875,7 +875,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The Clark lectures were in 1909 (c), the IPA was founded in 1910 (e), Adler left in 1911 (d), Jung broke away in 1913 (a), and the Controversial Discussions ran from 1941 to 1945 (b). The second option puts the IPA before the Clark visit, but the Nuremberg congress met the spring after Freud's return from America. The third puts Adler's departure before the IPA's founding. The fourth reverses Adler and Jung, but Adler was the first to go.",
+      "The Clark lectures were in 1909 (c), the IPA was founded in 1910 (e), Adler left in 1911 (d), Jung broke away in 1913 (a), and the Controversial Discussions ran from 1941 to 1945 (b). The order e, c, d, a, b puts the IPA before the Clark visit, but the Nuremberg congress met the spring after Freud's return from America. The order c, d, e, a, b puts Adler's departure before the IPA's founding. The order c, e, a, d, b reverses Adler and Jung, but Adler was the first to go.",
     ref: "Gay 1988",
   }),
   h({
@@ -893,7 +893,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Bartlett's main work on remembering appeared in 1932, Turing's paper on computable numbers in 1936, Shannon's information theory in 1948, Broadbent's filter model in 1958 and Neisser's textbook in 1967. The first option puts Shannon in 1948 ahead of two earlier works. The second puts Turing before Bartlett and Neisser before Broadbent. The fourth puts Shannon ahead of Turing, reversing a twelve-year gap. Questions like this test whether you know that the British and mathematical precursors came well before the American cognitive revolution of the 1950s and 1960s.",
+      "Bartlett's main work on remembering appeared in 1932, Turing's paper on computable numbers in 1936, Shannon's information theory in 1948, Broadbent's filter model in 1958 and Neisser's textbook in 1967. The list starting with Shannon puts 1948 ahead of two earlier works. The list starting with Turing puts him before Bartlett and Neisser before Broadbent. The list with Shannon second puts him ahead of Turing, reversing a twelve-year gap. Questions like this test whether you know that the British and mathematical precursors came well before the American cognitive revolution of the 1950s and 1960s.",
     ref: "Gardner 1985",
   }),
 
@@ -949,7 +949,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Bose, a physician who also took a degree in psychology, founded the Indian Psychoanalytical Society in Calcutta in 1922. It soon became a recognised branch of the international movement, and he kept up a long correspondence with Freud. He also headed the Calcutta psychology department after Sengupta. The second option points to the testing tradition at Mysore and elsewhere, not to Bose. Behaviour therapy came to Indian hospitals decades after his main work. Nurturant-task leadership is J. B. P. Sinha's model from organisational psychology.",
+      "Bose, a physician who also took a degree in psychology, founded the Indian Psychoanalytical Society in Calcutta in 1922. It soon became a recognised branch of the international movement, and he kept up a long correspondence with Freud. He also headed the Calcutta psychology department after Sengupta. The Binet adaptation points to the testing tradition at Mysore and elsewhere, not to Bose. Behaviour therapy came to Indian hospitals decades after his main work. Nurturant-task leadership is J. B. P. Sinha's model from organisational psychology.",
     ref: "Hartnack 2001; University of Calcutta history page",
   }),
   h({
@@ -966,7 +966,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 3,
     explanation:
-      "A is false and R is true. Bose was an independent thinker. His theory of opposite wishes held that each wish, such as to be active, comes with an opposite wish, such as to be passive, and that repression works by one side of the pair hiding the other. He told Freud that his Indian patients did not show castration fears in the way Freud described and that wishes to be female were more prominent. Freud responded with interest but did not accept the revision. Because Bose clearly departed from Freud, A is false, and so options 1, 2 and 3 are wrong.",
+      "A is false and R is true. Bose was an independent thinker. His theory of opposite wishes held that each wish, such as to be active, comes with an opposite wish, such as to be passive, and that repression works by one side of the pair hiding the other. He told Freud that his Indian patients did not show castration fears in the way Freud described and that wishes to be female were more prominent. Freud responded with interest but did not accept the revision. Because Bose clearly departed from Freud, A is false, and so every key that treats A as true is wrong.",
     ref: "Hartnack 2001; Bose-Freud correspondence",
   }),
   h({
@@ -1053,7 +1053,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "J. B. P. Sinha proposed the nurturant-task leader, who is warm and caring but makes help depend on the subordinate's work, as a fit for Indian organisations (A-3). Sudhir Kakar applied psychoanalysis to Indian childhood, the joint family and identity (B-4). Ashis Nandy wrote on how colonialism shaped the minds of both the colonisers and the colonised (C-1). Udai Pareek developed widely used measures of organisational role stress and the concept of role efficacy (D-2). The first option swaps Kakar and Nandy. The third swaps Sinha and Pareek. The fourth swaps Nandy and Pareek.",
+      "J. B. P. Sinha proposed the nurturant-task leader, who is warm and caring but makes help depend on the subordinate's work, as a fit for Indian organisations (A-3). Sudhir Kakar applied psychoanalysis to Indian childhood, the joint family and identity (B-4). Ashis Nandy wrote on how colonialism shaped the minds of both the colonisers and the colonised (C-1). Udai Pareek developed widely used measures of organisational role stress and the concept of role efficacy (D-2). The code A-3, B-1, C-4, D-2 swaps Kakar and Nandy, A-2, B-4, C-1, D-3 swaps Sinha and Pareek, and A-3, B-4, C-2, D-1 swaps Nandy and Pareek.",
     ref: "Sinha 1980; Kakar 1978; Nandy 1983; Pareek 1993",
   }),
   h({
@@ -1080,7 +1080,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "india-history",
     exams: [M, N],
     module: "ethics-law",
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which statutory body, set up under an Act of Parliament passed in 1992, maintains the register that clinical psychologists in India must join in order to practise?",
     options: [
@@ -1136,7 +1136,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The scholar praises the methods ('competent in method'), criticises how irrelevant the questions were, and explicitly says Western methods should not be thrown out. His aim is to start from local problems and concepts and then test how far they generalise. This is the indigenisation argument associated with Durganand Sinha and others. The second and fourth options both reject empirical methods, which goes against the passage. The third treats replication as success, but the scholar sees heavy replication as the very problem.",
+      "The scholar praises the methods ('competent in method'), criticises how irrelevant the questions were, and explicitly says Western methods should not be thrown out. His aim is to start from local problems and concepts and then test how far they generalise. This is the indigenisation argument associated with Durganand Sinha and others. Rejecting experimental methods as foreign and studying only ancient texts both abandon empirical work, which goes against the passage. The claim that Indian psychology succeeded through replication treats replication as success, but the scholar sees heavy replication as the very problem.",
     ref: "Adapted from Sinha 1986",
   }),
   h({
@@ -1148,12 +1148,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the two statements and choose the correct option.",
     statements: [
       "A: Early academic psychology in India was closely modelled on British and American experimental psychology.",
-      "R: Many early Indian departments were built by scholars trained in Western traditions, such as Sengupta under Münsterberg at Harvard and Gopalaswamy under Spearman in London.",
+      "R: Girindrasekhar Bose founded the Indian Psychoanalytical Society in 1922.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Founders bring the methods, instruments, syllabi and research questions of the places where they trained. Sengupta brought Harvard laboratory methods to Calcutta, and Gopalaswamy brought Spearman's approach to intelligence to Mysore, so the new departments looked much like their Western models. This is also why later critics called early Indian psychology imitative and argued for indigenisation. Because R gives the reason for A, options 2, 3 and 4 are incorrect.",
+      "Both are true, but R does not explain A. Early Indian departments followed Western models mainly because their founders trained in the West, such as Sengupta under Münsterberg at Harvard and Gopalaswamy under Spearman in London, and because syllabi followed British and American textbooks. R is a correct date, but Bose's society belonged to the psychoanalytic movement, not to the laboratory tradition A describes, so it cannot explain the experimental model. So 'R explains A' is wrong, and since both are true the options calling either false are wrong too.",
     ref: "Dalal 2002; Sinha 1986",
   }),
 ];

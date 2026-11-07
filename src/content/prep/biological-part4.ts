@@ -116,7 +116,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Sleep runs in roughly 90-minute cycles. Slow-wave sleep dominates the first two cycles (driven by homeostatic pressure), while REM episodes lengthen in later cycles (driven by the circadian rhythm). This is why sleepwalking and night terrors (N3 parasomnias) occur early in the night and nightmares (REM) occur later. Options 1 to 4 contradict this architecture.",
+      "Sleep runs in roughly 90-minute cycles. Slow-wave sleep dominates the first two cycles (driven by homeostatic pressure), while REM episodes lengthen in later cycles (driven by the circadian rhythm). This is why sleepwalking and night terrors (N3 parasomnias) occur early in the night and nightmares (REM) occur later. The other options contradict this architecture: REM is not concentrated early, stages are not evenly spread, and REM recurs in every cycle rather than once.",
     ref: "Kaplan & Sadock's Synopsis, sleep",
   }),
   b({
@@ -127,20 +127,20 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: The 2007 AASM scoring manual uses three NREM stages (N1, N2, N3) instead of the four of Rechtschaffen and Kales.",
+      "A: The 2007 AASM scoring manual kept the four NREM stages of Rechtschaffen and Kales unchanged.",
       "R: The old stages 3 and 4 differed only in the percentage of delta activity and were merged into N3.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Rechtschaffen and Kales defined stage 3 as 20 to 50% and stage 4 as more than 50% delta waves. Because this was an arbitrary split of one continuous process, the AASM combined them into N3 (slow-wave sleep, at least 20% of an epoch with slow waves of 0.5 to 2 Hz above 75 µV).",
+      "A is false and R is true. The 2007 AASM manual reduced NREM sleep to three stages, N1, N2 and N3, so it did not keep the older four-stage system. R correctly gives the reason for the change: stages 3 and 4 were separated only by an arbitrary cut-off in the proportion of delta waves (20 to 50 percent versus over 50 percent), so they were combined as N3, slow-wave sleep. Because A is false, the options in which both are true, or A is true and R false, are wrong.",
     ref: "AASM Manual 2007; Silber et al. 2007",
   }),
   b({
     id: "bio-sleep-0162",
     topic: "sleep-eeg",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Borbély's two-process model of sleep regulation proposes that sleep timing depends on:",
     options: [
@@ -222,7 +222,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "bio-sleep-0166",
     topic: "sleep-eeg",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Hobson and McCarley's activation-synthesis hypothesis proposed that dreams result from:",
     options: [
@@ -355,7 +355,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "bio-sleep-0173",
     topic: "sleep-eeg",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The first human EEG recordings were published in 1929 by:",
     options: [
@@ -435,7 +435,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "bio-sleep-0177",
     topic: "sleep-eeg",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Ageing is most consistently associated with which change in sleep?",
     options: [
@@ -583,14 +583,14 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "FDG-PET maps glucose use (ii). DTI measures anisotropic water diffusion along axons, yielding fractional anisotropy and tractography (iii). MEG detects tiny magnetic fields from synchronised intracellular currents, with millisecond resolution (iv). MRS measures metabolite concentrations, such as NAA as a marker of neuronal integrity (i). Option 1 swaps DTI and MEG; option 2 swaps PET and MRS; option 4 swaps MEG and MRS.",
+      "FDG-PET maps glucose use (ii). DTI measures anisotropic water diffusion along axons, yielding fractional anisotropy and tractography (iii). MEG detects tiny magnetic fields from synchronised intracellular currents, with millisecond resolution (iv). MRS measures metabolite concentrations, such as NAA as a marker of neuronal integrity (i). The code A-ii, B-iv, C-iii, D-i swaps DTI and MEG; A-i, B-iii, C-iv, D-ii swaps PET and MRS; A-ii, B-iii, C-i, D-iv swaps MEG and MRS.",
     ref: "Kolb & Whishaw, ch. 7",
   }),
   b({
     id: "bio-img-0185",
     topic: "neuroimaging",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Transcranial magnetic stimulation (TMS) is especially valuable to cognitive neuroscientists because it:",
     options: [
@@ -643,14 +643,14 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "MRI uses strong magnetic fields and radiofrequency pulses (no ionising radiation) and distinguishes grey matter, white matter and CSF much better than CT. CT uses X-rays and has poorer soft-tissue contrast. Radioactive tracers are used in PET and SPECT. CT is faster and widely available and is often the first scan for suspected acute haemorrhage, so option 4 describes CT's advantage, not MRI's.",
+      "MRI uses strong magnetic fields and radiofrequency pulses (no ionising radiation) and distinguishes grey matter, white matter and CSF much better than CT. CT uses X-rays and has poorer soft-tissue contrast. Radioactive tracers are used in PET and SPECT. CT is faster and widely available and is often the first scan for suspected acute haemorrhage, so the option about speed and acute bleeding describes CT's advantage, not MRI's.",
     ref: "Kolb & Whishaw, ch. 7",
   }),
   b({
     id: "bio-img-0188",
     topic: "neuroimaging",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The 'default mode network', described by Raichle and colleagues, is a set of regions that:",
     options: [

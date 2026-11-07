@@ -38,7 +38,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-att-0121",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "In Ainsworth's Strange Situation, a securely attached (type B) infant typically:",
     options: [
@@ -189,13 +189,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Japanese infants in some early studies showed a high rate of resistant attachment in the Strange Situation.",
+      "A: Japanese infants in some early Strange Situation studies showed an unusually high rate of avoidant attachment.",
       "R: These infants were rarely separated from their mothers, so being left with a stranger was unusually stressful for them.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Takahashi, and also Miyake and colleagues, found many traditionally reared Japanese infants rarely left their mothers, so separation episodes caused extreme distress, inflating resistant classifications; several sessions were cut short. This raises the question of whether the procedure has the same meaning across cultures, an important critique of its universality.",
+      "A is false and R is true. Early Japanese samples, such as Miyake's in Sapporo, showed a high rate of resistant (ambivalent) attachment and almost no avoidant infants. The high avoidant rates came from some North German samples, where independence was encouraged. R is true and helps explain the Japanese pattern: infants who were almost never apart from their mothers found separation and the stranger very distressing and were hard to soothe on reunion. Because A is false, options in which A is true are wrong.",
     ref: "Takahashi 1990, Human Development",
   }),
   d({
@@ -262,7 +262,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-att-0133",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Bowlby's phases of attachment development, the phase in which separation protest and stranger wariness first clearly appear (from about 6 to 8 months until 18 to 24 months) is:",
     options: [
@@ -317,7 +317,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-att-0136",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Thomas and Chess's concept of 'goodness of fit' means that:",
     options: [
@@ -627,7 +627,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "bronfenbrenner",
     module: undefined,
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Bronfenbrenner's later 'bioecological model' (with Morris) is summarised as the PPCT model. PPCT stands for:",
     options: [
@@ -727,7 +727,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-att-0157",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which critique of Bowlby's monotropy and critical period ideas is best supported by later research?",
     options: [
@@ -766,12 +766,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Stranger anxiety typically emerges around 6 to 8 months of age.",
-      "R: Infants of this age have formed specific attachments and can distinguish familiar from unfamiliar people.",
+      "R: The Strange Situation procedure is usually used with infants aged about 12 to 18 months.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Wariness of strangers usually emerges with clear-cut attachment, as infants have learned to recognise their caregivers and anticipate them; it peaks around 8 to 10 months and varies with temperament and context (it is reduced when the caregiver is nearby or the stranger approaches gradually).",
+      "Both are true, but R does not explain A. Stranger anxiety appears at around 6 to 8 months because by then infants have formed specific attachments and can tell familiar from unfamiliar people. R is a correct fact about the age range for Ainsworth's assessment, chosen because attachment behaviour is well organised by then, but it is a point about research method and says nothing about why wariness of strangers begins earlier. So 'R explains A' is wrong, and the options saying one statement is false are wrong as well.",
     ref: "Berk, ch. 10",
   }),
   d({
