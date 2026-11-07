@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { answerColumns, makeKey, normalizeFields, pickIdentity, slugKey, validateAnswers, validateFieldDefs, type FormField } from "./fields";
+import { answerColumns, identityKeys, makeKey, normalizeFields, pickIdentity, slugKey, validateAnswers, validateFieldDefs, type FormField } from "./fields";
 
 const LEGACY = [
   { key: "full_name", type: "text", label: "Full Name", required: true },
@@ -96,6 +96,9 @@ describe("pickIdentity", () => {
   it("finds name, email and phone on the legacy form", () => {
     const f = normalizeFields(LEGACY);
     expect(pickIdentity(f, { full_name: "Asha", email_address: "a@b.co", mobile_number: "9876543210", course_department: "Psych" })).toEqual({ name: "Asha", email: "a@b.co", phone: "9876543210" });
+  });
+  it("names the questions behind the identity columns", () => {
+    expect(identityKeys(normalizeFields(LEGACY))).toEqual(["full_name", "email_address", "mobile_number"]);
   });
   it("does not take a course or parent name as the person", () => {
     const f: FormField[] = [

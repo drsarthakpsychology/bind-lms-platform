@@ -257,6 +257,14 @@ export function pickIdentity(fields: FormField[], answers: Answers): { name: str
   };
 }
 
+/** Which questions feed the name, email and phone columns (so a table need not show them twice). */
+export function identityKeys(fields: FormField[]): string[] {
+  const email = fields.find((f) => f.type === "email");
+  const phone = fields.find((f) => f.type === "phone");
+  const name = fields.find((f) => f.type === "text" && (/name/i.test(f.label) || /name/i.test(f.key)) && !NOT_A_PERSON.test(f.label));
+  return [name, email, phone].filter((f): f is FormField => Boolean(f)).map((f) => f.key);
+}
+
 /** One answer as plain text for tables and CSV. */
 export function answerText(v: unknown): string {
   if (v === null || v === undefined) return "";
