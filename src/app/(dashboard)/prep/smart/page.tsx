@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { requireFeature } from "@/lib/flags";
 import { KEY } from "@/lib/prep/bank";
 import { loadSmart } from "@/lib/prep/path";
@@ -41,6 +42,22 @@ export default async function SmartPage() {
         back={{ href: "/prep", label: "Exam Prep" }}
         empty={<p className="font-semibold">Questions are being added.</p>}
       />
+      <nav aria-label="More ways to practise" className="border-t-2 border-dashed border-foreground/30 pt-4">
+        <p className="text-eyebrow text-muted-foreground">More ways to practise</p>
+        <ul className="mt-2 flex flex-wrap gap-2">
+          {[
+            { href: "/games/coach", label: "Words you mix up" },
+            { href: "/games/quizzes", label: "Quiz path" },
+            { href: "/games/revise", label: "Revise today" },
+          ].map((l) => (
+            <li key={l.href}>
+              <Link href={l.href} className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-secondary">
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </PrepFrame>
   );
 }
