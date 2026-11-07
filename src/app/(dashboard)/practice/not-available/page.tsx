@@ -12,6 +12,12 @@ export const dynamic = "force-dynamic";
  * is still being prepared ("yet to be live"); the default is a locked (off)
  * tool, which shows the original staged-reveal message.
  */
+/** "consulting_room" to "Consulting room": the tool's name in plain words. */
+function toolName(key: string): string {
+  const s = key.replace(/[_-]+/g, " ").trim();
+  return s ? s[0].toUpperCase() + s.slice(1) : "This";
+}
+
 export default async function NotAvailablePage({
   searchParams,
 }: {
@@ -27,7 +33,7 @@ export default async function NotAvailablePage({
         </span>
         <h1 className="mt-4 text-h1">This is coming soon</h1>
         <p className="mt-2 text-small text-muted-foreground">
-          Your programme is still preparing this: check back later.
+          Check back later.
         </p>
         <Link
           href="/practice"
@@ -44,15 +50,7 @@ export default async function NotAvailablePage({
       <Clock3 className="mx-auto size-10 text-muted-foreground" aria-hidden />
       <h1 className="mt-4 text-h1">Not unlocked yet</h1>
       <p className="mt-2 text-small text-muted-foreground">
-        {feature ? (
-          <>
-            <span className="font-medium text-foreground">{feature.replace(/_/g, " ")}</span> is
-            built and waiting: your faculty reveals tools in stages so the cohort can go deep
-            on one thing at a time.
-          </>
-        ) : (
-          "This tool is built and waiting: your faculty reveals tools in stages so the cohort can go deep on one thing at a time."
-        )}
+        {feature ? `${toolName(feature)} opens soon.` : "This opens soon."}
       </p>
       <Link
         href="/practice"
