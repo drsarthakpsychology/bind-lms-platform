@@ -25,7 +25,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Pharmacokinetics is the study of:",
     options: [
-      "What a drug does to the body: receptor binding and effects",
+      "What a drug does to the body: receptor binding, potency and effects",
       "What the body does to a drug: absorption, distribution, metabolism and excretion",
       "The history of drug discovery",
       "The economics of drug pricing",
@@ -88,7 +88,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Nicotine withdrawal causes sedation that is unrelated to clozapine",
       "Nicotine directly blocks clozapine at D4 receptors",
       "Stopping smoking induces CYP2D6",
-      "Smoking induces CYP1A2, so stopping smoking reduces clozapine metabolism and raises its level",
+      "Smoking induces CYP1A2, so stopping slows clozapine metabolism and raises its level",
     ],
     answer: 3,
     explanation:
@@ -165,8 +165,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Seeman and colleagues' finding that supports the dopamine hypothesis of schizophrenia was that:",
     options: [
       "Patients had raised dopamine metabolites in urine",
-      "The average clinical dose of antipsychotics correlated closely with their affinity for D2 receptors",
-      "All antipsychotics block serotonin receptors equally",
+      "Average clinical doses of antipsychotics correlated closely with their D2 receptor affinity",
+      "All antipsychotics block serotonin 5-HT2A receptors equally, whatever their dose",
       "Amphetamine reduced psychotic symptoms",
     ],
     answer: 1,
@@ -203,7 +203,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Clozapine requires regular blood monitoring mainly because of the risk of:",
     options: [
       "Hearing loss",
-      "Hyperthyroidism",
+      "Hyperthyroidism and goitre",
       "Kidney stones",
       "Agranulocytosis (severe neutropenia)",
     ],
@@ -245,8 +245,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A patient on a monoamine oxidase inhibitor eats aged cheese and develops a severe headache and very high blood pressure. This is due to:",
     options: [
       "An allergy to cheese protein",
-      "Tyramine, normally broken down by gut and liver MAO-A, entering the circulation and releasing noradrenaline",
-      "Serotonin syndrome from calcium in cheese",
+      "Tyramine, normally broken down by gut and liver MAO-A, releasing noradrenaline",
+      "Serotonin syndrome triggered by the calcium and amino acids found in aged cheeses",
       "Lithium toxicity",
     ],
     answer: 1,
@@ -387,13 +387,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Before starting carbamazepine in patients of Han Chinese or some South and South-East Asian ancestry, testing for HLA-B*1502 is advised because this allele strongly increases the risk of:",
     options: [
       "Neural tube defects",
-      "Agranulocytosis only",
+      "Agranulocytosis and aplastic anaemia only",
       "Hyponatraemia",
       "Stevens-Johnson syndrome and toxic epidermal necrolysis",
     ],
     answer: 3,
     explanation:
-      "HLA-B*1502 is strongly associated with carbamazepine-induced SJS/TEN in these populations, and regulators recommend screening before starting. Carbamazepine can also cause agranulocytosis and hyponatraemia (SIADH), but these are not predicted by HLA-B*1502. Neural tube defects are a teratogenic risk of carbamazepine and especially valproate, unrelated to this allele.",
+      "HLA-B*1502 is strongly associated with carbamazepine-induced SJS/TEN in these populations, and regulators recommend screening before starting. Carbamazepine can also cause agranulocytosis, aplastic anaemia and hyponatraemia (SIADH), but these are not predicted by HLA-B*1502. Neural tube defects are a teratogenic risk of carbamazepine and especially valproate, unrelated to this allele.",
     module: "stabilisers",
     ref: "Chung et al. 2004, Nature; FDA label",
   }),
@@ -404,8 +404,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Valproate is avoided in women and girls who could become pregnant mainly because of:",
     options: [
-      "A high risk of major congenital malformations (including neural tube defects) and neurodevelopmental problems in the child",
-      "A risk of hypothyroidism in the mother",
+      "A high risk of major birth defects and neurodevelopmental problems in the child",
+      "A risk of hypothyroidism in the mother that harms fetal brain growth",
       "Its weak antimanic effect",
       "A risk of tardive dyskinesia",
     ],
@@ -439,7 +439,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Benzodiazepines such as diazepam act mainly by:",
     options: [
-      "Blocking dopamine D2 receptors",
+      "Blocking dopamine D2 receptors in the limbic system",
       "Enhancing the effect of GABA at GABA-A receptors",
       "Inhibiting serotonin reuptake",
       "Stimulating NMDA receptors",
@@ -481,8 +481,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Produces severe withdrawal on stopping",
       "Acts faster than benzodiazepines",
-      "Is a potent muscle relaxant and anticonvulsant",
-      "Is a 5-HT1A partial agonist with a delayed onset of anxiolytic effect over weeks, and little risk of dependence or sedation",
+      "Is a potent muscle relaxant and anticonvulsant acting at GABA-A receptors",
+      "Is a 5-HT1A partial agonist whose anxiolytic effect builds over weeks, with little dependence",
     ],
     answer: 3,
     explanation:
@@ -498,7 +498,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Siegel's research on morphine tolerance in rats showed that overdose deaths were more likely when a usual dose was given:",
     options: [
       "In a new environment not previously paired with the drug",
-      "In the familiar drug-taking environment",
+      "In the familiar environment where it had usually received the drug",
       "With food",
       "At the same time of day as usual",
     ],
@@ -568,7 +568,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Acting as a GABA-A agonist",
       "Blocking dopamine D2 receptors",
-      "Inhibiting monoamine oxidase",
+      "Inhibiting monoamine oxidase in striatal dopamine terminals",
       "Blocking dopamine and noradrenaline transporters",
     ],
     answer: 3,
@@ -584,8 +584,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Varenicline, used for smoking cessation, works as:",
     options: [
-      "A partial agonist at α4β2 nicotinic receptors, easing craving and withdrawal while blocking the reward of smoking",
-      "A full nicotinic agonist like nicotine replacement",
+      "A partial agonist at α4β2 nicotinic receptors, easing craving while blocking the reward of smoking",
+      "A full nicotinic agonist like nicotine replacement, given as a steadily tapered dose",
       "A dopamine D2 antagonist",
       "An inhibitor of aldehyde dehydrogenase",
     ],
@@ -621,7 +621,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Blockade of NMDA receptors",
       "Agonism at serotonin 5-HT2A receptors",
-      "Inhibition of dopamine reuptake",
+      "Inhibition of dopamine reuptake in the striatum",
       "Agonism at μ-opioid receptors",
     ],
     answer: 1,
@@ -657,7 +657,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which route of administration gives the fastest onset for most psychoactive drugs?",
     options: [
-      "Intramuscular depot injection",
+      "Intramuscular depot injection into a large muscle",
       "Oral ingestion",
       "Transdermal patch",
       "Intravenous injection (or inhalation)",
@@ -779,8 +779,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Older adults usually need lower doses of many psychotropic drugs mainly because:",
     options: [
-      "Reduced hepatic and renal clearance and a higher proportion of body fat prolong the action of many drugs, and the brain is more sensitive",
-      "They absorb drugs much faster from the gut",
+      "Slower liver and kidney clearance and more body fat prolong many drugs, and the brain is more sensitive",
+      "They absorb drugs much faster from the gut, so peak blood levels arrive much sooner",
       "They have more cytochrome P450 enzymes",
       "Drugs cannot cross the blood-brain barrier in old age",
     ],
@@ -821,7 +821,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The blood-brain barrier allows a drug to enter the brain more easily when the drug is:",
     options: [
-      "Strongly bound to plasma proteins",
+      "Strongly bound to plasma proteins such as albumin",
       "Large and highly water-soluble",
       "Small and lipid-soluble (non-ionised)",
       "A large charged peptide",
@@ -840,9 +840,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A drug with zero-order elimination kinetics (for example alcohol at usual intoxicating levels) differs from most drugs in that:",
     options: [
       "It cannot be measured in blood",
-      "A constant fraction is eliminated per unit time",
+      "A constant fraction is eliminated per unit time, giving a fixed and predictable half-life",
       "It is excreted unchanged by the kidney",
-      "A constant amount is eliminated per unit time because the metabolising enzyme is saturated, so it has no fixed half-life",
+      "A constant amount is eliminated per unit time because the enzyme is saturated",
     ],
     answer: 3,
     explanation:
@@ -857,8 +857,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Anticholinergic side effects of drugs such as amitriptyline include:",
     options: [
-      "Dry mouth, constipation, blurred vision, urinary retention and confusion in older people",
-      "Excess salivation, diarrhoea and slow heart rate",
+      "Dry mouth, constipation, blurred vision, urinary retention and confusion",
+      "Excess salivation, diarrhoea, slow heart rate and small pupils",
       "Weight loss and insomnia only",
       "Low prolactin and breast tenderness",
     ],
@@ -921,8 +921,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Two different drugs are given to each participant at the same time",
       "Only the participants are unaware of their group",
-      "Neither the participants nor the researchers who assess outcomes know who is receiving the active drug",
-      "Participants receive both drug and placebo on alternate days",
+      "Neither participants nor the researchers assessing outcomes know who gets the active drug",
+      "Participants receive both drug and placebo on alternate days, in an order they choose themselves",
     ],
     answer: 2,
     explanation:
@@ -961,8 +961,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Atomoxetine differs from stimulant treatments for ADHD in that it:",
     options: [
-      "Is a selective noradrenaline reuptake inhibitor with low abuse potential and a gradual onset over weeks",
-      "Is a dopamine releaser like amphetamine",
+      "Is a selective noradrenaline reuptake inhibitor with low abuse potential and a gradual onset",
+      "Is a dopamine releaser like amphetamine, but with a longer duration of action",
       "Works within 30 minutes of the first dose",
       "Is a benzodiazepine",
     ],
@@ -979,8 +979,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Carbamazepine shows 'autoinduction', which means that:",
     options: [
-      "It inhibits its own metabolism, so levels rise steadily",
-      "It induces its own metabolising enzyme (CYP3A4), so its half-life shortens and levels fall during the first weeks of treatment",
+      "It inhibits its own metabolising enzyme, so its blood levels rise steadily over the first few weeks",
+      "It induces its own metabolising enzyme (CYP3A4), so its half-life shortens over the first weeks",
       "It is excreted unchanged in urine",
       "It has no interactions with other drugs",
     ],
@@ -1052,10 +1052,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Zolpidem is a 'Z-drug' hypnotic. Compared with most benzodiazepines it:",
     options: [
-      "Binds preferentially to GABA-A receptors containing the α1 subunit, giving sedation with less muscle-relaxant and anticonvulsant effect",
+      "Binds mainly to α1-containing GABA-A receptors, sedating with less muscle-relaxant and anticonvulsant effect",
       "Acts on melatonin receptors",
       "Is an orexin receptor antagonist",
-      "Has no risk of dependence or complex sleep behaviours",
+      "Has no risk of dependence or complex sleep behaviours, since it avoids the benzodiazepine site",
     ],
     answer: 0,
     explanation:
@@ -1098,7 +1098,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Depot (long-acting injectable) antipsychotics are mainly used to:",
     options: [
       "Avoid all side effects",
-      "Produce a faster onset of action than oral drugs",
+      "Produce a faster onset of action than oral drugs in acute agitation",
       "Improve adherence and reduce relapse in people who find daily tablets difficult",
       "Treat acute alcohol withdrawal",
     ],

@@ -125,10 +125,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'Controversial Discussions' held in the British Psychoanalytical Society between 1941 and 1945 set the followers of Melanie Klein against those of Anna Freud. How were they resolved?",
     options: [
-      "The Kleinians were expelled and set up a separate society",
-      "The society split into two independent organisations with no shared training",
-      "Both groups agreed to replace their theories with Lacan's approach",
-      "The society stayed together, with parallel training streams for the Kleinian group, Anna Freud's group, and a middle or Independent group",
+      "The Kleinians were expelled and set up a separate society with its own training",
+      "The society split into two independent organisations with no shared training at all",
+      "Both groups agreed to drop their differences and adopt Lacan's return to Freud",
+      "The society stayed together, with parallel training for the Kleinian, Anna Freudian and Middle groups",
     ],
     answer: 3,
     explanation:
@@ -143,7 +143,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Heinz Hartmann's ego psychology helped turn psychoanalysis into a candidate general psychology, not just a theory of neurosis. Which idea was central to this move?",
     options: [
       "A collective unconscious containing archetypes shared by all humans",
-      "A conflict-free ego sphere, with functions such as perception, memory and motility that develop independently of drive conflict and serve adaptation",
+      "A conflict-free ego sphere: functions such as perception and memory that develop apart from drive conflict",
       "The paranoid-schizoid and depressive positions in the first year of life",
       "The mirror stage, in which the infant first recognises itself in a reflected image",
     ],
@@ -177,7 +177,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Free association, in which the patient says whatever comes to mind without censoring it",
       "Systematic introspection by trained observers reporting sensations",
-      "Electrical stimulation of the nerves, as practised by neurologists of the time",
+      "Electrical stimulation of the nerves and muscles, as practised by neurologists of the time",
       "Structured questionnaires scored against norms",
     ],
     answer: 0,
@@ -350,10 +350,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Transpersonal psychology, called the 'fourth force', is best described as the study of:",
     options: [
-      "Experiences that go beyond the individual ego, such as peak, mystical and meditative states, and their place in human development",
-      "Group dynamics and leadership in organisations",
+      "Experiences beyond the individual ego, such as peak, mystical and meditative states",
+      "Group dynamics, leadership and the climate of organisations",
       "Observable behaviour shaped by schedules of reinforcement",
-      "Neural circuits underlying perception and memory",
+      "Neural circuits underlying perception, memory and conscious states",
     ],
     answer: 0,
     explanation:
@@ -390,7 +390,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'cognitive revolution' of the 1950s and 1960s refers to a shift in psychology toward:",
     options: [
-      "Studying internal mental processes such as attention, memory, language and problem solving, often in information-processing terms",
+      "Studying internal mental processes such as attention, memory and language, often as information processing",
       "Returning to Titchener's introspective analysis of sensations as the main method",
       "Restricting psychology to stimulus and response with no reference to inner processes",
       "Replacing experiments with clinical case studies of unconscious conflict",
@@ -408,10 +408,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "George Miller later named one meeting as the 'birthday' of cognitive science: on its second day, papers on short-term memory capacity, a computer program that proved logic theorems, and the limits of simple models of grammar were all presented. Which meeting was it?",
     options: [
-      "The Hixon Symposium at the California Institute of Technology in 1948",
-      "The Dartmouth Summer Research Project on artificial intelligence in 1956",
-      "The Symposium on Information Theory at the Massachusetts Institute of Technology in September 1956",
-      "The Macy conferences on cybernetics in New York between 1946 and 1953",
+      "The Hixon Symposium at Caltech in September 1948",
+      "The Dartmouth summer research project on AI in 1956",
+      "The Symposium on Information Theory at MIT in September 1956",
+      "The Macy conferences on cybernetics in New York, 1946 to 1953",
     ],
     answer: 2,
     explanation:
@@ -471,7 +471,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In his paper on 'the problem of serial order in behaviour' at the 1948 Hixon Symposium, Karl Lashley argued that:",
     options: [
       "All complex behaviour can be explained as a chain in which each response provides the stimulus for the next",
-      "Rapid, ordered sequences such as speech and piano playing are too fast and too structured to be stimulus-response chains, so they must be guided by central, hierarchically organised plans",
+      "Fast, ordered sequences such as speech and piano playing are too quick to be S-R chains, so they need central, hierarchical plans",
       "Memory is stored in a single specific spot in the cortex that can be removed surgically",
       "Language is learned entirely through operant reinforcement of verbal responses",
     ],
@@ -670,9 +670,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In his 1956 paper on models for the description of language, Noam Chomsky argued that one kind of model could not, in principle, generate all and only the grammatical sentences of English. Which kind?",
     options: [
-      "Transformational grammars with deep and surface structure",
+      "Transformational grammars that relate deep structure to surface structure",
       "Phrase-structure grammars with rewrite rules",
-      "Finite-state (Markov) models that build sentences word by word from transition probabilities",
+      "Finite-state (Markov) models that build sentences word by word",
       "Universal grammar shared by all human languages",
     ],
     answer: 2,
@@ -689,7 +689,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The information-processing approach that guided early cognitive psychology compared the human mind to:",
     options: [
       "A computer that takes in, encodes, stores, retrieves and outputs information",
-      "A hydraulic system driven by the build-up and release of instinctual energy",
+      "A hydraulic system driven by the build-up and discharge of instinctual energy",
       "A telephone switchboard that only connects stimuli to responses",
       "A blank slate that passively records experience",
     ],
@@ -709,8 +709,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In histories of psychology, the term 'Zeitgeist' refers to:",
     options: [
       "The idea that history is shaped mainly by a few great individuals",
-      "The intellectual and cultural climate of a period, which makes some ideas more likely to appear and be accepted",
-      "A laboratory technique for measuring reaction time",
+      "The intellectual and cultural climate of a period, which makes some ideas likely to be accepted",
+      "A laboratory technique for timing mental processes by subtracting reaction times",
       "A Gestalt law of perceptual grouping",
     ],
     answer: 1,
@@ -771,10 +771,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Robert I. Watson (not to be confused with John B. Watson) argued in 1967 that psychology had never had a single Kuhnian paradigm. He proposed that its history is better described by:",
     options: [
-      "A set of contrasting 'prescriptions', such as conscious versus unconscious mentalism and nomothetic versus idiographic, whose relative dominance shifts over time",
+      "A shifting balance among contrasting 'prescriptions', such as nomothetic versus idiographic",
       "A sequence of three paradigms: structuralism, behaviourism and cognitivism",
-      "Steady accumulation of facts with no basic disagreements",
-      "A single Zeitgeist that has stayed the same since Aristotle",
+      "Steady accumulation of facts within one agreed framework, with no basic disagreements at all",
+      "A single Zeitgeist that has stayed the same since Aristotle's account of the soul",
     ],
     answer: 0,
     explanation:
@@ -943,7 +943,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Girindrasekhar Bose is remembered in the history of psychology in India mainly for:",
     options: [
       "Founding the Indian Psychoanalytical Society in 1922 and corresponding with Freud",
-      "Developing the first Indian adaptation of the Binet intelligence scale at Mysore",
+      "Developing the first Indian adaptation of the Binet intelligence scale at Mysore University",
       "Introducing behaviour therapy in Indian mental hospitals in the 1960s",
       "Describing the nurturant-task style of leadership",
     ],

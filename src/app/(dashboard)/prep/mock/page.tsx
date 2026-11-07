@@ -33,7 +33,7 @@ export default async function MocksPage() {
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Timed mocks{goal ? ` · ${goalLabel(goal)}` : ""}</p>
         <h1 className="text-h1">Psychology mock tests</h1>
-        <p className="text-muted-foreground">Every subject the exams ask, easy to very hard. Timer and marking. Questions you&apos;ve seen come last, so each mock is mostly new.</p>
+        <p className="text-muted-foreground">Timed papers with marking. Mostly questions you haven&apos;t seen.</p>
       </header>
 
       {mine.length ? (

@@ -26,7 +26,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'bystander effect' refers to the finding that:",
     options: [
-      "A person is more likely to help when many others are present",
+      "A person is more likely to help when many others are present to share the risk with",
       "A person is less likely to help in an emergency when other bystanders are present",
       "Bystanders always help strangers",
       "Only trained people ever help in emergencies",
@@ -103,8 +103,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A meta-analysis of bystander research by Fischer and colleagues found that the bystander effect is weaker when:",
     options: [
       "The emergency is mild and ambiguous",
-      "The emergency is clearly dangerous, the perpetrator is present, or the costs of not helping are physical",
-      "The bystanders are strangers to each other",
+      "The emergency is clearly dangerous, the perpetrator is present, or costs are physical",
+      "The bystanders are strangers to each other rather than friends, relatives or colleagues",
       "The bystanders cannot see each other",
     ],
     answer: 1,
@@ -119,9 +119,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Batson's empathy-altruism hypothesis proposes that:",
     options: [
-      "People help only to relieve their own sadness",
+      "People help only to relieve the personal sadness they themselves feel at seeing someone else suffer",
       "All helping is ultimately selfish",
-      "Feeling empathic concern for someone in need produces a truly altruistic motive to help, even when escaping the situation would be easy",
+      "Empathic concern for someone in need produces a truly altruistic motive, even when escape is easy",
       "People help only relatives who share their genes",
     ],
     answer: 2,
@@ -181,7 +181,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Isen and Levin found that people who had just found a coin in a phone booth were much more likely to help a stranger pick up dropped papers. This shows:",
     options: [
-      "Diffusion of responsibility",
+      "Diffusion of responsibility to the other passers-by in the street",
       "The 'feel good, do good' effect of positive mood on helping",
       "The bystander effect",
       "Reactance",
@@ -239,7 +239,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Bandura's Bobo doll studies, children who watched an adult hit and kick an inflatable doll:",
     options: [
-      "Only copied the adult if they were rewarded directly",
+      "Only copied the adult if they were themselves rewarded directly for doing so",
       "Became less aggressive",
       "Showed no change in behaviour",
       "Often copied the adult's aggressive actions when later left with the doll",
@@ -257,8 +257,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The frustration-aggression hypothesis proposed by Dollard and colleagues originally claimed that:",
     options: [
-      "Frustration always leads to some form of aggression, and aggression always comes from frustration",
-      "Aggression is caused only by watching violent films",
+      "Frustration always leads to aggression, and aggression always comes from frustration",
+      "Aggression is caused only by watching violent films and then copying what is seen in them",
       "Frustration never leads to aggression",
       "Aggression is caused by low arousal",
     ],
@@ -276,9 +276,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Berkowitz and LePage's 'weapons effect' study, angered men gave more electric shocks when:",
     options: [
       "They had been made happy before the study",
-      "A rifle and a revolver lay on a nearby table, compared with badminton rackets or no objects",
+      "A rifle and a revolver lay nearby, compared with badminton rackets or nothing",
       "The room was completely empty",
-      "They were told the victim was a friend",
+      "They were told the person receiving the shocks was a close friend from college",
     ],
     answer: 1,
     explanation:
@@ -337,10 +337,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Zillmann's excitation transfer theory predicts that a person who has just exercised hard is more likely to respond aggressively to a provocation because:",
     options: [
-      "Exercise increases empathy",
+      "Exercise increases empathy, making an insult feel more personal and hurtful",
       "Exercise lowers testosterone",
       "Exercise always makes people calmer",
-      "Leftover physiological arousal from exercise is misattributed to the provocation and intensifies anger",
+      "Leftover arousal from exercise is misattributed to the provocation and intensifies anger",
     ],
     answer: 3,
     explanation:
@@ -355,14 +355,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Nisbett and Cohen's research on the 'culture of honour' found that, after being bumped and insulted by a confederate, white men from the US South, compared with men from the North:",
     options: [
-      "Showed larger rises in cortisol and testosterone and were more likely to respond aggressively",
-      "Laughed off the insult more often",
+      "Showed larger rises in cortisol and testosterone and acted more aggressively",
+      "Laughed off the insult more often and showed little or no stress response afterwards",
       "Showed no physiological change",
       "Became more polite to everyone",
     ],
     answer: 0,
     explanation:
-      "Southern participants were more upset, showed greater stress and testosterone responses, and later acted more dominantly, for example refusing to step aside for a large confederate in a narrow hallway. Nisbett and Cohen linked this to a herding history in which reputation for toughness protected property, producing norms of defending honour. The other options describe the Northern participants or no effect.",
+      "Southern participants were more upset, showed greater stress and testosterone responses, and later acted more dominantly, for example refusing to step aside for a large confederate in a narrow hallway. Nisbett and Cohen linked this to a herding history in which reputation for toughness protected property, producing norms of defending honour. Laughing off the insult, showing no physiological change or becoming more polite does not fit the Southern men, who were the more reactive group.",
     ref: "Cohen et al. 1996; Nisbett & Cohen 1996",
   }),
   s({
@@ -398,8 +398,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Konrad Lorenz's view of aggression is best described as:",
     options: [
       "A response to frustration only",
-      "A learned response to observing models",
-      "An instinct whose energy builds up over time and must be released, like water building pressure in a tank (the hydraulic model)",
+      "A learned response acquired by watching and copying aggressive models who are rewarded",
+      "An instinct whose energy builds up and must be released, like pressure in a tank",
       "A product of hot weather alone",
     ],
     answer: 2,
@@ -459,9 +459,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Anderson's research on the 'heat hypothesis' found that:",
     options: [
-      "Violent crime tends to be higher in hotter years, seasons and regions, even after controlling for other factors",
+      "Violent crime tends to be higher in hotter years, seasons and regions",
       "Heat reduces all forms of aggression",
-      "Temperature has no relation to aggression",
+      "Temperature has no relation to aggression once poverty and age are controlled",
       "Only cold weather increases violence",
     ],
     answer: 0,
@@ -499,7 +499,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Festinger, Schachter and Back's study of student housing found that friendships formed most often between people who:",
     options: [
       "Had opposite personalities",
-      "Lived at opposite ends of the housing complex",
+      "Lived at opposite ends of the housing complex, with the most to discuss",
       "Lived close to each other, such as next-door neighbours",
       "Had never spoken before the study",
     ],
@@ -517,7 +517,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Moreland and Beach's classroom study, four women of similar appearance attended a large lecture course 0, 5, 10 or 15 times without talking to anyone. At the end, students rated the woman who attended most often as most attractive. This supports:",
     options: [
       "Complementarity",
-      "The matching hypothesis",
+      "The matching hypothesis of attraction",
       "The pratfall effect",
       "The mere exposure effect",
     ],
@@ -597,13 +597,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Rusbult's investment model predicts that commitment to a relationship is highest when:",
     options: [
       "Investments are small and alternatives are many",
-      "Satisfaction is low and alternatives are attractive",
-      "Satisfaction is high, the quality of alternatives is low, and investments in the relationship are large",
+      "Satisfaction is low, alternatives are attractive, and investments are small",
+      "Satisfaction is high, alternatives are poor, and investments are large",
       "Only satisfaction matters",
     ],
     answer: 2,
     explanation:
-      "Rusbult extended social exchange theory: commitment depends on how satisfied people are, how good they think their alternatives would be (including being alone), and how much they have invested (time, shared friends, children, property). Large investments explain why some people stay in unsatisfying or even abusive relationships, which pure satisfaction cannot explain. The other options describe low commitment or ignore alternatives and investments.",
+      "Rusbult extended social exchange theory: commitment depends on how satisfied people are, how good they think their alternatives would be (including being alone), and how much they have invested (time, shared friends, children, property). Large investments explain why some people stay in unsatisfying or even abusive relationships, which pure satisfaction cannot explain. Small investments with many alternatives, or low satisfaction with attractive alternatives, predict low commitment, and satisfaction alone ignores alternatives and investments.",
     ref: "Rusbult 1980, 1983; Le & Agnew 2003",
   }),
   s({
@@ -615,7 +615,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Aronson's 'pratfall effect' study found that a highly competent person who spilled coffee on himself was rated as:",
     options: [
       "Incompetent",
-      "Less likeable than an average person who made the same blunder",
+      "Less likeable than an average person who made the very same embarrassing blunder",
       "Equally likeable whether or not he blundered",
       "More likeable than the same competent person who did not make a blunder",
     ],
@@ -656,8 +656,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Equity theory of relationships proposes that people are most satisfied when:",
     options: [
-      "They receive as much as possible, regardless of what the partner gets",
-      "The ratio of what each partner gives and gets is roughly equal; both over-benefiting and under-benefiting cause distress",
+      "They receive as much as possible, regardless of what the partner gets in return",
+      "The ratio of what each gives and gets is roughly equal; over- and under-benefiting both distress",
       "They give much more than they receive",
       "Rewards are irrelevant",
     ],
@@ -719,9 +719,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Elaine Hatfield distinguished passionate love from companionate love. Companionate love is:",
     options: [
       "Love as a game",
-      "An intense, short-lived longing for union with another person",
+      "An intense, short-lived longing for union with another person, strongest early on",
       "Love based only on physical attraction",
-      "A deep, affectionate attachment and friendship that tends to grow stronger over time",
+      "A deep, affectionate attachment and friendship that grows over time",
     ],
     answer: 3,
     explanation:
@@ -756,8 +756,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Social exchange theory explains relationship satisfaction mainly in terms of:",
     options: [
-      "Unconscious childhood conflicts",
-      "The balance of rewards and costs, compared with what one expects (comparison level) and with available alternatives",
+      "Unconscious childhood conflicts that are re-enacted with the partner",
+      "Rewards minus costs, compared with one's expectations and with available alternatives",
       "Genetic similarity only",
       "Physical proximity only",
     ],
@@ -776,13 +776,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Durganand Sinha is best known in Indian psychology for:",
     options: [
       "Inventing the Strange Situation",
-      "Developing the Big Five personality model",
-      "Calling for the 'indigenisation' of psychology, so that research reflects Indian social realities and concepts rather than copying Western models",
+      "Developing the Big Five personality model from trait words in Indian languages",
+      "Calling for the 'indigenisation' of psychology, so research reflects Indian social realities",
       "Founding psychoanalysis",
     ],
     answer: 2,
     explanation:
-      "Sinha argued that psychology in India had largely borrowed Western theories and methods and needed to become socially relevant and rooted in local culture. He distinguished 'exogenous' indigenisation (adapting imported concepts to Indian conditions) from 'endogenous' indigenisation (building concepts from Indian thought and life). He also described phases in the growth of Indian psychology, from Western dominance to problem-oriented and indigenous research. The other options belong to other researchers.",
+      "Sinha argued that psychology in India had largely borrowed Western theories and methods and needed to become socially relevant and rooted in local culture. He distinguished 'exogenous' indigenisation (adapting imported concepts to Indian conditions) from 'endogenous' indigenisation (building concepts from Indian thought and life). He also described phases in the growth of Indian psychology, from Western dominance to problem-oriented and indigenous research. The Strange Situation is Ainsworth's, the Big Five came from Western lexical and questionnaire research by others such as Costa and McCrae, and psychoanalysis was founded by Freud.",
     ref: "Sinha 1986, 1997",
   }),
   s({
@@ -793,10 +793,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "J. B. P. Sinha's 'nurturant-task leader' model, developed from studies of Indian organisations, describes a leader who:",
     options: [
-      "Avoids any personal relationship with subordinates",
+      "Avoids any personal relationship with subordinates, keeping all dealings formal",
       "Leaves subordinates to do whatever they want",
       "Uses only punishment to control subordinates",
-      "Cares for subordinates in a warm, paternal way, but makes that care depend on their commitment to the task, gradually moving them towards participation",
+      "Cares for subordinates like a warm elder, but makes that care depend on their work commitment",
     ],
     answer: 3,
     explanation:
@@ -828,8 +828,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Research by Ajit Dalal and colleagues on how Indian patients explain their illness found that many patients:",
     options: [
-      "Gave weight to beliefs such as karma and God's will alongside physical causes, and these beliefs could help them cope and accept recovery",
-      "Gave only biomedical explanations",
+      "Gave weight to karma and God's will alongside physical causes, which often helped them cope",
+      "Gave only biomedical explanations, such as poor diet, infection, injury or inherited weakness",
       "Blamed only their doctors",
       "Refused to give any explanation",
     ],
@@ -872,8 +872,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "No measurable effects",
       "Uniformly higher intelligence",
-      "Lower performance on cognitive and achievement tasks and a more external locus of control, which could be partly reduced by enrichment programmes",
-      "Only physical effects, with no psychological effects",
+      "Lower cognitive and school performance and a more external locus of control",
+      "Only physical effects such as stunting, with no psychological effects at all",
     ],
     answer: 2,
     explanation:
@@ -889,13 +889,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Janak Pandey's research in Indian organisations is especially known for studies of:",
     options: [
       "Colour perception",
-      "Infant attachment",
+      "Infant attachment to mothers, grandmothers and other carers in Indian joint families",
       "Sleep stages",
-      "Ingratiation: strategies such as flattery, agreeing with superiors and self-presentation used to win the favour of more powerful people",
+      "Ingratiation: flattery, agreeing with superiors and similar tactics to win favour",
     ],
     answer: 3,
     explanation:
-      "Pandey studied ingratiation tactics in Indian hierarchical settings and how they relate to power, dependence and culture, and he also edited major reviews of psychology in India. Ingratiation was first studied systematically by E. E. Jones in the USA, and Pandey's work examined it in an Indian context where hierarchy and personal relationships are important at work. The other topics are not his research areas.",
+      "Pandey studied ingratiation tactics in Indian hierarchical settings and how they relate to power, dependence and culture, and he also edited major reviews of psychology in India. Ingratiation was first studied systematically by E. E. Jones in the USA, and Pandey's work examined it in an Indian context where hierarchy and personal relationships are important at work. Colour perception, attachment in joint families and sleep stages are not his research areas.",
     ref: "Pandey 1981, 1986",
   }),
   s({
@@ -929,11 +929,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Obedience, Control, Tradition, Authority, Punishment, Assessment, Compliance, Efficiency",
       "Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration, Experimentation",
       "Optimism, Courage, Tolerance, Acceptance, Patience, Ambition, Charity, Empathy",
-      "Order, Conformity, Teamwork, Achievement, Power, Affiliation, Competition, Excellence",
+      "Organisation, Cooperation, Transparency, Accountability, Participation, Adaptability, Commitment, Excellence",
     ],
     answer: 1,
     explanation:
-      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value: Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration and Experimentation. The other lists are invented and do not match the acronym's meaning.",
+      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value: Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration and Experimentation. The other lists are invented; even the one whose initials spell OCTAPACE names the wrong values.",
     ref: "Pareek 1994; Pareek & Rao",
   }),
   s({
@@ -1015,7 +1015,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "When many people are present, each feels less personally responsible for helping",
       "People feel more responsible when others are present",
       "Responsibility is always given to the oldest person",
-      "Helping is shared equally by all bystanders",
+      "Helping is shared equally by all of the bystanders present, so each does a small part",
     ],
     answer: 0,
     explanation:
@@ -1031,8 +1031,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In social psychology, aggression is usually defined as:",
     options: [
       "Any behaviour that causes harm, even by accident",
-      "Behaviour intended to harm another person who wants to avoid that harm",
-      "Assertive behaviour such as speaking up for oneself",
+      "Behaviour intended to harm someone who wants to avoid that harm",
+      "Assertive behaviour such as speaking up firmly for oneself and one's rights",
       "Feeling angry without acting",
     ],
     answer: 1,
@@ -1049,7 +1049,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The matching hypothesis predicts that people tend to:",
     options: [
       "Choose partners with opposite personalities",
-      "Choose the most attractive partner available regardless of their own looks",
+      "Choose the most attractive partner available, regardless of how attractive they are themselves",
       "Form relationships with partners who are similar to them in physical attractiveness",
       "Avoid relationships with people they see often",
     ],
@@ -1066,9 +1066,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Piliavin's arousal and cost-reward model proposes that a bystander:",
     options: [
       "Helps only if paid",
-      "Always helps, whatever the cost",
+      "Always helps whatever the cost, once their arousal rises above a certain threshold",
       "Never feels any arousal",
-      "Feels unpleasant arousal on seeing someone in distress and chooses the response that reduces it at the lowest overall cost",
+      "Feels unpleasant arousal at another's distress and picks the response that reduces it most cheaply",
     ],
     answer: 3,
     explanation:
@@ -1185,9 +1185,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Alan Roland, a psychoanalyst who worked with patients in India and Japan, described the 'familial self'. This refers to:",
     options: [
       "A self defined only by one's job",
-      "A self that is completely independent of others",
+      "A self that is completely independent of others, as in many North American patients",
       "A self found only in children",
-      "A sense of self that is deeply embedded in family and community relationships, with strong emotional connectedness and sensitivity to hierarchy",
+      "A self deeply embedded in family and community, with strong connectedness and sensitivity to hierarchy",
     ],
     answer: 3,
     explanation:

@@ -21,8 +21,8 @@ export default async function DuelPage() {
   return (
     <ActivityFrame
       title="Differential duel"
-      purpose="Live 1v1 against someone at your level. Five look-alike patients: name the diagnosis, then what tells it apart."
-      how={["Find a ranked match (or practise against the bot).", "Each round: pick the diagnosis, then the deciding feature, then lock in.", "100 for the diagnosis, 50 more for the feature.", "Level on points? The faster player wins.", "Leaving or quitting counts as a loss."]}
+      purpose="Beat the bot or a classmate on look-alike patients."
+      how={["Diagnosis +100, what tells it apart +50. Most points after 5 rounds wins."]}
       fallback="/games"
     >
       <DuelGame serverState={serverState} save={saveLearnState} profile={prof} offlineItems={offline} />

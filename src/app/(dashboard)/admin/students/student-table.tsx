@@ -12,6 +12,7 @@ import { FLAG_LABEL, type AttentionFlag } from "@/lib/people/attention";
 import type { Presence } from "@/lib/people/presence";
 import { setAccountStatus } from "./actions";
 import { sendLoginLink } from "../cohorts/actions";
+import { LoginQuick } from "./login-quick";
 import { cn } from "@/lib/utils";
 
 export type StudentRowLite = {
@@ -242,14 +243,14 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
       ) : (
         <div className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
           {/* Column heads (wide screens only) */}
-          <div className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_2.5rem] items-center gap-3 border-b-2 border-foreground bg-muted px-4 py-2 text-eyebrow text-muted-foreground lg:grid">
+          <div className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] items-center gap-3 border-b-2 border-foreground bg-muted px-4 py-2 text-eyebrow text-muted-foreground lg:grid">
             <span />
             <span>Student</span>
             <span>Cohort</span>
             <span>Account</span>
             <span>Last active</span>
             <span>Lectures</span>
-            <span className="sr-only">Details</span>
+            <span className={cn("text-right", canWrite ? "" : "sr-only")}>{canWrite ? "Login" : "Details"}</span>
           </div>
           <ul className="divide-y-2 divide-foreground/10">
             {shown.map((r) => {
@@ -257,7 +258,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
               const pct = r.lecturesAvailable ? Math.round((r.lecturesDone / r.lecturesAvailable) * 100) : 0;
               return (
                 <li key={r.id} className={cn(picked.has(r.id) && "bg-status-success-bg/50")}>
-                  <div className="grid grid-cols-[2rem_minmax(0,1fr)_2.5rem] items-center gap-x-3 gap-y-2 px-3 py-3 sm:px-4 lg:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_2.5rem]">
+                  <div className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-3 py-3 sm:px-4 lg:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto]">
                     <input type="checkbox" className="size-4 accent-primary" checked={picked.has(r.id)} onChange={() => togglePick(r.id)} aria-label={`Tick ${r.name}`} />
                     <div className="min-w-0">
                       <Link href={`/admin/students/${r.id}`} className="block truncate text-sm font-bold underline-offset-4 hover:underline">{r.name}</Link>
@@ -284,15 +285,18 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
                       <span className="text-sm font-semibold tabular-nums">{r.lecturesDone}/{r.lecturesAvailable}</span>
                       <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden><span className="block h-full bg-link" style={{ width: `${pct}%` }} /></span>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setOpen(isOpen ? null : r.id)}
-                      aria-expanded={isOpen}
-                      aria-label={isOpen ? `Hide details for ${r.name}` : `Show details for ${r.name}`}
-                      className="grid size-10 place-items-center rounded-md border-2 border-foreground/20 hover:bg-accent"
-                    >
-                      <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} aria-hidden />
-                    </button>
+                    <div className="flex items-center justify-end gap-1.5">
+                      {canWrite ? <LoginQuick compact email={r.email} name={r.name} /> : null}
+                      <button
+                        type="button"
+                        onClick={() => setOpen(isOpen ? null : r.id)}
+                        aria-expanded={isOpen}
+                        aria-label={isOpen ? `Hide details for ${r.name}` : `Show details for ${r.name}`}
+                        className="grid size-10 place-items-center rounded-md border-2 border-foreground/20 hover:bg-accent"
+                      >
+                        <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} aria-hidden />
+                      </button>
+                    </div>
                   </div>
                   {r.flags.length ? (
                     <div className="flex flex-wrap gap-1 px-3 pb-3 pl-14 sm:px-4 sm:pl-[3.75rem]">
@@ -305,6 +309,12 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
                       <div><dt className="text-eyebrow text-muted-foreground">Access</dt><dd className="font-semibold">{r.scope === "full" ? "Full platform" : "Lectures only"}</dd></div>
                       <div><dt className="text-eyebrow text-muted-foreground">Last 7 days</dt><dd className="font-semibold">{r.min7} min on VIBHA</dd></div>
                       <div><dt className="text-eyebrow text-muted-foreground">Access ends</dt><dd className="font-semibold">{r.expiresAt ? new Date(r.expiresAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "No end date"}</dd></div>
+                      {canWrite ? (
+                        <div className="col-span-2 flex flex-wrap items-center gap-2 sm:col-span-4">
+                          <span className="text-eyebrow text-muted-foreground">Login</span>
+                          <LoginQuick email={r.email} name={r.name} />
+                        </div>
+                      ) : null}
                       <div className="col-span-2 flex flex-wrap gap-2 sm:col-span-4">
                         <Link href={`/admin/students/${r.id}`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground">Open profile</Link>
                         <Link href={`/admin/students/${r.id}?tab=access`} className="inline-flex h-9 items-center rounded-md border-2 border-foreground px-3 text-sm font-bold">Access & login</Link>

@@ -53,9 +53,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In social psychology, conformity is best defined as:",
     options: [
-      "Following a direct order from a person in authority",
+      "Following a direct order from a person in authority, even against one's beliefs",
       "Agreeing to a direct request from a peer",
-      "Changing one's behaviour or beliefs to match those of others because of real or imagined group pressure",
+      "Changing one's behaviour or beliefs to match others because of real or imagined group pressure",
       "Persuading a majority to accept a minority's view",
     ],
     answer: 2,

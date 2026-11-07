@@ -27,8 +27,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Albert Bandura defined self-efficacy as:",
     options: [
       "A person's overall sense of self-worth",
-      "A person's belief in their ability to carry out the actions needed to reach a particular goal",
-      "The belief that outcomes are controlled by luck",
+      "A person's belief in their ability to carry out the actions needed for a goal",
+      "The belief that outcomes are controlled by luck, chance or powerful other people",
       "The ability to delay gratification",
     ],
     answer: 1,
@@ -72,7 +72,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The environment alone determines behaviour",
       "Personal factors, behaviour and the environment all influence one another",
       "Behaviour is determined only by genes",
-      "Personality is determined only by unconscious drives",
+      "Personality is determined only by unconscious drives that steer behaviour",
     ],
     answer: 1,
     explanation:
@@ -171,13 +171,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Bandura's concept of 'collective efficacy' refers to:",
     options: [
       "The total of each member's IQ",
-      "A group's shared belief in its ability to organise and act together to achieve goals",
+      "A group's shared belief that it can organise and act together to reach goals",
       "The tendency of groups to loaf",
-      "A group's average personality score",
+      "A group's average score on a measure of personal self-efficacy",
     ],
     answer: 1,
     explanation:
-      "Collective efficacy is a group-level belief, for example a village's confidence that by working together it can improve its water supply, or a team's belief that it can win. It predicts effort, persistence and success in sports teams, schools and communities. It is not a sum of IQs or personality scores. Social loafing is a different group process.",
+      "Collective efficacy is a group-level belief, for example a village's confidence that by working together it can improve its water supply, or a team's belief that it can win. It predicts effort, persistence and success in sports teams, schools and communities. It is not a sum of IQs, and it is a shared belief about the group, not an average of members' personal self-efficacy scores. Social loafing is a different group process.",
     ref: "Bandura 1997, 2000",
   }),
   p({
@@ -188,8 +188,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Bandura's account of self-regulation, people regulate their own behaviour through:",
     options: [
       "Unconscious defence mechanisms",
-      "Reinforcement from others only",
-      "Self-observation, judgement against personal standards, and self-reaction such as self-praise or self-criticism",
+      "Reinforcement from others only, such as praise from parents and teachers",
+      "Self-observation, judging against personal standards, and self-reactions such as self-praise",
       "Fixed genetic programmes",
     ],
     answer: 2,
@@ -224,8 +224,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Rotter's social learning theory, behaviour potential in a given situation depends on:",
     options: [
-      "Expectancy that the behaviour will lead to reinforcement, and the value of that reinforcement to the person",
-      "Only the strength of the reinforcement",
+      "Expectancy of reinforcement for the behaviour and the value of that reinforcement",
+      "Only the strength of the reinforcement, whatever the person expects",
       "Only the person's traits",
       "The person's unconscious conflicts",
     ],
@@ -260,9 +260,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research on locus of control has generally found that people with an internal locus of control:",
     options: [
       "Are always happier in every situation",
-      "Are more likely to seek information, take health precautions and achieve in school and work",
+      "Are more likely to seek information, take health precautions and achieve at work",
       "Never feel stress",
-      "Are less likely to take responsibility for outcomes",
+      "Are less likely to take responsibility for outcomes, blaming circumstances instead",
     ],
     answer: 1,
     explanation:
@@ -325,8 +325,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Mischel's delay-of-gratification studies, children waited longer for a larger reward when they:",
     options: [
-      "Distracted themselves or thought about the treat in 'cool', abstract ways, for example imagining a marshmallow as a fluffy cloud",
-      "Stared at the treat and thought about how tasty it was",
+      "Distracted themselves or thought about the treat in 'cool' ways, such as a marshmallow as a cloud",
+      "Kept looking at the treat and thought about how tasty and sweet it would be",
       "Were told the treat would never arrive",
       "Were given the treat immediately",
     ],
@@ -362,9 +362,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "George Kelly's personal construct theory views people as:",
     options: [
       "Machines driven by reinforcement",
-      "Scientists who build and test their own theories (constructs) to predict and make sense of events",
+      "Scientists who build and test their own constructs to predict and make sense of events",
       "Puppets of unconscious instincts",
-      "Fixed bundles of inherited traits",
+      "Fixed bundles of inherited traits that unfold steadily and predictably as they grow older",
     ],
     answer: 1,
     explanation:
@@ -381,8 +381,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Answers true or false to hundreds of statements",
       "Interprets inkblots",
-      "Considers three important people at a time and says how two are alike and different from the third, revealing their personal constructs",
-      "Arranges cards with statements about the self into piles",
+      "Considers three important people at a time and says how two are alike and differ from the third",
+      "Sorts cards with statements about the self into piles ranging from most like me to least like me",
     ],
     answer: 2,
     explanation:
@@ -450,8 +450,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Kelly's 'fixed-role therapy' involves:",
     options: [
       "Interpreting the client's dreams",
-      "Writing a sketch of a new character with different constructs, which the client then lives out for a few weeks as an experiment",
-      "Repeatedly exposing the client to a feared object",
+      "Writing a sketch of a new character, which the client lives out for a few weeks as an experiment",
+      "Repeatedly exposing the client to a feared object or situation until anxiety fades",
       "Prescribing medication",
     ],
     answer: 1,
@@ -548,7 +548,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Higgins' self-discrepancy theory predicts that a gap between the actual self and the ideal self tends to produce:",
     options: [
       "Dejection-related emotions such as sadness and disappointment",
-      "Agitation-related emotions such as anxiety and guilt",
+      "Agitation-related emotions such as anxiety, restlessness and guilt",
       "Euphoria",
       "No emotion",
     ],
@@ -566,13 +566,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Carol Dweck distinguished people with a 'fixed mindset' from those with a 'growth mindset'. A person with a growth mindset believes that:",
     options: [
       "Intelligence is fixed at birth",
-      "Abilities such as intelligence can be developed through effort, strategy and learning",
-      "Effort is a sign of low ability",
+      "Abilities such as intelligence can be developed through effort and learning",
+      "Effort is a sign of low ability, since truly talented people succeed easily",
       "Failure proves one lacks talent",
     ],
     answer: 1,
     explanation:
-      "Dweck called these implicit theories: entity (fixed) versus incremental (growth). People with a growth mindset see challenges and mistakes as chances to learn, and tend to persist after failure. The other three options describe fixed-mindset beliefs. Large replication studies suggest that mindset interventions have small average effects, largest for lower-achieving students, so the idea is useful but not a cure-all.",
+      "Dweck called these implicit theories: entity (fixed) versus incremental (growth). People with a growth mindset see challenges and mistakes as chances to learn, and tend to persist after failure. Believing intelligence is fixed at birth, that effort signals low ability, or that failure proves a lack of talent are all fixed-mindset beliefs. Large replication studies suggest that mindset interventions have small average effects, largest for lower-achieving students, so the idea is useful but not a cure-all.",
     ref: "Dweck 1999, 2006; Sisk et al. 2018; Yeager et al. 2019",
   }),
   // ── Comparison and application ───────────────────────────────────────────
@@ -669,8 +669,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kelly's philosophical position of 'constructive alternativism' holds that:",
     options: [
-      "There is only one correct way to see the world",
-      "Any event can be interpreted in more than one way, and people are free to revise or replace their constructions",
+      "There is only one correct way to see the world, which therapy helps people to find and accept",
+      "Any event can be interpreted in more than one way, and people can revise their constructions",
       "Behaviour is determined by the environment",
       "Personality is fixed by childhood experience",
     ],
@@ -705,9 +705,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Follow-ups of Mischel's preschool participants found that children who delayed longer at age 4 were, as adolescents and adults, on average:",
     options: [
       "More impulsive",
-      "Less successful in school",
+      "Less successful in school, though more popular with their peers, teachers and later colleagues",
       "Identical to children who did not delay",
-      "Rated as more socially and academically competent, though a later large replication found the link much weaker after controlling for background",
+      "Rated as more competent socially and academically, though later work found a weaker link",
     ],
     answer: 3,
     explanation:
@@ -721,10 +721,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Skinner explained 'personality' as:",
     options: [
-      "A person's repertoire of behaviours shaped by their history of reinforcement",
+      "A repertoire of behaviours shaped by a history of reinforcement",
       "A set of unconscious drives",
       "An inherited set of traits",
-      "A system of personal constructs",
+      "A system of personal constructs that the person uses to predict events",
     ],
     answer: 0,
     explanation:

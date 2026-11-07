@@ -26,9 +26,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "John B. Watson's behaviourism held that psychology should:",
     options: [
-      "Study the elements of consciousness by introspection",
-      "Study only observable behaviour, with the aim of predicting and controlling it, and abandon introspection",
-      "Study unconscious wishes through dreams",
+      "Study the elements of consciousness by trained introspection in a laboratory setting",
+      "Study only observable behaviour, to predict and control it, without introspection",
+      "Study unconscious wishes through dreams and free association",
       "Study the self-actualising tendency",
     ],
     answer: 1,
@@ -43,9 +43,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the 'Little Albert' study, Watson and Rayner:",
     options: [
-      "Showed that infants are born afraid of rats",
-      "Conditioned an 11-month-old infant to fear a white rat by pairing it with a loud noise, and the fear generalised to other furry objects",
-      "Cured an infant's phobia by gradual exposure",
+      "Showed that infants are born afraid of rats and other furry animals",
+      "Conditioned an infant to fear a white rat by pairing it with a loud noise",
+      "Cured a small boy's fear of rabbits by gradual exposure while he was eating",
       "Showed that fear cannot be learned",
     ],
     answer: 1,
@@ -102,8 +102,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Thorndike's 'law of effect' states that:",
     options: [
-      "All learning happens through observation",
-      "Responses followed by satisfying consequences become more strongly connected to the situation, and those followed by discomfort become weaker",
+      "All learning happens through observing and imitating a model",
+      "Responses followed by satisfaction are strengthened and those followed by discomfort are weakened",
       "Responses that occur together in time become linked, whatever their consequences",
       "Learning requires insight",
     ],
@@ -145,10 +145,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Tolman and Honzik's study of three groups of rats in a maze (rewarded every day, never rewarded, and rewarded only from day 11) showed that:",
     options: [
-      "Reward has no effect on performance",
-      "Rats learn only when they are rewarded",
-      "The never-rewarded rats made the fewest errors",
-      "Rats in the third group quickly matched the always-rewarded group once food was introduced, showing they had learned the maze without reward (latent learning)",
+      "Reward has no effect on either learning or performance in a maze",
+      "Rats learn a maze only when each correct turn is rewarded",
+      "The never-rewarded rats made the fewest errors because they explored most",
+      "Late-rewarded rats caught up at once when fed, showing they had learned without reward",
     ],
     answer: 3,
     explanation:
@@ -179,13 +179,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Operationism, introduced by the physicist Percy Bridgman and adopted by many behaviourists, holds that:",
     options: [
       "Concepts must refer to unconscious processes",
-      "A scientific concept is defined by the operations used to measure it, for example 'hunger' as hours without food",
-      "Only philosophical argument can define concepts",
-      "Concepts should be defined by introspective reports",
+      "A concept is defined by the operations used to measure it, such as 'hunger' as hours without food",
+      "Concepts are defined by their logical place within a theory, not by measurement",
+      "Concepts should be defined by observers' introspective reports of what they experience",
     ],
     answer: 1,
     explanation:
-      "Operationism aimed to make concepts precise and testable, so that two researchers using the same operations would mean the same thing. S. S. Stevens promoted it in psychology, and it connected with logical positivism. It is the reason psychology students learn to write operational definitions. The other options contradict its emphasis on public, measurable procedures.",
+      "Operationism aimed to make concepts precise and testable, so that two researchers using the same operations would mean the same thing. S. S. Stevens promoted it in psychology, and it connected with logical positivism. It is the reason psychology students learn to write operational definitions. Introspective reports are private, defining concepts by theory alone ignores measurement, and unconscious processes cannot be measured directly, so each contradicts its emphasis on public, measurable procedures.",
     ref: "Bridgman 1927; Stevens 1935",
   }),
   h({
@@ -219,9 +219,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Watson's famous claim, 'Give me a dozen healthy infants... and I'll guarantee to take any one at random and train him to become any type of specialist I might select', expresses:",
     options: [
       "The humanistic belief in free will",
-      "Strong genetic determinism",
-      "The importance of unconscious drives",
-      "Extreme environmentalism: the belief that behaviour is shaped almost entirely by learning",
+      "Strong genetic determinism: abilities are largely fixed at birth",
+      "The importance of unconscious drives and early conflicts in shaping adult personality",
+      "Extreme environmentalism: behaviour is shaped almost entirely by learning",
     ],
     answer: 3,
     explanation:
@@ -256,10 +256,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement best describes Clark Hull's approach to theory building?",
     options: [
-      "He relied on introspection",
-      "He rejected all theory and only described data",
-      "He built a formal hypothetico-deductive system of postulates and theorems from which precise, testable predictions about learning could be derived",
-      "He studied only human verbal learning",
+      "He relied on introspective reports of drive and habit strength",
+      "He rejected formal theory and simply described how response rates changed",
+      "He built a hypothetico-deductive system of postulates yielding precise, testable predictions",
+      "He studied only human verbal learning, using nonsense syllables",
     ],
     answer: 2,
     explanation:
@@ -289,10 +289,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Mary Cover Jones's treatment of 'Peter', a boy afraid of rabbits, is historically important because it:",
     options: [
-      "Created a new fear in a child",
-      "Showed that fears cannot be removed",
-      "Used psychoanalysis to remove the fear",
-      "Was an early demonstration of removing a fear by gradually bringing the rabbit closer while the child ate, a forerunner of systematic desensitisation",
+      "Created a new fear in a child by pairing a rabbit with a loud noise",
+      "Showed that a conditioned fear cannot be removed once it has generalised",
+      "Used psychoanalysis to uncover and remove the hidden cause of the fear",
+      "Was an early case of removing a fear by bringing the rabbit closer while the child ate",
     ],
     answer: 3,
     explanation:
@@ -325,9 +325,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'Skinner box' (operant chamber) was designed to:",
     options: [
-      "Test infants' attachment",
-      "Measure the speed of nerve conduction",
-      "Study how the rate of a freely emitted response, such as lever-pressing, changes with its consequences",
+      "Test how infants react when separated from and reunited with a caregiver",
+      "Measure the speed of nerve conduction in a frog's leg",
+      "Study how consequences change the rate of a freely emitted response such as lever-pressing",
       "Present inkblots to patients",
     ],
     answer: 2,
@@ -365,14 +365,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Breland and Breland's observation that raccoons trained to put coins in a box began to 'wash' the coins instead, and pigs began to root them, showed:",
     options: [
-      "Instinctive drift: learned behaviour can drift towards species-typical, innate behaviour, which challenged the idea that any response can be conditioned equally easily",
-      "That reinforcement has no effect",
-      "That animals can read",
-      "That punishment is more effective than reward",
+      "Instinctive drift: learned behaviour can drift back towards species-typical, innate behaviour",
+      "That reinforcement has no effect once a response has been well learned",
+      "Spontaneous recovery: an extinguished response returning after a rest",
+      "That punishment is more effective than reward for training complex chains",
     ],
     answer: 0,
     explanation:
-      "The Brelands, former students of Skinner who trained animals commercially, found that food-related instinctive behaviours intruded on trained responses, even when this delayed reward. Their findings, together with Garcia's taste-aversion studies, led to the idea of biological preparedness and constraints on learning. They did not show reinforcement is useless, that animals read, or that punishment is better.",
+      "The Brelands, former students of Skinner who trained animals commercially, found that food-related instinctive behaviours intruded on trained responses, even when this delayed reward. Their findings, together with Garcia's taste-aversion studies, led to the idea of biological preparedness and constraints on learning. They did not show that reinforcement stops working or that punishment is better, and this was not spontaneous recovery, since no response had been extinguished.",
     ref: "Breland & Breland 1961; Garcia & Koelling 1966",
   }),
   h({
@@ -400,10 +400,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The Gestalt school of psychology was founded by:",
     options: [
-      "Wundt, Titchener and Külpe",
+      "Wilhelm Wundt, Edward Titchener and Oswald Külpe",
       "Max Wertheimer, Kurt Koffka and Wolfgang Köhler",
-      "Watson, Tolman and Hull",
-      "Freud, Jung and Adler",
+      "John Watson, Edward Tolman and Clark Hull",
+      "Sigmund Freud, Carl Jung and Alfred Adler",
     ],
     answer: 1,
     explanation:
@@ -418,10 +418,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Wertheimer's study of the 'phi phenomenon' showed that:",
     options: [
-      "Movement can only be seen if an object actually moves",
-      "Perception is simply the sum of sensations",
-      "Two lights flashed one after the other at the right interval are seen as a single light moving, a perception that cannot be explained by adding up the separate sensations",
-      "Colour vision depends on three receptor types",
+      "Movement can only be seen if an image actually moves across the retina",
+      "Perceived motion is simply the sum of the separate sensations produced by each of the two lights",
+      "Two lights flashed in quick succession are seen as one moving light, which summed sensations cannot explain",
+      "Colour vision depends on three types of receptor in the retina",
     ],
     answer: 2,
     explanation:
@@ -463,14 +463,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Köhler's research with chimpanzees on the island of Tenerife, such as Sultan joining two sticks to reach a banana, was used to argue that:",
     options: [
-      "Problem solving can involve insight, a sudden restructuring of the perceptual field, rather than only gradual trial-and-error learning",
-      "Animals learn only through trial and error",
-      "Chimpanzees cannot solve problems",
-      "Learning requires language",
+      "Problem solving can involve insight, a sudden restructuring of the field, not only gradual trial and error",
+      "Animals learn only through gradual trial and error, as in Thorndike's puzzle boxes",
+      "Chimpanzees cannot solve tool problems unless they are first trained step by step",
+      "Learning to solve problems requires language, which chimpanzees lack",
     ],
     answer: 0,
     explanation:
-      "Köhler observed that after periods of apparent inactivity, chimps sometimes suddenly solved problems, such as stacking boxes or joining sticks, and then repeated the solution smoothly. He interpreted this as insight: seeing the relations in the situation in a new way. This challenged Thorndike's trial-and-error account, which was based on puzzle boxes in which the solution could not be seen. Critics note the chimps' earlier experience with sticks may have contributed.",
+      "Köhler observed that after periods of apparent inactivity, chimps sometimes suddenly solved problems, such as stacking boxes or joining sticks, and then repeated the solution smoothly. He interpreted this as insight: seeing the relations in the situation in a new way. This challenged Thorndike's trial-and-error account, which was based on puzzle boxes in which the solution could not be seen. Critics note the chimps' earlier experience with sticks may have contributed. Gradual trial and error was the view Köhler opposed, Sultan was not trained step by step, and the chimps solved problems without language.",
     ref: "Köhler 1925; Hergenhahn, ch. 14",
   }),
   h({
@@ -498,14 +498,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kurt Lewin's field theory proposed that behaviour is a function of the person and the environment, written as B = f(P, E). The 'life space' refers to:",
     options: [
-      "The physical size of a person's home",
-      "The person and their psychological environment as they experience it at a given moment, including goals, barriers and forces",
-      "The years a person lives",
-      "The collective unconscious",
+      "The objective physical surroundings in which the person happens to be living now",
+      "The person and their psychological environment as experienced at that moment",
+      "The whole span of a person's life history, from birth to the present",
+      "The inherited, shared layer of the unconscious common to all humans",
     ],
     answer: 1,
     explanation:
-      "Lewin, influenced by Gestalt ideas and physics, described behaviour in terms of the whole field of forces acting on a person at one time: regions, boundaries, valences (attractive or repulsive goals) and barriers. He emphasised the present situation as experienced, not the objective environment or past history. The other options misread 'life space'.",
+      "Lewin, influenced by Gestalt ideas and physics, described behaviour in terms of the whole field of forces acting on a person at one time: regions, boundaries, valences (attractive or repulsive goals) and barriers. He emphasised the present situation as experienced, not the objective environment or past history. So it is not the objective physical surroundings, not the whole life history, and not Jung's inherited collective unconscious.",
     ref: "Lewin 1936; Hergenhahn, ch. 14",
   }),
   h({
@@ -516,8 +516,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bluma Zeigarnik, working in Lewin's laboratory, found that:",
     options: [
-      "Completed tasks are always remembered better",
-      "People forget unfinished tasks immediately",
+      "Completed tasks are remembered better because they feel rewarding",
+      "People forget unfinished tasks immediately once they are interrupted or abandoned",
       "People remember interrupted, unfinished tasks better than completed tasks",
       "Memory is unaffected by task completion",
     ],
@@ -602,10 +602,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Köhler's 'transposition' experiments with chickens (trained to peck at the darker of two grey cards, then shown that card alongside an even darker one) supported:",
     options: [
-      "Learning of absolute stimulus values only",
-      "Relational learning: the chickens tended to choose the new, darker card, showing they had learned the relation 'darker than' rather than a specific card",
-      "That chickens cannot learn discriminations",
-      "That insight is impossible in animals",
+      "Learning of absolute stimulus values only: the chickens kept choosing the original card",
+      "Relational learning: most chose the new darker card, having learned 'darker than' rather than a specific grey",
+      "That chickens cannot learn discriminations between shades of grey",
+      "That insight is impossible in animals with small brains such as chickens",
     ],
     answer: 1,
     explanation:
@@ -620,10 +620,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Lewin, Lippitt and White's studies of leadership in boys' clubs, and Lewin's 'action research', show his influence on:",
     options: [
-      "Structuralism",
-      "Psychoanalysis",
-      "Social and organisational psychology, through the study of group dynamics and the use of research to solve practical social problems",
-      "Psychophysics",
+      "Structuralism and introspective analysis",
+      "Psychoanalysis and depth psychology",
+      "Social and organisational psychology",
+      "Psychophysics and sensory measurement",
     ],
     answer: 2,
     explanation:
@@ -638,10 +638,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The law of Prägnanz in Gestalt psychology states that:",
     options: [
-      "The figure and ground are always fixed",
-      "We perceive only the elements of a stimulus",
-      "Perception depends only on past learning",
-      "Perceptual organisation tends to be as simple, regular and stable as conditions allow",
+      "The figure and ground of a scene are fixed and never reverse",
+      "We perceive the separate elements of a stimulus before the whole",
+      "Perception depends mainly on past learning about the familiar objects in a scene",
+      "Perception tends to be organised as simply and regularly as conditions allow",
     ],
     answer: 3,
     explanation:
@@ -699,14 +699,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement best summarises the main difference between the behaviourist and Gestalt views of learning?",
     options: [
-      "Behaviourists emphasised insight and Gestalt psychologists emphasised reinforcement",
-      "Both saw learning as purely innate",
-      "Behaviourists saw learning as gradual strengthening of stimulus-response connections through reinforcement, while Gestalt psychologists saw it as reorganising the perceptual field, sometimes suddenly, through insight",
-      "Both rejected the study of animals",
+      "Behaviourists emphasised sudden insight, while Gestalt psychologists emphasised gradual reinforcement of responses",
+      "Both saw learning as gradual, but disagreed about whether reinforcement was needed",
+      "Behaviourists saw learning as gradual S-R strengthening by reinforcement, Gestalt psychologists as perceptual reorganisation through insight",
+      "Behaviourists studied only animals, while Gestalt psychologists studied only human perception",
     ],
     answer: 2,
     explanation:
-      "Thorndike and later behaviourists described learning as incremental, built from many trials, while Köhler's chimps and Wertheimer's pupils showed sudden solutions based on seeing relations. Neither school saw learning as purely innate. Giving behaviourists insight and Gestalt psychologists reinforcement reverses the positions. Both studied animals: Thorndike's cats and Köhler's chimps.",
+      "Thorndike and later behaviourists described learning as incremental, built from many trials, while Köhler's chimps and Wertheimer's pupils showed sudden solutions based on seeing relations. Gestalt psychologists did not see learning as gradual, so the two did not merely disagree about reinforcement. Giving behaviourists insight and Gestalt psychologists reinforcement reverses the positions. Both studied animals as well as people: Thorndike's cats and Köhler's chimps.",
     ref: "Hergenhahn, chs. 13 and 14",
   }),
   h({
@@ -733,7 +733,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which of the following best describes the period when behaviourism dominated American psychology?",
     options: [
       "Only in the 1880s",
-      "From about 1850 to 1880",
+      "From about 1850 to 1880, the era of psychophysics",
       "From about 1990 to 2010",
       "From about the 1920s to the 1950s",
     ],
@@ -750,10 +750,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Edgar Rubin's reversible vase-faces figure is used to illustrate:",
     options: [
-      "Figure-ground organisation: the same image can be seen as a vase or as two faces, but not both at once",
-      "The phi phenomenon",
-      "Size constancy",
-      "Retinal disparity",
+      "Figure-ground organisation: one image seen as a vase or two faces, but not both at once",
+      "The phi phenomenon: two flashing lights seen as a single moving light",
+      "Size constancy: objects look the same size at different distances",
+      "Retinal disparity: each eye's slightly different view gives depth",
     ],
     answer: 0,
     explanation:
@@ -796,7 +796,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The activity of the collective unconscious",
       "A purely mental process that cannot be observed",
       "Implicit, subvocal speech: tiny movements of the larynx and tongue",
-      "Insight produced by restructuring of the perceptual field",
+      "Insight produced by a sudden restructuring of the whole perceptual field",
     ],
     answer: 2,
     explanation:
@@ -871,7 +871,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Perception is the sum of sensations",
       "The whole is different from the sum of its parts",
       "Perception is entirely learned",
-      "Perception is unconscious wish fulfilment",
+      "Perception is shaped mainly by unconscious wish fulfilment",
     ],
     answer: 1,
     explanation:
@@ -948,9 +948,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The German word 'Gestalt' is best translated as:",
     options: [
       "Form, shape or configuration",
-      "Element",
-      "Reflex",
-      "Instinct",
+      "Element or basic unit",
+      "Reflex or reaction",
+      "Instinct or drive",
     ],
     answer: 0,
     explanation:
@@ -964,10 +964,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which of the following was a major reason for the decline of behaviourism as the dominant approach?",
     options: [
-      "Behaviourism had never produced any practical applications",
-      "Evidence for cognitive processes (latent learning, language acquisition, memory organisation) and biological constraints on learning that strict S-R accounts could not explain",
-      "Behaviourists refused to do experiments",
-      "Behaviourism relied too heavily on introspection",
+      "Behaviourism had never produced any practical applications in therapy or education",
+      "Evidence of cognition and biological constraints on learning that S-R accounts could not explain",
+      "Behaviourists refused to test their theories in controlled laboratory experiments",
+      "Behaviourism relied too heavily on introspective reports of mental states",
     ],
     answer: 1,
     explanation:

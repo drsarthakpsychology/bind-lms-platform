@@ -26,10 +26,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "John Locke described the mind at birth as a 'tabula rasa'. This means that:",
     options: [
-      "People are born with innate ideas",
-      "Behaviour is controlled by instincts",
+      "People are born with innate ideas that experience only awakens",
+      "Behaviour is controlled mainly by inherited instincts",
       "The mind and body are completely separate substances",
-      "The mind starts as a blank slate and all knowledge comes from experience",
+      "The mind starts blank and all knowledge comes from experience",
     ],
     answer: 3,
     explanation:
@@ -70,8 +70,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Johannes Müller's doctrine of specific nerve energies states that:",
     options: [
       "All nerves carry the same kind of energy and produce the same sensation",
-      "The kind of sensation experienced depends on which nerve is stimulated, not on what stimulates it",
-      "Nerve impulses travel instantaneously",
+      "Sensation depends on which nerve is stimulated, not on what stimulates it",
+      "Nerve impulses travel instantly, so sensation and stimulus are simultaneous",
       "Each part of the skull reflects a mental faculty",
     ],
     answer: 1,
@@ -128,14 +128,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Weber's law states that the just noticeable difference (JND) between two stimuli is:",
     options: [
-      "Always the same absolute amount",
+      "Always the same absolute amount, whatever the starting intensity",
       "A constant proportion of the original stimulus intensity",
-      "Unrelated to stimulus intensity",
-      "Equal to the absolute threshold",
+      "Largest for weak stimuli and smallest for strong ones",
+      "Equal to the absolute threshold for that sense",
     ],
     answer: 1,
     explanation:
-      "Weber found that if you hold a 100 g weight, you might need about 3 g more to notice a difference, but with 200 g you need about 6 g: the ratio (the Weber fraction) stays roughly constant for a given sense. It is not a fixed absolute amount, it does depend on intensity, and it is not the same as the absolute threshold, which is the smallest detectable stimulus.",
+      "Weber found that if you hold a 100 g weight, you might need about 3 g more to notice a difference, but with 200 g you need about 6 g: the ratio (the Weber fraction) stays roughly constant for a given sense. It is not a fixed absolute amount, it grows rather than shrinks as intensity rises, and it is not the same as the absolute threshold, which is the smallest detectable stimulus.",
     ref: "Hergenhahn, ch. 9",
   }),
   h({
@@ -188,8 +188,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Wundt's 'tridimensional theory of feeling' proposed that feelings can be described along three dimensions. These are:",
     options: [
-      "Thinking, feeling and willing",
-      "Evaluation, potency and activity",
+      "Thinking, feeling and willing, the three classical faculties of the mind",
+      "Evaluation, potency and activity, rated on bipolar scales",
       "Id, ego and superego",
       "Pleasure and displeasure, tension and relaxation, excitement and calm",
     ],
@@ -223,10 +223,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Wundt's concepts of 'apperception' and 'creative synthesis' refer to:",
     options: [
-      "Reflex responses to stimuli",
-      "The passive association of ideas by contiguity",
-      "Unconscious repression",
-      "The active, voluntary focusing of attention, which combines mental elements into new wholes whose properties are not simply the sum of the parts",
+      "Automatic reflex responses that bypass consciousness and the will",
+      "The passive linking of ideas that happen to occur together in time or space",
+      "The pushing of unacceptable ideas out of consciousness",
+      "Active, voluntary attention that combines mental elements into new wholes",
     ],
     answer: 3,
     explanation:
@@ -241,9 +241,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Edward Titchener's structuralism aimed to:",
     options: [
-      "Study the functions of the mind in adapting to the environment",
-      "Analyse conscious experience into its basic elements (sensations, images and feelings) through trained introspection",
-      "Study only observable behaviour",
+      "Study how mental processes such as habit and attention help the organism adapt to its surroundings and survive",
+      "Analyse conscious experience into elements such as sensations, images and feelings by trained introspection",
+      "Study only observable behaviour and reject introspection as unscientific",
       "Study the unconscious through dreams",
     ],
     answer: 1,
@@ -310,14 +310,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The Würzburg school, led by Oswald Külpe, is best known for:",
     options: [
-      "Reporting 'imageless thought' and the role of mental set or 'determining tendencies' in guiding thinking",
-      "Founding behaviourism",
-      "Inventing the IQ test",
+      "Reporting 'imageless thought' and 'determining tendencies' that guide thinking",
+      "Showing that every thought can be reduced to sensory images and simple feelings",
+      "Developing the first standardised intelligence test",
       "Describing the Oedipus complex",
     ],
     answer: 0,
     explanation:
-      "Using systematic introspection on tasks such as judging weights or completing word associations, Külpe's students (including Ach, Marbe and Bühler) found that some conscious states, such as doubt or certainty, had no sensory images, and that the task instruction set the mind in a direction (Ach's determining tendency). This challenged Wundt's and Titchener's assumptions. Behaviourism came from Watson, the IQ from Stern and Terman, and the Oedipus complex from Freud.",
+      "Using systematic introspection on tasks such as judging weights or completing word associations, Külpe's students (including Ach, Marbe and Bühler) found that some conscious states, such as doubt or certainty, had no sensory images, and that the task instruction set the mind in a direction (Ach's determining tendency). This challenged Wundt's and Titchener's assumptions. Reducing every thought to images and feelings is the very assumption they challenged; the first intelligence test was Binet and Simon's, and the Oedipus complex is Freud's.",
     ref: "Hergenhahn, ch. 10; Humphrey 1951",
   }),
   h({
@@ -328,9 +328,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Franz Brentano's 'act psychology' differed from Wundt's approach mainly because Brentano argued that psychology should study:",
     options: [
-      "The elements of consciousness",
-      "Mental acts such as perceiving, judging and loving, which are always directed towards an object (intentionality)",
-      "Only observable behaviour",
+      "The basic elements of consciousness, such as sensations and feelings, by trained introspection",
+      "Mental acts such as perceiving, judging and loving, which are always directed at an object",
+      "Only observable behaviour, without reference to the mind",
       "Physiological reflexes",
     ],
     answer: 1,
@@ -348,9 +348,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Functionalism in psychology focused on:",
     options: [
       "Unconscious conflicts",
-      "The structure of conscious experience",
+      "The basic elements of conscious experience and the laws by which they combine",
       "How the mind and behaviour help the organism adapt to its environment",
-      "Perceptual wholes",
+      "How perception organises sensations into meaningful wholes",
     ],
     answer: 2,
     explanation:
@@ -409,14 +409,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement best describes the influence of Darwin's theory of evolution on early psychology?",
     options: [
-      "It encouraged the study of the adaptive functions of the mind, of animal behaviour and of individual differences",
-      "It led directly to structuralism",
+      "It encouraged study of the mind's adaptive functions, animal behaviour and individual differences",
+      "It led directly to structuralism and its search for the elements of the mind",
       "It had no effect on psychology",
-      "It caused psychologists to reject the study of animals",
+      "It led psychologists to treat animal minds as entirely unlike human minds",
     ],
     answer: 0,
     explanation:
-      "Darwin's ideas implied continuity between humans and animals, leading to comparative psychology (Romanes, Morgan, later Thorndike); variation, leading to Galton's study of individual differences; and adaptation, leading to functionalism's question of what the mind is for. Structuralism, focused on the elements of consciousness, owed little to Darwin. Darwin's influence was very large, and it increased, rather than ended, the study of animals.",
+      "Darwin's ideas implied continuity between humans and animals, leading to comparative psychology (Romanes, Morgan, later Thorndike); variation, leading to Galton's study of individual differences; and adaptation, leading to functionalism's question of what the mind is for. Structuralism, focused on the elements of consciousness, owed little to Darwin. Darwin's influence was very large, and by stressing continuity between species it increased the study of animals.",
     ref: "Hergenhahn, ch. 10",
   }),
   h({
@@ -427,8 +427,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Lloyd Morgan's 'canon' advises that:",
     options: [
-      "Animals should be assumed to have human-like thoughts",
-      "An animal's behaviour should not be explained by a higher mental process if it can be explained by a lower one",
+      "Animals should be credited with human-like reasoning whenever good anecdotes suggest it",
+      "Behaviour should not be explained by a higher mental process if a lower one will do",
       "Only humans can learn",
       "Behaviour should always be explained by instincts",
     ],
@@ -446,10 +446,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Hermann Ebbinghaus is best known for:",
     options: [
-      "Discovering classical conditioning",
+      "Discovering classical conditioning while studying digestion in dogs",
       "Founding psychoanalysis",
       "Experimental studies of memory using nonsense syllables, including the forgetting curve",
-      "Developing the first intelligence test",
+      "Developing the first practical intelligence test for French schoolchildren",
     ],
     answer: 2,
     explanation:
@@ -596,9 +596,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Donders' 'subtraction method', later used in Wundt's laboratory, estimated the time taken by a mental process by:",
     options: [
-      "Subtracting the reaction time of a simple task from that of a more complex task that adds the process",
+      "Subtracting simple reaction time from the time for a task that adds the process",
       "Subtracting a person's age from their mental age",
-      "Comparing two people's introspective reports",
+      "Comparing the introspective reports of trained observers who performed the same task",
       "Removing parts of an animal's brain",
     ],
     answer: 0,
@@ -635,7 +635,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which pair correctly matches a German 'founding' psychologist with his main research area?",
     options: [
       "Oswald Külpe: classical conditioning",
-      "Hermann Ebbinghaus: the unconscious",
+      "Hermann Ebbinghaus: the unconscious and dream interpretation",
       "Carl Stumpf: the psychology of tone and music",
       "G. E. Müller: psychoanalysis",
     ],
@@ -651,14 +651,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Leibniz's idea of 'petites perceptions' (small perceptions) is seen as an early forerunner of which later concept?",
     options: [
-      "Phrenology",
-      "Classical conditioning",
-      "The reflex arc",
-      "Thresholds of consciousness and unconscious mental processes",
+      "Localisation of mental faculties in the brain",
+      "Learning by association of contiguous ideas",
+      "The reflex arc linking sensory and motor nerves in the spinal cord",
+      "Thresholds of consciousness and unconscious processing",
     ],
     answer: 3,
     explanation:
-      "Leibniz argued that we are not aware of each tiny perception, such as each drop of a wave, but when enough combine, they cross into awareness (apperception). This anticipated Herbart's 'threshold of consciousness', Fechner's thresholds and later ideas of unconscious processing. It has nothing to do with conditioning, reflex arcs or skull shape.",
+      "Leibniz argued that we are not aware of each tiny perception, such as each drop of a wave, but when enough combine, they cross into awareness (apperception). This anticipated Herbart's 'threshold of consciousness', Fechner's thresholds and later ideas of unconscious processing. It has nothing to do with association by contiguity, reflex arcs or the localisation of faculties.",
     ref: "Hergenhahn, ch. 6",
   }),
   h({
@@ -733,8 +733,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Functionalism contributed most directly to which later developments in psychology?",
     options: [
-      "The collective unconscious",
-      "Structuralism",
+      "Analytical psychology and Jung's theory of an inherited collective unconscious",
+      "Structuralism and the introspective analysis of mental elements",
       "Applied psychology, educational psychology, mental testing and behaviourism",
       "Phrenology",
     ],
@@ -795,13 +795,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The view that the mind and body are two separate kinds of substance that interact is called:",
     options: [
       "Interactive (Cartesian) dualism",
-      "Monism",
-      "Empiricism",
-      "Functionalism",
+      "Materialist monism",
+      "British empiricism",
+      "Psychophysical (Leibnizian) parallelism",
     ],
     answer: 0,
     explanation:
-      "Descartes argued that the mind is a thinking, non-physical substance and the body is an extended, physical machine, and that they interact. Monism holds that there is only one kind of substance, either physical or mental. Empiricism concerns the source of knowledge (experience), not the mind-body relation. Functionalism is a school of psychology.",
+      "Descartes argued that the mind is a thinking, non-physical substance and the body is an extended, physical machine, and that they interact. Materialist monism holds that there is only one, physical, substance. British empiricism concerns the source of knowledge (experience), not the mind-body relation. Psychophysical parallelism accepts two substances but says they run side by side without interacting.",
     ref: "Hergenhahn, ch. 5",
   }),
   h({
@@ -811,14 +811,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Associationism, developed by British philosophers such as Hartley and James Mill, proposed that:",
     options: [
-      "Ideas are inborn",
-      "Complex ideas are built from simple ideas linked by principles such as contiguity, similarity and frequency",
-      "The mind has no content",
+      "Basic ideas are inborn and are only awakened by later experience",
+      "Complex ideas are built from simple ones linked by contiguity, similarity and frequency",
+      "The mind actively imposes inborn categories such as space, time and causality on sensation",
       "Ideas are caused by the skull's shape",
     ],
     answer: 1,
     explanation:
-      "Associationists explained thought and memory by links formed when ideas occur together in time or space, resemble each other or are repeated. Hartley tried to link associations to vibrations in the nerves. Associationism influenced Ebbinghaus and the learning theories of Thorndike and Pavlov. Inborn ideas are rationalism, empty minds are not part of the theory, and skull shape is phrenology.",
+      "Associationists explained thought and memory by links formed when ideas occur together in time or space, resemble each other or are repeated. Hartley tried to link associations to vibrations in the nerves. Associationism influenced Ebbinghaus and the learning theories of Thorndike and Pavlov. Inborn ideas are rationalism, inborn categories imposed on sensation are Kant's view, and skull shape is phrenology.",
     ref: "Hergenhahn, ch. 5",
   }),
   h({
@@ -829,10 +829,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Francis Cecil Sumner is historically important because he:",
     options: [
-      "Developed the IQ formula",
+      "Developed the ratio IQ formula used in the Stanford-Binet",
       "Founded the first psychology laboratory in Japan",
-      "Was the first African American to receive a PhD in psychology, in 1920, and later built the psychology department at Howard University",
-      "Was the first president of the APA",
+      "Was the first African American to earn a PhD in psychology, in 1920",
+      "Was the first elected president of the American Psychological Association",
     ],
     answer: 2,
     explanation:
@@ -890,14 +890,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Johann Friedrich Herbart contributed to psychology by:",
     options: [
-      "Proposing that ideas compete to enter consciousness above a threshold, that new ideas are understood through an 'apperceptive mass' of existing ideas, and applying this to teaching",
-      "Founding the first laboratory",
-      "Describing classical conditioning",
-      "Developing psychoanalysis",
+      "Proposing that ideas compete to cross a threshold of consciousness and join an 'apperceptive mass'",
+      "Founding the first laboratory and making psychology an experimental science",
+      "Describing how reflexes become conditioned to neutral stimuli by pairing",
+      "Developing psychoanalysis and the view that repressed wishes appear in dreams",
     ],
     answer: 0,
     explanation:
-      "Herbart treated ideas as forces that push one another above or below the threshold of consciousness, and he tried to describe this mathematically, though he did not think psychology could be experimental. His apperceptive mass idea, that we learn new material by linking it to what we already know, influenced education. The first laboratory was Wundt's, conditioning was Pavlov's, and psychoanalysis was Freud's, though Freud's ideas about repression echo Herbart.",
+      "Herbart treated ideas as forces that push one another above or below the threshold of consciousness, and he tried to describe this mathematically, though he did not think psychology could be experimental. His apperceptive mass idea, that we learn new material by linking it to what we already know, influenced education. The first laboratory was Wundt's, and Herbart denied that psychology could be experimental; conditioning was Pavlov's, and psychoanalysis was Freud's, though Freud's ideas about repression echo Herbart.",
     ref: "Hergenhahn, ch. 7",
   }),
   h({
@@ -980,14 +980,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Edward Thorndike's work is often placed between functionalism and behaviourism because he:",
     options: [
-      "Studied animal learning objectively with puzzle boxes and proposed the law of effect, while working within the Columbia functionalist tradition",
+      "Studied animal learning objectively with puzzle boxes and stated the law of effect",
       "Founded psychoanalysis",
-      "Studied the elements of consciousness",
-      "Developed Gestalt laws of perception",
+      "Studied the elements of consciousness by trained introspection",
+      "Showed that animals solve problems by sudden insight rather than by trial and error",
     ],
     answer: 0,
     explanation:
-      "Thorndike, a student of James and then Cattell at Columbia, studied how cats learned to escape puzzle boxes through trial and error. His law of effect, that satisfying consequences strengthen connections between situations and responses, shaped Skinner's operant psychology. He also worked on educational psychology and the transfer of training. He was not a psychoanalyst, structuralist or Gestalt psychologist.",
+      "Thorndike, a student of James and then Cattell at Columbia, studied how cats learned to escape puzzle boxes through trial and error. His law of effect, that satisfying consequences strengthen connections between situations and responses, shaped Skinner's operant psychology. He also worked on educational psychology and the transfer of training. He was not a psychoanalyst or a structuralist, and sudden insight was Köhler's Gestalt account, which Thorndike's gradual learning curves opposed.",
     ref: "Thorndike 1898, 1911; Hergenhahn, ch. 11",
   }),
   h({
