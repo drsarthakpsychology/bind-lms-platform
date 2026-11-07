@@ -20,6 +20,7 @@ const BALANCED_SUBJECTS: PrepQuestion["subject"][] = [
   "ethics-law",
   "indian-psychology",
   "psychometrics-assessment",
+  "statistics",
 ];
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;

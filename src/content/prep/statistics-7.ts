@@ -650,12 +650,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): The Kruskal-Wallis test is used to compare three or more independent groups when the assumptions of one-way ANOVA are doubtful.",
-      "Reason (R): The Kruskal-Wallis test compares the mean ranks of the groups instead of their raw means.",
+      "Reason (R): The Kruskal-Wallis H statistic is approximately distributed as chi-square with k − 1 degrees of freedom.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. All scores are ranked together, and H tests whether the average rank differs across groups more than chance would allow. Because ranks are used, the test does not need normality and is less affected by outliers, which is why it replaces ANOVA when those assumptions fail. A significant H is followed by pairwise Mann-Whitney or Dunn tests with correction.",
+      "Both are true, but R does not explain A. How H is referred to a chi-square table does not explain why the test replaces ANOVA. It replaces ANOVA because all scores are ranked together and the groups' mean ranks are compared, so the test does not need normality and is less affected by outliers.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -669,12 +669,12 @@ const D: Draft[] = [
       "Twelve patients rate their pain (0 to 10) at baseline, 1 month and 3 months. The ratings are ordinal and clearly skewed. The researcher wants to know whether pain changes over the three time points.",
     stem: "Which analysis plan is most appropriate?",
     options: [
-      "A Friedman test, followed if significant by Wilcoxon signed-rank tests between pairs of time points with a Bonferroni correction",
+      "Three chi-square tests",
       "A Kruskal-Wallis test, followed by Mann-Whitney tests",
       "A one-way between-subjects ANOVA",
-      "Three chi-square tests",
+      "A Friedman test, followed if significant by Wilcoxon signed-rank tests between pairs of time points with a Bonferroni correction",
     ],
-    answer: 0,
+    answer: 3,
     explanation:
       "The same patients are measured three times on an ordinal, skewed scale, so the rank-based test for three or more related measures, the Friedman test, fits. Pairwise follow-ups should also be for related data (Wilcoxon) and corrected for multiple tests, for example α = .05/3 = .0167. Kruskal-Wallis and Mann-Whitney are for independent groups. Between-subjects ANOVA ignores the repeated measures and the scale problems. Chi-square needs categorical frequencies from independent observations.",
     module: "exam-prep",

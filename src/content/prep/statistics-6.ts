@@ -416,12 +416,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): When the null hypothesis is true, the F ratio in ANOVA is expected to be close to 1.",
-      "Reason (R): When the null hypothesis is true, MS_between and MS_within both estimate the same population error variance.",
+      "Reason (R): The F distribution is positively skewed, and F can never be negative.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. MS_within always estimates σ²_error. MS_between estimates σ²_error plus a term for real differences between population means, and that term is zero under the null hypothesis. Two estimates of the same quantity give a ratio near 1. F values much larger than 1 suggest that real treatment variance has been added to MS_between.",
+      "Both are true, but R does not explain A. The shape of the F distribution does not say where its centre lies under the null. F is expected near 1 because, when the null is true, MS_between and MS_within both estimate the same error variance; MS_between adds a term for real differences between means only when such differences exist.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -636,12 +636,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): A one-way repeated-measures ANOVA is usually more powerful than a between-subjects ANOVA with the same number of observations.",
-      "Reason (R): In repeated-measures ANOVA, stable differences between participants are taken out of the error term as SS_subjects.",
+      "Reason (R): In repeated-measures ANOVA, stable differences between participants are added to the error term, making it larger.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. Some people score high in every condition and others low. In a between-subjects design that variation inflates the error; in a repeated-measures design it is calculated separately and removed, so MS_error is smaller and F larger, as long as scores across conditions are positively correlated. The cost is the sphericity assumption and possible order effects.",
+      "A is true, but R is false. Repeated-measures ANOVA takes stable differences between participants out of the error term as SS_subjects, so MS_error is smaller and F larger, as long as scores across conditions are positively correlated. The cost is the sphericity assumption and possible order effects.",
     module: "exam-prep",
     ref: "standard stats",
   },

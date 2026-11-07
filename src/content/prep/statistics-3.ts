@@ -120,10 +120,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 2 only",
-      "2, 3 and 4 only",
       "1, 2 and 3 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "z′ = ½ ln[(1 + r)/(1 − r)] stabilises the variance and normalises the distribution (1), which allows comparisons and confidence intervals (2). It is needed because r is bounded at ±1, which skews its sampling distribution (3). Statement 4 is false: z′ ≥ |r| in absolute value. For example, r = .50 gives z′ = .549, and r = .90 gives z′ = 1.47.",
     module: "exam-prep",
@@ -213,12 +213,12 @@ const D: Draft[] = [
       "4. Biserial r should be used for a genuine dichotomy such as alive/dead.",
     ],
     options: [
-      "1, 2, 3 and 4",
+      "1, 2 and 3 only",
       "1 and 3 only",
       "2, 3 and 4 only",
-      "1, 2 and 3 only",
+      "1, 2, 3 and 4",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Since r_b = r_pb × √(pq)/y, where y is the normal ordinate at the split, and √(pq)/y > 1, biserial r is always larger (1). It can exceed 1 if the underlying variable is not normal (2). Point-biserial r is Pearson r with a 0/1 variable (3). Statement 4 is wrong: a genuine dichotomy calls for point-biserial r. Biserial r assumes an artificial split of a continuum.",
     module: "exam-prep",
@@ -322,12 +322,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Converting daily temperatures from Celsius to Fahrenheit does not change their correlation with ice-cream sales.",
-      "Reason (R): Pearson's r is unchanged by positive linear transformations (y = a + bx, b > 0) of either variable.",
+      "Reason (R): Pearson's r can take values only from −1 to +1.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. °F = 32 + 1.8 °C is a positive linear transformation. r is based on z-scores, which do not change when a constant is added or a positive constant multiplies the scores. A negative multiplier would reverse the sign of r but leave its size the same.",
+      "Both are true, but R does not explain A. The range of r says nothing about whether rescaling changes it. A holds because °F = 32 + 1.8 °C is a positive linear transformation, and Pearson's r, being based on z-scores, is unchanged when a constant is added or the scores are multiplied by a positive constant.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -375,10 +375,10 @@ const D: Draft[] = [
     options: [
       "1, 2, 3 and 4",
       "1 and 2 only",
-      "2, 3 and 4 only",
       "1, 2 and 3 only",
+      "2, 3 and 4 only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Pearson's r measures linear association (1), assumes interval-level data (2), and the usual t-test of r assumes bivariate normality (3); homoscedasticity is also needed for interpretation. Statement 4 is false: r is computed from z-scores, so the means can be anything.",
     module: "exam-prep",
@@ -482,12 +482,12 @@ const D: Draft[] = [
       "4. Controlling for age would be expected to reduce the correlation greatly.",
     ],
     options: [
-      "1, 2, 3 and 4",
+      "1, 2 and 4 only",
       "1 and 2 only",
       "2, 3 and 4 only",
-      "1, 2 and 4 only",
+      "1, 2, 3 and 4",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Older children have larger feet and read better, so age drives both (1 and 2). A partial correlation controlling for age would be expected to drop to near zero (4). Statement 3 is false: the correlation is real; it is the causal reading of it that is wrong.",
     module: "exam-prep",
@@ -664,12 +664,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): The point-biserial correlation is a special case of Pearson's product-moment correlation.",
-      "Reason (R): Computing Pearson's r with one variable coded 0 and 1 gives exactly the point-biserial correlation.",
+      "Reason (R): The point-biserial correlation is used when both variables are dichotomous.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. The point-biserial formula, [(M1 − M0)/s]√(pq), is algebraically identical to Pearson's r computed on a 0/1 variable. Phi (two 0/1 variables) and Spearman's rho (Pearson's r on ranks) are likewise special cases of Pearson's r.",
+      "A is true, but R is false. The point-biserial correlation relates one dichotomous variable (coded 0 and 1) to one continuous variable, and computing Pearson's r on such data gives it exactly. When both variables are dichotomous, the Pearson special case is phi.",
     module: "exam-prep",
     ref: "Guilford & Fruchter ch.14",
   },
