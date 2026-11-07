@@ -21,6 +21,10 @@ A clinical psychologist in Delhi gives a new anxiety scale to 200 college studen
 | Interval | IQ, scale totals | Mean | Standard deviation | Pearson, t, ANOVA |
 | Ratio | Reaction time, number of errors | Mean (and geometric mean) | SD, coefficient of variation | All of the above |
 
+:::widget sort
+{"prompt": "Which scale of measurement is each variable?", "buckets": ["Nominal", "Ordinal", "Interval", "Ratio"], "items": [{"text": "Diagnosis: depression, OCD or schizophrenia", "bucket": 0, "why": "Categories with no order."}, {"text": "Rank in the university merit list", "bucket": 1, "why": "Order, but the gaps between ranks are not equal."}, {"text": "Score on an IQ test", "bucket": 2, "why": "Equal intervals but no true zero: an IQ of 0 does not mean no intelligence."}, {"text": "Reaction time in milliseconds", "bucket": 3, "why": "Equal intervals and a true zero, so 400 ms is twice 200 ms."}, {"text": "Severity rated mild, moderate or severe", "bucket": 1, "why": "Ordered categories."}, {"text": "Temperature in degrees Celsius", "bucket": 2, "why": "Zero is not 'no heat', so 20 degrees is not twice as hot as 10."}, {"text": "Number of panic attacks in a month", "bucket": 3, "why": "A count with a true zero."}, {"text": "Mother tongue", "bucket": 0, "why": "Named categories."}]}
+:::
+
 **Parametric tests** (t, ANOVA, Pearson's r) assume interval or ratio data, roughly normal distributions and similar variances. **Non-parametric (distribution-free) tests** need fewer assumptions and work with ranks or categories.
 
 :::widget sort
@@ -106,6 +110,10 @@ Here are the scores of 35 trainee counsellors on an empathy test, already groupe
 ### Shapes of distributions
 - **Symmetrical** (normal is the famous one), **positively skewed** (tail to the right: income, number of panic attacks), **negatively skewed** (tail to the left: marks on an easy test), **J-shaped**, **bimodal** (two peaks: perhaps two different groups mixed together), **rectangular** (uniform).
 
+:::widget compare
+{"title": "Positive or negative skew?", "a": {"label": "Positively skewed", "points": ["Long tail to the right", "Most scores low, a few very high", "Mean pulled above the median", "Examples: income, number of panic attacks, a very hard test"], "summary": "Order from the peak: mode, then median, then mean, towards the tail."}, "b": {"label": "Negatively skewed", "points": ["Long tail to the left", "Most scores high, a few very low", "Mean pulled below the median", "Examples: marks on an easy test, age at death in a rich country"], "summary": "The mean always moves towards the tail. With skewed data, report the median."}}
+:::
+
 :::widget sort
 {"prompt": "Which graph fits each job best?", "buckets": ["Bar chart", "Histogram or polygon", "Ogive", "Scatter plot or box plot"], "items": [{"text": "Number of patients in each diagnostic category at a Lucknow OPD", "bucket": 0, "why": "Nominal categories: separate bars."}, {"text": "Distribution of reaction times of 300 participants", "bucket": 1}, {"text": "Reading off the score below which 75% of students fall", "bucket": 2, "why": "The ogive shows cumulative percentages, so percentiles can be read directly."}, {"text": "Do students who sleep more get higher marks?", "bucket": 3, "why": "Two quantitative variables: a scatter plot."}, {"text": "Comparing the score spread and outliers of three colleges at a glance", "bucket": 3, "why": "Side-by-side box plots."}, {"text": "Comparing two overlapping score distributions on one graph", "bucket": 1, "why": "Two frequency polygons can share one set of axes."}]}
 :::
@@ -168,6 +176,10 @@ Use the empathy table from 1.2 (N = 35).
 | **Median** | Ordinal data, skewed data, open-ended classes ("60 and above"), or extreme scores |
 | **Mode** | Nominal data; the most typical category; a quick rough estimate |
 
+:::widget sort
+{"prompt": "Which average is the best choice for each set of data?", "buckets": ["Mean", "Median", "Mode"], "items": [{"text": "Monthly income in a village where one landlord earns a hundred times more than everyone else", "bucket": 1, "why": "One extreme score drags the mean; the median resists it."}, {"text": "The most common mother tongue among students in a Mumbai college", "bucket": 2, "why": "Nominal data: only the mode makes sense."}, {"text": "IQ scores of 200 schoolchildren, roughly symmetrical, to be compared with a t-test", "bucket": 0, "why": "Interval data, symmetrical, and further statistics need the mean."}, {"text": "Age groups where the last class is '60 and above'", "bucket": 1, "why": "Open-ended classes: the mean cannot be found exactly."}, {"text": "Pain ratings of mild, moderate and severe", "bucket": 1, "why": "Ordinal data."}, {"text": "Reaction times in a lab task, symmetrical, no outliers", "bucket": 0, "why": "Ratio data with a symmetrical shape."}]}
+:::
+
 In a **normal** distribution, mean = median = mode. In **positive** skew, mean > median > mode (the mean is pulled toward the tail). In **negative** skew, mean < median < mode. The median always sits between the other two.
 
 :::recall
@@ -212,6 +224,10 @@ Two colleges can both have a mean score of 60, one with everyone between 55 and 
 - **Standard deviation (SD):** the square root of the variance, back in the original units. The most used and most stable measure; pairs with the mean.
 - **Coefficient of variation:** CV = (SD ÷ M) × 100. A unit-free measure for comparing variability of different variables or of groups with very different means (ratio data only).
 
+:::widget compare
+{"title": "Same average, different spread", "a": {"label": "Class A: SD 5", "points": ["Mean mark 60", "Most students between 55 and 65", "Almost everyone near the middle", "Teaching can be pitched at one level"], "summary": "A small SD: scores cluster tightly around the mean."}, "b": {"label": "Class B: SD 20", "points": ["Mean mark 60", "Marks from about 20 to 100", "Some students struggling, some far ahead", "One level of teaching will suit few"], "summary": "A large SD: the same mean hides very different students. Always report spread with the average."}}
+:::
+
 :::note Why n − 1?
 A sample's scores sit closer to their own mean than to the population mean, so Σ(X − M)² underestimates the population variance. Dividing by **n − 1** (the **degrees of freedom**: once the mean is fixed, only n − 1 scores are free to vary) corrects this bias. SPSS and most calculators' "s" key use n − 1. For large samples it hardly matters.
 :::
@@ -228,6 +244,10 @@ A sample's scores sit closer to their own mean than to the population mean, so �
 - **Add or subtract a constant** to every score: the mean moves by that constant; the SD and variance **do not change**.
 - **Multiply or divide** every score by a constant: the mean and the SD are multiplied by it; the variance by its square.
 - This is why converting scores to z, T or IQ changes the mean and SD to whatever you choose without changing the shape.
+
+:::widget worked
+{"title": "What adding and multiplying do", "steps": [{"q": "Three scores: 4, 6 and 8. Find the mean and the SD (divide by N).", "a": "Mean 6. Deviations minus 2, 0 and plus 2; squared 4, 0, 4; sum 8; variance 8 divided by 3, about 2.67; SD about 1.63."}, {"q": "Add 10 to every score: 14, 16, 18. What happens?", "a": "The mean rises by 10 to 16. The deviations are unchanged, so the SD stays about 1.63."}, {"q": "Multiply the original scores by 2: 8, 12, 16. What happens?", "a": "The mean doubles to 12, the SD doubles to about 3.27, and the variance is multiplied by 4, to about 10.67."}, {"q": "So how is a z score turned into an IQ?", "a": "Multiply by 15 (SD becomes 15), then add 100 (mean becomes 100). A z of 1.2 becomes 118. The shape of the distribution does not change."}], "yourTurn": [{"q": "A test has mean 40 and SD 8. Every student gets 5 bonus marks. New mean and SD?", "a": "Mean 45, SD still 8."}]}
+:::
 
 :::recall
 1. Which measure of variability pairs with the median? || The quartile deviation (or interquartile range).
@@ -386,6 +406,10 @@ Many psychological measures, when collected from large groups, form a **normal (
 - **Skewness** is asymmetry. Pearson's coefficient: Sk = 3(M − Md) ÷ SD. Positive values mean a right tail; negative, a left tail; zero, symmetry.
 - **Kurtosis** is peakedness or tail weight. **Leptokurtic**: tall, narrow peak with heavy tails. **Platykurtic**: flat. **Mesokurtic**: normal. The percentile coefficient Ku = Q ÷ (P90 − P10) is about **0.263** for a normal curve: higher means platykurtic, lower means leptokurtic. (Software reports "excess kurtosis", where normal = 0.)
 
+:::widget compare
+{"title": "Leptokurtic or platykurtic?", "a": {"label": "Leptokurtic", "points": ["Tall, narrow peak", "Heavy tails: more extreme scores than normal", "Many people very close to the average, and a few far out", "Kurtosis above the normal value"], "summary": "Lepto means slender. Example: daily mood ratings in a stable group, with rare big swings."}, "b": {"label": "Platykurtic", "points": ["Flat, wide top", "Light tails", "Scores spread fairly evenly across the range", "Kurtosis below the normal value"], "summary": "Platy means flat, like a plateau. The normal curve itself is mesokurtic, in between."}}
+:::
+
 ### Standard scores
 A **z score** tells you how many SDs a score lies above or below the mean: **z = (X − M) ÷ SD**. z scores have a mean of 0 and an SD of 1, so scores from different tests can be compared. Other standard scores are just z rescaled to avoid negatives and decimals:
 
@@ -498,6 +522,10 @@ A **confidence interval (CI)** gives a range of plausible values for the populat
 
 The 95% means: **if we repeated the study many times, 95% of the intervals built this way would contain the true mean.** A wider interval (99%) is more confident but less precise.
 
+:::widget reveal
+{"prompt": "A report says: 'The 95 percent confidence interval for mean anxiety is 42 to 48, so there is a 95 percent chance the true mean lies between 42 and 48.' Is that right? Decide, then open.", "answer": "Not quite. The true mean is fixed; this particular interval either contains it or does not. The 95 percent describes the method: if the study were repeated many times, about 95 percent of intervals built this way would contain the true mean. In practice, say 'we are 95 percent confident the interval 42 to 48 contains the population mean', and note that a narrower interval means a more precise estimate."}
+:::
+
 :::widget worked
 {"title": "Building a confidence interval", "steps": [{"q": "A well-being scale given to 100 nursing students in Kochi gives M = 72, SD = 12. Find the standard error.", "a": "SE = 12 ÷ √100 = 12 ÷ 10 = 1.2."}, {"q": "Build the 95% confidence interval.", "a": "72 ± 1.96 × 1.2 = 72 ± 2.35, so 69.65 to 74.35."}, {"q": "Build the 99% interval.", "a": "72 ± 2.58 × 1.2 = 72 ± 3.10, so 68.90 to 75.10. More confidence, wider range."}, {"q": "The state average on the scale is 68. What can you say?", "a": "68 lies outside both intervals, so these students' mean is significantly above 68 at the .05 and .01 levels (a two-tailed one-sample test would agree)."}], "yourTurn": [{"q": "With n = 400 and the same SD of 12 and mean 72, what is the 95% CI?", "a": "SE = 12 ÷ 20 = 0.6. CI = 72 ± 1.18, so 70.82 to 73.18: four times the sample halves the width."}]}
 :::
@@ -556,6 +584,10 @@ Q: The probability of rolling two sixes with two dice is:
 - A small p does **not** mean a large or important effect: with 10,000 people, a trivial difference is "significant".
 - A non-significant p does **not** prove no effect.
 
+:::widget sort
+{"prompt": "True or false?", "buckets": ["True", "False"], "items": [{"text": "p of .03 means there is a 3 percent chance the null hypothesis is true", "bucket": 1, "why": "p assumes the null is true; it cannot also give the probability that it is."}, {"text": "p of .03 means results this extreme would happen about 3 percent of the time if the null were true", "bucket": 0, "why": "That is exactly what p is."}, {"text": "p of .001 shows a bigger effect than p of .04", "bucket": 1, "why": "p depends on sample size too. Look at the effect size."}, {"text": "A non-significant result proves the therapy does not work", "bucket": 1, "why": "The study may lack power. Absence of evidence is not evidence of absence."}, {"text": "With 10,000 participants, a tiny, unimportant difference can be significant", "bucket": 0, "why": "Large samples detect trivial effects."}, {"text": "1 minus p is the chance that the finding will replicate", "bucket": 1, "why": "Replication depends on power and the true effect, not on 1 minus p."}]}
+:::
+
 ### Errors in decisions
 | | H0 is really true | H0 is really false |
 |---|---|---|
@@ -564,6 +596,10 @@ Q: The probability of rolling two sixes with two dice is:
 
 - Lowering α (from .05 to .01) **reduces Type I errors** but **raises Type II errors** (lowers power), other things equal.
 - **Power** is the probability of detecting an effect that is really there. Conventionally we want at least 0.80. It rises with a **larger sample, larger effect size, larger α, a one-tailed test (in the right direction), less variability and more reliable measures**.
+
+:::widget compare
+{"title": "Type I and Type II errors", "a": {"label": "Type I: false positive", "points": ["You reject a null that is true", "'The app improves memory', when it does not", "Probability is alpha, usually .05", "Lower alpha to make it rarer"], "summary": "Crying wolf. The cost: useless treatments adopted, false findings published."}, "b": {"label": "Type II: false negative", "points": ["You keep a null that is false", "'The app does nothing', when it really helps", "Probability is beta; power is 1 minus beta", "Raise power with a bigger sample or a bigger effect"], "summary": "Missing the wolf. The cost: useful treatments abandoned. Lowering alpha to avoid Type I errors makes Type II errors more likely."}, "caption": "In a court: Type I convicts an innocent person; Type II lets a guilty one go."}
+:::
 
 :::mnemonic Type I and Type II
 Think of a court. H0 = "the accused is innocent". **Type I** = convicting an innocent person (crying wolf). **Type II** = letting a guilty person go (missing the wolf). The first is the "I"nnocent convicted.
@@ -637,6 +673,11 @@ Conceptually, r is the average product of paired z scores: r = Σ(zX × zY) ÷ n
 
 :::widget worked
 {"title": "Pearson's r by hand", "steps": [{"q": "Five students in Indore report weekly study hours (X) and test marks (Y): (2, 50), (4, 60), (5, 70), (6, 65), (8, 85). Find ΣX, ΣY, ΣXY, ΣX² and ΣY².", "a": "ΣX = 25; ΣY = 330; ΣXY = 100 + 240 + 350 + 390 + 680 = 1,760; ΣX² = 4 + 16 + 25 + 36 + 64 = 145; ΣY² = 2,500 + 3,600 + 4,900 + 4,225 + 7,225 = 22,450."}, {"q": "Compute the numerator, nΣXY − (ΣX)(ΣY).", "a": "5 × 1,760 − 25 × 330 = 8,800 − 8,250 = 550."}, {"q": "Compute the two bracket terms in the denominator.", "a": "nΣX² − (ΣX)² = 725 − 625 = 100. nΣY² − (ΣY)² = 112,250 − 108,900 = 3,350."}, {"q": "Compute r.", "a": "r = 550 ÷ √(100 × 3,350) = 550 ÷ √335,000 = 550 ÷ 578.8 = .95."}, {"q": "Is it significant, and how much variance is shared? (Critical r for df = n − 2 = 3, two-tailed .05, is .878.)", "a": ".95 is above .878, so it is significant at .05. r² = .90: 90% of the variance in marks is shared with study hours in this tiny sample. (Five people is far too few for real research.)"}], "yourTurn": [{"q": "If r = .40 between sleep quality and mood in 200 students, what proportion of variance in mood is shared with sleep quality? Does r = .40 mean 40% of mood is explained?", "a": "r² = .16, so 16% shared variance. No: r itself is not a percentage. And shared variance is not proof that sleep causes mood."}]}
+:::
+
+
+:::widget guess
+{"prompt": "Study hours and exam marks correlate at r of 0.6. What percentage of the variation in marks is shared with study hours?", "min": 0, "max": 100, "step": 1, "unit": "percent", "answer": [34, 38], "reveal": "36 percent. Square r to get the coefficient of determination: 0.6 times 0.6 is 0.36. So 64 percent of the variation in marks goes with other things. A correlation that sounds strong explains less than people expect.", "clinician": "This is why an r of .30 between a risk factor and an outcome, which sounds modest, explains only 9 percent of the variance, and yet can matter a great deal across a whole population."}
 :::
 
 ### Interpreting r
