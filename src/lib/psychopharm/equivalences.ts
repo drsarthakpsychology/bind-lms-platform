@@ -1,5 +1,5 @@
 /**
- * Published dose equivalences — Pass B (cross-cutting table extraction).
+ * Published dose equivalences: Pass B (cross-cutting table extraction).
  *
  * ONLY published equivalence tables from the sources are stored here. These are
  * quoted verbatim with their source, context and caveat (Rule C2). We NEVER
@@ -27,12 +27,12 @@ export type PublishedEquivalence = {
 const CAVEAT =
   "A rough guide from the source, not a swap instruction. Only a prescriber decides this.";
 
-/** Maudsley Table 1.2 — FGA equivalents (chlorpromazine-equivalent basis). */
+/** Maudsley Table 1.2: FGA equivalents (chlorpromazine-equivalent basis). */
 const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Haloperidol",
     statement: "chlorpromazine 100 mg ≈ haloperidol 2 mg",
-    quote: "Chlorpromazine 100mg/day; Haloperidol 2mg/day (1.5–5mg/day)",
+    quote: "Chlorpromazine 100mg/day; Haloperidol 2mg/day (1.5 to 5mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics (consensus mg/day).",
     caveat: CAVEAT,
@@ -40,7 +40,7 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Fluphenazine",
     statement: "chlorpromazine 100 mg ≈ fluphenazine 2 mg",
-    quote: "Fluphenazine 2mg/day (1–5mg/day)",
+    quote: "Fluphenazine 2mg/day (1 to 5mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
@@ -48,7 +48,7 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Trifluoperazine",
     statement: "chlorpromazine 100 mg ≈ trifluoperazine 5 mg",
-    quote: "Trifluoperazine 5mg/day (2.5–5mg/day)",
+    quote: "Trifluoperazine 5mg/day (2.5 to 5mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
@@ -56,7 +56,7 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Sulpiride",
     statement: "chlorpromazine 100 mg ≈ sulpiride 200 mg",
-    quote: "Sulpiride 200mg/day (133–300mg/day)",
+    quote: "Sulpiride 200mg/day (133 to 300mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
@@ -64,7 +64,7 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Pimozide",
     statement: "chlorpromazine 100 mg ≈ pimozide 2 mg",
-    quote: "Pimozide 2mg/day (1.33–2mg/day)",
+    quote: "Pimozide 2mg/day (1.33 to 2mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
@@ -72,7 +72,7 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Perphenazine",
     statement: "chlorpromazine 100 mg ≈ perphenazine 10 mg",
-    quote: "Perphenazine 10mg/day (5–10mg/day)",
+    quote: "Perphenazine 10mg/day (5 to 10mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
@@ -80,14 +80,14 @@ const FGA_EQUIV: PublishedEquivalence[] = [
   {
     drug_a: "Chlorpromazine", drug_b: "Zuclopenthixol",
     statement: "chlorpromazine 100 mg ≈ zuclopenthixol 25 mg",
-    quote: "Zuclopenthixol 25mg/day (25–60mg/day)",
+    quote: "Zuclopenthixol 25mg/day (25 to 60mg/day)",
     source_id: "maudsley_2021", page_ref: "p35",
     context: "Table 1.2 Equivalent doses of first-generation antipsychotics.",
     caveat: CAVEAT,
   },
 ];
 
-/** Maudsley Table 1.3 — SGA approximate equivalent oral doses (DAILY). */
+/** Maudsley Table 1.3: SGA approximate equivalent oral doses (DAILY). */
 export const SGA_EQUIV: PublishedEquivalence[] = [
   { drug_a: "Olanzapine", drug_b: "Risperidone",
     statement: "olanzapine 10 mg ≈ risperidone 4 mg",
@@ -103,7 +103,7 @@ export const SGA_EQUIV: PublishedEquivalence[] = [
     context: "SGA ~equivalent daily oral doses (Table 1.3).", caveat: CAVEAT },
 ];
 
-/** Maudsley p463 — benzodiazepine "diazepam-equivalent" doses. */
+/** Maudsley p463: benzodiazepine "diazepam-equivalent" doses. */
 export const BZD_EQUIV: PublishedEquivalence[] = [
   { drug_a: "Clonazepam", drug_b: "Diazepam", statement: "clonazepam 0.5 mg ≈ diazepam 10 mg",
     quote: "Diazepam-equivalent doses: Clonazepam 0.5mg, Diazepam 10mg", source_id: "maudsley_2021", page_ref: "p463",

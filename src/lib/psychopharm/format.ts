@@ -1,14 +1,14 @@
 /**
  * Dose-string formatting, shared by the ladder, search chips, band detail,
  * and compare view. Previously the same broken template literal was duplicated
- * in at least three places, producing "7.5–7.5 mg" and "–50 mg".
+ * in at least three places, producing a repeated bound ("7.5 to 7.5 mg") and a missing lower bound.
  */
 import type { BandView } from "./store";
 
 /**
  * Render a band's dose range as a clean human string.
  *
- *   both bounds different → "20–50 mg"
+ *   both bounds different → "20 to 50 mg"
  *   low === high         → "7.5 mg"
  *   low only             → "20 mg and above"
  *   high only            → "up to 50 mg"
@@ -20,7 +20,7 @@ export function formatBand(band: { low?: number | null; high?: number | null; un
 
   if (low != null && high != null) {
     if (low === high) return `${low} ${unitStr}`;
-    return `${low}–${high} ${unitStr}`;
+    return `${low} to ${high} ${unitStr}`;
   }
   if (low != null) return `${low} ${unitStr} and above`;
   if (high != null) return `up to ${high} ${unitStr}`;

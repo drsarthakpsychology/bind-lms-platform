@@ -26,13 +26,13 @@ export type EnrichedDrug = {
 
 export const ENRICHED_OTHERS: EnrichedDrug[] = [
   // ===========================================================================
-  // BENZODIAZEPINES — anxiolytics / hypnotics
+  // BENZODIAZEPINES: anxiolytics / hypnotics
   // ===========================================================================
   {
     generic_name: "Alprazolam",
     drug_class: "Benzodiazepine",
     plain_language:
-      "Alprazolam turns up the brain's brake pedal (GABA) to calm racing thoughts and panic, fast. It is quick and strong, but the body gets used to it, so it is usually a short-term tool and stopping suddenly is dangerous — tapering is the prescriber's job, never the client's.",
+      "Alprazolam turns up the brain's brake pedal (GABA) to calm racing thoughts and panic, fast. It is quick and strong, but the body gets used to it, so it is usually a short-term tool and stopping suddenly is dangerous: tapering is the prescriber's job, never the client's.",
     mechanism:
       "Binds benzodiazepine receptors on the GABA-A chloride channel complex, enhancing GABA-mediated inhibition; metabolized by CYP3A4 (so strong 3A4 inhibitors raise levels).",
     common_uses: [
@@ -53,7 +53,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     monitoring: [
       "Watch for sedation and falls, especially at start / dose changes",
       "Monitor for misuse, tolerance, and dependence",
-      "CYP3A4 inhibitors (grapefruit, fluvoxamine) raise levels — lower dose",
+      "CYP3A4 inhibitors (grapefruit, fluvoxamine) raise levels: lower dose",
       "Do not combine with opioids (fatal respiratory depression risk)",
     ],
   },
@@ -63,7 +63,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "An older, long-acting benzo used mostly for anxiety and to safely cover alcohol withdrawal (it smooths the shaking and agitation). It calms by turning up GABA, and it builds up in the body, so effects last a long time.",
     mechanism:
-      "Binds benzodiazepine receptors at the GABA-A complex, enhancing inhibitory GABA signaling; long half-life (24–48 h) with active metabolites.",
+      "Binds benzodiazepine receptors at the GABA-A complex, enhancing inhibitory GABA signaling; long half-life (24 to 48 h) with active metabolites.",
     common_uses: [
       "Anxiety disorders / short-term anxiety relief",
       "Acute alcohol withdrawal",
@@ -88,7 +88,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A longer-acting benzo used for panic and several seizure types. It is a strong brake (GABA), so it also slows thinking and reactions; the body adapts, so stopping must be tapered by the prescriber.",
     mechanism:
-      "Enhances GABA-A inhibitory signaling; long half-life (~30–40 h), CYP3A4 substrate.",
+      "Enhances GABA-A inhibitory signaling; long half-life (~30 to 40 h), CYP3A4 substrate.",
     common_uses: [
       "Panic disorder (with or without agoraphobia)",
       "Lennox-Gastaut and absence/akinetic/myoclonic seizures",
@@ -140,7 +140,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A long-acting benzo used for anxiety, muscle spasm, alcohol withdrawal, and seizures. It is a fast-acting brake (GABA) but accumulates in the body over days; it can make people foggy and dependent, so long-term anxiety is usually better treated with an SSRI/SNRI.",
     mechanism:
-      "Binds benzodiazepine receptors at the GABA-A chloride channel complex, enhancing GABA inhibition; half-life 20–50 h with active metabolites (CYP2C19/3A4).",
+      "Binds benzodiazepine receptors at the GABA-A chloride channel complex, enhancing GABA inhibition; half-life 20 to 50 h with active metabolites (CYP2C19/3A4).",
     common_uses: [
       "Anxiety disorders / short-term anxiety relief",
       "Alcohol withdrawal (delirium tremens, agitation, tremor)",
@@ -168,7 +168,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "An intermediate-acting benzo sleeping pill for insomnia (trouble falling and staying asleep). It is a short-term tool; longer use leads to tolerance, rebound insomnia, and dependence.",
     mechanism:
-      "Enhances GABA-A inhibition in sleep centers; half-life 10–24 h; CYP3A4 substrate.",
+      "Enhances GABA-A inhibition in sleep centers; half-life 10 to 24 h; CYP3A4 substrate.",
     common_uses: [
       "Insomnia (sleep onset and maintenance)",
       "Short-term management only",
@@ -181,7 +181,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Dependence risk",
     ],
     monitoring: [
-      "Keep use short-term (7–10 days)",
+      "Keep use short-term (7 to 10 days)",
       "Watch next-day sedation / falls",
       "Avoid opioids (CNS depression)",
       "Assess for tolerance and rebound insomnia",
@@ -193,7 +193,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A potent benzo hypnotic used for severe, disabling insomnia (and not marketed in the US). It is very sedating, amnestic, and carries high misuse potential, so it is tightly controlled where available.",
     mechanism:
-      "Enhances GABA-A inhibition; half-life 16–35 h with an active metabolite (23–33 h).",
+      "Enhances GABA-A inhibition; half-life 16 to 35 h with an active metabolite (23 to 33 h).",
     common_uses: [
       "Severe, disabling insomnia (short-term)",
       "Catatonia (off-label adjunct)",
@@ -216,9 +216,9 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Flurazepam",
     drug_class: "Benzodiazepine",
     plain_language:
-      "An old, long-acting benzo sleeping pill. Because it has a very long half-life (and active metabolites), it can cause next-day grogginess and 'hangover' — generally a short-term option for insomnia.",
+      "An old, long-acting benzo sleeping pill. Because it has a very long half-life (and active metabolites), it can cause next-day grogginess and 'hangover': generally a short-term option for insomnia.",
     mechanism:
-      "Enhances GABA-A inhibition in sleep centers; half-life ~24–100 h with active metabolites.",
+      "Enhances GABA-A inhibition in sleep centers; half-life ~24 to 100 h with active metabolites.",
     common_uses: [
       "Insomnia (sleep onset and maintenance)",
       "Recurring insomnia / poor sleep habits (short-term)",
@@ -267,7 +267,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A short-to-intermediate benzo that calms quickly and is cleared without active metabolites, so it is commonly used for acute anxiety, agitation, and catatonia. It still causes dependence and sedation with regular use.",
     mechanism:
-      "Enhances GABA-A inhibition; half-life 10–20 h, no active metabolites (glucuronidated, not CYP-dependent).",
+      "Enhances GABA-A inhibition; half-life 10 to 20 h, no active metabolites (glucuronidated, not CYP-dependent).",
     common_uses: [
       "Anxiety disorders / anxiety with depressive symptoms",
       "Status epilepticus (injection)",
@@ -293,9 +293,9 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Midazolam",
     drug_class: "Benzodiazepine",
     plain_language:
-      "A very fast, short-acting benzo given by IV or injection for sedation before procedures and for drug-induced amnesia. It is not a routine anxiety medication — it is a hospital/procedure drug because it can suppress breathing.",
+      "A very fast, short-acting benzo given by IV or injection for sedation before procedures and for drug-induced amnesia. It is not a routine anxiety medication: it is a hospital/procedure drug because it can suppress breathing.",
     mechanism:
-      "Enhances GABA-A inhibition; rapid onset (3–5 min IV), half-life 1.8–6.4 h with an active metabolite.",
+      "Enhances GABA-A inhibition; rapid onset (3 to 5 min IV), half-life 1.8 to 6.4 h with an active metabolite.",
     common_uses: [
       "Procedural sedation (adjunct to anesthesia)",
       "Preoperative anxiolysis",
@@ -322,7 +322,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A short-to-intermediate benzo with no active metabolites, often chosen for older adults or people with liver issues because it is metabolized simply (glucuronidated). It is used for anxiety and alcohol withdrawal.",
     mechanism:
-      "Enhances GABA-A inhibition; half-life 3–21 h, no active metabolites (glucuronidated).",
+      "Enhances GABA-A inhibition; half-life 3 to 21 h, no active metabolites (glucuronidated).",
     common_uses: [
       "Anxiety",
       "Anxiety associated with depression",
@@ -348,7 +348,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A long-acting benzo sleeping pill. It works for both falling and staying asleep but can carry next-day grogginess due to its long half-life and active metabolite.",
     mechanism:
-      "Enhances GABA-A inhibition in sleep centers; half-life 25–41 h with active metabolite; partly CYP3A4.",
+      "Enhances GABA-A inhibition in sleep centers; half-life 25 to 41 h with active metabolite; partly CYP3A4.",
     common_uses: [
       "Insomnia (sleep onset and maintenance)",
       "Short-term treatment",
@@ -373,9 +373,9 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "An intermediate-acting benzo sleeping pill for short-term insomnia. It helps people fall asleep and stay asleep, but tolerance and rebound insomnia develop with continued use.",
     mechanism:
-      "Enhances GABA-A inhibition in sleep centers; half-life ~8–15 h, no active metabolites.",
+      "Enhances GABA-A inhibition in sleep centers; half-life ~8 to 15 h, no active metabolites.",
     common_uses: [
-      "Short-term insomnia (7–10 days)",
+      "Short-term insomnia (7 to 10 days)",
       "Sleep-onset difficulty",
     ],
     side_effects: [
@@ -398,9 +398,9 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "An ultra-short-acting benzo for falling asleep. It kicks in fast and leaves the body quickly, but it is more likely to cause anterograde amnesia and rebound insomnia than longer agents.",
     mechanism:
-      "Enhances GABA-A inhibition in sleep centers; half-life 1.5–5.5 h; CYP3A4 substrate (strong 3A4 inhibitors are contraindicated).",
+      "Enhances GABA-A inhibition in sleep centers; half-life 1.5 to 5.5 h; CYP3A4 substrate (strong 3A4 inhibitors are contraindicated).",
     common_uses: [
-      "Short-term insomnia (7–10 days)",
+      "Short-term insomnia (7 to 10 days)",
       "Sleep-onset difficulty",
     ],
     side_effects: [
@@ -441,7 +441,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Complex sleep behaviors (rare but serious)",
     ],
     monitoring: [
-      "Take immediately before bed with 7–8 h available",
+      "Take immediately before bed with 7 to 8 h available",
       "Lower dose in women / elderly",
       "Stop if complex sleep behaviors occur",
       "Avoid alcohol and CNS depressants",
@@ -453,7 +453,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A short-acting sleep aid (similar to zolpidem) used for insomnia; commonly noted for a bitter/metallic taste. It targets the same GABA sleep pathway selectively.",
     mechanism:
-      "Binds selectively to the alpha-1 subtype of the GABA-A benzodiazepine site; half-life ~3.5–6.5 h; CYP3A4 substrate.",
+      "Binds selectively to the alpha-1 subtype of the GABA-A benzodiazepine site; half-life ~3.5 to 6.5 h; CYP3A4 substrate.",
     common_uses: [
       "Short-term insomnia",
     ],
@@ -492,8 +492,8 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     ],
     monitoring: [
       "Start 1 mg; use lowest effective dose",
-      "Take immediately before bed with 7–8 h available",
-      "Watch next-day driving impairment at 2–3 mg",
+      "Take immediately before bed with 7 to 8 h available",
+      "Watch next-day driving impairment at 2 to 3 mg",
       "Avoid alcohol and CNS depressants",
     ],
   },
@@ -546,10 +546,10 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Sedation (less than benzos)",
     ],
     monitoring: [
-      "Allow 2–4 weeks for effect",
+      "Allow 2 to 4 weeks for effect",
       "Take consistently with regard to food",
       "Caution with MAOIs and CYP3A4 inhibitors",
-      "No abuse potential — useful alternative to benzos",
+      "No abuse potential: useful alternative to benzos",
     ],
   },
 
@@ -618,7 +618,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Lemborexant",
     drug_class: "Orexin receptor antagonist (DORA)",
     plain_language:
-      "A newer sleep medicine that works differently from benzos — it dials down the brain's 'stay awake' signal (orexin) rather than turning up the brake. It is not a controlled substance with the same abuse profile, but it can still cause daytime grogginess and rare sleep paralysis.",
+      "A newer sleep medicine that works differently from benzos: it dials down the brain's 'stay awake' signal (orexin) rather than turning up the brake. It is not a controlled substance with the same abuse profile, but it can still cause daytime grogginess and rare sleep paralysis.",
     mechanism:
       "Antagonizes orexin OX1R and OX2R receptors, suppressing the wake-promoting orexin neuropeptide system.",
     common_uses: [
@@ -709,7 +709,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     ],
     monitoring: [
       "Take 1 h before bedtime at the same time nightly",
-      "May take weeks–months for circadian effect",
+      "May take weeks to months for circadian effect",
       "Avoid strong CYP1A2 inhibitors (fluvoxamine)",
       "Limit activity after dosing (somnolence)",
     ],
@@ -726,7 +726,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     mechanism:
       "Blocks dopamine and norepinephrine reuptake (especially dopamine); d-enantiomer of racemic methylphenidate, half-life ~2.2 h.",
     common_uses: [
-      "ADHD (children 6–17 and adults)",
+      "ADHD (children 6 to 17 and adults)",
       "Narcolepsy",
       "Treatment-resistant depression (off-label adjunct)",
     ],
@@ -778,9 +778,9 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "The right-handed amphetamine form (Dexedrine, and part of Adderall), used for ADHD and narcolepsy. It raises dopamine and norepinephrine to improve focus; it is potent and has high abuse potential.",
     mechanism:
-      "Blocks reuptake of and facilitates release of dopamine and norepinephrine; half-life ~10–12 h.",
+      "Blocks reuptake of and facilitates release of dopamine and norepinephrine; half-life ~10 to 12 h.",
     common_uses: [
-      "ADHD (age 3–6+ depending on formulation)",
+      "ADHD (age 3 to 6+ depending on formulation)",
       "Narcolepsy",
       "Treatment-resistant depression (off-label adjunct)",
     ],
@@ -833,7 +833,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A long-acting 'prodrug' that becomes dextroamphetamine only after being absorbed and broken down, so it has a smoother, slower onset and lower abuse potential than immediate-release stimulants. Used for ADHD and binge-eating disorder.",
     mechanism:
-      "Inactive prodrug converted to dextroamphetamine after absorption; then blocks reuptake and increases release of dopamine/norepinephrine. Duration ~10–12 h.",
+      "Inactive prodrug converted to dextroamphetamine after absorption; then blocks reuptake and increases release of dopamine/norepinephrine. Duration ~10 to 12 h.",
     common_uses: [
       "ADHD (age 6+)",
       "Moderate-to-severe binge-eating disorder",
@@ -864,7 +864,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A non-stimulant ADHD medicine that raises norepinephrine. It is not a controlled substance and has no abuse potential, but it takes weeks to work and carries a rare risk of serious liver injury and a warning about suicidal thoughts in young people.",
     mechanism:
-      "Selectively inhibits the presynaptic norepinephrine transporter, increasing norepinephrine (and prefrontal dopamine) — half-life ~5 h, CYP2D6 substrate.",
+      "Selectively inhibits the presynaptic norepinephrine transporter, increasing norepinephrine (and prefrontal dopamine): half-life ~5 h, CYP2D6 substrate.",
     common_uses: [
       "ADHD (children 6+ and adults)",
       "Treatment-resistant depression (off-label adjunct)",
@@ -889,11 +889,11 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Guanfacine",
     drug_class: "Non-stimulant ADHD (alpha-2A adrenergic agonist)",
     plain_language:
-      "A blood-pressure medicine repurposed for ADHD, especially to calm impulsivity, hyperactivity, and emotional reactivity — often added to a stimulant. It lowers blood pressure and heart rate and can make people drowsy.",
+      "A blood-pressure medicine repurposed for ADHD, especially to calm impulsivity, hyperactivity, and emotional reactivity, often added to a stimulant. It lowers blood pressure and heart rate and can make people drowsy.",
     mechanism:
       "Selective central alpha-2A adrenergic agonist acting on prefrontal cortex receptors (attention/impulse control); also reduces sympathetic outflow.",
     common_uses: [
-      "ADHD (children 6–17; monotherapy or adjunct to stimulants)",
+      "ADHD (children 6 to 17; monotherapy or adjunct to stimulants)",
       "Hypertension",
       "Oppositional defiant / conduct disorder (off-label)",
       "Tourette's / tics (off-label)",
@@ -920,7 +920,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     mechanism:
       "Stimulates central alpha-2 adrenergic receptors in the brain stem and prefrontal cortex, reducing sympathetic outflow (and helping attention/impulse control).",
     common_uses: [
-      "ADHD (age 6–17, extended-release; mono/adjunct)",
+      "ADHD (age 6 to 17, extended-release; mono/adjunct)",
       "Hypertension",
       "Tourette's syndrome",
       "Opioid and alcohol withdrawal",
@@ -1071,7 +1071,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Rare bradycardia, syncope",
     ],
     monitoring: [
-      "Titrate 5 mg → 10 mg after 4–6 weeks",
+      "Titrate 5 mg → 10 mg after 4 to 6 weeks",
       "Watch GI upset and weight loss",
       "Caution with bradycardia / heart block",
       "Discontinue before surgery (anesthesia interaction)",
@@ -1083,7 +1083,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "An Alzheimer's and Parkinson's-dementia medicine that raises acetylcholine. It is available as a patch, which reduces stomach upset; a bitter 'uncommon' monitoring note is making sure old patches are removed to avoid overdose.",
     mechanism:
-      "Pseudo-irreversibly inhibits acetylcholinesterase and butyrylcholinesterase, increasing acetylcholine; short half-life (1–2 h), not CYP-metabolized.",
+      "Pseudo-irreversibly inhibits acetylcholinesterase and butyrylcholinesterase, increasing acetylcholine; short half-life (1 to 2 h), not CYP-metabolized.",
     common_uses: [
       "Alzheimer's disease (mild to moderate; patch also severe)",
       "Parkinson's disease dementia (mild to moderate)",
@@ -1139,7 +1139,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     plain_language:
       "A medicine for moderate-to-severe Alzheimer's that calms overactive glutamate signaling rather than boosting acetylcholine. It is generally well tolerated (dizziness, constipation) and is often combined with donepezil.",
     mechanism:
-      "Low-to-moderate affinity noncompetitive (open-channel) NMDA receptor antagonist, reducing glutamate-mediated excitotoxicity; half-life ~60–80 h, mostly renally cleared.",
+      "Low-to-moderate affinity noncompetitive (open-channel) NMDA receptor antagonist, reducing glutamate-mediated excitotoxicity; half-life ~60 to 80 h, mostly renally cleared.",
     common_uses: [
       "Alzheimer's disease (moderate to severe)",
       "Memory disorders in other conditions (off-label)",
@@ -1233,7 +1233,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     monitoring: [
       "Check liver function tests",
       "Must be opioid-free before starting (precipitated withdrawal)",
-      "Blocks opioid analgesics — advise patients",
+      "Blocks opioid analgesics: advise patients",
       "Monthly injection improves adherence",
     ],
   },
@@ -1265,7 +1265,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Buprenorphine",
     drug_class: "Substance-use treatment (partial mu-opioid agonist)",
     plain_language:
-      "A partial opioid used to treat opioid use disorder — it relieves withdrawal and craving with a 'ceiling' effect that lowers overdose risk compared with full opioids. It can precipitate withdrawal if started too soon after a full opioid.",
+      "A partial opioid used to treat opioid use disorder: it relieves withdrawal and craving with a 'ceiling' effect that lowers overdose risk compared with full opioids. It can precipitate withdrawal if started too soon after a full opioid.",
     mechanism:
       "Partial agonist at mu opioid receptors and antagonist at kappa receptors; prevents exogenous opioids from binding while providing partial stimulation.",
     common_uses: [
@@ -1353,7 +1353,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     monitoring: [
       "Monitor blood pressure, pulse, and orthostasis",
       "Check ECG (QT prolongation, esp. with methadone)",
-      "Use short-term during peak withdrawal (5–7 days)",
+      "Use short-term during peak withdrawal (5 to 7 days)",
       "Caution with CNS depressants",
     ],
   },
@@ -1391,7 +1391,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Propranolol",
     drug_class: "Non-selective beta blocker",
     plain_language:
-      "A beta blocker used off-label for performance anxiety, PTSD, and tremor (and on-label for migraine, blood pressure, heart conditions). It blocks the physical symptoms of anxiety — racing heart, shaking — rather than the thoughts themselves.",
+      "A beta blocker used off-label for performance anxiety, PTSD, and tremor (and on-label for migraine, blood pressure, heart conditions). It blocks the physical symptoms of anxiety (racing heart, shaking) rather than the thoughts themselves.",
     mechanism:
       "Non-selective beta-adrenergic antagonist; blocks beta-1 (heart) and beta-2 (lungs/vessels) receptors.",
     common_uses: [
@@ -1438,7 +1438,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     ],
     monitoring: [
       "Distributed only via REMS (risk management) program",
-      "Two nightly doses 2.5–4 h apart; take in bed",
+      "Two nightly doses 2.5 to 4 h apart; take in bed",
       "Contraindicated with alcohol / sedative hypnotics",
       "Watch respiratory depression and psychiatric symptoms",
     ],
@@ -1447,7 +1447,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Flumazenil",
     drug_class: "Benzodiazepine receptor antagonist (antidote)",
     plain_language:
-      "A reversal (antidote) medicine for benzodiazepine overdose or to wake someone from benzo sedation after a procedure. It is not a treatment for anxiety — and in a person dependent on benzos it can trigger seizures.",
+      "A reversal (antidote) medicine for benzodiazepine overdose or to wake someone from benzo sedation after a procedure. It is not a treatment for anxiety, and in a person dependent on benzos it can trigger seizures.",
     mechanism:
       "Competitively blocks benzodiazepine receptors at the GABA-A complex, reversing benzo effects.",
     common_uses: [
@@ -1463,7 +1463,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Resedation as it wears off",
     ],
     monitoring: [
-      "Onset 1–2 min; monitor for resedation",
+      "Onset 1 to 2 min; monitor for resedation",
       "Can precipitate seizures in dependence or mixed overdose",
       "Avoid in benzo-dependent patients",
       "Not for routine anxiety use",
@@ -1719,7 +1719,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     generic_name: "Caprylidene",
     drug_class: "Medical food (medium-chain triglycerides)",
     plain_language:
-      "A 'medical food' (a drink of medium-chain fats) that gives the Alzheimer's brain an alternative fuel source — ketones — when it cannot use glucose well. It is not a drug and has only mild stomach side effects.",
+      "A 'medical food' (a drink of medium-chain fats) that gives the Alzheimer's brain an alternative fuel source (ketones) when it cannot use glucose well. It is not a drug and has only mild stomach side effects.",
     mechanism:
       "Induces hyperketonemia; medium-chain fatty acids are converted to ketone bodies, providing an alternative energy substrate for neurons.",
     common_uses: [
@@ -1732,7 +1732,7 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Nausea, headache",
     ],
     monitoring: [
-      "Not a prescription drug — medical food",
+      "Not a prescription drug: medical food",
       "Watch GI tolerance",
       "Effect is modest and supportive only",
     ],

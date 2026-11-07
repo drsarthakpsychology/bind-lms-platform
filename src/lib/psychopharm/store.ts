@@ -1,5 +1,5 @@
 /**
- * psychopharm store — read model for the student + reviewer tools.
+ * psychopharm store: read model for the student + reviewer tools.
  *
  * Currently backed by the generated static artifacts (KNOWLEDGE_BASE.json,
  * STUDENT_LAYER.json) plus the curated draft seed. This is the interface the
@@ -7,7 +7,7 @@
  * (psych_drugs + psych_drug_fields, status = published) preserves the UI.
  *
  * Safety: only `published`-intended content is surfaced here. If a drug has no
- * verified rows it must NOT appear as a fully-formed answer — the search shows
+ * verified rows it must NOT appear as a fully-formed answer: the search shows
  * it as "in our sources but not yet verified" per the launch-gate rule.
  */
 import { readFileSync, existsSync } from "node:fs";
@@ -31,7 +31,7 @@ import { ENRICHED_OTHERS } from "./enriched-others";
 /** All curated draft records (core + extended band sets + rich ladders + FDA). */
 const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2, ...DRAFT_FDA, ...DRAFT_FDA_2, ...DRAFT_FDA_3, ...DRAFT_FDA_4, ...DRAFT_FDA_5, ...DRAFT_FDA_6];
 
-/** Enriched author content — a student plain-language summary + concise
+/** Enriched author content: a student plain-language summary + concise
  *  clinical bullets for every drug, the fallback when a drug has no curated
  *  draft record yet. Sourced from Stahl 7th ed. + web research. */
 const ENRICHED = new Map(
@@ -126,7 +126,7 @@ function editDistance(a: string, b: string): number {
 /**
  * Search by generic name, brand name, or alias across ALL KB drugs (plus
  * curated aliases). If a query returns zero exact/prefix hits, falls back to
- * an edit-distance (≤2) "Did you mean…" set. Deterministic and local — no
+ * an edit-distance (≤2) "Did you mean…" set. Deterministic and local: no
  * model calls at request time.
  */
 export function searchDrugs(query: string, limit = 12): DrugSummary[] {
@@ -134,7 +134,7 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
   if (!q) return [];
   const out: DrugSummary[] = [];
   const seen = new Set<string>();
-  // Only surface drugs that resolve to a real detail page — a search hit with
+  // Only surface drugs that resolve to a real detail page: a search hit with
   // no drugDetail would otherwise 404 on the drug page (e.g. a plain name that
   // exists in the ladder but not the KB).
   const resolvable = (name: string) => Boolean(drugDetail(name));
@@ -179,7 +179,7 @@ function hasVerified(drug: string): boolean {
 export interface DrugDetail {
   generic: string;
   class?: string;
-  plain?: string;      // Output B — student register
+  plain?: string;      // Output B: student register
   mechanism?: string;  // Output A (clinical register, technical)
   common_uses?: string;
   dose_range?: string;
@@ -362,7 +362,7 @@ export interface CompareRow {
 }
 
 /**
- * Comparison (D5/P4): 2–5 drugs side by side at their chosen band. Rows:
+ * Comparison (D5/P4): 2 to 5 drugs side by side at their chosen band. Rows:
  * what it's for at this dose, mechanism, dose range, side effects, class,
  * and any published equivalence. Never treats a drug as one undifferentiated
  * thing; each column is the drug at its band, not the whole drug.

@@ -1,5 +1,5 @@
 /**
- * FDA-label dose ladders (batch 4) — acamprosate, disulfiram, cyproheptadine,
+ * FDA-label dose ladders (batch 4): acamprosate, disulfiram, cyproheptadine,
  * chlorpromazine. Quote-first from fetched labels.
  */
 import { DrugDraft } from "./draft";
@@ -7,7 +7,7 @@ import { DrugDraft } from "./draft";
 const FDA = "fda_label";
 
 export const DRAFT_FDA_4: DrugDraft[] = [
-  // ACAMPROSATE — 666 mg TID, 333 mg TID if renal/under 60kg.
+  // ACAMPROSATE: 666 mg TID, 333 mg TID if renal/under 60kg.
   {
     generic_name: "Acamprosate",
     drug_class: "Alcohol-aversion / relapse-prevention agent",
@@ -28,7 +28,7 @@ export const DRAFT_FDA_4: DrugDraft[] = [
     ],
   },
 
-  // DISULFIRAM — 500 loading 1–2 weeks → 250 maintenance.
+  // DISULFIRAM: 500 loading 1 to 2 weeks → 250 maintenance.
   {
     generic_name: "Disulfiram",
     drug_class: "Alcohol-aversion agent",
@@ -41,16 +41,16 @@ export const DRAFT_FDA_4: DrugDraft[] = [
     student: { plain_language: { text: "Disulfiram makes drinking unpleasant by blocking how the body clears alcohol; the dose starts higher and settles lower.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "aldehyde dehydrogenase", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "starting", range_low: 500, range_high: 500, unit: "mg", band_label: "Initial dose",
-        frequency: "once daily for 1–2 weeks", primary_purpose: "Initiation", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
+        frequency: "once daily for 1 to 2 weeks", primary_purpose: "Initiation", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
         source_ref: { value: "500 mg daily for one to two weeks", source_id: FDA, page_ref: "FDA label", snippet: "500 mg daily is given in a single dose for one to two weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "maintenance", range_low: 125, range_high: 500, unit: "mg", band_label: "Maintenance range",
         frequency: "once daily", primary_purpose: "Ongoing aversion", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         why_this_dose: "Usual maintenance 250 mg; max 500 mg.",
-        source_ref: { value: "maintenance 250 mg (125–500 mg range), not exceeding 500 mg", source_id: FDA, page_ref: "FDA label", snippet: "250 mg daily (range, 125 mg to 500 mg), it should not exceed 500 mg daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "maintenance 250 mg (125 to 500 mg range), not exceeding 500 mg", source_id: FDA, page_ref: "FDA label", snippet: "250 mg daily (range, 125 mg to 500 mg), it should not exceed 500 mg daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // CYPROHEPTADINE — weight/pediatric bands.
+  // CYPROHEPTADINE: weight/pediatric bands.
   {
     generic_name: "Cyproheptadine",
     drug_class: "Antihistamine",
@@ -62,9 +62,9 @@ export const DRAFT_FDA_4: DrugDraft[] = [
     equivalences: [], links: [], clinical_presentations: [],
     student: { plain_language: { text: "Cyproheptadine is an antihistamine whose dose is worked out by body weight, especially in children.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "antihistamine", agreement: "single" } } },
     bands: [
-      { band_order: 1, band_type: "pediatric", range_low: 2, range_high: 8, unit: "mg", band_label: "Children 2–6 years",
-        frequency: "2–3×/day", primary_purpose: "Allergy", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
-        source_ref: { value: "2 mg 2–3×/day in children 2–6, max 12 mg/day", source_id: FDA, page_ref: "FDA label", snippet: "Age 2 to 6 years: The usual dose is 2 mg two or three times a day ... should not exceed 12 mg a day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 1, band_type: "pediatric", range_low: 2, range_high: 8, unit: "mg", band_label: "Children 2 to 6 years",
+        frequency: "2 to 3×/day", primary_purpose: "Allergy", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
+        source_ref: { value: "2 mg 2 to 3×/day in children 2 to 6, max 12 mg/day", source_id: FDA, page_ref: "FDA label", snippet: "Age 2 to 6 years: The usual dose is 2 mg two or three times a day ... should not exceed 12 mg a day", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "adult", range_low: 4, range_high: 20, unit: "mg", band_label: "Adults",
         frequency: "as needed", primary_purpose: "Allergy / appetite", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: true,
         why_this_dose: "Total adult daily dose should not exceed 0.5 mg/kg/day.",
@@ -72,7 +72,7 @@ export const DRAFT_FDA_4: DrugDraft[] = [
     ],
   },
 
-  // CHLORPROMAZINE — 200–800; IM agitation bands.
+  // CHLORPROMAZINE: 200 to 800; IM agitation bands.
   {
     generic_name: "Chlorpromazine",
     drug_class: "Dopamine antagonist (antipsychotic)",
@@ -82,14 +82,14 @@ export const DRAFT_FDA_4: DrugDraft[] = [
     receptor_targets: [ { value: "D2, H1, M1, alpha-1 antagonist", source_id: FDA, page_ref: "FDA label", snippet: "dopamine ... antihistaminic", agreement: "single" } ],
     common_uses: [ { value: "Schizophrenia, psychosis, intractable hiccups, agitation.", source_id: FDA, page_ref: "FDA label", snippet: "schizophrenia", agreement: "single" } ],
     equivalences: [], links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Chlorpromazine is an older, sedating antipsychotic; oral doses of 200–800 mg are common for psychosis.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "phenothiazine", agreement: "single" } } },
+    student: { plain_language: { text: "Chlorpromazine is an older, sedating antipsychotic; oral doses of 200 to 800 mg are common for psychosis.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "phenothiazine", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 200, range_high: 800, unit: "mg", band_label: "Oral therapeutic range",
         primary_purpose: "Psychosis", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         source_ref: { value: "200 mg usual, up to 800 mg in some patients", source_id: FDA, page_ref: "FDA label", snippet: "200 mg is not unusual ... 800 mg daily is not uncommon", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "formulation", range_low: 25, range_high: 50, unit: "mg", band_label: "IM agitation dose",
         frequency: "repeat after 1 h if needed", primary_purpose: "Acute agitation (IM)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
-        source_ref: { value: "IM 25 mg, additional 25–50 mg in 1 hour", source_id: FDA, page_ref: "FDA label", snippet: "25 mg ... If necessary, give additional 25 to 50 mg injection in 1 hour", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "IM 25 mg, additional 25 to 50 mg in 1 hour", source_id: FDA, page_ref: "FDA label", snippet: "25 mg ... If necessary, give additional 25 to 50 mg injection in 1 hour", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 ];

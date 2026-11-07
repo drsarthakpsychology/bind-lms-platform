@@ -1,5 +1,5 @@
 /**
- * Medication document — the single source of truth for a drug page (KMS).
+ * Medication document: the single source of truth for a drug page (KMS).
  *
  * One `medication_documents` row per drug holds the whole page as typed
  * blocks. The student page and the editor's live preview both render this.

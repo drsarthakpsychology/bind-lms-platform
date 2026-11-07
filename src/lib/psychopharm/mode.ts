@@ -2,7 +2,7 @@
  * Environment mode for the psychopharm tool.
  *
  * test-mode (default unless explicitly turned off for production):
- *   Students may browse every medication — draft and in_review content is
+ *   Students may browse every medication: draft and in_review content is
  *   visible with an "awaiting review" badge, so the tool is usable before
  *   Dr. Sarthak has verified everything. This is a training/test environment.
  *

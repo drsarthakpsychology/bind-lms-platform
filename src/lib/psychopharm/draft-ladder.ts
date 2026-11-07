@@ -9,7 +9,7 @@
  *
  * Evidence priority: supplied textbooks first (Stahl, Maudsley, Kaplan), then
  * regulatory/guideline (Maundsley IS a guideline). Web corroboration is
- * recorded in WEB_ACCESS_LOG where it ran. Nothing is invented — every number
+ * recorded in WEB_ACCESS_LOG where it ran. Nothing is invented: every number
  * traces to a quote + page.
  */
 import { DrugDraft } from "./draft";
@@ -19,8 +19,8 @@ const M = "maudsley_2021";
 
 export const DRAFT_LADDERS: DrugDraft[] = [
   // ---------------------------------------------------------------------------
-  // SERTRALINE — adult starting / therapeutic / high-dose + paediatric, from
-  // Stahl (50–200) and Maudsley tables.
+  // SERTRALINE: adult starting / therapeutic / high-dose + paediatric, from
+  // Stahl (50 to 200) and Maudsley tables.
   // ---------------------------------------------------------------------------
   {
     generic_name: "Sertraline",
@@ -45,7 +45,7 @@ export const DRAFT_LADDERS: DrugDraft[] = [
         is_typical_starting: true, is_standard_maintenance: true,
         why_this_dose: "Maintenance range for all main indications.",
         evidence: { strength: "high", confidence: "high", guideline: "Stahl PG 7th", source_url: undefined },
-        source_ref: { value: "Sertraline usual 50–200 mg/day", source_id: S, page_ref: "p2073", snippet: "50–200 mg/day", agreement: "single" },
+        source_ref: { value: "Sertraline usual 50 to 200 mg/day", source_id: S, page_ref: "p2073", snippet: "50 to 200 mg/day", agreement: "single" },
         side_effects: [], observation_prompts: [],
       },
       {
@@ -62,15 +62,15 @@ export const DRAFT_LADDERS: DrugDraft[] = [
         band_label: "High-dose (treatment-resistant) range",
         primary_purpose: "Augmentation in treatment-resistant depression (high-dose SSRI strategy)",
         secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
-        why_this_dose: "Some experimental high-dose SSRI use goes to 250–400 mg, dose-titrated by tolerability, with ECG monitoring (Maudsley).",
+        why_this_dose: "Some experimental high-dose SSRI use goes to 250 to 400 mg, dose-titrated by tolerability, with ECG monitoring (Maudsley).",
         evidence: { strength: "limited", confidence: "low", guideline: "Maudsley 2021 (experimental)" },
-        source_ref: { value: "Sertraline 250–400mg (high dose SSRI, experimental)", source_id: M, page_ref: "p450", snippet: "Sertraline 250–400mg", agreement: "single" },
+        source_ref: { value: "Sertraline 250 to 400mg (high dose SSRI, experimental)", source_id: M, page_ref: "p450", snippet: "Sertraline 250 to 400mg", agreement: "single" },
         side_effects: [], observation_prompts: [],
       },
     ],
   },
 
-  // ESCITALOPRAM — start / therapeutic / high-dose, from Maudsley.
+  // ESCITALOPRAM: start / therapeutic / high-dose, from Maudsley.
   {
     generic_name: "Escitalopram",
     drug_class: "SSRI", subclass: "Selective serotonin reuptake inhibitor",
@@ -79,7 +79,7 @@ export const DRAFT_LADDERS: DrugDraft[] = [
     receptor_targets: [ { value: "SERT inhibition", source_id: S, page_ref: "p789", snippet: "serotonin transporter", agreement: "single" } ],
     common_uses: [ { value: "MDD, GAD, panic, OCD, social anxiety.", source_id: S, page_ref: "p789", snippet: "MDD; GAD; Panic; OCD", agreement: "single" } ],
     equivalences: [], links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Escitalopram lifts mood and eases anxiety by keeping serotonin around longer; it starts low and settles at 10–20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p789", snippet: "Boosts serotonin", agreement: "single" } } },
+    student: { plain_language: { text: "Escitalopram lifts mood and eases anxiety by keeping serotonin around longer; it starts low and settles at 10 to 20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p789", snippet: "Boosts serotonin", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "starting", range_low: 10, range_high: 10, unit: "mg", band_label: "Adult starting dose",
         primary_purpose: "Usual adult starting dose", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
@@ -87,16 +87,16 @@ export const DRAFT_LADDERS: DrugDraft[] = [
         source_ref: { value: "Escitalopram 10mg/day starting", source_id: M, page_ref: "p333", snippet: "Escitalopram 10mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 10, range_high: 20, unit: "mg", band_label: "Therapeutic range",
         primary_purpose: "Depression and anxiety disorders", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "Escitalopram 10–20 mg/day (Stahl)", source_id: S, page_ref: "p796", snippet: "10–20 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "Escitalopram 10 to 20 mg/day (Stahl)", source_id: S, page_ref: "p796", snippet: "10 to 20 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 3, band_type: "high_response", range_low: 25, range_high: 50, unit: "mg", band_label: "High-dose (treatment-resistant)",
         primary_purpose: "Experimental high-dose SSRI strategy", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
         why_this_dose: "Experimental high-dose use up to 50 mg, titrated by tolerability (Maudsley).",
         evidence: { strength: "limited", confidence: "low", guideline: "Maudsley 2021 (experimental)" },
-        source_ref: { value: "Escitalopram 25–50mg (high dose SSRI)", source_id: M, page_ref: "p450", snippet: "Escitalopram 25–50mg", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "Escitalopram 25 to 50mg (high dose SSRI)", source_id: M, page_ref: "p450", snippet: "Escitalopram 25 to 50mg", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // CITALOPRAM — includes the elderly max (20 mg) QT warning (a distinct band).
+  // CITALOPRAM: includes the elderly max (20 mg) QT warning (a distinct band).
   {
     generic_name: "Citalopram",
     drug_class: "SSRI", subclass: "Selective serotonin reuptake inhibitor",
@@ -112,8 +112,8 @@ export const DRAFT_LADDERS: DrugDraft[] = [
         source_ref: { value: "Citalopram 20mg/day starting", source_id: M, page_ref: "p333", snippet: "Citalopram 20mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 20, range_high: 40, unit: "mg", band_label: "Therapeutic range",
         primary_purpose: "Depression and anxiety", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        why_this_dose: "Effective dose 10–40 mg; note QT effect, so the max is capped.",
-        source_ref: { value: "Citalopram 10–40mg/day (QT noted)", source_id: M, page_ref: "p620", snippet: "Citalopram 10mg daily Effective dose 10–40mg (note QT effects)", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        why_this_dose: "Effective dose 10 to 40 mg; note QT effect, so the max is capped.",
+        source_ref: { value: "Citalopram 10 to 40mg/day (QT noted)", source_id: M, page_ref: "p620", snippet: "Citalopram 10mg daily Effective dose 10 to 40mg (note QT effects)", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 3, band_type: "maximum", range_low: 40, range_high: 40, unit: "mg", band_label: "Maximum (adult)",
         frequency: "once daily", primary_purpose: "Cap due to QT interval risk",
         secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
@@ -127,7 +127,7 @@ export const DRAFT_LADDERS: DrugDraft[] = [
     ],
   },
 
-  // MIRTAZAPINE — starting 15 -> therapeutic 15-45.
+  // MIRTAZAPINE: starting 15 -> therapeutic 15-45.
   {
     generic_name: "Mirtazapine", drug_class: "NaSSA", subclass: "Noradrenergic/specific serotonergic antidepressant",
     brand_names: ["Remeron", "Mirtaz"], aliases: [],
@@ -135,7 +135,7 @@ export const DRAFT_LADDERS: DrugDraft[] = [
     receptor_targets: [ { value: "alpha-2 antagonist, 5-HT2/5-HT3 antagonist, H1 antagonist, 5-HT1A", source_id: S, page_ref: "p1491", snippet: "alpha2, 5-HT2, H1", agreement: "single" } ],
     common_uses: [ { value: "MDD (with insomnia/sedation), anxiety.", source_id: S, page_ref: "p1491", snippet: "MDD", agreement: "single" } ],
     equivalences: [], links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Mirtazapine is sedating and appetite-boosting, used especially when sleep is broken or weight is low; dose runs 15–45 at night.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p1491", snippet: "H1 antagonism, sedating", agreement: "single" } } },
+    student: { plain_language: { text: "Mirtazapine is sedating and appetite-boosting, used especially when sleep is broken or weight is low; dose runs 15 to 45 at night.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p1491", snippet: "H1 antagonism, sedating", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "starting", range_low: 15, range_high: 15, unit: "mg", band_label: "Starting / low-sedative dose",
         frequency: "at night", primary_purpose: "Starting dose; sedating", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
@@ -143,7 +143,7 @@ export const DRAFT_LADDERS: DrugDraft[] = [
       { band_order: 2, band_type: "therapeutic", range_low: 15, range_high: 45, unit: "mg", band_label: "Therapeutic range",
         frequency: "at night", primary_purpose: "Depression (and anxiety)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         why_this_dose: "Higher doses are less sedating on the whole; used for the main antidepressant effect.",
-        source_ref: { value: "15–45 mg at night", source_id: S, page_ref: "p1491", snippet: "15–45 mg at night", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "15 to 45 mg at night", source_id: S, page_ref: "p1491", snippet: "15 to 45 mg at night", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 ];
