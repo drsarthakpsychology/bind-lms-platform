@@ -5,17 +5,16 @@ import { Check, X } from "lucide-react";
 import type { PrepQView } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 
-const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
-const LETTER = "ABCDEFGH";
+import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
 const option =
-  "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
-const keyBox = "grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
+  "flex min-h-12 w-full min-w-0 items-start gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+const keyBox = "mt-px grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /** The stem, passage, statements and lists of a question (exam style). */
 export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingRef?: React.Ref<HTMLHeadingElement>; number?: number }) {
   return (
-    <div className="space-y-4">
+    <div className="min-w-0 space-y-4 [overflow-wrap:anywhere]">
       {q.passage ? (
         <div className="max-h-[40vh] overflow-y-auto rounded-md border-2 border-dashed border-foreground/40 bg-muted px-4 py-3 text-sm leading-relaxed whitespace-pre-line">
           <p className="mb-1 text-eyebrow text-muted-foreground">Read this</p>
@@ -30,9 +29,9 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
         q.type === "assertion-reason" ? (
           <dl className="space-y-2 rounded-md border-2 border-foreground bg-card p-3 text-base">
             {q.statements.slice(0, 2).map((s, i) => (
-              <div key={i} className="flex gap-2">
-                <dt className="shrink-0 font-semibold">{i === 0 ? "Assertion (A):" : "Reason (R):"}</dt>
-                <dd>{s}</dd>
+              <div key={i} className="min-w-0">
+                <dt className="font-semibold">{i === 0 ? "Assertion (A)" : "Reason (R)"}</dt>
+                <dd className="mt-0.5">{s}</dd>
               </div>
             ))}
           </dl>
@@ -41,21 +40,21 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
             {q.statements.map((s, i) => (
               <li key={i} className="flex gap-2">
                 <span className="shrink-0 font-mono font-semibold">{i + 1}.</span>
-                <span>{s}</span>
+                <span className="min-w-0">{s}</span>
               </li>
             ))}
           </ol>
         )
       ) : null}
       {q.lists ? (
-        <div className="grid gap-2 rounded-md border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
+        <div className="grid min-w-0 gap-3 rounded-md border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
           <div>
             <p className="font-semibold">List I</p>
             <ol className="mt-1 space-y-1">
               {q.lists.left.map((s, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="shrink-0 font-mono font-semibold">{LETTER[i]}.</span>
-                  <span>{s}</span>
+                  <span className="w-6 shrink-0 font-mono font-semibold">{LETTER[i]}.</span>
+                  <span className="min-w-0">{s}</span>
                 </li>
               ))}
             </ol>
@@ -65,8 +64,8 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
             <ol className="mt-1 space-y-1">
               {q.lists.right.map((s, i) => (
                 <li key={i} className="flex gap-2">
-                  <span className="shrink-0 font-mono font-semibold">{ROMAN[i]}.</span>
-                  <span>{s}</span>
+                  <span className="w-9 shrink-0 font-mono font-semibold">{ROMAN[i]}.</span>
+                  <span className="min-w-0">{s}</span>
                 </li>
               ))}
             </ol>
@@ -106,12 +105,14 @@ export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView;
             <span className={keyBox} aria-hidden>
               {state === "right" ? <Check className="size-4" /> : state === "wrong" ? <X className="size-4" /> : i + 1}
             </span>
-            <span className="min-w-0 flex-1">{label}</span>
-            {state === "right" ? (
-              <span className="shrink-0 text-xs font-bold uppercase">{isPicked ? "Your answer, right" : "Right answer"}</span>
-            ) : state === "wrong" ? (
-              <span className="shrink-0 text-xs font-bold uppercase">Your answer</span>
-            ) : null}
+            <span className="min-w-0 flex-1 [overflow-wrap:anywhere]">
+              <span className="block">{label}</span>
+              {state === "right" ? (
+                <span className="mt-1 block text-xs font-bold uppercase">{isPicked ? "Your answer: right" : picked === null ? "Answer" : "Right answer"}</span>
+              ) : state === "wrong" ? (
+                <span className="mt-1 block text-xs font-bold uppercase">Your answer</span>
+              ) : null}
+            </span>
           </button>
         );
       })}
