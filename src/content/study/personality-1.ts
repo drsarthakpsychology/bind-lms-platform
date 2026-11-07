@@ -27,6 +27,10 @@ Healthy personality is like a bunch of keys: you pick the one that fits the door
 {"title": "Is this a personality disorder? A first decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "A long-standing pattern causing trouble", "detail": "Start by describing the pattern in thinking, emotion, relationships and impulse control."}, {"id": "new", "label": "Began recently, or after an illness or injury", "detail": "Not a personality disorder. Think of depression, mania, psychosis, substances, dementia, brain injury or personality change due to a medical condition.", "parent": "r"}, {"id": "cult", "label": "Fits the person's culture and context", "detail": "Not a disorder. Interdependence, religious practice or restraint may be normal where they live.", "parent": "r"}, {"id": "narrow", "label": "Only in one situation", "detail": "Think of a relationship problem, a reaction to an abusive setting, or a specific anxiety.", "parent": "r"}, {"id": "pd", "label": "Since youth, rigid, across settings, harmful", "detail": "Consider a personality disorder; describe severity and traits, check comorbidity, and gather collateral history.", "parent": "r"}], "caption": "Tap each branch. Most errors happen at the first two branches."}
 :::
 
+:::widget compare
+{"title": "A strong trait or a personality disorder?", "a": {"label": "Strong trait", "points": ["Shy, tidy, sensitive or bold, for example", "Bends to fit the situation", "The person can step outside it when needed", "Life goes reasonably well"], "summary": "A trait: part of who someone is, and flexible enough to get by."}, "b": {"label": "Personality disorder", "points": ["The same rigid pattern in almost every situation", "Began by adolescence or early adulthood and has lasted", "Clashes with what the person's culture expects", "Causes real distress or keeps damaging work and relationships"], "summary": "A disorder: inflexible, pervasive, long-lasting and harmful."}, "caption": "Everyone has traits. What makes it a disorder is rigidity across settings, plus lasting harm."}
+:::
+
 ### Why the word "disorder" needs care
 Personality disorder diagnoses carry heavy **stigma**. People given these labels are often treated as "difficult", "manipulative" or "attention-seeking", and their physical and mental health complaints are taken less seriously. Remember three things:
 1. A personality disorder describes **patterns that cause suffering**, not a bad character.
@@ -76,6 +80,10 @@ Q: Which statement about personality disorders is most accurate?
 
 ## 1.2 The three clusters in plain words [core][starting]
 DSM-5-TR describes **ten** personality disorders, grouped into **three clusters** by the kind of impression they make. The clusters are a memory aid more than a scientific grouping, and many people have features from more than one.
+
+:::widget guess
+{"prompt": "In a large community sample of adults, about what percentage have at least one personality disorder?", "min": 0, "max": 40, "unit": "%", "answer": [6, 12], "reveal": "Roughly 1 in 10 adults. Rates are far higher among people in psychiatric clinics, in prison and among those with substance problems. Personality disorders are common, not rare curiosities."}
+:::
 
 ### Cluster A: odd or eccentric
 - **Paranoid**: distrust and suspicion of others' motives. Holds grudges, sees insults where none were meant, suspects a partner of cheating without reason.
@@ -272,6 +280,10 @@ What counts as "deviant" depends on culture. In many Indian families, deferring 
 - **Neurobiology**: heightened amygdala reactivity to emotional faces and reduced prefrontal regulation in BPD; altered serotonergic function linked to impulsive aggression; low autonomic arousal and reduced amygdala response to others' distress in psychopathy.
 - **Developmental models**: Linehan's biosocial theory (emotional vulnerability plus invalidating environment); Fonagy's mentalisation model (insecure, especially disorganised, attachment undermines the capacity to understand mental states); Kernberg's object relations model (splitting and identity diffusion); Young's schema model (early maladaptive schemas from unmet core needs).
 - **Course**: personality traits show mean-level maturation with age (the "maturity principle"); Cluster B symptoms, especially impulsivity, decline most with age.
+:::
+
+:::widget timeline
+{"prompt": "Order how a personality takes shape, from birth to adult life.", "events": [{"label": "Temperament at birth: some babies are calm, others easily upset"}, {"label": "Early attachment: how carers respond shapes the sense of safety with others"}, {"label": "Childhood experiences: school, friends, praise, neglect or abuse"}, {"label": "Adolescence: identity forms and patterns become clearer"}, {"label": "Early adulthood: the pattern is fairly stable, and a disorder can be diagnosed with confidence"}], "why": "Genes and temperament give the starting point; experience shapes it. This is why personality disorders are usually diagnosed from late adolescence on, and why traits can still soften across adult life."}
 :::
 
 :::recall
@@ -520,6 +532,10 @@ Belief in spirit possession, the evil eye (nazar), astrology or the power of a g
 - **Schizotypal PD**: prevalence about 0.6% to 4.6%; strongest genetic link with schizophrenia; about 20% to 40% of clinically referred young people with schizotypal features meet criteria for an "at-risk mental state", and a minority transition to schizophrenia. Low-dose risperidone (0.25 to 2 mg) showed benefit for psychotic-like symptoms in small trials; antidepressants for comorbid depression. ICD-11 classifies **schizotypal disorder** in the schizophrenia spectrum chapter (6A22), not as a personality disorder.
 :::
 
+:::widget compare
+{"title": "Schizotypal personality or schizophrenia?", "a": {"label": "Schizotypal personality disorder", "points": ["Odd beliefs: magic, telepathy, a 'sixth sense'", "Unusual perceptions, such as sensing a presence", "Ideas of reference, not fixed delusions", "Odd speech and dress, few close friends", "A lifelong, stable pattern"], "summary": "Schizotypal: eccentric thinking and social discomfort, without lasting psychosis."}, "b": {"label": "Schizophrenia", "points": ["Fixed delusions held with full conviction", "Persistent hallucinations", "Clear decline from a previous level of functioning", "Often disorganised speech and negative symptoms", "Begins as an illness, usually in the late teens or twenties"], "summary": "Schizophrenia: an illness with full psychotic symptoms and a decline."}, "caption": "Schizotypal disorder is genetically related to schizophrenia, and ICD-11 places it with the psychotic disorders rather than with personality."}
+:::
+
 :::recall
 1. What separates paranoid personality from delusional disorder? || Paranoid personality: lasting suspicious attitudes held with some flexibility; delusional disorder: fixed false beliefs held with full conviction.
 2. What separates schizoid from avoidant personality? || Schizoid people do not want close relationships; avoidant people long for them but fear rejection.
@@ -578,6 +594,10 @@ A pattern of **disregard for, and violation of, the rights of others**, beginnin
 - **Narcissistic PD**: prevalence 0% to 6.2%; grandiose and vulnerable presentations; risk of suicide after narcissistic injury (shame after a public failure or legal problem) can be underestimated because the person appears confident. Transference-focused psychotherapy, mentalisation-based treatment, schema therapy.
 :::
 
+:::widget compare
+{"title": "Antisocial personality disorder and psychopathy", "a": {"label": "Antisocial personality disorder", "points": ["Defined mainly by behaviour: law-breaking, lying, aggression, irresponsibility", "Needs conduct disorder before age 15", "Diagnosed only from age 18", "Common in prisons: many inmates meet criteria"], "summary": "ASPD: a broad, behaviour-based diagnosis."}, "b": {"label": "Psychopathy", "points": ["Adds interpersonal and emotional features: charm, grandiosity, manipulation", "Shallow emotion, no remorse or guilt, little empathy", "Measured with a structured checklist, not a DSM diagnosis", "Only a minority of people with ASPD are psychopathic"], "summary": "Psychopathy: a narrower, more severe group, defined by a cold emotional core."}, "caption": "Most people with high psychopathy meet ASPD criteria, but most people with ASPD are not psychopaths."}
+:::
+
 :::recall
 1. What childhood history is required for antisocial personality disorder? || Conduct disorder with onset before about 15.
 2. How is psychopathy different from antisocial personality disorder? || Narrower and more severe: adds callousness, shallow affect, grandiosity and lack of empathy to antisocial behaviour; measured by the PCL-R.
@@ -613,6 +633,14 @@ Most people with borderline personality disorder have at least one other conditi
 
 :::widget flow
 {"title": "Responding to a crisis call from someone with borderline personality", "layout": "tree", "nodes": [{"id": "r", "label": "Distressed call", "detail": "Listen and validate first. Then ask directly about intent, plan, means, and what has stopped them so far."}, {"id": "low", "label": "Distress, no intent or plan", "detail": "Work through the crisis plan and skills together; agree the next few hours; arrange routine follow-up.", "parent": "r"}, {"id": "mid", "label": "Thoughts with some planning or access to means", "detail": "Reduce means, involve a trusted person to stay, arrange urgent review within a day.", "parent": "r"}, {"id": "high", "label": "Clear intent, plan or recent overdose", "detail": "Emergency assessment now; medical care if anything was taken; a brief, focused admission if needed.", "parent": "r"}], "caption": "Tap each branch. Every call deserves a calm, structured risk assessment, not 'it's the usual'."}
+:::
+
+:::widget compare
+{"title": "Borderline personality disorder or bipolar disorder?", "a": {"label": "Borderline personality disorder", "points": ["Mood swings over hours, often triggered by a row or a feared rejection", "Shifts between anger, emptiness, anxiety and despair", "Lifelong pattern since adolescence", "Chronic emptiness and fear of abandonment", "Self-harm often linked to interpersonal stress"], "summary": "BPD: fast, reactive emotional storms in a stable pattern of unstable relationships."}, "b": {"label": "Bipolar disorder", "points": ["Distinct episodes lasting days or longer", "Elevated mood with less need for sleep and more energy", "Episodes can arise without any trigger", "Clear periods of normal mood in between", "Often runs in families; responds to mood stabilisers"], "summary": "Bipolar: distinct episodes that are a change from the person's usual self."}, "caption": "Ask how long a high lasts and whether sleep need falls. Both disorders can occur together."}
+:::
+
+:::widget moodline
+{"prompt": "Here is Priya's mood across one fortnight. Which pattern fits best?", "series": [1, -2, 0, -2.5, 1.5, -1, -2.8, 0.5, -1.5, 1, -2, 0.5, -2.2, 0], "labels": ["Day 1", "Day 7", "Day 14"], "options": ["Bipolar disorder with a manic episode", "Rapid, reactive mood shifts every day or two", "Steady depression", "Normal mood"], "answer": 1, "why": "The line jumps up and down every day or two, never staying high or low for long. That matches the affective instability of borderline personality disorder, where moods shift within hours in response to events. A bipolar episode would hold its high or low for days on end."}
 :::
 
 ### Good general care: what everyone should do
@@ -670,6 +698,10 @@ A pattern of **social inhibition, feelings of inadequacy and hypersensitivity to
 
 :::widget flow
 {"title": "How avoidance keeps avoidant personality going", "layout": "cycle", "nodes": [{"id": "a", "label": "Belief", "detail": "'If people see the real me, they will reject me.'"}, {"id": "b", "label": "Avoid", "detail": "Turn down the invitation, the promotion, the date."}, {"id": "c", "label": "Short-term relief", "detail": "Anxiety drops at once."}, {"id": "d", "label": "No chance to learn otherwise", "detail": "The belief is never tested; skills and confidence fade; loneliness grows."}], "caption": "Press Play. CBT and schema therapy test the belief through graded steps towards people."}
+:::
+
+:::widget compare
+{"title": "Avoidant or schizoid?", "a": {"label": "Avoidant personality disorder", "points": ["Wants closeness but fears rejection", "Painfully sensitive to criticism", "Feels inadequate and inferior", "Lonely and unhappy about being alone"], "summary": "Avoidant: longs for people, but fear holds them back."}, "b": {"label": "Schizoid personality disorder", "points": ["Little desire for close relationships", "Indifferent to praise or criticism", "Prefers solitary activities", "Content, not distressed, being alone"], "summary": "Schizoid: does not seek people, and does not miss them."}, "caption": "Both live quietly apart. The question is: do they want to be with others? Avoidant, yes; schizoid, mostly no."}
 :::
 
 ### Dependent personality disorder

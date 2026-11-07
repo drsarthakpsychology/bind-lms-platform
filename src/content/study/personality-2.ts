@@ -36,6 +36,10 @@ Severity is like the height of a fever: it tells you how ill someone is and how 
 {"title": "ICD-11 severity: from difficulty to severe disorder", "shape": "stack", "layers": [{"label": "Severe personality disorder", "detail": "Severe problems in nearly all areas of self and relationships; often harm to self or others; major impairment."}, {"label": "Moderate personality disorder", "detail": "Marked problems across several areas; most relationships compromised; some harm may occur."}, {"label": "Mild personality disorder", "detail": "Problems in some areas, often not obvious to others; usually no substantial harm."}, {"label": "Personality difficulty", "detail": "Problems that are limited or come and go; not a disorder."}, {"label": "No personality problem", "detail": "Ordinary variation in traits."}], "caption": "Tap each level. Severity guides how intensive care should be; trait domains guide what it focuses on."}
 :::
 
+:::widget compare
+{"title": "Categories and dimensions", "a": {"label": "Ten categories (DSM-5-TR Section II)", "points": ["Ten separate disorders in three clusters", "Yes or no: meet the criteria count or not", "Many people meet several, or none fit well", "'Other specified' is used very often", "Familiar to clinicians and exams"], "summary": "Categories: easy to name, but they overlap and miss many people."}, "b": {"label": "Severity plus traits (ICD-11 and AMPD)", "points": ["First: how severe is the problem with self and relationships?", "Then: which trait domains colour it", "Fits everyone on a scale, not just above a line", "Severity predicts outcome better than type", "Borderline is kept as an optional pattern"], "summary": "Dimensions: severity first, then style. Fewer gaps and less overlap."}, "caption": "ICD-11 has dropped the ten categories for routine use. DSM-5-TR keeps them, and offers the dimensional model in Section III."}
+:::
+
 ### Why it matters
 - **Fewer arbitrary boundaries** and fewer "not otherwise specified" diagnoses.
 - **Severity predicts outcomes** (risk, service use, treatment response) better than category.
@@ -110,6 +114,10 @@ In individual DBT, the therapist works on problems in a fixed order:
 
 :::widget layers
 {"title": "The DBT target hierarchy", "shape": "pyramid", "layers": [{"label": "1. Life-threatening behaviours", "detail": "Suicide attempts, self-harm, suicidal urges, harm to others. Always first."}, {"label": "2. Therapy-interfering behaviours", "detail": "Missing sessions, not doing diary cards, arriving late, and therapist behaviours that harm the work."}, {"label": "3. Quality-of-life-interfering behaviours", "detail": "Substance use, eating problems, homelessness, unemployment, other disorders."}, {"label": "4. Skills acquisition", "detail": "Building mindfulness, distress tolerance, emotion regulation and interpersonal skills."}], "caption": "Tap each level. The top of the pyramid is addressed first in every session."}
+:::
+
+:::widget conditioning
+{"kind": "operant", "title": "Why DBT pays attention to what follows self-harm", "caption": "Behaviour that is followed by relief or by care becomes more likely, whatever the intention. Self-harm can bring instant relief from unbearable feeling (negative reinforcement) and, sometimes, warmth from others (positive reinforcement). DBT does not withdraw care. It makes sure skilful behaviour is rewarded more than crisis behaviour: warmth and extra time for skills use, calm and brief medical care after self-harm."}
 :::
 
 ### Chain analysis
@@ -257,6 +265,10 @@ Medicines do **not** treat personality disorders themselves. They can help comor
 - **Brief, focused admission** if needed, with a clear goal and planned discharge.
 - **Short-term medicine** only if needed in an acute crisis (for example a sedating antihistamine or low-dose antipsychotic for a few days), with a plan to stop.
 - **Consistency across the team**: everyone follows the same plan.
+
+:::widget timeline
+{"prompt": "Order the stages of a crisis in borderline personality disorder, and what helps.", "events": [{"label": "Trigger: a text goes unanswered, and she feels rejected"}, {"label": "Emotion surges: panic, rage and emptiness"}, {"label": "Urges rise: to self-harm, to drink, to end it"}, {"label": "She uses her crisis plan: calls the team or uses a distress tolerance skill"}, {"label": "The emotion peaks and starts to fall"}, {"label": "Later, when calm: a chain analysis with her therapist"}], "why": "Crises follow a rising curve that passes. Help in the moment is about getting through safely, using a plan agreed in advance. Learning happens afterwards, when the person can think clearly. Admission is used briefly and only when risk cannot be managed otherwise."}
+:::
 
 ### Looking after the team
 Working with people who self-harm repeatedly, who idealise and then attack you, is hard. Clinicians feel helpless, angry, guilty or burnt out. These are expected reactions. Supervision, a consultation team, and a shared plan protect both the patient and the staff.
