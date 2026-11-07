@@ -8,6 +8,10 @@ import { STATISTICS_L01 } from "./statistics-l01";
 import { STATISTICS_L02 } from "./statistics-l02";
 import { STATISTICS_L03 } from "./statistics-l03";
 import { STATISTICS_L04 } from "./statistics-l04";
+import { STATISTICS_L05 } from "./statistics-l05";
+import { COGNITIVE_L01 } from "./cognitive-l01";
+import { COGNITIVE_L02 } from "./cognitive-l02";
+import { COGNITIVE_L03 } from "./cognitive-l03";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -20,4 +24,8 @@ export const LONG_QA: LongQA[] = [
   ...STATISTICS_L02,
   ...STATISTICS_L03,
   ...STATISTICS_L04,
+  ...STATISTICS_L05,
+  ...COGNITIVE_L01,
+  ...COGNITIVE_L02,
+  ...COGNITIVE_L03,
 ];
