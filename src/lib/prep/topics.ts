@@ -222,13 +222,15 @@ export const TOPIC_GROUPS: Record<Subject, readonly TopicGroup[]> = {
   ],
   psychopharmacology: [
     g("principles", "How medicines act and move", /(pharmacokinetic|pharmacodynamic|^pk|^pd|absorption|distribution|metabolism|cyp|half-life|clearance|tdm|drug-level|receptor|occupancy|mechanism|principle|basics|pharmacogen|interaction)/, "medicine-profiles/1-1", "pharmacokinetics"),
-    g("antidepressants", "Antidepressants", /(antidepress|ssri|snri|tca|tricyclic|maoi|bupropion|mirtazapine|vortioxetine|agomelatine|trazodone|serotonin-syndrome|discontinuation|ketamine|esketamine|zuranolone)/, "antidepressants", "medicine-profiles/2-1"),
+    g("antidepressants", "Antidepressants", /(antidepress|ssri|snri|tca|tricyclic|maoi|bupropion|mirtazapine|vortioxetine|agomelatine|trazodone|serotonin-syndrome|discontinuation|ketamine|esketamine|zuranolone|treatment-resistant|augmentation|switching)/, "antidepressants", "medicine-profiles/2-1"),
     g("antipsychotics", "Antipsychotics and clozapine", /(antipsych|clozapine|eps|extrapyramidal|nms|neuroleptic|tardive|akathisia|dystonia|parkinsonism|metabolic|prolactin|qtc|depot|lai|long-acting|dopamine|xanomeline)/, "antipsychotics", "medicine-profiles/2-3"),
-    g("stabilisers", "Lithium and mood stabilisers", /(lithium|valpro|carbamazepine|oxcarbazepine|lamotrigine|mood-stabil|anticonvulsant)/, "stabilisers/1-1", "medicine-profiles/2-5"),
+    g("stabilisers", "Lithium and mood stabilisers", /(lithium|valpro|carbamazepine|oxcarbazepine|lamotrigine|mood-stabil|anticonvulsant|bipolar)/, "stabilisers/1-1", "medicine-profiles/2-5"),
     g("anxiolytics", "Benzodiazepines, sleep and anxiety medicines", /(benzo|hypnotic|z-drug|zolpidem|buspirone|pregabalin|anxiolytic|sedative|insomnia|melatonin|orexin)/, "stabilisers/2-1", "medicine-profiles/2-6"),
-    g("other-medicines", "ADHD, dementia and addiction medicines", /(adhd|stimulant|methylphenidate|atomoxetine|dementia|cholinesterase|donepezil|memantine|naltrexone|disulfiram|acamprosate|opioid|buprenorphine|methadone|nicotine|varenicline|substance|anticholinergic)/, "medicine-profiles"),
+    g("other-medicines", "ADHD, dementia and addiction medicines", /(adhd|stimulant|methylphenidate|atomoxetine|dementia|cholinesterase|donepezil|memantine|naltrexone|disulfiram|acamprosate|opioid|buprenorphine|methadone|nicotine|varenicline|substance|anticholinergic|alcohol|wernicke|amyloid|behavioural-symptoms)/, "medicine-profiles"),
     g("special-groups", "Pregnancy, children, older adults and the body", /(pregnan|lactation|perinatal|child|adolescent|elderly|older|geriatric|renal|hepatic|cardiac|special|epilep)/, "medicine-profiles/3-4"),
     g("neuromodulation", "ECT and brain stimulation", /(ect|electroconvulsive|tms|rtms|neuromod|stimulation|dbs)/, "brain/6-3"),
+    g("emergencies", "Emergencies and toxicity", /(emergenc|rapid-tranq|toxicity|overdose|poison)/, "medicine-profiles"),
+    g("new", "New and emerging treatments", /(new-drug|psychedel|psilocybin|mdma|emerging)/, "frontiers"),
   ],
   "clinical-psychiatry": [
     g("interview", "History, interview and case sheet", /(interview|history|case-sheet|rapport|formulation|premorbid|investigation)/, "interview-mse/1-1", "case-sheet"),
