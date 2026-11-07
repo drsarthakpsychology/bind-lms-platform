@@ -38,6 +38,11 @@ const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "indian-psychology",
   "ethics-law",
   "ugc-paper1",
+  "research-methods",
+  "statistics",
+  "psychometrics-assessment",
+  "cognitive",
+  "perception-attention",
 ];
 const MAX_RANK_SHARE = 0.35;
 const RATIO = 1.3;
