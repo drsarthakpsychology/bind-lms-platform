@@ -229,6 +229,36 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
 }
 :::
 
+
+:::widget compare
+{
+ "title": "Open-ended analysis and a brief dynamic therapy",
+ "a": {
+  "label": "Open-ended psychoanalytic therapy",
+  "points": [
+   "Several sessions a week, often for years",
+   "No fixed focus; whatever comes up is followed",
+   "Therapist mostly listens and interprets",
+   "Transference allowed to deepen over time",
+   "Aims at wide change in personality"
+  ],
+  "summary": "Broad and deep, slow and costly."
+ },
+ "b": {
+  "label": "Brief dynamic therapy",
+  "points": [
+   "Usually weekly, with an ending date set at the start",
+   "One agreed focus: a conflict, pattern or loss",
+   "Therapist is active and keeps returning to the focus",
+   "Transference linked early to the focus",
+   "Aims at change in one key area, then follow-up"
+  ],
+  "summary": "Focused and time-limited, but needs careful selection."
+ },
+ "caption": "Slide between the two. Both rest on the same ideas about conflict, defence and transference; they differ in pace, focus and how active the therapist is."
+}
+:::
+
 ### The main models
 | Model | Founder | Key idea |
 |---|---|---|
