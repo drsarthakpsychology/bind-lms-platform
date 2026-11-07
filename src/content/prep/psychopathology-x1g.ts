@@ -8,7 +8,7 @@ const PSY = { module: "psychosis" };
 export const PART: PrepQuestion[] = [
   q.mcq(
     1,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     1,
     "CNS",
     "Which medical condition most often presents with symptoms that mimic a panic attack, such as palpitations, tremor, sweating and anxiety?",
@@ -19,7 +19,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     2,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     1,
     "CNS",
     "Pellagra, with dermatitis, diarrhoea and dementia, is caused by deficiency of:",
@@ -94,7 +94,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     7,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMSD",
     "A 19-year-old has 6 months of declining marks, irritability, a new tremor and slurred speech; his liver enzymes are raised. The most useful next test is:",
@@ -110,7 +110,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     8,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMSD",
     "A woman has attacks of severe abdominal pain, constipation, limb weakness and acute psychosis after being given a barbiturate for sleep. Her urine darkens on standing. The most likely diagnosis is:",
@@ -121,7 +121,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     9,
-    "epilepsy-psychiatry",
+    "differential-diagnosis-epilepsy",
     2,
     "NMSD",
     "A man with temporal lobe epilepsy develops paranoid delusions and hallucinations 2 days after a cluster of seizures, following a period of apparently normal mental state. The episode resolves within a week. This is most likely:",
@@ -148,7 +148,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     11,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMS",
     "A 62-year-old with a past gastrectomy has low mood, poor memory, paraesthesiae in both feet and loss of vibration sense. The most likely deficiency is:",
@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     15,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMSD",
     "Which feature of an anxiety presentation should most prompt a search for an underlying medical cause?",
@@ -234,7 +234,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     17,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMSD",
     "A man with alcohol use disorder and liver cirrhosis becomes drowsy and confused; he has a flapping tremor of the outstretched hands. This flapping tremor is called:",
@@ -250,7 +250,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     18,
-    "epilepsy-psychiatry",
+    "differential-diagnosis-epilepsy",
     2,
     "NMSD",
     "The so-called 'interictal behaviour syndrome' (Geschwind syndrome) described in some people with temporal lobe epilepsy includes:",
@@ -298,7 +298,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     21,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMSD",
     "Which neurological disease is classically associated with pathological laughing and crying (pseudobulbar affect), euphoria and depression?",
@@ -325,7 +325,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     23,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     3,
     "NMD",
     "A 58-year-old man becomes expansive and grandiose over months, with poor judgement, memory decline and dysarthria. Pupils are small, irregular and react to accommodation but not to light. The most likely diagnosis and test are:",
@@ -341,7 +341,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     24,
-    "epilepsy-psychiatry",
+    "differential-diagnosis-epilepsy",
     3,
     "NMD",
     "'Forced normalisation' (Landolt) refers to:",
@@ -357,7 +357,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     25,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     3,
     "NMD",
     "Which endocrine disorder is most strongly associated with depression in up to half of patients, often improving when the hormone excess is corrected?",
@@ -458,7 +458,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     31,
-    "perinatal",
+    "postpartum-psychosis",
     4,
     "MD",
     "Four days after a first delivery, a 25-year-old woman with no psychiatric history becomes sleepless, rapidly fluctuating between elation and fear, perplexed and partly disoriented. She says the baby has been swapped and that she must 'save' him. Her temperature and blood tests are normal. Her mother had bipolar disorder.",
@@ -475,7 +475,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     32,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     4,
     "MD",
     "A 28-year-old woman with known systemic lupus erythematosus, not on steroids, develops over 10 days persecutory delusions, visual hallucinations and fluctuating attention. MRI shows scattered white matter lesions; complement levels are low and anti-dsDNA titres high. She had no psychiatric history.",
@@ -533,7 +533,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ar(
     36,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     3,
     "NMD",
     "Hypothyroidism can present with depressive symptoms and cognitive slowing.",
@@ -544,7 +544,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ar(
     37,
-    "epilepsy-psychiatry",
+    "differential-diagnosis-epilepsy",
     4,
     "MD",
     "Psychotic disorders are more common in people with epilepsy than in the general population.",
@@ -555,7 +555,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ar(
     38,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     4,
     "MD",
     "Phaeochromocytoma is a common cause of panic disorder in psychiatric outpatients.",
@@ -580,7 +580,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.st(
     40,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     3,
     "NMD",
     "Which statements about hyperparathyroidism and psychiatric symptoms are correct?",
@@ -650,7 +650,7 @@ export const PART: PrepQuestion[] = [
   /* ---- match ---- */
   q.mt(
     44,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     2,
     "NMS",
     "Match the medical condition (List I) with its psychiatric presentation (List II).",
@@ -686,7 +686,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mt(
     46,
-    "medical-mimics",
+    "differential-diagnosis-medical",
     3,
     "NMD",
     "Match the neurological sign (List I) with the condition it most suggests (List II).",

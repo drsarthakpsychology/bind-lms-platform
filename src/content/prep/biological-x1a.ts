@@ -72,7 +72,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     6,
-    "vascular-syndromes",
+    "neuroanatomy",
     2,
     "NMSD",
     "A right-handed man has a sudden right-sided weakness affecting the face and arm more than the leg, with non-fluent aphasia. The artery most likely occluded is the:",
@@ -99,7 +99,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     8,
-    "tracts",
+    "neuroanatomy",
     2,
     "NMS",
     "The dorsal column (medial lemniscus) pathway carrying fine touch and proprioception crosses the midline at the level of the:",
@@ -110,7 +110,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     9,
-    "tracts",
+    "neuroanatomy",
     2,
     "NMS",
     "Roughly what proportion of corticospinal fibres cross the midline in the pyramidal decussation of the medulla?",
@@ -121,7 +121,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     10,
-    "limbic",
+    "neuroanatomy",
     2,
     "NMS",
     "The main output tract linking the hippocampus to the mammillary bodies is the:",
@@ -132,7 +132,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     11,
-    "neurodevelopment",
+    "neuroanatomy",
     2,
     "NMS",
     "Which brain region is generally the last to complete myelination, continuing into the third decade of life?",
@@ -181,7 +181,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     15,
-    "tracts",
+    "neuroanatomy",
     3,
     "NMD",
     "A stab wound hemisects the right side of the spinal cord at T10. Below the lesion, the expected findings are:",
@@ -197,7 +197,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     16,
-    "vascular-syndromes",
+    "neuroanatomy",
     3,
     "NMD",
     "A patient has vertigo, hoarseness, difficulty swallowing, right-sided Horner's syndrome, loss of pain and temperature on the right face and the left side of the body, and right limb ataxia. The lesion is most likely in the:",
@@ -208,7 +208,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     17,
-    "vascular-syndromes",
+    "neuroanatomy",
     3,
     "NMD",
     "A right oculomotor nerve palsy (eye down and out, ptosis, dilated pupil) with left-sided hemiplegia localises to the:",
@@ -219,7 +219,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     18,
-    "cranial-nerves",
+    "neuroanatomy",
     3,
     "NMD",
     "Why does an upper motor neuron facial palsy (for example from a cortical stroke) spare the forehead, whereas Bell's palsy does not?",
@@ -235,7 +235,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     19,
-    "ventricles",
+    "neuroanatomy",
     3,
     "NMD",
     "Stenosis of the cerebral aqueduct (of Sylvius) would cause enlargement of which ventricles?",
@@ -251,7 +251,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     20,
-    "cerebellum",
+    "neuroanatomy",
     3,
     "NMD",
     "A tumour in the left cerebellar hemisphere would be expected to cause:",
@@ -267,7 +267,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     21,
-    "neurodevelopment",
+    "neuroanatomy",
     3,
     "NMD",
     "Which structure is derived from the neural crest rather than the neural tube?",
@@ -278,7 +278,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     22,
-    "neurodevelopment",
+    "neuroanatomy",
     3,
     "NMD",
     "Studies of synaptic density in human cortex (Huttenlocher) showed that, in prefrontal cortex:",
@@ -321,7 +321,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     25,
-    "spatial-cells",
+    "neuroanatomy",
     3,
     "NMD",
     "The 2014 Nobel Prize in Physiology or Medicine was awarded for the discovery of place cells and grid cells. Grid cells are found mainly in the:",
@@ -332,7 +332,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mcq(
     26,
-    "frontal-subcortical",
+    "neuroanatomy",
     4,
     "MD",
     "Damage to the anterior cingulate frontal-subcortical circuit is most characteristically associated with:",
@@ -361,7 +361,7 @@ export const QUESTIONS: PrepQuestion[] = [
   /* ---- passages ---- */
   q.ps(
     28,
-    "visual-pathways",
+    "neuroanatomy",
     2,
     "NMSD",
     "A 45-year-old woman with headaches and a raised prolactin level notices she keeps bumping into door frames on both sides. Visual field testing shows loss of the outer (temporal) half of the visual field in each eye.",
@@ -373,7 +373,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ps(
     29,
-    "visual-pathways",
+    "neuroanatomy",
     3,
     "NMD",
     "After surgery on the right temporal lobe for epilepsy, a patient has lost vision in the upper left quarter of the visual field of both eyes. The rest of the field is normal.",
@@ -390,7 +390,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ps(
     30,
-    "frontal-subcortical",
+    "neuroanatomy",
     4,
     "MD",
     "A 50-year-old man with a large tumour involving both medial frontal lobes lies awake with eyes open, follows the examiner with his eyes, but hardly speaks or moves spontaneously. When pushed with repeated questions he gives a one-word answer after a long delay. He is not paralysed, and the EEG shows no seizure activity.",
@@ -402,7 +402,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ps(
     31,
-    "phantom-limb",
+    "neuroanatomy",
     4,
     "MD",
     "Weeks after losing his left arm, a man reports that touching his left cheek produces a feeling that his missing left hand is being touched. Brain imaging shows that the cheek's representation in the right somatosensory cortex has expanded into the territory that once served the hand.",
@@ -432,7 +432,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ar(
     33,
-    "neurodevelopment",
+    "neuroanatomy",
     3,
     "NMD",
     "Folic acid taken before conception and in early pregnancy reduces neural tube defects.",
@@ -443,7 +443,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ar(
     34,
-    "neurogenesis",
+    "neuroanatomy",
     4,
     "MD",
     "The existence and extent of adult neurogenesis in the human hippocampus is still debated.",
@@ -454,7 +454,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ar(
     35,
-    "autonomic",
+    "neuroanatomy",
     4,
     "MD",
     "Sweat glands are supplied by sympathetic postganglionic fibres that release acetylcholine.",
@@ -465,7 +465,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.ar(
     36,
-    "cerebellum",
+    "neuroanatomy",
     3,
     "NMD",
     "The cerebellum contains more neurons than the rest of the brain combined.",
@@ -478,7 +478,7 @@ export const QUESTIONS: PrepQuestion[] = [
   /* ---- statements ---- */
   q.st(
     37,
-    "motor-signs",
+    "neuroanatomy",
     2,
     "NMS",
     "Which are signs of an upper motor neuron lesion?",
@@ -490,7 +490,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.st(
     38,
-    "ventricles",
+    "neuroanatomy",
     3,
     "NMD",
     "Which statements about cerebrospinal fluid are correct?",
@@ -507,7 +507,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.st(
     39,
-    "autonomic",
+    "neuroanatomy",
     3,
     "NMD",
     "Which statements about the autonomic nervous system outflow are correct?",
@@ -524,7 +524,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.st(
     40,
-    "amygdala",
+    "neuroanatomy",
     4,
     "MD",
     "Which statements about the amygdala are correct?",
@@ -541,7 +541,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.st(
     41,
-    "cerebellum",
+    "neuroanatomy",
     4,
     "MD",
     "Which statements about the cerebellar circuitry are correct?",
@@ -573,7 +573,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mt(
     43,
-    "reflexes",
+    "neuroanatomy",
     2,
     "NMS",
     "Match the tendon reflex (List I) with its main spinal root (List II).",
@@ -586,7 +586,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mt(
     44,
-    "frontal-subcortical",
+    "neuroanatomy",
     3,
     "NMD",
     "Match the frontal-subcortical circuit (List I) with the deficit typical of its damage (List II).",
@@ -599,7 +599,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.mt(
     45,
-    "visual-pathways",
+    "neuroanatomy",
     3,
     "NMD",
     "Match the higher visual area (List I) with the deficit that follows its damage (List II).",
@@ -632,7 +632,7 @@ export const QUESTIONS: PrepQuestion[] = [
   /* ---- numerical ---- */
   q.num(
     47,
-    "ventricles",
+    "neuroanatomy",
     3,
     "NMD",
     "If the choroid plexus secretes CSF at 0.35 mL per minute and total CSF volume is 140 mL, approximately how many times is the CSF volume replaced each day?",
@@ -654,7 +654,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     49,
-    "cerebellum",
+    "neuroanatomy",
     4,
     "MD",
     "If the human brain contains about 86 billion neurons and the cerebellum about 69 billion, roughly what percentage of all neurons are outside the cerebellum?",
@@ -665,7 +665,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     50,
-    "conduction",
+    "neurons-conduction",
     4,
     "MD",
     "A spinal reflex arc has a total conduction path of 1.6 metres (afferent plus efferent) in fibres conducting at 80 m/s. Ignoring synaptic and muscle delays, the conduction time is:",

@@ -187,7 +187,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     14,
-    "prion",
+    "neurocognitive-prion",
     3,
     "NMD",
     "A 62-year-old has rapidly progressive dementia over 4 months with startle myoclonus and ataxia. Which investigation finding is most specific for sporadic Creutzfeldt-Jakob disease?",
@@ -203,7 +203,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     15,
-    "dlb",
+    "neurocognitive-dlb",
     3,
     "NMD",
     "A 70-year-old developed parkinsonism 3 years ago and only now has dementia with fluctuating attention and visual hallucinations. Under the conventional '1-year rule', the preferred diagnosis is:",
@@ -219,7 +219,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     16,
-    "ftd",
+    "neurocognitive-ftd",
     3,
     "NMD",
     "Which feature is NOT among the six behavioural criteria for possible behavioural-variant frontotemporal dementia?",
@@ -310,7 +310,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     22,
-    "fatal-familial-insomnia",
+    "sleep-ffi",
     4,
     "MD",
     "A 50-year-old with a family history of similar deaths has worsening insomnia over months, dysautonomia, myoclonus and dream-like confusional states. Which pathology is most likely?",
@@ -326,7 +326,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     23,
-    "ppa",
+    "neurocognitive-ppa",
     4,
     "MD",
     "A 64-year-old has 2 years of slow, word-finding pauses and difficulty repeating long sentences, with preserved single-word comprehension and grammar. Amyloid PET is positive. Which primary progressive aphasia variant and atrophy pattern fit best?",
@@ -342,7 +342,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     24,
-    "dlb",
+    "neurocognitive-dlb",
     4,
     "MD",
     "Which is an 'indicative biomarker' in the current consensus criteria for dementia with Lewy bodies?",
@@ -476,7 +476,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     32,
-    "ftd",
+    "neurocognitive-ftd",
     3,
     "NMD",
     "A 56-year-old accountant has, over 2 years, become tactless and rude, made sexual comments to strangers, lost interest in his family's feelings, eaten sweets compulsively and developed rigid routines such as walking the same route at the same time daily. He still remembers recent events well and finds his way around. His wife first thought he was depressed.",
@@ -620,7 +620,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.st(
     42,
-    "prion",
+    "neurocognitive-prion",
     4,
     "MD",
     "Which statements correctly contrast variant CJD with sporadic CJD?",
@@ -669,7 +669,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mt(
     45,
-    "ppa",
+    "neurocognitive-ppa",
     3,
     "NMD",
     "Match the primary progressive aphasia variant (List I) with its core feature (List II).",

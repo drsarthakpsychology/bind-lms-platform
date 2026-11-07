@@ -240,7 +240,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     18,
-    "network-models",
+    "dimensional-network",
     3,
     "NMD",
     "The network approach to psychopathology (Borsboom and colleagues) proposes that:",
@@ -336,7 +336,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     24,
-    "hitop",
+    "dimensional-hitop",
     4,
     "MD",
     "In the Hierarchical Taxonomy of Psychopathology (HiTOP), which grouping correctly places the 'distress' subfactor?",
@@ -431,7 +431,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     30,
-    "explanatory-models",
+    "cultural-explanatory",
     3,
     "NMD",
     "A 45-year-old woman from a village in Madhya Pradesh brings her 20-year-old son, who has been talking to himself and not sleeping for 3 weeks. She believes he was affected by black magic after a land dispute, and the family have visited a local healer. She asks the psychiatrist whether the medicine will 'remove the effect'.",

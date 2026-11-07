@@ -462,7 +462,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     31,
-    "functional-seizures",
+    "conversion-seizures",
     4,
     "MD",
     "A 24-year-old woman has episodes of shaking lasting 10 to 15 minutes with eyes tightly closed, side-to-side head movements, asynchronous limb movements that wax and wane, and crying afterwards. She remembers parts of the episodes. Video-EEG during a typical episode shows a normal background rhythm without epileptiform change. Serum prolactin 20 minutes later is normal.",

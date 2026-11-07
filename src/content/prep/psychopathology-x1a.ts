@@ -62,7 +62,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     6,
-    "charles-bonnet",
+    "hallucination-charles-bonnet",
     2,
     "NMSD",
     "An 82-year-old woman with advanced macular degeneration sees small, brightly dressed people walking across her carpet in the evenings. She knows they are not real, is not distressed, and her cognition, attention and motor examination are normal. The most likely diagnosis is:",
@@ -73,7 +73,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     7,
-    "functional-hallucination",
+    "hallucination-functional",
     2,
     "NMS",
     "A patient hears voices abusing her only while the ceiling fan is running. She hears both the fan and the voices at the same time, and the voices stop when the fan is switched off. This is a:",
@@ -122,7 +122,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     11,
-    "deficit-syndrome",
+    "negative-symptoms-deficit",
     3,
     "NMD",
     "Which feature is required for the 'deficit' form of schizophrenia as defined by Carpenter and colleagues?",
@@ -160,7 +160,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     14,
-    "reduplicative-paramnesia",
+    "delusion-reduplicative",
     3,
     "NMD",
     "After a right fronto-parietal stroke, a 68-year-old retired teacher insists that the hospital he is in is an exact copy of the one in Pune, but has been relocated to his own home town of Nashik. He is otherwise alert and conversational. This is best termed:",
@@ -252,7 +252,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     21,
-    "cycloid-psychosis",
+    "psychosis-cycloid",
     4,
     "MD",
     "Leonhard's 'cycloid psychoses' (anxiety-happiness, confusion and motility psychoses) are best characterised by:",
@@ -441,7 +441,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     33,
-    "screening",
+    "delirium-screening",
     3,
     "NMD",
     "A brief delirium screen has a sensitivity of 90% and a specificity of 80%. It is used on all patients over 65 admitted to a medical ward, where the prevalence of delirium is 20%.",
@@ -488,7 +488,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ar(
     37,
-    "charles-bonnet",
+    "hallucination-charles-bonnet",
     3,
     "NMD",
     "Hallucinations in Charles Bonnet syndrome indicate an underlying psychotic disorder.",

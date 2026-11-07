@@ -72,7 +72,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     6,
-    "melancholia",
+    "mood-melancholia",
     2,
     "NMS",
     "A depressed man has lost pleasure in everything and nothing cheers him even briefly. Which additional features would complete the DSM-5-TR 'with melancholic features' specifier?",
@@ -250,7 +250,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     19,
-    "secondary-mania",
+    "mania-secondary",
     3,
     "NMD",
     "Which cause of new-onset mania in a 62-year-old with no psychiatric history should be investigated most urgently, given the lesion site most often linked with secondary mania?",
@@ -330,7 +330,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.mcq(
     24,
-    "kindling",
+    "bipolar-kindling",
     4,
     "MD",
     "Post's kindling (sensitisation) hypothesis of mood disorders predicts that, over successive episodes:",
@@ -481,7 +481,7 @@ export const PART: PrepQuestion[] = [
   ),
   q.ps(
     33,
-    "screening",
+    "mood-screening",
     3,
     "NMD",
     "On the PHQ-9, a patient rates: little interest 3, low mood 3, sleep 2, energy 2, appetite 1, feeling a failure 2, concentration 1, slowed or restless 0, and thoughts that she would be better off dead 1. Each item is scored 0 to 3.",

@@ -667,7 +667,7 @@ export const QUESTIONS: PrepQuestion[] = [
   /* ---- numerical ---- */
   q.num(
     45,
-    "pharmacokinetics",
+    "psychopharmacology",
     2,
     "NMS",
     "A drug with a half-life of 8 hours reaches a plasma level of 80 ng/mL. With no further doses, what level remains after 24 hours?",
@@ -678,7 +678,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     46,
-    "pharmacokinetics",
+    "psychopharmacology",
     3,
     "NMD",
     "An intravenous dose of 500 mg gives an initial plasma concentration of 10 mg/L. What is the apparent volume of distribution?",
@@ -694,7 +694,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     47,
-    "pharmacokinetics",
+    "psychopharmacology",
     4,
     "MD",
     "A drug has a volume of distribution of 100 L and a clearance of 10 L/hour. Using t1/2 = 0.693 x Vd / CL, its elimination half-life is about:",
@@ -716,7 +716,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     49,
-    "pharmacokinetics",
+    "psychopharmacology",
     3,
     "NMD",
     "The median lethal dose of a drug in animals is 200 mg/kg and the median effective dose is 10 mg/kg. Its therapeutic index is:",
@@ -732,7 +732,7 @@ export const QUESTIONS: PrepQuestion[] = [
   ),
   q.num(
     50,
-    "pharmacokinetics",
+    "psychopharmacology",
     4,
     "MD",
     "A clinician wants a target plasma concentration of 1 mg/L for a drug with a volume of distribution of 300 L and complete bioavailability. The loading dose needed is:",
