@@ -68,8 +68,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "According to Freud, the ego operates on the:",
     options: [
-      "Reality principle, using secondary-process (logical) thinking",
-      "Pleasure principle",
+      "Reality principle, using secondary-process thinking",
+      "Pleasure principle, seeking immediate gratification",
       "Morality principle only",
       "Death instinct",
     ],
@@ -248,14 +248,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In his later theory, Freud proposed two basic classes of instinct. These are:",
     options: [
-      "Hunger and thirst",
-      "Eros (life instincts, including sexual and self-preservative drives) and Thanatos (the death instinct, expressed outwardly as aggression)",
+      "Ego (self-preservative) instincts and sexual instincts, kept as separate opposing classes",
+      "Eros (life instincts, including sex) and Thanatos (the death instinct, turned outward as aggression)",
       "Superiority and inferiority",
       "Introversion and extraversion",
     ],
     answer: 1,
     explanation:
-      "After the First World War, Freud added the death instinct to explain repetition of painful experiences and destructiveness. Eros aims to preserve and unite; Thanatos aims to return to an inorganic state and, when turned outward, appears as aggression. The term 'Thanatos' was used by his followers, while Freud spoke of the 'death drive'. Hunger and thirst are specific needs. Superiority and inferiority are Adler's concepts. Introversion and extraversion are Jung's attitudes.",
+      "After the First World War, Freud added the death instinct to explain repetition of painful experiences and destructiveness. Eros aims to preserve and unite; Thanatos aims to return to an inorganic state and, when turned outward, appears as aggression. The term 'Thanatos' was used by his followers, while Freud spoke of the 'death drive'. Ego (self-preservative) versus sexual instincts was Freud's earlier pairing, which he later merged into Eros. Superiority and inferiority are Adler's concepts. Introversion and extraversion are Jung's attitudes.",
     ref: "Freud 1920",
   }),
   p({
@@ -286,8 +286,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "It showed that hypnosis is the best form of therapy",
       "It was the first use of electroconvulsive therapy",
-      "It led to the discovery of the Oedipus complex in children",
-      "Her symptoms seemed to ease when she talked about painful memories, which she called the 'talking cure', an early basis of psychoanalysis",
+      "It led to the discovery of the Oedipus complex in children through her memories",
+      "Her symptoms eased when she talked about painful memories, the 'talking cure' behind psychoanalysis",
     ],
     answer: 3,
     explanation:
@@ -375,7 +375,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Freud's view, the ego defends against anxiety by using defence mechanisms that share two features. These are that defences:",
     options: [
       "Are found only in mental illness",
-      "Are always consciously chosen",
+      "Are always consciously chosen ways of reducing stress",
       "Always improve relationships",
       "Operate unconsciously and distort or deny reality to some extent",
     ],
@@ -438,9 +438,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jung's 'collective unconscious' refers to:",
     options: [
-      "The shared beliefs of a social group learned through culture",
+      "The shared beliefs of a social group, learned through myths, rituals and culture",
       "Memories that each person has repressed",
-      "Inherited predispositions shared by all humans, organised as archetypes, that shape how we experience universal themes such as mother, hero and death",
+      "Inherited predispositions shared by all humans, organised as archetypes such as mother and hero",
       "The preconscious in Freud's model",
     ],
     answer: 2,
@@ -480,8 +480,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Jung's theory, 'individuation' refers to:",
     options: [
-      "The lifelong process of becoming a whole person by integrating conscious and unconscious parts of the psyche, especially from midlife onward",
-      "Separating from one's mother in infancy",
+      "The lifelong process of becoming whole by integrating conscious and unconscious parts of the psyche",
+      "Separating psychologically from one's mother in the first three years of life",
       "Developing a strong persona",
       "Repressing the shadow completely",
     ],
@@ -515,8 +515,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jung's concept of libido differs from Freud's in that Jung saw libido as:",
     options: [
-      "Purely sexual energy",
-      "A general psychic energy that can be directed into many kinds of activity, not mainly sexual energy",
+      "Purely sexual energy that drives behaviour from birth through each stage",
+      "A general psychic energy that can flow into many activities, not mainly sexual",
       "A form of inferiority feeling",
       "A learned habit",
     ],
@@ -611,8 +611,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The death instinct",
       "The sexual drive",
-      "Striving for superiority or success, to overcome feelings of inferiority",
-      "Reinforcement from the environment",
+      "Striving for superiority or success, to overcome inferiority",
+      "Reinforcement from the environment for successful behaviour",
     ],
     answer: 2,
     explanation:
@@ -654,9 +654,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Adler's concept of 'social interest' (Gemeinschaftsgefühl) refers to:",
     options: [
-      "A feeling of belonging and concern for the welfare of others and the community, which he saw as the measure of psychological health",
+      "A feeling of belonging and concern for others' welfare, which he saw as the measure of health",
       "Interest in socialising at parties",
-      "A drive for power over others",
+      "A drive for power over others, which grows as people gain status in groups",
       "The persona",
     ],
     answer: 0,
@@ -717,8 +717,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Adler used 'early recollections' in assessment because he believed that:",
     options: [
       "Early memories show which psychosexual stage a person is fixated at",
-      "Early memories are always perfectly accurate records of events",
-      "The memories a person chooses to recall from early childhood reveal their current style of life and goals, whether or not they are accurate",
+      "Early memories are always perfectly accurate records of what actually happened",
+      "The memories a person chooses to recall reveal their current style of life, accurate or not",
       "Early memories reveal archetypes",
     ],
     answer: 2,
@@ -790,8 +790,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Adler's term 'style of life' refers to:",
     options: [
       "A person's fashion and taste",
-      "A person's unique pattern of goals, beliefs and ways of approaching life's tasks of work, love and friendship, formed largely in early childhood",
-      "A stage of psychosexual development",
+      "A person's unique pattern of goals and ways of meeting life's tasks of work, love and friendship",
+      "A stage of psychosexual development that sets the person's adult character traits",
       "The archetype of the hero",
     ],
     answer: 1,
@@ -890,8 +890,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Compared with Freud, Jung's view of personality was:",
     options: [
-      "More focused on sexual drives in early childhood",
-      "More forward-looking and spiritual, emphasising growth across the whole life and the goal of wholeness",
+      "More focused on sexual drives in early childhood and on fixation at each stage",
+      "More forward-looking and spiritual, stressing growth across life and the goal of wholeness",
       "Entirely based on learning theory",
       "Opposed to the idea of an unconscious",
     ],
@@ -932,9 +932,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Anna Freud's main contributions to psychoanalysis included:",
     options: [
       "Discovering the death instinct",
-      "Proposing the collective unconscious",
+      "Proposing the collective unconscious and its archetypes",
       "Developing person-centred therapy",
-      "Systematising the defence mechanisms and pioneering psychoanalytic work with children",
+      "Systematising the defence mechanisms and pioneering child analysis",
     ],
     answer: 3,
     explanation:
@@ -965,10 +965,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Freud's concept of 'the return of the repressed' refers to:",
     options: [
-      "Repressed material finding its way back into consciousness in disguised form, such as symptoms, dreams or slips",
+      "Repressed material returning to awareness in disguised form, such as symptoms, dreams or slips",
       "Memories that are completely lost forever",
       "Deliberately recalling happy memories",
-      "A person returning to the place where a trauma happened",
+      "A person feeling compelled to go back to the place where a trauma happened",
     ],
     answer: 0,
     explanation:
@@ -983,8 +983,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which of the following is the strongest scientific criticism of Freud's theory of defence mechanisms as originally framed?",
     options: [
       "It ignores the unconscious",
-      "Because almost any behaviour can be explained as either a defence or its absence, the theory risks being unfalsifiable",
-      "It was based only on studies of animals",
+      "Almost any behaviour can be read as a defence or its absence, so the theory risks being unfalsifiable",
+      "It was based only on studies of animals, which cannot report on their inner defences",
       "It denies that anxiety exists",
     ],
     answer: 1,
@@ -1019,9 +1019,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Jung's theory, a 'complex' is:",
     options: [
       "A stage of development",
-      "A universal inherited image",
+      "A universal inherited image, such as the mother, stored in the collective unconscious",
       "A conscious plan",
-      "A cluster of emotionally charged thoughts, feelings and memories around a common theme in the personal unconscious",
+      "A cluster of emotionally charged thoughts and memories around a theme in the personal unconscious",
     ],
     answer: 3,
     explanation:

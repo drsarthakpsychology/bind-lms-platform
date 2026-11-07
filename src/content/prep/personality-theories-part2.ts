@@ -27,9 +27,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Karen Horney described 'basic anxiety' as:",
     options: [
       "Fear of the death instinct",
-      "A child's feeling of being isolated and helpless in a potentially hostile world",
+      "A child's feeling of being isolated and helpless in a hostile world",
       "Anxiety caused only by sexual frustration",
-      "A normal fear of real dangers such as snakes",
+      "A normal fear of real dangers such as snakes or traffic",
     ],
     answer: 1,
     explanation:
@@ -69,8 +69,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Horney's idea of the 'tyranny of the shoulds' refers to:",
     options: [
       "Rules set by parents in early childhood",
-      "Rigid inner demands that come from an idealised self-image, such as 'I should never be angry' or 'I should be perfect'",
-      "The superego's moral prohibitions as described by Freud",
+      "Rigid inner demands from an idealised self-image, such as 'I should be perfect'",
+      "The superego's moral prohibitions, taken in from parents as Freud described",
       "Social norms of conformity",
     ],
     answer: 1,
@@ -126,9 +126,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Erich Fromm argued that people in modern societies often try to 'escape from freedom' because freedom brings:",
     options: [
       "A collective unconscious",
-      "Too much pleasure",
-      "Excessive social interest",
-      "Feelings of isolation and anxiety, which they try to reduce through authoritarianism, destructiveness or conformity",
+      "Too much pleasure and choice, which people then feel guilty about enjoying",
+      "Excessive social interest that leaves no room for the self",
+      "Isolation and anxiety, which they reduce through authoritarianism, destructiveness or conformity",
     ],
     answer: 3,
     explanation:
@@ -188,8 +188,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Depends only on reinforcement",
       "Is fixed by inherited archetypes",
-      "Is a set of independent traits measured by factor analysis",
-      "Develops and exists only in interpersonal situations; it is the pattern of a person's relationships with others",
+      "Is a set of independent traits measured by factor analysis of questionnaires",
+      "Exists only in interpersonal situations; it is the pattern of one's relationships with others",
     ],
     answer: 3,
     explanation:
@@ -271,12 +271,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Conditioning to objects",
       "The objects people own",
-      "Early relationships with caregivers and how these are internalised as mental images of self and others that shape later relationships",
-      "Perception of physical objects",
+      "Early relationships with caregivers, internalised as images of self and others that shape later bonds",
+      "Perception of physical objects and how infants learn that hidden objects still exist",
     ],
     answer: 2,
     explanation:
-      "In psychoanalysis, an 'object' is a person (or part of a person) towards whom feelings are directed. Object relations theorists such as Klein, Fairbairn, Winnicott and Kernberg shifted attention from drives to relationships and their internal representations. The other options use the everyday sense of 'object', which is not what the term means here.",
+      "In psychoanalysis, an 'object' is a person (or part of a person) towards whom feelings are directed. Object relations theorists such as Klein, Fairbairn, Winnicott and Kernberg shifted attention from drives to relationships and their internal representations. Conditioning to objects, owned possessions and the perception or permanence of physical objects all use the everyday sense of 'object', which is not what the term means here.",
     ref: "Greenberg & Mitchell 1983; Feist & Feist, ch. 5",
   }),
   p({
@@ -314,9 +314,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Donald Winnicott's 'transitional object' refers to:",
     options: [
-      "An item such as a soft toy or blanket that comforts the infant and helps the move from dependence on the mother to independence",
+      "A soft toy or blanket that soothes the infant during the move from dependence to independence",
       "The analyst in therapy",
-      "A toy used in play therapy to diagnose anxiety",
+      "A toy used in play therapy to diagnose a child's anxiety about separation",
       "A shared archetype",
     ],
     answer: 0,
@@ -376,8 +376,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Heinz Hartmann, a founder of ego psychology, introduced the idea of the 'conflict-free ego sphere'. This means that:",
     options: [
       "The id is free of conflict",
-      "The ego has no conflicts at all",
-      "Some ego functions, such as perception, memory, language and motor skills, develop independently of conflicts between id and superego",
+      "The ego has no conflicts at all once it has fully matured, as in healthy adults",
+      "Some ego functions, such as perception, memory and language, develop apart from id-superego conflict",
       "Children have no anxiety",
     ],
     answer: 2,
@@ -413,8 +413,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "W. R. D. Fairbairn's main revision of Freud's theory was the claim that:",
     options: [
-      "Libido is object-seeking rather than pleasure-seeking: the basic drive is to form relationships",
-      "The death instinct is the main drive",
+      "Libido is object-seeking rather than pleasure-seeking: the basic drive is for relationships",
+      "The death instinct, rather than libido, is the main drive behind all behaviour",
       "Personality consists of 16 source traits",
       "Behaviour is shaped only by reinforcement",
     ],
@@ -478,8 +478,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Henry Murray's personology used the term 'press' to mean:",
     options: [
       "A stage of psychosexual development",
-      "An inner drive such as the need for achievement",
-      "Environmental forces that help or hinder the satisfaction of a person's needs",
+      "An inner drive such as the need for achievement or affiliation",
+      "Environmental forces that help or hinder the satisfaction of needs",
       "A score on a personality inventory",
     ],
     answer: 2,
@@ -539,8 +539,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "What feature do the neo-Freudians Horney, Fromm and Sullivan share?",
     options: [
-      "Belief that personality is completely determined by genes",
-      "Emphasis on social and cultural influences on personality, rather than mainly biological drives",
+      "Belief that personality is completely determined by genes and early maturation",
+      "Emphasis on social and cultural influences rather than mainly biological drives",
       "Rejection of the idea of anxiety",
       "Use of factor analysis to identify traits",
     ],
@@ -618,10 +618,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Winnicott's phrase 'good-enough mother' means a mother who:",
     options: [
-      "Adapts closely to the infant's needs at first and then gradually allows small, manageable frustrations that help the child grow",
+      "Adapts closely to the infant at first, then allows small, manageable frustrations that help growth",
       "Is perfect and never fails the child",
       "Leaves the child to cope alone from birth",
-      "Follows a strict feeding schedule regardless of the baby's needs",
+      "Follows a strict feeding and sleeping schedule regardless of the baby's signals",
     ],
     answer: 0,
     explanation:
@@ -699,14 +699,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Horney distinguished three views of the self in neurotic people. Which statement describes them correctly?",
     options: [
-      "The real self (who one actually is), the idealised self (an impossible image of who one should be) and the despised self (the self-hatred felt for falling short)",
-      "Id, ego and superego",
-      "Persona, shadow and Self",
-      "Good-me, bad-me and not-me",
+      "Real self (who one is), idealised self (who one should be) and despised self (self-hatred)",
+      "Id (drives), ego (reality) and superego (conscience)",
+      "Persona (public mask), shadow (rejected traits) and Self (the goal of wholeness)",
+      "Good-me (praised), bad-me (punished) and not-me (dreaded)",
     ],
     answer: 0,
     explanation:
-      "Horney held that neurotic people, alienated from their real self, create an idealised self and then hate themselves for not matching it, so they live between grandiosity and self-contempt. The therapeutic aim is to recover the real self. The other options belong to Freud, Jung and Sullivan respectively.",
+      "Horney held that neurotic people, alienated from their real self, create an idealised self and then hate themselves for not matching it, so they live between grandiosity and self-contempt. The therapeutic aim is to recover the real self. Id, ego and superego are Freud's structures; persona, shadow and Self are Jung's; good-me, bad-me and not-me are Sullivan's personifications.",
     ref: "Horney 1950",
   }),
   p({
@@ -733,8 +733,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Sullivan's developmental stages, the preadolescent 'chum' relationship is important because:",
     options: [
-      "It marks the start of the latency period",
-      "It gives the child a first experience of intimacy and equal concern for another person, which can correct distortions from earlier relationships",
+      "It marks the start of the latency period, when sexual interest fades and school begins",
+      "It gives a first experience of intimacy and equal concern for another, which can repair earlier damage",
       "It is when the oral stage ends",
       "It is when the child first learns to walk",
     ],
@@ -780,13 +780,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The main shift from classical drive theory to object relations theory can be summed up as a move from:",
     options: [
       "Using interviews to using brain scans",
-      "Explaining personality through traits to explaining it through learning",
+      "Explaining personality through inherited traits to explaining it through learning",
       "Studying adults to studying animals",
-      "Explaining personality mainly through instinctual drives to explaining it through internalised relationships",
+      "Explaining personality through instinctual drives to explaining it through internalised relationships",
     ],
     answer: 3,
     explanation:
-      "Freud's drive model put sexual and aggressive drives at the centre, with relationships as a way of discharging them. Object relations theorists made relationships the core: what matters is how early experiences with caregivers are internalised as images of self and others. The other options describe different shifts in psychology that are not about object relations.",
+      "Freud's drive model put sexual and aggressive drives at the centre, with relationships as a way of discharging them. Object relations theorists made relationships the core: what matters is how early experiences with caregivers are internalised as images of self and others. Moving from traits to learning, from interviews to brain scans or from adults to animals are different shifts in psychology, not the object relations turn.",
     ref: "Greenberg & Mitchell 1983",
   }),
   p({
@@ -796,10 +796,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Fromm's productive orientation describes a healthy person who:",
     options: [
-      "Uses their powers to love, work and reason creatively, relating to others with care, respect and knowledge",
+      "Uses their powers to love, work and reason creatively, relating with care and respect",
       "Expects others to meet all their needs",
       "Collects and keeps possessions",
-      "Changes personality to suit whatever sells",
+      "Changes their personality to suit whatever sells in the market for jobs and partners",
     ],
     answer: 0,
     explanation:
@@ -868,9 +868,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Sullivan's term 'selective inattention' refers to:",
     options: [
       "Choosing which friends to spend time with",
-      "Paying close attention to threatening information",
+      "Paying close attention to threatening information in order to avoid it",
       "A disorder of attention such as ADHD",
-      "A security operation in which a person simply fails to notice things that would arouse anxiety",
+      "A security operation in which a person fails to notice things that would arouse anxiety",
     ],
     answer: 3,
     explanation:
