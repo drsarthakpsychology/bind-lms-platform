@@ -34,6 +34,10 @@ An ageing brain is like a big old library with a slower librarian: books take lo
 {"prompt": "Normal ageing, or worth checking for a cognitive disorder? Place each change.", "buckets": ["Usually normal ageing", "Worth checking"], "items": [{"text": "Sometimes forgets a neighbour's name but remembers it later", "bucket": 0}, {"text": "Gets lost driving home on a route used for twenty years", "bucket": 1}, {"text": "Takes longer than before to learn a new phone", "bucket": 0}, {"text": "Asks the same question several times in an hour, not remembering the answers", "bucket": 1}, {"text": "Misplaces keys now and then but retraces steps to find them", "bucket": 0}, {"text": "Has started paying the electricity bill twice, or not at all, after decades of managing money", "bucket": 1}, {"text": "Forgot the day's date briefly but quickly worked it out", "bucket": 0}, {"text": "Puts the milk in the cupboard and the keys in the fridge, and cannot explain why", "bucket": 1}]}
 :::
 
+:::widget compare
+{"title": "Normal ageing or dementia?", "a": {"label": "Normal ageing", "points": ["Forgets a name, remembers it later", "Slower to learn a new phone", "Occasionally misplaces glasses, then retraces steps", "Manages money, cooking and travel as before", "Notices the lapses and may joke about them"], "summary": "Ageing: slower, but the knowledge is still there and daily life is intact."}, "b": {"label": "Dementia", "points": ["Forgets whole recent events, such as a family visit", "Cannot learn the new phone at all", "Puts things in odd places and accuses others of theft", "Struggles with money, cooking or familiar routes", "Often unaware; the family notices more"], "summary": "Dementia: information is lost, decline spreads, and independence suffers."}, "caption": "The deciding question is daily life: can the person still manage on their own, as before?"}
+:::
+
 ### Two big problems to tell apart
 This module focuses on two conditions that are often confused:
 - **Delirium**: a **sudden** confusion, over hours or days, caused by a physical illness, a drug, or withdrawal. It is a **medical emergency** and is usually reversible.
@@ -43,6 +47,10 @@ A person with dementia can **also** develop delirium, and often does. Dementia i
 
 :::widget guess
 {"prompt": "In India's national ageing survey, out of every 100 people aged 60 and over, about how many were estimated to have dementia?", "min": 0, "max": 30, "unit": "people", "answer": [6, 9], "reveal": "About 7 to 8 in 100, around 88 lakh people. Rates were higher in women, in rural areas and among those with little schooling. Most were never diagnosed.", "clinician": "Longitudinal Ageing Study in India, Harmonized Diagnostic Assessment of Dementia (LASI-DAD, 2023): weighted prevalence 7.4% in adults 60 and over (about 8.8 million), with higher rates in older age groups, women, rural residents and people with no formal education. Global estimates: about 57 million people with dementia (2019), projected to reach about 150 million by 2050, with the largest increases in low- and middle-income countries."}
+:::
+
+:::widget compare
+{"title": "Delirium or dementia?", "a": {"label": "Delirium", "points": ["Sudden onset, over hours to days", "Fluctuates: lucid in the morning, confused at night", "Attention is badly impaired", "Consciousness clouded or drowsy", "Usually a physical cause; often reversible"], "summary": "Delirium: a sudden, fluctuating disturbance of attention. A medical emergency."}, "b": {"label": "Dementia", "points": ["Gradual onset, over months to years", "Fairly steady from day to day", "Attention often normal early on", "Alert and awake", "Caused by brain disease; usually progressive"], "summary": "Dementia: a slow decline in thinking, with a clear level of consciousness."}, "caption": "Ask the family: 'When was she last her usual self?' Hours or days points to delirium. Delirium on top of dementia is common, so a sudden worsening in someone with dementia also needs a search for a cause."}
 :::
 
 :::clinician
@@ -127,6 +135,10 @@ Delirium means the body is in trouble. It raises the risk of falls, longer hospi
 
 :::widget decide
 {"scene": "Mrs Fernandes, 82, lives with her daughter in Panaji. She has mild memory problems. For the past two days she has been very drowsy, muddled, and talking to her late husband. Today she did not recognise her grandson. Her daughter says, 'Her dementia must be getting worse. Should we increase her memory tablet?'", "ask": "What do you advise?", "choices": [{"label": "Agree that the dementia is progressing and increase her memory medicine", "verdict": "harm", "outcome": "Two days later she is admitted with severe sepsis from a urine infection.", "why": "A sudden change over days is delirium until proven otherwise, even in someone with dementia. Dementia progresses over months, not days."}, {"label": "Explain that a sudden change suggests delirium and arrange a same-day medical assessment for causes such as infection, dehydration or a new medicine", "verdict": "best", "outcome": "She is found to have a urine infection and dehydration. With antibiotics and fluids, she returns to her usual self over the following days.", "why": "Recognising delirium and finding the cause is the key step; most delirium improves when the cause is treated."}, {"label": "Give her a sleeping tablet so she rests", "verdict": "harm", "outcome": "She becomes more confused and falls at night, breaking her wrist.", "why": "Sedatives often worsen delirium and increase falls."}]}
+:::
+
+:::widget timeline
+{"prompt": "Order Mrs Iyer's hospital stay after her hip operation.", "events": [{"label": "Day of surgery: chatting, knows where she is"}, {"label": "Second night: pulls at her drip, thinks nurses are thieves"}, {"label": "Next morning: calm and almost herself again"}, {"label": "That evening: confused and agitated once more"}, {"label": "A urinary infection is found and treated, painkillers reviewed"}, {"label": "Over the next few days her thinking clears, though she tires easily"}], "why": "Sudden onset, ups and downs through the day, worse at night, a physical cause, and recovery when it is treated: the classic course of delirium. A dementia would not appear in a night or clear in days."}
 :::
 
 :::clinician
@@ -573,6 +585,10 @@ The difference between mild and major is about **daily function**, not just test
 - **Risk-factor management** in MCI: blood pressure, diabetes, hearing aids, physical activity, smoking cessation, alcohol reduction, social engagement, treatment of depression and sleep apnoea (FINGER trial, 2015, multidomain intervention improved cognition in at-risk older adults).
 :::
 
+:::widget compare
+{"title": "Mild and major neurocognitive disorder", "a": {"label": "Mild (mild cognitive impairment)", "points": ["A modest decline from previous level", "Clear on testing, and noticed by the person or family", "Still independent in everyday activities", "Needs more effort, lists and reminders", "Some stay stable, some improve, some progress"], "summary": "Mild: decline you can measure, but independence is kept."}, "b": {"label": "Major (dementia)", "points": ["A significant decline from previous level", "Clear on testing", "Needs help with complex tasks such as bills or medicines", "Gets worse in most causes", "May need care planning and legal planning"], "summary": "Major: decline that takes away independence in daily life."}, "caption": "The line between them is independence, not a test score."}
+:::
+
 :::recall
 1. What separates mild from major neurocognitive disorder? || Whether the decline interferes with independence in everyday activities.
 2. Give three instrumental activities of daily living. || Managing money, medicines, cooking, shopping, using the phone, travelling, housework.
@@ -607,6 +623,10 @@ Two abnormal proteins build up:
 - **Tau**, which twists inside nerve cells into **tangles**.
 
 Nerve cells and their connections are lost, starting in the **hippocampus** and nearby areas that are vital for forming new memories, then spreading to other parts of the brain. Levels of the chemical **acetylcholine**, important for memory and attention, fall. The process starts **years or decades** before symptoms appear.
+
+:::widget memoryflow
+{"title": "What Alzheimer's disease does to memory", "caption": "In early Alzheimer's disease, the hippocampus is damaged first, so the encoding step fails: new information reaches working memory but is not stored. The person repeats questions and forgets recent events, while long-held memories, stored across the cortex, survive for longer. Retrieval cues help little, because the memory was never laid down. This is why recall of three words after five minutes is such a sensitive test."}
+:::
 
 ### Risk factors
 - **Age**: the biggest risk factor.
@@ -695,6 +715,14 @@ Damage to the frontal and temporal lobes, often starting in the **50s or 60s**.
 
 :::widget flow
 {"title": "A dementia type decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "Progressive cognitive decline", "detail": "First rule out delirium, depression and reversible causes."}, {"id": "ad", "label": "Memory first, gradual", "detail": "Probable Alzheimer's disease.", "parent": "r"}, {"id": "vd", "label": "Stepwise, strokes, slowed thinking", "detail": "Vascular dementia (often mixed with Alzheimer's).", "parent": "r"}, {"id": "lb", "label": "Fluctuation, visions, parkinsonism, dream enactment", "detail": "Dementia with Lewy bodies, or Parkinson's disease dementia if parkinsonism came over a year earlier.", "parent": "r"}, {"id": "ft", "label": "Behaviour or language first, often under 65", "detail": "Frontotemporal dementia.", "parent": "r"}, {"id": "rp", "label": "Very rapid, with jerks", "detail": "Creutzfeldt-Jakob disease; also consider autoimmune encephalitis.", "parent": "r"}, {"id": "nph", "label": "Walking problems first, then incontinence", "detail": "Normal pressure hydrocephalus.", "parent": "r"}], "caption": "Tap each branch."}
+:::
+
+:::widget compare
+{"title": "Lewy body dementia or Alzheimer's disease?", "a": {"label": "Alzheimer's disease", "points": ["Memory loss for recent events comes first", "Gradual, fairly steady decline", "Hallucinations uncommon early", "Movement usually normal early", "Tolerates antipsychotics somewhat better, though risks remain"], "summary": "Alzheimer's: memory first, steady decline."}, "b": {"label": "Dementia with Lewy bodies", "points": ["Attention and visual skills affected early; memory may be fairly good", "Marked fluctuations in alertness from day to day", "Vivid, detailed visual hallucinations", "Parkinsonism: stiffness, slowness, shuffling", "Acting out dreams (REM sleep behaviour disorder); severe sensitivity to antipsychotics"], "summary": "Lewy body: fluctuations, visual hallucinations, parkinsonism and dream enactment."}, "caption": "Getting this right matters: a standard antipsychotic for hallucinations can cause a dangerous, sometimes fatal, reaction in Lewy body dementia."}
+:::
+
+:::widget brainmap
+{"title": "Where frontotemporal dementia starts", "focus": ["frontal", "prefrontal", "temporal"], "notes": {"frontal": "Behavioural variant: loss of manners and empathy, disinhibition, apathy, compulsive habits, sweet-food cravings.", "prefrontal": "Planning and judgement fail early, often long before memory problems appear.", "temporal": "Language variants: loss of word meaning (semantic) or halting, effortful speech (non-fluent)."}, "caption": "FTD often begins in the 50s or 60s, with personality change rather than forgetting. It is frequently mistaken for depression, mania or a mid-life crisis."}
 :::
 
 ### Other causes to know

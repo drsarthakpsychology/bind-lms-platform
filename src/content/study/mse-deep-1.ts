@@ -117,6 +117,10 @@ Q: Which line is the best MSE entry for appearance?
 {"title": "A restless patient: which kind?", "layout": "tree", "nodes": [{"id": "r", "label": "The patient cannot stay still", "detail": "Ask what it feels like, and check medicines and timing."}, {"id": "ak", "parent": "r", "label": "Inner urge, legs 'won't stay still', after a new antipsychotic", "detail": "Akathisia. Rate it, review the medicine; it can drive distress and even suicidal thoughts."}, {"id": "ag", "parent": "r", "label": "Worry, fear, hand-wringing", "detail": "Agitation from anxiety or depression."}, {"id": "ma", "parent": "r", "label": "Goal-directed, cheerful or irritable, little sleep", "detail": "Manic overactivity."}, {"id": "ca", "parent": "r", "label": "Purposeless, odd, with posturing or echo signs", "detail": "Catatonic excitement: screen for catatonia."}, {"id": "de", "parent": "r", "label": "Fluctuating confusion, worse at night", "detail": "Delirium: look for a medical cause."}], "caption": "Restlessness is a description, not a diagnosis. The tree helps you choose the right word."}
 :::
 
+:::widget compare
+{"title": "Slowed down or wound up?", "a": {"label": "Psychomotor retardation", "points": ["Slow to start moving and to answer", "Long pauses before replies", "Few gestures, a fixed gaze", "Quiet, flat voice", "Typical of severe, melancholic depression"], "summary": "Retardation: everything slows. At the extreme it reaches depressive stupor."}, "b": {"label": "Psychomotor agitation", "points": ["Cannot sit still; gets up and paces", "Wrings hands, picks at skin or clothes", "Restless, pleading, repetitive talk", "Tense, distressed face", "Seen in agitated depression, mixed states, delirium and akathisia"], "summary": "Agitation: purposeless, distressed overactivity. Always check for akathisia if on an antipsychotic."}, "caption": "Describe what you see, in plain words, before you name it. Both can occur in depression, and both raise risk."}
+:::
+
 ### Rapport and attitude
 Note the patient's **attitude to you** (cooperative, guarded, hostile, seductive, over-familiar, indifferent) and how **rapport** developed. Rapport is two-way: write what you observed, not whether you liked them.
 
@@ -368,6 +372,10 @@ Thought form is judged from **speech**. You cannot see thoughts, only how words 
 {"title": "The thought form decision path", "layout": "tree", "nodes": [{"id": "r", "label": "Listen to how the answer travels", "detail": "Thought form is judged from speech. Ask a simple, open question and listen."}, {"id": "g", "parent": "r", "label": "Did they reach the point?", "detail": "Ask this first."}, {"id": "g1", "parent": "g", "label": "Yes, after many details", "detail": "Circumstantiality. Often normal in older or very detailed people."}, {"id": "g2", "parent": "g", "label": "No, drifted off and never returned", "detail": "Tangentiality."}, {"id": "l", "parent": "r", "label": "Can you follow the links?", "detail": "Ask this when ideas jump."}, {"id": "l1", "parent": "l", "label": "Yes, fast, by sound or pun", "detail": "Flight of ideas: think mania."}, {"id": "l2", "parent": "l", "label": "No, links cannot be followed", "detail": "Loosening of association (derailment)."}, {"id": "b", "parent": "r", "label": "Did the flow stop suddenly?", "detail": "Thought block. Ask whether the thought felt taken away (thought withdrawal)."}, {"id": "p", "parent": "r", "label": "Lots of words, little information?", "detail": "Poverty of content. Very few words at all is poverty of speech."}], "caption": "Four questions sort most thought form findings. Always keep a quote that shows which branch you chose."}
 :::
 
+:::widget compare
+{"title": "Flight of ideas or loosening of association?", "a": {"label": "Flight of ideas", "points": ["Fast, pressured speech", "Each link can be followed: by sound, puns or nearby ideas", "The goal is lost, but the steps make sense", "Typical of mania"], "summary": "Flight of ideas: rapid jumps you can trace. 'Car, star, I'm a star, stars in the sky.'"}, "b": {"label": "Loosening of association", "points": ["Speed may be normal", "The links between ideas cannot be followed", "Even the listener cannot reconstruct the path", "Typical of schizophrenia"], "summary": "Loosening: the bridges between ideas are missing. 'The window went yellow because of my brother's electricity.'"}, "caption": "The test is whether you can follow the bridge between one idea and the next, not how fast the person speaks."}
+:::
+
 ### Rate and flow of speech, heard
 | Finding | What you hear | Often seen in |
 |---|---|---|
@@ -521,6 +529,10 @@ Q: A man says, "I know it's ridiculous, but I keep thinking my hands are contami
 {"title": "Where perception goes wrong", "focus": ["temporal", "occipital", "thalamus", "wernicke"], "notes": {"temporal": "Auditory cortex is active when people hear voices. Temporal lobe seizures can cause smells, tastes, deja vu and complex scenes.", "occipital": "Visual cortex. Visual hallucinations suggest delirium, Lewy body disease, Parkinson's disease, drugs, or visual loss (Charles Bonnet syndrome).", "thalamus": "The sensory relay. Disturbed filtering of input is one theory of hallucinations.", "wernicke": "Language areas are active during verbal hallucinations, supporting the idea that voices can be inner speech experienced as coming from outside."}, "caption": "The sense involved is a clue to the cause. Voices are commonest in psychiatric illness; sight, smell and taste raise the chance of a brain or body cause."}
 :::
 
+:::widget compare
+{"title": "True hallucination or pseudo-hallucination?", "a": {"label": "True hallucination", "points": ["Felt as coming from outside: 'from the corner of the room'", "As real and solid as a normal perception", "Not under the person's control", "Often seen in psychosis"], "summary": "True hallucination: in outer space, with the full quality of a real perception."}, "b": {"label": "Pseudo-hallucination", "points": ["Experienced in inner space: 'inside my head'", "Vivid, but lacks the solid quality of real perception", "May be recognised as not quite real", "Seen in grief, trauma, dissociation and some personality disorders, as well as psychosis"], "summary": "Pseudo-hallucination: vivid inner experience. It is not proof of psychosis, and not proof against it."}, "caption": "Ask: 'Where do you hear it: through your ears, or inside your head?' Then judge it in the context of the whole MSE."}
+:::
+
 ### How to ask, in the room
 - Normalise first: "Sometimes when people are under great stress, they hear things others can't hear. Has anything like that happened to you?"
 - Then specify: "Is it one voice or more? Man or woman? Do you recognise it? Where does it seem to come from? What does it say? Does it talk to you or about you? Does it tell you to do things? Do you obey?"
@@ -598,6 +610,10 @@ Cognition is the part of the MSE most often done **badly**: rushed, or skipped b
 {"kind": "normal", "title": "Reading a score against the right norms", "caption": "A cognitive score means little until you know where it sits for people of the same age and education. Move the score: a result that is normal for someone with many years of schooling can be low for them, and a result that looks low may be average for someone who never went to school. Always record education and the language of testing."}
 :::
 
+:::widget memoryflow
+{"title": "Where each bedside test sits in the memory system", "caption": "Months backwards and digit span test attention and working memory. Three words now and again after five minutes test encoding and retrieval. Remote events test long-term storage. If attention fails, the later tests cannot be read: a person who cannot attend cannot register the words. This is why the order matters."}
+:::
+
 ### Delirium, dementia and depression: the bedside contrast
 | | Delirium | Dementia | Depression with cognitive complaints |
 |---|---|---|---|
@@ -621,6 +637,10 @@ Cognition is the part of the MSE most often done **badly**: rushed, or skipped b
 
 :::widget flow
 {"title": "A confused patient: delirium, dementia or depression?", "layout": "tree", "nodes": [{"id": "r", "label": "The patient seems confused or forgetful", "detail": "Ask the family how it started and how it changes through the day."}, {"id": "d1", "parent": "r", "label": "Sudden onset, fluctuating, inattentive", "detail": "Delirium until proven otherwise. Look for infection, drugs, withdrawal, pain, retention, metabolic causes."}, {"id": "d2", "parent": "r", "label": "Slow decline over months, attention fairly kept early", "detail": "Dementia. Screen formally and look for treatable contributors."}, {"id": "d3", "parent": "r", "label": "Followed low mood; 'I don't know' answers; complains loudly", "detail": "Depression with cognitive complaints. Treat and re-test; follow up."}, {"id": "d4", "parent": "r", "label": "More than one?", "detail": "Common in older people: delirium on top of dementia is frequent and often missed."}], "caption": "Onset, course and attention decide most cases at the bedside."}
+:::
+
+:::widget compare
+{"title": "Depression with memory complaints or early dementia?", "a": {"label": "Depression with cognitive complaints", "points": ["Complains a lot about poor memory", "'I don't know' answers, with little effort", "Onset with mood change, often fairly quick", "Low mood, guilt and poor sleep are obvious", "Improves when the depression is treated"], "summary": "Depression: the patient worries about memory more than the tests show."}, "b": {"label": "Early dementia", "points": ["Often unaware of the problem, or plays it down", "Tries hard, gives near misses or makes up answers", "Slow, gradual onset over months to years", "Mood may be normal or low", "Gets steadily worse over time"], "summary": "Dementia: the family worries more than the patient does."}, "caption": "The two often overlap in older adults, and late-life depression can be an early sign of dementia. Treat the depression and recheck cognition afterwards."}
 :::
 
 :::note Make tests fair

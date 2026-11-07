@@ -27,6 +27,10 @@ Addiction changes how the brain's **reward** and **self-control** systems work. 
 {"prompt": "Where on the spectrum? Place each person.", "buckets": ["Low-risk use", "Risky use", "Harmful use", "Addiction"], "items": [{"text": "Anil drinks one or two beers at a friend's party a few times a year", "bucket": 0}, {"text": "Sneha drinks six or seven drinks at parties most weekends and then drives home", "bucket": 1, "why": "No harm has happened yet, but the risk is high."}, {"text": "Mr Rao's liver tests are raised and his doctor says alcohol is the cause, but he drinks only at weekends and can stop easily", "bucket": 2, "why": "Damage is happening, without loss of control."}, {"text": "Prakash has tried to stop drinking many times, starts shaking in the morning without a drink, and has lost his job and family over it", "bucket": 3}, {"text": "Nisha tried cannabis once at a college trip", "bucket": 0}, {"text": "Karan smokes ganja daily, cannot cut down despite trying, misses classes and feels restless and irritable when he runs out", "bucket": 3}]}
 :::
 
+:::widget conditioning
+{"kind": "operant", "title": "How a drug trains the person who takes it", "caption": "Early on, a drink or a smoke adds something pleasant: a high, confidence, calm. That is positive reinforcement, like the rat's food. Later, using mainly takes something unpleasant away: shakes, craving, low mood. That is negative reinforcement, and it is often stronger. Unpredictable rewards, such as a good high some nights and not others, make the habit even harder to give up."}
+:::
+
 ### The four Cs of addiction
 A simple way to remember what makes addiction different from heavy use:
 - **Craving**: a strong urge or desire to use.
@@ -84,6 +88,10 @@ Every addictive substance raises dopamine in this system, often far more and far
 Think of dopamine as a highlighter the brain uses on its to-do list. Food, friends and achievements get a yellow line. Addictive substances grab the pen and colour the whole page bright orange. Soon everything linked to them is highlighted, and the rest of life looks dull by comparison.
 :::
 
+:::widget pathways
+{"system": "dopamine", "title": "The reward pathway that drugs hijack", "caption": "Watch the mesolimbic pathway, from the midbrain to the nucleus accumbens. Every addictive drug, by different routes, raises dopamine here, far more than food or friendship do. The brain learns 'this matters, do it again'. Over time it turns down its own dopamine signalling, so ordinary pleasures feel flat."}
+:::
+
 ### 2. Tolerance
 With repeated use, the brain adapts to the substance. The same amount has **less effect**, so the person needs **more** to get the same effect. A man who once felt drunk after two drinks can now drink a bottle and walk straight.
 
@@ -100,6 +108,10 @@ When the substance is stopped or reduced, the adapted brain is suddenly out of b
 
 :::widget curve
 {"kind": "dose-response", "title": "Tolerance shifts the dose-response curve", "caption": "Move the curve to the right to model tolerance: the same dose now gives a smaller effect, so more is needed. After a period without use (prison, hospital, detox), the curve shifts back to the left, which is why the old dose can then cause a fatal overdose."}
+:::
+
+:::widget conditioning
+{"kind": "classical", "title": "Why the old bar makes you crave", "caption": "Replace the bell with the sight of the theka, the evening hour or old drinking friends, and the food with alcohol. After many pairings, these cues alone bring craving and a body that prepares for the drink. This cue-driven craving can last long after withdrawal has ended, which is why relapse often happens on returning to old places and people. Treatment plans for these triggers."}
 :::
 
 ### Why stopping is hard even after withdrawal ends

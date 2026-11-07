@@ -70,6 +70,10 @@ Exposure to an event or series of events of an extremely threatening or horrific
 | Trauma | Required | Often present but not required |
 The two can co-occur.
 
+:::widget compare
+{"title": "Complex PTSD or borderline personality disorder?", "a": {"label": "Complex PTSD", "points": ["Trauma is required, usually prolonged and inescapable", "Self-image is stably negative: 'I am worthless'", "Pulls away from closeness", "Self-harm is less central", "PTSD symptoms are always present"], "summary": "Complex PTSD: PTSD plus a stable sense of being damaged, and withdrawal from others."}, "b": {"label": "Borderline personality disorder", "points": ["Trauma is common but not required", "Self-image keeps shifting", "Intense, stormy relationships with fear of abandonment", "Repeated self-harm is common", "PTSD symptoms may or may not be present"], "summary": "BPD: instability of self, mood and relationships."}, "caption": "The two can co-occur. The key questions: is the self-image stable or shifting, and does the person pull away or cling?"}
+:::
+
 ### Treatment
 Trauma-focused therapies remain central. Many clinicians use a **phased** approach for severe cases: first stabilisation and skills for emotions and relationships (for example STAIR: skills training in affective and interpersonal regulation), then trauma processing, then reintegration. Evidence suggests trauma-focused therapy can be started sooner than was once thought for many patients.
 
@@ -150,6 +154,10 @@ F. Not better explained by another disorder (for example depression or PTSD).
 
 :::note Culture and mourning
 Mourning customs differ: the thirteen days of Hindu rituals, the forty days in many Muslim and Christian traditions, annual shraddh or barsi observances. These structure grief. A diagnosis must clearly exceed what the person's own community expects.
+:::
+
+:::widget moodline
+{"prompt": "Here is Mrs Rao's mood over the two years after her husband died. Which pattern fits best?", "series": [-2.6, -2.4, -1.6, -2.2, -1, -0.6, -1.4, -0.3, 0, -0.8, 0, 0.2], "labels": ["Death", "Year 1", "Year 2"], "options": ["Ordinary grief: deep at first, then waves that become smaller and further apart", "Prolonged grief disorder", "Bipolar disorder", "Depression that has not changed"], "answer": 0, "why": "The line starts very low, then rises in waves. The dips are around anniversaries, festivals and reminders, and each is shallower than the last. That is the usual shape of grief. In prolonged grief disorder the line would stay very low and flat beyond 12 months."}
 :::
 
 ### Treatment
@@ -255,6 +263,10 @@ Guidelines (NICE, WHO, APA, ISTSS) recommend trauma-focused therapies as first-l
 {"drug": "sertraline", "target": "serotonin transporters in fear and memory circuits", "routes": ["oral"], "notes": {"target": "Over 8 to 12 weeks, serotonin changes help damp hyperarousal and intrusive memories."}, "caption": "Why patients must keep taking the medicine for weeks before judging it."}
 :::
 
+:::widget compare
+{"title": "Before and after trauma-focused therapy", "a": {"label": "Before", "points": ["Nightmares most nights", "Cannot travel by car", "Believes 'It was my fault'", "Drinks to sleep"], "summary": "The memory feels current, the meaning is self-blame, and avoidance keeps both alive."}, "b": {"label": "After about twelve sessions", "points": ["Occasional bad dreams", "Travels by car, a little tense at first", "Believes 'The truck driver caused the crash; I could not have stopped it'", "Sleeps without alcohol"], "summary": "The memory feels like the past, and the meaning has changed. Some symptoms may remain."}, "caption": "Trauma-focused therapies help most people with PTSD, and their benefit tends to last longer than that of medicine alone."}
+:::
+
 :::recall
 1. Name four first-line trauma-focused therapies for adults. || CPT, prolonged exposure, cognitive therapy for PTSD, EMDR (also NET and WET).
 2. Which SSRIs have US approval for PTSD? || Sertraline and paroxetine.
@@ -290,6 +302,10 @@ EMDR is effective, but trials comparing it with and without eye movements sugges
 
 :::widget flow
 {"title": "Cognitive processing therapy in outline", "layout": "chain", "nodes": [{"id": "edu", "label": "Education", "detail": "PTSD as 'stuck' natural recovery."}, {"id": "impact", "label": "Impact statement", "detail": "What the trauma means about self, others and the world."}, {"id": "stuck", "label": "Find stuck points", "detail": "Self-blame, over-generalised beliefs about safety, trust, power, esteem and intimacy."}, {"id": "challenge", "label": "Socratic questioning", "detail": "Worksheets to test and balance beliefs."}, {"id": "themes", "label": "Five themes", "detail": "Safety, trust, power and control, esteem, intimacy."}, {"id": "final", "label": "Final impact statement", "detail": "Compare old and new meanings."}]}
+:::
+
+:::widget conditioning
+{"kind": "operant", "title": "Why avoiding reminders keeps PTSD going", "caption": "In the box, pressing is rewarded with food. In PTSD, avoiding a reminder is rewarded by instant relief from fear (negative reinforcement), so avoidance grows. Prolonged exposure removes the reward: the person stays with the memory and the reminders until they learn that they can bear it and that the danger is over."}
 :::
 
 :::recall
@@ -468,6 +484,10 @@ Q: A disinhibited, overly familiar 3-year-old after institutional neglect most l
 - **Noradrenaline**: raised; drives hyperarousal, startle and the vividness of trauma memory (noradrenaline strengthens emotional memory consolidation).
 - **Cortisol**: surprisingly, often **normal or low** at baseline, with **enhanced negative feedback** of the HPA axis (stronger suppression after dexamethasone), unlike the high cortisol of melancholic depression. CRH in cerebrospinal fluid tends to be raised. Low cortisol at the time of trauma may predict later PTSD, which prompted trials of hydrocortisone soon after trauma (mixed results).
 
+:::widget compare
+{"title": "Stress hormones: melancholic depression and PTSD", "a": {"label": "Melancholic depression", "points": ["Cortisol high", "CRH raised", "Negative feedback weak: dexamethasone fails to suppress cortisol", "The brake on the stress system is worn"], "summary": "Depression: an overdriven axis with a weak brake."}, "b": {"label": "PTSD", "points": ["Cortisol normal or low at baseline", "CRH in spinal fluid raised", "Negative feedback strong: dexamethasone suppresses cortisol more than usual", "Noradrenaline high, driving startle and vivid memory"], "summary": "PTSD: a sensitised axis with an over-tight brake, plus a loud noradrenaline alarm."}, "caption": "Both conditions involve the stress system, but in opposite directions at the cortisol end. This is one reason they are treated as distinct disorders despite their overlap."}
+:::
+
 ### Memory theories
 - **Dual representation theory** (Brewin): trauma memories are stored as **sensory-bound representations** (vivid, involuntary, triggered by cues) that are poorly linked to **contextual representations** (where and when, in words). Therapy aims to link the two, so the memory is experienced as past.
 - **Fear extinction failure**: people with PTSD learn fear normally but have trouble **recalling extinction**, consistent with vmPFC and hippocampal findings.
@@ -513,6 +533,10 @@ Q: Compared with melancholic depression, PTSD is more often associated with:
 ## 4.2 Pharmacology at depth, and what failed [core][advanced]
 ### What works, and how much
 Medicines produce smaller average effects than trauma-focused therapy. SSRIs and venlafaxine have the most evidence. Paroxetine and sertraline are US-approved; fluoxetine and venlafaxine have positive trials.
+
+:::widget guess
+{"prompt": "How large is the average benefit of SSRIs over placebo in PTSD, as a standardised effect size (0.2 small, 0.5 medium, 0.8 large)?", "min": 0, "max": 1.5, "step": 0.05, "unit": "effect size", "answer": [0.2, 0.4], "reveal": "Small to modest: around 0.2 to 0.4. Trauma-focused psychological therapies show larger effects, which is why they come first."}
+:::
 
 ### What has been tried and disappointed
 | Approach | Result |
@@ -575,6 +599,10 @@ Q: Which statement is best supported by evidence?
 ### Why the difference matters
 ICD-11's narrower PTSD reduces overlap with depression and anxiety. The two systems identify overlapping but different people: some meet DSM-5-TR PTSD and not ICD-11, and the reverse. Know which system a study used before comparing rates.
 
+:::widget compare
+{"title": "PTSD in DSM-5-TR and ICD-11", "a": {"label": "DSM-5-TR", "points": ["20 symptoms in four clusters", "Includes negative thinking and mood (cluster D)", "Duration more than 1 month", "Dissociative subtype", "No complex PTSD"], "summary": "DSM-5-TR: broad, with mood and cognition symptoms included."}, "b": {"label": "ICD-11", "points": ["Three core elements only", "Re-experiencing in the present, avoidance, sense of current threat", "Mood and cognition symptoms left out", "Complex PTSD is a separate sibling diagnosis", "Acute stress reaction counted as a normal response"], "summary": "ICD-11: narrow core, with complex PTSD alongside."}, "caption": "The two systems pick out overlapping but different groups of people, so check which one a study used before comparing rates."}
+:::
+
 ### HiTOP and RDoC
 - **HiTOP** places PTSD in the internalising spectrum, distress subfactor, close to depression and GAD; its intrusion and avoidance features also relate to the fear subfactor. Dissociation may form its own dimension.
 - **RDoC** frames PTSD through **negative valence systems** (acute threat, sustained threat), **arousal and regulatory systems** (sleep, arousal), and **cognitive systems** (memory, cognitive control). Research uses fear-potentiated startle and extinction recall paradigms across diagnoses.
@@ -608,6 +636,10 @@ Q: Compared with DSM-5-TR, ICD-11 PTSD:
 
 :::widget reveal
 {"prompt": "MDMA-assisted therapy produced large effects in trials. Why did the FDA still decline approval in 2024?", "answer": "Concerns included functional unblinding (most participants knew whether they had received MDMA, so expectations could drive results), incomplete data on adverse events such as abuse potential and cardiovascular effects, questions about therapist conduct in the trials, and how the therapy component would be standardised. Large effects do not settle these design problems, which is why a further trial or stronger data were requested."}
+:::
+
+:::widget timeline
+{"prompt": "Order the steps in the story of MDMA-assisted therapy for PTSD so far.", "events": [{"label": "Small early trials report large benefit"}, {"label": "Two Phase 3 trials report positive results"}, {"label": "The developer applies to the FDA for approval"}, {"label": "The FDA declines approval and asks for a further trial"}, {"label": "The developer is reported to have resubmitted its application"}], "why": "Positive trials were not enough: blinding, safety data and how the therapy was delivered all came under question. This is a useful model of how evidence is judged before a treatment reaches patients."}
 :::
 
 ### Trauma in India

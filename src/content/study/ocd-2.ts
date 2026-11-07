@@ -22,6 +22,10 @@ Specify **with muscle dysmorphia** (belief that one's build is too small or not 
 {"prompt": "Compared with healthy people and those with OCD, anxiety or eating disorders, how many times more likely are people with BDD to have had suicidal thoughts?", "min": 1, "max": 10, "step": 0.5, "unit": "times", "answer": [3.5, 4.5], "reveal": "About four times. Suicide attempts are about two and a half times more likely. BDD is often dismissed as vanity, but it is one of the most suicidal conditions in this chapter, so risk must always be asked about.", "clinician": "A meta-analysis of 17 studies found pooled odds ratios of about 3.9 for suicidal thoughts and 2.6 for suicide attempts compared with healthy controls and people with eating disorders, OCD or anxiety disorders."}
 :::
 
+:::widget flow
+{"title": "The BDD loop", "layout": "cycle", "nodes": [{"id": "trig", "label": "Trigger", "detail": "Catching sight of herself in a shop window."}, {"id": "focus", "label": "Zooming in", "detail": "Attention narrows onto her nose; she stops seeing her face as a whole."}, {"id": "belief", "label": "Belief", "detail": "'My nose is hideous and everyone notices.'"}, {"id": "ritual", "label": "Rituals", "detail": "Mirror checking for an hour, applying make-up, comparing with photos, asking 'Does it look bad?'"}, {"id": "relief", "label": "Brief relief, then worse", "detail": "Checking calms for a moment, but close inspection makes the flaw seem bigger."}], "edgeLabels": {"relief>trig": "the loop restarts"}, "caption": "CBT for BDD targets the zoomed-in attention and the rituals. Cosmetic surgery rarely helps and often shifts the worry to another feature."}
+:::
+
 ### Treatment
 - **CBT for BDD**: psychoeducation, exposure (for example going out without camouflage), response prevention (reducing checking and grooming), perceptual retraining (looking at the whole body in the mirror neutrally), and work on beliefs about appearance and worth.
 - **SSRIs**, often at high doses, including when insight is absent or delusional. Antipsychotics alone do not help delusional BDD.
@@ -342,6 +346,10 @@ The **error-related negativity**, an EEG wave over the ACC after a mistake, is e
 {"title": "Error signals and repeated firing", "myelinated": true, "caption": "A neuron fires when input crosses threshold. In OCD, error-monitoring circuits in the cingulate cortex appear to cross threshold too easily, producing a strong 'something is wrong' signal even when nothing is wrong."}
 :::
 
+:::widget compare
+{"title": "Goal-directed control and habit", "a": {"label": "Goal-directed", "points": ["Action chosen for its result: 'I wash because my hands are dirty'", "Stops when the goal no longer matters", "Relies more on the prefrontal cortex and caudate", "Flexible and effortful"], "summary": "Goal-directed: you do it because of what it achieves."}, "b": {"label": "Habit", "points": ["Action triggered by a cue: 'I see the tap, I wash'", "Continues even when the result is no longer wanted", "Relies more on the putamen and its loops", "Fast, automatic and hard to stop"], "summary": "Habit: the cue drives the act, whatever the result."}, "caption": "Experiments in which a reward is made worthless show that people with OCD keep responding more than controls. One view is that compulsions may begin as goal-directed acts and harden into habits, with the fear explanation added afterwards."}
+:::
+
 :::recall
 1. Which cortical regions and which part of the striatum are most implicated in OCD? || Orbitofrontal and anterior cingulate cortex; caudate and ventral striatum.
 2. What happens to these circuits after successful treatment? || Hyperactivity partly normalises, with both SSRIs and behaviour therapy.
@@ -422,6 +430,10 @@ For a small group with severe, disabling OCD despite everything, brain-based tre
 | Ablative surgery | Small lesions: anterior capsulotomy (radiofrequency or gamma knife), anterior cingulotomy | About half respond in long-term series; irreversible; risks include apathy and cognitive change |
 | ECT | Electroconvulsive therapy | Not effective for core OCD; may help comorbid severe depression |
 
+:::widget brainmap
+{"title": "Where brain treatments for OCD are aimed", "focus": ["prefrontal", "basal-ganglia", "thalamus", "frontal"], "notes": {"prefrontal": "Deep TMS is aimed at the medial prefrontal cortex and anterior cingulate, usually while symptoms are provoked.", "basal-ganglia": "DBS electrodes sit in the ventral capsule and ventral striatum, a hub in the loop between cortex, striatum and thalamus.", "thalamus": "The loop returns through the thalamus to the cortex. Treatments try to quieten this overactive circuit.", "frontal": "The orbitofrontal cortex is overactive at rest and during symptoms, and settles with successful treatment."}, "caption": "All these treatments aim at one overactive loop: orbitofrontal and cingulate cortex, striatum, thalamus, and back to cortex."}
+:::
+
 ### Who is considered for surgery
 Typical criteria: severe OCD (for example Y-BOCS 28 or more) for at least five years; failure of several SSRIs including clomipramine, antipsychotic augmentation and adequate intensive CBT; capacity to consent; no active substance misuse or severe personality disorder that would prevent follow-up; and review by a multidisciplinary panel.
 
@@ -457,6 +469,10 @@ Q: ECT in OCD is best described as:
 
 ### Beliefs that matter
 The Obsessive Compulsive Cognitions Working Group identified six belief domains: inflated responsibility, overestimation of threat, overimportance of thoughts, need to control thoughts, perfectionism, and intolerance of uncertainty. Not all people with OCD hold them strongly, and some subgroups are driven more by incompleteness than by fear.
+
+:::widget sort
+{"prompt": "Which belief domain does each thought show?", "buckets": ["Responsibility or threat", "Importance or control of thoughts", "Perfectionism or uncertainty"], "items": [{"text": "'If I don't check the gas, a fire will be my fault.'", "bucket": 0}, {"text": "'Having a thought about hitting someone means I might do it.'", "bucket": 1, "why": "Thought-action fusion: treating a thought as morally equal to, or likely to cause, the act."}, {"text": "'I must get rid of this thought or I'll go mad.'", "bucket": 1}, {"text": "'The books must line up exactly, or it feels wrong.'", "bucket": 2}, {"text": "'Germs on the bus will almost certainly make me ill.'", "bucket": 0, "why": "Overestimation of threat."}, {"text": "'I can't rest until I'm 100 percent sure I locked the door.'", "bucket": 2, "why": "Intolerance of uncertainty."}]}
+:::
 
 ### Culture-bound and related presentations
 - **Koro** (fear that the genitals are retracting into the body and will cause death) has occurred in epidemics in Assam and West Bengal, and in South-East Asia. DSM-5-TR lists it under other specified obsessive-compulsive and related disorders.

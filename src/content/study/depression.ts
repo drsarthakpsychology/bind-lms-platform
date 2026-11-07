@@ -259,6 +259,10 @@ The most important fact about depression is hopeful: **it is treatable, and most
 {"title": "Why doing less keeps low mood going", "layout": "cycle", "nodes": [{"id": "a", "label": "Low mood", "detail": "Everything feels heavy and pointless."}, {"id": "b", "label": "Do less", "detail": "Skip college, stop calling friends, stay in bed. It feels like rest."}, {"id": "c", "label": "Fewer good moments", "detail": "No laughter with friends, no small wins, no sunlight. Life gives back less."}, {"id": "d", "label": "Feel worse", "detail": "With fewer good moments the mood sinks further, and doing anything feels even harder."}], "caption": "The circle can be broken anywhere. Small, planned steps (a short walk, one phone call) are one of the simplest ways out. You will learn the full version of this loop in the Beginner level."}
 :::
 
+:::widget thoughtrecord
+{"situation": "Karan, 22, sends his CV to five companies and hears back from none.", "thought": "I am useless. Nobody will ever hire me.", "emotion": "hopeless", "traps": [{"label": "Labelling", "right": true, "why": "One disappointing setback has become a label for his whole self: 'useless'."}, {"label": "Fortune telling", "right": true, "why": "'Nobody will ever' predicts the future as if it were certain."}, {"label": "Mind reading", "why": "He is not guessing what a particular person thinks."}, {"label": "Personalising", "why": "Close, but the main errors are the label and the prediction."}], "forEvidence": ["No replies so far.", "Two friends already have jobs."], "againstEvidence": ["Companies often take a while to reply, and five is a small number.", "He did well in his internship and got a good reference.", "His friends applied to many more places before an offer."], "balanced": "Five applications with no reply yet is disappointing, not proof that I am useless. I can apply more widely and ask my mentor to look at my CV."}
+:::
+
 ### Being a good first listener
 You do not need to fix anyone. You need to be safe, kind and clear.
 1. **Make time.** Put the phone away. Sit at the same level.
@@ -726,6 +730,10 @@ No single cause explains depression. Think **vulnerability plus stress**: genes 
 Monoamines are the traffic signals; neural connections are the road. Antidepressants fix the signals in hours, but it takes much longer for the repair crew (BDNF and plasticity) to rebuild the damaged road.
 :::
 
+:::widget hypnogram
+{"title": "Healthy sleep and depressed sleep", "caption": "Drag through a healthy night first. Then switch on depression: REM arrives much sooner after falling asleep, deep N3 sleep shrinks, there are more awakenings, and the person wakes early and cannot get back to sleep. Early morning waking is a classic feature of melancholic depression."}
+:::
+
 :::recall
 1. What is the main problem with the simple monoamine idea? || Chemistry changes in hours, but mood improves much more slowly; no measurable "imbalance" in most people.
 2. What is BDNF and what happens to it in depression? || A growth factor for neurons; it falls with stress and depression and rises with treatment.
@@ -775,6 +783,10 @@ Negative views of the **self** ("I am a failure"), the **world** ("nothing works
 
 :::widget flow
 {"title": "The depressive maintenance cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Negative thoughts (the triad)", "detail": "'I'm a failure, nothing works, it will always be like this.'"}, {"id": "b", "label": "Low mood", "detail": "The thoughts feel like facts, so mood drops further."}, {"id": "c", "label": "Rumination", "detail": "Going over 'why me, why did I fail' again and again. It feels like problem-solving but solves nothing and deepens the low."}, {"id": "d", "label": "Withdrawal and avoidance", "detail": "Staying in the room, not answering calls, skipping classes. This feels protective."}, {"id": "e", "label": "Fewer rewards, less evidence against", "detail": "No good moments, no chance to see that friends care. The beliefs go unchallenged and seem confirmed."}], "caption": "Press Play and watch each step feed the next. CBT challenges the thoughts, rumination-focused work interrupts the brooding, and behavioural activation breaks the withdrawal. Any break slows the whole wheel."}
+:::
+
+:::widget conditioning
+{"kind": "operant", "title": "When the rewards dry up", "caption": "Watch the last step: when food stops, pressing fades. Lewinsohn's view of depression is similar. Low mood leads to withdrawal, withdrawal cuts off rewarding experiences, and with less reward, the behaviours that used to bring pleasure fade further. Behavioural activation puts the rewards back: plan small, valued activities first, and let mood follow."}
 :::
 
 ### Psychodynamic and attachment views [extra]
@@ -849,6 +861,10 @@ Note: depression in late life can also be an early sign of a later dementia, so 
 
 :::widget reveal
 {"prompt": "A 66-year-old retired teacher in Kolkata is brought for 'forgetfulness' that began a few months after her husband died. She answers most memory questions with 'I don't know, I'm useless now.' What two things would you check first?", "answer": "Her mood (sadness, loss of interest, sleep, appetite, guilt, hopelessness, suicidal thoughts), because this sounds like depression with poor effort; and her physical health (thyroid, B12, blood count, sodium, medicines), because body causes are common at this age. Treating the depression and then re-testing memory is the fairest test of what is going on."}
+:::
+
+:::widget compare
+{"title": "Healthy sleep and depressed sleep, as the patient tells it", "a": {"label": "Healthy sleep", "points": ["Falls asleep within about half an hour", "Wakes once or twice briefly, then drifts off again", "Wakes near the usual time", "Feels reasonably rested"], "summary": "Restful sleep that sets the person up for the day."}, "b": {"label": "Sleep in depression", "points": ["May lie awake worrying, or fall asleep and then wake at 3 or 4 a.m.", "Cannot get back to sleep; mood is worst in the early morning", "Some sleep far too much and still feel tired (atypical pattern)", "Feels unrefreshed whatever the hours"], "summary": "Disturbed sleep is one of the commonest symptoms. Early waking points to melancholic depression; oversleeping to the atypical type."}, "caption": "Ask about sleep in detail: when they go to bed, how long to fall asleep, when they wake, and how they feel on waking."}
 :::
 
 :::recall
@@ -1238,6 +1254,10 @@ Common Indian brand names are examples only; brands change.
 {"scene": "Rohan, 23, a call-centre worker in Gurugram, has had low mood, oversleeping and heavy limbs for over a month. He asks for fluoxetine 'like my friend got'. On careful questioning, he recalls a few days two years ago when he slept three hours a night, felt brilliant, talked non-stop and spent his savings on a bike. His mother says that 'it happened once more after that'. His uncle takes lithium.", "ask": "What is your plan?", "choices": [{"label": "Start fluoxetine 20 mg alone, as he requests", "verdict": "harm", "outcome": "Soon after, Rohan stops sleeping, becomes irritable and runs up debt. He is admitted with a manic episode.", "why": "Past hypomanic episodes plus a family history of bipolar disorder mean this is probably bipolar depression. An antidepressant alone can trigger mania, mixed states or rapid cycling."}, {"label": "Explain that his past highs change the picture, treat as bipolar depression (for example quetiapine, lurasidone, lamotrigine or lithium), start a mood chart and involve his mother", "verdict": "best", "outcome": "Rohan's mood steadies over the following weeks without a switch. He learns his early warning signs.", "why": "Antidepressant monotherapy is avoided in bipolar disorder. Evidence-based treatments for bipolar depression are used instead, with psychoeducation."}, {"label": "Refuse any treatment until a manic episode is seen", "verdict": "harm", "outcome": "Rohan stays depressed and stops attending.", "why": "The history already gives the answer. Waiting leaves a depressed young man untreated."}]}
 :::
 
+:::widget release
+{"transmitter": "serotonin", "title": "What antidepressants change at the serotonin synapse", "caption": "Play the normal signal first: release, binding, reuptake and breakdown by MAO. Then pick the SSRI: reuptake is blocked, so serotonin stays longer in the gap. Pick the MAOI: breakdown inside the nerve ending is blocked, so more is stored and released. The change in the synapse is fast; the change in mood is slower, because it depends on receptors and circuits adapting."}
+:::
+
 :::recall
 1. Name eight classes of antidepressant with an example each. || SSRI, SNRI, NaSSA, NDRI, multimodal, melatonin agonist, TCA, MAOI.
 2. Which antidepressant would you pick for poor sleep and appetite? || Mirtazapine.
@@ -1360,6 +1380,10 @@ Talking therapies are as effective as medicines for mild to moderate depression,
 | **Problem-solving therapy** | Define a problem, list options, choose, try, review | Brief |
 | **Mindfulness-based cognitive therapy (MBCT)** | Notice thoughts without being carried by them | Group; prevents relapse after 3 or more episodes |
 | **Psychodynamic therapy** | Understand repeating patterns from early relationships | Brief or long-term |
+
+:::widget thoughtrecord
+{"situation": "Meena's daughter-in-law forgot to call on Meena's birthday.", "thought": "Nobody in this family cares about me. I have always been a burden to everyone.", "emotion": "sad", "traps": [{"label": "Overgeneralising", "right": true, "why": "One missed call becomes 'nobody' and 'always'."}, {"label": "Mental filter", "right": true, "why": "She sees the missed call and filters out the other calls and gifts she received."}, {"label": "Catastrophising", "why": "She is not predicting a disaster."}, {"label": "Should statements", "why": "There is no rule about how things must be."}], "forEvidence": ["Her daughter-in-law did not call.", "She has felt lonely since moving to the city."], "againstEvidence": ["Her son and grandson called in the morning and brought sweets.", "Her daughter-in-law is working night shifts this month.", "Her grandson asks for her help with homework every evening."], "balanced": "I am hurt that she did not call, and I can tell her so. My son and grandson clearly care. Feeling like a burden is a symptom of my depression, not a fact."}
+:::
 
 ### Therapy at scale: lessons from India and beyond
 - **Healthy Activity Program (HAP)**, developed by Sangath in Goa, trains lay counsellors to deliver behavioural activation in primary care. In a large trial it improved remission from moderate to severe depression and was cost-effective.
@@ -1704,6 +1728,10 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 - In many people with severe, melancholic or psychotic depression, feedback is weak: cortisol stays high and fails to fall after **dexamethasone** (the dexamethasone suppression test, now a research tool, not a diagnostic test).
 - High cortisol over time reduces hippocampal neurogenesis and dendrite branching, linking stress, memory problems and depression.
 - Early adversity can programme the stress system, partly through **epigenetic** changes (chemical tags that alter how genes are read, for example on the glucocorticoid receptor gene).
+
+:::widget stress
+{"title": "The stress system in depression", "caption": "In many people with melancholic depression the last step is the problem: cortisol stays high and the brake fails, so dexamethasone does not suppress cortisol as it should. Lasting high cortisol is linked to reduced BDNF and a smaller hippocampus, and many of these changes reverse with recovery."}
+:::
 
 ### Neurotrophic and glutamate story
 - **BDNF**, acting on **TrkB** receptors, supports synapse growth. Stress lowers BDNF; antidepressants, ECT and exercise raise it.

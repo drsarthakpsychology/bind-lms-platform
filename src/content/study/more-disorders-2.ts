@@ -25,6 +25,10 @@ For children and adolescents, BMI centiles or percentage of median BMI for age a
 {"vignette": "Sneha, 19, a college student in Chennai, has lost 14 kg over the past year. Her BMI is now 15.4. She eats one small meal a day and walks for three hours. She says, 'I'm still too big around the thighs,' and becomes tearful when asked to eat rice. She weighs herself several times a day; her mood depends on the number. She does not think her weight is a problem, though her periods stopped months ago and she faints at times. She denies binge eating or vomiting.", "rule": "Tick every core feature present. Anorexia needs all three core features. Then note the type and the severity from the BMI.", "symptoms": [{"label": "Restriction leading to significantly low weight", "present": true, "core": true, "why": "BMI 15.4 after restricting and over-exercising."}, {"label": "Fear of weight gain or behaviour that prevents weight gain", "present": true, "core": true, "why": "Distress at eating rice; hours of walking."}, {"label": "Disturbed body image, self-worth tied to weight, or lack of recognition of seriousness", "present": true, "core": true, "why": "Sees her thighs as too big; mood depends on the scales; denies the problem."}, {"label": "Binge eating or purging in the recent past", "present": false, "why": "Denies both, so the restricting type."}, {"label": "Stopped periods", "present": true, "why": "A common medical consequence, no longer required for the diagnosis."}], "need": 3, "needCore": true, "verdict": "All three core features are present: anorexia nervosa, restricting type, severe (BMI 15 to 15.99). Fainting and amenorrhoea point to medical risk. Next: urgent medical assessment (heart rate, blood pressure lying and standing, temperature, ECG, electrolytes, glucose, phosphate), assess suicide risk, and plan specialist treatment."}
 :::
 
+:::widget guess
+{"prompt": "Out of 100 people with anorexia nervosa, about how many die within ten years of illness?", "min": 0, "max": 30, "unit": "people", "answer": [4, 6], "reveal": "About 5 in every 100 per decade, mostly from heart and other medical complications of starvation, and from suicide. That is far above the rate for people of the same age without the illness."}
+:::
+
 ### The body under starvation
 Starvation affects nearly every organ:
 - **Heart**: slow heart rate, low blood pressure, fainting, rhythm problems, a shrinking heart muscle; the leading cause of death.
@@ -114,6 +118,10 @@ Signs to look for: swollen salivary glands (puffy cheeks), dental erosion, callu
 {"prompt": "For bulimia and binge-eating disorder, binges (and, in bulimia, compensatory behaviours) must happen on average at least how many times a week?", "min": 0, "max": 7, "unit": "times a week", "answer": [1, 1], "reveal": "At least once a week, sustained over a long period. Severity in bulimia is rated by how many compensatory episodes happen per week; in binge-eating disorder, by the number of binges per week.", "clinician": "DSM-5-TR: binge eating and inappropriate compensatory behaviours both occur, on average, at least once a week for 3 months (bulimia); binge eating at least once a week for 3 months (BED). Bulimia severity by compensatory episodes per week: mild 1 to 3, moderate 4 to 7, severe 8 to 13, extreme 14 or more. BED severity by binges per week: mild 1 to 3, moderate 4 to 7, severe 8 to 13, extreme 14 or more."}
 :::
 
+:::widget compare
+{"title": "Anorexia or bulimia?", "a": {"label": "Anorexia nervosa", "points": ["Significantly low body weight", "Restriction drives the weight loss; some also binge and purge", "Often does not see the problem", "Medical risk from starvation: slow heart, low blood pressure, bone loss"], "summary": "Anorexia: low weight is the defining feature."}, "b": {"label": "Bulimia nervosa", "points": ["Weight usually normal or above", "Repeated binges with a sense of loss of control", "Compensates by vomiting, laxatives, fasting or exercise", "Often ashamed and secretive; low potassium and tooth damage from vomiting"], "summary": "Bulimia: the binge and compensation cycle, at a normal weight."}, "caption": "If a person binges and purges and is significantly underweight, the diagnosis is anorexia nervosa, binge-eating or purging type."}
+:::
+
 ### ARFID, pica and rumination
 - **ARFID** (avoidant/restrictive food intake disorder): avoidance or restriction of food because of **sensory dislike**, **fear of choking or vomiting**, or **low interest in eating**, causing weight loss or poor growth, nutritional deficiency, dependence on supplements or tube feeding, or social problems. No body image disturbance. Common in autistic children, but also in adults.
 - **Pica**: persistently eating non-food substances (soil, chalk, paint, ice, hair) beyond the age when this is normal. Seen with iron deficiency, pregnancy, intellectual disability and autism. Check for **iron deficiency, lead poisoning** and gut blockage.
@@ -168,6 +176,10 @@ Insomnia often begins with a stressor, then **keeps going** because of habits an
 
 :::widget flow
 {"title": "Spielman's 3P model of insomnia", "layout": "chain", "nodes": [{"id": "a", "label": "Predisposing", "detail": "A tendency to worry, light sleep, hyperarousal, family history."}, {"id": "b", "label": "Precipitating", "detail": "A stressor: exams, illness, a new baby, bereavement, shift change."}, {"id": "c", "label": "Perpetuating", "detail": "Habits that keep it going: long time in bed awake, napping, clock-watching, worry about sleep, alcohol, sleeping pills."}, {"id": "d", "label": "Chronic insomnia", "detail": "Continues long after the stressor ends, maintained by the perpetuating factors."}], "caption": "Press Play. CBT-I targets the perpetuating factors, which is why it works even when the original stress has gone."}
+:::
+
+:::widget conditioning
+{"kind": "classical", "title": "How the bed becomes a cue for being awake", "caption": "In chronic insomnia, the bed is paired night after night with lying awake, worrying and watching the clock. Like the bell, the bedroom alone then sets off alertness and frustration, even when the person is tired. Stimulus control in CBT for insomnia reverses this: use the bed only for sleep, get up if not asleep in about 20 minutes, and return only when sleepy, so the bed is re-paired with sleep."}
 :::
 
 ### Excessive daytime sleepiness
@@ -226,6 +238,10 @@ When the body clock is out of step with the timing a person needs:
 - **Non-24-hour type**: the clock drifts later each day; common in totally blind people.
 
 **Light** and **melatonin**, timed correctly, shift the body clock: morning light pulls it earlier; evening light pushes it later.
+
+:::widget flow
+{"title": "How light sets the body clock", "layout": "chain", "nodes": [{"id": "l", "label": "Morning light enters the eye", "detail": "Special light-sensitive cells in the retina respond most to bright, blue-rich light."}, {"id": "s", "label": "The master clock", "detail": "The suprachiasmatic nucleus in the hypothalamus is reset each day by this signal."}, {"id": "p", "label": "The pineal gland", "detail": "As darkness falls, the clock signals the pineal gland to release melatonin."}, {"id": "m", "label": "Melatonin rises", "detail": "Opens the 'sleep gate' in the evening and peaks in the middle of the night."}, {"id": "b", "label": "Late screens and late light", "detail": "Bright light at night delays melatonin and pushes the clock later, as in delayed sleep phase in teenagers."}], "caption": "Treatment for body-clock problems uses this chain: bright light in the morning, dim light at night, and well-timed low-dose melatonin."}
+:::
 
 ### Parasomnias: unusual events in sleep
 **NREM parasomnias** (from deep sleep, usually in the **first third of the night**, more in children):
@@ -324,6 +340,10 @@ Positive signs include:
 {"title": "Body symptoms without a disease explanation: sorting the possibilities", "layout": "tree", "nodes": [{"id": "r", "label": "Distressing body symptoms", "detail": "First, a proper medical assessment. Then ask about intention and the person's response to the symptoms."}, {"id": "ssd", "label": "Real symptoms, excessive worry and effort", "detail": "Somatic symptom disorder.", "parent": "r"}, {"id": "ia", "label": "Few symptoms, intense fear of illness", "detail": "Illness anxiety disorder.", "parent": "r"}, {"id": "fnd", "label": "Neurological symptoms with positive signs", "detail": "Functional neurological disorder.", "parent": "r"}, {"id": "fd", "label": "Deliberately produced, no external reward", "detail": "Factitious disorder (imposed on self or another).", "parent": "r"}, {"id": "mal", "label": "Deliberately produced for gain", "detail": "Malingering: not a mental disorder.", "parent": "r"}, {"id": "dep", "label": "Part of depression or anxiety", "detail": "Treat the underlying disorder; common in Indian clinics.", "parent": "r"}], "caption": "Tap each branch."}
 :::
 
+:::widget compare
+{"title": "Somatic symptom disorder or illness anxiety disorder?", "a": {"label": "Somatic symptom disorder", "points": ["One or more distressing physical symptoms are prominent", "Excessive thoughts, worry or time spent on the symptoms", "The symptoms may or may not have a medical cause", "Lasts usually 6 months or more"], "summary": "Somatic symptom disorder: the symptom is centre stage, with too much worry about it."}, "b": {"label": "Illness anxiety disorder", "points": ["Few or only mild physical symptoms", "Fear of having or getting a serious illness", "Checks the body, searches online, seeks or avoids doctors", "Reassurance helps only briefly"], "summary": "Illness anxiety: the fear of disease is centre stage, more than any symptom."}, "caption": "Both replace the old term hypochondriasis. Ask: is the person mainly troubled by a symptom, or mainly afraid of a disease?"}
+:::
+
 ### Dhat syndrome
 A culture-related presentation seen across South Asia: young men attribute weakness, fatigue, poor concentration, sexual problems or anxiety to the **loss of semen** (in urine, at night, or through masturbation), which they believe is a vital essence. It often hides **depression, anxiety or sexual dysfunction**. Helpful care: respectful listening, clear education about sexual physiology, treating underlying anxiety or depression, and avoiding ridicule.
 
@@ -385,6 +405,10 @@ Possession and trance experiences are common in many Indian religious and cultur
 
 :::widget decide
 {"scene": "Kavitha, 19, from a village near Madurai, married eight months ago. She has had repeated episodes of falling to the floor, shaking and speaking in a man's voice, saying she is the spirit of her late uncle. She has no memory afterwards. Her in-laws have taken her to several temples. In private, she says she is not allowed to visit her parents and is criticised for not becoming pregnant.", "ask": "What is the most helpful approach?", "choices": [{"label": "Tell the family she is pretending for attention", "verdict": "harm", "outcome": "The episodes become more frequent; she is punished at home.", "why": "Dissociative episodes are not deliberate. Blame worsens distress and risk."}, {"label": "Recognise a probable dissociative disorder linked to stress; respect the family's beliefs while explaining the link with stress; meet Kavitha alone to explore her situation and safety; involve the family in reducing stress (such as visits to her parents); offer psychological therapy and treat any depression", "verdict": "best", "outcome": "With the family agreeing to regular visits to her parents and less pressure about pregnancy, plus counselling, her episodes reduce sharply. Her husband becomes more supportive.", "why": "Dissociative states in young married women often express distress and lack of voice. Exploring stressors, safety and family dynamics, without dismissing culture, works best."}, {"label": "Start an antipsychotic for 'hearing a spirit'", "verdict": "harm", "outcome": "She becomes drowsy and gains weight; the episodes continue.", "why": "This is not psychosis. Antipsychotics are not a treatment for dissociation."}]}
+:::
+
+:::widget compare
+{"title": "A cultural trance or a dissociative disorder?", "a": {"label": "Accepted trance or possession", "points": ["Happens during a festival, ritual or at a shrine", "Expected and valued by the community", "Begins and ends at fitting times", "No distress or impairment afterwards"], "summary": "Culturally sanctioned: part of shared religious practice, and not a disorder."}, "b": {"label": "Possession-form dissociative disorder", "points": ["Happens outside accepted ritual, at home or at work", "Unwanted and distressing to the person and family", "Recurs and disrupts daily life", "Often follows stress, conflict or trauma"], "summary": "A disorder: involuntary, out of place, distressing and impairing."}, "caption": "Judge it against the person's own culture, ask what the family thinks it means, and look for stress behind it."}
 :::
 
 :::clinician

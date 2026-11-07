@@ -26,11 +26,19 @@ CBT is first-line for every anxiety disorder in adults and children. Within CBT,
 {"scene": "Prakash, 45, from Indore, has agoraphobia. On his first exposure task, a short walk to the local market, he starts to feel dizzy after three minutes and wants to go home. He asks, 'Can I hold my wife's hand and walk back now?'", "ask": "What do you encourage?", "choices": [{"label": "'Yes, go home now; we'll try again next week.'", "verdict": "harm", "outcome": "He goes home relieved. Next week the walk feels even harder.", "why": "Escaping at peak fear teaches that escape was what saved him. The fear is strengthened."}, {"label": "'Let's stay here for a few more minutes and see what actually happens to the dizziness, without holding on. You can rate it every minute.'", "verdict": "best", "outcome": "The dizziness peaks and then fades. He notices he did not faint. He completes the walk.", "why": "Staying until the feared outcome fails to happen, without safety behaviours, produces the new learning that changes fear."}, {"label": "'Take a deep breath, hold your wife's hand, and finish the walk.'", "verdict": "ok", "outcome": "He finishes, but credits his wife's hand for getting through.", "why": "Completing the task is good, but the safety behaviour steals the credit and limits learning."}]}
 :::
 
+:::widget compare
+{"title": "Before and after a course of exposure", "a": {"label": "Before", "points": ["Avoids the metro and crowded markets", "Carries water and checks her pulse 'just in case'", "Rates the metro 90 out of 100 for fear", "Believes 'If I panic, I will faint'"], "summary": "Avoidance keeps the belief untested, so the fear stays high."}, "b": {"label": "After", "points": ["Travels by metro to college", "Has dropped the water bottle and pulse checks", "Rates the metro 25 out of 100", "Believes 'Panic is unpleasant but it passes, and I have never fainted'"], "summary": "Staying in feared situations without safety behaviours tested the belief, and it changed."}, "caption": "What changes is not only the fear score but the prediction behind it."}
+:::
+
 ### Cognitive techniques
 - **Psychoeducation**: what anxiety is, what each sensation means.
 - **Cognitive restructuring**: noticing anxious predictions, examining evidence, and generating balanced alternatives.
 - **Behavioural experiments**: testing a prediction in real life ("If I let my hands shake while holding tea, people will stare and laugh"). The experiment, not the argument, changes belief.
 - For GAD: worry awareness, problem-solving for real problems, tolerating uncertainty, and testing beliefs about worry.
+
+:::widget thoughtrecord
+{"situation": "Climbing the stairs to the third floor, Amit feels his heart pounding.", "thought": "My heart is racing like this because I am having a heart attack.", "emotion": "terrified", "traps": [{"label": "Catastrophic misinterpretation of body sensations", "right": true, "why": "A normal response to exertion is read as a sign of disaster. This is the heart of Clark's model of panic."}, {"label": "Jumping to conclusions", "right": true, "why": "He decides on the cause without any evidence."}, {"label": "Labelling", "why": "He is not calling himself a name."}, {"label": "All-or-nothing thinking", "why": "Not quite: the problem is the meaning given to the sensation."}], "forEvidence": ["His heart is beating very fast.", "His chest feels tight."], "againstEvidence": ["Anyone's heart races after three flights of stairs.", "He has had ten such attacks and his ECGs were always normal.", "The feeling eased when he sat down, which a heart attack would not do."], "balanced": "My heart is pounding because I climbed the stairs and then got frightened. It is unpleasant, but it is not dangerous, and it will settle."}
+:::
 
 ### Which therapy for which disorder
 | Disorder | Best-supported psychological treatment |
@@ -139,6 +147,10 @@ Clonazepam, alprazolam, lorazepam and diazepam calm anxiety within an hour. But:
 
 :::widget journey
 {"drug": "alprazolam", "target": "GABA-A receptors in the amygdala, cortex and brainstem", "routes": ["oral"], "notes": {"gut": "Absorbed quickly, so calm arrives within an hour.", "liver": "Broken down by CYP3A4; fluvoxamine, some antifungals and grapefruit raise levels.", "out": "Short half-life: levels fall within hours, bringing rebound anxiety between doses."}, "caption": "Fast in, fast out: why alprazolam relieves quickly but traps people in dependence."}
+:::
+
+:::widget compare
+{"title": "SSRI or benzodiazepine for an anxiety disorder?", "a": {"label": "SSRI or SNRI", "points": ["Slow: benefit builds gradually", "May cause jitteriness at the start", "No dependence, though stopping suddenly can cause discontinuation symptoms", "Treats the disorder and any depression", "First line for long-term treatment"], "summary": "Slower to start, but safe for long-term use and it treats the disorder."}, "b": {"label": "Benzodiazepine", "points": ["Fast: calm within an hour", "Drowsiness, poor memory and falls", "Tolerance, dependence and withdrawal with regular use", "Dangerous with alcohol or opioids", "Can block learning in exposure therapy"], "summary": "Fast relief, for short-term or crisis use only, with clear plans to stop."}, "caption": "The speed of a benzodiazepine is what makes it tempting, and what makes it a trap."}
 :::
 
 :::recall
@@ -433,6 +445,10 @@ Blocking the serotonin transporter raises serotonin first around the cell bodies
 {"receptor": "GABA-A", "title": "The GABA-A receptor and a benzodiazepine", "caption": "Explore the four ligand types. A benzodiazepine is not on this scale itself: it is a positive allosteric modulator, binding between the alpha and gamma-2 subunits and making each GABA molecule open the chloride channel more often. It boosts GABA's own signal but cannot open the channel alone, which gives it a ceiling; barbiturates and alcohol lack that ceiling at high doses."}
 :::
 
+:::widget curve
+{"kind": "dose-response", "title": "Full and partial agonists: diazepam and buspirone", "caption": "Benzodiazepines boost GABA-A signalling strongly, so higher doses give ever more sedation. Buspirone is a partial agonist at serotonin 1A receptors: its effect rises and then levels off below a full agonist's ceiling. Toggle the partial agonist to see why buspirone is milder, slower and does not cause dependence."}
+:::
+
 :::recall
 1. Explain the delay in SSRI benefit. || 5-HT1A autoreceptors must desensitise before forebrain serotonin release rises.
 2. Where do benzodiazepines bind, and what do they change? || Between the alpha and gamma-2 subunits of GABA-A; they increase the frequency of channel opening.
@@ -481,6 +497,10 @@ Fear reduction within a session predicts later outcome less than expected; toler
 
 :::widget curve
 {"kind": "forgetting", "title": "Spacing exposure practice", "caption": "New safety learning fades without practice, like any memory. Spaced, repeated practice in varied settings keeps it retrievable and reduces the return of fear. Add review points to see the curve flatten."}
+:::
+
+:::widget conditioning
+{"kind": "classical", "title": "Extinction does not erase the fear", "caption": "Watch the last step closely. The response fades because a new safety memory is learned on top of the old fear memory. Time passing (spontaneous recovery), a new place (renewal) or a fresh stress (reinstatement) can let the old memory win again. This is why exposure is varied, spaced and practised in many settings."}
 :::
 
 :::recall
@@ -554,6 +574,10 @@ Q: The HiTOP finding that GAD clusters with major depression rather than with ph
 
 :::widget reveal
 {"prompt": "Why should a 5-point HAM-A advantage in a psychedelic trial be read with extra caution?", "answer": "Blinding is almost impossible: nearly everyone can tell whether they received LSD, so expectations can inflate the drug effect and deflate the placebo effect. Trials also select motivated volunteers, exclude people with psychosis risk or heart disease, and follow them for weeks, not years. Durability, safety in ordinary clinics, and how many doses are needed remain open questions."}
+:::
+
+:::widget timeline
+{"prompt": "A new medicine for GAD is in the news. Order the steps before it should change practice.", "events": [{"label": "Laboratory and animal studies"}, {"label": "Small safety studies in healthy volunteers"}, {"label": "Small trials in patients to find the dose"}, {"label": "Large randomised, blinded trials against placebo"}, {"label": "Approval by a drug regulator"}, {"label": "Independent replication and long-term safety data"}], "why": "Headlines often report the dose-finding stage as a breakthrough. Practice should change only after large blinded trials, regulatory review and replication by other groups."}
 :::
 
 ### Other developments

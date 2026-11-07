@@ -138,6 +138,10 @@ So every clinician who sees a depressed person asks: **"Have you ever had the op
 
 The kind of high decides the type of bipolar disorder, which you will learn exactly in the Beginner level.
 
+:::widget compare
+{"title": "A very good mood or a manic episode?", "a": {"label": "A very good mood", "points": ["Happy after good news, and it makes sense", "Sleeps as usual and feels rested", "Plans are exciting but realistic", "Friends enjoy their company", "Settles back in a day or two"], "summary": "A good mood: in proportion, and the person is still themselves."}, "b": {"label": "Mania", "points": ["High or irritable for no clear reason, lasting days", "Sleeps 2 or 3 hours and feels full of energy", "Grand plans: quits a job, spends savings, big loans", "Talks fast, jumps between ideas, will not be interrupted", "Family say 'this is not him'"], "summary": "Mania: a change from the usual self, with less need for sleep, risky actions and harm to life."}, "caption": "Families often notice first. The key clues are the drop in need for sleep and the change from the person's usual self."}
+:::
+
 :::recall
 1. Do people with bipolar disorder spend more time high or low? || Low (depressed).
 2. Why must you ask about past highs before treating depression? || An antidepressant alone can tip someone with bipolar disorder into a high or rapid swings.
@@ -586,6 +590,10 @@ Q: A woman has had recurrent depressions and one clear episode of hypomania, nev
 {"title": "Triggers sit on top of vulnerability", "shape": "iceberg", "layers": [{"label": "Triggers you can see", "detail": "Lost sleep, travel, exams, weddings, a newborn, stopping lithium, antidepressants, steroids, cannabis."}, {"label": "The body clock", "detail": "A daily rhythm that is easily knocked off course."}, {"label": "Reward drive", "detail": "Goals and successes can fire up drive very strongly."}, {"label": "Genes", "detail": "The most heritable of the common mood disorders, through many genes of small effect."}], "caption": "The trigger is the tip. Treatment protects the layers below as well: medicines, sleep, routine."}
 :::
 
+:::widget hypnogram
+{"title": "Sleep in the mood swings", "caption": "Drag through a healthy night, then switch on depression: bipolar depression often brings the same changes as unipolar depression, though some people sleep far more instead. Mania is the reverse problem: the night shrinks to a few hours without tiredness. Sleep loss can itself trigger mania, so protecting sleep is one of the most useful things a person with bipolar disorder can do."}
+:::
+
 :::recall
 1. Which common mood disorder is most heritable? || Bipolar disorder.
 2. What is the risk for a first-degree relative? || About 5 to 10%.
@@ -796,6 +804,10 @@ Q: A manic patient on an SSRI for depression is brought in. The first medicine c
 ## 3.2 Bipolar depression [core][beginner]
 :::trap Antidepressants alone are risky
 An antidepressant **without** a mood stabiliser can trigger mania, mixed states or rapid cycling, and often works less well in bipolar depression. Avoid antidepressant monotherapy in bipolar I. If one is used (sometimes in bipolar II, or with a mood stabiliser), choose an SSRI or bupropion rather than a tricyclic or venlafaxine, avoid it in mixed features or rapid cycling, and stop it once the depression resolves.
+:::
+
+:::widget compare
+{"title": "Clues that a depression may be bipolar", "a": {"label": "More typical of unipolar depression", "points": ["First episode later in adult life", "No close relative with bipolar disorder", "Gradual onset", "Insomnia and poor appetite", "Responds steadily to an antidepressant"], "summary": "These features fit unipolar depression, though none rules bipolar out."}, "b": {"label": "Raise the suspicion of bipolar disorder", "points": ["First episode in the teens or early twenties", "A parent or sibling with bipolar disorder", "Sudden onset, oversleeping and overeating, heavy limbs", "Psychotic features, or onset after childbirth", "Became high, agitated or 'wired' on an antidepressant"], "summary": "These clues call for a careful search for past hypomania before an antidepressant is given alone."}, "caption": "Always ask the family about past highs. Many people with bipolar disorder spend years being treated for depression only."}
 :::
 
 ### Options with good evidence
@@ -1048,6 +1060,10 @@ A **relapse signature** is a person's own early warning signs, in order, with ag
 {"title": "A biopsychosocial formulation for bipolar disorder", "shape": "rings", "layers": [{"label": "Biological", "detail": "Strong family history, sleep loss on night shifts, cannabis use, stopping lithium suddenly."}, {"label": "Psychological", "detail": "Little insight during highs, shame after them, beliefs that medicine is 'for mad people', high reward drive."}, {"label": "Social", "detail": "Family conflict and fear of stigma at marriage time, money lost in a high, a supportive sister who can act as nominated representative."}], "caption": "Tap each ring. Each ring holds both risks and strengths, and each needs its own part of the plan."}
 :::
 
+:::widget timeline
+{"prompt": "Ravi has learned his relapse signature. Order his early warning signs of mania, from first to last.", "events": [{"label": "Goes to bed later, wakes early, but feels fine"}, {"label": "Many new ideas; starts several projects at once"}, {"label": "Talks faster; friends say he is 'on fire'"}, {"label": "Irritable when interrupted; spends on things he does not need"}, {"label": "Barely sleeps, takes out a loan for a business plan"}], "why": "For most people the first sign is a change in sleep. Catching the signature early lets the person and family act at once: protect sleep, cut stimulation, contact the team and adjust medicine, before a full episode."}
+:::
+
 ### Psychological and social care
 - **Psychoeducation** (individual or group): one of the most effective relapse-prevention tools.
 - Mood charting; the relapse signature.
@@ -1089,6 +1105,10 @@ Q: Ravi's agreed early warning sign is sleeping 5 hours and feeling fine. When i
 | Short episodes, later onset | Rapid cycling, mixed states |
 | Few psychotic features | Substance use, especially alcohol and cannabis |
 | Good support | Psychotic features, comorbid anxiety, poor work history |
+
+:::widget timeline
+{"prompt": "Put the common path of bipolar disorder in order.", "events": [{"label": "A first depressive episode in the teens or early twenties"}, {"label": "Treated as ordinary depression"}, {"label": "A first manic or hypomanic episode, sometimes after an antidepressant"}, {"label": "Diagnosis corrected to bipolar disorder"}, {"label": "Long-term mood stabiliser, psychoeducation and a relapse plan"}, {"label": "Episodes become fewer and further apart"}], "why": "Depression usually comes first, so the correct diagnosis is often delayed by years. Each untreated episode may make the next more likely, which is why early recognition and long-term treatment matter."}
+:::
 
 :::recall
 1. What proportion of people with one manic episode have more? || About 90%.
@@ -1311,6 +1331,11 @@ Q: Which finding supports a circadian model of bipolar disorder?
 :::
 
 :::clinician
+
+:::widget release
+{"transmitter": "dopamine", "title": "How antipsychotics calm mania", "caption": "Mania involves too much dopamine signalling in the reward pathway. Play the normal synapse, then pick the receptor blocker: dopamine is still released but cannot act on the next cell, so drive, grandiosity and psychosis ease. Pick amphetamine to see the opposite: stimulants can trigger mania in people at risk."}
+:::
+
 ### Receptor clues for side effects
 - Olanzapine and quetiapine: H1 and 5HT2C blockade, so appetite and weight rise; M1 blockade (olanzapine, quetiapine at high doses) adds constipation and dry mouth.
 - Aripiprazole and cariprazine: partial agonism gives akathisia rather than sedation; little prolactin rise.
