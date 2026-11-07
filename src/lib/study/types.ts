@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "illusion";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -100,7 +100,17 @@ export type StressData = { title?: Inline; caption?: Inline };
 export type TimelineData = { prompt: Inline; events: { label: Inline; when?: string }[]; why?: Inline };
 /** Two states compared with a slider (healthy vs ill, before vs after, novice vs expert). */
 export type CompareData = { title?: Inline; a: { label: Inline; points: Inline[]; summary: Inline }; b: { label: Inline; points: Inline[]; summary: Inline }; caption?: Inline };
-export type WidgetData = ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** Cocktail party: two voices, attend left or right, and see what gets through under early filter, attenuation and late selection. */
+export type AttentionData = { title?: Inline; caption?: Inline };
+/** Cognitive dissonance tension meter: belief and behaviour clash, pick a way to reduce it; includes the $1 or $20 study. Defaults to smoking. */
+export type DissonanceData = { belief?: Inline; behaviour?: Inline; title?: Inline; caption?: Inline };
+/** Piaget's conservation task: pour water into a tall glass (liquid) or spread a row of coins (number), seen by a preoperational or concrete operational child. */
+export type ConservationData = { kind?: "liquid" | "number"; title?: Inline; caption?: Inline };
+/** Replay a classic study: predict each condition with a slider, then reveal the real result. max defaults to 100 when unit is "%". */
+export type ExperimentData = { title: Inline; question: Inline; unit: string; conditions: { label: Inline; value: number; note?: Inline }[]; why?: Inline; max?: number };
+/** Perception illusions: judge, then measure to see the parts are equal (or flip figure and ground). */
+export type IllusionData = { kind: "muller-lyer" | "ponzo" | "ebbinghaus" | "figure-ground"; title?: Inline; caption?: Inline };
+export type WidgetData = AttentionData | DissonanceData | ConservationData | ExperimentData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */
