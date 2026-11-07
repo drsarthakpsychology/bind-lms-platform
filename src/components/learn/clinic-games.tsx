@@ -39,7 +39,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
 
   function start() {
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
-    setDeck(noteId ? pool : shuffle(pool).slice(0, 5));
+    setDeck(shuffle(pool).slice(0, 5));
     setSi(0);
     setBi(0);
     setPicked(null);

@@ -4,14 +4,39 @@
  * best = what a good clinician does; ok = acceptable but misses something;
  * harm = a common mistake with a real cost.
  */
+import type { PrepExam } from "@/lib/prep/types";
+import { SCENARIO_BANK } from "./scenario-bank";
 export type Outcome = "best" | "ok" | "harm";
 export type Choice = { text: string; outcome: Outcome; consequence: string };
 export type Beat = { says: string; context?: string; choices: Choice[] };
-export type Scenario = { id: string; topic: string; noteId: string; who: string; beats: Beat[] };
+/** Where the decision sits in clinical work. */
+export type Area = "assessment" | "risk" | "emergency" | "crisis" | "treatment" | "liaison" | "child-family" | "boundaries";
+/** Difficulty ladder: 1 recognise, 2 recall, 3 apply, 4 tell look-alikes apart, 5 full case. */
+export type ScenarioDifficulty = 1 | 2 | 3 | 4 | 5;
+export type Scenario = {
+  id: string;
+  topic: string;
+  /** Study note this scenario hangs off (for the note's "What would you do?" link). */
+  noteId: string;
+  who: string;
+  beats: Beat[];
+  area: Area;
+  difficulty: ScenarioDifficulty;
+  /** One-line learning objective. */
+  objective: string;
+  exams: PrepExam[];
+  /** Study module for "Learn this". */
+  moduleId: string;
+};
 
-export const SCENARIOS: Scenario[] = [
+const SCENARIOS_CORE: Scenario[] = [
   {
     id: "sc-dep-1",
+    area: "risk",
+    difficulty: 3,
+    objective: "Ask about suicide directly and act the same day",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "suicide",
     topic: "Depression",
     noteId: "depression",
     who: "Riya, 24, student",
@@ -37,6 +62,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-mania-1",
+    area: "assessment",
+    difficulty: 3,
+    objective: "Spot mania and an antidepressant trigger",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "bipolar",
     topic: "Bipolar",
     noteId: "bipolar",
     who: "Neha, 26",
@@ -61,6 +91,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-psy-1",
+    area: "risk",
+    difficulty: 3,
+    objective: "Respond to delusions without arguing or agreeing, then assess command voices",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "psychosis",
     topic: "Schizophrenia",
     noteId: "schizophrenia",
     who: "Kabir, 21",
@@ -85,6 +120,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-ocd-1",
+    area: "treatment",
+    difficulty: 2,
+    objective: "Avoid feeding reassurance in OCD",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "ocd",
     topic: "OCD",
     noteId: "ocd",
     who: "Sana, 30",
@@ -101,6 +141,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-pharm-1",
+    area: "emergency",
+    difficulty: 3,
+    objective: "Recognise lithium toxicity",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "stabilisers",
     topic: "Medicines",
     noteId: "stabilisers",
     who: "Sunil, 50, on lithium",
@@ -117,6 +162,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-ap-1",
+    area: "emergency",
+    difficulty: 2,
+    objective: "Recognise and treat acute dystonia",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "antipsychotics",
     topic: "Medicines",
     noteId: "antipsychotics",
     who: "Rahul, 19, started haloperidol yesterday",
@@ -133,6 +183,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-child-1",
+    area: "child-family",
+    difficulty: 3,
+    objective: "Handle a child abuse disclosure",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "ethics-law",
     topic: "Child protection",
     noteId: "casesheet",
     who: "Ananya, 14",
@@ -149,6 +204,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-alc-1",
+    area: "emergency",
+    difficulty: 3,
+    objective: "Recognise alcohol withdrawal in hospital",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "substance",
     topic: "Alcohol",
     noteId: "substance",
     who: "Mr Rao, 45, admitted for a fracture",
@@ -165,6 +225,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-ptsd-1",
+    area: "treatment",
+    difficulty: 3,
+    objective: "Pace trauma work safely",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "trauma",
     topic: "Trauma",
     noteId: "ptsd",
     who: "Priya, 28, after a road accident",
@@ -181,6 +246,11 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "sc-del-1",
+    area: "liaison",
+    difficulty: 3,
+    objective: "Treat new confusion as delirium",
+    exams: ["ugc-net", "mcp-entrance", "ma-semester"],
+    moduleId: "neurocognitive",
     topic: "Delirium",
     noteId: "dementia",
     who: "Mrs Shah, 79",
@@ -196,6 +266,9 @@ export const SCENARIOS: Scenario[] = [
     ],
   },
 ];
+
+/** Core scenarios plus the authored bank; ids are stable. */
+export const SCENARIOS: Scenario[] = [...SCENARIOS_CORE, ...SCENARIO_BANK];
 
 /** "Words matter": pick the better way to say it. */
 export const WORDS: { worse: string; better: string; why: string }[] = [
