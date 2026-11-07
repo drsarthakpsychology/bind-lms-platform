@@ -10,6 +10,7 @@ import { NervousSystem } from "./nervous-system";
 import { BrainExplorer } from "./brain-explorer";
 import { ActionPotential } from "./action-potential";
 import { SynapseScene } from "./synapse-scene";
+import { Genogram } from "./genogram";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -113,5 +114,33 @@ describe("explorable scenes", () => {
     expect(status()).toHaveTextContent(/blocker molecules already fill the receptors/);
     expect(status()).toHaveTextContent(/getting no message/);
     expect(screen.getByLabelText("2 of 4 missions done")).toBeInTheDocument();
+  });
+
+  it("genogram: build three generations, mark the condition, and the pattern finder traces it", () => {
+    vi.useFakeTimers();
+    render(<Genogram d={{ condition: "depression", start: "blank" }} />);
+    expect(status()).toHaveTextContent(/1 person across 1 generation/);
+    click(/^You \(the patient\)/);
+    click("Add parents");
+    expect(status()).toHaveTextContent(/Parents added/);
+    click(/^Father, male/);
+    click("Add father's parents");
+    expect(status()).toHaveTextContent(/third generation/);
+    click(/^Father's mother/);
+    click("Has depression");
+    click(/^Father, male/);
+    click("Has depression");
+    click("Has died");
+    expect(status()).toHaveTextContent(/cross through the shape/);
+    click("Find the pattern");
+    expect(status()).toHaveTextContent(/Scanning/);
+    wait(2800);
+    expect(status()).toHaveTextContent(/Two blood relatives have depression, across two generations/);
+    expect(status()).toHaveTextContent(/only through the father's family/);
+    expect(screen.getByLabelText("5 of 5 missions done")).toBeInTheDocument();
+    click("Load the example");
+    click("Find the pattern");
+    wait(2800);
+    expect(status()).toHaveTextContent(/skip a generation/);
   });
 });

@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d" | "genogram";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -126,7 +126,9 @@ export type BrainExplorerData = { title?: Inline; caption?: Inline; focus?: stri
 export type ActionPotentialData = { title?: Inline; caption?: Inline; myelinated?: boolean };
 /** A synapse in 3D (flat cross-section without WebGL): fire the nerve ending and follow calcium entry, vesicle fusion, binding and reuptake, with a live "message received" meter; drugs: reuptake blocker, receptor blocker, botulinum toxin. */
 export type Synapse3dData = { title?: Inline; caption?: Inline; transmitter?: string };
-export type WidgetData = Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** Genogram builder for case work: tap a person to add parents, siblings, partner, children and grandparents with standard symbols, mark the condition (shaded), deaths (cross) and divorce (two slashes), then a pattern finder traces the condition through the family. Opens on a built-in example unless `start` is "blank". */
+export type GenogramData = { title?: Inline; caption?: Inline; condition?: string; start?: "example" | "blank" };
+export type WidgetData = GenogramData | Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */
