@@ -20,6 +20,10 @@ export const part1 = String.raw`
 ### The scientist-practitioner idea
 At the **Boulder conference** (1949) in the United States, psychologists agreed that clinical psychologists should be trained as **scientist-practitioners**: able to do research and apply it. The **Vail conference** (1973) accepted a **practitioner-scholar** model, which led to the **PsyD** degree. The same tension runs through every applied field: practice should be **evidence-based**, and research should answer questions practitioners actually face.
 
+:::widget flow
+{"title": "The scientist-practitioner loop", "layout": "cycle", "nodes": [{"id": "p", "label": "Practice raises a question", "detail": "A clinic notices that many clients drop out after the first session."}, {"id": "e", "label": "Check the evidence", "detail": "What does research say about dropout and how to reduce it?"}, {"id": "r", "label": "Study it locally", "detail": "Track dropout before and after adding a short call the day before the second session."}, {"id": "c", "label": "Change practice", "detail": "If the call helps, make it routine, and keep measuring."}], "edgeLabels": {"p>e": "ask", "e>r": "test", "r>c": "apply", "c>p": "new questions"}, "caption": "Boulder asked clinicians to be both scientists and practitioners. Vail later accepted practice-focused training as well."}
+:::
+
 ### Applied psychology in Indian programmes
 Indian MA and MSc programmes teach these areas as core papers or **electives**. A quick map from the syllabi:
 | University | Applied papers you will meet |
@@ -107,6 +111,10 @@ In 1977 the psychiatrist **George Engel** argued that the **biomedical model** (
 - **Biological** factors: genes, infections, injuries, physiology.
 - **Psychological** factors: beliefs, emotions, coping, behaviour.
 - **Social** factors: family, poverty, culture, health services, stigma.
+
+:::widget compare
+{"title": "Biomedical or biopsychosocial?", "a": {"label": "Biomedical model", "points": ["Disease is a fault in the body", "Mind and body are separate", "The doctor treats the organ", "Cannot explain why two people with the same disease fare differently"], "summary": "Powerful for infections and fractures, weak for chronic illness, pain and recovery."}, "b": {"label": "Biopsychosocial model", "points": ["Biology, psychology and social life all matter", "They interact over time", "The clinician treats the person in context", "Explains differences in coping, adherence and outcome"], "summary": "Engel's model is the basis of health psychology: beliefs, stress, support and poverty change how illness goes."}}
+:::
 
 :::example The same diagnosis, two stories
 Two men aged 50 are diagnosed with type 2 diabetes in Ahmedabad. Rakesh believes it is his fate, has no one to cook healthy food, works night shifts and skips follow-ups. Imran's wife joins him at the clinic, he believes small changes help, walks every evening and checks his sugar. Same disease, very different outcomes, explained by psychological and social factors.
@@ -268,6 +276,10 @@ In 1998, as president of the American Psychological Association, **Martin Seligm
 - **Hedonic wellbeing** (feeling good): **Ed Diener**'s **subjective wellbeing** is high **life satisfaction**, frequent **positive affect** and infrequent **negative affect**. It is often measured with the five-item **Satisfaction With Life Scale**.
 - **Eudaimonic wellbeing** (living well, from Aristotle's eudaimonia): **Carol Ryff**'s six dimensions of **psychological wellbeing**: **self-acceptance, positive relations with others, autonomy, environmental mastery, purpose in life and personal growth**. Self-determination theory's needs (autonomy, competence, relatedness) belong here too.
 
+:::widget compare
+{"title": "Two kinds of wellbeing", "a": {"label": "Hedonic: feeling good", "points": ["High life satisfaction", "Frequent positive feelings", "Few negative feelings", "Measured by questions like 'How satisfied are you with your life?'"], "summary": "Diener's subjective wellbeing: how good your life feels to you."}, "b": {"label": "Eudaimonic: living well", "points": ["Self-acceptance and growth", "Purpose in life", "Autonomy and mastery", "Positive relations with others"], "summary": "Ryff's psychological wellbeing: whether you are living in line with your potential and values. A meaningful life can include hard days."}}
+:::
+
 ### PERMA
 In 2011 Seligman described five building blocks of wellbeing, **PERMA**:
 | Letter | Element | Example |
@@ -279,6 +291,10 @@ In 2011 Seligman described five building blocks of wellbeing, **PERMA**:
 | **A** | Accomplishment | Achievement and mastery for their own sake |
 
 Earlier (2002) he described three routes to happiness: the **pleasant life**, the **engaged life** and the **meaningful life**.
+
+:::widget layers
+{"title": "PERMA: five building blocks of wellbeing", "shape": "stack", "layers": [{"label": "P: Positive emotion", "detail": "Joy, gratitude, hope. Feeling good in the present."}, {"label": "E: Engagement", "detail": "Absorption and flow in what you are doing."}, {"label": "R: Relationships", "detail": "Warm, supportive ties. Often the strongest single predictor of wellbeing."}, {"label": "M: Meaning", "detail": "Belonging to and serving something bigger than yourself."}, {"label": "A: Accomplishment", "detail": "Achievement and mastery pursued for their own sake."}], "caption": "Each element is pursued for itself and can be measured separately."}
+:::
 
 ### Character strengths
 **Christopher Peterson and Martin Seligman** (2004) surveyed philosophical and religious traditions across cultures, including Confucianism, Hinduism and Buddhism, and identified **six virtues** expressed through **24 character strengths**, the **VIA classification** (sometimes called a "manual of the sanities", a positive counterpart to the DSM):
@@ -401,6 +417,10 @@ Q: In the VIA classification, gratitude and hope fall under the virtue of:
 - **Frederick Taylor**'s **scientific management** (1911) timed tasks and paid by output; productive but often dehumanising.
 - **The Hawthorne studies** (1924 to 1932) at Western Electric's Hawthorne Works near Chicago, interpreted by **Elton Mayo**: changes in lighting and breaks raised output almost whatever the change, which was read as workers responding to **attention and group norms**. This launched the **human relations** movement.
 
+:::widget timeline
+{"prompt": "Put these milestones in the psychology of work in order, earliest first.", "events": [{"label": "Taylor's scientific management times tasks and pays by output", "when": "1911"}, {"label": "Münsterberg applies psychology to selecting tram drivers", "when": "1913"}, {"label": "The Hawthorne studies begin, leading to the human relations movement", "when": "1924"}, {"label": "Maslow's hierarchy of needs", "when": "1943"}, {"label": "Herzberg's hygiene factors and motivators", "when": "1959"}, {"label": "Adams' equity theory", "when": "1963"}, {"label": "Hackman and Oldham's job characteristics model", "when": "1976"}], "why": "The field moved from treating workers as parts of a machine, to noticing their social needs, to designing jobs that are meaningful in themselves."}
+:::
+
 ### Theories of work motivation
 | Theory | Core idea | Practical lesson |
 |---|---|---|
@@ -411,6 +431,10 @@ Q: In the VIA classification, gratitude and hope fall under the virtue of:
 | **Adams' equity theory** (1963) | People compare their input-to-output ratio with others' | Perceived unfairness lowers effort or prompts quitting |
 | **Locke and Latham's goal-setting** | Specific, difficult goals with feedback raise performance | Set clear targets and give feedback |
 | **Hackman and Oldham's job characteristics model** (1976) | Five core job features create meaningfulness, responsibility and knowledge of results | Redesign jobs for variety, identity, significance, autonomy and feedback |
+
+:::widget worked
+{"title": "Vroom's expectancy theory with numbers", "steps": [{"q": "Motivation is expectancy times instrumentality times valence. What do the three mean?", "a": "Expectancy: will my effort lead to good performance? Instrumentality: will good performance lead to the reward? Valence: do I value that reward? Each is rated from 0 to 1."}, {"q": "Priya believes extra effort will raise her sales (expectancy 0.8), but bonuses are often not paid (instrumentality 0.5). She values the bonus highly (valence 0.9). Her motivation?", "a": "0.8 times 0.5 times 0.9 gives 0.36."}, {"q": "Arun is sure effort pays and bonuses are always paid (0.9 and 0.9), but he cares little for money (valence 0.2). His motivation?", "a": "0.9 times 0.9 times 0.2 gives about 0.16, lower than Priya's."}, {"q": "What happens if any one term is zero?", "a": "Motivation becomes zero, because the terms multiply. If people believe rewards are never paid, no amount of skill or desire will motivate them."}], "yourTurn": [{"q": "As a manager, which term would you fix first for Priya?", "a": "Instrumentality: make sure bonuses are paid reliably and transparently. That alone raises her score to 0.8 times 0.9 times 0.9, about 0.65."}]}
+:::
 
 :::mnemonic Job characteristics: "SITAF"
 **S**kill variety, **I**dentity of the task, **T**ask significance, **A**utonomy, **F**eedback. Autonomy and feedback weigh most in the motivating potential score.
@@ -637,6 +661,10 @@ Q: Inspiring followers to see old problems in new ways is the transformational c
 - **Stress and colds**: **Sheldon Cohen** and colleagues (1991) gave volunteers nasal drops containing cold viruses. The more stress people reported, the more likely they were to get infected and fall ill, in a dose-response pattern.
 - **Inflammation**: chronic stress, loneliness and depression go with higher inflammatory markers such as interleukin-6 and C-reactive protein, linked with heart disease, diabetes and possibly depression itself (see the frontiers module).
 
+:::widget guess
+{"prompt": "A small standard wound was made on the arm of women caring for a husband or parent with dementia, and of matched women who were not caregivers. How many days longer did the caregivers' wounds take to heal?", "min": 0, "max": 30, "step": 1, "unit": "days", "answer": [7, 11], "reveal": "About 9 days longer, roughly a quarter more time. Their immune cells also produced less of a signalling molecule needed early in healing. Chronic stress slows the body's repair.", "clinician": "Later studies found slower healing of oral wounds in students during exams and of surgical wounds in patients with higher pre-operative fear. This is one reason psychological preparation for surgery is part of good care."}
+:::
+
 Pathways run in both directions: stress affects immunity through the **HPA axis** (cortisol), the **sympathetic nervous system** and **behaviour** (sleep, diet, smoking); immune signals (cytokines) act on the brain and produce **sickness behaviour**: tiredness, low mood, withdrawal and loss of appetite.
 
 :::widget worked
@@ -726,6 +754,10 @@ Indian research led by **Ajit Dalal** found that accident victims and patients o
 
 **Philip Ley's cognitive hypothesis** says adherence depends on patients' **understanding**, **memory** of what they were told, and **satisfaction** with the consultation. Good communication (plain words, the most important points first, written instructions, checking understanding with "teach-back") improves all three.
 
+:::widget sort
+{"prompt": "Is each case intentional or unintentional non-adherence?", "buckets": ["Unintentional: wants to, but cannot", "Intentional: decides not to"], "items": [{"text": "An elderly man forgets his evening tablet because no one reminds him", "bucket": 0, "why": "Memory problems are a common unintentional cause."}, {"text": "A woman stops her blood pressure tablets because she feels fine and thinks she is cured", "bucket": 1, "why": "Her belief about the illness leads to a decision. Address the belief, not her memory."}, {"text": "A labourer cannot afford the bus fare to collect his TB medicines", "bucket": 0, "why": "A practical barrier."}, {"text": "A young man skips antidepressants because he fears becoming 'addicted'", "bucket": 1, "why": "A concern about the treatment. Explain and discuss it."}, {"text": "A patient misunderstood 'twice daily' and took the tablets twice a week", "bucket": 0, "why": "Poor understanding: Ley's hypothesis in action. Plain words and a written note help."}]}
+:::
+
 :::widget decide
 {
   "scene": "Ramesh, 45, a truck driver from Nashik, is on treatment for tuberculosis. After two months he feels well and stops his tablets. He says he is cured and can't afford to lose work days for clinic visits.",
@@ -801,6 +833,10 @@ Q: A patient stops his blood pressure tablets because he "only has BP when tense
 - **Hope theory** (C. R. Snyder): hope is **agency** (the will: "I can do it") plus **pathways** (the ways: "I can find routes to my goal").
 - **Dispositional optimism** (Scheier and Carver): a general expectation that good things will happen, measured by the Life Orientation Test (LOT-R).
 - **Optimistic explanatory style** (Seligman): explaining bad events as external, temporary and specific.
+
+:::widget flow
+{"title": "Snyder's hope: a goal, a will and a way", "layout": "tree", "nodes": [{"id": "g", "label": "A valued goal", "detail": "Clearing the entrance exam next year."}, {"id": "a", "label": "Agency: the will", "parent": "g", "detail": "'I can do this.' The energy to start and keep going after setbacks."}, {"id": "p", "label": "Pathways: the ways", "parent": "g", "detail": "'If coaching is too costly, I can use free online lectures and a study group.' The ability to find more than one route."}], "caption": "Hope needs both. Will without ways becomes frustration; ways without will stay on paper. Hope therapy builds each one."}
+:::
 
 ### Post-traumatic growth (PTG)
 **Richard Tedeschi and Lawrence Calhoun** (1996) described **post-traumatic growth**: positive psychological change that comes **from the struggle** with highly challenging life circumstances. Their **Post-traumatic Growth Inventory** (PTGI, 21 items) measures five domains:
@@ -966,6 +1002,10 @@ Indian organisational psychologists have described features of Indian workplaces
 - **Jugaad** (frugal improvisation) is praised for innovation and criticised for encouraging shortcuts.
 - **Law**: the **POSH Act 2013** (Sexual Harassment of Women at Workplace) requires an **Internal Committee** in organisations with ten or more employees; psychologists often help with training and support.
 
+:::widget flow
+{"title": "Sinha's nurturant-task leader", "layout": "chain", "nodes": [{"id": "a", "label": "Authoritarian", "detail": "Orders without care. Common in hierarchical workplaces, and it produces fear and low initiative."}, {"id": "n", "label": "Nurturant-task", "detail": "Warm and caring, like an elder, but the care depends on the work being done. Suited to teams that value personal ties and clear direction."}, {"id": "p", "label": "Participative", "detail": "As subordinates grow in skill and confidence, the leader shares decisions with them."}], "edgeLabels": {"a>n": "add care, keep task focus", "n>p": "as the team matures"}, "caption": "Sinha saw the nurturant-task style as a bridge that fits Indian work culture, not as a final stage."}
+:::
+
 :::widget decide
 {
   "scene": "A family-run pharmaceutical company in Vadodara wants to introduce a new digital inventory system. Long-serving staff resist; they fear for their jobs and feel the owner's son is pushing it without asking them.",
@@ -1028,6 +1068,10 @@ India has about **0.75 psychiatrists per 100,000 people** (National Mental Healt
 - **Atmiyata** (Gujarat): community volunteers in Mehsana district trained to identify distress, offer basic counselling and link people to services and social benefits.
 - The **Banyan** (Chennai, founded 1993): care and community living for homeless women with severe mental illness.
 - Globally, the **Friendship Bench** in Zimbabwe trained grandmothers to deliver problem-solving therapy on park benches (2016).
+
+:::widget timeline
+{"prompt": "Order these steps in community mental health care in India, earliest first.", "events": [{"label": "The National Mental Health Programme begins", "when": "1982"}, {"label": "The Bellary model brings mental health into district health services", "when": "1985"}, {"label": "The Banyan starts caring for homeless women with severe mental illness in Chennai", "when": "1993"}, {"label": "The District Mental Health Programme is launched", "when": "1996"}, {"label": "Sangath's MANAS trial shows lay counsellors can help in primary care", "when": "2010"}, {"label": "The Mental Healthcare Act gives a right to mental health care", "when": "2017"}, {"label": "Tele-MANAS, the free 24-hour helpline 14416, is launched", "when": "2022"}], "why": "A national plan, then a district pilot, then scale-up, then evidence for task sharing, then rights in law, then telehealth to reach everyone."}
+:::
 
 :::widget sort
 {
@@ -1140,6 +1184,10 @@ In a 2013 study, sugarcane farmers in Tamil Nadu took cognitive tests **before h
 
 - Earlier Indian research on **prolonged deprivation** (Misra and Tripathi; Sinha) linked deprivation with lower achievement motivation and cognitive performance, but stressed environment, not deficit in people.
 - Poverty and mental illness affect each other in both directions (Lund and colleagues): poverty raises risk, and illness pushes people into poverty. Cash transfers and anti-poverty programmes have been shown to improve mental health (2020).
+
+:::widget flow
+{"title": "The poverty and mental illness cycle", "layout": "cycle", "nodes": [{"id": "p", "label": "Poverty", "detail": "Debt, insecure work, poor housing, hunger and less access to care."}, {"id": "s", "label": "Chronic stress and scarcity", "detail": "Constant worry taxes attention and self-control, and exposure to violence and loss rises."}, {"id": "m", "label": "Mental illness", "detail": "Depression, anxiety and substance use become more likely: social causation."}, {"id": "w", "label": "Lost work and costs of care", "detail": "Illness reduces earning and adds health costs, pushing families deeper into poverty: social drift."}], "edgeLabels": {"p>s": "creates", "s>m": "raises risk of", "m>w": "leads to", "w>p": "deepens"}, "caption": "Breaking the loop works from both sides: cash transfers improve mental health, and treatment helps people return to work."}
+:::
 
 ### Disability
 - The **medical model** treats disability as a problem in the person to be fixed. The **social model** (from disabled activists in the UK in the 1970s, developed by Mike Oliver) says people are **disabled by barriers** in society (steps, attitudes, inaccessible information), not by their impairment. The WHO's **ICF** (2001) offers a **biopsychosocial** model: body functions, activities and participation, shaped by environmental and personal factors.
