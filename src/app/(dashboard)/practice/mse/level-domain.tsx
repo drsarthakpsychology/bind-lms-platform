@@ -5,7 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { DOMAIN_UNITS, MSE_DOMAIN_ORDER, formatDomainKey } from "@/lib/mse/ladder";
 import { MSE_VOCAB } from "@/lib/practice/mse";
-import { SEED_MSE_STIMULI, type MseStimulus } from "@/lib/practice/mse";
+import { SEED_MSE_STIMULI, domainRound, type MseStimulus } from "@/lib/practice/mse";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
 
 /**
@@ -43,8 +43,10 @@ export function DomainLevel({
   const domain = MSE_DOMAIN_ORDER[domainIdx];
   const unit = DOMAIN_UNITS.find((u) => u.domain === domain);
   const vocab = MSE_VOCAB[domain];
-  // Stimuli for this domain (expert-tagged). Fall back to any remaining.
-  const domainStimuli = stimuli.filter((s) => s.domain === domain);
+  // A few stimuli for this domain per round (the bank holds about 40 each),
+  // in a stable shuffled order for this visit. Fall back to any remaining.
+  const [seed] = React.useState(() => Math.floor(Math.random() * 2 ** 31));
+  const domainStimuli = React.useMemo(() => domainRound(stimuli, domain, 3, seed), [stimuli, domain, seed]);
   const stimulus = domainStimuli[stimulusIdx] ?? stimuli[stimulusIdx % stimuli.length];
 
   function toggleTag(tag: string) {
@@ -183,6 +185,7 @@ export function DomainLevel({
                   {stimulus.amberTags.join(", ")}
                 </p>
               ) : null}
+              {stimulus.why ? <p className="text-small">{stimulus.why}</p> : null}
               <button
                 ref={nextButtonRef}
                 type="button"

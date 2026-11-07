@@ -5,6 +5,9 @@
  * these constantly. "Describe, don't diagnose": AI flags diagnostic terms.
  */
 
+import type { PrepExam } from "@/lib/prep/types";
+import { MSE_STIMULUS_BANK, stimulusExams } from "./mse-stimuli-bank";
+
 export const MSE_DOMAINS = [
   "appearance", "behavior", "speech", "mood", "affect", "thought_content",
   "thought_process", "perception", "cognition", "insight", "judgment",
@@ -13,16 +16,16 @@ export type MseDomain = (typeof MSE_DOMAINS)[number];
 
 /** Controlled vocabulary per domain. */
 export const MSE_VOCAB: Record<MseDomain, string[]> = {
-  appearance: ["well-groomed", "unkempt", "dishevelled", "casual", "age-appropriate"],
-  behavior: ["cooperative", "guarded", "agitated", "withdrawn", "bizarre", "restless"],
-  speech: ["normal rate", "pressured", "slow", "soft", "monotonous", "poverty of speech"],
-  mood: ["euthymic", "depressed", "anxious", "irritable", "euphoric", "dysphoric"],
-  affect: ["congruent", "incongruent", "flat", "blunted", "labile", "restricted", "constricted"],
-  thought_content: ["delusions", "obsessions", "phobias", "preoccupations", "suicidal ideation", "homicidal ideation"],
-  thought_process: ["linear", "loosening of associations", "flight of ideas", "circumstantial", "tangential", "perseveration", "thought blocking"],
-  perception: ["hallucinations", "illusions", "depersonalization", "derealization"],
-  cognition: ["oriented x3", "impaired attention", "impaired memory", "impaired concentration"],
-  insight: ["full", "partial", "poor", "absent"],
+  appearance: ["well-groomed", "unkempt", "dishevelled", "casual", "age-appropriate", "looks older than stated age", "underweight", "visible self-harm scars", "bizarre dress", "flamboyant dress", "signs of intoxication", "signs of withdrawal"],
+  behavior: ["cooperative", "guarded", "agitated", "withdrawn", "bizarre", "restless", "psychomotor retardation", "poor eye contact", "hostile", "overfamiliar", "tremor", "catatonic posturing", "tics", "responding to unseen stimuli", "hypervigilant", "akathisia", "stereotyped movements", "compulsive rituals"],
+  speech: ["normal rate", "pressured", "slow", "soft", "monotonous", "poverty of speech", "loud", "dysarthric", "mute", "stammering", "increased latency", "echolalia"],
+  mood: ["euthymic", "depressed", "anxious", "irritable", "euphoric", "dysphoric", "hopeless", "angry", "fearful", "anhedonic", "apathetic", "numb"],
+  affect: ["congruent", "incongruent", "flat", "blunted", "labile", "restricted", "constricted", "reactive", "tearful", "anxious", "elevated", "shallow", "perplexed", "irritable"],
+  thought_content: ["delusions", "obsessions", "phobias", "preoccupations", "suicidal ideation", "homicidal ideation", "persecutory delusion", "grandiose delusion", "delusion of reference", "nihilistic delusion", "delusion of guilt", "jealous delusion", "somatic delusion", "overvalued idea", "passive death wish", "suicidal plan", "thought insertion", "thought broadcasting", "thought withdrawal", "worries", "health anxiety", "ideas of reference", "self-harm thoughts", "no abnormal content"],
+  thought_process: ["linear", "loosening of associations", "flight of ideas", "circumstantial", "tangential", "perseveration", "thought blocking", "goal-directed", "clang associations", "word salad", "neologisms", "slowed thinking", "concrete thinking", "overinclusive", "poverty of content"],
+  perception: ["hallucinations", "illusions", "depersonalization", "derealization", "auditory hallucinations", "visual hallucinations", "tactile hallucinations", "olfactory hallucinations", "command hallucinations", "pseudo-hallucinations", "hypnagogic hallucinations", "third-person voices", "no perceptual abnormality"],
+  cognition: ["oriented x3", "impaired attention", "impaired memory", "impaired concentration", "disoriented", "clouded consciousness", "confabulation", "impaired abstraction", "intact"],
+  insight: ["full", "partial", "poor", "absent", "different explanatory model"],
   judgment: ["good", "fair", "poor", "impaired"],
 };
 
@@ -75,9 +78,38 @@ export interface MseStimulus {
   domain: MseDomain;
   expertTags: string[]; // green = exact; amber = defensible alternatives
   amberTags?: string[];
+  /** Why the expert tags fit, and why the tempting wrong tag does not (shown after Check). */
+  why?: string;
+  /** Library tags (every bank item has them). */
+  topic?: string;
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  objective?: string;
+  exams?: PrepExam[];
+  /** Study module ("module/section") for "Learn this". */
+  module?: string;
 }
 
-export const SEED_MSE_STIMULI: MseStimulus[] = [
+/** Study module section for each trainer domain. */
+export const MSE_DOMAIN_MODULE: Record<MseDomain, string> = {
+  appearance: "mse-deep/1-2", behavior: "mse-deep/1-2", speech: "mse-deep/2-1", mood: "mse-deep/1-3", affect: "mse-deep/1-3",
+  thought_content: "mse-deep/2-2", thought_process: "mse-deep/2-1", perception: "mse-deep/2-3", cognition: "mse-deep/2-4",
+  insight: "mse-deep/2-5", judgment: "mse-deep/2-5",
+};
+
+/** Up to `n` stimuli for one domain, in a stable shuffled order for this seed (a Level 2 round is a few per domain, not the whole bank). */
+export function domainRound(stimuli: MseStimulus[], domain: MseDomain, n: number, seed: number): MseStimulus[] {
+  const pool = stimuli.filter((s) => s.domain === domain);
+  let h = seed >>> 0;
+  const rnd = () => ((h = (Math.imul(h ^ (h >>> 15), 2246822507) + 0x9e3779b9) >>> 0) / 4294967296);
+  const a = [...pool];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, n);
+}
+
+const BASE_MSE_STIMULI: MseStimulus[] = [
   { id: "mse-1", content: "\"I hear a voice telling me I'm worthless. It's not mine.\"", domain: "perception", expertTags: ["hallucinations"], amberTags: ["auditory hallucination"] },
   { id: "mse-2", content: "Client speaks quickly, jumps between topics, never finishes a sentence.", domain: "speech", expertTags: ["pressured"], amberTags: ["flight of ideas"] },
   { id: "mse-3", content: "\"I haven't showered in a week. What's the point?\"", domain: "appearance", expertTags: ["unkempt"], amberTags: ["dishevelled"] },
@@ -86,8 +118,23 @@ export const SEED_MSE_STIMULI: MseStimulus[] = [
   { id: "mse-6", content: "Client answers every question with a long tangent before returning to the point.", domain: "thought_process", expertTags: ["circumstantial"], amberTags: ["tangential"] },
   { id: "mse-7", content: "\"I know there's a plan to poison me. The neighbours are in on it.\"", domain: "thought_content", expertTags: ["delusions"], amberTags: ["paranoid delusion"] },
   { id: "mse-8", content: "Client reports sleeping 3 hours, racing thoughts, and plans to start three businesses.", domain: "mood", expertTags: ["euphoric"], amberTags: ["manic"] },
-  { id: "mse-9", content: "Client is oriented to person but not date or place.", domain: "cognition", expertTags: ["impaired memory"], amberTags: ["disoriented"] },
+  { id: "mse-9", content: "Client is oriented to person but not date or place.", domain: "cognition", expertTags: ["disoriented"], amberTags: ["impaired memory"] },
   { id: "mse-10", content: "\"I know I'm ill, but I don't think I need medicine.\"", domain: "insight", expertTags: ["partial"], amberTags: ["poor"] },
   { id: "mse-11", content: "Client paces the room, can't sit still, voice is loud and rapid.", domain: "behavior", expertTags: ["agitated"], amberTags: ["restless"] },
   { id: "mse-12", content: "Client starts a sentence, stops mid-way, and says 'never mind' twice in a row.", domain: "thought_process", expertTags: ["thought blocking"], amberTags: ["poverty of speech"] },
+];
+
+/** Topic and rung for the first 12 stimuli (ids and text unchanged). */
+const BASE_TAGS: Record<string, [string, 1 | 2 | 3 | 4 | 5]> = {
+  "mse-1": ["Psychosis", 1], "mse-2": ["Mania", 2], "mse-3": ["Depression", 1], "mse-4": ["Affect", 3], "mse-5": ["Mania", 1], "mse-6": ["Thought form", 4],
+  "mse-7": ["Psychosis", 1], "mse-8": ["Mania", 3], "mse-9": ["Delirium", 2], "mse-10": ["Insight", 2], "mse-11": ["Agitation", 1], "mse-12": ["Thought form", 4],
+};
+
+/** All Level 2 tagging stimuli: the first 12 plus the library bank. */
+export const SEED_MSE_STIMULI: MseStimulus[] = [
+  ...BASE_MSE_STIMULI.map((s) => {
+    const [topic, d] = BASE_TAGS[s.id];
+    return { ...s, topic, difficulty: d, objective: `Tag ${s.domain.replace("_", " ")} with the controlled words`, exams: stimulusExams(d), module: MSE_DOMAIN_MODULE[s.domain] };
+  }),
+  ...MSE_STIMULUS_BANK,
 ];

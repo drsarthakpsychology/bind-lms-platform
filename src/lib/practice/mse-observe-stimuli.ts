@@ -1,4 +1,6 @@
 import type { MseStimulus } from "./mse";
+import { OBSERVE_BANK } from "./mse-observe-bank";
+import { stimulusExams } from "./mse-stimuli-helpers";
 
 /**
  * MSE Level 1 observe stimuli (Part 6.4): short vignettes the student
@@ -10,7 +12,7 @@ import type { MseStimulus } from "./mse";
  * upsert them into mse_stimuli (giving mse_attempts a real FK target), and
  * so Level 1 attempts persist by slug (obs-1 .. obs-idiom-4).
  */
-export const OBSERVE_STIMULI: MseStimulus[] = [
+const BASE_OBSERVE: MseStimulus[] = [
   {
     id: "obs-1",
     content:
@@ -68,4 +70,18 @@ export const OBSERVE_STIMULI: MseStimulus[] = [
     domain: "behavior",
     expertTags: [],
   },
+];
+
+const BASE_TAGS: Record<string, [string, 1 | 2 | 3 | 4 | 5]> = {
+  "obs-1": ["Anxiety", 2], "obs-2": ["Depression", 2], "obs-3": ["Family dynamics", 3], "obs-4": ["Mania", 3],
+  "obs-idiom-1": ["Idioms of distress", 3], "obs-idiom-2": ["Panic", 3], "obs-idiom-3": ["Adolescent distress", 4], "obs-idiom-4": ["Alcohol use", 4],
+};
+
+/** All Level 1 observe vignettes: the first eight plus the library bank. */
+export const OBSERVE_STIMULI: MseStimulus[] = [
+  ...BASE_OBSERVE.map((s) => {
+    const [topic, d] = BASE_TAGS[s.id];
+    return { ...s, topic, difficulty: d, objective: "Describe what you see and hear, with no labels", exams: stimulusExams(d), module: "mse-deep/1-1" };
+  }),
+  ...OBSERVE_BANK,
 ];
