@@ -515,7 +515,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A one-way ANOVA gives F(2, 27) = 4.20. The critical value of F(2, 27) at α = .05 is 3.35. What should the researcher conclude?",
     options: [
-      "The null hypothesis is retained, because 4.20 is close to the critical value",
+      "The null hypothesis is retained, because 4.20 is too close to the critical value",
       "All three population means differ significantly from each other",
       "At least one population mean differs from the others; post hoc tests show which",
       "Group 1 has the highest mean",
@@ -598,7 +598,7 @@ const D: Draft[] = [
       "The effect size, as the proportion of variance explained",
       "The variance of the group means around the grand mean, weighted by group size",
       "A pooled estimate of error variance, from the variability of scores within each group",
-      "The difference between the largest and smallest group means, divided by the SD",
+      "The difference between the largest and smallest group means, divided by the pooled SD",
     ],
     answer: 2,
     explanation:
@@ -706,7 +706,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A researcher plans, before collecting data, to test only one comparison: the average of two active treatments versus placebo. Compared with running Tukey's HSD on all pairs afterwards, this planned contrast:",
     options: [
-      "Always gives the same p value as Tukey's HSD would for the same two-versus-one comparison",
+      "Always gives the same p value as Tukey's HSD would give for the same two-versus-one comparison",
       "Has more power, because a single planned test needs no correction for multiple comparisons",
       "Is invalid, because only post hoc tests are allowed once an ANOVA has been run",
       "Requires the overall F to be non-significant before it can be used",

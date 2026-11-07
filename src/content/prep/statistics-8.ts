@@ -24,7 +24,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "An effect size, such as Cohen's d, tells us:",
     options: [
-      "Whether the result is statistically significant at the chosen alpha",
+      "Whether the result is statistically significant at the alpha level chosen",
       "How many participants are needed",
       "The probability that the null hypothesis is true, given the data",
       "How large the difference or relationship is, independent of sample size",
@@ -225,7 +225,7 @@ const D: Draft[] = [
     stem: "In a drug trial where the treatment might also change the variability of scores, Glass's Δ is sometimes preferred to Cohen's d because Glass's Δ:",
     options: [
       "Is always larger than Cohen's d for the same data",
-      "Divides by the pooled SD of both groups, weighted by their sizes",
+      "Divides by the pooled SD of both groups, each weighted by its sample size",
       "Corrects for small-sample bias in the pooled estimate",
       "Uses only the control group's SD, which the treatment cannot change",
     ],
@@ -490,7 +490,7 @@ const D: Draft[] = [
     stem: "In classical test theory, a reliability coefficient of .80 means that:",
     options: [
       "80% of observed-score variance is true-score variance and 20% is error variance",
-      "80% of test-takers obtain their exact true score on any single administration",
+      "80% of test-takers obtain their exact true score on any single administration of it",
       "The test is 80% valid for its intended purpose",
       "Scores will change by about 20% between two administrations",
     ],

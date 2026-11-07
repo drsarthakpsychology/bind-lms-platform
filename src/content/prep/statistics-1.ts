@@ -478,7 +478,7 @@ const D: Draft[] = [
     stem: "A researcher needs to average annual growth rates of 10%, 20% and 50% in clinic attendance (growth factors 1.10, 1.20 and 1.50) over three years. The appropriate average growth factor is the:",
     options: [
       "Median, 1.20",
-      "Arithmetic mean, 1.267 (26.7% a year)",
+      "Arithmetic mean, about 1.267 (26.7% a year)",
       "Harmonic mean, about 1.25",
       "Geometric mean, about 1.258 (25.8% a year)",
     ],

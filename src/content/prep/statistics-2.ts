@@ -343,7 +343,7 @@ const D: Draft[] = [
       "np and n(1 − p) are both at least about 5 (some texts say 10)",
       "n is at least 30, whatever the value of p",
       "p is exactly .5, so the distribution is symmetrical",
-      "The binomial outcome is continuous rather than discrete",
+      "The binomial outcome is treated as continuous rather than discrete",
     ],
     answer: 0,
     explanation:
@@ -699,7 +699,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "The sample variance is calculated with n − 1 in the denominator because:",
     options: [
-      "It converts the variance into a standard deviation on the same scale",
+      "It converts the variance into a standard deviation on the same scale as the scores",
       "It makes the variance easier to calculate by hand",
       "The sample mean is always larger than the population mean",
       "Dividing by n would, on average, underestimate the population variance",

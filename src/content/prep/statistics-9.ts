@@ -26,7 +26,7 @@ const D: Draft[] = [
     options: [
       "Compare the means of several groups",
       "Test whether two categorical variables are related in the population",
-      "Predict a single outcome from a weighted combination of several correlated predictors",
+      "Predict a single outcome from a weighted combination of several correlated predictor variables",
       "Explain the correlations among many variables by a smaller number of underlying factors",
     ],
     answer: 3,
@@ -65,7 +65,7 @@ const D: Draft[] = [
       "The number of items that load above .40 on the factor",
       "The correlation between two factors after oblique rotation",
       "The total variance in all the variables that the factor accounts for",
-      "The probability that the factor is real rather than due to chance",
+      "The probability that the factor is real rather than a product of chance",
     ],
     answer: 2,
     explanation:
@@ -454,7 +454,7 @@ const D: Draft[] = [
     stem: "A full structural equation model has two parts. They are:",
     options: [
       "A measurement model (constructs to their items) and a structural model (paths among constructs)",
-      "A descriptive model summarising the sample and a sampling model generalising to the population",
+      "A descriptive model summarising the sample and a sampling model generalising it to the population",
       "A between-subjects model and a within-subjects model of change",
       "A null model and a significance model, compared with a chi-square difference test",
     ],
@@ -758,7 +758,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A test developer uses confirmatory factor analysis to check that the items of a new scale load on the factors the theory predicts. This mainly provides evidence for:",
     options: [
-      "Test-retest reliability",
+      "Test-retest (temporal) reliability",
       "Construct (factorial) validity",
       "Predictive validity",
       "Face validity",

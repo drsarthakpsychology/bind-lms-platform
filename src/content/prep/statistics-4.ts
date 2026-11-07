@@ -416,7 +416,7 @@ const D: Draft[] = [
       "Cannot be used with continuous predictors, only with categorical ones",
       "Always includes every predictor, whatever its contribution",
       "Capitalises on chance, inflating R² and coefficients, so models often fail to replicate",
-      "Requires the researcher to set a theory-driven order of entry for every predictor",
+      "Requires the researcher to set a theory-driven order of entry for every single predictor",
     ],
     answer: 2,
     explanation:
@@ -509,7 +509,7 @@ const D: Draft[] = [
     stem: "The 'least-squares' regression line is the line that:",
     options: [
       "Minimises the sum of the absolute values of X across all the cases",
-      "Passes through the largest possible number of the observed data points",
+      "Passes through the largest possible number of the observed data points in the plot",
       "Minimises the sum of squared differences between observed and predicted Y",
       "Maximises the correlation between X and Y",
     ],
@@ -543,7 +543,7 @@ const D: Draft[] = [
     options: [
       "Homoscedasticity of the residuals",
       "Suppression by a third variable",
-      "Attenuation due to unreliability",
+      "Attenuation due to measurement unreliability",
       "Shrinkage, assessed by cross-validation",
     ],
     answer: 3,

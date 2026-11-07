@@ -407,7 +407,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "The t distribution was published in 1908 by William Gosset under the pen name 'Student'. He developed it to deal with:",
     options: [
-      "Frequencies of batches falling into categories in contingency tables",
+      "Frequencies of batches falling into quality categories in contingency tables",
       "Very large samples, where the population variance is already known",
       "Small samples, where the population SD has to be estimated from the sample",
       "Ranked data from taste tests",

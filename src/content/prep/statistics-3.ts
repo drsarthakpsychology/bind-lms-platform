@@ -501,7 +501,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Pearson's contingency coefficient, C = √[χ²/(χ² + N)], has an important limitation compared with Cramér's V:",
     options: [
-      "It can be negative when the association is reversed",
+      "It can be negative when the direction of association is reversed",
       "Its maximum falls short of 1 and varies with table size",
       "It can be computed only for 2 × 2 tables",
       "It ignores the sample size, unlike Cramér's V",
@@ -680,7 +680,12 @@ const D: Draft[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In a sample, Pearson's r = .30, but within subgroups of high and low scorers the correlation is much weaker, and the scatterplot shows a fan shape, with spread in Y increasing as X increases. This pattern is called:",
-    options: ["Heteroscedasticity", "Multicollinearity", "Homoscedasticity", "Autocorrelation"],
+    options: [
+      "Heteroscedasticity",
+      "Multicollinearity",
+      "Homoscedasticity",
+      "Serial autocorrelation",
+    ],
     answer: 0,
     explanation:
       "Heteroscedasticity means unequal spread of Y at different values of X, which shows as a fan or cone. It violates an assumption for interpreting r and regression standard errors uniformly. Homoscedasticity, an even band, is the opposite. Multicollinearity is high correlation among predictors. Autocorrelation is correlation between successive observations.",

@@ -24,7 +24,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A researcher wants to know whether choice of stream (arts, science, commerce) is related to gender among 200 students. The appropriate test is:",
     options: [
-      "Independent-samples t-test",
+      "Independent-samples t-test on stream codes",
       "One-way ANOVA",
       "Pearson correlation",
       "Chi-square test of independence",
@@ -208,7 +208,7 @@ const D: Draft[] = [
       "The row totals alone, compared with the column totals",
       "The df of the test, which show how many cells are free to vary",
       "Standardised (adjusted) residuals, with values beyond about ±1.96 marking the key cells",
-      "The overall p value, which shows how strongly the table departs from independence",
+      "The overall p value, which shows how strongly the whole table departs from independence",
     ],
     answer: 2,
     explanation:
@@ -326,7 +326,7 @@ const D: Draft[] = [
     stem: "The Mann-Whitney U test is the non-parametric alternative to the:",
     options: [
       "Paired t-test",
-      "Pearson correlation",
+      "Pearson product-moment correlation",
       "One-way ANOVA",
       "Independent-samples t-test",
     ],
