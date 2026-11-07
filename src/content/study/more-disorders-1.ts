@@ -15,6 +15,10 @@ Eating disorders are serious mental illnesses in which a person's eating, and th
 {"prompt": "Which eating problem fits best? Place each person.", "buckets": ["Anorexia nervosa", "Bulimia nervosa", "Binge-eating disorder", "ARFID"], "items": [{"text": "A 16-year-old in Pune eats only a few vegetables a day, is very thin, runs for hours, and says she is 'still fat'", "bucket": 0}, {"text": "A 22-year-old of normal weight eats several packets of biscuits in secret, then makes herself vomit, most nights", "bucket": 1}, {"text": "A 40-year-old man eats large amounts late at night, feels out of control and disgusted, but never vomits or fasts", "bucket": 2}, {"text": "A 10-year-old eats only white rice and plain biscuits because other foods 'feel wrong' in his mouth; he has no worries about weight", "bucket": 3}, {"text": "A 25-year-old has lost a lot of weight after choking on fish, and now avoids all solid food out of fear", "bucket": 3}, {"text": "A 19-year-old athlete keeps her weight very low and panics at the thought of gaining even a kilo", "bucket": 0}]}
 :::
 
+:::widget flow
+{"title": "Which eating disorder? A first decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "Disturbed eating causing harm", "detail": "Start with weight, binges, compensation and the reason for avoiding food."}, {"id": "an", "label": "Significantly low weight with fear of gaining", "detail": "Anorexia nervosa (restricting, or binge-eating/purging type).", "parent": "r"}, {"id": "bn", "label": "Binges plus regular compensation, weight not low", "detail": "Bulimia nervosa.", "parent": "r"}, {"id": "bed", "label": "Binges with distress, no regular compensation", "detail": "Binge-eating disorder.", "parent": "r"}, {"id": "arf", "label": "Avoidance from fear, texture or low interest, no weight worry", "detail": "Avoidant/restrictive food intake disorder (ARFID).", "parent": "r"}], "caption": "Tap each branch. Weight decides between anorexia binge-purge type and bulimia."}
+:::
+
 ### Myths that delay help
 - **"Eating disorders only affect rich, thin, Western girls."** They affect boys and men, people of every body size, every income and every country, including India.
 - **"You can tell by looking."** Most people with bulimia and binge-eating disorder have normal or higher weight.
@@ -75,6 +79,10 @@ Sleep comes in cycles of about **90 minutes**, repeated four or five times a nig
 ### What controls sleep
 - **Sleep pressure**: the longer you stay awake, the more a chemical called **adenosine** builds up and makes you sleepy. Caffeine blocks it.
 - **The body clock** (circadian rhythm): a 24-hour clock in the brain, set mainly by **light**, especially morning light. Darkness releases **melatonin**, which signals night.
+
+:::widget layers
+{"title": "A night of sleep", "shape": "stack", "layers": [{"label": "Awake", "detail": "Brief awakenings are normal; most are not remembered."}, {"label": "REM sleep", "detail": "Vivid dreams with muscle paralysis; longer periods towards morning. Emotional memory processing."}, {"label": "Light sleep (N1, N2)", "detail": "About half the night. Sleep spindles help consolidate learning."}, {"label": "Deep sleep (N3)", "detail": "Slow waves; mostly in the first half of the night; physical restoration and growth hormone release."}], "caption": "Tap each layer. Through the night the brain cycles down to deep sleep and up to REM about every 90 minutes; deep sleep dominates early, REM dominates late."}
+:::
 
 :::analogy Two dials
 Imagine two dials. One is sleep pressure, which fills up the longer you are awake, like a tank. The other is the body clock, which opens the "sleep gate" at night. Good sleep happens when the tank is full and the gate is open. Napping in the evening empties the tank; bright screens at night keep the gate closed.
@@ -147,6 +155,10 @@ Many people come to doctors with **body symptoms** (pain, weakness, dizziness, f
 - **Factitious disorder**: deliberately faking or causing symptoms, without an obvious outside reward, to be seen as ill.
 - **Malingering** (not a mental disorder): faking symptoms for an outside reward, such as money, avoiding duty, or drugs.
 
+:::widget flow
+{"title": "How health anxiety keeps itself going", "layout": "cycle", "nodes": [{"id": "a", "label": "A body sensation", "detail": "A headache, a lump, a skipped heartbeat."}, {"id": "b", "label": "Catastrophic thought", "detail": "'This must be a tumour.'"}, {"id": "c", "label": "Anxiety", "detail": "Fear makes the body more aroused, producing more sensations."}, {"id": "d", "label": "Checking and reassurance", "detail": "Searching online, examining the body, asking for tests: brief relief."}, {"id": "e", "label": "Doubt returns", "detail": "Relief fades; attention to the body increases, so more sensations are noticed."}], "caption": "Press Play. CBT breaks the cycle by reducing checking and reassurance, testing beliefs and shifting attention."}
+:::
+
 :::analogy Software, not hardware
 In a stroke, part of the brain's "hardware" is damaged, and scans show it. In functional neurological disorder, the hardware is intact, but the "software" that sends and receives signals is running wrongly, so a limb won't move or a fit happens. Scans are normal, but the problem is real. And software problems can often be retrained.
 :::
@@ -203,6 +215,10 @@ This section introduces four areas that are often surrounded by silence, shame o
 - **Dissociative amnesia**: inability to recall important personal information, usually about a traumatic or stressful event, far beyond ordinary forgetting.
 - **Dissociative identity disorder**: two or more distinct identity states, with gaps in memory. Rare, and controversial.
 - **Trance and possession states**: in some cultures, including parts of India, distress can take the form of a trance or being "possessed" by a spirit or deity. When this happens **outside** accepted religious or cultural practice and causes distress, it may be a disorder.
+
+:::widget layers
+{"title": "From everyday dissociation to disorder", "shape": "stack", "layers": [{"label": "Dissociative identity disorder", "detail": "Two or more identity states with memory gaps. Rare and debated."}, {"label": "Dissociative amnesia and fugue", "detail": "Loss of important personal memories, sometimes with travel and loss of identity."}, {"label": "Possession trance or dissociative seizures", "detail": "Involuntary, distressing episodes outside accepted practice."}, {"label": "Depersonalisation and derealisation", "detail": "Feeling unreal or detached, with reality testing intact."}, {"label": "Everyday dissociation", "detail": "Daydreaming, absorption, driving on autopilot. Normal."}], "caption": "Tap each level, from everyday experience at the bottom to the most severe at the top."}
+:::
 
 ### Sexual health
 Sexual problems are common and treatable, but people rarely raise them, especially in India. Ask routinely and respectfully, especially when prescribing medicines that affect sex (many antidepressants and antipsychotics do). Common problems: low desire, erection difficulties, early ejaculation, difficulty with orgasm, and pain or inability to have penetration.

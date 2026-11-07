@@ -35,6 +35,10 @@ Starvation affects nearly every organ:
 - **Brain**: shrinkage (largely reversible), poor concentration, rigid thinking, obsessions about food; low mood and anxiety, which often improve with nutrition.
 - **Gut**: slow emptying, constipation, bloating.
 
+:::widget flow
+{"title": "How refeeding syndrome happens", "layout": "chain", "nodes": [{"id": "a", "label": "Starvation", "detail": "The body runs on fat and protein; stores of phosphate, potassium and magnesium inside cells run low."}, {"id": "b", "label": "Feeding restarts", "detail": "Carbohydrate arrives and insulin rises."}, {"id": "c", "label": "Minerals rush into cells", "detail": "Insulin drives phosphate, potassium and magnesium from the blood into cells; thiamine is used up."}, {"id": "d", "label": "Blood levels crash", "detail": "Very low phosphate, potassium and magnesium."}, {"id": "e", "label": "Organ failure", "detail": "Heart failure, arrhythmia, breathing failure, confusion, seizures."}, {"id": "f", "label": "Prevention", "detail": "Monitored refeeding, daily bloods early on, phosphate and thiamine, careful but steady increases."}], "caption": "Press Play. The danger lies in refeeding without monitoring, not in refeeding itself."}
+:::
+
 :::safety Refeeding syndrome
 When a severely malnourished person starts eating again, the sudden shift in body chemistry can drop **phosphate, potassium and magnesium** dangerously, causing heart failure, confusion, seizures and death, usually in the first days of refeeding. Refeeding must be **medically supervised** with blood tests, supplements and thiamine. Eating less is not the answer; careful monitoring is.
 :::
@@ -97,6 +101,10 @@ Q: An adult with anorexia has a BMI of 14.6. Severity is:
 
 Signs to look for: swollen salivary glands (puffy cheeks), dental erosion, calluses on the knuckles from inducing vomiting (**Russell's sign**), low potassium, and a high blood bicarbonate (metabolic alkalosis) from vomiting.
 
+:::widget flow
+{"title": "The binge-purge cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Strict dieting", "detail": "Skipping meals, food rules, long gaps."}, {"id": "b", "label": "Hunger and a trigger", "detail": "Physical hunger plus stress, boredom or low mood."}, {"id": "c", "label": "Binge", "detail": "Loss of control over eating."}, {"id": "d", "label": "Shame and fear of weight gain", "detail": "Disgust, guilt, panic."}, {"id": "e", "label": "Compensation", "detail": "Vomiting, laxatives, fasting or exercise; brief relief."}], "caption": "Press Play. CBT starts by breaking the dieting link with regular meals."}
+:::
+
 ### Binge-eating disorder
 - Repeated binges with loss of control, with **at least three** of: eating much faster than normal, eating until uncomfortably full, eating large amounts when not hungry, eating alone because of embarrassment, and feeling disgusted, depressed or guilty afterwards.
 - **Marked distress**, and **no regular compensatory behaviour**.
@@ -156,6 +164,10 @@ Insomnia often begins with a stressor, then **keeps going** because of habits an
 
 :::widget sort
 {"prompt": "Keeps insomnia going, or helps break it? Place each habit.", "buckets": ["Keeps insomnia going", "Helps break it"], "items": [{"text": "Staying in bed for ten hours to 'catch up'", "bucket": 0, "why": "Lying awake in bed weakens the link between bed and sleep."}, {"text": "Getting up at the same time every morning, however the night went", "bucket": 1, "why": "A fixed wake time anchors the body clock and builds sleep pressure for the next night."}, {"text": "Leaving the bed if unable to sleep, and returning only when sleepy", "bucket": 1}, {"text": "Watching the clock and calculating how many hours are left", "bucket": 0}, {"text": "Limiting time in bed to roughly the hours actually slept, then gradually extending", "bucket": 1, "why": "Sleep restriction builds sleep pressure."}, {"text": "Taking a sleeping pill nightly for years", "bucket": 0}, {"text": "Writing worries down earlier in the evening", "bucket": 1}]}
+:::
+
+:::widget flow
+{"title": "Spielman's 3P model of insomnia", "layout": "chain", "nodes": [{"id": "a", "label": "Predisposing", "detail": "A tendency to worry, light sleep, hyperarousal, family history."}, {"id": "b", "label": "Precipitating", "detail": "A stressor: exams, illness, a new baby, bereavement, shift change."}, {"id": "c", "label": "Perpetuating", "detail": "Habits that keep it going: long time in bed awake, napping, clock-watching, worry about sleep, alcohol, sleeping pills."}, {"id": "d", "label": "Chronic insomnia", "detail": "Continues long after the stressor ends, maintained by the perpetuating factors."}], "caption": "Press Play. CBT-I targets the perpetuating factors, which is why it works even when the original stress has gone."}
 :::
 
 ### Excessive daytime sleepiness
@@ -225,6 +237,10 @@ When the body clock is out of step with the timing a person needs:
 - **Nightmare disorder**: repeated frightening dreams, with **clear memory** on waking; common after trauma.
 - **REM sleep behaviour disorder**: acting out dreams (punching, kicking, shouting) because the normal muscle paralysis of REM is lost; mostly in older men; a strong early warning sign of **Parkinson's disease and Lewy body dementia**.
 - **Sleep paralysis**: briefly unable to move on waking or falling asleep, often with a sense of a presence; common and usually harmless.
+
+:::widget brainmap
+{"title": "Brain areas behind narcolepsy and parasomnias", "focus": ["hypothalamus", "brainstem", "thalamus"], "notes": {"hypothalamus": "Orexin neurons here keep us awake and stabilise the switch between sleep and wake. Their loss causes narcolepsy type 1.", "brainstem": "Generates REM sleep and its muscle paralysis. Damage to the paralysis circuit causes REM sleep behaviour disorder.", "thalamus": "Gates sensory input during sleep; partial arousal from deep sleep, with the cortex half-awake, underlies sleepwalking and sleep terrors."}, "caption": "Tap each area."}
+:::
 
 ### Restless legs syndrome
 An **urge to move the legs**, often with unpleasant sensations, that starts or worsens **at rest** and **in the evening or night**, and is **relieved by movement**. Linked to **iron deficiency**, kidney failure, pregnancy, and some medicines (antidepressants, antihistamines, antipsychotics).
@@ -302,6 +318,10 @@ Positive signs include:
 
 :::widget sort
 {"prompt": "Which diagnosis fits best? Place each person.", "buckets": ["Somatic symptom disorder", "Illness anxiety disorder", "Functional neurological disorder", "Factitious disorder"], "items": [{"text": "Has back pain from a real disc problem, but spends most of the day researching it, fears paralysis and has stopped all activity", "bucket": 0, "why": "A real symptom with an excessive, disabling response."}, {"text": "Has no symptoms but is convinced a mole is cancer, checks it hourly and has seen eight dermatologists", "bucket": 1}, {"text": "Cannot move her right leg, but Hoover's sign is positive and an MRI is normal", "bucket": 2}, {"text": "A nurse with repeated unexplained low blood sugars is found to be injecting insulin secretly, with no financial gain", "bucket": 3}, {"text": "Avoids all doctors because he is sure they will find a fatal illness", "bucket": 1, "why": "The care-avoidant type of illness anxiety disorder."}, {"text": "A mother repeatedly brings her child for 'fits' that no one else has seen; blood tests show sedatives the child was never prescribed", "bucket": 3, "why": "Factitious disorder imposed on another: a child protection emergency."}]}
+:::
+
+:::widget flow
+{"title": "Body symptoms without a disease explanation: sorting the possibilities", "layout": "tree", "nodes": [{"id": "r", "label": "Distressing body symptoms", "detail": "First, a proper medical assessment. Then ask about intention and the person's response to the symptoms."}, {"id": "ssd", "label": "Real symptoms, excessive worry and effort", "detail": "Somatic symptom disorder.", "parent": "r"}, {"id": "ia", "label": "Few symptoms, intense fear of illness", "detail": "Illness anxiety disorder.", "parent": "r"}, {"id": "fnd", "label": "Neurological symptoms with positive signs", "detail": "Functional neurological disorder.", "parent": "r"}, {"id": "fd", "label": "Deliberately produced, no external reward", "detail": "Factitious disorder (imposed on self or another).", "parent": "r"}, {"id": "mal", "label": "Deliberately produced for gain", "detail": "Malingering: not a mental disorder.", "parent": "r"}, {"id": "dep", "label": "Part of depression or anxiety", "detail": "Treat the underlying disorder; common in Indian clinics.", "parent": "r"}], "caption": "Tap each branch."}
 :::
 
 ### Dhat syndrome
@@ -420,6 +440,10 @@ Sexual problems are common and often treatable. A dysfunction is diagnosed when 
 {"prompt": "Which cause is most likely? Place each.", "buckets": ["Physical or medical", "Medicine-related", "Psychological or relationship"], "items": [{"text": "A 55-year-old diabetic smoker with gradual loss of erections at all times, including on waking", "bucket": 0, "why": "Gradual, constant loss with vascular risk factors points to a physical cause."}, {"text": "A 28-year-old with erection problems only with his new wife, but normal morning erections", "bucket": 2, "why": "Normal morning and self-stimulation erections suggest a psychological cause such as performance anxiety."}, {"text": "A woman who cannot reach orgasm since starting paroxetine", "bucket": 1}, {"text": "A man with schizophrenia on risperidone with low desire, breast swelling and high prolactin", "bucket": 1}, {"text": "A newly married woman with fear and tightening on attempted penetration after a traumatic first night", "bucket": 2}, {"text": "A 50-year-old man with low desire, tiredness and low morning testosterone", "bucket": 0}]}
 :::
 
+:::widget flow
+{"title": "Sexual problems: finding the cause", "layout": "tree", "nodes": [{"id": "r", "label": "A persistent sexual problem with distress", "detail": "Take a private, respectful history: lifelong or new, all situations or some."}, {"id": "m", "label": "Medical", "detail": "Diabetes, vascular disease, low testosterone, thyroid, pelvic problems. Gradual, constant problems suggest this.", "parent": "r"}, {"id": "d", "label": "Medicines and substances", "detail": "SSRIs, SNRIs, antipsychotics with prolactin rise, beta-blockers, alcohol, opioids.", "parent": "r"}, {"id": "p", "label": "Psychological", "detail": "Performance anxiety, depression, guilt, trauma, myths. Normal morning erections point here.", "parent": "r"}, {"id": "rel", "label": "Relationship", "detail": "Conflict, lack of privacy, pressure to conceive.", "parent": "r"}], "caption": "Tap each branch. Most problems have more than one cause."}
+:::
+
 ### Gender dysphoria
 **Gender dysphoria** is distress caused by a marked difference between a person's **experienced or expressed gender** and the **sex assigned at birth**, lasting over time. Not every transgender person has dysphoria, and being transgender is not a disorder. In ICD-11, **gender incongruence** has been moved out of the mental disorders chapter into a chapter on sexual health, to reduce stigma while keeping access to care.
 
@@ -478,6 +502,10 @@ Related disorders placed elsewhere in DSM-5-TR:
 
 :::widget sort
 {"prompt": "Which disorder fits? Place each person.", "buckets": ["Intermittent explosive disorder", "Kleptomania", "Pyromania", "Not an impulse control disorder"], "items": [{"text": "A bank clerk smashes his phone and punches walls over minor annoyances several times a year, and is deeply ashamed afterwards", "bucket": 0}, {"text": "A wealthy woman repeatedly steals cheap hairclips she never uses, feeling tension before and relief after", "bucket": 1}, {"text": "A man sets fire to his own shop to claim insurance", "bucket": 3, "why": "Fire-setting for money is arson, not pyromania."}, {"text": "A teenager repeatedly sets small fires because he is fascinated by flames and feels relief watching them", "bucket": 2}, {"text": "A woman pulls out her eyebrow hairs when anxious, leaving bald patches", "bucket": 3, "why": "Trichotillomania is classified with obsessive-compulsive related disorders."}, {"text": "A man steals food because his family is starving", "bucket": 3}]}
+:::
+
+:::widget flow
+{"title": "The impulse control cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Rising tension", "detail": "An urge to steal, set a fire or explode."}, {"id": "b", "label": "The act", "detail": "Stealing, fire-setting, an outburst."}, {"id": "c", "label": "Relief or pleasure", "detail": "Tension drops, which rewards the act."}, {"id": "d", "label": "Regret and shame", "detail": "Often followed by guilt and secrecy, which add stress and the next urge."}], "caption": "Press Play. Treatment interrupts the cycle: noticing urges early, competing responses, CBT, and medicines such as naltrexone or fluoxetine for some disorders."}
 :::
 
 ### Elimination disorders (recap and adults)

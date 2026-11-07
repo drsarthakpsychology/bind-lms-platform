@@ -74,6 +74,10 @@ Its main parts:
 {"title": "Setting a sleep restriction window", "steps": [{"q": "Mr Iyer, 58, spends 9 hours in bed (10 p.m. to 7 a.m.) but his sleep diary shows he sleeps only about 5.5 hours a night. What is his sleep efficiency?", "a": "Time asleep divided by time in bed: 5.5 divided by 9, which is about 61%. Normal is about 85% or more."}, {"q": "What is his starting time-in-bed window?", "a": "About his average sleep time, 5.5 hours (never less than about 5 hours). He chooses a fixed wake time of 6:30 a.m., so bedtime becomes 1 a.m."}, {"q": "After a week, his sleep efficiency is 90%. What next?", "a": "Extend the window by about 15 to 30 minutes (bedtime 12:30 or 12:45 a.m.) and keep reviewing weekly until he sleeps well and feels rested."}, {"q": "Who should NOT have strict sleep restriction?", "a": "People with bipolar disorder (risk of triggering mania), epilepsy (seizure risk), untreated sleep apnoea, or jobs where sleepiness is dangerous (drivers) without modification and careful supervision."}], "yourTurn": [{"q": "A student spends 8 hours in bed and sleeps 6.4 hours. What is her sleep efficiency, and roughly what would her starting window be?", "a": "6.4 divided by 8 is 80%. A starting window of about 6.5 hours, with a fixed wake time, then adjusted weekly."}]}
 :::
 
+:::widget flow
+{"title": "The four parts of CBT for insomnia", "layout": "tree", "nodes": [{"id": "r", "label": "CBT-I", "detail": "Four to eight sessions, in person, in groups or digital."}, {"id": "a", "label": "Sleep restriction", "detail": "Limit time in bed to the time actually slept, then extend as efficiency rises.", "parent": "r"}, {"id": "b", "label": "Stimulus control", "detail": "Bed only for sleep and sex; up if not sleeping; fixed wake time; no naps.", "parent": "r"}, {"id": "c", "label": "Cognitive therapy", "detail": "Challenge beliefs like 'I can't function without eight hours.'", "parent": "r"}, {"id": "d", "label": "Hygiene and relaxation", "detail": "Caffeine, alcohol, light, wind-down routine, breathing.", "parent": "r"}], "caption": "Tap each part. Sleep restriction and stimulus control do most of the work."}
+:::
+
 ### Sleeping medicines
 Medicines can help **short-term** insomnia, but tolerance, dependence, falls, memory problems and next-day drowsiness limit their use.
 - **Z-drugs** (zolpidem, zopiclone, eszopiclone): short-term use; risk of complex sleep behaviours (sleep-driving, sleep-eating).
@@ -82,6 +86,10 @@ Medicines can help **short-term** insomnia, but tolerance, dependence, falls, me
 - **Melatonin**: modest benefit, mainly for body clock problems and in older adults.
 - **Sedating antidepressants** (low-dose trazodone, mirtazapine, doxepin) are used, especially when depression coexists.
 - **Avoid antihistamines** and antipsychotics as routine sleeping pills.
+
+:::widget journey
+{"drug": "zolpidem", "target": "GABA-A receptors containing alpha-1 subunits, which promote sleep", "routes": ["oral"], "notes": {"gut": "Absorbed quickly; acts within about 30 minutes, so it is taken in bed.", "liver": "Broken down mainly by CYP3A4. Women clear it more slowly, which is why lower doses are used.", "out": "A short half-life of a few hours, but next-morning impairment can still occur, especially in older people."}, "caption": "Follow a dose of zolpidem. Its speed explains why it helps falling asleep, and why taking it and staying up can cause complex sleep behaviours."}
+:::
 
 ### Narcolepsy and sleep apnoea
 - **Narcolepsy**: scheduled naps and good sleep habits, plus medicines for sleepiness (modafinil, pitolisant, solriamfetol, sodium oxybate) and for cataplexy (sodium oxybate, pitolisant, some antidepressants).
@@ -149,6 +157,10 @@ How the diagnosis is explained often decides whether treatment works. A good exp
 5. **Gives hope**: it can improve, and the nervous system can be retrained.
 6. **Explains the next step**: physiotherapy, psychological therapy, or both.
 
+:::widget flow
+{"title": "How functional symptoms are maintained", "layout": "cycle", "nodes": [{"id": "a", "label": "Trigger", "detail": "An injury, illness, panic attack or dissociative episode."}, {"id": "b", "label": "Strong prediction", "detail": "The brain expects weakness, pain or a seizure."}, {"id": "c", "label": "Attention to the body", "detail": "Focusing on the symptom strengthens the prediction."}, {"id": "d", "label": "Real symptom", "detail": "The prediction overrides normal signals: the limb really does not move."}, {"id": "e", "label": "Avoidance and worry", "detail": "Less use, more tests, more fear, which keep the prediction strong."}], "caption": "Press Play. Physiotherapy uses distraction and automatic movement; therapy reduces fear and avoidance."}
+:::
+
 ### Treatments
 - **Specialist physiotherapy** for functional motor symptoms: retraining movement with attention directed away from the affected limb, graded activity.
 - **Psychological therapy**: CBT approaches for functional seizures and persistent physical symptoms, addressing triggers, avoidance, catastrophic thinking and stress.
@@ -205,6 +217,10 @@ Q: In confirmed functional seizures without epilepsy, which is most appropriate?
 3. **Look for causes**: medical conditions, medicines, substances, mood, anxiety, relationship issues, trauma, knowledge gaps and cultural beliefs.
 4. **Treat the causes** (diabetes control, change of medicine, treat depression).
 5. **Offer specific treatment**: education, behavioural techniques, couples work, medicines.
+
+:::widget journey
+{"drug": "sildenafil", "target": "the enzyme PDE5 in the smooth muscle of penile blood vessels (not in the brain)", "routes": ["oral"], "notes": {"gut": "Absorbed within about an hour; a heavy fatty meal slows it.", "bbb": "Sildenafil acts in the body, not the brain. It does not create desire: sexual stimulation is still needed.", "target": "Blocking PDE5 keeps cyclic GMP high, relaxing vessel walls and increasing blood flow. Nitrates use the same pathway, so together they can drop blood pressure dangerously.", "out": "Half-life of about four hours; tadalafil lasts much longer."}, "caption": "Follow sildenafil. Its target is outside the brain, which is why psychological factors still matter so much."}
+:::
 
 ### Behavioural and couple approaches
 - **Sensate focus**, developed by Masters and Johnson: couples touch for pleasure in graded steps, with intercourse temporarily off the table, removing performance pressure.
@@ -378,7 +394,10 @@ IED medicine with evidence? :: Fluoxetine.
 2. Name five short-note topics from this module. || Refeeding syndrome, ARFID, CBT-I, narcolepsy, RBD, RLS, somatic symptom disorder, factitious disorder, Dhat, depersonalisation, gender dysphoria, IED.
 :::
 
-## 4.2 Module test [core]
+`;
+
+export const test = String.raw`
+## 4.5 Module test [core]
 :::mcq
 Q: Which feature is required for anorexia nervosa?
 - Amenorrhoea
