@@ -40,7 +40,7 @@ function wrap(text: string, font: { widthOfTextAtSize: (t: string, s: number) =>
 
 /** pdf-lib's standard fonts can't draw characters outside WinAnsi; swap the common ones. */
 function winAnsi(s: string): string {
-  return s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, "-").replace(/…/g, "...").replace(/[^\x20-\x7E\xA0-\xFF]/g, "");
+  return s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[\u2013\u2014]/g, "-").replace(/…/g, "...").replace(/[^\x20-\x7E\xA0-\xFF]/g, "");
 }
 
 /**

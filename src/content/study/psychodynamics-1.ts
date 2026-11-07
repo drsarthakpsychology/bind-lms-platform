@@ -14,12 +14,46 @@ You already met Freud's maps of the mind and the list of defences in the module 
 4. **The past lives on in the present.** Early relationships leave templates that we repeat with partners, bosses and therapists.
 5. **The therapy relationship is a window.** How the patient treats the therapist (and how the therapist feels) shows the pattern live, in the room.
 
+:::widget flow
+{
+  "title": "One family, many schools",
+  "layout": "tree",
+  "nodes": [
+    { "id": "freud", "label": "Freud: drives and conflict", "detail": "The starting point: unconscious wishes, conflict between id, ego and superego, defences, dreams and the talking cure." },
+    { "id": "ego", "label": "Ego psychology", "parent": "freud", "detail": "Anna Freud, Hartmann, Vaillant. Focus: how well the ego adapts, which defences it uses, how strong it is." },
+    { "id": "obj", "label": "Object relations", "parent": "freud", "detail": "Klein, Winnicott, Bion, Kernberg. Focus: the inner world of relationships, splitting and integration." },
+    { "id": "self", "label": "Self psychology", "parent": "freud", "detail": "Kohut. Focus: a fragile self that needs mirroring, idealising and twinship from others to grow." },
+    { "id": "att", "label": "Attachment theory", "parent": "freud", "detail": "Bowlby, Ainsworth, Main, Fonagy. Focus: real early care, internal working models and mentalising." },
+    { "id": "rel", "label": "Relational and intersubjective", "parent": "self", "detail": "Two minds in the room, co-creating what happens. The therapist is a participant, not only an observer." },
+    { "id": "mbt", "label": "Mentalization-based work", "parent": "att", "detail": "Attachment research turned into a treatment for people whose feelings overwhelm their ability to think about minds." }
+  ],
+  "caption": "Tap each school. They disagree about what drives people, yet all keep the five shared ideas above."
+}
+:::
+
+:::widget timeline
+{
+  "prompt": "Put these landmarks of psychodynamic thought in the order they happened.",
+  "events": [
+    { "label": "Freud's book on dreams sets out the topographic model", "when": "1900" },
+    { "label": "Girindrasekhar Bose founds the Indian Psychoanalytic Society in Calcutta", "when": "1922" },
+    { "label": "Freud's structural model: id, ego and superego", "when": "1923" },
+    { "label": "Anna Freud systematises the defence mechanisms", "when": "1936" },
+    { "label": "Klein describes the paranoid-schizoid and depressive positions", "when": "1930s to 1946" },
+    { "label": "Bowlby's attachment theory and Ainsworth's Strange Situation", "when": "1950s to 1970s" },
+    { "label": "Kohut's self psychology", "when": "1971 to 1984" },
+    { "label": "Mentalization-based treatment is tested in randomised trials", "when": "1999 onwards" }
+  ],
+  "why": "Freud's two models came first, with Bose working in parallel in India. Ego psychology and Kleinian object relations grew in the 1930s and 1940s; attachment research and self psychology followed; structured, tested treatments came last."
+}
+:::
+
 :::student
 Think of a person who always ends up with partners who ignore them, then feels hurt but "chooses" the same kind again. A psychodynamic therapist asks: what is this repetition doing for them? Is it familiar? Does it protect them from something even more frightening, such as being truly seen?
 :::
 
 :::clinician
-Contemporary psychodynamic practice is not classical drive theory. Most clinicians work from a blend of ego psychology, object relations, self psychology, attachment and relational ideas, with an emphasis on affect, avoidance, recurring interpersonal themes, the therapy relationship and past experience. Blagys and Hilsenroth (Clinical Psychology: Science and Practice, 2000) distilled seven features that distinguish psychodynamic from cognitive-behavioural sessions in recorded therapy: focus on affect and its expression; exploring attempts to avoid distressing thoughts and feelings; identifying recurring themes and patterns; discussing past experience; focus on interpersonal relations; focus on the therapy relationship; and exploring fantasy life. These remain a useful operational definition when you read trials.
+Contemporary psychodynamic practice is not classical drive theory. Most clinicians work from a blend of ego psychology, object relations, self psychology, attachment and relational ideas, with an emphasis on affect, avoidance, recurring interpersonal themes, the therapy relationship and past experience. A well-known 2000 review of recorded therapy sessions distilled seven features that distinguish psychodynamic from cognitive-behavioural sessions in recorded therapy: focus on affect and its expression; exploring attempts to avoid distressing thoughts and feelings; identifying recurring themes and patterns; discussing past experience; focus on interpersonal relations; focus on the therapy relationship; and exploring fantasy life. These remain a useful operational definition when you read trials.
 :::
 
 :::widget decide
@@ -64,12 +98,42 @@ Module 3 gave you the outline: conscious, preconscious, unconscious; id, ego, su
 | **Pleasure principle** | Seek relief from tension now | The id's rule |
 | **Reality principle** | Delay relief until it is safe and possible | The ego's rule |
 
+:::widget layers
+{
+  "title": "The topographic model as an iceberg",
+  "shape": "iceberg",
+  "layers": [
+    { "label": "Conscious", "detail": "What you are aware of right now: this sentence, the chair you sit on, a passing worry. Small, like the tip of an iceberg." },
+    { "label": "Preconscious", "detail": "Not in mind now but easy to bring up: your phone number, what you ate yesterday. Secondary process rules here, and a 'censor' at its border decides what may pass." },
+    { "label": "Unconscious", "detail": "Wishes, fears and memories kept out of awareness because they cause anxiety. Primary process rules here. You see it only indirectly: in dreams, slips, symptoms and repeated patterns." }
+  ],
+  "caption": "Tap each level. In the later structural model, the id lies wholly below the water, while the ego and superego stretch across all three levels."
+}
+:::
+
 ### Dreams: "the royal road to the unconscious"
 Freud separated the **manifest content** (the dream you remember) from the **latent content** (the hidden wish). The **dream work** turns one into the other:
 - **Condensation**: several ideas squeezed into one image.
 - **Displacement**: feeling moved from an important thing to an unimportant one.
 - **Symbolisation**: one thing stands for another.
 - **Secondary revision**: on waking, the mind tidies the dream into a story.
+
+:::widget flow
+{
+  "title": "How a hidden wish becomes the dream you remember",
+  "layout": "chain",
+  "nodes": [
+    { "id": "lat", "label": "Latent content", "detail": "The hidden wish, often stirred by a 'day residue', something small that happened the day before." },
+    { "id": "con", "label": "Condensation", "detail": "Several people, places or ideas are squeezed into one image." },
+    { "id": "dis", "label": "Displacement", "detail": "The strong feeling is shifted onto something minor, so the dream feels oddly calm about what matters." },
+    { "id": "sym", "label": "Symbolisation", "detail": "One thing stands for another, so the wish is shown in disguise." },
+    { "id": "rev", "label": "Secondary revision", "detail": "On waking, the mind smooths the fragments into a story with a beginning and end." },
+    { "id": "man", "label": "Manifest content", "detail": "The dream as told. Analysis works backwards, from this to the latent wish, through the dreamer's associations." }
+  ],
+  "edgeLabels": { "lat>con": "censored by", "rev>man": "remembered as" },
+  "caption": "Press Play. The dream work disguises the wish so that sleep can go on."
+}
+:::
 
 :::mnemonic Dream work: "CDSS"
 **C**ondensation, **D**isplacement, **S**ymbolisation, **S**econdary revision.
@@ -126,6 +190,21 @@ Q: Which statement about Freud's legacy is most accurate today?
 
 ## 1.3 Anxiety, conflict and the symptom [core][starting]
 In Freud's later theory, anxiety is a **signal**. When a forbidden wish or a frightening memory starts to rise, the ego feels a small dose of anxiety and switches on a defence. If the defence works, the person feels nothing. If it fails, the anxiety floods through, or a symptom forms.
+
+:::widget flow
+{
+  "title": "Signal anxiety, step by step",
+  "layout": "chain",
+  "nodes": [
+    { "id": "w", "label": "A wish or memory stirs", "detail": "For example, anger at a parent who is also loved, or grief that has never been felt." },
+    { "id": "s", "label": "A small dose of anxiety", "detail": "The ego senses danger before the feeling arrives. This is the signal." },
+    { "id": "d", "label": "A defence switches on", "detail": "Repression, reaction formation, intellectualisation or another defence pushes the wish back." },
+    { "id": "ok", "label": "Calm, at a cost", "detail": "If the defence works, the person feels little. The cost may be rigidity, lost energy or narrowed living." },
+    { "id": "sym", "label": "Or a symptom forms", "detail": "If the defence partly fails, a compromise appears: a phobia, a bodily symptom, a ritual. It hides the wish, expresses it a little and punishes it." }
+  ],
+  "caption": "Anxiety is not the problem in this model. It is the alarm that sets off the defence."
+}
+:::
 
 ### The developmental ladder of fears
 Psychodynamic writers describe the danger behind anxiety in a rough order from earliest to latest:
@@ -185,6 +264,21 @@ Attachment theory came from a psychoanalyst, **John Bowlby**, who looked at real
 - **Protest, despair, detachment**: the three stages of a young child's response to a long separation (cries and searches; gives up and grieves; seems not to care, and may ignore the parent on return).
 - **Internal working models**: from repeated experience, the child forms an inner expectation of others ("people come when I need them") and of the self ("I am worth coming for").
 
+:::widget flow
+{
+  "title": "The circle of security: base and haven",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "base", "label": "Secure base", "detail": "Feeling safe, the child moves away to explore, checking back now and then." },
+    { "id": "explore", "label": "Explores", "detail": "Play, curiosity, learning. The attachment system is quiet." },
+    { "id": "threat", "label": "Threat or tiredness", "detail": "A loud noise, a stranger, a fall. The attachment system switches on." },
+    { "id": "haven", "label": "Safe haven", "detail": "The child returns to the caregiver for comfort." },
+    { "id": "soothed", "label": "Comforted", "detail": "A sensitive response calms the child. Calm switches the attachment system off, and exploring can start again." }
+  ],
+  "caption": "Press Play. Each turn of the circle teaches the child what to expect of others and of itself."
+}
+:::
+
 ### Mary Ainsworth and sensitivity
 Ainsworth watched mothers and babies at home in **Uganda** and then in **Baltimore**. The best predictor of a secure child was **maternal sensitivity**: noticing the baby's signals, reading them correctly and responding promptly and fittingly. She built the **Strange Situation**, a short laboratory sequence of separations and reunions, to see how a one-year-old uses the parent under mild stress.
 
@@ -217,7 +311,7 @@ Exams try to trick you: a baby who does not cry when the mother leaves is not "s
 :::
 
 :::clinician
-Internal working models are best treated as procedural, largely non-conscious expectations about the availability of others and the worthiness of self, which bias attention, memory and interpretation in relationships. Cross-cultural Strange Situation studies show secure attachment as the modal pattern in most samples, with variation in the distribution of insecure categories (more resistant classifications in some Japanese and Israeli kibbutz samples, more avoidant in some north German samples; van IJzendoorn and Kroonenberg, Child Development 1988). In India, care is often shared among grandparents, aunts and older siblings; attachment can be secure to several figures, and the "primary caregiver" may not be the mother. Ask who actually cares for the child.
+Internal working models are best treated as procedural, largely non-conscious expectations about the availability of others and the worthiness of self, which bias attention, memory and interpretation in relationships. Cross-cultural Strange Situation studies show secure attachment as the modal pattern in most samples, with variation in the distribution of insecure categories (more resistant classifications in some Japanese and Israeli kibbutz samples, more avoidant in some north German samples, as a 1988 cross-cultural meta-analysis of Strange Situation studies showed). In India, care is often shared among grandparents, aunts and older siblings; attachment can be secure to several figures, and the "primary caregiver" may not be the mother. Ask who actually cares for the child.
 :::
 
 :::recall
@@ -364,15 +458,22 @@ Clinicians assess ego strength across functions. A practical list:
 
 ### Defensive functioning: going deeper than Module 3
 Module 3 gave you four maturity levels. Researchers use a finer seven-level ladder from the DSM-IV appendix's Defensive Functioning Scale. The point is not to memorise every name: it is to see that **defences cluster**, and the overall level predicts how a person copes.
-| Level | Example defences | What it protects |
-|---|---|---|
-| High adaptive | Anticipation, affiliation, humour, sublimation, suppression | Allows feelings into awareness, handled well |
-| Mental inhibitions (compromise) | Displacement, intellectualisation, reaction formation, repression | Keeps ideas or feelings out of awareness |
-| Minor image-distorting | Devaluation, idealisation, omnipotence | Props up self-esteem |
-| Disavowal | Denial, projection, rationalisation | Keeps unpleasant facts out |
-| Major image-distorting | Splitting, projective identification | Gross distortion of self and others |
-| Action | Acting out, passive aggression, help-rejecting complaining | Deals with stress by action or withdrawal |
-| Defensive dysregulation | Delusional projection, psychotic denial, psychotic distortion | Breaks with reality |
+:::widget layers
+{
+  "title": "The seven-level defence ladder, most adaptive at the top",
+  "shape": "stack",
+  "layers": [
+    { "label": "1 · High adaptive", "detail": "Anticipation, affiliation, altruism, humour, self-assertion, self-observation, sublimation, suppression. Feelings stay in awareness and are handled well." },
+    { "label": "2 · Mental inhibitions (compromise)", "detail": "Displacement, dissociation, intellectualisation, isolation of affect, reaction formation, repression, undoing. Ideas or feelings are kept out of awareness." },
+    { "label": "3 · Minor image-distorting", "detail": "Devaluation, idealisation, omnipotence. Self-esteem is propped up by bending the picture of self or others a little." },
+    { "label": "4 · Disavowal", "detail": "Denial, projection, rationalisation. Unpleasant facts, impulses or responsibility are kept out." },
+    { "label": "5 · Major image-distorting", "detail": "Splitting of self or others, projective identification, autistic fantasy. Gross distortion of self and others." },
+    { "label": "6 · Action", "detail": "Acting out, apathetic withdrawal, help-rejecting complaining, passive aggression. Stress is dealt with by doing or withdrawing, not by thinking and feeling." },
+    { "label": "7 · Defensive dysregulation", "detail": "Delusional projection, psychotic denial, psychotic distortion. The defence breaks with shared reality." }
+  ],
+  "caption": "Tap each rung. Read the overall level, not single defences: everyone uses lower rungs under enough stress."
+}
+:::
 
 :::widget sort
 {
@@ -434,6 +535,23 @@ Q: A man asks his therapist for advice every week and rejects every idea, while 
 
 Klein called these **positions**, not stages, because adults move back and forth between them throughout life.
 
+:::widget compare
+{
+  "title": "Freud's drive model versus object relations",
+  "a": {
+    "label": "Classical drive model (Freud)",
+    "points": ["The engine of the mind is drives: sex and aggression seeking discharge", "Other people matter as targets of drives ('objects')", "Conflict is between wish, conscience and reality", "Key developmental moment: the Oedipal phase, around 3 to 6", "The analyst is a neutral screen; transference shows displaced wishes"],
+    "summary": "Symptoms are compromises between forbidden wishes and the forces against them."
+  },
+  "b": {
+    "label": "Object relations (Klein, Winnicott, Fairbairn, Kernberg)",
+    "points": ["The engine of the mind is the need for relationships", "Inner pictures of self and others, linked by feeling, make up the mind", "Conflict is between loving and hating the same person, and between split images", "Key developmental moments: the first years, splitting and integration", "The therapist's own feelings (countertransference) are central data"],
+    "summary": "Symptoms come from the inner world of relationships we carry and repeat."
+  },
+  "caption": "Slide between them. Most clinicians today use both: what a person wishes, and with whom they keep repeating it."
+}
+:::
+
 :::analogy The two positions on a bad day
 You wait for a friend who is late. In the paranoid-schizoid mood: "She doesn't care. She's always been selfish." In the depressive mood: "I'm upset she's late, and she's also the friend who stayed with me in hospital." Same friend; one view splits, the other holds both.
 :::
@@ -446,6 +564,21 @@ You wait for a friend who is late. In the paranoid-schizoid mood: "She doesn't c
 | **Control** | Controlling the other through the projected part | You find yourself acting harshly towards a patient who expects harshness |
 
 **Wilfred Bion** added **container and contained**: a mother (or therapist) takes in the infant's raw distress, digests it and gives it back in bearable form. Much of therapy is containment.
+
+:::widget flow
+{
+  "title": "Containment: how raw distress becomes thinkable",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "raw", "label": "Raw distress", "detail": "The infant (or patient) has a feeling too big to think about: terror, rage, nameless dread." },
+    { "id": "in", "label": "Put into the carer", "detail": "Through crying, or through projective identification, the carer is made to feel some of it." },
+    { "id": "dig", "label": "Carer digests it", "detail": "The carer stays calm enough to feel it, think about it and give it meaning. Bion called this the alpha function." },
+    { "id": "back", "label": "Returned bearable", "detail": "A soothing voice, a named feeling: 'You're frightened because I went out of the room.'" },
+    { "id": "own", "label": "Capacity taken in", "detail": "Over many rounds, the child takes in the ability to hold and think about its own feelings." }
+  ],
+  "caption": "Press Play. When the carer cannot contain, the feeling comes back worse, as Bion put it, as 'nameless dread'."
+}
+:::
 
 ### Donald Winnicott: the facilitating environment
 - "**There is no such thing as a baby**": only a baby with someone caring for it.
@@ -528,6 +661,22 @@ A **selfobject** is another person experienced as part of one's own self, doing 
 
 ### Optimal frustration and transmuting internalisation
 Caregivers inevitably fail sometimes. If the failures are **small and repaired**, the child gradually takes over the function (soothing, valuing itself). Kohut called this **transmuting internalisation**. If failures are big or unrepaired, the self stays **fragile** and prone to **fragmentation** (feeling scattered, empty, enraged) when slighted. **Narcissistic rage** is the fury of a self that has been wounded.
+
+:::widget flow
+{
+  "title": "Rupture and repair in self psychology",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "tie", "label": "Selfobject tie", "detail": "The patient feels mirrored or steadied by the therapist, often without saying so." },
+    { "id": "fail", "label": "Empathic failure", "detail": "A late start, a missed cue, a holiday. Small, inevitable failures." },
+    { "id": "frag", "label": "Fragmentation or rage", "detail": "The self feels scattered, empty or furious. Symptoms may flare." },
+    { "id": "rec", "label": "Failure recognised", "detail": "The therapist names their part and the meaning it had, without defending or blaming." },
+    { "id": "rep", "label": "Repair", "detail": "The tie is restored, and the old wound behind the reaction can be understood." },
+    { "id": "int", "label": "Function taken in", "detail": "Transmuting internalisation: a little more self-soothing and self-valuing now belongs to the patient." }
+  ],
+  "caption": "Kohut saw these small, repaired breaks as the engine of change, not as mistakes to avoid at all costs."
+}
+:::
 
 :::sounds How a fragile self sounds
 - "When my manager didn't mention my name in the meeting, I felt like I'd disappeared. I couldn't work for the rest of the day."
@@ -630,6 +779,22 @@ The AAI asks an adult about childhood relationships with parents ("Give me five 
 ### Intergenerational transmission
 Parents' AAI categories predict their infants' Strange Situation classifications strongly. How it passes on is only partly understood: parental **sensitivity** explains some of it; the rest is called the "**transmission gap**". **Mentalising** (the parent's ability to think about the baby's mind; Fonagy and colleagues called this reflective function) helps fill the gap.
 
+:::widget flow
+{
+  "title": "From a parent's story to a baby's pattern",
+  "layout": "chain",
+  "nodes": [
+    { "id": "aai", "label": "Parent's state of mind", "detail": "How coherently the parent can think and talk about their own childhood (scored on the Adult Attachment Interview)." },
+    { "id": "rf", "label": "Reflective function", "detail": "The parent's capacity to see the baby as a person with feelings and intentions, not just behaviour." },
+    { "id": "sens", "label": "Sensitive care", "detail": "Noticing, reading and answering the baby's signals promptly and fittingly." },
+    { "id": "inf", "label": "Infant's pattern", "detail": "Secure, avoidant, ambivalent or disorganised in the Strange Situation." },
+    { "id": "iwm", "label": "Child's working model", "detail": "Expectations of self and others carried into later relationships, open to change by new experience." }
+  ],
+  "edgeLabels": { "rf>sens": "partly explains", "sens>inf": "the transmission gap sits here" },
+  "caption": "Sensitivity carries only part of the link. Frightened or frightening parenting, and temperament, add to it."
+}
+:::
+
 :::widget guess
 {
   "prompt": "In meta-analysis, when a parent is secure versus insecure on the Adult Attachment Interview, in roughly what percentage of cases does the infant's Strange Situation pattern match (secure versus insecure)?",
@@ -704,6 +869,22 @@ These three ideas are the engine room of psychodynamic work. Module 3 defined tr
 - **Concordant** countertransference (Racker): the therapist feels what the patient feels (identifying with the patient's self).
 - **Complementary** countertransference: the therapist feels like the important other in the patient's life (for example the critical parent).
 - **Objective** countertransference (Winnicott, "Hate in the countertransference"): the reaction almost anyone would have to this patient's behaviour.
+
+:::widget flow
+{
+  "title": "The transference and countertransference loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "tmpl", "label": "Old template", "detail": "From childhood: 'People in charge criticise me, so I must be perfect and apologise first.'" },
+    { "id": "tr", "label": "Transference", "detail": "The patient experiences the therapist through the template: expects criticism, apologises, watches the therapist's face." },
+    { "id": "pull", "label": "Pull on the therapist", "detail": "The therapist feels a pressure to play the expected role: irritation, an urge to correct." },
+    { "id": "ct", "label": "Countertransference noticed", "detail": "Instead of acting it out, the therapist notices the feeling and uses it as information." },
+    { "id": "name", "label": "Pattern named", "detail": "'I wonder if you expect me to be disappointed in you, the way your father was.'" },
+    { "id": "new", "label": "New experience", "detail": "The expected response does not come. The template loosens a little each time." }
+  ],
+  "caption": "If the therapist acts out the pull instead, the loop closes on the old template and the pattern is confirmed."
+}
+:::
 
 :::widget sort
 {

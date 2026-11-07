@@ -15,6 +15,45 @@ Every day in a clinic you make decisions that affect someone's freedom, privacy 
 
 Many writers add **fidelity** (keeping promises, being trustworthy) and **veracity** (telling the truth).
 
+
+:::widget sort
+{
+ "prompt": "Which principle is most at stake?",
+ "buckets": [
+  "Autonomy",
+  "Beneficence",
+  "Non-maleficence",
+  "Justice"
+ ],
+ "items": [
+  {
+   "text": "Letting a capable patient refuse ECT",
+   "bucket": 0
+  },
+  {
+   "text": "Choosing the treatment with the best evidence",
+   "bucket": 1
+  },
+  {
+   "text": "Avoiding a medicine that interacts dangerously",
+   "bucket": 2
+  },
+  {
+   "text": "Seeing patients in order of need, not wealth",
+   "bucket": 3
+  },
+  {
+   "text": "Asking a patient's own wishes before the family's",
+   "bucket": 0
+  },
+  {
+   "text": "Not prescribing antibiotics 'just in case'",
+   "bucket": 2
+  }
+ ]
+}
+:::
+
 :::mnemonic "A Big Nice Jalebi"
 **A**utonomy, **B**eneficence, **N**on-maleficence, **J**ustice.
 :::
@@ -275,6 +314,34 @@ Confidentiality is a locked cupboard. The patient holds the main key. A few spar
 ### Tell people the limits at the start
 At the first meeting, explain in simple words what you will keep private and when you might have to share. Then nothing comes as a betrayal later.
 
+
+:::widget decide
+{
+ "scene": "A police constable phones a clinic in Bhopal: 'One of your patients was in a fight. Tell me his diagnosis and medicines.' There is no written request or court order.",
+ "ask": "What should the psychologist do?",
+ "choices": [
+  {
+   "label": "Give the diagnosis to help the investigation",
+   "verdict": "harm",
+   "outcome": "The patient's confidentiality is breached without lawful basis; he later complains.",
+   "why": "An informal phone request is not a legal basis for disclosure under section 23."
+  },
+  {
+   "label": "Neither confirm nor deny he is a patient; explain that information can be shared only with consent or under a lawful written request or court order; inform the patient and record the call",
+   "verdict": "best",
+   "outcome": "The police send a formal request; the patient consents to limited information.",
+   "why": "This protects confidentiality while respecting legitimate legal process."
+  },
+  {
+   "label": "Hang up without explanation",
+   "verdict": "ok",
+   "outcome": "The officer is irritated, and the issue returns.",
+   "why": "Confidentiality is kept, but explaining the lawful route is more helpful."
+  }
+ ]
+}
+:::
+
 :::example A first-session script in Hindi and English
 "Jo aap mujhse kahenge, woh hum dono ke beech rahega. (What you tell me stays between us.) There are only a few times I would have to share something: if I'm worried you or someone else is in serious danger, if a child is being harmed, or if a court orders it. If that ever happens, I will try to talk to you first. Is that clear? Any questions?"
 :::
@@ -387,6 +454,34 @@ A dual (multiple) relationship is when you have another role with the patient: f
 }
 :::
 
+
+:::widget decide
+{
+ "scene": "You are the only clinical psychologist in a small town in Himachal Pradesh. Your child's school teacher asks to start therapy with you for panic attacks.",
+ "ask": "What is the best course?",
+ "choices": [
+  {
+   "label": "Refuse outright because it is a dual relationship",
+   "verdict": "ok",
+   "outcome": "She has no other help nearby and her panic worsens.",
+   "why": "Avoiding dual relationships is right in general, but refusing may leave her without care."
+  },
+  {
+   "label": "Discuss the overlap openly, explore alternatives (teletherapy with a colleague elsewhere), and if none is suitable, proceed with clear agreements, documentation and supervision",
+   "verdict": "best",
+   "outcome": "She chooses teletherapy with a colleague in a nearby city; you help with the referral.",
+   "why": "Where overlap is unavoidable, transparency, alternatives, documentation and supervision manage the risk."
+  },
+  {
+   "label": "Accept without discussion; small towns are like that",
+   "verdict": "harm",
+   "outcome": "Awkwardness at a parent meeting leads her to stop therapy.",
+   "why": "Unexamined dual roles create conflicts and harm."
+  }
+ ]
+}
+:::
+
 ### Social media and digital contact
 - Do not accept friend requests from current patients on personal accounts.
 - Use official channels for appointment messages; avoid discussing clinical matters on personal WhatsApp.
@@ -447,6 +542,44 @@ You will meet these laws throughout your career. First learn **what each is abou
     { "text": "A defence lawyer argues that his client could not know the nature of his act because of psychosis", "bucket": 4 },
     { "text": "A hospital uses restraint on an agitated patient", "bucket": 0 }
   ]
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put these Indian laws in order of when they came into force.",
+ "events": [
+  {
+   "label": "NDPS Act",
+   "when": "1985"
+  },
+  {
+   "label": "RCI Act",
+   "when": "1992"
+  },
+  {
+   "label": "POCSO Act",
+   "when": "2012"
+  },
+  {
+   "label": "Juvenile Justice Act",
+   "when": "2015"
+  },
+  {
+   "label": "RPwD Act",
+   "when": "2016"
+  },
+  {
+   "label": "Mental Healthcare Act in force",
+   "when": "2018"
+  },
+  {
+   "label": "BNS, BNSS and BSA replace the old criminal codes",
+   "when": "2024"
+  }
+ ],
+ "why": "Older textbooks cite the earlier laws and section numbers. Knowing the order helps you translate."
 }
 :::
 
@@ -596,6 +729,36 @@ Q: The RPwD Act 2016 includes which of these as a disability?
 ## 2.1 The MHCA 2017: definitions, capacity and rights [core][beginner]
 The Mental Healthcare Act 2017 (MHCA) is a **rights-based** law. It came into force on 29 May 2018. It moved Indian law from "how to detain the mentally ill" to "what rights a person with mental illness has, and how to protect them".
 
+
+:::widget compare
+{
+ "title": "From the Mental Health Act 1987 to the MHCA 2017",
+ "a": {
+  "label": "Mental Health Act 1987",
+  "points": [
+   "Focus on licensing and detention",
+   "Reception orders by magistrates",
+   "Family consent central",
+   "Attempted suicide punishable under the penal code",
+   "Little on patient rights"
+  ],
+  "summary": "A custodial law."
+ },
+ "b": {
+  "label": "MHCA 2017",
+  "points": [
+   "Rights of persons with mental illness",
+   "Capacity, advance directives and nominated representatives",
+   "Independent admission preferred",
+   "Attempted suicide presumed due to severe stress, not punished",
+   "Review Boards and complaint routes"
+  ],
+  "summary": "A rights-based law."
+ },
+ "caption": "Slide across to see what changed when the 2017 Act came into force in 2018."
+}
+:::
+
 ### Key definitions
 - **Mental illness** (section 2(1)(s)): a substantial disorder of thinking, mood, perception, orientation or memory that grossly impairs judgement, behaviour, capacity to recognise reality or ability to meet the ordinary demands of life, including conditions associated with the abuse of alcohol and drugs, but **not** including intellectual disability.
 - **Mental health professional**: includes psychiatrists, clinical psychologists registered with the RCI (with an MPhil or equivalent qualification), psychiatric social workers, psychiatric nurses, and some AYUSH professionals with postgraduate mental health qualifications.
@@ -620,6 +783,42 @@ The Mental Healthcare Act 2017 (MHCA) is a **rights-based** law. It came into fo
 | **26** | Personal contacts and communication (visitors, phone, mail) |
 | **27** | Free legal aid |
 | **28** | To make complaints about deficiencies in services |
+
+
+:::widget sort
+{
+ "prompt": "Match each situation to the MHCA right it protects.",
+ "buckets": [
+  "Access to care (18)",
+  "Protection from cruelty (20)",
+  "Confidentiality (23)",
+  "Access to records (25)",
+  "Personal contacts (26)"
+ ],
+ "items": [
+  {
+   "text": "Free medicines for a homeless man at a government hospital",
+   "bucket": 0
+  },
+  {
+   "text": "Not shaving a patient's head without consent",
+   "bucket": 1
+  },
+  {
+   "text": "Not telling an employer about a diagnosis",
+   "bucket": 2
+  },
+  {
+   "text": "Giving a patient a copy of her notes",
+   "bucket": 3
+  },
+  {
+   "text": "Allowing a patient to phone her sister",
+   "bucket": 4
+  }
+ ]
+}
+:::
 
 :::mnemonic Rights in order, sections 18 to 28: "All Children Play Every Indian Card, Rich Persons Love Cricket"
 **A**ccess (18), **C**ommunity living (19), **P**rotection from cruelty (20), **E**quality (21), **I**nformation (22), **C**onfidentiality (23), **R**estriction on media (24), **P**ersonal records access (25), personal contacts and communication (26), **L**egal aid (27), **C**omplaints (28).
@@ -674,6 +873,34 @@ Any adult **with capacity** can write an **advance directive** stating:
 
 It applies only when the person later **lacks capacity**. It must be registered with the Mental Health Review Board. It can be changed or cancelled at any time while the person has capacity. A psychiatrist must follow a valid advance directive. If the treating team or family disagrees with it, they must apply to the **Mental Health Review Board**, which decides whether to modify or cancel it. An advance directive does **not** apply to emergency treatment under section 94.
 
+
+:::widget timeline
+{
+ "prompt": "Put these steps in order when a team disagrees with a valid advance directive.",
+ "events": [
+  {
+   "label": "Patient lacks capacity for the treatment decision"
+  },
+  {
+   "label": "Team checks the directive is registered and applies"
+  },
+  {
+   "label": "Team provides care that the directive does not refuse"
+  },
+  {
+   "label": "Team applies to the Mental Health Review Board"
+  },
+  {
+   "label": "Board decides to uphold, modify or cancel"
+  },
+  {
+   "label": "Team follows the Board's decision and records it"
+  }
+ ],
+ "why": "A directive cannot be overridden by the team or family alone. In a genuine emergency, section 94 applies for up to 72 hours."
+}
+:::
+
 ### Nominated representative (sections 14 to 17)
 - Every adult can **appoint** a nominated representative (NR) in writing.
 - If none is appointed, the law gives an order: the person named in an advance directive, then a relative, a care-giver, a suitable person appointed by the Board, or, failing these, a representative of an NGO or the Director of Social Welfare.
@@ -689,6 +916,34 @@ It applies only when the person later **lacks capacity**. It must be registered 
     { "label": "Follow the directive: choose another effective treatment, involve Sheila as nominated representative, and if the team believes the directive should not apply, apply to the Mental Health Review Board", "verdict": "best", "outcome": "She is treated with an alternative antipsychotic and lithium; she recovers and later thanks the team for respecting her wishes.", "why": "The MHCA puts the person's own earlier wishes at the centre. Disagreement goes to the Board, not to the family." },
     { "label": "Wait until she regains capacity and treat nothing", "verdict": "harm", "outcome": "Her mania escalates dangerously.", "why": "The directive refuses one drug, not all treatment. She still needs care." }
   ]
+}
+:::
+
+
+:::widget decide
+{
+ "scene": "Mr Joseph, 55, in Kottayam, has schizophrenia and needs supported admission. He has never appointed a nominated representative or written an advance directive. His adult son lives with him; his estranged brother insists on making decisions.",
+ "ask": "Who is the nominated representative by default?",
+ "choices": [
+  {
+   "label": "The brother, because he is older",
+   "verdict": "harm",
+   "outcome": "The son, who provides daily care, is excluded and the brother overrides the patient's known wishes.",
+   "why": "Age does not decide. The Act sets an order: a relative or care-giver, with the Board able to appoint a suitable person."
+  },
+  {
+   "label": "Following the statutory order, a relative or care-giver such as the son who lives with and cares for him, with the Board able to decide if there is dispute",
+   "verdict": "best",
+   "outcome": "The son supports his father's decisions; the Board confirms the arrangement after the brother objects.",
+   "why": "The Act gives a default order and a Board route for disputes; the NR must consider the patient's wishes."
+  },
+  {
+   "label": "The hospital superintendent",
+   "verdict": "ok",
+   "outcome": "Possible only if no suitable person exists.",
+   "why": "Institutional representatives come last in the order."
+  }
+ ]
 }
 :::
 
@@ -844,6 +1099,34 @@ Allowed only with the person's **informed consent** and **approval of the Board*
 - Recorded immediately (method, reason, duration), with continuous supervision.
 - The **nominated representative informed within 24 hours**; all instances in the monthly report to the Board.
 
+
+:::widget decide
+{
+ "scene": "At 2 am on a ward in Pune, an agitated patient is hitting his head against the wall and has punched a nurse. A night nurse wants to tie him to the bed 'until morning'.",
+ "ask": "What does section 97 require?",
+ "choices": [
+  {
+   "label": "Tie him until morning to be safe",
+   "verdict": "harm",
+   "outcome": "He is restrained for hours without review; his family learns of it later and complains.",
+   "why": "Restraint must be the only means of preventing imminent harm, authorised by the psychiatrist, for the shortest time, continuously supervised."
+  },
+  {
+   "label": "Use the least restrictive measures first; if restraint is the only way to prevent imminent harm, the psychiatrist authorises it, it is supervised and reviewed continuously, recorded, ended as soon as safe, and the nominated representative is told within 24 hours",
+   "verdict": "best",
+   "outcome": "He is restrained briefly, sedated with consent procedures followed, and released within an hour.",
+   "why": "This follows the Act's safeguards and protects patient and staff."
+  },
+  {
+   "label": "Lock him alone in a side room",
+   "verdict": "harm",
+   "outcome": "Seclusion is prohibited under the MHCA.",
+   "why": "Seclusion and solitary confinement are not allowed."
+  }
+ ]
+}
+:::
+
 ### Research (section 99)
 Research involving persons with mental illness needs their **free and informed consent**. If they cannot consent, research may proceed only with permission of the State Mental Health Authority (with conditions) and the consent of the nominated representative, and only if it is not possible to do with people who can consent, and is not against the person's interests (Section 3.4 covers research ethics in detail).
 
@@ -989,6 +1272,34 @@ India has no Tarasoff-type judgment, but **MHCA section 23** allows release of i
 - **Couples therapy**: agree at the start how "secrets" will be handled.
 - **Children and adolescents**: parents have rights to information about their child's care, but adolescents need privacy to talk openly. Agree at the start: "What you tell me stays private unless I am worried about your safety or someone else's."
 
+
+:::widget decide
+{
+ "scene": "Arun, 30, in counselling in Chennai, says he is HIV positive and has not told his wife, with whom he has unprotected sex. He refuses to tell her.",
+ "ask": "What is the best next step?",
+ "choices": [
+  {
+   "label": "Phone his wife immediately",
+   "verdict": "harm",
+   "outcome": "He feels betrayed and stops treatment, including his antiretroviral medicines.",
+   "why": "Disclosure without counselling and due process damages care and may breach the law's conditions."
+  },
+  {
+   "label": "Counsel him on risks and options, offer joint disclosure, address his fears, consult the treating physician, and follow the HIV Act's conditions for partner notification if he still refuses",
+   "verdict": "best",
+   "outcome": "After two sessions he agrees to tell her with the counsellor present; she is tested and starts preventive care.",
+   "why": "Supported disclosure works best, with lawful partner notification as a last resort."
+  },
+  {
+   "label": "Do nothing; it is confidential",
+   "verdict": "harm",
+   "outcome": "His wife remains at ongoing risk.",
+   "why": "Confidentiality is not absolute when a third party faces serious, identifiable risk."
+  }
+ ]
+}
+:::
+
 ### Special situations
 - **HIV status**: the patient's consent is needed to share; partner notification is encouraged through counselling, and the HIV and AIDS (Prevention and Control) Act 2017 allows limited disclosure by a healthcare provider to a partner at significant risk under defined conditions.
 - **Court requests**: a court order can require disclosure; you may request that only relevant parts are disclosed.
@@ -1036,6 +1347,36 @@ The **RCI Act 1992** set up the Rehabilitation Council of India to regulate the 
 - RCI also recognises a **professional doctorate, the PsyD in Clinical Psychology**, offered at a few institutions, which leads to registration as a clinical psychologist.
 - A one-year **Professional Diploma in Clinical Psychology (PDCP)** exists at some institutions, with a more limited registration category; check the current RCI rules.
 - Practising clinicians trained through the MPhil route remain registered.
+
+
+:::widget timeline
+{
+ "prompt": "Put these steps in the history of clinical psychology training in India in order.",
+ "events": [
+  {
+   "label": "RCI Act passed",
+   "when": "1992"
+  },
+  {
+   "label": "MPhil Clinical Psychology as the main RCI route",
+   "when": "1990s to 2020s"
+  },
+  {
+   "label": "National Education Policy discontinues MPhil degrees",
+   "when": "2020"
+  },
+  {
+   "label": "Two-year MA Clinical Psychology replaces the MPhil route",
+   "when": "mid-2020s"
+  },
+  {
+   "label": "RCI renames it Master in Clinical Psychology (M.Clin.Psy)",
+   "when": "3 May 2026"
+  }
+ ],
+ "why": "Clinicians trained through any recognised route remain registered; check RCI notices for current rules."
+}
+:::
 
 :::trap Not every psychologist is a "clinical psychologist"
 An MA in psychology, a counselling diploma, or an online certificate does **not** make someone a clinical psychologist in India. Only RCI-registered professionals with the recognised qualification may use the title and do work reserved to them, such as clinical diagnostic assessment and certification. Counselling psychologists and others work within their competence and are not currently registered by RCI.

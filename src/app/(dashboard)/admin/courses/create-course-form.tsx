@@ -40,7 +40,7 @@ export function CreateCourseForm() {
       </div>
 
       <label className="flex h-9 items-center gap-2 pb-0.5 text-sm text-foreground">
-        {/* Hidden input synced to the Switch — Radix Switch submits no value,
+        {/* Hidden input synced to the Switch: Radix Switch submits no value,
             and the server action reads `isPublished === "on"`. */}
         <Switch
           checked={isPublished}

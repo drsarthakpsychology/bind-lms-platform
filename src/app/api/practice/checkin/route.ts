@@ -15,7 +15,7 @@ const checkinSchema = z.object({
 });
 
 /**
- * POST /api/practice/checkin — save a weekly non-clinical check-in.
+ * POST /api/practice/checkin: save a weekly non-clinical check-in.
  * Owner-write RLS. Admin reads ONLY the aggregate view (no identifiers).
  * 30 seconds, that's it.
  */

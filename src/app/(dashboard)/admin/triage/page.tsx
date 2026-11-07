@@ -13,9 +13,9 @@ const QUIZ_PROMPT_BY_ID = new Map(QUIZ_BANK.map((q) => [q.id, q.prompt]));
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/triage (v5.1 A5) — surface only what needs human eyes. The queue
+ * /admin/triage (v5.1 A5): surface only what needs human eyes. The queue
  * shows priority-scored items; everything else auto-releases with a visible
- * "AI-generated — not yet faculty reviewed" label.
+ * "AI-generated, not yet faculty reviewed" label.
  */
 export default async function AdminTriagePage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
@@ -92,7 +92,7 @@ export default async function AdminTriagePage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Review triage"
-        description="Only what needs your eyes. The queue never shows more than 10 — the rest auto-releases with a label."
+        description="Only what needs your eyes. The queue never shows more than 10: the rest auto-releases with a label."
       />
       <div className="mt-6">
         <TriageView needs={needs.slice(0, 10)} autoReleased={auto.length} weakQuizItems={weakQuizItems} />

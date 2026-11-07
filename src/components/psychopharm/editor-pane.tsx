@@ -7,7 +7,7 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
 import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
 
 /**
- * The medication editor — the page IS the form.
+ * The medication editor: the page IS the form.
  *
  * Renders the exact student document, but editable inline. Every text element
  * can be clicked to edit, each item has controls (edit / source / remove), and
@@ -89,9 +89,9 @@ export function EditorPane({
       setStatus(data.status);
       setSavedAt(Date.now());
     } catch {
-      // Network throw (offline / server down) — surface it instead of an
+      // Network throw (offline / server down): surface it instead of an
       // unhandled rejection (T50). The draft stays in state.
-      setNotice("Autosave failed — check your connection. Your draft is still here.");
+      setNotice("Autosave failed: check your connection. Your draft is still here.");
     } finally { setBusy(null); }
   }, [drug, document, reason]);
 
@@ -119,7 +119,7 @@ export function EditorPane({
         return;
       }
       setStatus("published");
-      setNotice("Published — students can now see this page.");
+      setNotice("Published: students can now see this page.");
     } finally { setBusy(null); }
   }
 
@@ -127,7 +127,7 @@ export function EditorPane({
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
-      {/* The document itself — the edit surface. */}
+      {/* The document itself: the edit surface. */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="mx-auto max-w-3xl">
           <div className="mb-4 rounded-md border-2 border-border p-3">
@@ -135,8 +135,8 @@ export function EditorPane({
             <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
               <p className="text-caption text-muted-foreground">
                 {register === "student"
-                  ? "Student view — plain language, what students read."
-                  : "Clinical view — technical detail with source citations."}
+                  ? "Student view: plain language, what students read."
+                  : "Clinical view: technical detail with source citations."}
               </p>
               <SegmentedControl
                 value={register}

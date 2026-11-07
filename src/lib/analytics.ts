@@ -1,12 +1,12 @@
 /**
- * Product analytics — a thin, fully-guarded wrapper around PostHog (EU cloud
+ * Product analytics: a thin, fully-guarded wrapper around PostHog (EU cloud
  * by default). Everything here is a no-op until `NEXT_PUBLIC_POSTHOG_KEY` is
  * set, so shipping it changes nothing for local dev or a key-less deploy.
  *
  * WHY PostHog (and why EU): the school handles student enquiries and activity,
  * so the analytics must be privacy-clean. PostHog EU cloud stores in the EU
  * (GDPR) and does not train models on event data. Distinct IDs are anonymous
- * (cookie uuid) — we never attach PII (name/email/phone) to events; enquiry
+ * (cookie uuid). We never attach PII (name/email/phone) to events; enquiry
  * events carry only non-identifying shape (stage, submitted).
  *
  * The Vercel Web Analytics + Speed Insights layer (see app/layout.tsx) already
@@ -38,7 +38,7 @@ function init(): Promise<PostHog | null> {
           // setting NEXT_PUBLIC_POSTHOG_HOST.
           person_profiles: "identified_only",
           capture_pageview: false, // we fire $pageview manually on route change
-          autocapture: false, // explicit events only — no surprise PII grabs
+          autocapture: false, // explicit events only, no surprise PII grabs
           capture_pageleave: false,
           disable_session_recording: true,
         });

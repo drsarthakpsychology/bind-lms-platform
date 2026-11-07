@@ -28,7 +28,7 @@ function ago(iso: string | null) {
 const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m` : `${min}m`);
 
 /**
- * /admin/activity — what every student is doing: time on the platform,
+ * /admin/activity: what every student is doing: time on the platform,
  * lectures watched, Learn progress, practice, when they were last seen,
  * a ranking, and a cohort heatmap of when people study.
  */
@@ -185,7 +185,7 @@ export async function EveryoneView({ sort }: { sort?: string }) {
                     <td className="px-3 py-2">
                       {r.xp} XP · {r.streak}🔥
                     </td>
-                    <td className="px-3 py-2">{r.accuracy === null ? "—" : `${r.accuracy}%`}</td>
+                    <td className="px-3 py-2">{r.accuracy === null ? "-" : `${r.accuracy}%`}</td>
                     <td className="px-3 py-2">{r.practice}</td>
                   </tr>
                 );

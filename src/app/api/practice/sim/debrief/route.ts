@@ -12,7 +12,7 @@ export const runtime = "nodejs";
 
 const debriefSchema = z.object({
   sessionId: z.string().uuid(),
-  /** Bug 4: whether the student opened the hint — surfaced in the debrief. */
+  /** Bug 4: whether the student opened the hint, surfaced in the debrief. */
   hintUsed: z.boolean().optional(),
 });
 
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
     .eq("id", session.case_id)
     .maybeSingle();
   const rubricTargets = (caseRow?.case_data as { rubric_targets?: string[] })?.rubric_targets ?? [];
-  // A8 — the nine no-disorder cases (by authored case_id): restraint is the
+  // A8: the nine no-disorder cases (by authored case_id): restraint is the
   // skill, the debrief explicitly praises staying the hand.
   const NO_DISORDER_IDS = new Set([
     "dep-grief-raj", "ado-normal-teen", "anx-exam", "no-disorder-sunita",
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
   // Depth cases carry their authored case_id in case_data; also match by the
   // presentation wording so the v1 seeds with the same presentations count.
   const NO_DISORDER_TITLE_HINTS = [
-    "four weeks ago",       // Raj — normal grief
+    "four weeks ago",       // Raj: normal grief
     "exam anxiety within range",
     "panic attack after the medical scare",
     "possession that left him intact",
@@ -101,7 +101,7 @@ export async function POST(req: Request) {
     NO_DISORDER_TITLE_HINTS.some((h) => title.toLowerCase().includes(h));
 
   // Load prior faculty corrections for few-shot (the feedback loop). Only
-  // rows that actually changed a score are lessons — a pure note would render
+  // rows that actually changed a score are lessons: a pure note would render
   // as garbage (`"{}" should be scored as: {}`) inside the prompt.
   const { data: corrections } = await admin
     .from("scoring_corrections")

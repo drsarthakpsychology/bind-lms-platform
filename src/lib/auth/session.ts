@@ -17,7 +17,7 @@ export type Profile = {
    *  independent of credential/session validity. Defaults to "active" when the
    *  column is absent. */
   status: "active" | "blocked";
-  /** Internal-only reason for a block — never shown to the student. */
+  /** Internal-only reason for a block, never shown to the student. */
   block_reason: string | null;
   active_session_token: string | null;
   expires_at: string | null;
@@ -45,7 +45,7 @@ function isExpired(expiresAt: string | null, role?: string): boolean {
 
 /**
  * The authoritative check the blueprint's Part 3.2/3.3 describes as
- * "middleware" — deliberately NOT in proxy.ts (see the note there). Wrapped
+ * "middleware": deliberately NOT in proxy.ts (see the note there). Wrapped
  * in React's cache() so calling it from a layout and again from a page in
  * the same request reuses one result instead of hitting the DB twice.
  *
@@ -70,8 +70,8 @@ export const getSession = cache(async (): Promise<SessionResult> => {
     .single();
 
   if (!profile) {
-    // Auth user exists but the profiles row doesn't (shouldn't happen —
-    // the on_auth_user_created trigger creates it — but fail closed).
+    // Auth user exists but the profiles row doesn't (shouldn't happen,
+    // the on_auth_user_created trigger creates it, but fail closed).
     await supabase.auth.signOut();
     return { status: "unauthenticated" };
   }
@@ -85,7 +85,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
       block_reason: (profile.block_reason as string | null) ?? null,
     }) as Profile;
 
-  // BLOCKED is the unconditional override — checked before expiry/token, so a
+  // BLOCKED is the unconditional override: checked before expiry/token, so a
   // blocked account is rejected even with a correct password and a valid
   // session. Deliberately does NOT sign out: unblocking then restores access on
   // the very next request with no re-login.
@@ -103,7 +103,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
 
   // No active_session_token yet (shouldn't happen post-login, but fail
   // closed rather than treating "unset" as a free pass) OR it doesn't match
-  // what this browser is carrying — someone logged in elsewhere.
+  // what this browser is carrying. Someone logged in elsewhere.
   if (!profile.active_session_token || cookieToken !== profile.active_session_token) {
     await supabase.auth.signOut();
     return { status: "session_replaced" };

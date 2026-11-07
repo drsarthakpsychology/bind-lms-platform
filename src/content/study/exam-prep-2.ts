@@ -20,6 +20,24 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 | Ganser syndrome | Approximate answers ("2 plus 2 is 5") |
 | Dhat syndrome | Anxiety and somatic complaints attributed to semen loss |
 
+:::widget flow
+{
+  "title": "Psychosis: a differential diagnosis tree",
+  "layout": "tree",
+  "nodes": [
+    { "id": "p", "label": "Psychotic symptoms", "detail": "Delusions, hallucinations, disorganisation. First rule out causes that need urgent medical treatment." },
+    { "id": "org", "label": "Medical or substance cause?", "parent": "p", "detail": "Delirium, epilepsy, encephalitis, thyroid disease, steroids, cannabis, stimulants, alcohol withdrawal. Clues: sudden onset, fluctuating awareness, visual hallucinations, abnormal signs." },
+    { "id": "mood", "label": "Only during mood episodes?", "parent": "p", "detail": "Bipolar disorder or depression with psychotic features." },
+    { "id": "sa", "label": "Mood episodes plus psychosis outside them", "parent": "mood", "detail": "Schizoaffective disorder: psychosis also occurs without a mood episode, and mood episodes are present for much of the illness." },
+    { "id": "prim", "label": "Primary psychotic disorder", "parent": "p", "detail": "Decided mainly by duration and by the type of symptoms." },
+    { "id": "brief", "label": "Short duration", "parent": "prim", "detail": "Brief psychotic disorder (DSM-5-TR) or acute and transient psychotic disorder (ICD-11)." },
+    { "id": "scz", "label": "Longer duration, decline", "parent": "prim", "detail": "Schizophreniform or schizophrenia, by the DSM duration rules; ICD-11 uses a shorter duration for schizophrenia." },
+    { "id": "del", "label": "Delusions only, functioning preserved", "parent": "prim", "detail": "Delusional disorder: non-bizarre or bizarre delusions without prominent hallucinations or decline." }
+  ],
+  "caption": "Tap each branch. Entrance questions often test the duration rules and the difference between DSM-5-TR and ICD-11."
+}
+:::
+
 :::widget sort
 {
   "prompt": "First-rank symptom (Schneider) or not?",
@@ -143,6 +161,24 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 | MHCA 2017 | Advance directive (section 5), nominated representative (section 14), attempted suicide (section 115) |
 | RCI Act 1992 | Central Rehabilitation Register for professionals including clinical psychologists |
 | RPwD Act 2016 | 21 specified disabilities |
+
+:::widget flow
+{
+  "title": "The therapy family tree",
+  "layout": "tree",
+  "nodes": [
+    { "id": "t", "label": "Psychological therapies", "detail": "Most exam questions pair a therapy with its founder and one key technique." },
+    { "id": "beh", "label": "Behaviour therapy", "parent": "t", "detail": "Learning principles: systematic desensitisation (Wolpe), token economy (Ayllon and Azrin), exposure and response prevention." },
+    { "id": "cog", "label": "Cognitive therapies", "parent": "t", "detail": "Thoughts shape feelings: cognitive therapy (Beck), REBT (Ellis), stress inoculation (Meichenbaum)." },
+    { "id": "third", "label": "Third-wave therapies", "parent": "cog", "detail": "Changing the relationship to thoughts: DBT (Linehan), ACT (Hayes), mindfulness-based cognitive therapy." },
+    { "id": "dyn", "label": "Psychodynamic", "parent": "t", "detail": "Unconscious conflict and relationships: psychoanalysis, brief dynamic therapies, MBT, TFP." },
+    { "id": "hum", "label": "Humanistic and existential", "parent": "t", "detail": "Person-centred (Rogers), Gestalt (Perls), logotherapy (Frankl)." },
+    { "id": "ipt", "label": "Interpersonal and systemic", "parent": "t", "detail": "IPT (Klerman and Weissman), family and couple therapies (Minuchin, Bowen), group therapy (Yalom's therapeutic factors)." },
+    { "id": "mi", "label": "Motivational interviewing", "parent": "t", "detail": "Miller and Rollnick: resolving ambivalence about change." }
+  ],
+  "caption": "Tap each branch. Then cover the details and recall the founder for each."
+}
+:::
 
 :::widget decide
 {
@@ -277,21 +313,42 @@ University semester exams, and some entrances, ask for written answers. Marks go
 :::
 
 ### The long answer frame (10 to 15 marks)
-1. **Introduction**: define the key term; one line on why it matters.
-2. **Body in headed sections**: one idea per paragraph, each with **a point, the evidence or theory, and an example** (an Indian example scores well).
-3. **A diagram or table** where it fits (a flow chart of a model, a comparison table).
-4. **Evaluation**: strengths, limitations, research support, cultural relevance.
-5. **Conclusion**: answer the question directly in two or three lines.
+Press Play to step through the frame.
+
+:::widget flow
+{
+  "title": "The long answer frame",
+  "layout": "chain",
+  "nodes": [
+    { "id": "in", "label": "Introduction", "detail": "Define the key term in its standard form; one line on why it matters." },
+    { "id": "body", "label": "Headed body sections", "detail": "One idea per paragraph: a point, the evidence or theory, and an example. An Indian example scores well." },
+    { "id": "fig", "label": "Diagram or table", "detail": "A flow chart of a model or a comparison table where it fits. Examiners find points faster." },
+    { "id": "eval", "label": "Evaluation", "detail": "Strengths, limitations, research support, cultural relevance. For 'critically evaluate', this is most of the answer." },
+    { "id": "conc", "label": "Conclusion", "detail": "Answer the question directly in two or three lines. No new material." }
+  ],
+  "caption": "The command word decides how long each box is, not whether it appears."
+}
+:::
 
 ### The short note frame (5 marks)
 Definition, three or four key features, one example, one line on significance or a criticism.
 
 ### The case vignette frame
-1. **Summarise** the key features in clinical terms.
-2. **Provisional diagnosis** with the criteria met, and **differentials** with reasons.
-3. **Formulation**: the 5 Ps (presenting, predisposing, precipitating, perpetuating, protective).
-4. **Assessment plan**: tests or scales and why.
-5. **Management**: psychological, social and, if relevant, medical, with risk management.
+
+:::widget flow
+{
+  "title": "The case vignette frame",
+  "layout": "chain",
+  "nodes": [
+    { "id": "s", "label": "Summarise", "detail": "The key features in clinical terms: age, sex, duration, main symptoms, function, risk." },
+    { "id": "dx", "label": "Provisional diagnosis and differentials", "detail": "The criteria met, then two or three differentials with the reason each is less likely or how you would exclude it." },
+    { "id": "f", "label": "Formulation", "detail": "The 5 Ps: presenting, predisposing, precipitating, perpetuating, protective." },
+    { "id": "a", "label": "Assessment plan", "detail": "History, MSE, named tests or scales and why, investigations, risk assessment." },
+    { "id": "m", "label": "Management", "detail": "Psychological, social and, if relevant, medical, with a risk and relapse plan." }
+  ],
+  "caption": "Press Play. Examiners award marks for reasoning, so show why you rule things in and out."
+}
+:::
 
 ### Time per mark
 Divide the exam time by the total marks to get **minutes per mark**, keeping ten minutes for reading and review. A 15-mark answer in a three-hour, 100-mark paper deserves about **25 minutes**, not an hour.
@@ -354,7 +411,7 @@ Q: A question says "Compare and contrast the psychoanalytic and humanistic appro
     { "q": "Conclusion.", "a": "Culture shapes every stage of distress, from experience to recovery. Good practice in India asks about the person's own explanatory model and adapts assessment and treatment, without assuming that any one culture is uniform." }
   ],
   "yourTurn": [
-    { "q": "Write an introduction and an evaluation paragraph for: “Critically evaluate Maslow's hierarchy of needs.” (10 marks)", "a": "Introduction: Maslow proposed that human motives form a hierarchy, from physiological and safety needs to belonging, esteem and self-actualisation, with higher needs becoming important as lower ones are reasonably met. Evaluation: it is intuitive and influential in education, counselling and management, and draws attention to growth needs. However, research gives limited support for a strict order (people pursue belonging or meaning even when basic needs are unmet), self-actualisation is hard to define and measure, and the model reflects individualistic Western values; in collectivist settings such as many Indian families, belonging and duty may rank differently. Later work (for example Tay and Diener, 2011) found the needs broadly universal but not strictly ordered." }
+    { "q": "Write an introduction and an evaluation paragraph for: “Critically evaluate Maslow's hierarchy of needs.” (10 marks)", "a": "Introduction: Maslow proposed that human motives form a hierarchy, from physiological and safety needs to belonging, esteem and self-actualisation, with higher needs becoming important as lower ones are reasonably met. Evaluation: it is intuitive and influential in education, counselling and management, and draws attention to growth needs. However, research gives limited support for a strict order (people pursue belonging or meaning even when basic needs are unmet), self-actualisation is hard to define and measure, and the model reflects individualistic Western values; in collectivist settings such as many Indian families, belonging and duty may rank differently. A large 2011 survey across many countries found the needs broadly universal but not strictly ordered." }
   ]
 }
 :::
@@ -407,11 +464,21 @@ Q: In a 15-mark "discuss" answer, the section most often missing in weak scripts
 :::
 
 ### The final stretch, phase by phase
-1. **Error log only**: revisit every mistake you recorded; redo those questions.
-2. **Two or three full timed mocks**, reviewed fully.
-3. **High-yield lists**: the confusable pairs, key theorists and their concepts, test names and authors, law sections.
-4. **Logistics**: admit card, ID, centre route, timing; the official instructions.
-5. **Rest**: sleep, food and short breaks. Anxiety is normal; use slow breathing before you start.
+
+:::widget flow
+{
+  "title": "The final stretch",
+  "layout": "chain",
+  "nodes": [
+    { "id": "log", "label": "Error log only", "detail": "Revisit every recorded mistake and redo those questions. No new topics." },
+    { "id": "mock", "label": "Two or three timed mocks", "detail": "Full papers in exam conditions, each reviewed fully. Check pacing and guessing decisions." },
+    { "id": "lists", "label": "High-yield lists", "detail": "Confusable pairs, theorists and concepts, test names and authors, law sections." },
+    { "id": "log2", "label": "Logistics", "detail": "Admit card, ID, centre route, reporting time, the official instructions." },
+    { "id": "rest", "label": "Rest", "detail": "Sleep, food, short breaks. Anxiety is normal; slow breathing before you start." }
+  ],
+  "caption": "Press Play. The last phase is about consolidating what you know, not adding more."
+}
+:::
 
 :::note Look after yourself
 Exam pressure can become overwhelming. If stress is affecting sleep, eating or mood for a long time, or you have thoughts of harming yourself, talk to someone you trust or a counsellor. In India, Tele-MANAS (14416) offers free support.
@@ -437,7 +504,7 @@ Q: In an interview case discussion, the best approach is to:
 :::viva
 Who gave the PASS model of intelligence? :: J. P. Das and colleagues.
 Who proposed the attenuation model of attention? :: Anne Treisman.
-What does the episodic buffer do? :: Links working memory components with long-term memory (Baddeley, 2000).
+What does the episodic buffer do? :: Links working memory components with long-term memory (added by Baddeley in 2000).
 Mean and SD of T-scores? :: 50 and 10.
 Kruskal-Wallis is the non-parametric version of? :: One-way ANOVA.
 Which MMPI-2 scale detects infrequent responding? :: The F scale.

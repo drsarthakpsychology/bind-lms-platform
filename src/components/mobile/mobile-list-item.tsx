@@ -4,9 +4,9 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * A single strong tappable row — the workhorse for courses, practice lists,
+ * A single strong tappable row: the workhorse for courses, practice lists,
  * journal entries, and wall posts. One row, not a card: a light surface, a
- * leading glyph/number, a 1–2 line title, a metadata line, and a trailing
+ * leading glyph/number, a 1 to 2 line title, a metadata line, and a trailing
  * state/chevron. `href` renders a link; omit it for a button.
  *
  * Designed for mobile first (min 48px tap height) and looks identical on

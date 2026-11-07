@@ -11,7 +11,7 @@ export const runtime = "nodejs";
  * Faculty saves a review comment / score correction on an AI-scored sim
  * session. Persisted to scoring_corrections; score-changing rows feed the
  * few-shot feedback loop on future debriefs (see src/lib/ai/scoring.ts).
- * Admin-only — RLS also blocks non-admins on the table itself.
+ * Admin-only: RLS also blocks non-admins on the table itself.
  */
 export async function POST(req: Request) {
   const admin = await requireSuperAdmin();

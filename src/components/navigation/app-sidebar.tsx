@@ -13,7 +13,7 @@ export type SidebarMode = "admin" | "student";
 /**
  * Sidebar (YouTube-style guide). Full width with labels on wide screens, a
  * slim icon rail on laptops and always on tablets (768-1023); on laptops the
- * ☰ in the top bar flips it and the choice is remembered. `role`/`mode` are decided server-side — this component
+ * ☰ in the top bar flips it and the choice is remembered. `role`/`mode` are decided server-side: this component
  * never makes authorization decisions.
  */
 export function AppSidebar({

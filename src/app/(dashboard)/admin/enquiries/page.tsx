@@ -28,7 +28,7 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 /**
- * /admin/enquiries — public-site leads from the /waitlist form. Admin-guarded
+ * /admin/enquiries: public-site leads from the /waitlist form. Admin-guarded
  * by the admin layout. Reads via the service-role client (RLS is admin-select
  * only, which this is).
  */
@@ -78,7 +78,7 @@ export default async function AdminEnquiriesPage() {
                     <p className="truncate text-caption text-muted-foreground">{row.email}{row.phone ? ` · ${row.phone}` : ""}</p>
                   </div>
                   <span className="flex shrink-0 flex-col items-end gap-1">
-                    <span className="rounded-full border-2 border-foreground/20 px-2 py-0.5 text-caption font-semibold">{row.status ? (STATUS_LABEL[row.status] ?? row.status) : "—"}</span>
+                    <span className="rounded-full border-2 border-foreground/20 px-2 py-0.5 text-caption font-semibold">{row.status ? (STATUS_LABEL[row.status] ?? row.status) : "No status"}</span>
                     {isStudent ? <span className="rounded-full bg-status-success-bg px-2 py-0.5 text-[0.7rem] font-bold text-status-success-fg">Now a student</span> : null}
                   </span>
                 </div>

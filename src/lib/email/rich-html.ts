@@ -83,7 +83,7 @@ export function sanitizeRich(input: string): string {
     .trim();
 }
 
-/** Plain-text version of (clean) HTML — for the email text part and previews. */
+/** Plain-text version of (clean) HTML, for the email text part and previews. */
 export function htmlToPlain(html: string): string {
   return decodeEntities(
     String(html ?? "")

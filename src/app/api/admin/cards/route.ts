@@ -21,10 +21,10 @@ const createSchema = z.object({
 });
 
 /**
- * GET /api/admin/cards — all cards for the review queue (drafts first).
- * POST /api/admin/cards — add a card by hand (source 'manual', status 'draft').
- * PATCH /api/admin/cards — approve/reject/edit a drafted card.
- * DELETE /api/admin/cards?id=… — remove a card. All admin-only.
+ * GET /api/admin/cards: all cards for the review queue (drafts first).
+ * POST /api/admin/cards: add a card by hand (source 'manual', status 'draft').
+ * PATCH /api/admin/cards: approve/reject/edit a drafted card.
+ * DELETE /api/admin/cards?id=…: remove a card. All admin-only.
  *
  * Approve = status published + approved true (then students can see it and
  * Rounds can schedule it). Reject = status archived.

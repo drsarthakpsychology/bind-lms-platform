@@ -5,11 +5,11 @@ import { getSession } from "@/lib/auth/session";
 /**
  * Deterministic medication-name autocomplete. Returns the generic name for
  * every match (generic, brand, alias) against the static, reviewed store.
- * No model, no generation — Rule 1. Auth-gated to enrolled students/admins.
+ * No model, no generation: Rule 1. Auth-gated to enrolled students/admins.
  */
 export async function GET(req: Request) {
   const session = await getSession();
-  // Reject EVERY non-ok session — including "blocked" — so an overridden
+  // Reject EVERY non-ok session, including "blocked", so an overridden
   // account can't fetch drug matches. (The previous check only excluded
   // unauthenticated/expired/session_replaced and silently admitted blocked.)
   if (session.status !== "ok") {
@@ -19,7 +19,7 @@ export async function GET(req: Request) {
   const q = searchParams.get("q") ?? "";
   if (!q.trim()) return NextResponse.json({ matches: [], fuzzy: false });
   const ql = q.trim().toLowerCase();
-  // Exact/prefix hits exist? If none, searchDrugs fell back to edit-distance —
+  // Exact/prefix hits exist? If none, searchDrugs fell back to edit-distance:
   // surface a gentle "Did you mean…" hint.
   const hasDirectPrefix = searchDrugs(ql, 12).some((d) => d.generic.toLowerCase().includes(ql));
   const matches = searchDrugs(ql, 12).map((d) => d.generic);

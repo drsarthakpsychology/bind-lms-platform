@@ -30,11 +30,11 @@ function summary(r: RetryReport): string {
   if (r.failed) parts.push(`failed again ${r.failed}`);
   if (r.alreadyDelivered) parts.push(`${r.alreadyDelivered} already had it (not re-sent)`);
   if (r.duplicates) parts.push(`${r.duplicates} duplicates merged`);
-  if (r.noCopy) parts.push(`${r.noCopy} have no saved copy — write them again`);
+  if (r.noCopy) parts.push(`${r.noCopy} have no saved copy: write them again`);
   if (r.notRetryable) parts.push(`${r.notRetryable} need the address fixed`);
   let s = parts.join(" · ") + ".";
   if (r.stoppedForQuota) s += " Stopped: the daily sending limit was reached. Try again tomorrow.";
-  else if (r.left) s += ` ${r.left} still to go — press Retry again.`;
+  else if (r.left) s += ` ${r.left} still to go: press Retry again.`;
   return s;
 }
 

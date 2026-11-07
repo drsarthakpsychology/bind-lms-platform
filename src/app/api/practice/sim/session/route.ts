@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     if (!row) return NextResponse.json({ error: "case not found" }, { status: 404 });
     caseId = row.id;
     // Prefer the authored SEED_CASES version (richest), but fall back to the
-    // DB row's own case_data — story/clinical cases live only in the DB and
+    // DB row's own case_data: story/clinical cases live only in the DB and
     // must be startable too (bug: they returned "case required").
     simCase = (SEED_CASES.find((c) => c.title === row.title) ?? row.case_data) as typeof SEED_CASES[number] | null;
   } else if (parsed.data.caseTitle) {
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "could not start session" }, { status: 500 });
   }
 
-  // The patient's own opening line is the first turn of the transcript — the
+  // The patient's own opening line is the first turn of the transcript: the
   // hook in their words, from the case spec, never a generic greeting. It is
   // persisted WITH the initial state so the session always has a resume
   // point (the opening turn's state is the rewind target for turn 1).

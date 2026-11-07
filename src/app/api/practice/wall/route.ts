@@ -12,7 +12,7 @@ const postSchema = z.object({
 });
 
 /**
- * POST /api/practice/wall — create a wall post. The author_id is stored, but
+ * POST /api/practice/wall: create a wall post. The author_id is stored, but
  * the SELECT policy hides it for anonymous posts on student queries.
  */
 export async function POST(req: Request) {

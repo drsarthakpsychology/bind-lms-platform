@@ -37,7 +37,7 @@ export function SmallThingsDrill() {
           {!revealed ? (
             <div className="mt-3">
               <p className="text-caption text-muted-foreground">
-                Take a beat — what did you actually just see?
+                Take a beat: what did you actually just see?
               </p>
               <button
                 type="button"
@@ -73,21 +73,21 @@ export function SmallThingsDrill() {
       ) : (
         <div className="rounded-md border-2 border-border bg-background p-4 text-small text-muted-foreground">
           Every small thing you practice here is a real second-channel of the
-          MSE. Module reviews love the ones nobody notices — the past tense, the
+          MSE. Module reviews love the ones nobody notices: the past tense, the
           pause, the look at the family member.
         </div>
       )}
 
-      {/* Reference card — the full checklist, always visible */}
+      {/* Reference card: the full checklist, always visible */}
       <details className="rounded-md border border-border bg-background p-3">
         <summary className="cursor-pointer text-caption font-medium text-muted-foreground">
-          The reference card — pull this up mid-exam
+          The reference card: pull this up mid-exam
         </summary>
         <ul className="mt-2 space-y-1.5">
           {SMALL_THINGS.map((s) => (
             <li key={s.id} className={cn("text-small", idx > SMALL_THINGS.indexOf(s) && "text-muted-foreground/60")}>
               <span className="font-medium">{s.moment}</span>
-              <span className="text-muted-foreground"> — {s.read}</span>
+              <span className="text-muted-foreground">: {s.read}</span>
             </li>
           ))}
         </ul>

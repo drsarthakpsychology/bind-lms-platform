@@ -33,7 +33,7 @@ export function ledgerXp(rows: readonly { source: string; amount: number }[]): n
 
 /**
  * Difficulty of an item from whatever is known about it:
- * - `pCorrect` (share of students who get it right, 0–1): under 0.4 is hard,
+ * - `pCorrect` (share of students who get it right, 0 to 1): under 0.4 is hard,
  *   under 0.7 is medium.
  * - `rating` (Elo-style, 1000 = average): 1300+ is hard, 1100+ is medium.
  * Unknown items count as easy, so the bonus is never inflated by guesswork.

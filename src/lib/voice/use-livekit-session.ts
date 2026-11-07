@@ -11,7 +11,7 @@ import { Room, RoomEvent } from "livekit-client";
  *   - renders the shared transcript from the room's transcription attributes
  *   - auto-reconnects, and cleans up the room + audio on unmount
  *
- * The agent worker is the same patient brain as text mode — this is purely the
+ * The agent worker is the same patient brain as text mode: this is purely the
  * transport. There is exactly one conversation.
  */
 
@@ -72,7 +72,7 @@ export function useLiveKitSession({ sessionId }: { sessionId: string }) {
         await room.connect(wsUrl, token, { autoSubscribe: true });
         if (cancelled) return;
         setPhase("listening");
-        // Publish the microphone — the agent's VAD/turn-detection handles
+        // Publish the microphone: the agent's VAD/turn-detection handles
         // barge-in; the mic stays live for the whole session.
         await room.localParticipant.setMicrophoneEnabled(true).catch(() => {});
       } catch {
@@ -96,7 +96,7 @@ export function useLiveKitSession({ sessionId }: { sessionId: string }) {
 
 /**
  * LiveKit publishes transcriptions as a participant attribute. It can arrive
- * as a JSON object or a bare string — accept both.
+ * as a JSON object or a bare string: accept both.
  */
 function parseTranscript(raw: string): string | null {
   try {

@@ -122,6 +122,51 @@ Q: The main purpose of a formulation is to:
 :::
 
 ## 3.2 Differential and provisional diagnosis [core][advanced]
+
+:::widget build
+{
+ "vignette": "Mr J, 62, a retired railway officer in Nagpur, has had suspiciousness, visual hallucinations of children in the room and fluctuating confusion for three days. He is worse at night, inattentive, and has a mild fever. He was started on a medicine for an overactive bladder last week.",
+ "rule": "Tick the features that point to delirium. Two core features (acute onset with fluctuation, and inattention) plus one more make delirium the first diagnosis to rule out.",
+ "symptoms": [
+  {
+   "label": "Acute onset and fluctuating course",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Inattention",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Worse at night",
+   "present": true
+  },
+  {
+   "label": "Visual hallucinations",
+   "present": true
+  },
+  {
+   "label": "Possible infection (fever)",
+   "present": true
+  },
+  {
+   "label": "New anticholinergic medicine",
+   "present": true,
+   "why": "Bladder medicines like oxybutynin are a common trigger in older adults."
+  },
+  {
+   "label": "Long history of gradual personality change",
+   "present": false,
+   "why": "Absent; a long history would point more towards dementia."
+  }
+ ],
+ "need": 3,
+ "needCore": true,
+ "verdict": "This is delirium until proved otherwise. Look for infection, review medicines (stop the anticholinergic), check bloods and urine, and treat the cause. A psychiatric differential comes only after the organic rungs are cleared."
+}
+:::
+
 ### How to reason
 1. **Describe the syndrome**: what pattern of symptoms is present (for example a manic syndrome with psychotic features)?
 2. **List what can cause it**, in a set order:
@@ -234,6 +279,48 @@ Q: A differential diagnosis entry should include:
 | **Social** | Who will stay with the patient, leave from work or college, removing means of harm | Work or study return, housing, finances, disability benefits, support groups |
 
 Each item should say **what, who, when** and **how we will know it is working**.
+
+
+:::widget sort
+{
+ "prompt": "Place each plan item in the right domain.",
+ "buckets": [
+  "Biological",
+  "Psychological",
+  "Social"
+ ],
+ "items": [
+  {
+   "text": "Start sertraline at a low dose",
+   "bucket": 0
+  },
+  {
+   "text": "Behavioural activation with a graded return to the shop",
+   "bucket": 1
+  },
+  {
+   "text": "Help negotiating with the moneylender",
+   "bucket": 2
+  },
+  {
+   "text": "Thyroid and blood count",
+   "bucket": 0
+  },
+  {
+   "text": "Safety plan with the patient",
+   "bucket": 1
+  },
+  {
+   "text": "Wife to stay with him this week",
+   "bucket": 2
+  },
+  {
+   "text": "Brief alcohol intervention",
+   "bucket": 1
+  }
+ ]
+}
+:::
 
 ### Risk: write a formulation, not just a rating
 "Low, medium or high" on its own is not enough. Write:
@@ -448,6 +535,14 @@ The core structure stays the same, but some groups need extra headings.
 - **Safeguarding**: any concern about abuse or neglect, and actions taken (POCSO reporting where required).
 - **Observation of play and interaction** as part of the MSE.
 
+
+:::widget reveal
+{
+ "prompt": "In a child's case sheet, why should you record school reports and the teacher's view, not only the parents' account?",
+ "answer": "Children behave differently across settings. A teacher sees attention, learning, peer relations and behaviour in a structured group, which parents may not. Problems in only one setting suggest a setting-specific cause; problems in both support conditions like ADHD, which require impairment in more than one setting."
+}
+:::
+
 ### Older adult case sheet
 - **Functional status**: activities of daily living (bathing, dressing, eating, toileting) and instrumental activities (money, medicines, cooking, phone, transport).
 - **Cognitive history** from an informant: what has changed, when, how fast.
@@ -467,6 +562,14 @@ A psychologist's record often adds:
 - **Therapy goals** agreed with the client, the therapy plan, number and type of sessions.
 - **Session notes**: date, attendance, content themes, interventions, homework, risk, outcome measures.
 - **Termination summary**: what was achieved, what remains, relapse prevention.
+
+
+:::widget reveal
+{
+ "prompt": "Why are word-for-word quotes so important in a medicolegal record?",
+ "answer": "Courts may weigh exact words heavily, and paraphrase can change meaning. A verbatim quote with the time and who was present is the most accurate evidence of what was said, and protects both the patient and the clinician."
+}
+:::
 
 ### Medicolegal records
 In any case that may go to court (assault, accidents, custody, criminal responsibility, disability claims): record times exactly, quote statements word for word, describe injuries objectively, note who was present, keep originals safe, and avoid opinions beyond your evidence.
@@ -536,6 +639,14 @@ The patient was apparently well until about one month ago. The illness began acu
 **Treatment so far**: taken to a local temple for blessings; GP gave a sleeping tablet (name not known) for two nights without benefit, then referred.
 :::
 
+
+:::widget reveal
+{
+ "prompt": "Which single detail in Ms P's HPI most supports a manic episode rather than a primary psychotic illness?",
+ "answer": "Her decreased need for sleep (three to four hours without tiredness) together with elevated mood, overactivity and overspending: a full manic syndrome, with grandiose delusions that match the mood. Psychosis arising only within such a mood syndrome points to bipolar disorder."
+}
+:::
+
 :::example 5. Past history
 At 21, after her final-year exams, she had a depressive episode of about four months (low mood, crying, poor sleep, staying in her room), treated by a GP with escitalopram 10 mg for about three months. Her mother recalls that about a month after starting it she was “too happy and active for a week”, spending on friends and sleeping little, which settled on its own; it was not reported to the doctor. No past admissions. No medical or surgical illness. No known drug allergies.
 :::
@@ -546,6 +657,52 @@ Escitalopram 10 mg daily for about three months at age 21: good response; possib
 
 :::example 7. Substance use history
 No alcohol, tobacco, cannabis or other substances (patient and both parents agree). Drinks two to three cups of tea daily.
+:::
+
+
+:::widget build
+{
+ "vignette": "Ms P: elevated and irritable mood for about a month; sleeps three to four hours without tiredness; talks rapidly and is hard to interrupt; jumps between topics; distractible; started several big projects; spent her savings and gave away jewellery; believes she is a goddess with a mission.",
+ "rule": "A manic episode needs elevated or irritable mood with increased energy, plus at least three further symptoms (four if mood is only irritable), lasting at least a week or needing admission.",
+ "symptoms": [
+  {
+   "label": "Elevated or irritable mood with increased energy",
+   "present": true,
+   "core": true
+  },
+  {
+   "label": "Inflated self-esteem or grandiosity",
+   "present": true
+  },
+  {
+   "label": "Decreased need for sleep",
+   "present": true
+  },
+  {
+   "label": "Pressured speech",
+   "present": true
+  },
+  {
+   "label": "Flight of ideas",
+   "present": true
+  },
+  {
+   "label": "Distractibility",
+   "present": true
+  },
+  {
+   "label": "Increased goal-directed activity",
+   "present": true
+  },
+  {
+   "label": "Risky activities (spending, giving away belongings)",
+   "present": true
+  }
+ ],
+ "need": 4,
+ "needCore": true,
+ "verdict": "Criteria for a manic episode are clearly met, with mood-congruent psychotic features. The past antidepressant-associated hypomania and family history support bipolar I disorder."
+}
 :::
 
 :::example 8. Family history
@@ -588,6 +745,49 @@ Ms P, 26, unmarried accounts assistant from Surat with a past depressive episode
 **Narrative**: Ms P has a strong biological vulnerability to bipolar disorder, signalled by her uncle's illness and a likely switch into hypomania on an antidepressant five years ago. Sleep loss at a wedding triggered a full manic episode, now sustained by continuing sleeplessness and lack of insight. Her mother's support and her good premorbid functioning are important strengths for treatment and recovery.
 :::
 
+
+:::widget sort
+{
+ "prompt": "Sort Ms P's factors into the 5Ps.",
+ "buckets": [
+  "Predisposing",
+  "Precipitating",
+  "Perpetuating",
+  "Protective"
+ ],
+ "items": [
+  {
+   "text": "Maternal uncle with bipolar disorder",
+   "bucket": 0
+  },
+  {
+   "text": "Several nights of lost sleep at a wedding",
+   "bucket": 1
+  },
+  {
+   "text": "No insight and no treatment yet",
+   "bucket": 2
+  },
+  {
+   "text": "Supportive, observant mother",
+   "bucket": 3
+  },
+  {
+   "text": "Father's anger and stigma about illness",
+   "bucket": 2
+  },
+  {
+   "text": "Good premorbid functioning and work record",
+   "bucket": 3
+  },
+  {
+   "text": "Past antidepressant-associated hypomania",
+   "bucket": 0
+  }
+ ]
+}
+:::
+
 :::example 15. Differential diagnosis
 As written in Section 3.2: (1) Bipolar I disorder, current episode manic, with mood-congruent psychotic features, most likely; (2) substance-induced mania, unlikely (no use, urine screen to confirm); (3) mania due to another medical condition (thyroid, autoimmune or other neurological illness), to exclude by examination and tests; (4) schizoaffective disorder, unlikely (psychosis confined to the mood episode); (5) acute and transient psychotic disorder, unlikely (full manic syndrome).
 **Provisional diagnosis**: Bipolar I disorder, current episode manic, severe, with mood-congruent psychotic features (DSM-5-TR).
@@ -603,6 +803,14 @@ Complete blood count; thyroid function (baseline and to exclude hyperthyroidism)
 **Psychological**: calm, consistent communication; psychoeducation for patient (when able) and family about bipolar disorder, sleep, relapse signs and adherence; later, a relapse prevention plan and family-focused work.
 **Social**: leave from work with a medical certificate; family meeting to reduce conflict and address the father's anger and stigma; protect finances (parents to hold her bank card temporarily with her later agreement); discuss marriage plans being postponed until stable.
 **Long term**: maintenance lithium, regular level, renal and thyroid monitoring; avoid antidepressant monotherapy; sleep regularity; plan for pregnancy counselling in future.
+:::
+
+
+:::widget reveal
+{
+ "prompt": "What evidence in the case sheet supports the judgement that Ms P lacks capacity for treatment decisions now?",
+ "answer": "She denies being ill (insight grade 1), believes she is a goddess on a mission, and cannot appreciate that refusing treatment could lead to harm (spending, exploitation, conflict). She can communicate a choice, but the appreciation element is missing. Record her own words as evidence and review capacity at least weekly."
+}
 :::
 
 :::example 18. Risk assessment and safety plan
@@ -712,6 +920,43 @@ In a clinical exam you take a history and MSE in about 45 to 60 minutes, then pr
     { "label": "Give the provisional diagnosis in one line, then three or four key supporting features, one key negative, and your main differential", "verdict": "best", "outcome": "The examiner nods and moves to management questions, where you score well.", "why": "A concise, reasoned answer shows clinical maturity." },
     { "label": "Say you are not sure and need more time", "verdict": "ok", "outcome": "Honest, but it suggests poor preparation.", "why": "Uncertainty is fine, but give your best reasoned answer and say what would confirm it." }
   ]
+}
+:::
+
+
+:::widget sort
+{
+ "prompt": "Will this impress or worry an examiner?",
+ "buckets": [
+  "Impresses",
+  "Worries"
+ ],
+ "items": [
+  {
+   "text": "Listing relevant negatives for each differential",
+   "bucket": 0
+  },
+  {
+   "text": "Putting history into the MSE",
+   "bucket": 1
+  },
+  {
+   "text": "Saying what would change your diagnosis",
+   "bucket": 0
+  },
+  {
+   "text": "'I think the patient said...' about key facts",
+   "bucket": 1
+  },
+  {
+   "text": "Thanking the patient and keeping confidentiality",
+   "bucket": 0
+  },
+  {
+   "text": "Giving a diagnosis with no reasons",
+   "bucket": 1
+  }
+ ]
 }
 :::
 

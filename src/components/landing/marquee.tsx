@@ -4,12 +4,12 @@ import { Fragment } from "react";
 import { useReducedMotion } from "motion/react";
 
 /**
- * Neo-brutalist ticker — a seamless horizontal marquee of the curriculum.
+ * Neo-brutalist ticker: a seamless horizontal marquee of the curriculum.
  * Two duplicated runs translate -50% so the loop is continuous (transform/
  * opacity only). Reduced-motion and no-JS render a static strip; hovering
  * pauses it (marquee-paused).
  *
- * The terms are the program's real curriculum (from the Method copy) — no
+ * The terms are the program's real curriculum (from the Method copy), no
  * fabricated claims. Purely decorative positioning: it sits between the hero
  * and the "Why this school exists" section as the section divider band.
  */

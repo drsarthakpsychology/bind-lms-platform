@@ -24,7 +24,7 @@ const FILLERS = /\b(um|uh|like|so|you know|i mean|actually|basically|right)\b/gi
 
 export function useVoiceMetrics() {
   // Timestamp is captured lazily on first report() (a user action), never
-  // during render — keeps the hook render-pure for the react-hooks rule.
+  // during render: keeps the hook render-pure for the react-hooks rule.
   const startRef = React.useRef<number | null>(null);
   const [patientSpeechMs, setPatientSpeechMs] = React.useState(0);
   const [silences, setSilences] = React.useState<number[]>([]);

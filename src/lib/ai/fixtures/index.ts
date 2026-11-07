@@ -1,5 +1,5 @@
 /**
- * Deterministic AI fixtures — used when AI_ENABLED=false OR when no provider
+ * Deterministic AI fixtures: used when AI_ENABLED=false OR when no provider
  * is available. Every AI feature has a fixture path so the whole app works
  * with zero network calls and zero keys (Part 0.4: build the fixture path
  * first, always).
@@ -53,7 +53,7 @@ export function fixtureReply(workload: Workload, archetype = "cooperative", turn
     return { patient: "scoring disabled in fixture mode" };
   }
   if (workload === "journal_support") {
-    // Reflective-supervisor fixture templates — the same discipline as the
+    // Reflective-supervisor fixture templates: the same discipline as the
     // live no-train provider: ask, never analyse, never diagnose. Rotated
     // deterministically by the turn counter so repeated asks vary.
     const REFLECTIVE_PROMPTS = [
@@ -68,7 +68,7 @@ export function fixtureReply(workload: Workload, archetype = "cooperative", turn
     return { patient: REFLECTIVE_PROMPTS[turn % REFLECTIVE_PROMPTS.length] };
   }
   if (workload === "knowledge_tutor") {
-    // Fixture path — the retrieval layer is real even with AI disabled, so the
+    // Fixture path: the retrieval layer is real even with AI disabled, so the
     // honest answer is the retrieved passages themselves (see the tutor
     // endpoint's retrieval-first design). This placeholder only appears if
     // something calls aiChat directly with no provider.
@@ -94,7 +94,7 @@ export const FIXTURE_DEBRIEF = {
   quotes: [
     { quote: "patient: I'm fine.", better: "I hear you're fine. What's it been like since the last time we spoke?" },
     { quote: "student: You're not going to hurt yourself, right?", better: "Have you had thoughts of ending your life?" },
-    { quote: "student: Don't worry, you'll be fine.", better: "That sounds frightening — tell me more before we decide anything." },
+    { quote: "student: Don't worry, you'll be fine.", better: "That sounds frightening: tell me more before we decide anything." },
   ],
   missed_disclosures: ["the patient would have told you about the debt if you'd asked openly about home"],
 };

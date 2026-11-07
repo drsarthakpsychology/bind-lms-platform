@@ -15,7 +15,7 @@ type Mode = "menu" | "delete" | "block";
  * Per-student actions in the admin list. One ⋯ trigger reveals a contextual
  * action sheet (mobile bottom sheet) with Reset, Block/Unblock, and Delete.
  * Block attaches a short internal note (never shown to the student) and is the
- * unconditional every-request override — the account is cut off on its very
+ * unconditional every-request override: the account is cut off on its very
  * next request, even mid-session.
  */
 export function StudentActions({
@@ -111,7 +111,7 @@ export function StudentActions({
           mode === "delete"
             ? "This permanently deletes the account and all of its progress, submissions, and files. This can't be undone."
             : mode === "block"
-              ? "The account is cut off immediately — even if they're logged in right now. The note is for you only; the student just sees \"your access is paused\"."
+              ? "The account is cut off immediately, even if they're logged in right now. The note is for you only; the student just sees \"your access is paused\"."
               : undefined
         }
         footer={

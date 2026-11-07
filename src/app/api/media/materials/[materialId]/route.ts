@@ -13,7 +13,7 @@ import {
 /**
  * GET /api/media/materials/:materialId
  *
- * Streams a material file through the authenticated proxy — the same transport
+ * Streams a material file through the authenticated proxy: the same transport
  * as video. The client never receives a storage URL or bucket path; the object
  * is fetched server-side from the material's recorded provider/bucket/key and
  * streamed back with correct Range/206 semantics.
@@ -76,7 +76,7 @@ async function authorizeMaterial(
   }
 
   // Hot path: one combined authz + resolution read per (viewer, material),
-  // cached for 5 minutes — the video proxy's verdict-cache pattern.
+  // cached for 5 minutes: the video proxy's verdict-cache pattern.
   let verdict = getMaterialStreamVerdict(profile.id, materialId);
   if (!verdict) {
     verdict = await resolveMaterial(profile, materialId);

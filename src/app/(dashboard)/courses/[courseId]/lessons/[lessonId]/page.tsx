@@ -10,7 +10,7 @@ import { loadMyCohorts, loadStudentAccess } from "@/lib/cohorts/access";
 import { canWatch, filterLessons, myCohortsFor } from "@/lib/cohorts/rules";
 import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
-// Lazy wrapper — the player pulls in hls.js (~500KB min / ~150KB gzip). The
+// Lazy wrapper: the player pulls in hls.js (~500KB min / ~150KB gzip). The
 // dynamic import lives in a Client Component (ssr:false is not supported in
 // Server Components), which splits hls.js into a deferred chunk loaded only
 // when the "Watch" tab mounts the player.
@@ -30,7 +30,7 @@ import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 
-// "Check what stuck" — the risk-assessment + reporting items are the most
+// "Check what stuck": the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
 const LESSON_QUIZ_ITEMS = QUIZ_BANK.filter((i) => i.type === "order_steps").slice(0, 4);
 
@@ -44,7 +44,7 @@ export default async function LessonPage({
   const { courseId, lessonId } = await params;
   const { tab: tabParam } = await searchParams;
   // Validate the URL IDs look like UUIDs before interpolating them into
-  // PostgREST filter syntax — a malformed id with a comma/paren would produce
+  // PostgREST filter syntax: a malformed id with a comma/paren would produce
   // a PostgREST 400 (availability issue).
   if (!/^[0-9a-f-]{36}$/i.test(courseId) || !/^[0-9a-f-]{36}$/i.test(lessonId)) {
     notFound();
@@ -54,7 +54,7 @@ export default async function LessonPage({
   const { profile } = session;
 
   // View mode: an admin previewing as student (via the view-mode switch) is
-  // still `role === "admin"` but should see the STUDENT experience — the
+  // still `role === "admin"` but should see the STUDENT experience: the
   // assignment brief + submit form, not the authoring editor.
   const cookieStore = await cookies();
   const viewingAsStudent = cookieStore.get(VIEW_MODE_COOKIE)?.value === "student";
@@ -154,7 +154,7 @@ export default async function LessonPage({
 
   // A pending assignment does NOT block advancing. Grading (approval) is a
   // separate, asynchronous admin workflow that shouldn't stall a student
-  // mid-course — they can always move on to the next lesson.
+  // mid-course. They can always move on to the next lesson.
 
   // Course order = (week, order_index), so Previous/Next cross week boundaries:
   // the last lesson of Week 1 flows into the first lesson of Week 2.
@@ -215,7 +215,7 @@ export default async function LessonPage({
     <div className="pb-32 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 lg:pb-0 xl:grid-cols-[minmax(0,1fr)_24rem]">
       <div className="min-w-0 space-y-5">
       {/* Back + (phones) the lesson list. The sidebar steps aside on this page
-          so the video gets the width — like a video app's watch page. */}
+          so the video gets the width, like a video app's watch page. */}
       <div className="flex items-center justify-between gap-3">
         <Link
           href={`/courses/${courseId}`}
@@ -237,7 +237,7 @@ export default async function LessonPage({
         )}
       </div>
 
-      {/* Watch tab — the video first (where every video app puts it); a
+      {/* Watch tab: the video first (where every video app puts it); a
           reading lesson shows its text in the same frame. */}
       {tab === "watch" && (
         <div className="overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-md">
@@ -305,7 +305,7 @@ export default async function LessonPage({
         />
       </Suspense>
 
-      {/* About this lecture — the description box under the video. */}
+      {/* About this lecture: the description box under the video. */}
       {tab === "watch" && hasVideo && lesson?.description ? (
         <section aria-label="About this lecture" className="rounded-2xl border-2 border-foreground/15 bg-card p-4 sm:p-5">
           <h2 className="text-eyebrow text-muted-foreground">About this lecture</h2>
@@ -313,7 +313,7 @@ export default async function LessonPage({
         </section>
       ) : null}
 
-      {/* Check what stuck — a quick retention check, folded so it never sits
+      {/* Check what stuck: a quick retention check, folded so it never sits
           between the video and the next step. */}
       {tab === "watch" && (
         <section aria-label="Check what stuck">
@@ -431,7 +431,7 @@ export default async function LessonPage({
         </section>
       )}
 
-      {/* Assignment tab — student view */}
+      {/* Assignment tab: student view */}
       {tab === "assignment" && assignment && !showAdminAssignment && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
@@ -487,7 +487,7 @@ export default async function LessonPage({
         </section>
       )}
 
-      {/* Assignment tab, no assignment exists — admins get the editor to add one */}
+      {/* Assignment tab, no assignment exists: admins get the editor to add one */}
       {tab === "assignment" && !assignment && (
         showAdminAssignment ? (
           <section aria-label="Assignment" className="space-y-3">
@@ -508,7 +508,7 @@ export default async function LessonPage({
       )}
       </div>
 
-      {/* Up next — the course playlist beside the video (laptops and up). */}
+      {/* Up next: the course playlist beside the video (laptops and up). */}
       {nextUp.length > 0 ? (
         <aside aria-label="Lectures in this course" className="hidden lg:block">
           <div className="sticky top-[calc(var(--top-h)+1rem)] flex max-h-[calc(100dvh-var(--top-h)-2rem)] flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">

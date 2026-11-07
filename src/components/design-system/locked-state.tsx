@@ -3,13 +3,13 @@ import { Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * LockedState — the single "yet to be live" chip for the three-state go-live
+ * LockedState: the single "yet to be live" chip for the three-state go-live
  * system (hidden / live / unlocked). A quiet, non-actionable stamp: a lock
  * icon + plain copy, 2px ink border, muted fill, ink text, hard shadow.
  *
  * Import this anywhere a surface needs to say "this exists but isn't open
  * yet" so the wording and treatment can never drift apart. Peach is
- * deliberately NOT the fill — a locked state is not an action.
+ * deliberately NOT the fill: a locked state is not an action.
  *
  * Server-safe (no hooks), so it can render from server or client components.
  */

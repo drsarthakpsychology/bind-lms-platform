@@ -14,7 +14,7 @@ import { logout } from "@/lib/auth/actions";
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
 
 /**
- * Phone "More" drawer — opened by the More tab in the bottom bar (the
+ * Phone "More" drawer: opened by the More tab in the bottom bar (the
  * Instagram/YouTube pattern). Holds every destination, your account, the
  * light/dark switch and log out. Focus is trapped and Escape closes it
  * (Radix Sheet).

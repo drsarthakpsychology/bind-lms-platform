@@ -22,12 +22,12 @@ interface JournalEntry {
 }
 
 /**
- * Journal — owner-only. Write, see history, optional "help me think" via a
+ * Journal: owner-only. Write, see history, optional "help me think" via a
  * no-train provider (journal_support workload; honest message if none).
  * Per-entry sharing: share a specific entry with a named person by email,
  * revocable at any time (journal_shares, owner-only RLS).
  *
- * Mobile (T35/T21): history-first — the compose surface lives in a bottom
+ * Mobile (T35/T21): history-first, the compose surface lives in a bottom
  * sheet behind a "New entry" action, and each entry's secondary actions
  * collapse into a single "…" sheet. Desktop keeps the inline composer.
  */
@@ -77,7 +77,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
     return () => window.clearTimeout(id);
   }, []);
 
-  // Debounced autosave — a reflection is exactly the thing you don't want to lose.
+  // Debounced autosave: a reflection is exactly the thing you don't want to lose.
   React.useEffect(() => {
     const t = setTimeout(() => {
       try {
@@ -126,13 +126,13 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         setError(j?.error ?? "Could not save. Please try again.");
       } else {
         const j = (await res.json()) as { id: string };
-        // Entry is already visible — just swap the temp id for the real one.
+        // Entry is already visible, just swap the temp id for the real one.
         setEntries((prev) => prev.map((entry) => (entry.id === tempId ? { ...entry, id: j.id } : entry)));
         haptic("success");
         ok = true;
       }
     } catch {
-      setError("Network error. Your entry is still here — try again.");
+      setError("Network error. Your entry is still here: try again.");
     }
 
     if (!ok) {
@@ -229,7 +229,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         const j = await res.json().catch(() => null);
         setHelpReply(
           j?.error?.includes("no no-train") || res.status === 503
-            ? "This isn't available yet — it needs a service your faculty hasn't switched on. Your note is saved as normal."
+            ? "This isn't available yet. It needs a service your faculty hasn't switched on. Your note is saved as normal."
             : "Could not get a response.",
         );
         return;
@@ -295,12 +295,12 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   return (
     <div className="space-y-6">
       {offline ? (
-        <StatusPill tone="warning" label="Offline — your entry saves locally" />
+        <StatusPill tone="warning" label="Offline: your entry saves locally" />
       ) : justReturned ? (
         <StatusPill tone="neutral" label="Back online" />
       ) : null}
 
-      {/* Mobile: history-first — compose lives in a bottom sheet */}
+      {/* Mobile: history-first, compose lives in a bottom sheet */}
       <button
         type="button"
         onClick={() => {
@@ -372,7 +372,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         open={composerOpen}
         onOpenChange={setComposerOpen}
         title="New entry"
-        description="Write freely — it stays private to you."
+        description="Write freely. It stays private to you."
         footer={
           <button
             type="submit"

@@ -21,7 +21,7 @@ export type ComposeTemplate = {
   hint: string;
 };
 
-/** The starting point for a fully custom (blank) email — a minimal shell the admin edits. */
+/** The starting point for a fully custom (blank) email: a minimal shell the admin edits. */
 const BLANK_HTML = `<!DOCTYPE html>
 <html>
 <body style="margin:0;padding:0;background:#FFF9F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
@@ -44,7 +44,7 @@ const MODES: { id: Mode; label: string; hint: string; icon: React.ComponentType<
 ];
 
 /**
- * The compose tab — three ways to write: Formatted (toolbar, no code), Plain
+ * The compose tab: three ways to write: Formatted (toolbar, no code), Plain
  * text, or your own HTML; plus ready-made templates. With a
  * LIVE visual preview (sandboxed iframe, so pasted markup can never run
  * scripts) before anything is sent. "Send test to me" verifies the exact
@@ -80,7 +80,7 @@ export function ComposeTab({
   const [confirmOpen, setConfirmOpen] = React.useState(false);
 
   // The preview lags a beat behind typing so a long HTML paste doesn't stall
-  // the editor (React's useDeferredValue — the textarea stays responsive).
+  // the editor (React's useDeferredValue, the textarea stays responsive).
   const previewHtml = React.useDeferredValue(
     mode === "text"
       ? `<pre style="margin:0;padding:24px;font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;white-space:pre-wrap;color:#1a1a1a;background:#fff">${text.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</pre>`
@@ -289,7 +289,7 @@ export function ComposeTab({
           ) : null}
         </div>
 
-        {/* Live preview — the whole point: verify before sending. */}
+        {/* Live preview: the whole point: verify before sending. */}
         <div className="space-y-1.5">
           <Label className="flex items-center gap-1.5">
             <Eye className="size-3.5 text-muted-foreground" aria-hidden />
@@ -314,7 +314,7 @@ export function ComposeTab({
         open={confirmOpen}
         onOpenChange={setConfirmOpen}
         title="Send this email?"
-        description={`To ${selected.size} recipient${selected.size === 1 ? "" : "s"} — subject “${subject.trim() || "(no subject)"}”`}
+        description={`To ${selected.size} recipient${selected.size === 1 ? "" : "s"}: subject “${subject.trim() || "(no subject)"}”`}
         footer={
           <div className="flex flex-col gap-2">
             <Button type="button" onClick={runSend} disabled={sendBusy} className="w-full">

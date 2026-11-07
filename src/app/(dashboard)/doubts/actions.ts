@@ -47,7 +47,7 @@ export async function askDoubt(input: { title: string; body: string; topic?: str
   if (title.length < 3) return { error: "Write a short title for your doubt." };
 
   // The student picks their cohort implicitly: a doubt goes to the cohort they
-  // belong to (the first one). Complaints carry no cohort — they go to the admin.
+  // belong to (the first one). Complaints carry no cohort. They go to the admin.
   const cohorts = await loadMyCohorts(me.id);
   const kind = kindFor(title, body, input.markAs);
   const cohortId = kind === "complaint" ? null : (input.cohortId && cohorts.some((c) => c.id === input.cohortId) ? input.cohortId : cohorts[0]?.id ?? null);

@@ -17,9 +17,9 @@ interface FormulationCaseRow {
 }
 
 /**
- * /practice/formulation — Formulation Forge (Part 6.2).
+ * /practice/formulation: Formulation Forge (Part 6.2).
  * Stage 1: sort factor cards into the 5P grid (with distractors).
- * Stage 2: write the narrative. Stage 3: diff against the model — a diff, not a grade.
+ * Stage 2: write the narrative. Stage 3: diff against the model, a diff, not a grade.
  * Stage 4: formulate from your own Consulting Room transcript.
  * Plus the anonymised peer-critique wall (IDEAS: Formulation Wall).
  *
@@ -56,7 +56,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       <h1 className="mt-1 text-h1">Build the formulation</h1>
       <p className="mt-1 text-small text-muted-foreground">
         Sort the 5P factors, write the narrative, then diff against the model. It&apos;s a diff,
-        not a grade — you&apos;re learning the structure.
+        not a grade. You&apos;re learning the structure.
       </p>
 
       <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
@@ -79,7 +79,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       </div>
 
       <div className="mt-10">
-        <h2 className="text-base font-semibold">The peer wall — anonymised critiques</h2>
+        <h2 className="text-base font-semibold">The peer wall: anonymised critiques</h2>
         <p className="mt-1 text-small text-muted-foreground">
           Formulations the cohort has shared. The structure is the lesson; nobody&apos;s name
           is attached.

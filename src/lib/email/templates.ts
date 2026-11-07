@@ -4,11 +4,11 @@ import "server-only";
  * Ready-made email templates for the /admin/emails compose tab.
  *
  * Every template is a full email-client-safe HTML document (tables + inline
- * styles ONLY — no <style> blocks, no scripts; email clients strip or ignore
+ * styles ONLY, no <style> blocks, no scripts; email clients strip or ignore
  * both) with a plain-text fallback. The shell carries the Neo-Brutalist brand:
  * cream backdrop, 2px ink borders, peach accent, terracotta links.
  *
- * The credential email is NOT here — it lives in `src/lib/auth/roster.ts`
+ * The credential email is NOT here. It lives in `src/lib/auth/roster.ts`
  * (`credentialsEmailHtml`) because it carries a per-student password and is
  * sent from the Credentials tab, not the compose picker.
  */
@@ -40,7 +40,7 @@ function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
-/** Wrap content in a full email document — 600px card on cream, inline styles only. */
+/** Wrap content in a full email document: 600px card on cream, inline styles only. */
 export function emailShell(title: string, contentHtml: string): string {
   return `<!DOCTYPE html>
 <html>
@@ -62,7 +62,7 @@ function footerHtml(): string {
   return `<p style="margin:24px 0 0;padding-top:16px;border-top:2px solid ${BRAND.ink};font-size:13px;line-height:1.5;color:${BRAND.muted};">With care,<br/>The VIBHA School of Psychology team</p>`;
 }
 function footerText(): string {
-  return "\n\n— The VIBHA School of Psychology team";
+  return "\n\nThe VIBHA School of Psychology team";
 }
 
 export const welcomeTemplate: EmailTemplate = {
@@ -77,7 +77,7 @@ export const welcomeTemplate: EmailTemplate = {
       "Welcome to VIBHA",
       `
       <h1 style="margin:0 0 8px;font-size:20px;line-height:1.3;color:${BRAND.ink};">Welcome${name}!</h1>
-      <p style="margin:0 0 20px;font-size:15px;line-height:1.6;color:${BRAND.ink};">We're glad you're here. Your journey through the world of clinical psychology begins now — one lesson, one practice session, one honest check-in at a time.</p>
+      <p style="margin:0 0 20px;font-size:15px;line-height:1.6;color:${BRAND.ink};">We're glad you're here. Your journey through the world of clinical psychology begins now: one lesson, one practice session, one honest check-in at a time.</p>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
         <td align="center" style="padding:8px 0 20px;">
           <a href="${appUrl}/login" style="display:inline-block;background:${BRAND.peach};color:${BRAND.ink};font-size:15px;font-weight:700;text-decoration:none;padding:12px 24px;border:2px solid ${BRAND.ink};border-radius:6px;">Start your first lesson</a>
@@ -96,7 +96,7 @@ export const announcementTemplate: EmailTemplate = {
   id: "announcement",
   label: "Announcement",
   defaultSubject: "A note from VIBHA School of Psychology",
-  hint: "A general note to your students — edit the body freely.",
+  hint: "A general note to your students: edit the body freely.",
   build: (params = {}) => {
     const appUrl = params.appUrl ?? "https://vibhapsychology.com";
     const html = emailShell(

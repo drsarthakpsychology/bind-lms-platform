@@ -244,7 +244,7 @@ export function SubmissionForm({
     );
   }
 
-  // Already submitted — show the submitted state + unsubmit.
+  // Already submitted: show the submitted state + unsubmit.
   if (isSubmitted && !canSubmit) {
     return (
       <div className="space-y-3 rounded-md border-2 border-border bg-card p-4">
@@ -306,7 +306,7 @@ export function SubmissionForm({
         </p>
       )}
 
-      {/* Drop zone — only when submissions are still open */}
+      {/* Drop zone, only when submissions are still open */}
       {(!pastDue || allowLate) && (
         <div
           role="button"

@@ -98,7 +98,7 @@ export async function pingProgress(
 
 /**
  * The explicit "Complete and Continue" button. Distinct from the automatic
- * 90%-watched completion in pingProgress — this respects the student's own
+ * 90%-watched completion in pingProgress: this respects the student's own
  * judgment that they're done, rather than requiring a watch-time threshold,
  * and does the mark-complete + advance in a single click.
  */
@@ -114,7 +114,7 @@ export async function completeAndAdvance(
   const ownLessonUrl = `/courses/${courseId}/lessons/${lessonId}`;
 
   // Server-side enforcement, not just a hidden button. Matches the
-  // student-facing copy: a submission must exist to proceed — grading
+  // student-facing copy: a submission must exist to proceed, grading
   // (approval) is a separate, asynchronous admin workflow that shouldn't
   // stall the whole cohort's progress on review turnaround.
   const { data: lesson } = await supabase
@@ -196,7 +196,7 @@ export async function submitTextAssignment(
 
   const supabase = await createClient();
 
-  // A student can only ever have one submission per assignment — check for
+  // A student can only ever have one submission per assignment: check for
   // an existing one first so this is an update (resubmission) rather than
   // a duplicate row, and so an already-approved submission can't be edited.
   const { data: existing } = await supabase
@@ -304,7 +304,7 @@ export async function submitWithFiles(
     .maybeSingle();
 
   if (existing?.status !== "pending_review" && existing?.status !== undefined) {
-    // returned / approved — locked.
+    // returned / approved: locked.
     return { error: "This assignment has already been graded and can't be edited." };
   }
 
@@ -363,7 +363,7 @@ export async function submitWithFiles(
 }
 
 /**
- * Unsubmit — clears the student's own pending submission back to a blank state
+ * Unsubmit: clears the student's own pending submission back to a blank state
  * so they can resubmit. Only allowed while status = pending_review.
  */
 export async function unsubmitAssignment(
@@ -441,7 +441,7 @@ export async function submitAudioAssignment(
 }
 
 /**
- * For playing back a submitted recording — either the student listening to
+ * For playing back a submitted recording: either the student listening to
  * their own submission, or an admin grading it. Uses the admin client
  * rather than relying on storage-path RLS, matching prepareSubmissionUpload
  * above: simpler to reason about than keeping a path convention and an RLS

@@ -43,7 +43,7 @@ const emptyImport = (error: string): BulkImportResult => ({
 /**
  * IMPORT step (no email). Parses a name,email CSV and creates the accounts with
  * the given scope, recording each as a `pending` credential email. Nothing is
- * emailed here — the admin reviews the batch and sends explicitly.
+ * emailed here: the admin reviews the batch and sends explicitly.
  */
 export async function bulkImportStudents(
   _prevState: BulkImportResult,
@@ -88,7 +88,7 @@ export async function bulkImportStudents(
 }
 
 /**
- * PREVIEW step — parse the CSV and report what WOULD happen, without creating
+ * PREVIEW step: parse the CSV and report what WOULD happen, without creating
  * anything. The Mailchimp/Resend-style "verify before you import": the admin
  * sees valid / duplicate / invalid / empty-name counts (with row numbers) and
  * the exact rows, then decides. No auth users or rows are written here.
@@ -108,7 +108,7 @@ export async function previewRosterCsv(text: string): Promise<{
 }
 
 /**
- * CONFIRM step — run the actual import on the rows the admin already previewed
+ * CONFIRM step: run the actual import on the rows the admin already previewed
  * and approved. `scope` is restricted to the two real options server-side.
  */
 export async function confirmBulkImport(rows: RosterRow[], scope: string): Promise<BulkImportResult> {
@@ -188,7 +188,7 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   const admin = createAdminClient();
   const appUrl = liveAppUrl();
 
-  // 1. Create (or reuse) a dedicated test account for this address — same scope
+  // 1. Create (or reuse) a dedicated test account for this address: same scope
   //    as a real roster account, so the test genuinely mirrors reality. Reuse
   //    the existing profile so repeated clicks don't pollute the accounts table.
   const { data: existing } = await admin
@@ -203,14 +203,14 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   // address or an already-test account is safe to mutate.
   if (existing?.role === "admin") {
     return {
-      error: "That's an admin account — testing would reset its password and flag it as test. Use a student email.",
+      error: "That's an admin account: testing would reset its password and flag it as test. Use a student email.",
       ok: false,
       detail: "",
     };
   }
   if (existing && !existing.is_test) {
     return {
-      error: "That's a real student's account — testing would reset their password. Use a new or already-test address.",
+      error: "That's a real student's account: testing would reset their password. Use a new or already-test address.",
       ok: false,
       detail: "",
     };
@@ -258,7 +258,7 @@ export async function sendTestEmailAction(email: string): Promise<TestEmailResul
   return {
     error: null,
     ok: res.ok,
-    detail: res.ok ? `Sent — Resend id ${res.id ?? "(none)"}. Open the link in the email to finish setup.` : res.error ?? "Send failed.",
+    detail: res.ok ? `Sent: Resend id ${res.id ?? "(none)"}. Open the link in the email to finish setup.` : res.error ?? "Send failed.",
   };
 }
 

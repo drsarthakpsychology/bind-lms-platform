@@ -1,5 +1,5 @@
 /**
- * A3 — rubric dimension calibration gate.
+ * A3: rubric dimension calibration gate.
  *
  * A dimension with status 'provisional' has its NUMERIC score hidden from
  * students (qualitative feedback only) until Dr. Sarthak's calibration scores
@@ -29,7 +29,7 @@ export function provisionalKeys(dims: RubricDimension[]): string[] {
 }
 
 /**
- * Cohen's weighted kappa for ordinal scores (quadratic weights) — the
+ * Cohen's weighted kappa for ordinal scores (quadratic weights): the
  * agreement statistic the calibration dashboard shows per dimension.
  * Paired human-vs-AI scores in, kappa in [-1, 1] out (0 = chance).
  * Pure, deterministic, testable.
@@ -83,7 +83,7 @@ function closestIndex(scale: number[], v: number): number {
 /**
  * Decide whether a dimension graduates from provisional to validated:
  * enough paired scores (>= MIN_SCORED) with strong agreement (kappa >= 0.6).
- * This is the A3 gate — until it passes, the student never sees the number.
+ * This is the A3 gate, until it passes, the student never sees the number.
  */
 export const MIN_VALIDATION_SCORES = 10;
 export const MIN_VALIDATION_KAPPA = 0.6;

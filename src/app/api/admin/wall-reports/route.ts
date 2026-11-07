@@ -10,7 +10,7 @@ const schema = z.object({
   status: z.enum(["open", "resolved"]),
 });
 
-/** POST /api/admin/wall-reports — resolve/dismiss a wall report. Admin-only. */
+/** POST /api/admin/wall-reports: resolve/dismiss a wall report. Admin-only. */
 export async function POST(req: Request) {
   const admin = await requireSuperAdmin();
   if (!admin) return NextResponse.json({ error: "Not authorized." }, { status: 401 });

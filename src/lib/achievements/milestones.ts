@@ -2,7 +2,7 @@ import { MODULES } from "@/lib/study";
 import type { BadgeTone, MilestoneRequirement } from "./rules";
 
 /**
- * VIBHA milestones (owner decision 39: about 30–40, each hard-earned,
+ * VIBHA milestones (owner decision 39: about 30 to 40, each hard-earned,
  * "challenging but earnable, never thousands"). Four groups:
  *   - mastery     : modules finished with a strong test score
  *   - skill       : the daily case, ranked duels and league climbing

@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileCompletionState — a consistent "you finished this" moment.
+ * MobileCompletionState: a consistent "you finished this" moment.
  *
  * The mobile principle: completion is a useful beat, not clutter. A compact
  * check-in-kettlemark + one line of honest copy + an obvious next action.
@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
  * the product has ONE completion language instead of a per-screen shrug.
  *
  * `title` is what was finished ("Lesson complete", "Scenario scored").
- * `description` is the useful feedback ("You scored 3 of 5 — the missed cue
+ * `description` is the useful feedback ("You scored 3 of 5: the missed cue
  * was the pressured-speech trigger.").
  * `action` is the single next step (a `Button`/link). `secondary` is an
  * optional quiet alternative (review again, see details).

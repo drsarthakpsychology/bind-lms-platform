@@ -8,7 +8,7 @@ import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision, type ReferralOption } from "@/lib/out-of-depth/scenarios";
 
 /**
- * Out of Depth (v5.1 A4) — the refer/escalate drill.
+ * Out of Depth (v5.1 A4): the refer/escalate drill.
  * Vignette → commit → consequence → reasoning. Scored both directions:
  * failing to refer is dangerous, referring everything is also a harm.
  */
@@ -59,8 +59,8 @@ export function OutOfDepthDrill() {
           Over-referrals this session:{" "}
           <span className="font-semibold text-numeric">{overReferrals}</span>
           {overReferrals > 0
-            ? " — referring everything is also a harm."
-            : " — you referred when you had to, and held when you could."}
+            ? ": referring everything is also a harm."
+            : ". You referred when you had to, and held when you could."}
         </p>
         <button
           type="button"
@@ -105,7 +105,7 @@ export function OutOfDepthDrill() {
         <div className="rounded-md border-2 border-border bg-card p-5">
           <p className={cn("flex items-center gap-2 text-base font-semibold", result.correct ? "text-status-success-fg" : "text-destructive")}>
             {result.correct ? <CheckCircle2 className="size-4" aria-hidden /> : <AlertTriangle className="size-4" aria-hidden />}
-            {result.correct ? "Right call" : result.overReferral ? "Over-referral — a real harm too" : "Missing the call"}
+            {result.correct ? "Right call" : result.overReferral ? "Over-referral: a real harm too" : "Missing the call"}
           </p>
           <p className="mt-2 text-small">{s.reasoning}</p>
           {s.over_referral_trap ? (

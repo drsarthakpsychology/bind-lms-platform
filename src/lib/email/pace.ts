@@ -16,7 +16,7 @@ export function explainFailure(reason: string | null | undefined): Explained {
   if (/daily .*quota|daily email sending quota|quota/.test(r))
     return { kind: "quota", words: "Daily sending limit reached. Retry tomorrow, or after the plan limit resets.", retryNow: true };
   if (/too many requests|rate limit|429/.test(r))
-    return { kind: "rate", words: "Sent too fast (more than 10 a second). Safe to retry — retries go out slowly.", retryNow: true };
+    return { kind: "rate", words: "Sent too fast (more than 10 a second). Safe to retry: retries go out slowly.", retryNow: true };
   if (/domain is not verified|verify your domain/.test(r))
     return { kind: "domain", words: "The sending domain isn't verified with the email provider. Fix that first, then retry.", retryNow: true };
   if (/invalid .*(to|email|recipient)|not a valid|does not exist|bounce/.test(r))
@@ -28,7 +28,7 @@ export function explainFailure(reason: string | null | undefined): Explained {
   return { kind: "other", words: reason ? String(reason) : "Unknown reason.", retryNow: true };
 }
 
-/** A send that stopped because the daily quota is used up — stop the whole batch. */
+/** A send that stopped because the daily quota is used up: stop the whole batch. */
 export const isQuotaStop = (reason: string | null | undefined) => explainFailure(reason).kind === "quota";
 
 export type FailedRow = {
@@ -46,9 +46,9 @@ export type GoodRow = { recipient: string; subject: string; created_at: string }
 export type RetryPlan = {
   /** Rows to send again, one per (recipient, subject). */
   send: FailedRow[];
-  /** Already received the same email later — just mark as handled. */
+  /** Already received the same email later, just mark as handled. */
   alreadyDelivered: FailedRow[];
-  /** Same person + subject failed more than once — only the newest is sent. */
+  /** Same person + subject failed more than once, only the newest is sent. */
   duplicates: FailedRow[];
   /** No copy of the email was kept (and it isn't a login email). */
   noCopy: FailedRow[];
@@ -99,7 +99,7 @@ export function planRetry(failed: FailedRow[], good: GoodRow[]): RetryPlan {
 
 /**
  * Keeps sends at least `gapMs` apart across the whole server instance. With
- * 250 ms that is 4 a second — well under the provider's 10 a second, even if
+ * 250 ms that is 4 a second: well under the provider's 10 a second, even if
  * two instances run at once.
  */
 export function createPacer(gapMs: number, now: () => number = Date.now, sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))) {

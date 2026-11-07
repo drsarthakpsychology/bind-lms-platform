@@ -118,7 +118,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
     }
     setBusy(null);
     const what = kind === "links" ? "Login links sent" : kind === "lock" ? "Locked" : "Unlocked";
-    if (bad) toast.error(`${what}: ${ok}. ${bad} didn't work — see Messages → Failed.`);
+    if (bad) toast.error(`${what}: ${ok}. ${bad} didn't work: see Messages → Failed.`);
     else toast.success(`${what}: ${ok}.`);
     setPicked(new Set());
     router.refresh();

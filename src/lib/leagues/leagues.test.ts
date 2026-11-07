@@ -148,7 +148,7 @@ describe("private percentile", () => {
   it("says top X% near the top, a percentile elsewhere", () => {
     const all = Array.from({ length: 100 }, (_, i) => i);
     expect(percentileLine(percentileOf(93, all))).toBe("You're in the top 7%");
-    expect(percentileLine(percentileOf(38, all), 6)).toBe("You're at the 38th percentile — up 6 this month");
+    expect(percentileLine(percentileOf(38, all), 6)).toBe("You're at the 38th percentile, up 6 this month");
     expect(percentileLine(percentileOf(38, all), -2)).toContain("down 2 this month");
     expect(percentileLine(percentileOf(5, [5]))).toContain("only one");
   });
@@ -188,7 +188,7 @@ describe("standing update", () => {
       zone: "40 points to promotion",
     });
     expect(u.title).toBe("You dropped 3 places");
-    expect(u.body).toContain("You dropped 3 places — 40 points gets them back.");
+    expect(u.body).toContain("You dropped 3 places. 40 points gets them back.");
     expect(u.body).toContain("Ananya S. and Rohan K. passed you.");
   });
   it("reports promotion on Mondays", () => {

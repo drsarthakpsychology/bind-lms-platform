@@ -6,7 +6,7 @@ import "server-only";
  * The stream proxy is the hot path: one request per 6-second segment. Each
  * request was doing ~4 serialized DB/auth round-trips (session, enrollment,
  * lesson resolution) before the first byte. The verdict is stable for the
- * lifetime of the stream token (5 minutes) — the token already HMAC-binds
+ * lifetime of the stream token (5 minutes): the token already HMAC-binds
  * (uid, lessonId, courseId, expiry), so a cached verdict is no wider a window
  * than the token itself.
  *

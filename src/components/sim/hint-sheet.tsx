@@ -6,7 +6,7 @@ import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 /**
  * The opt-in interview hint, revealed in a mobile bottom sheet (built on
- * MobileBottomSheet). Using the hint is flagged for the debrief — the parent
+ * MobileBottomSheet). Using the hint is flagged for the debrief: the parent
  * owns that bookkeeping; this surface just presents the hint quietly.
  */
 export const HintSheet = React.memo(function HintSheet({

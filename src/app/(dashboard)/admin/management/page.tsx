@@ -6,7 +6,7 @@ import { ManagementClient } from "./management-client";
 export const metadata = { title: "Admin Management" };
 
 /**
- * Admin Management — exclusive to the Super Admin. Lists every administrator,
+ * Admin Management: exclusive to the Super Admin. Lists every administrator,
  * adds new ones (Super Admin or View Admin), changes roles, resends setup
  * links and removes accounts. The View Admin and everyone else is redirected
  * away before anything renders.

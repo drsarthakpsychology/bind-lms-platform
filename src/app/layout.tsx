@@ -89,7 +89,7 @@ export default function RootLayout({
           <Toaster />
           {/* Vercel Web Analytics (traffic stats) + Speed Insights (real-user
               Core Web Vitals). No-op when the deployment's plan/feature isn't
-              enabled — they auto-detect the Vercel deployment. This is the
+              enabled. They auto-detect the Vercel deployment. This is the
               zero-key stats + performance-tracking layer; PostHog adds
               event-level funnel tracking on top (see @/lib/analytics). */}
           <Analytics />

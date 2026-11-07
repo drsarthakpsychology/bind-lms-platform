@@ -10,7 +10,7 @@ import { useOffline } from "@/lib/hooks/use-offline";
  * The compact patient header. One back affordance, the patient's name +
  * difficulty, a quiet timer, and a "more" affordance for the secondary
  * actions (notes / hint / finish). The conversation below gets the rest of
- * the screen. The student never sees which engine is driving the patient —
+ * the screen. The student never sees which engine is driving the patient,
  * only the genuine Offline signal when the connection drops.
  */
 export const SimulationHeader = React.memo(function SimulationHeader({
@@ -71,7 +71,7 @@ export const SimulationHeader = React.memo(function SimulationHeader({
         </div>
       </div>
 
-      {/* Timer — quiet, secondary; turns amber near the end */}
+      {/* Timer: quiet, secondary; turns amber near the end */}
       <span
         className={`shrink-0 font-mono text-caption tabular-nums ${nearEnd ? "text-status-alert-fg" : "text-muted-foreground"}`}
         aria-live="polite"

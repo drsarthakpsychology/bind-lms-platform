@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { LEGAL } from "@/lib/legal-constants";
 
 /**
- * Student Home — answers "what do I do today?" in one scroll, the way a
+ * Student Home: answers "what do I do today?" in one scroll, the way a
  * video/learning app's home does: continue watching, this week's shelf,
  * work that's due, then practice and help.
  */

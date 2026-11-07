@@ -12,7 +12,7 @@ const dictateSchema = z.object({
 });
 
 /**
- * POST /api/practice/corpus/dictate — admin (faculty) dictates a composite
+ * POST /api/practice/corpus/dictate: admin (faculty) dictates a composite
  * case. Saves as sim_cases draft, source='faculty_dictated', approved=false.
  * Admin-only via RLS (sim_cases_admin_manage).
  */
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
   const sessionProfile = await requireSession();
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  // Admin gate — requireSession already carries the profiles role.
+  // Admin gate: requireSession already carries the profiles role.
   if (sessionProfile.role !== "admin") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }

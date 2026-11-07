@@ -1,5 +1,5 @@
 /**
- * MSE attempt persistence (Part 6.4) — mirror the osce_attempts pattern.
+ * MSE attempt persistence (Part 6.4): mirror the osce_attempts pattern.
  *
  * A completed MSE level attempt is shaped client-side into an
  * MseAttemptPayload and POSTed to /api/practice/mse/attempt, where it is
@@ -7,10 +7,10 @@
  * tested, no network or auth.
  *
  * Levels:
- *   1 Observe      — free-text; stimulus = the vignette shown
- *   2 Domain by dom — per-stimulus rows; stimulus = the tagged vignette
- *   4 Full MSE     — session aggregate; stimulus = the last vignette
- *   5 Live MSE     — stimulus_id null; source_session_id = the sim session
+ *   1 Observe     : free-text; stimulus = the vignette shown
+ *   2 Domain by dom: per-stimulus rows; stimulus = the tagged vignette
+ *   4 Full MSE    : session aggregate; stimulus = the last vignette
+ *   5 Live MSE    : stimulus_id null; source_session_id = the sim session
  */
 
 /** A persistence target with a stable string id: a seed stimulus, a DB row,

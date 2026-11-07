@@ -18,6 +18,57 @@ A raga is not "just" vibrating strings, and the strings are not "just" a raga. Y
 - Inside the PNS, the **somatic** part moves the muscles you choose to move and brings in touch, pain and position.
 - The **autonomic** part runs the body without asking you: heart, gut, sweat, pupils. It has two arms. The **sympathetic** arm prepares for "fight or flight": fast heart, dry mouth, wide pupils. The **parasympathetic** arm restores "rest and digest": slow heart, saliva, digestion.
 
+
+:::widget flow
+{
+ "title": "The nervous system as a family tree",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "n",
+   "label": "Nervous system"
+  },
+  {
+   "id": "c",
+   "label": "Central (CNS)",
+   "parent": "n",
+   "detail": "Brain and spinal cord: decides."
+  },
+  {
+   "id": "p",
+   "label": "Peripheral (PNS)",
+   "parent": "n",
+   "detail": "Every nerve outside: carries messages in and out."
+  },
+  {
+   "id": "s",
+   "label": "Somatic",
+   "parent": "p",
+   "detail": "Voluntary muscles; touch, pain and position sense."
+  },
+  {
+   "id": "a",
+   "label": "Autonomic",
+   "parent": "p",
+   "detail": "Heart, gut, glands, pupils: runs without asking."
+  },
+  {
+   "id": "sy",
+   "label": "Sympathetic",
+   "parent": "a",
+   "detail": "Fight or flight: fast heart, wide pupils, dry mouth."
+  },
+  {
+   "id": "ps",
+   "label": "Parasympathetic",
+   "parent": "a",
+   "detail": "Rest and digest: slow heart, saliva, digestion."
+  }
+ ],
+ "caption": "Tap each branch. Where do anticholinergic side effects come from? (Blocking the parasympathetic branch.)"
+}
+:::
+
 :::student
 A panic attack is mostly the sympathetic arm firing at full power when there is no tiger. The pounding heart, shaking and sweating are real body events, which is why patients are so sure something is physically wrong.
 :::
@@ -80,6 +131,45 @@ The brain has around 86 billion **neurons** (nerve cells) and at least as many s
 - **Astrocytes** feed neurons, mop up excess chemical messengers and help form the blood-brain barrier.
 - **Oligodendrocytes** make myelin in the brain and spinal cord (**Schwann cells** do this in peripheral nerves).
 - **Microglia** are the brain's immune cells. They clear debris and prune unused connections.
+
+
+:::widget flow
+{
+ "title": "The glial cells and their jobs",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "g",
+   "label": "Glia"
+  },
+  {
+   "id": "as",
+   "label": "Astrocytes",
+   "parent": "g",
+   "detail": "Feed neurons, mop up transmitters, help form the blood-brain barrier."
+  },
+  {
+   "id": "ol",
+   "label": "Oligodendrocytes",
+   "parent": "g",
+   "detail": "Make myelin in the brain and spinal cord; damaged in multiple sclerosis."
+  },
+  {
+   "id": "sc",
+   "label": "Schwann cells",
+   "parent": "g",
+   "detail": "Make myelin in peripheral nerves."
+  },
+  {
+   "id": "mi",
+   "label": "Microglia",
+   "parent": "g",
+   "detail": "Immune cells: clear debris, prune unused synapses; studied in schizophrenia and inflammation."
+  }
+ ],
+ "caption": "Glia are about as numerous as neurons and do far more than hold them together."
+}
+:::
 
 ### How a neuron fires
 At rest, the inside of a neuron is slightly negative compared with the outside, about minus 70 millivolts. This is the **resting potential**. It is kept up by pumps that push sodium out and pull potassium in.
@@ -257,6 +347,37 @@ Think of the brain in layers, from the oldest at the bottom to the newest at the
 | **Temporal** | Hearing, language understanding (left), memory, emotion | Memory loss, understanding speech poorly, seizures with odd feelings |
 | **Occipital** | Vision | Loss of part of the visual field, visual hallucinations |
 
+
+:::widget layers
+{
+ "title": "The brain from bottom to top",
+ "shape": "stack",
+ "layers": [
+  {
+   "label": "Cerebral cortex",
+   "detail": "Four lobes: thinking, planning, senses, language."
+  },
+  {
+   "label": "Limbic system and basal ganglia",
+   "detail": "Emotion, memory, habits, choosing actions."
+  },
+  {
+   "label": "Thalamus and hypothalamus",
+   "detail": "Sensory relay; hunger, thirst, temperature, hormones."
+  },
+  {
+   "label": "Cerebellum",
+   "detail": "Balance, timing, smooth movement."
+  },
+  {
+   "label": "Brainstem",
+   "detail": "Breathing, heart rate, wakefulness. Damage here can be fatal."
+  }
+ ],
+ "caption": "Older, life-support functions sit low; newer, flexible functions sit high. All levels work together."
+}
+:::
+
 :::example Phineas Gage and a Mumbai bike accident
 In 1848 an iron rod passed through the front of railway foreman Phineas Gage's head. He survived, but friends said he was "no longer Gage": rude, impulsive and unable to stick to plans. Today a young man in Mumbai after a bike crash with frontal contusions may show the same: he swears at his mother, spends his salary in a day, and cannot see what has changed. Frontal injury can alter personality while memory and IQ look normal.
 :::
@@ -338,6 +459,34 @@ Neurotransmitters act across a tiny gap in milliseconds. **Hormones** travel in 
     { "text": "Antipsychotic medicines block its receptors", "bucket": 1 },
     { "text": "Alcohol withdrawal causes shaking and seizures because this brake is suddenly weak", "bucket": 0 }
   ]
+}
+:::
+
+
+:::widget compare
+{
+ "title": "Neurotransmitters and hormones",
+ "a": {
+  "label": "Neurotransmitter",
+  "points": [
+   "Released into the synaptic gap",
+   "Acts on the next cell",
+   "Milliseconds",
+   "Glutamate, GABA, dopamine, serotonin"
+  ],
+  "summary": "Fast, local messages."
+ },
+ "b": {
+  "label": "Hormone",
+  "points": [
+   "Released into the blood",
+   "Acts throughout the body",
+   "Minutes to days",
+   "Cortisol, thyroxine, melatonin, oestrogen"
+  ],
+  "summary": "Slow, widespread messages."
+ },
+ "caption": "Some chemicals are both: noradrenaline, oxytocin and vasopressin."
 }
 :::
 
@@ -513,12 +662,28 @@ At the Starting level you met six messengers. Now look at **where** each comes f
 }
 :::
 
+
+:::widget receptor
+{
+ "receptor": "5-HT1A",
+ "caption": "Serotonin is the full agonist here. Buspirone, used for anxiety, is a partial agonist: it gives a steadier, smaller signal. Compare how the signal bar changes with an antagonist."
+}
+:::
+
 ### Side effects you can predict from receptors
 If you know what a medicine blocks, you can predict much of how it will feel to the patient:
 - **H1 block**: sleepiness, weight gain.
 - **Muscarinic block** (anticholinergic): dry mouth, blurred vision, constipation, urinary retention, confusion in older people.
 - **Alpha-1 block**: dizziness on standing (postural hypotension), falls.
 - **D2 block**: stiffness, restlessness, raised prolactin.
+
+
+:::widget synapse
+{
+ "drug": "snri",
+ "caption": "An SNRI blocks the serotonin pump and, at higher doses, the noradrenaline pump. Noradrenaline adds energy and pain relief, but also sweating and a raised pulse and blood pressure. Let time pass to see why benefit is slow."
+}
+:::
 
 :::mnemonic Anticholinergic signs: "dry as a bone, red as a beet, blind as a bat, mad as a hatter, hot as a hare"
 Dry skin and mouth, flushing, blurred vision (wide pupils), confusion and delirium, fever. Seen in overdose of TCAs, trihexyphenidyl and some herbal "datura" poisonings in rural India.
@@ -623,6 +788,26 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
 - **Parkinsonism**: days to weeks. Stiffness, tremor, slow movement, mask-like face.
 - **Akathisia**: days to weeks. A terrible inner restlessness; the patient cannot sit still. It can raise suicide risk and is often missed as "agitation".
 - **Tardive dyskinesia**: months to years. Repetitive movements of the mouth, tongue and face; may be permanent.
+
+
+:::widget brainmap
+{
+ "title": "Where the dopamine roads start and end",
+ "focus": [
+  "brainstem",
+  "basal-ganglia",
+  "prefrontal",
+  "hypothalamus"
+ ],
+ "notes": {
+  "brainstem": "The ventral tegmental area and substantia nigra in the midbrain hold the dopamine cell bodies.",
+  "basal-ganglia": "The striatum: target of the nigrostriatal road (movement) and part of the mesolimbic road (nucleus accumbens, reward).",
+  "prefrontal": "Target of the mesocortical road: motivation and thinking.",
+  "hypothalamus": "Start of the tuberoinfundibular road to the pituitary: keeps prolactin low."
+ },
+ "caption": "Tap each region and name the side effect if D2 receptors there are blocked."
+}
+:::
 
 :::safety Neuroleptic malignant syndrome
 Rare but life-threatening: high fever, severe rigidity, confusion, unstable blood pressure and pulse, and very high creatine kinase. Stop the antipsychotic and send to emergency medical care at once.
@@ -790,6 +975,13 @@ Q: Which test is most sensitive to dorsolateral frontal dysfunction?
 
 ## 2.4 Memory systems [core][beginner]
 "Memory" is not one thing. Patients can lose one kind and keep another, and the pattern tells you where the damage is.
+
+
+:::widget memoryflow
+{
+ "caption": "Follow information from the senses into working memory and long-term memory. Attention lets it in, rehearsal and meaningful encoding keep it, and retrieval brings it back. Henry Molaison lost the encoding step into long-term explicit memory."
+}
+:::
 
 ### The main systems
 - **Working memory**: holding something in mind for seconds while using it (a phone number while you dial). Frontal and parietal cortex.
@@ -995,6 +1187,13 @@ The HPA axis is a pressure cooker with a whistle. Normally, rising pressure (cor
 
 :::example Two kinds of stress in Bengaluru
 Nikhil, 28, has a deadline every quarter: tense for a week, then recovers. Lakshmi, 45, has cared for her husband with dementia for three years, sleeps four hours, and has no relief. Both are "stressed", but Lakshmi's stress is chronic, unpredictable and uncontrollable, the kind most linked to depression, raised blood pressure and poor immunity.
+:::
+
+
+:::widget stress
+{
+ "caption": "Trigger a stressor and watch the chain: amygdala, hypothalamus, pituitary, adrenal. Heart rate jumps first (sympathetic nerves), cortisol rises more slowly, then feedback brings both down. Switch on chronic stress and see the brake fail."
+}
 :::
 
 ### Sleep
@@ -1228,6 +1427,34 @@ Glands release **hormones** into the blood. Most are controlled from the brain t
 }
 :::
 
+
+:::widget compare
+{
+ "title": "Underactive and overactive thyroid",
+ "a": {
+  "label": "Underactive (hypothyroid)",
+  "points": [
+   "Tired, slow, low mood",
+   "Weight gain, feeling cold",
+   "Constipation, dry skin",
+   "Slow pulse; can follow lithium"
+  ],
+  "summary": "Mimics depression."
+ },
+ "b": {
+  "label": "Overactive (hyperthyroid)",
+  "points": [
+   "Anxious, restless, irritable",
+   "Weight loss, feeling hot",
+   "Tremor, palpitations, sweating",
+   "Can mimic mania or panic"
+  ],
+  "summary": "Mimics anxiety or mania."
+ },
+ "caption": "A thyroid blood test is cheap; check it in new mood or anxiety disorders."
+}
+:::
+
 ### Hunger: what tells us to eat and to stop
 Older textbooks describe two "centres": damage to the **lateral hypothalamus** makes animals stop eating, and damage to the **ventromedial hypothalamus** makes them overeat. The modern picture is a balance of signals arriving at the **arcuate nucleus** of the hypothalamus:
 - **Hunger signals**: **ghrelin** from the empty stomach (short-term), low blood sugar, and hunger neurons using neuropeptide Y.
@@ -1241,6 +1468,25 @@ GLP-1 is a fullness hormone from the gut. Medicines that copy it (semaglutide, l
 ### Thirst: two kinds
 - **Osmotic thirst**: when the blood becomes too salty (after a salty meal or sweating), sensors in the hypothalamus detect it, trigger thirst, and release **vasopressin (ADH)** so the kidneys keep water.
 - **Volume (hypovolaemic) thirst**: when blood volume falls (bleeding, vomiting, diarrhoea), the kidneys release renin, producing **angiotensin II**, which triggers thirst and salt craving.
+
+
+:::widget journey
+{
+ "drug": "lithium",
+ "target": "several signalling pathways inside neurons (for example GSK-3 and inositol)",
+ "routes": [
+  "oral"
+ ],
+ "notes": {
+  "gut": "Absorbed well; slow-release forms smooth out peaks.",
+  "liver": "Not broken down by the liver at all, so liver enzyme interactions do not apply.",
+  "blood": "Not bound to proteins; the blood level reflects what reaches the brain fairly directly.",
+  "brain": "Enters the brain slowly; brain levels lag behind blood levels.",
+  "elimination": "Cleared only by the kidneys, following sodium and water. Dehydration, ibuprofen, ACE inhibitors and thiazides push levels up."
+ },
+ "caption": "Follow lithium's route and find the stop that explains why heatwaves, diarrhoea and some painkillers cause toxicity."
+}
+:::
 
 :::safety Water and salt problems in psychiatry
 - **Psychogenic polydipsia**: some people with chronic schizophrenia drink huge amounts of water, which can dilute blood sodium and cause confusion and seizures.
@@ -1381,6 +1627,42 @@ Families share both genes and homes, so "it runs in the family" does not prove g
 | **Twins reared apart** | Same genes, different homes | Striking similarities in personality and IQ (Minnesota study) |
 | **Molecular studies** | Find the actual DNA variants | GWAS, polygenic scores (see Section 3.3) |
 | **Animal studies** | Selective breeding and gene "knockouts" | Tryon bred "maze-bright" and "maze-dull" rats |
+
+
+:::widget flow
+{
+ "title": "The logic of a twin study",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "m",
+   "label": "Identical (MZ) twins share all genes",
+   "detail": "Plus a shared home."
+  },
+  {
+   "id": "d",
+   "label": "Fraternal (DZ) twins share about half",
+   "detail": "Plus a shared home."
+  },
+  {
+   "id": "c",
+   "label": "Compare similarity",
+   "detail": "Correlate the trait within MZ pairs and within DZ pairs."
+  },
+  {
+   "id": "h",
+   "label": "Estimate heritability",
+   "detail": "Twice the difference between MZ and DZ correlations (Falconer)."
+  },
+  {
+   "id": "a",
+   "label": "Check the assumption",
+   "detail": "Equal environments: MZ twins should not be treated more alike for reasons that affect the trait."
+  }
+ ],
+ "caption": "Press Play, then try the worked example below."
+}
+:::
 
 ### Three sources of difference: the "ACE" model
 Twin studies split differences between people into:

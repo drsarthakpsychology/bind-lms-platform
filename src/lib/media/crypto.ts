@@ -8,7 +8,7 @@ import { createCipheriv, createDecipheriv, createHmac, randomBytes } from "node:
  * Round 9 "real protection": every segment is encrypted with a key derived
  * from the (HMAC-signed) stream session token. Copying bytes out of the
  * network tab yields ciphertext that is only useful to the active session
- * — replaying the token after it expires fails, and a different session's
+ *: replaying the token after it expires fails, and a different session's
  * token yields a different key.
  *
  * Design:
@@ -27,7 +27,7 @@ import { createCipheriv, createDecipheriv, createHmac, randomBytes } from "node:
 export function deriveSessionKey(streamToken: string, lessonId: string): Buffer {
   // Fail closed: never derive from an empty/public value, which would make the
   // session key derivable by anyone. SESSION_SECRET is a dedicated signing
-  // secret — deliberately NOT the service-role key, which bypasses RLS and
+  // secret: deliberately NOT the service-role key, which bypasses RLS and
   // must never double as a generic signing secret (audit finding #5).
   const baseSecret = process.env.SESSION_SECRET;
   if (!baseSecret) {
@@ -50,7 +50,7 @@ export function generateAssetKey(): string {
  * Encrypt a buffer with AES-128-CBC. Returns the ciphertext plus a fresh
  * IV. Callers must use a unique IV per segment (we generate fresh per call).
  *
- * ffmpeg's HLS AES-128 mode expects CBC + PKCS7 padding — same here so the
+ * ffmpeg's HLS AES-128 mode expects CBC + PKCS7 padding: same here so the
  * playlist's `#EXT-X-KEY` URI plays the same role.
  */
 export function aesEncrypt(plaintext: Buffer, key: Buffer, iv?: Buffer): { ciphertext: Buffer; iv: Buffer } {

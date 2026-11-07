@@ -1,5 +1,5 @@
 /**
- * Review-queue triage (v5.1 A5) — surface only what needs human eyes.
+ * Review-queue triage (v5.1 A5): surface only what needs human eyes.
  *
  * Priority score per submission:
  *  - AI scorer confidence low, or two model passes disagreed
@@ -8,7 +8,7 @@
  *  - a student's very first session (always)
  *  - a random 5% sample for quality control
  *
- * Everything else auto-releases with a visible "AI-generated — not yet
+ * Everything else auto-releases with a visible "AI-generated, not yet
  * faculty reviewed" label. Target: the queue never shows more than 10 items.
  */
 

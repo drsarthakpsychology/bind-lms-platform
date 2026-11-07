@@ -16,6 +16,7 @@ import { awardXp } from "@/lib/games/ui/xp";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import { checkSort, loadSort, type SortReveal, type SortView } from "./actions";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -116,6 +117,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
         for (let g = 0; g < 4; g++) trackLearn({ type: "game", kind: "criteria-sort", ok: r.groupsDone[g], skill: `${r.done.topic}:differentiate`, item: `${v.boardId}:${g}`, prompt: v.groups[g] });
         if (r.xp > 0) {
           if (!r.xpSaved) awardXp(r.xp, state);
+          else creditServerPlay(r.xp);
           setGain(r.xp);
         }
       }

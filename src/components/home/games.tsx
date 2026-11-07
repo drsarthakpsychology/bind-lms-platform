@@ -584,7 +584,7 @@ function writeBest(mistakes: number) {
 }
 
 /**
- * Game 3 — Match the sign. Everything is face up: signs on the left, what
+ * Game 3: Match the sign. Everything is face up: signs on the left, what
  * they look like in the room on the right. Tap a sign, then its meaning
  * (or the other way round). Fewest mistakes wins.
  */

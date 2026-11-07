@@ -107,6 +107,6 @@ async function notifyToo(
     const table = admin.from("notifications") as unknown as { insert?: (rows: unknown[]) => Promise<unknown> };
     if (typeof table.insert === "function") await table.insert(rows);
   } catch {
-    // Database step not run yet — email-only nudge.
+    // Database step not run yet: email-only nudge.
   }
 }

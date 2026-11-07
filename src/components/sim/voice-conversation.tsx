@@ -15,7 +15,7 @@ const PHASE_LABEL: Record<Phase, string> = {
   listening: "Listening… speak naturally",
   thinking: "Thinking…",
   speaking: "is speaking",
-  error: "Couldn't start voice — switch to text",
+  error: "Couldn't start voice: switch to text",
 };
 
 /**
@@ -29,7 +29,7 @@ const PHASE_LABEL: Record<Phase, string> = {
  * hands the mic back (browser STT can't reliably detect speech-over-audio
  * without echo cancellation, so the tap is the deterministic interrupt).
  *
- * The transcript + session are the SAME ones as text mode — this screen is a
+ * The transcript + session are the SAME ones as text mode: this screen is a
  * view over the same conversation, never a separate one.
  */
 export function VoiceConversation({
@@ -63,7 +63,7 @@ export function VoiceConversation({
   const cbRef = React.useRef({ onSend, onEnd });
 
   // Keep the latest callbacks + phase for the engine callbacks without
-  // re-wiring the engines (refs written in effects only — never in render).
+  // re-wiring the engines (refs written in effects only, never in render).
   React.useEffect(() => {
     cbRef.current = { onSend, onEnd };
   });
@@ -206,13 +206,13 @@ export function VoiceConversation({
         ) : null}
       </div>
 
-      {/* Live transcript — the same conversation as text mode. */}
+      {/* Live transcript: the same conversation as text mode. */}
       <div className="w-full max-w-md">
         <div className="max-h-44 overflow-y-auto rounded-md border-2 border-border bg-card p-3 text-small leading-relaxed">
           {transcript ? (
             <div className="space-y-1.5 whitespace-pre-wrap">{transcript}</div>
           ) : (
-            <p className="text-muted-foreground">The conversation will appear here — it stays in sync with text mode.</p>
+            <p className="text-muted-foreground">The conversation will appear here. It stays in sync with text mode.</p>
           )}
           {interim && !speaking ? <p className="mt-1 text-muted-foreground italic">{interim}</p> : null}
         </div>

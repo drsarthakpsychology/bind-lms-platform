@@ -73,7 +73,7 @@ export function PeerWall() {
       {/* compose */}
       <form onSubmit={post} className="space-y-2 rounded-md border-2 border-border bg-card p-4">
         <p className="flex items-center gap-1.5 text-caption font-semibold text-muted-foreground">
-          <Eye className="size-3.5" aria-hidden /> Share your formulation anonymously — the cohort learns from each other&apos;s structure.
+          <Eye className="size-3.5" aria-hidden /> Share your formulation anonymously: the cohort learns from each other&apos;s structure.
         </p>
         <input
           value={caseTitle}
@@ -100,7 +100,7 @@ export function PeerWall() {
       {/* wall */}
       {loaded && posts.length === 0 ? (
         <p className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-          No formulations on the wall yet — be the first to share one.
+          No formulations on the wall yet: be the first to share one.
         </p>
       ) : (
         <ul className="space-y-3">

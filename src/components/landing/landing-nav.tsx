@@ -23,7 +23,7 @@ export function LandingNav() {
   const triggerRef = React.useRef<HTMLButtonElement>(null);
   const reduce = useReducedMotion();
 
-  // A 2px ink scroll-progress fill along the top edge — a "you're here"
+  // A 2px ink scroll-progress fill along the top edge: a "you're here"
   // signal. transform/opacity free; reduced-motion users still get it (it is
   // a scroll state, not decoration).
   React.useEffect(() => {
@@ -100,7 +100,7 @@ export function LandingNav() {
 
   return (
     <header className="relative sticky top-0 z-50 border-b-2 border-foreground bg-background">
-      {/* Scroll progress — 2px ink fill across the top edge. */}
+      {/* Scroll progress: 2px ink fill across the top edge. */}
       <div aria-hidden className="absolute left-0 top-0 h-0.5 bg-primary" style={{ width: `${progress * 100}%` }} />
       {/* The top bar is hidden from the accessibility tree while the sheet is
           open, so a screen reader can't reach the background behind the modal. */}
@@ -145,7 +145,7 @@ export function LandingNav() {
         </button>
       </div>
 
-      {/* Full-screen mobile sheet — fades + rises in, back out on close. */}
+      {/* Full-screen mobile sheet: fades + rises in, back out on close. */}
       <AnimatePresence>
         {open ? (
           <motion.div

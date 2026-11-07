@@ -103,7 +103,7 @@ export function SetPasswordForm() {
   if (state === "success") {
     return (
       <Alert variant="warning">
-        <AlertDescription>Password set — taking you to your lectures…</AlertDescription>
+        <AlertDescription>Password set: taking you to your lectures…</AlertDescription>
       </Alert>
     );
   }

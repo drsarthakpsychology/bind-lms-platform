@@ -296,12 +296,48 @@ Entrance exams and viva boards expect a few quick calculations. Practise these u
 
 Example: a raw score of 65 on a test with mean 50 and SD 10 gives z = 1.5, T = 65, IQ-equivalent 122.5, about the 93rd percentile.
 
+
+:::widget curve
+{
+ "kind": "normal",
+ "title": "z-scores and percentiles",
+ "caption": "Set z to 1.5 and read the percentile (about 93). Then set it to minus 1 (about 16). Practise converting a few raw scores from the examples on this page before the worked problems below."
+}
+:::
+
 ### Reliability calculations
 - **Spearman-Brown (lengthening a test)**: new reliability = (k times r) divided by (1 + (k minus 1) times r), where k is how many times longer the test becomes.
   - Split-half correlation of 0.60 corrected to full length (k = 2): (2 times 0.60) divided by (1 + 0.60) = 1.20 divided by 1.60 = **0.75**.
 - **Standard error of measurement** = SD times the square root of (1 minus reliability).
   - SD 15, reliability 0.91: SEM = 15 times 0.3 = **4.5**. A 95 per cent confidence interval is about the score plus or minus 2 SEM (strictly 1.96), so plus or minus 9.
 - **Kuder-Richardson formula 20 (KR-20)**: the internal consistency formula for items scored right or wrong; Cronbach's alpha is its generalisation for multi-point items.
+
+
+:::widget worked
+{
+ "title": "SEM and a confidence band for an IQ",
+ "steps": [
+  {
+   "q": "A full scale IQ has SD 15 and reliability 0.96. What is the SEM?",
+   "a": "15 times the square root of 0.04 = 15 times 0.2 = 3."
+  },
+  {
+   "q": "What is the 95 per cent band around a score of 82?",
+   "a": "82 plus or minus 1.96 times 3, about plus or minus 6: roughly 76 to 88."
+  },
+  {
+   "q": "How would you report it?",
+   "a": "'Full scale IQ 82 (95 per cent confidence interval 76 to 88), in the low average range.'"
+  }
+ ],
+ "yourTurn": [
+  {
+   "q": "A subtest has SD 3 and reliability 0.75. Find the SEM and the 95 per cent band around a scaled score of 7.",
+   "a": "SEM = 3 times the square root of 0.25 = 1.5. Band about 7 plus or minus 3, so 4 to 10: wide, so single subtests must be read cautiously."
+  }
+ ]
+}
+:::
 
 ### Validity calculations
 - **Coefficient of determination**: square a validity coefficient to get the share of criterion variance explained. A validity of 0.50 explains 0.25, that is **25 per cent** of the variation in the criterion.
@@ -674,6 +710,43 @@ Q: A report says "Mr X is a sensitive person who sometimes worries about what ot
 | **Recommendations** | Specific, practical, prioritised |
 | **Signature** | Name, qualification, RCI registration number, date |
 
+
+:::widget timeline
+{
+ "prompt": "Put the steps of an assessment in order.",
+ "events": [
+  {
+   "label": "Clarify the referral question"
+  },
+  {
+   "label": "Plan suitable tests"
+  },
+  {
+   "label": "Take consent"
+  },
+  {
+   "label": "Interview and history"
+  },
+  {
+   "label": "Administer tests"
+  },
+  {
+   "label": "Score and check"
+  },
+  {
+   "label": "Interpret and integrate"
+  },
+  {
+   "label": "Write the report"
+  },
+  {
+   "label": "Give feedback"
+  }
+ ],
+ "why": "Every later step depends on the first: a clear question."
+}
+:::
+
 ### Writing well
 - Write for the **reader** (a teacher, a judge, a psychiatrist, a parent). Explain technical terms or avoid them.
 - **Describe behaviour, not labels**: "She solved puzzles quickly but gave up when items became hard" says more than "low frustration tolerance".
@@ -748,11 +821,76 @@ Q: Which is the best way to describe behaviour in a report?
 - **Feedback**: give understandable results to the person.
 - **No misuse**: never use tests to discriminate, label carelessly or support a predetermined conclusion.
 
+
+:::widget sort
+{
+ "prompt": "Ethical or unethical testing practice?",
+ "buckets": [
+  "Ethical",
+  "Unethical"
+ ],
+ "items": [
+  {
+   "text": "Explaining the purpose and limits of confidentiality before testing",
+   "bucket": 0
+  },
+  {
+   "text": "Photocopying a test manual to share with friends",
+   "bucket": 1
+  },
+  {
+   "text": "Using a test normed in another country without saying so",
+   "bucket": 1
+  },
+  {
+   "text": "Giving feedback in plain language with strengths included",
+   "bucket": 0
+  },
+  {
+   "text": "Changing a score so a child gets a disability certificate",
+   "bucket": 1
+  },
+  {
+   "text": "Choosing a non-verbal test for a client with little schooling",
+   "bucket": 0
+  }
+ ]
+}
+:::
+
 ### Testing and Indian law
 - **Rehabilitation Council of India Act 1992**: regulates the training and registration of rehabilitation professionals, including clinical psychologists; practising as a clinical psychologist without registration is an offence (see the Ethics and law module for sections and the current training route).
 - **Mental Healthcare Act 2017**: confidentiality of information about persons with mental illness (section 23); right to access one's own records (section 25).
 - **Rights of Persons with Disabilities Act 2016**: disability certification for intellectual disability, autism, specific learning disabilities, mental illness and others, by notified medical boards using the notified guidelines and tools.
 - **Courts**: psychological evidence may be requested in criminal responsibility, fitness, custody and compensation cases. Be clear about your role (treating clinician or independent assessor) and stay within your evidence.
+
+
+:::widget decide
+{
+ "scene": "After her son's assessment in Jaipur, a mother asks you to give her the original Rorschach cards and the scoring booklet 'to check your work with a friend who studied psychology'.",
+ "ask": "What is the best response?",
+ "choices": [
+  {
+   "label": "Give her the cards and booklet; she is the parent",
+   "verdict": "harm",
+   "outcome": "The materials circulate; the test becomes invalid for future children and you breach copyright and professional rules.",
+   "why": "Test materials must be protected. Parents are entitled to understandable results, not the materials."
+  },
+  {
+   "label": "Explain that test materials cannot be released, offer a detailed feedback meeting and a written report, and, with consent, share the raw data with another qualified psychologist if she wants a second opinion",
+   "verdict": "best",
+   "outcome": "She attends the feedback meeting, feels heard, and requests a second opinion through a registered psychologist.",
+   "why": "This separates test data (shareable appropriately) from test materials (protected) and respects her right to understand."
+  },
+  {
+   "label": "Refuse to discuss the results at all",
+   "verdict": "harm",
+   "outcome": "She files a complaint and loses trust in the service.",
+   "why": "Refusing feedback breaches her right to understand her child's assessment."
+  }
+ ]
+}
+:::
 
 ### Online, computerised and AI-assisted testing
 - Computerised tests can be efficient and precise (adaptive testing), but need **evidence of equivalence** with the paper version.

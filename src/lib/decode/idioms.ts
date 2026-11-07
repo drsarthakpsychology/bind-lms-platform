@@ -1,5 +1,5 @@
 /**
- * The Idiom Bank (v5 Part 1) — real phrases an Indian patient says, with
+ * The Idiom Bank (v5 Part 1): real phrases an Indian patient says, with
  * everything each might mean. Nichter's "idioms of distress" concept, applied.
  *
  * Every entry: the phrase, its register, possible meanings (each with a
@@ -16,7 +16,7 @@ export interface IdiomMeaning {
   reading: string;
   likelihood: "high" | "medium" | "low";
   clue?: string;
-  /** true when this is a physical/medical reading — missing these scores harder */
+  /** true when this is a physical/medical reading: missing these scores harder */
   physical?: boolean;
 }
 
@@ -47,8 +47,8 @@ const ALL_SOMATIC: IdiomEntry[] = [
       { reading: "Anaemia / hypothyroid / B12", likelihood: "medium", clue: "pallor, hair fall, cold intolerance, heavy periods", physical: true },
     ],
     disambiguating_questions: [
-      "Tell me about yesterday morning — from waking up to leaving the house.",
-      "When you say fresh — what would feeling fresh look like?",
+      "Tell me about yesterday morning, from waking up to leaving the house.",
+      "When you say fresh: what would feeling fresh look like?",
       "Is it there the whole day or does it change?",
       "What do you think is causing it?",
     ],
@@ -73,7 +73,7 @@ const ALL_SOMATIC: IdiomEntry[] = [
       "Do you feel it when you're hungry?",
       "How have you been sleeping and eating lately?",
     ],
-    trap: "Hearing 'anxiety' and stopping — ghabrahat is how a panic attack, a thyroid problem, or a withdrawal all present.",
+    trap: "Hearing 'anxiety' and stopping: ghabrahat is how a panic attack, a thyroid problem, or a withdrawal all present.",
     sources: ["Nichter idioms of distress", "mhGAP anxiety module"],
   },
   {
@@ -93,7 +93,7 @@ const ALL_SOMATIC: IdiomEntry[] = [
       "Are you eating properly? Any blood loss?",
       "What do you think is causing the weakness?",
     ],
-    trap: "Writing 'fatigue' and moving on — kamzori is the universal carrier for anaemia, TB, depression, and dhat distress.",
+    trap: "Writing 'fatigue' and moving on: kamzori is the universal carrier for anaemia, TB, depression, and dhat distress.",
     sources: ["Nichter idioms of distress", "mhGAP depression module"],
   },
   {
@@ -107,9 +107,9 @@ const ALL_SOMATIC: IdiomEntry[] = [
       { reading: "Somatic expression of low mood / stress", likelihood: "medium", clue: "worsens with stressors, other mood symptoms" },
     ],
     disambiguating_questions: [
-      "Where exactly is the gas — chest or stomach?",
+      "Where exactly is the gas: chest or stomach?",
       "Does it come with your heart racing or breathlessness?",
-      "When does it get worse — after food, or after something upsetting?",
+      "When does it get worse, after food, or after something upsetting?",
     ],
     trap: "'Gas' is the single most common somatic mask for anxiety and depression in Indian primary care.",
     sources: ["Nichter idioms of distress"],
@@ -168,7 +168,7 @@ const ALL_SOMATIC: IdiomEntry[] = [
       "Does it happen at rest or on effort?",
       "When you feel it, what's going through your mind?",
     ],
-    trap: "The heart is the Indian seat of emotion — 'dil ghabrata hai' is as likely grief as arrhythmia.",
+    trap: "The heart is the Indian seat of emotion: 'dil ghabrata hai' is as likely grief as arrhythmia.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -187,7 +187,7 @@ const ALL_SOMATIC: IdiomEntry[] = [
       "Any sweating at night, weight change, tremor?",
       "Does the heat come when you're upset?",
     ],
-    trap: "'Heat in the body' is both a menopausal symptom and a cultural idiom for emotional turmoil — ask.",
+    trap: "'Heat in the body' is both a menopausal symptom and a cultural idiom for emotional turmoil: ask.",
     sources: ["Nichter idioms of distress", "culture-bound syndromes literature"],
   },
 ];
@@ -219,7 +219,7 @@ const CULTURE_BOUND: IdiomEntry[] = [
     register: ["South Asian + Southeast Asian", "episodic"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Culture-bound panic (koro) — fear genitals will retract", likelihood: "high", clue: "episodic, community-triggered, fixed belief" },
+      { reading: "Culture-bound panic (koro): fear genitals will retract", likelihood: "high", clue: "episodic, community-triggered, fixed belief" },
       { reading: "Underlying anxiety disorder", likelihood: "medium", clue: "generalised anxiety outside episodes" },
     ],
     disambiguating_questions: [
@@ -245,7 +245,7 @@ const CULTURE_BOUND: IdiomEntry[] = [
       "How long does it last?",
       "Any chest pain, breathlessness on effort?",
     ],
-    trap: "Reading a culturally-specific idiom for grief as a cardiac symptom — or vice versa.",
+    trap: "Reading a culturally-specific idiom for grief as a cardiac symptom, or vice versa.",
     sources: ["Krause 1989", "Punjabi idioms of distress"],
   },
   {
@@ -265,7 +265,7 @@ const CULTURE_BOUND: IdiomEntry[] = [
       "How does the family understand it?",
       "Is there any time she is fully herself?",
     ],
-    trap: "Dismissing genuine psychosis as 'just possession' — OR pathologising a culturally-sanctioned distress expression. The literature is explicit: possession states are often culturally allowed outlets, especially for women, permitting temporary role release.",
+    trap: "Dismissing genuine psychosis as 'just possession', OR pathologising a culturally-sanctioned distress expression. The literature is explicit: possession states are often culturally allowed outlets, especially for women, permitting temporary role release.",
     sources: ["DSM-5 cultural concepts", "possession trance literature", "mhGAP"],
   },
   {
@@ -283,7 +283,7 @@ const CULTURE_BOUND: IdiomEntry[] = [
       "Any itching, smell, pain?",
       "How are things at home / in the marriage?",
     ],
-    trap: "White discharge is documented (Chaturvedi et al.; Garhwal work) as a bodily idiom through which women speak about marital and sexual distress — treat the discharge only and you miss the conversation.",
+    trap: "White discharge is documented (Chaturvedi et al.; Garhwal work) as a bodily idiom through which women speak about marital and sexual distress: treat the discharge only and you miss the conversation.",
     sources: ["Chaturvedi et al.", "Garhwal idioms study"],
   },
 ];
@@ -304,7 +304,7 @@ const BORROWED: IdiomEntry[] = [
       "How long have you felt this way, and is anything helping?",
       "Is it every day, most of the day?",
     ],
-    trap: "Hearing the word 'depression' and assuming the disorder — the word is now a borrowed idiom for any unhappiness.",
+    trap: "Hearing the word 'depression' and assuming the disorder: the word is now a borrowed idiom for any unhappiness.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -318,11 +318,11 @@ const BORROWED: IdiomEntry[] = [
       { reading: "Anxiety spike", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "When you say BP high — have you measured it?",
+      "When you say BP high: have you measured it?",
       "What was happening when it 'went high'?",
       "Any headache, chest pain, blurring?",
     ],
-    trap: "'BP high ho gaya' is how a generation says 'I got very upset' — the idiom and the disease are different things.",
+    trap: "'BP high ho gaya' is how a generation says 'I got very upset': the idiom and the disease are different things.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -341,7 +341,7 @@ const BORROWED: IdiomEntry[] = [
       "Is it there every day, even on good days?",
       "What does it do to your sleep, appetite, energy?",
     ],
-    trap: "'Tension' is the emptiest and most loaded word in Indian clinical Hindi — it means everything, so it means nothing until you specify it.",
+    trap: "'Tension' is the emptiest and most loaded word in Indian clinical Hindi. It means everything, so it means nothing until you specify it.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -355,7 +355,7 @@ const BORROWED: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "When did people start saying it's nazar?",
-      "Separate from that — how has the child/relative actually been?",
+      "Separate from that, how has the child/relative actually been?",
       "What would be different if the nazar were removed?",
     ],
     trap: "Mocking the attribution OR accepting it uncritically. The attribution is the family's language; the symptoms are still yours to assess.",
@@ -376,7 +376,7 @@ const BORROWED: IdiomEntry[] = [
       "How many days in the last two weeks?",
       "What do you lose because of it?",
     ],
-    trap: "'Feeling low' is the English-language 'tension hai' — the word tells you nothing until you quantify it.",
+    trap: "'Feeling low' is the English-language 'tension hai': the word tells you nothing until you quantify it.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -395,12 +395,12 @@ const BORROWED: IdiomEntry[] = [
       "Has this been true since childhood or is it new?",
       "How are you sleeping?",
     ],
-    trap: "The 'focus' complaint is a lazy student, ADHD, depression, anxiety, or exhaustion — and the first three need very different responses.",
+    trap: "The 'focus' complaint is a lazy student, ADHD, depression, anxiety, or exhaustion, and the first three need very different responses.",
     sources: ["ICD-11", "mhGAP"],
   },
 ];
 
-/** The remaining compulsory seed set — the rest of the somatic, borrowed,
+/** The remaining compulsory seed set: the rest of the somatic, borrowed,
  *  attributional and English vague-complaint idioms. */
 const EXTRA: IdiomEntry[] = [
   {
@@ -419,7 +419,7 @@ const EXTRA: IdiomEntry[] = [
       "Are you on any medication at the moment?",
       "Is it constant or does it come in waves?",
     ],
-    trap: "Akathisia is restlessness caused by antipsychotics — if you read it as anxiety and raise the dose, you make it worse.",
+    trap: "Akathisia is restlessness caused by antipsychotics, if you read it as anxiety and raise the dose, you make it worse.",
     sources: ["ICD-11", "psychopharmacology literature"],
   },
   {
@@ -437,7 +437,7 @@ const EXTRA: IdiomEntry[] = [
       "Does it happen on standing, moving, or at rest?",
       "Any ringing in the ears?",
     ],
-    trap: "'Wind in the head' is the older adult's idiom for vertigo AND for feeling unreal — disambiguate by whether the room spins.",
+    trap: "'Wind in the head' is the older adult's idiom for vertigo AND for feeling unreal: disambiguate by whether the room spins.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -453,10 +453,10 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "Does the world spin, or do you feel faint?",
-      "When does it happen — standing, hungry, anxious?",
+      "When does it happen: standing, hungry, anxious?",
       "Any palpitations, sweating, tremor?",
     ],
-    trap: "'Chakkar' is the shared carrier for anaemia, vertigo, hypoglycaemia and panic — always check the physical first.",
+    trap: "'Chakkar' is the shared carrier for anaemia, vertigo, hypoglycaemia and panic: always check the physical first.",
     sources: ["Nichter idioms of distress", "mhGAP"],
   },
   {
@@ -475,7 +475,7 @@ const EXTRA: IdiomEntry[] = [
       "What time do you wake, and how do you feel then?",
       "What have you tried, and what's in the day?",
     ],
-    trap: "Sleep disturbance is the earliest and most reliable symptom in both depression and anxiety — the pattern (early waking vs trouble falling) tells you which.",
+    trap: "Sleep disturbance is the earliest and most reliable symptom in both depression and anxiety: the pattern (early waking vs trouble falling) tells you which.",
     sources: ["ICD-11", "mhGAP"],
   },
   {
@@ -494,7 +494,7 @@ const EXTRA: IdiomEntry[] = [
       "Is it worse at certain times or under stress?",
       "Do you forget where you are or just names and plans?",
     ],
-    trap: "'Mind doesn't work' is depression's favourite disguise in the middle-aged — check for the mood, then the reversible causes.",
+    trap: "'Mind doesn't work' is depression's favourite disguise in the middle-aged: check for the mood, then the reversible causes.",
     sources: ["Nichter idioms of distress", "ICD-11"],
   },
   {
@@ -512,7 +512,7 @@ const EXTRA: IdiomEntry[] = [
       "Any anaemia, hair fall, weight change?",
       "Do you feel the cold everywhere or just the limbs?",
     ],
-    trap: "Cold limbs is the body's cheap blood-pressure warning — check thyroid and haemoglobin before you read it psychologically.",
+    trap: "Cold limbs is the body's cheap blood-pressure warning: check thyroid and haemoglobin before you read it psychologically.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -526,11 +526,11 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Emotional 'burning' idiom", likelihood: "medium", clue: "'she gives me acidity' = she makes me angry/upset" },
     ],
     disambiguating_questions: [
-      "Where exactly is the acidity — chest or upper stomach?",
+      "Where exactly is the acidity: chest or upper stomach?",
       "Does it come with your heart racing or with anger?",
       "What makes it better?",
     ],
-    trap: "'She gives me acidity' is a literal description of what an emotionally draining person does to someone — the phrase is as emotional as it is digestive.",
+    trap: "'She gives me acidity' is a literal description of what an emotionally draining person does to someone: the phrase is as emotional as it is digestive.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -544,10 +544,10 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "In your understanding, what is out of balance?",
-      "Separate from the balance — how have you been sleeping and feeling?",
+      "Separate from the balance, how have you been sleeping and feeling?",
       "What have you tried for the imbalance?",
     ],
-    trap: "The humoral frame is the patient's language, not your diagnosis — honour it, then assess the actual symptoms.",
+    trap: "The humoral frame is the patient's language, not your diagnosis: honour it, then assess the actual symptoms.",
     sources: ["DSM-5 CFI", "cultural attribution literature"],
   },
   {
@@ -561,10 +561,10 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "What do the astrologers say is wrong?",
-      "Whatever the cause — what has the person actually been doing and feeling?",
+      "Whatever the cause: what has the person actually been doing and feeling?",
       "Has anything like this happened before?",
     ],
-    trap: "Astrological attribution delays care — the symptoms are still yours to assess, gently, inside the family's frame.",
+    trap: "Astrological attribution delays care: the symptoms are still yours to assess, gently, inside the family's frame.",
     sources: ["DSM-5 CFI", "Nichter"],
   },
   {
@@ -582,7 +582,7 @@ const EXTRA: IdiomEntry[] = [
       "Has this been constant or does it come and go?",
       "Are you the same person between these thoughts?",
     ],
-    trap: "The boundary between cultural attribution and delusion is function — a belief that leaves the person intact is idiom; one that disorganises them is psychosis.",
+    trap: "The boundary between cultural attribution and delusion is function: a belief that leaves the person intact is idiom; one that disorganises them is psychosis.",
     sources: ["DSM-5 cultural concepts", "possession literature"],
   },
   {
@@ -600,7 +600,7 @@ const EXTRA: IdiomEntry[] = [
       "Is it there even on a quiet day?",
       "What does it do to sleep, appetite, energy, interest?",
     ],
-    trap: "'Stressed' is now the universal English-language idiom — it can mean anything from a bad week to a mood disorder.",
+    trap: "'Stressed' is now the universal English-language idiom. It can mean anything from a bad week to a mood disorder.",
     sources: ["Nichter idioms of distress"],
   },
   {
@@ -615,11 +615,11 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Emerging psychosis (rare)", likelihood: "low", clue: "odd beliefs, perceptual changes, function loss" },
     ],
     disambiguating_questions: [
-      "Can you describe 'weird' — what exactly feels different?",
+      "Can you describe 'weird': what exactly feels different?",
       "When did it start, and is anything tied to it?",
       "Any medication, substances, or sleep changes?",
     ],
-    trap: "'Feeling weird' is the young adult's first word for dissociation, panic, or a drug reaction — always ask 'different from what?'",
+    trap: "'Feeling weird' is the young adult's first word for dissociation, panic, or a drug reaction: always ask 'different from what?'",
     sources: ["ICD-11", "mhGAP"],
   },
   {
@@ -633,11 +633,11 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Panic / anxiety", likelihood: "medium", clue: "accompanies palpitations, dread" },
     ],
     disambiguating_questions: [
-      "When you say something is happening — what exactly do you notice?",
+      "When you say something is happening: what exactly do you notice?",
       "Do you feel different from yourself, or is the world different?",
       "Has anyone else noticed a change in you?",
     ],
-    trap: "The passive 'happening to me' phrasing is itself a clue — it suggests the person doesn't feel in control of their own experience, which leans dissociation or early psychosis.",
+    trap: "The passive 'happening to me' phrasing is itself a clue. It suggests the person doesn't feel in control of their own experience, which leans dissociation or early psychosis.",
     sources: ["ICD-11", "early intervention literature"],
   },
   {
@@ -656,7 +656,7 @@ const EXTRA: IdiomEntry[] = [
       "What would you be doing if you weren't so tired?",
       "Is there anything you've stopped doing lately?",
     ],
-    trap: "'I'm fine, just tired' is the sentence that opens most consultations that end in a diagnosis — it is almost never literal.",
+    trap: "'I'm fine, just tired' is the sentence that opens most consultations that end in a diagnosis. It is almost never literal.",
     sources: ["Nichter idioms of distress", "clinical folklore"],
   },
   {
@@ -668,15 +668,15 @@ const EXTRA: IdiomEntry[] = [
       { reading: "GERD / reflux", likelihood: "high", clue: "after meals, lying down, sour taste, relieved by antacids", physical: true },
       { reading: "Anxiety / panic with chest burning", likelihood: "medium", clue: "accompanies palpitations, breathlessness, situational" },
       { reading: "Cardiac caution (atypical angina / ACS)", likelihood: "medium", clue: "exertional, radiates to arm or jaw, sweating, risk factors", physical: true },
-      { reading: "Emotional 'burning' idiom", likelihood: "medium", clue: "'jalan' is also the Hindi word for envy/grudge — burning resentment" },
+      { reading: "Emotional 'burning' idiom", likelihood: "medium", clue: "'jalan' is also the Hindi word for envy/grudge: burning resentment" },
     ],
     disambiguating_questions: [
-      "When does the burning come — after food, on exertion, or when you're upset?",
-      "Does it spread anywhere — arm, jaw, back?",
-      "Does anything make it better — antacids, rest, or nothing?",
-      "What do you feel is burning — your chest, or something else?",
+      "When does the burning come, after food, on exertion, or when you're upset?",
+      "Does it spread anywhere: arm, jaw, back?",
+      "Does anything make it better: antacids, rest, or nothing?",
+      "What do you feel is burning: your chest, or something else?",
     ],
-    trap: "Reading chest burning as reflux only — 'seene mein jalan' also carries cardiac risk and the emotional idiom of burning resentment; the word jalan doubles as the Hindi for jealousy.",
+    trap: "Reading chest burning as reflux only: 'seene mein jalan' also carries cardiac risk and the emotional idiom of burning resentment; the word jalan doubles as the Hindi for jealousy.",
     sources: ["Nichter idioms of distress", "mhGAP cardiovascular risk"],
   },
   {
@@ -693,10 +693,10 @@ const EXTRA: IdiomEntry[] = [
     disambiguating_questions: [
       "Is the stomach actually visibly swollen, or does it just feel full?",
       "Does it change with food, and does passing gas help?",
-      "Any swelling elsewhere — feet, face, ankles?",
+      "Any swelling elsewhere: feet, face, ankles?",
       "How have you been feeling in yourself lately?",
     ],
-    trap: "'Pet mein paani' sounds like ascites but in primary care is usually functional dyspepsia or a somatic depression mask — check for real swelling before you believe the water.",
+    trap: "'Pet mein paani' sounds like ascites but in primary care is usually functional dyspepsia or a somatic depression mask: check for real swelling before you believe the water.",
     sources: ["Nichter idioms of distress", "ICD-11 somatic distress"],
   },
   {
@@ -715,9 +715,9 @@ const EXTRA: IdiomEntry[] = [
       "Does the thakan go away with rest or a full night's sleep, or is it there anyway?",
       "What is different about you when you are not thaka?",
       "Any fever, weight loss, pallor, heavy periods?",
-      "When did it start — after an illness, after a loss, or gradually?",
+      "When did it start, after an illness, after a loss, or gradually?",
     ],
-    trap: "Thakan is the most common first word of depression in Indian outpatients — but it is equally anaemia, post-infectious fatigue and burnout; the clue is whether rest restores it.",
+    trap: "Thakan is the most common first word of depression in Indian outpatients, but it is equally anaemia, post-infectious fatigue and burnout; the clue is whether rest restores it.",
     sources: ["Nichter idioms of distress", "mhGAP depression module", "post-infectious fatigue literature"],
   },
   {
@@ -732,12 +732,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Migratory joint / nerve pains framed as wind", likelihood: "medium", clue: "shifting pains, numbness, tingling", physical: true },
     ],
     disambiguating_questions: [
-      "Where in the body does the hawa move — abdomen, chest, or limbs?",
+      "Where in the body does the hawa move: abdomen, chest, or limbs?",
       "Does the movement come with bloating, belching, or passing gas?",
       "Does it follow food, or does it come when you are worried?",
       "In your understanding, what causes the hawa?",
     ],
-    trap: "Distinguish from 'sar mein hawa' (head wind = vertigo): 'hawa chal rahi hai' is the body-wide folk 'wind' narrative that can carry gas, anxiety paresthesias, or migrating joint pain — the location tells you which.",
+    trap: "Distinguish from 'sar mein hawa' (head wind = vertigo): 'hawa chal rahi hai' is the body-wide folk 'wind' narrative that can carry gas, anxiety paresthesias, or migrating joint pain, the location tells you which.",
     sources: ["Nichter idioms of distress", "South Asian humoral medicine literature"],
   },
   {
@@ -753,12 +753,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "TB / chronic infection (night sweats)", likelihood: "medium", clue: "fever, weight loss, cough", physical: true },
     ],
     disambiguating_questions: [
-      "When does the pasina come — at night, on effort, when anxious, or before meals?",
+      "When does the pasina come, at night, on effort, when anxious, or before meals?",
       "Any weight change, tremor, palpitations, fever, cough?",
       "Are you diabetic, or on any medicine?",
       "For women: how old are you, and are your periods regular?",
     ],
-    trap: "Sweating is the shared carrier for thyroid, anxiety, menopause, hypoglycaemia and TB — ask about timing, whether it is night or situational, and what stops it.",
+    trap: "Sweating is the shared carrier for thyroid, anxiety, menopause, hypoglycaemia and TB: ask about timing, whether it is night or situational, and what stops it.",
     sources: ["Nichter idioms of distress", "mhGAP"],
   },
   {
@@ -773,12 +773,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Severe fright reaction", likelihood: "medium", clue: "after a shock, transient, tremor, settles" },
     ],
     disambiguating_questions: [
-      "When you say heart attack — what exactly happened in your body?",
+      "When you say heart attack: what exactly happened in your body?",
       "Was it sudden, and how long did it last?",
       "Was there chest pain, and did it spread anywhere?",
       "Have you had an ECG or seen a doctor for it?",
     ],
-    trap: "'Heart attack ho gaya' is how fear of dying and actual cardiac disease share one phrase — the word is both a panic idiom and a possible emergency; never assume which.",
+    trap: "'Heart attack ho gaya' is how fear of dying and actual cardiac disease share one phrase: the word is both a panic idiom and a possible emergency; never assume which.",
     sources: ["Nichter idioms of distress", "mhGAP emergency module"],
   },
   {
@@ -793,12 +793,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Hypoglycaemic episode misread as sugar going up", likelihood: "low", clue: "tremor, sweating, dizziness before meals", physical: true },
     ],
     disambiguating_questions: [
-      "Have you measured it — what was the number, and when?",
+      "Have you measured it: what was the number, and when?",
       "What were you doing, or what had happened, when it 'went up'?",
       "Any thirst, frequent urination, or weight loss?",
       "Do you take medicine for sugar, and what did you eat that day?",
     ],
-    trap: "In diabetic families 'sugar badh gayi' is both a measured event and a folk explanation for every symptom of distress — the disease and the idiom have merged.",
+    trap: "In diabetic families 'sugar badh gayi' is both a measured event and a folk explanation for every symptom of distress: the disease and the idiom have merged.",
     sources: ["Nichter idioms of distress", "diabetes distress literature"],
   },
   {
@@ -813,12 +813,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Recurrent minor infections (genuinely)", likelihood: "medium", clue: "documented infections, weight loss, lymph nodes", physical: true },
     ],
     disambiguating_questions: [
-      "What makes you feel your immunity is low — infections, fatigue, or fear of falling ill?",
+      "What makes you feel your immunity is low: infections, fatigue, or fear of falling ill?",
       "How often do you actually fall ill, and with what?",
-      "Separate from immunity — how have you been sleeping and feeling?",
+      "Separate from immunity, how have you been sleeping and feeling?",
       "What do you think is making your immunity weak?",
     ],
-    trap: "'Low immunity' has become the post-COVID idiom for exhaustion and anxiety — it can be depression, health anxiety, or a real post-infectious state; the immunity framing is the patient's language, not a diagnosis.",
+    trap: "'Low immunity' has become the post-COVID idiom for exhaustion and anxiety. It can be depression, health anxiety, or a real post-infectious state; the immunity framing is the patient's language, not a diagnosis.",
     sources: ["Nichter idioms of distress", "post-COVID fatigue literature"],
   },
   {
@@ -839,7 +839,7 @@ const EXTRA: IdiomEntry[] = [
       "Any nausea, light sensitivity, blurring, or eye pain?",
       "How often do you take painkillers for it?",
     ],
-    trap: "Distinct from 'sar bhari' (heaviness): 'sir dard' is the sharp-pain version — the first question is quality and timing, because the same word covers migraine, depression, and a silent glaucoma.",
+    trap: "Distinct from 'sar bhari' (heaviness): 'sir dard' is the sharp-pain version, the first question is quality and timing, because the same word covers migraine, depression, and a silent glaucoma.",
     sources: ["Nichter idioms of distress", "mhGAP headache module"],
   },
   {
@@ -859,7 +859,7 @@ const EXTRA: IdiomEntry[] = [
       "How long was that before you came here?",
       "What do you hope we can do that the baba could not?",
     ],
-    trap: "The patient telling you they saw a baba is not a symptom — it is a help-seeking idiom that maps the family's trust and explanatory model; mock it and you lose the family, dismiss it and you miss the delay.",
+    trap: "The patient telling you they saw a baba is not a symptom. It is a help-seeking idiom that maps the family's trust and explanatory model; mock it and you lose the family, dismiss it and you miss the delay.",
     sources: ["Nichter idioms of distress", "DSM-5 CFI", "faith healer pathways literature (South Asia)"],
   },
   {
@@ -869,7 +869,7 @@ const EXTRA: IdiomEntry[] = [
     readings: ["cultural_idiom", "metaphor", "social_positioning", "psychopathology"],
     possible_meanings: [
       { reading: "Fate attribution of illness (karma framing)", likelihood: "high", clue: "the patient or family explain the illness as deserved or destined" },
-      { reading: "Resignation / acceptance", likelihood: "medium", clue: "'whatever has to happen will happen' — low help-seeking" },
+      { reading: "Resignation / acceptance", likelihood: "medium", clue: "'whatever has to happen will happen': low help-seeking" },
       { reading: "Avoidance / fatalism masking depression", likelihood: "medium", clue: "passivity, no attempt at change, underlying low mood" },
       { reading: "Coping / meaning-making (adaptive)", likelihood: "medium", clue: "acceptance with continued engagement, not giving up" },
     ],
@@ -877,9 +877,9 @@ const EXTRA: IdiomEntry[] = [
       "What do you feel your karma means for this illness?",
       "Is there anything you still hope treatment can do?",
       "How does your family understand why this happened?",
-      "Separate from karma — what have you noticed about your body and feelings?",
+      "Separate from karma: what have you noticed about your body and feelings?",
     ],
-    trap: "Karma is both a genuine coping belief and a fatalism that delays care — the clinical question is whether the attribution promotes acceptance or passive resignation from treatment.",
+    trap: "Karma is both a genuine coping belief and a fatalism that delays care: the clinical question is whether the attribution promotes acceptance or passive resignation from treatment.",
     sources: ["DSM-5 CFI", "cultural attribution literature"],
   },
   {
@@ -894,11 +894,11 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "How many days in the last two weeks have you felt sad?",
-      "What still brings you joy — anything?",
+      "What still brings you joy: anything?",
       "What does the sadness stop you from doing?",
       "Has anything happened recently that started it?",
     ],
-    trap: "The same trap as 'low' — 'sad' is the English-language minimum, and the word carries no information until you ask how many days, what it costs, and what still brings joy.",
+    trap: "The same trap as 'low': 'sad' is the English-language minimum, and the word carries no information until you ask how many days, what it costs, and what still brings joy.",
     sources: ["Nichter idioms of distress", "ICD-11"],
   },
   {
@@ -911,15 +911,15 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Adjustment disorder", likelihood: "medium", clue: "symptoms within 3 months of a stressor, disproportionate, impairing" },
       { reading: "Burnout / chronic overload", likelihood: "medium", clue: "work or caregiving overload, cynicism, exhaustion" },
       { reading: "Depression", likelihood: "medium", clue: "low mood, anhedonia beneath the 'can't cope'" },
-      { reading: "Overwhelm with a specific stressor", likelihood: "medium", clue: "the stressor is named and concrete — finances, marriage, exams" },
+      { reading: "Overwhelm with a specific stressor", likelihood: "medium", clue: "the stressor is named and concrete: finances, marriage, exams" },
     ],
     disambiguating_questions: [
-      "Cope with what, exactly — and has that stressor changed recently?",
-      "Could you cope before — what's different now?",
+      "Cope with what, exactly, and has that stressor changed recently?",
+      "Could you cope before: what's different now?",
       "What have you tried, and what stopped working?",
       "How is sleep, appetite, interest?",
     ],
-    trap: "'I can't cope' sounds like a personality statement but is usually a stress-state — the question is whether the coping failure is recent, specific, and reversible.",
+    trap: "'I can't cope' sounds like a personality statement but is usually a stress-state: the question is whether the coping failure is recent, specific, and reversible.",
     sources: ["ICD-11 adjustment disorder", "mhGAP"],
   },
   {
@@ -935,12 +935,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Stress-related vivid dreaming", likelihood: "medium", clue: "life stress, no disorder features" },
     ],
     disambiguating_questions: [
-      "Can you tell me one of the dreams — what happens in it?",
+      "Can you tell me one of the dreams: what happens in it?",
       "Are they the same each time, and do they wake you?",
-      "Did they start after anything — an event, a medicine, a change?",
+      "Did they start after anything: an event, a medicine, a change?",
       "Is there anything the dreams remind you of?",
     ],
-    trap: "'Strange dreams' is often the safest way a young person says 'something is disturbing me' — ask what the dreams are about before you decide whether they are nightmares, PTSD, or a drug effect.",
+    trap: "'Strange dreams' is often the safest way a young person says 'something is disturbing me': ask what the dreams are about before you decide whether they are nightmares, PTSD, or a drug effect.",
     sources: ["ICD-11 sleep-wake disorders", "PTSD literature"],
   },
   {
@@ -955,12 +955,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Withdrawal in grief", likelihood: "medium", clue: "recent loss, time-limited, gradual return" },
     ],
     disambiguating_questions: [
-      "What are the things you used to enjoy — and when did you last do any of them?",
+      "What are the things you used to enjoy, and when did you last do any of them?",
       "Is it everything, or just some things?",
       "When you do do something, does any pleasure come back?",
       "How long has this been going on?",
     ],
-    trap: "Loss of interest IS the depression symptom — unlike 'sad', this word usually means exactly what it says; the question is breadth (everything vs just work) and what still engages the person.",
+    trap: "Loss of interest IS the depression symptom, unlike 'sad', this word usually means exactly what it says; the question is breadth (everything vs just work) and what still engages the person.",
     sources: ["ICD-11", "mhGAP depression module"],
   },
   {
@@ -975,12 +975,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Past severe infection (meningitis / encephalitis)", likelihood: "medium", clue: "documented fever, seizures, hospitalisation", physical: true },
     ],
     disambiguating_questions: [
-      "Who told you it was brain fever — a doctor, or someone else?",
-      "What happened at the time — fever, seizures, confusion, talking strangely?",
+      "Who told you it was brain fever: a doctor, or someone else?",
+      "What happened at the time: fever, seizures, confusion, talking strangely?",
       "Was the person hospitalised, and what tests were done?",
       "Since then, has there been any change in behaviour, feelings, or function?",
     ],
-    trap: "'Brain fever' is the Indian folk diagnosis that permanently closes the question of what happened — it can hide a prior psychotic episode, encephalitis, or a conversion episode; the teaching point is provenance: who said it, and what did they see?",
+    trap: "'Brain fever' is the Indian folk diagnosis that permanently closes the question of what happened. It can hide a prior psychotic episode, encephalitis, or a conversion episode; the teaching point is provenance: who said it, and what did they see?",
     sources: ["Nichter idioms of distress", "Indian folk diagnosis literature"],
   },
   {
@@ -996,11 +996,11 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "Who said that, and what happened when they said it?",
-      "What do YOU think was going on — apart from what people called it?",
+      "What do YOU think was going on: apart from what people called it?",
       "How has being called that changed how you see yourself?",
       "What do you hope I understand about you that others haven't?",
     ],
-    trap: "'Mental' is a word with a history — when a patient repeats it about themselves you are hearing lived stigma, not a diagnosis; the clinical act is to separate the person from the label without dismissing what it may have named.",
+    trap: "'Mental' is a word with a history, when a patient repeats it about themselves you are hearing lived stigma, not a diagnosis; the clinical act is to separate the person from the label without dismissing what it may have named.",
     sources: ["mental health stigma literature (India)", "DSM-5 CFI"],
   },
   {
@@ -1015,12 +1015,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Cardiac sensation", likelihood: "low", clue: "exertional, radiating, risk factors", physical: true },
     ],
     disambiguating_questions: [
-      "When did the sinking start — after a loss, or gradually on its own?",
+      "When did the sinking start, after a loss, or gradually on its own?",
       "Is it there every day, and is it worse at any time?",
       "What would need to happen for it to lift?",
       "Any chest pain or breathlessness on effort?",
     ],
-    trap: "Distinct from 'dil baith jana' (sinking heart, a loss-reaction): 'dil doob raha hai' emphasises ongoing despair — the difference is whether the heart sinks in response to a loss or sinks without one.",
+    trap: "Distinct from 'dil baith jana' (sinking heart, a loss-reaction): 'dil doob raha hai' emphasises ongoing despair, the difference is whether the heart sinks in response to a loss or sinks without one.",
     sources: ["Krause 1989", "Nichter idioms of distress"],
   },
   {
@@ -1040,7 +1040,7 @@ const EXTRA: IdiomEntry[] = [
       "Do you also see a doctor for these symptoms, or only this?",
       "If the illness continued despite appeasement, what then?",
     ],
-    trap: "In a devout family 'appeasing the one above' can be healthy coping, OCD-like scrupulosity, or the mask under which depression hides — assess function and whether the practice brings peace or distress.",
+    trap: "In a devout family 'appeasing the one above' can be healthy coping, OCD-like scrupulosity, or the mask under which depression hides: assess function and whether the practice brings peace or distress.",
     sources: ["DSM-5 CFI", "scrupulosity literature"],
   },
   {
@@ -1060,7 +1060,7 @@ const EXTRA: IdiomEntry[] = [
       "What does the tension stop you from doing?",
       "If tension is all it is, what would you like done about it?",
     ],
-    trap: "'It's only tension' is the patient pre-emptively closing the door — the dismissal is itself the finding; the question is why the phrase is needed.",
+    trap: "'It's only tension' is the patient pre-emptively closing the door: the dismissal is itself the finding; the question is why the phrase is needed.",
     sources: ["Nichter idioms of distress", "secondary gain literature"],
   },
   {
@@ -1080,7 +1080,7 @@ const EXTRA: IdiomEntry[] = [
       "If everything slowed down, what would you do with yourself?",
       "What have you stopped doing because of the busyness?",
     ],
-    trap: "'Busy' has become the universal adult reason for everything — it can be true burnout, an avoidance idiom, or the surface of depression; the question is what happens when the busyness stops.",
+    trap: "'Busy' has become the universal adult reason for everything. It can be true burnout, an avoidance idiom, or the surface of depression; the question is what happens when the busyness stops.",
     sources: ["burnout literature", "Nichter idioms of distress"],
   },
   {
@@ -1095,12 +1095,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Helplessness as protest (giving up vs asking for a different kind of help)", likelihood: "medium", clue: "'so what is there left to do?'" },
     ],
     disambiguating_questions: [
-      "Tell me the last three things you tried — who, what, for how long?",
+      "Tell me the last three things you tried, who, what, for how long?",
       "Did any of them help even a little, and for how long?",
       "What stopped you from continuing?",
       "What do you think is left that could help?",
     ],
-    trap: "'Tried everything' can mean genuine exhaustion, a vague fiction, or a plea to be offered something different — ask what 'everything' actually was before you agree nothing will help.",
+    trap: "'Tried everything' can mean genuine exhaustion, a vague fiction, or a plea to be offered something different: ask what 'everything' actually was before you agree nothing will help.",
     sources: ["treatment-exhaustion literature", "Nichter idioms of distress"],
   },
   {
@@ -1122,7 +1122,7 @@ const EXTRA: IdiomEntry[] = [
       "Does it ever tell you to do things, or comment on what you're doing?",
       "How long has this been happening, and does it interfere with your day?",
     ],
-    trap: "The highest-stakes phrase in the bank: the same words cover psychosis and ordinary inner speech. Never ask 'is it a real voice?' — ask whether it feels like their own mind, whether it commands, and whether it distresses them. Assess function and insight, not vocabulary.",
+    trap: "The highest-stakes phrase in the bank: the same words cover psychosis and ordinary inner speech. Never ask 'is it a real voice?' Ask whether it feels like their own mind, whether it commands, and whether it distresses them. Assess function and insight, not vocabulary.",
     sources: ["ICD-11", "early intervention in psychosis literature", "inner speech research"],
   },
   {
@@ -1141,7 +1141,7 @@ const EXTRA: IdiomEntry[] = [
       "When you've belched, does the pain truly go away?",
       "Any sweating, breathlessness, or nausea with it?",
     ],
-    trap: "'It's only gas' is how many cardiac events are dismissed — the phrase is a risk marker; always ask about exertion, radiation, and sweating before accepting the gas frame.",
+    trap: "'It's only gas' is how many cardiac events are dismissed: the phrase is a risk marker; always ask about exertion, radiation, and sweating before accepting the gas frame.",
     sources: ["mhGAP cardiovascular risk", "Nichter idioms of distress"],
   },
   {
@@ -1161,7 +1161,7 @@ const EXTRA: IdiomEntry[] = [
       "What do you still need help with, separate from the nazar?",
       "When did the nazar first get blamed?",
     ],
-    trap: "Distinct from 'nazar lag gayi' (the attribution): 'nazar utarna' is the intervention — the family already did the healing. Honour the ritual, then gently ask what remains.",
+    trap: "Distinct from 'nazar lag gayi' (the attribution): 'nazar utarna' is the intervention, the family already did the healing. Honour the ritual, then gently ask what remains.",
     sources: ["DSM-5 CFI", "nazar literature (South Asia)"],
   },
   {
@@ -1171,7 +1171,7 @@ const EXTRA: IdiomEntry[] = [
     readings: ["cultural_idiom", "metaphor", "social_positioning", "psychopathology"],
     possible_meanings: [
       { reading: "Past-life attribution of present suffering", likelihood: "high", clue: "the illness framed as karmic debt from a past life" },
-      { reading: "Acceptance / surrender to fate", likelihood: "medium", clue: "'it must be repaid' — a passive stance" },
+      { reading: "Acceptance / surrender to fate", likelihood: "medium", clue: "'it must be repaid': a passive stance" },
       { reading: "Avoidance of treatment (fatalism)", likelihood: "medium", clue: "help-seeking minimal, suffering normalised" },
       { reading: "Masking of depression in a spiritual idiom", likelihood: "medium", clue: "mood, sleep and interest changes present underneath" },
     ],
@@ -1179,9 +1179,9 @@ const EXTRA: IdiomEntry[] = [
       "What does the past-life reckoning mean for what you should do now?",
       "Is there anything treatment could still offer?",
       "How does your family understand this?",
-      "Separate from karma — how have you been sleeping, eating, feeling?",
+      "Separate from karma, how have you been sleeping, eating, feeling?",
     ],
-    trap: "Past-life attribution is a powerful meaning-making frame; the clinical question is whether it opens acceptance or closes the door to help — 'it must be repaid' can be serenity or resignation.",
+    trap: "Past-life attribution is a powerful meaning-making frame; the clinical question is whether it opens acceptance or closes the door to help: 'it must be repaid' can be serenity or resignation.",
     sources: ["DSM-5 CFI", "karma and illness literature"],
   },
   {
@@ -1198,11 +1198,11 @@ const EXTRA: IdiomEntry[] = [
     ],
     disambiguating_questions: [
       "Is it just studies, or has everything become boring?",
-      "What happens when you sit down to study — thoughts, feelings, physical state?",
+      "What happens when you sit down to study: thoughts, feelings, physical state?",
       "How are you sleeping, eating, and how many hours are you on your phone?",
       "Has there always been trouble concentrating, or is this new?",
     ],
-    trap: "'Can't study' is the adolescent's universal carrier — it is equally exam stress, depression, ADHD, and protest; the question is what the adolescent loses interest in beyond study.",
+    trap: "'Can't study' is the adolescent's universal carrier. It is equally exam stress, depression, ADHD, and protest; the question is what the adolescent loses interest in beyond study.",
     sources: ["mhGAP adolescent module", "ICD-11"],
   },
   {
@@ -1217,12 +1217,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Depression hiding behind politeness", likelihood: "medium", clue: "flat affect, no complaint, but the person is not functioning" },
     ],
     disambiguating_questions: [
-      "I'm glad it's nothing. Who was more worried — you or someone else?",
+      "I'm glad it's nothing. Who was more worried. You or someone else?",
       "If it were something, who would you tell first?",
       "Is there anything that's hard to talk about in front of the family?",
       "How have you been sleeping and eating, away from the complaint?",
     ],
-    trap: "'Koi baat nahi' is the politeness of refusal — especially when the family dragged the patient in. The 'nothing' is information: the person does not want to be here, or cannot say the real thing yet.",
+    trap: "'Koi baat nahi' is the politeness of refusal, especially when the family dragged the patient in. The 'nothing' is information: the person does not want to be here, or cannot say the real thing yet.",
     sources: ["Nichter idioms of distress", "non-disclosure literature"],
   },
   {
@@ -1237,12 +1237,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Sudden medical event (arrhythmia, hypo/hyperglycaemia)", likelihood: "medium", clue: "specific physical accompaniments, risk factors", physical: true },
     ],
     disambiguating_questions: [
-      "Take me through that moment — what happened first, and in what order?",
+      "Take me through that moment: what happened first, and in what order?",
       "Did you lose awareness, fall, or bite your tongue?",
       "How long did it last, and how did you feel after?",
       "Has it happened again since?",
     ],
-    trap: "'Anda hua' is how Indians describe the sudden onset that terrifies them — the same word covers a panic attack, a seizure, and an arrhythmia; ask what actually happened second by second.",
+    trap: "'Anda hua' is how Indians describe the sudden onset that terrifies them: the same word covers a panic attack, a seizure, and an arrhythmia; ask what actually happened second by second.",
     sources: ["mhGAP", "seizure vs panic literature"],
   },
   {
@@ -1259,10 +1259,10 @@ const EXTRA: IdiomEntry[] = [
     disambiguating_questions: [
       "How often did you actually take it, and what dose?",
       "Any side effects, cost problems, or worries about it?",
-      "What exactly has come back — the same symptom or something new?",
+      "What exactly has come back: the same symptom or something new?",
       "What would you like to try instead?",
     ],
-    trap: "'The medicine stopped working' is usually a statement about the relationship, adherence, or expectations — before you change the drug, find out whether it was ever actually taken.",
+    trap: "'The medicine stopped working' is usually a statement about the relationship, adherence, or expectations, before you change the drug, find out whether it was ever actually taken.",
     sources: ["adherence literature", "Nichter idioms of distress"],
   },
   {
@@ -1277,12 +1277,12 @@ const EXTRA: IdiomEntry[] = [
       { reading: "Chronic disease (TB, diabetes, thyroid)", likelihood: "medium", clue: "fever, cough, thirst, pallor", physical: true },
     ],
     disambiguating_questions: [
-      "Have you actually weighed yourself — how much have you lost, over what time?",
+      "Have you actually weighed yourself, how much have you lost, over what time?",
       "Any fever, cough, night sweats, or appetite change?",
       "Do you feel dry inside as well, or is it the body?",
       "What do you believe is drying you?",
     ],
-    trap: "'Body drying up' is the wasting idiom of Indian folk medicine — it can be real TB or the somatic language of severe depression; the first step is objective weight and examination.",
+    trap: "'Body drying up' is the wasting idiom of Indian folk medicine. It can be real TB or the somatic language of severe depression; the first step is objective weight and examination.",
     sources: ["Nichter idioms of distress", "TB stigma literature"],
   },
   {
@@ -1302,13 +1302,13 @@ const EXTRA: IdiomEntry[] = [
       "What does it do to your sleep, appetite, energy, work?",
       "Is the pareshani inside you, or in the situation around you?",
     ],
-    trap: "Pareshan is the Hindi 'tension' — the most generic distress word, which means it needs the most specification: pareshan about what, since when, and what it does to function.",
+    trap: "Pareshan is the Hindi 'tension': the most generic distress word, which means it needs the most specification: pareshan about what, since when, and what it does to function.",
     sources: ["Nichter idioms of distress"],
   },
 ];
 
 
-/** Regional idioms (round 4 content volume) — Bengali, Tamil, Telugu,
+/** Regional idioms (round 4 content volume): Bengali, Tamil, Telugu,
  *  Kannada, Marathi, Gujarati. The moat is content; these are the phrases a
  *  student will hear in a Kolkata or Chennai or Bengaluru clinic. */
 const REGIONAL: IdiomEntry[] = [
@@ -1318,15 +1318,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Bengali", "all ages", "very common"],
     readings: ["psychopathology", "disease", "metaphor"],
     possible_meanings: [
-      { reading: "Colloquial sadness — the everyday 'heart is bad'", likelihood: "high" },
+      { reading: "Colloquial sadness: the everyday 'heart is bad'", likelihood: "high" },
       { reading: "Depression when persistent with functional decline", likelihood: "medium" },
       { reading: "Physical malaise (fever prodrome, gastritis)", likelihood: "medium", clue: "onset with fever or eating pattern", physical: true },
     ],
     disambiguating_questions: [
-      "When you say mon kharap — how long has it been bad, and what does it stop you doing?",
+      "When you say mon kharap, how long has it been bad, and what does it stop you doing?",
       "Is the bad feeling inside the chest, the head, or the whole body?",
     ],
-    trap: "Mon kharap is the default Bengali complaint — everyone has it sometimes; the question is persistence and function, not the phrase.",
+    trap: "Mon kharap is the default Bengali complaint. Everyone has it sometimes; the question is persistence and function, not the phrase.",
     sources: ["Bengali idiom-of-distress literature"],
   },
   {
@@ -1335,7 +1335,7 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Bengali", "adult"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Anhedonia — nothing feels good anymore", likelihood: "high" },
+      { reading: "Anhedonia. Nothing feels good anymore", likelihood: "high" },
       { reading: "Situational demoralisation", likelihood: "medium" },
       { reading: "Grief-related numbness", likelihood: "medium", clue: "loss within the year" },
     ],
@@ -1343,7 +1343,7 @@ const REGIONAL: IdiomEntry[] = [
       "What used to feel good that no longer does?",
       "When did 'nothing feels good' start?",
     ],
-    trap: "'Nothing feels good' is anhedonia in plain language — screen the mood and risk, don't file it as vague negativity.",
+    trap: "'Nothing feels good' is anhedonia in plain language: screen the mood and risk, don't file it as vague negativity.",
     sources: ["Depression screening literature (PHQ-2 translated forms)"],
   },
   {
@@ -1352,7 +1352,7 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Tamil", "all ages"],
     readings: ["psychopathology", "disease", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Self-referral for mental distress — 'something in my mind'", likelihood: "high" },
+      { reading: "Self-referral for mental distress: 'something in my mind'", likelihood: "high" },
       { reading: "Somatic-first presentation of depression", likelihood: "medium", clue: "head or body complaints alongside" },
       { reading: "Epilepsy / neurological concern ('mind' = brain)", likelihood: "low", clue: "blackouts, staring spells", physical: true },
     ],
@@ -1360,7 +1360,7 @@ const REGIONAL: IdiomEntry[] = [
       "What makes you think the problem is in the mind?",
       "Any episodes where you lose time or stare?",
     ],
-    trap: "In Tamil, 'mind' can mean emotion or brain — clarify which before assuming psychopathology.",
+    trap: "In Tamil, 'mind' can mean emotion or brain: clarify which before assuming psychopathology.",
     sources: ["Tamil clinical-encounter literature"],
   },
   {
@@ -1374,10 +1374,10 @@ const REGIONAL: IdiomEntry[] = [
       { reading: "Dhat-style concern in young men", likelihood: "low", clue: "perceived semen loss", physical: true },
     ],
     disambiguating_questions: [
-      "Walk me through a normal day — where does the weakness bite?",
+      "Walk me through a normal day, where does the weakness bite?",
       "Any weight loss, pallor, or breathlessness?",
     ],
-    trap: "Sarivu is the Tamil kamzori — the workup comes first, the mood screen second.",
+    trap: "Sarivu is the Tamil kamzori: the workup comes first, the mood screen second.",
     sources: ["Nichter idioms of distress; Tamil clinical practice"],
   },
   {
@@ -1386,15 +1386,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Telugu", "all ages"],
     readings: ["psychopathology", "cultural_idiom", "disease"],
     possible_meanings: [
-      { reading: "Low mood — the 'heart-mind' is the seat of feeling", likelihood: "high" },
+      { reading: "Low mood: the 'heart-mind' is the seat of feeling", likelihood: "high" },
       { reading: "Worry / rumination about a specific problem", likelihood: "medium" },
       { reading: "Cardiac concern ('heart' literally)", likelihood: "low", clue: "chest pain, palpitations", physical: true },
     ],
     disambiguating_questions: [
-      "When you say manasu — the feeling heart or the beating heart?",
+      "When you say manasu: the feeling heart or the beating heart?",
       "What would a well manasu feel like?",
     ],
-    trap: "Manasu is both heart and mind in Telugu — disambiguate the organ before the metaphor.",
+    trap: "Manasu is both heart and mind in Telugu: disambiguate the organ before the metaphor.",
     sources: ["Telugu cultural idioms of distress"],
   },
   {
@@ -1411,7 +1411,7 @@ const REGIONAL: IdiomEntry[] = [
       "Is it physical exhaustion or a wall you can't face?",
       "What happens if someone walks with you?",
     ],
-    trap: "The door metaphor is anergia or agoraphobia — the function question decides.",
+    trap: "The door metaphor is anergia or agoraphobia: the function question decides.",
     sources: ["Telugu clinical vignettes"],
   },
   {
@@ -1420,15 +1420,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Kannada", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Generalised anxiety — the mind won't settle", likelihood: "high" },
+      { reading: "Generalised anxiety: the mind won't settle", likelihood: "high" },
       { reading: "Insomnia with rumination", likelihood: "medium", clue: "lying awake at night" },
       { reading: "Depression with agitation", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "When is the mind most un-peaceful — day or night?",
+      "When is the mind most un-peaceful: day or night?",
       "What does the mind do when it won't settle?",
     ],
-    trap: "'No peace of mind' is anxiety's most common Kannada frame — treat the rumination, not the phrase.",
+    trap: "'No peace of mind' is anxiety's most common Kannada frame: treat the rumination, not the phrase.",
     sources: ["Kannada clinical encounter literature"],
   },
   {
@@ -1437,7 +1437,7 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Marathi", "all ages"],
     readings: ["psychopathology", "protest"],
     possible_meanings: [
-      { reading: "Helplessness — the mind is a burden to manage", likelihood: "high" },
+      { reading: "Helplessness: the mind is a burden to manage", likelihood: "high" },
       { reading: "Plea for guidance about an unmanageable situation", likelihood: "medium" },
       { reading: "Masked suicidality ('what to do with the mind')", likelihood: "low", clue: "withdrawal, giving things away" },
     ],
@@ -1445,7 +1445,7 @@ const REGIONAL: IdiomEntry[] = [
       "What is the mind doing that feels unmanageable?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "The rhetorical 'what do I do with my mind' can mask risk — ask directly, always.",
+    trap: "The rhetorical 'what do I do with my mind' can mask risk: ask directly, always.",
     sources: ["Marathi help-seeking literature; mhGAP risk screening"],
   },
   {
@@ -1454,7 +1454,7 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Gujarati", "all ages"],
     readings: ["cultural_idiom", "psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Emotional pain — the heart as feeling-seat", likelihood: "high" },
+      { reading: "Emotional pain: the heart as feeling-seat", likelihood: "high" },
       { reading: "Grief or loss reaction", likelihood: "medium", clue: "recent bereavement" },
       { reading: "Cardiac symptom (literal)", likelihood: "low", clue: "exertion-related chest pain", physical: true },
     ],
@@ -1462,7 +1462,7 @@ const REGIONAL: IdiomEntry[] = [
       "Heart pain like grief, or heart pain like pressure?",
       "Does it come with activity or with memories?",
     ],
-    trap: "The Gujarati 'dil' is emotion-first, but the cardiac differential is one question away — ask it.",
+    trap: "The Gujarati 'dil' is emotion-first, but the cardiac differential is one question away: ask it.",
     sources: ["Gujarati idioms of distress; cardiac-mimic literature"],
   },
   {
@@ -1471,15 +1471,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Bengali", "adult"],
     readings: ["disease", "psychopathology"],
     possible_meanings: [
-      { reading: "Head heaviness — tension-type or sinus", likelihood: "high", clue: "worse evenings, forehead band", physical: true },
-      { reading: "Cognitive overwhelm — 'too much in the head'", likelihood: "medium" },
+      { reading: "Head heaviness: tension-type or sinus", likelihood: "high", clue: "worse evenings, forehead band", physical: true },
+      { reading: "Cognitive overwhelm: 'too much in the head'", likelihood: "medium" },
       { reading: "Depressive heaviness", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Full like a headache, or full like too many thoughts?",
       "When did the fullness start?",
     ],
-    trap: "Matha bhara straddles sinus and psyche — the quality question decides.",
+    trap: "Matha bhara straddles sinus and psyche: the quality question decides.",
     sources: ["Bengali somatic-idiom literature"],
   },
   {
@@ -1488,15 +1488,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Tamil", "adult"],
     readings: ["psychopathology", "protest", "disease"],
     possible_meanings: [
-      { reading: "Existential despair — 'life is draining away'", likelihood: "high" },
+      { reading: "Existential despair: 'life is draining away'", likelihood: "high" },
       { reading: "Masked suicidality", likelihood: "medium", clue: "giving things away, withdrawal" },
       { reading: "Chronic illness fatigue", likelihood: "medium", clue: "known medical disease", physical: true },
     ],
     disambiguating_questions: [
-      "When you say life is going — what do you mean is leaving?",
+      "When you say life is going: what do you mean is leaving?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "The dramatic 'life is going' demands a direct risk screen — the metaphor can be the only window.",
+    trap: "The dramatic 'life is going' demands a direct risk screen: the metaphor can be the only window.",
     sources: ["Tamil clinical risk-screening literature"],
   },
   {
@@ -1505,7 +1505,7 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Telugu", "adult"],
     readings: ["disease", "psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Somatic anxiety — chest heaviness", likelihood: "high", clue: "with palpitations, shortness of breath", physical: true },
+      { reading: "Somatic anxiety: chest heaviness", likelihood: "high", clue: "with palpitations, shortness of breath", physical: true },
       { reading: "Depression with somatic focus", likelihood: "medium" },
       { reading: "Cardiac concern (workup first)", likelihood: "medium", clue: "exertion-related", physical: true },
     ],
@@ -1513,7 +1513,7 @@ const REGIONAL: IdiomEntry[] = [
       "Heaviness with effort, or heaviness with worry?",
       "Any heart check done recently?",
     ],
-    trap: "Chest heaviness in Telugu is the somatic idiom for both anxiety and cardiac disease — the workup precedes the label.",
+    trap: "Chest heaviness in Telugu is the somatic idiom for both anxiety and cardiac disease: the workup precedes the label.",
     sources: ["Telugu somatic idioms; cardiac-anxiety differential"],
   },
   {
@@ -1530,7 +1530,7 @@ const REGIONAL: IdiomEntry[] = [
       "Tired in the body or tired in the spirit?",
       "What does a day look like?",
     ],
-    trap: "Aayasa is the Kannada fatigue carrier — the physical triad and the mood screen, both.",
+    trap: "Aayasa is the Kannada fatigue carrier: the physical triad and the mood screen, both.",
     sources: ["Kannada clinical practice"],
   },
   {
@@ -1539,15 +1539,15 @@ const REGIONAL: IdiomEntry[] = [
     register: ["Marathi", "adult"],
     readings: ["psychopathology", "cultural_idiom", "protest"],
     possible_meanings: [
-      { reading: "Anxiety — the inner self under attack", likelihood: "high" },
+      { reading: "Anxiety: the inner self under attack", likelihood: "high" },
       { reading: "Persecutory worry ('someone is doing this to me')", likelihood: "medium" },
       { reading: "Grief with somatic symptoms", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "What is biting the jiv — a person, a situation, or something else?",
+      "What is biting the jiv: a person, a situation, or something else?",
       "Does it happen at certain times?",
     ],
-    trap: "'The soul is being bitten' can be anxiety or persecution — the agency question (who/what) decides.",
+    trap: "'The soul is being bitten' can be anxiety or persecution: the agency question (who/what) decides.",
     sources: ["Marathi cultural idioms of distress"],
   },
   {
@@ -1558,19 +1558,19 @@ const REGIONAL: IdiomEntry[] = [
     possible_meanings: [
       { reading: "Stress-related worry (the everyday 'tension')", likelihood: "high" },
       { reading: "Generalised anxiety", likelihood: "medium", clue: "persistent, impairing" },
-      { reading: "Somatic anxiety — headaches, sleep loss", likelihood: "medium" },
+      { reading: "Somatic anxiety: headaches, sleep loss", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Tension about what, since when, and what does it stop you doing?",
       "What happens in your body when the tension comes?",
     ],
-    trap: "'Tension' is the pan-Indian generic — always specify the what, since-when, and function cost.",
+    trap: "'Tension' is the pan-Indian generic: always specify the what, since-when, and function cost.",
     sources: ["Pan-Indian 'tension' literature"],
   },
 ];
 
 
-/** Regional batch 2 (round 6) — Punjabi, Malayalam, Odia, Assamese. */
+/** Regional batch 2 (round 6): Punjabi, Malayalam, Odia, Assamese. */
 const REGIONAL2: IdiomEntry[] = [
   {
     id: "idiom-punjabi-dil",
@@ -1578,15 +1578,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Punjabi", "all ages"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Romantic or family loss — the heart idiom of grief", likelihood: "high" },
+      { reading: "Romantic or family loss: the heart idiom of grief", likelihood: "high" },
       { reading: "Depression if persistent with functional decline", likelihood: "medium" },
-      { reading: "Chest pain (literal) — workup first", likelihood: "low", clue: "exertion-related", physical: true },
+      { reading: "Chest pain (literal): workup first", likelihood: "low", clue: "exertion-related", physical: true },
     ],
     disambiguating_questions: [
-      "Broken by what — a person, a loss, or something in the chest?",
+      "Broken by what: a person, a loss, or something in the chest?",
       "How long has it been broken, and what does it stop you doing?",
     ],
-    trap: "'Dil toota' is the Punjabi emotional heart — the chest workup is one question away, the mood screen is the second.",
+    trap: "'Dil toota' is the Punjabi emotional heart: the chest workup is one question away, the mood screen is the second.",
     sources: ["Punjabi idioms of distress"],
   },
   {
@@ -1595,15 +1595,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Punjabi", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Situational stress — the daily 'tension'", likelihood: "high" },
+      { reading: "Situational stress: the daily 'tension'", likelihood: "high" },
       { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
-      { reading: "Somatic anxiety — head, chest, sleep", likelihood: "medium" },
+      { reading: "Somatic anxiety: head, chest, sleep", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Tension about what, since when, and what does it stop you doing?",
       "What happens in the body when the tension comes?",
     ],
-    trap: "Punjabi 'tension' is the pan-Indian generic — specify the what, since-when, and function cost.",
+    trap: "Punjabi 'tension' is the pan-Indian generic: specify the what, since-when, and function cost.",
     sources: ["Pan-Indian 'tension' literature"],
   },
   {
@@ -1620,7 +1620,7 @@ const REGIONAL2: IdiomEntry[] = [
       "Tired in the body or tired in the spirit?",
       "What does a normal day look like?",
     ],
-    trap: "Thakaan is the Punjabi kamzori — the physical triad and the mood screen, both.",
+    trap: "Thakaan is the Punjabi kamzori: the physical triad and the mood screen, both.",
     sources: ["Punjabi clinical practice"],
   },
   {
@@ -1629,7 +1629,7 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Odia", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Low mood — the everyday 'mind is bad'", likelihood: "high" },
+      { reading: "Low mood: the everyday 'mind is bad'", likelihood: "high" },
       { reading: "Physical malaise (fever, gastritis)", likelihood: "medium", clue: "onset with fever or eating", physical: true },
       { reading: "Worry about a specific problem", likelihood: "medium" },
     ],
@@ -1637,7 +1637,7 @@ const REGIONAL2: IdiomEntry[] = [
       "Bad since when, and what does it change about your day?",
       "Is it the head, the stomach, or the feelings?",
     ],
-    trap: "Mana kharap is the Odia default — persistence and function decide, not the phrase.",
+    trap: "Mana kharap is the Odia default: persistence and function decide, not the phrase.",
     sources: ["Odia help-seeking literature"],
   },
   {
@@ -1646,15 +1646,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Odia", "adult"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Possession state — culturally sanctioned distress expression", likelihood: "high", clue: "episodes with intact function between" },
+      { reading: "Possession state: culturally sanctioned distress expression", likelihood: "high", clue: "episodes with intact function between" },
       { reading: "Dissociative episode", likelihood: "medium" },
       { reading: "First-episode psychosis if persistent with fixed beliefs", likelihood: "low" },
     ],
     disambiguating_questions: [
-      "What happens between the episodes — is she fully herself?",
+      "What happens between the episodes: is she fully herself?",
       "What does she make of it herself?",
     ],
-    trap: "Odia 'dharana' is the possession idiom — function between episodes is the discriminator, never assume psychosis.",
+    trap: "Odia 'dharana' is the possession idiom: function between episodes is the discriminator, never assume psychosis.",
     sources: ["Possession-trance literature; Odia clinical vignettes"],
   },
   {
@@ -1663,15 +1663,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Odia", "adult"],
     readings: ["cultural_idiom", "metaphor"],
     possible_meanings: [
-      { reading: "Conventional 'root-medicine' reference — the family's framework", likelihood: "high" },
+      { reading: "Conventional 'root-medicine' reference: the family's framework", likelihood: "high" },
       { reading: "Concern that the problem is 'witchcraft' needing herbal counter-measure", likelihood: "medium" },
       { reading: "Metaphor for 'needs fixing'", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "What kind of remedy are they thinking of — roots, rituals, or doctors?",
+      "What kind of remedy are they thinking of: roots, rituals, or doctors?",
       "Who suggested it?",
     ],
-    trap: "The jadibuti frame tells you the family's help-seeking map — explore it respectfully rather than correcting it.",
+    trap: "The jadibuti frame tells you the family's help-seeking map: explore it respectfully rather than correcting it.",
     sources: ["Odia traditional-medicine literature"],
   },
   {
@@ -1688,7 +1688,7 @@ const REGIONAL2: IdiomEntry[] = [
       "What makes you think the problem is in the mind?",
       "Any episodes where you lose time?",
     ],
-    trap: "'Mind' in Malayalam can mean emotion or brain — clarify before assuming psychopathology.",
+    trap: "'Mind' in Malayalam can mean emotion or brain: clarify before assuming psychopathology.",
     sources: ["Malayalam clinical encounters"],
   },
   {
@@ -1705,7 +1705,7 @@ const REGIONAL2: IdiomEntry[] = [
       "No feeling for food, or no appetite in the body?",
       "What used to taste good that doesn't now?",
     ],
-    trap: "'No feeling for food' straddles anhedonia and GI disease — the pleasure question and the physical screen, both.",
+    trap: "'No feeling for food' straddles anhedonia and GI disease: the pleasure question and the physical screen, both.",
     sources: ["Malayalam somatic idioms"],
   },
   {
@@ -1714,15 +1714,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Malayalam", "adult"],
     readings: ["psychopathology", "protest", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Overwhelm — 'the situation is poisonous'", likelihood: "high" },
+      { reading: "Overwhelm: 'the situation is poisonous'", likelihood: "high" },
       { reading: "Persecutory worry ('someone is poisoning things')", likelihood: "medium" },
       { reading: "Masked suicidality ('can't bear it')", likelihood: "low", clue: "withdrawal, giving things away" },
     ],
     disambiguating_questions: [
-      "What is the poison — a situation, a person, or something else?",
+      "What is the poison: a situation, a person, or something else?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "The dramatic 'can't bear the poison' demands the direct risk screen — the metaphor can be the only window.",
+    trap: "The dramatic 'can't bear the poison' demands the direct risk screen: the metaphor can be the only window.",
     sources: ["Kerala risk-screening literature"],
   },
   {
@@ -1731,7 +1731,7 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Assamese", "all ages"],
     readings: ["psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Mental distress — 'head not well' = mind disturbed", likelihood: "high" },
+      { reading: "Mental distress: 'head not well' = mind disturbed", likelihood: "high" },
       { reading: "Headache / sinus", likelihood: "medium", clue: "localised pain, congestion", physical: true },
       { reading: "Cognitive concern", likelihood: "medium" },
     ],
@@ -1739,7 +1739,7 @@ const REGIONAL2: IdiomEntry[] = [
       "Head not well like pain, or like thoughts disturbing you?",
       "When did it start and what changes with it?",
     ],
-    trap: "'Mathu bhal nai' is the Assamese mind-head idiom — the quality question decides psyche from sinus.",
+    trap: "'Mathu bhal nai' is the Assamese mind-head idiom: the quality question decides psyche from sinus.",
     sources: ["Assamese idioms of distress"],
   },
   {
@@ -1748,7 +1748,7 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Assamese", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Emotional pain — grief, worry, sadness", likelihood: "high" },
+      { reading: "Emotional pain: grief, worry, sadness", likelihood: "high" },
       { reading: "Depression if persistent with functional decline", likelihood: "medium" },
       { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
     ],
@@ -1756,7 +1756,7 @@ const REGIONAL2: IdiomEntry[] = [
       "What is the mon suffering about?",
       "How long, and what does it stop you doing?",
     ],
-    trap: "Mon kosto is the Assamese heart-mind — the what, since-when, and function questions decide.",
+    trap: "Mon kosto is the Assamese heart-mind: the what, since-when, and function questions decide.",
     sources: ["Assamese clinical literature"],
   },
   {
@@ -1765,15 +1765,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Punjabi", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Anxiety — situational fear", likelihood: "high" },
+      { reading: "Anxiety: situational fear", likelihood: "high" },
       { reading: "Panic episodes (palpitations, breathlessness)", likelihood: "medium" },
       { reading: "Startle from trauma", likelihood: "medium", clue: "post-event onset" },
     ],
     disambiguating_questions: [
-      "What frightens — a situation, your own sensations, or memories?",
+      "What frightens: a situation, your own sensations, or memories?",
       "What happens in the body when it comes?",
     ],
-    trap: "Ghabrai is the Punjabi cousin of ghabrahat — the physical picture and the trigger, both.",
+    trap: "Ghabrai is the Punjabi cousin of ghabrahat: the physical picture and the trigger, both.",
     sources: ["Punjabi idioms; panic-spectrum literature"],
   },
   {
@@ -1782,15 +1782,15 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Malayalam", "adult"],
     readings: ["cultural_idiom", "disease"],
     possible_meanings: [
-      { reading: "Anger/irritability — the 'inner heat' of emotion", likelihood: "high" },
-      { reading: "Burning sensations — neuropathy, gastritis", likelihood: "medium", clue: "burning on touch, epigastric", physical: true },
+      { reading: "Anger/irritability: the 'inner heat' of emotion", likelihood: "high" },
+      { reading: "Burning sensations: neuropathy, gastritis", likelihood: "medium", clue: "burning on touch, epigastric", physical: true },
       { reading: "Menopausal hot flashes", likelihood: "medium", clue: "age, night sweats" },
     ],
     disambiguating_questions: [
       "Inner heat like anger, or like burning in the body?",
-      "When does it rise — with emotions or with food?",
+      "When does it rise, with emotions or with food?",
     ],
-    trap: "'Inner heat' is the Malayalam anger idiom with real physical mimics — the quality question decides.",
+    trap: "'Inner heat' is the Malayalam anger idiom with real physical mimics: the quality question decides.",
     sources: ["Malayalam humoral idioms"],
   },
   {
@@ -1799,7 +1799,7 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Odia", "adult"],
     readings: ["psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Depressive anergia — 'the inner strength is gone'", likelihood: "high" },
+      { reading: "Depressive anergia: 'the inner strength is gone'", likelihood: "high" },
       { reading: "Physical exhaustion (anaemia, chronic illness)", likelihood: "medium", clue: "pallor, known disease", physical: true },
       { reading: "Existential despair", likelihood: "medium" },
     ],
@@ -1807,7 +1807,7 @@ const REGIONAL2: IdiomEntry[] = [
       "Inner strength gone like tiredness, or like the will to live?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "The 'no inner strength' idiom can mask risk — the will-to-live question is non-negotiable.",
+    trap: "The 'no inner strength' idiom can mask risk: the will-to-live question is non-negotiable.",
     sources: ["Odia risk-screening literature"],
   },
   {
@@ -1816,21 +1816,21 @@ const REGIONAL2: IdiomEntry[] = [
     register: ["Assamese", "adult"],
     readings: ["cultural_idiom", "psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Grief/loss — the heart knocked by life", likelihood: "high" },
+      { reading: "Grief/loss: the heart knocked by life", likelihood: "high" },
       { reading: "Palpitations (literal)", likelihood: "medium", clue: "irregular, exertional", physical: true },
       { reading: "Anxiety presenting as chest sensation", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "The knock — from a loss, from worry, or from the heart itself?",
+      "The knock, from a loss, from worry, or from the heart itself?",
       "Does it come with activity or with memories?",
     ],
-    trap: "Hridayot thoka straddles the grief heart and the cardiac heart — both questions are owed.",
+    trap: "Hridayot thoka straddles the grief heart and the cardiac heart: both questions are owed.",
     sources: ["Assamese idioms; cardiac-mimic literature"],
   },
 ];
 
 
-/** Regional batch 3 (round 7) — Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali. */
+/** Regional batch 3 (round 7): Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali. */
 const REGIONAL3: IdiomEntry[] = [
   {
     id: "idiom-kashmiri-traash",
@@ -1838,15 +1838,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Kashmiri", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Anxiety/fear in a conflict-affected context — the word carries the lived reality", likelihood: "high" },
+      { reading: "Anxiety/fear in a conflict-affected context: the word carries the lived reality", likelihood: "high" },
       { reading: "PTSD-related fear (startle, avoidance, re-experiencing)", likelihood: "medium", clue: "trauma history" },
       { reading: "Situational worry", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "What does the traash attach to — a situation, a memory, or your own body?",
+      "What does the traash attach to: a situation, a memory, or your own body?",
       "What happens in the body when traash comes?",
     ],
-    trap: "In conflict-affected Kashmir, traash is both a word and a context — the trauma screen matters as much as the anxiety label.",
+    trap: "In conflict-affected Kashmir, traash is both a word and a context: the trauma screen matters as much as the anxiety label.",
     sources: ["Kashmir mental-health literature; PTSD screening"],
   },
   {
@@ -1855,7 +1855,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Kashmiri", "adult"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Emotional suffering — the heart-liver as the feeling-seat", likelihood: "high" },
+      { reading: "Emotional suffering: the heart-liver as the feeling-seat", likelihood: "high" },
       { reading: "Grief/loss", likelihood: "medium", clue: "recent bereavement" },
       { reading: "Depression if persistent with functional decline", likelihood: "medium" },
     ],
@@ -1863,7 +1863,7 @@ const REGIONAL3: IdiomEntry[] = [
       "What is the walus suffering from?",
       "How long, and what does it stop you doing?",
     ],
-    trap: "Walus is the Kashmiri feeling-organ — the what/since-when/function questions decide.",
+    trap: "Walus is the Kashmiri feeling-organ: the what/since-when/function questions decide.",
     sources: ["Kashmiri idioms of distress"],
   },
   {
@@ -1872,7 +1872,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Konkani", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Sadness — the everyday heart-mind", likelihood: "high" },
+      { reading: "Sadness: the everyday heart-mind", likelihood: "high" },
       { reading: "Depression if persistent", likelihood: "medium" },
       { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
     ],
@@ -1880,7 +1880,7 @@ const REGIONAL3: IdiomEntry[] = [
       "Dukhi about what, since when, and what does it change?",
       "Is it the feelings or the body?",
     ],
-    trap: "Man dukhchem is the Konkani default sadness — persistence and function decide.",
+    trap: "Man dukhchem is the Konkani default sadness: persistence and function decide.",
     sources: ["Konkani clinical encounters"],
   },
   {
@@ -1889,15 +1889,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Konkani", "adult"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Worry/rumination — 'the imagination runs'", likelihood: "high" },
+      { reading: "Worry/rumination: 'the imagination runs'", likelihood: "high" },
       { reading: "Somatic anxiety (the imagined illness)", likelihood: "medium" },
       { reading: "Overvalued fears", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "What does the imagination run toward — illness, loss, danger?",
+      "What does the imagination run toward: illness, loss, danger?",
       "What happens in the body when it runs?",
     ],
-    trap: "'Too much imagination' is how Konkani-speakers name rumination — the content and the physical correlate are the clinical data.",
+    trap: "'Too much imagination' is how Konkani-speakers name rumination: the content and the physical correlate are the clinical data.",
     sources: ["Konkani anxiety literature"],
   },
   {
@@ -1906,15 +1906,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Bhojpuri", "adult"],
     readings: ["disease", "psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Burning body sensations — neuropathy, gastritis, fever", likelihood: "high", clue: "burning on touch, epigastric", physical: true },
-      { reading: "Anger/agitation — 'burning inside'", likelihood: "medium" },
+      { reading: "Burning body sensations: neuropathy, gastritis, fever", likelihood: "high", clue: "burning on touch, epigastric", physical: true },
+      { reading: "Anger/agitation: 'burning inside'", likelihood: "medium" },
       { reading: "Somatic anxiety", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Burning in the body, or burning in the temper?",
-      "When does it rise — with food, with anger, or both?",
+      "When does it rise, with food, with anger, or both?",
     ],
-    trap: "'The body burns' straddles physical burning and inner rage — the quality question decides.",
+    trap: "'The body burns' straddles physical burning and inner rage: the quality question decides.",
     sources: ["Bhojpuri humoral idioms"],
   },
   {
@@ -1931,7 +1931,7 @@ const REGIONAL3: IdiomEntry[] = [
       "Heavy like a weight on the heart, or like a full head?",
       "What lifts it, even briefly?",
     ],
-    trap: "Man bhaar is the Bhojpuri heaviness idiom — the quality question and the physical screen, both.",
+    trap: "Man bhaar is the Bhojpuri heaviness idiom: the quality question and the physical screen, both.",
     sources: ["Bhojpuri somatic idioms"],
   },
   {
@@ -1940,7 +1940,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Sindhi", "all ages"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Rumination — 'the heart thinks'", likelihood: "high" },
+      { reading: "Rumination: 'the heart thinks'", likelihood: "high" },
       { reading: "Worry about a specific matter", likelihood: "medium" },
       { reading: "Anxiety with somatic symptoms", likelihood: "medium" },
     ],
@@ -1948,7 +1948,7 @@ const REGIONAL3: IdiomEntry[] = [
       "What does the heart keep thinking about?",
       "Does it stop you sleeping, eating, working?",
     ],
-    trap: "Sindhi places thought in the heart — 'heart-thinking' is rumination, and the function cost is the clinical weight.",
+    trap: "Sindhi places thought in the heart: 'heart-thinking' is rumination, and the function cost is the clinical weight.",
     sources: ["Sindhi idioms of distress"],
   },
   {
@@ -1965,7 +1965,7 @@ const REGIONAL3: IdiomEntry[] = [
       "What is the thinking about, and when does it exhaust you most?",
       "Any hopelessness or thoughts of ending your life?",
     ],
-    trap: "'Tired of thinking' is rumination-fatigue — the risk screen is still owed.",
+    trap: "'Tired of thinking' is rumination-fatigue: the risk screen is still owed.",
     sources: ["Sindhi help-seeking literature; risk screening"],
   },
   {
@@ -1974,15 +1974,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Nepali", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Sadness — the everyday man dukhi", likelihood: "high" },
+      { reading: "Sadness: the everyday man dukhi", likelihood: "high" },
       { reading: "Depression if persistent with function loss", likelihood: "medium" },
       { reading: "Migration-related distress (families split across the border)", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "Dukhi about what — home, work, someone?",
+      "Dukhi about what: home, work, someone?",
       "How long, and what does it stop you doing?",
     ],
-    trap: "Nepali man dukhi is the border-region default — the migration/family-separation context is often the real content.",
+    trap: "Nepali man dukhi is the border-region default: the migration/family-separation context is often the real content.",
     sources: ["Nepali idioms; migration mental-health literature"],
   },
   {
@@ -1991,15 +1991,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Nepali", "adult"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Feeling exposed/vulnerable — 'my window is open to harm'", likelihood: "high" },
+      { reading: "Feeling exposed/vulnerable: 'my window is open to harm'", likelihood: "high" },
       { reading: "Persecutory worry ('someone can reach me')", likelihood: "medium" },
       { reading: "Anxiety with hypervigilance", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "Open to what — people, spirits, or the world?",
+      "Open to what: people, spirits, or the world?",
       "Does it keep you from sleeping or leaving the house?",
     ],
-    trap: "The 'open window' is a vulnerability idiom — the persecutory question and the hypervigilance screen, both.",
+    trap: "The 'open window' is a vulnerability idiom: the persecutory question and the hypervigilance screen, both.",
     sources: ["Nepali anxiety idioms"],
   },
   {
@@ -2008,7 +2008,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Kashmiri", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Panic/anxiety — the fluster", likelihood: "high" },
+      { reading: "Panic/anxiety: the fluster", likelihood: "high" },
       { reading: "Situational overwhelm", likelihood: "medium" },
       { reading: "Panic attacks (palpitations, breathlessness)", likelihood: "medium" },
     ],
@@ -2016,7 +2016,7 @@ const REGIONAL3: IdiomEntry[] = [
       "What flusters you, and what happens in the body at the peak?",
       "Does it come with a situation or out of nowhere?",
     ],
-    trap: "Gabrun is the Kashmiri panic cousin — the spontaneous-vs-situational question is the diagnosis.",
+    trap: "Gabrun is the Kashmiri panic cousin: the spontaneous-vs-situational question is the diagnosis.",
     sources: ["Kashmiri idioms; panic-spectrum literature"],
   },
   {
@@ -2025,7 +2025,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Bhojpuri", "adult"],
     readings: ["disease", "psychopathology"],
     possible_meanings: [
-      { reading: "Breathlessness — cardiac or respiratory workup", likelihood: "high", clue: "exertional, orthopnea", physical: true },
+      { reading: "Breathlessness: cardiac or respiratory workup", likelihood: "high", clue: "exertional, orthopnea", physical: true },
       { reading: "Panic with hyperventilation", likelihood: "medium" },
       { reading: "Anxiety with chest tightness", likelihood: "medium" },
     ],
@@ -2033,7 +2033,7 @@ const REGIONAL3: IdiomEntry[] = [
       "Breathless with effort or with fear?",
       "What were you doing when it first happened?",
     ],
-    trap: "'The breath swells' demands the cardiac/respiratory workup before the anxiety label — the mimic is real.",
+    trap: "'The breath swells' demands the cardiac/respiratory workup before the anxiety label: the mimic is real.",
     sources: ["Bhojpuri somatic idioms; cardiac-mimic literature"],
   },
   {
@@ -2042,15 +2042,15 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Konkani", "adult"],
     readings: ["psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Dissociative detachment — 'the world recedes'", likelihood: "high" },
+      { reading: "Dissociative detachment: 'the world recedes'", likelihood: "high" },
       { reading: "Depersonalisation/derealisation in anxiety", likelihood: "medium" },
       { reading: "Confusion (delirium, dementia) in the elderly", likelihood: "low", clue: "age, acute onset", physical: true },
     ],
     disambiguating_questions: [
       "Forgetting the world like drifting away, or like losing track of reality?",
-      "When does it happen — in crowds, in stress, or always?",
+      "When does it happen, in crowds, in stress, or always?",
     ],
-    trap: "'Forgetting the world' is the Konkani detachment idiom — the anxiety/dissociation screen and the organic check, both.",
+    trap: "'Forgetting the world' is the Konkani detachment idiom: the anxiety/dissociation screen and the organic check, both.",
     sources: ["Konkani dissociative idioms"],
   },
   {
@@ -2060,14 +2060,14 @@ const REGIONAL3: IdiomEntry[] = [
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
       { reading: "Chronic dissatisfaction/restlessness", likelihood: "high" },
-      { reading: "Anxiety — the mind won't settle", likelihood: "medium" },
+      { reading: "Anxiety: the mind won't settle", likelihood: "medium" },
       { reading: "Depression with anhedonia", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Peace missing from the mind, the home, or the body?",
       "What did peace look like when it was there?",
     ],
-    trap: "'There is no sukh' is the Sindhi restlessness frame — the what-is-missing question finds the clinical content.",
+    trap: "'There is no sukh' is the Sindhi restlessness frame: the what-is-missing question finds the clinical content.",
     sources: ["Sindhi idioms of distress"],
   },
   {
@@ -2076,7 +2076,7 @@ const REGIONAL3: IdiomEntry[] = [
     register: ["Nepali", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Worry/rumination — 'chinta has caught me'", likelihood: "high" },
+      { reading: "Worry/rumination: 'chinta has caught me'", likelihood: "high" },
       { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
       { reading: "Somatic anxiety (head, chest, sleep)", likelihood: "medium" },
     ],
@@ -2084,13 +2084,13 @@ const REGIONAL3: IdiomEntry[] = [
       "Chinta about what, since when, and what does it stop you doing?",
       "What happens in the body when chinta comes?",
     ],
-    trap: "'Chinta has caught me' is the Nepali tension — the specify question is the same as everywhere.",
+    trap: "'Chinta has caught me' is the Nepali tension: the specify question is the same as everywhere.",
     sources: ["Nepali 'chinta' literature"],
   },
 ];
 
 
-/** Regional batch 4 (round 8) — Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi. */
+/** Regional batch 4 (round 8): Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi. */
 const REGIONAL4: IdiomEntry[] = [
   {
     id: "idiom-tulu-mana",
@@ -2098,7 +2098,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Tulu", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Mental distress — 'the mind is disturbed'", likelihood: "high" },
+      { reading: "Mental distress: 'the mind is disturbed'", likelihood: "high" },
       { reading: "Worry/rumination", likelihood: "medium" },
       { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
     ],
@@ -2106,7 +2106,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Pooji about what, since when, and what does it change?",
       "Is it the feelings, the thoughts, or the body?",
     ],
-    trap: "Mana pooji is the Tulu default — the what/since-when/function questions decide.",
+    trap: "Mana pooji is the Tulu default: the what/since-when/function questions decide.",
     sources: ["Tulu clinical encounters"],
   },
   {
@@ -2123,7 +2123,7 @@ const REGIONAL4: IdiomEntry[] = [
       "No energy in the body, or no energy for anything?",
       "What does a day look like?",
     ],
-    trap: "Kaile ijji is the Tulu kamzori — the physical triad and the mood screen, both.",
+    trap: "Kaile ijji is the Tulu kamzori: the physical triad and the mood screen, both.",
     sources: ["Tulu somatic idioms"],
   },
   {
@@ -2132,15 +2132,15 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Dogri", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Fear/dread — 'the heart shrinks'", likelihood: "high" },
+      { reading: "Fear/dread: 'the heart shrinks'", likelihood: "high" },
       { reading: "Anxiety with physical symptoms", likelihood: "medium" },
       { reading: "Depressive heaviness", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "Heart shrinks from what — a situation, a thought, or a memory?",
+      "Heart shrinks from what: a situation, a thought, or a memory?",
       "What happens in the body when it shrinks?",
     ],
-    trap: "'The heart shrinks' is the Dogri fear idiom — the trigger and the physical correlate are the clinical data.",
+    trap: "'The heart shrinks' is the Dogri fear idiom: the trigger and the physical correlate are the clinical data.",
     sources: ["Dogri idioms of distress"],
   },
   {
@@ -2149,15 +2149,15 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Dogri", "adult"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Chronic worry — 'searching for answers'", likelihood: "high" },
+      { reading: "Chronic worry: 'searching for answers'", likelihood: "high" },
       { reading: "Rumination with exhaustion", likelihood: "medium" },
       { reading: "Health anxiety (searching for the cause)", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "What are you searching for — a cause, a cure, a reassurance?",
+      "What are you searching for: a cause, a cure, a reassurance?",
       "Has the searching changed what you do?",
     ],
-    trap: "'Tired of searching' is the Dogri rumination frame — the content of the search and the exhaustion are the clinical weight.",
+    trap: "'Tired of searching' is the Dogri rumination frame: the content of the search and the exhaustion are the clinical weight.",
     sources: ["Dogri help-seeking literature"],
   },
   {
@@ -2166,7 +2166,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Maithili", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Despair — 'the mind is wasted'", likelihood: "high" },
+      { reading: "Despair: 'the mind is wasted'", likelihood: "high" },
       { reading: "Depression if persistent", likelihood: "medium" },
       { reading: "Cognitive fatigue", likelihood: "medium" },
     ],
@@ -2174,7 +2174,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Wasted by what, since when, and what does it stop you doing?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "The dramatic 'mind is wasted' can mask risk — the will-to-live question is non-negotiable.",
+    trap: "The dramatic 'mind is wasted' can mask risk: the will-to-live question is non-negotiable.",
     sources: ["Maithili risk-screening literature"],
   },
   {
@@ -2183,7 +2183,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Maithili", "adult"],
     readings: ["disease", "psychopathology"],
     possible_meanings: [
-      { reading: "Physical weakness — anaemia, deficiency", likelihood: "high", clue: "pallor, exertion", physical: true },
+      { reading: "Physical weakness: anaemia, deficiency", likelihood: "high", clue: "pallor, exertion", physical: true },
       { reading: "Depressive fatigue", likelihood: "medium", clue: "morning worst" },
       { reading: "Post-illness debility", likelihood: "medium" },
     ],
@@ -2191,7 +2191,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Strength fallen in the body or the spirit?",
       "What used to be easy that isn't?",
     ],
-    trap: "Jor ghatal is the Maithili kamzori — the physical triad and the mood screen, both.",
+    trap: "Jor ghatal is the Maithili kamzori: the physical triad and the mood screen, both.",
     sources: ["Maithili clinical practice"],
   },
   {
@@ -2200,7 +2200,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Rajasthani", "all ages"],
     readings: ["psychopathology", "cultural_idiom", "disease"],
     possible_meanings: [
-      { reading: "Sadness/grief — the heavy heart", likelihood: "high" },
+      { reading: "Sadness/grief: the heavy heart", likelihood: "high" },
       { reading: "Depression if persistent", likelihood: "medium" },
       { reading: "Chest heaviness (cardiac workup)", likelihood: "low", clue: "exertional, pressure", physical: true },
     ],
@@ -2208,7 +2208,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Heavy with grief or heavy in the chest?",
       "Does it lift with good news?",
     ],
-    trap: "Dil bhaari is the Rajasthani heart-idiom — the grief question and the cardiac question, both.",
+    trap: "Dil bhaari is the Rajasthani heart-idiom: the grief question and the cardiac question, both.",
     sources: ["Rajasthani idioms; cardiac-mimic literature"],
   },
   {
@@ -2217,15 +2217,15 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Rajasthani", "adult"],
     readings: ["cultural_idiom", "disease"],
     possible_meanings: [
-      { reading: "Anger — 'the heat rises in me'", likelihood: "high" },
+      { reading: "Anger: 'the heat rises in me'", likelihood: "high" },
       { reading: "Fever (literal)", likelihood: "medium", clue: "measured temperature", physical: true },
       { reading: "Somatic anxiety (hot flushes)", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Heat like anger or like fever?",
-      "When does it rise — with provocation or with the body?",
+      "When does it rise, with provocation or with the body?",
     ],
-    trap: "Taap straddles anger and fever in Rajasthani — the measured-temperature question decides.",
+    trap: "Taap straddles anger and fever in Rajasthani: the measured-temperature question decides.",
     sources: ["Rajasthani humoral idioms"],
   },
   {
@@ -2234,7 +2234,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Chhattisgarhi", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Emotional pain — 'the soul aches'", likelihood: "high" },
+      { reading: "Emotional pain: 'the soul aches'", likelihood: "high" },
       { reading: "Grief/loss", likelihood: "medium", clue: "bereavement" },
       { reading: "Depression if persistent", likelihood: "medium" },
     ],
@@ -2242,7 +2242,7 @@ const REGIONAL4: IdiomEntry[] = [
       "What is the jee aching about?",
       "How long, and what does it stop you doing?",
     ],
-    trap: "Jee dukhe is the Chhattisgarhi heart-soul — the what/since-when/function questions decide.",
+    trap: "Jee dukhe is the Chhattisgarhi heart-soul: the what/since-when/function questions decide.",
     sources: ["Chhattisgarhi idioms of distress"],
   },
   {
@@ -2251,15 +2251,15 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Chhattisgarhi", "adult"],
     readings: ["cultural_idiom", "psychopathology"],
     possible_meanings: [
-      { reading: "Possession/spirit attribution — culturally sanctioned distress expression", likelihood: "high", clue: "episodes, intact between" },
+      { reading: "Possession/spirit attribution: culturally sanctioned distress expression", likelihood: "high", clue: "episodes, intact between" },
       { reading: "Dissociative episode", likelihood: "medium" },
       { reading: "First-episode psychosis if persistent with fixed beliefs", likelihood: "low" },
     ],
     disambiguating_questions: [
-      "What happens between the episodes — is she fully herself?",
+      "What happens between the episodes: is she fully herself?",
       "What does she make of it herself?",
     ],
-    trap: "The bhut frame is the Chhattisgarhi possession idiom — function between episodes is the discriminator.",
+    trap: "The bhut frame is the Chhattisgarhi possession idiom: function between episodes is the discriminator.",
     sources: ["Possession-trance literature; Chhattisgarhi clinical vignettes"],
   },
   {
@@ -2276,7 +2276,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Weakness in the body or the spirit?",
       "Any recent fever, weight loss, or pallor?",
     ],
-    trap: "Kamzori aawe is the Chhattisgarhi carrier — the malaria/fever history and the mood screen, both.",
+    trap: "Kamzori aawe is the Chhattisgarhi carrier: the malaria/fever history and the mood screen, both.",
     sources: ["Chhattisgarhi clinical practice; malaria-endemic region awareness"],
   },
   {
@@ -2285,7 +2285,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Maithili", "all ages"],
     readings: ["psychopathology", "cultural_idiom"],
     possible_meanings: [
-      { reading: "Worry/rumination — 'chinta has stuck'", likelihood: "high" },
+      { reading: "Worry/rumination: 'chinta has stuck'", likelihood: "high" },
       { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
       { reading: "Somatic anxiety", likelihood: "medium" },
     ],
@@ -2293,7 +2293,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Chinta about what, since when, and what does it stop you doing?",
       "What happens in the body when chinta comes?",
     ],
-    trap: "'Chinta has stuck' is the Maithili tension — the specify question is the same as everywhere.",
+    trap: "'Chinta has stuck' is the Maithili tension: the specify question is the same as everywhere.",
     sources: ["Maithili 'chinta' literature"],
   },
   {
@@ -2310,7 +2310,7 @@ const REGIONAL4: IdiomEntry[] = [
       "What does the thinking run toward?",
       "Does it stop you sleeping or working?",
     ],
-    trap: "Dogri 'too much thinking' is rumination — the content and the function cost are the data.",
+    trap: "Dogri 'too much thinking' is rumination: the content and the function cost are the data.",
     sources: ["Dogri anxiety idioms"],
   },
   {
@@ -2327,7 +2327,7 @@ const REGIONAL4: IdiomEntry[] = [
       "Fear of what, and what happens in the body at the peak?",
       "Does it come with a situation or out of nowhere?",
     ],
-    trap: "Bayike is the Tulu fear frame — the spontaneous-vs-situational question is the diagnosis.",
+    trap: "Bayike is the Tulu fear frame: the spontaneous-vs-situational question is the diagnosis.",
     sources: ["Tulu idioms; panic-spectrum literature"],
   },
   {
@@ -2336,7 +2336,7 @@ const REGIONAL4: IdiomEntry[] = [
     register: ["Rajasthani", "adult"],
     readings: ["psychopathology", "disease"],
     possible_meanings: [
-      { reading: "Depressive inertia — 'I can only lie down'", likelihood: "high" },
+      { reading: "Depressive inertia: 'I can only lie down'", likelihood: "high" },
       { reading: "Physical exhaustion (anaemia, chronic illness)", likelihood: "medium", clue: "pallor, known disease", physical: true },
       { reading: "Avoidance behaviour", likelihood: "medium" },
     ],
@@ -2344,13 +2344,13 @@ const REGIONAL4: IdiomEntry[] = [
       "Lying down from exhaustion or from 'no point'?",
       "Have you had thoughts of ending your life?",
     ],
-    trap: "'Keep lying down' is the Rajasthani inertia idiom — the exhaustion/despair question and the risk screen, both.",
+    trap: "'Keep lying down' is the Rajasthani inertia idiom: the exhaustion/despair question and the risk screen, both.",
     sources: ["Rajasthani risk-screening literature"],
   },
 ];
 
 
-/** Regional batch 5 (round 8 expansion) — reaching the 110 target.
+/** Regional batch 5 (round 8 expansion): reaching the 110 target.
  *  Focusing on: Bengali, Tamil, Telugu, Kannada, Marathi, Gujarati variants. */
 const REGIONAL5: IdiomEntry[] = [
   {
@@ -2367,7 +2367,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Does the ga ghulano happen after food or when you are worried?",
       "Is there actual vomiting or just the feeling?",
     ],
-    trap: "'Ga ghulano' is as likely a social aversion as it is a stomach bug — ask about the trigger.",
+    trap: "'Ga ghulano' is as likely a social aversion as it is a stomach bug: ask about the trigger.",
     sources: ["Bengali somatic-idiom literature"],
   },
   {
@@ -2384,7 +2384,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Is the heart beating fast or irregular?",
       "Does it happen at rest or on exertion?",
     ],
-    trap: "The Bengali 'buk dhor pohr' is the cardiophobia carrier — check the pulse before the mood.",
+    trap: "The Bengali 'buk dhor pohr' is the cardiophobia carrier: check the pulse before the mood.",
     sources: ["Bengali panic-disorder studies"],
   },
   {
@@ -2401,7 +2401,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Is it a sharp pain or a heavy pressure?",
       "When in the day is it worst?",
     ],
-    trap: "Thalai vazhi is the Tamil default — quality and timing decide psyche from sinus.",
+    trap: "Thalai vazhi is the Tamil default: quality and timing decide psyche from sinus.",
     sources: ["Tamil clinical practice"],
   },
   {
@@ -2418,7 +2418,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Does the mood stay bad all day or change in the evening?",
       "How was your sleep last night?",
     ],
-    trap: "The morning dip is depression's Tamil calling card — check the diurnal variation.",
+    trap: "The morning dip is depression's Tamil calling card: check the diurnal variation.",
     sources: ["Tamil depression-screening literature"],
   },
   {
@@ -2428,14 +2428,14 @@ const REGIONAL5: IdiomEntry[] = [
     readings: ["disease", "psychopathology", "cultural_idiom"],
     possible_meanings: [
       { reading: "Severe physical exhaustion", likelihood: "high", clue: "anaemia, post-fever", physical: true },
-      { reading: "Depressive anergia — 'the bones are water'", likelihood: "medium" },
+      { reading: "Depressive anergia: 'the bones are water'", likelihood: "medium" },
       { reading: "Hopelessness / giving up", likelihood: "medium" },
     ],
     disambiguating_questions: [
       "Water like weakness in the muscles or like no will to move?",
       "Any recent fever or weight loss?",
     ],
-    trap: "Niru padatam is the Telugu 'melted' state — the physical triad and the risk screen, both.",
+    trap: "Niru padatam is the Telugu 'melted' state: the physical triad and the risk screen, both.",
     sources: ["Telugu somatic-idiom literature"],
   },
   {
@@ -2445,14 +2445,14 @@ const REGIONAL5: IdiomEntry[] = [
     readings: ["disease", "psychopathology"],
     possible_meanings: [
       { reading: "Migraine / Vascular headache", likelihood: "high", clue: "pulsating, nausea", physical: true },
-      { reading: "Agitated distress — 'head is beating'", likelihood: "medium" },
+      { reading: "Agitated distress: 'head is beating'", likelihood: "medium" },
       { reading: "Tension headache", likelihood: "medium", physical: true },
     ],
     disambiguating_questions: [
       "Does it feel like a pulse or a band?",
       "Does light or sound make it worse?",
     ],
-    trap: "Talapotu is the sharpest Telugu headache — migraine until proven otherwise.",
+    trap: "Talapotu is the sharpest Telugu headache: migraine until proven otherwise.",
     sources: ["Telugu clinical practice"],
   },
   {
@@ -2469,7 +2469,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Is the pain in the joints or the whole Mai (body)?",
       "Does the pain lift when you are busy or happy?",
     ],
-    trap: "Mai kai novu is the Kannada 'whole body' mask — screen the mood before the ortho referral.",
+    trap: "Mai kai novu is the Kannada 'whole body' mask: screen the mood before the ortho referral.",
     sources: ["Kannada clinical-encounter literature"],
   },
   {
@@ -2486,7 +2486,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Does it happen when you stand up suddenly?",
       "Any heart racing or fear at the same time?",
     ],
-    trap: "The Kannada 'blackout' can be a heart valve, an iron level, or a panic attack — the posture question decides.",
+    trap: "The Kannada 'blackout' can be a heart valve, an iron level, or a panic attack: the posture question decides.",
     sources: ["Kannada somatic idioms"],
   },
   {
@@ -2503,7 +2503,7 @@ const REGIONAL5: IdiomEntry[] = [
       "No juice like weakness or like the legs won't obey?",
       "Any tingling or numbness in the feet?",
     ],
-    trap: "Payat trav is the Marathi kamzori — the metabolic workup is the first step.",
+    trap: "Payat trav is the Marathi kamzori: the metabolic workup is the first step.",
     sources: ["Marathi help-seeking literature"],
   },
   {
@@ -2520,7 +2520,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Do the ants come when you breathe fast or are worried?",
       "Any numbness in the hands at the same time?",
     ],
-    trap: "'Ants in the head' is the Marathi tingling idiom — check for hyperventilation and B12.",
+    trap: "'Ants in the head' is the Marathi tingling idiom: check for hyperventilation and B12.",
     sources: ["Marathi clinical vignettes"],
   },
   {
@@ -2534,10 +2534,10 @@ const REGIONAL5: IdiomEntry[] = [
       { reading: "Depressive heaviness", likelihood: "medium" },
     ],
     disambiguating_questions: [
-      "Filled up with what — thoughts, tears, or a weight?",
-      "What happens when the mind is full — do you cry?",
+      "Filled up with what: thoughts, tears, or a weight?",
+      "What happens when the mind is full: do you cry?",
     ],
-    trap: "The Gujarati 'full mind' is the threshold of a crying spell — be ready for the affect reveal.",
+    trap: "The Gujarati 'full mind' is the threshold of a crying spell: be ready for the affect reveal.",
     sources: ["Gujarati help-seeking literature"],
   },
   {
@@ -2554,7 +2554,7 @@ const REGIONAL5: IdiomEntry[] = [
       "No strength in the body or no strength to face things?",
       "What does a day look like?",
     ],
-    trap: "Shakti nathi is the Gujarati kamzori — the physical workup precedes the mood label.",
+    trap: "Shakti nathi is the Gujarati kamzori: the physical workup precedes the mood label.",
     sources: ["Gujarati clinical practice"],
   },
   {
@@ -2571,7 +2571,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Does the world turn or do you feel faint?",
       "When does it happen?",
     ],
-    trap: "Matha ghora is the Bengali dizzy-carrier — specify the spin before the psyche.",
+    trap: "Matha ghora is the Bengali dizzy-carrier: specify the spin before the psyche.",
     sources: ["Bengali somatic-idiom studies"],
   },
   {
@@ -2588,7 +2588,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Does it burn after food or when you walk fast?",
       "Does antacid help?",
     ],
-    trap: "Nenju erithal is the Tamil gas-heart differential — the exertional question is the safety.",
+    trap: "Nenju erithal is the Tamil gas-heart differential: the exertional question is the safety.",
     sources: ["Tamil clinical literature"],
   },
   {
@@ -2605,7 +2605,7 @@ const REGIONAL5: IdiomEntry[] = [
       "Fear of a thing or fear in the body?",
       "What happens when the bhayam is at its peak?",
     ],
-    trap: "Bhayam is the Telugu anxiety word — specify the somatic peaks to catch the panic.",
+    trap: "Bhayam is the Telugu anxiety word: specify the somatic peaks to catch the panic.",
     sources: ["Telugu anxiety idioms"],
   },
 ];

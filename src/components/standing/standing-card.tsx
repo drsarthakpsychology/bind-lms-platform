@@ -49,7 +49,7 @@ export async function StandingCard({ userId, linked = true }: { userId: string; 
         {[
           { icon: Clock, v: `${me?.hours ?? 0} h`, l: "on VIBHA" },
           { icon: PlayCircle, v: `${me?.lectureHours ?? 0} h`, l: "lectures" },
-          { icon: Trophy, v: me ? `#${me.rank}` : "—", l: `of ${board.rows.length || 1} overall` },
+          { icon: Trophy, v: me ? `#${me.rank}` : "-", l: `of ${board.rows.length || 1} overall` },
         ].map(({ icon: Icon, v, l }) => (
           <div key={l} className="rounded-xl bg-background px-2 py-2">
             <dt className="sr-only">{l}</dt>

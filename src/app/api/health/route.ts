@@ -5,14 +5,14 @@ import { createAdminClient } from "@/lib/supabase/server";
  * GET /api/health
  *
  * Lightweight, unauthenticated health check. Returns JSON with the status of
- * each dependency (database, storage) WITHOUT leaking sensitive detail — no
+ * each dependency (database, storage) WITHOUT leaking sensitive detail, no
  * connection strings, no env values, no stack traces.
  *
  * Used by the uptime cron (keeps the Supabase free project from pausing and
  * alerts on outages).
  */
 
-/** Each dependency check is bounded — a hung Supabase call must not hang the
+/** Each dependency check is bounded: a hung Supabase call must not hang the
  *  health endpoint itself (that would defeat uptime monitoring). */
 const CHECK_TIMEOUT_MS = 4_000;
 

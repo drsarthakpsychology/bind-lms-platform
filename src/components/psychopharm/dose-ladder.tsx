@@ -7,7 +7,7 @@ import { formatBand } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
 
 /**
- * The dose ladder — the single most important component in the tool (D3).
+ * The dose ladder: the single most important component in the tool (D3).
  *
  * One rung per band, real values from the data. Tapping a rung switches the
  * page to that band; the URL changes so it's shareable and survives refresh.
@@ -69,7 +69,7 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
         })}
       </div>
       <p className="text-caption text-muted-foreground">
-        A drug is not one thing — the same medication at a different dose is doing a different job.
+        A drug is not one thing: the same medication at a different dose is doing a different job.
       </p>
     </div>
   );

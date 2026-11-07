@@ -27,7 +27,7 @@ const STATUSES = [
 
 /**
  * A field-group label. The left pitch already carries the 01/02/03 process
- * steps, so the form sections use the eyebrow's dot marker instead — same
+ * steps, so the form sections use the eyebrow's dot marker instead: same
  * editorial language, no competing number sequences on one screen.
  */
 function GroupLabel({ children }: { children: React.ReactNode }) {
@@ -55,7 +55,7 @@ export function WaitlistForm() {
     const form = e.currentTarget;
     const res = await submitWaitlist(new FormData(form));
     if (res.ok) {
-      // Funnel event. Non-identifying only — the applicant's status bucket is
+      // Funnel event. Non-identifying only: the applicant's status bucket is
       // useful for cohort mix; name/email/phone never leave the DB as events.
       trackEvent("waitlist_joined", {
         status: new FormData(form).get("status") ?? "unknown",
@@ -168,7 +168,7 @@ export function WaitlistForm() {
         </div>
       </fieldset>
 
-      {/* Terms acceptance — required and unticked. The browser's native
+      {/* Terms acceptance: required and unticked. The browser's native
           constraint validation blocks submit until it's checked, and the
           server action re-validates (defense-in-depth) before persisting the
           acceptance timestamp + policy version with the enquiry. */}
@@ -217,7 +217,7 @@ export function WaitlistForm() {
         </label>
       </fieldset>
 
-      {/* Honeypot — hidden from humans, bots fill it. */}
+      {/* Honeypot: hidden from humans, bots fill it. */}
       <input
         type="text"
         name="honeypot"

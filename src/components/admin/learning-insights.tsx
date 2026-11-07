@@ -22,7 +22,7 @@ function Bar({ value, max, label }: { value: number; max: number; label: string 
 }
 
 const fmt = (n: number, unit: string) => (unit === "%" ? `${n}%` : unit ? `${n} ${unit}` : String(n));
-const days = (n: number | null) => (n === null ? "—" : n === 0 ? "Today" : n === 1 ? "Yesterday" : `${n} days ago`);
+const days = (n: number | null) => (n === null ? "Never" : n === 0 ? "Today" : n === 1 ? "Yesterday" : `${n} days ago`);
 
 function names(list: StudentSummary[], n = 8) {
   const shown = list.slice(0, n).map((s) => s.name).join(", ");
@@ -50,7 +50,7 @@ function ModuleRow({ m, students }: { m: ModuleInsight; students: number }) {
 function Headline({ id, stats }: { id: string; stats: ResultStat[] }) {
   if (!stats.length) return null;
   // The serial position curve reads best as columns; everything else as tiles
-  // (illusion settings can pass 100%, so a 0–100 bar would mislead).
+  // (illusion settings can pass 100%, so a 0 to 100 bar would mislead).
   if (id === "serial-position") {
     return (
       <ul className="mt-3 flex items-end gap-3">
@@ -88,7 +88,7 @@ function LabCard({ l }: { l: LabInsight }) {
       ) : (
         <>
           <p className="mt-1 text-numeric text-xs text-muted-foreground">
-            {l.students} {l.students === 1 ? "student" : "students"} · {l.runs} runs · check {l.avgCheckPct === null ? "—" : `${l.avgCheckPct}%`} · reflected {l.reflectPct ?? 0}%
+            {l.students} {l.students === 1 ? "student" : "students"} · {l.runs} runs · check {l.avgCheckPct === null ? "-" : `${l.avgCheckPct}%`} · reflected {l.reflectPct ?? 0}%
           </p>
           {l.headline.length ? (
             <>
@@ -275,7 +275,7 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
                   <td className="px-3 py-2">{s.started ? days(s.daysInactive) : "Not started"}</td>
                   <td className="px-3 py-2">{s.sectionsDone}</td>
                   <td className="px-3 py-2">{s.modulesCompleted}</td>
-                  <td className="px-3 py-2">{s.avgTestPct === null ? "—" : `${s.avgTestPct}%`}</td>
+                  <td className="px-3 py-2">{s.avgTestPct === null ? "-" : `${s.avgTestPct}%`}</td>
                   <td className="px-3 py-2">{s.labsDone}</td>
                   <td className="px-3 py-2">{s.dueReviews}</td>
                 </tr>

@@ -15,7 +15,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/admin/calibration — record one paired calibration score for a
+ * POST /api/admin/calibration: record one paired calibration score for a
  * dimension and recompute its agreement (weighted kappa over all pairs) +
  * n_scored. When the gate passes (>= 10 pairs, kappa >= 0.6) the dimension
  * flips to validated and its number becomes visible to students.

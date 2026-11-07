@@ -1,5 +1,5 @@
 /**
- * Deterministic chunker — turns the per-page book text + a BookOutline into
+ * Deterministic chunker: turns the per-page book text + a BookOutline into
  * hierarchical corpus chunks (book → chapter → section → passage) with page
  * traceability. Pure library (no Supabase, no network), fully testable.
  *
@@ -14,12 +14,12 @@
  *   2. Attribute each page to a chapter (and, where possible, a section)
  *      using the outline's page ranges.
  *   3. Within each chapter/section, split on paragraph + sentence boundaries
- *      into self-contained passages (~500–900 chars) so a retrieved chunk
+ *      into self-contained passages (~500 to 900 chars) so a retrieved chunk
  *      reads well on its own.
  *   4. Emit a chunk per passage carrying book/chapter/section/page metadata.
  *
  * Page numbers are PDF indexes (the <<<PAGE n>>> marker value), never printed
- * page numbers — the outline contract guarantees this.
+ * page numbers: the outline contract guarantees this.
  */
 import type { BookOutline, OutlineChapter } from "./outline";
 
@@ -80,7 +80,7 @@ export function pageToSection(outline: BookOutline): Map<number, string> {
 
 /**
  * Split a block of text into passages at sentence boundaries, each within
- * [minChars, maxChars]. Preserves as much of the original as possible — no
+ * [minChars, maxChars]. Preserves as much of the original as possible, no
  * invented content.
  */
 export function splitPassages(text: string, maxChars = 900, minChars = 400): string[] {
@@ -110,7 +110,7 @@ export function splitPassages(text: string, maxChars = 900, minChars = 400): str
       }
     }
     if (cut === -1) {
-      // No good sentence boundary — fall back to the last comma/semicolon, then hard cut.
+      // No good sentence boundary: fall back to the last comma/semicolon, then hard cut.
       let commaCut = -1;
       for (let i = maxChars; i >= minChars; i--) {
         if (",;:".includes(rest[i] ?? "")) { commaCut = i + 1; break; }

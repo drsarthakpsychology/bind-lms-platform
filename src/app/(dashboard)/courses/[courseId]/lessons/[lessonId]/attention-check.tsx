@@ -8,8 +8,8 @@ import { recordAttentionCheck } from "./attention-actions";
 type Phase = "idle" | "asking" | "missed";
 
 /**
- * "Still watching?" — counts real playback seconds; at a random moment every
- * 12–20 minutes asks the student to tap "Yes". No answer in 60 s: pause and
+ * "Still watching?": counts real playback seconds; at a random moment every
+ * 12 to 20 minutes asks the student to tap "Yes". No answer in 60 s: pause and
  * go back to where we asked (those minutes don't count). The player skips its
  * progress ping while a check is open (askingRef).
  */

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SiteFooter } from "@/components/site/site-footer";
 import { ShieldCheck, ShieldX, HelpCircle } from "lucide-react";
 
-// Public verification — never indexed, no auth required.
+// Public verification, never indexed, no auth required.
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**

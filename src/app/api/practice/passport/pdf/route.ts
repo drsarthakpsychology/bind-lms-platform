@@ -7,7 +7,7 @@ import { generatePassportPdf } from "@/lib/passport-pdf";
 export const runtime = "nodejs";
 
 /**
- * GET /api/practice/passport/pdf — download the student's own Skills Passport
+ * GET /api/practice/passport/pdf: download the student's own Skills Passport
  * as a PDF. Owner-only: reads this student's competencies + events (RLS
  * scopes to the caller).
  */

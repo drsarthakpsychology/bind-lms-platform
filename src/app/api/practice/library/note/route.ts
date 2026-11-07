@@ -12,9 +12,9 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/library/note — save/update the caller's annotation on a
+ * POST /api/practice/library/note: save/update the caller's annotation on a
  * corpus document (peers-unlock-after-yours).
- * GET  ?documentId= — the caller's note + peers' notes (peers' readable ONLY
+ * GET  ?documentId=: the caller's note + peers' notes (peers' readable ONLY
  * when the caller has their own note on the document).
  */
 export async function POST(req: Request) {

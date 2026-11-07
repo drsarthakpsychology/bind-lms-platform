@@ -6,6 +6,8 @@ import {
   dueItems,
   emptyState,
   finishLesson,
+  recordBlitzRound,
+  creditPlay,
   levelFor,
   liveStreak,
   normalise,
@@ -103,5 +105,31 @@ describe("learn engine", () => {
   it("repairs junk from storage", () => {
     expect(normalise(null).xp).toBe(0);
     expect(normalise({ xp: 40, badges: [1, "perfect"] }).badges).toEqual(["perfect"]);
+  });
+});
+
+describe("recordBlitzRound", () => {
+  it("keeps the best and awards Quick thinker at 15 right", () => {
+    const a = recordBlitzRound(emptyState(), 9);
+    expect(a.blitzBest).toBe(9);
+    expect(a.badges).not.toContain("blitz_15");
+    const b = recordBlitzRound(a, 15);
+    expect(b.blitzBest).toBe(15);
+    expect(b.badges).toContain("blitz_15");
+    expect(recordBlitzRound(b, 4)).toBe(b);
+  });
+});
+
+describe("creditPlay", () => {
+  it("moves the goal and streak without adding the server XP again", () => {
+    const s = emptyState();
+    const a = creditPlay(s, 5, "2026-11-07");
+    expect(a.xp).toBe(s.xp);
+    expect(a.daily.xp).toBe(5);
+    expect(a.streak.count).toBe(1);
+    const b = creditPlay(a, 500, "2026-11-07");
+    expect(b.daily.goalHit).toBe(true);
+    expect(b.xp).toBeGreaterThan(a.xp);
+    expect(b.xp - a.xp).toBeLessThan(500);
   });
 });

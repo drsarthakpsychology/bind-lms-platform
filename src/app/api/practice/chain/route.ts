@@ -19,9 +19,9 @@ const INITIAL_STEPS = [
 ];
 
 /**
- * POST /api/practice/chain — create-or-get the multi-surface chain for one
+ * POST /api/practice/chain: create-or-get the multi-surface chain for one
  * patient after a completed session (casebook "the chain"). Owner-scoped;
- * RLS on practice_chains enforces it. A check, not a test — silent callers.
+ * RLS on practice_chains enforces it. A check, not a test: silent callers.
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
   // actionable the moment content lands.
   const { data: simCase } = await supabase.from("sim_cases").select("title, follow_up").eq("id", caseId).maybeSingle();
   const caseTitle = (simCase?.title as string | undefined) ?? "your patient";
-  const patientName = caseTitle.split("—")[0].trim().replace(/^(.+?),.*$/, "$1") || caseTitle;
+  const patientName = caseTitle.split(/[\u2014:]/)[0].trim().replace(/^(.+?),.*$/, "$1") || caseTitle;
   const followUp = simCase?.follow_up as Record<string, unknown> | null | undefined;
   const hasFollowUp = !!followUp && typeof followUp === "object" && !Array.isArray(followUp) && Object.keys(followUp).length > 0;
 
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
       s.surface === "consulting_room" ? { ...s, status: "complete", artefact_id: parsed.data.session_id, completed_at: new Date().toISOString() } : s,
     );
     // Extend with the follow-up visit if content landed after the chain was
-    // created (idempotent — never duplicate the step).
+    // created (idempotent, never duplicate the step).
     if (hasFollowUp && !steps.some((s) => s.surface === "follow_up")) {
       steps.push({ surface: "follow_up", status: "pending" });
     }

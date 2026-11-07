@@ -3,7 +3,7 @@ import type { NavItem } from "@/components/navigation/nav-items";
 
 /**
  * Icons are referenced by string name (keys into NAV_ICONS in nav-items.tsx),
- * not by component reference — the config is imported into Server Components
+ * not by component reference: the config is imported into Server Components
  * and passed to a Client Component, and function values can't be serialized
  * across that boundary.
  */

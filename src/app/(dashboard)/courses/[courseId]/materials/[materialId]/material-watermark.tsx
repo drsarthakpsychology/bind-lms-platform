@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Forensic watermark for the material viewer — same deterrent as video:
+ * Forensic watermark for the material viewer: same deterrent as video:
  * viewer's identity is baked in server-side (email · session · IP), rendered
  * as low-opacity text with a subtle shadow, drifting so a single crop or blur
  * can't clean it. Never intercepts pointer events.
  *
- * This is a deterrent, not a guarantee — a screenshot can still be taken. It
+ * This is a deterrent, not a guarantee: a screenshot can still be taken. It
  * just makes a leak traceable.
  */
 export function MaterialWatermark({ label }: { label: string }) {

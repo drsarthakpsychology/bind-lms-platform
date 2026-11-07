@@ -6,7 +6,7 @@ import { loadRecipientData, type RecipientData } from "./actions";
 import { cn } from "@/lib/utils";
 
 /**
- * Recipient selection for the compose tab — the same select-people idiom as
+ * Recipient selection for the compose tab: the same select-people idiom as
  * course enrollment (search + checkboxes + select-all), plus one-tap course
  * shortcuts so a cohort-wide email is a single checkbox. The recipient set is
  * lifted to the parent (compose tab) and shown as a live count.
@@ -108,7 +108,7 @@ export function RecipientPicker({
 
   return (
     <div className="space-y-3">
-      {/* By cohort — message just one batch; the other cohort gets nothing. */}
+      {/* By cohort: message just one batch; the other cohort gets nothing. */}
       {data.cohorts.length > 0 ? (
         <div className="space-y-1.5">
           <p className="text-caption font-semibold text-foreground">Message one cohort</p>

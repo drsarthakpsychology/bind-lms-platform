@@ -18,7 +18,7 @@ function lessonStatus(l: { status?: string | null } | null | undefined): LessonS
 }
 
 /**
- * The course path — one shared server component for the course page
+ * The course path: one shared server component for the course page
  * (`/courses/[courseId]`) and the single-course dashboard. It owns the data
  * fetch, the week/lesson computation, and the rendering, so the two surfaces
  * can never drift apart: same header, same "0 of N lessons complete" line,
@@ -94,7 +94,7 @@ export async function loadCourseOverview(
   const myCohorts = myCohortsAll.filter((c) => access.cohortIds.includes(c.id));
   const visibleLessonIds = new Set(lessons.map((l) => l.id));
 
-  // `playable` is the unlocked set students can actually complete — `live`
+  // `playable` is the unlocked set students can actually complete: `live`
   // lessons are visible but locked (not counted), `hidden` lessons never show.
   const playable = (lessons ?? []).filter(
     (l) => lessonStatus(l) === "unlocked" && (l.video_storage_path || l.description),
@@ -113,7 +113,7 @@ export async function loadCourseOverview(
   const watchedIds = new Set(
     (progress ?? []).filter((p) => (p.watched_seconds ?? 0) > 0).map((p) => p.lesson_id),
   );
-  // `started` is the single source of truth for whether the course has begun —
+  // `started` is the single source of truth for whether the course has begun:
   // completed OR watched anything. It gates "in progress" everywhere.
   const started = completedIds.size > 0 || watchedIds.size > 0;
   const completedCount = playable.filter((l) => completedIds.has(l.id)).length;
@@ -123,7 +123,7 @@ export async function loadCourseOverview(
 
   const lessonsById = new Map((lessons ?? []).map((l) => [l.id, l]));
   const submissionByAssignment = new Map((submissions ?? []).map((s) => [s.assignment_id, s]));
-  // Students only ever see PUBLISHED assignments — a draft (unpublished) row is
+  // Students only ever see PUBLISHED assignments: a draft (unpublished) row is
   // the "Draft chip with no explanation" the audit called out, so it's dropped
   // here rather than shown with a confusing label.
   // A lecture this person can't watch takes its assignment with it.
@@ -170,7 +170,7 @@ export async function loadCourseOverview(
 
   const currentWeek = resumeTarget ? (resumeTarget as { week?: number }).week ?? 1 : 1;
 
-  // The single next action — the one highlighted row. First incomplete lesson,
+  // The single next action: the one highlighted row. First incomplete lesson,
   // else first unsubmitted published assignment.
   let nextAction: { type: "lesson" | "assignment"; id: string; week: number; title: string; href: string } | null = null;
 
@@ -207,7 +207,7 @@ export async function loadCourseOverview(
 
     const isCurrentWeek = weekNum === currentWeek;
     const isFutureWeek = weekNum > currentWeek;
-    // Only unlocked lessons count toward a week being complete — `live` rows
+    // Only unlocked lessons count toward a week being complete: `live` rows
     // are locked and can never be completed by a student.
     const weekComplete = weekPlayable.length > 0 && weekPlayable.every((l) => completedIds.has(l.id));
     // Week status derives from the SAME `started` flag as the header.

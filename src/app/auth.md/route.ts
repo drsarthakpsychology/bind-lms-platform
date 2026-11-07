@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * Auth.md — agent registration/auth discovery document. Served at /auth.md
+ * Auth.md: agent registration/auth discovery document. Served at /auth.md
  * as markdown. VIBHA's student-facing services are authenticated via Supabase
  * sessions (human login); there is no agent-provisioned credential flow, so
  * this document is self-contained and honest about what an agent can do.
@@ -15,7 +15,7 @@ with VIBHA School of Psychology (https://vibhapsychology.com).
 
 ## What an agent can do without credentials
 
-- Read the public marketing pages (/, /waitlist) — plain HTTP GET, no auth.
+- Read the public marketing pages (/, /waitlist): plain HTTP GET, no auth.
 - Query the service health check: GET /api/health.
 - Request the landing page as markdown by sending \`Accept: text/markdown\`.
 - Discover the API surface via /openapi.json and /.well-known/api-catalog.

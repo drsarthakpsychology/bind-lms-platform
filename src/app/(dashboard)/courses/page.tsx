@@ -11,7 +11,7 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
- * /courses — "Lectures" in the navigation. With one course (the usual case)
+ * /courses: "Lectures" in the navigation. With one course (the usual case)
  * it opens that course's library straight away; with several it lists them.
  * Same visibility rules as Home: roster (lectures-only) students see every
  * published course, others see the courses they're enrolled in.

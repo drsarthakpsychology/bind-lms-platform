@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, Flame, FlaskConical, GraduationCap, LayoutGrid, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Swords, Timer, Trophy, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, DoorOpen, Hospital, Layers, Pill, ScanEye, Flame, FlaskConical, GraduationCap, LayoutGrid, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Swords, Timer, Trophy, Zap } from "lucide-react";
 import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
@@ -39,6 +39,11 @@ const GAMES = [
   { href: "/games/quizzes", title: "Quiz path", text: "Short quizzes by topic. Earn stars.", icon: Route, tone: "white" },
   { href: "/games/detective", title: "Clinic detective", text: "Name the medicine or disorder from clues.", icon: Search, tone: "blue" },
   { href: "/games/scenarios", title: "What would you do?", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, tone: "white" },
+  { href: "/games/mse", title: "MSE Lab", text: "Read a short interview. Tag every finding with the exact word.", icon: ScanEye, tone: "blue" },
+  { href: "/games/ward", title: "Ward Week", text: "Follow one patient through five sessions. Your choices change the ending.", icon: Hospital, tone: "lime" },
+  { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors, side effects and dangerous mixes. Three lives.", icon: Pill, tone: "ink" },
+  { href: "/games/escape", title: "Team Escape Room", text: "Race other teams through linked clues to discharge the patient.", icon: DoorOpen, tone: "blue" },
+  { href: "/games/comorbid", title: "Comorbid", text: "A card duel. Build a diagnosis; block your rival with rule-outs.", icon: Layers, tone: "white" },
   { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet language.", icon: Star, tone: "white" },
 ] as const;
 

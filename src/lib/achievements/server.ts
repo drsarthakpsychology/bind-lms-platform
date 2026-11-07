@@ -11,7 +11,7 @@ import { displayName } from "@/lib/learn/leaderboard";
 /**
  * Server-side evaluation + awarding. Reads the student's verified records once,
  * evaluates every enabled badge achievement, and awards any that are newly
- * satisfied — idempotently (a second run is a no-op).
+ * satisfied: idempotently (a second run is a no-op).
  */
 
 /** League + ledger facts for milestones (zeros if those tables aren't there yet). */

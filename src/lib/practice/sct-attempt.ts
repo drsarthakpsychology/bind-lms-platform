@@ -1,11 +1,11 @@
 import type { SctResponse } from "./sct";
 
 /**
- * SCT attempt persistence (Part 6.3) — mirror the osce/mse pattern.
+ * SCT attempt persistence (Part 6.3): mirror the osce/mse pattern.
  *
  * A completed judgment call is shaped client-side into an SctAttemptPayload
  * and POSTed to /api/practice/sct/attempt. Pure, tested, no network or auth.
- * One row per (item, user) — the table's unique constraint upserts.
+ * One row per (item, user): the table's unique constraint upserts.
  */
 
 /** Shape of an SCT attempt payload sent to /api/practice/sct/attempt. */

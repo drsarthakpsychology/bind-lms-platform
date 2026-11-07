@@ -68,7 +68,7 @@ export async function requireStudentApi(gates: ApiGate | readonly ApiGate[] = []
 
 /**
  * A second, narrower check for a profile already admitted by
- * `requireStudentApi` — for routes whose feature is only known after parsing
+ * `requireStudentApi`, for routes whose feature is only known after parsing
  * the body. Returns a 403 response, or null when allowed.
  */
 export async function denyUnlessGate(profile: Profile, gates: ApiGate | readonly ApiGate[]): Promise<NextResponse | null> {

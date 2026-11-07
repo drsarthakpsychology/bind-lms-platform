@@ -1,5 +1,5 @@
 /**
- * Feature flags (v5.1 A2) — per-tool go-live control for the admin.
+ * Feature flags (v5.1 A2): per-tool go-live control for the admin.
  *
  * Each feature has a three-state `status`:
  *   - "off"      → hidden entirely. No card on the practice hub, and the

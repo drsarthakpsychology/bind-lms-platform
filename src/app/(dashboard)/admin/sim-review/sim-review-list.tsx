@@ -73,7 +73,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
     <div className="space-y-3">
       {rows.map((r) => {
         const isOpen = open === r.id;
-        const overall = typeof r.overall === "number" ? r.overall.toFixed(1) : "—";
+        const overall = typeof r.overall === "number" ? r.overall.toFixed(1) : "-";
         return (
           <div key={r.id} className="rounded-md border-2 border-border bg-card hard-shadow-sm">
             <button
@@ -115,10 +115,10 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
 
                 {/* rubric quick view */}
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                  <MiniStat label="Open:closed" value={String(r.rubric.open_closed_ratio ?? "—")} />
-                  <MiniStat label="Reflective" value={String(r.rubric.reflective_statements ?? "—")} />
-                  <MiniStat label="Premature reassure" value={String(r.rubric.premature_reassurance ?? "—")} warn={(r.rubric.premature_reassurance as number) > 0} />
-                  <MiniStat label="Risk timing" value={String(r.rubric.risk_timing ?? "—")} />
+                  <MiniStat label="Open:closed" value={String(r.rubric.open_closed_ratio ?? "-")} />
+                  <MiniStat label="Reflective" value={String(r.rubric.reflective_statements ?? "-")} />
+                  <MiniStat label="Premature reassure" value={String(r.rubric.premature_reassurance ?? "-")} warn={(r.rubric.premature_reassurance as number) > 0} />
+                  <MiniStat label="Risk timing" value={String(r.rubric.risk_timing ?? "-")} />
                 </div>
 
                 {/* faculty comment */}
@@ -145,7 +145,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
                           step={0.5}
                           value={corrected[r.id] ?? ""}
                           onChange={(e) => setCorrected((c) => ({ ...c, [r.id]: e.target.value }))}
-                          placeholder="—"
+                          placeholder="-"
                           className="w-16 rounded-md border-2 border-border bg-background px-2 py-1 text-center text-numeric text-small focus:outline-none focus:ring-2 focus:ring-ring"
                         />
                       </label>

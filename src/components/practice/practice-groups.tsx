@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 
 /** Icon name → component map (functions can't cross the Server→Client
- *  boundary, so the page passes plain string names — same pattern as the
+ *  boundary, so the page passes plain string names: same pattern as the
  *  sidebar nav). */
 export const PRACTICE_ICONS: Record<string, LucideIcon> = {
   stethoscope: Stethoscope,
@@ -28,7 +28,7 @@ export const PRACTICE_ICONS: Record<string, LucideIcon> = {
   sparkles: Sparkles,
 };
 
-/** A practice card's data (serializable — passed over the Server→Client boundary). */
+/** A practice card's data (serializable, passed over the Server→Client boundary). */
 export interface PracticeCardData {
   href: string;
   title: string;
@@ -38,7 +38,7 @@ export interface PracticeCardData {
   icon: string; // key into PRACTICE_ICONS
   state?: string; // "new" | "in_progress" | "done_today" | "due"
   progress?: string;
-  locked?: boolean; // flag is "live" — section visible but not yet unlocked
+  locked?: boolean; // flag is "live": section visible but not yet unlocked
 }
 
 export interface PracticeGroup {
@@ -55,7 +55,7 @@ const STATE_STYLE: Record<string, { label: string; className: string }> = {
   due: { label: "Due", className: "bg-status-pending-bg text-status-pending-fg" },
 };
 
-/** Flagship "core" tools — curated full workflows, set apart visually from the
+/** Flagship "core" tools: curated full workflows, set apart visually from the
  *  single-skill drills. Matched by href (server passes href, not a flag). */
 const CORE_TOOLS = new Set([
   "/practice/consulting-room",
@@ -72,7 +72,7 @@ const OPEN_KEY = "practice:group-open";
  * "how long have I got" answer), everything else collapsed.
  *
  * Mobile-first: each group is a quiet text header (a full-width toggle, not a
- * bordered box) and each tool is a single tappable `MobileListItem` — icon
+ * bordered box) and each tool is a single tappable `MobileListItem`: icon
  * tile + two-line title + one meta line + state chip. No card-inside-card.
  */
 export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {

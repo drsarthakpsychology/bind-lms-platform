@@ -1,5 +1,5 @@
 /**
- * Faculty data model (LANDING_PLAN §16) — the public site's "Who is building
+ * Faculty data model (LANDING_PLAN §16): the public site's "Who is building
  * this" section is written around the mission + VIBHA Healing Centre + the
  * clinical lead today. This model exists so a faculty directory can be added
  * and populated LATER without restructuring. Never render placeholder humans.

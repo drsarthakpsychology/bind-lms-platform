@@ -7,7 +7,7 @@ import { buildMseAttemptPayload, scoreMseLevel1Attempt } from "@/lib/practice/ms
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
 
 /**
- * MSE Level 1 — Observe. The first rung of the ladder: describe what you can
+ * MSE Level 1: Observe. The first rung of the ladder: describe what you can
  * see and hear, with zero diagnostic labels. Score = observations kept minus
  * a hard penalty per smuggled conclusion. Target: 100 words, no labels.
  *
@@ -51,7 +51,7 @@ export function ObserveLevel({
     haptic("tap");
   }
 
-  /** Persist this Level 1 attempt (a check, not a test — silent on failure). */
+  /** Persist this Level 1 attempt (a check, not a test, silent on failure). */
   async function persist() {
     const completedAt = new Date();
     const payload = buildMseAttemptPayload(
@@ -87,7 +87,7 @@ export function ObserveLevel({
 
       <div>
         <p className="text-small text-muted-foreground">
-          Now describe what you observed. Diagnostic words are conclusions — &quot;depressed&quot;,
+          Now describe what you observed. Diagnostic words are conclusions: &quot;depressed&quot;,
           &quot;anxious&quot;, &quot;manipulative&quot;. Behaviour words are observations. Target:{" "}
           <span className="font-semibold">100 words with zero labels</span>.
         </p>
@@ -116,7 +116,7 @@ export function ObserveLevel({
           {result.labels.length ? (
             <p className="text-small text-destructive" role="alert">
               <span className="font-semibold">Smuggled conclusions:</span>&nbsp;
-              {result.labels.join(", ")}. Each one is an explanation, not an observation — it
+              {result.labels.join(", ")}. Each one is an explanation, not an observation. It
               costs you 2 points.
             </p>
           ) : (
@@ -130,7 +130,7 @@ export function ObserveLevel({
           </p>
           {wordCount < 80 ? (
             <p className="text-small text-status-pending-fg">
-              {wordCount} words — you can see more than that. Write what the clothes, the hands,
+              {wordCount} words. You can see more than that. Write what the clothes, the hands,
               the silences are doing.
             </p>
           ) : null}

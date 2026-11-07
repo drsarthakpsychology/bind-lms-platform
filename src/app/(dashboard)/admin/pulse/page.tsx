@@ -14,12 +14,12 @@ import { QuietPanel } from "./quiet-panel";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/pulse (v5.1 A6) — instrument the humans, not just the servers.
+ * /admin/pulse (v5.1 A6): instrument the humans, not just the servers.
  * Drifting (7+ days silent), Stuck (failing a dimension repeatedly), Flying
  * (finished everything), cohort curve, one-tap nudge. Activity drop + load
  * spike = curriculum problem, not motivation.
  *
- * Last-activity is read from the student_last_activity VIEW — a per-student
+ * Last-activity is read from the student_last_activity VIEW: a per-student
  * max(timestamp) aggregate across sim sessions / check-ins / journal entries,
  * computed in the DB. The old page folded unordered .limit(500) samples in JS
  * (and its sim_sessions query referenced a column that doesn't exist), so the

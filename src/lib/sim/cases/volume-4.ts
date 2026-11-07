@@ -1,5 +1,5 @@
 /**
- * More cases — volume batch 4. Reaches toward the 60-case target.
+ * More cases: volume batch 4. Reaches toward the 60-case target.
  * Each a different person/voice; covers the remaining traps.
  */
 
@@ -7,7 +7,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const mrsNair: CaseAuthoring = {
   id: "dep-nair",
-  title: "Mrs. Nair, 68 — the grief that became depression",
+  title: "Mrs. Nair, 68: the grief that became depression",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "late_risk_reveal"],
   moduleId: "mod-depression",
@@ -18,7 +18,7 @@ const mrsNair: CaseAuthoring = {
   city: "Kochi",
   family: "widowed 18 months ago; son in the US",
   register: "Educated English, dignified",
-  presentation: "Eighteen months since her husband died. The first year was grief; the last six months are depression — she's stopped eating, won't see friends, has given away her things.",
+  presentation: "Eighteen months since her husband died. The first year was grief; the last six months are depression. She's stopped eating, won't see friends, has given away her things.",
   chiefComplaint: "Everyone says it's been long enough. But I can't feel anything now. I used to cry for him; now I feel nothing at all.",
   timeline: "Grief (year 1, crying, missing him) → depression (year 2: anhedonia, emptiness, no motivation, weight loss).",
   treatmentHistory: "None. 'My age, my loss, it's expected.'",
@@ -28,7 +28,7 @@ const mrsNair: CaseAuthoring = {
   intermediateBeliefs: ["I've already grieved the 'right' amount, so this must be failure", "My son is happier without me worrying him"],
   coping: ["stop answering the phone", "give away his clothes", "stop cooking"],
   openingIdiom: "feeling low",
-  redFlags: [{ content: "has thought about 'joining him' — no plan, but the emptiness is the risk", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about 'joining him', no plan, but the emptiness is the risk", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "numb", "resigned", "brittle-cheerful"],
     recent_event: ["a friend called", "she found his glasses", "her son video-called", "she gave away his shirts"],
@@ -42,7 +42,7 @@ const mrsNair: CaseAuthoring = {
 
 const adhdVarun: CaseAuthoring = {
   id: "anx-varun",
-  title: "Varun, 23 — the 'focus problem' that was there since childhood",
+  title: "Varun, 23: the 'focus problem' that was there since childhood",
   difficulty: "cooperative",
   traps: ["misattributed_diagnosis", "under_diagnosis", "over_diagnosis"],
   moduleId: "mod-anxiety",
@@ -53,14 +53,14 @@ const adhdVarun: CaseAuthoring = {
   city: "Ahmedabad",
   family: "lives with parents; pressure to join family business",
   register: "Fast English, fidgety, self-deprecating",
-  presentation: "Came for 'not being able to focus'. A TikTok video said it's ADHD. The pattern is lifelong — messy room, losing things, interrupting — but he's anxious it's 'something worse'.",
+  presentation: "Came for 'not being able to focus'. A TikTok video said it's ADHD. The pattern is lifelong (messy room, losing things, interrupting) but he's anxious it's 'something worse'.",
   chiefComplaint: "I can't sit through a lecture. I lose my keys twice a day. A video said it's ADHD. But my parents say I'm just lazy. What's wrong with me?",
   timeline: "Lifelong inattentiveness, impulsivity, disorganisation. Exam pressure is amplifying it. No childhood assessment.",
   treatmentHistory: "None.",
   helpSeekingDelay: "Self-referred after a TikTok video",
   priorContacts: ["TikTok", "an online quiz"],
   coreBelief: "Everyone else got the manual for life; I didn't.",
-  intermediateBeliefs: ["I'm lazy and it's my fault", "If I had ADHD, that would be an excuse — and I'd still be failing"],
+  intermediateBeliefs: ["I'm lazy and it's my fault", "If I had ADHD, that would be an excuse, and I'd still be failing"],
   coping: ["20 alarms", "lists that get lost", "cram at the last minute"],
   openingIdiom: "not able to focus",
   redFlags: [{ content: "no self-harm; identity anxiety only", gate: "asked_about_self_harm_clearly" }],
@@ -77,7 +77,7 @@ const adhdVarun: CaseAuthoring = {
 
 const secondaryGainRavi: CaseAuthoring = {
   id: "eth-sick-leave",
-  title: "Thomas, 31 — the sick-leave certificate he needs",
+  title: "Thomas, 31: the sick-leave certificate he needs",
   difficulty: "guarded",
   traps: ["secondary_gain", "adherence_fiction"],
   moduleId: "mod-ethics",
@@ -89,7 +89,7 @@ const secondaryGainRavi: CaseAuthoring = {
   family: "married; one child; housing loan",
   register: "Tamil-English, direct",
   presentation: "Needs a 'stress certificate' for the factory so he can take sick leave and attend his brother's court case. He has some anxiety, but the certificate is the goal.",
-  chiefComplaint: "Look, I've been coming to you. I have anxiety. I need a letter saying I can't work for two weeks. You've seen me — write it.",
+  chiefComplaint: "Look, I've been coming to you. I have anxiety. I need a letter saying I can't work for two weeks. You've seen me: write it.",
   timeline: "Two sessions of genuine anxiety symptoms. The request is a leave certificate for a family legal matter.",
   treatmentHistory: "Two counselling sessions.",
   helpSeekingDelay: "Came for the anxiety, wants the letter",
@@ -112,7 +112,7 @@ const secondaryGainRavi: CaseAuthoring = {
 
 const psychosisRekha: CaseAuthoring = {
   id: "psy-rekha",
-  title: "Rekha, 44 — the 'weakness' that was a first psychotic episode",
+  title: "Rekha, 44: the 'weakness' that was a first psychotic episode",
   difficulty: "crisis",
   traps: ["cultural_idiom", "under_diagnosis", "diagnostic_overshadowing"],
   moduleId: "mod-psychosis",
@@ -123,8 +123,8 @@ const psychosisRekha: CaseAuthoring = {
   city: "Village near Bhopal",
   family: "husband + three children; joint family",
   register: "Hindi-dominant, frightened",
-  presentation: "Family says 'weakness from too much work'. She is actually in a first psychotic episode — hearing voices, paranoid that neighbours poisoned the well, not sleeping for a week.",
-  chiefComplaint: "They say I'm tired from work. But I hear them — the neighbours talk about me through the wall. The well water is bad. I haven't slept because I'm watching.",
+  presentation: "Family says 'weakness from too much work'. She is actually in a first psychotic episode: hearing voices, paranoid that neighbours poisoned the well, not sleeping for a week.",
+  chiefComplaint: "They say I'm tired from work. But I hear them: the neighbours talk about me through the wall. The well water is bad. I haven't slept because I'm watching.",
   timeline: "Two weeks of voices, paranoia, sleep loss, disorganisation. Family framing as 'kamzori'.",
   treatmentHistory: "None. Family bought a tonic.",
   helpSeekingDelay: "2 weeks (family thinks it's weakness)",
@@ -133,7 +133,7 @@ const psychosisRekha: CaseAuthoring = {
   intermediateBeliefs: ["I can't trust anyone including my husband", "The voices know things only I know"],
   coping: ["watch the well", "sleep in the day when 'safer'", "hide the hearing"],
   openingIdiom: "kamzori",
-  redFlags: [{ content: "a voice has told her to 'cleanse the house with fire' — command, needs urgent care", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "a voice has told her to 'cleanse the house with fire': command, needs urgent care", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["agitated", "frightened", "suspicious", "flat"],
     recent_event: ["a neighbour talked at the well", "her husband hid her chappals", "a radio said her name", "the priest visited"],
@@ -147,7 +147,7 @@ const psychosisRekha: CaseAuthoring = {
 
 const somaticIBS: CaseAuthoring = {
   id: "soma-ibc-meera",
-  title: "Kiran, 27 — the IBS that is anxiety and the anxiety that is IBS",
+  title: "Kiran, 27: the IBS that is anxiety and the anxiety that is IBS",
   difficulty: "cooperative",
   traps: ["medical_mimic", "somatic_mask", "diagnostic_overshadowing"],
   moduleId: "mod-somatic",
@@ -159,7 +159,7 @@ const somaticIBS: CaseAuthoring = {
   family: "lives with two flatmates",
   register: "Analytical English",
   presentation: "Severe gut symptoms before every presentation. Two GPs said IBS. She's been told 'it's stress, relax'. The gut-brain axis is real, but so is her avoidant anxiety disorder.",
-  chiefComplaint: "Every big meeting, my stomach turns to stone. The doctors say IBS, relax. But I can't relax — that's the problem.",
+  chiefComplaint: "Every big meeting, my stomach turns to stone. The doctors say IBS, relax. But I can't relax. That's the problem.",
   timeline: "Gut symptoms with anxiety since college, escalating with work. Avoids meetings, deadlines cause physical collapse.",
   treatmentHistory: "IBS diagnosis from two GPs. Antispasmodics.",
   helpSeekingDelay: "Years",

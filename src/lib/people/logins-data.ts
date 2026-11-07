@@ -12,7 +12,7 @@ export type InviteRow = {
   error_reason: string | null;
   sent_at: string | null;
   created_at: string;
-  /** The account's lock state (from profiles.status) — used for the LockToggle. */
+  /** The account's lock state (from profiles.status): used for the LockToggle. */
   lockStatus: "active" | "blocked";
   /** The profile id for the LockToggle (null if no profile row exists). */
   lockUserId: string | null;

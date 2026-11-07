@@ -171,7 +171,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
                 <li key={m.userId} className="flex flex-wrap items-center gap-3 px-4 py-3">
                   <span className="min-w-0 flex-1 basis-48">
                     <Link href={`/admin/students/${m.userId}?tab=activity`} className="block truncate text-sm font-bold hover:underline">{r?.name || m.email}</Link>
-                    <span className="block text-caption text-muted-foreground">{r ? `${hm(r.min7)} this week · last seen ${agoLabel(r.lastSeen)}` : "—"}</span>
+                    <span className="block text-caption text-muted-foreground">{r ? `${hm(r.min7)} this week · last seen ${agoLabel(r.lastSeen)}` : "No activity yet"}</span>
                   </span>
                   <span className="w-40">
                     <span className="flex justify-between text-caption"><span>{r?.lecturesDone ?? 0}/{r?.lecturesAvailable ?? 0} lectures</span><span className="font-bold">{p}%</span></span>

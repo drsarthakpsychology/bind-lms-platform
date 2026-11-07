@@ -102,7 +102,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
                   <div className="min-w-0">
                     <p className="font-bold leading-tight break-words">{b.title}</p>
                     {b.description ? <p className="text-sm text-muted-foreground">{b.description}</p> : null}
-                    <p className="mt-1 text-xs font-semibold text-muted-foreground">Issued {b.issued_at ? new Date(b.issued_at).toLocaleDateString() : "—"}</p>
+                    <p className="mt-1 text-xs font-semibold text-muted-foreground">Issued {b.issued_at ? new Date(b.issued_at).toLocaleDateString() : "date not set"}</p>
                     <p className="font-mono text-caption [overflow-wrap:anywhere] text-muted-foreground">{b.credential_id}</p>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
             ))}
           </ul>
         ) : (
-          <p className="rounded-2xl border-2 border-dashed border-foreground/50 p-4 text-sm text-muted-foreground">No badges yet — finish modules to earn them.</p>
+          <p className="rounded-2xl border-2 border-dashed border-foreground/50 p-4 text-sm text-muted-foreground">No badges yet: finish modules to earn them.</p>
         )}
       </section>
 

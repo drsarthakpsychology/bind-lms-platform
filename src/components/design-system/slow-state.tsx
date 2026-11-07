@@ -16,7 +16,7 @@ export const STUCK_AFTER_MS = 15000;
 export function SlowState({
   after = SLOW_AFTER_MS,
   stuckAfter = STUCK_AFTER_MS,
-  message = "Still loading — this is slower than usual",
+  message = "Still loading: this is slower than usual",
   className,
 }: {
   after?: number;

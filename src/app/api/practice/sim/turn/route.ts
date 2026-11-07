@@ -30,7 +30,7 @@ const turnSchema = z.object({
  * `state` column so the next turn resumes exactly where this one ended (and
  * the debrief/retry can rewind to it).
  *
- * STUDENT INPUT IS UNTRUSTED — it goes to the Director as data, never into a
+ * STUDENT INPUT IS UNTRUSTED. It goes to the Director as data, never into a
  * system prompt.
  */
 export async function POST(req: Request) {
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     .maybeSingle();
 
   // CONVERSATION HISTORY (Bug 2): load the last 10 turns so the engines see
-  // the thread — never just the current message. This is what lets the
+  // the thread, never just the current message. This is what lets the
   // patient "remember" trailing off and the student picking the thread up.
   const { data: historyTurns } = await admin
     .from("sim_turns")
@@ -135,7 +135,7 @@ export async function POST(req: Request) {
 
   // Build the fact rules from the case's disclosure data. The authored gate
   // strings ("asked_about_self_harm_clearly", "validation_given",
-  // "two_or_more_reflective_statements") become real deterministic gates —
+  // "two_or_more_reflective_statements") become real deterministic gates:
   // a self-harm fact only opens when the student clearly asks, empathy-gated
   // facts only after the student earns them. Trust ≥ 3 still applies on top.
   const facts = (simCase.disclosure_rules ?? []).map((r) => ({
@@ -148,7 +148,7 @@ export async function POST(req: Request) {
   // Fixture mode: the deterministic case-aware patient (no network, still a
   // different person per case). Live mode: Director + Actor model calls.
   // If the live provider fails entirely (outage, quota, timeout), degrade to
-  // the fixture patient rather than surfacing a 500 — never a dead turn.
+  // the fixture patient rather than surfacing a 500, never a dead turn.
   const engineEnabled = aiEnabled();
   const runFixture = () => {
     const fx = runFixtureTurn(simCase, state, message, facts, recentTurns);
@@ -167,7 +167,7 @@ export async function POST(req: Request) {
     try {
       result = await runPatientTurn(simCase, state, message, recentTurns, facts);
     } catch (e) {
-      console.error("live patient engine failed — degrading to fixture:", e);
+      console.error("live patient engine failed: degrading to fixture:", e);
       result = runFixture();
       degraded = true;
     }
@@ -176,7 +176,7 @@ export async function POST(req: Request) {
   }
 
   // Persist the patient turn WITH the new state (the rewind point) and the
-  // parsed delivery cues — stage directions are BEHAVIOUR, never text.
+  // parsed delivery cues: stage directions are BEHAVIOUR, never text.
   const spoken = parseDelivery(result.reply);
   await admin.from("sim_turns").insert({
     session_id: sessionId,
@@ -188,7 +188,7 @@ export async function POST(req: Request) {
     delivery: spoken.delivery,
   });
 
-  // Log usage (fixture turns cost nothing — still recorded for the audit
+  // Log usage (fixture turns cost nothing, still recorded for the audit
   // trail) WITH the reason, so "was this the real patient?" is answerable.
   await admin.from("ai_usage_log").insert({
     user_id: user.id,

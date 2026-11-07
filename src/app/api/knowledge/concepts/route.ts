@@ -16,11 +16,11 @@ const schema = z.object({
 });
 
 /**
- * GET /api/knowledge/concepts — browse the knowledge-graph concept index.
+ * GET /api/knowledge/concepts: browse the knowledge-graph concept index.
  * Returns concepts (with link counts) so AI features can offer a topic picker
  * (e.g. adaptive learning weak-concept remediation, quiz-by-topic).
  *
- * Each concept carries how many corpus chunks reference it — a signal for
+ * Each concept carries how many corpus chunks reference it: a signal for
  * "how well-covered / how learnable" a topic is.
  */
 export async function GET(req: Request) {

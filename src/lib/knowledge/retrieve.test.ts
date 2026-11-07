@@ -173,7 +173,7 @@ describe("cite", () => {
     expect(c).toContain("A Short Textbook of Psychiatry");
     expect(c).toContain("Chapter 6: Mood Disorders");
     expect(c).toContain("Depression");
-    expect(c).toContain("pp. 3–4");
+    expect(c).toContain("pp. 3-4");
   });
 
   it("omits page number when none present", () => {

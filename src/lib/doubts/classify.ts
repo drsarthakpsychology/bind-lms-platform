@@ -1,7 +1,7 @@
 /**
  * Tell a genuine doubt (a question about the subject) from a complaint (about
  * the course, fees, the teacher, access, refunds). A complaint is kept private
- * and sent to the admin instead of the shared board. Pure and simple — it errs
+ * and sent to the admin instead of the shared board. Pure and simple. It errs
  * toward privacy: anything that looks like a grievance is treated as one.
  */
 const COMPLAINT_HINTS = [

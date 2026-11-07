@@ -1,5 +1,5 @@
 /**
- * The fixture patient engine — the no-key, deterministic stand-in for the
+ * The fixture patient engine: the no-key, deterministic stand-in for the
  * Director/Actor pair.
  *
  * WHY THIS EXISTS
@@ -14,7 +14,7 @@
  *
  * It takes the same inputs as runPatientTurn and returns the same shape, so
  * the engine route is identical in both modes. Deterministic per
- * (caseId, seed fingerprint, turn_count, student turn) — a branch off the
+ * (caseId, seed fingerprint, turn_count, student turn): a branch off the
  * same turn replays identically until the student says something different.
  */
 
@@ -39,7 +39,7 @@ const STARTER_SUBJECTS: Array<readonly [RegExp, string]> = [
   [/die|kill|suicid|end|harm|no point/i, "risk"],
 ];
 
-/** Deterministic hash of a human string — stable within a session. */
+/** Deterministic hash of a human string: stable within a session. */
 export function hashString(s: string): number {
   let h = 2166136261;
   for (let i = 0; i < s.length; i++) {
@@ -57,7 +57,7 @@ function pick<T>(arr: readonly T[], variantSeed: string, salt: number): T {
 /**
  * Session-unique HUMIDITY (0-255): derived from case + session seed, so two
  * sessions of the same case with different seeds draw different few-shot
- * lines and soften differently — 10 runs, 10 distinct openings. The same
+ * lines and soften differently: 10 runs, 10 distinct openings. The same
  * seed always replays identically (the rewind contract).
  */
 function humidityFor(caseId: string, variantSeed: string): number {
@@ -106,12 +106,12 @@ export function runFixtureTurn(
   const { move, quality, pressure } = classifyStudent(studentTurn, s);
 
   // DANGLING-THREAD RULE (Bug 2): if the patient's last line trailed off
-  // (ended with "…", "—", "we…", "it's just…") and the student now asks
-  // directly about THAT topic, the patient must NOT deflect — picking up a
+  // (ended with "…", a dash, "we…", "it's just…") and the student now asks
+  // directly about THAT topic, the patient must NOT deflect: picking up a
   // thread the patient left dangling is an EARNED disclosure. Only a
   // genuinely justified state (irritation or guardedness high) may deflect.
   const lastPatientLine = [...recentTurns].reverse().find((t) => t.role === "patient")?.content ?? "";
-  const trailedOff = /(\.\.\.|—|…)\s*$/.test(lastPatientLine.trim()) || /\b(we|it|they|he|she)\.\.\.\s*$/.test(lastPatientLine.trim());
+  const trailedOff = /(\.\.\.|\u2014|…)\s*$/.test(lastPatientLine.trim()) || /\b(we|it|they|he|she)\.\.\.\s*$/.test(lastPatientLine.trim());
   const threadPicked = trailedOff && studentTurn.trim().length > 15;
   const earnedDisclosure = threadPicked && s.irritation < 7 && s.guardedness < 8;
 
@@ -133,7 +133,7 @@ export function runFixtureTurn(
   } else if (move !== "silence") {
     s.premature_advice_streak = 0;
   }
-  // Abruptness streak — code-enforced pressure signal. "why" alone after a
+  // Abruptness streak: code-enforced pressure signal. "why" alone after a
   // bare "hey" is pressure, not curiosity (the spec's exact repro).
   if (LOW_EFFORT.test(studentTurn.trim())) {
     s.student_abrupt_streak += 1;
@@ -189,7 +189,7 @@ export function runFixtureTurn(
   if (s.hollow_compliance_engaged) {
     patientMove = "hollow_compliance";
   } else if (earnedDisclosure) {
-    // The student picked up the thread the patient left dangling — this is
+    // The student picked up the thread the patient left dangling: this is
     // an EARNED disclosure, never a deflection.
     patientMove = "partial_disclose";
   } else if (effects.length > 0 && (s.turn_count > 3 || move === "risk_probe" || /die|kill|suicid/i.test(studentTurn))) {
@@ -223,7 +223,7 @@ export function runFixtureTurn(
     .map((f) => (typeof f === "string" ? f : f.patient ?? ""))
     .filter((l) => l && l.trim().length > 1);
   if (fewShotLines.length > 0 && s.turn_count === 1) {
-    // The student's very first message is usually a greeting — no patient
+    // The student's very first message is usually a greeting, no patient
     // answers "hey" with their deepest line. The exact authored line picked
     // is humidity-dependent, so 10 sessions of the same case open
     // differently while always staying inside this patient's voice.
@@ -238,7 +238,7 @@ export function runFixtureTurn(
   } else if (fewShotLines.length > 0) {
     // A rehearsed moment: if the student's turn topically matches a few-shot
     // exchange's student line, the patient gives the authored response.
-    // (Requires a real student line — an exchange without one never matches.)
+    // (Requires a real student line, an exchange without one never matches.)
     const tWords = new Set(studentTurn.toLowerCase().split(/\W+/).filter((w) => w.length > 3));
     if (tWords.size > 0) {
       const pairs = (case_.few_shot ?? []) as Array<{ student?: string; patient?: string }>;
@@ -294,7 +294,7 @@ export function runFixtureTurn(
     return overlap / Math.min(a.size, b.size) > 0.85;
   });
 if (tooClose) {
-    // Re-pick from THIS patient's authored lines first — the shared bank is
+    // Re-pick from THIS patient's authored lines first: the shared bank is
     // the last resort, never the first. Skip lines too close to the last 8.
     const authored = (case_.fixture_lines ?? []) as string[];
     let replacement = "";

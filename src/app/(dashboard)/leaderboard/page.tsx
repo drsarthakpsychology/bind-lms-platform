@@ -15,7 +15,7 @@ export const metadata: Metadata = { title: BOARDS.league.label };
 export const dynamic = "force-dynamic";
 
 /**
- * /leaderboard — the weekly league (plan §4.4). Hard and ranked, never
+ * /leaderboard: the weekly league (plan §4.4). Hard and ranked, never
  * humiliating: your league shows the top 3 and the people around you, the
  * promotion line, and (privately) how far you are from safety. Cohort board
  * (real names), platform board (alias), private percentile and the monthly
@@ -128,7 +128,7 @@ function PrivateCard({ data }: { data: MyLeague }) {
         </div>
         <div className="rounded-md bg-background px-3 py-2">
           <dt className="text-caption text-muted-foreground">Your place</dt>
-          <dd className="text-lg font-bold tabular-nums">{data.league.myRank ? `${data.league.myRank} of ${data.groupSize}` : "—"}</dd>
+          <dd className="text-lg font-bold tabular-nums">{data.league.myRank ? `${data.league.myRank} of ${data.groupSize}` : "Not ranked yet"}</dd>
         </div>
         <div className={cn("rounded-md px-3 py-2", z.kind === "drop" ? "bg-status-alert-bg text-status-alert-fg" : "bg-background")}>
           <dt className="text-caption">{z.kind === "drop" ? "Drop zone" : z.kind === "promote" || z.kind === "top" ? "Promotion zone" : "Next"}</dt>

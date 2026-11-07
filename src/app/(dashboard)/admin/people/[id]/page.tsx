@@ -16,8 +16,8 @@ const when = (iso: string) =>
 
 /**
  * A person's record (the Attio / HubSpot contact page): details and stage on
- * the left, the whole history — enquiry, emails sent / opened / replied,
- * calls, WhatsApps, notes, account setup — on the right, newest first.
+ * the left, the whole history: enquiry, emails sent / opened / replied,
+ * calls, WhatsApps, notes, account setup, on the right, newest first.
  */
 export default async function PersonPage({ params }: { params: Promise<{ id: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
@@ -68,9 +68,9 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
             <dl className="mt-4 space-y-2 text-sm">
               {[
                 ["Email", p.email],
-                ["Phone", p.phone ?? "—"],
-                ["Source", p.source ?? (p.isStudent ? "Added as a student" : "—")],
-                ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "—"],
+                ["Phone", p.phone ?? "Not set"],
+                ["Source", p.source ?? (p.isStudent ? "Added as a student" : "Not set")],
+                ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "No enquiry"],
                 ["Emails sent", `${p.emailsSent}${p.opened ? " · opened" : ""}${p.replied ? " · replied" : ""}`],
                 ...(p.isStudent ? [["Login", p.setupDone ? "Set up" : p.inviteSentAt ? "Link sent, not set up" : "Not sent yet"], ["Signed in", p.signedIn ? "Yes" : "No"]] : []),
               ].map(([k, v]) => (
