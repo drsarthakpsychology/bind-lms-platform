@@ -298,10 +298,16 @@ export function StressResponse({ d }: { d: StressData }) {
 }
 
 /* ------------------------------------------------------------- timeline */
+/** A fixed shuffle of 0..n-1 that never comes out in the correct order (so there is always something to sort). */
+export function shuffleOrder(n: number, seed: number): number[] {
+  const out = Array.from({ length: n }, (_, i) => i).sort((a, b) => (((a + 1) * (seed | 1)) % 23) - (((b + 1) * (seed | 1)) % 23));
+  if (n > 1 && out.every((v, i) => v === i)) out.push(out.shift()!);
+  return out;
+}
 /** Place events in order (tap a card, then tap a slot), then check. */
 export function Timeline({ d }: { d: TimelineData }) {
   const seed = d.prompt.length;
-  const order = React.useMemo(() => d.events.map((_, i) => i).sort((a, b) => (((a + 1) * (seed | 1)) % 23) - (((b + 1) * (seed | 1)) % 23)), [d.events, seed]);
+  const order = React.useMemo(() => shuffleOrder(d.events.length, seed), [d.events.length, seed]);
   const [slots, setSlots] = React.useState<(number | null)[]>(() => d.events.map(() => null));
   const [held, setHeld] = React.useState<number | null>(null);
   const [checked, setChecked] = React.useState(false);

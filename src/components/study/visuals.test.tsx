@@ -2,7 +2,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, beforeAll } from "vitest";
 import { BrainMap, Curve, Flow, Layers, phi } from "./visuals";
-import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
+import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline, shuffleOrder } from "./animations2";
 
 beforeAll(() => {
   // jsdom has no matchMedia
@@ -103,5 +103,15 @@ describe("process animations", () => {
     expect(screen.getByRole("status")).toHaveTextContent("Effortful");
     fireEvent.change(screen.getByRole("slider"), { target: { value: "90" } });
     expect(screen.getByRole("status")).toHaveTextContent("Automatic");
+  });
+});
+
+describe("timeline shuffle", () => {
+  it("never starts in the correct order", () => {
+    for (let n = 2; n <= 12; n++) for (let seed = 0; seed < 300; seed++) {
+      const o = shuffleOrder(n, seed);
+      expect([...o].sort((a, b) => a - b)).toEqual(Array.from({ length: n }, (_, i) => i));
+      expect(o.every((v, i) => v === i)).toBe(false);
+    }
   });
 });
