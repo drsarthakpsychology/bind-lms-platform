@@ -22,7 +22,7 @@ export const PART: PrepQuestion[] = [
     "According to the National Crime Records Bureau report for 2022, the suicide rate in India was about",
     ["12.4 per lakh population", "4.2 per lakh population", "24.8 per lakh population", "40.1 per lakh population"],
     0,
-    "NCRB recorded 1,70,924 suicides in 2022, a rate of 12.4 per lakh, the highest it had reported; the 2023 report gave 1,71,418 suicides at 12.3 per lakh. A rate of 4.2 is far too low. Rates near 25 or 40 are seen in some states and union territories, such as Sikkim, but not nationally.",
+    "NCRB recorded 1,70,924 suicides in 2022, a rate of 12.4 per lakh, the highest it had reported; the 2023 report gave 1,71,418 suicides at 12.3 per lakh, and the 2024 report 1,70,746 at 12.2 per lakh. A rate of 4.2 is far too low. Rates near 25 or 40 are seen in some states and union territories, such as Sikkim, but not nationally.",
     { exams: MDCN, ref: "NCRB ADSI 2022 and 2023" },
   ),
   st(

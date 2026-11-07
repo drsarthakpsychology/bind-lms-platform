@@ -562,7 +562,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-I, C-IV, D-III", "A-III, B-IV, C-I, D-II"],
     answer: 0,
     explanation:
-      "VNS was approved in 2005 for chronic treatment-resistant depression (A-II); rTMS was cleared in 2008 (B-IV); esketamine was approved in 2019 (C-I); clinic tDCS is not cleared as a standard depression treatment in the USA, though home devices are emerging (D-III). Swapping VNS and rTMS reverses their dates. Giving rTMS the drug approval is a category error. Giving VNS the uncleared status ignores its 2005 approval.",
+      "VNS was approved in 2005 for chronic treatment-resistant depression (A-II); rTMS was cleared in 2008 (B-IV); esketamine was approved in 2019 (C-I); clinic tDCS is not cleared as a standard depression treatment in the USA, though a prescription home tDCS headset received FDA approval in December 2025 (D-III). Swapping VNS and rTMS reverses their dates. Giving rTMS the drug approval is a category error. Giving VNS the uncleared status ignores its 2005 approval.",
     module: "frontiers",
     ref: "FDA device and drug decisions",
   }),

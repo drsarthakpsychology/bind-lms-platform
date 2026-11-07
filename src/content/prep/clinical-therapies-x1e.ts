@@ -410,7 +410,7 @@ export const PART: PrepQuestion[] = [
     "task-sharing",
     4,
     "MD",
-    "In the PRIDE programme's school trials in New Delhi and Goa, a brief problem-solving intervention for adolescents delivered by lay counsellors (Michelson and colleagues) found:",
+    "In the PRIDE programme's school trial in New Delhi, a brief problem-solving intervention for adolescents delivered by lay counsellors (Michelson and colleagues) found:",
     [
       "Very large reductions in all mental health outcomes",
       "Harm in most of the adolescents who took part",
@@ -418,7 +418,7 @@ export const PART: PrepQuestion[] = [
       "No adolescents agreed to take part in the trial",
     ],
     2,
-    "The first PRIDE trial of a lay-counsellor-delivered, problem-solving 'Step 1' intervention, with printed booklets, showed reductions in self-reported psychosocial problems and mental health symptoms, though effects on some outcomes were modest; a later trial of a more intensive step showed limited additional benefit, informing the stepped model. Very large effects, harm or lack of participation are not what was reported.",
+    "The PRIDE trial compared a brief lay-counsellor-delivered problem-solving 'Step 1' intervention plus printed booklets with booklets alone. At 6 weeks it gave a modest reduction in the adolescents' own top psychosocial problems, while the effect on overall symptom scores was small and not significant; 12-month follow-up suggested sustained but modest gains. The programme, developed in Goa and New Delhi, uses this as the first step of a stepped care model. Very large effects, harm or lack of participation are not what was reported.",
     { ref: "PRIDE trials, Lancet and Lancet Child and Adolescent Health" },
   ),
   q.mcq(

@@ -590,7 +590,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The Psychiatric Genomics Consortium reported 108 loci and 287, each of tiny effect (A). Sekar and colleagues linked C4A variants in the MHC region to increased complement-mediated synaptic pruning (C). Together these show a polygenic architecture (D). B is wrong: polygenic scores explain only a modest part (roughly 7 to 10% of liability on the observed scale), far short of twin heritability.",
+      "The Psychiatric Genomics Consortium reported 108 loci in 2014 and 287 in 2022, each of tiny effect (A). Sekar and colleagues linked C4A variants in the MHC region to increased complement-mediated synaptic pruning (C). Together these show a polygenic architecture (D). B is wrong: polygenic scores explain only a modest part (roughly 7 to 10% of liability on the observed scale), far short of twin heritability.",
     ref: "Schizophrenia Working Group of the PGC 2014; Trubetskoy et al. 2022; Sekar et al. 2016",
   }),
   b({

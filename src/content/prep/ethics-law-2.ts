@@ -635,7 +635,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Only medical and engineering colleges must comply, given their high suicide rates",
       "Batch segregation by performance is encouraged to reduce peer pressure",
     ], 1,
-    "The Court issued 15 interim guidelines under Articles 32 and 141, binding all educational institutions including coaching centres. They include a mental health policy, at least one qualified counsellor where there are 100 or more students, display of helplines such as Tele-MANAS, staff training twice a year, and a ban on segregation by performance and on public shaming. It also linked mental health to Article 21.",
+    "The Court issued 15 interim guidelines under Articles 32 and 141, binding all educational institutions including coaching centres. They include a mental health policy, at least one qualified counsellor where there are 100 or more students, display of helplines such as Tele-MANAS, staff training twice a year, and a direction that coaching centres refrain, as far as possible, from segregating batches by performance and from public shaming. It also linked mental health to Article 21.",
     { ref: "Sukdeb Saha v State of AP, 2025 INSC 893 (25 Jul 2025)" }),
 
   // ── Research ethics ──────────────────────────────────────────────────────
