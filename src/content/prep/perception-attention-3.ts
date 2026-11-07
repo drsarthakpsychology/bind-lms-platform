@@ -346,7 +346,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Driving while listening to a radio talk show interferes less than driving while reading and typing text messages. Wickens's multiple resource theory explains this mainly because",
     options: [
-      "radio is less interesting, so it draws less attention away from the road ahead",
+      "radio is less interesting, so it draws less attention away from the road and traffic ahead",
       "texting uses less effort",
       "texting competes with driving for visual and manual resources; listening does not",
       "attention has unlimited capacity",
@@ -658,7 +658,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "People are slower to name the ink colour of the word 'RED' printed in green than to name the colour of a row of Xs. This Stroop effect is usually taken to show that",
     options: [
       "reading is so practised that it is automatic and hard to stop",
-      "colour naming is automatic, while word reading is controlled",
+      "colour naming is automatic, while word reading is slow and controlled",
       "people cannot see green when it carries a word",
       "words are processed more slowly than colours are named",
     ],
@@ -778,7 +778,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In a rapid stream of letters at about 10 per second, people must report two target letters. They often miss the second target if it comes about 200 to 500 ms after the first. This is",
-    options: ["inhibition of return", "the attentional blink", "change blindness", "repetition priming"],
+    options: [
+      "inhibition of return (IOR)",
+      "the attentional blink",
+      "change blindness",
+      "repetition priming",
+    ],
     answer: 1,
     explanation:
       "Raymond, Shapiro and Arnell named this the attentional blink: while the first target is being consolidated, the second is often lost. Inhibition of return concerns spatial cueing. Change blindness concerns scene changes. Repetition priming would improve, not impair, detection.",
@@ -814,7 +819,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In Simons and Chabris's study, viewers counting basketball passes often failed to notice a person in a gorilla suit walking through the scene. This is",
-    options: ["change blindness", "the attentional blink", "visual neglect", "inattentional blindness"],
+    options: [
+      "change blindness between views",
+      "the attentional blink",
+      "visual neglect",
+      "inattentional blindness",
+    ],
     answer: 3,
     explanation:
       "Inattentional blindness is failing to notice an unexpected, clearly visible object when attention is engaged elsewhere; about half the viewers missed the gorilla. Change blindness is failing to notice a change between views. The attentional blink involves rapid streams. Neglect is a disorder after brain damage.",

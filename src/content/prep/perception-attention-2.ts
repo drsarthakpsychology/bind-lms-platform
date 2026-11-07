@@ -79,7 +79,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "The Gestalt 'law of Prägnanz' states that",
     options: [
-      "we perceive only what is physically present in the stimulus",
+      "we perceive only what is physically present in the stimulus itself",
       "perception is built up from separate elementary sensations",
       "we see a stimulus in the simplest, most regular form possible",
       "colour is perceived before shape",
@@ -670,7 +670,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In Julesz's random-dot stereograms, each eye's image alone looks like random dots, yet viewed together a square floats in depth. This shows that",
     options: [
-      "depth requires familiar objects, so the square must be recognised first",
+      "depth requires familiar objects, so the square must be recognised as a form first",
       "monocular cues hidden in the dots are enough to produce depth",
       "stereograms create colour",
       "binocular disparity alone can produce depth, before any form is recognised",

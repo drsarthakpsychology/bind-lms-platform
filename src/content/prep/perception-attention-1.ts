@@ -94,7 +94,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Commonly cited approximate Weber fractions are: electric shock 0.01, lifted weight 0.02, loudness 0.05 and brightness 0.08. For which dimension are people most sensitive to change?",
-    options: ["Brightness", "Loudness", "Lifted weight", "Electric shock"],
+    options: [
+      "Brightness",
+      "Loudness",
+      "Lifted weight (heaviness)",
+      "Electric shock",
+    ],
     answer: 3,
     explanation:
       "The smaller the Weber fraction, the smaller the proportional change needed for detection, so sensitivity is greatest for electric shock (a 1% change). Brightness, with the largest fraction, needs about an 8% change. Loudness and weight fall in between.",
@@ -128,7 +133,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Fechner's law states that the magnitude of a sensation (S) is related to stimulus intensity (I) by",
-    options: ["S = k × I", "S = k log I", "S = k × Iⁿ", "S = I / k"],
+    options: [
+      "S = k × I (linear)",
+      "S = k log I",
+      "S = k × Iⁿ",
+      "S = I / k",
+    ],
     answer: 1,
     explanation:
       "Fechner proposed that sensation grows with the logarithm of intensity, so equal stimulus ratios give equal sensation steps. S = k × I would be a simple linear relation. S = k × Iⁿ is Stevens's power law. S = I / k is not a psychophysical law.",
@@ -559,7 +569,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which approach rejects the idea of a single fixed absolute threshold and treats detection as a decision made under uncertainty?",
-    options: ["Fechner's law", "Weber's law", "Stevens's power law", "Signal detection theory"],
+    options: [
+      "Fechner's law",
+      "Weber's law",
+      "Stevens's power law of sensation",
+      "Signal detection theory",
+    ],
     answer: 3,
     explanation:
       "Signal detection theory, taken from radar engineering by Tanner, Swets and Green, treats every response as a decision about noisy evidence, so there is no fixed threshold. Fechner's, Weber's and Stevens's laws describe how sensation or discrimination relates to intensity, without separating sensitivity from bias.",
@@ -628,7 +643,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The conversion of physical energy, such as light or sound, into electrical signals in the nervous system is called",
-    options: ["transduction", "perception", "adaptation", "attention"],
+    options: [
+      "transduction",
+      "perception",
+      "sensory adaptation",
+      "attention",
+    ],
     answer: 0,
     explanation:
       "Sensory receptors (for example, rods and cones, or hair cells) transduce energy into neural signals. Perception is the later interpretation of those signals. Adaptation is reduced response to a constant stimulus. Attention is selection among inputs.",
@@ -684,7 +704,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "The dark adaptation curve shows two phases. Which description is correct?",
     options: [
-      "Rods adapt fully in about 2 minutes and cones take about 30 minutes",
+      "Rods adapt fully within about 2 minutes, while cones take about 30 minutes",
       "Only cones adapt in the dark",
       "Cones level off by about 10 minutes; rods keep improving for 20 to 30",
       "Sensitivity decreases in the dark",
@@ -705,7 +725,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "At dusk, red flowers look darker while blue and green leaves seem relatively brighter. This Purkinje shift happens because",
     options: [
       "rods, dominant in dim light, are most sensitive to shorter wavelengths than cones",
-      "cones become more sensitive to long wavelengths as light fades, washing out reds",
+      "cones become more sensitive to long wavelengths as the light fades, washing out reds",
       "the lens turns yellow in the evening",
       "red light disappears from sunlight at dusk",
     ],
@@ -809,7 +829,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Many people with an amputated arm continue to feel pain in the missing limb. Ramachandran's mirror-box treatment, in which the intact arm's reflection appears in place of the missing one, sometimes relieves this. This supports the view that",
     options: [
-      "phantom pain comes only from damaged nerve endings in the stump, not the brain",
+      "phantom pain comes only from damaged nerve endings in the stump, not from the brain at all",
       "phantom pain is imagined and not real",
       "the brain's body map can produce pain without limb input, and vision can change it",
       "pain depends only on the skin",
@@ -930,7 +950,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In an adaptive staircase, the stimulus is made weaker after two correct responses in a row and stronger after one error. This 'two-down, one-up' rule settles on the level giving about what percentage correct?",
-    options: ["70.7%", "50%", "84%", "95%"],
+    options: [
+      "70.7%",
+      "50%",
+      "84.1%",
+      "95%",
+    ],
     answer: 0,
     explanation:
       "The staircase stabilises where the chance of two correct in a row equals 0.5, so p² = 0.5 and p = √0.5 ≈ 0.707. A simple one-down, one-up rule targets 50%. Three-down, one-up targets about 79%. 84% and 95% are not targets of this rule.",
