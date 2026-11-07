@@ -24,7 +24,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ["2.87", "8.61", "11.48", "5.74"], 1,
     "Scheffé's critical value is (k − 1) × F_crit = 3 × 2.87 = 8.61. This protects against every possible contrast, so it is very conservative. 2.87 is the ordinary F_crit, which is right only for a single planned contrast. 11.48 multiplies by k (4). 5.74 multiplies by 2.",
     { ref: R }),
-  num("stq2-304", "anova", 3,
+  num("stq2-304", "anova", 4,
     "In a two-way ANOVA, SS_A = 60, SS_B = 30, SS_AB = 10 and SS_error = 200. What are eta squared and partial eta squared for factor A?",
     ["η² = .20, η²p = .23", "η² = .23, η²p = .20", "η² = .30, η²p = .20", "η² = .20, η²p = .30"], 0,
     "SS_total = 60 + 30 + 10 + 200 = 300. η² = 60/300 = .20. η²p = SS_A/(SS_A + SS_error) = 60/260 = .23. Partial eta squared removes the other effects from the denominator, so it is always at least as large as eta squared in factorial designs; that is why values from different designs cannot be compared directly. Swapping the two values reverses that rule. .30 divides 60 by 200 (SS_error alone).",
@@ -58,12 +58,12 @@ export const QUESTIONS: PrepQuestion[] = [
     { ref: R }),
 
   // ── epidemiological measures ────────────────────────────────────────────
-  num("stq2-310", "probability", 3,
+  num("stq2-310", "probability", 4,
     "In a cohort, 30 of 100 cannabis users and 10 of 100 non-users develop psychotic symptoms. What are the relative risk and the odds ratio?",
     ["RR 3.0, OR 3.86", "RR 3.86, OR 3.0", "RR 3.0, OR 3.0", "RR 2.0, OR 3.86"], 0,
     "RR = (30/100)/(10/100) = 3.0. OR = (30 × 90)/(70 × 10) = 2,700/700 = 3.86. With a common outcome the OR exceeds the RR. Swapping them reverses this relation. Equal values would require a rare outcome. RR 2.0 is a risk difference of 20 points misread as a ratio.",
     { ...MD, ref: R }),
-  num("stq2-311", "probability", 3,
+  num("stq2-311", "probability", 4,
     "For the same cohort (30% of exposed and 10% of unexposed develop symptoms), what is the attributable fraction among the exposed?",
     ["20%", "33%", "67%", "90%"], 2,
     "Attributable risk = .30 − .10 = .20. The attributable fraction among the exposed = .20/.30 = 67%: two-thirds of cases among users would not have occurred without exposure, if the association is causal. 20% is the attributable risk (a difference), not a fraction. 33% is .10/.30, the background share. 90% is 1 − .10.",
@@ -159,13 +159,13 @@ export const QUESTIONS: PrepQuestion[] = [
     { ref: R }),
 
   // ── output tables ───────────────────────────────────────────────────────
-  ps("stq2-329", "spss-output", 3,
+  ps("stq2-329", "spss-output", 4,
     "Paired Samples Test (n = 25): Pre minus Post: Mean = 3.20, Std. Deviation = 4.00, Std. Error Mean = 0.80, 95% CI of the difference 1.55 to 4.85, t = 4.00, df = 24, Sig. (2-tailed) < .001.",
     "What is the standardised effect size d_z, and how is it described?",
     ["0.80, large", "4.00, very large", "0.16, small", "0.64, medium"], 0,
     "d_z = mean difference/SD of differences = 3.20/4.00 = 0.80, large by Cohen's benchmarks. It also equals t/√n = 4/5. 4.00 is t, which grows with n and is not an effect size. 0.16 divides by n. 0.64 is d_z squared.",
     { ref: R }),
-  ps("stq2-330", "spss-output", 3,
+  ps("stq2-330", "spss-output", 4,
     "Hierarchical regression (N = 100). Model 1 (age, sex): R² = .10. Model 2 (adds loneliness and sleep quality): R² = .18, R² Change = .08, F Change(2, 95) = 4.63, Sig. F Change = .012.",
     "Which interpretation is correct?",
     [
@@ -245,7 +245,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ], 1,
     "The mean (18.4) is above the median (15.0), and skewness 1.62 (more than 10 times its SE) shows strong positive skew; kurtosis 3.10 (excess, as SPSS reports it) is positive, so the distribution is leptokurtic with heavy tails. A symmetric shape would have mean ≈ median and skew near 0. Negative skew would put the mean below the median. A large N does not make the scores themselves normal; the CLT applies to sampling distributions, not raw data.",
     { ref: R }),
-  ps("stq2-340", "spss-output", 3,
+  ps("stq2-340", "spss-output", 4,
     "Model Summary: R = .62, R Square = .38, Adjusted R Square = .37, Std. Error of the Estimate = 6.1, Durbin-Watson = 0.85. Data: daily mood ratings over 120 consecutive days from one participant.",
     "What is the main concern?",
     [
