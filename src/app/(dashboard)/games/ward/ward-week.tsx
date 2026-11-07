@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ArrowDown, ArrowRight, ArrowUp, BookOpen, Hospital, MapPin, Minus, Play, RotateCcw, Users, Vote } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { hashString } from "@/lib/games-sims/common";
 import { CAMPAIGNS, campaignById } from "@/lib/games-sims/ward/campaigns";
 import {
@@ -28,7 +29,7 @@ import {
   type WardState,
 } from "@/lib/games-sims/ward/engine";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
-import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -152,15 +153,7 @@ function Pick({
   const live = teams.filter((t) => t.status !== "done");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">Ward Week</Eyebrow>
-        <h1 className="text-h1">One patient. Five sessions.</h1>
-        <ul className="space-y-1 text-body">
-          <li>You are the trainee psychologist on the team.</li>
-          <li>Each call moves five dials and changes what happens next.</li>
-          <li>The ending depends on the dials and on how sound your calls were.</li>
-        </ul>
-      </div>
+      <h1 className="text-h2">Pick a patient</h1>
 
       {saved ? (
         <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
@@ -219,7 +212,6 @@ function Pick({
             <Vote className="size-5" aria-hidden />
             <h2 className="text-body-strong">Team mode</h2>
           </div>
-          <p className="text-small">Three classmates, one patient. Each of you votes when you have a moment. Two matching votes move the story on.</p>
           <JoinBox onJoin={onJoin} label="Got a code from a classmate?" />
           {live.length ? (
             <div className="space-y-2">
@@ -471,6 +463,7 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
       </div>
       <p className="border-l-4 border-primary pl-3 text-body-strong">{r.option.text}</p>
       <p className="text-body">{r.option.why}</p>
+      {r.decision.skill ? <LearnLink topic={KIND_LABEL[r.decision.kind]} href={`/study/${r.decision.skill.split(":")[0]}`} newTab /> : null}
       {!good ? (
         <div className={cn("rounded-md border-2 border-foreground/30 bg-card p-3", m.rise)}>
           <p className="text-caption font-semibold uppercase">The strongest call</p>
@@ -494,7 +487,6 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
-      <Eyebrow index="02">Outcome</Eyebrow>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{ending.title}</h1>
         <Pill tone={tone} className={m.stamp}>

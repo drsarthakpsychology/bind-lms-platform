@@ -69,13 +69,13 @@ export function CheckpointView({
 
       {stage === "intro" ? (
         <section className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
-          <p className="flex items-center gap-2 text-sm font-semibold text-link">
-            <ListChecks className="size-4" aria-hidden /> Checkpoint {n}
-          </p>
-          <p className="mt-1 text-2xl font-bold">
-            {mcq.length ? `${mcq.length} case questions` : ""}
-            {mcq.length && recall.length ? " + " : ""}
-            {recall.length ? `${recall.length} say-it-aloud cards` : ""}
+          <p className="flex items-center gap-2 text-2xl font-bold">
+            <ListChecks className="size-6 shrink-0" aria-hidden />
+            <span className="min-w-0">
+              {mcq.length ? `${mcq.length} case questions` : ""}
+              {mcq.length && recall.length ? " + " : ""}
+              {recall.length ? `${recall.length} say-it-aloud cards` : ""}
+            </span>
           </p>
           <p className="mt-2 text-[0.95rem] text-muted-foreground">From memory, no notes. Answers at the end.</p>
           {prev ? <p className="mt-3 text-sm font-semibold">Your best so far: {prev.best} of {prev.total}</p> : null}

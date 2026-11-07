@@ -128,14 +128,16 @@ export default async function DashboardLayout({
     unread = count ?? 0;
   }
 
+  const flags = await readFlags();
   return (
     <AppShell
       unread={unread}
+      flags={flags}
       role={shellRole}
       mode={mode}
       scope={effectiveScope}
       email={session.profile.email}
-      showStudy={(await readFlags()).learn === "unlocked"}
+      showStudy={flags.learn === "unlocked"}
       blocked={blocked}
       viewModeSwitch={
         role === "admin" || role === "view_admin" ? (

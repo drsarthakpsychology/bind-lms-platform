@@ -69,12 +69,10 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
             {s.remedyLabel}
             <ArrowRight className="size-3.5" aria-hidden />
           </Link>
-          <Link
-            href="/games/play?mode=review"
-            className="mt-1 block text-caption text-muted-foreground hover:underline"
-          >
-            The card that teaches this: {s.teachCard} →
-          </Link>
+          <p className="mt-1 text-caption text-muted-foreground">
+            <span className="font-semibold">Key idea: </span>
+            {s.teachCard}
+          </p>
         </div>
       ))}
     </div>

@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 }
 
 /** Publish validation: every medication must be source-backed and internally valid. */
-export function validateDocument(d: MedicationDocument): string[] {
+function validateDocument(d: MedicationDocument): string[] {
   const errors: string[] = [];
   let hasSource = false;
   for (const section of d.sections) {

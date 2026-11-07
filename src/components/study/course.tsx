@@ -20,7 +20,7 @@ function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
     case "read":
       return { eyebrow: `Module ${n.module.num} · Read`, title: `${n.section.num} ${sectionTitle(n.section)}`, sub: n.module.title };
     case "checkpoint":
-      return { eyebrow: `Module ${n.module.num} · Checkpoint`, title: n.label.replace(/^Checkpoint \d+: /, "Quiz on "), sub: "Now that you've moved on, see what stuck" };
+      return { eyebrow: `Module ${n.module.num} · Checkpoint`, title: n.label.replace(/^Checkpoint \d+: /, "Quiz on "), sub: n.module.title };
     case "write":
       return { eyebrow: `Module ${n.module.num} · Write it out`, title: "Reproduce the key frameworks on paper", sub: n.module.title };
     case "practise":
@@ -28,9 +28,9 @@ function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
     case "test":
       return { eyebrow: `Module ${n.module.num} · Test`, title: "Take the module test", sub: n.module.title };
     case "retest":
-      return { eyebrow: "Due today · Re-test", title: n.module.title, sub: "Spaced re-tests are what make it stick" };
+      return { eyebrow: "Due today · Re-test", title: n.module.title };
     default:
-      return { eyebrow: "All done", title: "You've completed every module", sub: "Keep your re-tests going" };
+      return { eyebrow: "All done", title: "You've completed every module" };
   }
 }
 
@@ -81,8 +81,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">Notes</p>
-        <h1 className="text-h1">Your notes, module by module</h1>
+        <h1 className="text-h1">Study</h1>
         <p className="max-w-2xl text-muted-foreground">
           {modules.length} {modules.length === 1 ? "module" : "modules"}, all open. {progress.pct}% complete.
         </p>
@@ -93,8 +92,6 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
       <Link href="/progress" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
         <Trophy className="size-4" aria-hidden /> Your progress and certificate <ArrowRight className="size-4" aria-hidden />
       </Link>
-
-      <MarksList owner={owner} modules={modules} />
 
       <section aria-labelledby="modules">
         <h2 id="modules" className="text-h2">
@@ -136,6 +133,8 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
           })}
         </ol>
       </section>
+
+      <MarksList owner={owner} modules={modules} />
 
       <Link href="/study/notes" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold underline-offset-4 hover:underline">
         <NotebookPen className="size-4" aria-hidden /> One-page summaries
@@ -369,13 +368,19 @@ export function ModuleView({
         ) : null}
       </section>
 
-      <RelatedLab open={labOpen} items={labLinks} />
-
-      {m.noteId ? (
-        <Link href={`/study/notes/${m.noteId}`} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
-          <NotebookPen className="size-6 shrink-0" aria-hidden />
-          <span className="font-bold">One-page summary</span>
-        </Link>
+      {m.noteId || (labOpen && labLinks.length) ? (
+        <details className="rounded-2xl border-2 border-foreground bg-card">
+          <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold">More for this module</summary>
+          <div className="space-y-3 px-3 pb-3">
+            {m.noteId ? (
+              <Link href={`/study/notes/${m.noteId}`} className="flex min-h-12 items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-3">
+                <NotebookPen className="size-5 shrink-0" aria-hidden />
+                <span className="font-bold">One-page summary</span>
+              </Link>
+            ) : null}
+            <RelatedLab open={labOpen} items={labLinks} />
+          </div>
+        </details>
       ) : null}
 
     </div>

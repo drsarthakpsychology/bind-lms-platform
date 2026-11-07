@@ -256,7 +256,7 @@ function coachItems(state: LearnState, today: string): ReviseItem[] {
   const out: ReviseItem[] = [];
   for (const [domain, g] of byDomain) {
     const area = DOMAINS.find((d) => d.id === domain)?.title ?? domain;
-    const href = `/games/coach?domain=${domain}`;
+    const href = `/prep/smart/coach?domain=${domain}`;
     if (g.relearn.length) {
       const pair = pairs.find((p) => p.a.domain === domain && p.b.domain === domain && (g.relearn.includes(p.a.id) || g.relearn.includes(p.b.id)));
       out.push({
@@ -329,7 +329,7 @@ function reviewItems(state: LearnState, today: string): { now: ReviseItem[]; soo
           topic: "quiz",
           title: `Review ${plural(Math.min(n, REVISE.reviewMax), "quiz question")}`,
           why: "Ones you missed before. Today is the day they come back.",
-          href: "/games/play?mode=review",
+          href: "/prep/smart/play?mode=review",
           minutes: reviewMinutes(n),
           priority: 100,
         },
@@ -348,7 +348,7 @@ function reviewItems(state: LearnState, today: string): { now: ReviseItem[]; soo
         topic: "quiz",
         title: `${plural(upcoming.length, "quiz question")} ${upcoming.length === 1 ? "comes" : "come"} back`,
         why: "Missed answers, spaced out.",
-        href: "/games/play?mode=review",
+        href: "/prep/smart/play?mode=review",
         minutes: reviewMinutes(upcoming.length),
         priority: 100,
         due: first,

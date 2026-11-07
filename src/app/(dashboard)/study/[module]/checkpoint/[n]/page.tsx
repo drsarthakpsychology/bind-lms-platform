@@ -18,7 +18,7 @@ export default async function CheckpointPage({ params, searchParams }: { params:
   if (!m || !cp) notFound();
   const q = checkpointQuestions(m, cp);
   const covers = cp.sectionIds.map((id) => m.sections.find((s) => s.id === id)).map((s) => (s ? `${s.num} ${s.title}` : ""));
-  // Only follow links back into Notes.
+  // Only follow links back into Study.
   const back = then && /^\/study\//.test(then) ? then : `/study/${m.id}`;
   return (
     <CheckpointView

@@ -54,8 +54,8 @@ export default async function PassportPage() {
         <p className="text-eyebrow text-muted-foreground">Skills passport</p>
         <h1 className="mt-1 text-h1">Your competencies, evidenced</h1>
         <p className="mt-1 text-small text-muted-foreground">
-          Eleven competencies across the RCI-track framework. Every tagged supervision hour and
-          practice tool adds evidence. Signed-off hours here underpin your certificate.
+          Eleven clinical competencies. Every practice tool you finish and every supervision hour
+          you log adds evidence here.
         </p>
       </Reveal>
 

@@ -1,8 +1,10 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
 import type { FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { requireFeature } from "@/lib/flags";
+import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +23,9 @@ function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
   const domain: MseStimulus[] = [];
   const fullMse: FullMseStimulus[] = [];
 
-  for (const row of rows) {
+  for (const raw of rows) {
+    // Older stimuli rows still carry dashes; students never see them.
+    const row = { ...raw, content: cleanStudentText(raw.content), title: raw.title ? cleanStudentText(raw.title) : raw.title, expert_coding: cleanDeep(raw.expert_coding) };
     const coding = (row.expert_coding ?? {}) as { expertTags?: string[]; amberTags?: string[]; expert?: FullMseStimulus["expert"]; amber?: FullMseStimulus["amber"] };
     if (row.slug.startsWith("obs-")) {
       observe.push({ id: row.slug, content: row.content });
@@ -71,14 +75,7 @@ export default async function MsePage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">MSE Trainer · the ladder</p>
-      <h1 className="mt-1 text-h1">Mental Status Exam</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Novices write &quot;patient was depressed.&quot; That is a conclusion, not an
-        observation. The MSE is a description of what you can see and hear right
-        now, and the whole skill is holding the line between the two. Five
-        levels, taken in order.
-      </p>
+      <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", intro: "\"Patient was depressed\" is a conclusion. The MSE describes.", steps: ["Write what you can see and hear, not what you conclude.", "Five levels, in order."] }} />
       <div className="mt-6">
         <MseLadder content={content} />
       </div>

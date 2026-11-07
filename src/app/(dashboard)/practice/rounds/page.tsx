@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-/** Retired: Rounds' spaced-repetition cards were merged into Learn's Review. */
+/** Retired: Rounds was a Practice tool, so its old address stays in Practice. */
 export default function RoundsRedirect() {
-  redirect("/games");
+  redirect("/practice");
 }

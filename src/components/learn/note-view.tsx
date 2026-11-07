@@ -2,14 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Sparkles, Trophy, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Sparkles, Zap } from "lucide-react";
 import { pick, WEEK_BLOCKS, type Note } from "@/lib/learn/notes/types";
 import { emptyState, istToday, markNoteRead, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
-import { BOARDS } from "@/lib/standing/boards";
-import { ChaiSays } from "./chai";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
 import l from "./learn.module.css";
@@ -52,7 +50,9 @@ export function NoteView({
     if (cur && !cur.notesRead[note.id]) setLearnState(markNoteRead(cur, note.id, istToday()));
   }, [note.id]);
   const [flipped, setFlipped] = React.useState<number[]>([]);
-  const quizHref = note.quiz.lessonId ? `/games/play?lesson=${note.quiz.lessonId}` : `/games/coach?domain=${note.quiz.domain}`;
+  // Opened from a note, so Back returns to this note (not to Games or Exam Prep).
+  const from = `from=${encodeURIComponent(`/study/notes/${note.id}`)}`;
+  const quizHref = note.quiz.lessonId ? `/prep/smart/play?lesson=${note.quiz.lessonId}&${from}` : `/prep/smart/coach?domain=${note.quiz.domain}&${from}`;
 
   return (
     <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>
@@ -162,7 +162,7 @@ export function NoteView({
           </li>
           <li>
             <Link
-              href={scenarioCount ? `/games/scenarios?note=${note.id}` : "/games/terms"}
+              href={scenarioCount ? `/practice/scenarios?note=${note.id}&${from}` : `/practice/terms?${from}`}
               className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"
             >
               <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current font-bold">3</span>
@@ -171,14 +171,6 @@ export function NoteView({
             </Link>
           </li>
         </ol>
-        <div className="mt-4">
-          <ChaiSays mood="happy" size={56}>
-            Quizzing right after reading is how it sticks.
-          </ChaiSays>
-        </div>
-        <Link href={BOARDS.quiz.href} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
-          <Trophy className="size-4" aria-hidden /> {BOARDS.quiz.label}
-        </Link>
       </section>
 
       <nav className="flex items-center justify-between gap-3 pt-2" aria-label="Other notes">

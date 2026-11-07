@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ActivityFrame } from "@/components/study/activity-frame";
+import { ActivityTip } from "@/components/help/activity-tip";
 import { LearnStoreInit } from "@/components/learn/learn-store-init";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { requireFeature } from "@/lib/flags";
@@ -21,6 +22,7 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
       purpose="Follow one patient across five sessions. Every decision moves risk, trust, insight, family support and sticking with care, and changes what happens next."
       how={["Pick a patient.", "Read the session, then make the call.", "See why it was strong or weak.", "Play solo, or with two classmates: majority vote wins."]}
     >
+      <ActivityTip id="ward-week" intro="One patient across five sessions. You are the trainee psychologist." steps={["Pick a patient.", "Read each session, then make the call. Every call moves five dials.", "See why it was strong or weak.", "Team mode: three classmates vote. Two matching votes move the story on."]} />
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <WardWeek
         teamsOn={ready}

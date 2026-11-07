@@ -8,6 +8,7 @@
 import type { Attempt } from "@/lib/learn/model/student";
 import { shuffle, type Rng } from "../common";
 import { DRUGS, EFFECTS, FAMILY, MYSTERIES, OUTCOMES, OVERLAP, PUZZLES, drugById, effectById, outcomeById, type Drug } from "./content";
+import { PROFILE, conceptsOf } from "./drugs";
 
 export type Kind = "chain" | "mystery" | "puzzle";
 export type StepKey = "cls" | "mech" | "ae" | "mon";
@@ -26,17 +27,42 @@ export type Graded = { score: number; parts: { ok: boolean; chosen: string | nul
 export const LIVES = 3;
 export const RUN_SIZE = 12;
 
-/** Can `x` supply a wrong option for drug `d` at this step? */
+/**
+ * Can `x` supply a wrong option for drug `d` at this step? Never from the same
+ * family; for the later steps never from the same topic or a hand-checked
+ * overlap group; and never when the option shares an idea (weight, QT, D2,
+ * the serotonin pump, ...) with anything the reference says about `d`, so a
+ * "wrong" option is never also true. An option with no recognisable idea is
+ * not offered, because it cannot be checked.
+ */
 export function canDistract(d: Drug, x: Drug, key: StepKey): boolean {
   if (x.id === d.id || FAMILY[x.id] === FAMILY[d.id]) return false;
-  if (key === "cls") return true;
-  if (x.topic === d.topic) return false;
-  return !OVERLAP.some((g) => g.includes(d.id) && g.includes(x.id));
+  if (key !== "cls" && (x.topic === d.topic || OVERLAP.some((g) => g.includes(d.id) && g.includes(x.id)))) return false;
+  const idea = conceptsOf(x[key]);
+  if (!idea.size) return false;
+  const own = key === "cls" || key === "mech" ? PROFILE[d.id]?.pharm : PROFILE[d.id]?.clinical;
+  if (!own) return false;
+  for (const c of idea) if (own.has(c)) return false;
+  return true;
 }
 
+/**
+ * The right answer and three wrong ones. The wrong ones also differ from each
+ * other in idea, so two options never read as the same thing twice.
+ */
 export function chainOptions(d: Drug, key: StepKey, rng: Rng): string[] {
-  const pool = [...new Set(DRUGS.filter((x) => canDistract(d, x, key)).map((x) => x[key]))].filter((v) => v !== d[key]);
-  return shuffle([d[key], ...shuffle(pool, rng).slice(0, 3)], rng);
+  const pool = shuffle([...new Set(DRUGS.filter((x) => canDistract(d, x, key)).map((x) => x[key]))].filter((v) => v !== d[key]), rng);
+  const picked: string[] = [];
+  const seen = new Set<string>();
+  for (const v of pool) {
+    if (picked.length === 3) break;
+    const idea = conceptsOf(v);
+    if ([...idea].some((c) => seen.has(c))) continue;
+    picked.push(v);
+    idea.forEach((c) => seen.add(c));
+  }
+  for (const v of pool) if (picked.length < 3 && !picked.includes(v)) picked.push(v);
+  return shuffle([d[key], ...picked], rng);
 }
 
 export function buildQuestion(kind: Kind, id: string, rng: Rng): Question | null {

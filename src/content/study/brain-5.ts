@@ -1,11 +1,12 @@
 /* Module · Brain and behaviour, new Beginner sections on electrical signalling, synaptic transmission and the transmitter systems. Original text written for VIBHA School of Psychology. */
-import { SCENE } from "./brain-4";
 
 export const begSignals = String.raw`
 ## 2.1 Electrical signals in depth: membrane potentials and the action potential [core][beginner]
 At the Starting level you learned that a neuron rests at about minus 70 millivolts and fires an all-or-none spike. Entrance exams go further: **why** minus 70, **which** ion moves when, **why** the neuron cannot fire again at once, and **what** speeds a signal up. Here is the full story, with the two equations exams name, explained without heavy maths.
 
-${SCENE("actionpotential")}
+:::widget actionpotential
+{"title":"Make a neuron fire","myelinated":true,"caption":"One small push, then two quick ones, then try to fire again at once. Name the ion moving at each phase as you watch."}
+:::
 
 ### Why the inside is negative: two gradients and a leaky membrane
 Two forces act on every ion:
@@ -227,6 +228,10 @@ You know the five steps: make, store, release, bind, stop. Now look closely at t
 | Direction | One way | Usually both ways |
 | Can it amplify, invert or learn? | Yes: excitatory or inhibitory, strengthened or weakened | Little |
 | Where | Most of the brain | Brainstem nuclei, some interneuron networks, heart muscle, retina |
+
+:::widget synapse3d
+{"title":"Fire a synapse, then break it","transmitter":"dopamine","caption":"Fire once with no drug and name each step. Then add each drug and say which step it changes."}
+:::
 
 Charles Sherrington named the **synapse** in 1897. The argument over whether neurons are separate cells (Santiago Ramón y Cajal's **neuron doctrine**) or a continuous net (Camillo Golgi's reticular theory) was settled in Cajal's favour, though the two shared the 1906 Nobel Prize. In 1921 Otto Loewi showed chemical transmission: fluid from a frog heart whose vagus nerve he stimulated slowed a second heart. He called the substance "Vagusstoff"; it was **acetylcholine**.
 

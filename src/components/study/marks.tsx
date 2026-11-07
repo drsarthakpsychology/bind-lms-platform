@@ -16,7 +16,7 @@ type SaveState = "idle" | "saving" | "saved" | "failed";
  * Bookmark and "My note" for one section. The note opens inline under the
  * title (never over the fixed Back / Next bar) and saves itself as you type.
  */
-export function SectionMarks({ owner, moduleId, sectionId, sectionLabel }: { owner: string; moduleId: string; sectionId: string; sectionLabel: string }) {
+export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }: { owner: string; moduleId: string; sectionId: string; sectionLabel: string; /** Shown first in the same row (the view toggle). */ lead?: React.ReactNode }) {
   const key = markKey(moduleId, sectionId);
   const [marks, update] = useMarks(owner);
   const hydrated = useHydrated();
@@ -26,8 +26,9 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel }: { own
   const panelId = React.useId();
 
   return (
-    <div className="mt-4">
-      <div className="flex flex-wrap gap-2">
+    <div className="mt-3">
+      <div className="flex flex-wrap items-center gap-2">
+        {lead}
         <button
           type="button"
           onClick={() => update((m) => toggleBookmark(m, key, Date.now()))}
@@ -97,7 +98,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
     timer.current = setTimeout(flush, 700);
   }
 
-  const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved on this device" : "Only you see this. Saved on this device.";
+  const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved on this device" : "";
 
   return (
     <div id={id} className="mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4">
@@ -143,15 +144,13 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
     return m && s ? [{ ...it, m, s }] : [];
   });
 
+  // Nothing saved yet: say nothing. The Bookmark and My note buttons are on every section.
+  if (!items.length) return null;
   return (
-    <section aria-labelledby="bookmarks">
-      <h2 id="bookmarks" className="text-h2">
-        Bookmarks
-      </h2>
-      {items.length ? (
-        <>
-          <p className="text-sm text-muted-foreground">Saved on this device.</p>
-          <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2.5 md:grid-cols-2">
+    <details className="group rounded-2xl border-2 border-foreground bg-card">
+      <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold">Bookmarks and notes ({items.length})</summary>
+      <div className="px-3 pb-3">
+          <ul className="mt-1 grid grid-cols-[minmax(0,1fr)] gap-2.5 md:grid-cols-2">
             {items.map(({ key, m, s, bookmarked, note }) => (
               <li key={key} className="flex items-stretch gap-1 rounded-2xl border-2 border-foreground bg-card">
                 <Link href={`/study/${m.id}/${s.id}`} className="flex min-h-14 min-w-0 flex-1 items-start gap-3 rounded-l-2xl p-3 hover:bg-muted">
@@ -183,13 +182,9 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
               </li>
             ))}
           </ul>
-        </>
-      ) : (
-        <p className="mt-2 rounded-2xl border-2 border-dashed border-foreground/40 p-4 text-sm text-muted-foreground">
-          None yet. Tap <span className="font-semibold text-foreground">Bookmark</span> or <span className="font-semibold text-foreground">My note</span> on any section to find it here.
-        </p>
-      )}
-    </section>
+        <p className="mt-2 text-xs text-muted-foreground">Saved on this device.</p>
+      </div>
+    </details>
   );
 }
 
@@ -210,11 +205,10 @@ export type LabLink = { id: string; title: string; hook: string; minutes: number
 export function RelatedLab({ open, items }: { open: boolean; items: LabLink[] }) {
   if (!open || !items.length) return null;
   return (
-    <section aria-labelledby="related-lab" className="rounded-3xl border-2 border-foreground bg-card p-5">
+    <section aria-labelledby="related-lab">
       <h2 id="related-lab" className="flex items-center gap-2 text-lg font-bold">
         <FlaskConical className="size-5" aria-hidden /> Try it in the Lab
       </h2>
-      <p className="text-sm text-muted-foreground">Short experiments you run on yourself, linked to this module.</p>
       <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-2.5 sm:grid-cols-2">
         {items.map((x) => (
           <li key={x.id}>

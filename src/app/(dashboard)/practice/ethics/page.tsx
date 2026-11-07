@@ -1,5 +1,6 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import Link from "next/link";
-import { ETHICS_DILEMMAS, todaysDilemmas } from "@/lib/practice/ethics";
+import { todaysDilemmas } from "@/lib/practice/ethics";
 import { DilemmaFlow } from "./dilemmas";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import type { QuizItem } from "@/lib/quiz/quiz";
@@ -65,37 +66,22 @@ export default async function EthicsPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Ethics &amp; Law</p>
-      <h1 className="mt-1 text-h1">The consequence comes first</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        {ETHICS_DILEMMAS.length} dilemmas grounded in MHA 2017, POCSO, and RCI scope.
-        Decide before you see the outcome: that&apos;s the skill the clinic never gives you time for.
-      </p>
-
-      <Link
-        href="/practice/out-of-depth"
-        className="mt-4 flex items-center justify-between gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-sm font-bold hard-shadow-sm transition-transform hover:-translate-y-0.5"
-      >
-        <span>
-          <span className="block text-eyebrow text-link">Also here</span>
-          Out of depth: when to refer, escalate or stop
-        </span>
-        <span aria-hidden>→</span>
-      </Link>
+      <ToolHeader title="Ethics and law" tip={{ id: "ethics", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says (MHA 2017, POCSO, RCI scope)."] }} />
 
       <div className="mt-6">
         <DilemmaFlow dilemmas={dilemmas} />
       </div>
 
-      <div className="mt-10">
-        <h2 className="text-base font-semibold">Check what stuck</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test. Each item carries its source.
-        </p>
-        <div className="mt-3">
+<details className="group mt-8 rounded-md border-2 border-border bg-card">
+        <summary className="flex min-h-11 cursor-pointer items-center px-4 font-semibold">Quick check</summary>
+        <div className="px-4 pb-4">
           <QuizCheck items={ETHICS_QUIZ} />
         </div>
-      </div>
+      </details>
+
+      <Link href="/practice/out-of-depth" className="mt-4 flex min-h-11 items-center text-sm font-semibold text-link underline-offset-4 hover:underline">
+        Out of depth: when to refer, escalate or stop
+      </Link>
     </div>
   );
 }

@@ -69,9 +69,6 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">Clinic detective</h1>
-        <p className="text-muted-foreground">
-          Clues appear one by one. Name the medicine or disorder as early as you dare: 40 points on clue 1, down to 10 on clue 4. Wrong guesses cost {WRONG_PENALTY}.
-        </p>
         {state.detectiveBest ? <p className="font-pix text-sm">Your best: {state.detectiveBest}</p> : null}
         <div className="grid gap-3 sm:grid-cols-3">
           {(

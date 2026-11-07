@@ -74,9 +74,6 @@ export default async function TopicPage({ params, searchParams }: Params) {
             </ul>
           </nav>
         ) : null}
-        <p className="text-sm text-muted-foreground">
-          Set {view.set + 1} of {view.sets.length}
-        </p>
       </header>
 
       <QuestionRunner

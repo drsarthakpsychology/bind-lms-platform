@@ -1,8 +1,11 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { WeakSpotsView } from "./weak-spots-view";
 import { WeakSpotsDrill } from "./weak-spots-drill";
-import { requireFeature } from "@/lib/flags";
+import { readFlags, requireFeature, type FeatureKey } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -12,8 +15,8 @@ export const dynamic = "force-dynamic";
  * (v5 §4: "Weak Spots must GENERATE a drill, not just report").
  */
 export default async function WeakSpotsPage() {
-
-  await requireFeature("weak_spots");  const supabase = await createClient();
+  await requireFeature("weak_spots");
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -27,17 +30,22 @@ export default async function WeakSpotsPage() {
     .limit(20);
 
   const rubrics = (scores ?? []).map((s) => (s.rubric ?? {}) as Record<string, unknown>);
-  const spots = analyzeWeakSpots(rubrics);
+  // A remedy must never open a switched-off tool: fall back to the Consulting Room.
+  const flags = await readFlags();
+  const REMEDY_FLAG: Record<string, FeatureKey> = { "/practice/mse": "mse", "/practice/osce": "osce" };
+  const spots = analyzeWeakSpots(rubrics).map((s) => {
+    const flag = REMEDY_FLAG[s.remedyHref];
+    return flag && flags[flag] !== "unlocked" ? { ...s, remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room: practise this in your next interview" } : s;
+  });
   const drill = generateDrill(spots, 10);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Weak spots</p>
-      <h1 className="mt-1 text-h1">Where you miss, drill here</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Your sim debriefs, analysed. The skills you keep missing, ranked, and a 10-item
-        drill generated from them, on the spot.
-      </p>
+      <Link href="/practice/consulting-room" className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
+        <ArrowLeft className="size-4" aria-hidden />
+        Consulting Room
+      </Link>
+      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most in your patient sessions, ranked.", "Run the 10-question drill made from them."] }} />
 
       <div className="mt-6">
         <WeakSpotsView spots={spots} sessions={rubrics.length} />

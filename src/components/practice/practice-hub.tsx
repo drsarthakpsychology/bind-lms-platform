@@ -3,13 +3,11 @@ import {
   ArrowRight,
   Brain,
   ClipboardList,
-  BookOpen,
   Gauge,
   GraduationCap,
   Languages,
   Lock,
   MessagesSquare,
-  Radar,
   RotateCcw,
   Scale,
   Search,
@@ -17,7 +15,6 @@ import {
   Timer,
   Users,
   Wand2,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import type { FeatureKey, FlagStatus } from "@/lib/flags";
@@ -34,27 +31,29 @@ type Tone = "lime" | "blue" | "ink" | "plain";
 export type HubTool = { href: string; title: string; text: string; icon: LucideIcon; flag: FeatureKey; tone: Tone };
 
 export const MAIN_TOOLS: HubTool[] = [
-  { href: "/games/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, flag: "learn", tone: "lime" },
+  { href: "/practice/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, flag: "learn", tone: "lime" },
   { href: "/practice/consulting-room", title: "AI patient interview", text: "Talk to a patient in the Consulting Room. The debrief shows what you missed.", icon: Stethoscope, flag: "consulting_room", tone: "ink" },
   { href: "/practice/mse", title: "MSE", text: "Describe what you see before you label it.", icon: Brain, flag: "mse", tone: "blue" },
   { href: "/practice/formulation", title: "Formulation", text: "Sort the 5Ps and write the story of the case.", icon: Wand2, flag: "formulation", tone: "lime" },
 ];
 
+/*
+ * Merged (Nov 2026 practice review): Two-minute clinic is a mode inside Clinic
+ * detective; Weak spots opens from the Consulting Room; Landmark cases is the
+ * one cases library (the raw journal-article Case library stays off).
+ */
 export const THINK_TOOLS: HubTool[] = [
-  { href: "/games/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
-  { href: "/games/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
-  { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
+  { href: "/practice/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
+  { href: "/practice/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
+  { href: "/practice/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
   { href: "/practice/judgment", title: "Judgment", text: "New facts change the odds. 2 minutes.", icon: Gauge, flag: "judgment", tone: "plain" },
-  { href: "/practice/two-minute-clinic", title: "Two-minute clinic", text: "One-liner, differential, next question.", icon: Zap, flag: "two_minute_clinic", tone: "plain" },
   { href: "/practice/ethics", title: "Ethics, law & referral", text: "What to do, then the law behind it.", icon: Scale, flag: "ethics", tone: "plain" },
 ];
 
 export const MORE_TOOLS: HubTool[] = [
   { href: "/practice/osce", title: "OSCE stations", text: "Seven minutes, one task, out loud.", icon: Timer, flag: "osce", tone: "plain" },
   { href: "/practice/role-play", title: "Peer role-play", text: "One of you is the patient.", icon: Users, flag: "peer_roleplay", tone: "plain" },
-  { href: "/practice/weak-spots", title: "Weak spots drill", text: "A drill built from your own debriefs.", icon: Radar, flag: "weak_spots", tone: "plain" },
-  { href: "/practice/landmark", title: "Landmark cases", text: "What was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
-  { href: "/practice/library", title: "Case library", text: "Real case reports to read and note.", icon: BookOpen, flag: "case_library", tone: "plain" },
+  { href: "/practice/landmark", title: "Landmark cases", text: "Famous cases: what was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
 ];
 
 const TONE: Record<Tone, string> = {
@@ -72,13 +71,13 @@ const STATE_CHIP: Record<string, { label: string; className: string }> = {
 
 export type ShownTool = HubTool & { locked: boolean; state?: SurfaceState };
 
-/** Hide "off" tools; "live" ones show locked; blocked ones are dropped by the caller. */
+/** Hide "off" tools; "live" ones show greyed with no link (no dead ends); blocked ones are dropped. */
 export function shownTools(tools: HubTool[], flags: Record<string, FlagStatus>, states: Record<string, SurfaceState>, isBlocked: (href: string) => boolean): ShownTool[] {
   return tools.flatMap((t) => {
     const status = flags[t.flag];
     if ((status !== "live" && status !== "unlocked") || isBlocked(t.href)) return [];
     const locked = status === "live";
-    return [{ ...t, locked, href: locked ? `/practice/not-available?feature=${encodeURIComponent(t.flag)}&state=live` : t.href, state: states[t.href] }];
+    return [{ ...t, locked, state: states[t.href] }];
   });
 }
 
@@ -100,8 +99,8 @@ export function MainTile({ tool }: { tool: ShownTool }) {
   const Icon = tool.icon;
   return (
     <li className="min-w-0">
-      <Link
-        href={tool.href}
+      <TileLink
+        tool={tool}
         className={cn(
           "group/tile flex h-full min-w-0 flex-col gap-3 rounded-2xl border-2 border-foreground p-4 outline-none hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:p-5",
           TONE[tool.tone],
@@ -121,7 +120,7 @@ export function MainTile({ tool }: { tool: ShownTool }) {
           </span>
           <span className="text-sm leading-snug opacity-85 [overflow-wrap:anywhere]">{tool.text}</span>
         </span>
-      </Link>
+      </TileLink>
     </li>
   );
 }
@@ -131,8 +130,8 @@ export function ToolRow({ tool }: { tool: ShownTool }) {
   const Icon = tool.icon;
   return (
     <li className="min-w-0">
-      <Link
-        href={tool.href}
+      <TileLink
+        tool={tool}
         className={cn(
           "group/row flex h-full min-h-16 min-w-0 items-center gap-3 rounded-xl border-2 border-foreground bg-card p-3 outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none",
           tool.locked && "opacity-70",
@@ -146,8 +145,27 @@ export function ToolRow({ tool }: { tool: ShownTool }) {
           <span className="block text-sm leading-snug text-muted-foreground [overflow-wrap:anywhere]">{tool.text}</span>
         </span>
         <Chip tool={tool} />
-      </Link>
+      </TileLink>
     </li>
+  );
+}
+
+/**
+ * An open tool is a link. A tool that is coming soon is a greyed card with no
+ * link, so it never opens a "Not unlocked yet" page.
+ */
+function TileLink({ tool, className, children }: { tool: ShownTool; className: string; children: React.ReactNode }) {
+  if (tool.locked) {
+    return (
+      <div aria-disabled="true" className={cn(className, "pointer-events-none cursor-default shadow-none")}>
+        {children}
+      </div>
+    );
+  }
+  return (
+    <Link href={tool.href} className={className}>
+      {children}
+    </Link>
   );
 }
 
@@ -168,7 +186,20 @@ export function ToolSection({ id, title, tools }: { id: string; title: string; t
 }
 
 /** The whole hub (the page loads flags, states and the resume link). */
-export function PracticeHubView({ main, think, more, resume }: { main: ShownTool[]; think: ShownTool[]; more: ShownTool[]; resume: { href: string; title: string } | null }) {
+export function PracticeHubView({
+  main,
+  think,
+  more,
+  resume,
+  record = { passport: false, record: false },
+}: {
+  main: ShownTool[];
+  think: ShownTool[];
+  more: ShownTool[];
+  resume: { href: string; title: string } | null;
+  /** Footer links, shown only when their switch is on. */
+  record?: { passport: boolean; record: boolean };
+}) {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
@@ -197,14 +228,20 @@ export function PracticeHubView({ main, think, more, resume }: { main: ShownTool
         <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">Nothing here yet. Your faculty will switch tools on soon.</p>
       ) : null}
 
-      <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
-        <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Skills Passport
-        </Link>
-        <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Supervision log and check-in
-        </Link>
-      </nav>
+      {record.passport || record.record ? (
+        <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
+          {record.passport ? (
+            <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              Skills Passport
+            </Link>
+          ) : null}
+          {record.record ? (
+            <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              Supervision log and check-in
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
     </div>
   );

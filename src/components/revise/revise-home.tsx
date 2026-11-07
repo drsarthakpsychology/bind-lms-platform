@@ -122,8 +122,8 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   const n = plan.today.length;
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/games" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Games
+      <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+        <ArrowLeft className="size-4" aria-hidden /> Smart practice
       </Link>
 
       <header>
@@ -163,7 +163,7 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   );
 }
 
-/** /games/revise: what to revisit today. */
+/** /prep/smart/revise: what to revisit today. */
 export function ReviseHome({ modules, serverState, save, lab }: { modules: ReviseModule[]; serverState: LearnState | null; save: Save; lab: boolean }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);

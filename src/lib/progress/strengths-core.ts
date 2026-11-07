@@ -57,8 +57,10 @@ export type Lookups = {
   topicTitle: (id: string) => string | null;
   /** True when /study/<id> exists. */
   moduleExists: (id: string) => boolean;
-  /** True when the module quiz bank has questions for this topic (so /study/map/practice works). */
+  /** True when the module quiz bank has questions for this topic. */
   hasBank: (id: string) => boolean;
+  /** The Exam Prep topic set (or subject) for a Study module, when the bank has one. */
+  prepTopicHref?: (id: string) => string | null;
   /** Display name for an Exam Prep subject. */
   subjectTitle: (subject: string) => string | null;
   /** Study link for an Exam Prep subject. */
@@ -119,7 +121,8 @@ export function scoreTopics(
       const title = look.topicTitle(a.id);
       if (!title) continue;
       const studyHref = look.moduleExists(a.id) ? `/study/${a.id}` : null;
-      const practiceHref = look.hasBank(a.id) ? `/study/map/practice?topic=${encodeURIComponent(a.id)}` : "/prep/smart";
+      // Practise a weak topic in Exam Prep (its topic set), never a Study-side quiz.
+      const practiceHref = look.prepTopicHref?.(a.id) ?? "/prep/smart";
       out.push({ id: a.id, title, kind: a.kind, p, n: a.n, studyHref, practiceHref });
     }
   }

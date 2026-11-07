@@ -85,7 +85,7 @@ export function ProgressView({
         <ul className="mt-3 grid gap-2 sm:grid-cols-2">
           {[...domains].sort((a, b) => b.m.pct - a.m.pct).map((d) => (
             <li key={d.id}>
-              <Link href={`/games/coach?domain=${d.id}`} className="block rounded-2xl border-2 border-foreground bg-card p-3 transition-transform hover:-translate-y-0.5">
+              <Link href={`/prep/smart/coach?domain=${d.id}`} className="block rounded-2xl border-2 border-foreground bg-card p-3 transition-transform hover:-translate-y-0.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-bold">
                     <span aria-hidden>{d.icon}</span> {d.title}

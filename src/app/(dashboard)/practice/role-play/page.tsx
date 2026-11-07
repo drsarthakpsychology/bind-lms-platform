@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, type WeakSpot } from "@/lib/practice/weak-spots";
@@ -98,12 +99,7 @@ export default async function RolePlayPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Peer role-play</p>
-      <h1 className="mt-1 text-h1">Practice with a classmate</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        One of you plays the patient, the other the clinician. The person, not a script,
-        is what makes it real. Message thread persists for both of you.
-      </p>
+      <ToolHeader title="Practise with a classmate" tip={{ id: "role-play", steps: ["One of you plays the patient, the other the clinician.", "Your messages stay saved for both of you."] }} />
 
       <div className="mt-6">
         {openSessionId ? (

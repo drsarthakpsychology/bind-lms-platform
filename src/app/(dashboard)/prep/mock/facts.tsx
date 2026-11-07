@@ -27,7 +27,7 @@ export function PatternFacts({ spec, compact = false }: { spec: PrepSpec; compac
       {!compact && spec.sections.length > 1 ? (
         <p className="text-sm text-muted-foreground">Parts: {spec.sections.map((s) => `${s.title} (${s.count})`).join(", ")}</p>
       ) : null}
-      <Verified spec={spec} />
+      {!compact ? <Verified spec={spec} /> : null}
       {!compact && spec.notes?.length ? (
         <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
           {spec.notes.map((x) => (

@@ -270,8 +270,8 @@ export function SectionReader({
               <span className="shrink-0 text-xs font-semibold tabular-nums text-muted-foreground">{atEnd ? "All parts read" : `Part ${step + 1} of ${chunks.length}`}</span>
             </div>
           ) : null}
-          <div className="mt-3"><ViewToggle /></div>
-          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} /> : null}
+          {/* One toolbar row: explanation style, bookmark, my note. */}
+          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle />} /> : <div className="mt-3"><ViewToggle /></div>}
         </header>
 
         {section.levelCheck ? (

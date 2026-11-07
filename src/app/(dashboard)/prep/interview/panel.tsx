@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, BadgeCheck, Mic, MicOff, RotateCcw, Sparkles, TriangleAlert, Users } from "lucide-react";
 import { selfScore, type SelfScore } from "@/lib/prep/interview";
 import { cn } from "@/lib/utils";
+import { ToolHeader } from "@/components/help/tool-header";
 import { interviewFeedback, revealInterview, saveInterviewSession, type InterviewReveal } from "../actions";
 import { btnInk, btnPlain, btnPrimary, card } from "../ui";
 
@@ -196,22 +197,17 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
   if (idx < 0) {
     return (
       <div className="space-y-5">
-        <header className="space-y-2">
-          <p className="text-eyebrow text-link">Mock interview</p>
-          <h1 className="text-h1">Face the panel</h1>
-        </header>
+        <ToolHeader
+          title="Mock interview"
+          tip={{
+            id: "prep-interview",
+            steps: ["The panel asks a question, then a follow-up.", "Type your answer, or speak it if your browser allows.", "Then tick what you covered and read a model answer."],
+          }}
+        />
         <div className={cn(card, "space-y-4 hard-shadow-md")}>
-          <ul className="space-y-2">
-            <li className="flex gap-2">
-              <Users className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions, the way panels usually run, each with a follow-up.
-            </li>
-            <li className="flex gap-2">
-              <Mic className="mt-0.5 size-5 shrink-0" aria-hidden /> Type your answer, or speak it if your browser allows.
-            </li>
-            <li className="flex gap-2">
-              <BadgeCheck className="mt-0.5 size-5 shrink-0" aria-hidden /> Then check yourself against what a strong answer covers, and see a model answer.
-            </li>
-          </ul>
+          <p className="flex gap-2 font-semibold">
+            <Users className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions, each with a follow-up.
+          </p>
           <button type="button" className={cn(btnPrimary, "w-full text-base")} onClick={() => setIdx(0)}>
             Start <ArrowRight className="size-4" aria-hidden />
           </button>

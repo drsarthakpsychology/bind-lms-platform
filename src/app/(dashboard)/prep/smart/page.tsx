@@ -42,13 +42,13 @@ export default async function SmartPage() {
         back={{ href: "/prep", label: "Exam Prep" }}
         empty={<p className="font-semibold">Questions are being added.</p>}
       />
-      <nav aria-label="More ways to practise" className="border-t-2 border-dashed border-foreground/30 pt-4">
-        <p className="text-eyebrow text-muted-foreground">More ways to practise</p>
-        <ul className="mt-2 flex flex-wrap gap-2">
+      <details className="border-t-2 border-dashed border-foreground/30 pt-2">
+        <summary className="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-muted-foreground">More ways to practise</summary>
+        <ul className="mt-2 flex flex-wrap gap-2" aria-label="More ways to practise">
           {[
-            { href: "/games/coach", label: "Words you mix up" },
-            { href: "/games/quizzes", label: "Quiz path" },
-            { href: "/games/revise", label: "Revise today" },
+            { href: "/prep/smart/coach", label: "Words you mix up" },
+            { href: "/prep/smart/quizzes", label: "Quiz path" },
+            { href: "/prep/smart/revise", label: "Revise today" },
           ].map((l) => (
             <li key={l.href}>
               <Link href={l.href} className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-secondary">
@@ -57,7 +57,7 @@ export default async function SmartPage() {
             </li>
           ))}
         </ul>
-      </nav>
+      </details>
     </PrepFrame>
   );
 }
