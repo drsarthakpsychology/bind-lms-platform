@@ -1,3 +1,6 @@
+import { BOARDS_MORE } from "./boards-more";
+import { exams, type Exam, type ExamSet } from "../tags";
+
 /**
  * Criteria Sort boards: 16 criteria, 4 look-alike disorders. Each tile belongs
  * to exactly one disorder on its board. `threshold` is the duration or count
@@ -17,6 +20,9 @@ export type SortBoard = {
   thresholds: string[] | null;
   module: string;
   refs: string[];
+  /** One short line: what the board teaches (older boards get it from LEGACY_TAGS). */
+  objective?: string;
+  exams?: Exam[];
 };
 
 let n = 0;
@@ -189,6 +195,26 @@ export const BOARDS: SortBoard[] = [
     refs: ["DSM-5-TR p.672 (delirium)", "DSM-5-TR p.690 (Alzheimer's)", "DSM-5-TR pdf p.939 to 940 (Lewy)", "DSM-5-TR pdf p.935 (frontotemporal)"],
   },
 ];
+
+const LEGACY_TAGS: Record<string, [string, ExamSet]> = {
+  "sb-01": ["Sort mood criteria by episode type and duration.", "all"],
+  "sb-02": ["Match criteria to the four common anxiety disorders.", "all"],
+  "sb-03": ["Place psychotic disorders by how long symptoms last.", "all"],
+  "sb-04": ["Separate trauma and stressor disorders by timing and stressor.", "core"],
+  "sb-05": ["Match features to borderline, antisocial, avoidant and schizotypal personality.", "core"],
+  "sb-06": ["Separate the eating disorders by weight, compensation and body image.", "core"],
+  "sb-07": ["Match criteria to insomnia, narcolepsy, sleep apnea and restless legs.", "core"],
+  "sb-08": ["Count use-disorder criteria and time withdrawal states.", "core"],
+  "sb-09": ["Separate ADHD, autism, ODD and conduct disorder.", "all"],
+  "sb-10": ["Tell somatic symptom, illness anxiety, functional and factitious disorders apart.", "core"],
+  "sb-11": ["Match features to delirium and the three main dementias.", "all"],
+};
+
+for (const b of BOARDS) {
+  const t = LEGACY_TAGS[b.id];
+  if (t && !b.objective) Object.assign(b, { objective: t[0], exams: exams(t[1]) });
+}
+BOARDS.push(...BOARDS_MORE);
 
 const BY_ID = new Map(BOARDS.map((b) => [b.id, b]));
 export function boardById(id: string): SortBoard | undefined {

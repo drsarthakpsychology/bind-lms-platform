@@ -1,4 +1,5 @@
 import type { Chapter } from "../diagnoses";
+import type { Exam } from "../tags";
 
 export type InvestigationKind = "mse" | "collateral" | "scale" | "lab";
 
@@ -33,4 +34,8 @@ export type DailyCase = {
   module: string;
   /** Admin-only: book + page used to check the facts. */
   refs: string[];
+  /** One short line: what the student should take away. Filled for every case (older cases via tags.ts). */
+  objective?: string;
+  /** Exams the case is honestly useful for. */
+  exams?: Exam[];
 };
