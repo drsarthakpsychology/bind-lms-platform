@@ -47,7 +47,8 @@ export const LIMITS = {
   longText: 5000,
 } as const;
 
-const KEY_RE = /^[a-z][a-z0-9_]{0,59}$/;
+/** New keys are lower case; older stored keys may be looser, so saving them back must still pass. */
+const KEY_RE = /^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/;
 
 /** Older or hand-made type names mapped onto ours. Unknown types read as short answers. */
 const TYPE_ALIAS: Record<string, FieldType> = {
