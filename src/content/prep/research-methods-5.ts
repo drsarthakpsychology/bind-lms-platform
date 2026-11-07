@@ -108,7 +108,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In grounded theory, repeatedly comparing incidents with incidents, incidents with codes and categories with categories is called:",
     options: [
-      "Negative case sampling",
+      "Negative case sampling across interviews",
       "Member checking",
       "Bracketing",
       "Constant comparative analysis",
@@ -196,7 +196,7 @@ const D: Draft[] = [
       "Amedeo Giorgi",
       "Jonathan A. Smith",
       "Kathy Charmaz",
-      "Harvey Sacks",
+      "Harvey Sacks and Emanuel Schegloff",
     ],
     answer: 1,
     explanation:
@@ -479,7 +479,7 @@ const D: Draft[] = [
     options: [
       "A transparent window onto speakers' internal attitudes and cognitions",
       "Social action: what talk does, such as blaming, justifying or building facts",
-      "A system of grammatical and phonological rules to be described formally",
+      "A system of grammatical and phonological rules to be described formally and fully",
       "Evidence of unconscious conflicts",
     ],
     answer: 1,
@@ -588,7 +588,7 @@ const D: Draft[] = [
     stem: "In ethnography, the 'emic' perspective refers to:",
     options: [
       "Quantitative coding of observed behaviours",
-      "The outside researcher's comparative, analytic categories",
+      "The outside researcher's comparative, analytic categories applied across cultures",
       "The insider's view of meanings within the culture being studied",
       "The ethical approval process for fieldwork",
     ],
@@ -731,7 +731,7 @@ const D: Draft[] = [
     stem: "In qualitative analysis, negative case analysis involves:",
     options: [
       "Counting how often a theme does not appear across the transcripts",
-      "Excluding participants whose negative views would distort the main themes of the analysis",
+      "Excluding participants whose unusually negative views would distort the main themes of the analysis",
       "Seeking out cases that do not fit the emerging pattern and revising the analysis to explain them",
       "Analysing only cases with poor outcomes, to learn what went wrong",
     ],

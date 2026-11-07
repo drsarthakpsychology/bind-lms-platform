@@ -148,7 +148,7 @@ const D: Draft[] = [
     options: [
       "Dependent variable",
       "Organismic variable",
-      "Extraneous variable",
+      "Extraneous (confounding) variable",
       "Independent variable",
     ],
     answer: 3,
@@ -245,7 +245,7 @@ const D: Draft[] = [
       "Internal validity, by making the two message groups equivalent",
       "Generalising the findings to the population of voters (external validity)",
       "Statistical conclusion validity by reducing Type I error",
-      "Construct validity of the persuasive message used as the treatment",
+      "Construct validity of the persuasive message that was used as the treatment",
     ],
     answer: 1,
     explanation:
@@ -662,7 +662,7 @@ const D: Draft[] = [
     options: [
       "Can be used only with dichotomous outcomes such as relapse or recovery",
       "Balances groups only on measured covariates, not on unmeasured confounders",
-      "Requires the treatment to have been randomly assigned in the first place",
+      "Requires the treatment to have been randomly assigned to participants in the first place",
       "Always reduces the sample size to fewer than 30 per group",
     ],
     answer: 1,
@@ -748,7 +748,12 @@ const D: Draft[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A therapist teaches a child with autism three new social skills. Once learnt, the skills are not expected to disappear if teaching stops. The most suitable single-case design is:",
-    options: ["ABAB reversal", "Multiple baseline across behaviours", "BAB design", "AB design without replication"],
+    options: [
+      "ABAB reversal",
+      "Multiple baseline across behaviours",
+      "BAB design",
+      "AB design without replication across settings",
+    ],
     answer: 1,
     explanation:
       "Withdrawal designs need behaviour to return to baseline when treatment is removed. Learnt skills are usually irreversible, and withdrawing a beneficial treatment can also be unethical. A multiple baseline across the three skills introduces teaching in a staggered way and shows control when each skill changes only after its own intervention starts. ABAB and BAB both depend on reversal. An AB design gives no replication and cannot rule out history.",
@@ -856,7 +861,7 @@ const D: Draft[] = [
       "It cannot use visual analysis, because there is only one phase change",
       "It gives no replication of the effect, so history and maturation cannot be ruled out",
       "It always needs more than one participant to show an effect",
-      "It requires withdrawing a treatment that works, which raises ethical concerns",
+      "It requires withdrawing a treatment that works, which raises serious ethical concerns",
     ],
     answer: 1,
     explanation:

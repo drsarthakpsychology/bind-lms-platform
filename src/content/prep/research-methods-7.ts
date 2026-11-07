@@ -181,7 +181,7 @@ const D: Draft[] = [
     stem: "Egger's regression test for funnel-plot asymmetry regresses each study's standardised effect (effect/SE) on its precision (1/SE). Evidence of small-study effects is shown by:",
     options: [
       "A negative fail-safe N",
-      "A slope significantly different from zero",
+      "A slope significantly different from zero in the regression",
       "An R² above .50",
       "An intercept significantly different from zero",
     ],
@@ -475,7 +475,12 @@ const D: Draft[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Using Landis and Koch's benchmarks, a kappa of 0.72 for agreement on ICD-11 diagnoses would be described as:",
-    options: ["Slight", "Fair", "Moderate", "Substantial"],
+    options: [
+      "Almost perfect",
+      "Fair",
+      "Moderate",
+      "Substantial",
+    ],
     answer: 3,
     explanation:
       "Landis and Koch's labels are: below 0 poor, .00 to .20 slight, .21 to .40 fair, .41 to .60 moderate, .61 to .80 substantial, and .81 to 1.00 almost perfect. So 0.72 is substantial. The benchmarks are arbitrary conventions, and some authors, such as Cicchetti and Fleiss, use different cut-offs.",
@@ -572,7 +577,7 @@ const D: Draft[] = [
     stem: "Children behave unusually well during the first few days an observer sits in their classroom. To reduce this reactivity, the observer should:",
     options: [
       "Allow a habituation period before recording, and stay as unobtrusive as possible",
-      "Increase the number of categories in the coding scheme to capture more detail",
+      "Increase the number of categories in the coding scheme to capture more detail of behaviour",
       "Use percentage agreement instead of kappa when checking reliability",
       "Tell the children exactly which behaviours are being recorded",
     ],
@@ -610,7 +615,7 @@ const D: Draft[] = [
     stem: "Five raters, regarded as a random sample of possible raters, each score the same 30 videotaped interviews on a continuous scale. The aim is to estimate how far a single rater's absolute scores can be trusted. The appropriate coefficient is:",
     options: [
       "Cohen's kappa",
-      "ICC(3,k): two-way mixed effects, consistency, average of raters",
+      "ICC(3,k): two-way mixed effects, consistency, average of several raters",
       "ICC(2,1): two-way random effects, absolute agreement, single rater",
       "Cronbach's alpha computed across raters",
     ],
@@ -747,7 +752,7 @@ const D: Draft[] = [
     options: [
       "12 categories in socio-emotional and task areas",
       "4 categories of conflict style",
-      "Positive and negative reinforcement events",
+      "Positive and negative reinforcement events between members",
       "The 16 personality factors",
     ],
     answer: 0,

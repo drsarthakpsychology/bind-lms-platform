@@ -23,7 +23,12 @@ const D: Draft[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which of the following is a probability sampling method?",
-    options: ["Quota sampling", "Snowball sampling", "Purposive sampling", "Stratified random sampling"],
+    options: [
+      "Quota sampling",
+      "Snowball sampling",
+      "Purposive (judgement) sampling",
+      "Stratified random sampling",
+    ],
     answer: 3,
     explanation:
       "In stratified random sampling, every member of each stratum has a known, non-zero chance of selection, which is the definition of probability sampling. Quota sampling fills set numbers per category, but the interviewer chooses who, so selection probabilities are unknown. Snowball sampling depends on referrals. Purposive sampling depends on the researcher's judgement.",
@@ -315,7 +320,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "The main limitation of a convenience sample of psychology undergraduates is that:",
     options: [
-      "Statistical tests cannot be applied to it, because the students were not drawn at random",
+      "Statistical tests cannot be applied to it, because the students were not drawn at random from a list",
       "It always produces Type I errors, because the sample is so homogeneous",
       "Its findings may not generalise, as the sample may differ systematically from the population",
       "It prevents random assignment of the students to experimental conditions",
@@ -540,7 +545,12 @@ const D: Draft[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Temperature measured in degrees Celsius is an example of which scale of measurement?",
-    options: ["Nominal", "Ordinal", "Interval", "Ratio"],
+    options: [
+      "Nominal",
+      "Ordinal",
+      "Interval",
+      "Ratio (true zero)",
+    ],
     answer: 2,
     explanation:
       "Celsius has equal intervals (the difference between 10° and 20° equals that between 30° and 40°), but 0 °C is arbitrary, not an absence of heat, so 20 °C is not 'twice as hot' as 10 °C. That makes it interval. Kelvin, with an absolute zero, is ratio. Nominal scales only name categories, and ordinal scales only rank them.",
@@ -738,7 +748,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Scores on an interval scale are transformed by y = 2x + 5. Which quantity stays the same after the transformation?",
     options: [
-      "The ratio of any two scores on the scale",
+      "The ratio of any two scores on the original scale",
       "The standard deviation of the scores",
       "The mean of the scores",
       "The ratio of any two differences between scores",
@@ -759,7 +769,7 @@ const D: Draft[] = [
     options: [
       "Judges disagree about where they belong, so they are ambiguous",
       "They are too extreme in their attitude position",
-      "They show low item-total correlations in respondents' data",
+      "They show low item-total correlations in the respondents' later data",
       "They duplicate other statements' scale values",
     ],
     answer: 0,

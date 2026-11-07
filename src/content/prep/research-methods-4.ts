@@ -64,7 +64,7 @@ const D: Draft[] = [
     options: [
       "z = 1.28",
       "z = 2.33",
-      "z = 1.96",
+      "z = 1.960",
       "z = 1.645",
     ],
     answer: 3,
@@ -235,7 +235,7 @@ const D: Draft[] = [
     stem: "The concepts of the alternative hypothesis, Type II error and statistical power were introduced into significance testing by:",
     options: [
       "R. A. Fisher",
-      "William Gosset ('Student')",
+      "William Gosset ('Student') at Guinness",
       "Karl Pearson",
       "Jerzy Neyman and Egon Pearson",
     ],
@@ -253,7 +253,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A study of 20,000 students finds that a study app raises exam scores by 0.3 marks out of 100 (p < .001). The most appropriate conclusion is that:",
     options: [
-      "The app has a large and important effect, because the p value is so very small",
+      "The app has a large and practically important effect, because the p value is very small",
       "The result must be a Type I error, given how small the effect is",
       "The effect is statistically significant but probably too small to matter in practice",
       "The sample was too small",
@@ -311,7 +311,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Meehl argued that, in 'soft' psychology, improving measurement precision and sample size makes theory tests weaker rather than stronger. His reasoning was that:",
     options: [
-      "Psychology's theories are usually too precise to be tested against noisy behavioural data",
+      "Psychology's theories are usually too precise to be tested against noisy, variable behavioural data",
       "Greater precision raises the Type I error rate above α, producing more false positives",
       "A nil null is almost never exactly true, so more power makes 'confirming' a vague theory easier",
       "Large samples violate the assumptions on which parametric tests are based",
@@ -487,7 +487,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "MacCorquodale and Meehl distinguished intervening variables from hypothetical constructs. A hypothetical construct, unlike an intervening variable:",
     options: [
-      "Is a purely mathematical summary of the relation between observed inputs and outputs, with no surplus meaning",
+      "Is a purely mathematical summary of the relation between observed inputs and outputs, with no surplus meaning at all",
       "Has surplus meaning: it refers to processes or entities thought to really exist, beyond the observed relations",
       "Can be measured directly without any operations",
       "Is always a dependent variable",
@@ -544,7 +544,7 @@ const D: Draft[] = [
     stem: "The view that 'we mean by any concept nothing more than a set of operations; the concept is synonymous with the corresponding set of operations' was stated by:",
     options: [
       "Karl Popper",
-      "S. S. Stevens",
+      "Stanley Smith Stevens",
       "Percy Bridgman",
       "B. F. Skinner",
     ],
@@ -758,7 +758,12 @@ const D: Draft[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In a convergent mixed-methods study, a table that sets quantitative results next to the corresponding qualitative themes, to show where they agree or disagree, is called a:",
-    options: ["Joint display", "Forest plot", "Scree plot", "Codebook"],
+    options: [
+      "Joint display",
+      "Forest plot of themes",
+      "Scree plot",
+      "Codebook",
+    ],
     answer: 0,
     explanation:
       "A joint display is a visual tool for integration: rows by domain, with columns for statistics, quotations and a 'meta-inference' of agreement, complementarity or discordance. A forest plot shows effect sizes in a meta-analysis. A scree plot shows eigenvalues in factor analysis. A codebook defines the qualitative codes but does not integrate them with numbers.",
@@ -817,7 +822,7 @@ const D: Draft[] = [
       "Methodological triangulation",
       "Investigator triangulation",
       "Theory triangulation",
-      "Data (source) triangulation",
+      "Data (source) triangulation across sites",
     ],
     answer: 0,
     explanation:
@@ -848,7 +853,7 @@ const D: Draft[] = [
     stem: "In Q methodology, participants rank-order a set of statements into a quasi-normal grid. The data are then analysed by:",
     options: [
       "Factor-analysing persons, that is whole Q-sorts, rather than items, to find shared viewpoints",
-      "Factor-analysing the statements across a large random sample of people, as in R methodology",
+      "Factor-analysing the statements across a large random sample of people, as in standard R methodology",
       "Thematic coding of the statements only",
       "Computing Cronbach's alpha for each participant's Q-sort",
     ],

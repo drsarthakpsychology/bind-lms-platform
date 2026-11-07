@@ -26,7 +26,7 @@ const D: Draft[] = [
     options: [
       "Consent, debriefing and deception",
       "Autonomy, confidentiality and fidelity",
-      "Integrity, competence and responsibility",
+      "Integrity, competence and professional responsibility",
       "Respect for persons, beneficence and justice",
     ],
     answer: 3,
@@ -169,7 +169,7 @@ const D: Draft[] = [
       "The child's assent alone",
       "The school principal's consent alone",
       "Parental (guardian) consent together with the child's assent",
-      "No consent, because children cannot understand research",
+      "No consent at all, because children cannot understand what research involves",
     ],
     answer: 2,
     explanation:
@@ -210,7 +210,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A researcher knows who each participant is but promises never to reveal any individual's responses. This promise concerns:",
     options: [
-      "Anonymity",
+      "Anonymity of the data",
       "Beneficence",
       "Confidentiality",
       "Debriefing",
@@ -323,7 +323,7 @@ const D: Draft[] = [
     stem: "The '3Rs' framework for the ethical use of animals in research stands for:",
     options: [
       "Randomise, Replicate, Reduce",
-      "Respect, Responsibility, Rights",
+      "Respect, Responsibility and animal Rights",
       "Review, Record, Report",
       "Replacement, Reduction, Refinement",
     ],
@@ -804,7 +804,12 @@ const D: Draft[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Following APA bias-free language guidelines, which phrase is generally preferred in a research report?",
-    options: ["'the schizophrenics'", "'people with schizophrenia'", "'schizophrenia victims'", "'the mentally ill'"],
+    options: [
+      "'the schizophrenics'",
+      "'people with schizophrenia'",
+      "'schizophrenia victims'",
+      "'the mentally ill population'",
+    ],
     answer: 1,
     explanation:
       "Person-first language ('people with schizophrenia') avoids reducing people to a diagnosis. APA 7 also accepts identity-first language where a community prefers it, as many autistic and Deaf people do. Calling people 'the schizophrenics' or 'the mentally ill' equates them with the condition. 'Victims' adds emotive, disempowering language.",
@@ -908,7 +913,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In APA 7, the first in-text citation of a group author with a well-known abbreviation, such as a 2022 WHO report, is written as:",
     options: [
-      "(WHO, 2022) throughout, since the abbreviation is well known",
+      "(WHO, 2022) throughout, since the abbreviation is already well known to readers",
       "(World Health Organization [WHO], 2022), and (WHO, 2022) after that",
       "(World Health Organization, WHO, 2022) every time",
       "(W.H.O., 2022), with full stops in the acronym",

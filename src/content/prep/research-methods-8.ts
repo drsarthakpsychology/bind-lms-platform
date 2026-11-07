@@ -100,7 +100,7 @@ const D: Draft[] = [
     stem: "Compared with open-ended questions, closed (fixed-response) questions:",
     options: [
       "Are quicker to code but may force answers into categories that do not fit respondents' views",
-      "Always produce richer qualitative data, because respondents think harder about each answer",
+      "Always produce richer qualitative data, because respondents think harder about each of their answers",
       "Cannot be analysed statistically, since the answers are only category labels",
       "Remove response biases such as acquiescence and social desirability",
     ],
@@ -497,7 +497,7 @@ const D: Draft[] = [
     stem: "A researcher gives participants 5 mg or 0 mg of a drug, finds no effect on memory, and concludes that 'the drug does not affect memory'. Effective doses are known to start at 20 mg. Shadish, Cook and Campbell would call this threat:",
     options: [
       "Treatment diffusion to the control group",
-      "Mono-method bias in manipulating the drug",
+      "Mono-method bias in how the drug dose was manipulated",
       "Selection of participants into dose groups",
       "Confounding constructs with levels of constructs",
     ],
@@ -596,7 +596,7 @@ const D: Draft[] = [
     stem: "In a crossover drug trial, a 'washout period' is placed between the two treatment phases in order to:",
     options: [
       "Let the first treatment's effects wear off, reducing carryover into the second phase",
-      "Give the placebo response time to build up before the active drug is introduced",
+      "Give the placebo response time to build up fully before the active drug is introduced",
       "Allow participants who had side effects to drop out",
       "Re-randomise participants to new groups for the second phase",
     ],

@@ -194,7 +194,12 @@ const D: Draft[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Across the months of a year, ice-cream sales and drownings are positively correlated. The best explanation is:",
-    options: ["Ice-cream consumption causes drowning", "A third variable, hot weather, increases both", "Drowning increases ice-cream sales", "The correlation must be a calculation error"],
+    options: [
+      "Ice-cream consumption causes drowning",
+      "A third variable, hot weather, increases both",
+      "Drowning increases ice-cream sales",
+      "The correlation must be a calculation error in the sales data",
+    ],
     answer: 1,
     explanation:
       "Hot weather increases both ice-cream buying and swimming, which leads to more drownings. This is the third-variable (spurious correlation) problem. Neither variable plausibly causes the other, which is the point of the example. The correlation can be perfectly real; it simply does not mean causation.",
@@ -319,7 +324,7 @@ const D: Draft[] = [
       "Hawthorne effect",
       "Gambler's fallacy",
       "Ecological fallacy",
-      "Base-rate fallacy",
+      "Base-rate neglect fallacy",
     ],
     answer: 2,
     explanation:
@@ -376,7 +381,7 @@ const D: Draft[] = [
     options: [
       "Maturation",
       "History",
-      "Testing",
+      "Testing (practice) effects",
       "Instrumentation",
     ],
     answer: 3,
@@ -585,7 +590,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Ecological validity refers to the degree to which:",
     options: [
-      "The sample was randomly drawn from the population the results are meant to describe",
+      "The sample was randomly drawn from the population that the results are meant to describe",
       "A test measures environmental attitudes",
       "Results are consistent when different researchers repeat the study in other labs",
       "A study's conditions resemble the real-life situations the results are meant to apply to",
@@ -805,7 +810,7 @@ const D: Draft[] = [
       "Diffusion of treatment",
       "Multiple-treatment interference",
       "Compensatory equalisation",
-      "Selection-history interaction",
+      "Selection-history interaction across sessions",
     ],
     answer: 1,
     explanation:
@@ -879,7 +884,7 @@ const D: Draft[] = [
       "It may be a Type II error, as small groups and an unreliable measure reduce power",
       "The study necessarily made a Type I error, given the small sample",
       "The finding lacks ecological validity, because it was done with students",
-      "Selection is the main threat, because the students volunteered for counselling",
+      "Selection is the main threat, because the students volunteered for counselling themselves",
     ],
     answer: 0,
     explanation:
