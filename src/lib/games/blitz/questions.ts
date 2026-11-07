@@ -8,6 +8,12 @@
 import { ALL_LESSONS, BLITZ_ITEMS } from "@/lib/learn/content";
 import { DIAGNOSES, type Diagnosis } from "../diagnoses";
 import { hash32, mulberry32, permutation } from "../rng";
+import type { Exam, Level } from "../tags";
+import { FACTS_1 } from "./facts-1";
+import { FACTS_2 } from "./facts-2";
+import { FACTS_3 } from "./facts-3";
+import { FACTS_4 } from "./facts-4";
+import { FACTS_5 } from "./facts-5";
 
 export type BlitzQuestion = {
   id: string;
@@ -20,6 +26,13 @@ export type BlitzQuestion = {
   why: string;
   /** What the "Learn this" link opens in the Quick Reference. */
   learn: string;
+  /** Tags (always set on the hand-written fast facts, "f:" ids). */
+  topic?: string;
+  level?: Level;
+  objective?: string;
+  exams?: Exam[];
+  /** Study module id (/study/<id>). */
+  module?: string;
 };
 
 /** What the browser gets: no answer, no explanation. */
@@ -73,7 +86,10 @@ function fromDiagnoses(): BlitzQuestion[] {
   });
 }
 
-export const BLITZ_QUESTIONS: BlitzQuestion[] = [...fromLearn(), ...fromDiagnoses()];
+/** The hand-written fast facts. */
+export const BLITZ_FACTS: BlitzQuestion[] = [...FACTS_1, ...FACTS_2, ...FACTS_3, ...FACTS_4, ...FACTS_5];
+
+export const BLITZ_QUESTIONS: BlitzQuestion[] = [...fromLearn(), ...fromDiagnoses(), ...BLITZ_FACTS];
 
 /**
  * Question `n` of a run: a seeded deck order, then the options shuffled per

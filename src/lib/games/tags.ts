@@ -43,7 +43,7 @@ export const STUDY_MODULES = [
 ] as const;
 
 /** Things that must never reach a student: book names, page numbers, citations, em or en dashes. */
-const CITATION = /\b(kaplan|sadock|stahl|maudsley|fish's|ahuja|atkinson|hilgard|bear,? connors|paradiso|et al)\b|\bp{1,2}\.\s?\d|\(\s?(19|20)\d\d\s?\)|\u2013|\u2014/i;
+const CITATION = /\b(kaplan|sadock|stahl|maudsley|fish's|ahuja|atkinson (and|&) hilgard|hilgard's|bear,? connors|paradiso|et al)\b|\bp{1,2}\.\s?\d|\(\s?(19|20)\d\d\s?\)|\u2013|\u2014/i;
 
 export function citationOrDash(text: string): boolean {
   return CITATION.test(text);
