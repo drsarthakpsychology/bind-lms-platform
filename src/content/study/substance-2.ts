@@ -102,6 +102,10 @@ Alcohol touches nearly every organ. Many people with alcohol problems first come
 {"drug": "alcohol (ethanol)", "target": "GABA-A receptors (enhanced) and NMDA glutamate receptors (blocked), with release of endorphins and dopamine", "routes": ["oral"], "notes": {"gut": "Alcohol is absorbed quickly from the stomach and small intestine, faster on an empty stomach and with fizzy drinks.", "liver": "The liver breaks down roughly one standard drink an hour, using alcohol dehydrogenase and then aldehyde dehydrogenase. Toxic acetaldehyde builds up if the second step is blocked (disulfiram) or slow (some East Asian genetic variants).", "out": "The liver cannot be sped up: coffee, cold showers and food do not sober a person faster."}, "caption": "Follow a drink through the body. The fixed speed of the liver explains why heavy drinking builds up blood levels so quickly."}
 :::
 
+:::widget guess
+{"prompt": "How many standard drinks of alcohol can an average adult liver clear in one hour?", "min": 0, "max": 6, "step": 0.5, "unit": "drinks", "answer": [1, 1], "reveal": "About one standard drink an hour, and nothing speeds it up: not coffee, a cold shower or sleep. Five pegs at a late party can still leave someone over the driving limit the next morning."}
+:::
+
 ### Brief intervention: five to fifteen minutes that help
 Many people with risky or harmful drinking do not need a specialist. A short, structured talk by a doctor, nurse or counsellor reduces drinking. The **FRAMES** approach is a guide:
 - **F**eedback on their drinking and its risks (for example AUDIT score, liver tests).
@@ -170,6 +174,10 @@ Risk factors: previous DTs or withdrawal seizures, heavy daily drinking for year
 
 :::widget guess
 {"prompt": "Delirium tremens usually begins around how many hours after the last drink?", "min": 0, "max": 168, "unit": "hours", "answer": [48, 96], "reveal": "Usually between about 48 and 96 hours, that is, the second to fourth day. This is why patients admitted for surgery or injury who drink heavily often become delirious two or three days later.", "clinician": "Untreated DTs historically had mortality up to 15% to 20%; with good care about 1% to 5%. Treatment: high-dose benzodiazepines (front-loading), ICU-level monitoring, fluids, electrolyte and magnesium correction, parenteral thiamine before glucose, treat infection and injury; phenobarbital in benzodiazepine-resistant cases under specialist care."}
+:::
+
+:::widget timeline
+{"prompt": "Order the stages of alcohol withdrawal by when they usually appear after the last drink.", "events": [{"label": "Tremor, sweating, anxiety, fast pulse, nausea", "when": "6 to 12 hours"}, {"label": "Withdrawal seizures and alcoholic hallucinosis can occur", "when": "12 to 48 hours"}, {"label": "Delirium tremens: confusion, terror, visual hallucinations, fever", "when": "48 to 96 hours"}, {"label": "Most symptoms settle, though sleep and mood may stay poor for longer", "when": "5 to 7 days"}], "why": "Knowing the clock lets you prevent the dangerous stages. A patient admitted with an injury who drinks heavily should be watched from the first day, because the worst comes on the second to fourth day."}
 :::
 
 ### Wernicke's encephalopathy and Korsakoff's syndrome
@@ -276,6 +284,10 @@ Opioid withdrawal is extremely unpleasant but rarely dangerous in a healthy adul
 - **Injecting complications**: abscesses, cellulitis, thrombosis, endocarditis, HIV, hepatitis B and C, overdose; offer testing, hepatitis B vaccination and harm reduction.
 :::
 
+:::widget compare
+{"title": "Opioid intoxication and opioid withdrawal", "a": {"label": "Intoxication or overdose", "points": ["Pinpoint pupils", "Drowsy, slurred speech, nodding off", "Slow, shallow breathing: the cause of death", "Constipation", "Low pulse and blood pressure"], "summary": "Intoxication: everything slows down. Overdose stops breathing, and naloxone reverses it."}, "b": {"label": "Withdrawal", "points": ["Wide pupils", "Yawning, runny nose and eyes", "Goosebumps, aches, restlessness", "Diarrhoea, cramps and vomiting", "Craving, poor sleep, fast pulse"], "summary": "Withdrawal: the mirror image. Miserable, but rarely dangerous to life in a healthy adult."}, "caption": "Withdrawal is often the opposite of the drug's effect, because the body has adapted in the opposite direction. The same rule works for alcohol: sedated when drunk, shaky and over-excited in withdrawal."}
+:::
+
 :::recall
 1. Name the three signs of opioid overdose. || Unconsciousness, pinpoint pupils, slow or absent breathing.
 2. Why must people be observed after naloxone? || Naloxone wears off before many opioids do, so overdose can return.
@@ -319,6 +331,10 @@ Long-term risks:
 
 ### Stimulants
 Methamphetamine, amphetamines, cocaine, MDMA ("ecstasy") and mephedrone. Effects: energy, confidence, euphoria, reduced appetite and sleep. Dangers: **paranoia and psychosis** (often with tactile hallucinations like insects under the skin), **stroke and heart attack**, dangerous **overheating** (especially MDMA at crowded parties), seizures, severe weight loss, dental damage, and a **crash** of exhaustion and depression on stopping.
+
+:::widget journey
+{"drug": "cocaine", "target": "dopamine transporters in the nucleus accumbens, blocking dopamine reuptake", "routes": ["nasal", "iv"], "notes": {"nose": "Snorted powder is absorbed through the nasal lining and reaches the brain within minutes. It also narrows blood vessels, which can damage the nose.", "vein": "Injected cocaine reaches the brain within seconds, giving an intense rush.", "target": "Blocks the dopamine transporter, so dopamine piles up in the synapse: euphoria, energy and confidence.", "out": "Broken down quickly; the high fades within an hour, followed by a crash that drives the next dose."}, "caption": "The faster a drug reaches the brain, the stronger the rush and the more addictive the pattern. Smoked and injected forms are the most dangerous for this reason."}
+:::
 
 ### Sedatives and hypnotics
 Benzodiazepines (alprazolam, clonazepam, nitrazepam, diazepam) and "Z-drugs" (zolpidem). Often started on prescription, then continued for years. Tolerance develops quickly, and **sudden stopping after long use can cause seizures and delirium**, like alcohol withdrawal. Mixing with alcohol or opioids is a common cause of fatal overdose.
@@ -392,6 +408,10 @@ For people not ready, the **5 Rs** build motivation: **Relevance**, **Risks**, *
 {"scene": "Mr D'Souza, 45, has schizophrenia and has been stable on clozapine for three years. He smokes 25 cigarettes a day and wants to quit after his brother's heart attack. He plans to stop completely tomorrow.", "ask": "What is the most important thing to plan for?", "choices": [{"label": "Encourage him to quit and offer nicotine replacement and support, and also plan to check his clozapine level and reduce the dose if needed, because stopping smoking raises clozapine levels", "verdict": "best", "outcome": "His clozapine level is checked a few days after quitting and the dose is reduced. He quits successfully without toxicity.", "why": "Tobacco smoke (not nicotine) induces the liver enzyme CYP1A2, which breaks down clozapine and olanzapine. On quitting, levels can rise sharply, risking sedation, seizures and other toxicity."}, {"label": "Tell him people with schizophrenia should not try to quit because it will cause relapse", "verdict": "harm", "outcome": "He continues smoking and has a heart attack at 52.", "why": "People with severe mental illness can quit successfully with support, and it does not usually cause relapse."}, {"label": "Encourage him to quit with willpower alone", "verdict": "ok", "outcome": "He relapses in a few days and feels he has failed.", "why": "Medicines plus support roughly double or triple quit rates. Willpower alone works for few heavy smokers."}]}
 :::
 
+:::widget receptor
+{"receptor": "alpha-4 beta-2 nicotinic", "title": "How varenicline helps people stop smoking", "caption": "Nicotine is a full agonist: a big burst of signal, and dopamine release. Varenicline is a partial agonist: it gives a smaller steady signal that eases craving and withdrawal, and it occupies the receptor so a cigarette gives less reward. Switch between full and partial agonist to see both effects."}
+:::
+
 ### Behavioural addictions
 Some behaviours can take over a person's life in the same way as drugs.
 - **Gambling disorder**: needing to bet more for the same excitement, restlessness when trying to stop, repeated failed attempts, preoccupation, gambling to escape bad moods, **chasing losses** (betting more to win back money), lying, risking relationships and jobs, relying on others to pay debts. In India, online betting, fantasy sports and card games (teen patti, rummy apps) are growing concerns.
@@ -415,6 +435,10 @@ Some behaviours can take over a person's life in the same way as drugs.
 - **Gambling disorder** (DSM-5-TR): four or more of nine criteria in 12 months; mild 4 to 5, moderate 6 to 7, severe 8 to 9. High suicide risk (ask). Treatment: CBT, MI, Gamblers Anonymous, financial counselling, self-exclusion; naltrexone (50 to 150 mg) and nalmefene have modest evidence.
 - **Gaming disorder** (ICD-11 6C51): impaired control, increasing priority, continuation despite harm, normally evident over at least 12 months (shorter if severe). DSM-5-TR lists internet gaming disorder in Section III for further study (five of nine criteria). India: NIMHANS SHUT (Service for Healthy Use of Technology) clinic.
 - **India**: the Promotion and Regulation of Online Gaming Act 2025 bans real-money online games (including fantasy sports and rummy for money), with penalties for operators and advertisers, while promoting e-sports and social games; as of Nov 2026, its effects on gambling-related harm are not yet known.
+:::
+
+:::widget conditioning
+{"kind": "operant", "title": "Why gambling grips so hard", "caption": "Watch the 'not every time' step. Slot machines, online betting and loot boxes pay out on a variable ratio schedule: wins come at unpredictable moments. This schedule produces the fastest, most persistent responding, and it is the hardest to extinguish. Near-misses add to the pull. Gambling disorder shows that addiction can happen without any drug."}
 :::
 
 :::recall
