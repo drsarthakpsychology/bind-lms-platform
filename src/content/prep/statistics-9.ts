@@ -25,9 +25,9 @@ const D: Draft[] = [
     stem: "The main purpose of factor analysis is to:",
     options: [
       "Compare the means of several groups",
-      "Test whether two categorical variables are related",
-      "Predict a single outcome from several predictors",
-      "Explain the correlations among many observed variables in terms of a smaller number of underlying factors",
+      "Test whether two categorical variables are related in the population",
+      "Predict a single outcome from a weighted combination of several correlated predictor variables",
+      "Explain the correlations among many variables by a smaller number of underlying factors",
     ],
     answer: 3,
     explanation:
@@ -62,10 +62,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In factor analysis, the eigenvalue of a factor represents:",
     options: [
-      "The number of items that load on the factor",
-      "The correlation between two factors",
-      "The amount of total variance in all the variables that the factor accounts for",
-      "The probability that the factor is real",
+      "The number of items that load above .40 on the factor",
+      "The correlation between two factors after oblique rotation",
+      "The total variance in all the variables that the factor accounts for",
+      "The probability that the factor is real rather than a product of chance",
     ],
     answer: 2,
     explanation:
@@ -247,10 +247,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "After an oblique rotation, SPSS produces both a pattern matrix and a structure matrix. The pattern matrix shows:",
     options: [
-      "The correlations between the factors",
-      "The simple correlations between each variable and each factor",
-      "The unique contribution of each factor to each variable, like standardised regression weights, controlling for the other factors",
-      "The communalities only",
+      "The correlations between the factors after rotation",
+      "The simple correlations between each variable and each factor, including shared variance",
+      "Each factor's unique relation to each variable, controlling for the other factors",
+      "The communalities of the variables only",
     ],
     answer: 2,
     explanation:
@@ -266,10 +266,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Horn's parallel analysis decides how many factors to keep by:",
     options: [
-      "Keeping factors whose eigenvalues are larger than the eigenvalues obtained from random data with the same number of variables and cases",
-      "Keeping every factor with an eigenvalue above 1",
-      "Keeping factors until 100% of the variance is explained",
-      "Asking several experts how many factors they expect",
+      "Keeping factors whose eigenvalues exceed those from random data of the same size",
+      "Keeping every factor with an eigenvalue above 1, so each explains more than one item's variance",
+      "Keeping factors until 100% of the variance has been explained",
+      "Asking several experts how many factors they expect from theory",
     ],
     answer: 0,
     explanation:
@@ -285,10 +285,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Thurstone's principle of 'simple structure', which rotation aims to achieve, means that:",
     options: [
-      "The factors are always uncorrelated",
-      "All variables load equally on all factors",
-      "There is only one factor",
-      "Each variable loads highly on one factor and near zero on the others, and each factor has a few high loadings and many near-zero loadings",
+      "The factors are always uncorrelated with one another",
+      "All variables load about equally on all of the factors",
+      "There is only one general factor underlying all the variables",
+      "Each variable loads highly on one factor and near zero on the others",
     ],
     answer: 3,
     explanation:
@@ -338,10 +338,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In a scale-development study, an item loads .45 on Factor 1 and .42 on Factor 2 after rotation. This item is usually described as:",
     options: [
-      "The best item on the scale",
-      "A cross-loading item, which is often revised or removed because it does not clearly belong to one factor",
-      "An item that must belong to Factor 1",
-      "Evidence that the two factors are identical",
+      "The best item on the scale, as it measures both factors",
+      "A cross-loading item, often revised or dropped as it fits neither factor clearly",
+      "An item that must belong to Factor 1, as its loading there is higher",
+      "Evidence that the two factors are identical and should be merged",
     ],
     answer: 1,
     explanation:
@@ -453,14 +453,14 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A full structural equation model has two parts. They are:",
     options: [
-      "A measurement model, linking latent variables to their indicators, and a structural model, linking the latent variables to each other",
-      "A descriptive model and a sampling model",
-      "A between-subjects model and a within-subjects model",
-      "A null model and a significance model",
+      "A measurement model (constructs to their items) and a structural model (paths among constructs)",
+      "A descriptive model summarising the sample and a sampling model generalising it to the population",
+      "A between-subjects model and a within-subjects model of change",
+      "A null model and a significance model, compared with a chi-square difference test",
     ],
     answer: 0,
     explanation:
-      "The measurement model is essentially a CFA: how each construct is measured by its items. The structural model specifies the paths among constructs, such as stress → coping → wellbeing. Testing them together corrects the structural paths for measurement error. The other options are not the components of SEM.",
+      "The measurement model is essentially a CFA: how each latent construct is measured by its indicators. The structural model specifies the paths among constructs, such as stress → coping → wellbeing. Testing them together corrects the structural paths for measurement error. Descriptive and sampling models are not parts of SEM. Between- and within-subjects models describe ANOVA designs. A null (independence) model is a baseline for fit indices, not one of the two parts of a full model.",
     module: "assessment",
     ref: "Kline 2016",
   },
@@ -584,10 +584,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "After a CFA fits poorly, the software lists large modification indices suggesting that some error terms be allowed to correlate. The main risk of freeing these parameters one by one is that:",
     options: [
-      "Freeing parameters reduces the number of observed variables",
-      "Modification indices always lower the fit of the model",
-      "The changes capitalise on chance features of this sample, so the 'improved' model may not replicate and should be tested in new data",
-      "Correlated errors are never allowed in any model",
+      "Freeing parameters reduces the number of observed variables in the model",
+      "Modification indices always lower the fit of the model when freed",
+      "The changes capitalise on chance in this sample, so the revised model may not replicate",
+      "Correlated errors are never allowed in any confirmatory model",
     ],
     answer: 2,
     explanation:
@@ -651,9 +651,9 @@ const D: Draft[] = [
     stem: "A researcher wants to compare two SEM models that are not nested (neither is a constrained version of the other). A suitable basis for comparison is:",
     options: [
       "The chi-square difference test",
-      "Information criteria such as AIC or BIC, preferring the model with the lower value",
-      "Comparing the number of observed variables",
-      "Choosing the model with more parameters",
+      "Information criteria such as AIC or BIC, favouring the lower value",
+      "Comparing the number of observed variables in each model",
+      "Choosing the model with more parameters, as it fits better",
     ],
     answer: 1,
     explanation:
@@ -670,9 +670,9 @@ const D: Draft[] = [
     stem: "A path model includes a feedback loop in which depression affects sleep and sleep also affects depression at the same measurement time. Such a model is:",
     options: [
       "A measurement model",
-      "Recursive, and it is always identified",
-      "Non-recursive, and it needs extra conditions, such as instrumental variables, to be identified",
-      "A model with zero degrees of freedom by definition",
+      "Recursive, because each path runs in one direction, so it is always identified",
+      "Non-recursive, needing extra conditions such as instrumental variables to be identified",
+      "A model with zero degrees of freedom by definition, so its fit cannot be tested",
     ],
     answer: 2,
     explanation:
@@ -688,9 +688,9 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Which of these is a common rough guideline for sample size in SEM?",
     options: [
-      "Sample size does not matter in SEM",
-      "Exactly 30 cases, whatever the model",
-      "One case per observed variable",
+      "Sample size does not matter in SEM if the model fits well",
+      "Exactly 30 cases, as in the central limit theorem rule of thumb",
+      "One case per observed variable, whatever the model",
       "At least about 200 cases, or about 10 to 20 cases per estimated parameter",
     ],
     answer: 3,
@@ -758,7 +758,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A test developer uses confirmatory factor analysis to check that the items of a new scale load on the factors the theory predicts. This mainly provides evidence for:",
     options: [
-      "Test-retest reliability",
+      "Test-retest (temporal) reliability",
       "Construct (factorial) validity",
       "Predictive validity",
       "Face validity",

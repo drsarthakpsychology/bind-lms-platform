@@ -26,6 +26,17 @@ const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "developmental",
   "social",
   "personality-theories",
+  "research-methods",
+  "statistics",
+  "psychometrics-assessment",
+  "cognitive",
+  "perception-attention",
+  "psychopathology",
+  "clinical-therapies",
+  "counselling",
+  "health",
+  "positive",
+  "organisational",
 ];
 const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "history-systems",
@@ -37,6 +48,11 @@ const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "developmental",
   "social",
   "personality-theories",
+  "research-methods",
+  "statistics",
+  "psychometrics-assessment",
+  "cognitive",
+  "perception-attention",
 ];
 const MAX_RANK_SHARE = 0.35;
 const RATIO = 1.3;
