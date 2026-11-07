@@ -197,12 +197,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A district mental health programme in India trains 40 lay counsellors in a brief behavioural treatment for depression. A year later, an audit finds that only a third of patients received the full course, sessions often skipped key components, and outcomes were weaker than in the original trial.",
     stem: "Which concept and solution best fit this problem?",
-    options: [
-      "The original trial was false; stop the programme",
-      "The counsellors need to switch to long-term psychoanalysis",
-      "Patients in districts do not benefit from therapy",
-      "A drop in fidelity and reach when scaling up (a voltage drop); strengthen supervision, fidelity checks and patient engagement",
-    ],
+    options: ["The original trial was flawed; the programme should be stopped", "The counsellors should switch to long-term psychoanalysis", "Patients in rural districts do not benefit from brief therapy", "A 'voltage drop' at scale; strengthen supervision and fidelity checks"],
     answer: 3,
     explanation:
       "Implementation science describes a 'voltage drop' when interventions move from trials to routine services, often because of weaker training, supervision and fidelity, and lower patient reach. Remedies include structured supervision (peer and expert), fidelity monitoring with session recordings, refresher training and outreach to improve attendance. The trial's results are not disproved, psychoanalysis would be impractical here, and the problem is delivery, not the patients.",

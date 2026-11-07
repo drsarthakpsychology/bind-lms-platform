@@ -68,12 +68,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "For severe OCD that has not responded to weekly outpatient ERP, which option has evidence of benefit?",
-    options: [
-      "Stopping ERP and relying on reassurance from family",
-      "Intensive or concentrated ERP, such as daily sessions over 1 to 3 weeks, often with home-based work",
-      "Long-term non-directive counselling",
-      "Thought stopping and distraction training",
-    ],
+    options: ["Stopping ERP and relying on family reassurance instead", "Intensive ERP, for example daily sessions over 1 to 3 weeks", "Long-term non-directive counselling once a week", "Thought stopping and distraction training at home"],
     answer: 1,
     explanation:
       "Intensive formats, such as the Bergen 4-day treatment or daily ERP over a few weeks, show large effects in studies, including for people who have not improved in standard treatment. Home-based sessions help when rituals are tied to the home. Family reassurance is a form of accommodation that maintains OCD. Non-directive counselling and thought stopping lack evidence for OCD.",
@@ -467,12 +462,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In India, who is legally recognised to practise as a clinical psychologist?",
-    options: [
-      "Anyone with a BA in psychology",
-      "Anyone who has completed an online counselling course",
-      "A person registered with the Rehabilitation Council of India after an RCI-recognised professional qualification in clinical psychology",
-      "Anyone employed by a hospital",
-    ],
+    options: ["Anyone holding a BA or MA degree in psychology", "Anyone who has completed an online counselling course", "A person with an RCI-recognised clinical qualification, registered with RCI", "Anyone employed in a hospital psychology department"],
     answer: 2,
     explanation:
       "Under the RCI Act 1992 and the Mental Healthcare Act 2017, a clinical psychologist must hold an RCI-recognised professional qualification, such as the M.Phil in Clinical Psychology (now being renamed as a professional master's), and be registered in the Central Rehabilitation Register. A BA, short online course or hospital job does not qualify a person to practise as a clinical psychologist.",
