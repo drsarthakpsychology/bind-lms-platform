@@ -85,6 +85,10 @@ PET studies show that antipsychotic response becomes likely at around **65%** st
 - Approved by the US FDA in **September 2024** for schizophrenia in adults (brand Cobenfy): the first new mechanism in decades. Side effects are mainly nausea, vomiting, constipation, indigestion and urinary retention; little weight gain, sedation or EPS, and no prolactin rise.
 - An adjunctive trial (ARISE, added to other antipsychotics) **did not meet its primary endpoint** in April 2025.
 
+:::widget flow
+{"title": "How xanomeline-trospium calms psychosis without blocking D2", "layout": "chain", "nodes": [{"id": "x", "label": "Xanomeline enters the brain", "detail": "It stimulates M1 and M4 muscarinic receptors."}, {"id": "m4", "label": "M4 activation", "detail": "On striatal and midbrain circuits, M4 turns down dopamine release indirectly."}, {"id": "da", "label": "Less striatal dopamine", "detail": "The hyperdopaminergic signal behind positive symptoms is reduced, without a D2 blocker."}, {"id": "t", "label": "Trospium stays in the body", "detail": "It blocks muscarinic receptors in gut and bladder but cannot cross the blood-brain barrier."}, {"id": "se", "label": "Fewer gut side effects", "detail": "Nausea and vomiting are reduced, though constipation and urinary retention can occur. Little weight gain, EPS or prolactin rise."}], "caption": "Two drugs in one capsule: one acts in the brain, the other guards the body."}
+:::
+
 ### What failed
 | Drug | Mechanism | Outcome |
 |---|---|---|
@@ -135,6 +139,10 @@ Q: Which statement about xanomeline-trospium is correct as of late 2026?
 
 ### The complement story
 Variation in the **complement component 4 (C4)** gene affects how much C4A protein is made. Higher C4A expression is associated with schizophrenia and, in animal work, with more microglial **synaptic pruning**. This links immunity, adolescent pruning and the timing of onset.
+
+:::widget flow
+{"title": "From a gene to fewer synapses", "layout": "chain", "nodes": [{"id": "g", "label": "C4 gene variants", "detail": "Some structural forms of the gene produce more C4A protein."}, {"id": "c", "label": "More C4A", "detail": "C4A is part of the complement system, which tags things for removal."}, {"id": "t", "label": "Synapses tagged", "detail": "Complement marks synapses during development."}, {"id": "m", "label": "Microglia prune", "detail": "The brain's immune cells remove tagged synapses; in animal work, more C4A means more pruning."}, {"id": "o", "label": "Thinner cortical connections", "detail": "Excess pruning in adolescence fits the typical age at onset and the reduced synapse density seen in schizophrenia."}], "caption": "An attractive link between genes, immunity and timing. The effect of any single variant on risk is small."}
+:::
 
 ### Immunity and infection
 - Maternal infection in pregnancy and childhood CNS infection modestly raise risk.
