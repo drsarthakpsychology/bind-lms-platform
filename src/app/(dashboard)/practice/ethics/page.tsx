@@ -90,7 +90,7 @@ export default async function EthicsPage() {
       <div className="mt-10">
         <h2 className="text-base font-semibold">Check what stuck</h2>
         <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test. Each item carries its source.
+          A quick check, not a test.
         </p>
         <div className="mt-3">
           <QuizCheck items={ETHICS_QUIZ} />

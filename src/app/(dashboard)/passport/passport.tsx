@@ -48,7 +48,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
           <p className="text-caption text-muted-foreground">Logged hours</p>
           <p className="mt-1 text-numeric text-h1 font-bold tracking-tight">{hours.toFixed(1)}h</p>
           <p className="mt-1 text-caption text-muted-foreground">
-            Signed-off hours underpin your certificate.
+            Supervision hours you have logged.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -161,8 +161,8 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
 
       <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
         <Award className="size-3.5" aria-hidden />
-        Evidence accumulates from sim sessions, SCT, formulation, MSE, OSCE, and supervision. Your
-        signed-off hours here underpin the certificate appendix.
+        Evidence comes from your AI patient interviews, MSE, formulation, OSCE stations and
+        supervision hours.
       </p>
     </div>
   );

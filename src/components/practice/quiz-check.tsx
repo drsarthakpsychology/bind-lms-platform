@@ -7,9 +7,25 @@ import { cn } from "@/lib/utils";
 import { scoreQuiz, type QuizItem } from "@/lib/quiz/quiz";
 import { hashSeed, identityOrder, seededShuffle } from "@/lib/quiz/shuffle";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { findReference } from "@/lib/ai/student-text";
 
 /**
- * Reusable quiz-as-check component. Every item carries a sourced rationale.
+ * Student text carries no references (owner rule). The only source worth
+ * showing is the law itself ("MHA 2017, Section 98", "POCSO 2012, Section 19"):
+ * that is clinical content, not a citation. Book, paper, author-year and
+ * guideline-year sources stay admin-side.
+ */
+export function shownSource(source: string | undefined): string | null {
+  const s = (source ?? "").trim();
+  if (!s) return null;
+  if (!/\b(MHA|Mental Healthcare Act|POCSO|RPwD|Section)\b/.test(s)) return null;
+  if (findReference(s) || /literature|et al/i.test(s)) return null;
+  return s;
+}
+
+/**
+ * Reusable quiz-as-check component. Every item carries a rationale; only legal
+ * sources (an Act and section) are shown to students (see shownSource).
  * Used by lessons, landmark cases, ethics scenarios and decode sessions.
  *
  * Mobile-first: ONE question at a time (a guided flow, not a wall of boxes).
@@ -80,7 +96,7 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
         title="Check complete"
         description={
           result.correct === result.total
-            ? `${result.correct} of ${result.total} correct. Clean sweep: the sources below every answer are the lesson.`
+            ? `${result.correct} of ${result.total} correct. Clean sweep.`
             : `${result.correct} of ${result.total} correct. A check, not a test: re-read the rationale on the ones you missed.`
         }
         icon={
@@ -160,7 +176,8 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
             </p>
             <p className="mt-1 text-small text-muted-foreground">
               <span className="font-semibold">Why: </span>
-              {q.rationale} <span className="text-caption">({q.source})</span>
+              {q.rationale}
+              {shownSource(q.source) ? <span className="text-caption"> ({shownSource(q.source)})</span> : null}
             </p>
           </div>
         ) : null}

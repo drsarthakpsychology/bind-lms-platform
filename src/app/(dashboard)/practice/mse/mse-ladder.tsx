@@ -154,7 +154,7 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
             <span className="min-w-0">
               <h2 className="text-sm font-semibold">Check what stuck</h2>
               <p className="mt-1 text-small text-muted-foreground">
-                A quick check, not a test: every item carries its source.
+                A quick check, not a test.
               </p>
             </span>
             <ChevronDown

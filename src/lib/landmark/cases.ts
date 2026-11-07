@@ -82,11 +82,11 @@ export const LANDMARK_CASES: LandmarkCase[] = [
   },
   {
     id: "landmark-roshdan",
-    title: "Rosenhan's 'On Being Sane in Insane Places'",
+    title: "Rosenhan's pseudopatient study",
     domain: "social",
-    story: "In 1973, eight 'pseudopatients' presented to psychiatric hospitals claiming to hear a voice saying 'empty', 'hollow', and 'thud'. All but one were admitted; all received a diagnosis; none were detected as sane by staff. Some stayed 52 days.",
+    story: "In 1973, eight 'pseudopatients' presented to psychiatric hospitals claiming to hear a voice saying 'empty', 'hollow', and 'thud'. All were admitted, all but one with a diagnosis of schizophrenia, and staff never detected that they were sane. One stayed 52 days.",
     believedThen: "That psychiatrists could reliably distinguish sane from insane: Rosenhan's study seemed to prove they could not, and it fuelled a wave of deinstitutionalisation.",
-    understandNow: "The study's influence is real but its methods were seriously challenged. Only one patient was ever followed up; the famous 'hits' may have been influenced by prior knowledge; and later replications failed. The lesson is not 'diagnosis is fake'. It is that context powerfully shapes interpretation, and that a single study must not become a religion.",
+    understandNow: "The study's influence is real but its methods were seriously challenged. Later checks of his own records found key details misreported, some of the pseudopatients could never be traced, and the study has never been properly repeated. The lesson is not 'diagnosis is fake'. It is that context powerfully shapes interpretation, and that a single study must not become a religion.",
     ethicsFailure: "The pseudopatients were admitted as impostors, occupying scarce beds and deceiving staff, while real patients bore the cost of the disruption. The ends, institutional critique, did not justify the deception of patients and hospitals. The lesson is that method must not sacrifice the people it studies.",
     contested: "Rosenhan's data was substantially challenged. The claim 'we can't tell sane from insane' overreached the evidence; the institutional critique survived better than the specifics.",
     quiz: [
@@ -100,7 +100,7 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     domain: "social",
     story: "In 1971, students were randomly assigned to be guards or prisoners in a mock prison in a Stanford basement. Within days, guards became brutal and prisoners broke down. The study was stopped after 6 days of a planned 14.",
     believedThen: "That it proved the power of roles and situations over individual character: the 'evil is banal, the situation is the thing' lesson.",
-    understandNow: "The findings were real but the methods have been substantially reassessed. Zimbardo influenced the outcome in ways later reported (instructions to guards, lack of oversight), and replications show far weaker effects. The situation matters; the 'lucid experiment' framing overreached.",
+    understandNow: "The findings were real but the methods have been substantially reassessed. Zimbardo influenced the outcome in ways later reported (instructions to guards, lack of oversight), and replications show far weaker effects. The situation matters; the claim that the situation alone produced the cruelty overreached.",
     ethicsFailure: "Participants were distressed and harmed, consent did not cover the actual experience, and there was no independent oversight to stop it earlier. It is now taught as a failure of research ethics as much as a social-psychology finding.",
     contested: "The methodology has been seriously reassessed: the 'situational evil' narrative oversimplifies, and some of the guard behaviour was actively coached.",
     quiz: [
@@ -112,12 +112,12 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     id: "landmark-erwadi",
     title: "The Erwadi fire and the MHA 2017",
     domain: "indian",
-    story: "In August 2001, a fire swept through a thatched 'healing' institution in Erwadi, Tamil Nadu, killing 26 people who were shackled to beds. Many had been chained for years; none could flee.",
+    story: "In August 2001, a fire swept through a thatched 'healing' institution in Erwadi, Tamil Nadu, killing more than 25 people who were chained to their beds or to posts. Many had been chained for years; none could flee.",
     believedThen: "That unlicensed faith-based 'asylums' were a legitimate way to handle people the family and state could not manage: chains and confinement were accepted practice.",
-    understandNow: "The fire exposed that the state's mental-health law (the 1987 Act) had never been implemented. The tragedy catalysed reform and shaped the Mental Healthcare Act 2017: the right to mental healthcare, the prohibition of inhuman or degrading treatment, and the ban on seclusion or restraint except in narrow, reviewable circumstances. The MHA 2017 exists, in part, because 26 people died chained to their beds.",
+    understandNow: "The fire exposed that the state's mental-health law (the 1987 Act) had never been implemented. The tragedy catalysed reform and shaped the Mental Healthcare Act 2017: the right to mental healthcare, the prohibition of inhuman or degrading treatment, a ban on chaining and on seclusion or solitary confinement, and physical restraint only in narrow, reviewable circumstances. The MHA 2017 exists, in part, because those people died in chains.",
     quiz: [
       { question: "Why does the Erwadi fire matter to Indian mental-health practice?", options: ["It was an isolated accident", "It exposed unlicensed institutions and catalysed the MHA 2017's protections", "It proved institutional care is safe", "It had no consequences"], correct: 1, rationale: "The fire showed the human cost of unregulated confinement and shaped the MHA 2017." },
-      { question: "What does the MHA 2017 prohibit as a direct response?", options: ["All psychiatric care", "Seclusion and restraint except in narrow reviewable cases", "Family involvement", "Community treatment"], correct: 1, rationale: "The MHA 2017 bans inhuman treatment, with strict limits on restraint." },
+      { question: "What does the MHA 2017 say about chaining and restraint?", options: ["All psychiatric care is banned", "Chaining and seclusion are banned; restraint is allowed only in narrow, reviewable cases", "Families decide on restraint", "Restraint is never reviewed"], correct: 1, rationale: "The MHA 2017 bans chaining, seclusion and solitary confinement, and sets strict limits on physical restraint." },
     ],
   },
   {
@@ -138,7 +138,7 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     domain: "psychoanalytic",
     story: "The first 'talking cure': a young woman whose symptoms (paralyses, hallucinations) improved when she talked them out with Breuer. Freud built psychoanalysis on her case; the case was also a warning about boundary violations.",
     believedThen: "That 'catharsis', discharging pent-up emotion through speech, was the mechanism of cure.",
-    understandNow: "The case is retrospectively seen as possibly dissociative or conversion symptoms, and Breuer's intense involvement (his wife's jealousy ended the case) reads today as an early example of the transference-countertransference entanglement that modern codes govern. She later became a pioneering social worker: a life beyond the couch the case narrative omits.",
+    understandNow: "The case is retrospectively seen as possibly dissociative or conversion symptoms, and Breuer's intense involvement (the story that his wife's jealousy ended the treatment is itself disputed) reads today as an early example of the transference-countertransference entanglement that modern codes govern. She later became a pioneering social worker: a life beyond the couch the case narrative omits.",
     ethicsFailure: "Breuer's emotional entanglement with a patient and the case's publication without her full informed consent: the founding scandal of psychoanalytic boundaries.",
     quiz: [
       { question: "What is the modern reading of Anna O.?", options: ["She was cured by hypnosis", "The case likely involved dissociative/conversion symptoms and boundary blurring", "She was faking", "Breuer was innocent"], correct: 1, rationale: "Retrospective analysis suggests dissociation, and the case exemplifies boundary entanglement." },
@@ -225,7 +225,7 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     domain: "social",
     story: "In 1964, Kitty Genovese was killed in Queens while, according to the original front-page story, 38 witnesses watched and did nothing. The story launched the 'bystander effect' as a pillar of social psychology.",
     believedThen: "That 38 people watched a murder and failed to intervene: proof of urban apathy.",
-    understandNow: "The 38-witnesses story was largely inaccurate: the '38' came from a police commissioner's estimate, most witnesses saw only fragments and didn't realise an assault was in progress, and at least two people did call the police. The bystander effect research (Latané & Darley) remains real, but the Genovese case is now taught as a cautionary tale about how a vivid, partly-invented story became canon: the contestation IS the lesson.",
+    understandNow: "The 38-witnesses story was largely inaccurate: the '38' came from a police commissioner's estimate, most witnesses saw only fragments and didn't realise an assault was in progress, and at least two people did call the police. Latané and Darley's bystander research remains real, but the Genovese case is now taught as a cautionary tale about how a vivid, partly-invented story became canon: the contestation IS the lesson.",
     contested: "The '38 witnesses' framing was substantially exaggerated; the bystander research it inspired is solid, the case narrative is not.",
     quiz: [
       { question: "What is the modern correction to the Genovese story?", options: ["All 38 watched and did nothing", "The 38-witness claim was largely inaccurate: most saw fragments, some did call", "Bystanders are always apathetic", "The murder never happened"], correct: 1, rationale: "The famous narrative was exaggerated; the lesson is to read famous stories critically." },
@@ -274,36 +274,12 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     id: "landmark-ranki",
     title: "The Ranchi European Lunatic Asylum: Indian asylum history",
     domain: "indian",
-    story: "From 1918, the Ranchi European Lunatic Asylum (later the Ranchi Indian Mental Hospital) was among India's first modern psychiatric institutions: built on colonial lines that separated 'European' and 'native' patients, with occupational therapy and moral treatment rhetoric that masked the segregation at its core.",
+    story: "The Ranchi European Lunatic Asylum opened in 1918 for European patients only. Indian patients were sent to a separate asylum nearby, opened in 1925. Both offered occupational therapy and the language of moral treatment, which masked the segregation at their core. The European asylum is today's Central Institute of Psychiatry.",
     believedThen: "That colonial-era psychiatry was benevolent science: humane care for the mentally ill regardless of who they were.",
-    understandNow: "The asylum's history is a lesson in how institutions encode the hierarchies of their era: separate wards, separate standards, and a 'lunacy' law built to manage empire as much as illness. The Indian Mental Health Act 1987 and the MHA 2017 are, in part, the long correction of that inheritance.",
+    understandNow: "The asylum's history is a lesson in how institutions encode the hierarchies of their era: separate wards, separate standards, and a 'lunacy' law built to manage empire as much as illness. The Mental Health Act 1987 and the MHA 2017 are, in part, the long correction of that inheritance.",
     quiz: [
       { question: "What does the Ranchi asylum history teach?", options: ["Colonial asylums were perfectly humane", "Institutions encode their era's hierarchies: race, class and power shaped 'care'", "Indian psychiatry began in 1947", "Asylums never existed in India"], correct: 1, rationale: "The segregated wards show how social hierarchy shaped psychiatric practice." },
       { question: "How does the MHA 2017 respond to that history?", options: ["It continues segregation", "It centres rights, dignity and equality of treatment", "It ignores the past", "It only governs asylums"], correct: 1, rationale: "The 2017 Act's rights-based framing is the correction of the institutional inheritance." },
-    ],
-  },
-  {
-    id: "landmark-beri-beri",
-    title: "The beriberi 'insanity': the medical-mimic history",
-    domain: "indian",
-    story: "In colonial Indian hospitals, patients presenting with confusion, apathy and memory loss were routinely diagnosed as 'insane', until the post-mortems and later clinical work revealed that a large share had beriberi and other deficiency states that had never been examined for. The label came first; the body was never asked.",
-    believedThen: "That unexplained behavioural change in Indian patients was 'hysteria' or 'insanity': a characterological or racial explanation sufficed.",
-    understandNow: "The case is the historical ancestor of today's medical-mimic trap: the psychiatric label that precedes the physical examination. Every modern 'B12 depression' and 'thyroid anxiety' is the descendant of this pattern: the lesson is that the workup precedes the label.",
-    quiz: [
-      { question: "What does the beriberi history teach?", options: ["Colonial doctors were always right", "The psychiatric label can precede and suppress the physical workup: a pattern that survives today", "Deficiency states never mimic psychosis", "Behavioural change is never medical"], correct: 1, rationale: "The label-first pattern is the ancestor of the modern medical-mimic trap." },
-      { question: "Why does this matter for a counselling student?", options: ["It doesn't: counselling never touches medicine", "It teaches that 'unexplained' change deserves the medical screen before the psychological label", "It proves all Indian patients were misdiagnosed", "It only matters historically"], correct: 1, rationale: "The workup-before-label discipline is directly transferable to modern practice." },
-    ],
-  },
-  {
-    id: "landmark-morselli",
-    title: "The 'influenza psychosis' of 1918: pandemic psychiatry in India",
-    domain: "indian",
-    story: "During the 1918 influenza pandemic (which killed millions in India), asylums reported a striking rise in admissions for 'influenza psychosis': confusional states, delirium-like pictures, and prolonged behavioural changes attributed to the infection itself. Doctors argued about whether the virus caused 'insanity' directly or through fever, drugs and social collapse.",
-    believedThen: "That a single infectious agent directly produced a specific 'psychosis': a clean cause-and-effect story.",
-    understandNow: "The episode teaches the modern lesson of post-infectious and post-ICU neuropsychiatric presentations: the delirium, the encephalitis-adjacent pictures, and the distinction between the infection's direct effects and the trauma of the illness. Pandemic psychiatry is not new, and neither is the error of collapsing a complex presentation into one agent.",
-    quiz: [
-      { question: "What survives from the 1918 'influenza psychosis' episode?", options: ["The virus directly caused one specific psychosis", "The complexity: delirium, post-infectious change, and the social collapse all interacted", "Pandemics never affect mental health", "It was all hysteria"], correct: 1, rationale: "The episode prefigures modern post-infectious neuropsychiatric presentations." },
-      { question: "Why does pandemic psychiatry history matter now?", options: ["It doesn't", "Post-infectious and post-ICU neuropsychiatric presentations have a long documented ancestry", "COVID invented these presentations", "Only virologists should study it"], correct: 1, rationale: "Understanding the 1918 pattern sharpens modern assessment of post-infectious change." },
     ],
   },
   {

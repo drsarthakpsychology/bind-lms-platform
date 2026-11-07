@@ -28,7 +28,7 @@ export default async function OscePage() {
       <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
         <h2 className="text-base font-semibold">Check what stuck</h2>
         <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test: every item carries its source.
+          A quick check, not a test.
         </p>
         <div className="mt-3">
           <QuizCheck items={QUIZ_BANK.slice(6, 12)} />

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cleanStudentText } from "@/lib/ai/student-text";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
@@ -65,5 +66,6 @@ export async function POST(req: Request) {
     { workload: "journal_support", maxTokens: 200, temperature: 0.6 },
   );
 
-  return NextResponse.json({ reply: reply.text });
+  // Same clean-up as every other model text a student reads (no dashes, no stock phrases).
+  return NextResponse.json({ reply: cleanStudentText(reply.text) });
 }

@@ -1020,3 +1020,7 @@ export const CLINICS: ClinicPrompt[] = [
     lesson: "TV talking about you at low volume with hearing aids is auditory pareidolia, not psychosis: the deaf brain fills the silence with meaning.",
   },
 ];
+/** A starting one-liner for a new visit, so students don't always open on the first. Server-side. */
+export function randomClinicStart(): number {
+  return Math.floor(Math.random() * CLINICS.length);
+}

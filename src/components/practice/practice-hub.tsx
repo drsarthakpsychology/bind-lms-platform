@@ -3,13 +3,11 @@ import {
   ArrowRight,
   Brain,
   ClipboardList,
-  BookOpen,
   Gauge,
   GraduationCap,
   Languages,
   Lock,
   MessagesSquare,
-  Radar,
   RotateCcw,
   Scale,
   Search,
@@ -17,7 +15,6 @@ import {
   Timer,
   Users,
   Wand2,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import type { FeatureKey, FlagStatus } from "@/lib/flags";
@@ -40,21 +37,23 @@ export const MAIN_TOOLS: HubTool[] = [
   { href: "/practice/formulation", title: "Formulation", text: "Sort the 5Ps and write the story of the case.", icon: Wand2, flag: "formulation", tone: "lime" },
 ];
 
+/*
+ * Merged (Nov 2026 practice review): Two-minute clinic is a mode inside Clinic
+ * detective; Weak spots opens from the Consulting Room; Landmark cases is the
+ * one cases library (the raw journal-article Case library stays off).
+ */
 export const THINK_TOOLS: HubTool[] = [
   { href: "/games/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
   { href: "/games/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
   { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
   { href: "/practice/judgment", title: "Judgment", text: "New facts change the odds. 2 minutes.", icon: Gauge, flag: "judgment", tone: "plain" },
-  { href: "/practice/two-minute-clinic", title: "Two-minute clinic", text: "One-liner, differential, next question.", icon: Zap, flag: "two_minute_clinic", tone: "plain" },
   { href: "/practice/ethics", title: "Ethics, law & referral", text: "What to do, then the law behind it.", icon: Scale, flag: "ethics", tone: "plain" },
 ];
 
 export const MORE_TOOLS: HubTool[] = [
   { href: "/practice/osce", title: "OSCE stations", text: "Seven minutes, one task, out loud.", icon: Timer, flag: "osce", tone: "plain" },
   { href: "/practice/role-play", title: "Peer role-play", text: "One of you is the patient.", icon: Users, flag: "peer_roleplay", tone: "plain" },
-  { href: "/practice/weak-spots", title: "Weak spots drill", text: "A drill built from your own debriefs.", icon: Radar, flag: "weak_spots", tone: "plain" },
-  { href: "/practice/landmark", title: "Landmark cases", text: "What was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
-  { href: "/practice/library", title: "Case library", text: "Real case reports to read and note.", icon: BookOpen, flag: "case_library", tone: "plain" },
+  { href: "/practice/landmark", title: "Landmark cases", text: "Famous cases: what was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
 ];
 
 const TONE: Record<Tone, string> = {
@@ -168,7 +167,20 @@ export function ToolSection({ id, title, tools }: { id: string; title: string; t
 }
 
 /** The whole hub (the page loads flags, states and the resume link). */
-export function PracticeHubView({ main, think, more, resume }: { main: ShownTool[]; think: ShownTool[]; more: ShownTool[]; resume: { href: string; title: string } | null }) {
+export function PracticeHubView({
+  main,
+  think,
+  more,
+  resume,
+  records = { passport: false, supervision: false, checkin: false },
+}: {
+  main: ShownTool[];
+  think: ShownTool[];
+  more: ShownTool[];
+  resume: { href: string; title: string } | null;
+  /** Footer links show only when their switch is on (no links to locked screens). */
+  records?: { passport: boolean; supervision: boolean; checkin: boolean };
+}) {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
@@ -197,14 +209,20 @@ export function PracticeHubView({ main, think, more, resume }: { main: ShownTool
         <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">Nothing here yet. Your faculty will switch tools on soon.</p>
       ) : null}
 
-      <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
-        <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Skills Passport
-        </Link>
-        <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Supervision log and check-in
-        </Link>
-      </nav>
+      {records.passport || records.supervision || records.checkin ? (
+        <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
+          {records.passport ? (
+            <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              Skills Passport
+            </Link>
+          ) : null}
+          {records.supervision || records.checkin ? (
+            <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              {!records.supervision ? "Weekly check-in" : !records.checkin ? "Supervision log" : "Supervision log and check-in"}
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
     </div>
   );

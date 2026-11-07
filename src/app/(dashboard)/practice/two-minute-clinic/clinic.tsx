@@ -4,8 +4,12 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
 
-export function TwoMinuteClinic() {
-  const [itemIdx, setItemIdx] = React.useState(0);
+/**
+ * `start` is picked on the server for each visit, so a returning student does
+ * not open on the same one-liner every time (there are over 140).
+ */
+export function TwoMinuteClinic({ start = 0 }: { start?: number }) {
+  const [itemIdx, setItemIdx] = React.useState(() => ((Math.floor(start) % CLINICS.length) + CLINICS.length) % CLINICS.length);
   const [phase, setPhase] = React.useState<"read" | "type" | "compare">("read");
   const [seconds, setSeconds] = React.useState(120);
   const [differential, setDifferential] = React.useState("");
