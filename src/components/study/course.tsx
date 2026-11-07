@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -222,22 +222,14 @@ function StepHead({ n, title, done, current, sub }: { n: number; title: string; 
 function CheckpointRow({ m, cp, st }: { m: StudyModule; cp: Checkpoint; st: LearnState["study"] }) {
   const status = checkpointStatus(m, cp, st);
   const t = st.tests[cp.key];
-  const label =
-    status === "done" ? `Done · ${t?.best ?? 0} of ${t?.total ?? 0}` : status === "ready" ? "Ready now" : status === "waiting" ? "Opens after the next section" : "After these sections";
-  const open = status === "ready" || status === "done";
-  const body = (
-    <>
+  // Every checkpoint opens any time; "ready" only marks the good moment to take it.
+  const label = status === "done" ? `Best ${t?.best ?? 0} of ${t?.total ?? 0}` : status === "ready" ? "Good time now" : "Any time";
+  return (
+    <Link href={checkpointHref(m, cp)} className={cn("mt-1 ml-9 flex min-h-11 items-center gap-2 rounded-xl border-2 border-dashed px-3 py-2", status === "ready" ? "border-foreground bg-brand text-brand-foreground" : "border-foreground/40")}>
       <ListChecks className="size-4 shrink-0" aria-hidden />
-      <span className="min-w-0 flex-1 whitespace-nowrap text-sm font-semibold">Checkpoint {cp.n}</span>
-      <span className="min-w-0 text-right text-xs font-semibold">{label}</span>
-    </>
-  );
-  return open ? (
-    <Link href={checkpointHref(m, cp)} className={cn("mt-1 ml-9 flex items-center gap-2 rounded-xl border-2 border-dashed px-3 py-2", status === "ready" ? "border-foreground bg-brand text-brand-foreground" : "border-foreground/40")}>
-      {body}
+      <span className="min-w-0 flex-1 text-sm font-semibold">Checkpoint {cp.n}</span>
+      <span className="shrink-0 text-right text-xs font-semibold">{label}</span>
     </Link>
-  ) : (
-    <div className="mt-1 ml-9 flex items-center gap-2 rounded-xl border-2 border-dashed border-foreground/25 px-3 py-2 text-muted-foreground">{body}</div>
   );
 }
 
@@ -392,10 +384,9 @@ export function ModuleView({
                 const cur = getLearnState();
                 if (cur) setLearnState(markWritten(cur, m.id, today));
               }}
-              disabled={step < 2}
-              className="mt-4 h-12 rounded-2xl border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground hard-shadow-sm disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-4 min-h-12 rounded-md border-2 border-foreground bg-card px-5 font-bold hard-shadow-sm"
             >
-              {step < 2 ? "Unlocks after you finish reading" : "I've done this on paper (+20 XP)"}
+              I&apos;ve done this on paper (+20 XP)
             </button>
           )}
         </div>
@@ -442,7 +433,7 @@ export function ModuleView({
             />
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <Link href={sectionHref(m, test)} className={cn("inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground px-5 font-bold hard-shadow-sm", step >= 4 ? "bg-primary text-primary-foreground" : "bg-card")}>
-                {t ? <RotateCcw className="size-4" aria-hidden /> : <Lock className={cn("size-4", step >= 4 && "hidden")} aria-hidden />} {t ? "Re-test" : "Take the test"}
+                {t ? <RotateCcw className="size-4" aria-hidden /> : null} {t ? "Re-test" : "Take the test"}
               </Link>
               {due ? <span className="text-sm font-bold">Next re-test due {due <= today ? "today" : `on ${due}`}</span> : null}
             </div>

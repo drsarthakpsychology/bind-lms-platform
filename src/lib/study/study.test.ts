@@ -121,7 +121,7 @@ describe("checkpoints", () => {
     const m = MODULES.find((x) => checkpoints(x).length > 1)!;
     const [cp, cp2] = checkpoints(m);
     let s = emptyState();
-    expect(checkpointStatus(m, cp, s.study)).toBe("locked");
+    expect(checkpointStatus(m, cp, s.study)).toBe("early");
     for (const id of cp.sectionIds) s = finishSection(s, m.id, id, "2026-11-01");
     expect(checkpointStatus(m, cp, s.study)).toBe("waiting");
     expect(moduleNext(m, s.study)?.kind).toBe("read");

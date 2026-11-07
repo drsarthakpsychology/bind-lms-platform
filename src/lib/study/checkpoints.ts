@@ -11,15 +11,16 @@ import type { Card, Mcq, Section, StudyModule } from "./types";
  *
  * - The teaching sections of a module are grouped in blocks of about three
  *   (never across a Part boundary). The exam-zone sections are not grouped.
- * - A block's checkpoint opens once every section in it is read AND the
- *   student has finished at least one later section. (If nothing comes
- *   after it, it opens as soon as the block is read.)
+ * - A checkpoint can be opened any time. It is suggested ("ready") once
+ *   every section in it is read AND the student has finished at least one
+ *   later section (or straight away if nothing comes after it).
  * - Questions: the case-based questions written into those sections (many
  *   need you to apply, not repeat, what you read), then the "say it out loud"
  *   recall cards from the same sections, shuffled.
  */
 export type Checkpoint = { n: number; key: string; title: string; sectionIds: string[]; firstNum: string; lastNum: string };
-export type CheckpointStatus = "locked" | "waiting" | "ready" | "done";
+/** Every checkpoint can be opened any time. The status only says when it is best taken: "early" (its sections are not all read yet), "waiting" (read, but nothing later read yet), "ready" or "done". */
+export type CheckpointStatus = "early" | "waiting" | "ready" | "done";
 
 const isExam = (s: Section) => /exam zone/i.test(s.part ?? "");
 export const BLOCK = 3;
@@ -72,7 +73,7 @@ export function laterSectionIds(m: StudyModule, cp: Checkpoint): string[] {
 
 export function checkpointStatus(m: StudyModule, cp: Checkpoint, p: StudyProgress, later = laterSectionIds(m, cp)): CheckpointStatus {
   if (p.tests[cp.key]) return "done";
-  if (!cp.sectionIds.every((id) => p.done[studyKey(m.id, id)])) return "locked";
+  if (!cp.sectionIds.every((id) => p.done[studyKey(m.id, id)])) return "early";
   if (!later.length) return "ready";
   return later.some((id) => p.done[studyKey(m.id, id)]) ? "ready" : "waiting";
 }

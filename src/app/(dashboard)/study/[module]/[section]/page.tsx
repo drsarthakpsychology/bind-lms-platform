@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
 import { moduleById, sectionById } from "@/lib/study";
 import { readingSections, sectionHref } from "@/lib/study/plan";
-import { sectionMinutes } from "@/lib/study/parse";
 import { Blocks } from "@/components/study/blocks";
 import { SectionReader, type TocItem } from "@/components/study/reader";
 import { splitSection } from "@/lib/study/chunk";
@@ -26,14 +25,14 @@ export default async function SectionPage({ params }: { params: Promise<{ module
   const s = m && sectionById(m, section);
   if (!m || !s) notFound();
 
-  const toc: TocItem[] = m.sections.map((x) => ({ id: x.id, num: x.num, title: x.title, part: x.part, isTest: x.isTest, href: sectionHref(m, x), minutes: sectionMinutes(x) }));
+  const toc: TocItem[] = m.sections.map((x) => ({ id: x.id, num: x.num, title: x.title, part: x.part, isTest: x.isTest, href: sectionHref(m, x) }));
   const reading = readingSections(m);
   const i = m.sections.indexOf(s);
   const prev = m.sections[i - 1];
   const nextReading = reading[reading.indexOf(s) + 1];
   const next = nextReading
     ? { href: sectionHref(m, nextReading), label: `${nextReading.num} ${nextReading.title}` }
-    : { href: `/study/${m.id}#steps`, label: "Back to the module: write it out, practise, then the test" };
+    : { href: `/study/${m.id}#steps`, label: "Back to the module" };
 
   const [serverState, { owner }] = await Promise.all([loadLearnState(), studyOwner()]);
   const parts = splitSection(s);
@@ -42,8 +41,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       moduleId={m.id}
       moduleNum={m.num}
       moduleTitle={m.title}
-      section={{ id: s.id, num: s.num, title: s.title, part: s.part, tag: s.tag, level: s.level, levelCheck: s.levelCheck, isTest: s.isTest, minutes: sectionMinutes(s) }}
-      levelChecks={Object.fromEntries(m.sections.filter((x) => x.levelCheck).map((x) => [x.levelCheck!, sectionHref(m, x)]))}
+      section={{ id: s.id, num: s.num, title: s.title, part: s.part, tag: s.tag, level: s.level, levelCheck: s.levelCheck, isTest: s.isTest }}
       toc={toc}
       prevHref={prev ? sectionHref(m, prev) : undefined}
       next={next}
