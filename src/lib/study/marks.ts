@@ -5,12 +5,11 @@
  * later reused on the server. The browser copy lives in localStorage, one key
  * per student (see marks-store.ts).
  *
- * TODO(server sync): marks are saved on this device only. To sync across
- * devices, add a `study_marks` JSON column (or table) keyed by student, load it
- * in the /study pages next to loadLearnState, and on start-up combine the two
- * copies with `mergeMarks(server, local)`. Every entry carries its own `at`
- * time and removals are kept as `on: false` / empty text, so the merge is
- * safe in any order. Do not store these inside learn_progress (engine.ts).
+ * Server copy: table study_marks (supabase/migrations_pending/2026_11_notes.sql),
+ * one row per student per section, read and written through
+ * marks-actions.ts. Every entry carries its own `at` time and removals are
+ * kept as `on: false` / empty text, so `mergeMarks` is safe in any order and
+ * the browser copy and the server copy can each be ahead of the other.
  */
 
 export const NOTE_MAX = 4000;
@@ -136,4 +135,81 @@ export function notePreview(text: string, max = 90): string {
 /** localStorage key for one student. Each student on a shared computer gets their own. */
 export function storageKey(owner: string): string {
   return `vibha-study-marks-v1:${owner || "anon"}`;
+}
+
+/* ------------------------------------------------------- server rows */
+
+/** One row of study_marks. A null pair means "never set on any device". */
+export type MarkRow = { key: string; bookmark_on: boolean | null; bookmark_at: number | null; note: string | null; note_at: number | null };
+
+const num = (x: unknown): number | null => {
+  const n = typeof x === "string" ? Number(x) : x;
+  return typeof n === "number" && Number.isFinite(n) && n >= 0 ? n : null;
+};
+
+/** Rows from the database (bigint may arrive as a string) into marks. */
+export function rowsToMarks(rows: unknown[]): Marks {
+  const out = emptyMarks();
+  for (const r of rows) {
+    if (!isObj(r) || typeof r.key !== "string" || !validKey(r.key)) continue;
+    const bAt = num(r.bookmark_at);
+    if (typeof r.bookmark_on === "boolean" && bAt !== null) out.bookmarks[r.key] = { on: r.bookmark_on, at: bAt };
+    const nAt = num(r.note_at);
+    if (typeof r.note === "string" && nAt !== null) out.notes[r.key] = { text: r.note.slice(0, NOTE_MAX), at: nAt };
+  }
+  return out;
+}
+
+/** Marks into rows, one per section key (bookmark and note side by side). */
+export function marksToRows(m: Marks): MarkRow[] {
+  const keys = new Set([...Object.keys(m.bookmarks), ...Object.keys(m.notes)]);
+  return [...keys].sort().map((key) => {
+    const b = m.bookmarks[key];
+    const n = m.notes[key];
+    return { key, bookmark_on: b ? b.on : null, bookmark_at: b ? b.at : null, note: n ? n.text : null, note_at: n ? n.at : null };
+  });
+}
+
+/**
+ * The entries of `local` that `remote` does not have yet, or has an older
+ * version of: what one side still needs to send the other.
+ */
+export function newerThan(local: Marks, remote: Marks): Marks {
+  const out = emptyMarks();
+  for (const [k, v] of Object.entries(local.bookmarks)) {
+    const r = remote.bookmarks[k];
+    if (!r || v.at > r.at) out.bookmarks[k] = v;
+  }
+  for (const [k, v] of Object.entries(local.notes)) {
+    const r = remote.notes[k];
+    if (!r || v.at > r.at) out.notes[k] = v;
+  }
+  return out;
+}
+
+export function isEmptyMarks(m: Marks): boolean {
+  return !Object.keys(m.bookmarks).length && !Object.keys(m.notes).length;
+}
+
+/** Most entries one save may carry (a student has at most a few hundred sections). */
+export const PUSH_MAX = 1500;
+/** Device clocks can run ahead; no change may claim to be more than a day in the future. */
+export const FUTURE_SLACK_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * What the server writes for one save: the incoming entries cleaned and
+ * clamped, merged with the stored rows for the same sections (newest change
+ * wins per field), keeping only rows that actually change.
+ */
+export function rowsToWrite(stored: Marks, incoming: unknown, now: number): MarkRow[] {
+  const inc = normaliseMarks(incoming);
+  const cap = now + FUTURE_SLACK_MS;
+  const clamp = <T extends { at: number }>(r: Record<string, T>) => Object.fromEntries(Object.entries(r).slice(0, PUSH_MAX).map(([k, v]) => [k, { ...v, at: Math.min(v.at, cap) }]));
+  const clean: Marks = { v: 1, bookmarks: clamp(inc.bookmarks), notes: clamp(inc.notes) };
+  const fresh = newerThan(clean, stored);
+  if (isEmptyMarks(fresh)) return [];
+  // Each changed row is written whole, so keep the stored half of a row too.
+  const merged = mergeMarks(stored, fresh);
+  const keys = new Set([...Object.keys(fresh.bookmarks), ...Object.keys(fresh.notes)]);
+  return marksToRows(merged).filter((r) => keys.has(r.key));
 }
