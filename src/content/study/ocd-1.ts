@@ -78,6 +78,10 @@ People use "OCD" casually for liking order. Real OCD is distressing and disablin
 {"title": "The OCD cycle", "layout": "cycle", "nodes": [{"id": "obs", "label": "Obsession", "detail": "\"My hands are contaminated; my family could get ill.\""}, {"id": "anx", "label": "Anxiety or disgust", "detail": "Distress rises sharply."}, {"id": "comp", "label": "Compulsion", "detail": "Washing in a fixed way for 20 minutes."}, {"id": "relief", "label": "Short relief", "detail": "Distress falls for a while."}, {"id": "learn", "label": "The brain learns", "detail": "\"Washing was needed.\" The next obsession comes back stronger."}], "caption": "Exposure and response prevention breaks the loop between anxiety and compulsion."}
 :::
 
+:::widget conditioning
+{"kind": "operant", "title": "Why the compulsion gets stronger", "caption": "In the box, pressing is rewarded by adding food. In OCD, washing is rewarded by taking anxiety away (negative reinforcement). Each wash that brings relief makes the next wash more likely. Exposure and response prevention removes that reward: the person faces the trigger and does not wash, and learns that the anxiety falls on its own."}
+:::
+
 :::recall
 1. Define obsessions and compulsions in plain words. || Obsessions: unwanted, repeated, distressing thoughts or images. Compulsions: actions or mental acts done to reduce the distress or prevent harm.
 2. Describe the OCD cycle. || Obsession, anxiety, compulsion, relief; relief reinforces the compulsion and the obsession returns.
@@ -156,6 +160,10 @@ Accommodation reduces fights and distress in the short term. In the long run it 
 {"title": "How accommodation feeds OCD", "layout": "cycle", "nodes": [{"id": "demand", "label": "Request or distress", "detail": "\"Change your clothes before you come in!\""}, {"id": "accom", "label": "Family accommodates", "detail": "To keep the peace, the family complies."}, {"id": "calm", "label": "Short-term calm", "detail": "The person feels relief; the family avoids a scene."}, {"id": "grow", "label": "OCD grows", "detail": "The rule becomes fixed and new rules are added."}, {"id": "burden", "label": "Family burden", "detail": "Exhaustion, anger, guilt, and more distress at the next refusal."}]}
 :::
 
+:::widget compare
+{"title": "Two ways a family can respond", "a": {"label": "Accommodating", "points": ["Answers 'Are you sure it is clean?' every time", "Washes the clothes again when asked", "Keeps 'dirty' visitors away from the house", "Waits an hour while the rituals finish"], "summary": "Done out of love, but each act gives relief and keeps the OCD cycle turning."}, "b": {"label": "Supportive", "points": ["Says 'I can see this is hard, and I know you can handle the doubt'", "Agrees a plan with the therapist to cut reassurance step by step", "Keeps family routines going", "Praises each step of facing a fear"], "summary": "Warm and firm: the family stays close but stops doing the compulsions for the person."}, "caption": "Families should not stop accommodating suddenly. The change is planned with the patient and therapist."}
+:::
+
 :::recall
 1. What is family accommodation? || Family members taking part in or allowing rituals and avoidance (reassuring, washing, waiting, avoiding).
 2. Why does accommodation matter? || It brings short-term peace but keeps OCD going and exhausts the family.
@@ -175,6 +183,10 @@ Q: Which is an example of family accommodation?
 - **Exposure and response prevention (ERP)**: the person faces the things that trigger obsessions (exposure) while **not** doing the ritual (response prevention). They learn that anxiety falls on its own and the feared disaster doesn't happen. It is hard work and very effective.
 - **Medicines**: certain antidepressants (SSRIs and clomipramine) reduce obsessions and compulsions. They take longer to work than in depression, and often higher doses are needed.
 - **Family work** to reduce accommodation.
+
+:::widget timeline
+{"prompt": "Meera fears contamination. Order her exposure steps from easiest to hardest.", "events": [{"label": "Touch a door handle at home, then wait without washing"}, {"label": "Touch the bathroom door handle and wait"}, {"label": "Touch shoes worn outside, then touch her face"}, {"label": "Sit on a bench at the bus stand and eat a snack without washing"}, {"label": "Touch a public toilet door and hold her niece's hand without washing"}], "why": "Each step is followed by response prevention: no washing, no wiping, no mental undoing. She moves up only when a step has become manageable. The last step tackles her core fear: harming someone she loves."}
+:::
 
 ### Related problems
 Some conditions share the "repeat, can't stop" pattern of OCD:
@@ -340,6 +352,10 @@ Sometimes a compulsion follows a rigid rule ("I must step on every third tile") 
 {"prompt": "Obsession, compulsion, or neither?", "buckets": ["Obsession", "Compulsion", "Neither"], "items": [{"text": "An unwanted image of stabbing her husband that horrifies her", "bucket": 0}, {"text": "Repeating a mantra until the image goes away", "bucket": 1}, {"text": "Enjoys arranging his stamp collection on Sundays", "bucket": 2, "why": "Pleasurable and wanted: a hobby, not a compulsion."}, {"text": "The doubt 'Did I lock the car?' that keeps coming back", "bucket": 0}, {"text": "Checking the car door lock eight times", "bucket": 1}, {"text": "Sniffing, blinking and throat clearing that she feels 'has to come out', with no thought before it", "bucket": 2, "why": "These sound like tics: preceded by a physical urge rather than an obsession."}]}
 :::
 
+:::widget compare
+{"title": "Obsession or delusion?", "a": {"label": "Obsession", "points": ["Felt as intrusive and unwanted", "Usually recognised as coming from one's own mind", "Insight is usually present: 'I know this is probably silly'", "Resisted, or neutralised by a compulsion", "Causes anxiety or disgust"], "summary": "Obsession: an unwanted thought the person fights, usually knowing it is excessive."}, "b": {"label": "Delusion", "points": ["Felt as simply true, not intrusive", "Not resisted; the person acts on it or argues for it", "Held with full conviction despite clear evidence against it", "Often comes with other psychotic features such as hallucinations", "Out of keeping with the person's culture"], "summary": "Delusion: a fixed false belief that the person does not see as a symptom."}, "caption": "The hard middle: OCD with absent insight. DSM-5-TR keeps such people under OCD, with the specifier 'with absent insight or delusional beliefs', when the belief is the content of the obsession and there are no other psychotic features."}
+:::
+
 :::recall
 1. Give the two parts of the DSM-5-TR definition of obsessions. || Recurrent intrusive, unwanted, distressing thoughts, urges or images; attempts to ignore, suppress or neutralise them.
 2. Give the two parts of the definition of compulsions. || Repetitive behaviours or mental acts the person feels driven to do; aimed at reducing distress or preventing harm but unrealistic or excessive.
@@ -365,6 +381,10 @@ D. Not better explained by another mental disorder (worries in GAD, appearance i
 
 :::widget guess
 {"prompt": "DSM-5-TR gives an example of how much time OCD symptoms take to count as 'time-consuming'. How many hours a day?", "min": 0, "max": 8, "step": 0.5, "unit": "hours", "answer": [1, 1], "reveal": "More than 1 hour a day is the example given. Distress or impairment can also meet the rule even with less time.", "clinician": "Criterion B: obsessions or compulsions are time-consuming (for example, take more than 1 hour per day) or cause clinically significant distress or impairment."}
+:::
+
+:::widget guess
+{"prompt": "In large studies, what is the average age at which OCD begins?", "min": 5, "max": 50, "unit": "years", "answer": [17, 22], "reveal": "About 19 to 20 years. A quarter of cases start by about 14, and boys tend to start earlier than girls. Onset after 35 is unusual and should prompt a search for a physical or other cause.", "clinician": "Mean onset in US data is about 19.5 years; nearly a quarter of males start before age 10. New OCD in later life warrants neurological review."}
 :::
 
 ### Specifiers
@@ -454,6 +474,10 @@ They can co-occur.
 {"title": "The cognitive model of OCD", "layout": "chain", "nodes": [{"id": "intr", "label": "Normal intrusion", "detail": "An unwanted thought, image or urge."}, {"id": "appr", "label": "Appraisal", "detail": "Inflated responsibility, thought-action fusion, need for certainty."}, {"id": "dist", "label": "Distress", "detail": "Anxiety, guilt or disgust follow the appraisal."}, {"id": "neut", "label": "Neutralising", "detail": "Rituals, reassurance, avoidance, suppression."}, {"id": "maint", "label": "Maintenance", "detail": "No disconfirmation; the intrusion becomes more frequent and more important."}]}
 :::
 
+:::widget compare
+{"title": "OCD and OCPD side by side", "a": {"label": "OCD", "points": ["Specific obsessions and compulsions", "Ego-dystonic: unwanted and distressing", "The person wishes the symptoms would go", "Often fluctuates and worsens with stress", "Responds to ERP and SSRIs"], "summary": "OCD: unwanted thoughts and rituals that the person wants rid of."}, "b": {"label": "OCPD", "points": ["No true obsessions or compulsions", "Ego-syntonic: perfectionism feels right", "Others suffer more than the person does", "A lifelong, stable personality style", "Rigid about rules, lists, money and work"], "summary": "OCPD: a stable personality style of control and perfectionism that feels correct to the person."}, "caption": "The two can occur together, and roughly a quarter to a third of people with OCD also have OCPD."}
+:::
+
 :::recall
 1. Name three cognitive beliefs that make intrusions feel dangerous. || Inflated responsibility; overestimation of threat; overimportance of thoughts (thought-action fusion); need to control thoughts; perfectionism; intolerance of uncertainty.
 2. What is thought-action fusion? || Believing that thinking something makes it more likely, or is morally as bad as doing it.
@@ -474,6 +498,10 @@ Q: A 40-year-old manager insists on perfect order, cannot delegate, and believes
 - **ERP** (exposure and response prevention), delivered as CBT. Most effective single treatment; about half to two-thirds respond in trials.
 - **SSRIs** (fluoxetine, fluvoxamine, sertraline, paroxetine, escitalopram, citalopram) or **clomipramine** (a tricyclic with strong serotonin reuptake blockade).
 - For moderate to severe OCD, **ERP plus an SSRI** is common.
+
+:::widget compare
+{"title": "A year of treatment: before and after", "a": {"label": "Before", "points": ["Y-BOCS score of 28: severe", "Four hours a day lost to washing", "Hands cracked and bleeding", "Avoids the kitchen and public places"], "summary": "Severe OCD: rituals fill the day and life has shrunk."}, "b": {"label": "After ERP and an SSRI", "points": ["Y-BOCS score of 12: mild", "Under an hour a day of rituals, and easier to resist", "Hands have healed", "Back at work and cooking for the family"], "summary": "A good response: the score has fallen by more than a third. Some symptoms remain, and relapse prevention continues."}, "caption": "In OCD, a fall of 35 percent or more on the Y-BOCS counts as a response. Full freedom from symptoms is less common than good control."}
+:::
 
 ### How medicines differ in OCD
 :::widget guess
@@ -562,6 +590,10 @@ Q: Which antidepressant has the strongest evidence among tricyclics for OCD?
 {"title": "One ERP practice session", "layout": "chain", "nodes": [{"id": "plan", "label": "Choose the step", "detail": "From the agreed hierarchy, for example touching the main door handle (50)."}, {"id": "predict", "label": "Name the prediction", "detail": "\"My children will fall ill.\" Rate belief."}, {"id": "expose", "label": "Exposure", "detail": "Touch the handle, then carry on cooking."}, {"id": "prevent", "label": "Response prevention", "detail": "No washing, wiping or asking for reassurance."}, {"id": "ride", "label": "Stay with the feeling", "detail": "Notice anxiety rise and fall; no escape."}, {"id": "review", "label": "Review", "detail": "What happened versus what you predicted? What did you learn?"}]}
 :::
 
+:::widget conditioning
+{"kind": "classical", "title": "Fear of germs, learned and unlearned", "caption": "For Meera, touching 'dirty' things became paired with intense fear and disgust, so the door handle itself now triggers alarm. ERP works like the extinction step: touch the handle again and again with no washing and no harm following, and a new learning grows: 'this is safe enough'. Like all extinction, it can return under stress, so practice continues after therapy."}
+:::
+
 :::recall
 1. What is the active ingredient of ERP? || Response prevention: not doing the ritual.
 2. Give two examples of hidden rituals. || Mental reviewing, counting, praying, reassurance-seeking, subtle avoidance.
@@ -620,6 +652,10 @@ About 40 to 60% of people do not respond fully to a first SSRI. Before calling O
 - Was the medicine actually **taken**?
 - Did they receive **real ERP**, with response prevention, from a trained therapist?
 - Is **family accommodation** or comorbid depression or alcohol use getting in the way?
+
+:::widget guess
+{"prompt": "Out of 100 people with OCD who take a first SSRI at a good dose for long enough, about how many respond well?", "min": 0, "max": 100, "unit": "people", "answer": [40, 60], "reveal": "About half. Many of the rest respond to a second SSRI, to clomipramine, to adding ERP or to augmentation. A first failure is common and is not the end of the road.", "clinician": "Response to a first adequate SSRI trial (high dose, at least 8 to 12 weeks) is around 40 to 60 percent; response usually means a Y-BOCS reduction of 25 to 35 percent or more."}
+:::
 
 ### Next steps (in order of evidence)
 1. Raise the SSRI to the maximum tolerated dose, or switch to another SSRI or clomipramine.
