@@ -79,7 +79,7 @@ export function GoalCard({ points, goal, streak }: { points: number; goal: numbe
       >
         <div className="h-full rounded-full bg-primary" style={{ width: `${done}%` }} />
       </div>
-      <p className="text-sm text-muted-foreground">{hit ? "Goal met. See you tomorrow." : "Points come from Study checks and games."}</p>
+      {hit ? <p className="text-sm text-muted-foreground">Goal met. See you tomorrow.</p> : null}
     </section>
   );
 }
