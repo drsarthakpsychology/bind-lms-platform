@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { searchPalette, STATIC_ENTRIES, scoreEntry, visibleEntries, type PaletteEntry } from "./palette";
+import { searchPalette, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
 
 describe("command palette search", () => {
   it("exact label match ranks highest", () => {
@@ -28,7 +28,7 @@ describe("command palette search", () => {
 
   it("Practice tools open in Practice, games open in Games", () => {
     const href = (id: string) => STATIC_ENTRIES.find((e) => e.id === id)?.href;
-    for (const id of ["daily", "cr", "mse", "formulation", "detective", "scenarios", "terms", "judgment", "clinic", "osce", "ethics", "library"]) {
+    for (const id of ["daily", "cr", "mse", "formulation", "detective", "scenarios", "terms", "judgment", "clinic", "osce", "ethics", "landmark"]) {
       expect(href(id), id).toMatch(/^\/practice\//);
     }
     expect(STATIC_ENTRIES.filter((e) => e.group === "Tools" && e.href.startsWith("/games/")).map((e) => e.id)).toEqual([]);
@@ -68,16 +68,8 @@ describe("command palette search", () => {
     expect(scoreEntry(ethics, "ethics")).toBeGreaterThan(scoreEntry(ethics, "pocso"));
   });
 
-  it("merges case-library docs when provided", () => {
-    const caseDoc: PaletteEntry = {
-      id: "case-x",
-      label: "Catatonia in a young woman",
-      hint: "PMC case report",
-      href: "/practice/library?q=catatonia",
-      group: "Cases",
-      keywords: ["catatonia"],
-    };
-    const hits = searchPalette([...STATIC_ENTRIES, caseDoc], "catatonia");
-    expect(hits[0].id).toBe("case-x");
+  it("has no Case library entry (it stays off; Landmark cases is the cases library)", () => {
+    expect(STATIC_ENTRIES.some((e) => e.href.startsWith("/practice/library"))).toBe(false);
+    expect(STATIC_ENTRIES.find((e) => e.id === "clinic")?.href).toBe("/practice/detective?mode=clinic");
   });
 });

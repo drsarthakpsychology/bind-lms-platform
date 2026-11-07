@@ -3,13 +3,11 @@ import {
   ArrowRight,
   Brain,
   ClipboardList,
-  BookOpen,
   Gauge,
   GraduationCap,
   Languages,
   Lock,
   MessagesSquare,
-  Radar,
   RotateCcw,
   Scale,
   Search,
@@ -17,7 +15,6 @@ import {
   Timer,
   Users,
   Wand2,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import type { FeatureKey, FlagStatus } from "@/lib/flags";
@@ -40,21 +37,23 @@ export const MAIN_TOOLS: HubTool[] = [
   { href: "/practice/formulation", title: "Formulation", text: "Sort the 5Ps and write the story of the case.", icon: Wand2, flag: "formulation", tone: "lime" },
 ];
 
+/*
+ * Merged (Nov 2026 practice review): Two-minute clinic is a mode inside Clinic
+ * detective; Weak spots opens from the Consulting Room; Landmark cases is the
+ * one cases library (the raw journal-article Case library stays off).
+ */
 export const THINK_TOOLS: HubTool[] = [
   { href: "/practice/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
   { href: "/practice/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
   { href: "/practice/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
   { href: "/practice/judgment", title: "Judgment", text: "New facts change the odds. 2 minutes.", icon: Gauge, flag: "judgment", tone: "plain" },
-  { href: "/practice/two-minute-clinic", title: "Two-minute clinic", text: "One-liner, differential, next question.", icon: Zap, flag: "two_minute_clinic", tone: "plain" },
   { href: "/practice/ethics", title: "Ethics, law & referral", text: "What to do, then the law behind it.", icon: Scale, flag: "ethics", tone: "plain" },
 ];
 
 export const MORE_TOOLS: HubTool[] = [
   { href: "/practice/osce", title: "OSCE stations", text: "Seven minutes, one task, out loud.", icon: Timer, flag: "osce", tone: "plain" },
   { href: "/practice/role-play", title: "Peer role-play", text: "One of you is the patient.", icon: Users, flag: "peer_roleplay", tone: "plain" },
-  { href: "/practice/weak-spots", title: "Weak spots drill", text: "A drill built from your own debriefs.", icon: Radar, flag: "weak_spots", tone: "plain" },
-  { href: "/practice/landmark", title: "Landmark cases", text: "What was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
-  { href: "/practice/library", title: "Case library", text: "Real case reports to read and note.", icon: BookOpen, flag: "case_library", tone: "plain" },
+  { href: "/practice/landmark", title: "Landmark cases", text: "Famous cases: what was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
 ];
 
 const TONE: Record<Tone, string> = {

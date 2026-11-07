@@ -1,8 +1,10 @@
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
-import { CasePicker, SafetyFirstSheet } from "./case-picker";
+import { CasePicker, ConsultingRoomHeader } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
-import { requireFeature } from "@/lib/flags";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { isFeatureEnabled, requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -97,15 +99,20 @@ export default async function ConsultingRoomPage() {
     };
   });
 
+  // Weak spots (merged in here): the drill built from this student's own
+  // debriefs. Shown once there is at least one scored interview.
+  const weakSpotsOn = scoresBySession.size > 0 && (await isFeatureEnabled("weak_spots"));
+
   return (
     <div className="mx-auto w-full max-w-5xl">
-      <div className="mb-6 flex items-start justify-between gap-3">
-        <h1 className="min-w-0 text-h1">Choose your patient</h1>
-        <div className="flex shrink-0 flex-col items-end gap-2">
-          <SimulationBadge />
-          <SafetyFirstSheet />
-        </div>
-      </div>
+      <ConsultingRoomHeader badge={<SimulationBadge />}>
+        {weakSpotsOn ? (
+          <Link href="/practice/weak-spots" className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
+            Your weak spots and a drill from your debriefs
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        ) : null}
+      </ConsultingRoomHeader>
 
       <CasePicker cases={merged} />
     </div>

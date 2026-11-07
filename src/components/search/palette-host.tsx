@@ -1,4 +1,3 @@
-import { getLibraryDocs } from "@/lib/corpus/library";
 import { STATIC_ENTRIES, referencePaletteEntries, visibleEntries, type PaletteEntry } from "@/lib/search/palette";
 import { blockedBy } from "@/lib/access/features";
 import { referenceIndex } from "@/lib/reference/data";
@@ -6,22 +5,14 @@ import { CommandPalette } from "./command-palette";
 import { createAdminClient } from "@/lib/supabase/server";
 
 /**
- * Server-side palette host: merges the static entries with the case-library
- * docs (server read, so the client gets a small plain list, not the JSON
- * blobs), then renders the ⌘K palette.
+ * Server-side palette host: merges the static entries with the Quick
+ * Reference (and, for admins, the student list), then renders the ⌘K
+ * palette. The raw journal-article Case library is not searched: it stays
+ * off (Practice tools review, Nov 2026), and reading its 37 MB file on every
+ * page was the palette's biggest cost.
  */
 /** Admins also get every student (name, roll number, email): type to jump to their profile. */
 export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }: { isAdmin?: boolean; flags?: Record<string, string>; blocked?: string[] }) {
-  const docs = await getLibraryDocs();
-  const caseEntries: PaletteEntry[] = docs.slice(0, 40).map((d) => ({
-    id: `case-${d.hash}`,
-    label: d.title.slice(0, 80),
-    hint: "PMC case report",
-    href: `/practice/library?q=${encodeURIComponent(d.title.split(" ").slice(0, 4).join(" "))}`,
-    group: "Cases",
-    keywords: d.title.toLowerCase().split(/\s+/).slice(0, 6),
-  }));
-
   const studentEntries: PaletteEntry[] = isAdmin ? await studentPaletteEntries() : [];
 
   let referenceEntries: PaletteEntry[] = [];
@@ -31,10 +22,8 @@ export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }:
     referenceEntries = []; // search still works without the Quick Reference
   }
 
-  // Case reports open the Case library, so they follow its switch too.
-  const cases = flags.case_library === "unlocked" ? caseEntries : [];
   const reference = flags.learn === "unlocked" ? referenceEntries : [];
-  const entries = visibleEntries([...STATIC_ENTRIES, ...studentEntries, ...reference, ...cases], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
+  const entries = visibleEntries([...STATIC_ENTRIES, ...studentEntries, ...reference], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
   return <CommandPalette entries={entries} />;
 }
 

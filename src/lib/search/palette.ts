@@ -1,6 +1,6 @@
 /**
  * Ask the Syllabus (⌘K): command palette over the ACTUAL content in this
- * install: practice tools, courses/lessons, case-library docs, competencies,
+ * install: practice tools, courses/lessons, Quick Reference, competencies,
  * and admin surfaces. Search is lexical (no embeddings needed), honest about
  * what it covers, and works fully offline.
  */
@@ -51,10 +51,10 @@ const TOOLS: PaletteEntry[] = [
   { id: "scenarios", label: "What would you do", hint: "Tricky moments with a patient", href: "/practice/scenarios", group: "Tools", keywords: ["scenario", "dilemma", "choice"], flag: "learn" },
   { id: "terms", label: "Say it clinically", hint: "Everyday words into case-sheet words", href: "/practice/terms", group: "Tools", keywords: ["terms", "words", "vocabulary", "language"], flag: "learn" },
   { id: "judgment", label: "Judgment", hint: "90 seconds, one screen", href: "/practice/judgment", group: "Tools", keywords: ["sct", "script concordance"], flag: "judgment" },
-  { id: "clinic", label: "Two-minute clinic", hint: "One-liner, differential, next question", href: "/practice/two-minute-clinic", group: "Tools", keywords: ["drill", "micro", "clinic"], flag: "two_minute_clinic" },
+  { id: "clinic", label: "Two-minute clinic", hint: "One-liner, differential, next question", href: "/practice/detective?mode=clinic", group: "Tools", keywords: ["drill", "micro", "clinic"], flag: "two_minute_clinic" },
   { id: "osce", label: "OSCE Stations", hint: "Timed stations", href: "/practice/osce", group: "Tools", keywords: ["exam", "station"], flag: "osce" },
+  { id: "landmark", label: "Landmark cases", hint: "Famous cases: what was believed, and what held up", href: "/practice/landmark", group: "Tools", keywords: ["cases", "history", "gage", "rosenhan", "milgram"], flag: "landmark" },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"], flag: "ethics" },
-  { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"], flag: "case_library" },
   { id: "reference", label: "Quick Reference A to Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"], flag: "learn" },
   { id: "notes", label: "Revision notes", hint: "One-page notes", href: "/study/notes", group: "Tools", keywords: ["notes", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"], flag: "learn" },
   { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"], flag: ["supervision", "checkin"] },

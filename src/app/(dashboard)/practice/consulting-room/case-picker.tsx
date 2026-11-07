@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Check, ClipboardCheck, Info, Lock, MessageCircle } from "lucide-react";
+import { Check, ClipboardCheck, Lock, MessageCircle } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/mobile/status-pill";
-import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
 
 export interface CaseCard {
   id: string;
@@ -240,26 +240,33 @@ function CaseCardItem({
  * that opens a bottom sheet (T33), so the case list stays clean and the first
  * patient is reachable immediately.
  */
-export function SafetyFirstSheet() {
-  const [open, setOpen] = React.useState(false);
+/**
+ * The Consulting Room title row. The safety note opens under the title the
+ * first time a student visits (show-once tip, remembered per student); after
+ * "Got it" it folds into a small "Safety first" button beside the title.
+ */
+export function ConsultingRoomHeader({ badge, children }: { badge?: React.ReactNode; children?: React.ReactNode }) {
+  const tip = useFirstTimeTip("consulting-room-safety");
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-caption font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
-      >
-        <Info className="size-3.5" aria-hidden />
-        Safety first
-      </button>
-      <MobileBottomSheet open={open} onOpenChange={setOpen} title="Safety first">
-        <ul className="space-y-2 text-small text-muted-foreground">
+    <div className="mb-6 space-y-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h1 className="text-h1">Choose your patient</h1>
+          {children}
+        </div>
+        <div className="flex shrink-0 flex-col items-end gap-2">
+          {badge}
+          <TipButton tip={tip} label="Safety first" />
+        </div>
+      </div>
+      <TipPanel tip={tip} title="Safety first">
+        <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
           <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
           <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
           <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
         </ul>
-      </MobileBottomSheet>
-    </>
+      </TipPanel>
+    </div>
   );
 }
 

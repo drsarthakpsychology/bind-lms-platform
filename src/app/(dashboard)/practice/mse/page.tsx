@@ -4,6 +4,7 @@ import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
 import type { FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { requireFeature } from "@/lib/flags";
+import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +23,9 @@ function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
   const domain: MseStimulus[] = [];
   const fullMse: FullMseStimulus[] = [];
 
-  for (const row of rows) {
+  for (const raw of rows) {
+    // Older stimuli rows still carry dashes; students never see them.
+    const row = { ...raw, content: cleanStudentText(raw.content), title: raw.title ? cleanStudentText(raw.title) : raw.title, expert_coding: cleanDeep(raw.expert_coding) };
     const coding = (row.expert_coding ?? {}) as { expertTags?: string[]; amberTags?: string[]; expert?: FullMseStimulus["expert"]; amber?: FullMseStimulus["amber"] };
     if (row.slug.startsWith("obs-")) {
       observe.push({ id: row.slug, content: row.content });
