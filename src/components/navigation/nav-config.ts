@@ -125,6 +125,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     // Messages has its own folder rail (Inbox / Compose / Notifications / Sent / Failed).
     tabs: [{ href: "/admin/emails", label: "Messages", hidden: true }],
   },
+  { key: "forms", label: "Forms", icon: "clipboardCheck", href: "/admin/forms", group: "Communicate", tabs: [{ href: "/admin/forms", label: "Forms", hidden: true }] },
   {
     key: "content",
     label: "Content",
