@@ -1,8 +1,6 @@
 /* Module · Brain and behaviour, Parts III and IV (Advanced level and exam zone). Original text written for VIBHA School of Psychology. */
-export const part2 = String.raw`
-# Part III · Advanced: signalling, circuits, genes and the frontier
-
-## 3.1 Inside the receiving cell: signalling in depth [core][advanced]
+export const a5Signalling = String.raw`
+## 5.1 Inside the receiving cell: signalling in depth [core][advanced]
 A medicine binds a receptor in seconds, yet most psychiatric medicines take weeks to work. The answer lies **inside** the receiving cell, in chains of reactions that end by changing which genes are switched on.
 
 ### From receptor to gene
@@ -81,7 +79,7 @@ Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an S
 
 ### Allosteric modulators and the NMDA receptor
 - **Benzodiazepines** do not open the GABA-A channel themselves. They bind a separate site and make GABA more effective (positive allosteric modulators). That is why they are safer alone than barbiturates, which can open the channel directly at high doses.
-- The **NMDA receptor** needs two things at once: glutamate binding and a depolarised cell that pushes out the magnesium plug. It is a **coincidence detector**, which makes it the key to learning (Section 3.3). Ketamine and memantine block it inside the channel.
+- The **NMDA receptor** needs two things at once: glutamate binding and a depolarised cell that pushes out the magnesium plug. It is a **coincidence detector**, which makes it the key to learning (Sections 5.3 and 5.5). Ketamine and memantine block it inside the channel.
 - **Neurosteroids** such as allopregnanolone are positive modulators at a different GABA-A site. Brexanolone and oral zuranolone, licensed in the United States for postpartum depression, act here.
 
 :::widget decide
@@ -130,7 +128,10 @@ Q: Zuranolone and brexanolone act mainly as:
 > They are neurosteroid analogues at GABA-A.
 :::
 
-## 3.2 Circuits of symptoms [core][advanced]
+`;
+
+export const a5Circuits = String.raw`
+## 5.2 Circuits of symptoms [core][advanced]
 Modern psychiatry increasingly thinks in **circuits**, groups of brain areas that work together, rather than single chemicals or single regions. A symptom is what a circuit produces when it runs wrongly.
 
 
@@ -290,7 +291,10 @@ Q: The network most associated with self-focused thought and rumination is the:
 > The default mode network is active during self-referential mind-wandering.
 :::
 
-## 3.3 Plasticity, development and genes [core][advanced]
+`;
+
+export const a5Plasticity = String.raw`
+## 5.3 Plasticity, development and genes: the overview [core][advanced]
 ### Learning changes synapses
 **Neuroplasticity** is the brain's ability to change its structure and function with experience. The best-studied form is **long-term potentiation (LTP)**: when one neuron repeatedly helps fire another, the connection between them strengthens ("cells that fire together wire together", after Donald Hebb). LTP was first shown in the hippocampus in 1973.
 
@@ -409,7 +413,7 @@ Be suspicious of any headline about "the gene for depression" or a single "warri
 :::
 
 :::clinician
-Adult hippocampal neurogenesis in humans is contested: Sorrells' group found it drops to undetectable levels in adults, while Boldrini and Moreno-Jiménez reported persistence into old age, with differences partly explained by tissue fixation methods; later single-cell studies remain mixed. So "antidepressants work by neurogenesis" is a rodent-derived hypothesis, not established human fact. The complement component C4 finding links the strongest schizophrenia GWAS signal (the MHC region) to synaptic pruning, a mechanism coherent with the adolescent onset and reduced dendritic spine density seen post-mortem. The Psychiatric Genomics Consortium schizophrenia GWAS reported 287 loci with enrichment in synaptic genes expressed in neurons, not glia. The trans-ancestry depression GWAS reported about 700 independent variants and highlighted the need for non-European samples; South Asian representation in psychiatric genetics remains small, so polygenic scores built in European samples predict even less well in Indian patients. Pharmacogenomic panels are a separate matter (Section 3.5).
+Adult hippocampal neurogenesis in humans is contested: Sorrells' group found it drops to undetectable levels in adults, while Boldrini and Moreno-Jiménez reported persistence into old age, with differences partly explained by tissue fixation methods; later single-cell studies remain mixed. So "antidepressants work by neurogenesis" is a rodent-derived hypothesis, not established human fact. The complement component C4 finding links the strongest schizophrenia GWAS signal (the MHC region) to synaptic pruning, a mechanism coherent with the adolescent onset and reduced dendritic spine density seen post-mortem. The Psychiatric Genomics Consortium schizophrenia GWAS reported 287 loci with enrichment in synaptic genes expressed in neurons, not glia. The trans-ancestry depression GWAS reported about 700 independent variants and highlighted the need for non-European samples; South Asian representation in psychiatric genetics remains small, so polygenic scores built in European samples predict even less well in Indian patients. Pharmacogenomic panels are a separate matter (Section 6.5).
 :::
 
 :::recall
@@ -435,7 +439,10 @@ Q: Long-term potentiation depends especially on which receptor acting as a coinc
 > NMDA receptors open only with glutamate plus depolarisation, admitting calcium.
 :::
 
-## 3.4 Seeing and stimulating the brain [core][advanced]
+`;
+
+export const a6Imaging = String.raw`
+## 6.3 Seeing and stimulating the brain [core][advanced]
 ### Tools to look at the brain
 | Tool | What it shows | Good for in psychiatry |
 |---|---|---|
@@ -445,17 +452,7 @@ Q: Long-term potentiation depends especially on which receptor acting as a coinc
 | **Functional MRI (fMRI)** | Changes in blood oxygen as a sign of activity | Research; not a clinical diagnostic tool in psychiatry |
 | **PET and SPECT** | Metabolism, blood flow or specific molecules (for example dopamine transporters, amyloid) | Dementia subtyping, DAT scan for Lewy body dementia and Parkinson's; amyloid PET where available |
 
-### EEG rhythms
-| Wave | Frequency | When seen |
-|---|---|---|
-| **Delta** | Below 4 per second | Deep sleep; in an awake adult, abnormal (delirium, lesions) |
-| **Theta** | 4 to 7 per second | Drowsiness, children; excess in some encephalopathies |
-| **Alpha** | 8 to 13 per second | Awake, relaxed, eyes closed, at the back of the head |
-| **Beta** | Above 13 per second | Alert concentration; increased by benzodiazepines |
-
-:::mnemonic Slow to fast: "Do Try All Brains"
-**D**elta, **T**heta, **A**lpha, **B**eta. Diffuse slowing (more delta and theta) in an awake confused patient is the EEG signature of **delirium**.
-:::
+The EEG rhythms and sleep recording were covered in 4.4. Here the focus is on what each tool adds in the clinic and its limits.
 
 :::widget decide
 {
@@ -543,7 +540,10 @@ Q: Alpha rhythm is best seen:
 > Posterior alpha with eyes closed is the normal awake resting rhythm.
 :::
 
-## 3.5 The body talks back: immunity, hormones, gut and genes in prescribing [core][advanced]
+`;
+
+export const a6Body = String.raw`
+## 6.5 The body talks back: immunity, hormones, gut and genes in prescribing [core][advanced]
 ### The immune system and the brain
 The brain is not sealed off from the body. Inflammation in the body sends signals into the brain through the blood, through nerves such as the vagus, and through the brain's own microglia. Everyone has felt this as "sickness behaviour" in fever: tired, withdrawn, no appetite, low mood. In a subgroup of people with depression, markers of inflammation (such as C-reactive protein, CRP) are raised.
 
@@ -647,9 +647,12 @@ Q: Lithium is most likely to affect which gland?
 > Lithium commonly causes hypothyroidism and goitre; check thyroid function.
 :::
 
-# Part IV · Exam zone
+`;
 
-## 4.1 Long answers and short notes [core]
+export const examZone = String.raw`
+# Part VIII · Exam zone
+
+## 8.1 Long answers and short notes [core]
 ### Long answer skeletons
 **1. Describe the dopamine pathways and their relevance to antipsychotic action (15 marks).**
 Introduction (dopamine synthesis, D1-like and D2-like receptors) → the four pathways with origin, target and normal role → the dopamine hypothesis of schizophrenia and its revision (presynaptic excess in the associative striatum, aberrant salience) → effects of D2 blockade in each pathway (wanted effects, negative and cognitive worsening, EPS, hyperprolactinaemia) → the therapeutic window of occupancy → how atypical drugs differ (5-HT2A block, fast-off, partial agonism) → newer non-D2 approaches (muscarinic) → conclusion.
@@ -688,7 +691,7 @@ For postgraduate and NET-level answers, add one or two lines of current evidence
 2. What should every short note include besides facts? || An example per point, a diagram if possible, and a line on clinical relevance.
 :::
 
-## 4.2 Viva rapid-fire [core]
+## 8.2 Viva rapid-fire [core]
 :::viva
 What is the resting membrane potential? :: About minus 70 millivolts, inside negative.
 What is saltatory conduction? :: Jumping of the action potential between nodes of Ranvier along a myelinated axon.
@@ -714,7 +717,7 @@ What EEG finding suggests delirium? :: Diffuse slowing.
 What is a DAT scan used for? :: Showing loss of dopamine transporters in Parkinson's disease and Lewy body dementia.
 :::
 
-## 4.3 Module test [core]
+## 8.3 Module test [core]
 Score 80% or more to complete the module.
 
 :::mcq

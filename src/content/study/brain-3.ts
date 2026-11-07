@@ -1,8 +1,6 @@
 /* Module · Brain and behaviour, Part V (Q&A bank). Original text written for VIBHA School of Psychology. */
-export const part3 = String.raw`
-# Part V · Exam zone: Q&A bank
-
-## 5.1 Q&A bank · Starting [starting]
+export const qaStarting = String.raw`
+## 9.1 Q&A bank · Starting [starting]
 Think each question through, or jot an answer, before you open it.
 
 :::qa Why does a stronger stimulus not produce a bigger action potential, and how does the nervous system code intensity instead? [starting]
@@ -173,7 +171,10 @@ Tiredness, low mood, slowed thinking, weight gain, poor concentration, low libid
 A simple blood test of thyroid function (TSH, then thyroxine) in anyone with new depression, especially with the clues above. Treatment with thyroxine often lifts much of the "depression"; if symptoms remain, treat the depression as well.
 :::
 
-## 5.2 Q&A bank · Beginner [beginner]
+`;
+
+export const qaBeginner = String.raw`
+## 9.2 Q&A bank · Beginner [beginner]
 
 :::qa Using receptor knowledge, explain why amitriptyline and sertraline feel so different to patients. [beginner]
 ### Short answer
@@ -353,7 +354,10 @@ Baseline and regular weight, waist, glucose and lipids; diet and activity advice
 Some later studies suggest split-brain patients show less divided awareness than the classic account claimed, so the findings are debated.
 :::
 
-## 5.3 Q&A bank · Advanced [advanced]
+`;
+
+export const qaAdvanced = String.raw`
+## 9.3 Q&A bank · Advanced [advanced]
 
 :::qa Critically evaluate the claim that antidepressants work by "correcting low serotonin". [advanced]
 ### Short answer

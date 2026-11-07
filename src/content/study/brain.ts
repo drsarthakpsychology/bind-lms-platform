@@ -1,8 +1,13 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
-import { part1 } from "./brain-1";
-import { part2 } from "./brain-2";
-import { part3 } from "./brain-3";
+import * as p1 from "./brain-1";
+import * as p2 from "./brain-2";
+import * as p3 from "./brain-3";
+import * as n4 from "./brain-4";
+import * as n5 from "./brain-5";
+import * as n6 from "./brain-6";
+import * as n7 from "./brain-7";
+import * as q11 from "./brain-11";
 
 export const meta: ModuleMeta = {
   id: "brain",
@@ -29,4 +34,48 @@ export const meta: ModuleMeta = {
   noteId: "neuroscience",
 };
 
-export const text = part1 + part2 + part3;
+const H = (title: string) => "\n# " + title + "\n";
+
+/**
+ * The module in reading order. Parts I to IV are Starting and Beginner,
+ * Parts V to VII Advanced, then the exam zone and the Q&A bank.
+ */
+export const text = [
+  H("Part I · Starting: the brain in plain words"),
+  p1.s1Intro,
+  n4.startBuilt,
+  p1.s1Check,
+  H("Part II · Beginner: signals, transmitters and medicines"),
+  n5.begSignals,
+  p1.b2Overview,
+  n5.begTransmitters,
+  p1.b2Dopamine,
+  p1.b2Meds,
+  H("Part III · Beginner: the map of the brain"),
+  n6.begAnatomyLow,
+  n6.begAnatomyMid,
+  p1.b3Lobes,
+  n6.begVessels,
+  p1.b3Memory,
+  H("Part IV · Beginner: stress, sleep, hormones and genes"),
+  p1.b4Stress,
+  p1.b4Hormones,
+  n7.begAxes,
+  n7.begSleep,
+  p1.b4Hemispheres,
+  p1.b4Check,
+  H("Part V · Advanced: signalling, circuits, plasticity and genes"),
+  p2.a5Signalling,
+  p2.a5Circuits,
+  p2.a5Plasticity,
+  H("Part VI · Advanced: hormones, sleep, scans and the body"),
+  p2.a6Imaging,
+  p2.a6Body,
+  p2.examZone,
+  H("Part IX · Exam zone: Q&A bank"),
+  p3.qaStarting,
+  q11.qaStartingMore,
+  p3.qaBeginner,
+  q11.qaBeginnerMore,
+  p3.qaAdvanced,
+].join("\n");
