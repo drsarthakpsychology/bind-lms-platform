@@ -17,7 +17,7 @@ import { PersonAccess } from "@/components/admin/cohorts-ui";
 import { LockToggle } from "@/components/admin/lock-toggle";
 import { Badge } from "@/components/ui/badge";
 import { StudentActions } from "../student-actions";
-import { SendLinkButton } from "./send-link-button";
+import { LoginQuick } from "../login-quick";
 import { PersonHeader, NextStepLink } from "@/components/admin/person-header";
 import { NextStepAction, StudentActionRail } from "@/components/admin/student-action-rail";
 import { InlineReply } from "@/components/admin/inbox-reply";
@@ -148,7 +148,12 @@ export default async function StudentProfilePage({ params, searchParams }: { par
         isTest={Boolean(extra?.is_test)}
         next={next}
         nextAction={nextAction}
-        actions={<StudentActionRail id={id} email={email} canWrite={canWrite} />}
+        actions={
+          <div className="space-y-2">
+            <StudentActionRail id={id} email={email} canWrite={canWrite} />
+            {canWrite && email ? <LoginQuick only="copy" email={email} name={name} /> : null}
+          </div>
+        }
       />
 
       <nav aria-label="Student sections" className="-mx-4 border-b-2 border-foreground/10 px-4 sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10">
@@ -279,7 +284,7 @@ async function AccessTab({ id, email, canWrite, person, r, isTest }: { id: strin
           ) : null}
           {canWrite ? (
             <div className="flex flex-wrap items-center gap-2">
-              <SendLinkButton email={email} />
+              <LoginQuick email={email} name={r?.name || email.split("@")[0]} />
               <LockToggle userId={id} status={status} />
               <StudentActions userId={id} isTest={isTest} status={status} />
             </div>

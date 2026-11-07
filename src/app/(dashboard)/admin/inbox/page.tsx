@@ -8,7 +8,9 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { InlineReply } from "@/components/admin/inbox-reply";
 import { agoLabel } from "@/lib/analytics/timeline";
-import { loadInbox, type InboxThread } from "./data";
+import { loadInbox, loadLoginPeople, type InboxThread } from "./data";
+import { LoginFinder } from "./login-finder";
+import { LoginQuick } from "../students/login-quick";
 
 export const metadata: Metadata = { title: "Inbox" };
 export const dynamic = "force-dynamic";
@@ -29,8 +31,10 @@ export default async function AdminInboxPage() {
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
   const canWrite = isSuperAdmin(me);
-  const { ready, threads, emails } = await loadInbox();
+  const [{ ready, threads, emails }, people] = await Promise.all([loadInbox(), canWrite ? loadLoginPeople() : Promise.resolve([])]);
   const total = threads.length + emails.length;
+  // Email replies from a student's own address get the login shortcut too.
+  const studentByEmail = new Map(people.map((p) => [p.email.toLowerCase(), p]));
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -44,6 +48,8 @@ export default async function AdminInboxPage() {
           </Link>
         }
       />
+
+      {canWrite ? <LoginFinder people={people} /> : null}
 
       {!ready ? (
         <p className="rounded-xl border-2 border-foreground bg-card p-4 text-sm">The doubts board isn&apos;t switched on yet (database step 2026_11_access_doubts.sql). Email replies still show below.</p>
@@ -96,6 +102,7 @@ export default async function AdminInboxPage() {
                   <Link href={`/doubts/${t.id}`} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-bold text-link hover:underline pointer-coarse:min-h-11">
                     Open thread
                   </Link>
+                  {canWrite && t.authorEmail ? <LoginQuick email={t.authorEmail} name={t.author} /> : null}
                 </div>
               </li>
             ))}
@@ -130,6 +137,9 @@ export default async function AdminInboxPage() {
                   <Link href={`/admin/emails?folder=inbox&id=${m.id}`} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-bold text-link hover:underline pointer-coarse:min-h-11">
                     Open in Messages
                   </Link>
+                  {canWrite && studentByEmail.has(m.fromEmail.toLowerCase()) ? (
+                    <LoginQuick email={studentByEmail.get(m.fromEmail.toLowerCase())!.email} name={studentByEmail.get(m.fromEmail.toLowerCase())!.name} />
+                  ) : null}
                 </div>
               </li>
             ))}
