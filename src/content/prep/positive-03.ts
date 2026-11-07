@@ -32,7 +32,7 @@ export const PART: PrepQuestion[] = [
     stem: "The Mindful Attention Awareness Scale asks how often people do things such as 'I rush through activities without being really attentive to them.' Higher mindfulness on this scale is linked to:",
     options: [
       "Lower well-being and more anxiety",
-      "No relation with well-being at all",
+      "No relation with well-being or distress at all",
       "Greater well-being and less distress",
       "Poorer attention in daily life",
     ],
@@ -88,7 +88,7 @@ export const PART: PrepQuestion[] = [
       "Much higher family income",
       "More frequent religious practice",
       "Strong, satisfying social relationships",
-      "Higher scores in academic examinations",
+      "Higher scores in academic and entrance examinations",
     ],
     answer: 2,
     explanation:
