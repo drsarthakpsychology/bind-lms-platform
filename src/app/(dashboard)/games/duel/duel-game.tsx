@@ -149,8 +149,6 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
         </div>
       </section>
 
-      <ScoreRules />
-
       <section className={cn(card, "flex flex-wrap items-center gap-x-4 gap-y-1 p-4")} aria-label="Your rating">
         <p className="font-pix text-3xl tabular-nums">{prof.rating}</p>
         <div className="min-w-0 flex-1">
@@ -207,29 +205,6 @@ function OpponentCard({ icon: Icon, title, line, action, primary, busy, disabled
         {busy ? <LoaderCircle className="size-5 animate-spin" aria-hidden /> : <Icon className="size-5" aria-hidden />} {action}
       </button>
     </div>
-  );
-}
-
-/** How points are won, as three tiles instead of a paragraph. */
-function ScoreRules() {
-  const tiles: [string, string, string][] = [
-    ["1", "Pick the diagnosis", "+100"],
-    ["2", "Pick what tells it apart", "+50"],
-    ["=", "Same points?", "Faster wins"],
-  ];
-  return (
-    <section aria-label="How to score" className="space-y-1.5">
-      <ol className="grid grid-cols-3 gap-2">
-        {tiles.map(([n, what, pts]) => (
-          <li key={n} className="flex min-w-0 flex-col items-center gap-1 rounded-lg border-2 border-foreground bg-card p-2 text-center">
-            <span className="grid size-6 place-items-center rounded-md border-2 border-foreground font-pix text-xs">{n}</span>
-            <span className="text-xs leading-tight font-semibold sm:text-sm">{what}</span>
-            <span className="font-pix text-sm tabular-nums text-link">{pts}</span>
-          </li>
-        ))}
-      </ol>
-      <p className="text-center text-xs text-muted-foreground">5 rounds · 20 seconds each</p>
-    </section>
   );
 }
 

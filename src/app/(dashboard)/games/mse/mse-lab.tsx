@@ -84,15 +84,7 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Leve
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">MSE Lab</Eyebrow>
-        <h1 className="text-h1">Tag the mental state</h1>
-        <ul className="space-y-1 text-body">
-          <li>Read a short interview and the observation note.</li>
-          <li>For each highlighted phrase, pick the part of the MSE, then the exact word.</li>
-          <li>Five excerpts a round. The level moves with you. Fully right tags in a row build your streak.</li>
-        </ul>
-      </div>
+      <h1 className="text-h2">Pick a level</h1>
       <div className="grid gap-3 sm:grid-cols-3">
         {LEVELS.map((l) => (
           <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" className="h-auto flex-col items-start py-3 text-left" onClick={() => onStart(l.id)}>

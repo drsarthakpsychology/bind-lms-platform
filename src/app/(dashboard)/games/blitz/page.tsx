@@ -19,8 +19,8 @@ export default async function BlitzPage() {
   return (
     <ActivityFrame
       title="Blitz"
-      purpose="60 seconds of fast facts. Right answers in a row build a combo that multiplies your points."
-      how={["Answer as many as you can in 60 seconds.", "3 right in a row: double points. 6: triple. 10: four times.", "A wrong answer resets the combo.", "Keys: 1 to 4 to answer, T or F for true or false.", "After the round, read what you missed."]}
+      purpose="60 seconds of fast facts."
+      how={["Answer as many as you can before the clock runs out.", "3 right in a row doubles your points, 6 triples them, 10 gives four times.", "A wrong answer resets the combo.", "Keys: 1 to 4 to answer, T or F for true or false."]}
       fallback="/games"
     >
       <BlitzGame bests={bests} serverState={serverState} save={saveLearnState} />

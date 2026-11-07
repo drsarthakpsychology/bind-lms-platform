@@ -56,15 +56,7 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle") });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">Rx Detective</Eyebrow>
-        <h1 className="text-h1">Follow the medicine</h1>
-        <ul className="space-y-1 text-body">
-          <li>Twelve cases. Three lives. A case under half right costs a life.</li>
-          <li>Every answer opens the why, with the receptor or the body route animated.</li>
-          <li>Doses shown are for learning only.</li>
-        </ul>
-      </div>
+      <h1 className="text-h2">Pick a mode</h1>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
           <Btn key={x.id} variant={i === 0 ? "primary" : "outline"} size="lg" className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)}>

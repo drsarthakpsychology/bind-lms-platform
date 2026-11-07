@@ -12,8 +12,8 @@ export default async function TermsPage() {
   return (
     <ActivityFrame
       title="Say it clinically"
-      purpose="Turn what patients and families say into the words you write in a case sheet, and choose respectful language."
-      how={["Read the everyday phrase.", "Pick the clinical term.", "Check the explanation.", "12 questions a round."]}
+      tipLabel="How it works"
+      how={["Read the everyday phrase.", "Pick the clinical term, then read why.", "12 questions a round."]}
     >
       <TermsGame serverState={serverState} save={saveLearnState} />
     </ActivityFrame>

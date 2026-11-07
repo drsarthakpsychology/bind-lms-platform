@@ -65,15 +65,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
   const [busy, setBusy] = React.useState<string | null>(null);
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">Team Escape Room</Eyebrow>
-        <h1 className="text-h1">Open every door</h1>
-        <ul className="space-y-1 text-body">
-          <li>One patient, seven locked doors: mental state, diagnosis, differential, risk, plan, medicine.</li>
-          <li>Each answer adds a page to the case file. Wrong answers add {PENALTY_S} seconds.</li>
-          <li>Teams of {TEAM_LIMITS.escape.min} to {TEAM_LIMITS.escape.max}. Or do a practice run alone.</li>
-        </ul>
-      </div>
+      <h1 className="text-h2">Pick a room</h1>
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
         {ROOMS.map((r, i) => (
           <li key={r.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>

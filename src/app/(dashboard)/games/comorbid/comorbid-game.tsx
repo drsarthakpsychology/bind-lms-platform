@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Ban, Bot, Check, FlaskConical, Layers, RefreshCw, Shield, ShieldOff, Stethoscope, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CLEAR, dxById, ruleById, symptomById } from "@/lib/games-sims/comorbid/cards";
-import { apply, botMove, newGame, progress, RULES, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
+import { apply, botMove, newGame, progress, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -60,18 +60,6 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (mode: S
   useHotkeys({ "1": () => onStart("bot", 1), "2": () => onStart("bot", 2), "3": () => onStart("bot", 3), p: () => onStart("pass", 2) });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">Comorbid</Eyebrow>
-        <h1 className="text-h1">Build it. Block it.</h1>
-        <ol className="space-y-1.5 text-body">
-          {RULES.map((r, i) => (
-            <li key={r} className="flex gap-2">
-              <span className="font-mono text-link">{i + 1}</span>
-              <span>{r}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
       <section className="space-y-2">
         <h2 className="flex items-center gap-1.5 text-body-strong">
           <Bot className="size-4" aria-hidden /> Play the bot
@@ -91,7 +79,6 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (mode: S
       <Btn size="lg" className="w-full" onClick={() => onStart("pass", 2)}>
         <Users aria-hidden /> Pass and play with a classmate <Kbd>P</Kbd>
       </Btn>
-      <p className="text-caption text-muted-foreground">The diagnoses use simplified teaching versions of the criteria: the count and the must-have card.</p>
       <AccuracyBoard data={board} unit="cards" />
     </div>
   );

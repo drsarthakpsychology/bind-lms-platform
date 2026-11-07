@@ -16,7 +16,7 @@ export default async function ComorbidPage() {
   const user = await currentUser();
   const board = await loadAccuracyBoard("comorbid", user?.id ?? null);
   return (
-    <ActivityFrame title="Comorbid" purpose="A card duel about criteria and differentials. Build your diagnosis from symptom cards while your rival tries to rule it out." how={RULES}>
+    <ActivityFrame title="Comorbid" purpose="A card duel about criteria and look-alikes. Teaching versions of the criteria." how={RULES}>
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <ComorbidGame board={board} finish={finishComorbid} />
     </ActivityFrame>

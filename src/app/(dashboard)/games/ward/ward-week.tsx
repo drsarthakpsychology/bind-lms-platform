@@ -152,15 +152,7 @@ function Pick({
   const live = teams.filter((t) => t.status !== "done");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
-      <div className="space-y-2">
-        <Eyebrow index="01">Ward Week</Eyebrow>
-        <h1 className="text-h1">One patient. Five sessions.</h1>
-        <ul className="space-y-1 text-body">
-          <li>You are the trainee psychologist on the team.</li>
-          <li>Each call moves five dials and changes what happens next.</li>
-          <li>The ending depends on the dials and on how sound your calls were.</li>
-        </ul>
-      </div>
+      <h1 className="text-h2">Pick a patient</h1>
 
       {saved ? (
         <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
@@ -219,7 +211,6 @@ function Pick({
             <Vote className="size-5" aria-hidden />
             <h2 className="text-body-strong">Team mode</h2>
           </div>
-          <p className="text-small">Three classmates, one patient. Each of you votes when you have a moment. Two matching votes move the story on.</p>
           <JoinBox onJoin={onJoin} label="Got a code from a classmate?" />
           {live.length ? (
             <div className="space-y-2">

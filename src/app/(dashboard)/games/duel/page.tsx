@@ -22,7 +22,7 @@ export default async function DuelPage() {
     <ActivityFrame
       title="Differential duel"
       purpose="Beat the bot or a classmate on look-alike patients."
-      how={["Diagnosis +100, what tells it apart +50. Most points after 5 rounds wins."]}
+      how={["Each round shows one patient. Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "5 rounds, 20 seconds each. Same points? The faster player wins.", "The bot is practice. Matches with classmates move your rating."]}
       fallback="/games"
     >
       <DuelGame serverState={serverState} save={saveLearnState} profile={prof} offlineItems={offline} />
