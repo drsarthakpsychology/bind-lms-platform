@@ -38,6 +38,7 @@ export async function submitMseExcerpt(input: z.infer<typeof schema>): Promise<{
       skill: e.skill,
       item: `mse:${e.id}:${i}`,
       outcome: cappedOutcome(results[i].score, used(i)),
+      options: 1 + f.o.filter((o) => o !== f.a).length,
       chosen: tags[i]?.term ? (TERMS as Record<string, { label: string }>)[tags[i].term!]?.label ?? null : null,
       correct: TERMS[f.a].label,
     })),

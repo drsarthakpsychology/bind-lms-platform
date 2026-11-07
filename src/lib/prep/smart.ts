@@ -6,7 +6,7 @@
  * student can just about get, one stretch and one easy win, with look-alike
  * topics interleaved. Pure: randomness only comes from `rng`.
  */
-import { prob } from "@/lib/learn/model/elo";
+import { guessFloor, prob } from "@/lib/learn/model/elo";
 import { pickSession, type Candidate, type Picked } from "@/lib/learn/model/picker";
 import { PRIOR_B } from "./catalog";
 import { groupOf } from "./topics";
@@ -38,7 +38,7 @@ export function pickSmart(bank: readonly PrepQuestion[], st: SmartState, rng: ()
     id: q.id,
     topic: `${q.subject}:${groupOf(q.subject, q.topic, q.module)}`,
     family: q.subject,
-    p: prob(st.theta(q.subject), st.b(q.id) ?? PRIOR_B[q.difficulty]),
+    p: prob(st.theta(q.subject), st.b(q.id) ?? PRIOR_B[q.difficulty], guessFloor(q.options.length)),
     due: st.due.has(q.id),
   }));
   return pickSession(candidates, size, rng);

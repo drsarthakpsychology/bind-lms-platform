@@ -31,14 +31,25 @@ export function ledgerXp(rows: readonly { source: string; amount: number }[]): n
   return rows.reduce((a, r) => (countsForLeague(r.source, r.amount) ? a + r.amount : a), 0);
 }
 
+/** Answers an item needs before its difficulty (b) is trusted for league points. */
+export const MIN_ANSWERS_FOR_B = 5;
+
 /**
  * Difficulty of an item from whatever is known about it:
+ * - `b` (item_stats, the student model's difficulty on the logit scale, 0 =
+ *   average): 0.8 and up is hard, -0.2 and up is medium. Used once the item
+ *   has MIN_ANSWERS_FOR_B answers, or straight away when it was seeded from
+ *   the author's difficulty (n = 0 but b set).
  * - `pCorrect` (share of students who get it right, 0 to 1): under 0.4 is hard,
  *   under 0.7 is medium.
  * - `rating` (Elo-style, 1000 = average): 1300+ is hard, 1100+ is medium.
  * Unknown items count as easy, so the bonus is never inflated by guesswork.
  */
-export function difficultyOf(info: { pCorrect?: number | null; rating?: number | null } | null | undefined): Difficulty {
+export function difficultyOf(info: { b?: number | null; n?: number | null; pCorrect?: number | null; rating?: number | null } | null | undefined): Difficulty {
+  if (info?.b != null && Number.isFinite(info.b)) {
+    const n = info.n != null && Number.isFinite(info.n) ? info.n : 0;
+    if (n >= MIN_ANSWERS_FOR_B || (n === 0 && info.b !== 0)) return info.b >= 0.8 ? 3 : info.b >= -0.2 ? 2 : 1;
+  }
   if (info?.pCorrect != null && Number.isFinite(info.pCorrect)) return info.pCorrect < 0.4 ? 3 : info.pCorrect < 0.7 ? 2 : 1;
   if (info?.rating != null && Number.isFinite(info.rating)) return info.rating >= 1300 ? 3 : info.rating >= 1100 ? 2 : 1;
   return 1;

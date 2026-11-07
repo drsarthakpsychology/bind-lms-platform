@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { attemptsFor, rxXp, runSummary, type Answer } from "@/lib/games-sims/rx/game";
+import { MYSTERIES } from "@/lib/games-sims/rx/content";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { hintedItems } from "@/lib/hints/server";
 import { cappedOutcome, itemKey, POINTS_KEPT } from "@/lib/hints/rules";
@@ -20,7 +21,9 @@ export async function gradeRxAnswer(input: Answer & { run?: string }): Promise<{
   const parsed = answer.extend({ run: runId.optional() }).safeParse(input);
   const user = await currentUser();
   if (!parsed.success || !user) return { ok: false };
-  let attempts = attemptsFor(parsed.data);
+  // Four options a step (the mysteries carry their own), for the guessing floor.
+  const options = parsed.data.kind === "mystery" ? (MYSTERIES.find((m) => m.id === parsed.data.id)?.options.length ?? 4) : 4;
+  let attempts = attemptsFor(parsed.data).map((a) => ({ ...a, options }));
   if (!attempts.length) return { ok: false };
   const run = parsed.data.run;
   if (run) {

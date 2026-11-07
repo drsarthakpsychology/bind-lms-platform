@@ -167,7 +167,7 @@ export async function recordPrep(userId: string, answers: PrepAnswer[], now = ne
   for (let i = 0; i < list.length; i += 100) {
     await recordAttempts(
       userId,
-      list.slice(i, i + 100).map((a) => ({ skill: prepSkill(a.q.subject), item: prepItem(a.q.id), outcome: a.outcome, fast: typeof a.ms === "number" && a.ms > 0 && a.ms < 30_000 && a.outcome >= 1 })),
+      list.slice(i, i + 100).map((a) => ({ skill: prepSkill(a.q.subject), item: prepItem(a.q.id), outcome: a.outcome, options: a.q.options.length, fast: typeof a.ms === "number" && a.ms > 0 && a.ms < 30_000 && a.outcome >= 1 })),
       now,
     );
   }

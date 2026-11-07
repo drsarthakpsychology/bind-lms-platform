@@ -3,7 +3,10 @@
  *
  * - Every skill a student has gets an ability `theta`; every question gets a
  *   difficulty `b`. Both are on the logit scale, starting at 0.
- * - Chance of a right answer: P = 1 / (1 + e^-(theta - b)).
+ * - Chance of a right answer: P = 1 / (1 + e^-(theta - b)). On a question
+ *   with options, a guess can be right too, so the predicted chance has a
+ *   floor: P = c + (1 - c) / (1 + e^-(theta - b)), c = 1 / number of options
+ *   (0.25 for four options, 0.5 for true or false, 0 for typed answers).
  * - After an answer with outcome o in [0, 1] (partial credit allowed):
  *     theta += K(n_student) * (o - P),   b -= K(n_item) * (o - P)
  *   with shrinking steps (student 0.9/(1+0.08n), item 0.4/(1+0.05n)), so early answers move a
@@ -35,9 +38,15 @@ export function clamp01(x: number): number {
   return Math.max(0, Math.min(1, x));
 }
 
-/** Chance of a right answer for ability `theta` on a question of difficulty `b`. */
-export function prob(theta: number, b = 0): number {
-  return 1 / (1 + Math.exp(-(theta - b)));
+/** Chance of a right answer for ability `theta` on a question of difficulty `b`, with guessing floor `c`. */
+export function prob(theta: number, b = 0, c = 0): number {
+  const g = Number.isFinite(c) ? Math.max(0, Math.min(0.5, c)) : 0;
+  return g + (1 - g) / (1 + Math.exp(-(theta - b)));
+}
+
+/** Guessing floor for a question with `options` choices (0 when there are none, as in typed answers). */
+export function guessFloor(options?: number | null): number {
+  return typeof options === "number" && Number.isFinite(options) && options >= 2 ? 1 / Math.floor(options) : 0;
 }
 
 /** Step size after `n` earlier answers (same rule for students and questions). */
@@ -57,10 +66,14 @@ export function studentK(n: number): number {
 export type Rated = { theta: number; n: number };
 export type ItemRating = { b: number; n: number };
 
-/** One answer: move the student's ability and the question's difficulty. */
-export function eloUpdate(student: Rated, item: ItemRating, outcome: number): { student: Rated; item: ItemRating; p: number } {
+/**
+ * One answer: move the student's ability and the question's difficulty.
+ * `c` is the guessing floor, so a right answer on a four-option question
+ * moves the rating less than a right typed answer would.
+ */
+export function eloUpdate(student: Rated, item: ItemRating, outcome: number, c = 0): { student: Rated; item: ItemRating; p: number } {
   const o = clamp01(outcome);
-  const p = prob(student.theta, item.b);
+  const p = prob(student.theta, item.b, c);
   const err = o - p;
   return {
     p,
