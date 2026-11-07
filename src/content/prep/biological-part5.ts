@@ -59,13 +59,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: A trait can be highly heritable within each of two groups even though the average difference between the groups is entirely environmental.",
+      "A: If a trait is highly heritable within each of two groups, the average difference between the groups must also be mainly genetic.",
       "R: Heritability describes the sources of variation within a population and does not explain differences between population means.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Lewontin's analogy: seeds from one genetically varied bag are planted in rich and poor soil. Within each pot height differences are entirely genetic, yet the difference between pots is entirely due to soil. So within-group heritability cannot be used to infer that between-group gaps are genetic.",
+      "A is false and R is true. Lewontin's seed example shows why: plant genetically varied seeds in two pots, one with rich soil and one with poor soil. Within each pot, differences in height are almost entirely genetic, yet the difference between the pots is entirely due to the soil. High heritability within groups therefore says nothing about the cause of a gap between them. R states this principle correctly. Because A is false, the options that treat A as true are all wrong.",
     ref: "Lewontin 1970; Plomin et al., Behavioral Genetics",
   }),
   b({
@@ -287,7 +287,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Because adoption separates genes from rearing, a raised rate in biological relatives (who share genes but not the home) points to genetic transmission. Adoptive relatives (shared home, no shared genes) did not show raised rates. Wender's cross-fostering study found that rearing by a parent with schizophrenia did not raise risk in adoptees without a biological predisposition, so option 3 is wrong. A clear familial pattern was found.",
+      "Because adoption separates genes from rearing, a raised rate in biological relatives (who share genes but not the home) points to genetic transmission. Adoptive relatives (shared home, no shared genes) did not show raised rates. Wender's cross-fostering study found that rearing by a parent with schizophrenia did not raise risk in adoptees without a biological predisposition, so the option about rearing by parents with schizophrenia is wrong. A clear familial pattern was found.",
     ref: "Kety et al. 1968, 1994; Heston 1966",
   }),
   b({
@@ -426,7 +426,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-gen-0228",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In epigenetics, DNA methylation at a gene's promoter usually:",
     options: [
@@ -543,12 +543,12 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "Twin study results for a personality trait (sample of 2,000 pairs): MZ reared together r = 0.48; DZ reared together r = 0.20; MZ reared apart r = 0.45. Adoptive siblings reared together (no genetic relationship) r = 0.03.",
     options: [
-      "Shared family environment contributes substantially to this trait",
-      "The trait is entirely environmental",
       "Genetic influence is substantial, shared environment is negligible, and the DZ correlation less than half the MZ correlation suggests non-additive genetic effects",
+      "The trait is entirely environmental",
+      "Shared family environment contributes substantially to this trait",
       "Heritability is 100%",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "MZ twins reared apart are almost as similar as MZ twins reared together, and unrelated adoptive siblings are hardly similar at all, so shared rearing contributes little. The MZ-DZ gap is large: Falconer gives h² = 2(0.48 - 0.20) = 0.56, more than rMZ itself, and rDZ (0.20) is less than half of rMZ (0.48), a pattern pointing to dominance or epistasis (non-additive effects), common for personality. The data clearly show genetic influence, so 'entirely environmental' is wrong; with rMZ about 0.48, over half the variance is non-shared environment and error, so heritability is far from 100%.",
     ref: "Plomin et al., Behavioral Genetics, ch. 16 (personality)",
@@ -674,13 +674,13 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Diathesis-stress predicts that 'vulnerable' people do worse under stress but no better than others in good conditions. Differential susceptibility ('orchids and dandelions') predicts a crossover interaction: the same plastic individuals do worse in bad environments and best in good ones. Option 2 is the diathesis-stress prediction. Both models assume individual differences in sensitivity, which may be partly genetic. Neither restricts environmental effects to childhood.",
+      "Diathesis-stress predicts that 'vulnerable' people do worse under stress but no better than others in good conditions. Differential susceptibility ('orchids and dandelions') predicts a crossover interaction: the same plastic individuals do worse in bad environments and best in good ones. Being affected only by adverse environments is the diathesis-stress prediction. Both models assume individual differences in sensitivity, which may be partly genetic. Neither restricts environmental effects to childhood.",
     ref: "Belsky & Pluess 2009, Psychol Bull",
   }),
   b({
     id: "bio-gen-0242",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The heritability of the Big Five personality traits, as estimated from twin studies, is typically about:",
     options: [
@@ -691,7 +691,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Meta-analyses (for example the meta-analysis by Vukasović and Bratko) put personality heritability at about 40%, with twin studies often giving around 40 to 50%; most of the remaining variance is non-shared environment and error, and shared environment is near zero. 5 to 10% is far too low and 85 to 95% far too high (no personality trait is that heritable). Option 4 inverts the finding about shared environment.",
+      "Meta-analyses (for example the meta-analysis by Vukasović and Bratko) put personality heritability at about 40%, with twin studies often giving around 40 to 50%; most of the remaining variance is non-shared environment and error, and shared environment is near zero. 5 to 10% is far too low and 85 to 95% far too high (no personality trait is that heritable). The 'zero, shared environment only' option inverts the finding about shared environment.",
     ref: "Vukasović & Bratko 2015, Psychol Bull",
   }),
   b({
@@ -813,7 +813,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-gen-0249",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A concordance rate in a twin study refers to:",
     options: [

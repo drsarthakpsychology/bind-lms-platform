@@ -75,13 +75,13 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Broca's (non-fluent, comprehension relatively spared): left inferior frontal gyrus (iii). Wernicke's (fluent, poor comprehension, paraphasias): left posterior superior temporal gyrus (iv). Conduction (fluent, good comprehension, disproportionately poor repetition): arcuate fasciculus or supramarginal region (i). Global (all functions lost): large perisylvian lesion (ii). Option 1 swaps conduction and global; option 2 swaps Broca and Wernicke; option 3 swaps Wernicke and conduction.",
+      "Broca's (non-fluent, comprehension relatively spared): left inferior frontal gyrus (iii). Wernicke's (fluent, poor comprehension, paraphasias): left posterior superior temporal gyrus (iv). Conduction (fluent, good comprehension, disproportionately poor repetition): arcuate fasciculus or supramarginal region (i). Global (all functions lost): large perisylvian lesion (ii). The code A-iii, B-iv, C-ii, D-i swaps conduction and global; A-iv, B-iii, C-i, D-ii swaps Broca and Wernicke; A-iii, B-i, C-iv, D-ii swaps Wernicke and conduction.",
     ref: "Kolb & Whishaw, ch. 19; Kaplan & Sadock's Synopsis, neuropsychiatry",
   }),
   b({
     id: "bio-anat-0054",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "A patient speaks fluently and understands well but cannot repeat 'no ifs, ands or buts'. This suggests damage to the:",
     options: [
@@ -136,8 +136,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "statement",
     stem: "Gerstmann syndrome, linked to the left angular gyrus, includes which of the following?",
     statements: ["A. Finger agnosia", "B. Left-right disorientation", "C. Acalculia", "D. Agraphia", "E. Prosopagnosia"],
-    options: ["A, B and E only", "A, B, C and D only", "C, D and E only", "A, B, C, D and E"],
-    answer: 1,
+    options: [
+      "A, B and E only",
+      "A, B, C, D and E",
+      "C, D and E only",
+      "A, B, C and D only",
+    ],
+    answer: 3,
     explanation:
       "Gerstmann's tetrad is finger agnosia, left-right disorientation, acalculia and agraphia, from a left (dominant) angular gyrus lesion. Prosopagnosia, the inability to recognise faces, follows lesions of the fusiform gyrus (usually right or bilateral occipitotemporal), so E is not part of the syndrome.",
     ref: "Kolb & Whishaw, ch. 14",
@@ -145,7 +150,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-anat-0058",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Phineas Gage, whose personality changed after an iron rod passed through his head in 1848, mainly suffered damage to the:",
     options: [
@@ -193,7 +198,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Ungerleider and Mishkin described a ventral stream to inferotemporal cortex for object identity and a dorsal stream to posterior parietal cortex for spatial location; Milner and Goodale reframed the dorsal stream as 'vision for action'. Option 2 reverses them. The frontal lobe and cerebellum are not the targets of these cortical streams. The thalamus (LGN) sends input to V1; it is not where the streams end.",
+      "Ungerleider and Mishkin described a ventral stream to inferotemporal cortex for object identity and a dorsal stream to posterior parietal cortex for spatial location; Milner and Goodale reframed the dorsal stream as 'vision for action'. 'Parietal lobe and temporal lobe' reverses them. The frontal lobe and cerebellum are not the targets of these cortical streams. The thalamus (LGN) sends input to V1; it is not where the streams end.",
     ref: "Goldstein, Sensation and Perception, ch. 4",
   }),
   b({
@@ -219,7 +224,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Face blindness follows fusiform face area damage (iv). Cerebral colour blindness follows V4 damage (i). Motion blindness (Zihl's patient L.M.) follows V5/MT damage (ii). Pure alexia without agraphia (first described by Dejerine) needs a left occipital lesion plus a splenial lesion that stops right-hemisphere visual input reaching left language areas (iii); the patient can write but not read what was written. Option 1 swaps colour and motion areas; the others misplace face and reading areas.",
+      "Face blindness follows fusiform face area damage (iv). Cerebral colour blindness follows V4 damage (i). Motion blindness (Zihl's patient L.M.) follows V5/MT damage (ii). Pure alexia without agraphia (first described by Dejerine) needs a left occipital lesion plus a splenial lesion that stops right-hemisphere visual input reaching left language areas (iii); the patient can write but not read what was written. The code A-iv, B-ii, C-i, D-iii swaps the colour and motion areas; the others misplace face and reading areas.",
     ref: "Kolb & Whishaw, ch. 13",
   }),
   b({
@@ -274,7 +279,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Papez proposed this loop as the basis of emotion: hippocampus via the fornix to the mammillary bodies, the mammillothalamic tract to the anterior thalamic nucleus, then to the cingulate gyrus, and back via the cingulum to the parahippocampal (entorhinal) cortex and hippocampus. Today the circuit is seen as more important for memory than emotion. Option 2 describes an amygdala output path, not Papez's loop. Option 3 has the fornix and thalamus in the wrong order. Option 4 brings in the amygdala, which Papez did not include.",
+      "Papez proposed this loop as the basis of emotion: hippocampus via the fornix to the mammillary bodies, the mammillothalamic tract to the anterior thalamic nucleus, then to the cingulate gyrus, and back via the cingulum to the parahippocampal (entorhinal) cortex and hippocampus. Today the circuit is seen as more important for memory than emotion. The route through the stria terminalis describes an amygdala output path, not Papez's loop. The sequence placing the mammillary bodies before the fornix has the fornix and thalamus in the wrong order. The sequence starting from the cingulate gyrus brings in the amygdala, which Papez did not include.",
     ref: "Papez 1937; Kolb & Whishaw, ch. 20",
   }),
   b({
@@ -321,7 +326,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "After removal of most of both hippocampi and adjacent cortex, H.M. could not form new declarative memories (anterograde amnesia) and had graded retrograde amnesia for some years before surgery, yet his mirror-drawing improved across days without memory of practising (as Brenda Milner showed). His remote memories were largely intact, so 'lost all memories' is wrong. His procedural learning was preserved, the reverse of option 3. His digit span (short-term memory) was normal, the reverse of option 4.",
+      "After removal of most of both hippocampi and adjacent cortex, H.M. could not form new declarative memories (anterograde amnesia) and had graded retrograde amnesia for some years before surgery, yet his mirror-drawing improved across days without memory of practising (as Brenda Milner showed). His remote memories were largely intact, so 'lost all memories' is wrong. His procedural learning was preserved, the reverse of the claim that he lost procedural memory. His digit span (short-term memory) was normal, the reverse of the claim that he lost short-term memory span.",
     ref: "Scoville & Milner 1957; Kolb & Whishaw, ch. 18",
   }),
   b({
@@ -397,7 +402,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "SCN: the circadian pacemaker, entrained by retinal ganglion cells containing melanopsin (ii). VMH: classical 'satiety centre'; lesions cause hyperphagia and obesity (iv). PVN: makes CRH for the HPA axis and oxytocin and vasopressin for the posterior pituitary (i). LH: classical 'feeding centre'; lesions cause aphagia; it contains orexin and MCH neurons (iii). Option 1 swaps VMH and LH. The others misplace the SCN or PVN.",
+      "SCN: the circadian pacemaker, entrained by retinal ganglion cells containing melanopsin (ii). VMH: classical 'satiety centre'; lesions cause hyperphagia and obesity (iv). PVN: makes CRH for the HPA axis and oxytocin and vasopressin for the posterior pituitary (i). LH: classical 'feeding centre'; lesions cause aphagia; it contains orexin and MCH neurons (iii). The code A-ii, B-iii, C-i, D-iv swaps VMH and LH. The others misplace the SCN or PVN.",
     ref: "Pinel, ch. 12; Kalat, ch. 10",
   }),
   b({
@@ -409,14 +414,14 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "In rats, small lesions are made in one of two hypothalamic regions. Group 1 eats much more than controls for several weeks and becomes obese, then body weight stabilises at a new high level; when food is made less palatable, Group 1 eats less than controls. Group 2 stops eating and drinking and dies unless tube-fed; if kept alive, it gradually recovers some eating, but body weight stabilises below control level.",
     options: [
-      "Group 1 has lateral hypothalamic lesions; Group 2 has ventromedial lesions; both groups show a raised set point",
       "Group 1 has ventromedial lesions; Group 2 has lateral hypothalamic lesions; the findings fit a shifted body-weight set point rather than a simple on-off 'hunger centre' model",
+      "Group 1 has lateral hypothalamic lesions; Group 2 has ventromedial lesions; both groups show a raised set point",
       "Both groups have suprachiasmatic lesions with disrupted meal timing",
       "Group 1 has paraventricular lesions causing high CRH; Group 2 has arcuate lesions causing leptin excess",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
-      "VMH lesions produce the dynamic then static phases of hyperphagia and finickiness about palatability; LH lesions produce aphagia and adipsia with partial recovery at a lowered weight. The plateau at a new weight in each case fits a shifted set point, and later work showed that fibres of passage (for example the ventral noradrenergic bundle) and changes in insulin and metabolism help explain the effects, undermining the simple dual-centre model. Option 1 reverses the lesion sites. SCN lesions disrupt circadian meal timing without obesity or aphagia. Option 4 names nuclei and hormonal mechanisms that do not match these classic findings.",
+      "VMH lesions produce the dynamic then static phases of hyperphagia and finickiness about palatability; LH lesions produce aphagia and adipsia with partial recovery at a lowered weight. The plateau at a new weight in each case fits a shifted set point, and later work showed that fibres of passage (for example the ventral noradrenergic bundle) and changes in insulin and metabolism help explain the effects, undermining the simple dual-centre model. Giving Group 1 lateral lesions and Group 2 ventromedial lesions reverses the lesion sites. SCN lesions disrupt circadian meal timing without obesity or aphagia. The paraventricular and arcuate account names nuclei and hormonal mechanisms that do not match these classic findings.",
     ref: "Pinel, ch. 12",
   }),
   b({
@@ -450,7 +455,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Striatal medium spiny neurons of the direct pathway carry D1 receptors; dopamine excites them, which inhibits the internal globus pallidus and so releases the thalamus (more movement). Indirect-pathway neurons carry D2 receptors; dopamine inhibits them, reducing the brake on movement. Both effects favour movement, so loss of dopamine in Parkinson's disease gives bradykinesia. Option 1 reverses the receptor assignments. Nigral dopamine acts in the striatum, not directly on motor cortex. Dopamine loss ends up increasing subthalamic activity, so dopamine does not excite it.",
+      "Striatal medium spiny neurons of the direct pathway carry D1 receptors; dopamine excites them, which inhibits the internal globus pallidus and so releases the thalamus (more movement). Indirect-pathway neurons carry D2 receptors; dopamine inhibits them, reducing the brake on movement. Both effects favour movement, so loss of dopamine in Parkinson's disease gives bradykinesia. Inhibiting the direct pathway through D2 and exciting the indirect pathway through D1 reverses the receptor assignments. Nigral dopamine acts in the striatum, not directly on motor cortex. Dopamine loss ends up increasing subthalamic activity, so dopamine does not excite it.",
     ref: "Kandel, ch. 43; Albin, Young & Penney 1989",
   }),
   b({
@@ -482,8 +487,13 @@ export const QUESTIONS: PrepQuestion[] = [
       "C. Atrophy of the caudate nucleus is an early neuroimaging finding.",
       "D. Larger repeat numbers are associated with later onset.",
     ],
-    options: ["A, B and C only", "A and D only", "B, C and D only", "A, B, C and D"],
-    answer: 0,
+    options: [
+      "B, C and D only",
+      "A and D only",
+      "A, B and C only",
+      "A, B, C and D",
+    ],
+    answer: 2,
     explanation:
       "A, B and C are correct: Huntington's is autosomal dominant, caused by CAG expansion in HTT (4p16.3), with early loss of striatal medium spiny neurons, especially of the indirect pathway, giving caudate atrophy and chorea. D is wrong: larger expansions give earlier onset, and repeats can grow when passed down, especially from fathers (anticipation).",
     ref: "Kaplan & Sadock's Synopsis, neurocognitive disorders",
@@ -573,7 +583,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The medulla contains respiratory and cardiovascular centres and the vomiting centre (area postrema) (ii). The superior colliculus directs visual orienting and saccades (iv); the inferior colliculus is an auditory relay (i). The periaqueductal grey drives descending pain inhibition (stimulation-produced analgesia) and defensive behaviour (iii). Option 2 swaps the colliculi; the others misplace the PAG or the medulla.",
+      "The medulla contains respiratory and cardiovascular centres and the vomiting centre (area postrema) (ii). The superior colliculus directs visual orienting and saccades (iv); the inferior colliculus is an auditory relay (i). The periaqueductal grey drives descending pain inhibition (stimulation-produced analgesia) and defensive behaviour (iii). The code A-ii, B-i, C-iv, D-iii swaps the colliculi; the others misplace the PAG or the medulla.",
     ref: "Kalat, ch. 4",
   }),
   b({
@@ -624,7 +634,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Bell and Magendie (early 19th century) showed that the dorsal roots are sensory (afferent) and the ventral roots motor (efferent). Option 2 reverses them. 'Each nerve produces its own sensation' is Müller's doctrine of specific nerve energies. Each hemisphere mainly controls the opposite side of the body (contralateral control).",
+      "Bell and Magendie (early 19th century) showed that the dorsal roots are sensory (afferent) and the ventral roots motor (efferent). Saying ventral roots are sensory and dorsal roots motor reverses them. 'Each nerve produces its own sensation' is Müller's doctrine of specific nerve energies. Each hemisphere mainly controls the opposite side of the body (contralateral control).",
     ref: "Hergenhahn, History of Psychology, ch. 8",
   }),
   b({
@@ -639,8 +649,13 @@ export const QUESTIONS: PrepQuestion[] = [
       "C. All autonomic preganglionic neurons release acetylcholine.",
       "D. All sympathetic postganglionic neurons release noradrenaline.",
     ],
-    options: ["A and B only", "A, B and C only", "C and D only", "A, B, C and D"],
-    answer: 1,
+    options: [
+      "A and B only",
+      "A, B, C and D",
+      "C and D only",
+      "A, B and C only",
+    ],
+    answer: 3,
     explanation:
       "A, B and C are correct: sympathetic outflow is thoracolumbar, parasympathetic is craniosacral (cranial nerves III, VII, IX, X and S2-S4), and both divisions use ACh at nicotinic receptors on ganglion cells. D is wrong: sympathetic postganglionic fibres to eccrine sweat glands release ACh, so not all release noradrenaline. The adrenal medulla, effectively a modified ganglion, releases adrenaline into the blood.",
     ref: "Kalat, ch. 4",
@@ -665,7 +680,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-anat-0087",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Cerebrospinal fluid is produced mainly by the:",
     options: [
@@ -731,7 +746,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Place cells: O'Keefe and Dostrovsky, 1971 (iv). Grid cells: the Mosers, 2005 (ii); O'Keefe and the Mosers shared the 2014 Nobel Prize. LTP: Bliss and Lømo, 1973, in the rabbit hippocampus (i). Mirror neurons: Rizzolatti's Parma group in macaque area F5 (iii). Option 1 swaps place and grid cells; option 2 swaps LTP and mirror neurons; option 4 swaps grid cells and LTP.",
+      "Place cells: O'Keefe and Dostrovsky, 1971 (iv). Grid cells: the Mosers, 2005 (ii); O'Keefe and the Mosers shared the 2014 Nobel Prize. LTP: Bliss and Lømo, 1973, in the rabbit hippocampus (i). Mirror neurons: Rizzolatti's Parma group in macaque area F5 (iii). The code A-ii, B-iv, C-i, D-iii swaps place and grid cells; A-iv, B-ii, C-iii, D-i swaps LTP and mirror neurons; A-iv, B-i, C-ii, D-iii swaps grid cells and LTP.",
     ref: "Nobel Prize 2014 citation; Kandel, ch. 67",
   }),
   b({
@@ -789,7 +804,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-anat-0094",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The hippocampus is located in the:",
     options: [
@@ -815,8 +830,13 @@ export const QUESTIONS: PrepQuestion[] = [
       "C. Bilateral amygdala damage abolishes all declarative memory.",
       "D. The amygdala enhances consolidation of emotionally arousing memories, partly through noradrenaline.",
     ],
-    options: ["A, B and D only", "A and C only", "B, C and D only", "A, B, C and D"],
-    answer: 0,
+    options: [
+      "B, C and D only",
+      "A and C only",
+      "A, B and D only",
+      "A, B, C and D",
+    ],
+    answer: 2,
     explanation:
       "A is correct: the central nucleus drives freezing (via the periaqueductal grey), autonomic changes and stress hormone release. B is correct: the lateral and basolateral nuclei receive thalamic and cortical sensory input and show plasticity in conditioning. D is correct: McGaugh's work shows that arousal, via noradrenaline acting in the basolateral amygdala, strengthens hippocampal consolidation, and β-blockers reduce this boost. C is wrong: declarative memory depends on the hippocampal system, and patients like S.M. have largely intact declarative memory.",
     ref: "McGaugh 2004, Annu Rev Neurosci; LeDoux 2000",
@@ -858,7 +878,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-anat-0098",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which lobe contains the primary somatosensory cortex?",
     options: [
@@ -886,7 +906,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "R.B.'s memory impairment, with a lesion limited to CA1, showed that damage to the hippocampus proper produces significant (though milder than H.M.'s) anterograde amnesia, so H.M.'s deficit did not depend on amygdala damage. It argues against, not for, an essential amygdala role. His procedural learning was spared. His retrograde loss was minimal, the opposite of option 4.",
+      "R.B.'s memory impairment, with a lesion limited to CA1, showed that damage to the hippocampus proper produces significant (though milder than H.M.'s) anterograde amnesia, so H.M.'s deficit did not depend on amygdala damage. It argues against, not for, an essential amygdala role. His procedural learning was spared. His retrograde loss was minimal, the opposite of the claim that retrograde amnesia is always more severe.",
     ref: "Zola-Morgan, Squire & Amaral 1986, J Neurosci",
   }),
   b({
@@ -951,8 +971,13 @@ export const QUESTIONS: PrepQuestion[] = [
       "C. The engram for a maze habit is stored in a single localised cortical site.",
       "D. Lashley concluded he could not find the engram in any one place.",
     ],
-    options: ["A and C only", "A, B and D only", "B and C only", "A, B, C and D"],
-    answer: 1,
+    options: [
+      "A and C only",
+      "A, B, C and D",
+      "B and C only",
+      "A, B and D only",
+    ],
+    answer: 3,
     explanation:
       "Lashley, summing up decades of lesion work in 1950, proposed mass action (A) and equipotentiality (B) and wryly concluded that learning seemed impossible because he could not localise the trace (D). C is the very view he rejected. Later work (for example Thompson's cerebellar eyeblink engram, hippocampal place-specific memory and engram-cell studies) showed that some memories do have identifiable sites, and his maze task was complex enough to engage many senses and regions.",
     ref: "Lashley 1950; Kalat, ch. 13",

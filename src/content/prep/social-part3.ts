@@ -82,7 +82,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-conf-0099",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Sherif's autokinetic studies, participants in a dark room estimated how far a still point of light seemed to move. When they made estimates in groups, their answers converged on a shared norm, and they kept using that norm later when tested alone. This mainly shows:",
     options: [
@@ -339,7 +339,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-obed-0112",
     topic: "obedience",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Milgram explained obedience with the idea of the 'agentic state', in which a person:",
     options: [
@@ -381,7 +381,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-obed-0114",
     topic: "obedience",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Hofling's hospital field study, nurses received a phone call from an unknown 'doctor' telling them to give twice the maximum dose of an unfamiliar drug. The finding was that:",
     options: [
@@ -585,7 +585,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-roles-0124",
     topic: "roles-deindividuation",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Deindividuation refers to:",
     options: [
@@ -603,7 +603,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-roles-0125",
     topic: "roles-deindividuation",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Diener's Halloween study, children who were anonymous (in costumes, not asked their names) and in groups were most likely to take extra sweets when left alone. This supports the idea that:",
     options: [
@@ -655,7 +655,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-conf-0128",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which of the following best describes 'pluralistic ignorance'?",
     options: [
@@ -676,13 +676,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: People are more likely to conform when they must answer publicly in front of the group than when they answer privately.",
+      "A: People conform more when they answer privately in writing than when they answer publicly in front of the group.",
       "R: Public responses expose people to the risk of disapproval, which strengthens normative influence.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. In Asch's variation where the participant wrote answers privately while the group answered aloud, conformity fell sharply. Normative influence depends on being seen by the group; when no one can observe the answer, the fear of standing out drops. Informational influence, by contrast, can operate even in private.",
+      "A is false and R is true. In Asch's variation where the real participant wrote answers privately while the confederates answered aloud, conformity dropped sharply. Public answering raises conformity, not private answering. R correctly explains this pattern: when others can see your answer, the wish to avoid rejection, which is normative influence, pushes you to go along. Because A reverses the finding, the options in which A is true are wrong.",
     ref: "Asch 1956; Deutsch & Gerard 1955",
   }),
   s({
@@ -849,7 +849,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-obed-0138",
     topic: "obedience",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Bickman's field study, in which a person dressed as a security guard, a milkman or in ordinary clothes asked passers-by to pick up litter or put coins in a parking meter, found that:",
     options: [

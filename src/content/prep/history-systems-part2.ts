@@ -39,7 +39,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0052",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "In the 'Little Albert' study, Watson and Rayner:",
     options: [
@@ -98,7 +98,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0055",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Thorndike's 'law of effect' states that:",
     options: [
@@ -174,7 +174,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0059",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Operationism, introduced by the physicist Percy Bridgman and adopted by many behaviourists, holds that:",
     options: [
@@ -285,7 +285,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0065",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Mary Cover Jones's treatment of 'Peter', a boy afraid of rabbits, is historically important because it:",
     options: [
@@ -361,7 +361,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0069",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Breland and Breland's observation that raccoons trained to put coins in a box began to 'wash' the coins instead, and pigs began to root them, showed:",
     options: [
@@ -382,13 +382,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Garcia's research on taste aversion challenged traditional learning theory.",
+      "A: Garcia's taste-aversion findings fitted neatly with the traditional view that any stimulus can be associated equally well with any outcome.",
       "R: Rats learned to avoid a taste paired with illness after a single pairing and with delays of hours, but did not easily learn to link the illness with lights or sounds.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Traditional theory assumed any stimulus could be linked to any response with equal ease and that conditioning needed close timing and many trials. Garcia and Koelling showed that rats readily link taste to illness and lights and sounds to shock, but not the other way round, and that taste aversions form after long delays in one trial. This showed biological preparedness, and some journals at first refused to publish it.",
+      "A is false and R is true. The traditional assumption of equipotentiality held that any stimulus could be conditioned to any outcome equally well, with short delays needed. Garcia's results contradicted this on both counts: taste was easily linked with illness, but lights and sounds were not, and learning happened in one trial over delays of hours. That is why his findings were at first hard to publish and later supported the idea of biological preparedness. R describes the findings correctly, so the options that treat A as true are wrong.",
     ref: "Garcia & Koelling 1966; Seligman 1970",
   }),
   // ── Gestalt psychology ────────────────────────────────────────────────────
@@ -459,7 +459,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-gest-0074",
     topic: "gestalt",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Köhler's research with chimpanzees on the island of Tenerife, such as Sultan joining two sticks to reach a banana, was used to argue that:",
     options: [
@@ -494,7 +494,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-gest-0076",
     topic: "gestalt",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Kurt Lewin's field theory proposed that behaviour is a function of the person and the environment, written as B = f(P, E). The 'life space' refers to:",
     options: [
@@ -585,13 +585,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Gestalt psychologists opposed the approach of breaking experience into elements.",
-      "R: They argued that the organisation of the whole determines the nature of the parts, so analysing elements in isolation loses what matters.",
+      "A: Gestalt psychologists supported Titchener's approach of breaking experience into sensory elements.",
+      "R: Gestalt psychologists argued that the organisation of the whole determines the nature of the parts, so analysing elements in isolation loses what matters.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. A square drawn with dots, lines or crosses is still a square: the form remains while the elements change, and the same note sounds different in different melodies. Gestalt psychologists saw Wundt's and Titchener's elementism, and the behaviourists' stimulus-response 'bricks', as missing this organisation. They believed perception is organised into wholes from the start.",
+      "A is false and R is true. The Gestalt school arose largely in opposition to elementism, the structuralist programme of analysing consciousness into sensations, images and feelings. Wertheimer's phi phenomenon showed that perceived movement exists in the relationship between stimuli and in none of the elements alone. R states their position correctly: the whole is different from the sum of its parts. Since A is false, the options in which A is true are wrong.",
     ref: "Hergenhahn, ch. 14",
   }),
   h({
@@ -634,7 +634,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-gest-0083",
     topic: "gestalt",
     exams: [N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The law of Prägnanz in Gestalt psychology states that:",
     options: [
@@ -695,7 +695,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0086",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which statement best summarises the main difference between the behaviourist and Gestalt views of learning?",
     options: [
@@ -706,7 +706,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Thorndike and later behaviourists described learning as incremental, built from many trials, while Köhler's chimps and Wertheimer's pupils showed sudden solutions based on seeing relations. Neither school saw learning as purely innate. Option 1 reverses the positions. Both studied animals: Thorndike's cats and Köhler's chimps.",
+      "Thorndike and later behaviourists described learning as incremental, built from many trials, while Köhler's chimps and Wertheimer's pupils showed sudden solutions based on seeing relations. Neither school saw learning as purely innate. Giving behaviourists insight and Gestalt psychologists reinforcement reverses the positions. Both studied animals: Thorndike's cats and Köhler's chimps.",
     ref: "Hergenhahn, chs. 13 and 14",
   }),
   h({
@@ -789,7 +789,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0091",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Watson explained thinking as:",
     options: [
@@ -864,7 +864,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-gest-0095",
     topic: "gestalt",
     exams: [N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which phrase best captures the Gestalt view of perception?",
     options: [
@@ -931,12 +931,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Skinner proposed that human behaviour could be improved by designing environments that reinforce desirable behaviour.",
-      "R: Skinner believed that free will is an illusion and that behaviour is determined by its consequences and the person's history of reinforcement.",
+      "R: Skinner invented the operant chamber, often called the Skinner box.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Because Skinner thought behaviour is controlled by the environment, he argued that society should deliberately arrange contingencies to promote cooperation and wellbeing, as in his utopian novel about a planned community and his later writings on culture. Critics objected that this ignores human dignity and freedom, a debate that fed into humanistic psychology.",
+      "Both are true, but R does not explain A. Skinner's proposals for designing cultures, as in his utopian novel and his later social writing, followed from his view that behaviour is shaped by its consequences and that free will is an illusion; so changing contingencies is the way to change behaviour. R is a correct fact about the apparatus he built for laboratory research, but inventing a piece of equipment does not explain his social programme. So 'R explains A' is wrong, and since both are true the other options are wrong.",
     ref: "Skinner 1948, 1971",
   }),
   h({
@@ -960,7 +960,7 @@ export const QUESTIONS: PrepQuestion[] = [
   h({
     id: "his-beh-0100",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which of the following was a major reason for the decline of behaviourism as the dominant approach?",
     options: [

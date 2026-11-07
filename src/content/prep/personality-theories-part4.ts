@@ -95,7 +95,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-hum-0162",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Rogers and his colleagues used the Q-sort technique in research. In this method, clients:",
     options: [
@@ -138,7 +138,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-hum-0164",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "In Rogers' theory, the 'ideal self' refers to:",
     options: [
@@ -174,7 +174,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-hum-0166",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Large reviews of psychotherapy research have found that the therapeutic relationship, including empathy, positive regard and genuineness, is:",
     options: [
@@ -195,13 +195,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Rogers renamed his approach from 'client-centred' to 'person-centred' in his later career.",
+      "A: Rogers renamed his approach from 'person-centred' to 'client-centred' in his later career.",
       "R: Rogers wanted to show that his ideas applied beyond therapy, to education, groups, families and conflict resolution.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. In his later years Rogers applied his approach to encounter groups, student-centred teaching and international peace work, including meetings in Northern Ireland and South Africa. 'Person-centred' signalled that the same conditions of empathy, acceptance and genuineness support growth in any human relationship, not only between therapist and client.",
+      "A is false and R is true. The order was the other way round: Rogers called his approach 'non-directive' in the 1940s, then 'client-centred' in the 1950s, and finally 'person-centred' from the 1970s. R gives the correct reason for that last change: he was applying his ideas to classrooms, encounter groups and international conflict, where the people involved were not clients. Because A reverses the sequence, the options in which A is true are wrong.",
     ref: "Rogers 1980",
   }),
   // ── Maslow ─────────────────────────────────────────────────────────────────
@@ -335,7 +335,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "When basic needs are threatened, as for the flood survivor, they dominate attention and higher interests such as art fade. When deficiency needs are met, as for the engineer, growth needs for meaning and self-fulfilment become important, and their frustration can feel like emptiness (a 'metapathology'). Neither is mainly about esteem. Option 3 reverses the cases. The theory clearly applies to both.",
+      "When basic needs are threatened, as for the flood survivor, they dominate attention and higher interests such as art fade. When deficiency needs are met, as for the engineer, growth needs for meaning and self-fulfilment become important, and their frustration can feel like emptiness (a 'metapathology'). Neither is mainly about esteem. Calling Case 1 self-actualising and Case 2 safety-driven reverses the cases. The theory clearly applies to both.",
     ref: "Maslow 1943, 1971",
   }),
   p({
@@ -361,7 +361,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-ex-0176",
     topic: "existential",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Viktor Frankl, who survived Nazi concentration camps, founded 'logotherapy'. Its central idea is that the primary human motive is:",
     options: [
@@ -436,13 +436,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Rollo May distinguished normal anxiety from neurotic anxiety.",
+      "A: Rollo May regarded all anxiety as neurotic and as something therapy should remove.",
       "R: For May, normal anxiety is proportionate to the real threat and can be faced constructively, while neurotic anxiety is out of proportion and involves repression and avoidance.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. May saw anxiety as part of being human, especially when facing freedom, choice and death; it can motivate growth when faced. Neurotic anxiety arises when people avoid these challenges, which narrows their lives. The distinction explains why existential therapists do not aim to remove all anxiety.",
+      "A is false and R is true. May distinguished normal from neurotic anxiety and saw normal anxiety as part of being free: facing choices, uncertainty and death brings anxiety, and meeting it with courage leads to growth. Therapy aims to help people face normal anxiety, not to remove it, while reducing neurotic anxiety. R states this distinction correctly. Since A is false, the options that treat A as true are wrong.",
     ref: "May 1950, 1977",
   }),
   p({
@@ -605,7 +605,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-hum-0188",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Rogers proposed that a person's 'need for positive regard' is:",
     options: [
@@ -682,18 +682,18 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Maslow studied psychologically healthy, highly functioning people rather than only patients.",
-      "R: Maslow believed that a psychology built only on studying sick people would give a crippled picture of human nature.",
+      "R: Maslow served as president of the American Psychological Association in the late 1960s.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Maslow argued that studying 'crippled, stunted, immature and unhealthy specimens' can yield only a 'cripple psychology', so he deliberately studied people who seemed to be living fully. This focus on health and potential was a forerunner of positive psychology.",
+      "Both are true, but R does not explain A. Maslow studied self-actualising people, such as Lincoln and Eleanor Roosevelt, because he believed that a psychology built only on sick people would give a crippled picture of human nature, and that the best way to learn about full human potential was to study its best examples. R is a correct fact about his career, but holding an office says nothing about why he chose his research sample. So 'R explains A' is wrong, and since both statements are true the options calling either false are wrong.",
     ref: "Maslow 1970",
   }),
   p({
     id: "per-hum-0193",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which statement best contrasts Rogers' and Freud's views of human nature?",
     options: [
@@ -704,7 +704,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Rogers trusted the 'organism' and believed that, given the right conditions, people move towards growth and constructive relationships. Freud saw sexual and aggressive drives in conflict with society and the superego. Freud was the more deterministic of the two, so option 3 is reversed. Rogers placed subjective experience at the centre, and Freud also dealt with inner experience, though through unconscious processes.",
+      "Rogers trusted the 'organism' and believed that, given the right conditions, people move towards growth and constructive relationships. Freud saw sexual and aggressive drives in conflict with society and the superego. Freud was the more deterministic of the two, so the option making Rogers the determinist and Freud the champion of free will is reversed. Rogers placed subjective experience at the centre, and Freud also dealt with inner experience, though through unconscious processes.",
     ref: "Feist & Feist, chs. 2 and 11",
   }),
   p({
@@ -722,7 +722,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "May distinguished sex (physical release), eros (the creative longing for union and growth), philia (friendship) and agape (selfless care for another), and argued that modern society separates sex from eros. Passion, intimacy and commitment come from Sternberg. Eros, ludus, storge and mania are some of Lee's love styles. The last option lists attachment styles.",
+      "May distinguished sex (physical release), eros (the creative longing for union and growth), philia (friendship) and agape (selfless care for another), and argued that modern society separates sex from eros. Passion, intimacy and commitment come from Sternberg. Eros, ludus, storge and mania are some of Lee's love styles. Secure, avoidant, anxious and disorganised are attachment styles.",
     ref: "May 1969",
   }),
   p({

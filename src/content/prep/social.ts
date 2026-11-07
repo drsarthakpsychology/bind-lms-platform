@@ -4,6 +4,7 @@ import { QUESTIONS as part2 } from "./social-part2";
 import { QUESTIONS as part3 } from "./social-part3";
 import { QUESTIONS as part4 } from "./social-part4";
 import { QUESTIONS as part5 } from "./social-part5";
+import { QUESTIONS as part6 } from "./social-part6";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -16,4 +17,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · social. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6]);

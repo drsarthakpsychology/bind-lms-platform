@@ -5,6 +5,7 @@ import { QUESTIONS as part3 } from "./personality-theories-part3";
 import { QUESTIONS as part4 } from "./personality-theories-part4";
 import { QUESTIONS as part5 } from "./personality-theories-part5";
 import { QUESTIONS as part6 } from "./personality-theories-part6";
+import { QUESTIONS as part7 } from "./personality-theories-part7";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -17,4 +18,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · personality-theories. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7]);

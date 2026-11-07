@@ -171,7 +171,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Across many antipsychotics, the dose needed clinically was inversely related to D2 binding affinity, but not to affinity for other receptors, pointing to D2 blockade as the shared mechanism. Urinary metabolite findings were inconsistent. Serotonin blockade varies widely between drugs. Amphetamine worsens or produces psychosis, which also supports the hypothesis but in the opposite direction to option 4.",
+      "Across many antipsychotics, the dose needed clinically was inversely related to D2 binding affinity, but not to affinity for other receptors, pointing to D2 blockade as the shared mechanism. Urinary metabolite findings were inconsistent. Serotonin blockade varies widely between drugs. Amphetamine worsens or produces psychosis, which also supports the hypothesis but in the opposite direction to the claim that amphetamine reduced symptoms.",
     module: "antipsychotics",
     ref: "Seeman et al. 1976, Nature; Creese et al. 1976, Science",
   }),
@@ -307,13 +307,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: When switching from fluoxetine to an MAO inhibitor, a washout of about five weeks is recommended.",
+      "A: When switching from fluoxetine to an MAO inhibitor, a washout of about two days is enough.",
       "R: Fluoxetine's active metabolite norfluoxetine has a half-life of one to two weeks.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Combining an SSRI with an MAOI risks serotonin syndrome. Because norfluoxetine's half-life is about 1 to 2 weeks (fluoxetine itself about 2 to 4 days), it takes around five weeks for it to clear. Shorter-acting SSRIs need about two weeks before starting an MAOI.",
+      "A is false and R is true. Because norfluoxetine stays in the body for a long time, a washout of about five weeks is recommended before starting an MAO inhibitor; starting one after only two days risks serotonin syndrome, which can be fatal. R gives the correct pharmacokinetic fact that makes the long gap necessary. The two-day figure might fit a drug with a short half-life, but not fluoxetine. Since A is false, the options in which A is true are wrong.",
     module: "antidepressants",
     ref: "Stahl's Prescriber's Guide: fluoxetine",
   }),
@@ -423,12 +423,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Lamotrigine must be started at a low dose and increased slowly.",
-      "R: Rapid titration increases the risk of serious skin rash, including Stevens-Johnson syndrome.",
+      "R: Lamotrigine is more effective at preventing depressive episodes than manic episodes in bipolar disorder.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Lamotrigine (used mainly for preventing bipolar depression) is titrated over about six weeks; the risk of serious rash rises with rapid escalation, high starting doses and co-prescription of valproate, which doubles lamotrigine levels and requires halving the titration schedule.",
+      "Both statements are true, but R does not explain A. Slow titration is needed because rapid dose increases raise the risk of serious skin rash, including Stevens-Johnson syndrome; the risk is higher still when valproate, which raises lamotrigine levels, is also taken. R is a correct point about lamotrigine's clinical profile, and it is why lamotrigine is often chosen for bipolar depression, but it has nothing to do with the titration schedule. So 'R explains A' is wrong, and since both are true the options stating that one is false are wrong too.",
     module: "stabilisers",
     ref: "Stahl's Prescriber's Guide: lamotrigine",
   }),
@@ -653,7 +653,7 @@ export const QUESTIONS: PrepQuestion[] = [
   b({
     id: "bio-pharm-0283",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Which route of administration gives the fastest onset for most psychoactive drugs?",
     options: [

@@ -42,14 +42,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "According to Kelley's covariation model, which combination of information leads most strongly to an internal (person) attribution for 'Ravi laughs at the comedian'?",
     options: [
-      "High consensus, high distinctiveness, high consistency",
       "Low consensus, low distinctiveness, high consistency",
+      "High consensus, high distinctiveness, high consistency",
       "Low consensus, high distinctiveness, low consistency",
       "High consensus, low distinctiveness, low consistency",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
-      "If few others laugh (low consensus), Ravi laughs at all comedians (low distinctiveness) and he always laughs at this one (high consistency), the cause is Ravi (he laughs easily). High consensus, high distinctiveness and high consistency point to the stimulus (the comedian is funny). Low consistency points to circumstances, a one-off situation. Option 4 mixes cues and gives no clear attribution.",
+      "If few others laugh (low consensus), Ravi laughs at all comedians (low distinctiveness) and he always laughs at this one (high consistency), the cause is Ravi (he laughs easily). High consensus, high distinctiveness and high consistency point to the stimulus (the comedian is funny). Low consistency points to circumstances, a one-off situation. High consensus with low distinctiveness and low consistency mixes cues and gives no clear attribution.",
     ref: "Kelley 1967; McArthur 1972",
   }),
   s({
@@ -67,12 +67,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-ii, B-i, C-iii",
-      "A-iii, B-ii, C-i",
       "A-ii, B-iii, C-i",
+      "A-iii, B-ii, C-i",
+      "A-ii, B-i, C-iii",
       "A-i, B-iii, C-ii",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "Kelley's model treats people like scientists checking what an effect goes with. Consensus asks whether other people react to the same stimulus in the same way, so it compares the actor with other people (ii). Distinctiveness asks whether the actor reacts this way only to this stimulus or to many others, so it compares stimuli (iii). Consistency asks whether the actor reacts this way to this stimulus on other occasions too, so it compares times (i). High consensus and high distinctiveness point to the stimulus, low consensus and low distinctiveness point to the person, and low consistency points to the circumstances. The other codes mix up these three comparisons.",
     ref: "Kelley 1967",
@@ -101,12 +101,12 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Jones and Harris's study, participants read essays for or against Fidel Castro. Even when told the writer had been assigned the position, participants:",
     options: [
-      "Correctly concluded that the essay revealed nothing about the writer",
       "Still inferred that the writer's attitude matched the essay, showing the correspondence bias (fundamental attribution error)",
+      "Correctly concluded that the essay revealed nothing about the writer",
       "Inferred the opposite attitude from the essay",
       "Refused to make any judgement",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "Participants rated pro-Castro writers as more pro-Castro even in the no-choice condition, under-weighting the situational constraint. Ross named this tendency the fundamental attribution error. Participants did not discount the essay fully, did not infer the opposite and did make judgements.",
     ref: "Jones & Harris 1967; Ross 1977",
@@ -119,12 +119,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In Ross, Amabile and Steinmetz's quiz study, observers rated questioners as more knowledgeable than contestants.",
-      "R: Observers failed to adjust for the role advantage that allowed questioners to set questions from their own areas of knowledge.",
+      "R: In the same study, the contestants themselves also rated the questioners as more knowledgeable than themselves.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Roles were assigned randomly, but questioners could show off obscure knowledge while contestants struggled; contestants and observers rated questioners as more knowledgeable, a vivid demonstration of the fundamental attribution error, since the situation (the role) explained the performance difference.",
+      "Both are true, but R does not explain A. Observers made this judgement because they did not adjust for the questioners' role advantage: questioners could set questions from their own areas of knowledge, which no one could answer easily. R reports a parallel finding that contestants fell for the same error, but it is another example of the bias, not its cause. That both groups made the error shows its strength, but it does not explain why observers made it. So 'R explains A' is wrong, and since both statements are true, the options calling either false are wrong.",
     ref: "Ross, Amabile & Steinmetz 1977, J Pers Soc Psychol",
   }),
   s({
@@ -143,12 +143,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-iii, B-ii, C-i, D-iv",
-      "A-ii, B-iii, C-iv, D-i",
       "A-iii, B-ii, C-iv, D-i",
+      "A-ii, B-iii, C-iv, D-i",
+      "A-iii, B-ii, C-i, D-iv",
       "A-iv, B-ii, C-iii, D-i",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "Weiner classified ability as internal, stable and (in the short run) uncontrollable (iii); effort as internal, unstable and controllable (ii); task difficulty as external, stable and uncontrollable (iv); and luck as external, unstable and uncontrollable (i). The other codes swap ability and effort, task difficulty and luck, or ability and task difficulty.",
     ref: "Weiner 1979, 1985, Psychol Rev",
@@ -156,7 +156,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-attr-0008",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Weiner's attribution theory of emotion, attributing another person's failure to a controllable cause (for example, lack of effort) tends to produce:",
     options: [
@@ -177,12 +177,12 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The tendency to attribute our own successes to internal factors and our failures to external factors is called:",
     options: [
-      "Fundamental attribution error",
       "Self-serving bias",
+      "Fundamental attribution error",
       "False consensus effect",
       "Actor-observer bias",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "The self-serving bias protects self-esteem ('I passed because I worked hard; I failed because the paper was unfair'). The fundamental attribution error is overemphasising dispositions when explaining others' behaviour. The false consensus effect is overestimating how many people share our views. The actor-observer bias is attributing our own behaviour to situations and others' to dispositions.",
     ref: "Miller & Ross 1975; Mezulis et al. 2004 meta-analysis",
@@ -215,10 +215,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The memory task improved accuracy",
       "Cognitive load makes people more situational in their attributions",
-      "People never use situational information",
       "Correcting a dispositional inference for situational information requires cognitive effort, so cognitive load increases the correspondence bias",
+      "People never use situational information",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Gilbert, Pelham and Krull proposed a two-stage model: people automatically characterise the actor by disposition and then, if they have resources, correct for the situation. Under load, correction fails, so the situational information has no effect. Load made attributions more dispositional, not more situational. Participants without load did use situational information. Nothing suggests load improved accuracy.",
     ref: "Gilbert, Pelham & Krull 1988, J Pers Soc Psychol",
@@ -317,12 +317,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. Causal schemata require information about consensus, distinctiveness and consistency across many observations.",
     ],
     options: [
-      "A, B and C only",
       "A and D only",
+      "A, B and C only",
       "B, C and D only",
       "A, B, C and D",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "Kelley proposed causal schemata (such as multiple sufficient and multiple necessary causes) for situations with limited information. Discounting: a film star praising a product for a large fee tells us less about her liking. Augmenting: a student who succeeds despite illness is judged highly able. These operate from single observations (C), unlike the covariation model, which needs multiple observations (so D describes the covariation model, not schemata).",
     ref: "Kelley 1972, Causal schemata and the attribution process",
@@ -363,7 +363,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-attr-0019",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Berglas and Jones found that students who had succeeded on unsolvable-looking problems (so their success felt uncertain) were more likely to choose a performance-impairing drug before a retest. This is called:",
     options: [
@@ -427,13 +427,13 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "No one else shouts at her (low consensus); he shouts at almost everyone (low distinctiveness); he always shouts at her (high consistency). This pattern points to something about Dr Mehta. A stimulus attribution needs high consensus and distinctiveness. A circumstance attribution needs low consistency, but consistency here is high. Option 4 lists the wrong pattern for a stimulus attribution.",
+      "No one else shouts at her (low consensus); he shouts at almost everyone (low distinctiveness); he always shouts at her (high consistency). This pattern points to something about Dr Mehta. A stimulus attribution needs high consensus and distinctiveness. A circumstance attribution needs low consistency, but consistency here is high. The 'stimulus' option with low consensus, low distinctiveness and low consistency, lists the wrong pattern for a stimulus attribution.",
     ref: "Kelley 1967; McArthur 1972",
   }),
   s({
     id: "soc-attr-0023",
     exams: [N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The halo effect refers to:",
     options: [
@@ -500,7 +500,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Balance requires an even number of negative relations: all positive (I like you, we both like the film) or two negatives (I dislike you, you like the film, I dislike the film). Three negatives produce imbalance, as do exactly one negative ('two positive, one negative') arrangements such as option 4. Imbalanced states create tension and pressure to change an attitude.",
+      "Balance requires an even number of negative relations: all positive (I like you, we both like the film) or two negatives (I dislike you, you like the film, I dislike the film). Three negatives produce imbalance, as do exactly one negative ('two positive, one negative') arrangements such as disliking the other while liking the object the other likes. Imbalanced states create tension and pressure to change an attitude.",
     ref: "Heider 1946, 1958",
   }),
   s({
@@ -549,7 +549,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-attr-0029",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The primacy effect in impression formation means that:",
     options: [
@@ -576,12 +576,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. Group-serving biases parallel self-serving biases at the level of the ingroup.",
     ],
     options: [
-      "A, B and D only",
       "A and C only",
+      "A, B and D only",
       "B and C only",
       "A, B, C and D",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "A: Mezulis and colleagues' meta-analysis found smaller self-serving biases in Asian samples. B: Alloy and Abramson's depressive realism work suggested more even-handed attributions in mild depression (though the effect is debated). D: group-serving (ultimate attribution) biases mirror self-serving biases. C is wrong: correspondence bias has been found in collectivist cultures too, but people there are more sensitive to situational cues when these are made salient.",
     ref: "Mezulis et al. 2004, Psychol Bull; Choi et al. 1999",
@@ -711,10 +711,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-ii, B-i, C-iv, D-iii",
       "A-iv, B-ii, C-i, D-iii",
-      "A-ii, B-iv, C-i, D-iii",
       "A-ii, B-iv, C-iii, D-i",
+      "A-ii, B-iv, C-i, D-iii",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
       "Failure due to controllable personal causes evokes guilt (ii). Success due to internal causes evokes pride (iv). Others' failure due to uncontrollable causes evokes pity (i). Stable causes of failure produce low expectancy and hopelessness (iii). Shame is associated with internal, uncontrollable causes such as low ability. The other codes swap these.",
     ref: "Weiner 1985, Psychol Rev",
@@ -727,12 +727,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: People commonly underestimate the impact of situational forces on others' behaviour.",
-      "R: Situational forces are often invisible to observers, while the actor's behaviour is salient.",
+      "R: The term 'fundamental attribution error' was introduced by Lee Ross.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Gilbert and Malone listed reasons for the correspondence bias: lack of awareness of situational constraints, unrealistic expectations of behaviour, inflated categorisation of behaviour, and incomplete correction. The salience of the actor relative to the situation (as Heider noted, behaviour 'engulfs the field') is a key one.",
+      "Both are true, but R does not explain A. The tendency in A arises because the actor's behaviour is salient and the situational pressures acting on them are often invisible, and because people tend to assume behaviour reflects inner dispositions. R is a correct fact about who named this bias in the 1970s, but naming a bias does not explain why it happens. So 'R explains A' is wrong, and since both statements are true, the options that call one of them false are wrong as well.",
     ref: "Gilbert & Malone 1995, Psychol Bull",
   }),
   s({
@@ -807,7 +807,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-attr-0043",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 1,
     type: "mcq",
     stem: "The 'hindsight bias' refers to:",
     options: [
