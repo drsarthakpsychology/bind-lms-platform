@@ -376,18 +376,6 @@ function BestLine({ bests }: { bests: Bests }) {
 function Ready({ bests, error, onStart }: { bests: Bests; error: string | null; onStart: () => void }) {
   return (
     <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-6 sm:px-6">
-      <section className={cn(card, "bg-foreground p-5 text-background hard-shadow-md")}>
-        <p className="text-eyebrow text-primary">60 seconds · fast facts</p>
-        <h2 className="mt-1 text-h2 leading-tight">Blitz</h2>
-        <p className="mt-2 text-sm opacity-90">Right answers in a row build your combo. 3 in a row doubles your points, 6 triples them, 10 gives four times.</p>
-        <ul className="mt-3 flex flex-wrap gap-2 text-sm font-bold" aria-label="Combo steps">
-          {COMBO_STEPS.map((s) => (
-            <li key={s} className={cn(chip, "border-background bg-transparent")}>
-              <Flame className="size-4" aria-hidden /> {s} in a row = x{multiplier(s)}
-            </li>
-          ))}
-        </ul>
-      </section>
       <BestLine bests={bests} />
       {!bests.stored && <p className="text-sm text-muted-foreground">Scores aren&apos;t being saved yet. You can still play.</p>}
       {error && (

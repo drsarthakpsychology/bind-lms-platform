@@ -1,6 +1,6 @@
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
-import { CasePicker, SafetyFirstSheet } from "./case-picker";
+import { CasePicker, ConsultingRoomHeader } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -105,25 +105,14 @@ export default async function ConsultingRoomPage() {
 
   return (
     <div className="mx-auto w-full max-w-5xl">
-      <div className="mb-6 flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="text-eyebrow text-muted-foreground">Consulting Room</p>
-          <h1 className="mt-1 text-h1">Choose your patient</h1>
-          <p className="mt-1 max-w-prose text-small text-muted-foreground">
-            Real presentations, real language. Your debrief shows you what you missed.
-          </p>
-          {weakSpotsOn ? (
-            <Link href="/practice/weak-spots" className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
-              Your weak spots and a drill from your debriefs
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          ) : null}
-        </div>
-        <div className="flex shrink-0 flex-col items-end gap-2">
-          <SimulationBadge />
-          <SafetyFirstSheet />
-        </div>
-      </div>
+      <ConsultingRoomHeader badge={<SimulationBadge />}>
+        {weakSpotsOn ? (
+          <Link href="/practice/weak-spots" className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
+            Your weak spots and a drill from your debriefs
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        ) : null}
+      </ConsultingRoomHeader>
 
       <CasePicker cases={merged} />
     </div>

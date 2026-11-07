@@ -187,3 +187,12 @@ Also required:
 - Daily case: AI case must work; drop the long how-to text; no admin-only labels or source names shown to students.
 - Differential duel: clearer bot play, scoring and disorder choice.
 - Admin: quick access to send login details to students, from the inbox and student list, as before.
+
+## 9. Owner decisions, 7 Nov 2026 (after the research and audit)
+
+Based on docs/research/PLATFORM_RESEARCH_2026_11.md and docs/research/UX_AUDIT_2026_11.md.
+- **Hints and clues:** 3 free hints a day, plus spare hints earned from streaks, daily goals and quests (start 5, cap 10); once a day a student may buy 3 hints for 30 XP. Help after a wrong answer is always free. A hint lowers that question's reward, never the XP balance. From the 4th clue the student must guess before the next one. All counted on the server, limits on even if a table is missing. No hints in Duel or Blitz. One XP wallet.
+- **3D:** only where seeing it in space teaches: brain explorer with guided views, a brain-scan slicer showing TMS and ECT placement, depth illusions such as the Ames room, synapses and drug journeys. Patients are illustrated characters plus short clips, not 3D bodies. Free anatomy models allowed with a credits page.
+- **Libraries:** highest craft, hand-written (AI may draft, every item checked and fully explained). Minimum 500 per section now (questions, cases, scenarios, stations, passages), then expand later. No filler repetition; tag every item by topic, difficulty, learning goal and exam.
+- **Review:** keep "publish first, review after" for everything, including safety items.
+- **Practice tools that are switched off:** fit and merge into the current structure first; switch on only those that meet the platform standard.

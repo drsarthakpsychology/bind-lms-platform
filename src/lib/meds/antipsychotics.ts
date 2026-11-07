@@ -137,7 +137,7 @@ export const ANTIPSYCHOTICS: Med[] = [
   {
     id: "olanzapine",
     name: "Olanzapine",
-    brands: ["Oleanz", "Olace", "Olimelt"],
+    brands: ["Oleanz", "Olace", "Olimelt", "Oliza"],
     group: "Antipsychotics",
     cls: "Second-generation (atypical)",
     forms: "Tablets and melt tablets 2.5, 5, 7.5, 10, 15, 20 mg; injection",
@@ -194,7 +194,7 @@ export const ANTIPSYCHOTICS: Med[] = [
   {
     id: "aripiprazole",
     name: "Aripiprazole",
-    brands: ["Arip MT", "Aripra", "Abilify"],
+    brands: ["Arip MT", "Aripra", "Asprito", "Abilify"],
     group: "Antipsychotics",
     cls: "Second-generation, D2 partial agonist",
     forms: "Tablets 5, 10, 15, 20, 30 mg; monthly injection",

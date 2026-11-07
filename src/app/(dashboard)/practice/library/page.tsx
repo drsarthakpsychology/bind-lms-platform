@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { getLibraryDocs, filterLibrary, filterLibraryByTag, LIBRARY_FILTERS } from "@/lib/corpus/library";
 import { LibraryList } from "./library-list";
 import Link from "next/link";
@@ -23,17 +24,10 @@ export default async function LibraryPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Read &amp; annotate</p>
-      <h1 className="mt-1 text-h1">Case library</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        {all.length} real case reports from the literature. Search by title or opening
-        words: read, then note the teaching point.
-     </p>
+      <ToolHeader title="Case library" tip={{ id: "case-library", steps: ["Search by title or opening words.", "Read a case, then note the teaching point."] }} />
 
       <div className="mt-6">
-        {/* B5 filter row: disorder/trap/time, one tap per chip. One swipeable
-            line (not multi-row wrapping) so the chips never cost vertical space
-            on a narrow phone (T37). */}
+        {/* Filter chips: one swipeable line so they never cost vertical space on a phone. */}
         <div className="mb-4 -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {LIBRARY_FILTERS.map((f) => {
             const active = tag === f.key;

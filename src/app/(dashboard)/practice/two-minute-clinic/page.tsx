@@ -10,5 +10,5 @@ export const dynamic = "force-dynamic";
  */
 export default async function TwoMinuteClinicPage() {
   await requireFeature("two_minute_clinic");
-  redirect("/games/detective?mode=clinic");
+  redirect("/practice/detective?mode=clinic");
 }

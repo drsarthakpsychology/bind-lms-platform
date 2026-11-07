@@ -4,11 +4,11 @@ import { getSession } from "@/lib/auth/session";
 import { MODULES } from "@/lib/study";
 import { toReviseModule } from "@/lib/revise/plan";
 import { ReviseHome } from "@/components/revise/revise-home";
-import { loadLearnState, saveLearnState } from "../../study/actions";
+import { loadLearnState, saveLearnState } from "@/app/(dashboard)/study/actions";
 
 export const metadata: Metadata = { title: "Revise" };
 
-/** /games/revise: what to revisit today, from every schedule in one list. */
+/** /prep/smart/revise: what to revisit today, from every schedule in one list. */
 export default async function RevisePage() {
   await requireFeature("learn");
   const [serverState, session, labStatus] = await Promise.all([loadLearnState(), getSession(), getFeatureStatus("lab")]);

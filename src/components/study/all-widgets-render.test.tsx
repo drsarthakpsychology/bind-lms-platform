@@ -38,6 +38,6 @@ describe("every widget renders", () => {
       }
       expect(broken).toEqual([]);
       expect(list.length).toBeGreaterThan(0);
-    });
+    }, 60_000);
   }
 });

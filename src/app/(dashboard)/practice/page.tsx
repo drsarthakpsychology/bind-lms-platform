@@ -38,7 +38,7 @@ export default async function PracticeHubPage() {
         think={think}
         more={more}
         resume={resume}
-        records={{ passport: flags["skills_passport"] === "unlocked", supervision: flags["supervision"] === "unlocked", checkin: flags["checkin"] === "unlocked" }}
+        record={{ passport: flags.skills_passport === "unlocked", record: flags.supervision === "unlocked" || flags.checkin === "unlocked" }}
       />
       <PracticeKeyboardNav links={open.map((t) => ({ href: t.href, title: t.title }))} />
     </>

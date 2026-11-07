@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BackOrHome } from "@/components/navigation/back-forward";
 import { Clock3, Lock } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -12,6 +12,12 @@ export const dynamic = "force-dynamic";
  * is still being prepared ("yet to be live"); the default is a locked (off)
  * tool, which shows the original staged-reveal message.
  */
+/** "consulting_room" to "Consulting room": the tool's name in plain words. */
+function toolName(key: string): string {
+  const s = key.replace(/[_-]+/g, " ").trim();
+  return s ? s[0].toUpperCase() + s.slice(1) : "This";
+}
+
 export default async function NotAvailablePage({
   searchParams,
 }: {
@@ -27,14 +33,10 @@ export default async function NotAvailablePage({
         </span>
         <h1 className="mt-4 text-h1">This is coming soon</h1>
         <p className="mt-2 text-small text-muted-foreground">
-          Your programme is still preparing this: check back later.
+          Check back later.
         </p>
-        <Link
-          href="/practice"
-          className="mt-6 inline-block rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-        >
-          Back to practice
-        </Link>
+        {/* Back to wherever the student came from (Journal, Passport, a tool), not always Practice. */}
+        <BackOrHome className="mt-6 inline-flex min-h-11 cursor-pointer items-center rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px" />
       </div>
     );
   }
@@ -44,22 +46,9 @@ export default async function NotAvailablePage({
       <Clock3 className="mx-auto size-10 text-muted-foreground" aria-hidden />
       <h1 className="mt-4 text-h1">Not unlocked yet</h1>
       <p className="mt-2 text-small text-muted-foreground">
-        {feature ? (
-          <>
-            <span className="font-medium text-foreground">{feature.replace(/_/g, " ")}</span> is
-            built and waiting: your faculty reveals tools in stages so the cohort can go deep
-            on one thing at a time.
-          </>
-        ) : (
-          "This tool is built and waiting: your faculty reveals tools in stages so the cohort can go deep on one thing at a time."
-        )}
+        {feature ? `${toolName(feature)} opens soon.` : "This opens soon."}
       </p>
-      <Link
-        href="/practice"
-        className="mt-6 inline-block rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-      >
-        Back to practice
-      </Link>
+      <BackOrHome className="mt-6 inline-flex min-h-11 cursor-pointer items-center rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px" />
     </div>
   );
 }

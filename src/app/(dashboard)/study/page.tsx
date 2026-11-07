@@ -5,7 +5,7 @@ import { StudyHome } from "@/components/study/course";
 import { loadLearnState, saveLearnState } from "./actions";
 import { studyOwner } from "./owner";
 
-export const metadata: Metadata = { title: "Notes" };
+export const metadata: Metadata = { title: "Study" };
 
 /** /study: the course. One "Continue" button and the modules in order. */
 export default async function StudyPage() {

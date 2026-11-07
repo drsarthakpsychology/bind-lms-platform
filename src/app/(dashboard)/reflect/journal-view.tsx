@@ -338,7 +338,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         <h2 className="text-base font-semibold">Your entries</h2>
         {entries.length === 0 ? (
           <p className="mt-2 text-small text-muted-foreground">
-            Nothing here yet. The first entry is the hardest and the most useful.
+            Nothing here yet.
           </p>
         ) : (
           <ul className="mt-3 space-y-3">

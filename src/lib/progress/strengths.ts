@@ -14,6 +14,9 @@ import { normalise } from "@/lib/learn/engine";
 import { SKILLS_WITH_ITEMS, splitSkill, topicById } from "@/lib/learn/model/topics";
 import { computeLearningProfile } from "@/lib/practice/learning-profile";
 import { SUBJECT_MODULE, SUBJECT_TITLE, isSubject, studyHref } from "@/lib/prep/catalog";
+import { bankTopics } from "@/lib/prep/bank";
+import { TOPIC_GROUPS } from "@/lib/prep/topics";
+import { SUBJECTS } from "@/lib/prep/types";
 import { MODULES } from "@/lib/study";
 import { EMPTY_STRENGTHS, rankStrengths, scoreTopics, type Lookups, type SkillRowLite, type StrengthsWeaknesses, type TestScore } from "./strengths-core";
 
@@ -29,10 +32,35 @@ const moduleExists = (id: string, section?: string) => {
   return Boolean(m && (!section || m.sections.some((s) => s.id === section)));
 };
 
+/**
+ * Study module -> the Exam Prep set that drills it: a topic whose best Study
+ * link is that module first, then any topic that learns from it, then the
+ * subject itself. Only topics that have questions.
+ */
+const PREP_FOR_MODULE = (() => {
+  const out = new Map<string, string>();
+  const topics = SUBJECTS.map((subject) => ({ subject, has: new Set(bankTopics(subject).map((t) => t.id)) }));
+  const put = (mod: string, href: string) => {
+    if (!out.has(mod)) out.set(mod, href);
+  };
+  for (const pass of [0, 1]) {
+    for (const { subject, has } of topics) {
+      for (const grp of TOPIC_GROUPS[subject]) {
+        if (!has.has(grp.id)) continue;
+        const learn = pass === 0 ? grp.learn.slice(0, 1) : grp.learn;
+        for (const l of learn) put(l.split("/")[0], `/prep/${subject}/${grp.id}`);
+      }
+    }
+  }
+  for (const { subject, has } of topics) if (has.size) for (const m of SUBJECT_MODULE[subject]) if (!m.includes("/")) put(m, `/prep/${subject}`);
+  return out;
+})();
+
 const LOOKUPS: Lookups = {
   topicTitle: (id) => topicById(id)?.title ?? MODULE_TITLE.get(id) ?? null,
   moduleExists: (id) => MODULE_TITLE.has(id),
   hasBank: (id) => BANK_TOPICS.has(id),
+  prepTopicHref: (id) => PREP_FOR_MODULE.get(id) ?? null,
   subjectTitle: (s) => (isSubject(s) ? SUBJECT_TITLE[s] : null),
   subjectStudyHref: (s) => (isSubject(s) ? studyHref(SUBJECT_MODULE[s], moduleExists) : null),
 };

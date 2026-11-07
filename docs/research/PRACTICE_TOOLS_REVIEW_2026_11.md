@@ -44,7 +44,7 @@ Suggested order: `consulting_room` first (Weak spots and the Passport draw on it
 | Change | Files |
 |---|---|
 | Practice hub: removed the Two-minute clinic, Weak spots and Case library tiles (merged); footer links to Skills Passport and the supervision log now show only when their switches are on (this was a P0 dead end in the UX audit) | `src/components/practice/practice-hub.tsx`, `src/app/(dashboard)/practice/page.tsx` |
-| Clinic detective gains a "Two-minute clinic" mode (only when `two_minute_clinic` is on); the old `/practice/two-minute-clinic` redirects to it; the clinic starts on a random prompt | `src/app/(dashboard)/games/detective/page.tsx`, `src/app/(dashboard)/practice/two-minute-clinic/*`, `src/lib/practice/clinic.ts` |
+| Clinic detective gains a "Two-minute clinic" mode (only when `two_minute_clinic` is on); the old `/practice/two-minute-clinic` redirects to it; the clinic starts on a random prompt | `src/app/(dashboard)/practice/detective/page.tsx`, `src/app/(dashboard)/practice/two-minute-clinic/*`, `src/lib/practice/clinic.ts` |
 | Weak spots opens from the Consulting Room; remedies never open an off tool; the misleading "card" link became a plain line | `src/app/(dashboard)/practice/consulting-room/page.tsx`, `src/app/(dashboard)/practice/weak-spots/*`, `src/lib/practice/weak-spots.ts` |
 | Quiz checks show only legal sources (Act and section); book, paper, author-year and guideline citations are hidden; "every item carries its source" lines removed | `src/components/practice/quiz-check.tsx` (+ test), OSCE, MSE and Ethics pages |
 | MSE stimuli from the database are cleaned of dashes before display | `src/app/(dashboard)/practice/mse/page.tsx` |
@@ -54,12 +54,15 @@ Suggested order: `consulting_room` first (Weak spots and the Passport draw on it
 
 Checks: type check clean; lint clean on every changed file; 42 test files (343 tests) pass in the practice, landmark, quiz, games, search, student-text and no-references suites.
 
-## Left for the navigation and shell owner (not touched, by instruction)
+## Follow-ups done after merging admin-redesign (87a81e5)
 
-1. **Search palette** still lists "Two-minute clinic" at its old address (it redirects, so it works) and "Case library" (which will show "Not unlocked yet" while it stays off). Suggest: drop the Case library entry and point the clinic entry at `/games/detective?mode=clinic`. File: `src/lib/search/palette.ts`.
-2. **Back from Practice tools** still says "Back to Games" for Clinic detective (audit finding 5). The new clinic mode inherits that until the tools move out of `/games`.
-3. **MSE Lab** in Games overlaps with the Practice MSE trainer (audit finding 9). With `mse` on, Practice MSE is the full version; MSE Lab could go once the Games list is trimmed.
-4. **Consulting Room safety sheet** shows on every visit; the audit suggests once per student.
+Merged with the navigation move (tools now at `/practice/detective` and so on) and the show-once tips. Kept both sides: their addresses, tips and slim headers, plus the merges and fixes above.
+
+1. **Search palette:** the Case library entry and its 40 case-report results are gone (this also stops every page from reading the 37 MB corpus file for search). "Two-minute clinic" now opens `/practice/detective?mode=clinic`, and Landmark cases has an entry. Files: `src/lib/search/palette.ts`, `src/components/search/palette-host.tsx`.
+2. **Back from Clinic detective** (both modes) says "Back to Practice".
+3. **Consulting Room safety note** now uses the show-once tip system: it opens under the title on a student's first visit, and after "Got it" folds into a small "Safety first" button. Tip id `consulting-room-safety`.
+
+Still open: **MSE Lab** in Games overlaps the Practice MSE trainer (audit finding 9). With `mse` on, Practice MSE is the full version; MSE Lab could go once the Games list is trimmed.
 
 ## Notes for later
 

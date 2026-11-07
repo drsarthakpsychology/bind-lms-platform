@@ -129,12 +129,7 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
         <details className="group rounded-md border-2 border-border bg-card">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
             <span className="min-w-0">
-              <h2 className="text-sm font-semibold">The small things: the checklist novices never run</h2>
-              <p className="mt-1 text-small text-muted-foreground">
-                Eye contact when the topic changed · the leg that stopped moving · the
-                pause before &quot;no&quot; · the past tense used about oneself. Reference card
-                + drill, usable at any level.
-              </p>
+              <h2 className="text-sm font-semibold">The small things novices miss</h2>
             </span>
             <ChevronDown
               className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
@@ -152,10 +147,7 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
         <details className="group rounded-md border-2 border-border bg-card">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
             <span className="min-w-0">
-              <h2 className="text-sm font-semibold">Check what stuck</h2>
-              <p className="mt-1 text-small text-muted-foreground">
-                A quick check, not a test.
-              </p>
+              <h2 className="text-sm font-semibold">Quick check</h2>
             </span>
             <ChevronDown
               className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { WeakSpotsView } from "./weak-spots-view";
@@ -44,12 +45,7 @@ export default async function WeakSpotsPage() {
         <ArrowLeft className="size-4" aria-hidden />
         Consulting Room
       </Link>
-      <p className="text-eyebrow text-muted-foreground">Weak spots</p>
-      <h1 className="mt-1 text-h1">Where you miss, drill here</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        From your AI patient interview debriefs: the skills you keep missing, ranked, and a
-        10-item drill built from them.
-      </p>
+      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most in your patient sessions, ranked.", "Run the 10-question drill made from them."] }} />
 
       <div className="mt-6">
         <WeakSpotsView spots={spots} sessions={rubrics.length} />

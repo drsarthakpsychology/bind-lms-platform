@@ -2,6 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { isImmersiveSessionPath } from "./sidebar-gate";
+import { isFocusPath } from "./sections";
+import { cn } from "@/lib/utils";
 
 /**
  * Content wrapper that gives the dashboard its standard gutter + max-width
@@ -19,8 +21,15 @@ export function ShellContent({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
   }
 
+  // Focus pages (questions, reading, a game) keep the top slim: the task starts high.
+  const focus = isFocusPath(pathname ?? "");
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-6 pb-[calc(var(--nav-h)+2rem)] sm:px-6 md:pb-12 lg:px-10 lg:py-8 short:lg:py-6">
+    <div
+      className={cn(
+        "mx-auto w-full max-w-7xl px-4 pb-[calc(var(--nav-h)+2rem)] sm:px-6 md:pb-12 lg:px-10",
+        focus ? "pt-3 sm:pt-4 lg:pt-5" : "py-6 lg:py-8 short:lg:py-6",
+      )}
+    >
       {children}
     </div>
   );

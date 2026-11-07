@@ -21,7 +21,7 @@ describe("pickContinue", () => {
 
   it("falls back to the weakest topic, then the daily case, then lectures", () => {
     expect(pickContinue({ ...base, study: { ...study, kind: "done" }, weakest: { title: "Bipolar", href: "/x" } }).kind).toBe("weak");
-    expect(pickContinue({ ...base, dailyCase: true }).href).toBe("/games/daily");
+    expect(pickContinue({ ...base, dailyCase: true }).href).toBe("/practice/daily?from=/dashboard");
     expect(pickContinue(base).href).toBe("/courses");
   });
 });

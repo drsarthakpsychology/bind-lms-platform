@@ -28,11 +28,8 @@ export default async function ReflectPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Reveal delay={0.05}>
-        <p className="text-eyebrow text-muted-foreground">Reflect</p>
-        <h1 className="mt-1 text-h1">Your journal</h1>
-        <p className="mt-1 text-small text-muted-foreground">
-          Private to you. Faculty cannot read your entries unless you share one.
-        </p>
+        <h1 className="text-h1">Your journal</h1>
+        <p className="mt-1 text-small text-muted-foreground">Private to you unless you share an entry.</p>
       </Reveal>
 
       <Reveal delay={0.15} className="mt-6">

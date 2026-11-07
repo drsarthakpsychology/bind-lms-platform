@@ -182,7 +182,6 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
             <div className="min-w-0">
               <p className="text-eyebrow text-link">{v.mode === "daily" ? "Today's board" : "Practice board"} · {v.tier === "advanced" ? "Advanced" : "Basic"}</p>
               <h2 className="text-h3 leading-tight">{v.title}</h2>
-              <p className="text-sm text-muted-foreground">{v.tier === "advanced" ? "Sort the 16 criteria into 4 disorders, and pick each one's time rule." : "Sort the 16 criteria into the 4 disorders."}</p>
             </div>
             <Tries used={p.tries} />
           </header>
@@ -284,7 +283,6 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
               <section aria-label="Tiles to place" className="space-y-2">
                 <h3 className="font-bold">
                   Tiles to place ({p.placement.filter((x) => x === null).length})
-                  <span className="ml-2 text-sm font-normal text-muted-foreground">Tap a tile, then tap a disorder.</span>
                 </h3>
                 <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                   {v.tiles.map((t, i) =>

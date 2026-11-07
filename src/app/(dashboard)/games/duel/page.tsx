@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { ActivityFrame } from "@/components/study/activity-frame";
+import { ActivityTip } from "@/components/help/activity-tip";
 import { requireFeature } from "@/lib/flags";
 import { currentPlayer } from "@/lib/games/server";
 import { offlineRounds, profile } from "@/lib/games/duel/server";
@@ -25,6 +26,7 @@ export default async function DuelPage() {
       how={["Diagnosis +100, what tells it apart +50. Most points after 5 rounds wins."]}
       fallback="/games"
     >
+      <ActivityTip id="differential-duel" intro="Beat the bot or a classmate on look-alike patients." steps={["Each round shows one patient. Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "5 rounds, 20 seconds each. Same points? The faster player wins.", "The bot is practice. Matches with classmates move your rating."]} />
       <DuelGame serverState={serverState} save={saveLearnState} profile={prof} offlineItems={offline} />
     </ActivityFrame>
   );

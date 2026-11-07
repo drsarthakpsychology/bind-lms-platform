@@ -66,7 +66,7 @@ export function pickContinue(i: ContinueInput): ContinueStep {
     return { kind: "weak", eyebrow: "Needs work", title: i.weakest.title, meta: "Ten questions on your weakest topic.", href: i.weakest.href, cta: "Practise" };
   }
   if (i.dailyCase) {
-    return { kind: "daily", eyebrow: "Today", title: "Daily case", meta: "One new patient. Name it in as few clues as you can.", href: "/games/daily", cta: "Play" };
+    return { kind: "daily", eyebrow: "Today", title: "Daily case", meta: "One new patient. Name it in as few clues as you can.", href: "/practice/daily?from=/dashboard", cta: "Play" };
   }
   return { kind: "lectures", eyebrow: "Lectures", title: "Your lectures", meta: "New ones appear here first.", href: "/courses", cta: "Open" };
 }
