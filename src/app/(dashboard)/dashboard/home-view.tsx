@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, ClipboardList, Dumbbell, FileText, Flame, Play, RotateCcw, Sparkles, Stethoscope, TrendingDown, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, Check, Circle, ClipboardList, Dumbbell, FileText, Flame, Play, RotateCcw, Sparkles, Stethoscope, TrendingDown, TrendingUp } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import { cn } from "@/lib/utils";
 import { pct, type StrengthsWeaknesses, type TopicScore } from "@/lib/progress/strengths-core";
 import type { ContinueKind, ContinueStep } from "./next-step";
+import type { QuestCard } from "@/lib/hints/server";
+import { QUEST_XP } from "@/lib/hints/quests";
 
 /**
  * Home, three blocks and nothing else (plan section 8): one Continue card,
@@ -49,8 +51,40 @@ export function ContinueCard({ step }: { step: ContinueStep }) {
   );
 }
 
-/** Today's points against the daily goal, and the streak. Information only: no second button. */
-export function GoalCard({ points, goal, streak }: { points: number; goal: number; streak: number }) {
+/** Today's three quests: one quiet line each, inside the goal card. */
+export function QuestList({ data }: { data: QuestCard }) {
+  const left = data.quests.filter((q) => !q.done).length;
+  return (
+    <div className="border-t-2 border-foreground/15 pt-3">
+      <h3 className="flex items-baseline justify-between gap-2 text-caption font-bold">
+        <span>Today&apos;s quests</span>
+        <span className="font-semibold text-muted-foreground tabular-nums">{data.done ? "All done" : `${3 - left}/3`}</span>
+      </h3>
+      <ul className="mt-2 space-y-1.5">
+        {data.quests.map((q) => (
+          <li key={q.id} className="flex min-w-0 items-center gap-2 text-sm">
+            {q.done ? <Check className="size-4 shrink-0" aria-hidden /> : <Circle className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
+            {q.done ? (
+              <span className="min-w-0 flex-1 text-muted-foreground line-through decoration-foreground/30">{q.label}</span>
+            ) : (
+              <Link href={q.href} className="min-w-0 flex-1 font-semibold underline-offset-4 hover:underline">
+                {q.label}
+              </Link>
+            )}
+            {q.progress ? <span className="shrink-0 text-caption text-muted-foreground tabular-nums">{q.progress}</span> : null}
+            <span className="sr-only">{q.done ? "Done" : "Not done yet"}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-caption text-muted-foreground">
+        {QUEST_XP} XP each. All three: {data.xpBonus} XP more and {data.spareBonus} spare hints.
+      </p>
+    </div>
+  );
+}
+
+/** Today's points against the daily goal, the streak, and today's quests. Information only: no second button. */
+export function GoalCard({ points, goal, streak, quests = null }: { points: number; goal: number; streak: number; quests?: QuestCard | null }) {
   const done = Math.min(100, Math.round((points / Math.max(1, goal)) * 100));
   const hit = points >= goal;
   return (
@@ -80,6 +114,7 @@ export function GoalCard({ points, goal, streak }: { points: number; goal: numbe
         <div className="h-full rounded-full bg-primary" style={{ width: `${done}%` }} />
       </div>
       {hit ? <p className="text-sm text-muted-foreground">Goal met. See you tomorrow.</p> : null}
+      {quests ? <QuestList data={quests} /> : null}
     </section>
   );
 }
@@ -162,6 +197,7 @@ export function HomeBody({
   welcomeBack,
   step,
   goal,
+  quests = null,
   strengths,
   whatsappHref,
 }: {
@@ -170,6 +206,8 @@ export function HomeBody({
   step: ContinueStep;
   /** Null when Study is locked (no points to count yet). */
   goal: { points: number; goal: number; streak: number } | null;
+  /** Today's quests (students only; null hides them). */
+  quests?: QuestCard | null;
   /** Null when Study is locked. */
   strengths: StrengthsWeaknesses | null;
   whatsappHref: string;
@@ -192,7 +230,7 @@ export function HomeBody({
       {goal ? (
         <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
           <ContinueCard step={step} />
-          <GoalCard points={goal.points} goal={goal.goal} streak={goal.streak} />
+          <GoalCard points={goal.points} goal={goal.goal} streak={goal.streak} quests={quests} />
         </div>
       ) : (
         <ContinueCard step={step} />

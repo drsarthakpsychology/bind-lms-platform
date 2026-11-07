@@ -16,6 +16,7 @@ import { courseNext } from "@/lib/study/plan";
 import { istToday, liveStreak } from "@/lib/learn/engine";
 import { EMPTY_STRENGTHS, getStrengthsWeaknesses } from "@/lib/progress/strengths";
 import { LEGAL } from "@/lib/legal-constants";
+import { loadQuests } from "@/lib/hints/server";
 import { pickContinue } from "./next-step";
 import { HomeBody } from "./home-view";
 
@@ -57,10 +58,12 @@ export default async function DashboardPage() {
 
   const studyOpen = flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/study", blocked);
 
-  const [models, learn, strengths] = await Promise.all([
+  const questsOn = studyOpen && (profile.role === "student" || profile.role === "alumni");
+  const [models, learn, strengths, quests] = await Promise.all([
     Promise.all(myCourses.map((c) => loadCourseOverview(c.id, profile))).then((list) => list.filter((m): m is NonNullable<typeof m> => m !== null)),
     studyOpen ? loadLearnState() : Promise.resolve(null),
     studyOpen ? getStrengthsWeaknesses(profile.id) : Promise.resolve(EMPTY_STRENGTHS),
+    questsOn ? loadQuests(profile.id).catch(() => null) : Promise.resolve(null),
   ]);
 
   // The course in progress, else the first with lectures left, else the first.
@@ -86,6 +89,7 @@ export default async function DashboardPage() {
       welcomeBack={Boolean(main?.started || learn?.study.last)}
       step={step}
       goal={learn ? { points: learn.daily.day === today ? learn.daily.xp : 0, goal: learn.dailyGoal, streak: liveStreak(learn.streak, today) } : null}
+      quests={quests}
       strengths={studyOpen ? strengths : null}
       whatsappHref={`https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`}
     />
