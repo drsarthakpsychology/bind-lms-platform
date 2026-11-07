@@ -6,6 +6,8 @@ import { QUESTIONS as part4 } from "./biological-part4";
 import { QUESTIONS as part5 } from "./biological-part5";
 import { QUESTIONS as part6 } from "./biological-part6";
 import { QUESTIONS as part7 } from "./biological-part7";
+import { QUESTIONS as x1a } from "./biological-x1a";
+import { QUESTIONS as x1b } from "./biological-x1b";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -18,4 +20,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · biological. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...x1a, ...x1b]);
