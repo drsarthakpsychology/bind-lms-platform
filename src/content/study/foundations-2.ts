@@ -717,6 +717,209 @@ The six classical systems come in three pairs, and each pair offers something di
 Add the heterodox systems (Buddhism, Jainism and Charvaka) for a complete answer.
 :::
 
+:::qa State the four goals of psychology and give one example of each from Indian life. [starting]
+### Short answer
+Psychology aims to **describe, explain, predict and control (or change)** behaviour and mental processes.
+
+### Goals with examples
+| Goal | Question | Example |
+|---|---|---|
+| Describe | What happens, and how often? | How many college students in Delhi report poor sleep before exams? |
+| Explain | Why does it happen? | Is poor sleep linked to phone use at night, anxiety or hostel noise? |
+| Predict | When or in whom will it happen? | Which first-year students are most likely to struggle with sleep? |
+| Control or change | Can we improve it? | Does a sleep-hygiene workshop improve sleep and marks? |
+
+### How they connect
+- Good description makes explanation possible.
+- A good explanation allows prediction.
+- Prediction and explanation guide change.
+
+### Ethical note
+"Control" in psychology means helping people change for their benefit, with consent, not manipulation.
+:::
+
+:::qa Explain one behaviour from five psychological perspectives. [starting]
+### Short answer
+Each perspective asks a different question, so together they give a fuller explanation. Take a student who **copies in exams**.
+
+### Five perspectives
+| Perspective | Explanation of copying |
+|---|---|
+| Biological | Stress hormones and immature impulse control under pressure |
+| Behavioural | Copying was reinforced before: it worked and was never caught |
+| Cognitive | Beliefs such as "everyone does it" and "marks matter more than learning" |
+| Psychodynamic | Fear of a harsh parent's disapproval drives avoidance of failure at any cost |
+| Sociocultural | High-stakes exams, coaching culture, peer norms and lax invigilation |
+
+### Using the perspectives
+- They are not rivals but **levels** of one explanation.
+- Interventions follow: reduce pressure (sociocultural), change beliefs (cognitive), remove the reinforcement (behavioural).
+
+### Exam tip
+Name the perspective, its key question and its main method for full marks.
+:::
+
+:::qa How do a psychiatrist, a clinical psychologist and a counsellor differ in India? [starting]
+### Short answer
+They differ in **training, legal registration and what they are allowed to do**.
+
+### Comparison
+| Feature | Psychiatrist | Clinical psychologist | Counsellor |
+|---|---|---|---|
+| Training | MBBS plus MD or DNB in psychiatry | MA or MSc in psychology plus an RCI-recognised clinical qualification (M.Phil, now the two-year clinical master's) or PsyD | MA in psychology or counselling, or a diploma |
+| Registration | Medical council | Rehabilitation Council of India | No specific licence at present |
+| Can prescribe | Yes | No | No |
+| Main work | Diagnosis, medicines, ECT, admission | Assessment, psychological testing, psychotherapy | Guidance and support for everyday problems |
+| Typical setting | Hospitals, clinics | Hospitals, clinics, rehabilitation, private practice | Schools, colleges, NGOs, workplaces |
+
+### Why it matters
+Clients and families often confuse the roles. Entrance interviews often ask you to explain them, and the Mental Healthcare Act 2017 recognises RCI-registered clinical psychologists as mental health professionals.
+:::
+
+:::qa What is introspection, why did it decline, and is it still used? [starting]
+### Short answer
+Introspection is **looking inward and reporting one's conscious experience**. It declined because trained observers disagreed and disputes could not be settled, but careful self-report is still central to psychology.
+
+### History
+| Period | Use |
+|---|---|
+| Wundt | Brief, controlled reports alongside reaction times |
+| Titchener | Detailed analysis of experience into elements by trained observers |
+| Würzburg school | "Imageless thought" findings that clashed with Titchener's |
+| Behaviourism | Rejected introspection as unscientific |
+
+### Why it declined
+- No way to check one person's report against another's.
+- Training could bias reports.
+- People often cannot report the causes of their behaviour.
+
+### Modern forms
+- Questionnaires and interviews.
+- Think-aloud protocols in problem-solving research.
+- Experience sampling via phone prompts.
+- Trained first-person reports in meditation research, combined with brain measures.
+:::
+
+:::qa Evaluate the case study method with examples. [starting]
+### Short answer
+A case study is an **in-depth study of one person, group or event**. It gives rich detail and can challenge theories, but it cannot show cause or be safely generalised.
+
+### Strengths and limits
+| Strengths | Limits |
+|---|---|
+| Rich, detailed information | No control group |
+| Studies rare conditions | Hard to generalise |
+| Generates hypotheses | Researcher bias in selection and interpretation |
+| Can disprove a universal claim | Often relies on memory and retrospective reports |
+
+### Famous cases
+- **Phineas Gage**: frontal lobe damage and personality change.
+- **H.M.**: amnesia after removal of the hippocampus, showing different memory systems.
+- **Freud's cases**: the basis of psychoanalysis, criticised for selective reporting.
+
+### Indian use
+Case studies are central in clinical training (case presentations) and in studies of rare disorders or unusual healing practices.
+:::
+
+:::qa Compare cross-sectional and longitudinal designs. [starting]
+### Short answer
+A **cross-sectional** design compares different age groups at one time; a **longitudinal** design follows the same people over time. The first is quick but confuses age with generation; the second shows real change but is slow and costly.
+
+### Comparison
+| Feature | Cross-sectional | Longitudinal |
+|---|---|---|
+| Who | Different people of different ages | Same people repeatedly |
+| Time | One occasion | Years or decades |
+| Cost | Low | High |
+| Main problem | Cohort effects | Dropout, practice effects, ageing of the measures |
+| Shows | Age differences | Individual change and stability |
+
+### A combined option
+**Sequential (cohort-sequential) designs** follow several age groups over time, separating age from cohort effects.
+
+### Example
+Comparing smartphone use in 15-, 35- and 55-year-olds in Bengaluru today (cross-sectional) confuses age with growing up with or without smartphones; following 15-year-olds for 20 years (longitudinal) does not.
+:::
+
+:::qa How did rationalism and empiricism shape the nature-nurture debate? [starting]
+### Short answer
+**Rationalists and nativists** (Plato, Descartes, Kant) held that some knowledge or mental structure is inborn; **empiricists** (Locke, Hume, the associationists) held that knowledge comes from experience. Modern psychology treats both as interacting.
+
+### Comparison
+| Position | Key thinkers | Claim | Modern descendants |
+|---|---|---|---|
+| Rationalism and nativism | Plato, Descartes, Kant | Inborn ideas or categories organise experience | Chomsky's language faculty, evolutionary psychology, infant core knowledge |
+| Empiricism | Locke, Hume, Hartley, the Mills | The mind starts as a blank slate; ideas form by association | Behaviourism, learning theory, connectionism |
+
+### Today's view
+- Genes and environment **interact**: genes affect which environments people seek and how they respond.
+- Epigenetics shows environment can change gene expression.
+
+### Example
+Language: children are born ready to learn language (nature) but learn Gujarati, Tamil or English depending on what they hear (nurture).
+:::
+
+:::qa Explain Weber's law and Fechner's law with numerical examples. [starting]
+### Short answer
+**Weber's law**: the just noticeable difference (JND) is a constant **proportion** of the original stimulus. **Fechner's law**: sensation grows with the **logarithm** of stimulus intensity, so equal ratios feel like equal steps.
+
+### Weber's law worked
+| Original weight | Weber fraction (2%) | JND |
+|---|---|---|
+| 100 g | 0.02 | 2 g |
+| 500 g | 0.02 | 10 g |
+| 2,000 g | 0.02 | 40 g |
+
+### Fechner's law in words
+Doubling a light's intensity adds a step in brightness; doubling again adds another equal step. Sensation rises quickly at first and then slowly.
+
+### Limits
+- Weber fractions differ by sense and break down at extremes.
+- Stevens later proposed a power law that fits some senses better.
+
+### Significance
+Fechner showed the mind could be measured, a founding step for experimental psychology.
+:::
+
+:::qa How does Indian psychology differ in emphasis from mainstream Western academic psychology? [starting]
+### Short answer
+Indian psychology centres on **consciousness, the self and transformation**, and accepts trained **first-person** methods; mainstream academic psychology centres on **explaining and predicting behaviour** with third-person methods. The contrast is one of emphasis, not a wall.
+
+### Comparison
+| Aspect | Mainstream academic psychology | Indian psychology |
+|---|---|---|
+| Central topic | Behaviour and cognition | Consciousness and self |
+| Aim | Explain, predict, change | Understand and transform; freedom from suffering |
+| Self | A construct (self-concept) | Layers, with a deeper witnessing self in some schools |
+| Method | Experiments, surveys, tests | Also meditation, self-inquiry, ethical discipline |
+| Wellbeing | Satisfaction, adjustment | Equanimity, non-attachment, wisdom |
+
+### Overlaps
+- Mindfulness, acceptance and compassion therapies draw on Indian and Buddhist practice.
+- Contemplative research uses both first- and third-person methods.
+
+### Caution
+"Western" and "Indian" are broad labels; each contains many traditions and debates.
+:::
+
+:::qa What are the basic ethical principles of psychological research? [starting]
+### Short answer
+Research must **respect participants' autonomy, avoid harm, protect privacy and be honest**. Key rules are informed consent, the right to withdraw, confidentiality, minimal harm and debriefing.
+
+### Principles
+| Principle | What it requires | Example |
+|---|---|---|
+| Informed consent | Clear information and voluntary agreement | A consent form in the participant's language |
+| Right to withdraw | Leave at any time without penalty | A student can stop a survey midway |
+| Confidentiality | Protect identity and data | Code numbers instead of names |
+| Minimal harm | Avoid physical or psychological damage | No needless distress |
+| Deception and debriefing | Use deception only when essential; explain afterwards | Revealing the true aim after a study |
+| Special care for vulnerable groups | Extra protection for children, patients, prisoners | Parental consent plus child assent |
+
+### History
+Studies such as Milgram's obedience research and the Little Albert study pushed these rules into place. In India, ethics committees follow national guidelines for health research.
+:::
+
 ## 4.4 Q&A bank · Beginner [beginner]
 
 :::qa Compare structuralism and functionalism on subject matter, method, aims and legacy. [beginner]
@@ -822,6 +1025,229 @@ Vedanta teaches an **unchanging true self (atman)**, ultimately one with Brahman
 - The Buddhist model fits modern views of the self as a constructed process; the Vedantic model fits work on a witnessing awareness in long-term meditators.
 :::
 
+:::qa Distinguish Watson's methodological behaviourism from Skinner's radical behaviourism. [beginner]
+### Short answer
+Watson said psychology should **ignore consciousness** because it cannot be observed scientifically. Skinner said private events such as thoughts **exist and are behaviour too**, governed by the same laws, though observable only to one person.
+
+### Comparison
+| Feature | Methodological (Watson) | Radical (Skinner) |
+|---|---|---|
+| Inner events | Excluded from science | Included as private behaviour |
+| Learning model | Mainly classical conditioning | Mainly operant conditioning |
+| Explanation | Stimulus-response | Behaviour shaped by consequences |
+| Aim | Prediction and control | Prediction and control; designing environments |
+| Famous work | The 1913 manifesto; Little Albert | Schedules of reinforcement; teaching machines |
+
+### Neo-behaviourist variety
+- Hull: formal drive-reduction theory.
+- Tolman: purposive behaviourism, cognitive maps and latent learning, which pointed towards cognitive psychology.
+
+### Legacy
+Behaviour therapy, token economies, applied behaviour analysis for autism, and programmed instruction.
+:::
+
+:::qa Explain the Gestalt laws of perceptual organisation and Gestalt psychology's wider contribution. [beginner]
+### Short answer
+Gestalt psychology holds that **the whole is different from the sum of its parts**: we perceive organised patterns, not collections of sensations. Its laws describe how we group elements.
+
+### The laws
+| Law | Meaning | Example |
+|---|---|---|
+| Proximity | Close items group together | Dots in pairs look like pairs |
+| Similarity | Similar items group | Rows of red and blue beads in a rangoli |
+| Closure | We complete gaps | A broken circle looks whole |
+| Continuity | We follow smooth paths | Crossing lines seen as two lines |
+| Common fate | Items moving together group | A flock of birds |
+| Figure-ground | Objects stand out from a background | The vase and faces picture |
+| Prägnanz | We see the simplest stable form | The overarching law |
+
+### Wider contribution
+- **Insight learning** in Köhler's chimpanzees.
+- **Lewin's field theory** and group dynamics.
+- Influence on cognitive psychology, perception research and design.
+
+### Critique
+The laws describe rather than explain, and brain-field theories proposed by Gestaltists were not supported.
+:::
+
+:::qa What are the core assumptions of humanistic psychology, and how has it been criticised? [beginner]
+### Short answer
+Humanistic psychology sees people as **free, growth-oriented and best understood through their own experience**. It was called the third force against behaviourism and psychoanalysis.
+
+### Core assumptions
+1. **Free will and responsibility**: people choose.
+2. **Growth tendency**: people strive towards self-actualisation (Maslow) or the actualising tendency (Rogers).
+3. **Subjective experience matters**: phenomenology.
+4. **The whole person**: not reduced to parts.
+5. **The relationship heals**: empathy, unconditional positive regard and congruence.
+
+### Contributions
+- Person-centred therapy and counselling skills.
+- Positive psychology's later focus on strengths.
+- Humanised education and nursing.
+
+### Criticisms
+| Criticism | Point |
+|---|---|
+| Vague concepts | Self-actualisation is hard to define and test |
+| Optimistic bias | Underplays destructive tendencies |
+| Cultural bias | Centres individual growth over duty and community |
+| Weak research base | Relied on case studies and self-report early on |
+:::
+
+:::qa What are the "four founding paths" of academic psychology in the UGC NET syllabus? [beginner]
+### Short answer
+The syllabus names **Wundt, Freud, James and Dilthey**: four distinct routes into psychology, from the laboratory, the clinic, pragmatic philosophy and the human sciences.
+
+### The four paths
+| Founder | Path | Key idea |
+|---|---|---|
+| Wundt | Experimental and physiological | Measured mental processes in the laboratory; cultural psychology for higher processes |
+| Freud | Clinical and depth | The unconscious, conflict and the talking cure |
+| James | Pragmatic and functional | Consciousness as a stream with adaptive functions; habit and self |
+| Dilthey | Interpretive human science | Understanding (Verstehen) meaning from within, not only explaining causes |
+
+### Why include Dilthey?
+His distinction between **explaining** and **understanding** underlies qualitative, hermeneutic and phenomenological psychology and today's debates about paradigms.
+
+### Exam tip
+Link each path to a modern field: Wundt to cognitive and experimental psychology, Freud to psychodynamic therapy, James to functional and positive psychology, Dilthey to qualitative methods.
+:::
+
+:::qa Explain the psychology of the Bhagavad Gita and how it has been studied empirically. [beginner]
+### Short answer
+The Gita presents a model of **steady wisdom, duty and non-attached action** for handling distress and conflict. Indian researchers have turned concepts such as **anasakti** into measurable constructs.
+
+### Key ideas
+| Concept | Meaning |
+|---|---|
+| Vishada | Arjuna's despair: a picture of acute distress and indecision |
+| Sthitaprajna | A person of steady wisdom, unshaken by pleasure and pain |
+| Nishkama karma | Acting fully without attachment to results |
+| Svadharma | Duty suited to one's nature and role |
+| Paths | Action, knowledge, devotion and meditation |
+| Gunas | Qualities shaping food, faith, action and character |
+
+### Empirical work
+- **Anasakti**: measured as effort without concern for outcome and equanimity in success and failure; higher scores linked with less stress-related strain.
+- **Wisdom research**: comparisons with modern models found overlap in emotional regulation, insight and compassion.
+- **Guna measures**: inventories of sattva, rajas and tamas.
+
+### Critique
+Interpretations of an ancient text vary; constructs need careful definition and cross-cultural validation.
+:::
+
+:::qa Compare Samkhya's dualism with Descartes' dualism. [beginner]
+### Short answer
+Both are dualist, but they draw the line in different places. Descartes separated **mind from body**; Samkhya separates **consciousness (purusha) from nature (prakriti)**, and puts the **mind inside nature**.
+
+### Comparison
+| Feature | Descartes | Samkhya |
+|---|---|---|
+| Two realities | Mind (thinking substance) and body (extended substance) | Purusha (pure consciousness) and prakriti (nature, made of gunas) |
+| Where is thought? | In the mind, separate from the body | In prakriti: buddhi, ahamkara and manas are natural |
+| Role of consciousness | Thinking itself | A witness that does nothing |
+| Interaction | Through the pineal gland | Proximity of purusha disturbs the balance of gunas |
+| Cause of suffering | Not a central concern | Confusing the witness with what it witnesses |
+
+### Psychological relevance
+- Samkhya anticipates the modern idea that **cognition can be explained mechanistically**, while leaving subjective awareness as a separate question.
+- Its witness idea parallels **decentring** in mindfulness-based therapies.
+:::
+
+:::qa How can the kleshas and the eight limbs be read as a model of mental health? [beginner]
+### Short answer
+The **kleshas** describe the roots of distress (ignorance, ego-identification, attachment, aversion and fear of death); the **eight limbs** describe a graded path from conduct and body to attention and absorption that weakens them.
+
+### Kleshas as causes
+| Klesha | Mental health reading |
+|---|---|
+| Avidya | Distorted perception of self and world |
+| Asmita | Over-identification with roles and results |
+| Raga | Craving and compulsive pursuit of pleasure |
+| Dvesha | Avoidance of pain and discomfort |
+| Abhinivesha | Fear of death and existential anxiety |
+
+### Eight limbs as treatment
+| Limbs | Modern parallel |
+|---|---|
+| Yama and niyama | Values, ethics, healthy routines |
+| Asana and pranayama | Exercise, breathing, arousal regulation |
+| Pratyahara | Reducing reactivity to triggers |
+| Dharana, dhyana, samadhi | Attention training and meditation |
+
+### Caution
+This is a framework, not a diagnostic system; yoga is an adjunct, not a replacement for treatment of moderate to severe disorders.
+:::
+
+:::qa Explain the Four Noble Truths and the Eightfold Path as a psychological model. [beginner]
+### Short answer
+The Buddha's teaching follows a **medical structure**: diagnosis, cause, prognosis and treatment. Its psychology centres on craving, attention and ethical living.
+
+### The model
+| Truth | Medical step | Psychological meaning |
+|---|---|---|
+| Dukkha | Diagnosis | Dissatisfaction is part of life |
+| Samudaya | Cause | Craving and clinging cause suffering |
+| Nirodha | Prognosis | Suffering can end |
+| Magga | Treatment | The Eightfold Path |
+
+### The path in three parts
+- **Wisdom**: right view, right intention.
+- **Ethics**: right speech, action, livelihood.
+- **Mental discipline**: right effort, mindfulness and concentration.
+
+### Links to modern therapy
+- Mindfulness (MBSR, MBCT), acceptance (ACT), compassion-focused therapy and DBT draw on these ideas.
+- The step from feeling to craving matches urge-surfing in addiction treatment.
+
+### Indian example
+Ten-day Vipassana courses, including those in prisons, apply the path's mental discipline in a secular format.
+:::
+
+:::qa What does Sufi psychology say about the self, and how is it relevant in India today? [beginner]
+### Short answer
+Sufi psychology sees the person as a **lower self (nafs)** that can be transformed through love, remembrance and service, moving from the commanding self to the self at peace, and ultimately to the passing away of ego (fana) and return (baqa).
+
+### Key concepts
+| Concept | Meaning |
+|---|---|
+| Nafs al-ammara | Commanding, impulsive self |
+| Nafs al-lawwama | Self-reproaching self, aware of faults |
+| Nafs al-mutma'inna | Self at peace |
+| Qalb, ruh, aql | Heart, spirit, intellect |
+| Maqamat and ahwal | Stations earned by effort; states given as grace |
+| Dhikr, sama, khidmat | Remembrance, devotional music, service |
+
+### Relevance in India
+- Sufi shrines are important places of healing and comfort for people of many faiths.
+- Partnerships that place mental health clinics beside shrines respect faith while offering treatment.
+- Qawwali and dhikr are studied for their effects on emotion and altered states.
+
+### Psychological parallels
+Self-reproach resembles conscience and guilt; the self at peace resembles equanimity and integrated identity.
+:::
+
+:::qa Compare the states of consciousness in the Mandukya Upanishad with modern sleep and consciousness research. [beginner]
+### Short answer
+The Mandukya describes **waking, dreaming, deep sleep and turiya** (pure awareness). Modern research maps the first three onto measurable brain states and is beginning to study reports of "pure awareness" in meditators.
+
+### Comparison
+| Mandukya | Modern parallel | What research says |
+|---|---|---|
+| Jagrat (waking) | Wakefulness | Fast, mixed brain waves; awareness of the outer world |
+| Svapna (dreaming) | REM sleep | Vivid dreams, active brain, relaxed muscles |
+| Sushupti (deep sleep) | Slow-wave sleep | Little reported experience; debate about minimal awareness |
+| Turiya | Pure awareness reported by meditators | Early research on states of awareness without content |
+
+### Points of interest
+- The claim that we "know" we slept well raises the question of awareness in deep sleep.
+- The witness idea links to metacognition and mindfulness.
+
+### Caution
+Turiya is a metaphysical claim; science can study reports and brain correlates, not prove the ultimate nature of consciousness.
+:::
+
 ## 4.5 Q&A bank · Advanced [advanced]
 
 :::qa Critically evaluate the contribution of Girindrasekhar Bose to psychology. [advanced]
@@ -922,6 +1348,229 @@ Treat science and spirituality as **different kinds of knowledge**: use evidence
 
 ### Boundary
 A psychologist offers evidence-based care and does not endorse or test every metaphysical claim; the aim is the client's wellbeing, not winning an argument.
+:::
+
+:::qa Assess Durganand Sinha's contribution to psychology in India. [advanced]
+### Short answer
+Durganand Sinha diagnosed Indian psychology as a **borrowed discipline** and led the movement towards **indigenisation** and socially relevant, ecologically grounded research. He also put Indian psychology on the international map through cross-cultural psychology.
+
+### Contributions
+| Area | Contribution |
+|---|---|
+| Critique | Described much Indian research as Western psychology in Indian garb |
+| Indigenisation | Developed the move from adapting imported concepts to building them from Indian life |
+| Research | Motivation and rural development; ecology and behaviour; poverty |
+| Institutions | Built the Centre of Advanced Study in Psychology at Allahabad |
+| International | President of the International Association for Cross-Cultural Psychology |
+| Mentoring | Trained a generation including J. B. P. Sinha |
+
+### Evaluation
+- **Strength**: gave Indian psychology a self-critical agenda and a research direction.
+- **Limit**: indigenisation remained uneven; much research still follows imported paradigms.
+
+### Exam tip
+Link Sinha to the phases of Indian psychology and to the later Indian psychology movement.
+:::
+
+:::qa Critically evaluate J. B. P. Sinha's nurturant-task leader model. [advanced]
+### Short answer
+Sinha proposed that effective Indian leaders combine **task focus** with **nurturance** that depends on performance, gradually moving to participation as subordinates mature. It fits hierarchical, personalised work cultures, but may fit less well in changing Indian workplaces.
+
+### The model
+- Task-oriented: clear goals, standards, discipline.
+- Nurturant: care, guidance, personal interest.
+- Contingent: nurturance follows good work.
+- Developmental: shifts towards participative leadership.
+
+### Evaluation
+| Strengths | Limitations |
+|---|---|
+| Built from Indian organisational research | Studied mainly in public sector and industry in particular regions |
+| Explains why purely authoritarian or purely participative styles failed | Assumes high power distance, which is changing in young, urban, IT workforces |
+| Combines the two classic leadership dimensions in a cultural form | Risk of paternalism and favouritism |
+| Developmental path is practical | Few long-term outcome studies |
+
+### Comparison
+It resembles high initiating structure plus high consideration (Ohio State), and situational leadership's shift with follower readiness, but with a distinctly Indian emphasis on personalised care.
+:::
+
+:::qa How did colonialism shape psychology in India, and what is postcolonial psychology? [advanced]
+### Short answer
+Psychology arrived through **colonial universities** as a Western discipline that ignored Indian traditions and problems. **Postcolonial psychology** examines how colonial power shaped knowledge and identity and seeks to decentre Western norms.
+
+### Effects of colonialism
+| Effect | Example |
+|---|---|
+| Borrowed theories and tests | Western intelligence tests used without adaptation |
+| Intellectual dependency | Prestige from Western journals and approval |
+| Neglect of Indian thought | Indian ideas of mind treated as religion or philosophy |
+| Colonised self-image | Ashis Nandy's analysis of how colonial ideas about masculinity and modernity entered Indian minds |
+
+### Postcolonial responses
+- Indigenous psychology and Indian psychology.
+- Critical work on how global psychology defines "normal" using Western samples.
+- Studies of hybrid, globalised Indian identities in cities.
+
+### Balanced view
+Rejecting all Western psychology would be a new error; the aim is a plural, critical psychology that uses the best tools while asking whose questions they answer.
+:::
+
+:::qa Design a study using Berry's emic-etic approach to examine "family harmony" in India. [advanced]
+### Short answer
+Start with **emic** exploration of what family harmony means in different Indian groups, build a measure, then test whether it works equivalently across groups and compare with related Western constructs (**derived etic**).
+
+### Design
+| Step | Method |
+|---|---|
+| 1. Emic exploration | Focus groups and interviews in Hindi, Gujarati and Tamil across rural and urban, joint and nuclear families |
+| 2. Item generation | Items drawn from participants' own words |
+| 3. Pilot and refine | Item analysis and reliability |
+| 4. Validation | Correlations with wellbeing, conflict, family functioning |
+| 5. Cross-group equivalence | Test whether the measure works the same way across regions and family types |
+| 6. Comparison | Relate to Western constructs such as family cohesion |
+
+### Pitfalls
+- Assuming one "Indian family".
+- Translating Western scales and calling them indigenous.
+- Ignoring gender and generation differences in what harmony costs.
+
+### Expected contribution
+A culturally valid construct that can also be compared internationally.
+:::
+
+:::qa Is psychology a paradigmatic science in Kuhn's sense? [advanced]
+### Short answer
+Kuhn suggested that a mature science works within **one shared paradigm** during normal science. Psychology has several coexisting approaches, so many argue it is **pre-paradigmatic** or **multi-paradigmatic**.
+
+### Kuhn's model
+1. Pre-paradigm: competing schools.
+2. Normal science: one paradigm guides puzzle-solving.
+3. Anomalies build up.
+4. Crisis.
+5. Revolution: a new paradigm.
+
+### Applying it to psychology
+| View | Argument |
+|---|---|
+| Pre-paradigmatic | Schools never fully unified; no single shared framework |
+| Multi-paradigmatic | Biological, cognitive, psychodynamic and sociocultural paradigms coexist productively |
+| Revolutions happened | Behaviourism and the cognitive revolution look like paradigm shifts |
+| No revolution | Historians note continuity, for example between neo-behaviourism and cognitive psychology |
+
+### Alternatives to Kuhn
+Lakatos's research programmes and Laudan's research traditions allow several competing frameworks, which fits psychology better.
+
+### Exam conclusion
+Psychology is best described as a pluralistic science with integrative frameworks such as the biopsychosocial model.
+:::
+
+:::qa Compare the "crisis" of logical empiricism with the replication crisis. [advanced]
+### Short answer
+The first crisis questioned **what psychology studies and how** (narrow positivist methods excluded meaning and culture); the replication crisis questions **whether its findings are reliable** even within experimental methods.
+
+### Comparison
+| Feature | Crisis of logical empiricism | Replication crisis |
+|---|---|---|
+| When | Mid to late twentieth century | From about 2011 |
+| Core complaint | Operationism and lab experiments miss meaning, history and culture | Many published effects do not replicate |
+| Causes | Narrow philosophy of science | Small samples, flexible analysis, publication bias, incentives |
+| Critics | Koch, Gergen, Harré and Secord; Indian critics on relevance | Open science reformers |
+| Response | Qualitative methods, social constructionism, indigenous psychology | Pre-registration, larger samples, registered reports, data sharing |
+
+### Link
+Both crises push towards methodological honesty: the first towards fitting methods to questions, the second towards rigour and transparency.
+:::
+
+:::qa Describe Indic influences on modern psychology and evaluate them. [advanced]
+### Short answer
+Indian and Buddhist traditions have shaped modern psychology through **meditation, yoga, mindfulness, ideas of self and consciousness and transpersonal psychology**. Their influence is real but often uncredited or simplified.
+
+### Influences
+| Area | Influence |
+|---|---|
+| Early psychology | William James on Indian mysticism; Vivekananda's teaching on yoga |
+| Depth psychology | Jung's study of yoga and Indian thought |
+| Physiology of meditation | Research on transcendental meditation and the relaxation response |
+| Therapy | MBSR, MBCT, DBT, ACT, compassion-focused therapy |
+| Transpersonal psychology | States of consciousness, self-transcendence |
+| Health | Yoga therapy research in hospitals worldwide |
+
+### Evaluation
+- **Gains**: effective, low-cost interventions; new research on attention and wellbeing.
+- **Losses**: practices stripped of ethics and context; little credit to Indian sources; commercialisation.
+- **Evidence**: moderate support for mindfulness programmes, smaller and less certain effects for yoga.
+
+### Conclusion
+A two-way exchange is now possible, with Indian researchers studying their own traditions rigorously.
+:::
+
+:::qa How would you design a rigorous study of the triguna model of personality? [advanced]
+### Short answer
+Define sattva, rajas and tamas carefully from the sources, build and validate a measure, test its structure and **incremental validity** over existing personality models, and test predictions with longitudinal or experimental designs.
+
+### Steps
+1. **Conceptual definition** with Sanskrit scholars.
+2. **Item writing** from texts and interviews.
+3. **Pilot and item analysis**.
+4. **Factor analysis**: do three factors appear?
+5. **Reliability**: internal consistency and test-retest.
+6. **Validity**: correlations with the Big Five, wellbeing and health behaviours.
+7. **Incremental validity**: does the guna measure predict outcomes beyond the Big Five?
+8. **Equivalence** across regions, languages and religions.
+9. **Change**: does a sattvic lifestyle programme raise sattva scores in a controlled trial?
+
+### Threats
+| Threat | Safeguard |
+|---|---|
+| Social desirability (everyone wants to be sattvic) | Indirect items, validity scales |
+| Hindu-specific framing | Neutral wording; test across groups |
+| Overlap with existing traits | Incremental validity analysis |
+
+### Contribution
+Turns a classical model into testable science.
+:::
+
+:::qa Define Indian psychology and critically evaluate its prospects as an academic field. (15 marks) [advanced]
+### Short answer
+Indian psychology is **psychology rooted in Indian traditions of thought and practice**, with consciousness at the centre and room for first-person, transformative methods. It has rich resources and growing institutional support, but must answer critiques of narrowness, testability and politics.
+
+### Answer plan
+1. **Definitions**: psychology in India, indigenous psychology, Indian psychology.
+2. **Sources**: Upanishads, darshanas, Gita, Buddhism, Jainism, Sufism, Bhakti, Integral Yoga.
+3. **Core ideas**: self, consciousness, gunas, koshas, pramanas, kleshas, non-attachment.
+4. **Methods**: textual study, first-person practice, empirical testing.
+5. **Contributions**: mindfulness, yoga therapy, anasakti, the nurturant-task leader, guru-chela therapy.
+6. **Institutional growth**: the Pondicherry Manifesto, courses, Indian Knowledge Systems in syllabi.
+7. **Critiques**: Sanskritic bias, essentialism, untestable claims, politicisation, isolation.
+8. **Conclusion**: strong prospects if pluralistic, critical and empirical.
+
+### Summary table
+| Strengths | Challenges |
+|---|---|
+| Deep theories of self and consciousness | Testing metaphysical claims |
+| Practices with evidence | Avoiding romanticism |
+| Cultural relevance | Including all Indian traditions |
+| Policy support | Keeping scholarship independent |
+:::
+
+:::qa Explain Dilthey's distinction between explaining and understanding and its relevance to research methods today. [advanced]
+### Short answer
+Dilthey argued that the **natural sciences explain** events through causal laws, while the **human sciences understand** meaning from within by interpreting experience in context. Psychology needs both, which is why it uses both quantitative and qualitative methods.
+
+### The distinction
+| Feature | Explaining (Erklären) | Understanding (Verstehen) |
+|---|---|---|
+| Goal | Causal laws | Meaning and intention |
+| Stance | Observer outside | Interpreter entering the perspective |
+| Methods | Experiments, measurement | Interpretation, narrative, phenomenology |
+| Modern heirs | Experimental and quantitative psychology | Qualitative, hermeneutic and cultural psychology |
+
+### Relevance today
+- **Mixed methods** combine both: measure symptom change, and interview patients about what change means.
+- **Indian psychology** adds self-understanding through first-person practice.
+
+### Example
+Studying grief in Varanasi: a survey can explain who develops prolonged grief; interviews can show what rituals at the ghats mean to mourners.
 :::
 
 ## 4.6 Module test [core]
