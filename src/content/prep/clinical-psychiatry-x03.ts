@@ -166,7 +166,7 @@ export const PART: PrepQuestion[] = [
   ar(
     "cpsy03-0013",
     "rdoc",
-    3,
+    2,
     "RDoC is not intended to replace DSM or ICD for clinical diagnosis at present.",
     "RDoC is a research framework that studies dimensions of functioning across units of analysis from genes to behaviour, independent of diagnostic categories.",
     0,
@@ -233,7 +233,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy03-0018",
     "schizophrenia-prognosis",
-    2,
+    1,
     "Which feature predicts a better outcome in schizophrenia?",
     ["Insidious onset in adolescence", "Prominent negative symptoms", "Acute onset with a clear precipitant", "Long duration of untreated psychosis"],
     2,
@@ -364,7 +364,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy03-0028",
     "first-episode-maintenance",
-    3,
+    2,
     "After full remission of a first episode of schizophrenia on an antipsychotic, guidelines most commonly recommend continuing treatment for at least",
     ["1 month", "3 months", "1 to 2 years", "Lifelong in every case"],
     2,
@@ -425,7 +425,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy03-0033",
     "expressed-emotion",
-    3,
+    2,
     "Which components make up expressed emotion as measured by the Camberwell Family Interview?",
     [
       "Warmth, positive remarks and acceptance of the patient",
@@ -451,7 +451,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy03-0035",
     "schizophrenia-epidemiology",
-    3,
+    2,
     "Which statement about the incidence of schizophrenia is best supported by systematic reviews?",
     [
       "Incidence is higher in men, urban dwellers and migrants",
@@ -526,7 +526,7 @@ export const PART: PrepQuestion[] = [
   mt(
     "cpsy03-0041",
     "psychosis-schools",
-    3,
+    2,
     "Match the clinician with the contribution to the concept of schizophrenia.",
     ["Emil Kraepelin", "Eugen Bleuler", "Kurt Schneider", "Tim Crow"],
     [

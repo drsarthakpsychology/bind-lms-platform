@@ -170,7 +170,7 @@ export const PART: PrepQuestion[] = [
   num(
     "cpsy07-0013",
     "paracetamol-overdose",
-    3,
+    2,
     "A 60 kg man has taken 30 tablets of paracetamol 500 mg. What dose has he taken in mg/kg?",
     ["150 mg/kg", "200 mg/kg", "250 mg/kg", "500 mg/kg"],
     2,
@@ -258,7 +258,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0019",
     "post-discharge-suicide",
-    3,
+    2,
     "When is the risk of suicide highest for psychiatric inpatients after discharge?",
     ["In the first week to month after discharge", "Between six and twelve months after discharge", "After five years", "Only on the day of discharge"],
     0,
@@ -268,7 +268,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0020",
     "media-guidelines",
-    2,
+    1,
     "The rise in suicides after sensational media reporting of a suicide is called the",
     ["Papageno effect", "Werther effect", "Hawthorne effect", "Pygmalion effect"],
     1,
@@ -288,7 +288,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0022",
     "anti-suicidal-drugs",
-    3,
+    2,
     "Which antipsychotic has trial evidence of reducing suicidal behaviour in schizophrenia?",
     ["Haloperidol", "Clozapine", "Aripiprazole", "Chlorpromazine"],
     1,
@@ -467,7 +467,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0035",
     "self-harm-repetition",
-    3,
+    2,
     "Roughly what proportion of people who present to hospital after self-harm repeat self-harm within a year?",
     ["Fewer than 1%", "About 15 to 25%", "About 60 to 70%", "About 90 to 95%"],
     1,
@@ -514,7 +514,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0039",
     "suicide-epidemiology-global",
-    2,
+    1,
     "According to WHO, most of the world's suicides occur in",
     ["high-income countries", "low- and middle-income countries", "Europe alone", "North America alone"],
     1,
@@ -575,7 +575,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy07-0044",
     "lethality",
-    3,
+    2,
     "Which method accounts for the largest share of recorded suicides in India in NCRB reports?",
     ["Hanging", "Self-immolation", "Drowning", "Jumping from height"],
     0,

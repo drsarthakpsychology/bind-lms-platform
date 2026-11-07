@@ -311,7 +311,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy12-0024",
     "rpwd-act",
-    2,
+    1,
     "Under the Rights of Persons with Disabilities Act 2016, a 'benchmark disability' means a person with not less than",
     ["20% of a specified disability", "40% of a specified disability", "60% of a specified disability", "75% of a specified disability"],
     1,
@@ -321,7 +321,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy12-0025",
     "disability-assessment",
-    3,
+    2,
     "Which instrument is used in India to assess and certify disability due to mental illness?",
     ["IDEAS", "Indian Scale for Assessment of Autism (ISAA)", "Global Assessment of Functioning", "Vineland Social Maturity Scale"],
     0,
@@ -331,7 +331,7 @@ export const PART: PrepQuestion[] = [
   st(
     "cpsy12-0026",
     "rpwd-act",
-    3,
+    2,
     "Which of the following are among the 21 specified disabilities in the Rights of Persons with Disabilities Act 2016?",
     ["Mental illness", "Autism spectrum disorder", "Specific learning disabilities", "Personality disorders as a separate category"],
     ["1 and 2 only", "2, 3 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
@@ -373,7 +373,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy12-0029",
     "malingering-assessment",
-    3,
+    2,
     "Which instrument is specifically designed to assess feigned psychiatric symptoms?",
     ["Structured Interview of Reported Symptoms", "Beck Depression Inventory", "Mini-Mental State Examination", "Positive and Negative Syndrome Scale"],
     0,
@@ -591,7 +591,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy12-0045",
     "mhrb",
-    2,
+    1,
     "Which body reviews supported admissions and hears complaints about violation of rights under the Mental Healthcare Act 2017?",
     ["The Mental Health Review Board", "The Medical Council of India", "The State Human Rights Commission only", "The district police"],
     0,

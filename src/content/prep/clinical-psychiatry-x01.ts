@@ -113,7 +113,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0009",
     "extracampine-hallucination",
-    2,
+    1,
     "A man admitted in Ahmedabad insists that he can clearly hear his brother talking in a house in Kolkata. This is",
     ["an extracampine hallucination", "a hypnopompic hallucination", "thought broadcasting", "a felt hallucination of presence"],
     0,
@@ -148,7 +148,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0012",
     "lilliputian-hallucination",
-    2,
+    1,
     "Lilliputian hallucinations are most characteristically seen in",
     ["temporal lobe epilepsy", "paranoid schizophrenia", "alcohol withdrawal delirium", "severe psychotic depression"],
     2,
@@ -376,7 +376,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0029",
     "affect",
-    2,
+    1,
     "A man with schizophrenia giggles while describing his mother's recent death and says he is very sad about it. This is best described as",
     ["blunted affect", "emotional lability", "incongruous affect", "euphoria"],
     2,
@@ -579,7 +579,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0045",
     "hallucination-of-presence",
-    3,
+    2,
     "A recently widowed woman repeatedly feels that someone is standing behind her in the kitchen, though she sees and hears no one. In Jaspers' terms this is",
     ["concrete awareness of a presence", "a true visual hallucination seen behind her", "a functional hallucination triggered by noise", "a delusion of reference about her husband"],
     0,
@@ -589,7 +589,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0046",
     "concrete-thinking",
-    2,
+    1,
     "Asked the meaning of 'people in glass houses should not throw stones', a patient replies, 'Because the glass will break.' This is an example of",
     ["tangential thinking", "over-inclusion", "thought blocking", "concrete thinking"],
     3,
@@ -599,7 +599,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy01-0047",
     "pareidolia",
-    3,
+    2,
     "Which feature distinguishes pareidolia from other illusions?",
     [
       "It disappears as soon as the person turns close attention towards it",

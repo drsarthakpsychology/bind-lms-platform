@@ -43,7 +43,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0004",
     "insomnia-treatment",
-    2,
+    1,
     "What is the recommended first-line treatment for chronic insomnia disorder in adults?",
     ["Long-term zolpidem at night", "CBT for insomnia (CBT-I)", "Low-dose quetiapine at night", "Sleep hygiene advice alone"],
     1,
@@ -53,7 +53,7 @@ export const PART: PrepQuestion[] = [
   st(
     "cpsy11-0005",
     "cbt-i",
-    3,
+    2,
     "Which instructions belong to stimulus control therapy for insomnia?",
     [
       "Go to bed only when sleepy",
@@ -69,7 +69,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0006",
     "narcolepsy",
-    2,
+    1,
     "Sudden bilateral loss of muscle tone triggered by laughter, with preserved consciousness, is",
     ["cataplexy", "sleep paralysis", "a drop attack from vertebrobasilar ischaemia", "a functional seizure"],
     0,
@@ -224,7 +224,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0018",
     "seizure-threshold",
-    3,
+    2,
     "Which psychotropic drug carries the highest dose-related risk of seizures?",
     ["Sertraline", "Haloperidol", "Clozapine", "Lithium at therapeutic levels"],
     2,
@@ -312,7 +312,7 @@ export const PART: PrepQuestion[] = [
   num(
     "cpsy11-0025",
     "huntington-genetics",
-    3,
+    2,
     "A healthy 30-year-old woman's father has Huntington's disease. Before any testing, what is her risk of carrying the expanded allele?",
     ["25%", "50%", "75%", "100%"],
     1,
@@ -374,7 +374,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0030",
     "nph",
-    2,
+    1,
     "Which triad defines normal pressure hydrocephalus?",
     [
       "Headache, papilloedema and early-morning vomiting",
@@ -468,7 +468,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0037",
     "ms-psychiatry",
-    3,
+    2,
     "Which neuropsychiatric feature is most common across the course of multiple sclerosis?",
     ["Mania", "Psychosis", "Depression", "Euphoria"],
     2,
@@ -478,7 +478,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy11-0038",
     "tardive-dyskinesia",
-    3,
+    2,
     "Which drug class has regulatory approval specifically for tardive dyskinesia?",
     ["Anticholinergics such as trihexyphenidyl", "VMAT2 inhibitors such as valbenazine", "Beta-blockers", "Dopamine agonists"],
     1,

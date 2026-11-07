@@ -38,7 +38,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0003",
     "gad",
-    2,
+    1,
     "Which drug class is a recommended first-line drug treatment for generalised anxiety disorder?",
     ["Long-term benzodiazepines", "Beta-blockers such as propranolol", "Typical antipsychotics at low dose", "SSRIs such as sertraline"],
     3,
@@ -114,7 +114,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0009",
     "trichotillomania",
-    3,
+    2,
     "Which psychological treatment has the best evidence for trichotillomania?",
     ["Habit reversal training", "Psychoanalytic psychotherapy", "Eye movement desensitisation and reprocessing", "Supportive counselling alone"],
     0,
@@ -210,7 +210,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0016",
     "ptsd-treatment",
-    3,
+    2,
     "Which drug treatment for PTSD should generally be avoided?",
     ["Sertraline at full dose", "Venlafaxine extended release", "Routine benzodiazepines", "Paroxetine at full dose"],
     2,
@@ -230,7 +230,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0018",
     "adjustment-disorder",
-    2,
+    1,
     "In DSM-5-TR adjustment disorder, symptoms must begin within what period after the stressor?",
     ["1 week", "1 month", "3 months", "6 months"],
     2,
@@ -240,7 +240,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0019",
     "dissociative-disorders",
-    3,
+    2,
     "Which feature is required for dissociative identity disorder in DSM-5-TR?",
     [
       "Two or more distinct personality states, with recurrent gaps in recall",
@@ -271,7 +271,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0021",
     "anorexia-severity",
-    2,
+    1,
     "In DSM-5-TR, severity of anorexia nervosa in adults is graded by",
     ["number of binge episodes per week", "frequency of compensatory behaviour", "number of missed menstrual periods", "body mass index"],
     3,
@@ -297,7 +297,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0023",
     "anorexia-treatment",
-    3,
+    2,
     "For a 15-year-old girl with anorexia nervosa who lives with her parents, which psychological treatment has the strongest evidence?",
     [
       "Individual psychodynamic therapy without family involvement",
@@ -352,7 +352,7 @@ export const PART: PrepQuestion[] = [
   mt(
     "cpsy05-0028",
     "personality-therapies",
-    3,
+    2,
     "Match the psychotherapy for borderline personality disorder with its developer.",
     ["Dialectical behaviour therapy", "Mentalisation-based treatment", "Transference-focused psychotherapy", "Schema therapy"],
     ["Otto Kernberg", "Marsha Linehan", "Jeffrey Young", "Anthony Bateman and Peter Fonagy"],
@@ -477,7 +477,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0037",
     "sexual-dysfunction",
-    3,
+    2,
     "A 55-year-old man with angina who uses sublingual nitroglycerin asks for sildenafil for erectile dysfunction. What is the main concern?",
     [
       "Sildenafil causes QT prolongation in all patients",
@@ -492,7 +492,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0038",
     "premature-ejaculation",
-    3,
+    2,
     "In DSM-5-TR, premature (early) ejaculation during partnered vaginal sex is defined as ejaculation within approximately",
     ["30 seconds of penetration", "5 minutes of penetration", "3 minutes of penetration", "1 minute of penetration"],
     3,
@@ -502,7 +502,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy05-0039",
     "sensate-focus",
-    2,
+    1,
     "Sensate focus, used in sex therapy for many sexual dysfunctions, was developed by",
     ["Masters and Johnson", "Helen Singer Kaplan alone", "Alfred Kinsey", "Havelock Ellis"],
     0,

@@ -78,7 +78,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0007",
     "judgement",
-    2,
+    1,
     "Asking a patient what he would do if he found a sealed, stamped, addressed envelope on the street assesses",
     ["personal judgement", "abstract reasoning", "social judgement", "test judgement"],
     3,
@@ -149,7 +149,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0013",
     "pseudobulbar-affect",
-    3,
+    2,
     "A woman with multiple sclerosis has sudden bouts of crying lasting a few seconds, provoked by trivial events, which she says do not match how she feels. She denies low mood. Which treatment has regulatory approval specifically for this condition?",
     ["Dextromethorphan with quinidine", "Lithium carbonate at low serum levels", "Lamotrigine", "Clonazepam"],
     0,
@@ -179,7 +179,7 @@ export const PART: PrepQuestion[] = [
   mt(
     "cpsy02-0016",
     "speech-repetition",
-    3,
+    2,
     "Match the speech phenomenon with its description.",
     ["Echolalia", "Palilalia", "Logoclonia", "Coprolalia"],
     [
@@ -238,7 +238,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0020",
     "koro",
-    2,
+    1,
     "In 1982 an epidemic of fear that the penis was shrinking and retracting into the abdomen, with dread of death, was reported in north-east India. This syndrome is",
     ["Dhat", "Amok", "Latah", "Koro"],
     3,
@@ -310,7 +310,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0026",
     "gerstmann",
-    2,
+    1,
     "Finger agnosia, acalculia, agraphia and left-right disorientation together localise to the",
     ["right angular gyrus", "left angular gyrus", "bilateral medial temporal lobes", "left inferior frontal gyrus"],
     1,
@@ -346,7 +346,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0029",
     "frontal-release-signs",
-    2,
+    1,
     "Repeated tapping on the forehead between the eyebrows produces continued blinking that does not habituate. This sign is called the",
     ["palmomental reflex", "Myerson sign (glabellar tap)", "snout (pout) reflex", "Chvostek sign of hypocalcaemia"],
     1,
@@ -426,7 +426,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0035",
     "delusional-infestation",
-    3,
+    2,
     "A 64-year-old woman brings small boxes of skin flakes and threads, saying they are parasites from her skin. Dermatology finds no infestation. The 'specimen sign' points most strongly to",
     ["scabies with secondary eczematous change", "factitious disorder imposed on self", "obsessive-compulsive disorder", "delusional infestation (Ekbom syndrome)"],
     3,
@@ -524,7 +524,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0043",
     "catatonia-signs",
-    3,
+    2,
     "Which catatonic sign is assessed by asking the patient to resist while the examiner moves the arm, and finding the arm can be moved but resistance matches the force used?",
     ["Mitmachen", "Waxy flexibility", "Gegenhalten", "Rigidity"],
     2,
@@ -580,7 +580,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0047",
     "abulia",
-    3,
+    2,
     "Abulia is best defined as",
     [
       "loss of initiative and spontaneous action, as after frontal damage",
@@ -611,7 +611,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy02-0049",
     "speech-latency",
-    3,
+    2,
     "In which condition is increased latency of response with low-volume, monotonous speech most characteristic?",
     ["Hypomania", "Depression with psychomotor retardation", "Generalised anxiety disorder", "Histrionic personality disorder under stress"],
     1,

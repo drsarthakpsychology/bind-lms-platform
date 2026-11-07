@@ -73,7 +73,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0007",
     "alcohol-withdrawal-timeline",
-    2,
+    1,
     "After the last drink in a dependent drinker, alcohol withdrawal seizures most commonly occur within",
     ["6 to 48 hours", "5 to 7 days", "2 to 3 weeks", "the first hour"],
     0,
@@ -93,7 +93,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0009",
     "alcohol-detox-liver",
-    3,
+    2,
     "A man with alcohol dependence and decompensated cirrhosis with jaundice needs medically assisted withdrawal. Which benzodiazepine is preferred?",
     ["Chlordiazepoxide", "Diazepam", "Lorazepam", "Clonazepam"],
     2,
@@ -131,7 +131,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0012",
     "alcohol-biomarkers",
-    3,
+    2,
     "Which blood marker is most specific for sustained heavy drinking over the previous few weeks?",
     ["Gamma-glutamyl transferase", "Mean corpuscular volume", "Serum AST", "Carbohydrate-deficient transferrin"],
     3,
@@ -231,7 +231,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0019",
     "opioid-overdose",
-    2,
+    1,
     "A young man is found unresponsive with pinpoint pupils and a respiratory rate of 4 per minute after injecting heroin. The first drug to give is",
     ["Flumazenil", "Naloxone", "Physostigmine", "Atropine"],
     1,
@@ -256,7 +256,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0021",
     "cannabis-hyperemesis",
-    3,
+    2,
     "A 24-year-old daily cannabis user has recurrent episodes of severe vomiting relieved only by long hot showers. What is the most effective long-term treatment?",
     ["Ondansetron prophylaxis", "Stopping cannabis use", "Increasing cannabis dose", "Proton pump inhibitor"],
     1,
@@ -276,7 +276,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0023",
     "stimulant-treatment",
-    3,
+    2,
     "Which intervention has the strongest evidence for cocaine and methamphetamine use disorders?",
     ["Disulfiram", "Methadone", "Contingency management", "Naltrexone implants"],
     2,
@@ -394,7 +394,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0032",
     "inhalants",
-    3,
+    2,
     "A 13-year-old street child in Mumbai sniffs correction fluid ('whitener') daily. Which acute danger is most important to explain?",
     [
       "Sudden sniffing death from cardiac arrhythmia",
@@ -409,7 +409,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0033",
     "gambling-disorder",
-    2,
+    1,
     "Where is gambling disorder classified in DSM-5-TR?",
     [
       "Under impulse control disorders",
@@ -491,7 +491,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0039",
     "harm-reduction",
-    3,
+    2,
     "In India, which agency supports needle and syringe exchange and opioid substitution therapy for people who inject drugs as part of HIV prevention?",
     ["National AIDS Control Organisation", "Narcotics Control Bureau", "Central Board of Film Certification", "Indian Council of Medical Research only"],
     0,
@@ -603,7 +603,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy10-0049",
     "addiction-neurobiology",
-    3,
+    2,
     "Which brain pathway is most implicated in the rewarding effects of drugs of abuse?",
     [
       "Mesolimbic dopamine pathway to the nucleus accumbens",

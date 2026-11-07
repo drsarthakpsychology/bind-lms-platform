@@ -90,7 +90,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0008",
     "autism-criteria",
-    2,
+    1,
     "DSM-5-TR autism spectrum disorder requires deficits in social communication plus restricted, repetitive behaviours. How many restricted or repetitive features are required?",
     ["All four", "At least two of four", "At least one of four", "At least three of four"],
     1,
@@ -110,7 +110,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0010",
     "autism-india",
-    3,
+    2,
     "Which instrument is used in India for assessing autism for disability certification under the Rights of Persons with Disabilities Act?",
     ["Indian Scale for Assessment of Autism (ISAA)", "ADOS-2 alone", "Vineland Social Maturity Scale alone", "Conners rating scale"],
     0,
@@ -120,7 +120,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0011",
     "autism-irritability",
-    3,
+    2,
     "Which drugs have regulatory approval for irritability associated with autism in children?",
     ["Methylphenidate and atomoxetine", "Fluoxetine and sertraline", "Risperidone and aripiprazole", "Melatonin and clonidine"],
     2,
@@ -177,7 +177,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0015",
     "conduct-treatment",
-    3,
+    2,
     "Which intervention has the strongest evidence for children aged 3 to 11 with conduct problems?",
     ["Group parent management training", "Individual psychodynamic play therapy", "Antipsychotic medication", "Boot camps and scared-straight programmes"],
     0,
@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0017",
     "tourette",
-    2,
+    1,
     "Which is required for Tourette's disorder in DSM-5-TR?",
     [
       "Motor tics alone, present on most days for at least 6 months",
@@ -257,7 +257,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0022",
     "enuresis-treatment",
-    3,
+    2,
     "Which treatment for nocturnal enuresis has the lowest relapse rate after it is stopped?",
     ["Enuresis alarm", "Desmopressin", "Imipramine", "Oxybutynin"],
     0,
@@ -320,7 +320,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0027",
     "down-syndrome",
-    3,
+    2,
     "Adults with Down syndrome have a markedly increased risk of early-onset Alzheimer's disease mainly because",
     [
       "they have an extra copy of the APP gene on chromosome 21",
@@ -381,7 +381,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0032",
     "antidepressant-warning",
-    3,
+    2,
     "The regulatory boxed warning on antidepressants concerns increased suicidal thinking and behaviour in which age group?",
     ["People under 25 years", "People over 65 years", "Only children under 12 years", "Only adults with bipolar disorder"],
     0,
@@ -501,7 +501,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy08-0041",
     "adhd-adults",
-    3,
+    2,
     "Which statement about adult ADHD is correct?",
     [
       "ADHD always remits by the end of adolescence",
@@ -576,7 +576,7 @@ export const PART: PrepQuestion[] = [
   st(
     "cpsy08-0047",
     "child-abuse",
-    3,
+    2,
     "Which findings should raise concern about non-accidental injury in a young child?",
     [
       "Bruises on a non-mobile infant",

@@ -58,7 +58,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0005",
     "psychotic-depression",
-    3,
+    2,
     "For a 62-year-old man with major depression with mood-congruent delusions of guilt, who is eating and drinking adequately, the best evidence-based drug treatment is",
     [
       "antidepressant monotherapy at a high dose",
@@ -139,7 +139,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0011",
     "lithium-interactions",
-    2,
+    1,
     "Which drug is most likely to lower serum lithium levels?",
     ["Ibuprofen", "Enalapril", "Hydrochlorothiazide", "Theophylline"],
     3,
@@ -207,7 +207,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0016",
     "bipolar-depression",
-    3,
+    2,
     "For acute bipolar I depression, which treatment has the weakest support and the greatest risk of switching into mania?",
     ["Quetiapine", "Lurasidone", "Antidepressant monotherapy", "Olanzapine-fluoxetine combination"],
     2,
@@ -252,7 +252,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0020",
     "bipolar-diagnosis",
-    2,
+    1,
     "Which minimum durations does DSM-5-TR require for a manic and a hypomanic episode?",
     [
       "Manic 4 days or longer; hypomanic 7 days or longer",
@@ -363,7 +363,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0028",
     "pmdd",
-    2,
+    1,
     "Premenstrual dysphoric disorder is classified in DSM-5-TR under",
     ["anxiety disorders", "depressive disorders", "somatic symptom disorders", "sexual dysfunctions"],
     1,
@@ -471,7 +471,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0036",
     "tms",
-    3,
+    2,
     "Which adverse effect is the most serious, though rare, risk of repetitive transcranial magnetic stimulation?",
     ["Retrograde amnesia", "Seizure", "Hypertensive crisis", "Agranulocytosis"],
     1,
@@ -644,7 +644,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy04-0049",
     "melancholia",
-    3,
+    2,
     "Which treatment is most consistently found to be especially effective for severe melancholic depression compared with non-melancholic depression?",
     ["Supportive counselling", "Electroconvulsive therapy", "Behavioural activation alone", "Bright light therapy"],
     1,

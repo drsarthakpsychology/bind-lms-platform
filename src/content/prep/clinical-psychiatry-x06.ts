@@ -99,7 +99,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0008",
     "nms",
-    2,
+    1,
     "Which feature is most characteristic of neuroleptic malignant syndrome?",
     ["Myoclonus and hyperreflexia", "Lead-pipe rigidity", "Dilated pupils and dry skin", "Diarrhoea and shivering"],
     1,
@@ -187,7 +187,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0015",
     "pancreatic-cancer",
-    3,
+    2,
     "Which cancer is particularly associated with depression that may precede the diagnosis of the tumour?",
     ["Basal cell carcinoma of the skin", "Carcinoma of the pancreas", "Carcinoma of the thyroid", "Testicular seminoma"],
     1,
@@ -306,7 +306,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0025",
     "perinatal-prescribing",
-    3,
+    2,
     "A breastfeeding mother with moderate postnatal depression needs an antidepressant. Which is usually preferred because of low transfer to the infant?",
     ["Fluoxetine", "Sertraline", "Doxepin", "Citalopram at high dose"],
     1,
@@ -446,7 +446,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0036",
     "anticholinergic-burden",
-    3,
+    2,
     "Which drug in an older patient's list contributes most to anticholinergic burden?",
     ["Paracetamol", "Amlodipine", "Amitriptyline", "Metformin"],
     2,
@@ -507,7 +507,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0041",
     "neurosyphilis",
-    3,
+    2,
     "Which CSF test, when positive, is highly specific for neurosyphilis?",
     ["CSF VDRL", "CSF glucose", "CSF protein", "CSF lymphocyte count"],
     0,
@@ -517,7 +517,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0042",
     "hepatic-encephalopathy",
-    2,
+    1,
     "Which sign is characteristic of hepatic encephalopathy?",
     ["Asterixis (flapping tremor)", "Resting pill-rolling tremor", "Chorea of the limbs", "Spontaneous clonus at the ankles"],
     0,
@@ -537,7 +537,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0044",
     "hiv-depression",
-    3,
+    2,
     "In a person living with HIV who has depression, which antiretroviral is most often linked to neuropsychiatric adverse effects that may need a change in regimen?",
     ["Tenofovir", "Efavirenz", "Lamivudine", "Emtricitabine"],
     1,
@@ -605,7 +605,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy06-0049",
     "chronic-pain",
-    3,
+    2,
     "Which antidepressant class has the best evidence for neuropathic pain, independent of an effect on mood?",
     ["Tricyclics and SNRIs", "SSRIs such as fluoxetine", "Monoamine oxidase inhibitors", "Mirtazapine at night"],
     0,

@@ -33,7 +33,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy09-0003",
     "apoe",
-    3,
+    2,
     "Compared with people without an APOE e4 allele, people with two copies have roughly what increase in risk of Alzheimer's disease?",
     ["About 8 to 12 times", "About 1.2 times", "No increase", "About 100 times"],
     0,
@@ -43,7 +43,7 @@ export const PART: PrepQuestion[] = [
   mt(
     "cpsy09-0004",
     "dementia-drugs",
-    3,
+    2,
     "Match the anti-dementia drug with its mechanism.",
     ["Donepezil", "Galantamine", "Memantine", "Lecanemab"],
     [
@@ -331,7 +331,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy09-0027",
     "memantine",
-    2,
+    1,
     "Memantine is licensed mainly for",
     [
       "mild cognitive impairment",
@@ -463,7 +463,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy09-0037",
     "rivastigmine",
-    3,
+    2,
     "Which cholinesterase inhibitor is approved for Parkinson's disease dementia and is available as a transdermal patch?",
     ["Donepezil", "Galantamine", "Memantine", "Rivastigmine"],
     3,
@@ -500,7 +500,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy09-0040",
     "falls-psychotropics",
-    3,
+    2,
     "Which class of psychotropic drug is most consistently associated with falls and hip fractures in older people?",
     ["Benzodiazepines and Z-drugs", "Cholinesterase inhibitors", "Lithium at low levels", "Melatonin"],
     0,
@@ -571,7 +571,7 @@ export const PART: PrepQuestion[] = [
   mcq(
     "cpsy09-0046",
     "hyponatraemia-elderly",
-    3,
+    2,
     "Which antidepressant is least likely to cause hyponatraemia in an older adult with a previous SSRI-induced low sodium?",
     ["Sertraline", "Venlafaxine", "Citalopram", "Mirtazapine"],
     3,
