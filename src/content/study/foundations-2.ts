@@ -12,7 +12,7 @@ Modern academic psychology reached India through **colonial universities** that 
 | **1915 to 1916** | With the support of vice-chancellor **Sir Ashutosh Mukherjee**, the laboratory became a **Department of Experimental Psychology** (from 1916), usually described as the **first psychology department in India**, under **N. N. Sengupta** |
 | **1922** | **Girindrasekhar Bose** founded the **Indian Psychoanalytical Society** in Calcutta |
 | **1923** | The **Indian Science Congress** gave psychology its own section |
-| **1924 to 1925** | The **Indian Psychological Association** was founded (sources give both years); the **Indian Journal of Psychology** followed in 1926 |
+| **1924 to 1925** | The **Indian Psychological Association** was founded in 1924; the **Indian Journal of Psychology** followed in 1925 |
 | **1920s** | **M. V. Gopalaswamy**, trained with Spearman in London, built psychology at **Mysore**, including what is often called India's first animal laboratory |
 | **1938** | An **Applied Psychology** wing opened at Calcutta under Bose |
 | **1940** | Bose opened the **Lumbini Park Mental Hospital** in Calcutta; the journal **Samiksha** began in 1947 |

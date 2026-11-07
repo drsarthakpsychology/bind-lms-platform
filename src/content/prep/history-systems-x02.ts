@@ -132,9 +132,9 @@ export const QUESTIONS_X02: PrepQuestion[] = [
     { exams: NM, ref: "Sengupta & Mukerjee 1928; Sinha 1986" }),
 
   mcq("hisx-072", "india-history", 3,
-    "The Indian Psychological Association was founded in 1925. In the following year it",
+    "The Indian Psychological Association was founded in 1924. In the following year it",
     ["opened the mental hospital that became NIMHANS", "began publishing the Indian Journal of Psychology", "secured passage of the Rehabilitation Council Act", "set up India's first laboratory, at Calcutta"], 1,
-    "The Indian Journal of Psychology started in 1926, with Girindrasekhar Bose closely involved, and became the main early outlet for Indian research. NIMHANS was formed in 1974. The RCI Act was passed by Parliament in 1992. The Calcutta laboratory began in 1915 to 1916.",
+    "The Indian Journal of Psychology started in 1925, with Girindrasekhar Bose closely involved, and became the main early outlet for Indian research. NIMHANS was formed in 1974. The RCI Act was passed by Parliament in 1992. The Calcutta laboratory began in 1915 to 1916.",
     { exams: NM, ref: "Sinha 1986; Dalal & Misra 2010" }),
 
   mcq("hisx-073", "india-history", 2,
@@ -267,11 +267,11 @@ export const QUESTIONS_X02: PrepQuestion[] = [
     [
       "Grew from the European Mental Hospital opened in 1918",
       "Became a statutory body under an Act of Parliament in 1992",
-      "Founded in 1925, with its journal starting the next year",
+      "Founded in 1924, with its journal starting the next year",
       "Founded in Calcutta in 1922 by Girindrasekhar Bose",
     ],
     ["A-III, B-IV, C-II, D-I", "A-IV, B-II, C-III, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"], 3,
-    "Indian Psychoanalytical Society: Bose, 1922 (A-IV). Indian Psychological Association: 1925 (B-III). RCI: statutory under the 1992 Act (C-II). CIP Ranchi: from the 1918 European Mental Hospital (D-I). A-III, B-IV, C-II, D-I swaps the two societies. A-IV, B-II, C-III, D-I swaps the Association and the RCI. A-IV, B-III, C-I, D-II swaps the RCI and Ranchi.",
+    "Indian Psychoanalytical Society: Bose, 1922 (A-IV). Indian Psychological Association: 1924 (B-III). RCI: statutory under the 1992 Act (C-II). CIP Ranchi: from the 1918 European Mental Hospital (D-I). A-III, B-IV, C-II, D-I swaps the two societies. A-IV, B-II, C-III, D-I swaps the Association and the RCI. A-IV, B-III, C-I, D-II swaps the RCI and Ranchi.",
     { exams: NMS, ref: "Sinha 1986; RCI Act 1992" }),
 
   mt("hisx-091", "cognitive-revolution", 3,
@@ -314,13 +314,13 @@ export const QUESTIONS_X02: PrepQuestion[] = [
   st("hisx-094", "india-history", 4,
     "Which statements about early organised psychology in India are correct?",
     [
-      "The Indian Psychological Association was founded in 1925.",
+      "The Indian Psychological Association was founded in 1924.",
       "N. N. Sengupta and Radhakamal Mukerjee wrote an early textbook of social psychology.",
-      "The Indian Journal of Psychology began publication in 1926.",
+      "The Indian Journal of Psychology began publication in 1925.",
       "Psychology had no place at the Indian Science Congress until after independence.",
     ],
     ["1, 2 and 3 only", "1 and 3 only", "2, 3 and 4 only", "1, 2 and 4 only"], 0,
-    "Statements 1 to 3 are correct. Statement 4 is wrong: psychology gained its own section in the Indian Science Congress in the 1920s, and the Indian Psychological Association grew out of these meetings.",
+    "Statements 1 to 3 are correct. Statement 4 is wrong: psychology gained its own section in the Indian Science Congress in 1923, and the Indian Psychological Association grew out of these meetings.",
     { exams: NM, ref: "Sinha 1986; Dalal & Misra 2010" }),
 
   st("hisx-095", "early-figures", 3,

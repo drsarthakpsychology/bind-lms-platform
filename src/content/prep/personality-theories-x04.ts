@@ -156,7 +156,7 @@ export const QUESTIONS_X04: PrepQuestion[] = [
     { exams: NM, ref: "James 1998; James et al. 2005" }),
 
   mcq("perx-176", "biological-approaches", 4,
-    "Twin studies estimate the heritability of Big Five traits at about 40%, but genome-wide studies of common genetic variants (SNP heritability) give much lower estimates, often around 10 to 15%. This gap is best described as",
+    "Twin studies estimate the heritability of Big Five traits at about 40%, but genome-wide studies of common genetic variants (SNP heritability) give much lower estimates, usually 20% or less and near zero for some traits. This gap is best described as",
     ["proof that all earlier twin studies were fraudulent", "evidence that personality is shaped entirely by environment", "evidence that a single gene controls each major trait", "a 'missing heritability' gap with several likely causes"], 3,
     "SNP heritability captures only additive effects of common variants, while twin designs also capture rare variants and some non-additive effects; violations of the equal environments assumption may inflate twin estimates. Fraud is not implied. Both methods show some genetic influence, so personality is not entirely environmental. Many genes of tiny effect, not single genes, are involved.",
     { exams: NM, ref: "Vukasović & Bratko 2015; Power & Pluess 2015" }),
@@ -188,7 +188,7 @@ export const QUESTIONS_X04: PrepQuestion[] = [
   num("perx-181", "personality-assessment", 2,
     "On the MMPI-2, T ≥ 65 is the usual threshold for a clinically elevated scale. If T-scores were normally distributed, about what percentile does T = 65 correspond to?",
     ["65th", "93rd", "84th", "98th"], 1,
-    "T = 65 is z = 1.5, and about 93% of a normal distribution lies below z = 1.5. 65th confuses the T value with a percentile. 84th corresponds to z = 1, a T of 60. 98th corresponds to z = 2, a T of 70. The MMPI-2 uses uniform T-scores, so this is an approximation.",
+    "T = 65 is z = 1.5, and about 93% of a normal distribution lies below z = 1.5. 65th confuses the T value with a percentile. 84th corresponds to z = 1, a T of 60. 98th corresponds to z = 2, a T of 70. The MMPI-2 clinical and content scales actually use uniform T scores, which are not normally distributed; in the published norms a uniform T of 65 falls at about the 92nd percentile, close to the normal value.",
     { exams: NMS, ref: "Tellegen & Ben-Porath 1992" }),
 
   num("perx-182", "personality-assessment", 4,
@@ -343,7 +343,7 @@ export const QUESTIONS_X04: PrepQuestion[] = [
     { exams: MD, ref: "Arbisi & Ben-Porath 1995; Rogers et al. 2003" }),
 
   ps("perx-198", "applied", 3,
-    "A Hyderabad bank studies 300 new relationship managers. Self-rated conscientiousness correlates 0.18 with supervisor ratings of performance a year later. Conscientiousness rated by three colleagues correlates 0.29 with the same performance ratings. Adding colleague ratings to self-ratings raises the multiple correlation from 0.18 to 0.31. Colleagues and supervisors both observe the managers' daily work.",
+    "In a hypothetical study with illustrative figures, a Hyderabad bank follows 300 new relationship managers. Self-rated conscientiousness correlates 0.18 with supervisor ratings of performance a year later. Conscientiousness rated by three colleagues correlates 0.29 with the same performance ratings. Adding colleague ratings to self-ratings raises the multiple correlation from 0.18 to 0.31. Colleagues and supervisors both observe the managers' daily work.",
     "Which conclusion is best supported?",
     ["Colleague ratings added prediction, though shared observation may inflate it", "Self-ratings of conscientiousness are useless for predicting performance", "Colleague ratings are always biased and should be ignored by the bank", "Conscientiousness, however rated, does not relate to job performance"], 0,
     "Other-ratings predicted better and added incremental validity, in line with meta-analytic findings, but because colleagues and supervisors watch the same behaviour, some of the gain may reflect shared impressions rather than trait accuracy. Self-ratings still predicted performance. Ignoring colleague ratings throws away valid information. Both measures related to performance.",
@@ -357,7 +357,7 @@ export const QUESTIONS_X04: PrepQuestion[] = [
     { exams: NM, ref: "Revelle, Humphreys, Simon & Gilliland 1980" }),
 
   ps("perx-200", "personality-assessment", 3,
-    "A company compares job applicants with existing employees on the same conscientiousness scale. Applicants score about 0.6 SD higher on average. The correlation between scores and later performance is 0.20 among applicants and 0.22 among employees. Among applicants in the top 10% of scores, a large share also have very high impression management scores.",
+    "In a hypothetical example with illustrative figures, a company compares job applicants with existing employees on the same conscientiousness scale. Applicants score about 0.6 SD higher on average. The correlation between scores and later performance is 0.20 among applicants and 0.22 among employees. Among applicants in the top 10% of scores, a large share also have very high impression management scores.",
     "Which conclusion is best supported?",
     ["Applicants are truly far more conscientious than employees", "Faking likely raised scores and may alter who is selected", "The scale has no validity at all among job applicants", "Impression management scores show the scale measures intelligence"], 1,
     "The higher applicant mean and the cluster of high impression management scores at the top suggest faking, which can alter who is chosen at a strict cut-off even when validity coefficients stay similar. A true difference of this size in a self-selected applicant group is unlikely. Validity was 0.20, close to that of employees. Impression management is not an ability measure.",
