@@ -10,6 +10,8 @@ import { apply, botMove, newGame, progress, runBots, type Card, type Event, type
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
+import { askHint } from "@/lib/hints/actions";
 
 type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[] }) => Promise<{ ok: boolean; xp: number }>;
 
@@ -93,6 +95,9 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
   const rival: 0 | 1 = me === 0 ? 1 : 0;
   const [sel, setSel] = React.useState<string | null>(null);
   const sent = React.useRef(false);
+  const [hints, setHints] = useHintStatus();
+  /** Hints are for you against the bot only: turn number → what the hint said. */
+  const [hinted, setHinted] = React.useState<Record<number, string>>({});
 
   const botTurn = g.winner === null && !!g.seats[g.turn].bot;
   React.useEffect(() => {
@@ -189,6 +194,22 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
               </li>
             ))}
           </ul>
+          {!pass && !botTurn ? (
+            <div className="flex flex-wrap items-center gap-2">
+              <HintBar
+                status={hints}
+                onStatus={setHints}
+                used={hinted[g.moves] !== undefined}
+                label="Show a card that fits"
+                ask={() => askHint({ game: "comorbid", run: play.setup.seed, level: play.setup.level, moves: play.moves })}
+                onGive={(h) => {
+                  setHinted((x) => ({ ...x, [g.moves]: h.text }));
+                  if (h.pick) setSel(h.pick);
+                }}
+              />
+              {hinted[g.moves] ? <span className="text-small font-semibold">{hinted[g.moves]}</span> : null}
+            </div>
+          ) : null}
           <div className="grid gap-2 sm:grid-cols-2">
             <Btn variant="primary" size="lg" disabled={!selCard || botTurn} onClick={() => selCard && commit({ uid: selCard.uid, action: "play" })}>
               {selCard ? playLabel(selCard, g.seats[rival]) : "Pick a card to play"} <Kbd>Enter</Kbd>

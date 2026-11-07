@@ -1,4 +1,5 @@
 import { addDays, daysBetween, liveStreak, type LearnState } from "@/lib/learn/engine";
+import { BUY_COST } from "@/lib/hints/rules";
 
 /**
  * The XP shop (owner decision 32). XP you earn can be spent; spending writes
@@ -19,7 +20,7 @@ export type LookId = keyof typeof LOOKS;
 
 export const SHOP = {
   streak_repair: { label: "Streak repair", cost: 60, text: "Brings back a streak you lost in the last 2 days. One a week." },
-  hints_3: { label: "3 extra hints", cost: 30, text: "For when today's free hints are used up." },
+  hints_3: { label: "3 extra hints", cost: BUY_COST, text: "3 more hints for today. One buy a day." },
   bonus_case: { label: "Bonus challenge", cost: 80, text: "One extra hard case this week." },
 } as const;
 
@@ -27,7 +28,7 @@ export const SHOP = {
  * Items whose game side isn't switched on yet. The shop shows them as
  * "Coming soon" instead of taking XP for something that does nothing.
  */
-export const SHOP_READY: Record<keyof typeof SHOP, boolean> = { streak_repair: true, hints_3: false, bonus_case: false };
+export const SHOP_READY: Record<keyof typeof SHOP, boolean> = { streak_repair: true, hints_3: true, bonus_case: false };
 
 export function isLookId(x: string): x is LookId {
   return Object.prototype.hasOwnProperty.call(LOOKS, x);

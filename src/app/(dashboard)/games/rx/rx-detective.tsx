@@ -12,8 +12,11 @@ import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { Journey, Receptor } from "@/components/study/animations";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
+import { askHint } from "@/lib/hints/actions";
+import { hintedPoints } from "@/lib/hints/rules";
 
-type Grade = (a: Answer) => Promise<{ ok: boolean }>;
+type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
 type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
 
 const LETTERS = ["a", "b", "c", "d"];
@@ -24,7 +27,10 @@ const MODES: { id: Mode; label: string; line: string; Icon: typeof PillIcon }[] 
   { id: "puzzle", label: "Dangerous mixes", line: "Two medicines together. What happens?", Icon: Plus },
 ];
 
-type Run = { run: string; mode: Mode; qs: Question[]; idx: number; answers: Answer[]; picks: string[]; revealed: boolean; lives: number; streak: number; best: number; points: number; gained: number; lostLife: boolean };
+type Run = { run: string; mode: Mode; qs: Question[]; idx: number; answers: Answer[]; picks: string[]; revealed: boolean; lives: number; streak: number; best: number; points: number; gained: number; lostLife: boolean;
+  /** Hints used: question (or chain step) key → options ruled out. */
+  ruled: Record<string, string[]>;
+};
 
 export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }: { board: AccuracyBoardData; grade: Grade; finish: Finish; medIds?: readonly string[] }) {
   const router = useRouter();
@@ -34,7 +40,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
   function start(mode: Mode) {
     const id = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     setDone(null);
-    setRun({ run: id, mode, qs: buildRun(mode, makeRng(hashString(id))), idx: 0, answers: [], picks: [], revealed: false, lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false });
+    setRun({ run: id, mode, qs: buildRun(mode, makeRng(hashString(id))), idx: 0, answers: [], picks: [], revealed: false, lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false, ruled: {} });
   }
   function end(r: Run) {
     setRun(null);
@@ -50,7 +56,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
 
   if (done) return <Summary r={done.run} xp={done.xp} board={board} onAgain={() => start(done.run.mode)} onModes={() => setDone(null)} />;
   if (!run) return <Intro board={board} onStart={start} />;
-  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer(a).catch(() => undefined)} onEnd={end} medIds={medIds} />;
+  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer({ ...a, run: run.run }).catch(() => undefined)} onEnd={end} medIds={medIds} />;
 }
 
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
@@ -79,6 +85,11 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   const q = r.qs[r.idx];
   const needed = q.kind === "chain" ? STEPS.length : 1;
   const complete = r.picks.length >= needed;
+  const [hints, setHints] = useHintStatus();
+  const at = Math.min(r.picks.length, STEPS.length - 1);
+  const hintKey = q.kind === "chain" ? `${q.id}.${at}` : q.id;
+  const gone = r.ruled[hintKey] ?? [];
+  const hintedHere = Object.keys(r.ruled).some((k) => k === q.id || k.startsWith(`${q.id}.`));
 
   function pick(value: string) {
     if (r.revealed || complete) return;
@@ -94,7 +105,8 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     buzz(g.score >= 1);
     onAnswered(a);
     const lost = costsLife(g.score);
-    const gained = pointsFor(g.score, r.streak);
+    // A hint halves this question's points.
+    const gained = hintedPoints(pointsFor(g.score, r.streak), hintedHere ? 1 : 0);
     const streak = nextStreak(r.streak, g.score);
     setR({ ...r, picks, revealed: true, answers: [...r.answers, a], lives: r.lives - (lost ? 1 : 0), streak, best: Math.max(r.best, streak), points: r.points + gained, gained, lostLife: lost });
   }
@@ -107,7 +119,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     setR({ ...r, idx: r.idx + 1, picks: [], revealed: false, lostLife: false });
   }
 
-  const options = q.kind === "chain" ? (q.steps[Math.min(r.picks.length, STEPS.length - 1)] ?? []) : q.options;
+  const options = (q.kind === "chain" ? (q.steps[at] ?? []) : q.options).filter((o) => !gone.includes(o));
   const keys: Record<string, () => void> = {};
   if (!r.revealed) options.forEach((o, i) => (keys[LETTERS[i]] = () => pick(o)));
   else {
@@ -141,10 +153,20 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
       </div>
 
       <div key={`${r.run}-${r.idx}`} className={m.slide}>
-        {q.kind === "chain" ? <ChainCase q={q} picks={r.picks} revealed={r.revealed} onPick={pick} /> : null}
-        {q.kind === "mystery" ? <MysteryCase id={q.id} options={q.options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
-        {q.kind === "puzzle" ? <PuzzleCase id={q.id} options={q.options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
+        {q.kind === "chain" ? <ChainCase q={q} picks={r.picks} revealed={r.revealed} onPick={pick} gone={gone} /> : null}
+        {q.kind === "mystery" ? <MysteryCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
+        {q.kind === "puzzle" ? <PuzzleCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
       </div>
+
+      {!r.revealed ? (
+        <HintBar
+          status={hints}
+          onStatus={setHints}
+          used={gone.length > 0}
+          ask={() => askHint({ game: "rx", run: r.run, kind: q.kind, id: q.id, step: at, options: q.kind === "chain" ? (q.steps[at] ?? []) : q.options })}
+          onGive={(h) => setR({ ...r, ruled: { ...r.ruled, [hintKey]: h.remove } })}
+        />
+      ) : null}
 
       {g ? (
         <Panel className={cn("space-y-3", g.score >= 1 ? m.pop : m.shake)} aria-live="polite">
@@ -223,7 +245,7 @@ function DrugCard({ d, className, style }: { d: Drug; className?: string; style?
 }
 
 /* ----------------------------------------------------------------- chain */
-function ChainCase({ q, picks, revealed, onPick }: { q: Extract<Question, { kind: "chain" }>; picks: string[]; revealed: boolean; onPick: (v: string) => void }) {
+function ChainCase({ q, picks, revealed, onPick, gone = [] }: { q: Extract<Question, { kind: "chain" }>; picks: string[]; revealed: boolean; onPick: (v: string) => void; gone?: string[] }) {
   const d = drugById(q.id)!;
   const at = Math.min(picks.length, STEPS.length - 1);
   return (
@@ -266,7 +288,7 @@ function ChainCase({ q, picks, revealed, onPick }: { q: Extract<Question, { kind
       {!revealed ? (
         <Panel key={at} className={cn("space-y-3 bg-muted/40", m.rise)}>
           <p className="text-body-strong">{STEPS[at].ask}</p>
-          <Options options={q.steps[at]} label={(v) => v} chosen={null} correct="" revealed={false} onPick={onPick} />
+          <Options options={q.steps[at].filter((o) => !gone.includes(o))} label={(v) => v} chosen={null} correct="" revealed={false} onPick={onPick} />
         </Panel>
       ) : null}
     </div>

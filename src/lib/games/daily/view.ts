@@ -5,7 +5,7 @@
  */
 
 import { CHAPTERS, diagnosisById } from "../diagnoses";
-import { pointsUsed, scoreOf, shareGrid, type Progress, type Status } from "./engine";
+import { canOpenClue, pointsUsed, scoreOf, shareGrid, type Progress, type Status } from "./engine";
 import type { DailyCase, InvestigationKind } from "./types";
 
 export type CaseView = {
@@ -21,6 +21,8 @@ export type CaseView = {
   investigations: { i: number; kind: InvestigationKind; label: string; result: string | null; ordered: boolean }[];
   guesses: { dx: string; name: string; ok: boolean; sameChapter: boolean; reason: string }[];
   hints: { chapter: string | null; pointer: string | null; used: number };
+  /** False from clue 4 on: a guess opens the next clue, "Next clue" doesn't. */
+  canClue: boolean;
   status: Status;
   points: number;
   score: number;
@@ -49,6 +51,7 @@ export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice",
     investigations: c.investigations.map((x, i) => ({ i, kind: x.kind, label: x.label, result: over || p.invs.includes(i) ? x.result : null, ordered: p.invs.includes(i) })),
     guesses: p.guesses.map((g) => ({ ...g, name: diagnosisById(g.dx)?.name ?? g.dx })),
     hints: { used: p.hints, chapter: p.hints >= 1 || over ? CHAPTERS[c.chapter].name : null, pointer: p.hints >= 2 || over ? c.pointer : null },
+    canClue: canOpenClue(p),
     status: p.status,
     points: pointsUsed(p),
     score: scoreOf(p),

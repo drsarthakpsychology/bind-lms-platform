@@ -118,7 +118,8 @@ describe("practice", () => {
     expect(practiceCandidates(empty(), NOW)).toHaveLength(BANK.length);
     const dep = practiceCandidates(empty(), NOW, "depression");
     expect(new Set(dep.map((c) => c.topic))).toEqual(new Set(["depression", "bipolar"]));
-    expect(dep.every((c) => c.p === 0.5)).toBe(true);
+    // A new student on an average question: 50 % plus the guessing floor (four options 0.625, true or false 0.75).
+    expect(dep.every((c) => c.p > 0.5 && c.p <= 0.75)).toBe(true);
   });
   it("focuses a Fix-it session on the topic", () => {
     const s = buildPractice(empty(), NOW, makeRng(2), 10, "bipolar");

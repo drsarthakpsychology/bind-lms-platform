@@ -2,7 +2,7 @@
  * Picking questions: the diagnostic, mock papers and adaptive topic practice.
  * Pure: randomness only comes from the `rng` argument (see makeRng).
  */
-import { prob } from "@/lib/learn/model/elo";
+import { guessFloor, prob } from "@/lib/learn/model/elo";
 import { CORE_BAND, pickSession, shuffle, type Candidate, type Picked } from "@/lib/learn/model/picker";
 import type { PrepSpec } from "@/content/prep/specs";
 import { PRIOR_B, planWeights } from "./catalog";
@@ -212,7 +212,7 @@ export function pickPractice(bank: PrepQuestion[], subject: Subject, state: Prac
   const fresh = pool.filter((q) => state.due(q.id) || (seen.get(q.id) ?? 0) < cap);
   const use = fresh.length >= size ? fresh : pool;
   const level = new Map(use.map((q) => [q.id, q.difficulty]));
-  const candidates: Candidate[] = use.map((q) => ({ id: q.id, topic: q.topic, family: subject, p: prob(state.theta, state.b(q.id) ?? PRIOR_B[q.difficulty]), due: state.due(q.id) }));
+  const candidates: Candidate[] = use.map((q) => ({ id: q.id, topic: q.topic, family: subject, p: prob(state.theta, state.b(q.id) ?? PRIOR_B[q.difficulty], guessFloor(q.options.length)), due: state.due(q.id) }));
   const picked = pickSession(candidates, size, rng);
 
   const up = stepUp(state.theta);

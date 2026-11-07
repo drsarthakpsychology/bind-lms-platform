@@ -3,12 +3,12 @@
  * rows from Supabase, calls these, and writes the result back; tests call them
  * directly.
  */
-import { PRIOR_THETA, decayedTheta, eloUpdate, isCalibrated, prob } from "./elo";
+import { PRIOR_THETA, decayedTheta, eloUpdate, guessFloor, isCalibrated, prob } from "./elo";
 import { review, gradeFor, isDue, type Card } from "./fsrs";
 import { addCorrectDay, masteryOf, MASTERY_RANK, type Mastery } from "./mastery";
 import { bumpConfusion, isConfusion, cleanAnswer, type ConfusionRow } from "./confusions";
 import { interleave, pickSession, type Candidate, type Picked } from "./picker";
-import { BANK, COMPETENCY_LABEL, SKILLS_WITH_ITEMS, TOPICS, splitSkill, skillLabel, topicById, topicSkills } from "./topics";
+import { BANK, COMPETENCY_LABEL, SKILLS_WITH_ITEMS, TOPICS, bankItem, splitSkill, skillLabel, topicById, topicSkills, type GradedItem } from "./topics";
 import type { PlacementResult } from "./placement";
 import { COMPETENCIES, skillKey, type Competency } from "./skills";
 import { istToday } from "@/lib/practice/streaks";
@@ -28,7 +28,44 @@ export type Attempt = {
   /** First try at this question in this sitting (default true). */
   first?: boolean;
   fast?: boolean;
+  /** Number of options shown (multiple choice), for the guessing floor. Bank questions know their own. */
+  options?: number | null;
 };
+
+/** Options on a bank question: 2 for true or false, the option count for multiple choice. */
+export function optionCount(item: GradedItem): number {
+  return item.kind === "tf" ? 2 : item.options.length;
+}
+
+/** Bank question ids per skill, for judging mastery on the skill's own questions. */
+const SKILL_ITEMS: Map<string, string[]> = (() => {
+  const m = new Map<string, string[]>();
+  for (const b of BANK) m.set(b.skill, [...(m.get(b.skill) ?? []), b.item.id]);
+  return m;
+})();
+
+/** Bank question ids for these skills (to load their difficulty). */
+export function itemsOfSkills(skills: Iterable<string>): string[] {
+  const out: string[] = [];
+  for (const s of skills) out.push(...(SKILL_ITEMS.get(s) ?? []));
+  return out;
+}
+
+/**
+ * The difficulty mastery is judged at: the median b of the skill's own
+ * questions that are in use (answered at least once). 0 when none are known,
+ * so a skill without data is judged as before.
+ */
+export function skillRefB(skill: string, items: ReadonlyMap<string, ItemRow>): number {
+  const bs = (SKILL_ITEMS.get(skill) ?? [])
+    .map((id) => items.get(id))
+    .filter((r): r is ItemRow => !!r && r.n > 0 && Number.isFinite(r.b))
+    .map((r) => r.b)
+    .sort((a, b) => a - b);
+  if (!bs.length) return 0;
+  const mid = Math.floor(bs.length / 2);
+  return bs.length % 2 ? bs[mid] : (bs[mid - 1] + bs[mid]) / 2;
+}
 
 export type ModelRows = {
   skills: Map<string, SkillRow>;
@@ -76,15 +113,17 @@ export function applyAttempts(rows: ModelRows, attempts: Attempt[], now: Date) {
     const prev = skills.get(a.skill);
     const theta = prev ? decayedTheta(prev.theta, prev.lastAt, now) : priorFor(a.skill, skills, now);
     const itemRow = a.item ? (items.get(a.item) ?? { item: a.item, b: 0, n: 0 }) : { item: "", b: 0, n: 0 };
-    const res = eloUpdate({ theta, n: prev?.n ?? 0 }, itemRow, outcome);
+    const bank = a.item ? bankItem(a.item) : undefined;
+    const c = guessFloor(a.options ?? (bank ? optionCount(bank.item) : null));
+    const res = eloUpdate({ theta, n: prev?.n ?? 0 }, itemRow, outcome, c);
     const correctDays = a.first !== false && outcome >= 0.8 ? addCorrectDay(prev?.correctDays ?? [], today) : (prev?.correctDays ?? []);
     const next: SkillRow = { skill: a.skill, theta: res.student.theta, n: res.student.n, lastAt: now.toISOString(), correctDays, mastery: "new" };
-    next.mastery = masteryOf(next, now);
+    if (a.item) items.set(a.item, { item: a.item, b: res.item.b, n: res.item.n });
+    next.mastery = masteryOf(next, now, skillRefB(a.skill, items));
     skills.set(a.skill, next);
     changed.skills.add(a.skill);
 
     if (a.item) {
-      items.set(a.item, { item: a.item, b: res.item.b, n: res.item.n });
       changed.items.add(a.item);
       const card = review(cards.get(a.item), gradeFor(outcome, a.fast), now);
       cards.set(a.item, { ...card, item: a.item });
@@ -106,7 +145,7 @@ export type MapCell = { skill: string; competency: Competency; label: string; ha
 export type MapTopic = { id: string; title: string; href: string; cells: MapCell[]; practised: number };
 export type StudentMapData = { topics: MapTopic[]; graded: number; calibrated: boolean };
 
-export function buildMap(list: SkillRow[], now: Date, titles: Record<string, string> = {}): StudentMapData {
+export function buildMap(list: SkillRow[], now: Date, titles: Record<string, string> = {}, items: ReadonlyMap<string, ItemRow> = new Map()): StudentMapData {
   const rows = new Map(list.map((r) => [r.skill, r]));
   const graded = list.reduce((a, r) => a + r.n, 0);
   const calibrated = isCalibrated(graded);
@@ -119,7 +158,8 @@ export function buildMap(list: SkillRow[], now: Date, titles: Record<string, str
     const cells = COMPETENCIES.map((c): MapCell => {
       const skill = skillKey(id, c);
       const r = rows.get(skill);
-      const state = r ? masteryOf(r, now) : "new";
+      const refB = skillRefB(skill, items);
+      const state = r ? masteryOf(r, now, refB) : "new";
       return {
         skill,
         competency: c,
@@ -127,7 +167,7 @@ export function buildMap(list: SkillRow[], now: Date, titles: Record<string, str
         hasItems: SKILLS_WITH_ITEMS.has(skill) || (r?.n ?? 0) > 0,
         state,
         n: r?.n ?? 0,
-        p: calibrated && r && r.n > 0 ? prob(decayedTheta(r.theta, r.lastAt, now), 0) : null,
+        p: calibrated && r && r.n > 0 ? prob(decayedTheta(r.theta, r.lastAt, now), refB) : null,
       };
     });
     return { id, title: topicById(id)?.title ?? titles[id] ?? id, href: `/study/${id}`, cells, practised: cells.reduce((a, c) => a + c.n, 0) };
@@ -140,7 +180,7 @@ export function buildMap(list: SkillRow[], now: Date, titles: Record<string, str
 export type WeakSpot = { skill: string; topic: string; label: string; state: Mastery; p: number; n: number; lastAt: string | null; href: string; practiceHref: string };
 
 /** Skills that need work most: shaky first, then fading, then still learning; weakest first within each. */
-export function weakSpots(list: SkillRow[], now: Date, k = 5): WeakSpot[] {
+export function weakSpots(list: SkillRow[], now: Date, k = 5, items: ReadonlyMap<string, ItemRow> = new Map()): WeakSpot[] {
   return list
     .filter((r) => r.n > 0 && !isPrepKey(r.skill))
     .map((r) => {
@@ -149,8 +189,8 @@ export function weakSpots(list: SkillRow[], now: Date, k = 5): WeakSpot[] {
         skill: r.skill,
         topic,
         label: skillLabel(r.skill),
-        state: masteryOf(r, now),
-        p: prob(decayedTheta(r.theta, r.lastAt, now), 0),
+        state: masteryOf(r, now, skillRefB(r.skill, items)),
+        p: prob(decayedTheta(r.theta, r.lastAt, now), skillRefB(r.skill, items)),
         n: r.n,
         lastAt: r.lastAt,
         href: `/study/${topic}`,
@@ -173,7 +213,7 @@ export function practiceCandidates(rows: Pick<ModelRows, "skills" | "items" | "c
       id: b.item.id,
       topic: b.topic,
       family: b.family,
-      p: prob(abilityOf(b.skill, rows.skills, now), rows.items.get(b.item.id)?.b ?? 0),
+      p: prob(abilityOf(b.skill, rows.skills, now), rows.items.get(b.item.id)?.b ?? 0, guessFloor(optionCount(b.item))),
       due: card ? isDue(card, now) : false,
     };
   });

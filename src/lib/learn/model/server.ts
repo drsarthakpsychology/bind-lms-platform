@@ -21,6 +21,7 @@ import {
   buildPractice,
   confusionKey,
   dueCount,
+  itemsOfSkills,
   seedRows,
   weakSpots,
   type Attempt,
@@ -120,7 +121,8 @@ export async function recordAttempts(userId: string, attempts: Attempt[], now = 
   const db = admin();
   if (!db) return false;
   try {
-    const rows = await loadRows(db, userId, list.map((a) => a.item ?? "").filter(Boolean));
+    // Also the difficulty of each skill's own questions, so mastery is judged on them.
+    const rows = await loadRows(db, userId, [...list.map((a) => a.item ?? "").filter(Boolean), ...itemsOfSkills(new Set(list.map((a) => a.skill)))].slice(0, 300));
     const next = applyAttempts(rows, list, now);
     const skillRows = [...next.changed.skills].map((k) => skillDb(userId, next.skills.get(k)!));
     const itemRows = [...next.changed.items].map((k) => {
@@ -197,14 +199,13 @@ export async function loadStudentMap(userId: string, titles: Record<string, stri
   const empty: StudentMap = { ...buildMap([], now, titles), confusions: [], weak: [], due: 0, placement: EMPTY_PLACEMENT };
   if (!db || !userId) return empty;
   try {
-    const [rows, placed] = await Promise.all([loadRows(db, userId, []), loadPlacement(userId)]);
-    const cards = await rowsOf(db.from("review_cards").select("item, stability, difficulty, due_at, last_at, reps, lapses").eq("user_id", userId).limit(5000), toCard);
+    const [rows, placed] = await Promise.all([loadRows(db, userId), loadPlacement(userId)]);
     const skills = [...rows.skills.values()];
     return {
-      ...buildMap(skills, now, titles),
+      ...buildMap(skills, now, titles, rows.items),
       confusions: topConfusions([...rows.confusions.values()], now, 3),
-      weak: weakSpots(skills, now, 3),
-      due: dueCount(cards, now),
+      weak: weakSpots(skills, now, 3, rows.items),
+      due: dueCount(rows.cards.values(), now),
       placement: placed?.result ?? null,
     };
   } catch {
@@ -223,10 +224,10 @@ export async function loadWeakSpots(userId: string, k = 5, now = new Date()): Pr
   const empty: WeakSpotReport = { weak: [], confusions: [], graded: 0, calibrated: false, placement: null };
   if (!db || !userId) return empty;
   try {
-    const [rows, placed] = await Promise.all([loadRows(db, userId, []), loadPlacement(userId)]);
+    const [rows, placed] = await Promise.all([loadRows(db, userId), loadPlacement(userId)]);
     const skills = [...rows.skills.values()];
     const graded = skills.reduce((a, r) => a + r.n, 0);
-    return { weak: weakSpots(skills, now, k), confusions: topConfusions([...rows.confusions.values()], now, 3), graded, calibrated: isCalibrated(graded), placement: placed?.result ?? null };
+    return { weak: weakSpots(skills, now, k, rows.items), confusions: topConfusions([...rows.confusions.values()], now, 3), graded, calibrated: isCalibrated(graded), placement: placed?.result ?? null };
   } catch {
     return empty;
   }

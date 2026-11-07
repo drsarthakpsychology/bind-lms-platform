@@ -7,8 +7,7 @@ import {
   cleanLog,
   dailyIndex,
   dailyStreak,
-  FREE_HINTS_PER_DAY,
-  HINT_XP_COST,
+  MAX_HINTS,
   pickPractice,
   pointsUsed,
   replay,
@@ -21,7 +20,9 @@ import {
   type PracticeRecord,
 } from "@/lib/games/daily/engine";
 import { buildView, type CaseView } from "@/lib/games/daily/view";
-import { admin, cohortPeers, currentPlayer, isMissing, learnXp } from "@/lib/games/server";
+import { admin, cohortPeers, currentPlayer, isMissing } from "@/lib/games/server";
+import { hintedItems, hintStatus, spendHint, type HintStatus } from "@/lib/hints/server";
+import { itemKey } from "@/lib/hints/rules";
 import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
 import type { DailyCase } from "@/lib/games/daily/types";
 import { flagAiCase, getAiPracticeCase, loadAiCase } from "@/lib/ai-cases";
@@ -35,9 +36,8 @@ export type DailyMeta = {
   number: number;
   streak: number;
   playedDays: string[];
-  freeHintsLeft: number;
-  hintCost: number;
-  spendableXp: number;
+  /** Hints left today (free, bought and spare), counted on the server. */
+  hints: HintStatus | null;
   cohort: (CohortStats & { scope: "batch" | "everyone" }) | null;
   /** False when results can't be saved yet (table missing): the browser keeps them. */
   stored: boolean;
@@ -67,11 +67,11 @@ function todaysCase(day: string) {
   return CASES[dailyIndex(day, CASES.length)];
 }
 
-type Row = { log: unknown; hints: number; xp_spent: number; status: string };
+type Row = { log: unknown; hints: number; status: string };
 
 async function loadRow(userId: string, mode: string, day: string, caseId: string): Promise<{ row: Row | null; stored: boolean }> {
   try {
-    const { data, error } = await admin().from(TABLE).select("log, hints, xp_spent, status").eq("user_id", userId).eq("mode", mode).eq("day", day).eq("case_id", caseId).maybeSingle();
+    const { data, error } = await admin().from(TABLE).select("log, hints, status").eq("user_id", userId).eq("mode", mode).eq("day", day).eq("case_id", caseId).maybeSingle();
     if (error) return { row: null, stored: !isMissing(error) };
     return { row: (data as Row | null) ?? null, stored: true };
   } catch {
@@ -79,40 +79,22 @@ async function loadRow(userId: string, mode: string, day: string, caseId: string
   }
 }
 
-async function hintsToday(userId: string, day: string): Promise<{ used: number; spentAll: number }> {
-  try {
-    const db = admin();
-    const [{ data: today }, { data: all }] = await Promise.all([
-      db.from(TABLE).select("hints").eq("user_id", userId).eq("day", day),
-      db.from(TABLE).select("xp_spent").eq("user_id", userId).gt("xp_spent", 0).limit(5000),
-    ]);
-    return {
-      used: (today ?? []).reduce((a, r) => a + ((r.hints as number) ?? 0), 0),
-      spentAll: (all ?? []).reduce((a, r) => a + ((r.xp_spent as number) ?? 0), 0),
-    };
-  } catch {
-    return { used: 0, spentAll: 0 };
-  }
-}
-
 async function meta(userId: string, day: string, stored: boolean, withCohort: boolean): Promise<DailyMeta> {
-  const base: DailyMeta = { day, number: caseNumber(day), streak: 0, playedDays: [], freeHintsLeft: FREE_HINTS_PER_DAY, hintCost: HINT_XP_COST, spendableXp: 0, cohort: null, stored };
-  const xpP = learnXp(userId);
-  if (!stored) return { ...base, spendableXp: await xpP };
+  const hintsP = hintStatus(userId).catch(() => null);
+  const base: DailyMeta = { day, number: caseNumber(day), streak: 0, playedDays: [], hints: null, cohort: null, stored };
+  if (!stored) return { ...base, hints: await hintsP };
   try {
     const db = admin();
-    const [{ data: days }, hints, xp] = await Promise.all([
+    const [{ data: days }, hints] = await Promise.all([
       db.from(TABLE).select("day").eq("user_id", userId).eq("mode", "daily").neq("status", "playing").order("day", { ascending: false }).limit(400),
-      hintsToday(userId, day),
-      xpP,
+      hintsP,
     ]);
     const playedDays = (days ?? []).map((r) => String(r.day));
     const out: DailyMeta = {
       ...base,
       playedDays,
       streak: dailyStreak(playedDays, day),
-      freeHintsLeft: Math.max(0, FREE_HINTS_PER_DAY - hints.used),
-      spendableXp: Math.max(0, xp - hints.spentAll),
+      hints,
     };
     if (withCohort) {
       const peers = await cohortPeers(userId);
@@ -124,7 +106,7 @@ async function meta(userId: string, day: string, stored: boolean, withCohort: bo
     }
     return out;
   } catch {
-    return base;
+    return { ...base, hints: await hintsP };
   }
 }
 
@@ -148,29 +130,33 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
   if (mode === "practice" && c.id === daily.id) return { ok: false, error: "That's today's daily case. Play it from the Daily tab." };
 
   const { row, stored } = await loadRow(me.id, mode, day, c.id);
-  const baseLog = stored ? cleanLog(row?.log ?? []) : cleanLog(input.log);
+  // Hints are charged per case by the hint counter; this is the case's key there.
+  const hintItem = itemKey("daily", mode, day, c.id);
+  let baseLog = stored ? cleanLog(row?.log ?? []) : cleanLog(input.log);
+  if (!stored) {
+    // The browser's log can't add hints the server never granted.
+    const granted = (await hintedItems(me.id, hintItem).catch(() => new Map<string, number>())).get(hintItem) ?? 0;
+    let seen = 0;
+    baseLog = baseLog.filter((a) => a.t !== "hint" || ++seen <= granted);
+  }
   const before = replay(c, baseLog);
   let progress = before.progress;
   let log = before.log;
-  let spent = row?.xp_spent ?? 0;
 
   if (input.action) {
     const action = cleanLog([input.action])[0];
     if (!action) return { ok: false, error: "That move isn't allowed." };
-    if (action.t === "hint" && stored && progress.status === "playing") {
-      const h = await hintsToday(me.id, day);
-      if (h.used >= FREE_HINTS_PER_DAY) {
-        const spendable = (await learnXp(me.id)) - h.spentAll;
-        if (spendable < HINT_XP_COST) return { ok: false, error: `You've used today's free hints. Another costs ${HINT_XP_COST} XP and you have ${Math.max(0, spendable)} to spend.` };
-        spent += HINT_XP_COST;
-      }
+    if (action.t === "hint") {
+      if (progress.status !== "playing" || progress.hints >= MAX_HINTS) return { ok: false, error: "No more hints for this case." };
+      const spent = await spendHint(me.id, { game: "daily", item: hintItem, step: progress.hints + 1 });
+      if (!spent.ok) return { ok: false, error: spent.error };
     }
     const next = apply(c, progress, action);
     if (next !== progress) {
       progress = next;
       log = [...log, action];
-    } else if (action.t === "hint") {
-      spent = row?.xp_spent ?? 0;
+    } else if (action.t === "clue") {
+      return { ok: false, error: "Make a guess to open the next clue." };
     }
   }
 
@@ -195,7 +181,6 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
             points: pointsUsed(progress),
             score,
             hints: progress.hints,
-            xp_spent: spent,
             ...(justFinished ? { xp_earned: xp, finished_at: now } : {}),
             updated_at: now,
           },

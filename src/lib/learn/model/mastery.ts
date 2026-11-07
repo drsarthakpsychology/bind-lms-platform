@@ -4,7 +4,10 @@
  * - new       → no graded answers yet ("Not started")
  * - learning  → practising, not there yet
  * - shaky     → practised, but getting it wrong more often than not
- * - mastered  → P(right on an average question, b = 0) ≥ 0.85
+ * - mastered  → P(right on this skill's own questions) ≥ 0.85, judged at
+ *               the median difficulty of the skill's questions in use (b = 0
+ *               when none are known yet), without the guessing floor: mastery
+ *               is about knowing, not about lucky picks
  *               AND ≥ 3 correct first attempts
  *               AND those correct first attempts span ≥ 2 different days
  * - decaying  → it was mastered, but hasn't been practised for a while, so it
@@ -55,16 +58,18 @@ export function meetsMasteryEvidence(correctDays: string[]): boolean {
   return correctDays.length >= MASTERY_CORRECT && new Set(correctDays).size >= MASTERY_DAYS;
 }
 
-export function masteryOf(s: SkillSnapshot, now: Date): Mastery {
+/** `refB`: the difficulty mastery is judged at (the median of the skill's own questions). */
+export function masteryOf(s: SkillSnapshot, now: Date, refB = 0): Mastery {
   if (s.n <= 0) return "new";
-  const raw = prob(s.theta, 0);
+  const b = Number.isFinite(refB) ? refB : 0;
+  const raw = prob(s.theta, b);
   const evidence = meetsMasteryEvidence(s.correctDays);
   if (raw >= MASTERY_P && evidence) {
-    const faded = prob(decayedTheta(s.theta, s.lastAt, now), 0);
+    const faded = prob(decayedTheta(s.theta, s.lastAt, now), b);
     if (daysBetween(s.lastAt, now) >= REVIEW_AFTER_DAYS || faded < MASTERY_P) return "decaying";
     return "mastered";
   }
-  const p = prob(decayedTheta(s.theta, s.lastAt, now), 0);
+  const p = prob(decayedTheta(s.theta, s.lastAt, now), b);
   if (s.n >= SHAKY_MIN_ANSWERS && p < SHAKY_P) return "shaky";
   return "learning";
 }

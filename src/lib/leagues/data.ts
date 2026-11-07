@@ -60,7 +60,7 @@ export async function loadStudents(admin: Admin = createAdminClient()): Promise<
     });
 }
 
-/** Item difficulty from item_stats, if another part of the platform keeps it. */
+/** Item difficulty from item_stats (the student model keeps b and n there). */
 async function loadDifficulty(admin: Admin): Promise<(item: string) => Difficulty> {
   try {
     const { data, error } = await admin.from("item_stats").select("*").limit(20000);
@@ -70,7 +70,7 @@ async function loadDifficulty(admin: Admin): Promise<(item: string) => Difficult
       const id = String(r.item ?? r.item_id ?? r.id ?? "");
       if (!id) continue;
       const num = (k: string) => (typeof r[k] === "number" ? (r[k] as number) : null);
-      map.set(id, difficultyOf({ pCorrect: num("p_correct") ?? num("correct_rate"), rating: num("rating") ?? num("elo") }));
+      map.set(id, difficultyOf({ b: num("b"), n: num("n"), pCorrect: num("p_correct") ?? num("correct_rate"), rating: num("rating") ?? num("elo") }));
     }
     return (item) => map.get(item) ?? 1;
   } catch {
