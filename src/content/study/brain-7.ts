@@ -1,11 +1,12 @@
 /* Module · Brain and behaviour, new Beginner sections on the hormone axes and on sleep, EEG and evoked potentials. Original text written for VIBHA School of Psychology. */
-import { SCENE } from "./brain-4";
 
 export const begAxes = String.raw`
 ## 4.3 The hormone axes in depth: HPA, HPT, HPG, prolactin, growth hormone, melatonin, oxytocin and vasopressin [core][beginner]
 The endocrine table in 4.2 listed the glands. Exams go further and ask how each **axis** is wired, how it switches itself off, and what its failure looks like in a psychiatric clinic. Every axis has the same plan: a **hypothalamic** releasing hormone, a **pituitary** hormone, a **target gland** hormone, and **negative feedback** from the last to the first two.
 
-${SCENE("hpaloop")}
+:::widget hpaloop
+{"title":"Play the HPA axis through a day","caption":"Cope with each event, then switch to chronic stress. Which part of the loop fails first, and which test in the clinic shows it?"}
+:::
 
 ### How the hypothalamus talks to the pituitary
 - To the **anterior pituitary**: hypothalamic neurons release hormones into a tiny private blood supply, the **hypophyseal portal system**, at the median eminence.

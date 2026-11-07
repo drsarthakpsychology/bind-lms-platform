@@ -1,17 +1,12 @@
 /* Module · Brain and behaviour, new Starting sections (how the nervous system is built; how we know about the brain). Original text written for VIBHA School of Psychology. */
 
-/**
- * Spots for the game-like scenes another agent is building. Each returns ""
- * until the scene is merged; then replace the call with the :::widget block.
- * Search for SCENE( to find every spot.
- */
-export const SCENE = (_kind: "nervoussystem" | "brainexplorer" | "actionpotential" | "hpaloop"): string => "";
-
 export const startBuilt = String.raw`
 ## 1.6 How the nervous system is built, protected and fed [core][starting]
 You have met the neuron and the big areas. Now step back and see the whole system as a body part: how it grows, what holds it, what washes it and what feeds it. Many exam questions, and many emergencies, come from these plain facts.
 
-${SCENE("nervoussystem")}
+:::widget nervoussystem
+{"title":"Your nervous system, live","start":"signal","caption":"Send the hot cup through the brain, then through the reflex shortcut. Which is faster, and which part of the system did the shortcut skip?"}
+:::
 
 ### From a flat sheet to a brain
 Every brain begins as a flat sheet of cells on the back of a tiny embryo, about two weeks after conception. The sheet folds up into a groove, then closes into a hollow **neural tube** by about day 28. The front end of the tube swells into three bulges that become the **forebrain**, **midbrain** and **hindbrain**; the rest becomes the **spinal cord**. Cells that pinch off the edges of the folds, the **neural crest**, wander away and build most of the peripheral nerves.

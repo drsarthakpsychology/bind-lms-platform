@@ -1007,49 +1007,8 @@ Use **shapes and lines**, never colour alone, so that the tree is readable when 
 :::
 
 
-:::widget flow
-{
- "title": "A genogram read aloud: Ms N's family",
- "layout": "tree",
- "nodes": [
-  {
-   "id": "gp",
-   "label": "Paternal grandfather (square, crossed: died at 70)",
-   "detail": "Admitted to a mental hospital for a year in his thirties; old records later confirmed schizophrenia. Write the diagnosis beside the shape."
-  },
-  {
-   "id": "f",
-   "label": "Father, 55 (square)",
-   "parent": "gp",
-   "detail": "Well."
-  },
-  {
-   "id": "u",
-   "label": "Paternal uncle (square)",
-   "parent": "gp",
-   "detail": "Well; his son is listed below."
-  },
-  {
-   "id": "c",
-   "label": "Cousin (square, crossed: died at 24)",
-   "parent": "u",
-   "detail": "Died by suicide. Record age and cause."
-  },
-  {
-   "id": "p",
-   "label": "Ms N, 23 (circle, double outline, arrow): the patient",
-   "parent": "f",
-   "detail": "First episode of psychosis."
-  },
-  {
-   "id": "s",
-   "label": "Brother, 20 (square)",
-   "parent": "f",
-   "detail": "Well."
-  }
- ],
- "caption": "Every meaning is carried by a shape, a line or a written label, never by colour alone."
-}
+:::widget genogram
+{"title":"Draw and read Ms N's family","condition":"a psychotic illness","caption":"Explore Ms N's family and run the pattern finder. Then press Start blank and draw a patient you have seen: three generations, every symbol, the diagnosis written beside each shaded shape."}
 :::
 
 ### What to write beside the tree
