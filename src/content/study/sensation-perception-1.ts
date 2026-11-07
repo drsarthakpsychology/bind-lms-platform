@@ -60,6 +60,10 @@ Each sense has its own **receptors**, its own nerve route and its own patch of c
 
 Most perception is both at once. You read a doctor's scrawled prescription partly from the ink (bottom-up) and partly because you know which medicine names are likely (top-down). The pharmacist who knows the doctor reads it faster for the same reason.
 
+:::widget compare
+{"title": "Bottom-up or top-down?", "a": {"label": "Bottom-up", "points": ["Starts with the raw input", "Edges, then shapes, then objects", "Driven by the stimulus", "Wins when the input is clear and new"], "summary": "Bottom-up: the data on your senses build the percept from the ground up."}, "b": {"label": "Top-down", "points": ["Starts with knowledge and expectation", "Fills gaps and settles ambiguity", "Driven by context and experience", "Wins when the input is poor or unclear"], "summary": "Top-down: what you already know shapes what you see. The pharmacist reads the scrawl because she knows which names to expect."}, "caption": "Real perception runs both ways at once. Slide to see which one does more of the work in each situation."}
+:::
+
 :::widget sort
 {
   "prompt": "Sensation or perception? Sort each moment.",
@@ -187,6 +191,10 @@ A vendor who adds one extra tomato to a 250-gram bag makes a difference the buye
 ### Subliminal means below threshold
 A stimulus is **subliminal** when it is below the absolute threshold for conscious report. Weak subliminal effects on simple judgments are real in the laboratory, but the famous 1957 claim that flashing "Eat popcorn" in a cinema raised sales was later admitted to be made up. There is no good evidence that hidden messages can make people buy things they did not already want.
 
+:::widget reveal
+{"prompt": "A friend says shops flash hidden messages on screens to make you buy drinks without knowing it. Is that how subliminal effects work? Decide, then open.", "answer": "Mostly no. The famous 1957 cinema claim ('Eat popcorn', 'Drink Coca-Cola') was later admitted by its own author to have been made up. In the laboratory, a brief hidden brand name can nudge choice slightly, but only for a short time, and only if the person already has the need: thirsty people may pick the primed drink, people who are not thirsty do not. Hidden messages cannot create a want that is not there."}
+:::
+
 :::recall
 1. How is the absolute threshold defined? || The minimum intensity detected on 50 percent of trials.
 2. What is a just noticeable difference? || The smallest change in a stimulus detected on 50 percent of trials.
@@ -220,6 +228,10 @@ At any moment far more reaches your senses than you can use. **Attention** is th
 | **Divided** | Shares attention between two tasks | Cooking dal while helping a child with homework |
 | **Sustained** (vigilance) | Stays alert for rare events over a long time | A security guard watching CCTV screens all night |
 | **Executive** (control) | Overrides habits and switches tasks | Not answering the phone during an exam viva |
+
+:::widget sort
+{"prompt": "Which kind of attention does each moment need most?", "buckets": ["Selective", "Divided", "Sustained", "Executive"], "items": [{"text": "Hearing only your mother's voice on a phone call at a busy railway station", "bucket": 0, "why": "Focusing on one source and shutting out the rest."}, {"text": "Driving a scooter while keeping track of directions on a map app", "bucket": 1, "why": "Two tasks at the same time share attention."}, {"text": "A lab technician scanning blood slides for rare malaria parasites for two hours", "bucket": 2, "why": "Staying alert for rare events over a long time is vigilance."}, {"text": "Stopping yourself from typing your old password after it was changed", "bucket": 3, "why": "Overriding a strong habit is executive control."}, {"text": "A lifeguard watching a calm pool all afternoon", "bucket": 2, "why": "Long watch, rare events: sustained attention."}, {"text": "Switching between answering a patient and writing notes", "bucket": 3, "why": "Switching between tasks on purpose is executive control."}]}
+:::
 
 ### The cocktail party effect
 In a crowded room you can follow one conversation and tune out the rest, yet if someone across the room says your name, you often hear it. Colin Cherry (1953) studied this in the laboratory, and it launched the scientific study of attention. You will meet the theories at the Beginner level.
@@ -303,8 +315,16 @@ In Germany in the 1910s and 1920s, Max Wertheimer, Wolfgang Köhler and Kurt Kof
 ### Seeing depth
 We judge distance from **cues**. Some need only one eye (**monocular cues**): nearer objects block farther ones, parallel railway lines seem to meet in the distance, far mountains look hazy and blue. Others need both eyes (**binocular cues**): each eye sees a slightly different view, and the brain uses the difference.
 
+:::widget flow
+{"title": "The family of depth cues", "layout": "tree", "nodes": [{"id": "d", "label": "Depth cues", "detail": "The image on each retina is flat. The brain works out distance from clues in the image and from the eyes themselves."}, {"id": "m", "label": "Monocular: one eye is enough", "parent": "d", "detail": "These cues work even with one eye closed, and painters use them to make a flat canvas look deep."}, {"id": "b", "label": "Binocular: needs both eyes", "parent": "d", "detail": "These depend on the two eyes seeing from slightly different places. They work best for near objects."}, {"id": "i", "label": "Interposition", "parent": "m", "detail": "A nearer object blocks part of a farther one."}, {"id": "l", "label": "Linear perspective", "parent": "m", "detail": "Parallel railway lines seem to meet in the distance."}, {"id": "r", "label": "Relative size and texture", "parent": "m", "detail": "Of two similar objects, the smaller image seems farther. Texture packs closer together with distance, like pebbles on a beach."}, {"id": "a", "label": "Aerial perspective", "parent": "m", "detail": "Far hills look hazy and bluish."}, {"id": "p", "label": "Motion parallax", "parent": "m", "detail": "From a moving train, nearby poles rush past while far hills drift slowly."}, {"id": "disp", "label": "Retinal disparity", "parent": "b", "detail": "Each eye gets a slightly different view. The closer the object, the bigger the difference. This is stereopsis, the basis of 3D films."}, {"id": "c", "label": "Convergence", "parent": "b", "detail": "The eyes turn inwards to look at a near object. The brain reads the muscle effort as distance."}], "caption": "Many illusions of depth, like a hallway drawing that makes equal figures look different sizes, come from these cues used where they do not fit."}
+:::
+
 ### Constancy
 **Perceptual constancy** keeps objects looking the same even as their image changes. Your friend walking away does not seem to shrink (size constancy). A door swinging open still looks rectangular (shape constancy). A white shirt looks white in sunlight and in shade (lightness constancy).
+
+:::widget compare
+{"title": "What reaches the eye, and what you see", "a": {"label": "Image on the retina", "points": ["Your friend walks away: the image shrinks to half size", "A door opens: the image turns into a narrowing trapezium", "Coal in sunlight reflects more light than paper in shade"], "summary": "The raw image changes all the time."}, "b": {"label": "What you perceive", "points": ["Your friend stays the same height", "The door stays a rectangle", "The coal still looks black and the paper white"], "summary": "The brain corrects for distance, angle and lighting, so objects keep their real size, shape and lightness. This is perceptual constancy."}}
+:::
 
 ### Illusions
 An **illusion** is a perception that does not match the physical stimulus. Illusions are not failures of a careless brain. They show the rules the brain normally uses, applied where they do not fit.
