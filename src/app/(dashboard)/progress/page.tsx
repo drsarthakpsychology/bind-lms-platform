@@ -80,7 +80,7 @@ export default async function ProgressPage() {
         </ol>
       </section>
 
-      <StrengthsPanel />
+      <StrengthsPanel userId={me.id} />
     </div>
   );
 }
