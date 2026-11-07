@@ -26,7 +26,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'bystander effect' refers to the finding that:",
     options: [
-      "A person is more likely to help when many others are present to share the risk",
+      "A person is more likely to help when many others are present to share the risk with",
       "A person is less likely to help in an emergency when other bystanders are present",
       "Bystanders always help strangers",
       "Only trained people ever help in emergencies",
@@ -104,7 +104,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The emergency is mild and ambiguous",
       "The emergency is clearly dangerous, the perpetrator is present, or costs are physical",
-      "The bystanders are strangers to each other rather than friends or colleagues",
+      "The bystanders are strangers to each other rather than friends, relatives or colleagues",
       "The bystanders cannot see each other",
     ],
     answer: 1,
@@ -119,7 +119,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Batson's empathy-altruism hypothesis proposes that:",
     options: [
-      "People help only to relieve the sadness they themselves feel at seeing someone suffer",
+      "People help only to relieve the personal sadness they themselves feel at seeing someone else suffer",
       "All helping is ultimately selfish",
       "Empathic concern for someone in need produces a truly altruistic motive, even when escape is easy",
       "People help only relatives who share their genes",
@@ -181,7 +181,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Isen and Levin found that people who had just found a coin in a phone booth were much more likely to help a stranger pick up dropped papers. This shows:",
     options: [
-      "Diffusion of responsibility to other passers-by",
+      "Diffusion of responsibility to the other passers-by in the street",
       "The 'feel good, do good' effect of positive mood on helping",
       "The bystander effect",
       "Reactance",
@@ -239,7 +239,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Bandura's Bobo doll studies, children who watched an adult hit and kick an inflatable doll:",
     options: [
-      "Only copied the adult if they were rewarded directly for doing so",
+      "Only copied the adult if they were themselves rewarded directly for doing so",
       "Became less aggressive",
       "Showed no change in behaviour",
       "Often copied the adult's aggressive actions when later left with the doll",
@@ -258,7 +258,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The frustration-aggression hypothesis proposed by Dollard and colleagues originally claimed that:",
     options: [
       "Frustration always leads to aggression, and aggression always comes from frustration",
-      "Aggression is caused only by watching violent films and copying what is seen",
+      "Aggression is caused only by watching violent films and then copying what is seen in them",
       "Frustration never leads to aggression",
       "Aggression is caused by low arousal",
     ],
@@ -278,7 +278,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "They had been made happy before the study",
       "A rifle and a revolver lay nearby, compared with badminton rackets or nothing",
       "The room was completely empty",
-      "They were told the person receiving the shocks was a close friend",
+      "They were told the person receiving the shocks was a close friend from college",
     ],
     answer: 1,
     explanation:
@@ -356,7 +356,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Nisbett and Cohen's research on the 'culture of honour' found that, after being bumped and insulted by a confederate, white men from the US South, compared with men from the North:",
     options: [
       "Showed larger rises in cortisol and testosterone and acted more aggressively",
-      "Laughed off the insult more often and showed little stress response",
+      "Laughed off the insult more often and showed little or no stress response afterwards",
       "Showed no physiological change",
       "Became more polite to everyone",
     ],
@@ -398,7 +398,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Konrad Lorenz's view of aggression is best described as:",
     options: [
       "A response to frustration only",
-      "A learned response acquired by observing and copying aggressive models",
+      "A learned response acquired by watching and copying aggressive models who are rewarded",
       "An instinct whose energy builds up and must be released, like pressure in a tank",
       "A product of hot weather alone",
     ],
@@ -461,7 +461,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Violent crime tends to be higher in hotter years, seasons and regions",
       "Heat reduces all forms of aggression",
-      "Temperature has no relation to aggression once poverty is controlled",
+      "Temperature has no relation to aggression once poverty and age are controlled",
       "Only cold weather increases violence",
     ],
     answer: 0,
@@ -499,7 +499,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Festinger, Schachter and Back's study of student housing found that friendships formed most often between people who:",
     options: [
       "Had opposite personalities",
-      "Lived at opposite ends of the housing complex",
+      "Lived at opposite ends of the housing complex, with the most to discuss",
       "Lived close to each other, such as next-door neighbours",
       "Had never spoken before the study",
     ],
@@ -517,7 +517,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Moreland and Beach's classroom study, four women of similar appearance attended a large lecture course 0, 5, 10 or 15 times without talking to anyone. At the end, students rated the woman who attended most often as most attractive. This supports:",
     options: [
       "Complementarity",
-      "The matching hypothesis",
+      "The matching hypothesis of attraction",
       "The pratfall effect",
       "The mere exposure effect",
     ],
@@ -615,7 +615,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Aronson's 'pratfall effect' study found that a highly competent person who spilled coffee on himself was rated as:",
     options: [
       "Incompetent",
-      "Less likeable than an average person who made the same blunder",
+      "Less likeable than an average person who made the very same embarrassing blunder",
       "Equally likeable whether or not he blundered",
       "More likeable than the same competent person who did not make a blunder",
     ],
@@ -719,7 +719,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Elaine Hatfield distinguished passionate love from companionate love. Companionate love is:",
     options: [
       "Love as a game",
-      "An intense, short-lived longing for union with another person",
+      "An intense, short-lived longing for union with another person, strongest early on",
       "Love based only on physical attraction",
       "A deep, affectionate attachment and friendship that grows over time",
     ],
@@ -829,7 +829,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research by Ajit Dalal and colleagues on how Indian patients explain their illness found that many patients:",
     options: [
       "Gave weight to karma and God's will alongside physical causes, which often helped them cope",
-      "Gave only biomedical explanations, such as diet, infection or inherited weakness",
+      "Gave only biomedical explanations, such as poor diet, infection, injury or inherited weakness",
       "Blamed only their doctors",
       "Refused to give any explanation",
     ],
@@ -929,11 +929,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Obedience, Control, Tradition, Authority, Punishment, Assessment, Compliance, Efficiency",
       "Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration, Experimentation",
       "Optimism, Courage, Tolerance, Acceptance, Patience, Ambition, Charity, Empathy",
-      "Order, Conformity, Teamwork, Achievement, Power, Affiliation, Competition, Excellence",
+      "Organisation, Cooperation, Transparency, Accountability, Participation, Adaptability, Commitment, Excellence",
     ],
     answer: 1,
     explanation:
-      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value: Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration and Experimentation. The other lists are invented and do not match the acronym's meaning.",
+      "Pareek, a pioneer of organisational psychology and human resource development in India, used OCTAPACE as a profile of a healthy organisational culture, measured with a questionnaire widely used in Indian organisations. Each letter stands for one value: Openness, Confrontation, Trust, Authenticity, Proaction, Autonomy, Collaboration and Experimentation. The other lists are invented; even the one whose initials spell OCTAPACE names the wrong values.",
     ref: "Pareek 1994; Pareek & Rao",
   }),
   s({
@@ -1015,7 +1015,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "When many people are present, each feels less personally responsible for helping",
       "People feel more responsible when others are present",
       "Responsibility is always given to the oldest person",
-      "Helping is shared equally by all bystanders, so each does a small part",
+      "Helping is shared equally by all of the bystanders present, so each does a small part",
     ],
     answer: 0,
     explanation:
@@ -1032,7 +1032,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Any behaviour that causes harm, even by accident",
       "Behaviour intended to harm someone who wants to avoid that harm",
-      "Assertive behaviour such as speaking up for oneself",
+      "Assertive behaviour such as speaking up firmly for oneself and one's rights",
       "Feeling angry without acting",
     ],
     answer: 1,
@@ -1049,7 +1049,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The matching hypothesis predicts that people tend to:",
     options: [
       "Choose partners with opposite personalities",
-      "Choose the most attractive partner available regardless of their own looks",
+      "Choose the most attractive partner available, regardless of how attractive they are themselves",
       "Form relationships with partners who are similar to them in physical attractiveness",
       "Avoid relationships with people they see often",
     ],

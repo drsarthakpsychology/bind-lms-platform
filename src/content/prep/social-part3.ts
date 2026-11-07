@@ -87,7 +87,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Sherif's autokinetic studies, participants in a dark room estimated how far a still point of light seemed to move. When they made estimates in groups, their answers converged on a shared norm, and they kept using that norm later when tested alone. This mainly shows:",
     options: [
       "Social loafing",
-      "Normative influence, producing public compliance only, without private acceptance",
+      "Normative influence, producing public compliance only, without any private acceptance of the norm",
       "Obedience to an authority figure",
       "Informational influence, leading to private acceptance of a norm in an ambiguous situation",
     ],
@@ -344,7 +344,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Milgram explained obedience with the idea of the 'agentic state', in which a person:",
     options: [
       "Has an authoritarian personality",
-      "Acts on their own conscience and accepts full responsibility for what they do",
+      "Acts on their own conscience and accepts full personal responsibility for whatever they do",
       "Is hypnotised by the experimenter",
       "Sees themselves as an instrument of another's wishes and so no longer feels responsible",
     ],
@@ -642,7 +642,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Zimbardo's analysis of the abuse of prisoners at Abu Ghraib prison in Iraq, in which he acted as an expert witness, applied his idea that:",
     options: [
-      "Only conformity to fellow guards, not the wider system, was involved in the abuse",
+      "Only conformity to fellow guards, not the wider military system, was involved in the abuse",
       "The abusers had rare personality disorders",
       "Abuse cannot occur in organised institutions",
       "Situational and systemic forces ('bad barrels') can lead ordinary people to commit abuse",
@@ -791,7 +791,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In an early study, Jenness asked students to estimate the number of beans in a jar, first alone, then after group discussion, then alone again. The second individual estimates moved towards the group's estimate. This early study showed:",
     options: [
-      "Obedience to an authority figure",
+      "Obedience to an authority figure who led the discussion",
       "Informational influence in an ambiguous task",
       "Social loafing",
       "Minority influence",
@@ -855,7 +855,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "People obeyed the guard far more often than the other two",
       "Nobody obeyed any of the three",
-      "The milkman was obeyed most often, as a familiar figure",
+      "The milkman was obeyed most often, as a familiar and trusted figure",
       "Clothing made no difference",
     ],
     answer: 0,

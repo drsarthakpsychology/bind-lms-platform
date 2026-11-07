@@ -25,7 +25,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Fritz Heider, the founder of attribution theory, distinguished between explaining behaviour by:",
     options: [
-      "Classical and operant conditioning",
+      "Classical and operant conditioning of responses",
       "Conscious and unconscious causes",
       "Genetic and environmental causes",
       "Internal (dispositional) and external causes",
@@ -85,7 +85,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Jones and Davis's correspondent inference theory predicts that we are most likely to infer that an act reflects a person's true disposition when the act is:",
     options: [
       "Performed by a group rather than an individual",
-      "Forced by circumstances and socially expected of anyone in that role",
+      "Forced by circumstances and socially expected of anyone in that particular role",
       "Common to all available choices",
       "Freely chosen, has non-common effects and is low in social desirability",
     ],
@@ -194,7 +194,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Storms showed participants videotapes of a conversation from either their own or their partner's visual perspective. Reversing the viewpoint:",
     options: [
-      "Made everyone more situational in their explanations, whichever view they watched",
+      "Made everyone more situational in their explanations, whichever of the two views they watched",
       "Had no effect on attributions",
       "Reversed the actor-observer difference: actors who saw themselves became more dispositional",
       "Eliminated the self-serving bias",
@@ -402,7 +402,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Malle's meta-analysis of the actor-observer asymmetry in attribution concluded that:",
     options: [
       "The classic asymmetry was very small overall and appeared only under specific conditions",
-      "The asymmetry is one of the largest and most reliable effects in social psychology",
+      "The asymmetry is one of the largest and most reliable effects found in all of social psychology",
       "Actors always make more dispositional attributions than observers",
       "The asymmetry is found only in collectivist cultures",
     ],
@@ -554,7 +554,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The primacy effect in impression formation means that:",
     options: [
       "Impressions are formed only after long acquaintance",
-      "The most recent information always dominates, because it is freshest in memory",
+      "The most recent information always dominates, because it is freshest in a perceiver's memory",
       "Negative information is ignored",
       "Early information has a stronger influence on overall impressions than later information",
     ],
@@ -595,7 +595,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Situational attribution",
       "Dispositional attribution",
-      "Self-serving attribution",
+      "Self-serving attribution bias",
       "Defensive attribution",
     ],
     answer: 1,
@@ -627,7 +627,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Pettigrew's 'ultimate attribution error', a prejudiced person who sees an outgroup member succeed is likely to attribute the success to:",
     options: [
       "The person's hard work",
-      "The person's high ability and natural talent",
+      "The person's high ability, natural talent and intelligence",
       "Luck, special advantage or exceptional circumstances",
       "The person's good character and integrity",
     ],
@@ -667,7 +667,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "An 'implicit personality theory' is:",
     options: [
       "A person's assumptions about which traits go together (such as warm people being generous)",
-      "A formal theory of personality traits published by a psychologist, such as Cattell",
+      "A formal theory of personality traits published by a psychologist, such as Cattell's model",
       "An unconscious defence mechanism",
       "A projective personality test",
     ],
@@ -811,7 +811,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'hindsight bias' refers to:",
     options: [
-      "Believing that one's own group is more varied than outgroups, which seem all alike",
+      "Believing that one's own group is more varied than outgroups, whose members all seem much alike",
       "Underestimating the time needed to complete a task",
       "After learning an outcome, believing one could have predicted it ('I knew it all along')",
       "Overestimating how much others notice our appearance",

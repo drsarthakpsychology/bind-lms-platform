@@ -26,7 +26,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Triplett's early observation that cyclists rode faster when racing against others than when riding alone is usually seen as the first study of:",
     options: [
-      "Social loafing",
+      "Social loafing in pairs",
       "Social facilitation",
       "Groupthink",
       "Deindividuation",
@@ -43,7 +43,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "According to Zajonc's drive theory, the presence of others improves performance on simple or well-learned tasks but impairs it on complex or new tasks because others' presence:",
     options: [
-      "Always distracts people equally on all tasks",
+      "Always distracts people equally on all tasks, easy or hard",
       "Reduces arousal, making people careless",
       "Raises arousal, which strengthens the dominant response",
       "Makes people loaf",
@@ -86,7 +86,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In a field study, good pool players in a student union made more successful shots when watched by four observers, while poor players made fewer successful shots when watched. This is best explained by:",
     options: [
       "Groupthink",
-      "Social loafing by the poor players, whose effort dropped when others were watching",
+      "Social loafing by the poor players, whose effort and care dropped when others were watching them play",
       "Social facilitation: an audience strengthens each player's dominant, well-practised response",
       "The bystander effect",
     ],
@@ -382,7 +382,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which option correctly distinguishes stereotype, prejudice and discrimination?",
     options: [
-      "Prejudice is behaviour; discrimination is a belief; stereotype is a feeling towards the group",
+      "Prejudice is behaviour; discrimination is a belief; stereotype is a feeling or attitude towards the group",
       "Stereotype is behaviour; prejudice is a belief; discrimination is a feeling",
       "All three mean the same thing",
       "Stereotype is a belief; prejudice is a negative attitude or feeling; discrimination is unfair behaviour",
@@ -442,7 +442,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Tajfel's minimal group studies, boys were split into groups on a trivial basis (for example, preferring paintings by Klee or Kandinsky) and then allocated points to anonymous others. They often chose allocations that:",
     options: [
-      "Maximised the total points for both groups, so everyone gained as much as possible",
+      "Maximised the total points for both groups, so that everyone gained as much as possible",
       "Gave equal points to everyone",
       "Maximised the difference between the groups, even if their own group got fewer points",
       "Favoured the outgroup",
@@ -504,7 +504,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The tendency to see members of other groups as 'all alike' while seeing one's own group as varied is called:",
     options: [
       "The outgroup homogeneity effect",
-      "The black sheep effect",
+      "The black sheep effect towards outgroups",
       "Ingroup favouritism",
       "Stereotype threat",
     ],
@@ -562,7 +562,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Aronson's 'jigsaw classroom' reduces prejudice among schoolchildren by:",
     options: [
       "Increasing competition between individual pupils",
-      "Grouping children of the same background together so that they feel comfortable",
+      "Grouping children of the same background together so that they feel more comfortable and safe",
       "Having the teacher lecture about tolerance",
       "Making each child responsible for one part of the lesson, so the group needs every member",
     ],
@@ -605,7 +605,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Mere categorisation into groups",
       "Competition between groups for scarce resources such as jobs or land",
-      "Personality traits formed in childhood by harsh parenting",
+      "Personality traits formed in childhood by harsh and punitive parenting",
       "Lack of knowledge about other groups",
     ],
     answer: 1,
@@ -740,7 +740,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The basic idea of social identity theory is that:",
     options: [
       "People always prefer outgroups to ingroups",
-      "Prejudice is caused only by competition for jobs and other scarce goods",
+      "Prejudice is caused only by competition between groups for jobs and other scarce goods",
       "Group membership has no effect on behaviour",
       "Part of our self-concept comes from our groups, so we want to see them positively",
     ],
@@ -794,7 +794,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Showed no preference between dolls",
       "Preferred white dolls and gave them positive qualities, taken as evidence of segregation's harm",
-      "Preferred Black dolls in every case, which was taken as evidence of strong group pride",
+      "Preferred Black dolls in every case, which was taken as evidence of strong and healthy group pride",
       "Refused to choose any doll",
     ],
     answer: 1,
@@ -931,7 +931,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Seeing all groups as identical",
       "Hating all outgroups",
-      "Preferring outgroups to one's own group, out of politeness or modesty",
+      "Preferring outgroups to one's own group, out of politeness, modesty or guilt",
       "Treating or evaluating one's own group's members more favourably than others",
     ],
     answer: 3,

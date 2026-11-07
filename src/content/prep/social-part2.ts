@@ -69,7 +69,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the 1930s, Richard LaPiere travelled across the USA with a young Chinese couple. They were refused service only once in over 250 hotels and restaurants, yet when the same places were later asked by letter whether they would serve Chinese guests, over 90% of those that replied said no. This study is usually cited to show:",
     options: [
-      "That letters are more honest than face-to-face behaviour",
+      "That letters are a more honest guide to attitudes than face-to-face behaviour",
       "That attitudes always predict behaviour accurately",
       "That prejudice did not exist in the 1930s",
       "That stated attitudes do not always predict actual behaviour",
@@ -182,7 +182,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'bogus pipeline' technique tries to get more honest answers about sensitive attitudes by:",
     options: [
       "Using only anonymous online surveys",
-      "Giving participants a drug that lowers inhibition before questioning",
+      "Giving participants a mild drug that lowers inhibition before questioning",
       "Convincing participants that a machine can detect their true attitudes",
       "Asking the same question many times",
     ],
@@ -223,7 +223,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Neither motivation nor opportunity",
       "Both the motivation and the opportunity (time and resources) to think",
-      "Strong, easily activated attitudes but little time to reflect",
+      "Strong, easily activated attitudes but very little time to reflect before acting",
       "Only an implicit attitude",
     ],
     answer: 1,
@@ -296,7 +296,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The sleeper effect",
       "Post-decision dissonance reduction",
       "Reactance",
-      "The mere exposure effect",
+      "The mere exposure effect from handling it",
     ],
     answer: 1,
     explanation:
@@ -351,7 +351,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Attitudes always come before behaviour",
       "When inner cues are weak, people infer their attitudes from their own behaviour, as an observer would",
-      "People feel tension whenever they act against their beliefs, and change attitudes to end it",
+      "People feel tension whenever they act against their beliefs, and they change their attitudes to end it",
       "Attitudes are purely genetic",
     ],
     answer: 1,
@@ -368,7 +368,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Preschool children who liked drawing were promised and given a certificate for drawing with magic markers. Later, in free play, they spent less time drawing than children who received no reward or an unexpected one. This is called:",
     options: [
       "The foot-in-the-door effect",
-      "Effort justification",
+      "Effort justification after hard work",
       "The overjustification effect",
       "Learned helplessness",
     ],
@@ -409,7 +409,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In 'hypocrisy induction' studies, students who made a public speech urging others to use condoms and were then reminded of times they had failed to use them themselves:",
     options: [
-      "Became less likely to use condoms, out of resentment",
+      "Became less likely to use condoms, out of resentment at being called hypocrites",
       "Bought more condoms afterwards, acting on what they had preached",
       "Showed no change at all",
       "Forgot the speech",
@@ -570,7 +570,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The door-in-the-face technique works mainly because of:",
     options: [
       "Obedience to authority",
-      "Self-perception: agreeing to a small request changes how people see themselves",
+      "Self-perception: agreeing to a small request first changes how people come to see themselves",
       "Scarcity: the offer appears limited",
       "The norm of reciprocity: the requester seems to concede, so the target concedes in return",
     ],
@@ -605,7 +605,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "McGuire's inoculation theory proposes that people can be made more resistant to persuasion by:",
     options: [
-      "Keeping them completely away from opposing views until their beliefs are firm",
+      "Keeping them completely away from opposing views until their own beliefs have become firm",
       "Exposing them to weakened counter-arguments, with refutations, before the full attack",
       "Repeating only supportive arguments",
       "Distracting them during the persuasive message",
@@ -706,7 +706,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Attractiveness and wealth",
       "Expertise and trustworthiness",
       "Age and gender",
-      "Speed of speech and loudness",
+      "Speed of speech and loudness of voice",
     ],
     answer: 1,
     explanation:
@@ -806,7 +806,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "A learning disability",
       "A need for approval from others",
       "A stable tendency to enjoy and engage in effortful thinking",
-      "A tendency to agree with all statements, whatever they say",
+      "A tendency to agree with all statements, whatever they actually say",
     ],
     answer: 2,
     explanation:
@@ -839,7 +839,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Social facilitation",
       "Operant extinction",
-      "Cognitive dissonance",
+      "Cognitive dissonance reduction",
       "Classical conditioning",
     ],
     answer: 3,
@@ -896,7 +896,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the 'low-ball' technique, compliance is obtained by:",
     options: [
-      "Adding an extra bonus to the offer before the person decides",
+      "Adding an extra bonus or discount to the offer just before the person decides",
       "Making an extreme first request",
       "Getting a commitment on attractive terms, then making the terms worse",
       "Appealing to the person's fear",
