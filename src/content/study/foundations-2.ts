@@ -26,6 +26,10 @@ Modern academic psychology reached India through **colonial universities** that 
 | **2002** | The **Pondicherry conference** issued the **Manifesto of Indian Psychology** |
 | **2020** | The **National Education Policy** promoted **Indian Knowledge Systems**, now part of UGC NET Unit 1 and several MA syllabi |
 
+:::widget timeline
+{"prompt": "Put these milestones in the history of psychology in India in the right order.", "events": [{"label": "Brajendranath Seal drafts an experimental psychology syllabus at Calcutta", "when": "1905"}, {"label": "The first psychology department in India opens at Calcutta", "when": "1916"}, {"label": "Girindrasekhar Bose founds the Indian Psychoanalytical Society", "when": "1922"}, {"label": "The All India Institute of Mental Health opens in Bangalore", "when": "1954"}, {"label": "The National Academy of Psychology is formed", "when": "1989"}, {"label": "The RCI Act makes registration of clinical psychologists statutory", "when": "1992"}, {"label": "The Manifesto of Indian Psychology is issued at Pondicherry", "when": "2002"}], "why": "Calcutta came first, in both experimental psychology and psychoanalysis. Clinical training followed at Bangalore, and professional regulation and the indigenous psychology movement came much later."}
+:::
+
 :::widget guess
 {
   "prompt": "In which year did Calcutta University's Department of Experimental Psychology, usually called India's first psychology department, begin?",
@@ -245,6 +249,10 @@ Sinha saw the Indian story as moving from the first towards the second, and argu
 ### Emic, etic and derived etic
 **John Berry** described a sequence: researchers often begin with an **imposed etic** (a concept from one culture assumed to be universal), then study the **emic** (the concept as understood inside the new culture), and finally arrive at a **derived etic** (a truly comparable concept built from several emic studies). Indigenous psychologies supply the emic studies that make real universals possible. Some scholars call this **cross-indigenous** psychology.
 
+:::widget compare
+{"title": "Emic or etic?", "a": {"label": "Emic", "points": ["From inside one culture", "Uses the culture's own concepts and words", "Example: studying 'lajja' or 'izzat' as people use them", "Rich and valid locally, hard to compare"], "summary": "Emic research asks what the concept means to the people who live with it."}, "b": {"label": "Etic", "points": ["From outside, across cultures", "Uses concepts assumed to be universal", "Example: giving the same anxiety scale in 20 countries", "Comparable, but may impose a foreign concept"], "summary": "An imposed etic can miss what matters locally. Berry's answer is a derived etic: compare emic findings and keep only what really is shared."}}
+:::
+
 :::widget sort
 {
   "prompt": "Indigenisation from without or from within?",
@@ -370,6 +378,10 @@ Critics argued that this made psychology:
 The "**crisis in social psychology**" of the 1970s (1972) followed. Indian critics added that the paradigm suited neither Indian realities nor Indian traditions.
 
 A second, newer "crisis" is the **replication crisis**: many published findings did not replicate (ego depletion, some priming effects). Its causes include small samples, flexible analysis ("p-hacking"), publication bias and incentives. The response has been **open science**: pre-registration, registered reports, larger samples and data sharing. It is a crisis within the experimental paradigm rather than a rejection of it.
+
+:::widget flow
+{"title": "How the replication crisis happened, and the fix", "layout": "cycle", "nodes": [{"id": "i", "label": "Pressure to publish", "detail": "Careers depend on papers, and journals prefer new, positive, striking results."}, {"id": "f", "label": "Flexible analysis", "detail": "Small samples, many measures and analysis choices made after seeing the data ('p-hacking') make false positives likely."}, {"id": "p", "label": "Positive results published, null results filed away", "detail": "Publication bias fills the literature with effects that may not be real."}, {"id": "r", "label": "Replications fail", "detail": "Large careful repeats of famous studies, such as ego depletion, find smaller effects or none."}, {"id": "x", "label": "Reforms", "detail": "Preregistration, registered reports, larger samples, shared data and valuing replications. These change the incentives at the start of the loop."}], "edgeLabels": {"i>f": "tempts", "f>p": "produces", "p>r": "exposed by", "r>x": "leads to", "x>i": "resets"}, "caption": "The crisis is a story about incentives as much as about statistics."}
+:::
 
 :::widget sort
 {
