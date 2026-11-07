@@ -96,6 +96,21 @@ Carbamazepine induces CYP3A4 and other enzymes, including those that clear it. O
 ### Lamotrigine: glucuronidation and hormones
 Lamotrigine is cleared mainly by glucuronidation (UGT1A4). Valproate inhibits this (levels double); carbamazepine, phenytoin and **oestrogen** induce it (levels fall by about half on the combined pill). Pregnancy raises clearance progressively; it falls back within days after delivery, so doses must be cut after birth to avoid toxicity.
 
+:::widget journey
+{
+ "drug": "Lamotrigine",
+ "target": "sodium channels on overactive neurons, reducing glutamate release",
+ "route": "oral",
+ "notes": {
+  "liver": "Cleared by glucuronidation. Valproate blocks this step, so lamotrigine levels double; carbamazepine, phenytoin and oestrogen speed it up, so levels halve.",
+  "blood": "Levels climb through pregnancy as clearance rises, then jump back within days of delivery if the dose is not cut.",
+  "target": "Blocks sodium channels in their active state and dampens glutamate release. Better at preventing bipolar depression than mania."
+ },
+ "caption": "Stop at the liver. Almost every lamotrigine dosing rule, including the slow start to avoid rash and the halved dose with valproate, comes from this one step."
+}
+:::
+
+
 :::widget curve
 {"kind": "half-life", "title": "Auto-induction: when the half-life itself changes", "caption": "Start with a long half-life, then slide it shorter, as happens with carbamazepine over its first weeks. With the same dose, the steady level drops. This is why a carbamazepine level that was fine early can fall out of range a month later."}
 :::
@@ -232,6 +247,14 @@ GABA-A receptors are built from five subunits around a chloride channel, most of
 - **Glutamate rebound**: the excitatory system turns itself up to balance the extra braking.
 - Tolerance to sedation develops within days to weeks; tolerance to anxiety relief more slowly; tolerance to amnesia and to effects on balance in older people may never fully develop.
 - On stopping, the brake suddenly weakens while the accelerator is still turned up: anxiety, insomnia, perceptual distortions, seizures.
+
+
+:::widget hypnogram
+{
+ "title": "What a sleeping tablet does to the night",
+ "caption": "Drag through a normal night first. Benzodiazepines and z-drugs mostly add light stage N2 sleep and shave off deep N3 and some REM, so the night is longer but not the same. Orexin blockers, described below, switch off the wake signal instead and change the stages much less."
+}
+:::
 
 ### Newer sleep medicines
 **Orexin** (hypocretin) neurons in the hypothalamus hold the brain awake. In narcolepsy they are lost. **Dual orexin receptor antagonists** (suvorexant, lemborexant, daridorexant; daridorexant was approved in the US in January 2022) block this wake signal rather than boosting sedation, with less rebound and less dependence, though next-day drowsiness and vivid dreams occur.
