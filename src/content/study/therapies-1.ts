@@ -99,6 +99,34 @@ Carl Rogers proposed that change happens when the helper offers three conditions
 ### Attending: the body that listens
 Egan's **SOLER**: **S**it squarely facing the client (or at a slight angle), **O**pen posture, **L**ean slightly forward, **E**ye contact (comfortable, culturally appropriate), **R**elaxed. In many Indian settings, steady eye contact with an elder or across genders may feel intrusive; adjust, but stay attentive.
 
+
+:::widget compare
+{
+ "title": "A beginner and a skilled counsellor",
+ "a": {
+  "label": "Beginner",
+  "points": [
+   "Jumps to advice",
+   "Asks many closed questions",
+   "Misses the feeling behind the words",
+   "Fills silences quickly"
+  ],
+  "summary": "The client feels managed, not heard."
+ },
+ "b": {
+  "label": "Skilled",
+  "points": [
+   "Reflects feeling first",
+   "Uses open questions",
+   "Summarises to check understanding",
+   "Lets silence work"
+  ],
+  "summary": "The client feels understood and finds their own options."
+ },
+ "caption": "Slide between them and spot the microskill behind each difference."
+}
+:::
+
 ### The core verbal skills
 | Skill | What it is | Example |
 |---|---|---|
@@ -588,6 +616,34 @@ Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this:
 - **Social skills training** and **assertiveness training**.
 - **Aversion therapy**: pairing a behaviour with an unpleasant stimulus. Now largely abandoned; never ethical as "conversion therapy".
 
+
+:::widget compare
+{
+ "title": "Ritu before and after exposure and response prevention",
+ "a": {
+  "label": "Before",
+  "points": [
+   "Washes hands for about three hours a day",
+   "Avoids doorknobs, buses and public toilets",
+   "Family washes her clothes separately",
+   "Believes touching dirt will make her ill"
+  ],
+  "summary": "Rituals and avoidance keep fear high."
+ },
+ "b": {
+  "label": "After",
+  "points": [
+   "Washes for normal lengths of time",
+   "Travels by bus and uses college toilets",
+   "Family no longer accommodates",
+   "Holds the fear as a thought she can tolerate"
+  ],
+  "summary": "Fear fell because she stayed without the ritual."
+ },
+ "caption": "Slide to see what changed. Which change most predicts lasting recovery? (Dropping rituals and family accommodation.)"
+}
+:::
+
 :::trap Safety behaviours sabotage exposure
 If a person "faces" a crowded market while holding a water bottle, gripping a friend's arm and sitting near the exit, they learn "I survived because of these things", not "I am safe". Identify and drop safety behaviours gradually.
 :::
@@ -724,6 +780,37 @@ Aaron Beck noticed that his depressed patients had a stream of quick, negative t
   "yourTurn": [
     { "q": "Neha, 20, a student in Jaipur, thinks 'If I speak in the seminar, everyone will think I'm stupid' (anxiety 90). Design a behavioural experiment.", "a": "Prediction: 'If I ask one question, people will laugh or look away (90 per cent sure).' Experiment: ask one short question in Thursday's seminar. Observe: did anyone laugh? What did people actually do? Afterwards: rate how strongly she still believes the prediction, and what she learned. Plan to repeat with a slightly bigger step." }
   ]
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put the parts of a CBT session in order.",
+ "events": [
+  {
+   "label": "Mood check"
+  },
+  {
+   "label": "Bridge from last session"
+  },
+  {
+   "label": "Set the agenda together"
+  },
+  {
+   "label": "Review homework"
+  },
+  {
+   "label": "Work on agenda items"
+  },
+  {
+   "label": "Agree new homework"
+  },
+  {
+   "label": "Summary and feedback"
+  }
+ ],
+ "why": "Structure makes the best use of time and teaches the client a method they can use alone."
 }
 :::
 

@@ -855,6 +855,34 @@ Projective tests give **unclear or open material** and ask people to make sense 
 }
 :::
 
+
+:::widget compare
+{
+ "title": "Objective and projective tests",
+ "a": {
+  "label": "Objective",
+  "points": [
+   "Fixed answer formats",
+   "Standard scoring keys",
+   "Validity scales detect faking",
+   "Generally high reliability"
+  ],
+  "summary": "Efficient and reliable; limited by self-report."
+ },
+ "b": {
+  "label": "Projective",
+  "points": [
+   "Open responses to unclear material",
+   "Coding systems needing training",
+   "Harder to fake consciously",
+   "Reliability and validity vary by index"
+  ],
+  "summary": "Rich but use only well-supported indices."
+ },
+ "caption": "Slide between them and decide which you would use for a court report, and why."
+}
+:::
+
 ### Other projective methods
 - **Sentence completion** ("My mother...", "I am afraid of..."): quick and often clinically rich.
 - **Draw-a-Person** and **House-Tree-Person**: drawings, used especially with children.

@@ -450,6 +450,44 @@ You will meet these laws throughout your career. First learn **what each is abou
 }
 :::
 
+
+:::widget timeline
+{
+ "prompt": "Put these Indian laws in order of when they came into force.",
+ "events": [
+  {
+   "label": "NDPS Act",
+   "when": "1985"
+  },
+  {
+   "label": "RCI Act",
+   "when": "1992"
+  },
+  {
+   "label": "POCSO Act",
+   "when": "2012"
+  },
+  {
+   "label": "Juvenile Justice Act",
+   "when": "2015"
+  },
+  {
+   "label": "RPwD Act",
+   "when": "2016"
+  },
+  {
+   "label": "Mental Healthcare Act in force",
+   "when": "2018"
+  },
+  {
+   "label": "BNS, BNSS and BSA replace the old criminal codes",
+   "when": "2024"
+  }
+ ],
+ "why": "Older textbooks cite the earlier laws and section numbers. Knowing the order helps you translate."
+}
+:::
+
 :::student
 Do not panic about section numbers. Learn the **ideas** first: rights, capacity, consent, admission, reporting, registration, disability. Then learn a handful of key sections that come up again and again (they are listed in the exam zone).
 :::
@@ -595,6 +633,36 @@ Q: The RPwD Act 2016 includes which of these as a disability?
 
 ## 2.1 The MHCA 2017: definitions, capacity and rights [core][beginner]
 The Mental Healthcare Act 2017 (MHCA) is a **rights-based** law. It came into force on 29 May 2018. It moved Indian law from "how to detain the mentally ill" to "what rights a person with mental illness has, and how to protect them".
+
+
+:::widget compare
+{
+ "title": "From the Mental Health Act 1987 to the MHCA 2017",
+ "a": {
+  "label": "Mental Health Act 1987",
+  "points": [
+   "Focus on licensing and detention",
+   "Reception orders by magistrates",
+   "Family consent central",
+   "Attempted suicide punishable under the penal code",
+   "Little on patient rights"
+  ],
+  "summary": "A custodial law."
+ },
+ "b": {
+  "label": "MHCA 2017",
+  "points": [
+   "Rights of persons with mental illness",
+   "Capacity, advance directives and nominated representatives",
+   "Independent admission preferred",
+   "Attempted suicide presumed due to severe stress, not punished",
+   "Review Boards and complaint routes"
+  ],
+  "summary": "A rights-based law."
+ },
+ "caption": "Slide across to see what changed when the 2017 Act came into force in 2018."
+}
+:::
 
 ### Key definitions
 - **Mental illness** (section 2(1)(s)): a substantial disorder of thinking, mood, perception, orientation or memory that grossly impairs judgement, behaviour, capacity to recognise reality or ability to meet the ordinary demands of life, including conditions associated with the abuse of alcohol and drugs, but **not** including intellectual disability.

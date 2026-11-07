@@ -674,6 +674,43 @@ Q: A report says "Mr X is a sensitive person who sometimes worries about what ot
 | **Recommendations** | Specific, practical, prioritised |
 | **Signature** | Name, qualification, RCI registration number, date |
 
+
+:::widget timeline
+{
+ "prompt": "Put the steps of an assessment in order.",
+ "events": [
+  {
+   "label": "Clarify the referral question"
+  },
+  {
+   "label": "Plan suitable tests"
+  },
+  {
+   "label": "Take consent"
+  },
+  {
+   "label": "Interview and history"
+  },
+  {
+   "label": "Administer tests"
+  },
+  {
+   "label": "Score and check"
+  },
+  {
+   "label": "Interpret and integrate"
+  },
+  {
+   "label": "Write the report"
+  },
+  {
+   "label": "Give feedback"
+  }
+ ],
+ "why": "Every later step depends on the first: a clear question."
+}
+:::
+
 ### Writing well
 - Write for the **reader** (a teacher, a judge, a psychiatrist, a parent). Explain technical terms or avoid them.
 - **Describe behaviour, not labels**: "She solved puzzles quickly but gave up when items became hard" says more than "low frustration tolerance".
