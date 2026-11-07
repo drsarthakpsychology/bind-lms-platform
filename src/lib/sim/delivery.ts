@@ -7,7 +7,7 @@
  * extracts them from the text into a structured `delivery[]` array, leaving
  * a CLEAN spoken `content`. The UI renders delivery as BEHAVIOUR:
  *   - a real typing-pause of 1.5-3s at the marker's position,
- *   - an em-dash / ellipsis in the transcript,
+ *   - an ellipsis in the transcript (dashes are turned into pauses),
  *   - a genuine silence in TTS.
  *
  * The ALLOWED markers are the closed set the Actor prompt specifies; anything
@@ -92,7 +92,9 @@ export function parseDelivery(raw: string): ParsedTurn {
     .replace(/\s{2,}/g, " ")
     .replace(/\s+([,.!?])/g, "$1")
     .replace(/\s*…\s*/g, " … ")
-    .replace(/\s*\u2014\s*/g, " \u2014 ")
+    // Owner rule: no dashes in anything a student reads. A dash in speech is a break, so it becomes a pause.
+    .replace(/\s*[\u2014\u2013]\s*/g, " … ")
+    .replace(/\s*…\s*(?:…\s*)+/g, " … ")
     .trim();
 
   return { content: contentFinal, delivery, unparsed };
