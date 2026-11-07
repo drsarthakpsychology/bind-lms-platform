@@ -23,6 +23,8 @@ import { Journey, Neuron, Pathways, Receptor } from "./animations";
 import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
 import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./animations3";
 import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
+import { NervousSystem } from "./scenes/nervous-system";
+import type { NervousSystemData } from "@/lib/study/types";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
@@ -582,6 +584,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Strange d={data as StrangeData} />;
     case "illusion":
       return <Illusion d={data as IllusionData} />;
+    case "nervoussystem":
+      return <NervousSystem d={data as NervousSystemData} />;
   }
 }
 

@@ -1,0 +1,56 @@
+// @vitest-environment jsdom
+/**
+ * One interaction test per explorable scene. jsdom has no WebGL, so these
+ * render the flat fallback, which shares every control and every written
+ * state with the 3D view.
+ */
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import { NervousSystem } from "./nervous-system";
+
+vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
+
+beforeAll(() => {
+  window.matchMedia = window.matchMedia || ((q: string) => ({ matches: false, media: q, addEventListener() {}, removeEventListener() {}, addListener() {}, removeListener() {} }) as unknown as MediaQueryList);
+});
+afterEach(() => {
+  cleanup();
+  vi.useRealTimers();
+});
+
+const status = () => screen.getAllByRole("status")[0];
+/** Let time pass in small steps so each timer can schedule the next. */
+const wait = (ms: number) => {
+  for (let t = 0; t < ms; t += 250) act(() => void vi.advanceTimersByTime(250));
+};
+const click = (name: string | RegExp) => fireEvent.click(screen.getAllByRole("button", { name })[0]);
+
+describe("explorable scenes", () => {
+  it("nervoussystem: signals travel through the brain or the reflex shortcut, and the autonomic divisions switch", () => {
+    vi.useFakeTimers();
+    render(<NervousSystem d={{}} />);
+    expect(status()).toHaveTextContent(/Pick a route/);
+    click("Hand: touch a hot cup");
+    expect(status()).toHaveTextContent(/Step 1 of 5, sensory/);
+    wait(1500);
+    expect(status()).toHaveTextContent(/Step 2 of 5.*thalamus/);
+    click("Reflex shortcut");
+    click("Foot: step on a pin");
+    expect(status()).toHaveTextContent(/Step 1 of 4/);
+    wait(1250);
+    expect(status()).toHaveTextContent(/interneuron/);
+    wait(6000);
+    expect(status()).toHaveTextContent(/Done\..*before you knew it hurt/);
+    expect(screen.getByLabelText("1 of 6 missions done")).toBeInTheDocument();
+    click("Organs on autopilot");
+    click(/^Fight or flight$/);
+    expect(status()).toHaveTextContent(/128 beats a minute/);
+    expect(status()).toHaveTextContent(/urine is held/);
+    click("Rest and digest");
+    expect(status()).toHaveTextContent(/vagus/);
+    click("Zoom the map");
+    click(/Autonomic/);
+    expect(status()).toHaveTextContent(/hypothalamus is its main controller/);
+    expect(screen.getByLabelText("4 of 6 missions done")).toBeInTheDocument();
+  });
+});
