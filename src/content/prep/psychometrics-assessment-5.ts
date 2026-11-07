@@ -72,7 +72,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which Rorschach cards are fully chromatic (multicoloured)?",
-    options: ["I, IV and V", "VIII, IX and X", "II and III", "VI and VII"],
+    options: [
+      "I, IV, V and VI",
+      "VIII, IX and X",
+      "II and III",
+      "VI and VII",
+    ],
     answer: 1,
     explanation:
       "Cards VIII, IX and X are fully coloured in pastels. Cards II and III are black with red areas. Cards I, IV, V, VI and VII are achromatic (black and grey). This matters for the Affective Ratio, which compares responses to VIII to X with responses to I to VII.",
@@ -206,7 +211,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In the Comprehensive System, the Popular response of a whole animal figure in the pink side areas belongs to which card?",
-    options: ["Card I", "Card IV", "Card VIII", "Card X"],
+    options: [
+      "Card I",
+      "Card IV",
+      "Card VIII",
+      "Card X (last)",
+    ],
     answer: 2,
     explanation:
       "Card VIII's popular is a four-legged animal in the lateral pink areas (D1). Card I's popular is a bat or butterfly using the whole blot. Card IV's popular is a human or human-like figure. Card X's popular is a crab or spider in the blue lateral areas.",
@@ -262,7 +272,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In later versions of the Comprehensive System, the Schizophrenia Index (SCZI) was replaced by",
-    options: ["the Depression Index (DEPI)", "the Coping Deficit Index (CDI)", "the Hypervigilance Index (HVI)", "the Perceptual-Thinking Index (PTI)"],
+    options: [
+      "the Depression Index (DEPI)",
+      "the Coping Deficit Index (CDI)",
+      "the Hypervigilance Index (HVI) and its variables",
+      "the Perceptual-Thinking Index (PTI)",
+    ],
     answer: 3,
     explanation:
       "Exner replaced SCZI with the PTI because SCZI produced too many false positives and implied a diagnosis; PTI describes the severity of perceptual and thinking problems without naming a disorder. DEPI, CDI and HVI are separate constellations that continue alongside PTI.",
@@ -277,7 +292,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The Comprehensive System Suicide Constellation (S-CON) is considered positive when",
-    options: ["4 or more of its variables are positive", "8 or more of its 12 variables are positive", "all 12 variables are positive", "Lambda is above 1.0"],
+    options: [
+      "4 or more of its 12 variables are positive at once",
+      "8 or more of its 12 variables are positive",
+      "all 12 variables are positive",
+      "Lambda is above 1.0",
+    ],
     answer: 1,
     explanation:
       "S-CON has 12 variables, and a value of 8 or more is a warning sign for suicide risk (it is applied from age 15). Four positives is too low a threshold and would produce many false alarms. Requiring all 12 would miss most at-risk cases. Lambda is not the S-CON criterion.",
@@ -398,7 +418,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "The standard TAT set consists of",
     options: [
       "10 cards, half of them coloured",
-      "20 cards, all of human figures",
+      "20 cards, all of them showing human figures",
       "24 cards, in four sets of six",
       "31 cards, including one blank card",
     ],
@@ -499,7 +519,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Westen's Social Cognition and Object Relations Scale (SCORS) is used to",
     options: [
       "score Rorschach colour and shading responses for emotional control",
-      "measure intelligence and maturity from children's human-figure drawings",
+      "measure intelligence and emotional maturity from children's human-figure drawings",
       "score MMPI critical items that signal acute risk",
       "rate TAT and other narratives for how people and relationships are represented",
     ],
@@ -520,7 +540,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: [
       "The card is intended for boys and adult males",
       "The card shows a boy and his mother",
-      "The card belongs to the blank-card series",
+      "The card belongs to the blank-card series given at the end",
       "The card measures 'basic motivation'",
     ],
     answer: 0,
@@ -560,7 +580,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
       "the examiner, as seen through the storyteller's eyes",
       "the character with whom the storyteller is assumed to identify",
       "always the oldest figure shown in the picture",
-      "the character who wins or succeeds at the end of the story",
+      "the character who wins or succeeds at the very end of the story",
     ],
     answer: 1,
     explanation:
@@ -593,7 +613,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "The Rotter Incomplete Sentences Blank (RISB) consists of",
     options: [
       "40 stems, each rated for conflict and summed into an overall adjustment score",
-      "60 stems grouped into 15 attitude areas such as family, fears and goals",
+      "60 stems grouped into 15 attitude areas such as family, fears, guilt and goals",
       "100 stimulus words read aloud for free association",
       "20 pictures to which the examinee writes a sentence",
     ],
@@ -701,7 +721,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Koppitz's 'emotional indicators' are signs scored on",
     options: [
-      "the TAT stories of adolescents",
+      "the TAT stories of disturbed adolescents",
       "the Rorschach inkblot test",
       "children's human figure drawings",
       "the MMPI-A critical items",
@@ -781,7 +801,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "The 'projective hypothesis', named by L. K. Frank, states that",
     options: [
       "people reveal their needs and conflicts when they respond to ambiguous stimuli",
-      "test scores must be projected onto a normal curve before interpretation",
+      "test scores must be projected onto a normal curve before they can be interpreted",
       "personality is fixed by age five and projected into later life",
       "clinicians project their own feelings onto clients during testing",
     ],
@@ -903,7 +923,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "The Szondi test, in which examinees choose photographs they like most and least from sets of faces of psychiatric patients, falls into which of Lindzey's categories?",
-    options: ["Association", "Choice or ordering", "Construction", "Expression"],
+    options: [
+      "Association",
+      "Choice or ordering",
+      "Construction (story-telling)",
+      "Expression",
+    ],
     answer: 1,
     explanation:
       "Szondi's technique asks the examinee to select or rank stimuli, so it is a choice or ordering technique. Association techniques ask for the first thing that comes to mind (Rorschach, word association). Construction requires creating a product such as a story (TAT). Expression covers drawing, play and similar free activities.",

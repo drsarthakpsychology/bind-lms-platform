@@ -27,7 +27,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
       "10 inkblots, half in colour",
       "9 geometric figures (A and 1 to 8)",
       "16 figures, labelled A to P",
-      "20 pictures of everyday scenes",
+      "20 pictures of everyday scenes and people",
     ],
     answer: 1,
     explanation:
@@ -127,7 +127,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: [
       "removes copying and uses only recall of the designs",
       "uses 16 figures, has norms from age 4 to 85+, and adds a recall phase",
-      "is a computer-scored personality inventory based on the designs",
+      "is a computer-scored personality inventory based on how the designs are drawn",
       "is limited to children under 8 years of age",
     ],
     answer: 1,
@@ -241,7 +241,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     stem: "Part B of the Trail Making Test requires the examinee to",
     options: [
       "connect numbers in order only, as fast as possible",
-      "name the ink colour of colour words as quickly as possible",
+      "name the ink colour of colour words as quickly as they can manage",
       "copy a complex figure",
       "connect numbers and letters in alternating order (1-A-2-B ...)",
     ],
@@ -314,7 +314,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     type: "mcq",
     stem: "The Halstead Impairment Index is",
     options: [
-      "the total raw error score on the Category Test, adjusted for age and education",
+      "the total raw error score on the Category Test, adjusted for the patient's age and education",
       "the share of core scores in the impaired range; .5 or more suggests dysfunction",
       "the difference between the two hands' tapping speeds",
       "an IQ score from the WAIS",
@@ -414,7 +414,12 @@ export const QUESTIONS_6: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The PGI Battery of Brain Dysfunction (PGI-BBD) was developed by",
-    options: ["V. V. Kamat", "Dwarka Pershad and S. K. Verma", "Shobini L. Rao and colleagues", "A. J. Malin"],
+    options: [
+      "V. V. Kamat",
+      "Dwarka Pershad and S. K. Verma",
+      "Shobini L. Rao and NIMHANS colleagues",
+      "A. J. Malin",
+    ],
     answer: 1,
     explanation:
       "Pershad and Verma at PGIMER Chandigarh assembled the PGI-BBD for Indian adults. Kamat adapted the Binet scale. Shobini Rao and colleagues developed the NIMHANS Neuropsychology Battery. Malin adapted the WISC (MISIC) and the VSMS.",
@@ -454,7 +459,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
       "Dwarka Pershad (with N. N. Wig)",
       "H. N. Murthy and colleagues",
       "C. M. Bhatia",
-      "Uma Chowdhury and colleagues",
+      "Uma Chowdhury and her colleagues",
     ],
     answer: 0,
     explanation:
@@ -471,7 +476,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     type: "mcq",
     stem: "Which of the following is NOT a subtest of the PGI Memory Scale?",
     options: [
-      "Verbal retention for dissimilar pairs",
+      "Verbal retention for dissimilar pairs of words",
       "Rey complex figure copy and delayed recall",
       "Mental balance",
       "Recognition",
@@ -490,7 +495,12 @@ export const QUESTIONS_6: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The NIMHANS Neuropsychology Battery for adults (by Rao, Subbakrishna and Gopukumar) provides norms for",
-    options: ["children aged 5 to 15", "adults over 70 only", "all ages from 2 to 90", "adults aged about 16 to 65"],
+    options: [
+      "children aged 5 to 15",
+      "adults over 70 only",
+      "all ages from 2 to 90 in one battery",
+      "adults aged about 16 to 65",
+    ],
     answer: 3,
     explanation:
       "The adult battery is normed for 16 to 65 years, stratified by age, sex and education. Children aged 5 to 15 have a separate NIMHANS battery (Kar and colleagues). The elderly have separate tools. No single NIMHANS battery spans 2 to 90 years.",
@@ -620,7 +630,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
       "verbal fluency, through naming as many words as possible in a minute",
       "auditory attention and memory for strings of spoken digits",
       "visual perception, memory and construction, through reproducing designs",
-      "personality traits, through the style and placement of drawings",
+      "personality traits, through the style, size and placement of the drawings",
     ],
     answer: 2,
     explanation:
@@ -637,7 +647,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     type: "mcq",
     stem: "In the Rey Auditory Verbal Learning Test, the examinee",
     options: [
-      "copies a complex figure, then redraws it from memory after a short and a long delay",
+      "copies a complex figure, then redraws it from memory after both a short and a long delay",
       "hears 15 words over five trials, then a second list, then immediate and delayed recall",
       "repeats increasingly long digit strings forwards and then backwards",
       "names pictured objects",
@@ -659,7 +669,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: [
       "only motor speed, timed from start to finish",
       "only verbal memory for the names of the parts",
-      "personality, through the content and placement of the drawing",
+      "personality, through the content, size and placement of the drawing",
       "visuoconstruction and planning (copy) and visual memory (recall)",
     ],
     answer: 3,
@@ -742,7 +752,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
       "estimate premorbid intelligence from pronouncing irregular words",
       "measure reading speed in adults with brain injury",
       "diagnose dyslexia in children from their spelling errors",
-      "measure current processing speed through timed reading aloud",
+      "measure current processing speed through timed reading of a passage aloud",
     ],
     answer: 0,
     explanation:

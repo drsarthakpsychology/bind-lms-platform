@@ -574,7 +574,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
       "The standard deviation of the true scores in the population tested",
       "The SD of a person's obtained scores around their true score over many retestings",
       "The standard deviation of the criterion scores predicted from the test",
-      "The difference between the test's reliability and its validity coefficient",
+      "The difference between the test's reliability coefficient and its validity coefficient",
     ],
     answer: 1,
     explanation:
@@ -649,7 +649,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The idea that an observed score is made up of a true score plus random error, and the correction for attenuation, are chiefly credited to",
-    options: ["Francis Galton", "Charles Spearman", "L. L. Thurstone", "J. P. Guilford"],
+    options: [
+      "Francis Galton",
+      "Charles Spearman",
+      "Louis Leon Thurstone",
+      "J. P. Guilford",
+    ],
     answer: 1,
     explanation:
       "Spearman's 1904 papers introduced the true-score-plus-error idea and the correction of correlations for attenuation, the start of classical test theory. Galton pioneered individual-differences measurement and correlation ideas but not the error model. Thurstone is known for factor analysis (primary mental abilities) and attitude scaling. Guilford is known for the structure-of-intellect model and psychometric methods texts, later than Spearman.",
@@ -738,7 +743,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Cronbach showed that coefficient alpha is equivalent to",
     options: [
-      "the test-retest coefficient corrected for practice and memory effects",
+      "the test-retest coefficient after correction for practice and memory effects",
       "the mean of all possible split-half coefficients (Rulon/Flanagan formula)",
       "the highest possible split-half coefficient for the test",
       "the correlation between the test and a strictly parallel form",
@@ -832,7 +837,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Carry-over effects in test-retest reliability studies usually",
     options: [
-      "lower the coefficient, because examinees become bored the second time",
+      "lower the coefficient, because examinees become bored and careless the second time",
       "inflate the coefficient, because examinees remember their earlier answers",
       "have no effect if the mean score changes",
       "affect only alternate-form coefficients, not retest coefficients",
@@ -903,7 +908,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "A reliability coefficient of .00 would mean that",
     options: [
       "all observed-score variance is error variance",
-      "all observed-score variance is true variance",
+      "all observed-score variance is true-score variance",
       "the test is perfectly valid",
       "the mean of the test is zero",
     ],

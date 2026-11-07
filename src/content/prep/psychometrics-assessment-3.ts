@@ -222,7 +222,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A driving test passes candidates who correctly perform 9 of 10 required manoeuvres, regardless of how other candidates perform. This is an example of",
-    options: ["a norm-referenced test", "an ipsative test", "a projective test", "a criterion-referenced test"],
+    options: [
+      "a norm-referenced (relative) test",
+      "an ipsative test",
+      "a projective test",
+      "a criterion-referenced test",
+    ],
     answer: 3,
     explanation:
       "Criterion-referenced interpretation compares performance with a fixed standard of mastery. Norm-referenced interpretation compares a person with a reference group. Ipsative scores compare a person's scores with each other (as in forced-choice inventories). A projective test uses ambiguous stimuli, which is unrelated to this format.",
@@ -258,7 +263,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "A class 3 pupil obtains a grade-equivalent score of 6.2 on a mathematics test for class 3. The correct interpretation is that the pupil",
     options: [
-      "has mastered the class 6 syllabus up to its second month and should move up",
+      "has mastered the class 6 syllabus up to its second month and so should be moved up",
       "has a mathematics IQ of 162",
       "is at the 62nd percentile of class 6 pupils taking the same class 3 test",
       "scored as the average class 6 pupil in month 2 would be expected to on this test",
@@ -476,7 +481,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which Wechsler scale is designed for children aged about 2½ to 7½ years?",
-    options: ["WISC-V", "WAIS-IV", "WASI-II", "WPPSI-IV"],
+    options: [
+      "WISC-V",
+      "WAIS-IV (adult)",
+      "WASI-II",
+      "WPPSI-IV",
+    ],
     answer: 3,
     explanation:
       "The Wechsler Preschool and Primary Scale of Intelligence (WPPSI-IV) covers 2:6 to 7:7. The WISC-V covers 6 to 16. The WAIS-IV covers 16 to 90. The WASI-II is a brief screening scale for ages 6 to 90.",
@@ -561,7 +571,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "The Binet-Kamat Test of Intelligence is",
     options: [
-      "an Indian adaptation of the WISC, prepared by A. J. Malin for school children",
+      "an Indian adaptation of the WISC, prepared by A. J. Malin for Indian school children",
       "an adaptation of the Stanford-Binet by V. V. Kamat for Kannada and Marathi speakers",
       "a performance battery of non-verbal tests devised by C. M. Bhatia",
       "the Indian adaptation of the MMPI",
@@ -580,7 +590,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Malin's Intelligence Scale for Indian Children (MISIC) is an Indian adaptation of the",
-    options: ["Wechsler Intelligence Scale for Children", "Stanford-Binet", "Raven's Progressive Matrices", "Kaufman Assessment Battery for Children"],
+    options: [
+      "Wechsler Intelligence Scale for Children",
+      "Stanford-Binet",
+      "Raven's Progressive Matrices",
+      "Kaufman Assessment Battery for Children (K-ABC)",
+    ],
     answer: 0,
     explanation:
       "Arthur J. Malin (Nagpur) adapted the WISC as the MISIC for children of about 6 to 15 years; it yields verbal, performance and full-scale IQs. The Stanford-Binet was adapted as the Binet-Kamat. Raven's matrices are used with Indian norms but not renamed. The K-ABC is not the basis of the MISIC.",
@@ -631,7 +646,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In which Bhatia battery subtest must the examinee move coloured blocks within a shallow tray, sliding but not lifting them, to reproduce a pattern shown on a card?",
-    options: ["Koh's Block Design", "Alexander's Pass-along", "Pattern Drawing", "Picture Construction"],
+    options: [
+      "Koh's Block Design",
+      "Alexander's Pass-along",
+      "Pattern Drawing",
+      "Picture Construction (Bhatia)",
+    ],
     answer: 1,
     explanation:
       "Alexander's Pass-along requires sliding blocks in a frame to match a design without lifting them. Koh's Block Design uses coloured cubes assembled to copy a pattern, and they can be lifted. Pattern Drawing requires drawing a figure without lifting the pencil or retracing lines. Picture Construction requires assembling pieces of a cut-up picture.",
@@ -821,7 +841,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Florence Goodenough's Draw-a-Man test was originally developed to measure",
-    options: ["personality conflicts", "children's intelligence", "organic brain damage", "vocational interests"],
+    options: [
+      "personality conflicts",
+      "children's intelligence",
+      "organic brain damage in adults",
+      "vocational interests",
+    ],
     answer: 1,
     explanation:
       "Goodenough scored children's drawings of a man for the presence of details as an index of intellectual maturity; Harris later revised it (the Goodenough-Harris version). Using figure drawings to infer personality and conflicts came later with Machover's Draw-a-Person. It was not designed to detect organicity or interests.",

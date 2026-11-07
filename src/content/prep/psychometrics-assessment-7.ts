@@ -24,7 +24,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     type: "mcq",
     stem: "The Hamilton Rating Scale for Depression (HAM-D) is",
     options: [
-      "a self-report questionnaire for depressed patients",
+      "a self-report questionnaire completed by depressed patients",
       "a projective test using pictures",
       "a clinician-rated scale completed after an interview",
       "a performance test of slowed reaction time",
@@ -93,7 +93,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     type: "mcq",
     stem: "The BDI-II asks respondents to rate symptoms over which period?",
     options: [
-      "Today only, at the time of testing",
+      "Today only, at the moment of testing",
       "The past two weeks, including today",
       "The past month, including today",
       "The past year",
@@ -116,7 +116,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
       "10 items rated from 0 (absent) to 6 (severe)",
       "21 items rated from 0 (absent) to 3 (severe)",
       "18 items rated from 1 (not present) to 7 (extreme)",
-      "30 items rated from 1 (absent) to 7 (extreme)",
+      "30 items rated from 1 (absent) to 7 (extreme severity)",
     ],
     answer: 2,
     explanation:
@@ -192,7 +192,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
       "10 items (5 obsessions, 5 compulsions) rated 0 to 4, total 0 to 40",
       "21 items rated 0 to 3, total 0 to 63",
       "11 items, some double-weighted, total 0 to 60",
-      "40 true/false items covering checking, washing and hoarding",
+      "40 true/false items covering checking, washing, ordering and hoarding",
     ],
     answer: 0,
     explanation:
@@ -402,7 +402,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     options: [
       "diagnose schizophrenia in psychiatric outpatients",
       "measure general intelligence in health surveys",
-      "assess personality disorders in adults attending primary-care clinics",
+      "assess personality disorders in adults attending primary-care and outpatient clinics",
       "screen for common non-psychotic disorders such as anxiety and depression",
     ],
     answer: 3,
@@ -551,7 +551,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     type: "mcq",
     stem: "Which way of reporting an IQ result follows best practice?",
     options: [
-      "'His IQ is 79, which places him in the borderline range of intelligence.'",
+      "'His IQ is 79, which places him in the borderline range of measured intelligence.'",
       "'He is mentally retarded.'",
       "'His Full Scale IQ of 79 (95% CI 75 to 84) is at about the 8th percentile.'",
       "'His IQ of 79 is low, so he will not cope with mainstream schooling.'",
@@ -708,7 +708,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     options: [
       "Explaining assessment results",
       "Informed consent",
-      "Assessment by unqualified persons",
+      "Assessment carried out by unqualified persons",
       "Obsolete tests and outdated test results",
     ],
     answer: 3,

@@ -23,7 +23,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The Minnesota Multiphasic Personality Inventory (MMPI) was developed by",
-    options: ["Raymond Cattell", "Paul Costa and Robert McCrae", "Theodore Millon", "Starke Hathaway and J. C. McKinley"],
+    options: [
+      "Raymond Cattell",
+      "Paul T. Costa Jr. and Robert R. McCrae",
+      "Theodore Millon",
+      "Starke Hathaway and J. C. McKinley",
+    ],
     answer: 3,
     explanation:
       "Hathaway (a psychologist) and McKinley (a psychiatrist) developed the MMPI at the University of Minnesota, published in 1943. Cattell developed the 16PF. Costa and McCrae developed the NEO inventories. Millon developed the MCMI.",
@@ -111,7 +116,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
       "To remove the need for separate validity scales",
       "So a given T-score means the same percentile on each scale, as raw distributions differ in skew",
       "To convert the scales into stanines for easier interpretation",
-      "Because the original linear T-scores came from a sample of psychiatric inpatients, not normals",
+      "Because the original linear T-scores came from a sample of psychiatric inpatients, not from normals",
     ],
     answer: 1,
     explanation:
@@ -187,7 +192,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The MMPI-2 Infrequency-Psychopathology scale, F(p), is especially useful because",
     options: [
-      "it measures psychotic thinking directly, using items that inpatients commonly endorse",
+      "it measures psychotic thinking directly, using items that most inpatients commonly endorse",
       "it replaces the clinical scales in inpatient settings",
       "it detects defensiveness in job applicants and custody cases",
       "its items are rarely endorsed even by inpatients, so a high F(p) points to over-reporting",
@@ -210,7 +215,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
       "random responding, shown by inconsistent answers to paired items",
       "over-reporting of somatic and cognitive complaints in injury claims",
       "naive defensiveness, such as denying common minor faults",
-      "acquiescent 'true' responding, whatever the content of the items",
+      "acquiescent 'true' responding, whatever the content of the individual items",
     ],
     answer: 1,
     explanation:
@@ -347,7 +352,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The MMPI-A is intended for",
-    options: ["children aged 6 to 11", "adolescents aged 14 to 18", "adults over 65", "job applicants only"],
+    options: [
+      "children aged 6 to 11 years",
+      "adolescents aged 14 to 18",
+      "adults over 65",
+      "job applicants only",
+    ],
     answer: 1,
     explanation:
       "The MMPI-A (478 items) is normed for adolescents aged 14 to 18, with adolescent-specific scales such as school problems. There is no MMPI form for young children. Older adults take the adult forms. The MMPI is not restricted to job applicants.",
@@ -404,7 +414,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "The Millon Clinical Multiaxial Inventory (MCMI) is primarily designed to assess",
     options: [
       "intelligence in children referred for learning problems",
-      "neuropsychological impairment after head injury in adults",
+      "neuropsychological impairment in adults after a head injury or stroke",
       "vocational interests of adults seeking career guidance",
       "personality disorders and clinical syndromes in adult patients",
     ],
@@ -504,7 +514,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "16PF results are usually reported as",
     options: [
       "sten scores (mean 5.5, SD 2) from 1 to 10",
-      "T-scores (mean 50, SD 10) from 20 to 80",
+      "T-scores (mean 50, SD 10), ranging from 20 to 80",
       "Base Rate scores anchored to prevalence",
       "deviation IQs (mean 100, SD 15)",
     ],
@@ -594,7 +604,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "The NEO-PI-R, developed by Costa and McCrae, measures",
     options: [
       "the five-factor model's five domains and their 30 facets",
-      "Eysenck's three superfactors and their primary traits",
+      "Eysenck's three superfactors and the primary traits beneath them",
       "the 16 source traits of Cattell's factor analyses",
       "psychiatric syndromes defined by DSM criteria",
     ],
@@ -702,7 +712,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "The lexical hypothesis, which underlies the Big Five and the 16PF, states that",
     options: [
       "important individual differences become encoded as words in natural language",
-      "personality is determined by the language a person speaks from childhood",
+      "personality is determined by the particular language a person speaks from childhood",
       "only bilingual people have stable traits across situations",
       "trait words should be avoided in personality tests, as they are vague",
     ],
@@ -720,7 +730,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The HEXACO model differs from the Big Five mainly by adding a sixth factor called",
-    options: ["Psychoticism", "Self-Control", "Honesty-Humility", "Reasoning"],
+    options: [
+      "Psychoticism",
+      "Self-Control and Restraint",
+      "Honesty-Humility",
+      "Reasoning",
+    ],
     answer: 2,
     explanation:
       "Ashton and Lee's HEXACO model adds Honesty-Humility (sincerity, fairness, greed avoidance, modesty), found in lexical studies across languages. Psychoticism is Eysenck's. Self-Control is a 16PF global factor. Reasoning is 16PF factor B.",
@@ -899,7 +914,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "People often accept vague, generally true personality descriptions as highly accurate descriptions of themselves. This is a caution for interpreting computer-generated test reports. The phenomenon is called",
-    options: ["the halo effect", "the Barnum (Forer) effect", "the Flynn effect", "the Hawthorne effect"],
+    options: [
+      "the halo effect",
+      "the Barnum (Forer) effect",
+      "the Flynn effect",
+      "the Hawthorne (observer) effect",
+    ],
     answer: 1,
     explanation:
       "Forer showed students rate a generic sketch as highly accurate; Meehl called this the Barnum effect. The halo effect is letting one trait colour ratings of others. The Flynn effect is the rise in IQ scores across generations. The Hawthorne effect is behaviour change from being observed.",

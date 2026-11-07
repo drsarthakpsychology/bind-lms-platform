@@ -77,7 +77,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "In a normal distribution it best balances group contrast against stable estimates",
       "Because 27% of any group always score above the median",
       "Because it removes the effect of guessing on difficult items",
-      "Because the middle 46% of examinees always answer the items at chance level",
+      "Because the middle 46% of examinees always answer the items at about chance level",
     ],
     answer: 0,
     explanation:
@@ -150,7 +150,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "In the two-parameter logistic (2PL) IRT model, the 'a' parameter represents",
     options: [
       "item difficulty, the ability level at which P = .50",
-      "the lower asymptote, reflecting the chance that low-ability examinees guess correctly",
+      "the lower asymptote, reflecting the chance that low-ability examinees guess the answer",
       "item discrimination, shown by how steep the item characteristic curve is at its centre",
       "the examinee's ability on the latent trait",
     ],
@@ -315,7 +315,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In Guttman's scalogram analysis, a coefficient of reproducibility of about .90 or higher indicates that",
     options: [
-      "the items have equal-appearing intervals between their scale values",
+      "the items have equal-appearing intervals between their scale values, as in Thurstone scales",
       "items form a cumulative scale, so a total score predicts the items endorsed",
       "the items have high test-retest reliability over a short interval",
       "the scale is multidimensional, with several clusters of items",
@@ -722,7 +722,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: [
       "the method of contrasted (known) groups",
       "split-half validation of the scale",
-      "content validation by expert judges",
+      "content validation by a panel of expert judges",
       "cross-validation in a second sample",
     ],
     answer: 0,
@@ -755,7 +755,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Schmidt and Hunter's validity generalisation research showed that",
     options: [
-      "validity coefficients of cognitive ability tests are specific to each job and must be re-established locally",
+      "validity coefficients of cognitive ability tests are specific to each job and so must be re-established locally",
       "after correcting for sampling error, range restriction and unreliability, most cross-setting variation vanished",
       "personality tests are always more valid than ability tests",
       "validity coefficients above .30 are statistical artefacts",
@@ -831,7 +831,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "A receiver operating characteristic (ROC) curve for a screening test plots",
     options: [
-      "positive predictive value against the prevalence of the disorder",
+      "positive predictive value against the base rate (prevalence) of the disorder",
       "reliability against test length",
       "sensitivity against 1 − specificity across possible cut-off scores",
       "the test score against the criterion score for each person",
@@ -928,7 +928,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In the three-parameter logistic model, estimated c ('pseudo-guessing') values for four-option items are often below .25. Why?",
     options: [
-      "Because c is the chance of a correct answer at average ability, not at very low ability",
+      "Because c is the chance of a correct answer at average ability, not at the lowest ability levels",
       "Because weak examinees are drawn to attractive distractors instead of guessing at random",
       "Because c is always fixed at 1 divided by the number of options",
       "Because c measures discrimination, which is usually low for such items",
