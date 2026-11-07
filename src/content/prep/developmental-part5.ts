@@ -110,8 +110,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Lower levels of dopamine activity than in childhood",
       "A lack of any reward sensitivity in adolescence",
-      "Complete maturity of the prefrontal cortex by age 12",
-      "Earlier maturation of a reward-sensitive socioemotional system (ventral striatum) than of the cognitive control system (prefrontal cortex)",
+      "Complete maturity of the prefrontal cortex by age 12, before reward sensitivity rises",
+      "Earlier maturation of a reward-sensitive system (ventral striatum) than of prefrontal control",
     ],
     answer: 3,
     explanation:
@@ -146,7 +146,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "No psychological effects of any kind",
       "Higher self-esteem and better academic outcomes than all other groups",
-      "Depression, eating problems, early sexual activity and association with older, delinquent peers",
+      "Depression, eating problems, early sexual activity and older, delinquent peers",
       "Delayed puberty in later years",
     ],
     answer: 2,
@@ -200,9 +200,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The typical adolescent shift toward later sleep and wake times is mainly explained by:",
     options: [
-      "An earlier melatonin onset",
+      "An earlier evening melatonin onset combined with faster build-up of sleep pressure",
       "Laziness",
-      "A pubertal delay in the circadian rhythm (later melatonin onset) and slower build-up of sleep pressure",
+      "A pubertal delay in the body clock (later melatonin onset) and slower build-up of sleep pressure",
       "A complete loss of REM sleep",
     ],
     answer: 2,
@@ -219,10 +219,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "From interviews with men in midlife, Daniel Levinson proposed that men's adult lives:",
     options: [
-      "Are fully determined by early childhood",
+      "Are fully determined by early childhood, with midlife simply repeating earlier conflicts",
       "Show no change after age 20",
       "Follow Freud's psychosexual stages",
-      "Alternate between stable structure-building periods and transitional periods, including a midlife transition around 40 to 45",
+      "Alternate between stable structure-building periods and transitions, including one around 40 to 45",
     ],
     answer: 3,
     explanation:
@@ -254,8 +254,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bernice Neugarten's concept of the 'social clock' refers to:",
     options: [
-      "The biological rate of ageing",
-      "Culturally shared expectations about the right ages for major life events such as marriage, parenthood and retirement",
+      "The biological rate of ageing, measured by changes such as greying and wrinkling",
+      "Shared expectations about the right ages for life events such as marriage and retirement",
       "The suprachiasmatic nucleus",
       "The age at which intelligence peaks",
     ],
@@ -301,12 +301,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Parents' health declines immediately",
       "All mothers become clinically depressed",
-      "Marital satisfaction always falls",
-      "Most parents' wellbeing and marital satisfaction stay the same or improve, rather than declining sharply",
+      "Marital satisfaction always falls as couples lose a shared focus",
+      "Most parents' wellbeing and marital satisfaction stay the same or improve",
     ],
     answer: 3,
     explanation:
-      "Studies found marital satisfaction often rises after children leave, partly because couples have more time together; distress is more likely when parents' identity was centred on parenting or when children leave 'off time'. The other options describe a universal negative 'syndrome' that research does not support.",
+      "Studies found marital satisfaction often rises after children leave, partly because couples have more time together; distress is more likely when parents' identity was centred on parenting or when children leave 'off time'. Immediate health decline, depression in all mothers and an inevitable fall in marital satisfaction describe a universal negative 'syndrome' that research does not support.",
     ref: "Gorchoff, John & Helson 2008, Psychol Sci",
   }),
   // ── Ageing theories ────────────────────────────────────────────────────────
@@ -345,9 +345,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Baltes and Baltes' model of 'selective optimisation with compensation' is illustrated by the pianist Arthur Rubinstein, who in old age:",
     options: [
-      "Played more pieces than ever at greater speed",
+      "Played more pieces than ever at greater speed, while keeping up his usual practice",
       "Gave up playing completely",
-      "Played fewer pieces, practised them more, and slowed down before fast passages so they seemed faster by contrast",
+      "Played fewer pieces, practised them more, and slowed before fast passages to make them seem faster",
       "Relied entirely on recordings from his youth",
     ],
     answer: 2,
@@ -382,12 +382,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Integrity, wisdom and despair",
       "Wealth, fame and longevity",
-      "Disengagement, isolation and rest",
-      "Low probability of disease and disability, high cognitive and physical function, and active engagement with life",
+      "Disengagement from social roles, reduced contact with others and more rest",
+      "Low risk of disease and disability, high mental and physical function, and active engagement",
     ],
     answer: 3,
     explanation:
-      "Rowe and Kahn distinguished 'usual' from 'successful' ageing and defined the latter by avoiding disease and disability, maintaining mental and physical function, and engagement (relationships and productive activity). Critics note it may label people with chronic illness as 'unsuccessful' and underplays subjective wellbeing. The other options are not their components; Erikson's integrity and wisdom belong to a different framework.",
+      "Rowe and Kahn distinguished 'usual' from 'successful' ageing and defined the latter by avoiding disease and disability, maintaining mental and physical function, and engagement (relationships and productive activity). Critics note it may label people with chronic illness as 'unsuccessful' and underplays subjective wellbeing. Disengagement and withdrawal describe disengagement theory, which Rowe and Kahn opposed; wealth and fame are not criteria; and integrity, wisdom and despair come from Erikson's final stage.",
     ref: "Rowe & Kahn 1997, Gerontologist",
   }),
   d({
@@ -502,9 +502,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The Nun Study (described by Snowdon and colleagues) is known for finding that:",
     options: [
       "Nuns never develop dementia",
-      "Low 'idea density' in autobiographies written by nuns in their early 20s predicted Alzheimer's disease and cognitive decline decades later",
+      "Low 'idea density' in essays the nuns wrote in their early 20s predicted later Alzheimer's disease",
       "Religious practice prevents all brain pathology",
-      "Brain pathology always matches cognitive symptoms",
+      "Brain pathology at autopsy always matched the severity of the nuns' cognitive symptoms",
     ],
     answer: 1,
     explanation:
@@ -545,8 +545,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The ability to memorise long lists",
       "High scores on fluid intelligence tests",
-      "A personality trait identical to openness",
-      "Expert knowledge in the fundamental pragmatics of life, including rich factual and procedural knowledge, lifespan contextualism, value relativism and recognition of uncertainty",
+      "A personality trait identical to openness to experience, stable from adolescence",
+      "Expert knowledge in the fundamental pragmatics of life, including handling of values and uncertainty",
     ],
     answer: 3,
     explanation:
@@ -598,7 +598,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Stroebe and Schut's 'dual process model' of coping with bereavement proposes that adaptive grieving involves:",
     options: [
       "Completing five stages in a fixed order",
-      "Oscillating between loss-oriented coping (confronting the loss) and restoration-oriented coping (attending to life changes and new roles)",
+      "Oscillating between loss-oriented coping and restoration-oriented coping",
       "Breaking all bonds with the deceased as quickly as possible",
       "Avoiding any thoughts of the deceased",
     ],
@@ -616,8 +616,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Bonanno's research on trajectories of grief after the death of a spouse found that the most common pattern was:",
     options: [
       "Delayed grief appearing years later",
-      "Chronic grief lasting many years",
-      "Resilience: relatively stable, healthy functioning with only brief, mild disruption",
+      "Chronic grief lasting many years, with slow partial recovery",
+      "Resilience: stable, healthy functioning with only brief, mild disruption",
       "Depression that improved only after loss",
     ],
     answer: 2,
@@ -749,8 +749,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Applies only to government pensioners",
       "Abolishes the joint family",
-      "Requires all older adults to live in old-age homes",
-      "Makes children and relatives legally responsible for maintaining senior citizens and parents who cannot maintain themselves, with tribunals to decide claims",
+      "Requires all older adults without family support to move into government-run old-age homes",
+      "Makes children and relatives legally responsible for maintaining parents and seniors who cannot support themselves",
     ],
     answer: 3,
     explanation:
@@ -806,8 +806,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Tornstam's theory of 'gerotranscendence' proposes that in late life many people:",
     options: [
       "Return to adolescent identity crises",
-      "Lose interest in all meaning and become depressed",
-      "Shift from a materialistic, rational perspective toward a more cosmic, transcendent outlook, with less self-centredness and more selective social contact",
+      "Lose interest in finding meaning and become withdrawn and depressed as their roles shrink",
+      "Shift from a materialistic, rational outlook toward a more cosmic, transcendent one, with less self-focus",
       "Seek more material possessions",
     ],
     answer: 2,
@@ -842,8 +842,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Avoiding all social contact to reduce infection",
       "Taking ginkgo biloba supplements",
-      "Playing a single commercial brain-training game",
-      "Addressing modifiable risk factors such as low education, hearing loss, hypertension, physical inactivity, smoking and social isolation, which together account for about 40% of dementia risk",
+      "Playing a single commercial brain-training game for twenty minutes every day",
+      "Addressing modifiable risks such as low education, hearing loss, hypertension and inactivity",
     ],
     answer: 3,
     explanation:
@@ -859,10 +859,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Margaret Mead's 1928 account of adolescence in Samoa is important in developmental psychology because it:",
     options: [
-      "Argued that adolescent turmoil is shaped by culture rather than being biologically inevitable",
+      "Argued that adolescent turmoil is shaped by culture, not biologically inevitable",
       "Proved that puberty does not occur in Samoa",
       "Introduced the Strange Situation",
-      "Was the first longitudinal study of ageing",
+      "Was the first longitudinal study of ageing in a non-Western society",
     ],
     answer: 0,
     explanation:
@@ -921,8 +921,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "All traits decline in old age",
       "Personality is completely fixed after age 30",
-      "Neuroticism increases steadily throughout adulthood",
-      "Conscientiousness, emotional stability and agreeableness increase from young adulthood to middle age (the 'maturity principle')",
+      "Neuroticism increases steadily throughout adulthood, as responsibilities accumulate",
+      "Conscientiousness, emotional stability and agreeableness rise from young adulthood to midlife",
     ],
     answer: 3,
     explanation:
@@ -981,8 +981,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The Longitudinal Ageing Study in India (LASI) is:",
     options: [
-      "A study of children's language development in Kerala",
-      "A large, nationally representative survey of Indians aged 45 and above and their spouses, covering health, economic and social wellbeing",
+      "A study of children's language development in Kerala and other southern states",
+      "A large, nationally representative survey of Indians aged 45 and above, covering health and wellbeing",
       "A clinical trial of a dementia drug",
       "A twin study of intelligence",
     ],

@@ -43,8 +43,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A 3-year-old says 'I goed to the park and saw two mouses.' She previously said 'went' correctly. This illustrates:",
     options: [
-      "Overextension of word meaning",
-      "Overregularisation, showing that the child has extracted a grammatical rule",
+      "Overextension of familiar words to new objects and actions",
+      "Overregularisation, showing that the child has extracted a rule",
       "Telegraphic speech",
       "Echolalia",
     ],
@@ -104,8 +104,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Language cannot be learned by children at all",
       "Children from poor families learn language more slowly",
-      "Children need direct reinforcement for every correct sentence",
-      "The language children hear is too limited and imperfect to explain the complex grammatical knowledge they acquire, so some knowledge must be innate",
+      "Children need direct reinforcement for every correct sentence, since input is too sparse",
+      "Children's input is too limited to explain the complex grammar they acquire, so some knowledge is innate",
     ],
     answer: 3,
     explanation:
@@ -120,7 +120,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Brown and Hanlon's analysis of parent-child conversations found that parents:",
     options: [
       "Systematically corrected nearly all grammatical errors",
-      "Corrected children mainly for the truth of what they said, not for grammatical errors",
+      "Corrected mainly the truth of what children said, not their grammar",
       "Rewarded ungrammatical sentences more than grammatical ones",
       "Never responded to children's speech",
     ],
@@ -136,7 +136,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jean Berko's 'wug test' showed that young children:",
     options: [
-      "Learn grammar only by imitation",
+      "Learn grammar only by imitation, copying plurals they have heard adults use",
       "Can only repeat words they have heard",
       "Apply morphological rules to new words, saying 'two wugs' for a made-up creature",
       "Cannot form plurals before age 7",
@@ -229,10 +229,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Genie, discovered in 1970 at age 13 after extreme isolation, is often cited because she:",
     options: [
-      "Acquired a substantial vocabulary but never mastered grammar fully, consistent with a sensitive period for syntax",
+      "Learned many words but never fully mastered grammar, consistent with a sensitive period",
       "Learned perfect grammar within a year",
       "Never learned any words",
-      "Had been raised normally until adolescence",
+      "Had been raised normally until adolescence and then lost her language",
     ],
     answer: 0,
     explanation:
@@ -262,14 +262,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Child-directed speech ('motherese' or 'parentese') typically includes:",
     options: [
-      "Fast speech with complex grammar",
+      "Fast speech with complex grammar, to stretch the child's skills",
       "Higher pitch, exaggerated intonation, short simple sentences and repetition",
       "Mostly whispered speech",
       "A monotone voice to avoid overstimulation",
     ],
     answer: 1,
     explanation:
-      "Adults in many cultures speak to infants with a higher, more variable pitch, slower rate, clear pauses, simple vocabulary and repetition; infants prefer it from birth (described by Fernald), and it may help segmentation and attention. The other options describe the opposite of child-directed speech. Note that it is not universal in form: some cultures speak relatively little to young infants directly.",
+      "Adults in many cultures speak to infants with a higher, more variable pitch, slower rate, clear pauses, simple vocabulary and repetition; infants prefer it from birth (described by Fernald), and it may help segmentation and attention. Fast complex speech, whispering and a monotone are the opposite of child-directed speech, which is slower, clearer and more melodic. Note that it is not universal in form: some cultures speak relatively little to young infants directly.",
     ref: "Fernald 1985; Berk, ch. 9",
   }),
   d({
@@ -307,7 +307,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Phonological loop span",
       "Type-token ratio",
-      "Peabody vocabulary score",
+      "Peabody picture vocabulary score",
       "Mean length of utterance (MLU) in morphemes",
     ],
     answer: 3,
@@ -363,8 +363,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Gleitman's 'syntactic bootstrapping' hypothesis proposes that children:",
     options: [
       "Learn grammar only after vocabulary exceeds 1,000 words",
-      "Use word meanings to discover grammatical categories",
-      "Use the syntactic frame in which a new verb appears (for example 'The duck is gorping the bunny' versus 'The duck and the bunny are gorping') to infer the verb's meaning",
+      "Use word meanings to discover grammatical categories, such as treating action words as verbs",
+      "Use the sentence frame a new verb appears in, such as transitive or intransitive, to infer its meaning",
       "Cannot learn verbs before age 4",
     ],
     answer: 2,
@@ -380,9 +380,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Johnson and Newport tested Chinese and Korean immigrants to the US on English grammar. They found that:",
     options: [
       "Only years of residence predicted performance",
-      "Adults who arrived later always outperformed children",
+      "Adults who arrived later always outperformed children, thanks to better study skills",
       "Age of arrival had no effect",
-      "Performance declined with age of arrival after about age 7, and was weakly related to age of arrival among those who arrived as adults",
+      "Performance declined with age of arrival after about 7, with no clear trend among adult arrivals",
     ],
     answer: 3,
     explanation:
@@ -414,7 +414,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The Sapir-Whorf hypothesis (linguistic relativity)",
       "Universal grammar",
-      "The critical period hypothesis",
+      "The critical period hypothesis (Lenneberg)",
       "Fast mapping",
     ],
     answer: 0,
@@ -455,9 +455,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Hart and Risley's observational study of American families reported that:",
     options: [
-      "Children from low-income families heard more words",
+      "Children from low-income families heard more words, mostly from siblings and relatives",
       "All families talked to their children equally often",
-      "Children in professional families heard far more words per hour than children in families on welfare, and early language input predicted later vocabulary",
+      "Children in professional families heard far more words per hour, and input predicted later vocabulary",
       "Language input had no relation to vocabulary",
     ],
     answer: 2,
@@ -520,8 +520,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Early cross-sectional studies suggested that intelligence declines steadily from early adulthood. Schaie's Seattle Longitudinal Study showed that much of this apparent decline was due to:",
     options: [
       "Practice effects",
-      "Cohort effects: older generations had less education and different experiences",
-      "Floor effects in young adults",
+      "Cohort effects: older generations had less schooling",
+      "Floor effects in the young adult samples",
       "Regression to the mean",
     ],
     answer: 1,
@@ -653,8 +653,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Terman's Genetic Studies of Genius, begun in 1921, is a classic example of:",
     options: [
       "An experiment on teaching methods",
-      "A cross-sectional survey of gifted adults",
-      "A prospective longitudinal study of about 1,500 high-IQ Californian children followed into old age",
+      "A cross-sectional survey of gifted adults compared with average adults",
+      "A prospective longitudinal study of about 1,500 high-IQ children followed into old age",
       "A twin study of intelligence",
     ],
     answer: 2,
@@ -696,9 +696,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A cohort effect refers to:",
     options: [
-      "Differences between people born in different periods due to the distinct historical and cultural experiences of their generation",
+      "Differences between generations due to the distinct historical experiences of each",
       "Differences caused by repeated testing",
-      "The effect of being in a peer group",
+      "The influence of a shared peer group, such as classmates of the same year",
       "The influence of genes on development",
     ],
     answer: 0,
@@ -734,8 +734,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'Young Lives' study is relevant to Indian developmental research because it:",
     options: [
       "Is a cross-sectional survey of Indian college students",
-      "Is a long-running longitudinal cohort study of childhood poverty that includes children in Andhra Pradesh and Telangana, alongside Ethiopia, Peru and Vietnam",
-      "Is an experimental study of preschool teaching in Delhi only",
+      "Is a long-running longitudinal study of childhood poverty that includes children in Andhra Pradesh and Telangana",
+      "Is an experimental study of preschool teaching methods in government schools in Delhi only",
       "Studied only adults over 60",
     ],
     answer: 1,
@@ -753,8 +753,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'visual cliff' experiment by Gibson and Walk found that most crawling infants (6 to 14 months):",
     options: [
       "Could not see the checkerboard pattern",
-      "Crawled happily over the deep side",
-      "Refused to crawl over the apparent drop even when their mothers called them",
+      "Crawled happily over the deep side when their mothers called",
+      "Refused to crawl over the apparent drop even when their mothers called",
       "Showed fear only of the shallow side",
     ],
     answer: 2,
@@ -809,8 +809,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bialystok's research on bilingual children most often reported advantages in:",
     options: [
-      "Vocabulary size in each language compared with monolinguals",
-      "Some aspects of executive control, such as resolving conflict in tasks with misleading cues, though recent large studies find these effects small or inconsistent",
+      "Vocabulary size in each of their languages, which exceeded that of monolingual children",
+      "Some aspects of executive control, such as resolving conflict, though recent large studies find small effects",
       "General intelligence (IQ) by about 30 points",
       "Speed of naming pictures",
     ],
@@ -842,9 +842,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Vygotsky's view of the relation between thought and language was that:",
     options: [
-      "Thought is simply silent speech, as Watson argued",
+      "Thought is simply silent speech, as Watson argued, from the first words onward",
       "Language completely determines thought from birth",
-      "They have separate roots and develop independently until about age 2, when they merge so that thought becomes verbal and speech becomes rational",
+      "They have separate roots until about age 2, when they merge so that thought becomes verbal",
       "Language is irrelevant to cognitive development",
     ],
     answer: 2,
@@ -884,8 +884,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which finding best supports a role for social interaction, rather than mere exposure, in early speech learning?",
     options: [
-      "Kuhl and colleagues: 9-month-old American infants learned Mandarin sound contrasts from live interaction with a Mandarin speaker but not from the same amount of exposure by video or audio",
-      "Eimas and colleagues: infants perceive speech categorically",
+      "Kuhl: infants learned Mandarin sound contrasts from a live speaker but not from video or audio",
+      "Eimas: infants perceive speech categorically, even for sounds absent in their language",
       "Brown: morphemes are acquired in a consistent order",
       "Berko: children add plural endings to nonsense words",
     ],

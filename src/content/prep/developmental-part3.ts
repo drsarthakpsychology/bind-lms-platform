@@ -44,8 +44,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Freezes, shows contradictory behaviour and seems confused on reunion",
       "Shows little distress at separation and avoids the mother on reunion",
-      "Is extremely distressed and both seeks and angrily resists contact on reunion",
-      "Explores when the mother is present, may be distressed when she leaves, and seeks contact and is quickly comforted on reunion",
+      "Is extremely distressed and, on reunion, both seeks contact and angrily resists being comforted",
+      "Explores when the mother is present, may be distressed when she leaves, and is quickly comforted on reunion",
     ],
     answer: 3,
     explanation:
@@ -103,8 +103,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bowlby's '44 juvenile thieves' study reported that many of the thieves diagnosed with 'affectionless psychopathy':",
     options: [
-      "Had securely attached relationships with both parents",
-      "Had experienced prolonged early separation from their mothers, compared with few in a control group",
+      "Had securely attached relationships with both parents throughout early childhood",
+      "Had experienced prolonged early separation from their mothers, unlike most controls",
       "Had been adopted at birth into stable homes",
       "Showed no difference from controls in early separation",
     ],
@@ -155,10 +155,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Schaffer and Emerson's longitudinal study of 60 Glasgow infants found that:",
     options: [
-      "Infants attached most strongly to whoever fed them most",
+      "Infants attached most strongly to whoever fed them most, usually from about 3 months",
       "Infants attached only to their mothers",
       "Attachments formed only after 2 years",
-      "Specific attachments appeared around 7 to 9 months, multiple attachments followed soon after, and infants attached most strongly to adults who responded sensitively, not necessarily to those who fed them",
+      "Specific attachments appeared around 7 to 9 months, and the strongest were to the most responsive adults",
     ],
     answer: 3,
     explanation:
@@ -173,8 +173,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Van IJzendoorn and Kroonenberg's meta-analysis of Strange Situation studies across eight countries found that:",
     options: [
       "Every country had identical distributions",
-      "Variation in attachment types within countries was about one and a half times greater than variation between countries",
-      "Avoidant attachment was the most common type in all countries",
+      "Variation within countries was about one and a half times greater than variation between them",
+      "Avoidant attachment was the most common type in all countries, including Japan",
       "No country showed any securely attached infants",
     ],
     answer: 1,
@@ -284,8 +284,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "De Wolff and van IJzendoorn's meta-analysis found that the association between maternal sensitivity and infant attachment security was:",
     options: [
       "Zero",
-      "Near perfect (r about 0.90)",
-      "Moderate (r about 0.24), leaving a 'transmission gap' in explaining how parental attachment passes to the infant",
+      "Near perfect (r about 0.90), as Ainsworth predicted",
+      "Moderate (r about 0.24), leaving a 'transmission gap'",
       "Negative",
     ],
     answer: 2,
@@ -321,7 +321,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Thomas and Chess's concept of 'goodness of fit' means that:",
     options: [
-      "Development goes best when environmental demands and parenting match the child's temperament",
+      "Development goes best when demands and parenting match the child's temperament",
       "Children should be matched to parents with the same temperament",
       "Difficult children always develop problems",
       "Temperament is completely fixed and unaffected by parenting",
@@ -355,8 +355,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Hazan and Shaver applied attachment theory to adult romantic relationships using a 'love quiz' in a newspaper. They found that:",
     options: [
       "All adults were securely attached",
-      "Adults could be classified as secure, avoidant or anxious-ambivalent in roughly the same proportions as Ainsworth's infants",
-      "Romantic attachment is unrelated to childhood experiences",
+      "Adults could be classed as secure, avoidant or anxious-ambivalent in proportions like Ainsworth's infants",
+      "Romantic attachment styles were unrelated to adults' childhood relationships with parents",
       "Avoidant adults reported the happiest relationships",
     ],
     answer: 1,
@@ -414,10 +414,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Mahler's theory of separation-individuation describes a 'rapprochement' subphase (about 15 to 24 months) in which the toddler:",
     options: [
-      "Having become aware of separateness, returns anxiously to the mother for reassurance, swinging between closeness and independence",
+      "Aware of being separate, returns anxiously to the mother, swinging between closeness and independence",
       "Is unaware that the mother is a separate person",
       "Has achieved stable object constancy",
-      "Practises walking with little concern for the mother",
+      "Practises walking and exploring in elation, with little concern for where the mother is",
     ],
     answer: 0,
     explanation:
@@ -507,7 +507,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Hodges and Tizard's longitudinal study of children who spent their early years in institutions in London found that at age 16, compared with controls:",
     options: [
-      "Both adopted and restored children had more difficulties with peer relationships, though adopted children often formed good relationships with their families",
+      "Both adopted and restored children had more peer difficulties, though adopted children formed good family bonds",
       "All children were indistinguishable from controls",
       "Children restored to their biological families did better than adopted children in every respect",
       "None of the children formed any attachments",
@@ -524,8 +524,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In attachment theory, using the caregiver as a 'secure base' means that the infant:",
     options: [
-      "Refuses to leave the caregiver's lap",
-      "Explores the environment confidently while knowing the caregiver is available to return to",
+      "Refuses to leave the caregiver's lap until it feels completely safe",
+      "Explores confidently while knowing the caregiver is there to return to",
       "Ignores the caregiver completely",
       "Prefers strangers to the caregiver",
     ],
@@ -564,10 +564,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bowlby's 1951 report for the World Health Organization, which strongly influenced child-care policy, argued that:",
     options: [
-      "A warm, intimate and continuous relationship with the mother or a permanent mother-substitute is essential for mental health",
+      "A warm, continuous relationship with the mother or a permanent substitute is essential for mental health",
       "Children develop best when cared for by many rotating caregivers",
       "Early separation from parents has no lasting effects",
-      "Feeding is the main basis of the child's tie to the mother",
+      "Feeding is the main basis of the child's tie to the mother, so any feeder will do",
     ],
     answer: 0,
     explanation:
@@ -715,9 +715,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The chronosystem in Bronfenbrenner's model refers to:",
     options: [
       "The child's biological clock",
-      "The dimension of time: changes in the person and environment over the life course and through history",
+      "The dimension of time: changes in the person and environment across life and history",
       "The school timetable",
-      "The relationship between two microsystems",
+      "The relationship between two microsystems, such as home and school",
     ],
     answer: 1,
     explanation:
@@ -733,8 +733,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Attachment to fathers is impossible",
       "Infants form no attachments in the first year",
-      "Infants commonly form multiple attachments, and later relationships can partly compensate for early adversity, so the period is better described as sensitive rather than critical",
-      "Early experience has no influence on later development",
+      "Infants often form multiple attachments, and later care can partly offset early adversity, so the period is sensitive",
+      "Early experience has no influence on later development once a child is placed in a loving home",
     ],
     answer: 2,
     explanation:
@@ -749,9 +749,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Fonagy's concept of 'reflective functioning' (mentalisation) in parents is relevant to attachment because it:",
     options: [
       "Is the same as maternal deprivation",
-      "Refers to the reflex responses of newborns",
+      "Refers to the reflex responses of newborns, such as rooting towards a parent's touch",
       "Is a measure of IQ",
-      "Describes a parent's capacity to understand the child's behaviour in terms of mental states, which predicts infant security and may help explain the transmission gap",
+      "Describes a parent's capacity to understand the child's behaviour in terms of mental states",
     ],
     answer: 3,
     explanation:
