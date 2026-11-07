@@ -23,7 +23,7 @@ export function parseViewBox(vb: string): [number, number, number, number] {
 }
 
 /** Rough text width in pixels at the figure's label size. */
-const textPx = (s: string) => s.length * 6.6;
+const textPx = (s: string) => s.length * 7.3;
 
 /** Split a long name over two lines at the space nearest its middle. */
 export function wrapName(name: string, max = 17): string[] {
