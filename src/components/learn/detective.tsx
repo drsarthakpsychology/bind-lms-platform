@@ -25,6 +25,11 @@ function roll() {
   return Math.random();
 }
 
+/** A fresh id per game, so each game's hints are counted on their own. */
+function newRunId() {
+  return `${Date.now().toString(36)}${Math.floor(roll() * 1e6).toString(36)}`;
+}
+
 type Round = { c: Case; options: string[] };
 
 function deal(family: "drug" | "disorder" | "mixed"): Round[] {
@@ -59,7 +64,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
   function start(f = family) {
     setFamily(f);
-    setRun(`${Date.now().toString(36)}${Math.floor(roll() * 1e6).toString(36)}`);
+    setRun(newRunId());
     setRuledOut(null);
     setRounds(deal(f));
     setR(0);
