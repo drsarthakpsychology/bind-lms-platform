@@ -3,6 +3,7 @@ import { CHAPTERS, DIAGNOSES, diagnosisById, searchDiagnoses } from "../diagnose
 import { CASES, caseById } from "./cases";
 import {
   apply,
+  canOpenClue,
   cleanLog,
   dailyIndex,
   dailyStreak,
@@ -17,6 +18,7 @@ import {
   summariseCohort,
   targetDifficulty,
   wrongReason,
+  xpFor,
 } from "./engine";
 import { buildView } from "./view";
 
@@ -111,8 +113,12 @@ describe("moves", () => {
   });
 
   it("a wrong guess on the last clue ends the case; chapter credit gives 15", () => {
-    let p = start();
-    for (let i = 1; i < MAX_CLUES; i++) p = apply(mdd, p, { t: "clue" });
+    // From clue 4 on only a guess opens the next clue, so get there with wrong guesses from other chapters.
+    let p = apply(mdd, start(), { t: "clue" });
+    p = apply(mdd, p, { t: "clue" });
+    for (const d of DIAGNOSES.filter((x) => x.chapter !== mdd.chapter).slice(0, MAX_CLUES - 3)) p = apply(mdd, p, { t: "guess", dx: d.id });
+    expect(p.clues).toBe(MAX_CLUES);
+    expect(p.chapterHit).toBe(false);
     p = apply(mdd, p, { t: "guess", dx: "pmdd" });
     expect(p.status).toBe("lost");
     expect(scoreOf(p)).toBe(15);
@@ -138,6 +144,38 @@ describe("moves", () => {
     const r = replay(mdd, log);
     expect(r.progress.status).toBe("solved");
     expect(r.log).toHaveLength(3);
+  });
+});
+
+describe("hint and clue rules", () => {
+  it("from clue 4 the next clue needs a guess first", () => {
+    let p = apply(mdd, start(), { t: "clue" });
+    p = apply(mdd, p, { t: "clue" });
+    expect(p.clues).toBe(3);
+    expect(canOpenClue(p)).toBe(false);
+    expect(apply(mdd, p, { t: "clue" })).toBe(p);
+    const other = DIAGNOSES.find((x) => x.chapter !== mdd.chapter)!;
+    p = apply(mdd, p, { t: "guess", dx: other.id });
+    expect(p.clues).toBe(4);
+  });
+
+  it("a hint lowers the case score, never below zero", () => {
+    const solved = apply(mdd, start(), { t: "guess", dx: "mdd" });
+    expect(scoreOf(solved)).toBe(100);
+    let p = apply(mdd, start(), { t: "hint" });
+    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(90);
+    p = apply(mdd, p, { t: "hint" });
+    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(80);
+    expect(xpFor("practice", 80)).toBeLessThan(xpFor("practice", 100));
+    // At the floor of 10, hints still take it lower.
+    let q = apply(mdd, start(), { t: "hint" });
+    q = apply(mdd, q, { t: "hint" });
+    q = apply(mdd, q, { t: "clue" });
+    q = apply(mdd, q, { t: "clue" });
+    for (let i = 0; i < 6; i++) q = apply(mdd, q, { t: "inv", i });
+    expect(Math.max(10, 100 - 15 * (q.clues - 1 + q.invs.length))).toBe(10);
+    q = apply(mdd, q, { t: "guess", dx: "mdd" });
+    expect(scoreOf(q)).toBe(0);
   });
 });
 

@@ -6,20 +6,22 @@
  * - The case opens on clue 1. Each wrong guess shows WHY it is wrong (a
  *   criterion-level reason) and then reveals the next clue.
  * - The player may reveal the next clue, or order an investigation; each
- *   costs one clue point.
+ *   costs one clue point. From clue 4 on, a guess must come first (a wrong
+ *   guess opens the next clue), so clue spam turns into practice.
  * - A wrong guess with all 6 clues showing ends the case.
  * - Score: 100 on clue 1 with nothing ordered, minus 15 per clue point used,
- *   at least 10 when solved. Unsolved but a guess hit the right DSM chapter
- *   (before using the chapter hint): 15.
+ *   at least 10 when solved, then minus 10 per hint (never below 0). Unsolved
+ *   but a guess hit the right DSM chapter (before using the chapter hint): 15.
+ * - Hints are counted and charged by src/lib/hints (3 free a day, then spare
+ *   or bought ones); this file only knows how many this case used.
  */
 
 import { CHAPTERS, diagnosisById, normaliseName } from "../diagnoses";
+import { CASE_SCORE_PER_HINT, clueOpens } from "@/lib/hints/rules";
 import type { DailyCase } from "./types";
 
 export const MAX_CLUES = 6;
 export const MAX_HINTS = 2;
-export const FREE_HINTS_PER_DAY = 3;
-export const HINT_XP_COST = 5;
 export const MAX_LOG = 40;
 
 export type Action = { t: "clue" } | { t: "inv"; i: number } | { t: "guess"; dx: string } | { t: "hint" } | { t: "giveup" };
@@ -46,7 +48,7 @@ export function pointsUsed(p: Pick<Progress, "clues" | "invs">): number {
 }
 
 export function scoreOf(p: Progress): number {
-  if (p.status === "solved") return Math.max(10, 100 - 15 * pointsUsed(p));
+  if (p.status === "solved") return Math.max(0, Math.max(10, 100 - 15 * pointsUsed(p)) - CASE_SCORE_PER_HINT * p.hints);
   if (p.status === "lost") return p.chapterHit ? 15 : 0;
   return 0;
 }
@@ -74,12 +76,21 @@ export function start(): Progress {
   return { clues: 1, invs: [], guesses: [], hints: 0, status: "playing", chapterHit: false, marks: [] };
 }
 
+/**
+ * Can "Next clue" open the next clue now? From clue 4 on, a guess is needed
+ * first. A wrong guess itself opens the next clue, so from clue 3 on the way
+ * forward is always a guess.
+ */
+export function canOpenClue(p: Pick<Progress, "clues" | "status">): boolean {
+  return p.status === "playing" && p.clues < MAX_CLUES && clueOpens(p.clues + 1, false);
+}
+
 /** Apply one move. Invalid moves return the same object (so callers can detect a no-op). */
 export function apply(c: DailyCase, p: Progress, a: Action): Progress {
   if (p.status !== "playing") return p;
   switch (a.t) {
     case "clue":
-      if (p.clues >= MAX_CLUES) return p;
+      if (p.clues >= MAX_CLUES || !canOpenClue(p)) return p;
       return { ...p, clues: p.clues + 1, marks: [...p.marks, "clue"] };
     case "inv":
       if (!Number.isInteger(a.i) || a.i < 0 || a.i >= c.investigations.length || p.invs.includes(a.i)) return p;

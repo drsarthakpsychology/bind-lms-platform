@@ -46,6 +46,9 @@ import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
 import { dailyMove, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { HintChip } from "@/components/hints/hint-chip";
+import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
+import type { HintStatus } from "@/lib/hints/engine";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -70,7 +73,7 @@ function dayLabel(day: string) {
 }
 
 function worth(v: CaseView) {
-  return Math.max(10, 100 - 15 * v.points);
+  return Math.max(0, Math.max(10, 100 - 15 * v.points) - CASE_SCORE_PER_HINT * v.hints.used);
 }
 
 export function DailyGame({ serverState, save, initial }: { serverState: LearnState | null; save: Save; initial: MoveResult }) {
@@ -154,6 +157,14 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
       }
       after(t, res, action);
     });
+  }
+
+  /** A hint purchase changes the count shown on every tab. */
+  function setHints(h: HintStatus) {
+    const upd = (g: Game | null) => (g ? { ...g, meta: { ...g.meta, hints: h } } : g);
+    setDaily(upd);
+    setPractice(upd);
+    setAiGame(upd);
   }
 
   function newAi(choice: AiChoice = aiChoice) {
@@ -240,6 +251,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
           shake={shake}
           gain={gain}
           onMove={move}
+          onHints={setHints}
           onNextPractice={tab === "ai" ? () => newAi() : newPractice}
           streak={streak}
         />
@@ -255,6 +267,7 @@ function CaseBoard({
   shake,
   gain,
   onMove,
+  onHints,
   onNextPractice,
   streak,
 }: {
@@ -264,6 +277,7 @@ function CaseBoard({
   shake: number;
   gain: { xp: number; key: number } | null;
   onMove: (a?: Action) => void;
+  onHints: (h: HintStatus) => void;
   onNextPractice: () => void;
   streak: number;
 }) {
@@ -276,7 +290,7 @@ function CaseBoard({
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const ordered = v.investigations.filter((x) => x.ordered);
   const canHint = playing && v.hints.used < 2;
-  const hintLabel = meta.stored && meta.freeHintsLeft === 0 ? `Hint · ${meta.hintCost} XP` : `Hint${meta.stored ? ` · ${meta.freeHintsLeft} free today` : ""}`;
+  const outOfHints = meta.hints !== null && meta.hints.left === 0;
 
   return (
     <div className="space-y-4">
@@ -297,7 +311,7 @@ function CaseBoard({
         <ClueMeter shown={v.cluesOpen} status={v.status} />
         {playing && (
           <p className="mt-2 text-sm">
-            Worth <strong className="tabular-nums">{worth(v)} points</strong> now. Each clue or test: minus 15.
+            Worth <strong className="tabular-nums">{worth(v)} points</strong> now. Each clue or test: minus 15. Each hint: minus {CASE_SCORE_PER_HINT}.
           </p>
         )}
       </header>
@@ -374,14 +388,14 @@ function CaseBoard({
         <section className={cn(card, "space-y-3 p-4")} aria-label="Your move">
           <GuessBox disabled={pending} guessed={v.guesses.map((g) => g.dx)} onGuess={(dx) => onMove({ t: "guess", dx })} />
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-            <button type="button" className={btnSecondary} disabled={pending || v.clues.length >= MAX_CLUES} onClick={() => onMove({ t: "clue" })}>
+            <button type="button" className={btnSecondary} disabled={pending || !v.canClue} onClick={() => onMove({ t: "clue" })}>
               <ArrowRight className="size-4" aria-hidden /> Next clue
             </button>
             <button type="button" className={btnSecondary} aria-expanded={showTests} disabled={pending || v.investigations.every((x) => x.ordered)} onClick={() => setShowTests((s) => !s)}>
               <FlaskConical className="size-4" aria-hidden /> Order a test
             </button>
-            <button type="button" className={btnSecondary} disabled={pending || !canHint} onClick={() => onMove({ t: "hint" })}>
-              <Lightbulb className="size-4" aria-hidden /> <span className="truncate">{canHint ? hintLabel : "No hints left"}</span>
+            <button type="button" className={btnSecondary} disabled={pending || !canHint || outOfHints} onClick={() => onMove({ t: "hint" })}>
+              <Lightbulb className="size-4" aria-hidden /> <span className="truncate">{canHint ? "Hint" : "No more hints"}</span>
             </button>
             {confirmQuit ? (
               <button type="button" className={cn(btnInk)} disabled={pending} onClick={() => onMove({ t: "giveup" })}>
@@ -392,6 +406,10 @@ function CaseBoard({
                 <Flag className="size-4" aria-hidden /> Give up
               </button>
             )}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <HintChip status={meta.hints} onStatus={onHints} />
+            {!v.canClue && v.cluesOpen < MAX_CLUES ? <p className="text-sm text-muted-foreground">Make a guess to open clue {v.cluesOpen + 1}.</p> : null}
           </div>
           {showTests && (
             <ul className="grid gap-2 sm:grid-cols-2" aria-label="Tests you can order (each costs one clue point)">

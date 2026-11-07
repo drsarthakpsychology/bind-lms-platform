@@ -7,6 +7,7 @@ import { normalise } from "@/lib/learn/engine";
 import { istToday } from "@/lib/practice/streaks";
 import { leagueWeek } from "@/lib/leagues/week";
 import { xpBalance } from "@/lib/leagues/xp";
+import { buyHints } from "@/lib/hints/server";
 import { canRepair, isLookId, lookString, LOOKS, parseLook, repairStreak, SHOP, SHOP_READY, type LookId } from "@/lib/leagues/shop";
 
 const NOT_READY = "This isn't switched on yet. Please try again later.";
@@ -45,7 +46,16 @@ export async function buyItem(item: string): Promise<BuyResult> {
 
   if (item === "streak_repair") return buyRepair(p.id, bal.balance);
 
-  if (item === "hints_3" || item === "bonus_case") {
+  // Hints: once a day, through the hint counter (it writes the XP spend to
+  // xp_ledger with the day as ref, so the same day can't be bought twice).
+  if (item === "hints_3") {
+    const r = await buyHints(p.id);
+    if (!r.ok) return { error: r.error };
+    revalidatePath("/leaderboard/shop");
+    return { error: null, balance: bal.balance - SHOP.hints_3.cost };
+  }
+
+  if (item === "bonus_case") {
     if (!SHOP_READY[item]) return { error: "Coming soon." };
     const cost = SHOP[item].cost;
     if (bal.balance < cost) return { error: `You need ${cost - bal.balance} more XP.` };
