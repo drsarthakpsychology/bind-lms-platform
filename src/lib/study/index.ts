@@ -26,6 +26,7 @@ import * as m_mseDeep from "@/content/study/mse-deep";
 import * as m_neurocognitive from "@/content/study/neurocognitive";
 import * as m_ocd from "@/content/study/ocd";
 import * as m_personality from "@/content/study/personality";
+import * as m_pharmacokinetics from "@/content/study/pharmacokinetics";
 import * as m_personalityTheories from "@/content/study/personality-theories";
 import * as m_psychodynamics from "@/content/study/psychodynamics";
 import * as m_psychosis from "@/content/study/psychosis";
@@ -44,7 +45,7 @@ import * as m_trauma from "@/content/study/trauma";
  * The course, in curriculum order (sorted by module number). Add a module by
  * creating its file in src/content/study (meta + text) and importing it here.
  */
-const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_applied, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_foundations, m_frontiers, m_interviewMse, m_learningMemory, m_lifespan, m_medicineProfiles, m_moreDisorders, m_motivationEmotion, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_psychodynamics, m_psychosis, m_researchMethods, m_sensationPerception, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_thinkingLanguage, m_trauma];
+const SOURCES: { meta: ModuleMeta; text: string }[] = [m_antidepressants, m_antipsychotics, m_anxiety, m_applied, m_assessment, m_bipolar, m_brain, m_caseSheet, m_child, m_defences, m_depression, m_ethicsLaw, m_examPrep, m_foundations, m_frontiers, m_interviewMse, m_learningMemory, m_lifespan, m_medicineProfiles, m_moreDisorders, m_motivationEmotion, m_mseDeep, m_netPaper1, m_neurocognitive, m_ocd, m_personality, m_personalityTheories, m_pharmacokinetics, m_psychodynamics, m_psychosis, m_researchMethods, m_sensationPerception, m_social, m_stabilisers, m_statistics, m_substance, m_suicide, m_therapies, m_thinkingLanguage, m_trauma];
 
 function build(src: { meta: ModuleMeta; text: string }): StudyModule {
   const sections = parseModule(src.text);
