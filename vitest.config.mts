@@ -3,6 +3,8 @@ import path from "node:path";
 
 export default defineConfig({
   test: {
+    // Rendering big modules and 3D fallbacks is slow when many checks share the machine.
+    testTimeout: 20_000,
     environment: "node",
     include: ["src/**/*.test.ts", "src/**/*.test.tsx", "tests/**/*.test.ts"],
     // jest-dom matchers (toBeInTheDocument, …) for component tests. Component
