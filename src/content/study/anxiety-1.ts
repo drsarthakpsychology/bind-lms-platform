@@ -22,6 +22,10 @@ Every one of these changes is useful when there is a real bus. Each feels fright
 Anxiety works like a smoke alarm. A good alarm rings for real fires and stays quiet for toast. In an anxiety disorder, the alarm is too sensitive: it rings loudly for burnt toast, or for nothing at all, and keeps ringing after the toast has gone.
 :::
 
+:::widget stress
+{"title": "Watch the alarm go off, step by step", "caption": "Each body change in the list above comes from this chain. In an anxiety disorder the chain is the same one: it simply fires for a lift, a crowd or a worry, and the brake at the end works less well."}
+:::
+
 ### A little anxiety helps
 Some anxiety improves performance: it sharpens attention before an exam or a match. Too little and you don't prepare; too much and your mind goes blank. Performance is best somewhere in the middle. This inverted-U pattern is often called the Yerkes-Dodson curve.
 
@@ -76,6 +80,10 @@ When something makes us anxious, staying away from it brings instant relief. Tha
 
 :::widget flow
 {"title": "The avoidance trap", "layout": "cycle", "nodes": [{"id": "fear", "label": "Feared situation", "detail": "The metro, a presentation, a dog."}, {"id": "anx", "label": "Anxiety rises", "detail": "Racing heart, dread."}, {"id": "avoid", "label": "Avoid or escape", "detail": "Take a cab; skip the class."}, {"id": "relief", "label": "Instant relief", "detail": "Anxiety drops."}, {"id": "learn", "label": "Nothing new is learned", "detail": "The fear is never tested, so it stays or grows, and more situations are avoided."}]}
+:::
+
+:::widget compare
+{"title": "Everyday fear and an anxiety disorder", "a": {"label": "Everyday fear", "points": ["Fits the size of the danger", "Settles once the danger passes", "Life carries on: you still take the exam or the bus", "Feels unpleasant but makes sense to you"], "summary": "Healthy fear: in proportion, short-lived and it does not run your life."}, "b": {"label": "Anxiety disorder", "points": ["Far bigger than the real danger, or with no danger at all", "Lasts for months or keeps coming back", "You start avoiding places, people or tasks", "Causes real distress or gets in the way of study, work or family"], "summary": "A disorder: out of proportion, persistent and impairing. All three together point to a disorder."}, "caption": "Slide across. Clinicians ask the same three questions: is it out of proportion, does it persist, and does it get in the way?"}
 :::
 
 :::recall
@@ -178,6 +186,10 @@ Anxiety disorders are among the most treatable problems in mental health.
 
 :::widget sort
 {"prompt": "Does each response help anxiety get better, or keep it going?", "buckets": ["Helps it get better", "Keeps it going"], "items": [{"text": "Going to the market for ten minutes, then twenty, then thirty", "bucket": 0}, {"text": "Always carrying an inhaler 'just in case', though there is no asthma", "bucket": 1, "why": "A safety behaviour: the person credits the inhaler, not themselves, for surviving."}, {"text": "Learning what each body symptom of panic means", "bucket": 0}, {"text": "Having two pegs of whisky before every party", "bucket": 1}, {"text": "Asking your mother five times a day if your headache could be a tumour", "bucket": 1}, {"text": "Staying in a feared situation until the anxiety settles by itself", "bucket": 0}]}
+:::
+
+:::widget timeline
+{"prompt": "Rohan is afraid of lifts. Order his exposure ladder from the easiest step to the hardest.", "events": [{"label": "Look at photos and videos of lifts"}, {"label": "Stand in front of a lift and watch the doors open and close"}, {"label": "Step inside a lift with the doors held open"}, {"label": "Ride one floor with a friend"}, {"label": "Ride one floor alone"}, {"label": "Ride ten floors alone in a busy lift"}], "why": "A ladder starts with a step that is hard but possible, and climbs only when the step before has become manageable. The friend is a helper early on and is then dropped, because a companion can become a safety behaviour."}
 :::
 
 ### Being a good support
@@ -391,6 +403,10 @@ Childhood adversity, overprotective or highly critical parenting, bullying, pove
 {"title": "Where the alarm lives", "focus": ["amygdala", "prefrontal", "hippocampus", "hypothalamus"], "notes": {"amygdala": "Detects threat and fires the alarm.", "prefrontal": "Calms the amygdala when danger has passed or was never real.", "hippocampus": "Judges context: is this place safe or dangerous?", "hypothalamus": "Triggers the body's stress response and hormones."}, "caption": "In anxiety disorders the alarm tends to over-respond and the brakes to under-act."}
 :::
 
+:::widget conditioning
+{"kind": "classical", "title": "How a fear is learned", "caption": "Swap the bell for a dog and the food for a painful bite. After one bad bite, the sight of any dog (the conditioned stimulus) can bring a racing heart (the conditioned response). This is how many specific phobias start. Exposure is extinction in action: meeting dogs again and again with nothing bad happening."}
+:::
+
 :::recall
 1. Name three biological vulnerabilities to anxiety. || Genes, behavioural inhibition, an over-reactive threat circuit (and CO2 sensitivity in panic).
 2. Name three ways fear is learned. || Direct conditioning, watching others, being told.
@@ -557,6 +573,10 @@ A panic attack can be added as a specifier to any disorder: "PTSD with panic att
 {"scene": "Ritu's family doctor suggests she 'take an alprazolam whenever an attack comes'. She asks you whether that is a good idea.", "ask": "What is the most accurate guidance to give, as part of an educational discussion she will take back to her doctor?", "choices": [{"label": "'Yes, take it every time; it stops the attack quickly.'", "verdict": "harm", "outcome": "Over months she carries the strip everywhere, takes it more often, and cannot leave home without it.", "why": "As-needed benzodiazepines become a safety behaviour and risk dependence. They prevent the learning that attacks pass on their own."}, {"label": "'Ask your doctor about first-line treatments: CBT for panic, and if needed an SSRI started at a low dose. Short-term benzodiazepine use, if any, should be planned and time-limited.'", "verdict": "best", "outcome": "She starts CBT and a low-dose SSRI. After some weeks the attacks become rare, and she stops checking her pulse.", "why": "CBT and SSRIs are first-line for panic disorder. Benzodiazepines are, at most, a short bridge."}, {"label": "'Medicines never help panic; just ignore it.'", "verdict": "harm", "outcome": "She feels dismissed and keeps going to emergency.", "why": "Wrong: several medicines are effective, and ignoring panic is not a treatment."}]}
 :::
 
+:::widget compare
+{"title": "Panic attack or heart attack?", "a": {"label": "Panic attack", "points": ["Often younger, often a woman, often with past attacks", "Sharp or stabbing chest discomfort with racing heart, tingling and breathlessness", "Comes on suddenly and peaks within minutes", "Strong fear of dying, losing control or going mad", "ECG and heart blood tests come back normal"], "summary": "Panic: sudden, peaks in minutes, settles within the hour, with normal heart tests."}, "b": {"label": "Heart attack", "points": ["Older, or with diabetes, smoking, high blood pressure or high cholesterol", "Crushing or heavy central chest pain, which may spread to the left arm, jaw or back", "Often brought on by exertion, and does not settle within minutes", "Sweating, nausea and breathlessness; fear may or may not be present", "ECG changes and a rise in heart enzymes (troponin)"], "summary": "Heart attack: heavy pain that persists, with risk factors and abnormal tests. It is an emergency."}, "caption": "Features overlap. When in doubt, rule out the heart first: an ECG costs little, and a missed heart attack can kill. Panic is diagnosed once medical causes are excluded, not before."}
+:::
+
 :::recall
 1. How quickly does a panic attack peak? || Within minutes.
 2. How many of the 13 symptoms are needed? || Four.
@@ -592,6 +612,10 @@ The situations almost always provoke fear; they are avoided, endured with intens
 
 :::note Culture and companionship
 In many Indian families women go out accompanied as a social norm, and elders are rarely alone. "Requires a companion" counts only when it is driven by fear of panic-like symptoms and is out of keeping with the person's usual habits and culture.
+:::
+
+:::widget timeline
+{"prompt": "How does agoraphobia usually build up after panic? Put the steps in order.", "events": [{"label": "A first, unexpected panic attack in a crowded bus"}, {"label": "Worry about when the next attack will strike"}, {"label": "Avoiding buses and crowded markets"}, {"label": "Going out only with a trusted companion"}, {"label": "Rarely leaving home at all"}], "why": "Agoraphobia often grows out of fear of panic. Each avoided place makes the safe zone smaller, until in severe cases the person is housebound. Agoraphobia can also occur without any panic attacks."}
 :::
 
 :::recall
@@ -747,6 +771,10 @@ Onset after about 45 with no previous history; no family history; no clear psych
 {"prompt": "For each person, is a medical or substance cause likely enough that it should be checked first?", "buckets": ["Check body or substance first", "A primary anxiety disorder is more likely"], "items": [{"text": "A 60-year-old man with new attacks of sweating, headache and very high blood pressure", "bucket": 0, "why": "Episodic hypertension with headache and sweating suggests phaeochromocytoma."}, {"text": "A 25-year-old woman with weight loss, heat intolerance, tremor and a fast pulse at rest", "bucket": 0, "why": "Classic hyperthyroidism."}, {"text": "A 22-year-old student who has feared public speaking since school", "bucket": 1}, {"text": "A 40-year-old on a new asthma inhaler, now shaky and anxious", "bucket": 0}, {"text": "A 35-year-old who stopped his daily alcohol two days ago, now tremulous and panicky", "bucket": 0, "why": "Alcohol withdrawal can be dangerous: assess urgently."}, {"text": "A 19-year-old with dog phobia since a bite at age eight", "bucket": 1}]}
 :::
 
+:::widget flow
+{"title": "New anxiety in a 50-year-old: what to rule out", "layout": "tree", "nodes": [{"id": "r", "label": "First anxiety in mid-life, no past history", "detail": "Late first onset is a red flag for a physical or substance cause."}, {"id": "m", "label": "Medical cause?", "detail": "Check the body first.", "parent": "r"}, {"id": "s", "label": "Substance cause?", "detail": "Ask about what is taken, and what was recently stopped.", "parent": "r"}, {"id": "p", "label": "Another mental disorder?", "detail": "Anxiety is often a feature of something else.", "parent": "r"}, {"id": "m1", "label": "Overactive thyroid", "detail": "Weight loss, tremor, heat intolerance, fast pulse.", "parent": "m"}, {"id": "m2", "label": "Heart rhythm problems, low blood sugar, asthma or COPD", "detail": "Palpitations with an irregular pulse; attacks related to missed meals or insulin; breathlessness.", "parent": "m"}, {"id": "s1", "label": "Caffeine, steroids, salbutamol, thyroxine", "detail": "Ask about tea, coffee and energy drinks too.", "parent": "s"}, {"id": "s2", "label": "Alcohol or benzodiazepine withdrawal", "detail": "Morning shakes and anxiety that improve after a drink.", "parent": "s"}, {"id": "p1", "label": "Depression", "detail": "The commonest cause of new anxiety in mid-life; ask about mood and sleep.", "parent": "p"}, {"id": "p2", "label": "Early dementia or psychosis", "detail": "Anxiety can be the first sign; check cognition and look for odd beliefs.", "parent": "p"}], "caption": "Only when all three branches are checked can a primary anxiety disorder be diagnosed."}
+:::
+
 :::recall
 1. Name four endocrine causes of anxiety. || Hyperthyroidism, hypoglycaemia, phaeochromocytoma, hypoparathyroidism (and Cushing's).
 2. Name four medicines that can cause anxiety. || Salbutamol, steroids, thyroxine excess, decongestants (also theophylline, SSRIs early on).
@@ -781,6 +809,14 @@ Avoidance and safety behaviours (sitting down, holding on, carrying water) stop 
 
 ### Clark and Wells: social anxiety
 In social situations, attention turns **inward** to a distorted image of how one looks ("I'm bright red and shaking"). The person uses safety behaviours, which make them look odd and prevent disconfirmation, and they replay the event afterwards (post-event processing).
+
+:::widget conditioning
+{"kind": "operant", "title": "Why avoidance is so hard to give up", "caption": "The rat gets food for pressing: something pleasant is added. Avoidance works by negative reinforcement: something unpleasant (anxiety) is taken away. Each time the person escapes the shop, the fear drops at once, and the escape is learned more strongly. This is the second factor in Mowrer's two-factor theory, and why exposure means staying."}
+:::
+
+:::widget flow
+{"title": "Clark and Wells: what keeps social anxiety going", "layout": "cycle", "nodes": [{"id": "sit", "label": "Social situation", "detail": "Speaking up in a seminar."}, {"id": "thr", "label": "Perceived danger", "detail": "'They will see I am nervous and think I am stupid.'"}, {"id": "self", "label": "Self-focused attention", "detail": "Attention turns inward to a distorted image of how she looks, so she misses the friendly faces."}, {"id": "safe", "label": "Safety behaviours", "detail": "Rehearsing sentences, avoiding eye contact, holding the cup tightly. These make her seem distant and stop her learning the truth."}, {"id": "sym", "label": "Anxiety symptoms", "detail": "Blushing and a shaky voice, which she takes as proof that people can see her fear."}], "edgeLabels": {"self>safe": "she protects herself", "safe>sym": "symptoms grow"}, "caption": "Treatment targets the loop: drop safety behaviours, shift attention outward, and use video feedback to correct the self-image."}
+:::
 
 ### GAD models
 - **Avoidance model (Borkovec)**: worry is verbal and abstract; it damps down vivid images and body arousal, so it is rewarded, but it blocks emotional processing.
