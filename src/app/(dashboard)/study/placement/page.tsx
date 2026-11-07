@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
+import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { getSession } from "@/lib/auth/session";
 import { loadPlacement } from "@/lib/learn/model/server";
 import { placementItems } from "@/lib/learn/model/placement";
@@ -11,9 +13,14 @@ import { PlacementRunner } from "./runner";
 
 export const metadata: Metadata = { title: "Placement quiz" };
 
-/** /study/placement: 18 questions across every topic; seeds the map. Answers stay on the server. */
+/**
+ * /study/placement: 18 questions across every topic; seeds the map. Answers
+ * stay on the server. Switched off with PREP_ONBOARDING_ENABLED: the address
+ * goes back to Study and nothing links here.
+ */
 export default async function PlacementPage() {
   await requireFeature("learn");
+  if (!PREP_ONBOARDING_ENABLED) redirect("/study");
   const session = await getSession();
   const isLearner = session.status === "ok" && (session.profile.role === "student" || session.profile.role === "alumni");
   const previous = isLearner && session.status === "ok" ? await loadPlacement(session.profile.id) : null;

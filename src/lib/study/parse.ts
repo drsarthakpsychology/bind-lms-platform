@@ -19,7 +19,7 @@ import type { Block, BoxKind, Card, Level, ListItem, Mcq, Section, WidgetData, W
  */
 
 const BOXES = new Set<BoxKind>(["define", "word", "trap", "mnemonic", "example", "sounds", "analogy", "note", "safety"]);
-const WIDGETS = new Set<WidgetKind>(["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal", "flow", "curve", "layers", "brainmap", "journey", "neuron", "pathways", "receptor", "conditioning", "memoryflow", "stress", "timeline", "compare", "attention", "dissonance", "conservation", "experiment", "release", "thoughtrecord", "hypnogram", "strange", "illusion", "nervoussystem", "brainexplorer", "actionpotential", "synapse3d", "genogram", "hpaloop", "brainslicer", "amesroom", "figure"]);
+export const WIDGETS: ReadonlySet<WidgetKind> = new Set<WidgetKind>(["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal", "flow", "curve", "layers", "brainmap", "journey", "neuron", "pathways", "receptor", "conditioning", "memoryflow", "stress", "timeline", "compare", "attention", "dissonance", "conservation", "experiment", "release", "thoughtrecord", "hypnogram", "strange", "illusion", "nervoussystem", "brainexplorer", "actionpotential", "synapse3d", "genogram", "hpaloop", "brainslicer", "amesroom", "figure"]);
 
 export function slugNum(num: string): string {
   return num.replace(/\./g, "-").toLowerCase();

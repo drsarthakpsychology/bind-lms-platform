@@ -35,7 +35,7 @@ const choice = z.number().int().min(0).max(3).nullable();
 const checkSchema = z.object({ id, choice: z.number().int().min(0).max(3), ms: z.number().min(0).max(3_600_000).optional() });
 
 function reveal(q: PrepQuestion): PrepReveal {
-  return { id: q.id, answer: q.answer, explanation: q.explanation, learnHref: learnHrefForQuestion(q) };
+  return { id: q.id, answer: q.answer, explanation: q.explanation, learnHref: learnHrefForQuestion(q), ...(q.visual ? { visual: q.visual } : {}) };
 }
 
 /**

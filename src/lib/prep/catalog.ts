@@ -20,6 +20,16 @@ import { SUBJECTS, type Difficulty, type PrepExam, type PrepQuestion, type Subje
  */
 export const EXAM_TRACKS_ENABLED: boolean = false;
 
+/**
+ * Starting checks and track record switch (owner, 8 Nov 2026: "keep it in the
+ * background but switch it off; they can simply access it"). Off: no
+ * starting check, goal picker, Study placement quiz, "Start here" prompt,
+ * rank among students or past-mock record is shown or suggested, and their
+ * old addresses go back to the section. Every student goes straight to the
+ * subjects and questions. On: all of it comes back as it was.
+ */
+export const PREP_ONBOARDING_ENABLED: boolean = false;
+
 /** The section's full name (page titles and the hero). No dashes in student text. */
 export const PREP_TITLE = "Psychology Entrance & Competitive Exam Preparation";
 /** The exams the one course prepares for, shown as a separate line under the title. */
