@@ -1,5 +1,5 @@
 /**
- * Learn engine — the rules behind XP, levels, streaks, badges, chests and
+ * Learn engine: the rules behind XP, levels, streaks, badges, chests and
  * spaced review. Pure functions (no I/O), so every rule is unit-tested and the
  * same maths runs on the phone and the server.
  *
@@ -88,7 +88,7 @@ export function emptyStudy(): StudyProgress {
 }
 
 export const DAILY_GOALS = [20, 40, 60] as const;
-export const INTERVALS = [0, 1, 3, 7, 14, 30]; // days, indexed by Leitner box (1–5)
+export const INTERVALS = [0, 1, 3, 7, 14, 30]; // days, indexed by Leitner box (1 to 5)
 export const MAX_FREEZES = 2;
 
 export function emptyState(): LearnState {
@@ -393,7 +393,7 @@ export function starsFor(correct: number, total: number): 0 | 1 | 2 | 3 {
   return pct >= 1 ? 3 : pct >= 0.8 ? 2 : pct >= 0.5 ? 1 : 0;
 }
 
-/** Chest bonus: 5–25 XP, with an occasional jackpot. `roll` is 0..1. */
+/** Chest bonus: 5 to 25 XP, with an occasional jackpot. `roll` is 0..1. */
 export function chestBonus(roll: number): { xp: number; jackpot: boolean } {
   if (roll > 0.92) return { xp: 50, jackpot: true };
   return { xp: 5 + Math.round(roll * 20), jackpot: false };

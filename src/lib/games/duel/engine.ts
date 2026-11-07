@@ -20,6 +20,8 @@ export const LEFT_MS = 12000;
 export const BOT_AFTER_MS = 20000;
 export const DX_POINTS = 100;
 export const FEATURE_POINTS = 50;
+/** League XP for winning a ranked duel (paid once per match into the ledger as "duel:win"). */
+export const WIN_XP = 20;
 
 export type Side = "p1" | "p2";
 

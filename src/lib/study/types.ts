@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -90,7 +90,17 @@ export type NeuronData = { title?: Inline; myelinated?: boolean; caption?: Inlin
 export type PathwaysData = { system: "dopamine"; title?: Inline; caption?: Inline };
 /** Ligand types at one receptor: full agonist, partial agonist, antagonist, inverse agonist, with a live signal bar. */
 export type ReceptorData = { receptor?: string; title?: Inline; caption?: Inline };
-export type WidgetData = JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** Classical (bell, food, drool) or operant (lever, food, press rate) conditioning, played step by step. */
+export type ConditioningData = { kind: "classical" | "operant"; title?: Inline; caption?: Inline };
+/** Sensory store, working memory and long-term memory with rehearsal, encoding, retrieval and forgetting. */
+export type MemoryFlowData = { title?: Inline; caption?: Inline };
+/** Stress response: amygdala, hypothalamus, pituitary, adrenal; heart rate and cortisol rise and settle. */
+export type StressData = { title?: Inline; caption?: Inline };
+/** Put events in order. List the events in the correct order; the widget shuffles them. */
+export type TimelineData = { prompt: Inline; events: { label: Inline; when?: string }[]; why?: Inline };
+/** Two states compared with a slider (healthy vs ill, before vs after, novice vs expert). */
+export type CompareData = { title?: Inline; a: { label: Inline; points: Inline[]; summary: Inline }; b: { label: Inline; points: Inline[]; summary: Inline }; caption?: Inline };
+export type WidgetData = ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

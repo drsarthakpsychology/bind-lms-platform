@@ -186,13 +186,13 @@ export const DSM_NOTES: Note[] = [
   {
     id: "dsm-elimination-sleep",
     block: D,
-    title: "Elimination & sleep–wake",
+    title: "Elimination & sleep-wake",
     emoji: "🌙",
     tagline: "Bedwetting to insomnia, narcolepsy and sleep apnoea",
-    tldr: ["Elimination disorders are about toilet control in children; sleep disorders affect amount, timing or quality of sleep.", "Elimination disorders (age-referenced); sleep–wake disorders affecting quantity, timing, quality or abnormal events."],
+    tldr: ["Elimination disorders are about toilet control in children; sleep disorders affect amount, timing or quality of sleep.", "Elimination disorders (age-referenced); sleep-wake disorders affecting quantity, timing, quality or abnormal events."],
     sections: [
       { title: "Elimination", tone: "blue", points: [["Enuresis: repeated wetting at 5 years or older", "Twice a week for 3 months, or clinically significant distress"], ["Encopresis: passing stool in inappropriate places at 4 or older", "At least once a month for 3 months"]] },
-      { title: "Sleep–wake", tone: "lime", points: [["Insomnia: trouble falling or staying asleep, 3 or more nights a week for 3 or more months", "With daytime impairment despite adequate opportunity"], "Hypersomnolence: excessive sleepiness despite enough sleep", ["Narcolepsy: sudden sleep attacks, sometimes collapse with laughter", "Cataplexy and/or hypocretin deficiency"], ["Obstructive sleep apnoea: snoring, breathing pauses, daytime sleepiness", "Diagnosed by sleep study"], "Circadian rhythm disorders (e.g., shift work, delayed sleep phase)", ["Parasomnias: sleepwalking, night terrors, nightmares, acting out dreams", "NREM arousal disorders, nightmare disorder, REM sleep behaviour disorder"], "Restless legs syndrome: urge to move legs at night"] },
+      { title: "Sleep-wake", tone: "lime", points: [["Insomnia: trouble falling or staying asleep, 3 or more nights a week for 3 or more months", "With daytime impairment despite adequate opportunity"], "Hypersomnolence: excessive sleepiness despite enough sleep", ["Narcolepsy: sudden sleep attacks, sometimes collapse with laughter", "Cataplexy and/or hypocretin deficiency"], ["Obstructive sleep apnoea: snoring, breathing pauses, daytime sleepiness", "Diagnosed by sleep study"], "Circadian rhythm disorders (e.g., shift work, delayed sleep phase)", ["Parasomnias: sleepwalking, night terrors, nightmares, acting out dreams", "NREM arousal disorders, nightmare disorder, REM sleep behaviour disorder"], "Restless legs syndrome: urge to move legs at night"] },
       { title: "Watch out", style: "alert", points: ["Poor sleep is a common early sign of mania and depression", "REM sleep behaviour disorder can precede Parkinson's or Lewy body dementia"] },
     ],
     quiz: { domain: "disorders" },

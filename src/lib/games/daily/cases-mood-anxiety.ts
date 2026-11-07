@@ -37,7 +37,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "A major depressive episode needs five or more symptoms for at least 2 weeks, one of them low mood or loss of interest. Meera has low mood, loss of pleasure, early waking, weight loss, worthlessness and poor concentration for six weeks. Always ask about past highs: one hypomanic episode changes the diagnosis to bipolar II. Check thyroid and B12 before settling on a primary depression.",
     module: "depression",
-    refs: ["DSM-5-TR p.183 (MDD criteria A–E)", "DSM-5-TR p.193 (PDD 2-year rule)"],
+    refs: ["DSM-5-TR p.183 (MDD criteria A to E)", "DSM-5-TR p.193 (PDD 2-year rule)"],
   },
   {
     id: "dc-002",
@@ -69,7 +69,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Persistent depressive disorder is low mood on more days than not for at least 2 years (1 year in children), with two or more symptoms such as poor sleep or appetite, low energy, low self-esteem, poor concentration or hopelessness, and no two-month break. People often call it their personality. It can coexist with major depressive episodes, which are then specified.",
     module: "depression",
-    refs: ["DSM-5-TR p.193 (PDD criteria A–C)"],
+    refs: ["DSM-5-TR p.193 (PDD criteria A to C)"],
   },
   {
     id: "dc-003",
@@ -165,7 +165,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Cyclothymic disorder is at least 2 years (1 in young people) of many periods of hypomanic symptoms and depressive symptoms that never meet full episode criteria, present at least half the time, with no symptom-free gap over 2 months. If a full episode ever occurs, the diagnosis changes.",
     module: "bipolar",
-    refs: ["DSM-5-TR p.160 (cyclothymic disorder criteria A–C)"],
+    refs: ["DSM-5-TR p.160 (cyclothymic disorder criteria A to C)"],
   },
   {
     id: "dc-006",
@@ -259,7 +259,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Disruptive mood dysregulation disorder is severe recurrent temper outbursts, on average three or more times a week, with persistently irritable or angry mood in between, for 12 months or more, in at least two settings. Onset is before 10 and it is not diagnosed before 6 or after 18. It was added partly to stop chronic irritability in children being labelled bipolar disorder.",
     module: "depression",
-    refs: ["DSM-5-TR p.178 (DMDD criteria A–F)"],
+    refs: ["DSM-5-TR p.178 (DMDD criteria A to F)"],
   },
   {
     id: "dc-009",
@@ -279,7 +279,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     investigations: [
       { kind: "lab", label: "Heart and blood tests", result: "ECG, troponin, thyroid and blood sugar normal on all three visits." },
       { kind: "collateral", label: "Ask his wife", result: "'He checks his pulse all day now. He won't climb stairs in case it starts again.'" },
-      { kind: "scale", label: "A rating scale", result: "Panic Disorder Severity Scale 15 (moderate–severe)." },
+      { kind: "scale", label: "A rating scale", result: "Panic Disorder Severity Scale 15 (moderate to severe)." },
       { kind: "mse", label: "Thought content", result: "Worry about having another attack and dying of a heart attack. No obsessions, no delusions." },
     ],
     differentials: [
@@ -324,7 +324,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Generalized anxiety disorder is excessive, hard-to-control worry about many events, more days than not for at least 6 months, with three or more of: restlessness, tiring easily, poor concentration, irritability, muscle tension, poor sleep (one in children).",
     module: "anxiety",
-    refs: ["DSM-5-TR pdf p.393 (GAD criteria A–C)"],
+    refs: ["DSM-5-TR pdf p.393 (GAD criteria A to C)"],
   },
   {
     id: "dc-011",
@@ -388,7 +388,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Separation anxiety disorder is developmentally inappropriate fear about separation from attachment figures: worry about harm to them, refusal to go out or sleep alone, nightmares and body complaints when separation is expected. It must last at least 4 weeks in children (typically 6 months in adults). School refusal with morning stomach aches is a common way in.",
     module: "anxiety",
-    refs: ["DSM-5-TR pdf p.352 (separation anxiety criteria A–B)"],
+    refs: ["DSM-5-TR pdf p.352 (separation anxiety criteria A to B)"],
   },
   {
     id: "dc-013",
@@ -420,7 +420,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Agoraphobia is fear of two or more of: public transport, open spaces, enclosed places, queues or crowds, and being outside the home alone, because escape might be hard or help unavailable if panic-like or embarrassing symptoms occur. The situations are avoided, need a companion or are endured with fear, typically for 6 months or more. It is diagnosed separately from panic disorder.",
     module: "anxiety",
-    refs: ["DSM-5-TR p.246 (agoraphobia criteria A–B)"],
+    refs: ["DSM-5-TR p.246 (agoraphobia criteria A to B)"],
   },
   {
     id: "dc-014",
@@ -452,7 +452,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "OCD is obsessions (recurrent intrusive, unwanted thoughts, urges or images causing distress) and/or compulsions (repetitive acts the person feels driven to perform to reduce distress), taking more than 1 hour a day or causing distress or impairment. Specify insight: good/fair, poor, or absent/delusional.",
     module: "ocd",
-    refs: ["DSM-5-TR pdf p.410–411 (OCD criteria A–B, 1 hour a day)"],
+    refs: ["DSM-5-TR pdf p.410 to 411 (OCD criteria A to B, 1 hour a day)"],
   },
   {
     id: "dc-015",
@@ -484,7 +484,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Body dysmorphic disorder is preoccupation with one or more perceived defects in appearance that are not observable or look slight to others, with repetitive behaviours (mirror checking, grooming, skin picking, reassurance seeking) or mental acts (comparing). Insight ranges from good to absent. Cosmetic procedures rarely help.",
     module: "ocd",
-    refs: ["DSM-5-TR pdf p.418 (BDD criteria A–B)"],
+    refs: ["DSM-5-TR pdf p.418 (BDD criteria A to B)"],
   },
   {
     id: "dc-016",
@@ -515,7 +515,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Hoarding disorder is persistent difficulty discarding possessions regardless of value, due to a felt need to save them and distress at discarding, so that clutter congests living areas. Specify insight and excessive acquisition. Check cognition and other causes, especially in older adults.",
     module: "ocd",
-    refs: ["DSM-5-TR p.277 (hoarding disorder criteria A–C)"],
+    refs: ["DSM-5-TR p.277 (hoarding disorder criteria A to C)"],
   },
   {
     id: "dc-017",
@@ -579,7 +579,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Acute stress disorder is nine or more symptoms from intrusion, negative mood, dissociation, avoidance and arousal, starting after a traumatic event and lasting 3 days to 1 month. If symptoms continue beyond a month and meet criteria, the diagnosis becomes PTSD. Practical help and psychological first aid come first.",
     module: "trauma",
-    refs: ["DSM-5-TR pdf p.470–472 (acute stress disorder criteria A–C)"],
+    refs: ["DSM-5-TR pdf p.470 to 472 (acute stress disorder criteria A to C)"],
   },
   {
     id: "dc-019",
@@ -602,7 +602,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
       { kind: "collateral", label: "Ask his partner", result: "'He's been upset since the email. He still goes out with friends at weekends.'" },
     ],
     differentials: [
-      { dx: "mdd", whyNot: "He has 3–4 symptoms and still enjoys cricket. MDD needs 5+ symptoms, including low mood or loss of interest, for 2 weeks." },
+      { dx: "mdd", whyNot: "He has 3 to 4 symptoms and still enjoys cricket. MDD needs 5+ symptoms, including low mood or loss of interest, for 2 weeks." },
       { dx: "ptsd", whyNot: "Job loss is a stressor but not a traumatic event (threatened death, serious injury or sexual violence)." },
       { dx: "gad", whyNot: "His worry is about one stressor and began five weeks ago; GAD needs 6 months of worry about many things." },
     ],
@@ -610,7 +610,7 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Adjustment disorder is emotional or behavioural symptoms within 3 months of an identifiable stressor, out of proportion to it or impairing, that don't meet criteria for another disorder and settle within 6 months after the stressor or its consequences end. Specify with depressed mood, anxiety, both, or conduct disturbance.",
     module: "trauma",
-    refs: ["DSM-5-TR p.321 (adjustment disorder criteria A–E)"],
+    refs: ["DSM-5-TR p.321 (adjustment disorder criteria A to E)"],
   },
   {
     id: "dc-020",
@@ -641,6 +641,6 @@ export const CASES_MOOD_ANXIETY: DailyCase[] = [
     overview:
       "Prolonged grief disorder needs a death at least 12 months ago (6 months in children), then intense yearning for or preoccupation with the person nearly every day for at least the last month, plus three or more of: identity disruption, disbelief, avoidance of reminders, intense pain, trouble re-engaging, numbness, meaninglessness, loneliness. It must exceed cultural and religious norms.",
     module: "trauma",
-    refs: ["DSM-5-TR pdf p.481 (prolonged grief disorder criteria A–E)"],
+    refs: ["DSM-5-TR pdf p.481 (prolonged grief disorder criteria A to E)"],
   },
 ];

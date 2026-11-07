@@ -40,7 +40,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
           <ol className="space-y-1.5 rounded-md border-2 border-foreground bg-card p-3 text-base">
             {q.statements.map((s, i) => (
               <li key={i} className="flex gap-2">
-                <span className="shrink-0 font-mono font-semibold">{LETTER[i]}.</span>
+                <span className="shrink-0 font-mono font-semibold">{i + 1}.</span>
                 <span>{s}</span>
               </li>
             ))}
@@ -78,7 +78,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
 }
 
 /**
- * The four options. Keys 1–4 are shown on each. With `answer` set, picks lock
+ * The four options. Keys 1 to 4 are shown on each. With `answer` set, picks lock
  * and right/wrong show with an icon and a word (never colour alone).
  */
 export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean }) {

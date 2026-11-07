@@ -864,6 +864,224 @@ Both are linked with performance; the best leaders use both. Laissez-faire (abse
 A principal who sets clear targets and rewards (transactional), and also shares a vision of a school where every child reads, mentors young teachers and invites new ideas (transformational).
 :::
 
+:::qa What is applied psychology, and how do applied fields usually come into being? [starting]
+### Short answer
+Applied psychology uses psychological **theory, research and methods to solve practical problems**. New fields usually appear when a pressing social need meets a body of basic research that can address it.
+
+### How fields were born
+| Field | The need | The science it borrowed |
+|---|---|---|
+| Industrial-organisational | Selecting soldiers and workers in World War I | Intelligence testing |
+| Health | Rising chronic, lifestyle illness | Learning, social cognition, stress research |
+| Forensic | Unreliable witnesses and confessions | Memory and social influence |
+| Community | Too few clinicians for the need | Ecology, prevention, social support |
+| Cyberpsychology | Life moving online | Social, developmental and cognitive psychology |
+
+### Features of applied work
+- Starts from a real problem, not a theory.
+- Works with other professions (doctors, lawyers, managers, teachers).
+- Must be evaluated: does the intervention work here, for these people?
+
+### Example
+India's tele-mental health helpline needed ways to train counsellors quickly and assess risk over the phone, drawing on counselling research and task-sharing evidence.
+:::
+
+:::qa Compare the scientist-practitioner and practitioner-scholar models of training. [starting]
+### Short answer
+The **scientist-practitioner** model (Boulder, 1949) trains psychologists to both **do research and practise**; the **practitioner-scholar** model (Vail, 1973) trains mainly for **practice informed by research**, and led to the PsyD.
+
+### Comparison
+| Feature | Scientist-practitioner | Practitioner-scholar |
+|---|---|---|
+| Origin | Boulder conference | Vail conference |
+| Degree | PhD | PsyD |
+| Emphasis | Producing and using research | Applying research in practice |
+| Thesis | Original research | Applied project or smaller study |
+| Strength | Research skills; evidence-based culture | Strong clinical skills |
+| Criticism | Few graduates actually do research | Weaker research training |
+
+### Indian context
+Clinical training in India has followed a strongly applied, hospital-based route through M.Phil and now the clinical master's degree, with research expected through a dissertation. PsyD programmes are newer.
+
+### Why it matters
+Both models agree that practice should be **evidence-based** and that practitioners should evaluate their own work.
+:::
+
+:::qa Explain the Transtheoretical Model of change and evaluate it. [starting]
+### Short answer
+The model says people move through **stages** (precontemplation, contemplation, preparation, action, maintenance) and that help should be **matched to the stage**. It is popular and intuitive, but its stage boundaries and the benefit of stage matching are disputed.
+
+### Stages and matched help
+| Stage | Person says | Matched help |
+|---|---|---|
+| Precontemplation | "I don't have a problem" | Information, raising awareness |
+| Contemplation | "Maybe I should" | Weighing pros and cons |
+| Preparation | "I'll start next month" | A specific plan, removing barriers |
+| Action | "I've stopped" | Skills, support, rewards |
+| Maintenance | "I've kept it up" | Relapse prevention |
+
+### Other parts of the model
+- **Decisional balance**: pros of change rise across stages.
+- **Processes of change**: experiential early, behavioural later.
+- **Relapse** is normal; people often cycle.
+
+### Criticisms
+- Stage cut-offs are arbitrary.
+- Stage-matched interventions often do no better than unmatched ones.
+- It underplays habits, environments and impulses.
+:::
+
+:::qa Distinguish hedonic and eudaimonic wellbeing with examples. [starting]
+### Short answer
+**Hedonic** wellbeing is about **feeling good**: life satisfaction and more positive than negative emotion. **Eudaimonic** wellbeing is about **living well**: purpose, growth, autonomy and good relationships.
+
+### Comparison
+| Feature | Hedonic | Eudaimonic |
+|---|---|---|
+| Roots | Pleasure and satisfaction | Aristotle's idea of flourishing |
+| Key researcher | Diener (subjective wellbeing) | Ryff (psychological wellbeing); Ryan and Deci |
+| Components | Life satisfaction, positive affect, low negative affect | Self-acceptance, positive relations, autonomy, environmental mastery, purpose, personal growth |
+| Measure | Satisfaction With Life Scale | Ryff's scales |
+
+### Example
+A doctor working long rural shifts in Chhattisgarh may report less day-to-day pleasure (lower hedonic) but a strong sense of purpose and growth (higher eudaimonic).
+
+### Indian perspective
+Ideas such as santosha (contentment), duty and harmony fit eudaimonic and balance-oriented views more than high-arousal happiness.
+:::
+
+:::qa How is the VIA classification of character strengths organised, and how can strengths be used? [starting]
+### Short answer
+Peterson and Seligman grouped **24 character strengths under six virtues** found across cultures. People's top strengths, their **signature strengths**, can be used deliberately to raise wellbeing and engagement.
+
+### The six virtues
+| Virtue | Strengths |
+|---|---|
+| Wisdom and knowledge | Creativity, curiosity, judgement, love of learning, perspective |
+| Courage | Bravery, perseverance, honesty, zest |
+| Humanity | Love, kindness, social intelligence |
+| Justice | Teamwork, fairness, leadership |
+| Temperance | Forgiveness, humility, prudence, self-regulation |
+| Transcendence | Appreciation of beauty, gratitude, hope, humour, spirituality |
+
+### Using strengths
+- Identify signature strengths with a strengths survey.
+- Use one in a new way each day.
+- In counselling, build on strengths alongside working on problems.
+- In schools, strengths-based feedback improves engagement.
+
+### Caution
+Strengths can be overused (perseverance becoming stubbornness), and the classification draws on selected traditions.
+:::
+
+:::qa Explain Fredrickson's broaden-and-build theory with evidence. [starting]
+### Short answer
+Negative emotions **narrow** attention to deal with threats; positive emotions **broaden** attention and thinking, and over time this **builds** lasting resources such as friendships, skills and resilience.
+
+### Two parts
+1. **Broaden**: joy, interest and contentment widen the range of thoughts and actions that come to mind.
+2. **Build**: broadened thinking leads to new relationships, knowledge and coping skills.
+
+### Evidence
+| Finding | What it shows |
+|---|---|
+| People shown amusing or calming films list more things they would like to do | Broadened action tendencies |
+| Positive mood widens visual attention in lab tasks | Broadened attention |
+| Positive emotions speed cardiovascular recovery after stress | An "undoing" effect on negative arousal |
+| Loving-kindness practice increased positive emotions and personal resources over time | Building |
+
+### Critique
+Effects are often small, and the later "positivity ratio" claim was withdrawn because its mathematics was wrong.
+
+### Example
+A student who laughs with friends after a tough exam may come up with better ideas for revising than one stuck in worry.
+:::
+
+:::qa What are positive psychology interventions, and how strong is the evidence for them? [starting]
+### Short answer
+Positive psychology interventions are **brief, intentional activities** designed to raise positive feelings, thoughts and behaviours. They produce **small to moderate** improvements in wellbeing, smaller in higher-quality trials.
+
+### Common interventions
+| Intervention | What you do |
+|---|---|
+| Three good things | Each night, write three things that went well and why |
+| Gratitude visit | Write and deliver a thank-you letter |
+| Signature strengths | Use a top strength in a new way daily |
+| Best possible self | Write about your future going well |
+| Acts of kindness | Plan several kind acts in a day |
+
+### Evidence
+- Meta-analyses find small effects on wellbeing and depression.
+- Effects shrink when only well-controlled trials are included.
+- Benefits depend on fit: the person must want and enjoy the activity.
+
+### Use wisely
+- Helpful as part of a wider plan, not a cure for depression.
+- Should not be used to ignore structural problems at school or work.
+:::
+
+:::qa What were the Hawthorne studies, and why do they matter? [starting]
+### Short answer
+The Hawthorne studies (1924 to 1932, at a Western Electric factory near Chicago) found that output often rose **whatever** was changed, which was read as workers responding to **attention, relationships and group norms**. They launched the human relations movement.
+
+### The studies
+| Phase | Finding |
+|---|---|
+| Illumination experiments | Output rose with brighter and dimmer lighting |
+| Relay assembly room | Output rose with many changes to breaks and hours |
+| Interview programme | Workers valued being listened to |
+| Bank wiring room | Groups set their own output norms and pressured members |
+
+### Why they matter
+- Shifted management thinking from purely economic incentives to social needs.
+- Gave the name **Hawthorne effect** to changes caused by being observed.
+
+### Criticisms
+- Small groups, weak controls and confounds (fewer hours, changes in pay and supervisors).
+- Later reanalyses found the effects much less clear.
+:::
+
+:::qa Explain equity theory and the idea of organisational justice. [starting]
+### Short answer
+Adams' equity theory says people compare their **inputs and outcomes** with others'; perceived unfairness causes tension that they try to reduce. Organisational justice extends this to **outcomes, procedures and treatment**.
+
+### Equity theory
+- **Inputs**: effort, skill, time, loyalty.
+- **Outcomes**: pay, recognition, promotion.
+- If my ratio seems lower than a colleague's, I may work less, ask for more, leave, or change my comparison.
+
+### Three kinds of justice
+| Type | Question | Example |
+|---|---|---|
+| Distributive | Are outcomes fair? | Equal bonuses for equal work |
+| Procedural | Are decisions made fairly? | Clear, consistent appraisal criteria |
+| Interactional | Am I treated with respect and told why? | A manager explains a decision politely |
+
+### Evidence
+Procedural and interactional justice strongly predict commitment and trust, sometimes more than pay itself.
+
+### Indian example
+Contract workers doing the same job as permanent staff for less pay often show the effects of perceived inequity: low commitment and high turnover.
+:::
+
+:::qa Compare Fiedler's model, situational leadership and path-goal theory. [starting]
+### Short answer
+All three are **contingency theories**: the best leadership depends on the situation. They differ on what the leader can change and which situational factors matter.
+
+### Comparison
+| Feature | Fiedler's contingency model | Situational leadership | Path-goal theory |
+|---|---|---|---|
+| Leader style | Fixed: task- or relationship-oriented | Flexible: telling, selling, participating, delegating | Flexible: directive, supportive, participative, achievement-oriented |
+| Key situational factor | Leader-member relations, task structure, position power | Follower readiness (ability and willingness) | Follower needs and task features |
+| Advice | Match the leader to the situation, or change the situation | Change style as followers develop | Remove obstacles on the path to goals |
+
+### Example
+A new hospital ward manager with inexperienced nurses may be directive at first (situational leadership: telling) and become more participative as they gain skill.
+
+### Evaluation
+Situational leadership is popular in training but has mixed research support; path-goal theory is useful conceptually; Fiedler's model has some support but is complex.
+:::
+
 ## 4.4 Q&A bank · Beginner [beginner]
 
 :::qa How does psychoneuroimmunology explain the link between stress and illness? [beginner]
@@ -976,6 +1194,245 @@ Goffman described stigma as a deeply discrediting attribute that spoils identity
 5. **Services**: integrate mental health into general clinics so seeking help is ordinary.
 :::
 
+:::qa Explain Leventhal's common-sense model and how it helps improve adherence. [beginner]
+### Short answer
+People build **illness representations** (identity, cause, timeline, consequences, control) that guide how they cope. When a representation is wrong, for example seeing a chronic illness as short-lived, people stop treatment. Correcting it improves adherence.
+
+### The five dimensions
+| Dimension | Patient's question | Example of a harmful belief |
+|---|---|---|
+| Identity | What is it, what are the symptoms? | "BP is only there when I feel tense" |
+| Cause | Why did I get it? | "It's the evil eye, so tablets won't help" |
+| Timeline | How long will it last? | "TB is cured once I feel well" |
+| Consequences | How will it affect me? | "Diabetes is minor" |
+| Control or cure | Can it be treated? | "Nothing I do changes it" |
+
+### Using the model
+1. Ask open questions about the patient's own view.
+2. Correct the timeline and control beliefs gently.
+3. Link actions to the patient's goals.
+4. Check understanding with teach-back.
+
+### Example
+A man in Nagpur stops his hypertension tablets on calm days; explaining that blood pressure stays high without symptoms, and giving him a home BP monitor, restores adherence.
+:::
+
+:::qa Explain the gate control theory of pain and its implications for treatment. [beginner]
+### Short answer
+Melzack and Wall proposed that a "gate" in the **spinal cord** controls how much pain signal reaches the brain. Touch input and **messages from the brain** (attention, emotion, expectation) can close or open the gate, so psychology changes real pain.
+
+### How the gate works
+| Factor | Effect on the gate |
+|---|---|
+| Large-fibre input (rubbing, massage, TENS) | Closes |
+| Distraction, calm, positive expectation | Closes |
+| Anxiety, depression, focusing on pain | Opens |
+| Catastrophising ("this will never end") | Opens |
+
+### Treatment implications
+- CBT for chronic pain targets catastrophising and avoidance.
+- Relaxation and mindfulness reduce arousal.
+- Graded activity breaks the fear-avoidance cycle.
+- Placebo analgesia shows expectations act on real pain pathways.
+
+### Later development
+Melzack's **neuromatrix** theory: pain is produced by a brain network, which explains phantom limb pain.
+
+### Example
+A woman in Lucknow with chronic back pain reduces her pain and disability through graded walking, pacing and challenging the belief that movement will damage her spine.
+:::
+
+:::qa Why do patients not follow treatment, and how can adherence be improved? Use India's TB programme as an example. [beginner]
+### Short answer
+Non-adherence has many causes: **forgetting, side effects, cost, complexity, poor understanding and beliefs**. Improving it needs good communication plus practical support.
+
+### Causes
+| Type | Example |
+|---|---|
+| Unintentional | Forgetting, complex regimens, travel |
+| Intentional | Stopping when feeling well, fear of side effects |
+| Practical | Lost wages for clinic visits, cost of travel |
+| Social | Stigma, lack of family support |
+| Communication | Not understanding instructions |
+
+### Ways to improve
+- **Clear communication**: plain words, key points first, written instructions, teach-back.
+- **Simplify**: fewer doses, fixed-dose combinations.
+- **Reminders**: SMS, pill boxes, digital monitors.
+- **Support**: treatment supporters, family involvement.
+- **Reduce barriers**: nearby collection points, financial help.
+
+### India's TB programme
+Treatment supporters, digital adherence tools and a monthly nutrition payment address both reminders and practical barriers, reflecting adherence research.
+:::
+
+:::qa Present the main criticisms of positive psychology and the responses of later waves. [beginner]
+### Short answer
+Critics argue that positive psychology can **pressure people to be happy, ignore social context, rest on weak evidence in places and reflect Western values**. Second-wave and third-wave positive psychology respond by valuing negative emotions and looking beyond the individual.
+
+### Criticisms
+| Criticism | Point |
+|---|---|
+| Tyranny of the positive | Normal sadness becomes a failure |
+| Ignoring context | Individual gratitude exercises for structural problems such as poverty or bad jobs |
+| Weak science | The withdrawn positivity ratio; small intervention effects |
+| Cultural bias | Measures centred on individual happiness and self-esteem |
+
+### Responses
+| Wave | Focus |
+|---|---|
+| Second wave | The interplay of positive and negative: meaning in suffering, value of sadness, courage with fear |
+| Third wave | Systems, groups, cultures and interdisciplinary work |
+
+### Indian angle
+Concepts such as santosha, duty, harmony and equanimity offer non-hedonic models of wellbeing that fit these later waves.
+:::
+
+:::qa Describe Schein's model of organisational culture and Hofstede's cultural dimensions, with reference to India. [beginner]
+### Short answer
+Schein describes culture **within an organisation** at three levels; Hofstede describes **national cultures** on several dimensions. India scores high on power distance, which shapes workplace relationships.
+
+### Schein's levels
+| Level | Example in an Indian firm |
+|---|---|
+| Artefacts | A puja at the start of the year; senior offices on the top floor |
+| Espoused values | "We value open communication" in the brochure |
+| Basic assumptions | Juniors should not question seniors in meetings |
+
+### Hofstede's dimensions
+| Dimension | India's tendency |
+|---|---|
+| Power distance | High: hierarchy is expected |
+| Individualism | Moderate: a mix of individual and collective orientations |
+| Masculinity | Moderately high: achievement and success valued |
+| Uncertainty avoidance | Lower: tolerance of ambiguity, flexibility |
+| Long-term orientation | Moderate |
+| Indulgence | Low: restraint valued |
+
+### Critique
+National averages hide huge variation across regions, sectors and generations; young IT workers in Bengaluru may differ sharply from older public-sector staff.
+:::
+
+:::qa Compare Caplan's levels of prevention with the universal, selective and indicated model, using Indian examples. [beginner]
+### Short answer
+Caplan classified prevention by **stage of illness** (before, early, after); the newer model classifies it by **who is targeted** (everyone, higher-risk groups, people with early signs).
+
+### Caplan's model
+| Level | Aim | Indian example |
+|---|---|---|
+| Primary | Stop problems starting | Life-skills education in schools |
+| Secondary | Detect and treat early | Screening mothers for postnatal depression at immunisation visits |
+| Tertiary | Reduce disability | Day care and vocational rehabilitation for people with schizophrenia |
+
+### Universal, selective and indicated
+| Type | Target | Indian example |
+|---|---|---|
+| Universal | Whole population | Mental health awareness campaigns, helpline publicity |
+| Selective | Groups at higher risk | Support for children of parents with alcohol dependence |
+| Indicated | People with early signs | Brief counselling for students with high anxiety scores |
+
+### Why both are useful
+The newer model fits prevention science and avoids calling treatment "prevention"; Caplan's model is still widely used in exams.
+:::
+
+:::qa Explain Berry's acculturation model and apply it to internal migration in India. [beginner]
+### Short answer
+Berry identified four strategies based on two choices: **keep the heritage culture?** and **join the new culture?** Integration usually brings the best adjustment. India's vast internal migration produces acculturation within one country.
+
+### The strategies
+| | Join new culture | Do not join |
+|---|---|---|
+| Keep heritage | Integration | Separation |
+| Do not keep | Assimilation | Marginalisation |
+
+### Internal migration in India
+- Tens of crores of people live outside their birthplace, moving for work, study and marriage.
+- Students from the North-East in Delhi, Bihari workers in Mumbai and Tamil families in Gujarat face language barriers, discrimination and loneliness.
+
+### Acculturative stress
+| Stressor | Example |
+|---|---|
+| Language | Not speaking the local language |
+| Discrimination | Being labelled an outsider |
+| Loss of support | Leaving joint families |
+| Insecure work | Daily wage labour without protection |
+
+### Implications
+Integration needs both the migrant's choice and a welcoming receiving community; colleges and employers can help with mixed groups and anti-discrimination policies.
+:::
+
+:::qa How does poverty affect the mind? Discuss with reference to the scarcity hypothesis. [beginner]
+### Short answer
+Poverty is a **mental load** as well as a lack of money. The scarcity hypothesis says that financial worry captures attention and reduces cognitive "bandwidth", making good decisions harder, which can keep people poor.
+
+### Key evidence
+- Sugarcane farmers in Tamil Nadu scored worse on cognitive tests before harvest (when short of money) than after harvest (when paid).
+- In lab studies, thinking about a large unexpected bill lowered poorer participants' test performance more than richer ones'.
+
+### Effects of poverty
+| Domain | Effect |
+|---|---|
+| Attention and self-control | Bandwidth taxed by constant juggling |
+| Stress biology | Chronic stress and allostatic load |
+| Mental health | Higher risk of depression and anxiety |
+| Child development | Poor nutrition, less stimulation, toxic stress |
+
+### Implications
+- Poor decisions are often a **result**, not a cause, of poverty.
+- Simplify services (fewer forms, reminders, timely payments).
+- Cash transfers and anti-poverty programmes improve mental health.
+
+### Indian research
+Earlier work on prolonged deprivation linked poverty with lower achievement motivation but stressed environment, not deficits in people.
+:::
+
+:::qa Compare the medical, social and biopsychosocial models of disability, and link them to India's RPwD Act 2016. [beginner]
+### Short answer
+The **medical model** locates disability in the person's impairment; the **social model** locates it in societal barriers; the **biopsychosocial (ICF) model** combines body, activity, participation and environment. India's 2016 Act reflects a rights-based, largely social approach.
+
+### Comparison
+| Model | Disability is caused by | Solution |
+|---|---|---|
+| Medical | Impairment in the body or mind | Treatment, cure, rehabilitation |
+| Social | Barriers: steps, attitudes, inaccessible information | Remove barriers; rights and inclusion |
+| Biopsychosocial (ICF) | Interaction of health condition, personal and environmental factors | Both treatment and environmental change |
+
+### The RPwD Act 2016
+- Recognises 21 conditions, including mental illness, autism, specific learning disabilities and intellectual disability.
+- Rights to non-discrimination, accessibility, education and employment.
+- Reservation for people with benchmark disability (40% or more).
+- Follows the UN Convention on the Rights of Persons with Disabilities.
+
+### Example
+A wheelchair user in a college without ramps is disabled by the building (social model); a ramp and lift enable her fully.
+:::
+
+:::qa Explain peace psychology using Galtung's ideas, the contact hypothesis and the 1918 Ahmedabad mill strike. [beginner]
+### Short answer
+Peace psychology studies how to prevent violence and build just, cooperative relationships. **Galtung** widened violence beyond physical harm; the **contact hypothesis** shows how prejudice can be reduced; **Gandhi's** handling of the 1918 strike illustrates nonviolent conflict resolution.
+
+### Galtung
+| Form | Meaning |
+|---|---|
+| Direct violence | Physical harm |
+| Structural violence | Harm built into systems |
+| Cultural violence | Ideas that justify harm |
+| Negative peace | Absence of war |
+| Positive peace | Justice and cooperation |
+
+### Contact hypothesis
+Contact reduces prejudice under equal status, common goals, cooperation and support from authorities; a meta-analysis of over 500 studies supports it.
+
+### The Ahmedabad mill strike, 1918
+- Textile workers demanded higher wages; Gandhi supported them but insisted on nonviolence.
+- He kept a respectful relationship with the mill owners.
+- When the strike weakened, he fasted to strengthen the workers' resolve.
+- The dispute went to arbitration and workers received a raise.
+
+### Lessons
+Focus on interests, keep relationships, use fair procedures and refuse violence.
+:::
+
 ## 4.5 Q&A bank · Advanced [advanced]
 
 :::qa Critically evaluate the use of narco-analysis, polygraph and brain-mapping in Indian investigations. [advanced]
@@ -1075,6 +1532,236 @@ Combine **community psychology** (prevention, task sharing, empowerment), **heal
 
 ### Evaluation
 Use a stepped rollout across villages, measure distress, help-seeking, functioning and use of services, and include farmers in deciding what counts as success.
+:::
+
+:::qa Discuss noise and crowding as environmental stressors, and the role of perceived control. [advanced]
+### Short answer
+Noise and crowding harm wellbeing and performance most when they are **unpredictable and uncontrollable**. Perceived control is the strongest single factor that reduces their effects.
+
+### Noise
+- Random bursts of loud noise lowered later frustration tolerance in lab studies.
+- When people believed they could switch the noise off, after-effects shrank, even if they never used the switch.
+- Children in classrooms facing a train line lagged in reading until noise was reduced.
+
+### Crowding
+| Concept | Meaning |
+|---|---|
+| Density | Number of people per space |
+| Crowding | The unpleasant feeling of too many people |
+| Moderators | Control, purpose, relationships, culture, duration |
+
+### Theories of crowding
+- **Overload**: too much stimulation.
+- **Behavioural constraint**: freedom of movement and choice is limited.
+- **Loss of control**: the most consistent explanation.
+
+### Indian applications
+Indian household crowding research found family cohesion and cultural expectations moderated the effects. Design ideas include quiet zones in schools, predictable schedules in crowded offices and privacy screens in hostels.
+:::
+
+:::qa Compare attention restoration theory and stress recovery theory. [advanced]
+### Short answer
+Both explain why nature is good for us. **Attention restoration theory** says nature restores tired **directed attention**; **stress recovery theory** says nature quickly reduces **physiological stress**.
+
+### Comparison
+| Feature | Attention restoration theory | Stress recovery theory |
+|---|---|---|
+| What is restored | Directed attention | Stress arousal and mood |
+| Mechanism | Soft fascination lets effortful attention rest | Evolved, rapid positive response to safe natural scenes |
+| Key features of setting | Being away, extent, soft fascination, compatibility | Water, greenery, open views, safety |
+| Classic evidence | Better attention task scores after nature walks | Surgical patients with a tree view recovered faster |
+
+### Applications
+- Hospital gardens and window views.
+- Green school playgrounds.
+- City parks such as riverfronts and lake gardens.
+
+### Critique
+Effects are real but modest and depend on expectations and comparisons; urban green space must be safe and accessible to help.
+:::
+
+:::qa How can psychology help promote pro-environmental behaviour? Use Indian examples. [advanced]
+### Short answer
+Environmental problems are often **social dilemmas**: what is good for each person harms everyone. Psychology helps by changing **norms, habits, barriers and values**, not just giving information.
+
+### Key ideas
+| Idea | Use |
+|---|---|
+| Tragedy of the commons | Shared resources are overused without rules and trust |
+| Descriptive norms | "Most guests reuse towels" works better than appeals |
+| Value-belief-norm theory | Values and personal obligation drive action |
+| Attitude-behaviour gap | Concern does not become action when costs are high |
+| Habit and defaults | Making the green choice the default |
+
+### Indian examples
+- **Chipko movement**: collective action rooted in dependence on forests.
+- **Swachh Bharat**: toilet construction was fast, but use depended on norms, purity beliefs and water access.
+- **Water conservation**: community-managed water bodies succeed where trust and rules exist.
+
+### Lessons
+Combine infrastructure with norms, community ownership and feedback; information alone rarely works.
+:::
+
+:::qa Discuss the factors that affect eyewitness accuracy and the procedures that improve it. [advanced]
+### Short answer
+Memory is **reconstructive**. Accuracy depends on conditions at the event (estimator variables) and on how police collect evidence (system variables), which can be improved.
+
+### Estimator variables
+| Factor | Effect |
+|---|---|
+| Stress | High stress can impair memory for faces |
+| Weapon focus | Attention goes to the weapon |
+| Exposure time and distance | Brief or distant views reduce accuracy |
+| Own-group bias | Better recognition of faces from one's own group |
+| Delay | Memory fades and becomes open to change |
+
+### System variables
+| Procedure | Improvement |
+|---|---|
+| Double-blind lineups | Prevent unintended cues |
+| Unbiased instructions | "The person may not be present" |
+| Fair fillers | Match the description |
+| Immediate confidence recording | Initial confidence is informative; later confidence inflates |
+| Cognitive interview | More correct detail without many more errors |
+| Avoid leading questions | Prevents the misinformation effect |
+
+### Indian context
+Courts rely heavily on witness testimony; training police in these procedures could reduce wrongful convictions.
+:::
+
+:::qa Explain the legal test of insanity in India and distinguish it from fitness to stand trial. [advanced]
+### Short answer
+India's test (now **section 22 of the Bharatiya Nyaya Sanhita 2023**, formerly IPC section 84) asks whether, **at the time of the act**, unsoundness of mind made the person incapable of knowing the nature of the act or that it was wrong or contrary to law. **Fitness to stand trial** concerns the person's **present** ability to take part in the trial.
+
+### Comparison
+| Feature | Legal insanity | Fitness to stand trial |
+|---|---|---|
+| Time | At the time of the offence | Now, during proceedings |
+| Question | Could the person know the nature of the act or that it was wrong? | Can the person understand proceedings and instruct a lawyer? |
+| Outcome if met | Not criminally responsible; usually detained for treatment | Trial postponed until fitness returns |
+| Origin | The M'Naghten rules (1843) | Due-process principles |
+
+### Legal versus medical insanity
+Having a mental illness does not mean meeting the legal test. A person with schizophrenia who knew the act was wrong is legally responsible.
+
+### The psychologist's role
+Detailed assessment, history from several sources, testing for malingering, clear reports. The court decides.
+:::
+
+:::qa Compare approaches to violence risk assessment, including the PCL-R. [advanced]
+### Short answer
+Risk can be assessed by **unstructured clinical judgement, actuarial tools or structured professional judgement (SPJ)**. Structured approaches outperform unaided judgement, but none predicts individual behaviour precisely.
+
+### Approaches
+| Approach | Method | Strengths | Weaknesses |
+|---|---|---|---|
+| Unstructured | Clinician's overall impression | Flexible | Unreliable, biased |
+| Actuarial | Statistical formula from fixed factors | Reliable, transparent | Ignores individual change; mostly static factors |
+| SPJ (for example HCR-20) | Rate historical, clinical and risk-management factors, then judge | Links to management plans; includes changeable factors | Needs training |
+
+### The PCL-R
+- 20 items scored from interview and records.
+- Two broad factors: interpersonal-affective (glibness, lack of remorse) and lifestyle-antisocial (impulsivity, early problems).
+- High scores predict reoffending in many samples.
+- Concerns: misuse as a label, rater bias, limited validation in India.
+
+### Key point
+Risk tools guide management and treatment planning; they must be validated for local populations and used ethically.
+:::
+
+:::qa Compare models of arousal and performance in sport. [advanced]
+### Short answer
+Models moved from simple accounts (more arousal helps, or moderate arousal is best) to **individualised and multidimensional** models that separate worry from bodily arousal and explain sudden collapses.
+
+### Comparison
+| Model | Claim | Strength | Limit |
+|---|---|---|---|
+| Drive theory | Arousal boosts the dominant response | Explains social facilitation | Experts also choke |
+| Inverted-U | Moderate arousal is best | Simple, intuitive | One curve for all people and tasks |
+| IZOF | Each athlete has a personal optimal zone | Individualised | Hard to generalise |
+| Multidimensional anxiety theory | Cognitive anxiety harms; somatic anxiety follows an inverted-U; confidence helps | Separates components | Mixed support for specific predictions |
+| Catastrophe model | High worry plus rising arousal causes sudden collapse | Explains choking | Complex to test |
+| Reversal theory | Arousal felt as excitement or anxiety | Explains reappraisal | Less predictive |
+
+### Application
+Measure each athlete's worry and arousal before good and poor performances to find their zone; teach reappraisal and routines.
+:::
+
+:::qa Explain the online disinhibition effect and its role in cyberbullying. [advanced]
+### Short answer
+Suler's online disinhibition effect explains why people **say and do online what they would not do face to face**. Its toxic form helps drive trolling and cyberbullying; its benign form helps people seek support.
+
+### Factors
+| Factor | Meaning |
+|---|---|
+| Dissociative anonymity | "You don't know who I am" |
+| Invisibility | No faces or reactions seen |
+| Asynchronicity | No immediate response |
+| Solipsistic introjection | The other person becomes a voice in one's head |
+| Dissociative imagination | "It's just a game" |
+| Minimised authority | Status cues disappear |
+
+### Cyberbullying
+- Can happen at any time, reaches large audiences, can be anonymous and stays online.
+- Linked with depression, anxiety and school avoidance in victims.
+
+### Prevention
+- Digital citizenship education.
+- Clear reporting systems at schools and platforms.
+- Bystander training: supporting the victim and reporting.
+- Parental active mediation and open communication.
+:::
+
+:::qa How would you advise parents worried about their teenager's gaming? [advanced]
+### Short answer
+First distinguish **heavy but healthy gaming** from **gaming disorder** (impaired control, increasing priority, continuation despite harm, with significant impairment). Then use **active mediation**, agreed rules and attention to sleep, school and mood.
+
+### Assessment
+| Question | Warning sign |
+|---|---|
+| Control | Repeated failed attempts to cut down |
+| Priority | Dropping friends, sport and study for games |
+| Harm | Falling marks, sleep loss, conflict |
+| Duration | Pattern lasting many months |
+| Other problems | Depression, anxiety, ADHD, bullying |
+
+### Advice to parents
+1. Talk about what the teen enjoys in games.
+2. Agree clear rules together: no devices in the bedroom at night, games after homework.
+3. Use parental controls openly, not secretly.
+4. Encourage offline activities and friendships.
+5. Watch mood and sleep.
+
+### When to refer
+If harm continues despite these steps, refer for assessment; family-based CBT approaches are used, and specialist technology-use clinics exist in India.
+
+### Legal note
+India's 2025 law banned real-money online games; esports and social games are treated separately.
+:::
+
+:::qa Discuss the uses of AI in psychological assessment and therapy, and evaluate the evidence. (15 marks) [advanced]
+### Short answer
+AI is used for **prediction, language analysis, digital phenotyping, chatbots, clinician support and testing**. Early evidence is promising in some areas, but most tools lack strong trials, local validation and safety safeguards.
+
+### Answer plan
+1. **Define** AI, machine learning and large language models.
+2. **Assessment uses**: risk prediction, speech markers, adaptive testing.
+3. **Therapy uses**: rule-based and generative chatbots, digital CBT.
+4. **Clinician support**: notes, training simulations.
+5. **Evidence**: one randomised trial of a purpose-built generative chatbot showed reduced depression and anxiety with human safety oversight; rule-based apps show small short-term benefits; prediction tools have low positive predictive value for rare outcomes.
+6. **Risks**: hallucination, sycophancy, crisis failures, privacy, bias, dependence.
+7. **Regulation** as at November 2026: no FDA-cleared AI therapy device; US state restrictions; EU limits; India relies on data protection and ethics guidelines.
+8. **Indian issues**: languages, idioms of distress, digital divide.
+9. **Conclusion**: adjunct with safeguards, not replacement.
+
+### Evidence summary table
+| Use | Evidence | Status |
+|---|---|---|
+| Risk prediction | Better than chance; low positive predictive value | Research and pilots |
+| Speech and language markers | Promising | Research |
+| Generative chatbots | One positive trial with oversight | Early |
+| Rule-based chatbots | Small short-term effects | Available |
+| Clinician support | Growing use | Needs human checking |
 :::
 
 ## 4.6 Module test [core]

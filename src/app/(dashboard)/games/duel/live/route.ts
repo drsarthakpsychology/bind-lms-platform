@@ -18,7 +18,7 @@ const body = z.discriminatedUnion("op", [
 ]);
 
 /**
- * POST /games/duel/live — the only door into a duel. Polled about once a
+ * POST /games/duel/live: the only door into a duel. Polled about once a
  * second by both players. Every decision (round clock, score, winner, rating)
  * is made here from server time; the browser only reports presence, answers
  * and quitting.

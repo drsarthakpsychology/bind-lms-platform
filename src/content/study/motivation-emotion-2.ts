@@ -772,6 +772,213 @@ Selye treated stress as the body's **response** to any demand; the life-events v
 These gaps led to the transactional model you meet at the Beginner level.
 :::
 
+:::qa How do psychologists infer and measure motivation if it cannot be seen? [starting]
+### Short answer
+Motivation is a **hypothetical construct**: we infer it from patterns of behaviour and report, the way fever is inferred from a thermometer reading.
+
+### What we look at
+| Indicator | What it tells us | Example |
+|---|---|---|
+| Choice | Direction: which goal wins | A student picks the library over a film |
+| Latency | Activation: how fast behaviour starts | How soon she opens her books after dinner |
+| Effort and intensity | How hard she tries | Number of practice problems solved |
+| Persistence | How long she keeps going after setbacks | Continuing after a poor mock test |
+| Self-report | Reasons and feelings | Questionnaires on goals and interest |
+| Physiology | Arousal and reward response | Heart rate, pupil size, brain activity |
+
+### Why several measures are needed
+- People do not always know their motives (implicit motives).
+- Behaviour can have many causes, so converging measures are more convincing.
+
+### Example
+A teacher in Indore notices a boy who arrives early, chooses extra problems and keeps trying after mistakes: high activation, clear direction, strong persistence.
+:::
+
+:::qa Why did instinct theory fail, and what parts of it survived? [starting]
+### Short answer
+Instinct theory failed because its lists of instincts grew endlessly and its explanations were **circular**. The idea of **inborn, species-typical behaviour** survived in ethology and evolutionary psychology.
+
+### The failures
+- **Circularity**: "He fights because of a fighting instinct; we know he has one because he fights."
+- **Endless lists**: thousands of instincts were proposed, one per behaviour.
+- **Ignoring learning and culture**: human behaviour varies too much across societies to be fixed by instinct.
+
+### What survived
+| Survivor | Idea |
+|---|---|
+| Ethology | Fixed action patterns triggered by specific releasers, such as a gull chick pecking a red spot |
+| Imprinting | Lorenz's goslings following the first moving object |
+| Evolutionary psychology | Evolved predispositions (fear of snakes, mate preferences) that interact with learning |
+| Preparedness | Some associations, such as snake fears, are learned faster than others |
+
+### Exam tip
+Contrast a description ("an instinct to fight") with an explanation that predicts when fighting will and will not happen.
+:::
+
+:::qa Distinguish primary and secondary drives with examples from Indian life. [starting]
+### Short answer
+**Primary drives** arise from unlearned biological needs; **secondary (acquired) drives** are learned because they become linked with reducing primary drives.
+
+### Comparison
+| Feature | Primary drive | Secondary drive |
+|---|---|---|
+| Origin | Biological need | Learning by association |
+| Universality | Found in all humans and many animals | Varies across people and cultures |
+| Examples | Hunger, thirst, pain avoidance, warmth, sex | Money, approval, status, a government job's security |
+
+### Indian examples of secondary drives
+- **Money**: it buys food, shelter and safety, so it becomes motivating in itself.
+- **Family approval**: linked since childhood with care and comfort.
+- **A "secure" job**: associated with relief from worry about basic needs, which helps explain the pull of government posts.
+
+### Limit
+Drive theory struggles to explain motives that reduce no tension at all, such as curiosity or play.
+:::
+
+:::qa Explain opponent-process theory using an example of addiction and an example of exam relief. [starting]
+### Short answer
+Every strong emotional state is followed by an **opposite after-state**. With repetition, the first state weakens and the after-state strengthens, which changes why people repeat the behaviour.
+
+### How it works
+1. **A-state**: the first emotional reaction to a stimulus.
+2. **B-state**: the opposite reaction that follows and outlasts it.
+3. **Repetition**: A shrinks, B grows and starts earlier.
+
+### Two examples
+| Phase | Alcohol use | Board exams |
+|---|---|---|
+| First experience | Strong pleasure (A), mild low mood after (B) | Intense fear (A), a short burst of relief after (B) |
+| After many repetitions | Little pleasure (small A), strong craving and withdrawal (large B) | Less fear before each paper, a long, pleasant sense of release afterwards |
+| What now drives behaviour | Escaping withdrawal | Seeking the relief, or getting used to the challenge |
+
+### Significance
+The model explains the shift from drinking for pleasure to drinking to avoid feeling bad, and why thrill-seeking activities become enjoyable.
+:::
+
+:::qa What are D-needs and B-needs, and what did Maslow say self-actualising people are like? [starting]
+### Short answer
+**D-needs** (deficiency needs) are the lower four levels: their lack creates tension that drives behaviour. **B-needs** (being or growth needs) drive self-actualisation, the fulfilment of one's potential.
+
+### The two kinds of need
+| Feature | D-needs | B-needs |
+|---|---|---|
+| Levels | Physiological, safety, belonging, esteem | Self-actualisation (truth, beauty, justice, meaning) |
+| Motive | Filling a gap | Growth for its own sake |
+| When met | Tension falls | Desire grows, not ends |
+
+### Features of self-actualising people (Maslow's list, selected)
+- Accurate perception of reality and acceptance of self and others.
+- Spontaneity and simplicity.
+- Focus on problems outside themselves.
+- Need for privacy and independence.
+- Fresh appreciation of ordinary things.
+- **Peak experiences**: moments of intense joy, wonder and unity.
+- Deep relationships with a few people; democratic character; a philosophical sense of humour.
+
+### Critique
+His sample was small and chosen by his own values; the concept is hard to measure.
+:::
+
+:::qa Compare Maslow's hierarchy with Alderfer's ERG theory. [starting]
+### Short answer
+ERG theory condenses Maslow's five levels into three (**Existence, Relatedness, Growth**), allows several needs to act at once, and adds **frustration-regression**.
+
+### Comparison
+| Feature | Maslow | Alderfer (ERG) |
+|---|---|---|
+| Number of levels | Five | Three |
+| Order | General tendency to move upward | Less rigid; needs can operate together |
+| Movement | Satisfaction leads up | Satisfaction leads up; frustration can lead back down |
+| Key extra idea | Peak experiences, B-needs | Frustration-regression |
+| Research support | Weak for strict order | Somewhat better fit to workplace data |
+
+### Mapping the levels
+- Existence = physiological + safety.
+- Relatedness = belonging + the social part of esteem.
+- Growth = self-esteem + self-actualisation.
+
+### Example
+A bank clerk in Patna denied a promotion (growth blocked) starts focusing on overtime pay and union demands (existence needs). ERG predicts this; Maslow does not.
+:::
+
+:::qa How do emotion, mood, affect and temperament differ? [starting]
+### Short answer
+They differ in **duration, intensity, focus and stability**: emotions are brief and about something; moods last longer and lack a clear object; affect is the umbrella term; temperament is a stable, inborn tendency to react.
+
+### Comparison
+| Term | Duration | Has an object? | Example |
+|---|---|---|---|
+| Emotion | Seconds to minutes | Yes | Anger at an insult |
+| Mood | Hours to days | Often not | Irritable all day for no clear reason |
+| Affect | Any | Either | In the MSE, the emotion you observe |
+| Temperament | Lifelong, stable | No | A child who is easily upset from infancy |
+
+### Clinical relevance
+- In the mental status examination, **mood** is what the person reports and **affect** is what the clinician observes.
+- A mismatch (reporting sadness while smiling) is clinically important.
+
+### Example
+A student feels a jolt of fear when her name is called (emotion), stays anxious through the exam days (mood), and has always been a cautious child (temperament).
+:::
+
+:::qa How were Cannon's criticisms of the James-Lange theory answered by later research? [starting]
+### Short answer
+Some of Cannon's points still stand, but later work showed that the **body does shape feeling**, so James was partly right.
+
+### Point by point
+| Cannon's criticism | Later evidence |
+|---|---|
+| Emotion survives without visceral feedback | True for emotional behaviour, but some studies of spinal injury suggested reduced intensity (later findings were mixed) |
+| Different emotions share similar arousal | Some patterns differ: anger and fear differ in heart rate and skin temperature, though not consistently |
+| Viscera are insensitive | Interoception research shows people vary in sensing their heartbeat, and better sensing goes with stronger feelings |
+| Visceral changes are too slow | Facial and muscle feedback is fast |
+| Artificial arousal gives only "as if" emotion | Context matters: arousal can intensify emotion when a label is available |
+
+### Today's picture
+Feelings arise from the brain's reading of bodily signals together with context and appraisal. Damasio's somatic marker idea and interoception research revived James in a modern form.
+:::
+
+:::qa What is the difference between eustress and distress, and what does the fight-or-flight response do? [starting]
+### Short answer
+**Eustress** is stress that motivates and feels manageable; **distress** is stress that overwhelms or harms. **Fight or flight** is the fast sympathetic response that prepares the body for action in either case.
+
+### Eustress versus distress
+| Feature | Eustress | Distress |
+|---|---|---|
+| Appraisal | Challenge | Threat or loss |
+| Feeling | Energised, focused | Overwhelmed, anxious |
+| Duration | Usually short | Often prolonged |
+| Examples | A wedding, a new job, a debate final | Unemployment, illness, chronic conflict |
+
+### The fight-or-flight response
+- Sympathetic nerves and the adrenal medulla release adrenaline and noradrenaline.
+- Heart rate, blood pressure and breathing rise; glucose is released.
+- Digestion slows; pupils widen; blood moves to muscles.
+
+### Key point
+The same body response can feel like eustress or distress depending on how the situation is appraised, which is why reappraising nerves as excitement can help before a performance.
+:::
+
+:::qa Compare the life-events approach and the daily hassles approach to measuring stress. [starting]
+### Short answer
+The life-events approach counts **major changes**; the hassles approach counts **small, frequent irritations**. Hassles usually predict everyday symptoms better, while major events matter for serious illness and depression.
+
+### Comparison
+| Feature | Life events | Daily hassles |
+|---|---|---|
+| Measure | Social Readjustment Rating Scale; Indian PSLES | Hassles and Uplifts Scales |
+| Content | Bereavement, marriage, job loss | Traffic, queues, noisy neighbours, nagging |
+| Time frame | Past year or two | Past month |
+| Best predicts | Major illness risk | Day-to-day mood and minor symptoms |
+| Main criticism | Treats good and bad change alike; ignores appraisal | Overlaps with symptoms themselves |
+
+### Indian adaptation
+The Presumptive Stressful Life Events Scale includes events that matter in Indian life, such as a family member's marriage or changes in a joint family.
+
+### Example
+A Mumbai commuter with no major events this year but two hours of crowded trains daily may report more symptoms than a colleague who married recently.
+:::
+
 ## 4.4 Q&A bank · Beginner [beginner]
 
 :::qa Explain self-determination theory and its implications for teaching. [beginner]
@@ -884,6 +1091,222 @@ All three link personality to illness, but only the **hostility** part of Type A
 
 ### Exam tip
 End with the protective factors (hardiness, sense of coherence, optimism) to show the balance of risk and resilience.
+:::
+
+:::qa When do rewards undermine intrinsic motivation, and when do they help? [beginner]
+### Short answer
+Rewards undermine interest when they are **expected, tangible and contingent on simply doing an already enjoyable task**, because they feel controlling. They help when they **inform people about their competence** or make a dull task worth doing.
+
+### Evidence
+- Students paid to solve interesting puzzles later chose them less in free time.
+- Nursery children who expected a certificate for drawing drew less afterwards.
+- A large meta-analysis found tangible expected rewards undermine free-choice interest, while verbal praise tends to enhance it.
+
+### When rewards are safe or useful
+| Situation | Effect |
+|---|---|
+| Task is already boring | Rewards raise effort without much loss |
+| Reward is unexpected | Little or no undermining |
+| Reward carries competence information ("best essay") | Can increase interest |
+| Reward is given in an autonomy-supportive way | Smaller costs |
+
+### Classroom example
+Paying children per book read may raise reading for a month but lower their love of reading; praising specific progress and offering choice of books protects it.
+:::
+
+:::qa Trace the development of learned helplessness from the animal studies to the reformulated model. [beginner]
+### Short answer
+Dogs exposed to inescapable shock later failed to escape avoidable shock. In humans, the reformulated model said what matters is how people **explain** uncontrollable bad events: internal, stable and global explanations predict helplessness and depression.
+
+### Stages of the theory
+| Stage | Key idea |
+|---|---|
+| Original animal studies | Uncontrollability, not shock itself, produced passivity |
+| Human extension | Unsolvable problems led to poorer later problem solving |
+| Reformulated model | Attributions along three dimensions decide helplessness |
+| Hopelessness theory | Expecting bad outcomes and no way to change them is the key |
+
+### The three dimensions
+- **Internal or external**: "It's me" versus "the paper was unfair."
+- **Stable or unstable**: "always" versus "this time."
+- **Global or specific**: "everything" versus "just statistics."
+
+### Application
+Attributional retraining teaches students to explain failures with controllable, unstable causes (strategy, effort), which raises persistence.
+:::
+
+:::qa Explain goal-setting theory, its mechanisms and its limits. [beginner]
+### Short answer
+Specific, difficult goals produce higher performance than vague "do your best" goals, because they focus attention, mobilise effort, increase persistence and prompt strategy search, provided there is commitment, feedback and enough skill.
+
+### Mechanisms
+1. **Direction**: attention goes to goal-relevant activity.
+2. **Energy**: harder goals produce more effort.
+3. **Persistence**: people work longer.
+4. **Strategy**: people search for better methods.
+
+### Moderators
+| Moderator | Effect |
+|---|---|
+| Commitment | Goals work only if accepted |
+| Feedback | Needed to track progress |
+| Task complexity | Complex tasks benefit from learning goals rather than outcome targets |
+| Ability | Goals beyond ability lead to failure and frustration |
+
+### Limits
+- Narrow targets can crowd out other important work.
+- Pressure to hit targets can encourage cheating and shortcuts.
+
+### Example
+"Solve 20 past NET questions on research methods each evening and check errors" beats "study more".
+:::
+
+:::qa Describe Bandura's four sources of self-efficacy with examples from an Indian classroom. [beginner]
+### Short answer
+Self-efficacy is the belief that you can carry out a specific task. It grows from **mastery experiences, vicarious experience, verbal persuasion and physiological or emotional states**, with mastery the strongest.
+
+### Sources
+| Source | What it is | Classroom example |
+|---|---|---|
+| Mastery experiences | Succeeding at the task yourself | Starting with easier English passages before harder ones |
+| Vicarious experience | Seeing similar others succeed | A senior from the same village clears the entrance exam |
+| Verbal persuasion | Credible encouragement | A teacher says, "Your last two answers show you can do this" |
+| Physiological states | Reading your body's signals | Learning that a racing heart before speaking is normal, not failure |
+
+### Why it matters
+Self-efficacy predicts effort, persistence and recovery from setbacks across education, health and work.
+
+### Caution
+Efficacy is task-specific: a student may feel capable in maths and helpless in English.
+:::
+
+:::qa What is flow, when does it occur, and how can it be used in education and work? [beginner]
+### Short answer
+Flow is complete absorption in an intrinsically rewarding activity. It happens when **challenge and skill are both high and matched**, with clear goals and immediate feedback.
+
+### Features
+- Clear goals and immediate feedback.
+- Deep concentration and merging of action and awareness.
+- Sense of control; loss of self-consciousness.
+- Altered sense of time.
+- The activity is its own reward (autotelic).
+
+### The challenge-skill map
+| | Low skill | High skill |
+|---|---|---|
+| High challenge | Anxiety | Flow |
+| Low challenge | Apathy | Boredom or relaxation |
+
+### Applications
+- **Education**: graded tasks that stretch students slightly; quick feedback; projects with clear goals.
+- **Work**: matching assignments to skill, removing interruptions, giving autonomy.
+- **Therapy**: rebuilding absorbing activities in depression.
+
+### Example
+A tabla student practising a new composition just above her level, with her teacher's instant correction, is more likely to experience flow than one drilling an easy piece.
+:::
+
+:::qa What does the ego-depletion story teach us about psychological science? [beginner]
+### Short answer
+Ego depletion claimed that self-control draws on a limited resource that runs down with use. Hundreds of studies seemed to support it, but large pre-registered replications found an effect **close to zero**, which shows how publication bias and flexible methods can build a false consensus.
+
+### The original claim
+- People who resisted tempting food later gave up sooner on puzzles.
+- Glucose was proposed as the fuel.
+
+### What went wrong
+| Problem | Effect |
+|---|---|
+| Small samples | Noisy, inflated results |
+| Publication bias | Null results were not published |
+| Flexible analysis | Many ways to find a "significant" result |
+| Weak manipulations | Unclear whether self-control was really used |
+
+### What replaced it
+Fatigue after effort may reflect a shift in motivation and attention rather than a depleted fuel tank.
+
+### Lesson for students
+Ask whether a finding has been replicated in large, pre-registered studies before teaching it as fact.
+:::
+
+:::qa Explain the difference between wanting and liking, and why it matters clinically. [beginner]
+### Short answer
+**Wanting** (incentive salience, the pull towards a reward) depends mainly on dopamine; **liking** (the pleasure itself) depends on small opioid and endocannabinoid hotspots. They can come apart.
+
+### Evidence
+- Rats with dopamine blocked still show pleasure reactions to sugar but will not work to get it.
+- Stimulating dopamine increases wanting without increasing liking.
+
+### Clinical relevance
+| Condition | Wanting | Liking | Result |
+|---|---|---|---|
+| Addiction | Sensitised, very high | Reduced | Craving for what no longer feels good |
+| Depression | Reduced (anticipatory anhedonia) | Often partly intact | Not starting enjoyable activities |
+| Schizophrenia (negative symptoms) | Reduced | Often intact in the moment | Low motivation despite enjoying activities |
+
+### Treatment implications
+Behavioural activation works partly by restarting activity before wanting returns, letting liking rebuild motivation.
+:::
+
+:::qa Is emotion universal? Compare Ekman's view with the constructionist view. [beginner]
+### Short answer
+Ekman argued that a small set of **basic emotions** with universal facial expressions evolved in all humans. Constructionists argue that emotions are **built** by the brain from core affect and learned concepts, so categories vary across cultures. Current evidence supports a middle position.
+
+### Comparison
+| Point | Basic emotion view | Constructionist view |
+|---|---|---|
+| Core claim | Six or seven innate emotion programs | Core affect (valence and arousal) plus cultural concepts |
+| Evidence | Recognition across cultures, including remote groups | Lower agreement with free labelling; different sorting in remote groups |
+| Faces | Universal signals | Context-dependent and learned |
+| Culture's role | Display rules modify expression | Culture shapes what emotions are |
+
+### Middle position
+- Broad states (pleasant versus unpleasant, calm versus aroused) are recognised widely.
+- Specific categories and their meanings vary, as lajja in Odisha shows.
+
+### Exam tip
+Mention display rules, rasa theory and lajja for Indian depth.
+:::
+
+:::qa Present rasa theory as a psychological theory of emotion and compare it with modern models. [beginner]
+### Short answer
+Rasa theory, from the Natyashastra, explains how emotions are **produced, expressed and shared**: lasting emotions (sthayi bhava) arise from causes (vibhava), show through expressions (anubhava) and are coloured by passing states (vyabhichari bhava), producing an aesthetic emotion (rasa) in the audience.
+
+### Components and modern parallels
+| Rasa concept | Meaning | Modern parallel |
+|---|---|---|
+| Vibhava | Causes and situations | Eliciting stimulus and appraisal |
+| Anubhava | Bodily and facial expressions | Expressive component |
+| Vyabhichari bhava | Transient states | Moment-to-moment feelings layered on an emotion |
+| Sthayi bhava | Lasting emotion | Emotion or mood with stable core |
+| Rasa | Savoured aesthetic emotion | Empathy and emotional contagion in audiences |
+
+### The nine rasas
+Shringara, hasya, karuna, raudra, vira, bhayanaka, bibhatsa, adbhuta and shanta.
+
+### Strengths and limits
+- Strength: separates feeling, expression and context; explains shared emotion.
+- Limit: designed for drama, not tested as a clinical model, though used in research on emotion recognition in dance.
+:::
+
+:::qa Compare hardiness and sense of coherence as protective factors against stress. [beginner]
+### Short answer
+Both are personality orientations that buffer stress. **Hardiness** (commitment, control, challenge) came from studies of executives under pressure; **sense of coherence** (comprehensibility, manageability, meaningfulness) came from Antonovsky's study of what keeps people healthy.
+
+### Comparison
+| Feature | Hardiness | Sense of coherence |
+|---|---|---|
+| Founder | Kobasa | Antonovsky |
+| Components | Commitment, control, challenge | Comprehensibility, manageability, meaningfulness |
+| Origin | Executives during a company break-up | Salutogenesis: the origins of health |
+| Main mechanism | Appraising change as challenge; active coping | Seeing life as understandable, manageable, worthwhile |
+| Measure | Hardiness scales | SOC-13 and SOC-29 |
+
+### Evidence
+Both predict better health and less distress under stress; overlap with low neuroticism is a criticism.
+
+### Indian example
+A nurse in a Chennai government hospital who sees her hard posting as meaningful service (meaningfulness), knows her routines (comprehensibility) and has supportive colleagues (manageability) copes better than a colleague who feels the work is chaotic and pointless.
 :::
 
 ## 4.5 Q&A bank · Advanced [advanced]
@@ -1003,6 +1426,238 @@ First assess **safety and possible depression** carefully; then use motivation, 
 
 ### Key point
 Theory guides questions and plans, but a student who says nothing matters needs a proper clinical assessment, not only study tips.
+:::
+
+:::qa What do Klüver-Bucy syndrome and patient S.M. tell us about the amygdala? [advanced]
+### Short answer
+Both show that the amygdala is needed to **detect threat and give stimuli emotional meaning**: without it, fear of external dangers disappears while many other abilities remain.
+
+### Comparison
+| Feature | Klüver-Bucy (monkeys, bilateral temporal lobectomy) | Patient S.M. (bilateral amygdala calcification) |
+|---|---|---|
+| Fear | Lost: approached snakes | Lost to external threats |
+| Recognition | Psychic blindness: objects seen but meaning lost | Could not recognise fear in faces |
+| Other signs | Hyperorality, hypersexuality, hypermetamorphosis | Other emotions present; social approach to strangers |
+| Interesting exception | None reported | Panic when breathing high carbon dioxide (internal threat) |
+
+### Interpretation
+- The amygdala links sensory input to **value and danger**.
+- Internal threats can be processed by other circuits (brainstem and insula).
+- Damage is usually wider than the amygdala in the monkey studies, so the syndrome reflects temporal lobe loss more broadly.
+
+### Clinical link
+Klüver-Bucy features can follow herpes encephalitis, head injury or frontotemporal dementia.
+:::
+
+:::qa Critically evaluate Damasio's somatic marker hypothesis. [advanced]
+### Short answer
+The hypothesis proposes that **bodily emotional signals**, learned from past outcomes, mark options as good or bad and guide decisions, especially under uncertainty. It revived interest in emotion as part of rational choice, but its key evidence has alternative explanations.
+
+### Evidence for
+- Patients with ventromedial prefrontal damage (like Damasio's patient "Elliot") keep normal intelligence but make poor life decisions.
+- In the Iowa Gambling Task, healthy people show anticipatory skin-conductance responses before risky choices; vmPFC patients do not.
+
+### Criticisms
+| Criticism | Point |
+|---|---|
+| Conscious knowledge | Some studies found people knew the deck values early, so bodily signals may not be needed |
+| Task complexity | Poor performance may reflect reversal learning or working memory problems |
+| Body necessity | People with spinal injuries can still decide well |
+| Specificity | The markers are hard to measure directly |
+
+### Contribution
+It undermined the idea that emotion is the enemy of reason and links to modern work on interoception and decision neuroscience.
+:::
+
+:::qa Compare ability and mixed models of emotional intelligence and evaluate the evidence. [advanced]
+### Short answer
+**Ability models** treat EI as a set of mental abilities measured by performance tests; **mixed models** combine abilities with traits and competencies measured by self-report. Ability EI is more distinct; mixed models overlap heavily with personality.
+
+### Comparison
+| Feature | Ability model (Mayer and Salovey) | Mixed models (Goleman; Bar-On) |
+|---|---|---|
+| Content | Perceiving, using, understanding, managing emotions | Self-awareness, self-regulation, motivation, empathy, social skill, optimism |
+| Measure | Performance test with scored answers | Self-report questionnaires |
+| Overlap | Moderate with verbal intelligence | High with the Big Five and self-esteem |
+| Predictive value | Some incremental value for emotionally demanding jobs | Little beyond personality |
+
+### Critique
+- Popular claims that EI matters more than IQ are not supported.
+- Scoring "correct" emotional answers can reflect cultural norms, a concern for Indian use.
+
+### Applications
+Training in emotion recognition and regulation helps in nursing, teaching and counselling, whatever the label.
+:::
+
+:::qa Explain Lewin's and Miller's analysis of conflict and apply it to a clinical case. [advanced]
+### Short answer
+Lewin described approach-approach, avoidance-avoidance and approach-avoidance conflicts. Miller showed that the **avoidance gradient is steeper**, so people approach mixed goals from afar and retreat as they get close.
+
+### The types
+| Conflict | Typical behaviour |
+|---|---|
+| Approach-approach | Quick resolution after brief hesitation |
+| Avoidance-avoidance | Vacillation, delay, trying to escape the field |
+| Approach-avoidance | Approach, then retreat near the goal |
+| Double approach-avoidance | Repeated switching between options |
+
+### Clinical case
+Rohan, 30, in Pune, plans for months to start therapy for alcohol use. He books appointments and cancels on the morning of each.
+- Approach: wanting health and his family's trust.
+- Avoidance: fear of shame and of losing drinking as a coping tool.
+- Near the goal, avoidance rises faster than approach.
+
+### Interventions
+- **Lower avoidance**: a friendly first phone call, normalising ambivalence.
+- **Raise approach near the goal**: a family member accompanies him.
+- **Motivational interviewing** explores both sides without pushing.
+:::
+
+:::qa How does burnout differ from depression, and why does the difference matter? [advanced]
+### Short answer
+Burnout is a **work-specific** syndrome of exhaustion, cynicism and reduced efficacy; depression is a **pervasive** mood disorder affecting all areas of life. They overlap, but treatment and responsibility differ.
+
+### Comparison
+| Feature | Burnout | Depression |
+|---|---|---|
+| Scope | Work-related | All of life |
+| Core features | Exhaustion, cynicism, reduced efficacy | Low mood or anhedonia plus other symptoms |
+| Classification | ICD-11: occupational phenomenon, not a disorder | ICD-11 and DSM-5-TR disorder |
+| Pleasure outside work | Often preserved | Often lost |
+| Suicidal thinking | Less typical | Common risk to assess |
+| Main remedy | Change work conditions plus recovery | Clinical treatment (therapy, medicine) |
+
+### Why it matters
+- Calling depression "just burnout" can delay treatment.
+- Calling burnout "depression" can medicalise a workplace problem that needs organisational change.
+
+### Example
+A software engineer in Hyderabad who enjoys days off and family but dreads work may have burnout; one who has lost interest in everything needs assessment for depression.
+:::
+
+:::qa Evaluate the tend-and-befriend theory. [advanced]
+### Short answer
+The theory proposes that, especially in females, a common response to threat is to **protect offspring and seek social support**, linked to oxytocin and endogenous opioids. It corrected a male-biased view of stress but has mixed evidence in humans.
+
+### The argument
+- Fight or flight was studied mostly in male animals.
+- For females carrying or caring for young, fleeing or fighting may be costly.
+- Affiliation and care offer protection.
+
+### Evidence
+| For | Against or uncertain |
+|---|---|
+| Women report more social support seeking under stress | Many men also seek support |
+| Oxytocin linked to bonding and stress reduction in animals | Human oxytocin studies, especially nasal spray studies, replicate poorly |
+| Social support buffers stress hormones | Gender differences are small and culturally shaped |
+
+### Indian relevance
+In joint and extended families, both men and women often respond to stress by gathering family support, which suggests culture shapes the pattern as much as sex.
+
+### Conclusion
+A valuable correction and a useful idea, but not a fixed sex difference.
+:::
+
+:::qa Design a stress inoculation programme for police trainees in India. [advanced]
+### Short answer
+Use Meichenbaum's three phases, tailored to the stressors of Indian policing: crowd control, public hostility, long shifts, trauma exposure and hierarchy.
+
+### Phase 1: Conceptualisation
+- Teach the stress response and the appraisal model.
+- Trainees list personal triggers (being abused by a crowd, seeing a child victim).
+
+### Phase 2: Skills acquisition and rehearsal
+| Skill | Example |
+|---|---|
+| Arousal control | Slow breathing before entering a tense scene |
+| Coping self-statements | "Stay calm, gather facts, follow protocol" |
+| Problem-solving | Steps for de-escalating a crowd |
+| Communication | Calm, firm phrases; listening |
+| Peer support | Buddy check after critical incidents |
+
+### Phase 3: Application and follow-through
+- Graded simulations, from role-play to realistic crowd exercises.
+- Debrief each simulation; plan for setbacks.
+- Booster sessions after postings.
+
+### Evaluation
+Measure physiological reactions in simulations, use-of-force complaints, sick leave and wellbeing before and after.
+:::
+
+:::qa How should a clinician in India approach a patient who presents emotional distress through bodily symptoms? [advanced]
+### Short answer
+Treat bodily symptoms as **real and meaningful**: rule out medical causes, explore the person's own idioms and explanations, and gently link body, emotion and life stress without dismissing either.
+
+### Steps
+1. **Medical assessment** appropriate to the symptoms.
+2. **Explore idioms**: "ghabrahat", "dil baith raha hai", "kamzori", "tension".
+3. **Elicit explanations**: what does the person think is causing it?
+4. **Screen** for depression, anxiety and alexithymia.
+5. **Bridge**: "When the family fights, does the burning get worse?"
+
+### Concepts that help
+| Concept | Use |
+|---|---|
+| Alexithymia | Difficulty naming feelings; teach emotion words gradually |
+| Somatic idioms | Culturally accepted language for distress |
+| Biopsychosocial formulation | Holds body, mind and context together |
+| Cultural formulation interview | Structured way to ask about meaning and help-seeking |
+
+### Pitfalls
+- Saying "it's all in your mind" destroys trust.
+- Ordering endless tests without discussing stress reinforces fear.
+
+### Example
+A 45-year-old woman in Varanasi with headaches and weakness improves when her clinician connects symptoms to her son's illness and offers both relaxation training and family support.
+:::
+
+:::qa Discuss the role of culture in emotion with Indian examples. (15 marks) [advanced]
+### Short answer
+Culture shapes **which situations trigger emotions, how they are appraised, expressed, labelled and regulated**, and which emotions are valued. A biologically prepared core is elaborated very differently across cultures.
+
+### Answer plan
+1. **Introduction**: emotion components; the universality debate.
+2. **Recognition and expression**: basic emotions, display rules, cultural accents in expression.
+3. **Meaning**: lajja in Odisha (valued restraint, misread as anger by outsiders).
+4. **Valued emotions**: high-arousal joy in some Western settings versus calm contentment (santosha) in many Asian and Indian traditions.
+5. **Regulation**: suppression less costly where restraint is valued; respect for elders.
+6. **Theories from India**: rasa theory, the Gita's equanimity.
+7. **Clinical**: somatic idioms of distress, cultural concepts of distress.
+8. **Conclusion**: minimal universality with deep cultural shaping.
+
+### Comparison table for the answer
+| Aspect | More individualist settings | Many Indian settings |
+|---|---|---|
+| Ideal emotion | Excitement, enthusiasm | Calm, contentment, harmony |
+| Anger towards elders | More acceptable to express | Usually restrained |
+| Shame | Often negative | Can be valued (lajja) |
+| Distress language | Psychological terms | Often bodily or relational |
+:::
+
+:::qa How does motivational interviewing apply motivation theory to behaviour change? [advanced]
+### Short answer
+Motivational interviewing (MI) is a collaborative conversation style that strengthens a person's **own motivation** for change by exploring ambivalence. It applies self-determination theory, approach-avoidance conflict and the stages-of-change idea.
+
+### Links to theory
+| Theory | How MI uses it |
+|---|---|
+| Self-determination theory | Supports autonomy; change reasons come from the client |
+| Approach-avoidance conflict | Explores both sides of ambivalence without pushing |
+| Stages of change | Fits the approach to readiness |
+| Self-efficacy | Builds confidence through past successes |
+| Cognitive dissonance | Highlights gaps between values and behaviour |
+
+### Core skills (OARS)
+- **Open questions**: "What worries you about your drinking?"
+- **Affirmations**: "You've kept your job despite a lot of stress."
+- **Reflections**: "Part of you wants to stop, and part of you fears losing your way to relax."
+- **Summaries**: draw together change talk.
+
+### Evidence
+MI has good evidence for alcohol and substance use and health behaviours, especially as a brief intervention.
+
+### Example
+A man in Ludhiana with diabetes who resists diet change starts walking after an MI conversation linked health to being present at his daughter's wedding.
 :::
 
 ## 4.6 Module test [core]

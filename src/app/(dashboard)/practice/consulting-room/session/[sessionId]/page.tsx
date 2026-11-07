@@ -4,6 +4,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
 import { SimSessionView } from "./session-view";
 import { requireFeature } from "@/lib/flags";
+import { loadGrade } from "@/lib/interview-grade/store";
 
 export const dynamic = "force-dynamic";
 
@@ -14,11 +15,14 @@ export const dynamic = "force-dynamic";
  */
 export default async function SimSessionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ sessionId: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }) {
   await requireFeature("consulting_room");
   const { sessionId } = await params;
+  const { mode } = await searchParams;
   // Malformed id → PostgREST 400, not a clean 404 (same guard as the lesson page).
   if (!/^[0-9a-f-]{36}$/i.test(sessionId)) {
     notFound();
@@ -56,6 +60,10 @@ export default async function SimSessionPage({
     lang: "en-IN",
     gender: patientGender === "male" || patientGender === "female" ? patientGender : undefined,
   };
+
+  // Graded interview (?mode=graded): a stored grade shows straight away.
+  const stored = await loadGrade(sessionId, user.id);
+  const graded = mode === "graded" || stored !== null;
 
   const { data: turns } = await admin
     .from("sim_turns")
@@ -146,6 +154,8 @@ export default async function SimSessionPage({
       }))}
       branchInfo={branchInfo}
       provisionalDims={provisionalDims}
+      graded={graded}
+      initialGrade={stored?.grade ?? null}
     />
   );
 }

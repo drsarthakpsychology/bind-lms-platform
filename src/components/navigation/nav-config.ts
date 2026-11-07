@@ -135,6 +135,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
+      { href: "/admin/ai-cases", label: "AI cases" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
 
       // Not an admin job day to day: reachable from What's live → Rounds.

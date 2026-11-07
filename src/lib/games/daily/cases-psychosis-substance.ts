@@ -97,7 +97,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Schizoaffective disorder is an uninterrupted illness with a major mood episode alongside schizophrenia Criterion A, plus delusions or hallucinations for 2 or more weeks without a mood episode, and mood episodes present for the majority of the total illness. Specify bipolar or depressive type.",
     module: "psychosis",
-    refs: ["DSM-5-TR pdf p.233 (schizoaffective criteria B–C)"],
+    refs: ["DSM-5-TR pdf p.233 (schizoaffective criteria B to C)"],
   },
   {
     id: "dc-024",
@@ -129,7 +129,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Delusional disorder is one or more delusions lasting 1 month or longer, never meeting schizophrenia Criterion A, with functioning not markedly impaired apart from the delusion's effects. Types include jealous, erotomanic, grandiose, persecutory and somatic. Jealous delusions carry real risk of violence; ask about it.",
     module: "psychosis",
-    refs: ["DSM-5-TR pdf p.212 (delusional disorder criteria A–B)"],
+    refs: ["DSM-5-TR pdf p.212 (delusional disorder criteria A to B)"],
   },
   {
     id: "dc-025",
@@ -223,7 +223,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Antisocial personality disorder is a pervasive disregard for and violation of others' rights since age 15 (three or more of: unlawful acts, deceit, impulsivity, aggression, recklessness, irresponsibility, lack of remorse). The person must be at least 18, with evidence of conduct disorder before 15, not only during schizophrenia or bipolar disorder.",
     module: "personality",
-    refs: ["DSM-5-TR pdf p.998 (antisocial PD criteria B–D)"],
+    refs: ["DSM-5-TR pdf p.998 (antisocial PD criteria B to D)"],
   },
   {
     id: "dc-028",
@@ -318,7 +318,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Alcohol withdrawal needs heavy, prolonged drinking that stops or reduces, then two or more of: autonomic hyperactivity (sweating, pulse over 100), hand tremor, insomnia, nausea or vomiting, transient hallucinations or illusions, agitation, anxiety, seizures, within hours to a few days. Surgery and admission are classic times it is missed. Give thiamine before glucose.",
     module: "substance",
-    refs: ["DSM-5-TR p.565 (alcohol withdrawal criteria A–B)"],
+    refs: ["DSM-5-TR p.565 (alcohol withdrawal criteria A to B)"],
   },
   {
     id: "dc-031",
@@ -349,7 +349,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Opioid withdrawal follows heavy, prolonged use (or an antagonist), with three or more of: low mood, nausea or vomiting, muscle aches, tears or runny nose, dilated pupils, goosebumps or sweating, diarrhoea, yawning, fever, insomnia, within minutes to several days. It is miserable but rarely life-threatening in healthy adults.",
     module: "substance",
-    refs: ["DSM-5-TR p.618 (opioid withdrawal criteria A–B)"],
+    refs: ["DSM-5-TR p.618 (opioid withdrawal criteria A to B)"],
   },
   {
     id: "dc-032",
@@ -380,7 +380,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Substance/medication-induced psychotic disorder is delusions and/or hallucinations that developed during or soon after intoxication or withdrawal from a substance able to cause them, not better explained by a primary psychotic disorder (for example, symptoms before use, or lasting well beyond about a month after stopping). Cannabis-induced psychosis raises the later risk of schizophrenia.",
     module: "substance",
-    refs: ["DSM-5-TR pdf p.238 (substance-induced psychotic disorder criteria A–C)"],
+    refs: ["DSM-5-TR pdf p.238 (substance-induced psychotic disorder criteria A to C)"],
   },
   {
     id: "dc-033",
@@ -411,7 +411,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Gambling disorder is persistent problem gambling with four or more of nine signs in 12 months: needing bigger bets, restless when cutting down, failed attempts to stop, preoccupation, gambling when distressed, chasing losses, lying, risking relationships or jobs, relying on others for money. It sits in the substance-related and addictive disorders chapter.",
     module: "substance",
-    refs: ["DSM-5-TR p.661 (gambling disorder criteria A–B)"],
+    refs: ["DSM-5-TR p.661 (gambling disorder criteria A to B)"],
   },
   {
     id: "dc-034",
@@ -471,7 +471,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     ],
     pointer: "Count the problems with alcohol in the last year.",
     overview:
-      "Alcohol use disorder is a problematic pattern with two or more of 11 criteria within 12 months: more or longer than intended, failed attempts to cut down, time spent, craving, failed roles, social problems, giving up activities, hazardous use, use despite harm, tolerance, withdrawal. Severity: mild 2–3, moderate 4–5, severe 6+.",
+      "Alcohol use disorder is a problematic pattern with two or more of 11 criteria within 12 months: more or longer than intended, failed attempts to cut down, time spent, craving, failed roles, social problems, giving up activities, hazardous use, use despite harm, tolerance, withdrawal. Severity: mild 2 to 3, moderate 4 to 5, severe 6+.",
     module: "substance",
     refs: ["DSM-5-TR p.553 (alcohol use disorder criteria)"],
   },
@@ -504,7 +504,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Delirium is a disturbance in attention and awareness that develops over hours to days, fluctuates through the day, comes with another cognitive change (memory, orientation, language, perception), and is the result of a medical condition, substance or medicine. In older people, infection, dehydration and drugs are common causes. It is a medical emergency.",
     module: "neurocognitive",
-    refs: ["DSM-5-TR p.672 (delirium criteria A–C)"],
+    refs: ["DSM-5-TR p.672 (delirium criteria A to C)"],
   },
   {
     id: "dc-037",
@@ -568,7 +568,7 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Neurocognitive disorder with Lewy bodies: insidious decline with core features of fluctuating cognition, recurrent well-formed visual hallucinations, and parkinsonism starting after the cognitive decline. Suggestive features include REM sleep behaviour disorder and severe neuroleptic sensitivity. Avoid typical antipsychotics.",
     module: "neurocognitive",
-    refs: ["DSM-5-TR pdf p.939–940 (Lewy body core and suggestive features)"],
+    refs: ["DSM-5-TR pdf p.939 to 940 (Lewy body core and suggestive features)"],
   },
   {
     id: "dc-039",
@@ -599,6 +599,6 @@ export const CASES_PSYCHOSIS_SUBSTANCE: DailyCase[] = [
     overview:
       "Major frontotemporal NCD (behavioural variant) is insidious decline with three or more of: disinhibition, apathy, loss of sympathy or empathy, perseverative or compulsive behaviour, hyperorality, plus prominent decline in social cognition or executive function, with learning, memory and perceptual-motor skills relatively spared. Onset is often in the 50s.",
     module: "neurocognitive",
-    refs: ["DSM-5-TR pdf p.935 (frontotemporal NCD criteria C–D)"],
+    refs: ["DSM-5-TR pdf p.935 (frontotemporal NCD criteria C to D)"],
   },
 ];
