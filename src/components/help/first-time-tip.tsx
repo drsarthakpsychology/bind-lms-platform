@@ -49,22 +49,23 @@ export function useFirstTimeTip(id: string, store?: TipStore) {
   return { id, open: reopened || seen === false, close, reopen, panelId };
 }
 
-export function TipButton({ tip, label, className }: { tip: TipControl; label: string; className?: string }) {
+/** `compact`: icon only on phones (the label stays for screen readers), so a long title keeps its room. */
+export function TipButton({ tip, label, className, compact = false }: { tip: TipControl; label: string; className?: string; compact?: boolean }) {
   if (tip.open) return null;
   return (
     <Button
       id={`${tip.panelId}-b`}
       type="button"
       variant="ghost"
-      className={cn("h-11 px-3 text-sm", className)}
+      className={cn("h-11 px-3 text-sm", compact && "w-11 px-0 sm:w-auto sm:px-3", className)}
       aria-expanded={false}
       aria-controls={tip.panelId}
       onClick={tip.reopen}
       data-tip={tip.id}
       data-tip-state="folded"
     >
-      <CircleHelp aria-hidden />
-      {label}
+      <CircleHelp aria-hidden className={cn(compact && "size-5 sm:size-4")} />
+      {compact ? <span className="sr-only sm:not-sr-only">{label}</span> : label}
     </Button>
   );
 }

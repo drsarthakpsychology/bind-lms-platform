@@ -150,7 +150,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
               <div className={cn("flex items-center justify-between gap-3 border-b-2 border-foreground px-4 py-3", u.tone === "lime" ? "bg-primary text-primary-foreground" : u.tone === "blue" ? "bg-brand text-brand-foreground" : "bg-foreground text-background")}>
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wide opacity-80">Unit {ui + 1}</p>
-                  <h2 className="truncate text-lg font-bold">{u.title}</h2>
+                  <h2 className="text-lg font-bold leading-tight break-words">{u.title}</h2>
                 </div>
                 <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-current px-2 py-0.5 text-sm font-semibold tabular-nums">
                   <Star className="size-4" aria-hidden /> {stars}/{max}

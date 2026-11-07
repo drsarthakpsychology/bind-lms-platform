@@ -26,7 +26,7 @@ export function ToolHeader({
     <div className={cn("space-y-3", className)}>
       <div className="flex items-center gap-2">
         <h1 className="min-w-0 flex-1 text-h1 text-balance">{title}</h1>
-        <TipButton tip={t} label={tip.label ?? "How it works"} className="shrink-0" />
+        <TipButton tip={t} label={tip.label ?? "How it works"} className="shrink-0" compact />
         {children}
       </div>
       <TipPanel tip={t} title={tip.title ?? tip.label ?? "How it works"} intro={tip.intro} steps={tip.steps}>
