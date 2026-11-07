@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { LANDMARK_CASES } from "@/lib/landmark/cases";
 import { LandmarkReader } from "./landmark-reader";
 import { requireFeature } from "@/lib/flags";
@@ -13,12 +14,7 @@ export default async function LandmarkPage() {
   await requireFeature("landmark");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Landmark cases</p>
-      <h1 className="mt-1 text-h1">What was believed, what held up</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Original teaching narratives. For the ethically compromised cases, the primary
-        lesson is the ethics failure: these are why consent procedures exist.
-      </p>
+      <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up.", "In the cases that broke ethics, the ethics failure is the lesson."] }} />
 
       <div className="mt-6">
         <LandmarkReader cases={LANDMARK_CASES} />

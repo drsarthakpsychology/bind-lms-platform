@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { WeakSpotsView } from "./weak-spots-view";
@@ -32,12 +33,7 @@ export default async function WeakSpotsPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Weak spots</p>
-      <h1 className="mt-1 text-h1">Where you miss, drill here</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Your sim debriefs, analysed. The skills you keep missing, ranked, and a 10-item
-        drill generated from them, on the spot.
-      </p>
+      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most in your patient sessions, ranked.", "Run the 10-question drill made from them."] }} />
 
       <div className="mt-6">
         <WeakSpotsView spots={spots} sessions={rubrics.length} />
