@@ -324,6 +324,11 @@ export const advImaging = String.raw`
 ## 6.4 Neuroimaging and psychophysiology by disorder [core][advanced]
 6.3 covered when to scan and the limits of imaging. Here are the methods in technical depth and the findings that exams ask for, disorder by disorder, plus the bodily measures (skin conductance, heart rate, startle, eye movements) of psychophysiology.
 
+
+:::widget brainslicer
+{"title":"Read a scan in three planes","start":"slice","caption":"Scroll each plane and name the parts. Where would you look for an enlarged ventricle in schizophrenia, or a small hippocampus in depression or Alzheimer disease?"}
+:::
+
 ### What each method measures
 | Method | Physical basis | Resolution | Best psychiatric uses and findings |
 |---|---|---|---|

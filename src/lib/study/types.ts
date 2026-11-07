@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d" | "genogram" | "hpaloop";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d" | "genogram" | "hpaloop" | "brainslicer" | "amesroom";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -130,7 +130,11 @@ export type Synapse3dData = { title?: Inline; caption?: Inline; transmitter?: st
 export type GenogramData = { title?: Inline; caption?: Inline; condition?: string; start?: "example" | "blank" };
 /** A day of stress, played: events arrive (exam, argument, deadline, bedtime), adrenaline and cortisol meters and a live curve respond, and the student picks how to cope (talk, exercise, rest or sleep, avoid) to keep the stress load low; chronic stress mode replays five hard days and shows the HPA feedback loop failing. `start` opens "day" or "chronic". */
 export type HpaLoopData = { title?: Inline; caption?: Inline; start?: "day" | "chronic" };
-export type WidgetData = HpaLoopData | GenogramData | Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** Brain-scan slicer: scroll axial, coronal and sagittal slices (a T1-style scan with the parts named), with a 3D head showing the cut; switch to rTMS (coil over the left DLPFC) or ECT (bitemporal, bifrontal, right unilateral) to see each placement and what it means for effect and memory. `start` opens "slice", "tms" or "ect". */
+export type BrainSlicerData = { title?: Inline; caption?: Inline; start?: "slice" | "tms" | "ect" };
+/** The Ames room in 3D (flat drawings without WebGL): through the peephole two people of the same height look very different in size; swap them and watch them grow and shrink; step aside or look from above to see the trapezoid; size constancy and lying depth cues explained. */
+export type AmesRoomData = { title?: Inline; caption?: Inline };
+export type WidgetData = AmesRoomData | BrainSlicerData | HpaLoopData | GenogramData | Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

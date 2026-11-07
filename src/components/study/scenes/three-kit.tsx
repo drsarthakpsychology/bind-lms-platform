@@ -100,6 +100,7 @@ export function Stage({
   className,
   onMiss,
   onReady,
+  locked = false,
 }: {
   children: React.ReactNode;
   camera: V3;
@@ -111,6 +112,8 @@ export function Stage({
   className?: string;
   onMiss?: () => void;
   onReady?: () => void;
+  /** No turning or zooming (a fixed viewpoint, such as a peephole). */
+  locked?: boolean;
 }) {
   const [ready, setReady] = React.useState(false);
   const [level, setLevel] = React.useState<Quality>(startQuality);
@@ -127,6 +130,10 @@ export function Stage({
         camera={cam}
         gl={gl}
         onPointerMissed={onMiss}
+        onCreated={(st) => {
+          // allow per-material cut planes (the brain's coronal cut); costs nothing without planes
+          st.gl.localClippingEnabled = true;
+        }}
         style={{ touchAction: "none" }}
       >
         <QualityCtx.Provider value={level}>
@@ -138,7 +145,7 @@ export function Stage({
           <FirstFrame onReady={() => { setReady(true); onReady?.(); }} level={level} />
           <Governor level={level} onDrop={() => setLevel((l) => (l > 0 ? ((l - 1) as Quality) : l))} />
           <Waker wakeKey={`${wakeKey}|${level}`} />
-          <OrbitControls makeDefault enablePan={false} enableDamping dampingFactor={0.12} minDistance={minDistance} maxDistance={maxDistance} rotateSpeed={0.8} zoomSpeed={0.8} />
+          <OrbitControls makeDefault enabled={!locked} enablePan={false} enableDamping dampingFactor={0.12} minDistance={minDistance} maxDistance={maxDistance} rotateSpeed={0.8} zoomSpeed={0.8} />
         </QualityCtx.Provider>
       </Canvas>
     </div>
@@ -216,7 +223,7 @@ export function curveOf(pts: V3[]) {
 }
 
 /** A nerve or tract as a tube. `lit` (0 to 1) lights it from the start up to that fraction. */
-export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name, xray = false }: { xray?: boolean; pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
+export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name, xray = false, clip = null }: { clip?: THREE.Plane[] | null; xray?: boolean; pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
   const q = useQuality();
   const seg = segs(segments, q, 8);
   const rad = q === 0 ? Math.min(radial, 4) : radial;
@@ -235,7 +242,7 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
   return (
     <group>
       <mesh geometry={geo} name={name} onClick={onTap ? (e: ThreeEvent<MouseEvent>) => { if (e.delta < 8) { e.stopPropagation(); onTap(); } } : undefined}>
-        <meshStandardMaterial key={opacity < 1 ? "see-through" : "solid"} color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} />
+        <meshStandardMaterial key={`${opacity < 1 ? "see-through" : "solid"}-${clip ? "cut" : ""}`} color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} clippingPlanes={clip} side={clip ? THREE.DoubleSide : THREE.FrontSide} />
       </mesh>
       {litGeo ? (
         <mesh geometry={litGeo} renderOrder={xray ? 10 : 0}>
