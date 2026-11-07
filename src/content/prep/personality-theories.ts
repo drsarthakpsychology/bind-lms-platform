@@ -8,6 +8,8 @@ import { QUESTIONS as part6 } from "./personality-theories-part6";
 import { QUESTIONS as part7 } from "./personality-theories-part7";
 import { QUESTIONS_X01 } from "./personality-theories-x01";
 import { QUESTIONS_X02 } from "./personality-theories-x02";
+import { QUESTIONS_X03 } from "./personality-theories-x03";
+import { QUESTIONS_X04 } from "./personality-theories-x04";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -20,4 +22,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · personality-theories. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...QUESTIONS_X01, ...QUESTIONS_X02]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...QUESTIONS_X01, ...QUESTIONS_X02, ...QUESTIONS_X03, ...QUESTIONS_X04]);
