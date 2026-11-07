@@ -158,3 +158,32 @@ New blocks:
   - Unified diagnostic, plan, progressive practice, mock tests and interviews.
   - Exam-specific tracks are kept behind `EXAM_TRACKS_ENABLED = false` for later.
 - **Review before merge:** automated gates (types, tests, the references guard, valid widget JSON), plus a level-progression review pass on each module.
+
+## 8. Owner direction, 7 Nov 2026: one cohesive platform, fewer and clearer places
+
+Source: the owner's 12-point review after using the platform in admin mode. These decisions override earlier ones where they differ (for example, module levels no longer lock).
+
+Student menu (approved):
+- **Home:** one Continue card, today's goal, three strongest and three weakest topics. Nothing else competing.
+- **Study:** every module open to everyone; jump to any topic and back. Notes live inside each topic. Progress shown as a percentage, never estimated hours.
+- **Lectures:** unchanged.
+- **Medicines:** moved up, next to Exam Prep.
+- **Exam Prep:** a question bank by subject, then topic. 10 questions at a time, with the answer and a full explanation; save and revisit; mock tests and interviews. No locks. Content aimed at CUET PG Psychology, UGC NET Psychology, clinical psychology entrances and MD Psychiatry level. General UGC NET Paper 1 material (higher education, NEP and so on) is optional and never leads.
+- **Practice:** clinical skills on real cases: Daily case, AI patient interview, MSE, formulation.
+- **Games:** only real games: timed, competitive, animated (Duel, Blitz, Ward Week, Rx Detective, Escape Room, Comorbid).
+- **More:** Progress (strengths, weak spots, certificate status), Doubts, Achievements, Leaderboard, Journal.
+
+Overlaps (approved: fold into one place each, delete nothing, old links still open):
+- Coach, Quiz path and Today's practice become one "Smart practice" entry in Exam Prep.
+- Clinic detective, What would you do and Say it clinically, plus the smaller practice tools, go inside Practice.
+
+Certificate (approved): a student earns the certificate by passing every module test at 80 percent, in any order, retakes allowed. Access to content and certificate eligibility are separate.
+
+Also required:
+- Far less on screen: each page has one obvious next step; instructions cut to a line or none.
+- No text overflowing boxes, on any screen size.
+- Visuals that feel like a game: animated, explorable scenes (for example a nervous system students can explore and watch working), not diagrams with clickable labels.
+- Brain and biology content at academic and exam depth, up to MD Psychiatry level.
+- Daily case: AI case must work; drop the long how-to text; no admin-only labels or source names shown to students.
+- Differential duel: clearer bot play, scoring and disorder choice.
+- Admin: quick access to send login details to students, from the inbox and student list, as before.
