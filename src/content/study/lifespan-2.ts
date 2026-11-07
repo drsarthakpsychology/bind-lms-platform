@@ -95,6 +95,10 @@ Jeffrey Arnett (2000) proposed **emerging adulthood** (roughly 18 to 25) as a di
 5. **Possibilities** (optimism about the future).
 In India, this pattern fits many urban, middle-class young people who study longer and marry later, but much less those who start work early or marry young. Family expectations shape exploration: many young Indians explore **within** family approval rather than in opposition to it.
 
+:::widget layers
+{"title": "Arnett's five features of emerging adulthood", "shape": "stack", "layers": [{"label": "Identity exploration", "detail": "Trying out possibilities in love and work: switching courses, testing relationships."}, {"label": "Instability", "detail": "Frequent changes of course, city, job and relationship."}, {"label": "Self-focus", "detail": "Fewer duties to others than before or after, so more time to decide one's own path."}, {"label": "Feeling in-between", "detail": "Not a teenager, not quite an adult. Asked 'Are you an adult?', many answer 'In some ways yes, in some ways no.'"}, {"label": "Possibilities", "detail": "Optimism and a sense that life could still go many ways."}], "caption": "Arnett described this mainly in industrialised societies. In many Indian families, marriage, work and duty to parents may arrive earlier and shape it differently."}
+:::
+
 :::example Adolescence in India: the public-health picture
 - India has the world's largest adolescent population (about a fifth of all Indians are 10 to 19).
 - In NFHS-5 (2019 to 2021), about **23%** of women aged 20 to 24 had married before 18. Child marriage cuts adolescence short, ends schooling and raises maternal and infant risks.
@@ -283,6 +287,10 @@ Timothy Salthouse argued that a general slowing of **processing speed** explains
 | Course | Stable or very slow | May stay stable, improve or progress | Usually progressive |
 The **Delirium and dementia** module covers assessment and management in depth. Always check for **depression** (which can mimic dementia), **hearing and vision** problems, **medicines** (especially anticholinergic drugs), thyroid and B12 problems, and **delirium**.
 
+:::widget compare
+{"title": "Normal ageing or dementia?", "a": {"label": "Normal ageing", "points": ["Forgets a name, then remembers it later", "Slower to learn new things, but learns them", "Manages money, cooking and travel independently", "Worries about forgetting", "Stable or very slow change"], "summary": "Slower, not lost. Knowledge and vocabulary stay strong."}, "b": {"label": "Dementia", "points": ["Forgets recent events and does not recall them later", "Repeats the same question within minutes", "Needs help with complex, then basic, daily tasks", "Insight often reduced", "Usually progressive"], "summary": "Decline from a previous level that interferes with independence. Always rule out depression, delirium, poor hearing or vision and medicines first."}}
+:::
+
 :::widget brainmap
 {
   "title": "Where normal ageing shows most in the brain",
@@ -357,6 +365,10 @@ Paul and Margret Baltes proposed that people age well by managing gains and loss
 
 ### Socioemotional selectivity theory
 Laura Carstensen argued that **how much time we feel we have left** shapes our goals. When time seems open-ended (youth), people pursue **knowledge** and new contacts. When time seems limited (old age, or serious illness at any age), people prioritise **emotionally meaningful** goals and close relationships, and prune peripheral ones. This explains why older adults have **smaller but closer** social networks, and the **positivity effect**: older adults attend to and remember positive information more than negative information compared with younger adults. Contrary to stereotype, average emotional well-being is maintained or improves into the seventies.
+
+:::widget compare
+{"title": "Socioemotional selectivity: time left changes goals", "a": {"label": "Time feels open-ended", "points": ["Goal: gather knowledge and new experiences", "Large, wide networks", "Willing to meet many new people", "Typical of youth, but also of anyone who expects a long future"], "summary": "With time to spare, people invest in the future."}, "b": {"label": "Time feels limited", "points": ["Goal: emotional meaning in the present", "Smaller networks of close, rewarding ties", "Prune shallow contacts", "Typical of old age, and also of young people facing serious illness"], "summary": "With time short, people choose quality over quantity. This is why older adults often report more positive emotion, not less."}}
+:::
 
 ### Classic social theories of ageing
 | Theory | Claim | Critique |
