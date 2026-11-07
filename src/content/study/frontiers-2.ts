@@ -11,6 +11,13 @@ For a long time the brain was thought to be sealed off from the immune system. W
 - Raised inflammation is more common in people whose depression **has not responded** to standard antidepressants, and in people with obesity, childhood adversity and chronic illness.
 - **Interferon-alpha**, an immune treatment once used for hepatitis C, caused depression in a large minority of patients, which is strong evidence that immune signals **can cause** depressive symptoms.
 
+:::widget stress
+{
+  "title": "Stress, cortisol and inflammation",
+  "caption": "Play the stress response: amygdala, hypothalamus, pituitary, adrenal, then cortisol. Normally cortisol damps inflammation and switches the response off through feedback. Under chronic stress, immune cells become resistant to cortisol's calming signal, so inflammation can stay high: one route by which long-term stress and childhood adversity may raise the inflammatory markers seen in a subgroup of people with depression."
+}
+:::
+
 ### What has been tried
 - Anti-inflammatory add-ons (celecoxib, minocycline, omega-3, statins) and immune-targeting antibodies have given **mixed** results.
 - An antibody that blocks TNF (infliximab) helped **only** the depressed patients with high CRP, and not others. This suggests that if immune treatments work, they will work for a **selected subgroup**.

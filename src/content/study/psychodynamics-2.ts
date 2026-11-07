@@ -54,18 +54,6 @@ In words:
 }
 :::
 
-:::widget flow
-{
-  "title": "Malan's triangle of person",
-  "layout": "cycle",
-  "nodes": [
-    { "id": "c", "label": "Current people", "detail": "Partner, boss, friends: 'I never ask my husband for help.'" },
-    { "id": "p", "label": "Past people", "detail": "Parents and siblings: 'Mother was always ill, so I looked after everyone.'" },
-    { "id": "t", "label": "Therapist", "detail": "In the room: 'She apologises for taking up my time.'" }
-  ],
-  "caption": "The same pattern in all three corners. An interpretation that links all three carries the most weight."
-}
-:::
 
 **Luborsky's Core Conflictual Relationship Theme (CCRT)**: in the stories a person tells about relationships, find:
 - the **Wish** (W): what I want from others ("to be cared for"),

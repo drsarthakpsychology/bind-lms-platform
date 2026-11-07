@@ -163,6 +163,13 @@ Classical conditioning is learning in which a **neutral stimulus**, after repeat
 | Neutral stimulus, becoming the conditioned stimulus (CS) | Bell (or metronome) |
 | Conditioned response (CR) | Salivation to the bell alone |
 
+:::widget conditioning
+{
+  "kind": "classical",
+  "caption": "Step through acquisition, then extinction. Write the UCS, UCR, CS and CR from the animation before you read on."
+}
+:::
+
 ### Key phenomena
 - **Acquisition**: strongest when the CS comes just before the UCS (forward conditioning).
 - **Extinction**: the CR fades when the CS is repeatedly presented without the UCS.
@@ -190,6 +197,12 @@ The multi-store (modal) model, proposed by **Atkinson and Shiffrin** in 1968, de
 
 ### The processes
 **Attention** moves information from sensory to short-term memory; **rehearsal** keeps it there and transfers it to long-term memory; **retrieval** brings it back.
+
+:::widget memoryflow
+{
+  "caption": "Follow an item from the sensory register through working memory into long-term memory and back out by retrieval. In an exam answer, draw this as a labelled box diagram."
+}
+:::
 
 ### Evidence
 - The **serial position effect**: in free recall, early items (primacy, from long-term memory) and late items (recency, from short-term memory) are recalled best.
@@ -342,6 +355,13 @@ Classical and operant conditioning are the two basic forms of associative learni
 | Key figures | Pavlov, Watson | Thorndike (law of effect), Skinner |
 | Example | Anxiety at the dentist's drill sound | A child cleans her room to earn screen time |
 | Applications | Exposure therapy, systematic desensitisation, aversion therapy | Token economy, behaviour modification, shaping skills |
+
+:::widget conditioning
+{
+  "kind": "operant",
+  "caption": "Step through reinforcement, a variable-ratio schedule and extinction. Notice the extinction burst: responding rises before it falls, a favourite exam point."
+}
+:::
 
 ### Similarities
 1. Both show acquisition, extinction, spontaneous recovery, generalisation and discrimination.
@@ -496,6 +516,23 @@ Erik Erikson, a psychoanalyst influenced by Freud, proposed that personality dev
 | Young adulthood | Intimacy versus isolation | Love | Partners, friends |
 | Middle adulthood | Generativity versus stagnation | Care | Household, work |
 | Late adulthood | Integrity versus despair | Wisdom | Humankind |
+
+:::widget timeline
+{
+  "prompt": "Put Erikson's eight crises in order across the lifespan.",
+  "events": [
+    { "label": "Trust versus mistrust", "when": "Infancy" },
+    { "label": "Autonomy versus shame and doubt", "when": "Early childhood" },
+    { "label": "Initiative versus guilt", "when": "Play age" },
+    { "label": "Industry versus inferiority", "when": "School age" },
+    { "label": "Identity versus role confusion", "when": "Adolescence" },
+    { "label": "Intimacy versus isolation", "when": "Young adulthood" },
+    { "label": "Generativity versus stagnation", "when": "Middle adulthood" },
+    { "label": "Integrity versus despair", "when": "Late adulthood" }
+  ],
+  "why": "Each crisis builds on the last (the epigenetic principle). Arrange-in-order questions on Erikson are common; anchor trust first and integrity last."
+}
+:::
 
 ### Key ideas
 - **Psychosocial**, not psychosexual: social relationships and culture shape development.

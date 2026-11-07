@@ -31,6 +31,23 @@ You already met Freud's maps of the mind and the list of defences in the module 
 }
 :::
 
+:::widget timeline
+{
+  "prompt": "Put these landmarks of psychodynamic thought in the order they happened.",
+  "events": [
+    { "label": "Freud's book on dreams sets out the topographic model", "when": "1900" },
+    { "label": "Girindrasekhar Bose founds the Indian Psychoanalytic Society in Calcutta", "when": "1922" },
+    { "label": "Freud's structural model: id, ego and superego", "when": "1923" },
+    { "label": "Anna Freud systematises the defence mechanisms", "when": "1936" },
+    { "label": "Klein describes the paranoid-schizoid and depressive positions", "when": "1930s to 1946" },
+    { "label": "Bowlby's attachment theory and Ainsworth's Strange Situation", "when": "1950s to 1970s" },
+    { "label": "Kohut's self psychology", "when": "1971 to 1984" },
+    { "label": "Mentalization-based treatment is tested in randomised trials", "when": "1999 onwards" }
+  ],
+  "why": "Freud's two models came first, with Bose working in parallel in India. Ego psychology and Kleinian object relations grew in the 1930s and 1940s; attachment research and self psychology followed; structured, tested treatments came last."
+}
+:::
+
 :::student
 Think of a person who always ends up with partners who ignore them, then feels hurt but "chooses" the same kind again. A psychodynamic therapist asks: what is this repetition doing for them? Is it familiar? Does it protect them from something even more frightening, such as being truly seen?
 :::
@@ -517,6 +534,23 @@ Q: A man asks his therapist for advice every week and rejects every idea, while 
 - **Envy and gratitude**: envy attacks the good thing because it is good and not one's own.
 
 Klein called these **positions**, not stages, because adults move back and forth between them throughout life.
+
+:::widget compare
+{
+  "title": "Freud's drive model versus object relations",
+  "a": {
+    "label": "Classical drive model (Freud)",
+    "points": ["The engine of the mind is drives: sex and aggression seeking discharge", "Other people matter as targets of drives ('objects')", "Conflict is between wish, conscience and reality", "Key developmental moment: the Oedipal phase, around 3 to 6", "The analyst is a neutral screen; transference shows displaced wishes"],
+    "summary": "Symptoms are compromises between forbidden wishes and the forces against them."
+  },
+  "b": {
+    "label": "Object relations (Klein, Winnicott, Fairbairn, Kernberg)",
+    "points": ["The engine of the mind is the need for relationships", "Inner pictures of self and others, linked by feeling, make up the mind", "Conflict is between loving and hating the same person, and between split images", "Key developmental moments: the first years, splitting and integration", "The therapist's own feelings (countertransference) are central data"],
+    "summary": "Symptoms come from the inner world of relationships we carry and repeat."
+  },
+  "caption": "Slide between them. Most clinicians today use both: what a person wishes, and with whom they keep repeating it."
+}
+:::
 
 :::analogy The two positions on a bad day
 You wait for a friend who is late. In the paranoid-schizoid mood: "She doesn't care. She's always been selfish." In the depressive mood: "I'm upset she's late, and she's also the friend who stayed with me in hospital." Same friend; one view splits, the other holds both.

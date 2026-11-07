@@ -171,20 +171,6 @@ Here is the whole module on one board. Each item gets one of five honest labels.
 | **Research only** | Interesting science, no routine clinical use yet |
 | **Not established** | Claims exceed evidence; should not be used or believed |
 
-:::widget layers
-{
-  "title": "The five status labels, from strongest to weakest",
-  "shape": "stack",
-  "layers": [
-    { "label": "Approved", "detail": "Licensed by a major regulator for a named use. Example: esketamine nasal spray for treatment-resistant depression. Approval in one country does not mean approval in India." },
-    { "label": "Promising, in late trials", "detail": "Positive large trials, not yet licensed. Example: psilocybin (COMP360) for treatment-resistant depression." },
-    { "label": "Mixed", "detail": "Some good evidence, some failures, or licensed but with limits. Example: pharmacogenomic panels; GLP-1 medicines for addiction." },
-    { "label": "Research only", "detail": "Interesting science, no routine use. Example: anti-inflammatory treatment for depression; computational tests." },
-    { "label": "Not established", "detail": "The claim runs ahead of the evidence. Example: psychokinesis." }
-  ],
-  "caption": "Tap each level. Every claim in this module is given one of these labels, with a date."
-}
-:::
 
 | Topic | Status (as of Nov 2026) |
 |---|---|
