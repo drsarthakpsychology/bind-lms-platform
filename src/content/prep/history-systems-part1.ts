@@ -128,7 +128,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Weber's law states that the just noticeable difference (JND) between two stimuli is:",
     options: [
-      "Always the same absolute amount, whatever the intensity",
+      "Always the same absolute amount, whatever the starting intensity",
       "A constant proportion of the original stimulus intensity",
       "Largest for weak stimuli and smallest for strong ones",
       "Equal to the absolute threshold for that sense",
@@ -188,7 +188,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Wundt's 'tridimensional theory of feeling' proposed that feelings can be described along three dimensions. These are:",
     options: [
-      "Thinking, feeling and willing, the three classical mental faculties",
+      "Thinking, feeling and willing, the three classical faculties of the mind",
       "Evaluation, potency and activity, rated on bipolar scales",
       "Id, ego and superego",
       "Pleasure and displeasure, tension and relaxation, excitement and calm",
@@ -241,7 +241,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Edward Titchener's structuralism aimed to:",
     options: [
-      "Study how mental processes such as habit and attention help the organism adapt to its surroundings",
+      "Study how mental processes such as habit and attention help the organism adapt to its surroundings and survive",
       "Analyse conscious experience into elements such as sensations, images and feelings by trained introspection",
       "Study only observable behaviour and reject introspection as unscientific",
       "Study the unconscious through dreams",
@@ -311,7 +311,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The Würzburg school, led by Oswald Külpe, is best known for:",
     options: [
       "Reporting 'imageless thought' and 'determining tendencies' that guide thinking",
-      "Showing that every thought can be reduced to sensory images and feelings",
+      "Showing that every thought can be reduced to sensory images and simple feelings",
       "Developing the first standardised intelligence test",
       "Describing the Oedipus complex",
     ],
@@ -328,7 +328,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Franz Brentano's 'act psychology' differed from Wundt's approach mainly because Brentano argued that psychology should study:",
     options: [
-      "The elements of consciousness, such as sensations and feelings, by introspection",
+      "The basic elements of consciousness, such as sensations and feelings, by trained introspection",
       "Mental acts such as perceiving, judging and loving, which are always directed at an object",
       "Only observable behaviour, without reference to the mind",
       "Physiological reflexes",
@@ -348,7 +348,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Functionalism in psychology focused on:",
     options: [
       "Unconscious conflicts",
-      "The basic elements of conscious experience and how they combine",
+      "The basic elements of conscious experience and the laws by which they combine",
       "How the mind and behaviour help the organism adapt to its environment",
       "How perception organises sensations into meaningful wholes",
     ],
@@ -427,7 +427,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Lloyd Morgan's 'canon' advises that:",
     options: [
-      "Animals should be credited with human-like reasoning whenever anecdotes suggest it",
+      "Animals should be credited with human-like reasoning whenever good anecdotes suggest it",
       "Behaviour should not be explained by a higher mental process if a lower one will do",
       "Only humans can learn",
       "Behaviour should always be explained by instincts",
@@ -598,7 +598,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Subtracting simple reaction time from the time for a task that adds the process",
       "Subtracting a person's age from their mental age",
-      "Comparing the introspective reports of trained observers on the same task",
+      "Comparing the introspective reports of trained observers who performed the same task",
       "Removing parts of an animal's brain",
     ],
     answer: 0,
@@ -635,7 +635,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which pair correctly matches a German 'founding' psychologist with his main research area?",
     options: [
       "Oswald Külpe: classical conditioning",
-      "Hermann Ebbinghaus: the unconscious",
+      "Hermann Ebbinghaus: the unconscious and dream interpretation",
       "Carl Stumpf: the psychology of tone and music",
       "G. E. Müller: psychoanalysis",
     ],
@@ -653,7 +653,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Localisation of mental faculties in the brain",
       "Learning by association of contiguous ideas",
-      "The reflex arc linking sensory and motor nerves",
+      "The reflex arc linking sensory and motor nerves in the spinal cord",
       "Thresholds of consciousness and unconscious processing",
     ],
     answer: 3,
@@ -733,7 +733,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Functionalism contributed most directly to which later developments in psychology?",
     options: [
-      "Analytical psychology and the theory of the collective unconscious",
+      "Analytical psychology and Jung's theory of an inherited collective unconscious",
       "Structuralism and the introspective analysis of mental elements",
       "Applied psychology, educational psychology, mental testing and behaviourism",
       "Phrenology",
@@ -797,7 +797,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Interactive (Cartesian) dualism",
       "Materialist monism",
       "British empiricism",
-      "Psychophysical parallelism",
+      "Psychophysical (Leibnizian) parallelism",
     ],
     answer: 0,
     explanation:
@@ -813,7 +813,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Basic ideas are inborn and are only awakened by later experience",
       "Complex ideas are built from simple ones linked by contiguity, similarity and frequency",
-      "The mind actively imposes inborn categories such as space and time on sensation",
+      "The mind actively imposes inborn categories such as space, time and causality on sensation",
       "Ideas are caused by the skull's shape",
     ],
     answer: 1,
@@ -832,7 +832,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Developed the ratio IQ formula used in the Stanford-Binet",
       "Founded the first psychology laboratory in Japan",
       "Was the first African American to earn a PhD in psychology, in 1920",
-      "Was the first president of the American Psychological Association",
+      "Was the first elected president of the American Psychological Association",
     ],
     answer: 2,
     explanation:
@@ -983,7 +983,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Studied animal learning objectively with puzzle boxes and stated the law of effect",
       "Founded psychoanalysis",
       "Studied the elements of consciousness by trained introspection",
-      "Showed that animals solve problems by sudden insight rather than trial and error",
+      "Showed that animals solve problems by sudden insight rather than by trial and error",
     ],
     answer: 0,
     explanation:
