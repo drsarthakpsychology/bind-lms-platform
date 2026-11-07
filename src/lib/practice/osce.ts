@@ -4,6 +4,10 @@
  * Students face this format in RCI-track exams; almost nobody practises it.
  */
 
+import type { Exam, Level } from "@/lib/sim/library/types";
+import { OSCE_LIBRARY } from "./osce-library";
+import { EXISTING_EXTRAS } from "./osce-library/existing-extras";
+
 export interface OsceStation {
   id: string;
   title: string;
@@ -11,9 +15,16 @@ export interface OsceStation {
   duration_seconds: number;
   checklist: Array<{ item: string; weight: number }>;
   global_rating: { label: string; max: number };
+  /** who the candidate meets: the role player's brief */
+  role?: "patient" | "relative" | "examiner" | "colleague";
+  role_brief?: string;
+  /** what a strong performance says or does: shown after the station */
+  model_points?: string[];
+  /** library tags */
+  tags?: { topic: string; difficulty: Level; objective: string; exams: Exam[]; module: string };
 }
 
-export const SEED_OSCE_STATIONS: OsceStation[] = [
+const BASE_STATIONS: OsceStation[] = [
   {
     id: "osce-1",
     title: "Focused risk assessment",
@@ -200,6 +211,12 @@ export const SEED_OSCE_STATIONS: OsceStation[] = [
     ],
     global_rating: { label: "Global telehealth-boundary competence", max: 5 },
   },
+];
+
+/** All stations: the first 12 (with their added briefs and tags), then the library. */
+export const SEED_OSCE_STATIONS: OsceStation[] = [
+  ...BASE_STATIONS.map((s) => ({ ...s, ...EXISTING_EXTRAS[s.id] })),
+  ...OSCE_LIBRARY,
 ];
 
 /** Score an attempt against the checklist. Returns 0..1 fraction, weighting
