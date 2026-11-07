@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Learning insights" };
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/learning — how the cohort is doing with self-study: modules,
+ * /admin/learning, how the cohort is doing with self-study: modules,
  * hard spots, Psychology Lab class results, and who has gone quiet.
  */
 export default async function LearningInsightsPage() {

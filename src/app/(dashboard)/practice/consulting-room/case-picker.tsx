@@ -14,7 +14,7 @@ export interface CaseCard {
   difficulty: string;
   summary: string;
   source: "hand_built" | "corpus";
-  /** The patient's own words — the hook. Never the diagnosis. */
+  /** The patient's own words: the hook. Never the diagnosis. */
   hook?: string;
   /** Session state per card: not attempted / in progress / completed. */
   state?: "not_started" | "in_progress" | "completed";
@@ -50,7 +50,7 @@ const STATE_TONE: Record<NonNullable<CaseCard["state"]>, "neutral" | "ai"> = {
 };
 
 /**
- * Case picker — grouped by difficulty, each card led by the patient's OWN words
+ * Case picker: grouped by difficulty, each card led by the patient's OWN words
  * (the hook) with the clinical line secondary. The diagnosis never appears on
  * the card; it stays with the faculty debrief. One dominant tap target per
  * card: the whole card starts/resumes the session. "In progress" cases are
@@ -115,7 +115,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
         <div className="rounded-md border-2 border-dashed border-border bg-card p-8 text-center">
           <p className="text-base font-medium">No patients are ready yet</p>
           <p className="mt-1 text-small text-muted-foreground">
-            Your faculty is finalising the case list. Check back soon — the first
+            Your faculty is finalising the case list. Check back soon: the first
             patient will be waiting here.
           </p>
         </div>
@@ -238,7 +238,7 @@ function CaseCardItem({
 }
 
 /**
- * The "Safety first" disclosure — moved out of the list into a header action
+ * The "Safety first" disclosure: moved out of the list into a header action
  * that opens a bottom sheet (T33), so the case list stays clean and the first
  * patient is reachable immediately.
  */
@@ -257,7 +257,7 @@ export function SafetyFirstSheet() {
       <MobileBottomSheet open={open} onOpenChange={setOpen} title="Safety first">
         <ul className="space-y-2 text-small text-muted-foreground">
           <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
-          <li>If you&apos;re struggling yourself, this is not the place — reach out to your faculty or a helpline.</li>
+          <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
           <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
         </ul>
       </MobileBottomSheet>

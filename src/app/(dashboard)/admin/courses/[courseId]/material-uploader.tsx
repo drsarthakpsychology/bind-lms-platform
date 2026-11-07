@@ -36,7 +36,7 @@ import { MobileInput } from "@/components/mobile/mobile-input";
  * Upload a file to the signed materials-upload URL. This goes through the
  * supabase-js anon client's uploadToSignedUrl, which is the ONLY form the
  * endpoint accepts (POST-sign handshake then PUT with a native FormData body).
- * Hand-rolled XHR/fetch variants 400/403 and the file never lands — which is
+ * Hand-rolled XHR/fetch variants 400/403 and the file never lands, which is
  * what caused "Object not found" in the viewer.
  *
  * Progress is reported as an indeterminate "uploading" state (the SDK doesn't
@@ -70,7 +70,7 @@ export type UploadRow = {
   format?: string | null;
   sizeBytes?: number | null;
   url?: string | null;
-  /** Supabase object key for file materials — distinct from `url` (links). */
+  /** Supabase object key for file materials: distinct from `url` (links). */
   storagePath?: string | null;
 };
 
@@ -104,7 +104,7 @@ export function MaterialUploader({
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const replaceInputRef = useRef<HTMLInputElement>(null);
-  // Stable across renders (lazy init) — the browser supabase client is a plain
+  // Stable across renders (lazy init): the browser supabase client is a plain
   // object, safe to reuse.
   const [supabase] = useState(() => createClient());
   const [dragOver, setDragOver] = useState(false);
@@ -150,14 +150,14 @@ export function MaterialUploader({
         const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, item.file);
 
         if (uploadResult.error) {
-          // Roll back the materials row we created in prepareMaterialUpload —
+          // Roll back the materials row we created in prepareMaterialUpload,
           // otherwise a failed upload leaves an orphaned "success" row pointing
           // at a file that was never written.
           if (item.materialId) {
             try {
               await deleteMaterial(courseId, item.materialId, signed.path);
             } catch {
-              // best-effort rollback — the row stays pending and never confirms.
+              // best-effort rollback: the row stays pending and never confirms.
             }
             item.materialId = null;
           }
@@ -173,7 +173,7 @@ export function MaterialUploader({
         haptic("success");
         onUpdate("done", undefined, 100);
       } catch {
-        // A rejected (network) failure — roll back the prepared row so a failed
+        // A rejected (network) failure: roll back the prepared row so a failed
         // upload never survives as an orphaned row, then surface the error
         // instead of leaving the row stuck on "uploading".
         if (item.materialId) {
@@ -307,14 +307,14 @@ export function MaterialUploader({
     if (uploadResult.error) {
       // The row now points at the new (empty) path. Roll it back to the old
       // object so the material isn't left permanently broken. Use the old
-      // storage key returned by the action — `target.url` is the link URL and
+      // storage key returned by the action: `target.url` is the link URL and
       // is null for file materials.
       const { restoreMaterialPath } = await import("./materials-actions");
       await restoreMaterialPath(target.id, signed.oldPath ?? null);
       setBanner(uploadResult.error);
       return;
     }
-    // Only now — after the new bytes are in — remove the old object.
+    // Only now, after the new bytes are in, remove the old object.
     const confirm = await confirmMaterialReplace(target.id, signed.oldPath ?? null);
     if (confirm.error) setBanner(confirm.error);
     setReplaceTarget(null);
@@ -364,7 +364,7 @@ export function MaterialUploader({
       <div
         role="button"
         tabIndex={0}
-        aria-label="Upload materials — drag files here or browse"
+        aria-label="Upload materials: drag files here or browse"
         onClick={() => inputRef.current?.click()}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {

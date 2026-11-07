@@ -13,7 +13,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/quiz/attempt — persist one quiz answer on reveal so
+ * POST /api/practice/quiz/attempt: persist one quiz answer on reveal so
  * /admin/triage can surface low-confidence quiz areas (per item, per user).
  * Owner-only RLS + rate-limited; failures are silent (a check, not a test).
  */

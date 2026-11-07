@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { visibleCourseIds } from "@/lib/cohorts/access";
 
 /**
- * Course layout — full width, no persistent course column (Round 5 drill-down).
+ * Course layout: full width, no persistent course column (Round 5 drill-down).
  * The course and lesson pages own their back header + lesson picker, so the
  * content is the whole width of the screen. One navigation surface at a time.
  */
@@ -36,7 +36,7 @@ export default async function CourseLayout({
   // A student must be enrolled AND the course published to see any of it.
   // Admins (and the admin previewing as student) bypass the enrollment gate.
   // Lecture-only roster accounts are NOT enrolled (no course_enrollments row by
-  // design) — for them, every PUBLISHED course is the whole surface, mirroring
+  // design), for them, every PUBLISHED course is the whole surface, mirroring
   // the carve-out in canAccessLesson/canAccessCourse (src/lib/enrollment.ts).
   const isAdmin = profile.role === "admin";
   const bypassEnrollment = isAdmin || profile.scope === "lectures_only";

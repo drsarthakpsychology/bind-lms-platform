@@ -15,7 +15,7 @@ interface Entry {
 }
 
 /**
- * Admin review list — sign or reject a requested supervision entry.
+ * Admin review list: sign or reject a requested supervision entry.
  */
 export function SupervisionReview({ entries }: { entries: Entry[] }) {
   const [busy, setBusy] = React.useState<string | null>(null);

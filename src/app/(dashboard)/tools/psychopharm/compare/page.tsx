@@ -9,7 +9,7 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-/** One field at a time — the mobile comparison unit (T32). */
+/** One field at a time: the mobile comparison unit (T32). */
 const FIELDS: Array<{ label: string; key: keyof CompareRow }> = [
   { label: "Class", key: "class" },
   { label: "Band", key: "band_label" },
@@ -31,7 +31,7 @@ function compareHref(slugs: string[], field?: string): string {
 }
 
 /**
- * Comparison view (D5). Compare 2–5 drugs at their chosen band, not as a
+ * Comparison view (D5). Compare 2 to 5 drugs at their chosen band, not as a
  * single drug. Reads `?a=..&b=..[&c=..]` drug slugs.
  *
  * Mobile (T32): no overflow-x table, no URL hand-editing. A search picker adds
@@ -72,7 +72,7 @@ export default async function ComparePage({
         band. Differences are what matter.
       </p>
 
-      {/* Drug picker — add up to five, no URL editing. */}
+      {/* Drug picker: add up to five, no URL editing. */}
       <MobileSection
         title={generic.length >= 2 ? "Add another drug" : "Pick drugs to compare"}
         description={
@@ -133,7 +133,7 @@ function CompareFlow({
         )
       }
     >
-      {/* Drug strip — which drugs are in the comparison. */}
+      {/* Drug strip, which drugs are in the comparison. */}
       <div className="flex flex-wrap gap-2">
         {rows.map((r) => (
           <span key={r.drug} className="rounded-full border-2 border-border px-3 py-1 text-caption">

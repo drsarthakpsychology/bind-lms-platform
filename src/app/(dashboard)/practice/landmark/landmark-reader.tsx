@@ -7,10 +7,10 @@ import type { LandmarkCase } from "@/lib/landmark/cases";
 import { QuizCheck } from "@/components/practice/quiz-check";
 
 /**
- * Landmark reader — read the case, then answer the quiz (a check, not a test).
+ * Landmark reader: read the case, then answer the quiz (a check, not a test).
  * Ethics-failure cases lead with the failure framing.
  *
- * The check is one question at a time via the shared QuizCheck flow (T22) —
+ * The check is one question at a time via the shared QuizCheck flow (T22),
  * not a wall of every question and option on one scroll.
  */
 export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
@@ -61,7 +61,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         ) : null}
       </div>
 
-      {/* quiz — one question at a time (keyed per case so state resets). */}
+      {/* quiz: one question at a time (keyed per case so state resets). */}
       <div className="rounded-md border-2 border-border bg-card p-5">
         <h3 className="text-base font-semibold">Check yourself</h3>
         <div className="mt-3">

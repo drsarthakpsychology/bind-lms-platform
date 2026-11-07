@@ -13,10 +13,10 @@ const schema = z.object({
   phone: z.string().max(40).optional().or(z.literal("")),
   status: z.enum(["student", "early_career", "practitioner", "other"]),
   message: z.string().max(2000).optional().or(z.literal("")),
-  // Required, unticked acceptance — the checkbox in the form submits "true".
+  // Required, unticked acceptance: the checkbox in the form submits "true".
   // The server refuses anything else (a forged/missing field fails the parse).
   policyAccepted: z.literal("true"),
-  // Hidden honeypot field — bots fill it, humans never see it.
+  // Hidden honeypot field: bots fill it, humans never see it.
   honeypot: z.string().max(200).optional(),
 });
 
@@ -27,7 +27,7 @@ export interface WaitlistResult {
 
 /**
  * Public waitlist submission. Runs server-side only: rate-limited by IP,
- * zod-validated, honeypot-guarded, and inserted via the service-role client —
+ * zod-validated, honeypot-guarded, and inserted via the service-role client:
  * the browser has no insert path to `enquiries` (RLS has no anon insert policy).
  */
 export async function submitWaitlist(input: FormData): Promise<WaitlistResult> {
@@ -57,7 +57,7 @@ export async function submitWaitlist(input: FormData): Promise<WaitlistResult> {
     status: parsed.data.status,
     message: parsed.data.message ? stripMarkup(parsed.data.message) : null,
     source: "landing",
-    // The acceptance record — what makes the no-refund term defensible if a
+    // The acceptance record: what makes the no-refund term defensible if a
     // waitlisted lead later challenges it.
     policy_acceptance_at: new Date().toISOString(),
     policy_version: policyVersion(),

@@ -14,7 +14,7 @@ import { ShopClient } from "./shop-client";
 export const metadata: Metadata = { title: "XP shop" };
 export const dynamic = "force-dynamic";
 
-/** /leaderboard/shop — spend earned XP. Spends never lower your level or league points. */
+/** /leaderboard/shop: spend earned XP. Spends never lower your level or league points. */
 export default async function ShopPage() {
   const session = await getSession();
   if (session.status !== "ok") return null;

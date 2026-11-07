@@ -19,17 +19,17 @@ import { MobileHeader } from "@/components/mobile/mobile-header";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 
-/** A raw open:closed ratio means nothing to a student — say it in words. */
+/** A raw open:closed ratio means nothing to a student: say it in words. */
 function openClosedLabel(r?: number | null): string {
-  if (r === undefined || r === null || Number.isNaN(r)) return "—";
+  if (r === undefined || r === null || Number.isNaN(r)) return "Not measured";
   if (r >= 1.5) return "Mostly open";
   if (r >= 0.7) return "Balanced";
   return "Mostly closed";
 }
 
-/** "late"/"absent" are internal rubric values — render them as plain feedback. */
+/** "late"/"absent" are internal rubric values: render them as plain feedback. */
 function riskTimingLabel(v?: string | null): string {
-  if (!v) return "—";
+  if (!v) return "Not measured";
   if (v === "on_time" || v === "on-time" || v === "early" || v === "good") return "Asked early";
   if (v === "late") return "Asked late";
   if (v === "absent" || v === "never") return "Not asked";
@@ -59,7 +59,7 @@ interface DebriefData {
 }
 
 /**
- * The debrief — the actual product of the Consulting Room — rebuilt as a
+ * The debrief, the actual product of the Consulting Room, rebuilt as a
  * progressive flow (T34): one section at a time with a single primary action
  * and "Section X of Y" context. Score → headline insight → quotes
  * (one-at-a-time, each with "Try this again") → missed-disclosures reveal →
@@ -92,9 +92,9 @@ export function DebriefView({
   totalTurns?: number;
   /** A1 retry: the comparison strip data when this session is a rewind branch. */
   branchInfo?: BranchInfo;
-  /** A3: rubric dimensions still provisional — hide their numeric score. */
+  /** A3: rubric dimensions still provisional, hide their numeric score. */
   provisionalDims?: string[];
-  /** Bug 4: whether the student opened the hint — surfaced honestly. */
+  /** Bug 4: whether the student opened the hint, surfaced honestly. */
   hintUsed?: boolean;
 }) {
   const router = useRouter();
@@ -104,7 +104,7 @@ export function DebriefView({
   const [quoteIdx, setQuoteIdx] = React.useState(0);
   const [retrying, setRetrying] = React.useState(false);
   const [retryError, setRetryError] = React.useState<string | null>(null);
-  // Create/update the patient chain once the debrief shows — the session is
+  // Create/update the patient chain once the debrief shows: the session is
   // complete, so the practice hub (and this debrief) can offer the next surface.
   const [chainNext, setChainNext] = React.useState<{ surface: string; label: string; href: string; patient: string } | null>(null);
   const chainPostedRef = React.useRef(false);
@@ -313,7 +313,7 @@ function ScoreStep({
       <div className="rounded-md border-2 border-border bg-card p-6 text-center hard-shadow-sm">
         <p className="text-h1 text-numeric">{overall.toFixed(1)}</p>
         <p className="mt-0.5 text-small text-muted-foreground">/ 5.0 overall</p>
-        <StatusPill tone="neutral" label="AI-generated — not yet faculty reviewed" className="mt-3" />
+        <StatusPill tone="neutral" label="AI-generated, not yet faculty reviewed" className="mt-3" />
       </div>
 
       <details className="group rounded-md border-2 border-border bg-card">
@@ -333,7 +333,7 @@ function ScoreStep({
             dim="reflective_statements"
             provisional={provisionalDims}
             label="Reflective"
-            value={String(score?.reflective_statements ?? "—")}
+            value={String(score?.reflective_statements ?? "-")}
             hint="Reflections heard: the moments below show what worked."
           />
           <ProvisionalAwareStat
@@ -342,7 +342,7 @@ function ScoreStep({
             label="Premature reassurance"
             value={String(score?.premature_reassurance ?? 0)}
             warn={(score?.premature_reassurance ?? 0) > 0}
-            hint={(score?.premature_reassurance ?? 0) > 0 ? "You reassured before exploring — the moments below name it." : "No premature reassurance detected."}
+            hint={(score?.premature_reassurance ?? 0) > 0 ? "You reassured before exploring: the moments below name it." : "No premature reassurance detected."}
           />
           <ProvisionalAwareStat
             dim="risk_timing"
@@ -386,7 +386,7 @@ function InsightStep({
           <p className="flex items-center gap-2 text-small text-status-pending-fg">
             <AlertTriangle className="size-4" aria-hidden />
             You reassured the patient {premature} time{premature > 1 ? "s" : ""} before fully exploring
-            the problem. That&apos;s the most common novice move — sitting with their distress is
+            the problem. That&apos;s the most common novice move: sitting with their distress is
             the skill.
           </p>
         </div>
@@ -395,16 +395,16 @@ function InsightStep({
       <div className="rounded-md border-2 border-border bg-card p-4">
         <p className={`flex items-center gap-2 text-small ${askedWhyToday ? "text-status-success-fg" : "text-status-pending-fg"}`}>
           {askedWhyToday ? (
-            <><CircleCheck className="size-4" aria-hidden /> You asked why the patient came in TODAY — that question opens the whole frame.</>
+            <><CircleCheck className="size-4" aria-hidden /> You asked why the patient came in TODAY: that question opens the whole frame.</>
           ) : (
-            <><AlertTriangle className="size-4" aria-hidden /> You never asked why the patient came in today specifically. Patients arrive for a reason — a fight, a scare, a deadline. Asking &quot;why now?&quot; opens the door.</>
+            <><AlertTriangle className="size-4" aria-hidden /> You never asked why the patient came in today specifically. Patients arrive for a reason: a fight, a scare, a deadline. Asking &quot;why now?&quot; opens the door.</>
           )}
         </p>
       </div>
 
       {hintUsed ? (
         <p className="flex items-center gap-2 text-caption text-muted-foreground">
-          You opened the difficulty hint during this session. That&apos;s fine — but the debrief is
+          You opened the difficulty hint during this session. That&apos;s fine, but the debrief is
           honest about it: the hint did part of the thinking for you.
         </p>
       ) : null}
@@ -520,7 +520,7 @@ function MissedStep({
         <ul className="space-y-2">
           {missed.length === 0 ? (
             <li className="rounded-md border-2 border-border bg-card p-4 text-small text-muted-foreground">
-              Nothing missed — you unlocked everything this patient was ready to share.
+              Nothing missed. You unlocked everything this patient was ready to share.
             </li>
           ) : (
             missed.map((m, i) => (
@@ -544,7 +544,7 @@ function DeliveryStep({ voice }: { voice?: VoiceMetrics }) {
         <Stat
           label="Silence tolerance"
           value={`${voice.mean_silence_tolerance_s}s`}
-          hint={voice.mean_silence_tolerance_s < 3 ? "Try sitting with silence longer." : "Good — you let them speak."}
+          hint={voice.mean_silence_tolerance_s < 3 ? "Try sitting with silence longer." : "Good. You let them speak."}
         />
         <Stat
           label="Interruptions"
@@ -584,7 +584,7 @@ function Stat({ label, value, warn, hint }: { label: string; value: string; warn
 }
 
 /**
- * A3 — a stat that hides its NUMBER while the dimension is still provisional.
+ * A3: a stat that hides its NUMBER while the dimension is still provisional.
  * The student still gets the qualitative hint (the quotes in the debrief),
  * just not a number we haven't calibrated yet. Once Dr. Sarthak's scores
  * validate the dimension, the admin flips status → validated and the number
@@ -618,7 +618,7 @@ function ProvisionalAwareStat({
 }
 
 /**
- * A1 — the comparison strip. Same patient, same moment, two futures.
+ * A1: the comparison strip. Same patient, same moment, two futures.
  * Attempt 1: the flagged student turn + how the patient responded (from the
  * parent session). Attempt 2: the student's re-attempt + the branch session's
  * patient response. The score delta makes the lesson land.
@@ -665,7 +665,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
           <p className="text-caption font-semibold text-link">Attempt 2 · your rewind</p>
           <p className="mt-2 text-small text-muted-foreground">
             This session is your re-attempt from the same point. The patient you just
-            interviewed is the same person, in the same state — the difference in how
+            interviewed is the same person, in the same state: the difference in how
             they responded is entirely down to how you asked.
           </p>
           <p className="mt-3 text-caption font-medium text-status-success-fg">
@@ -680,7 +680,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
       </div>
 
       <p className="mt-4 text-small text-muted-foreground">
-        Same patient. Same moment. Two futures — that comparison is the whole lesson.
+        Same patient. Same moment. Two futures: that comparison is the whole lesson.
       </p>
     </div>
   );

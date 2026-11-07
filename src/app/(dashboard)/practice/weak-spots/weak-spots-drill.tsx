@@ -8,7 +8,7 @@ import Link from "next/link";
 import type { DrillItem } from "@/lib/practice/weak-spots";
 
 /**
- * The weak-spots drill — 10 items generated on the spot from the student's
+ * The weak-spots drill: 10 items generated on the spot from the student's
  * actual gaps (v5 §4). Each item: a scenario they keep missing, their weak
  * line vs the stronger alternative, and the why. Pick the stronger line;
  * score at the end.
@@ -49,11 +49,11 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
           <Zap className="size-4 text-link" aria-hidden />
-          Drill complete — {score} / {items.length}
+          Drill complete: {score} / {items.length}
         </p>
         <p className="mt-2 text-small text-muted-foreground">
           {score >= 8
-            ? "Strong — you're closing these gaps. Back to the Consulting Room to prove it live."
+            ? "Strong. You're closing these gaps. Back to the Consulting Room to prove it live."
             : score >= 5
               ? "Improving. Re-run the drill or take it into the Consulting Room today."
               : "These are exactly the misses your debriefs flag. Try the drill again, then run a session."}
@@ -62,7 +62,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
           href="/practice/consulting-room"
           className="mt-4 inline-flex items-center gap-2 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
         >
-          Run a case — prove it live →
+          Run a case: prove it live →
         </Link>
       </div>
     );

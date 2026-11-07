@@ -11,7 +11,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/admin/flags — set a feature flag's three-state status
+ * POST /api/admin/flags: set a feature flag's three-state status
  * (off | live | unlocked). `enabled` is kept in sync (status !== "off") so
  * anything still reading the boolean keeps working. Admin-only.
  */

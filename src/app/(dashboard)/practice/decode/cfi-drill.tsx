@@ -7,7 +7,7 @@ import { Send, Scale } from "lucide-react";
 import { CFI_SCENARIOS, CFI_DOMAINS, scoreCfiQuestion } from "@/lib/decode/cfi";
 
 /**
- * Mode 4 — CFI Practice. Elicit the patient's explanatory model without
+ * Mode 4: CFI Practice. Elicit the patient's explanatory model without
  * dismissing it. The failure mode: correcting the belief instead of
  * understanding it.
  */
@@ -39,7 +39,7 @@ export function CfiDrill() {
     <div className="space-y-4">
       <p className="rounded-md border-2 border-border bg-secondary/40 p-3 text-small text-muted-foreground">
         The <span className="font-semibold text-foreground">Cultural Formulation Interview</span> elicits the patient&apos;s
-        explanatory model — perceived cause, meaning, course, expected treatment. The failure mode is
+        explanatory model: perceived cause, meaning, course, expected treatment. The failure mode is
         correcting the belief instead of understanding it.
       </p>
 
@@ -70,7 +70,7 @@ export function CfiDrill() {
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-small">{i + 1}. {q}</p>
                   <span className={cn("shrink-0 text-caption font-medium", s.dismissive ? "text-destructive" : s.eliciting ? "text-status-success-fg" : "text-muted-foreground")}>
-                    {s.dismissive ? "dismissive — correcting, not understanding" : s.eliciting ? "eliciting" : "neutral"}
+                    {s.dismissive ? "dismissive: correcting, not understanding" : s.eliciting ? "eliciting" : "neutral"}
                   </span>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export function CfiDrill() {
           </p>
           <p className="mt-2 text-small">
             {elicitingCount} eliciting · {dismissiveCount} dismissive
-            {dismissiveCount > 0 ? " — you corrected the belief. That closes the patient down." : " — you held the belief as theirs to hold. That's the skill."}
+            {dismissiveCount > 0 ? ". You corrected the belief. That closes the patient down." : ". You held the belief as theirs to hold. That's the skill."}
           </p>
           <button
             type="button"

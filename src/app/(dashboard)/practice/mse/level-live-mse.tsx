@@ -30,7 +30,7 @@ const DOMAINS = [
 ] as const;
 
 /**
- * MSE Level 5 — MSE from live interview. The student's own completed
+ * MSE Level 5: MSE from live interview. The student's own completed
  * Consulting Room sessions are the raw material: run a session, then write
  * the MSE from your own transcript. Scored against what the patient actually
  * presented (the case's expert MSE code).
@@ -109,7 +109,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
     }));
   }
 
-  // Score against what the patient ACTUALLY presented — the expert code for
+  // Score against what the patient ACTUALLY presented: the expert code for
   // the case came with the transcript from the server. No expert code (case
   // not yet coded) → score is withheld; it never fabricates a ground truth.
   function scoreAttempt() {
@@ -126,7 +126,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
   const turns = selected?.turns ?? [];
   const filled = DOMAINS.filter((d) => (fields[d] ?? []).length > 0).length;
 
-  /** Persist this Level 5 attempt (a check, not a test — silent on failure). */
+  /** Persist this Level 5 attempt (a check, not a test, silent on failure). */
   async function persist() {
     if (!selected) return;
     const completedAt = new Date();
@@ -164,7 +164,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
       ) : !data || data.count === 0 ? (
         <div className="rounded-md border border-border bg-background p-4 text-small text-muted-foreground">
           You don&apos;t have a completed Consulting Room session yet. Run one
-          first — the whole point of Level 5 is writing the MSE from a patient
+          first: the whole point of Level 5 is writing the MSE from a patient
           you actually talked to.
         </div>
       ) : (
@@ -182,7 +182,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                   selected?.sessionId === t.sessionId ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground",
                 )}
               >
-                {t.title.split("—")[0].trim()}
+                {t.title.split(/[\u2014:]/)[0].trim()}
               </button>
             ))}
           </div>
@@ -227,7 +227,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
             </button>
           </div>
 
-          {/* The scored result — Level 5 comparison is the key loop */}
+          {/* The scored result: Level 5 comparison is the key loop */}
           {scored ? (
             scored._uncoded ? (
               <div className="rounded-md border border-border bg-secondary/40 p-3 text-small text-muted-foreground">
@@ -276,7 +276,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                   patient actually presented, amber is defensible, red is what you
                   never elicited. The gap between your transcript and the
                   patient&apos;s real MSE is your interview&apos;s blind spot. Run the
-                  session again — or re-run Level 4&apos;s vignettes to sharpen.
+                  session again, or re-run Level 4&apos;s vignettes to sharpen.
                 </p>
                 {onComplete && filled >= 9 ? (
                   <button

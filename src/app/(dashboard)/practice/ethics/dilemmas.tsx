@@ -8,7 +8,7 @@ import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import type { EthicDilemma } from "@/lib/practice/ethics";
 
 /**
- * Dilemma flow — commit to an action BEFORE seeing the consequence.
+ * Dilemma flow: commit to an action BEFORE seeing the consequence.
  * That's the skill the clinic never gives you time for.
  */
 export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
@@ -47,7 +47,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
           <CheckCircle2 className="size-4" aria-hidden /> {dilemmas.length} dilemmas complete
         </p>
         <p className="mt-2 text-small text-muted-foreground">
-          The law has teeth — every choice here maps to MHA 2017, POCSO, or RCI scope.
+          The law has teeth: every choice here maps to MHA 2017, POCSO, or RCI scope.
         </p>
         <button
           type="button"

@@ -8,7 +8,7 @@ import { scoreFunnelQuestion, funnelComplete, type FunnelAnswer } from "@/lib/de
 import type { IdiomEntry } from "@/lib/decode/idioms";
 
 /**
- * Mode 2 — The Funnel. The patient opens with a vague phrase. The student
+ * Mode 2: The Funnel. The patient opens with a vague phrase. The student
  * gets FIVE questions to disambiguate. Scored on question efficiency: did
  * they cover the funnel (open → specify → instantiate → quantify →
  * contextualise → attribute) or waste turns on closed questions?
@@ -39,7 +39,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
       <div className="rounded-md border-2 border-border bg-secondary/40 p-3 text-small text-muted-foreground">
         <p className="font-semibold text-foreground">The funnel:</p>
         <p>open → specify → <span className="font-semibold text-link">instantiate</span> → quantify → contextualise → attribute</p>
-        <p className="mt-1 text-caption">“Walk me through yesterday morning” is the highest-yield question in clinical interviewing — almost nobody teaches it.</p>
+        <p className="mt-1 text-caption">“Walk me through yesterday morning” is the highest-yield question in clinical interviewing, almost nobody teaches it.</p>
       </div>
 
       {/* the phrase */}

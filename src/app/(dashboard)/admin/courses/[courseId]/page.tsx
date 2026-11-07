@@ -34,7 +34,7 @@ const STATUS_BADGES: Record<LessonStatus, { label: string; variant: "published" 
 
 /**
  * Map a raw lesson.status to a plain-word badge. Missing/null values mean the
- * lesson predates the three-state model — students see those as playable
+ * lesson predates the three-state model: students see those as playable
  * (unlocked), so the builder says the same thing instead of "Yet to be live".
  */
 function statusBadge(status: unknown): { label: string; variant: "published" | "pending" | "draft" } {
@@ -106,7 +106,7 @@ export default async function CourseDetailPage({
   const unshared = courseCohorts.ready ? filterByCohort(rows, courseCohorts.links, "none").length : 0;
   const filterName = cohortFilter === "none" ? "not shared" : cohorts.find((c) => c.id === cohortFilter)?.name;
 
-  // Week-aware listing — mirror the student's Week N groups so the admin
+  // Week-aware listing: mirror the student's Week N groups so the admin
   // reasons in the same units the cohort does. Lessons with a null week
   // (pre-week model) land in week 1, matching the student page.
   const weeks = new Map<number, LessonRow[]>();
@@ -349,7 +349,7 @@ function LessonCard({
   );
 }
 
-/** All / one cohort / not shared — a link per choice, kept in ?cohort=. */
+/** All / one cohort / not shared: a link per choice, kept in ?cohort=. */
 function CohortFilter({ courseId, cohorts, active, unshared }: { courseId: string; cohorts: CourseCohortLite[]; active: string | null; unshared: number }) {
   const base = `/admin/courses/${courseId}`;
   const items: { key: string; label: string; href: string; on: boolean }[] = [

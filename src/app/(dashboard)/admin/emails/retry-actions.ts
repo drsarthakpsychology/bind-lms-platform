@@ -13,9 +13,9 @@ export type RetryReport = {
   error: string | null;
   sent: number;
   failed: number;
-  /** Already got the same email later — marked handled, not re-sent. */
+  /** Already got the same email later: marked handled, not re-sent. */
   alreadyDelivered: number;
-  /** Same person + subject listed more than once — sent once. */
+  /** Same person + subject listed more than once: sent once. */
   duplicates: number;
   noCopy: number;
   notRetryable: number;
@@ -38,7 +38,7 @@ async function markHandled(admin: ReturnType<typeof createAdminClient>, ids: str
 }
 
 /**
- * Retry failed emails — one (ids = [id]), a selection, or all (ids = null).
+ * Retry failed emails: one (ids = [id]), a selection, or all (ids = null).
  * Safeguards: one send per person + subject, skip anyone who already got it,
  * login emails get a fresh link, sends are paced, and the batch stops at the
  * daily limit. Every retry is a new row linked to the email it retries.

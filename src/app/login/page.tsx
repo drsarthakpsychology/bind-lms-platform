@@ -27,7 +27,7 @@ export default async function LoginPage({
   return (
     <AuthShell
       title="Sign in"
-      subtitle={`${BRAND.tagline} Invite-only — use the email your programme added.`}
+      subtitle={`${BRAND.tagline} Invite-only: use the email your programme added.`}
     >
       {setup === "done" ? (
         <p className="mb-4 flex items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-3 py-2 text-sm font-bold text-primary-foreground">

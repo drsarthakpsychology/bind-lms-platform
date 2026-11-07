@@ -131,7 +131,7 @@ export function SupervisionLog({
             value={activity}
             onChange={(e) => setActivity(e.target.value)}
             maxLength={1000}
-            placeholder="e.g. Case review with Dr. Rao — formulation of the OCD case"
+            placeholder="e.g. Case review with Dr. Rao: formulation of the OCD case"
             className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
@@ -167,7 +167,7 @@ export function SupervisionLog({
               onChange={(e) => setCompetency(e.target.value)}
               className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             >
-              <option value="">— none —</option>
+              <option value="">None</option>
               {competencies.map((c) => (
                 <option key={c.key} value={c.key}>{c.name}</option>
               ))}
@@ -184,11 +184,11 @@ export function SupervisionLog({
             />
           </div>
         </div>
-        {/* A9 transfer loop — the outcome measure */}
+        {/* A9 transfer loop: the outcome measure */}
         <div className="rounded-md border border-border bg-secondary/30 p-3">
-          <p className="text-caption font-semibold text-muted-foreground">What you tried — and what happened</p>
+          <p className="text-caption font-semibold text-muted-foreground">What you tried, and what happened</p>
           <label htmlFor="transfer-note" className="mt-2 block text-caption font-medium text-muted-foreground">
-            What did you try that you practised here — and what happened?
+            What did you try that you practised here, and what happened?
           </label>
           <textarea enterKeyHint="enter"
             id="transfer-note"

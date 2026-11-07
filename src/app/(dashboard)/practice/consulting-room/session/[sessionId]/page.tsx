@@ -71,7 +71,7 @@ export default async function SimSessionPage({
     .eq("session_id", sessionId)
     .order("created_at", { ascending: true });
 
-  // A3 — provisional scoring dimensions hide their NUMBER from students
+  // A3: provisional scoring dimensions hide their NUMBER from students
   // (qualitative feedback only) until calibrated against faculty scores.
   const { data: rubricDims } = await admin
     .from("rubric_dimensions")
@@ -86,7 +86,7 @@ export default async function SimSessionPage({
     })),
   );
 
-  // A1 retry — comparison strip data. If this session is a branch (created by
+  // A1 retry: comparison strip data. If this session is a branch (created by
   // "Try this again"), load the parent's turns at the branch point + the
   // parent's debrief so the student sees attempt 1 vs attempt 2 side by side.
   const { data: branch } = await admin
@@ -137,7 +137,7 @@ export default async function SimSessionPage({
     // Edge-to-edge: the shell already renders this route full-bleed (immersive
     // path), so any padding wrapper here would inset the h-dvh conversation and
     // make it taller than the viewport. The SimSessionView owns the whole
-    // screen — header, chat, composer, sheets.
+    // screen: header, chat, composer, sheets.
     <SimSessionView
       sessionId={sessionId}
       patientName={patientName}

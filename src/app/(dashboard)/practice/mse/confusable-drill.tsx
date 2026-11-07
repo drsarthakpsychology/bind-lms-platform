@@ -11,7 +11,7 @@ import {
 } from "@/lib/mse/confusable";
 
 /**
- * Level 3 — the confusable pairs + the set distinctions. Mood vs affect,
+ * Level 3: the confusable pairs + the set distinctions. Mood vs affect,
  * thought form vs content, akathisia vs anxiety, and the sets students fail
  * together: blunted/flat/restricted/labile, poverty of speech vs content,
  * psychomotor retardation vs sedation vs low motivation, insight as graded,
@@ -166,7 +166,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
       <div className="space-y-4">
         <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-base font-medium">
-            Level 3 done — {scoreConfusable(CONFUSABLE_PAIRS.flatMap((p) => p.items), answers)} /{" "}
+            Level 3 done: {scoreConfusable(CONFUSABLE_PAIRS.flatMap((p) => p.items), answers)} /{" "}
             {CONFUSABLE_PAIRS.flatMap((p) => p.items).length} pair items and{" "}
             {scoreMultiTerm(allItems, multiAnswers)} / {allItems.length} set items correct.
           </p>

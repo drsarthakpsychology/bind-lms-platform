@@ -12,7 +12,7 @@ import { getObjectBufferR2 } from "@/lib/media/r2";
 
 export type CustomCertInput = {
   userId: string;
-  /** Printed name — defaults to the student's name, editable. */
+  /** Printed name: defaults to the student's name, editable. */
   studentName: string;
   title: string;
   heading?: string;
@@ -56,8 +56,8 @@ const todayIst = () => new Date(Date.now() + 5.5 * 3600000).toISOString().slice(
 const validDate = (d?: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d ?? "") ? d! : todayIst());
 
 /**
- * Credentials → Issue a certificate: design one for a specific student — the
- * printed name, the title, a short description and the date — preview it, and
+ * Credentials → Issue a certificate: design one for a specific student, the
+ * printed name, the title, a short description and the date: preview it, and
  * issue it. It gets a credential ID, a public verify page, a PDF, and appears
  * on the student's Achievements page; the notification (and email, if ticked)
  * goes out like any other certificate.
@@ -151,7 +151,7 @@ export type AnyoneCertInput = {
   email: string;
   phone?: string;
   title: string;
-  /** What the person did — printed on the certificate and the verify page. */
+  /** What the person did: printed on the certificate and the verify page. */
   paragraph: string;
   heading?: string;
   lead?: string;
@@ -178,7 +178,7 @@ function checkAnyone(input: AnyoneCertInput): { error: string } | { name: string
 
 /**
  * Credentials → For anyone: a certificate for someone who may not be a
- * student (a volunteer, a guest speaker). They get a certificate only — no
+ * student (a volunteer, a guest speaker). They get a certificate only, no
  * login, no account. If the email belongs to a student, it is linked to them
  * too and shows on their Achievements page.
  */

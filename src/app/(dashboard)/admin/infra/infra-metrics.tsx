@@ -38,7 +38,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
           <div>
             <p className="font-semibold text-status-alert-fg">At {dbPct}% of the free DB limit</p>
             <p className="text-small text-status-alert-fg">
-              Below 70% is green. You&apos;re past the line — free up space or plan an upgrade before the cohort starts.
+              Below 70% is green. You&apos;re past the line: free up space or plan an upgrade before the cohort starts.
             </p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
         )}
       </div>
 
-      {/* Provider health — the other half of the free-tier picture. A provider
+      {/* Provider health: the other half of the free-tier picture. A provider
           that's been failing repeatedly is a silent outage in waiting. */}
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
@@ -118,7 +118,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
         </div>
         {(metrics.provider_health ?? []).length === 0 ? (
           <p className="mt-2 text-small text-muted-foreground">
-            No provider health rows yet — the router writes these as it routes live calls.
+            No provider health rows yet: the router writes these as it routes live calls.
           </p>
         ) : (
           <ul className="mt-3 space-y-1.5">

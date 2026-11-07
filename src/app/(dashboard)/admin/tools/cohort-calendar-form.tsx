@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 
 /**
  * Builds the cohort session schedule as a calendar file. A plain form instead
- * of hand-editing a URL — the admin enters the start date, time, days and
+ * of hand-editing a URL: the admin enters the start date, time, days and
  * weeks, and downloads the generated .ics. The download is a real link whose
  * href is computed from the form state, so it stays current as fields change.
  *

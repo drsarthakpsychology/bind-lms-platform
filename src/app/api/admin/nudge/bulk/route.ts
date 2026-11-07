@@ -14,7 +14,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/admin/nudge/bulk — "Email students who've gone quiet".
+ * POST /api/admin/nudge/bulk: "Email students who've gone quiet".
  * Admin only. Emails are looked up from the ids on the server; one email per
  * student. 5 bulk sends per admin per 10 minutes.
  */

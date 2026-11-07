@@ -48,7 +48,7 @@ export default async function AdminOverviewPage() {
     // wrong. student_last_activity aggregates in the DB (sim ended/started +
     // checkins + journal, plus a started flag from progress).
     adminClient.from("student_last_activity").select("user_id, last_active_at, started"),
-    // Session count per student for the triage "first session?" heuristic —
+    // Session count per student for the triage "first session?" heuristic:
     // user_id only (created_at doesn't exist on sim_sessions).
     supabase.from("sim_sessions").select("user_id"),
   ]);
@@ -92,11 +92,11 @@ export default async function AdminOverviewPage() {
     return Number.isFinite(t) && (now - t) / DAY >= 7;
   }).length;
 
-  // Students with no progress at all (never started a lesson) — from the view's
+  // Students with no progress at all (never started a lesson), from the view's
   // started flag (no separate unbounded progress scan).
   const notStarted = realStudents.filter((s) => !activityByUser.get(s.id)?.started && !lastOf(s.id)).length;
 
-  // Infra warning strip — the one silent failure that takes the cohort down.
+  // Infra warning strip: the one silent failure that takes the cohort down.
   const { data: infraData } = await adminClient.rpc("infra_metrics");
   const dbSize = (infraData as { db_size_bytes?: number } | null)?.db_size_bytes ?? 0;
   const DB_LIMIT = 500 * 1024 * 1024;
@@ -258,7 +258,7 @@ export default async function AdminOverviewPage() {
         </Reveal>
       ) : null}
 
-      {/* Numbers first — the four people ask about. */}
+      {/* Numbers first: the four people ask about. */}
       <Reveal delay={0.1}>
         <section aria-label="Programme snapshot" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           <StatCard label="Students" value={realStudents.length} href="/admin/students" icon={<Users className="size-5" />} accent />
@@ -269,7 +269,7 @@ export default async function AdminOverviewPage() {
       </Reveal>
 
       <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-        {/* The to-do queue — count first, one tap away (an inbox, not a wall). */}
+        {/* The to-do queue: count first, one tap away (an inbox, not a wall). */}
         <Reveal delay={0.15}>
           <section aria-label="Needs attention" className="overflow-hidden rounded-2xl border-2 border-foreground bg-card hard-shadow-sm">
             <h2 className="flex items-center justify-between gap-3 border-b-2 border-foreground px-4 py-3 text-h2">

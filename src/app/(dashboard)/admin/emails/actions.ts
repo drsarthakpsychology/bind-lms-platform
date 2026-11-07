@@ -34,7 +34,7 @@ export async function loadRecipientData(): Promise<RecipientData> {
       .eq("is_test", false)
       .order("email", { ascending: true }),
     supabase.from("course_enrollments").select("course_id, user_id"),
-    // Cohorts may not exist on older databases — tolerate the error.
+    // Cohorts may not exist on older databases: tolerate the error.
     supabase.from("cohorts").select("id, name, status, created_at").order("created_at", { ascending: true }),
     supabase.from("cohort_members").select("cohort_id, user_id").limit(50000),
   ]);
@@ -109,7 +109,7 @@ export async function sendCampaignEmail(input: {
   const dailyLimit = Number(process.env.RESEND_DAILY_LIMIT ?? 100);
   if (emails.length > dailyLimit) {
     return {
-      error: `That's ${emails.length} recipients — over the ${dailyLimit} send/day limit. Split into smaller sends.`,
+      error: `That's ${emails.length} recipients, over the ${dailyLimit} send/day limit. Split into smaller sends.`,
       sent: 0,
       failed: 0,
       results: [],
@@ -180,13 +180,13 @@ export async function sendTestCampaignEmail(input: {
   return {
     error: null,
     ok: res.ok,
-    detail: res.ok ? `Sent to ${profile.email} — Resend id ${res.id ?? "(none)"}` : (res.error ?? "Send failed."),
+    detail: res.ok ? `Sent to ${profile.email}: Resend id ${res.id ?? "(none)"}` : (res.error ?? "Send failed."),
   };
 }
 
 /**
  * Retry the failed CREDENTIAL sends from the Sent history. Campaign emails
- * aren't re-sent here (their body isn't stored — re-compose to resend).
+ * aren't re-sent here (their body isn't stored, re-compose to resend).
  */
 export async function retryFailedCredentialSends(): Promise<{
   error: string | null;

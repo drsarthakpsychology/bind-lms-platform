@@ -53,8 +53,8 @@ const GROUPS: { title: string; keys: string[] }[] = [
 ];
 
 /**
- * What's live (2026-11 redesign): the same three-way switch per tool —
- * Hidden / Live (shown, locked) / Unlock — grouped by kind, each with a line
+ * What's live (2026-11 redesign): the same three-way switch per tool,
+ * Hidden / Live (shown, locked) / Unlock: grouped by kind, each with a line
  * saying what it is, and a count at the top of what students can open now.
  */
 export default async function AdminFlagsPage() {

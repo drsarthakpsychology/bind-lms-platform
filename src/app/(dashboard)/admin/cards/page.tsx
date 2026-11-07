@@ -7,7 +7,7 @@ import { CardsAdmin, type CardRow } from "./cards-admin";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/cards — the Rounds review queue (Part 6.5 follow-through).
+ * /admin/cards: the Rounds review queue (Part 6.5 follow-through).
  * Cards auto-drafted from lesson transcripts (scripts/draft-cards-from-lessons.ts)
  * land here as source='ai_generated', status='draft'. Faculty review:
  * approve (published) or reject (archived), edit the text, or delete.

@@ -11,7 +11,7 @@ const schema = z.object({
   tool: z.enum(["mse", "osce", "judgment", "rounds", "formulation"]),
   /** competency keys to credit, e.g. ["clinical_interviewing","risk_assessment"]. */
   keys: z.array(z.string().min(1)).min(1).max(5),
-  /** score 0..1 or 0..5 — written to evidence. */
+  /** score 0..1 or 0..5: written to evidence. */
   score: z.number().min(0).max(5),
   /** free-text detail for the passport evidence line. */
   detail: z.string().max(300).default(""),
@@ -27,7 +27,7 @@ const TOOL_GATE: Record<z.infer<typeof schema>["tool"], ApiGate> = {
 };
 
 /**
- * POST /api/practice/competency — a practice tool (MSE/OSCE/Judgment/Rounds/
+ * POST /api/practice/competency: a practice tool (MSE/OSCE/Judgment/Rounds/
  * Formulation) credits competencies on completion, feeding the Skills
  * Passport the same way sim debriefs do (source = the tool name).
  * Owner-scoped server-side; RLS on competency_events also enforces it.

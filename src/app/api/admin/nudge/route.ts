@@ -13,14 +13,14 @@ const schema = z.object({
 });
 
 const DEFAULT_TEXT =
-  "Hi {name},\n\nYou've been quiet for a bit — your lessons and practice are waiting when you're ready. If something's in the way, we'd genuinely like to hear it.\n\n— Your programme team";
+  "Hi {name},\n\nYou've been quiet for a bit: your lessons and practice are waiting when you're ready. If something's in the way, we'd genuinely like to hear it.\n\nYour programme team";
 
 /**
- * POST /api/admin/nudge — the one-at-a-time nudge on Progress.
+ * POST /api/admin/nudge: the one-at-a-time nudge on Progress.
  *
  * Goes through the same path as the bulk send (src/lib/nudge/send.ts): the
  * shared Resend helper, logged to email_sends. Without a key it honestly
- * reports "email-not-configured" — it never claims an email went out.
+ * reports "email-not-configured". It never claims an email went out.
  */
 export async function POST(req: Request) {
   const me = await requireSuperAdmin();
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
   if (!emailConfigured()) {
-    console.warn("[nudge] RESEND_API_KEY not configured — nothing sent.");
+    console.warn("[nudge] RESEND_API_KEY not configured. Nothing sent.");
     return NextResponse.json({ ok: true, status: "email-not-configured" });
   }
 

@@ -82,7 +82,7 @@ export function IssueCertificateForm({ userId, defaultName, signatures }: { user
           <div className="space-y-1.5"><Label htmlFor="c-heading">Heading</Label><Input id="c-heading" value={heading} onChange={(e) => setHeading(e.target.value)} maxLength={60} /></div>
           <div className="space-y-1.5"><Label htmlFor="c-lead">Line under the name</Label><Input id="c-lead" value={lead} onChange={(e) => setLead(e.target.value)} maxLength={60} /></div>
         </div>
-        <div className="space-y-1.5"><Label htmlFor="c-title">Title (what it is for)</Label><Input id="c-title" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} placeholder="e.g. Clinical Interviewing & MSE — Module 1" /></div>
+        <div className="space-y-1.5"><Label htmlFor="c-title">Title (what it is for)</Label><Input id="c-title" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} placeholder="e.g. Clinical Interviewing & MSE: Module 1" /></div>
         <div className="space-y-1.5"><Label htmlFor="c-desc">Description (optional, up to 3 lines)</Label><Textarea id="c-desc" value={description} onChange={(e) => setDescription(e.target.value)} maxLength={300} rows={3} placeholder="e.g. 24 hours of supervised training, 6 case formulations and a viva." /></div>
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="space-y-1.5"><Label htmlFor="c-date">Issue date</Label><Input id="c-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} /></div>

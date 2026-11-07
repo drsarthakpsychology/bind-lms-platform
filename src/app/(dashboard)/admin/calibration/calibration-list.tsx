@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 
-// Blind score is a 0–5 scale in 0.5 steps (matches the scorer's rubric).
+// Blind score is a 0 to 5 scale in 0.5 steps (matches the scorer's rubric).
 const SCORE_OPTIONS = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"].map(
   (v) => ({ value: v, label: v }),
 );
@@ -22,7 +22,7 @@ interface Row {
 }
 
 /**
- * A3 calibration row — shows the transcript, hides the AI score until the
+ * A3 calibration row: shows the transcript, hides the AI score until the
  * faculty submits their own. Reveal compares side by side.
  */
 export function CalibrationList({ rows }: { rows: Row[] }) {
@@ -90,7 +90,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
             </div>
 
             <div className="mt-3 flex flex-col gap-3">
-              {/* blind score — stepped 0–5 segmented control, then reveal, then save. */}
+              {/* blind score: stepped 0 to 5 segmented control, then reveal, then save. */}
               <div className="flex items-center justify-between gap-3">
                 <span className="text-small text-muted-foreground">Your score (0-5):</span>
                 {human != null && (
@@ -137,7 +137,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
                   <span className="font-semibold text-numeric">{r.overall.toFixed(1)}</span>
                   {diff != null ? (
                     <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-status-pending-fg" : "text-status-success-fg")}>
-                      {diff > 0.5 ? `disagreement ${diff.toFixed(1)} — saved as a correction` : "agree"}
+                      {diff > 0.5 ? `disagreement ${diff.toFixed(1)}: saved as a correction` : "agree"}
                     </span>
                   ) : null}
                 </p>
@@ -145,7 +145,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
             ) : null}
 
             {r.alreadyCorrected ? (
-              <p className="mt-2 text-caption text-muted-foreground">Previously corrected — this session feeds the scorer already.</p>
+              <p className="mt-2 text-caption text-muted-foreground">Previously corrected: this session feeds the scorer already.</p>
             ) : null}
           </div>
         );

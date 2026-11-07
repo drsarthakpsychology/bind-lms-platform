@@ -14,7 +14,7 @@ const schema = z.object({
   message: "exactly one of postId or replyId",
 });
 
-/** POST /api/practice/wall/report — student flags a post/reply for faculty.
+/** POST /api/practice/wall/report: student flags a post/reply for faculty.
  *  wall_reports RLS: owner insert, owner+admin select (privacy test). */
 export async function POST(req: Request) {
   const supabase = await createClient();

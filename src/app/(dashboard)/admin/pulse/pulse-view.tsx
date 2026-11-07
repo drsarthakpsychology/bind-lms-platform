@@ -5,7 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { Radar, AlertTriangle, Rocket } from "lucide-react";
 
 /**
- * Cohort Pulse — the human dashboard. Drifting / Flying lists, an active
+ * Cohort Pulse: the human dashboard. Drifting / Flying lists, an active
  * summary, and a one-tap nudge (never automated guilt; Kavya presses send).
  */
 export function PulseView({
@@ -23,7 +23,7 @@ export function PulseView({
   active: number;
   /** Names of students on VIBHA in the last 5 minutes. */
   activeNow?: string[];
-  /** checkins_aggregate weeks (no identifiers) — the load/energy curve. */
+  /** checkins_aggregate weeks (no identifiers): the load/energy curve. */
   weeks?: Array<{ week: string; n: number; workload: number; energy: number; preparedness: number }>;
   /** activity dropping + load spiking = curriculum problem, not motivation. */
   curriculumFlag?: boolean;
@@ -33,7 +33,7 @@ export function PulseView({
   async function nudge(email: string) {
     haptic("tap");
     // Personal, sent via the shared Resend path (/api/admin/nudge honestly
-    // reports email-not-configured when no key exists — the button then says
+    // reports email-not-configured when no key exists: the button then says
     // so instead of claiming a message went out).
     setNudged((n) => ({ ...n, [email]: "sending" }));
     const res = await fetch("/api/admin/nudge", {
@@ -49,7 +49,7 @@ export function PulseView({
 
   return (
     <div className="space-y-6">
-      {/* cohort curve summary — one dominant metric (active), drifting/flying demoted */}
+      {/* cohort curve summary: one dominant metric (active), drifting/flying demoted */}
       <div className="space-y-3">
         <div className="rounded-md border-2 border-foreground bg-primary p-4 text-primary-foreground">
           <p className="flex items-center gap-2 text-caption font-semibold">
@@ -76,7 +76,7 @@ export function PulseView({
         </div>
       </div>
 
-      {/* curriculum flag — activity dropping while load spikes */}
+      {/* curriculum flag: activity dropping while load spikes */}
       {curriculumFlag ? (
         <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
           <p className="flex items-center gap-2 text-base font-semibold">
@@ -90,7 +90,7 @@ export function PulseView({
         </div>
       ) : null}
 
-      {/* cohort curve — aggregate weeks, no identifiers */}
+      {/* cohort curve: aggregate weeks, no identifiers */}
       {weeks.length > 0 ? (
         <div className="rounded-md border-2 border-border bg-card p-4">
           <p className="flex items-center gap-2 text-base font-semibold">

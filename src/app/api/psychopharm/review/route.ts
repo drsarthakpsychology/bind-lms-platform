@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 
-/** Parse "0.5–2 mg", "0.5-2", or a single "12.5 mg" into band columns. */
+/** Parse "0.5 to 2 mg", "0.5-2", or a single "12.5 mg" into band columns. */
 function applyBandEdit(after: Record<string, unknown>, raw: string) {
   const trimmed = raw.trim();
-  // Range: "0.5–2 mg" or "0.5-2"
-  const range = trimmed.match(/^([\d.]+)\s*[–-]\s*([\d.]+)\s*([a-zA-Z/]+)?/);
+  // Range: "0.5 to 2 mg" or "0.5-2"
+  const range = trimmed.match(/^([\d.]+)\s*[\u2013-]\s*([\d.]+)\s*([a-zA-Z/]+)?/);
   if (range) {
     after.range_low = Number(range[1]);
     after.range_high = Number(range[2]);

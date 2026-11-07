@@ -41,7 +41,7 @@ const DAY_OPTIONS = QUIET_DAY_OPTIONS.map((d) => ({ value: String(d), label: `${
 const ticked = (rows: NudgeRow[]) => new Set(rows.filter((r) => r.preselected).map((r) => r.id));
 
 /**
- * "Email students who've gone quiet" — the main thing on Progress. Opens with
+ * "Email students who've gone quiet": the main thing on Progress. Opens with
  * the quiet students already ticked; the admin ticks/unticks, edits the note,
  * checks the preview, and sends one email per student.
  */

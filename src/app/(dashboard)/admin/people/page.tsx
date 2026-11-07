@@ -7,7 +7,7 @@ import { PeopleView } from "./people-view";
 
 export const dynamic = "force-dynamic";
 
-/** People — the CRM: every enquiry and student in one pipeline. */
+/** People: the CRM: every enquiry and student in one pipeline. */
 export default async function PeoplePage({ searchParams }: { searchParams: Promise<{ view?: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.

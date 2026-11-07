@@ -29,7 +29,7 @@ export async function GET(request: Request) {
   const input: CohortScheduleInput = { startDate, startTime, weekdays, weeks, title, durationMinutes: 90 };
   const sessions = buildSchedule(input);
   if (sessions.length === 0) {
-    return NextResponse.json({ error: "No sessions generated — check dates." }, { status: 400 });
+    return NextResponse.json({ error: "No sessions generated: check dates." }, { status: 400 });
   }
 
   const ics = toIcs(sessions, title);

@@ -29,7 +29,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/osce/attempt — persist a completed OSCE station
+ * POST /api/practice/osce/attempt: persist a completed OSCE station
  * self-assessment so /admin/osce-review (future) and weak-spots can read
  * per-station history. Owner-scoped; RLS on osce_attempts enforces it.
  */

@@ -2,7 +2,7 @@ import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 /**
- * /verify/[certificateId] loading — matches the certificate card layout.
+ * /verify/[certificateId] loading: matches the certificate card layout.
  * The page does a one-row Supabase lookup before rendering, so this keeps the
  * flash-of-empty-card from appearing while it resolves.
  */

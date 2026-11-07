@@ -7,7 +7,7 @@ import { AchievementsAdmin } from "./achievements-admin";
 
 export const metadata = { title: "Achievements & Credentials" };
 
-/** Super Admin only — achievements, badges and official certificates. */
+/** Super Admin only: achievements, badges and official certificates. */
 export default async function AchievementsAdminPage() {
   const me = await requireSuperAdmin();
   if (!me) redirect("/admin");

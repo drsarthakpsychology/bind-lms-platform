@@ -7,7 +7,7 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/weak-spots — the student's consistent gaps across sim debriefs,
+ * /practice/weak-spots: the student's consistent gaps across sim debriefs,
  * with a 10-item drill generated ON THE SPOT from the actual weak skills
  * (v5 §4: "Weak Spots must GENERATE a drill, not just report").
  */
@@ -35,7 +35,7 @@ export default async function WeakSpotsPage() {
       <p className="text-eyebrow text-muted-foreground">Weak spots</p>
       <h1 className="mt-1 text-h1">Where you miss, drill here</h1>
       <p className="mt-1 text-small text-muted-foreground">
-        Your sim debriefs, analysed. The skills you keep missing, ranked — and a 10-item
+        Your sim debriefs, analysed. The skills you keep missing, ranked, and a 10-item
         drill generated from them, on the spot.
       </p>
 

@@ -34,7 +34,7 @@ export default async function DashboardPage() {
 
   // The go-live roster is lectures_only. An admin previewing the student side
   // must see exactly what those students see. A roster student has no
-  // enrollment rows, so "their course" is every published course — the single
+  // enrollment rows, so "their course" is every published course: the single
   // canonical structured view below, never a separate flat lecture list.
   const effectiveScope =
     profile.role === "admin" && viewingAsStudent ? "lectures_only" : profile.scope;

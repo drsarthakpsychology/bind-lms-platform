@@ -30,10 +30,10 @@ function statusPill(status: string): { tone: "ai" | "scripted" | "neutral" | "wa
 }
 
 /**
- * Medication list (KMS). One action per drug: Open — which takes you to the
+ * Medication list (KMS). One action per drug: Open, which takes you to the
  * page editor, the single surface for editing, reviewing, and publishing.
  *
- * This is a LIST — it must be light. The student-facing summary line comes from
+ * This is a LIST. It must be light. The student-facing summary line comes from
  * the static `drugDetail` (curated TS data), NOT the full `document` jsonb, so
  * the query stays cheap and the ~100 editor links don't trigger a prefetch
  * storm of heavy editor renders (kept `prefetch={false}`).

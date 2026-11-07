@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
 import { lectureOnlyAllowed } from "@/lib/auth/guards";
 
-// The LMS — student coursework, journals, simulated-patient content — must
+// The LMS (student coursework, journals, simulated-patient content) must
 // never be indexed. The public site (/, /waitlist) is indexable from the root.
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -34,7 +34,7 @@ export default async function DashboardLayout({
     redirect("/login");
   }
 
-  // Blocked is an unconditional override — the account is cut off on every
+  // Blocked is an unconditional override: the account is cut off on every
   // request regardless of credential/session validity. Redirect to a plain,
   // non-alarming "paused" screen (no specific reason shown to the student).
   if (session.status === "blocked") {
@@ -42,7 +42,7 @@ export default async function DashboardLayout({
   }
 
   // Lecture-only scope: the account may reach only the lecture list + player.
-  // Enforced here, server-side, for every route under (dashboard) — a direct
+  // Enforced here, server-side, for every route under (dashboard): a direct
   // URL hit to /practice, /reflect, /wall, /tools, etc. redirects to the
   // lecture list rather than rendering (or merely hiding a nav link).
   //
@@ -50,7 +50,7 @@ export default async function DashboardLayout({
   // whose profile accidentally carries scope=lectures_only (e.g. a test-email
   // account) must still reach /admin. Without this carve-out such an account
   // hits an infinite redirect loop: /dashboard bounces admins → /admin, and
-  // this guard bounces /admin → /dashboard — the "continuously refreshing
+  // this guard bounces /admin → /dashboard: the "continuously refreshing
   // dashboard" bug.
   if (
     session.status === "ok" &&
@@ -84,7 +84,7 @@ export default async function DashboardLayout({
 
   // The roster is now `full` (2026_11_all_full_access set every student to
   // full), so an admin previewing the student side sees the full-student nav
-  // — matching what the students actually see — not a lectures-only nav.
+  //, matching what the students actually see, not a lectures-only nav.
   const effectiveScope =
     role === "admin" && viewingAsStudent ? "full" : session.profile.scope;
 
