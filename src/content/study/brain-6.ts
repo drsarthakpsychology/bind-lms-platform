@@ -1,5 +1,4 @@
 /* Module · Brain and behaviour, new Beginner sections on neuroanatomy: spinal cord, brainstem, cranial nerves, cerebellum, basal ganglia, thalamus, hypothalamus, limbic system, cortex, blood supply and CSF. Original text written for VIBHA School of Psychology. */
-import { SCENE } from "./brain-4";
 
 export const begAnatomyLow = String.raw`
 ## 3.1 Spinal cord, autonomic system, brainstem and cranial nerves [core][beginner]
@@ -339,7 +338,9 @@ export const begAnatomyMid = String.raw`
 ## 3.3 Thalamus, hypothalamus and the limbic system [core][beginner]
 These deep structures sit around the third ventricle like rooms around a courtyard. The **thalamus** is the gateway to the cortex; the **hypothalamus** runs the body; the **limbic system** links memory, emotion and motivation. Psychiatry lives here.
 
-${SCENE("brainexplorer")}
+:::widget brainexplorer
+{"title":"Peel the brain to its core","focus":["thalamus","hypothalamus","amygdala","hippocampus","basal-ganglia","corpus-callosum","frontal","temporal","brainstem"],"caption":"Peel the left side away, then tap each deep part. Switch on damage for the amygdala and the hippocampus: which real patient goes with each?"}
+:::
 
 ### The thalamus: more than a relay
 Almost every input to the cortex, except smell, passes through a thalamic nucleus, and each nucleus talks back and forth with its own patch of cortex.
@@ -495,6 +496,10 @@ Q: A patient with bilateral amygdala destruction would most likely show:
 
 ## 3.4 The cortex: layers, Brodmann areas, maps and streams [core][beginner]
 The cerebral cortex is a sheet about 2 to 4 millimetres thick, folded into ridges (**gyri**) and grooves (**sulci**) so that roughly two-thirds of it lies hidden in the folds. Exams test how it is built, how it is mapped, and what happens when particular patches fail.
+
+:::widget brainexplorer
+{"title":"Map the cortex by breaking it","focus":["frontal","motor","parietal","occipital","temporal","broca","wernicke","cerebellum"],"caption":"Tap each lobe, then switch on damage. Then play Where is the damage? and localise each case from the symptom alone."}
+:::
 
 ### Six layers
 Most of the cortex (the **neocortex**) has six layers, numbered from the surface inwards. The older **allocortex** (hippocampus and smell cortex) has three.

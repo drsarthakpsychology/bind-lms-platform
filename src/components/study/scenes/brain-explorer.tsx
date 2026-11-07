@@ -42,7 +42,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const [feedback, setFeedback] = React.useState<{ ok: boolean; text: string } | null>(null);
   const journey = useJourney(!v.reduce);
   const ms = useMissions(MISSIONS);
-  const focus = d.focus?.length ? REGIONS.filter((r) => (d.focus as string[]).includes(r.id)) : REGIONS;
+  const focus = d.focus?.length && mode === "explore" ? REGIONS.filter((r) => (d.focus as string[]).includes(r.id)) : REGIONS;
 
   const play = (r: RegionId, hurt: boolean) => journey.start(`${r}-${hurt ? "hurt" : "ok"}`, hurt ? REGION[r].hurtAct : REGION[r].act);
   const show = (r: RegionId, hurt = damage) => {

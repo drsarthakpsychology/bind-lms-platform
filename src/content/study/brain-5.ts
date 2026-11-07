@@ -1,11 +1,12 @@
 /* Module · Brain and behaviour, new Beginner sections on electrical signalling, synaptic transmission and the transmitter systems. Original text written for VIBHA School of Psychology. */
-import { SCENE } from "./brain-4";
 
 export const begSignals = String.raw`
 ## 2.1 Electrical signals in depth: membrane potentials and the action potential [core][beginner]
 At the Starting level you learned that a neuron rests at about minus 70 millivolts and fires an all-or-none spike. Entrance exams go further: **why** minus 70, **which** ion moves when, **why** the neuron cannot fire again at once, and **what** speeds a signal up. Here is the full story, with the two equations exams name, explained without heavy maths.
 
-${SCENE("actionpotential")}
+:::widget actionpotential
+{"title":"Make a neuron fire","myelinated":true,"caption":"One small push, then two quick ones, then try to fire again at once. Name the ion moving at each phase as you watch."}
+:::
 
 ### Why the inside is negative: two gradients and a leaky membrane
 Two forces act on every ion:
