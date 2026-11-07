@@ -2,5 +2,7 @@
 import type { Excerpt } from "./excerpts";
 import { BANK_1 } from "./bank-1";
 import { BANK_2 } from "./bank-2";
+import { BANK_3 } from "./bank-3";
+import { BANK_4 } from "./bank-4";
 
-export const BANK: Excerpt[] = [...BANK_1, ...BANK_2];
+export const BANK: Excerpt[] = [...BANK_1, ...BANK_2, ...BANK_3, ...BANK_4];
