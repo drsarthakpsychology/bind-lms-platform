@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "illusion";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -108,9 +108,17 @@ export type DissonanceData = { belief?: Inline; behaviour?: Inline; title?: Inli
 export type ConservationData = { kind?: "liquid" | "number"; title?: Inline; caption?: Inline };
 /** Replay a classic study: predict each condition with a slider, then reveal the real result. max defaults to 100 when unit is "%". */
 export type ExperimentData = { title: Inline; question: Inline; unit: string; conditions: { label: Inline; value: number; note?: Inline }[]; why?: Inline; max?: number };
+/** Transmitter release, binding, reuptake and breakdown at a monoamine synapse, with a drug picker (SSRI, MAOI, amphetamine, botulinum toxin, antagonist). */
+export type ReleaseData = { transmitter?: string; title?: Inline; caption?: Inline };
+/** A CBT thought record filled in step by step: situation, thought, rating, thinking trap, evidence, balanced thought, re-rating. */
+export type ThoughtRecordData = { situation: Inline; thought: Inline; emotion: string; traps: { label: Inline; right?: boolean; why: Inline }[]; forEvidence: Inline[]; againstEvidence: Inline[]; balanced: Inline };
+/** A night of sleep: hypnogram with a time slider, the EEG of each stage, and a depression toggle. */
+export type HypnogramData = { title?: Inline; caption?: Inline };
+/** Ainsworth's Strange Situation: step through the episodes and switch attachment style. */
+export type StrangeData = { title?: Inline; caption?: Inline };
 /** Perception illusions: judge, then measure to see the parts are equal (or flip figure and ground). */
 export type IllusionData = { kind: "muller-lyer" | "ponzo" | "ebbinghaus" | "figure-ground"; title?: Inline; caption?: Inline };
-export type WidgetData = AttentionData | DissonanceData | ConservationData | ExperimentData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+export type WidgetData = AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */

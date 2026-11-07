@@ -22,7 +22,8 @@ import { BrainMap, Curve, Flow, Layers } from "./visuals";
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
 import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
 import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./animations3";
-import type { AttentionData, ConservationData, DissonanceData, ExperimentData, IllusionData } from "@/lib/study/types";
+import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
+import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
@@ -571,6 +572,14 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Conservation d={data as ConservationData} />;
     case "experiment":
       return <Experiment d={data as ExperimentData} />;
+    case "release":
+      return <Release d={data as ReleaseData} />;
+    case "thoughtrecord":
+      return <ThoughtRecord d={data as ThoughtRecordData} />;
+    case "hypnogram":
+      return <Hypnogram d={data as HypnogramData} />;
+    case "strange":
+      return <Strange d={data as StrangeData} />;
     case "illusion":
       return <Illusion d={data as IllusionData} />;
   }
