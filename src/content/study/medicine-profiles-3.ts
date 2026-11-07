@@ -99,6 +99,21 @@ Two people given the same dose can have very different blood levels. The reasons
 - **HLA-B*15:02**: strongly linked to severe skin reactions with **carbamazepine** (and to a lesser extent oxcarbazepine, phenytoin and lamotrigine) in people of South and Southeast Asian ancestry. Testing before carbamazepine is recommended where available.
 - **HLA-A*31:01**: linked to carbamazepine hypersensitivity in several ancestries.
 
+
+:::widget journey
+{
+ "drug": "Risperidone",
+ "target": "dopamine D2 and serotonin 2A receptors",
+ "route": "oral",
+ "notes": {
+  "liver": "CYP2D6 converts risperidone into 9-hydroxyrisperidone, which is paliperidone and almost as active. A poor metaboliser makes less of it but keeps more risperidone, so the total active amount changes less than you might expect.",
+  "blood": "The useful number is the sum of the two, the active moiety.",
+  "out": "Paliperidone leaves mainly through the kidneys, so kidney disease, not CYP2D6, is what most changes it."
+ },
+ "caption": "Stop at the liver and then at the exit. A gene result matters most when it changes the total amount of active drug, not just which molecule carries it."
+}
+:::
+
 ### When to measure blood levels
 **Therapeutic drug monitoring** is essential for lithium; strongly recommended for clozapine (and useful for olanzapine) when response is poor or toxicity suspected; useful for valproate, carbamazepine and tricyclics (especially nortriptyline); and helpful for checking adherence for many drugs.
 
@@ -166,6 +181,36 @@ Several drug-induced emergencies share fever, confusion and muscle signs. Tellin
 
 :::widget sort
 {"prompt": "Which syndrome? Place each patient.", "buckets": ["Serotonin toxicity", "Neuroleptic malignant syndrome", "Anticholinergic toxicity"], "items": [{"text": "On sertraline, given tramadol for a fracture; within hours: shivering, sweating, ankle clonus, agitation", "bucket": 0}, {"text": "Four days after haloperidol was increased: rigid, mute, fever 39.5 degrees, creatine kinase 18,000", "bucket": 1}, {"text": "Elderly man on amitriptyline and chlorpheniramine: hot, dry, flushed, urinary retention, picking at the air", "bucket": 2}, {"text": "On an MAOI, took a cough syrup with dextromethorphan: tremor, hyperreflexia, temperature rising", "bucket": 0}, {"text": "Man with Parkinson's disease whose levodopa was stopped on admission: rigid, feverish, unstable blood pressure", "bucket": 1, "why": "A neuroleptic malignant-like syndrome from dopamine withdrawal; restart dopaminergic treatment."}, {"text": "Young man after eating datura seeds: delirious, dry mouth, very dilated pupils, fast heart", "bucket": 2}]}
+:::
+
+
+:::widget compare
+{
+ "title": "Serotonin toxicity and NMS at the bedside",
+ "a": {
+  "label": "Serotonin toxicity",
+  "points": [
+   "Starts within hours of a new or added serotonergic drug",
+   "Shivering, sweating, diarrhoea, dilated pupils",
+   "Clonus and brisk reflexes, worse in the legs",
+   "Restless and agitated",
+   "Usually settles within a day once the drugs stop"
+  ],
+  "summary": "Fast, jerky and wet."
+ },
+ "b": {
+  "label": "Neuroleptic malignant syndrome",
+  "points": [
+   "Develops over days after starting or raising a dopamine blocker",
+   "Lead-pipe rigidity, slow movements, mute",
+   "Reflexes normal or reduced; no clonus",
+   "High creatine kinase, often very high",
+   "Takes a week or more to settle"
+  ],
+  "summary": "Slow, stiff and still."
+ },
+ "caption": "Slide between the two. Both bring fever, a fast heart and confusion, so look at the speed of onset and at the muscles: clonus points one way, rigidity the other."
+}
 :::
 
 ### Other serious reactions to know
@@ -303,6 +348,15 @@ Psychopharmacology is moving beyond the monoamine model. At the Advanced level y
 
 ### Psychedelics: the honest picture
 Psilocybin given once or twice with psychological support has shown rapid and sometimes lasting improvement in treatment-resistant depression in phase 3 trials, with a regulatory application under way in the US in 2026. MDMA-assisted therapy for PTSD was **not approved** by the US regulator in 2024, which asked for another trial because of concerns about blinding, data integrity and safety reporting. These treatments are **not approved in India** and should never be tried outside research.
+
+
+:::widget receptor
+{
+ "receptor": "serotonin 5-HT2A",
+ "title": "Psilocybin: switching a receptor on",
+ "caption": "Most psychiatric medicines block or dampen receptors. Pick Full agonist, then Partial agonist: psilocybin is turned into psilocin in the body, which strongly stimulates 5-HT2A receptors in the cortex. That is what produces the altered perception of a session. Compare with Antagonist: several antipsychotics block the same receptor and can cut a psychedelic experience short."
+}
+:::
 
 :::widget decide
 {"scene": "Mr Kumar, 41, a bank officer in Chennai, has had severe depression for three years despite three antidepressants and psychotherapy. He has read that 'ketamine cures depression in one day' and asks to buy esketamine spray to use at home.", "ask": "What is the most responsible response?", "choices": [{"label": "Prescribe it for home use", "verdict": "harm", "outcome": "He uses it daily, develops dissociation and craving, and his blood pressure spikes.", "why": "Esketamine must be given under supervision with monitoring because of dissociation, blood pressure effects and abuse potential."}, {"label": "Explain the evidence (rapid but often partial and temporary benefit, needing continued sessions), the risks and the supervised clinic setting; review whether his previous trials were adequate; discuss options such as augmentation (lithium or an antipsychotic), ECT, and referral to a centre that offers supervised esketamine or ketamine", "verdict": "best", "outcome": "After review, lithium augmentation is tried first; when that fails he is referred for ECT, to which he responds. Esketamine remains an option for future relapse.", "why": "Treatment-resistant depression has several evidence-based options. New treatments should be offered honestly, in the right setting, alongside established ones."}, {"label": "Tell him ketamine is just a party drug with no medical use", "verdict": "ok", "outcome": "He loses trust and searches online for illegal sources.", "why": "Ketamine and esketamine have genuine evidence; dismissal is inaccurate and risky."}]}
