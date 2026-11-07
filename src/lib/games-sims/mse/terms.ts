@@ -135,6 +135,8 @@ export const TERMS = {
   emaciated: { label: "Emaciated, very low weight", domain: "appearance", def: "Visibly wasted face and limbs, loose clothes, sunken cheeks: an urgent physical finding to act on." },
   intox: { label: "Signs of intoxication", domain: "appearance", def: "Smell of alcohol, slurred speech, unsteady gait, flushed face, or very small or very wide pupils." },
   bizarredress: { label: "Odd, out-of-place dress", domain: "appearance", def: "Clothing strikingly unusual for the setting and season (three sweaters in May, foil in a cap) with no cultural or practical reason." },
+  chorea: { label: "Choreiform movements", domain: "appearance", def: "Brief, irregular, flowing jerks that move from one part of the body to another, with no urge before them and often unnoticed by the person." },
+  myoclonus: { label: "Myoclonus", domain: "appearance", def: "Sudden, shock-like jerks of a muscle or limb, seen in toxic states such as serotonin toxicity and in some brain diseases." },
   cooperative: { label: "Cooperative, good rapport", domain: "appearance", def: "Engages easily, answers openly and warms to the examiner. A normal finding worth writing down." },
   /* Speech */
   dysarthria: { label: "Dysarthria", domain: "speech", def: "Words are badly formed (slurred, thick, explosive) because of a motor problem; the language itself is intact." },
