@@ -21,6 +21,9 @@ import { PART as x1a } from "./psychopathology-x1a";
 import { PART as x1b } from "./psychopathology-x1b";
 import { PART as x1c } from "./psychopathology-x1c";
 import { PART as x1d } from "./psychopathology-x1d";
+import { PART as x1e } from "./psychopathology-x1e";
+import { PART as x1f } from "./psychopathology-x1f";
+import { PART as x1g } from "./psychopathology-x1g";
 
 /** Question bank · psychopathology. Ordered from foundations (difficulty 1) to entrance-topper level (difficulty 4). Content lives in psychopathology-NN.ts part files. */
-export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...p16, ...p17, ...p18, ...x1a, ...x1b, ...x1c, ...x1d].sort((a, b) => a.difficulty - b.difficulty);
+export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...p16, ...p17, ...p18, ...x1a, ...x1b, ...x1c, ...x1d, ...x1e, ...x1f, ...x1g].sort((a, b) => a.difficulty - b.difficulty);
