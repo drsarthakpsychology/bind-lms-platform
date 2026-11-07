@@ -27,10 +27,7 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
     <PrepFrame>
       <BackToPrep />
       <header className="space-y-2">
-        <p className="flex flex-wrap items-center gap-2 text-eyebrow text-link">
-          Subject
-          {OPTIONAL_SUBJECTS.has(subject) ? <span className="rounded-full border-2 border-dashed border-foreground/60 px-2 py-0.5 text-xs font-bold normal-case text-muted-foreground">Optional</span> : null}
-        </p>
+        {OPTIONAL_SUBJECTS.has(subject) ? <p className="w-fit rounded-full border-2 border-dashed border-foreground/60 px-2 py-0.5 text-xs font-bold text-muted-foreground">Optional</p> : null}
         <h1 className="text-h1 text-balance [overflow-wrap:anywhere]">{title}</h1>
         <p className="text-muted-foreground">
           {stats.total} questions{stats.answered ? ` · ${stats.answered} answered · ${pctText(stats)}` : ""}

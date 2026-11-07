@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, History, MinusCircle, PlusCircle, Circle } from "lucide-react";
+import { ArrowRight, History } from "lucide-react";
+import { ToolHeader } from "@/components/help/tool-header";
 import { requireFeature } from "@/lib/flags";
 import { EXAM_SPECS, PRACTICE_MARKING, PRACTICE_SPECS, specById } from "@/content/prep/specs";
 import { EXAM_TRACKS_ENABLED, goalLabel } from "@/lib/prep/catalog";
@@ -30,11 +31,14 @@ export default async function MocksPage() {
   return (
     <PrepFrame>
       <BackToPrep />
-      <header className="space-y-1">
-        <p className="text-eyebrow text-link">Timed mocks{goal ? ` · ${goalLabel(goal)}` : ""}</p>
-        <h1 className="text-h1">Psychology mock tests</h1>
-        <p className="text-muted-foreground">Timed papers with marking. Mostly questions you haven&apos;t seen.</p>
-      </header>
+      <ToolHeader
+        title={goal ? `Mock tests · ${goalLabel(goal)}` : "Mock tests"}
+        tip={{
+          id: "prep-mock",
+          intro: "Timed papers, mostly questions you have not seen.",
+          steps: [`Right: +${marksText(PRACTICE_MARKING.right)}. Wrong: minus ${marksText(-PRACTICE_MARKING.wrong)}. Blank: 0.`, "The same practice marking on every mock here, not any one exam's scheme.", "Guess only when you can rule out two options."],
+        }}
+      />
 
       {mine.length ? (
         <ul className="space-y-3">
@@ -51,24 +55,6 @@ export default async function MocksPage() {
           ))}
         </ul>
       ) : null}
-
-      <section aria-labelledby="marking" className={cn(card, "space-y-2")}>
-        <h2 id="marking" className="text-h3">
-          How marking works
-        </h2>
-        <ul className="grid gap-1.5 text-sm sm:grid-cols-3">
-          <li className="flex items-center gap-2">
-            <PlusCircle className="size-4 shrink-0" aria-hidden /> Right: +{marksText(PRACTICE_MARKING.right)}
-          </li>
-          <li className="flex items-center gap-2">
-            <MinusCircle className="size-4 shrink-0" aria-hidden /> Wrong: minus {marksText(-PRACTICE_MARKING.wrong)}
-          </li>
-          <li className="flex items-center gap-2">
-            <Circle className="size-4 shrink-0" aria-hidden /> Blank: 0
-          </li>
-        </ul>
-        <p className="text-sm text-muted-foreground">Practice marking, the same on every mock here. It is not any one exam&apos;s scheme. Guess only when you can rule out two options.</p>
-      </section>
 
       <section aria-labelledby="full" className={cn(card, !mine.length && "hard-shadow-md")}>
         <h2 id="full" className="text-h3">

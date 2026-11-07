@@ -33,10 +33,7 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
         title={spec.title}
         intro={
           <div className="mx-auto max-w-2xl space-y-5 lg:mx-0">
-            <header className="space-y-1">
-              <p className="text-eyebrow text-link">{spec.exam === null ? "Psychology mock test" : "Timed mock"}</p>
-              <h1 className="text-h1">{spec.title}</h1>
-            </header>
+            <h1 className="text-h1">{spec.title}</h1>
             <div className={cn(card, "hard-shadow-md")}>
               <PatternFacts spec={spec} />
             </div>
