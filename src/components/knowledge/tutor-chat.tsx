@@ -60,7 +60,7 @@ function SourcePassage({ text }: { text: string }) {
 }
 
 /**
- * Psychology Tutor — asks the grounded knowledge layer (/api/knowledge/ask).
+ * Psychology Tutor: asks the grounded knowledge layer (/api/knowledge/ask).
  * Answers are retrieval-first: real book passages with source citations always
  * come back; an AI synthesis is added only when a no-train provider is on.
  */
@@ -87,7 +87,7 @@ export function TutorChat() {
     el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
-  /** Read the latest assistant answer aloud (browser speechSynthesis — $0). */
+  /** Read the latest assistant answer aloud (browser speechSynthesis, $0). */
   function speakAnswer(text: string) {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
       setSpeakError("Text-to-speech isn't supported in this browser.");
@@ -176,7 +176,7 @@ export function TutorChat() {
                   j.answer ||
                   streamContentRef.current ||
                   (streamSourcesRef.current.length
-                    ? "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again."
+                    ? "Here's what the authorised books say: the sources below are the material itself. Ask me another way and I'll retrieve again."
                     : "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.");
                 return [...m.slice(0, -1), { ...last, content, sources: streamSourcesRef.current, aiUsed: streamAiUsedRef.current && j.provider != null }];
               });
@@ -188,7 +188,7 @@ export function TutorChat() {
           speakAnswer(streamContentRef.current);
         }
       } else {
-        // Fast path (cached / retrieval-only) — plain JSON.
+        // Fast path (cached / retrieval-only): plain JSON.
         const body = (await res.json()) as {
           answer?: string | null;
           sources?: TutorSource[];
@@ -199,7 +199,7 @@ export function TutorChat() {
           content = body.answer;
         } else if (body.sources?.length) {
           content =
-            "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again.";
+            "Here's what the authorised books say: the sources below are the material itself. Ask me another way and I'll retrieve again.";
         } else {
           content = "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.";
         }

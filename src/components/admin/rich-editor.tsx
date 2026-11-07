@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * A small formatted-text editor: type like a normal document and use the
- * toolbar for headings, bold, lists, quotes and links — no HTML needed.
+ * toolbar for headings, bold, lists, quotes and links, no HTML needed.
  * The HTML it produces is cleaned again on the server (lib/email/rich-html).
  * Pasted content comes in as plain text so stray styles never sneak in.
  */

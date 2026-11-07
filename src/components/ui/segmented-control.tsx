@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Segmented control — a group of mutually exclusive options rendered as
+ * Segmented control: a group of mutually exclusive options rendered as
  * equal-width segments welded together by a shared 2px ink border and a hard
  * offset shadow. Same geometry as Button; the active segment fills terracotta.
  * This is the app's only rectangular segment primitive (replaces the old
@@ -53,7 +53,7 @@ export function SegmentedControl<T extends string>({
               isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             )}
           >
-            {/* Sliding active fill — same layoutId across the group, so it
+            {/* Sliding active fill: same layoutId across the group, so it
                 animates to whichever segment is active. */}
             {isActive && (
               <motion.span

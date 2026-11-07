@@ -18,7 +18,7 @@ const badgeVariants = cva(
         outline: "border-border bg-background text-foreground [a&]:hover:bg-accent",
         ghost: "border-transparent [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         link: "border-transparent text-foreground underline-offset-4 [a&]:hover:underline",
-        // Statuses — derived from the existing palette, never a new hue, always
+        // Statuses: derived from the existing palette, never a new hue, always
         // paired with a text label (never colour alone).
         // published  → lime fill, ink border, ink text
         published:

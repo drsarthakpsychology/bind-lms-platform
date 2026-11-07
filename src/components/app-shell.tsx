@@ -13,7 +13,7 @@ import { InboxLink } from "@/components/navigation/inbox-link";
 import { AddPeopleHost } from "@/components/admin/add-people-host";
 
 /**
- * Application shell — the layout people already know from YouTube:
+ * Application shell: the layout people already know from YouTube:
  *   - top bar: ☰ + logo, a big search box, bell, avatar menu
  *   - left: a sidebar that folds into a slim icon rail (☰ toggles it)
  *   - tablets (768-1023): the slim icon rail, ☰ opens the full menu drawer
@@ -62,11 +62,11 @@ export function AppShell({
       >
         Skip to content
       </a>
-      {/* Search palette — opens from the top bar, ⌘K or "/". */}
+      {/* Search palette: opens from the top bar, ⌘K or "/". */}
       <React.Suspense fallback={null}>
         <PaletteHost isAdmin={isAdminView} />
       </React.Suspense>
-      {/* Add people panel — one panel, opened from the palette, Home, Students and cohorts. */}
+      {/* Add people panel: one panel, opened from the palette, Home, Students and cohorts. */}
       {isAdminView ? (
         <React.Suspense fallback={null}>
           <AddPeopleHost />

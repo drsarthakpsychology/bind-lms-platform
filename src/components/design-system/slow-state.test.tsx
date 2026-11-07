@@ -13,7 +13,7 @@ describe("SlowState", () => {
     act(() => vi.advanceTimersByTime(2999));
     expect(screen.queryByText(/slower than usual/)).toBeNull();
     act(() => vi.advanceTimersByTime(1));
-    expect(screen.getByText("Still loading — this is slower than usual")).toBeInTheDocument();
+    expect(screen.getByText("Still loading: this is slower than usual")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Try again/ })).toBeNull();
     act(() => vi.advanceTimersByTime(12000));
     expect(screen.getByRole("button", { name: /Try again/ })).toBeInTheDocument();

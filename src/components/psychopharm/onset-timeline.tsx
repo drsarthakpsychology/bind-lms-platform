@@ -33,8 +33,8 @@ export function OnsetTimeline({
   // source supports are drawn filled.
   const phases = [
     { label: "First days", text: ["early", "first day", "first days", "immediate", "hours", "minutes", "within 1 week", "within a week"] },
-    { label: "2–4 weeks", text: ["2–4 weeks", "2 to 4 weeks", "two to four weeks"] },
-    { label: "6–8 weeks", text: ["6–8 weeks", "6 to 8 weeks", "four to six", "4–6 weeks", "4 to 6 weeks"] },
+    { label: "2 to 4 weeks", text: ["2\u20134 weeks", "2 to 4 weeks", "two to four weeks"] },
+    { label: "6 to 8 weeks", text: ["6\u20138 weeks", "6 to 8 weeks", "four to six", "4\u20136 weeks", "4 to 6 weeks"] },
     { label: "Months", text: ["months", "6 months", "up to 6 months"] },
   ];
 
@@ -57,7 +57,7 @@ export function OnsetTimeline({
         <div className="space-y-2">
           <p className="text-small">{cleanClinicalText(studentText)}</p>
 
-          {/* Compact phase timeline — only phases the source names. */}
+          {/* Compact phase timeline, only phases the source names. */}
           {reached.length ? (
             <div className="flex items-center gap-1" role="img" aria-label={`Onset timeline: ${reached.map(p => p.label).join(", ")}`}>
               {phases.map((p, i) => {

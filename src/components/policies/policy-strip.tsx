@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import type { Policy } from "@/lib/policies";
 
 /**
- * Tablet (768–1023px) navigation — the sidebar collapses to a horizontal
+ * Tablet (768 to 1023px) navigation: the sidebar collapses to a horizontal
  * scroll strip of policy pills above the content (single-column layout).
  */
 export function PolicyStrip({

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * One-click Lock/Unlock toggle for a student's whole access. Locking is the
- * unconditional every-request override (`profiles.status = blocked`) — the
+ * unconditional every-request override (`profiles.status = blocked`): the
  * student is cut off on their very next request, even mid-session. Unlocking
  * restores access on the next request with no re-login.
  */

@@ -5,7 +5,7 @@ import { Mic, Square, Loader2, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Voice-ask button for the Psychology Tutor — "talk like Claude".
+ * Voice-ask button for the Psychology Tutor: "talk like Claude".
  *
  * Press once → the AI "appears" and starts listening. You talk naturally
  * (continuous recognition, live interim transcript shown). A pause auto-stops,
@@ -45,7 +45,7 @@ export function VoiceAskButton({
     return typeof window !== "undefined" && ("SpeechRecognition" in window || "webkitSpeechRecognition" in window);
   }
 
-  /** Browser Web Speech — live interim, continuous, auto-stops on pause. */
+  /** Browser Web Speech: live interim, continuous, auto-stops on pause. */
   function startWebSpeech() {
     const SR = (window as unknown as Record<string, new () => unknown>).SpeechRecognition
       ?? (window as unknown as Record<string, new () => unknown>).webkitSpeechRecognition;
@@ -97,7 +97,7 @@ export function VoiceAskButton({
       // "no-speech" is a normal end; anything else is a real error.
       if (ev.error !== "no-speech") setError(`Couldn't hear clearly (${ev.error}). Press the mic and try again.`);
       if (ev.error === "not-allowed" || ev.error === "service-not-allowed") {
-        setError("Microphone permission denied — allow mic access, or type instead.");
+        setError("Microphone permission denied: allow mic access, or type instead.");
       }
     };
     recog.start();
@@ -132,7 +132,7 @@ export function VoiceAskButton({
           if (body.transcript?.trim()) {
             onTranscribed(body.transcript.trim());
           } else {
-            setError("Couldn't hear that — try again or type instead.");
+            setError("Couldn't hear that: try again or type instead.");
           }
         } catch (e) {
           setError(e instanceof Error ? e.message : "Transcription failed. Type instead.");
@@ -147,7 +147,7 @@ export function VoiceAskButton({
       setRecording(true);
     } catch {
       if (webSpeechSupported()) startWebSpeech();
-      else setError("Mic unavailable — type your question instead.");
+      else setError("Mic unavailable: type your question instead.");
     } finally {
       setBusy(false);
     }
@@ -182,7 +182,7 @@ export function VoiceAskButton({
         onClick={toggle}
         disabled={disabled || busy}
         title={recording ? "Stop listening" : "Press once and talk"}
-        aria-label={recording ? "Stop listening" : "Ask by voice — press once and talk"}
+        aria-label={recording ? "Stop listening" : "Ask by voice: press once and talk"}
         aria-pressed={recording}
         className={cn(
           "inline-flex items-center gap-1.5 rounded-md border-2 px-2.5 py-2 text-sm transition-colors",
@@ -199,7 +199,7 @@ export function VoiceAskButton({
         <div className="flex min-w-0 items-center gap-1.5 rounded-md border border-border bg-muted px-2 py-1">
           <Volume2 className="size-3 shrink-0 animate-pulse text-destructive" aria-hidden />
           <span className="truncate text-caption italic text-muted-foreground">
-            {liveText || "Speak now — your words appear here live"}
+            {liveText || "Speak now: your words appear here live"}
           </span>
         </div>
       )}

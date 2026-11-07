@@ -8,13 +8,13 @@ import { cn } from "@/lib/utils";
 import { haptic } from "@/lib/haptics";
 
 /**
- * The dashboard's Practice section — a deliberate block, not scattered cards.
+ * The dashboard's Practice section: a deliberate block, not scattered cards.
  *
  * Three tiers, in the order a busy student actually meets them:
- *   1. The daily habit strip (Judgment Calls + Two-Minute Clinic) — the
+ *   1. The daily habit strip (Judgment Calls + Two-Minute Clinic): the
  *      retention loop. Opening the app costs nothing.
- *   2. The flagship (Consulting Room) — the main practice event.
- *   3. A single "more" affordance into /practice — the full toolset stays one
+ *   2. The flagship (Consulting Room): the main practice event.
+ *   3. A single "more" affordance into /practice: the full toolset stays one
  *      click away, not crowding the dashboard.
  */
 export function DashboardPracticeSection() {
@@ -34,7 +34,7 @@ export function DashboardPracticeSection() {
         The more you practise, the more ready you are. Two minutes a day beats two hours on Sunday.
       </p>
 
-      {/* Daily habit — one card, not a row of tools (the full set lives on /practice). */}
+      {/* Daily habit: one card, not a row of tools (the full set lives on /practice). */}
       <Link
         href="/practice/judgment"
         onClick={() => haptic("tap")}
@@ -53,7 +53,7 @@ export function DashboardPracticeSection() {
         <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
       </Link>
 
-      {/* Flagship — the main event */}
+      {/* Flagship: the main event */}
       <Link
         href="/practice/consulting-room"
         onClick={() => haptic("tap")}

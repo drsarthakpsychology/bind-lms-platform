@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileSection — a vertical content grouping with an optional header row.
+ * MobileSection: a vertical content grouping with an optional header row.
  *
  * The workhorse for breaking a long mobile screen into scannable chunks:
  * a title (h3), an optional muted description line, an optional trailing

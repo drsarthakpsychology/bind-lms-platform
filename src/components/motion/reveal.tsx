@@ -15,7 +15,7 @@ import { motion, revealVariants } from "@/lib/motion";
  * SSR-safety: the element renders at its VISIBLE target immediately
  * (`initial={false}`) on both the server and the first client render.
  * Previously this gated on `useReducedMotion()`, which returns `null` on the
- * server — so every Reveal block shipped `opacity:0` in the SSR HTML (blank
+ * server, so every Reveal block shipped `opacity:0` in the SSR HTML (blank
  * screen until hydration) and reduced-motion users got a genuine hydration
  * mismatch. That was the dashboard "flickering / loading repeatedly" flash.
  * With `initial={false}` the content is never hidden, so there is no invisible

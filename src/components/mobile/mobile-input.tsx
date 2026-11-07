@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileInput — a touch-comfortable input/textarea for phone surfaces.
+ * MobileInput: a touch-comfortable input/textarea for phone surfaces.
  *
  * The mobile principle (T53): every input must be comfortable for touch and
  * survive the software keyboard. This wraps the design tokens at ≥44px height

@@ -28,7 +28,7 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
   const [revealed, setRevealed] = React.useState(false);
   const [finished, setFinished] = React.useState(false);
 
-  // Deterministic per-item option order — seeded by the item id, so it is
+  // Deterministic per-item option order: seeded by the item id, so it is
   // hydration-safe and stable across re-renders without setState-in-effect.
   const orders = React.useMemo(() => {
     const result: Record<string, number[]> = {};
@@ -73,15 +73,15 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
 
   if (finished) {
     const result = scoreQuiz(items, answers);
-    // The same completion language as lessons/drills/debrief (T29) — one
+    // The same completion language as lessons/drills/debrief (T29): one
     // "you finished this" beat instead of a per-screen shrug.
     return (
       <MobileCompletionState
         title="Check complete"
         description={
           result.correct === result.total
-            ? `${result.correct} of ${result.total} correct. Clean sweep — the sources below every answer are the lesson.`
-            : `${result.correct} of ${result.total} correct. A check, not a test — re-read the rationale on the ones you missed.`
+            ? `${result.correct} of ${result.total} correct. Clean sweep: the sources below every answer are the lesson.`
+            : `${result.correct} of ${result.total} correct. A check, not a test: re-read the rationale on the ones you missed.`
         }
         icon={
           <span className="text-numeric text-h2 font-bold text-foreground">

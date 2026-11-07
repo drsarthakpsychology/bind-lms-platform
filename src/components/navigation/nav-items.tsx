@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 /**
  * Icon name → component map. Icon components are functions, so they can't be
  * serialized across the Server→Client boundary as props. Instead the config
- * carries a plain string name, and the component is looked up here — inside
- * the client module graph — where functions are allowed.
+ * carries a plain string name, and the component is looked up here: inside
+ * the client module graph, where functions are allowed.
  */
 export const NAV_ICONS: Record<string, LucideIcon> = {
   home: Home,
@@ -58,7 +58,7 @@ export type NavItem = {
   /** Key into NAV_ICONS (serializable string, not a function). */
   icon: keyof typeof NAV_ICONS | string;
   exact?: boolean;
-  /** Optional section label — rendered as a group header the first time it appears. */
+  /** Optional section label: rendered as a group header the first time it appears. */
   section?: string;
   /** Extra path prefixes that also make this item active (admin sections). */
   match?: string[];
@@ -66,7 +66,7 @@ export type NavItem = {
 
 /**
  * Renders nav items with active-state detection. Receives already-authorized
- * items — role/security decisions live in the server layout, not here.
+ * items: role/security decisions live in the server layout, not here.
  * A `section` on an item renders an eyebrow group header above the first item
  * of that group, chunking long nav lists into scannable sections.
  */
