@@ -2,6 +2,8 @@ import type { PrepQuestion } from "@/lib/prep/types";
 import { QUESTIONS as part1 } from "./history-systems-part1";
 import { QUESTIONS as part2 } from "./history-systems-part2";
 import { QUESTIONS as part3 } from "./history-systems-part3";
+import { QUESTIONS_X01 } from "./history-systems-x01";
+import { QUESTIONS_X02 } from "./history-systems-x02";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -14,4 +16,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · history-systems. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...QUESTIONS_X01, ...QUESTIONS_X02]);
