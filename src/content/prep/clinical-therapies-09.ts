@@ -31,7 +31,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In motivational interviewing, the core skills are summarised as OARS. What does OARS stand for?",
-    options: ["Observe, Assess, Refer, Support", "Open questions, Affirmations, Reflections, Summaries", "Orientation, Agenda, Review, Summary", "Options, Advice, Reassurance, Solutions"],
+    options: ["Observe, Assess, Refer and then Support the client", "Open questions, Affirmations, Reflections, Summaries", "Orientation, Agenda-setting, Review and a Summary", "Options, Advice, Reassurance and practical Solutions"],
     answer: 1,
     explanation:
       "OARS stands for open questions, affirmations (recognising strengths and efforts), reflective listening and summaries. Reflections are the main tool, and skilled MI practitioners use more reflections than questions. The other options are invented or describe other kinds of sessions.",

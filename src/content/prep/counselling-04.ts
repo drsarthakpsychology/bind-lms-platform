@@ -215,7 +215,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Feminist counselling approaches emphasise that:",
-    options: ["Women's psychological problems are mainly caused by their biology", "Counselling should avoid discussing the client's social context", "Distress is linked to gender, power and oppression; the relationship is egalitarian", "Only women counsellors are able to practise feminist counselling"],
+    options: ["Women's psychological problems are mainly caused by their biology", "Counselling should avoid discussing the client's social context", "Distress links to gender and power, in an egalitarian relationship", "Only women counsellors are able to practise feminist counselling"],
     answer: 2,
     explanation:
       "Feminist therapy looks at how gender roles, discrimination, violence and power inequalities shape distress, aims for an egalitarian relationship and may encourage social action. It does not reduce problems to biology, avoid context or exclude male counsellors. Examples in India include work on domestic violence and dowry-related stress.",
@@ -272,7 +272,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "'Intersectionality', a term introduced by Kimberlé Crenshaw, means that:",
-    options: ["Overlapping identities interact to create particular privilege or disadvantage", "Only one identity, such as gender, matters at any one time", "Counsellors should treat all clients in exactly the same way", "Cultural differences are not relevant to counselling outcomes"],
+    options: ["Overlapping identities combine to shape privilege or disadvantage", "Only one identity, such as gender, matters at any one time", "Counsellors should treat every client in exactly the same way", "Cultural differences are not relevant to counselling outcomes"],
     answer: 0,
     explanation:
       "Intersectionality highlights that, for example, a Dalit woman with a disability faces forms of discrimination that are not just the sum of gender, caste and disability separately. Counsellors therefore consider multiple, interacting identities. The other options ignore this complexity or deny cultural relevance.",

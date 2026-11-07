@@ -47,12 +47,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Irvin Yalom described four 'ultimate concerns' that existential psychotherapy addresses. They are:",
-    options: [
-      "Id, ego, superego and reality",
-      "Thoughts, feelings, behaviours and body",
-      "Safety, love, esteem and self-actualisation",
-      "Death, freedom, existential isolation and meaninglessness",
-    ],
+    options: ["Id, ego, superego and the demands of reality", "Thoughts, feelings, behaviours and the body", "Safety, love, esteem and self-actualisation", "Death, freedom, isolation and meaninglessness"],
     answer: 3,
     explanation:
       "Yalom's existential psychotherapy works with anxiety arising from death, freedom (and the responsibility it brings), existential isolation and the search for meaning. Id, ego and superego come from Freud's structural model, thoughts, feelings, behaviours and body form a CBT model, and safety, love, esteem and self-actualisation are levels of Maslow's hierarchy.",
@@ -324,12 +319,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Psychoeducation for bipolar disorder (for example, the Barcelona group programme) mainly aims to:",
-    options: [
-      "Replace mood stabilisers with talking alone",
-      "Analyse unconscious conflicts behind mood swings",
-      "Teach relaxation as the only intervention",
-      "Improve awareness of illness, adherence and early warning signs",
-    ],
+    options: ["Replace mood stabilisers with talking therapy alone", "Analyse the unconscious conflicts behind mood swings", "Teach relaxation as the one and only intervention", "Build illness awareness, adherence and early warning skills"],
     answer: 3,
     explanation:
       "Group psychoeducation teaches people about the illness, medication and adherence, early warning signs, regular routines and avoiding substances. In the Barcelona trial (Colom and colleagues), it reduced relapses and admissions over 5 years compared with unstructured groups. It supports medication rather than replacing it, and it is not psychodynamic or relaxation-only.",
@@ -343,12 +333,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Marlatt's relapse prevention model for addictions describes the 'abstinence violation effect' as:",
-    options: [
-      "The physical withdrawal that follows stopping a drug",
-      "A medicine that makes alcohol unpleasant to drink",
-      "A planned, therapist-approved return to controlled use",
-      "Guilt and loss of control after one lapse, which can turn a lapse into a full relapse",
-    ],
+    options: ["The physical withdrawal that follows stopping a drug", "A medicine that makes alcohol unpleasant to drink", "A planned, therapist-approved return to controlled use", "Guilt and loss of control after a lapse, fuelling relapse"],
     answer: 3,
     explanation:
       "After a lapse, people with rigid abstinence goals may think 'I've blown it, I'm a failure, so I may as well keep going', and this guilt and self-blame can turn a single slip into relapse. Relapse prevention teaches people to see lapses as learning opportunities, identify high-risk situations and build coping skills. The other options describe withdrawal, disulfiram and controlled-drinking goals.",
@@ -383,12 +368,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about internet-delivered CBT (iCBT) is best supported?",
-    options: [
-      "iCBT does not work for any disorder",
-      "iCBT is effective only without any human contact",
-      "iCBT is always superior to face-to-face CBT",
-      "Guided iCBT can match face-to-face CBT for depression and anxiety",
-    ],
+    options: ["iCBT does not work for any common mental disorder", "iCBT is effective only when there is no human contact", "iCBT is always superior to face-to-face CBT in trials", "Guided iCBT can match face-to-face CBT for many problems"],
     answer: 3,
     explanation:
       "Meta-analyses show guided iCBT, with brief support from a therapist or coach, produces effects similar to face-to-face CBT for depression, panic and social anxiety. Unguided programmes help too but have higher drop-out. iCBT clearly works, so the claim that it helps no disorder is wrong. Human guidance generally improves results, and iCBT is not consistently superior to face-to-face therapy. India's Tele-MANAS helpline is a related example of using technology to widen access.",
@@ -401,12 +381,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "J.S. Neki, an Indian psychiatrist, proposed that psychotherapy in India could draw on the traditional relationship between:",
-    options: [
-      "Landlord and tenant, as a model of fair contract",
-      "Doctor and nurse, as a model of teamwork",
-      "Employer and employee, as a model of authority",
-      "Guru and chela (teacher and disciple), with a more active, guiding therapist role",
-    ],
+    options: ["Landlord and tenant, as a model of a fair contract", "Doctor and nurse, as a model of close teamwork", "Employer and employee, as a model of authority", "Guru and chela, with a more active, guiding therapist"],
     answer: 3,
     explanation:
       "Neki argued that the guru-chela relationship, with dependence that is accepted and gradually outgrown, offers a culturally fitting model for therapy in India, where patients often expect a more directive and caring therapist than in Western 'equal partnership' models. Other Indian writers, such as Surya and Jayaram, also noted the importance of family involvement and a more active therapist stance.",
@@ -435,12 +410,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Why is clinical supervision considered essential in psychotherapy training and practice?",
-    options: [
-      "Mainly to monitor how many hours therapists work",
-      "Only to satisfy insurance requirements",
-      "To replace the need for any formal training",
-      "To protect clients, build skills and help therapists notice blind spots",
-    ],
+    options: ["Mainly to monitor how many hours each therapist works", "Only to satisfy the requirements of insurance companies", "To replace the need for any formal training in therapy", "To protect clients, build skills and reveal blind spots"],
     answer: 3,
     explanation:
       "Supervision has several functions: protecting client welfare (a gatekeeping and ethical role), developing competence through feedback and recordings, and supporting therapists in managing their reactions, such as countertransference and burnout. Bernard's discrimination model describes the supervisor as teacher, counsellor and consultant. It is not just time-keeping or an insurance formality, and it supports, rather than replaces, training.",

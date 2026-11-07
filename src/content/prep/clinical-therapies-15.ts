@@ -25,7 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A child earns a star each time she brushes her teeth without being reminded, and five stars buy a trip to the park. This is an example of:",
-    options: ["A token (star) chart using positive reinforcement", "Punishment", "Classical conditioning", "Extinction"],
+    options: ["A star chart using positive reinforcement", "Punishment for forgetting to brush her teeth", "Classical conditioning with a bell signal", "Extinction of the tooth-brushing habit"],
     answer: 0,
     explanation:
       "The stars are secondary reinforcers given after the target behaviour and exchanged for a back-up reward, so the behaviour becomes more likely. This is a simple token system based on positive reinforcement. Punishment reduces behaviour, classical conditioning pairs stimuli, and extinction removes reinforcement.",
@@ -39,12 +39,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "'Automatic thoughts' in Beck's model are:",
-    options: [
-      "Deep unconscious wishes revealed only by dreams",
-      "Thoughts the person deliberately chooses to think",
-      "Rules learned in early childhood about how the world must be",
-      "Quick, situation-specific thoughts that pop up and are usually accepted as true",
-    ],
+    options: ["Deep unconscious wishes revealed only through dreams", "Thoughts that the person deliberately chooses to think", "Rules learned in early childhood about how the world must be", "Quick, situation-specific thoughts that are accepted as true"],
     answer: 3,
     explanation:
       "Automatic thoughts are brief, spontaneous thoughts or images in specific situations ('I'll mess this up'), which people tend to accept without questioning. They are close to awareness, so they can be caught and examined. Deep unconscious wishes belong to psychoanalysis. Deliberate thoughts are not automatic. Long-standing rules are intermediate beliefs.",
@@ -87,12 +82,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A therapist begins a business partnership with a current client. This is best described as:",
-    options: [
-      "A dual relationship that risks exploitation and harms objectivity",
-      "Acceptable if the client agrees",
-      "A form of positive transference",
-      "A recommended way to build the alliance",
-    ],
+    options: ["A dual relationship that risks exploitation", "Acceptable as long as the client agrees to it", "A healthy form of positive transference", "A recommended way to build the alliance"],
     answer: 0,
     explanation:
       "Entering a business, social or romantic relationship with a client creates a dual (multiple) relationship. The power imbalance of therapy makes exploitation likely and the therapist's judgement less objective, so professional codes prohibit or strongly restrict such relationships. Client agreement does not remove the risk. It is not transference, and it does not build a healthy alliance.",
@@ -123,12 +113,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement best describes the 'common factors versus specific factors' debate in psychotherapy?",
-    options: [
-      "It is about whether therapy should be offered free of charge",
-      "It concerns whether outcomes depend mainly on factors shared by all therapies or on the specific techniques of each therapy",
-      "It concerns whether medication or psychotherapy came first in history",
-      "It is about whether therapists should be psychologists or psychiatrists",
-    ],
+    options: ["Whether therapy should be offered free of charge to all patients", "Whether outcomes depend on common factors or on specific techniques", "Whether medication or psychotherapy came first in the history of care", "Whether therapists should be trained as psychologists or psychiatrists"],
     answer: 1,
     explanation:
       "Common-factor theorists (Frank, Wampold) argue that the alliance, empathy, expectations and a credible rationale explain most of the benefit, which is why different bona fide therapies often do equally well. Specific-factor theorists point to treatments that clearly beat others for particular problems, such as exposure for OCD. Most researchers now see both as important. The other options are unrelated questions.",
@@ -141,12 +126,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In treating OCD with mental rituals (for example, silently repeating a 'good' phrase after a bad thought), exposure and response prevention needs to:",
-    options: [
-      "Ignore mental rituals, since only visible rituals matter",
-      "Identify the mental rituals and help the person stop or delay them during exposure, while tolerating the uncertainty",
-      "Encourage more mental rituals to replace the physical ones",
-      "Use thought stopping to suppress the intrusive thought",
-    ],
+    options: ["Ignore mental rituals, since only visible rituals matter", "Find the mental rituals and help the person stop or delay them", "Encourage more mental rituals to replace the physical ones", "Use thought stopping to suppress each intrusive thought"],
     answer: 1,
     explanation:
       "Mental rituals work just like physical compulsions: they neutralise anxiety and stop the person learning that the thought is harmless. ERP for 'pure O' presentations therefore exposes the person to the thoughts (for example, through scripts or recordings) while blocking or postponing mental neutralising. Ignoring or encouraging mental rituals keeps OCD going, and thought stopping increases intrusions.",
@@ -160,12 +140,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "A network meta-analysis of psychotherapies for adult depression ranks treatments by combining direct comparisons (A versus B) with indirect comparisons (A versus C and B versus C). What is the main assumption that must hold for its indirect estimates to be trusted?",
-    options: [
-      "All trials used the same therapist",
-      "Only waiting-list controls are included",
-      "Transitivity: trials in the network are similar enough in patients, settings and controls that indirect comparisons are fair",
-      "All therapies have identical effect sizes",
-    ],
+    options: ["All the trials in the network used the same therapist", "Only trials with waiting-list controls are included", "Transitivity: trials are similar enough for fair indirect comparison", "All of the therapies compared have identical effect sizes"],
     answer: 2,
     explanation:
       "Network meta-analysis relies on transitivity (also called similarity): if A versus C trials and B versus C trials differ greatly in severity, setting or type of control, the indirect A versus B estimate may be biased. Consistency between direct and indirect evidence is checked statistically. Same-therapist trials and identical effects are not required. Waiting-list controls are in fact a known problem, because they can inflate effects compared with usual care.",

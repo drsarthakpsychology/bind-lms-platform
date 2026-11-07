@@ -176,7 +176,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The DSM-5-TR general criteria for personality disorder require that the enduring pattern is manifested in at least two of which areas?",
-    options: ["Memory, attention, language and visual perception", "Mood, sleep, appetite and daily energy level", "Cognition, affectivity, interpersonal functioning, impulse control", "Occupation, education, housing and personal finances"],
+    options: ["Memory, attention, language and visual perception", "Mood, sleep, appetite and daily energy levels", "Cognition, affectivity, relating and impulse control", "Occupation, education, housing and personal finance"],
     answer: 2,
     explanation:
       "General Criterion A requires a pattern of inner experience and behaviour that deviates markedly from cultural expectations in at least two of: cognition (ways of perceiving self, others and events), affectivity, interpersonal functioning and impulse control. It must be inflexible, pervasive, stable, and traceable to adolescence or early adulthood. The other options list cognitive domains, depressive symptoms or social circumstances.",

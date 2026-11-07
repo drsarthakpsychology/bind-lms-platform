@@ -109,7 +109,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Stanley and Brown's safety planning intervention for suicidal clients includes which sequence of steps?",
-    options: ["Warning signs, own coping, distractions, helpers, crisis lines, safe means", "Signing a no-harm contract and then ending the session", "Advising the client to keep busy and not think about it", "Referring the client elsewhere with no further contact"],
+    options: ["Warning signs, coping steps, helpers, crisis lines, safe means", "Signing a no-harm contract and then ending the session there", "Advising the client to keep busy and simply not think about it", "Referring the client elsewhere with no further contact at all"],
     answer: 0,
     explanation:
       "A safety plan is written together and covers: recognising warning signs; things the person can do alone to cope; people and social settings that distract; people to ask for help; professionals and crisis lines (in India, for example, Tele-MANAS on 14416); and reducing access to means. Trials link safety planning with fewer suicidal behaviours. No-harm contracts have no evidence of protection, and vague advice or simple referral without follow-up is not enough.",
@@ -466,7 +466,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The WHO's list of core life skills for young people includes:",
-    options: ["Decision making, problem solving, empathy and coping with stress", "Reading, writing and arithmetic at grade level", "Practical skills such as driving and cooking", "Memorising textbooks quickly before exams"],
+    options: ["Decision making, problem solving, empathy and coping", "Reading, writing and arithmetic at the expected grade", "Practical skills such as driving, cooking and cleaning", "Memorising whole chapters quickly before exams"],
     answer: 0,
     explanation:
       "WHO describes ten core life skills: decision making, problem solving, creative thinking, critical thinking, effective communication, interpersonal relationship skills, self-awareness, empathy, coping with emotions and coping with stress. Life-skills education is widely used in Indian schools through programmes such as the adolescence education programme. Basic literacy, practical chores and memorising are not what the term means.",

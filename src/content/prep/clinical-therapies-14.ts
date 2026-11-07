@@ -12,12 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Barlow's Unified Protocol for the transdiagnostic treatment of emotional disorders targets which core process?",
-    options: [
-      "Low intelligence across anxiety and mood disorders",
-      "A specific phobic stimulus in each diagnosis",
-      "Neuroticism, shown as aversive reactions to strong emotion and attempts to avoid it",
-      "Unresolved Oedipal conflict common to all neuroses",
-    ],
+    options: ["Low intelligence shared across anxiety and mood disorders", "A specific phobic stimulus that is unique to each diagnosis", "Neuroticism, with aversive reactions to strong emotion", "Unresolved Oedipal conflict that is common to all neuroses"],
     answer: 2,
     explanation:
       "The Unified Protocol treats anxiety, depressive and related disorders as sharing a temperament of neuroticism, in which strong emotions are experienced as aversive and then avoided or suppressed. Its modules (emotional awareness, cognitive flexibility, countering emotional behaviours, interoceptive and situational exposure) target this shared process. Trials found it roughly equivalent to disorder-specific CBT protocols, with lower drop-out. It does not target intelligence, a single stimulus, or Oedipal conflict.",
@@ -82,12 +77,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In childhood OCD and anxiety, 'family accommodation' refers to:",
-    options: [
-      "Housing the family near the clinic",
-      "Parents changing family routines and taking part in rituals or avoidance to reduce the child's distress",
-      "A specific family therapy school",
-      "Parents attending every school class with the child to help learning",
-    ],
+    options: ["Housing the whole family near the clinic during treatment", "Parents joining in rituals or avoidance to ease distress", "A specific school of family therapy used for OCD", "Parents attending every school class with the child"],
     answer: 1,
     explanation:
       "Accommodation includes giving repeated reassurance, washing extra clothes, avoiding triggers for the child or answering the same question many times. It brings short-term relief but strengthens the disorder and predicts poorer outcome. Programmes such as SPACE train parents to reduce accommodation supportively, and this can work even when the child will not attend therapy.",
@@ -139,12 +129,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which instruction is part of stimulus control therapy for insomnia?",
-    options: [
-      "Stay in bed and try harder to sleep if you are awake",
-      "Use the bed for watching television so it feels relaxing",
-      "If you cannot sleep within about 20 minutes, get up and do something quiet until sleepy",
-      "Nap for several hours in the afternoon to catch up",
-    ],
+    options: ["Stay in bed and try harder to sleep if you are lying awake", "Use the bed for watching television so that it feels relaxing", "If not asleep in about 20 minutes, get up and do something quiet", "Nap for several hours in the afternoon to catch up on lost sleep"],
     answer: 2,
     explanation:
       "Bootzin's stimulus control rules aim to re-link bed with sleep: go to bed only when sleepy, use the bed only for sleep and sex, get up if unable to sleep, keep a fixed wake time, and avoid daytime naps. Lying awake trying to sleep, using the bed for television and long naps all weaken the bed-sleep association.",
@@ -158,12 +143,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In Freeman's 'Feeling Safe' programme for persecutory delusions, which target was found to be a key mechanism?",
-    options: [
-      "Raising IQ through cognitive drills",
-      "Interpreting early childhood trauma",
-      "Reducing safety behaviours so the person can learn that they are safe now",
-      "Teaching the patient to argue with every thought",
-    ],
+    options: ["Raising IQ through repeated cognitive drills", "Interpreting early childhood trauma in depth", "Dropping safety behaviours to learn safety now", "Teaching the patient to argue with every thought"],
     answer: 2,
     explanation:
       "Freeman's interventionist approach targets maintaining factors in paranoia, such as worry, low self-esteem, poor sleep, reasoning biases and especially safety behaviours (avoidance, keeping watch). Dropping safety behaviours in graded tasks allows the person to learn that they are safe. The Feeling Safe trial showed a large effect on persecutory delusions. It does not aim to raise IQ, interpret trauma or argue with every thought.",
@@ -196,12 +176,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "A clinic uses a 45-item outcome questionnaire every session. After session 4, a client's score is much worse than expected for someone with her starting score, and the system flags her in red. Her therapist feels the sessions are going well.",
     stem: "What is the most evidence-based response?",
-    options: [
-      "Ignore the flag, since the therapist's clinical judgement is more accurate",
-      "Discharge the client, since therapy is not working",
-      "Use the flag to review the alliance, motivation, supports and treatment plan with the client, considering changes",
-      "Double the number of sessions without discussing it",
-    ],
+    options: ["Ignore the flag, since clinical judgement is more accurate than data", "Discharge the client at once, since therapy is clearly not working", "Use the flag to review alliance, motivation and plan with the client", "Double the number of sessions without discussing it with the client"],
     answer: 2,
     explanation:
       "Feedback studies show that when therapists receive and act on 'not on track' alerts, using clinical support tools to look at the alliance, motivation, social support and the need for referral or a change of plan, these clients do better and fewer deteriorate. Therapists are poor at spotting deterioration unaided, so ignoring the flag is risky. Discharge or unexplained changes are not evidence-based responses.",
@@ -214,12 +189,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In a 'dismantling' (component analysis) study of a therapy, researchers:",
-    options: [
-      "Compare the full therapy with the same therapy minus one component, to see whether that component adds benefit",
-      "Compare the therapy with a waiting list only",
-      "Interview therapists about what they believe helps",
-      "Test the therapy in a single case over many years",
-    ],
+    options: ["Compare the full therapy with the same therapy minus one part", "Compare the therapy with a waiting-list control group only", "Interview therapists about what they believe helps clients", "Test the therapy in a single case followed over many years"],
     answer: 0,
     explanation:
       "Dismantling designs remove one component (for example, the cognitive part of CBT, or the eye movements in EMDR) and compare outcomes with the full package. If outcomes are equal, that component may not be necessary. Jacobson's study of behavioural activation versus full CT is a classic example. Waiting-list comparisons test overall efficacy, interviews give opinions, and single cases cannot isolate components across a group.",
@@ -232,12 +202,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Dugas's CBT for GAD, based on the intolerance of uncertainty model, includes which distinctive component?",
-    options: [
-      "Dream interpretation of worry themes",
-      "Flooding with images of every feared catastrophe at once",
-      "Behavioural experiments that expose the person to uncertainty, such as making small decisions without checking",
-      "Teaching the person to seek reassurance more often",
-    ],
+    options: ["Dream interpretation of the main worry themes", "Flooding with images of every feared catastrophe at once", "Experiments in uncertainty, such as deciding without checking", "Teaching the person to seek reassurance more often"],
     answer: 2,
     explanation:
       "The model holds that GAD worry is driven by an inability to tolerate uncertainty. Treatment includes awareness of uncertainty, behavioural experiments with uncertainty (trying a new restaurant without reading reviews, sending an email without re-reading it), challenging beliefs about the usefulness of worry, problem-solving training and imaginal exposure to core fears. Dream work and flooding with all fears are not part of it, and reassurance-seeking is reduced, not increased.",
@@ -271,12 +236,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Research using standardised challenging role-plays found that therapists who achieve better client outcomes tend to score higher on:",
-    options: [
-      "Years since qualification",
-      "Adherence to one specific manual",
-      "Facilitative interpersonal skills, such as warmth, empathy, alliance-building and responding well to hostility",
-      "Number of theoretical orientations they claim",
-    ],
+    options: ["The number of years since they qualified", "Strict adherence to one specific manual", "Facilitative interpersonal skills such as warmth", "The number of theoretical orientations they claim"],
     answer: 2,
     explanation:
       "Studies by Anderson and colleagues used recorded difficult client vignettes and found that therapists' facilitative interpersonal skills (verbal fluency, warmth, empathy, hope, persuasiveness, focus on alliance and repairing ruptures) predicted their clients' outcomes. Years of experience, strict adherence and claimed orientations did not predict outcome well. This supports training that uses deliberate practice of these skills.",
@@ -291,12 +251,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In cognitive therapy for PTSD, a woman who was assaulted reports that her intrusive memory is fragmented and that she feels the danger is still happening now. Her therapist helps her identify the 'hot spots' in the memory and the meaning of each, then updates them with information she learned later (for example, 'I thought I was going to die, but I survived, and he was arrested').",
     stem: "This technique, central to Ehlers and Clark's approach, is called:",
-    options: [
-      "Systematic desensitisation of the memory",
-      "Thought stopping of intrusions",
-      "Updating trauma memories, by linking hot spots with corrective information",
-      "Free association to the trauma",
-    ],
+    options: ["Systematic desensitisation of the trauma memory", "Thought stopping of intrusive trauma images", "Updating hot spots with corrective information", "Free association to the trauma in each session"],
     answer: 2,
     explanation:
       "Ehlers and Clark's model says poorly elaborated trauma memories and negative appraisals produce a sense of current threat. In 'updating', the person identifies the worst moments (hot spots) and their meanings, then deliberately links them with what they now know, which reduces the sense that the danger is current. This is combined with reclaiming life, stimulus discrimination and site visits. It is not SD, thought stopping or free association.",
@@ -310,12 +265,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "After a disaster, such as a flood in a district of Assam, which early psychological response is recommended by WHO guidance?",
-    options: [
-      "Single-session debriefing for all survivors, describing the event in detail",
-      "Psychological first aid: practical care, listening without pressure, linking to services, and protecting from further harm",
-      "Starting benzodiazepines for everyone exposed",
-      "Waiting 6 months before offering any support",
-    ],
+    options: ["Single-session debriefing for all survivors, recounting the event in detail", "Psychological first aid: practical care, listening, linking to services", "Starting benzodiazepines for everyone exposed, to prevent PTSD", "Waiting 6 months before offering any kind of support at all"],
     answer: 1,
     explanation:
       "Psychological first aid offers humane, practical support: ensuring safety, meeting basic needs, listening without forcing people to talk, helping people connect with family and services, and identifying those who need specialist care. Routine debriefing is not recommended and can harm. Benzodiazepines are not recommended for early prevention of PTSD. Waiting months without support neglects people's immediate needs.",
@@ -364,12 +314,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Meta-analyses of culturally adapted psychotherapies show that:",
-    options: [
-      "Cultural adaptation reduces effectiveness",
-      "Culturally adapted treatments are moderately more effective than unadapted versions for minority and non-Western groups",
-      "Culture has no influence on therapy outcomes",
-      "Only medication needs cultural adaptation",
-    ],
+    options: ["Cultural adaptation generally reduces the effectiveness of therapy", "Adapted treatments are moderately more effective than unadapted ones", "Culture has no detectable influence on therapy outcomes at all", "Only medication, not psychotherapy, needs cultural adaptation"],
     answer: 1,
     explanation:
       "Pooled studies find culturally adapted treatments, which adjust language, metaphors, family involvement, explanatory models and goals, produce better outcomes than unadapted versions. Examples include adapted CBT in South Asia and Pakistan's Thinking Healthy Programme for perinatal depression delivered by health workers. Adaptation keeps the active ingredients while improving fit.",
@@ -384,12 +329,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "In rural Pakistan, lady health workers were trained to deliver a CBT-based programme to mothers with perinatal depression during routine home visits. The programme used culturally familiar pictures and focused on the mother's health, her relationship with the baby and her relationships with others.",
     stem: "What did the randomised trial of this 'Thinking Healthy Programme' show?",
-    options: [
-      "No benefit compared with routine visits",
-      "Harm to infants",
-      "Depression rates fell by about half compared with control, with benefits for infant care and lower disability",
-      "Benefit only when psychiatrists delivered it",
-    ],
+    options: ["No benefit compared with routine health worker visits", "Harm to infants because mothers were distracted", "Depression rates fell by about half, with wider benefits", "Benefit only when psychiatrists delivered the sessions"],
     answer: 2,
     explanation:
       "The trial found that about half as many mothers were depressed at 6 and 12 months in the intervention group, with more exclusive breastfeeding and better infant care practices. It is now a WHO-endorsed task-sharing model and has been adapted in India and other countries. It was delivered by community health workers, not psychiatrists, and caused no harm.",
@@ -403,12 +343,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Many clinicians avoid offering exposure therapy for PTSD because they fear it will worsen symptoms. What does the evidence show?",
-    options: [
-      "Exposure usually causes lasting worsening",
-      "Only a small minority show temporary increases in symptoms, and these do not predict poor outcome or drop-out",
-      "Exposure is effective only in men",
-      "Exposure should never be used with comorbid depression",
-    ],
+    options: ["Exposure usually causes a lasting worsening of symptoms", "A few worsen briefly, and this does not predict poor outcome", "Exposure has been shown to be effective only in men", "Exposure should never be used with comorbid depression"],
     answer: 1,
     explanation:
       "Studies of prolonged exposure show that temporary symptom spikes are uncommon, are not linked to drop-out, and do not predict worse final outcome. Exposure works across genders and in people with comorbid depression. Therapist beliefs and anxiety about exposure are a known barrier to delivering effective treatment.",
@@ -422,12 +357,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In an A-B-A-B single-case design testing a behavioural intervention for self-injury in a child with autism, the strongest evidence that the intervention caused change comes from:",
-    options: [
-      "A single drop in behaviour after the first introduction of treatment",
-      "Parents' reports that the child seems happier",
-      "Behaviour returning towards baseline when treatment is withdrawn and improving again when it is reinstated",
-      "The child's IQ score increasing",
-    ],
+    options: ["A single drop in behaviour after treatment is first introduced", "Parents' reports that the child seems happier at home", "Behaviour reverts on withdrawal and improves on reinstatement", "The child's IQ score increasing over the treatment period"],
     answer: 2,
     explanation:
       "Reversal (A-B-A-B) designs show control when behaviour changes each time the intervention is introduced and returns when it is withdrawn, which makes alternative explanations such as maturation unlikely. A single change after introduction (A-B) is weaker. Parent impressions and IQ changes do not show experimental control. Multiple-baseline designs are used when withdrawal would be unethical.",
@@ -443,12 +373,7 @@ export const PART: PrepQuestion[] = [
     passage:
       "Researchers coded recordings of MI sessions with problem drinkers. They found that the strength of clients' commitment language increased over the session in those who later reduced drinking, while overall frequency of 'reasons' and 'desire' statements alone predicted outcome weakly. Therapist MI-consistent behaviours increased client change talk.",
     stem: "What do these findings suggest about how MI works?",
-    options: [
-      "Client speech is irrelevant to outcome",
-      "MI works only through therapist advice",
-      "Therapist MI-consistent skills evoke change talk, and the strength and pattern of client commitment language predict behaviour change",
-      "Sustain talk is the main predictor of improvement",
-    ],
+    options: ["Client speech in sessions is irrelevant to the outcome", "MI works mainly through the therapist's direct advice", "MI skills evoke change talk, and commitment talk predicts change", "Sustain talk is the main predictor of later improvement"],
     answer: 2,
     explanation:
       "Psycholinguistic analyses (Amrhein and colleagues) found that commitment strength, especially near the end of the session, predicted outcomes, and process studies show therapist MI-consistent behaviour increases change talk, while confrontation increases sustain talk. This supports a 'technical' hypothesis of MI. Client speech clearly matters. MI relies little on advice. Sustain talk predicts poorer, not better, outcomes.",
@@ -462,7 +387,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In India, who is legally recognised to practise as a clinical psychologist?",
-    options: ["Anyone holding a BA or MA degree in psychology", "Anyone who has completed an online counselling course", "A person with an RCI-recognised clinical qualification, registered with RCI", "Anyone employed in a hospital psychology department"],
+    options: ["Anyone who holds a BA or MA degree in psychology", "Anyone who has completed an online counselling course", "A person with an RCI-recognised clinical qualification", "Anyone employed in a hospital psychology department"],
     answer: 2,
     explanation:
       "Under the RCI Act 1992 and the Mental Healthcare Act 2017, a clinical psychologist must hold an RCI-recognised professional qualification, such as the M.Phil in Clinical Psychology (now being renamed as a professional master's), and be registered in the Central Rehabilitation Register. A BA, short online course or hospital job does not qualify a person to practise as a clinical psychologist.",
@@ -476,12 +401,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "When adapting CBT for a 7-year-old, the most important change is usually to:",
-    options: [
-      "Use long written thought records",
-      "Exclude parents entirely to protect confidentiality",
-      "Use concrete, visual and playful methods, and involve parents as coaches",
-      "Focus mainly on abstract core beliefs",
-    ],
+    options: ["Use long written thought records each week", "Exclude parents entirely to protect confidentiality", "Use concrete, playful methods and coach the parents", "Focus mainly on abstract core beliefs and schemas"],
     answer: 2,
     explanation:
       "Young children think concretely, so CBT uses pictures, stories, games, rewards and simple self-talk, and parents are trained to coach and reinforce skills at home. Long written records and abstract core-belief work suit adolescents and adults better. Excluding parents usually weakens results in young children.",
@@ -495,12 +415,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which adaptation is recommended when delivering CBT to older adults with mild cognitive impairment?",
-    options: [
-      "Faster pace with more abstract discussion",
-      "Avoiding all homework",
-      "Slower pace, written summaries, memory aids and repetition, with involvement of a carer if helpful",
-      "Using only psychoanalytic interpretation",
-    ],
+    options: ["A faster pace with more abstract discussion of beliefs", "Avoiding all homework so as not to overload the patient", "Slower pace, written summaries, memory aids and repetition", "Using only psychoanalytic interpretation of the material"],
     answer: 2,
     explanation:
       "Adapted CBT for older adults uses a slower pace, frequent summaries, written and visual aids, repetition and practical homework, and may involve carers. Such adaptations allow older adults to benefit as much as younger adults from CBT for depression and anxiety. Faster abstract work, no homework or interpretation-only approaches would not fit their needs.",

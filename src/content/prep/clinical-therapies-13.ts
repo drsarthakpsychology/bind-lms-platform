@@ -149,12 +149,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Family therapy differs from individual therapy mainly in that it:",
-    options: [
-      "Treats each member separately and never meets them together",
-      "Always involves medication for the whole family",
-      "Views problems as part of patterns in the family system, not only within one person",
-      "Focuses only on the oldest family member",
-    ],
+    options: ["Treats each member separately and never meets them together", "Always involves prescribing medication for the whole family", "Sees problems as part of family patterns, not only in one person", "Focuses only on the oldest member as head of the family"],
     answer: 2,
     explanation:
       "Systemic family therapy sees a person's symptoms in the context of family relationships, communication and roles, so change in the pattern can help everyone. Family members are usually seen together. Medication is not part of family therapy, and the focus is on the whole system, not on any single member.",
@@ -167,12 +162,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In CBT, a 'behavioural experiment' is:",
-    options: [
-      "A laboratory study on animals",
-      "A planned real-life test of a belief or prediction",
-      "A personality test given at intake",
-      "A free association exercise",
-    ],
+    options: ["A laboratory study carried out on animals", "A planned real-life test of a belief", "A personality test that is given at intake", "A free association exercise in the session"],
     answer: 1,
     explanation:
       "A behavioural experiment is planned with the client to test a prediction, for example 'If I speak in the meeting, people will laugh at me'. The client carries it out, records what happens, and reviews what it means for the belief. It is not animal research, a test at intake or a psychodynamic exercise.",
@@ -203,12 +193,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Before starting therapy, informed consent should include:",
-    options: [
-      "Only the fee for sessions",
-      "Nothing, since therapy is only talking",
-      "A promise that the client will be cured",
-      "What therapy involves, its likely benefits and risks, alternatives, and the limits of confidentiality",
-    ],
+    options: ["Only the fee for sessions and how it is to be paid", "Nothing, since therapy is only a friendly conversation", "A firm promise that the client will be fully cured", "What therapy involves, its risks, options and limits"],
     answer: 3,
     explanation:
       "Informed consent means the client understands the nature of the therapy, expected benefits, possible risks, alternatives, practical arrangements and when confidentiality may be broken (for example, serious risk to self or others). Talking therapies can have side effects, so consent matters. No ethical therapist promises a cure.",
@@ -235,12 +220,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In CBT, 'homework' is given mainly because:",
-    options: [
-      "It keeps clients busy so they do not call the therapist",
-      "Learning and change happen mostly in everyday life, so practice between sessions makes gains stronger",
-      "It is required by law",
-      "It replaces the need for sessions",
-    ],
+    options: ["It keeps clients busy so that they do not call the therapist", "Change happens in daily life, so practice strengthens gains", "It is a legal requirement for all forms of psychotherapy", "It replaces the need for regular sessions with the therapist"],
     answer: 1,
     explanation:
       "Between-session tasks let clients practise skills and test beliefs in the settings where problems happen, which helps gains last. Studies find that completing homework is linked to better outcomes in CBT. It is not busy-work, a legal requirement or a substitute for sessions.",
@@ -270,12 +250,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In a token economy on a ward, tokens are:",
-    options: [
-      "Primary reinforcers, such as food",
-      "Secondary (conditioned) reinforcers that can be exchanged for back-up rewards",
-      "Punishments given after unwanted behaviour",
-      "Medicines given to calm patients",
-    ],
+    options: ["Primary reinforcers, such as food and drink", "Conditioned reinforcers exchanged for back-up rewards", "Punishments that follow each unwanted behaviour", "Medicines that are given to calm patients down"],
     answer: 1,
     explanation:
       "Tokens have no value in themselves; they become reinforcing because they can be traded for back-up rewards, such as snacks, outings or privileges. This makes them secondary or conditioned reinforcers. Food is a primary reinforcer. Tokens are not punishments or medicines, though tokens may be lost as a response cost.",
@@ -335,12 +310,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A distress tolerance skill in DBT is used mainly to:",
-    options: [
-      "Get through a crisis without making things worse",
-      "Win an argument with a partner",
-      "Interpret childhood memories",
-      "Increase anxiety to test beliefs",
-    ],
+    options: ["Get through a crisis without making it worse", "Win an argument with a partner or parent", "Interpret painful memories from childhood", "Increase anxiety on purpose to test beliefs"],
     answer: 0,
     explanation:
       "Distress tolerance skills, such as TIPP, distraction (ACCEPTS), self-soothing and radical acceptance, help people survive intense emotional crises without self-harm, substance use or other actions that make things worse. They are not for winning arguments (DEAR MAN aims at fair requests), interpreting memories, or raising anxiety.",
@@ -353,12 +323,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Interpersonal psychotherapy for depression focuses mainly on:",
-    options: [
-      "Unconscious childhood conflicts",
-      "Current relationship problems linked to the depression",
-      "Changing thoughts through thought records",
-      "Exposure to feared objects",
-    ],
+    options: ["Unconscious conflicts from early childhood", "Current relationship problems linked to the depression", "Changing thoughts through daily thought records", "Graded exposure to feared objects and places"],
     answer: 1,
     explanation:
       "IPT links depression to present interpersonal problems (grief, role disputes, role transitions or interpersonal deficits) and helps the person improve those relationships or adapt to changes. It does not interpret unconscious conflicts, use thought records as its main tool, or rely on exposure.",
@@ -390,12 +355,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In ACT, 'values' are best described as:",
-    options: [
-      "Goals that can be completed and ticked off",
-      "Rules imposed by parents",
-      "Chosen directions in life that guide action, like heading west on a compass",
-      "Moral judgements about other people",
-    ],
+    options: ["Goals that can be completed and then ticked off", "Rules that have been imposed by one's parents", "Chosen life directions, like heading west on a compass", "Moral judgements that one makes about other people"],
     answer: 2,
     explanation:
       "ACT describes values as freely chosen life directions (such as being a caring parent) that are never 'finished', unlike goals, which can be achieved (such as visiting a child this week). Values guide committed action. They are not imposed rules or judgements of others.",
