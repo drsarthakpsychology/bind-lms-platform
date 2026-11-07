@@ -244,8 +244,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "The probability of a correct response does not decrease as ability increases.",
       "All items must have the same difficulty.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 2 only", "2, 3 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
+    answer: 2,
     explanation:
       "Unidimensionality (1), local independence (2) and a monotonic item characteristic curve (3) are the core assumptions. Statement 4 is false: items vary in difficulty in every IRT model; even the Rasch model estimates a separate b for each item. So '1, 2 and 3 only'.",
     module: M,
@@ -261,12 +261,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "In computerised adaptive testing (CAT), examinees who answered different sets of items can be compared on the same scale.",
-      "When items are calibrated with an IRT model, ability estimates lie on a common θ scale regardless of which calibrated items were given.",
+      "In the three-parameter logistic model, the c parameter is the lower asymptote, the chance of a correct answer by guessing.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true, and R explains A. CAT picks items near each person's current θ estimate. Because all items are calibrated on one θ metric, scores remain comparable even though the items differ. Under CTT, number-correct scores from different item sets would not be comparable, which is why CAT depends on IRT.",
+      "Both true, but R does not explain A. The guessing parameter is a correct fact about the 3PL model, but it is not why CAT scores are comparable. They are comparable because all items are calibrated with an IRT model on one θ scale, so ability estimates lie on that common scale whichever calibrated items were given. Under CTT, number-correct scores from different item sets would not be comparable.",
     module: M,
     ref: "Wainer 2000",
   },
@@ -343,8 +343,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
         "Bipolar adjectives yielding evaluation, potency and activity",
       ],
     },
-    options: ["A-III, B-I, C-II, D-IV", "A-I, B-III, C-II, D-IV", "A-III, B-II, C-I, D-IV", "A-IV, B-I, C-II, D-III"],
-    answer: 0,
+    options: ["A-I, B-III, C-II, D-IV", "A-III, B-I, C-II, D-IV", "A-III, B-II, C-I, D-IV", "A-IV, B-I, C-II, D-III"],
+    answer: 1,
     explanation:
       "Thurstone's equal-appearing intervals use judges' sortings and median scale values (A-III). Likert scales sum agreement ratings (B-I). Guttman scales are cumulative (C-II). Osgood's semantic differential uses bipolar adjectives loading on evaluation, potency and activity (D-IV). The other codes swap Thurstone with Likert, Likert with Guttman, or Thurstone with Osgood.",
     module: M,
@@ -590,8 +590,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "The improvement in success rate is greatest when the base rate is near .50.",
       "A test with validity .00 still raises the success rate above the base rate if the selection ratio is very low.",
     ],
-    options: ["1, 2 and 3 only", "1 and 4 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 0,
+    options: ["1, 2, 3 and 4", "1 and 4 only", "2, 3 and 4 only", "1, 2 and 3 only"],
+    answer: 3,
     explanation:
       "Statements 1 to 3 are correct. The tables give the expected proportion of successful selectees from validity, selection ratio and base rate; strict selection (low ratio) maximises gain, and moderate base rates leave the most room for improvement. Statement 4 is false: with zero validity, selection is random and the success rate equals the base rate, however strict the selection.",
     module: M,
@@ -612,7 +612,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true. A is true because a test can measure something consistently but not the intended thing (for example, head circumference is reliable but invalid as an intelligence measure). R is true: validity cannot exceed the square root of reliability. But R does not explain A; R says low reliability limits validity, whereas A says high reliability does not guarantee validity. So option 2 (both true, R not the explanation).",
+      "Both are true. A is true because a test can measure something consistently but not the intended thing (for example, head circumference is reliable but invalid as an intelligence measure). R is true: validity cannot exceed the square root of reliability. But R does not explain A; R says low reliability limits validity, whereas A says high reliability does not guarantee validity. So both are true, but R is not the correct explanation of A.",
     module: M,
     ref: "Anastasi & Urbina ch. 5",
   },
@@ -645,8 +645,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Moderate to high correlations with established tests of the same construct.",
       "A high coefficient alpha, which by itself establishes construct validity.",
     ],
-    options: ["1 and 3 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 3 only", "2, 3 and 4 only", "1, 2 and 3 only", "1, 2, 3 and 4"],
+    answer: 2,
     explanation:
       "Factor structure, age differentiation (used by Binet) and correlations with other measures of the construct are all standard kinds of construct-related evidence. Statement 4 is false as worded: internal consistency shows homogeneity, which is weak evidence at most; it never establishes construct validity by itself. '1 and 3 only' wrongly omits age differentiation.",
     module: M,
@@ -668,7 +668,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Least-squares weights fit sampling error in the original sample; the more predictors relative to sample size, the more the fit is overstated. Cross-validation shows the realistic value. Greater reliability would raise, not lower, R. Contamination inflates validity. Multiple R is never lower than the largest single validity in the same sample, so the last option is false.",
+      "Least-squares weights fit sampling error in the original sample; the more predictors relative to sample size, the more the fit is overstated. Cross-validation shows the realistic value. Greater reliability would raise, not lower, R. Contamination inflates validity. Multiple R is never lower than the largest single validity in the same sample, so the claim that it is always lower is false.",
     module: M,
     ref: "Cohen et al. 2003; Anastasi & Urbina ch. 6",
   },
@@ -757,7 +757,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Meta-analyses by Schmidt and Hunter found that most between-study variation in the validity of ability tests is due to statistical artefacts, so validity generalises across jobs and settings. The 'situational specificity' view in the first option is what they argued against. They found ability tests among the most valid predictors, not less valid than personality tests. Corrected validities were often well above .30.",
+      "Meta-analyses by Schmidt and Hunter found that most between-study variation in the validity of ability tests is due to statistical artefacts, so validity generalises across jobs and settings. The 'situational specificity' view, that validity must be re-established for each job, is what they argued against. They found ability tests among the most valid predictors, not less valid than personality tests. Corrected validities were often well above .30.",
     module: M,
     ref: "Schmidt & Hunter 1977, 1998",
   },
@@ -775,8 +775,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Computing Lawshe's content validity ratio from expert ratings.",
       "Correlating test scores with a criterion measured six months later.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 2 only", "1, 2, 3 and 4", "2, 3 and 4 only", "1, 2 and 3 only"],
+    answer: 3,
     explanation:
       "Blueprints, expert judgement and Lawshe's CVR are all content-validation procedures. Correlating with a later criterion is predictive validity, a criterion-related method, so statement 4 is excluded. '1 and 2 only' wrongly omits Lawshe's ratio, which is a quantitative summary of expert judgement.",
     module: M,

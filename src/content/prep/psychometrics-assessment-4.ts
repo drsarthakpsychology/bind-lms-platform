@@ -797,7 +797,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: AR,
     answer: 0,
     explanation:
-      "Both true in Eysenck's theory, and R explains A: higher cortical arousal is thought to make introverts more conditionable, which Eysenck used to explain their greater socialisation and susceptibility to anxiety disorders. Evidence for conditionability is mixed, but within the theory the link is explicit, so options 2 to 4 are wrong.",
+      "Both true in Eysenck's theory, and R explains A: higher cortical arousal is thought to make introverts more conditionable, which Eysenck used to explain their greater socialisation and susceptibility to anxiety disorders. Evidence for conditionability is mixed, but within the theory the link is explicit.",
     module: M,
     ref: "Eysenck 1967",
   },
@@ -939,13 +939,13 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "Ipsative scores from forced-choice inventories are poorly suited to comparing different people on a trait.",
+      "Ipsative scores from forced-choice inventories are well suited to comparing different people on a trait.",
       "In ipsative scoring each person's scale scores sum to the same total, so a high score on one scale forces lower scores on others and shows only relative strength within the person.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both true; R explains A. Because every respondent has the same total, ipsative scores show which needs are stronger within a person but not how strong they are compared with others; they also distort correlations and factor analyses. This is the standard criticism of the EPPS and similar forced-choice formats.",
+      "A is false, but R is true. Because every respondent has the same total, ipsative scores show which needs are stronger within a person but not how strong they are compared with others; they also distort correlations and factor analyses. R is true and is the reason ipsative scores are poorly suited to comparing people.",
     module: M,
     ref: "Anastasi & Urbina ch. 13; Hicks 1970",
   },
