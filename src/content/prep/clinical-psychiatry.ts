@@ -7,6 +7,8 @@ import { PART as x05 } from "./clinical-psychiatry-x05";
 import { PART as x06 } from "./clinical-psychiatry-x06";
 import { PART as x07 } from "./clinical-psychiatry-x07";
 import { PART as x08 } from "./clinical-psychiatry-x08";
+import { PART as x09 } from "./clinical-psychiatry-x09";
+import { PART as x10 } from "./clinical-psychiatry-x10";
 
 /** Clinical psychiatry: written in part files and spread in here. */
-export const QUESTIONS: PrepQuestion[] = [...x01, ...x02, ...x03, ...x04, ...x05, ...x06, ...x07, ...x08];
+export const QUESTIONS: PrepQuestion[] = [...x01, ...x02, ...x03, ...x04, ...x05, ...x06, ...x07, ...x08, ...x09, ...x10];
