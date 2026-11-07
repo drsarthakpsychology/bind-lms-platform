@@ -21,12 +21,22 @@ const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "indian-psychology",
   "ethics-law",
   "ugc-paper1",
+  "learning-motivation-emotion",
+  "biological",
+  "developmental",
+  "social",
+  "personality-theories",
 ];
 const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "history-systems",
   "indian-psychology",
   "ethics-law",
   "ugc-paper1",
+  "learning-motivation-emotion",
+  "biological",
+  "developmental",
+  "social",
+  "personality-theories",
 ];
 const MAX_RANK_SHARE = 0.35;
 const RATIO = 1.3;

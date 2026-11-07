@@ -34,7 +34,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The dark, rejected side of the personality",
       "The public face or social mask a person shows to the world",
       "The feminine side of a man's psyche",
-      "The archetype of wholeness and the centre of the psyche",
+      "The archetype of wholeness and the organising centre of the psyche",
     ],
     answer: 1,
     explanation:
@@ -49,9 +49,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In personality psychology, a 'trait' is best described as:",
     options: [
-      "A passing emotional state, such as feeling angry this morning",
+      "A passing emotional state, such as feeling angry or anxious this morning",
       "An unconscious conflict from early childhood",
-      "A relatively stable tendency to think, feel and behave in a consistent way across situations and over time",
+      "A relatively stable tendency to think, feel and act consistently across situations and time",
       "A role a person plays only at work",
     ],
     answer: 2,
@@ -68,8 +68,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Maslow's theory, 'self-actualisation' means:",
     options: [
-      "Realising one's full potential and becoming everything one is capable of becoming",
-      "Satisfying hunger, thirst and other bodily needs",
+      "Realising one's full potential and becoming all one is capable of",
+      "Satisfying hunger, thirst and other bodily needs completely and reliably",
       "Gaining the approval and respect of other people",
       "Feeling safe and protected from danger",
     ],
@@ -87,7 +87,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "According to Julian Rotter, a person with an external locus of control tends to believe that:",
     options: [
       "What happens to them depends mainly on luck, fate or powerful other people",
-      "What happens to them depends mainly on their own effort and ability",
+      "What happens to them depends mainly on their own effort, choices and ability",
       "Other people are generally trustworthy",
       "Rewards have no effect on their behaviour",
     ],

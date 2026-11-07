@@ -24,7 +24,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In Maslow's hierarchy, which needs form the base that must be reasonably met first?",
-    options: ["Esteem needs", "Belongingness and love needs", "Physiological needs, such as food, water and sleep", "Self-actualisation needs"],
+    options: ["Esteem needs", "Belongingness and love needs, such as friendship and family", "Physiological needs, such as food, water and sleep", "Self-actualisation needs"],
     answer: 2,
     explanation:
       "Physiological needs are the most basic, followed by safety, belonging and love, esteem, and self-actualisation at the top. Esteem and belonging needs sit higher up. Self-actualisation is the highest level, not the base.",
@@ -106,9 +106,9 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Alderfer's ERG theory differs from Maslow's hierarchy mainly by proposing that",
     options: [
       "there are seven levels of need",
-      "needs for existence, relatedness and growth can operate together, and frustration of a higher need can lead a person back to a lower one (frustration-regression)",
+      "existence, relatedness and growth needs can act together, and a frustrated higher need can lead back to a lower one",
       "only growth needs motivate behaviour",
-      "needs must be satisfied in strict order",
+      "needs must be satisfied in strict order, with existence needs met before relatedness and growth",
     ],
     answer: 1,
     explanation:
@@ -125,8 +125,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "According to drive-reduction theory, associated with Clark Hull, behaviour is motivated by",
     options: [
-      "the need to reduce unpleasant internal tension produced by a biological need, which restores balance (homeostasis)",
-      "the wish to increase arousal",
+      "the need to reduce internal tension produced by a biological need, restoring homeostasis",
+      "the wish to increase arousal towards an optimal level, even when no biological need is present",
       "external rewards only",
       "the need for self-actualisation",
     ],
@@ -164,10 +164,10 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "The Yerkes-Dodson law states that",
     options: [
-      "performance always improves as arousal increases",
+      "performance always improves as arousal increases, and especially so on difficult tasks",
       "arousal has no effect on performance",
       "performance is best at low arousal for all tasks",
-      "performance is best at a moderate level of arousal, and the best level is lower for difficult tasks than for easy ones",
+      "performance peaks at moderate arousal, and the best level is lower for difficult tasks",
     ],
     answer: 3,
     explanation:
@@ -207,9 +207,9 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "William McDougall explained human behaviour through a list of instincts. A main criticism of instinct theory was that",
     options: [
       "it was based on brain scans",
-      "it often only named behaviours rather than explaining them, for example saying people fight because of a 'pugnacity instinct'",
-      "it denied that animals have instincts",
-      "it focused only on learning",
+      "it often merely named behaviours, as in saying people fight from a 'pugnacity instinct'",
+      "it denied that animals have instincts and applied the concept only to humans",
+      "it focused only on learning and ignored the biological basis of behaviour",
     ],
     answer: 1,
     explanation:
@@ -226,10 +226,10 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Solomon and Corbit's opponent-process theory explains drug tolerance and withdrawal by proposing that",
     options: [
-      "pleasure increases with every use",
+      "pleasure increases with every use, because the a-process grows stronger with each repetition",
       "the drug has no after-effects",
-      "an initial reaction (the a-process) triggers an opposite b-process that grows stronger and lasts longer with repeated use, so the high weakens and the after-effect worsens",
-      "only the first dose matters",
+      "the a-process triggers an opposing b-process that grows with repeated use, weakening the high and deepening withdrawal",
+      "only the first dose matters, since the b-process is fixed in strength after the first exposure",
     ],
     answer: 2,
     explanation:
@@ -245,7 +245,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A person is not hungry but eats a slice of cake because it looks delicious. Which theory of motivation best explains this?",
-    options: ["Incentive theory: external goals pull behaviour", "Drive-reduction theory", "Instinct theory", "Opponent-process theory"],
+    options: ["Incentive theory", "Drive-reduction theory", "Instinct theory", "Opponent-process theory"],
     answer: 0,
     explanation:
       "Incentive theory explains behaviour by the attraction of external rewards rather than internal need; the cake pulls rather than hunger pushes. Drive-reduction requires a drive, which is absent. Instinct theory would posit an innate pattern, which does not fit choosing cake. Opponent-process theory concerns emotional after-effects.",
@@ -260,7 +260,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Henry Murray, who proposed a list of psychological needs such as achievement, affiliation and dominance, also developed which test to measure them?",
-    options: ["The MMPI", "The Rorschach", "The 16PF", "The Thematic Apperception Test"],
+    options: ["The MMPI", "The Rorschach Inkblot Technique", "The 16PF", "The Thematic Apperception Test"],
     answer: 3,
     explanation:
       "Murray, with Christiana Morgan, created the TAT; stories told about pictures reveal needs and environmental 'press'. The MMPI was developed by Hathaway and McKinley. The Rorschach is Hermann Rorschach's. The 16PF is Cattell's.",
@@ -299,7 +299,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In ring-toss games where players choose how far to stand from the peg, people high in need for achievement tend to choose",
-    options: ["the closest distance, where success is certain", "the furthest distance, where success is almost impossible", "moderate distances, where success is possible but not certain", "random distances"],
+    options: ["the closest distance, where success is certain", "the furthest distance, where success is almost impossible but most impressive", "moderate distances, where success is possible but not certain", "random distances"],
     answer: 2,
     explanation:
       "High achievers prefer moderate risk because success there is both possible and informative about their skill. Very easy tasks give little satisfaction, and very hard ones give little chance of success. Choice was systematic, not random. People high in fear of failure tend to choose the extremes.",
@@ -385,7 +385,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Bernard Weiner's attribution theory of achievement classifies the causes people give for success and failure along which three dimensions?",
     options: [
-      "Locus (internal or external), stability, and controllability",
+      "Locus, stability, and controllability",
       "Need, drive, and incentive",
       "Fluency, flexibility, and originality",
       "Autonomy, competence, and relatedness",
@@ -494,8 +494,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "According to cognitive evaluation theory, a sub-theory of self-determination theory, a reward is most likely to reduce intrinsic motivation when it is",
     options: [
       "unexpected",
-      "verbal praise that gives information about competence",
-      "experienced as controlling, for example an expected, task-contingent reward for doing something already enjoyed",
+      "verbal praise that gives information about competence on an already enjoyed task",
+      "experienced as controlling, such as an expected reward for doing an already enjoyed task",
       "given for an uninteresting task",
     ],
     answer: 2,
@@ -556,10 +556,10 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Csikszentmihalyi's 'flow', a state of complete absorption in an activity, is most likely when",
     options: [
-      "the task is far too easy for one's skill",
+      "the task is far too easy for one's skill, so it can be done well without any effort at all",
       "the task is far too hard for one's skill",
       "there are no goals or feedback",
-      "the challenge is high and closely matched to a high level of skill, with clear goals and immediate feedback",
+      "challenge is high and matched to high skill, with clear goals and immediate feedback",
     ],
     answer: 3,
     explanation:
@@ -576,9 +576,9 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "According to Locke and Latham's goal-setting theory, which goal usually leads to the best performance?",
     options: [
-      "A specific, challenging goal, such as 'answer 40 practice questions correctly today'",
-      "'Do your best'",
-      "A very easy goal",
+      "A specific, challenging goal, such as 'answer 40 practice questions correctly'",
+      "'Do your best', which leaves the person free to set their own pace",
+      "A very easy goal that the person is sure to reach, to build confidence",
       "No goal at all",
     ],
     answer: 0,
@@ -644,7 +644,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
       "attachment develops mainly because the mother reduces hunger",
       "monkeys need comfort",
       "infants can tell mothers apart",
-      "milk is necessary for survival",
+      "milk is necessary for an infant monkey's survival and growth",
     ],
     answer: 0,
     explanation:
@@ -663,8 +663,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "the drive to reduce hunger",
       "fear of failure",
-      "an inborn motive to interact effectively with the environment and feel competent",
-      "the need to belong",
+      "an inborn motive to deal effectively with the environment and feel competent",
+      "the need to belong, felt as a drive to form close and lasting relationships with others",
     ],
     answer: 2,
     explanation:
@@ -724,14 +724,14 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Classic lesion studies in rats suggested that the hypothalamus regulates eating. Which statement matches those findings?",
     options: [
-      "Lesions of the lateral hypothalamus caused overeating",
-      "Lesions of the lateral hypothalamus caused rats to stop eating, while lesions of the ventromedial hypothalamus caused overeating and obesity",
+      "Lateral hypothalamic lesions caused overeating; ventromedial lesions had little effect",
+      "Lateral hypothalamic lesions stopped eating; ventromedial lesions caused overeating and obesity",
       "Lesions of the ventromedial hypothalamus caused rats to stop eating",
       "The hypothalamus has no role in eating",
     ],
     answer: 1,
     explanation:
-      "The lateral hypothalamus was called a 'feeding centre' and the ventromedial hypothalamus a 'satiety centre'. Modern work shows a more complex network (including the arcuate nucleus and hormones such as leptin and ghrelin), but the classic results are as described. Overeating after lateral lesions, and stopping eating after ventromedial lesions, reverse the lesion effects. The hypothalamus is clearly involved.",
+      "The lateral hypothalamus was called a 'feeding centre' and the ventromedial hypothalamus a 'satiety centre'. Modern work shows a more complex network (including the arcuate nucleus and hormones such as leptin and ghrelin), but the classic results are as described. Overeating after lateral lesions, and stopping eating after ventromedial lesions, reverse the lesion effects, and ventromedial lesions had a marked effect. The hypothalamus is clearly involved.",
     module: B,
     ref: "Anand & Brobeck 1951; Hetherington & Ranson 1940",
   },
@@ -766,8 +766,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Stanley Schachter's 'externality hypothesis' proposed that some people with obesity",
     options: [
       "are less sensitive to food cues",
-      "eat only when their stomach contractions signal hunger",
-      "are more responsive to external food cues, such as sight, smell and the time on the clock, than to internal hunger signals",
+      "eat only when their stomach contractions signal hunger, ignoring the sight and smell of food around them",
+      "are more responsive to external cues, such as sight, smell and the clock, than to inner hunger",
       "have no hunger hormones",
     ],
     answer: 2,
@@ -785,7 +785,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "After heavy bleeding, a person becomes intensely thirsty. This type of thirst and its main signal are",
     options: [
-      "hypovolemic thirst, signalled partly by the hormone angiotensin II acting on the subfornical organ",
+      "hypovolemic thirst, signalled partly by angiotensin II acting on the subfornical organ",
       "osmotic thirst, signalled by salt concentration detected in the OVLT",
       "hunger misread as thirst",
       "thirst caused by dry mouth alone",
@@ -826,8 +826,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "In Festinger and Carlsmith's study, students paid $1 to tell another student that a boring task was interesting later rated the task as more enjoyable than students paid $20. This is explained by",
     options: [
       "reinforcement theory, since more money should mean more liking",
-      "cognitive dissonance: with too little payment to justify lying, the $1 group reduced dissonance by changing their attitude",
-      "the $1 group finding the task genuinely more interesting",
+      "cognitive dissonance: $1 was too little to justify lying, so that group changed its attitude",
+      "the $1 group finding the task genuinely more interesting because they worked at it much harder",
       "the overjustification effect",
     ],
     answer: 1,
@@ -860,7 +860,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "In Higgins's regulatory focus theory, a student with a prevention focus tends to",
     options: [
-      "pursue goals as duties and responsibilities, concentrating on avoiding mistakes and losses",
+      "pursue goals as duties, concentrating on avoiding mistakes and losses",
       "pursue goals as hopes and ideals, concentrating on gains",
       "have no goals",
       "act only for rewards",
@@ -880,14 +880,14 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Gollwitzer's 'implementation intentions' help people act on their goals. An example is",
     options: [
-      "'I want to be healthier.'",
-      "'I will try my best.'",
+      "'I want to be healthier, so I will try to exercise much more often this month.'",
+      "'I will try my best to walk more often this week.'",
       "'Exercise is important.'",
       "'If it is 7 a.m. on a weekday, then I will go for a 20-minute walk.'",
     ],
     answer: 3,
     explanation:
-      "Implementation intentions are 'if-then' plans that link a specific situation to a specific action, so the cue triggers the behaviour almost automatically; they substantially increase goal attainment. The other statements are goal intentions or beliefs, which leave when and how undecided.",
+      "Implementation intentions are 'if-then' plans that link a specific situation to a specific action, so the cue triggers the behaviour almost automatically; they substantially increase goal attainment. Wanting to be healthier and exercise more, or trying one's best to walk more often, are goal intentions that leave when and how undecided, and 'Exercise is important' is only a belief.",
     module: M,
     ref: "Gollwitzer 1999; Gollwitzer & Sheeran 2006",
   },
@@ -922,8 +922,8 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "Carver and Scheier's control theory describes self-regulation as",
     options: [
       "a single reflex",
-      "a feedback loop: comparing one's current state with a goal or standard and acting to reduce the gap",
-      "a process driven only by unconscious drives",
+      "a feedback loop: comparing the current state with a goal and acting to reduce the gap",
+      "a process driven only by unconscious drives that push behaviour along without any set goal",
       "impossible without external rewards",
     ],
     answer: 1,
@@ -955,7 +955,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The tendency of the body to keep internal conditions, such as temperature and blood sugar, within a stable range is called",
-    options: ["allostasis", "adaptation", "homeostasis", "arousal"],
+    options: ["allostasis (stability through change)", "adaptation", "homeostasis", "arousal"],
     answer: 2,
     explanation:
       "Walter Cannon named homeostasis; drive-reduction theories assume behaviour helps restore it. Allostasis means achieving stability through change, adjusting set points to demands. Adaptation is a broader term for adjusting to conditions. Arousal is a level of activation.",
@@ -971,10 +971,10 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "In Schachter's studies, women told they would receive painful shocks more often chose to wait with others than alone, but only with others who were waiting for the same experiment. He summed this up as",
     options: [
-      "'Misery loves any company.'",
+      "'Misery loves any company': anxious people seek out whoever happens to be nearby at the time",
       "'Fear reduces affiliation.'",
       "'Fear has no effect on affiliation.'",
-      "'Misery loves miserable company': anxious people seek others in the same situation, partly to compare their feelings",
+      "'Misery loves miserable company': anxious people seek others in the same situation",
     ],
     answer: 3,
     explanation:

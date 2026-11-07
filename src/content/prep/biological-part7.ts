@@ -30,7 +30,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The main job of the myelin sheath around many axons is to:",
     options: [
       "Speed up the conduction of action potentials along the axon",
-      "Produce neurotransmitters for release at the synapse",
+      "Produce neurotransmitters and carry them down to the synapse for release",
       "Receive signals from neighbouring neurons",
       "Supply the neuron with blood and oxygen",
     ],
