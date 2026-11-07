@@ -65,6 +65,10 @@ Drive reduction works like an air-conditioner thermostat. When the room drifts a
 ### Where drive theory fails
 Drive reduction explains eating and drinking well. It cannot explain why people **seek tension**: climbing mountains, watching horror films, solving puzzles for fun, or eating dessert when full. Monkeys will work for nothing more than the chance to look out of a window (1953) or open a latch puzzle (Harlow). Those findings pushed the field towards **arousal** and **incentive** theories, which come next.
 
+:::widget compare
+{"title": "What drive theory explains, and what it cannot", "a": {"label": "Explains well", "points": ["Eating when hungry, drinking when thirsty", "Seeking warmth when cold", "Resting when tired", "Behaviour that stops once the need is met"], "summary": "When the body is out of balance, a drive pushes us to restore it. Here the theory works."}, "b": {"label": "Cannot explain", "points": ["Climbing a mountain for fun", "Watching a horror film on purpose", "Eating dessert when already full", "Monkeys solving puzzles for no reward"], "summary": "People and animals often seek tension and stimulation. Arousal and incentive theories were built to fill this gap."}}
+:::
+
 :::student
 Keep a simple picture: **instinct** says "born that way", **drive** says "the body wants balance", and the theories in the next section say "we also want the right amount of stimulation, and we chase rewards".
 :::
@@ -161,6 +165,10 @@ Incentive theory says behaviour is pulled by **expected rewards** in the environ
 
 Maslow called the lower four **deficiency needs (D-needs)**: their lack creates tension. **Growth needs (B-needs, "being" needs)** such as truth, beauty and meaning drive self-actualisation. Late in life he added **self-transcendence** above self-actualisation. He described self-actualising people (Lincoln, Einstein, Eleanor Roosevelt) as accepting, spontaneous, problem-centred and prone to **peak experiences**.
 
+:::widget sort
+{"prompt": "Which level of Maslow's hierarchy is each person mainly working on?", "buckets": ["Physiological", "Safety", "Love and belonging", "Esteem", "Self-actualisation"], "items": [{"text": "A migrant labourer who has not eaten since morning and only thinks about food", "bucket": 0, "why": "Hunger dominates everything until it is met."}, {"text": "A family in a flood relief camp worrying about where they will live next month", "bucket": 1, "why": "Security and stability."}, {"text": "A first-year hostel student who feels lonely and wants a group of friends", "bucket": 2, "why": "Belonging and friendship."}, {"text": "A junior doctor who wants her seniors to respect her clinical judgement", "bucket": 3, "why": "Respect from others and achievement."}, {"text": "A retired banker learning the sitar because he always wanted to become a musician", "bucket": 4, "why": "Becoming what one is capable of becoming."}, {"text": "A woman who leaves an abusive home for a shelter", "bucket": 1, "why": "Freedom from fear and danger is a safety need."}]}
+:::
+
 
 :::widget layers
 {
@@ -231,6 +239,10 @@ An **emotion** is a short-lived, organised response to something that matters to
 | **Feeling** | The inner experience | Fear |
 | **Action tendency** | The urge to act | Step back, run |
 
+:::widget flow
+{"title": "One emotion, five parts", "layout": "chain", "nodes": [{"id": "e", "label": "A dog barks suddenly", "detail": "The event that starts it all."}, {"id": "a", "label": "Appraisal", "detail": "'That could bite me.' A fast judgement of what the event means for you."}, {"id": "b", "label": "Body changes", "detail": "The heart pounds, breathing speeds up, muscles tense."}, {"id": "x", "label": "Expression", "detail": "Wide eyes, raised eyebrows, a gasp."}, {"id": "f", "label": "Feeling", "detail": "The inner experience you would call fear."}, {"id": "t", "label": "Action tendency", "detail": "The urge to step back or run."}], "caption": "The parts usually move together, but the theories that follow argue about their order and about which part causes which."}
+:::
+
 Three related words are often confused. An **emotion** is brief and about something. A **mood** is longer, weaker and often without a clear object ("I've been low all day"). **Affect** is the umbrella term for both, and in clinical work it means the emotion you observe in a person.
 
 ### James-Lange theory: the body comes first
@@ -262,6 +274,10 @@ James's famous line: we do not cry because we are sorry; "we feel sorry because 
 3. The viscera are relatively insensitive.
 4. Visceral changes are too slow to produce instant feelings.
 5. Producing the body changes artificially (an adrenaline injection) does not produce a real emotion; people say they feel "as if" afraid.
+
+:::widget compare
+{"title": "James-Lange or Cannon-Bard?", "a": {"label": "James-Lange", "points": ["Event, then body change, then feeling", "We feel afraid because we tremble", "Each emotion has its own body pattern", "Feeling is the perception of the body"], "summary": "James-Lange: the body comes first, and the feeling is our reading of it."}, "b": {"label": "Cannon-Bard", "points": ["Event, then the thalamus fires both ways at once", "Body change and feeling happen together", "Different emotions share similar body changes", "Animals cut off from their viscera still show emotion"], "summary": "Cannon-Bard: the brain comes first, and body and feeling run in parallel."}, "caption": "Modern work gives each a little ground: body feedback can colour feeling, but appraisal and the brain do most of the work."}
+:::
 
 Cannon and Bard proposed that the **thalamus** sends signals **at the same time** to the cortex (producing the feeling) and to the body (producing the arousal):
 
@@ -343,6 +359,10 @@ Stress is not always harmful. **Hans Selye** called helpful, motivating stress *
 ### Cannon's fight-or-flight response
 Cannon described how threat triggers the **sympathetic nervous system** and the adrenal medulla to release **adrenaline (epinephrine) and noradrenaline**. Heart rate and blood pressure rise, breathing quickens, glucose floods the blood, digestion slows and pupils widen: the body is ready to fight or flee.
 
+:::widget stress
+{"title": "Watch the stress response unfold", "caption": "Press Play. The fast sympathetic surge raises the heart rate within seconds; the slower hormone chain raises cortisol over minutes. When the stressor ends, feedback switches the system off. In chronic stress, it does not."}
+:::
+
 ### Selye's General Adaptation Syndrome (GAS)
 **Hans Selye**, an endocrinologist in Montreal, noticed in the 1930s that rats exposed to very different harmful agents (cold, injections, injury, forced exercise) showed the **same triad** of damage: enlarged adrenal glands, shrunken thymus and lymph glands, and stomach ulcers. He concluded that the body has a **non-specific** response to any demand, which unfolds in three stages:
 1. **Alarm**: the first shock (resistance briefly drops), then a counter-shock as the body mobilises.
@@ -383,10 +403,18 @@ Cannon described how threat triggers the **sympathetic nervous system** and the 
 ### Measuring stress through life events
 **Thomas Holmes and Richard Rahe** (1967) built the **Social Readjustment Rating Scale (SRRS)**: 43 life events, each given **life change units (LCU)** based on how much readjustment it demands. Death of a spouse scored 100, divorce 73, marriage 50 (the anchor event), and even holidays and minor law violations scored a little. A total above about 300 LCU in a year was linked with a higher risk of illness. The key idea: **change itself**, good or bad, demands adjustment.
 
+:::widget guess
+{"prompt": "On the Holmes and Rahe scale, death of a spouse scores 100 and marriage scores 50. How many life change units does divorce score?", "min": 0, "max": 100, "step": 1, "unit": "units", "answer": [70, 76], "reveal": "73. Divorce sits second on the list. Notice that happy events like marriage also count, because the scale measures how much readjustment is needed, not how bad the event is.", "clinician": "The SRRS has been criticised for treating all people alike, mixing events that may be consequences of illness with its causes, and relying on recall. Scales adapted for Indian life, such as the PSLES, include events like a daughter's marriage or a change in the joint family."}
+:::
+
 In India, **Gurmeet Singh and colleagues** (1984) developed the **Presumptive Stressful Life Events Scale (PSLES)**, with events that fit Indian life, such as a family conflict, a daughter's marriage, a change in a joint family or a crop failure.
 
 ### Daily hassles
 **Kanner, Coyne, Schaefer and Lazarus** (1981) argued that the small, repeated irritations of daily life (crowded trains, misplaced keys, a nagging relative, slow internet) predict health and mood **better than major life events** do. They balanced the **Hassles Scale** with an **Uplifts Scale** for small pleasures.
+
+:::widget compare
+{"title": "Big life events or daily hassles?", "a": {"label": "Major life events", "points": ["Rare and dramatic: bereavement, divorce, job loss", "Scored with a fixed value for everyone", "Easy to count and remember"], "summary": "Life events matter, but they predict later illness only modestly."}, "b": {"label": "Daily hassles", "points": ["Small and frequent: crowded trains, misplaced keys, slow internet", "Rated by the person for how much they bother them", "Pile up day after day"], "summary": "Hassles predicted health and mood better than major events. Big events often hurt partly by creating many new hassles."}}
+:::
 
 :::widget decide
 {
@@ -597,6 +625,10 @@ These theories say motivation is a **product** of how likely you think success i
 
 **Martin Seligman** found that dogs exposed to inescapable shock later failed to escape when escape was possible: **learned helplessness** (Seligman and Maier in 1967). The **reformulated** model (1978) said what matters in humans is **explanatory style**: people who explain bad events as **internal, stable and global** ("It's me, it will always be like this, it ruins everything") are more prone to depression.
 
+:::widget compare
+{"title": "Two ways to explain the same failure", "a": {"label": "Pessimistic style", "points": ["Internal: 'It is my fault'", "Stable: 'It will always be like this'", "Global: 'I am useless at everything'"], "summary": "This style after bad events predicts hopelessness and depression."}, "b": {"label": "Optimistic style", "points": ["External: 'The paper was unusually hard'", "Unstable: 'I was ill that week'", "Specific: 'I find this one subject hard'"], "summary": "This style protects mood and keeps effort going. Cognitive therapy teaches people to test the pessimistic version against evidence."}}
+:::
+
 :::widget decide
 {
   "scene": "Sana, a BSc student in Lucknow, fails her first statistics test. She tells you: “I'm just not a maths person. I'll never get it.”",
@@ -627,6 +659,10 @@ These theories say motivation is a **product** of how likely you think success i
 
 ### Goal-setting and self-efficacy
 **Edwin Locke and Gary Latham** showed across hundreds of studies that **specific, difficult goals** produce better performance than vague "do your best" goals, provided there is **feedback**, **commitment** and the needed skill. **Albert Bandura's self-efficacy** (1977), the belief that you can perform a specific task, predicts effort and persistence. It grows from four sources: **mastery experiences** (the strongest), **vicarious experience** (seeing similar others succeed), **verbal persuasion** and **physiological and emotional states**.
+
+:::widget compare
+{"title": "A vague goal or a specific, hard one?", "a": {"label": "'Do your best'", "points": ["No clear target", "No way to tell if you are on track", "Easy to feel you did enough", "Effort drifts"], "summary": "Vague goals feel kind, but they lead to lower performance."}, "b": {"label": "Specific and difficult", "points": ["'Solve 40 statistics problems this week'", "Feedback shows progress", "Commitment to a clear standard", "Effort and persistence rise"], "summary": "Specific, difficult goals work best, provided there is feedback, commitment and the needed skill."}}
+:::
 
 :::clinician
 SDT now contains six mini-theories: cognitive evaluation theory (effects of rewards and feedback on intrinsic motivation), organismic integration theory (the internalisation continuum above), causality orientations theory (autonomy, controlled and impersonal orientations), basic psychological needs theory, goal contents theory (intrinsic goals such as growth and community versus extrinsic goals such as wealth and image) and relationship motivation theory. The meta-analysis by Deci, Koestner and Ryan (1999, 128 studies) found that **expected, tangible, performance-contingent** rewards undermine free-choice intrinsic motivation, while **verbal praise** tends to enhance it; Cameron and Pierce argued the effect is narrower than claimed. Practical summary: rewards that feel controlling undermine; rewards that convey competence and preserve choice do not. Cross-culturally, Iyengar and Lepper (1999) found Asian-American children were more motivated when trusted others (mothers) made choices for them, which some read as a challenge to autonomy; SDT replies that autonomy means volition (endorsing an action), not independence, and that choosing to follow a respected elder can be autonomous (2003). That reply is useful in Indian classrooms and families.
@@ -673,6 +709,10 @@ Q: In Lepper, Greene and Nisbett's study, which group drew least in later free p
 | **Need for achievement (nAch)** | To meet a standard of excellence | Prefers moderate risks, wants feedback, takes personal responsibility |
 | **Need for affiliation (nAff)** | Warm, close relationships | Seeks approval, avoids conflict, works well in teams |
 | **Need for power (nPow)** | To have impact, influence or control others | Seeks status and leadership; can be personalised (for self) or socialised (for the group) |
+
+:::widget reveal
+{"prompt": "In a ring-toss game, people can stand as near to the peg or as far from it as they like. Where do people high in need for achievement choose to stand? Decide, then open.", "answer": "At a middle distance. Standing very close makes success certain and meaningless; standing very far makes failure certain and tells you nothing. A moderate risk gives the most information about your own skill. People high in fear of failure, by contrast, often choose very easy or very hard positions, where the outcome says little about them."}
+:::
 
 ### Achievement and nations
 In 1961 McClelland argued that the achievement imagery in a nation's children's stories predicted its later economic growth. He then tested whether achievement motivation could be **trained**.
@@ -770,6 +810,10 @@ High sensation seekers are more likely to drive fast, try drugs and choose excit
 |---|---|---|
 | **High challenge** | Anxiety | **Flow** |
 | **Low challenge** | Apathy | Boredom or relaxation |
+
+:::widget sort
+{"prompt": "Where does each moment sit in Csikszentmihalyi's map of challenge and skill?", "buckets": ["Flow", "Anxiety", "Boredom", "Apathy"], "items": [{"text": "An experienced tabla player improvising in a demanding concert", "bucket": 0, "why": "High challenge, high skill."}, {"text": "A new trainee asked to run a group therapy session alone on day one", "bucket": 1, "why": "High challenge, low skill."}, {"text": "A senior accountant entering the same figures into a sheet all afternoon", "bucket": 2, "why": "Low challenge, high skill."}, {"text": "Scrolling through videos you do not care about, with nothing to master", "bucket": 3, "why": "Low challenge, low skill."}, {"text": "A surgeon in the middle of a complex but familiar operation", "bucket": 0, "why": "Skill well matched to a high challenge."}]}
+:::
 
 Features of flow include clear goals, immediate feedback, a merging of action and awareness, deep concentration, a sense of control, loss of self-consciousness, a distorted sense of time and an **autotelic** experience (the activity is its own reward). He gathered data with the **experience sampling method**: people carried pagers and wrote down what they were doing and feeling when signalled at random moments.
 
@@ -899,6 +943,10 @@ Thirst has two triggers. **Osmotic thirst** comes from salty, concentrated body 
 
 Rats with dopamine blocked still show pleasure faces to sugar but will not work for it. In addiction, wanting grows (sensitisation) even as liking falls: people crave what they no longer enjoy.
 
+:::widget compare
+{"title": "Wanting is not liking", "a": {"label": "Wanting", "points": ["The pull towards a reward", "Dopamine, VTA to nucleus accumbens", "Dopamine-blocked rats will not work for sugar", "Grows with repeated drug use"], "summary": "Wanting is incentive salience: the reward and its cues grab attention and drive effort."}, "b": {"label": "Liking", "points": ["The pleasure when the reward arrives", "Small opioid and endocannabinoid hotspots", "Dopamine-blocked rats still show pleasure faces to sugar", "Often falls with repeated drug use"], "summary": "In addiction the two pull apart: people crave what they no longer enjoy."}}
+:::
+
 :::widget sort
 {
   "prompt": "Does each signal raise or lower hunger?",
@@ -969,6 +1017,10 @@ Q: Leptin is best described as:
 ### Schachter and Singer's two-factor theory (1962)
 **Stanley Schachter and Jerome Singer** argued that emotion needs **two factors**: **physiological arousal** and a **cognitive label** that explains it. Arousal tells you how strongly you feel; the label, taken from the situation, tells you which emotion it is.
 
+:::widget timeline
+{"prompt": "Put the major theories of emotion in the order they were proposed.", "events": [{"label": "James-Lange: we feel afraid because we tremble", "when": "1880s"}, {"label": "Cannon-Bard: body and feeling arise together from the brain", "when": "1927"}, {"label": "Schachter-Singer: arousal plus a cognitive label", "when": "1962"}, {"label": "Lazarus: appraisal of meaning comes first", "when": "1966"}, {"label": "Zajonc: feeling can come before thinking", "when": "1980"}], "why": "The debate moved from body first, to brain first, to cognition first, and then to whether cognition is needed at all. The Lazarus and Zajonc argument largely turned on how widely you define 'appraisal'."}
+:::
+
 **The experiment.** Participants were told they were getting a vitamin ("Suproxin") to test vision. In fact most got **adrenaline**, which produces arousal. Some were **informed** about the real side effects (racing heart, trembling); others were **misinformed** or told nothing. Each then waited with a **stooge** who acted either **euphoric** (playing with paper planes and hula hoops) or **angry** (complaining about an insulting questionnaire). Participants who were aroused **and had no explanation** for their arousal tended to catch the stooge's emotion; informed participants, who could put their arousal down to the injection, did so less.
 
 
@@ -989,6 +1041,10 @@ Q: Leptin is best described as:
 
 ### Misattribution of arousal
 If arousal is labelled from context, it can be **mislabelled**. In **Dutton and Aron's** (1974) study on the **Capilano Suspension Bridge** in Vancouver, an attractive female interviewer approached men either on a swaying, frightening bridge or on a low, stable one. Men on the scary bridge wrote more sexual imagery into stories and were more likely to phone her later. Their fear arousal had been partly read as attraction.
+
+:::widget compare
+{"title": "Dutton and Aron's two bridges", "a": {"label": "Low, solid bridge", "points": ["Calm, little arousal", "Fewer sexual themes in stories written for the interviewer", "About one man in eight later phoned her"], "summary": "Without strong arousal, there is little to mislabel."}, "b": {"label": "High, swaying bridge", "points": ["Heart racing from fear", "More sexual themes in their stories", "About half later phoned her"], "summary": "Some men read fear arousal as attraction to the interviewer. Arousal plus a plausible label gives the emotion, as two-factor theory predicts."}, "caption": "A male interviewer produced no such effect, which supports the misattribution explanation."}
+:::
 
 :::widget decide
 {
@@ -1081,6 +1137,10 @@ Darwin, in 1872, argued that facial expressions evolved and are shared across hu
 ### Display rules
 Cultures have **display rules**: norms about which emotions may be shown, by whom and when. In a classic study, Japanese and American students watched a stressful film. Alone, both showed similar disgust. With an older experimenter present, Japanese students masked negative expressions with polite smiles more than Americans did.
 
+:::widget compare
+{"title": "Display rules: watching a stressful film", "a": {"label": "Alone", "points": ["Japanese students: clear disgust", "American students: clear disgust", "Faces look much the same"], "summary": "Alone, the basic facial expression appears in both groups. This supports universality."}, "b": {"label": "With an older experimenter", "points": ["Japanese students: often masked disgust with a polite smile", "American students: still showed disgust", "Faces now differ"], "summary": "In company, culture decides what may be shown. The emotion is universal; its display is managed."}}
+:::
+
 :::example Lajja in Bhubaneswar
 In Odisha, the image of the goddess **Kali with her tongue out**, standing on Shiva, is read locally as **lajja**: a sudden, proper shame and restraint when she realises she has stepped on her husband. Many Western viewers read the same face as anger or aggression. Menon and Shweder (1994) used this to show that the meaning of an expression depends on cultural knowledge, and that lajja (a positive, socially valued restraint) has no neat English equivalent.
 :::
@@ -1135,6 +1195,10 @@ Not everyone thinks in discrete emotions:
 - **Robert Plutchik's wheel** has eight primary emotions in four opposing pairs (joy and sadness, trust and disgust, fear and anger, surprise and anticipation), with blends such as love (joy plus trust).
 - **James Russell's circumplex** (1980) places all feelings on two dimensions: **valence** (pleasant to unpleasant) and **arousal** (calm to excited). Excitement is pleasant and high-arousal; contentment is pleasant and low-arousal; anxiety is unpleasant and high; sadness is unpleasant and low.
 - **Watson and Tellegen** found that **positive affect** and **negative affect** are relatively independent dimensions (measured by the **PANAS**).
+
+:::widget sort
+{"prompt": "Place each feeling on Russell's two dimensions.", "buckets": ["Pleasant, high arousal", "Pleasant, low arousal", "Unpleasant, high arousal", "Unpleasant, low arousal"], "items": [{"text": "Excited before a cricket final", "bucket": 0}, {"text": "Content after a good meal with family", "bucket": 1}, {"text": "Panicky in a crowded lift", "bucket": 2}, {"text": "Bored and flat on a rainy holiday", "bucket": 3}, {"text": "Angry at a rude shopkeeper", "bucket": 2}, {"text": "Relaxed on an evening walk", "bucket": 1}, {"text": "Sad and tired after a loss", "bucket": 3}, {"text": "Delighted by a surprise result", "bucket": 0}]}
+:::
 
 :::clinician
 The universality debate continues. Russell (1994) argued that Ekman's forced-choice method inflated agreement; free-labelling studies show lower consensus. Later field studies found that the Himba of Namibia sorted faces mainly by valence and arousal rather than into Western categories, and Jack and colleagues (2012) showed that East Asian observers rely more on the eyes and do not represent the six categories as distinctly. The current consensus is **minimal universality**: some facial movements reliably signal broad states such as positive versus negative and high versus low arousal across cultures, while specific categories, intensity and meaning are culturally shaped. The **Many Smiles Collaboration** (2022, 19 countries) found that voluntary smiling and facial mimicry produced small increases in happiness, while the pen-in-mouth task did not. Rasa theory has been used in contemporary research on emotion in music and dance (2000, showed that Americans and Indians could recognise rasa-based bhavas performed by an Indian dancer above chance), and it is a common NET short-note topic under Indian psychology.
@@ -1202,6 +1266,10 @@ The same viva exam can be a threat for one student and a challenge for another. 
 **Coping** is the effort, thought or action used to manage demands appraised as stressful. Lazarus and Folkman separated:
 - **Problem-focused coping**: changing the situation (making a study plan, negotiating a deadline, getting a loan restructured).
 - **Emotion-focused coping**: changing how you feel about it (venting, reappraising, distracting yourself, praying, accepting).
+
+:::widget compare
+{"title": "Problem-focused or emotion-focused coping?", "a": {"label": "Problem-focused", "points": ["Change the situation itself", "Make a study plan, ask for an extension", "Get the loan restructured", "Fits stressors you can control"], "summary": "Best when something can actually be done about the problem."}, "b": {"label": "Emotion-focused", "points": ["Change how you feel about it", "Reappraise, accept, pray, talk, distract", "Calm the body with breathing", "Fits stressors you cannot control"], "summary": "Best when the stressor cannot be changed, such as a loved one's terminal illness. Most people use both, and matching style to control is the goodness-of-fit idea."}}
+:::
 
 Other useful splits:
 - **Approach versus avoidance** coping (1986): facing the stressor or turning away from it. Avoidance helps briefly but usually harms in the long run.
