@@ -11,6 +11,7 @@ import { BrainExplorer } from "./brain-explorer";
 import { ActionPotential } from "./action-potential";
 import { SynapseScene } from "./synapse-scene";
 import { Genogram } from "./genogram";
+import { HpaLoop } from "./hpa-loop";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -142,5 +143,31 @@ describe("explorable scenes", () => {
     click("Find the pattern");
     wait(2800);
     expect(status()).toHaveTextContent(/skip a generation/);
+  });
+
+  it("hpaloop: events arrive, coping choices change the curve, and chronic stress breaks the feedback loop", () => {
+    vi.useFakeTimers();
+    render(<HpaLoop d={{}} />);
+    wait(1500);
+    expect(status()).toHaveTextContent(/9:00 · The exam: .*cortisol takes 20 to 30 minutes to peak/);
+    click("Avoid it: scroll the phone");
+    expect(status()).toHaveTextContent(/Avoidance brings quick relief/);
+    wait(2500);
+    expect(status()).toHaveTextContent(/13:00 · An argument/);
+    click("Talk to someone");
+    wait(2500);
+    click("Rest: slow breathing");
+    wait(3000);
+    click("Sleep 8 hours");
+    wait(1500);
+    expect(screen.getByText(/End of the day: stress load/)).toBeInTheDocument();
+    expect(screen.getByText(/A full night's sleep resets the system/)).toBeInTheDocument();
+    click("Chronic stress");
+    click("Start day 1");
+    expect(status()).toHaveTextContent(/Day 1: the loop works/);
+    for (let k = 2; k <= 4; k++) click(new RegExp(`Next day \\(${k} of 5\\)`));
+    expect(status()).toHaveTextContent(/Day 4: the feedback loop is failing/);
+    expect(status()).toHaveTextContent(/42 percent \(failing\)/);
+    expect(screen.getByLabelText("4 of 5 missions done")).toBeInTheDocument();
   });
 });

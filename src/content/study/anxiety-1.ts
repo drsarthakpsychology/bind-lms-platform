@@ -22,8 +22,8 @@ Every one of these changes is useful when there is a real bus. Each feels fright
 Anxiety works like a smoke alarm. A good alarm rings for real fires and stays quiet for toast. In an anxiety disorder, the alarm is too sensitive: it rings loudly for burnt toast, or for nothing at all, and keeps ringing after the toast has gone.
 :::
 
-:::widget stress
-{"title": "Watch the alarm go off, step by step", "caption": "Each body change in the list above comes from this chain. In an anxiety disorder the chain is the same one: it simply fires for a lift, a crowd or a worry, and the brake at the end works less well."}
+:::widget nervoussystem
+{"title":"Watch the alarm go off","start":"auto","caption":"Switch on fight or flight: every symptom in the list above comes from this one system. In an anxiety disorder the system is normal; it simply fires for a lift, a crowd or a worry, and the body cannot tell the difference."}
 :::
 
 ### A little anxiety helps
@@ -375,6 +375,10 @@ Q: A 58-year-old with no past anxiety develops daily panic attacks and tremor ov
 
 ## 1.2 Why anxiety happens [core][beginner]
 Like most mental disorders, anxiety disorders come from vulnerability meeting stress.
+
+:::widget hpaloop
+{"title":"Stress, coping and avoidance","caption":"Play the day twice: once avoiding every problem, once facing them. Avoidance brings quick relief but keeps the stress system running, which is exactly how avoidance keeps anxiety going."}
+:::
 
 ### Biological vulnerability
 - **Genes.** Anxiety disorders run in families. Twin studies suggest heritability of roughly 30 to 50%, with genes that are largely shared across anxiety disorders and depression rather than specific to one.

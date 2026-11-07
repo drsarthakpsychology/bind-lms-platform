@@ -1,12 +1,5 @@
 /* Module · Brain and behaviour, new Starting sections (how the nervous system is built; how we know about the brain). Original text written for VIBHA School of Psychology. */
 
-/**
- * Spots for the game-like scenes another agent is building. Each returns ""
- * until the scene is merged; then replace the call with the :::widget block.
- * Search for SCENE( to find every spot.
- */
-export const SCENE = (_kind: "nervoussystem" | "brainexplorer" | "actionpotential" | "hpaloop"): string => "";
-
 export const startBuilt = String.raw`
 ## 1.6 How the nervous system is built, protected and fed [core][starting]
 You have met the neuron and the big areas. Now step back and see the whole system as a body part: how it grows, what holds it, what washes it and what feeds it. Many exam questions, and many emergencies, come from these plain facts.

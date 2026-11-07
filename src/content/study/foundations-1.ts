@@ -274,12 +274,12 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
 - **Paul Broca** (1861) and later **Carl Wernicke**: language areas of the brain; **Fritsch and Hitzig** (1870): electrical stimulation of the motor cortex.
 
 
-:::widget neuron
-{
-  "title": "Helmholtz's discovery: nerve signals take time",
-  "myelinated": true,
-  "caption": "Helmholtz measured nerve conduction at about 30 metres a second in frogs. Try the threshold slider (a nerve fires all-or-none) and switch myelin off to see conduction slow. Mental processes take measurable time, which opened the door to reaction-time research in Wundt's laboratory."
-}
+:::widget actionpotential
+{"title":"Helmholtz's discovery: nerve signals take time","myelinated":true,"caption":"Helmholtz measured nerve conduction at about 30 metres a second in frogs. Push the neuron past threshold (it fires all or none), then switch myelin off and watch conduction slow. Mental processes take measurable time."}
+:::
+
+:::widget brainexplorer
+{"title":"What Broca and Wernicke found","focus":["broca","wernicke","motor","temporal","frontal"],"caption":"Tap Broca, then Wernicke, and switch on damage for each. Two small patches of cortex, two very different language problems: the first strong evidence that mental functions live in particular places."}
 :::
 
 ### Psychophysics: measuring the mind

@@ -28,7 +28,8 @@ import { BrainExplorer } from "./scenes/brain-explorer";
 import { ActionPotential } from "./scenes/action-potential";
 import { SynapseScene } from "./scenes/synapse-scene";
 import { Genogram } from "./scenes/genogram";
-import type { GenogramData, Synapse3dData, ActionPotentialData, BrainExplorerData, NervousSystemData } from "@/lib/study/types";
+import { HpaLoop } from "./scenes/hpa-loop";
+import type { HpaLoopData, GenogramData, Synapse3dData, ActionPotentialData, BrainExplorerData, NervousSystemData } from "@/lib/study/types";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
@@ -598,6 +599,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <SynapseScene d={data as Synapse3dData} />;
     case "genogram":
       return <Genogram d={data as GenogramData} />;
+    case "hpaloop":
+      return <HpaLoop d={data as HpaLoopData} />;
   }
 }
 
