@@ -8,7 +8,7 @@ import type { Subject } from "@/lib/prep/types";
  * questions, no single option index may hold more than MAX_SHARE of the answers.
  * Add a subject here once its bank has been rebalanced.
  */
-export const BALANCED_SUBJECTS: Subject[] = ["learning-motivation-emotion", "perception-attention", "cognitive", "ugc-paper1"];
+export const BALANCED_SUBJECTS: Subject[] = ["learning-motivation-emotion", "perception-attention", "cognitive", "ugc-paper1", "ethics-law"];
 
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;
