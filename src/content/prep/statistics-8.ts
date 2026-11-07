@@ -24,10 +24,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "An effect size, such as Cohen's d, tells us:",
     options: [
-      "Whether the result is statistically significant",
+      "Whether the result is statistically significant at the alpha level chosen",
       "How many participants are needed",
-      "The probability that the null hypothesis is true",
-      "How large the difference or relationship is, in a way that does not depend on sample size",
+      "The probability that the null hypothesis is true, given the data",
+      "How large the difference or relationship is, independent of sample size",
     ],
     answer: 3,
     explanation:
@@ -66,10 +66,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "To calculate the sample size needed for a planned two-group study (an a priori power analysis), the researcher must specify:",
     options: [
-      "Only the expected effect size",
+      "Only the expected effect size, taken from earlier studies",
       "The significance level, the desired power and the expected effect size",
-      "The p value expected from the study",
-      "The observed effect size from the completed study",
+      "The p value expected from the study and the desired power",
+      "The observed effect size and p value from the completed study",
     ],
     answer: 1,
     explanation:
@@ -187,10 +187,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Current reporting standards in psychology recommend that results include:",
     options: [
-      "Only whether p is below .05",
-      "Only the largest effect found",
-      "Only descriptive statistics",
-      "Effect sizes with confidence intervals, alongside test statistics and exact p values",
+      "Only whether p is below .05, stated as significant or not",
+      "Only the largest effect found, to keep the report brief",
+      "Only descriptive statistics, such as means and SDs for each group",
+      "Effect sizes with confidence intervals, plus test statistics and exact p values",
     ],
     answer: 3,
     explanation:
@@ -224,10 +224,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In a drug trial where the treatment might also change the variability of scores, Glass's Δ is sometimes preferred to Cohen's d because Glass's Δ:",
     options: [
-      "Is always larger than Cohen's d",
-      "Divides by the pooled SD of both groups",
-      "Corrects for small-sample bias",
-      "Divides the mean difference by the control group's SD only, which is not affected by the treatment",
+      "Is always larger than Cohen's d for the same data",
+      "Divides by the pooled SD of both groups, each weighted by its sample size",
+      "Corrects for small-sample bias in the pooled estimate",
+      "Uses only the control group's SD, which the treatment cannot change",
     ],
     answer: 3,
     explanation:
@@ -268,10 +268,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Why did Cohen warn against using his small, medium and large benchmarks mechanically?",
     options: [
-      "Because large effects are never important",
-      "Because effect sizes cannot be calculated for most designs",
-      "Because the benchmarks apply only to correlations",
-      "Because the practical importance of an effect depends on the field, the outcome and the cost of the intervention",
+      "Because large effects are never important in applied settings",
+      "Because effect sizes cannot be calculated for most research designs",
+      "Because the benchmarks apply only to correlations, not to mean differences",
+      "Because an effect's practical importance depends on the field, the outcome and the cost",
     ],
     answer: 3,
     explanation:
@@ -489,10 +489,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In classical test theory, a reliability coefficient of .80 means that:",
     options: [
-      "80% of the variance in observed scores is true-score variance and 20% is error variance",
-      "80% of people get their true score exactly",
-      "The test is 80% valid",
-      "Scores change by 20% between administrations",
+      "80% of observed-score variance is true-score variance and 20% is error variance",
+      "80% of test-takers obtain their exact true score on any single administration of it",
+      "The test is 80% valid for its intended purpose",
+      "Scores will change by about 20% between two administrations",
     ],
     answer: 0,
     explanation:

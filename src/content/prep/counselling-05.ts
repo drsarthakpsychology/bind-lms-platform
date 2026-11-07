@@ -122,7 +122,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A client says nothing has been going well at all. Which solution-focused question is most suitable?",
-    options: ["'Why do you think everything keeps going wrong?'", "'What would your mother say about all this?'", "'With things this hard, how have you kept going?'", "'What do you think is the deep, hidden cause?'"],
+    options: ["'Why do you think everything keeps going so wrong?'", "'What would your mother say about all this?'", "'With things this hard, how have you kept going?'", "'What do you think is the deep, hidden cause?'"],
     answer: 2,
     explanation:
       "When clients see no exceptions, solution-focused counsellors use coping questions that highlight strengths and survival ('How have you managed?'), which often reveal small resources to build on. 'Why' questions and searches for deep causes invite problem talk. A relationship question can be useful in other contexts, but it does not address the client's hopelessness as directly.",
@@ -182,7 +182,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Reminiscence and life review therapy with older adults mainly aims to:",
-    options: ["Test how accurate their memories of the past are", "Help them find meaning by reviewing their life story", "Diagnose early dementia from their recollections", "Teach new job skills for a second career"],
+    options: ["Test how accurate their memories of the distant past really are", "Help them find meaning by reviewing their life story", "Diagnose early dementia from their recollections", "Teach new job skills for a second career"],
     answer: 1,
     explanation:
       "Butler's life review and structured reminiscence help older people recall and re-evaluate life events, resolve old conflicts and build a sense of meaning, which links to Erikson's stage of integrity versus despair. Meta-analyses show benefits for depressive symptoms and wellbeing. It is not a memory test, a diagnostic tool or vocational training.",
@@ -195,7 +195,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Premarital counselling programmes such as PREP focus mainly on:",
-    options: ["Choosing a suitable partner by matching horoscopes", "Treating severe mental illness before marriage", "Financial planning and investment advice only", "Communication, conflict skills and shared expectations"],
+    options: ["Choosing a suitable partner by matching horoscopes and family status", "Treating severe mental illness before marriage", "Financial planning and investment advice only", "Communication, conflict skills and shared expectations"],
     answer: 3,
     explanation:
       "Relationship education programmes like PREP teach skills such as the speaker-listener technique, problem solving and managing conflict, and help couples discuss expectations about roles, family, money and children. Evidence shows modest benefits in communication. They do not involve astrology, treat severe illness, or offer only financial advice.",
@@ -337,7 +337,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A teacher asks a school counsellor to 'fix' a disruptive Class 6 boy. On observation, the boy acts out mainly during long written tasks, and his reading is far below grade level. What is the best next step?",
-    options: ["Start weekly anger management sessions for him alone", "Assess for a learning disorder and plan support together", "Suspend him for a few days to teach him discipline", "Advise the teacher to ignore the disruptive behaviour"],
+    options: ["Start weekly anger management sessions for him alone, outside class", "Assess for a learning disorder and plan support together", "Suspend him for a few days to teach him discipline", "Advise the teacher to ignore the disruptive behaviour"],
     answer: 1,
     explanation:
       "The pattern suggests the behaviour may be a way of escaping tasks he finds very hard. A functional view and assessment for specific learning disorder (or vision, hearing or other problems) lead to the right support, such as remedial teaching and accommodations, which the RPwD Act 2016 supports for specific learning disabilities. Anger management alone, suspension or ignoring the behaviour would miss the cause.",
@@ -367,7 +367,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which practice is most important when providing online counselling?",
-    options: ["Secure platforms, consent about risks, and an emergency plan", "Using any free video app without checking its privacy", "Not asking where the client is during each session", "Recording sessions without telling the client, for training"],
+    options: ["Secure platforms, consent about risks, and an emergency plan", "Using any free video app without checking its privacy", "Not asking where the client is during each session", "Recording sessions without telling the client, for training purposes"],
     answer: 0,
     explanation:
       "Online counselling needs secure, encrypted platforms, consent that covers privacy risks and technology failures, and a plan for emergencies, which requires knowing the client's location and local emergency contacts. In India, the Telemedicine Practice Guidelines 2020 also set standards for consultations. Unsecured apps, unknown locations and secret recordings breach ethics.",
@@ -396,7 +396,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 55-year-old woman caring for her husband with dementia reports exhaustion, irritability and guilt. Which counselling focus is most helpful?",
-    options: ["Advise her to move her husband into an institution at once", "Advise her to hide her feelings so that she stays strong", "Focus only on reviewing her husband's medication", "Assess burden and mood, teach coping, and link her to respite"],
+    options: ["Advise her to move her husband into an institution at once, without delay", "Advise her to hide her feelings so that she stays strong", "Focus only on reviewing her husband's medication", "Assess burden and mood, teach coping, and link her to respite"],
     answer: 3,
     explanation:
       "Caregivers of people with dementia are at high risk of depression and burnout. Multi-component interventions combining psychoeducation, skills training, support and respite reduce burden and depression, and WHO's iSupport programme has been adapted for India. Pushing institutional care, telling her to hide her feelings or ignoring her own needs are unhelpful.",

@@ -117,7 +117,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Formication (the sensation of insects crawling under the skin) is most classically associated with:",
-    options: ["Cocaine use and alcohol withdrawal", "Obsessive-compulsive disorder", "Depersonalisation disorder", "Narcolepsy"],
+    options: ["Cocaine use and alcohol withdrawal", "Obsessive-compulsive disorder with contamination fears", "Depersonalisation disorder", "Narcolepsy"],
     answer: 0,
     explanation:
       "Formication is a tactile hallucination typical of cocaine ('cocaine bugs'), amphetamine use and alcohol withdrawal or delirium tremens. It may underlie secondary delusional parasitosis. It is not a feature of OCD, depersonalisation or narcolepsy (which has hypnagogic phenomena and cataplexy).",
@@ -295,7 +295,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Cognitive and neuroimaging research on auditory verbal hallucinations most supports which account?",
-    options: ["Damage confined to the primary auditory cortex", "Misattribution of inner speech to an outside source", "Conscious fabrication by the patient in most cases", "Pathology of the cochlea and auditory nerve"],
+    options: ["Damage confined to the primary auditory cortex (Heschl's gyrus)", "Misattribution of inner speech to an outside source", "Conscious fabrication by the patient in most cases", "Pathology of the cochlea and auditory nerve"],
     answer: 1,
     explanation:
       "Models from Frith, Bentall and others propose that AVHs arise when self-generated inner speech is not tagged as self-produced (a corollary discharge or self-monitoring failure) and so is externally attributed. fMRI shows activation of Broca's area, superior temporal gyrus and related networks during hallucinations, and subvocalisation can sometimes be detected. Hallucinations are not fabrication, and primary auditory cortex damage or cochlear disease is not the usual basis in psychosis.",

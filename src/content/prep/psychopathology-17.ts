@@ -52,7 +52,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Anhedonia refers to:",
-    options: ["Persistent inability to fall or stay asleep", "Excessive or inappropriate feelings of guilt", "Rapid, pressured speech that is hard to interrupt", "Markedly reduced interest or pleasure in activities"],
+    options: ["Persistent inability to fall or stay asleep", "Excessive or inappropriate feelings of guilt", "Rapid, pressured speech that is very hard to interrupt", "Markedly reduced interest or pleasure in activities"],
     answer: 3,
     explanation:
       "Anhedonia is loss of interest or pleasure and is one of the two cardinal symptoms of a major depressive episode, alongside depressed mood. It is also a negative symptom of schizophrenia. Insomnia, guilt and rapid speech are separate symptoms.",
@@ -256,7 +256,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Bleuler coined the term 'schizophrenia' in 1911 to emphasise:",
-    options: ["A split or multiple personality within one person", "Inevitable deterioration to dementia in early life", "Its typical onset in old age rather than youth", "A splitting apart of thought, emotion and behaviour"],
+    options: ["A split or multiple personality within one person", "Inevitable deterioration to dementia early in adult life", "Its typical onset in old age rather than youth", "A splitting apart of thought, emotion and behaviour"],
     answer: 3,
     explanation:
       "Bleuler's 'schizo-phrenia' refers to the loosening and splitting apart of mental functions, not a split personality, which is the common lay misunderstanding (that is closer to DID). He rejected Kraepelin's emphasis on inevitable deterioration and young onset ('praecox') as defining features, and described the fundamental 'four As'.",
@@ -363,7 +363,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which of the following is a GOOD prognostic factor in schizophrenia?",
-    options: ["Insidious onset over several years", "Prominent negative symptoms from the start", "Male sex and early age at onset", "Acute onset, clear stressor and mood symptoms"],
+    options: ["Insidious onset over several years", "Prominent negative symptoms from the very start", "Male sex and early age at onset", "Acute onset, clear stressor and mood symptoms"],
     answer: 3,
     explanation:
       "Good-prognosis features include acute onset, later onset, clear precipitants, good premorbid functioning, mood symptoms, being married, female sex, positive rather than negative symptoms, and good social support. Insidious onset, negative symptoms, male sex and early onset predict poorer outcome.",
@@ -400,7 +400,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which disorder involves at least 2 years of chronic depressed mood for most of the day, more days than not, in adults?",
-    options: ["Major depressive disorder, single episode", "Cyclothymic disorder", "Adjustment disorder", "Persistent depressive disorder (dysthymia)"],
+    options: ["Major depressive disorder, single episode, moderate", "Cyclothymic disorder", "Adjustment disorder", "Persistent depressive disorder (dysthymia)"],
     answer: 3,
     explanation:
       "Persistent depressive disorder requires at least 2 years of depressed mood more days than not, plus two of six symptoms. A single MDE needs 2 weeks. Cyclothymia involves both hypomanic and depressive symptoms. Adjustment disorder is a response to a stressor that resolves within 6 months of the stressor ending.",
@@ -428,7 +428,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Latah, reported mainly in Malaysia and Indonesia, is characterised by:",
-    options: ["Brooding followed by an outburst of homicidal violence", "Fear that the genitals will retract into the body", "Belief of being possessed by a cannibal spirit", "Exaggerated startle followed by echolalia and echopraxia"],
+    options: ["Brooding followed by a sudden outburst of homicidal violence", "Fear that the genitals will retract into the body", "Belief of being possessed by a cannibal spirit", "Exaggerated startle followed by echolalia and echopraxia"],
     answer: 3,
     explanation:
       "Latah is a hyper-startle reaction, mainly in middle-aged women, with echo phenomena, command obedience and obscene utterances, often socially tolerated or even entertaining in its setting. Brooding and violence describe amok. Genital retraction is koro. Cannibal-spirit possession is windigo (Algonquian peoples).",
@@ -505,7 +505,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Seligman's learned helplessness experiments originally involved:",
-    options: ["Children learning to read with and without rewards", "Rats in a Skinner box receiving food for lever presses", "Infant monkeys separated from their mothers", "Dogs given inescapable shock that later failed to escape"],
+    options: ["Children learning to read with and without rewards", "Rats in a Skinner box receiving food pellets for lever presses", "Infant monkeys separated from their mothers", "Dogs given inescapable shock that later failed to escape"],
     answer: 3,
     explanation:
       "Seligman and Maier found dogs given inescapable shocks later failed to learn escape when it was possible, which became a model of depression. Rats receiving food illustrate operant reinforcement. Harlow's monkeys illustrate attachment and separation. Later work by Maier suggested that passivity is the default response, and that what is learned is control.",

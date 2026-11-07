@@ -419,7 +419,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Bonanno's research on reactions to loss and potentially traumatic events found that the most common pattern is:",
-    options: ["Chronic distress lasting many years", "Delayed onset of severe symptoms", "Resilience with only brief disruption", "Immediate PTSD in most people"],
+    options: ["Chronic distress lasting many years after the event", "Delayed onset of severe symptoms", "Resilience with only brief disruption", "Immediate PTSD in most people"],
     answer: 2,
     explanation:
       "Bonanno identified trajectories such as resilience, recovery, chronic distress and delayed reactions, and found that resilience was the most common response to loss and many potentially traumatic events. This argues against assuming everyone needs counselling, and supports watchful support with targeted help for those who struggle. Chronic, delayed and immediate PTSD trajectories occur in minorities.",

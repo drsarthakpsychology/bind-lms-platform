@@ -27,9 +27,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Carl Rogers believed that the basic motive in all living things is:",
     options: [
       "The death instinct",
-      "The actualising tendency: a drive to grow, develop and fulfil one's potential",
+      "The actualising tendency: a drive to grow and fulfil one's potential",
       "The need to reduce hunger and thirst only",
-      "The striving for superiority over others",
+      "The striving for superiority over others and over one's own sense of weakness",
     ],
     answer: 1,
     explanation:
@@ -45,8 +45,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A child is rewarded for every behaviour",
       "A child receives unconditional love",
-      "A child receives love and approval only when behaving in ways that others value, and so learns to value only those parts of the self",
-      "A child is punished by teachers but not parents",
+      "A child gets love and approval only for behaviour others value, and learns to value only those parts",
+      "A child is punished by teachers at school but loved unconditionally by parents at home",
     ],
     answer: 2,
     explanation:
@@ -100,9 +100,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Rogers and his colleagues used the Q-sort technique in research. In this method, clients:",
     options: [
       "Interpret inkblots",
-      "Sort statements about themselves into piles from 'most like me' to 'least like me', once for the actual self and once for the ideal self, so the correlation between the two can be measured",
+      "Sort self-statements from 'most like me' to 'least like me' for actual and ideal self, then compare",
       "Tell stories about ambiguous pictures",
-      "Answer true or false to 567 statements",
+      "Answer true or false to 567 statements, from which self-esteem scales are scored",
     ],
     answer: 1,
     explanation:
@@ -178,9 +178,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Large reviews of psychotherapy research have found that the therapeutic relationship, including empathy, positive regard and genuineness, is:",
     options: [
-      "Important only in psychoanalysis",
+      "Important only in psychoanalysis, where working through the transference is the main therapeutic tool",
       "Unrelated to therapy outcome",
-      "Consistently related to outcome across many types of therapy, supporting part of Rogers' claim, though the core conditions are not always sufficient on their own",
+      "Consistently related to outcome across many therapies, though not always sufficient on its own",
       "Harmful to clients",
     ],
     answer: 2,
@@ -231,9 +231,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Maslow distinguished 'deficiency needs' (D-needs) from 'being needs' (B-needs). Being needs are:",
     options: [
-      "Growth motives such as truth, beauty, goodness and justice that energise self-actualising people",
+      "Growth motives such as truth, beauty and justice that energise self-actualising people",
       "Needs that arise from a lack of food or safety",
-      "Needs that disappear once they are satisfied",
+      "Needs that disappear once they are satisfied, like hunger after a meal",
       "Unconscious sexual drives",
     ],
     answer: 0,
@@ -292,8 +292,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Fear of the sea",
       "A complex about one's father",
-      "Fear of one's own greatness and potential, which leads people to avoid growth",
-      "A desire to be swallowed by the group",
+      "Fear of one's own greatness, which leads people to avoid growth",
+      "A desire to be swallowed up by the group and lose oneself in its identity",
     ],
     answer: 2,
     explanation:
@@ -310,8 +310,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Was based on three core needs",
       "Was the third school founded by Wundt",
-      "Came after cognitive and biological psychology",
-      "Offered an alternative to the two dominant forces, psychoanalysis and behaviourism",
+      "Came after cognitive and biological psychology had become dominant",
+      "Offered an alternative to psychoanalysis and behaviourism",
     ],
     answer: 3,
     explanation:
@@ -347,9 +347,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A 'peak experience', in Maslow's sense, is:",
     options: [
       "The highest score on an achievement test",
-      "A moment of intense joy, wonder or unity in which a person feels fully alive and at one with the world",
+      "A moment of intense joy, wonder or unity in which a person feels fully alive",
       "A period of severe stress",
-      "The point at which a need is satisfied",
+      "The point at which a need is fully satisfied and so stops motivating behaviour",
     ],
     answer: 1,
     explanation:
@@ -492,10 +492,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Existential approaches to personality share the belief that:",
     options: [
-      "The unconscious is the only important part of the mind",
+      "The unconscious is the only important part of the mind, shaping every choice we make",
       "Behaviour is fully determined by reinforcement",
       "Personality is fixed by genes",
-      "People are free to choose and are responsible for creating meaning in their lives, even in the face of death and uncertainty",
+      "People are free to choose and responsible for creating meaning, even facing death",
     ],
     answer: 3,
     explanation:
@@ -594,8 +594,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Ignoring a person's feelings",
       "Agreeing with everything a person says",
-      "Praising a person only when they succeed",
-      "Accepting and valuing a person without requiring them to meet certain conditions",
+      "Praising a person warmly, but only when they succeed or improve in some way",
+      "Accepting and valuing a person without requiring them to meet conditions",
     ],
     answer: 3,
     explanation:
@@ -609,8 +609,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Rogers proposed that a person's 'need for positive regard' is:",
     options: [
-      "Universal and so strong that people may give up their own organismic valuing in order to receive approval from others",
-      "Found only in people with mental disorders",
+      "Universal and so strong that people may give up their own valuing to win approval",
+      "Found mainly in people with mental disorders, whose self-esteem is low and fragile",
       "Easily satisfied and of little importance",
       "The same as the death instinct",
     ],
@@ -647,7 +647,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Self-esteem",
       "Self-transcendence",
       "Safety",
-      "Belongingness",
+      "Belongingness and love",
     ],
     answer: 1,
     explanation:
@@ -699,8 +699,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Both rejected the importance of subjective experience",
       "Both saw human nature as basically evil",
-      "Rogers saw behaviour as fully determined, while Freud stressed free will",
-      "Rogers saw human nature as basically positive and growth-oriented, while Freud saw it as driven by powerful, often antisocial instincts that must be controlled",
+      "Rogers saw behaviour as fully determined by the past, while Freud stressed free will and conscious choice",
+      "Rogers saw human nature as positive and growth-oriented; Freud saw it as driven by antisocial instincts",
     ],
     answer: 3,
     explanation:
@@ -774,9 +774,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A counselling student argues that Rogers' core conditions are 'necessary and sufficient' for change in all clients. Which response best reflects the current evidence?",
     options: [
       "Only medication can produce change",
-      "The core conditions have no effect on outcome",
+      "The core conditions have no measurable effect on outcome once specific techniques are used",
       "The core conditions are harmful",
-      "Relationship factors such as empathy and positive regard are robust predictors of outcome, but for some problems, such as specific phobias or OCD, specific techniques like exposure add substantial benefit, so the conditions are usually helpful rather than sufficient alone",
+      "Relationship factors reliably predict outcome, but for problems such as OCD, techniques like exposure add benefit",
     ],
     answer: 3,
     explanation:

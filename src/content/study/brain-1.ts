@@ -1,6 +1,5 @@
 /* Module · Brain and behaviour, Parts I and II (Starting and Beginner levels). Original text written for VIBHA School of Psychology. */
-export const part1 = String.raw`
-# Part I · Starting: the brain in plain words
+export const s1Intro = String.raw`
 
 ## 1.1 Why a psychology student needs the brain [core][starting]
 Every thought, mood and memory you will study in this course happens in a body. When a patient cannot sleep, hears voices or freezes with panic, something is changing in their brain at the same moment as something is changing in their life. You do not need to become a neurologist. You need a clear, working picture so that you can explain symptoms, understand medicines, and talk with doctors as an equal.
@@ -210,7 +209,7 @@ Sneha, 29, a teacher in Pune, develops blurred vision in one eye, then months la
 :::
 
 :::clinician
-The sodium-potassium ATPase uses a large share of neuronal energy, which is one reason the brain (about 2 per cent of body weight) uses about 20 per cent of resting energy and is so vulnerable to hypoxia and hypoglycaemia. Local anaesthetics and several anticonvulsants (carbamazepine, phenytoin, lamotrigine) block voltage-gated sodium channels, reducing high-frequency firing; this shared mechanism partly explains their mood-stabilising and neuropathic-pain uses. Microglial synaptic pruning (complement-tagged, involving C3 and C4) is now central to neurodevelopmental hypotheses of schizophrenia, discussed in Part III.
+The sodium-potassium ATPase uses a large share of neuronal energy, which is one reason the brain (about 2 per cent of body weight) uses about 20 per cent of resting energy and is so vulnerable to hypoxia and hypoglycaemia. Local anaesthetics and several anticonvulsants (carbamazepine, phenytoin, lamotrigine) block voltage-gated sodium channels, reducing high-frequency firing; this shared mechanism partly explains their mood-stabilising and neuropathic-pain uses. Microglial synaptic pruning (complement-tagged, involving C3 and C4) is now central to neurodevelopmental hypotheses of schizophrenia, discussed at the Advanced level.
 :::
 
 :::recall
@@ -529,7 +528,10 @@ Q: A patient in alcohol withdrawal is shaky and has a seizure. The best explanat
 > Chronic alcohol boosts GABA; the brain compensates, so stopping suddenly leaves the brakes weak and glutamate unopposed.
 :::
 
-## 1.6 Level check · Starting [core][starting]
+`;
+
+export const s1Check = String.raw`
+## 1.8 Level check · Starting [core][starting]
 Score 80% or more to open the Beginner level.
 
 :::mcq
@@ -637,11 +639,74 @@ Q: Which statement is a myth?
 - *We use only 10 per cent of our brain
 - The cerebellum helps balance
 > The 10 per cent claim is false.
+
+Q: The ventricles of the adult brain develop from:
+- The neural crest
+- *The hollow centre of the neural tube
+- The meninges
+- The circle of Willis
+> The tube's cavity persists as the ventricles and central canal.
+
+Q: Peripheral nerves and their supporting Schwann cells come mostly from the:
+- Neural tube
+- *Neural crest
+- Choroid plexus
+- Cerebellum
+> Cells that pinch off the folds form most of the peripheral nervous system.
+
+Q: Sensory information enters the spinal cord through the:
+- Ventral (front) root
+- *Dorsal (back) root
+- Vagus nerve
+- Corpus callosum
+> Back root in, front root out.
+
+Q: Which cranial nerve controls the muscles of facial expression?
+- V Trigeminal
+- *VII Facial
+- X Vagus
+- XII Hypoglossal
+> The trigeminal gives facial feeling and chewing; the facial nerve moves the face.
+
+Q: CSF is made mainly by the:
+- Arachnoid mater
+- *Choroid plexus in the ventricles
+- Pineal gland
+- Liver
+> About 500 mL a day, mainly from the choroid plexus.
+
+Q: The commonest type of stroke is caused by:
+- Bleeding from a burst artery
+- *A blocked artery (ischaemic)
+- Infection of the meninges
+- Low blood sugar
+> About 85 per cent of strokes are ischaemic.
+
+Q: Which method would best show whether a confused older patient is having seizures that nobody can see?
+- CT
+- *EEG
+- Twin study
+- Functional MRI
+> Only EEG records the brain's electrical activity directly.
+
+Q: Taxi drivers who learned a huge street map had a larger rear hippocampus than bus drivers. The best conclusion is that:
+- People with big hippocampi become taxi drivers
+- *Experience can change brain structure (neuroplasticity)
+- Driving shrinks the brain
+- The hippocampus is only for driving
+> Growth related to years of navigating, and a trainee study confirmed it came with learning.
+
+Q: A baby with cataracts in both eyes should have surgery early because:
+- Cataracts spread to the brain
+- *Vision depends on a sensitive period when the visual cortex wires up
+- Babies feel no pain from surgery
+- Older children cannot be operated on
+> Delay leaves lasting visual loss even after the lens is cleared.
 :::
+`;
 
-# Part II · Beginner: systems, circuits and medicines
-
-## 2.1 Neurotransmitters and receptors in depth [core][beginner]
+export const b2Overview = String.raw`
+## 2.3 Neurotransmitters and receptors in depth [core][beginner]
 At the Starting level you met six messengers. Now look at **where** each comes from, **what receptors** it acts on and **which medicines** change it. This table is the backbone of psychopharmacology.
 
 | Transmitter | Made from, made where | Key receptors | Medicines and drugs that act on it |
@@ -753,7 +818,10 @@ Q: Benzodiazepines mainly act at:
 > They enhance GABA-A chloride channel opening.
 :::
 
-## 2.2 Dopamine pathways and what blocking them does [core][beginner]
+`;
+
+export const b2Dopamine = String.raw`
+## 2.6 Dopamine pathways and what blocking them does [core][beginner]
 Dopamine neurons are few, perhaps a few hundred thousand, but they send long branches across the brain along four main roads. One medicine that blocks D2 receptors blocks them on **all four roads** at once. That is why antipsychotics help some symptoms and cause others.
 
 | Pathway | From, to | Normal job | Too much dopamine | Blocking D2 here |
@@ -856,7 +924,10 @@ Q: A man on an antipsychotic paces the ward, says he "can't stay in his skin" an
 > Inner restlessness with an urge to move is akathisia.
 :::
 
-## 2.3 The lobes in the clinic: frontal syndromes and language [core][beginner]
+`;
+
+export const b3Lobes = String.raw`
+## 3.5 The lobes in the clinic: frontal syndromes and language [core][beginner]
 When you meet a patient whose personality has changed, whose speech is odd or who gets lost, a rough idea of **where** the problem is helps you decide **who** needs to see them.
 
 
@@ -989,7 +1060,10 @@ Q: Which test is most sensitive to dorsolateral frontal dysfunction?
 > Fluency and shifting tasks probe executive function.
 :::
 
-## 2.4 Memory systems [core][beginner]
+`;
+
+export const b3Memory = String.raw`
+## 3.7 Memory systems [core][beginner]
 "Memory" is not one thing. Patients can lose one kind and keep another, and the pattern tells you where the damage is.
 
 
@@ -1155,7 +1229,10 @@ Q: Korsakoff syndrome is caused mainly by deficiency of:
 > Thiamine deficiency, usually with alcohol use, damages the mammillary bodies and thalamus.
 :::
 
-## 2.5 Stress, sleep and the body clock [core][beginner]
+`;
+
+export const b4Stress = String.raw`
+## 4.1 Stress, sleep and the body clock [core][beginner]
 ### The stress system: the HPA axis
 When you face a threat, two systems switch on:
 1. **Fast**: the sympathetic nerves and the adrenal glands release adrenaline in seconds.
@@ -1287,7 +1364,10 @@ Q: A 68-year-old man punches and kicks in his sleep while dreaming of being chas
 > REM sleep behaviour disorder is an early marker of synucleinopathies.
 :::
 
-## 2.6 How medicines act and move [core][beginner]
+`;
+
+export const b2Meds = String.raw`
+## 2.7 How medicines act and move [core][beginner]
 Two questions describe every medicine:
 - **Pharmacodynamics**: what the medicine does to the body (which receptor, what effect).
 - **Pharmacokinetics**: what the body does to the medicine (absorption, distribution, metabolism, excretion).
@@ -1422,7 +1502,10 @@ Q: A woman on lithium develops diarrhoea and vomiting during a heatwave and beco
 > Dehydration raises lithium levels; this is an emergency.
 :::
 
-## 2.7 Hormones and drives: the endocrine system, hunger, thirst and sex [core][beginner]
+`;
+
+export const b4Hormones = String.raw`
+## 4.2 Hormones and drives: the endocrine system, hunger, thirst and sex [core][beginner]
 ### The endocrine system
 Glands release **hormones** into the blood. Most are controlled from the brain through the **hypothalamus** and the **pituitary**, and most switch themselves off by **negative feedback** (like a thermostat).
 
@@ -1591,7 +1674,10 @@ Q: Which stage is NOT part of Masters and Johnson's original response cycle?
 > Desire was added by later models.
 :::
 
-## 2.8 Two hemispheres, and how we study genes and behaviour [core][beginner]
+`;
+
+export const b4Hemispheres = String.raw`
+## 4.5 Two hemispheres, and how we study genes and behaviour [core][beginner]
 
 :::widget brainmap
 {
@@ -1646,6 +1732,31 @@ In a famous study, a split-brain patient's left hemisphere saw a chicken claw an
 - **Dichotic listening**: different words in each ear; most people report right-ear words better (left hemisphere language).
 - Functional imaging and brain stimulation now often replace the Wada test.
 
+### Lateralisation in numbers and named findings
+| Finding | What exams expect |
+|---|---|
+| Language in right-handers | Left hemisphere in about 95 per cent or more |
+| Language in left-handers (Theodore Rasmussen and Brenda Milner's Wada data, without early brain damage) | About 70 per cent left, about 15 per cent right, about 15 per cent both sides |
+| Dichotic listening for words | A **right-ear advantage**, because the crossed pathway from the right ear to the left hemisphere is stronger |
+| Chimeric faces (Jerre Levy, Colwyn Trevarthen and Roger Sperry) | Shown a face made of two different halves, split-brain patients **pointed** (right hemisphere) to the face seen in the **left** visual field, but **named** (left hemisphere) the face in the right visual field |
+| **Alien hand** after callosotomy | The left hand acts against the right, for example unbuttoning a shirt the right hand has just buttoned (intermanual conflict) |
+| Right-hemisphere strengths | Faces, spatial layout, the emotional tone of speech (prosody), global shape; damage causes neglect and aprosodia |
+| Left-hemisphere strengths | Language, sequences, fine detail, the "interpreter" |
+
+:::widget experiment
+{
+ "title": "Where is language in left-handers?",
+ "question": "In the classic Wada-test series of left-handed and ambidextrous patients without early left-hemisphere damage, predict the share with speech in each place.",
+ "unit": "%",
+ "conditions": [
+  { "label": "Left hemisphere", "value": 70 },
+  { "label": "Right hemisphere", "value": 15 },
+  { "label": "Both hemispheres", "value": 15 }
+ ],
+ "why": "Most left-handers are still left-lateralised for language. Right-handers are even more so, at about 96 per cent left. Early left-hemisphere damage shifts more people to right or bilateral language."
+}
+:::
+
 ### Behaviour genetics: separating genes and environment
 Families share both genes and homes, so "it runs in the family" does not prove genes. Behaviour genetics uses natural experiments.
 
@@ -1655,7 +1766,7 @@ Families share both genes and homes, so "it runs in the family" does not prove g
 | **Twin studies** | Identical (MZ) twins share all their genes, fraternal (DZ) about half. If MZ twins are more alike than DZ twins, genes matter | MZ concordance for schizophrenia about 40 to 50 per cent, DZ about 10 to 15 per cent |
 | **Adoption studies** | Is an adopted child more like the biological parents (genes) or adoptive parents (environment)? | Children of mothers with schizophrenia, adopted at birth into healthy families, still had raised risk |
 | **Twins reared apart** | Same genes, different homes | Striking similarities in personality and IQ (Minnesota study) |
-| **Molecular studies** | Find the actual DNA variants | GWAS, polygenic scores (see Section 3.3) |
+| **Molecular studies** | Find the actual DNA variants | GWAS, polygenic scores (see Sections 5.3 and 5.6) |
 | **Animal studies** | Selective breeding and gene "knockouts" | Tryon bred "maze-bright" and "maze-dull" rats |
 
 
@@ -1756,7 +1867,10 @@ Q: A child with an outgoing temperament draws more friendly attention from teach
 > The child's traits evoke responses.
 :::
 
-## 2.9 Level check · Beginner [core][beginner]
+`;
+
+export const b4Check = String.raw`
+## 4.6 Level check · Beginner [core][beginner]
 Score 80% or more to open the Advanced level.
 
 :::mcq
@@ -1864,5 +1978,131 @@ Q: Lithium levels rise with dehydration mainly because lithium:
 - Induces its own metabolism
 - Is stored in fat
 > Renal handling of lithium follows sodium and water.
+
+Q: The resting potential lies closer to the potassium equilibrium potential than to that of sodium because at rest the membrane is:
+- *Far more permeable to potassium through leak channels
+- Completely impermeable to sodium
+- Pumping potassium out
+- Full of open voltage-gated sodium channels
+> Goldman: a permeability-weighted average.
+
+Q: The absolute refractory period is caused mainly by:
+- Potassium channels closing
+- *Inactivation of voltage-gated sodium channels
+- Depletion of neurotransmitter
+- The sodium-potassium pump stopping
+> Inactivated channels must reset before another spike.
+
+Q: Botulinum toxin causes paralysis by:
+- Blocking nicotinic receptors
+- *Cleaving SNARE proteins so acetylcholine cannot be released
+- Inhibiting acetylcholinesterase
+- Blocking glycine receptors
+> No fusion, no release.
+
+Q: GABA is synthesised from glutamate by:
+- GABA transaminase
+- *Glutamic acid decarboxylase
+- Tyrosine hydroxylase
+- Choline acetyltransferase
+> GAD needs vitamin B6.
+
+Q: Match the transmitter with its source nucleus. Which pair is correct?
+- Histamine: raphe nuclei
+- *Acetylcholine: nucleus basalis of Meynert
+- Serotonin: locus coeruleus
+- Orexin: substantia nigra
+> Histamine: tuberomammillary; serotonin: raphe; orexin: lateral hypothalamus.
+
+Q: Rimonabant was withdrawn from the market mainly because blocking CB1 receptors caused:
+- Seizures
+- *Depression and suicidal thinking
+- Psychosis
+- Liver failure
+> Evidence that endocannabinoid tone supports mood.
+
+Q: Pain and temperature fibres cross to the opposite side:
+- In the medulla
+- *In the spinal cord, near where they enter
+- In the thalamus
+- They do not cross
+> Hence contralateral pain loss in Brown-Séquard syndrome.
+
+Q: Hemiballismus follows a lesion of the:
+- Caudate nucleus
+- Cerebellar vermis
+- *Subthalamic nucleus
+- Red nucleus
+> Contralateral flinging movements.
+
+Q: The thalamic nucleus that relays auditory information is the:
+- Lateral geniculate
+- *Medial geniculate
+- Pulvinar
+- Mediodorsal
+> "Medial for music".
+
+Q: Brodmann areas 44 and 45 correspond to:
+- Primary motor cortex
+- Wernicke's area
+- *Broca's area
+- Primary visual cortex
+> Left inferior frontal gyrus.
+
+Q: Bilateral leg weakness, incontinence and abulia point to a stroke in the territory of the:
+- Middle cerebral arteries
+- *Anterior cerebral arteries
+- Posterior cerebral arteries
+- Vertebral arteries
+> Medial frontal lobes.
+
+Q: The triad of normal pressure hydrocephalus is:
+- Fever, neck stiffness, rash
+- *Gait disturbance, urinary incontinence, dementia
+- Confusion, ataxia, eye-movement palsy
+- Tremor, rigidity, slowness
+> "Wet, wobbly and wacky".
+
+Q: Prolactin is tonically inhibited by:
+- Serotonin
+- TRH
+- *Dopamine from the arcuate nucleus
+- Cortisol
+> The tuberoinfundibular pathway.
+
+Q: The stages of Selye's general adaptation syndrome, in order, are:
+- Resistance, alarm, exhaustion
+- *Alarm, resistance, exhaustion
+- Exhaustion, alarm, recovery
+- Appraisal, coping, adaptation
+> Alarm first.
+
+Q: Which light most strongly suppresses melatonin?
+- Red
+- Green
+- *Blue
+- Infrared
+> Melanopsin peaks around 460 to 480 nm.
+
+Q: Borbély's two-process model explains sleep timing by:
+- *Homeostatic sleep pressure and a circadian signal
+- REM-on and REM-off neurons only
+- Melatonin and cortisol only
+- Dream content
+> Process S and Process C.
+
+Q: An event-related potential that appears to a rare attended target about 300 ms later and is smaller in schizophrenia is the:
+- P50
+- N400
+- *P300
+- Mismatch negativity
+> The oddball P3.
+
+Q: In left-handers without early brain damage, language is most often located in the:
+- *Left hemisphere (about 70 per cent)
+- Right hemisphere (about 70 per cent)
+- Both hemispheres equally in most
+- Cerebellum
+> Rasmussen and Milner's Wada data.
 :::
 `;

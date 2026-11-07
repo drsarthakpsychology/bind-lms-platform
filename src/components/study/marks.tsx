@@ -222,7 +222,6 @@ export function RelatedLab({ open, items }: { open: boolean; items: LabLink[] })
               <span className="min-w-0 flex-1">
                 <span className="block font-bold leading-tight">{x.title}</span>
                 <span className="text-sm text-muted-foreground">{x.hook}</span>
-                <span className="mt-1 block text-xs font-semibold text-muted-foreground">About {x.minutes} min</span>
               </span>
               <ArrowRight className="mt-0.5 size-4 shrink-0" aria-hidden />
             </Link>

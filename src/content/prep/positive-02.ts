@@ -211,7 +211,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Prevented all depression in children for five years",
       "Had small effects on depressive symptoms that varied by study",
-      "Increased depression by making children think about problems",
+      "Increased depression by making children think more about their problems",
       "Worked only when delivered by Seligman's own team",
     ],
     answer: 1,
@@ -262,7 +262,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "In psychology, resilience is best defined as:",
     options: [
-      "Never experiencing any stress or difficulty in life",
+      "Never experiencing any stress or difficulty at all in life",
       "A rare trait found only in exceptional people",
       "Good adaptation in the face of significant adversity",
       "Refusing to ask anyone for help when life is hard",
@@ -301,7 +301,7 @@ export const PART: PrepQuestion[] = [
     stem: "Bonanno's research on adults after bereavement or potentially traumatic events found that the most common pattern of response over time is:",
     options: [
       "Chronic distress lasting several years",
-      "Severe distress that gradually recovers over a year or two",
+      "Severe distress that gradually recovers over a year or two after the event",
       "Stable, healthy functioning with only brief, mild disruption",
       "Delayed distress that appears many months after the event",
     ],
@@ -335,7 +335,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "Studies of adolescents in Indian slums and orphanages often find that resilience is supported mostly by:",
     options: [
-      "Individual traits alone, independent of other people",
+      "Individual traits alone, independent of any other people",
       "Strict discipline and isolation from the community",
       "Supportive relationships, schooling and community ties",
       "Avoiding any talk of feelings with adults",
@@ -396,7 +396,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "More optimism about the coming week and fewer physical complaints",
       "No difference in any measure after ten weeks of writing",
-      "More stress, because writing reminded them of what they lacked",
+      "More stress, because writing reminded them of what they still lacked",
       "Higher exam marks but lower mood than the control groups",
     ],
     answer: 0,

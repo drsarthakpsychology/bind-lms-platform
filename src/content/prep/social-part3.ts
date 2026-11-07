@@ -87,9 +87,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Sherif's autokinetic studies, participants in a dark room estimated how far a still point of light seemed to move. When they made estimates in groups, their answers converged on a shared norm, and they kept using that norm later when tested alone. This mainly shows:",
     options: [
       "Social loafing",
-      "Normative influence with public compliance only",
+      "Normative influence, producing public compliance only, without any private acceptance of the norm",
       "Obedience to an authority figure",
-      "Informational influence, leading to private acceptance of a group norm in an ambiguous situation",
+      "Informational influence, leading to private acceptance of a norm in an ambiguous situation",
     ],
     answer: 3,
     explanation:
@@ -130,8 +130,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Conformity was higher in individualist cultures",
       "Conformity was identical in all cultures",
-      "Conformity was higher in collectivist cultures than in individualist cultures, and in the USA it had declined since the 1950s",
-      "Conformity in the USA had increased steadily since the 1950s",
+      "Conformity was higher in collectivist cultures, and in the USA it had declined since the 1950s",
+      "Conformity in the USA had increased steadily since the 1950s, as media use grew",
     ],
     answer: 2,
     explanation:
@@ -203,8 +203,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Hollander's idea of 'idiosyncrasy credits' explains why:",
     options: [
-      "New members can break rules more easily than established ones",
-      "A group member who has long followed group norms and contributed to the group can later depart from norms without being rejected",
+      "New members can break rules more easily than established ones, since less is expected of them",
+      "A member who has long followed norms and contributed can later deviate without being rejected",
       "Leaders must always conform more than others",
       "Minority members earn credits by being inconsistent",
     ],
@@ -254,9 +254,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Critics of Asch's work, such as Friend, Rafferty and Bramel, pointed out that textbooks often overstated his findings. What is the main point of this criticism?",
     options: [
       "The confederates were not trained",
-      "Asch never ran any control conditions",
+      "Asch never ran any control condition, so error rates without pressure were unknown",
       "No participant ever conformed",
-      "Most responses on critical trials were independent, so the studies show substantial independence as well as conformity",
+      "Most critical-trial responses were independent, so the studies also show substantial independence",
     ],
     answer: 3,
     explanation:
@@ -344,9 +344,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Milgram explained obedience with the idea of the 'agentic state', in which a person:",
     options: [
       "Has an authoritarian personality",
-      "Acts on their own conscience and accepts full responsibility",
+      "Acts on their own conscience and accepts full personal responsibility for whatever they do",
       "Is hypnotised by the experimenter",
-      "Sees themselves as an instrument carrying out another's wishes and so no longer feels responsible for their actions",
+      "Sees themselves as an instrument of another's wishes and so no longer feels responsible",
     ],
     answer: 3,
     explanation:
@@ -386,9 +386,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Hofling's hospital field study, nurses received a phone call from an unknown 'doctor' telling them to give twice the maximum dose of an unfamiliar drug. The finding was that:",
     options: [
       "None of the nurses obeyed",
-      "Almost all of the nurses (21 of 22) began to give the drug before being stopped, although most nurses asked in advance said they would refuse",
+      "21 of 22 nurses began to give the drug, though most nurses asked in advance said they would refuse",
       "Half the nurses obeyed",
-      "The nurses checked with the hospital pharmacist first",
+      "The nurses checked with the hospital pharmacist first, then refused the order",
     ],
     answer: 1,
     explanation:
@@ -589,8 +589,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Deindividuation refers to:",
     options: [
-      "Developing a strong sense of personal identity",
-      "A loss of self-awareness and personal responsibility in groups, often linked to anonymity and arousal, which can lower restraints on behaviour",
+      "Developing a strong sense of personal identity through group membership",
+      "A loss of self-awareness and responsibility in groups, often linked to anonymity and arousal",
       "Reduced effort on a group task",
       "Conformity to a single authority figure",
     ],
@@ -642,10 +642,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Zimbardo's analysis of the abuse of prisoners at Abu Ghraib prison in Iraq, in which he acted as an expert witness, applied his idea that:",
     options: [
-      "Only conformity to peers, not the system, was involved",
+      "Only conformity to fellow guards, not the wider military system, was involved in the abuse",
       "The abusers had rare personality disorders",
       "Abuse cannot occur in organised institutions",
-      "Situational and systemic forces ('bad barrels' and 'bad barrel makers') can lead ordinary people to commit abuse, rather than only 'bad apples'",
+      "Situational and systemic forces ('bad barrels') can lead ordinary people to commit abuse",
     ],
     answer: 3,
     explanation:
@@ -659,8 +659,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which of the following best describes 'pluralistic ignorance'?",
     options: [
-      "Most group members privately reject a norm but wrongly believe that most others accept it, so they all go along",
-      "Most people know a rule but deliberately ignore it",
+      "Most members privately reject a norm but wrongly think most others accept it, so all go along",
+      "Most people know a rule but deliberately ignore it, expecting not to be caught",
       "A person's belief that their views are unique",
       "Lack of knowledge about other cultures",
     ],
@@ -692,8 +692,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Moscovici's 'conversion theory' proposes that majorities and minorities differ in the kind of influence they produce. According to this theory:",
     options: [
-      "Minorities produce only public compliance",
-      "Majorities usually produce public compliance through social comparison, whereas minorities can produce private change through validation of their arguments",
+      "Minorities produce only public compliance, while majorities produce private conversion",
+      "Majorities mostly produce public compliance, while minorities can produce private change through validation",
       "Majorities always produce deep private change",
       "Neither majorities nor minorities have any influence",
     ],
@@ -757,14 +757,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Before running his study, Milgram asked psychiatrists to predict how many people would go to 450 volts. They predicted:",
     options: [
-      "Only a tiny fraction, about one in a thousand, mainly sadistic people",
+      "About one in a thousand, mainly sadistic people",
       "About 65%",
       "Everyone",
-      "About half",
+      "About half, mostly those with authoritarian views",
     ],
     answer: 0,
     explanation:
-      "Psychiatrists, students and middle-class adults all predicted very low obedience and expected only a pathological fringe to continue. The gap between these predictions and the actual 65% is a striking example of the fundamental attribution error: people underestimate the power of situations and overestimate the role of personality. 65% was the actual result, not the prediction.",
+      "Psychiatrists, students and middle-class adults all predicted very low obedience and expected only a pathological fringe to continue. The gap between these predictions and the actual 65% is a striking example of the fundamental attribution error: people underestimate the power of situations and overestimate the role of personality. 65% was the actual result, not the prediction, and no one predicted anything close to half.",
     ref: "Milgram 1974",
   }),
   s({
@@ -791,7 +791,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In an early study, Jenness asked students to estimate the number of beans in a jar, first alone, then after group discussion, then alone again. The second individual estimates moved towards the group's estimate. This early study showed:",
     options: [
-      "Obedience to authority",
+      "Obedience to an authority figure who led the discussion",
       "Informational influence in an ambiguous task",
       "Social loafing",
       "Minority influence",
@@ -811,7 +811,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Use real electric shocks to make the study more realistic",
       "Repeat Milgram's procedure exactly, including all four prods and the 450-volt maximum",
-      "Stop at the 150-volt point, screen out vulnerable participants, remind people they can withdraw and still be paid, and debrief immediately",
+      "Stop at 150 volts, screen out vulnerable people, remind them they can withdraw, and debrief at once",
       "Avoid any debriefing so that participants are not upset",
     ],
     answer: 2,
@@ -853,9 +853,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bickman's field study, in which a person dressed as a security guard, a milkman or in ordinary clothes asked passers-by to pick up litter or put coins in a parking meter, found that:",
     options: [
-      "People obeyed the guard's uniform far more often than the other two",
+      "People obeyed the guard far more often than the other two",
       "Nobody obeyed any of the three",
-      "The milkman was obeyed most often",
+      "The milkman was obeyed most often, as a familiar and trusted figure",
       "Clothing made no difference",
     ],
     answer: 0,

@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { groupReplies, threadNeedsReply, type NeedsReply, type ReplyRow, type ThreadRow } from "./logic";
 
 export type InboxThread = {
@@ -13,6 +14,8 @@ export type InboxThread = {
   cohortName: string | null;
   authorId: string;
   author: string;
+  /** The asker's sign-in email (for the login quick actions). */
+  authorEmail: string;
   createdAt: string;
   need: NeedsReply;
   /** The student's latest message when they wrote back after an answer. */
@@ -21,6 +24,21 @@ export type InboxThread = {
 };
 
 export type InboxEmail = { id: string; fromEmail: string; fromName: string | null; subject: string; body: string; receivedAt: string };
+
+/** A student the admin can send login details to, from the Inbox. */
+export type LoginPerson = { name: string; email: string; roll: string | null };
+
+/** Every real student (no test or robot accounts), for the Inbox login finder. Never throws. */
+export async function loadLoginPeople(): Promise<LoginPerson[]> {
+  try {
+    const { data } = await createAdminClient().from("profiles").select("name, email, roll_number, is_test").eq("role", "student").order("name", { ascending: true }).limit(5000);
+    return (data ?? [])
+      .filter((p) => p.email && !isHiddenAccount({ email: p.email as string, is_test: p.is_test as boolean | null }))
+      .map((p) => ({ name: displayName((p.name as string | null) ?? null, String(p.email)), email: String(p.email), roll: (p.roll_number as string | null) ?? null }));
+  } catch {
+    return [];
+  }
+}
 
 const LIMIT = 400;
 
@@ -104,6 +122,7 @@ export async function loadInbox(opts: { userId?: string; withEmails?: boolean } 
         cohortName: cohortId ? (cohortName.get(cohortId) ?? null) : null,
         authorId: row.user_id,
         author: p ? displayName((p.name as string | null) ?? null, String(p.email ?? "")) : "A student",
+        authorEmail: String(p?.email ?? ""),
         createdAt: row.created_at,
         need,
         followUp: need.reason === "student-replied" ? (latestByAsker.get(row.id) ?? null) : null,

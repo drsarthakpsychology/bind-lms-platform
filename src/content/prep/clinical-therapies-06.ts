@@ -112,7 +112,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In IPT, 'communication analysis' involves:",
-    options: ["Interpreting dreams for hidden interpersonal meanings", "Going through a recent key conversation to see where it went wrong", "Recording heart rate while the patient talks to family members", "Teaching the patient to avoid all conflict with other people"],
+    options: ["Interpreting dreams for hidden interpersonal meanings", "Going through a recent key conversation to see where it went wrong", "Recording heart rate and skin conductance while the patient talks to family members", "Teaching the patient to avoid all conflict with other people"],
     answer: 1,
     explanation:
       "Communication analysis looks closely at a specific recent exchange: who said what, what was meant, what was felt and what was left unsaid. It often reveals indirect communication, assumptions or silence, which the patient then rehearses differently through role play. IPT does not interpret dreams, use physiological recording or encourage avoidance of conflict.",
@@ -138,7 +138,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Interpersonal and social rhythm therapy (IPSRT), developed by Ellen Frank for bipolar disorder, adds which element to IPT?",
-    options: ["Exposure and response prevention for intrusive thoughts", "Regular daily routines tracked with a social rhythm metric", "Psychoanalytic interpretation of dreams", "A token economy for medication adherence"],
+    options: ["Exposure and response prevention for intrusive obsessional thoughts", "Regular daily routines tracked with a social rhythm metric", "Psychoanalytic interpretation of dreams", "A token economy for medication adherence"],
     answer: 1,
     explanation:
       "IPSRT combines IPT with regularising daily routines, tracked with the social rhythm metric, because circadian and social disruption (shift work, travel, late nights) can precipitate bipolar episodes. In the STEP-BD programme, intensive psychosocial treatments including IPSRT improved recovery from bipolar depression compared with brief care. It does not use ERP, dream work or tokens.",
@@ -187,7 +187,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In the IPT 'grief' problem area, the two main goals are:",
-    options: ["To help the patient forget the deceased and suppress sadness", "To aid mourning and help the patient build new ties and interests", "To uncover early childhood trauma linked to the loss", "To dispute irrational beliefs about death and dying"],
+    options: ["To help the patient forget the deceased and suppress any sadness about it", "To aid mourning and help the patient build new ties and interests", "To uncover early childhood trauma linked to the loss", "To dispute irrational beliefs about death and dying"],
     answer: 1,
     explanation:
       "IPT treats the grief focus by facilitating delayed or stuck mourning (talking about the deceased, the death and mixed feelings) and helping the patient build new relationships and activities. Suppressing sadness is the opposite. Childhood trauma work belongs to other models, and IPT does not use disputation of beliefs.",
@@ -344,7 +344,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Termination in IPT is handled by:",
-    options: ["Ending without warning, to test the patient's independence", "Discussing the ending openly, reviewing gains and relapse signs", "Extending therapy indefinitely to prevent any relapse", "Avoiding any mention of ending so as not to upset the patient"],
+    options: ["Ending without warning, to test the patient's independence", "Discussing the ending openly, reviewing gains and relapse signs", "Extending therapy indefinitely to prevent any relapse", "Avoiding any mention of the ending so as not to upset the patient"],
     answer: 1,
     explanation:
       "IPT is time-limited (often 12 to 16 weekly sessions), and the ending is planned from the start. The final phase reviews progress, attributes gains to the patient's work, normalises sadness about ending (as distinct from relapse), and discusses relapse signs and maintenance options. Sudden or avoided endings, or open-ended therapy, contradict the model.",

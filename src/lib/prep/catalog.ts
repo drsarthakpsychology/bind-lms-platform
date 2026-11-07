@@ -23,7 +23,7 @@ export const EXAM_TRACKS_ENABLED: boolean = false;
 /** The section's full name (page titles and the hero). No dashes in student text. */
 export const PREP_TITLE = "Psychology Entrance & Competitive Exam Preparation";
 /** The exams the one course prepares for, shown as a separate line under the title. */
-export const PREP_EXAMS = ["CUET-PG", "UGC-NET", "Clinical Psychology Entrances (M.Clin.Psy)"] as const;
+export const PREP_EXAMS = ["CUET PG", "UGC NET", "Clinical Psychology Entrances", "MD Psychiatry"] as const;
 /** Short label for the nav and back links. */
 export const PREP_SHORT = "Exam Prep";
 
@@ -34,6 +34,7 @@ export const GOALS: Goal[] = [
   { id: "ugc-net", label: "UGC NET", detail: "Paper 1 and Paper 2 Psychology" },
   { id: "mcp-entrance", label: "Clinical psychology entrance", detail: "M.Clin.Psy / M.Phil: NIMHANS, CIP, IHBAS and others" },
   { id: "ma-semester", label: "MA/MSc semester exams", detail: "Your university's semester papers" },
+  { id: "md-psychiatry", label: "MD Psychiatry", detail: "Postgraduate psychiatry: theory papers, NEET SS style and viva" },
 ];
 
 export const isGoal = (v: unknown): v is PrepExam => GOALS.some((g) => g.id === v);
@@ -61,8 +62,41 @@ export const SUBJECT_TITLE: Record<Subject, string> = {
   organisational: "Work and organisations",
   "indian-psychology": "Indian psychology",
   "ethics-law": "Ethics and law",
+  psychopharmacology: "Psychopharmacology",
+  "clinical-psychiatry": "Clinical psychiatry",
   "ugc-paper1": "NET Paper 1: teaching and reasoning",
 };
+
+/**
+ * The order subjects are listed in the question bank: clinical and core
+ * psychology first, NET Paper 1 (the general paper, optional) always last.
+ */
+export const BANK_SUBJECTS: readonly Subject[] = [
+  "psychopathology",
+  "clinical-psychiatry",
+  "clinical-therapies",
+  "psychopharmacology",
+  "biological",
+  "psychometrics-assessment",
+  "research-methods",
+  "statistics",
+  "cognitive",
+  "perception-attention",
+  "learning-motivation-emotion",
+  "developmental",
+  "social",
+  "personality-theories",
+  "history-systems",
+  "counselling",
+  "health",
+  "positive",
+  "organisational",
+  "indian-psychology",
+  "ethics-law",
+  "ugc-paper1",
+];
+/** The general paper: optional, listed last and kept out of Smart practice unless the student practises it. */
+export const OPTIONAL_SUBJECTS: ReadonlySet<Subject> = new Set<Subject>(["ugc-paper1"]);
 
 export const isSubject = (v: unknown): v is Subject => (SUBJECTS as readonly string[]).includes(v as string);
 
@@ -92,6 +126,8 @@ export const SUBJECT_MODULE: Record<Subject, readonly string[]> = {
   organisational: ["applied", "exam-prep/2-1"],
   "indian-psychology": ["foundations", "exam-prep/2-1"],
   "ethics-law": ["ethics-law"],
+  psychopharmacology: ["medicine-profiles", "antidepressants", "antipsychotics", "stabilisers", "pharmacokinetics"],
+  "clinical-psychiatry": ["interview-mse", "mse-deep", "more-disorders"],
   "ugc-paper1": ["net-paper1", "exam-prep/1-1"],
 };
 

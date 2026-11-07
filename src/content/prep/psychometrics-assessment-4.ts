@@ -23,7 +23,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The Minnesota Multiphasic Personality Inventory (MMPI) was developed by",
-    options: ["Raymond Cattell", "Paul Costa and Robert McCrae", "Theodore Millon", "Starke Hathaway and J. C. McKinley"],
+    options: [
+      "Raymond Cattell",
+      "Paul T. Costa Jr. and Robert R. McCrae",
+      "Theodore Millon",
+      "Starke Hathaway and J. C. McKinley",
+    ],
     answer: 3,
     explanation:
       "Hathaway (a psychologist) and McKinley (a psychiatrist) developed the MMPI at the University of Minnesota, published in 1943. Cattell developed the 16PF. Costa and McCrae developed the NEO inventories. Millon developed the MCMI.",
@@ -39,10 +44,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The original MMPI clinical scales were constructed mainly by",
     options: [
-      "factor analysis of personality adjectives",
-      "selecting items on the basis of a theory of personality disorders",
-      "empirical criterion keying: keeping items that statistically separated diagnosed patient groups from normal controls",
-      "asking experts to judge the content of each item",
+      "factor analysis of personality adjectives drawn from the dictionary",
+      "selecting items to fit a prior theory of personality disorders and clinical syndromes",
+      "empirical keying: keeping items that separated patient groups from normal controls",
+      "asking experts to judge whether each item's content fits the scale",
     ],
     answer: 2,
     explanation:
@@ -108,10 +113,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Why did the MMPI-2 introduce uniform T-scores for eight of the clinical scales and the content scales?",
     options: [
-      "To remove the need for validity scales",
-      "So that a given T-score corresponds to the same percentile across scales, since the raw distributions differ in skew",
-      "To convert the scales into stanines",
-      "Because the original linear T-scores were based on a sample of patients",
+      "To remove the need for separate validity scales",
+      "So a given T-score means the same percentile on each scale, as raw distributions differ in skew",
+      "To convert the scales into stanines for easier interpretation",
+      "Because the original linear T-scores came from a sample of psychiatric inpatients, not from normals",
     ],
     answer: 1,
     explanation:
@@ -187,10 +192,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The MMPI-2 Infrequency-Psychopathology scale, F(p), is especially useful because",
     options: [
-      "it measures psychotic thinking directly",
+      "it measures psychotic thinking directly, using items that most inpatients commonly endorse",
       "it replaces the clinical scales in inpatient settings",
-      "it detects defensiveness in job applicants",
-      "its items are rarely endorsed even by psychiatric inpatients, so a high F(p) points to over-reporting rather than genuine severe psychopathology",
+      "it detects defensiveness in job applicants and custody cases",
+      "its items are rarely endorsed even by inpatients, so a high F(p) points to over-reporting",
     ],
     answer: 3,
     explanation:
@@ -207,10 +212,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The MMPI-2 Symptom Validity Scale (FBS), developed by Lees-Haley, is mainly used to detect",
     options: [
-      "random responding",
-      "over-reporting of somatic and cognitive complaints, as in personal-injury and disability evaluations",
-      "naive defensiveness",
-      "acquiescent 'true' responding",
+      "random responding, shown by inconsistent answers to paired items",
+      "over-reporting of somatic and cognitive complaints in injury claims",
+      "naive defensiveness, such as denying common minor faults",
+      "acquiescent 'true' responding, whatever the content of the individual items",
     ],
     answer: 1,
     explanation:
@@ -246,10 +251,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "An MMPI-2 4-9/9-4 two-point code type is most often associated with",
     options: [
-      "anxious, ruminative depression",
-      "somatic complaints under stress",
+      "anxious, ruminative depression with obsessive worry",
+      "somatic complaints that increase under stress",
       "impulsivity, acting out, poor judgement and antisocial tendencies",
-      "social introversion and shyness",
+      "social introversion, shyness and withdrawal",
     ],
     answer: 2,
     explanation:
@@ -347,7 +352,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The MMPI-A is intended for",
-    options: ["children aged 6 to 11", "adolescents aged 14 to 18", "adults over 65", "job applicants only"],
+    options: [
+      "children aged 6 to 11 years",
+      "adolescents aged 14 to 18",
+      "adults over 65",
+      "job applicants only",
+    ],
     answer: 1,
     explanation:
       "The MMPI-A (478 items) is normed for adolescents aged 14 to 18, with adolescent-specific scales such as school problems. There is no MMPI form for young children. Older adults take the adult forms. The MMPI is not restricted to job applicants.",
@@ -363,10 +373,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The MMPI-3 is best described as",
     options: [
-      "a 567-item update of the MMPI-2 with the original clinical scales",
-      "a projective adaptation of the MMPI",
-      "a 335-item inventory that extends the MMPI-2-RF structure with new norms and revised scales",
-      "an adolescent-only version",
+      "a 567-item update of the MMPI-2 that keeps the original clinical scales",
+      "a projective adaptation of the MMPI using picture items",
+      "a 335-item inventory extending the MMPI-2-RF structure with new norms",
+      "an adolescent-only version for ages 14 to 18",
     ],
     answer: 2,
     explanation:
@@ -383,10 +393,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The Harris-Lingoes subscales of the MMPI are",
     options: [
-      "rationally grouped content subscales within several clinical scales, used to understand why a scale is elevated",
-      "empirically keyed validity scales",
-      "factor-analytically derived replacements for all clinical scales",
-      "scales that measure response time",
+      "content subscales within several clinical scales, used to explain an elevation",
+      "empirically keyed validity scales for detecting faking",
+      "factor-analytically derived scales that replace all the original clinical scales",
+      "scales that measure how long the examinee takes per item",
     ],
     answer: 0,
     explanation:
@@ -403,10 +413,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The Millon Clinical Multiaxial Inventory (MCMI) is primarily designed to assess",
     options: [
-      "intelligence in children",
-      "neuropsychological impairment",
-      "vocational interests",
-      "personality disorders and clinical syndromes in adults in clinical settings",
+      "intelligence in children referred for learning problems",
+      "neuropsychological impairment in adults after a head injury or stroke",
+      "vocational interests of adults seeking career guidance",
+      "personality disorders and clinical syndromes in adult patients",
     ],
     answer: 3,
     explanation:
@@ -423,10 +433,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Why does the MCMI report Base Rate (BR) scores rather than T-scores?",
     options: [
-      "Because BR scores have mean 50 and SD 10",
-      "Because BR transformations are anchored to the estimated prevalence of each disorder among patients, so a BR cut-off (such as 75 or 85) flags about the right proportion of cases",
-      "Because the MCMI has no normative sample",
-      "Because BR scores are percentiles in a healthy population",
+      "Because BR scores keep a mean of 50 and SD of 10 on every scale, as T-scores cannot",
+      "Because BR scores are tied to each disorder's prevalence in patients, so cut-offs flag the right share",
+      "Because the MCMI has no normative sample to base T-scores on",
+      "Because BR scores are percentiles in a healthy community population, which patients exceed",
     ],
     answer: 1,
     explanation:
@@ -504,9 +514,9 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "16PF results are usually reported as",
     options: [
       "sten scores (mean 5.5, SD 2) from 1 to 10",
-      "T-scores (mean 50, SD 10)",
-      "Base Rate scores",
-      "deviation IQs",
+      "T-scores (mean 50, SD 10), ranging from 20 to 80",
+      "Base Rate scores anchored to prevalence",
+      "deviation IQs (mean 100, SD 15)",
     ],
     answer: 0,
     explanation:
@@ -593,10 +603,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The NEO-PI-R, developed by Costa and McCrae, measures",
     options: [
-      "the five-factor model: Neuroticism, Extraversion, Openness, Agreeableness and Conscientiousness",
-      "Eysenck's three superfactors",
-      "the 16 source traits of Cattell",
-      "psychiatric syndromes defined by DSM",
+      "the five-factor model's five domains and their 30 facets",
+      "Eysenck's three superfactors and the primary traits beneath them",
+      "the 16 source traits of Cattell's factor analyses",
+      "psychiatric syndromes defined by DSM criteria",
     ],
     answer: 0,
     explanation:
@@ -662,9 +672,9 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The NEO Five-Factor Inventory (NEO-FFI) is",
     options: [
-      "a 240-item inventory with facet scores",
-      "an observer-rating projective test",
-      "a measure of the six HEXACO factors",
+      "a 240-item inventory with domain and facet scores",
+      "an observer-rating projective test for adolescents",
+      "a measure of the six HEXACO factors, including Honesty-Humility",
       "a 60-item short form giving the five domain scores only",
     ],
     answer: 3,
@@ -701,14 +711,14 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The lexical hypothesis, which underlies the Big Five and the 16PF, states that",
     options: [
-      "important individual differences become encoded as words in natural language, so analysing trait words can reveal the main dimensions of personality",
-      "personality is determined by the language a person speaks",
-      "only bilingual people have stable traits",
-      "trait words should be avoided in personality tests",
+      "important individual differences become encoded as words in natural language",
+      "personality is determined by the particular language a person speaks from childhood",
+      "only bilingual people have stable traits across situations",
+      "trait words should be avoided in personality tests, as they are vague",
     ],
     answer: 0,
     explanation:
-      "Galton, then Allport and Odbert (about 18,000 trait terms), and later Cattell, Norman and Goldberg assumed that socially important differences are named in language; factor analysis of these terms yields the main dimensions. The hypothesis is about the dictionary as a source of traits, not linguistic determinism. The other two options have no basis.",
+      "Galton, then Allport and Odbert (about 18,000 trait terms), and later Cattell, Norman and Goldberg assumed that socially important differences are named in language; factor analysis of these terms yields the main dimensions. The hypothesis is about the dictionary as a source of traits, not linguistic determinism. Nothing in it links stable traits to bilingualism. Far from avoiding trait words, it uses them as the raw material for tests.",
     module: M,
     ref: "Allport & Odbert 1936; Goldberg 1990",
   },
@@ -720,7 +730,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The HEXACO model differs from the Big Five mainly by adding a sixth factor called",
-    options: ["Psychoticism", "Self-Control", "Honesty-Humility", "Reasoning"],
+    options: [
+      "Psychoticism",
+      "Self-Control and Restraint",
+      "Honesty-Humility",
+      "Reasoning",
+    ],
     answer: 2,
     explanation:
       "Ashton and Lee's HEXACO model adds Honesty-Humility (sincerity, fairness, greed avoidance, modesty), found in lexical studies across languages. Psychoticism is Eysenck's. Self-Control is a 16PF global factor. Reasoning is 16PF factor B.",
@@ -736,9 +751,9 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "The Eysenck Personality Questionnaire (EPQ) measures",
     options: [
-      "16 primary factors",
-      "Neuroticism and Extraversion only",
-      "the Big Five domains",
+      "16 primary factors grouped into five global factors",
+      "Neuroticism and Extraversion only, with no Lie scale",
+      "the Big Five domains with their facets",
       "Psychoticism, Extraversion and Neuroticism, plus a Lie scale",
     ],
     answer: 3,
@@ -771,10 +786,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "In Eysenck's biological theory, individual differences in Extraversion are attributed mainly to",
     options: [
-      "differences in arousal of the ascending reticular activating system, with introverts chronically more aroused",
-      "differences in limbic-system reactivity",
-      "levels of testosterone alone",
-      "the size of the frontal lobes",
+      "arousal of the ascending reticular activating system, with introverts more aroused",
+      "differences in how reactive the limbic system, or 'visceral brain', is to emotional stimuli",
+      "levels of testosterone alone, with extraverts higher",
+      "the size of the frontal lobes relative to the rest of the cortex",
     ],
     answer: 0,
     explanation:
@@ -810,10 +825,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "A very high score on the Lie (L) scale of the EPQ most likely indicates that the respondent",
     options: [
-      "is highly extraverted",
-      "has a psychotic disorder",
+      "is highly extraverted and sociable",
+      "has a psychotic disorder needing review",
       "tried to present themselves in a socially desirable way",
-      "answered at random",
+      "answered at random without reading the items",
     ],
     answer: 2,
     explanation:
@@ -845,10 +860,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Which feature distinguishes objective personality inventories from projective techniques?",
     options: [
-      "Objective inventories use ambiguous stimuli",
-      "Objective inventories can only be used with children",
-      "Objective inventories never have validity scales",
-      "Objective inventories use structured items with fixed response options and standardised scoring",
+      "Objective inventories use ambiguous stimuli that invite free responses",
+      "Objective inventories can only be used with children under twelve",
+      "Objective inventories never include validity scales for faking",
+      "Objective inventories use structured items with fixed responses and keyed scoring",
     ],
     answer: 3,
     explanation:
@@ -865,10 +880,10 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "On a self-report scale, a respondent agrees with almost every statement regardless of its content. This response style is called acquiescence. The standard design remedy is to",
     options: [
-      "balance the keying, so that about half the items are scored in the 'disagree' direction",
-      "lengthen the test",
-      "increase the number of response options",
-      "use only positively worded items",
+      "balance the keying, so about half the items are scored in the 'disagree' direction",
+      "lengthen the test so that the bias averages out",
+      "increase the number of response options from two to seven",
+      "use only positively worded items so that responses are consistent",
     ],
     answer: 0,
     explanation:
@@ -899,7 +914,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "People often accept vague, generally true personality descriptions as highly accurate descriptions of themselves. This is a caution for interpreting computer-generated test reports. The phenomenon is called",
-    options: ["the halo effect", "the Barnum (Forer) effect", "the Flynn effect", "the Hawthorne effect"],
+    options: [
+      "the halo effect",
+      "the Barnum (Forer) effect",
+      "the Flynn effect",
+      "the Hawthorne (observer) effect",
+    ],
     answer: 1,
     explanation:
       "Forer showed students rate a generic sketch as highly accurate; Meehl called this the Barnum effect. The halo effect is letting one trait colour ratings of others. The Flynn effect is the rise in IQ scores across generations. The Hawthorne effect is behaviour change from being observed.",

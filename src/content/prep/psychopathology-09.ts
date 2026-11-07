@@ -62,7 +62,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "An overvalued idea (Wernicke) differs from a delusion in that it:",
-    options: ["Is always bizarre and physically impossible in its content", "Is less fixed and understandable from the background, yet dominates life", "Is experienced as alien to the self and is actively resisted", "Arises suddenly, fully formed, without any understandable antecedent"],
+    options: ["Is always bizarre and physically impossible in its content", "Is less fixed and understandable from the background, yet dominates life", "Is experienced as alien to the self and is actively resisted", "Arises suddenly, fully formed, without any understandable psychological antecedent"],
     answer: 1,
     explanation:
       "An overvalued idea is a comprehensible, emotionally charged belief that comes to dominate a person's life (e.g., the conviction of being fat in anorexia nervosa), held strongly but not with delusional incorrigibility, and understandable from personality and experience. Bizarreness suggests delusion. Alien and resisted describes obsessions. A sudden ununderstandable origin describes primary delusions.",
@@ -97,7 +97,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Asked 'What brought you to hospital?', a patient replies: 'Well, I got up at six, which is earlier than usual because the milkman was early, and my sister, who lives in Pune, she called, and that reminded me of the bus timings... and so in the end my chest pain is why I came.' This is:",
-    options: ["Tangentiality", "Circumstantiality", "Flight of ideas", "Derailment"],
+    options: ["Tangentiality", "Circumstantiality", "Manic flight of ideas", "Derailment"],
     answer: 1,
     explanation:
       "Circumstantiality is over-inclusion of irrelevant detail with eventual return to the point; it is seen in obsessional personalities, epilepsy, intellectual disability and some older people. Tangentiality never reaches the goal. Flight of ideas involves rapid, pressured shifts by association. Derailment is a sudden slide on to an unrelated track without returning.",
@@ -299,10 +299,10 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Retardation of thinking with a subjective sense that thinking is laborious and slow, accompanied by poverty of ideas, is most characteristic of:",
-    options: ["Mania", "Delirium tremens", "Severe depression", "Ganser syndrome"],
+    options: ["Mania", "Alcohol withdrawal delirium", "Severe depression", "Ganser syndrome"],
     answer: 2,
     explanation:
-      "Inhibition or retardation of thought, with slowness, difficulty concentrating and few ideas, is typical of severe (especially melancholic) depression and may progress to depressive stupor. Mania shows acceleration (flight of ideas). Delirium shows fluctuating disorganisation with impaired attention. Ganser syndrome shows approximate answers.",
+      "Inhibition or retardation of thought, with slowness, difficulty concentrating and few ideas, is typical of severe (especially melancholic) depression and may progress to depressive stupor. Mania shows acceleration (flight of ideas). Alcohol withdrawal delirium (delirium tremens) shows fluctuating disorganisation with impaired attention. Ganser syndrome shows approximate answers.",
     ref: "Fish's Clinical Psychopathology, disorders of the tempo of thought",
   }),
   Q({
@@ -432,7 +432,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Jaspers distinguished 'understanding' (Verstehen) from 'explanation' (Erklären). In this framework, a primary delusion is:",
-    options: ["Understandable through empathy as arising from mood", "Explainable only causally, not empathically understandable", "Both fully understandable and fully explainable", "Neither understandable nor relevant to psychopathology"],
+    options: ["Understandable through empathy as arising from mood", "Explainable only causally, not empathically understandable", "Both fully understandable and fully explainable", "Neither understandable nor of any relevance to psychopathology"],
     answer: 1,
     explanation:
       "For Jaspers, static and genetic understanding lets the clinician grasp how one psychic event follows from another (e.g., guilt from depression). A primary delusion is, by definition, un-understandable (it represents a break in meaningful connections), so it can only be explained causally, for example by brain processes. Calling it understandable describes secondary delusions. It is central to psychopathology, so calling it neither understandable nor relevant is wrong.",

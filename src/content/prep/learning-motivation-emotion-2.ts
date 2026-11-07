@@ -25,8 +25,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Thorndike's 'law of effect', based on cats escaping from puzzle boxes, states that",
     options: [
-      "responses followed by unpleasant consequences become more frequent",
-      "responses followed by satisfying consequences become more likely to be repeated in that situation",
+      "responses followed by unpleasant consequences become more frequent in that same situation over time",
+      "responses followed by satisfying consequences become more likely to recur in that situation",
       "learning happens only through imitation",
       "learning requires a conditioned stimulus",
     ],
@@ -48,7 +48,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "removing something unpleasant after a behaviour",
       "presenting something unpleasant after a behaviour",
       "removing something pleasant after a behaviour",
-      "presenting something pleasant after a behaviour, which increases the behaviour",
+      "presenting something pleasant after a behaviour",
     ],
     answer: 3,
     explanation:
@@ -88,7 +88,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Taking a pain reliever removes Sunita's headache, and she becomes more likely to take one the next time she has a headache. This is",
-    options: ["negative reinforcement", "positive punishment", "negative punishment", "extinction"],
+    options: ["negative reinforcement", "positive punishment of the pill-taking", "negative punishment", "extinction"],
     answer: 0,
     explanation:
       "An unpleasant state (the headache) is removed, and the behaviour increases: negative reinforcement. It is not punishment, which decreases behaviour. Extinction is the weakening of a behaviour when reinforcement stops. Students often confuse negative reinforcement with punishment, but reinforcement always increases behaviour.",
@@ -133,7 +133,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "When teaching a child with intellectual disability to put on a shirt, the therapist helps with every step except the last (pulling it down), which the child does alone and is praised for. Once that is mastered, the child does the last two steps alone, and so on. This is",
-    options: ["forward chaining", "shaping", "backward chaining", "fading"],
+    options: ["forward chaining (first step taught first)", "shaping", "backward chaining", "fading"],
     answer: 2,
     explanation:
       "Backward chaining teaches the final link first, so every practice ends with completion and reinforcement; each earlier step then becomes a cue for steps already learnt. Forward chaining starts with the first step. Shaping reinforces approximations of a single response. Fading gradually withdraws prompts, often used alongside chaining.",
@@ -149,8 +149,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Money is called a generalised conditioned (secondary) reinforcer because",
     options: [
-      "it has gained value by being linked with many primary reinforcers, such as food and shelter",
-      "it satisfies a biological need directly",
+      "it gains value from links with many primary reinforcers, such as food and shelter",
+      "it satisfies a biological need directly, in the same way that food or water always do",
       "it works only for some people",
       "it reduces behaviour",
     ],
@@ -200,8 +200,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Timberlake and Allison's response-deprivation hypothesis improved on the Premack principle by showing that",
     options: [
       "only food can be a reinforcer",
-      "high-probability behaviours can never be reinforced",
-      "even a low-probability behaviour can act as a reinforcer if access to it is restricted below its normal (baseline) level",
+      "high-probability behaviours can never be reinforced themselves, only used as reinforcers for other behaviours",
+      "even a low-probability behaviour can reinforce if access to it is restricted below its baseline level",
       "reinforcement does not depend on access to activities",
     ],
     answer: 2,
@@ -260,8 +260,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: [
       "a steady, high rate throughout",
       "no responding at all",
-      "a 'scallop': little responding just after reinforcement, with responding speeding up as the end of the interval approaches",
-      "responding only at the start of each interval",
+      "a 'scallop': a pause after reinforcement, then faster responding as the interval ends",
+      "responding concentrated at the start of each interval, then fading steadily towards the end",
     ],
     answer: 2,
     explanation:
@@ -279,8 +279,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "On a large fixed-ratio schedule (for example FR 50), animals typically",
     options: [
       "respond slowly and steadily",
-      "pause after each reinforcement and then respond rapidly until the next one ('break and run')",
-      "respond only at the end of a time interval",
+      "pause after each reinforcement, then respond rapidly until the next ('break and run')",
+      "respond only near the end of each fixed time interval, producing a scallop",
       "stop responding entirely",
     ],
     answer: 1,
@@ -403,10 +403,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Skinner gave hungry pigeons food every 15 seconds no matter what they did. Many developed odd rituals such as turning in circles. He called this",
-    options: ["shaping", "superstitious behaviour, from accidental pairing of responses with reinforcement", "learned helplessness", "latent learning"],
+    options: ["shaping", "superstitious behaviour, from accidental pairing of responses with food", "learned helplessness", "latent learning, revealed only once the food began to arrive on a fixed timetable"],
     answer: 1,
     explanation:
-      "Whatever the bird happened to be doing when food arrived was strengthened by chance, so it became more likely to recur and be 'reinforced' again. Shaping requires the trainer to reinforce approximations on purpose. Learned helplessness follows uncontrollable aversive events. Latent learning is learning without reinforcement.",
+      "Whatever the bird happened to be doing when food arrived was strengthened by chance, so it became more likely to recur and be 'reinforced' again. Shaping requires the trainer to reinforce approximations on purpose. Learned helplessness follows uncontrollable aversive events. Latent learning is learning without reinforcement that shows only once a reward is introduced, but food was given from the start.",
     module: M,
     ref: "Skinner 1948",
   },
@@ -419,8 +419,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "The Brelands trained raccoons to drop coins into a box for food, but over time the raccoons began rubbing the coins together and dipping them, as they would wash food, and stopped completing the task. They called this",
     options: [
-      "instinctive drift: learnt behaviour slides back towards species-typical food behaviour",
-      "extinction",
+      "instinctive drift towards species-typical food behaviour",
+      "extinction, because coin-dropping was no longer reinforced",
       "stimulus generalisation",
       "the overjustification effect",
     ],
@@ -439,14 +439,14 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In Brown and Jenkins's 'autoshaping' procedure, a key is lit for a few seconds before food is delivered, whatever the pigeon does. Pigeons soon start pecking the lit key. This shows that",
     options: [
-      "operant reinforcement is needed for pecking",
+      "operant reinforcement is needed, since early pecks were accidentally followed by food",
       "pigeons cannot learn",
-      "Pavlovian signal-food pairing alone can produce directed behaviour towards the signal (sign-tracking)",
+      "Pavlovian key-food pairing alone can produce pecking at the signal (sign-tracking)",
       "pecking is unrelated to food",
     ],
     answer: 2,
     explanation:
-      "Pecking appears even though it has no effect on food, and it persists even when pecking cancels the food (omission training), so it is driven by the Pavlovian relationship. Operant reinforcement is not required. The pigeons clearly learnt. The pecks resemble eating pecks, linking them to food.",
+      "Pecking appears even though it has no effect on food, and it persists even when pecking cancels the food (omission training), so it is driven by the Pavlovian relationship. Accidental reinforcement cannot explain pecking that cancels the food. The pigeons clearly learnt. The pecks resemble eating pecks, linking them to food.",
     module: M,
     ref: "Brown & Jenkins 1968; Williams & Williams 1969",
   },
@@ -521,8 +521,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Which condition makes punishment most effective in reducing a behaviour?",
     options: [
       "Delivering it long after the behaviour",
-      "Starting mild and increasing it slowly",
-      "Delivering it immediately and consistently, while reinforcing an acceptable alternative behaviour",
+      "Starting mild and increasing it slowly so the person does not become resentful",
+      "Delivering it immediately and consistently while reinforcing an acceptable alternative",
       "Using it only occasionally",
     ],
     answer: 2,
@@ -584,7 +584,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Crespi trained rats to run for a large reward, then switched them to a small reward. They then ran more slowly than rats that had always received the small reward. This is",
-    options: ["the Premack principle", "positive contrast", "spontaneous recovery", "negative contrast (the Crespi effect)"],
+    options: ["the Premack principle", "positive contrast (the elation effect)", "spontaneous recovery", "negative contrast (the Crespi effect)"],
     answer: 3,
     explanation:
       "A downward shift in reward produces performance below that of animals always given the small reward, a negative contrast effect showing animals compare current with past rewards. Positive contrast is the opposite (an upward shift giving performance above controls). The Premack principle concerns activities as reinforcers. Spontaneous recovery follows extinction.",
@@ -600,10 +600,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Lepper, Greene and Nisbett found that preschoolers who drew pictures expecting a 'good player' certificate later spent less free time drawing than children who received no reward or an unexpected reward. This is",
     options: [
-      "the overjustification effect: expected external rewards can undermine intrinsic interest",
+      "the overjustification effect: expected rewards can undermine intrinsic interest",
       "the Premack principle",
       "learned helplessness",
-      "the partial reinforcement effect",
+      "the partial reinforcement effect, since only some of the drawings were rewarded with certificates",
     ],
     answer: 0,
     explanation:
@@ -619,7 +619,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A rat presses a lever for food only when a light is on, because pressing in the dark is never rewarded. In Skinner's terms, the light is",
-    options: ["an unconditioned stimulus", "a punisher", "a discriminative stimulus (S^D) signalling that the response will be reinforced", "a primary reinforcer"],
+    options: ["an unconditioned stimulus that reflexively triggers lever pressing", "a punisher", "a discriminative stimulus (S^D) signalling that pressing will be reinforced", "a primary reinforcer"],
     answer: 2,
     explanation:
       "Skinner's three-term contingency is S^D, response, consequence: the discriminative stimulus sets the occasion for the response. It does not reflexively elicit pressing, so it is not a US. It does not reduce behaviour, so it is not a punisher. It is not itself a reinforcer such as food.",
@@ -650,14 +650,14 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In Bandura's Bobo doll studies, children who watched an adult hit and kick an inflatable doll",
     options: [
-      "later imitated many of the aggressive actions when playing with the doll",
+      "later imitated many of the aggressive actions with the doll",
       "became less aggressive",
       "showed no change in behaviour",
-      "only imitated if they were punished",
+      "imitated the aggression only when the model had been punished for it",
     ],
     answer: 0,
     explanation:
-      "Children who saw the aggressive model copied specific actions and words, showing that behaviour can be learnt by observation without direct reinforcement. They did not become less aggressive. Their behaviour clearly changed. Punishment of the child was not involved.",
+      "Children who saw the aggressive model copied specific actions and words, showing that behaviour can be learnt by observation without direct reinforcement. They did not become less aggressive. Their behaviour clearly changed. Seeing a model punished reduced imitation rather than being required for it.",
     module: M,
     ref: "Bandura, Ross & Ross 1961",
   },
@@ -734,7 +734,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Seeing a classmate praised for answering a question makes Ravi more likely to answer questions himself. This is",
-    options: ["direct reinforcement", "vicarious reinforcement", "negative punishment", "classical conditioning"],
+    options: ["direct reinforcement of his answering", "vicarious reinforcement", "negative punishment", "classical conditioning"],
     answer: 1,
     explanation:
       "Vicarious reinforcement is the increase in behaviour after seeing someone else rewarded for it. Direct reinforcement would require Ravi himself to be praised. Negative punishment removes something pleasant to reduce behaviour. No CS-US pairing is involved, so it is not classical conditioning.",
@@ -770,10 +770,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Bandura's principle of 'reciprocal determinism' states that",
     options: [
-      "personal factors (such as beliefs), behaviour and the environment all influence each other",
+      "personal factors (such as beliefs), behaviour and environment all influence each other",
       "the environment alone determines behaviour",
       "behaviour is determined only by genes",
-      "people determine their environment but are not affected by it",
+      "people shape their environment through their choices, but are not shaped by it in return",
     ],
     answer: 0,
     explanation:
@@ -790,9 +790,9 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Tolman and Honzik ran three groups of rats in a maze: always rewarded, never rewarded, and rewarded only from day 11. The third group's errors dropped sharply right after reward began, quickly matching the always-rewarded group. This showed",
     options: [
-      "learning cannot occur without reward",
+      "learning cannot occur without reward, so the third group learnt the maze only from day 11",
       "the never-rewarded group learnt the most",
-      "latent learning: the rats had learnt the maze without reward, and the reward affected performance",
+      "latent learning: the maze was learnt without reward, and reward changed performance",
       "reward has no effect on behaviour",
     ],
     answer: 2,
@@ -832,10 +832,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In a cross-shaped maze, some rats always found food in the same place whichever arm they started from (place learning), while others had to make the same turn, such as 'turn right', to find food (response learning). Tolman and colleagues found that",
     options: [
-      "response learners learnt faster",
+      "response learners learnt faster, suggesting rats learn fixed movements more easily than they learn locations",
       "neither group learnt",
       "both learnt at exactly the same rate",
-      "place learners learnt faster, supporting the view that rats learn where things are rather than just which movements to make",
+      "place learners learnt faster, suggesting rats learn where things are, not just which movements to make",
     ],
     answer: 3,
     explanation:
@@ -887,8 +887,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Edwin Guthrie proposed that learning occurs through",
     options: [
-      "reinforcement that reduces drive",
-      "contiguity: a combination of stimuli accompanying a movement will tend to be followed by that movement again, so learning can be complete in one trial",
+      "reinforcement that reduces drive, so connections grow gradually over many rewarded trials",
+      "contiguity: a movement made in a set of stimuli tends to recur in them, so learning can occur in one trial",
       "insight",
       "observation of models",
     ],
@@ -906,7 +906,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Robert Gagné arranged eight types of learning in a hierarchy, each building on the ones below it. Which type is at the lowest level?",
-    options: ["Problem solving", "Concept learning", "Chaining", "Signal learning (classical conditioning)"],
+    options: ["Problem solving", "Concept learning", "Chaining (linking stimulus-response bonds)", "Signal learning (classical conditioning)"],
     answer: 3,
     explanation:
       "Gagné's order runs from signal learning, through stimulus-response learning, chaining, verbal association, multiple discrimination, concept learning and rule (principle) learning, to problem solving at the top. So problem solving is the highest level, concept learning is near the top, and chaining is third from the bottom.",
@@ -921,7 +921,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Giving students a short overview that links a new lesson to what they already know, before the detailed material, is called an 'advance organiser'. It comes from",
-    options: ["Bruner's discovery learning", "Skinner's programmed instruction", "Ausubel's theory of meaningful reception learning", "Thorndike's law of exercise"],
+    options: ["Bruner's discovery learning", "Skinner's programmed instruction and teaching machines", "Ausubel's theory of meaningful reception learning", "Thorndike's law of exercise"],
     answer: 2,
     explanation:
       "Ausubel argued that learning is meaningful when new material is anchored to existing knowledge, and advance organisers provide that anchor. Bruner stressed learners discovering principles for themselves. Programmed instruction uses small steps with immediate reinforcement. The law of exercise concerns repetition strengthening connections.",

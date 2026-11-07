@@ -10,7 +10,7 @@ import { CardDeck, TestRunner } from "./interactive";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
- * It only opens after the student has moved on from the sections it covers.
+ * Open any time; it works best after moving on from the sections it covers.
  */
 export function CheckpointView({
   moduleId,
@@ -77,11 +77,7 @@ export function CheckpointView({
             {mcq.length && recall.length ? " + " : ""}
             {recall.length ? `${recall.length} say-it-aloud cards` : ""}
           </p>
-          <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground">
-            <li>This comes now, after you&apos;ve moved on, on purpose: pulling it back from memory is what makes it stick.</li>
-            <li>Some questions are direct. Many give you a patient and ask what you would think or do.</li>
-            <li>Don&apos;t look back at the notes. Guess if you must; the explanation comes at the end.</li>
-          </ul>
+          <p className="mt-2 text-[0.95rem] text-muted-foreground">From memory, no notes. Answers at the end.</p>
           {prev ? <p className="mt-3 text-sm font-semibold">Your best so far: {prev.best} of {prev.total}</p> : null}
           <button
             type="button"

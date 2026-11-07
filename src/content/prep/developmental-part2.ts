@@ -67,7 +67,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Trust versus mistrust",
       "Autonomy versus shame and doubt",
       "Industry versus inferiority",
-      "Identity versus role confusion",
+      "Identity versus identity confusion",
     ],
     answer: 1,
     explanation:
@@ -82,8 +82,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Erikson's 'epigenetic principle' states that:",
     options: [
       "Development is complete by age 5",
-      "Personality is determined by DNA methylation",
-      "Each part of personality has a special time of ascendancy, and development unfolds in a predetermined sequence of stages, each building on earlier ones",
+      "Personality is determined by DNA methylation laid down during early development",
+      "Each part of personality has its own time of ascendancy, unfolding in a fixed sequence of stages",
       "Stages can occur in any order",
     ],
     answer: 2,
@@ -176,9 +176,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Joan Erikson, after Erik's death, proposed a ninth stage in very old age (80s and 90s) in which:",
     options: [
       "Identity is formed for the first time",
-      "Earlier crises are revisited with their negative pole uppermost as bodily decline mounts, and gerotranscendence may be reached",
+      "Earlier crises return with their negative pole uppermost, and gerotranscendence may be reached",
       "Trust is irrelevant",
-      "The person returns to the oral stage",
+      "The person returns to the oral stage, with dependency and loss of autonomy",
     ],
     answer: 1,
     explanation:
@@ -192,9 +192,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A key difference between Erikson's and Freud's stage theories is that Erikson:",
     options: [
-      "Believed personality is fixed by age 5",
+      "Believed personality is fixed by age 5, once the Oedipal conflict has been resolved for good",
       "Denied the existence of the ego",
-      "Emphasised psychosocial tasks shaped by culture and extended development across the entire lifespan",
+      "Stressed culturally shaped psychosocial tasks and extended development across the lifespan",
       "Focused only on sexual drives",
     ],
     answer: 2,
@@ -307,10 +307,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Freud's case of 'Little Hans' concerned a five-year-old's:",
     options: [
-      "Phobia of horses, interpreted as displaced fear of his father in the Oedipal situation",
-      "Obsessional fear of rats",
+      "Phobia of horses, interpreted as displaced fear of his father",
+      "Obsessional fear of rats being used as a punishment on his father",
       "Hysterical paralysis",
-      "Dream of wolves in a tree",
+      "Dream of white wolves sitting in a tree",
     ],
     answer: 0,
     explanation:
@@ -370,8 +370,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Freud's theory, 'fixation' refers to:",
     options: [
       "A visual focus on an object",
-      "Moving forward to the next stage",
-      "A part of the libido remaining invested in an earlier stage because of excessive frustration or gratification",
+      "Moving forward to the next stage once the libido has been fully satisfied",
+      "Libido remaining invested in an earlier stage after excessive frustration or gratification",
       "Memory consolidation during sleep",
     ],
     answer: 2,
@@ -388,9 +388,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Karl Abraham subdivided Freud's oral stage into:",
     options: [
       "Symbiotic and autistic phases",
-      "An anal expulsive and anal retentive phase",
+      "An anal expulsive and an anal retentive phase, both linked to toilet training",
       "Phallic and genital phases",
-      "An early oral sucking (receptive) phase and a later oral sadistic (biting) phase",
+      "An early sucking (receptive) phase and a later oral sadistic (biting) phase",
     ],
     answer: 3,
     explanation:
@@ -429,9 +429,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Freud's theory, the superego first takes shape:",
     options: [
-      "At the end of the phallic stage, when the Oedipus complex is resolved",
+      "At the end of the phallic stage, as the Oedipus complex is resolved",
       "In the oral stage, during weaning",
-      "In the anal stage, during toilet training",
+      "In the anal stage, as parents first demand toilet control and obedience",
       "In the genital stage, after puberty",
     ],
     answer: 0,
@@ -449,7 +449,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Kohlberg's three levels of moral reasoning are:",
     options: [
       "Oral, anal and phallic",
-      "Heteronomous, autonomous and universal",
+      "Heteronomous, autonomous and universal ethical principles",
       "Preconventional, conventional and postconventional",
       "Sensorimotor, concrete and formal",
     ],
@@ -510,8 +510,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Colby, Kohlberg, Gibbs and Lieberman's 20-year longitudinal study of Kohlberg's original sample:",
     options: [
-      "Participants moved through the stages in the predicted order without skipping, but stage 5 was uncommon and stage 6 so rare it was dropped from the scoring manual",
-      "Most participants reached stage 6 by early adulthood",
+      "Participants moved through the stages in order without skipping, and stage 6 was too rare to keep",
+      "Most participants reached stage 6 by early adulthood, though very few had reached it during adolescence",
       "Participants frequently skipped stages",
       "Moral reasoning declined steadily with age",
     ],
@@ -528,8 +528,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In 1982 Carol Gilligan criticised Kohlberg's theory for:",
     options: [
-      "Ignoring cognitive development entirely",
-      "Building stages from an all-male sample and privileging an ethic of justice over an ethic of care",
+      "Ignoring cognitive development and relying on emotional reactions alone",
+      "Building stages from an all-male sample and favouring justice over care",
       "Relying on brain imaging",
       "Studying only very young children",
     ],
@@ -571,9 +571,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Gilligan's levels of the ethic of care, derived from interviews with women deciding about abortion, run in this order:",
     options: [
       "Heteronomous → autonomous → relational",
-      "Goodness as self-sacrifice → individual survival → universal justice",
+      "Goodness as self-sacrifice → individual survival → a universal ethic of justice for all people",
       "Law and order → social contract → universal principles",
-      "Orientation to individual survival → goodness as self-sacrifice → morality of non-violence (care for self and others)",
+      "Individual survival → goodness as self-sacrifice → non-violence (care for self and others)",
     ],
     answer: 3,
     explanation:
@@ -614,9 +614,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Joan Miller's and Shweder's studies in India challenged Kohlberg's universality claim by showing that:",
     options: [
       "Indian participants never reasoned about justice",
-      "Many Hindu Indian adults treated interpersonal obligations, such as helping a relative, as moral duties rather than personal choices",
+      "Many Hindu Indian adults treated helping others, such as a relative, as a moral duty rather than a choice",
       "Indian children skipped the conventional level",
-      "Moral reasoning in India is identical to that in the USA",
+      "Moral reasoning in India is identical to that in the USA once education is controlled",
     ],
     answer: 1,
     explanation:
@@ -632,13 +632,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Turiel's social domain theory proposes that even young children distinguish:",
     options: [
       "Care from justice orientations",
-      "Preconventional from postconventional reasoning",
-      "Moral rules (about harm, fairness and rights) from social conventions (arbitrary, context-specific customs) and personal matters",
-      "Heteronomous from autonomous morality",
+      "Preconventional from postconventional reasoning, judged by reward and punishment",
+      "Moral rules (about harm and fairness) from social conventions (arbitrary customs) and personal matters",
+      "Heteronomous from autonomous morality, as Piaget described for older children",
     ],
     answer: 2,
     explanation:
-      "Turiel and colleagues found that by about 3 to 4 years children judge hitting as wrong even if a teacher allows it (moral), but judge calling a teacher by her first name as acceptable if the school permits it (conventional). This challenges Kohlberg's idea that morality is first confused with convention. The other pairs belong to Kohlberg, Gilligan and Piaget.",
+      "Turiel and colleagues found that by about 3 to 4 years children judge hitting as wrong even if a teacher allows it (moral), but judge calling a teacher by her first name as acceptable if the school permits it (conventional). This challenges Kohlberg's idea that morality is first confused with convention. Care versus justice is Gilligan's contrast, preconventional versus postconventional is Kohlberg's, and heteronomous versus autonomous is Piaget's.",
     ref: "Turiel 1983, The Development of Social Knowledge",
   }),
   d({
@@ -669,8 +669,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "James Rest's Defining Issues Test (DIT) differs from Kohlberg's Moral Judgment Interview mainly in that it:",
     options: [
-      "Is a multiple-choice recognition measure in which respondents rate and rank the importance of issue statements, yielding a P (principled) score",
-      "Requires a long open-ended interview",
+      "Is a multiple-choice measure in which people rate and rank issue statements, giving a P score",
+      "Requires a long open-ended interview scored against a manual of stage criteria",
       "Measures moral behaviour directly",
       "Measures emotional empathy only",
     ],
@@ -746,10 +746,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kohlberg proposed that moral development depends on cognitive development. Which statement best expresses the relation he proposed?",
     options: [
-      "Formal operations guarantee postconventional reasoning",
+      "Formal operations guarantee postconventional reasoning as soon as they are reached",
       "Moral development causes cognitive development",
       "The two are unrelated",
-      "Piagetian logical development is necessary but not sufficient for advanced moral reasoning; for example, formal operations are needed for postconventional reasoning, but many formal thinkers stay conventional",
+      "Logical development is necessary but not sufficient for advanced moral reasoning",
     ],
     answer: 3,
     explanation:
@@ -764,8 +764,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Nancy Eisenberg's research on prosocial moral reasoning differs from Kohlberg's work in that her dilemmas:",
     options: [
-      "Pit a person's own needs against helping someone else, rather than involving laws, rules and punishment",
-      "Are presented only to adults",
+      "Pit the person's own needs against helping someone, rather than involving laws and punishment",
+      "Are presented only to adults, who reason about helping strangers at work",
       "Use only physiological measures",
       "Ignore age differences",
     ],
@@ -781,8 +781,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "McAdams and de St. Aubin's model of generativity extended Erikson by emphasising:",
     options: [
-      "Generativity as an exclusively biological drive to have children",
-      "Generativity as arising from inner desire and cultural demand, expressed in concern, commitment, action and a life narrative",
+      "Generativity as an exclusively biological drive to have children of one's own and raise them to adulthood",
+      "Generativity as arising from inner desire and cultural demand, expressed in action and life story",
       "Generativity as a stage of early childhood",
       "Generativity as identical to intimacy",
     ],
@@ -816,8 +816,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "It applies only to young children",
       "It ignores the dimension of commitment",
-      "Identity statuses are not fixed stages; people can move back and forth, and status may differ across domains such as work, religion and relationships",
-      "It was based on Kohlberg's stage scoring",
+      "Statuses are not fixed stages; people move back and forth, and status can differ across domains",
+      "It was built on Kohlberg's moral stage scoring rather than on Erikson's theory",
     ],
     answer: 2,
     explanation:
@@ -912,7 +912,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Most adolescents and adults, in Kohlberg's research, reason predominantly at:",
     options: [
-      "The postconventional level only",
+      "The postconventional level only (stages 5 and 6)",
       "Stage 6",
       "Stage 1",
       "The conventional level (stages 3 and 4)",
@@ -950,9 +950,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In the genital stage, according to Freud, the main developmental aim is:",
     options: [
       "Pleasure from the mouth",
-      "Mature sexual love directed toward others, together with productive work",
+      "Mature sexual love toward others, together with productive work",
       "Control over elimination",
-      "Repression of all sexual feeling",
+      "Repression of all sexual feeling in favour of schoolwork and friends",
     ],
     answer: 1,
     explanation:
@@ -983,9 +983,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement about Erikson's identity concept is correct?",
     options: [
-      "He argued that identity has nothing to do with culture or history",
+      "He argued that identity has nothing to do with culture or historical period",
       "He believed identity is settled permanently in infancy",
-      "He coined the term 'identity crisis', drawing partly on his own experience as a stepchild and emigrant who felt he belonged nowhere",
+      "He coined 'identity crisis', drawing partly on his own experience as a stepchild and emigrant",
       "He took the concept directly from Piaget",
     ],
     answer: 2,
@@ -1002,9 +1002,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Kohlberg's 'just community' schools aimed to promote moral development by:",
     options: [
       "Separating students by gender",
-      "Using strict punishment for rule-breaking",
+      "Using strict, consistent punishment for rule-breaking to teach respect for rules",
       "Teaching memorised lists of virtues",
-      "Involving students in democratic governance and discussion of real moral issues in the school",
+      "Involving students in democratic rule-making and discussion of real moral issues",
     ],
     answer: 3,
     explanation:
@@ -1019,8 +1019,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Wolpe and Rachman's reinterpretation of Little Hans argued that his horse phobia:",
     options: [
-      "Was more parsimoniously explained by classical conditioning after he witnessed a frightening accident with a horse",
-      "Confirmed Freud's Oedipal interpretation",
+      "Was better explained by classical conditioning after he saw a frightening accident with a horse",
+      "Confirmed Freud's Oedipal interpretation once the father's reports were checked",
       "Was caused by a genetic disorder",
       "Was an example of operant extinction",
     ],

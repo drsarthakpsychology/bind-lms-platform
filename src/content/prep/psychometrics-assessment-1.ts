@@ -307,10 +307,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "A reasoning test has reliability .90 in a nationally representative sample. Its reliability is re-estimated only among children selected for a gifted programme (top 3%). What is the most likely result, and why?",
     options: [
-      "Higher, because able children respond more consistently",
-      "Lower, because true-score variance shrinks in a restricted group while error variance stays about the same",
-      "Unchanged, because reliability is a fixed property of the test",
-      "Lower, because the SEM is always larger for high scorers",
+      "Higher, because able children respond more consistently, which reduces error variance",
+      "Lower, because true-score variance shrinks in a restricted group while error variance stays similar",
+      "Unchanged, because reliability is a fixed property of the test itself",
+      "Lower, because the SEM is always larger for high scorers on any test",
     ],
     answer: 1,
     explanation:
@@ -362,8 +362,8 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "In Cronbach's generalizability theory, what is the purpose of a decision (D) study?",
     options: [
       "To estimate the variance components for persons, raters, occasions and their interactions",
-      "To use the variance components from the G study to estimate generalizability for alternative designs, such as fewer raters or more occasions",
-      "To test whether item parameters are invariant across groups",
+      "To use G-study variance components to estimate generalizability for other designs, such as fewer raters",
+      "To test whether item parameters are invariant across groups of examinees",
       "To decide the cut-off score that best separates patients from controls",
     ],
     answer: 1,
@@ -571,10 +571,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement best describes the standard error of measurement?",
     options: [
-      "The standard deviation of the true scores in the population",
-      "An estimate of the standard deviation of a person's obtained scores around their true score over many hypothetical retestings",
+      "The standard deviation of the true scores in the population tested",
+      "The SD of a person's obtained scores around their true score over many retestings",
       "The standard deviation of the criterion scores predicted from the test",
-      "The difference between the test's reliability and its validity",
+      "The difference between the test's reliability coefficient and its validity coefficient",
     ],
     answer: 1,
     explanation:
@@ -649,7 +649,12 @@ export const QUESTIONS_1: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The idea that an observed score is made up of a true score plus random error, and the correction for attenuation, are chiefly credited to",
-    options: ["Francis Galton", "Charles Spearman", "L. L. Thurstone", "J. P. Guilford"],
+    options: [
+      "Francis Galton",
+      "Charles Spearman",
+      "Louis Leon Thurstone",
+      "J. P. Guilford",
+    ],
     answer: 1,
     explanation:
       "Spearman's 1904 papers introduced the true-score-plus-error idea and the correction of correlations for attenuation, the start of classical test theory. Galton pioneered individual-differences measurement and correlation ideas but not the error model. Thurstone is known for factor analysis (primary mental abilities) and attitude scaling. Guilford is known for the structure-of-intellect model and psychometric methods texts, later than Spearman.",
@@ -738,10 +743,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Cronbach showed that coefficient alpha is equivalent to",
     options: [
-      "the test-retest coefficient corrected for practice",
-      "the mean of all possible split-half coefficients computed with the Rulon/Flanagan formula",
+      "the test-retest coefficient after correction for practice and memory effects",
+      "the mean of all possible split-half coefficients (Rulon/Flanagan formula)",
       "the highest possible split-half coefficient for the test",
-      "the correlation between the test and its parallel form",
+      "the correlation between the test and a strictly parallel form",
     ],
     answer: 1,
     explanation:
@@ -758,9 +763,9 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Hoyt's method of estimating reliability",
     options: [
-      "uses a persons × items analysis of variance and yields a value identical to KR-20/alpha",
-      "correlates odd and even items and steps up the result",
-      "is a test-retest method that removes practice effects",
+      "uses a persons × items ANOVA and gives a value identical to KR-20/alpha",
+      "correlates odd and even items and steps up the result with Spearman-Brown",
+      "is a test-retest method that removes practice effects by ANOVA",
       "estimates inter-rater agreement for nominal categories",
     ],
     answer: 0,
@@ -832,10 +837,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Carry-over effects in test-retest reliability studies usually",
     options: [
-      "lower the coefficient, because examinees become bored",
+      "lower the coefficient, because examinees become bored and careless the second time",
       "inflate the coefficient, because examinees remember their earlier answers",
       "have no effect if the mean score changes",
-      "affect only alternate-form coefficients",
+      "affect only alternate-form coefficients, not retest coefficients",
     ],
     answer: 1,
     explanation:
@@ -882,10 +887,10 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Loevinger's 'attenuation paradox' refers to the observation that",
     options: [
-      "correlations corrected for attenuation can exceed 1.00",
-      "raising item intercorrelations (and alpha) beyond a point can lower a test's validity for a broad criterion, because the item content becomes narrow and redundant",
-      "the SEM increases as reliability increases",
-      "lengthening a test always lowers its validity",
+      "correlations corrected for attenuation can exceed 1.00 in small samples",
+      "raising alpha beyond a point can lower validity for a broad criterion, as content narrows",
+      "the SEM increases as reliability increases beyond about .90",
+      "lengthening a test with similar items always lowers its validity",
     ],
     answer: 1,
     explanation:
@@ -903,7 +908,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "A reliability coefficient of .00 would mean that",
     options: [
       "all observed-score variance is error variance",
-      "all observed-score variance is true variance",
+      "all observed-score variance is true-score variance",
       "the test is perfectly valid",
       "the mean of the test is zero",
     ],

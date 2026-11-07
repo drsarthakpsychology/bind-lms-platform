@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { cookies } from "next/headers";
 import { z } from "zod";
 import { getSession } from "@/lib/auth/session";
 import { rateLimit } from "@/lib/rate-limit";
@@ -10,18 +9,16 @@ import { AiGuardError, guardStudentCall } from "@/lib/ai/guards";
 import { AiUnavailableError } from "@/lib/ai/router";
 import { makeRng } from "@/lib/learn/model/picker";
 import { specById } from "@/content/prep/specs";
-import { EXAM_TRACKS_ENABLED, activeGoal, isGoal, specVisible } from "@/lib/prep/catalog";
+import { activeGoal, specVisible } from "@/lib/prep/catalog";
 import { BANK, INTERVIEW_KEY, KEY, learnHrefForQuestion } from "@/lib/prep/bank";
 import { resultView, type MockResultView } from "@/lib/prep/results";
 import { sampleMock, type Paper } from "@/lib/prep/sampling";
-import { cleanChoice, scoreDiagnostic, scoreMock, type DiagnosticResult } from "@/lib/prep/scoring";
+import { cleanChoice, scoreMock } from "@/lib/prep/scoring";
 import { selfScore } from "@/lib/prep/interview";
-import { finishAttempt, loadAttempt, loadItemB, loadProfile, loadSeen, recordPrep, saveDiagnostic, saveGoal, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
+import { finishAttempt, loadAttempt, loadProfile, loadSeen, recordPrep, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
+import { saveAnswer, setSaved } from "@/lib/prep/answers";
 import { toView, type PrepQView, type PrepReveal } from "@/lib/prep/view";
-import type { PrepExam } from "@/lib/prep/types";
-import { ALL_SUBJECTS, DIAG_COOKIE, GOAL_COOKIE } from "./viewer";
-
-const YEAR = 60 * 60 * 24 * 365;
+import type { PrepQuestion } from "@/lib/prep/types";
 
 /** Who is asking. `learner` = a student whose answers count (staff preview saves nothing to the model). */
 async function who(): Promise<{ id: string; learner: boolean } | null> {
@@ -33,56 +30,42 @@ async function who(): Promise<{ id: string; learner: boolean } | null> {
 const id = z.string().min(1).max(80);
 const choice = z.number().int().min(0).max(3).nullable();
 
-/* ------------------------------------------------------------ goal */
-
-/** Pick an exam. Only while exam tracks are on; the shared course has no goal. */
-export async function setGoal(goal: string): Promise<{ ok: boolean }> {
-  const me = await who();
-  if (!EXAM_TRACKS_ENABLED || !me || !isGoal(goal)) return { ok: false };
-  await saveGoal(me.id, goal);
-  // A copy in a cookie keeps the choice even before the prep tables exist.
-  (await cookies()).set(GOAL_COOKIE, `${me.id.slice(0, 8)}:${goal}`, { path: "/prep", maxAge: YEAR, sameSite: "lax", httpOnly: true });
-  revalidatePath("/prep");
-  return { ok: true };
-}
-
-/* ------------------------------------------------------ diagnostic */
-
-const diagSchema = z.object({ goal: z.string().nullable(), answers: z.array(z.object({ id, choice })).max(40) });
-
-/**
- * Grade the diagnostic on the server, seed the student model and store the
- * topic profile. `goal` only counts with exam tracks on; otherwise the check
- * is the shared course's (every subject).
- */
-export async function submitDiagnostic(input: { goal: string | null; answers: { id: string; choice: number | null }[] }): Promise<{ result: DiagnosticResult; saved: boolean }> {
-  const parsed = diagSchema.safeParse(input);
-  const answers = parsed.success ? parsed.data.answers.filter((a) => KEY.has(a.id)) : [];
-  const goal: PrepExam | null = parsed.success && isGoal(parsed.data.goal) ? activeGoal(parsed.data.goal) : null;
-  const b = await loadItemB(answers.map((a) => a.id));
-  const result = scoreDiagnostic(answers, KEY, (x) => b.get(x));
-  const me = await who();
-  if (!me || !parsed.success || (EXAM_TRACKS_ENABLED && !goal)) return { result, saved: false };
-  if (me.learner) await recordPrep(me.id, answers.map((a) => ({ q: KEY.get(a.id)!, outcome: a.choice !== null && a.choice === KEY.get(a.id)!.answer ? 1 : 0 })));
-  const saved = await saveDiagnostic(me.id, goal, result);
-  (await cookies()).set(DIAG_COOKIE, `${me.id.slice(0, 8)}:${goal ?? ALL_SUBJECTS}`, { path: "/prep", maxAge: YEAR, sameSite: "lax", httpOnly: true });
-  revalidatePath("/prep");
-  return { result, saved };
-}
-
 /* -------------------------------------------- practice and review */
 
 const checkSchema = z.object({ id, choice: z.number().int().min(0).max(3), ms: z.number().min(0).max(3_600_000).optional() });
 
-/** Check one practice or review answer: instant explanation, and the answer goes to the student model. */
+function reveal(q: PrepQuestion): PrepReveal {
+  return { id: q.id, answer: q.answer, explanation: q.explanation, learnHref: learnHrefForQuestion(q) };
+}
+
+/**
+ * Check one bank answer: the answer and full explanation come back, the
+ * answer goes to the student model and to the bank's record (for percent
+ * right, Wrong answers and resuming).
+ */
 export async function checkAnswer(input: { id: string; choice: number; ms?: number }): Promise<PrepReveal & { correct: boolean }> {
   const parsed = checkSchema.safeParse(input);
   const q = parsed.success ? KEY.get(parsed.data.id) : undefined;
   if (!parsed.success || !q) throw new Error("Unknown question");
   const correct = parsed.data.choice === q.answer;
   const me = await who();
-  if (me?.learner) await recordPrep(me.id, [{ q, outcome: correct ? 1 : 0, ms: parsed.data.ms }]);
-  return { id: q.id, answer: q.answer, explanation: q.explanation, learnHref: learnHrefForQuestion(q), correct };
+  if (me?.learner) await Promise.all([recordPrep(me.id, [{ q, outcome: correct ? 1 : 0, ms: parsed.data.ms }]), saveAnswer(me.id, q.id, parsed.data.choice, correct)]);
+  return { ...reveal(q), correct };
+}
+
+/** Show the answer without answering (nothing is recorded). */
+export async function revealAnswer(qid: string): Promise<PrepReveal> {
+  const q = id.safeParse(qid).success ? KEY.get(qid) : undefined;
+  if (!q || !(await who())) throw new Error("Unknown question");
+  return reveal(q);
+}
+
+/** Save (bookmark) or unsave a question. */
+export async function toggleSaved(input: { id: string; saved: boolean }): Promise<{ ok: boolean }> {
+  const parsed = z.object({ id, saved: z.boolean() }).safeParse(input);
+  const me = await who();
+  if (!parsed.success || !me?.learner || !KEY.has(parsed.data.id)) return { ok: false };
+  return { ok: await setSaved(me.id, parsed.data.id, parsed.data.saved) };
 }
 
 /* ------------------------------------------------------------ mocks */
