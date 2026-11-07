@@ -43,4 +43,4 @@ revoke insert, update, delete on public.hint_ledger from anon, authenticated;
 
 -- The case table used to keep its own XP spend tally, a second wallet that
 -- never saw the shop. Hint spends now live in hint_ledger and xp_ledger only.
-alter table if exists public.daily_case_results drop column if exists xp_spent;
+-- daily_case_results.xp_spent is no longer read or written; it is kept (not dropped) so no stored data is lost.
