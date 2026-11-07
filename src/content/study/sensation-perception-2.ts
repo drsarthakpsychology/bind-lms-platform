@@ -906,8 +906,8 @@ Eleanor Gibson and Richard Walk (1960) built the **visual cliff**: a glass table
 
 Size constancy depends on judging distance. **Emmert's law**: an afterimage looks larger when you look at a far wall than at your hand, because the same retinal image is "scaled" by the perceived distance.
 
-:::widget compare
-{"title": "The Ames room: what you see and what is there", "a": {"label": "What you see", "points": ["An ordinary rectangular room through a peephole", "A child in one corner looks like a giant", "An adult in the other corner looks tiny", "People seem to grow or shrink as they cross the room"], "summary": "Your brain assumes the room is rectangular, so it reads the different image sizes as different body sizes."}, "b": {"label": "What is really there", "points": ["A trapezoidal room", "One back corner is much farther away than the other", "The walls and windows are slanted to look normal from the peephole", "The people are their normal sizes"], "summary": "Size constancy needs correct distance. When distance cues are faked, the brain's usual rule produces an illusion."}}
+:::widget amesroom
+{"title": "The Ames room", "caption": "Two people of the same height. Look through the peephole, swap them, then step aside to see the room's real shape and why size constancy fails."}
 :::
 
 ### Illusions worth knowing

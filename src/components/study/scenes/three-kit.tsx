@@ -100,6 +100,7 @@ export function Stage({
   className,
   onMiss,
   onReady,
+  locked = false,
 }: {
   children: React.ReactNode;
   camera: V3;
@@ -111,6 +112,8 @@ export function Stage({
   className?: string;
   onMiss?: () => void;
   onReady?: () => void;
+  /** No turning or zooming (a fixed viewpoint, such as a peephole). */
+  locked?: boolean;
 }) {
   const [ready, setReady] = React.useState(false);
   const [level, setLevel] = React.useState<Quality>(startQuality);
@@ -142,7 +145,7 @@ export function Stage({
           <FirstFrame onReady={() => { setReady(true); onReady?.(); }} level={level} />
           <Governor level={level} onDrop={() => setLevel((l) => (l > 0 ? ((l - 1) as Quality) : l))} />
           <Waker wakeKey={`${wakeKey}|${level}`} />
-          <OrbitControls makeDefault enablePan={false} enableDamping dampingFactor={0.12} minDistance={minDistance} maxDistance={maxDistance} rotateSpeed={0.8} zoomSpeed={0.8} />
+          <OrbitControls makeDefault enabled={!locked} enablePan={false} enableDamping dampingFactor={0.12} minDistance={minDistance} maxDistance={maxDistance} rotateSpeed={0.8} zoomSpeed={0.8} />
         </QualityCtx.Provider>
       </Canvas>
     </div>

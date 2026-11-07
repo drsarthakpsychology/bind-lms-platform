@@ -13,6 +13,7 @@ import { SynapseScene } from "./synapse-scene";
 import { Genogram } from "./genogram";
 import { HpaLoop } from "./hpa-loop";
 import { BrainSlicer } from "./brain-slicer";
+import { AmesRoom } from "./ames-room";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -212,6 +213,26 @@ describe("explorable scenes", () => {
     expect(status()).toHaveTextContent(/about six times the seizure threshold/);
     click("Bifrontal");
     expect(status()).toHaveTextContent(/5 cm above the outer corner of each eye/);
+    expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
+  });
+
+  it("amesroom: the peephole fools size, the swap reverses it, and the side and plan views show the real shape", () => {
+    vi.useFakeTimers();
+    render(<AmesRoom d={{}} />);
+    expect(status()).toHaveTextContent(/ordinary rectangular room/);
+    expect(status()).toHaveTextContent(/Meera, in the left corner, looks only about 50 percent as tall as Kabir/);
+    click("Swap places");
+    wait(250);
+    expect(status()).toHaveTextContent(/walking across the back of the room/);
+    wait(3500);
+    expect(status()).toHaveTextContent(/Kabir, in the left corner, looks only about 50 percent as tall as Meera/);
+    click("Step to the side");
+    expect(status()).toHaveTextContent(/left corner is much farther/);
+    expect(status()).toHaveTextContent(/about 2.0 times the distance/);
+    click("From above");
+    expect(status()).toHaveTextContent(/trapezoid/);
+    expect(status()).toHaveTextContent(/Size constancy normally corrects for distance/);
+    wait(250);
     expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
   });
 });
