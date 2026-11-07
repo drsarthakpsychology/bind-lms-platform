@@ -101,7 +101,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "A neuron releases all of its transmitter vesicles or none of them with each spike",
       "All neurons fire at the same time or none fire",
       "Once threshold is reached, the action potential has a fixed size whatever the stimulus strength",
-      "Postsynaptic potentials either reach the axon hillock at full size or decay completely",
+      "Postsynaptic potentials either reach the axon hillock at full size or else decay away completely",
     ],
     answer: 2,
     explanation:
@@ -160,7 +160,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Tetrodotoxin (TTX), from the puffer fish, abolishes action potentials but leaves the resting potential almost unchanged. The best explanation is that TTX:",
     options: [
-      "Blocks voltage-gated K⁺ channels, which set the resting potential",
+      "Blocks voltage-gated K⁺ channels, which set most of the resting potential",
       "Inhibits the Na⁺/K⁺ pump",
       "Blocks ligand-gated nicotinic receptors at the axon hillock",
       "Blocks voltage-gated Na⁺ channels, which are mostly closed at rest",
@@ -459,7 +459,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Reserpine, used in the 1950s for hypertension, often caused depression. It acts by:",
     options: [
-      "Blocking the serotonin reuptake transporter, depleting stored serotonin",
+      "Blocking the serotonin reuptake transporter, which depletes the stores of serotonin",
       "Inhibiting monoamine oxidase",
       "Blocking presynaptic α2 autoreceptors",
       "Blocking the vesicular monoamine transporter (VMAT), depleting stored monoamines",
@@ -497,7 +497,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "An autoreceptor is a receptor that:",
     options: [
-      "Responds to transmitters from a different neuron and increases their release",
+      "Responds to transmitters released by a different neuron and increases their further release",
       "Responds to the neuron's own transmitter, usually reducing further release or firing",
       "Is found only on glial cells",
       "Binds hormones circulating in the blood",
@@ -516,7 +516,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Cocaine and amphetamine both increase synaptic dopamine. The key difference is that amphetamine also:",
     options: [
       "Blocks D2 autoreceptors, so dopamine neurons fire faster",
-      "Acts only on serotonin transporters, releasing serotonin instead of dopamine",
+      "Acts only on serotonin transporters, releasing serotonin there instead of dopamine",
       "Inhibits tyrosine hydroxylase",
       "Reverses the dopamine transporter and releases dopamine from vesicles via VMAT2",
     ],
@@ -588,7 +588,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Each neuron releases only one neurotransmitter",
       "A neuron releases the same set of transmitters at all of its synaptic terminals",
-      "Excitatory and inhibitory transmitters cannot be released by the same neuron",
+      "Excitatory and inhibitory transmitters can never be released by the same single neuron",
       "Neurotransmitters can only act on postsynaptic cells",
     ],
     answer: 1,
@@ -633,7 +633,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Ventrolateral preoptic area; insomnia",
       "Suprachiasmatic nucleus; delayed sleep phase",
-      "Locus coeruleus; REM sleep behaviour disorder",
+      "Locus coeruleus; REM sleep behaviour disorder in older men",
       "Lateral hypothalamus; narcolepsy with cataplexy",
     ],
     answer: 3,
@@ -722,7 +722,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Inhibits glutamate reuptake by astrocytes",
       "Blocks GABA-B receptors in the cortex",
-      "Stimulates nicotinic receptors at the neuromuscular junction",
+      "Stimulates nicotinic receptors at the neuromuscular junction, causing spasm",
       "Blocks spinal glycine receptors, removing inhibition of motor neurons",
     ],
     answer: 3,
@@ -829,7 +829,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Excitotoxicity, which contributes to neuronal death after stroke, is chiefly due to:",
     options: [
-      "Excess GABA release causing prolonged hyperpolarisation and energy failure",
+      "Excess GABA release causing prolonged hyperpolarisation, energy failure and swelling",
       "Depletion of dopamine in the striatum",
       "Excess glutamate overstimulating NMDA and AMPA receptors, causing Ca²⁺ overload",
       "Blockade of acetylcholinesterase",
@@ -848,7 +848,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The arrival of an action potential at a presynaptic terminal triggers transmitter release mainly by:",
     options: [
       "Closing K⁺ leak channels",
-      "Opening ligand-gated Na⁺ channels on the vesicles, letting Na⁺ trigger fusion",
+      "Opening ligand-gated Na⁺ channels on the vesicles, letting Na⁺ in to trigger fusion",
       "Activating reuptake transporters",
       "Opening voltage-gated Ca²⁺ channels, letting Ca²⁺ in to trigger vesicle fusion",
     ],

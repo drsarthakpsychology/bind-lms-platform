@@ -136,7 +136,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Loss of all consciousness in the right hemisphere",
       "Right-hemisphere dominance for speech",
-      "Complete transfer of visual information through the anterior commissure",
+      "Complete transfer of visual information through the intact anterior commissure",
       "A left-hemisphere 'interpreter' that explains behaviour it did not initiate",
     ],
     answer: 3,
@@ -234,7 +234,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "After callosotomy, a patient's left hand sometimes unbuttons a shirt that the right hand has just buttoned. This is best described as:",
     options: [
-      "Ideomotor apraxia of the left hand",
+      "Ideomotor apraxia of the non-dominant left hand",
       "Intermanual conflict (a form of alien hand)",
       "Hemiballismus",
       "Utilisation behaviour",
@@ -389,7 +389,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In the correct sequence, the HPA axis stress response is:",
     options: [
       "TRH from the hypothalamus → TSH from the pituitary → thyroxine",
-      "ACTH from the hypothalamus → CRH from the pituitary → adrenaline from the adrenal medulla",
+      "ACTH from the hypothalamus → CRH from the anterior pituitary → adrenaline from the adrenal medulla",
       "Cortisol from the hypothalamus → ACTH from the adrenal → CRH from the pituitary",
       "CRH from the hypothalamus → ACTH from the anterior pituitary → cortisol from the adrenal cortex",
     ],
@@ -430,7 +430,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Failure to suppress cortisol the morning after a night-time dose",
       "Exaggerated suppression of cortisol",
-      "Low baseline ACTH with normal suppression the next morning",
+      "Low baseline ACTH with normal suppression of cortisol the next morning",
       "Absence of cortisol secretion",
     ],
     answer: 0,
@@ -544,7 +544,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Oxytocin and vasopressin are synthesised in the ____ and released from the ____.",
     options: [
       "Pineal gland; anterior pituitary",
-      "Arcuate nucleus of the hypothalamus; anterior pituitary via portal blood",
+      "Arcuate nucleus of the hypothalamus; anterior pituitary, reached via portal blood",
       "Paraventricular and supraoptic nuclei of the hypothalamus; posterior pituitary",
       "Posterior pituitary; hypothalamus",
     ],
@@ -720,7 +720,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which statement best distinguishes steroid hormones from peptide hormones?",
     options: [
       "Peptide hormones cross the membrane freely and bind nuclear receptors",
-      "Steroid hormones are made of amino acid chains and act only on membrane receptors via second messengers",
+      "Steroid hormones are made of amino acid chains and act only on membrane receptors through second messengers such as cAMP",
       "Steroid hormones are lipid-soluble, cross membranes and mainly act on intracellular receptors that regulate genes",
       "Both act only through cAMP",
     ],
@@ -797,7 +797,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Insulin is secreted by the:",
     options: [
-      "Thyroid gland",
+      "Follicular cells of the thyroid gland",
       "Adrenal medulla",
       "Beta cells of the pancreas",
       "Posterior pituitary",
@@ -834,7 +834,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Have very low testosterone levels",
       "Develop a male body form with female gender identity",
-      "Develop ambiguous genitals and male identity in all cases",
+      "Develop ambiguous genitals and a male gender identity in nearly all cases",
       "Develop a female body form and usually a female gender identity",
     ],
     answer: 3,
@@ -874,7 +874,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Meaney's work on rat mothers that lick and groom their pups a great deal showed that these offspring, as adults, have:",
     options: [
-      "Fewer hippocampal glucocorticoid receptors and exaggerated stress responses, from more GR methylation",
+      "Fewer hippocampal glucocorticoid receptors and exaggerated stress responses, resulting from more GR gene methylation",
       "More hippocampal glucocorticoid receptors and smaller stress responses, linked to less GR gene methylation",
       "No differences once genetic relatedness is controlled by cross-fostering",
       "Higher adrenaline but identical cortisol responses",
@@ -967,7 +967,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Addison's disease is caused by:",
     options: [
-      "Excess cortisol from an ACTH-secreting pituitary tumour",
+      "Excess cortisol from an ACTH-secreting tumour of the pituitary gland",
       "Too little cortisol and aldosterone from the adrenal cortex",
       "Excess thyroid hormone",
       "Excess growth hormone in adults",

@@ -246,7 +246,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "An allergy to cheese protein",
       "Tyramine, normally broken down by gut and liver MAO-A, releasing noradrenaline",
-      "Serotonin syndrome triggered by calcium and amino acids in the cheese",
+      "Serotonin syndrome triggered by the calcium and amino acids found in aged cheeses",
       "Lithium toxicity",
     ],
     answer: 1,
@@ -568,7 +568,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Acting as a GABA-A agonist",
       "Blocking dopamine D2 receptors",
-      "Inhibiting monoamine oxidase in the striatum",
+      "Inhibiting monoamine oxidase in striatal dopamine terminals",
       "Blocking dopamine and noradrenaline transporters",
     ],
     answer: 3,
@@ -621,7 +621,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Blockade of NMDA receptors",
       "Agonism at serotonin 5-HT2A receptors",
-      "Inhibition of dopamine reuptake",
+      "Inhibition of dopamine reuptake in the striatum",
       "Agonism at μ-opioid receptors",
     ],
     answer: 1,
@@ -657,7 +657,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which route of administration gives the fastest onset for most psychoactive drugs?",
     options: [
-      "Intramuscular depot injection",
+      "Intramuscular depot injection into a large muscle",
       "Oral ingestion",
       "Transdermal patch",
       "Intravenous injection (or inhalation)",
@@ -821,7 +821,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The blood-brain barrier allows a drug to enter the brain more easily when the drug is:",
     options: [
-      "Strongly bound to plasma proteins",
+      "Strongly bound to plasma proteins such as albumin",
       "Large and highly water-soluble",
       "Small and lipid-soluble (non-ionised)",
       "A large charged peptide",
@@ -840,7 +840,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A drug with zero-order elimination kinetics (for example alcohol at usual intoxicating levels) differs from most drugs in that:",
     options: [
       "It cannot be measured in blood",
-      "A constant fraction is eliminated per unit time, giving a fixed half-life",
+      "A constant fraction is eliminated per unit time, giving a fixed and predictable half-life",
       "It is excreted unchanged by the kidney",
       "A constant amount is eliminated per unit time because the enzyme is saturated",
     ],
@@ -922,7 +922,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Two different drugs are given to each participant at the same time",
       "Only the participants are unaware of their group",
       "Neither participants nor the researchers assessing outcomes know who gets the active drug",
-      "Participants receive both drug and placebo on alternate days, in an order they choose",
+      "Participants receive both drug and placebo on alternate days, in an order they choose themselves",
     ],
     answer: 2,
     explanation:
@@ -979,7 +979,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Carbamazepine shows 'autoinduction', which means that:",
     options: [
-      "It inhibits its own metabolising enzyme, so its levels rise steadily over the first weeks",
+      "It inhibits its own metabolising enzyme, so its blood levels rise steadily over the first few weeks",
       "It induces its own metabolising enzyme (CYP3A4), so its half-life shortens over the first weeks",
       "It is excreted unchanged in urine",
       "It has no interactions with other drugs",

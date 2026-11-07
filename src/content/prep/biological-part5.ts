@@ -25,7 +25,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Heritability is best defined as:",
     options: [
-      "The percentage of a person's trait that comes from their genes rather than upbringing",
+      "The percentage of an individual person's trait that comes from their genes rather than upbringing",
       "The proportion of variation in a trait within a population that is due to genetic differences",
       "The probability that a parent will pass a trait to a child",
       "The number of genes that influence a trait",
@@ -100,7 +100,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "All children in a family share the same environment",
       "Twins and non-twins have identical environments",
-      "MZ twins reared apart have environments as similar as twins reared together",
+      "MZ twins reared apart have environments just as similar as MZ twins reared together",
       "MZ and DZ twins experience trait-relevant environments that are equally similar",
     ],
     answer: 3,
@@ -652,7 +652,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Adoption removes all environmental influence",
       "Adopted children share neither genes nor environment with anyone",
-      "Adoptive parents are chosen to be genetically similar to the child they are placed with",
+      "Adoptive parents are deliberately chosen to be genetically similar to the child they are placed with",
       "Adoptees share genes with their biological parents and environment with their adoptive parents",
     ],
     answer: 3,

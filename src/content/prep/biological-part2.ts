@@ -104,7 +104,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Broca's aphasia",
       "Global aphasia",
-      "Conduction aphasia",
+      "Conduction aphasia (arcuate fasciculus)",
       "Transcortical motor aphasia",
     ],
     answer: 3,
@@ -119,7 +119,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Hemispatial neglect, in which a patient ignores the left side of space, most often follows damage to the:",
     options: [
-      "Left frontal lobe",
+      "Left frontal lobe, near Broca's area",
       "Left occipital lobe",
       "Right posterior parietal lobe",
       "Cerebellum",
@@ -155,7 +155,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Phineas Gage, whose personality changed after an iron rod passed through his head in 1848, mainly suffered damage to the:",
     options: [
       "Occipital cortex",
-      "Primary motor cortex and corticospinal tract",
+      "Primary motor cortex and the corticospinal tract below it",
       "Hippocampus",
       "Ventromedial and orbitofrontal prefrontal cortex",
     ],
@@ -370,7 +370,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Patient S.M., who has bilateral amygdala damage from Urbach-Wiethe disease, is best known for:",
     options: [
       "Inability to produce speech",
-      "Loss of the ability to recognise any faces, including familiar ones",
+      "Loss of the ability to recognise any faces, including those of close family",
       "Severe anterograde amnesia",
       "Inability to recognise fear in faces, and an absence of experienced fear",
     ],
@@ -628,7 +628,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The Bell-Magendie law states that:",
     options: [
       "Dorsal spinal roots carry sensory information in and ventral roots carry motor commands out",
-      "Ventral spinal roots carry sensory information and dorsal roots carry motor commands",
+      "Ventral spinal roots carry sensory information in and dorsal roots carry motor commands out to muscles",
       "Each sensory nerve produces only its own kind of sensation",
       "Each hemisphere controls the same side of the body",
     ],
@@ -687,7 +687,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Arachnoid granulations",
       "Choroid plexus in the ventricles",
       "Pia mater",
-      "Blood-brain barrier endothelium",
+      "Endothelium of the blood-brain barrier capillaries",
     ],
     answer: 1,
     explanation:
@@ -720,7 +720,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Interoception, taste and the experience of disgust",
       "Primary visual processing",
-      "Planning sequences of voluntary movement",
+      "Planning sequences of voluntary movement before they are made",
       "Spatial navigation through grid cells",
     ],
     answer: 0,
@@ -851,7 +851,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Cranial nerve II: eye movement",
       "Cranial nerve VIII: hearing and balance",
       "Cranial nerve X: smell",
-      "Cranial nerve I: facial expression",
+      "Cranial nerve I: facial expression and chewing",
     ],
     answer: 1,
     explanation:
@@ -902,7 +902,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Damage limited to the hippocampus is enough to cause clinically significant anterograde amnesia",
       "The amygdala is necessary for declarative memory",
       "Procedural memory depends on CA1",
-      "Retrograde amnesia is always more severe than anterograde amnesia after hippocampal damage",
+      "Retrograde amnesia is always more severe than anterograde amnesia after any kind of hippocampal damage",
     ],
     answer: 0,
     explanation:
@@ -950,7 +950,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'triune brain' model proposed that the human brain consists of reptilian, paleomammalian (limbic) and neomammalian layers. Its proposer and current status are:",
     options: [
       "Paul MacLean; now seen as an oversimplification not supported by comparative anatomy",
-      "James Papez; still the accepted evolutionary model of how the forebrain developed",
+      "James Papez; still the accepted evolutionary model of how the human forebrain developed",
       "Roger Sperry; now proven by split-brain research",
       "Karl Lashley; supported by equipotentiality",
     ],
@@ -989,7 +989,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Thompson's work on classical eyeblink conditioning in rabbits located an essential part of the memory trace in the:",
     options: [
-      "Prefrontal cortex, which times the blink",
+      "Prefrontal cortex, which times the conditioned blink",
       "Lateral interpositus nucleus of the cerebellum",
       "Amygdala",
       "Primary auditory cortex",

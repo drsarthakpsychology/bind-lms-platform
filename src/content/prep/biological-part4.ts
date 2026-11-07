@@ -266,7 +266,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Free-run with a period slightly different from 24 hours",
       "Stop entirely",
-      "Stay at exactly 24 hours, set by the internal clock",
+      "Stay at exactly 24 hours, set precisely by the internal clock alone",
       "Shift to a 12-hour cycle",
     ],
     answer: 0,
@@ -423,7 +423,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "fMRI and PET",
       "Only EEG",
-      "Only heart rate, breathing and oxygen saturation",
+      "Only heart rate, breathing, oxygen saturation and leg movements",
       "EEG, eye movements (EOG) and chin muscle tone (EMG)",
     ],
     answer: 3,
@@ -440,7 +440,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Ageing is most consistently associated with which change in sleep?",
     options: [
       "Less slow-wave sleep, more awakenings and an earlier (advanced) circadian phase",
-      "More slow-wave sleep, fewer awakenings and a later (delayed) circadian phase",
+      "More slow-wave sleep, fewer night awakenings and a later (delayed) circadian phase",
       "Complete loss of REM sleep",
       "A sharp rise in total sleep need",
     ],
@@ -594,7 +594,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Transcranial magnetic stimulation (TMS) is especially valuable to cognitive neuroscientists because it:",
     options: [
-      "Records action potentials from single neurons in awake humans without surgery",
+      "Records action potentials from single neurons in awake human volunteers without surgery",
       "Gives a detailed structural image of the brain",
       "Measures glucose metabolism",
       "Can briefly disrupt a region (a 'virtual lesion'), so causal inferences can be drawn",
@@ -945,7 +945,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "No structural differences",
       "Smaller amygdalae",
-      "Larger primary visual cortex, from years of scanning busy streets",
+      "Larger primary visual cortex, from years of scanning busy and complex streets",
       "Larger posterior hippocampi, with volume rising with years of driving",
     ],
     answer: 3,
@@ -984,7 +984,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Left dorsolateral prefrontal cortex",
       "Primary visual cortex",
       "Cerebellar vermis",
-      "Right primary motor cortex",
+      "Right primary motor cortex, over the hand area",
     ],
     answer: 0,
     explanation:
