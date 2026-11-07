@@ -377,3 +377,80 @@ export function Branches({ t, fill = C.t2, part }: { t: { d: string; w: number }
     </g>
   );
 }
+
+/** Unit normal at each point of a polyline (left-hand side in screen coordinates). */
+function normals(pts: number[][]): number[][] {
+  return pts.map((p, i) => {
+    const a = pts[Math.max(0, i - 1)];
+    const b = pts[Math.min(pts.length - 1, i + 1)];
+    const dx = b[0] - a[0];
+    const dy = b[1] - a[1];
+    const L = Math.hypot(dx, dy) || 1;
+    return [dy / L, -dx / L];
+  });
+}
+
+/**
+ * A smooth tube around a centre line, for curved structures with thickness
+ * (the caudate, the hippocampus, the fornix, a ventricle). `w` is the full
+ * width at each point, or one width for all.
+ */
+export function tube(pts: number[][], w: number | number[]): string {
+  const ns = normals(pts);
+  const wid = (i: number) => (Array.isArray(w) ? w[i] : w) / 2;
+  const left = pts.map((p, i) => [p[0] + ns[i][0] * wid(i), p[1] + ns[i][1] * wid(i)]);
+  const right = pts.map((p, i) => [p[0] - ns[i][0] * wid(i), p[1] - ns[i][1] * wid(i)]).reverse();
+  return sm([...left, ...right], true, 0.9);
+}
+
+/** Points every `step` units along a polyline. */
+export function resample(pts: number[][], step: number): number[][] {
+  const out: number[][] = [pts[0]];
+  let carry = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const [ax, ay] = pts[i - 1];
+    const [bx, by] = pts[i];
+    const L = Math.hypot(bx - ax, by - ay);
+    let t = step - carry;
+    while (t <= L) {
+      out.push([ax + ((bx - ax) * t) / L, ay + ((by - ay) * t) / L]);
+      t += step;
+    }
+    carry = L - (t - step);
+  }
+  const last = pts[pts.length - 1];
+  if (Math.hypot(out[out.length - 1][0] - last[0], out[out.length - 1][1] - last[1]) > step * 0.3) out.push(last);
+  return out;
+}
+
+/**
+ * A folded cortical surface along a polyline: rounded gyri with narrow, deep
+ * sulci between them. Returns the outer (pial) line and the inner grey-white
+ * boundary as point lists. `side` is 1 when the tissue lies on the left of the
+ * travel direction, -1 when it lies on the right. `every` is the gyrus width.
+ */
+export function folded(pts: number[][], { every = 30, depth = 18, thick = 11, side = 1, phase = 0.5 }: { every?: number; depth?: number; thick?: number; side?: number; phase?: number } = {}) {
+  const res = resample(pts, 3);
+  const ns = normals(res).map(([x, y]) => [x * side, y * side]);
+  const outer: number[][] = [];
+  const inner: number[][] = [];
+  res.forEach((p, i) => {
+    const s = i * 3 + phase * every;
+    const m = ((s % every) + every) % every;
+    const dist = Math.min(m, every - m);
+    // Fade the folds out at both ends so separate stretches join smoothly.
+    const edge = Math.min(1, i / 4, (res.length - 1 - i) / 4);
+    const crown = 0.18 * depth * (1 - Math.sin((Math.PI * m) / every));
+    const o = (depth * Math.exp(-((dist / 4.5) ** 2)) + crown) * edge;
+    const t = thick + (depth * Math.exp(-((dist / (4.5 + thick * 0.95)) ** 2)) + crown) * edge;
+    const [nx, ny] = ns[i];
+    outer.push([p[0] + nx * o, p[1] + ny * o]);
+    inner.push([p[0] + nx * t, p[1] + ny * t]);
+  });
+  return { outer, inner };
+}
+
+/** A straight-segment path through dense points (for `folded` outlines). */
+export function poly(pts: number[][], closed = false): string {
+  return pts.map((p, i) => `${i ? "L" : "M"}${r1(p[0])} ${r1(p[1])}`).join(" ") + (closed ? " Z" : "");
+}
