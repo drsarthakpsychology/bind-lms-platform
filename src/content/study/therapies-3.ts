@@ -64,6 +64,116 @@ Acknowledge the wish for direction, reflect the feeling under it, then use open 
 Advice given too early is often rejected or followed without commitment. Choices the client helps make are more likely to be carried out, and they build confidence.
 :::
 
+:::qa What is the difference between counselling and psychotherapy? [starting]
+| | Counselling | Psychotherapy |
+|---|---|---|
+| Focus | Life problems, decisions, adjustment | Mental health conditions, long-standing patterns |
+| Length | Often shorter | Short or long |
+| Depth | Present-focused, practical | May address deeper patterns and history |
+| Training | Varies; counselling courses | Specific therapy training, often clinical |
+### In practice
+The line is blurry. Both are structured, confidential, evidence-informed and for the client's benefit; both use the same microskills.
+:::
+
+:::qa Give an example of each core microskill in response to: "My husband never listens, and I'm tired of everything." [starting]
+| Skill | Response |
+|---|---|
+| Open question | "What happens when you try to talk to him?" |
+| Minimal encourager | "Hmm... go on." |
+| Paraphrase | "You feel he doesn't hear you when you speak." |
+| Reflection of feeling | "You sound worn out, and maybe lonely in the marriage." |
+| Clarifying | "When you say tired of everything, what do you mean?" (also a gentle risk check) |
+| Summary | "So you feel unheard at home, exhausted, and it's affecting everything." |
+:::
+
+:::qa What is behavioural activation, and why does it help depression? [starting]
+### The idea
+Depression leads to withdrawal; withdrawal removes pleasure and achievement; this deepens depression. Behavioural activation breaks the cycle by scheduling valued and enjoyable activities step by step.
+### Steps
+1. Monitor activities and mood for a few days.
+2. Identify values (family, faith, health, work).
+3. Choose small, specific activities linked to them.
+4. Schedule them, starting easy.
+5. Review what helped, problem-solve barriers, build up.
+### Why it works
+It increases positive reinforcement and mastery, and reduces avoidance and rumination. It is effective, simple to train, and the basis of the Healthy Activity Program delivered by lay counsellors in India.
+:::
+
+:::qa What is exposure and response prevention, and how does it differ from ordinary exposure? [starting]
+| | Exposure | ERP |
+|---|---|---|
+| Used for | Phobias, panic, social anxiety | OCD |
+| What it involves | Approaching the feared situation and staying | Approaching the obsession trigger and **not** doing the ritual |
+| What is learned | The situation is safe; anxiety falls | The feared outcome does not happen without the ritual; anxiety falls on its own |
+### Example
+For contamination OCD: touch a public doorknob (exposure) and not wash (response prevention), staying with the anxiety until it reduces.
+:::
+
+:::qa List common thinking traps with one example each. [starting]
+| Trap | Example |
+|---|---|
+| All-or-nothing | "If I don't top, I've failed." |
+| Catastrophising | "If I make a mistake, I'll be fired." |
+| Mind-reading | "They think I'm boring." |
+| Fortune-telling | "I'll fail anyway." |
+| Overgeneralisation | "I always mess up." |
+| Personalisation | "My child's low marks are my fault." |
+| Should statements | "I should handle this alone." |
+| Emotional reasoning | "I feel stupid, so I am stupid." |
+| Discounting the positive | "They only praised me to be polite." |
+| Labelling | "I'm a loser." |
+:::
+
+:::qa What are Rogers's core conditions, and why are they not the whole of therapy? [starting]
+### The conditions
+Empathy, unconditional positive regard, congruence.
+### Why they matter
+They create safety, trust and the experience of being understood, which predict outcome across therapies.
+### Why they are not everything
+- Some problems need specific methods (exposure for OCD, family-based treatment for adolescent anorexia).
+- Severe or risky situations need structure, assessment and sometimes direction.
+- Rogers proposed them as necessary and sufficient; research supports them as important but not sufficient for every person and problem.
+:::
+
+:::qa A client cries in the first session. What should the therapist do and avoid? [starting]
+### Do
+- Pause and allow the feeling.
+- Reflect: "This is really painful."
+- Offer tissues and time.
+- Return to the story when the client is ready.
+### Avoid
+- Rushing to fix or teach a technique.
+- Saying "don't cry".
+- Changing the subject because the therapist feels uncomfortable.
+### Why
+Accepting emotion builds the alliance and tells the client their feelings belong in therapy.
+:::
+
+:::qa Name the main family therapy schools and one key technique each. [starting]
+| School | Founder | Key technique |
+|---|---|---|
+| Structural | Minuchin | Enactment; restructuring boundaries |
+| Strategic | Haley, Madanes | Directives; paradoxical tasks |
+| Milan systemic | Selvini Palazzoli | Circular questioning |
+| Bowen | Bowen | Genograms; differentiation of self |
+| Narrative | White, Epston | Externalising the problem |
+| Solution-focused | de Shazer, Berg | Miracle question; scaling questions |
+:::
+
+:::qa What is psychoeducation, and how is it done well? [starting]
+### Definition
+Teaching the person (and family) about the condition, treatment, warning signs and self-help, in a way that is understood and used.
+### Doing it well
+1. Ask what they already know and believe.
+2. Use plain language, local idioms and examples.
+3. Give small amounts at a time; repeat.
+4. Use pictures, leaflets or audio for low literacy.
+5. Check understanding by asking them to explain back.
+6. Link to action: what to do if warning signs appear.
+### Evidence
+Psychoeducation reduces relapse in bipolar disorder and schizophrenia, especially when families are included.
+:::
+
 ## 5.2 Q&A bank · Beginner [beginner]
 :::qa A client with depression in a joint family in rural Bihar cannot attend weekly sessions. How would you deliver evidence-based help? [beginner]
 **Step 1: Safety and assessment.** Screen severity and risk; check for physical illness.
@@ -118,6 +228,114 @@ See the Psychodynamics in depth module for brief dynamic therapy in detail.
 5. **Plan with back-ups**: entrance routes, alternative courses, timelines.
 6. **Review**: mood and decision readiness.
 Key principle: never do career counselling over unaddressed depression or risk.
+:::
+
+:::qa Describe the structure of a typical CBT session. [beginner]
+1. **Mood check** and a brief rating scale.
+2. **Bridge** from the last session.
+3. **Agenda** set together.
+4. **Homework review**: what was done and learned.
+5. **Agenda items**: work using techniques (thought records, experiments, activity scheduling).
+6. **Summaries** during the session.
+7. **New homework** agreed together.
+8. **Feedback**: what was helpful or not.
+### Why structure matters
+It makes the best use of time, keeps focus, and teaches the client a model they can use alone.
+:::
+
+:::qa A man says, "My wife makes me drink." How would a motivational interviewer respond, and why? [beginner]
+### Response
+A reflection, not an argument: "Things with your wife feel really stressful, and drinking seems like a way to cope with that."
+### Next
+An open question to explore the other side: "What effect is the drinking having on things between you?"
+### Why
+- Arguing ("No, you choose to drink") triggers defence and sustain talk.
+- Reflecting shows understanding and lowers resistance.
+- Exploring consequences invites change talk from him, which predicts change.
+:::
+
+:::qa How does IPT treat grief, and how is this different from normal bereavement support? [beginner]
+### IPT for grief
+Used when depression follows a death and mourning is stuck.
+1. Reconstruct the relationship with the person who died, including good and difficult memories.
+2. Encourage the expression of feelings (sadness, guilt, anger).
+3. Help the person re-engage with life and relationships.
+### Difference from normal support
+Normal grief needs no treatment, only support. IPT is for **depression** linked to grief, with a structured, time-limited approach and a focus on mood and functioning.
+:::
+
+:::qa How does family psychoeducation reduce relapse in schizophrenia? [beginner]
+### Mechanism
+High expressed emotion (criticism, hostility, over-involvement) predicts relapse. Families often lack information and carry burden.
+### Components
+1. Education about illness, medicines and warning signs.
+2. Communication training: expressing concerns without criticism.
+3. Problem-solving skills.
+4. Crisis planning.
+5. Support for carers' own well-being.
+### Outcome
+Fewer relapses and admissions, better adherence, and less carer burden.
+:::
+
+:::qa How would you build an exposure hierarchy for social anxiety in a college student? [beginner]
+| Step | Situation | SUDS |
+|---|---|---|
+| 1 | Saying hello to a classmate | 25 |
+| 2 | Asking a shopkeeper a question | 35 |
+| 3 | Asking a question in a small tutorial | 50 |
+| 4 | Eating in the canteen alone | 60 |
+| 5 | Joining a group conversation | 70 |
+| 6 | Presenting for two minutes in class | 90 |
+### Principles
+- Start where anxiety is manageable.
+- Drop safety behaviours (avoiding eye contact, rehearsing every word).
+- Repeat until each step feels manageable, then move up.
+- Use behavioural experiments to test predictions ("everyone will laugh").
+:::
+
+:::qa What does a career counsellor assess, and with what kinds of tools? [beginner]
+| Area | Example tools or methods |
+|---|---|
+| Interests | Holland-based inventories |
+| Aptitudes | Indian adaptations of differential aptitude tests |
+| Personality | Big Five or other inventories |
+| Values | Card sorts, values questionnaires |
+| Academic record | Marks, subject strengths |
+| Constraints | Finances, location, family expectations |
+| Mood and stress | Brief screening, since distress affects decisions |
+### Principle
+Tests inform a conversation; they do not decide a career.
+:::
+
+:::qa What should a school counsellor do when a student is being bullied online? [beginner]
+1. **Listen** and take it seriously.
+2. **Assess** impact: mood, sleep, school avoidance, self-harm risk.
+3. **Preserve evidence**: screenshots, dates.
+4. **Safety plan**: block, report on the platform, trusted adults to tell.
+5. **Involve** parents and school leadership under the anti-bullying policy.
+6. **Address** the bullying students through the school's procedure.
+7. **Refer** if there is depression, self-harm or sexual content (POCSO applies to sexual material involving minors).
+8. **Follow up** regularly.
+:::
+
+:::qa Compare REBT and Beck's cognitive therapy. [beginner]
+| | REBT (Ellis) | Cognitive therapy (Beck) |
+|---|---|---|
+| Model | ABC: activating event, belief, consequence | Automatic thoughts, intermediate beliefs, core beliefs |
+| Key targets | Irrational beliefs: demands ("musts"), awfulising, low frustration tolerance, global self-rating | Distorted automatic thoughts and schemas |
+| Style | More directive, active disputing | Collaborative empiricism, Socratic questioning |
+| Testing beliefs | Philosophical and logical disputing | Evidence and behavioural experiments |
+| Goal | Unconditional self-acceptance and rational philosophy | More balanced, evidence-based thinking |
+:::
+
+:::qa How do you adapt therapy for a client who speaks little English and has limited schooling? [beginner]
+1. Work in the client's language, or with a trained interpreter.
+2. Use local idioms ("tension", "mann nahi lagta").
+3. Use stories, proverbs and pictures instead of worksheets.
+4. Emphasise behavioural methods (activation, exposure, problem-solving).
+5. Record session summaries as audio on the client's phone.
+6. Involve a trusted family member if the client agrees.
+7. Check understanding by asking the client to explain back.
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
@@ -184,6 +402,120 @@ Ruptures, homework not done, shame, or goals not shared.
 | Refer | Specialist care, risk, complexity |
 ### Step 6: Supervision and review
 Record the decision and review in a few sessions.
+:::
+
+:::qa A client in DBT has missed three skills groups. Where does this sit in the target hierarchy, and how would you address it? [advanced]
+### Placement
+**Therapy-interfering behaviour**, second only to life-threatening behaviour.
+### Approach
+1. Raise it directly and without blame in individual therapy.
+2. Do a chain analysis of one missed group: vulnerability, prompting event, thoughts, feelings, actions.
+3. Identify solutions (travel, shame in the group, conflicting duties).
+4. Strengthen commitment (pros and cons, devil's advocate).
+5. Discuss in the consultation team, including any therapist behaviours contributing.
+### Why it matters
+Skills cannot be learned without attending; avoidance often repeats the client's wider pattern.
+:::
+
+:::qa Explain how ACT and CBT would each approach a client with health anxiety. [advanced]
+| | CBT | ACT |
+|---|---|---|
+| Formulation | Misinterpretation of bodily sensations as signs of serious illness; reassurance-seeking and checking maintain it | Fusion with health thoughts and avoidance of uncertainty narrow life |
+| Techniques | Test beliefs, reduce checking and reassurance, behavioural experiments | Defusion ("I'm having the thought that this is cancer"), acceptance of uncertainty, values-based action |
+| Goal | Reduce anxiety and catastrophic beliefs | Live fully even with anxious thoughts |
+### Common ground
+Both reduce checking, reassurance-seeking and avoidance, which keep the problem going.
+:::
+
+:::qa A client in IPT for a role dispute with her mother-in-law describes repeated fights. Plan two sessions. [advanced]
+### Session A
+1. Clarify the dispute: what each wants, expectations around cooking, money, childcare.
+2. Identify the stage: renegotiation (still talking), impasse (silent standoff) or dissolution.
+3. Communication analysis of one recent fight, word for word.
+4. Link the dispute to her mood.
+### Session B
+1. Explore options: what could she ask for, what might she offer, who else could help (husband).
+2. Role-play a calm request using "I" statements.
+3. Plan when to try it.
+4. Review the result next session and link changes to mood.
+### Cultural note
+Joint-family hierarchies shape what is possible; involve the husband if she wishes.
+:::
+
+:::qa Describe how you would evaluate the evidence for a new therapy marketed in India as "a 3-session cure for depression". [advanced]
+### Questions
+1. Are there **randomised controlled trials**, independent of the developers?
+2. What was the **comparison**: waitlist (weak), usual care, or an established therapy (strong)?
+3. Were outcomes measured **blind**, with validated scales?
+4. How many dropped out, and were they included in analysis?
+5. Was there **follow-up** beyond the end of treatment?
+6. Were results **replicated** in Indian samples?
+7. Are **harms** reported?
+### Red flags
+Claims of cure, testimonials instead of trials, very high success rates, expensive training with secret methods.
+### Conclusion
+Without good evidence, recommend established, evidence-based treatments.
+:::
+
+:::qa What does research say about the therapeutic alliance and ruptures? [advanced]
+### The alliance
+Across many studies, a stronger alliance predicts better outcome across therapy types, with a small-to-moderate effect.
+### Ruptures
+Breakdowns in agreement or bond (withdrawal, confrontation) are common.
+### Repair
+- Notice the rupture.
+- Invite the client to talk about what happened.
+- Acknowledge your part without defensiveness.
+- Adjust tasks or goals.
+### Finding
+Repaired ruptures are associated with good outcomes, sometimes better than therapies with no rupture at all. Training therapists in rupture repair improves process.
+:::
+
+:::qa How would you choose between CBT, IPT and behavioural activation for a woman with postpartum depression in rural India? [advanced]
+| Factor | Consideration |
+|---|---|
+| Severity and risk | Assess first; severe illness or psychotic features need psychiatric care urgently |
+| Main maintaining factor | Withdrawal and inactivity suggest behavioural activation; role transition or marital conflict suggests IPT; negative beliefs about being a bad mother suggest CBT |
+| Delivery | Task-shared options (behavioural activation or CBT-based programmes for perinatal depression) work with community health workers |
+| Family | Involve the husband and mother-in-law if she wishes |
+| Breastfeeding | Psychological treatment avoids medicine exposure; medicines can be used safely when needed |
+### Choice
+For mild to moderate illness in this setting, a task-shared, behaviour-focused programme is often the most feasible first step, stepping up if needed.
+:::
+
+:::qa A client with chronic schizophrenia asks for "talk therapy". Which options have evidence, and what are realistic goals? [advanced]
+| Option | Goals |
+|---|---|
+| CBT for psychosis | Reduce distress from voices and delusions, improve coping (modest effects) |
+| Family interventions | Reduce relapse and carer burden |
+| Social skills training | Improve everyday social functioning |
+| Cognitive remediation | Improve attention, memory and executive skills |
+| Supported employment | Work and income |
+| Supportive therapy | Stability, coping, alliance |
+### Realistic goals
+Better coping, fewer relapses, more activity and relationships, and meaningful roles, alongside medicine.
+:::
+
+:::qa What are the main ethical issues in delivering therapy online across state or national borders? [advanced]
+1. **Jurisdiction**: is practice permitted where the client is located?
+2. **Competence** in remote work.
+3. **Crisis planning**: local emergency contacts and services.
+4. **Privacy**: secure platforms; the client's private space; recording only with consent.
+5. **Consent**: an agreement covering these points.
+6. **Records and data**: storage location and data protection law.
+7. **Payment and boundaries**: clear policies.
+:::
+
+:::qa Design an outcome monitoring system for a small counselling centre. [advanced]
+### Components
+1. **Measures**: brief, validated scales in local languages (for example PHQ-9 for depression, GAD-7 for anxiety, a general distress scale).
+2. **Timing**: at intake, every session or every few sessions, and at the end.
+3. **Feedback**: therapists see scores with alerts when a client is "not on track".
+4. **Review**: discuss off-track clients in supervision.
+5. **Privacy**: secure storage, consent.
+6. **Service data**: drop-out, waiting times, recovery rates, compared over time.
+### Benefit
+Monitoring with feedback helps catch deterioration early and improves outcomes, especially for clients at risk of not improving.
 :::
 
 `;

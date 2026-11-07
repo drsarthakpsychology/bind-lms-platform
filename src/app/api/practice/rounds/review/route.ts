@@ -11,7 +11,7 @@ const schema = z.object({
   card_id: z.string().uuid(),
   rating: z.number().int().min(1).max(4),
   // The student's current scheduler state for this card (server recomputes
-  // the next state — FSRS math is authoritative, never trusted from the client).
+  // the next state: FSRS math is authoritative, never trusted from the client).
   current: z.object({
     stability: z.number().min(0),
     difficulty: z.number().min(0),
@@ -20,7 +20,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/rounds/review — persist a Rounds card rating.
+ * POST /api/practice/rounds/review: persist a Rounds card rating.
  * Computes the next FSRS state server-side and upserts the user's
  * card_reviews row (unique card+user). Owner-scoped; RLS enforces it.
  */
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
     );
 
   if (error) {
-    // A card not in the DB (FK miss) shouldn't block the deck — a check, not a test.
+    // A card not in the DB (FK miss) shouldn't block the deck: a check, not a test.
     if (error.code === "23503") {
       return NextResponse.json({ ok: true, warning: "card not in DB" });
     }

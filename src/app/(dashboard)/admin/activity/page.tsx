@@ -27,8 +27,8 @@ const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m`
 const time = (iso: string) => new Date(iso).toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit" });
 
 /**
- * Activity — what STUDENTS are doing (2026-11 redesign). Live now (who is on,
- * who is watching which lecture — from the real heartbeat and player
+ * Activity: what STUDENTS are doing (2026-11 redesign). Live now (who is on,
+ * who is watching which lecture, from the real heartbeat and player
  * pings, refreshed every 30 s), cohort comparison, who is falling behind,
  * and the 30-day picture for everyone. Each student opens their timeline.
  */

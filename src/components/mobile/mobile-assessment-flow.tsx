@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { MobileCompletionState } from "./mobile-completion-state";
 
 /**
- * MobileAssessmentFlow — the generic sequential shell for any stepped
+ * MobileAssessmentFlow: the generic sequential shell for any stepped
  * assessment (T23). One question/step at a time, with orientation
  * ("Question n of m" + a progress bar) and a single next action. The parent
  * supplies each step's interaction via `renderStep` and decides when the
@@ -15,7 +15,7 @@ import { MobileCompletionState } from "./mobile-completion-state";
  *
  * Owns: current step index, progress, the Next/primary action, the
  * completion state. Does NOT own: scoring, persistence, or the per-step
- * interaction — the parent does (so MCQ, multi-select, free-text, ordering,
+ * interaction: the parent does (so MCQ, multi-select, free-text, ordering,
  * flashcard and scenario steps all reuse the same shell without the shell
  * knowing their data shapes).
  *
@@ -40,7 +40,7 @@ export function MobileAssessmentFlow({
   finishLabel = "Finish",
   className,
 }: {
-  /** Step identifiers in order (ids only — the parent maps them to bodies). */
+  /** Step identifiers in order (ids only, the parent maps them to bodies). */
   steps: string[];
   current: number;
   onCurrentChange: (index: number) => void;
@@ -48,11 +48,11 @@ export function MobileAssessmentFlow({
   renderStep: (step: string, index: number) => React.ReactNode;
   /** Gate the Next action for the current step (e.g. an answer must be chosen). */
   canAdvance?: (step: string, index: number) => boolean;
-  /** True once the flow is finished — renders `completion`. */
+  /** True once the flow is finished: renders `completion`. */
   finished: boolean;
   /** The completion surface (MobileCompletionState or a score card). */
   completion?: React.ReactNode;
-  /** Called when Finish is pressed on the final step — parent flips `finished`. */
+  /** Called when Finish is pressed on the final step: parent flips `finished`. */
   onComplete?: () => void;
   nextLabel?: string;
   finishLabel?: string;

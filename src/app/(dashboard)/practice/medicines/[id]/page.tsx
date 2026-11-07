@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MEDS, medById } from "@/lib/meds";
 import { MedicineView } from "@/components/meds/medicine-view";
+import { mechanismOf } from "@/lib/meds/mechanisms";
 
 export function generateStaticParams() {
   return MEDS.map((m) => ({ id: m.id }));
@@ -18,5 +19,5 @@ export default async function MedicinePage({ params }: { params: Promise<{ id: s
   const med = medById(id);
   if (!med) notFound();
   const related = med.related.map(medById).filter((m): m is NonNullable<typeof m> => Boolean(m)).map((m) => ({ id: m.id, name: m.name, cls: m.cls }));
-  return <MedicineView med={med} related={related} />;
+  return <MedicineView med={med} related={related} mech={mechanismOf(med.id)} />;
 }

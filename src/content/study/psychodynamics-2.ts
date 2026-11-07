@@ -6,7 +6,29 @@ export const part2 = String.raw`
 A **formulation** is a short, testable story that explains **why this person has this problem now**, and what is likely to happen in treatment. The descriptive diagnosis says *what*; the formulation says *why* and *what next*. (The general 5P formulation is in the case-sheet module; this is the psychodynamic version.)
 
 ### The five parts of a psychodynamic formulation
-Following Perry, Cooper and Michels (1987), a good formulation has:
+Perry, Cooper and Michels' classic scheme gives a good formulation five parts. Tap through the tree, then read each part below.
+
+:::widget flow
+{
+  "title": "The five-part psychodynamic formulation",
+  "layout": "tree",
+  "nodes": [
+    { "id": "f", "label": "Formulation", "detail": "A short, testable story: why this person, this problem, now, and what will happen in treatment." },
+    { "id": "sum", "label": "1 · Summary", "parent": "f", "detail": "Who, what problem, what trigger, in two or three lines." },
+    { "id": "non", "label": "2 · Non-dynamic factors", "parent": "f", "detail": "Biology, illness, substances, temperament, poverty or ongoing abuse. Named so the dynamic story does not over-explain." },
+    { "id": "core", "label": "3 · Core explanation", "parent": "f", "detail": "The central conflict or deficit, how it developed, how the trigger set it off." },
+    { "id": "tri", "label": "Triangles", "parent": "core", "detail": "Malan: feeling, anxiety, defence; and current, past, therapist." },
+    { "id": "ccrt", "label": "CCRT", "parent": "core", "detail": "Luborsky: Wish, Response of Other, Response of Self." },
+    { "id": "cd", "label": "Conflict or deficit", "parent": "core", "detail": "Two wishes clashing, or a capacity never built, or both." },
+    { "id": "tr", "label": "4 · Predicted transference", "parent": "f", "detail": "How the pattern will show with the therapist, and which resistances to expect." },
+    { "id": "tx", "label": "5 · Treatment implications", "parent": "f", "detail": "Expressive or supportive, brief or long, the focus, and what to watch for." }
+  ],
+  "caption": "Tap each branch. Part 4 makes the formulation testable: if the predicted transference never appears, revise it."
+}
+:::
+
+In words:
+
 1. **Summary statement**: who the person is, the problem, and the trigger, in two or three lines.
 2. **Non-dynamic factors**: biology, medical illness, substances, social stress, temperament. Name them so the dynamic story does not try to explain everything.
 3. **Core psychodynamic explanation**: the central conflict or deficit, how it developed, and how the current trigger set it off.
@@ -18,10 +40,39 @@ Following Perry, Cooper and Michels (1987), a good formulation has:
 - **Triangle of conflict**: a hidden **feeling or impulse** (anger, grief, longing) triggers **anxiety**, which triggers a **defence**. Work starts at the defence and moves to the feeling.
 - **Triangle of person**: the same pattern appears with **current people**, **past people** (parents) and the **therapist**. An interpretation that links all three corners is the most powerful.
 
+:::widget flow
+{
+  "title": "Malan's triangle of conflict",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "feel", "label": "Hidden feeling", "detail": "The true feeling or impulse: grief, anger, longing for closeness. It is what the work aims to reach." },
+    { "id": "anx", "label": "Anxiety", "detail": "As the feeling rises, so does fear: of falling apart, of hurting someone, of being rejected." },
+    { "id": "def", "label": "Defence", "detail": "Joking, changing the subject, intellectualising, smiling. It brings relief and keeps the feeling out." }
+  ],
+  "edgeLabels": { "feel>anx": "stirs", "anx>def": "triggers", "def>feel": "blocks" },
+  "caption": "Work starts at the defence corner, eases the anxiety, and only then reaches the feeling."
+}
+:::
+
+
 **Luborsky's Core Conflictual Relationship Theme (CCRT)**: in the stories a person tells about relationships, find:
 - the **Wish** (W): what I want from others ("to be cared for"),
 - the expected **Response of Other** (RO): what I expect they will do ("they'll find me a burden"),
 - the **Response of Self** (RS): how I then feel and act ("I go quiet and do everything myself, then feel bitter").
+
+:::widget flow
+{
+  "title": "The CCRT as a self-fulfilling loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "w", "label": "Wish", "detail": "'I want to be cared for.'" },
+    { "id": "ro", "label": "Expected Response of Other", "detail": "'They will find me a burden.'" },
+    { "id": "rs", "label": "Response of Self", "detail": "'So I go quiet, do everything myself, and feel bitter.'" },
+    { "id": "real", "label": "Others' actual response", "detail": "Seeing her cope alone, others do not offer help. The expectation seems confirmed." }
+  ],
+  "caption": "Change in therapy usually shows first in RO and RS: the wish stays, but the expected and actual responses soften."
+}
+:::
 
 **Conflict versus deficit**: some problems are best explained by **conflict** (two wishes clashing), others by **deficit** (a capacity that never developed, such as self-soothing). Kohut and attachment thinking emphasise deficit; classical and ego psychology emphasise conflict. Good formulations often need both.
 
@@ -162,6 +213,22 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
 - Early work on the **alliance**.
 - **Careful selection**: motivation, some psychological mindedness, at least one meaningful past relationship, ability to tolerate feelings, and a focus that can be found quickly.
 
+:::widget flow
+{
+  "title": "The arc of a brief dynamic therapy",
+  "layout": "chain",
+  "nodes": [
+    { "id": "sel", "label": "Assessment and selection", "detail": "Is there motivation, a meaningful relationship, tolerance of feeling, and a response to a trial interpretation?" },
+    { "id": "foc", "label": "Agree the focus", "detail": "One conflict, one relationship pattern or one loss, put into words both people accept." },
+    { "id": "all", "label": "Build the alliance", "detail": "Agreement on goals and tasks, and a bond. Ruptures are noticed early." },
+    { "id": "work", "label": "Active work on the focus", "detail": "The therapist keeps returning to the focus, works with defences and links the triangles." },
+    { "id": "end", "label": "Ending as part of the work", "detail": "The known end date stirs feelings about loss and separation, which are worked with, not avoided." },
+    { "id": "fu", "label": "Follow-up", "detail": "A review months later checks whether change has held and grown." }
+  ],
+  "caption": "Press Play. Brief models keep the core ideas but add a focus, a limit and a more active therapist."
+}
+:::
+
 ### The main models
 | Model | Founder | Key idea |
 |---|---|---|
@@ -247,6 +314,22 @@ Psychodynamic therapy is often called "unscientific". Others claim it is "as goo
 | Psychodynamic therapy targets personality, not just symptoms | Personality outcomes are harder to measure and less often measured |
 | | **Researcher allegiance**: trials often favour the therapy the authors prefer, in every school |
 
+:::widget layers
+{
+  "title": "How confident can we be? Psychodynamic therapy by claim",
+  "shape": "stack",
+  "layers": [
+    { "label": "Fairly confident", "detail": "Short-term psychodynamic therapy beats waiting list or minimal treatment for depression and several anxiety and somatic presentations." },
+    { "label": "Fairly confident", "detail": "Structured dynamic treatments (MBT, TFP) help borderline personality disorder, alongside DBT and other specialist models." },
+    { "label": "Moderately confident", "detail": "In head-to-head trials, results are broadly similar to CBT and other bona fide therapies for depression. True equivalence needs larger trials." },
+    { "label": "Uncertain", "detail": "Gains keep growing after therapy ends. Suggested by some studies, sensitive to method and few in number." },
+    { "label": "Uncertain", "detail": "Long-term therapy is better than shorter therapy for complex, chronic problems. Meta-analyses disagree." },
+    { "label": "Not supported", "detail": "Psychoanalysis is the only route to lasting change; every symptom has an Oedipal cause." }
+  ],
+  "caption": "Tap each level. Confidence depends on the number, size and quality of trials, not on how persuasive the theory sounds."
+}
+:::
+
 :::widget sort
 {
   "prompt": "How strong is each claim, as of the current evidence?",
@@ -331,6 +414,21 @@ Psychodynamic ideas about inner relationships connect to **systems** ideas about
 | **Multigenerational transmission** | Bowen | Patterns of anxiety and relating passed down through generations |
 | **Boundaries, enmeshment, disengagement** | Salvador Minuchin (structural) | How close or distant family sub-systems are; too blurred or too rigid |
 | **Family as a system** | General systems thinking | A symptom in one person may keep the family's balance (homeostasis) |
+
+:::widget flow
+{
+  "title": "How triangulation keeps a problem going",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "t", "label": "Tension between two", "detail": "Parents disagree about money, in-laws or the father's absence." },
+    { "id": "a", "label": "Anxiety rises", "detail": "Neither can bear the conflict directly." },
+    { "id": "pull", "label": "A third is pulled in", "detail": "A child becomes confidant, messenger or the 'problem' everyone worries about." },
+    { "id": "calm", "label": "Pair calms for now", "detail": "Talking about the child's headaches is easier than talking about the marriage." },
+    { "id": "stuck", "label": "Conflict never resolved", "detail": "The real issue stays untouched, so tension builds again and the child's role hardens." }
+  ],
+  "caption": "Systems work aims to take the child out of the triangle and help the pair talk directly."
+}
+:::
 
 :::widget decide
 {
@@ -576,7 +674,7 @@ Q: Roland's term for an Indian self experienced through family relationships and
 - *Familial self
 - Grandiose self
 - Collective unconscious
-> Roland, 1988.
+> Alan Roland's term, from his work with patients in India and Japan.
 
 Q: A mother and daughter are so close the daughter cannot make any decision without her, and the father is left out. Minuchin's term for the mother-daughter relationship is:
 - Disengaged

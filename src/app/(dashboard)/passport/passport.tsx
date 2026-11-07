@@ -42,7 +42,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
 
   return (
     <div className="space-y-6">
-      {/* summary — one dominant metric (logged hours), the other two demoted to a strip */}
+      {/* summary: one dominant metric (logged hours), the other two demoted to a strip */}
       <div className="space-y-3">
         <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
           <p className="text-caption text-muted-foreground">Logged hours</p>
@@ -57,14 +57,14 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
         </div>
       </div>
 
-      {/* competency grid — with an honest empty state until the first evidence
+      {/* competency grid, with an honest empty state until the first evidence
           lands (T51: an invitation, not a report). */}
       {evid === 0 && rows.length > 0 ? (
         <div className="rounded-md border-2 border-dashed border-border bg-card p-5 text-center">
           <p className="text-base font-medium text-foreground">Your passport is a blank slate</p>
           <p className="mx-auto mt-1 max-w-[40ch] text-small text-muted-foreground">
             Every tagged supervision hour and practice session you finish lands
-            here as evidence. The first one is the whole point — log a supervision
+            here as evidence. The first one is the whole point: log a supervision
             hour to break the seal.
           </p>
         </div>
@@ -126,7 +126,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
         })}
       </ul>
 
-      {/* Evidence sheet — the "+N more" target. Lists every event for one competency. */}
+      {/* Evidence sheet: the "+N more" target. Lists every event for one competency. */}
       <MobileBottomSheet
         open={evidenceRow != null}
         onOpenChange={(o) => {

@@ -1,5 +1,5 @@
 /**
- * The per-book structural outline contract — produced by the reading agents,
+ * The per-book structural outline contract: produced by the reading agents,
  * consumed by the chunker. Gives every chunk source traceability
  * (book → chapter → section → PDF page) without fabricating page numbers:
  * page numbers are the PDF page index (from the `<<<PAGE n>>>` markers), NOT
@@ -18,7 +18,7 @@ export interface OutlineChapter {
   title: string;
   /** first PDF page of the chapter (1-based) */
   pageStart: number;
-  /** last PDF page of the chapter (1-based, inclusive — the chunker iterates p <= pageEnd) */
+  /** last PDF page of the chapter (1-based, inclusive, the chunker iterates p <= pageEnd) */
   pageEnd: number;
   /** key subsections, in order */
   sections: OutlineSection[];

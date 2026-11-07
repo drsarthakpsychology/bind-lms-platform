@@ -6,7 +6,7 @@
 
 import { z } from "zod";
 
-/** Debrief scoring output — the product. Schema-validated, deterministic. */
+/** Debrief scoring output: the product. Schema-validated, deterministic. */
 export const debriefSchema = z.object({
   score: z.number().min(0).max(5),
   open_closed_ratio: z.number().min(0).max(5),
@@ -19,7 +19,7 @@ export const debriefSchema = z.object({
   disclosure_unlock_rate: z.number().min(0).max(1),
   /** v5 Part 1: did the student ever ask what the opening idiom meant? */
   idiom_decoding: z.boolean().default(false),
-  /** Phase 1 §4.2: did the student ask WHY TODAY — the most under-used
+  /** Phase 1 §4.2: did the student ask WHY TODAY, the most under-used
    *  question in clinical teaching. Named miss when absent. */
   asked_why_today: z.boolean().default(false),
   quotes: z.array(

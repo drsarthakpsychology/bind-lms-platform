@@ -129,7 +129,7 @@ export async function loadActivity() {
       lecturesStarted: pr.filter((x) => (x.watched_seconds ?? 0) > 0).length,
       watchMin: Math.round(pr.reduce((a, x) => a + (x.watched_seconds ?? 0), 0) / 60),
       xp: st?.xp ?? 0,
-      level: st ? levelFor(st.xp).title : "—",
+      level: st ? levelFor(st.xp).title : "None",
       streak: st ? liveStreak(st.streak, today) : 0,
       accuracy: st && st.answered ? Math.round((st.correct / st.answered) * 100) : null,
       mastery: st ? domainMastery(st.coach, "all").pct : 0,

@@ -21,7 +21,7 @@ type Tab = "lectures" | "materials" | "assignments";
 type Filter = "all" | "todo" | "watched";
 
 /**
- * Lectures — the course library, laid out like a playlist page:
+ * Lectures: the course library, laid out like a playlist page:
  * continue tile + progress, then tabs (Lectures / Materials / Assignments).
  * Lectures can be filtered to what's left or what's watched, and the week
  * chips jump straight to a week.
@@ -66,7 +66,7 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
       ) : null}
 
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">{model.published ? "Lectures" : "Draft — only you can see this"}</p>
+        <p className="text-eyebrow text-link">{model.published ? "Lectures" : "Draft, only you can see this"}</p>
         <h1 className="text-display break-words">{model.title}</h1>
         {mine.length === 1 ? (
           <p className="text-sm text-muted-foreground">

@@ -1,5 +1,5 @@
 /**
- * CFI Practice (v5 Part 1, Mode 4) — the DSM-5 Cultural Formulation Interview,
+ * CFI Practice (v5 Part 1, Mode 4): the DSM-5 Cultural Formulation Interview,
  * a real 16-question instrument for eliciting a patient's explanatory model.
  *
  * Students practise it against a patient with a strong cultural attribution

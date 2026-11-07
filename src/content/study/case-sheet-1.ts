@@ -76,6 +76,34 @@ Clinical care is a relay race. The case sheet is the baton. A smooth handover (c
 }
 :::
 
+
+:::widget compare
+{
+ "title": "A weak and a strong entry",
+ "a": {
+  "label": "Weak",
+  "points": [
+   "\"Pt attention-seeking, drama\"",
+   "No source given",
+   "No patient's words",
+   "Undated, unsigned"
+  ],
+  "summary": "Judgement dressed as fact."
+ },
+ "b": {
+  "label": "Strong",
+  "points": [
+   "Behaviour described: cut forearm after an argument",
+   "Per mother, and the patient quoted",
+   "Relevant negatives recorded",
+   "Dated, timed, signed"
+  ],
+  "summary": "Accurate, attributed, defensible."
+ },
+ "caption": "Slide across and rewrite one of your own recent notes in the strong style."
+}
+:::
+
 :::student
 This module is about **writing**. How to **ask** questions in the interview is taught in **The psychiatric interview and MSE** module, and how to observe and describe each part of the mental state in depth is in **The MSE in depth**. Here you learn to turn all of that into a clear, defensible record.
 :::
@@ -179,6 +207,54 @@ Most Indian training centres follow a similar order. Learn it until you can writ
     { "text": "Started hearing voices after his father's death five months ago", "bucket": 0 },
     { "text": "Married at 22, arranged marriage, two children", "bucket": 2 }
   ]
+}
+:::
+
+
+:::widget sort
+{
+ "prompt": "Which layer of the case sheet does each item belong to?",
+ "buckets": [
+  "Who and why",
+  "The story (HPI)",
+  "Background",
+  "Found today",
+  "Meaning and plan"
+ ],
+ "items": [
+  {
+   "text": "Informants and their reliability",
+   "bucket": 0
+  },
+  {
+   "text": "Sleep reduced for two months",
+   "bucket": 1
+  },
+  {
+   "text": "Paternal uncle treated for depression",
+   "bucket": 2
+  },
+  {
+   "text": "Flight of ideas during the interview",
+   "bucket": 3
+  },
+  {
+   "text": "5P formulation",
+   "bucket": 4
+  },
+  {
+   "text": "Chief complaints with durations",
+   "bucket": 0
+  },
+  {
+   "text": "Repeated Class 7",
+   "bucket": 2
+  },
+  {
+   "text": "Provisional diagnosis with ICD-11 code",
+   "bucket": 4
+  }
+ ]
 }
 :::
 
@@ -321,10 +397,53 @@ Write it as one compact paragraph. Each item has a reason:
 Ms P, 26, female, unmarried, Hindu, BCom graduate, works as an accounts assistant, lower-middle socioeconomic status (modified Kuppuswamy), from an urban area of Surat, Gujarati and Hindi speaking; brought by her parents to the psychiatry emergency on referral from a general practitioner.
 :::
 
+
+:::widget reveal
+{
+ "prompt": "Why does the case sheet record who referred the patient?",
+ "answer": "The referral source tells you who is worried and why now. A patient brought by police, sent by an employer, referred by a GP or self-referred will have different concerns, expectations and levels of insight, and it often hints at risk (for example police involvement)."
+}
+:::
+
 ### Informants: who, and how reliable?
 For each informant write: **name or relationship, age, how long and how closely they know the patient, and your judgement of reliability and adequacy**.
 - **Reliable** means you have no reason to doubt honesty: consistent, not hostile, no obvious motive to distort.
 - **Adequate** means they had enough contact to know: lives with the patient, sees them daily.
+
+
+:::widget sort
+{
+ "prompt": "Judge each informant.",
+ "buckets": [
+  "Reliable and adequate",
+  "Reliable, not adequate",
+  "Reliability in doubt"
+ ],
+ "items": [
+  {
+   "text": "Mother who lives with the patient and gives a consistent account",
+   "bucket": 0
+  },
+  {
+   "text": "A sister in another country who phones monthly",
+   "bucket": 1
+  },
+  {
+   "text": "A brother in a property dispute with the patient who says she is 'mad'",
+   "bucket": 2,
+   "why": "A conflict of interest is a reason to weigh the account carefully and seek others."
+  },
+  {
+   "text": "A close friend who shares a room at the hostel",
+   "bucket": 0
+  },
+  {
+   "text": "A neighbour who met the patient twice",
+   "bucket": 1
+  }
+ ]
+}
+:::
 
 :::example Writing an informant line
 "Informants: (1) the patient: reliable but inadequate, as she lacks insight into recent behaviour; (2) mother, 52, homemaker, lives with the patient: reliable and adequate; (3) elder brother, 30, lives in Mumbai, visits monthly: reliable but inadequate for recent events."
@@ -661,6 +780,37 @@ The MSE is a photograph of today. The HPI is the film that led to it: scene by s
  ],
  "answer": 1,
  "why": "Two depressive episodes reach the major depression zone, with a period in the hypomania band between them that Ms G recalled only as 'feeling good'. A life chart from an informant can change the diagnosis to bipolar II and change treatment."
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put Mr S's story in the order you would write his HPI.",
+ "events": [
+  {
+   "label": "Apparently well until about five months ago"
+  },
+  {
+   "label": "Robbery at his shop"
+  },
+  {
+   "label": "Tense, sleeping poorly"
+  },
+  {
+   "label": "Early morning waking, loss of interest, weight loss"
+  },
+  {
+   "label": "Ideas of being a burden"
+  },
+  {
+   "label": "Says the family would be better off without him"
+  },
+  {
+   "label": "Stops opening the shop; brought for help"
+  }
+ ],
+ "why": "An HPI is a story in time order, from the last well point to today."
 }
 :::
 
@@ -1085,8 +1235,61 @@ Psychiatric patients have higher rates of physical illness, and many physical il
 - **General**: pallor, jaundice, thyroid swelling, signs of self-harm (scars, fresh cuts), injection marks, signs of alcohol use, nutritional state.
 - **Systemic**: cardiovascular, respiratory, abdominal and a **neurological** screen (pupils, tone, reflexes, gait, tremor, abnormal movements, cerebellar signs).
 
+
+:::widget reveal
+{
+ "prompt": "Why should waist circumference, not just weight, be recorded before starting an antipsychotic?",
+ "answer": "Waist size reflects abdominal fat, which predicts diabetes and heart disease better than weight alone. South Asians carry higher metabolic risk at lower BMI, so waist and fasting glucose or HbA1c and lipids give an earlier warning."
+}
+:::
+
 :::example A relevant physical finding
 "Fine tremor of outstretched hands, tachycardia 112 per minute, sweating, smell of alcohol; no jaundice; no flapping tremor; tandem gait unsteady." This one line changes the plan: it suggests alcohol withdrawal and possible cerebellar involvement.
+:::
+
+
+:::widget build
+{
+ "vignette": "Ms P, 26, is about to start lithium for bipolar disorder. You must record the baseline investigations in her case sheet.",
+ "rule": "Tick the investigations that are essential before starting lithium. At least four, including kidney function and pregnancy status.",
+ "symptoms": [
+  {
+   "label": "Kidney function and electrolytes",
+   "present": true,
+   "core": true,
+   "why": "Lithium is cleared only by the kidneys."
+  },
+  {
+   "label": "Thyroid function",
+   "present": true,
+   "why": "Lithium can cause hypothyroidism."
+  },
+  {
+   "label": "Calcium",
+   "present": true,
+   "why": "Lithium can raise calcium through the parathyroid glands."
+  },
+  {
+   "label": "Pregnancy test",
+   "present": true,
+   "core": true,
+   "why": "Plan carefully if pregnant or planning pregnancy."
+  },
+  {
+   "label": "ECG where indicated",
+   "present": true,
+   "why": "Baseline in older adults or with heart disease."
+  },
+  {
+   "label": "Routine brain MRI",
+   "present": false,
+   "why": "Not needed without neurological or atypical features."
+  }
+ ],
+ "need": 4,
+ "needCore": true,
+ "verdict": "Kidney function, thyroid, calcium and pregnancy status (with ECG where indicated) are the core baseline. Write each with its reason, then plan the first lithium level after about five days at a steady dose."
+}
 :::
 
 ### Writing the MSE

@@ -24,7 +24,7 @@ export async function POST(req: Request) {
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const user = sessionProfile;
 
-  // Admin gate — requireSession already carries the profiles role.
+  // Admin gate: requireSession already carries the profiles role.
   if (sessionProfile.role !== "admin") return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
   const body = await req.json().catch(() => null);

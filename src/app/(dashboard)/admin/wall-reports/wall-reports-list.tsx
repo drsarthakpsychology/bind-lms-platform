@@ -49,7 +49,7 @@ export function WallReportsList({ reports }: { reports: ReportRow[] }) {
           <CheckCircle2 className="size-4 text-status-success-fg" aria-hidden /> Nothing reported
         </p>
         <p className="mt-1 text-small text-muted-foreground">
-          The wall is clean — no open reports right now.
+          The wall is clean, no open reports right now.
         </p>
       </div>
     );

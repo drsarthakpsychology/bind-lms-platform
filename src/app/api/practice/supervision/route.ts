@@ -13,13 +13,13 @@ const entrySchema = z.object({
   supervisorName: z.string().max(120).optional(),
   supervisorEmail: z.string().email().optional().or(z.literal("")),
   competencyKey: z.string().optional(),
-  // A9 transfer loop — the only evidence platform practice changes real behaviour.
+  // A9 transfer loop: the only evidence platform practice changes real behaviour.
   transferNote: z.string().max(2000).optional(),
   consentPromo: z.boolean().optional(),
 });
 
 /**
- * POST /api/practice/supervision — log a supervision contact hour.
+ * POST /api/practice/supervision: log a supervision contact hour.
  * Owner + admin RLS. Feeds the Skills Passport (competency_events, source
  * 'supervision') when a competency is tagged.
  */

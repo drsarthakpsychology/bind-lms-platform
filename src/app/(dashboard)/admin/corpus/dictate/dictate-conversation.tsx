@@ -20,7 +20,7 @@ interface DictationResponse {
 }
 
 /**
- * A7 — Dictation as a conversation. Dr. Sarthak talks (or types); the
+ * A7: Dictation as a conversation. Dr. Sarthak talks (or types); the
  * interviewer state machine asks the next clinical question. Works fully on
  * fixtures (AI_ENABLED=false) via deterministic follow-ups.
  * Voice recording: MediaRecorder -> server STT (Whisper via Groq/NVIDIA/Deepgram).
@@ -34,7 +34,7 @@ export function DictateConversation() {
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [title, setTitle] = React.useState("");
-  // Inline editing of the transcript — the doctor can correct a mis-
+  // Inline editing of the transcript: the doctor can correct a mis-
   // transcription before saving, without touching the state machine.
   const [editingIndex, setEditingIndex] = React.useState<number | null>(null);
   const [editText, setEditText] = React.useState("");
@@ -182,7 +182,7 @@ export function DictateConversation() {
       <div className="space-y-3 rounded-md border-2 border-border bg-card p-4 max-h-[24rem] overflow-y-auto">
         {transcript.length === 0 ? (
           <p className="text-small text-muted-foreground">
-            Say or type the first thing about the case — start with who they are.
+            Say or type the first thing about the case: start with who they are.
           </p>
         ) : (
           transcript.map((t, i) => (

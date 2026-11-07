@@ -8,7 +8,7 @@ import { ReviewActions } from "@/components/psychopharm/review-actions";
 /**
  * DB-backed review queue for one table (drug_fields | dose_bands | dose_ranges).
  * Accepts both the full table name ("psych_dose_bands") and the shorthand
- * used in some URLs ("dose_bands") — both resolve. Unknown tables redirect to
+ * used in some URLs ("dose_bands"): both resolve. Unknown tables redirect to
  * the review overview rather than crashing.
  */
 const TABLE_ALIASES: Record<string, string> = {
@@ -49,14 +49,14 @@ export default async function ReviewTablePage({
       <PageHeader
         eyebrow="Editor-in-Chief · review"
         title={`Review · ${table.replace("psych_", "")}`}
-        description={`${rows?.length ?? 0} rows in the queue. Live from the database — actions write the audit log.`}
+        description={`${rows?.length ?? 0} rows in the queue. Live from the database: actions write the audit log.`}
       />
       <Link href="/admin/psychopharm-review" className="text-caption text-muted-foreground hover:underline">
         ← Back to review overview
       </Link>
 
       {!rows || rows.length === 0 ? (
-        <p className="text-small text-muted-foreground">Queue empty — nothing seeded yet.</p>
+        <p className="text-small text-muted-foreground">Queue empty. Nothing seeded yet.</p>
       ) : (
         <div className="space-y-4">
           {rows.map((row) => {
@@ -71,7 +71,7 @@ export default async function ReviewTablePage({
               <section key={row.id} className="rounded-md border-2 border-border bg-card p-4">
                 <p className="text-small font-medium">{valueText}</p>
                 <p className="text-caption text-muted-foreground">
-                  page {row.page_ref ?? "—"} · status {row.status}
+                  page {row.page_ref ?? "not set"} · status {row.status}
                 </p>
                 <ReviewActions table={table} id={row.id} status={row.status} isDose={isDose} />
               </section>

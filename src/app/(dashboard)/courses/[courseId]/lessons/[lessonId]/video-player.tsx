@@ -55,7 +55,7 @@ function getFullscreenElement(): Element | null {
 /**
  * Best-effort landscape lock on fullscreen. The Screen Orientation API is not
  * available or throws NotSupportedError on several mobile browsers (notably
- * iOS Safari, and any browser where a programmatic lock is disallowed) — this
+ * iOS Safari, and any browser where a programmatic lock is disallowed): this
  * is intentionally graceful: the video still plays portrait, we just ask.
  */
 async function lockLandscape() {
@@ -64,7 +64,7 @@ async function lockLandscape() {
   try {
     await o.lock("landscape");
   } catch {
-    /* unsupported — ignore */
+    /* unsupported: ignore */
   }
 }
 
@@ -74,7 +74,7 @@ function unlockOrientation() {
   try {
     o.unlock();
   } catch {
-    /* unsupported — ignore */
+    /* unsupported: ignore */
   }
 }
 
@@ -94,7 +94,7 @@ function makeTokenRotatingLoader<C extends LoaderContext>(
   tokenRef: { current: { token: string; expiresAt: number } | null },
 ) {
   return class TokenRotatingFetchLoader extends FetchLoader {
-    // Narrow the inherited `context` field to C — FetchLoader declares it as
+    // Narrow the inherited `context` field to C: FetchLoader declares it as
     // LoaderContext, which would otherwise keep this class at Loader<LoaderContext>
     // and fail the pLoader/fLoader constructor types (PlaylistLoaderContext /
     // FragmentLoaderContext). C extends LoaderContext, so this is assignable.
@@ -108,7 +108,7 @@ function makeTokenRotatingLoader<C extends LoaderContext>(
           u.searchParams.set("st", current.token);
           context.url = u.toString();
         } catch {
-          // Malformed URL — leave as-is and let the base loader fail honestly.
+          // Malformed URL: leave as-is and let the base loader fail honestly.
         }
       }
       // The base loader's signature is the wider LoaderContext; the subclass
@@ -141,19 +141,19 @@ type PlayerState =
  *
  * Single instance: the <video> mounts once per lesson, is torn down on
  * unmount (hls.destroy() + pause + clear src), and swapping lessons remounts
- * it fresh. The source never has `controls` — every control is ours.
+ * it fresh. The source never has `controls`: every control is ours.
  *
  * Full-screen handling: the browser's native fullscreen API is requested on
  * the *wrapper* (the element that contains both the <video> and the
  * <Watermark>), not on the <video> itself. Native fullscreen promotes one
- * element — if we fullscreened the <video>, the watermark sibling would be
+ * element, if we fullscreened the <video>, the watermark sibling would be
  * left behind and invisible. Fullscreening the wrapper keeps the watermark
  * composited over the video at all times.
  *
  * Media-protection boundaries (honest limits): the URL is a short-lived
  * signed Supabase URL (60 min) minted server-side after an authz check, and
  * the native download control is suppressed. Nothing a browser can show can
- * be made impossible to capture — a determined user can always screen-record
+ * be made impossible to capture: a determined user can always screen-record
  * or capture the decoded frames. These are practical deterrents, not DRM.
  */
 export function VideoPlayer({
@@ -201,7 +201,7 @@ export function VideoPlayer({
   const [rate, setRate] = useState(1);
   const [rateMenuOpen, setRateMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-  // Quality ladder — populated from hls.js levels on manifest parse. `quality`
+  // Quality ladder: populated from hls.js levels on manifest parse. `quality`
   // is "auto" (native ABR, currentLevel=-1) or an hls.js level INDEX (manual
   // lock). The last manual pick persists per-device in localStorage (mobile
   // data and office Wi-Fi warrant different defaults).
@@ -232,7 +232,7 @@ export function VideoPlayer({
   const [ended, setEnded] = useState(false);
 
   // ---- Token mint + source load. Fetches a short-lived signed URL from the
-  // rate-limited, enrollment-re-checked API — never a pre-signed URL in the
+  // rate-limited, enrollment-re-checked API, never a pre-signed URL in the
   // page source. Retry bumps loadKey to re-mint. ----
   useEffect(() => {
     const video = videoRef.current;
@@ -309,7 +309,7 @@ export function VideoPlayer({
               // but a lecture can be much longer. The custom loaders read the
               // CURRENT token from tokenRef at fetch time, so when the background
               // refresh swaps tokenRef, the next segment/playlist request already
-              // carries the fresh token — playback never restarts and currentTime
+              // carries the fresh token: playback never restarts and currentTime
               // is preserved. No page reload, no source reload.
               pLoader: makeTokenRotatingLoader<PlaylistLoaderContext>(tokenRef),
               fLoader: makeTokenRotatingLoader<FragmentLoaderContext>(tokenRef),
@@ -341,7 +341,7 @@ export function VideoPlayer({
                   }
                 }
               } catch {
-                // localStorage unavailable (private browsing) — stay on Auto.
+                // localStorage unavailable (private browsing): stay on Auto.
               }
             });
             // Bounded HLS error recovery. A stream token lives 5 minutes; when
@@ -389,7 +389,7 @@ export function VideoPlayer({
             return;
           }
         } else {
-          // Single-file MP4 — native playback.
+          // Single-file MP4: native playback.
           video.src = url;
         }
         hlsRef.current = hls;
@@ -446,7 +446,7 @@ export function VideoPlayer({
           expiresAt: Date.now() + (data.expiresIn ?? 300) * 1000,
         };
       } catch {
-        // Transient failure — the next tick retries. Playback continues on the
+        // Transient failure: the next tick retries. Playback continues on the
         // old token until it genuinely expires.
       }
     }
@@ -661,7 +661,7 @@ export function VideoPlayer({
         setPseudoFullscreen(true);
       }
     } catch {
-      // Not in a user gesture or already fullscreen — ignore.
+      // Not in a user gesture or already fullscreen: ignore.
     }
   }
 
@@ -889,7 +889,7 @@ export function VideoPlayer({
       }
       onContextMenu={(e) => e.preventDefault()}
     >
-      {/* Media stage — the ONLY layer that clips to the rounded frame. The
+      {/* Media stage: the ONLY layer that clips to the rounded frame. The
           video, overlays and watermark live here. The controls + popover menu
           live OUTSIDE it so the "More options" menu can overflow the player
           without being cut off by overflow-hidden (T151 mobile bug: the menu
@@ -914,7 +914,7 @@ export function VideoPlayer({
           }}
           onDoubleClick={() => toggleFullscreen()}
         >
-          {/* Caption track — only rendered when the caller provides a captions
+          {/* Caption track, only rendered when the caller provides a captions
               URL (none do today, so the captions toggle stays hidden). */}
           {captionsUrl && (
             <track
@@ -1016,7 +1016,7 @@ export function VideoPlayer({
           </div>
         ) : null}
 
-        {/* Error state — a clear message + retry, not a dead frame */}
+        {/* Error state: a clear message + retry, not a dead frame */}
         {playerState.kind === "error" && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
             <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
@@ -1052,7 +1052,7 @@ export function VideoPlayer({
         >
           <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
         </div>
-        {/* "Still watching?" — inside the fullscreen container, outside the watermark layer. */}
+        {/* "Still watching?": inside the fullscreen container, outside the watermark layer. */}
         <AttentionCheckCard phase={attention.phase} secondsLeft={attention.secondsLeft} onYes={attention.answer} onResume={attention.resume} />
 
         {tampered && (
@@ -1067,7 +1067,7 @@ export function VideoPlayer({
         )}
       </div>
 
-      {/* Custom controls — ours, not the browser's. Hidden while playing, shown
+      {/* Custom controls: ours, not the browser's. Hidden while playing, shown
           on hover/touch/focus/pause. */}
       {playerState.kind !== "error" && (
         <div
@@ -1174,11 +1174,11 @@ export function VideoPlayer({
             </div>
           </div>
 
-          {/* Secondary controls (speed, volume, captions) — stay on one row at
+          {/* Secondary controls (speed, volume, captions): stay on one row at
               sm+; collapse into an overflow menu below 400px so play/time/scrub/
               fullscreen always fit. */}
           <div className="flex shrink-0 items-center gap-1 max-sm:hidden">
-            {/* Quality — HLS ladders render the menu; a single MP4 renders a
+            {/* Quality: HLS ladders render the menu; a single MP4 renders a
                 static resolution chip instead of an empty control. */}
             {levels.length > 0 && (
               <div className="relative">
@@ -1225,7 +1225,7 @@ export function VideoPlayer({
               </div>
             )}
 
-            {/* MP4 fallback — no HLS ladder, so show the source resolution as a
+            {/* MP4 fallback, no HLS ladder, so show the source resolution as a
                 static chip (only once loadedmetadata has reported a height). */}
             {levels.length === 0 && mp4Resolution && (
               <button
@@ -1301,7 +1301,7 @@ export function VideoPlayer({
               />
             </div>
 
-            {/* Captions toggle — only if a track exists */}
+            {/* Captions toggle, only if a track exists */}
             {hasCaptions && (
               <button
                 type="button"
@@ -1315,7 +1315,7 @@ export function VideoPlayer({
             )}
           </div>
 
-          {/* Mobile overflow menu — everything collapsed below 400px */}
+          {/* Mobile overflow menu. Everything collapsed below 400px */}
           <div className="relative shrink-0 sm:hidden">
             <button
               type="button"
@@ -1394,7 +1394,7 @@ export function VideoPlayer({
             )}
           </div>
 
-          {/* Fullscreen — promotes the wrapper (video + watermark). */}
+          {/* Fullscreen: promotes the wrapper (video + watermark). */}
           <button
             type="button"
             onClick={toggleFullscreen}

@@ -1,7 +1,7 @@
 import type { FiveP } from "./formulation";
 
 /**
- * Formulation attempt persistence (Part 6.2) — mirror the osce/mse pattern.
+ * Formulation attempt persistence (Part 6.2): mirror the osce/mse pattern.
  *
  * A completed Formulation Forge pass (sort + narrative + diff) is shaped
  * client-side into an FormulationAttemptPayload and POSTed to

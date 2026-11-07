@@ -1,5 +1,5 @@
 /**
- * Retrieval layer — the reusable knowledge access point for every AI surface.
+ * Retrieval layer: the reusable knowledge access point for every AI surface.
  *
  * Hybrid retrieval over corpus_chunks:
  *   - semantic: self-hosted MiniLM query embedding → match_corpus_chunks RPC
@@ -9,7 +9,7 @@
  *   - rerank:   reciprocal-rank fusion of both lanes
  *
  * Every result carries source traceability (book, chapter, section, PDF page
- * range) so AI features can surface "Source: [Book], Chapter X, page Y" — the
+ * range) so AI features can surface "Source: [Book], Chapter X, page Y": the
  * page number is the PDF index from the ingestion pipeline, never fabricated.
  *
  * Server-only: uses the service-role admin client (RLS on corpus tables is
@@ -82,7 +82,7 @@ async function vectorLane(query: string, opts: RetrieveOptions): Promise<Knowled
   });
 
   if (error) {
-    // The RPC is SECURITY DEFINER — a missing vector/grant surfaces as an
+    // The RPC is SECURITY DEFINER: a missing vector/grant surfaces as an
     // error; degrade to keyword rather than 500ing the feature.
     console.warn(`knowledge vector lane error: ${error.message}`);
     return [];
@@ -99,7 +99,7 @@ async function keywordLane(query: string, opts: RetrieveOptions): Promise<Knowle
   const admin = createAdminClient();
 
   // DB-side pg_trgm search across the WHOLE corpus (the old in-process lane
-  // only scanned the first limit rows by table order — a real bug). The RPC
+  // only scanned the first limit rows by table order: a real bug). The RPC
   // ranks by word_similarity(query, chunk_text), catching exact syndrome /
   // drug names that semantic embedding can miss.
   const { data, error } = await admin.rpc("search_corpus_keyword", {
@@ -221,7 +221,7 @@ function rrf(lists: KnowledgeHit[][], k = 60): KnowledgeHit[] {
 
 /**
  * Hybrid knowledge retrieval. Returns ranked, source-traceable passages.
- * Never throws on embedding/model errors — degrades to keyword, then empty.
+ * Never throws on embedding/model errors: degrades to keyword, then empty.
  */
 export async function searchKnowledge(query: string, opts: RetrieveOptions = {}): Promise<KnowledgeHit[]> {
   const q = query.trim();
@@ -252,7 +252,7 @@ export function cite(hit: KnowledgeHit): string {
   if (hit.chapter && hit.chapter !== "Unattributed") parts.push(hit.chapter);
   if (hit.section && hit.section !== "Unattributed") parts.push(hit.section);
   if (hit.pageStart) {
-    parts.push(hit.pageEnd && hit.pageEnd !== hit.pageStart ? `pp. ${hit.pageStart}–${hit.pageEnd}` : `p. ${hit.pageStart}`);
+    parts.push(hit.pageEnd && hit.pageEnd !== hit.pageStart ? `pp. ${hit.pageStart}-${hit.pageEnd}` : `p. ${hit.pageStart}`);
   }
   return parts.join(", ");
 }

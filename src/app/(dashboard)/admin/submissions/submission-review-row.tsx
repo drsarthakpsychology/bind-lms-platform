@@ -220,7 +220,7 @@ export function SubmissionReviewRow({
                 max={100}
                 value={scoreDraft}
                 onChange={(e) => setScoreDraft(e.target.value)}
-                placeholder="—"
+                placeholder="-"
                 className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
               />
             </label>

@@ -12,7 +12,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
 
 function fmtDate(iso: string | null): string {
-  if (!iso) return "—";
+  if (!iso) return "Never";
   // Fixed locale + timezone so the server render and client hydration agree.
   return new Date(iso).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 }
@@ -38,7 +38,7 @@ const STAGE_CLASS: Record<Stage, string> = {
 };
 
 /**
- * Logins — who has been sent their setup link and who has finished setting
+ * Logins, who has been sent their setup link and who has finished setting
  * their own password. No password is ever shown here (none is stored): each
  * row can email a fresh one-time link or copy one to share on WhatsApp.
  */

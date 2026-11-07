@@ -1,6 +1,6 @@
 /**
  * Style-bank access (Part 4.3). Fiction contributes conversational texture
- * ONLY — deflection moves, hesitations, topic-shifts, hedges — with zero
+ * ONLY (deflection moves, hesitations, topic-shifts, hedges) with zero
  * clinical content attached. `style` chunks can never be returned for a
  * clinical query. This module is the single gate; the test asserts it.
  */
@@ -23,7 +23,7 @@ export function isClinicalQuery(q: string): boolean {
 
 /**
  * Return style patterns for a NON-clinical query (used to seed conversational
- * texture in the patient persona). For a clinical query, returns [] — style
+ * texture in the patient persona). For a clinical query, returns []: style
  * must never supply a symptom, diagnosis, or disclosure.
  */
 export function stylePatternsFor(query: string, limit = 5): StylePattern[] {

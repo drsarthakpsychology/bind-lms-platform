@@ -1,5 +1,5 @@
 /**
- * Sim-review corrections — the faculty feedback loop (Part 3.4).
+ * Sim-review corrections: the faculty feedback loop (Part 3.4).
  *
  * Faculty reviews an AI-scored simulated session and either:
  *   - writes a comment that sits on top of the AI score (no score change), or
@@ -7,7 +7,7 @@
  *     debrief scoring calls).
  *
  * Both are persisted to scoring_corrections. Only rows that actually changed
- * the score are injected as "lessons" into the scoring prompt — a pure note
+ * the score are injected as "lessons" into the scoring prompt: a pure note
  * would otherwise render as garbage (`"{}" should be scored as: {}`).
  */
 
@@ -28,7 +28,7 @@ export type CorrectionPayload = z.infer<typeof correctionSchema>;
  *
  * `original`/`corrected` are stored as SCALARS (numbers) so the feedback-loop
  * prompt (`"<original>" should be scored as: <corrected>`) renders cleanly.
- * Empty values become `{}` — "note only, not a score change", which the
+ * Empty values become `{}`: "note only, not a score change", which the
  * debrief route filters out of the few-shot pool.
  */
 export function buildCorrectionRow(

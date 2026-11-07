@@ -43,8 +43,8 @@ export async function prepareMaterialUpload(
   const safeName = fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
   const path = `${courseId}/${crypto.randomUUID()}-${safeName}`;
 
-  // Insert the materials row (admin client — RLS lets admins write). Status
-  // starts `pending` — the bytes haven't landed yet. It's promoted to `ready`
+  // Insert the materials row (admin client, RLS lets admins write). Status
+  // starts `pending`: the bytes haven't landed yet. It's promoted to `ready`
   // only after confirmMaterialUpload verifies the object exists.
   const { data: material, error: insertError } = await admin
     .from("materials")
@@ -80,7 +80,7 @@ export async function prepareMaterialUpload(
 /**
  * Called after the bytes are uploaded. VERIFIES the object actually landed in
  * storage (size > 0) before promoting the row to `ready`. A failed upload is
- * marked `failed`, never `ready` — the client's success callback is not trusted.
+ * marked `failed`, never `ready`: the client's success callback is not trusted.
  */
 export async function confirmMaterialUpload(
   courseId: string,
@@ -151,7 +151,7 @@ export async function renameMaterial(
   return { error: null };
 }
 
-/** Reorder materials (admin) — persists the new sort order. */
+/** Reorder materials (admin): persists the new sort order. */
 export async function reorderMaterials(
   courseId: string,
   orderedIds: string[],
@@ -173,14 +173,14 @@ export async function reorderMaterials(
 
 export type ReplaceMaterialResult =
   | ({ ok: true; path: string; token: string; materialId: string } & {
-      /** The OLD object path — the caller deletes it only AFTER the new bytes land. */
+      /** The OLD object path: the caller deletes it only AFTER the new bytes land. */
       oldPath: string | null;
     })
   | { ok: false; error: string };
 
 /**
  * Replace a material's file. Prepares the new signed upload and points the row
- * at the new path, but does NOT delete the old object yet — that's deferred to
+ * at the new path, but does NOT delete the old object yet. That's deferred to
  * `confirmMaterialReplace`, called only after the upload succeeds. If the
  * upload fails, the row stays pointing at the new (empty) path; the caller can
  * roll back by restoring the old path.
@@ -214,7 +214,7 @@ export async function replaceMaterialFile(
   }
 
   // Update the row to point at the new file (keep the old object around until
-  // the new bytes are confirmed). Back to `pending` — the new object must be
+  // the new bytes are confirmed). Back to `pending`: the new object must be
   // verified before the row is usable again.
   await admin
     .from("materials")

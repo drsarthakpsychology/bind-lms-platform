@@ -8,7 +8,7 @@ import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
 
-/** In-flight snapshot key — a mid-station refresh/lock restores the station
+/** In-flight snapshot key: a mid-station refresh/lock restores the station
  *  instead of dropping the transcript + checklist (T46/T47). */
 const OSCE_KEY = "osce:in-flight";
 
@@ -21,7 +21,7 @@ export function OsceStationView() {
   const [selfGlobal, setSelfGlobal] = React.useState(0);
   const [startedAt, setStartedAt] = React.useState<Date | null>(null);
   // Voice delivery (OSCE is voice-strongly-preferred): capture the spoken
-  // response via web speech recognition — no storage, the transcript is the
+  // response via web speech recognition, no storage, the transcript is the
   // record. Degrades silently when the browser has no speech recognition.
   const [recording, setRecording] = React.useState(false);
   const [spoken, setSpoken] = React.useState("");
@@ -104,7 +104,7 @@ export function OsceStationView() {
     haptic("tap");
   }
 
-  // Daily rotation so the station order isn't fixed — everyone still practises
+  // Daily rotation so the station order isn't fixed. Everyone still practises
   // all stations, just not always #1 first. Seed is the day of month.
   const ordered = React.useMemo(() => {
     const day = new Date().getDate();
@@ -120,7 +120,7 @@ export function OsceStationView() {
     return () => clearInterval(id);
   }, [phase]);
 
-  // Auto-timeout at duration — schedule a timeout, don't setState in the effect.
+  // Auto-timeout at duration: schedule a timeout, don't setState in the effect.
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   React.useEffect(() => {
     if (phase !== "active") return;
@@ -203,7 +203,7 @@ export function OsceStationView() {
           </div>
           <p className="mt-3 text-base font-medium">{station.task}</p>
           <p className="mt-2 flex items-center gap-1 text-caption text-muted-foreground">
-            <Mic className="size-3.5" aria-hidden /> Speak your station — delivery is what&apos;s being assessed.
+            <Mic className="size-3.5" aria-hidden /> Speak your station: delivery is what&apos;s being assessed.
           </p>
 
           {webSttSupported() ? (
@@ -216,7 +216,7 @@ export function OsceStationView() {
                       Recording…
                     </span>
                   ) : spoken ? (
-                    "Captured — speak again to add"
+                    "Captured: speak again to add"
                   ) : (
                     "Record your spoken response"
                   )}
@@ -246,7 +246,7 @@ export function OsceStationView() {
             onClick={() => { setPhase("selfassess"); haptic("tap"); }}
             className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
-            I&apos;m done — self-assess
+            I&apos;m done: self-assess
           </button>
         </div>
       </div>
@@ -306,7 +306,7 @@ export function OsceStationView() {
         <div className="rounded-md border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Global rating</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
-            {selfGlobal || "—"}{selfGlobal ? `/${station.global_rating.max}` : ""}
+            {selfGlobal || "-"}{selfGlobal ? `/${station.global_rating.max}` : ""}
           </p>
           <p className="mt-1 text-caption text-muted-foreground">
             {selfGlobal ? "your overall call" : "pick above"}
@@ -315,7 +315,7 @@ export function OsceStationView() {
         <div className="rounded-md border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Overall</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
-            {selfGlobal ? `${Math.round(composite * 100)}%` : "—"}
+            {selfGlobal ? `${Math.round(composite * 100)}%` : "-"}
           </p>
         </div>
       </div>

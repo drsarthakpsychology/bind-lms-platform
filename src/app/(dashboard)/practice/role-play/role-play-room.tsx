@@ -16,7 +16,7 @@ interface Message {
 
 /**
  * The peer role-play chat room. Polls the thread every 2s (the person on the
- * other side types independently). No AI — the peer is the patient/clinician.
+ * other side types independently). No AI: the peer is the patient/clinician.
  */
 export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; myRole: string; myId: string }) {
   const router = useRouter();
@@ -37,7 +37,7 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
       const j = (await res.json()) as { messages: Message[] };
       setMessages(j.messages);
     } catch {
-      /* transient — next poll retries */
+      /* transient: next poll retries */
     }
   }, [sessionId, router]);
 
@@ -91,12 +91,12 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
         </span>
       </div>
 
-      {/* thread — one scroll container per screen (T67): the page scrolls the
+      {/* thread: one scroll container per screen (T67): the page scrolls the
           whole thread instead of a bounded inner scroll. */}
       <div className="space-y-2 rounded-md border-2 border-border bg-card p-4">
         {messages.length === 0 ? (
           <p className="py-10 text-center text-small text-muted-foreground">
-            The room is empty. Send the first line — pick up the role you&apos;re playing.
+            The room is empty. Send the first line: pick up the role you&apos;re playing.
           </p>
         ) : (
           messages.map((m) => {

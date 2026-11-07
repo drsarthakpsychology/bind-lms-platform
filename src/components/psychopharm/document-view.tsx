@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pencil, Trash2, BookMarked } from "lucide-react";
 import type { MedicationDocument, MedBlock, BlockType } from "@/lib/psychopharm/document";
 
-/** Human labels for block types — the editor speaks content, not database fields. */
+/** Human labels for block types: the editor speaks content, not database fields. */
 export const BLOCK_TYPE_LABEL: Record<BlockType, string> = {
   mechanism: "Mechanism",
   common_uses: "What it's used for",
@@ -28,7 +28,7 @@ export const BLOCK_TYPE_LABEL: Record<BlockType, string> = {
  * In READ mode (students): clean, minimal, exactly what a student sees.
  * In EDIT mode (KMS): the SAME page, but every text element is inline-editable
  * and every block shows controls (type, source, hide, remove). This is the
- * "edit a document, not a spreadsheet" model — the page IS the form.
+ * "edit a document, not a spreadsheet" model: the page IS the form.
  */
 export function DocumentView({
   document,
@@ -133,7 +133,7 @@ function shortLines(text: string): string[] {
     .filter(Boolean);
 }
 
-/** Clinician-register prose: never a wall of text — short lines, listed. */
+/** Clinician-register prose: never a wall of text, short lines, listed. */
 function ClinicProse({ text }: { text: string }) {
   const lines = shortLines(text);
   if (lines.length <= 1) return <p className="text-small">{text}</p>;
@@ -167,7 +167,7 @@ function BlockEditor({
       <SourceLine source={block.sources[0]} register={register} />
     ) : null;
 
-  // plain_language — the student-facing summary. Prominent in the student
+  // plain_language: the student-facing summary. Prominent in the student
   // register; a quiet footnote in the clinician register.
   if (block.type === "plain_language") {
     return (
@@ -196,7 +196,7 @@ function BlockEditor({
       <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
         <p className="text-small font-medium">
           {low != null || high != null
-            ? `${low != null && high != null ? `${low}–${high}` : `${low ?? ""}${high != null ? `–${high}` : ""}`} ${unit}${freq ? ` · ${freq}` : ""}`
+            ? `${low != null && high != null ? `${low} to ${high}` : `${low ?? ""}${high != null ? `up to ${high}` : ""}`} ${unit}${freq ? ` · ${freq}` : ""}`
             : "dose range"}
         </p>
         {label ? <p className="text-small">{label}</p> : null}
@@ -222,7 +222,7 @@ function BlockEditor({
     );
   }
 
-  // Structured list blocks (prompts, questions, pearls, red flags) — render
+  // Structured list blocks (prompts, questions, pearls, red flags): render
   // their items as a scannable list rather than one long paragraph.
   const items = block.data?.items as string[] | undefined;
   if (items?.length) {

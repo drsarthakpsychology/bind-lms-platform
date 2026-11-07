@@ -1,5 +1,5 @@
 /**
- * OSCE Station Mode (Part 6.12) — timed single-station assessment.
+ * OSCE Station Mode (Part 6.12): timed single-station assessment.
  * 7 minutes, one task. Scored on a station-specific checklist + global rating.
  * Students face this format in RCI-track exams; almost nobody practises it.
  */
@@ -49,7 +49,7 @@ export const SEED_OSCE_STATIONS: OsceStation[] = [
   {
     id: "osce-3",
     title: "Break the news you're referring them",
-    task: "Break the news to a 30-year-old man that you're referring him to a psychiatrist — he's worried it means he's 'mad'.",
+    task: "Break the news to a 30-year-old man that you're referring him to a psychiatrist. He's worried it means he's 'mad'.",
     duration_seconds: 420,
     checklist: [
       { item: "Used a warning shot ('I have something important to share')", weight: 1 },
@@ -111,12 +111,12 @@ export const SEED_OSCE_STATIONS: OsceStation[] = [
   },
   {
     id: "osce-7",
-    title: "First psychotic episode — the family",
+    title: "First psychotic episode: the family",
     task: "A 19-year-old was hospitalised with a first psychotic episode. His parents are terrified he's 'ruined for life'. Explain what a first episode means, honestly.",
     duration_seconds: 420,
     checklist: [
       { item: "Named the diagnosis clearly without jargon", weight: 1 },
-      { item: "Explained that first-episode outcomes vary — honest hope, not false promise", weight: 2 },
+      { item: "Explained that first-episode outcomes vary: honest hope, not false promise", weight: 2 },
       { item: "Addressed the stigma fear directly ('mad', 'ruined')", weight: 2 },
       { item: "Explained the treatment timeline (weeks-months, not days)", weight: 1 },
       { item: "Involved the family in the care plan", weight: 1 },
@@ -173,7 +173,7 @@ export const SEED_OSCE_STATIONS: OsceStation[] = [
   {
     id: "osce-11",
     title: "Side-effect complaint",
-    task: "A 29-year-old on an antipsychotic reports 'my hands won't stay still' — pacing, restless legs, unbearable urge to move. The treating doctor said 'it's just anxiety'. Take the complaint seriously.",
+    task: "A 29-year-old on an antipsychotic reports 'my hands won't stay still': pacing, restless legs, unbearable urge to move. The treating doctor said 'it's just anxiety'. Take the complaint seriously.",
     duration_seconds: 420,
     checklist: [
       { item: "Recognised akathisia as a possibility (drug-induced)", weight: 2 },

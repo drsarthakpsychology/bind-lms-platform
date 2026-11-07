@@ -1,5 +1,5 @@
 /**
- * No-disorder cases (A8 principle) — volume 8. The brief requires NINE
+ * No-disorder cases (A8 principle): volume 8. The brief requires NINE
  * cases with NO diagnosable disorder across the set. The existing batch
  * covers: normal grief (dep-grief-raj), normal adolescent withdrawal,
  * exam anxiety in range, culturally normative possession (psy-mahesh),
@@ -9,7 +9,7 @@
  * function, a worried parent with a developmentally typical child, and
  * someone sent by family with no complaint of their own.
  *
- * The debrief explicitly PRAISES correct restraint on these cases — no
+ * The debrief explicitly PRAISES correct restraint on these cases, no
  * red flags, no disclosure gates, no pathology to unlock. The student who
  * does not diagnose is right, and the scoring prompt says so.
  */
@@ -18,7 +18,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const sunita: CaseAuthoring = {
   id: "no-disorder-sunita",
-  title: "Sunita, 24 — the busy week that is 'too much'",
+  title: "Sunita, 24: the busy week that is 'too much'",
   difficulty: "cooperative",
   traps: ["over_diagnosis"],
   moduleId: "mod-anxiety",
@@ -29,11 +29,11 @@ const sunita: CaseAuthoring = {
   city: "Bengaluru",
   family: "lives with two flatmates; family in Mysuru",
   register: "Workplace English, brisk",
-  presentation: "A packed fortnight — a product launch, her sister's wedding across two cities, and a flatmate emergency. She says she's 'at my limit' but is functioning: sleeping 6 hours, working, exercising when she can. No anhedonia, no panic, no dread. She wants a 'check' because her mother told her stress becomes depression.",
-  chiefComplaint: "This week has been too much. Two weddings, a deadline, and my flatmate's crisis. I'm tired, but I'm fine — my mother says stress becomes depression, so I thought I should check.",
+  presentation: "A packed fortnight: a product launch, her sister's wedding across two cities, and a flatmate emergency. She says she's 'at my limit' but is functioning: sleeping 6 hours, working, exercising when she can. No anhedonia, no panic, no dread. She wants a 'check' because her mother told her stress becomes depression.",
+  chiefComplaint: "This week has been too much. Two weddings, a deadline, and my flatmate's crisis. I'm tired, but I'm fine: my mother says stress becomes depression, so I thought I should check.",
   timeline: "Two weeks of high load, clearly situational. Function intact throughout. Prior history: none.",
   treatmentHistory: "None.",
-  helpSeekingDelay: "Presented early — 'prevention' visit, driven by family anxiety, not symptoms.",
+  helpSeekingDelay: "Presented early: 'prevention' visit, driven by family anxiety, not symptoms.",
   priorContacts: ["mother's friend who is a counsellor"],
   coreBelief: "I can cope; I just want permission to be tired.",
   intermediateBeliefs: ["Maybe I'm not coping as well as I think", "Everyone else seems to manage better"],
@@ -53,7 +53,7 @@ const sunita: CaseAuthoring = {
 
 const rohit: CaseAuthoring = {
   id: "no-disorder-rohit-parent",
-  title: "Rohit & Arjun, 40/9 — the worried father, the typical boy",
+  title: "Rohit & Arjun, 40/9: the worried father, the typical boy",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "informant_conflict"],
   moduleId: "mod-adolescent",
@@ -64,7 +64,7 @@ const rohit: CaseAuthoring = {
   city: "Nagpur",
   family: "wife, 9-year-old son Arjun, grandfather in the same house",
   register: "Concerned-father Hindi-English",
-  presentation: "The father is convinced his son is 'hyperactive' — the teacher said so. The boy, in the room, is attentive, sits reasonably well, reads while the adults talk. School marks are good; he plays cricket; he has friends. The father's worry is the presenting problem, not the child.",
+  presentation: "The father is convinced his son is 'hyperactive': the teacher said so. The boy, in the room, is attentive, sits reasonably well, reads while the adults talk. School marks are good; he plays cricket; he has friends. The father's worry is the presenting problem, not the child.",
   chiefComplaint: "The teacher wrote that Arjun can't sit still and should be 'checked for ADHD'. My wife says he's just a boy. I want to know what's wrong with my son.",
   timeline: "One teacher's note triggered weeks of family conflict. The child is developmentally typical; the father's anxiety has become the family's organising problem.",
   treatmentHistory: "None.",
@@ -88,7 +88,7 @@ const rohit: CaseAuthoring = {
 
 const neelam: CaseAuthoring = {
   id: "no-disorder-neelam-sent",
-  title: "Neelam, 31 — brought by her sisters, nothing wrong",
+  title: "Neelam, 31: brought by her sisters, nothing wrong",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "informant_conflict"],
   moduleId: "mod-ethics",
@@ -99,7 +99,7 @@ const neelam: CaseAuthoring = {
   city: "Lucknow",
   family: "three sisters, parents; she lives with them",
   register: "Reserved Hindustani-English",
-  presentation: "Her sisters 'made' her come after a cousin's suicide attempt scared the family. Neelam herself has no complaint: sleep, appetite, work, mood all fine. She is quiet because she is annoyed at being sent, not depressed. The correct clinical response is to hear her out, confirm no pathology, and address the family's fear — not to manufacture a disorder.",
+  presentation: "Her sisters 'made' her come after a cousin's suicide attempt scared the family. Neelam herself has no complaint: sleep, appetite, work, mood all fine. She is quiet because she is annoyed at being sent, not depressed. The correct clinical response is to hear her out, confirm no pathology, and address the family's fear, not to manufacture a disorder.",
   chiefComplaint: "My sisters thought I should talk to someone. There's nothing to talk about. But here I am, so you can ask.",
   timeline: "One cousin's suicide attempt two weeks ago. The family is scanning everyone for 'signs'. Neelam is asymptomatic and mildly offended.",
   treatmentHistory: "None.",

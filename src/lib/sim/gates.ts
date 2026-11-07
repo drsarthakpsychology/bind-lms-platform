@@ -2,7 +2,7 @@
  * Gates-as-code (Part 2.4). The v1 engine encoded disclosure conditions as
  * English sentences in the system prompt ("don't reveal the debt until asked
  * openly about home"). Models don't reliably follow conditional logic written
- * in prose — they leak everything or nothing.
+ * in prose. They leak everything or nothing.
  *
  * This module evaluates gates DETERMINISTICALLY. The model is never asked
  * whether a gate is met; it is only told which facts it may use this turn.
@@ -26,7 +26,7 @@ export interface TurnContext {
   quality: { leading: boolean; double_barrelled: boolean; jargon: boolean };
 }
 
-/** Clear self-harm / suicide phrasing — the only way a self-harm fact may open. */
+/** Clear self-harm / suicide phrasing: the only way a self-harm fact may open. */
 const SELF_HARM_PATTERNS = [
   /self[- ]?harm/i,
   /(hurt|harm|kill)(ing)? (yourself|your self)/i,
@@ -42,7 +42,7 @@ const SELF_HARM_PATTERNS = [
  * data) into a deterministic `Gate`. The case files store gates as strings
  * like "asked_about_self_harm_clearly"; the engines need Gate objects.
  *
- * Unknown/empty tags default to a conservative trust bar — better to hold
+ * Unknown/empty tags default to a conservative trust bar: better to hold
  * disclosure a turn too long than to leak a fact the student didn't earn.
  */
 export function parseGate(gate: string | undefined): Gate {
@@ -65,7 +65,7 @@ function evaluateGate(gate: Gate, state: PatientState, ctx: TurnContext): boolea
       // Count how many times this move appears in the student's move history.
       // Student moves are tracked separately from patient moves (which occupy
       // `last_moves` for anti-repetition). `student_moves` may be absent on
-      // old persisted sessions — default to [].
+      // old persisted sessions: default to [].
       const hits = (state.student_moves ?? state.last_moves ?? []).filter((m) => m === gate.move).length;
       return hits >= gate.times;
     }

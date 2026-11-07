@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 /**
- * GET /api/cron/standing — Vercel Cron, Monday and Thursday 13:30 UTC
+ * GET /api/cron/standing: Vercel Cron, Monday and Thursday 13:30 UTC
  * (19:00 IST). On Mondays it closes last week's leagues first. Then it saves
  * points, sends each student one short standing update, snapshots ranks and
  * awards milestones. Idempotent. Needs `Authorization: Bearer $CRON_SECRET`.

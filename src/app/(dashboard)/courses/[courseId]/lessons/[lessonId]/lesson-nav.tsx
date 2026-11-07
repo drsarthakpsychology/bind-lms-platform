@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 /**
  * Persistent Previous / Next lesson controls, with left/right arrow-key
  * navigation (ignored while the video element has focus so the player's own
- * seek/volume keys keep working). Previous is disabled — never hidden — on the
+ * seek/volume keys keep working). Previous is disabled, never hidden, on the
  * first lesson. Next always goes somewhere: the next lesson, or "Finish course"
  * back to the course page on the last lesson.
  */

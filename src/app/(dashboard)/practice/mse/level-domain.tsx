@@ -9,7 +9,7 @@ import { SEED_MSE_STIMULI, type MseStimulus } from "@/lib/practice/mse";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
 
 /**
- * MSE Level 2 — Domain by domain. One of the 11 domains at a time, in the
+ * MSE Level 2: Domain by domain. One of the 11 domains at a time, in the
  * documented order, with the controlled vocabulary. The student tags the
  * stimulus against the expert coding (green/amber). They cannot skip ahead:
  * the domain only advances once tagged.
@@ -58,7 +58,7 @@ export function DomainLevel({
     haptic("success");
   }
 
-  /** Persist the just-scored stimulus attempt (a check, not a test — silent on failure). */
+  /** Persist the just-scored stimulus attempt (a check, not a test, silent on failure). */
   async function persistStimulus() {
     const completedAt = new Date();
     const payload = buildMseAttemptPayload(
@@ -116,7 +116,7 @@ export function DomainLevel({
               onClick={() => { haptic("success"); onComplete(); }}
               className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
-              Mark Level 2 complete — unlock the confusable pairs
+              Mark Level 2 complete: unlock the confusable pairs
             </button>
           ) : null}
         </div>

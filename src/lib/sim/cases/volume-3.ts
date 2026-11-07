@@ -1,5 +1,5 @@
 /**
- * More cases — volume batch 3. Covers the over-diagnosis / no-disorder trap
+ * More cases: volume batch 3. Covers the over-diagnosis / no-disorder trap
  * (A8 principle), polypharmacy, medical mimic, and fills modules.
  */
 
@@ -7,7 +7,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const griefRaj: CaseAuthoring = {
   id: "dep-grief-raj",
-  title: "Raj, 38 — the father who lost his son four weeks ago",
+  title: "Raj, 38: the father who lost his son four weeks ago",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "late_risk_reveal"],
   moduleId: "mod-depression",
@@ -18,7 +18,7 @@ const griefRaj: CaseAuthoring = {
   city: "Meerut",
   family: "married; lost his 6-year-old son to dengue four weeks ago",
   register: "Hinglish, hollow",
-  presentation: "Four weeks after his son's death. Not eating, not sleeping, says he's 'fine, it's normal to grieve'. The family fears he's 'going mad with grief'. The right answer is normal grief — for now.",
+  presentation: "Four weeks after his son's death. Not eating, not sleeping, says he's 'fine, it's normal to grieve'. The family fears he's 'going mad with grief'. The right answer is normal grief, for now.",
   chiefComplaint: "People keep telling me to move on. I don't want to move on. It's only been a month. Am I supposed to be fine?",
   timeline: "Four weeks of intense grief: anhedonia is expected, but watch for the turn where it crosses into complicated grief or depression.",
   treatmentHistory: "None.",
@@ -28,7 +28,7 @@ const griefRaj: CaseAuthoring = {
   intermediateBeliefs: ["People who move on didn't love their child", "My wife needs me strong but I can't be"],
   coping: ["go to the workshop mechanically", "avoid the son's room", "cry at night alone"],
   openingIdiom: "feeling low",
-  redFlags: [{ content: "has said he 'wishes he'd gone instead' — grief, not plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has said he 'wishes he'd gone instead': grief, not plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "numb", "tearful", "resigned"],
     recent_event: ["a boy with a similar uniform", "his son's school called", "his wife found him in the son's room", "a relative said 'at least you have your daughter'"],
@@ -42,7 +42,7 @@ const griefRaj: CaseAuthoring = {
 
 const polypharmaSita: CaseAuthoring = {
   id: "soma-polypharma-sita",
-  title: "Sita, 60 — the six medicines from three doctors",
+  title: "Sita, 60: the six medicines from three doctors",
   difficulty: "cooperative",
   traps: ["polypharmacy", "adherence_fiction", "iatrogenic"],
   moduleId: "mod-somatic",
@@ -77,7 +77,7 @@ const polypharmaSita: CaseAuthoring = {
 
 const medicalMimicPramod: CaseAuthoring = {
   id: "soma-b12-pramod",
-  title: "Pramod, 58 — the 'depression' that was B12",
+  title: "Pramod, 58: the 'depression' that was B12",
   difficulty: "cooperative",
   traps: ["medical_mimic", "under_diagnosis", "treatment_mismatch"],
   moduleId: "mod-somatic",
@@ -91,7 +91,7 @@ const medicalMimicPramod: CaseAuthoring = {
   presentation: "A GP diagnosed depression: low mood, memory trouble, fatigue, tingling in hands. On an antidepressant for months with no response. It's B12 deficiency from a strict lifelong vegetarian diet.",
   chiefComplaint: "The tablets aren't working. I'm still tired, my hands tingle, and I keep forgetting where I put the keys. My wife says I'm depressed. Am I?",
   timeline: "Low mood, cognitive slowing, paraesthesia. Strict vegetarian for 58 years. Antidepressant for 4 months, no response.",
-  treatmentHistory: "SSRI for 4 months, no response — the response failure is the clue.",
+  treatmentHistory: "SSRI for 4 months, no response: the response failure is the clue.",
   helpSeekingDelay: "4 months",
   priorContacts: ["GP", "chemist"],
   coreBelief: "My mind is going.",
@@ -112,7 +112,7 @@ const medicalMimicPramod: CaseAuthoring = {
 
 const eatingNisha: CaseAuthoring = {
   id: "ado-nisha",
-  title: "Nisha, 17 — the 'healthy eating' that became dangerous",
+  title: "Nisha, 17: the 'healthy eating' that became dangerous",
   difficulty: "resistant",
   traps: ["under_diagnosis", "medical_mimic", "somatic_mask"],
   moduleId: "mod-adolescent",
@@ -124,7 +124,7 @@ const eatingNisha: CaseAuthoring = {
   family: "lives with parents; high-achieving",
   register: "Brisk English, perfectionist",
   presentation: "Class topper. 'Clean eating' for a year has become severe restriction, weight loss, fainting in class. The parents celebrate the discipline. She's medically unstable.",
-  chiefComplaint: "I'm the healthiest I've ever been. My marks are great. Everyone praises my discipline. I just fainted, that's all — it's the heat.",
+  chiefComplaint: "I'm the healthiest I've ever been. My marks are great. Everyone praises my discipline. I just fainted, that's all. It's the heat.",
   timeline: "Restriction → rituals → weight loss → bradycardia, fainting, amenorrhoea. Parents proud of the 'health kick'.",
   treatmentHistory: "None. A GP said 'eat more' and she stopped going.",
   helpSeekingDelay: "Denies illness entirely",
@@ -147,7 +147,7 @@ const eatingNisha: CaseAuthoring = {
 
 const substancePsyJoginder: CaseAuthoring = {
   id: "sub-joginder",
-  title: "Joginder, 28 — the cannabis-induced 'schizophrenia' scare",
+  title: "Joginder, 28: the cannabis-induced 'schizophrenia' scare",
   difficulty: "guarded",
   traps: ["substance_induced", "misattributed_diagnosis", "provenance_contradiction"],
   moduleId: "mod-substance",
@@ -159,7 +159,7 @@ const substancePsyJoginder: CaseAuthoring = {
   family: "lives with parents; unmarried",
   register: "Fast Hinglish, defensive",
   presentation: "After switching to high-THC vapes, he developed paranoia, insomnia, and a family friend 'diagnosed' schizophrenia. A private clinic gave him olanzapine. He never saw a real psychiatrist.",
-  chiefComplaint: "They say I'm becoming schizophrenic like my uncle. The clinic gave me a tablet. But it's just the vapes — my friend said the vapes do this.",
+  chiefComplaint: "They say I'm becoming schizophrenic like my uncle. The clinic gave me a tablet. But it's just the vapes: my friend said the vapes do this.",
   timeline: "THC escalation → paranoia, ideas of reference → private clinic prescribed olanzapine → the paranoia improved when he stopped vaping, but he's terrified of the label.",
   treatmentHistory: "Olanzapine from a private clinic, self-stopped when he felt better.",
   helpSeekingDelay: "2 months after symptoms",
@@ -182,7 +182,7 @@ const substancePsyJoginder: CaseAuthoring = {
 
 const ethicsWhatsApp: CaseAuthoring = {
   id: "eth-whatsapp",
-  title: "Meghna, 26 — the WhatsApp boundary",
+  title: "Meghna, 26: the WhatsApp boundary",
   difficulty: "cooperative",
   traps: ["secondary_gain", "diagnostic_overshadowing"],
   moduleId: "mod-ethics",
@@ -193,7 +193,7 @@ const ethicsWhatsApp: CaseAuthoring = {
   city: "Noida",
   family: "lives alone; parents in Dehradun",
   register: "Casual English",
-  presentation: "A client who texts her 'just a quick question' every evening — anxiety spikes, panicked messages, then guilt. She has mild anxiety, but the pattern is the boundary problem.",
+  presentation: "A client who texts her 'just a quick question' every evening: anxiety spikes, panicked messages, then guilt. She has mild anxiety, but the pattern is the boundary problem.",
   chiefComplaint: "You're the only one who gets me. I just need one answer. It's one message. It'll take you two seconds.",
   timeline: "Session 1-2: enthusiastic. Now: 4-6 texts a day between sessions, escalating when unanswered. The dependency is the clinical issue.",
   treatmentHistory: "None.",

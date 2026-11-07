@@ -1,5 +1,5 @@
 /**
- * Cohort calendar generator — builds the session schedule from a start date
+ * Cohort calendar generator: builds the session schedule from a start date
  * and a weekly pattern, and exports it as an .ics file.
  *
  * A cohort runs N weeks; each week has sessions on given weekdays at a given
@@ -37,7 +37,7 @@ export function buildSchedule(input: CohortScheduleInput): Session[] {
       sessions.push({
         start: d,
         end,
-        summary: `${input.title} — Week ${w + 1}`,
+        summary: `${input.title}: Week ${w + 1}`,
       });
     }
   }

@@ -4,8 +4,8 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/out-of-depth — the safety competency (v5.1 A4).
- * Recognising when to refer, escalate, or stop — the most important skill
+ * /practice/out-of-depth: the safety competency (v5.1 A4).
+ * Recognising when to refer, escalate, or stop: the most important skill
  * for a counselling trainee. Scored both directions.
  */
 export default async function OutOfDepthPage() {
@@ -16,7 +16,7 @@ export default async function OutOfDepthPage() {
       <h1 className="mt-1 text-h1">Know when to refer</h1>
       <p className="mt-1 text-small text-muted-foreground">
         Failing to refer is dangerous. Referring everything is also a harm. This drill
-        teaches both directions — the consequence unfolds, then the reasoning.
+        teaches both directions: the consequence unfolds, then the reasoning.
       </p>
 
       <div className="mt-6">

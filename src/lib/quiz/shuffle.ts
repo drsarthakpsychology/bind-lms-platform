@@ -2,15 +2,15 @@
  * Deterministic, dependency-free PRNG + shuffle for quiz option order.
  *
  * Why this exists: quiz options were authored with the correct answer first,
- * and rendered in authored order — a positional tell that makes the quiz
+ * and rendered in authored order: a positional tell that makes the quiz
  * measure pattern-matching, not learning (worse on suicide-risk items). We
  * shuffle options with a seeded PRNG so the order is stable within a session
  * but different between students and attempts.
  *
- * - `mulberry32` — a 32-bit seeded PRNG (~6 lines, uniform, no package).
- * - `seededShuffle` — Fisher–Yates (uniform), NOT `sort(() => Math.random()-.5)`
- *   which biases toward the original order — the very bug we are fixing.
- * - `hashSeed` — FNV-1a string→int so a per-item seed is reproducible.
+ * - `mulberry32`: a 32-bit seeded PRNG (~6 lines, uniform, no package).
+ * - `seededShuffle`: Fisher-Yates (uniform), NOT `sort(() => Math.random()-.5)`
+ *   which biases toward the original order: the very bug we are fixing.
+ * - `hashSeed`: FNV-1a string→int so a per-item seed is reproducible.
  */
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
@@ -33,7 +33,7 @@ export function seededShuffle<T>(arr: readonly T[], seed: number): T[] {
   return a;
 }
 
-/** FNV-1a hash — deterministic string → unsigned 32-bit int. */
+/** FNV-1a hash: deterministic string → unsigned 32-bit int. */
 export function hashSeed(s: string): number {
   let h = 2166136261 >>> 0;
   for (let i = 0; i < s.length; i++) {

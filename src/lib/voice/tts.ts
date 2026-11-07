@@ -10,13 +10,13 @@
  * button press).
  *
  * Pick voices by patient demographic where the OS provides them (en-IN voices
- * where available). Vary rate and pitch by the case's affect_rules — a
+ * where available). Vary rate and pitch by the case's affect_rules: a
  * depressed patient speaks slower and flatter.
  */
 
 export interface TtsVoicePrefs {
-  rate: number; // 0.6–1.4 (affect-driven)
-  pitch: number; // 0.6–1.4
+  rate: number; // 0.6 to 1.4 (affect-driven)
+  pitch: number; // 0.6 to 1.4
   lang?: string; // "en-IN"
   gender?: "male" | "female" | "other";
 }
@@ -27,7 +27,7 @@ export interface TtsEngine {
   cancel(): void;
   speaking(): boolean;
   onBoundary?: (charIndex: number) => void;
-  /** Fires when an utterance finishes — the conversational loop uses this to
+  /** Fires when an utterance finishes: the conversational loop uses this to
    *  hand the mic back to the student (auto-listen after the patient speaks). */
   onEnd?: () => void;
 }
@@ -63,7 +63,7 @@ export function createTts(): TtsEngine | null {
     supported: () => true,
     speak(text, prefs) {
       if (typeof window === "undefined" || !window.speechSynthesis) return;
-      window.speechSynthesis.cancel(); // clear queue — we speak one at a time
+      window.speechSynthesis.cancel(); // clear queue. We speak one at a time
       const u = new SpeechSynthesisUtterance(text);
       const v = pickVoice(prefs);
       if (v) u.voice = v;

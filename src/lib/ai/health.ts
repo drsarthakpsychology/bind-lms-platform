@@ -1,11 +1,11 @@
 /**
- * Provider health — circuit-breaker for the AI router (§24).
+ * Provider health: circuit-breaker for the AI router (§24).
  *
  * Two sides:
- *   1. isProviderHealthy() — pure, in-memory circuit check consulted by
+ *   1. isProviderHealthy(): pure, in-memory circuit check consulted by
  *      providersFor. A provider with >= FAILURE_THRESHOLD consecutive failures
  *      is treated as unavailable (circuit open) so the router routes around it.
- *   2. recordProviderOutcome() — called from aiChat after each outcome. Updates
+ *   2. recordProviderOutcome(): called from aiChat after each outcome. Updates
  *      the in-memory circuit immediately, and persists to provider_health for
  *      /admin/infra via a lazy server import (fire-and-forget, never blocks).
  *
@@ -13,7 +13,7 @@
  * longer than RECOVERY_WINDOW_MS is probed (half-open) so recovery is automatic.
  *
  * This module is PURE (no top-level server dependency) so the router can import
- * it without dragging in Supabase — the DB write is a lazy dynamic import.
+ * it without dragging in Supabase: the DB write is a lazy dynamic import.
  */
 
 /** Consecutive failures before the circuit opens. */
@@ -37,7 +37,7 @@ export function isProviderHealthy(providerId: string): boolean {
   const s = circuit.get(providerId);
   if (!s) return true; // unknown → assume healthy (first-use)
   if (s.failures >= FAILURE_THRESHOLD) {
-    // Circuit open — allow a probe after the recovery window (half-open).
+    // Circuit open: allow a probe after the recovery window (half-open).
     return Date.now() - s.lastFailureAt > RECOVERY_WINDOW_MS;
   }
   // Latency trip: a provider that consistently returns 200-but-slow is
@@ -85,7 +85,7 @@ export async function warmProviderCircuit(): Promise<void> {
 
 /**
  * Write one row to ai_usage_log (the /admin/infra "AI usage (7 days)" panel).
- * Fire-and-forget, lazy server import, never throws — mirroring
+ * Fire-and-forget, lazy server import, never throws: mirroring
  * recordProviderOutcome. user_id is intentionally left null here: aiChat has
  * no session context, and per-workload aggregation (which lane used how many
  * tokens from which provider) is what the panel needs; per-student attribution
@@ -122,7 +122,7 @@ export async function recordProviderOutcome(
   latencyMs?: number,
 ): Promise<void> {
   if (ok) {
-    // A success resets failures but keeps the latency EMA — a consistently slow
+    // A success resets failures but keeps the latency EMA: a consistently slow
     // provider still trips the latency signal even though it never errors.
     const s = circuit.get(providerId) ?? { failures: 0, lastFailureAt: 0, latencyEma: 0, latencySamples: 0 };
     s.failures = 0;
@@ -139,7 +139,7 @@ export async function recordProviderOutcome(
     circuit.set(providerId, s);
   }
 
-  // Persist for /admin/infra — lazy server import, fire-and-forget, never throw.
+  // Persist for /admin/infra: lazy server import, fire-and-forget, never throw.
   try {
     const { createAdminClient } = await import("@/lib/supabase/server");
     const admin = createAdminClient();

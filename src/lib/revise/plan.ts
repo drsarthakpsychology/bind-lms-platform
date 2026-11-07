@@ -1,5 +1,5 @@
 /**
- * Revise — one short list of what to revisit today.
+ * Revise: one short list of what to revisit today.
  *
  * It does not invent new schedules. It reads the ones that already exist and
  * puts them in one place:

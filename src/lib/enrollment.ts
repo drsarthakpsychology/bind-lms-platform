@@ -10,7 +10,7 @@ import { canWatch, usesCohorts } from "@/lib/cohorts/rules";
  *
  * Every material / assignment / submission-file read re-checks, at request
  * time, that the caller is signed in and either an admin or an enrolled
- * student of the parent course. Nothing relies on hidden UI alone — these are
+ * student of the parent course. Nothing relies on hidden UI alone: these are
  * the server-side gates.
  *
  * The enrollment model: a student is "enrolled" in a course if a row exists in
@@ -57,7 +57,7 @@ export async function canAccessLesson(
     return { ok: Boolean(course?.is_published) && canWatch(access, lessonId, false), profile, courseId };
   }
 
-  // Lecture-only scope: every published lesson is the whole surface — no
+  // Lecture-only scope: every published lesson is the whole surface, no
   // enrollment gate (these accounts aren't on a course roster).
   if (profile.scope === "lectures_only") {
     return { ok: Boolean(course?.is_published), profile, courseId };
@@ -114,7 +114,7 @@ export async function canAccessCourse(
 }
 
 /**
- * Whether the current user is enrolled in a course (no authz implication —
+ * Whether the current user is enrolled in a course (no authz implication,
  * just "am I on the roster"). Used to render the admin enroll control and the
  * student's "you're enrolled" state.
  */

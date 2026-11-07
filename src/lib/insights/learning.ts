@@ -1,5 +1,5 @@
 /**
- * Learning insights — how the cohort is doing with self-study, for the
+ * Learning insights, how the cohort is doing with self-study, for the
  * educator. Pure functions (no I/O): the page and the CSV route load rows,
  * this module turns them into plain numbers. Every student's state goes
  * through `normalise`, so a malformed or old JSON row never breaks the page.
@@ -53,7 +53,7 @@ export type LabInsight = {
   checked: number;
   avgCheckPct: number | null;
   reflected: number;
-  /** Share of students who ran it and wrote a reflection, 0–100. */
+  /** Share of students who ran it and wrote a reflection, 0 to 100. */
   reflectPct: number | null;
   /** Cohort averages of the headline numbers, in display order. */
   headline: ResultStat[];

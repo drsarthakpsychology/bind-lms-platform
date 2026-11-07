@@ -46,7 +46,7 @@ export function DecodeFlow({ set, quiz }: { set: IdiomEntry[]; quiz: QuizItem[] 
         }
       />
 
-      {/* One drill at a time — the only content competing for attention. */}
+      {/* One drill at a time: the only content competing for attention. */}
       <div>
         {mode === "decode" ? <DecodeArena entries={set} /> : null}
         {mode === "funnel" ? <FunnelDrill entry={set[1] ?? set[0]} /> : null}

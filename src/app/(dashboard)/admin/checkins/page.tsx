@@ -29,8 +29,8 @@ function isConcerningWeek(r: AggregateRow): boolean {
 }
 
 /**
- * /admin/checkins — cohort check-in trends.
- * Reads the checkins_aggregate view ONLY — no user identifiers (enforced by
+ * /admin/checkins: cohort check-in trends.
+ * Reads the checkins_aggregate view ONLY, no user identifiers (enforced by
  * the privacy test). Faculty see trends, never who said what.
  */
 export default async function AdminCheckinsPage() {
@@ -53,7 +53,7 @@ export default async function AdminCheckinsPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Wellbeing check-ins"
-        description="What this is: once a week students can answer three quick questions — how heavy the workload felt, their energy, and how prepared they feel. You only ever see the cohort's averages, never who said what. Use it to spot a week that was too heavy and ease the next one."
+        description="What this is: once a week students can answer three quick questions, how heavy the workload felt, their energy, and how prepared they feel. You only ever see the cohort's averages, never who said what. Use it to spot a week that was too heavy and ease the next one."
       />
 
       {aggregate.length === 0 ? (
@@ -93,12 +93,12 @@ export default async function AdminCheckinsPage() {
             </div>
           ) : null}
 
-          {/* The trend — this page's whole point. */}
+          {/* The trend: this page's whole point. */}
           <div className="mt-6">
             <CohortTrendChart rows={aggregate} />
           </div>
 
-          {/* Concerning weeks — heavy workload + drained energy/preparedness. */}
+          {/* Concerning weeks: heavy workload + drained energy/preparedness. */}
           {concerning.length > 0 ? (
             <div className="mt-4 rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
               <p className="text-body-strong text-foreground">Watch these weeks</p>
@@ -108,7 +108,7 @@ export default async function AdminCheckinsPage() {
                     <span className="font-semibold text-link">{weekLabel(r.week_label)}</span>
                     <span className="text-muted-foreground">
                       workload {r.avg_workload.toFixed(1)} · energy {r.avg_energy.toFixed(1)} · preparedness {r.avg_preparedness.toFixed(1)}
-                      {isConcerningWeek(r) ? " — heavy load, low reserves" : ""}
+                      {isConcerningWeek(r) ? ": heavy load, low reserves" : ""}
                     </span>
                   </li>
                 ))}
@@ -116,7 +116,7 @@ export default async function AdminCheckinsPage() {
             </div>
           ) : null}
 
-          {/* Mobile weekly records — stacked below lg; the 560px table is lg+. */}
+          {/* Mobile weekly records: stacked below lg; the 560px table is lg+. */}
           <div className="mt-6 lg:hidden">
             <div className="space-y-2">
               {aggregate.map((r) => (
@@ -160,7 +160,7 @@ export default async function AdminCheckinsPage() {
           </div>
 
           <p className="mt-3 text-caption text-muted-foreground">
-            Trends only — no individual student data is shown here.
+            Trends only, no individual student data is shown here.
           </p>
         </>
       )}
@@ -192,7 +192,7 @@ function MiniStat({
             )}
             title={delta.text}
           >
-            {delta.direction === "up" ? "▲" : delta.direction === "down" ? "▼" : "—"}
+            {delta.direction === "up" ? "▲" : delta.direction === "down" ? "▼" : "-"}
           </span>
         ) : null}
       </p>

@@ -8,8 +8,8 @@ import { SimReviewList } from "./sim-review-list";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/sim-review — review simulated-patient sessions (v3 Part 6.1).
- * Each row: the transcript + AI score, labelled "AI-generated — reviewed by
+ * /admin/sim-review: review simulated-patient sessions (v3 Part 6.1).
+ * Each row: the transcript + AI score, labelled "AI-generated: reviewed by
  * faculty" / "pending faculty review". Faculty comment sits on top of the AI
  * score (never replaces it silently).
  */
@@ -52,7 +52,7 @@ export default async function SimReviewPage() {
     turnsBySession.set(t.session_id, list);
   }
 
-  // Existing faculty corrections — pre-fill comments + corrected scores so
+  // Existing faculty corrections: pre-fill comments + corrected scores so
   // re-edits accumulate instead of clobbering (feedback loop, Part 3.4).
   const { data: corrections } = await admin
     .from("scoring_corrections")

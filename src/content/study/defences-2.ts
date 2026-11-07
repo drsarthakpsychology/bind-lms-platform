@@ -73,6 +73,34 @@ Their most important idea was **goodness of fit**: outcomes depend on how well a
 
 **Jerome Kagan** described **behavioural inhibition**: toddlers who become quiet and wary with anything new. They are more likely to develop social anxiety later, though many do not.
 
+
+:::widget decide
+{
+ "scene": "Parents in Mysuru bring their 3-year-old, Tanu, who screams at every change: new food, bath time, leaving the park. Her elder brother was 'easy'. The father wants to 'break her stubbornness' with strict punishment.",
+ "ask": "What advice fits temperament research best?",
+ "choices": [
+  {
+   "label": "Agree with strict punishment to teach obedience",
+   "verdict": "harm",
+   "outcome": "Tantrums intensify; Tanu becomes fearful and the parents exhausted.",
+   "why": "A temperamentally intense, slow-to-adapt child needs a better fit, not harsher control."
+  },
+  {
+   "label": "Explain goodness of fit: predictable routines, warnings before transitions, calm limits, praise for coping, and patience with slow adaptation",
+   "verdict": "best",
+   "outcome": "Within months tantrums fall and the parents feel more confident.",
+   "why": "Matching the environment to the child's temperament improves outcomes."
+  },
+  {
+   "label": "Tell them she will grow out of it and do nothing",
+   "verdict": "ok",
+   "outcome": "Some improvement with age, but family stress stays high.",
+   "why": "Many children settle, but guidance reduces strain and conflict now."
+  }
+ ]
+}
+:::
+
 ### Mahler: becoming a separate person
 Margaret Mahler, observing mothers and infants, described **separation-individuation** in the first three years:
 1. **Differentiation ("hatching")**: the baby begins to notice the world beyond the mother; stranger anxiety.
@@ -161,6 +189,45 @@ The starting picture of attachment (Bowlby's secure base, Ainsworth's Strange Si
   }
  ],
  "caption": "Bronfenbrenner's ecological model. Place one stress and one support for a child you know on each ring."
+}
+:::
+
+
+:::widget flow
+{
+ "title": "From caregiving to attachment pattern",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "c",
+   "label": "Repeated experience of care"
+  },
+  {
+   "id": "s",
+   "label": "Sensitive and available",
+   "parent": "c",
+   "detail": "Leads to secure attachment: seeks comfort and is soothed."
+  },
+  {
+   "id": "r",
+   "label": "Rejecting or distant",
+   "parent": "c",
+   "detail": "Leads to avoidant attachment: hides distress, ignores the parent at reunion."
+  },
+  {
+   "id": "i",
+   "label": "Inconsistent",
+   "parent": "c",
+   "detail": "Leads to ambivalent attachment: clingy and angry, hard to soothe."
+  },
+  {
+   "id": "f",
+   "label": "Frightening or frightened",
+   "parent": "c",
+   "detail": "Leads to disorganised attachment: confused, frozen behaviour."
+  }
+ ],
+ "caption": "Patterns are adaptations to the care a child receives, not faults in the child."
 }
 :::
 
@@ -297,6 +364,36 @@ Rituals give time, company and permission to grieve. But rituals can also hide g
 }
 :::
 
+
+:::widget compare
+{
+ "title": "Normal grief and prolonged grief disorder",
+ "a": {
+  "label": "Normal grief",
+  "points": [
+   "Waves of yearning that ease over months",
+   "Self-esteem preserved",
+   "Can still enjoy some things",
+   "Returns to roles and routines",
+   "Continuing bonds feel comforting"
+  ],
+  "summary": "Painful but moving; no treatment needed, only support."
+ },
+ "b": {
+  "label": "Prolonged grief disorder",
+  "points": [
+   "Intense yearning or preoccupation nearly every day",
+   "Feels part of self has died",
+   "Avoids reminders or cannot accept the death",
+   "Life feels meaningless; marked loneliness",
+   "Impairment well beyond cultural norms and time limits"
+  ],
+  "summary": "Stuck; grief-focused therapy helps."
+ },
+ "caption": "Slide between the two and list the features you would ask about in an interview."
+}
+:::
+
 ### When grief becomes a disorder
 **Prolonged grief disorder** is a newer diagnosis: intense yearning or preoccupation with the dead person, with marked distress such as feeling part of oneself has died, disbelief, avoiding reminders, intense emotional pain, numbness, feeling life is meaningless, or intense loneliness, persisting **well beyond the expected period** for the person's culture, and impairing life.
 
@@ -391,6 +488,29 @@ Mainstream psychology has rediscovered defences under new names:
 }
 :::
 
+
+:::widget layers
+{
+ "title": "Coping above, defence below",
+ "shape": "iceberg",
+ "layers": [
+  {
+   "label": "Conscious coping",
+   "detail": "Problem-solving, seeking support, planning, deliberately setting a worry aside."
+  },
+  {
+   "label": "Near the surface",
+   "detail": "Suppression and anticipation: mature defences that look like coping."
+  },
+  {
+   "label": "Unconscious defences",
+   "detail": "Repression, projection, splitting, reaction formation: automatic and unseen by the person."
+  }
+ ],
+ "caption": "The deeper the process, the harder it is to measure by asking people directly."
+}
+:::
+
 ### Defence and coping
 **Coping** (Lazarus and Folkman) is conscious effort to manage stress: **problem-focused** (solving the problem) or **emotion-focused** (managing the feeling). Defences are unconscious. In practice they meet in the middle: suppression and anticipation are mature defences that look very much like deliberate coping.
 
@@ -443,6 +563,37 @@ Knowing a defence's name is easy. Knowing **what to do** with it is the skill. T
 4. **Timing and tone matter as much as content.** A correct comment made too early feels like an attack.
 5. **Track the response.** A good intervention deepens the conversation; a bad one brings more defence.
 
+
+:::widget flow
+{
+ "title": "From surface to depth in a session",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "n",
+   "label": "Notice the defence",
+   "detail": "\"You smile when you talk about him.\""
+  },
+  {
+   "id": "f",
+   "label": "Reach for the feeling",
+   "detail": "\"I wonder what the smile covers.\""
+  },
+  {
+   "id": "s",
+   "label": "Stay with the feeling",
+   "detail": "Allow tears or silence; do not rush."
+  },
+  {
+   "id": "r",
+   "label": "Later, the reason",
+   "detail": "Why this feeling is so hard to bear, perhaps linked to the past."
+  }
+ ],
+ "caption": "Going straight to the last box usually brings more defence, not less."
+}
+:::
+
 ### Defences in other therapies
 | Psychodynamic idea | Cognitive-behavioural equivalent | What the therapist does |
 |---|---|---|
@@ -463,6 +614,34 @@ Knowing a defence's name is easy. Knowing **what to do** with it is the skill. T
   "yourTurn": [
     { "q": "Mr Singh, 55, with recent heart failure, refuses cardiac rehabilitation, saying 'I'm as strong as a horse'. He drinks daily and lives alone. Should you challenge the denial directly? Outline your steps.", "a": "Notice the denial as protection against fear of death and dependence. Ego strength is reduced (alcohol, isolation, health risk). Start supportively: build the alliance, acknowledge his strength, address alcohol, and link rehab to what he values (staying independent) rather than confronting the denial head-on. Involve his cardiologist and family if he agrees." }
   ]
+}
+:::
+
+
+:::widget decide
+{
+ "scene": "Mr Reddy, 50, in Vijayawada, was discharged a week ago after a first manic episode. In counselling he insists he was 'never ill, just tired', and says he will stop medicines. He lives alone and has no close family.",
+ "ask": "Supportive or expressive approach first?",
+ "choices": [
+  {
+   "label": "Expressive: interpret his denial as fear of weakness, today",
+   "verdict": "harm",
+   "outcome": "He feels criticised, misses the next appointment and stops his medicines.",
+   "why": "Low ego strength, recent illness and isolation call for supportive work before defences are loosened."
+  },
+  {
+   "label": "Supportive: build the alliance around his own goals (work, sleep), give simple information, agree a relapse plan, and keep regular contact",
+   "verdict": "best",
+   "outcome": "He agrees to continue medicines 'for sleep' and to come monthly. Over months he begins to talk about the illness himself.",
+   "why": "Strengthening coping and trust first makes later exploration possible and safe."
+  },
+  {
+   "label": "Discharge him from counselling until he accepts the diagnosis",
+   "verdict": "harm",
+   "outcome": "He is left without support at a high-risk time.",
+   "why": "Insight often follows engagement, not the other way round."
+  }
+ ]
 }
 :::
 

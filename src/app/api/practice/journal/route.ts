@@ -12,7 +12,7 @@ const journalSchema = z.object({
 });
 
 /**
- * POST /api/practice/journal — save a journal entry. Owner-only RLS.
+ * POST /api/practice/journal: save a journal entry. Owner-only RLS.
  */
 export async function POST(req: Request) {
   const supabase = await createClient();

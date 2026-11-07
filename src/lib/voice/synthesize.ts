@@ -3,15 +3,15 @@ import "server-only";
 /**
  * Server-side TTS synthesis (v5 §6). Provider chain with failover:
  *
- *   1. CosyVoice 2 (Apache 2.0) — via NVIDIA NIM's OpenAI-compatible audio
+ *   1. CosyVoice 2 (Apache 2.0), via NVIDIA NIM's OpenAI-compatible audio
  *      endpoint when NVIDIA_API_KEY is set. Inline emotion tags come from
  *      affectToVoice().
- *   2. Kokoro-82M (Apache 2.0, CPU) — fallback tier (self-hosted API URL
+ *   2. Kokoro-82M (Apache 2.0, CPU): fallback tier (self-hosted API URL
  *      via KOKORO_API_URL when configured).
  *   3. Fixture mode (AI_ENABLED=false OR no provider): returns a
  *      deterministic synthesis descriptor; the CLIENT then renders the
  *      patient line with browser speechSynthesis using the affect-mapped
- *      rate/pitch (which is always-on regardless of keys) — so the app is
+ *      rate/pitch (which is always-on regardless of keys), so the app is
  *      fully demoable with zero keys.
  *
  * EVERY synthesis is cached in R2 keyed on sha256(text+voice+emotion+speed)
@@ -28,7 +28,7 @@ export interface SynthesisResult {
   objectKey: string | null;
   /** Absolute public URL when available. */
   url: string | null;
-  /** sha256(text+voice+emotion+speed) — the cache key. */
+  /** sha256(text+voice+emotion+speed): the cache key. */
   cacheKey: string;
   /** 'mimo' | 'elevenlabs' | 'cosyvoice2' | 'kokoro' | 'fixture' */
   provider: "mimo" | "elevenlabs" | "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
@@ -53,7 +53,7 @@ function r2PublicUrl(key: string, publicUrl?: string, bucket?: string): string |
 
 /**
  * Check R2 for the cached synthesis. Returns the public URL when present.
- * (Object existence via HEAD on the public URL — cheap and works with the
+ * (Object existence via HEAD on the public URL, cheap and works with the
  * public bucket URL when configured.)
  */
 async function r2Has(key: string): Promise<boolean> {
@@ -72,7 +72,7 @@ async function r2Has(key: string): Promise<boolean> {
  * Qwen3-TTS (primary tier, commercially permissive). OpenAI-compatible
  * /v1/audio/speech endpoint at QWEN_TTS_URL when configured (e.g. a
  * self-hosted vLLM / SiliconFlow instance). 10 languages, voice cloning,
- * natural-language voice direction — the brief's PRIMARY.
+ * natural-language voice direction: the brief's PRIMARY.
  */
 async function synthesizeQwen3(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
   const base = process.env.QWEN_TTS_URL;
@@ -105,7 +105,7 @@ async function synthesizeQwen3(req: SynthesisRequest): Promise<{ ok: true; objec
 
 /**
  * Chatterbox-Turbo (quality tier, MIT). Native [laugh] [cough] [chuckle]
- * tags + emotion exaggeration control — the affect states map onto these.
+ * tags + emotion exaggeration control: the affect states map onto these.
  * OpenAI-compatible /v1/audio/speech at CHATTERBOX_TTS_URL.
  */
 async function synthesizeChatterbox(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
@@ -151,7 +151,7 @@ async function synthesizeCosyVoice(req: SynthesisRequest): Promise<{ ok: true; o
 
   // The inline tag wraps the text per CosyVoice's emotion-tag syntax
   // (Apache-2.0 model; tags passed through when the NIM endpoint supports
-  // them, dropped otherwise — the affect mapping to rate/pitch still holds).
+  // them, dropped otherwise: the affect mapping to rate/pitch still holds).
   const tagged = req.emotionTag && req.emotionTag !== "neutral"
     ? `[[${req.emotionTag}]] ${req.text}`
     : req.text;
@@ -232,10 +232,10 @@ async function putR2(
 }
 
 /**
- * MiMo-V2.5-TTS (MIT, arena-top) — the research round's primary open-weights
+ * MiMo-V2.5-TTS (MIT, arena-top): the research round's primary open-weights
  * pick (docs/MODEL_RESEARCH.md). OpenAI-compatible /v1/audio/speech at
  * MIMO_TTS_URL (Xiaomi API free beta, or self-host). Free + commercially
- * usable (MIT) — the first tier tried.
+ * usable (MIT): the first tier tried.
  */
 async function synthesizeMiMo(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
   const base = process.env.MIMO_TTS_URL;
@@ -267,7 +267,7 @@ async function synthesizeMiMo(req: SynthesisRequest): Promise<{ ok: true; object
 }
 
 /**
- * ElevenLabs (LAST-RESORT optional tier) — paid. Only tried after every free
+ * ElevenLabs (LAST-RESORT optional tier): paid. Only tried after every free
  * tier (MiMo, Kokoro, Qwen3, Chatterbox, CosyVoice) has failed. Not
  * recommended; kept only if Kavya specifically wants premium voices.
  */
@@ -302,7 +302,7 @@ async function synthesizeElevenLabs(req: SynthesisRequest): Promise<{ ok: true; 
  * The single synthesis entry point. Cache-first, then the provider chain in
  * quality order: ElevenLabs (premium) → Qwen3-TTS (primary) →
  * Chatterbox-Turbo (quality) → CosyVoice2 (streaming) → Kokoro (CPU) →
- * honest fixture mode. Never throws — the client has browser TTS.
+ * honest fixture mode. Never throws: the client has browser TTS.
  */
 export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult> {
   const key = synthesisCacheKey(req);
@@ -310,7 +310,7 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
   if (process.env.AI_ENABLED === "true") {
     // Cache-first (the cache is content-keyed, provider-agnostic).
     if (await r2Has(key)) {
-      // The object already exists — hand the client its real public URL so
+      // The object already exists: hand the client its real public URL so
       // cached audio is actually playable (it used to return url:null, so a
       // second request for the same line could never be played).
       const { publicUrl, bucket } = r2Env();
@@ -338,6 +338,6 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
     if (eleven.ok) return { objectKey: eleven.objectKey, url: eleven.url, cacheKey: key, provider: "elevenlabs" };
   }
 
-  // Fixture mode — the client renders with browser speech + affect mapping.
+  // Fixture mode: the client renders with browser speech + affect mapping.
   return { objectKey: null, url: null, cacheKey: key, provider: "fixture" };
 }

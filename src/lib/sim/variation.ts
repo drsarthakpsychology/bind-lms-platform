@@ -1,5 +1,5 @@
 /**
- * Seeded variation (Part 2.5) — controlled, reproducible per-session variety.
+ * Seeded variation (Part 2.5): controlled, reproducible per-session variety.
  *
  * A case ships a VariationSchema; each session draws a seed deterministically
  * from (case_id + session seed). The SAME seed always yields the SAME variant,

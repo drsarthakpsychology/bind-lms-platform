@@ -12,11 +12,11 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/voice/stt — server-side Whisper transcription.
+ * POST /api/practice/voice/stt: server-side Whisper transcription.
  * Provider chain: GROQ_API_KEY (fast Whisper) → NVIDIA_API_KEY (NIM Whisper)
  * → honest 503 (browser Web Speech remains the free default).
  * The client ALWAYS shows the interim transcript and lets the student EDIT
- * before sending — that fixes Indian-accent accuracy for free.
+ * before sending: that fixes Indian-accent accuracy for free.
  */
 export async function POST(req: Request) {
   const access = await requireStudentApi([{ path: "/practice/consulting-room", flag: "consulting_room" }, { path: "/practice/osce", flag: "osce" }, { path: "/practice/tutor", flag: "knowledge_tutor" }]);
@@ -93,7 +93,7 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.json(
-    { error: "No STT provider configured — browser Web Speech is your free default." },
+    { error: "No STT provider configured: browser Web Speech is your free default." },
     { status: 503 },
   );
 }

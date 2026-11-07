@@ -14,7 +14,7 @@ import { FilterBar } from "@/components/admin/filter-bar";
 export const metadata: Metadata = { title: "Credentials" };
 export const dynamic = "force-dynamic";
 
-const date = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "—");
+const date = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "Not set");
 
 /**
  * Credentials (2026-11 redesign): type a roll number, name or email, open the

@@ -5,7 +5,7 @@ import { formatDoseAndFrequency } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
 
 /**
- * The currently selected band's detail — the first thing below the ladder.
+ * The currently selected band's detail: the first thing below the ladder.
  * Tapping a rung in the ladder changes the active band, which changes this
  * panel. Renders only what the data actually has; never pads.
  */
@@ -115,7 +115,7 @@ export function BandDetail({
             {band.observation_prompts.map((p, i) => (
               <li key={i}>
                 <span className="font-medium">{p.prompt}</span>
-                {p.rationale ? <span className="text-muted-foreground"> — {p.rationale}</span> : null}
+                {p.rationale ? <span className="text-muted-foreground">: {p.rationale}</span> : null}
               </li>
             ))}
           </ul>

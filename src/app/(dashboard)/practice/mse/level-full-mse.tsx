@@ -11,7 +11,7 @@ import type { MseDomainKey } from "@/lib/mse/ladder";
 const TEN_MINUTES = 10 * 60;
 
 /**
- * MSE Level 4 — Full MSE under time. Ten minutes to write the complete MSE
+ * MSE Level 4: Full MSE under time. Ten minutes to write the complete MSE
  * for a vignette, scored green/amber/red per domain against the expert code.
  * Amber = a defensible alternative; red = missed or wrong.
  *
@@ -74,7 +74,7 @@ export function FullMseLevel({
   const summary = scores ? summarizeMseScore(scores) : null;
   const filled = MSE_DOMAIN_ORDER.filter((d) => (fields[d] ?? []).length > 0).length;
 
-  /** Persist this Level 4 attempt (a check, not a test — silent on failure). */
+  /** Persist this Level 4 attempt (a check, not a test, silent on failure). */
   async function persist() {
     const completedAt = new Date();
     const payload = buildMseAttemptPayload(
@@ -118,7 +118,7 @@ export function FullMseLevel({
           </div>
 
           <p className="text-small text-muted-foreground">
-            Write the full MSE — one line per domain, comma-separated terms.
+            Write the full MSE: one line per domain, comma-separated terms.
             {filled >= 7 ? " Good, keep going." : " Domain " + (filled + 1) + " of 11…"}
           </p>
 
@@ -145,7 +145,7 @@ export function FullMseLevel({
               type="submit"
               className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
-              {secondsLeft === 0 ? "Time's up — submit" : "Submit MSE"}
+              {secondsLeft === 0 ? "Time's up: submit" : "Submit MSE"}
             </button>
           </form>
         </>
@@ -185,10 +185,10 @@ export function FullMseLevel({
           {/* The teaching summary */}
           <div className="rounded-md border border-border bg-secondary/40 p-3 text-small text-muted-foreground">
             <span className="font-semibold">The lesson: </span>
-            green is what the expert coded. amber is defensible — that&apos;s real
+            green is what the expert coded. amber is defensible: that&apos;s real
             clinical judgment, not a miss. red is where the patient actually
             presented something and you didn&apos;t describe it. The MSE is a
-            description of what you saw; if you didn&apos;t see it, say so — describing
+            description of what you saw; if you didn&apos;t see it, say so: describing
             the absence is still an observation.
           </div>
 

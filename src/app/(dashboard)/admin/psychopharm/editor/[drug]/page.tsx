@@ -16,7 +16,7 @@ const STATUS_LABELS: Record<string, string> = {
 
 /**
  * The two-pane medication editor (KMS). Left: live student preview. Right:
- * the editable section tree + source panel. One document, two feeds — the
+ * the editable section tree + source panel. One document, two feeds: the
  * preview is literally the student render.
  */
 export default async function DrugEditorPage({ params }: { params: Promise<{ drug: string }> }) {

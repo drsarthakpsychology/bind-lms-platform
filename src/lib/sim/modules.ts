@@ -1,7 +1,7 @@
 /**
  * Modules (v5 Part 7.4 + the "organise cases into sections" ask).
  *
- * A module is a named section — usually one condition — that groups its own
+ * A module is a named section, usually one condition, that groups its own
  * sim cases, SCT items, cards, idioms and quizzes. The DEPRESSION module
  * holds several patients, each with a DIFFERENT voice and register, so the
  * student learns the condition from multiple people who present it
@@ -52,7 +52,7 @@ export const MODULES: PracticeModule[] = [
     title: "Depression",
     order_index: 1,
     state: "draft",
-    focus: "Major depressive disorder — recognising it across very different people",
+    focus: "Major depressive disorder: recognising it across very different people",
     cases: [...DEPRESSION_CASES, ...VOLUME_1_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_2_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-depression"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-depression")],
   },
   {
@@ -68,7 +68,7 @@ export const MODULES: PracticeModule[] = [
     title: "Psychosis",
     order_index: 3,
     state: "draft",
-    focus: "Schizophrenia-spectrum — and the traps that hide it (misattributed diagnosis, provenance)",
+    focus: "Schizophrenia-spectrum, and the traps that hide it (misattributed diagnosis, provenance)",
     cases: [...PSYCHOSIS_CASES, ...VOLUME_1_CASES.filter(c => c.module_id === "mod-psychosis"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-psychosis"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-psychosis"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-psychosis"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-psychosis")],
   },
   {
@@ -76,7 +76,7 @@ export const MODULES: PracticeModule[] = [
     title: "Bipolar & Mood Cycling",
     order_index: 4,
     state: "draft",
-    focus: "Bipolar spectrum — hypomania missed, SSRI activation, iatrogenic traps",
+    focus: "Bipolar spectrum: hypomania missed, SSRI activation, iatrogenic traps",
     cases: [...BIPOLAR_CASES, ...VOLUME_1_CASES.filter(c => c.module_id === "mod-bipolar"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-bipolar")],
   },
   {
@@ -84,7 +84,7 @@ export const MODULES: PracticeModule[] = [
     title: "Substance Use",
     order_index: 5,
     state: "draft",
-    focus: "Alcohol, cannabis, opioids — substance-induced presentations vs primary",
+    focus: "Alcohol, cannabis, opioids: substance-induced presentations vs primary",
     cases: [...SUBSTANCE_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-substance"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-substance"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-substance"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-substance"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-substance")],
   },
   {
@@ -92,7 +92,7 @@ export const MODULES: PracticeModule[] = [
     title: "Somatic & Idioms of Distress",
     order_index: 6,
     state: "draft",
-    focus: "The presenting-complaint decoder — 'not feeling fresh' through Kirmayer's seven readings",
+    focus: "The presenting-complaint decoder: 'not feeling fresh' through Kirmayer's seven readings",
     cases: [...SOMATIC_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-somatic"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-somatic"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-somatic"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-somatic"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-somatic"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-somatic")],
   },
   {
@@ -116,7 +116,7 @@ export const MODULES: PracticeModule[] = [
     title: "Ethics, Law & Scope",
     order_index: 9,
     state: "draft",
-    focus: "MHA 2017, RCI scope, POCSO — the consequence-first dilemmas",
+    focus: "MHA 2017, RCI scope, POCSO: the consequence-first dilemmas",
     cases: [...ETHICS_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_8_CASES.filter(c => c.module_id === "mod-ethics")],
   },
 ];

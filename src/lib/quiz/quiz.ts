@@ -1,5 +1,5 @@
 /**
- * Quiz engine (v5 Part 4.1 / I) — quizzes as CHECKS, not tests.
+ * Quiz engine (v5 Part 4.1 / I): quizzes as CHECKS, not tests.
  *
  * Five item types, each with a one-line rationale citing its source. No item
  * ships without a source. Draft on free tiers, admin-approve, never auto-
@@ -12,7 +12,7 @@ export type QuizType =
   | "standard_vs_common"     // what's taught in India vs what evidence supports
   | "order_steps"            // risk assessment / intake sequence
   | "would_you_report"       // MHA 2017 / POCSO applied
-  // Phase 1 §3.1 — the five new types:
+  // Phase 1 §3.1: the five new types:
   | "decode_idiom"           // six readings of an Indian idiom; physical misses weighted
   | "whats_missing"          // a case summary with one critical domain unelicited
   | "predict_consequence"    // you did X; what happens two sessions later
@@ -34,7 +34,7 @@ export interface QuizItem {
   isStandardCare?: boolean;
 }
 
-/** Score a set of answers. No negative marking — checks, not tests. */
+/** Score a set of answers. No negative marking: checks, not tests. */
 export function scoreQuiz(items: QuizItem[], answers: Record<string, number>): { correct: number; total: number } {
   let correct = 0;
   for (const i of items) if (answers[i.id] === i.correct) correct++;

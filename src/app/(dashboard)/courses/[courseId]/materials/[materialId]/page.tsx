@@ -11,7 +11,7 @@ import { canWatch } from "@/lib/cohorts/rules";
 import { MaterialViewer } from "./viewer";
 
 /**
- * Dedicated material viewer — `/courses/:courseId/materials/:materialId`.
+ * Dedicated material viewer: `/courses/:courseId/materials/:materialId`.
  *
  * Full-height, minimal chrome. The content type (PDF/audio/image/slides/link)
  * picks the client viewer. Header carries the material title, a back link, and
@@ -33,7 +33,7 @@ export default async function MaterialViewerPage({
 
   const supabase = await createClient();
 
-  // Forensic watermark label — the viewer's own identity, so any screenshot of
+  // Forensic watermark label: the viewer's own identity, so any screenshot of
   // the material is traceable to the account that took it.
   const hdrs = await headers();
   const ip = hdrs.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
@@ -80,7 +80,7 @@ export default async function MaterialViewerPage({
 
   return (
     <div className="flex h-full min-h-[calc(100dvh-var(--top-h))] flex-col">
-      {/* Minimal header — the shell top bar is hidden on this drill-down, so
+      {/* Minimal header: the shell top bar is hidden on this drill-down, so
           the header owns the notch inset (T66). */}
       <header
         className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 sm:px-4"

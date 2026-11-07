@@ -4,12 +4,12 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileModeSwitcher — one task at a time, on the same surface.
+ * MobileModeSwitcher: one task at a time, on the same surface.
  *
  * The mobile principle (T20/T30): where a screen stacks several equal-weight
  * tasks (five drills, two forms), a segmented switcher reveals ONE at a time
  * instead of forcing every option onto the viewport. This is the
- * one-cognitive-task-at-a-time version of a page — all modes stay reachable,
+ * one-cognitive-task-at-a-time version of a page: all modes stay reachable,
  * but only the active mode is shown.
  *
  * `modes` declares the labelled tasks in order; the parent owns `active` +

@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 /**
  * Returns `true` once the component has hydrated on the client. Uses
  * `useSyncExternalStore` with a snapshot that is `false` during SSR and
- * `true` after mount — avoids a setState-in-effect render cascade.
+ * `true` after mount: avoids a setState-in-effect render cascade.
  */
 function useHydrated() {
   return React.useSyncExternalStore(

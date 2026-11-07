@@ -39,7 +39,7 @@ const TABS = [
 type Tab = (typeof TABS)[number]["id"];
 
 const when = (iso: string | null | undefined) =>
-  iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "—";
+  iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "Never";
 const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m` : `${min}m`);
 
 const DETAIL_LABELS: [string, string][] = [
@@ -69,7 +69,7 @@ const EVENT_ICON: Record<TimelineEvent["kind"], typeof Clock> = {
  * One student, one page (Student 360, DI §C-8): a PersonHeader (status,
  * cohorts, last seen, progress, flags, ONE suggested next step) with the
  * action rail, their doubts on Overview (reply in place), and tabs only for
- * deep detail — access & login, activity timeline, credentials, messages.
+ * deep detail: access & login, activity timeline, credentials, messages.
  * Replaces the separate "Access" and "Activity" person pages (their old
  * addresses redirect here).
  */
@@ -233,7 +233,7 @@ function Overview({ r, details, doubts, canWrite }: { r: Row; details: Record<st
             {DETAIL_LABELS.map(([k, l]) => (
               <div key={k} className="flex justify-between gap-3 border-b border-foreground/10 pb-2">
                 <dt className="text-muted-foreground">{l}</dt>
-                <dd className="min-w-0 break-words text-right font-semibold">{details[k] || "—"}</dd>
+                <dd className="min-w-0 break-words text-right font-semibold">{details[k] || "Not set"}</dd>
               </div>
             ))}
           </dl>
@@ -331,7 +331,7 @@ async function ActivityTab({ id }: { id: string }) {
         <Stat value={hm(d.totals.min30)} label="on VIBHA (30 days)" />
         <Stat value={d.totals.activeDays} label="active days (30)" />
         <Stat value={`${done}/${d.lectures.length}`} label="lectures finished" />
-        <Stat value={checkRows.length ? `${answered}/${checkRows.length}` : "—"} label={`"Still watching?" answered`} />
+        <Stat value={checkRows.length ? `${answered}/${checkRows.length}` : "-"} label={`"Still watching?" answered`} />
       </div>
 
       <section className="rounded-2xl border-2 border-foreground bg-card p-4">
@@ -386,7 +386,7 @@ async function ActivityTab({ id }: { id: string }) {
       {d.learn ? (
         <section className="rounded-2xl border-2 border-foreground bg-card p-4 text-sm">
           <h2 className="font-bold">Notes & Games</h2>
-          <p className="mt-1">Level {d.learn.level.level} · {d.learn.level.title} · {d.learn.xp} XP · streak {d.learn.streak} (best {d.learn.best}) · accuracy {d.learn.accuracy === null ? "—" : `${d.learn.accuracy}%`} over {d.learn.answered} answers · mastery {d.learn.mastery}%</p>
+          <p className="mt-1">Level {d.learn.level.level} · {d.learn.level.title} · {d.learn.xp} XP · streak {d.learn.streak} (best {d.learn.best}) · accuracy {d.learn.accuracy === null ? "not yet measured" : `${d.learn.accuracy}%`} over {d.learn.answered} answers · mastery {d.learn.mastery}%</p>
           {d.learn.confusions.length ? <p className="mt-1 text-muted-foreground">Mixes up: {d.learn.confusions.join(", ")}</p> : null}
         </section>
       ) : null}

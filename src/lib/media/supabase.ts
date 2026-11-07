@@ -4,7 +4,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import type { MediaProvider, SignedPlaybackResult, UploadResult } from "./provider";
 
 /**
- * Supabase Storage media provider — the current implementation, wrapped
+ * Supabase Storage media provider: the current implementation, wrapped
  * behind the same interface as R2 so the player never cares which one is live.
  */
 export class SupabaseMediaProvider implements MediaProvider {

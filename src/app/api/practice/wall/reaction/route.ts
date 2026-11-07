@@ -17,9 +17,9 @@ const reactSchema = z.object({
 });
 
 /**
- * POST /api/practice/wall/reaction — add a reaction (toggle: same reaction
+ * POST /api/practice/wall/reaction: add a reaction (toggle: same reaction
  * again removes it). Reactions, not upvotes: they signal without ranking.
- * DELETE /api/practice/wall/reaction — remove a reaction.
+ * DELETE /api/practice/wall/reaction: remove a reaction.
  */
 export async function POST(req: Request) {
   const supabase = await createClient();

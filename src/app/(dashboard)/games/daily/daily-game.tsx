@@ -42,6 +42,7 @@ import fx from "@/lib/games/ui/fx.module.css";
 import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
 import { dailyMove, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -119,6 +120,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
       }
       if (res.xp > 0) {
         if (!res.xpSaved) awardXp(res.xp, state);
+        else creditServerPlay(res.xp);
         setGain((g) => ({ xp: res.xp, key: (g?.key ?? 0) + 1 }));
       }
       if (mode === "daily") {

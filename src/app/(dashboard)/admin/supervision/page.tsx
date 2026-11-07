@@ -8,7 +8,7 @@ import { SupervisionReview } from "./supervision-review";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/supervision — review students' requested supervision sign-offs.
+ * /admin/supervision: review students' requested supervision sign-offs.
  * Admin signs or rejects entries that a student marked as "requested".
  */
 export default async function AdminSupervisionPage() {

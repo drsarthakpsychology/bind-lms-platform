@@ -45,7 +45,7 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
     setBusy(true);
     try {
       const res = await fetch(`/api/admin/idioms?id=${encodeURIComponent(id)}`, { method: "DELETE" });
-      if (!res.ok) return; // keep the row — a failed delete shouldn't pretend success
+      if (!res.ok) return; // keep the row: a failed delete shouldn't pretend success
       haptic("warning");
       setRows((r) => r.filter((row) => row.id !== id));
     } finally {

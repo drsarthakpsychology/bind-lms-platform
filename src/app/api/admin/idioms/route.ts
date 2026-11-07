@@ -13,9 +13,9 @@ const patchSchema = z.object({
 });
 
 /**
- * GET /api/admin/idioms — the idiom bank for review (unapproved first).
- * PATCH /api/admin/idioms — approve/reject/edit an idiom.
- * DELETE /api/admin/idioms?id=… — remove an idiom. All admin-only.
+ * GET /api/admin/idioms: the idiom bank for review (unapproved first).
+ * PATCH /api/admin/idioms: approve/reject/edit an idiom.
+ * DELETE /api/admin/idioms?id=…: remove an idiom. All admin-only.
  *
  * The decode drill reads approved idioms only, so approving here is what
  * surfaces a phrase to students.

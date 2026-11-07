@@ -27,10 +27,10 @@ export function PolicyLayout({
 }) {
   return (
     <main className="rail min-w-0 w-full flex-1 py-8 sm:py-12">
-      {/* Slim top bar — policy pages are hit directly from links/emails, so a
+      {/* Slim top bar: policy pages are hit directly from links/emails, so a
           visitor always has a way back to the site. */}
       <div className="mb-8 flex min-w-0 items-center justify-between border-b-2 border-border pb-4 print:hidden">
-        <Link href="/go/home" aria-label="VIBHA School of Psychology — home">
+        <Link href="/go/home" aria-label="VIBHA School of Psychology: home">
           <VibhaWordmark size={28} />
         </Link>
         <nav
@@ -53,7 +53,7 @@ export function PolicyLayout({
       </div>
 
       <div className="lg:grid lg:min-w-0 lg:grid-cols-[16rem_1fr] lg:gap-12">
-        {/* Desktop sidebar — sticky below the top chrome. */}
+        {/* Desktop sidebar: sticky below the top chrome. */}
         <aside className="hidden lg:block print:hidden" aria-label="Policy navigation">
           <div className="sticky top-28 max-h-[calc(100dvh-8rem)] space-y-6 overflow-y-auto pb-8">
             <PolicyNav policies={policies} currentSlug={current.meta.slug} />
@@ -61,7 +61,7 @@ export function PolicyLayout({
           </div>
         </aside>
 
-        {/* Tablet scroll-strip (768–1023px). */}
+        {/* Tablet scroll-strip (768 to 1023px). */}
         <PolicyStrip policies={policies} currentSlug={current.meta.slug} />
 
         <article
@@ -84,7 +84,7 @@ export function PolicyLayout({
             <Rule className="pt-1" />
           </header>
 
-          {/* Mobile jumper — pinned above the content (<768px). */}
+          {/* Mobile jumper: pinned above the content (<768px). */}
           <PolicyMobileNav
             policies={policies}
             currentSlug={current.meta.slug}

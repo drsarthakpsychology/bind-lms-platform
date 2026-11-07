@@ -59,7 +59,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     const score = scoreSctResponse(r, panel);
     setAnswered((a) => [...a, { response: r, score }]);
     setShowPanel(true);
-    // Persist this judgment call (a check, not a test — silent on failure).
+    // Persist this judgment call (a check, not a test, silent on failure).
     const payload = buildSctAttemptPayload(item.id, r, score, seconds);
     void fetch("/api/practice/sct/attempt", {
       method: "POST",
@@ -76,7 +76,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
 
   function next() {
     setShowPanel(false);
-    // Always advance — reaching idx === items.length triggers the "done" state.
+    // Always advance: reaching idx === items.length triggers the "done" state.
     setIdx((i) => i + 1);
   }
 
@@ -93,7 +93,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
           <>
             {answered.length} judgment calls in {mm}:{ss}. Panel-aligned score:{" "}
             <span className="font-semibold text-numeric">{(avg * 100).toFixed(0)}%</span>.
-            {" "}This is a trend over the cohort, not a grade — experts disagree, the
+            {" "}This is a trend over the cohort, not a grade: experts disagree, the
             distribution is the lesson.
           </>
         }
@@ -151,7 +151,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
       {/* panel reveal */}
       {showPanel ? (
         <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-          <h3 className="text-base font-semibold">The panel disagreed — that&apos;s the lesson</h3>
+          <h3 className="text-base font-semibold">The panel disagreed: that&apos;s the lesson</h3>
           <div className="mt-3 flex h-20 items-end gap-2">
             {dist.map((d) => (
               <div key={d.response} className="flex flex-1 flex-col items-center gap-1">

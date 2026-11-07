@@ -9,12 +9,12 @@ import { RecordTabs } from "./record-tabs";
 export const dynamic = "force-dynamic";
 
 /**
- * /record — the admin-you-file home (casebook Finding 4).
+ * /record: the admin-you-file home (casebook Finding 4).
  * Supervision contact hours + the weekly check-in live together here, out of
  * the /practice drill grid: both are records about your training, not things
  * you do. Tagged supervision hours feed the Skills Passport.
  *
- * Supervision and check-in are INDEPENDENTLY toggleable features — only
+ * Supervision and check-in are INDEPENDENTLY toggleable features, only
  * redirect when BOTH are off; otherwise show just the enabled tab(s).
  */
 export default async function RecordPage() {
@@ -30,7 +30,7 @@ export default async function RecordPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Monday of the current week — one check-in per week.
+  // Monday of the current week: one check-in per week.
   const now = new Date();
   const day = (now.getDay() + 6) % 7; // Mon=0
   const monday = new Date(now);
@@ -71,7 +71,7 @@ export default async function RecordPage() {
           <p className="text-eyebrow text-muted-foreground">Your record</p>
           <h1 className="mt-1 text-h1">The paper trail of your training</h1>
           <p className="mt-1 text-small text-muted-foreground">
-            Supervision hours and the weekly check-in — records about your training,
+            Supervision hours and the weekly check-in: records about your training,
             not drills. Your Skills Passport reads from the same evidence.
           </p>
         </header>

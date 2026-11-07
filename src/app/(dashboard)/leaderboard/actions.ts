@@ -23,7 +23,7 @@ export async function saveAlias(raw: string): Promise<{ error: string | null; al
   const p = await me();
   if (!p) return { error: "Sign in as a student first.", alias: null };
   const alias = raw.replace(/\s+/g, " ").trim();
-  if (alias && !ALIAS_RE.test(alias)) return { error: "Use 2–20 letters, numbers, spaces, dots, dashes or underscores.", alias: null };
+  if (alias && !ALIAS_RE.test(alias)) return { error: "Use 2 to 20 letters, numbers, spaces, dots, dashes or underscores.", alias: null };
   const { error } = await createAdminClient().from("profiles").update({ alias: alias || null }).eq("id", p.id);
   if (error) {
     if ((error as { code?: string }).code === "23505") return { error: "Someone already uses that name. Try another.", alias: null };

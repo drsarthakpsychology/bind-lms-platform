@@ -6,7 +6,7 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/library — Case Library, a browsable index of the normalised
+ * /practice/library: Case Library, a browsable index of the normalised
  * open-access PMC corpus (Part 4.4). Read-only, no AI. Search by title or
  * opening text; click to expand the abstract.
  */
@@ -27,11 +27,11 @@ export default async function LibraryPage(props: {
       <h1 className="mt-1 text-h1">Case library</h1>
       <p className="mt-1 text-small text-muted-foreground">
         {all.length} real case reports from the literature. Search by title or opening
-        words — read, then note the teaching point.
+        words: read, then note the teaching point.
      </p>
 
       <div className="mt-6">
-        {/* B5 filter row — disorder/trap/time, one tap per chip. One swipeable
+        {/* B5 filter row: disorder/trap/time, one tap per chip. One swipeable
             line (not multi-row wrapping) so the chips never cost vertical space
             on a narrow phone (T37). */}
         <div className="mb-4 -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

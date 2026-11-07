@@ -2,7 +2,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const samir: CaseAuthoring = {
   id: "sub-samir",
-  title: "Samir, 32 — the cannabis that stopped being fun",
+  title: "Samir, 32: the cannabis that stopped being fun",
   difficulty: "resistant",
   traps: ["substance_induced", "misattributed_diagnosis", "diagnostic_overshadowing"],
   moduleId: "mod-substance",

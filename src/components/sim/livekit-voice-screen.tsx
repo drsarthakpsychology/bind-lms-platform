@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 const PHASE_LABEL: Record<LkPhase, string> = {
   connecting: "Connecting…",
   listening: "Listening… speak naturally",
-  error: "Couldn't start the voice session — switch to text",
-  disconnected: "Connection dropped — reconnecting…",
+  error: "Couldn't start the voice session: switch to text",
+  disconnected: "Connection dropped: reconnecting…",
 };
 
 /**
@@ -95,7 +95,7 @@ export function LiveKitVoiceScreen({
           {transcript ? (
             <div className="space-y-1.5 whitespace-pre-wrap">{transcript}</div>
           ) : (
-            <p className="text-muted-foreground">The conversation will appear here — it stays in sync with text mode.</p>
+            <p className="text-muted-foreground">The conversation will appear here. It stays in sync with text mode.</p>
           )}
         </div>
 

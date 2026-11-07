@@ -2,7 +2,7 @@ import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
- * Minimal OpenAPI 3.0 document — the machine-readable description that the
+ * Minimal OpenAPI 3.0 document: the machine-readable description that the
  * RFC 9727 API catalog's `service-desc` relation points at. Honest scope:
  * the site's public, unauthenticated surface (the health check) plus the
  * main authenticated API groups, documented at the group level. Full
@@ -14,7 +14,7 @@ const baseUrl = liveAppUrl();
 const spec = {
   openapi: "3.0.3",
   info: {
-    title: "VIBHA School of Psychology — API",
+    title: "VIBHA School of Psychology: API",
     description:
       "Public and authenticated APIs for the VIBHA School of Psychology platform. " +
       "Most endpoints require a Supabase session (Bearer JWT). Only the health check is public.",

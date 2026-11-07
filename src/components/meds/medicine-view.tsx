@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowLeft, Check, ClipboardCheck, MessageCircle, Pill, Shuffle, Users } from "lucide-react";
+import { AlertTriangle, ArrowLeft, Check, ClipboardCheck, MessageCircle, Microscope, Pill, Shuffle, Users } from "lucide-react";
 import type { Med } from "@/lib/meds/types";
+import type { Mechanism } from "@/lib/meds/mechanisms";
+import { Journey, Receptor } from "@/components/study/animations";
 import { cn } from "@/lib/utils";
 
 type View = "student" | "clinician";
@@ -38,7 +40,7 @@ function saveView(v: View) {
  * One medicine: pick a dose chip to see what happens at that dose; switch
  * between plain student words and clinician detail at any time.
  */
-export function MedicineView({ med, related }: { med: Med; related: { id: string; name: string; cls: string }[] }) {
+export function MedicineView({ med, related, mech }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism }) {
   const view = React.useSyncExternalStore(subscribe, readView, () => "student" as View);
   const [i, setI] = React.useState(med.defaultDose);
   const dose = med.doses[i];
@@ -55,7 +57,7 @@ export function MedicineView({ med, related }: { med: Med; related: { id: string
           {med.group} · {med.cls}
         </p>
         <h1 className="mt-1 text-[2rem] font-black leading-[1.05] tracking-tight sm:text-5xl">{med.name}</h1>
-        {med.brands.length ? <p className="mt-1 text-sm font-semibold opacity-90">Brands: {med.brands.join(", ")}</p> : null}
+        {med.brands.length ? <p className="mt-1 text-sm font-semibold opacity-90">Indian brands: {med.brands.join(", ")}</p> : null}
         <p className="mt-1 text-sm opacity-90">{med.forms}</p>
       </header>
 
@@ -92,6 +94,39 @@ export function MedicineView({ med, related }: { med: Med; related: { id: string
           ))}
         </ul>
       </section>
+
+      {mech ? (
+        <section aria-labelledby="how" className="space-y-4 rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">
+          <h2 id="how" className="flex items-center gap-2 text-lg font-bold">
+            <Microscope className="size-5 text-link" aria-hidden /> How it works
+          </h2>
+          <p className="text-[1.0625rem] leading-relaxed">{mech.plain}</p>
+          <div className="-mx-1 overflow-x-auto">
+            <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-foreground">
+                  <th scope="col" className="py-2 pr-3 font-bold">Target</th>
+                  {view === "clinician" ? <th scope="col" className="py-2 pr-3 font-bold">Action</th> : null}
+                  <th scope="col" className="py-2 font-bold">What it means</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mech.targets.map((t) => (
+                  <tr key={t.target} className="border-b border-foreground/15 align-top">
+                    <td className="py-2 pr-3 font-semibold">{t.target}</td>
+                    {view === "clinician" ? <td className="py-2 pr-3">{t.action}</td> : null}
+                    <td className="py-2 text-muted-foreground">{t.effect}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-2">
+            <Receptor d={{ receptor: mech.receptor.name, title: `${med.name} at the ${mech.receptor.name} receptor`, caption: `Press ${mech.receptor.pick}. ${mech.receptor.note}` }} />
+            <Journey d={{ drug: med.name.toLowerCase(), target: mech.site, routes: mech.routes, notes: mech.notes }} />
+          </div>
+        </section>
+      ) : null}
 
       {/* Dose chips */}
       <section aria-labelledby="doses" className="rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">

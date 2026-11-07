@@ -11,17 +11,17 @@ import {
 import { cn } from "@/lib/utils";
 
 /**
- * MobileBottomSheet — the standard mobile bottom sheet, built on the shared
+ * MobileBottomSheet: the standard mobile bottom sheet, built on the shared
  * Radix `Sheet` (side="bottom") so focus management, Escape, and scroll-lock
  * are already handled.
  *
  * Adds the native-app trimmings the raw sheet lacks: a drag handle, an optional
  * title/description header, a scrollable body, an optional footer pinned above
- * the safe area, and rounded top corners. Controlled — the parent owns `open`.
+ * the safe area, and rounded top corners. Controlled: the parent owns `open`.
  * A visually-hidden title is always present so the dialog stays accessible.
  *
  * Drag-to-dismiss (T55): the handle strip is a real gesture on coarse pointers
- * (touch) — pulling it down translates the sheet and dismisses past ~120px or a
+ * (touch): pulling it down translates the sheet and dismisses past ~120px or a
  * fast flick. On fine pointers (mouse) and reduced-motion, the handle stays a
  * quiet visual affordance and dismissal is via Escape / backdrop / the close
  * affordance, so no required action depends on an undiscoverable gesture.
@@ -96,7 +96,7 @@ export function MobileBottomSheet({
           transition: dragDy > 0 ? "none" : undefined,
         }}
       >
-        {/* The drag handle strip — the touch target for drag-to-dismiss. */}
+        {/* The drag handle strip: the touch target for drag-to-dismiss. */}
         <div
           aria-hidden
           onPointerDown={onPointerDown}

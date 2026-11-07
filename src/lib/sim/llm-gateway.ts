@@ -7,8 +7,8 @@ import { readFileSync } from "node:fs";
  * The Next app uses `aiChat` (server-only, multi-provider failover). A
  * standalone worker / script can't import `server-only`, so this is the same
  * Groq call the app's `aiChat` would make, wired into the engine's injectable
- * Director/Actor stubs. Everything else — state, gates, disclosure, memory,
- * case truth — is the EXISTING engine (`runPatientTurn`).
+ * Director/Actor stubs. Everything else: state, gates, disclosure, memory,
+ * case truth: is the EXISTING engine (`runPatientTurn`).
  *
  * The prompt builders + schema are shared with the app, so the two paths
  * produce the same patient.
@@ -27,7 +27,7 @@ function env(name: string): string | undefined {
   return undefined;
 }
 
-/** Models sometimes fence JSON or emit `+1` — strip + sanitise before parsing. */
+/** Models sometimes fence JSON or emit `+1`: strip + sanitise before parsing. */
 export function extractJson(text: string): string {
   let s = text;
   const fenced = s.match(/```(?:json)?\s*([\s\S]*?)```/);

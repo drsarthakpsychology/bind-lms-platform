@@ -83,7 +83,7 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
                   Send privately to VIBHA
                 </button>
                 <button type="button" onClick={() => post("doubt")} disabled={busy} className="min-h-10 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold disabled:opacity-50 pointer-coarse:min-h-11">
-                  No, it&apos;s a study doubt — post it
+                  No, it&apos;s a study doubt: post it
                 </button>
               </div>
             </div>
@@ -122,7 +122,7 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
       </nav>
 
       {shown.length === 0 ? (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">No doubts here yet. Be the first to ask — someone in your batch will help.</p>
+        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">No doubts here yet. Be the first to ask: someone in your batch will help.</p>
       ) : (
         <ul className="space-y-2">
           {shown.map((d) => (
@@ -219,7 +219,7 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
 
       {thread.kind === "doubt" ? (
         <section aria-label="Your answer" className="space-y-2 rounded-2xl border-2 border-foreground bg-card p-4">
-          <h2 id="doubt-answer" className="text-sm font-bold">Help out — add your answer</h2>
+          <h2 id="doubt-answer" className="text-sm font-bold">Help out: add your answer</h2>
           <textarea aria-labelledby="doubt-answer" value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Explain it in your own words, or share how you remember it." className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" />
           {err ? <p className="text-sm font-semibold text-status-alert-fg">{err}</p> : null}
           <button type="button" onClick={send} disabled={busy || body.trim().length < 1} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground pointer-coarse:h-11 disabled:opacity-50">

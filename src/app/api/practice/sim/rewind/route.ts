@@ -13,7 +13,7 @@ const rewindSchema = z.object({
 });
 
 /**
- * POST /api/practice/sim/rewind — A1 Retry from turn N.
+ * POST /api/practice/sim/rewind: A1 Retry from turn N.
  *
  * Clones a completed session up to turn N-1 (same case, same seed/variant,
  * same PatientState snapshot at that point) into a NEW active session, and

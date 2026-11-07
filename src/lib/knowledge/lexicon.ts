@@ -4,7 +4,7 @@
  * chunk's text (case-insensitive, word-boundary) and tags the chunk.
  *
  * Sources of truth:
- *   - drugs:   DRUG_CATALOG (74 generic + brand aliases) — reused verbatim
+ *   - drugs:   DRUG_CATALOG (74 generic + brand aliases), reused verbatim
  *   - disorders: DSM-5-TR diagnostic chapter names + key disorder terms
  *   - terms:   a curated set of core clinical constructs that recur in the
  *              corpus (symptoms, mechanisms, therapies, assessment constructs)
@@ -89,7 +89,7 @@ const DSM_DISORDERS: ConceptEntry[] = [
   "Catatonia",
 ].map((name) => ({ name, type: "disorder" as ConceptType }));
 
-/** Core clinical constructs — symptoms, mechanisms, therapies, assessments. */
+/** Core clinical constructs: symptoms, mechanisms, therapies, assessments. */
 const TERMS: ConceptEntry[] = (
   [
     // Symptoms / signs

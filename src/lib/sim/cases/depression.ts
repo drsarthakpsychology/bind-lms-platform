@@ -1,21 +1,21 @@
 /**
- * Depression module cases — each patient is a DIFFERENT person with a
+ * Depression module cases: each patient is a DIFFERENT person with a
  * DIFFERENT voice, so the student learns depression across the people who
  * actually present it. The clinical facts are fixed; the surface varies.
  *
  * Voices in this module:
- *   - Ravi, 34, shopkeeper (Ahmedabad) — Hinglish, deflects to the shop
- *   - Meera, 22, college student (Pune) — educated English, deflects to exams
- *   - Sunita, 41, housewife (Delhi) — Hindi-dominant, deflects to family duty
- *   - Prakash, 67, retired teacher (Chennai) — soft English, grief + somatic
- *   - Farhan, 29, delivery rider (Mumbai) — street Hinglish, minimises
+ *   - Ravi, 34, shopkeeper (Ahmedabad): Hinglish, deflects to the shop
+ *   - Meera, 22, college student (Pune): educated English, deflects to exams
+ *   - Sunita, 41, housewife (Delhi): Hindi-dominant, deflects to family duty
+ *   - Prakash, 67, retired teacher (Chennai): soft English, grief + somatic
+ *   - Farhan, 29, delivery rider (Mumbai): street Hinglish, minimises
  */
 
 import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const ravi: CaseAuthoring = {
   id: "dep-ravi",
-  title: "Ravi, 34 — the heaviness in his chest",
+  title: "Ravi, 34: the heaviness in his chest",
   difficulty: "guarded",
   traps: ["somatic_mask", "late_risk_reveal", "adherence_fiction"],
   moduleId: "mod-depression",
@@ -29,7 +29,7 @@ const ravi: CaseAuthoring = {
   presentation: "Two months of low mood, poor sleep, chest heaviness. Shop losing money.",
   chiefComplaint: "There's this heaviness in my chest. I can't sleep. And the shop… the shop is not doing well.",
   timeline: "Low mood worsened over two months after the shop started losing money. Wakes at 4am with dread.",
-  treatmentHistory: "A clinic gave a tonic and told him to rest. He stopped taking it — didn't feel anything.",
+  treatmentHistory: "A clinic gave a tonic and told him to rest. He stopped taking it: didn't feel anything.",
   helpSeekingDelay: "2 months",
   priorContacts: ["GP tonic", "chemist for sleeping tablets"],
   coreBelief: "I am failing my family.",
@@ -50,7 +50,7 @@ const ravi: CaseAuthoring = {
 
 const meera: CaseAuthoring = {
   id: "dep-meera",
-  title: "Meera, 22 — 'I can't focus, it's the exams'",
+  title: "Meera, 22: 'I can't focus, it's the exams'",
   difficulty: "cooperative",
   traps: ["under_diagnosis", "diagnostic_overshadowing", "secondary_gain"],
   moduleId: "mod-depression",
@@ -85,7 +85,7 @@ const meera: CaseAuthoring = {
 
 const sunita: CaseAuthoring = {
   id: "dep-sunita",
-  title: "Sunita, 41 — 'my whole body hurts'",
+  title: "Sunita, 41: 'my whole body hurts'",
   difficulty: "resistant",
   traps: ["somatic_mask", "cultural_idiom", "informant_conflict"],
   moduleId: "mod-depression",
@@ -96,7 +96,7 @@ const sunita: CaseAuthoring = {
   city: "Delhi",
   family: "lives with husband, three children, and mother-in-law",
   register: "Hindi-dominant, family register",
-  presentation: "Brought by her sister (the informant disagrees — sister says 'she never leaves the room'; Sunita says 'I'm fine').",
+  presentation: "Brought by her sister (the informant disagrees, sister says 'she never leaves the room'; Sunita says 'I'm fine').",
   chiefComplaint: "My whole body hurts. It's the gas. Or maybe the heat. I don't know what's wrong with me.",
   timeline: "Six months of body pains, no interest in cooking, crying alone at night.",
   treatmentHistory: "Saw a baba first; then a GP who gave vitamin injections.",
@@ -120,7 +120,7 @@ const sunita: CaseAuthoring = {
 
 const prakash: CaseAuthoring = {
   id: "dep-prakash",
-  title: "Prakash, 67 — the widower who stopped eating",
+  title: "Prakash, 67: the widower who stopped eating",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "late_risk_reveal", "medical_mimic"],
   moduleId: "mod-depression",
@@ -155,7 +155,7 @@ const prakash: CaseAuthoring = {
 
 const farhan: CaseAuthoring = {
   id: "dep-farhan",
-  title: "Farhan, 29 — 'I'm fine yaar, it's nothing'",
+  title: "Farhan, 29: 'I'm fine yaar, it's nothing'",
   difficulty: "resistant",
   traps: ["under_diagnosis", "substance_induced", "diagnostic_overshadowing"],
   moduleId: "mod-depression",

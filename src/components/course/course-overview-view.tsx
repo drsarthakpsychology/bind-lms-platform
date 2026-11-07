@@ -139,11 +139,11 @@ export function ProgressCard({ model, compact = false }: { model: OverviewModel;
         <dl className="grid grid-cols-2 gap-3 text-sm">
           <div className="rounded-xl border-2 border-foreground/15 px-3 py-2">
             <dt className="text-eyebrow text-muted-foreground">This week</dt>
-            <dd className="mt-1 font-bold">{model.next ? `Week ${model.next.week}` : "—"}</dd>
+            <dd className="mt-1 font-bold">{model.next ? `Week ${model.next.week}` : "None"}</dd>
           </div>
           <div className="rounded-xl border-2 border-foreground/15 px-3 py-2">
             <dt className="text-eyebrow text-muted-foreground">Course</dt>
-            <dd className="mt-1 font-bold">{totalWeeks ? `${totalWeeks} weeks` : "—"}</dd>
+            <dd className="mt-1 font-bold">{totalWeeks ? `${totalWeeks} weeks` : "Not set"}</dd>
           </div>
         </dl>
       )}

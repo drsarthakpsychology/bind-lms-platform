@@ -7,7 +7,7 @@ import { WallReportsList } from "./wall-reports-list";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/wall-reports — the reported-content queue. Students report a post
+ * /admin/wall-reports: the reported-content queue. Students report a post
  * or reply (wall_reports, open status); faculty resolves each. The queue
  * shows the reported content + reason; resolving sets status → resolved.
  */
@@ -44,7 +44,7 @@ export default async function AdminWallReportsPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Reported wall content"
-        description="Students flagged these. Resolve each — or dismiss the report if the content stands."
+        description="Students flagged these. Resolve each, or dismiss the report if the content stands."
       />
       <div className="mt-6">
         <WallReportsList

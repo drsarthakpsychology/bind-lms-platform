@@ -1,5 +1,5 @@
 /**
- * Quiz bank (v5 §4.1 / brief §11.3 content volume) — 20 sourced items,
+ * Quiz bank (v5 §4.1 / brief §11.3 content volume): 20 sourced items,
  * order-the-steps + would-you-report focus, wired into MSE and OSCE
  * completion. Every item carries a one-line rationale citing its source.
  * No item ships without one.
@@ -21,7 +21,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Reassure early → move to another topic → document 'no risk'",
     ],
     correct: 0,
-    rationale: "Risk asked directly, then plan/means/intent, then protective factors, then a concrete safety plan — in that order.",
+    rationale: "Risk asked directly, then plan/means/intent, then protective factors, then a concrete safety plan, in that order.",
     source: "WHO mhGAP-IG 2.0 (2016), assessment & management of self-harm/suicide",
   },
   {
@@ -64,7 +64,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     rationale: "Imminent risk: you do not leave them alone; support and emergency involvement happen before documentation.",
-    source: "WHO mhGAP-IG 2.0 (2016) — imminent self-harm",
+    source: "WHO mhGAP-IG 2.0 (2016): imminent self-harm",
   },
   {
     id: "q-order-mse-1",
@@ -86,10 +86,10 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A 13-year-old tells you a tutor has been touching her. She begs you not to tell. Would you report?",
     options: [
-      "Yes — POCSO mandates reporting to police/Childline, no discretion",
+      "Yes: POCSO mandates reporting to police/Childline, no discretion",
       "Only with parental consent",
       "Only if she repeats it next session",
-      "No — confidentiality protects the disclosure",
+      "No: confidentiality protects the disclosure",
     ],
     correct: 0,
     rationale: "POCSO Section 19 makes reporting mandatory; failure is itself an offence.",
@@ -100,10 +100,10 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "An 8-year-old draws a picture of 'the bad thing' during play therapy. No words yet. Would you report?",
     options: [
-      "Yes — the drawing is a disclosure signal; mandated reporting applies",
+      "Yes: the drawing is a disclosure signal; mandated reporting applies",
       "Wait until they can describe it in words",
       "Only if a family member confirms",
-      "No — art is ambiguous",
+      "No: art is ambiguous",
     ],
     correct: 0,
     rationale: "Non-verbal disclosure is still disclosure; POCSO's duty is triggered by information, however conveyed.",
@@ -114,14 +114,14 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A 15-year-old says a classmate showed them pornographic images. Would you report?",
     options: [
-      "Assess whether the classmate is a minor and the context — child-on-child exposure may trigger POCSO duties",
+      "Assess whether the classmate is a minor and the context: child-on-child exposure may trigger POCSO duties",
       "Never report child-to-child matters",
       "Report the 15-year-old as an offender",
       "It's the parents' problem alone",
     ],
     correct: 0,
     rationale: "POCSO covers child-on-child offences; assessment of context precedes any action, but the duty is real.",
-    source: "POCSO 2012, Section 2(d) — 'child' includes any person under 18",
+    source: "POCSO 2012, Section 2(d): 'child' includes any person under 18",
   },
   {
     id: "q-report-mha-1",
@@ -129,7 +129,7 @@ export const QUIZ_BANK: QuizItem[] = [
     prompt: "A client with an advance directive refusing ECT is now in a severe relapse, unable to consent. The family demands ECT. What do you do?",
     options: [
       "Honour the directive; only the MHA's narrow Section 5(4) pathway can override it",
-      "Follow the family — they know best",
+      "Follow the family. They know best",
       "Do ECT because it worked before",
       "Ignore the directive as 'just paperwork'",
     ],
@@ -142,8 +142,8 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "You witness a patient at a facility being tied to the bed 'because he shouted'. Would you report?",
     options: [
-      "Yes — restraint beyond the MHA's narrow emergency conditions is a violation with a reporting duty",
-      "No — hospitals know their business",
+      "Yes: restraint beyond the MHA's narrow emergency conditions is a violation with a reporting duty",
+      "No: hospitals know their business",
       "Only if the patient asks you to",
       "Mention it casually to the nurse, then drop it",
     ],
@@ -156,8 +156,8 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A student client in therapy reveals they were turned away from a government clinic for being 'too complex'. Would you report?",
     options: [
-      "Yes — MHA 2017 gives a right to mental healthcare and complaint mechanisms for denial",
-      "No — it's not your business",
+      "Yes: MHA 2017 gives a right to mental healthcare and complaint mechanisms for denial",
+      "No. It's not your business",
       "Only if they pay you to",
       "Advise them to try a private clinic instead",
     ],
@@ -179,7 +179,7 @@ export const QUIZ_BANK: QuizItem[] = [
     correct: 0,
     isStandardCare: true,
     rationale: "Diagnosis follows assessment; a label without it is an error that shapes the patient's identity.",
-    source: "RCI code of ethics — practice within competence",
+    source: "RCI code of ethics: practice within competence",
   },
   {
     id: "q-soc-2",
@@ -217,13 +217,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A patient says 'I'm not feeling fresh.' What is the highest-yield next question?",
     options: [
-      "'Walk me through yesterday morning — from waking up to leaving the house.'",
+      "'Walk me through yesterday morning, from waking up to leaving the house.'",
       "'Are you feeling sad?'",
       "'Have you tried yoga?'",
       "'That usually means depression.'",
     ],
     correct: 0,
-    rationale: "Instantiate, don't guess — 'not feeling fresh' carries constipation, sleep, anaemia and mood; the description disambiguates.",
+    rationale: "Instantiate, don't guess: 'not feeling fresh' carries constipation, sleep, anaemia and mood; the description disambiguates.",
     source: "Nichter, Idioms of Distress (1981); DSM-5 CFI",
   },
   {
@@ -237,7 +237,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "'You'll be fine, trust me.'",
     ],
     correct: 0,
-    rationale: "Take the disclosure seriously, thank them, and probe the specifics — reassurance before exploration is the #1 novice error.",
+    rationale: "Take the disclosure seriously, thank them, and probe the specifics: reassurance before exploration is the #1 novice error.",
     source: "WHO mhGAP-IG 2.0 (2016)",
   },
   // ---- Spot-the-error ----
@@ -253,7 +253,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Listening without interrupting",
     ],
     correct: 1,
-    rationale: "Premature reassurance closes exploration — the fear deserves to be named and examined, not dismissed.",
+    rationale: "Premature reassurance closes exploration: the fear deserves to be named and examined, not dismissed.",
     source: "mhGAP-IG 2.0 (2016); motivational interviewing literature",
   },
   {
@@ -268,7 +268,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Pausing for the patient",
     ],
     correct: 2,
-    rationale: "A leading, guessing question closes the real story — the open 'what keeps you awake?' invites description.",
+    rationale: "A leading, guessing question closes the real story: the open 'what keeps you awake?' invites description.",
     source: "Clinical interviewing literature (open questions)",
   },
   {
@@ -283,7 +283,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Asking about the child's behaviour",
     ],
     correct: 1,
-    rationale: "One informant's report is not an assessment — ADHD needs multi-informant evaluation over time.",
+    rationale: "One informant's report is not an assessment: ADHD needs multi-informant evaluation over time.",
     source: "DSM-5 ADHD criteria (multiple settings)",
   },
   // ---- Order-the-steps: MSE completion + OSCE completion hooks ----
@@ -312,7 +312,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Assume capacity because he's coherent",
     ],
     correct: 0,
-    rationale: "Capacity = understanding, retention, weighing and communication — the four-part test.",
+    rationale: "Capacity = understanding, retention, weighing and communication: the four-part test.",
     source: "Mental Capacity framework (UK MCA 2005; parallel Indian doctrine)",
   },
   {
@@ -322,11 +322,11 @@ export const QUIZ_BANK: QuizItem[] = [
     options: [
       "'When the ghabrahat comes, what exactly happens in your body?'",
       "'Do you have anxiety?'",
-      "'It's probably stress — try to relax.'",
+      "'It's probably stress: try to relax.'",
       "'Is someone at home troubling you?'",
     ],
     correct: 0,
-    rationale: "Ghabrahat covers panic, thyroid and withdrawal — the physical description disambiguates before any label.",
+    rationale: "Ghabrahat covers panic, thyroid and withdrawal: the physical description disambiguates before any label.",
     source: "Nichter (1981); Kirmayer & Young (1998)",
   },
   {
@@ -341,7 +341,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Starting with the patient's words",
     ],
     correct: 1,
-    rationale: "'Not feeling fresh' can mean constipation, sleep, anaemia or mood — the label closed the funnel.",
+    rationale: "'Not feeling fresh' can mean constipation, sleep, anaemia or mood: the label closed the funnel.",
     source: "Nichter (1981); DSM-5 CFI",
   },
   {
@@ -356,7 +356,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "Dhat distress is treated by normal-physiology psychoeducation + the psychological work — not collusion, not dismissal.",
+    rationale: "Dhat distress is treated by normal-physiology psychoeducation + the psychological work, not collusion, not dismissal.",
     source: "Sumathipala et al. (2004); DSM-5 cultural concepts",
   },
   {
@@ -378,13 +378,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A patient's family insists the 'possession' is real and wants you to confirm it to the temple. Would you confirm?",
     options: [
-      "No — I can describe what I observed and explore the meaning, but 'possession' is not my confirmation to give",
-      "Yes — the family's belief is the culture",
+      "No. I can describe what I observed and explore the meaning, but 'possession' is not my confirmation to give",
+      "Yes: the family's belief is the culture",
       "Yes, if the patient agrees",
       "No, and refuse to discuss it at all",
     ],
     correct: 0,
-    rationale: "The clinician neither confirms nor denies the cultural attribution — the work is exploring its function without dismissing it.",
+    rationale: "The clinician neither confirms nor denies the cultural attribution: the work is exploring its function without dismissing it.",
     source: "Kirmayer & Young (1998); DSM-5 CFI",
   },
   {
@@ -392,13 +392,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A patient says 'my mind doesn't work' (dimag kaam nahi karta). Next?",
     options: [
-      "'What does a day look like — where does the mind fail you most?'",
+      "'What does a day look like, where does the mind fail you most?'",
       "'That's a sign of early dementia.'",
       "'Have you tried brain games?'",
       "'It's just stress, ignore it.'",
     ],
     correct: 0,
-    rationale: "'Mind doesn't work' is the cognitive idiom of depression — the functional description decides, not the label.",
+    rationale: "'Mind doesn't work' is the cognitive idiom of depression: the functional description decides, not the label.",
     source: "Indian cognitive-idiom literature; mhGAP",
   },
   {
@@ -413,7 +413,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Asking about the episodes",
     ],
     correct: 1,
-    rationale: "'BP high ho gaya' is the idiom for 'got very upset' — confirming the disease from the phrase is the trap.",
+    rationale: "'BP high ho gaya' is the idiom for 'got very upset': confirming the disease from the phrase is the trap.",
     source: "Borrowed-biomedical idioms literature",
   },
   {
@@ -428,7 +428,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "The MSE describes phenomena and the patient's account — the cultural label is formulation, not diagnosis.",
+    rationale: "The MSE describes phenomena and the patient's account: the cultural label is formulation, not diagnosis.",
     source: "MSE standard practice; Kirmayer & Young (1998)",
   },
   {
@@ -436,13 +436,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A client tells you their family consulted a baba who said the illness is 'graha dosh' (planetary affliction) and prescribed a ritual. Would you report the family?",
     options: [
-      "No — the baba is a cultural resource, not a reportable offence; the work is exploring the client's view without colluding",
-      "Yes — ritual advice is harmful",
-      "Yes — any non-medical care is abuse",
+      "No: the baba is a cultural resource, not a reportable offence; the work is exploring the client's view without colluding",
+      "Yes: ritual advice is harmful",
+      "Yes: any non-medical care is abuse",
       "Only if the ritual involved physical harm",
     ],
     correct: 0,
-    rationale: "Traditional healers are a common first contact in Indian help-seeking — the clinical task is respectful exploration, not reporting.",
+    rationale: "Traditional healers are a common first contact in Indian help-seeking: the clinical task is respectful exploration, not reporting.",
     source: "NMHS help-seeking data; mhGAP cultural considerations",
   },
   {
@@ -451,12 +451,12 @@ export const QUIZ_BANK: QuizItem[] = [
     prompt: "A patient says 'kisi ne kuch kar diya' (someone did something to me). Next?",
     options: [
       "'What do you think was done, and what has it felt like since?'",
-      "'That's not possible — let's be scientific.'",
+      "'That's not possible. Let's be scientific.'",
       "'Who did it? I'll report them.'",
       "'It's a superstition you should drop.'",
     ],
     correct: 0,
-    rationale: "The attribution is the client's frame — exploring its function and the distress it names is the work, not correcting it.",
+    rationale: "The attribution is the client's frame: exploring its function and the distress it names is the work, not correcting it.",
     source: "Attributional idioms; DSM-5 CFI",
   },
   {
@@ -477,7 +477,7 @@ export const QUIZ_BANK: QuizItem[] = [
     id: "q-decode-12",
     type: "spot_the_error",
     prompt: "Which line is the error?",
-    excerpt: "Patient: 'I have tension since my brother's business failed.'\nStudent: 'Tension is normal — everyone has it.'",
+    excerpt: "Patient: 'I have tension since my brother's business failed.'\nStudent: 'Tension is normal. Everyone has it.'",
     options: [
       "Hearing the word tension",
       "Reassuring before exploring what the tension is",
@@ -485,7 +485,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Asking about the brother",
     ],
     correct: 1,
-    rationale: "'Tension' is the most generic distress word — it needs specification (about what, since when, what it stops), not dismissal.",
+    rationale: "'Tension' is the most generic distress word. It needs specification (about what, since when, what it stops), not dismissal.",
     source: "Pan-Indian 'tension' literature",
   },
   {
@@ -500,7 +500,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "The white-discharge idiom is a common South Asian distress presentation — the work is understanding, not confirming or dismissing.",
+    rationale: "The white-discharge idiom is a common South Asian distress presentation: the work is understanding, not confirming or dismissing.",
     source: "South Asian bodily-idiom literature",
   },
   {
@@ -508,13 +508,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A patient says 'I'm stressed' but also mentions 3 hours of sleep and new grand plans. Next?",
     options: [
-      "'Three hours of sleep with grand plans — tell me about the energy since that started.'",
-      "'Stress is manageable — let's do breathing.'",
+      "'Three hours of sleep with grand plans: tell me about the energy since that started.'",
+      "'Stress is manageable. Let's do breathing.'",
       "'Are you sure it's not just excitement?'",
       "'Let's wait and see.'",
     ],
     correct: 0,
-    rationale: "The 'stressed' frame hides hypomania — the sleep and grandiosity need the direct question, not the stress label.",
+    rationale: "The 'stressed' frame hides hypomania: the sleep and grandiosity need the direct question, not the stress label.",
     source: "Bipolar-spectrum under-diagnosis literature",
   },
   {
@@ -522,20 +522,20 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A client's 'nazar lag gayi' belief follows their business failure. There's no psychosis, no distress beyond the attribution. Would you report?",
     options: [
-      "No — the attribution is cultural and non-pathological; the work is the loss, not the belief",
-      "Yes — any delusion-like belief must be reported",
-      "Yes — the family should be warned",
+      "No: the attribution is cultural and non-pathological; the work is the loss, not the belief",
+      "Yes: any delusion-like belief must be reported",
+      "Yes: the family should be warned",
       "Only if they act on it",
     ],
     correct: 0,
-    rationale: "An attributional belief without fixity, impairment or distress is a cultural frame, not a delusion — the loss is the clinical content.",
+    rationale: "An attributional belief without fixity, impairment or distress is a cultural frame, not a delusion: the loss is the clinical content.",
     source: "Attributional idioms; Kirmayer & Young (1998)",
   },
   {
     id: "q-mse-1",
     type: "spot_the_error",
     prompt: "Which line is the error in this MSE excerpt?",
-    excerpt: "Appearance: well-groomed. Behaviour: cooperative. Speech: normal rate. Mood: patient reports 'low every day'. Affect: flat. Thought form: linear. Thought content: no delusions. Perception: 'hears a voice when alone' — hallucination, schizophrenia confirmed.",
+    excerpt: "Appearance: well-groomed. Behaviour: cooperative. Speech: normal rate. Mood: patient reports 'low every day'. Affect: flat. Thought form: linear. Thought content: no delusions. Perception: 'hears a voice when alone', hallucination, schizophrenia confirmed.",
     options: [
       "Recording affect as flat",
       "Diagnosing schizophrenia from one MSE line",
@@ -558,7 +558,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Observing during the interview",
     ],
     correct: 1,
-    rationale: "Describe before you label — 'anxious' as an observation of behaviour vs a diagnosis are different registers.",
+    rationale: "Describe before you label: 'anxious' as an observation of behaviour vs a diagnosis are different registers.",
     source: "MSE discipline (describe-don't-diagnose)",
   },
   {
@@ -572,14 +572,14 @@ export const QUIZ_BANK: QuizItem[] = [
       "Skip affect if the mood is clear",
     ],
     correct: 0,
-    rationale: "Affect is observed (range, congruence, quality) — never inferred from mood or omitted because mood is reported.",
+    rationale: "Affect is observed (range, congruence, quality), never inferred from mood or omitted because mood is reported.",
     source: "MSE standard structure",
   },
   {
     id: "q-mse-4",
     type: "spot_the_error",
     prompt: "Which line is the error?",
-    excerpt: "Perception: 'patient reports hearing voices commenting on him — auditory hallucination. Refer for antipsychotics immediately.'",
+    excerpt: "Perception: 'patient reports hearing voices commenting on him, auditory hallucination. Refer for antipsychotics immediately.'",
     options: [
       "Recording the voice report",
       "Recommending antipsychotics from the MSE alone",
@@ -587,7 +587,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Quoting the patient",
     ],
     correct: 1,
-    rationale: "Even with clear perceptual findings, medication decisions need the full assessment — the MSE is description, not prescription.",
+    rationale: "Even with clear perceptual findings, medication decisions need the full assessment: the MSE is description, not prescription.",
     source: "RCI scope; MSE discipline",
   },
   {
@@ -601,7 +601,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Diagnose from one answer",
     ],
     correct: 0,
-    rationale: "Judgment is assessed by concrete future scenarios and the quality of actual decisions — never assumed from fluency.",
+    rationale: "Judgment is assessed by concrete future scenarios and the quality of actual decisions, never assumed from fluency.",
     source: "MSE standard structure",
   },
   {
@@ -616,7 +616,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Documenting insight as a domain",
     ],
     correct: 1,
-    rationale: "Insight is graded recognition of illness (full/partial/poor/absent), NOT agreement with treatment — conflating the two is a classic error.",
+    rationale: "Insight is graded recognition of illness (full/partial/poor/absent), NOT agreement with treatment: conflating the two is a classic error.",
     source: "Insight literature (graded, domain-specific)",
   },
   {
@@ -630,7 +630,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Diagnose before asking",
     ],
     correct: 0,
-    rationale: "The open question first, then modalities and frequency, then the patient's own explanation — never the label-led question.",
+    rationale: "The open question first, then modalities and frequency, then the patient's own explanation, never the label-led question.",
     source: "MSE standard structure",
   },
   {
@@ -659,7 +659,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Jump straight to meaning",
     ],
     correct: 0,
-    rationale: "Speech describes delivery first (rate/volume/tone/quantity/fluency) — content belongs to thought, not speech.",
+    rationale: "Speech describes delivery first (rate/volume/tone/quantity/fluency): content belongs to thought, not speech.",
     source: "MSE standard structure",
   },
   {
@@ -674,7 +674,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Testing person-place-time",
     ],
     correct: 1,
-    rationale: "Memory needs its own assessment (recent, remote, registration/recall) — orientation alone never establishes it.",
+    rationale: "Memory needs its own assessment (recent, remote, registration/recall): orientation alone never establishes it.",
     source: "MSE standard structure",
   },
   {
@@ -688,7 +688,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Quotes without interpretation",
     ],
     correct: 0,
-    rationale: "Form is named from observed connections, supported by quoted examples — the quote justifies the name.",
+    rationale: "Form is named from observed connections, supported by quoted examples: the quote justifies the name.",
     source: "MSE standard structure",
   },
   {
@@ -717,14 +717,14 @@ export const QUIZ_BANK: QuizItem[] = [
       "Write only abnormal findings",
     ],
     correct: 0,
-    rationale: "The MSE describes all domains in order; interpretations are flagged separately as such — write-then-interpret, never the reverse.",
+    rationale: "The MSE describes all domains in order; interpretations are flagged separately as such: write-then-interpret, never the reverse.",
     source: "MSE standard practice",
   },
   {
     id: "q-mse-14",
     type: "spot_the_error",
     prompt: "Which line is the error?",
-    excerpt: "Behaviour: 'patient is manipulative and attention-seeking — refused to answer questions.'",
+    excerpt: "Behaviour: 'patient is manipulative and attention-seeking, refused to answer questions.'",
     options: [
       "Recording the refusal",
       "Labelling behaviour as manipulative (a judgement, not an observation)",
@@ -732,7 +732,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Documenting behaviour",
     ],
     correct: 1,
-    rationale: "'Manipulative' is a judgment, not an observation — the behaviour ('refused to answer') is what belongs in the MSE.",
+    rationale: "'Manipulative' is a judgment, not an observation: the behaviour ('refused to answer') is what belongs in the MSE.",
     source: "MSE discipline; anti-bias guidance",
   },
   {
@@ -746,7 +746,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Skip when the patient denies illness",
     ],
     correct: 0,
-    rationale: "Insight is graded and domain-specific — a patient can accept mood illness while denying psychosis; both get documented.",
+    rationale: "Insight is graded and domain-specific: a patient can accept mood illness while denying psychosis; both get documented.",
     source: "Insight literature (graded, domain-specific)",
   },
   {
@@ -754,10 +754,10 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A patient in a private clinic is charged double the standard rate for 'mental health care' and is told it's 'specialised'. Would you report?",
     options: [
-      "Yes — exploitative charging against vulnerable patients is a breach the MHA's complaint mechanisms address",
-      "No — private clinics can charge what they like",
+      "Yes: exploitative charging against vulnerable patients is a breach the MHA's complaint mechanisms address",
+      "No: private clinics can charge what they like",
       "Only if the patient asks you to",
-      "No — it's between the clinic and the patient",
+      "No. It's between the clinic and the patient",
     ],
     correct: 0,
     rationale: "The MHA 2017 framework and professional codes prohibit exploiting mental illness for profit; complaint pathways exist.",
@@ -766,10 +766,10 @@ export const QUIZ_BANK: QuizItem[] = [
   {
     id: "q-mha-amend-2",
     type: "would_you_report",
-    prompt: "A facility continues secluding a patient overnight 'because she's noisy' — no doctor's order, no review. Would you report?",
+    prompt: "A facility continues secluding a patient overnight 'because she's noisy', no doctor's order, no review. Would you report?",
     options: [
-      "Yes — seclusion beyond the narrow conditions with no order or review is a violation with a reporting duty",
-      "No — night staff know best",
+      "Yes: seclusion beyond the narrow conditions with no order or review is a violation with a reporting duty",
+      "No: night staff know best",
       "Only if the patient is harmed",
       "Mention it to the nurse, then drop it",
     ],
@@ -782,13 +782,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A client's family asks you to certify them 'fit for marriage' without them knowing, to settle a family dispute. Would you comply?",
     options: [
-      "No — certification without the person's knowledge is both a consent violation and a fraud risk",
-      "Yes — the family needs it",
+      "No: certification without the person's knowledge is both a consent violation and a fraud risk",
+      "Yes: the family needs it",
       "Only if the client is unmarried",
       "Yes, if the family is respected in the community",
     ],
     correct: 0,
-    rationale: "Any certification requires the person's informed participation — family-prompted secret certification is a consent and integrity breach.",
+    rationale: "Any certification requires the person's informed participation: family-prompted secret certification is a consent and integrity breach.",
     source: "MHA 2017 consent provisions; RCI ethics",
   },
   {
@@ -818,7 +818,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "The abuser is a relative — the mandated channel leads; family-first risks tipping off the abuser and pressuring the child.",
+    rationale: "The abuser is a relative: the mandated channel leads; family-first risks tipping off the abuser and pressuring the child.",
     source: "POCSO 2012, Section 19; child-protection best practice",
   },
   {
@@ -833,7 +833,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "The reporting duty belongs to the person in contact with the child — institutional preference cannot override POCSO.",
+    rationale: "The reporting duty belongs to the person in contact with the child: institutional preference cannot override POCSO.",
     source: "POCSO 2012, Section 19",
   },
   {
@@ -841,13 +841,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A 16-year-old in a consensual relationship with a 17-year-old classmate tells you 'everyone's doing it'. Would you report?",
     options: [
-      "Assess the context — peer-consensual minor relationships need careful assessment; POCSO's intent is protection from exploitation, not punishment of peers",
+      "Assess the context: peer-consensual minor relationships need careful assessment; POCSO's intent is protection from exploitation, not punishment of peers",
       "Report both as offenders immediately",
       "Never discuss it",
       "Tell the parents to handle it",
     ],
     correct: 0,
-    rationale: "POCSO covers child-on-child conduct, but the protective intent and context assessment come first — the response is safeguarding, not criminalisation of peers.",
+    rationale: "POCSO covers child-on-child conduct, but the protective intent and context assessment come first: the response is safeguarding, not criminalisation of peers.",
     source: "POCSO 2012; child-protection guidance",
   },
   {
@@ -855,7 +855,7 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "standard_vs_common",
     prompt: "A 12-year-old's disclosure is doubted by staff because 'children make things up'. Which is standard?",
     options: [
-      "Treat the disclosure seriously, record it, and follow the mandated pathway — disbelief is not a screening tool (standard)",
+      "Treat the disclosure seriously, record it, and follow the mandated pathway: disbelief is not a screening tool (standard)",
       "Ignore it until corroboration exists (common but wrong)",
       "Ask the child to prove it",
       "Blame the child for the delay",
@@ -870,8 +870,8 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A patient with a nominated representative is treated without any consultation with them, repeatedly, 'because they're inconvenient'. Would you report?",
     options: [
-      "Yes — the nominated representative's role is statutory under MHA 2017; ignoring it is a procedural breach",
-      "No — representatives are optional",
+      "Yes: the nominated representative's role is statutory under MHA 2017; ignoring it is a procedural breach",
+      "No: representatives are optional",
       "Only if the patient objects",
       "It's the hospital's internal matter",
     ],
@@ -884,13 +884,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A client's employer pressures you to share the client's therapy details 'for the annual review'. The client has not consented. Would you share?",
     options: [
-      "No — employer pressure without consent never unlocks clinical information",
-      "Yes — the employer pays",
+      "No: employer pressure without consent never unlocks clinical information",
+      "Yes: the employer pays",
       "Share a summary without details",
       "Share if the employer signs a form",
     ],
     correct: 0,
-    rationale: "Payment creates no disclosure right — the MHA's privacy provisions and the ethics codes are absolute on this.",
+    rationale: "Payment creates no disclosure right: the MHA's privacy provisions and the ethics codes are absolute on this.",
     source: "MHA 2017, Sections 22-24; RCI code",
   },
   {
@@ -905,7 +905,7 @@ export const QUIZ_BANK: QuizItem[] = [
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "Transition without a plan is a foreseeable harm — continuity of care is part of the standard.",
+    rationale: "Transition without a plan is a foreseeable harm: continuity of care is part of the standard.",
     source: "MHA 2017 continuity provisions; mhGAP",
   },
   {
@@ -928,8 +928,8 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A psychiatrist at a facility prescribes an antipsychotic for a patient with no documented assessment and tells you 'we always start with this'. Would you report?",
     options: [
-      "Yes — prescribing without documented assessment is a standard-of-care breach with a reporting duty",
-      "No — psychiatrists know best",
+      "Yes: prescribing without documented assessment is a standard-of-care breach with a reporting duty",
+      "No: psychiatrists know best",
       "Only if harm occurs",
       "It's outside your scope to question",
     ],
@@ -942,7 +942,7 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "standard_vs_common",
     prompt: "A patient with a mental illness is denied admission to a general hospital ward 'because we don't treat those patients'. Which is standard?",
     options: [
-      "Mental illness is a health condition like any other — denial of care is a breach of the right to treatment (standard)",
+      "Mental illness is a health condition like any other: denial of care is a breach of the right to treatment (standard)",
       "General hospitals can refuse mental-health patients (common but wrong)",
       "Only tertiary psychiatric hospitals must admit",
       "Admission is a privilege",
@@ -957,8 +957,8 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "would_you_report",
     prompt: "A colleague posts a patient's case details (with initials) on a WhatsApp group 'for learning'. Would you report?",
     options: [
-      "Yes — identifying clinical information in an unsecured channel is a confidentiality breach with a reporting duty",
-      "No — initials make it anonymous",
+      "Yes: identifying clinical information in an unsecured channel is a confidentiality breach with a reporting duty",
+      "No: initials make it anonymous",
       "Only if the patient finds out",
       "It's common practice, ignore it",
     ],
@@ -971,13 +971,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A student decoded 'ghabrahat' as panic and moved on. The patient's episodes are at rest, twice, with a racing heart and sweating. The cardiac workup is normal. What did the student miss?",
     options: [
-      "Nothing — panic is the answer",
+      "Nothing: panic is the answer",
       "The physical screen (thyroid, cardiac) before the panic label",
       "The patient's family history",
       "The onset date",
     ],
     correct: 1,
-    rationale: "Panic is a diagnosis of the pattern after the physical screen — 'ghabrahat' still deserves the thyroid/cardiac check.",
+    rationale: "Panic is a diagnosis of the pattern after the physical screen: 'ghabrahat' still deserves the thyroid/cardiac check.",
     source: "Kirmayer & Young (1998); panic-spectrum assessment",
   },
   {
@@ -991,7 +991,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Change the subject to mood",
     ],
     correct: 0,
-    rationale: "The attributional frame is clinical content — the physical workup and the meaning (family belief, help-seeking) run together.",
+    rationale: "The attributional frame is clinical content: the physical workup and the meaning (family belief, help-seeking) run together.",
     source: "DSM-5 CFI; attributional idioms literature",
   },
   {
@@ -1005,7 +1005,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Send them for a second opinion to be safe",
     ],
     correct: 0,
-    rationale: "Normal workups need honest results + symptom validation + the anxiety loop treated — 'it's all fine' is not a plan.",
+    rationale: "Normal workups need honest results + symptom validation + the anxiety loop treated: 'it's all fine' is not a plan.",
     source: "Health-anxiety literature; somatic-symptom guidance",
   },
   {
@@ -1013,13 +1013,13 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A patient with 'not feeling fresh' turns out to have constipation, and is relieved: 'so I'm not going mad'. What is the best next line?",
     options: [
-      "Validate the relief and explain the constipation-diet-motion link — then check whether anything under the fresh is still there",
+      "Validate the relief and explain the constipation-diet-motion link, then check whether anything under the fresh is still there",
       "'I told you it was nothing'",
       "Immediately pivot to mood screening",
-      "End the session — resolved",
+      "End the session: resolved",
     ],
     correct: 0,
-    rationale: "The relieved patient still needs the second glance — the idiom often carries both the physical and the psychological at once.",
+    rationale: "The relieved patient still needs the second glance: the idiom often carries both the physical and the psychological at once.",
     source: "Nichter (1981); DSM-5 CFI",
   },
   {
@@ -1034,7 +1034,7 @@ export const QUIZ_BANK: QuizItem[] = [
       "Informing the client",
     ],
     correct: 1,
-    rationale: "Over-referral is a real harm — stable grief belongs with the counsellor; the referral was the anxious move, not the clinical one.",
+    rationale: "Over-referral is a real harm: stable grief belongs with the counsellor; the referral was the anxious move, not the clinical one.",
     source: "Out-of-depth reasoning; over-referral literature",
   },
   {
@@ -1043,12 +1043,12 @@ export const QUIZ_BANK: QuizItem[] = [
     prompt: "A student is torn between 'continue' and 'refer' for a client with moderate anxiety who asks for medication. What decides?",
     options: [
       "The fear of missing something → refer",
-      "The referral WORKS when the treatment genuinely exceeds your scope — moderate anxiety with a medication question belongs with the prescriber only for the drug; the therapy continues with you",
+      "The referral WORKS when the treatment genuinely exceeds your scope: moderate anxiety with a medication question belongs with the prescriber only for the drug; the therapy continues with you",
       "Whatever the client prefers",
       "Whatever the family prefers",
     ],
     correct: 1,
-    rationale: "Referral is task-specific — the medication question goes to the prescriber, the therapy stays; abandoning both is the error.",
+    rationale: "Referral is task-specific: the medication question goes to the prescriber, the therapy stays; abandoning both is the error.",
     source: "RCI scope; out-of-depth framework",
   },
   {
@@ -1058,12 +1058,12 @@ export const QUIZ_BANK: QuizItem[] = [
     excerpt: "A counsellor refers every client with any suicidal thought to emergency psychiatry, without a risk assessment first, 'to be safe'.",
     options: [
       "Assessing suicidality in the session",
-      "The blanket emergency referral without severity assessment — it over-floods the ER and avoids the clinical work",
+      "The blanket emergency referral without severity assessment. It over-floods the ER and avoids the clinical work",
       "Asking about suicidal thoughts at all",
       "Documenting risk",
     ],
     correct: 1,
-    rationale: "The risk assessment is the counselling skill — referral follows the assessment, not the thought alone.",
+    rationale: "The risk assessment is the counselling skill: referral follows the assessment, not the thought alone.",
     source: "Risk-assessment frameworks; mhGAP",
   },
   {
@@ -1084,15 +1084,15 @@ export const QUIZ_BANK: QuizItem[] = [
     id: "q-decode-follow-5",
     type: "spot_the_error",
     prompt: "Which is the error?",
-    excerpt: "Patient: 'kamzori, doctor, since the night out.'\nStudent: 'That's your body's natural loss — don't worry about it.' (moves on)",
+    excerpt: "Patient: 'kamzori, doctor, since the night out.'\nStudent: 'That's your body's natural loss, don't worry about it.' (moves on)",
     options: [
       "Naming the physiology",
-      "Dismissing the worry after one line — the shame and the distress need the respectful space, not a one-liner",
+      "Dismissing the worry after one line: the shame and the distress need the respectful space, not a one-liner",
       "Addressing the physical concern",
       "Using plain language",
     ],
     correct: 1,
-    rationale: "Dhat distress needs psychoeducation AND the emotional work — a dismissive one-liner leaves the shame untouched.",
+    rationale: "Dhat distress needs psychoeducation AND the emotional work: a dismissive one-liner leaves the shame untouched.",
     source: "Sumathipala et al. (2004)",
   },
   {
@@ -1100,17 +1100,17 @@ export const QUIZ_BANK: QuizItem[] = [
     type: "best_response",
     prompt: "A client's case genuinely needs psychiatric medication review. What does the counsellor owe the client at the handover?",
     options: [
-      "Nothing beyond the referral — the psychiatrist takes over",
+      "Nothing beyond the referral: the psychiatrist takes over",
       "A warm handover: explain the referral honestly, share relevant history (with consent), and commit to continuing the non-medication work",
       "A full clinical notes transfer",
       "An apology for failing",
     ],
     correct: 1,
-    rationale: "The referral is a co-managed handover, not a handoff — the counsellor stays for the therapy while psychiatry handles the medication.",
+    rationale: "The referral is a co-managed handover, not a handoff: the counsellor stays for the therapy while psychiatry handles the medication.",
     source: "Integrated-care guidance; RCI scope",
   },
 ];
 
-// Phase 1 §3 — the new-type bank (decode_idiom, whats_missing,
+// Phase 1 §3: the new-type bank (decode_idiom, whats_missing,
 // predict_consequence, confidence_mcq, unpopular_right + restraint set).
 QUIZ_BANK.push(...PHASE1_QUIZ_ITEMS);

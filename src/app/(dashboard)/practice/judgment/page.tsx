@@ -5,7 +5,7 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/judgment — "5 Judgment Calls", 90 seconds, one screen.
+ * /practice/judgment: "5 Judgment Calls", 90 seconds, one screen.
  * The daily habit anchor. After each answer, show the panel's distribution
  * as a bar chart plus a line of expert reasoning.
  */
@@ -21,7 +21,7 @@ export default async function JudgmentPage() {
       <p className="text-eyebrow text-muted-foreground">Script concordance</p>
       <h1 className="mt-1 text-h1">5 Judgment Calls</h1>
       <p className="mt-1 text-small text-muted-foreground">
-        90 seconds, one screen. New information changes the probability — this becomes…
+        90 seconds, one screen. New information changes the probability: this becomes…
       </p>
 
       <div className="mt-6">

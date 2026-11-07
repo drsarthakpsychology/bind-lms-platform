@@ -10,7 +10,7 @@ const WATCHING_MS = 90 * 1000;
 const ONLINE_MS = 5 * 60 * 1000;
 
 /**
- * Who is on VIBHA right now, and who is watching a lecture right now — from
+ * Who is on VIBHA right now, and who is watching a lecture right now, from
  * the live signals the app already sends (visit heartbeat, lecture progress
  * ping). Nothing is guessed: "watching" means the player reported progress in
  * the last 90 seconds.

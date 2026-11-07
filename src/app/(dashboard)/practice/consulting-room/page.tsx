@@ -7,7 +7,7 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/consulting-room — pick a case and start a session.
+ * /practice/consulting-room: pick a case and start a session.
  * The flagship tool. Lists published sim cases (hand-built seed first).
  */
 export default async function ConsultingRoomPage() {
@@ -60,7 +60,7 @@ export default async function ConsultingRoomPage() {
   const dbCases = published ?? [];
   // The DB is the source of truth (the authored character bank + the 8
   // clinical cases are all published/approved rows). The static SEED_CASES
-  // merge is gone — it duplicated every title (once id="" from the seed,
+  // merge is gone. It duplicated every title (once id="" from the seed,
   // once from the row). The card hook is the patient's OWN words; the
   // summary is the non-diagnostic clinical line.
   // Gamification: stars from the best score (>=7/10 = 3, >=5 = 2, >=3 = 1),
@@ -85,7 +85,7 @@ export default async function ConsultingRoomPage() {
       difficulty,
       summary: data.presentation ?? "",
       hook: data.chief_complaint_in_own_words ?? "",
-      // `source` is the TOP-LEVEL sim_cases column, not a key inside case_data —
+      // `source` is the TOP-LEVEL sim_cases column, not a key inside case_data:
       // reading it from case_data always fell back to "corpus", so every card
       // footer wrongly said "Awaiting faculty review".
       source: (c.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),

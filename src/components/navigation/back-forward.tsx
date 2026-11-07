@@ -9,7 +9,7 @@ const btn =
   "inline-flex size-9 items-center justify-center rounded-md border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:opacity-40 disabled:hover:border-transparent disabled:hover:bg-transparent pointer-coarse:size-11";
 
 /**
- * The same Back / Forward buttons on every page, like a browser — so people
+ * The same Back / Forward buttons on every page, like a browser, so people
  * never feel lost. Back is hidden when there's nowhere to go back to.
  */
 export function BackForward({ className }: { className?: string }) {

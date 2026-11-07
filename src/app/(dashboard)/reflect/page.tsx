@@ -6,7 +6,7 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /reflect — Reflective Journal (Part 6.10).
+ * /reflect: Reflective Journal (Part 6.10).
  * OWNER-ONLY RLS. No admin read path. Per-entry sharing, revocable.
  * The weekly Check-in now lives at /record.
  */

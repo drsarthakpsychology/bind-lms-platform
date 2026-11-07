@@ -17,7 +17,7 @@ type PickerLesson = {
 };
 
 /**
- * Compact lesson picker for the lesson header — `Lesson 3 of 12 ▾`. Opens the
+ * Compact lesson picker for the lesson header: `Lesson 3 of 12 ▾`. Opens the
  * full curriculum as a bottom sheet (T27) instead of a cramped dropdown, so the
  * whole course is reachable while the current lesson stays the dominant
  * context. The current lesson is highlighted in the sheet.

@@ -27,7 +27,7 @@ export default async function NotAvailablePage({
         </span>
         <h1 className="mt-4 text-h1">This is coming soon</h1>
         <p className="mt-2 text-small text-muted-foreground">
-          Your programme is still preparing this — check back later.
+          Your programme is still preparing this: check back later.
         </p>
         <Link
           href="/practice"
@@ -47,11 +47,11 @@ export default async function NotAvailablePage({
         {feature ? (
           <>
             <span className="font-medium text-foreground">{feature.replace(/_/g, " ")}</span> is
-            built and waiting — your faculty reveals tools in stages so the cohort can go deep
+            built and waiting: your faculty reveals tools in stages so the cohort can go deep
             on one thing at a time.
           </>
         ) : (
-          "This tool is built and waiting — your faculty reveals tools in stages so the cohort can go deep on one thing at a time."
+          "This tool is built and waiting: your faculty reveals tools in stages so the cohort can go deep on one thing at a time."
         )}
       </p>
       <Link

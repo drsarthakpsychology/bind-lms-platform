@@ -48,7 +48,7 @@ export default async function AddStudentsPage({ searchParams }: { searchParams: 
       <PageHeader
         eyebrow="Students"
         title="Add students"
-        description="One person or a whole batch. They get a one-time link to set their own password — nobody's password is ever shown or sent."
+        description="One person or a whole batch. They get a one-time link to set their own password: nobody's password is ever shown or sent."
       />
       {!isSuperAdmin(me) ? (
         <p className="rounded-xl border-2 border-foreground/20 bg-card p-4 text-sm">Only the Super Admin can add students.</p>

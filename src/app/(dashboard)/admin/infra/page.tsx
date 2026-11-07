@@ -10,13 +10,13 @@ import { daysAgoIso } from "@/lib/analytics/timeline";
 export const dynamic = "force-dynamic";
 
 const when = (iso: string | null | undefined) =>
-  iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "—";
+  iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "Never";
 
 /**
- * /admin/infra — storage, AI usage and a detailed per-provider view
+ * /admin/infra: storage, AI usage and a detailed per-provider view
  * (2026-11 redesign): is a key set, does it train on data, calls and
  * failures in 7 days, average speed, last success / failure. No key values
- * are ever shown — only whether one is set.
+ * are ever shown, only whether one is set.
  */
 export default async function InfraPage() {
   if (!(await requireAdmin())) redirect("/dashboard");
@@ -75,7 +75,7 @@ export default async function InfraPage() {
                     </span>
                   </span>
                   <span className="text-sm"><span className="text-caption text-muted-foreground sm:hidden">Calls 7d: </span><b>{u?.calls ?? 0}</b> calls<span className="block text-caption text-muted-foreground">{u?.errors ?? 0} failed · {u?.fallback ?? 0} fallbacks</span></span>
-                  <span className="text-sm"><span className="text-caption text-muted-foreground">Avg speed</span><span className="block font-bold">{u?.n ? `${Math.round(u.ms / u.n)} ms` : h?.avg_latency_ms ? `${Math.round(Number(h.avg_latency_ms))} ms` : "—"}</span></span>
+                  <span className="text-sm"><span className="text-caption text-muted-foreground">Avg speed</span><span className="block font-bold">{u?.n ? `${Math.round(u.ms / u.n)} ms` : h?.avg_latency_ms ? `${Math.round(Number(h.avg_latency_ms))} ms` : "-"}</span></span>
                   <span className="text-sm"><span className="text-caption text-muted-foreground">Last success</span><span className="block">{when(h?.last_success_at as string | null)}</span></span>
                   <span className="text-sm"><span className="text-caption text-muted-foreground">Last failure</span><span className={cn("block", failing && "font-bold text-status-alert-fg")}>{when(h?.last_failure_at as string | null)}{failing ? ` · ${h?.consecutive_failures} in a row` : ""}</span></span>
                 </li>
