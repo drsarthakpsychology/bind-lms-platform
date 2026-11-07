@@ -730,14 +730,15 @@ Jenny Saffran, Richard Aslin and Elissa Newport (1996) played infants a continuo
 
 ### Is there a critical period?
 Eric Lenneberg (1967) proposed a **critical period** for language, ending around puberty.
-- **Genie**, found in Los Angeles in 1970 at the age of 13 after extreme isolation and abuse, learned many words but never mastered grammar. (One case, with severe deprivation of every kind, so causes cannot be separated.)
-- **Jacqueline Johnson and Elissa Newport** (1989) tested Chinese and Korean immigrants to the United States. Those who arrived before about age 7 reached native-like grammar; scores fell steadily with later arrival.
-- **Nicaraguan Sign Language**: deaf children brought together in schools in the 1980s created a new sign language, and younger children made its grammar more systematic than older ones did.
-Most researchers now speak of a **sensitive period**, strongest for phonology and grammar, rather than a sharp cut-off.
 
 :::widget guess
 {"prompt": "Immigrants who arrived in the United States as children were later tested on English grammar. Up to about what age of arrival did they still reach native-like grammar?", "min": 0, "max": 20, "step": 1, "unit": "years", "answer": [6, 8], "reveal": "About 7. After that, scores fell steadily the later they arrived, and adults who arrived after their mid-teens varied a lot. Grammar and accent seem to have a sensitive period; vocabulary can grow at any age.", "clinician": "Age of arrival predicted grammar scores far better than years of exposure. This is one reason sensitive-period language is preferred over a sharp critical period, and why delayed language input in deaf children who are not offered sign language early is a real developmental risk."}
 :::
+
+- **Genie**, found in Los Angeles in 1970 at the age of 13 after extreme isolation and abuse, learned many words but never mastered grammar. (One case, with severe deprivation of every kind, so causes cannot be separated.)
+- **Jacqueline Johnson and Elissa Newport** (1989) tested Chinese and Korean immigrants to the United States. Those who arrived before about age 7 reached native-like grammar; scores fell steadily with later arrival.
+- **Nicaraguan Sign Language**: deaf children brought together in schools in the 1980s created a new sign language, and younger children made its grammar more systematic than older ones did.
+Most researchers now speak of a **sensitive period**, strongest for phonology and grammar, rather than a sharp cut-off.
 
 :::widget brainmap
 {

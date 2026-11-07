@@ -22,6 +22,10 @@ Kurt Lewin gave the field its shortest formula: **behaviour is a function of the
 - **1970s**: a "crisis of confidence": critics said laboratory studies were artificial and culture-bound. The cognitive turn (social cognition) follows.
 - **2010s onwards**: the **replication crisis**. Many famous findings fail when other labs repeat them. The field adopts preregistration and large multi-lab studies. You will meet these notes throughout this module, and a full section in Part III.
 
+:::widget timeline
+{"prompt": "Put these landmarks of social psychology in order, oldest first.", "events": [{"label": "Triplett: cyclists ride faster against others", "when": "1898"}, {"label": "Floyd Allport pushes the field towards experiments", "when": "1924"}, {"label": "Sherif: group norms form in the dark room", "when": "1935"}, {"label": "Asch: conformity on an obvious line task", "when": "1951"}, {"label": "Festinger: cognitive dissonance theory", "when": "1957"}, {"label": "Milgram: obedience to authority", "when": "1963"}, {"label": "Darley and Latané: the bystander effect", "when": "1968"}, {"label": "The replication crisis and multi-lab studies", "when": "2010s"}], "why": "Most of the classic studies fall between the 1930s and the 1960s, many driven by one question: how did ordinary people take part in the Second World War's atrocities?"}
+:::
+
 ### Social psychology in India
 Indian social psychology grew from the 1950s, first copying Western topics, then asking whether those findings fit Indian life. **Durganand Sinha** argued for **indigenisation**: theories built from Indian realities, not just tested on Indian samples. **J. B. P. Sinha** developed the **nurturant-task leader** from Indian organisations (Part II). **Udai Pareek** worked on organisational roles and motivation, **Ajit Dalal** on health beliefs and attributions for illness, **Girishwar Misra** on the Indian self and indigenous psychology, and **R. C. Tripathi** on Hindu-Muslim relations and intergroup conflict.
 
@@ -330,6 +334,10 @@ A student who fails NEET and says "I'm not intelligent" (internal, stable, uncon
 - **Defensive attribution and belief in a just world**: Melvin Lerner showed people want to believe the world is fair, so they sometimes blame victims ("she must have done something to deserve it").
 - **Ultimate attribution error** (Thomas Pettigrew's term): the group version: good acts by our group are due to character and bad ones to circumstances; for an outgroup it is the reverse.
 
+:::widget compare
+{"title": "Actor or observer: the same lateness, two explanations", "a": {"label": "When I am late", "points": ["'The bus broke down'", "'The traffic at the signal was terrible'", "I know my situation in detail", "I can see the world, not myself"], "summary": "As actors we explain our own behaviour by the situation."}, "b": {"label": "When you are late", "points": ["'He is careless'", "'She does not respect our time'", "I do not see your morning", "You are what I am looking at"], "summary": "As observers we explain others' behaviour by their traits: the fundamental attribution error. The bias is weaker and less universal than once thought."}}
+:::
+
 :::widget decide
 {
   "scene": "Jones and Harris (1967) asked students to read an essay either for or against Fidel Castro. Some were told the writer **chose** the side; others were told the writer was **assigned** the side by a debate coach and had no choice.",
@@ -344,6 +352,10 @@ A student who fails NEET and says "I'm not intelligent" (internal, stable, uncon
 
 ### Culture and attribution: an Indian finding
 **Joan Miller (1984)** asked Hindu Indians and Americans of different ages to explain everyday good and bad behaviours of people they knew. American adults gave many more **dispositional** explanations ("he is selfish"); Indian adults gave many more **contextual** ones (roles, duties, the situation). Children in both cultures were similar, so the difference **grows with socialisation**. Morris and Peng (1994) found the same pattern comparing American and Chinese newspaper reports of murders. The FAE is real, but it is not equally strong everywhere.
+
+:::widget compare
+{"title": "Individualist and collectivist explanations", "a": {"label": "Individualist (American adults)", "points": ["The self as separate and stable", "Behaviour explained by traits: 'he is selfish'", "Strong fundamental attribution error", "Gap from Indians grew with age"], "summary": "In individualist cultures people learn to look inside the person for causes."}, "b": {"label": "Collectivist (Hindu Indian adults)", "points": ["The self as embedded in roles and relationships", "Behaviour explained by context: 'he had just lost his job'", "Weaker fundamental attribution error", "Children in both cultures were similar"], "summary": "In collectivist cultures people look at duties, relationships and circumstances. Because young children did not differ, the difference is learnt."}, "caption": "Miller's finding is one of the strongest pieces of evidence that the fundamental attribution error is partly cultural."}
+:::
 
 :::clinician
 The actor-observer asymmetry is weaker than textbooks claim: a 2006 meta-analysis of 173 studies found an average effect close to zero, appearing mainly for negative events and hypothetical scenarios. The self-serving bias, by contrast, is robust across cultures but smaller in East Asian samples, and it is reduced in depression (the "depressive realism" literature, whose own effects are smaller than first reported). Clinically, Weiner's model underpins attributional retraining and links to the reformulated learned-helplessness model (internal, stable, global attributions for bad events), which is covered in the Personality theories module. Attribution of controllability predicts stigma: Corrigan's work shows that people who see mental illness as controllable feel more anger and less willingness to help.
@@ -388,6 +400,10 @@ Daniel Katz (1960) described four **functions**:
 | **Knowledge** | Makes the world predictable | "All lawyers are clever" saves thought |
 | **Ego-defensive** | Protects self-esteem | Looking down on a group to feel superior |
 | **Value-expressive** | Shows who you are | Being vegetarian as an expression of ahimsa |
+
+:::widget sort
+{"prompt": "Which of Katz's four functions does each attitude mainly serve?", "buckets": ["Utilitarian", "Knowledge", "Ego-defensive", "Value-expressive"], "items": [{"text": "Supporting the company union because it got you a pay rise", "bucket": 0, "why": "The attitude brings a reward."}, {"text": "'Government offices are always slow', which tells you what to expect", "bucket": 1, "why": "It makes the world predictable."}, {"text": "A man who failed an exam sneers that 'toppers are just mugging machines'", "bucket": 2, "why": "It protects his self-esteem."}, {"text": "Wearing khadi to show your commitment to self-reliance", "bucket": 3, "why": "It expresses core values and identity."}, {"text": "Liking a phone brand that gives students a discount", "bucket": 0, "why": "Gaining a benefit."}, {"text": "Supporting animal welfare because you believe in ahimsa", "bucket": 3, "why": "Expressing a deeply held value."}]}
+:::
 
 ### Where attitudes come from
 - **Mere exposure**, shown by Robert Zajonc: repeated exposure to something neutral makes us like it more. Advertising jingles depend on this.
@@ -613,6 +629,10 @@ Carl Hovland's group at Yale (1950s) broke persuasion into parts:
 
 The **sleeper effect**: a message from a low-credibility source can become **more** persuasive over time, as people remember the message but forget where it came from. This is one reason forwarded WhatsApp rumours spread long after the source is forgotten.
 
+:::widget compare
+{"title": "The sleeper effect", "a": {"label": "Just after hearing it", "points": ["Message: 'This herbal tea cures diabetes'", "Source: an anonymous forward", "You remember the dubious source", "Little persuasion"], "summary": "The low-credibility source acts as a discounting cue, so the message is not believed."}, "b": {"label": "A month later", "points": ["You remember the claim", "You have forgotten where it came from", "The discounting cue is gone", "The claim now feels more believable"], "summary": "The message outlives its source. This is one reason forwarded rumours gain strength over time, and why corrections must be repeated."}}
+:::
+
 ### The elaboration likelihood model (ELM)
 Richard Petty and John Cacioppo (1986) proposed two routes:
 - **Central route**: when people are **motivated** (the issue matters to them) and **able** (time, knowledge, no distraction), they think carefully about the arguments. Strong arguments persuade; weak ones backfire. The change lasts and predicts behaviour.
@@ -736,6 +756,10 @@ Other dissonance paradigms:
 ### Self-perception: a rival explanation
 Daryl Bem (1967) argued we don't need inner tension at all. We simply **infer our attitudes from our behaviour**, the way an observer would: "I said it was fun for only $1, so I must have liked it." Later work suggests both are right: **self-perception** explains change when the attitude is weak or unclear, and **dissonance** when the behaviour clearly contradicts a strong attitude and produces measurable arousal.
 
+:::widget compare
+{"title": "Dissonance or self-perception?", "a": {"label": "Cognitive dissonance", "points": ["Two clashing cognitions create unpleasant tension", "'The task was boring, but I said it was fun for only $1'", "We change the attitude to reduce the tension", "Supported when arousal is found and needed"], "summary": "Festinger: attitude change is motivated by discomfort."}, "b": {"label": "Self-perception", "points": ["No tension is needed", "We watch our own behaviour like an outsider would", "'I said it was fun for $1, so I must have liked it'", "Fits best when the attitude was weak or unclear"], "summary": "Bem: we infer attitudes from behaviour. Today both are thought to be right, each in its own conditions."}}
+:::
+
 :::clinician
 Cooper and Fazio's "new look" (1984) argues dissonance requires four ingredients: the behaviour has aversive consequences, the person feels personally responsible (free choice), there is physiological arousal, and the arousal is attributed to one's own behaviour. A 1974 experiment showed that when participants could misattribute their arousal to a placebo pill described as causing tension, attitude change disappeared, which is strong evidence for the arousal component. Claude Steele's self-affirmation theory adds that affirming an important value elsewhere reduces the need for dissonance reduction. Clinical links: dissonance-based eating-disorder prevention (The Body Project) has replicated across independent trials and countries; motivational interviewing deliberately develops discrepancy between a client's values and their behaviour, though it avoids the confrontational pressure that triggers reactance. Note a replication warning: a 2024 multi-lab test of the classic induced-compliance paradigm, with 39 labs in 19 countries and nearly 4,900 participants, found that writing a counter-attitudinal essay did shift attitudes, but **free choice made no difference**, although the theory predicts that choice is what creates dissonance. The everyday phenomenon of justifying our actions is not in doubt; the precise mechanism is.
 :::
@@ -828,6 +852,10 @@ Deutsch and Gerard (1955) separated:
 - **Informational influence**: we conform because we think others know better. It leads to real, **private acceptance** (internalisation). Sherif's study is the classic case.
 - **Normative influence**: we conform to be liked and avoid rejection. It often leads to **public compliance** without private belief. Asch's study is mostly this.
 
+:::widget compare
+{"title": "Sherif and Asch: two kinds of conformity", "a": {"label": "Sherif: the unclear world", "points": ["How far does a point of light seem to move in a dark room?", "No right answer is obvious", "Group estimates converge on a shared norm", "The norm persists when people are later tested alone"], "summary": "Informational influence: when unsure, we use others as evidence. The change is private and lasting."}, "b": {"label": "Asch: the obvious answer", "points": ["Which line matches the standard?", "Alone, almost nobody errs", "With a unanimous wrong majority, about a third of answers conform", "Conformity drops sharply when answers are written privately"], "summary": "Normative influence: we go along to fit in and avoid rejection. Often public compliance only."}}
+:::
+
 Herbert Kelman (1958) described three levels: **compliance** (public only, to get a reward or avoid punishment), **identification** (adopting the view because you want to be like the group) and **internalisation** (genuinely accepting it).
 
 :::widget sort
@@ -869,6 +897,10 @@ Herbert Kelman (1958) described three levels: **compliance** (public only, to ge
 
 ### Minority influence
 Serge Moscovici showed that a **consistent minority** can move a majority. In his 1969 study, groups of six judged the colour of blue slides. When two confederates **consistently** called them "green", about 8% of the real participants' answers were "green"; when the confederates were **inconsistent**, it dropped to about 1%. Minority influence tends to work more slowly, through real thinking (conversion), and shows up in private and later judgments more than in public ones. Many social reforms in India, from campaigns against sati to the movement for decriminalising homosexuality, began as consistent minorities.
+
+:::widget compare
+{"title": "Majority and minority influence", "a": {"label": "Majority influence", "points": ["Works through social pressure", "Quick, public change", "Often compliance: people agree aloud but not inside", "Leads people to focus on the majority's view"], "summary": "Majorities change what people say."}, "b": {"label": "Minority influence", "points": ["Works through consistency and confidence", "Slow, often private change", "Conversion: people rethink the issue", "Encourages more creative, divergent thinking"], "summary": "Minorities change what people think, which is how new ideas eventually become majority views."}}
+:::
 
 :::clinician
 A 1996 meta-analysis of 133 Asch-type studies in 17 countries found conformity was higher in collectivist cultures and had declined in the United States since the 1950s. Later replications show conformity is sensitive to era and context. Moscovici's genetic model and Nemeth's work on dissent show that minority dissent improves the quality of group thinking (more divergent and original thought), even when the minority is wrong, which is the empirical case for appointing a devil's advocate (though authentic dissent works better than role-played dissent). For clinicians, normative influence explains a great deal of real behaviour change: social-norms interventions (for example, telling students the true, lower rate of heavy drinking among peers) work when people overestimate how common a harmful behaviour is.
@@ -951,6 +983,10 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
 | Participant chooses the shock level freely | about 3% |
 
 The pattern is clear: obedience falls as the victim becomes **closer** and the authority becomes **more distant or less legitimate**, and it collapses when others **model disobedience**.
+
+:::widget layers
+{"title": "Milgram's variations, from most to least obedience", "shape": "stack", "layers": [{"label": "Original: learner in another room, 65 percent", "detail": "The authority is close and legitimate; the victim is out of sight."}, {"label": "Run-down office in Bridgeport, about 48 percent", "detail": "Less prestige than Yale, yet nearly half still obeyed. The setting mattered less than people expected."}, {"label": "Learner in the same room, 40 percent", "detail": "Seeing the victim's suffering makes it harder to obey."}, {"label": "Teacher presses the learner's hand onto the plate, 30 percent", "detail": "Physical contact with the victim lowers obedience further."}, {"label": "Orders by telephone, about 21 percent", "detail": "A distant authority loses power. Many teachers secretly gave lower shocks."}, {"label": "Two other teachers refuse, 10 percent", "detail": "Seeing others disobey gives people permission and a model to do the same."}, {"label": "Free choice of shock level, about 3 percent", "detail": "Without orders, almost nobody chose to give strong shocks. It was obedience, not cruelty."}], "caption": "Closer victim, more distant authority and models of disobedience all reduce obedience."}
+:::
 
 :::widget flow
 {
@@ -1072,6 +1108,10 @@ Max Ringelmann (around 1913) found that people pulling a rope in a group pulled 
 - people come from **collectivist** cultures (smaller loafing effects in China, Japan and Taiwan samples)
 Group projects in Indian colleges where one student does all the work and four names go on the report are social loafing in action.
 
+:::widget compare
+{"title": "When do people loaf, and when do they try?", "a": {"label": "Loafing likely", "points": ["Effort pooled and not identifiable", "Boring or meaningless task", "A group of strangers", "Large group, where one more person seems to add little"], "summary": "Four names on a project report, one person doing the work."}, "b": {"label": "Loafing reduced", "points": ["Each person's part is identifiable", "Meaningful, involving task", "A cohesive group of friends", "Members believe their effort matters to a valued result"], "summary": "Karau and Williams's collective effort model: people try hard when effort leads to outcomes they value."}}
+:::
+
 ### Deindividuation
 **Deindividuation** is a loss of self-awareness and personal responsibility in groups, especially with **anonymity** and **high arousal**, leading to behaviour people would not do alone. Ed Diener's Halloween study (1976) left a bowl of sweets with a note: "Take only one." Children who came in **groups** and were **anonymous** (no names asked) were the most likely to take extra.
 
@@ -1178,6 +1218,10 @@ Early research looked for traits that make leaders. Results were weak at first, 
 - **Hersey and Blanchard's situational leadership**: adapt the style (telling, selling, participating, delegating) to followers' readiness.
 - **House's path-goal theory**: the leader clears the path to goals, choosing directive, supportive, participative or achievement-oriented behaviour to fit the task and followers.
 - **Vroom and Yetton's normative model**: a decision tree for how much to involve followers in a decision.
+
+:::widget flow
+{"title": "Fiedler: which leader fits which situation?", "layout": "tree", "nodes": [{"id": "s", "label": "How favourable is the situation?", "detail": "Judged by leader-member relations, how structured the task is, and how much formal power the leader has."}, {"id": "hi", "label": "Very favourable", "parent": "s", "detail": "Good relations, a clear task, strong power. A task-oriented (low-LPC) leader does best: just get it done."}, {"id": "mid", "label": "Moderately favourable", "parent": "s", "detail": "Some problems in relations or task clarity. A relationship-oriented (high-LPC) leader does best by building cooperation."}, {"id": "lo", "label": "Very unfavourable", "parent": "s", "detail": "Poor relations, an unclear task, weak power. A task-oriented leader again does best, by taking firm control."}], "caption": "Fiedler treated style as fixed, so the advice is to match the leader to the situation, or change the situation, rather than retrain the leader."}
+:::
 
 ### Transformational and transactional
 James MacGregor Burns and Bernard Bass separated:

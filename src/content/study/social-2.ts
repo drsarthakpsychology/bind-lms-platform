@@ -82,6 +82,10 @@ In many societies, open prejudice has fallen while subtler forms remain:
 ### Stereotype threat
 When people fear confirming a negative stereotype about their group, the worry itself can lower their performance. **Steele and Aronson (1995)** found Black American students did worse on a hard verbal test when it was described as a test of ability, but not when it was described as a lab puzzle.
 
+:::widget flow
+{"title": "How stereotype threat lowers a score", "layout": "chain", "nodes": [{"id": "c", "label": "A cue makes the stereotype relevant", "detail": "The test is called a measure of ability, or the student must tick their group on the form first."}, {"id": "w", "label": "Worry about confirming it", "detail": "'If I do badly, I prove them right.'"}, {"id": "m", "label": "Working memory is used up", "detail": "Monitoring, worry and arousal take capacity that the hard items need."}, {"id": "p", "label": "Performance drops", "detail": "The same students do as well as others when the test is described as non-diagnostic."}], "edgeLabels": {"c>w": "triggers", "w>m": "consumes", "m>p": "lowers"}, "caption": "The effect is clearest on hard tests and in people who care about the domain. Replications suggest it is smaller than early studies found."}
+:::
+
 :::widget decide
 {
   "scene": "In the early 2000s, the economists Karla Hoff and Priyanka Pandey gave maze puzzles, with small cash rewards, to 11- and 12-year-old boys from high and low castes in villages in Uttar Pradesh. In one condition caste was not mentioned. In another, each boy's name, village and caste were announced to the mixed group before they began.",
@@ -188,6 +192,10 @@ Gina Perry's archival research (2018) and earlier work showed that an **earlier 
 ### Relative deprivation
 People feel deprived not by what they have, but by what they have **compared with what they expect** or compared with others. Runciman (1966) separated **egoistic** deprivation (I am worse off than others) from **fraternalistic** deprivation (my group is worse off than other groups). Fraternalistic deprivation predicts collective action and intergroup hostility far better. **Tripathi and Srivastava (1981)** applied this in India, finding that Muslims who felt more fraternalistic deprivation showed more ingroup favouritism and hostility towards the outgroup.
 
+:::widget compare
+{"title": "Two kinds of relative deprivation", "a": {"label": "Egoistic", "points": ["'I am worse off than others like me'", "Compare yourself with other individuals", "Leads to personal stress and envy", "Rarely leads to collective action"], "summary": "A personal grievance."}, "b": {"label": "Fraternalistic", "points": ["'My group is worse off than other groups'", "Compare your group with other groups", "Leads to group anger", "Predicts protest and intergroup hostility"], "summary": "A group grievance. This is the kind that fuels social movements and conflict."}}
+:::
+
 ### Social identity theory: Tajfel's minimal groups
 Henri Tajfel asked a startling question: what is the **least** you need to make people favour their own group? In his **minimal group** experiments (1970, 1971), Bristol schoolboys were split into groups on a trivial basis (supposedly preferring paintings by Klee or by Kandinsky; in fact the split was random). They never met their group, had no history and no competition. Then each boy divided money between two other boys, one from his group and one from the other, using reward matrices.
 
@@ -245,6 +253,10 @@ Gordon Allport (1954) proposed that contact between groups reduces prejudice und
 2. **Common goals**
 3. **Cooperation**, not competition, between groups
 4. **Support of authorities**, law or custom
+
+:::widget layers
+{"title": "Allport's four conditions for contact to work", "shape": "stack", "layers": [{"label": "Equal status", "detail": "Within the situation, both groups have equal standing. A cricket team where everyone plays, not one where one group only carries kit."}, {"label": "Common goals", "detail": "Both groups want the same outcome, such as winning the league."}, {"label": "Cooperation", "detail": "They must work together to reach it, not compete with each other."}, {"label": "Support of authorities", "detail": "Teachers, managers, law or custom clearly back the contact."}], "caption": "Contact reduces prejudice even without all four, but works best when they are present. Mere exposure under hostile conditions can make things worse."}
+:::
 
 Pettigrew and Tropp's meta-analysis (2006) of **515 studies** with more than 250,000 participants found that contact reliably reduces prejudice (average r of about minus 0.21), more strongly when Allport's conditions are met, but even when they are not. Its main mechanisms are **reducing anxiety** and **increasing empathy**, more than increasing knowledge. Variants include **extended contact** (knowing that an ingroup friend has an outgroup friend) and **imagined contact**.
 
@@ -308,6 +320,10 @@ Q: A low-status group that cannot leave its group, and sees the hierarchy as sta
 | **Arousal: cost-reward model** (Piliavin) | Seeing someone in trouble arouses us unpleasantly; we act to reduce it in whatever way has the best rewards and lowest costs |
 | **Negative-state relief** (Cialdini) | We help to lift our own sadness |
 | **Empathy-altruism hypothesis** (Batson) | Empathic concern produces a genuinely altruistic motive |
+
+:::widget sort
+{"prompt": "Which explanation of helping fits each case best?", "buckets": ["Kin selection", "Reciprocal altruism", "Cost-reward", "Negative-state relief", "Empathy-altruism"], "items": [{"text": "A woman runs into a burning house to save her nephew but not a neighbour's child", "bucket": 0, "why": "Helping relatives passes on shared genes."}, {"text": "You lend notes to a classmate who lent you hers last term", "bucket": 1, "why": "Help repaid and expected to be repaid."}, {"text": "A man sees an accident, feels sick with tension, and calls an ambulance because stopping to help himself would make him late", "bucket": 2, "why": "He reduces his arousal in the cheapest way."}, {"text": "Feeling low after a bad day, a student donates to a charity box and feels better", "bucket": 3, "why": "Helping to lift her own mood."}, {"text": "Moved by an old man's distress, you help him even though you could easily walk away unseen", "bucket": 4, "why": "Empathic concern, with an easy escape available, still leads to help."}]}
+:::
 
 :::widget decide
 {
@@ -446,6 +462,10 @@ Q: Which finding most challenges the idea that bystanders rarely help in real co
 - **Hostile (reactive) aggression**: driven by anger; harm is the goal. A man hits someone who insulted him.
 - **Instrumental (proactive) aggression**: harm is a means to another goal. A robber hits a shopkeeper to take the cash.
 - **Direct versus indirect**: physical or verbal attack versus **relational aggression** (spreading rumours, exclusion), which is common among both girls and boys.
+
+:::widget sort
+{"prompt": "Which kind of aggression is each?", "buckets": ["Hostile", "Instrumental", "Relational", "Not aggression"], "items": [{"text": "A man punches someone who insulted his sister", "bucket": 0, "why": "Driven by anger; the harm is the goal."}, {"text": "A robber hits a shopkeeper to grab the cash", "bucket": 1, "why": "Harm is a means to money."}, {"text": "A group of girls stop inviting one classmate and spread a rumour about her", "bucket": 2, "why": "Harm through social exclusion and reputation."}, {"text": "A dentist causes pain while filling a tooth", "bucket": 3, "why": "No intent to harm; the patient agreed."}, {"text": "A boy deletes a rival from the class group chat to make him feel left out", "bucket": 2, "why": "Relational aggression online."}, {"text": "A bowler deliberately aims a bouncer at a batsman's head to scare him out", "bucket": 1, "why": "Harm or threat used to win."}]}
+:::
 
 ### Theories
 | Theory | Key idea | Key names |
