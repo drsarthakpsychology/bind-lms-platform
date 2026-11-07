@@ -9,6 +9,25 @@ This module prepares you for four kinds of psychology exam in India:
 - **CUET PG Psychology** for MA and MSc admission at central and many other universities,
 - **university semester exams**, which are mostly descriptive (written answers).
 
+:::widget flow
+{
+  "title": "Which exam is for which goal?",
+  "layout": "tree",
+  "nodes": [
+    { "id": "g", "label": "Your goal", "detail": "Start from what you want to do next, not from which exam friends are taking." },
+    { "id": "ma", "label": "MA or MSc admission", "parent": "g", "detail": "Central and many state universities admit through CUET PG; some universities run their own tests." },
+    { "id": "cuet", "label": "CUET PG Psychology", "parent": "ma", "detail": "Objective, negative marking. Undergraduate-level breadth." },
+    { "id": "teach", "label": "Teaching, JRF or PhD eligibility", "parent": "g", "detail": "Assistant Professor eligibility, a Junior Research Fellowship, or PhD admission eligibility." },
+    { "id": "net", "label": "UGC NET Psychology", "parent": "teach", "detail": "Paper 1 (teaching and research aptitude) plus Paper 2 (psychology), taken together." },
+    { "id": "clin", "label": "Clinical psychology training", "parent": "g", "detail": "The RCI-recognised professional route to practise as a clinical psychologist." },
+    { "id": "inst", "label": "NIMHANS, CIP and other institute entrances", "parent": "clin", "detail": "MCQ papers heavy on psychopathology, assessment and research methods, often followed by an interview." },
+    { "id": "uni", "label": "Pass your current course", "parent": "g", "detail": "University semester exams: mostly written answers." },
+    { "id": "sem", "label": "Semester exams", "parent": "uni", "detail": "Short notes, long answers and case vignettes; structure and evaluation earn the marks." }
+  ],
+  "caption": "Tap each branch. One curriculum prepares you for all of them; the exam changes the format, not the core content."
+}
+:::
+
 :::safety Always check the official notice
 Exam patterns change, sometimes from one year to the next. The figures below are **as reported for the 2025 and 2026 cycles** and were checked in November 2026. Before you plan, read the **current official information bulletin** from the conducting body (NTA for UGC NET and CUET PG, the institute itself for NIMHANS, CIP and others).
 :::
@@ -98,13 +117,47 @@ Most students prepare by **rereading** and **highlighting**. These feel producti
 }
 :::
 
+:::widget curve
+{
+  "kind": "forgetting",
+  "title": "Why spacing beats cramming",
+  "caption": "Move the review points. Each spaced review lifts memory back up, and the curve falls more slowly after each one. Rereading the same night adds little; reviewing after a gap adds a lot."
+}
+:::
+
 ### Plan in phases, not by the calendar
-Every student's time is different, so plan in **phases** and move on when you meet the goal of each phase.
-1. **Map**: read the official syllabus; tick what you know, circle what you don't; collect past papers.
-2. **Build**: learn each unit, then test yourself on it the next day and again a few days later.
-3. **Mix**: do mixed-topic question sets; keep an **error log** (question, your answer, why it was wrong, the rule).
-4. **Mock**: full-length timed papers in exam conditions; review every error.
-5. **Polish**: revisit only your error log and weak units; sleep well before the exam.
+Every student's time is different, so plan in **phases** and move on when you meet the goal of each phase. Press Play to walk the pathway.
+
+:::widget flow
+{
+  "title": "The exam strategy pathway",
+  "layout": "chain",
+  "nodes": [
+    { "id": "map", "label": "1 · Map", "detail": "Read the official syllabus. Tick what you know, circle what you don't. Collect past papers. Done when every unit has a tick or a circle." },
+    { "id": "build", "label": "2 · Build", "detail": "Learn each unit, then test yourself on it the next day and again a few days later. Done when you can answer unit questions from memory." },
+    { "id": "mix", "label": "3 · Mix", "detail": "Mixed-topic question sets. Keep an error log: the question, your answer, why it was wrong, the rule. Done when your mixed-set scores are steady." },
+    { "id": "mock", "label": "4 · Mock", "detail": "Full-length timed papers in exam conditions, each reviewed fully. Done when scores and pacing are stable across several mocks." },
+    { "id": "polish", "label": "5 · Polish", "detail": "Only your error log and weak units. Sleep well before the exam. Done when the error log has no repeat mistakes." }
+  ],
+  "edgeLabels": { "build>mix": "after every unit", "mix>mock": "when steady" },
+  "caption": "Move on when you meet a phase's goal, not when a date arrives."
+}
+:::
+
+:::widget flow
+{
+  "title": "The error-log loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "try", "label": "Attempt from memory", "detail": "Answer under time, without notes." },
+    { "id": "check", "label": "Check every answer", "detail": "Including the ones you got right by luck." },
+    { "id": "log", "label": "Log the error", "detail": "Question, your answer, the correct answer, why you went wrong (did not know, misread, confused a look-alike, ran out of time)." },
+    { "id": "rule", "label": "Write the rule", "detail": "One line you could teach a friend: 'Fregoli is strangers in disguise; Capgras is a familiar person replaced.'" },
+    { "id": "retest", "label": "Retest after a gap", "detail": "Redo logged questions a few days later. A question leaves the log only when you get it right twice." }
+  ],
+  "caption": "Your error log is the most valuable revision material you own: it is a list of exactly what you do not yet know."
+}
+:::
 
 :::widget decide
 {
@@ -149,6 +202,14 @@ Q: Which study method has the strongest research support for long-term retention
 - **Second pass**: work through marked questions.
 - Never spend three minutes on one question in the first pass.
 
+:::widget curve
+{
+  "kind": "inverted-u",
+  "title": "Exam nerves: how much arousal helps?",
+  "caption": "Move the slider. Some arousal sharpens attention; too much narrows it and blocks recall, and the peak comes earlier for hard, complex questions. Slow breathing before the paper moves you back towards the top of the curve."
+}
+:::
+
 ### Should you guess when there is negative marking?
 Think in **expected marks**, the average result of a guess over many questions.
 
@@ -183,6 +244,22 @@ With **4 options, +1 correct, minus 0.25 wrong** (NIMHANS pattern):
     { "label": "Skip truly blind questions, but guess wherever he can eliminate even one option", "verdict": "best", "outcome": "He answers 9 after eliminating options and skips 6; his net score is better than average.", "why": "Partial-knowledge guesses carry a clear positive expectation; pure blind guesses add little. This balances gain and risk." },
     { "label": "Leave every uncertain question blank", "verdict": "harm", "outcome": "He throws away the marks he could have earned from the questions where he knew enough to eliminate options.", "why": "Over-caution wastes partial knowledge, which is where most guessing gains come from." }
   ]
+}
+:::
+
+:::widget flow
+{
+  "title": "Guess or skip? A decision tree for negative marking",
+  "layout": "tree",
+  "nodes": [
+    { "id": "q", "label": "Unsure of an answer", "detail": "First, is there negative marking in this exam?" },
+    { "id": "no", "label": "No negative marking", "parent": "q", "detail": "Always answer. A blank earns nothing; a guess can only help." },
+    { "id": "yes", "label": "Negative marking", "parent": "q", "detail": "Work out how many options you can rule out with a real reason." },
+    { "id": "e2", "label": "Ruled out two", "parent": "yes", "detail": "Answer. Expected marks are clearly positive in every common Indian pattern." },
+    { "id": "e1", "label": "Ruled out one", "parent": "yes", "detail": "Answer. Still positive: about +0.67 with +4 and minus 1." },
+    { "id": "e0", "label": "Truly blind", "parent": "yes", "detail": "Small expected gain (+0.25 with +4 and minus 1; about +0.06 with +1 and minus 0.25). Guess if you are comfortable with risk; skipping is reasonable when the penalty is relatively large." }
+  ],
+  "caption": "Tap each branch. Partial knowledge is where guessing pays; pure blind guesses add little."
 }
 :::
 
@@ -328,6 +405,21 @@ Not every topic is equally likely. These areas come up again and again (based on
 | Development | Piaget, Vygotsky, Erikson, Kohlberg, attachment, ageing |
 | Applied and emerging | Positive psychology, health psychology, counselling, organisational, environmental, community psychology |
 
+:::widget layers
+{
+  "title": "Where to spend your hours first",
+  "shape": "stack",
+  "layers": [
+    { "label": "Top priority: every exam, every year", "detail": "Research methods and statistics; psychological testing and psychometrics. Predictable questions, reliable marks." },
+    { "label": "High priority", "detail": "Cognitive processes (attention, perception, learning, memory); personality and motivation; social psychology; developmental theories." },
+    { "label": "High for clinical entrances", "detail": "Psychopathology and diagnosis (DSM-5-TR and ICD-11), assessment tools, therapies, mental health law and ethics." },
+    { "label": "Steady marks", "detail": "Schools and history, biological basis, intelligence and creativity, Indian psychology and Indian contributors." },
+    { "label": "Finish with", "detail": "Applied and emerging areas: positive, health, organisational, environmental and community psychology." }
+  ],
+  "caption": "Tap each level. Order your Build phase from the top down, then mix all levels in practice sets."
+}
+:::
+
 ### Clinical psychology entrances: high-yield topics
 - **Psychopathology and diagnosis** (DSM-5-TR and ICD-11): schizophrenia spectrum, mood, anxiety, OCD, trauma, dissociative, somatic, eating, substance, personality, neurodevelopmental and neurocognitive disorders.
 - **Assessment**: intelligence, personality, projective and neuropsychological tests; rating scales.
@@ -385,6 +477,30 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 | Reliability | Consistency: test-retest, parallel forms, split-half (Spearman-Brown), internal consistency (Cronbach's alpha), inter-rater (kappa) |
 | Validity | Accuracy: content, criterion (concurrent, predictive), construct (convergent, discriminant), face |
 | Designs | Between and within subjects; Solomon four-group controls for pre-test effects; quasi-experiments lack random assignment |
+
+:::widget curve
+{
+  "kind": "normal",
+  "title": "The normal curve: z, percentile and p",
+  "caption": "Move z. Watch how 68, 95 and 99.7% of scores fall within one, two and three standard deviations, how a z of 1.96 cuts off 2.5% in each tail, and how IQ and T-scores map onto the same curve."
+}
+:::
+
+:::widget flow
+{
+  "title": "Choosing a test: the decision tree",
+  "layout": "tree",
+  "nodes": [
+    { "id": "r", "label": "What is the question?", "detail": "A difference between groups or conditions, or a relationship between variables?" },
+    { "id": "cat", "label": "Counts in categories", "parent": "r", "detail": "Chi-square (goodness of fit for one variable; test of independence for two)." },
+    { "id": "diff", "label": "Difference, numeric outcome", "parent": "r", "detail": "How many groups, and are they independent or related?" },
+    { "id": "two", "label": "Two groups", "parent": "diff", "detail": "Independent: t-test (or Mann-Whitney U). Related: paired t-test (or Wilcoxon signed-rank)." },
+    { "id": "three", "label": "Three or more groups", "parent": "diff", "detail": "Independent: one-way ANOVA (or Kruskal-Wallis). Related: repeated-measures ANOVA (or Friedman). Two or more factors: factorial ANOVA." },
+    { "id": "rel", "label": "Relationship", "parent": "r", "detail": "Two interval variables: Pearson's r. Ranks: Spearman's rho. Predicting one from others: regression." }
+  ],
+  "caption": "Tap each branch. The non-parametric option, in brackets, is for ranked data or when assumptions such as normality fail."
+}
+:::
 
 :::widget worked
 {
@@ -506,6 +622,40 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 | Piaget, Vygotsky, Kohlberg, Erikson | Cognitive stages; ZPD and scaffolding; moral reasoning levels; psychosocial crises |
 | James-Lange, Cannon-Bard, Schachter-Singer, Lazarus | Theories of emotion: body first; simultaneous; arousal plus label; appraisal |
 
+:::widget brainmap
+{
+  "title": "High-yield brain areas for objective papers",
+  "focus": ["broca", "wernicke", "hippocampus", "amygdala", "occipital", "cerebellum", "hypothalamus", "corpus-callosum"],
+  "notes": {
+    "broca": "Left frontal. Damage: non-fluent, effortful speech with fairly preserved comprehension (expressive aphasia).",
+    "wernicke": "Left temporal. Damage: fluent but empty speech with poor comprehension (receptive aphasia).",
+    "hippocampus": "Forming new explicit memories. H.M., after removal of both medial temporal lobes, could not form new long-term memories but learned new skills.",
+    "amygdala": "Fear learning and emotional memory. Kluver-Bucy syndrome follows damage to both temporal lobes including the amygdala.",
+    "occipital": "Primary visual cortex. Damage can cause cortical blindness; nearby damage causes face blindness (prosopagnosia).",
+    "cerebellum": "Balance, coordination and timing; also some motor learning.",
+    "hypothalamus": "Hunger, thirst, temperature, sleep timing (the suprachiasmatic nucleus) and the HPA stress axis.",
+    "corpus-callosum": "Links the hemispheres. Split-brain studies showed left-hemisphere language dominance in most people."
+  },
+  "caption": "Tap each region. Match-the-following questions often pair a region, a function and a classic case."
+}
+:::
+
+:::widget neuron
+{
+  "title": "The action potential, as exams ask it",
+  "myelinated": true,
+  "caption": "Raise the stimulus past threshold and fire: the spike is all or none. Turn myelin off to see slower, continuous conduction; with myelin, the signal jumps between nodes of Ranvier (saltatory conduction)."
+}
+:::
+
+:::widget curve
+{
+  "kind": "sdt",
+  "title": "Signal detection: sensitivity versus bias",
+  "caption": "Move d prime and the criterion. Sensitivity (d prime) is how well signal is separated from noise; the criterion is the observer's willingness to say 'yes'. A liberal criterion raises hits and false alarms together."
+}
+:::
+
 :::widget sort
 {
   "prompt": "Match each concept to its area.",
@@ -626,6 +776,21 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 | Janis | Groupthink |
 | Heider, Kelley, Weiner | Attribution: internal and external; covariation; locus, stability, controllability |
 | Indian contributors | Durganand Sinha (indigenous psychology), Janak Pandey (social psychology), Udai Pareek (organisational), J. P. Das (PASS) |
+
+:::widget layers
+{
+  "title": "Maslow's hierarchy, as examiners ask it",
+  "shape": "pyramid",
+  "layers": [
+    { "label": "Self-actualisation", "detail": "Becoming what one can be. Maslow's self-actualisers showed acceptance, spontaneity, problem-centring and peak experiences. Self-transcendence was added in his later writing." },
+    { "label": "Esteem", "detail": "Respect from others and self-respect: competence, recognition." },
+    { "label": "Love and belonging", "detail": "Friendship, family, intimacy, being part of a group." },
+    { "label": "Safety", "detail": "Security, stability, freedom from fear." },
+    { "label": "Physiological", "detail": "Food, water, sleep, warmth. The lower four are deficiency needs; the top is a growth need." }
+  ],
+  "caption": "Tap each level. For evaluation marks: needs are broadly universal, but research does not support a strict order, and the ordering reflects individualistic values."
+}
+:::
 
 :::widget sort
 {
