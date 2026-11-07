@@ -48,9 +48,9 @@ With 150 questions in 180 minutes, you have about 72 seconds per question across
 
 :::mcq
 Q: In UGC NET, a candidate unsure of an answer should:
-- Leave it blank so that no marks can be lost
+- Leave it blank so that no marks can be lost at all
 - Mark the longest option, which is usually correct
-- *Always mark an answer, as there is no negative marking
+- *Always answer, as there is no negative marking
 - Skip the whole unit and come back if time allows
 > Blanks score zero; guesses can only help.
 :::
@@ -156,7 +156,7 @@ Other names worth knowing:
 :::mcq
 Q: At the reflective level of teaching, the learner is:
 - Passive, listening and memorising facts
-- Mainly listening to the teacher's explanations
+- Mainly listening carefully to the teacher's explanations
 - *Most active, solving problems and thinking critically
 - Mainly repeating the teacher's demonstrations
 > Hunt's reflective level is the most learner-centred.
@@ -170,7 +170,7 @@ Q: The highest level of the revised Bloom's cognitive taxonomy is:
 
 Q: A test that reports whether a student has mastered 80% of stated objectives is:
 - Norm-referenced
-- Diagnostic only
+- Diagnostic (finding causes)
 - *Criterion-referenced
 - Placement only
 > Performance is judged against a standard, not against peers.
@@ -178,7 +178,7 @@ Q: A test that reports whether a student has mastered 80% of stated objectives i
 Q: Microteaching was first developed at:
 - Harvard
 - Oxford
-- NCERT
+- NCERT, New Delhi
 - *Stanford
 > Dwight Allen and colleagues, 1963.
 :::
@@ -291,21 +291,21 @@ Offloading becomes a problem when it replaces understanding. A student who store
 :::mcq
 Q: The best title for the passage is:
 - *Remembering and Offloading: Choosing What to Know by Heart
-- Ancient Memory Techniques of India and Greece
+- Ancient Memory Techniques of India and Greece, and Their Decline
 - The Dangers of Mobile Phones
 - Why Socrates Was Wrong About Writing
 > It covers the whole argument: traditions, offloading and the conclusion about choosing wisely.
 
 Q: According to the passage, when people expect information to be saved, they tend to:
-- *Remember where to find it better than the information itself
+- *Remember where to find it better than the facts
 - Remember the information better
-- Forget both the information and its location
+- Forget both the information and where it was stored
 - Stop using their phones
 > Stated directly in the second paragraph.
 
 Q: The author's attitude to cognitive offloading is best described as:
-- *Balanced, accepting it while warning against misuse
-- Completely hostile to any use of phones
+- *Balanced: accepting, but warning of misuse
+- Completely hostile to any use of phones for study
 - Enthusiastic, seeing only benefits in it
 - Indifferent, as if the issue does not matter
 > "The research is more mixed" and "becomes a problem when it replaces understanding".
@@ -318,7 +318,7 @@ Q: Which statement is NOT supported by the passage?
 > The author says research is mixed; the passage does not claim proof of damage.
 
 Q: The phrase "thinking has material to work with" implies that:
-- Good thinking depends on having a mobile phone at hand
+- Good thinking depends on having a mobile phone at hand to look things up
 - Memorising everything should be the goal of education
 - *Knowledge held in memory is needed for reasoning and connecting ideas
 - Physical study materials always improve thinking
@@ -400,7 +400,7 @@ Effective teachers: plan clear objectives, use the learners' language and exampl
 Q: The model that first made "noise" a part of communication was:
 - *Shannon and Weaver's
 - Aristotle's
-- Lasswell's
+- Lasswell's linear model
 - Berlo's
 > From telephone engineering, 1949.
 
@@ -413,7 +413,7 @@ Q: Standing at a respectful distance from a senior professor relates to:
 
 Q: According to the spiral of silence theory, people:
 - *Stay silent when they believe their view is in the minority
-- Always speak up more loudly when they disagree
+- Always speak up more loudly when they disagree with the majority
 - Are passively injected with media messages
 - Actively choose media to meet their own needs
 > Noelle-Neumann's theory of public opinion.
@@ -460,7 +460,7 @@ Q: The memory level of teaching is associated with:
 
 Q: Andragogy refers to:
 - Teaching young children
-- A method of assessment
+- A method of assessing learners
 - A type of research
 - *Principles of adult learning
 > Malcolm Knowles.
@@ -468,14 +468,14 @@ Q: Andragogy refers to:
 Q: Which method is most learner-centred?
 - Lecture
 - *Project method
-- Demonstration
+- Demonstration by teacher
 - Dictation
 > Learners plan and carry out a real project.
 
 Q: SWAYAM is:
 - A scholarship scheme
 - *India's national MOOC platform
-- An accreditation agency
+- An accreditation agency for colleges
 - A plagiarism checker
 > Launched in 2017.
 
@@ -494,15 +494,15 @@ Q: Checking whether a historical document is genuine is:
 > Authenticity of the source.
 
 Q: "Op. cit." means:
-- The same page
+- The same page as the last citation
 - And others
-- See also
+- See also the next source
 - *In the work already cited
 > Latin opere citato.
 
 Q: Research to improve one's own classroom practice is:
 - Fundamental
-- Ex post facto
+- Ex post facto research
 - *Action research
 - Historical
 > Practitioner-led improvement.
@@ -510,13 +510,13 @@ Q: Research to improve one's own classroom practice is:
 Q: In comprehension questions, the best answer is the one that:
 - *Is supported by the passage as a whole
 - Is true in real life
-- Uses the most words from the passage
+- Uses the most words taken from the passage
 - Is the longest
 > Answer from the passage, not general knowledge.
 
 Q: "Who says what in which channel to whom with what effect" is the model of:
 - Berlo
-- Schramm
+- Schramm (circular)
 - Dance
 - *Lasswell
 > Harold Lasswell, 1948.
@@ -594,7 +594,7 @@ Paper 1 numericals are school-level maths done quickly and accurately. Learn the
 Q: A sum doubles in 8 years at simple interest. The rate is:
 - 8%
 - 10%
-- 16%
+- 16.5%
 - *12.5%
 > Interest = P in 8 years, so R = 100 ÷ 8 = 12.5%.
 
@@ -615,7 +615,7 @@ Q: A can finish a job in 10 days and B in 15 days. Together they take:
 Q: The price of an item is reduced by 25%. To restore the original price, it must now be raised by:
 - 25%
 - *33.3%
-- 20%
+- 22.5%
 - 50%
 > From 75 back to 100 is 25 ÷ 75 = 33.3%.
 :::
@@ -709,7 +709,7 @@ Draw three overlapping circles for the three terms. Shade empty areas for univer
 Q: "No S is P" distributes:
 - *Both subject and predicate
 - The subject term only
-- The predicate term only
+- The predicate term only, never the subject
 - Neither
 > The E proposition distributes both terms.
 
@@ -717,7 +717,7 @@ Q: If "Some leaders are honest" is true, which must also be true?
 - All leaders are honest
 - No leader is honest
 - *None of these is necessarily true
-- Some leaders are not honest
+- Some leaders are not honest, at least
 > From a true I, A and O are undetermined and E is false.
 
 Q: "All cats are animals. All dogs are animals. So all dogs are cats." The fallacy is:
@@ -731,7 +731,7 @@ Q: "My grandfather smoked all his life and lived to 95, so smoking is harmless."
 - Ad hominem
 - *Hasty generalisation
 - Straw man
-- Red herring
+- Red herring (distraction)
 > A sweeping claim from one case.
 :::
 
@@ -840,7 +840,7 @@ A **hetvabhasa** is a reason that **looks valid but is not**. Nyaya lists five.
 :::mcq
 Q: Knowing that there is no book on the table because you do not see one is:
 - Upamana
-- Arthapatti
+- Arthapatti (postulation)
 - Shabda
 - *Anupalabdhi
 > Knowledge of absence by non-perception.
@@ -855,7 +855,7 @@ Q: Which school accepts only perception as a valid means of knowledge?
 Q: In the Nyaya five-membered inference, "wherever there is smoke there is fire, as in a kitchen" is the:
 - Pratijna
 - Hetu
-- Nigamana
+- Nigamana (conclusion)
 - *Udaharana
 > The example stating the universal rule.
 
@@ -905,7 +905,7 @@ Data interpretation (DI) sets give a table or chart and several questions. They 
 :::mcq
 Q: Unemployment falls from 8% to 6%. This is a fall of:
 - 2%
-- 25 percentage points
+- 25 percentage points, or 2%
 - 33%
 - *2 percentage points, or 25%
 > 2 points; 2 ÷ 8 = 25% in relative terms.
@@ -974,7 +974,7 @@ Q: The valid form of argument whose premises are true is called:
 Q: The contradictory of "All S are P" is:
 - No S is P
 - Some S are P
-- All P are S
+- All P are S (the converse)
 - *Some S are not P
 > A and O are contradictories.
 
@@ -1016,7 +1016,7 @@ Q: In Nyaya inference, the middle term (smoke) is called:
 Q: A reason that is equally balanced by another reason proving the opposite is:
 - *Satpratipaksha
 - Viruddha
-- Asiddha
+- Asiddha (unproved)
 - Badhita
 > Counterbalanced.
 

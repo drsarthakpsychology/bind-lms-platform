@@ -533,6 +533,8 @@ For clinical master's goals only (and NIMHANS PhD). It reuses the AI patient / i
 
 ## 6. Student pathway: one flow, never more than 3 next actions
 
+> **Owner update, 6 Nov 2026: one shared course.** Students no longer pick an exam. The section is "Psychology Entrance & Competitive Exam Preparation" (CUET-PG · UGC-NET · Clinical Psychology Entrances (M.Clin.Psy)). The curriculum is the union of every exam's syllabus, NET Paper 1 included; subject mastery comes first, exam-specific prep later. Step 1 below (pick a goal), the goal seeds in 6.4 and the exam-pattern mocks in §4 stay in the code behind `EXAM_TRACKS_ENABLED` (`src/lib/prep/catalog.ts`, off). While off: the starting check samples every subject (30 questions); the plan weighs each subject by the exams' subject weights averaged over the exams; practice climbs a level each round towards very hard; mocks are a 100-question, 120-minute mixed paper plus 50-question sectionals, marked +1 / -0.25 (practice marking); interviews are open to everyone.
+
 **Principle:** the student sees **one goal, one plan and at most three things to do next**. Everything else is one tap away, never on the first screen. There are no week schedules (Q17). The plan is an ordered list of topics, not a calendar.
 
 ### 6.1 The flow

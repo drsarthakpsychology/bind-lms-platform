@@ -40,7 +40,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
           <ol className="space-y-1.5 rounded-md border-2 border-foreground bg-card p-3 text-base">
             {q.statements.map((s, i) => (
               <li key={i} className="flex gap-2">
-                <span className="shrink-0 font-mono font-semibold">{LETTER[i]}.</span>
+                <span className="shrink-0 font-mono font-semibold">{i + 1}.</span>
                 <span>{s}</span>
               </li>
             ))}
@@ -78,7 +78,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
 }
 
 /**
- * The four options. Keys 1–4 are shown on each. With `answer` set, picks lock
+ * The four options. Keys 1 to 4 are shown on each. With `answer` set, picks lock
  * and right/wrong show with an icon and a word (never colour alone).
  */
 export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean }) {
@@ -156,7 +156,7 @@ export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () =
 export function KeysHint({ mark = false }: { mark?: boolean }) {
   return (
     <p className="hidden text-caption text-muted-foreground lg:block">
-      Keys: <kbd className="font-mono">1</kbd>–<kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next{mark ? (
+      Keys: <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next{mark ? (
         <>
           {" "}· <kbd className="font-mono">M</kbd> mark for review
         </>

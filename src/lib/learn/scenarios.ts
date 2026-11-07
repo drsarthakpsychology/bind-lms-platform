@@ -1,5 +1,5 @@
 /**
- * "What would you do?" — tricky, branching clinic moments. Each option has a
+ * "What would you do?": tricky, branching clinic moments. Each option has a
  * consequence, so students learn what their words and choices lead to.
  * best = what a good clinician does; ok = acceptable but misses something;
  * harm = a common mistake with a real cost.

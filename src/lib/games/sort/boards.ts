@@ -51,7 +51,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "specific-phobia", threshold: "6 months", items: [it("Fear of one object or situation", "Specific phobia is about one trigger."), it("The trigger almost always provokes fear at once", "Specific phobia Criterion B."), it("Blood-injection type can cause fainting", "The vasovagal response is typical of this subtype."), it("Subtypes: animal, natural environment, situational", "Specific phobia's specifiers.")] },
     ],
     thresholds: ["6 months", "1 month", "2 weeks", "3 months"],
-    refs: ["DSM-5-TR pdf p.393 (GAD)", "DSM-5-TR p.235–236 (panic)", "DSM-5-TR p.230–231 (social anxiety)", "DSM-5-TR pdf p.361 (specific phobia)"],
+    refs: ["DSM-5-TR pdf p.393 (GAD)", "DSM-5-TR p.235 to 236 (panic)", "DSM-5-TR p.230 to 231 (social anxiety)", "DSM-5-TR pdf p.361 (specific phobia)"],
   },
   {
     id: "sb-03",
@@ -66,7 +66,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "delusional", threshold: "At least 1 month", items: [it("Hallucinations, if any, fit the delusion's theme", "Delusional disorder note to Criterion B."), it("Behaviour not obviously odd apart from the delusion", "Delusional disorder Criterion C."), it("Jealous, erotomanic or grandiose types", "Its subtypes."), it("Schizophrenia Criterion A never met", "Delusional disorder Criterion B.")] },
     ],
     thresholds: ["1 day to under 1 month", "1 month to under 6 months", "At least 6 months", "At least 1 month", "At least 2 weeks", "At least 1 year"],
-    refs: ["DSM-5-TR pdf p.217 (brief psychotic)", "DSM-5-TR pdf p.220–222 (schizophreniform)", "DSM-5-TR pdf p.223–224 (schizophrenia)", "DSM-5-TR pdf p.212 (delusional)"],
+    refs: ["DSM-5-TR pdf p.217 (brief psychotic)", "DSM-5-TR pdf p.220 to 222 (schizophreniform)", "DSM-5-TR pdf p.223 to 224 (schizophrenia)", "DSM-5-TR pdf p.212 (delusional)"],
   },
   {
     id: "sb-04",
@@ -81,7 +81,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "prolonged-grief", threshold: "Death at least 12 months ago", items: [it("Intense yearning for the person who died", "Core feature."), it("Feels part of themselves has died", "Identity disruption."), it("Marked disbelief about the death", "One of the listed symptoms."), it("Goes beyond cultural and religious norms", "Prolonged grief Criterion E.")] },
     ],
     thresholds: ["More than 1 month", "3 days to 1 month", "Starts within 3 months", "Death at least 12 months ago", "At least 6 months", "At least 2 weeks"],
-    refs: ["DSM-5-TR pdf p.457 (PTSD)", "DSM-5-TR pdf p.470–472 (acute stress)", "DSM-5-TR p.321 (adjustment)", "DSM-5-TR pdf p.481 (prolonged grief)"],
+    refs: ["DSM-5-TR pdf p.457 (PTSD)", "DSM-5-TR pdf p.470 to 472 (acute stress)", "DSM-5-TR p.321 (adjustment)", "DSM-5-TR pdf p.481 (prolonged grief)"],
   },
   {
     id: "sb-05",
@@ -111,7 +111,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "arfid", threshold: "No set duration", items: [it("No fear of weight gain or body-image worry", "This rules out anorexia."), it("Avoids food for its texture or smell", "Sensory-based avoidance."), it("Fear of choking or vomiting", "Concern about aversive consequences."), it("Depends on nutrition drinks", "One of ARFID's harm criteria.")] },
     ],
     thresholds: ["No set duration", "Weekly for 3 months", "Daily for 1 month", "Twice a week for 6 months"],
-    refs: ["DSM-5-TR pdf p.554 (anorexia)", "DSM-5-TR pdf p.564–568 (bulimia)", "DSM-5-TR pdf p.570 (binge-eating)", "DSM-5-TR p.376 (ARFID)"],
+    refs: ["DSM-5-TR pdf p.554 (anorexia)", "DSM-5-TR pdf p.564 to 568 (bulimia)", "DSM-5-TR pdf p.570 (binge-eating)", "DSM-5-TR p.376 (ARFID)"],
   },
   {
     id: "sb-07",
@@ -126,7 +126,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "rls", threshold: "3 times a week for 3 months", items: [it("Urge to move the legs at rest", "RLS Criterion A."), it("Worse in the evening or at night", "RLS Criterion A3."), it("Eased by walking or stretching", "RLS Criterion A2."), it("Linked with low iron", "Iron deficiency is a known cause.")] },
     ],
     thresholds: ["3 nights a week for 3 months", "3 times a week for 3 months", "5+ events an hour on a sleep study", "Every night for 1 month", "2 weeks"],
-    refs: ["DSM-5-TR p.410 (insomnia)", "DSM-5-TR p.422 (narcolepsy)", "DSM-5-TR p.429 (OSA)", "DSM-5-TR p.465–467 (RLS)"],
+    refs: ["DSM-5-TR p.410 (insomnia)", "DSM-5-TR p.422 (narcolepsy)", "DSM-5-TR p.429 (OSA)", "DSM-5-TR p.465 to 467 (RLS)"],
   },
   {
     id: "sb-08",
@@ -156,7 +156,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "conduct", threshold: "3 of 15 within 12 months", items: [it("Cruel to animals", "Aggression to people and animals."), it("Breaks into a house or car", "Deceitfulness or theft."), it("Sets fires to cause damage", "Destruction of property."), it("Stays out at night before age 13", "Serious violation of rules.")] },
     ],
     thresholds: ["6 symptoms for 6 months", "From early development", "4 symptoms for 6 months", "3 of 15 within 12 months", "2 weeks", "1 year"],
-    refs: ["DSM-5-TR pdf p.168–169 (ADHD)", "DSM-5-TR p.37 (autism)", "DSM-5-TR pdf p.728 (ODD)", "DSM-5-TR pdf p.739 (conduct)"],
+    refs: ["DSM-5-TR pdf p.168 to 169 (ADHD)", "DSM-5-TR p.37 (autism)", "DSM-5-TR pdf p.728 (ODD)", "DSM-5-TR pdf p.739 (conduct)"],
   },
   {
     id: "sb-10",
@@ -171,7 +171,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "factitious", threshold: "No set duration", items: [it("Fakes or induces illness", "Factitious Criterion A."), it("Deception is identified", "Required for the diagnosis."), it("No obvious outside reward", "Otherwise it's malingering."), it("Can be imposed on another person", "Factitious disorder imposed on another.")] },
     ],
     thresholds: ["Typically more than 6 months", "At least 6 months", "No set duration (acute if under 6 months)", "No set duration", "At least 1 month"],
-    refs: ["DSM-5-TR pdf p.518 (somatic symptom)", "DSM-5-TR pdf p.525 (illness anxiety)", "DSM-5-TR pdf p.529–531 (FND)", "DSM-5-TR pdf p.538 (factitious)"],
+    refs: ["DSM-5-TR pdf p.518 (somatic symptom)", "DSM-5-TR pdf p.525 (illness anxiety)", "DSM-5-TR pdf p.529 to 531 (FND)", "DSM-5-TR pdf p.538 (factitious)"],
   },
   {
     id: "sb-11",
@@ -186,7 +186,7 @@ export const BOARDS: SortBoard[] = [
       { dx: "ftd", threshold: null, items: [it("Disinhibition early on", "Behavioural variant."), it("Loss of empathy", "Behavioural variant."), it("Overeats sweets", "Hyperorality."), it("Memory relatively spared", "FTD Criterion D.")] },
     ],
     thresholds: null,
-    refs: ["DSM-5-TR p.672 (delirium)", "DSM-5-TR p.690 (Alzheimer's)", "DSM-5-TR pdf p.939–940 (Lewy)", "DSM-5-TR pdf p.935 (frontotemporal)"],
+    refs: ["DSM-5-TR p.672 (delirium)", "DSM-5-TR p.690 (Alzheimer's)", "DSM-5-TR pdf p.939 to 940 (Lewy)", "DSM-5-TR pdf p.935 (frontotemporal)"],
   },
 ];
 

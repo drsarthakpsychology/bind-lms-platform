@@ -135,17 +135,25 @@ drop policy if exists "match_answers_own" on public.match_answers;
 create policy "match_answers_own" on public.match_answers for select using (auth.uid() = user_id or public.is_admin());
 
 -- ------------------------------------------------------------ blitz_results ---
+-- One row per 60-second round, written as the round is played. The server
+-- updates it on every answer only where `answered` still matches the last
+-- count it saw, so an old run token can't be replayed to retry a question.
 create table if not exists public.blitz_results (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references public.profiles (id) on delete cascade,
   day date not null,
-  score int not null,
-  correct int not null,
-  answered int not null,
+  score int not null default 0,
+  correct int not null default 0,
+  answered int not null default 0,
   best_combo int not null default 0,
   run_id text not null unique,
+  started_at timestamptz not null default now(),
+  finished_at timestamptz,
   created_at timestamptz not null default now()
 );
+-- For databases where an earlier copy of this file already made the table.
+alter table public.blitz_results add column if not exists started_at timestamptz not null default now();
+alter table public.blitz_results add column if not exists finished_at timestamptz;
 create index if not exists blitz_results_user_idx on public.blitz_results (user_id, score desc);
 create index if not exists blitz_results_score_idx on public.blitz_results (score desc);
 alter table public.blitz_results enable row level security;

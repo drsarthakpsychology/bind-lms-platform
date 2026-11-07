@@ -108,6 +108,169 @@ Break the question into **concepts**, list **synonyms** for each, combine them w
 Not a list of summaries, but a **synthesis**: what is agreed, what conflicts, why studies might disagree (samples, measures), and the **gap** your study fills.
 :::
 
+:::qa How do you write a problem statement that convinces a reviewer the study is worth doing? Give a model paragraph. [starting]
+### What a problem statement must do
+1. Name the **problem** (what is wrong or unknown).
+2. Show its **size or impact** (who is affected, how much).
+3. Say what is **already known** and what is **missing**.
+4. State **why filling the gap matters** (for theory, practice or policy).
+5. End with the **purpose** of this study.
+
+### A model paragraph
+"Exam-related distress is common among Indian undergraduates and is linked to poor sleep, dropout and, at worst, suicide. Studies of sleep and distress have mostly sampled Western students living at home, while Indian students increasingly live in hostels with different routines and pressures. It is not known whether night-time phone use relates to sleep quality and distress in the same way in hostel residents. Answering this would guide hostel wellbeing policies and sleep education. This study therefore examines the relation between phone use after 11 p.m., sleep quality and distress among first-year hostel residents in Pune."
+
+### Common faults
+| Fault | Example |
+|---|---|
+| Too broad | "Students face many problems" |
+| No gap | Summarises studies but never says what is missing |
+| Solution disguised as a problem | "There is a lack of yoga classes" (assumes the answer) |
+| No population | "People use phones too much" |
+:::
+
+:::qa Explain inductive and deductive reasoning in research using the "wheel of science". [starting]
+### Two directions of reasoning
+| | Deductive | Inductive |
+|---|---|---|
+| Direction | Theory → hypothesis → observation | Observation → pattern → theory |
+| Typical in | Experiments and hypothesis testing | Exploratory, qualitative and grounded theory work |
+| Conclusion | Follows necessarily if premises are true | Probable, open to revision |
+| Example | Attachment theory predicts insecure students will report more loneliness; test it | Interviews show students describe "not fitting in" during the first term; build a model of belonging |
+
+### The wheel of science
+Research moves in a circle:
+1. **Theory** suggests hypotheses (deduction).
+2. Hypotheses guide **observations**.
+3. Observations reveal **empirical generalisations** (induction).
+4. Generalisations confirm, revise or replace the **theory**.
+
+### Why both matter
+A field that only deduces never discovers new ideas; a field that only induces never tests them rigorously. Psychology's best programmes, such as the study of learned helplessness, moved round the wheel several times.
+:::
+
+:::qa What is the difference between a constitutive (conceptual) definition and an operational definition? Give both for "self-esteem". [starting]
+### The two kinds
+| Kind | What it does | Self-esteem |
+|---|---|---|
+| **Constitutive** | Defines a construct using other constructs; links it to theory | "A person's overall evaluation of their own worth" |
+| **Operational** | Specifies the procedure used to measure or create it | "The total score on a 10-item self-esteem scale (range 10 to 40), completed in the person's first language" |
+
+### Why you need both
+- The constitutive definition tells readers **what you mean** and where the idea sits in theory.
+- The operational definition tells them **exactly what you did**, so they can replicate it and judge validity.
+
+### A check for validity
+Ask whether the operation fits the concept. If self-esteem is defined as global self-worth, then a scale of academic self-confidence alone is a poor operational definition: it measures only one domain.
+:::
+
+:::qa Identify the independent and dependent variables in five study descriptions. [starting]
+### The descriptions and answers
+| Study | IV | DV |
+|---|---|---|
+| 1. Patients get either 6 or 12 sessions of CBT; depression is measured at the end | Number of sessions (6 or 12) | Depression score |
+| 2. Students read a passage in silence, with music or with traffic noise, and answer questions | Noise condition | Comprehension score |
+| 3. Researchers compare reaction times of people who slept 4, 6 or 8 hours | Hours of sleep | Reaction time |
+| 4. Parents in Bihar and Kerala are compared on attitudes to girls' education | State (an attribute IV) | Attitude score |
+| 5. A study tests whether job autonomy predicts burnout among nurses | Job autonomy (a predictor) | Burnout |
+
+### A quick rule
+Ask: "What is changed, chosen or used to predict?" (IV) and "What is measured as the outcome?" (DV).
+
+### The trap
+In studies 4 and 5 the IV is **not manipulated**: these are attribute or predictor variables. The studies can show differences or associations, not cause. Use "predictor" and "outcome" for correlational designs.
+:::
+
+:::qa How do you judge whether a source is trustworthy enough to use in your literature review? [starting]
+### Five questions
+| Question | What to check |
+|---|---|
+| Currency | When was it published? Is there newer work that changes the picture? |
+| Relevance | Does it address your population, variables and question? |
+| Authority | Who wrote it, with what expertise? Was it peer reviewed? |
+| Accuracy | Are methods described? Are claims supported by data? Do other studies agree? |
+| Purpose | Is it trying to inform, or to sell, persuade or campaign? |
+
+### Red flags
+- Claims of cures, or very large effects from tiny samples.
+- No method section, or a method too vague to repeat.
+- Publication in a venue that charges fees and promises acceptance in days.
+- Only the authors' own earlier work is cited.
+- Newspaper or social media summaries without the original study.
+
+### What to do with weaker sources
+Grey literature (government reports, NGO evaluations, theses) can be valuable, especially in India, where much applied work never reaches journals. Use it, but say what kind of source it is and weigh it accordingly.
+:::
+
+:::qa Distinguish aims, objectives, research questions and hypotheses, with one example of each for the same study. [starting]
+### Example study: peer support and exam anxiety
+| Element | What it is | Example |
+|---|---|---|
+| Aim | The broad purpose | To examine whether peer support helps first-year students manage exam anxiety |
+| Objectives | Specific, measurable tasks | (1) To measure exam anxiety before and after an 8-week peer-support group. (2) To compare change with a waiting-list group. (3) To explore participants' experiences of the group |
+| Research question | The question the study answers | Does participation in a peer-support group reduce exam anxiety compared with waiting? |
+| Hypothesis | A testable prediction | Students in the peer-support group will show a greater reduction in anxiety scores than waiting-list students |
+
+### How they fit together
+Aim → objectives → questions → hypotheses run from broad to specific. Qualitative objectives (like objective 3) have research questions but usually no hypotheses.
+:::
+
+:::qa When would you choose a cross-sectional design rather than a longitudinal one? [starting]
+### Comparison
+| | Cross-sectional | Longitudinal |
+|---|---|---|
+| Measurement | Once | Repeatedly, same people |
+| Time and cost | Low | High |
+| What it shows | Prevalence, differences between groups, associations at one time | Change within people, temporal order, development |
+| Main weaknesses | Cannot show direction; age and cohort mixed | Attrition, practice effects, slow, costly |
+
+### Choose cross-sectional when
+- You need **prevalence** (how many students have insomnia now).
+- You are **exploring** associations to justify a larger study.
+- Time and budget are short (a Master's dissertation).
+
+### Choose longitudinal when
+- The question is about **change** or **development** (how attention develops from 10 to 16).
+- You need **temporal order** (does loneliness come before depression, or after?).
+- You want to study **predictors of outcomes** (who relapses).
+
+### A middle path
+A **panel** study with two or three waves over a year, or a cross-sequential design, gives some longitudinal information at lower cost.
+:::
+
+:::qa Why does replication matter, and what is the difference between direct and conceptual replication? [starting]
+### Why it matters
+A single study can be a fluke (a Type I error), a product of one lab's procedures, or the result of flexible analysis. Repeating it tells us whether the finding is **real and robust**.
+
+### Two kinds
+| | Direct (close) replication | Conceptual replication |
+|---|---|---|
+| What changes | As little as possible: same procedure, new sample | The operations change; the hypothesis stays |
+| What it tests | Is the original result reliable? | Does the idea generalise across methods? |
+| Example | Repeat a memory experiment exactly in Bengaluru | Test the same theory with a different memory task and an online sample |
+
+### Why both are needed
+Conceptual replications alone can hide failures: if one fails, people blame the new method. Direct replications check the original finding itself. Together they build confidence that a result is both real and general.
+:::
+
+:::qa Compare quantitative and qualitative research at a first level: aims, data, samples and results. [starting]
+### Side by side
+| Feature | Quantitative | Qualitative |
+|---|---|---|
+| Typical question | How many? How much? Does X cause Y? | What is it like? What does it mean? How does it happen? |
+| Data | Numbers from scales, tests, counts | Words, images, observations |
+| Sample | Larger; often aiming to represent a population | Smaller; chosen for rich information |
+| Tools | Questionnaires, experiments, standardised tests | Interviews, focus groups, observation, documents |
+| Analysis | Statistics | Coding and interpretation |
+| Result | Estimates, tests of hypotheses | Themes, models, rich descriptions |
+| Researcher | Kept at a distance | Part of the process; reflects on own influence |
+
+### The same topic, two ways
+- **Quantitative:** a survey of 800 students finds that 32% report high exam anxiety, and anxiety correlates with poor sleep.
+- **Qualitative:** interviews with 15 students show how family expectations and comparison on social media turn exams into tests of self-worth.
+
+The two answer different questions. Many good studies combine them.
+:::
+
 ## 4.2 Q&A bank · Beginner [core][beginner]
 
 :::qa Explain the difference between random sampling and random assignment using a two-by-two table of possible studies. [beginner]
@@ -210,6 +373,199 @@ If you expect a 70% response rate: 322 ÷ 0.70 = **about 460 invitations**.
 
 ### Step 4: check the sampling method
 These formulas assume **simple random sampling**. If you sample whole classes (cluster sampling), multiply by the **design effect** (see the Advanced bank). And no formula rescues a biased frame.
+:::
+
+:::qa Explain the difference between reliability and validity using the target analogy, and list what you check before choosing a scale for your study. [beginner]
+### The target analogy
+| Pattern of shots | Reliability | Validity |
+|---|---|---|
+| Tight cluster on the bullseye | High | High |
+| Tight cluster off-centre | High | Low (consistently wrong) |
+| Scattered around the bullseye | Low | Low (on average near, but no single shot trustworthy) |
+| Scattered everywhere | Low | Low |
+
+Reliability limits validity: a scale cannot be accurate if it is not consistent.
+
+### Before choosing a scale, check
+1. **Construct fit:** does its definition match yours?
+2. **Reliability:** internal consistency (α about .70 or more for research), test-retest if the trait is stable.
+3. **Validity evidence:** content, criterion (does it predict what it should?), construct (convergent and discriminant correlations, factor structure).
+4. **Norms and population:** was it developed or validated with people like yours (age, language, culture)?
+5. **Language:** is there a validated translation (Hindi, Tamil, Marathi), or will you need to adapt it?
+6. **Practicality:** length, scoring, cost, licence.
+7. **Response format:** suitable literacy level and response scale.
+:::
+
+:::qa Compare matching and random assignment as ways of making groups equivalent. When is matching useful? [beginner]
+### Comparison
+| | Random assignment | Matching |
+|---|---|---|
+| How | Chance decides each person's group | Pair people on a variable, then split pairs across groups |
+| Controls | All variables, known and unknown, on average | Only the matched variables |
+| Needs | Enough people | A pretest or known characteristic; enough people to find pairs |
+| Risk | Chance imbalance in small samples | Unmatched variables may still differ; regression if matched on extreme scores |
+
+### When matching helps
+- **Small samples:** randomising 20 people may leave groups unequal on a key variable by chance.
+- **A strong nuisance variable:** matching on baseline severity reduces error variance and raises power.
+- **Best of both:** **matched randomisation** (or a randomised block design): form pairs or blocks, then randomly assign within each.
+
+### The danger in quasi-experiments
+Matching non-randomised groups (patients versus healthy controls) on a few variables does **not** make them equivalent on everything else. And matching people from two groups with different means on a pretest leads to regression artefacts.
+:::
+
+:::qa A 2 × 3 between-subjects factorial study needs 20 participants per cell. How many people in total? How would the number change in a fully within-subjects version? [beginner]
+### Between-subjects
+Cells = 2 × 3 = 6. Total = 6 × 20 = **120 people**, each in one condition.
+
+### Fully within-subjects
+Each person experiences all 6 conditions, so far fewer are needed, often **20 to 30 people** for similar power, because each person serves as their own control.
+
+### Mixed design
+If the first factor (2 levels) is between and the second (3 levels) is within: 2 groups × 20 = **40 people**, each doing all 3 levels.
+
+### Choosing
+| Consider | Favours between | Favours within |
+|---|---|---|
+| Carry-over or learning between conditions | Yes | |
+| Limited participants | | Yes |
+| Fatigue in long sessions | Yes | |
+| Need for high power | | Yes |
+| Condition reveals the hypothesis | Yes | |
+:::
+
+:::qa List practical ways to reduce demand characteristics and experimenter effects in a lab experiment. [beginner]
+### Demand characteristics (from participants)
+1. **Cover stories** that give a plausible, less revealing purpose (with debriefing).
+2. **Between-subjects designs** so participants see only one condition.
+3. **Unobtrusive measures** (behaviour, reaction times) instead of obvious questions.
+4. **Post-experiment inquiry**: ask what participants thought the study was about, and check whether guessers behaved differently.
+5. **Anonymity**, reducing the wish to please or look good.
+
+### Experimenter effects (from researchers)
+1. **Blind the experimenter** to the hypothesis or the condition.
+2. **Standardise**: scripts, recorded instructions, computer-delivered tasks.
+3. **Use several experimenters** and check that results do not differ by experimenter.
+4. **Automate scoring**, or use blind raters with clear criteria.
+5. **Double-blind** procedures in drug and therapy trials.
+
+### Why it matters
+Both threaten **construct validity**: the effect might come from expectations rather than the variable you meant to study.
+:::
+
+:::qa How do you design an interview schedule for a semi-structured interview? [beginner]
+### Step by step
+1. **Start from the research questions**: list the topics each one needs.
+2. **Write open questions** for each topic: "Tell me about…", "How did you…", "What was that like?"
+3. **Order them**: easy and descriptive first, sensitive later, a closing question ("Is there anything I have not asked that matters to you?").
+4. **Add probes and prompts** under each question: "Can you give an example?", "What happened next?", "How did you feel then?"
+5. **Avoid** leading questions, double-barrelled questions, jargon and "why" questions that sound accusing.
+6. **Translate and back-translate** if interviewing in another language; check local idioms (for example "tension", "ghabrahat").
+7. **Pilot** with two or three people; revise.
+8. **Plan the setting**: privacy, family members present or not, recording consent, a distress protocol.
+
+### A small example
+Main question: "Can you tell me about the time you first felt you needed help for your mood?"
+- Probe: "What made you think it was more than ordinary stress?"
+- Probe: "Who did you talk to first?"
+:::
+
+:::qa Two observers code a child as on-task or off-task in 50 intervals. Both say on-task 30; A on and B off 5; A off and B on 5; both off 10. Compute percentage agreement and kappa. [beginner]
+### Step 1: observed agreement
+po = (30 + 10) ÷ 50 = **.80** (80%)
+
+### Step 2: expected (chance) agreement
+- A says on-task 35 times, B 35 times.
+- A says off-task 15 times, B 15 times.
+- pe = (35 × 35 + 15 × 15) ÷ 50² = (1,225 + 225) ÷ 2,500 = **.58**
+
+### Step 3: kappa
+κ = (po − pe) ÷ (1 − pe) = (.80 − .58) ÷ (1 − .58) = .22 ÷ .42 = **.52**
+
+### Step 4: interpret
+Agreement of 80% sounds high, but because both observers code "on-task" most of the time, much of it would happen by chance. Kappa of .52 is only **moderate**. Retrain observers with clearer definitions and recheck before collecting the main data.
+:::
+
+:::qa How does ex post facto research differ from an experiment? Use an example and list its main limitations. [beginner]
+### Example
+A researcher compares adults who lost a parent before age 10 with those who did not, on adult depression.
+
+### How it differs
+| | Experiment | Ex post facto |
+|---|---|---|
+| IV | Manipulated by the researcher | Already happened; selected |
+| Assignment | Random | Self-selected by life |
+| Causal claim | Strong | Weak |
+| When used | When manipulation is possible and ethical | When it is not: loss, trauma, disease, disaster |
+
+### Limitations
+1. **Self-selection**: the groups may differ in many other ways (poverty, family conflict, genetics).
+2. **Reverse causation** is sometimes possible.
+3. **No control over the IV's timing or strength.**
+4. **Retrospective recall** may be biased by current mood.
+
+### Strengthening it
+Match or statistically control key confounders, use prospective records instead of recall where possible, test several alternative explanations, and look for dose-response patterns (earlier loss, stronger effect).
+:::
+
+:::qa How do you read an interrupted time series? Use the example of a helpline launch and monthly emergency visits for self-harm. [beginner]
+### The design
+Many monthly observations before the launch (O O O O O O) and many after (O O O O O O).
+
+### What to look for
+| Change | Meaning |
+|---|---|
+| **Level** | A sudden drop right after the launch |
+| **Slope** | The trend changes: rising before, flat or falling after |
+| Delay | The change appears some months later (plausible if awareness grows slowly) |
+| Seasonality | Regular yearly patterns that must not be mistaken for an effect |
+
+### Threats and fixes
+- **History**: another event at the same time (a new hospital, a policy, a pandemic). Fix: add a **comparison series** from a district without the helpline.
+- **Instrumentation**: a change in how visits were recorded. Fix: check record-keeping.
+- **Regression**: if the launch followed an unusual spike. Fix: use many pre-launch points.
+
+### Analysis
+Segmented regression estimates the change in level and slope; methods for autocorrelation (neighbouring months resemble each other) are needed.
+:::
+
+:::qa How should a scale developed in English be adapted for Marathi-speaking participants? [beginner]
+### Step by step
+1. **Permission** from the scale's developers.
+2. **Forward translation** by two independent bilingual translators, at least one familiar with psychology.
+3. **Reconciliation**: compare and agree a single version.
+4. **Back-translation** into English by translators who have not seen the original; compare meanings, not words.
+5. **Expert committee review**: conceptual, item and semantic equivalence. Replace idioms that do not work ("feeling blue").
+6. **Cognitive interviews**: ask 10 to 15 target participants what each item means to them in their own words.
+7. **Pilot** and revise.
+8. **Psychometric testing**: reliability, factor structure (CFA), and **measurement invariance** if comparing with English speakers.
+9. **Local norms** if scores will be interpreted against cut-offs.
+
+### Kinds of equivalence
+| Kind | Question |
+|---|---|
+| Conceptual | Does the construct exist and mean the same here? |
+| Item | Is each item relevant and acceptable? |
+| Semantic | Do the words carry the same meaning? |
+| Operational | Is the format (self-report, Likert) suitable? |
+| Measurement | Does the scale behave the same psychometrically? |
+:::
+
+:::qa A researcher wants to study how attention control develops between ages 10 and 16 and whether smartphone use affects it. Choose a developmental design and justify it. [beginner]
+### Options considered
+| Design | Fit |
+|---|---|
+| Cross-sectional (test 10-, 12-, 14- and 16-year-olds once) | Fast, but confounds age with cohort; today's 16-year-olds got phones later than today's 10-year-olds |
+| Longitudinal (follow 10-year-olds for six years) | Shows individual change, but slow, costly, high attrition, and phones change over six years |
+| **Cross-sequential** (start with cohorts aged 10, 12 and 14; follow each for two years) | Covers 10 to 16 in two years; separates age from cohort; measures within-person change |
+
+### The choice
+A **cross-sequential design** with three cohorts, tested yearly for two years, measuring attention (computerised tasks) and smartphone use (objective screen-time data, not just self-report).
+
+### Analysis and cautions
+- Growth-curve (multilevel) models of attention over age.
+- Smartphone use is not manipulated, so effects are associations; test whether earlier use predicts later attention controlling for earlier attention (cross-lagged analysis).
+- Plan for attrition and practice effects (alternate test forms).
 :::
 
 ## 4.3 Q&A bank · Advanced [core][advanced]
@@ -336,6 +692,232 @@ p-hacking, HARKing, optional stopping, outcome switching and selective reporting
 - Honest deviations, which are fine **if reported** with reasons.
 :::
 
+:::qa Is psychology a science? Discuss with reference to positivism and interpretivism. [advanced]
+### The positivist answer: yes, if it follows scientific method
+- Psychology studies observable behaviour and measurable processes.
+- It uses hypotheses, controlled experiments, statistics and replication.
+- Theories make falsifiable predictions (operant conditioning, signal detection, memory models).
+
+### The interpretivist challenge
+- Human action is **meaningful**: the same act (a raised hand) means different things in different contexts.
+- People reflect on and change in response to theories about them (a "looping effect" that atoms do not show).
+- Understanding (**Verstehen**) requires interpretation, not just measurement.
+
+### Critical and post-positivist positions
+- Post-positivism accepts that observation is theory-laden and knowledge provisional, but keeps the goal of testing ideas against evidence.
+- Critical approaches add that research questions and categories reflect power: for example, who decides what counts as "normal".
+
+### A balanced conclusion
+| Area | How scientific in the strict sense |
+|---|---|
+| Psychophysics, perception, learning, neuroscience | Highly: precise measurement and laws |
+| Social, personality, clinical | Partly: probabilistic, context-sensitive, replication problems |
+| Meaning, identity, culture | Needs interpretive methods alongside measurement |
+
+Psychology is best seen as a **plural science**: committed to evidence, using different methods for different kinds of question.
+:::
+
+:::qa How do you conduct and analyse a focus group? When should you not use one? [advanced]
+### Running it
+1. **Composition**: 6 to 10 people who share a relevant characteristic (all women caregivers; all first-year students). Mixed status groups silence junior members.
+2. **Number of groups**: usually 3 to 6 per segment, until new groups add little.
+3. **Moderator**: introduces, keeps time, encourages quiet members, manages dominant ones, probes. An **assistant** takes notes on who speaks and on non-verbal reactions.
+4. **Topic guide**: 5 to 8 open questions, from general to specific.
+5. **Ground rules**: confidentiality within the group, respect, no right or wrong answers.
+
+### Analysing it
+- Transcribe with speaker labels.
+- Use thematic analysis, but also analyse **interaction**: where people agreed, disagreed, changed their minds, or joked. The group process is data.
+- Report how many groups and which participants supported a theme; avoid treating the group as one voice.
+
+### When not to use one
+| Situation | Why not |
+|---|---|
+| Highly sensitive personal topics (sexual abuse, suicide attempts) | Disclosure is unsafe and confidentiality cannot be guaranteed |
+| Need for individual life histories | Groups give shared views, not individual depth |
+| Strong hierarchy among participants (staff and their managers) | Conformity and fear distort what is said |
+| Very small, scattered populations | Hard to assemble |
+:::
+
+:::qa How do you justify sample size in a qualitative study? Contrast saturation with information power. [advanced]
+### Saturation
+- Originally **theoretical saturation** in grounded theory: data collection continues until new data add no new properties to the categories.
+- Often misused as "we stopped when we heard nothing new", without saying how that was judged.
+
+### Information power
+The more relevant information each participant gives, the fewer participants are needed. Five dimensions:
+| Dimension | Fewer participants needed when… |
+|---|---|
+| Aim | The aim is narrow |
+| Sample specificity | Participants have very specific relevant experience |
+| Established theory | The study uses an existing theory |
+| Quality of dialogue | Interviews are rich and in depth |
+| Analysis strategy | Analysis is case-focused rather than cross-case |
+
+### Rough ranges by approach
+| Approach | Typical size |
+|---|---|
+| IPA | 3 to 10 |
+| Phenomenology | 5 to 25 |
+| Thematic analysis (interviews) | 10 to 30 |
+| Grounded theory | 20 to 30 or more, until theoretical saturation |
+| Focus groups | 3 to 6 groups per segment |
+
+### How to write it up
+State the approach, the intended range and why, how you will decide to stop, and afterwards report how that decision was actually made.
+:::
+
+:::qa A student says, "My family thinks I'm lazy, but they don't understand stress." Compare how thematic analysis and discourse analysis would treat this sentence. [advanced]
+### Thematic analysis
+- Treats the sentence mainly as a **report of experience**.
+- Codes might be: "family misunderstanding", "stress invalidated", "labelled as lazy".
+- These join others into a theme such as **"Feeling misunderstood at home"**.
+- Question asked: **what** is the participant's experience?
+
+### Discourse analysis
+- Treats the sentence as **action**: what is the speaker **doing** with these words?
+- Notices the contrast "lazy" versus "stress": the speaker **rejects a moral label** (laziness, a fault of character) and replaces it with a **medical or psychological one** (stress, something that happens to you).
+- Notices "they don't understand": positioning the family as lacking knowledge, the speaker as having it.
+- Question asked: **how** does talk construct identities and responsibility, and what wider discourses (psychological language spreading among young Indians) does it draw on?
+
+### Why it matters
+| | Thematic analysis | Discourse analysis |
+|---|---|---|
+| View of language | A window onto experience | A tool that builds reality |
+| Unit of analysis | Patterns across participants | Fine detail of talk and text |
+| Product | Themes | Accounts of discursive strategies |
+:::
+
+:::qa What makes a randomised controlled trial rigorous? Explain allocation concealment, blinding, randomisation methods and intention-to-treat. [advanced]
+### The key elements
+| Element | What it means | What it prevents |
+|---|---|---|
+| **Random sequence** | Computer-generated, not alternation or birth dates | Selection by predictable patterns |
+| **Block randomisation** | Randomise in blocks (for example of 4) so groups stay equal in size | Unequal groups if the trial stops early |
+| **Stratified randomisation** | Randomise separately within strata (severity, site) | Imbalance on key prognostic factors |
+| **Allocation concealment** | The person enrolling a participant cannot know the next assignment (central telephone or web system, sealed opaque envelopes) | Recruiters steering sicker patients to one arm |
+| **Blinding** | Participants, therapists, outcome assessors and analysts kept unaware where possible | Expectancy and assessment bias |
+| **Intention-to-treat** | Analyse everyone as randomised | Bias from differential drop-out |
+| **Pre-registration** | Outcomes and analysis fixed in advance | Outcome switching |
+
+### Concealment versus blinding
+Concealment protects the **assignment process** before allocation and is always possible. Blinding protects **after** allocation; in psychotherapy trials participants and therapists cannot be blinded, so blind outcome assessment becomes essential.
+
+### The flow diagram
+A CONSORT diagram shows numbers assessed, excluded, randomised, allocated, lost to follow-up and analysed in each arm, so readers can see attrition at a glance.
+:::
+
+:::qa Describe the steps of a systematic review and meta-analysis. What are fixed-effect and random-effects models, and what does I² tell you? [advanced]
+### Steps
+1. **Question** in a structured form (population, intervention, comparison, outcome).
+2. **Protocol** registered in advance.
+3. **Search** several databases plus grey literature, with documented strings.
+4. **Screen** titles, abstracts and full texts, by two reviewers independently.
+5. **Extract data** and **assess risk of bias** in each study.
+6. **Synthesise**: meta-analysis if studies are similar enough; narrative synthesis if not.
+7. **Assess certainty** of the evidence and **publication bias** (funnel plot).
+8. **Report** with a flow diagram.
+
+### Two models
+| | Fixed-effect | Random-effects |
+|---|---|---|
+| Assumption | One true effect; studies differ only by chance | True effects vary between studies (different populations, doses) |
+| Weighting | Heavily toward large studies | More even |
+| Confidence interval | Narrower | Wider, more honest when studies differ |
+| Use when | Studies are near-identical | Usually, in psychology |
+
+### Heterogeneity and I²
+I² is the percentage of variation across studies due to **real differences** rather than chance. Rough guide: 25% low, 50% moderate, 75% high. High I² means a single pooled number may mislead; explore why with subgroup analysis or meta-regression.
+:::
+
+:::qa What special procedures are needed for research with children, psychiatric inpatients and tribal communities in India? [advanced]
+### Children
+- **Parental consent plus the child's assent**, appropriate to age.
+- Child-friendly information (pictures, simple words).
+- Protection from coercion through teachers; a clear route to stop.
+- Mandatory reporting duties (for example under child-protection law) must be explained.
+
+### Psychiatric inpatients
+- **Capacity** to consent assessed for this decision, at this time.
+- Under the Mental Healthcare Act, 2017, research needs **free and informed consent**; for those who cannot consent, permission from the State Mental Health Authority and the nominated representative, and only if the research cannot be done with people able to consent.
+- Separate the researcher from the treating team where possible, so care is not seen to depend on participation.
+- Extra attention to confidentiality and distress.
+
+### Tribal and marginalised communities
+- **Community engagement** first: village elders, gram sabhas or community organisations, alongside individual consent.
+- Consent in the local language, read aloud where literacy is low, with an impartial witness.
+- **Benefit sharing** and feedback of results in a usable form.
+- Avoid extractive research and stigmatising labels; involve community members as co-researchers where possible.
+
+### Common to all
+Ethics committee approval, minimal risk, a distress protocol, and the right to withdraw without loss of services.
+:::
+
+:::qa Under the UGC 2018 plagiarism regulations, classify three theses with 8%, 34% and 52% similarity, and state what happens to each. [advanced]
+### Classification
+| Thesis | Similarity | Level | Consequence for a student |
+|---|---|---|---|
+| A | 8% | Level 0 (up to 10%) | Minor similarity; no penalty |
+| B | 34% | Level 1 (above 10% to 40%) | Submit a revised script within six months |
+| C | 52% | Level 2 (above 40% to 60%) | Debarred from submitting a revised script for one year |
+
+Above 60% (Level 3): the registration for the programme is cancelled.
+
+### What is excluded from similarity
+Quoted work with credit, references and bibliography, common knowledge, generic terms and standard symbols, and properly acknowledged material.
+
+### Zero tolerance in the core work
+The abstract, summary, hypotheses, observations, results, conclusions and recommendations must be the researcher's own.
+
+### Beyond the software
+A low percentage does not prove originality: paraphrased or translated copying can escape detection. Supervisors and committees must still judge whether ideas are properly credited.
+:::
+
+:::qa How do you write a strong discussion section without overclaiming? Give a short model. [advanced]
+### Structure
+1. **Restate the main finding** in plain words (not statistics).
+2. **Relate it to the literature**: where it agrees, where it differs, and possible reasons.
+3. **Interpret mechanisms** carefully: offer explanations, labelled as such.
+4. **Limitations** honestly: design, sample, measures, analysis.
+5. **Implications** for practice, policy and theory, proportionate to the evidence.
+6. **Future research** that would address the limitations.
+7. A short **conclusion**.
+
+### Overclaiming to avoid
+| Overclaim | Better |
+|---|---|
+| "Proves that yoga cures anxiety" | "Supports a modest reduction in anxiety after eight weeks" |
+| "Instagram causes body dissatisfaction" | "Instagram use was associated with body dissatisfaction" |
+| "Applies to all Indian youth" | "In urban college students in Pune" |
+| "No effect of gender" | "No significant difference was detected; the study had limited power for small effects" |
+
+### A model paragraph
+"Students in the peer-support group reported a larger fall in exam anxiety than those on the waiting list, a moderate effect. This fits earlier work on social support as a buffer against stress, though most of that work used Western samples. Because outcome measures were self-reported and participants knew their group, expectancy may have contributed. A trial with an active control and blind assessment is needed before colleges adopt the programme widely."
+:::
+
+:::qa Explain the trade-off between internal and external validity, and name designs that try to get both. [advanced]
+### The trade-off
+| | Lab experiment | Field survey |
+|---|---|---|
+| Control | High | Low |
+| Internal validity | High | Low |
+| Realism | Low | High |
+| External validity | Often limited | Often higher |
+
+Tight control removes confounds but creates artificial settings and selected samples; realism brings back confounds.
+
+### Designs that bridge the gap
+1. **Field experiments**: random assignment in real settings (schools, workplaces, apps).
+2. **Pragmatic trials**: test an intervention under everyday conditions, with broad eligibility and usual-care comparison.
+3. **Cluster randomised trials** in real organisations.
+4. **Natural experiments and regression discontinuity**: real-world assignment that is "as good as random".
+5. **Multi-site replications**: the same controlled study in many places and populations.
+6. **Experience sampling**: repeated measurement in daily life, sometimes with micro-randomisation of prompts.
+
+### The principle
+No single study maximises everything. Knowledge grows from **programmes** of research: lab studies identify mechanisms; field studies test whether they matter in real life.
+:::
+
 ## 4.4 Long answers, short notes and viva [core]
 
 ### Long answer skeletons (15 to 20 marks)
@@ -406,7 +988,7 @@ Q: The scientific method differs from other ways of knowing mainly because it:
 - *Has built-in ways of finding and fixing its own errors
 - Relies on the most qualified experts
 - Builds on common sense and tradition
-- Reaches conclusions that never need changing
+- Reaches final conclusions that never need to be changed later
 > Public, replicable testing makes self-correction possible.
 
 Q: Which is NOT one of Kerlinger's criteria for a good research problem?
@@ -433,7 +1015,7 @@ Q: "There will be no significant difference in recall between the music and sile
 Q: A list of patients sorted by hospital ward, with every 10th patient chosen, produces a sample made up only of patients in bed 10 of each ward. This problem is:
 - Snowballing
 - Quota bias
-- Coverage error
+- Coverage error in the hospital's patient list
 - *Periodicity in systematic sampling
 > A repeating pattern in the list matches the sampling interval.
 
@@ -453,7 +1035,7 @@ Q: A sample is chosen to include exactly 40 men and 60 women, with interviewers 
 
 Q: Kerlinger's principle for designing experiments is:
 - PICO
-- CIPP
+- CIPP model
 - *MAXMINCON
 - IMRaD
 > Maximise systematic, minimise error, control extraneous variance.
@@ -467,7 +1049,7 @@ Q: Which design controls for the interaction of pretesting with the treatment?
 
 Q: A 2 × 2 graph shows two lines that cross. This indicates:
 - No main effects
-- A ceiling effect
+- A ceiling effect on the outcome measure
 - Perfect reliability
 - *A disordinal (crossover) interaction
 > The effect of one IV reverses across levels of the other.
@@ -475,7 +1057,7 @@ Q: A 2 × 2 graph shows two lines that cross. This indicates:
 Q: In a within-subjects study, performance improves on later conditions simply because of practice. The fix is:
 - Random sampling
 - A larger sample
-- A one-tailed test
+- A one-tailed test in the predicted direction
 - *Counterbalancing the order of conditions
 > Counterbalancing spreads order effects across conditions.
 
@@ -504,12 +1086,12 @@ Q: Students below a cut-off on an entrance score get a bridge course; outcomes a
 - Solomon design
 - Case-control design
 - *Regression discontinuity design
-- Changing-criterion design
+- Changing-criterion design with a cut-off
 > Assignment by cut-off score.
 
 Q: The main advantage of the multiple-baseline design over ABAB is that it:
 - Needs no baseline
-- Uses random assignment
+- Uses random assignment of people to phases
 - *Does not require withdrawing the treatment
 - Uses large groups
 > Staggered start replaces withdrawal.
@@ -517,7 +1099,7 @@ Q: The main advantage of the multiple-baseline design over ABAB is that it:
 Q: The problem of cross-sectional studies of ageing that Schaie's work exposed is:
 - Attrition
 - *Confounding of age with cohort
-- Practice effects
+- Practice effects from repeated testing
 - Observer drift
 > Different cohorts had different education and experiences.
 
@@ -538,7 +1120,7 @@ Q: A researcher spends 18 months living in a fishing community in Odisha to unde
 Q: In IPA, samples are usually:
 - Large and random
 - *Small, purposive and fairly homogeneous
-- Stratified by age
+- Stratified random samples by age and gender
 - Made of experts only
 > To allow detailed, idiographic analysis.
 
@@ -565,7 +1147,7 @@ Q: A trial gives questionnaires, then interviews a few participants to understan
 
 Q: The Belmont Report followed public outrage over:
 - The Milgram experiments
-- The Stanford prison study
+- The Stanford prison study in the 1970s
 - The Hawthorne studies
 - *The Tuskegee syphilis study
 > Tuskegee led directly to the National Commission and Belmont.
@@ -580,14 +1162,14 @@ Q: Under the UGC 2018 plagiarism regulations, similarity of 35% in a thesis fall
 Q: In APA 7, the first surname plus the Latin short form for 'and others' is used from the first citation when a work has:
 - *Three or more authors
 - Two authors
-- Six or more authors
+- Six or more authors (as in earlier editions)
 - Only one author
 > APA 7 simplified the earlier rule.
 
 Q: Bem's 2011 precognition studies are important to research methods mainly because they:
 - *Showed that standard methods could produce false positives
 - Proved that precognition exists in most people
-- Were the first experiments on memory in psychology
+- Were the first large experiments on memory in social psychology
 - Showed that qualitative methods are more valid
 > Failed replications highlighted flexible analyses and publication bias.
 

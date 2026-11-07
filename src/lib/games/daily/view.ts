@@ -11,6 +11,8 @@ import type { DailyCase, InvestigationKind } from "./types";
 export type CaseView = {
   mode: "daily" | "practice";
   caseId: string;
+  /** Made by AI (src/lib/ai-cases): the board shows the "AI case" badge. */
+  ai: boolean;
   difficulty: 1 | 2 | 3;
   setting: string;
   clues: string[];
@@ -34,11 +36,12 @@ export type CaseView = {
   };
 };
 
-export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice", admin: boolean): CaseView {
+export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice", admin: boolean, opts: { ai?: boolean } = {}): CaseView {
   const over = p.status !== "playing";
   return {
     mode,
     caseId: c.id,
+    ai: opts.ai === true,
     difficulty: c.difficulty,
     setting: c.setting,
     clues: over ? [...c.clues] : c.clues.slice(0, p.clues),

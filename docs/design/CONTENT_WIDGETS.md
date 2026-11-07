@@ -47,6 +47,11 @@ One or two sentences.
 | `neuron` | action potential: threshold slider (all-or-none), myelin on/off (saltatory conduction), live voltage trace | `{"title":"…","myelinated":true,"caption":"…"}` |
 | `pathways` | the four dopamine pathways with animated flow; toggle a D2 blocker and then serotonin 2A block, and see each pathway's effect | `{"system":"dopamine","caption":"…"}` |
 | `receptor` | full agonist vs partial agonist vs antagonist vs inverse agonist at one receptor, with a live signal bar | `{"receptor":"D2","caption":"…"}` |
+| `conditioning` | classical (bell, food, salivation, extinction) or operant (lever, reinforcement, variable ratio, extinction burst), played step by step | `{"kind":"classical"}` or `{"kind":"operant"}` |
+| `memoryflow` | sensory register, working memory and long-term memory with attention, rehearsal, encoding and retrieval | `{"caption":"..."}` |
+| `stress` | amygdala, hypothalamus, pituitary and adrenal chain with a beating heart, cortisol gauge, feedback and chronic stress | `{"caption":"..."}` |
+| `timeline` | put events in order on a line, then check. List the events in the CORRECT order; the widget shuffles them | `{"prompt":"Order Erikson's stages","events":[{"label":"Trust vs mistrust","when":"0 to 1 yr"},{"label":"Autonomy vs shame"}],"why":"..."}` |
+| `compare` | two states side by side with a slider (healthy vs ill, before vs after, novice vs expert) | `{"title":"...","a":{"label":"Novice","points":["..."],"summary":"..."},"b":{"label":"Expert","points":["..."],"summary":"..."}}` |
 | `synapse` | reuptake and enzyme block (ssri/snri/maoi), with a time-passes step | `{"drug":"ssri","caption":"…"}` |
 | `moodline` | mood over time → pick the pattern | see types |
 | `guess`, `decide`, `sort`, `build`, `worked`, `reveal` | commit first, then the reasoning (see types) | see types |

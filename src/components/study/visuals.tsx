@@ -431,7 +431,7 @@ function HalfLife() {
       </svg>
       <div className="mt-3"><Slider label="Half-life" value={h} min={4} max={60} step={1} onChange={setH} fmt={(v) => `${v} h`} /></div>
       <p className="mt-2 text-[0.95rem]" role="status">
-        Each dose stacks on what&rsquo;s left of the last. Levels settle (steady state) after about 4–5 half-lives: here about <strong className="tabular-nums">{Math.round(ssHours)} hours</strong> ({(ssHours / 24).toFixed(1)} days). Longer half-life → smoother levels, but a longer wait to settle and to wash out.
+        Each dose stacks on what&rsquo;s left of the last. Levels settle (steady state) after about 4 to 5 half-lives: here about <strong className="tabular-nums">{Math.round(ssHours)} hours</strong> ({(ssHours / 24).toFixed(1)} days). Longer half-life → smoother levels, but a longer wait to settle and to wash out.
       </p>
     </>
   );

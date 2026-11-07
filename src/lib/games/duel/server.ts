@@ -1,6 +1,7 @@
 import "server-only";
 import { admin, isMissing, namesFor } from "../server";
-import { BOT_AFTER_MS, canAnswer, matchState, pickItems, scoreAnswer, type AnswerRec, type MatchRec, type MatchState } from "./engine";
+import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
+import { BOT_AFTER_MS, WIN_XP, canAnswer, matchState, pickItems, scoreAnswer, type AnswerRec, type MatchRec, type MatchState } from "./engine";
 import { DUEL_ITEMS, duelItem, type DuelItem } from "./items";
 import { canPair, decayed, START_RATING, START_RD, tierFor, update, type Rating } from "./rating";
 import { buildDuelView, type DuelView } from "./view";
@@ -297,6 +298,11 @@ async function settle(db: Db, row: MatchRow, s: MatchState, now: number): Promis
     const { error } = await db.from("ratings").upsert(rows, { onConflict: "user_id" });
     if (error) console.warn("duel settle: ratings write failed:", error.message);
   }
+  // Only ranked wins against a person count for XP and the "duels won" milestones.
+  if (row.ranked && !row.bot && row.p2 && (result === "p1" || result === "p2")) {
+    const award = await awardXp(result === "p1" ? row.p1 : row.p2, XP_SOURCES.duelWin, WIN_XP, row.id);
+    if (!award.ok) console.warn("duel settle: XP award failed:", award.error);
+  }
   return done[0];
 }
 
@@ -372,7 +378,7 @@ export async function profile(me: string): Promise<DuelProfile> {
           when: m.ended_at ?? m.created_at,
           opp: m.bot ? "Practice bot" : opp ? (opps.get(opp) ?? "Opponent") : "Opponent",
           outcome: m.result === "draw" ? "draw" : m.result === side ? "win" : "loss",
-          score: `${mine ?? 0}–${theirs ?? 0}`,
+          score: `${mine ?? 0} to ${theirs ?? 0}`,
           delta: side === "p1" ? m.p1_delta : m.p2_delta,
           ranked: m.ranked,
           forfeit: m.forfeit_by ? (m.forfeit_by === me ? "you" : "them") : null,

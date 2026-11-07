@@ -2,6 +2,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, beforeAll } from "vitest";
 import { BrainMap, Curve, Flow, Layers, phi } from "./visuals";
+import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
 
 beforeAll(() => {
   // jsdom has no matchMedia
@@ -65,5 +66,42 @@ describe("animated explainers", () => {
     render(<Receptor d={{ receptor: "D2" }} />);
     fireEvent.click(screen.getByRole("button", { name: "Partial agonist" }));
     expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/half/);
+  });
+});
+
+describe("process animations", () => {
+  it("classical conditioning steps to extinction", () => {
+    render(<Conditioning d={{ kind: "classical" }} />);
+    fireEvent.click(screen.getByRole("button", { name: /Extinction$/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/spontaneous recovery/);
+  });
+  it("operant conditioning explains variable ratio", () => {
+    render(<Conditioning d={{ kind: "operant" }} />);
+    fireEvent.click(screen.getByRole("button", { name: /Not every time/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/variable ratio/);
+  });
+  it("memory flow and stress response step through", () => {
+    render(<MemoryFlow d={{}} />);
+    fireEvent.click(screen.getByRole("button", { name: /Making it stick/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/encodes/);
+    render(<StressResponse d={{}} />);
+    fireEvent.click(screen.getByRole("button", { name: /Switching off/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Cortisol/);
+  });
+  it("timeline scores the order", () => {
+    render(<Timeline d={{ prompt: "Order Piaget's stages", events: [{ label: "Sensorimotor" }, { label: "Preoperational" }, { label: "Concrete operational" }] }} />);
+    for (const [k, name] of ["Sensorimotor", "Preoperational", "Concrete operational"].entries()) {
+      fireEvent.click(screen.getByRole("button", { name }));
+      fireEvent.click(screen.getByRole("button", { name: new RegExp(`^Slot ${k + 1}`) }));
+    }
+    fireEvent.click(screen.getByRole("button", { name: "Check the order" }));
+    expect(screen.getByRole("status")).toHaveTextContent("3 of 3 in the right place");
+  });
+  it("compare slider switches summary", () => {
+    render(<Compare d={{ a: { label: "Novice", points: ["Slow"], summary: "Effortful" }, b: { label: "Expert", points: ["Fast"], summary: "Automatic" } }} />);
+    fireEvent.change(screen.getByRole("slider"), { target: { value: "10" } });
+    expect(screen.getByRole("status")).toHaveTextContent("Effortful");
+    fireEvent.change(screen.getByRole("slider"), { target: { value: "90" } });
+    expect(screen.getByRole("status")).toHaveTextContent("Automatic");
   });
 });

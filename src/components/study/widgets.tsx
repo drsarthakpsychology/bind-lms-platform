@@ -20,6 +20,8 @@ import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { BrainMap, Curve, Flow, Layers } from "./visuals";
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
+import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
+import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
@@ -115,7 +117,7 @@ function Guess({ d }: { d: GuessData }) {
       ) : (
         <Verdict kind={inRange ? "good" : "ok"}>
           <p className="font-semibold">
-            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]}–{d.answer[1]} {d.unit}.
+            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]} to {d.answer[1]} {d.unit}.
           </p>
           <p className="mt-1"><Rich text={view === "clinician" && d.clinician ? d.clinician : d.reveal} /></p>
         </Verdict>
@@ -549,6 +551,16 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Pathways d={data as PathwaysData} />;
     case "receptor":
       return <Receptor d={data as ReceptorData} />;
+    case "conditioning":
+      return <Conditioning d={data as ConditioningData} />;
+    case "memoryflow":
+      return <MemoryFlow d={data as MemoryFlowData} />;
+    case "stress":
+      return <StressResponse d={data as StressData} />;
+    case "timeline":
+      return <Timeline d={data as TimelineData} />;
+    case "compare":
+      return <Compare d={data as CompareData} />;
   }
 }
 

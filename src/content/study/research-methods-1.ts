@@ -75,7 +75,7 @@ The process is a cycle, not a line: good studies end with new questions.
 :::mcq
 Q: A counsellor says, "Every client's behaviour reflects hidden guilt; if they deny guilt, that is more proof of it." By Popper's criterion, this claim is:
 - Scientific, because it explains every single case it meets
-- Scientific, because a counsellor observed it
+- Scientific, because a trained counsellor observed it in many clients
 - *Not scientific, because no observation could show it to be wrong
 - Not scientific, because emotions cannot ever be measured
 > A claim that every possible result confirms is unfalsifiable. Explaining everything means predicting nothing.
@@ -163,7 +163,7 @@ Q: A researcher finds that social support reduces depression mainly by increasin
 > It is the mechanism through which support affects depression.
 
 Q: In a study comparing coping in people with and without diabetes, "diabetes status" is:
-- An active independent variable
+- An active independent variable that the researcher manipulates
 - A dependent variable
 - An operational definition
 - *An attribute (organismic) variable
@@ -218,7 +218,7 @@ Statistics lets you **reject** or **fail to reject** the null. Failing to reject
 :::mcq
 Q: "Children who watch violent cartoons will show more aggressive play than children who watch non-violent cartoons." This is a:
 - Null hypothesis
-- Non-directional hypothesis
+- Non-directional alternative hypothesis
 - Descriptive hypothesis
 - *Directional research hypothesis
 > It predicts the direction of the difference.
@@ -226,8 +226,8 @@ Q: "Children who watch violent cartoons will show more aggressive play than chil
 Q: A researcher fails to reject the null hypothesis. The correct conclusion is:
 - *The data do not give enough evidence of a difference
 - The null hypothesis has now been proved true
-- The research hypothesis has been shown to be false
-- The study was unethical
+- The research hypothesis has now been shown to be false
+- The study must have used a biased sample
 > Absence of evidence is not evidence of absence, especially in a small study.
 
 Q: A hypothesis derived from the predictions of attachment theory, before any data are collected, is best called:
@@ -273,15 +273,15 @@ Before you design anything, you find out what is already known. The **review of 
 :::mcq
 Q: A systematic review differs from a narrative review mainly because it:
 - Is always longer and covers more years of work
-- *Uses a stated, exhaustive and repeatable search and selection method
-- Only includes studies published in the last five years
+- *Uses a stated, exhaustive and repeatable search method
+- Only includes randomised trials published in the last five years
 - Never combines results using any statistics
 > Transparency of search and selection is the defining feature.
 
 Q: Which is a primary source?
 - An encyclopaedia entry summarising intelligence theories
 - A textbook chapter describing CBT trials in India
-- A newspaper report of a study
+- A newspaper report summarising a new trial of CBT in Bengaluru
 - *A journal article reporting a new trial of CBT in Bengaluru
 > It reports original data collected by the authors.
 :::
@@ -292,7 +292,7 @@ Twelve or more right out of fifteen (80%) opens the Beginner level. If you alrea
 :::mcq
 Q: "The world-famous professor says it, so it must be true." Peirce would call this the method of:
 - Tenacity
-- A priori
+- A priori (intuition)
 - *Authority
 - Science
 > Belief resting on the standing of the source.
@@ -308,12 +308,12 @@ Q: Research done mainly to build theory, without an immediate practical use, is:
 - Applied research
 - *Basic (fundamental) research
 - Action research
-- Evaluation research
+- Evaluation (programme) research
 > Basic research aims at general understanding.
 
 Q: In an experiment on the effect of caffeine dose on reaction time, caffeine dose is the:
 - Dependent variable
-- Extraneous variable
+- Extraneous (nuisance) variable
 - Mediator
 - *Independent variable
 > It is manipulated by the researcher.
@@ -342,7 +342,7 @@ Q: The hypothesis tested directly by a statistical test is the:
 Q: "Boys and girls will differ in reading speed" is:
 - Directional
 - Null
-- Descriptive
+- Descriptive (one-variable)
 - *Non-directional
 > It predicts a difference but not its direction.
 
@@ -369,21 +369,21 @@ Q: The correct order of the first steps of research is:
 
 Q: Shodhganga is:
 - A statistics package
-- An ethics committee
+- A national ethics committee for research on humans
 - A sampling method
 - *A repository of Indian theses run by INFLIBNET
 > It holds PhD theses from Indian universities.
 
 Q: Which hypothesis is testable?
-- *Students given feedback within a day will score higher on the next quiz than students given it after a week
-- Some people may sometimes feel some anxiety in some situations
-- Life is meaningful for those who believe that it is meaningful
+- *Students given feedback within a day will score higher on the next quiz
+- Some people may sometimes feel some anxiety in some situations, depending on many factors
+- Life feels meaningful to those who believe that it is meaningful, whatever happens to them
 - Anxiety exists
 > It names the variables, the groups and the direction.
 
 Q: "Systematic, controlled, empirical, amoral, public and critical" describes scientific research according to:
 - Popper
-- Wundt
+- Wilhelm Wundt
 - *Kerlinger
 - Freud
 > This is Fred Kerlinger's well-known definition.
@@ -493,9 +493,9 @@ Q: Thirty villages are chosen at random from a district, and every adult in each
 
 Q: A survey of mental health is run only on a free app that requires a smartphone. Doubling its sample size will:
 - Remove the bias, because large samples cancel it out
-- Turn it into a probability sample of all adults
-- *Not remove the bias, though it narrows the confidence interval
-- Make it a census
+- Turn it into a probability sample of all adults in the region
+- *Not remove the bias, though it narrows the interval
+- Turn it into a census that covers every adult in the state
 > Coverage bias comes from the frame, not the size.
 :::
 
@@ -563,7 +563,7 @@ Q: The highest scale of measurement on which "twice as much" is meaningful is:
 
 Q: A scale in which agreeing with "I would marry a member of this group" implies agreeing with all milder items such as "I would work with them" is a:
 - Likert scale
-- Semantic differential
+- Osgood's semantic differential scale
 - *Guttman (cumulative) scale
 - Thurstone scale
 > Items form a cumulative order.
@@ -658,12 +658,12 @@ Other designs: **randomised block** (people grouped into blocks on a nuisance va
 Q: Which control technique deals with extraneous variables that the researcher has not even thought of?
 - Matching
 - *Random assignment
-- Holding constant
+- Holding every variable constant
 - Elimination
 > Randomisation balances unknown variables, on average.
 
 Q: A 3 × 2 × 2 factorial design has how many conditions?
-- 7
+- 18
 - 6
 - 3
 - *12
@@ -678,7 +678,7 @@ Q: In a design written "R O X O / R O O", the second group is the:
 
 Q: Each participant learns word lists in silence, with music and with traffic noise, in orders arranged so that each condition appears once in each position across groups. This control is:
 - Matching
-- Elimination
+- Elimination of noise
 - *A Latin square
 - Blinding
 > A Latin square balances position across conditions.
@@ -757,13 +757,13 @@ Q: Children chosen because they scored lowest on a reading test improve on retes
 - History
 - Maturation
 - *Statistical regression
-- Instrumentation
+- Instrumentation (a changed test)
 > Extreme scores tend to move toward the mean on retest.
 
 Q: Halfway through a study, the researchers replace the observers with a new, more lenient team. The threat is:
 - *Instrumentation
 - Testing
-- Selection
+- Selection of participants
 - Mortality
 > The measuring "instrument" (the raters) changed.
 
@@ -776,9 +776,9 @@ Q: Workers increase output whenever lighting changes, up or down, because they k
 
 Q: A double-blind procedure mainly controls:
 - Selection of participants and their attrition
-- History, maturation and other outside events
+- History, maturation and other events outside the study
 - *Participant expectations and experimenter expectancy
-- Statistical regression
+- Statistical regression toward the mean in retests
 > Neither the participant nor the rater knows the condition.
 
 Q: Which kind of validity is most at stake when a lab finding on American undergraduates is applied to elderly villagers in Odisha?
@@ -923,7 +923,7 @@ An intensive study of one person, group or event, using many sources (interviews
 Q: "Do you agree that the government should stop wasting money on useless mental hospitals?" The main problem is that it is:
 - Double-barrelled
 - Too open-ended
-- A double negative
+- A double-negative question
 - *Leading and loaded
 > The wording pushes toward one answer.
 
@@ -956,8 +956,8 @@ Twelve or more right out of fifteen (80%) opens the Advanced level.
 Q: A researcher divides a city's schools into government and private, then randomly picks schools from each in proportion. This is:
 - Quota sampling
 - *Proportionate stratified sampling
-- Cluster sampling
-- Purposive sampling
+- Cluster sampling of whole schools
+- Purposive (judgement) sampling
 > Strata first, then random choice within each, in proportion.
 
 Q: Which one is a probability sampling method?
@@ -969,23 +969,23 @@ Q: Which one is a probability sampling method?
 
 Q: Room temperature differs between the two rooms where the experimental and control groups are tested. The best fix is to:
 - Increase the sample size so the rooms average out
-- Use a one-tailed test to make up for the difference
+- Use a one-tailed test to make up for the difference between the rooms
 - *Hold the temperature constant, or test both groups in the same room
-- Change the DV
+- Change the DV to one that temperature cannot affect at all
 > Holding constant removes the confound.
 
 Q: The main advantage of a within-subjects design is:
 - *Less error variance, because each person is their own control
-- There are no order effects to worry about at all
+- There are no order effects such as practice or fatigue to worry about
 - It removes any need for counterbalancing
 - Results generalise better to the real world
 > Individual differences are removed from the error term.
 
 Q: "R X O / R O" describes the:
-- Static-group comparison
-- One-group pretest-posttest
+- Static-group comparison design
+- One-group pretest-posttest design
 - *Posttest-only control group design
-- Solomon four-group design
+- Solomon four-group (pretest) design
 > Random assignment, treatment, one measurement.
 
 Q: Which threat is a one-group pretest-posttest study of a ten-month school programme most open to?
@@ -997,7 +997,7 @@ Q: Which threat is a one-group pretest-posttest study of a ten-month school prog
 
 Q: Telling raters which participants got the drug creates a risk of:
 - *Experimenter expectancy effects
-- Statistical regression
+- Statistical regression in the ratings
 - Attrition
 - Cohort effects
 > Raters' expectations can bias ratings.
@@ -1011,8 +1011,8 @@ Q: An effect found in a lab task that does not hold in real classrooms lacks:
 
 Q: Treatment is started on Monday for reading, a week later for spelling and two weeks later for maths. This is a:
 - Reversal design
-- Changing-criterion design
-- Alternating-treatments design
+- Changing-criterion design across subjects
+- Alternating-treatments design across skills
 - *Multiple-baseline design across behaviours
 > Staggered introduction across behaviours.
 
@@ -1020,20 +1020,20 @@ Q: Which developmental design separates age, cohort and time-of-measurement effe
 - Cross-sectional
 - *Cross-sequential
 - Longitudinal
-- Case study
+- Longitudinal case study
 > Several cohorts each followed over time.
 
 Q: A study of adults who were adopted versus not adopted, comparing self-esteem, is:
 - A true experiment
 - *Ex post facto research
-- A single-case design
+- A single-case (small-n) design
 - Action research
 > The IV occurred naturally, before the study.
 
 Q: The Hawthorne effect is a threat mainly to:
-- Statistical conclusion validity
-- Sampling frames
-- *Construct and external validity, through reactivity
+- Statistical conclusion validity, through low power
+- Sampling frames, through coverage error in lists
+- *Construct and external validity (reactivity)
 - Inter-rater reliability
 > Being observed changes behaviour, so the results reflect the study situation.
 
@@ -1046,13 +1046,13 @@ Q: The scale of a variable "rank in a class of 60" is:
 
 Q: In observation research, "every 15 seconds, record whether the child is on task" is:
 - Event sampling
-- Duration recording
+- Duration recording of behaviour
 - *Time (interval) sampling
 - Latency recording
 > Observation at fixed intervals.
 
 Q: The control group in a school study learns about the new method and starts using it. The threat is:
-- Resentful demoralisation
+- Resentful demoralisation of the control group
 - Statistical regression
 - *Diffusion or imitation of treatment
 - Instrumentation

@@ -1,9 +1,10 @@
-import { BadgeCheck, Clock, FileQuestion, MinusCircle, PlusCircle, SearchCheck } from "lucide-react";
+import { BadgeCheck, Clock, FileQuestion, Info, MinusCircle, PlusCircle, SearchCheck } from "lucide-react";
 import type { PrepSpec } from "@/content/prep/specs";
 import { cn } from "@/lib/utils";
 
 export const totalQuestions = (s: PrepSpec) => s.sections.reduce((a, x) => a + x.count, 0);
-const marks = (n: number) => `${Number.isInteger(n) ? n : n.toFixed(2).replace(/0$/, "")} ${Math.abs(n) === 1 ? "mark" : "marks"}`;
+/** "1 mark", "0.25 marks", "4 marks". */
+export const marksText = (n: number) => `${Number.isInteger(n) ? n : n.toFixed(2).replace(/0$/, "")} ${Math.abs(n) === 1 ? "mark" : "marks"}`;
 
 /** The pattern in plain words, with whether it is verified (icon + words). */
 export function PatternFacts({ spec, compact = false }: { spec: PrepSpec; compact?: boolean }) {
@@ -11,8 +12,8 @@ export function PatternFacts({ spec, compact = false }: { spec: PrepSpec; compac
   const rows = [
     { Icon: FileQuestion, text: `${n} questions${spec.sections.length > 1 ? ` in ${spec.sections.length} parts` : ""}` },
     { Icon: Clock, text: `${spec.minutes} minutes` },
-    { Icon: PlusCircle, text: `${marks(spec.marksPerRight)} for a right answer (out of ${n * spec.marksPerRight})` },
-    { Icon: MinusCircle, text: spec.marksPerWrong < 0 ? `${marks(-spec.marksPerWrong)} off for a wrong answer; blank = 0` : "No negative marking: never leave one blank" },
+    { Icon: PlusCircle, text: `${marksText(spec.marksPerRight)} for a right answer (out of ${n * spec.marksPerRight})` },
+    { Icon: MinusCircle, text: spec.marksPerWrong < 0 ? `${marksText(-spec.marksPerWrong)} off for a wrong answer; a blank gets 0` : "No negative marking: never leave one blank" },
   ];
   return (
     <div className="space-y-3">
@@ -39,6 +40,15 @@ export function PatternFacts({ spec, compact = false }: { spec: PrepSpec; compac
 }
 
 export function Verified({ spec }: { spec: PrepSpec }) {
+  if (spec.exam === null)
+    return (
+      <p className="flex items-start gap-2 rounded-md border-2 border-foreground bg-status-info-bg px-3 py-2 text-sm text-status-info-fg">
+        <Info className="mt-0.5 size-4 shrink-0" aria-hidden />
+        <span>
+          <strong className="font-semibold">VIBHA practice mock.</strong> Covers what CUET-PG, UGC-NET and clinical entrances ask. Practice marking, not any one exam&apos;s.
+        </span>
+      </p>
+    );
   return spec.verified ? (
     <p className="flex items-start gap-2 rounded-md border-2 border-foreground bg-status-success-bg px-3 py-2 text-sm text-status-success-fg">
       <BadgeCheck className="mt-0.5 size-4 shrink-0" aria-hidden />

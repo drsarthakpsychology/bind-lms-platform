@@ -140,7 +140,7 @@ Q: In a therapy trial (therapy vs control, measured pre and post), the key test 
 - Main effect of group
 - *Group × time interaction
 - Main effect of time
-- Mauchly test
+- Mauchly test of sphericity
 > Therapy should change scores over time more than control does.
 
 Q: Mauchly's test is used to check:
@@ -197,7 +197,7 @@ Q: Three wards rate patient satisfaction on a 1-to-5 ordinal scale, with small s
 - One-way ANOVA
 - *Kruskal-Wallis H
 - Friedman test
-- Paired t
+- Paired-samples t
 > Independent groups, ordinal data, three groups.
 
 Q: The same 15 patients rank three therapy styles in order of preference. Use the:
@@ -210,7 +210,7 @@ Q: The same 15 patients rank three therapy styles in order of preference. Use th
 Q: A main disadvantage of non-parametric tests is that they:
 - Need data from a normal population
 - Need at least interval-level data
-- Cannot be used with samples under thirty
+- Cannot be used at all with samples of under thirty people
 - *Have less power when parametric assumptions are met
 > They use ranks, so some information is lost.
 :::
@@ -276,10 +276,10 @@ Q: Two groups have means of 50 and 56, with a pooled SD of 12. Cohen's d is:
 > d = 6 ÷ 12 = 0.5, a medium effect.
 
 Q: η² = .14 in a one-way ANOVA means:
-- 14% of the participants improved after treatment
+- 14% of the participants improved after the treatment ended
 - The p value is .14, so it is not significant
 - The effect is small by Cohen's guidelines
-- *14% of the variance in the DV is associated with group membership
+- *14% of the DV's variance is linked to group membership
 > η² is a proportion of variance; .14 is large by Cohen's labels.
 
 Q: The main purpose of an a priori power analysis is to:
@@ -349,7 +349,7 @@ Q: In Ŷ = 20 + 3X, the predicted score for X = 5 is:
 Q: In hierarchical regression, the change in R² when a block is added tells you:
 - How strongly the predictors in that block overlap
 - Whether the intercept is significantly above zero
-- *The extra variance explained by that block beyond earlier blocks
+- *The extra variance explained by that block
 - Whether the residuals are normally distributed
 > ΔR² is the unique gain from that block.
 
@@ -482,9 +482,9 @@ Q: The rotation that allows factors to correlate is:
 
 Q: A researcher wants to test whether a Marathi version of a scale has the same three-factor structure as the English original. The right method is:
 - PCA
-- EFA with varimax
+- EFA with varimax rotation
 - *Confirmatory factor analysis
-- Multiple regression
+- Multiple regression on the items
 > The structure is specified in advance and tested.
 :::
 
@@ -561,7 +561,7 @@ Ask four questions: **What is the DV's level of measurement? How many groups or 
 
 :::mcq
 Q: In an SPSS t-test, Levene's Sig. = .01. You should:
-- Read the 'equal variances assumed' row
+- Read the 'equal variances assumed' row only
 - Use chi-square instead
 - Ignore Levene's test
 - *Read the 'equal variances not assumed' row
@@ -575,9 +575,9 @@ Q: In a regression output, B = 0.80, SE = 0.20. The t value is:
 > t = B ÷ SE.
 
 Q: A study compares the proportion of men and women who prefer online therapy. The test is:
-- Independent t
+- Independent-samples t-test
 - Pearson r
-- Paired t
+- Paired-samples t-test of the two sexes
 - *Chi-square test of independence
 > Two nominal variables, frequencies.
 :::

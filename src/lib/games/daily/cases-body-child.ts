@@ -64,7 +64,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Bulimia nervosa is recurrent binge eating with loss of control, plus recurrent compensation (vomiting, laxatives, diuretics, fasting, excess exercise), both at least once a week for 3 months, with self-worth unduly tied to shape and weight, and not only during anorexia. Vomiting can cause low potassium, enamel erosion, swollen parotids and hand calluses.",
     module: "more-disorders",
-    refs: ["DSM-5-TR pdf p.564 (bulimia criteria C–D)", "DSM-5-TR pdf p.568 (hand calluses)", "DSM-5-TR p.386 (hypokalaemia)"],
+    refs: ["DSM-5-TR pdf p.564 (bulimia criteria C to D)", "DSM-5-TR pdf p.568 (hand calluses)", "DSM-5-TR p.386 (hypokalaemia)"],
   },
   {
     id: "dc-042",
@@ -126,7 +126,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Narcolepsy is recurrent irresistible sleep or naps within the same day, at least three times a week for 3 months, plus at least one of: cataplexy (brief bilateral loss of tone, often with laughter, with awareness kept), low CSF hypocretin, or short REM latency on sleep testing. Type 1 has cataplexy or hypocretin deficiency.",
     module: "more-disorders",
-    refs: ["DSM-5-TR p.422 (narcolepsy criteria A–B)"],
+    refs: ["DSM-5-TR p.422 (narcolepsy criteria A to B)"],
   },
   {
     id: "dc-044",
@@ -188,7 +188,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "REM sleep behaviour disorder is repeated arousal during sleep with vocalisation or complex movements, arising from REM sleep (so usually more than 90 minutes after sleep onset and later in the night), with the person quickly alert on waking, and REM without atonia on polysomnography. It often precedes Parkinson's disease or Lewy body dementia.",
     module: "more-disorders",
-    refs: ["DSM-5-TR pdf p.652 (RBD criteria A–C)", "DSM-5-TR pdf p.940 (RBD suggestive of Lewy bodies)"],
+    refs: ["DSM-5-TR pdf p.652 (RBD criteria A to C)", "DSM-5-TR pdf p.940 (RBD suggestive of Lewy bodies)"],
   },
   {
     id: "dc-046",
@@ -220,7 +220,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "ADHD needs six or more symptoms of inattention and/or hyperactivity-impulsivity (five from age 17) for at least 6 months, several present before age 12, in two or more settings, clearly interfering with functioning. Rating scales from parents and teachers, and checks of hearing, vision and learning, are routine.",
     module: "child",
-    refs: ["DSM-5-TR pdf p.168–169 (ADHD criteria A–C)"],
+    refs: ["DSM-5-TR pdf p.168 to 169 (ADHD criteria A to C)"],
   },
   {
     id: "dc-047",
@@ -283,7 +283,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Selective mutism is consistent failure to speak in specific social situations where speech is expected (such as school) despite speaking elsewhere, interfering with school or social life, for at least 1 month (not just the first month of school), not due to language knowledge or a communication disorder. It is often linked with social anxiety.",
     module: "child",
-    refs: ["DSM-5-TR p.222 (selective mutism criteria A–D)"],
+    refs: ["DSM-5-TR p.222 (selective mutism criteria A to D)"],
   },
   {
     id: "dc-049",
@@ -345,7 +345,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Tourette's disorder needs multiple motor tics and one or more vocal tics at some time (not necessarily together), persisting more than 1 year since first onset, beginning before 18, not due to a substance or medical condition. Coprolalia is uncommon. ADHD and OCD often co-occur.",
     module: "child",
-    refs: ["DSM-5-TR p.92 (Tourette's criteria A–D)"],
+    refs: ["DSM-5-TR p.92 (Tourette's criteria A to D)"],
   },
   {
     id: "dc-051",
@@ -376,7 +376,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Functional neurological symptom disorder (conversion disorder) is one or more symptoms of altered motor or sensory function, with clinical findings incompatible with recognised neurological disease, not better explained by another disorder, causing distress or impairment. Eyes closed and resistance to opening, side-to-side movements and long duration suggest functional seizures. The diagnosis rests on positive signs, not on finding a stressor.",
     module: "more-disorders",
-    refs: ["DSM-5-TR pdf p.529 (FND criteria A–D)"],
+    refs: ["DSM-5-TR pdf p.529 (FND criteria A to D)"],
   },
   {
     id: "dc-052",
@@ -408,7 +408,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Illness anxiety disorder is preoccupation with having or getting a serious illness, with somatic symptoms absent or mild, high health anxiety, excessive health behaviours (checking) or avoidance, for at least 6 months. Specify care-seeking or care-avoidant type. If distressing symptoms are central, think somatic symptom disorder.",
     module: "more-disorders",
-    refs: ["DSM-5-TR pdf p.525 (illness anxiety disorder criteria A–C)"],
+    refs: ["DSM-5-TR pdf p.525 (illness anxiety disorder criteria A to C)"],
   },
   {
     id: "dc-053",
@@ -439,7 +439,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Factitious disorder imposed on self is falsification or induction of physical or psychological signs, with identified deception, presenting oneself as ill, even without obvious external rewards. If there is a clear external reward (money, avoiding work or court), it is malingering instead. Confront gently and keep one team.",
     module: "more-disorders",
-    refs: ["DSM-5-TR pdf p.538 (factitious disorder criteria A–D)"],
+    refs: ["DSM-5-TR pdf p.538 (factitious disorder criteria A to D)"],
   },
   {
     id: "dc-054",
@@ -470,7 +470,7 @@ export const CASES_BODY_CHILD: DailyCase[] = [
     overview:
       "Depersonalization/derealization disorder is persistent or recurrent experiences of unreality or detachment from self (depersonalisation) and/or surroundings (derealisation), with reality testing intact, causing distress, not due to a substance, medical condition or another mental disorder.",
     module: "more-disorders",
-    refs: ["DSM-5-TR p.344 (DPDR criteria A–B)"],
+    refs: ["DSM-5-TR p.344 (DPDR criteria A to B)"],
   },
   {
     id: "dc-055",

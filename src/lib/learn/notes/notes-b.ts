@@ -130,7 +130,7 @@ export const NOTES_B: Note[] = [
     tldr: ["After trauma: re-living, avoiding, darker thoughts and being on edge for over a month.", "PTSD: intrusion, avoidance, negative cognition/mood and arousal clusters for more than 1 month."],
     sections: [
       { title: "4 clusters", tone: "lime", points: ["Re-living: flashbacks, nightmares", "Avoiding reminders", ["Darker thinking: 'it's my fault', numb", "Negative alterations in cognition and mood"], ["On edge: jumpy, poor sleep", "Hyperarousal, hypervigilance"]] },
-      { title: "Timeline", style: "steps", tone: "blue", points: ["3 days – 1 month: acute stress disorder", "more than 1 month: PTSD", "Within 3 months of stressor, no PTSD: adjustment disorder"] },
+      { title: "Timeline", style: "steps", tone: "blue", points: ["3 days to 1 month: acute stress disorder", "more than 1 month: PTSD", "Within 3 months of stressor, no PTSD: adjustment disorder"] },
       { title: "Treatment", tone: "ink", points: ["Trauma-focused CBT, EMDR", "Stabilise first, then process", "SSRIs can help"] },
       { title: "Trauma-informed care", style: "alert", points: ["Safety and choice first", "Don't force details in the first session", "Watch your own reactions"] },
     ],
