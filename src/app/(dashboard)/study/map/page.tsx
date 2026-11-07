@@ -46,7 +46,7 @@ export default async function MapPage() {
           <Compass className="size-10 shrink-0" aria-hidden />
           <div className="min-w-0 flex-1">
             <h2 className="text-h3">Start with the placement quiz</h2>
-            <p className="mt-1 opacity-90">18 quick questions, about 8 minutes. It fills in your map so practice starts at the right level.</p>
+            <p className="mt-1 opacity-90">18 quick questions. Practice then starts at your level.</p>
           </div>
           <Link href="/study/placement" className={cn(btnPrimary, "shrink-0")}>
             Start the quiz <ArrowRight className="size-4" aria-hidden />

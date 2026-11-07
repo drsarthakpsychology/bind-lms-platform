@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Compass, Flame, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
-import { activityHref, courseNext, hoursOf, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, studyTime, testSection, type Next } from "@/lib/study/plan";
+import { activityHref, courseNext, moduleNext, moduleStatus, readingSections, retestDue, sectionHref, testSection, type Next } from "@/lib/study/plan";
+import { courseProgress, moduleProgress } from "@/lib/study/progress";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { BOARDS } from "@/lib/standing/boards";
@@ -76,11 +77,9 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   const today = istToday();
   const next = courseNext(modules, st.study, today);
   const statuses = modules.map((m) => moduleStatus(m, st.study));
-  const secs = statuses.reduce((a, s) => a + s.seconds, 0);
+  const progress = courseProgress(modules, st.study);
   const read = statuses.reduce((a, s) => a + s.readDone, 0);
   const total = statuses.reduce((a, s) => a + s.readTotal, 0);
-  const complete = statuses.filter((s) => s.complete).length;
-  const totalMinutes = modules.reduce((a, m) => a + m.minutes, 0);
   const streak = liveStreak(st.streak, today);
   const currentId = next.kind !== "done" ? next.module.id : null;
 
@@ -90,7 +89,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
         <p className="text-eyebrow text-link">Notes</p>
         <h1 className="text-h1">Your notes, module by module</h1>
         <p className="max-w-2xl text-muted-foreground">
-          {modules.length} {modules.length === 1 ? "module" : "modules"}, {studyTime(totalMinutes)} of focused study. Work through them in order: read, check yourself, write it out, practise, then take the test. We keep your place.
+          {modules.length} {modules.length === 1 ? "module" : "modules"}. Open any one. We keep your place.
         </p>
       </header>
 
@@ -119,9 +118,9 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[
-          { icon: Clock, value: hoursOf(secs), label: "studied" },
+          { icon: Trophy, value: `${progress.pct}%`, label: "complete" },
           { icon: BookOpen, value: `${read}/${total}`, label: "sections read" },
-          { icon: Trophy, value: `${complete}/${modules.length}`, label: "modules done" },
+          { icon: ListChecks, value: `${statuses.filter((s) => s.tested).length}/${modules.length}`, label: "tests tried" },
           { icon: Flame, value: String(streak), label: "day streak" },
         ].map(({ icon: Icon, value, label }) => (
           <div key={label} className="rounded-2xl border-2 border-foreground bg-card p-3">
@@ -143,6 +142,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
         <ol className="mt-4 space-y-3">
           {modules.map((m, i) => {
             const s = statuses[i];
+            const pct = progress.modules[i].pct;
             const here = m.id === currentId;
             return (
               <li key={m.id}>
@@ -163,9 +163,9 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
                     <span className="block text-lg font-bold leading-tight">{m.title}</span>
                     <span className="mt-2 flex items-center gap-3">
                       <span className="w-full max-w-60">
-                        <Bar pct={s.pct} tone={here ? "primary" : "brand"} />
+                        <Bar pct={pct} tone={here ? "primary" : "brand"} />
                       </span>
-                      <span className="shrink-0 text-xs font-bold">{s.complete ? "Complete" : s.pct ? `${s.pct}%` : studyTime(m.minutes)}</span>
+                      <span className="shrink-0 text-xs font-bold">{pct}% complete</span>
                     </span>
                   </span>
                   <ArrowRight className="size-5 shrink-0" aria-hidden />
@@ -255,6 +255,7 @@ export function ModuleView({
   const st = useLearnState(serverState ?? EMPTY);
   const today = istToday();
   const s = moduleStatus(m, st.study);
+  const prog = moduleProgress(m, st.study);
   const next = moduleNext(m, st.study);
   const reading = readingSections(m);
   const test = testSection(m);
@@ -277,14 +278,12 @@ export function ModuleView({
         <h1 className="mt-2 break-words text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl short:lg:text-4xl">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
         <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
-          <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{studyTime(m.minutes)}</span>
           <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{reading.length} sections</span>
           {test ? <span className="rounded-full border-2 border-brand-foreground px-3 py-1">Test included</span> : null}
-          <span className="rounded-full border-2 border-brand-foreground px-3 py-1">You&apos;ve studied {hoursOf(s.seconds)}</span>
         </div>
         <div className="mt-4 max-w-md">
-          <Bar pct={s.pct} tone="primary" />
-          <p className="mt-1 text-xs font-bold">{s.pct}% complete</p>
+          <Bar pct={prog.pct} tone="primary" />
+          <p className="mt-1 text-xs font-bold">{prog.pct}% complete</p>
         </div>
         <span className="pointer-events-none absolute -right-4 -bottom-8 text-[8rem] opacity-15 select-none" aria-hidden>
           {m.emoji}
@@ -303,7 +302,7 @@ export function ModuleView({
         <div className="rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground">
           <p className="text-xl font-bold">Module complete ✓</p>
           <p className="text-sm font-semibold">
-            {due ? `Your next re-test is due on ${due}. It takes 20 minutes and doubles how much you keep.` : "All re-tests done. This module is in long-term memory."}
+            {due ? `Next re-test due on ${due}.` : "All re-tests done."}
           </p>
           {nextModule ? (
             <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
@@ -338,7 +337,7 @@ export function ModuleView({
       <section id="steps" aria-label="Steps" className="scroll-mt-24 space-y-6">
         {/* Step 1: Read */}
         <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
-          <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections · ${studyTime(m.minutes)} in all`} />
+          <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections read`} />
           <ol className="mt-4 space-y-1">
             {reading.map((sec, k) => {
               const isDone = Boolean(st.study.done[studyKey(m.id, sec.id)]);
@@ -371,7 +370,7 @@ export function ModuleView({
 
         {/* Step 2: Write */}
         <div id="write" className={cn("scroll-mt-24 rounded-3xl border-2 border-foreground bg-card p-5", step === 2 && "hard-shadow-md")}>
-          <StepHead n={2} title="Write it out" done={s.written} current={step === 2} sub="On paper, from memory. About an hour." />
+          <StepHead n={2} title="Write it out" done={s.written} current={step === 2} sub="On paper, from memory." />
           <p className="mt-3 leading-relaxed">{m.writeTask}</p>
           {s.written ? (
             <p className="mt-3 inline-flex items-center gap-1 font-bold">
