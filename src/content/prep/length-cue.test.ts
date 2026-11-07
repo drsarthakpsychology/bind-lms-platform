@@ -15,6 +15,11 @@ const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "indian-psychology",
   "ethics-law",
   "ugc-paper1",
+  "learning-motivation-emotion",
+  "biological",
+  "developmental",
+  "social",
+  "personality-theories",
 ];
 const RATIO = 1.3;
 const MIN_GAP = 15;
