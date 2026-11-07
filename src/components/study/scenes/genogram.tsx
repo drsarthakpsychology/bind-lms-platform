@@ -266,6 +266,12 @@ export function Genogram({ d }: { d: GenogramData }) {
             @keyframes gg-in { from { transform: scale(0.4); opacity: 0 } to { transform: scale(1); opacity: 1 } }
             .gg-p { transform-box: fill-box; transform-origin: center; animation: gg-in 320ms var(--ease-springy) both; }
           `}</style>
+          <defs>
+            <pattern id="gg-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="5" height="5" className="fill-foreground" />
+              <line x1="0" y1="0" x2="0" y2="5" className="stroke-card" strokeWidth="1.6" />
+            </pattern>
+          </defs>
           <Lines g={g} x={L.x} />
           {finder && !reduce && !scan?.done ? <rect x={L.left} y={top - 24} width={L.w} height="24" className="fill-[var(--primary)]" style={{ opacity: 0.5, animation: "gg-sweep 2.4s linear both" }} /> : null}
           {finder && (scan?.done || reduce) ? <TracePaths g={g} x={L.x} aff={finder.aff} reduce={reduce} /> : null}
@@ -287,7 +293,7 @@ export function Genogram({ d }: { d: GenogramData }) {
         </svg>
       </div>
       <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground" aria-hidden>
-        <span>□ male</span><span>○ female</span><span>■ shaded: has {cond}</span><span>✕ died</span><span>{"//"} divorced</span><span>double outline and arrow: the patient</span>
+        <span>□ male</span><span>○ female</span><span>▨ shaded (hatched): has {cond}</span><span>✕ died</span><span>{"//"} divorced</span><span>double outline and arrow: the patient</span>
       </p>
 
       {selP ? (
@@ -332,7 +338,7 @@ export function Genogram({ d }: { d: GenogramData }) {
               <button type="button" className="min-h-8 text-left underline-offset-2 hover:underline" onClick={() => setSel(p.id)}>
                 <span className="font-semibold">{nameOf(p, g.people)}</span>
                 {p.age ? `, ${p.age}` : ""}, {p.sex === "m" ? "male" : p.sex === "f" ? "female" : "sex not known"}
-                {p.cond ? `, has ${cond}` : ""}{p.dead ? ", has died" : ""}{p.note ? ` (${p.note})` : ""}
+                {p.cond ? `, has ${cond}` : ""}{p.dead && !p.age.startsWith("died") ? ", has died" : ""}{p.note ? ` (${p.note})` : ""}
               </button>
             </li>
           )))}
@@ -357,7 +363,7 @@ export function Genogram({ d }: { d: GenogramData }) {
 }
 
 function Symbol({ p, cx, cy, sel }: { p: Person; cx: number; cy: number; sel: boolean }) {
-  const fill = p.cond ? "fill-foreground" : "fill-card";
+  const fill = p.cond ? "fill-[url(#gg-hatch)]" : "fill-card";
   const shape = (r: number, extra: string) =>
     p.sex === "m" ? <rect x={cx - r} y={cy - r} width={r * 2} height={r * 2} className={extra} strokeWidth="2" />
       : p.sex === "f" ? <circle cx={cx} cy={cy} r={r} className={extra} strokeWidth="2" />
