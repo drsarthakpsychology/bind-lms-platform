@@ -16,6 +16,22 @@ For a long time the brain was thought to be sealed off from the immune system. W
 - An antibody that blocks TNF (infliximab) helped **only** the depressed patients with high CRP, and not others. This suggests that if immune treatments work, they will work for a **selected subgroup**.
 - **Status: research only.** No anti-inflammatory treatment is a standard treatment for depression or schizophrenia.
 
+:::widget flow
+{
+  "title": "From inflammation to low mood: the proposed chain",
+  "layout": "chain",
+  "nodes": [
+    { "id": "src", "label": "Source of inflammation", "detail": "Infection, obesity, chronic stress, childhood adversity, autoimmune illness, poor sleep." },
+    { "id": "cyt", "label": "Cytokines in the blood", "detail": "IL-6, TNF and IL-1 rise; the liver makes more CRP." },
+    { "id": "sig", "label": "Signal reaches the brain", "detail": "Through the vagus nerve, leaky spots in the blood-brain barrier and active transport." },
+    { "id": "mic", "label": "Microglia activated", "detail": "The brain's own immune cells switch to an inflammatory state." },
+    { "id": "kyn", "label": "Chemistry shifts", "detail": "Tryptophan is diverted from serotonin towards the kynurenine pathway, producing quinolinic acid, which acts on NMDA receptors. Dopamine signalling in reward circuits falls." },
+    { "id": "sick", "label": "Sickness behaviour", "detail": "Fatigue, loss of pleasure, slowing, poor sleep and social withdrawal: overlapping with depression." }
+  ],
+  "caption": "Press Play. Each link has support, mostly from animal and interferon studies; the whole chain is proven in only a subgroup of depressed people, if at all."
+}
+:::
+
 ### Where immune psychiatry already saves lives: autoimmune encephalitis
 In **anti-NMDA receptor encephalitis**, the body makes antibodies against brain receptors. It often starts with **psychiatric symptoms**: anxiety, insomnia, strange behaviour, psychosis, then seizures, abnormal movements, reduced consciousness and unstable blood pressure or heart rate. It is commonest in young women and is sometimes linked to an ovarian **teratoma**. Treated early (immunotherapy, removing a tumour), many recover well. Missed, it can kill.
 
@@ -45,7 +61,7 @@ In **anti-NMDA receptor encephalitis**, the body makes antibodies against brain 
 :::
 
 :::clinician
-Key evidence: elevated IL-6, TNF and CRP in meta-analyses of MDD (from 2010, with a larger 2020 update for cytokines); interferon-alpha induced depression in roughly a quarter to half of treated patients; a 2013 infliximab RCT in 60 patients with treatment-resistant depression found no overall benefit but improvement in patients with baseline hs-CRP above 5 mg/L. Minocycline was negative for negative symptoms of schizophrenia in the 2018 BeneMin trial. The INSIGHT trial of adjunctive minocycline in TRD (2021) suggested benefit only with CRP of 3 mg/L or more. Microglial PET imaging using TSPO ligands has given inconsistent results, partly due to ligand and genotype issues. For autoimmune encephalitis, use the 2016 Graus criteria and the 2020 Pollak criteria for autoimmune psychosis; red flags include seizures, catatonia, dyskinesias, autonomic instability, decreased consciousness, focal neurology, hyponatraemia, and intolerance to antipsychotics.
+Key findings: elevated IL-6, TNF and CRP in meta-analyses of MDD (from 2010, with a larger 2020 update for cytokines); interferon-alpha induced depression in roughly a quarter to half of treated patients; a 2013 infliximab RCT in 60 patients with treatment-resistant depression found no overall benefit but improvement in patients with baseline hs-CRP above 5 mg/L. Minocycline was negative for negative symptoms of schizophrenia in the 2018 BeneMin trial. The INSIGHT trial of adjunctive minocycline in TRD (2021) suggested benefit only with CRP of 3 mg/L or more. Microglial PET imaging using TSPO ligands has given inconsistent results, partly due to ligand and genotype issues. For autoimmune encephalitis, use the 2016 Graus criteria and the 2020 Pollak criteria for autoimmune psychosis; red flags include seizures, catatonia, dyskinesias, autonomic instability, decreased consciousness, focal neurology, hyponatraemia, and intolerance to antipsychotics.
 :::
 
 :::recall
@@ -166,6 +182,22 @@ The **Hierarchical Taxonomy of Psychopathology (HiTOP)** is built from statistic
 - Then **spectra**: **internalising** (depression, anxiety), **thought disorder** (psychosis), **disinhibited externalising** (substance use, impulsivity), **antagonistic externalising** (hostility, manipulation), **detachment** (withdrawal), and **somatoform**.
 - Below these: subfactors, syndromes and specific symptoms.
 
+:::widget layers
+{
+  "title": "The HiTOP hierarchy, from general to specific",
+  "shape": "stack",
+  "layers": [
+    { "label": "General factor (p)", "detail": "A broad tendency towards psychopathology of any kind. People high on p have more disorders, earlier onset and worse outcomes." },
+    { "label": "Superspectra", "detail": "For example emotional dysfunction (internalising plus detachment), psychosis, externalising." },
+    { "label": "Spectra", "detail": "Internalising, thought disorder, disinhibited externalising, antagonistic externalising, detachment, somatoform." },
+    { "label": "Subfactors", "detail": "Within internalising, for example: distress (depression, generalised anxiety, PTSD), fear (panic, phobias), eating pathology, sexual problems." },
+    { "label": "Syndromes", "detail": "Clusters close to familiar diagnoses, such as major depression, but scored as dimensions." },
+    { "label": "Components and symptoms", "detail": "The building blocks: low mood, anhedonia, worry, insomnia, checking. Two people with 'depression' may differ here." }
+  ],
+  "caption": "Tap each level. A clinician can describe the same person at any level, from p down to single symptoms."
+}
+:::
+
 :::widget sort
 {
   "prompt": "Which framework does each statement describe?",
@@ -232,12 +264,43 @@ Computational psychiatry uses **mathematical models of how the brain learns and 
 - **Prediction and belief**: one theory of psychosis says the brain gives **too much weight to surprising signals** (or too little to prior expectations), so random events feel meaningful, which could lead to delusions.
 **Status: research only.** These models are elegant and growing, but no computational test is used to diagnose or treat patients routinely.
 
+:::widget flow
+{
+  "title": "Predictive processing: how a belief is updated",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "prior", "label": "Prior belief", "detail": "What the brain expects, built from past experience: 'The street is quiet tonight.'" },
+    { "id": "pred", "label": "Prediction", "detail": "The brain predicts the sensory input it should receive." },
+    { "id": "in", "label": "Sensory input", "detail": "What actually arrives: a car horn, a stranger's glance." },
+    { "id": "err", "label": "Prediction error", "detail": "The mismatch between prediction and input." },
+    { "id": "prec", "label": "Precision weighting", "detail": "How much the error counts. In one theory of psychosis, dopamine gives too much weight to small errors, so random events feel significant." },
+    { "id": "upd", "label": "Belief updated", "detail": "Ordinary updating is small. Over-weighted errors push towards new, odd explanations ('the glance was a signal'), which may harden into delusions." }
+  ],
+  "caption": "Press Play. Psychosis, anxiety and autism have all been modelled as different settings of precision, which remains a research hypothesis."
+}
+:::
+
+:::widget brainmap
+{
+  "title": "Circuits that computational psychiatry models",
+  "focus": ["basal-ganglia", "prefrontal", "amygdala", "hippocampus", "thalamus"],
+  "notes": {
+    "basal-ganglia": "Dopamine neurons projecting here signal reward prediction errors: 'better or worse than expected'. Models of depression (blunted reward learning) and addiction (over-valued drug cues) focus here.",
+    "prefrontal": "Goal-directed, model-based planning. Weakened model-based control relative to habit has been linked to compulsivity in OCD and addiction.",
+    "amygdala": "Learning about threat. Anxiety models describe over-estimation of threat probability and intolerance of uncertainty.",
+    "hippocampus": "Builds context and maps of possibilities; supports learning which situations are safe.",
+    "thalamus": "Relays and filters sensory input; part of circuits proposed to set the precision of signals in psychosis models."
+  },
+  "caption": "Tap each region. The models are precise and testable, but none is yet a clinical test."
+}
+:::
+
 ### Digital phenotyping
 Smartphones and wearables record **sleep, movement, typing, phone use and voice**. Researchers try to detect **early warning signs** (for example a drop in movement and social contact before a depressive relapse, or reduced sleep before mania).
 **Status: research only to early clinical pilots.** Problems: privacy and consent, data that differ between phones, people who stop wearing devices, and models that work in one group but not another.
 
 ### Prediction models and the generalisation problem
-Machine-learning models can "predict" who will respond to a treatment in one dataset, then **fail completely** in the next. A 2024 study in **Science** found that models predicting outcomes in schizophrenia trials worked within the trial they were trained on but **not across other trials**. Always ask: **was it tested on new, independent data?**
+Machine-learning models can "predict" who will respond to a treatment in one dataset, then **fail completely** in the next. A large 2024 analysis found that models predicting outcomes in schizophrenia trials worked within the trial they were trained on but **not across other trials**. Always ask: **was it tested on new, independent data?**
 
 ### AI chatbots and large language models (LLMs)
 | What is known (as of Nov 2026) | What is concerning |
@@ -287,7 +350,7 @@ Computational psychiatry: an influential 2016 framework proposed using models of
 :::recall
 1. What is computational psychiatry? || Using mathematical models of learning and prediction to understand symptoms.
 2. What is digital phenotyping? || Using data from phones and wearables (sleep, movement, typing, voice) to detect patterns and warning signs.
-3. What did the 2024 Science study show about prediction models? || They worked within the trial they were trained on but failed across other trials.
+3. What did the 2024 multi-trial study show about prediction models? || They worked within the trial they were trained on but failed across other trials.
 4. What was the Therabot trial and its main limitation? || An RCT of a purpose-built AI therapy chatbot showing symptom reduction versus waitlist; small, waitlist control, supervised.
 5. Name three risks of general chatbots for people in distress. || Sycophancy, unsafe responses to suicidal users, invented facts (also dependence, privacy).
 :::
@@ -325,7 +388,7 @@ In **2006**, a large **meta-analysis** pooled **380 of these studies**. What it 
 
 ### Feeling the future: Bem and the replication crisis
 In **2011**, the respected psychologist **Daryl Bem** published nine experiments in a leading psychology journal claiming **precognition**: for example, that practising words **after** a memory test improved recall of those words **on** the test. Eight of nine experiments were "significant".
-- Independent teams, including **Ritchie, Wiseman and French (2012)**, repeated the experiments carefully and found **nothing**.
+- Independent teams, including a three-laboratory replication in 2012, repeated the experiments carefully and found **nothing**.
 - A large multi-lab study (the **Transparent Psi Project**, 2023) with over 2,000 participants and fully pre-registered methods found results **consistent with chance**.
 - Bem's paper became a famous example in the **replication crisis**: if standard methods could "prove" something so implausible, the methods themselves were the problem.
 
@@ -624,7 +687,7 @@ Q: HiTOP differs from DSM mainly because it is:
 - Based on brain scans only
 > Empirical, dimensional.
 
-Q: The 2024 Science study on clinical prediction models found that:
+Q: A 2024 study of clinical prediction models across several trials found that:
 - Models always generalise
 - *Models that worked within one trial failed across other trials
 - AI is better than clinicians in all cases

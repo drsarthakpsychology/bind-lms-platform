@@ -15,6 +15,23 @@ Every few months a headline announces a "breakthrough" for depression or schizop
 | **Regulatory review** | A regulator weighs the whole file | Do benefits outweigh risks? |
 | **Phase 4 (after approval)** | Real-world use, safety monitoring | Are there rare harms? Who benefits most? |
 
+:::widget flow
+{
+  "title": "The road every new medicine travels",
+  "layout": "chain",
+  "nodes": [
+    { "id": "pre", "label": "Preclinical", "detail": "Cells and animals. Most candidates stop here: they do not work, or they are toxic." },
+    { "id": "p1", "label": "Phase 1", "detail": "Tens of people. Safety, dose, how the body handles the drug." },
+    { "id": "p2", "label": "Phase 2", "detail": "A few hundred patients, often against placebo. Is there a signal? The biggest drop-out point in psychiatry." },
+    { "id": "p3", "label": "Phase 3", "detail": "Large confirmatory trials, usually two or more. Reliable benefit and enough safety data." },
+    { "id": "rev", "label": "Regulatory review", "detail": "FDA, EMA, MHRA or, in India, the CDSCO weighs benefits against risks. It can approve, restrict or say 'not yet'." },
+    { "id": "p4", "label": "Phase 4", "detail": "After approval: real-world use, rare harms, who benefits most. Some drugs gain warnings here; a few are withdrawn." }
+  ],
+  "edgeLabels": { "p2>p3": "most fail here", "p3>rev": "file submitted" },
+  "caption": "Press Play. Each step answers a different question, and a headline can come from any of them."
+}
+:::
+
 The regulators you will hear about: the **FDA** (United States), the **EMA** (European Union), the **MHRA** (United Kingdom), and in India the **CDSCO**, headed by the Drugs Controller General of India. A drug approved in the USA is **not automatically available in India**.
 
 :::define Words that sound like approval but are not
@@ -32,7 +49,7 @@ The regulators you will hear about: the **FDA** (United States), the **EMA** (Eu
   "unit": "%",
   "answer": [4, 10],
   "reveal": "Only about one in fifteen. Psychiatry has one of the lowest success rates of any field, partly because placebo responses are large and our measures are noisy.",
-  "clinician": "Industry analyses of clinical development success rates (for example the BIO, Informa and QLS report covering 2011 to 2020) put the likelihood of approval from phase 1 for psychiatric indications at roughly 6 to 8%, below the all-indication average of about 8%, with the largest attrition at phase 2."
+  "clinician": "Industry analyses of clinical development success rates (for example a large analysis of development programmes from 2011 to 2020) put the likelihood of approval from phase 1 for psychiatric indications at roughly 6 to 8%, below the all-indication average of about 8%, with the largest attrition at phase 2."
 }
 :::
 
@@ -153,6 +170,21 @@ Here is the whole module on one board. Each item gets one of five honest labels.
 | **Mixed** | Some good evidence, some failures, or approved but limited |
 | **Research only** | Interesting science, no routine clinical use yet |
 | **Not established** | Claims exceed evidence; should not be used or believed |
+
+:::widget layers
+{
+  "title": "The five status labels, from strongest to weakest",
+  "shape": "stack",
+  "layers": [
+    { "label": "Approved", "detail": "Licensed by a major regulator for a named use. Example: esketamine nasal spray for treatment-resistant depression. Approval in one country does not mean approval in India." },
+    { "label": "Promising, in late trials", "detail": "Positive large trials, not yet licensed. Example: psilocybin (COMP360) for treatment-resistant depression." },
+    { "label": "Mixed", "detail": "Some good evidence, some failures, or licensed but with limits. Example: pharmacogenomic panels; GLP-1 medicines for addiction." },
+    { "label": "Research only", "detail": "Interesting science, no routine use. Example: anti-inflammatory treatment for depression; computational tests." },
+    { "label": "Not established", "detail": "The claim runs ahead of the evidence. Example: psychokinesis." }
+  ],
+  "caption": "Tap each level. Every claim in this module is given one of these labels, with a date."
+}
+:::
 
 | Topic | Status (as of Nov 2026) |
 |---|---|
@@ -310,6 +342,45 @@ Almost every antidepressant works on serotonin or noradrenaline and takes a long
 - This seems to cause a brief **surge of glutamate** at other receptors (AMPA), which switches on signals (including BDNF) that help **rebuild connections** between neurons.
 - **Esketamine** is one half (one mirror-image form) of the ketamine molecule, given as a **nasal spray**.
 
+:::widget flow
+{
+  "title": "How ketamine is thought to lift mood fast",
+  "layout": "chain",
+  "nodes": [
+    { "id": "block", "label": "NMDA receptors blocked", "detail": "Ketamine plugs the NMDA channel. One leading idea is that it acts first on NMDA receptors of calming (GABA) interneurons." },
+    { "id": "dis", "label": "Brakes released", "detail": "With the interneurons quieter, the main glutamate neurons fire more: disinhibition." },
+    { "id": "surge", "label": "Glutamate surge", "detail": "A brief burst of glutamate in the prefrontal cortex." },
+    { "id": "ampa", "label": "AMPA receptors activated", "detail": "The glutamate acts on AMPA receptors, which are not blocked." },
+    { "id": "bdnf", "label": "BDNF and mTOR signalling", "detail": "Growth signals switch on inside the neuron." },
+    { "id": "syn", "label": "New synapses within hours", "detail": "Dendritic spines and connections lost in chronic stress begin to regrow. This may be why mood can lift in hours, and why the effect fades unless repeated." }
+  ],
+  "caption": "Press Play. This is the leading hypothesis, not settled fact; other routes (including the opioid system) have been proposed."
+}
+:::
+
+:::widget receptor
+{
+  "receptor": "NMDA",
+  "title": "Ketamine at the NMDA receptor",
+  "caption": "Ketamine acts as an antagonist here: it blocks the channel so glutamate cannot switch it on. Try the antagonist, then compare with glutamate itself (full agonist)."
+}
+:::
+
+:::widget journey
+{
+  "drug": "esketamine and ketamine",
+  "target": "NMDA receptors on neurons in the prefrontal cortex and hippocampus",
+  "routes": ["nasal", "iv"],
+  "notes": {
+    "nose": "Esketamine is sprayed into each nostril, under supervision in a clinic. It is absorbed through the nasal lining, skipping the gut and much of the liver's first pass.",
+    "vein": "Racemic ketamine for depression is usually infused into a vein slowly over about 40 minutes, off-label, in a monitored setting.",
+    "blood": "Levels rise within minutes. Blood pressure rises too, which is why it is checked before and after each dose.",
+    "out": "Ketamine is broken down by the liver (mainly CYP3A4 and CYP2B6) to norketamine and other metabolites. Levels fall within hours, though the mood effect can outlast the drug for days."
+  },
+  "caption": "Switch between nasal and IV. Fast arrival explains both the quick effect and the need to observe the patient after each dose."
+}
+:::
+
 :::widget guess
 {
   "prompt": "In trials of a single dose of ketamine for depression, how soon after the dose do symptoms start to improve in people who respond?",
@@ -389,6 +460,29 @@ Q: Why must patients be observed after an esketamine dose?
 
 ### Psilocybin for treatment-resistant depression
 - **Psilocybin** comes from "magic mushrooms" and acts mainly on the **serotonin 2A receptor**.
+
+:::widget journey
+{
+  "drug": "psilocybin",
+  "target": "serotonin 2A receptors on cortical neurons, especially in the prefrontal and visual cortex",
+  "route": "oral",
+  "notes": {
+    "gut": "Psilocybin is a prodrug. In the gut and liver its phosphate group is removed, turning it into psilocin, the active form.",
+    "liver": "Psilocin is broken down partly by liver enzymes (MAO and glucuronidation). Doses in trials were fixed, for example 25 mg of manufactured psilocybin.",
+    "bbb": "Psilocin is small and fat-soluble enough to cross into the brain quickly. Effects start within about half an hour.",
+    "out": "Psilocin is cleared within hours, so the acute experience ends the same day. Any lasting benefit is thought to come from what changes in the brain and in the person afterwards."
+  },
+  "caption": "Tap each stage. The drug is gone within a day; the open question is why some effects last months."
+}
+:::
+
+:::widget receptor
+{
+  "receptor": "5-HT2A",
+  "title": "Psilocin at the serotonin 2A receptor",
+  "caption": "Psilocin is an agonist at 5-HT2A (partial or full, depending on the system measured). Pick the agonists and watch the signal. Antagonists here, such as some antipsychotics, block the psychedelic effect."
+}
+:::
 - **COMP360** is a manufactured psilocybin developed by Compass Pathways.
 - A 2022 phase 2 trial found a single 25 mg dose beat a 1 mg dose for treatment-resistant depression at the main time point, with more side effects including headache, nausea and some suicidal behaviour in all groups.
 - **Two phase 3 trials** have since met their main goal: COMP005 (a single dose, results June 2025) and COMP006 (two doses, with six-month data in July 2026).
@@ -459,6 +553,38 @@ For seventy years, every antipsychotic worked mainly by **blocking dopamine D2 r
 - **Xanomeline** stimulates **muscarinic M1 and M4 receptors** in the brain, which indirectly calms overactive dopamine signalling in the circuits linked to psychosis.
 - Alone, xanomeline caused many side effects in the body (nausea, vomiting, sweating). **Trospium** blocks muscarinic receptors **only outside the brain**, because it cannot cross into it, which reduces those side effects.
 - **Approved by the FDA on 26 September 2024** for adults with schizophrenia, after positive trials (EMERGENT-2 and EMERGENT-3).
+
+:::widget pathways
+{
+  "system": "dopamine",
+  "title": "Old route versus new route to the same pathways",
+  "caption": "Toggle the D2 blocker to see the usual trade-off: the mesolimbic pathway calms (fewer delusions and hallucinations) but nigrostriatal and tuberoinfundibular block cause movement problems and high prolactin. Xanomeline works upstream instead: by stimulating M4 receptors it reduces dopamine release in the overactive circuit, without blocking D2 in the movement and hormone pathways. That is why trials showed few movement side effects and no prolactin rise."
+}
+:::
+
+:::widget receptor
+{
+  "receptor": "M4",
+  "title": "Xanomeline at the muscarinic M4 receptor",
+  "caption": "Xanomeline acts as an agonist at M4 (and M1). Pick the agonist types. Trospium does the opposite (an antagonist) but only outside the brain."
+}
+:::
+
+:::widget journey
+{
+  "drug": "xanomeline-trospium",
+  "target": "muscarinic M4 and M1 receptors in the midbrain, striatum and cortex",
+  "route": "oral",
+  "notes": {
+    "mouth": "One capsule holds two drugs. It is taken twice daily, at least an hour before or two hours after food, because food lowers absorption.",
+    "gut": "Both drugs are absorbed. In the gut wall, the trospium starts blocking muscarinic receptors, which limits nausea, cramps and diarrhoea from xanomeline.",
+    "blood": "In the body, xanomeline alone would stimulate muscarinic receptors in the gut, sweat glands, heart and salivary glands. Trospium blocks these peripheral receptors.",
+    "bbb": "Here the two part ways. Xanomeline crosses into the brain. Trospium is a charged molecule and cannot cross, so it does not block xanomeline's effect in the brain.",
+    "out": "Trospium is cleared mainly by the kidneys, so doses are adjusted in kidney disease; xanomeline is broken down by the liver."
+  },
+  "caption": "Tap the blood-brain barrier stage: the whole design depends on one drug crossing and the other staying out."
+}
+:::
 
 What it does and does not do:
 | Advantage | Limitation |
@@ -534,6 +660,20 @@ Q: Zuranolone works mainly by:
 ## 2.4 GLP-1 medicines and mental health [core][beginner]
 **GLP-1 receptor agonists** (semaglutide, liraglutide, and the dual agonist tirzepatide) were developed for diabetes and are now widely used for obesity. Because they act on **appetite and reward circuits** in the brain, psychiatry has three questions about them.
 
+:::widget brainmap
+{
+  "title": "Where GLP-1 signals act in the brain",
+  "focus": ["hypothalamus", "brainstem", "basal-ganglia", "amygdala"],
+  "notes": {
+    "hypothalamus": "Appetite and fullness centres. GLP-1 medicines increase the feeling of being full, which drives weight loss.",
+    "brainstem": "The area that receives signals from the gut and controls nausea. GLP-1 receptors here explain both reduced eating and the common nausea.",
+    "basal-ganglia": "Reward circuits (including the ventral striatum). In animals, GLP-1 agonists dampen the dopamine 'reward' from alcohol and drugs, the basis of the addiction trials.",
+    "amygdala": "Emotion and stress circuits have GLP-1 receptors too, one reason researchers study effects on mood and anxiety."
+  },
+  "caption": "Tap each region. The same receptors that reduce appetite may reduce cravings, which is why psychiatry is interested."
+}
+:::
+
 ### Question 1: do they increase suicidal thoughts?
 - In **2023**, reports from Iceland and elsewhere raised concern about suicidal thoughts in people using these medicines.
 - In **April 2024**, the European Medicines Agency's safety committee found **no evidence of a causal link**.
@@ -582,7 +722,7 @@ GLP-1 medicines are being misused for weight loss by people who are not overweig
 :::
 
 :::clinician
-Key sources: EMA PRAC conclusion (April 2024) of no causal association with suicidal thoughts; FDA Drug Safety Communication (13 January 2026) requesting removal of suicidal behaviour and ideation warnings, based on a meta-analysis of 91 placebo-controlled trials (about 108,000 patients) and a Sentinel cohort of more than 2 million new users with type 2 diabetes compared with SGLT2 inhibitor users. Observational work (for example a large 2024 health-records study) suggested lower rates of suicidal ideation with semaglutide versus non-GLP-1 weight or diabetes drugs, subject to confounding. Alcohol: a 2025 trial (n=48; low-dose semaglutide reduced laboratory alcohol self-administration and some drinking measures); an April 2026 trial (n=108 with AUD and BMI of 30 or more; heavy-drinking days fell by about 41 versus 26 percentage points); a 2022 exenatide trial (negative overall, post hoc benefit with obesity). Practical points: GI losses can raise lithium levels; delayed gastric emptying may alter absorption of oral drugs; rapid weight loss reduces muscle mass; cost and supply constrain use, although cheaper versions are becoming available in India as patents lapse. Check current local regulation.
+Key regulatory decisions: the EMA safety committee conclusion (April 2024) of no causal association with suicidal thoughts; FDA Drug Safety Communication (13 January 2026) requesting removal of suicidal behaviour and ideation warnings, based on a meta-analysis of 91 placebo-controlled trials (about 108,000 patients) and a Sentinel cohort of more than 2 million new users with type 2 diabetes compared with SGLT2 inhibitor users. Observational work (for example a large 2024 health-records study) suggested lower rates of suicidal ideation with semaglutide versus non-GLP-1 weight or diabetes drugs, subject to confounding. Alcohol: a 2025 trial (n=48; low-dose semaglutide reduced laboratory alcohol self-administration and some drinking measures); an April 2026 trial (n=108 with AUD and BMI of 30 or more; heavy-drinking days fell by about 41 versus 26 percentage points); a 2022 exenatide trial (negative overall, post hoc benefit with obesity). Practical points: GI losses can raise lithium levels; delayed gastric emptying may alter absorption of oral drugs; rapid weight loss reduces muscle mass; cost and supply constrain use, although cheaper versions are becoming available in India as patents lapse. Check current local regulation.
 :::
 
 :::recall
