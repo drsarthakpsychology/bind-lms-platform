@@ -492,7 +492,7 @@ Zuranolone is a **positive allosteric modulator of GABA-A receptors**: it does n
 ### The products
 | Product | Route | Status (USA, as described here) |
 |---|---|---|
-| Brexanolone | Continuous IV infusion over about 60 hours in a monitored setting | Approved for postpartum depression in 2019 |
+| Brexanolone | Continuous IV infusion over about 60 hours in a monitored setting | Approved for postpartum depression in 2019; its maker stopped selling it at the end of 2024 and the US approval was withdrawn in 2025 |
 | Zuranolone | Tablets each evening for a short course | Approved for postpartum depression in August 2023; not approved for major depressive disorder |
 
 ### Why it is different from usual antidepressants
@@ -599,7 +599,7 @@ Esketamine and psilocybin trials enrolled people with TRD. Applying these result
 ### Step 3: treatment options
 1. **Psychological**: counselling, CBT, IPT, peer support; family involvement.
 2. **Medicines**: SSRIs such as sertraline are widely used, including with breastfeeding.
-3. **Newer options (where available)**: zuranolone, a short course of tablets approved in the USA for postpartum depression; brexanolone infusion. Not standard in India; check availability and breastfeeding data.
+3. **Newer options (where available)**: zuranolone, a short course of tablets approved in the USA for postpartum depression (brexanolone infusion is no longer marketed). Not standard in India; check availability and breastfeeding data.
 4. **Severe or psychotic cases**: admission, sometimes ECT.
 
 :::safety Ask about harm

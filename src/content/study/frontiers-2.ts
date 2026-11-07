@@ -312,7 +312,7 @@ Machine-learning models can "predict" who will respond to a treatment in one dat
 ### AI chatbots and large language models (LLMs)
 | What is known (as of Nov 2026) | What is concerning |
 |---|---|
-| A randomised trial of a purpose-built generative AI therapy chatbot (Therabot, March 2025, 106 participants) reported reduced depression and anxiety symptoms compared with a waitlist | One small trial, waitlist control, selected participants; not a substitute for treatment |
+| A randomised trial of a purpose-built generative AI therapy chatbot (Therabot, March 2025, 210 participants, about half given the chatbot) reported reduced depression and anxiety symptoms compared with a waitlist | One small trial, waitlist control, selected participants; not a substitute for treatment |
 | Older rule-based apps (such as Woebot, Wysa) had small trials, mostly short-term | Woebot Health closed its consumer app in mid-2025 |
 | LLMs can draft notes, summarise research and help practise interview skills | General chatbots can be **sycophantic**, agree with harmful beliefs, give unsafe responses to suicidal users, and invent facts |
 | | Lawsuits in the USA have alleged that chatbots contributed to teenagers' suicides |

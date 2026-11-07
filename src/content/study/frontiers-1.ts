@@ -176,10 +176,10 @@ Here is the whole module on one board. Each item gets one of five honest labels.
 |---|---|
 | Esketamine nasal spray for treatment-resistant depression | **Approved** (USA, Europe and others) |
 | Ketamine infusions for depression | **Mixed**: evidence of rapid effect, used off-label, not licensed for depression |
-| MDMA-assisted therapy for PTSD | **Not approved**: FDA declined in August 2024; more trials needed |
+| MDMA-assisted therapy for PTSD | **Not approved**: FDA declined in August 2024; the developer refiled in August 2026 without a new phase 3 trial; no decision yet |
 | Psilocybin for treatment-resistant depression (COMP360) | **Promising, in late trials**: two positive phase 3 trials; US application being filed |
 | Xanomeline-trospium (Cobenfy) for schizophrenia | **Approved** in the USA in September 2024; failed as an add-on trial |
-| Zuranolone for postpartum depression | **Approved** in the USA for postpartum depression only |
+| Zuranolone for postpartum depression | **Approved** for postpartum depression only, in the USA (2023) and the EU (2025) |
 | GLP-1 medicines and mental health | **Mixed**: no suicide signal found; early trials for alcohol use are promising |
 | Inflammation-targeted treatments for depression | **Research only**, except autoimmune encephalitis |
 | Pharmacogenomic testing | **Mixed**: a few gene tests are essential; broad panels are oversold |
@@ -442,6 +442,7 @@ Q: Why must patients be observed after an esketamine dose?
   - On **9 August 2024**, the FDA **declined** to approve it and asked for **another phase 3 trial**.
   - Soon after, a journal retracted three earlier papers from the programme over undisclosed ethics problems, and a case of therapist misconduct in an earlier trial was widely discussed.
   - The developer (Lykos Therapeutics) cut most of its staff, changed leadership and was **renamed Resilient Pharmaceuticals** in 2025.
+  - In **August 2026**, Resilient **resubmitted** its application to the FDA, relying on the same completed trials rather than a new phase 3 trial. No FDA decision had been announced as of November 2026.
   - **As of November 2026, MDMA-assisted therapy is not approved in the USA.** Australia has allowed specially authorised psychiatrists to prescribe it for PTSD since July 2023.
 
 ### Psilocybin for treatment-resistant depression
@@ -472,7 +473,7 @@ Q: Why must patients be observed after an esketamine dose?
 - **COMP360** is a manufactured psilocybin developed by Compass Pathways.
 - A 2022 phase 2 trial found a single 25 mg dose beat a 1 mg dose for treatment-resistant depression at the main time point, with more side effects including headache, nausea and some suicidal behaviour in all groups.
 - **Two phase 3 trials** have since met their main goal: COMP005 (a single dose, results June 2025) and COMP006 (two doses, with six-month data in July 2026).
-- **As of November 2026**: the company is completing a **rolling application** to the FDA, expected to be finished by the end of 2026. It is **not yet approved** anywhere as a medicine except under Australia's authorised-prescriber scheme.
+- **As of November 2026**: the company is completing a **rolling application** to the FDA, expected to be finished in November 2026, and the FDA has given it a priority voucher that could shorten the review to one or two months. It is **not yet approved** anywhere as a medicine except under Australia's authorised-prescriber scheme.
 
 :::widget guess
 {
