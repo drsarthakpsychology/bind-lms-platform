@@ -245,6 +245,11 @@ An **emotion** is a short-lived, organised response to something that matters to
 
 Three related words are often confused. An **emotion** is brief and about something. A **mood** is longer, weaker and often without a clear object ("I've been low all day"). **Affect** is the umbrella term for both, and in clinical work it means the emotion you observe in a person.
 
+
+:::widget nervoussystem
+{"title":"The body in an emotion","start":"auto","caption":"Switch the body to fight or flight and read what changes. James and Lange said we feel afraid because we notice these changes; Cannon replied that the same changes come with very different emotions, and too slowly to explain them."}
+:::
+
 ### James-Lange theory: the body comes first
 **William James** (1884, "What is an emotion?") and the Danish physician **Carl Lange** (1885) independently argued that emotion is **the perception of bodily changes**. The order is:
 
@@ -359,8 +364,8 @@ Stress is not always harmful. **Hans Selye** called helpful, motivating stress *
 ### Cannon's fight-or-flight response
 Cannon described how threat triggers the **sympathetic nervous system** and the adrenal medulla to release **adrenaline (epinephrine) and noradrenaline**. Heart rate and blood pressure rise, breathing quickens, glucose floods the blood, digestion slows and pupils widen: the body is ready to fight or flee.
 
-:::widget stress
-{"title": "Watch the stress response unfold", "caption": "Press Play. The fast sympathetic surge raises the heart rate within seconds; the slower hormone chain raises cortisol over minutes. When the stressor ends, feedback switches the system off. In chronic stress, it does not."}
+:::widget hpaloop
+{"title":"Play a stressful day","caption":"The fast sympathetic surge (adrenaline) peaks within minutes; the slower hormone chain (cortisol) peaks after about half an hour. Pick how to cope after each event, then try chronic stress, where the switch-off fails."}
 :::
 
 ### Selye's General Adaptation Syndrome (GAS)

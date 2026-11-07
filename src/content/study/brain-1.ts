@@ -18,54 +18,8 @@ A raga is not "just" vibrating strings, and the strings are not "just" a raga. Y
 - The **autonomic** part runs the body without asking you: heart, gut, sweat, pupils. It has two arms. The **sympathetic** arm prepares for "fight or flight": fast heart, dry mouth, wide pupils. The **parasympathetic** arm restores "rest and digest": slow heart, saliva, digestion.
 
 
-:::widget flow
-{
- "title": "The nervous system as a family tree",
- "layout": "tree",
- "nodes": [
-  {
-   "id": "n",
-   "label": "Nervous system"
-  },
-  {
-   "id": "c",
-   "label": "Central (CNS)",
-   "parent": "n",
-   "detail": "Brain and spinal cord: decides."
-  },
-  {
-   "id": "p",
-   "label": "Peripheral (PNS)",
-   "parent": "n",
-   "detail": "Every nerve outside: carries messages in and out."
-  },
-  {
-   "id": "s",
-   "label": "Somatic",
-   "parent": "p",
-   "detail": "Voluntary muscles; touch, pain and position sense."
-  },
-  {
-   "id": "a",
-   "label": "Autonomic",
-   "parent": "p",
-   "detail": "Heart, gut, glands, pupils: runs without asking."
-  },
-  {
-   "id": "sy",
-   "label": "Sympathetic",
-   "parent": "a",
-   "detail": "Fight or flight: fast heart, wide pupils, dry mouth."
-  },
-  {
-   "id": "ps",
-   "label": "Parasympathetic",
-   "parent": "a",
-   "detail": "Rest and digest: slow heart, saliva, digestion."
-  }
- ],
- "caption": "Tap each branch. Where do anticholinergic side effects come from? (Blocking the parasympathetic branch.)"
-}
+:::widget nervoussystem
+{"title":"Zoom through the nervous system","start":"map","caption":"Zoom from the whole system down to its divisions, then switch the organs to fight or flight. Where do anticholinergic side effects come from? (Blocking the parasympathetic branch.)"}
 :::
 
 :::student
