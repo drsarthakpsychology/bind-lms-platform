@@ -25,7 +25,8 @@ import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./ani
 import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
 import { NervousSystem } from "./scenes/nervous-system";
 import { BrainExplorer } from "./scenes/brain-explorer";
-import type { BrainExplorerData, NervousSystemData } from "@/lib/study/types";
+import { ActionPotential } from "./scenes/action-potential";
+import type { ActionPotentialData, BrainExplorerData, NervousSystemData } from "@/lib/study/types";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
@@ -589,6 +590,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <NervousSystem d={data as NervousSystemData} />;
     case "brainexplorer":
       return <BrainExplorer d={data as BrainExplorerData} />;
+    case "actionpotential":
+      return <ActionPotential d={data as ActionPotentialData} />;
   }
 }
 

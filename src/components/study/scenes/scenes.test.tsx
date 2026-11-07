@@ -8,6 +8,7 @@ import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { NervousSystem } from "./nervous-system";
 import { BrainExplorer } from "./brain-explorer";
+import { ActionPotential } from "./action-potential";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -76,5 +77,22 @@ describe("explorable scenes", () => {
     click(/^Broca/);
     expect(status()).toHaveTextContent(/Yes: Broca's area/);
     expect(screen.getByText(/Case 2 of 8/)).toBeInTheDocument();
+  });
+
+  it("actionpotential: small pushes add up to threshold, the spike fires, and a too-early push is blocked", () => {
+    render(<ActionPotential d={{}} />);
+    expect(status()).toHaveTextContent(/Resting at about minus 70/);
+    click("Stimulate");
+    expect(status()).toHaveTextContent(/Below threshold: the voltage rose to -58/);
+    click("Stimulate");
+    expect(status()).toHaveTextContent(/Rising phase.*sodium channels snap open/);
+    expect(status()).toHaveTextContent(/Summation/);
+    click("Stimulate");
+    expect(status()).toHaveTextContent(/Blocked: .*absolute refractory period/);
+    expect(screen.getByLabelText("3 of 5 missions done")).toBeInTheDocument();
+    click("Myelin on");
+    expect(screen.getByRole("button", { name: "Myelin off" })).toHaveAttribute("aria-pressed", "false");
+    click(/Challenge: 3 in 10 s/);
+    expect(screen.getByRole("button", { name: /s left: 0 of 3/ })).toBeDisabled();
   });
 });
