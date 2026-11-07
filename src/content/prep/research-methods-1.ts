@@ -114,7 +114,7 @@ const D: Draft[] = [
     options: ["A-III, B-I, C-II, D-IV", "A-III, B-I, C-IV, D-II", "A-II, B-I, C-III, D-IV", "A-IV, B-I, C-II, D-III"],
     answer: 0,
     explanation:
-      "The posttest-only control group design is the true experiment R X O / R O (III). One group measured, treated and measured again is O X O (I). The static-group comparison compares an intact treated group with an intact untreated group, posttest only (II). The nonequivalent control group design adds pretests to intact groups, O X O / O O (IV). Option 2 swaps the two intact-group designs; options 3 and 4 put R where the design has none.",
+      "The posttest-only control group design is the true experiment R X O / R O (III). One group measured, treated and measured again is O X O (I). The static-group comparison compares an intact treated group with an intact untreated group, posttest only (II). The nonequivalent control group design adds pretests to intact groups, O X O / O O (IV). A-III, B-I, C-IV, D-II swaps the two intact-group designs; A-II, B-I, C-III, D-IV and A-IV, B-I, C-II, D-III put R where the design has none.",
     module: "exam-prep",
     ref: "Campbell & Stanley 1963",
   },
@@ -212,7 +212,7 @@ const D: Draft[] = [
     ],
     answer: 2,
     explanation:
-      "Marginal means: A1 = (10 + 20)/2 = 15, A2 = (20 + 10)/2 = 15; B1 = (10 + 20)/2 = 15, B2 = (20 + 10)/2 = 15. Both main effects are zero. The effect of B is +10 at A1 and −10 at A2, so it reverses sign: a crossover (disordinal) interaction. The first two options claim main effects that the marginal means rule out. The last option is wrong because the simple effects change sign, which makes the interaction disordinal, not ordinal.",
+      "Marginal means: A1 = (10 + 20)/2 = 15, A2 = (20 + 10)/2 = 15; B1 = (10 + 20)/2 = 15, B2 = (20 + 10)/2 = 15. Both main effects are zero. The effect of B is +10 at A1 and −10 at A2, so it reverses sign: a crossover (disordinal) interaction. 'A main effect of A only' and 'Main effects of A and B' claim main effects that the marginal means rule out. 'A main effect of B and an ordinal interaction' is wrong because the simple effects change sign, which makes the interaction disordinal, not ordinal.",
     module: "exam-prep",
     ref: "standard factorial logic",
   },
@@ -225,12 +225,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): Random assignment controls for participant variables that the researcher has not measured or even thought of.",
-      "Reason (R): Random assignment makes the groups equivalent in expectation on every pre-existing characteristic, measured or not.",
+      "Reason (R): Random assignment was a central feature of R.A. Fisher's designs for agricultural field experiments.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. Matching controls only for the variables matched on. Randomisation works because chance alone decides group membership, so the expected value of every pre-existing characteristic is the same in each group, whether or not it was measured. The guarantee is probabilistic: in one small sample the groups can still differ by chance, which statistical tests allow for.",
+      "Both are true, but R does not explain A. R gives the history of the technique, not the reason it works. Random assignment controls unmeasured variables because chance alone decides group membership, so the groups are equivalent in expectation on every pre-existing characteristic, measured or not. The guarantee is probabilistic: in one small sample the groups can still differ by chance.",
     module: "exam-prep",
     ref: "Shadish, Cook & Campbell 2002 ch.8",
   },
@@ -339,12 +339,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): A ceiling effect on the dependent measure can produce a spurious interaction in a factorial experiment.",
-      "Reason (R): When scores in some cells pile up at the top of the scale, the true difference between levels in those cells cannot show, so the simple effects look unequal.",
+      "Reason (R): A ceiling effect enlarges the differences between cells near the top of the scale, exaggerating the simple effects there.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true, and R explains A. If a task is too easy, cells that should differ are squeezed at the maximum score, while cells lower on the scale show their full difference. The simple effects then look unequal, and the analysis reports an interaction that comes from the limited scale range rather than from the variables. Pilot-testing difficulty, or using measures with enough headroom, prevents this.",
+      "A is true, but R is false. A ceiling effect shrinks, not enlarges, differences near the top: cells that should differ are squeezed at the maximum score, while cells lower on the scale show their full difference. The simple effects then look unequal, and the analysis reports an interaction that comes from the limited scale range rather than from the variables.",
     module: "exam-prep",
     ref: "Shaughnessy et al. ch.8",
   },
@@ -437,8 +437,8 @@ const D: Draft[] = [
         "IV. Is the mechanism through which X brings about Y",
       ],
     },
-    options: ["A-IV, B-II, C-I, D-III", "A-II, B-IV, C-I, D-III", "A-IV, B-II, C-III, D-I", "A-II, B-IV, C-III, D-I"],
-    answer: 0,
+    options: ["A-IV, B-II, C-III, D-I", "A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-III, D-I"],
+    answer: 2,
     explanation:
       "A mediator is the causal mechanism, X → M → Y (IV). A moderator is a variable whose level changes the X-Y relation, an interaction (II). A suppressor correlates with the predictor but little with the criterion, and removing that irrelevant variance increases the predictor's beta (I). A confound covaries with X and gives an alternative explanation (III). The other options swap the commonly confused mediator/moderator or suppressor/confound pairs.",
     module: "exam-prep",
@@ -545,12 +545,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): In a regression-discontinuity design, the treatment and comparison groups are deliberately non-equivalent, yet causal inference can approach that of a randomised experiment.",
-      "Reason (R): Assignment depends entirely on a known cut-off score, so the selection process is fully known and can be modelled.",
+      "Reason (R): The regression-discontinuity design was introduced by Thistlethwaite and Campbell in 1960.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. In regression discontinuity, everyone above or below a cut-off on an assignment variable gets the treatment. Because selection depends only on that observed score, a jump (discontinuity) in the regression of outcome on the assignment variable at the cut-off can be put down to treatment, as long as the functional form is modelled correctly and the score is not manipulated near the cut-off.",
+      "Both are true, but R does not explain A. Who introduced the design does not explain its strength. Causal inference is strong because assignment depends entirely on a known cut-off score, so the selection process is fully known and can be modelled; a jump in the regression of outcome on the assignment variable at the cut-off can then be put down to treatment.",
     module: "exam-prep",
     ref: "Shadish, Cook & Campbell 2002 ch.7",
   },
@@ -719,8 +719,8 @@ const D: Draft[] = [
       left: ["A. Several pretests before treatment", "B. A no-treatment comparison series measured at the same times", "C. Masking outcome assessors to group membership", "D. Comparing dropouts with completers on baseline scores"],
       right: ["I. Attrition bias", "II. Maturation and regression trends", "III. History", "IV. Observer (experimenter) bias"],
     },
-    options: ["A-II, B-III, C-IV, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-III, C-I, D-IV", "A-IV, B-III, C-II, D-I"],
-    answer: 0,
+    options: ["A-II, B-III, C-I, D-IV", "A-III, B-II, C-IV, D-I", "A-II, B-III, C-IV, D-I", "A-IV, B-III, C-II, D-I"],
+    answer: 2,
     explanation:
       "Multiple pretests show the pre-existing trend, so natural growth (maturation) and drift back from extremes (regression) are visible (A-II). A comparison series exposed to the same calendar events tests history (B-III). Blind assessors cannot let expectations colour ratings (C-IV). Checking whether dropouts differ from completers deals with attrition (D-I). The other options pair elements with threats they do not address. For example, a comparison series is the main control for history, not for maturation trends.",
     module: "exam-prep",
@@ -875,8 +875,8 @@ const D: Draft[] = [
       left: ["A. ABAB", "B. Multiple baseline across settings", "C. Changing criterion", "D. Alternating treatments"],
       right: ["I. Performance targets shift in a series of steps", "II. Treatment is withdrawn and then reinstated", "III. Two or more interventions are rapidly alternated", "IV. Intervention starts at different times in different settings"],
     },
-    options: ["A-II, B-IV, C-I, D-III", "A-II, B-I, C-IV, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-III, D-I"],
-    answer: 0,
+    options: ["A-II, B-IV, C-III, D-I", "A-II, B-I, C-IV, D-III", "A-IV, B-II, C-I, D-III", "A-II, B-IV, C-I, D-III"],
+    answer: 3,
     explanation:
       "ABAB withdraws and reinstates treatment (II). A multiple baseline across settings staggers the start of intervention across settings (IV). A changing criterion moves the target step by step (I). Alternating treatments switches rapidly between interventions (III). The other options swap these defining features.",
     module: "exam-prep",

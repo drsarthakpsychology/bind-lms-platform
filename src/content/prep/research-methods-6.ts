@@ -877,12 +877,12 @@ const D: Draft[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Assertion (A): In APA style, a personal communication such as an email from a professor is cited only in the text and not in the reference list.",
-      "Reason (R): Personal communications cannot be retrieved by readers.",
+      "Reason (R): The in-text citation of a personal communication gives the communicator's initials and surname and an exact date.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true, and R explains A. APA cites them as, for example, '(R. Mehta, personal communication, March 2, 2025)', and leaves them out of the reference list because a reference entry exists so readers can find the source. Retrievable sources, such as published interviews, are referenced normally.",
+      "Both are true, but R does not explain A. R describes the format of the citation, for example '(R. Mehta, personal communication, March 2, 2025)', not why it is left out of the reference list. It is left out because readers cannot retrieve a personal communication, and a reference entry exists so readers can find the source.",
     module: "exam-prep",
     ref: "APA 7th ed. 8.9",
   },
