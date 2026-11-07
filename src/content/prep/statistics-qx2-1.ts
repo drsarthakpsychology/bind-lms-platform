@@ -41,7 +41,7 @@ export const QUESTIONS: PrepQuestion[] = [
     { ref: R }),
   mcq("stq2-007", "t-test", 3,
     "A researcher runs a one-tailed test, predicting that Group A scores higher, and finds t(40) = −2.50: Group B scored higher. What is the correct conclusion?",
-    ["Switch to a two-tailed test and report p < .05", "Reject the null, since |t| exceeds the one-tailed critical value", "Retain the null; a result in the unpredicted direction cannot be significant here", "Report the result as significant at the .025 level"], 2,
+    ["Switch to a two-tailed test and report p < .05", "Reject the null, since the absolute value of t exceeds the one-tailed critical value", "Retain the null; a result in the unpredicted direction cannot be significant here", "Report the result as significant at the .025 level"], 2,
     "A one-tailed test puts the whole rejection region in the predicted tail. A t of −2.50 lies in the opposite tail, so the null hypothesis is retained however large |t| is. Rejecting on |t| ignores the direction the test was set up for. Switching to a two-tailed test after seeing the data is a questionable research practice, because the test is chosen to suit the result. Reporting significance at .025 treats the result as if it fell in the planned tail, which it did not.",
     { ref: R }),
   num("stq2-008", "t-test", 1,
@@ -303,7 +303,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "3. Mann-Whitney is a test of medians only when the two distributions have the same shape.",
       "4. Mann-Whitney is unaffected by differences in the spread of the two groups.",
     ],
-    ["1, 2 and 3 only", "1 and 2 only", "3 and 4 only", "1, 2, 3 and 4"], 0,
+    ["1, 2, 3 and 4", "1 and 2 only", "3 and 4 only", "1, 2 and 3 only"], 3,
     "The asymptotic relative efficiency of Mann-Whitney to t is 3/π ≈ .955 under normality (1). With heavy tails or outliers the rank test can be much more powerful (2). Mann-Whitney tests whether a random score from one group tends to exceed one from the other; it becomes a test of a median shift only if the shapes and spreads are identical (3). Statement 4 is false: unequal spreads can make the test significant even with equal medians, so it is not immune to variance differences.",
     { ref: R }),
 
