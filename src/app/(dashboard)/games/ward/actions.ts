@@ -7,26 +7,34 @@ import { choose, currentDecision, outcomeScore, QUALITY_OUTCOME, startState, ste
 import { adminDb, currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { createTeam, joinTeam, loadMyTeam, updateTeam } from "@/lib/games-sims/server/teams";
 import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
+import { hintedItems } from "@/lib/hints/server";
+import { cappedOutcome, itemKey, POINTS_KEPT } from "@/lib/hints/rules";
 
 const id = z.string().min(1).max(40);
 
 /**
  * Solo campaign finished: the server replays the choices through the engine
  * (so the score can't be invented), grades every decision for the student
- * model and stores the outcome.
+ * model and stores the outcome. A decision made with a hint counts for less
+ * in the model and pays half its share of the XP.
  */
 export async function finishWardSolo(input: { campaign: string; choices: string[]; run: string }): Promise<{ ok: boolean; score: number; xp: number }> {
   const parsed = z.object({ campaign: id, choices: z.array(z.string().max(4)).max(40), run: z.string().min(4).max(40) }).safeParse(input);
   const user = await currentUser();
   const c = parsed.success ? campaignById(parsed.data.campaign) : undefined;
   if (!parsed.success || !user || !c) return { ok: false, score: 0, xp: 0 };
+  const run = parsed.data.run;
+  const hinted = await hintedItems(user.id, itemKey("ward", run, c.id, "")).catch(() => new Map<string, number>());
   let st = startState(c);
   const attempts = [];
+  let hintedCount = 0;
   for (const choice of parsed.data.choices) {
     const d = currentDecision(c, st);
     const opt = d?.options.find((o) => o.id === choice);
     if (!d || !opt) break;
-    attempts.push({ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: QUALITY_OUTCOME[opt.q] });
+    const used = hinted.has(itemKey("ward", run, c.id, d.id)) ? 1 : 0;
+    hintedCount += used;
+    attempts.push({ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: cappedOutcome(QUALITY_OUTCOME[opt.q], used) });
     st = choose(c, st, choice);
   }
   if (!st.done) return { ok: false, score: 0, xp: 0 };
@@ -34,7 +42,7 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
   const score = outcomeScore(st);
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } }),
-    payXp(user.id, "ward", wardXp(score), `${c.id}:${parsed.data.run}`),
+    payXp(user.id, "ward", wardXp(score) * (1 - (1 - POINTS_KEPT[1]) * (attempts.length ? hintedCount / attempts.length : 0)), `${c.id}:${run}`),
   ]);
   return { ok: true, score, xp };
 }

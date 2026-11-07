@@ -12,6 +12,9 @@ import { gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, RO
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
+import { askHint } from "@/lib/hints/actions";
+import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Starting", line: "Clear findings, one per part." },
@@ -38,9 +41,11 @@ type Play = {
   tagsDone: number;
   tagsScore: number;
   gained: number;
+  /** Hints in this excerpt: finding index → words ruled out. */
+  ruled: Record<number, string[]>;
 };
 
-type Submit = (x: { id: string; tags: Tag[]; streak: number; level: number }) => Promise<{ ok: boolean }>;
+type Submit = (x: { id: string; tags: Tag[]; streak: number; level: number; run?: string }) => Promise<{ ok: boolean }>;
 
 export function MseLab({ serverState, save, board, submit }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; board: AccuracyBoardData; submit: Submit }) {
   const { award } = useGameXp(serverState, save);
@@ -55,7 +60,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
     const e = pickExcerpt(level, new Set(), rng)!;
     setBestEver(readLocal(BEST_KEY, 0));
     setDone(null);
-    setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0 });
+    setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
   }
 
   if (done) return <Summary p={done} bestEver={bestEver ?? 0} board={board} onAgain={() => start(done.level)} />;
@@ -65,7 +70,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
       play={play}
       setPlay={setPlay}
       onExcerptDone={(p, e) => {
-        void submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level }).catch(() => undefined);
+        void submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level, run: p.seed }).catch(() => undefined);
       }}
       onFinish={(p) => {
         const xp = Math.round(p.tagsScore * 5) + 10;
@@ -105,7 +110,11 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Leve
 function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay: (p: Play) => void; onExcerptDone: (p: Play, e: Excerpt) => void; onFinish: (p: Play) => void }) {
   const e = excerptById(play.excerpt)!;
   const f = e.findings[play.idx];
-  const options = React.useMemo(() => optionsFor(f, makeRng(hashString(`${play.seed}:${e.id}:${play.idx}`))), [f, play.seed, e.id, play.idx]);
+  const allOptions = React.useMemo(() => optionsFor(f, makeRng(hashString(`${play.seed}:${e.id}:${play.idx}`))), [f, play.seed, e.id, play.idx]);
+  const gone = play.ruled[play.idx] ?? [];
+  const options = allOptions.filter((t) => !gone.includes(t));
+  const hinted = gone.length > 0;
+  const [hints, setHints] = useHintStatus();
   const result = play.revealed ? play.results[play.idx] : null;
   const tag = play.tags[play.idx];
   const lastFinding = play.idx === e.findings.length - 1;
@@ -125,8 +134,10 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     tags[play.idx] = tg;
     const results = [...play.results];
     results[play.idx] = r;
-    const gained = pointsFor(r.score, play.streak);
-    setPlay({ ...play, tags, results, revealed: true, streak, gained, best: Math.max(play.best, streak), points: play.points + gained, tagsDone: play.tagsDone + 1, tagsScore: play.tagsScore + r.score });
+    // A hint halves this finding's points (and its XP share).
+    const gained = hintedPoints(pointsFor(r.score, play.streak), hinted ? 1 : 0);
+    const counted = hinted ? r.score * POINTS_KEPT[1] : r.score;
+    setPlay({ ...play, tags, results, revealed: true, streak, gained, best: Math.max(play.best, streak), points: play.points + gained, tagsDone: play.tagsDone + 1, tagsScore: play.tagsScore + counted });
   }
   function next() {
     if (!play.revealed) return;
@@ -149,7 +160,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
       onFinish(done);
       return;
     }
-    setPlay({ ...done, level, seen: [...play.seen, nx.id], excerpt: nx.id, idx: 0, tags: [], results: [], pick: null, revealed: false });
+    setPlay({ ...done, level, seen: [...play.seen, nx.id], excerpt: nx.id, idx: 0, tags: [], results: [], pick: null, revealed: false, ruled: {} });
   }
 
   const keys: Record<string, () => void> = {};
@@ -241,9 +252,18 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
                 </Btn>
               ))}
             </div>
-            <Btn variant="ghost" className="mt-2" onClick={() => setPlay({ ...play, pick: null })}>
-              <Undo2 aria-hidden /> Change part
-            </Btn>
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+              <Btn variant="ghost" onClick={() => setPlay({ ...play, pick: null })}>
+                <Undo2 aria-hidden /> Change part
+              </Btn>
+              <HintBar
+                status={hints}
+                onStatus={setHints}
+                used={hinted}
+                ask={() => askHint({ game: "mse", run: play.seed, excerpt: e.id, idx: play.idx, options: allOptions })}
+                onGive={(h) => setPlay({ ...play, ruled: { ...play.ruled, [play.idx]: h.remove } })}
+              />
+            </div>
           </fieldset>
         ) : null}
 

@@ -33,6 +33,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkey
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
+import { askHint } from "@/lib/hints/actions";
 
 type Actions = {
   finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
@@ -247,6 +249,10 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
   const [reveal, setReveal] = React.useState<Reveal | null>(null);
   const [result, setResult] = React.useState<{ xp: number; saved: boolean } | null>(null);
   const st = React.useMemo(() => replay(c, choices), [c, choices]);
+  const [hints, setHints] = useHintStatus();
+  /** Hints used: decision id → options ruled out. */
+  const [ruled, setRuled] = React.useState<Record<string, string[]>>({});
+  const current = reveal ? null : currentDecision(c, st);
 
   function pick(optionId: string) {
     if (reveal) return;
@@ -284,6 +290,23 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
       onNext={() => setReveal(null)}
       nextLabel={st.done ? "See the ending" : st.chapter !== shownChapter ? "Next session" : "Next call"}
       onExit={onExit}
+      hint={
+        current
+          ? {
+              gone: ruled[current.id] ?? [],
+              bar: (
+                <HintBar
+                  status={hints}
+                  onStatus={setHints}
+                  used={(ruled[current.id] ?? []).length > 0}
+                  label="Rule out two weak ones"
+                  ask={() => askHint({ game: "ward", run: solo.run, campaign: c.id, decision: current.id, options: current.options.map((o) => o.id) })}
+                  onGive={(h) => setRuled((r) => ({ ...r, [current.id]: h.remove }))}
+                />
+              ),
+            }
+          : undefined
+      }
     />
   );
 }
@@ -299,6 +322,7 @@ function Stage({
   nextLabel,
   onExit,
   team,
+  hint,
 }: {
   c: Campaign;
   st: WardState;
@@ -309,8 +333,11 @@ function Stage({
   nextLabel: string;
   onExit: () => void;
   team?: { myVote: string | null; waiting: React.ReactNode; header: React.ReactNode };
+  /** Solo only: options a hint ruled out, and the hint chip and button. */
+  hint?: { gone: string[]; bar: React.ReactNode };
 }) {
   const d = reveal ? null : currentDecision(c, st);
+  const shown = d ? d.options.filter((o) => !(hint?.gone ?? []).includes(o.id)) : [];
   const ch = c.chapters[shownChapter];
   const beatState = reveal ? { vars: reveal.before, flags: reveal.flagsBefore } : st;
   const beats = ch.beats.filter((b) => holds(b.when, beatState)).map((b) => b.text);
@@ -318,7 +345,7 @@ function Stage({
   const voted = team?.myVote ?? null;
 
   const keys: Record<string, () => void> = {};
-  if (d && !voted) d.options.forEach((o, i) => (keys[LETTERS[i]] = () => onPick(o.id)));
+  if (d && !voted) shown.forEach((o, i) => (keys[LETTERS[i]] = () => onPick(o.id)));
   if (reveal) {
     keys.Enter = onNext;
     keys[" "] = onNext;
@@ -360,7 +387,7 @@ function Stage({
               <fieldset>
                 <legend className="mb-3 text-body-strong">{d.prompt}</legend>
                 <div className="grid gap-2">
-                  {d.options.map((o, i) => {
+                  {shown.map((o, i) => {
                     const mine = voted === o.id;
                     return (
                       <Btn
@@ -380,6 +407,7 @@ function Stage({
                   })}
                 </div>
               </fieldset>
+              {hint?.bar}
               {team?.waiting}
             </Panel>
           ) : null}
