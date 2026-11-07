@@ -161,6 +161,10 @@ Adding **reasons for living** at the top is common.
 Asking a person to sign a promise not to harm themselves is **not** recommended. It has no evidence of benefit, can make people hide their thoughts, and gives clinicians false reassurance. Safety plans are different: they are practical, collaborative tools for what to do when a crisis comes.
 :::
 
+:::widget timeline
+{"prompt": "Order the stages of a suicidal crisis, and where help can step in.", "events": [{"label": "Background strain: debt, conflict, illness, loneliness"}, {"label": "A trigger: a humiliation, a loss, an exam result"}, {"label": "Feeling trapped, with no way out; thoughts of suicide grow"}, {"label": "The peak: intense, often lasting minutes to hours"}, {"label": "The urge eases if the person is kept safe and connected"}, {"label": "Follow-up care and a safety plan for next time"}], "why": "The peak of a crisis is often short. Help at each step matters, but the peak is where distance from means and another person's presence save lives. If you are worried about someone right now, stay with them and contact emergency services or Tele-MANAS on 14416."}
+:::
+
 ### Means safety
 Reducing access to lethal means is one of the most effective suicide prevention strategies at both individual and population levels, because many suicidal crises are brief and the method available often decides whether a person survives. Discuss it openly and collaboratively, involve family with consent, and arrange safe storage or removal. At population level, examples include regulating highly hazardous pesticides and making public places safer.
 
