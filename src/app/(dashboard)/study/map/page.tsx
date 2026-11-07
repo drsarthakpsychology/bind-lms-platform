@@ -36,7 +36,6 @@ export default async function MapPage() {
       <header className="space-y-2">
         <p className="text-eyebrow text-link">Your map</p>
         <h1 className="text-h1">What you know, and what to fix</h1>
-        <p className="max-w-2xl text-muted-foreground">Every answer you give in lessons, games and practice updates this map.</p>
       </header>
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
@@ -46,7 +45,7 @@ export default async function MapPage() {
           <Compass className="size-10 shrink-0" aria-hidden />
           <div className="min-w-0 flex-1">
             <h2 className="text-h3">Start with the placement quiz</h2>
-            <p className="mt-1 opacity-90">18 quick questions, about 8 minutes. It fills in your map so practice starts at the right level.</p>
+            <p className="mt-1 opacity-90">18 quick questions. Practice then starts at your level.</p>
           </div>
           <Link href="/study/placement" className={cn(btnPrimary, "shrink-0")}>
             Start the quiz <ArrowRight className="size-4" aria-hidden />
@@ -140,7 +139,7 @@ export default async function MapPage() {
               })}
             </ol>
           ) : (
-            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet. When you pick a wrong answer, we note what you confused it with.</p>
+            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet.</p>
           )}
         </section>
       </div>

@@ -35,7 +35,7 @@ export default async function NotesPage() {
           <p className="text-eyebrow text-link">One-page summaries</p>
           <h1 className="text-h1">Quick revision, one page per topic</h1>
           <p className="text-sm text-muted-foreground">
-            {NOTES.length} short summaries, for the night before an exam. Learn the topic first in Notes; use these to refresh it.
+            {NOTES.length} summaries, for a quick refresh.
           </p>
         </div>
       </header>

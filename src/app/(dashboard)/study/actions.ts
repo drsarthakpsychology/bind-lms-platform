@@ -7,6 +7,7 @@ import { after } from "next/server";
 import { awardEligibleBadges } from "@/lib/achievements/server";
 import { newlyFinishedModules } from "@/lib/achievements/completion";
 import { moduleFacets } from "@/lib/achievements/rules";
+import { keepBestTests } from "@/lib/study/progress";
 
 /** The stored state, plus the id of the student it belongs to (keys the browser copy). */
 export type OwnedLearnState = LearnState & { owner?: string };
@@ -62,7 +63,9 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
       return { ok: false };
     }
     const prev = row ? { state: normalise(row.state), updatedDay: row.updated_at ? istToday(new Date(row.updated_at as string)) : null } : null;
-    const { state: clean, clamped } = clampLearnSave(prev, next, istToday());
+    const { state: clamp, clamped } = clampLearnSave(prev, next, istToday());
+    // Best test scores never go down (the certificate counts the best score).
+    const clean = { ...clamp, study: { ...clamp.study, tests: keepBestTests(prev?.state.study.tests, clamp.study.tests) } };
     if (clamped) console.warn(`saveLearnState: clamped an implausible Learn save for ${user.id} (sent xp ${next.xp}, kept ${clean.xp})`);
 
     // Write with the service role when it is configured, so student INSERT and

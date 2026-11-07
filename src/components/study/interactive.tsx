@@ -158,9 +158,9 @@ export function TestRunner({
     return (
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
         <p className="text-sm font-semibold text-link">{label}</p>
-        <p className="mt-1 text-2xl font-bold">{items.length} questions · about {Math.max(10, Math.round(items.length * 1.1))} minutes</p>
+        <p className="mt-1 text-2xl font-bold">{items.length} questions</p>
         <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground">
-          {(intro ?? ["One question at a time. You can go back before you submit.", "Answers and explanations appear at the end.", "Your best score is saved. We'll ask you to re-test after 3, 7 and 21 days."]).map((t) => (
+          {(intro ?? ["Pass with 80% or more. Retake any time: your best score counts."]).map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>

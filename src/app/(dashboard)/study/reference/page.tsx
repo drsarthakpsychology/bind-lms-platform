@@ -27,7 +27,7 @@ export default async function ReferencePage({ searchParams }: { searchParams: Pr
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Quick Reference</p>
         <h1 className="text-h1">A to Z</h1>
-        <p className="text-sm text-muted-foreground">Disorders, medicines and words. Tap one for a short summary you can read in a minute.</p>
+        <p className="text-sm text-muted-foreground">Disorders, medicines and words.</p>
       </header>
       <ReferenceLibrary items={items} initialQuery={(sp.q ?? "").slice(0, 80)} initialKind={kind} />
     </div>
