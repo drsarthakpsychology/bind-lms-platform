@@ -43,10 +43,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In the study above, the 60-year-olds score lower on a computer-literacy test than the 20-year-olds. The main reason this need not show an effect of ageing is that:",
     options: [
-      "Practice effects inflate the younger group's scores",
-      "Age is confounded with cohort (generation), so the groups differ in experiences such as schooling and exposure to technology",
-      "Selective attrition removes the most able older participants",
-      "Time of measurement differs between the groups",
+      "Practice effects from earlier testing inflate the younger group's scores",
+      "Age is confounded with cohort, so the groups grew up with different schooling and technology",
+      "Selective attrition has removed the most able older participants from the sample",
+      "Time of measurement differs between the groups, so period effects intrude",
     ],
     answer: 1,
     explanation:
@@ -336,10 +336,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Internal validity refers to:",
     options: [
-      "The extent to which findings generalise to other people and settings",
-      "The consistency of scores across repeated testing",
-      "Whether a test measures the construct it claims to measure",
-      "The confidence that the independent variable, rather than something else, caused the change in the dependent variable",
+      "The extent to which findings generalise to other people, settings and times",
+      "The consistency of a measure's scores across repeated testing occasions",
+      "Whether a test truly measures the theoretical construct it claims to measure",
+      "Confidence that the manipulated variable, not some other factor, caused the observed change",
     ],
     answer: 3,
     explanation:
@@ -491,10 +491,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Orne's concept of demand characteristics refers to:",
     options: [
-      "Characteristics of the population that limit generalisation",
-      "The experimenter's unconscious influence on how participants respond",
+      "Characteristics of the sampled population that limit generalisation to others",
+      "The experimenter's unconscious influence on how participants respond to tasks",
       "Participants' anxiety about being evaluated by a psychologist",
-      "Cues in the experimental situation that communicate the hypothesis and shape participants' behaviour",
+      "Cues in the experimental situation that convey the hypothesis and shape participants' behaviour",
     ],
     answer: 3,
     explanation:
@@ -585,10 +585,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Ecological validity refers to the degree to which:",
     options: [
-      "The sample was randomly drawn",
+      "The sample was randomly drawn from the population the results are meant to describe",
       "A test measures environmental attitudes",
-      "Results are consistent across different researchers",
-      "A study's conditions resemble the real-life situations to which the results are meant to apply",
+      "Results are consistent when different researchers repeat the study in other labs",
+      "A study's conditions resemble the real-life situations the results are meant to apply to",
     ],
     answer: 3,
     explanation:
@@ -708,9 +708,9 @@ const D: Draft[] = [
     type: "mcq",
     stem: "In a randomised trial, the intention-to-treat principle means that:",
     options: [
-      "Only participants who complete treatment are analysed",
-      "All randomised participants are analysed in the group to which they were assigned, whatever treatment they actually received",
-      "Participants are analysed according to the treatment they actually received",
+      "Only participants who complete the full course of treatment are analysed",
+      "All randomised participants are analysed in the group they were assigned to, whatever they received",
+      "Participants are analysed according to the treatment they actually received, whatever their assignment",
       "Investigators state in advance which treatment they intend to favour",
     ],
     answer: 1,
@@ -764,9 +764,9 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Which of the following best describes evaluation apprehension?",
     options: [
-      "Participants deliberately sabotaging the study",
-      "The experimenter's anxiety about whether the hypothesis will be supported",
-      "Participants' concern about being judged, which leads them to respond in ways they think make them look healthy or competent",
+      "Participants deliberately sabotaging the study once they guess the hypothesis",
+      "The experimenter's anxiety about whether the hypothesis will be supported by data",
+      "Participants' concern about being judged, leading them to answer so as to look healthy or competent",
       "Reviewers rejecting manuscripts with non-significant results",
     ],
     answer: 2,
@@ -783,10 +783,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "To check for demand characteristics, Orne recommended 'simulating subjects' (quasi-controls). In this procedure:",
     options: [
-      "The experimenter simulates being blind to condition",
-      "Confederates pose as participants to influence the real participants",
-      "A computer simulates the experiment to generate expected results",
-      "Participants are asked to behave as if they had received the treatment, without actually receiving it, to see whether cues alone can produce the effect",
+      "The experimenter pretends to be blind to condition to reduce expectancy cues",
+      "Confederates pose as participants to influence the real participants' responses",
+      "A computer simulates the experiment to generate the expected pattern of results",
+      "Untreated participants pretend to be treated, to see whether cues alone can produce the effect",
     ],
     answer: 3,
     explanation:
@@ -876,10 +876,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A researcher concludes that a counselling programme 'did not work' after testing it with 12 students per group, using a questionnaire with reliability of .55. The best criticism is that:",
     options: [
-      "The conclusion may be a Type II error, because low power and unreliable measurement both threaten statistical conclusion validity",
-      "The study necessarily had a Type I error",
+      "It may be a Type II error, as small groups and an unreliable measure reduce power",
+      "The study necessarily made a Type I error, given the small sample",
       "The finding lacks ecological validity, because it was done with students",
-      "Selection is the main threat, because students volunteered",
+      "Selection is the main threat, because the students volunteered for counselling",
     ],
     answer: 0,
     explanation:
