@@ -4,7 +4,7 @@ import { ArrowRight, History } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
 import { requireFeature } from "@/lib/flags";
 import { EXAM_SPECS, PRACTICE_MARKING, PRACTICE_SPECS, specById } from "@/content/prep/specs";
-import { EXAM_TRACKS_ENABLED, goalLabel } from "@/lib/prep/catalog";
+import { EXAM_TRACKS_ENABLED, PREP_ONBOARDING_ENABLED, goalLabel } from "@/lib/prep/catalog";
 import { loadMockHistory } from "@/lib/prep/server";
 import { cn } from "@/lib/utils";
 import { BackToPrep, PrepFrame, btnPlain, btnPrimary, card } from "../ui";
@@ -22,7 +22,8 @@ export const metadata: Metadata = { title: "Psychology mock tests" };
 export default async function MocksPage() {
   await requireFeature("learn");
   const me = await prepViewer();
-  const [goal, history] = await Promise.all([currentGoal(me.id), loadMockHistory(me.id, 5)]);
+  const [goal, history] = await Promise.all([currentGoal(me.id), PREP_ONBOARDING_ENABLED ? loadMockHistory(me.id, 5) : Promise.resolve([])]);
+  // Past mocks are the track record: shown only with PREP_ONBOARDING_ENABLED.
   const done = history.filter((h) => h.submittedAt);
   const [full, ...parts] = PRACTICE_SPECS;
   const mine = EXAM_TRACKS_ENABLED ? (goal ? EXAM_SPECS.filter((s) => s.exam === goal) : EXAM_SPECS) : [];
