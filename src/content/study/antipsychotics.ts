@@ -75,6 +75,15 @@ Q: A young man has stopped bathing, no longer meets friends and shows little emo
 ## 0.2 Dopamine: the brain's "this matters" signal [core][starting]
 **Dopamine** is a messenger made by small groups of cells deep in the midbrain. It does several jobs, depending on where its fibres go: movement, motivation, reward, and a job called **salience**: marking things as important and worth attention.
 
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "title": "Too much dopamine, then a blocker",
+ "caption": "Pick Amphetamine and play: the pump runs backwards and floods the gap with dopamine even without a signal. Repeated high doses can produce psychosis in healthy people, one of the clues behind the dopamine idea. Now pick Antagonist: dopamine is still released, but it cannot reach the receptor. That is, in one picture, what every older antipsychotic does."
+}
+:::
+
 ### The dopamine idea of psychosis
 When dopamine is released in the wrong amounts in the wrong place, ordinary things can feel strangely important. A stranger's cough, a car number plate, a news headline all seem to carry a message. The mind then builds an explanation to make sense of this odd feeling of importance. That explanation becomes a delusion. Inner thoughts that feel strangely loud and foreign may be experienced as voices.
 
@@ -155,6 +164,15 @@ Q: Which statement about long-acting injections is TRUE?
 
 :::widget guess
 {"prompt": "After stopping antipsychotics following a first episode of psychosis, roughly what percentage of people relapse within a few years?", "min": 0, "max": 100, "unit": "%", "answer": [70, 90], "reveal": "Around 4 in 5 in older studies, over about five years. Continuing medicine roughly halves the risk of relapse. People still have the right to make an informed choice, and some do stay well off medicine.", "clinician": "In a well-known five-year follow-up of first-episode patients, cumulative relapse was about 80%, and stopping medicine raised the risk of relapse about fivefold. Trials of guided dose reduction after a first episode show more early relapses but mixed long-term functional results, so this remains an informed, shared decision."}
+:::
+
+
+:::widget receptor
+{
+ "receptor": "alpha-1",
+ "title": "Dizziness on standing: an alpha-1 story",
+ "caption": "Noradrenaline at alpha-1 receptors tightens blood vessels so blood pressure holds when you stand up. Pick Antagonist: that is chlorpromazine, clozapine, quetiapine or risperidone early on. The vessels cannot tighten in time, so the person feels faint on rising. Start low, rise slowly, and teach the person to sit up before standing."
+}
 :::
 
 ### The side effects people notice
@@ -664,6 +682,36 @@ Q: Five days after a haloperidol increase, a man has high fever, rigid limbs, co
 {"prompt": "On average, how many years earlier do people with severe mental illness die than the general population?", "min": 0, "max": 30, "unit": "years", "answer": [10, 20], "reveal": "About 10 to 20 years earlier, mostly from heart disease, diabetes, lung disease and smoking, not from suicide alone. Antipsychotic metabolic effects are one part of this; poverty, smoking, inactivity and poor access to physical care are others.", "clinician": "Excess mortality is largely cardiovascular and respiratory. Metabolic syndrome affects about a third of people with schizophrenia. Annual physical checks and active treatment of risk factors (statins, antihypertensives, smoking cessation, metformin) are part of antipsychotic prescribing."}
 :::
 
+
+:::widget compare
+{
+ "title": "Olanzapine and aripiprazole: the metabolic gap",
+ "a": {
+  "label": "Olanzapine",
+  "points": [
+   "Strong H1 and 5-HT2C block: hunger and sleepiness",
+   "Large weight gain is common, often in the first months",
+   "Raises glucose and fats, sometimes before weight changes",
+   "Highly effective; little restlessness",
+   "Needs weight, waist, sugar and lipids checked from the start"
+  ],
+  "summary": "Powerful, but metabolically expensive."
+ },
+ "b": {
+  "label": "Aripiprazole",
+  "points": [
+   "D2 partial agonist; weak H1 and 5-HT2C effects",
+   "Weight and sugar change much less",
+   "Prolactin usually falls rather than rises",
+   "Restlessness (akathisia) and insomnia are the common costs",
+   "Still needs metabolic monitoring"
+  ],
+  "summary": "Kinder to the body, harder on restlessness."
+ },
+ "caption": "Slide between the two. Both treat psychosis; the choice is often about which side effects this person can least afford."
+}
+:::
+
 ### QT risk
 The QT interval is the time the heart takes to recharge between beats. A long QT can lead to a dangerous rhythm (torsades de pointes) and sudden death. Risks add up: the drug, its dose, a second QT drug, low potassium or magnesium, heart disease, slow pulse, female sex and older age.
 
@@ -834,6 +882,36 @@ For severe agitation when calming talk, a quieter space and oral medicine have f
 
 :::widget flow
 {"title": "Rapid tranquillisation: step by step", "layout": "chain", "nodes": [{"id": "r1", "label": "De-escalate", "detail": "Calm voice, space, fewer people, find out what the person needs (pain, hunger, fear, a phone call). Most situations settle here."}, {"id": "r2", "label": "Offer oral medicine", "detail": "Lorazepam, or olanzapine melt or risperidone liquid; promethazine if benzodiazepines are unsuitable."}, {"id": "r3", "label": "IM if oral refused or failed and risk is high", "detail": "Lorazepam IM, or haloperidol with promethazine IM, or olanzapine IM. Check allergies, ECG history and what was given already."}, {"id": "r4", "label": "Monitor closely", "detail": "Pulse, blood pressure, breathing rate, oxygen, temperature and level of consciousness, often every 15 minutes for the first hour."}, {"id": "r5", "label": "Review and debrief", "detail": "Was it needed? Was it legal under the Mental Healthcare Act? What could prevent it next time? Talk with the patient afterwards."}], "caption": "Press Play. Each step is used only if the one before has not worked."}
+:::
+
+
+:::widget compare
+{
+ "title": "Two common injections in an emergency",
+ "a": {
+  "label": "Lorazepam IM",
+  "points": [
+   "Works through GABA-A: calming and sleep",
+   "No movement side effects, no ECG needed first",
+   "Main risk: slowed breathing, more with alcohol or other sedatives",
+   "Reversible with flumazenil",
+   "Good when the cause is unclear or alcohol withdrawal is possible"
+  ],
+  "summary": "Safe for the heart and muscles; watch the breathing."
+ },
+ "b": {
+  "label": "Haloperidol with promethazine IM",
+  "points": [
+   "Haloperidol blocks D2; promethazine adds sedation",
+   "Promethazine also lowers the risk of acute dystonia",
+   "Haloperidol can lengthen QT: ECG history matters",
+   "Widely used and well tested in large trials in India and Brazil",
+   "Watch for stiffness, low blood pressure and over-sedation"
+  ],
+  "summary": "Effective and familiar; check the heart first."
+ },
+ "caption": "Neither is better for everyone. The choice depends on the heart, breathing, alcohol, earlier reactions and what has been given already."
+}
 :::
 
 :::recall
