@@ -60,7 +60,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Flooding differs from implosive therapy (Stampfl) chiefly in that implosive therapy:",
-    options: ["Uses relaxation together with a graded anxiety hierarchy", "Must always be carried out in vivo, never in imagination", "Uses imagined, exaggerated scenes, sometimes with dynamic cues", "Relies only on positive reinforcement of each approach step"],
+    options: ["Uses relaxation together with a graded anxiety hierarchy", "Must always be carried out in vivo, never in imagination", "Uses imagined, exaggerated scenes, sometimes with dynamic cues", "Relies only on positive reinforcement of each successive approach step"],
     answer: 2,
     explanation:
       "Both are intense, non-graded exposure methods with response prevention of escape. Implosion (Stampfl and Levis) uses vivid imagery, deliberately exaggerated and sometimes incorporating psychodynamic cues; flooding uses realistic stimuli, ideally in vivo. Relaxation and hierarchies belong to SD. Implosion is imaginal by definition. Neither relies on positive reinforcement.",
@@ -123,7 +123,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A token economy is based mainly on principles of:",
-    options: ["Classical conditioning (stimulus pairing)", "Operant conditioning (secondary reinforcement)", "Psychoanalytic theory (sublimation)", "Observational learning (modelling) only"],
+    options: ["Classical conditioning (Pavlovian stimulus pairing)", "Operant conditioning (secondary reinforcement)", "Psychoanalytic theory (sublimation)", "Observational learning (modelling) only"],
     answer: 1,
     explanation:
       "Token economies give tokens (conditioned or secondary reinforcers) for target behaviours, which can be exchanged for backup reinforcers. This is operant conditioning. Ayllon and Azrin applied it in a psychiatric hospital. Classical conditioning pairs stimuli. Psychoanalysis is unrelated. Modelling may assist, but tokens operate through reinforcement.",
@@ -136,7 +136,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A major limitation repeatedly noted for token economies in long-stay psychiatric wards is:",
-    options: ["They never change behaviour, even within the ward", "They work only when combined with medication", "Gains often fail to generalise outside the programme", "They are based mainly on classical conditioning"],
+    options: ["They never change behaviour, even within the ward itself", "They work only when combined with medication", "Gains often fail to generalise outside the programme", "They are based mainly on classical conditioning"],
     answer: 2,
     explanation:
       "Token economies reliably change behaviour within the programme, but generalisation and maintenance after discharge are weak unless tokens are faded and natural social reinforcers are used. They do not need medication. Ethical concerns about withholding basic rights as backup reinforcers also arise.",
@@ -366,7 +366,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Biofeedback is best described as:",
-    options: ["A projective technique that uses ambiguous images", "A drug treatment that alters autonomic function", "Real-time feedback of body signals so they can be controlled", "A psychodynamic technique for interpreting bodily symptoms"],
+    options: ["A projective technique that uses ambiguous images", "A drug treatment that alters autonomic function", "Real-time feedback of body signals so they can be controlled", "A psychodynamic technique for interpreting bodily symptoms as conflicts"],
     answer: 2,
     explanation:
       "Biofeedback uses instruments to feed back physiological signals, enabling operant learning of self-regulation. It has evidence for tension headache, migraine, Raynaud's, some anxiety problems and, as neurofeedback, partial evidence in ADHD. It is not projective, pharmacological or interpretive.",

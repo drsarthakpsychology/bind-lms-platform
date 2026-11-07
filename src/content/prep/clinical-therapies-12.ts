@@ -47,7 +47,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Irvin Yalom described four 'ultimate concerns' that existential psychotherapy addresses. They are:",
-    options: ["Id, ego, superego and the demands of reality", "Thoughts, feelings, behaviours and the body", "Safety, love, esteem and self-actualisation", "Death, freedom, isolation and meaninglessness"],
+    options: ["Id, ego, superego and the external demands of reality", "Thoughts, feelings, behaviours and the body", "Safety, love, esteem and self-actualisation", "Death, freedom, isolation and meaninglessness"],
     answer: 3,
     explanation:
       "Yalom's existential psychotherapy works with anxiety arising from death, freedom (and the responsibility it brings), existential isolation and the search for meaning. Id, ego and superego come from Freud's structural model, thoughts, feelings, behaviours and body form a CBT model, and safety, love, esteem and self-actualisation are levels of Maslow's hierarchy.",
@@ -78,7 +78,7 @@ export const PART: PrepQuestion[] = [
     stem: "Emotion-focused therapy for individuals (Greenberg) distinguishes primary adaptive, primary maladaptive, secondary and instrumental emotions. Anger that covers underlying hurt and shame is an example of:",
     options: [
       "Primary adaptive emotion",
-      "Instrumental emotion used deliberately to manipulate",
+      "Instrumental emotion used deliberately to manipulate others",
       "Primary maladaptive emotion",
       "Secondary emotion, a reaction to a more primary feeling",
     ],
@@ -284,7 +284,7 @@ export const PART: PrepQuestion[] = [
     stem: "Which statement about clinical hypnosis is best supported by evidence?",
     options: [
       "Hypnosis reliably recovers accurate repressed memories",
-      "Hypnotised people lose all control and can be made to do anything",
+      "Hypnotised people lose all control and can be made to do absolutely anything",
       "Hypnotisability is the same in everyone",
       "As an adjunct, it has evidence for pain and irritable bowel syndrome",
     ],
@@ -333,7 +333,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Marlatt's relapse prevention model for addictions describes the 'abstinence violation effect' as:",
-    options: ["The physical withdrawal that follows stopping a drug", "A medicine that makes alcohol unpleasant to drink", "A planned, therapist-approved return to controlled use", "Guilt and loss of control after a lapse, fuelling relapse"],
+    options: ["The physical withdrawal that follows stopping a drug", "A medicine that makes alcohol unpleasant to drink", "A planned, therapist-approved return to controlled drinking or use", "Guilt and loss of control after a lapse, fuelling relapse"],
     answer: 3,
     explanation:
       "After a lapse, people with rigid abstinence goals may think 'I've blown it, I'm a failure, so I may as well keep going', and this guilt and self-blame can turn a single slip into relapse. Relapse prevention teaches people to see lapses as learning opportunities, identify high-risk situations and build coping skills. The other options describe withdrawal, disulfiram and controlled-drinking goals.",
@@ -368,7 +368,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about internet-delivered CBT (iCBT) is best supported?",
-    options: ["iCBT does not work for any common mental disorder", "iCBT is effective only when there is no human contact", "iCBT is always superior to face-to-face CBT in trials", "Guided iCBT can match face-to-face CBT for many problems"],
+    options: ["iCBT does not work for any common mental disorder", "iCBT is effective only when there is no human contact", "iCBT is always superior to face-to-face CBT in controlled trials", "Guided iCBT can match face-to-face CBT for many problems"],
     answer: 3,
     explanation:
       "Meta-analyses show guided iCBT, with brief support from a therapist or coach, produces effects similar to face-to-face CBT for depression, panic and social anxiety. Unguided programmes help too but have higher drop-out. iCBT clearly works, so the claim that it helps no disorder is wrong. Human guidance generally improves results, and iCBT is not consistently superior to face-to-face therapy. India's Tele-MANAS helpline is a related example of using technology to widen access.",
@@ -381,7 +381,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "J.S. Neki, an Indian psychiatrist, proposed that psychotherapy in India could draw on the traditional relationship between:",
-    options: ["Landlord and tenant, as a model of a fair contract", "Doctor and nurse, as a model of close teamwork", "Employer and employee, as a model of authority", "Guru and chela, with a more active, guiding therapist"],
+    options: ["Landlord and tenant, as a model of a fair written contract", "Doctor and nurse, as a model of close teamwork", "Employer and employee, as a model of authority", "Guru and chela, with a more active, guiding therapist"],
     answer: 3,
     explanation:
       "Neki argued that the guru-chela relationship, with dependence that is accepted and gradually outgrown, offers a culturally fitting model for therapy in India, where patients often expect a more directive and caring therapist than in Western 'equal partnership' models. Other Indian writers, such as Surya and Jayaram, also noted the importance of family involvement and a more active therapist stance.",

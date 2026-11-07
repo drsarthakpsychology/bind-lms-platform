@@ -364,7 +364,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Alcoholics Anonymous is an example of:",
-    options: ["A psychoanalytic group led by a trained analyst", "A peer-led mutual help group based on twelve steps", "A token economy run in a residential setting", "A pharmacological treatment programme"],
+    options: ["A psychoanalytic group led by a trained group analyst", "A peer-led mutual help group based on twelve steps", "A token economy run in a residential setting", "A pharmacological treatment programme"],
     answer: 1,
     explanation:
       "AA is a peer-led fellowship using the twelve steps, sponsorship and regular meetings, with no professional leader. Twelve-step facilitation therapy, which encourages involvement in AA, did as well as CBT in Project MATCH and appears to improve abstinence rates over time. It is not psychoanalytic, operant or pharmacological.",

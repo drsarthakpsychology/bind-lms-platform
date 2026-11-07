@@ -283,7 +283,7 @@ export const PART: PrepQuestion[] = [
       "Self-kindness (versus self-judgement)",
       "Common humanity (versus isolation)",
       "Self-esteem based on outperforming others",
-      "Mindfulness (versus over-identification)",
+      "Mindfulness (versus over-identification with feelings)",
     ],
     answer: 2,
     explanation:
@@ -298,7 +298,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Schema therapy was developed by:",
-    options: ["Paul Gilbert", "Adrian Wells", "Jeffrey Young", "Zindel Segal"],
+    options: ["Paul Gilbert", "Adrian Wells", "Jeffrey Young", "Zindel V. Segal"],
     answer: 2,
     explanation:
       "Jeffrey Young, a student of Beck, developed schema therapy for chronic problems and personality disorders that did not respond well to standard CBT. It integrates cognitive, behavioural, attachment, Gestalt and psychodynamic ideas. Gilbert developed CFT, Wells developed metacognitive therapy, and Segal co-developed MBCT.",

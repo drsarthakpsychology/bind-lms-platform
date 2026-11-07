@@ -148,7 +148,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "'Suppose tonight, while you are asleep, a miracle happens and the problem is solved. When you wake up, what will be the first thing you notice that tells you things are different?' This is:",
-    options: ["The miracle question (solution-focused therapy)", "A circular question (Milan systemic therapy)", "A Socratic question (cognitive therapy)", "A dream interpretation (psychoanalysis)"],
+    options: ["The miracle question (solution-focused therapy)", "A circular question (Milan systemic family therapy)", "A Socratic question (cognitive therapy)", "A dream interpretation (psychoanalysis)"],
     answer: 0,
     explanation:
       "The miracle question helps clients describe a concrete preferred future, which becomes the goal of therapy. Solution-focused therapy also uses exception questions ('when is the problem less?'), scaling questions ('0 to 10, where are you now?') and coping questions. It is not a Milan, CBT or psychoanalytic technique.",
@@ -254,7 +254,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Emotionally focused couple therapy (Sue Johnson) is grounded mainly in:",
-    options: ["Adult attachment theory and negative interaction cycles", "Operant conditioning principles and token economies", "Rational emotive behaviour theory and disputing", "Psychoanalytic drive theory and Oedipal conflict"],
+    options: ["Adult attachment theory and negative interaction cycles", "Operant conditioning principles and home token economies", "Rational emotive behaviour theory and disputing", "Psychoanalytic drive theory and Oedipal conflict"],
     answer: 0,
     explanation:
       "EFT for couples sees distress as an escalating cycle (often pursue and withdraw) driven by fears of abandonment or rejection. The therapist helps partners name the cycle, reach the underlying attachment emotions, and create new bonding interactions in which needs are expressed and met. It is not based on token economies, REBT or drive theory.",
@@ -280,7 +280,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Multisystemic therapy (Henggeler) is an intensive home- and community-based treatment mainly for:",
-    options: ["Adolescents with serious antisocial behaviour", "Older adults with dementia and agitation", "Adults with a specific phobia", "Infants with colic and feeding problems"],
+    options: ["Adolescents with serious antisocial behaviour", "Older adults with dementia and behavioural agitation", "Adults with a specific phobia", "Infants with colic and feeding problems"],
     answer: 0,
     explanation:
       "MST works across all the systems around a young person with severe conduct problems or offending (family, peers, school, neighbourhood), with therapists available around the clock and small caseloads. It has evidence for reducing reoffending and out-of-home placement, though results outside the US have been more mixed. It is not designed for dementia, phobia or infant colic.",
@@ -308,7 +308,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "A genogram is:",
-    options: ["A diagram of a family across three or more generations", "A genetic blood test for inherited disorders", "A self-report questionnaire about family life", "A brain imaging technique used in family research"],
+    options: ["A diagram of a family across three or more generations", "A genetic blood test for inherited disorders", "A self-report questionnaire about family life", "A brain imaging technique used in family and twin research"],
     answer: 0,
     explanation:
       "The genogram, associated with Bowen and developed by McGoldrick, maps family members, marriages, deaths, illnesses and relationship quality across generations. It helps identify repeated patterns and is widely used in family therapy and case formulation. It is not a genetic test, a questionnaire or imaging.",

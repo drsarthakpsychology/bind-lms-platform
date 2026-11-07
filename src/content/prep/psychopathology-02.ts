@@ -50,7 +50,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Atypical features and melancholic features",
       "Anxious distress and mixed features",
-      "Peripartum onset and psychotic features",
+      "Peripartum onset and mood-congruent psychotic features",
       "Melancholic features and anxious distress",
     ],
     answer: 0,
@@ -65,7 +65,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The DSM-5-TR specifier 'with peripartum onset' applies when the onset of mood symptoms occurs:",
-    options: ["Only within the first 4 weeks after delivery", "At any time within 6 months after delivery", "At any time within 12 months after delivery", "During pregnancy or within 4 weeks after delivery"],
+    options: ["Only within the first 4 weeks after delivery", "At any time within 6 months after delivery", "At any time within the first 12 months after delivery", "During pregnancy or within 4 weeks after delivery"],
     answer: 3,
     explanation:
       "DSM-5 replaced 'postpartum onset' with 'peripartum onset' to include onset during pregnancy, keeping a 4-week postpartum window; about half of 'postpartum' depressions begin before delivery. The 6- and 12-month windows are used in many research and clinical guidelines but are not the DSM rule. ICD-11 uses 'mental or behavioural disorders associated with pregnancy, childbirth or the puerperium' for onset within about 6 weeks after delivery.",
@@ -78,7 +78,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about DSM-5-TR persistent depressive disorder is correct?",
-    options: ["It requires that a full major depressive episode has never occurred", "In children and adolescents the minimum duration is also 2 years", "Mood may be irritable rather than depressed in adults as well as children", "The person is never symptom-free for more than 2 months during the 2 years"],
+    options: ["It requires that a full major depressive episode has never occurred", "In children and adolescents the minimum duration is also 2 years", "Mood may be irritable rather than depressed in adults as well as in children", "The person is never symptom-free for more than 2 months during the 2 years"],
     answer: 3,
     explanation:
       "Criterion C states that during the 2-year period (1 year for children and adolescents) the person has never been without the symptoms for more than 2 months. DSM-5 merged chronic MDD and dysthymia, so major depressive episodes may be present (with specifiers such as 'with persistent major depressive episode'), so the claim that a full major depressive episode must never have occurred is wrong. The child and adolescent duration is 1 year. Irritable mood can substitute for depressed mood only in children and adolescents.",
@@ -234,7 +234,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "A patient in a major depressive episode also has, for most days of the episode, elevated mood, inflated self-esteem and decreased need for sleep (feeling rested after 3 hours), plus marked irritability, distractibility and psychomotor agitation. How many qualifying symptoms count towards the DSM-5-TR 'with mixed features' specifier for a depressive episode?",
-    options: ["Three", "Four", "Five", "Six"],
+    options: ["3", "4", "5", "6"],
     answer: 0,
     explanation:
       "For a depressive episode with mixed features, at least three manic or hypomanic symptoms are needed, but DSM-5-TR deliberately excludes overlapping symptoms (irritability, distractibility and psychomotor agitation), because they occur in both poles. Only elevated mood, inflated self-esteem and decreased need for sleep count, giving three, which is just enough to apply the specifier. Counting the excluded symptoms leads to the four, five or six options.",
@@ -465,7 +465,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The hopelessness theory of depression differs from the 1978 reformulated helplessness model mainly in that:",
-    options: ["It names a subtype caused by hopelessness from stable, global attributions", "It abandons the role of causal attributions in depression altogether", "It makes internality the single most important attributional dimension", "It applies only to the depressive phase of bipolar disorder, not unipolar"],
+    options: ["It names a subtype caused by hopelessness from stable, global attributions", "It abandons the role of causal attributions in depression altogether", "It makes internality the single most important attributional dimension", "It applies only to the depressive phase of bipolar disorder, not to unipolar"],
     answer: 0,
     explanation:
       "Hopelessness theory specifies a 'hopelessness depression' subtype. Its proximal sufficient cause is hopelessness, fed by stable and global attributions plus negative inferences about consequences and self-worth, in a diathesis-stress framework. Attributions remain central, so the theory did not abandon them. It downgraded internality, which mainly affects self-esteem, rather than making it the most important dimension. It concerns unipolar depression, not bipolar.",

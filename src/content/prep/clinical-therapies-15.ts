@@ -126,7 +126,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In treating OCD with mental rituals (for example, silently repeating a 'good' phrase after a bad thought), exposure and response prevention needs to:",
-    options: ["Ignore mental rituals, since only visible rituals matter", "Find the mental rituals and help the person stop or delay them", "Encourage more mental rituals to replace the physical ones", "Use thought stopping to suppress each intrusive thought"],
+    options: ["Ignore mental rituals, since only visible rituals matter", "Find the mental rituals and help the person stop or delay them", "Encourage more mental rituals to replace the visible, physical ones", "Use thought stopping to suppress each intrusive thought"],
     answer: 1,
     explanation:
       "Mental rituals work just like physical compulsions: they neutralise anxiety and stop the person learning that the thought is harmless. ERP for 'pure O' presentations therefore exposes the person to the thoughts (for example, through scripts or recordings) while blocking or postponing mental neutralising. Ignoring or encouraging mental rituals keeps OCD going, and thought stopping increases intrusions.",

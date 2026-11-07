@@ -150,7 +150,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "McEwen's concept of 'allostatic load' refers to:",
-    options: ["Cumulative wear and tear from repeated or prolonged stress activation", "The single largest surge of stress hormones during an acute event", "A protective personality trait that helps people resist stress", "The total number of life events scored on a checklist in a year"],
+    options: ["Cumulative wear and tear from repeated or prolonged stress activation", "The single largest surge of stress hormones during an acute stressful event", "A protective personality trait that helps people resist stress", "The total number of life events scored on a checklist in a year"],
     answer: 0,
     explanation:
       "Allostasis is the process of achieving stability through change, such as raising cortisol to meet a demand. When stress responses are frequent, prolonged, or fail to switch off, the 'load' builds up, shown in raised blood pressure, abdominal fat, high glucose, inflammation and other markers, and this predicts disease and decline. It is not about lifting weight, a single surge or a personality trait.",
@@ -272,7 +272,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Antonovsky's 'salutogenic' approach asks a different question from the traditional disease model. It focuses on:",
-    options: ["Why people fall ill, by tracing the causes of disease", "How to detect disease early through regular screening", "How to remove risk factors from a person's lifestyle", "What keeps people healthy, through a sense of coherence"],
+    options: ["Why people fall ill, by tracing the specific causes of disease", "How to detect disease early through regular screening", "How to remove risk factors from a person's lifestyle", "What keeps people healthy, through a sense of coherence"],
     answer: 3,
     explanation:
       "Antonovsky, studying women who had survived concentration camps and stayed well, asked what creates health (salutogenesis) rather than disease (pathogenesis). People with a strong sense of coherence see life as understandable (comprehensibility), feel they have resources to cope (manageability) and find it worth engaging with (meaningfulness). The other options reflect the pathogenic, disease-centred view.",
@@ -521,7 +521,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which statement about stress and sleep is correct?",
-    options: ["Stress usually deepens sleep, which then speeds up recovery", "Sleep loss lowers cortisol and so reduces next-day stress reactivity", "Only physical stressors disturb sleep, while worry and rumination do not", "Each feeds the other: stress disrupts sleep, short sleep raises reactivity"],
+    options: ["Stress usually deepens sleep, which then speeds up recovery", "Sleep loss lowers cortisol and so reduces next-day stress reactivity", "Only physical stressors disturb sleep, while worry and rumination have no effect", "Each feeds the other: stress disrupts sleep, short sleep raises reactivity"],
     answer: 3,
     explanation:
       "Worry and arousal make it harder to fall and stay asleep, and short or poor sleep raises evening cortisol, sympathetic activity and emotional reactivity, creating a vicious cycle. Psychological stress clearly affects sleep. Targeting both, for example with CBT-I and stress management, often helps.",

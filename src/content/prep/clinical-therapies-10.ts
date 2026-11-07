@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Hans Eysenck's influential critique of psychotherapy in the early 1950s claimed that:",
-    options: ["Psychoanalysis was more effective than behaviour therapy", "All forms of psychotherapy were equally effective", "About two-thirds improved within 2 years even without therapy", "Group therapy was more harmful than individual therapy"],
+    options: ["Psychoanalysis was clearly more effective than behaviour therapy", "All forms of psychotherapy were equally effective", "About two-thirds improved within 2 years even without therapy", "Group therapy was more harmful than individual therapy"],
     answer: 2,
     explanation:
       "Eysenck argued that roughly two-thirds of neurotic patients improved over 2 years without formal therapy ('spontaneous remission'), and that psychotherapy outcome studies did not beat this. His analysis was later criticised for its methods, but it pushed the field towards controlled trials and helped launch behaviour therapy. He did not claim psychoanalysis was superior, or that all therapies were equal.",
@@ -175,7 +175,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Research on 'therapist effects' suggests that:",
-    options: ["All therapists achieve essentially identical outcomes", "Therapist effects disappear once manuals are used", "Some therapists do consistently better (about 5% of variance)", "Years of experience is the strongest predictor of outcome"],
+    options: ["All therapists achieve essentially identical outcomes", "Therapist effects disappear once manuals are used", "Some therapists do consistently better (about 5% of variance)", "Years of clinical experience is the strongest predictor of outcome"],
     answer: 2,
     explanation:
       "Multilevel analyses show stable differences between therapists in their patients' outcomes, typically around 5% of variance (more in naturalistic settings), even in manualised trials. Years of experience predict outcome weakly or not at all. Better therapists tend to show stronger facilitative interpersonal skills, such as warmth, empathy and the ability to repair alliance ruptures.",
@@ -222,7 +222,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In comparative trials, 'researcher allegiance' refers to:",
-    options: ["Patients' loyalty to the therapist", "The professional duty of confidentiality", "Investigators' favoured therapy doing better", "A type of transference in research settings"],
+    options: ["Patients' loyalty to the therapist", "The professional duty of confidentiality", "Investigators' favoured therapy doing better", "A type of transference arising in research settings"],
     answer: 2,
     explanation:
       "Luborsky and others found that differences between therapies in comparative trials were strongly predicted by which therapy the researchers preferred, through better training, more skilled therapists, or design choices. This is one reason why independent replication and adversarial collaboration matter. It is not patient loyalty, confidentiality or transference.",
@@ -365,7 +365,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In 'stepped care' models for depression and anxiety, such as the UK's former IAPT service, which approach is usually offered first to people with mild to moderate problems?",
-    options: ["Inpatient admission for assessment", "A course of electroconvulsive therapy", "Low-intensity help such as guided self-help", "Long-term psychoanalytic psychotherapy"],
+    options: ["Inpatient admission for assessment", "A course of electroconvulsive therapy", "Low-intensity help such as guided self-help", "Long-term, open-ended psychoanalytic psychotherapy"],
     answer: 2,
     explanation:
       "Stepped care offers the least intensive effective treatment first, monitors progress, and steps people up to high-intensity therapy (such as full CBT) if they do not improve. Guided self-help and computerised CBT have evidence for mild to moderate problems and help with access. Admission, ECT and long-term analysis are reserved for severe or specific needs.",
@@ -378,7 +378,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Task-sharing in global mental health (for example, the Friendship Bench in Zimbabwe or lay counsellor programmes in India) means:",
-    options: ["Replacing psychiatrists with computer programs", "Asking patients to treat themselves without help", "Training supervised lay workers to deliver therapy", "Sharing medication between patients"],
+    options: ["Replacing psychiatrists with computer programs", "Asking patients to treat themselves without any outside help", "Training supervised lay workers to deliver therapy", "Sharing medication between patients"],
     answer: 2,
     explanation:
       "Task-sharing moves some tasks from scarce specialists to trained non-specialists (community health workers, lay counsellors, even grandmothers on park benches in Zimbabwe), with ongoing supervision. Trials such as the Friendship Bench and India's PREMIUM programme show this can reduce depression and is cost-effective. It is not automation, unsupported self-help, or medication sharing.",
