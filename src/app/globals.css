@@ -700,11 +700,29 @@ video::-webkit-media-controls {
 .vibha-swing { animation: vibha-swing 600ms ease-in-out infinite; transform-box: view-box; }
 @keyframes vibha-beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(0.96); } 45% { transform: scale(1.1); } }
 .vibha-beat { animation: vibha-beat var(--beat, 900ms) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes vibha-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.vibha-ticker { animation: vibha-ticker 11s linear infinite; }
+@keyframes vibha-flow { 0% { transform: translateX(0); opacity: 0; } 10%, 85% { opacity: 1; } 100% { transform: translateX(var(--tx, 0px)); opacity: 0; } }
+.vibha-flow { animation: vibha-flow 2.4s linear var(--dl, 0s) infinite; opacity: 0; }
+@keyframes vibha-travel { from { transform: translateX(0); } to { transform: translateX(var(--tx, 0px)); } }
+.vibha-travel { animation: vibha-travel 1.6s var(--ease-out-expo) both; }
+@keyframes vibha-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(3px); } }
+.vibha-shake { animation: vibha-shake 500ms ease-in-out 2; }
+@keyframes vibha-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.vibha-grow { transform-origin: left center; animation: vibha-grow 900ms var(--ease-out-expo) both; }
+@keyframes vibha-stream { 0% { opacity: 0; } 25%, 70% { opacity: 0.7; } 100% { opacity: 0; } }
+.vibha-stream { opacity: 0; animation: vibha-stream 1.3s ease-in-out 200ms both; }
+@keyframes vibha-eeg { from { transform: translateX(0); } to { transform: translateX(-320px); } }
+.vibha-eeg { animation: vibha-eeg 4s linear infinite; }
 @media (prefers-reduced-motion: reduce) {
   .vibha-pop, .vibha-draw { animation: none; stroke-dasharray: none; }
   .vibha-float-dot { animation: none; transform: translate(var(--dx), 96px); }
   .vibha-dash { animation: none; }
   .vibha-ping, .vibha-ap-slide, .vibha-ap-jump, .vibha-dock, .vibha-swing, .vibha-beat { animation: none; }
+  .vibha-ticker, .vibha-travel, .vibha-shake, .vibha-grow, .vibha-stream, .vibha-eeg { animation: none; }
+  .vibha-ticker { white-space: normal; }
+  .vibha-ticker-dup { display: none; }
+  .vibha-flow { animation: none; opacity: 0; }
 }
 
 /* --- Colour-blind mode (Settings → "Colour-blind friendly") ---
