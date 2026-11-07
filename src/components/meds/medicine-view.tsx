@@ -5,6 +5,8 @@ import Link from "next/link";
 import { AlertTriangle, ArrowLeft, Check, ClipboardCheck, MessageCircle, Microscope, Pill, Shuffle, Users } from "lucide-react";
 import type { Med } from "@/lib/meds/types";
 import type { Mechanism } from "@/lib/meds/mechanisms";
+import type { MedVisual } from "@/lib/meds/visuals";
+import { MedicineVisual } from "./medicine-visuals";
 import { Journey, Receptor } from "@/components/study/animations";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +42,7 @@ function saveView(v: View) {
  * One medicine: pick a dose chip to see what happens at that dose; switch
  * between plain student words and clinician detail at any time.
  */
-export function MedicineView({ med, related, mech }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism }) {
+export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism; visuals?: MedVisual[] }) {
   const view = React.useSyncExternalStore(subscribe, readView, () => "student" as View);
   const [i, setI] = React.useState(med.defaultDose);
   const dose = med.doses[i];
@@ -124,6 +126,9 @@ export function MedicineView({ med, related, mech }: { med: Med; related: { id: 
           <div className="grid gap-4 lg:grid-cols-2">
             <Receptor d={{ receptor: mech.receptor.name, title: `${med.name} at the ${mech.receptor.name} receptor`, caption: `Press ${mech.receptor.pick}. ${mech.receptor.note}` }} />
             <Journey d={{ drug: med.name.toLowerCase(), target: mech.site, routes: mech.routes, notes: mech.notes }} />
+            {visuals.map((v, k) => (
+              <MedicineVisual key={`${v.kind}-${k}`} v={v} />
+            ))}
           </div>
         </section>
       ) : null}
