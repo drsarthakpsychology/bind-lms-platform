@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { blockedBy } from "@/lib/access/features";
 import { isImmersiveSessionPath } from "./sidebar-gate";
 import { openNavDrawer } from "./sidebar-state";
-import { activeNavHref } from "./sections";
+import { activeNavHref, isRunPath } from "./sections";
 
 interface Tab {
   href: string;
@@ -82,8 +82,9 @@ export function BottomTabBar({
     mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : showStudy ? STUDENT_TABS : STUDENT_TABS_NO_STUDY;
   const tabs = mode === "admin" ? base : base.filter((t) => !blockedBy(t.href, blocked));
 
-  const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|lab\/)|^\/practice\/(?:detective|scenarios|terms)(?:\/|$)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
+  // During a run (answering, reading one text, playing) the page's own Back
+  // row is the only navigation (navigation/sections.ts).
+  const focusedPath = isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || (mode === "student" && isRunPath(pathname));
   if (focusedPath) return null;
   const activeHref = activeNavHref(tabs, pathname, from);
 

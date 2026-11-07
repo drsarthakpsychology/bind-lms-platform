@@ -66,6 +66,8 @@ export type NavItem = {
   match?: string[];
   /** Shorter label for the slim icon rail, where long words would split. */
   short?: string;
+  /** Feature switch that must be on ("unlocked") for this item to show. */
+  flag?: string;
 };
 
 /**

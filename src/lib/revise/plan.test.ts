@@ -63,7 +63,7 @@ describe("buildRevisionPlan", () => {
     expect(p.status).toBe("ready");
     expect(p.today[0].kind).toBe("review");
     expect(p.today[0].title).toBe("Review 12 quiz questions");
-    expect(p.today[0].href).toBe("/games/play?mode=review");
+    expect(p.today[0].href).toBe("/prep/smart/play?mode=review");
     expect(p.today[0].minutes).toBe(6);
     const soon = p.later.find((l) => l.id === "review-soon")!;
     expect(soon.title).toBe("1 quiz question comes back");
@@ -146,7 +146,7 @@ describe("buildRevisionPlan", () => {
     };
     const p = buildRevisionPlan(s, today, MODS);
     expect(p.today).toHaveLength(1);
-    expect(p.today[0]).toMatchObject({ kind: "coach", title: "Anhedonia vs Avolition", href: "/games/coach?domain=psychopathology", priority: 82 });
+    expect(p.today[0]).toMatchObject({ kind: "coach", title: "Anhedonia vs Avolition", href: "/prep/smart/coach?domain=psychopathology", priority: 82 });
     expect(p.today[0].why).toContain("3 times");
 
     // Only ordinary reviews: needs at least 3 in an area.

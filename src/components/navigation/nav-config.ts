@@ -22,7 +22,7 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
   { href: "/achievements", label: "Achievements", short: "Badges", icon: "award", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", short: "Ranks", icon: "trophy", section: "More" },
-  { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
+  { href: "/reflect", label: "Journal", icon: "notebook", section: "More", flag: "journal" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
   { href: "/journey", label: "My journey", short: "Journey", icon: "route", section: "More" },
 ];
@@ -37,6 +37,19 @@ export const LECTURE_ONLY_ITEMS: NavItem[] = [
   { href: "/doubts", label: "Doubts", icon: "doubt" },
   { href: "/journey", label: "My journey", icon: "route" },
 ];
+
+/**
+ * Drop items whose feature switch is not on, so the menu never opens a
+ * "Not unlocked yet" page. Items without a switch always show.
+ */
+export function withFlags(items: NavItem[], flags: Record<string, string> = {}): NavItem[] {
+  return items.filter((i) => !i.flag || flags[i.flag] === "unlocked");
+}
+
+/** The student menu for this account: lectures-only or full, Study on or off, switches, blocks. */
+export function studentItems({ scope = "full", showStudy = false, blocked = [], flags = {} }: { scope?: "full" | "lectures_only"; showStudy?: boolean; blocked?: string[]; flags?: Record<string, string> }): NavItem[] {
+  return withFlags(withoutBlocked(withStudy(scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS, showStudy), blocked), flags);
+}
 
 /** Drop menu items for sections switched off for this student. */
 export function withoutBlocked(items: NavItem[], blocked: string[] = []): NavItem[] {

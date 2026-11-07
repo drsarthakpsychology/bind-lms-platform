@@ -5,11 +5,11 @@ import { redirect } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
 import { findLesson } from "@/lib/learn/content";
 import { Player } from "@/components/learn/player";
-import { loadLearnState, saveLearnState } from "../../study/actions";
+import { loadLearnState, saveLearnState } from "@/app/(dashboard)/study/actions";
 
 export const metadata: Metadata = { title: "Learn" };
 
-/** /games/play?lesson=… | ?mode=review (?mode=blitz goes to /games/blitz) */
+/** /prep/smart/play?lesson=… | ?mode=review (?mode=blitz goes to /games/blitz) */
 export default async function PlayPage({ searchParams }: { searchParams: Promise<{ lesson?: string; mode?: string }> }) {
   await requireFeature("learn");
   const { lesson, mode } = await searchParams;

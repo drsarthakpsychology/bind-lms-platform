@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Lock, Pill, ScanEye, Star, Swords, Timer, Trophy, Zap, type LucideIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Lock, Pill, ScanEye, Star, Swords, Timer, Trophy, type LucideIcon } from "lucide-react";
 import { BADGES, DAILY_GOALS, emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
@@ -112,9 +112,6 @@ export function LearnHome({ showLab = false }: { showLab?: boolean }) {
         <Link href={BOARDS.quiz.href} className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
           <Trophy className="size-4" aria-hidden /> {BOARDS.quiz.label}
         </Link>
-        <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
-          <Zap className="size-4" aria-hidden /> Coach and quizzes are in Smart practice
-        </Link>
         {showLab ? (
           <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
             <FlaskConical className="size-4" aria-hidden /> Psychology Lab
@@ -125,7 +122,7 @@ export function LearnHome({ showLab = false }: { showLab?: boolean }) {
   );
 }
 
-/** /games/quizzes: the quiz path, badges and the daily goal. */
+/** /prep/smart/quizzes: the quiz path, badges and the daily goal. */
 export function QuizPath({ units, serverState, save }: { units: Unit[]; serverState: LearnState | null; save: Save }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);
@@ -170,7 +167,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
                     <li key={l.id} className="w-44 shrink-0">
                       {prevDone ? (
                         <Link
-                          href={`/games/play?lesson=${l.id}&from=/games/quizzes`}
+                          href={`/prep/smart/play?lesson=${l.id}&from=/prep/smart/quizzes`}
                           className={cn("flex h-full flex-col gap-1 rounded-2xl border-2 border-foreground p-3 transition-transform hover:-translate-y-0.5", isNext ? cn("bg-primary text-primary-foreground", s.pulse) : done ? "bg-background" : "bg-card")}
                         >
                           <span className="text-xs font-semibold text-link">Lesson {li + 1}</span>

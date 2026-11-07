@@ -25,14 +25,13 @@ export function BackLink({ fallback, ...props }: Omit<React.ComponentProps<typeo
   return <Link {...props} href={back.href} />;
 }
 
-/** The labelled Back button shown at the top of every activity (replaces the bare ✕). */
+/** The labelled Back button shown at the top of every activity: says where it goes. */
 export function BackPill({ fallback, className }: { fallback?: string; className?: string }) {
   const back = useBack(fallback);
   return (
-    <Link href={back.href} className={cn("inline-flex h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold", className)}>
-      <ArrowLeft className="size-4" aria-hidden />
-      <span>Back</span>
-      <span className="sr-only"> ({back.label})</span>
+    <Link href={back.href} className={cn("inline-flex h-11 max-w-[60%] shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold", className)}>
+      <ArrowLeft className="size-4 shrink-0" aria-hidden />
+      <span className="min-w-0 truncate">{back.label}</span>
     </Link>
   );
 }

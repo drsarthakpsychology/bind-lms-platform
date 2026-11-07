@@ -46,9 +46,9 @@ export default async function SmartPage() {
         <p className="text-eyebrow text-muted-foreground">More ways to practise</p>
         <ul className="mt-2 flex flex-wrap gap-2">
           {[
-            { href: "/games/coach", label: "Words you mix up" },
-            { href: "/games/quizzes", label: "Quiz path" },
-            { href: "/games/revise", label: "Revise today" },
+            { href: "/prep/smart/coach", label: "Words you mix up" },
+            { href: "/prep/smart/quizzes", label: "Quiz path" },
+            { href: "/prep/smart/revise", label: "Revise today" },
           ].map((l) => (
             <li key={l.href}>
               <Link href={l.href} className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-secondary">

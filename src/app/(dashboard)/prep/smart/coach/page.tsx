@@ -3,11 +3,11 @@ import { ActivityFrame } from "@/components/study/activity-frame";
 import { requireFeature } from "@/lib/flags";
 import { DOMAINS, type Domain } from "@/lib/learn/concepts";
 import { Coach } from "@/components/learn/coach";
-import { loadLearnState, saveLearnState } from "../../study/actions";
+import { loadLearnState, saveLearnState } from "@/app/(dashboard)/study/actions";
 
 export const metadata: Metadata = { title: "Coach" };
 
-/** /games/coach?domain=…: adaptive teaching with Chai. */
+/** /prep/smart/coach?domain=…: adaptive teaching with Chai. */
 export default async function CoachPage({ searchParams }: { searchParams: Promise<{ domain?: string }> }) {
   await requireFeature("learn");
   const { domain } = await searchParams;

@@ -54,7 +54,7 @@ export function NoteView({
   const [flipped, setFlipped] = React.useState<number[]>([]);
   // Opened from a note, so Back returns to this note (not to Games or Exam Prep).
   const from = `from=${encodeURIComponent(`/study/notes/${note.id}`)}`;
-  const quizHref = note.quiz.lessonId ? `/games/play?lesson=${note.quiz.lessonId}&${from}` : `/games/coach?domain=${note.quiz.domain}&${from}`;
+  const quizHref = note.quiz.lessonId ? `/prep/smart/play?lesson=${note.quiz.lessonId}&${from}` : `/prep/smart/coach?domain=${note.quiz.domain}&${from}`;
 
   return (
     <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>

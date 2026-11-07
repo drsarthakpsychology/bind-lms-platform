@@ -15,11 +15,11 @@ type Owner = { prefix: string; section: string; back: string };
  * (/practice/... is Practice, /games/... is Games).
  */
 const OWNERS: Owner[] = [
-  // Smart practice (Exam Prep) kept these older /games addresses.
-  { prefix: "/games/coach", section: "/prep", back: "/prep/smart" },
-  { prefix: "/games/quizzes", section: "/prep", back: "/prep/smart" },
-  { prefix: "/games/revise", section: "/prep", back: "/prep/smart" },
-  { prefix: "/games/play", section: "/prep", back: "/prep/smart" },
+  // Smart practice tools (Exam Prep): Back returns to Smart practice.
+  { prefix: "/prep/smart/coach", section: "/prep", back: "/prep/smart" },
+  { prefix: "/prep/smart/quizzes", section: "/prep", back: "/prep/smart" },
+  { prefix: "/prep/smart/revise", section: "/prep", back: "/prep/smart" },
+  { prefix: "/prep/smart/play", section: "/prep", back: "/prep/smart" },
   // Medicines has its own menu item, next to Exam Prep.
   { prefix: "/practice/medicines", section: "/practice/medicines", back: "/practice/medicines" },
   { prefix: "/tools/psychopharm", section: "/practice/medicines", back: "/practice/medicines" },
@@ -86,11 +86,12 @@ function backLabel(href: string): string {
   if (href === "/dashboard") return "Back to Home";
   if (href === "/study") return "Back to Study";
   if (href === "/study/notes") return "Back to notes";
+  if (href === "/study/reference") return "Back to Quick Reference";
   if (/^\/study\/notes\/[^/]+$/.test(href)) return "Back to the note";
   if (/^\/study\/[^/]+$/.test(href)) return "Back to the module";
   if (href.startsWith("/study/")) return "Back to Study";
-  if (href === "/games/quizzes") return "Back to the quiz path";
-  if (href === "/games/revise") return "Back to Revise today";
+  if (href === "/prep/smart/quizzes") return "Back to the quiz path";
+  if (href === "/prep/smart/revise") return "Back to Revise today";
   if (href === "/prep/smart") return "Back to Smart practice";
   if (href.startsWith("/prep")) return "Back to Exam Prep";
   if (href.startsWith("/practice/medicines")) return "Back to Medicines";
@@ -120,23 +121,51 @@ export function backTarget(pathname: string, from?: string | null, fallback?: st
   return { href, label: backLabel(href) };
 }
 
+/** Practice pages that are lists or settings, not a tool in use. */
+const PRACTICE_NOT_TOOLS = ["medicines", "leaderboard", "not-available", "passport", "supervision", "check-in", "rounds", "modules"];
+const practiceTool = new RegExp(`^/practice/(?!(?:${PRACTICE_NOT_TOOLS.join("|")})(?:/|$))[^/]+(?:/.*)?$`);
+/** Practice tools with their own Back row, so the bottom bar can step aside. */
+const PRACTICE_RUNS = /^\/practice\/(?:daily|detective|scenarios|terms|mse|judgment|role-play|weak-spots|consulting-room)(?:\/.*)?$/;
+
 /**
- * Focus pages: the student is doing one thing (answering questions, reading,
- * playing). The desktop sidebar folds to icons here; the student can open it
- * and that choice is remembered (sidebar-state.ts).
- * - Exam Prep: the Question Bank (a subject and its topics), practice sets,
- *   Smart practice, Saved, Wrong, review, the diagnostic, interview and a mock
- *   test in progress (not the mock list, results or goal settings).
- * - Study: the reader (sections and checkpoints), Notes and Quick Reference.
- * - Games and activity screens: any game, the Lab, Smart practice tools on
- *   older /games addresses, and the Practice tools that share the game frame.
+ * A run: the student is answering, reading one text or playing. The phone
+ * bottom bar steps aside (the page's own Back row is the way out) and the
+ * desktop sidebar folds to icons (UX audit, Nov 2026, section 4).
+ * - Exam Prep: a topic set, a subject's practice set, Smart practice and its
+ *   tools, Saved, Wrong, review, the diagnostic, interview, a mock in progress.
+ * - Study: a section, a checkpoint, one note, one Quick Reference entry, weak
+ *   topic practice.
+ * - Every game (not the hubs) and the Practice tools that have their own
+ *   Back row (the others keep the bottom bar, so there is always a way out).
+ */
+export function isRunPath(pathname: string): boolean {
+  if (/^\/prep\/smart\/(?:quizzes|revise)$/.test(pathname)) return false;
+  return (
+    /^\/prep\/(?:smart|saved|wrong|review|diagnostic|interview)(?:\/.*)?$/.test(pathname) ||
+    /^\/prep\/practice\/[^/]+$/.test(pathname) ||
+    /^\/prep\/mock\/(?!result$)[^/]+$/.test(pathname) ||
+    /^\/prep\/(?!practice\/|mock\/)[^/]+\/[^/]+$/.test(pathname) ||
+    /^\/study\/(?!map\/|notes\/|reference\/)[^/]+\/.+/.test(pathname) ||
+    /^\/study\/(?:notes|reference)\/[^/]+$/.test(pathname) ||
+    pathname === "/study/map/practice" ||
+    /^\/games\/(?!leaderboard$|progress$|lab$|lab\/cases$)[^/]+(?:\/.*)?$/.test(pathname) ||
+    PRACTICE_RUNS.test(pathname)
+  );
+}
+
+/**
+ * Focus pages fold the desktop sidebar to icons (the student can open it and
+ * that choice is remembered, sidebar-state.ts): every run, plus the places
+ * where the student reads or picks questions: the Question Bank (a subject's
+ * topics), Notes, Quick Reference, the Smart practice quiz path and revise
+ * lists, and every Practice tool.
  */
 export function isFocusPath(pathname: string): boolean {
   return (
-    /^\/prep\/(?!goal$|mock$|mock\/result\/)[^/]+(?:\/.*)?$/.test(pathname) ||
-    /^\/study\/(?:notes|reference)(?:\/.*)?$/.test(pathname) ||
-    /^\/study\/(?!map(?:\/|$)|placement$)[^/]+\/.+/.test(pathname) ||
-    /^\/games\/(?!leaderboard$|quizzes$|revise$|progress$|lab$|lab\/cases$)[^/]+(?:\/.*)?$/.test(pathname) ||
-    /^\/practice\/(?:daily|detective|scenarios|terms)(?:\/.*)?$/.test(pathname)
+    isRunPath(pathname) ||
+    practiceTool.test(pathname) ||
+    /^\/prep\/(?!goal$|mock$)[^/]+$/.test(pathname) ||
+    /^\/prep\/smart\/(?:quizzes|revise)$/.test(pathname) ||
+    /^\/study\/(?:notes|reference)$/.test(pathname)
   );
 }

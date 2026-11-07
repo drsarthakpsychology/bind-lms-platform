@@ -163,7 +163,7 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   );
 }
 
-/** /games/revise: what to revisit today. */
+/** /prep/smart/revise: what to revisit today. */
 export function ReviseHome({ modules, serverState, save, lab }: { modules: ReviseModule[]; serverState: LearnState | null; save: Save; lab: boolean }) {
   initLearnStore(serverState, save);
   const st = useLearnState(serverState ?? EMPTY);

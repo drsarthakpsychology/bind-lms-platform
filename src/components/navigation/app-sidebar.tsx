@@ -4,8 +4,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Eye, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 
-import { NavItems } from "@/components/navigation/nav-items";
-import { STUDENT_ITEMS, ADMIN_SIDEBAR, LECTURE_ONLY_ITEMS, withStudy, withoutBlocked } from "@/components/navigation/nav-config";
+import { NavItems, type NavItem } from "@/components/navigation/nav-items";
 import { isFocusPath } from "@/components/navigation/sections";
 import { setFocusPref, useFocusPref } from "@/components/navigation/sidebar-state";
 import { cn } from "@/lib/utils";
@@ -18,30 +17,24 @@ export type SidebarMode = "admin" | "student";
  * (questions, reading, a game) it folds to icons on laptops and up, with an
  * open/fold control at the top; both choices are remembered per device
  * (sidebar-state.ts). Sizes live in globals.css, so the server render already
- * has the right width. `role`/`mode` are decided server-side: this component
- * never makes authorization decisions.
+ * has the right width. The items are decided server-side (role, switches,
+ * blocks): this component never makes authorization decisions.
  */
 export function AppSidebar({
-  role,
-  mode,
-  scope = "full",
-  showStudy = false,
-  blocked = [],
+  items,
+  studentSide = true,
+  adminPreview = false,
   className,
 }: {
-  role: "admin" | "student";
-  mode: SidebarMode;
-  scope?: "full" | "lectures_only";
-  showStudy?: boolean;
-  blocked?: string[];
+  items: NavItem[];
+  /** Student menu (focus pages fold it); admin view never folds. */
+  studentSide?: boolean;
+  /** An admin looking at the student side. */
+  adminPreview?: boolean;
   className?: string;
 }) {
   const pathname = usePathname() ?? "";
-  const studentSide = !(role === "admin" && mode === "admin");
   const focus = studentSide && isFocusPath(pathname);
-  const items = studentSide
-    ? withoutBlocked(withStudy(scope === "lectures_only" ? LECTURE_ONLY_ITEMS : STUDENT_ITEMS, showStudy), blocked)
-    : ADMIN_SIDEBAR;
 
   return (
     <aside
@@ -52,16 +45,13 @@ export function AppSidebar({
       {focus ? <FoldControl /> : null}
       <div className="side-scroll flex-1 overflow-x-hidden overflow-y-auto overscroll-contain px-3 py-4">
         <NavItems items={items} />
-        {role === "admin" && mode === "student" ? (
+        {adminPreview ? (
           <p className="side-wide mt-5 flex items-start gap-2 rounded-xl border-2 border-dashed border-foreground px-3 py-2 text-caption font-semibold">
             <Eye className="mt-0.5 size-4 shrink-0" aria-hidden />
             You&apos;re seeing what students see.
           </p>
         ) : null}
       </div>
-      <p className="side-wide border-t-2 border-foreground px-4 py-3 text-caption text-muted-foreground">
-        Press <kbd className="rounded border border-foreground px-1 font-mono text-[0.7rem]">/</kbd> to search
-      </p>
     </aside>
   );
 }

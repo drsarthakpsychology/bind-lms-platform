@@ -8,7 +8,7 @@ import { describe, expect, it } from "vitest";
  * strings) are kept free of both everywhere, comments included, so the check
  * stays simple and nothing slips through a string.
  */
-const ROOTS = ["src/app/(dashboard)/games", "src/app/(dashboard)/practice/daily", "src/app/(dashboard)/practice/detective", "src/app/(dashboard)/practice/scenarios", "src/app/(dashboard)/practice/terms", "src/lib/games", "src/components/learn", "src/lib/learn"];
+const ROOTS = ["src/app/(dashboard)/games", "src/app/(dashboard)/practice/daily", "src/app/(dashboard)/practice/detective", "src/app/(dashboard)/practice/scenarios", "src/app/(dashboard)/practice/terms", "src/app/(dashboard)/prep/smart", "src/lib/games", "src/components/learn", "src/lib/learn"];
 const DASH = /[\u2013\u2014]/g;
 
 function files(dir: string): string[] {
